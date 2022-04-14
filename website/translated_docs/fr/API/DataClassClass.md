@@ -123,7 +123,7 @@ Considérant les propriétés de table suivantes :
 
 #### Description
 
-The `.all()` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
+La fonction `.all()` <!-- REF #DataClassClass.all().Summary -->interroge le datastore pour trouver toutes les entités de la dataclass et les renvoie en tant qu"entity selection<!-- END REF -->.
 
 Les entités sont renvoyées dans l'ordre par défaut, qui est initialement l'ordre dans lequel elles ont été créées. Notez cependant que, si des entités ont été supprimées et que de nouvelles entités ont été ajoutées, l'ordre par défaut ne reflète plus l'ordre de création.
 
@@ -140,7 +140,7 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 | context   | Text | Nom du contexte d'optimisation appliqué à l'entity selection. Ce contexte sera utilisé par le code qui manipule l'entity selection afin de bénéficier de l'optimisation. Cette fonctionnalité est [conçue pour le traitement client/serveur ORDA](ORDA/entities.md#optimisation-client-server). |
 
 
-> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
+> Pour obtenir le nombre total d'entités dans une dataclass, il est recommandé d'utiliser la fonction [`getCount()`](#getcount) qui est plus optimisée que l'expression `ds.myClass.all().length`.
 
 #### Exemple
 
@@ -169,9 +169,9 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 
 #### Description
 
-The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
+La fonction `.clearRemoteCache()` <!-- REF #DataClassClass.clearRemoteCache().Summary -->vide le cache ORDA d'une dataclass<!-- END REF -->.
 
-> This function does not reset the `timeout` and `maxEntries` values.
+> Cette fonction ne réinitialise pas les valeurs de `timeout` et `maxEntries`.
 
 #### Exemple
 
@@ -492,16 +492,16 @@ Cet exemple illustre l'utilisation de la propriété *context* :
 **.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| Paramètres | Type    |    | Description                         |
-| ---------- | ------- | -- | ----------------------------------- |
-| result     | Integer | <- | Number of entities in the dataclass |
+| Paramètres | Type    |    | Description                        |
+| ---------- | ------- | -- | ---------------------------------- |
+| result     | Integer | <- | Nombre d'entités dans la dataclass |
 <!-- END REF -->
 
 #### Description
 
-The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+La fonction `.getCount()` <!-- REF #DataClassClass.getCount().Summary --> retourne le nombre d'entités dans une dataclass<!-- END REF -->.
 
-If this function is used within a transaction, entities created during the transaction will be taken into account.
+Si cette fonction est utilisée dans une transaction, les entités créées durant la transaction sont prises en compte.
 
 #### Exemple
 
@@ -538,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### Description
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+La fonction `.getDataStore()` <!-- REF #DataClassClass.getDataStore().Summary -->retourne le datastore de la dataclass<!-- END REF -->.
 
 Le datastore peut être :
 
@@ -593,13 +593,13 @@ La méthode projet ***SearchDuplicate*** recherche des valeurs dupliquées dans 
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
+La fonction `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->retourne un objet qui fournit des informations sur la dataclass<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
 
 **Objet retourné**
 
 | Propriété   | Type    | Description                              |
 | ----------- | ------- | ---------------------------------------- |
-| exposed     | Booléen | True if the dataclass is exposed in REST |
+| exposed     | Booléen | Vrai si la dataclass est exposée en REST |
 | name        | Text    | Nom de la dataclass                      |
 | primaryKey  | Text    | Nom de la clé primaire de la dataclass   |
 | tableNumber | Integer | Numéro interne de la table 4D            |
@@ -661,9 +661,9 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 **.getRemoteCache**() : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| Paramètres | Type   |    | Description                                                         |
-| ---------- | ------ | -- | ------------------------------------------------------------------- |
-| result     | Object | <- | Object describing the contents of the ORDA cache for the dataclass. |
+| Paramètres | Type   |    | Description                                                 |
+| ---------- | ------ | -- | ----------------------------------------------------------- |
+| result     | Object | <- | Objet décrivant le contenu du cache ORDA pour la dataclass. |
 <!-- END REF -->
 
 > **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
