@@ -284,49 +284,49 @@ Pour cela, vous devez encadrer le code à exclure du contrôle d’exécution av
 - un compilateur "classique", permettant de compiler du code natif pour les processeurs Intel/AMD ;
 - un compilateur Silicon, permettant de compiler du code natif pour les processeurs Apple Silicon.
 
-Le compilateur classique peut être utilisé sur n'importe quelle plate-forme, tandis que le compilateur classic Silicon peut uniquement être utilisé sur une machine Mac :
+Le compilateur classique peut être utilisé sur n'importe quelle plate-forme, tandis que le compilateur Silicon peut uniquement être utilisé sur une machine Mac :
 
-|                | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
-| -------------- |:-------------------:|:---------------------:|:-----------------------:|
-| On Windows     |      &#10003;       |       &#10003;        |        &#10007;         |
-| On Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
-| On Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
-
-
-Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
+|                  | Compilation pour Windows | Compilation pour Mac Intel | Compilation pour Mac Silicon |
+| ---------------- |:------------------------:|:--------------------------:|:----------------------------:|
+| Sous Windows     |         &#10003;         |          &#10003;          |           &#10007;           |
+| Sous Mac Intel   |         &#10003;         |          &#10003;          |           &#10003;           |
+| Sous Mac Silicon |         &#10003;         |          &#10003;          |           &#10003;           |
 
 
-
-### Classic Compiler
-
-The classic compiler generates native compiled code for Intel/AMD processors on any machines. It does not require any specific configuration.
-
-Resulting compiled code is stored in the [DerivedData](architecture.md#deriveddata-folder) folder of the project.
+Les deux compilateurs sont intégrés dans 4D. Le compilateur adéquat est automatiquement sélectionné en fonction de l'option [Cible de compilation](#cible-de-compilation).
 
 
-### Silicon Compiler
 
-The Silicon compiler generates native compiled code for Apple Silicon processors, such as *Apple M1*.
+### Compilateur classique
 
-Resulting compiled code is stored in the [Libraries](architecture.md#libraries-folder), folder of the project.
+Le compilateur classique génère du code compilé natif pour les processeurs Intel/AMD sur n'importe quelle machine. Il ne nécessite aucune configuration particulière.
 
-
-#### Pré-requis
-
-- **Apple machine**: The Silicon compiler can only be run from an Apple machine.
-- **4D Project architecture**: The Silicon compiler is only available for 4D developments using [project architecture](architecture.md).
-- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#two-step-incremental-compiler) of compilation. *clang* requires Apple native libraries, which are provided by either the **Xcode** or **Developer Tools** package.
-    - **If you already have** Xcode or Developer Tools installed on your computer, you only need to make sure that its version is compliant with 4D requirements.
-    - **If you do not have** any of these tools installed on your computer, you will need to download one of them from the Apple Developer web site.
-
-> We recommend to install **Xcode**, which is quite simple to install. You can decide to install **Developer Tools** which is more compact, however its installation is a little more complex.
-
-In any cases, the 4D Silicon compiler will warn you if your configuration does not comply with its requirements.
+Resulting compiled code is stored in the [DerivedData](architecture.md#deriveddata) folder of the project.
 
 
-#### Incremental compiler
+### Compilateur Silicon
 
-The Silicon compiler is incremental, which means that:
+Le compilateur Silicon génère du code compilé natif pour les processeurs Apple Silicon tels que le *Apple M1*.
 
-- During the very first compilation, **all 4D methods** are compiled. This step could take a certain time. However it only occurs once.
-- During all subsequent compilations, only **new or modified methods** are processed, thus reducing drastically the compilation time. 
+Resulting compiled code is stored in the [Libraries](architecture.md#libraries) folder of the project.
+
+
+#### Conditions requises
+
+- **Ordinateur Apple** : Le compilateur Silicon peut uniquement être lancé sur une machine Apple.
+- **Architecture projet de 4D** : Le compilateur Silicon est uniquement disponible pour les développements 4D utilisant l'[architecture projet](architecture.md).
+- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *clang* utilise des librairies Apple natives qui peuvent être fournies par le package **Xcode** ou **Developer Tools**.
+    - **Si vous avez déjà installé** Xcode ou Developer Tools sur votre ordinateur, vous devez juste vous assurer que sa version est conforme aux spécifications de 4D.
+    - **Si vous n'avez pas déjà installé** l'un de ces outils sur votre machine, il vous sera nécessaire d'en télécharger un depuis le site web Apple Developer.
+
+> Nois recommandons **Xcode**, qui est plus simple à installer. Il est tout à fait possible d'installer **Developer Tools** qui est plus compact, mais son installation est un peu plus complexe.
+
+Dans tous les cas, le compilateur Silicon de 4D vous avertira si votre configuration ne correspond pas aux conditions requises.
+
+
+#### Compilation incrémentale
+
+Le compilateur Silicon est incrémental, ce qui signifie que :
+
+- Los de la compilation initiale, **toutes les méthodes 4D** sont compilées. Cette étape peut prendre un certain temps. Cependant, elle n'est nécessaire qu'une fois.
+- Lors de toutes les compilations ultérieures, **seules les méthodes nouvelles ou modifiées** sont traitées, ce qui réduit considérablement la durée de compilation. 

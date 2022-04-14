@@ -128,44 +128,44 @@ Usar a datastore principal do banco de dados 4D:
 
 O comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conecta a aplicação ao banco identificado por *connectionInfo* parameter<!-- END REF --> e retorna um objeto correpondente `cs.DataStore` associado com o alias local *localID*.
 
-The *connectionInfo* 4D database must be available as a remote datastore, i.e.:
+O banco de dados *connectionInfo* 4D deve estar disponível como armazém de dados remoto, ou seja:
 
-*   its web server must be launched with http and/or https enabled,
-*   its [**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option must be checked,
-*   at least one client license is available.
+*   seu servidor web deve ser lançado com http ou https ativado,
+*   sua opção [**Expor como servidor REST**](REST/configuration.md#starting-the-rest-server) deve estar marcada,
+*   se dispõe de ao menos uma licença cliente.
 
-If no matching database is found, `Open datastore` returns **Null**.
+Se não se encontrar nenhum banco de dados coincidente, `Open datastore` devolve **Null**.
 
-*localID* is a local alias for the session opened on remote datastore. If *localID* already exists on the application, it is used. Otherwise, a new *localID* session is created when the datastore object is used.
+*localID* é um alias local para a sessão aberta no armazém de dados remoto. Se *localID* já existir na aplicação, se utiliza. Em caso contrário, se cria uma nova sessão *localID* quando se utiliza o objeto datastore.
 
-Once the session is opened, the following statements become equivalent and return a reference on the same datastore object:
+Quando abrir a sessão, as sentenças abaixo são equivalentes e devolvem uma referência sobre o mesmo objeto datastore:
 
 ```4d
  $myds:=Open datastore(connectionInfo;"myLocalId")
  $myds2:=ds("myLocalId")
-  //$myds and $myds2 are equivalent
+  //$myds e $myds2 são equivalentes
 ```
 
-Pass in *connectionInfo* an object describing the remote datastore you want to connect to. It can contain the following properties (all properties are optional except *hostname*):
+Passe em *connectionInfo* um objeto que desceva o armazém de dados remoto ao que quiser se conectar. Pode conter as propriedades abaixo (todas as propriedades são opcionais menos *hostname*):
 
-| Propriedade | Type          | Description                                                                                                                                                                                                                                                            |
-| ----------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hostname    | Texto         | Name or IP address of the remote database + ":" + port number (port number is mandatory)                                                                                                                                                                               |
-| user        | Texto         | User name                                                                                                                                                                                                                                                              |
-| password    | Texto         | User password                                                                                                                                                                                                                                                          |
-| idleTimeout | Inteiro longo | Inactivity session timeout (in minutes), after which the session is automatically closed by 4D. If omitted, default value is 60 (1h). The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see **Closing sessions**. |
-| tls         | Booleano      | Use secured connection(*). If omitted, false by default. Using a secured connection is recommended whenever possible.                                                                                                                                                  |
-| type        | Texto         | Must be "4D Server"                                                                                                                                                                                                                                                    |
+| Propriedade | Tipo          | Descrição                                                                                                                                                                                                                                                                                                                                 |
+| ----------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname    | Texto         | Nome ou endereço IP da database remota + ":" + número de porta (o numero de porta é obrigatório)                                                                                                                                                                                                                                          |
+| user        | Texto         | Nome de usuario                                                                                                                                                                                                                                                                                                                           |
+| senha       | Texto         | senha de usuario                                                                                                                                                                                                                                                                                                                          |
+| idleTimeout | Inteiro longo | Tempo de espera da sessão de inatividade (em minutos) depois do qual a sessão é fechada automaticamente por 4D. Se for omitido, o valor normal é 60 minutos (1hora) O valor não pode ser inferior a 60: se definir um valor inferior, o tempo de espera se eleva até 60). Para saber mais informação, consulte **Fechamento de sessões**. |
+| tls         | Booleano      | Utilize uma conexão segura(*). Se for omitido, o normal é falso Usar uma conexão segura é recomendado sempre que possível.                                                                                                                                                                                                                |
+| type        | Texto         | Deve ser "4D Server"                                                                                                                                                                                                                                                                                                                      |
 
-(*) If tls is true, the HTTPS protocol is used if:
+(*) Se tls for true, se utiliza o protocolo HTTPS se:
 
-*   HTTPS is enabled on the remote datastore
-*   the given port is the right HTTPS port configured in the database settings
-*   a valid certificate and private encryption key are installed in the database. Otherwise, error "1610 - A remote request to host xxx has failed" is raised
+*   HTTPS for ativado no armazém de dados remoto
+*   o número de porto especificado coincide com o porto HTTPS configurado nos ajustes do banco de dados
+*   um certificado válido e uma chave privada de criptografia estão instalados no banco de dados. Senão é mostrado o erro "1610 - A remote request to host xxx has failed"
 
 #### Exemplo 1
 
-Connection to a remote datastore without user / password:
+Conexão a uma datastore remota sem usuário ou senha:
 
 ```4d
  var $connectTo : Object
@@ -177,7 +177,7 @@ Connection to a remote datastore without user / password:
 
 #### Exemplo 2
 
-Connection to a remote datastore with user / password / timeout / tls:
+Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
 
 ```4d
  var $connectTo : Object
