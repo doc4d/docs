@@ -119,7 +119,7 @@ Considérant les propriétés de table suivantes :
 
 #### Description
 
-The `.all()` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
+La fonction `.all()` <!-- REF #DataClassClass.all().Summary -->interroge le datastore pour trouver toutes les entités de la dataclass et les renvoie en tant qu"entity selection<!-- END REF -->.
 
 Les entités sont renvoyées dans l'ordre par défaut, qui est initialement l'ordre dans lequel elles ont été créées. Notez cependant que, si des entités ont été supprimées et que de nouvelles entités ont été ajoutées, l'ordre par défaut ne reflète plus l'ordre de création.
 
@@ -447,7 +447,7 @@ Cet exemple illustre l'utilisation de la propriété *context* :
 
 #### Description
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+La fonction `.getDataStore()` <!-- REF #DataClassClass.getDataStore().Summary -->retourne le datastore de la dataclass<!-- END REF -->.
 
 Le datastore peut être :
 
@@ -502,13 +502,13 @@ La méthode projet ***SearchDuplicate*** recherche des valeurs dupliquées dans 
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
+La fonction `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->retourne un objet qui fournit des informations sur la dataclass<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
 
 **Objet retourné**
 
 | Propriété   | Type    | Description                              |
 | ----------- | ------- | ---------------------------------------- |
-| exposed     | Booléen | True if the dataclass is exposed in REST |
+| exposed     | Booléen | Vrai si la dataclass est exposée en REST |
 | name        | Text    | Nom de la dataclass                      |
 | primaryKey  | Text    | Nom de la clé primaire de la dataclass   |
 | tableNumber | Integer | Numéro interne de la table 4D            |
@@ -580,7 +580,7 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 #### Description
 
-The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+La fonction `.new()` <!-- REF #DataClassClass.new().Summary -->crée en mémoire et renvoie une nouvelle entité vide pour la dataclass<!-- END REF -->.
 
 L'objet entité est créé en mémoire et n'est pas sauvegardé dans la base de données tant que la fonction [`.save( )`](EntityClass.md#save) n'est pas appelée. Si l'entité est supprimée avant d'être sauvegardée, elle ne peut pas être récupérée.
 
@@ -628,7 +628,7 @@ Cet exemple crée une nouvelle entité dans la dataclass "Log" et enregistre les
 
 #### Description
 
-The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+La fonction `.newSelection()` <!-- REF #DataClassClass.newSelection().Summary -->crée en mémoire une entity selection vide, non partageable, liée à la dataclass<!-- END REF -->.
 
 > Pour plus d'informations sur les sélections d'entités non partageables, veuillez vous reporter à [cette section](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -679,7 +679,7 @@ Une fois créée, l'entity selection ne contient aucune entité (`mySelection.le
 
 #### Description
 
-The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Le mode lazy loading est appliqué.
+La fonction `.query()` <!-- REF #DataClassClass.query().Summary -->recherche les entités répondant aux critères de recherche spécifiés dans *queryString* ou *formula* et (optionnellement) dans *value*toutes les entités de la dataclass<!-- END REF -->, et retourne un nouvel objet de type `EntitySelection` contenant toutes les entités trouvées. Le mode lazy loading est appliqué.
 
 Si aucune entité correspondante n'est trouvée, une `EntitySelection` vide est retournée.
 
