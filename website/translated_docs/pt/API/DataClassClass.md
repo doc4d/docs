@@ -15,7 +15,6 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
 | [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
-| [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
@@ -177,48 +176,30 @@ The `.clearRemoteCache()` function<!-- REF #DataClassClass.clearRemoteCache(). S
 #### Exemplo
 
 ```4d
-var $ds : 4D. DataStoreImplementation
-var $persons : cs. PersonsSelection
-var $p : cs. PersonsEntity
+var $ds : 4D.DataStoreImplementation
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
 var $cache : Object
 var $info : Collection
 var $text : Text
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$persons:=$ds. Persons.all()
-$text:="" For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " End for each 
+$persons:=$ds.Persons.all()
+$text:=""
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
 
-$cache:=$ds. Persons.getRemoteCache()
+$cache:=$ds.Persons.getRemoteCache()
 
-$ds. Persons.clearRemoteCache()
+$ds.Persons.clearRemoteCache()
 // Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
 <!-- END REF -->
 
-<!-- REF DataClassClass.exposed.Desc -->
-## .exposed
-
-<details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v19 R3 | Adicionado |
-</details>
-
-
-<!-- REF DataClassClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
-
-
-#### Description
-
-The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if the dataclass is exposed in REST<!-- END REF -->.
-
-
-<!-- END REF -->
 
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
@@ -493,8 +474,8 @@ Este exemplo ilustra o uso da propriedade *context* :
 
  $e4:=ds.Employee.get(4;$settings2)
  completeSummary($e4) //In completeSummary method, the optimization associated to context "summary" is applied
-``` 
- 
+```
+
 
 <!-- END REF -->
 
@@ -518,7 +499,7 @@ Este exemplo ilustra o uso da propriedade *context* :
 
 #### Description
 
-The `.getCount()` function<!-- REF #DataClassClass.getCount(). Summary -->returns the number of entities in a dataclass<!-- END REF -->.
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
 If this function is used within a transaction, entities created during the transaction will be taken into account.
 
@@ -530,7 +511,7 @@ var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$number:=$ds. Persons.getCount() 
+$number:=$ds. Persons.getCount()
 ```
 
 <!-- END REF -->
@@ -557,7 +538,7 @@ $number:=$ds. Persons.getCount()
 
 #### Description
 
-A função `.getDataStore( )` <!-- REF #DataClassClass.getDataStore().Summary -->retorna a datastore para a classe de dados especificada<!-- END REF -->.
+The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 A datastore pode ser:
 
@@ -594,9 +575,10 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v17 R5 | Adicionado |
+| Versão | Mudanças               |
+| ------ | ---------------------- |
+| v19 R3 | Added exposed property |
+| v17 R5 | Adicionado             |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -611,21 +593,22 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 
 #### Description
 
-A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve um objeto que proporciona informação sobre a classe de dados<!-- END REF -->. Esta função é útil para configurar o código genérico.
+The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Returned object**
 
-| Propriedade | Type    | Description                               |
-| ----------- | ------- | ----------------------------------------- |
-| name        | Texto   | Name of the dataclass                     |
-| primaryKey  | Texto   | Nome da chave primária da classe de dados |
-| tableNumber | Integer | Número daa tabela 4D interna              |
+| Propriedade | Type     | Description                               |
+| ----------- | -------- | ----------------------------------------- |
+| exposed     | Booleano | True if the dataclass is exposed in REST  |
+| name        | Texto    | Name of the dataclass                     |
+| primaryKey  | Texto    | Nome da chave primária da classe de dados |
+| tableNumber | Integer  | Número daa tabela 4D interna              |
 
 
 
 #### Exemplo 1
 
-```4d 
+```4d
  #DECLARE ($entity : Object)  
  var $status : Object
 
@@ -651,13 +634,17 @@ A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve u
 
 #### Exemplo 3
 
-```4d 
+```4d
  var $pk : Text
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
  $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
 ```
+
+#### See also
+
+[DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
 
 <!-- END REF -->
 
@@ -683,7 +670,7 @@ A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve u
 
 #### Description
 
-The `.getRemoteCache()` function<!-- REF #DataClassClass.getRemoteCache(). Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
 
 Calling this function from a 4D single-user application returns `Null`.
 
@@ -716,28 +703,30 @@ Data concerning related entities is stored in the cache of the data object.
 
 #### Exemplo
 
-In the following example, `$ds. Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
 
 Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 
 Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
 
 ```4d
-var $ds : 4D. DataStoreImplementation
-var $persons : cs. PersonsSelection
-var $p : cs. PersonsEntity
+var $ds : 4D.DataStoreImplementation
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
 var $text : Text
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$persons:=$ds. Persons.all()
+$persons:=$ds.Persons.all()
 
-$text:="" For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " End for each
+$text:=""
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
 
-$cachePersons:=$ds. Persons.getRemoteCache()
-$cacheAddress:=$ds. Adress.getRemoteCache()
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Adress.getRemoteCache()
 ```
 
 #### See also
@@ -767,7 +756,7 @@ $cacheAddress:=$ds. Adress.getRemoteCache()
 
 #### Description
 
-A função `.new( )`<!-- REF #DataClassClass.new().Sumário -->cria em memória e devolve uma nova entidade em branco relacionada com a Dataclass<!-- END REF -->.
+The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 O objeto entidade se cria em memória e não se guarda no banco de dados até que se chama a função [`.save( )`](EntityClass.md#save). Se a entidade for apagada antes de ser salva, não se pode recuperar.
 
@@ -781,13 +770,13 @@ All attributes of the entity are initialized with the **null** value.
 
 Este exemplo cria uma nova entidade na classe de dados "Log" e registra a informação no atributo "info":
 
-```4d 
+```4d
  var $entity : cs.LogEntity
  $entity:=ds.Log.new() //create a reference
  $entity.info:="New entry" //store some information
  $entity.save() //save the entity
 ```
- 
+
 <!-- END REF -->
 
 
@@ -815,7 +804,7 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 #### Description
 
-função `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->cria uma nova seleção de entidades em branco, não compartilhável, relacionado à dataclasse na memória<!-- END REF -->.
+The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > Para mais informação sobre as seleçõees de entidades não compartilháveis, consulte [esta seção](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -828,12 +817,12 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 #### Exemplo
 
 
-```4d 
+```4d
  var $USelection; $OSelection : cs.EmployeeSelection
  $USelection:=ds.Employee.newSelection() //create an unordered empty entity selection
  $OSelection:=ds.Employee.newSelection(dk keep ordered) //create an ordered empty entity selection
 ```
- 
+
 
 <!-- END REF -->
 
@@ -866,7 +855,7 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 
 #### Description
 
-A `.query( )` função <!-- REF #DataClassClass.query().Summary -->pesquisa por entidades que encontram o critério de pesquisa especificado em *queryString* ou *formula* e (opcionalmente) *value*(s)<!-- END REF -->, para todas as entidades na dataclass e retorna um novo objeto de tipo `EntitySelection` contendo todas as entidades que foram encontradas. Se aplica carregamento diferido/lazy loading.
+The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
 
 Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
@@ -1016,21 +1005,21 @@ Por exemplo, com as duas entidades abaixo:
 ```
 Entity 1:
 ds.People.name: "martin"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 
 Entity 2:
 ds.People.name: "smith"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon" 
+                "city":"lyon"
             } , {
                 "kind":"office",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 ```
 
@@ -1165,6 +1154,7 @@ queryPath:
 ```
 
 #### Exemplo 1
+
 
 Esta seção oferece vários exemplos de pesquisas.
 
@@ -1468,7 +1458,7 @@ Queremos desautorizar as fórmulas, por exemplo, quando el usuario introduz sua 
 
 #### Description
 
-The `.setRemoteCacheSettings()` function<!-- REF #DataClassClass.setRemoteCacheSettings(). Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
 In the *settings* parameter, pass an object with the following properties:
 

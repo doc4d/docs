@@ -15,7 +15,6 @@ Una [DataClass](ORDA/dsMapping.md#dataclass) ofrece una interfaz de objeto a una
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
 | [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
-| [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
@@ -187,40 +186,20 @@ var $text : Text
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
 
 $cache:=$ds.Persons.getRemoteCache()
 
 $ds.Persons.clearRemoteCache()
-// Caché de la dataclass Persons  = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
+// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
 <!-- END REF -->
 
-<!-- REF DataClassClass.exposed.Desc -->
-## .exposed
-
-<details><summary>Histórico</summary>
-| Versión | Modificaciones |
-| ------- | -------------- |
-| v19 R3  | Añadidos       |
-</details>
-
-
-<!-- REF DataClassClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
-
-
-#### Descripción
-
-La propiedad `.exposed` es <!-- REF DataClassClass.exposed.Summary -->true si la dataclass está "expuesta" en REST<!-- END REF -->.
-
-
-<!-- END REF -->
 
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
@@ -274,7 +253,7 @@ Los objetos de *objectCol* pueden contener uno o más objetos anidados que prese
 Los objetos anidados que presentan entidades relacionadas deben contener una propiedad "\_\_KEY" (llenada con el valor de la llave primaria de la entidad relacionada) o el atributo de llave primaria de la propia entidad relacionada. El uso de una propiedad \_\_KEY permite la independencia del nombre del atributo de la llave primaria.
 > El contenido de las entidades relacionadas no puede ser creado / actualizado a través de este mecanismo.
 
-**Stamp**
+**Sello**
 
 Si se da un atributo \_\_STAMP, se realiza una comprobación con el sello en el almacén de datos y se puede devolver un error ("El sello dado no coincide con el actual para el registro# XX de la tabla XXXX"). Para más información, consulte [Entity locking](ORDA/entities.md#entity-locking).
 
@@ -495,8 +474,8 @@ Este ejemplo ilustra el uso de la propiedad *context*:
 
  $e4:=ds.Employee.get(4;$settings2)
  completeSummary($e4) //En el método completeSummary se aplica la optimización asociada al contexto "summary"
-``` 
- 
+```
+
 
 <!-- END REF -->
 
@@ -510,19 +489,19 @@ Este ejemplo ilustra el uso de la propiedad *context*:
 </details>
 
 <!-- REF #DataClassClass.getCount().Syntax -->
-**.getCount()**: Integer <!-- END REF -->
+**.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| Parámetros | Tipo    |    | Descripción                              |
-| ---------- | ------- | -- | ---------------------------------------- |
-| result     | Integer | <- | Número de entidades en la clase de datos |
+| Parámetros | Tipo    |    | Descripción                         |
+| ---------- | ------- | -- | ----------------------------------- |
+| result     | Integer | <- | Number of entities in the dataclass |
 <!-- END REF -->
 
 #### Descripción
 
-La función `.getCount()` <!-- REF #DataClassClass.getCount().Summary --> devuelve el número de entidades de una clase de datos<!-- END REF -->.
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
-Si se utiliza esta función dentro de una transacción, se tendrán en cuenta las entidades creadas durante la misma.
+If this function is used within a transaction, entities created during the transaction will be taken into account.
 
 #### Ejemplo
 
@@ -532,7 +511,7 @@ var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$number:=$ds.Persons.getCount() 
+$number:=$ds.Persons.getCount()
 ```
 
 <!-- END REF -->
@@ -559,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### Descripción
 
-La función `.getDataStore( )`<!-- REF #DataClass.getDataStore().Summary -->devuelve el datastore para la clase de datos especificada<!-- END REF -->.
+The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 El almacén de datos puede ser:
 
@@ -596,9 +575,10 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones |
-| ------- | -------------- |
-| v17 R5  | Añadidos       |
+| Versión | Modificaciones         |
+| ------- | ---------------------- |
+| v19 R3  | Added exposed property |
+| v17 R5  | Añadidos               |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -613,21 +593,22 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 
 #### Descripción
 
-La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve un objeto que proporciona información sobre la clase de datos<!-- END REF -->. Esta función es útil para configurar el código genérico.
+The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
-| Propiedad   | Tipo    | Descripción                                      |
-| ----------- | ------- | ------------------------------------------------ |
-| name        | Texto   | Nombre de la dataclass                           |
-| primaryKey  | Texto   | Nombre de la llave primaria de la clase de datos |
-| tableNumber | Integer | Número de la tabla 4D interna                    |
+| Propiedad   | Tipo     | Descripción                                      |
+| ----------- | -------- | ------------------------------------------------ |
+| exposed     | Booleano | True if the dataclass is exposed in REST         |
+| name        | Texto    | Nombre de la dataclass                           |
+| primaryKey  | Texto    | Nombre de la llave primaria de la clase de datos |
+| tableNumber | Integer  | Número de la tabla 4D interna                    |
 
 
 
 #### Ejemplo 1
 
-```4d 
+```4d
  #DECLARE ($entity : Object)  
  var $status : Object
 
@@ -653,13 +634,17 @@ La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve
 
 #### Ejemplo 3
 
-```4d 
+```4d
  var $pk : Text
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
  $dataClassAttribute:=ds.Employee[$pk] // Si es necesario, el atributo que coincide con la llave primaria es accesible
 ```
+
+#### Ver también
+
+[DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
 
 <!-- END REF -->
 
@@ -673,21 +658,21 @@ La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve
 </details>
 
 <!-- REF #DataClassClass.getRemoteCache().Syntax -->
-**.getRemoteCache**(): Objeto <!-- END REF -->
+**.getRemoteCache**() : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| Parámetros | Tipo   |    | Descripción                                                               |
-| ---------- | ------ | -- | ------------------------------------------------------------------------- |
-| result     | Objeto | <- | Objeto que describe el contenido de la caché ORDA para la clase de datos. |
+| Parámetros | Tipo   |    | Descripción                                                         |
+| ---------- | ------ | -- | ------------------------------------------------------------------- |
+| result     | Objeto | <- | Object describing the contents of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 > **Modo avanzado:** esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
 
 #### Descripción
 
-La función `.getRemoteCache()` <!-- REF #DataClassClass.getRemoteCache().Summary -->devuelve un objeto que contiene el contenido de la caché ORDA para una clase de datos<!-- END REF -->.
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
 
-Llamar a esta función desde una aplicación monopuesto de 4D devuelve `Null`.
+Calling this function from a 4D single-user application returns `Null`.
 
 El objeto devuelto tiene las siguientes propiedades:
 
@@ -735,9 +720,9 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
 End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
@@ -771,13 +756,13 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 
 #### Descripción
 
-La función `.new( )` <!-- REF #DataClassClass.new().Summary -->crea en memoria y devuelve una nueva entidad en blanco relacionada con la Dataclass<!-- END REF -->.
+The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 El objeto entidad se crea en memoria y no se guarda en la base de datos hasta que se llama a la función [`.save( )`](EntityClass.md#save). Si la entidad se borra antes de ser guardada, no se puede recuperar.
 
 **4D Server**: en cliente-servidor, si la llave primaria de la tabla correspondiente se autoincrementa, se calculará cuando la entidad se guarde en el servidor.
 
-Todos los atributos de la entidad se inicializan con el valor **null**.
+All attributes of the entity are initialized with the **null** value.
 
 > Los atributos se pueden inicializar con valores por defecto si se selecciona la opción **Traducir los NULL a valores vacío** al nivel de la estructura de la base 4D.
 
@@ -785,13 +770,13 @@ Todos los atributos de la entidad se inicializan con el valor **null**.
 
 Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la información en el atributo "info":
 
-```4d 
+```4d
  var $entity : cs.LogEntity
  $entity:=ds.Log.new() //crea una referencia
  $entity.info:="New entry" //almacenar alguna información
  $entity.save() //guardar la entidad
 ```
- 
+
 <!-- END REF -->
 
 
@@ -819,7 +804,7 @@ Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la inf
 
 #### Descripción
 
-La función `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->crea una nueva selección de entidades en blanco, no compartible, relacionada con la clase de datos, en memoria<!-- END REF -->.
+The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > Para más información sobre las selecciones de entidades no compartibles, consulte [esta sección](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -832,12 +817,12 @@ Cuando se crea, la selección de entidades no contiene ninguna entidad (`mySelec
 #### Ejemplo
 
 
-```4d 
+```4d
  var $USelection; $OSelection : cs.EmployeeSelection
  $USelection:=ds.Employee.newSelection() //crea una selección de entidades vacía y desordenada
  $OSelection:=ds.Employee.newSelection(dk keep ordered) //crea una selección de entidades vacía y ordenada
 ```
- 
+
 
 <!-- END REF -->
 
@@ -870,7 +855,7 @@ Cuando se crea, la selección de entidades no contiene ninguna entidad (`mySelec
 
 #### Descripción
 
-La función `.query( )`<!-- REF #DataClass.query().Summary -->busca entidades que cumplan con los criterios de búsqueda especificados en *queryString* o *formula* y (opcionalmente) *value*(s)<!-- END REF -->, para todas las entidades de la clase de datos, y devuelve un nuevo objeto de tipo `EntitySelection` que contiene todas las entidades encontradas. Se aplica carga diferida.
+The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carga diferida.
 
 Si no se encuentran entidades coincidentes, se devuelve una `EntitySelection` vacía.
 
@@ -968,7 +953,7 @@ Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* 
 *   valores directos (sin marcadores),
 *   marcadores indexados y/o con nombre.
 
-El uso de marcadores de posición en las consultas **se recomienda** por las siguientes razones:
+Using placeholders in queries **is recommended** for the following reasons:
 
 1.  Evita la inserción de código malicioso: si utiliza directamente variables completadas por el usuario dentro de la cadena de búsqueda, un usuario podría modificar las condiciones de búsqueda introduciendo argumentos de búsqueda adicionales. Por ejemplo, imagine una cadena de búsqueda como:
 
@@ -1020,21 +1005,21 @@ Por ejemplo, con las dos entidades siguientes:
 ```
 Entity 1:
 ds.People.name: "martin"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 
 Entity 2:
 ds.People.name: "smith"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon" 
+                "city":"lyon"
             } , {
                 "kind":"office",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 ```
 
@@ -1096,7 +1081,7 @@ $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2"
 
 Como alternativa a la inserción de fórmulas dentro del parámetro *queryString* (ver arriba), puede pasar directamente un objeto fórmula como criterio de búsqueda booleano. La utilización de un objeto fórmula para las búsquedas es **recomendada** ya que se beneficia de la tokenización, y el código es más fácil de buscar/leer.
 
-La fórmula debe haber sido creada utilizando los comandos [`Formula`](FunctionClass.md#formula) o [`Formula from string`](FunctionClass.md#formula-from-string). En este caso:
+The formula must have been created using the [`Formula`](FunctionClass.md#formula) or [`Formula from string`](FunctionClass.md#formula-from-string) command. En este caso:
 
 *   *fórmula* se evalúa para cada entidad y debe devolver true o false. Durante la ejecución de la búsqueda, si el resultado de la fórmula no es un booleano, se considera como false.
 *   dentro de la *fórmula*, la entidad está disponible a través del objeto `This`.
@@ -1169,6 +1154,7 @@ queryPath:
 ```
 
 #### Ejemplo 1
+
 
 Esta sección ofrece varios ejemplos de búsquedas.
 

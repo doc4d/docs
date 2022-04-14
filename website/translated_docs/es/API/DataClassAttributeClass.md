@@ -83,6 +83,11 @@ Esta propiedad no se devuelve si `.kind` = "relatedEntity" o "relatedEntities".
 
 La propiedad `.exposed` es <!-- REF DataClassAttributeClass.exposed.Summary -->"true" si el atributo está "expuesto" en REST<!-- END REF -->.
 
+
+#### Ver también
+
+[DataClass.getInfo()](DataClassClass.md#getinfo)
+
 <!-- END REF -->
 
 
@@ -106,7 +111,7 @@ La propiedad `.exposed` es <!-- REF DataClassAttributeClass.exposed.Summary -->"
 
 La propiedad `.fieldNumber` <!-- REF DataClassAttributeClass.fieldNumber.Summary -->contiene el número de campo 4D interno del atributo<!-- END REF -->.
 
-Esta propiedad no se devuelve si `.kind` = "relatedEntity" o "relatedEntities".
+This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 > Para la programación genérica, puede utilizar **Num**(dataClassAttribute.fieldNumber) para obtener un valor válido (0) aunque no se devuelva `.fieldNumber`.
 
 
@@ -149,7 +154,7 @@ La propiedad `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 #### Ver también
 
-[`.type`](#type)
+[.type](#type)
 
 <!-- REF DataClassAttributeClass.indexed.Desc -->
 ## .indexed
@@ -162,14 +167,14 @@ La propiedad `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 
 <!-- REF DataClassAttributeClass.indexed.Syntax -->
-**.indexed**: Booleano<!-- END REF -->
+**.indexed** : Boolean<!-- END REF -->
 
 
 #### Descripción
 
 La propiedad `.indexed` <!-- REF DataClassAttributeClass.indexed.Summary -->contiene **True** si hay un índice B-tree o Cluster B-tree en el atributo<!-- END REF -->.
 
-Esta propiedad no se devuelve si `.kind` = "relatedEntity" o "relatedEntities".
+This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 > Para la programación genérica, se puede utilizar **Bool**(dataClassAttribute.indexed) para obtener un valor válido (false) aunque no se devuelva `.indexed`.
 
 <!-- END REF -->
@@ -284,7 +289,7 @@ Dada la siguiente tabla y relación:
 
 
 <!-- REF DataClassAttributeClass.mandatory.Syntax -->
-**.mandatory**: Booleano<!-- END REF -->
+**.mandatory** : Boolean<!-- END REF -->
 
 
 #### Descripción

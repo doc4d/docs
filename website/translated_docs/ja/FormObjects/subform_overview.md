@@ -100,56 +100,56 @@ End if
 
 ケース2: サブフォームの内容が更新され、その更新を親フォームに反映させる必要があります。
 
-サブフォーム内では、時計オブジェクトに紐づいた `Form.clockValue` 式 (時間型) の値がボタンによって変更されます。 This triggers the [On Data Change](../Events/onDataChange.md) form event inside the clock object (this event must be selected for the object), which updates the `Form.parisTime` value in the main form.
+サブフォーム内では、時計オブジェクトに紐づいた `Form.clockValue` 式 (時間型) の値がボタンによって変更されます。 これにより、時計オブジェクトの内部で [On Data Change](../Events/onDataChange.md) フォームイベント (当該イベントがオブジェクトに対して選択されている必要があります) がトリガーされ、メインフォームの `Form.parisTime` 値を更新します。
 
 以下のコードが実行されます:
 
 ```4d  
-// subform clock object method
-If (Form event code=On Data Change) //whatever the way the value is changed
-    OBJECT SET SUBFORM CONTAINER VALUE(Form.clockValue) //Push the value to the container
+// サブフォームの時計オブジェクトのメソッド
+If (Form event code=On Data Change) // 値が変化したときに
+    OBJECT SET SUBFORM CONTAINER VALUE(Form.clockValue) // コンテナーに値をプッシュします
 End if
 ```
 
 ![](assets/en/FormObjects/update-main-form.png)
 
-Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime` in the subform container is also updated.
+サブフォームの `Form.clockValue` の値が変化するたびに、サブフォームコンテナーの `Form.parisTime` も更新されます。
 
 
-> If the variable or expression value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform, 2-Form method of subform, 3-Object methods of parent form, 4-Form method of parent form
+> 変数あるいは式の値が複数の場所で設定されている場合、4D は最後にロードされた値を使用します。 以下のロード順が適用されます:<br /> 1 - サブフォームのオブジェクトメソッド<br /> 2 - サブフォームのフォームメソッド<br /> 3 - 親フォームのオブジェクトメソッド<br /> 4 - 親フォームのフォームメソッド
 
 
 ### 親フォームとサブフォームの同期 (複数値)
 
-By default, 4D creates a variable or expression of [object type](properties_Object.md#expression-type) for a subform container, which allows you to share values in the context of the subform using the `Form` command ([see below](#using-the-subform-bound-object)). The contents of this object can be read and/or modified from within the parent form and from the subform, allowing you to share multiple values in a local context.
+デフォルトで、4D は各サブフォームコンテナーに [オブジェクト型](properties_Object.md#式の型式タイプ) の変数あるいは式を作成します。 このオブジェクトの中身は親フォームおよびサブフォームから読み書き可能なため、ローカルなコンテキストにおいて複数の値を共有することができます。
 
-When bound a the subform container, this object is returned by the `Form` command directly in the subform. Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself and thus, available to the parent form. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. No event management is necessary.
+サブフォームコンテナーにバインドされている場合、このオブジェクトは `Form` コマンドによって直接サブフォーム内に返されます。 オブジェクトは常に参照によって渡されるため、ユーザーがサブフォーム内でプロパティ値を変更した場合には、その値は自動的にオブジェクト自身に保存され、親フォームでも利用できるようになります。 一方、ユーザーによって、あるいはプログラミングによってオブジェクトのプロパティが親フォーム内で変更された場合も、その値はサブフォーム内で自動更新されます。 つまり、イベント管理は必要ありません。
 
-For example, in a subform, inputs are bound to the `Form` object properties (of the subform form):
+たとえば、サブフォームでは、入力は (サブフォームの) `Form` オブジェクトプロパティにバインドされています。
 
 ![](assets/en/FormObjects/subnew1.png)
 
-In the parent form, you display the subfom twice. Each subform container is bound to an expression which is a property of the `Form` object (of the parent form):
+親フォームでは、サブフォームを 2回表示するとします。 各サブフォームコンテナーは、(親フォームの) `Form` オブジェクトのプロパティである式にバインドされています。
 
 ![](assets/en/FormObjects/subnew2.png)
 
-The button only creates `mother` and `father` properties in the parent's `Form` object:
+ボタンは、親の `Form` オブジェクトに `mother` と `father` プロパティを作成するだけです。
 
 ```4d
-//Add values button object method
+// Add values ボタンのオブジェクトメソッド
 Form.mother:=New object("lastname"; "Hotel"; "firstname"; "Anne")
 Form.father:=New object("lastname"; "Golf"; "firstname"; "Félix")
 ```
 
-When you execute the form and click on the button, you see that all values are correctly displayed:
+フォームを実行し、ボタンをクリックすると、すべての値が正しく表示されていることがわかります:
 
 ![](assets/en/FormObjects/subnew3.png)
 
-If you modify a value either in the parent form or in the subform, it is automatically updated in the other form because the same object is used:
+同じオブジェクトが使用されているため、親フォームまたはサブフォームで値を変更すると、もう一方のフォームでも値が自動更新されます:
 
 ![](assets/en/FormObjects/subnew4.png) ![](assets/en/FormObjects/subnew5.png)
 
-### Using pointers (compatibility)
+### ポインターの使用 (互換性)
 
 In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
 

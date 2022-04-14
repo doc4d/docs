@@ -1065,7 +1065,7 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 | 引数     | タイプ     |    | 説明               |
 | ------ | ------- | -- | ---------------- |
 | file   | 4D.File | -> | File オブジェクト      |
-| reqNum | 整数      | -> | メモリ内に保管するリクエストの数 |
+| reqNum | Integer | -> | メモリ内に保管するリクエストの数 |
 <!-- END REF -->
 
 

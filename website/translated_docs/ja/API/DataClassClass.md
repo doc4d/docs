@@ -15,7 +15,6 @@ title: データクラス
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
 | [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
-| [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
@@ -187,40 +186,20 @@ var $text : Text
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
 
 $cache:=$ds.Persons.getRemoteCache()
 
 $ds.Persons.clearRemoteCache()
-// Persons データクラスのキャッシュ = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
+// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
 <!-- END REF -->
 
-<!-- REF DataClassClass.exposed.Desc -->
-## .exposed
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R3 | 追加 |
-</details>
-
-
-<!-- REF DataClassClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
-
-
-#### 説明
-
-`.exposed` プロパティは、 <!-- REF DataClassClass.exposed.Summary -->データクラスが REST で公開されている場合に true<!-- END REF -->です。
-
-
-<!-- END REF -->
 
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
@@ -239,8 +218,8 @@ $ds.Persons.clearRemoteCache()
 <!-- REF #DataClassClass.fromCollection().Params -->
 | 引数        | タイプ                |    | 説明                        |
 | --------- | ------------------ |:--:| ------------------------- |
-| objectCol | Collection         | -> | エンティティにマップするオブジェクトのコレクション |
-| settings  | Object             | -> | ビルドオプション: context         |
+| objectCol | コレクション             | -> | エンティティにマップするオブジェクトのコレクション |
+| settings  | オブジェクト             | -> | ビルドオプション: context         |
 | 戻り値       | 4D.EntitySelection | <- | コレクションから作成したエンティティセレクション  |
 <!-- END REF -->
 
@@ -437,11 +416,11 @@ $ds.Persons.clearRemoteCache()
 
 
 <!-- REF #DataClassClass.get().Params -->
-| 引数         | タイプ              |    | 説明                      |
-| ---------- | ---------------- |:--:| ----------------------- |
-| primaryKey | Integer または Text | -> | 取得するエンティティのプライマリーキー値    |
-| settings   | Object           | -> | ビルドオプション: context       |
-| 戻り値        | 4D.Entity        | <- | 指定したプライマリーキーに合致するエンティティ |
+| 引数         | タイプ       |    | 説明                      |
+| ---------- | --------- |:--:| ----------------------- |
+| primaryKey | 整数または文字列  | -> | 取得するエンティティのプライマリーキー値    |
+| settings   | オブジェクト    | -> | ビルドオプション: context       |
+| 戻り値        | 4D.Entity | <- | 指定したプライマリーキーに合致するエンティティ |
 <!-- END REF -->
 
 #### 説明
@@ -495,8 +474,8 @@ $ds.Persons.clearRemoteCache()
 
  $e4:=ds.Employee.get(4;$settings2)
  completeSummary($e4) // completeSummary メソッドには、"summary" コンテキストに付随する最適化が適用されます
-``` 
- 
+```
+
 
 <!-- END REF -->
 
@@ -513,16 +492,16 @@ $ds.Persons.clearRemoteCache()
 **.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ     |    | 説明                  |
-| ------ | ------- | -- | ------------------- |
-| result | Integer | <- | データクラスに含まれる全エンティティ数 |
+| 引数     | タイプ |    | 説明                                  |
+| ------ | --- | -- | ----------------------------------- |
+| result | 整数  | <- | Number of entities in the dataclass |
 <!-- END REF -->
 
 #### 説明
 
-`.getCount()` 関数は、 <!-- REF #DataClassClass.getCount().Summary --> データクラスに含まれる総エンティティ数を返します<!-- END REF -->。
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
-トランザクション内でこの関数を使用した場合、トランザクション中に作成されたエンティティは考慮されます。
+If this function is used within a transaction, entities created during the transaction will be taken into account.
 
 #### 例題
 
@@ -532,7 +511,7 @@ var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$number:=$ds.Persons.getCount() 
+$number:=$ds.Persons.getCount()
 ```
 
 <!-- END REF -->
@@ -559,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### 説明
 
-`.getDataStore( )` 関数は、 <!-- REF #DataClassClass.getDataStore().Summary -->指定したデータクラスが属しているデータストアを返します<!-- END REF -->。
+The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 返されるデータストアは次のいずれかです:
 
@@ -596,9 +575,10 @@ $number:=$ds.Persons.getCount()
 ## .getInfo()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v17 R5 | 追加 |
+| バージョン  | 内容                     |
+| ------ | ---------------------- |
+| v19 R3 | Added exposed property |
+| v17 R5 | 追加                     |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -613,21 +593,22 @@ $number:=$ds.Persons.getCount()
 
 #### 説明
 
-`.getInfo( )` 関数は、 <!-- REF #DataClassClass.getInfo().Summary -->データクラスの情報を提供するオブジェクトを返します<!-- END REF -->。 このメソッドは汎用的なコードを書くのに有用です。
+The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
-| プロパティ       | タイプ     | 説明                   |
-| ----------- | ------- | -------------------- |
-| name        | Text    | データクラスの名称            |
-| primaryKey  | Text    | データクラスのプライマリーキー属性の名称 |
-| tableNumber | Integer | 内部的な 4Dテーブル番号        |
+| プロパティ       | タイプ  | 説明                                       |
+| ----------- | ---- | ---------------------------------------- |
+| exposed     | ブール  | True if the dataclass is exposed in REST |
+| name        | Text | データクラスの名称                                |
+| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称                     |
+| tableNumber | 整数   | 内部的な 4Dテーブル番号                            |
 
 
 
 #### 例題 1
 
-```4d 
+```4d
  #DECLARE ($entity : Object)  
  var $status : Object
 
@@ -653,13 +634,17 @@ $number:=$ds.Persons.getCount()
 
 #### 例題 3
 
-```4d 
+```4d
  var $pk : Text
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
  $dataClassAttribute:=ds.Employee[$pk] // 必要に応じてプライマリーキー属性へのアクセスが可能です
 ```
+
+#### 参照
+
+[DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
 
 <!-- END REF -->
 
@@ -676,18 +661,18 @@ $number:=$ds.Persons.getCount()
 **.getRemoteCache**() : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| 引数     | タイプ    |    | 説明                               |
-| ------ | ------ | -- | -------------------------------- |
-| result | Object | <- | データクラスの ORDAキャッシュの内容を記述したオブジェクト。 |
+| 引数     | タイプ    |    | 説明                                                                  |
+| ------ | ------ | -- | ------------------------------------------------------------------- |
+| result | オブジェクト | <- | Object describing the contents of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
-`.getRemoteCache()` 関数は、 <!-- REF #DataClassClass.getRemoteCache().Summary -->データクラスの ORDAキャッシュの内容を記述したオブジェクトを返します<!-- END REF -->。
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
 
-4D のシングルユーザーアプリケーションからこの関数を呼び出した場合、`Null` が返されます。
+Calling this function from a 4D single-user application returns `Null`.
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
@@ -698,7 +683,7 @@ $number:=$ds.Persons.getCount()
 | timeout    | Integer    | キャッシュの新しいエントリーが期限切れとなるまでの残り時間。          |
 | entries    | Collection | キャッシュ内の各エンティティにつき、1つのエントリーオブジェクトを格納します。 |
 
-エントリーコレクション内の各エントリーオブジェクトは、以下のプロパティを持ちます:
+Each entry object in the `entries` collection has the following properties:
 
 | プロパティ   | タイプ     | 説明                   |
 | ------- | ------- | -------------------- |
@@ -706,23 +691,23 @@ $number:=$ds.Persons.getCount()
 | expired | Boolean | エントリーが期限切れの場合に true  |
 | key     | Text    | エンティティのプライマリーキー      |
 
-各エントリーの `data` オブジェクトは、以下のプロパティを持ちます:
-| プロパティ                  | タイプ     | 説明                                                       |
-| ---------------------- | ------- | -------------------------------------------------------- |
-| __KEY                  | String  | エンティティのプライマリーキー                                          |
-| __STAMP                | Longint | データベース内のエンティティのタイムスタンプ                                   |
-| __TIMESTAMP            | String  | データベース内のエンティティのスタンプ (形式: YYYY-MM-DDTHH:MM:SS:ms:Z)       |
-| dataClassAttributeName | Variant | データクラス属性に対応するデータがキャッシュに存在する場合、それはデータベースと同じ型のプロパティに返されます。 |
+The `data` object in each entry contains the following properties:
+| プロパティ                  | タイプ    | 説明                                                                                                                           |
+| ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| __KEY                  | String | Primary key of the entity                                                                                                    |
+| __STAMP                | 倍長整数   | Timestamp of the entity in the database                                                                                      |
+| __TIMESTAMP            | String | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
+| dataClassAttributeName | バリアント  | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
 
-リレートエンティティに関するデータは、data オブジェクトのキャッシュに保存されます。
+Data concerning related entities is stored in the cache of the data object.
 
 #### 例題
 
-次の例で、`$ds.Persons.all()` は、先頭エンティティをそのすべての属性とともにロードします。 その後リクエストの最適化がおこなわれ、`firstname` と `address.city` のみがロードされます。
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
 
-`address.city` は、`Persons` データクラスのキャッシュにロードされることに注意してください。
+Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 
-`Address` データクラスの先頭エンティティだけがキャッシュに格納されます。 先頭エンティティは、ループの最初の繰り返しでロードされます。
+Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -735,9 +720,9 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
 End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
@@ -771,7 +756,7 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 
 #### 説明
 
-`.new( )` 関数は、 <!-- REF #DataClassClass.new().Summary -->メモリ内にデータクラスに空のエンティティを新規作成しそれを返します<!-- END REF -->。
+The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 エンティティオブジェクトはメモリ内に作成されますが、[`.save( )`](EntityClass.md#save) 関数が呼び出されるまでデータベースには保存されません。 エンティティを保存する前に削除した場合、復元することはできません。
 
@@ -785,13 +770,13 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 
 以下のコードは "Log" データクラスに新しいエンティティを作成し、"info" 属性に情報を記録します:
 
-```4d 
+```4d
  var $entity : cs.LogEntity
  $entity:=ds.Log.new() // 参照を作成します
  $entity.info:="New entry" // 情報を格納します
  $entity.save() // エンティティを保存します
 ```
- 
+
 <!-- END REF -->
 
 
@@ -812,14 +797,14 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 <!-- REF #DataClassClass.newSelection().Params -->
 | 引数        | タイプ                |    | 説明                                                                                                      |
 | --------- | ------------------ | -- | ------------------------------------------------------------------------------------------------------- |
-| keepOrder | Integer            | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
+| keepOrder | 整数                 | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
 | 戻り値       | 4D.EntitySelection | <- | データクラスの空の新規エンティティセレクション                                                                                 |
 <!-- END REF -->
 
 
 #### 説明
 
-`.newSelection( )` 関数は、データクラスに紐づいた <!-- REF #DataClassClass.newSelection().Summary -->追加可能な、空の新規エンティティセレクションをメモリ内に作成します<!-- END REF -->。
+The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > 追加可能なエンティティセレクションについての詳細は [共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) を参照ください。
 
@@ -832,12 +817,12 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 #### 例題
 
 
-```4d 
+```4d
  var $USelection; $OSelection : cs.EmployeeSelection
  $USelection:=ds.Employee.newSelection() // 順列なしの空のエンティティセレクションを作成します
  $OSelection:=ds.Employee.newSelection(dk keep ordered) // 順列ありの空のエンティティセレクションを作成します
 ```
- 
+
 
 <!-- END REF -->
 
@@ -860,17 +845,17 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 <!-- REF #DataClassClass.query().Params -->
 | 引数            | タイプ                |    | 説明                                                                                   |
 | ------------- | ------------------ | -- | ------------------------------------------------------------------------------------ |
-| queryString   | Text               | -> | 検索条件 (文字列)                                                                           |
-| formula       | Object             | -> | 検索条件 (フォーミュラオブジェクト)                                                                  |
+| queryString   | テキスト               | -> | 検索条件 (文字列)                                                                           |
+| formula       | オブジェクト             | -> | 検索条件 (フォーミュラオブジェクト)                                                                  |
 | value         | any                | -> | プレースホルダー用の値                                                                          |
-| querySettings | Object             | -> | クエリオプション: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan |
+| querySettings | オブジェクト             | -> | クエリオプション: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan |
 | 戻り値           | 4D.EntitySelection | <- | *queryString* または *formula* に渡した検索条件に合致するエンティティから構成された新しいエンティティセレクション                |
 <!-- END REF -->
 
 
 #### 説明
 
-`.query( )` 関数は、データクラスの全エンティティから、 <!-- REF #DataClassClass.query().Summary -->*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
+The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. この関数には、レイジーローディングが適用されます。
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
@@ -968,7 +953,7 @@ attributePath|formula 比較演算子 値
 *   定数値 (プレースホルダーを使用しない)
 *   インデックスプレースホルダーや命名プレースホルダー
 
-以下の理由から、クエリでのプレースホルダーの使用が**推奨されます**:
+Using placeholders in queries **is recommended** for the following reasons:
 
 1.  悪意あるコードの挿入を防ぎます: ユーザーによって値が代入された変数をクエリ文字列として直接使用した場合、余計なクエリ引数を入力することでユーザーがクエリ条件を変更する可能性があります。 たとえば、以下のようなクエリ文字列を考えます:
 
@@ -1018,23 +1003,23 @@ $vSingles:=ds.Person.query("spouse = :1";Null) // 機能しません
 たとえば、以下のような 2件のエンティティがあるとき:
 
 ```
-エンティティ1:
+Entity 1:
 ds.People.name: "martin"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 
-エンティティ2:
+Entity 2:
 ds.People.name: "smith"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon" 
+                "city":"lyon"
             } , {
                 "kind":"office",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 ```
 
@@ -1061,29 +1046,29 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 ... クエリは、"kind=home" かつ "city=paris" である "locations" 要素を持つエンティティ "martin" のみを返します。 "home" と"paris" が同じコレクション要素内にない "smith" は、クエリの結果に含まれません。
 
 
-**N対Nリレーションのクエリ**
+**Queries in many-to-many relations**
 
-ORDA は、N対Nリレーションにおけるクエリを容易にするための特別な構文を提供します。 このような場合には、`AND` 演算子を使って同じ属性の異なる値を検索する必要があるかもしれません。 たとえば、以下のようなストラクチャーの場合を考えます:
+ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
 
 ![alt-text](assets/en/API/manytomany.png)
 
-俳優 A と俳優 B の *両方* が出演している映画をすべて検索したいとします。 `AND` 演算子を使った単純なクエリを書いても、うまくいきません:
+Imagine that you want to search all movies in which *both* actor A and actor B have a role. If you write a simple query using an `AND` operator, it will not work:
 
 ```4d
 // 無効なコード
 $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor.lastName = :2";"Hanks";"Ryan")  
 // $es is empty
 ```
-基本的に、この問題はクエリの内部ロジックに関連しています。値が "A" と "B" の両方である属性を検索することはできません。
+Basically, the issue is related to the internal logic of the query: you cannot search for an attribute whose value would be both "A" and "B".
 
-このようなクエリを実行するために、ORDA では特別な構文を用意しています。具体的には、文字列内で使用される追加のリレート属性ずべてにおいて、**{}** の間に *クラスインデックス* を追加します。
+To make it possible to perform such queries, ORDA allows a special syntax: you just need to add a *class index* between **{}** in all additional relation attributes used in the string:
 
 ```4d
 "relationAttribute.attribute = :1 AND relationAttribute{x}.attribute = :2 [AND relationAttribute{y}.attribute...]"
 ```
-**{x}** は、リレーション属性のために新たな参照を作成するよう、ORDA に指示します。 すると、ORDA は必要なビットマップ操作を内部で実行します。 **x** は **0 以外** の任意の数であることに注意してください ({1}、{2}、{1540}...)。 ORDA は、各クラスインデックス用の一意な参照をクエリ内においてのみ必要とします。
+**{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
 
-この例では、次のようになります:
+In our example, it would be:
 
 ```4d
 // 有効なコード
@@ -1169,6 +1154,7 @@ queryPath:
 ```
 
 #### 例題 1
+
 
 この例題では、様々なクエリの例を紹介します。
 
@@ -1463,39 +1449,39 @@ softwares:{
 **.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| 引数       | タイプ    |    | 説明                                            |
-| -------- | ------ | -- | --------------------------------------------- |
-| settings | Object | -> | データクラスの ORDAキャッシュについて、タイムアウトと最大サイズを指定するオブジェクト |
+| 引数       | タイプ    |    | 説明                                                                                 |
+| -------- | ------ | -- | ---------------------------------------------------------------------------------- |
+| settings | オブジェクト | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
-`.setRemoteCacheSettings()` 関数は、 <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->データクラスの ORDAキャッシュについて、タイムアウトと最大サイズを指定します<!-- END REF -->。
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
-*settings* には、以下のプロパティを持つオブジェクトを渡します:
+In the *settings* parameter, pass an object with the following properties:
 
 | プロパティ      | タイプ     | 説明           |
 | ---------- | ------- | ------------ |
 | timeout    | Integer | タイムアウト (秒単位) |
 | maxEntries | Integer | エンティティの最大数   |
 
-`timeout` は、データクラスの ORDAキャッシュのタイムアウトを設定します (デフォルトは 30秒)。 タイムアウトを過ぎると、キャッシュ内のデータクラスのエンティティは期限切れとみなされます。 これは、次のことを意味します:
+`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
 * データはまだ存在します
 * 次にそのデータが必要になったときには、サーバーに要求します
 * エンティティの最大数に達すると、4D は期限切れのデータを自動的に削除します
 
-`timeout` プロパティを設定すると、すでにキャッシュに存在するエンティティに新しいタイムアウトが設定されます。 これは頻繁に変更されないデータを扱う場合、つまり、サーバーへの新たな要求が必要ない場合に便利です。
+Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
-`maxEntries` は、ORDAキャッシュ内のエンティティの最大数を設定します。 デフォルトは 30,000 です。
+`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
 
-最小エントリー数は 300 のため、`maxEntries` の値は 300以上でなくてはなりません。 それ以外の場合は無視され、最大エントリー数は 300 に設定されます。
+The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
-`timeout` および `maxEntries` として有効なプロパティが渡されない場合、キャッシュはデフォルト値または以前に設定された値のまま変更されません。
+If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
-エンティティが保存されると、キャッシュ内で更新され、タイムアウトに達すると期限切れとなります。
+When an entity is saved, it is updated in the cache and expires once the timeout is reached.
 
 #### 例題
 

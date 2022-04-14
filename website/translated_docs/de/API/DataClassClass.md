@@ -15,7 +15,6 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
 | [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
-| [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
@@ -187,10 +186,10 @@ var $text : Text
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
 
 $cache:=$ds.Persons.getRemoteCache()
 
@@ -201,26 +200,6 @@ $ds.Persons.clearRemoteCache()
 
 <!-- END REF -->
 
-<!-- REF DataClassClass.exposed.Desc -->
-## .exposed
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R3  | Added   |
-</details>
-
-
-<!-- REF DataClassClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
-
-
-#### Beschreibung
-
-The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if the dataclass is exposed in REST<!-- END REF -->.
-
-
-<!-- END REF -->
 
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
@@ -495,8 +474,8 @@ This example illustrates the use of the *context* property:
 
  $e4:=ds.Employee.get(4;$settings2)
  completeSummary($e4) //In completeSummary method, the optimization associated to context "summary" is applied
-``` 
- 
+```
+
 
 <!-- END REF -->
 
@@ -532,7 +511,7 @@ var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$number:=$ds.Persons.getCount() 
+$number:=$ds.Persons.getCount()
 ```
 
 <!-- END REF -->
@@ -559,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### Beschreibung
 
-The `.getDataStore( )` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 The datastore can be:
 
@@ -596,9 +575,10 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 ## .getInfo()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes                |
+| ------- | ---------------------- |
+| v19 R3  | Added exposed property |
+| v17 R5  | Added                  |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -613,12 +593,13 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 
 #### Beschreibung
 
-The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. This function is useful for setting up generic code.
+The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. This function is useful for setting up generic code.
 
 **Returned object**
 
 | Property    | Typ      | Beschreibung                             |
 | ----------- | -------- | ---------------------------------------- |
+| exposed     | Boolean  | True if the dataclass is exposed in REST |
 | name        | Text     | Name of the dataclass                    |
 | primaryKey  | Text     | Name of the primary key of the dataclass |
 | tableNumber | Ganzzahl | Internal 4D table number                 |
@@ -627,7 +608,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 
 #### Beispiel 1
 
-```4d 
+```4d
  #DECLARE ($entity : Object)  
  var $status : Object
 
@@ -653,13 +634,17 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 
 #### Example 3
 
-```4d 
+```4d
  var $pk : Text
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
  $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
 ```
+
+#### See also
+
+[DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
 
 <!-- END REF -->
 
@@ -735,9 +720,9 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
-$text:="" 
+$text:=""
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
 End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
@@ -771,7 +756,7 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 
 #### Beschreibung
 
-The `.new( )` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 The entity object is created in memory and is not saved in the database until the [`.save( )`](EntityClass.md#save) function is called. If the entity is deleted before being saved, it cannot be recovered.
 
@@ -785,13 +770,13 @@ All attributes of the entity are initialized with the **null** value.
 
 This example creates a new entity in the "Log" Dataclass and records information in the "info" attribute:
 
-```4d 
+```4d
  var $entity : cs.LogEntity
  $entity:=ds.Log.new() //create a reference
  $entity.info:="New entry" //store some information
  $entity.save() //save the entity
 ```
- 
+
 <!-- END REF -->
 
 
@@ -819,7 +804,7 @@ This example creates a new entity in the "Log" Dataclass and records information
 
 #### Beschreibung
 
-The `.newSelection( )` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > For information on non-shareable entity selections, please refer to [this section](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -832,12 +817,12 @@ When created, the entity selection does not contain any entities (`mySelection.l
 #### Beispiel
 
 
-```4d 
+```4d
  var $USelection; $OSelection : cs.EmployeeSelection
  $USelection:=ds.Employee.newSelection() //create an unordered empty entity selection
  $OSelection:=ds.Employee.newSelection(dk keep ordered) //create an ordered empty entity selection
 ```
- 
+
 
 <!-- END REF -->
 
@@ -870,7 +855,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 
 #### Beschreibung
 
-The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Lazy loading is applied.
+The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Lazy loading is applied.
 
 If no matching entities are found, an empty `EntitySelection` is returned.
 
@@ -1020,21 +1005,21 @@ For example, with the following two entities:
 ```
 Entity 1:
 ds.People.name: "martin"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 
 Entity 2:
 ds.People.name: "smith"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon" 
+                "city":"lyon"
             } , {
                 "kind":"office",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 ```
 
@@ -1169,6 +1154,7 @@ queryPath:
 ```
 
 #### Beispiel 1
+
 
 This section provides various examples of queries.
 

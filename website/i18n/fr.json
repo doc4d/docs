@@ -226,7 +226,7 @@
         "title": "Débogage depuis des machines distantes"
       },
       "Debugging/debugLogFiles": {
-        "title": "Description des fichiers historiques"
+        "title": "Description des fichiers d'historique"
       },
       "Desktop/building": {
         "title": "Générateur d'application"
@@ -1042,7 +1042,7 @@
     "Web Data Explorer|no description given": "Explorateur de données Web",
     "Language Reference (4D Doc Center)|no description given": "Langage (4D Doc Center)",
     "Access Rights|no description given": "Droits d'accès",
-    "Description of log files|no description given": "Description des fichiers historiques",
+    "Description of log files|no description given": "Description des fichiers d'historique",
     "Command Line Interface|no description given": "Interface de ligne de commande",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Préférences",
