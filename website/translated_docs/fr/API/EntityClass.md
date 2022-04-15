@@ -672,7 +672,7 @@ Les clés primaires peuvent être des nombres (integer) ou des textes. Vous pouv
 | result     | Text | <- | Attirbuts de contexte associés à l'entity, séparés par une virgule |
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **Mode avancé :** Cette fonction est destinée aux développeurs qui souhaitent personnaliser les fonctionnalités par défaut de ORDA dans le cadre de configurations spécifiques. Dans la plupart des cas, vous n'aurez pas besoin de l'utiliser.
 
 
 #### Description
