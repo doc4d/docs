@@ -190,7 +190,7 @@ Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
 
 #### Exemplo 3
 
-Working with several remote datastores:
+Trabalhando com várias datastores remotas:
 
 ```4d
  var $connectTo : Object
@@ -203,9 +203,9 @@ Working with several remote datastores:
  ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign students")
 ```
 
-#### Error management
+#### Gestão de erros
 
-In case of error, the command returns **Null**. If the remote datastore cannot be reached (wrong address, web server not started, http and https not enabled...), error 1610 "A remote request to host XXX has failed" is raised. You can intercept this error with a method installed by `ON ERR CALL`.
+Em caso de erro, o comando devolve **Null**. Se não for possível acessar o armazem de dados remotos (endereço incorreto, servidor web não inciiado, http e https não habilitados...), se produz o erro 1610 " Uma petição remota ao host XXX falhou". Pode interceptar este erro com um método instalado por `ON ERR CALL`.
 
 
 
@@ -222,9 +222,9 @@ In case of error, the command returns **Null**. If the remote datastore cannot b
 ***.dataclassName*** : 4D.DataClass<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-Each dataclass in a datastore is available as a property of the [DataStore object](ORDA/dsMapping.md#datastore)data. The returned object <!-- REF DataStoreClass.dataclassName.Summary -->contains a description of the dataclass<!-- END REF -->.
+Cada classe de dados de um armazém de dados está disponível como uma propriedad de objeto [DataStore](ORDA/dsMapping.md#datastore)data. O objeto devolvido <!-- REF DataStoreClass.dataclassName.Summary -->contém uma descrição da classe de dados<!-- END REF -->.
 
 
 #### Exemplo
@@ -232,10 +232,10 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 ```4d
  var $emp : cs.Employee
  var $sel : cs.EmployeeSelection
- $emp:=ds.Employee //$emp contains the Employee dataclass
- $sel:=$emp.all() //gets an entity selection of all employees
+ $emp:=ds.Employee //$emp contiene la dataclass Employee 
+ $sel:=$emp.all() //obtém uma seleção de entidades de todos os empregados
 
-  //you could also write directly:
+  //também pode escrever diretamente:
  $sel:=ds.Employee.all()
 ```
 
@@ -259,24 +259,24 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 **.cancelTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parâmetros | Tipo |  | Descrição                  |
+| ---------- | ---- |::| -------------------------- |
+|            |      |  | Não exige nenhum parâmetro |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.cancelTransaction()` function <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancels the transaction<!-- END REF --> opened by the [`.startTransaction()`](#starttransaction) function at the corresponding level in the current process for the specified datastore.
+A função `.cancelTransaction()` <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancela a transação<!-- END REF --> aberta pela função [`.startTransaction()`](#starttransaction) no nível correspondente do processo atual para o datastore especificado.
 
-The `.cancelTransaction()` function cancels any changes made to the data during the transaction.
+A função `.cancelTransaction()` cancela qualquer mudança realizado nos dados durante a transação.
 
-You can nest several transactions (sub-transactions). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using the [`.validateTransaction()`](#validatetransactions) function.
+Pode aninhar várias transações (subtransações). Se a transação principal for cancelada, todas suas subtransações também são canceladas, mesmo se validadas individualmente usando a função [`.validateTransaction()`](#validatetransactions).
 
 
 #### Exemplo
 
-See example for the [`.startTransaction()`](#starttransaction) function.
+Ver  exemplo da função [`.startTransaction()`](#starttransaction).
 
 
 <!-- END REF -->
@@ -297,15 +297,15 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
-| Parameter | Type   |    | Description                                                                 |
-| --------- | ------ |:--:| --------------------------------------------------------------------------- |
-| Result    | Objeto | <- | Information about the encryption of the current datastore and of each table |
+| Parâmetros | Tipo   |    | Descrição                                                             |
+| ---------- | ------ |:--:| --------------------------------------------------------------------- |
+| Resultados | Objeto | <- | Informação sobre o cifrado do armazém de dados atual e de cada tabela |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().Summary -->returns an object providing the encryption status for the current data file<!-- END REF --> (i.e., the data file of the `ds` datastore). The status for each table is also provided.
+A função `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Summary -->devolve um objeto que proporciona o estado de criptografia do arquivo de datos atual<!-- END REF --> (ou seja, o arquivo de dados do `ds` datastore). Também se proporciona o estado de cada tabela.
 > Use the `Data file encryption status` command to determine the encryption status of any other data file.
 
 
@@ -758,7 +758,7 @@ You want to log ORDA client requests in memory:
 The `.startTransaction()` function <!-- REF #DataStoreClass.startTransaction().Summary -->starts a transaction in the current process on the database matching the datastore to which it applies<!-- END REF -->. Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
 > If this method is called on the main datastore (i.e. the datastore returned by the `ds` command), the transaction is applied to all operations performed on the main datastore and on the underlying database, thus including ORDA and classic languages.
 
-You can nest several transactions (sub-transactions). Each transaction or sub-transaction must eventually be cancelled or validated. Note that if the main transaction is cancelled, all of its sub-transactions are also cancelled even if they were validated individually using the `.validateTransaction()` function.
+Pode aninhar várias transações (subtransações). Each transaction or sub-transaction must eventually be cancelled or validated. Note that if the main transaction is cancelled, all of its sub-transactions are also cancelled even if they were validated individually using the `.validateTransaction()` function.
 
 
 #### Exemplo
@@ -862,7 +862,7 @@ The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransacti
 
 The function saves the changes to the data on the datastore that occurred during the transaction.
 
-You can nest several transactions (sub-transactions). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
+Pode aninhar várias transações (subtransações). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
 
 
 #### Exemplo
