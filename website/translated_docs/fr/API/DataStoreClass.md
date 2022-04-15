@@ -64,7 +64,7 @@ Vous pouvez également obtenir une référence sur un datastore distant ouvert e
 
 Si aucun datastore nommé *localID* n'est trouvé, la commande renvoie **Null**.
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+Les objets disponibles dans le `cs.Datastore` sont créés à partir de la base de données cible en fonction des [règles générales](ORDA/dsMapping.md#règles-générales) de correspondance d'ORDA.
 
 #### Exemple 1
 
@@ -137,7 +137,7 @@ Si aucune base de données correspondante n'est trouvée, `Open datastore` retou
 
 *localID* est un alias local de la session ouverte sur le datastore distant. Si *localID* existe déjà dans l'application, il est utilisé. Sinon, une nouvelle session *localID* est créée lors de l’utilisation de l’objet datastore.
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+Les objets disponibles dans le `cs.Datastore` sont créés à partir de la base de données cible en fonction des [règles générales](ORDA/dsMapping.md#règles-générales) de correspondance d'ORDA.
 
 Une fois la session ouverte, les instructions suivantes deviennent équivalentes et renvoient une référence sur le même objet datastore :
 
@@ -302,11 +302,11 @@ Voir l'exemple de la fonction [`.startTransaction()`](#starttransaction).
 
 #### Description
 
-The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+La fonction `.clearAllRemoteContexts()` <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->efface tous les attributs pour tous les contextes actifs dans le datastore<!-- END REF -->.
 
-This function is mainly used in the context of debugging. One thing to keep in mind is that when you open the debugger, it sends requests to the server and queries all the dataclass attributes to display them. This can overload your contexts with unnecessary data.
+Cette fonction est utile principalement dans le contexte du débogage. Gardez à l'esprit que lorsque vous ouvrez le débogueur, il envoie des requêtes au serveur et récupère tous les attributs de la dataclass pour les afficher. Cela peut surcharger vos contextes avec des données inutiles.
 
-In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
+Si cela se produit, vous pouvez utiliser `.clearAllRemoteContexts()` pour réinitialiser vos contextes.
 
 #### Voir aussi
 
@@ -397,24 +397,24 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
 **.getAllRemoteContexts()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
-| Paramètres | Type   |    | Description                                |
-| ---------- | ------ | -- | ------------------------------------------ |
-| Résultat   | Object | <- | Collection of optimization context objects |
+| Paramètres | Type   |    | Description                                  |
+| ---------- | ------ | -- | -------------------------------------------- |
+| Résultat   | Object | <- | Collection d'objets contextes d'optimisation |
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **Mode avancé :** Cette fonction est destinée aux développeurs qui souhaitent personnaliser les fonctionnalités par défaut de ORDA dans le cadre de configurations spécifiques. Dans la plupart des cas, vous n'aurez pas besoin de l'utiliser.
 
 #### Description
 
-The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
+La fonction `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->retourne une collection d'objets contenant des informations sur tous les contextes d'optimisation actifs dans le datastore<!-- END REF -->.
 
-> For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+> Pour plus d'informations sur la création des contextes, voir [Optimisation client/serveur](../ORDA/remoteDatastores.md#optimisation-clientserveur).
 
-Each object in the returned collection has the properties listed in the [`.getRemoteContextInfo()`](#properties-of-the-returned-object) section.
+Chaque objet de la collection retournée contient les propriétés listées dans la section [`.getRemoteContextInfo()`](#objet-retourné).
 
 #### Exemple
 
-The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
+Le code suivant définit deux contextes et les récupère à l'aide de `.getAllRemoteContexts()` :
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -426,10 +426,10 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-// Open remote datastore
+// Accès datastore distant
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-// Set context A
+// définition contexte A
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
@@ -437,7 +437,7 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 
-// Set context B
+// définition contexte B
 $contextB:=New object("context"; "contextB")
 $addresses:=$ds.Address.all($contextB)
 $text:="" 
@@ -445,13 +445,13 @@ For each ($a; $addresses)
     $text:=$a.zipCode
 End for each 
 
-// Get all remote contexts (in this case, contextA and contextB)
+// récupérer tous les contextes distants (dans ce cas, contextA et contextB)
 $info:=$ds.getAllRemoteContexts()
 //$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
 {name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
 ```
 
-> This example serves as a demonstration, it is not meant for real implementation.
+> Cet exemple est à but de démonstration, il n'est pas destiné à une implémentation réelle.
 
 #### Voir aussi
 
@@ -540,36 +540,36 @@ Sur un datastore distant :
 **.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
 
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
-| Paramètres  | Type   |    | Description                             |
-| ----------- | ------ | -- | --------------------------------------- |
-| contextName | Text   | -> | Name of the context                     |
-| Résultat    | Object | <- | Description of the optimization context |
+| Paramètres  | Type   |    | Description             |
+| ----------- | ------ | -- | ----------------------- |
+| contextName | Text   | -> | Nom du contexte         |
+| Résultat    | Object | <- | Description du contexte |
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **Mode avancé :** Cette fonction est destinée aux développeurs qui souhaitent personnaliser les fonctionnalités par défaut de ORDA dans le cadre de configurations spécifiques. Dans la plupart des cas, vous n'aurez pas besoin de l'utiliser.
 
 #### Description
 
-The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
+La fonction `.getRemoteContextInfo()` <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> retourne un objet qui contient des informations sur le contexte d'optimisation *contextName* dans le datastore.<!-- END REF -->.
 
-For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+Pour plus d'informations sur la création des contextes, voir [Optimisation client/serveur](../ORDA/remoteDatastores.md#optimisation-clientserveur).
 
 #### Objet retourné
 
-The returned object has the following properties:
+L'objet retourné contient les propriétés suivantes :
 
-| Propriété              | Type | Description                                                                                                                                                                                                                                                                   |
-| ---------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                   | Text | Name of the context                                                                                                                                                                                                                                                           |
-| main                   | Text | Attribute(s) associated to the context (attribute names are separated by a comma)                                                                                                                                                                                             |
-| dataclass              | Text | Nom de la dataclass                                                                                                                                                                                                                                                           |
-| currentItem (optional) | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| Propriété               | Type | Description                                                                                                                                                                                                                                                                                             |
+| ----------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                    | Text | Nom du contexte                                                                                                                                                                                                                                                                                         |
+| main                    | Text | Attribut(s) associé(s) au contexte (les noms d'attributs sont séparés par des virgules)                                                                                                                                                                                                                 |
+| dataclass               | Text | Nom de la dataclass                                                                                                                                                                                                                                                                                     |
+| currentItem (optionnel) | Text | Attributs du [mode page](../ORDA/remoteDatastores.md#listbox-basée-sur-une-sélection-dentités) si le contexte est lié à une list box. Retourn `Null` ou un élément de texte vide si le contexte n'est pas utilisé pour une list box, ou s'il n'y a pas de contexte pour l'élément courant (currentItem) |
 
-Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes.
+Comme les contextes se comportent comme des filtres d'attributs, si *main* est retourné vide, cela signifie qu'aucun filtre n'est appliqué et que le serveur donc retourne tous les attributs de la dataclass.
 
 #### Exemple
 
-See the example from the [.setRemoteContextInfo()](#example-1-3) section.
+Voir l'exemple de la section [.setRemoteContextInfo()](#example-1-3).
 
 #### Voir aussi
 
@@ -817,44 +817,44 @@ Vous créez une méthode projet *protectDataFile* à appeler par exemple avant l
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 | Paramètres      | Type         |    | Description                                                               |
 | --------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| contextName     | Text         | -> | Name of the context                                                       |
+| contextName     | Text         | -> | Nom du contexte                                                           |
 | dataClassName   | Text         | -> | Nom de la dataclass                                                       |
-| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                 |
-| attributes      | Text         | -> | Attribute list separated by a comma                                       |
-| attributesColl  | Collection   | -> | Collection of attribute names (text)                                      |
-| contextType     | Text         | -> | If provided, value must be "main" or "currentItem"                        |
-| pageLength      | Integer      | -> | Page length of the entity selection linked to the context (default is 80) |
+| dataClassObject | 4D.DataClass | -> | Objet dataclass (e.g datastore.Employee)                                  |
+| attributes      | Text         | -> | Liste d'attributs séparés par des virgules                                |
+| attributesColl  | Collection   | -> | Collection de noms d'attributs (text)                                     |
+| contextType     | Text         | -> | Si passé, "main" ou "currentItem"                                         |
+| pageLength      | Integer      | -> | Taille de page de l'entity selection associée au contexte (80 par défaut) |
 <!-- END REF -->
 
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **Mode avancé :** Cette fonction est destinée aux développeurs qui souhaitent personnaliser les fonctionnalités par défaut de ORDA dans le cadre de configurations spécifiques. Dans la plupart des cas, vous n'aurez pas besoin de l'utiliser.
 
 
 #### Description
 
-The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
+La fonction `.setRemoteContextInfo()` <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->relie les attributs de dataclass spécifiés au contexte d'optimisation *contextName*<!-- END REF -->. Si un contexte d'optimisation existe déjà pour les attributs spécifiés, la commande le remplace.
 
-When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
-* the first entity is not fully loaded as done in automatic mode
-* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
+Lorsque vous passez un contexte aux fonctions de classe ORDA, l'optimisation des requêtes REST est déclenchée immédiatement :
+* la première entité n'est pas chargée intégralement, à la différence du mode automatique
+* des pages de 80 entités (ou de `pageLength` entités) sont imméditament demandées au serveur avec uniquement les attributs du contexte
 
-> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
+> Pour plus d'informations sur la création des contextes, voir [Optimisation client/serveur](../ORDA/remoteDatastores.md#optimisation-clientserveur)
 
-In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
+Dans *contextName*, passez le nom du contexte d'optimisation à lier aux attributs de la dataclass.
 
-To designate the dataclass that will receive the context, you can pass a *dataClassName* or a *dataClassObject*.
+Pour désigner la dataclass qui doit recevoir le contexte, vous pouvez passer un *dataClassName* ou un *dataClassObject*.
 
-To designate the attributes to link to the context, pass either a list of attributes separated by a comma in *attributes* (Text), or a collection of attribute names in *attributesColl* (collection of text).
+Pour désigner les attributs à lier au contexte, passez soit une liste d'attributs séparés par des virgules dans *attributes* (Text), soit une collection de noms d'attributs dans *attributesColl* (collection de textes).
 
-If *attributes* is an empty Text, or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+Si *attributes* est un texte vide, ou si *attributesColl* est une collection vide, tous les attributs scalaires de la dataclass sont intégrés au contexte d'optimisation. Si vous passez un attribut qui n'existe pas dans la dataclass, la fonction l'ignore et une erreur est générée.
 
-You can pass a *contextType* to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box:
-* If set to "main" (default), the *contextName* designates a standard context.
-* If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+Vous pouvez passer un *contextType* pour spécifier si le contexte est standard ou s'il s'agit du contexte de l'élément courant de l'entity selection affichée dans une list box :
+* Si sa valeur est "main" (défaut), *contextName* désigne un contexte standard.
+* Si sa valeur est "currentItem", les attributs passés sont intégrés dans le contexte de l'élément courant.  Voir  [Listbox basée sur une sélection d'entités](../ORDA/remoteDatastores.md#listbox-basée-sur-une-sélection-dentités).
 
-In *pageLength*, specify the number of dataclass entities to request from the server.
+Dans *pageLength*, spécifiez le nombre d'entités de dataclass à demander au serveur.
 
-You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+Vous pouvez passer une *pageLength* pour un attribut relationnel qui est une entity selection (1-vers-N). La syntaxe est `relationAttributeName:pageLength` (e.g employees:20).
 
 #### Exemple 1
 
@@ -866,33 +866,33 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-// Open remote datastore
+// Ouvrir datastore distant
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-// Set context info
+// définir le contexte
 $contextA:=New object("context"; "contextA")
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
-// Send requests to the server using a loop
+// envoi de requêtes au serveur dans une boucle
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname + " " + $p.lastname
 End for each 
 
-// Check contents of the context
+// vérifier le contenu du contexte
 $info:=$ds.getRemoteContextInfo("contextA")
 // $info = {name:"contextA";dataclass:"Persons";main:"firstname, lastname"} 
 ```
 
-> This example serves as a demonstration, it is not meant for real implementation.
+> Cet exemple est à but de démonstration, il n'est pas destiné à une implémentation réelle.
 
 
 #### Exemple 2
 
-The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
+Le code suivant demande des pages de 30 entités de la dataclass `Address` au serveur. Les entités retournées contiennent uniquement l'attribut `zipCode`.
 
-For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
+Pour chaque entité `Address`, 20 entités Persons sont retournées, et elles contiennent uniquement les attributs `lastname` et `firstname` :
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -907,22 +907,22 @@ persons.lastname, persons.firstname"; "main"; 30)
 #### Example 3 - Listbox
 
 ```4d
-// When the form loads
+// Au chargement du formulaire
 Case of 
     : (Form event code=On Load)
 
         Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-       // Set the attributes of the page context
+       // définir les attributs du contexte de page
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
         children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
         Form.persons:=Form.ds.Persons.all(Form.settings) 
-        // Form.persons is displayed in a list box
+        // Form.persons est affiché dans une list box
 End case 
 
-// When you get the attributes in the context of the current item:
+// lorsque vous récupérez les attributs dans le contexte de l'élément courant :
 Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children" 
 ```
