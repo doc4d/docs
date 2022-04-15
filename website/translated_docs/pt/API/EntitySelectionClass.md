@@ -1802,7 +1802,7 @@ Pass in the *selectedEntities* parameter an entity selection containing entities
 
 #### Result
 
-The returned object contains the following properties:
+O objeto retornado contém as propriedades abaixo:
 
 | Propriedade    | Type    | Description                     |
 | -------------- | ------- | ------------------------------- |
