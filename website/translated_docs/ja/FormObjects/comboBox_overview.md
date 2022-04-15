@@ -17,6 +17,8 @@ title: コンボボックス
 
 ### オブジェクトの使用
 
+> This feature is only available in 4D projects.
+
 コンボボックスのデータソースとして、[コレクション](Concepts/dt_collection) を内包した [オブジェクト](Concepts/dt_object.md) を使用できます。 このオブジェクトには、次のプロパティが格納されていなくてはなりません:
 
 | プロパティ          | タイプ             | 説明                                                                                                                                                                                |
