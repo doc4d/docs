@@ -447,7 +447,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### 説明
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+`.getDataStore()` 関数は、 <!-- REF #DataClassClass.getDataStore().Summary -->指定したデータクラスが属しているデータストアを返します<!-- END REF -->。
 
 返されるデータストアは次のいずれかです:
 
@@ -484,10 +484,10 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 ## .getInfo()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                     |
-| ------ | ---------------------- |
-| v19 R3 | Added exposed property |
-| v17 R5 | 追加                     |
+| バージョン  | 内容               |
+| ------ | ---------------- |
+| v19 R3 | exposed プロパティを追加 |
+| v17 R5 | 追加               |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -502,16 +502,16 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 
 #### 説明
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
+`.getInfo()` 関数は、 <!-- REF #DataClassClass.getInfo().Summary -->データクラスの情報を提供するオブジェクトを返します<!-- END REF -->。 このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
-| プロパティ       | タイプ  | 説明                                       |
-| ----------- | ---- | ---------------------------------------- |
-| exposed     | ブール  | True if the dataclass is exposed in REST |
-| name        | Text | データクラスの名称                                |
-| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称                     |
-| tableNumber | 整数   | 内部的な 4Dテーブル番号                            |
+| プロパティ       | タイプ  | 説明                          |
+| ----------- | ---- | --------------------------- |
+| exposed     | ブール  | データクラスが REST に公開されていれば true |
+| name        | Text | データクラスの名称                   |
+| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称        |
+| tableNumber | 整数   | 内部的な 4Dテーブル番号               |
 
 
 
@@ -580,7 +580,7 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 #### 説明
 
-The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+`.new()` 関数は、 <!-- REF #DataClassClass.new().Summary -->メモリ内にデータクラスに空のエンティティを新規作成しそれを返します<!-- END REF -->。
 
 エンティティオブジェクトはメモリ内に作成されますが、[`.save( )`](EntityClass.md#save) 関数が呼び出されるまでデータベースには保存されません。 エンティティを保存する前に削除した場合、復元することはできません。
 
@@ -628,7 +628,7 @@ The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memor
 
 #### 説明
 
-The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+`.newSelection()` 関数は、データクラスに紐づいた <!-- REF #DataClassClass.newSelection().Summary -->追加可能な、空の新規エンティティセレクションをメモリ内に作成します<!-- END REF -->。
 
 > 追加可能なエンティティセレクションについての詳細は [共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) を参照ください。
 
@@ -679,7 +679,7 @@ The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -
 
 #### 説明
 
-The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. この関数には、レイジーローディングが適用されます。
+`.query()` 関数は、データクラスの全エンティティから、 <!-- REF #DataClassClass.query().Summary -->*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
