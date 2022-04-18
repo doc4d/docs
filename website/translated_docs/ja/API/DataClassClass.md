@@ -194,7 +194,7 @@ End for each
 $cache:=$ds.Persons.getRemoteCache()
 
 $ds.Persons.clearRemoteCache()
-// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
+// Persons データクラスのキャッシュ = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
@@ -492,16 +492,16 @@ $ds.Persons.clearRemoteCache()
 **.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ |    | 説明                                  |
-| ------ | --- | -- | ----------------------------------- |
-| result | 整数  | <- | Number of entities in the dataclass |
+| 引数     | タイプ |    | 説明                  |
+| ------ | --- | -- | ------------------- |
+| result | 整数  | <- | データクラスに含まれる全エンティティ数 |
 <!-- END REF -->
 
 #### 説明
 
-The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+`.getCount()` 関数は、 <!-- REF #DataClassClass.getCount().Summary --> データクラスに含まれる総エンティティ数を返します<!-- END REF -->。
 
-If this function is used within a transaction, entities created during the transaction will be taken into account.
+トランザクション内でこの関数を使用した場合、トランザクション中に作成されたエンティティは考慮されます。
 
 #### 例題
 
@@ -538,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### 説明
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+`.getDataStore()` 関数は、 <!-- REF #DataClassClass.getDataStore().Summary -->指定したデータクラスが属しているデータストアを返します<!-- END REF -->。
 
 返されるデータストアは次のいずれかです:
 
@@ -575,10 +575,10 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 ## .getInfo()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                     |
-| ------ | ---------------------- |
-| v19 R3 | Added exposed property |
-| v17 R5 | 追加                     |
+| バージョン  | 内容               |
+| ------ | ---------------- |
+| v19 R3 | exposed プロパティを追加 |
+| v17 R5 | 追加               |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -593,16 +593,16 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 
 #### 説明
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
+`.getInfo()` 関数は、 <!-- REF #DataClassClass.getInfo().Summary -->データクラスの情報を提供するオブジェクトを返します<!-- END REF -->。 このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
-| プロパティ       | タイプ  | 説明                                       |
-| ----------- | ---- | ---------------------------------------- |
-| exposed     | ブール  | True if the dataclass is exposed in REST |
-| name        | Text | データクラスの名称                                |
-| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称                     |
-| tableNumber | 整数   | 内部的な 4Dテーブル番号                            |
+| プロパティ       | タイプ  | 説明                          |
+| ----------- | ---- | --------------------------- |
+| exposed     | ブール  | データクラスが REST に公開されていれば true |
+| name        | Text | データクラスの名称                   |
+| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称        |
+| tableNumber | 整数   | 内部的な 4Dテーブル番号               |
 
 
 
@@ -661,18 +661,18 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 **.getRemoteCache**() : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| 引数     | タイプ    |    | 説明                                                                  |
-| ------ | ------ | -- | ------------------------------------------------------------------- |
-| result | オブジェクト | <- | Object describing the contents of the ORDA cache for the dataclass. |
+| 引数     | タイプ    |    | 説明                               |
+| ------ | ------ | -- | -------------------------------- |
+| result | オブジェクト | <- | データクラスの ORDAキャッシュの内容を記述したオブジェクト。 |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
-The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+`.getRemoteCache()` 関数は、 <!-- REF #DataClassClass.getRemoteCache().Summary -->データクラスの ORDAキャッシュの内容を記述したオブジェクトを返します<!-- END REF -->。
 
-Calling this function from a 4D single-user application returns `Null`.
+4D のシングルユーザーアプリケーションからこの関数を呼び出した場合、`Null` が返されます。
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
@@ -683,7 +683,7 @@ Calling this function from a 4D single-user application returns `Null`.
 | timeout    | Integer    | キャッシュの新しいエントリーが期限切れとなるまでの残り時間。          |
 | entries    | Collection | キャッシュ内の各エンティティにつき、1つのエントリーオブジェクトを格納します。 |
 
-Each entry object in the `entries` collection has the following properties:
+エントリーコレクション内の各エントリーオブジェクトは、以下のプロパティを持ちます:
 
 | プロパティ   | タイプ     | 説明                   |
 | ------- | ------- | -------------------- |
@@ -691,23 +691,23 @@ Each entry object in the `entries` collection has the following properties:
 | expired | Boolean | エントリーが期限切れの場合に true  |
 | key     | Text    | エンティティのプライマリーキー      |
 
-The `data` object in each entry contains the following properties:
-| プロパティ                  | タイプ    | 説明                                                                                                                           |
-| ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| __KEY                  | String | Primary key of the entity                                                                                                    |
-| __STAMP                | 倍長整数   | Timestamp of the entity in the database                                                                                      |
-| __TIMESTAMP            | String | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
-| dataClassAttributeName | バリアント  | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
+各エントリーの `data` オブジェクトは、以下のプロパティを持ちます:
+| プロパティ                  | タイプ    | 説明                                                       |
+| ---------------------- | ------ | -------------------------------------------------------- |
+| __KEY                  | String | エンティティのプライマリーキー                                          |
+| __STAMP                | 倍長整数   | データベース内のエンティティのタイムスタンプ                                   |
+| __TIMESTAMP            | String | データベース内のエンティティのスタンプ (形式: YYYY-MM-DDTHH:MM:SS:ms:Z)       |
+| dataClassAttributeName | バリアント  | データクラス属性に対応するデータがキャッシュに存在する場合、それはデータベースと同じ型のプロパティに返されます。 |
 
-Data concerning related entities is stored in the cache of the data object.
+リレートエンティティに関するデータは、data オブジェクトのキャッシュに保存されます。
 
 #### 例題
 
-In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
+次の例で、`$ds.Persons.all()` は、先頭エンティティをそのすべての属性とともにロードします。 その後リクエストの最適化がおこなわれ、`firstname` と `address.city` のみがロードされます。
 
-Note that `address.city` is loaded in the cache of the `Persons` dataclass.
+`address.city` は、`Persons` データクラスのキャッシュにロードされることに注意してください。
 
-Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+`Address` データクラスの先頭エンティティだけがキャッシュに格納されます。 先頭エンティティは、ループの最初の繰り返しでロードされます。
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -756,7 +756,7 @@ $cacheAddress:=$ds.Adress.getRemoteCache()
 
 #### 説明
 
-The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+`.new()` 関数は、 <!-- REF #DataClassClass.new().Summary -->メモリ内にデータクラスに空のエンティティを新規作成しそれを返します<!-- END REF -->。
 
 エンティティオブジェクトはメモリ内に作成されますが、[`.save( )`](EntityClass.md#save) 関数が呼び出されるまでデータベースには保存されません。 エンティティを保存する前に削除した場合、復元することはできません。
 
@@ -804,7 +804,7 @@ The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memor
 
 #### 説明
 
-The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+`.newSelection()` 関数は、データクラスに紐づいた <!-- REF #DataClassClass.newSelection().Summary -->追加可能な、空の新規エンティティセレクションをメモリ内に作成します<!-- END REF -->。
 
 > 追加可能なエンティティセレクションについての詳細は [共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) を参照ください。
 
@@ -855,7 +855,7 @@ The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -
 
 #### 説明
 
-The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. この関数には、レイジーローディングが適用されます。
+`.query()` 関数は、データクラスの全エンティティから、 <!-- REF #DataClassClass.query().Summary -->*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
@@ -953,7 +953,7 @@ attributePath|formula 比較演算子 値
 *   定数値 (プレースホルダーを使用しない)
 *   インデックスプレースホルダーや命名プレースホルダー
 
-Using placeholders in queries **is recommended** for the following reasons:
+以下の理由から、クエリでのプレースホルダーの使用が**推奨されます**:
 
 1.  悪意あるコードの挿入を防ぎます: ユーザーによって値が代入された変数をクエリ文字列として直接使用した場合、余計なクエリ引数を入力することでユーザーがクエリ条件を変更する可能性があります。 たとえば、以下のようなクエリ文字列を考えます:
 
@@ -1003,7 +1003,7 @@ $vSingles:=ds.Person.query("spouse = :1";Null) // 機能しません
 たとえば、以下のような 2件のエンティティがあるとき:
 
 ```
-Entity 1:
+エンティティ1:
 ds.People.name: "martin"
 ds.People.places:
     { "locations" : [ {
@@ -1011,7 +1011,7 @@ ds.People.places:
                 "city":"paris"
             } ] }
 
-Entity 2:
+エンティティ2:
 ds.People.name: "smith"
 ds.People.places:
     { "locations" : [ {
@@ -1046,29 +1046,29 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 ... クエリは、"kind=home" かつ "city=paris" である "locations" 要素を持つエンティティ "martin" のみを返します。 "home" と"paris" が同じコレクション要素内にない "smith" は、クエリの結果に含まれません。
 
 
-**Queries in many-to-many relations**
+**N対Nリレーションのクエリ**
 
-ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
+ORDA は、N対Nリレーションにおけるクエリを容易にするための特別な構文を提供します。 このような場合には、`AND` 演算子を使って同じ属性の異なる値を検索する必要があるかもしれません。 たとえば、以下のようなストラクチャーの場合を考えます:
 
 ![alt-text](assets/en/API/manytomany.png)
 
-Imagine that you want to search all movies in which *both* actor A and actor B have a role. If you write a simple query using an `AND` operator, it will not work:
+俳優 A と俳優 B の *両方* が出演している映画をすべて検索したいとします。 `AND` 演算子を使った単純なクエリを書いても、うまくいきません:
 
 ```4d
 // 無効なコード
 $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor.lastName = :2";"Hanks";"Ryan")  
 // $es is empty
 ```
-Basically, the issue is related to the internal logic of the query: you cannot search for an attribute whose value would be both "A" and "B".
+基本的に、この問題はクエリの内部ロジックに関連しています。値が "A" と "B" の両方である属性を検索することはできません。
 
-To make it possible to perform such queries, ORDA allows a special syntax: you just need to add a *class index* between **{}** in all additional relation attributes used in the string:
+このようなクエリを実行するために、ORDA では特別な構文を用意しています。具体的には、文字列内で使用される追加のリレート属性ずべてにおいて、**{}** の間に *クラスインデックス* を追加します。
 
 ```4d
 "relationAttribute.attribute = :1 AND relationAttribute{x}.attribute = :2 [AND relationAttribute{y}.attribute...]"
 ```
-**{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
+**{x}** は、リレーション属性のために新たな参照を作成するよう、ORDA に指示します。 すると、ORDA は必要なビットマップ操作を内部で実行します。 **x** は **0 以外** の任意の数であることに注意してください ({1}、{2}、{1540}...)。 ORDA は、各クラスインデックス用の一意な参照をクエリ内においてのみ必要とします。
 
-In our example, it would be:
+この例では、次のようになります:
 
 ```4d
 // 有効なコード
@@ -1449,39 +1449,39 @@ softwares:{
 **.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| 引数       | タイプ    |    | 説明                                                                                 |
-| -------- | ------ | -- | ---------------------------------------------------------------------------------- |
-| settings | オブジェクト | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
+| 引数       | タイプ    |    | 説明                                            |
+| -------- | ------ | -- | --------------------------------------------- |
+| settings | オブジェクト | -> | データクラスの ORDAキャッシュについて、タイムアウトと最大サイズを指定するオブジェクト |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
-The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
+`.setRemoteCacheSettings()` 関数は、 <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->データクラスの ORDAキャッシュについて、タイムアウトと最大サイズを指定します<!-- END REF -->。
 
-In the *settings* parameter, pass an object with the following properties:
+*settings* には、以下のプロパティを持つオブジェクトを渡します:
 
 | プロパティ      | タイプ     | 説明           |
 | ---------- | ------- | ------------ |
 | timeout    | Integer | タイムアウト (秒単位) |
 | maxEntries | Integer | エンティティの最大数   |
 
-`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
+`timeout` は、データクラスの ORDAキャッシュのタイムアウトを設定します (デフォルトは 30秒)。 タイムアウトを過ぎると、キャッシュ内のデータクラスのエンティティは期限切れとみなされます。 これは、次のことを意味します:
 
 * データはまだ存在します
 * 次にそのデータが必要になったときには、サーバーに要求します
 * エンティティの最大数に達すると、4D は期限切れのデータを自動的に削除します
 
-Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
+`timeout` プロパティを設定すると、すでにキャッシュに存在するエンティティに新しいタイムアウトが設定されます。 これは頻繁に変更されないデータを扱う場合、つまり、サーバーへの新たな要求が必要ない場合に便利です。
 
-`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
+`maxEntries` は、ORDAキャッシュ内のエンティティの最大数を設定します。 デフォルトは 30,000 です。
 
-The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
+最小エントリー数は 300 のため、`maxEntries` の値は 300以上でなくてはなりません。 それ以外の場合は無視され、最大エントリー数は 300 に設定されます。
 
-If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
+`timeout` および `maxEntries` として有効なプロパティが渡されない場合、キャッシュはデフォルト値または以前に設定された値のまま変更されません。
 
-When an entity is saved, it is updated in the cache and expires once the timeout is reached.
+エンティティが保存されると、キャッシュ内で更新され、タイムアウトに達すると期限切れとなります。
 
 #### 例題
 
