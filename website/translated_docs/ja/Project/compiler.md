@@ -317,7 +317,7 @@ Apple Silicon用コンパイラーは *Apple M1* などの Apple Silicon プロ�
 
 - **macOS マシン**: Apple Silicon用コンパイラーは Apple のマシン上でのみ実行可能です。
 - **4D プロジェクトアーキテクチャー**: Apple Silicon用コンパイラーは [プロジェクトアーキテクチャー](architecture.md) を使った 4D開発でのみ利用できます。
-- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *Clang* は Apple ネイティブライブラリを必要とします。これらは **Xcode** または **Developer Tools** パッケージより提供されています。
+- **Xcode または Developer Tools**: コンパイルの [2つ目のステップ](#インクリメンタルコンパイルラー) において、プロジェクトを C++ コードからコンパイルするために、Apple Silicon用コンパイラーはオープンソース macOS コンパイラー **Clang** を呼び出します。 *Clang* は Apple ネイティブライブラリを必要とします。これらは **Xcode** または **Developer Tools** パッケージより提供されています。
     - Xcode や Developer Tools をマシン上でインストールされた状態で **すでに持っている場合**、それらのバージョンが 4D の要件と合っていることを確認します。
     - マシンにインストールされた状態でこれらのツールを **持っていない場合**、Apple Developer の Webサイトからいずれかをダウンロードする必要があります。
 
