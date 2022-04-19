@@ -1613,7 +1613,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 
 ##### Returned Object
 
-The returned object contains the following properties:
+O objeto retornado contém as propriedades abaixo:
 
 | Propriedade | Type  | Description                                                                                                                                 |
 | ----------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |

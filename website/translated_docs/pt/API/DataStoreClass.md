@@ -340,18 +340,18 @@ A função `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Sum
 
 **Returned value**
 
-The returned object contains the following properties:
+O objeto retornado contém as propriedades abaixo:
 
-| Propriedade |             |               | Type     | Description                                                                        |
-| ----------- | ----------- | ------------- | -------- | ---------------------------------------------------------------------------------- |
-| isEncrypted |             |               | Booleano | True if the data file is encrypted                                                 |
-| keyProvided |             |               | Booleano | True if the encryption key matching the encrypted data file is provided(*).        |
-| tabelas     |             |               | Objeto   | Object containing as many properties as there are encryptable or encrypted tables. |
-|             | *tableName* |               | Objeto   | Encryptable or Encrypted table                                                     |
-|             |             | name          | Texto    | Name of the table                                                                  |
-|             |             | num           | Número   | Table number                                                                       |
-|             |             | isEncryptable | Booleano | True if the table is declared encryptable in the structure file                    |
-|             |             | isEncrypted   | Booleano | True if the records of the table are encrypted in the data file                    |
+| Propriedade |             |               | Type     | Description                                                                                     |
+| ----------- | ----------- | ------------- | -------- | ----------------------------------------------------------------------------------------------- |
+| isEncrypted |             |               | Booleano | True se o arquivo de dados estiver criptografado                                                |
+| keyProvided |             |               | Booleano | True se proporcionar a chave de encriptação que coincide com o arquivo de dados encriptados(*). |
+| tabelas     |             |               | Objeto   | Objeto que contém tantas propriedades como tabelas encriptadas ou codificadas.                  |
+|             | *tableName* |               | Objeto   | Tabla encriptada ou cifrada                                                                     |
+|             |             | name          | Texto    | Nombre da tabela                                                                                |
+|             |             | num           | Número   | Table number                                                                                    |
+|             |             | isEncryptable | Booleano | Verdadero se a tabela estiver declarada como encriptada no arquivo de estrutura                 |
+|             |             | isEncrypted   | Booleano | True if the records of the table are encrypted in the data file                                 |
 
 (*) The encryption key can be provided:
 

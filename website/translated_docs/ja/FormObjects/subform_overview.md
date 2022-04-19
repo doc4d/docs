@@ -151,17 +151,17 @@ Form.father:=New object("lastname"; "Golf"; "firstname"; "Félix")
 
 ### ポインターの使用 (互換性)
 
-In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
+4D v19 R5 以前のバージョンでは、親フォームとサブフォーム間の同期は **ポインター** を使っておこなわれていました。 たとえば、サブフォームオブジェクトを更新するには、以下のコードを呼び出しておこえます:
 
 ```4d  
-// Subform form method
+// サブフォームメソッド
 If (Form event code=On Bound Variable Change) 
     ptr:=OBJECT Get pointer(Object subform container) 
     clockValue:=ptr-> 
 End if
 ```
 
-**This principle is still supported for compatibility but is now deprecated since it does not allow binding expressions to subforms.** It should no longer be used in your developments. In any cases, we recommend to use the [`Form` command](#synchronizing-parent-form-and-subform-multiple-values) or the [`OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands](#synchronizing-parent-form-and-subform-single-value) to synchronize form and subform values.
+**この方法は互換性のために引き続きサポートされますが、サブフォームに式をバインドすることができないため、廃止予定となります。今後の開発では、この原則は使うべきではありません。 すべての場合において、フォームとサブフォームの値を同期させるには、[`Form` コマンド](#親フォームとサブフォームの同期-複数値) か [`OBJECT Get subform container value`` と <code>OBJECT SET SUBFORM CONTAINER VALUE` コマンド](#親フォームとサブフォームの同期-単一値) を使用することが推奨されます。 </p>
 
 
 ### 高度なフォーム間通信プログラム
