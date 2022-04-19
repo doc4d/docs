@@ -2527,13 +2527,13 @@ De nouvelles colonnes sont insérées sur la gauche, directement avant la premi�
 
 #### Exemple
 
-To insert three columns before the second column:
+Pour insérer 3 colonnes avant la deuxième colonne :
 
 ```4d
 VP INSERT COLUMNS(VP Column("ViewProArea";1;3))
 ```
 
-The results is:
+Le résultat est le suivant :
 
 ![](assets/en/ViewPro/cmd_vpInsertColumns.PNG)
 
@@ -2556,22 +2556,22 @@ The results is:
 
 #### Description
 
-The `VP INSERT ROWS` command <!-- REF #_method_.VP INSERT ROWS.Summary -->inserts rows defined by the *rangeObj*<!-- END REF -->.
+La commande `VP INSERT ROWS` <!-- REF #_method_.VP INSERT ROWS.Summary -->insère les lignes définies par *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass an object containing a range of the starting row (the row which designates where the new row will be inserted) and the number of rows to insert. If the number of rows to insert is omitted (not defined), a single row is inserted.
+Dans *rangeObj*, passez un objet plage indiquant la ligne de début (la ligne qui définit l'emplacement de la nouvelle ligne à insérer) et le nombre de lignes à insérer. Si le nombre de lignes à insérer est omis (non défini), une seule ligne est insérée.
 
-New rows are inserted directly before the first row in the *rangeObj*.
+De nouvelles lignes sont insérées directement avant la première ligne de *rangeObj*.
 
 
 #### Exemple
 
-To insert 3 rows before the first row:
+Pour insérer 3 lignes avant la première ligne :
 
 ```4d
 VP INSERT ROWS(VP Row("ViewProArea";0;3))
 ```
 
-The results is:
+Le résultat est le suivant :
 
 ![](assets/en/ViewPro/cmd_vpInsertRows.PNG)
 
@@ -2649,24 +2649,24 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 <!-- REF #_method_.VP Name.Params -->
 
-| Paramètres | Type    |    | Description                               |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro   |
-| rangeName  | Text    | -> | Existing range name                       |
-| scope      | Integer | -> | Range location (current sheet if omitted) |
-| Résultat   | Object  | <- | Range object of name                      |
+| Paramètres | Type    |    | Description                                         |
+| ---------- | ------- | -- | --------------------------------------------------- |
+| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro             |
+| rangeName  | Text    | -> | Nom de plage existante                              |
+| scope      | Integer | -> | Emplacement de la plage (si omis, feuille courante) |
+| Résultat   | Object  | <- | Plage nommée                                        |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Name` command <!-- REF #_method_.VP Name.Summary -->returns a new range object referencing a named range<!-- END REF -->.
+La commande `VP Name` <!-- REF #_method_.VP Name.Summary -->retourne une nouvelle plage référençant une plage nommée<!-- END REF -->.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-The *rangeName* parameter specifies an existing named cell range.
+Le paramètre *rangeName* indique une plage de cellule nommée existante.
 
-In the optional *scope* parameter, you can designate a specific spreadsheet where *rangeName* is defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet or the entire workbook with the following constants:
+Dans le paramètre optionnel *scope*, vous pouvez désigner une feuille spécifique dans laquelle est défini *rangeName*. Si le paramètre est omis, la feuille courante est utilisée par défaut. Vous pouvez sélectionner explicitement la feuille courante ou l'intégralité du classeur (workbook) à l'aide des constantes suivantes :
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2674,13 +2674,13 @@ In the optional *scope* parameter, you can designate a specific spreadsheet wher
 
 #### Exemple
 
-You want to give a value to the "Total" named range.
+Vous souhaitez assigner une valeur à une plage nommée "Total".
 
 ```4d
-// name the B5 cell as Total
-VP ADD RANGE NAME(VP Cell("ViewProArea";1;4);"Total")
-$name:=VP Name("ViewProArea";" Total")
-VP SET NUM VALUE($name;285;"$#,###.00")
+// nommez la cellule B5 Total
+ VP ADD RANGE NAME(VP Cell("ViewProArea";1;4);"Total")
+ $name:=VP Name("ViewProArea";" Total")
+ VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
 #### Voir aussi
@@ -3100,7 +3100,7 @@ The `VP RESET SELECTION` command <!-- REF #_method_.VP RESET SELECTION.Summary -
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifique dans laquelle sera définie la plage (la numérotation commence à zéro). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifique dans laquelle sera définie la plage (la numérotation commence à zéro). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -3721,7 +3721,7 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom i
 
 Pass the total number of columns in the *columnCount* parameter. *columnCount* doit être supérieur à 0.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -3976,7 +3976,7 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom i
 
 The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -4170,7 +4170,7 @@ You can pass an object defining the columns and rows to freeze in the *paneObj* 
 | rowCount            | Integer | Le nombre de lignes figées en haut de la feuille         |
 | trailingRowCount    | Integer | Le nombre de lignes figées en bas de la feuille          |
 
-Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifique dans laquelle sera définie la plage (la numérotation commence à zéro). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifique dans laquelle sera définie la plage (la numérotation commence à zéro). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -4256,7 +4256,7 @@ Pass the name of the 4D View Pro area to print in *vpAreaName*. Si vous passez u
 
 You can pass an object containing definitions for various printing attributes in the *printInfo* parameter. To view the full list of the available attributes, see [Print Attributes](configuring.md#print-attributes).
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -4378,7 +4378,7 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom i
 
 Pass the total number of rows in the *rowCount* parameter. *rowCount* doit être supérieur à 0.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the *rowCount* will be applied (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the *rowCount* will be applied (counting begins at 0). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
@@ -4537,7 +4537,7 @@ Passez le nom de la zone 4D View Pro dans *vpAreaName*. Si vous passez un nom in
 
 Pass an object containing definitions for the options to set in the *sheetOptions* parameter. To view the full list of the available options, see the [Sheet Options](configuring.md#sheet-options) paragraph.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si le paramètre est omis, la feuille courante est utilisée par défaut. You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
