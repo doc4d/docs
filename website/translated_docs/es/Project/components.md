@@ -21,7 +21,7 @@ title: Librería de componentes 4D
 > Puede desarrollar e instalar sus propios componentes 4D. Consulte [esta sección](Conceptos/componentes.md) para obtener más información.
 
 
-## Documentation in the Explorer
+## Documentación en el Explorador
 
 Cuando un componente instalado contiene métodos, éstos aparecen en el tema **Métodos componente** de la página Métodos del Explorador.
 
