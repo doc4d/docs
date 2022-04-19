@@ -4,39 +4,34 @@ title: Using preemptive web processes
 ---
 
 
-The 4D Web Server allows you to take full advantage of multi-core computers by using preemptive web processes in your compiled applications. You can configure your web-related code, including 4D tags and web database methods, to run simultaneously on as many cores as possible.
+The 4D Web Server allows you to take full advantage of multi-core computers by using preemptive web processes in your applications. You can configure your web-related code, including 4D tags, web database methods or ORDA REST class functions to run simultaneously on as many cores as possible.
 
 For in-depth information on preemptive process in 4D, please refer to the *Preemptive 4D processes* section in the *Language Reference*.
 
 ## Availability of preemptive mode for web processes  
 
-The use of preemptive mode for web processes is only available in the following contexts:
+The availability of preemptive mode for web processes depends on several parameters:
 
-*	use of 4D Server or 4D local mode (4D in remote mode does not support preemptive mode)
+- the running application: 4D Server, 4D remote, 4D single-user,
+- with 4D Server, if the debugger is [attached or not to the server](../Debugging/debugging-remote.md),
+- the server that actually handles requests: [REST Server](../REST/ClassFunctions.md), Web Server ([templates](templates.md), [4DACTION and database methods](httpRequests.md)), or Web Service Server (SOAP requests).
+- the execution mode (compiled/interpreted),
+- the related **web setting**: When [**Scalable sessions**](sessions.md#enabling-sessions) option is selected, preemptive processes are automatically enabled. Otherwise, the [**Use preemptive processes**](webServerConfig.md#use-preemptive-processes) option must be selected. When the appropriate web setting is selected, the 4D compiler will automatically evaluate the thread-safety property of each piece of web-related code and return errors in case of incompatibility.
 
-*	use of a compiled database (except [on 4D Server when sessions are enabled](sessions.md#preemptive-mode))
-
-*	**Use preemptive processes** database setting checked (see below)
-
-*	all web-related database methods and project methods are confirmed thread-safe by 4D Compiler
-
-If any requirement is missing, the web server will use cooperative processes.
-
-## Enabling the preemptive mode for the web server  
-
-To enable the preemptive mode for your application's web server code, you must check the **Use preemptive processes** option on the "Web/Options (I)" page of the Settings dialog box:
-
-![](assets/en/WebServer/preemptive.png)
-
-When this option is checked, the 4D compiler will automatically evaluate the thread-safety property of each piece of web-related code (see below) and return errors in case of incompatibility.
+> Regarding Web service processes (server or client), preemptive mode is supported at method level: you just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler. 
 
 
-This option does not apply in the following contexts:
+|4D Server|Interpreted (debugger attached)|Interpreted (debugger detached)|Compiled|
+|---|---|---|---|
+|REST Server|cooperative|preemptive|preemptive|
+|Web Server|cooperative|web setting|web setting|
+|Web Services Server|cooperative||web setting|
 
-- [**REST processes in compiled mode**](../REST/ClassFunctions.md) - The REST server automatically uses preemptive processes in compiled projects. All 4D code called from REST requests must be thread-safe. 
-- [**Scalable sessions**](sessions.md#enabling-sessions) - Web server scalable sessions are automatically handled through preemptive processes, even in interpreted mode (the option is not available when scalable sessions are enabled).
-- **Web service processes** (server or client) - Preemptive mode is supported by web service processes at method level: you just have to select "Can be run in preemptive processes" property for published SOAP server methods ((see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler. 
-
+|4D remote/single-user|Interpreted|Compiled|
+|---|---|---|
+|REST Server|cooperative|preemptive|
+|Web Server|cooperative|web setting|
+|Web Services Server|cooperative|web setting|
 
 
 ## Writing thread-safe web server code  
@@ -57,7 +52,7 @@ All 4D code executed by the web server must be thread-safe if you want your web 
 
 *	Triggers for tables with "Expose as REST resource" attribute
 
-*	Project methods available through REST ("REST Server" property checked)
+*	ORDA data model class functions called via REST
 
 For each of these methods and code parts, the compiler will check if the thread-safety rules are respected, and will return errors in case of issues. For more information about thread-safety rules, please refer to the *Writing a thread-safe method* paragraph in the *Processes* chapter.
 
