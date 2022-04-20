@@ -797,7 +797,7 @@ $status:=$transporter.expunge()
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v18 R5  | *name* is optional |
+| v18 R5  | *name* es opcional |
 
 |v18 R4|Added| </details>
 
@@ -851,10 +851,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 ## .getBoxList()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones               |
-| ------- | ---------------------------- |
-| v18 R4  | Añadidos                     |
-| v19     | Add `isSubscribed` parameter |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v18 R4  | Añadidos                         |
+| v19     | Adición parámetro `isSubscribed` |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxList().Syntax -->
@@ -1525,11 +1525,11 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 #### Descripción
 
-The `.renameBox()` function <!-- REF #IMAPTransporterClass.renameBox().Summary -->changes the name of a mailbox on the IMAP server<!-- END REF -->. Attempting to rename a mailbox from a mailbox name that does not exist or to a mailbox name that already exists will generate an error.
+La función `.renameBox()` <!-- REF #IMAPTransporterClass.renameBox().Summary -->cambia el nombre de un buzón en el servidor IMAP<!-- END REF -->. Si se intenta renombrar un buzón desde un nombre de buzón que no existe o a un nombre de buzón que ya existe, se generará un error.
 
-In the `currentName` parameter, pass the name of the mailbox to be renamed.
+En el parámetro `currentName`, pase el nombre del buzón a renombrar.
 
-Pass the new name for the mailbox in the `newName` parameter.
+Pase el nuevo nombre del buzón en el parámetro `newName`.
 
 
 **Objeto devuelto**
@@ -1610,7 +1610,7 @@ End if
 
 > Esta función se basa en la especificación del [protocolo IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
-The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. *searchCriteria* consists of one or more search keys.
+La función `.searchMails()` <!-- REF #IMAPTransporterClass.searchMails().Summary -->busca los mensajes que coincidan con el *searchCriteria* en el buzón actual<!-- END REF -->. El parámetro *searchCriteria* contiene una o varias palabras clave de búsqueda.
 
 *searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. Por ejemplo:
 
