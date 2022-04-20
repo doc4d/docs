@@ -133,6 +133,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 
 
 
+
 |1|wdl enable without body|Le journal de débogage de Web HTTP est activé sans le body (la taille du body est fournie dans ce cas). |3|wdl enable with response body|Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la réponse |5|wdl enable with request body| Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la requête |7|wdl enable with all body parts|Web HTTP debug log est activé, le body est inclus dans la réponse et la requête|
 
 
@@ -593,6 +594,13 @@ La valeur de l'attribut `Secure` du cookie de session est automatiquement défin
 
 
 
+## Utiliser des process préemptifs
+
+| Peut être configuré via  | Nom                                       | Commentaires |
+| ------------------------ | ----------------------------------------- | ------------ |
+| Fenêtre de configuration | Options (I) > Process Web simultanés maxi |              |
+
+This option enables the preemptive mode for your application's web server code when **No sessions** option is selected (the preemptive mode is always enabled with **scalable sessions**). When this option is checked in this context, the 4D compiler will automatically evaluate the thread-safety property of each piece of [web-related code](preemptiveWeb.md#thread-safety-of-4d-web-code) and return errors in case of incompatibility.
 
 
 
