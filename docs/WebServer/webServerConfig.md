@@ -293,6 +293,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 |Can be set with|Name|Comments|
 |---|---|---|
 |webServer object|[`HTTPSPort`](API/WebServerClass.md#httpsport)|number|
+
 |`WEB SET OPTION`|`Web HTTPS port ID`||
 
 |Settings dialog box|[Configuration page/HTTPS Port](../settings/web.md#https-port)||
@@ -383,7 +384,7 @@ Legacy session management enabling status for the 4D web server (deprecated).
 |`WEB SET OPTION`|`Web log recording`||
 |Settings dialog box|[Log (type) page](../settings/web.md#log-format)|Pop up menu|
 
-Starts or stops the recording of requests received by the 4D web server in the [*logweb.txt*]() file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder. 
+Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder. 
 
 This setting allows you to select the format of this file. Available values are:
 
