@@ -46,7 +46,7 @@ All 4D code executed by the web server must be thread-safe if you want your web 
 	*	[`On Web Authentication`](authentication.md#on-web-authentication) 
 	*	[`On Web Connection`](httpRequests.md#on-web-connection)
 	*	[`On REST Authentication`](REST/configuration.md#using-the-on-rest-authentication-database-method)
-	*	[`On Mobile App Authentication`](https://doc.4d.com/4Dv18/4D/18.4/On-Mobile-App-Authentication-database-method.301-5233127.en.html)
+	*	[`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication)
 
 *	The `compiler_web` project method (regardless of its actual "Execution mode" property);
 
