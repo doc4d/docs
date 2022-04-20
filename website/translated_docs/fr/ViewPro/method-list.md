@@ -2804,14 +2804,14 @@ Vous souhaitez assigner une valeur à une plage nommée "Total".
 
 #### Description
 
-The `VP NEW DOCUMENT` command <!-- REF #_method_.VP NEW DOCUMENT.Summary -->loads and display a new, default document in the 4D View Pro form area object *vpAreaName*<!-- END REF -->. The new empty document replaces any data already inserted in the area.
+La commande `VP NEW DOCUMENT` <!-- REF #_method_.VP NEW DOCUMENT.Summary -->charge et affiche un nouveau document dans l'objet *vpAreaName* de la zone 4D View Pro sur le formulaire<!-- END REF -->. Le nouveau document vide remplace toutes les données auparavant insérées dans la zone.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
 
 #### Exemple
 
-You want to display an empty document in the "myVPArea" form object:
+Vous souhaitez afficher un document vide dans l'objet formulaire "myVPArea" :
 
 ```4d
 VP NEW DOCUMENT("myVPArea")
@@ -2831,26 +2831,26 @@ VP NEW DOCUMENT("myVPArea")
 
 <!-- REF #_method_.VP Object to font.Params -->
 
-| Paramètres | Type   |    | Description    |
-| ---------- | ------ | -- | -------------- |
-| fontObj    | Object | -> | Font object    |
-| Résultat   | Text   | <- | Font shorthand |
+| Paramètres  | Type   |    | Description                   |
+| ----------- | ------ | -- | ----------------------------- |
+| font object | Object | -> | Objet police                  |
+| Résultat    | Text   | <- | Police raccourcie (shorthand) |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Object to font` command <!-- REF #_method_.VP Object to font.Summary -->returns a font shorthand string from *fontObj*<!-- END REF -->.
+La commande `VP Object to font` <!-- REF #_method_.VP Object to font.Summary -->retourne une chaîne raccourcie pour la police (shorthand) de *fontObj*<!-- END REF -->.
 
-In *fontObj*, pass an object containing the font properties. Les propriétés suivantes sont prises en charge :
+Dans *fontObj*, passez un objet contenant les propriétés de police. Les propriétés suivantes sont prises en charge :
 
-| Propriété | Type  | Description                                                                                                                                                              | Possible values                                                                                                                                                                                                                                                                                                                                                   | Mandatory |
-| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| family    | Texte | Specifies the font.                                                                                                                                                      | any standard or generic font family. Ex : Ex : Ex : "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                             | Oui       |
-| size      | Texte | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Oui       |
-| style     | Texte | The style of the font.                                                                                                                                                   | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                              | Non       |
-| variant   | Texte | Specifies font in small capital letters.                                                                                                                                 | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                        | Non       |
-| weight    | Texte | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                          | Non       |
+| Propriété | Type  | Description                                                                                                                                                                 | Possible values                                                                                                                                                                                                                                                                                                                                                                 | Obligatoire |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| family    | Texte | Définit la police.                                                                                                                                                          | tout type de famille de police standard ou générique. Ex : Ex : Ex : "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                          | Oui         |
+| size      | Texte | Définit la taille de la police.<p><p>Le line-height peut être ajouté au font-size : font-size/line-height: Ex : "15pt/20pt" | un chiffre avec l'une des unités suivantes : <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>ou l'une des constantes suivantes :<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Oui         |
+| style     | Texte | Style de police.                                                                                                                                                            | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                                            | Non         |
+| variant   | Texte | Police en petites majuscules.                                                                                                                                               | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                                      | Non         |
+| weight    | Texte | Defines the thickness of the font.                                                                                                                                          | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                                        | Non         |
 
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command.
