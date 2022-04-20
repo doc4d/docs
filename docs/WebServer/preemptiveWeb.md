@@ -15,21 +15,21 @@ The following table indicates whether the preemptive mode is used or is availabl
 |4D Server|Interpreted ([debugger attached](../Debugging/debugging-remote.md))|Interpreted (debugger detached)|Compiled|
 |---|---|---|---|
 |REST Server|cooperative|preemptive|preemptive|
-|Web Server|cooperative|web setting|web setting|
-|Web Services Server|cooperative|web setting|web setting|
+|Web Server|cooperative|*web setting*|*web setting*|
+|Web Services Server|cooperative|*web setting*|*web setting*|
 
 |4D remote/single-user|Interpreted|Compiled|
 |---|---|---|
 |REST Server|cooperative|preemptive|
-|Web Server|cooperative|web setting|
-|Web Services Server|cooperative|web setting|
+|Web Server|cooperative|*web setting*|
+|Web Services Server|cooperative|*web setting*|
 
 - REST Server: handles [ORDA data model class functions](../REST/ClassFunctions.md)
-- Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md))
+- Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md)
 - Web Service Server: handles SOAP requests
-- **web setting**: means that the preemptive mode depends on a setting value:
-	- when [**Scalable sessions**](sessions.md#enabling-sessions) option is selected, preemptive processes are automatically enabled. 
-	- otherwise, the [**Use preemptive processes**](webServerConfig.md#use-preemptive-processes) option must be selected. 
+- ***web setting*** means that the preemptive mode depends on a setting value:
+	- when [**Scalable sessions**](sessions.md#enabling-sessions) option is selected, the [preemptive mode is automatically used](sessions.md#preemptive-mode) for web processes.
+	- otherwise, the [**Use preemptive processes**](webServerConfig.md#use-preemptive-processes) option is taken into account. 
 	- regarding Web service processes (server or client), preemptive mode is supported at method level. You just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler. 
 
 
