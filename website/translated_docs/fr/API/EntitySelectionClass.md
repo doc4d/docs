@@ -961,9 +961,9 @@ Le code générique suivant duplique toutes les entités de l'entity selection :
 
 
 <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
-| Paramètres | Type |    | Description                                                             |
-| ---------- | ---- | -- | ----------------------------------------------------------------------- |
-| result     | Text | <- | Context attributes linked to the entity selection, separated by a comma |
+| Paramètres | Type |    | Description                                                                  |
+| ---------- | ---- | -- | ---------------------------------------------------------------------------- |
+| result     | Text | <- | Attributs de contexte associés à l'entity selection, séparés par une virgule |
 
 <!-- END REF -->
 
@@ -972,9 +972,9 @@ Le code générique suivant duplique toutes les entités de l'entity selection :
 
 #### Description
 
-The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
+La fonction `.getRemoteContextAttributes()`<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->retourne des informations relatives au contexte d'optimisation utilisé par l'entity selection<!-- END REF -->.
 
-If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity selection, the function returns an empty Text.
+S'il n'existe pas de [contexte d'optimisation](../ORDA/remoteDatastores.md#clientserver-optimization) pour l'entity selection, la fonction retourne un texte vide.
 
 #### Exemple
 
@@ -1168,7 +1168,7 @@ La propriété `.length` <!-- REF #EntitySelectionClass.length.Summary -->retour
 
 Les entity selections ont toujours une propriété `.length`.
 
-> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
+> Pour obtenir le nombre total d'entités dans une dataclass, il est recommandé d'utiliser la fonction [`getCount()`](DataClassClass.md#getcount) qui est plus optimisée que l'expression `ds.myClass.all().length`.
 
 #### Exemple
 
