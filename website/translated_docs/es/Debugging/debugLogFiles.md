@@ -1,6 +1,6 @@
 ---
 id: debugLogFiles
-title: Descripción de los archivos históricos
+title: Description of log files
 ---
 
 Las aplicaciones 4D pueden generar varios archivos de historial que son útiles para depurar u optimizar su ejecución. Los historiales suelen iniciarse o detenerse utilizando selectores de los comandos [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) o [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) y se almacenan en la carpeta [Logs folder](Project/architecture.md#logs) del proyecto.
@@ -42,7 +42,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1)
-//del lado remoto
+////del lado remoto
 ```
 > Esta instrucción también inicia el archivo de historial [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
 
@@ -60,7 +60,7 @@ Para cada petición, se registran los siguientes campos:
 
 | Nombre del campo                           | Descripción                                                                                                                                                                                                                                  |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| sequence_number                            | Número de operación único y secuencial en la sesión de historial                                                                                                                                                                             |
+| sequence_number                            | Unique and sequential operation number in the logging session                                                                                                                                                                                |
 | time                                       | Fecha y hora utilizando el formato ISO 8601: 'YYYY-MM-DDTHH:MM:SS.mmm'                                                                                                                                                                       |
 | systemid                                   | ID del sistema                                                                                                                                                                                                                               |
 | component                                  | Firma del componente (por ejemplo, "4SQLS" o "dbmg")                                                                                                                                                                                         |
@@ -92,7 +92,7 @@ SET DATABASE PARAMETER(4D Server log recording;1) //lado servidor
 *   en un cliente:
 
 ```4d
-SET DATABASE PARAMETER(Client Log Recording;1) //del lado remoto
+SET DATABASE PARAMETER(Client Log Recording;1) ////del lado remoto
 ```
 > Esta instrucción también inicia el archivo de historial [4DRequestsLog.txt](#4drequestslogtxt).
 
@@ -111,7 +111,7 @@ Para cada proceso, se registran los siguientes campos:
 
 | Nombre del campo                  | Descripción                                                            |
 | --------------------------------- | ---------------------------------------------------------------------- |
-| sequence_number                   | Número de operación único y secuencial en la sesión de historial       |
+| sequence_number                   | Unique and sequential operation number in the logging session          |
 | time                              | Fecha y hora utilizando el formato ISO 8601: 'YYYY-MM-DDTHH:MM:SS.mmm" |
 | process\_info\_index          | Número de proceso único y secuencial                                   |
 | CDB4DBaseContext                  | UUID del contexto de base del componente DB4D                          |
@@ -129,7 +129,7 @@ Para cada proceso, se registran los siguientes campos:
 
 ## HTTPDebugLog.txt
 
-Este archivo de historial registra cada petición HTTP y cada respuesta en modo crudo. Se registran las solicitudes completas, incluidos los encabezados; opcionalmente, también se pueden registrar las partes del cuerpo.
+Este archivo de historial registra cada petición HTTP y cada respuesta en modo crudo. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
 
 Como iniciar este historial:
 
@@ -140,16 +140,16 @@ WEB SET OPTION(Web debug log;wdl enable without body)
 
 Los siguientes campos se registran tanto para la solicitud como para la respuesta:
 
-| Nombre del campo | Descripción                                                        |
-| ---------------- | ------------------------------------------------------------------ |
-| SocketID         | ID del socket utilizado para la comunicación                       |
-| PeerIP           | Dirección IPv4 del host (cliente)                                  |
-| PeerPort         | Puerto utilizado por host (cliente)                                |
-| TimeStamp        | Timestamp en milisegundos (desde el inicio del sistema)            |
-| ConnectionID     | Conexión UUID (UUID del VTCPSocket utilizado para la comunicación) |
-| SequenceNumber   | Número de operación único y secuencial en la sesión de historial   |
+| Nombre del campo | Descripción                                                   |
+| ---------------- | ------------------------------------------------------------- |
+| SocketID         | ID of socket used for communication                           |
+| PeerIP           | IPv4 address of host (client)                                 |
+| PeerPort         | Port used by host (client)                                    |
+| TimeStamp        | Timestamp in milliseconds (since system startup)              |
+| ConnectionID     | Connection UUID (UUID of VTCPSocket used for communication)   |
+| SequenceNumber   | Unique and sequential operation number in the logging session |
 
-## 4DDebugLog.txt (estándar)
+## 4DDebugLog.txt (standard)
 
 Este archivo de historial registra cada evento que se produce a nivel de programación 4D. El modo estándar ofrece una visión básica de los eventos.
 
@@ -167,7 +167,7 @@ Los siguientes campos se registran para cada evento:
 
 | Columna # | Descripción                                                                                                                                        |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1         | Número de operación único y secuencial en la sesión de historial                                                                                   |
+| 1         | Unique and sequential operation number in the logging session                                                                                      |
 | 2         | Fecha y hora en el formato ISO 8601: (YYYY-MM-DDThh:mm:ss.mmm)                                                                                     |
 | 3         | ID proceso (p=xx) e ID único proceso (puid=xx)                                                                                                     |
 | 4         | Nivel de stack                                                                                                                                     |
@@ -192,7 +192,7 @@ Los siguientes campos se registran para cada evento:
 
 | Columna # | Nombre del campo                | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | --------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1         | sequence_number                 | Número de operación único y secuencial en la sesión de historial                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 1         | sequence_number                 | Unique and sequential operation number in the logging session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | 2         | time                            | Fecha y hora en el formato ISO 8601: (YYYY-MM-DDThh:mm:ss.mmm)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 3         | ProcessID                       | ID del Proceso                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 4         | unique_processID                | ID único del proceso                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -216,14 +216,14 @@ Como iniciar este historial:
 
 Los siguientes campos se registran para cada evento:
 
-| Nombre del campo   | Descripción                                                      |
-| ------------------ | ---------------------------------------------------------------- |
-| sequenceNumber     | Número de operación único y secuencial en la sesión de historial |
-| timestamp          | Fecha y hora en el formato ISO 8601: (YYYY-MM-DDThh:mm:ss.mmm)   |
-| loggerID           | Opcional                                                         |
-| componentSignature | Opcional - firma del componente interno                          |
-| messageLevel       | Información, avisos, errores                                     |
-| message            | Descripción de la entrada del historial                          |
+| Nombre del campo   | Descripción                                                    |
+| ------------------ | -------------------------------------------------------------- |
+| sequenceNumber     | Unique and sequential operation number in the logging session  |
+| timestamp          | Fecha y hora en el formato ISO 8601: (YYYY-MM-DDThh:mm:ss.mmm) |
+| loggerID           | Opcional                                                       |
+| componentSignature | Opcional - firma del componente interno                        |
+| messageLevel       | Información, avisos, errores                                   |
+| message            | Descripción de la entrada del historial                        |
 
 Dependiendo del evento, se pueden incluir otros campos en el registro, como la tarea, socket, etc.
 
@@ -274,7 +274,7 @@ Los archivos de historial pueden producirse en dos versiones:
 *   una versión extendida:
     *   adjunto(s) incluido(s) no hay reciclaje automático
     *   nombre personalizado
-    *   reservado con fines específicos
+    *   reservado para fines específicos
 
     Para iniciar este historial:
 
@@ -298,13 +298,13 @@ Los archivos de historial pueden producirse en dos versiones:
 
 Para cada petición, se registran los siguientes campos:
 
-| Columna # | Descripción                                                      |
-| --------- | ---------------------------------------------------------------- |
-| 1         | Número de operación único y secuencial en la sesión de historial |
-| 2         | Fecha y hora en el formato RFC3339 (yyyy-mm-ddThh:mm:ss.ms)      |
-| 3         | ID Proceso 4D                                                    |
-| 4         | ID único del proceso                                             |
-| 5         | <ul><li>Información de inicio de sesión SMTP, POP3 o IMAP, incluyendo el nombre del servidor, el número de puerto TCP utilizado para conectarse al servidor SMTP, POP3 o IMAP y el estado de TLS, o</li><li>datos intercambiados entre el servidor y el cliente, empezando por "S <" (datos recibidos del servidor SMTP,POP3 o IMAP) o "C >" (datos enviados por el cliente SMTP,POP3 o IMAP): lista de modos de autenticación enviada por el servidor y modo de autenticación seleccionado, cualquier error notificado por el servidor SMTP,POP3 o IMAP, información del encabezado del correo enviado (sólo versión estándar) y si el correo se guarda en el servidor, o</li><li>Información de cierre de sesión SMTP, POP3 o IMAP.</li></ul>                                       |
+| Columna # | Descripción                                                   |
+| --------- | ------------------------------------------------------------- |
+| 1         | Unique and sequential operation number in the logging session |
+| 2         | Fecha y hora en el formato RFC3339 (yyyy-mm-ddThh:mm:ss.ms)   |
+| 3         | ID Proceso 4D                                                 |
+| 4         | ID único del proceso                                          |
+| 5         | <ul><li>Información de inicio de sesión SMTP, POP3 o IMAP, incluyendo el nombre del servidor, el número de puerto TCP utilizado para conectarse al servidor SMTP, POP3 o IMAP y el estado de TLS, o</li><li>datos intercambiados entre el servidor y el cliente, empezando por "S <" (datos recibidos del servidor SMTP,POP3 o IMAP) o "C >" (datos enviados por el cliente SMTP,POP3 o IMAP): lista de modos de autenticación enviada por el servidor y modo de autenticación seleccionado, cualquier error notificado por el servidor SMTP,POP3 o IMAP, información del encabezado del correo enviado (sólo versión estándar) y si el correo se guarda en el servidor, o</li><li>Información de cierre de sesión SMTP, POP3 o IMAP.</li></ul>                                    |
 
 ## Peticiones cliente ORDA
 
@@ -335,14 +335,14 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 
 Los siguientes campos se registran para cada petición:
 
-| Nombre del campo | Descripción                                                      | Ejemplo                                                   |
-| ---------------- | ---------------------------------------------------------------- | --------------------------------------------------------- |
-| sequenceNumber   | Número de operación único y secuencial en la sesión de historial | 104                                                       |
-| url              | URL de la petición ORDA efectuada por el cliente                 | "rest/Persons(30001)"                                     |
-| startTime        | Fecha y hora de inicio en formato ISO 8601                       | "2019-05-28T08:25:12.346Z"                                |
-| endTime          | Fecha y hora final en formato ISO 8601                           | "2019-05-28T08:25:12.371Z"                                |
-| duration         | Duración del procesamiento cliente (ms)                          | 25                                                        |
-| response         | Objeto respuesta del servidor                                    | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
+| Nombre del campo | Descripción                                                   | Ejemplo                                                   |
+| ---------------- | ------------------------------------------------------------- | --------------------------------------------------------- |
+| sequenceNumber   | Unique and sequential operation number in the logging session | 104                                                       |
+| url              | URL de la petición ORDA efectuada por el cliente              | "rest/Persons(30001)"                                     |
+| startTime        | Fecha y hora de inicio en formato ISO 8601                    | "2019-05-28T08:25:12.346Z"                                |
+| endTime          | Fecha y hora final en formato ISO 8601                        | "2019-05-28T08:25:12.371Z"                                |
+| duration         | Duración del procesamiento cliente (ms)                       | 25                                                        |
+| response         | Objeto respuesta del servidor                                 | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
 
 
 
@@ -352,7 +352,7 @@ You can use a **log configuration file** to easily manage log recording in a pro
 
 ### Cómo activar el archivo
 
-Hay varias maneras de activar el archivo de configuración de los logs:
+There are several ways to enable the log configuration file:
 
 - On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server.
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
@@ -364,7 +364,7 @@ Hay varias maneras de activar el archivo de configuración de los logs:
 
 ### Descripción del archivo JSON
 
-El archivo de configuración de log es un archivo `.json` que puede contener las siguientes propiedades:
+The log configuration file is a `.json` file that can contain the following properties:
 
 ```json
 {
@@ -495,7 +495,7 @@ El archivo de configuración de log es un archivo `.json` que puede contener las
 
 ### Ejemplo
 
-Este es un ejemplo de archivo de configuración de log:
+Here is an example of log configuration file:
 
 ```json
 {
