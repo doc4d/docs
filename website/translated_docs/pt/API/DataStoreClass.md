@@ -351,17 +351,17 @@ O objeto retornado contém as propriedades abaixo:
 |             |             | name          | Texto    | Nombre da tabela                                                                                |
 |             |             | num           | Número   | Table number                                                                                    |
 |             |             | isEncryptable | Booleano | Verdadero se a tabela estiver declarada como encriptada no arquivo de estrutura                 |
-|             |             | isEncrypted   | Booleano | True if the records of the table are encrypted in the data file                                 |
+|             |             | isEncrypted   | Booleano | True se os registros da tabela estiverem encriptados no arquivo de dados                        |
 
-(*) The encryption key can be provided:
+(*) a chave de criptografia pode ser fornecida:
 
-*   with the `.provideDataKey()` command,
-*   at the root of a connected device before opening the datastore,
-*   with the `Discover data key` command.
+*   com o comando `.provideDataKey()`,
+*   na raíz de um dispositivo conectado antes de abrir o datastore,
+*   com o comando `Discover data key`.
 
 #### Exemplo
 
-You want to know the number of encrypted tables in the current data file:
+Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
 ```4d
  var $status : Object
@@ -467,22 +467,22 @@ $info:=$ds.getAllRemoteContexts()
 **.getInfo()**: Object<!-- END REF -->
 
 <!-- REF #DataStoreClass.getInfo().Params -->
-| Parameter | Type   |    | Description          |
-| --------- | ------ |:--:| -------------------- |
-| Result    | Objeto | <- | Datastore properties |
+| Parameter | Type   |    | Description              |
+| --------- | ------ |:--:| ------------------------ |
+| Result    | Objeto | <- | Propiedades de datastore |
 <!-- END REF -->
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
+A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um objeto que proporciona informação sobre a datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Returned object**
 
 | Propriedade | Type     | Description                                                                                                                                                     |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | string   | <li>"4D": main datastore, available through ds </li><li>"4D Server": remote datastore, open with Open datastore</li>                                                                                                              |
-| networked   | booleano | <li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li>                                                                                                            |
-| localID     | texto    | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.            |
+| type        | string   | <li>"4D": armazém de dados principal, disponível através de ds </li><li>"4D Server": datastore remoto, aberto com Open datastore</li>                                                                                                              |
+| networked   | booleano | <li>True: a datastore se alcança através de uma conexão de rede.</li><li>False: não se alcança a datastore através de uma conexão de rede (base de dados local)</li>                                                                                                            |
+| localID     | texto    | ID do armazém de dados na máquina. Corresponde à string localId dada com o comando `Open datastore`. String vazia ("") para o datastore principal.              |
 | connection  | object   | Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Propriedade</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>texto</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>booleano</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>texto</td><td>User authenticated on the remote datastore</td></tr></table> |
 
 *   If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
