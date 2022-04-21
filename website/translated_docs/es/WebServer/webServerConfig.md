@@ -168,7 +168,7 @@ If you do not specify any default home page, the `On Web Connection` database me
 | `WEB SET OPTION`              | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
 | Caja de diálogo de parámetros | Página Options (II)/Activar CORS                   | Unchecked by default                                |
 
-The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. For security reasons, "cross-domain" requests are forbidden at the browser level by default. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Por razones de seguridad, las peticiones "cross-domain" están prohibidas por defecto a nivel del navegador. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
 
 When disabled (default), all cross site requests sent with CORS are ignored.
 
@@ -196,7 +196,7 @@ Indicates whether or not the web server will accept non-secure connections.
 | `WEB SET OPTION`              | `Web HTTPS enabled`                                  |             |
 | Caja de diálogo de parámetros | Configuration page/Enable HTTPS                      |             |
 
-Status for communication over HTTPS. This option is described in [this section](Admin/tls.md).
+Estado de la comunicación a través de HTTPS. Esta opción se describe en [esta sección](Admin/tls.md).
 
 
 ## Activar HSTS
@@ -224,7 +224,7 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 | objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
 | `WEB SET OPTION`    | `Web HSTS max age`                               | number in seconds |
 
-Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. This information is stored on the client side for the specified duration. Default value is 63072000 (2 years)
+Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta información se almacena del lado del cliente durante el tiempo especificado. Default value is 63072000 (2 years)
 
 > **Warning:** Once HSTS is enabled, client connections will continue to use this mechanism for the specified duration. When you are testing your applications, it is recommended to set a short duration to be able to switch between secured and non-secured connection modes if necessary.
 
@@ -250,7 +250,7 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 | objeto webServer    | [`HTTPCompressionThreshold`](API/WebServerClass.md#httpcompressionthreshold) |             |
 | `WEB SET OPTION`    | `Web HTTP compression threshold`                                             |             |
 
-In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. This setting is useful in order to avoid losing machine time by compressing small exchanges.
+In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Este parámetro es útil para evitar la pérdida de tiempo de la máquina al comprimir los intercambios pequeños.
 
 Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
 
@@ -316,7 +316,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 | objeto webServer    | [`inactiveSessionTimeout`](API/WebServerClass.md#inactivesessiontimeout) |             |
 | `WEB SET OPTION`    | `Web inactive session timeout`                                           |             |
 
-Life duration (in minutes) of inactive sessions (duration set in cookie). At the end of this period, the session cookie expires and is no longer sent by the HTTP client.
+Life duration (in minutes) of inactive sessions (duration set in cookie). Al final de este periodo, la cookie de sesión expira y deja de ser enviada por el cliente HTTP.
 
 Default: 480 minutes (pass 0 to restore the default value)
 
