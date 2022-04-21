@@ -351,7 +351,7 @@ La función `.and()` <!-- REF #EntitySelectionClass.and().Summary -->combina la 
 
 *   If you pass *entity* as parameter, you combine this entity with the entity selection. If the entity belongs to the entity selection, a new entity selection containing only the entity is returned. Otherwise, an empty entity selection is returned.
 *   If you pass *entitySelection* as parameter, you combine both entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. If there is no intersecting entity, an empty entity selection is returned.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial o el parámetro *entitySelection* están vacíos, o si *entity* es Null, se devuelve una entity selection vacía.
 
@@ -1259,7 +1259,7 @@ La función `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->excluye
 
 *   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
 *   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial o la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía.
 
@@ -1327,7 +1327,7 @@ La función `.or()` <!-- REF #EntitySelectionClass.or().Summary -->combina la en
 
 *   If you pass *entity* as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
 *   If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection containing the entities belonging to the original entity selection or *entitySelection* is returned (or is not exclusive, entities referenced in both selections are not duplicated in the resulting selection).
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía. Si la entity selection original está vacía, se devuelve una referencia a *entitySelection* o una entity selection que sólo contiene *entity*.
 
@@ -1771,11 +1771,11 @@ Pase en el parámetro *selectedEntities* una selección de entidades que conteng
 
 El objeto devuelto contiene las siguientes propiedades:
 
-| Propiedad      | Tipo       | Descripción                             |
-| -------------- | ---------- | --------------------------------------- |
-| ranges         | Collection | Colección de objetos de rango           |
-| ranges[].start | Integer    | Primer índice de entidad en el rango    |
-| ranges[].end   | Integer    | Último índice de la entidad en el rango |
+| Propiedad      | Tipo       | Descripción                              |
+| -------------- | ---------- | ---------------------------------------- |
+| ranges         | Collection | Colección de objetos rango               |
+| ranges[].start | Integer    | Índice de la primera entidad en el rango |
+| ranges[].end   | Integer    | Índice de la última entidad en el rango  |
 
 Si una propiedad `ranges` contiene una sola entidad, `start` = `end`. El índice comienza en 0.
 
