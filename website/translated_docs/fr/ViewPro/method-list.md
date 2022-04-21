@@ -1124,6 +1124,7 @@ var $range;$condition;$result : Object
 | vpAreaName | Text | -> | Nom d'objet formulaire zone 4D View Pro |
 <!-- END REF -->  
 
+
 #### Description
 
 La commande `VP FLUSH COMMANDS` exécute <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immédiatement les commandes empilées et vide le buffer de commandes<!-- END REF -->.
@@ -1173,6 +1174,7 @@ Le code suivant :
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
+
 
 retournera l'objet $font suivant :
 
@@ -1605,6 +1607,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 <!-- END REF -->  
 
 #### Description
+
 
 La commande `VP Get frozen panes` <!-- REF #_method_.VP Get frozen panes.Summary -->retourne un objet contenant des informations sur les lignes et colonnes figées de *vpAreaName*<!-- END REF -->.
 
