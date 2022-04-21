@@ -5,7 +5,7 @@ title: Description des fichiers d'historique
 
 Les applications 4D peuvent générer divers fichiers d'historique (ou "logs") qui sont utiles pour le débogage ou l'optimisation de leur exécution. Les fichiers d'historique sont généralement démarrés ou arrêtés via des sélecteurs des commandes [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) ou [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) et sont stockés dans le dossier [Logs](Project/architecture.md#logs) du projet.
 
-Les informations de l'historique doivent être analysées pour détecter et corriger les problèmes. Cette section fournit une description complète des fichiers journaux suivants :
+Les informations de l'historique doivent être analysées pour détecter et corriger les problèmes. Cette section fournit une description complète des fichiers d'historique suivants :
 
 *   [4DRequestsLog.txt](#4drequestslogtxt)
 *   [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt)
@@ -226,6 +226,22 @@ Les champs suivants sont enregistrés pour chaque événement :
 | message            | Description de la saisie de journal                                  |
 
 En fonction de l'événement, d'autres champs peuvent également être enregistrés, tels que task, socket, etc.
+
+### Activation du fichier
+
+The *4DDiagnosticLog.txt* file can log different levels of messages, from `ERROR` (most important) to `TRACE` (less important). By default, the `INFO` level is set, which means that the file will log only important events, including errors and unexpected results (see below).
+
+You can select the level of messages using the `Diagnostic log level` selector of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) command, depending on your needs. When you select a level, levels above (which are more important) are implicitely selected also. The following levels are available:
+
+| Colonne # | Description                                                          | When selected, includes         |
+| --------- | -------------------------------------------------------------------- | ------------------------------- |
+| ERROR     | Numéro d'opération séquentiel et unique dans la session d'historique | ERROR                           |
+| WARN      | Date et heure au format RFC3339 (yyyy-mm-ddThh:mm:ss.ms)             | ERROR, WARN                     |
+| INFO      | ID du Process 4D                                                     | ERROR, WARN, INFO               |
+| DEBUG     | ID unique du process                                                 | ERROR, WARN, INFO, DEBUG        |
+| TRACE     | Other internal information (for 4D technical services)               | ERROR, WARN, INFO, DEBUG, TRACE |
+
+
 
 ## 4DSMTPLog.txt, 4DPOP3Log.txt, et 4DIMAPLog.txt
 

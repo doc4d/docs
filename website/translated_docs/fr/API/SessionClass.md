@@ -167,7 +167,7 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 | Paramètres | Type    |    | Description                                           |
 | ---------- | ------- |:--:| ----------------------------------------------------- |
 | privilege  | Text    | <- | Nom du privilège à vérifier                           |
-| Résultat   | Boolean | <- | Vrai si la session dispose du *privilege*, sinon Faux |
+| Résultat   | Booléen | <- | Vrai si la session dispose du *privilege*, sinon Faux |
 <!-- END REF -->
 
 
@@ -249,7 +249,7 @@ End if
 <!-- REF #SessionClass.isGuest().Params -->
 | Paramètres | Type    |    | Description                                      |
 | ---------- | ------- |:--:| ------------------------------------------------ |
-| Résultat   | Boolean | <- | Vrai s'il s'agit d'une session Guest, sinon Faux |
+| Résultat   | Booléen | <- | Vrai s'il s'agit d'une session Guest, sinon Faux |
 <!-- END REF -->
 
 #### Description

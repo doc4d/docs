@@ -71,7 +71,7 @@ Le tableau suivant répertorie toutes les valeurs `varType` prises en charge :
 | `Réel`                 | Valeur réel                              |
 | `Pointeur`             | Valeur pointeur                          |
 | `Image`                | Valeur image                             |
-| `Blob`                 | Valeur BLOB                              |
+| `Blob`                 | Scalar Blob value                        |
 | `Collection`           | Valeur collection                        |
 | `Variant`              | Valeur variant                           |
 | `Object`               | Objet avec classe par défaut (4D.object) |

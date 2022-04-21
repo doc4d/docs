@@ -4,23 +4,27 @@ title: DataClass
 ---
 
 
-A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a database table. All dataclasses in a 4D application are available as a property of the `ds` [datastore](ORDA/dsMapping.md#datastore).
+Una [DataClass](ORDA/dsMapping.md#dataclass) ofrece una interfaz de objeto a una tabla de la base de datos. Todas las clases de datos de una aplicación 4D están disponibles como una propiedad del `ds` [datastore](ORDA/dsMapping.md#datastore).
 
 
 
 ### Resumen
 
-|                                                                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
+| [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getDataStore().Syntax -->](#getdatastore)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getDataStore().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getInfo().Syntax -->](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getInfo().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getRemoteCache().Syntax -->](#getremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getRemoteCache().Summary --> |
 | [<!-- INCLUDE #DataClassClass.new().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.new().Summary --> |
 | [<!-- INCLUDE #DataClassClass.newSelection().Syntax -->](#newselection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.newSelection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.query().Syntax -->](#query)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.query().Summary --> |
+| [<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Syntax -->](#setremotecachesettings)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Summary --> |
 
 
 
@@ -41,20 +45,20 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 
 Los atributos de las clases de datos son<!-- REF ClaseDeDatos.attributeName.Summary -->objetos que están disponibles directamente como propiedades<!-- END REF --> de estas clases.
 
-The returned objects are of the [`DataClassAttribute`](DataClassAttributeClass.md) class. These objects have properties that you can read to get information about your dataclass attributes.
-> Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
+Los objetos devueltos son del tipo class [`DataClassAttribute`](DataClassAttributeClass.md). Estos objetos tienen propiedades que puede leer para obtener información sobre los atributos de su clase de datos.
+> Los objetos del atributo Dataclass pueden ser modificados, pero la estructura subyacente de la base de datos no será alterada.
 
 #### Ejemplo 1
 
 ```4d
-$salary:=ds.Employee.salary //returns the salary attribute in the Employee dataclass
-$compCity:=ds.Company["city"] //returns the city attribute in the Company dataclass
+$salary:=ds.Employee.salary //devuelve el atributo salary en la clase de datos Employee
+$compCity:=ds.Company["city"] //devuelve el atributo city en la clase de datos Company
 ```
 
 
 #### Ejemplo 2
 
-Considering the following database structure:
+Considerando la siguiente estructura de la base:
 
 ![](assets/en/API/dataclassAttribute.png)
 
@@ -79,7 +83,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### Ejemplo 3
 
-Considering the following table properties:
+Considerando las propiedades de tabla siguientes:
 
 ![](assets/en/API/dataclassAttribute2.png)
 
@@ -131,16 +135,66 @@ Se aplica carga diferida.
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
-| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                                     |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización aplicado a la selección de entidades. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor de ORDA](ORDA/entities.md#client-server-optimization). |
 
+
+> Para conocer el número total de entidades de una clase de datos, se recomienda utilizar la función [`getCount()`](#getcount) más optimizada que la expresión `ds.myClass.all().length`.
 
 #### Ejemplo
 
 ```4d
  var $allEmp : cs.EmployeeSelection
  $allEmp:=ds.Employee.all()
+```
+
+<!-- REF #DataClassClass.clearRemoteCache().Desc -->
+## .clearRemoteCache()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
+**.clearRemoteCache()**<!-- END REF -->
+
+<!-- REF #DataStoreClass.clearRemoteCache().Params -->
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
+<!-- END REF -->
+
+#### Descripción
+
+La función `.clearRemoteCache()` <!-- REF #DataClassClass.clearRemoteCache().Summary -->vacía la caché ORDA de una clase de datos<!-- END REF -->.
+
+> Esta función no restablece los valores de `timeout` y `maxEntries`.
+
+#### Ejemplo
+
+```4d
+var $ds : 4D.DataStoreImplementation
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cache : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
+
+$persons:=$ds.Persons.all()
+$text:=""
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
+
+$cache:=$ds.Persons.getRemoteCache()
+
+$ds.Persons.clearRemoteCache()
+// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
@@ -182,22 +236,22 @@ El mapeo entre los objetos de la colección y las entidades se realiza sobre los
 
 Para cada objeto de *objectCol*:
 
-*   If the object contains a boolean property "\_\_NEW" set to false (or does not contain a boolean "\_\_NEW" property), the entity is updated or created with the corresponding values of the properties from the object. No check is performed in regards to the primary key:
-    *   If the primary key is given and exists, the entity is updated. In this case, the primary key can be given as is or with a "\_\_KEY" property (filled with the primary key value).
-    *   If the primary key is given (as is) and does not exist, the entity is created
-    *   If the primary key is not given, the entity is created and the primary key value is assigned with respect to standard database rules.
-*   If the object contains a boolean property "\_\_NEW" set to **true**, the entity is created with the corresponding values of the attributes from the object. A check is performed in regards to the primary key:
-    *   If the primary key is given (as is) and exists, an error is sent
-    *   If the primary key is given (as is) and does not exist, the entity is created
-    *   If the primary is not given, the entity is created and the primary key value is assigned with respect to standard database rules.
-> The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
+*   Si el objeto contiene una propiedad booleana "\__NEW" establecida en false (o no contiene una propiedad booleana "\__NEW"), la entidad se actualiza o se crea con los valores correspondientes de las propiedades del objeto. No se realiza ninguna comprobación con respecto a la llave primaria:
+    *   Si la llave primaria se da y existe, la entidad se actualiza. En este caso, la llave primaria puede darse tal cual o con una propiedad "\_\_KEY" (llenada con el valor de la llave primaria).
+    *   Si se da la llave primaria (tal cual) y no existe, se crea la entidad
+    *   Si no se da la llave primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
+*   Si el objeto contiene una propiedad booleana "\_\_NEW" establecida como **true**, la entidad se crea con los valores correspondientes de los atributos del objeto. A check is performed in regards to the primary key:
+    *   Si se da la llave primaria (tal cual) y existe, se envía un error
+    *   Si se da la llave primaria (tal cual) y no existe, se crea la entidad
+    *   Si no se da la primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
+> La propiedad "\__KEY" que contiene un valor sólo se tiene en cuenta cuando la propiedad "\__NEW" se establece como **false** (o se omite) y existe una entidad correspondiente. En todos los demás casos, el valor de la propiedad "\_\_KEY" se ignora, el valor de la llave primaria debe pasarse "tal cual".
 
 **Related entities**
 
 Los objetos de *objectCol* pueden contener uno o más objetos anidados que presentan una o más entidades relacionadas, lo que puede ser útil para crear o actualizar enlaces entre entidades.
 
 Los objetos anidados que presentan entidades relacionadas deben contener una propiedad "\_\_KEY" (llenada con el valor de la llave primaria de la entidad relacionada) o el atributo de llave primaria de la propia entidad relacionada. El uso de una propiedad \_\_KEY permite la independencia del nombre del atributo de la llave primaria.
-> The content of the related entities cannot be created / updated through this mechanism.
+> El contenido de las entidades relacionadas no puede ser creado / actualizado a través de este mecanismo.
 
 **Sello**
 
@@ -207,9 +261,9 @@ Si se da un atributo \_\_STAMP, se realiza una comprobación con el sello en el 
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
-| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                                     |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización aplicado a la selección de entidades. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor de ORDA](ORDA/entities.md#client-server-optimization). |
 
 
 #### Ejemplo 1
@@ -226,8 +280,8 @@ Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la lla
  $emp.ID:=668 //Existing PK in Employee table
  $emp.firstName:="Arthur"
  $emp.lastName:="Martin"
- $emp.employer:=New object("ID";121) //Existing PK in the related dataClass Company
-  // For this employee, we can change the Company by using another existing PK in the related dataClass Company
+ $emp.employer:=New object("ID";121) //PK existente en la dataClass relacionada Company
+  // Para este empleado, podemos cambiar la Empresa utilizando otro PK existente en la clase de datos relacionada Company
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
@@ -243,11 +297,11 @@ Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la lla
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.__KEY:=1720 //Existing PK in Employee table
+ $emp.__KEY:=1720 //PK existente en la tabla Employee
  $emp.firstName:="John"
  $emp.lastName:="Boorman"
- $emp.employer:=New object("ID";121) //Existing PK in the related dataClass Company
-  // For this employee, we can change the Company by using another existing PK in the related dataClass Company
+ $emp.employer:=New object("ID";121) // PK existente en la dataClass relacionada Company
+  // Para este empleado, podemos cambiar la Empresa utilizando otro PK existente en la dataClass relacionada Company
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
@@ -282,7 +336,7 @@ Queremos crear una entidad. La propiedad \_\_NEW es True, la llave primaria del 
  $emp:=New object
  $emp.firstName:="Mary"
  $emp.lastName:="Smith"
- $emp.employer:=New object("__KEY";121) //Existing PK in the related dataClass Company
+ $emp.employer:=New object("__KEY";121) //PK existente en la dataClass Company
  $emp.__NEW:=True
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
@@ -305,7 +359,7 @@ Queremos crear una entidad. La propiedad \_\_NEW se omite, la llave primaria del
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.ID:=10000 //Unexisting primary key
+ $emp.ID:=10000 //Llave primaria inexistente
  $emp.firstName:="Françoise"
  $emp.lastName:="Sagan"
  $empsCollection.push($emp)
@@ -323,21 +377,21 @@ En este ejemplo, la primera entidad se creará y guardará pero la segunda falla
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.ID:=10001 // Unexisting primary key
+ $emp.ID:=10001 // Llave primaria inexistente
  $emp.firstName:="Simone"
  $emp.lastName:="Martin"
  $emp.__NEW:=True
  $empsCollection.push($emp)
 
  $emp2:=New object
- $emp2.ID:=10001 // Same primary key, already existing
+ $emp2.ID:=10001 // La misma llave primaria, ya existente
  $emp2.firstName:="Marc"
  $emp2.lastName:="Smith"
  $emp2.__NEW:=True
  $empsCollection.push($emp2)
  $employees:=ds.Employee.fromCollection($empsCollection)
-  //first entity is created
-  //duplicated key error for the second entity
+  //se crea la primera entidad
+  //error de llave duplicada para la segunda entidad
 ```
 
 #### Ver también
@@ -383,9 +437,9 @@ Se aplica la carga diferida, lo que significa que los datos relacionados se carg
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                      |
-| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Etiqueta para el contexto de optimización automática aplicado a la entidad. Este contexto será utilizado por el código siguiente que carga la entidad para que pueda beneficiarse de la optimización. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                        |
+| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización automática aplicado a la entidad. Este contexto será utilizado por el código siguiente que carga la entidad para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor ORDA](ORDA/entities.md#client-server-optimization). |
 
 
 
@@ -394,8 +448,8 @@ En el parámetro opcional *settings* se puede pasar un objeto que contenga opcio
 ```4d
  var $entity : cs.EmployeeEntity  
  var $entity2 : cs.InvoiceEntity
- $entity:=ds.Employee.get(167) // return the entity whose primary key value is 167
- $entity2:=ds.Invoice.get("DGGX20030") // return the entity whose primary key value is "DGGX20030"
+ $entity:=ds.Employee.get(167) // devuelve la entidad cuyo valor de llave primaria es 167
+ $entity2:=ds.Invoice.get("DGGX20030") // devuelve la entidad cuyo valor de llave primaria es "DGGX20030"
 ```
 
 #### Ejemplo 2
@@ -410,18 +464,55 @@ Este ejemplo ilustra el uso de la propiedad *context*:
  $settings2:=New object("context";"summary")
 
  $e1:=ds.Employee.get(1;$settings)
- completeAllData($e1) // In completeAllData method, an optimization is triggered and associated to context "detail"
+ completeAllData($e1) // En el método completeAllData, se lanza una optimización y se asocia al contexto "detail"
 
  $e2:=ds.Employee.get(2;$settings)
- completeAllData($e2) // In completeAllData method, the optimization associated to context "detail" is applied
+ completeAllData($e2) // En el método completeAllData, se aplica la optimización asociada al contexto "detail"
 
  $e3:=ds.Employee.get(3;$settings2)
- completeSummary($e3) //In completeSummary method, an optimization is triggered and associated to context "summary"
+ completeSummary($e3) //En el método completeSummary, se lanza una optimización y se asocia al contexto "summary"
 
  $e4:=ds.Employee.get(4;$settings2)
- completeSummary($e4) //In completeSummary method, the optimization associated to context "summary" is applied
-``` 
- 
+ completeSummary($e4) //En el método completeSummary se aplica la optimización asociada al contexto "summary"
+```
+
+
+<!-- END REF -->
+
+<!-- REF DataClassClass.getCount.Desc -->
+## .getCount()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataClassClass.getCount().Syntax -->
+**.getCount()** : Integer <!-- END REF -->
+
+<!-- REF #DataClassClass.getCount().Params -->
+| Parámetros | Tipo    |    | Descripción                         |
+| ---------- | ------- | -- | ----------------------------------- |
+| result     | Integer | <- | Number of entities in the dataclass |
+<!-- END REF -->
+
+#### Descripción
+
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+
+If this function is used within a transaction, entities created during the transaction will be taken into account.
+
+#### Ejemplo
+
+```4d
+var $ds : 4D.DataStoreImplementation
+var $number : Integer
+
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
+
+$number:=$ds.Persons.getCount()
+```
 
 <!-- END REF -->
 
@@ -451,8 +542,8 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 
 El almacén de datos puede ser:
 
-*   the main datastore, as returned by the `ds` command.
-*   a remote datastore, opened using the `Open datastore` command.
+*   el almacén de datos principal, devuelto por el comando `ds`.
+*   un almacén de datos remoto, abierto con el comando `Open datastore`.
 
 
 #### Ejemplo
@@ -461,12 +552,12 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 
 ```4d
  var $pet : cs.CatsEntity
- $pet:=ds.Cats.all().first() //get an entity
+ $pet:=ds.Cats.all().first() //obtener una entidad
  SearchDuplicate($pet;"Dogs")
 ```
 
 ```4d
-  // SearchDuplicate method
+  // método SearchDuplicate 
   // SearchDuplicate(entity_to_search;dataclass_name)
 
  #DECLARE ($pet : Object ; $dataClassName : Text)
@@ -517,11 +608,11 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 #### Ejemplo 1
 
-```4d 
+```4d
  #DECLARE ($entity : Object)  
  var $status : Object
 
- computeEmployeeNumber($entity) //do some actions on entity
+ computeEmployeeNumber($entity) //realizar algunas acciones en la entidad
 
  $status:=$entity.save()
  if($status.success)
@@ -543,12 +634,12 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 #### Ejemplo 3
 
-```4d 
+```4d
  var $pk : Text
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
- $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
+ $dataClassAttribute:=ds.Employee[$pk] // Si es necesario, el atributo que coincide con la llave primaria es accesible
 ```
 
 #### Ver también
@@ -557,6 +648,90 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getRemoteCache().Desc -->
+## .getRemoteCache()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataClassClass.getRemoteCache().Syntax -->
+**.getRemoteCache**() : Object <!-- END REF -->
+
+<!-- REF #DataClassClass.getRemoteCache().Params -->
+| Parámetros | Tipo   |    | Descripción                                                         |
+| ---------- | ------ | -- | ------------------------------------------------------------------- |
+| result     | Objeto | <- | Object describing the contents of the ORDA cache for the dataclass. |
+<!-- END REF -->
+
+> **Modo avanzado:** esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
+
+#### Descripción
+
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+
+Calling this function from a 4D single-user application returns `Null`.
+
+El objeto devuelto tiene las siguientes propiedades:
+
+| Propiedad  | Tipo       | Descripción                                                               |
+| ---------- | ---------- | ------------------------------------------------------------------------- |
+| maxEntries | Integer    | Maximum number of entries collection.                                     |
+| stamp      | Integer    | Stamp of the cache.                                                       |
+| timeout    | Integer    | Time remaining before the new entries in the cache are marked as expired. |
+| entries    | Collection | Contains an entry object for each entity in the cache.                    |
+
+Each entry object in the `entries` collection has the following properties:
+
+| Propiedad | Tipo     | Descripción                       |
+| --------- | -------- | --------------------------------- |
+| data      | Objeto   | Object holding data on the entry. |
+| expired   | Booleano | True if the entry has expired.    |
+| key       | Texto    | Primary key of the entity.        |
+
+The `data` object in each entry contains the following properties:
+| Propiedad              | Tipo         | Descripción                                                                                                                  |
+| ---------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| __KEY                  | Cadena       | Primary key of the entity                                                                                                    |
+| __STAMP                | Entero largo | Timestamp of the entity in the database                                                                                      |
+| __TIMESTAMP            | Cadena       | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
+| dataClassAttributeName | Variant      | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
+
+Data concerning related entities is stored in the cache of the data object.
+
+#### Ejemplo
+
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
+
+Note that `address.city` is loaded in the cache of the `Persons` dataclass.
+
+Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+
+```4d
+var $ds : 4D.DataStoreImplementation
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cachePersons; $cacheAddress : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
+
+$persons:=$ds.Persons.all()
+
+$text:=""
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / "
+End for each
+
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Adress.getRemoteCache()
+```
+
+#### Ver también
+
+[.setRemoteCacheSettings()](#setremotecachesettings)<br/>[.clearRemoteCache()](#clearremotecache)
 
 
 <!-- REF DataClassClass.new().Desc -->
@@ -570,6 +745,7 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 <!-- REF #DataClassClass.new().Syntax -->
 **.new()** : 4D.Entity <!-- END REF -->
+
 
 <!-- REF #DataClassClass.new().Params -->
 | Parámetros | Tipo      |    | Descripción                                      |
@@ -588,19 +764,19 @@ El objeto entidad se crea en memoria y no se guarda en la base de datos hasta qu
 
 All attributes of the entity are initialized with the **null** value.
 
-> Attributes can be initialized with default values if the **Map NULL values to blank values** option is selected at the 4D database structure level.
+> Los atributos se pueden inicializar con valores por defecto si se selecciona la opción **Traducir los NULL a valores vacío** al nivel de la estructura de la base 4D.
 
 #### Ejemplo
 
 Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la información en el atributo "info":
 
-```4d 
+```4d
  var $entity : cs.LogEntity
- $entity:=ds.Log.new() //create a reference
- $entity.info:="New entry" //store some information
- $entity.save() //save the entity
+ $entity:=ds.Log.new() //crea una referencia
+ $entity.info:="New entry" //almacenar alguna información
+ $entity.save() //guardar la entidad
 ```
- 
+
 <!-- END REF -->
 
 
@@ -641,12 +817,12 @@ Cuando se crea, la selección de entidades no contiene ninguna entidad (`mySelec
 #### Ejemplo
 
 
-```4d 
+```4d
  var $USelection; $OSelection : cs.EmployeeSelection
- $USelection:=ds.Employee.newSelection() //create an unordered empty entity selection
- $OSelection:=ds.Employee.newSelection(dk keep ordered) //create an ordered empty entity selection
+ $USelection:=ds.Employee.newSelection() //crea una selección de entidades vacía y desordenada
+ $OSelection:=ds.Employee.newSelection(dk keep ordered) //crea una selección de entidades vacía y ordenada
 ```
- 
+
 
 <!-- END REF -->
 
@@ -695,51 +871,52 @@ attributePath|formula comparator value
 
 donde:
 
-*   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). You can also use a **placeholder** (see below).
-> *You cannot use directly attributes whose name contains special characters such as ".", "\[ ]", or "=", ">", "#"..., because they will be incorrectly evaluated in the query string. If you need to query on such attributes, you must consider using placeholders, which allow an extended range of characters in attribute paths (see* **Using placeholders** *below).*
+*   **attributePath**: ruta del atributo sobre el que se quiere ejecutar la búsqueda. Este parámetro puede ser un nombre simple (por ejemplo, "país") o cualquier ruta de atributo válida (por ejemplo, "país.nombre".) En el caso de una ruta de atributos de tipo `Collection`, se utiliza la notación \[ ] para manejar todas las ocurrencias (por ejemplo "niños[ ].edad").
+> *No puede utilizar directamente atributos cuyo nombre contenga caracteres especiales como ".", "\[ ]", o "=", ">", "#"..., porque se evaluarán incorrectamente en la cadena de consulta. Si necesita consultar dichos atributos, debe considerar el uso de marcadores, que permiten un rango ampliado de caracteres en las rutas de los atributos (ver* **Uso de marcadores de posición** *a continuación).*
 
-*   **formula**: a valid formula passed as `Text` or `Object`. The formula will be evaluated for each processed entity and must return a boolean value. Within the formula, the entity is available through the `This` object.
+*   **formula**: una fórmula válida pasada como `Text` o en `Object`. La fórmula se evaluará para cada entidad procesada y debe devolver un valor booleano. Dentro de la fórmula, la entidad está disponible a través del objeto `This`.
 
-    *   **Text**: the formula string must be preceeded by the `eval( )` statement, so that the query parser evaluates the expression correctly. For example: *"eval(length(This.lastname) >=30)"*
-    *   **Object**: the [formula object](FunctionClass.md) is passed as a **placeholder** (see below). The formula must have been created using the [`Formula`](FunctionClass.md#formula) or [`Formula from string`](FunctionClass.md#formula-from-string) command.
-> * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
-> * If the formula is not the only search criteria, the query engine optimizer could prior process other criteria (e.g. indexed attributes) and thus, the formula could be evaluated for only a subset of entities.
+    *   **Text**: la cadena de fórmulas debe ir precedida de la declaración `eval( )`, para que el analizador de consultas evalúe la expresión correctamente. Por ejemplo: *"eval(length(This.lastname) >=30)"*
+    *   **Object**: el [objeto fórmula](FunctionClass.md) se pasa como un **marcador** (ver abajo). La fórmula debe haber sido creada utilizando los comandos [`Formula`](FunctionClass.md#formula) o [`Formula from string`](FunctionClass.md#formula-from-string).
+> * Tenga en cuenta que las fórmulas de 4D sólo admiten los símbolos `&` y `|` como operadores lógicos.
+> * Si la fórmula no es el único criterio de búsqueda, el optimizador del motor de búsquedas podría procesar previamente otros criterios (por ejemplo, los atributos indexados) y, por tanto, la fórmula podría evaluarse sólo para un subconjunto de entidades.
 
-    Formulas in queries can receive parameters through $1. This point is detailed in the **formula parameter** paragraph below.
-> * You can also pass directy a `formula` parameter object instead of the `queryString` parameter (recommended when formulas are more complex). See **formula parameter** paragraph below.
-> * For security reasons, formula calls within `query()` methods can be disallowed. See `querySettings` parameter description.
+    Las fórmulas en las consultas pueden recibir parámetros a través de $1. Este punto se detalla en el párrafo **Parámetro fórmula** más abajo.
+> * También puede pasar directamente un objeto parámetro `formula` en lugar del parámetro `queryString` (recomendado cuando las fórmulas son más complejas). Ver el párrafo **Parámetro fórmula** más abajo.
+> * Por razones de seguridad, las llamadas a fórmulas dentro de las funciones `query()` pueden ser desestimadas. Ver la descripción del parámetro `querySettings`.
 
-*   **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
+*   **comparator**: símbolo que compara *attributePath* y *value*. Se soportan los siguientes símbolos:
 
-    | Comparison                           | Símbolo(s)  | Comentario                                                                                                     |
-    | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
-    | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
-    |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
-    | Diferente de                         | #, !=       | Supports the wildcard (@)                                                                                      |
-    |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
-    | Menor que                            | <           |                                                                                                                |
-    | Mayor que                            | >           |                                                                                                                |
-    | Menor o igual que                    | <=          |                                                                                                                |
-    | Mayor o igual que                    | >=          |                                                                                                                |
-    | Incluído en                          | IN          | Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@) |
-    | Not condition applied on a statement | NOT         | Parenthesis are mandatory when NOT is used before a statement containing several operators                     |
-    | Contiene palabra clave               | %           | Keywords can be used in attributes of string or picture type                                                   |
+    | Comparación                           | Símbolo(s)  | Comentario                                                                                                                     |
+    | ------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+    | Igual a                               | =, ==       | Obtiene los datos coincidentes, admite el comodín (@), no distingue entre mayúsculas de minúsculas ni diacríticas.             |
+    |                                       | ===, IS     | Obtiene los datos coincidentes, considera @ como carácter estándar, no distingue entre mayúsculas de minúsculas ni diacríticas |
+    | Diferente de                          | #, !=       | Soporta el comodín (@)                                                                                                         |
+    |                                       | !==, IS NOT | Considera la @ como un carácter estándar                                                                                       |
+    | Menor que                             | <           |                                                                                                                                |
+    | Mayor que                             | >           |                                                                                                                                |
+    | Menor o igual que                     | <=          |                                                                                                                                |
+    | Mayor o igual que                     | >=          |                                                                                                                                |
+    | Incluído en                           | IN          | Obtiene datos iguales a al menos uno de los valores de una colección o de un conjunto de valores, admite el comodín (@)        |
+    | Condición No aplicada a una sentencia | NOT         | Los paréntesis son obligatorios cuando se utiliza NOT antes de una instrucción que contiene varios operadores                  |
+    | Contiene palabra clave                | %           | Las palabras claves pueden utilizarse en atributos de tipo texto o imagen                                                      |
 
-*   **value**: the value to compare to the current value of the property of each entity in the entity selection or element in the collection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property.<p><p> When using a constant value, the following rules must be respected:
-    *   **text** type constant can be passed with or without simple quotes (see **Using quotes** below). To query a string within a string (a "contains" query), use the wildcard symbol (@) in value to isolate the string to be searched for as shown in this example: "@Smith@". The following keywords are forbidden for text constants: true, false.
-    *   **boolean** type constants: **true** or **false** (case sensitive).
-    *   **numeric** type constants: decimals are separated by a '.' (period). date type constants: "YYYY-MM-DD" format
-    *   **null** constant: using the "null" keyword will find **null** and **undefined** properties.
-    *   in case of a query with an IN comparator, value must be a collection, or values matching the type of the attribute path between \[ ] separated by commas (for strings, " characters must be escaped with "\").
-*   **logicalOperator**: used to join multiple conditions in the query (optional). You can use one of the following logical operators (either the name or the symbol can be used):
+*   **value**: el valor a comparar con el valor actual de la propiedad de cada entidad en la selección de entidades o elemento en la colección. Puede ser un **marcador** (ver **Uso de marcadores** más adelante) o cualquier expresión que coincida con la propiedad de tipo de datos.<p><p> Al utilizar un valor constante, deben respetarse las siguientes reglas:
+    *   La constante de tipo **texto** puede pasarse con o sin comillas simples (ver **Uso de comillas** más abajo). Para consultar una cadena dentro de otra cadena (una consulta de tipo "contiene"), utilice el símbolo de comodín (@) en el valor para aislar la cadena a buscar como se muestra en este ejemplo: "@Smith@". Las siguientes palabras clave están prohibidas para las constantes de texto: true, false.
+    *   Valores constantes de tipo **boolean**: **true** o **false** (Sensible a las mayúsculas y minúsculas).
+    *   Valores constantes de tipo **numérico**: los decimales se separan con un '.' (punto).
+    *   **date** type constants: "YYYY-MM-DD" format
+    *   Constantes **null**: utilizando la palabra clave "null" encontrará las propiedades **null** y **undefined**.
+    *   en el caso de una búsqueda con un comparador IN, el *valor* debe ser una colección, o valores que coincidan con el tipo de la ruta del atributo entre \[ ] separados por comas (para las cadenas, los caracteres `"` deben escaparse con `\`).
+*   **logicalOperator**: utilizado para unir condiciones múltiples en la búsqueda (opcional). Puede utilizar uno de los siguientes operadores lógicos (se puede utilizar el nombre o el símbolo):
 
     | Conjunción | Símbolo(s)              |
     | ---------- | ----------------------- |
     | AND        | &, &&, and              |
     | O          | &#124;,&#124;&#124;, or |
 
-*   **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). By default, the order is ascending. Pass 'desc' to define a descending order and 'asc' to define an ascending order.
-> *If you use this statement, the returned entity selection is ordered (for more information, please refer to [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
+*   **order by attributePath**: puede incluir una declaración order by *attributePath* en la búsqueda para que los datos resultantes se ordenen de acuerdo con esa declaración. Puede utilizar varias instrucciones de ordenación, separadas por comas (por ejemplo, ordenación por *attributePath1* desc, *attributePath2* asc). Por defecto, el orden es ascendente. Pase 'desc' para definir un orden descendente y 'asc' para definir un orden ascendente.
+> Si utiliza esta declaración, la entity selection devuelta está ordenada (para más información, consulte [Entity selections ordenadas vs desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
 
 **Utilizar comillas**
 
@@ -765,39 +942,39 @@ Puede utilizar paréntesis en la búsqueda para dar prioridad al cálculo. Por e
 
 Se pueden utilizar dos tipos de marcadores: **indexed placeholders** y los **named placeholders**:
 
-| -          | Marcadores de posición indexados                                                                                                                                                                                       | Nombre del marcador de posición                                                                                                                                          |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Definición | Los parámetros se insertan como :paramIndex (por ejemplo :1, :2...) en queryString y sus valores correspondientes son suministrados por la secuencia de parámetros value. Puede utilizar hasta 128 parámetros de valor | Los parámetros se insertan como: paramName (por ejemplo :myparam) y sus valores se proporcionan en los atributos y/o objetos de parámetros en el parámetro querySettings |
-| Ejemplo    | $r:=class.query(":1=:2";"city";"Chicago")                                                                                                                                                                              | $o.attributes:=New object("att";"city")<br> $o.parameters:=New object("name";"Chicago")<br> $r:=class.query(":att=:name";$o)                                 |
+|            | Marcadores de posición indexados                                                                                                                                                                                            | Nombre del marcador de posición                                                                                                                                              |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definición | Los parámetros se insertan como `:paramIndex` (por ejemplo :1, :2...) en *queryString* y sus valores correspondientes son suministrados por la secuencia de parámetros *value*. Puede utilizar hasta 128 parámetros *valor* | Los parámetros se insertan como`: paramName` (por ejemplo :myparam) y sus valores se proporcionan en los atributos y/o objetos de parámetros en el parámetro *querySettings* |
+| Ejemplo    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                                                                                 | `$o.attributes:=New object("att";"city")`<br> `$o.parameters:=New object("name";"Chicago")`<br> `$r:=class.query(":att=:name";$o)`                               |
 
 Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* puede contener, para los parámetros *attributePath*, *formula* y *value*:
 
 
-*   direct values (no placeholders),
-*   indexed placeholders and/or named placeholders.
+*   valores directos (sin marcadores),
+*   marcadores indexados y/o con nombre.
 
-**Se recomienda utilizar marcadores de posición en las consultas** por las siguientes razones:
+Using placeholders in queries **is recommended** for the following reasons:
 
-1.  It prevents malicious code insertion: if you directly use user-filled variables within the query string, a user could modifiy the query conditions by entering additional query arguments. For example, imagine a query string like:
+1.  Evita la inserción de código malicioso: si utiliza directamente variables completadas por el usuario dentro de la cadena de búsqueda, un usuario podría modificar las condiciones de búsqueda introduciendo argumentos de búsqueda adicionales. Por ejemplo, imagine una cadena de búsqueda como:
 
     ```4d
-     $vquery:="status = 'public' & name = "+myname //user enters their name
+     $vquery:="status = 'public' & name = "+myname //el usuario introduce su nombre
      $result:=$col.query($vquery)
     ```
 
-    This query seems secured since non-public data are filtered. However, if the user enters in the *myname* area something like *"smith OR status='private'*, the query string would be modified at the interpretation step and could return private data.
+    Esta búsqueda parece segura ya que se filtran los datos no públicos. Sin embargo, si el usuario introduce en el área *myname* algo como *"smith OR status='private'*, la cadena de búsqueda se modificaría en la etapa de la interpretación y podría devolver datos privados.
 
-    When using placeholders, overriding security conditions is not possible:
+    Cuando se utilizan marcadores de posición, no es posible anular las condiciones de seguridad:
 
     ```4d
      $result:=$col.query("status='public' & name=:1";myname)
     ```
 
-    In this case if the user enters *smith OR status='private'* in the *myname* area, it will not be interpreted in the query string, but only passed as a value. Looking for a person named "smith OR status='private'" will just fail.
+    En este caso, si el usuario introduce *smith OR status='private'* en el área *myname*, no se interpretará en la cadena de búsqueda, sino que sólo se pasará como valor. La búsqueda de una persona llamada "smith OR status='private'" simplemente fallará.
 
-2.  It prevents having to worry about formatting or character issues, especially when handling *attributePath* or *value* parameters that might contain non-alphanumeric characters such as ".", "['...
+2.  Evita tener que preocuparse por cuestiones de formato o caracteres, especialmente cuando se manejan los parámetros *attributePath* o *value* que pueden contener caracteres no alfanuméricos como ".", "['...
 
-3.  It allows the use of variables or expressions in query arguments. Ejemplos:
+3.  Permite el uso de variables o expresiones en los argumentos de búsqueda. Ejemplos:
 
     ```4d
     $result:=$col.query("address.city = :1 & name =:2";$city;$myVar+"@")
@@ -828,21 +1005,21 @@ Por ejemplo, con las dos entidades siguientes:
 ```
 Entity 1:
 ds.People.name: "martin"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 
 Entity 2:
 ds.People.name: "smith"
-ds.People.places: 
+ds.People.places:
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon" 
+                "city":"lyon"
             } , {
                 "kind":"office",
-                "city":"paris" 
+                "city":"paris"
             } ] }
 ```
 
@@ -856,10 +1033,11 @@ ds.People.query("places.locations[].kind= :1 and places.locations[].city= :2";"h
 
 Si quiere obtener sólo las entidades en las que los argumentos correspondientes están en el mismo elemento de colección, necesita **enlazar los argumentos**. Para enlazar los argumentos de búsqueda:
 
-- Add a letter between the \[] in the first path to link and repeat the same letter in all linked arguments. For example: `locations[a].city and locations[a].kind`. You can use any letter of the Latin alphabet (not case sensitive).
-- To add different linked criteria in the same query, use another letter. You can create up to 26 combinations of criteria in a single query.
+- Añada una letra entre los \[] en la primera ruta a enlazar y repita la misma letra en todos los argumentos enlazados. Por ejemplo: `locations[a].city and locations[a].kind`. Puede utilizar cualquier letra del alfabeto latino (no diferencia entre mayúsculas y minúsculas).
+- Para añadir diferentes criterios vinculados en la misma consulta, utilice otra letra. Puede crear hasta 26 combinaciones de criterios en una sola consulta.
 
 Con las entidades anteriores, si escribe:
+
 
 ```4d
 ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";"home";"paris")
@@ -868,30 +1046,60 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 ... la búsqueda sólo devolverá "martin" porque tiene un elemento "locations" cuyo "kind" es "home" y cuyo "city" es "paris". La búsqueda no devolverá "smith" porque los valores "home" y "paris" no están en el mismo elemento de colección.
 
 
+**Queries in many-to-many relations**
+
+ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
+
+![alt-text](assets/en/API/manytomany.png)
+
+Imagine that you want to search all movies in which *both* actor A and actor B have a role. If you write a simple query using an `AND` operator, it will not work:
+
+```4d
+// invalid code
+$es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor.lastName = :2";"Hanks";"Ryan")  
+// $es is empty
+```
+Basically, the issue is related to the internal logic of the query: you cannot search for an attribute whose value would be both "A" and "B".
+
+To make it possible to perform such queries, ORDA allows a special syntax: you just need to add a *class index* between **{}** in all additional relation attributes used in the string:
+
+```4d
+"relationAttribute.attribute = :1 AND relationAttribute{x}.attribute = :2 [AND relationAttribute{y}.attribute...]"
+```
+**{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
+
+In our example, it would be:
+
+```4d
+// valid code
+$es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2";"Hanks";"Ryan")  
+// $es contains movies (You've Got Mail, Sleepless in Seattle, Joe Versus the Volcano)
+```
+
 
 **parámetro formula**
 
 Como alternativa a la inserción de fórmulas dentro del parámetro *queryString* (ver arriba), puede pasar directamente un objeto fórmula como criterio de búsqueda booleano. La utilización de un objeto fórmula para las búsquedas es **recomendada** ya que se beneficia de la tokenización, y el código es más fácil de buscar/leer.
 
-La fórmula debe haber sido creada con el comando `Formula` o `Formula from string`. En este caso:
+The formula must have been created using the [`Formula`](FunctionClass.md#formula) or [`Formula from string`](FunctionClass.md#formula-from-string) command. En este caso:
 
-*   the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
-*   within the *formula*, the entity is available through the `This` object.
-*   if the `Formula` object is **null**, the errror 1626 ("Expecting a text or formula") is generated, that you call intercept using a method installed with `ON ERR CALL`.
-> For security reasons, formula calls within `query(`) member methods can be disallowed. See *querySettings* parameter description.
+*   *fórmula* se evalúa para cada entidad y debe devolver true o false. Durante la ejecución de la búsqueda, si el resultado de la fórmula no es un booleano, se considera como false.
+*   dentro de la *fórmula*, la entidad está disponible a través del objeto `This`.
+*   si el objeto `Formula` es **null**, se genera el error 1626 ("Esperando un texto o una fórmula"), que llama a interceptar utilizando un método instalado con `ON ERR CALL`.
+> Por razones de seguridad, las llamadas a fórmulas dentro de las funciones `query()` pueden ser desestimadas. Ver la descripción del parámetro *querySettings*.
 
 **Pasar parámetros a las fórmulas**
 
 Todo parámetro *formula* llamado por la función `query()` puede recibir parámetros:
 
-*   Parameters must be passed through the **args** property (object) of the *querySettings* parameter.
-*   The formula receives this **args** object as a **$1** parameter.
+*   Los parámetros deben pasarse a través de la propiedad **args** (objeto) del parámetro *querySettings*.
+*   La fórmula recibe este objeto **args** como parámetro **$1**.
 
 Este pequeño código muestra los principios de cómo se pasan los parámetros a los métodos:
 
 ```4d
- $settings:=New object("args";New object("exclude";"-")) //args object to pass parameters
- $es:=ds.Students.query("eval(checkName($1.exclude))";$settings) //args is received in $1
+ $settings:=New object("args";New object("exclude";"-")) //objeto args a pasar los parámetros
+ $es:=ds.Students.query("eval(checkName($1.exclude))";$settings) //args se recibe en $1
 ```
 
 En el ejemplo 3 se ofrecen más ejemplos.
@@ -904,15 +1112,15 @@ En el ejemplo 3 se ofrecen más ejemplos.
 
 En el parámetro *querySettings* se puede pasar un objeto que contenga opciones adicionales. Se soportan las siguientes propiedades:
 
-| Propiedad     | Tipo     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| parameters    | Objeto   | **Marcadores nombrados para los valores** utilizados en *queryString* o *formula*. Los valores se expresan como pares propiedad / valor, donde propiedad es el nombre del marcador de posición insertado para un valor en *queryString* o *formula* (":placeholder") y valor es el valor a comparar. Puede combinar marcadores de posición indexados (valores pasados directamente en parámetros de valor) y valores de marcadores de posición con nombre en la misma búsqueda.                                                                                                                                                                                                                                                                  |
+| Propiedad     | Tipo     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| parameters    | Objeto   | **Marcadores nombrados para los valores** utilizados en *queryString* o *formula*. Los valores se expresan como pares propiedad / valor, donde propiedad es el nombre del marcador de posición insertado para un valor en *queryString* o *formula* (":placeholder") y valor es el valor a comparar. Puede combinar marcadores de posición indexados (valores pasados directamente en parámetros de valor) y valores de marcadores de posición con nombre en la misma búsqueda.                                                                                                                                                                                                                                                                   |
 | attributes    | Objeto   | **Marcadores nombrados para las rutas de atributos** utilizados en *queryString* o *formula*. Los atributos se expresan como pares propiedad / valor, donde propiedad es el nombre del marcador de posición insertado para una ruta de atributo en *queryString* o *formula* (":placeholder") y valor puede ser una cadena o una colección de cadenas. Cada valor es una ruta que puede designar un escalar o un atributo relacionado de la dataclass o una propiedad en un campo de objeto de la dataclass<p><table><tr><th>Tipo</th><th>Descripción</th></tr><tr><td>Cadena</td><td>attributePath expresado con la notación de puntos, por ejemplo: "name" o "user.address.zipCode"</td></tr><tr><td>Colección de cadenas</td><td>Cada cadena de la colección representa un nivel de attributePath, por ejemplo: \["name"] o \["user","address","zipCode"]. El uso de una colección permite consultar atributos con nombres que no se ajustan a la notación de puntos, por ejemplo, ["4Dv17.1", "en/fr"]</td></tr></table>Puede combinar marcadores de posición indexados (valores pasados directamente en los parámetros *value*) y los valores de marcadores de posición con nombre en la misma búsqueda. |
-| args          | Objeto   | Parámetro(s) a pasar a las fórmulas, si las hay. El objeto **args** se recibirá en $1 dentro de las fórmulas y, por tanto, sus valores estarán disponibles a través de *$1.property* (ver ejemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| allowFormulas | Booleano | True para permitir las llamadas de fórmulas en la búsqueda (por defecto). Pase false para desautorizar la ejecución de fórmulas. Si se establece como false y `query()` recibe una fórmula, se envía un error (1278 - Fórmula no permitida en este método miembro).                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| context       | Texto    | Etiqueta para el contexto de optimización automática aplicado a la entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. Esta función está diseñada para el procesamiento cliente/servidor; para más información, consulte la sección **Optimización cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                                       |
-| queryPlan     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda justo antes de que se ejecute, es decir, la búsqueda planificada. La propiedad devuelta es un objeto que incluye cada búsqueda y sub búsqueda prevista (en el caso de una búsqueda compleja). Esta opción es útil durante la fase de desarrollo de una aplicación. Suele utilizarse junto con queryPath. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                                                                                     |
-| queryPath     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda tal cual es realizada. La propiedad devuelta es un objeto que contiene la ruta utilizada para la búsqueda (normalmente idéntica a la de queryPlan, pero puede diferir si el motor consigue optimizar la búsqueda), así como el tiempo de procesamiento y el número de registros encontrados. Esta opción es útil durante la fase de desarrollo de una aplicación. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                            |
+| args          | Objeto   | Parámetro(s) a pasar a las fórmulas, si las hay. El objeto **args** se recibirá en $1 dentro de las fórmulas y, por tanto, sus valores estarán disponibles a través de *$1.property* (ver ejemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| allowFormulas | Booleano | True para permitir las llamadas de fórmulas en la búsqueda (por defecto). Pase false para desautorizar la ejecución de fórmulas. Si se establece como false y `query()` recibe una fórmula, se envía un error (1278 - Fórmula no permitida en este método miembro).                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| context       | Texto    | Etiqueta para el contexto de optimización automática aplicado a la entity selection. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta función está diseñada para el procesamiento cliente/servidor; para más información, consulte la sección **Optimización cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                              |
+| queryPlan     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda justo antes de que se ejecute, es decir, la búsqueda planificada. La propiedad devuelta es un objeto que incluye cada búsqueda y sub búsqueda prevista (en el caso de una búsqueda compleja). Esta opción es útil durante la fase de desarrollo de una aplicación. Suele utilizarse junto con queryPath. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones `entitySelection.query()` y `dataClass.query()`.                                                                                                                                                                                                        |
+| queryPath     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda tal cual es realizada. La propiedad devuelta es un objeto que contiene la ruta utilizada para la búsqueda (normalmente idéntica a la de queryPlan, pero puede diferir si el motor consigue optimizar la búsqueda), así como el tiempo de procesamiento y el número de registros encontrados. Esta opción es útil durante la fase de desarrollo de una aplicación. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones `entitySelection.query()` y `dataClass.query()`.                                                                                                                                               |
 
 **Sobre queryPlan y queryPath**
 
@@ -1011,7 +1219,7 @@ Búsqueda con objetos queryPlan y queryPath:
 ```4d
 $entitySelection:=ds.Employee.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@";New object("queryPlan";True;"queryPath";True))
 
-  //you can then get these properties in the resulting entity selection
+  //puede obtener estas propiedades en la selección de entidades resultante
 var $queryPlan; $queryPath : Object
 $queryPlan:=$entitySelection.queryPlan
 $queryPath:=$entitySelection.queryPath
@@ -1060,7 +1268,7 @@ Búsqueda con marcadores de posición indexados para los atributos:
 ```4d
 var $es : cs.EmployeeSelection
 $es:=ds.Employee.query(":1 = 1234 and :2 = 'Smith'";"salesperson.userId";"name")
-  //salesperson is a related entity
+  //salesperson es una entidad relacionada
 ```
 
 Búsqueda con marcadores de posición indexados para los atributos y marcadores de posición con nombre para los valores:
@@ -1071,7 +1279,7 @@ var $querySettings : Object
 $querySettings:=New object
 $querySettings.parameters:=New object("customerName";"Smith")
 $es:=ds.Customer.query(":1 = 1234 and :2 = :customerName";"salesperson.userId";"name";$querySettings)
-  //salesperson is a related entity
+  //salesperson es una entidad relacionada
 ```
 
 Búsqueda con marcadores de posición indexados para los atributos y los valores:
@@ -1080,7 +1288,7 @@ Búsqueda con marcadores de posición indexados para los atributos y los valores
 ```4d
 var $es : cs.EmployeeSelection
 $es:=ds.Clients.query(":1 = 1234 and :2 = :3";"salesperson.userId";"name";"Smith")
-  //salesperson is a related entity
+  //salesperson es una entidad relacionada
 ```
 
 #### Ejemplo 2
@@ -1131,12 +1339,12 @@ Búsqueda con marcadores de posición con nombre para los atributos y los valore
  var $es : cs.EmployeeSelection
  var $name : Text
  $querySettings:=New object
-  //Named placeholders for values
-  //The user is asked for a name
- $name:=Request("Please enter the name to search:")
+  //Placeholders para los valores
+  //Se pide al usuario un nombre
+ $name:=Request("Por favor, introduzca el nombre a buscar:")
  If(OK=1)
     $querySettings.parameters:=New object("givenName";$name)
-  //Named placeholders for attribute paths
+  //Placeholders para las rutas de atributos
     $querySettings.attributes:=New object("attName";"name")
     $es:=ds.Employee.query(":attName= :givenName";$querySettings)
  End if
@@ -1206,7 +1414,7 @@ Utilizando el mismo método ***checkName***, un objeto `Formula` como marcador d
  $settings:=New object()
  $settings.args:=New object("filter";"-")
  $es:=ds.Students.query(":1 and nationality=:2";$formula;"French";$settings)
- $settings.args.filter:="*" // change the parameters without updating the $formula object
+ $settings.args.filter:="*" // cambiar los parámetros sin actualizar el objeto $formula
  $es:=ds.Students.query(":1 and nationality=:2";$formula;"French";$settings)
 ```
 
@@ -1219,7 +1427,7 @@ Queremos desautorizar las fórmulas, por ejemplo, cuando el usuario introduce su
  $queryString:=Request("Enter your query:")
  if(OK=1)
     $settings:=New object("allowFormulas";False)
-    $es:=ds.Students.query($queryString;$settings) //An error is raised if $queryString contains a formula
+    $es:=ds.Students.query($queryString;$settings) //Se produce un error si $queryString contiene una fórmula
  End if
 ```
 
@@ -1227,5 +1435,66 @@ Queremos desautorizar las fórmulas, por ejemplo, cuando el usuario introduce su
 
 [`.query()`](EntitySelectionClass.md#query) para selecciones de entidades
 <!-- END REF -->
+
+<!-- REF DataClassClass.setRemoteCacheSettings().Desc -->
+## .setRemoteCacheSettings()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataClassClass.setRemoteCacheSettings().Syntax -->
+**.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
+
+<!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
+| Parámetros | Tipo   |    | Descripción                                                                        |
+| ---------- | ------ | -- | ---------------------------------------------------------------------------------- |
+| parámetros | Objeto | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
+<!-- END REF -->
+
+> **Modo avanzado:** esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
+
+#### Descripción
+
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
+
+In the *settings* parameter, pass an object with the following properties:
+
+| Propiedad  | Tipo    | Descripción                   |
+| ---------- | ------- | ----------------------------- |
+| timeout    | Integer | Tiempo de espera en segundos. |
+| maxEntries | Integer | Número máximo de entidades.   |
+
+`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
+
+* the data is still there
+* the next time the data is needed, it will be asked to the server
+* 4D automatically removes expired data when the maximum number of entities is reached
+
+Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
+
+`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
+
+The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
+
+If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
+
+When an entity is saved, it is updated in the cache and expires once the timeout is reached.
+
+#### Ejemplo
+
+```4d
+var $ds : 4D.DataStoreImplementation
+
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
+
+$ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
+```
+
+#### Ver también
+
+[.clearRemoteCache()](#clearremotecache)<br/>[.getRemoteCache()](#clearremotecache)
 
 <style> h2 { background: #d9ebff;}</style>

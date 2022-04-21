@@ -57,6 +57,8 @@ $hello:=$person.sayHello() // "Hello John Doe"
     + Project
 
 
+
+
         * Sources
             - Classes
                 + Polygon.4dm
@@ -230,7 +232,7 @@ Function getFullname()->$fullname : Text
 ```
 
 
-クラスメソッドの場合には、`Current method name` コマンドは次を返します: `<ClassName>.<FunctionName>` (例: "MyClass.myMethod")。
+クラスメソッドの場合には、`Current method name` コマンドは次を返します: `<ClassName>.<FunctionName>` (例: "MyClass.myFunction")。
 
 アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、<a href="#クラス関数の引数>引数</a> を受け取ることができます。 以下のシンタックスがサポートされています:
 
@@ -418,7 +420,6 @@ Function set fullName( $fullName : Text )
     $p:=Position(" "; $fullName)
     This.firstName:=Substring($fullName; 1; $p-1)
     This.lastName:=Substring($fullName; $p+1)
-
 ```
 
 
@@ -557,6 +558,8 @@ Class constructor ($side : Integer)
     // Super を呼び出しておく必要があります
     This.name:="Square"
 
+
+
     Function getArea()
         C_LONGINT($0)
         $0:=This.height*This.width
@@ -574,7 +577,7 @@ Class constructor ($side : Integer)
 
 
 ```4d
-Super {( param{;...;paramN} )} {-> Object} 
+Super {( param{;...;paramN} )} {-> Object}
 ```
 
 
@@ -789,6 +792,7 @@ $o:=cs.ob.new()
 $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
+
 ```
 
 
@@ -808,7 +812,7 @@ $val:=$o.f() //8
 
 
 
-#### OB Class ( object ) -> Object | Null
+#### `OB Class ( object ) -> Object | Null`
 
 `OB Class` は引数として渡したオブジェクトのクラスを返します。 
 
@@ -819,6 +823,6 @@ $val:=$o.f() //8
 
 
 
-#### OB Instance of ( object ; class ) -> Boolean
+#### `OB Instance of ( object ; class ) -> Boolean`
 
 `object` が `class`、またはその子クラスに属していれば、`OB Instance of` は `true` を返します。それ以外の場合は `false` を返します。

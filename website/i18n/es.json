@@ -919,6 +919,9 @@
       "Users/overview": {
         "title": "Access Control overview"
       },
+      "ViewPro/advanced-programming": {
+        "title": "Advanced programming with Javascript"
+      },
       "ViewPro/configuring": {
         "title": "Configuring 4D View Pro Areas"
       },
@@ -982,6 +985,7 @@
       "Class API Reference": "Clases API",
       "Code Editor": "Editor de código",
       "Debugging": "Depuración",
+      "Transformation Tags": "Transformation Tags",
       "Settings": "Settings",
       "Preferences": "Preferencias",
       "4D Server Administration Window": "Ventana de administración de 4D Server",
@@ -1038,7 +1042,7 @@
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",
-    "Description of log files|no description given": "Description of log files",
+    "Description of log files|no description given": "Descripción de los archivos históricos",
     "Command Line Interface|no description given": "Interfaz de línea de comando",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferencias",
@@ -1047,8 +1051,9 @@
     "Developing Plugins|no description given": "Developing Plugins",
     "Working with a project|no description given": "Trabajar con un proyecto",
     "Settings|no description given": "Settings",
+    "Transformation Tags|no description given": "Transformation Tags",
     "User Settings|no description given": "User Settings",
-    "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html|no description given": "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html",
+    "https://doc.4d.com/4Dv19R4/4D/19-R4/4D-Language-Reference.100-5738429.en.html|no description given": "https://doc.4d.com/4Dv19R4/4D/19-R4/4D-Language-Reference.100-5738429.en.html",
     "Getting started|no description given": "Comencemos",
     "Core Development|no description given": "Desarrollo",
     "Administration|no description given": "Administración",

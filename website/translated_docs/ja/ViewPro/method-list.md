@@ -533,6 +533,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 ![](assets/en/ViewPro/cmd_vpColumnAutoFit2.PNG)
 
+
 #### 参照
 
 [VP ROW AUTOFIT](#vp-row-autofit)
@@ -849,17 +850,18 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 任意の *paramObj* 引数を渡すと、書き出される 4D View Pro オブジェクトの複数のプロパティに加えて、書き出しが完了した際に呼び出されるコールバックメソッド名を定義することができます。
 
 
-| プロパティ              | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| format             | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
-| password           | text    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                       |
-| formula            | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                        |
-| valuesOnly         | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
-| includeFormatInfo  | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
-| sheetIndex         | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
-| pdfOptions         | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>text</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>text</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>text</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>text</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>text</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
-| csvOptions         | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>text</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
-| \<customProperty> | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                            |
+| プロパティ                | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                             |
+| -------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| format               | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
+| password             | text    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                       |
+| formula              | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                        |
+| valuesOnly           | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
+| includeFormatInfo    | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
+| includeBindingSource | Boolean | 4DVP のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                                           |
+| sheetIndex           | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
+| pdfOptions           | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
+| csvOptions           | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
+| \<customProperty>   | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                            |
 
 **Excel 形式についての注意**:
 
@@ -976,14 +978,14 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 ### VP Export to object
 
-<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *option* : Object} ) : Object<!-- END REF -->  
+<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *options* : Object} ) : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Export to object.Params -->
 
 | 引数         | タイプ    |    | 説明                      |
 | ---------- | ------ | -- | ----------------------- |
 | vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名 |
-| option     | Object | -> | 書き出しのオプション              |
+| options    | Object | -> | 書き出しのオプション              |
 | 戻り値        | Object | <- | 4D View Pro オブジェクト      |
 <!-- END REF -->  
 
@@ -993,12 +995,13 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-*option* 引数として、必要に応じて以下の書き出しオプションを渡すことができます:
+*options* 引数として、必要に応じて以下の書き出しオプションを渡すことができます:
 
 
-| プロパティ             | タイプ     | 説明                                                                                                                                                        |
-| ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは **true**)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。 |
+| プロパティ                | タイプ     | 説明                                                                                                                                          |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo    | Boolean | フォーマット (書式) 情報を含めるには true (デフォルト)、それ以外の場合には false。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを false に設定することで書き出し時間を短縮することもできます。 |
+| includeBindingSource | Boolean | true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したオブジェクトのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。                 |
 
 4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
@@ -1124,6 +1127,7 @@ End if
 | vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名 |
 <!-- END REF -->  
 
+
 #### 説明
 
 `VP FLUSH COMMANDS` コマンドは、 <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->保存されているコマンドをただちに実行し、コマンドバッファをクリアします<!-- END REF -->。
@@ -1173,6 +1177,7 @@ End if
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
+
 
 以下の $font オブジェクトが返されます:
 
@@ -1240,6 +1245,55 @@ $activeCell:=VP Get active cell("myVPArea")
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
+
+### VP Get binding path
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *rangeObj* : Object ) : Text<!-- END REF -->  
+
+<!-- REF #_method_.VP Get binding path.Params -->
+
+| 引数       | タイプ    |    | 説明              |
+| -------- | ------ | -- | --------------- |
+| rangeObj | Object | -> | レンジオブジェクト       |
+| 戻り値      | Text   | <- | セルにバインドされた属性の名称 |
+
+<!-- END REF -->  
+
+#### 説明
+
+`VP Get binding path` コマンドは、 <!-- REF #_method_.VP Get binding path.Summary -->*rangeObj* で指定したセルにバインドされた属性の名称を返します<!-- END REF -->。
+
+*rangeObj* 引数には、セルレンジまたは複合セルレンジのオブジェクトを渡します。 注:
+* *rangeObj* のレンジが複数セルを含む場合、コマンドは最初のセルにバインドされている属性名を返します。
+* *rangeObj* 引数が複数のレンジを含む場合、最初のレンジの最初のセルにバインドされた属性名が返されます。
+
+#### 例題
+
+```4d
+var $p; $options : Object
+var $myAttribute : Text
+
+$p:=New object
+$p.firstName:="Freehafer"
+$p.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $p)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+
+$myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
+```
+
+#### 参照
+
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
 
 
 ### VP Get cell style
@@ -1412,6 +1466,51 @@ $index:=VP Get current sheet("ViewProArea")
 #### 参照
 
 [VP SET CURRENT SHEET](#vp-set-current-sheet)
+
+### VP Get data context
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+
+
+<!-- REF #_method_.VP Get data context.Params -->
+
+| 引数         | タイプ                      |    | 説明                       |
+| ---------- | ------------------------ | -- | ------------------------ |
+| vpAreaName | Object                   | -> | 4D View Pro フォームオブジェクト名  |
+| sheetIndex | Integer                  | -> | データコンテキストを取得するシートのインデックス |
+| 戻り値        | Object &#124; Collection | <- | データコンテキスト                |
+
+<!-- END REF -->  
+
+#### 説明
+
+`VP Get data context` コマンドは、 <!-- REF #_method_.VP Get data context.Summary -->ワークシートのカレントのデータコンテキストを返します<!-- END REF -->。 返されるコンテキストには、データコンテキストの内容に対しておこなわれた変更を含みます。
+
+*sheetIndex* には、データコンテキストを取得するシートのインデックスを渡します。 インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
+
+[VP SET DATA CONTEXT](#vp-set-data-context) により設定されたデータコンテキストの種類によって、関数はオブジェクトまたはコレクションを返します。
+
+#### 例題
+
+次のセルにバインドされたデータコンテキストを取得します:
+
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
+
+```4d
+var $dataContext : Object
+
+$dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastName:Nancy}
+```
+
+#### 参照
+
+[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)
 
 ### VP Get default style
 
@@ -1605,6 +1704,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 <!-- END REF -->  
 
 #### 説明
+
 
 `VP Get frozen panes` コマンドは、 <!-- REF #_method_.VP Get frozen panes.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、固定化されたカラムと行についての情報を格納したオブジェクトを返します<!-- END REF -->。
 
@@ -2446,7 +2546,7 @@ $o.password:="excel123"
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
-#### 例題 2
+#### 例題 3
 
 カンマ (",") を区切り文字として使用している `.txt` ファイルを読み込みます:
 
@@ -3009,7 +3109,7 @@ VP REMOVE SHEET("ViewProArea";2)
 
 | 引数       | タイプ    |    | 説明        |
 | -------- | ------ | -- | --------- |
-| rangeObj | Object | -> | レンジオブジェクト |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 #### 説明
@@ -3256,7 +3356,7 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 | プロパティ              | タイプ             | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area               | テキスト            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| area               | text            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | onEvent            | object (フォーミュラ) | オフスクリーンエリアの準備ができたときに実行されるコールバックメソッド。 以下のいずれかを渡すことができます:<p><p><li>クラスの `onEvent` 関数</li><li>`Formula` オブジェクト</li><p><p>デフォルトでは、コールバックメソッドは、[`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), または [`On Timer`](Events/onTimer.md) イベントで呼び出されます。 <p><p>コールバックメソッドを使用して [4D View Pro フォームオブジェクト変数](configuring.md#4d-view-pro-フォームオブジェクト変数) にアクセスすることができます。 |
 | autoQuit           | boolean         | True (デフォルト値) の場合、[`On End URL Loading`](Events/onEndUrlLoading.md) または [`On URL Loading Error`](Events/onUrlLoadingError.md) イベントが起きた際にはコマンドがフォーミュラの実行を中止します。<p><p>False の場合、*onEvent* コールバックメソッド内で `CANCEL` あるいは `ACCEPT` コマンドを使用する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | timeout            | number          | イベントが何も生成されない場合にエリアが自動的に閉まるまでの最大時間 (秒単位)。 0 に設定した場合、エリアは自動的には閉まりません。 デフォルト値: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -3481,6 +3581,60 @@ VP SET ALLOWED METHODS($allowed)
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
+### VP SET BINDING PATH
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *rangeObj* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+
+<!-- REF #_method_.VP SET BINDING PATH.Params -->
+
+| 引数                   | タイプ    |    | 説明                      |
+| -------------------- | ------ | -- | ----------------------- |
+| rangeObj             | Object | -> | レンジオブジェクト               |
+| dataContextAttribute | Text   | -> | *rangeObj* にバインドする属性の名称 |
+
+<!-- END REF -->  
+
+#### 説明
+
+`VP SET BINDING PATH` コマンドは、 <!-- REF #_method_.VP SET BINDING PATH.Summary -->*rangeObj* で指定したレンジに、シートのデータコンテキストの属性をバインドします<!-- END REF -->。 機能するには、[SET DATA CONTEXT](#vp-set-data-context) を使ってデータコンテキストを設定する必要があります。 読み込まれたデータコンテキストが属性を含む場合、*dataContextAttribute* の値が *rangeObj* のセルに自動的に表示されます。
+
+*rangeObj* 引数には、セルレンジまたは複合セルレンジのオブジェクトを渡します。
+* *rangeObj* のレンジが複数セルを含む場合、コマンドは最初のセルに属性をバインドします。
+* *rangeObj* 引数が複数のレンジを含む場合、コマンドは最初のレンジの最初のセルに属性をバインドします。
+
+*dataContextAttribute* には、*rangeObj* にバインドする属性の名称を渡します。 *dataContextAttribute* が空の文字列だった場合、関数は属性のバインドを解除します。
+
+> コレクション型の属性はサポートされていません。 コレクション属性の名前を渡した場合、コマンドは何もしません。
+
+#### 例題
+
+データコンテキストを設定し、`firstName` と `lastName` の属性をセルにバインドします:
+
+```4d
+var $p : Object
+
+$p:=New object
+$p.firstName:="Freehafer"
+$p.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $p)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+```
+
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
+
+#### 参照
+
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+
 ### VP SET BOOLEAN VALUE
 
 <!-- REF #_method_.VP SET BOOLEAN VALUE.Syntax -->**VP SET BOOLEAN VALUE** ( *rangeObj* : Object  ; *boolValue* : Boolean) <!-- END REF -->  
@@ -3595,6 +3749,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 #### 参照
 
 [VP SET CELL STYLE](#vp-set-cell-style)
+
 
 ### VP SET CELL STYLE
 
@@ -3862,6 +4017,144 @@ End case
 
 [VP SET ALLOWED METHODS](#vp-set-allowed-methods)
 
+### VP SET DATA CONTEXT
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object {; *sheetIndex* : Integer}} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object {; *sheetIndex* : Integer}} )<!-- END REF -->
+
+
+<!-- REF #_method_.VP SET DATA CONTEXT.Params -->
+
+| 引数         | タイプ        |    | 説明                       |
+| ---------- | ---------- | -- | ------------------------ |
+| vpAreaName | Object     | -> | 4D View Pro フォームオブジェクト名  |
+| dataObj    | Object     | -> | データコンテキストに読み込むデータオブジェクト  |
+| dataColl   | Collection | -> | データコンテキストに読み込むデータのコレクション |
+| options    | Object     | -> | 追加のオプション                 |
+| sheetIndex | Integer    | -> | シートのインデックス               |
+
+<!-- END REF -->
+
+#### 説明
+
+`VP SET DATA CONTEXT` コマンドは、 <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->シートのデータコンテキストを設定します<!-- END REF -->。 データコンテキストは、ワークシートにバインドされたオブジェクトまたはコレクションで、自動生成オプションまたは [VP SET BINDING PATH](#vp-set-binding-path) メソッドを使用することで、シートのセルにその内容を自動的に表示させることができます。 他方、[VP Get data context](#vp-get-data-context) コマンドは、ユーザーによる編集が含まれたコンテキストを返すことができます。
+
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
+
+*dataObj* または *dataColl* には、データコンテキストに読み込むデータを格納したオブジェクトまたはコレクションを渡します。 ピクチャーはデータURIスキームに変換されます。
+
+*dataObj* または *dataColl* に時間値を渡すには、次のプロパティを持つオブジェクトにカプセル化します ([例題 4](#例題-4---日付と時間のシンタックス) 参照):
+
+| プロパティ | タイプ                                      | 説明                   |
+| ----- | ---------------------------------------- | -------------------- |
+| value | Integer, Real, Boolean, Text, Date, Null | コンテキストに設定する値         |
+| time  | Real                                     | コンテキストに設定する時間値 (秒単位) |
+
+*options* には、追加のオプションを格納したオブジェクトを渡せます。 利用可能なプロパティは次のとおりです:
+
+| プロパティ               | タイプ    | 説明                                                                                                                     |
+| ------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| reset               | Object | 新しいコンテキストを読み込む前にシートの内容をリセットする場合は true、それ以外は false (デフォルト)                                                              |
+| autoGenerateColumns | Object | コレクション型のデータの場合にのみ使用します。 データコンテキストがバインドされると同時に、カラムを自動生成する場合は true (デフォルト)。 この場合、次のルールが適用されます: <ul><li>*dataColl* がオブジェクトのコレクションの場合、属性名はカラムのタイトルとして使用されます (例題 2 参照)。</li><li>*dataColl* がスカラー値のサブコレクションを含む場合、各サブコレクションは一つの行の値を定義します (例題 3 参照)。 最初のサブコレクションにより、生成されるカラム数が決定します。</li></ul> |
+
+*sheetIndex* には、データコンテキストを受け取るシートのインデックスを渡します。 インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
+
+[VP Export to object](#vp-export-to-object) でドキュメントをオブジェクトにエクスポート、または [VP EXPORT DOCUMENT](#vp-export-document) でドキュメントを 4DVP ドキュメントにエクスポートする場合、`includeBindingSource` オプションを使うことで、現在のコンテキストの内容をエクスポート先のセルの値としてコピーすることができます。 詳細については、これらのメソッドの説明を参照ください。
+
+#### 例題
+
+オブジェクトを受け渡し、先頭行のセルにコンテキストデータをバインドします:
+
+```4d
+var $data : Object
+
+$data:=New object
+$data.firstName:="Freehafer"
+$data.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $data)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+```
+
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
+
+
+#### 例題 2
+
+オブジェクトのコレクションを受け渡して、カラムを自動生成します:
+
+```4d
+var $options : Object
+var $data : Collection
+
+$data:=New collection()
+$data.push(New object("firstname"; "John"; "lastname"; "Smith"))
+$data.push(New object("firstname"; "Mary"; "lastname"; "Poppins"))
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+![](assets/en/ViewPro/vp-set-data-context-2.png)
+
+#### 例題 3
+
+引数として渡す *data* は、サブコレクションを含むコレクションです。 それぞれのサブコレクションは行を定義します:
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:=New collection
+$data.push(New collection(1; 2; 3; False; ""))  // 5 columns are created
+$data.push(New collection)  // Second row is empty
+$data.push(New collection(4; 5; Null; "hello"; "world"))  // Third row has 5 values
+$data.push(New collection(6; 7; 8; 9))  // Fourth row has 4 values
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+![](assets/en/ViewPro/vp-set-data-context-3.png)
+
+#### 例題 4 - 日付と時間のシンタックス
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:= New collection()
+
+// 日付はスカラー値として渡すことができます
+$data.push(New collection("Date"; Current date)) 
+
+// 時間はオブジェクト属性として渡す必要があります
+$data.push(New collection("Time"; New object("time"; 5140)))
+
+// 日付 + 時間の例
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+カラムが生成された後の結果です:
+
+![](assets/en/ViewPro/vp-set-data-context-date-time.png)
+
+#### 参照
+
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)
+
 ### VP SET DATE TIME VALUE
 
 <!-- REF #_method_.VP SET DATE TIME VALUE.Syntax -->**VP SET DATE TIME VALUE** ( *rangeObj* : Object ; *dateValue* : Date ; *timeValue* : Time {; *formatPattern* : Text } ) <!-- END REF -->  
@@ -4008,7 +4301,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 | 引数            | タイプ     |    | 説明                  |
 | ------------- | ------- | -- | ------------------- |
 | rangeObj      | Object  | -> | レンジオブジェクト           |
-| field         | Pointer | -> | 仮想ストラクチャーのフィールドへの参照 |
+| フィールド         | Pointer | -> | 仮想ストラクチャーのフィールドへの参照 |
 | formatPattern | Text    | -> | フィールドのフォーマット        |
 
 <!-- END REF -->  
@@ -4164,12 +4457,12 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // セルに割り当て�
 
 *paneObj* には、固定化するカラムと行を定義するオブジェクトを渡します。 以下のカラムまたは行のプロパティの値にゼロを設定すると、そのプロパティをリセット (固定解除) します。 プロパティが 0以下の値に設定された場合、コマンドは何もしません。 以下のものを渡すことができます:
 
-| プロパティ               | タイプ | 説明                 |
-| ------------------- | --- | ------------------ |
-| columnCount         | 整数  | シートの左側にある固定化されたカラム |
-| trailingColumnCount | 整数  | シートの右側にある固定化されたカラム |
-| rowCount            | 整数  | シートの上側にある固定化された行   |
-| trailingRowCount    | 整数  | シートの下側にある固定化された行   |
+| プロパティ               | タイプ     | 説明                 |
+| ------------------- | ------- | ------------------ |
+| columnCount         | Integer | シートの左側にある固定化されたカラム |
+| trailingColumnCount | Integer | シートの右側にある固定化されたカラム |
+| rowCount            | Integer | シートの上側にある固定化された行   |
+| trailingRowCount    | Integer | シートの下側にある固定化された行   |
 
 任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
@@ -4852,7 +5145,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
     | プロパティ | タイプ                                      | 説明             |
     | ----- | ---------------------------------------- | -------------- |
     | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く) |
-    | time  | 実数                                       | 時間値 (秒単位)      |
+    | time  | Real                                     | 時間値 (秒単位)      |
 
 #### 例題
 
@@ -4880,8 +5173,8 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
 | 引数         | タイプ    |    | 説明                         |
 | ---------- | ------ | -- | -------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名    |
-| optionObj  | オブジェクト | -> | 設定するワークブックオプションを格納したオブジェクト |
+| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名    |
+| optionObj  | Object | -> | 設定するワークブックオプションを格納したオブジェクト |
 <!-- END REF -->  
 
 #### 説明

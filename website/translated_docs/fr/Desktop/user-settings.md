@@ -31,7 +31,7 @@ Pour activer les paramètres utilisateur, vous devez cocher l'option **Paramètr
 Lorsque vous cochez cette option, les paramètres sont séparés en trois boîtes de dialogue :
 
 * **Propriétés structure**
-* **Propriétés utilisateur**
+* **Paramètres utilisateur**
 * **Propriétés utilisateur pour le fichier de données**
 
 Vous pouvez accéder à ces boîtes de dialogue en utilisant le menu **Développement > Propriétés...** ou le bouton **Propriétés** dans la barre d'outils :
