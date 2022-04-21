@@ -186,7 +186,7 @@ Si le nouvel indice de l'élément est au-delà du dernier élément existant de
 Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge :
 
 *   nombre (réel, entier...). Les valeurs numériques sont toujours stockées sous forme de réels.
-*   Texte
+*   text
 *   boolean
 *   date
 *   heure (stockée en nombre de milliseconds - réel)
@@ -1561,9 +1561,7 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 
 #### Description
 
-La propriété `.length` <!-- REF #collection.length.Summary -->retourne le nombre d'éléments contenus dans la collection<!-- END REF -->.
-
-La propriété `.length` est initialisée à la création de la collection. Elle est automatiquement mise à jour en cas d'ajout ou de suppression d'éléments. Cette propriété est en **lecture seulement** (vous ne pouvez pas l'utiliser pour modifier la taille de la collection).
+La propriété `.length` <!-- REF #collection.length.Summary -->retourne le nombre d'éléments contenus dans la collection.<!-- END REF -->La propriété `.length` est initialisée à la création de la collection. Elle est automatiquement mise à jour en cas d'ajout ou de suppression d'éléments. Cette propriété est en **lecture seulement** (vous ne pouvez pas l'utiliser pour modifier la taille de la collection).
 
 #### Exemple
 
