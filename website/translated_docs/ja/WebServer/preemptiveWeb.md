@@ -6,36 +6,35 @@ title: プリエンプティブWebプロセスの使用
 
 4D Webサーバーを使って、コンパイル済みアプリケーションでプリエンプティブWebプロセスを使用することによって、マルチコアコンピューターの利点を最大限引き出すことができます。 4D変換タグや Webデータベースメソッドを含めた Web関連コードを、可能な限り多くのコアで同時に実行するよう設定することが可能です。
 
-4D のプリエンプティブプロセスについての詳細は、*ランゲージリファレンス* の *プリエンプティブ4Dプロセス* の章を参照ください。
+For in-depth information on preemptive process in 4D, please refer to the *Preemptive 4D processes* section in the [*4D Language Reference*](https://doc.4d.com).
 
 ## Webプロセスにおけるプリエンプティブモードの使用可能状況
 
-Webプロセスに対してプリエンプティブモードの使用が可能なのは、以下のコンテキストの場合に限られます:
+The following table indicates whether the preemptive mode is used or is available, depending on the execution context:
 
-*   4D Server あるいはローカルモードの 4D を使用している (リモートモードでの 4D はプリエンプティブモードをサポートしていません)
+| 4D Server           | Interpreted, project ([client connected locally](../Desktop/clientServer.md#using-4d-and-4d-server-on-the-same-machine)) | Interpreted, project (no client connected locally) or binary | コンパイル済みコード    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | ------------- |
+| REST サーバー           | cooperative                                                                                                              | preemptive                                                   | preemptive    |
+| Web サーバー            | cooperative                                                                                                              | *web setting*                                                | *web setting* |
+| Web Services Server | cooperative                                                                                                              | *web setting*                                                | *web setting* |
+| Legacy REST         | cooperative                                                                                                              | *web setting*                                                | *web setting* |
 
-*   コンパイルされたデータベースの使用 ([4D Server上で、スケーラブルセッションが有効な場合](sessions.md#プリエンプティブモード) を除く)
+| 4D remote/single-user | インタープリターコード | コンパイル済みコード    |
+| --------------------- | ----------- | ------------- |
+| REST サーバー             | cooperative | preemptive    |
+| Web サーバー              | cooperative | *web setting* |
+| Web Services Server   | cooperative | *web setting* |
+| Legacy REST           | cooperative | *web setting* |
 
-*   データベースの **プリエンプティブプロセスを使用** 設定がチェックされている(以下参照)
+- REST Server: handles [ORDA data model class functions](../REST/ClassFunctions.md)
+- Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md)
+- Web Service Server: handles SOAP requests
+- Legacy REST: direct requests to 4D methods (`/rest/{table}/{methodName}`)
+- ***web setting*** means that the preemptive mode depends on a setting value:
+    - when [**Scalable sessions**](sessions.md#enabling-sessions) option is selected, the [preemptive mode is automatically used](sessions.md#preemptive-mode) for web processes.
+    - otherwise, the [**Use preemptive processes**](webServerConfig.md#use-preemptive-processes) option is taken into account.
+    - regarding Web service processes (server or client), preemptive mode is supported at method level. You just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler.
 
-*   Web関連のデータベースメソッドとプロジェクトメソッドは、すべてスレッドセーフであると 4Dコンパイラから確認済みである
-
-上記の要項がどれか一つでも欠けていた場合、Webサーバーはコオペラティブプロセスを使用します。
-
-## Webサーバーにおいてプリエンプティブモードを有効化する
-
-アプリケーションの Webサーバーコードにおいてプリエンプティブモードを有効化するには、設定ダイアログボックスの "Web / オプション (I)" ページの、**プリエンプティブプロセスを使用** にチェックをつける必要があります:
-
-![](assets/en/WebServer/preemptive.png)
-
-このオプションがチェックされているとき、4Dコンパイラは Web関連のコードそれぞれのスレッドセーフプロパティを自動的に評価し (以下参照)、違反があった場合にはエラーを返します。
-
-
-このオプションは、以下のコンテキストでは適用されません:
-
-- [**コンパイル済みモードでの RESTプロセス**](../REST/ClassFunctions.md) - コンパイル済みプロジェクトにおいて、RESTサーバーは自動的にプリエンプティブプロセスを使用します。 RESTリクエストから呼び出されるすべての 4Dコードは、スレッドセーフである必要があります。
-- [**スケーラブルセッション**](sessions.md#セッションの有効化) - たとえインタープリターモードの場合でも、Webサーバーのスケーラブルセッションはプリエンプティブプロセスによって自動的に処理されます (スケーラブルセッションが有効な場合は、このオプションは使用できません)。
-- **Webサービスプロセス** (サーバーまたはクライアント) - Webサービスプロセスのプリエンプティブモードは、メソッドレベルでサポートされています。 公開済みの SOAPサーバーメソッド ([4Dで Web サービスを公開する](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.ja.html) 参照) あるいはプロキシクライアントメソッド ([4Dから Web サービスへサブスクライブする](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.ja.html) 参照) の "プリエンプティブプロセスで実行可能" プロパティをチェックし、メソッドがコンパイラーによってスレッドセーフと確認されるようにします。
 
 
 
@@ -47,7 +46,7 @@ Webプロセスをプリエンプティモードで実行するには、Webサ�
     *   [`On Web Authentication`](authentication.md#on-web-authentication)
     *   [`On Web Connection`](httpRequests.md#on-web-connection)
     *   [`On REST Authentication`](REST/configuration.md#on-rest-authentication-データベースメソッドを使用する)
-    *   [`On Mobile App Authentication`](https://doc.4d.com/4Dv18/4D/18.4/On-Mobile-App-Authentication-database-method.301-5233127.en.html)
+    *   [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication)
 
 *   `compiler_web` プロジェクトメソッド (実際の "実行モード" プロパティに関わらず評価されます)
 
@@ -57,9 +56,11 @@ Webプロセスをプリエンプティモードで実行するには、Webサ�
 
 *   "RESTリソースとして公開" 属性が有効なテーブルのトリガー
 
-*   REST経由で利用可能なプロジェクトメソッド ("公開オプション: RESTサーバー" プロパティがチェックされているメソッド)
+*   [ORDA data model class functions](../REST/ClassFunctions.md) called via REST
 
-これらそれぞれのメソッドとコードの部分について、スレッドセーフのルールが遵守されているかをコンパイラーがチェックし、問題があった場合にはエラーを返します。 スレッドセーフルールについての詳細は、*プロセス* の章の *スレッドセーフなメソッドの書き方* の段落を参照ください。
+*   Project methods with "REST Server" property checked (legacy REST calls)
+
+これらそれぞれのメソッドとコードの部分について、スレッドセーフのルールが遵守されているかをコンパイラーがチェックし、問題があった場合にはエラーを返します。 For more information about thread-safety rules, please refer to the *Writing a thread-safe method* paragraph in the *Processes* chapter of the [4D Language Reference](https://doc.4d.com) manual.
 
 ## 4D Webコードのスレッドセーフティ
 
