@@ -352,7 +352,7 @@ If you checked the “Allow automatic update of client application” option, an
 
 #### Ubicación de los archivos web
 
-If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
+If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. Estos elementos son los siguientes:
 
 - archivos *cert.pem* y *key.pem* (opcional): etos archivos se utilizan para las conexiones SSL y por los comandos de encriptación de datos,
 - Default Web root folder (WebFolder).
