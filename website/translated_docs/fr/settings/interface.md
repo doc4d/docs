@@ -52,7 +52,7 @@ La palette d'application principale sera appliquée aux formulaires par défaut.
 -   par la commande [SET APPLICATION COLOR SCHEME](https://doc.4d.com/4dv19R/help/command/en/page1762.html) au niveau de la session de travail ;
 -   en utilisant la propriété de formulaire [Color Scheme](../FormEditor/propertiesForm.html#color-scheme) à chaque niveau de formulaire (niveau de priorité le plus élevé). **Note** : à l'impression, les formulaires utilisent toujours la palette "Light".
 
-## Raccourcis clavier
+## Raccourcis
 
 La zone Raccourcis clavier permet d'afficher et de modifier les raccourcis clavier par défaut pour trois opérations de base du formulaire 4D dans vos applications desktop. Ces raccourcis clavier sont identiques pour les deux plateformes. Les icônes des touches indiquent les touches correspondant à Windows et à macOS.
 
