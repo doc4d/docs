@@ -79,7 +79,7 @@ Une collection est initialisée avec :
 | Paramètres | Type                                                                    |    | Description             |
 | ---------- | ----------------------------------------------------------------------- |:--:| ----------------------- |
 | value      | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | Valeur(s) de collection |
-| Résultat   | Collection                                                              | <- | Nouvelle collection     |
+| Résultat   | Collection                                                              | <- | New collection          |
 <!-- END REF -->
 
 
@@ -186,7 +186,7 @@ Si le nouvel indice de l'élément est au-delà du dernier élément existant de
 Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge :
 
 *   nombre (réel, entier...). Les valeurs numériques sont toujours stockées sous forme de réels.
-*   text
+*   Texte
 *   boolean
 *   date
 *   heure (stockée en nombre de milliseconds - réel)
@@ -1164,8 +1164,7 @@ Le code de la méthode ***LengthLessThan*** est le suivant :
 Vous souhaitez trouver un nom de ville dans une collection :
 
 ```4d
- var $c : Collection
- var $c2 : Object
+ var $c; $c2 : Collection
  $c:=New collection
  $c.push(New object("name";"Cleveland";"zc";35049))
  $c.push(New object("name";"Blountsville";"zc";35031))
@@ -1311,7 +1310,6 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 *   Si *startFrom* = 0, l'ensemble de la collection est évalué (défaut).
 
 #### Exemple
-
 
 
 
@@ -1561,7 +1559,9 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 
 #### Description
 
-La propriété `.length` <!-- REF #collection.length.Summary -->retourne le nombre d'éléments contenus dans la collection.<!-- END REF -->La propriété `.length` est initialisée à la création de la collection. Elle est automatiquement mise à jour en cas d'ajout ou de suppression d'éléments. Cette propriété est en **lecture seulement** (vous ne pouvez pas l'utiliser pour modifier la taille de la collection).
+La propriété `.length` <!-- REF #collection.length.Summary -->retourne le nombre d'éléments contenus dans la collection<!-- END REF -->.
+
+La propriété `.length` est initialisée à la création de la collection. Elle est automatiquement mise à jour en cas d'ajout ou de suppression d'éléments. Cette propriété est en **lecture seulement** (vous ne pouvez pas l'utiliser pour modifier la taille de la collection).
 
 #### Exemple
 
@@ -2265,7 +2265,6 @@ Vous pouvez passer la valeur pour initialiser l'accumulateur dans *initValue*. S
  $c:=New collection(5;3;5;1;3;4;4;6;2;2)
  $r:=$c.reduce("Multiply";1) //retourne 86400
 ```
-
 
 Avec la méthode ***Multiply*** suivante :
 
