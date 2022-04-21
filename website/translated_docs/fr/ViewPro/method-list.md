@@ -163,7 +163,7 @@ La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère un
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
 Dans *index*, vous pouvez passer un numéro pour la nouvelle feuille. Si l'*index* passé est inférieur ou égal à 0, la commande insère la nouvelle feuille au début. Si l'*index* est supérieur au nombre de feuilles, la commande insère la nouvelle feuille après les feuilles existantes.
-> L'indexation démarre à 0.
+> La numérotation démarre à 0.
 
 Dans *name*, vous pouvez passer un nom pour la nouvelle feuille. Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
@@ -239,12 +239,12 @@ Pour fusionner les cellules First quarter et Second quarter avec les deux cellul
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 
-| Paramètres | Type   |    | Description                                    |
-| ---------- | ------ | -- | ---------------------------------------------- |
-| vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro        |
-| styleName  | Text   | -> | Nom du style                                   |
-| styleObj   | Object | -> | Objet définissant les propriétés de l'attribut |
-| scope      | Entier | -> | Cible (par défaut = feuille courante)          |
+| Paramètres | Type    |    | Description                                    |
+| ---------- | ------- | -- | ---------------------------------------------- |
+| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro        |
+| styleName  | Text    | -> | Nom du style                                   |
+| styleObj   | Object  | -> | Objet définissant les propriétés de l'attribut |
+| scope      | Integer | -> | Cible (par défaut = feuille courante)          |
 <!-- END REF -->  
 
 #### Description
@@ -968,7 +968,7 @@ $params.columnDelimiter:="|"
 VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv format;"csvOptions";$params))
 ```
 
-Voici le résultat :
+Here's the result:
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv-result.png)
 
