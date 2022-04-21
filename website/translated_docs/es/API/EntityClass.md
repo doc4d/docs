@@ -338,7 +338,7 @@ vCompareResult3 (sólo se devuelven las diferencias en atributos tocados $e1)
 | Parámetros | Tipo    |    | Descripción                                                                        |
 | ---------- | ------- |:--:| ---------------------------------------------------------------------------------- |
 | mode       | Integer | -> | `dk force drop if stamp changed`: activa el soltar incluso si el sello ha cambiado |
-| Resultado  | Objeto  | <- | Resultado de la operación soltar                                                   |
+| Resultado  | Object  | <- | Resultado de la operación soltar                                                   |
 
 <!-- END REF -->
 
@@ -358,23 +358,23 @@ El objeto devuelto por `.drop( )` contiene las siguientes propiedades:
 
 | Propiedad     |                     | Tipo                  | Descripción                                                                                                                   |
 | ------------- | ------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| success       |                     | booleano              | true si la acción de soltar tiene éxito, false en caso contrario.                                                             |
+| success       |                     | boolean               | true si la acción de soltar tiene éxito, false en caso contrario.                                                             |
 |               |                     |                       | ***Disponible sólo en caso de error:***                                                                                       |
 | status(*)     |                     | number                | Código de error, ver abajo                                                                                                    |
-| statusText(*) |                     | texto                 | Descripción del error, ver abajo                                                                                              |
+| statusText(*) |                     | text                  | Descripción del error, ver abajo                                                                                              |
 |               |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                                  |
-| LockKindText  |                     | texto                 | "Locked by record"                                                                                                            |
-| lockInfo      |                     | objeto                | Información sobre el origen del bloqueo                                                                                       |
+| LockKindText  |                     | text                  | "Locked by record"                                                                                                            |
+| lockInfo      |                     | object                | Información sobre el origen del bloqueo                                                                                       |
 |               | task_id             | number                | Id del proceso                                                                                                                |
-|               | user_name           | texto                 | Nombre de usuario de la sesión en la máquina                                                                                  |
-|               | user4d_alias        | texto                 | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                          |
-|               | host_name           | texto                 | Nombre de la máquina                                                                                                          |
-|               | task_name           | texto                 | Nombre del proceso                                                                                                            |
-|               | client_version      | texto                 |                                                                                                                               |
+|               | user_name           | text                  | Nombre de usuario de la sesión en la máquina                                                                                  |
+|               | user4d_alias        | text                  | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                          |
+|               | host_name           | text                  | Nombre de la máquina                                                                                                          |
+|               | task_name           | text                  | Nombre del proceso                                                                                                            |
+|               | client_version      | text                  |                                                                                                                               |
 |               |                     |                       | ***Disponible sólo en caso de error grave (un error grave puede ser intentar duplicar una llave primaria, disco lleno...):*** |
 | errors        |                     | collection of objects |                                                                                                                               |
-|               | message             | texto                 | Mensaje de error                                                                                                              |
-|               | component signature | texto                 | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                         |
+|               | message             | text                  | Mensaje de error                                                                                                              |
+|               | component signature | text                  | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                         |
 |               | errCode             | number                | Código de error                                                                                                               |
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedadese *status* y *statusText* del objeto *Result* en caso de error:
@@ -485,7 +485,7 @@ Si la entidad no pertenece a ninguna selección de entidades existente (es decir
 <!-- REF #EntityClass.fromObject().Params -->
 | Parámetros | Tipo   |    | Descripción                                  |
 | ---------- | ------ |:--:| -------------------------------------------- |
-| filler     | Objeto | -> | Objeto a partir del cual se llena la entidad |
+| filler     | Object | -> | Objeto a partir del cual se llena la entidad |
 
 <!-- END REF -->
 
@@ -622,7 +622,7 @@ El siguiente código genérico duplica cualquier entidad:
 | Parámetros | Tipo    |    | Descripción                                                                                               |
 | ---------- | ------- |:--:| --------------------------------------------------------------------------------------------------------- |
 | mode       | Integer | -> | `dk key as string`: la llave primaria se devuelve como una cadena, sin importar el tipo de llave primaria |
-| Resultado  | Texto   | <- | Valor de la llave primaria de texto de la entidad                                                         |
+| Resultado  | Text    | <- | Valor de la llave primaria de texto de la entidad                                                         |
 | Resultado  | Integer | <- | Valor de la llave primaria numérica de la entidad                                                         |
 
 
@@ -807,9 +807,9 @@ El valor resultante se incluye entre 0 y la longitud de la selección de entidad
 
 
 <!-- REF #EntityClass.isNew().Params -->
-| Parámetros | Tipo     |    | Descripción                                                                               |
-| ---------- | -------- |:--:| ----------------------------------------------------------------------------------------- |
-| Resultado  | Booleano | <- | True si la entidad acaba de ser creada y aún no se ha guardado. En caso contrario, False. |
+| Parámetros | Tipo    |    | Descripción                                                                               |
+| ---------- | ------- |:--:| ----------------------------------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True si la entidad acaba de ser creada y aún no se ha guardado. En caso contrario, False. |
 
 <!-- END REF -->
 
@@ -894,7 +894,7 @@ Si la entidad no pertenece a ninguna selección de entidades existente (es decir
 | Parámetros | Tipo    |    | Descripción                                                                      |
 | ---------- | ------- |:--:| -------------------------------------------------------------------------------- |
 | mode       | Integer | -> | `dk reload if stamp changed`: recargar antes de bloquear si el sello ha cambiado |
-| Resultado  | Objeto  | <- | Resultado de la operación de bloqueo                                             |
+| Resultado  | Object  | <- | Resultado de la operación de bloqueo                                             |
 
 <!-- END REF -->
 
@@ -904,10 +904,12 @@ La función `.lock()` <!-- REF #EntityClass.lock().Summary -->pone un bloqueo pe
 
 Otros procesos verán este registro como bloqueado (la propiedad `result.success` contendrá False si intentan bloquear la misma entidad usando esta función). Sólo las funciones ejecutadas en la sesión de "bloqueo" pueden editar y guardar los atributos de la entidad. La entidad puede ser cargada como de sólo lectura por otras sesiones, pero no podrán introducir y guardar valores.
 
-Un registro bloqueado se desbloquea:
+El objeto devuelto por <`.unlock()<` contiene la siguiente propiedad:
 
 *   cuando la función [`unlock()`](#unlock) se llama en una entidad correspondiente en el mismo proceso
 *   automáticamente, cuando ya no es referenciado por ninguna entidad en la memoria. Por ejemplo, si el bloqueo se pone sólo en una referencia local de una entidad, la entidad se desbloquea cuando la función termina. Mientras haya referencias a la entidad en la memoria, el registro permanece bloqueado.
+
+> Para más información, consulte la sección [Entity locking](ORDA/entities.md#entity-locking).
 
 Por defecto, si se omite el parámetro *mode*, la función devolverá un error (ver más abajo) si la misma entidad fue modificada (es decir, el sello ha cambiado) por otro proceso o usuario en el ínterin.
 
@@ -917,29 +919,34 @@ De lo contrario, puede pasar la opción `dk reload if stamp changed` en el pará
 
 El objeto devuelto por `.lock( )` contiene las siguientes propiedades:
 
-| Propiedad        |                     | Tipo                  | Descripción                                                                                                                 |
-| ---------------- | ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | booleano              | true si la acción de bloqueo tiene éxito (o si la entidad ya está bloqueada en el proceso actual), false en caso contrario. |
-|                  |                     |                       | ***Disponible sólo si se utiliza la opción `dk reload if stamp changed`:***                                                 |
-| **wasReloaded**  |                     | booleano              | true si la entidad fue recargada con éxito, false en caso contrario.                                                        |
-|                  |                     |                       | ***Disponible sólo en caso de error:***                                                                                     |
-| status(\*)     |                     | number                | Código de error, ver abajo                                                                                                  |
-| statusText(\*) |                     | texto                 | Descripción del error, ver abajo                                                                                            |
-|                  |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                                |
-| lockKindText     |                     | texto                 | "Locked by record"                                                                                                          |
-| lockInfo         |                     | objeto                | Información sobre el origen del bloqueo                                                                                     |
-|                  | task_id             | number                | ID del Proceso                                                                                                              |
-|                  | user_name           | texto                 | Nombre de usuario de la sesión en la máquina                                                                                |
-|                  | user4d_alias        | texto                 | Nombre o alias del usuario 4D                                                                                               |
-|                  | user4d_id           | number                | ID del usuario en el directorio de la base de datos 4D                                                                      |
-|                  | host_name           | texto                 | Nombre de la máquina                                                                                                        |
-|                  | task_name           | texto                 | Nombre del proceso                                                                                                          |
-|                  | client_version      | texto                 |                                                                                                                             |
-|                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                         |
-| errors           |                     | collection of objects |                                                                                                                             |
-|                  | message             | texto                 | Mensaje de error                                                                                                            |
-|                  | component signature | texto                 | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                       |
-|                  | errCode             | number                | Código de error                                                                                                             |
+| Propiedad        |                     | Tipo                  | Descripción                                                                                                                                                          |
+| ---------------- | ------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          |                     | boolean               | true si la acción de bloqueo tiene éxito (o si la entidad ya está bloqueada en el proceso actual), false en caso contrario.                                          |
+|                  |                     |                       | ***Disponible sólo si se utiliza la opción `dk reload if stamp changed`:***                                                                                          |
+| **wasReloaded**  |                     | boolean               | true si la entidad fue recargada con éxito, false en caso contrario.                                                                                                 |
+|                  |                     |                       | ***Disponible sólo en caso de error:***                                                                                                                              |
+| status(\*)     |                     | number                | Código de error, ver abajo                                                                                                                                           |
+| statusText(\*) |                     | text                  | Descripción del error, ver abajo                                                                                                                                     |
+|                  |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                                                                         |
+| lockKindText     |                     | text                  | "Locked by record" si está bloqueado por un proceso 4D, "Locked by session" si está bloqueado por una sesión REST                                                    |
+| lockInfo         |                     | object                | Información sobre el origen del bloqueo. Las propiedades devueltas dependen del origen del bloqueo (proceso 4D o sesión REST).                                       |
+|                  |                     |                       | ***Disponible sólo para un bloqueo por proceso 4D:***                                                                                                                |
+|                  | task_id             | number                | ID del Proceso                                                                                                                                                       |
+|                  | user_name           | text                  | Nombre de usuario de la sesión en la máquina                                                                                                                         |
+|                  | user4d_alias        | texto                 | Nombre o alias del usuario 4D                                                                                                                                        |
+|                  | user4d_id           | number                | ID del usuario en el directorio de la base de datos 4D                                                                                                               |
+|                  | host_name           | text                  | Nombre de la máquina                                                                                                                                                 |
+|                  | task_name           | text                  | Nombre del proceso                                                                                                                                                   |
+|                  | client_version      | texto                 | Versión del cliente                                                                                                                                                  |
+|                  |                     |                       | ***Disponible sólo para un bloqueo por sesión REST:***                                                                                                               |
+|                  | host                | text                  | URL que bloqueó la entidad (por ejemplo, "127.0.0.1:8043")                                                                                                           |
+|                  | IPAddr              | text                  | Dirección IP del bloqueo (por ejemplo: "127.0.0.1")                                                                                                                  |
+|                  | userAgent           | texto                 | userAgent del origin del bloqueo (ej: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+|                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                                                                  |
+| errors           |                     | collection of objects |                                                                                                                                                                      |
+|                  | message             | texto                 | Mensaje de error                                                                                                                                                     |
+|                  | component signature | texto                 | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                                                                |
+|                  | errCode             | number                | Código de error                                                                                                                                                      |
 
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedades *status* y *statusText* del objeto *Result* en caso de error:
@@ -1094,7 +1101,7 @@ Si no hay una entidad anterior válida en la selección de entidades (es decir, 
 <!-- REF #EntityClass.reload().Params -->
 | Parámetros | Tipo   |    | Descripción      |
 | ---------- | ------ |:--:| ---------------- |
-| Resultado  | Objeto | <- | Objeto de estado |
+| Resultado  | Object | <- | Objeto de estado |
 
 <!-- END REF -->
 
@@ -1106,11 +1113,11 @@ La función `.reload()` <!-- REF #EntityClass.reload().Summary -->recarga el con
 
 El objeto devuelto por `.reload( )` contiene las siguientes propiedades:
 
-| Propiedad        | Tipo     | Descripción                                                                                                                                                      |
-| ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          | booleano | True si la acción de recargar tiene éxito, False en caso contrario.<p><p>***Disponible sólo en caso de error***: |
-| status(\*)     | number   | Código de error, ver abajo                                                                                                                                       |
-| statusText(\*) | texto    | Descripción del error, ver abajo                                                                                                                                 |
+| Propiedad        | Tipo    | Descripción                                                                                                                                                      |
+| ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          | boolean | True si la acción de recargar tiene éxito, False en caso contrario.<p><p>***Disponible sólo en caso de error***: |
+| status(\*)     | number  | Código de error, ver abajo                                                                                                                                       |
+| statusText(\*) | text    | Descripción del error, ver abajo                                                                                                                                 |
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedadese *status* y *statusText* del objeto *Result* en caso de error:
 
@@ -1160,7 +1167,7 @@ El objeto devuelto por `.reload( )` contiene las siguientes propiedades:
 | Parámetros | Tipo    |    | Descripción                                          |
 | ---------- | ------- |:--:| ---------------------------------------------------- |
 | mode       | Integer | -> | `dk auto merge`: activa el modo de fusión automática |
-| Resultado  | Objeto  | <- | Resultado de la operación guardar                    |
+| Resultado  | Object  | <- | Resultado de la operación guardar                    |
 
 <!-- END REF -->
 
@@ -1183,25 +1190,25 @@ El objeto devuelto por `.save()` contiene las siguientes propiedades:
 
 | Propiedad    |                    | Tipo                  | Descripción                                                                                                                  |
 | ------------ | ------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | booleano              | True si la acción guardar tiene éxito, false en caso contrario.                                                              |
+| success      |                    | boolean               | True si la acción guardar tiene éxito, false en caso contrario.                                                              |
 |              |                    |                       | ***Disponible sólo si se utiliza la opción `dk auto merge`***:                                                               |
-| autoMerged   |                    | booleano              | True si se ha realizado una fusión automática, False en caso contrario.                                                      |
+| autoMerged   |                    | boolean               | True si se ha realizado una fusión automática, False en caso contrario.                                                      |
 |              |                    |                       | ***Disponible sólo en caso de error***:                                                                                      |
 | status       |                    | number                | Código de error, [ver abajo](#status-and-statustext)                                                                         |
-| statusText   |                    | texto                 | Descripción del error, [ver más abajo](#status-and-statustext)                                                               |
+| statusText   |                    | text                  | Descripción del error, [ver más abajo](#status-and-statustext)                                                               |
 |              |                    |                       | ***Disponible sólo en caso de bloqueo pesimista***:                                                                          |
-| lockKindText |                    | texto                 | "Locked by record"                                                                                                           |
-| lockInfo     |                    | objeto                | Información sobre el origen del bloqueo                                                                                      |
+| lockKindText |                    | text                  | "Locked by record"                                                                                                           |
+| lockInfo     |                    | object                | Información sobre el origen del bloqueo                                                                                      |
 |              | task_id            | number                | Id del proceso                                                                                                               |
-|              | user_name          | texto                 | Nombre de usuario de la sesión en la máquina                                                                                 |
-|              | user4d_alias       | texto                 | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                         |
-|              | host_name          | texto                 | Nombre de la máquina                                                                                                         |
+|              | user_name          | text                  | Nombre de usuario de la sesión en la máquina                                                                                 |
+|              | user4d_alias       | text                  | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                         |
+|              | host_name          | text                  | Nombre de la máquina                                                                                                         |
 |              | task_name          | texto                 | Nombre del proceso                                                                                                           |
-|              | client_version     | texto                 |                                                                                                                              |
+|              | client_version     | text                  |                                                                                                                              |
 |              |                    |                       | ***Disponible sólo en caso de error grave*** (error grave - puede ser intentar duplicar una llave primaria, disco lleno...): |
 | errors       |                    | collection of objects |                                                                                                                              |
-|              | message            | texto                 | Mensaje de error                                                                                                             |
-|              | componentSignature | texto                 | Firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                        |
+|              | message            | text                  | Mensaje de error                                                                                                             |
+|              | componentSignature | text                  | Firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                        |
 |              | errCode            | number                | Código de error                                                                                                              |
 
 ##### status y statusText
@@ -1295,10 +1302,10 @@ Actualización de una entidad con la opción `dk auto merge`:
 <!-- REF #EntityClass.toObject().Params -->
 | Parámetros   | Tipo       |    | Descripción                                                                                               |
 | ------------ | ---------- |:--:| --------------------------------------------------------------------------------------------------------- |
-| filterString | Texto      | -> | Atributo(s) a extraer (cadena separada por comas)                                                         |
+| filterString | Text       | -> | Atributo(s) a extraer (cadena separada por comas)                                                         |
 | filterCol    | Collection | -> | Colección de atributos a extraer                                                                          |
 | options      | Integer    | -> | `dk with primary key`: añade la propiedad \_KEY;<br>`dk with stamp`: añade la propiedad \_STAMP |
-| Resultado    | Objeto     | <- | Objeto creado a partir de la entidad                                                                      |
+| Resultado    | Object     | <- | Objeto creado a partir de la entidad                                                                      |
 
 <!-- END REF -->
 
@@ -1581,9 +1588,9 @@ Devuelve:
 
 
 <!-- REF #EntityClass.touched().Params -->
-| Parámetros | Tipo     |    | Descripción                                                                                       |
-| ---------- | -------- |:--:| ------------------------------------------------------------------------------------------------- |
-| Resultado  | Booleano | <- | True si se ha modificado al menos un atributo de la entidad y aún no se ha guardado, si no, False |
+| Parámetros | Tipo    |    | Descripción                                                                                       |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True si se ha modificado al menos un atributo de la entidad y aún no se ha guardado, si no, False |
 
 <!-- END REF -->
 
@@ -1706,7 +1713,7 @@ En este caso:
 <!-- REF #EntityClass.unlock().Params -->
 | Parámetros | Tipo   |    | Descripción      |
 | ---------- | ------ |:--:| ---------------- |
-| Resultado  | Objeto | <- | Objeto de estado |
+| Resultado  | Object | <- | Objeto de estado |
 
 <!-- END REF -->
 
@@ -1731,9 +1738,9 @@ Un registro se desbloquea automáticamente cuando ya no es referenciado por ning
 
 El objeto devuelto por <`.unlock()<` contiene la siguiente propiedad:
 
-| Propiedad | Tipo     | Descripción                                                                                                                                                                                                                         |
-| --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Booleano | True si la acción de desbloquear tiene éxito, False en caso contrario. Si el desbloqueo se realiza en una entidad abandonada, en un registro no bloqueado o en un registro bloqueado por otro proceso o entidad, el éxito es False. |
+| Propiedad | Tipo    | Descripción                                                                                                                                                                                                                         |
+| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success   | Boolean | True si la acción de desbloquear tiene éxito, False en caso contrario. Si el desbloqueo se realiza en una entidad abandonada, en un registro no bloqueado o en un registro bloqueado por otro proceso o entidad, el éxito es False. |
 
 #### Ejemplo
 

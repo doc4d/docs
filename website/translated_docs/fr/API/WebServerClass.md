@@ -740,8 +740,9 @@ Voir la description de [Session Cookie SameSite](WebServer/webServerConfig.md#se
 | v18 R3  | Ajout         |
 </details>
 
+<!-- REF #WebServerClass.start().Syntax -->
 
-<!-- REF #WebServerClass.start().Syntax --> **.start**() : Object<br>**.start**( *settings* : Object ) : Object<!-- END REF -->
+**.start**() : Object<br>**.start**( *settings* : Object ) : Object<!-- END REF -->
 
 <!-- REF #WebServerClass.start().Params -->
 
@@ -768,9 +769,9 @@ La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
-| success   |                         | Booléen    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
+| success   |                         | Boolean    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
 | errors    |                         | Collection | Pile d'erreurs 4D (non retournée si le serveur web a démarré avec succès) |
-|           | \[].errCode            | Nombre     | Code d'erreur 4D                                                          |
+|           | \[].errCode            | Number     | Code d'erreur 4D                                                          |
 |           | \[].message            | Text       | Description de l'erreur 4D                                                |
 |           | \[].componentSignature | Text       | Signature du composant interne qui a retourné l'erreur                    |
 > Si le serveur Web a déjà été lancé, une erreur est générée.

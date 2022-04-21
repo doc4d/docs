@@ -113,6 +113,14 @@ Cela vous permet d'afficher les numéros de ligne par défaut dans chaque fenêt
 
 Cela vous permet de choisir d'afficher ou non les listes d'objets (Commandes, Tables et champs, etc.) par défaut lorsque la fenêtre de l'éditeur de méthode est ouverte. Vous pouvez également afficher ou masquer chaque liste directement à partir de l'éditeur de méthode.
 
+#### Afficher les presse-papiers
+
+Vous permet de choisir d'afficher ou non les multiples presse-papiers dans l'éditeur de code.
+
+![](assets/en/Preferences/show-clipboards.png)
+
+Les [raccourcis du presse-papiers](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) correspondants demeurent actifs lorsque ces presse-papiers sont masqués.
+
 #### Surbrillance des blocs logiques
 
 Lorsque vous cochez l'option, tout le code correspondant à un bloc logique (Si/Fin de si par exemple) est surligné lorsque la souris est placée au-dessus de l'icône plier/déplier :
@@ -176,7 +184,7 @@ Si vous désélectionnez cette option, seule la flèche jaune est affichée.
 
 ### Suggestions
 
-Cette zone vous permet de configurer les mécanismes de saisie prédictive dans l’éditeur de méthodes afin de les adapter à vos habitudes de travail.
+Cette zone vous permet de configurer les mécanismes d'autocomplétion de l'éditeur de méthodes afin de l'adapter à vos propres habitudes de travail.
 
 |                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

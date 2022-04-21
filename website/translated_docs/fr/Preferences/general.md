@@ -92,13 +92,32 @@ Lorsque cette option est cochée, les bases de données 4D sont automatiquement 
 
 Grâce à ce principe, sous macOS les dossiers des bases apparaissent sous forme de paquets (packages) disposant de propriétés spécifiques. Sous Windows, ce fonctionnement n’a pas d’incidence particulière.
 
+### Inclure les tokens dans les fichiers sources des projets
+
+Lorsque cette option est cochée, les [fichiers sources des méthodes](../Project/architecture.md#sources) enregistrées dans les nouveaux projets 4D contiendront des **tokens** pour les objets classiques du langage et de la base (constantes, commandes, tables et champs). Les tokens sont des caractères supplémentaires tels que `:C10` ou `:5` insérés dans les fichiers de code source, qui permettent de renommer les tables et les champs et d'identifier les éléments indépendamment de la version 4D (voir [Utilisation des tokens dans les formules](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html)).
+
+Si vous avez l'intention d'utiliser des VCS ou des éditeurs de code externes avec vos nouveaux projets, il est préférable de décocher cette option pour une meilleure lisibilité du code avec ces outils.
+
+> Vous pouvez toujours obtenir le code avec les tokens en appelant la [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) avec 1 dans le paramètre *option*.
+
+> Vous pouvez toujours obtenir le code avec les tokens en appelant la [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) avec 1 dans le paramètre *option*.
+
+#### Exclusion des tokens dans les projets existants
+
+Vous pouvez configurer vos projets existants pour enregistrer le code **sans tokens** en insérant la clé suivante dans le fichier [`<applicationName>.4DProject`](../Project/architecture.md#applicationname4dproject-file) à l'aide d'un éditeur de texte :
+
+```
+"tokenizedText" : false
+```
+
+> Ce paramètre n'est pris en compte que lors de l'enregistrement des méthodes. Les méthodes existantes dans vos projets ne sont pas modifiées, sauf si vous les enregistrez à nouveau.
+
+
 ### Créer le fichier `.gitignore`
 
 Si vous avez besoin ou souhaitez que git ignore certains fichiers dans vos nouveaux projets.
 
 Vous pouvez définir cette préférence en cochant l'option **Créer le fichier .gitignore**.
-
-![](assets/en/Preferences/gitignore.png)
 
 Lorsqu'un projet est créé dans 4D et que cette case est cochée, 4D crée un fichier `.gitignore` au même niveau que le dossier `Project` (voir [Architecture d'un projet](Project/architecture.md#gitignore-file-optional)).
 

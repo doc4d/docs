@@ -42,7 +42,7 @@ Le nombre d'erreurs trouvées lors de vos premières compilations peut être dé
 
 ## Exécuter la compilation
 
-Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Redémarrer en interprété** et **Redémarrer en compilé** du menu **Exécution**. La [boîte de dialogue d'ouverture de projet ](creating.md#options) de 4D permet également de choisir le mode interprété ou compilé au lancement du projet.
+Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Redémarrer en interprété** et **Redémarrer en compilé** du menu **Exécution**. La [boîte de dialogue d'ouverture de projet ](GettingStarted/creating.md#options) de 4D permet également de choisir le mode interprété ou compilé au lancement du projet.
 
 Lorsque vous passez d'un mode à l'autre, 4D ferme le mode courant et ouvre le nouveau. Cela équivaut à quitter et à rouvrir l'application. Chaque fois que vous passez d'un mode à l'autre, 4D exécute les deux méthodes base suivantes (si elles sont spécifiées) dans cet ordre : `On Exit` -> `On Startup`.
 
@@ -127,7 +127,7 @@ Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-f
 
 #### Générer le fichier d'erreurs
 
-Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#error-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet et est nommé `ProjectName_errors.xml`.
+Permet de générer le fichier d'erreurs (voir [fichier d'erreurs](#fichier-derreurs)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet et est nommé `ProjectName_errors.xml`.
 
 
 #### Chemin de compilation
@@ -241,7 +241,8 @@ Le fichier d’erreurs est plus ou moins long suivant le nombre d’erreurs et d
 
 Le fichier d’erreurs est structuré ainsi :
 
-- En tête de ce fichier se trouve la liste des erreurs et warnings, triée par méthode et dans leur ordre de création dans 4D. Sous la rubrique ***Erreurs générales*** sont regroupées toutes les impossibilités de typage et les ambiguïtés d’identité. Ces indications sont détaillées de la façon suivante :
+- En tête de ce fichier se trouve la liste des erreurs et warnings, triée par méthode et dans leur ordre de création dans 4D.
+- Sous la rubrique ***Erreurs générales*** sont regroupées toutes les impossibilités de typage et les ambiguïtés d’identité. Ces indications sont détaillées de la façon suivante :
     - le numéro de ligne dans la méthode (le numéro 0 est retourné pour les erreurs générales)
     - l’attribut warning indique si l’anomalie détectée est un warning (warning="true") ou une erreur (warning="false")
     - un diagnostic sur la nature de l’erreur
@@ -254,7 +255,9 @@ Un fichier d’erreurs peut donc comporter trois types de messages :
 
 - **Erreurs générales** : Il s’agit d’erreurs qui ne permettent pas le passage en passe de compilation. Le compilateur délivre une erreur générale dans deux cas :
     - Si le type d’une variable process ou interprocess n’a pas pu être déterminé.
-    - Si deux objets de nature différente portent le même nom. Ces erreurs sont dites générales parce qu’elles ne peuvent être rattachées à aucune méthode en particulier. En effet, le compilateur n’a pu procéder au typage nulle part dans la base pour le premier cas. Dans le second, il ne peut choisir d’associer un nom à un objet plutôt qu’à un autre.
+    - Si deux objets de nature différente portent le même nom.
+
+Ces erreurs sont dites générales parce qu’elles ne peuvent être rattachées à aucune méthode en particulier. En effet, le compilateur n’a pu procéder au typage nulle part dans la base pour le premier cas. Dans le second, il ne peut choisir d’associer un nom à un objet plutôt qu’à un autre.
 
 - **Warnings** : Les warnings ne sont pas des erreurs. Ils n’empêchent pas la compilation de la base, il s’agit simplement de points sur lesquels le compilateur souhaite attirer votre attention parce qu’il y a un risque d’erreur. Dans la fenêtre de compilation, les warnings apparaissent en caractères italiques. Il vous suffit de double-cliquer sur le libellé d’un warning pour ouvrir la méthode concernée à la ligne correspondante.
 
@@ -301,21 +304,21 @@ Les deux compilateurs sont intégrés dans 4D. Le compilateur adéquat est autom
 
 Le compilateur classique génère du code compilé natif pour les processeurs Intel/AMD sur n'importe quelle machine. Il ne nécessite aucune configuration particulière.
 
-Le code compilé résultant est stocké dans le dossier [DerivedData](architecture.md#deriveddata) du projet.
+Resulting compiled code is stored in the [DerivedData](architecture.md#deriveddata) folder of the project.
 
 
 ### Compilateur Silicon
 
 Le compilateur Silicon génère du code compilé natif pour les processeurs Apple Silicon tels que le *Apple M1*.
 
-Le code compilé résulant est stocké dans le dossier [Libraries](architecture.md#libraries) du projet.
+Resulting compiled code is stored in the [Libraries](architecture.md#libraries) folder of the project.
 
 
 #### Conditions requises
 
 - **Ordinateur Apple** : Le compilateur Silicon peut uniquement être lancé sur une machine Apple.
 - **Architecture projet de 4D** : Le compilateur Silicon est uniquement disponible pour les développements 4D utilisant l'[architecture projet](architecture.md).
-- **Xcode ou Developer Tools** : Le compilateur Silicon fait appel au compilateur macOS open-source **Clang** pour compiler le projet à partir du code C++ lors de la [seconde étape](#compilation-incrémentale) de la compilation. *clang* utilise des librairies Apple natives qui peuvent être fournies par le package **Xcode** ou **Developer Tools**.
+- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *clang* utilise des librairies Apple natives qui peuvent être fournies par le package **Xcode** ou **Developer Tools**.
     - **Si vous avez déjà installé** Xcode ou Developer Tools sur votre ordinateur, vous devez juste vous assurer que sa version est conforme aux spécifications de 4D.
     - **Si vous n'avez pas déjà installé** l'un de ces outils sur votre machine, il vous sera nécessaire d'en télécharger un depuis le site web Apple Developer.
 

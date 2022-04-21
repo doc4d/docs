@@ -14,7 +14,6 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
-| [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getDataStore().Syntax -->](#getdatastore)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getDataStore().Summary --> |
@@ -120,7 +119,7 @@ Considering the following table properties:
 
 #### Description
 
-A função `.all( )` <!-- REF #DataClassClass.all().Summary -->consulta a datastore para encontrar todas as entidades relacionadas com a dataclass e as devolve como uma seleção de entidades<!-- END REF -->.
+The `.all()` function<!-- REF #DataClassClass.all(). Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
 
 As entidades são devolvidas na ordem padrão, que é inicialmente a ordem na qual foram criadas. Note no entanto que, se as entidades foram apagas e outras adicionadas, a ordem padrão não reflete mais sua ordem de criação.
 
@@ -147,26 +146,6 @@ No parâmetro opcional*settings* pode passar um objeto contendo as opções abai
 
 <!-- END REF -->
 
-<!-- REF DataClassClass.exposed.Desc -->
-## .exposed
-
-<details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v19 R3 | Adicionado |
-</details>
-
-
-<!-- REF DataClassClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
-
-
-#### Description
-
-The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if the dataclass is exposed in REST<!-- END REF -->.
-
-
-<!-- END REF -->
 
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
@@ -468,7 +447,7 @@ Este exemplo ilustra o uso da propriedade *context* :
 
 #### Description
 
-A função `.getDataStore( )` <!-- REF #DataClassClass.getDataStore().Summary -->retorna a datastore para a classe de dados especificada<!-- END REF -->.
+The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 A datastore pode ser:
 
@@ -505,9 +484,10 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v17 R5 | Adicionado |
+| Versão | Mudanças               |
+| ------ | ---------------------- |
+| v19 R3 | Added exposed property |
+| v17 R5 | Adicionado             |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -522,15 +502,16 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 
 #### Description
 
-A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve um objeto que proporciona informação sobre a classe de dados<!-- END REF -->. Esta função é útil para configurar o código genérico.
+The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Returned object**
 
-| Propriedade | Type    | Description                               |
-| ----------- | ------- | ----------------------------------------- |
-| name        | Texto   | Name of the dataclass                     |
-| primaryKey  | Texto   | Nome da chave primária da classe de dados |
-| tableNumber | Integer | Número daa tabela 4D interna              |
+| Propriedade | Type     | Description                               |
+| ----------- | -------- | ----------------------------------------- |
+| exposed     | Booleano | True if the dataclass is exposed in REST  |
+| name        | Texto    | Name of the dataclass                     |
+| primaryKey  | Texto    | Nome da chave primária da classe de dados |
+| tableNumber | Integer  | Número daa tabela 4D interna              |
 
 
 
@@ -570,6 +551,10 @@ A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve u
  $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
 ```
 
+#### See also
+
+[DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
+
 <!-- END REF -->
 
 
@@ -595,7 +580,7 @@ A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve u
 
 #### Description
 
-A função `.new( )`<!-- REF #DataClassClass.new().Sumário -->cria em memória e devolve uma nova entidade em branco relacionada com a Dataclass<!-- END REF -->.
+The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 O objeto entidade se cria em memória e não se guarda no banco de dados até que se chama a função [`.save( )`](EntityClass.md#save). Se a entidade for apagada antes de ser salva, não se pode recuperar.
 
@@ -643,7 +628,7 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 #### Description
 
-função `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->cria uma nova seleção de entidades em branco, não compartilhável, relacionado à dataclasse na memória<!-- END REF -->.
+The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > Para mais informação sobre as seleçõees de entidades não compartilháveis, consulte [esta seção](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -694,7 +679,7 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 
 #### Description
 
-A `.query( )` função <!-- REF #DataClassClass.query().Summary -->pesquisa por entidades que encontram o critério de pesquisa especificado em *queryString* ou *formula* e (opcionalmente) *value*(s)<!-- END REF -->, para todas as entidades na dataclass e retorna um novo objeto de tipo `EntitySelection` contendo todas as entidades que foram encontradas. Se aplica carregamento diferido/lazy loading.
+The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
 
 Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
@@ -919,15 +904,15 @@ No exemplo 3 são oferecidos mais exemplos.
 
 No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. The following properties are supported:
 
-| Propriedade   | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| parameters    | Objeto   | **Marcadores nomeados para os valores** utilizados em *queryString* ou *fórmula*. Os valores se expressam como pares propriedade / valor, onde propriedade é o nome do marcador de posição inserido para um valor em *queryString* ou *formula* (":placeholder") e valor é o valor a comparar. Pode combinar marcadores de posição indexados (valores passados diretamente em parâmetros de valor) e valores de marcadores de posição com nome na mesma pesquisa.                                                                                                                                                                                                                                                        |
+| Propriedade   | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| parameters    | Objeto   | **Marcadores nomeados para os valores** utilizados em *queryString* ou *fórmula*. Os valores se expressam como pares propriedade / valor, onde propriedade é o nome do marcador de posição inserido para um valor em *queryString* ou *formula* (":placeholder") e valor é o valor a comparar. Pode combinar marcadores de posição indexados (valores passados diretamente em parâmetros de valor) e valores de marcadores de posição com nome na mesma pesquisa.                                                                                                                                                                                                                                                       |
 | attributes    | Objeto   | **Marcadores nomeados para as rotas de atributos** utilizados en *queryString* ou *formula*. Os atributos se expressam como pares propriedade/ valor, onde propriedade é o nome do marcador de posição inserido para uma rota de atributo em *queryString* ou *formula* (":placeholder") e valor pode ser uma string ou uma coleção de strings. Cada valor e uma rota que pode designar um escalar ou um atributo relacionado da dataclass ou uma propriedade num campo de objeto da dataclass<p><table><tr><th>Type</th><th>Description</th></tr><tr><td>String</td><td>attributePath expressado com a notação de pontos, por exemplo: "name" ou "user.address.zipCode"</td></tr><tr><td>Coleção de strings</td><td>Cada string da coleção representa um nível de attributePath, por exemplo: \["name"] ou \["user","address","zipCode"]. Usar uma coleção permite pesquisar atributos com nomes que não se ajustem à notação de pontos, por exemplo \["4Dv17.1","en/fr"]</td></tr></table>Pode combinar marcadores de posição indexados (valores passados diretamente nos parâmetros *value*) e os valores de marcadores de posição com nome na mesma pesquisa. |
-| args          | Objeto   | Parámetro(s) a passar para as fórmulas, se houver. O objeto **args** será recebido em $1 dentro das fórmulas e, portanto, seus valores estarão disponíveis através de *$1.property* (ver exemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| allowFormulas | Booleano | True para permitir as chamadas de fórmulas na pesquisa (padrão). Passe falso para desautorizar a execução de fórmulas. Se for estabelecido como false y `query()` receber uma fórmula, se envia um erro (1278 - Fórmula não permitida neste método membro).                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| context       | Texto    | Etiqueta para o contexto de otimização automático aplicados à seleção de entidade. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. Esta função está projetada para o processamento cliente/servidor; para saber mais, consulte **Otimização cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                                    |
-| queryPlan     | Booleano | Na entity selection resultante, devolve ou não a descrição detalhada da pesquisa logo antes de ser executada, ou seja, a pesquisa planificada. A propriedade devolvida é um objeto que inclui cada pesquisa e subpesquisa prevista (no caso de uma pesquisa complexa). Esta opção é útil durante a fase de desenvolvimento de uma aplicação. Geralmente é usada em conjunto com queryPath. Como padrão é omitido: false. **Nota**: esta propriedade só são compatíveis com as funções` entitySelection.query( )` e `dataClass.query( )`.                                                                                                                                                                                 |
-| queryPath     | Booleano | Na entity selection resultante, devolve ou não a descrição detalhada da pesquisa tal qual for realizada. A propriedade retornada é um objeto que contém a rota atual usada para a pesquisa (geralmente idêntica àquela do queryPlan, mas deve diferenciar se o motor consegue otimizar a pesquisa), assim como o tempo de processamento e o número de registros encontrado. Esta opção é útil durante a fase de desenvolvimento de uma aplicação. Como padrão é omitido: false. **Nota**: esta propriedade só são compatíveis com as funções` entitySelection.query( )` e `dataClass.query( )`.                                                                                                                          |
+| args          | Objeto   | Parámetro(s) a passar para as fórmulas, se houver. O objeto **args** será recebido em $1 dentro das fórmulas e, portanto, seus valores estarão disponíveis através de *$1.property* (ver exemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| allowFormulas | Booleano | True para permitir as chamadas de fórmulas na pesquisa (padrão). Passe falso para desautorizar a execução de fórmulas. Se for estabelecido como false y `query()` receber uma fórmula, se envia um erro (1278 - Fórmula não permitida neste método membro).                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| context       | Texto    | Etiqueta para o contexto de otimização automático aplicados à seleção de entidade. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. Esta função está projetada para o processamento cliente/servidor; para saber mais, consulte **Otimização cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                                   |
+| queryPlan     | Booleano | Na entity selection resultante, devolve ou não a descrição detalhada da pesquisa logo antes de ser executada, ou seja, a pesquisa planificada. A propriedade devolvida é um objeto que inclui cada pesquisa e subpesquisa prevista (no caso de uma pesquisa complexa). Esta opção é útil durante a fase de desenvolvimento de uma aplicação. Geralmente é usada em conjunto com queryPath. Como padrão é omitido: false. **Nota**: esta propriedade só são compatíveis com as funções` entitySelection.query( )` e `dataClass.query( )`.                                                                                                                                                                                |
+| queryPath     | Booleano | Na entity selection resultante, devolve ou não a descrição detalhada da pesquisa tal qual for realizada. A propriedade retornada é um objeto que contém a rota atual usada para a pesquisa (geralmente idêntica àquela do queryPlan, mas deve diferenciar se o motor consegue otimizar a pesquisa), assim como o tempo de processamento e o número de registros encontrado. Esta opção é útil durante a fase de desenvolvimento de uma aplicação. Como padrão é omitido: false. **Nota**: esta propriedade só são compatíveis com as funções` entitySelection.query( )` e `dataClass.query( )`.                                                                                                                         |
 
 **Sobre queryPlan e queryPath**
 
@@ -961,6 +946,7 @@ queryPath:
 ```
 
 #### Exemplo 1
+
 
 Esta seção oferece vários exemplos de pesquisas.
 

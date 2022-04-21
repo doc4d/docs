@@ -1771,11 +1771,11 @@ Pase en el parámetro *selectedEntities* una selección de entidades que conteng
 
 El objeto devuelto contiene las siguientes propiedades:
 
-| Propiedad      | Tipo       | Descripción                              |
-| -------------- | ---------- | ---------------------------------------- |
-| ranges         | Collection | Colección de objetos rango               |
-| ranges[].start | Integer    | Índice de la primera entidad en el rango |
-| ranges[].end   | Integer    | Índice de la última entidad en el rango  |
+| Propiedad      | Tipo       | Descripción                             |
+| -------------- | ---------- | --------------------------------------- |
+| ranges         | Collection | Colección de objetos de rango           |
+| ranges[].start | Integer    | Primer índice de entidad en el rango    |
+| ranges[].end   | Integer    | Último índice de la entidad en el rango |
 
 Si una propiedad `ranges` contiene una sola entidad, `start` = `end`. El índice comienza en 0.
 
