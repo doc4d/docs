@@ -1124,6 +1124,7 @@ End if
 | vpAreaName | Texto | -> | 4D View Pro area form object name |
 <!-- END REF -->  
 
+
 #### Descripción
 
 The `VP FLUSH COMMANDS` command<!-- REF #_method_.VP FLUSH COMMANDS. Summary -->immediately executes stored commands and clears the command buffer<!-- END REF -->.
@@ -1173,6 +1174,7 @@ This code:
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
+
 
 will return the following $font object:
 
@@ -1605,6 +1607,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 <!-- END REF -->  
 
 #### Descripción
+
 
 The `VP Get frozen panes` command <!-- REF #_method_.VP Get frozen panes.Summary -->returns an object with information about the frozen columns and rows in *vpAreaName*<!-- END REF -->.
 
@@ -2445,7 +2448,7 @@ $o.password:="excel123"
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
-#### Ejemplo 2
+#### Ejemplo 3
 
 You want to import a `.txt` file that uses a comma (",") as delimiter:
 

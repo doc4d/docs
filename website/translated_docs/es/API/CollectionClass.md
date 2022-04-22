@@ -1159,8 +1159,7 @@ El código del método ***LengthLessThan*** es:
 Quiere encontrar el nombre de una ciudad dentro de una colección:
 
 ```4d
- var $c : Collection
- var $c2 : Object
+ var $c; $c2 : Collection
  $c:=New collection
  $c.push(New object("name";"Cleveland";"zc";35049))
  $c.push(New object("name";"Blountsville";"zc";35031))
@@ -1303,7 +1302,6 @@ Opcionalmente, puede pasar el índice de la colección desde el que iniciar la b
 *   Si *startFrom* = 0, se busca en toda la colección (por defecto).
 
 #### Ejemplo
-
 
 
 
@@ -2112,7 +2110,7 @@ La función `.query()` <!-- REF #collection.query().Summary --> devuelve todos l
 El parámetro *queryString* utiliza la siguiente sintaxis:
 
 ```4d
-valor del comparador propertyPath {logicalOperator propertyPath comparator value}
+propertyPath comparator value {logicalOperator propertyPath comparator value}
 ```
 
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value* y *querySettings*, consulte la descripción de la función [`dataClass.query()`](DataClassClass.md#query).
@@ -2240,7 +2238,6 @@ Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite,
  $r:=$c.reduce("Multiply";1) //devuelve 86400
 ```
 
-
 Con el siguiente método ***Multiply***:
 
 ```4d
@@ -2307,7 +2304,7 @@ La función `.remove()` <!-- REF #collection.remove().Summary --> elimina uno o 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
 > **Atención:** recuerde que los elementos de la colección están numerados desde 0. Si *índice* es mayor que la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
 
-*   Si *index* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
+*   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 *   Si el valor calculado < 0, *index* toma el valor 0.
 *   Si el valor calculado > la longitud de la colección, *index* se establece para la longitud.
 
