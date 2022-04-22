@@ -677,9 +677,10 @@ $infoPlistFile.setAppInfo($info)
 
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v17 R5 | 追加 |
+| バージョン  | 内容                                                      |
+| ------ | ------------------------------------------------------- |
+| v19 R3 | Default for new projects: no BOM and (macOS) LF for EOL |
+| v17 R5 | 追加                                                      |
 </details>
 
 
@@ -712,7 +713,7 @@ $infoPlistFile.setAppInfo($info)
 
 > 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
 
-文字セットにバイトオーダーマーク (BOM) が存在し、かつその文字セットに "-no-bom" 接尾辞 (例: "UTF-8-no-bom") が含まれていない場合、4D は BOM をファイルに挿入します。 文字セットを指定しない場合、 4D はデフォルトで "UTF-8" の文字セットを使用します。
+文字セットにバイトオーダーマーク (BOM) が存在し、かつその文字セットに "-no-bom" 接尾辞 (例: "UTF-8-no-bom") が含まれていない場合、4D は BOM をファイルに挿入します。 If you do not specify a character set, by default 4D uses the "UTF-8" character set without BOM.
 
 *breakMode* には、ファイルを保存する前に改行文字に対しておこなう処理を指定する倍長整数を渡します。 **System Documents** テーマ内にある、以下の定数を使用することができます:
 
@@ -726,7 +727,7 @@ $infoPlistFile.setAppInfo($info)
 
 *breakMode* 引数を渡さなかった場合はデフォルトで、改行はネイティブモード (1) で処理されます。
 
-> **互換性に関する注記:** EOL (改行コード) および BOM の管理については、互換性オプションが利用可能です。 doc.4d.com の[互換性ページ](https://doc.4d.com/4dv19R/help/title/ja/page3239.html) を参照ください。
+> **Compatibility Note**: Compatibility options are available for EOL and BOM management. doc.4d.com の[互換性ページ](https://doc.4d.com/4dv19R/help/title/ja/page3239.html) を参照ください。
 
 #### 例題
 
