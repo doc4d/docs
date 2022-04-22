@@ -793,7 +793,7 @@ En este caso, puede llamar a esta función para deshabilitar el acceso a los dat
 Se crea un método proyecto *protectDataFile* para llamar antes de los despliegues, por ejemplo:
 
 ```4d
- ds.setAdminProtection(True) //Desactiva el acceso a los datos del Explorador de datos
+ ds.setAdminProtection(True) //Desactiva el acceso a los datos del Explorador de Datos
 ```
 
 #### Ver también
@@ -946,7 +946,7 @@ End case
 <!-- REF #DataStoreClass.startRequestLog().Params -->
 | Parámetros | Tipo    |    | Descripción                                |
 | ---------- | ------- | -- | ------------------------------------------ |
-| file       | 4D.File | -> | Objeto File                                |
+| file       | 4D.File | -> | File object                                |
 | reqNum     | Integer | -> | Número de peticiones a mantener en memoria |
 <!-- END REF -->
 
