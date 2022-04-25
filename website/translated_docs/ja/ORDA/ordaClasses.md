@@ -26,7 +26,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 - 構造が発展した場合には影響を受ける関数を適応させるだけで、クライアントアプリケーションは引き続き透過的にそれらを呼び出すことができます。
 
-- デフォルトでは、データモデルクラス関数 ([計算属性関数](#計算属性) 含む) および [エイリアス属性](エイリアス属性) はすべて、リモートアプリケーションに対して **非公開** に設定されており、RESTリクエストで呼び出すことはできません。 公開する関数やエイリアスは [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes-1)) and [alias attributes](#alias-attributes-1) are **not exposed** to remote applications and cannot be called from REST requests. 公開する関数やエイリアスは [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
 
 ![](assets/en/ORDA/api.png)
 
@@ -134,6 +134,7 @@ Function GetBestOnes()
 
 
 
+
 ```4d
     var $best : cs.CompanySelection
     $best:=ds.Company.GetBestOnes()
@@ -231,7 +232,7 @@ Entity クラスでは、専用のキーワードを使用して **計算属性*
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-詳細については、[計算属性](#計算属性) を参照してください。
+For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
 #### エイリアス属性
 
@@ -239,7 +240,7 @@ Entity クラスでは、`Alias` キーワードを使用して **エイリア�
 
 `Alias` *attributeName* *targetPath*
 
-詳細については、[エイリアス属性](#エイリアス属性) を参照してください。
+For information, please refer to the [Alias attributes](#alias-attributes-1) section.
 
 
 #### 例題
@@ -399,6 +400,7 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 #### シンタックス
 
 ```4d
+
 {local} Function set <attributeName>($value : type {; $event : Object})
 // コード
 ```
@@ -667,7 +669,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 エイリアスは、他のエイリアスのパスに使用することができます。
 
-[計算属性](#計算属性) もエイリアスパスに使用することができますが、パスの最後のレベルとしてのみ使用できます。 そうでない場合は、エラーが返されます。 たとえば、"fullName" 計算属性がある場合、"employee.fullName" というエイリアスパスは有効です。
+A [computed attribute](#computed-attributes-1) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. たとえば、"fullName" 計算属性がある場合、"employee.fullName" というエイリアスパスは有効です。
 
 > ORDA のエイリアス属性は、デフォルトでは **公開されません**。 リモートリクエストでエイリアスを利用するには、`Alias` キーワードの前に [`exposed`](#公開vs非公開関数) キーワードを追加する必要があります。
 
