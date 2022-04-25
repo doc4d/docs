@@ -26,7 +26,7 @@ Grâce à cette fonctionnalité, toute la logique métier de votre application 4
 
 - Si la structure phySique évolue, il vous suffit d'adapter le code de la fonction et les applications clientes continueront de les appeler de manière transparente.
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) and [alias attributes](XXX) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes-1)) and [alias attributes](#alias-attributes-1) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
 
 ![](assets/en/ORDA/api.png)
 
@@ -134,6 +134,7 @@ Vous pouvez ensuite obtenir une sélection d'entité des "meilleures" entreprise
 
 
 
+
 ```4d
     var $best : cs.CompanySelection
     $best:=ds.Company.GetBestOnes()
@@ -231,7 +232,7 @@ Les classes Entity vous permettent de définir des **champs calculés** à l'aid
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-For information, please refer to the [Computed attributes](#computed-attributes) section.
+For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
 #### Alias attributes
 
@@ -239,7 +240,7 @@ Entity classes allow you to define **alias attributes**, usually over related at
 
 `Alias` *attributeName* *targetPath*
 
-For information, please refer to the [Alias attributes](#alias-attributes) section.
+For information, please refer to the [Alias attributes](#alias-attributes-1) section.
 
 
 #### Exemple
@@ -399,6 +400,7 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 #### Syntaxe
 
 ```4d
+
 {local} Function set <attributeName>($value : type {; $event : Object})
 // code
 ```
@@ -667,7 +669,7 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 An alias can be used as a part of a path of another alias.
 
-A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid.
+A [computed attribute](#computed-attributes-1) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid.
 
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
