@@ -72,11 +72,11 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 #### Descripción
 
-The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. El comando acepta dos sintaxis:
+El comando `Folder` <!-- REF #_command_.Folder.Summary -->crea y devuelve un nuevo objeto de tipo `4D.Folder`<!-- END REF -->. El comando acepta dos sintaxis:
 
 **Folder ( path { ; pathType } { ; \* } )**
 
-In the *path* parameter, pass a folder path string. You can use a custom string or a filesystem (e.g., "/DATA").
+En el parámetro *path*, pase una ruta de carpeta. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA").
 
 > Only absolute pathnames are supported with the `Folder` command.
 
@@ -89,7 +89,7 @@ Por defecto, 4D espera una ruta expresada con la sintaxis POSIX. Si trabaja con 
 
 **Folder ( folderConstant { ; \* } )**
 
-In the *folderConstant* parameter, pass a 4D built-in or system folder, using one of the following constants:
+En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utilizando una de las siguientes constantes:
 
 | Constante                  | Valor | Comentario                                                                                          |
 | -------------------------- | ----- | --------------------------------------------------------------------------------------------------- |
