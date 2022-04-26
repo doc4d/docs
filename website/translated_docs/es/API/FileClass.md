@@ -100,10 +100,10 @@ En el parámetro *fileConstant*, pase un archivo 4D interno o sistema, utilizand
 | Constante                         | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                               |
 | --------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backup history file               | 19    | Archivo de historial de copias de seguridad (ver Archivos de configuración y rastreo). Se almacena en la carpeta de destino de la copia de seguridad.                                                                                                                                                                                                                                                    |
-| Backup log file                   | 13    | Archivo historial de copias de seguridad actual. Stored in the application Logs folder.                                                                                                                                                                                                                                                                                                                  |
-| Backup settings file              | 1     | Default backup.4DSettings file (xml format), stored in the Settings folder of the project                                                                                                                                                                                                                                                                                                                |
-| Backup settings file for data     | 17    | backup.4DSettings file (xml format) for the data file, stored in the Settings folder of the data folder                                                                                                                                                                                                                                                                                                  |
-| Build application log file        | 14    | Current log file in xml format of the application builder. Stored in the Logs folder.                                                                                                                                                                                                                                                                                                                    |
+| Backup log file                   | 13    | Archivo historial de copias de seguridad actual. Almacenado en la carpeta Logs de la aplicación.                                                                                                                                                                                                                                                                                                         |
+| Backup settings file              | 1     | Archivo backup.4DSettings por defecto (formato xml), almacenado en la carpeta Settings del proyecto                                                                                                                                                                                                                                                                                                      |
+| Backup settings file for data     | 17    | archivo backup.4DSettings del archivo de datos (formato xml), almacenado en la carpeta Settings de la carpeta data                                                                                                                                                                                                                                                                                       |
+| Build application log file        | 14    | Archivo de historial actual en formato xml del generador de aplicaciones. Stored in the Logs folder.                                                                                                                                                                                                                                                                                                     |
 | Build application settings file   | 20    | Default settings file of the application builder ("buildApp.4DSettings"). Stored in the Settings folder of the project.                                                                                                                                                                                                                                                                                  |
 | Compacting log file               | 6     | Log file of the most recent compacting done with the Compact data file command or the Maintenance and security center. Stored in the Logs folder.                                                                                                                                                                                                                                                        |
 | Current backup settings file      | 18    | backup.4DSettings file currently used by the application. It can be the backup settings file (default) or a custom user backup settings file defined for the data file                                                                                                                                                                                                                                   |
@@ -140,9 +140,9 @@ If the command is called from a component, pass the optional * parameter to get 
 
 #### Descripción
 
-The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. It is identical to the [`File`](#file) command (shortcut).
+La función `4D.File.new()` <!-- REF #4D.File.new().Summary -->crea y devuelve un nuevo objeto de tipo `4D.File`<!-- END REF -->. Es idéntico al comando [`File`](#file) (acceso directo).
 
-> It is recommended to use the [`File`](#file) shortcut command instead of `4D.File.new()`.
+> Se recomienda utilizar el comando de acceso directo[`File`](#file) en lugar de `4D.File.new()`.
 
 
 <!-- INCLUDE document.copyTo().Desc -->
@@ -166,9 +166,9 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 **.create()** : Boolean <!-- END REF -->
 
 <!--REF #FileClass.create().Params -->
-| Parámetros | Tipo     |    | Descripción                                                |
-| ---------- | -------- | -- | ---------------------------------------------------------- |
-| Resultado  | Booleano | <- | True if the file was created successfully, false otherwise |
+| Parámetros | Tipo     |    | Descripción                                                        |
+| ---------- | -------- | -- | ------------------------------------------------------------------ |
+| Resultado  | Booleano | <- | True si el archivo se ha creado con éxito, false en caso contrario |
 <!-- END REF -->
 
 #### Descripción
