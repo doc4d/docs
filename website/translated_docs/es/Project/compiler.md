@@ -282,7 +282,7 @@ To do this, you must surround the code to be excluded from range checking with t
 
 ## About Compilers
 
-4D contains two compilers:
+4D incluye dos compiladores:
 
 - a "classic" compiler, used to compile native code for Intel/AMD processors;
 - a Silicon compiler, used to compile native code for Apple Silicon processors.
