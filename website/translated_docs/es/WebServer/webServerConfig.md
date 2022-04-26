@@ -586,7 +586,7 @@ Value of the "domain" field of the session cookie. Useful for controlling the sc
 | objeto webServer    | [`sessionCookieName`](API/WebServerClass.md#sessioncookiename) |             |
 | `WEB SET OPTION`    | `Web session cookie name`                                      |             |
 
-Name of the cookie used for saving the session ID. Por defecto = "4DSID".
+Nombre de la cookie utilizada para guardar el ID de sesión. Por defecto = "4DSID".
 
 
 ## Ruta de la cookie de sesión
