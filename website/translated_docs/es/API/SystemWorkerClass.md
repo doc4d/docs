@@ -104,11 +104,11 @@ In the *options* parameter, pass an object that can contain the following proper
 
 All callback functions receive two object parameters. Their contents depend on the callback:
 
-| Parámetros   | Tipo         | *onResponse* | *onData*      | *onDataError* | *onError*    | *onTerminate* |
-| ------------ | ------------ | ------------ | ------------- | ------------- | ------------ | ------------- |
-| $param1      | Objeto       | SystemWorker | SystemWorker  | SystemWorker  | SystemWorker | SystemWorker  |
-| $param2.type | Texto        | "response"   | "data"        | "error"       | "error"      | "termination" |
-| $param2.data | Text or Blob |              | received data | error data    |              |               |
+| Parámetros   | Tipo        | *onResponse* | *onData*      | *onDataError* | *onError*    | *onTerminate* |
+| ------------ | ----------- | ------------ | ------------- | ------------- | ------------ | ------------- |
+| $param1      | Objeto      | SystemWorker | SystemWorker  | SystemWorker  | SystemWorker | SystemWorker  |
+| $param2.type | Texto       | "response"   | "data"        | "error"       | "error"      | "termination" |
+| $param2.data | Text o Blob |              | received data | error data    |              |               |
 
 Here is the sequence of callback calls:
 

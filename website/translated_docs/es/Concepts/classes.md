@@ -228,12 +228,12 @@ In the application code, class functions are called as member methods of the obj
 
 #### Parámetros
 
-Function parameters are declared using the parameter name and the parameter type, separated by a colon. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
+Los parámetros de las funciones se declaran utilizando el nombre del parámetro y su tipo, separados por dos puntos. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
 ```
-> If the type is not stated, the parameter will be defined as `Variant`.
+> Si no se declaró el tipo, el parámetro se definirá como `Variant`.
 
 
 
@@ -274,13 +274,13 @@ Class constructor($width : Integer; $height : Integer)
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// Definición de función
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
 
 ```4d
-// In a project method
+// En un método proyecto
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -407,14 +407,14 @@ For a class constructor function, the `Current method name` command returns: `<C
 
 ```4d
 // Class: MyClass
-// Class constructor of MyClass
+// Class constructor de MyClass
 Class Constructor ($name : Text)
     This.name:=$name
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// En un método proyecto
+// Se puede instanciar un objeto
 var $o : cs.MyClass
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -428,7 +428,7 @@ $o:=cs.MyClass.new("HelloWorld")
 #### Sintaxis
 
 ```4d
-// Class: ChildClass
+// Class hijo
 Class extends <ParentClass>
 ```
 
@@ -592,9 +592,9 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Parámetros | Tipo   |    | Descripción    |
-| ---------- | ------ | -- | -------------- |
-| Resultado  | objeto | <- | Current object |
+| Parámetros | Tipo   |    | Descripción   |
+| ---------- | ------ | -- | ------------- |
+| Resultado  | objeto | <- | Objeto actual |
 
 The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv19/help/command/page1470.html).
 
@@ -620,7 +620,7 @@ Class Constructor
 ```
 
 ```4d
-// in a 4D method  
+// en un método 4D  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
@@ -650,7 +650,7 @@ $val:=$o.f() //8
 In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
 
 
-## Class commands
+## Comandos de clases
 
 Several commands of the 4D language allows you to handle class features.
 

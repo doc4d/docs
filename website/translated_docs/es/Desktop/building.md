@@ -234,7 +234,7 @@ Also, the client/server application is customized and its handling simplified:
 
 
 
-### Build server application
+### Construir aplicación servidor
 
 Check this option to generate the server part of your application during the building phase. Debe designar la ubicación en su disco de la aplicación 4D Server que va a utilizar. This 4D Server must correspond to the current platform (which will also be the platform of the server application).
 

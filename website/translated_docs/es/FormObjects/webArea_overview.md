@@ -167,7 +167,7 @@ For reasons related to window redrawing mechanisms, the insertion of a web area 
 - El subformulario no debe poder desplazarse
 - The limits of the web area must not exceed the size of the subform
 
-> Superimposing a web area on top of or beneath other form objects is not supported.
+> No se soporta la superposición de un área web sobre o debajo de otros objetos formulario.
 
 
 ### Conflicto entre el área web y el servidor web (Windows)
@@ -185,11 +185,11 @@ You can view and use a web inspector within web areas in your forms or in offscr
 
 To display the web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area.
 
-- **Execute the `WA OPEN WEB INSPECTOR` command**<br> This command can be used directly with onscreen (form object) and offscreen web areas.
+- **Ejecute el comando `WA OPEN WEB INSPECTOR` **<br> Este comando se puede utilizar directamente con áreas web en pantalla (objeto formulario) y fuera de ella.
 
 - **Use the web area context menu**<br> This feature can only be used with onscreen web areas and requires that the following conditions are met:
-    - the [context menu](properties_Entry.md#context-menu) for the web area is enabled
-    - the use of the inspector is expressly enabled in the area by means of the following statement:
+    - el [menú contextual](properties_Entry.md#context-menu) del área web está activado
+    - el uso del inspector está expresamente autorizado en el área mediante la siguiente declaración:
     ```4d
         WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)  
     ```
@@ -200,7 +200,7 @@ For more information, refer to the description of the `WA SET PREFERENCE` comman
 
 Cuando haya realizado los ajustes como se ha descrito anteriormente, entonces tendrá nuevas opciones como **Inspeccionar elemento** en el menú contextual del área. When you select this option, the web inspector window is displayed.
 
-> For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
+> Para una descripción detallada de las funcionalidades de este depurador, consulte la documentación que ofrece el motor de renderizado web.
 
 
 
