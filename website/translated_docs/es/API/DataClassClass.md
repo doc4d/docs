@@ -194,7 +194,7 @@ End for each
 $cache:=$ds.Persons.getRemoteCache()
 
 $ds.Persons.clearRemoteCache()
-// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
+// Caché de la dataclass Persons  = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
@@ -489,19 +489,19 @@ Este ejemplo ilustra el uso de la propiedad *context*:
 </details>
 
 <!-- REF #DataClassClass.getCount().Syntax -->
-**.getCount()** : Integer <!-- END REF -->
+**.getCount()**: Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
 | Parámetros | Tipo    |    | Descripción                         |
 | ---------- | ------- | -- | ----------------------------------- |
-| result     | Integer | <- | Number of entities in the dataclass |
+| result     | Integer | <- | Número de entidades en la dataclass |
 <!-- END REF -->
 
 #### Descripción
 
-The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+La función `.getCount()` <!-- REF #DataClassClass.getCount().Summary --> devuelve el número de entidades de una clase de datos<!-- END REF -->.
 
-If this function is used within a transaction, entities created during the transaction will be taken into account.
+Si se utiliza esta función dentro de una transacción, se tendrán en cuenta las entidades creadas durante la misma.
 
 #### Ejemplo
 
@@ -538,7 +538,7 @@ $number:=$ds.Persons.getCount()
 
 #### Descripción
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+La función `.getDataStore()`<!-- REF #DataClass.getDataStore().Summary -->devuelve el datastore para la clase de datos especificada<!-- END REF -->.
 
 El almacén de datos puede ser:
 
@@ -575,10 +575,10 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones         |
-| ------- | ---------------------- |
-| v19 R3  | Added exposed property |
-| v17 R5  | Añadidos               |
+| Versión | Modificaciones                     |
+| ------- | ---------------------------------- |
+| v19 R3  | Se ha añadido la propiedad exposed |
+| v17 R5  | Añadidos                           |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -593,7 +593,7 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 
 #### Descripción
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta función es útil para configurar el código genérico.
+La función `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->devuelve un objeto que proporciona información sobre la clase de datos<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
@@ -658,28 +658,28 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 </details>
 
 <!-- REF #DataClassClass.getRemoteCache().Syntax -->
-**.getRemoteCache**() : Object <!-- END REF -->
+**.getRemoteCache**(): Objeto <!-- END REF -->
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| Parámetros | Tipo   |    | Descripción                                                         |
-| ---------- | ------ | -- | ------------------------------------------------------------------- |
-| result     | Objeto | <- | Object describing the contents of the ORDA cache for the dataclass. |
+| Parámetros | Tipo   |    | Descripción                                                               |
+| ---------- | ------ | -- | ------------------------------------------------------------------------- |
+| result     | Objeto | <- | Objeto que describe el contenido de la caché ORDA para la clase de datos. |
 <!-- END REF -->
 
 > **Modo avanzado:** esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
 
 #### Descripción
 
-The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+La función `.getRemoteCache()` <!-- REF #DataClassClass.getRemoteCache().Summary -->devuelve un objeto que contiene el contenido de la caché ORDA para una clase de datos<!-- END REF -->.
 
-Calling this function from a 4D single-user application returns `Null`.
+Llamar a esta función desde una aplicación monopuesto de 4D devuelve `Null`.
 
 El objeto devuelto tiene las siguientes propiedades:
 
 | Propiedad  | Tipo       | Descripción                                                               |
 | ---------- | ---------- | ------------------------------------------------------------------------- |
-| maxEntries | Integer    | Maximum number of entries collection.                                     |
-| stamp      | Integer    | Stamp of the cache.                                                       |
+| maxEntries | Integer    | Número máximo de colecciones "entries".                                   |
+| stamp      | Integer    | Marcador de la caché.                                                     |
 | timeout    | Integer    | Time remaining before the new entries in the cache are marked as expired. |
 | entries    | Collection | Contains an entry object for each entity in the cache.                    |
 
@@ -953,7 +953,7 @@ Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* 
 *   direct values (no placeholders),
 *   indexed placeholders and/or named placeholders.
 
-Using placeholders in queries **is recommended** for the following reasons:
+El uso de marcadores de posición en las búsquedas **se recomienda** por las siguientes razones:
 
 1.  It prevents malicious code insertion: if you directly use user-filled variables within the query string, a user could modifiy the query conditions by entering additional query arguments. For example, imagine a query string like:
 
@@ -1071,9 +1071,9 @@ To make it possible to perform such queries, ORDA allows a special syntax: you j
 In our example, it would be:
 
 ```4d
-// valid code
+// código válido
 $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2";"Hanks";"Ryan")  
-// $es contains movies (You've Got Mail, Sleepless in Seattle, Joe Versus the Volcano)
+// $es contient des films (You've Got Mail, Sleepless in Seattle, Joe Versus the Volcano)
 ```
 
 
@@ -1446,7 +1446,7 @@ Queremos desautorizar las fórmulas, por ejemplo, cuando el usuario introduce su
 </details>
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Syntax -->
-**.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
+**.setRemoteCacheSettings**(*settings*: Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 | Parámetros | Tipo   |    | Descripción                                                                        |
