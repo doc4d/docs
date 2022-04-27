@@ -20,7 +20,7 @@ La sintaxis de la estructura condicional `While...End while` es:
 
 Un bucle `While...End while` ejecuta las instrucciones dentro del bucle mientras la expresión booleana sea TRUE. Comprueba la expresión booleana al inicio del bucle y no entra en el bucle si la expresión es FALSE.
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+Las instrucciones `break` y `continue` se [describen a continuación](#break-and-continue).
 
 Es común inicializar el valor probado en la expresión booleana inmediatamente antes de entrar en el bucle `While...End while`. Inicializar el valor significa asignarle un contenido adecuado, normalmente para que la expresión booleana sea TRUE y `While...End while` ejecute el bucle.
 
@@ -59,7 +59,7 @@ Un bucle `Repeat...Until` es similar a un bucle [While...End while](flow-control
 
 La otra diferencia con un bucle `Repeat...Until` es que el bucle continúa hasta que la expresión booleana sea TRUE.
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+Las instrucciones `break` y `continue` se [describen a continuación](#break-and-continue).
 
 ### Ejemplo
 
@@ -97,7 +97,7 @@ El bucle `For...End for` es un bucle controlado por un contador:
 - Si *Start_Expression* y *End_Expression* son iguales, el bucle se ejecutará sólo una vez.
 - Si *Start_Expression* es mayor que *End_Expression*, el bucle no se ejecutará en absoluto a menos que se especifique una *Increment_Expression* negativa. Ver los ejemplos.
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+Las instrucciones `break` y `continue` se [describen a continuación](#break-and-continue).
 
 ### Ejemplos básicos
 
@@ -319,7 +319,7 @@ La siguiente tabla compara los tres tipos de `For each... End for each`:
     - antes de entrar en el bucle, si los elementos deben modificarse juntos por razones de integridad, o
     - dentro del bucle cuando sólo hay que modificar algunos elementos/propiedades y no es necesario gestionar la integridad.
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+Las instrucciones `break` y `continue` se [describen a continuación](#break-and-continue).
 
 ### Bucle en las colecciones
 
@@ -474,22 +474,22 @@ Puede pasar cualquiera de las dos palabras clave en función de sus necesidades:
  ALERT(String($total)) //$total = 1001 (1000+1)
 ```
 
-## `break` and `continue`
+## `break` y `continue`
 
-All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.
+Todas las estructuras de bucle anteriores soportan las instrucciones `break` y `continue`. Estas instrucciones le dan más control sobre los bucles al permitir salir del bucle y pasar por alto la iteración actual en cualquier momento.
 
 ### break
 
-The `break` statement terminates the loop containing it. Control of the program flows to the statement immediately after the body of the loop.
+La instrucción `break` termina el bucle que la contiene. El control del programa fluye hacia la instrucción inmediatamente posterior al cuerpo del bucle.
 
-If the `break` statement is inside a [nested loop](#nested-forend-for-looping-structures) (loop inside another loop), the `break` statement will terminate the innermost loop.
+Si la instrucción `break` está dentro de un bucle al interior de un [bucle anidado](#nested-forend-for-looping-structures) (bucle dentro de otro bucle), la instrucción `break` terminará el bucle más interno.
 
 
 #### Ejemplo
 
 ```4d
 For (vCounter;1;100)
-    If ($tab{vCounter}="") //if a condition becomes true
+    If ($tab{vCounter}="") //si una condición es verdadera
         break //end of the for loop
     End if
 End for
@@ -497,13 +497,13 @@ End for
 
 ### continue
 
-The `continue` statement terminates execution of the statements in the current iteration of the current loop, and continues execution of the loop with the next iteration.
+La instrucción `continue` termina la ejecución de las instrucciones en la iteración actual del bucle actual, y continúa la ejecución del bucle con la siguiente iteración.
 
 ```4d
 var $text : Text
 For ($i; 0; 9)
     If ($i=3)
-        continue //go directly to the next iteration
+        continue //pasar directamente a la siguiente iteración
     End if
     $text:=$text+String($i)
 End for
