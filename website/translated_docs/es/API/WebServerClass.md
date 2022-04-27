@@ -758,7 +758,7 @@ Ver la descripción de [Session Cookie SameSite](WebServer/webServerConfig.md#se
 <!-- REF #WebServerClass.sessionIPAddressValidation.Syntax -->
 **.sessionIPAddressValidation** : Boolean<!-- END REF -->
 
-> This property is not used in [scalable sessions mode](#scalablesession) (there is no IP address validation).
+> Esta propiedad no se utiliza en el modo [sesiones escalables](#scalablesession) (no hay validación de la dirección IP).
 
 La <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de la dirección IP para las cookies de sesión<!-- END REF -->. Por razones de seguridad, por defecto el servidor web comprueba la dirección IP de cada solicitud que contiene una cookie de sesión y la rechaza si esta dirección no coincide con la dirección IP utilizada para crear la cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. Por ejemplo, cuando los dispositivos móviles cambian entre las redes WiFi y 3G/4G, su dirección IP cambiará. En este caso, puede permitir que los clientes puedan seguir utilizando sus sesiones web incluso cuando las direcciones IP cambien (esta configuración reduce el nivel de seguridad de su aplicación).
 
@@ -794,7 +794,7 @@ La función `.start()` <!-- REF #WebServerClass.start().Summary -->inicia el ser
 
 El servidor web se inicia con la configuración por defecto definida en el archivo de configuración del proyecto o (sólo en la base host) utilizando el comando `WEB SET OPTION`. Sin embargo, utilizando el parámetro *settings*, se pueden definir propiedades personalizadas para la sesión del servidor web.
 
-All settings of [Web Server objects](#web-server-object) can be customized, except read-only properties ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), and [.sessionCookieName(#sessioncookiename)]).
+Todas las configuraciones de los [objetos del Servidor Web](#web-server-object) pueden personalizarse, excepto las propiedades de sólo lectura ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy) y [.sessionCookieName(#sessioncookiename)]).
 
 La configuración de la sesión personalizada se restablecerá cuando se llame a la función [`.stop()`](#stop).
 
@@ -810,7 +810,7 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 |           | \[].errCode            | Número     | Código de error 4D                                                   |
 |           | \[].message            | Texto      | Description of the 4D error                                          |
 |           | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                |
-> If the Web server was already launched, an error is returned.
+> Si el servidor web ya fue lanzado, se devuelve un error.
 
 #### Ejemplo
 
@@ -854,7 +854,7 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 La función `.stop()` <!-- REF #WebServerClass.stop().Summary -->detiene el servidor web sobre el que se aplica<!-- END REF -->.
 
 Si el servidor web se ha iniciado, todas las conexiones y procesos web se cierran, una vez que las peticiones actualmente gestionadas han finalizado. Si el servidor web no se ha iniciado, el método no hace nada.
-> This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
+> Esta función reinicia los parámetros web personalizados definidos para la sesión mediante el parámetro *settings* de la función [`.start()`](#start), si la hubiera.
 
 
 #### Ejemplo
