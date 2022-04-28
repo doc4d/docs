@@ -8,7 +8,7 @@ title: Clases
 
 El lenguaje 4D soporta el concepto de **clases**. En un lenguaje de programación, el uso de una clase permite definir el comportamiento de un objeto con propiedades y funciones asociadas.
 
-Cada objeto es una instancia de su clase. Una vez definida una clase usuario, puede **instanciar** los objetos de esta clase en cualquier parte de su código. A class can [`extend`](#class-extends-classname) another class, and then inherits from its [functions](#function) and properties ([static](#class-constructor) and [computed](#function-get-and-function-set)).
+Cada objeto es una instancia de su clase. Una vez definida una clase usuario, puede **instanciar** los objetos de esta clase en cualquier parte de su código. Una clase puede extenderse a otra clase con la palabra clave [`extender`](#class-extends-classname) y entonces hereda sus [funciones](#function) y sus propiedades ([static](#class-constructor) y [computed](#function-get-and-function-set)).
 
 > El modelo de clases en 4D es similar al de las clases en JavaScript, y se basa en una cadena de prototipos.
 
@@ -174,8 +174,8 @@ When 4D does not find a function or a property in a class, it searches it in its
 En las definiciones de clase se pueden utilizar palabras claves específicas de 4D:
 
 - `Function <Name>` para definir las funciones de clase de los objetos.
-- `Function get <Name>` and `Function set <Name>` to define computed properties of the objects.
-- `Class constructor` to define static properties of the objects.
+- `Function get <Name>` y `Function set <Name>` para definir las propiedades calculadas de los objetos.
+- `Class constructor` para definir las propiedades estáticas de los objetos.
 - `Class extends <ClassName>` para definir la herencia.
 
 
@@ -226,12 +226,12 @@ In the application code, class functions are called as member methods of the obj
 
 #### Parámetros
 
-Function parameters are declared using the parameter name and the parameter type, separated by a colon. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
+Los parámetros de las funciones se declaran utilizando el nombre del parámetro y su tipo, separados por dos puntos. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
 ```
-> If the type is not stated, the parameter will be defined as `Variant`.
+> Si no se declaró el tipo, el parámetro se definirá como `Variant`.
 
 
 
@@ -258,7 +258,7 @@ You can also declare the return parameter by adding only `: type` and use the [`
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-    // some code
+    // algún código
     return $x+$y
 ```
 
@@ -272,13 +272,13 @@ Class constructor($width : Integer; $height : Integer)
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// Definición de función
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
 
 ```4d
-// In a project method
+// En un método proyecto
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -303,18 +303,18 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 
 
-### `Function get` and `Function set`
+### `Function get` y `Function set`
 
 #### Sintaxis
 
 ```4d
 Function get <name>()->$result : type
-// code
+// código
 ```
 
 ```4d
 Function set <name>($parameterName : type)
-// code
+// código
 ```
 
 `Function get` and `Function set` are accessors defining **computed properties** in the class. A computed property is a named property with a data type that masks a calculation. When a computed property value is accessed, 4D substitutes the corresponding accessor's code:
@@ -364,7 +364,7 @@ Function set fullName( $fullName : Text )
 ```
 
 ```4d
-//in a project method
+//en un método proyecto
 $fullName:=$person.fullName // Function get fullName() is called
 $person.fullName:="John Smith" // Function set fullName() is called
 ```
@@ -406,14 +406,14 @@ For a class constructor function, the `Current method name` command returns: `<C
 
 ```4d
 // Class: MyClass
-// Class constructor of MyClass
+// Class constructor de MyClass
 Class Constructor ($name : Text)
     This.name:=$name
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// En un método proyecto
+// Se puede instanciar un objeto
 var $o : cs.MyClass
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -427,7 +427,7 @@ $o:=cs.MyClass.new("HelloWorld")
 #### Sintaxis
 
 ```4d
-// Class: ChildClass
+// Class hijo
 Class extends <ParentClass>
 ```
 
@@ -588,9 +588,9 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Parámetros | Tipo   |    | Descripción    |
-| ---------- | ------ | -- | -------------- |
-| Resultado  | objeto | <- | Current object |
+| Parámetros | Tipo   |    | Descripción   |
+| ---------- | ------ | -- | ------------- |
+| Resultado  | objeto | <- | Objeto actual |
 
 The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv19/help/command/page1470.html).
 
@@ -616,7 +616,7 @@ Class Constructor
 ```
 
 ```4d
-// in a 4D method  
+// en un método 4D  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
@@ -645,7 +645,7 @@ $val:=$o.f() //8
 In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
 
 
-## Class commands
+## Comandos de clases
 
 Several commands of the 4D language allows you to handle class features.
 

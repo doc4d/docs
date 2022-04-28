@@ -379,15 +379,15 @@ A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um
 
 **Returned object**
 
-| Propriedade | Type     | Description                                                                                                                                                     |
-| ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        | string   | <li>"4D": armazém de dados principal, disponível através de ds </li><li>"4D Server": datastore remoto, aberto com Open datastore</li>                                                                                                              |
-| networked   | booleano | <li>True: a datastore se alcança através de uma conexão de rede.</li><li>False: não se alcança a datastore através de uma conexão de rede (base de dados local)</li>                                                                                                              |
-| localID     | texto    | ID do armazém de dados na máquina. Corresponde à string localId dada com o comando `Open datastore`. String vazia ("") para o datastore principal.              |
-| connection  | object   | Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Propriedade</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>texto</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>booleano</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>texto</td><td>User authenticated on the remote datastore</td></tr></table> |
+| Propriedade | Type     | Description                                                                                                                                                              |
+| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| type        | string   | <li>"4D": armazém de dados principal, disponível através de ds </li><li>"4D Server": datastore remoto, aberto com Open datastore</li>                                                                                                                       |
+| networked   | booleano | <li>True: a datastore se alcança através de uma conexão de rede.</li><li>False: não se alcança a datastore através de uma conexão de rede (base de dados local)</li>                                                                                                                       |
+| localID     | texto    | ID do armazém de dados na máquina. Corresponde à string localId dada com o comando `Open datastore`. String vazia ("") para o datastore principal.                       |
+| connection  | object   | Objeto descrevendo a conexão remota da datastore (não retornado para datastore principal) Propriedades disponiveis:<p><table><tr><th>Propriedade</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>texto</td><td>Endereço IP ou nome da datastore remota + ":" + número porta</td></tr><tr><td>tls</td><td>booleano</td><td>True se conexão segura for usada com a datastore remota</td></tr><tr><td>idleTimeout</td><td>number</td><td>Tempo de inatividade da sessão (em minutos)</td></tr><tr><td>user</td><td>texto</td><td>Usuario autentificado no datastore remoto</td></tr></table> |
 
-*   If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
-*   If the `.getInfo()` function is executed on a remote 4D, `networked` is True
+*   Se a função `.getInfo()` for executada em um 4D Server ou 4D monoposto, `networked` é False.
+*   Se a função `.getInfo()` for executada em um 4D remoto, `networked` é True
 
 
 #### Exemplo 1
@@ -395,16 +395,16 @@ A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um
 ```4d
  var $info : Object
 
- $info:=ds.getInfo() //Executed on 4D Server or 4D
+ $info:=ds.getInfo() //Executado em 4D Server ou 4D
   //{"type":"4D","networked":false,"localID":""}
 
- $info:=ds.getInfo() // Executed on 4D remote
+ $info:=ds.getInfo() // Executado em 4D remoto
   //{"type":"4D","networked":true,"localID":""}
 ```
 
 #### Exemplo 2
 
-On a remote datastore:
+Em um armazém de dados remoto:
 
 ```4d
   var $remoteDS : cs.DataStore
@@ -438,28 +438,28 @@ On a remote datastore:
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| Parameter | Type    |    | Description                                                  |
-| --------- | ------- |:--:| ------------------------------------------------------------ |
-| Result    | Coleção | <- | Collection of objects, where each object describes a request |
+| Parameter | Type    |    | Description                                              |
+| --------- | ------- |:--:| -------------------------------------------------------- |
+| Result    | Coleção | <- | Coleção de objetos onde cada objeto descreve uma petição |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. The ORDA request logging must have previously been enabled using the [`.startRequestLog()`](#startrequestlog) function.
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->retorna as petições ORDA logadas na memória no lado do cliente<!-- END REF -->. O registro de petições de ORDA deve ter sido habilidado anteriormente aatravés da função [`.startRequestLog()`](#startrequestlog).
 
-This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.
+Esta função deve ser chamada em um 4D remoto, do contrário devolve uma coleção vazia. Foi criado para depuração em configurações de cliente/servidor.
 
 **Returned value**
 
-Collection of stacked request objects. The most recent request has index 0.
+Coleção de objetos de petição empilhados. A petição mais recente tem indice 0.
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+Para uma descrição do formato do registro de petições de ORDA, consulte a seção [**Perguntas do cliente ORDA**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373).
 
 
 #### Exemplo
 
-See Example 2 of [`.startRequestLog()`](#startrequestlog).
+Ver o exemplo 2 de [`.startRequestLog()`](#startrequestlog).
 
 <!-- END REF -->
 
@@ -477,17 +477,17 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| Parameter | Type     |    | Description                                                                    |
-| --------- | -------- |:--:| ------------------------------------------------------------------------------ |
-| Result    | Booleano | <- | True if the Data Explorer access is disabled, False if it is enabled (default) |
+| Parameter | Type     |    | Description                                                                                       |
+| --------- | -------- |:--:| ------------------------------------------------------------------------------------------------- |
+| Result    | Booleano | <- | True se o acesso ao Explorador de Dados estiver desativado, False se estiver ativado (por padrão) |
 <!-- END REF -->
 
 
 #### Description
 
-The `.isAdminProtected()` function <!-- REF #DataStoreClass.isAdminProtected().Summary -->returns `True` if [Data Explorer](Admin/dataExplorer.md) access has been disabled for the working session<!-- END REF -->.
+A função `.isAdminProtected()` <!-- REF #DataStoreClass.isAdminProtected().Summary -->devolve `True` se o acesso a [Data Explorer](Admin/dataExplorer.md) foi desativado para a sessão de trabalho<!-- END REF -->.
 
-By default, the Data Explorer access is granted for `webAdmin` sessions, but it can be disabled to prevent any data access from administrators (see the [`.setAdminProtection()`](#setadminprotection) function).
+Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAdmin`, mas pode ser desativada para evitar qualquer acesso aos dados por parte dos administradores (ver a função [`.setAdminProtection()`](#setadminprotection)).
 
 #### See also
 
@@ -519,11 +519,11 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 
 #### Description
 
-The `.makeSelectionsAlterable()` function <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->sets all entity selections as alterable by default in the current application datastores<!-- END REF --> (including [remote datastores](ORDA/remoteDatastores.md)). It is intended to be used once, for example in the `On Startup` database method.
+A função `.makeSelectionsAlterable()` <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->estabelece todas as seleções de entidades como editáveis por padrão nos datastores da aplicação atual<!-- END REF --> (incluindo [datastores remotos](ORDA/remoteDatastores.md)). Está pensado para ser utilizado uma vez, por exemplo no método base `On Startup`.
 
-When this function is not called, new entity selections can be shareable, depending on the nature of their "parent", or [how they are created](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+quando nesta função não for chamada, as novas seleções de entidades podem ser compartilháveis, dependendo da natureza de seu "pai", ou de [como foram criadas](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
-> This function does not modify entity selections created by [`.copy()`](#copy) or `OB Copy` when the explicit `ck shared` option is used.
+> Esta função não modifica as seleções de entidades criadas por [`.copy()`](#copy) ou `OB Copy` quando se utilizar a opção explícita `ck shared`.
 
 
 > **Compatibility**: This function must only be used in projects converted from 4D versions prior to 4D v18 R5 and containing [.add()](EntitySelectionClass.md#add) calls. In this context, using `.makeSelectionsAlterable()` can save time by restoring instantaneously the previous 4D behavior in existing projects. On the other hand, using this method in new projects created in 4D v18 R5 and higher **is not recommended**, since it prevents entity selections to be shared, which provides greater performance and scalabitlity.
@@ -678,7 +678,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 The `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->.
 
-This function must be called on a remote 4D, otherwise it does nothing. It is designed for debugging purposes in client/server configurations.
+This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
 
 The ORDA request log can be sent to a file or to memory, depending on the parameter type:
 
@@ -689,7 +689,7 @@ The ORDA request log can be sent to a file or to memory, depending on the parame
 
 *   If you did not pass any parameter, the log is started in memory. If `.startRequestLog()` was previously called with a *reqNum* (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+Para uma descrição do formato do registro de petições de ORDA, consulte a seção [**Perguntas do cliente ORDA**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373).
 
 #### Exemplo 1
 
@@ -822,7 +822,7 @@ Pode aninhar várias transações (subtransações). Each transaction or sub-tra
 
 The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
 
-This function must be called on a remote 4D, otherwise it does nothing. It is designed for debugging purposes in client/server configurations.
+This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
 
 
 #### Exemplo
