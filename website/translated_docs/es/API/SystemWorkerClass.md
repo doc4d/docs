@@ -86,7 +86,7 @@ In the *commandLine* parameter, pass the full path of the application's file to 
 
 #### *options* Object
 
-In the *options* parameter, pass an object that can contain the following properties:
+En el parámetro *options*, pase un objeto que pueda contener las siguientes propiedades:
 
 | Propiedad        | Tipo     | Por defecto | Descripción                                                                                                                                                                                                                                                                                          |
 | ---------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -104,11 +104,11 @@ In the *options* parameter, pass an object that can contain the following proper
 
 All callback functions receive two object parameters. Their contents depend on the callback:
 
-| Parámetros   | Tipo         | *onResponse* | *onData*      | *onDataError* | *onError*    | *onTerminate* |
-| ------------ | ------------ | ------------ | ------------- | ------------- | ------------ | ------------- |
-| $param1      | Objeto       | SystemWorker | SystemWorker  | SystemWorker  | SystemWorker | SystemWorker  |
-| $param2.type | Texto        | "response"   | "data"        | "error"       | "error"      | "termination" |
-| $param2.data | Text or Blob |              | received data | error data    |              |               |
+| Parámetros   | Tipo        | *onResponse* | *onData*      | *onDataError* | *onError*    | *onTerminate* |
+| ------------ | ----------- | ------------ | ------------- | ------------- | ------------ | ------------- |
+| $param1      | Objeto      | SystemWorker | SystemWorker  | SystemWorker  | SystemWorker | SystemWorker  |
+| $param2.type | Texto       | "response"   | "data"        | "error"       | "error"      | "termination" |
+| $param2.data | Text o Blob |              | received data | error data    |              |               |
 
 Here is the sequence of callback calls:
 
@@ -177,7 +177,7 @@ $sys.closeInput()
 5. To allow the user to open an external document on Windows:
 
 ```4d
-$docname:=Select document("";"*.*";"Choose the file to open";0)
+$docname:=Select document("";"*.*";"Elija el archivo a abrir";0)
 If(OK=1)
     var $sw : 4D.SystemWorker
     $sw:=4D.SystemWorker.new("cmd.exe /C start \"\" \""+$docname+"\"")
@@ -186,7 +186,7 @@ End if
 
 
 
-#### Examples on macOS
+#### Ejemplos en macOS
 
 1. Edit a text file (`cat` is the macOS command used to edit files). In this example, the full access path of the command is passed:
 
