@@ -1612,7 +1612,7 @@ End if
 
 La función `.searchMails()` <!-- REF #IMAPTransporterClass.searchMails().Summary -->busca los mensajes que coincidan con el *searchCriteria* en el buzón actual<!-- END REF -->. El parámetro *searchCriteria* contiene una o varias palabras clave de búsqueda.
 
-*searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. Por ejemplo:
+*searchCriteria* es un parámetro texto que enumera una o varias llaves de búsqueda (ver [llaves-de-búsqueda-autorizadas](#authorized-search-keys) más abajo) asociadas o no a valores a buscar. Una llave de búsqueda puede ser uno o varios elementos. Por ejemplo:
 
 ```
 SearchKey1 = FLAGGED
@@ -1622,34 +1622,34 @@ SearchKey3 = FLAGGED DRAFT
 
 > Las coincidencias no suelen diferenciar entre mayúsculas y minúsculas
 
-- If the *searchCriteria* is a null string, the search will be equivalent to a “select all”.
-- If the *searchCriteria* includes multiple search keys, the result is the intersection (AND function) of all the messages that match those keys.
+- Si el *searchCriteria* es una cadena null, la búsqueda será equivalente a un "seleccionar todo".
+- Si *searchCriteria* incluye varias llaves de búsqueda, el resultado es la intersección (función AND) de todos los mensajes que coinciden con esas llaves.
 
 ```
 searchCriteria = FLAGGED FROM "SMITH"
 ```
-... returns all messages with \Flagged flag set AND sent by Smith.
-- You can use the **OR** or **NOT** operators as follows:
+... devuelve todos los mensajes con el marcador \Flagged AND activado y enviados por Smith.
+- Puede utilizar los operadores **OR** o **NOT** de la siguiente manera:
 
 ```
 searchCriteria = OR SEEN FLAGGED
 ```
-... returns all messages with \Seen flag set OR \Flagged flag set
+... devuelve todos los mensajes con el marcador \Seen O \Flagged
 
 ```
 searchCriteria = NOT SEEN
 ```
-... returns all messages with \Seen flag not set.
+... devuelve todos los mensajes con el marcador \Seen.
 
 ```
 searchCriteria = HEADER CONTENT-TYPE "MIXED" NOT HEADER CONTENT-TYPE "TEXT"...
 ```
-... returns message whose content-type header contains “Mixed” and does not contain “Text”.
+... devuelve los mensajes cuyo encabezado content-type contiene "Mixed" y no contiene "Text".
 
 ```
 searchCriteria = HEADER CONTENT-TYPE "E" NOT SUBJECT "o" NOT HEADER CONTENT-TYPE "MIXED"
 ```
-... returns message whose content-type header contains “ e ” and whose Subject header does not contain “ o ” and whose content-type header is not “ Mixed ”.
+... devuelve los mensajes cuyo encabezado content-type contiene " e " y cuyo encabezado Subject no contiene " o " y cuyo encabezado content-type no es " Mixed ".
 
 As concerns the last two examples, notice that the result of the search is different when you remove the parentheses of the first search key list.
 
@@ -1881,9 +1881,9 @@ End if
 
 #### Descripción
 
-The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->removes a mailbox from a set of subscribed mailboxes<!-- END REF -->. This allows you reduce the number of mailboxes you usually see.
+La función `.unsubscribe()` <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->elimina un buzón de un conjunto de buzones suscritos<!-- END REF -->. Esto le permite reducir el número de buzones que suele ver.
 
-In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.
+En el parámetro `name`, pase el nombre del buzón a eliminar (darse de baja) de sus buzones activos.
 
 **Objeto devuelto**
 
