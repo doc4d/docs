@@ -10,7 +10,7 @@ Devuelve un ID del archivo subido al servidor
 
 Publique esta petición cuando tenga un archivo que quiera subir al Servidor. Si tiene una imagen, pase `$rawPict=true`. Para todos los demás archivos, se pasa `$binary=true`.
 
-You can modify the timeout, which by default is 120 seconds, by passing a value to the `$timeout` parameter.
+Puede modificar el tiempo de espera, que por defecto es de 120 segundos, pasando un valor al parámetro `$timeout`.
 
 ## Uploading scenario
 
@@ -64,7 +64,7 @@ Se devuelve la entidad modificada:
     },}
 ```
 
-## Example with a 4D HTTP client
+## Ejemplo con un cliente 4D HTTP
 
 The following example shows how to upload a *.pdf* file to the server using the 4D HTTP client.
 
