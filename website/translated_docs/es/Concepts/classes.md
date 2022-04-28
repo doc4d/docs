@@ -8,7 +8,7 @@ title: Clases
 
 El lenguaje 4D soporta el concepto de **clases**. En un lenguaje de programación, el uso de una clase permite definir el comportamiento de un objeto con propiedades y funciones asociadas.
 
-Cada objeto es una instancia de su clase. Una vez definida una clase usuario, puede **instanciar** los objetos de esta clase en cualquier parte de su código. A class can [`extend`](#class-extends-classname) another class, and then inherits from its [functions](#function) and properties ([static](#class-constructor) and [computed](#function-get-and-function-set)).
+Cada objeto es una instancia de su clase. Una vez definida una clase usuario, puede **instanciar** los objetos de esta clase en cualquier parte de su código. Una clase puede extenderse a otra clase con la palabra clave [`extender`](#class-extends-classname) y entonces hereda sus [funciones](#function) y sus propiedades ([static](#class-constructor) y [computed](#function-get-and-function-set)).
 
 > El modelo de clases en 4D es similar al de las clases en JavaScript, y se basa en una cadena de prototipos.
 
@@ -176,8 +176,8 @@ When 4D does not find a function or a property in a class, it searches it in its
 En las definiciones de clase se pueden utilizar palabras claves específicas de 4D:
 
 - `Function <Name>` para definir las funciones de clase de los objetos.
-- `Function get <Name>` and `Function set <Name>` to define computed properties of the objects.
-- `Class constructor` to define static properties of the objects.
+- `Function get <Name>` y `Function set <Name>` para definir las propiedades calculadas de los objetos.
+- `Class constructor` para definir las propiedades estáticas de los objetos.
 - `Class extends <ClassName>` para definir la herencia.
 
 
@@ -260,7 +260,7 @@ You can also declare the return parameter by adding only `: type` and use the [`
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-    // some code
+    // algún código
     return $x+$y
 ```
 
@@ -305,18 +305,18 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 
 
-### `Function get` and `Function set`
+### `Function get` y `Function set`
 
 #### Sintaxis
 
 ```4d
 Function get <name>()->$result : type
-// code
+// código
 ```
 
 ```4d
 Function set <name>($parameterName : type)
-// code
+// código
 ```
 
 `Function get` and `Function set` are accessors defining **computed properties** in the class. A computed property is a named property with a data type that masks a calculation. When a computed property value is accessed, 4D substitutes the corresponding accessor's code:
@@ -365,7 +365,7 @@ Function set fullName( $fullName : Text )
 ```
 
 ```4d
-//in a project method
+//en un método proyecto
 $fullName:=$person.fullName // Function get fullName() is called
 $person.fullName:="John Smith" // Function set fullName() is called
 ```
