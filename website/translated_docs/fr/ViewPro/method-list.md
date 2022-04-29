@@ -3958,24 +3958,24 @@ Passez le nom de la zone 4D View Pro dans *vpAreaName*. Si vous passez un nom in
 
 Dans le paramètre *formulaObj*, passez un objet contenant les formules 4D pouvant être appelées par des formules 4D View Pro et des propriétés supplémentaires. Chaque propriété `customFunction` passée dans *formulaObj* devient le nom d'une fonction dans la zone 4D View Pro.
 
-| Propriété                |            |            | Type                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------------------ | ---------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<customFunction>` |            |            | Object              | Description de la fonction personnalisée. `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                          | formula    |            | Object              | Objet formule 4D (obligatoire). Voir la commande `Formula`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                          | parameters |            | Collection d'objets | Collection de paramètres (dans l'ordre dans lequel ils sont définis dans la formule)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                          |            | \[ ].name | Text                | Nom du paramètre à afficher dans 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|                          |            | \[ ].type | Nombre              | Type de paramètre. Supported types:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value). |
-|                          | summary    |            | Text                | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                          | minParams  |            | Nombre              | Nombre minimum de paramètres                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|                          | maxParams  |            | Nombre              | Nombre maximum de paramètres. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-> **WARNING**
+| Propriété                |            |            | Type                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------ | ---------- | ---------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<customFunction>` |            |            | Object              | Description de la fonction personnalisée. `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|                          | formula    |            | Object              | Objet formule 4D (obligatoire). Voir la commande `Formula`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|                          | parameters |            | Collection d'objets | Collection de paramètres (dans l'ordre dans lequel ils sont définis dans la formule)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|                          |            | \[ ].name | Text                | Nom du paramètre à afficher dans 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|                          |            | \[ ].type | Nombre              | Type de paramètre. Supported types:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>Si *type* est omis ou si la valeur par défaut (-1) est passée, la valeur est automatiquement envoyée avec son type, à l'exception des valeurs date ou heure qui sont envoyées en tant qu'objet (voir la section [Paramètres](formulas.md#parameters)).<p><p>Si *type* est défini sur `Is object`, l'objet a la même structure que l'objet retourné par [VP Get value](#vp-get-value). |
+|                          | summary    |            | Text                | Description de la formule à afficher dans 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|                          | minParams  |            | Nombre              | Nombre minimum de paramètres                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|                          | maxParams  |            | Nombre              | Nombre maximum de paramètres. Passer un nombre supérieur à la longueur de *parameters* permet de déclarer les paramètres "optionnels" avec un type par défaut                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+> **ATTENTION**
 > 
-> * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
+> * Dès que la commande `VP SET CUSTOM FUNCTIONS` est appelée, les méthodes autorisées par [SET ALLOWED METHODS](#vp-set-allowed-methods) sont ignorées dans la zone 4D View Pro.
 > * Dès que `VP SET CUSTOM FUNCTIONS` est appelé, les fonctions basées sur les commandes `SET TABLE TITLES` et `SET FIELD TITLES` sont ignorées dans la zone 4D View Pro.
 
 #### Exemple
 
-You want to use formula objects in a 4D View Pro area to add numbers, retrieve a customer's last name and gender:
+Vous souhaitez utiliser des objets Formule dans une zone 4D View Pro pour ajouter des chiffres, récupérer le sexe et le nom de famille d'un client :
 
 ```4d
 Case of
@@ -3984,25 +3984,25 @@ Case of
        var $o : Object
        $o:=New object
 
-// Define "addnum" function from a method named "addnum"
+// Définir la fonction "addnum" d'une méthode nommée "addnum"
        $o.addnum:=New object
        $o.addnum.formula:=Formula(addnum)
        $o.addnum.parameters:=New collection
        $o.addnum.parameters.push(New object("name";"num1";"type";Is Integer))
        $o.addnum.parameters.push(New object("name";"num2";"type";Is Integer))
 
-// Define "ClientLastName" function from a database field
+// Définir la fonction "ClientLastName" d'un champ de base de données
        $o.ClientLastName:=New object
        $o.ClientLastName.formula:=Formula([Customers]lastname)
-       $o.ClientLastName.summary:="Lastname of the current client"
+       $o.ClientLastName.summary:="Nom de famille du client courant"
 
-// Define "label" function from a 4D expression with one parameter
+// Définir la fonction "label" d'une expression 4D avec un paramètre
        $o.label:=New object
        $o.label.formula:=Formula(ds.Customers.get($1).label)
        $o.label.parameters:=New collection
        $o.label.parameters.push(New object("name";"ID";"type";Is Integer))
 
-// Define "Title" function from a variable named "Title"
+// Définir la fonction "Title" d'une variable nommée "Title"
        $o.Title:=New object
        $o.Title.formula:=Formula(Title)
 
@@ -4252,23 +4252,23 @@ Pour plus d'informations sur les modèles et les caractères de formatage, veuil
 
 <!-- REF #_method_.VP SET DEFAULT STYLE.Params -->
 
-| Paramètres | Type    |    | Description                             |
-| ---------- | ------- | -- | --------------------------------------- |
-| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
-| styleObj   | Object  | -> | Objet style                             |
-| sheet      | Integer | -> | Sheet index (default = current sheet)   |
+| Paramètres | Type    |    | Description                                          |
+| ---------- | ------- | -- | ---------------------------------------------------- |
+| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro              |
+| styleObj   | Object  | -> | Objet style                                          |
+| sheet      | Integer | -> | Indice de la feuille (par défaut = feuille courante) |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET DEFAULT STYLE` command <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->defines the style in the *styleObj* as the default style for a *sheet*<!-- END REF -->.
+La commande `VP SET DEFAULT STYLE` <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->définit, dans le paramètre *styleObj*, le style d'une feuille (*sheet*) en tant que style par défaut<!-- END REF -->.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
+Le paramètre *styleObj* vous permet de passer un objet contenant des paramètres de style. Vous pouvez utiliser une feuille de style existante ou créer un nouveau style. Pour plus d'informations, consultez [Objets style](configuring.md#style-objects).
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. Si le paramètre est omis, la feuille courante est utilisée par défaut. Vous pouvez sélectionner explicitement la feuille courante à l'aide de la constante suivante :
+Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifique dans laquelle le style sera défini. Si le paramètre est omis, la feuille courante est utilisée par défaut. Vous pouvez sélectionner explicitement la feuille courante à l'aide de la constante suivante :
 
 *   `vk current sheet`
 
@@ -4278,7 +4278,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 $style:=New object
 $style.hAlign:=vk horizontal align left
 $style.font:="12pt papyrus"
-$style.backColor:="#E6E6FA" //light purple color
+$style.backColor:="#E6E6FA" //couleur light purple
 
 VP SET DEFAULT STYLE("myDoc";$style)
 ```
@@ -4296,23 +4296,23 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 <!-- REF #_method_.VP SET FIELD.Params -->
 
-| Paramètres    | Type     |    | Description                             |
-| ------------- | -------- | -- | --------------------------------------- |
-| rangeObj      | Object   | -> | Objet plage                             |
-| field         | Pointeur | -> | Reference to field in virtual structure |
-| formatPattern | Text     | -> | Format of field                         |
+| Paramètres    | Type     |    | Description                                    |
+| ------------- | -------- | -- | ---------------------------------------------- |
+| rangeObj      | Object   | -> | Objet plage                                    |
+| field         | Pointeur | -> | Référence au champ dans la structure virtuelle |
+| formatPattern | Text     | -> | Format du champ                                |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET FIELD` command <!-- REF #_method_.VP SET FIELD.Summary -->assigns a 4D database virtual field to a designated cell range<!-- END REF -->.
+La commande `VP SET FIELD` <!-- REF #_method_.VP SET FIELD.Summary -->assigne un champ spécifique de la base 4D à une plage de cellules désignée<!-- END REF -->.
 
 Dans *rangeObj*, passez la plage de cellule(s) dont vous souhaitez indiquer la valeur. In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
 
-The *field* parameter specifies a 4D database [virtual field](formulas.md#referencing-fields-using-the-virtual-structure) to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
+Le paramètre *field* indique un [champ virtuel](formulas.md#referencing-fields-using-the-virtual-structure) de la base 4D à assigner à *rangeObj*. Le nom de la structure virtuelle pour le *field* peut être visualisé dans la barre de formule. Si du contenu est déjà présent dans l'une des cellules de *rangeObj*, il sera remplacé par *rangeObj*.
 
-The optional *formatPattern* defines a pattern for the *field* parameter. You can pass any valid [custom format](configuring.md#cell-format).
+Le paramètre optionnel *formatPattern* définit un modèle pour le paramètre *field*. You can pass any valid [custom format](configuring.md#cell-format).
 
 #### Exemple
 
@@ -4333,21 +4333,21 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 | ------------- | ------ | -- | --------------------- |
 | rangeObj      | Object | -> | Objet plage           |
 | formula       | Text   | -> | Formule ou méthode 4D |
-| formatPattern | Text   | -> | Format of field       |
+| formatPattern | Text   | -> | Format du champ       |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET FORMULA` command <!-- REF #_method_.VP SET FORMULA.Summary -->assigns a specified formula or 4D method to a designated cell range<!-- END REF -->.
+La commande `VP SET FORMULA` <!-- REF #_method_.VP SET FORMULA.Summary -->assigne une formule spécifique ou une méthode 4D à une plage de cellules désignée<!-- END REF -->.
 
 Dans *rangeObj*, passez la plage de cellule(s) (créée par exemple avec [`VP Cell`](#vp-cell) ou [`VP Column`](#vp-column)) dont vous souhaitez indiquer la valeur. In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify.
 
-The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
+Le paramètre *formula* indique un nom de formule ou de méthode 4D à assigner à *rangeObj*. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-method).
 
-The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *formula*.
+Le paramètre optionnel *formatPattern* définit un [pattern](configuring.md#cell-format) (modèle) pour le paramètre *formula*.
 
-You remove the formula in *rangeObj* by replacing it with an empty string ("").
+Vous pouvez supprimer la formule de *rangeObj* en la remplaçant par une chaîne vide ("").
 
 #### Exemple 1
 
@@ -4357,7 +4357,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
 
 #### Exemple 2
 
-To remove the formula:
+Pour supprimer la formule :
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
@@ -4376,34 +4376,34 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 | Paramètres  | Type       |    | Description            |
 | ----------- | ---------- | -- | ---------------------- |
 | rangeObj    | Object     | -> | Cell range object      |
-| formulasCol | Collection | -> | Collection of formulas |
+| formulasCol | Collection | -> | Collection de formules |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET FORMULAS` command <!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
+La commande `VP SET FORMULAS` <!-- REF #_method_.VP SET FORMULAS.Summary -->affecte une collection de formules commençant par la plage de cellule spécifiée<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. Si *rangeObj* comprend plusieurs plages, seule la première plage est utilisée.
+Dans *rangeObj*, passez une plage de la cellule (créée avec [VP Cell](#vp-cell)) dont vous souhaitez indiquer la formule. Si *rangeObj* comprend plusieurs plages, seule la première plage est utilisée.
 
-The *formulasCol* is a two-dimensional collection:
+Le paramètre *formulasCol* est une collection bidimensionnelle :
 
-*   La collection de premier niveau contient des sous-collections de formules. Each subcollection defines a row.
-*   Chaque sous-collection définit les valeurs des cellules de la ligne. Values must be text elements containing the formulas to assign to the cells. >If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods) command.
+*   La collection de premier niveau contient des sous-collections de formules. Chaque sous-collection définit une ligne.
+*   Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs doivent être des éléments textuels contenant les formules à associer aux cellules. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods).
 
-You remove the formulas in *rangeObj* by replacing them with an empty string ("").
+Vous pouvez supprimer les formules dans *rangeObj* en les remplaçant par une chaîne vide ("").
 
 #### Exemple 1
 
 ```4d
 $formulas:=New collection
-$formulas.push(New collection("MAX(B11,C11,D11)";"myMethod(G4)")) // First row
-$formulas.push(New collection("SUM(B11:D11)";"AVERAGE(B11:D11)")) // Second row
+$formulas.push(New collection("MAX(B11,C11,D11)";"myMethod(G4)")) // Première ligne
+$formulas.push(New collection("SUM(B11:D11)";"AVERAGE(B11:D11)")) // Deuxième ligne
 
-VP SET FORMULAS(VP Cell("ViewProArea";6;3);$formulas) // Set the cells with the formulas
+VP SET FORMULAS(VP Cell("ViewProArea";6;3);$formulas) // Associer les formules et les formules
 ```
 
-*myMethod*:
+*myMethod* :
 
 ```4d
 $0:=$1*3.33
@@ -4415,14 +4415,14 @@ $0:=$1*3.33
 
 #### Exemple 2
 
-To remove formulas:
+Pour supprimer des formules :
 
 ```4d
 $formulas:=New collection
-$formulas.push(New collection("";"")) // first collection
-$formulas.push(New collection("";"")) // second collection
+$formulas.push(New collection("";"")) // première collection
+$formulas.push(New collection("";"")) // deuxième collection
 
-VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
+VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assigner à des cellules
 ```
 
 #### Voir aussi
@@ -4446,14 +4446,14 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 
 #### Description
 
-The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary -->sets the frozen status of the columns and rows in the *paneObj* so they are always displayed in the *vpAreaName*<!-- END REF -->. Frozen columns and rows are fixed in place and do not move when the rest of the document is scrolled. A solid line is displayed to indicate that columns and rows are frozen. The location of the line depends on where the frozen column or row is on the sheet:
+La commande `VP SET FROZEN PANES` commande <!-- REF #_method_.VP SET FROZEN PANES.Summary -->fige les lignes et colonnes de *paneObj* afin qu'ils s'affichent constamment dans *vpAreaName*<!-- END REF -->. Les lignes et colonnes figées sont statiques et ne bougent plus lorsque vous faites défiler le document. Un trait continu s'affiche pour indiquer que des lignes et colonnes sont figées. L'emplacement du trait dépend de l'emplacement de la ligne ou colonne figée dans la feuille :
 
-*   **Columns on the left or right**: For columns on the left of the sheet, the line is displayed on the right side of the last frozen column. For columns on the right side of the sheet, the line is displayed on the left side of the first frozen column.
-*   **Rows on the top or bottom**: For rows at the top of the sheet, the line is displayed below the last frozen row. For rows at the bottom of the sheet, the line is displayed above the first frozen row.
+*   **Colonnes de gauche ou de droite** : Pour les colonnes situées à gauche de la feuille, le trait s'affiche sur le côté droit de la dernière colonne figée. Pour les colonnes situées à droite de la feuille, le trait s'affiche sur le côté gauche de la prmeière colonne figée.
+*   **Lignes du haut ou du bas** : Pour les lignes situées en haut de la feuille, le trait s'affiche en-dessous de la première ligne figée. Pour les lignes situées en bas de la feuille, le trait s'affiche au-dessus de la première ligne figée.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-You can pass an object defining the columns and rows to freeze in the *paneObj* parameter. Setting the value of any of the column or row properties equal to zero resets (unfreezes) the property. If a property is set to less than zero, the command does nothing. Vous pouvez passer :
+Vous pouvez passer un objet définissant les lignes et colonnes à figer dans le paramètre *paneObj*. Si vous fixez la valeur d'une propriété de colonne ou de ligne à zéro, cela réinitialise (ne fige plus) la propriété. Si une propriété est définie sur une valeur inférieure à zéro, la commande ne fait rien. Vous pouvez passer :
 
 | Propriété           | Type    | Description                                              |
 | ------------------- | ------- | -------------------------------------------------------- |
@@ -4468,7 +4468,7 @@ Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifi
 
 #### Exemple
 
-You want to freeze the first three columns on the left, two columns on the right, and the first row:
+Vous souhaitez figer les trois premières colonnes de gauche, deux colonnes de droite et la première ligne :
 
 ```4d
 C_OBJECT($panes)
@@ -4494,21 +4494,21 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 <!-- REF #_method_.VP SET NUM VALUE.Params -->
 
-| Paramètres    | Type   |    | Description         |
-| ------------- | ------ | -- | ------------------- |
-| rangeObj      | Object | -> | Objet plage         |
-| numberValue   | Nombre | -> | Number value to set |
-| formatPattern | Text   | -> | Format de la valeur |
+| Paramètres    | Type   |    | Description              |
+| ------------- | ------ | -- | ------------------------ |
+| rangeObj      | Object | -> | Objet plage              |
+| numberValue   | Nombre | -> | Valeur du nombre à fixer |
+| formatPattern | Text   | -> | Format de la valeur      |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET NUM VALUE` command <!-- REF #_method_.VP SET NUM VALUE.Summary -->assigns a specified numeric value to a designated cell range<!-- END REF -->.
+La commande `VP SET NUM VALUE` <!-- REF #_method_.VP SET NUM VALUE.Summary -->assigne une valeur numérique spécifique à une plage de cellules désignée<!-- END REF -->.
 
 Dans *rangeObj*, passez la plage de cellule(s) (créée par exemple avec [`VP Cell`](#vp-cell) ou [`VP Column`](#vp-column)) dont vous souhaitez indiquer la valeur. Si *rangeObj* comprend plusieurs cellules, la valeur indiquée sera répétée dans chaque cellule.
 
-The *numberValue* parameter specifies a numeric value to be assigned to the *rangeObj*.
+Le paramètre *numberValue* indique une valeur numérique à assigner à *rangeObj*.
 
 The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *numberValue* parameter.
 
@@ -5154,7 +5154,7 @@ Dans *rangeObj*, passez une plage de cellule (créée via [`VP Cell`](#vp-cell))
 
 Le paramètre *valuesCol* est bidimensionnel :
 
-*   La collection de premier niveau contient des sous-collections de valeurs. Each subcollection defines a row. Passez une collection vide pour sauter une ligne.
+*   La collection de premier niveau contient des sous-collections de valeurs. Chaque sous-collection définit une ligne. Passez une collection vide pour sauter une ligne.
 *   Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs peuvent être de type entier long, réel, booléen, texte, date, null ou objet. Si la valeur est un objet, elle peut avoir les propriétés suivantes :
 
     | Propriété | Type                                     | Description                           |
