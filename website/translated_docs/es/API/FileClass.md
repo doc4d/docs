@@ -717,13 +717,13 @@ If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the 
 
 In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the **System Documents** theme, are available:
 
-| Constante                     | Valor | Comentario                                                                                                                                                     |
-| ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0     | Sin procesar                                                                                                                                                   |
-| `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: LF (carriage return) on macOS, CRLF (carriage return + line feed) on Windows |
-| `Document with CRLF`          | 2     | Line breaks are converted to CRLF (carriage return + line feed), the default Windows format                                                                    |
-| `Document with CR`            | 3     | Line breaks are converted to CR (carriage return), the default Classic Mac OS format                                                                           |
-| `Document with LF`            | 4     | Line breaks are converted to LF (line feed), the default Unix and macOS format                                                                                 |
+| Constante                     | Valor | Comentario                                                                                                                                               |
+| ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Document unchanged`          | 0     | Sin procesar                                                                                                                                             |
+| `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) on macOS, CRLF (carriage return + line feed) on Windows |
+| `Document with CRLF`          | 2     | Line breaks are converted to CRLF (carriage return + line feed), the default Windows format                                                              |
+| `Document with CR`            | 3     | Line breaks are converted to CR (carriage return), the default Classic Mac OS format                                                                     |
+| `Document with LF`            | 4     | Line breaks are converted to LF (line feed), the default Unix and macOS format                                                                           |
 
 Por defecto, cuando se omite el parámetro *breakMode*, los saltos de línea se procesan en modo nativo (1).
 
