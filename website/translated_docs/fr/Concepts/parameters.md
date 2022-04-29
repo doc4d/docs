@@ -14,13 +14,13 @@ Vous aurez souvent besoin de fournir des valeurs à vos méthodes et fonctions. 
 ALERT("Bonjour")
 ```
 
-Les paramètres sont passés de la même manière aux méthodes ou aux fonctions de classe (class functions). Par exemple, si une fonction de classe nommée `getArea()` accepte deux paramètres, voilà) à quoi pourrait ressembler un appel à la fonction de classe :
+Les paramètres sont passés de la même manière aux méthodes ou aux fonctions de classe (class functions). Par exemple, si une fonction de classe nommée `getArea()` accepte deux paramètres, voilà à quoi pourrait ressembler un appel à la fonction de classe :
 
 ```
 $area:=$o.getArea(50;100)
 ```
 
-Ou si la méthode `FAIRE QUELQUE CHOSE` accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
+Ou si une méthode projet `FAIRE QUELQUE CHOSE` accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
 
 ```4d
 FAIRE QUELQUE CHOSE(AvecCeci; EtCela; CommeCeci)
@@ -28,7 +28,7 @@ FAIRE QUELQUE CHOSE(AvecCeci; EtCela; CommeCeci)
 
 Les paramètres d'entrée sont séparés par des points-virgules (;).
 
-Les mêmes principes s'appliquent lorsque des méthodes sont exécutées via des commandes consacrées, comme par exemple :
+Les mêmes principes s'appliquent lorsque des méthodes sont exécutées via des commandes dédiées, comme par exemple :
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
@@ -36,18 +36,18 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)
 // dans le contexte d'un sous-formulaire
 ```
 
-Les données peuvent également être **retournées** à partir de méthodes et de fonctions de classe. Par exemple, la ligne d’instruction suivante utilise une commande intégrée, `Longueur`, qui retourne la longueur d’une chaîne. La valeur retournée par `Longueur` est placée dans une variable appelée *MaLongueur*.
+Les données peuvent également être **retournées** à partir de méthodes et de fonctions de classe. Par exemple, la ligne d’instruction suivante utilise une commande 4D, `Length`, qui retourne la longueur d’une chaîne. La valeur retournée par `Longueur` est placée dans une variable appelée *MaLongueur*.
 
 ```4d
 MaLongueur:=Length("Comment suis-je arrivé là ?")
 ```
 
-Toute sous-routine peut retourner une valeur. Only one single output parameter can be declared per method or class function.
+Toute sous-routine peut retourner une valeur. Un seul paramètre de sortie peut être déclaré par méthode ou fonction de classe.
 
-Les valeurs d'entrée et de sortie sont [évaluées](#values-or-references) au moment de l'appel et copiée dans les variables locales au sein de la fonction de classe ou de la méthode appelée. Two syntaxes are proposed to declare variable parameters in the called code:
+Les valeurs d'entrée et de sortie sont [évaluées](#valeurs-ou-références) au moment de l'appel et copiées dans des variables locales au sein de la fonction de classe ou de la méthode appelée. Deux syntaxes sont possibles pour déclarer des variables de paramètres dans le code appelé :
 
-- [named variables](#named-parameters) (recommended in most cases) or
-- [sequentially numbered variables](#sequential-parameters).
+- les [paramètres nommés](#paramètres-nommés) (recommandé dans la plupart des cas) ou
+- les [paramètres séquentiels](#paramètres-séquentiels).
 
 
 Les syntaxes nommées et séquentielles peuvent être combinées sans restriction pour déclarer des paramètres. Par exemple :
@@ -65,12 +65,9 @@ Function add($x : Integer)
 
 Dans les méthodes et fonctions de classe qui sont appelées, les valeurs des paramètres sont assignées aux variables locales. Vous pouvez déclarer des paramètres en utilisant un **nom de paramètre** avec un **type de paramètre**, séparés par deux-points.
 
-- Pour les fonctions de classe, les paramètres sont déclarés avec le mot clé `Function`.
-- Pour les méthodes (méthodes projet, méthodes objet formulaire, méthodes de base de données et les triggers), les paramètres sont déclarés à l'aide du mot clé `#DECLARE` saisi au début du code de la méthode.
+- Pour les fonctions de classe, les paramètres sont déclarés via le mot clé `Function`.
+- Pour les méthodes (méthodes projet, méthodes objet, méthodes base et triggers), les paramètres sont déclarés à l'aide du mot clé `#DECLARE` saisi au début du code de la méthode.
 
-Voici quelques exemples :
-
-```4d
 Voici quelques exemples :
 
 ```4d
@@ -85,8 +82,8 @@ Function getArea($width : Integer; $height : Integer) -> $area : Integer
 
 Les règles suivantes s'appliquent :
 
-- La ligne de déclaration doit être la première ligne de code de la méthode ou de la fonction, sinon une erreur est affichée (seuls les commentaires ou les sauts de ligne peuvent précéder la déclaration).
-- Parameter names must start with a `$` character and be compliant with [property naming rules](dt_object.md#object-property-identifiers).
+- La ligne de déclaration doit être la première ligne de code de la méthode ou de la fonction, sinon une erreur est affichée (seuls des commentaires ou des sauts de ligne peuvent précéder la déclaration).
+- Parameter names must start with a `$` character and be compliant with [property naming rules](identifiers.md#object-properties).
 - Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
 - Les syntaxes multilignes sont prises en charge (en utilisant le caractère "\\").
 
