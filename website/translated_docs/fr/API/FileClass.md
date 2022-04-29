@@ -715,13 +715,13 @@ Si un BOM (Byte Order Mark) existe pour le jeu de caractères, 4D l'insère dans
 
 Dans le paramètre *breakMode*, vous pouvez passer une valeur numérique indiquant le traitement à appliquer aux caractères de fin de ligne avant de les stocker dans le fichier. Les constantes suivantes du thème **Documents système** sont disponibles :
 
-| Constante                     | Valeur | Commentaire                                                                                                                                             |
-| ----------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0      | Aucun traitement                                                                                                                                        |
-| `Document with native format` | 1      | (Défaut) Les fins de ligne sont convertis au format natif du système : CR (carriage return) sous macOS, CRLF (carriage return + line feed) sous Windows |
-| `Document with CRLF`          | 2      | Les fins de ligne sont convertis au format Windows : CRLF (carriage return + line feed)                                                                 |
-| `Document with CR`            | 3      | Les fins de ligne sont convertis au format OS X : CR (carriage return)                                                                                  |
-| `Document with LF`            | 4      | Les fins de ligne sont convertis au format Unix : LF (line feed)                                                                                        |
+| Constante                     | Valeur | Commentaire                                                                                                                                                          |
+| ----------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Document unchanged`          | 0      | Aucun traitement                                                                                                                                                     |
+| `Document with native format` | 1      | (Défaut) Les fins de ligne sont convertis au format natif de la plate-forme d’exécution : LF (line feed) sous macOS, CRLF (carriage return + line feed) sous Windows |
+| `Document with CRLF`          | 2      | Les fins de ligne sont converties en CRLF (retour chariot + saut de ligne), le format par défaut de Windows                                                          |
+| `Document with CR`            | 3      | Les fins de ligne sont converties en CR (retour chariot), le format MacOS classique par défaut                                                                       |
+| `Document with LF`            | 4      | Les fins de ligne sont converties en LF (line feed), le format Unix et macOS par défaut                                                                              |
 
 Par défaut, lorsque vous omettez le paramètre *breakMode* les retours à la ligne sont traités en mode natif (1).
 
