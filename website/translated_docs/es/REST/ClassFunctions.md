@@ -10,9 +10,9 @@ Functions are simply called in POST requests on the appropriate ORDA interface, 
 
 `/rest/City/getCity`
 
-with data in the body of the POST request: `["Aguada"]`
+con los datos en el cuerpo de la petición POST: `["Aguada"]`
 
-In 4D language, this call is equivalent to, :
+En el lenguaje 4D, esta llamada equivale a:
 
 ```4d
 $city:=ds.City.getCity("Aguada")
@@ -51,7 +51,7 @@ Functions are called on the corresponding object on the server datastore.
 
 You can send parameters to functions defined in ORDA user classes. On the server side, they will be received in the class functions in regular $1, $2, etc. parameters.
 
-The following rules apply:
+Se aplican las siguientes reglas:
 
 - Los parámetros deben pasarse en el **cuerpo de la petición POST**
 - Los parámetros deben estar incluidos en una colección (formato JSON)
@@ -77,12 +77,12 @@ Entities passed in parameters are referenced on the server through their key (*i
 > If the request sends modified attribute values for an existing entity on the server, the called ORDA data model function will be automatically executed on the server with modified values. This feature allows you, for example, to check the result of an operation on an entity, after applying all business rules, from the client application. You can then decide to save or not the entity on the server.
 
 
-| Propiedades              | Tipo                                 | Descripción                                                                |
-| ------------------------ | ------------------------------------ | -------------------------------------------------------------------------- |
-| Attributes of the entity | mixto                                | Opcional - Valores a modificar                                             |
-| __DATACLASS              | Cadena                               | Mandatory - Indicates the Dataclass of the entity                          |
-| __ENTITY                 | Booleano                             | Mandatory - True to indicate to the server that the parameter is an entity |
-| __KEY                    | mixed (same type as the primary key) | Optional - Primary key of the entity                                       |
+| Propiedades             | Tipo                                 | Descripción                                                                |
+| ----------------------- | ------------------------------------ | -------------------------------------------------------------------------- |
+| Atributos de la entidad | mixto                                | Opcional - Valores a modificar                                             |
+| __DATACLASS             | Cadena                               | Mandatory - Indicates the Dataclass of the entity                          |
+| __ENTITY                | Booleano                             | Mandatory - True to indicate to the server that the parameter is an entity |
+| __KEY                   | mixed (same type as the primary key) | Optional - Primary key of the entity                                       |
 
 - If __KEY is not provided, a new entity is created on the server with the given attributes.
 - If __KEY is provided, the entity corresponding to __KEY is loaded on the server with the given attributes
@@ -96,18 +96,18 @@ Same properties as for an [entity parameter](#entity-parameter). In addition, th
 See examples for [creating](#creating-an-entity-with-a-related-entity) or [updating](#updating-an-entity-with-a-related-entity) entities with related entities.
 
 
-### Entity selection parameter
+### Parámetro de selección de entidad
 
 The entity selection must have been defined beforehand using [$method=entityset]($method.md#methodentityset).
 
 > If the request sends a modified entity selection to the server, the called ORDA data model function will be automatically executed on the server with the modified entity selection.
 
 
-| Propiedades              | Tipo     | Descripción                                                                          |
-| ------------------------ | -------- | ------------------------------------------------------------------------------------ |
-| Attributes of the entity | mixto    | Opcional - Valores a modificar                                                       |
-| __DATASET                | Cadena   | Mandatory - entitySetID (UUID) of the entity selection                               |
-| __ENTITIES               | Booleano | Mandatory - True to indicate to the server that the parameter is an entity selection |
+| Propiedades             | Tipo     | Descripción                                                                          |
+| ----------------------- | -------- | ------------------------------------------------------------------------------------ |
+| Atributos de la entidad | mixto    | Opcional - Valores a modificar                                                       |
+| __DATASET               | Cadena   | Mandatory - entitySetID (UUID) of the entity selection                               |
+| __ENTITIES              | Booleano | Mandatory - True to indicate to the server that the parameter is an entity selection |
 
 See example for [receiving an entity selection](#receiving-an-entity-selection-as-parameter).
 
@@ -159,15 +159,15 @@ exposed Function getCity()
     $0:=This.query("name = :1";$nameParam).first()
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8111/rest/City/getCity`
 
-Body of the request: ["Aguada"]
+Petición: ["Aguada"]
 
 #### Resultado
 
-The result is an entity:
+El resultado es una entidad:
 ```
 {
     "__entityModel": "City",
@@ -192,7 +192,7 @@ The result is an entity:
 }
 ```
 
-### Using an entity class function
+### Utilizar una función de clase de una entidad
 
 The Entity class `CityEntity` provides an API:
 
@@ -218,7 +218,7 @@ You can then run this request:
 ```
 
 
-### Using an entitySelection class function
+### Utilizar una función clase entitySelection
 
 The EntitySelection class `CitySelection` provides an API:
 
