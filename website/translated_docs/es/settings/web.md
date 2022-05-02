@@ -1,55 +1,55 @@
 ---
 id: web
-title: Web page
+title: Página Web
 ---
 
 Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.md). For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
 
 ## Configuración
 
-### Publishing Information
+### Información de publicación
 
-#### Launch Web Server at Startup
+#### Lanzar el servidor web al inicio
 
-Indicates whether the Web server will be launched on startup of the 4D application. This option is described in the [Web server administration](../WebServer/webServerAdmin.md#starting-the-4d-web-server) section.
+Indica si el servidor web se lanzará al iniciar la aplicación 4D. Esta opción se describe en la sección [Administración del servidor web](../WebServer/webServerAdmin.md#starting-the-4d-web-server).
 
 #### Activar HTTP
 
-Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
+Indica si el servidor web aceptará o no conexiones no seguras. Ver [Activar HTTP](../WebServer/webServerConfig.md#enable-http).
 
 
 #### Puerto HTTP
 
-Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerConfig.md#http-port).
+Número de puerto IP (TCP) de escucha para HTTP. Ver [Puerto HTTP](../WebServer/webServerConfig.md#http-port).
 
-#### IP Address
+#### Dirección IP
 
-IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
+Dirección IP en la que el servidor web 4D recibirá las peticiones HTTP (4D local y 4D Server). Ver [Dirección IP a escuchar](../WebServer/webServerConfig.md#ip-address-to-listen).
 
 
-#### Enable HTTPS
+#### Activar HTTPS
 
-Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
+Indica si el servidor web aceptará o no conexiones seguras. Ver [Activar HTTPS](../WebServer/webServerConfig.md#enable-https).
 
 
 #### Puerto HTTPS
 
-Allows you to modify the TCP/IP port number used by the Web server for secured HTTP connections over TLS (HTTPS protocol). See [HTTPS Port](../WebServer/webServerConfig.md#https-port).
+Permite modificar el número de puerto TCP/IP utilizado por el servidor web para las conexiones HTTP seguras sobre TLS (protocolo HTTPS). Ver [Puerto HTTPS](../WebServer/webServerConfig.md#https-port).
 
-#### Allow database access through 4DSYNC URLs
+#### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
 
-*Compatibility Note*: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
+*Nota de compatibilidad:* esta opción es [obsoleta](../WebServer/webServerConfig.md#deprecated-settings). Para el acceso a la base de datos a través de HTTP, ahora se recomienda utilizar las funcionalidades del almacén de datos remoto ORDA y las peticiones REST.
 
 
-### Paths
+### Rutas
 
-#### Default HTML Root
+#### Raíz HTML por defecto
 
-Define the default location of the Web site files and to indicate the hierarchical level on the disk above which the files will not be accessible. See [Root Folder](../WebServer/webServerConfig.md#root-folder).
+Definir la ubicación por defecto de los archivos del sitio web e indicar el nivel jerárquico en el disco por encima del cual los archivos no serán accesibles. Ver [Carpeta raíz](../WebServer/webServerConfig.md#root-folder).
 
-#### Default Home Page
+#### Página de inicio por defecto
 
-Designate a default home page for the Web server. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
+Designa una página de inicio por defecto para el servidor web. Ver [Página de inicio por defecto](../WebServer/webServerConfig.md#default-home-page).
 
 
 
@@ -59,22 +59,22 @@ Designate a default home page for the Web server. See [Default Home page](../Web
 ### Caché
 
 
-#### Use the 4D Web cache
+#### Utilizar la caché Web de 4D
 
-Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
+Activa la caché de la página web. Ver [Caché](../WebServer/webServerConfig.md#cache).
 
-#### Pages Cache Size
+#### Tamaño de la caché de las páginas
 
-Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
+Define el tamaño de la caché. Ver [Caché](../WebServer/webServerConfig.md#cache).
 
 
-#### Clear Cache
+#### Vaciar la caché
 
-At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). The cache is then immediately cleared.
+En cualquier momento, puede vacíar la caché de las páginas y de las imágenes que contiene (si, por ejemplo, ha modificado una página estática y quiere volver a cargarla en la caché). Para ello, basta con hacer clic en el botón **Borrar caché**. La caché se borra inmediatamente.
 
-> You can also use the special URL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
+> También puede utilizar la URL especial [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
 
-### Web Process
+### Proceso Web
 
 This area allows you to configure how the web server will handle user sessions and their associated processes.
 
@@ -144,7 +144,7 @@ Using **Custom** authentication is recommended. See [**Authentication**](../WebS
 
 ## Options (II)
 
-### Text Conversion
+### Conversión texto
 
 #### Send Extended Characters Directly
 
@@ -241,7 +241,7 @@ The following table lists the fields available for each format (in alphabetical 
 |                |     |     | If the user name contains spaces, they are replaced by _ (underlines)      |
 | URL            |     | X   | URL requested by the client                                                |
 
-> Dates and times are given in GMT.
+> Las fechas y horas son dadas en GMT.
 
 ## Log (backup)
 
@@ -274,22 +274,22 @@ This area contains various options related to the use of 4D as a Web Services "s
 
 > In conformity with the XML standard for tag names, the character strings used must not contain spaces nor start with a number. Moreover, to avoid any risk of incompatibility, we recommend that you do not use any extended characters (such as accented characters).
 
-### Client Side
+### Cliente
 
 This area contains various options related to the use of 4D as a Web Services "client" i.e., subscribing to services published on the network.
 
 -   **Wizard Method Prefix**: This area lets you change the prefix that is added automatically by 4D to the name of proxy methods generated by the Web Services Wizard. Proxy project methods form a link between the 4D application and the Web Services server. By default, 4D uses the prefix "proxy_".
 
 
-## Web Features
+## Funcionalidades Web
 
-This page contains the options used to enable and control advanced Web features such as the REST server.
+Esta página contiene las opciones utilizadas para activar y controlar las funcionalidades web avanzadas, como el servidor REST.
 
-### Publishing
+### Publicación
 
-#### Expose as REST server
+#### Activar el servicio REST
 
-Starts and stops the REST Server. See [REST Server Configuration](../REST/configuration.md).
+Inicia y detiene el servidor REST. Ver [Configuración del servidor REST](../REST/configuration.md).
 
 ### Acceso
 
@@ -297,6 +297,6 @@ This option specifies a group of 4D users that is authorized to establish the li
 
 ### Web Studio
 
-#### Enable access to the web studio
+#### Activar el acceso al studio web
 
-Enables general access to the web studio. You still need to configure it at every project level.
+Activa el acceso general al studio web. Todavía hay que configurarlo en cada nivel del proyecto.
