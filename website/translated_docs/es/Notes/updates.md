@@ -3,12 +3,12 @@ id: updates
 title: Actualizaciones de la documentación
 ---
 
-The list of main updates in this documentation. For general information about new features in the 4D products, see the **release notes** on [doc.4d.com](https://doc.4d.com).
+La lista de las principales actualizaciones de esta documentación. Para obtener información general sobre las nuevas funcionalidades de los productos 4D, consulte las **release notes** en [doc.4d.com](https://doc.4d.com).
 
 
 ## 4D v19 R5
 
-- Built Client/Server applications:
+- Aplicaciones cliente/servidor generadas:
     - The project [directory.json file](../Users/handling_users_groups.md#directoryjson-file) can now be [embedded in the server](../Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application) at build time, allowing you to deploy a client/server application with a basic security user and group configuration.
     - You can now [deselect useless modules](../Desktop/building.md#deselecting-modules) in your built applications.
 
