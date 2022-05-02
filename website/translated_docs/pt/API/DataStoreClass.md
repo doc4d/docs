@@ -526,7 +526,7 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 > Esta função não modifica as seleções de entidades criadas por [`.copy()`](#copy) ou `OB Copy` quando se utilizar a opção explícita `ck shared`.
 
 
-> **Compatibility**: This function must only be used in projects converted from 4D versions prior to 4D v18 R5 and containing [.add()](EntitySelectionClass.md#add) calls. In this context, using `.makeSelectionsAlterable()` can save time by restoring instantaneously the previous 4D behavior in existing projects. On the other hand, using this method in new projects created in 4D v18 R5 and higher **is not recommended**, since it prevents entity selections to be shared, which provides greater performance and scalabitlity.
+> **Compatibilidade**: esta função só deve ser utilizada em projetos convertidos desde versões de 4D anteriores a 4D v18 R5 e que contenham chamadas [.add()](EntitySelectionClass.md#add). Nste contexto, o uso de `.makeSelectionsAlterable()` pode poupar tempo ao restaurar instantaneamente o comportamento anterior de 4D nos projetos existentes. Por outro lado, utilizar este método em projetos novos criados em 4D v18 R5 e superiores **não é recomendável**, já que impede compartir as seleções de entidades, o que oferece maior rendimento e escalabilidade.
 
 
 <!-- END REF -->
@@ -546,18 +546,18 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
-| Parameter     | Type   |    | Description                           |
-| ------------- | ------ | -- | ------------------------------------- |
-| curPassPhrase | Texto  | -> | Current encryption passphrase         |
-| curDataKey    | Objeto | -> | Current data encryption key           |
-| Result        | Objeto | <- | Result of the encryption key matching |
+| Parameter     | Type   |    | Description                                        |
+| ------------- | ------ | -- | -------------------------------------------------- |
+| curPassPhrase | Texto  | -> | Frase de cifrado atual                             |
+| curDataKey    | Objeto | -> | Chave de criptografia de dados atual               |
+| Result        | Objeto | <- | Resultado da coincidência da chave de criptografia |
 <!-- END REF -->
 
 
 #### Description
 
-The `.provideDataKey()` function <!-- REF #DataStoreClass.provideDataKey().Summary -->allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data<!-- END REF -->. This function can be used when opening an encrypted database, or when executing any encryption operation that requires the encryption key, such as re-encrypting the data file.
-> * The `.provideDataKey()` function must be called in an encrypted database. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the `Data file encryption status` command to determine if the database is encrypted.
+A função `.provideDataKey()` <!-- REF #DataStoreClass.provideDataKey().Summary -->permite fornecer uma chave de cifrado de dados para o arquivo de dados atual da datastore e detecta se a chave coincide com os dados cifrados<!-- END REF -->. Esta função pode ser utilizada ao abrir um banco de dados criptografado, ou ao executar qualquer operação de criptografia que precise da chave de criptografia, como por exemplo voltar a criptografar o arquivo de dados.
+> * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the `Data file encryption status` command to determine if the database is encrypted.
 > * The `.provideDataKey()` function cannot be called from a remote 4D or an encrypted remote datastore.
 
 If you use the *curPassPhrase* parameter, pass the string used to generate the data encryption key. When you use this parameter, an encryption key is generated.
