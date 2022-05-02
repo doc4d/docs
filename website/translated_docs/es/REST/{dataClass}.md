@@ -7,7 +7,7 @@ title:
 
 
 
-Dataclass names can be used directly in the REST requests to work with entities and entity selections, or class functions of the dataclass.
+Los nombres de dataclass pueden utilizarse directamente en las peticiones REST para trabajar con entidades, selecciones de entidades o funciones de clase de la dataclass.
 
 ## Sintaxis disponible
 
