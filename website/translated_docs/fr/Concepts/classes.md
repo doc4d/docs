@@ -226,7 +226,7 @@ Dans le code de l'application, les fonctions de classes sont appelées comme des
 
 #### Paramètres
 
-Les paramètres des fonctions sont déclarés via le nom du paramètre et son type, séparés par deux-points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
+Les paramètres des fonctions sont déclarés via le nom du paramètre et son type, séparés par deux-points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Les paramètres multiples (et leurs types) sont séparés par des points-virgules (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
@@ -289,7 +289,7 @@ $area:=$rect.getArea() //5000
 
 #### Exemple 2
 
-This example uses the [`return expression`](parameters.md#return-expression):
+Dans cet exemple, nous utilisons [`l'expression return`](parameters.md#return-expression):
 
 ```4d
 Function getRectArea($width : Integer; $height : Integer) : Integer
@@ -303,7 +303,7 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 
 
-### `Function get` and `Function set`
+### `Function get` et `Function set`
 
 #### Syntaxe
 
@@ -360,9 +360,9 @@ Function set fullName( $fullName : Text )
 ```
 
 ```4d
-//in a project method
-$fullName:=$person.fullName // Function get fullName() is called
-$person.fullName:="John Smith" // Function set fullName() is called
+//dans une méthode projet
+$fullName:=$person.fullName // Function get fullName() est appelée
+$person.fullName:="John Smith" // Function set fullName() est appelée
 ```
 
 #### Exemple 2
