@@ -106,7 +106,7 @@ This class can be instantiated in two ways:
 
 ### **New Office365 provider**
 
-**New Office365 provider**( *paramObj* : Object { ; options : Object } ) : cs.NetKit.Office365Provider
+**New Office365 provider**( *paramObj* : Object { ; *options* : Object } ) : cs.NetKit.Office365Provider
 
 #### Parameters 
 |Parameter|Type||Description|
@@ -133,8 +133,69 @@ The returned object has a `mailer` property that has functions and properties re
 |Property|Type|Description|
 |---------|---|------|
 |type|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
-|userId|Text|User identifier used to identify the user in Service mode. Can be the "id" or the "userPrincipalName"|
+|userId|Text|User identifier. Used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
 |send()|Function|Sends the email passed as a parameter|
+
+### Office365Provider.mailer.send()
+
+**Office365Provider.mailer.send**( *email* : Text ) : Object
+**Office365Provider.mailer.send**( *email* : Object ) : Object
+**Office365Provider.mailer.send**( *email* : Blob ) : Object
+
+#### Parameters 
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|mail|Text, Blob, Object|->| Email to be sent.|
+|Result|Object|<-| Object holding information on the user|
+
+#### Description
+
+`Office365Provider.mailer.send()` sends the email passed in the `mail` parameter. 
+
+In `mail`, pass the email to be sent: 
+* If `mail` is an Object, the email is sent in JSON format.
+* If `mail` is a Blob or Text variable, the email is sent in MIME format
+
+The permissions required to send emails through the Microsoft Graph API are specified on [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
+
+The returned object is a status object:
+
+|Property|Type|Description|
+|---------|--- |------|
+|success|Boolean| True if the email is successfully sent|
+|statusText|Text| Status message returned by the server or last error returned by the 4D error stack|
+|errors|Collection| Collection of errors. Not returned if the server returns a `statusText`|
+
+#### Example 
+
+Send an email on behalf of a Microsoft user:
+
+```4d
+var $oAuth2 : cs.NetKit.OAuth2Provider
+var $token; $param : Object
+
+$param:=New object()
+$param.name:="Microsoft"
+$param.permission:="signedIn"
+$param.clientId:="your-client-id" // Replace with your client ID
+$param.redirectURI:="http://127.0.0.1:50993/authorize/"
+$param.scope:="https://graph.microsoft.com/Mail.Send"  // Ask permission to send emails on behalf of the Microsoft user
+
+$oAuth2:=New OAuth2 provider($param)
+
+$token:=$oAuth2.getToken()
+
+$message:=New object()
+$message.from:=New object("emailAddress"; New object("address"; "senderAddress@hotmail.fr")) // Replace with sender's email address
+$message.toRecipients:=New collection(New object("emailAddress"; New object("address"; "recipientAddress@hotmail.fr"))) // Replace with recipient's email address
+$message.body:=New object()
+$message.body.content:="Hello, World!"
+$message.body.contentType:="html"
+$message.subject:="Hello, World!"
+
+$Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
+$status:=$Office365.mailer.send($message)
+```
 
 ### Office365Provider.user.get()
 
