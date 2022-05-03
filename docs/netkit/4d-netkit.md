@@ -121,13 +121,15 @@ This class can be instantiated in two ways:
 
 In `paramObj`, pass an [OAuth2Provider object](#new-auth2-provider).
 
-In `options`, pass an object that specifies the following options:
+In `options`, you can pass an object that specifies the following options:
 
 |Property|Type|Description|
 |---------|---|------|
 |mailType|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>  |
 
-The returned object can be used with the `Office365Provider` class functions to retrieve information on users. That information varies depending on the information set in the `OAuth2Provider` object.
+The returned object can be used with the `Office365Provider` class functions to:
+* retrieve information on users. That information varies depending on the information set in the `OAuth2Provider` object passed in `paramObj`
+* send emails
 
 The returned object has a `mailer` property that has functions and properties related to emails:
 |Property|Type|Description|
@@ -145,20 +147,20 @@ The returned object has a `mailer` property that has functions and properties re
 #### Parameters 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|mail|Text, Blob, Object|->| Email to be sent.|
+|email|Text, Blob, Object|->| Email to be sent|
 |Result|Object|<-| Object holding information on the user|
 
 #### Description
 
-`Office365Provider.mailer.send()` sends the email passed in the `mail` parameter. 
+`Office365Provider.mailer.send()` sends the email passed in the `email` parameter. 
 
-In `mail`, pass the email to be sent: 
-* If `mail` is an Object, the email is sent in JSON format.
-* If `mail` is a Blob or Text variable, the email is sent in MIME format
+In `email`, pass the email to be sent: 
+* If `email` is an Object, the email is sent in JSON format.
+* If `email` is a Blob or Text, the email is sent in MIME format
 
 The permissions required to send emails through the Microsoft Graph API are specified on [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
 
-The returned object is a status object:
+The returned object has the following properties:
 
 |Property|Type|Description|
 |---------|--- |------|
@@ -168,23 +170,26 @@ The returned object is a status object:
 
 #### Example 
 
-Send an email on behalf of a Microsoft user:
+Send an email with an attachment, on behalf of a Microsoft user:
 
 ```4d
 var $oAuth2 : cs.NetKit.OAuth2Provider
-var $token; $param : Object
+var $token; $param; $message; $status : Object
 
+// Set up authentication
 $param:=New object()
 $param.name:="Microsoft"
 $param.permission:="signedIn"
 $param.clientId:="your-client-id" // Replace with your client ID
 $param.redirectURI:="http://127.0.0.1:50993/authorize/"
-$param.scope:="https://graph.microsoft.com/Mail.Send"  // Ask permission to send emails on behalf of the Microsoft user
+// Ask permission to send emails on behalf of the Microsoft user
+$param.scope:="https://graph.microsoft.com/Mail.Send"  
 
 $oAuth2:=New OAuth2 provider($param)
 
 $token:=$oAuth2.getToken()
 
+// Create the email, specify the sender and the recipient
 $message:=New object()
 $message.from:=New object("emailAddress"; New object("address"; "senderAddress@hotmail.fr")) // Replace with sender's email address
 $message.toRecipients:=New collection(New object("emailAddress"; New object("address"; "recipientAddress@hotmail.fr"))) // Replace with recipient's email address
@@ -193,6 +198,19 @@ $message.body.content:="Hello, World!"
 $message.body.contentType:="html"
 $message.subject:="Hello, World!"
 
+// Create a text file and attach it to the email
+var $attachment : Object
+var $attachmentText : Text
+
+$attachmentText:="Simple text file"
+BASE64 ENCODE($attachmentText)
+$attachment:=New object
+$attachment["@odata.type"]:="#microsoft.graph.fileAttachment"
+$attachment.name:="attachment.txt"
+$attachment.contentBytes:=$attachmentText
+$message.attachments:=New collection($attachment)
+
+// Send the email
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
 $status:=$Office365.mailer.send($message)
 ```
