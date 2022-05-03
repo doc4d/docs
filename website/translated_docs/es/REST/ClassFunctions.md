@@ -114,7 +114,7 @@ See example for [receiving an entity selection](#receiving-an-entity-selection-a
 
 ## Ejemplos de peticiones
 
-This database is exposed as a remote datastore on localhost (port 8111):
+Esta base de datos se expone como un almacén de datos remoto en localhost (puerto 8111):
 
 ![alt-text](assets/en/REST/ordastructure.png)
 

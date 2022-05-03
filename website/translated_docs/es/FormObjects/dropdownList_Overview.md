@@ -76,7 +76,7 @@ Form.myDrop.index //3
 
 Un [array](Concepts/arrays.md) es una lista de valores en memoria a la que se hace referencia por el nombre del array. Una lista desplegable puede mostrar un array como una lista de valores cuando se hace clic en ella.
 
-To initialize the array associated to the drop-down list, you can:
+Para inicializar el array asociado a la lista desplegable, puede:
 
 * Introduzca una lista de valores por defecto en las propiedades del objeto seleccionando "\<Static List>" en el tema [Fuente de datos](properties_DataSource.md) de la lista de propiedades. Los valores por defecto se cargan en un array automáticamente. Puede referirse al array utilizando el nombre de la variable asociada al objeto.
 
@@ -92,7 +92,7 @@ To initialize the array associated to the drop-down list, you can:
   aCities{6}:="Green Bay" 
 ```
 
-In this case, the name of the [variable](properties_Object.md#variable-or-expression) associated with the object in the form must be `aCities`. Este código podría colocarse en el método formulario y ejecutarse cuando se ejecute el evento formulario `On Load`.
+En este caso, el nombre de la [variable](properties_Object.md#variable-or-expression) asociada al objeto en el formulario debe ser `aCities`. Este código podría colocarse en el método formulario y ejecutarse cuando se ejecute el evento formulario `On Load`.
 
 *  Antes de que se muestre el objeto, cargue los valores de una lista en el array utilizando el comando [LIST TO ARRAY](https://doc.4d.com/4dv19/help/command/en/page288.html). Por ejemplo:
 
@@ -100,7 +100,7 @@ In this case, the name of the [variable](properties_Object.md#variable-or-expres
    LIST TO ARRAY("Cities";aCities)
 ```
 
-In this case also, the name of the [variable](properties_Object.md#variable-or-expression) associated with the object in the form must be `aCities`. Este código puede ejecutarse en lugar de las sentencias de asignación mostradas anteriormente.
+En este caso también, el nombre de la [variable](properties_Object.md#variable-or-expression) asociada al objeto en el formulario debe ser `aCities`. Este código puede ejecutarse en lugar de las sentencias de asignación mostradas anteriormente.
 
 Si necesita guardar la elección del usuario en un campo, deberá utilizar una sentencia de asignación que se ejecute después de aceptar el registro. El código podría ser así:
 
