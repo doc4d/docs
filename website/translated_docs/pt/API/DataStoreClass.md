@@ -703,33 +703,33 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 #### Description
 
 A função `.provideDataKey()` <!-- REF #DataStoreClass.provideDataKey().Summary -->permite fornecer uma chave de cifrado de dados para o arquivo de dados atual da datastore e detecta se a chave coincide com os dados cifrados<!-- END REF -->. Esta função pode ser utilizada ao abrir um banco de dados criptografado, ou ao executar qualquer operação de criptografia que precise da chave de criptografia, como por exemplo voltar a criptografar o arquivo de dados.
-> * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the `Data file encryption status` command to determine if the database is encrypted.
-> * The `.provideDataKey()` function cannot be called from a remote 4D or an encrypted remote datastore.
+> * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. Se for chamado em uma database não criptografada, o erro 2003 (a chave de criptografia não corresponde aos dados) é retornada. Utilize o comando `Estado de cifrado do arquivo de dados` para determinar se o banco de dados estiver cifrada.
+> * A função `.provideDataKey()` não pode ser chamada desde um 4D remoto ou uma datastore remoto encriptado.
 
-If you use the *curPassPhrase* parameter, pass the string used to generate the data encryption key. When you use this parameter, an encryption key is generated.
+Se utilizar o parâmetro *curPassPhrase*, passe a string utilizada para gerar a chave de cifrado de dados. Quando usar este parâmetro, uma chave de criptografia é gerada.
 
-If you use the *curDataKey* parameter, pass an object (with *encodedKey* property) that contains the data encryption key. This key may have been generated with the `New data key` command.
+Se utilizar o parâmetro *curDataKey*, passe um objeto (com a propriedade *encodedKey*) que contenha a chave de cifrado dos dados. Esta chave pode ter sido gerada com o comando `New data key`.
 
-If a valid data encryption key is provided, it is added to the *keyChain* in memory and the encryption mode is enabled:
+Se aportar uma chave de cifrado de dados válida, se adicionar a *keyChain* da memória e se ativa o modo de cifrado:
 
-*   all data modifications in encryptable tables are encrypted on disk (.4DD, .journal. 4Dindx files)
-*   all data loaded from encryptable tables is decrypted in memory
+*   todas as modificações de dados nas tabelas encriptadas são cifradas no disco (.4DD, .journal. 4Dindx)
+*   todos os dados carregados desde tabelas criptografadas são descifradas na memória
 
 
 **Result**
 
-The result of the command is described in the returned object:
+O resultado da ordem se descreve no objeto devolvido:
 
-| Propriedade |                          | Type     | Description                                                                     |
-| ----------- | ------------------------ | -------- | ------------------------------------------------------------------------------- |
-| success     |                          | Booleano | True if the provided encryption key matches the encrypted data, False otherwise |
-|             |                          |          | Properties below are returned only if success is *FALSE*                        |
-| status      |                          | Número   | Error code (4 if the provided encryption key is wrong)                          |
-| statusText  |                          | Texto    | Error message                                                                   |
-| errors      |                          | Coleção  | Stack of errors. The first error has the highest index                          |
-|             | \[ ].componentSignature | Texto    | Internal component name                                                         |
-|             | \[ ].errCode            | Número   | Error number                                                                    |
-|             | \[ ].message            | Texto    | Error message                                                                   |
+| Propriedade |                          | Type     | Description                                                                                              |
+| ----------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------- |
+| success     |                          | Booleano | True se a chave da criptografia proporcionada coincide com os dados encriptados, False em caso contrário |
+|             |                          |          | As seguintes propriedades são devolvidas só se success for *FALSE*                                       |
+| status      |                          | Número   | Código de erro (4 se a chave de encriptação fornecida for errada)                                        |
+| statusText  |                          | Texto    | Mensagem de erro                                                                                         |
+| errors      |                          | Coleção  | Pilha de erros. O primeiro erro tem o índice mais alto                                                   |
+|             | \[ ].componentSignature | Texto    | Nome do componente interno                                                                               |
+|             | \[ ].errCode            | Número   | Error number                                                                                             |
+|             | \[ ].message            | Texto    | Mensagem de erro                                                                                         |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
 
