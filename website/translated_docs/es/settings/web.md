@@ -283,13 +283,13 @@ This area contains various options related to the use of 4D as a Web Services "c
 
 ## Web Features
 
-This page contains the options used to enable and control advanced Web features such as the REST server.
+Esta página contiene las opciones utilizadas para activar y controlar las funcionalidades web avanzadas, como el servidor REST.
 
 ### Publishing
 
 #### Expose as REST server
 
-Starts and stops the REST Server. See [REST Server Configuration](../REST/configuration.md).
+Inicia y detiene el servidor REST. Ver [Configuración del servidor REST](../REST/configuration.md).
 
 ### Acceso
 
@@ -299,4 +299,4 @@ This option specifies a group of 4D users that is authorized to establish the li
 
 #### Enable access to the web studio
 
-Enables general access to the web studio. You still need to configure it at every project level.
+Activa el acceso general al studio web. Todavía hay que configurarlo en cada nivel del proyecto.
