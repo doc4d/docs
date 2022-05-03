@@ -12,7 +12,7 @@ Publique esta petición cuando tenga un archivo que quiera subir al Servidor. Si
 
 Puede modificar el tiempo de espera, que por defecto es de 120 segundos, pasando un valor al parámetro `$timeout`.
 
-## Uploading scenario
+## Escenario de carga
 
 Imagine you want to upload an image to update the picture attribute of an entity.
 
@@ -66,7 +66,7 @@ Se devuelve la entidad modificada:
 
 ## Ejemplo con un cliente 4D HTTP
 
-The following example shows how to upload a *.pdf* file to the server using the 4D HTTP client.
+El siguiente ejemplo muestra cómo subir un archivo *.pdf* al servidor utilizando el cliente 4D HTTP.
 
 ```4d
 var $params : Text
@@ -78,14 +78,14 @@ var $blob : Blob
 ARRAY TEXT($headerNames; 1)
 ARRAY TEXT($headerValues; 1)
 
-$url:="localhost:80/rest/$upload?$binary=true" //prepare the REST request
+$url:="localhost:80/rest/$upload?$binary=true" //preparar une petición REST
 
 $headerNames{1}:="Content-Type"
 $headerValues{1}:="application/octet-stream"
 
-DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) //Load the binary 
+DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) //Cargar el binario 
 
- //Execute the first POST request to upload the file
+ //Ejecuta la primera petición POST para subir el archivo
 $result:=HTTP Request(HTTP POST method; $url; $blob; $response; $headerNames; $headerValues)
 
 If ($result=200) 
@@ -95,7 +95,7 @@ If ($result=200)
     $data.__STAMP:="3"
     $data.pdf:=New object("ID"; String($response.ID)) 
 
-    $url:="localhost:80/rest/Invoices?$method=update" //second request to update the entity
+    $url:="localhost:80/rest/Invoices?$method=update" //segunda petición para actualizar la entidad
 
     $headerNames{1}:="Content-Type"
     $headerValues{1}:="application/json"
