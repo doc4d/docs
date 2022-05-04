@@ -80,7 +80,7 @@ Deleted user names no longer appear in the Users editor. Note that the IDs for d
 
 - **User Kind**: The User Kind field contains "Designer", "Administrator", or (for all other users) "User".
 
-- **Startup Method**: Name of an associated method that will be automatically executed when the user opens the application (optional). This method can be used for example to load the user preferences.
+- **Método de inicio**: nombre de un método asociado que se ejecutará automáticamente cuando el usuario abra la aplicación (opcional). This method can be used for example to load the user preferences.
 
 
 ## Editor de grupos

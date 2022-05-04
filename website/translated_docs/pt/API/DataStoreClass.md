@@ -670,20 +670,20 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parámetros | Tipo    |    | Descrição                            |
-| ---------- | ------- | -- | ------------------------------------ |
-| file       | 4D.File | -> | Objeto File                          |
-| reqNum     | Integer | -> | Number of requests to keep in memory |
+| Parámetros | Tipo    |    | Descrição                             |
+| ---------- | ------- | -- | ------------------------------------- |
+| file       | 4D.File | -> | Objeto File                           |
+| reqNum     | Integer | -> | Número de petiçõs a manter em memória |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->.
+A função `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->inicia o registro das petições ORDA do lado do cliente<!-- END REF -->.
 
-This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
+Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
 
-The ORDA request log can be sent to a file or to memory, depending on the parameter type:
+O registro de petições ORDA pode ser enviado a um arquivo ou a memória, dependendo do tipo de parâmetro:
 
 *   If you passed a *file* object created with the `File` command, the log data is written in this file as a collection of objects (JSON format). Each object represents a request.<br>If the file does not already exist, it is created. Otherwise if the file already exists, the new log data is appended to it. If `.startRequestLog( )` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
 > A \] character must be manually appended at the end of the file to perform a JSON validation
@@ -825,7 +825,7 @@ Pode aninhar várias transações (subtransações). Each transaction or sub-tra
 
 The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
 
-This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
+Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
 
 
 #### Exemplo
