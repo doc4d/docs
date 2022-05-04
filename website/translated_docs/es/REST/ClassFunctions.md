@@ -118,9 +118,9 @@ Esta base de datos se expone como un almacén de datos remoto en localhost (puer
 
 ![alt-text](assets/en/REST/ordastructure.png)
 
-### Using a datastore class function
+### Utilizar una función de clase de datastore
 
-The US_Cities `DataStore` class provides an API:
+La clase de `DataStore` US_Cities ofrece una API:
 
 ```  
 // DataStore class
@@ -131,7 +131,7 @@ exposed Function getName()
     $0:="US cities and zip codes manager" 
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8111/rest/$catalog/getName`
 
@@ -143,9 +143,9 @@ You can then run this request:
 }
 ```
 
-### Using a dataclass class function
+### Utilizar una función de clase de dataclass
 
-The Dataclass class `City` provides an API that returns a city entity from a name passed in parameter:
+La clase de Dataclass `City` ofrece una PI que devuelve una entidad de ciudad a partir del nombre pasado en parámetro:
 
 ```
 // City class
@@ -159,7 +159,7 @@ exposed Function getCity()
     $0:=This.query("name = :1";$nameParam).first()
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8111/rest/City/getCity`
 
@@ -194,7 +194,7 @@ El resultado es una entidad:
 
 ### Utilizar una función de clase de una entidad
 
-The Entity class `CityEntity` provides an API:
+La clase de entidad `CityEntity` ofrece una API:
 
 ```
 // CityEntity class
@@ -205,7 +205,7 @@ exposed Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8111/rest/City(2)/getPopulation`
 
@@ -220,7 +220,7 @@ You can then run this request:
 
 ### Utilizar una función clase entitySelection
 
-The EntitySelection class `CitySelection` provides an API:
+La clase de selección de entidad `CityEntity` ofrece una API:
 
 ```
 // CitySelection class
@@ -231,7 +231,7 @@ exposed Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8111/rest/City/getPopulation/?$filter="ID<3"`
 
@@ -243,9 +243,9 @@ You can then run this request:
 }
 ```
 
-### Using an entitySelection class function and an entitySet
+### Utilizar una función de clase de selección de entidades y un conjunto de entidades
 
-The `StudentsSelection` class has a `getAgeAverage` function:
+La clase `StudentsSelection` tine una función `getAgeAverage`:
 
 ```  
 // StudentsSelection Class
@@ -263,7 +263,7 @@ exposed Function getAgeAverage
     $0:=$sum/This.length
 ```
 
-Once you have created an entityset, you can run this request:
+Una vez que haya creado un conjunto de entidades, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8044/rest/Students/getAgeAverage/$entityset/17E83633FFB54ECDBF947E5C620BB532`
 
@@ -275,9 +275,9 @@ Once you have created an entityset, you can run this request:
 }
 ```
 
-### Using an entitySelection class function and an orderBy
+### Utilizar una función de clase de selección de entidades y unorderBy
 
-The `StudentsSelection` class has a `getLastSummary` function:
+La clase `StudentsSelection` tiene una función `getLastSummary`:
 
 ```  
 // StudentsSelection Class
@@ -293,7 +293,7 @@ exposed Function getLastSummary
     $0:=$last.firstname+" - "+$last.lastname+" is ... "+String($last.age())
 ```
 
-You can then run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `127.0.0.1:8044/rest/Students/getLastSummary/$entityset/?$filter="lastname=b@"&$orderby="lastname"`
 
@@ -307,10 +307,10 @@ You can then run this request:
 ```
 
 
-### Using an entity to be created on the server
+### Utilizar una entidad que se creará en el servidor
 
 
-The Dataclass class `Students` has the function `pushData()` receiving an entity containing data from the client. The `checkData()` method runs some controls. If they are OK, the entity is saved and returned.
+La clase de Dataclass `Students` tiene la función `pushData()` que recibe una entidad que contiene los datos del cliente. El método `checkData()` efectúa algunos controles. Si son válidos, la entidad se guarda y se devuelve.
 
 ```
 // Students Class
@@ -322,7 +322,7 @@ exposed Function pushData
 
     $entity:=$1
 
-    $status:=checkData($entity) // $status is an object with a success boolean property
+    $status:=checkData($entity) // $status es un objeto con una propiedad booleana "success"
 
     $0:=$status
 
@@ -335,7 +335,7 @@ exposed Function pushData
 
 ```
 
-You run this request:
+Lance esta petición:
 
 **POST** `http://127.0.0.1:8044/rest/Students/pushData`
 
@@ -350,7 +350,7 @@ Cuerpo de la petición:
 }]
 ```
 
-Since no `__KEY` is given, a new Students entity is loaded on the server **with the attributes received from the client**. Because the `pushData()` function runs a `save()` action, the new entity is created.
+Como ninguna `__KEY` es dada, una nueva entidad Students está cargada en el servidor **con los atributos del cliente**. Como la función `pushData()` ejecuta una acción `save()`, la nueva entidad es creada.
 
 
 #### Resultado
@@ -370,11 +370,11 @@ Since no `__KEY` is given, a new Students entity is loaded on the server **with 
 }
 ```
 
-### Using an entity to be updated on the server
+### Utilizar una entidad a actualizar en el servidor
 
-Same as above but with a __KEY attribute
+Igual que el anterior pero con el atributo __KEY
 
-You run this request:
+Lance esta petición:
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
@@ -388,7 +388,7 @@ Cuerpo de la petición:
 }]
 ```
 
-Since `__KEY` is given, the Students entity with primary key 55 is loaded **with the lastname value received from the client**. Because the function runs a `save()` action, the entity is updated.
+Como `__KEY` es dada, la entidad Students está cargada con llave primaria 55 **con el valor lastname recibido por el cliente**. Como la función ejecuta una acción `save()`, la nueva entidad es actualizada.
 
 #### Resultado
 
@@ -407,11 +407,11 @@ Since `__KEY` is given, the Students entity with primary key 55 is loaded **with
 }
 ```
 
-### Creating an entity with a related entity
+### Crear una entidad con una entidad relacionada
 
-In this example, we create a new Students entity with the Schools entity having primary key 2.
+En este ejemplo, creamos una nueva entidad Students con la entidad Schools con la llave primaria 2.
 
-You run this request:
+Lance esta petición:
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
@@ -449,9 +449,9 @@ Cuerpo de la petición:
 ```
 
 
-### Updating an entity with a related entity
+### Actualizar una entidad con una entidad relacionada
 
-In this example, we associate an existing school to a Students entity. The `StudentsEntity` class has an API:
+En este ejemplo, asociamos una escuela existente a una entidad Students. La clase `StudentsEntity` tiene una API:
 
 ```
 // StudentsEntity class
@@ -461,9 +461,9 @@ Class extends Entity
 exposed Function putToSchool()
     var $1, $school , $0, $status : Object
 
-        //$1 is a Schools entity
+        //$1 es una entidad Schools
     $school:=$1
-        //Associate the related entity school to the current Students entity
+        //Asocia la entidad relacionada "school" con la entidad actual "Students"
     This.school:=$school
 
     $status:=This.save()
@@ -471,7 +471,7 @@ exposed Function putToSchool()
     $0:=$status
 ```
 
-You run this request, called on a Students entity : **POST** `http://127.0.0.1:8044/rest/Students(1)/putToSchool` Body of the request:
+Se ejecuta esta petición, llamada en una entidad Students: **POST** `http://127.0.0.1:8044/rest/Students(1)/putToSchool` Cuerpo de la petición:
 ```
 [{
 "__DATACLASS":"Schools",
@@ -491,9 +491,9 @@ You run this request, called on a Students entity : **POST** `http://127.0.0.1:8
 ```
 
 
-### Receiving an entity selection as parameter
+### Recibir una selección de entidades como parámetro
 
-In the `Students` Dataclass class, the `setFinalExam()` function updates a received entity selection ($1). En realidad, actualiza el atributo *finalExam* con el valor recibido ($2). It returns the primary keys of the updated entities.
+En la clase de Dataclass `Students`, la función `setFinalExam()` actualiza una selección de entidad recibida ($1). En realidad, actualiza el atributo *finalExam* con el valor recibido ($2). Devuelve las llaves primarias de las entidades actualizadas.
 
 ```
 // Students class
@@ -514,7 +514,7 @@ exposed Function setFinalExam()
 
     $keys:=New collection()
 
-      //Loop on the entity selection
+      //Bucle en la selección de entidades
     For each ($student;$es)
         $student.finalExam:=$examResult
         $status:=$student.save()
@@ -526,11 +526,11 @@ exposed Function setFinalExam()
     $0:=$keys
 ```
 
-An entity set is first created with this request:
+Un conjunto de entidades se crea primero con esta petición:
 
 `http://127.0.0.1:8044/rest/Students/?$filter="ID<3"&$method=entityset`
 
-Then you can run this request:
+A continuación, puede ejecutar esta petición:
 
 **POST** `http://127.0.0.1:8044/rest/Students/setFinalExam`
 
@@ -549,7 +549,7 @@ Cuerpo de la petición:
 
 #### Resultado
 
-The entities with primary keys 1 and 2 have been updated.
+Se han actualizado las entidades con llaves primarias 1 y 2.
 
 ```
 {
@@ -560,9 +560,9 @@ The entities with primary keys 1 and 2 have been updated.
 }
 ```
 
-### Using an entity selection updated on the client
+### Utilizar una selección de entidades actualizada en el cliente
 
-Using the `getAgeAverage()` function [defined above](#using-an-entityselection-class-function-and-an-entityset).
+Utilizando la función `getAgeAverage()` [definida anteriormente](#using-an-entityselection-class-function-and-an-entityset).
 
 ```4d
 var $remoteDS, $newStudent, $students : Object
@@ -570,13 +570,13 @@ var $ageAverage : Integer
 
 $remoteDS:=Open datastore(New object("hostname";"127.0.0.1:8044");"students")
 
-// $newStudent is a student entity to procees
+// $newStudent es una entidad "student" a procesar
 $newStudent:=...
 $students:=$remoteDS.Students.query("school.name = :1";"Math school")
-// We add an entity to the $students entity selection on the client
+// Hemos añadido una entidad a la selección de entidades $students en el cliente
 $students.add($newStudent) 
 
-// We call a function on the StudentsSelection class returning the age average of the students in the entity selection
-// The function is executed on the server on the updated $students entity selection which included the student added from the client
+// Llamamos a una función en la clase StudentsSelection que devuelve la edad media de los estudiantes en la selección de entidades
+// La función se utiliza en el servidor en la selección de la entidad $students actualizada, que incluye el estudiante añadido por el cliente
 $ageAverage:=$students.getAgeAverage()
 ```
