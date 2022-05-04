@@ -98,9 +98,13 @@ In "signedIn" mode, when `.getToken()` is called, a web server included in 4D Ne
 
 ## Office365Provider
 
-The `Office365Provider` class allows you to get information from Office365 applications, such as user information, after a valid token request (see [OAuth2Provider object](#new-auth2-provider)).
+The `Office365Provider` class allows you to call the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview#data-and-services-powering-the-microsoft-365-platform) to:
+* get information from Office365 applications, such as user information
+* send emails
 
-This class can be instantiated in two ways: 
+This can be done after a valid token request (see [OAuth2Provider object](#new-auth2-provider)).
+
+The `Office365Provider` class can be instantiated in two ways: 
 * by calling the `New Office365 provider` method 
 * by calling the `cs.NetKit.Office365Provider.new()` function 
 
@@ -125,7 +129,7 @@ In `options`, you can pass an object that specifies the following options:
 
 |Property|Type|Description|
 |---------|---|------|
-|mailType|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>  |
+|mailType|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
 
 The returned object can be used with the `Office365Provider` class functions to:
 * retrieve information on users. That information varies depending on the information set in the `OAuth2Provider` object passed in `paramObj`
@@ -134,29 +138,29 @@ The returned object can be used with the `Office365Provider` class functions to:
 The returned object has a `mailer` property that has functions and properties related to emails:
 |Property|Type|Description|
 |---------|---|------|
-|type|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
-|userId|Text|User identifier. Used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
-|send()|Function|Sends the email passed as a parameter|
+|type|Text|Mail type used to send or receive emails|
+|userId|Text|User identifier, used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
+|send()|Function|Sends an email|
 
 ### Office365Provider.mailer.send()
 
-**Office365Provider.mailer.send**( *email* : Text ) : Object
-**Office365Provider.mailer.send**( *email* : Object ) : Object
-**Office365Provider.mailer.send**( *email* : Blob ) : Object
+**Office365Provider.mailer.send**( *message* : Text ) : Object
+**Office365Provider.mailer.send**( *message* : Object ) : Object
+**Office365Provider.mailer.send**( *message* : Blob ) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|email|Text, Blob, Object|->| Email to be sent|
-|Result|Object|<-| Object holding information on the user|
+|message|Text &#124; Blob &#124; Object|->| Message to be sent|
+|Result|Object|<-| Status object that contains information about the operation |
 
 #### Description
 
-`Office365Provider.mailer.send()` sends the email passed in the `email` parameter. 
+`Office365Provider.mailer.send()` sends an email using either JSON or MIME format, according to what is passed in the `message` parameter. 
 
-In `email`, pass the email to be sent: 
-* If `email` is an Object, the email is sent in JSON format.
-* If `email` is a Blob or Text, the email is sent in MIME format
+In `message`, pass the email to be sent:
+* If `message` is of type Object, the email is sent in JSON format.
+* If `message` is of type Blob or Text, the email is sent in MIME format.
 
 The permissions required to send emails through the Microsoft Graph API are specified on [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
 
@@ -168,9 +172,9 @@ The returned object has the following properties:
 |statusText|Text| Status message returned by the server or last error returned by the 4D error stack|
 |errors|Collection| Collection of errors. Not returned if the server returns a `statusText`|
 
-#### Example 
+#### Example: Create an email with a file attachment and send it
 
-Send an email with an attachment, on behalf of a Microsoft user:
+Send an email with an attachment, on behalf of a Microsoft 365 user:
 
 ```4d
 var $oAuth2 : cs.NetKit.OAuth2Provider
