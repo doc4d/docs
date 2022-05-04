@@ -3,7 +3,7 @@ id: overview
 title: Access Control overview
 ---
 
-If more than one person uses an application, which is usually the case in client-server architecture or Web interfaces, you need to control access or provide different features according to the connected users. It is also essential to provide security for sensitive data, even in single-user applications.
+Si diferentes personas utilizan una aplicación, lo que suele ocurrir en la arquitectura cliente-servidor o de interfaces web, es necesario controlar el acceso u ofrecer diferentes funcionalidades según de los usuarios conectados. It is also essential to provide security for sensitive data, even in single-user applications.
 
 4D access control strategy depends on your deployment configuration:
 
