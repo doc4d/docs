@@ -685,35 +685,34 @@ Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi
 
 O registro de petições ORDA pode ser enviado a um arquivo ou a memória, dependendo do tipo de parâmetro:
 
-*   If you passed a *file* object created with the `File` command, the log data is written in this file as a collection of objects (JSON format). Each object represents a request.<br>If the file does not already exist, it is created. Otherwise if the file already exists, the new log data is appended to it. If `.startRequestLog( )` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
-> A \] character must be manually appended at the end of the file to perform a JSON validation
+*   Se passar um objeto *file* criado com o comando `File`, os dados de registro se escrevem neste arquivo como uma coleção de objetos (formato JSON). Cada objeto representa uma petição.<br>Se o arquivo não existir, será criado. No caso contrário, ou seja, se o arquivo já existir, os novos dados de registro serão adicionados a ele. Se chamar a `.startRequestLog( )` com um arquivo enquanto se iniciou previamente um registro na memória, o registro em memória para e é esvaziado.
+> Deve adicionar manualmente um caractere \N ao final do arquivo para realizar uma validação JSON
 
-*   If you passed a *reqNum* integer, the log in memory is emptied (if any) and a new log is initialized. It will keep *reqNum* requests in memory until the number is reached, in which case the oldest entries are emptied (FIFO stack).<br>If `.startRequestLog()` is called with a *reqNum* while a logging was previously started in a file, the file logging is stopped.
+*   Se passar um inteiro *reqNum*, se esvazia o registro em memória (se houver) e se inicializa um novo registro. Vai manter *reqNum* petições em memória até que se alcance o número, em cujo caso se esvaziam as entradas mais antigas (pilha FIFO).<br>Se chamar a `.startRequestLog()` com um *reqNum* enquanto tiver iniciado previamente um registro em um arquivo, se para o registro do arquivo.
 
-*   If you did not pass any parameter, the log is started in memory. If `.startRequestLog()` was previously called with a *reqNum* (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
+*   Se não tiver passado nenhum parâmetro, o registro se inicia na memória. Se chamou previamente a `.startRequestLog()` com um *reqNum* (antes de um `.stopRequestLog()`), os datos do registro são empilhados em memória até a próxima vez que se esvazie o registro ou se chame a `.stopRequestLog()`.
 
 Para uma descrição do formato do registro de petições de ORDA, consulte a seção [**Perguntas do cliente ORDA**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373).
 
 #### Exemplo 1
 
-You want to log ORDA client requests in a file and use the log sequence number:
+Se quiser registras as petições dos clientes ORDA em um arquivo e usar o número de sequencia do registro:
 
 ```4d
  var $file : 4D.File
  var $e : cs.PersonsEntity
 
- $file:=File("/LOGS/ORDARequests.txt") //logs folder
+ $file:=File("/LOGS/ORDARequests.txt") //pasta logs 
 
- SET DATABASE PARAMETER(Client Log Recording;1) //to trigger the global log sequence number
- ds.startRequestLog($file)
- $e:=ds.Persons.get(30001) //send a request
+ SET DATABASE PARAMETER(Client Log Recording;1) //ativar o número de sequencia logs global ds.startRequestLog($file)
+ $e:=ds.Persons.get(30001) //envia uma petição
  ds.stopRequestLog()
  SET DATABASE PARAMETER(Client Log Recording;0)
 ```
 
 #### Exemplo 2
 
-You want to log ORDA client requests in memory:
+Se quiser registrar as petições dos clientes ORDA na memória:
 
 ```4d
  var $es : cs.PersonsSelection
@@ -747,18 +746,18 @@ You want to log ORDA client requests in memory:
 **.startTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descrição                  |
+| ---------- | ---- |  | -------------------------- |
+|            |      |  | Não exige nenhum parâmetro |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.startTransaction()` function <!-- REF #DataStoreClass.startTransaction().Summary -->starts a transaction in the current process on the database matching the datastore to which it applies<!-- END REF -->. Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
-> If this method is called on the main datastore (i.e. the datastore returned by the `ds` command), the transaction is applied to all operations performed on the main datastore and on the underlying database, thus including ORDA and classic languages.
+A função `.startTransaction()` <!-- REF #DataStoreClass.startTransaction().Summary -->inicia uma transação no processo atual no banco de dados que coincide com a datastore a qual se aplica<!-- END REF -->. Todas as mudanças realizadoas nas entidades do armazém de dados no processo da transação se armazenam temporariamente até que a transação se valida ou se cancela.
+> Se chamar a este método no armazém de dados principal (ou seja, o armazém de dados devolvido pelo comando `ds`), a transação se aplica a todas as operações realizadas no armazém de dados principal e no banco de dados subjacente, incluindo portanto ORDA e as linguagens clássicas.
 
-Pode aninhar várias transações (subtransações). Each transaction or sub-transaction must eventually be cancelled or validated. Note that if the main transaction is cancelled, all of its sub-transactions are also cancelled even if they were validated individually using the `.validateTransaction()` function.
+Pode aninhar várias transações (subtransações). Cada transação ou subtransação deve ser eventualmente cancelada ou validada. Note que se cancelar a transação principal, também se cancelam todas suas subtransações, mesmo se tiver validado individualmente mediante a função `.validateTransaction()`.
 
 
 #### Exemplo
@@ -815,22 +814,22 @@ Pode aninhar várias transações (subtransações). Each transaction or sub-tra
 **.stopRequestLog()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parâmetros | Tipo |  | Descrição                  |
+| ---------- | ---- |  | -------------------------- |
+|            |      |  | Não exige nenhum parâmetro |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
+A função `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->detém qualquer registro de petições ORDA do lado do cliente<!-- END REF --> (em arquivo ou na memória). É particularmente útil quando se registrar um arquivo, já que realmente fecha o documento aberto no disco.
 
 Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
 
 
 #### Exemplo
 
-See examples for [`.startRequestLog()`](#startrequestlog).
+Ver exemplos [`.startRequestLog()`](#startrequestlog).
 
 <!-- END REF -->
 
@@ -850,24 +849,24 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 **.validateTransaction()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parâmetros | Tipo |  | Descrição                  |
+| ---------- | ---- |  | -------------------------- |
+|            |      |  | Não exige nenhum parâmetro |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransaction().Summary -->accepts the transaction <!-- END REF -->that was started with [`.startTransaction()`](#starttransaction) at the corresponding level on the specified datastore.
+A função `.validateTransaction()` <!-- REF #DataStoreClass.validateTransaction().Summary -->aceita a transação <!-- END REF -->que se iniciou com [`.startTransaction()`](#starttransaction) no nível correspondente do datastore especificado.
 
-The function saves the changes to the data on the datastore that occurred during the transaction.
+A função salva as mudanças nos dados do datastore que se produziram durante a transação.
 
-Pode aninhar várias transações (subtransações). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
+Pode aninhar várias transações (subtransações). Se a transação principal for cancelada, todas suas subtransações também são canceladas, mesmo se validadas individualmente usando esta função.
 
 
 #### Exemplo
 
-See example for [`.startTransaction()`](#starttransaction).
+Ver exemplos [`.startTransaction()`](#starttransaction).
 
 <!-- END REF -->
 
