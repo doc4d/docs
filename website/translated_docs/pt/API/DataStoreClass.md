@@ -557,35 +557,35 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 #### Description
 
 A função `.provideDataKey()` <!-- REF #DataStoreClass.provideDataKey().Summary -->permite fornecer uma chave de cifrado de dados para o arquivo de dados atual da datastore e detecta se a chave coincide com os dados cifrados<!-- END REF -->. Esta função pode ser utilizada ao abrir um banco de dados criptografado, ou ao executar qualquer operação de criptografia que precise da chave de criptografia, como por exemplo voltar a criptografar o arquivo de dados.
-> * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the `Data file encryption status` command to determine if the database is encrypted.
-> * The `.provideDataKey()` function cannot be called from a remote 4D or an encrypted remote datastore.
+> * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. Se for chamado em uma database não criptografada, o erro 2003 (a chave de criptografia não corresponde aos dados) é retornada. Utilize o comando `Estado de cifrado do arquivo de dados` para determinar se o banco de dados estiver cifrada.
+> * A função `.provideDataKey()` não pode ser chamada desde um 4D remoto ou uma datastore remoto encriptado.
 
-If you use the *curPassPhrase* parameter, pass the string used to generate the data encryption key. When you use this parameter, an encryption key is generated.
+Se utilizar o parâmetro *curPassPhrase*, passe a string utilizada para gerar a chave de cifrado de dados. Quando usar este parâmetro, uma chave de criptografia é gerada.
 
-If you use the *curDataKey* parameter, pass an object (with *encodedKey* property) that contains the data encryption key. This key may have been generated with the `New data key` command.
+Se utilizar o parâmetro *curDataKey*, passe um objeto (com a propriedade *encodedKey*) que contenha a chave de cifrado dos dados. Esta chave pode ter sido gerada com o comando `New data key`.
 
-If a valid data encryption key is provided, it is added to the *keyChain* in memory and the encryption mode is enabled:
+Se aportar uma chave de cifrado de dados válida, se adicionar a *keyChain* da memória e se ativa o modo de cifrado:
 
-*   all data modifications in encryptable tables are encrypted on disk (.4DD, .journal. 4Dindx files)
-*   all data loaded from encryptable tables is decrypted in memory
+*   todas as modificações de dados nas tabelas encriptadas são cifradas no disco (.4DD, .journal. 4Dindx)
+*   todos os dados carregados desde tabelas criptografadas são descifradas na memória
 
 
 **Result**
 
-The result of the command is described in the returned object:
+O resultado da ordem se descreve no objeto devolvido:
 
-| Propriedade |                          | Type     | Description                                                                     |
-| ----------- | ------------------------ | -------- | ------------------------------------------------------------------------------- |
-| success     |                          | Booleano | True if the provided encryption key matches the encrypted data, False otherwise |
-|             |                          |          | Properties below are returned only if success is *FALSE*                        |
-| status      |                          | Número   | Error code (4 if the provided encryption key is wrong)                          |
-| statusText  |                          | Texto    | Error message                                                                   |
-| errors      |                          | Coleção  | Stack of errors. The first error has the highest index                          |
-|             | \[ ].componentSignature | Texto    | Internal component name                                                         |
-|             | \[ ].errCode            | Número   | Error number                                                                    |
-|             | \[ ].message            | Texto    | Error message                                                                   |
+| Propriedade |                          | Type     | Description                                                                                              |
+| ----------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------- |
+| success     |                          | Booleano | True se a chave da criptografia proporcionada coincide com os dados encriptados, False em caso contrário |
+|             |                          |          | As seguintes propriedades são devolvidas só se success for *FALSE*                                       |
+| status      |                          | Número   | Código de erro (4 se a chave de encriptação fornecida for errada)                                        |
+| statusText  |                          | Texto    | Mensagem de erro                                                                                         |
+| errors      |                          | Coleção  | Pilha de erros. O primeiro erro tem o índice mais alto                                                   |
+|             | \[ ].componentSignature | Texto    | Nome do componente interno                                                                               |
+|             | \[ ].errCode            | Número   | Número de erro                                                                                           |
+|             | \[ ].message            | Texto    | Mensagem de erro                                                                                         |
 
-If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
+Se não for dada uma *curPassphrase* ou *curDataKey*, `.provideDataKey()` devolve **null** (não é gerado nenhum erro).
 
 
 
@@ -623,27 +623,27 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| Parameter | Type     |    | Description                                                                                          |
-| --------- | -------- | -- | ---------------------------------------------------------------------------------------------------- |
-| status    | Booleano | -> | True to disable Data Explorer access to data on the `webAdmin` port, False (default) to grant access |
+| Parameter | Type     |    | Description                                                                                                         |
+| --------- | -------- | -- | ------------------------------------------------------------------------------------------------------------------- |
+| status    | Booleano | -> | True para desativar o acesso Data Explorer aos dados do porto `webAdmin`, False (por padrão) para outorgar o acesso |
 <!-- END REF -->
 
 
 #### Description
 
-The `.setAdminProtection()` function <!-- REF #DataStoreClass.setAdminProtection().Summary -->allows disabling any data access on the [web admin port](Admin/webAdmin.md#http-port), including for the [Data Explorer](Admin/dataExplorer.md) in `WebAdmin` sessions<!-- END REF -->.
+A função `.setAdminProtection()` <!-- REF #DataStoreClass.setAdminProtection().Summary -->permite desabilitar qualquer acesso a dados em [porto de administração web](Admin/webAdmin.md#http-port), mesmo para o [Explorador de dados](Admin/dataExplorer.md) nas sessõs de `WebAdmin`<!-- END REF -->.
 
-By default when the function is not called, access to data is always granted on the web administration port for a session with `WebAdmin` privilege using the Data Explorer. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
+Por padrão, quando não chamar a função, o acesso aos dados se concede sempre no porto de administração web para uma sessão com privilégio `WebAdmin` utilizando o Explorador de Dados. Em algumas configurações, por exemplo, quando o servidor de aplicações estiver alojado em uma máquina de terceiros, é possivel que não quiser que o administrador possaa ver seus dados, mesmo que possa editar a configuração do servidor, incluindo a configuração da [access key](Admin/webAdmin.md#access-key).
 
-In this case, you can call this function to disable the data access from Data Explorer on the web admin port of the machine, even if the user session has the `WebAdmin` privilege. When this function is executed, the data file is immediately protected and the status is stored on disk: the data file will be protected even if the application is restarted.
+Neste caso, pode chamar a esta função para desabilitar o acesso aos dados do Explorador de Dados no porto de administração web da máquina, mesmo se a sessão de usuário tiver o privilégio `WebAdmin`. Quando esta função for executada, o arquivo de dados é protegido imediatamente e o estado é armazenado no disco: o arquivo de dados é protegido mesmo se a aplicação for restaurada.
 
 
 #### Exemplo
 
-You create a *protectDataFile* project method to call before deployments for example:
+Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos, por exemplo:
 
 ```4d
- ds.setAdminProtection(True) //Disables the Data Explorer data access
+ ds.setAdminProtection(True) //Desativa o acesso aos dados do Explorador de Dados
 ```
 
 #### See also
@@ -667,20 +667,20 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parameter | Type    |    | Description                          |
-| --------- | ------- | -- | ------------------------------------ |
-| file      | 4D.File | -> | File object                          |
-| reqNum    | Integer | -> | Number of requests to keep in memory |
+| Parameter | Type    |    | Description                           |
+| --------- | ------- | -- | ------------------------------------- |
+| file      | 4D.File | -> | File object                           |
+| reqNum    | Integer | -> | Número de petiçõs a manter em memória |
 <!-- END REF -->
 
 
 #### Description
 
-The `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->.
+A função `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->inicia o registro das petições ORDA do lado do cliente<!-- END REF -->.
 
-This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
+Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
 
-The ORDA request log can be sent to a file or to memory, depending on the parameter type:
+O registro de petições ORDA pode ser enviado a um arquivo ou a memória, dependendo do tipo de parâmetro:
 
 *   If you passed a *file* object created with the `File` command, the log data is written in this file as a collection of objects (JSON format). Each object represents a request.<br>If the file does not already exist, it is created. Otherwise if the file already exists, the new log data is appended to it. If `.startRequestLog( )` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
 > A \] character must be manually appended at the end of the file to perform a JSON validation
@@ -822,7 +822,7 @@ Pode aninhar várias transações (subtransações). Each transaction or sub-tra
 
 The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
 
-This function must be called on a remote 4D, otherwise it does nothing. Foi criado para depuração em configurações de cliente/servidor.
+Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
 
 
 #### Exemplo
