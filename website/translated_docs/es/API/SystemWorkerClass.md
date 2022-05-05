@@ -567,7 +567,7 @@ Esta propiedad es **de sólo lectura**.
 | ------- | -------------- |
 |         |                |
 
-|v19 R4|Added|
+|v19 R4|Añadido|
 
 </details>
 
