@@ -70,7 +70,7 @@ Some of the events are standard form events (available to all active objects) an
 |                                                 | [On Row Resize](../Events/onRowResize.md)             |
 |                                                 | [On VP Range Changed](../Events/onVpRangeChanged.md)  |
 
-## Sheet Options
+## Opciones hoja
 
 The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
 
