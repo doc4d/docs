@@ -43,9 +43,7 @@ This class can be instantiated in two ways:
 
 `New OAuth2 provider` instantiates an object of the `OAuth2Provider` class.
 
-In `paramObj`, pass an object that contains authentication information.
-
-The returned object's properties correspond to those of the `paramObj` object passed as a parameter. 
+In `paramObj`, pass an object that contains authentication information. 
 
 The available properties of `paramObj` are:
 
@@ -63,6 +61,10 @@ The available properties of `paramObj` are:
 | token | object | If this property exists, the `getToken()` function uses this token object to calculate which request must be sent. It is automatically updated with the token received by the `getToken()` function.   |Yes
 | timeout|real| Waiting time in seconds (by default 120s).|Yes
 
+#### Returned object
+
+The returned object's properties correspond to those of the `paramObj` object passed as a parameter.
+
 ### OAuth2ProviderObject.getToken()
 
 **OAuth2ProviderObject.getToken()** : Object
@@ -70,7 +72,6 @@ The available properties of `paramObj` are:
 |Parameter|Type||Description|
 |---------|--- |------|------|
 |Result|Object|<-| Object that holds information on the token retrieved
-
 
 #### Description 
 
@@ -129,24 +130,20 @@ In `options`, you can pass an object that specifies the following options:
 
 |Property|Type|Description|
 |---------|---|------|
-|mailType|Text|Indicates the Mail type used to send or receive emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
+|mailType|Text|Indicates the Mail type used to send. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
 
-The returned object can be used with the `Office365Provider` class functions to:
-* retrieve information on users. That information varies depending on the information set in the `OAuth2Provider` object passed in `paramObj`
-* send emails
+#### Returned object 
 
-The returned object has a `mailer` property that has functions and properties related to emails:
+`Office365Provider` objects have a `mailer` property with functions and properties related to emails:
 |Property|Type|Description|
 |---------|---|------|
-|type|Text|Mail type used to send or receive emails|
-|userId|Text|User identifier, used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
 |send()|Function|Sends an email|
+|type|Text|Mail type used to send emails (Read only)|
+|userId|Text|User identifier, used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
 
 ### Office365Provider.mailer.send()
 
-**Office365Provider.mailer.send**( *email* : Text ) : Object
-**Office365Provider.mailer.send**( *email* : Object ) : Object
-**Office365Provider.mailer.send**( *email* : Blob ) : Object
+**Office365Provider.mailer.send**( *email* : Text ) : Object<br/>**Office365Provider.mailer.send**( *email* : Object ) : Object<br/>**Office365Provider.mailer.send**( *email* : Blob ) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
@@ -156,15 +153,27 @@ The returned object has a `mailer` property that has functions and properties re
 
 #### Description
 
-`Office365Provider.mailer.send()` sends an email using either JSON or MIME format, according to what is passed in the `email` parameter. 
+`Office365Provider.mailer.send()` sends an email using the MIME or JSON formats.
 
-In `email`, pass the email to be sent:
-* If `email` is of type Object, the email is sent in JSON format.
-* If `email` is of type Blob or Text, the email is sent in MIME format.
+In `email`, pass the email to be sent. Possible types:
 
-The permissions required to send emails through the Microsoft Graph API are specified on [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
+* Text or Blob: the email is sent using the MIME format
+* Object: the email is sent using the JSON format, in accordance with either: 
+    * the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties)
+    * the [4D email object format](https://developer.4d.com/docs/en/API/EmailObjectClass.html#email-object), which follows the JMAP specification
 
-The returned object has the following properties:
+The `Office365Provider.mailer.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$message` must be an object: 
+
+```4d 
+$Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
+$status:=$Office365.mailer.send($message)
+```
+
+> To avoid authentication errors, make sure your application asks for permission to send emails through the Microsoft Graph API. See [Permissions](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions) on Microsoft's documentation website.
+
+#### Returned object 
+
+The method returns a status object with the following properties:
 
 |Property|Type|Description|
 |---------|--- |------|
