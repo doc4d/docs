@@ -875,7 +875,7 @@
         "title": "Página Usuarios"
       },
       "settings/backup": {
-        "title": "Backup page"
+        "title": "Página de respaldo"
       },
       "settings/client-server": {
         "title": "Client-server page"
@@ -890,7 +890,7 @@
         "title": "Database page"
       },
       "settings/general": {
-        "title": "General page"
+        "title": "Página General"
       },
       "settings/interface": {
         "title": "Interface page"
@@ -899,16 +899,16 @@
         "title": "Generalidades"
       },
       "settings/php": {
-        "title": "PHP page"
+        "title": "Págin PHP"
       },
       "settings/security": {
         "title": "Security page"
       },
       "settings/sql": {
-        "title": "SQL page"
+        "title": "Página SQL"
       },
       "settings/web": {
-        "title": "Web page"
+        "title": "Página Web"
       },
       "Tags/tags": {
         "title": "Etiquetas de transformación"
@@ -932,7 +932,7 @@
         "title": "Comencemos"
       },
       "ViewPro/method-list": {
-        "title": "Method List"
+        "title": "Lista de los métodos"
       },
       "WebServer/allowProject": {
         "title": "Permitir métodos proyecto"
@@ -991,7 +991,7 @@
       "4D Server Administration Window": "Ventana de administración de 4D Server",
       "Web Administration": "Administración Web",
       "Command Line Interface": "Interfaz de línea de comando",
-      "TLS Protocol": "TLS Protocol",
+      "TLS Protocol": "Protocolo TLS",
       "License Management": "Gestión de licencias",
       "Access Rights": "Derechos de acceso",
       "MSC": "CSM",
@@ -1036,7 +1036,7 @@
     "4D Server Administration Window|no description given": "Ventana de administración de 4D Server",
     "4D Components Library|no description given": "Librería de componentes 4D",
     "Client/Server|no description given": "Cliente/Servidor",
-    "TLS Protocol|no description given": "TLS Protocol",
+    "TLS Protocol|no description given": "Protocolo TLS",
     "Debugging|no description given": "Depuración",
     "Code Editor|no description given": "Editor de código",
     "Web Data Explorer|no description given": "Explorador de datos Web",
