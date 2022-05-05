@@ -48,7 +48,7 @@ With 4D in remote mode, these files must be located in the local resources folde
 > TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
 
 
-## Character Set
+## Conjunto de caracteres
 
 | Puede ajustarse con           | Nombre                                                            | Comentarios                    |
 | ----------------------------- | ----------------------------------------------------------------- | ------------------------------ |
@@ -368,7 +368,7 @@ Legacy session management enabling status for the 4D web server (deprecated).
 > When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
 
 
-## Log Recording
+## Registro de los logs
 
 | Puede ajustarse con           | Nombre                                               | Comentarios |
 | ----------------------------- | ---------------------------------------------------- | ----------- |
