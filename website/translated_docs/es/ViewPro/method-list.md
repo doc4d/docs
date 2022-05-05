@@ -1,6 +1,6 @@
 ---
 id: method-list
-title: Method List
+title: Lista de los métodos
 ---
 
 > **Warning**: The commands on this page are not thread-safe.
@@ -153,7 +153,7 @@ Resultado:
 | ---------- | ------- | -- | --------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name |
 | index      | Integer | -> | Index of the new sheet            |
-| name       | Texto   | -> | Sheet name                        |	
+| name       | Texto   | -> | Nombre de la hoja                 |	
 <!-- END REF --> 
 
 #### Descripción
@@ -647,9 +647,9 @@ Document contents are converted with respect to their viewing attributes, includ
 *   Text : style / font / size / alignment / orientation / rotation / format
 *   Cell background : color / image
 *   Cell borders : thickness / color / style
-*   Cell merge
+*   Fusión de celdas
 *   Imágenes
-*   Row height
+*   Altura de líneas
 *   Column width
 *   Hidden columns / rows.
 > > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
@@ -858,7 +858,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | includeFormatInfo  | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
 | sheetIndex         | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions         | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Default: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | \<customProperty> | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Notes about Excel format**:
@@ -890,7 +890,7 @@ When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` comma
 | $3       |               | objeto   | A reference to the command's *paramObj*                |
 | $4       |               | objeto   | An object returned by the method with a status message |
 |          | .success      | booleano | True if export with success, False otherwise.          |
-|          | .errorCode    | integer  | Error code. May be returned by 4D or JavaScript.       |
+|          | .errorCode    | integer  | Código de error. May be returned by 4D or JavaScript.  |
 |          | .errorMessage | texto    | Error message. May be returned by 4D or JavaScript.    |
 
 
@@ -1253,7 +1253,7 @@ $activeCell:=VP Get active cell("myVPArea")
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
 | rangeObj   | Objeto | -> | Range object |
-| Resultado  | Objeto | <- | Style object |
+| Resultado  | Objeto | <- | Objeto style |
 <!-- END REF -->  
 
 #### Descripción
@@ -1947,8 +1947,8 @@ Get the sheet count and set the current sheet to the last sheet:
 | Parámetros      | Tipo    |    | Descripción                       |
 | --------------- | ------- | -- | --------------------------------- |
 | vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| name            | Texto   | -> | Sheet name                        |
-| Function result | Integer | <- | Sheet index                       |
+| name            | Texto   | -> | Nombre de la hoja                 |
+| Function result | Integer | <- | Índice de la hoja                 |
 <!-- END REF --> 
 
 #### Descripción
@@ -1988,8 +1988,8 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 | Parámetros      | Tipo    |    | Descripción                       |
 | --------------- | ------- | -- | --------------------------------- |
 | vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| sheet           | Integer | -> | Sheet index                       |
-| Function result | Texto   | <- | Sheet name                        |
+| sheet           | Integer | -> | Índice de la hoja                 |
+| Function result | Texto   | <- | Nombre de la hoja                 |
 <!-- END REF --> 
 
 #### Descripción
@@ -2067,7 +2067,7 @@ End if
 | Parámetros      | Tipo     |    | Descripción                                      |
 | --------------- | -------- | -- | ------------------------------------------------ |
 | vpAreaName      | Texto    | -> | 4D View Pro area form object name                |
-| sheet           | Integer  | <- | Sheet index                                      |
+| sheet           | Integer  | <- | Índice de la hoja                                |
 | Function result | Booleano | <- | True if print lines are visible, False otherwise |
 <!-- END REF --> 
 
@@ -2372,7 +2372,7 @@ var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
-#### See Also
+#### Ver también
 
 [VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -2419,7 +2419,7 @@ The optional *paramObj* parameter allows you to define properties for the import
 | csvOptions |                 | objeto | options for csv import                                                                                                                                                                                                                                   |
 |            | range           | objeto | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
 |            | rowDelimiter    | texto  | Row delimiter. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                          |
-|            | columnDelimiter | texto  | Column delimiter. Default: ","                                                                                                                                                                                                                           |
+|            | columnDelimiter | texto  | Column delimiter. Por defecto: ","                                                                                                                                                                                                                       |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
@@ -2736,7 +2736,7 @@ VP NEW DOCUMENT("myVPArea")
 
 | Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
-| fontObj    | Objeto | -> | Font object    |
+| fontObj    | Objeto | -> | Objeto fuente  |
 | Resultado  | Texto  | <- | Font shorthand |
 
 <!-- END REF -->  
@@ -3607,7 +3607,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
 | rangeObj   | Objeto | -> | Range object |
-| styleObj   | Objeto | -> | Style object |
+| styleObj   | Objeto | -> | Objeto style |
 
 <!-- END REF -->  
 
@@ -3966,7 +3966,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 | Parámetros | Tipo    |    | Descripción                           |
 | ---------- | ------- | -- | ------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name     |
-| styleObj   | Objeto  | -> | Style object                          |
+| styleObj   | Objeto  | -> | Objeto style                          |
 | sheet      | Integer | -> | Sheet index (default = current sheet) |
 
 <!-- END REF -->  
@@ -4302,7 +4302,7 @@ VP SET PRINT INFO ("ViewProArea";$printInfo)
 VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(ALERT("PDF ready!"))))
 ```
 
-The PDF:
+El PDF:
 
 ![](assets/en/ViewPro/cmd_vpSetPrintInfo.PNG)
 
@@ -4651,7 +4651,7 @@ Resultado:
 | ---------- | -------- | -- | -------------------------------------------------------- |
 | vpAreaName | Texto    | -> | 4D View Pro area form object name                        |
 | visible    | Booleano | -> | Print lines displayed if True (default), hidden if False |
-| index      | Integer  | -> | Sheet index                                              |
+| index      | Integer  | -> | Índice de la hoja                                        |
 
 <!-- END REF -->  
 
@@ -4976,7 +4976,7 @@ $workbookOptions.allowExtendPasteRange:=True
 VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
-#### See Also
+#### Ver también
 
 [VP Get workbook options](#vp-get-workbook-options)
 
@@ -5088,7 +5088,7 @@ If(FORM Event.code=On Clicked)
 
 End if
 ```
-#### See Also
+#### Ver también
 
 [VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
 
