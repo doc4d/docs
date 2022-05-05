@@ -303,7 +303,7 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 | ----------------------------- | ------------------------------------------------------------------------ | ----------- |
 | objeto webServer              | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |             |
 | `WEB SET OPTION`              | `Web inactive process timeout`                                           |             |
-| Caja de diálogo de parámetros | Options (I) page/Inactive Process Timeout                                | Slider      |
+| Caja de diálogo de parámetros | Options (I) page/Inactive Process Timeout                                | Cursor      |
 
 Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
