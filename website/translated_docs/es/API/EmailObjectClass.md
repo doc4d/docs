@@ -66,7 +66,7 @@ An object with two properties:
 | Propiedad | Tipo  | Descripción                |
 | --------- | ----- | -------------------------- |
 | name      | Texto | Display name (can be null) |
-| email     | Texto | Email address              |
+| email     | Texto | Correo electrónico         |
 
 #### Collection
 
