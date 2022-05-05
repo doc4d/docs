@@ -370,7 +370,7 @@ Default is true (enabled).
 > When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
 
 
-## Log Recording
+## Registro de los logs
 
 | Puede ajustarse con           | Nombre                                               | Comentarios |
 | ----------------------------- | ---------------------------------------------------- | ----------- |
