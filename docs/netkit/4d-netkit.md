@@ -144,23 +144,23 @@ The returned object has a `mailer` property that has functions and properties re
 
 ### Office365Provider.mailer.send()
 
-**Office365Provider.mailer.send**( *message* : Text ) : Object
-**Office365Provider.mailer.send**( *message* : Object ) : Object
-**Office365Provider.mailer.send**( *message* : Blob ) : Object
+**Office365Provider.mailer.send**( *email* : Text ) : Object
+**Office365Provider.mailer.send**( *email* : Object ) : Object
+**Office365Provider.mailer.send**( *email* : Blob ) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|message|Text &#124; Blob &#124; Object|->| Message to be sent|
+|email|Text &#124; Blob &#124; Object|->| Email to be sent|
 |Result|Object|<-| Status object that contains information about the operation |
 
 #### Description
 
-`Office365Provider.mailer.send()` sends an email using either JSON or MIME format, according to what is passed in the `message` parameter. 
+`Office365Provider.mailer.send()` sends an email using either JSON or MIME format, according to what is passed in the `email` parameter. 
 
-In `message`, pass the email to be sent:
-* If `message` is of type Object, the email is sent in JSON format.
-* If `message` is of type Blob or Text, the email is sent in MIME format.
+In `email`, pass the email to be sent:
+* If `email` is of type Object, the email is sent in JSON format.
+* If `email` is of type Blob or Text, the email is sent in MIME format.
 
 The permissions required to send emails through the Microsoft Graph API are specified on [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
 
