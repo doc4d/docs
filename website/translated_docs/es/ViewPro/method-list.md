@@ -337,7 +337,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 You want to define a range object for all of the cells of the current spreadsheet:
 
 ```4d
-$all:=VP All("ViewProArea") // all cells of the current sheet
+$all:=VP All("ViewProArea") // todas las celdas de la hoja actual
 ```
 
 #### Ver también
@@ -445,7 +445,7 @@ You want to define a range object for the following cells (on the current sheet)
 The code would be:
 
 ```4d
-$cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+$cells:=VP Cells("ViewProArea";2;4;2;3) // de C5 a D7
 ```
 
 #### Ver también
@@ -490,7 +490,7 @@ You want to define a range object for the column shown below (on the current spr
 The code would be:
 
 ```4d
- $column:=VP Column("ViewProArea";3) // column D
+ $column:=VP Column("ViewProArea";3) // columna D
 ```
 
 #### Ver también
@@ -857,10 +857,10 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | formula              | objeto   | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                      |
 | valuesOnly           | booleano | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | includeFormatInfo    | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
-| includeBindingSource | Booleano | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                                            |
+| includeBindingSource | Booleano | 4DVP únicamente. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                                      |
 | sheetIndex           | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions           | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | \<customProperty>   | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Notes about Excel format**:
@@ -2067,7 +2067,7 @@ In the following document:
 Get the index of the sheet called "Total first quarter":
 
 ```4d
-$index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
+$index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //devuelve 2
 ```
 
 #### Ver también
@@ -2485,7 +2485,7 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 | ---------- | ------ | -- | --------------------------------- |
 | vpAreaName | Texto  | -> | 4D View Pro area form object name |
 | filePath   | Texto  | -> | Pathname of the document          |
-| paramObj   | Objeto | -> | Import options                    |
+| paramObj   | Objeto | -> | Opciones de importación           |
 
 <!-- END REF -->  
 
@@ -2497,7 +2497,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In *filePath*, pass the path and name of the document to be imported. The following formats are supported :
 
-* 4D View Pro documents (extension ".4vp")
+* Les documents 4D View Pro (extensión ".4vp")
 * Microsoft Excel (extension ".xlsx")
 * text documents (extension ".txt", ".csv", the document must be in utf-8)
 
@@ -2515,7 +2515,7 @@ The optional *paramObj* parameter allows you to define properties for the import
 | contraseña |                 | texto  | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                      |
 | csvOptions |                 | objeto | options for csv import                                                                                                                                                                                                                                   |
 |            | range           | objeto | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
-|            | rowDelimiter    | texto  | Row delimiter. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                          |
+|            | rowDelimiter    | texto  | Delimitador de línea. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                   |
 |            | columnDelimiter | texto  | Column delimiter. Por defecto: ","                                                                                                                                                                                                                       |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
@@ -3288,7 +3288,7 @@ You want to define a range object for the row shown below (on the current spread
 Puede escribir:
 
 ```4d
-$row:=VP Row("ViewProArea";9) // row 10
+$row:=VP Row("ViewProArea";9) // línea 10
 ```
 
 #### Ver también
@@ -5292,7 +5292,7 @@ In *rangeObj*, pass a range of cells as an object to designate the cells to be v
 
 The following selectors are available:
 
-| Selector              | Descripción                                                                                                                                                                                                                                                                              | Available with *vPos* | Available with *hPos* |
+| Selector              | Descripción                                                                                                                                                                                                                                                                              | Disponible con *vPos* | Available with *hPos* |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
 | `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                         | X                     |                       |
 | `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                           | X                     | X                     |
