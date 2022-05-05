@@ -1,5 +1,5 @@
 ---
-id: security
+id: seguridad
 title: Security page
 ---
 
