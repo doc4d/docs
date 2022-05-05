@@ -339,7 +339,7 @@ Esta propiedad es **de sólo lectura**.
 
 La propiedad `.original` devuelve<!-- REF #documento.original.Resumen -->el elemento de destino para un alias, un acceso directo o un archivo de enlace simbólico<!-- END REF -->. El elemento objetivo puede ser:
 
-*   a file object
+*   un objeto File
 *   un objeto de la carpeta
 
 For non-alias files, the property returns the same file object as the file.
