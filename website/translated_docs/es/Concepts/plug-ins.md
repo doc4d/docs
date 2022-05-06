@@ -21,7 +21,7 @@ You install plug-ins in the 4D environment by copying their files into the **Plu
 Los plug-ins son cargados por 4D cuando se lanza la aplicación, por lo que tendrá que salir de su aplicación 4D antes de instalarlos. If a plug-in requires a specific license for use, it will be loaded but not available for use.
 
 
-## Using plug-ins
+## Utilización de los plug-ins
 
 Plug-ins commands can be used as regular 4D commands in your 4D development. Plug-in commands appear in the **Plug-ins** page of the Explorer. 
 
