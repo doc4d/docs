@@ -130,7 +130,7 @@ You can use the [VP Cells](method-list.md#vp-cells) method:
 
 ```4d 
 var $myRange : Object
-$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 a D7
 ```
 
 You can then pass `$myRange` to another 4D View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](method-list.md#vp-set-border)).
