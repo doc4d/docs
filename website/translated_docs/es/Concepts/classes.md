@@ -480,7 +480,7 @@ Super {( param{;...;paramN} )} {-> Object}
 | Parámetros | Tipo   |    | Descripción                                    |
 | ---------- | ------ | -- | ---------------------------------------------- |
 | param      | mixto  | -> | Parameter(s) to pass to the parent constructor |
-| Resultado  | objeto | <- | Object's parent                                |
+| Resultado  | objeto | <- | Padre del objeto                               |
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
