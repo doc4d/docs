@@ -12,7 +12,7 @@ title: netkit
 
 * [OAuth2Provider class](#oauth2provider)
 * [Office365Provider class](#office365provider)
-* [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-with-4d-netkit-in-service-mode)
+* [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-in-service-mode)
 * (Archived) [Tutorial : Authenticate to the Microsoft Graph API in signedIn mode (4D NetKit), then send an email (SMTP Transporter class)](#authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp)
 
 ## OAuth2Provider
