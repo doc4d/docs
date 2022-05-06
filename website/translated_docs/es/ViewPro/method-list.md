@@ -1584,10 +1584,10 @@ In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* de
 #### Ejemplo
 
 ```4d
-  //set a formula
-VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
-
-$result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
+  //definir una fórmula
+ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
+ 
+ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 ```
 #### Ver también
 
@@ -1983,7 +1983,7 @@ The following code will retrieve the coordinates of all the cells in the current
 ```4d
 $currentSelection:=VP Get selection("myVPArea")
 
-//returns a range object containing:  
+//devuelve un objeto rango que contiene:
 //$currentSelection.ranges[0].column=5
 //$currentSelection.ranges[0].columnCount=2
 //$currentSelection.ranges[0].row=8
@@ -2869,7 +2869,7 @@ $font.variant:=vk font variant small caps
 $font.weight:=vk font weight bolder
 
 $cellStyle.font:=VP Object to font($font)
-//$cellStyle.font contains "bolder oblique small-caps 16pt arial"
+//$cellStyle.font contiene "bolder oblique small-caps 16pt arial"
 ```
 
 #### Ver también
@@ -3790,7 +3790,7 @@ $style.foreColor:="red"
 $style.hAlign:=1
 $style.isVerticalText:=True
 $style.borderBottom:=New object("color";"#800080";"style";vk line style thick)
-$style.backgroundImage:=Null //remove a specific attribute
+$style.backgroundImage:=Null //eliminar un atributo específico
 
 VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 ```
