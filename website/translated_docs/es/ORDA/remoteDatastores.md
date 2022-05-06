@@ -11,7 +11,7 @@ A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accesse
 
 
 
-## Opening sessions
+## Apertura de las sesiones
 
 When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
 
@@ -29,7 +29,7 @@ These principles are illustrated in the following graphics:
 
 > For sessions opened by REST requests, please refer to [Users and sessions](REST/authUsers.md).
 
-### Viewing sessions
+### Visualización de las sesiones
 
 Processes that manage sessions for datastore access are shown in the 4D Server administration window:
 
@@ -53,7 +53,7 @@ ORDA features related to entity locking and transaction are managed at process l
     *   when the session is closed on the server
     *   when the session is killed from the server administration window.
 
-### Closing sessions
+### Cierre de las sesiones
 
 A session is automatically closed by 4D when there has been no activity during its timeout period. The default timeout is 60 mn, but this value can be modified using the *connectionInfo* parameter of the `Open datastore` command.
 
@@ -65,7 +65,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 * the **optimization context**
 * the **ORDA cache**
 
-### Context
+### Contexto
 
 The optimization context is based upon the following implementations:
 
@@ -172,7 +172,7 @@ If you want to deliver final applications with the highest level of optimization
 4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
 
 
-### ORDA cache
+### Caché ORDA
 
 For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds.
 
