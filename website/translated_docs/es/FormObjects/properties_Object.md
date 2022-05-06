@@ -37,9 +37,9 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 #### Gramática JSON
 
-| Nombre | Tipos de datos | Valores posibles                                                     |
-| ------ | -------------- | -------------------------------------------------------------------- |
-| name   | cadena         | Any allowed name which does not belong to an already existing object |
+| Nombre | Tipos de datos | Valores posibles                                                 |
+| ------ | -------------- | ---------------------------------------------------------------- |
+| name   | cadena         | Todo nombre permitido que no pertenezca a un objeto ya existente |
 
 #### Objetos soportados
 

@@ -130,7 +130,7 @@ You can use the [VP Cells](method-list.md#vp-cells) method:
 
 ```4d 
 var $myRange : Object
-$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 a D7
 ```
 
 You can then pass `$myRange` to another 4D View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](method-list.md#vp-set-border)).
@@ -144,10 +144,10 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 | --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------- |
 | area      |                   | texto     | 4D View Pro area form object name                                   | always available                                   |
 | ranges    |                   | colección | Collection of range(s)                                              | always available                                   |
-|           | \[ ].name        | texto     | Range name                                                          | name                                               |
+|           | \[ ].name        | texto     | Nombre de rango                                                     | name                                               |
 |           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
 |           | \[ ].row         | number    | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
-|           | \[ ].rowCount    | number    | Row count                                                           | cells, rows                                        |
+|           | \[ ].rowCount    | number    | Row count                                                           | celdas, líneas                                     |
 |           | \[ ].column      | number    | Column index (counting begins at 0)                                 | cell, cells, column, columns                       |
 |           | \[ ].columnCount | number    | Column count                                                        | cells, columns                                     |
 
