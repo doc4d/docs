@@ -24,7 +24,7 @@ You can select the interface to use with your 4D View Pro form areas in the **Pr
 
 Interfaces allow for basic modifications and data manipulation. User-defined modifications are saved in the 4D View Pro object when the user saves the document.
 
-#### Ribbon
+#### Cinta
 
 ![](assets/en/ViewPro/vpRibbon.PNG)
 
@@ -44,7 +44,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | -------- | ------------------------------- |:----------------:|:-----------------:|
 | File     | File manipulation               |        X         |                   |
 | Inicio   | Text appearance                 |        X         |         X         |
-| Insert   | Add items                       |        X         |         X         |
+| Insertar | Add items                       |        X         |         X         |
 | Fórmulas | Formula calculation and library |        X         |         X         |
 | Datos    | Data manipulation               |        X         |         X         |
 | Mostrar  | Visual presentation             |        X         |         X         |
@@ -70,7 +70,7 @@ Some of the events are standard form events (available to all active objects) an
 |                                                 | [On Row Resize](../Events/onRowResize.md)             |
 |                                                 | [On VP Range Changed](../Events/onVpRangeChanged.md)  |
 
-## Sheet Options
+## Opciones hoja
 
 The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
 
@@ -85,7 +85,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 | sheetTabColor        |                        | cadena       | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
 | frozenlineColor      |                        | cadena       | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                |
 | clipBoardOptions     |                        | entero largo | The clipboard option. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
-| gridline             |                        | objeto       | The grid line's options.                                                                                                                                                                                                                                                                                |
+| rejilla              |                        | objeto       | The grid line's options.                                                                                                                                                                                                                                                                                |
 |                      | color                  | cadena       | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
 |                      | showVerticalGridline   | booleano     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                       |
 |                      | showHorizontalGridline | booleano     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                     |
@@ -212,7 +212,7 @@ To create your own date and time patterns, in your current localization, you can
 |       | ddd                                | Day of week, short                             | Tue                |
 |       | dddd                               | Day of week, long                              | Tuesday            |
 |       | yy                                 | Year, short                                    | 19                 |
-|       | yyyy                               | Year, long                                     | 2019               |
+|       | yyyy                               | Año, formato largo                             | 2019               |
 | Hora  |                                    |                                                | (2:03:05 PM)       |
 |       | h                                  | Hour without leading zero. 0-23                | 2                  |
 |       | hh                                 | Hour with leading zero. 00-23                  | 02                 |
@@ -236,10 +236,10 @@ In addition to the special characters and codes described in the previous sectio
 | ( )      | Left and right parenthesis                                         | (-###.##)            |
 | :        | Dos puntos                                                         | hh:mm:ss             |
 | ^        | Caret                                                              | #\^#                |
-| '        | Apostrophe                                                         | '######              |
+| '        | Apostrofe                                                          | '######              |
 | { }      | Curly brackets                                                     | {###,###,###}        |
 | < >      | Less-than and greater than signs                                   | ## >##              |
-| =        | Equal sign                                                         | #+#=##               |
+| =        | Signo igual                                                        | #+#=##               |
 | /        | Forward slash. When used with numbers, displays them as fractions. | mm/dd/yyyy           |
 | !        | Exclamation point                                                  | $###.00!             |
 | &        | Ampersand                                                          | "Hello" & "Welcome"  |
@@ -305,7 +305,7 @@ The following special characters allow the automatic addition or formatting of i
 | -------- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
 | &        | Escape character                 | (see examples below)                                                  |                                                   |
 | P        | Current page                     | printInfo.headerLeft:="This is page &P."                              | This is page 5.|                                  |
-| N        | Page count                       | printInfo.headerLeft:="There are &N pages."                           | There are 10 pages.                               |
+| N        | Conteo de páginas                | printInfo.headerLeft:="There are &N pages."                           | There are 10 pages.                               |
 | D        | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | It is 2015/6/19.                                  |
 | T        | Hora actual                      | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
 | G        | Imagen                           | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
@@ -356,7 +356,7 @@ Page attributes are used to specify general document print settings.
 | useMax          | booleano     | Only columns and rows with data are printed.<p>Default value = true</p>                                                                                                                               |
 | zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Default value = 1</p>                                                                                                                          |
 
-### Paper Size
+### Tamaño del papel
 
 Paper size attributes are used to specify the dimensions or model of paper to use for printing. There are two ways to define paper size:
 
@@ -381,7 +381,7 @@ Scale attributes are used to specify printing optimization and adjustments.
 | fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Default value = -1    |
 | fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Default value = -1 |
 
-### Show / Hide
+### Mostrar / Ocultar
 
 Show / Hide attributes are used to specify the visibility (printing) of 4D View Pro area elements.
 
@@ -474,7 +474,7 @@ Ejemplo:
 | watermark       |            | texto        | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
 | wordWrap        |            | booleano     | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |
 
-#### Layout
+#### Disposición
 
 | Propiedad   | Tipo         | Descripción                                                                                                         | Possible values                                                                                                      |
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -501,13 +501,13 @@ The 4D View Pro [object](Concepts/dt_object.md) stores the whole spreadsheet con
 
 It contains the following properties:
 
-| Propiedad    | Value type   | Descripción                                  |
-| ------------ | ------------ | -------------------------------------------- |
-| version      | Entero largo | Internal component version                   |
-| dateCreation | Timestamp    | Creation date                                |
-| dateModified | Timestamp    | Last modification date                       |
-| meta         | Objeto       | Free contents, reserved for the 4D developer |
-| spreadJS     | Objeto       | Reserved for the 4D View Pro component       |
+| Propiedad    | Tipo de valor | Descripción                                  |
+| ------------ | ------------- | -------------------------------------------- |
+| version      | Entero largo  | Internal component version                   |
+| dateCreation | Timestamp     | Creation date                                |
+| dateModified | Timestamp     | Last modification date                       |
+| meta         | Objeto        | Free contents, reserved for the 4D developer |
+| spreadJS     | Objeto        | Reserved for the 4D View Pro component       |
 
 
 ## 4D View Pro Form Object Variable
@@ -517,14 +517,14 @@ The 4D View Pro form object variable is the [object](Concepts/dt_object.md) vari
 
 It contains the following properties:
 
-| Propiedad              | Value type | Descripción                                                                                                                                                                                                                                                                                                                  |
-| ---------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ViewPro.area           | Texto      | Nombre del área 4D View Pro                                                                                                                                                                                                                                                                                                  |
-| ViewPro.callbacks      | Objeto     | Stores temporary information necessary for commands requiring callbacks such as importing and exporting.                                                                                                                                                                                                                     |
-| ViewPro.commandBuffers | Collection | Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent. |
-| ViewPro.events         | Objeto     | [Event](#form-events) list.                                                                                                                                                                                                                                                                                                  |
-| ViewPro.formulaBar     | Booleano   | Indicates whether or not the formula bar is displayed. Available only for the "toolbar" interface.                                                                                                                                                                                                                           |
-| ViewPro.inited         | Booleano   | Indicates whether or not the 4D View Pro area has been initialized (see [On VP Ready](Events/onVpReady.md) event).                                                                                                                                                                                                           |
-| ViewPro.interface      | Texto      | Specifies the type of user interface:"ribbon", "toolbar", "none".                                                                                                                                                                                                                                                            |
+| Propiedad              | Tipo de valor | Descripción                                                                                                                                                                                                                                                                                                                  |
+| ---------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ViewPro.area           | Texto         | Nombre del área 4D View Pro                                                                                                                                                                                                                                                                                                  |
+| ViewPro.callbacks      | Objeto        | Stores temporary information necessary for commands requiring callbacks such as importing and exporting.                                                                                                                                                                                                                     |
+| ViewPro.commandBuffers | Collection    | Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent. |
+| ViewPro.events         | Objeto        | [Event](#form-events) list.                                                                                                                                                                                                                                                                                                  |
+| ViewPro.formulaBar     | Booleano      | Indicates whether or not the formula bar is displayed. Available only for the "toolbar" interface.                                                                                                                                                                                                                           |
+| ViewPro.inited         | Booleano      | Indicates whether or not the 4D View Pro area has been initialized (see [On VP Ready](Events/onVpReady.md) event).                                                                                                                                                                                                           |
+| ViewPro.interface      | Texto         | Specifies the type of user interface:"ribbon", "toolbar", "none".                                                                                                                                                                                                                                                            |
 
 
