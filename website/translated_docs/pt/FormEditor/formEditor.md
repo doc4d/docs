@@ -233,12 +233,12 @@ Grouping only affects objects in the Form editor. When the form is executed, all
 To group objects:
 
 1.  Select the objects that you want to group.
-2.  Choose **Group** from the Object menu.<p>OR<p> Click the Group button  in the toolbar of the Form editor:<p>![](assets/en/FormEditor/group.png)<p> 4D marks the boundary of the newly grouped objects with handles. No handles mark the boundary of any of the individual objects within the group. Now, when you modify the grouped object, you change all the objects that make up the group.
+2.  Choose **Group** from the Object menu.<p>OU<p> Click the Group button  in the toolbar of the Form editor:<p>![](assets/en/FormEditor/group.png)<p> 4D marks the boundary of the newly grouped objects with handles. No handles mark the boundary of any of the individual objects within the group. Now, when you modify the grouped object, you change all the objects that make up the group.
 
 To ungroup an object:
 
 1.  Select the grouped object that you want to ungroup.
-2.  Choose **Ungroup** from the **Object** menu.<p>OR<p>Click the **Ungroup** button (variant of the **Group** button) in the toolbar of the Form editor.<p>If **Ungroup** is dimmed, this means that the selected object is already separated into its simplest form.<p>4D marks the boundaries of the individual objects with handles.
+2.  Choose **Ungroup** from the **Object** menu.<p>OU<p>Click the **Ungroup** button (variant of the **Group** button) in the toolbar of the Form editor.<p>If **Ungroup** is dimmed, this means that the selected object is already separated into its simplest form.<p>4D marks the boundaries of the individual objects with handles.
 
 
 ### Aligning objects
@@ -269,7 +269,7 @@ To display this dialog box, select the objects you want to align then choose the
 
 *   In the “Left/Right Alignment” and/or “Top/Bottom Alignment” areas, click the icon that corresponds to the alignment you want to perform.<p>The example area displays the results of your selection.
 
-*   To perform an alignment that uses the standard anchor scheme, click **Preview** or **Apply**.<p>In this case 4D uses the object that is the furthest in the alignment’s direction as the anchor and aligns the other objects to that object. For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.<p>OR:<p>To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. In this case, the position of the reference object will not be altered.
+*   To perform an alignment that uses the standard anchor scheme, click **Preview** or **Apply**.<p>In this case 4D uses the object that is the furthest in the alignment’s direction as the anchor and aligns the other objects to that object. For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.<p>OU:<p>To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. In this case, the position of the reference object will not be altered.
 
 You can preview the results of the alignment by clicking the **Preview** button. The objects are then aligned in the Form editor but since the dialog box does not go away, you can still cancel or apply the alignment.
 > This dialog box allows you to align and distribute objects in one operation. For more information on how to distribute objects, refer to [Distributing objects](#distributing-objects).
@@ -303,7 +303,7 @@ To distribute objects with equal spacing:
 
 1.  Select three or more objects and click the desired Distribute tool.
 
-2.  In the toolbar, click on the distribution tool that corresponds to the distribution you want to apply.<p>![](assets/en/FormEditor/distributionTool.png)<p>OR<p>Select a distribution menu command from the **Align** submenu in the **Object** menu or from the context menu of the editor.<p>4D distributes the objects accordingly. Objects are distributed using the distance to their centers and the largest distance between two consecutive objects is used as a reference.
+2.  In the toolbar, click on the distribution tool that corresponds to the distribution you want to apply.<p>![](assets/en/FormEditor/distributionTool.png)<p>OU<p>Select a distribution menu command from the **Align** submenu in the **Object** menu or from the context menu of the editor.<p>4D distributes the objects accordingly. Objects are distributed using the distance to their centers and the largest distance between two consecutive objects is used as a reference.
 
 To distribute objects using the Align and Distribute dialog box:
 
@@ -313,7 +313,7 @@ To distribute objects using the Align and Distribute dialog box:
 
 3.  In the Left/Right Alignment and/or Top/Bottom Alignment areas, click the standard distribution icon: ![](assets/en/FormEditor/horizontalDistribution.png)<p>(Standard horizontal distribution icon)<p>The example area displays the results of your selection.
 
-4.  To perform a distribution that uses the standard scheme, click **Preview** or *Apply*.<p>In this case 4D will perform a standard distribution, so that the objects are set out with an equal amount of space between them.<p>OR:<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). This option acts like a switch. If the Distribute check box is selected, the icons located below it perform a different function:
+4.  To perform a distribution that uses the standard scheme, click **Preview** or *Apply*.<p>In this case 4D will perform a standard distribution, so that the objects are set out with an equal amount of space between them.<p>OU:<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). This option acts like a switch. If the Distribute check box is selected, the icons located below it perform a different function:
 
     *   Horizontally, the icons correspond to the following distributions: evenly with respect to left sides, centers (hor.) and right sides of the selected objects.
     *   Vertically, the icons correspond to the following distributions: evenly with respect to top edges, centers (vert.) and bottom edges of the selected objects.
@@ -695,7 +695,7 @@ Simply select the destination view, right-click, and select **Move to**:
 
 ![](assets/en/FormEditor/moveObject.png)
 
-OR
+OU
 
 Select the destination view of the selection and click **Move to** button at the bottom of the View palette:
 
