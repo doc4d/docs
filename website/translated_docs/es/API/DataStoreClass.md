@@ -946,7 +946,7 @@ End case
 <!-- REF #DataStoreClass.startRequestLog().Params -->
 | Parámetros | Tipo    |    | Descripción                                |
 | ---------- | ------- | -- | ------------------------------------------ |
-| file       | 4D.File | -> | File object                                |
+| file       | 4D.File | -> | Objeto File                                |
 | reqNum     | Integer | -> | Número de peticiones a mantener en memoria |
 <!-- END REF -->
 
