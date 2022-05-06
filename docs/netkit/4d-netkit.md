@@ -13,7 +13,7 @@ title: netkit
 * [OAuth2Provider class](#oauth2provider)
 * [Office365Provider class](#office365provider)
 * [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-with-4d-netkit-in-service-mode)
-* [Tutorial : Authenticate to the Microsoft Graph API in signedIn mode (4D NetKit), then send an email (SMTP Transporter class)](#authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp)
+* (Archived) [Tutorial : Authenticate to the Microsoft Graph API in signedIn mode (4D NetKit), then send an email (SMTP Transporter class)](#authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp)
 
 ## OAuth2Provider
 
@@ -438,6 +438,7 @@ $token:=$oAuth2.getToken()
 
 ### Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP
 
+> This tutorial has been archived. We recommend using the [Office365Provider.mailer.send()](#office365providermailersend) method to send emails.
 #### Objectives 
 
 Establish a connection to the Microsoft Graph API in signedIn mode, and send an email using the [SMTP Transporter class](http://developer.4d.com/docs/fr/API/SMTPTransporterClass.html).
