@@ -564,9 +564,9 @@ You design a list box of the entity selection type, bound to the `Form.child` ex
 
 You display two columns:
 
-| Child name  | Parent's nickname            |
-| ----------- | ---------------------------- |
-| `This.name` | `This.parent.extra.nickname` |
+| Nombre del hijo | Parent's nickname            |
+| --------------- | ---------------------------- |
+| `This.name`     | `This.parent.extra.nickname` |
 
 If you want to sort the list box using the values of the second column, you have to write:
 
