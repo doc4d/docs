@@ -857,7 +857,7 @@
         "title": "Página Mantenimiento"
       },
       "ServerWindow/monitor": {
-        "title": "Monitor Page"
+        "title": "Página Monitor"
       },
       "ServerWindow/overview": {
         "title": "Generalidades"
@@ -884,16 +884,16 @@
         "title": "Compatibility page"
       },
       "settings/compiler": {
-        "title": "Compiler page"
+        "title": "Página Compilador"
       },
       "settings/database": {
-        "title": "Database page"
+        "title": "Página Base de datos"
       },
       "settings/general": {
         "title": "Página General"
       },
       "settings/interface": {
-        "title": "Interface page"
+        "title": "Página interfaz"
       },
       "settings/overview": {
         "title": "Generalidades"
