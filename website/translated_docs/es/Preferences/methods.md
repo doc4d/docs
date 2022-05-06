@@ -109,7 +109,7 @@ Modifying this default value can be useful if your methods contain complex algor
 
 Lets you display the line numbers by default in each window of the Method editor. You can also show/hide line numbers for the current window directly from the Method editor.
 
-#### Show Lists
+#### Mostrar las listas
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
 

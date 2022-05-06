@@ -148,7 +148,7 @@ The filter is of the "starts with" type. For example, entering "Jim" will show "
 
 You can also use the wildcard character (@) to replace one or more starting characters. Por ejemplo:
 
-| Un filtro con | Finds                                              |
+| Un filtro con | Resultados                                         |
 | ------------- | -------------------------------------------------- |
 | Bel           | All values beginning with “Bel”                    |
 | @do           | Todos los valores que contienen "do"               |
