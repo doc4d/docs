@@ -11,7 +11,7 @@ The 4D [project architecture](Project/architecture) is modular. You can provide 
 4D includes by default a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page.
 
 
-| Nombre del componente                                                         | Descripción                                                                                                       | Main Features                                                                                            |
+| Nombre del componente                                                         | Descripción                                                                                                       | Principales funcionalidades                                                                              |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | 4D Labels                                                                     | Internal component required to build label templates                                                              |                                                                                                          |
 | [4D Mobile App Server](https://github.com/4d-go-mobile/4D-Mobile-App-Server)  | Conjunto de clases y funciones utilitarias para autenticar, gestionar sesiones y desarrollar aplicaciones móviles | `.Action`, `.Authentication`, `.PushNotification`, `.WebHandler`, Authentication with email confirmation |
