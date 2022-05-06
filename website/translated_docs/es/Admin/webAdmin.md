@@ -110,7 +110,7 @@ Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in 
 - **With request body** - enabled with body part in request only
 - **With response body** - enabled with body part in response only
 
-#### Access Key
+#### Llave de acceso
 
 Defining an access key is mandatory to unlock access to the `WebAdmin` web server through a URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through a URL to a web administration interface like the [Data Explorer page](dataExplorer.md). An error page is returned in case of connection request:
 

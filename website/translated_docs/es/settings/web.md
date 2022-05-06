@@ -3,7 +3,7 @@ id: web
 title: Página Web
 ---
 
-Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.md). For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
+A través de las pestañas de la página **Web**, puede configurar varios aspectos del servidor web integrado de 4D (seguridad, inicio, conexiones, servicios web, etc.). Para más información sobre el funcionamiento del servidor web de 4D, consulte [Servidor web](../WebServer/webServer.md). Para más información sobre los servicios web de 4D, consulte el capítulo [Publicación y uso de los servicios web](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html).
 
 ## Configuración
 
@@ -85,7 +85,7 @@ This area allows you to configure how the web server will handle user sessions a
 When you select this option (recommended), a user session is managed through a **Session** object. See the [User sessions page](../WebServer/sessions.md#enabling-sessions).
 
 
-#### No sessions
+#### Sin sesiones
 
 When this option is selected, the web server does not provide any specific support for [user sessions](../WebServer/sessions.md). Successive requests from web clients are always independent and no context is maintained on the server.
 
@@ -160,7 +160,7 @@ See [Deprecated Settings](../WebServer/webServerConfig.md#keep-alive-connections
 
 ### Parámetros CORS
 
-#### Enable CORS
+#### Activar CORS
 
 Enables Cross-origin resource sharing (CORS) service. See [Enable CORS Service](../WebServer/webServerConfig.md#enable-cors-service).
 
@@ -243,7 +243,7 @@ The following table lists the fields available for each format (in alphabetical 
 
 > Las fechas y horas son dadas en GMT.
 
-## Log (backup)
+## Historial (periodicidad)
 
 Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
@@ -264,7 +264,7 @@ You use the options on this tab to activate and configure Web services for the 4
 
 For more information about the support of Web Services in 4D, refer to the [Publication and use of Web Services](https://doc.4d.com/What-s-new/4D-Design-Reference-19-R4/Publication-and-use-of-Web-Services.200-5736722.en.html) chapter.
 
-### Server Side
+### Servidor
 
 This area contains various options related to the use of 4D as a Web Services "server" i.e., publishing project methods in the form of Web Services.
 

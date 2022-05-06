@@ -48,7 +48,7 @@ With 4D in remote mode, these files must be located in the local resources folde
 > TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
 
 
-## Character Set
+## Conjunto de caracteres
 
 | Puede ajustarse con           | Nombre                                                            | Comentarios                    |
 | ----------------------------- | ----------------------------------------------------------------- | ------------------------------ |
@@ -303,7 +303,7 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 | ----------------------------- | ---------------------------------------------------------------------------------------- | ----------- |
 | objeto webServer              | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout)                 |             |
 | `WEB SET OPTION`              | `Web inactive process timeout`                                                           |             |
-| Caja de diálogo de parámetros | [Options (I) page/Inactive Process Timeout](../settings/web.md#inactive-process-timeout) | Slider      |
+| Caja de diálogo de parámetros | [Options (I) page/Inactive Process Timeout](../settings/web.md#inactive-process-timeout) | Cursor      |
 
 Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
@@ -368,7 +368,7 @@ Legacy session management enabling status for the 4D web server (deprecated).
 > When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
 
 
-## Log Recording
+## Registro de los logs
 
 | Puede ajustarse con           | Nombre                                               | Comentarios |
 | ----------------------------- | ---------------------------------------------------- | ----------- |
