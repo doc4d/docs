@@ -130,15 +130,15 @@ In `options`, you can pass an object that specifies the following options:
 
 |Property|Type|Description|
 |---------|---|------|
-|mailType|Text|Indicates the Mail type used to send. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
+|mailType|Text|Indicates the Mail type used to send emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
 
 #### Returned object 
 
-`Office365Provider` objects have a `mailer` property with functions and properties related to emails:
+The returned `Office365Provider` object has a `mailer` property used to handle emails:
 |Property|Type|Description|
 |---------|---|------|
 |send()|Function|Sends an email|
-|type|Text|Mail type used to send emails (Read only)|
+|type|Text|Mail type used to send emails (read-only)|
 |userId|Text|User identifier, used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
 
 ### Office365Provider.mailer.send()
@@ -162,14 +162,14 @@ In `email`, pass the email to be sent. Possible types:
     * the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties)
     * the [4D email object format](https://developer.4d.com/docs/en/API/EmailObjectClass.html#email-object), which follows the JMAP specification
 
-The `Office365Provider.mailer.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$message` must be an object: 
+The `Office365Provider.mailer.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties): 
 
 ```4d 
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
-$status:=$Office365.mailer.send($message)
+$status:=$Office365.mailer.send($email)
 ```
 
-> To avoid authentication errors, make sure your application asks for permission to send emails through the Microsoft Graph API. See [Permissions](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions) on Microsoft's documentation website.
+> To avoid authentication errors, make sure your application asks for permission to send emails through the Microsoft Graph API. See [Permissions](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
 
 #### Returned object 
 
@@ -187,7 +187,7 @@ Send an email with an attachment, on behalf of a Microsoft 365 user:
 
 ```4d
 var $oAuth2 : cs.NetKit.OAuth2Provider
-var $token; $param; $message; $status : Object
+var $token; $param; $email; $status : Object
 
 // Set up authentication
 $param:=New object()
@@ -203,13 +203,13 @@ $oAuth2:=New OAuth2 provider($param)
 $token:=$oAuth2.getToken()
 
 // Create the email, specify the sender and the recipient
-$message:=New object()
-$message.from:=New object("emailAddress"; New object("address"; "senderAddress@hotmail.fr")) // Replace with sender's email address
-$message.toRecipients:=New collection(New object("emailAddress"; New object("address"; "recipientAddress@hotmail.fr"))) // Replace with recipient's email address
-$message.body:=New object()
-$message.body.content:="Hello, World!"
-$message.body.contentType:="html"
-$message.subject:="Hello, World!"
+$email:=New object()
+$email.from:=New object("emailAddress"; New object("address"; "senderAddress@hotmail.fr")) // Replace with sender's email
+$email.toRecipients:=New collection(New object("emailAddress"; New object("address"; "recipientAddress@hotmail.fr")))
+$email.body:=New object()
+$email.body.content:="Hello, World!"
+$email.body.contentType:="html"
+$email.subject:="Hello, World!"
 
 // Create a text file and attach it to the email
 var $attachment : Object
@@ -221,11 +221,11 @@ $attachment:=New object
 $attachment["@odata.type"]:="#microsoft.graph.fileAttachment"
 $attachment.name:="attachment.txt"
 $attachment.contentBytes:=$attachmentText
-$message.attachments:=New collection($attachment)
+$email.attachments:=New collection($attachment)
 
 // Send the email
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
-$status:=$Office365.mailer.send($message)
+$status:=$Office365.mailer.send($email)
 ```
 
 ### Office365Provider.user.get()
