@@ -11,7 +11,7 @@ A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accesse
 
 
 
-## Opening sessions
+## Apertura de las sesiones
 
 When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
 
@@ -29,7 +29,7 @@ These principles are illustrated in the following graphics:
 
 > For sessions opened by REST requests, please refer to [Users and sessions](REST/authUsers.md).
 
-### Viewing sessions
+### Visualización de las sesiones
 
 Processes that manage sessions for datastore access are shown in the 4D Server administration window:
 
@@ -53,7 +53,7 @@ ORDA features related to entity locking and transaction are managed at process l
     *   when the session is closed on the server
     *   when the session is killed from the server administration window.
 
-### Closing sessions
+### Cierre de las sesiones
 
 A session is automatically closed by 4D when there has been no activity during its timeout period. The default timeout is 60 mn, but this value can be modified using the *connectionInfo* parameter of the `Open datastore` command.
 
