@@ -337,7 +337,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 You want to define a range object for all of the cells of the current spreadsheet:
 
 ```4d
-$all:=VP All("ViewProArea") // all cells of the current sheet
+$all:=VP All("ViewProArea") // todas las celdas de la hoja actual
 ```
 
 #### Ver también
@@ -445,7 +445,7 @@ You want to define a range object for the following cells (on the current sheet)
 The code would be:
 
 ```4d
-$cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+$cells:=VP Cells("ViewProArea";2;4;2;3) // de C5 a D7
 ```
 
 #### Ver también
@@ -490,7 +490,7 @@ You want to define a range object for the column shown below (on the current spr
 The code would be:
 
 ```4d
- $column:=VP Column("ViewProArea";3) // column D
+ $column:=VP Column("ViewProArea";3) // columna D
 ```
 
 #### Ver también
@@ -1487,10 +1487,10 @@ In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* de
 #### Ejemplo
 
 ```4d
-  //set a formula
-VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
-
-$result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
+  //definir una fórmula
+ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
+ 
+ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 ```
 #### Ver también
 
@@ -1886,7 +1886,7 @@ The following code will retrieve the coordinates of all the cells in the current
 ```4d
 $currentSelection:=VP Get selection("myVPArea")
 
-//returns a range object containing:  
+//devuelve un objeto rango que contiene:
 //$currentSelection.ranges[0].column=5
 //$currentSelection.ranges[0].columnCount=2
 //$currentSelection.ranges[0].row=8
@@ -1970,7 +1970,7 @@ In the following document:
 Get the index of the sheet called "Total first quarter":
 
 ```4d
-$index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
+$index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //devuelve 2
 ```
 
 #### Ver también
@@ -2400,7 +2400,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In *filePath*, pass the path and name of the document to be imported. The following formats are supported :
 
-* 4D View Pro documents (extension ".4vp")
+* Les documents 4D View Pro (extensión ".4vp")
 * Microsoft Excel (extension ".xlsx")
 * text documents (extension ".txt", ".csv", the document must be in utf-8)
 
@@ -2772,7 +2772,7 @@ $font.variant:=vk font variant small caps
 $font.weight:=vk font weight bolder
 
 $cellStyle.font:=VP Object to font($font)
-//$cellStyle.font contains "bolder oblique small-caps 16pt arial"
+//$cellStyle.font contiene "bolder oblique small-caps 16pt arial"
 ```
 
 #### Ver también
@@ -3638,7 +3638,7 @@ $style.foreColor:="red"
 $style.hAlign:=1
 $style.isVerticalText:=True
 $style.borderBottom:=New object("color";"#800080";"style";vk line style thick)
-$style.backgroundImage:=Null //remove a specific attribute
+$style.backgroundImage:=Null //eliminar un atributo específico
 
 VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 ```
