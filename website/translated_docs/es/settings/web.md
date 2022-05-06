@@ -170,10 +170,10 @@ List of allowed hosts and methods for the CORS service. See [CORS Settings](../W
 
 
 
-## Log (type)
+## Log (tipo)
 
 
-### Log Format
+### Formato del historial
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. See [Log Recording](../WebServer/webServerConfig.md#log-recording).
 
