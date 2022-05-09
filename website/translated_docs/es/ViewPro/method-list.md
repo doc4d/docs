@@ -2734,11 +2734,10 @@ VP NEW DOCUMENT("myVPArea")
 
 <!-- REF #_method_.VP Object to font.Params -->
 
-| Parámetros  | Tipo   |    | Descripción                        |
-| ----------- | ------ | -- | ---------------------------------- |
-| font object | Objeto | -> | Objeto fuente                      |
-| Resultado   | Texto  | <- | Cadena de texto corto de la fuente |
-
+| Parámetros | Tipo   |    | Descripción    |
+| ---------- | ------ | -- | -------------- |
+| fontObj    | Objeto | -> | Objeto fuente  |
+| Resultado  | Texto  | <- | Cadena de texto corto de la fuente |
 <!-- END REF -->  
 
 #### Descripción
