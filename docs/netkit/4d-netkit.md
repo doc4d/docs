@@ -11,7 +11,7 @@ title: netkit
 ## Table of contents
 
 * [OAuth2Provider class](#oauth2provider)
-* [Office365Provider class](#office365provider)
+* [Office365 class](#office365provider)
 * [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-in-service-mode)
 * (Archived) [Tutorial : Authenticate to the Microsoft Graph API in signedIn mode (4D NetKit), then send an email (SMTP Transporter class)](#authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp)
 
@@ -97,15 +97,15 @@ When requesting access on behalf of a user ("signedIn" mode) the command opens a
 
 In "signedIn" mode, when `.getToken()` is called, a web server included in 4D NetKit starts automatically on the port specified in the [redirectURI parameter](#description) to intercept the provider's authorization response and display in the browser.
 
-## Office365Provider
+## Office365
 
-The `Office365Provider` class allows you to call the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview#data-and-services-powering-the-microsoft-365-platform) to:
+The `Office365` class allows you to call the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview#data-and-services-powering-the-microsoft-365-platform) to:
 * get information from Office365 applications, such as user information
 * send emails
 
 This can be done after a valid token request (see [OAuth2Provider object](#new-auth2-provider)).
 
-The `Office365Provider` class can be instantiated in two ways: 
+The `Office365` class can be instantiated in two ways: 
 * by calling the `New Office365 provider` method 
 * by calling the `cs.NetKit.Office365.new()` function 
 
@@ -118,11 +118,11 @@ The `Office365Provider` class can be instantiated in two ways:
 |---------|--- |:---:|------|
 |paramObj|cs.NetKit.OAuth2Provider|->| Object of the OAuth2Provider class  |
 |options|Object|->| Additional options |
-|Result|cs.NetKit.Office365|<-| Object of the Office365Provider class|
+|Result|cs.NetKit.Office365|<-| Object of the Office365 class|
 
 #### Description
 
-`New Office365 provider` instantiates an object of the `Office365Provider` class.
+`New Office365 provider` instantiates an object of the `Office365` class.
 
 In `paramObj`, pass an [OAuth2Provider object](#new-auth2-provider).
 
@@ -134,7 +134,7 @@ In `options`, you can pass an object that specifies the following options:
 
 #### Returned object 
 
-The returned `Office365Provider` object has a `mailer` property used to handle emails:
+The returned `Office365` object has a `mail` property used to handle emails:
 |Property|Type|Description|
 |---------|---|------|
 |send()|Function|Sends an email|
@@ -166,7 +166,7 @@ The `Office365.mail.type` property must be compatible with the data type passed 
 
 ```4d 
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
-$status:=$Office365.mailer.send($email)
+$status:=$Office365.mail.send($email)
 ```
 
 > To avoid authentication errors, make sure your application asks for permission to send emails through the Microsoft Graph API. See [Permissions](https://docs.microsoft.com/en-us/graph/api/user-sendmail?view=graph-rest-1.0&tabs=http#permissions).
@@ -180,6 +180,79 @@ The method returns a status object with the following properties:
 |success|Boolean| True if the email is successfully sent|
 |statusText|Text| Status message returned by the server or last error returned by the 4D error stack|
 |errors|Collection| Collection of errors. Not returned if the server returns a `statusText`|
+
+### List of properties for the "Microsoft" mail type object
+
+When you send an email with the "Microsoft" mail type, the available properties for the object you pass to `Office365.mail.send()` are the following:
+
+| *Microsoft Message Property* | *Type* | *Description* |
+|---|---|---|
+| attachment |[attachment](#attachment-object) collection | The fileAttachment and itemAttachment attachments for the message. | 
+| bccRecipients |[recipient](#recipient-object) collection | The Bcc: recipients for the message. | 
+| body |itemBody object| The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body. | 
+| ccRecipients |[recipient](#recipient-object) collection | The Cc: recipients for the message. |  
+| flag |[followupflag](#followupflag-object) object| The flag value that indicates the status, start date, due date, or completion date for the message. | 
+| from |[recipient](#recipient-object) object | The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message. | 
+| id |Text|Unique identifier for the message (note that this value may change if a message is moved or altered)|
+| importance|Text| The importance of the message. The possible values are: low, normal, and high. | 
+| internetMessageHeaders |[internetMessageHeader](#internetmessageheader-object) collection | A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message. Returned only on applying a $select query option. Read-only.|
+| isDeliveryReceiptRequested  |Boolean| Indicates whether a delivery receipt is requested for the message. | 
+| isReadReceiptRequested |Boolean| Indicates whether a read receipt is requested for the message. | 
+| replyTo |[recipient](#recipient-object) collection | The email addresses to use when replying. | 
+| sender |[recipient](#recipient-object) object | The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message. | 
+| subject |Text| The subject of the message.|
+| toRecipients |[recipient](#recipient-object) collection | The To: recipients for the message. | 
+
+#### Attachment object
+
+| Property |  Type | Description |
+|---|---|---|
+|@odata.type|Text|always "#microsoft.graph.fileAttachment"|
+|contentBytes|Text| The base64-encoded contents of the file. |
+|contentId|	Text|	The ID of the attachment in the Exchange store.|
+|contentType |Text|	The content type of the attachment.|
+|id |Text|The attachment ID. (cid)|
+|isInline 	|Boolean |Set to true if this is an inline attachment.|
+|name| 	Text|	The name representing the text that is displayed below the icon representing the embedded attachment.This does not need to be the actual file name.|
+|size|num|The size in bytes of the attachment.|
+
+#### itemBody object
+
+| Property |  Type | Description | Can be null of undefined |
+|---|---|---|---|
+|content|Text|The content of the item.|No|
+|contentType|Text| The type of the content. Possible values are text and html |No|
+
+#### recipient object
+| Property ||  Type | Description | Can be null of undefined |
+|---|---|---|---|---|
+|emailAddress||object||Yes|
+||address|Text|The email address of the person or entity.|No|
+||name|Text| The display name of the person or entity.|Yes|
+
+#### internetMessageHeader object
+| Property |  Type | Description | Can be null of undefined |
+|---|---|---|---|
+|name |	Text|Represents the key in a key-value pair.|No|
+|value|Text|The value in a key-value pair.|No|
+
+#### followupflag object
+| Property |  Type | Description |
+|---|---|---|
+|dueDateTime|dateTime &#124; TimeZone |	The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.|
+|flagStatus|followupFlagStatus|The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.|
+|startDateTime|dateTime &#124; TimeZone | The date and time that the follow-up is to begin.|
+
+#### dateTime and TimeZone 
+
+|Property|Type|Description|
+|---|---|---|
+|dateTime|String|A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).|
+|timeZone|String|Represents a time zone, for example, "Pacific Standard Time". See below for more possible values.|
+
+In general, the timeZone property can be set to any of the time zones currently supported by Windows, as well as the additional time zones supported by the calendar API:
+* https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11
+* https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0#additional-time-zones
 
 #### Example: Create an email with a file attachment and send it
 
@@ -225,12 +298,12 @@ $email.attachments:=New collection($attachment)
 
 // Send the email
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
-$status:=$Office365.mailer.send($email)
+$status:=$Office365.mail.send($email)
 ```
 
-### Office365Provider.user.get()
+### Office365.user.get()
 
-**Office365Provider.user.get**( *id* : Text { ; *select* : Text }) : Object<br/>**Office365Provider.user.get**( *userPrincipalName* : Text { ; *select* : Text }) : Object
+**Office365.user.get**( *id* : Text { ; *select* : Text }) : Object<br/>**Office365.user.get**( *userPrincipalName* : Text { ; *select* : Text }) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
@@ -242,7 +315,7 @@ $status:=$Office365.mailer.send($email)
 
 #### Description
 
-`Office365Provider.user.get()` returns information on the user whose ID matches the *id* parameter, or whose User Principal Name (UPN) matches the *userPrincipalName* parameter. 
+`Office365.user.get()` returns information on the user whose ID matches the *id* parameter, or whose User Principal Name (UPN) matches the *userPrincipalName* parameter. 
 
 > The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, it should correspond to the user's email name.
 
@@ -274,13 +347,13 @@ Otherwise, the object contains the properties specified in the `select` paramete
 
 For more details on user information, see [Microsoft's documentation website](https://docs.microsoft.com/en-us/graph/api/resources/user?view=graph-rest-1.0).
 
-### Office365Provider.user.getCurrent()
+### Office365.user.getCurrent()
 
-**Office365Provider.user.getCurrent**({*select* : Text}) : Object
+**Office365.user.getCurrent**({*select* : Text}) : Object
 
 #### Description
 
-`Office365Provider.user.getCurrent()` returns information on the current user. In this case, it requires a [signed-in user](https://docs.microsoft.com/en-us/graph/auth-v2-user), and therefore a delegated permission.
+`Office365.user.getCurrent()` returns information on the current user. In this case, it requires a [signed-in user](https://docs.microsoft.com/en-us/graph/auth-v2-user), and therefore a delegated permission.
 
 The command returns a `Null` object if the session is not a sign-in session.
 
@@ -307,16 +380,16 @@ $param.scope:="https://graph.microsoft.com/.default"
 
 $oAuth2:=New Oauth2 provider($params) //Creates an OAuth2Provider Object
 
-$Office365:=New Office365 provider($oAuth2) // Creates an Office365Provider object
+$Office365:=New Office365 provider($oAuth2) // Creates an Office365 object
 
 // Return the properties specified in the parameter.
 $userInfo:=$Office365.user.getCurrent("id,userPrincipalName,\
 principalName,displayName,givenName,mail") 
 ```
 
-### Office365Provider.user.list()
+### Office365.user.list()
 
-**Office365Provider.user.list**({*options*: Object}) : Object
+**Office365.user.list**({*options*: Object}) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
@@ -326,7 +399,7 @@ principalName,displayName,givenName,mail")
 
 #### Description
 
-`Office365Provider.user.list()` returns a list of Office365 users. 
+`Office365.user.list()` returns a list of Office365 users. 
 
 In *options*, you can pass an object to specify additional search options. The following table groups the available search options: 
 
@@ -342,7 +415,7 @@ In *options*, you can pass an object to specify additional search options. The f
 
 The returned object holds a collection of users as well as status properties and functions that allow you to navigate between different pages of results. 
 
-By default, each user object in the collection has the [default set of properties listed in the `Office365Provider.user.get()` function](#returned-object). This set of properties can be customized using the `select` parameter.
+By default, each user object in the collection has the [default set of properties listed in the `Office365.user.get()` function](#returned-object). This set of properties can be customized using the `select` parameter.
 
 | Property | Type | Description | 
 |---|---|---|
@@ -352,7 +425,7 @@ By default, each user object in the collection has the [default set of propertie
 | next() |  Function | Function that updates the `users` collection with the next user information page and increases the `page` property by 1. Returns a boolean value: <ul><li>If a next page is successfully loaded, returns `True`</li><li>If no next page is returned, the `users` collection is not updated and `False` is returned</li></ul>  |
 | previous() |  Function | Function that updates the `users` collection with the previous user information page and decreases the `page` property by 1. Returns a boolean value: <ul><li>If a previous page is successfully loaded, returns `True`</li><li>If no previous `page` is returned, the `users` collection is not updated and `False` is returned</li></ul>  |
 | statusText |  Text | Status message returned by the Office 365 server, or last error returned in the 4D error stack |
-| success |  Boolean | `True` if the `Office365Provider.user.list()` operation is successful, `False` otherwise |
+| success |  Boolean | `True` if the `Office365.user.list()` operation is successful, `False` otherwise |
 | users | Collection | Collection of objects with information on users.| 
 
 
@@ -375,7 +448,7 @@ $params.scope:="https://graph.microsoft.com/.default"
 // Create an OAuth2Provider Object
 $oAuth2:=New OAuth2 provider($params) 
 
-// Create an Office365Provider object
+// Create an Office365 object
 $Office365:=New Office365 provider($oAuth2) 
 
 // Return a list with the first 100 users
@@ -436,9 +509,9 @@ $token:=$oAuth2.getToken()
 
 2. Execute the method to establish the connection.
 
-### Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP
+### (Archived) Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP
 
-> This tutorial has been archived. We recommend using the [Office365.mail.send()](#office365providermailersend) method to send emails.
+> This tutorial has been archived. We recommend using the [Office365.mail.send()](#office365providermailsend) method to send emails.
 #### Objectives 
 
 Establish a connection to the Microsoft Graph API in signedIn mode, and send an email using the [SMTP Transporter class](http://developer.4d.com/docs/fr/API/SMTPTransporterClass.html).
