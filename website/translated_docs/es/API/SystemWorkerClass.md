@@ -66,7 +66,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 | Parámetros  | Tipo            |    | Descripción                                                   |
 | ----------- | --------------- |:--:| ------------------------------------------------------------- |
 | commandLine | Texto           | -> | Command line to execute                                       |
-| options     | Objeto          | -> | Worker parameters                                             |
+| options     | Objeto          | -> | Parámetros worker                                             |
 | result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
 <!-- END REF -->
 
