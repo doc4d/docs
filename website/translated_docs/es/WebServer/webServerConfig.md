@@ -135,7 +135,7 @@ Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](.
 | 7     | wdl enable with all body parts | Web HTTP debug log is enabled with body parts in response and request                 |
 
 
-## Default Home page
+## Página de inicio por defecto
 
 | Puede ajustarse con           | Nombre                                                                       | Comentarios                           |
 | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------- |
