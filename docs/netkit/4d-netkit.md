@@ -107,18 +107,18 @@ This can be done after a valid token request (see [OAuth2Provider object](#new-a
 
 The `Office365Provider` class can be instantiated in two ways: 
 * by calling the `New Office365 provider` method 
-* by calling the `cs.NetKit.Office365Provider.new()` function 
+* by calling the `cs.NetKit.Office365.new()` function 
 
 ### **New Office365 provider**
 
-**New Office365 provider**( *paramObj* : Object { ; *options* : Object } ) : cs.NetKit.Office365Provider
+**New Office365 provider**( *paramObj* : Object { ; *options* : Object } ) : cs.NetKit.Office365
 
 #### Parameters 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |paramObj|cs.NetKit.OAuth2Provider|->| Object of the OAuth2Provider class  |
 |options|Object|->| Additional options |
-|Result|cs.NetKit.Office365Provider|<-| Object of the Office365Provider class|
+|Result|cs.NetKit.Office365|<-| Object of the Office365Provider class|
 
 #### Description
 
@@ -141,9 +141,9 @@ The returned `Office365Provider` object has a `mailer` property used to handle e
 |type|Text|Mail type used to send emails (read-only)|
 |userId|Text|User identifier, used to identify the user in Service mode. Can be the `id` or the `userPrincipalName`|
 
-### Office365Provider.mailer.send()
+### Office365.mail.send()
 
-**Office365Provider.mailer.send**( *email* : Text ) : Object<br/>**Office365Provider.mailer.send**( *email* : Object ) : Object<br/>**Office365Provider.mailer.send**( *email* : Blob ) : Object
+**Office365.mail.send**( *email* : Text ) : Object<br/>**Office365.mail.send**( *email* : Object ) : Object<br/>**Office365.mail.send**( *email* : Blob ) : Object
 
 #### Parameters 
 |Parameter|Type||Description|
@@ -153,7 +153,7 @@ The returned `Office365Provider` object has a `mailer` property used to handle e
 
 #### Description
 
-`Office365Provider.mailer.send()` sends an email using the MIME or JSON formats.
+`Office365.mail.send()` sends an email using the MIME or JSON formats.
 
 In `email`, pass the email to be sent. Possible types:
 
@@ -162,7 +162,7 @@ In `email`, pass the email to be sent. Possible types:
     * the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties)
     * the [4D email object format](https://developer.4d.com/docs/en/API/EmailObjectClass.html#email-object), which follows the JMAP specification
 
-The `Office365Provider.mailer.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties): 
+The `Office365.mail.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties): 
 
 ```4d 
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
@@ -295,7 +295,7 @@ To retrieve information from the current user:
 ```4d
 var $userInfo; $params : Object
 var $oAuth2 : cs.NetKit.OAuth2Provider
-var $Office365 : cs.NetKit.Office365Provider
+var $Office365 : cs.NetKit.Office365
 
 // Set up parameters: 
 $params:=New object
@@ -360,7 +360,7 @@ By default, each user object in the collection has the [default set of propertie
 
 ```4d
 var $oAuth2 : cs.NetKit.OAuth2Provider
-$Office365 : cs.NetKit.Office365Provider
+$Office365 : cs.NetKit.Office365
 $userInfo; $params; $userList; $userList2; $userList3; $userList4 : Object
 var $col : Collection
 
@@ -438,7 +438,7 @@ $token:=$oAuth2.getToken()
 
 ### Authenticate to the Microsoft Graph API in signedIn mode and send an email with SMTP
 
-> This tutorial has been archived. We recommend using the [Office365Provider.mailer.send()](#office365providermailersend) method to send emails.
+> This tutorial has been archived. We recommend using the [Office365.mail.send()](#office365providermailersend) method to send emails.
 #### Objectives 
 
 Establish a connection to the Microsoft Graph API in signedIn mode, and send an email using the [SMTP Transporter class](http://developer.4d.com/docs/fr/API/SMTPTransporterClass.html).
