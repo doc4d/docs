@@ -7,7 +7,7 @@ title: Formulas and Functions
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
-### Entering formulas
+### Entrada de las fórmulas
 
 To enter a formula in a 4D View Pro area:
 
@@ -112,13 +112,13 @@ A convenient, fast and accurate way to specify an absolute reference is to name 
 
 The following table shows the effect of the different notations:
 
-| Ejemplo   | Type of reference | Descripción                                                                                                                                    |
-| --------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| C5        | Relativo          | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                   |
-| $C$5      | Absoluto          | Reference is absolute. Will always refer to cell C5 no matter where it is used.                                                                |
-| $C5       | Mixed             | Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.           |
-| C$5       | Mixed             | Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used            |
-| Cell name | Absoluto          | Reference is absolute. Will always refer to the [named cell or range](method-list.md#vp-add-range-name) no matter where the reference is used. |
+| Ejemplo   | Tipo de referencia | Descripción                                                                                                                                    |
+| --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| C5        | Relativo           | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                   |
+| $C$5      | Absoluto           | Reference is absolute. Will always refer to cell C5 no matter where it is used.                                                                |
+| $C5       | Mixed              | Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.           |
+| C$5       | Mixed              | Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used            |
+| Cell name | Absoluto           | Reference is absolute. Will always refer to the [named cell or range](method-list.md#vp-add-range-name) no matter where the reference is used. |
 
 
 
