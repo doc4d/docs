@@ -2833,7 +2833,7 @@ VP NEW DOCUMENT("myVPArea")
 
 | Parámetros  | Tipo   |    | Descripción                        |
 | ----------- | ------ | -- | ---------------------------------- |
-| font object | Objeto | -> | Objeto fuente                      |
+| fontObj | Objeto | -> | Objeto fuente                      |
 | Resultado   | Texto  | <- | Cadena de texto corto de la fuente |
 
 <!-- END REF -->  
