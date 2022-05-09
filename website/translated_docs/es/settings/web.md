@@ -43,11 +43,11 @@ Allows you to modify the TCP/IP port number used by the Web server for secured H
 
 ### Rutas
 
-#### Default HTML Root
+#### Raíz HTML por defecto
 
 Define the default location of the Web site files and to indicate the hierarchical level on the disk above which the files will not be accessible. See [Root Folder](../WebServer/webServerConfig.md#root-folder).
 
-#### Default Home Page
+#### Página de inicio por defecto
 
 Designate a default home page for the Web server. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
 
