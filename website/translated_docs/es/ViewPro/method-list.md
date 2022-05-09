@@ -64,7 +64,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 | Parámetros | Tipo   |    | Descripción                   |
 | ---------- | ------ | -- | ----------------------------- |
-| rangeObj   | Texto  | -> | Range object                  |
+| rangeObj   | Texto  | -> | Objeto rango                  |
 | name       | Texto  | -> | Name for the fomula           |
 | options    | Objeto | -> | Options for the named formula |
 <!-- END REF -->  
@@ -111,7 +111,7 @@ VP ADD RANGE NAME($range;"Total1")
 
 | Parámetros | Tipo  |    | Descripción  |
 | ---------- | ----- | -- | ------------ |
-| rangeObj   | Texto | -> | Range object |
+| rangeObj   | Texto | -> | Objeto rango |
 <!-- END REF -->  
 
 #### Descripción
@@ -194,7 +194,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 <!-- END REF --> 
 
 #### Descripción
@@ -242,7 +242,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 | Parámetros | Tipo    |    | Descripción                            |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name      |
-| styleName  | Texto   | -> | Name of style                          |
+| styleName  | Texto   | -> | Nombre del estilo                      |
 | styleObj   | Objeto  | -> | Object defining attribute settings     |
 | scope      | Integer | -> | Target scope (default = current sheet) |
 <!-- END REF -->  
@@ -410,10 +410,10 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 | Parámetros  | Tipo    |    | Descripción                            |
 | ----------- | ------- | -- | -------------------------------------- |
 | vpAreaName  | Texto   | -> | 4D View Pro area form object name      |
-| column      | Integer | -> | Column index                           |
-| row         | Integer | -> | Row index                              |
+| column      | Integer | -> | Índice de la columna                   |
+| row         | Integer | -> | Índice de la línea                     |
 | columnCount | Integer | -> | Number of columns                      |
-| rowCount    | Integer | -> | Number of rows                         |
+| rowCount    | Integer | -> | Número de líneas                       |
 | sheet       | Integer | -> | Sheet index (current sheet if omitted) |
 | Resultado   | Objeto  | <- | Range object of cells                  |
 <!-- END REF -->  
@@ -462,7 +462,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // de C5 a D7
 | Parámetros  | Tipo    |    | Descripción                            |
 | ----------- | ------- | -- | -------------------------------------- |
 | vpAreaName  | Texto   | -> | 4D View Pro area form object name      |
-| column      | Integer | -> | Column index                           |
+| column      | Integer | -> | Índice de la columna                   |
 | columnCount | Integer | -> | Number of columns                      |
 | sheet       | Integer | -> | Sheet index (current sheet if omitted) |
 | Resultado   | Objeto  | <- | Range object of cells                  |
@@ -507,7 +507,7 @@ The code would be:
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 
@@ -546,8 +546,8 @@ Selecting the columns and running this code:
 
 | Parámetros    | Tipo   |    | Descripción                        |
 | ------------- | ------ | -- | ---------------------------------- |
-| rangeObj      | Objeto | -> | Range object                       |
-| otherRangeObj | Objeto | -> | Range object                       |
+| rangeObj      | Objeto | -> | Objeto rango                       |
+| otherRangeObj | Objeto | -> | Objeto rango                       |
 | Resultado     | Objeto | <- | Object containing a combined range |
 
 <!-- END REF -->  
@@ -622,7 +622,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 | Parámetros | Tipo   |    | Descripción                                       |
 | ---------- | ------ | -- | ------------------------------------------------- |
 | vpObject   | Objeto | -> | 4D View Pro object containing the area to convert |
-| rangeObj   | Objeto | -> | Range object                                      |
+| rangeObj   | Objeto | -> | Objeto rango                                      |
 | Resultado  | Objeto | <- | SVG picture of the area                           |	
 
 
@@ -650,7 +650,7 @@ Document contents are converted with respect to their viewing attributes, includ
 *   Fusión de celdas
 *   Imágenes
 *   Altura de líneas
-*   Column width
+*   Ancho de columnas
 *   Hidden columns / rows.
 > > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
@@ -690,7 +690,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 | Parámetros | Tipo   |    | Descripción                               |
 | ---------- | ------ | -- | ----------------------------------------- |
-| rangeObj   | Objeto | -> | Range object                              |
+| rangeObj   | Objeto | -> | Objeto rango                              |
 | options    | Objeto | -> | Additional options                        |
 | Resultado  | Objeto | <- | Object returned. Contains the copied data |
 <!-- END REF -->  
@@ -744,7 +744,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 <!-- END REF -->  
 
 #### Descripción
@@ -783,7 +783,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 <!-- END REF -->  
 
 #### Descripción
@@ -826,7 +826,7 @@ use the following code:
 | ---------- | ------ | -- | --------------------------------- |
 | vpAreaName | Texto  | -> | 4D View Pro area form object name |
 | filePath   | Texto  | -> | Pathname of the document          |
-| paramObj   | Objeto | -> | Export options                    |
+| paramObj   | Objeto | -> | Opciones de exportación           |
 <!-- END REF -->  
 
 #### Descripción
@@ -858,7 +858,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | includeFormatInfo  | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
 | sheetIndex         | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions         | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | \<customProperty> | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Notes about Excel format**:
@@ -891,7 +891,7 @@ When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` comma
 | $4       |               | objeto   | An object returned by the method with a status message |
 |          | .success      | booleano | True if export with success, False otherwise.          |
 |          | .errorCode    | integer  | Código de error. May be returned by 4D or JavaScript.  |
-|          | .errorMessage | texto    | Error message. May be returned by 4D or JavaScript.    |
+|          | .errorMessage | texto    | Mensaje de error. May be returned by 4D or JavaScript. |
 
 
 #### Ejemplo 1
@@ -1040,11 +1040,11 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 | Parámetros      | Tipo   |    | Descripción                           |
 | --------------- | ------ | -- | ------------------------------------- |
-| rangeObj        | Objeto | -> | Range object                          |
-| searchValue     | Texto  | -> | Search value                          |
+| rangeObj        | Objeto | -> | Objeto rango                          |
+| searchValue     | Texto  | -> | Valor de búsqueda                     |
 | searchCondition | Objeto | -> | Object containing search condition(s) |
 | replaceValue    | Texto  | -> | Replacement value                     |
-| Resultado       | Objeto | <- | Range object                          |
+| Resultado       | Objeto | <- | Objeto rango                          |
 <!-- END REF -->  
 
 #### Descripción
@@ -1169,7 +1169,7 @@ The returned object contains defined font attributes as properties. For more inf
 
 #### Ejemplo 1
 
-This code:
+Este código:
 
 ```4d
 $font:=VP Font to object("16pt arial")
@@ -1252,7 +1252,7 @@ $activeCell:=VP Get active cell("myVPArea")
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 | Resultado  | Objeto | <- | Objeto style |
 <!-- END REF -->  
 
@@ -1273,7 +1273,7 @@ To get the details about the style in the selected cell (B2):
 
 ![](assets/en/ViewPro/cmd_vpGetCellStyle.PNG)
 
-This code:
+Este código:
 
 ```4d
 $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
@@ -1309,7 +1309,7 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 | Parámetros | Tipo       |    | Descripción                     |
 | ---------- | ---------- | -- | ------------------------------- |
-| rangeObj   | Objeto     | -> | Range object                    |
+| rangeObj   | Objeto     | -> | Objeto rango                    |
 | Resultado  | Collection | <- | Collection of column properties |
 <!-- END REF -->  
 
@@ -1443,7 +1443,7 @@ To get the details about the default style for this document:
 
 ![](assets/en/ViewPro/cmd_vpGetDefaultStyle.PNG)
 
-This code:
+Este código:
 
 ```4d
 $defaultStyle:=VP Get default style("myDoc")
@@ -1473,7 +1473,7 @@ will return this information in the *$defaultStyle* object:
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 | Resultado  | Texto  | <- | Formula      |
 <!-- END REF -->  
 
@@ -1558,7 +1558,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 
 | Parámetros | Tipo       |    | Descripción                  |
 | ---------- | ---------- | -- | ---------------------------- |
-| rangeObj   | Objeto     | -> | Range object                 |
+| rangeObj   | Objeto     | -> | Objeto rango                 |
 | Resultado  | Collection | <- | Collection of formula values |
 <!-- END REF -->  
 
@@ -1719,7 +1719,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet (cou
 
 #### Ejemplo
 
-This code:
+Este código:
 
 ```4d
 $pinfo:=VP Get print info("ViewProArea")
@@ -1785,7 +1785,7 @@ zoomFactor:1
 
 | Parámetros | Tipo       |    | Descripción                  |
 | ---------- | ---------- | -- | ---------------------------- |
-| rangeObj   | Objeto     | -> | Range object                 |
+| rangeObj   | Objeto     | -> | Objeto rango                 |
 | Resultado  | Collection | <- | Collection of row properties |
 <!-- END REF -->  
 
@@ -2103,7 +2103,7 @@ The following code checks if preview lines are displayed or hidden in the docume
 
 | Parámetros | Tipo   |    | Descripción                               |
 | ---------- | ------ | -- | ----------------------------------------- |
-| rangeObj   | Objeto | -> | Range object                              |
+| rangeObj   | Objeto | -> | Objeto rango                              |
 | Resultado  | Objeto | <- | Object of cell spans in the defined range |
 <!-- END REF -->  
 
@@ -2142,7 +2142,7 @@ VP SET CELL STYLE($range;$style)
 | Parámetros | Tipo    |    | Descripción                            |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name      |
-| styleName  | Texto   | -> | Name of style                          |
+| styleName  | Texto   | -> | Nombre del estilo                      |
 | scope      | Integer | -> | Target scope (default = current sheet) |
 | Resultado  | Objeto  | <- | Style sheet object                     |
 <!-- END REF -->  
@@ -2249,7 +2249,7 @@ In this case, the current sheet uses two style objects:
 
 | Parámetros | Tipo   |    | Descripción                    |
 | ---------- | ------ | -- | ------------------------------ |
-| rangeObj   | Objeto | -> | Range object                   |
+| rangeObj   | Objeto | -> | Objeto rango                   |
 | Resultado  | Objeto | <- | Object containing a cell value |
 <!-- END REF -->  
 
@@ -2299,7 +2299,7 @@ End if
 
 | Parámetros | Tipo       |    | Descripción          |
 | ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Objeto     | -> | Range object         |
+| rangeObj   | Objeto     | -> | Objeto rango         |
 | Resultado  | Collection | <- | Collection of values |
 <!-- END REF -->  
 
@@ -2515,7 +2515,7 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 
@@ -2536,7 +2536,7 @@ To insert three columns before the second column:
 VP INSERT COLUMNS(VP Column("ViewProArea";1;3))
 ```
 
-The results is:
+El resultado es:
 
 ![](assets/en/ViewPro/cmd_vpInsertColumns.PNG)
 
@@ -2553,7 +2553,7 @@ The results is:
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 
@@ -2574,7 +2574,7 @@ To insert 3 rows before the first row:
 VP INSERT ROWS(VP Row("ViewProArea";0;3))
 ```
 
-The results is:
+El resultado es:
 
 ![](assets/en/ViewPro/cmd_vpInsertRows.PNG)
 
@@ -2737,8 +2737,7 @@ VP NEW DOCUMENT("myVPArea")
 | Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
 | fontObj    | Objeto | -> | Objeto fuente  |
-| Resultado  | Texto  | <- | Font shorthand |
-
+| Resultado  | Texto  | <- | Cadena de texto corto de la fuente |
 <!-- END REF -->  
 
 #### Descripción
@@ -2747,13 +2746,13 @@ The `VP Font to object` utility command<!-- REF #_method_.VP Font to object. Sum
 
 In *fontObj*, pass an object containing the font properties. Se soportan las siguientes propiedades:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                              | Possible values                                                                                                                                                                                                                                                                                                                                                   | Mandatory |
-| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| family    | texto | Specifies the font.                                                                                                                                                      | any standard or generic font family. Ej. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                                        | Sí        |
-| size      | texto | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Sí        |
-| style     | texto | The style of the font.                                                                                                                                                   | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                              | No        |
-| variant   | texto | Specifies font in small capital letters.                                                                                                                                 | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                        | No        |
-| weight    | texto | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                          | No        |
+| Propiedad | Tipo  | Descripción                                                                                                                                                              | Possible values                                                                                                                                                                                                                                                                                                                                                   | Obligatorio |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| family    | texto | Specifies the font.                                                                                                                                                      | any standard or generic font family. Ej. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                                        | Sí          |
+| size      | texto | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Sí          |
+| style     | texto | The style of the font.                                                                                                                                                   | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                              | No          |
+| variant   | texto | Specifies font in small capital letters.                                                                                                                                 | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                        | No          |
+| weight    | texto | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                          | No          |
 
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command.
@@ -3011,7 +3010,7 @@ VP REMOVE SHEET("ViewProArea";2)
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 #### Descripción
@@ -3160,8 +3159,8 @@ See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 | Parámetros | Tipo    |    | Descripción                            |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name      |
-| row        | Integer | -> | Row index                              |
-| rowCount   | Integer | -> | Number of rows                         |
+| row        | Integer | -> | Índice de la línea                     |
+| rowCount   | Integer | -> | Número de líneas                       |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted) |
 | Resultado  | Objeto  | <- | Range object of row(s)                 |
 
@@ -3206,7 +3205,7 @@ $row:=VP Row("ViewProArea";9) // línea 10
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 
@@ -3381,7 +3380,7 @@ $result:=VP Run offscreen area($o)
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 
 <!-- END REF -->  
 
@@ -3420,7 +3419,7 @@ VP SET ACTIVE CELL($activeCell)
 <!-- END REF -->  
 
 
-> **Compatibility**
+> **Compatibilidad**
 > 
 > For greater flexiblity, it is recommended to use the [`VP SET CUSTOM FUNCTIONS`](#vp-set-custom-functions) command which allows you to designate 4D formulas that can be called from 4D View Pro areas. As soon as `VP SET CUSTOM FUNCTIONS` is called, `VP SET ALLOWED METHODS` calls are ignored. 4D View Pro also supports 4D's generic `SET ALLOWED METHODS` command if neither `VP SET CUSTOM FUNCTIONS` nor `VP SET ALLOWED METHODS` are called, however using the generic command is not recommended.
 
@@ -3491,7 +3490,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 | Parámetros | Tipo     |    | Descripción          |
 | ---------- | -------- | -- | -------------------- |
-| rangeObj   | Objeto   | -> | Range object         |
+| rangeObj   | Objeto   | -> | Objeto rango         |
 | boolValue  | Booleano | -> | Boolean value to set |
 
 <!-- END REF -->  
@@ -3524,7 +3523,7 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 | Parámetros     | Tipo   |    | Descripción                         |
 | -------------- | ------ | -- | ----------------------------------- |
-| rangeObj       | Objeto | -> | Range object                        |
+| rangeObj       | Objeto | -> | Objeto rango                        |
 | borderStyleObj | Objeto | -> | Object containing border line style |
 | borderPosObj   | Objeto | -> | Object containing border placement  |
 
@@ -3538,10 +3537,10 @@ In *rangeObj*, pass a range of cells where the border style will be applied. If 
 
 The *borderStyleObj* parameter allows you to define the style for the lines of the border. The *borderStyleObj* supports the following properties:
 
-| Propiedad | Tipo    | Descripción                                       | Possible values                                                                                                                                                                                                                                                                                                                                                              |
-| --------- | ------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| color     | texto   | Defines the color of the border. Default = black. | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                           |
-| style     | Integer | Defines the style of the border. Default = empty. | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
+| Propiedad | Tipo    | Descripción                                           | Possible values                                                                                                                                                                                                                                                                                                                                                              |
+| --------- | ------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| color     | texto   | Defines the color of the border. Por defecto = black. | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                           |
+| style     | Integer | Defines the style of the border. Por defecto = empty. | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
 
 
 You can define the position of the *borderStyleObj* (i.e., where the line is applied) with the *borderPosObj*:
@@ -3606,7 +3605,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 | Parámetros | Tipo   |    | Descripción  |
 | ---------- | ------ | -- | ------------ |
-| rangeObj   | Objeto | -> | Range object |
+| rangeObj   | Objeto | -> | Objeto rango |
 | styleObj   | Objeto | -> | Objeto style |
 
 <!-- END REF -->  
@@ -3660,7 +3659,7 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 | Parámetros  | Tipo   |    | Descripción                         |
 | ----------- | ------ | -- | ----------------------------------- |
-| rangeObj    | Objeto | -> | Range object                        |
+| rangeObj    | Objeto | -> | Objeto rango                        |
 | propertyObj | Objeto | -> | Object containing column properties |
 
 <!-- END REF -->  
@@ -3817,7 +3816,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 |                          | summary    |            | Texto                 | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                          | minParams  |            | Número                | Minimum number of parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                          | maxParams  |            | Número                | Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-> **WARNING**
+> **ATENCIÓN**
 > 
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
@@ -3872,10 +3871,10 @@ End case
 
 | Parámetros    | Tipo   |    | Descripción       |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Range object      |
+| rangeObj      | Objeto | -> | Objeto rango      |
 | dateValue     | Fecha  | -> | Date value to set |
 | timeValue     | Hora   | -> | Time value to set |
-| formatPattern | Texto  | -> | Format of value   |
+| formatPattern | Texto  | -> | Formato del valor |
 
 <!-- END REF -->  
 
@@ -3915,9 +3914,9 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 | Parámetros    | Tipo   |    | Descripción       |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Range object      |
+| rangeObj      | Objeto | -> | Objeto rango      |
 | dateValue     | Fecha  | -> | Date value to set |
-| formatPattern | Texto  | -> | Format of value   |
+| formatPattern | Texto  | -> | Formato del valor |
 
 <!-- END REF -->  
 
@@ -4009,9 +4008,9 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 | Parámetros    | Tipo    |    | Descripción                             |
 | ------------- | ------- | -- | --------------------------------------- |
-| rangeObj      | Objeto  | -> | Range object                            |
+| rangeObj      | Objeto  | -> | Objeto rango                            |
 | campo         | Puntero | -> | Reference to field in virtual structure |
-| formatPattern | Texto   | -> | Format of field                         |
+| formatPattern | Texto   | -> | Formato del campo                       |
 
 <!-- END REF -->  
 
@@ -4042,9 +4041,9 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 | Parámetros    | Tipo   |    | Descripción          |
 | ------------- | ------ | -- | -------------------- |
-| rangeObj      | Objeto | -> | Range object         |
+| rangeObj      | Objeto | -> | Objeto rango         |
 | formula       | Texto  | -> | Formula or 4D method |
-| formatPattern | Texto  | -> | Format of field      |
+| formatPattern | Texto  | -> | Formato del campo    |
 
 <!-- END REF -->  
 
@@ -4207,9 +4206,9 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 | Parámetros    | Tipo   |    | Descripción         |
 | ------------- | ------ | -- | ------------------- |
-| rangeObj      | Objeto | -> | Range object        |
+| rangeObj      | Objeto | -> | Objeto rango        |
 | numberValue   | Número | -> | Number value to set |
-| formatPattern | Texto  | -> | Format of value     |
+| formatPattern | Texto  | -> | Formato del valor   |
 
 <!-- END REF -->  
 
@@ -4337,7 +4336,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the rows
 | pageBreak       | booleano | True to insert a page break before the first row of the range, else false |
 | visible         | booleano | True if the row is visible, else false                                    |
 | redimensionable | booleano | True if the row can be resized, else false                                |
-| header          | texto    | Row header text                                                           |
+| header          | texto    | Texto del encabezado de la línea                                          |
 
 
 #### Ejemplo
@@ -4368,7 +4367,7 @@ VP SET ROW ATTRIBUTES($row;$properties)
 | Parámetros | Tipo    |    | Descripción                            |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area form object name      |
-| rowCount   | Integer | -> | Number of rows                         |
+| rowCount   | Integer | -> | Número de líneas                       |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted) |
 
 <!-- END REF -->  
@@ -4697,9 +4696,9 @@ With a page break:
 
 | Parámetros    | Tipo   |    | Descripción       |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Range object      |
+| rangeObj      | Objeto | -> | Objeto rango      |
 | textValue     | Texto  | -> | Text value to set |
-| formatPattern | Texto  | -> | Format of value   |
+| formatPattern | Texto  | -> | Formato del valor |
 
 <!-- END REF -->  
 
@@ -4732,9 +4731,9 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 | Parámetros    | Tipo   |    | Descripción       |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Range object      |
+| rangeObj      | Objeto | -> | Objeto rango      |
 | timeValue     | Texto  | -> | Time value to set |
-| formatPattern | Texto  | -> | Format of value   |
+| formatPattern | Texto  | -> | Formato del valor |
 
 <!-- END REF -->  
 
@@ -4770,7 +4769,7 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 | Parámetros | Tipo   |    | Descripción                    |
 | ---------- | ------ | -- | ------------------------------ |
-| rangeObj   | Objeto | -> | Range object                   |
+| rangeObj   | Objeto | -> | Objeto rango                   |
 | valueObj   | Objeto | -> | Cell values and format options |
 
 <!-- END REF -->  
@@ -4835,7 +4834,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 | Parámetros | Tipo       |    | Descripción          |
 | ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Objeto     | -> | Range object         |
+| rangeObj   | Objeto     | -> | Objeto rango         |
 | valuesCol  | Collection | -> | Collection of values |
 
 <!-- END REF -->  
@@ -4921,7 +4920,7 @@ The following table lists the available workbook options:
 | autoFitType                           | number                  | Content is formatted to fit in cells, or cells and headers. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> The content autofits cells and headers</td></tr></table>                                                                                                                                             |
 | backColor                             | cadena                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundImage is set.                                                          |
 | backgroundImage                       | string / picture / file | Background image for the area.                                                                                                                                                                                                                         |
-| backgroundImageLayout                 | number                  | How the background image is displayed. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Fills the area.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Displayed with its original aspect ratio.</td></tr></table>                                                                                                                                                                  |
+| backgroundImageLayout                 | number                  | How the background image is displayed. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Llena el área.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Displayed with its original aspect ratio.</td></tr></table>                                                                                                                                                                  |
 | calcOnDemand                          | booleano                | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
 | columnResizeMode                      | number                  | Resize mode for columns. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                                |
 | copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                    |
@@ -4988,7 +4987,7 @@ VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 
 | Parámetros | Tipo    |    | Descripción                             |
 | ---------- | ------- | -- | --------------------------------------- |
-| rangeObj   | Objeto  | -> | Range object                            |
+| rangeObj   | Objeto  | -> | Objeto rango                            |
 | vPos       | Integer | -> | Vertical view position of cell or row   |
 | hPos       | Integer | -> | Horizontal view position of cell or row |
 

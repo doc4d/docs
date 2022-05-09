@@ -115,7 +115,7 @@ La carpeta *MyComponent.4dbase* contiene:
 -   A *Resources* folder - any associated Resources are automatically copied into this folder. Any other components and/or plugins folders are not copied (a component cannot use plug-ins or other components).
 
 
-## Application page
+## Página Application
 
 Esta pestaña le permite crear una versión autónoma y monopuesto de su aplicación:
 
