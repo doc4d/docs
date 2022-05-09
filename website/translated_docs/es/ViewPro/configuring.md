@@ -51,6 +51,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | Settings | Sheet presentation reference    |       X        |                   |
 
 
+
 ## Eventos formulario
 
 The following form events are available in the Property List for 4D View Pro areas.
