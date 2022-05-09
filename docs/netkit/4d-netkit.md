@@ -130,7 +130,7 @@ In `options`, you can pass an object that specifies the following options:
 
 |Property|Type|Description|
 |---------|---|------|
-|mailType|Text|Indicates the Mail type used to send emails. Possible types are: <ul><li>MIME</li><li>JMAP</li><li>Microsoft (default)</li></ul>|
+|mailType|Text|Indicates the Mail type used to send emails. Possible types are: <ul><li>"MIME"</li><li>"JMAP"</li><li>"Microsoft" (default)</li></ul>|
 
 #### Returned object 
 
