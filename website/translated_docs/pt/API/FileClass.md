@@ -454,7 +454,7 @@ ALERT($info.Copyright)
 <!--REF #FileClass.moveTo().Params -->
 | Parameter         | Type      |    | Description                  |
 | ----------------- | --------- | -- | ---------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder           |
+| destinationFolder | 4D.Folder | -> | Pasta de destino             |
 | newName           | Texto     | -> | Full name for the moved file |
 | Result            | 4D.File   | <- | Moved file                   |
 <!-- END REF -->
@@ -464,7 +464,7 @@ ALERT($info.Copyright)
 
 The `.moveTo()` function <!-- REF #FileClass.moveTo().Summary -->moves or renames the `File` object into the specified *destinationFolder*<!-- END REF -->.
 
-The *destinationFolder* must exist on disk, otherwise an error is generated.
+A *destinationFolder* deve existir em disco, senão um erro é gerado.
 
 By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
