@@ -56,7 +56,7 @@ Spreadsheets are composed of rows and columns. A number is associated with each 
 
 *   To deselect cells, simply click anywhere within the spreadsheet.
 
-### Entering data
+### Entrada de datos
 
 Double-clicking on a cell allows passing into input mode in the relevant cell. If the cell is not empty, the insertion cursor is placed after the content of the cell.
 
@@ -140,7 +140,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 *   area - The name of the 4D View Pro area
 *   ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
-| Propiedad |                   | Tipo      | Descripción                                                         | Available for                                      |
+| Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                    |
 | --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------- |
 | area      |                   | texto     | 4D View Pro area form object name                                   | always available                                   |
 | ranges    |                   | colección | Collection of range(s)                                              | always available                                   |
@@ -149,7 +149,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 |           | \[ ].row         | number    | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
 |           | \[ ].rowCount    | number    | Row count                                                           | celdas, líneas                                     |
 |           | \[ ].column      | number    | Column index (counting begins at 0)                                 | cell, cells, column, columns                       |
-|           | \[ ].columnCount | number    | Column count                                                        | cells, columns                                     |
+|           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
 
 
 

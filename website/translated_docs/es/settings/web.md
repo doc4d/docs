@@ -22,7 +22,7 @@ Indicates whether or not the Web server will accept non-secure connections. See 
 
 Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerConfig.md#http-port).
 
-#### IP Address
+#### Dirección IP
 
 IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
 
@@ -170,10 +170,10 @@ List of allowed hosts and methods for the CORS service. See [CORS Settings](../W
 
 
 
-## Log (type)
+## Log (tipo)
 
 
-### Log Format
+### Formato del historial
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. See [Log Recording](../WebServer/webServerConfig.md#log-recording).
 
@@ -285,7 +285,7 @@ This area contains various options related to the use of 4D as a Web Services "c
 
 Esta página contiene las opciones utilizadas para activar y controlar las funcionalidades web avanzadas, como el servidor REST.
 
-### Publishing
+### Publicación
 
 #### Expose as REST server
 
