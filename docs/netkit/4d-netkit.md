@@ -159,7 +159,7 @@ In `email`, pass the email to be sent. Possible types:
 
 * Text or Blob: the email is sent using the MIME format
 * Object: the email is sent using the JSON format, in accordance with either: 
-    * the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties)
+    * the [Microsoft message resource type](#list-of-properties-for-the-"microsoft"-mail-type-object)
     * the [4D email object format](https://developer.4d.com/docs/en/API/EmailObjectClass.html#email-object), which follows the JMAP specification
 
 The `Office365.mail.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties): 
@@ -185,7 +185,7 @@ The method returns a status object with the following properties:
 
 When you send an email with the "Microsoft" mail type, the available properties for the object you pass to `Office365.mail.send()` are the following:
 
-| *Microsoft Message Property* | *Type* | *Description* |
+| Microsoft Message Property | Type | Description |
 |---|---|---|
 | attachment |[attachment](#attachment-object) collection | The fileAttachment and itemAttachment attachments for the message. | 
 | bccRecipients |[recipient](#recipient-object) collection | The Bcc: recipients for the message. | 
