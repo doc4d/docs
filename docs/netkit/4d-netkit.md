@@ -192,9 +192,9 @@ When you send an email with the "Microsoft" mail type, the available properties 
 | body |itemBody object| The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body. | 
 | ccRecipients |[recipient](#recipient-object) collection | The Cc: recipients for the message. |  
 | flag |[followupflag](#followupflag-object) object| The flag value that indicates the status, start date, due date, or completion date for the message. | 
-| from |[recipient](#recipient-object) object | The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message. | 
+| from |[recipient](#recipient-object) object | The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used.| 
 | id |Text|Unique identifier for the message (note that this value may change if a message is moved or altered)|
-| importance|Text| The importance of the message. The possible values are: low, normal, and high. | 
+| importance|Text| The importance of the message. The possible values are: `low`, `normal`, and `high`. | 
 | internetMessageHeaders |[internetMessageHeader](#internetmessageheader-object) collection | A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message. Returned only on applying a $select query option. Read-only.|
 | isDeliveryReceiptRequested  |Boolean| Indicates whether a delivery receipt is requested for the message. | 
 | isReadReceiptRequested |Boolean| Indicates whether a read receipt is requested for the message. | 
