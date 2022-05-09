@@ -5,7 +5,7 @@ title: On Close Box
 
 | Code | Can be called by | Definition                              |
 | ---- | ---------------- | --------------------------------------- |
-| 22   | Form             | The window’s close box has been clicked |
+| 22   | Formulário       | The window’s close box has been clicked |
 
 
 ## Description
