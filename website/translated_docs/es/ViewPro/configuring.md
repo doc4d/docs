@@ -40,15 +40,15 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Pestaña  | Acciones                        | Ribbon Interface | Toolbar Interface |
-| -------- | ------------------------------- |:----------------:|:-----------------:|
-| File     | File manipulation               |        X         |                   |
-| Inicio   | Text appearance                 |        X         |         X         |
-| Insertar | Add items                       |        X         |         X         |
-| Fórmulas | Formula calculation and library |        X         |         X         |
-| Datos    | Data manipulation               |        X         |         X         |
-| Mostrar  | Visual presentation             |        X         |         X         |
-| Settings | Sheet presentation reference    |        X         |                   |
+| Pestaña  | Acciones                        | Interfaz Cinta | Toolbar Interface |
+| -------- | ------------------------------- |:--------------:|:-----------------:|
+| File     | File manipulation               |       X        |                   |
+| Inicio   | Text appearance                 |       X        |         X         |
+| Insertar | Add items                       |       X        |         X         |
+| Fórmulas | Formula calculation and library |       X        |         X         |
+| Datos    | Data manipulation               |       X        |         X         |
+| Mostrar  | Visual presentation             |       X        |         X         |
+| Settings | Sheet presentation reference    |       X        |                   |
 
 
 
@@ -77,7 +77,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 *   [VP SET SHEET OPTIONS](method-list.md#vp-set-sheet-options)
 *   [VP Get sheet options](method-list.md#vp-get-sheet-options)
 
-### Sheet appearance
+### Apariencia de la hoja
 
 | Propiedad            |                        | Tipo         | Descripción                                                                                                                                                                                                                                                                                             |
 | -------------------- | ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -100,7 +100,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 |                      | top                    | entero largo | The offset top of sheet from host.                                                                                                                                                                                                                                                                      |
 > All properties are optional.
 
-### Sheet protection
+### Protección de la hoja
 
 To lock the whole sheet, you only need to set the *isProtected* property to **true**. You can then unlock cells individually by setting the [locked](#layout) cell style property.
 
@@ -109,8 +109,8 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 | ----------------- | ------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | isProtected       |                          | booleano | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                              |
 | protectionOptions |                          | objeto   | A value that indicates the elements that you want users to be able to change. If null : the protectionOptions parameter is reset. |
-|                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True by default.                                                    |
-|                   | allowSelectUnlockedCells | booleano | Specifies whether the user can select unlocked cells, optional. True by default.                                                  |
+|                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True por defecto.                                                   |
+|                   | allowSelectUnlockedCells | booleano | Specifies whether the user can select unlocked cells, optional. True por defecto.                                                 |
 |                   | allowSort                | booleano | Specifies whether the user can sort ranges, optional. False by default.                                                           |
 |                   | allowFilter              | booleano | Specifies whether the user can filter ranges, optional. False by default.                                                         |
 |                   | allowEditObjects         | booleano | Specifies whether the user can edit floating objects, optional. False by default.                                                 |
@@ -206,7 +206,7 @@ To create your own date and time patterns, in your current localization, you can
 |       | m                                  | Month number without leading zero              | 1                  |
 |       | mm                                 | Month number with leading zero                 | 01                 |
 |       | mmm                                | Month name, short                              | Jan                |
-|       | mmmm                               | Month name, long                               | January            |
+|       | mmmm                               | Nombre del mes, long                           | January            |
 |       | d                                  | Day number without leading zero                | 1                  |
 |       | dd                                 | Day number with leading zero                   | 01                 |
 |       | ddd                                | Day of week, short                             | Tue                |
@@ -253,14 +253,14 @@ In addition to the special characters and codes described in the previous sectio
 
 
 
-## Print Attributes
+## Atributos de impresión
 
 4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
 
 *   [VP SET PRINT INFO](method-list.md#vp-set-print-info)
 *   [VP Get print info](method-list.md#vp-get-print-info)
 
-### Columns / Rows
+### Columnas / Líneas
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
@@ -304,9 +304,9 @@ The following special characters allow the automatic addition or formatting of i
 | Caracter | Descripción                      | Ejemplo                                                               | Resultado                                         |
 | -------- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
 | &        | Escape character                 | (see examples below)                                                  |                                                   |
-| P        | Current page                     | printInfo.headerLeft:="This is page &P."                              | This is page 5.|                                  |
+| P        | Página actual                    | printInfo.headerLeft:="This is page &P."                              | Esta es la página 5.|                             |
 | N        | Conteo de páginas                | printInfo.headerLeft:="There are &N pages."                           | There are 10 pages.                               |
-| D        | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | It is 2015/6/19.                                  |
+| D        | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | Es 2015/6/19.                                     |
 | T        | Hora actual                      | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
 | G        | Imagen                           | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
 | S        | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                               | ~~This is text.~~                                 |
@@ -316,7 +316,7 @@ The following special characters allow the automatic addition or formatting of i
 | "        | Font prefix                      | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
 | K        | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">This is text</span>.      |
 | F        | Workbook name                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
-| A        | Spreadsheet name                 | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
+| A        | Nombre de la hoja de cálculo     | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
 
 ### Márgenes
 
@@ -352,7 +352,7 @@ Page attributes are used to specify general document print settings.
 | firstPageNumber | entero largo | The page number to print on the first page.<p>Default value = 1                                                                                                             |
 | pageOrder       | entero largo | The order pages are printed. Available values: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                    |
 | pageRange       | texto        | The range of pages for printing                                                                                                                                                                     |
-| qualityFactor   | entero largo | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Default value = 2</p>                    |
+| qualityFactor   | entero largo | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Por defecto = 2</p>                    |
 | useMax          | booleano     | Only columns and rows with data are printed.<p>Default value = true</p>                                                                                                                               |
 | zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Default value = 1</p>                                                                                                                          |
 
@@ -450,13 +450,13 @@ Ejemplo:
 
 #### Bordes
 
-| Propiedad                                                                  |       | Tipo         | Descripción                                                                    | Possible values                                                                                                                                                                                                                                                                                                                                                  |
-| -------------------------------------------------------------------------- | ----- | ------------ | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | objeto       | Defines the corresponding border line                                          |                                                                                                                                                                                                                                                                                                                                                                  |
-|                                                                            | color | texto        | Defines the color of the border. Default = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
-|                                                                            | style | entero largo | Defines the style of the border. Default = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
+| Propiedad                                                                  |       | Tipo         | Descripción                                                                        | Possible values                                                                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------------------------- | ----- | ------------ | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | objeto       | Defines the corresponding border line                                              |                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                            | color | texto        | Defines the color of the border. Por defecto = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
+|                                                                            | style | entero largo | Defines the style of the border. Por defecto = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
 
-#### Fonts and text
+#### Fuentes y texto
 
 | Propiedad       |            | Tipo         | Descripción                                                                                                                                                                                                                                                                                                                                                          | Possible values                                                                                                                                                                                                                             |
 | --------------- | ---------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -469,7 +469,7 @@ Ejemplo:
 |                 | foreColor  | texto        | Defines the color of the foreground. Optional property.                                                                                                                                                                                                                                                                                                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                          |
 |                 | font       | texto        | Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.                                                                                                                                                                            |                                                                                                                                                                                                                                             |
 | textDecoration  |            | entero largo | Specifies the decoration added to text.                                                                                                                                                                                                                                                                                                                              | `vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`                                                                          |
-| textIndent      |            | entero largo | Defines the unit of text indention. 1 = 8 pixels                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                             |
+| textIndent      |            | entero largo | Defines the unit of text indention. 1 = 8 píxeles                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                             |
 | textOrientation |            | entero largo | Defines the rotation angle of the text in a cell. Number between -90 and 90                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                             |
 | watermark       |            | texto        | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
 | wordWrap        |            | booleano     | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |

@@ -3,7 +3,7 @@ id: formulas
 title: Formulas and Functions
 ---
    
-## Using formulas
+## Utilización de las fórmulas
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
@@ -48,7 +48,7 @@ All formulas have operands and operators:
 | [Fecha](Concepts/dt_date.md)       | 10/24/2017                                         | + (date + number of days -> date)<br>+ (date + time -> date + time of day)<br>- (date - number of days -> date)<br>- (date - date -> number of days between the two)                                                            |
 | [Hora](Concepts/dt_time.md)        | 10:12:10                                           | Duration operators:<p>+ (addition)<br>- (subtraction)<br>* (duration * number -> duration)<br>/ (duration / number -> duration)                                                                        |
 | [Cadena](Concepts/dt_string.md)    | 'Sophie' or "Sophie"                               | & (concatenation)                                                                                                                                                                                                                                 |
-| [Booleano](Concepts/dt_boolean.md) | TRUE or FALSE                                      | -                                                                                                                                                                                                                                                 |
+| [Booleano](Concepts/dt_boolean.md) | TRUE o FALSE                                       | -                                                                                                                                                                                                                                                 |
 
 
 ### Comparison operators
@@ -58,7 +58,7 @@ The following operators can be used with two operands of the same type:
 | Operador | Comparación       |
 | -------- | ----------------- |
 | =        | igual a           |
-| <>       | different than    |
+| <>       | es diferente de   |
 | >        | mayor que         |
 | <        | menor que         |
 | >=       | mayor o igual que |
@@ -131,7 +131,7 @@ Spreadsheet functions are preset formulas used to calculate cell values. When yo
 See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spreadjs/docs/v14/online/FormulaFunctions.html) for details and examples.
 
 
-## 4D functions
+## Funciones 4D
 
 4D View Pro allows you to define and call **4D custom functions**, which execute [4D formulas](API/FunctionClass.md). Using 4D custom functions extends the possibilities of your 4D View Pro documents and allows powerful interactions with the 4D database.
 
@@ -274,7 +274,7 @@ VP SET CUSTOM FUNCTIONS("ViewProArea"; $o)
 ![](assets/en/ViewPro/params.PNG)
 
 
-## Compatibility
+## Compatibilidad
 
 Alternate solutions are available to declare fields or methods as functions in your 4D View Pro areas. These solutions are maintained for compatibility reasons and can be used in specific cases. However, using the [`VP SET CUSTOM FUNCTIONS`](method-list.md#vp-set-custom-functions) method is recommended.
 
