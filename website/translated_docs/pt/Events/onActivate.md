@@ -5,7 +5,7 @@ title: On Activate
 
 | Code | Can be called by | Definition                                                                               |
 | ---- | ---------------- | ---------------------------------------------------------------------------------------- |
-| 11   | Form             | The form's window becomes the frontmost window or the subform's container gets the focus |
+| 11   | Formulário       | The form's window becomes the frontmost window or the subform's container gets the focus |
 
 
 ## Description
