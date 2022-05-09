@@ -21,7 +21,7 @@ title: Directory Class
 
 #### Description
 
-The `.creationDate` property returns <!-- REF #directory.creationDate.Summary -->the creation date of the folder<!-- END REF -->.
+A propriedade `.creationDate` devolve <!-- REF #directory.creationDate.Summary -->a data de criação da pasta<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -45,7 +45,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.creationTime` property returns <!-- REF #directory.creationTime.Summary -->the creation time of the folder<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+A propriedade `.creationTime` devolve <!-- REF #directory.creationTime.Summary -->a hora de criação da pasta<!-- END REF --> (expressada como um número de segundos que começa em 00:00).
 
 Essa propriedade é**apenas leitura**. 
 
@@ -69,7 +69,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.exists` property returns <!-- REF #directory.exists.Summary -->true if the folder exists on disk<!-- END REF -->, and false otherwise.
+A propriedade `.exists` devolve <!-- REF #directory.exists.Summary -->true se a pasta existir no disco<!-- END REF -->, e falso em caso contrário.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -94,7 +94,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.extension` property <!-- REF #directory.extension.Summary -->returns the extension of the folder name (if any)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the folder name does not have an extension.
+A propriedade `.extension` <!-- REF #directory.extension.Summary -->devolve a extensão do nome da pasta (se houver)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the folder name does not have an extension.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -118,7 +118,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.fullName` property <!-- REF #directory.fullName.Summary -->returns the full name of the folder, including its extension (if any)<!-- END REF -->.
+A propriedade `.fullName` <!-- REF #directory.fullName.Summary -->devolve o nome completo da pasta, incluindo sua extensão (se houver)<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -142,7 +142,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.hidden` property returns <!-- REF #directory.hidden.Summary --> true if the folder is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
+A propriedade `.hidden` devolve <!-- REF #directory.hidden.Summary --> true se a pasta existir no disco ao nível do sistema<!-- END REF -->, e falso em caso contrário.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -167,7 +167,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.isAlias` property returns <!-- REF #directory.isAlias.Summary -->always **false** for a `Folder` object<!-- END REF -->.
+A propriedade `.isAlias` retorna <!-- REF #directory.isAlias.Summary -->sempre**false** para um objeto `Folder`<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -190,7 +190,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.isFile` property returns <!-- REF #directory.isFile.Summary -->always **false** for a folder<!-- END REF -->.
+A propriedade `.isFile` devolve <!-- REF #directory.isFile.Summary -->sempre **false** para uma pasta<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -213,7 +213,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.isFolder` property returns <!-- REF #directory.isFolder.Summary -->always **true** for a folder<!-- END REF -->.
+A propriedade `.isFolder` devolve <!-- REF #directory.isFolder.Summary -->sempre **false** para uma pasta<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -236,7 +236,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. Otherwise, it returns false.
+A propriedade `.isPackage` devolve <!-- REF #directory.isPackage.Summary -->true se a pasta for um pacote em macOS (e existir no disco)<!-- END REF -->. Otherwise, it returns false.
 
 On Windows, `.isPackage` always returns **false**.
 
@@ -262,7 +262,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.modificationDate` property returns <!-- REF #directory.modificationDate.Summary --> the date of the folder's last modification<!-- END REF -->.
+A propriedade `.modificationDate` devolve <!-- REF #directory.modificationDate.Summary --> a data da última modificação da pasta<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -286,7 +286,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.modificationTime` property returns <!-- REF #directory.modificationTime.Summary -->the time of the folder's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+A propriedade `.modifficationTime` devolve <!-- REF #directory.modificationTime.Summary -->a hora de úlltima modificação da pasta<!-- END REF --> (expressada como um número de segundos que começa em 00:00).
 
 Essa propriedade é**apenas leitura**. 
 
@@ -311,7 +311,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.name` property returns <!-- REF #directory.name.Summary --> the name of the folder, without extension (if any)<!-- END REF -->.
+A propriedade `.name` devolve <!-- REF #directory.name.Summary --> o nome da pasta, sem extensão (se houver)<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -334,7 +334,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.original` property returns <!-- REF #directory.original.Summary -->the same Folder object as the folder<!-- END REF -->.
+A propriedade `.original` devolve <!-- REF #directory.original.Summary -->o mesmo objeto Pasta que a Pasta<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 > This property is available on folders to allow generic code to process folders or files.
@@ -359,7 +359,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+A propriedade `.parent` devolve <!-- REF #directory.parent.Summary -->o objeto pasta pai da pasta<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
 
 If the folder does not have a parent (root), the null value is returned.
 
@@ -385,7 +385,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+A propriedade `.path` devolve <!-- REF #directory.path.Summary -->a rota POSIX da pasta<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -408,7 +408,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Description
 
-The `.platformPath` property returns <!-- REF #directory.platformPath.Summary -->the path of the folder expressed with the current platform syntax<!-- END REF -->.
+A propriedade `.platformPath` devolve <!-- REF #directory.platformPath.Summary -->a rota da pasta expressa com a sintaxe da plataforma atual<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -434,22 +434,22 @@ Essa propriedade é**apenas leitura**.
 **.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D Folder<!-- END REF -->
 
 <!-- REF #directory.copyTo().Params -->
-| Parameter         | Type      |    | Description                                 |
-| ----------------- | --------- |:--:| ------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Texto     | -> | Name for the copy                           |
-| overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
-| Result            | 4D.Folder | <- | Copied file or folder                       |
+| Parameter         | Type      |    | Description                                            |
+| ----------------- | --------- |:--:| ------------------------------------------------------ |
+| destinationFolder | 4D.Folder | -> | Pasta de destino                                       |
+| newName           | Texto     | -> | Nome para a copia                                      |
+| overwrite         | Integer   | -> | `fk overwrite` para substituir os elementos existentes |
+| Result            | 4D.Folder | <- | Pasta ou arquivo copiado                               |
 <!-- END REF -->
 
 
 #### Description
 
-The `.copyTo()` function <!-- REF #directory.copyTo().Summary -->copies the `Folder` object into the specified *destinationFolder*<!-- END REF -->.
+A função `.copyTo()` <!-- REF #directory.copyTo().Summary -->copia o objeto `Folder` na *destinationFolder* especificado><!-- END REF -->.
 
-The *destinationFolder* must exist on disk, otherwise an error is generated.
+A *destinationFolder* deve existir em disco, senão um erro é gerado.
 
-By default, the folder is copied with the name of the original folder. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
+Como padrão, a pasta é copiada com o nome da pasta original. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
 If a folder with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
