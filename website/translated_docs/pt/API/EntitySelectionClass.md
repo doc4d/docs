@@ -53,7 +53,7 @@ Entity selections can be created from existing selections using various function
 <!-- REF #_command_.Create entity selection.Params -->
 | Parameter | Type               |    | Description                                                                                       |
 | --------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------- |
-| dsTable   | Table              | -> | Tabela do banco de dados 4D cuja seleção atual se utilizará para construir a seleção de entidades |
+| dsTable   | Tabela             | -> | Tabela do banco de dados 4D cuja seleção atual se utilizará para construir a seleção de entidades |
 | settings  | Objeto             | -> | Build option: context                                                                             |
 | Result    | 4D.EntitySelection | <- | Seleção de entidades que coincidem com a classe de dados relacionada com a tabela dada            |
 <!-- END REF -->
