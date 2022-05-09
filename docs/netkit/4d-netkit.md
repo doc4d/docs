@@ -214,7 +214,7 @@ When you send an email with the "Microsoft" mail type, the available properties 
 |id |Text|The attachment ID. (cid)|
 |isInline 	|Boolean |Set to true if this is an inline attachment.|
 |name| 	Text|	The name representing the text that is displayed below the icon representing the embedded attachment.This does not need to be the actual file name.|
-|size|num|The size in bytes of the attachment.|
+|size|Number|The size in bytes of the attachment.|
 
 #### itemBody object
 
@@ -239,16 +239,16 @@ When you send an email with the "Microsoft" mail type, the available properties 
 #### followupflag object
 | Property |  Type | Description |
 |---|---|---|
-|dueDateTime|dateTime &#124; TimeZone |	The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.|
+|dueDateTime|[dateTime &#124; TimeZone](#datetime-and-timezone)|	The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.|
 |flagStatus|followupFlagStatus|The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.|
-|startDateTime|dateTime &#124; TimeZone | The date and time that the follow-up is to begin.|
+|startDateTime|[dateTime &#124; TimeZone](#datetime-and-timezone)| The date and time that the follow-up is to begin.|
 
 #### dateTime and TimeZone 
 
 |Property|Type|Description|
 |---|---|---|
-|dateTime|String|A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).|
-|timeZone|String|Represents a time zone, for example, "Pacific Standard Time". See below for more possible values.|
+|dateTime|Text|A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).|
+|timeZone|Text|Represents a time zone, for example, "Pacific Standard Time". See below for more possible values.|
 
 In general, the timeZone property can be set to any of the time zones currently supported by Windows, as well as the additional time zones supported by the calendar API:
 * https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11
