@@ -412,7 +412,7 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 | vpAreaName  | Texto   | -> | 4D View Pro area form object name      |
 | column      | Integer | -> | Índice de la columna                   |
 | row         | Integer | -> | Índice de la línea                     |
-| columnCount | Integer | -> | Number of columns                      |
+| columnCount | Integer | -> | Número de columnas                     |
 | rowCount    | Integer | -> | Número de líneas                       |
 | sheet       | Integer | -> | Sheet index (current sheet if omitted) |
 | Resultado   | Objeto  | <- | Range object of cells                  |
@@ -463,7 +463,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // de C5 a D7
 | ----------- | ------- | -- | -------------------------------------- |
 | vpAreaName  | Texto   | -> | 4D View Pro area form object name      |
 | column      | Integer | -> | Índice de la columna                   |
-| columnCount | Integer | -> | Number of columns                      |
+| columnCount | Integer | -> | Número de columnas                     |
 | sheet       | Integer | -> | Sheet index (current sheet if omitted) |
 | Resultado   | Objeto  | <- | Range object of cells                  |
 <!-- END REF -->  
@@ -860,7 +860,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | includeBindingSource | Booleano | 4DVP únicamente. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                                      |
 | sheetIndex           | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions           | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Delimitador de columna. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | \<customProperty>   | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Notes about Excel format**:
@@ -1046,7 +1046,7 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 | rangeObj        | Objeto | -> | Objeto rango                          |
 | searchValue     | Texto  | -> | Valor de búsqueda                     |
 | searchCondition | Objeto | -> | Object containing search condition(s) |
-| replaceValue    | Texto  | -> | Replacement value                     |
+| replaceValue    | Texto  | -> | Valor de reemplazo                    |
 | Resultado       | Objeto | <- | Objeto rango                          |
 <!-- END REF -->  
 
@@ -2516,7 +2516,7 @@ The optional *paramObj* parameter allows you to define properties for the import
 | csvOptions |                 | objeto | options for csv import                                                                                                                                                                                                                                   |
 |            | range           | objeto | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
 |            | rowDelimiter    | texto  | Delimitador de línea. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                   |
-|            | columnDelimiter | texto  | Column delimiter. Por defecto: ","                                                                                                                                                                                                                       |
+|            | columnDelimiter | texto  | Delimitador de columna. Por defecto: ","                                                                                                                                                                                                                 |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
@@ -3353,14 +3353,14 @@ The `VP Run offscreen area` command<!-- REF #_method_.VP Run offscreen area. Sum
 
 In *parameters* object, pass any of the following optional properties. These properties will be available through the `This` command within the `onEvent` method and reference the instance:
 
-| Propiedad          | Tipo             | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area               | texto            | The name of the offscreen area. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| onEvent            | object (formula) | A callback method that will be launched when the offscreen area is ready. It can be either:<p><p><li>an `onEvent` function of a class, or</li><li>a `Formula` object</li><p><p>By default, the callback method is called on the [`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), or [`On Timer`](Events/onTimer.md) events. <p><p>The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
-| autoQuit           | booleano         | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.<p><p>If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| timeout            | number           | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. If set to 0, no limitation is applied. Default value: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| result             | mixto            | Result of the processing (if any)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| \<customProperty> | mixto            | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Propiedad          | Tipo             | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------ | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| area               | texto            | The name of the offscreen area. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| onEvent            | object (formula) | A callback method that will be launched when the offscreen area is ready. Puede ser:<p><p><li>an `onEvent` function of a class, or</li><li>a `Formula` object</li><p><p>By default, the callback method is called on the [`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), or [`On Timer`](Events/onTimer.md) events. <p><p>The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
+| autoQuit           | booleano         | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.<p><p>If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| timeout            | number           | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. If set to 0, no limitation is applied. Valor por defecto: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| result             | mixto            | Result of the processing (if any)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| \<customProperty> | mixto            | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 The following property is automatically added by the command if necessary:
@@ -3863,7 +3863,7 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 | Parámetros  | Tipo    |    | Descripción                            |
 | ----------- | ------- | -- | -------------------------------------- |
 | vpAreaName  | Texto   | -> | 4D View Pro area form object name      |
-| columnCount | Integer | -> | Number of columns                      |
+| columnCount | Integer | -> | Número de columnas                     |
 | sheet       | Integer | -> | Sheet index (current sheet if omitted) |
 
 <!-- END REF -->  
@@ -4160,12 +4160,12 @@ Here's the result once the columns are generated:
 
 <!-- REF #_method_.VP SET DATE TIME VALUE.Params -->
 
-| Parámetros    | Tipo   |    | Descripción       |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Objeto rango      |
-| dateValue     | Fecha  | -> | Date value to set |
-| timeValue     | Hora   | -> | Time value to set |
-| formatPattern | Texto  | -> | Formato del valor |
+| Parámetros    | Tipo   |    | Descripción          |
+| ------------- | ------ | -- | -------------------- |
+| rangeObj      | Objeto | -> | Objeto rango         |
+| dateValue     | Fecha  | -> | Valor date a definir |
+| timeValue     | Hora   | -> | Valor hora a definir |
+| formatPattern | Texto  | -> | Formato del valor    |
 
 <!-- END REF -->  
 
@@ -4203,11 +4203,11 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 <!-- REF #_method_.VP SET DATE VALUE.Params -->
 
-| Parámetros    | Tipo   |    | Descripción       |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Objeto rango      |
-| dateValue     | Fecha  | -> | Date value to set |
-| formatPattern | Texto  | -> | Formato del valor |
+| Parámetros    | Tipo   |    | Descripción          |
+| ------------- | ------ | -- | -------------------- |
+| rangeObj      | Objeto | -> | Objeto rango         |
+| dateValue     | Fecha  | -> | Valor date a definir |
+| formatPattern | Texto  | -> | Formato del valor    |
 
 <!-- END REF -->  
 
@@ -4985,11 +4985,11 @@ With a page break:
 
 <!-- REF #_method_.VP SET TEXT VALUE.Params -->
 
-| Parámetros    | Tipo   |    | Descripción       |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Objeto rango      |
-| textValue     | Texto  | -> | Text value to set |
-| formatPattern | Texto  | -> | Formato del valor |
+| Parámetros    | Tipo   |    | Descripción           |
+| ------------- | ------ | -- | --------------------- |
+| rangeObj      | Objeto | -> | Objeto rango          |
+| textValue     | Texto  | -> | Valor texto a definir |
+| formatPattern | Texto  | -> | Formato del valor     |
 
 <!-- END REF -->  
 
@@ -5020,11 +5020,11 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 <!-- REF #_method_.VP SET TIME VALUE.Params -->
 
-| Parámetros    | Tipo   |    | Descripción       |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | Objeto | -> | Objeto rango      |
-| timeValue     | Texto  | -> | Time value to set |
-| formatPattern | Texto  | -> | Formato del valor |
+| Parámetros    | Tipo   |    | Descripción          |
+| ------------- | ------ | -- | -------------------- |
+| rangeObj      | Objeto | -> | Objeto rango         |
+| timeValue     | Texto  | -> | Valor hora a definir |
+| formatPattern | Texto  | -> | Formato del valor    |
 
 <!-- END REF -->  
 
