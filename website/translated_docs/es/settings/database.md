@@ -3,7 +3,7 @@ id: database
 title: Página Base de datos
 ---
 
-## Data storage page
+## Página Almacenamiento de datos
 
 You use this page to configure data storage on disk for the 4D database.
 
