@@ -150,7 +150,7 @@ Una vez seleccionada la carpeta, se muestra su ruta completa y, si realmente con
 
 > El número de versión de 4D Volume Desktop debe coincidir con el número de versión de 4D Developer Edition. Por ejemplo, si utiliza 4D Developer v18, debe seleccionar un 4D Volume Desktop v18.
 
-#### Data linking mode
+#### Modo de enlace de datos
 
 Esta opción permite elegir el modo de enlace entre la aplicación fusionada y el archivo de datos local. Hay dos modos de enlazar disponibles:
 
@@ -280,7 +280,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
-#### Data linking mode
+#### Modo de enlace de datos
 
 Esta opción permite elegir el modo de enlace entre la aplicación fusionada y el archivo de datos local. Hay dos modos de enlazar disponibles:
 
