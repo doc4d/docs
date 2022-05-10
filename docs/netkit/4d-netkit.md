@@ -12,6 +12,8 @@ title: netkit
 
 * [OAuth2Provider class](#oauth2provider)
 * [Office365 class](#office365provider)
+    * [Sending emails](#office365mailsend)
+    * [Getting information on users](#office365userget)
 * [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-in-service-mode)
 * (Archived) [Tutorial : Authenticate to the Microsoft Graph API in signedIn mode (4D NetKit), then send an email (SMTP Transporter class)](#authenticate-to-the-microsoft-graph-api-in-signedin-mode-and-send-an-email-with-smtp)
 
@@ -95,7 +97,7 @@ If the token has expired:
 
 When requesting access on behalf of a user ("signedIn" mode) the command opens a web browser to request authorization.
 
-In "signedIn" mode, when `.getToken()` is called, a web server included in 4D NetKit starts automatically on the port specified in the [redirectURI parameter](#description) to intercept the provider's authorization response and display in the browser.
+In "signedIn" mode, when `.getToken()` is called, a web server included in 4D NetKit starts automatically on the port specified in the [redirectURI parameter](#description) to intercept the provider's authorization response and display it in the browser.
 
 ## Office365
 
@@ -103,7 +105,7 @@ The `Office365` class allows you to call the [Microsoft Graph API](https://docs.
 * get information from Office365 applications, such as user information
 * send emails
 
-This can be done after a valid token request (see [OAuth2Provider object](#new-auth2-provider)).
+This can be done after a valid token request (see [OAuth2Provider object](#oauth2provider)).
 
 The `Office365` class can be instantiated in two ways: 
 * by calling the `New Office365 provider` method 
@@ -204,7 +206,6 @@ When you send an email with the "Microsoft" mail type, the available properties 
 | toRecipients |[recipient](#recipient-object) collection | The To: recipients for the message. | 
 
 #### Attachment object
-
 | Property |  Type | Description |
 |---|---|---|
 |@odata.type|Text|always "#microsoft.graph.fileAttachment"|
