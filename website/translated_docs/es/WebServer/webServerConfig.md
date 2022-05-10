@@ -187,7 +187,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 Indicates whether or not the web server will accept non-secure connections.
 
 
-## Enable HTTPS
+## Activar HTTPS
 
 | Puede ajustarse con           | Nombre                                               | Comentarios |
 | ----------------------------- | ---------------------------------------------------- | ----------- |
