@@ -185,9 +185,9 @@ The method returns a status object with the following properties:
 
 ### "Microsoft" mail object properties
 
-When you send an email with the "Microsoft" mail type, the available properties for the object you pass to `Office365.mail.send()` are the following:
+When you send an email with the "Microsoft" mail type, you must pass an object to `Office365.mail.send()`. The available properties for that object are:
 
-| Microsoft Message Property | Type | Description |
+| Property | Type | Description |
 |---|---|---|
 | attachment |[attachment](#attachment-object) collection | The attachments for the email. | 
 | bccRecipients |[recipient](#recipient-object) collection | The Bcc: recipients for the message. | 
