@@ -43,7 +43,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | Pestaña  | Acciones                        | Interfaz Cinta | Toolbar Interface |
 | -------- | ------------------------------- |:--------------:|:-----------------:|
 | File     | File manipulation               |       X        |                   |
-| Inicio   | Text appearance                 |       X        |         X         |
+| Inicio   | Apariencia del texto            |       X        |         X         |
 | Insertar | Add items                       |       X        |         X         |
 | Fórmulas | Formula calculation and library |       X        |         X         |
 | Datos    | Data manipulation               |       X        |         X         |
@@ -200,30 +200,30 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
 
 
-|       | Code<br>(not case-sensitive) | Descripción                                    | Ejemplo            |
-| ----- | ---------------------------------- | ---------------------------------------------- | ------------------ |
-| Fecha |                                    |                                                | (January 1, 2019)  |
-|       | m                                  | Month number without leading zero              | 1                  |
-|       | mm                                 | Month number with leading zero                 | 01                 |
-|       | mmm                                | Month name, short                              | Jan                |
-|       | mmmm                               | Nombre del mes, long                           | January            |
-|       | d                                  | Day number without leading zero                | 1                  |
-|       | dd                                 | Day number with leading zero                   | 01                 |
-|       | ddd                                | Day of week, short                             | Tue                |
-|       | dddd                               | Day of week, long                              | Tuesday            |
-|       | yy                                 | Year, short                                    | 19                 |
-|       | yyyy                               | Año, formato largo                             | 2019               |
-| Hora  |                                    |                                                | (2:03:05 PM)       |
-|       | h                                  | Hour without leading zero. 0-23                | 2                  |
-|       | hh                                 | Hour with leading zero. 00-23                  | 02                 |
-|       | m                                  | Minutes without leading zero. 0-59             | 3                  |
-|       | mm                                 | Minutes with leading zero. 00-59               | 03                 |
-|       | s                                  | Seconds without leading zero. 0-59             | 5                  |
-|       | ss                                 | Seconds with leading zero. 00-59               | 05                 |
-|       | \[h]                              | Elapsed time in hours                          | 14 (can exceed 24) |
-|       | \[mm]                             | Elapsed time in minutes                        | 843                |
-|       | \[ss]                             | Elapsed time in seconds                        | 50585              |
-|       | AM/PM                              | Periods of day. 24 hour fomat used if omitted. | PM                 |
+|       | Code<br>(not case-sensitive) | Descripción                                      | Ejemplo            |
+| ----- | ---------------------------------- | ------------------------------------------------ | ------------------ |
+| Fecha |                                    |                                                  | (January 1, 2019)  |
+|       | m                                  | Month number without leading zero                | 1                  |
+|       | mm                                 | Month number with leading zero                   | 01                 |
+|       | mmm                                | Month name, short                                | Jan                |
+|       | mmmm                               | Nombre del mes, long                             | January            |
+|       | d                                  | Day number without leading zero                  | 1                  |
+|       | dd                                 | Day number with leading zero                     | 01                 |
+|       | ddd                                | Day of week, short                               | Tue                |
+|       | dddd                               | Day of week, long                                | Tuesday            |
+|       | yy                                 | Year, short                                      | 19                 |
+|       | yyyy                               | Año, formato largo                               | 2019               |
+| Hora  |                                    |                                                  | (2:03:05 PM)       |
+|       | h                                  | Hour without leading zero. 0-23                  | 2                  |
+|       | hh                                 | Hour with leading zero. 00-23                    | 02                 |
+|       | m                                  | Minutes without leading zero. 0-59               | 3                  |
+|       | mm                                 | Minutes with leading zero. 00-59                 | 03                 |
+|       | s                                  | Seconds without leading zero. 0-59               | 5                  |
+|       | ss                                 | Seconds with leading zero. 00-59                 | 05                 |
+|       | \[h]                              | Elapsed time in hours                            | 14 (can exceed 24) |
+|       | \[mm]                             | Elapsed time in minutes                          | 843                |
+|       | \[ss]                             | Elapsed time in seconds                          | 50585              |
+|       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                 |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
 ### Additional symbols
@@ -247,7 +247,7 @@ In addition to the special characters and codes described in the previous sectio
 |          | Space character                                                    |                      |
 | €        | Euro                                                               | €###.00              |
 | £        | Libra esterlina                                                    | £###.00              |
-| ¥        | Japanese Yen                                                       | ¥###.00              |
+| ¥        | Yen japonés                                                        | ¥###.00              |
 | $        | Dollar sign                                                        | $###.00              |
 | ¢        | Cent sign                                                          | .00¢                 |
 
@@ -441,7 +441,7 @@ Ejemplo:
 
 #### Background & Foreground
 
-| Propiedad             | Tipo          | Descripción                                  | Possible values                                                                                                                                                                                                                                                                                                                                                           |
+| Propiedad             | Tipo          | Descripción                                  | Valores posibles                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------- | ------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | backColor             | texto         | Defines the color of the background.         | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                        |
 | backgroundImage       | picture, text | Specifies a background image.                | Can be specified directly or via the image path (full path or file name only). If the file name only is used, the file must be located next to the database structure file. No matter how set (picture or text), a picture is saved with the document. This could impact the size of a document if the image is large. Note for Windows: File extension must be included. |
@@ -450,7 +450,7 @@ Ejemplo:
 
 #### Bordes
 
-| Propiedad                                                                  |       | Tipo         | Descripción                                                                        | Possible values                                                                                                                                                                                                                                                                                                                                                  |
+| Propiedad                                                                  |       | Tipo         | Descripción                                                                        | Valores posibles                                                                                                                                                                                                                                                                                                                                                 |
 | -------------------------------------------------------------------------- | ----- | ------------ | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | objeto       | Defines the corresponding border line                                              |                                                                                                                                                                                                                                                                                                                                                                  |
 |                                                                            | color | texto        | Defines the color of the border. Por defecto = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
@@ -458,13 +458,13 @@ Ejemplo:
 
 #### Fuentes y texto
 
-| Propiedad       |            | Tipo         | Descripción                                                                                                                                                                                                                                                                                                                                                          | Possible values                                                                                                                                                                                                                             |
+| Propiedad       |            | Tipo         | Descripción                                                                                                                                                                                                                                                                                                                                                          | Valores posibles                                                                                                                                                                                                                            |
 | --------------- | ---------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | font            |            | texto        | Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes. | A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-list.md#vp-font-to-object) and [`VP Object to font`](method-list.md#vp-object-to-font) |
 | formatter       |            | texto        | Pattern for value/time property.                                                                                                                                                                                                                                                                                                                                     | Number/text/date/time formats, special characters. See [Cell Format](#cell-format).                                                                                                                                                         |
 | isVerticalText  |            | booleano     | Specifies text direction.                                                                                                                                                                                                                                                                                                                                            | True = vertical text, False = horizontal text.                                                                                                                                                                                              |
 | labelOptions    |            | objeto       | Defines cell label options (watermark options).                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                             |
-|                 | alignment  | entero largo | Specifies the position of the cell label. Optional property.                                                                                                                                                                                                                                                                                                         | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`                                     |
+|                 | alignement | entero largo | Specifies the position of the cell label. Optional property.                                                                                                                                                                                                                                                                                                         | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`                                     |
 |                 | visibility | entero largo | Specifies the visibility of the cell label. Optional property.                                                                                                                                                                                                                                                                                                       | `vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`                                                                                                                                                     |
 |                 | foreColor  | texto        | Defines the color of the foreground. Optional property.                                                                                                                                                                                                                                                                                                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                          |
 |                 | font       | texto        | Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.                                                                                                                                                                            |                                                                                                                                                                                                                                             |
@@ -476,7 +476,7 @@ Ejemplo:
 
 #### Disposición
 
-| Propiedad   | Tipo         | Descripción                                                                                                         | Possible values                                                                                                      |
+| Propiedad   | Tipo         | Descripción                                                                                                         | Valores posibles                                                                                                     |
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | cellPadding | texto        | Defines the cell padding                                                                                            |                                                                                                                      |
 | hAlign      | entero largo | Defines the horizontal alignment of cell contents.                                                                  | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
