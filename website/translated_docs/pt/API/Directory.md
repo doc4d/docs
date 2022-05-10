@@ -449,9 +449,9 @@ A função `.copyTo()` <!-- REF #directory.copyTo().Summary -->copia o objeto `F
 
 A *destinationFolder* deve existir em disco, senão um erro é gerado.
 
-Como padrão, a pasta é copiada com o nome da pasta original. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
+Como padrão, a pasta é copiada com o nome da pasta original. Se quiser renomear a cópia, passe o novo nome no parâmetro *newName* . O novo nome deve cumprir com as regras de nomenclatura (por exemplo, não deve conter caracteres como ":", "/", etc.), do contrário se devolve um erro.
 
-If a folder with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
+Se já existir uma pasta com o mesmo nome em *destinationFolder*, por padrão 4D gera um erro. Pode passar a constante `fk overwrite` no parâmetro *overwrite* para ignorar e sobrescriber o arquivo existente
 
 | Constant       | Value | Comment                             |
 | -------------- | ----- | ----------------------------------- |
@@ -460,11 +460,11 @@ If a folder with the same name already exists in the *destinationFolder*, by def
 
 **Returned value**
 
-The copied `Folder` object.
+O objeto `Folder` copiado.
 
 #### Exemplo
 
-You want to copy a Pictures *folder* from the user's Document folder to the Database folder:
+Se quiser copiar uma *pasta* Imágens da pasta de documentos do usuário a pasta da Database:
 
 ```4d
 var $userImages; $copiedImages : 4D.Folder
@@ -490,21 +490,21 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 **.file**( *path* : Text ) : 4D.File<!-- END REF -->
 
 <!-- REF #directory.file().Params -->
-| Parameter | Type    |    | Description                          |
-| --------- | ------- | -- | ------------------------------------ |
-| path      | Texto   | -> | Relative POSIX file pathname         |
-| Result    | 4D.File | <- | `File` object (null if invalid path) |
+| Parameter | Type    |    | Description                                   |
+| --------- | ------- | -- | --------------------------------------------- |
+| path      | Texto   | -> | Rota POSIX relativa                           |
+| Result    | 4D.File | <- | Objeto `File` (null se a rota não for válida) |
 <!-- END REF -->
 
 #### Description
 
-The `.file()` function creates <!-- REF #directory.file().Summary -->a `File` object inside the `Folder` object and returns its reference<!-- END REF -->.
+A função `.file()` <!-- REF #directory.file().Summary -->cria um objeto `File` no objeto `Folder` e devolve sua referência<!-- END REF -->.
 
-In *path*, pass a relative POSIX path to designate the file to return. The path will be evaluated from the parent folder as root.
+Em *path*, passe uma rota relativa POSIX para designar o arquivo a devolver. A rota se avaliará a partir da pasta pai como raíz.
 
 **Returned value**
 
-A `File` object or null if *path* is invalid.
+Um objeto `File` ou null se *path* não for válido.
 
 #### Exemplo
 
@@ -532,16 +532,16 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 <!-- REF #directory.files().Params -->
 | Parameter | Type    |    | Description                         |
 | --------- | ------- | -- | ----------------------------------- |
-| options   | Integer | -> | File list options                   |
-| Result    | Coleção | <- | Collection of children file objects |
+| options   | Integer | -> | Opções da lista de arquivos         |
+| Result    | Coleção | <- | Coleção de objetos de arquivo filho |
 <!-- END REF -->
 
 #### Description
 
-The `.files()` function returns <!-- REF #directory.files().Summary -->a collection of `File` objects contained in the folder<!-- END REF -->.
+A função `.files()` devolve <!-- REF #directory.files().Summary -->uma coleção de objetos `File` contidos na pasta<!-- END REF -->.
 > Aliases or symbolic links are not resolved.
 
-By default, if you omit the *options* parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the *options* parameter, one or more of the following constants:
+Como padrão, se omitir o parâmetro *options*, só se devolvem na coleção os arquivos de primeiro nivel da pasta, assim como os arquivos ou pastas invisíveis. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
 | Constant              | Value | Comment                                                                             |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
@@ -550,11 +550,11 @@ By default, if you omit the *options* parameter, only the files at the first lev
 
 **Returned value**
 
-Collection of `File` objects.
+Coleção de objetos `File`.
 
 #### Exemplo 1
 
-You want to know if there are invisible files in the Database folder:
+Se quiser saber se há arquivos invisíveis na pasta Database:
 
 ```4d
  var $all; $noInvisible : Collection
@@ -567,7 +567,7 @@ You want to know if there are invisible files in the Database folder:
 
 #### Exemplo 2
 
-You want to get all files that are not invisible in the Documents folder:
+Se quiser obter todos os arquivos que não são invisíveis na pasta Documents:
 
 ```4d
  var $recursive : Collection
@@ -591,21 +591,21 @@ You want to get all files that are not invisible in the Documents folder:
 **.folder**( *path* : Text ) : 4D.Folder<!-- END REF -->
 
 <!-- REF #directory.folder().Params -->
-| Parameter | Type      |    | Description                                    |
-| --------- | --------- | -- | ---------------------------------------------- |
-| path      | Texto     | -> | Relative POSIX file pathname                   |
-| Result    | 4D.Folder | <- | Created folder object (null if invalid *path*) |
+| Parameter | Type      |    | Description                                        |
+| --------- | --------- | -- | -------------------------------------------------- |
+| path      | Texto     | -> | Rota POSIX relativa                                |
+| Result    | 4D.Folder | <- | Objeto pasta criado (null se *path*não for válido) |
 <!-- END REF -->
 
 #### Description
 
-The `.folder()` function <!-- REF #directory.folder().Summary -->creates a `Folder` object inside the parent `Folder` object and returns its reference<!-- END REF -->.
+A função `.folder()` <!-- REF #directory.folder().Summary -->cria um objeto `Folder` dentro do objeto pai `Folder` e devolve sua referência<!-- END REF -->.
 
-In *path*, pass a relative POSIX path to designate the folder to return. The path will be evaluated from the parent folder as root.
+Em *path*, passe uma rota relativa POSIX para designar a pasta a devolver. A rota se avaliará a partir da pasta pai como raíz.
 
 **Returned value**
 
-A `Folder` object or null if *path* is invalid.
+Um objeto `Folder` ou null se *path* não for válido.
 
 #### Exemplo
 
@@ -631,17 +631,17 @@ A `Folder` object or null if *path* is invalid.
 **.folders**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.folders().Params -->
-| Parameter | Type    |    | Description                           |
-| --------- | ------- | -- | ------------------------------------- |
-| options   | Integer | -> | Folder list options                   |
-| Result    | Coleção | <- | Collection of children folder objects |
+| Parameter | Type    |    | Description                       |
+| --------- | ------- | -- | --------------------------------- |
+| options   | Integer | -> | Opções da lista de pasta          |
+| Result    | Coleção | <- | Coleção de objetos de pasta filho |
 <!-- END REF -->
 
 #### Description
 
-The `.folders()` function <!-- REF #directory.folders().Summary -->returns a collection of `Folder` objects contained in the parent folder<!-- END REF -->.
+A função `.folders()` devolve <!-- REF #directory.folders().Summary -->uma coleção de objetos `Folder` contidos na pasta pai<!-- END REF -->.
 
-By default, if you omit the *options* parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the *options* parameter, one or more of the following constants:
+Como padrão, se omitir o parâmetro *options*, só se devolvem as pastas no primeiro nível da pasta. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
 | Constant              | Value | Comment                                                                             |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
@@ -650,11 +650,11 @@ By default, if you omit the *options* parameter, only the folders at the first l
 
 **Returned value**
 
-Collection of `Folder` objects.
+Coleção de objetos `Folder`.
 
 #### Exemplo
 
-You want the collection of all folders and subfolders of the database folder:
+Se quiser a coleção de todas as pastas e subpastas da pasta database:
 
 ```4d
  var $allFolders : Collection
@@ -678,24 +678,24 @@ You want the collection of all folders and subfolders of the database folder:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #directory.getIcon().Params -->
-| Parameter | Type    |    | Description                                   |
-| --------- | ------- | -- | --------------------------------------------- |
-| size      | Integer | -> | Side length for the returned picture (pixels) |
-| Result    | Imagem  | <- | Icon                                          |
+| Parameter | Type    |    | Description                                     |
+| --------- | ------- | -- | ----------------------------------------------- |
+| size      | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
+| Result    | Imagem  | <- | Icon                                            |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getIcon()` function <!-- REF #directory.getIcon().Summary -->returns the icon of the folder<!-- END REF -->.
+A função `.getIcon()` <!-- REF #directory.getIcon().Summary -->devolve o icone da pasta<!-- END REF -->.
 
-The optional *size* parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Icons are usually defined in 32x32 pixels ("large icons") or 16x16 pixels ("small icons"). If you pass 0 or omit this parameter, the "large icon" version is returned.
+O parâmetro opcional *size* especifica as dimensões em píxels do icone devolvido. Este valor representa em realidade a longitude do lado do quadrado que contém o icone. Icones são geralmente definidos como 32x32 píxels ('icones grandes') ou 16x16 ('icones pequenos'). Se passar 0 ou omitir este parâmetro, se devolve a versão 'icone grande'
 
-If the folder does not exist on disk, a default blank icon is returned.
+Se a pasta não existir no disco, se devolve um icone vazio como padrão.
 
 **Returned value**
 
-Folder icon [picture](Concepts/dt_picture.md).
+[Imagen](Concepts/dt_picture.md) do icone da pasta.
 
 <!-- END REF -->
 
