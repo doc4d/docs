@@ -27,7 +27,7 @@ Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerC
 IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
 
 
-#### Enable HTTPS
+#### Activar HTTPS
 
 Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
