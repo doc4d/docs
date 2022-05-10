@@ -525,7 +525,7 @@ You can write in the *UI_SetColor* method:
 
 A sort in a list box can be standard or custom. When a column of a list box is sorted, all other columns are always synchronized automatically.
 
-### Standard sort
+### Ordenación estándar
 
 By default, a list box provides standard column sorts when the header is clicked. A standard sort is an alphanumeric sort of evaluated column values, alternately ascending/descending with each successive click.
 
