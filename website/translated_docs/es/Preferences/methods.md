@@ -1,6 +1,6 @@
 ---
 id: methods
-title: Methods Page
+title: Página Métodos
 ---
 
 This page contains parameters defining the Method editor interface and its default display as well as options concerning its operation. It is divided into two sections accessed using the Theme and Options tabs.
@@ -52,7 +52,7 @@ The **font** and **font size** menus allows you to select the font name and size
 You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
 
 
-### Other Styles
+### Otros estilos
 
 These options configure the various colors used in the Method editor and debugger interfaces.
 
@@ -71,7 +71,7 @@ These options configure the various colors used in the Method editor and debugge
 | **Highlight of the same variable or field**       | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options). |
 | **Highlight of the running line in the debugger** | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                            |
 | **Color de fondo de la selección**                | Background color of selection.                                                                                                                                           |
-| **Suggested text**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
+| **Texto sugerido**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
 
 
 
