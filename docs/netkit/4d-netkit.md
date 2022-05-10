@@ -105,7 +105,7 @@ The `Office365` class allows you to call the [Microsoft Graph API](https://docs.
 * get information from Office365 applications, such as user information
 * send emails
 
-This can be done after a valid token request (see [OAuth2Provider object](#oauth2provider)).
+This can be done after a valid token request, (see [OAuth2Provider object](#oauth2provider)).
 
 The `Office365` class can be instantiated in two ways: 
 * by calling the `New Office365 provider` method 
@@ -161,10 +161,10 @@ In `email`, pass the email to be sent. Possible types:
 
 * Text or Blob: the email is sent using the MIME format
 * Object: the email is sent using the JSON format, in accordance with either: 
-    * the [Microsoft message resource type](#list-of-properties-for-the-"microsoft"-mail-type-object)
+    * the [Microsoft mail object properties](#microsoft-mail-object-properties)
     * the [4D email object format](https://developer.4d.com/docs/en/API/EmailObjectClass.html#email-object), which follows the JMAP specification
 
-The `Office365.mail.type` property must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft message resource type](https://docs.microsoft.com/en-us/graph/api/resources/message?view=graph-rest-1.0#properties): 
+The [`Office365.mail.type` property](#returned-object-1) must be compatible with the data type passed in `email`. In the following example, since the mail type is `Microsoft`, `$email` must be an object whose properties match the [Microsoft mail object](#microsoft-mail-object-properties): 
 
 ```4d 
 $Office365:=New Office365 provider($token; New object("mailType"; "Microsoft"))
@@ -183,25 +183,25 @@ The method returns a status object with the following properties:
 |statusText|Text| Status message returned by the server or last error returned by the 4D error stack|
 |errors|Collection| Collection of errors. Not returned if the server returns a `statusText`|
 
-### List of properties for the "Microsoft" mail type object
+### "Microsoft" mail object properties
 
 When you send an email with the "Microsoft" mail type, the available properties for the object you pass to `Office365.mail.send()` are the following:
 
 | Microsoft Message Property | Type | Description |
 |---|---|---|
-| attachment |[attachment](#attachment-object) collection | The fileAttachment and itemAttachment attachments for the message. | 
+| attachment |[attachment](#attachment-object) collection | The attachments for the email. | 
 | bccRecipients |[recipient](#recipient-object) collection | The Bcc: recipients for the message. | 
-| body |itemBody object| The body of the message. It can be in HTML or text format. Find out about safe HTML in a message body. | 
+| body |itemBody object| The body of the message. It can be in HTML or text format.| 
 | ccRecipients |[recipient](#recipient-object) collection | The Cc: recipients for the message. |  
-| flag |[followupflag](#followupflag-object) object| The flag value that indicates the status, start date, due date, or completion date for the message. | 
+| flag |[followup flag](#followup-flag-object) object| The flag value that indicates the status, start date, due date, or completion date for the message. | 
 | from |[recipient](#recipient-object) object | The owner of the mailbox from which the message is sent. In most cases, this value is the same as the sender property, except for sharing or delegation scenarios. The value must correspond to the actual mailbox used.| 
-| id |Text|Unique identifier for the message (note that this value may change if a message is moved or altered)|
+| id |Text|Unique identifier for the message (note that this value may change if a message is moved or altered).|
 | importance|Text| The importance of the message. The possible values are: `low`, `normal`, and `high`. | 
-| internetMessageHeaders |[internetMessageHeader](#internetmessageheader-object) collection | A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message. Returned only on applying a $select query option. Read-only.|
+| internetMessageHeaders |[internetMessageHeader](#internetmessageheader-object) collection | A collection of message headers defined by [RFC5322](https://www.ietf.org/rfc/rfc5322.txt). The set includes message headers indicating the network path taken by a message from the sender to the recipient.|
 | isDeliveryReceiptRequested  |Boolean| Indicates whether a delivery receipt is requested for the message. | 
 | isReadReceiptRequested |Boolean| Indicates whether a read receipt is requested for the message. | 
 | replyTo |[recipient](#recipient-object) collection | The email addresses to use when replying. | 
-| sender |[recipient](#recipient-object) object | The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message. | 
+| sender |[recipient](#recipient-object) object | The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the [from and sender properties](https://docs.microsoft.com/en-us/graph/outlook-create-send-messages#setting-the-from-and-sender-properties) of a message. | 
 | subject |Text| The subject of the message.|
 | toRecipients |[recipient](#recipient-object) collection | The To: recipients for the message. | 
 
@@ -222,12 +222,12 @@ When you send an email with the "Microsoft" mail type, the available properties 
 | Property |  Type | Description | Can be null of undefined |
 |---|---|---|---|
 |content|Text|The content of the item.|No|
-|contentType|Text| The type of the content. Possible values are text and html |No|
+|contentType|Text| The type of the content. Possible values are `"text"` and `"html"` |No|
 
 #### recipient object
 | Property ||  Type | Description | Can be null of undefined |
 |---|---|---|---|---|
-|emailAddress||object||Yes|
+|emailAddress||Object||Yes|
 ||address|Text|The email address of the person or entity.|No|
 ||name|Text| The display name of the person or entity.|Yes|
 
@@ -237,11 +237,11 @@ When you send an email with the "Microsoft" mail type, the available properties 
 |name |	Text|Represents the key in a key-value pair.|No|
 |value|Text|The value in a key-value pair.|No|
 
-#### followupflag object
+#### followup flag object
 | Property |  Type | Description |
 |---|---|---|
-|dueDateTime|[dateTime &#124; TimeZone](#datetime-and-timezone)|	The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.|
-|flagStatus|followupFlagStatus|The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.|
+|dueDateTime|[dateTime &#124; TimeZone](#datetime-and-timezone)|	The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the `startDateTime`; otherwise, you will get a `400 Bad Request` response.|
+|flagStatus|Text|The status for follow-up for an item. Possible values are `"notFlagged"`, `"complete"`, and `"flagged"`.|
 |startDateTime|[dateTime &#124; TimeZone](#datetime-and-timezone)| The date and time that the follow-up is to begin.|
 
 #### dateTime and TimeZone 
@@ -252,8 +252,8 @@ When you send an email with the "Microsoft" mail type, the available properties 
 |timeZone|Text|Represents a time zone, for example, "Pacific Standard Time". See below for more possible values.|
 
 In general, the timeZone property can be set to any of the time zones currently supported by Windows, as well as the additional time zones supported by the calendar API:
-* https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11
-* https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0#additional-time-zones
+* [Default time zones](https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones?view=windows-11)
+* [Additional time zones](https://docs.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-1.0#additional-time-zones)
 
 #### Example: Create an email with a file attachment and send it
 
