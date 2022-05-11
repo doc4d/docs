@@ -542,7 +542,7 @@ Para guardar el contenido de un documento en un campo `BLOB`:
 ```4d
  var $vPath : Text
  $vPath:=Select document("";"*";"Select a document";0)
- If(OK=1) //If a document has been chosen
+ If(OK=1) //Si se ha seleccionado un documento
     [aTable]aBlobField:=File($vPath;fk platform path).getContent()
  End if
 ```
