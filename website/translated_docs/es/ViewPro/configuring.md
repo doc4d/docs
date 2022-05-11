@@ -58,7 +58,7 @@ The following form events are available in the Property List for 4D View Pro are
 
 Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
 
-| Standard 4D events                              | Specific and extended 4D View Pro events              |
+| Evento 4D estándar                              | Specific and extended 4D View Pro events              |
 | ----------------------------------------------- | ----------------------------------------------------- |
 | [On Load](../Events/onLoad.md)                  | [On VP Ready](../Events/onVpReady.md)                 |
 | [On Getting Focus](../Events/onGettingFocus.md) | [On Clicked](../Events/onClicked.md)                  |
@@ -200,33 +200,33 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
 
 
-|       | Code<br>(not case-sensitive) | Descripción                                      | Ejemplo            |
-| ----- | ---------------------------------- | ------------------------------------------------ | ------------------ |
-| Fecha |                                    |                                                  | (January 1, 2019)  |
-|       | m                                  | Month number without leading zero                | 1                  |
-|       | mm                                 | Month number with leading zero                   | 01                 |
-|       | mmm                                | Month name, short                                | Jan                |
-|       | mmmm                               | Nombre del mes, long                             | January            |
-|       | d                                  | Day number without leading zero                  | 1                  |
-|       | dd                                 | Day number with leading zero                     | 01                 |
-|       | ddd                                | Day of week, short                               | Tue                |
-|       | dddd                               | Day of week, long                                | Tuesday            |
-|       | yy                                 | Year, short                                      | 19                 |
-|       | yyyy                               | Año, formato largo                               | 2019               |
-| Hora  |                                    |                                                  | (2:03:05 PM)       |
-|       | h                                  | Hour without leading zero. 0-23                  | 2                  |
-|       | hh                                 | Hour with leading zero. 00-23                    | 02                 |
-|       | m                                  | Minutes without leading zero. 0-59               | 3                  |
-|       | mm                                 | Minutes with leading zero. 00-59                 | 03                 |
-|       | s                                  | Seconds without leading zero. 0-59               | 5                  |
-|       | ss                                 | Seconds with leading zero. 00-59                 | 05                 |
-|       | \[h]                              | Elapsed time in hours                            | 14 (can exceed 24) |
-|       | \[mm]                             | Elapsed time in minutes                          | 843                |
-|       | \[ss]                             | Elapsed time in seconds                          | 50585              |
-|       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                 |
+|       | Code<br>(not case-sensitive) | Descripción                                      | Ejemplo               |
+| ----- | ---------------------------------- | ------------------------------------------------ | --------------------- |
+| Fecha |                                    |                                                  | (January 1, 2019)     |
+|       | m                                  | Month number without leading zero                | 1                     |
+|       | mm                                 | Month number with leading zero                   | 01                    |
+|       | mmm                                | Month name, short                                | Jan                   |
+|       | mmmm                               | Nombre del mes, long                             | January               |
+|       | d                                  | Day number without leading zero                  | 1                     |
+|       | dd                                 | Day number with leading zero                     | 01                    |
+|       | ddd                                | Día de la semana, corto                          | Tue                   |
+|       | dddd                               | Day of week, long                                | Tuesday               |
+|       | yy                                 | Year, short                                      | 19                    |
+|       | yyyy                               | Año, formato largo                               | 2019                  |
+| Hora  |                                    |                                                  | (2:03:05 PM)          |
+|       | h                                  | Hour without leading zero. 0-23                  | 2                     |
+|       | hh                                 | Hour with leading zero. 00-23                    | 02                    |
+|       | m                                  | Minutes without leading zero. 0-59               | 3                     |
+|       | mm                                 | Minutes with leading zero. 00-59                 | 03                    |
+|       | s                                  | Seconds without leading zero. 0-59               | 5                     |
+|       | ss                                 | Seconds with leading zero. 00-59                 | 05                    |
+|       | \[h]                              | Elapsed time in hours                            | 14 (puede superar 24) |
+|       | \[mm]                             | Elapsed time in minutes                          | 843                   |
+|       | \[ss]                             | Elapsed time in seconds                          | 50585                 |
+|       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                    |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
-### Additional symbols
+### Símbolos adicionales
 
 In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. They appear "as-is" within the pattern.
 
@@ -296,7 +296,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
-### Special Characters
+### Caracteres especiales
 
 The following special characters allow the automatic addition or formatting of information in the header and footer when the 4D View Pro area is printed.
 
@@ -322,15 +322,15 @@ The following special characters allow the automatic addition or formatting of i
 
 Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
 
-| Propiedad |        | Tipo         | Descripción                                                 |
-| --------- | ------ | ------------ | ----------------------------------------------------------- |
-| margin    |        | objeto       | The print margins                                           |
-|           | top    | entero largo | Top margin, in hundredths of an inch. Default value = 75    |
-|           | bottom | entero largo | Bottom margin, in hundredths of an inch. Default value = 75 |
-|           | left   | entero largo | Left margin, in hundredths of an inch. Default value = 70   |
-|           | right  | entero largo | Right margin, in hundredths of an inch. Default value = 70  |
-|           | header | entero largo | Header offset, in hundredths of an inch. Default value = 30 |
-|           | footer | entero largo | Footer offset, in hundredths of an inch. Default value = 30 |
+| Propiedad |        | Tipo         | Descripción                                               |
+| --------- | ------ | ------------ | --------------------------------------------------------- |
+| margin    |        | objeto       | The print margins                                         |
+|           | top    | entero largo | Top margin, in hundredths of an inch. Por defecto = 75    |
+|           | bottom | entero largo | Bottom margin, in hundredths of an inch. Por defecto = 75 |
+|           | left   | entero largo | Left margin, in hundredths of an inch. Por defecto = 70   |
+|           | right  | entero largo | Right margin, in hundredths of an inch. Por defecto = 70  |
+|           | header | entero largo | Header offset, in hundredths of an inch. Por defecto = 30 |
+|           | footer | entero largo | Footer offset, in hundredths of an inch. Por defecto = 30 |
 
 ### Orientación
 
@@ -374,12 +374,12 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 
 Scale attributes are used to specify printing optimization and adjustments.
 
-| Propiedad      | Tipo         | Descripción                                                                                                                             |
-| -------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Default value = "false"                  |
-| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Default value = "false"                  |
-| fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Default value = -1    |
-| fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Default value = -1 |
+| Propiedad      | Tipo         | Descripción                                                                                                                           |
+| -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Default value = "false"                |
+| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Default value = "false"                |
+| fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Por defecto = -1    |
+| fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Por defecto = -1 |
 
 ### Mostrar / Ocultar
 
@@ -495,7 +495,7 @@ Ejemplo:
 
 
 
-## 4D View Pro Object
+## Objeto 4D View Pro
 
 The 4D View Pro [object](Concepts/dt_object.md) stores the whole spreadsheet contents. It is automatically handled by 4D View Pro. You can set or get this object using the [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) or [VP Export to object](method-list.md#vp-export-to-object) methods.
 
