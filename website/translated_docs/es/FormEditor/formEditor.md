@@ -32,7 +32,7 @@ When a form is opened in the editor, interface elements are displayed or hidden 
     - Markers and marker labels are always displayed by default on list forms
     - Paper is displayed by default on "for printing" forms.
 
-#### Display/Hide elements
+#### Mostrar/Ocultar elementos
 
 You can display or hide elements at any moment in the Form editor’s current window by selecting **Display** from the **Form** menu or the Form editor's context menu:
 
