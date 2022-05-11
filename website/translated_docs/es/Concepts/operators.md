@@ -86,7 +86,7 @@ The following compound assignment operators are supported:
 |                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                  |
 |                | Time *= Time       | Hora   | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
 |                | Time *= Number     | Número | `$t1*=5 //$t1:=$t1*5`                                               |
-|                | Picture *= Number  | Imagen | `$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`                             |
+|                | Picture *= Number  | Imagen | `$p1*=5 //$p1:=$p1*5 (redimensionar $p1 de 5)`                      |
 
 These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
 
@@ -146,7 +146,7 @@ $t2:="Hello"
 $t2*=2 // $t2="HelloHello"
 $d+=10 //$d=!2000-11-20!
 
-// Subtraction
+// Resta
 $x1:=10
 $x1-=5 //$x1=5
 
@@ -285,7 +285,7 @@ The `&&` and `||` operators have the same precedence as the logical operators `&
 This means that `a || b && c` is evaluated as `(a || b) && c`.
 
 
-## Ternary operator
+## Operador ternario
 
 The ternary conditional operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
 
@@ -332,7 +332,7 @@ var $fullname : Text
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
-## Truthy and falsy
+## Truthy y falsy
 
 As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
 
@@ -348,9 +348,9 @@ The following values are **falsy**:
 * Null pointer
 * Null picture
 * Null date !00-00-00!
-* "" - Empty strings
+* "" - Cadenas vacías
 * [] - Empty collections
-* {} - Empty objects
+* {} - Objetos vacios
 
 All other values are considered **truthy**, including:
 
