@@ -82,7 +82,7 @@ This menu can be called in an empty area or a selection in the form. Selected ob
 
 A single macro can execute several operations. If selected, the **Undo** feature of the Form editor can be used to reverse macro operations globally.
 
-## Location of macro file
+## Ubicación del archivo de macro
 
 All 4D Form Editor macros are defined within a single JSON file per project or component: `FormMacros.json`.
 
@@ -111,7 +111,7 @@ Here is the description of the JSON file contents:
 
 | Atributo |                     |                          | Tipo   | Descripción                                            |
 | -------- | ------------------- | ------------------------ | ------ | ------------------------------------------------------ |
-| macros   |                     |                          | objeto | list of defined macros                                 |
+| macros   |                     |                          | objeto | lista de macros definidas                              |
 |          | `<macroName>` |                          | objeto | definición de la macro                                 |
 |          |                     | class                    | cadena | nombre de clase de la macro                            |
 |          |                     | `<customProperty>` | any    | (optional) custom value to retrieve in the constructor |
