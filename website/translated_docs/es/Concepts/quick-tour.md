@@ -103,7 +103,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 vRef:=Open document("PassFile";"TEXT";Read Mode) // abrir el documento en modo de sólo lectura
 ```
 
-> Predefined constants appear <u>underlined</u> by default in the 4D Method editor.
+> Las constantes predefinidas aparecen <u>subrayadas</u> por defecto en el editor de métodos 4D.
 
 ## Métodos
 
