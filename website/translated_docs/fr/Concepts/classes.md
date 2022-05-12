@@ -213,7 +213,7 @@ Function getFullname()->$fullname : Text
     $fullname:=This.firstName+" "+Uppercase(This.lastName)
 ```
 
-For a class function, the `Current method name` command returns: `<ClassName>.<FunctionName>`, for example "MyClass.myFunction".
+Pour une fonction de classe, la commande `Current method name` retourne : `<ClassName>.<FunctionName>`, par exemple "MyClass.myFunction".
 
 Dans le code de l'application, les fonctions de classes sont appelées comme des méthodes membres des instances d'objets et peuvent recevoir des [paramètres](#class-function-parameters) si besoin. Les syntaxes suivantes sont prises en charge :
 
@@ -260,8 +260,8 @@ You can also declare the return parameter by adding only `: type` and use the [`
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-    // some code
-    return $x+$y
+    // du code
+    retourne $x+$y
 ```
 
 
@@ -395,7 +395,7 @@ Une fonction class constructor, qui accepte des [paramètres](#parameters), peut
 
 Dans ce cas, lorsque vous appelez la fonction [`new()`](API/ClassClass.md#new), le class constructor est appelé avec les paramètres optionnellement passés à la fonction `new()`.
 
-For a class constructor function, the `Current method name` command returns: `<ClassName>:constructor`, for example "MyClass:constructor".
+Pour une fonction class constructor, la commande `Current method name` retourne : `<ClassName>:constructor`, par exemple "MyClass.constructor".
 
 
 
@@ -454,11 +454,11 @@ Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Polygon's width and height
+    // Il appelle le constructeur de la classe parente avec les longueurs
+    // fournies pour la largeur et la hauteur du polygone.
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
+    // Dans les classes dérivées, Super doit être appelé avant que vous puissiez
+    // utiliser 'This'.
     This.name:="Square"
 
 
