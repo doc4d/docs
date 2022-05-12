@@ -113,7 +113,7 @@ Lets you display the line numbers by default in each window of the Method editor
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
 
-#### Show clipboards
+#### Mostrar los portapapeles
 
 Lets you choose whether or not to show the multiple clipboards in the code editor.
 
