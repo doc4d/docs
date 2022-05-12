@@ -212,7 +212,7 @@ End if
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
 | aliasName         | Texto     | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Type of the alias link                       |
+| aliasType         | Integer   | -> | Tipo de enlace del alias                     |
 | Resultado         | 4D.File   | <- | Alias or shortcut reference                  |
 <!-- END REF -->
 
