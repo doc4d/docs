@@ -135,7 +135,7 @@ Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](.
 | 7     | wdl enable with all body parts | Web HTTP debug log is enabled with body parts in response and request                 |
 
 
-## Default Home page
+## Página de inicio por defecto
 
 | Puede ajustarse con           | Nombre                                                                       | Comentarios                           |
 | ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------- |
@@ -187,7 +187,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 Indicates whether or not the web server will accept non-secure connections.
 
 
-## Enable HTTPS
+## Activar HTTPS
 
 | Puede ajustarse con           | Nombre                                               | Comentarios |
 | ----------------------------- | ---------------------------------------------------- | ----------- |
@@ -231,7 +231,7 @@ Specifies the maximum length of time (in seconds) that HSTS is active for each n
 
 
 
-## HTTP Compression Level
+## Nivel de compresión
 
 | Puede ajustarse con | Nombre                                                               | Comentarios                    |
 | ------------------- | -------------------------------------------------------------------- | ------------------------------ |

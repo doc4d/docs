@@ -16,7 +16,7 @@ This feature can be used in 4D applications running headless as well as 4D appli
 By default, the `WebAdmin` web server is not launched. You need to configure the launch at startup, or (in versions with interface) launch it manually using a menu item.
 
 
-### Launch at startup
+### Lanzamiento al inicio
 
 You can configure the `WebAdmin` web server to be launched at 4D or 4D Server application startup (before any project is loaded).
 
@@ -50,7 +50,7 @@ The menu item becomes **Stop Server** when the server is launched; select **Stop
 
 
 
-## WebAdmin Settings
+## Propiedades WebAdmin
 
 Configuring the `WebAdmin` component is mandatory in particular to define the [**access key**](#access-key). By default when the access key is not set, access via a URL is not allowed.
 

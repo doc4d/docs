@@ -379,7 +379,7 @@ Por ejemplo:
 
 Say the program counter is set to the line `If (This condition)`. When you click the **Step over** button, the program counter moves directly to the `DO_SOMETHING_ELSE` line. To examine the results of the `DO_SOMETHING` line, you can move the program counter to that line and execute it.
 
-### Contextual menu
+### Menú contextual
 
 The contextual menu of the Source Code Pane provides access to several functions that are useful when executing methods in Trace mode:
 

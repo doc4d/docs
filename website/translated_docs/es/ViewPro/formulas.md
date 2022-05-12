@@ -7,7 +7,7 @@ title: Formulas and Functions
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
-### Entering formulas
+### Entrada de las fórmulas
 
 To enter a formula in a 4D View Pro area:
 
@@ -84,7 +84,7 @@ List of operators from most to least important:
 
 
 
-## Cell references
+## Referencias de celdas
 
 Formulas often refer to other cells by cell addresses. You can copy these formulas into other cells. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
 
@@ -102,7 +102,7 @@ When you copy or move these formulas to new locations, each cell address in that
 
 
 
-### Reference Notation
+### Notación de las referencias
 
 If you use only cell coordinates, for example, `C5`, 4D View Pro interprets the reference as relative. You may make the reference an absolute reference by putting a dollar sign in front of the letter and the number, as in `$C$5`.
 
@@ -112,17 +112,17 @@ A convenient, fast and accurate way to specify an absolute reference is to name 
 
 The following table shows the effect of the different notations:
 
-| Ejemplo   | Type of reference | Descripción                                                                                                                                    |
-| --------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| C5        | Relativo          | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                   |
-| $C$5      | Absoluto          | Reference is absolute. Will always refer to cell C5 no matter where it is used.                                                                |
-| $C5       | Mixed             | Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.           |
-| C$5       | Mixed             | Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used            |
-| Cell name | Absoluto          | Reference is absolute. Will always refer to the [named cell or range](method-list.md#vp-add-range-name) no matter where the reference is used. |
+| Ejemplo            | Tipo de referencia | Descripción                                                                                                                                    |
+| ------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| C5                 | Relativo           | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                   |
+| $C$5               | Absoluto           | Reference is absolute. Will always refer to cell C5 no matter where it is used.                                                                |
+| $C5                | Mixed              | Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.           |
+| C$5                | Mixed              | Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used            |
+| Nombre de la celda | Absoluto           | Reference is absolute. Will always refer to the [named cell or range](method-list.md#vp-add-range-name) no matter where the reference is used. |
 
 
 
-## Built-in functions
+## Funciones integradas
 
 Spreadsheet functions are preset formulas used to calculate cell values. When you type the first letter of the function to enter, a pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
 

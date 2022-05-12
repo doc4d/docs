@@ -725,16 +725,16 @@
         "title": "Página general"
       },
       "Preferences/methods": {
-        "title": "Methods Page"
+        "title": "Página Métodos"
       },
       "Preferences/overview": {
         "title": "Generalidades"
       },
       "Preferences/shortcuts": {
-        "title": "Shortcuts Page"
+        "title": "Página Atajos"
       },
       "Preferences/structure": {
-        "title": "Structure Page"
+        "title": "Página Estructura"
       },
       "Project/architecture": {
         "title": "Arquitectura de un proyecto"
@@ -878,10 +878,10 @@
         "title": "Página de respaldo"
       },
       "settings/client-server": {
-        "title": "Client-server page"
+        "title": "Página Cliente/Servidor"
       },
       "settings/compatibility": {
-        "title": "Compatibility page"
+        "title": "Página de compatibilidad"
       },
       "settings/compiler": {
         "title": "Página Compilador"
@@ -1007,7 +1007,7 @@
       "Form Events": "Eventos formulario",
       "Menus": "Menús",
       "User Settings": "User Settings",
-      "Build application": "Build application",
+      "Build application": "Generador de aplicación",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
@@ -1048,7 +1048,7 @@
     "Preferences|no description given": "Preferencias",
     "Overview|no description given": "Generalidades",
     "Developing Components|no description given": "Developing Components",
-    "Developing Plugins|no description given": "Developing Plugins",
+    "Developing Plugins|no description given": "Plugins de desarrollo",
     "Working with a project|no description given": "Trabajar con un proyecto",
     "Settings|no description given": "Settings",
     "Transformation Tags|no description given": "Transformation Tags",

@@ -27,7 +27,7 @@ Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerC
 IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
 
 
-#### Enable HTTPS
+#### Activar HTTPS
 
 Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
@@ -43,11 +43,11 @@ Allows you to modify the TCP/IP port number used by the Web server for secured H
 
 ### Rutas
 
-#### Default HTML Root
+#### Raíz HTML por defecto
 
 Define the default location of the Web site files and to indicate the hierarchical level on the disk above which the files will not be accessible. See [Root Folder](../WebServer/webServerConfig.md#root-folder).
 
-#### Default Home Page
+#### Página de inicio por defecto
 
 Designate a default home page for the Web server. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
 
@@ -287,7 +287,7 @@ Esta página contiene las opciones utilizadas para activar y controlar las funci
 
 ### Publicación
 
-#### Expose as REST server
+#### Activar el servicio REST
 
 Inicia y detiene el servidor REST. Ver [Configuración del servidor REST](../REST/configuration.md).
 

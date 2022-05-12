@@ -1661,7 +1661,7 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 ... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
 
 
-#### Search value types
+#### Tipos de valores de búsqueda
 
 Search-keys may request the value to search for:
 

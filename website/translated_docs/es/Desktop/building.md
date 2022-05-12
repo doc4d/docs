@@ -150,7 +150,7 @@ Una vez seleccionada la carpeta, se muestra su ruta completa y, si realmente con
 
 > El número de versión de 4D Volume Desktop debe coincidir con el número de versión de 4D Developer Edition. Por ejemplo, si utiliza 4D Developer v18, debe seleccionar un 4D Volume Desktop v18.
 
-#### Data linking mode
+#### Modo de enlace de datos
 
 Esta opción permite elegir el modo de enlace entre la aplicación fusionada y el archivo de datos local. Hay dos modos de enlazar disponibles:
 
@@ -217,7 +217,7 @@ On this tab, you can build customized client-server applications that are homoge
 
 A client/server application comes from the combination of three items:
 
-- A compiled 4D project,
+- Un proyecto 4D compilado,
 - The 4D Server application,
 - The 4D Volume Desktop application (macOS and/or Windows).
 
@@ -280,7 +280,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
-#### Data linking mode
+#### Modo de enlace de datos
 
 Esta opción permite elegir el modo de enlace entre la aplicación fusionada y el archivo de datos local. Hay dos modos de enlazar disponibles:
 
@@ -418,7 +418,7 @@ To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `Datab
 - If a default data folder exists in the single-user application, a licence is embedded.
 - If no default data folder exists in the single-user application, it will be executed without data file and without licence.
 
-The basic scenario is:
+El escenario básico es:
 
 1. In the Build application dialog box, select the "Build compiled structure" option to produce a .4DZ or .4DC for the application to be used in single-user mode.
 2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
@@ -628,7 +628,7 @@ The opening sequence for launching a merged application is:
 
 ### Last data file opened
 
-#### Path of last data file
+#### Ruta del último archivo de datos
 Any standalone or server applications built with 4D stores the path of the last data file opened in the application's user preferences folder.
 
 The location of the application's user preferences folder corresponds to the path returned by the following statement:
