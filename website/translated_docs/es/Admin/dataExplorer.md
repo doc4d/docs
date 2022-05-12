@@ -87,12 +87,12 @@ The page contains several areas:
 
 
 
-### Updating contents
+### Actualizar los contenidos
 
 When the ORDA model or data is modified on the database side (table added, record edited or deleted, etc.), you just need to refresh the Data Explorer page in the browser (using the F5 key, for example).
 
 
-### Ordering entities
+### Ordenar las entidades
 
 You can reorder the displayed entity list according to attribute values. All types of attributes can be used for a sort, except picture and object.
 
@@ -119,7 +119,7 @@ Different operators and query options are available, depending on the data type 
 
 > You cannot filter on picture or object attributes.
 
-#### Numeric operators
+#### Operadores numéricos
 
 With numeric, date, and time attributes, the "=" operator is selected by default. However, you can select another operator from the operator list (click on the "=" icon to display the list):
 

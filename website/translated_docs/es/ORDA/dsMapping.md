@@ -56,7 +56,7 @@ However, the updated ORDA model layer is not automatically available in the foll
 *   a remote datastore opened using `Open datastore` or through [REST calls](REST/gettingStarted.md) -- a new session must be opened.
 
 
-## Object definition
+## Definiciones de los objetos
 
 ### Datastore
 

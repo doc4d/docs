@@ -175,7 +175,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
 
-### EntitySelection Class
+### Clase EntitySelection
 
 Each table exposed with ORDA offers an EntitySelection class in the `cs` class store.
 
@@ -406,7 +406,7 @@ End if
 
 
 
-## Support in 4D projects
+## Soporte en proyectos 4D
 
 
 ### Archivos de clase (class files)
