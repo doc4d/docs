@@ -374,7 +374,7 @@ Legacy session management enabling status for the 4D web server (deprecated).
 | ----------------------------- | ---------------------------------------------------- | ----------- |
 | objeto webServer              | [`logRecording`](API/WebServerClass.md#logrecording) |             |
 | `WEB SET OPTION`              | `Web log recording`                                  |             |
-| Caja de diálogo de parámetros | [Log (type) page](../settings/web.md#log-format)     | Pop up menu |
+| Caja de diálogo de parámetros | [Página log (tipo)](../settings/web.md#log-format)   | Pop up menu |
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
