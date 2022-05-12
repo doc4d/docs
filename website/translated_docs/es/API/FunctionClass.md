@@ -21,7 +21,7 @@ Formula objects can be encapsulated in object properties:
 This property is an "object function", i.e. a function which is bound to its parent object. To execute a function stored in an object property, use the **()** operator after the property name, such as:
 
 ```4d
- $f.message() //displays "Hello world"
+ $f.message() //muestra "Hello world"
 ```
 
 También se admite la sintaxis con paréntesis:
