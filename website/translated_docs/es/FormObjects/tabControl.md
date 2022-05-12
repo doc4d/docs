@@ -87,7 +87,7 @@ Puede crear un array Texto que contenga los nombres de cada página del formular
 > You can also store the names of the pages in a hierarchical list and use the [LIST TO ARRAY](https://doc.4d.com/4dv19/help/command/en/page288.html) command to load the values into the array.
 
 
-## Goto page features
+## Funcionalidades de Goto page
 
 ### Comando FORM GOTO PAGE
 
