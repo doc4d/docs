@@ -258,8 +258,8 @@ You can also declare the return parameter by adding only `: type` and use the [`
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-    // some code
-    return $x+$y
+    // du code
+    retourne $x+$y
 ```
 
 
@@ -394,7 +394,7 @@ Une fonction class constructor, qui accepte des [paramètres](#parameters), peut
 
 Dans ce cas, lorsque vous appelez la fonction [`new()`](API/ClassClass.md#new), le class constructor est appelé avec les paramètres optionnellement passés à la fonction `new()`.
 
-For a class constructor function, the `Current method name` command returns: `<ClassName>:constructor`, for example "MyClass:constructor".
+Pour une fonction class constructor, la commande `Current method name` retourne : `<ClassName>:constructor`, par exemple "MyClass.constructor".
 
 
 
