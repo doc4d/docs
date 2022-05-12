@@ -1,6 +1,6 @@
 ---
 id: user-settings
-title: User Settings
+title: Propiedades usuario
 ---
 
 4D provides two modes of operation for project Settings:
@@ -31,7 +31,7 @@ To enable user settings, you need to check the **Settings** > **Security** > **E
 When you check this option, the settings are separated into three dialog boxes:
 
 * **Propiedades estructura**
-* **User Settings**
+* **Propiedades usuario**
 * **User Settings for Data file**
 
 You can access these dialog boxes using the **Design > Settings...** menu or the **Settings** button in the toolbar:
@@ -70,7 +70,7 @@ The following table lists the pages of settings found in the **User Settings** a
 | [Web/Web Services page](../settings/web.md#web-services)                              | Method prefixing option not available | Method prefixing option not available   |
 | [Página SQL](../settings/sql.md)                                                      | Identical to standard settings        | Identical to standard settings          |
 | [Págin PHP](../settings/php.md)                                                       | Identical to standard settings        | Identical to standard settings          |
-| [Security page](../settings/security.md)                                              | N/a                                   | N/a                                     |
+| [Página seguridad](../settings/security.md)                                           | N/a                                   | N/a                                     |
 | [Página de compatibilidad](../settings/compatibility.md)                              | N/a                                   | N/a                                     |
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
