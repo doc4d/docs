@@ -366,6 +366,6 @@ To protect the code of a component effectively, simply [compile and build](Deskt
 - Los otros métodos proyecto del proyecto matriz nunca aparecerán.
 
 
-## Sharing components
+## Compartir componentes
 
 We encourage you to support the 4D developer community by sharing your components, preferably on the [GitHub platform](https://github.com/topics/4d-component). We recommend that you use the **`4d-component`** topic to be correctly referenced.  
