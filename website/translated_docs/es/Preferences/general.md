@@ -134,7 +134,7 @@ A 4D database can thus operate in a language different from that of the system. 
 When creating a new data file, 4D uses the language previously set in this menu. When opening a data file that is not in the same language as the structure, the data file language is used and the language code is copied into the structure.
 > You can modify this parameter for the open database using the Database Settings (see [Text comparison](../settings/database.md#text-comparison)).
 
-## Documentation Location
+## Ubicación de la documentation
 
 This area configures access to the 4D HTML documentation displayed in your current browser:
 
