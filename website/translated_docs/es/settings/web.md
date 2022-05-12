@@ -287,7 +287,7 @@ Esta página contiene las opciones utilizadas para activar y controlar las funci
 
 ### Publicación
 
-#### Expose as REST server
+#### Activar el servicio REST
 
 Inicia y detiene el servidor REST. Ver [Configuración del servidor REST](../REST/configuration.md).
 
