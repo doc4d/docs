@@ -5,7 +5,7 @@ title: Propiedades de los formularios
 
 ---
 
-## Color Scheme
+## Esquema de colores
 > Color scheme property is only applied on macOS.
 
 This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:

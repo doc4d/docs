@@ -54,7 +54,7 @@ Entity selections can be created from existing selections using various function
 <!-- REF #_command_.Create entity selection.Params -->
 | Parameter | Type               |    | Description                                                                                       |
 | --------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------- |
-| dsTable   | Table              | -> | Tabela do banco de dados 4D cuja seleção atual se utilizará para construir a seleção de entidades |
+| dsTable   | Tabela             | -> | Tabela do banco de dados 4D cuja seleção atual se utilizará para construir a seleção de entidades |
 | settings  | Objeto             | -> | Build option: context                                                                             |
 | Result    | 4D.EntitySelection | <- | Seleção de entidades que coincidem com a classe de dados relacionada com a tabela dada            |
 <!-- END REF -->
@@ -195,9 +195,9 @@ Todo atributo de dataclass pode ser utilizado como uma propriedade de uma entity
 *   If *attributeName* kind is `relatedEntities`: `.attributeName` returns a new entity selection of related values of the same type as *attributeName*. Duplications are removed (an unordered entity selection is returned).
 
 
-When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. In this case, if no entities are returned, the result is an empty entity selection.
+When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. Neste caso, se não se devolver nenhuma entidade, o resultado é uma seleção de entidades vazia.
 
-If the attribute does not exist in the entity selection, an error is returned.
+Se o atributo não existir na seleção de entidades, se devolve um erro.
 
 
 
@@ -206,16 +206,16 @@ If the attribute does not exist in the entity selection, an error is returned.
 
 #### Exemplo 1
 
-Projection of storage values:
+Projeção de valores de armazenamento:
 
 
 ```4d
  var $firstNames : Collection
  $entitySelection:=ds.Employee.all()
- $firstNames:=$entitySelection.firstName // firstName type is string
+ $firstNames:=$entitySelection.firstName // firstName é um string
 ```
 
-The resulting collection is a collection of strings, for example:
+A coleção resultante é uma coleção de strings, por exemplo:
 
 ```4d
 [
@@ -227,26 +227,26 @@ The resulting collection is a collection of strings, for example:
 
 #### Exemplo 2
 
-Projection of related entity:
+Projeção da entidade relacionada:
 
 ```4d
  var $es; $entitySelection : cs.EmployeeSelection
  $entitySelection:=ds.Employee.all()
- $es:=$entitySelection.employer // employer is related to a Company dataClass
+ $es:=$entitySelection.employer // employer é relacionada aum  Company dataClass
 ```
 
-The resulting object is an entity selection of Company with duplications removed (if any).
+O objeto resultane é uma seleção de entidade da Empresa com duplicações removidas (se houver).
 
 #### Exemplo 3
 
-Projection of related entities:
+Projeção de entidades relacionadas:
 
 ```4d
  var $es : cs.EmployeeSelection
- $es:=ds.Employee.all().directReports // directReports is related to Employee dataclass
+ $es:=ds.Employee.all().directReports // directReports é relacionada a dataclasse Funcionário
 ```
 
-The resulting object is an entity selection of Employee with duplications removed (if any).
+O objeto resultante é uma seleção de entidade da dataclasse Funcionario sem duplicatas (se houver).
 
 <!-- END REF -->
 
@@ -257,10 +257,10 @@ The resulting object is an entity selection of Employee with duplications remove
 ## .add()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                                  |
-| ------ | ----------------------------------------- |
-| v18 R5 | Only supports alterable entity selections |
-| v17    | Adicionado                                |
+| Versão | Mudanças                                              |
+| ------ | ----------------------------------------------------- |
+| v18 R5 | Compatível apenas com seleções de entidade alteráveis |
+| v17    | Adicionado                                            |
 </details>
 
 
@@ -268,19 +268,19 @@ The resulting object is an entity selection of Employee with duplications remove
 **.add**( *entity* : 4D.Entity ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.add().Params -->
-| Parameter | Type               |    | Description                                   |
-| --------- | ------------------ |:--:| --------------------------------------------- |
-| entity    | 4D.Entity          | -> | Entity to be added to the entity selection    |
-| Result    | 4D.EntitySelection | -> | Entity selection including the added *entity* |
+| Parameter | Type               |    | Description                                          |
+| --------- | ------------------ |:--:| ---------------------------------------------------- |
+| entity    | 4D.Entity          | -> | Entidade que deve ser adicinonada à entity selection |
+| Result    | 4D.EntitySelection | -> | Seleção de entidades incluindo a *entity* adicionada |
 <!-- END REF -->
 
 
 #### Description
 
-The `.add()` function <!-- REF #EntitySelectionClass.add().Summary -->adds the specified *entity* to the entity selection and returns the modified entity selection<!-- END REF -->.
-> This function modifies the original entity selection.
+A função `.add()` <!-- REF #EntitySelectionClass.add().Summary -->adiciona a *entity* especificada a entity selection e devolve a seleção de entidades modificada<!-- END REF -->.
+> Esta função modifica a entity selection original.
 
-**Warning:** The entity selection must be *alterable*, i.e. it has been created for example by [`.newSelection()`](DataClassClass.md#newselection) or `Create entity selection`, otherwise `.add()` will return an error. Shareable entity selections do not accept the addition of entities. For more information, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
+**Atenção:** a entity selection deve ser *alteravel*, ou seja, foi criado por ejemplo, por [`.newSelection()`](DataClassClass.md#newselection) ou `Create entity selection`, do contrário `.add()` devolverá um erro. As entity selections partilháveis não aceitam a adição de entidades. Para saber mais, consulte [Entity selections compartilháveis ou modificáveis ](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 
 *   If the entity selection is ordered, *entity* is added at the end of the selection. If a reference to the same entity already belongs to the entity selection, it is duplicated and a new reference is added.

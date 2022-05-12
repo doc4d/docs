@@ -155,7 +155,7 @@ El método ***doSomething*** puede ser:
 
 ```4d
  #DECLARE ($signal : 4D.Signal)
-  //any processing
+  //todo proceso
   //...
  Use($signal)
     $signal.myresult:=$processingResult  //return the result

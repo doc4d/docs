@@ -862,7 +862,7 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
 | Parámetros | Tipo       |    | Descripción                  |
 | ---------- | ---------- |:--:| ---------------------------- |
-| parameters | Objeto     | -> | Parameter object             |
+| parameters | Objeto     | -> | Objeto de parámetro          |
 | Resultado  | Collection | <- | Colección de objetos mailbox |
 <!-- END REF -->
 
@@ -1064,13 +1064,13 @@ You want to get the message with ID = 1:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Parámetros | Tipo       |    | Descripción                                            |
-| ---------- | ---------- |:--:| ------------------------------------------------------ |
-| ids        | Collection | -> | Collection of message ID                               |
-| startMsg   | Integer    | -> | Sequence number of the first message                   |
-| endMsg     | Integer    | -> | Sequence number of the last message                    |
-| options    | Objeto     | -> | Message handling instructions                          |
-| Resultado  | Objeto     | <- | Object containing:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
+| Parámetros | Tipo       |    | Descripción                                              |
+| ---------- | ---------- |:--:| -------------------------------------------------------- |
+| ids        | Collection | -> | Collection of message ID                                 |
+| startMsg   | Integer    | -> | Sequence number of the first message                     |
+| endMsg     | Integer    | -> | Sequence number of the last message                      |
+| options    | Objeto     | -> | Message handling instructions                            |
+| Resultado  | Objeto     | <- | Objeto que contiene:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
 <!-- END REF -->
 
 
@@ -1661,7 +1661,7 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 ... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
 
 
-#### Search value types
+#### Tipos de valores de búsqueda
 
 Search-keys may request the value to search for:
 

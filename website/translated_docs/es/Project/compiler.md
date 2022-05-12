@@ -40,7 +40,7 @@ The number of errors found during your first compilations may be daunting, but d
 
 > Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
 
-## Run Compiled
+## Ejecutar la compilación
 
 Once a project is compiled, it is possible to switch from [interpreted mode to compiled mode](Concepts/interpreted.md), and vice versa, at any time and without having to quit the 4D application (except when the interpreted code has been removed). To do this, use tge **Restart Interpreted** and **Restart Compiled** commands of the **Run** menu. The [Open project dialog box](GettingStarted/creating.md#options) also offers a choice between interpreted or compiled mode for database startup.
 
@@ -52,7 +52,7 @@ If you modify your project in interpreted mode, you must recompile it in order t
 
 In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
 
-### Check Syntax
+### Verificar la sintaxis
 
 The **Check Syntax** button starts the execution of the syntax-checking phase. At the end of the checking process, any errors detected are listed in the information area. You can double–click on an error line in order to display the corresponding method.
 
@@ -156,7 +156,7 @@ Two target options are proposed. The result depends on the processor of the mach
 | *Option*                                         | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
-| **My processor (processor)**                     | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Code for Apple Silicon                                                                      |
+| **My processor (processor)**                     | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
 
 > Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang comes with the latest version of Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
