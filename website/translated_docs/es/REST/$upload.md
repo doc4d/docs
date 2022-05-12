@@ -14,21 +14,21 @@ Puede modificar el tiempo de espera, que por defecto es de 120 segundos, pasando
 
 ## Escenario de carga
 
-Imagine you want to upload an image to update the picture attribute of an entity.
+Imagine que quiere subir una imagen para actualizar el atributo imagen de una entidad.
 
-To upload an image (or any binary file), you must first select the file from the client application. The file itlself must be passed in the **body** of the request.
+Para cargar una imagen (o cualquier archivo binario), primero debe seleccionar el archivo desde la aplicación cliente. El archivo en sí debe pasarse en el **cuerpo** de la petición.
 
-Then, you upload the selected image to 4D Server using a request such as:
+A continuación, se sube la imagen seleccionada a 4D Server mediante una petición como:
 
  `POST  /rest/$upload?$rawPict=true`
 
-As a result, the server returns an ID that identifies the file:
+Como resultado, el servidor devuelve un ID que identifica el archivo:
 
 **Respuesta**:
 
 `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50" }`
 
-Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity. The request looks like:
+Después, se utiliza este ID para añadirlo a un atributo utilizando [`$method=update`]($method.md#methodupdate)para añadir la imagen a una entidad. La petición se ve así:
 
  `POST  /rest/Employee/?$method=update`
 
