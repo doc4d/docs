@@ -655,7 +655,7 @@ Document contents are converted with respect to their viewing attributes, includ
 *   Hidden columns / rows.
 > > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
-#### Function result
+#### Resultado
 
 The command returns a picture in SVG format.
 
@@ -1072,7 +1072,7 @@ You can pass the optional *searchCondition* parameter to specify how the search 
 In the optional *replaceValue* parameter, you can pass text to take the place of any instance of the text in *searchValue* found in the *rangeObj*.
 
 
-#### Returned Object
+#### Objeto devuelto
 
 The function returns a range object describing each search value that was found or replaced. An empty range object is returned if no results are found.
 
@@ -1436,10 +1436,10 @@ $colCount:=VP Get column count("ViewProarea")
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 
-| Parámetros      | Tipo    |    | Descripción                       |
-| --------------- | ------- | -- | --------------------------------- |
-| vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| Function result | Integer | <- | Index of the current sheet        |
+| Parámetros | Tipo    |    | Descripción                       |
+| ---------- | ------- | -- | --------------------------------- |
+| vpAreaName | Texto   | -> | 4D View Pro area form object name |
+| Resultado  | Integer | <- | Index of the current sheet        |
 <!-- END REF --> 
 
 #### Descripción
@@ -1621,7 +1621,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 *   `vk workbook`
 
 
-##### Returned Object
+##### Objeto devuelto
 
 El objeto devuelto contiene las siguientes propiedades:
 
@@ -2001,10 +2001,10 @@ $currentSelection:=VP Get selection("myVPArea")
 
 <!-- REF #_method_.VP Get sheet count.Params -->
 
-| Parámetros      | Tipo    |    | Descripción                       |
-| --------------- | ------- | -- | --------------------------------- |
-| vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| Function result | Integer | <- | Número de hojas                   |
+| Parámetros | Tipo    |    | Descripción                       |
+| ---------- | ------- | -- | --------------------------------- |
+| vpAreaName | Texto   | -> | 4D View Pro area form object name |
+| Resultado  | Integer | <- | Número de hojas                   |
 <!-- END REF --> 
 
 #### Descripción
@@ -2041,11 +2041,11 @@ Get the sheet count and set the current sheet to the last sheet:
 
 <!-- REF #_method_.VP Get sheet index.Params -->
 
-| Parámetros      | Tipo    |    | Descripción                       |
-| --------------- | ------- | -- | --------------------------------- |
-| vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| name            | Texto   | -> | Nombre de la hoja                 |
-| Function result | Integer | <- | Índice de la hoja                 |
+| Parámetros | Tipo    |    | Descripción                       |
+| ---------- | ------- | -- | --------------------------------- |
+| vpAreaName | Texto   | -> | 4D View Pro area form object name |
+| name       | Texto   | -> | Nombre de la hoja                 |
+| Resultado  | Integer | <- | Índice de la hoja                 |
 <!-- END REF --> 
 
 #### Descripción
@@ -2082,11 +2082,11 @@ $index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //devuelve 2
 
 <!-- REF #_method_.VP Get sheet name.Params -->
 
-| Parámetros      | Tipo    |    | Descripción                       |
-| --------------- | ------- | -- | --------------------------------- |
-| vpAreaName      | Texto   | -> | 4D View Pro area form object name |
-| sheet           | Integer | -> | Índice de la hoja                 |
-| Function result | Texto   | <- | Nombre de la hoja                 |
+| Parámetros | Tipo    |    | Descripción                       |
+| ---------- | ------- | -- | --------------------------------- |
+| vpAreaName | Texto   | -> | 4D View Pro area form object name |
+| sheet      | Integer | -> | Índice de la hoja                 |
+| Resultado  | Texto   | <- | Nombre de la hoja                 |
 <!-- END REF --> 
 
 #### Descripción
@@ -2161,11 +2161,11 @@ End if
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
-| Parámetros      | Tipo     |    | Descripción                                      |
-| --------------- | -------- | -- | ------------------------------------------------ |
-| vpAreaName      | Texto    | -> | 4D View Pro area form object name                |
-| sheet           | Integer  | <- | Índice de la hoja                                |
-| Function result | Booleano | <- | True if print lines are visible, False otherwise |
+| Parámetros | Tipo     |    | Descripción                                      |
+| ---------- | -------- | -- | ------------------------------------------------ |
+| vpAreaName | Texto    | -> | 4D View Pro area form object name                |
+| sheet      | Integer  | <- | Índice de la hoja                                |
+| Resultado  | Booleano | <- | True if print lines are visible, False otherwise |
 <!-- END REF --> 
 
 #### Descripción
