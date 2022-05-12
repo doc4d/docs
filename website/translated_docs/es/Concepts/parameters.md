@@ -52,7 +52,7 @@ Los valores de entrada y salida son [evaluados](#values-or-references) en el mom
 - [variables numeradas secuencialmente](#sequential-parameters).
 
 
-Both [named](#named-parameters) and [sequential](#sequential-parameters) syntaxes can be mixed with no restriction to declare parameters. Por ejemplo:
+Las sintaxis [nombradas](#named-parameters) y [secuenciales](#sequential-parameters) se pueden combinar sin restricción para declarar los parámetros. Por ejemplo:
 
 ```4d
 ```4d
@@ -139,7 +139,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 ### Tipos de datos soportados
 
-With named parameters, you can use the same data types as those which are [supported by the `var` keyword](variables.md#using-the-var-keyword), including class objects.  Por ejemplo:
+Con los parámetros con nombre, puede utilizar los mismos tipos de datos [soportados por la palabra clave `var`](variables.md#using-the-var-keyword), incluidos los objetos de las clases.  Por ejemplo:
 
 ```4d
 Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
@@ -151,9 +151,9 @@ Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
 
 ## Parámetros secuenciales
 
-As an alternative to [named parameters](#named-parameters) syntax, you can declare parameters using sequentially numbered variables: **$1**, **$2**, **$3**, and so on. La numeración de las variables locales representa el orden de los parámetros.
+Como alternativa a la sintaxis [parámetros nombrados](#named-parameters), puede declarar los parámetros utilizando variables numeradas secuencialmente: **$1**, **$2**, **$3**, etc. La numeración de las variables locales representa el orden de los parámetros.
 
-> Although this syntax is supported by class functions, it is recommended to use [named parameters](#named-parameters) syntax in this case.
+> Aunque esta sintaxis es soportada por las funciones clase, se recomienda utilizar la sintaxis [parámetros nombrados](#named-parameters) en este caso.
 
 Por ejemplo, cuando se llama a un método proyecto `DO_SOMETHING` con tres parámetros:
 
@@ -256,7 +256,7 @@ Los métodos proyecto 4D aceptan un número variable de parámetros. Puede dirig
 
 
 
-### Using generic parameters
+### Utilización de los parámetros genéricos
 
 Por ejemplo, considere un método que suma valores y devuelve la suma formateada según un formato que se pasa como parámetro. Cada vez que se llama a este método, el número de valores a sumar puede variar. Debemos pasar los valores como parámetros al método y el formato en forma de cadena de caracteres. El número de valores puede variar de una llamada a otra.
 
@@ -412,10 +412,10 @@ method1(42) //tipo incorrecto, texto esperado
 
 Este caso es tratado por 4D en función del contexto:
 
-- in [compiled projects](interpreted.md), an error is generated at the compilation step whenever possible. Otherwise, an error is generated when the method is called.
-- in interpreted projects:
-    + if the parameter was declared using the [named syntax](#named-parameters) (`#DECLARE` or `Function`), an error is generated when the method is called.
-    + if the parameter was declared using the [sequential syntax](#sequential-parameters) (`C_XXX`), no error is generated, the called method receives an empty value of the expected type.
+- en [proyectos compilados](interpreted.md), se genera un error en el paso de compilación siempre que sea posible. En caso contrario, se genera un error cuando se llama al método.
+- en los proyectos interpretados:
+    + si el parámetro se declaró utilizando la [sintaxis nombrada](#named-parameters) (`#DECLARE` o `Function`), se genera un error cuando se llama al método.
+    + si el parámetro fue declarado utilizando [la sintaxis secuencial ](#sequential-parameters)(`C_XXX`), no se genera ningún error, el método llamado recibe un valor vacío del tipo esperado.
 
 
 
