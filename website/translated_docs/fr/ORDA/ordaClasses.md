@@ -26,7 +26,7 @@ Grâce à cette fonctionnalité, toute la logique métier de votre application 4
 
 - Si la structure phySique évolue, il vous suffit d'adapter le code de la fonction et les applications clientes continueront de les appeler de manière transparente.
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes-1)) and [alias attributes](#alias-attributes-1) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes-1)) and [alias attributes](#alias-attributes-1) are **not exposed** to remote applications and cannot be called from REST requests. Vous devez déclarer explicitement chaque fonction publique et alias avec le mot-clé [`exposed`](#exposed-vs-non-exposed-functions).
 
 ![](assets/en/ORDA/api.png)
 
@@ -234,7 +234,7 @@ Les classes Entity vous permettent de définir des **champs calculés** à l'aid
 
 For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
-#### Alias attributes
+#### Attributs des alias
 
 Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
 
@@ -255,7 +255,7 @@ Function getPopulation()
 
 
 Function isBigCity(): Boolean
-// The getPopulation() function is usable inside the class
+// La fonction getPopulation() est utilisable dans la classe
 $0:=This.getPopulation()>50000
 ```
 
@@ -641,7 +641,7 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
-## Alias attributes
+## Attributs des alias
 
 ### Aperçu
 
@@ -936,7 +936,7 @@ End if
 
 
 
-## Support in 4D IDE
+## Prise en charge en IDE 4D
 
 
 ### Fichiers de classe (class files)
