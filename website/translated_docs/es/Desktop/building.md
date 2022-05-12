@@ -217,7 +217,7 @@ On this tab, you can build customized client-server applications that are homoge
 
 A client/server application comes from the combination of three items:
 
-- A compiled 4D project,
+- Un proyecto 4D compilado,
 - The 4D Server application,
 - The 4D Volume Desktop application (macOS and/or Windows).
 
@@ -398,7 +398,7 @@ To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `Datab
 - If a default data folder exists in the single-user application, a licence is embedded.
 - If no default data folder exists in the single-user application, it will be executed without data file and without licence.
 
-The basic scenario is:
+El escenario básico es:
 
 1. In the Build application dialog box, select the "Build compiled structure" option to produce a .4DZ or .4DC for the application to be used in single-user mode.
 2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
@@ -592,7 +592,7 @@ The opening sequence for launching a merged application is:
 
 ### Last data file opened
 
-#### Path of last data file
+#### Ruta del último archivo de datos
 Any standalone or server applications built with 4D stores the path of the last data file opened in the application's user preferences folder.
 
 The location of the application's user preferences folder corresponds to the path returned by the following statement:
