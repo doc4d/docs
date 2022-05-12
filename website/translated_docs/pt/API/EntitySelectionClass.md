@@ -287,9 +287,9 @@ A função `.add()` <!-- REF #EntitySelectionClass.add().Summary -->adiciona a *
 *   If the entity selection is unordered, *entity* is added anywhere in the selection, with no specific order.
 > For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
 
-The modified entity selection is returned by the function, so that function calls can be chained.
+A entity selection modificada é devolvida pela função, de modo que as chamadas à função podem ser encadeados.
 
-An error occurs if *entity* and the entity selection are not related to the same Dataclass. If *entity* is Null, no error is raised.
+Se produz um erro se *entity* e a entity selection não estão relacionadas com a mesma dataclass. Se *entity* for Null, não se produz nenhum erro.
 
 #### Exemplo 1
 
@@ -300,12 +300,12 @@ An error occurs if *entity* and the entity selection are not related to the same
  $employee:=ds.Employee.new()
  $employee.lastName:="Smith"
  $employee.save()
- $employees.add($employee) //The $employee entity is added to the $employees entity selection
+ $employees.add($employee) //A entidade $employee se adiciona a entity selection $employees
 ```
 
 #### Exemplo 2
 
-Calls to the function can be chained:
+As chamadas à função podem ser encadeadas:
 
 ```4d
  var $sel : cs.ProductSelection
@@ -335,25 +335,25 @@ Calls to the function can be chained:
 
 
 <!-- REF #EntitySelectionClass.and().Params -->
-| Parameter       | Type               |    | Description                                                                    |
-| --------------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | Entity to intersect with                                                       |
-| entitySelection | 4D.EntitySelection | -> | Entity selection to intersect with                                             |
-| Result          | 4D.EntitySelection | <- | New entity selection with the result of intersection with logical AND operator |
+| Parameter       | Type               |    | Description                                                          |
+| --------------- | ------------------ |:--:| -------------------------------------------------------------------- |
+| entity          | 4D.Entity          | -> | Entidade a intersectar                                               |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                       |
+| Result          | 4D.EntitySelection | <- | Entity selection resultante da intersecção com o operador lógico AND |
 <!-- END REF -->
 
 
 #### Description
 
-The `.and()` function <!-- REF #EntitySelectionClass.and().Summary -->combines the entity selection with an *entity* or *entitySelection* parameter using the logical AND operator<!-- END REF -->; it returns a new, unordered entity selection that contains only the entities that are referenced in both the entity selection and the parameter.
+A função `.and()` <!-- REF #EntitySelectionClass.and().Summary -->combina a entity selection com o parâmetro *entity* ou *entitySelection* utilizando o operador lógico AND<!-- END REF -->; devolve uma nova entity selection não ordenada que contém só as entidades às que se faz referência tanto na entity selection quanto o parâmetro.
 
 *   If you pass *entity* as parameter, you combine this entity with the entity selection. If the entity belongs to the entity selection, a new entity selection containing only the entity is returned. Otherwise, an empty entity selection is returned.
 *   If you pass *entitySelection* as parameter, you combine both entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. If there is no intersecting entity, an empty entity selection is returned.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Pode comparar [entity selections ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). A seleção resultante é sempre desordenada.
 
-If the original entity selection or the *entitySelection* parameter is empty, or if the *entity* is Null, an empty entity selection is returned.
+Se a entity selection inicial ou o parâmetro *entitySelection* estiverem vazios, ou se *entity* for Null, se devolve uma entity selection vazia.
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+Se a entity selection inicial e o parâmetro não forem relacionados com a mesma dataclass, se produz um erro.
 
 
 #### Exemplo 1
@@ -363,19 +363,19 @@ If the original entity selection and the parameter are not related to the same d
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
  $employees:=ds.Employee.query("lastName = :1";"H@")   
-  //The $employees entity selection contains the entity
-  //with primary key 710 and other entities
-  //for ex. "Colin Hetrick" / "Grady Harness" / "Sherlock Holmes" (primary key 710)
- $employee:=ds.Employee.get(710) // Returns "Sherlock Holmes"
+  //a entity selection $employees contém a entidade
+  //com a chave primaria 710 e outras entidades
+  //por exemplo. "Colin Hetrick" / "Grady Harness" / "Sherlock Holmes" (primary key 710)
+ $employee:=ds.Employee.get(710) // Devolve "Sherlock Holmes"
 
- $result:=$employees.and($employee) //$result is an entity selection containing   
-  //only the entity with primary key 710 ("Sherlock Holmes")
+ $result:=$employees.and($employee) //$result é uma seleção de entidades que contém   
+  //só a entidade com chave primaria 710 ("Sherlock Holmes")
 ```
 
 
 #### Exemplo 2
 
-We want to have a selection of employees named "Jones" who live in New York:
+Se quisermos ter uma seleção de empregados chamados "Jones" que morem em Nova York:
 
 ```4d
  var $sel1; $sel2; $sel3 : cs.EmployeeSelection
@@ -391,35 +391,35 @@ We want to have a selection of employees named "Jones" who live in New York:
 ## .average()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                                    |
-| ------ | ------------------------------------------- |
-| v18 R6 | Returns undefined if empty entity selection |
-| v17    | Adicionado                                  |
+| Versão | Mudanças                                                |
+| ------ | ------------------------------------------------------- |
+| v18 R6 | Retorna indefinido se uma seleção de entidade for vazia |
+| v17    | Adicionado                                              |
 
 </details>
 
 <!-- REF #EntitySelectionClass.average().Syntax -->
-**.average**( *attributePath* : Text ) : Real<!-- END REF -->
+**.average**( {*propertyPath* : Text } ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.average().Params -->
-| Parameter     | Type  |    | Description                                                                                |
-| ------------- | ----- |:--:| ------------------------------------------------------------------------------------------ |
-| attributePath | Texto | -> | Attribute path to be used for calculation                                                  |
-| Result        | Real  | <- | Arithmetic mean (average) of entity attribute values (Undefined if empty entity selection) |
+| Parameter     | Type  |    | Description                                                                                                        |
+| ------------- | ----- |:--:| ------------------------------------------------------------------------------------------------------------------ |
+| attributePath | Texto | -> | Rota de atributo a utilizar para o cálculo                                                                         |
+| Result        | Real  | <- | Media aritmética (média) dos valores das entidades para o atributo (Não se define para uma entity selection vazia) |
 <!-- END REF -->
 
 #### Description
 
-The `.average()` function <!-- REF #EntitySelectionClass.average().Summary -->returns the arithmetic mean (average) of all the non-null values of *attributePath* in the entity selection<!-- END REF -->.
+A função `.average()` <!-- REF #EntitySelectionClass.average().Summary -->devolve a média aritmética  de todos os valores não nulos de *attributePath* na entity selection<!-- END REF -->.
 
-Pass in the *attributePath* parameter the attribute path to evaluate.
+Passe no parâmetro *attributePath* a rota de atributo a avaliar.
 
-Only numerical values are taken into account for the calculation. Note however that, if the *attributePath* of the entity selection contains mixed value types, `.average()` takes all scalar elements into account to calculate the average value.
-> Date values are converted to numerical values (seconds) and used to calculate the average.
+Só são levados em consideração os valores numéricos para o cálculo. Lembre entretanto que se o *attributePath* da seleção de entidades conter tipos de valores mistos, `.average()` considera todos os elementos escalares para calcular o valor médio.
+> Os valores de tipo Date são convertidos em valores numéricos (segundos) e são usados para calcular a média.
 
-`.average()` returns **undefined** if the entity selection is empty or *attributePath* does not contain numerical values.
+`.average()` returns **undefined**se a entity selection estiver vazia ou *attributePath* não conter valores numéricos.
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
@@ -513,7 +513,7 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 The `.count()` function <!-- REF #EntitySelectionClass.count().Summary -->returns the number of entities in the entity selection with a non-null value in *attributePath*<!-- END REF -->.
 > Only scalar values are taken into account. Object or collection type values are considered as null values.
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* is not found in the entity selection dataclass.
@@ -634,7 +634,7 @@ You can use the `[]` notation to designate a collection when *attributePath* is 
 
 Como padrão, uma avaliação não-diacrítica é realizada. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* is not found in the entity selection dataclass.
@@ -1166,10 +1166,10 @@ Entity selections always have a `.length` property.
 ## .max()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                                    |
-| ------ | ------------------------------------------- |
-| v17    | Adicionado                                  |
-| v18 R6 | Returns undefined if empty entity selection |
+| Versão | Mudanças                                                |
+| ------ | ------------------------------------------------------- |
+| v17    | Adicionado                                              |
+| v18 R6 | Retorna indefinido se uma seleção de entidade for vazia |
 
 </details>
 
@@ -1193,7 +1193,7 @@ If you pass in *attributePath* a path to an object property containing different
 `.max()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
@@ -1218,10 +1218,10 @@ We want to find the highest salary among all the female employees:
 ## .min()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                                    |
-| ------ | ------------------------------------------- |
-| v17    | Adicionado                                  |
-| v18 R6 | Returns undefined if empty entity selection |
+| Versão | Mudanças                                                |
+| ------ | ------------------------------------------------------- |
+| v17    | Adicionado                                              |
+| v18 R6 | Retorna indefinido se uma seleção de entidade for vazia |
 
 
 </details>
@@ -1244,7 +1244,7 @@ If you pass in *attributePath* a path to an object property containing different
 
 `.min()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
@@ -1291,13 +1291,13 @@ The `.minus()` function <!-- REF #EntitySelectionClass.minus().Summary -->exclud
 
 *   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
 *   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Pode comparar [entity selections ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). A seleção resultante é sempre desordenada.
 
 If the original entity selection or both the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned.
 
 If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+Se a entity selection inicial e o parâmetro não forem relacionados com a mesma dataclass, se produz um erro.
 
 
 #### Exemplo 1
@@ -1346,8 +1346,8 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 <!-- REF #EntitySelectionClass.or().Params -->
 | Parameter       | Type               |    | Description                                                            |
 | --------------- | ------------------ |:--:| ---------------------------------------------------------------------- |
-| entity          | 4D.Entity          | -> | Entity to intersect with                                               |
-| entitySelection | 4D.EntitySelection | -> | Entity selection to intersect with                                     |
+| entity          | 4D.Entity          | -> | Entidade a intersectar                                                 |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                         |
 | Result          | 4D.EntitySelection | <- | New entity selection or new reference to the original entity selection |
 <!-- END REF -->
 
@@ -1357,13 +1357,13 @@ The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the
 
 *   If you pass *entity* as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
 *   If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection containing the entities belonging to the original entity selection or *entitySelection* is returned (or is not exclusive, entities referenced in both selections are not duplicated in the resulting selection).
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> Pode comparar [entity selections ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). A seleção resultante é sempre desordenada.
 
 If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
 
 If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+Se a entity selection inicial e o parâmetro não forem relacionados com a mesma dataclass, se produz um erro.
 
 
 #### Exemplo 1
@@ -1931,7 +1931,7 @@ The `.sum()` function <!-- REF #EntitySelectionClass.sum().Summary -->returns th
 
 The sum can only be done on values of number type. If the *attributePath* is an object property, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
 
-An error is returned if:
+Um erro é retornado se:
 
 *   *attributePath* is not a numerical or an object attribute,
 *   *attributePath* is a related attribute,
