@@ -102,7 +102,7 @@ When you copy or move these formulas to new locations, each cell address in that
 
 
 
-### Reference Notation
+### Notación de las referencias
 
 If you use only cell coordinates, for example, `C5`, 4D View Pro interprets the reference as relative. You may make the reference an absolute reference by putting a dollar sign in front of the letter and the number, as in `$C$5`.
 
@@ -122,7 +122,7 @@ The following table shows the effect of the different notations:
 
 
 
-## Built-in functions
+## Funciones integradas
 
 Spreadsheet functions are preset formulas used to calculate cell values. When you type the first letter of the function to enter, a pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
 
