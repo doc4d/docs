@@ -63,7 +63,7 @@ Designate a default home page for the Web server. See [Default Home page](../Web
 
 Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
 
-#### Pages Cache Size
+#### Tamaño de la caché de las páginas
 
 Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
 
@@ -144,7 +144,7 @@ Using **Custom** authentication is recommended. See [**Authentication**](../WebS
 
 ## Options (II)
 
-### Text Conversion
+### Conversión texto
 
 #### Send Extended Characters Directly
 
