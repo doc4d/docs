@@ -321,7 +321,7 @@ ALERT($beverage) // "Beer" "Beer" : "Juice"
 ALERT($beverage) // "Beer"
 ```
 
-#### Handling data from a table
+#### Gestión de los datos de una tabla
 
 This example stores a person's full name in a variable, and handles the case when no first name or last name has been specified:
 
