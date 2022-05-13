@@ -234,7 +234,7 @@ Entity classes allow you to define **computed attributes** using specific keywor
 
 For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
-#### Alias attributes
+#### Atributos de los alias
 
 Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
 
@@ -614,7 +614,7 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
-## Alias attributes
+## Atributos de los alias
 
 ### Generalidades
 
