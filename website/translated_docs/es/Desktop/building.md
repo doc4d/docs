@@ -55,7 +55,7 @@ When an application is built, 4D generates a log file named *BuildApp.log.xml* i
 - El inicio y el fin de la generación de objetivos,
 - El nombre y la ruta de acceso completa de los archivos generados,
 - La fecha y la hora de la generación,
-- Any errors that occurred,
+- Todos los errores que se han producido,
 - Any signing issues (e.g. a non-signed plug-in).
 
 Checking this file may help you saving time during the subsequent deployment steps, for example if you intend to notarize your application.
@@ -546,7 +546,7 @@ You can designate as many valid files as you want. When building an executable a
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
 
 
-### OS X signing certificate
+### Certificación de las aplicaciones en OS X
 
 El generador de aplicaciones puede firmar aplicaciones 4D fusionadas bajo macOS (aplicaciones monopuesto, componentes, 4D Server y partes cliente bajo macOS). Signing an application authorizes it to be executed using the Gatekeeper functionality of macOS when the "Mac App Store and identified Developers" option is selected (see "About Gatekeeper" below).
 
@@ -611,7 +611,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 
 
-## Management of data file(s)
+## Gestión de archivos de datos
 
 
 ### Apertura del archivo de datos
