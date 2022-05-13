@@ -61,7 +61,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 
 ## Client/server optimization
 
-4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. They include:
+4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Incluyen:
 * the **optimization context**
 * the **ORDA cache**
 
@@ -70,7 +70,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 The optimization context is based upon the following implementations:
 
 * When a client requests an entity selection from the server, 4D automatically "learns" which attributes of the entity selection are actually used on the client side during the code execution, and builds a corresponding "optimization context". This context is attached to the entity selection and stores the used attributes. It will be dynamically updated if other attributes are used afterwards. The following methods and functions trigger the learning phase:
-  * [`Create entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
+  * [`Crear una entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
   * [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
   * [`dataClass.all()`](../API/DataClassClass.md#all)
   * [`dataClass.get()`](../API/DataClassClass.md#get)
