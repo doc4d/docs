@@ -13,7 +13,7 @@ Using the area's property list, you can set [4D View Pro object properties](Form
 
 
 
-### Selecting a user interface
+### Selección de una interfaz usuario
 
 You can select the interface to use with your 4D View Pro form areas in the **Property List**, under **Appearance**:
 
@@ -138,7 +138,7 @@ For example, when using the [VP SET VALUE](method-list.md#vp-set-value) or [VP S
 
 Note that when creating your own format patterns, only the display of the data is modified. The value of the data remains unchanged.
 
-### Number and text formats
+### Formatos numérico y texto
 
 Number formats apply to all number types (e.g., positive, negative, and zeros).
 
@@ -176,10 +176,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 | Constante                                 | Valor                                | Comentario                                                                                                                                                                                                                  |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"                                                   |
-| `vk pattern long date`                    | "_longDatePattern_"                  | ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"                                                                     |
-| `vk pattern long time`                    | "_longTimePattern_"                  | ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"                                                                                    |
-| `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                           |
+| `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"                                                 |
+| `vk pattern long date`                    | "_longDatePattern_"                  | ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"                                                                   |
+| `vk pattern long time`                    | "_longTimePattern_"                  | ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"                                                                                  |
+| `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                          |
 | `vk pattern short date`                   | "_shortDatePattern_"                 | Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"                                                                    |
 | `vk pattern short time`                   | "_shortTimePattern_"                 | Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"                                                                         |
 | `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"            |
@@ -214,15 +214,15 @@ To create your own date and time patterns, in your current localization, you can
 |       | yy                                 | Year, short                                      | 19                    |
 |       | yyyy                               | Año, formato largo                               | 2019                  |
 | Hora  |                                    |                                                  | (2:03:05 PM)          |
-|       | h                                  | Hour without leading zero. 0-23                  | 2                     |
-|       | hh                                 | Hour with leading zero. 00-23                    | 02                    |
+|       | h                                  | Hora sin cero precedente. 0-23                   | 2                     |
+|       | hh                                 | Hora con cero precedente. 00-23                  | 02                    |
 |       | m                                  | Minutes without leading zero. 0-59               | 3                     |
-|       | mm                                 | Minutes with leading zero. 00-59                 | 03                    |
+|       | mm                                 | Minutos con cero precedente. 00-59               | 03                    |
 |       | s                                  | Seconds without leading zero. 0-59               | 5                     |
-|       | ss                                 | Seconds with leading zero. 00-59                 | 05                    |
+|       | ss                                 | Segundo con cero precedente. 00-59               | 05                    |
 |       | \[h]                              | Tiempo transcurrido en horas                     | 14 (puede superar 24) |
-|       | \[mm]                             | Elapsed time in minutes                          | 843                   |
-|       | \[ss]                             | Elapsed time in seconds                          | 50585                 |
+|       | \[mm]                             | Tiempo transcurrido en minutos                   | 843                   |
+|       | \[ss]                             | Tiempo transcurrido en segundos                  | 50585                 |
 |       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                    |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
@@ -233,7 +233,7 @@ In addition to the special characters and codes described in the previous sectio
 | Caracter | Descripción                                                        | Ejemplo              |
 | -------- | ------------------------------------------------------------------ | -------------------- |
 | + y -    | Plus and minus signs                                               | ### + ### = ###,### |
-| ( )      | Left and right parenthesis                                         | (-###.##)            |
+| ( )      | Paréntesis izquierdo y derecho                                     | (-###.##)            |
 | :        | Dos puntos                                                         | hh:mm:ss             |
 | ^        | Caret                                                              | #\^#                |
 | '        | Apostrofe                                                          | '######              |
@@ -370,14 +370,19 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 |           | ancho  | entero largo | Width of the paper, in hundredths of an inch.                                                                    |
 |           | kind   | texto        | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Default value = "letter" |
 
+* If `height` and `width` are set without using the `kind` property,  [VP Get print info](./method-list.md/#vp-get-print-info) returns a paperSize with `custom` as value for `kind`.
+
+* If you set the paper size using the `kind` property, you can use either:
+    * one of the formats in the [SpreadJS format list](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html)
+    * one of the formats returned by the [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/en/page785.html) command.
 ### Escala
 
 Scale attributes are used to specify printing optimization and adjustments.
 
 | Propiedad      | Tipo         | Descripción                                                                                                                           |
 | -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Default value = "false"                |
-| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Default value = "false"                |
+| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Valor por defecto: "false"             |
+| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Valor por defecto: "false"             |
 | fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Por defecto = -1    |
 | fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Por defecto = -1 |
 
@@ -387,9 +392,9 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 
 | Propiedad        | Tipo         | Descripción                                                                                                                                                                      |
 | ---------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | booleano     | Prints the outline border.<p><p>Default value = "true"                                                                           |
+| showBorder       | booleano     | Imprime el borde del contorno.<p><p>Default value = "true"                                                                       |
 | showColumnHeader | entero largo | Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
-| showGridLine     | booleano     | Imprime las líneas de la cuadrícula.<p>Default value = "false"                                                                                           |
+| showGridLine     | booleano     | Imprime las líneas de la cuadrícula.<p>Valor por defecto: "false"                                                                                        |
 | showRowHeader    | entero largo | Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
 
 ### Watermark
@@ -503,7 +508,7 @@ It contains the following properties:
 
 | Propiedad    | Tipo de valor | Descripción                                  |
 | ------------ | ------------- | -------------------------------------------- |
-| version      | Entero largo  | Internal component version                   |
+| version      | Entero largo  | Versión del componente interno               |
 | dateCreation | Timestamp     | Creation date                                |
 | dateModified | Timestamp     | Last modification date                       |
 | meta         | Objeto        | Free contents, reserved for the 4D developer |
