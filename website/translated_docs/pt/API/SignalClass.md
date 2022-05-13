@@ -21,7 +21,7 @@ A `4D.Signal` object contains the following built-in methods and properties:
 
 Any worker/process calling the `.wait()` method will suspend its execution until the `.signaled` property is true. While waiting for a signal, the calling process does not use any CPU. This can be very interesting for performance in multiprocess applications. The `.signaled` property becomes true when any worker/process calls the `.trigger()` method.
 
-Note that to avoid blocking situations, the `.wait()` can also return after a defined timeout has been reached.
+Lembre que para evitar situações de bloqueio, `.wait()` também pode regrassar depois de que tenha alcançado um tempo de espera definido.
 
 Signal objects are created with the [New signal](#new-signal) command.
 
@@ -30,13 +30,13 @@ Signal objects are created with the [New signal](#new-signal) command.
 
 In 4D, you create a new signal object by calling the [`New signal`](#new-signal) command. Once created, this signal must be passed as a parameter to the `New process` or `CALL WORKER` commands so that they can modify it when they have finished the task you want to wait for.
 
-- `signal.wait()` must be called from the worker/process that needs another worker/process to finish a task in order to continue.
-- `signal.trigger()` must be called from the worker/process that finished its execution in order to release all others.
+- `signal.wait()` deve ser chamado do worker/processo que precisa de outro worker/processo para terminar uma tarefa para poder continuar.
+- `signal.trigger()` deve ser chamado desde worker/processo que terminou sua execução para liberar a todos os outros.
 
 
 ![](assets/en/API/signal.png)
 
-Once a signal has been released using a `signal.trigger()` call, it cannot be reused again. If you want to set another signal, you need to call the `New signal` command again.
+Quando um sinal tiver sido lançado usando uma chamada `signal.trigger()`, não pode ser reutilizado. If you want to set another signal, you need to call the `New signal` command again.
 
 Since a signal object is a [shared object](Concepts/shared.md), you can use it to return results from called workers/processes, provided that you do not forget to write values within a `Use...End use` structure (see example).
 
@@ -52,10 +52,10 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  CALL WORKER(1;"OpenForm";$signal)
   // do another calculation
  ...
-  // Waiting for the end of the process
+  // Esperando pelo final do processo
  $signaled:=$signal.wait()
 
-  // Processing of the results
+  // Processando o resultado
  $calc:=$signal.result+...
 ```
 
@@ -66,17 +66,17 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  var $form : Object
  $form:=New object("value";0)
 
-  // Open the form
+  // Abrir o formulário
  $win:=Open form window("Information";Movable form dialog box)
  DIALOG("Information";$form)
  CLOSE WINDOW($win)
 
-  // Add a new attribute to your $signal shared object to pass your result to the other process:
+  // Adiciona um novo atributo para seu objeto partilhado $signal para passar seu resultado aos outros processos:
  Use($signal)
     $signal.result:=$form.value
  End use
 
-  // Trigger the signal to the waiting process
+  // Ativa o sinal para o processo de espera
  $signal.trigger()
 ```
 
@@ -158,9 +158,9 @@ O método ***doSomething*** poderia ser algo como:
   //any processing
   //...
  Use($signal)
-    $signal.myresult:=$processingResult  //return the result
+    $signal.myresult:=$processingResult  //retorna o resultado
  End use
- $signal.trigger() // The work is finished
+ $signal.trigger() // O trabalho terminou
 ```
 
 
