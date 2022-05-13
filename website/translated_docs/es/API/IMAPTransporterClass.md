@@ -6,7 +6,7 @@ title: IMAPTransporter
 The `IMAPTransporter` class allows you to retrieve messages from a IMAP email server.
 
 
-### IMAP Transporter object
+### Objeto IMAP Transporter
 
 IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-new-transporter) command. They provide the following properties and functions:
 

@@ -22,9 +22,9 @@ $city:=ds.City.getCity("Aguada")
 
 ## Llamadas de las funciones
 
-Functions must always be called using REST **POST** requests (a GET request will receive an error).
+Las funciones deben llamarse siempre utilizando peticiones **POST** (una petición GET recibirá un error).
 
-Functions are called on the corresponding object on the server datastore.
+Las funciones son llamadas en el objeto correspondiente en el almacén de datos del servidor.
 
 | Función de clase                                                   | Sintaxis                                                                    |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
