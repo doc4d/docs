@@ -22,8 +22,8 @@ var $txt : Text
 
 $path:=Folder(fk desktop folder).file("MyDocs/Archive.zip")
 $archive:=ZIP Read archive($path)
-$zipFolder:=$archive.root // store the zip main folder
-$zipFile:=$zipFolder.files()[0] //read the first zipped file
+$zipFolder:=$archive.root // armazenar a pasta principal zip
+$zipFile:=$zipFolder.files()[0] //ler o primeiro arquivo zipado
 
 If($zipFile.extension=".txt")
     $txt:=$zipFile.getText()
