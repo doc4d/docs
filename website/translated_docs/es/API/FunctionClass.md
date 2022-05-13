@@ -85,7 +85,7 @@ For more convenience, when the formula is made of a single project method, param
 
 Parameters are received within the method, in the order they are specified in the call.
 
-### About 4D.Function objects
+### Sobre los objetos 4D.Function
 
 A `4D.Function` object contains a piece of code that can be executed from an object, either using the `()` operator, or using the [`apply()`](#apply) and [`call()`](#call) functions. 4D proposes three kinds of Function objects:
 
