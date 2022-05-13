@@ -3,7 +3,7 @@ id: glossary
 title: Glosario
 ---
 
-## Main concepts at a glance
+## Visión general de los principales conceptos
 
 ![](assets/en/ORDA/mainConcepts.png)
 
