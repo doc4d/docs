@@ -553,7 +553,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 ## Management of data file(s)
 
-### Opening the data file
+### Apertura del archivo de datos
 
 When a user launches a merged application or an update (single-user or client/server applications), 4D tries to select a valid data file. Several locations are examined by the application successively.
 
@@ -565,7 +565,7 @@ The opening sequence for launching a merged application is:
 4. If not found, 4D displays a standard "Open data file" dialog box.
 
 
-### Last data file opened
+### Último archivo de datos abierto
 
 #### Ruta del último archivo de datos
 Any standalone or server applications built with 4D stores the path of the last data file opened in the application's user preferences folder.
