@@ -43,7 +43,7 @@ To connect to the Data Explorer web page:
 
 
 
-## Using the Data Explorer
+## Uso del explorador de datos
 
 In addition to a comprehensive and customizable view of your data, the Data Explorer allows you to query and order your data.
 
