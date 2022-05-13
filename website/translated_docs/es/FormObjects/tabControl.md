@@ -57,7 +57,7 @@ You can assign an [object](Concepts/dt_object.md) encapsulating a [collection](C
 | -------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `values`       | Collection | Obligatorio - Colección de valores escalares. Only string values are supported. If invalid, empty or not defined, the tab control is empty |
 | `index`        | number     | Index of the currently tab control page (value between 0 and `collection.length-1`)                                                        |
-| `currentValue` | Texto      | Currently selected value                                                                                                                   |
+| `currentValue` | Texto      | Valor actual seleccionado                                                                                                                  |
 
 The initialization code must be executed before the form is presented to the user.
 
