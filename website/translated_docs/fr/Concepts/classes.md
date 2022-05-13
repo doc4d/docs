@@ -247,19 +247,19 @@ Function add($x : Integer)
 
 #### Valeur retournée
 
-You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. Par exemple :
+Vous déclarez le paramètre de retour d'une fonction (optionnel) en ajoutant une flèche (`->`) et la définition du paramètre de retour après la liste des paramètres d'entrée, ou les deux points (`:`) et le tye de paramètre de retour uniquement. Par exemple :
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
     $result:=$x+$y
 ```
 
-You can also declare the return parameter by adding only `: type` and use the [`return expression`](parameters.md#return-expression) (it will also end the function execution). Par exemple :
+Vous pouvez également déclarer le paramètre de retour en ajoutant seulement `: type` et utiliser l'expression [`return`](parameters.md#return-expression) (elle mettra également fin à l'exécution de la fonction). Par exemple :
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
     // du code
-    retourne $x+$y
+    return $x+$y
 ```
 
 
