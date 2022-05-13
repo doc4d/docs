@@ -96,7 +96,7 @@ When this option is checked, you will be able to connect to the `WebAdmin` web s
 Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. El valor por defecto es 7443.
 
 
-#### Certificate folder path
+#### Ruta de la carpeta de certificados
 
 Path of the folder where the TLS certificate files are located. By default, the certificate folder path is empty and 4D or 4D Server uses the certificate files embedded in the 4D application (custom certificates must be stored next to the project folder).
 
