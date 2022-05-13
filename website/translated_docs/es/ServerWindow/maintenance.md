@@ -24,7 +24,7 @@ After verification, a report file is generated in XML format on the server in th
 
 This area indicates the date, time and status of the last  carried out on the database data.
 
-### Compact Data...
+### Compactar los datos...
 
 Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
 
