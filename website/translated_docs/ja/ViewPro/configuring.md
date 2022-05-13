@@ -176,10 +176,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 | 定数                                        | 値                                    | 説明                                                                                                                                                                                |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vk pattern full date time`               | "_fullDateTimePattern_"              | カレント言語設定における ISO 8601 フォーマットの完全な日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy HH:mm:ss"                                       |
-| `vk pattern long date`                    | "_longDatePattern_"                  | カレント言語設定における ISO 8601 フォーマットの完全な日付。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy"                                                   |
-| `vk pattern long time`                    | "_longTimePattern_"                  | カレント言語設定における ISO 8601 フォーマットの時間。<p><p>アメリカ合衆国でのデフォルトパターン: "HH:mm:ss"                                                                |
-| `vk pattern month day`                    | "_monthDayPattern_"                  | カレント言語設定における ISO 8601 フォーマットの月日の日付。<p><p>アメリカ合衆国でのデフォルトパターン: "MMMM dd"                                                             |
+| `vk pattern full date time`               | "_fullDateTimePattern_"              | カレント言語設定における ISO 8601 フォーマットの完全な日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy HH:mm:ss"                                     |
+| `vk pattern long date`                    | "_longDatePattern_"                  | カレント言語設定における ISO 8601 フォーマットの完全な日付。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy"                                                 |
+| `vk pattern long time`                    | "_longTimePattern_"                  | カレント言語設定における ISO 8601 フォーマットの時間。<p><p>アメリカ合衆国でのデフォルトパターン: "HH:mm:ss"                                                              |
+| `vk pattern month day`                    | "_monthDayPattern_"                  | カレント言語設定における ISO 8601 フォーマットの月日の日付。<p><p>アメリカ合衆国でのデフォルトパターン: "MMMM dd"                                                            |
 | `vk pattern short date`                   | "_shortDatePattern_"                 | カレント言語設定における省略形の ISO 8601 フォーマットの日付。<p><p>アメリカ合衆国でのデフォルトパターン: "MM/dd/yyyy"                                                        |
 | `vk pattern short time`                   | "_shortTimePattern_"                 | カレント言語設定における省略形の ISO 8601 フォーマットの時間。<p><p>アメリカ合衆国でのデフォルトパターン: "HH:mm"                                                             |
 | `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | カレント言語設定における、並べ替え可能な ISO 8601 フォーマットの日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"          |
@@ -370,6 +370,11 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |           | width  | longint | 用紙の幅、100分の1インチ単位                                                                 |
 |           | kind   | テキスト    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。 `GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
+* If `height` and `width` are set without using the `kind` property,  [VP Get print info](./method-list.md/#vp-get-print-info) returns a paperSize with `custom` as value for `kind`.
+
+* If you set the paper size using the `kind` property, you can use either:
+    * one of the formats in the [SpreadJS format list](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html)
+    * one of the formats returned by the [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/en/page785.html) command.
 ### スケール
 
 スケール属性は印刷の最適化と調整のために使用されます。
