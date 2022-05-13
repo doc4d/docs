@@ -6,7 +6,7 @@ title: Administración
 4D provides several integrated tools to start, stop, or monitor the integrated web server.
 
 
-## Starting the 4D Web Server
+## Iniciar el servidor Web 4D
 
 > To be able to launch the web server of 4D or 4D Server, you must have a "4D Web Application" license. For more information, please refer to the [4D Web site](https://www.4d.com).
 
@@ -26,7 +26,7 @@ The main 4D web server can be started in different ways:
 The web server of any component can be launched by calling the [`webServer.start()`](API/WebServerClass.md#start) function on the component's web server object.
 > You do not need to relaunch the 4D application to start or stop the web server.
 
-## Stopping the 4D Web Server
+## Detener el servidor Web 4D
 
 The main 4D web server can be stopped in different ways:
 
@@ -96,7 +96,7 @@ The **/4DSTATS** URL returns several items of information in an HTML table (disp
 | Tamaño actual de la caché | Current size of web server cache (in bytes)                  |
 | Tamaño máximo de la caché | Maximum size of cache (in bytes)                             |
 | Cached Object Max Size    | Maximum size of each object in the cache (in bytes)          |
-| Cache Use                 | Percentage of cache used                                     |
+| Cache Use                 | Porcentaje de caché utilizado                                |
 | Cached Objects            | Number of objects found in the cache, **including pictures** |
 
 This information can allow you to check the functioning of your server and eventually adapt the corresponding parameters.
@@ -111,7 +111,7 @@ The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as t
 | Tamaño actual de la caché | Current size of web server cache (in bytes)                            |
 | Tamaño máximo de la caché | Maximum size of cache (in bytes)                                       |
 | Cached Object Max Size    | Maximum size of each object in the cache (in bytes)                    |
-| Cache Use                 | Percentage of cache used                                               |
+| Cache Use                 | Porcentaje de caché utilizado                                          |
 | Cached Objects            | Number of objects found in the cache, **without pictures**             |
 | Objetos filtrados         | Number of objects in cache not counted by URL, in particular, pictures |
 
@@ -152,8 +152,8 @@ Los siguientes campos se registran tanto para la solicitud como para la respuest
 | Nombre del campo | Descripción                                                   |
 | ---------------- | ------------------------------------------------------------- |
 | SocketID         | ID of socket used for communication                           |
-| PeerIP           | IPv4 address of host (client)                                 |
-| PeerPort         | Port used by host (client)                                    |
+| PeerIP           | Dirección IPv4 del host (cliente)                             |
+| PeerPort         | Puerto utilizado por el host (cliente)                        |
 | TimeStamp        | Timestamp in milliseconds (since system startup)              |
 | ConnectionID     | Connection UUID (UUID of VTCPSocket used for communication)   |
 | SequenceNumber   | Unique and sequential operation number in the logging session |
@@ -205,14 +205,14 @@ The following table lists the fields available for each format (in alphabetical 
 | CS(HOST)       | X   | X   | Host field of the HTTP request                                                                                              |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                                                                          |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                           |
-| CS_SIP         | X   | X   | IP address of the server                                                                                                    |
+| CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
 | CS_URI         | X   | X   | URI on which the request is made                                                                                            |
 | CS_URI_QUERY | X   | X   | Request query parameters                                                                                                    |
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
 | PATH_ARGS      |     | X   | CGI parameters: string located after the “$” character                                                                      |
-| STATUS         | X   | X   | Reply provided by the server                                                                                                |
+| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                                                                          |
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                                                                          |
 | TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                                                                              |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign). If the user name contains spaces, they are replaced by _ (underlines) |
