@@ -250,11 +250,11 @@ Used to indicate the current version number for the application generated. A con
 
 **Preliminary Note:** The following terms are used in this section:
 
-| Nombre                     | Definición                                                                                                                                                                 |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project directory file     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
-| Application directory file | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
-| Data directory file        | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
+| Nombre                         | Definición                                                                                                                                                                 |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Project directory file         | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
+| Application directory file     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
+| Archivo de directorio de datos | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
 
 When you check this option, the project directory file is copied to the application directory file at build time.
 
@@ -494,7 +494,7 @@ If there is a conflict between two different versions of the same plug-in (one l
 > The use of plug-ins and/or components in a deployment version may require license numbers.
 
 
-### Deselecting modules
+### Desmarcar módulos
 
 A module is a built-in code library used by 4D to control specific features. If you know that your built application does not use any of the features covered by a module, you can deselect it in the list to reduce the size of your application files.
 
@@ -614,7 +614,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 ## Management of data file(s)
 
 
-### Opening the data file
+### Apertura del archivo de datos
 
 When a user launches a merged application or an update (single-user or client/server applications), 4D tries to select a valid data file. Several locations are examined by the application successively.
 
@@ -626,7 +626,7 @@ The opening sequence for launching a merged application is:
 4. If not found, 4D displays a standard "Open data file" dialog box.
 
 
-### Last data file opened
+### Último archivo de datos abierto
 
 #### Ruta del último archivo de datos
 Any standalone or server applications built with 4D stores the path of the last data file opened in the application's user preferences folder.
