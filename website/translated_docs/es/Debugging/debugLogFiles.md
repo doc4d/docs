@@ -143,8 +143,8 @@ Los siguientes campos se registran tanto para la solicitud como para la respuest
 | Nombre del campo | Descripción                                                   |
 | ---------------- | ------------------------------------------------------------- |
 | SocketID         | ID of socket used for communication                           |
-| PeerIP           | IPv4 address of host (client)                                 |
-| PeerPort         | Port used by host (client)                                    |
+| PeerIP           | Dirección IPv4 del host (cliente)                             |
+| PeerPort         | Puerto utilizado por el host (cliente)                        |
 | TimeStamp        | Timestamp in milliseconds (since system startup)              |
 | ConnectionID     | Connection UUID (UUID of VTCPSocket used for communication)   |
 | SequenceNumber   | Unique and sequential operation number in the logging session |
