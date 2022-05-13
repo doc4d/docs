@@ -7,7 +7,7 @@ title: Gestión de usuarios y grupos 4D
 In multi-user applications, 4D provides users with certain standard access privileges and certain powers. Una vez iniciado un sistema de usuarios y grupos, estos privilegios estándar toman efecto.
 
 
-## Users and groups in projects
+## Usuarios y grupos en los proyectos
 
 In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. La siguiente tabla enumera las principales funcionalidades de los usuarios y grupos y su disponibilidad:
 
