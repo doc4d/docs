@@ -689,7 +689,7 @@ Each entry object in the `entries` collection has the following properties:
 | --------- | -------- | --------------------------------- |
 | data      | Objeto   | Object holding data on the entry. |
 | expired   | Booleano | True if the entry has expired.    |
-| key       | Texto    | Primary key of the entity.        |
+| key       | Texto    | Llave primaria de la entidad.     |
 
 The `data` object in each entry contains the following properties:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
@@ -1068,7 +1068,7 @@ To make it possible to perform such queries, ORDA allows a special syntax: you j
 ```
 **{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
 
-In our example, it would be:
+En nuestro ejemplo, sería:
 
 ```4d
 // código válido
@@ -1475,7 +1475,7 @@ In the *settings* parameter, pass an object with the following properties:
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
-`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
+`maxEntries` sets the max number of entities in the ORDA cache. Por defecto es 30 000.
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
