@@ -47,7 +47,7 @@ In advanced mode (**Shift+Click** on the operation), additional information is d
 
 ![](assets/en/Admin/server-admin-monitor-adv2.png)
 
-## Snapshot button
+## Botón Instantánea
 
 The **Snapshot** button allows you to copy to the clipboard all the operations displayed in the RTM panel, as well as their related details (process and sub-operation info):
 
