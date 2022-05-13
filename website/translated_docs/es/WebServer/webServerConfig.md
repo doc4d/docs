@@ -165,7 +165,7 @@ If you do not specify any default home page, the `On Web Connection` database me
 | ----------------------------- | ------------------------------------------------------------------ | --------------------------------------------------- |
 | objeto webServer              | [`CORSEnabled`](API/WebServerClass.md#corsenabled)                 | Boolean, true to enable the CORS (false by default) |
 | `WEB SET OPTION`              | `Web CORS enabled`                                                 | 0 (disabled, default) or 1 (enabled)                |
-| Caja de diálogo de parámetros | [Página Options (II)/Activar CORS](../settings/web.md#enable-cors) | Unchecked by default                                |
+| Caja de diálogo de parámetros | [Página Options (II)/Activar CORS](../settings/web.md#enable-cors) | Sin marcar por defecto                              |
 
 The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Por razones de seguridad, las peticiones "cross-domain" están prohibidas por defecto a nivel del navegador. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
 
@@ -322,7 +322,7 @@ Life duration (in minutes) of inactive sessions (duration set in cookie). Al fin
 Default: 480 minutes (pass 0 to restore the default value)
 
 
-## IP Address to listen
+## Dirección IP de escucha
 
 | Puede ajustarse con           | Nombre                                                         | Comentarios |
 | ----------------------------- | -------------------------------------------------------------- | ----------- |
@@ -374,16 +374,16 @@ Legacy session management enabling status for the 4D web server (deprecated).
 | ----------------------------- | ---------------------------------------------------- | ----------- |
 | objeto webServer              | [`logRecording`](API/WebServerClass.md#logrecording) |             |
 | `WEB SET OPTION`              | `Web log recording`                                  |             |
-| Caja de diálogo de parámetros | [Log (type) page](../settings/web.md#log-format)     | Pop up menu |
+| Caja de diálogo de parámetros | [Página log (tipo)](../settings/web.md#log-format)   | Pop up menu |
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
-This setting allows you to select the format of this file. Available values are:
+This setting allows you to select the format of this file. Valores disponibles:
 
 | Valor | Nombre del formato          | Descripción                                                                                                                                                                                                              |
 | ----- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0     | No hay archivo de historial | Por defecto                                                                                                                                                                                                              |
-| 1     | Record in CLF format        | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
+| 1     | Registro en formato CLF     | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
 | 2     | Registro en formato DLF     | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
 | 3     | Registro en formato ELF     | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
 | 4     | Registro en formato WLF     | WebStar Log Format - To be customized in the Settings dialog box                                                                                                                                                         |
