@@ -229,10 +229,10 @@ Cada classe de dados de um armazém de dados está disponível como uma propried
 ```4d
  var $emp : cs.Employee
  var $sel : cs.EmployeeSelection
- $emp:=ds.Employee //$emp contains the Employee dataclass
- $sel:=$emp.all() //gets an entity selection of all employees
+ $emp:=ds.Employee //$emp contiene la dataclass Employee 
+ $sel:=$emp.all() //obtém uma seleção de entidades de todos os empregados
 
-  //you could also write directly:
+  //também pode escrever diretamente:
  $sel:=ds.Employee.all()
 ```
 
@@ -336,7 +336,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //the database is encrypted
+ If($status.isEncrypted) //o banco de dados está encriptado
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
