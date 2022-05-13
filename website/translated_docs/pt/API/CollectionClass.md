@@ -893,7 +893,7 @@ A função `.extract()` <!-- REF #collection.extract().Summary -->cria e retorna
 
 Os conteúdos da coleção retornada depende do parâmetro *targetPath*:
 
-*   If the *targetPath* parameter is omitted, `.extract()` populates the new collection with the *propertyPath* values of the original collection.
+*   Se o parâmetro *targetPath* for omitido, `.extract()` preenche a nova coleção com os valores *propertyPath* da coleção original.
 
     By default, elements for which *propertyPath* is null or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as null elements in the returned collection.
 
@@ -2117,7 +2117,7 @@ propertyPath comparator value {logicalOperator propertyPath comparator value}
 
 Para obter informação detalhada sobre como construir uma consulta utilizando os parâmetros *queryString*, *value* e *querySettings*, consulte a descrição da função [`dataClass.query()`](DataClassClass.md#query).
 
-> Formulas are not supported by the `collection.query()` function, neither in the *queryString* parameter nor as *formula* object parameter.
+> As fórmulas não tem compatibilidade com a função `collection.query()`, nem com o parâmetro *queryString* nem como parâmetro do objeto *fórmula*.
 
 #### Exemplo 1
 
