@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Access Control overview
+title: Presentación del control de acceso
 ---
 
 Si diferentes personas utilizan una aplicación, lo que suele ocurrir en la arquitectura cliente-servidor o de interfaces web, es necesario controlar el acceso u ofrecer diferentes funcionalidades según de los usuarios conectados. It is also essential to provide security for sensitive data, even in single-user applications.
