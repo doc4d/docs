@@ -244,7 +244,7 @@ Compression level for all compressed HTTP exchanges for the 4D web server (clien
 
 Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
 
-## HTTP Compression Threshold
+## Umbral de compresión HTTP
 
 | Puede ajustarse con | Nombre                                                                       | Comentarios |
 | ------------------- | ---------------------------------------------------------------------------- | ----------- |
@@ -297,7 +297,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
 
 
-## Inactive Process Timeout
+## Tiempo de espera del proceso inactivo
 
 | Puede ajustarse con           | Nombre                                                                   | Comentarios |
 | ----------------------------- | ------------------------------------------------------------------------ | ----------- |
@@ -310,7 +310,7 @@ Life duration (in minutes) of inactive processes associated with sessions. At th
 Default: 480 minutes (pass 0 to restore the default value)
 
 
-## Inactive Session Timeout
+## Tiempo de espera de las sesiones inactivas
 
 | Puede ajustarse con | Nombre                                                                   | Comentarios |
 | ------------------- | ------------------------------------------------------------------------ | ----------- |
@@ -365,7 +365,7 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 Session management enabling status for the 4D web server. Session mechanism is described in the [Session Management](sessions.md) section.
 
-Default is true (enabled).
+True por defecto (activado).
 
 > When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
 
