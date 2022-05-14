@@ -41,7 +41,7 @@ In the following example, two processes are running for the same session:
 
 ![](assets/en/ORDA/sessionAdmin.png)
 
-### Locking and transactions
+### Bloqueo y transacciones
 
 ORDA features related to entity locking and transaction are managed at process level in remote datastores, just like in ORDA client/server mode:
 
@@ -59,7 +59,7 @@ A session is automatically closed by 4D when there has been no activity during i
 
 If a request is sent to the remote datastore after the session has been closed, it is automatically re-created if possible (license available, server not stopped...). However, keep in mind that the context of the session regarding locks and transactions is lost (see above).
 
-## Client/server optimization
+## Optimización cliente/servidor
 
 4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Incluyen:
 * the **optimization context**
@@ -106,7 +106,7 @@ Given the following code:
 
 Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* from the second iteration of the loop.
 
-#### Reusing the context property
+#### Reutilización de la propiedad context
 
 You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA functions that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
 > You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
