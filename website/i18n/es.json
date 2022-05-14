@@ -232,7 +232,7 @@
         "title": "Generador de aplicaciones"
       },
       "Desktop/clientServer": {
-        "title": "Client/Server Management"
+        "title": "Gestión Cliente/Servidor"
       },
       "Desktop/user-settings": {
         "title": "Propiedades usuario"
@@ -848,7 +848,7 @@
         "title": "Acerca de las peticiones REST"
       },
       "ServerWindow/application-server": {
-        "title": "Application Server Page"
+        "title": "Página Servidor de aplicación"
       },
       "ServerWindow/http-server": {
         "title": "Página del servidor HTTP"
@@ -917,7 +917,7 @@
         "title": "Gestión de usuarios y grupos 4D"
       },
       "Users/overview": {
-        "title": "Access Control overview"
+        "title": "Presentación del control de acceso"
       },
       "ViewPro/advanced-programming": {
         "title": "Advanced programming with Javascript"
@@ -941,13 +941,13 @@
         "title": "Autenticación"
       },
       "WebServer/errorPages": {
-        "title": "Custom HTTP Error Pages"
+        "title": "Páginas de error HTTP personalizadas"
       },
       "WebServer/gettingStarted": {
         "title": "Comencemos"
       },
       "WebServer/httpRequests": {
-        "title": "Processing HTTP requests"
+        "title": "Procesamiento de peticiones HTTP"
       },
       "WebServer/preemptiveWeb": {
         "title": "Using preemptive web processes"
