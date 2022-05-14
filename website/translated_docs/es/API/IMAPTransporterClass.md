@@ -1259,7 +1259,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 | msgsIDs        | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
 | allMsgs        | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
 | destinationBox | Texto      | -> | Mailbox to receive moved messages                         |
-| Resultado      | Objeto     | <- | Status of the move operation                              |
+| Resultado      | Objeto     | <- | Estado de la operación de desplazamiento                  |
 <!-- END REF -->
 
 
