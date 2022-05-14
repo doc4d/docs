@@ -57,7 +57,7 @@ All 4D code executed by the web server must be thread-safe if you want your web 
 
 For each of these methods and code parts, the compiler will check if the thread-safety rules are respected, and will return errors in case of issues. For more information about thread-safety rules, please refer to the *Writing a thread-safe method* paragraph in the *Processes* chapter of the [4D Language Reference](https://doc.4d.com) manual.
 
-## Thread-safety of 4D web code
+## Código web 4D hilo seguro
 
 Most of the web-related 4D commands and functions, database methods and URLs are thread-safe and can be used in preemptive mode.
 
