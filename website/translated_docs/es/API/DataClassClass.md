@@ -689,7 +689,7 @@ Each entry object in the `entries` collection has the following properties:
 | --------- | -------- | --------------------------------- |
 | data      | Objeto   | Object holding data on the entry. |
 | expired   | Booleano | True if the entry has expired.    |
-| key       | Texto    | Primary key of the entity.        |
+| key       | Texto    | Llave primaria de la entidad.     |
 
 The `data` object in each entry contains the following properties:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
@@ -1068,7 +1068,7 @@ To make it possible to perform such queries, ORDA allows a special syntax: you j
 ```
 **{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
 
-In our example, it would be:
+En nuestro ejemplo, sería:
 
 ```4d
 // código válido
