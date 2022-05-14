@@ -39,7 +39,7 @@ Data security is present at every stage of the 4D web server implementations. Se
 The 4D web server includes complete automatic features for easily managing [web sessions](sessions.md) (user sessions) based on cookies.
 
 
-## Gateway to REST Requests
+## Punto de acceso para las peticiones REST
 
 The 4D web server allows accessing data stored in your 4D applications through REST requests. REST requests provide direct access to any database operation such as adding, reading, editing, ordering, or searching data.
 
