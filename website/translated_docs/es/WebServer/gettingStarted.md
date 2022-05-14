@@ -10,7 +10,7 @@ This "Getting started" section is geared at first-time users who want an overall
 
 Let's start by making the web server send "Hello World" to the browser. The most simple way to do this is to create a project, start the web server and write a small code that returns a text in the `On Web Connection` database method.
 
-### Starting the web server
+### Inicio del servidor web
 
 To start the 4D web server:
 
@@ -33,7 +33,7 @@ The default home page is displayed:
 
 1. Open the Explorer, display the Database Methods list and double-click on `On Web Connection`.
 
-2. Enter the following code:
+2. Introduzca el siguiente código:
 
 ```4d
 Case of 
@@ -65,7 +65,7 @@ Create a basic database with, for example, a single table containing some record
 
 ![](assets/en/WebServer/hello2.png) ![](assets/en/WebServer/hello3.png)
 
-### Displaying data in a page
+### Mostrar datos en una página
 
 The most simple solution to display data is to call a [template page](templates.md) containing tags.
 
@@ -127,7 +127,7 @@ You get the catalog, i.e. the list of exposed dataclasses and attributes in the 
 
 También puede obtener cualquier dato.
 
-3. Enter the following URL:
+3. Introduzca el siguiente URL:
 
 ```
 http://localhost/rest/Friends
@@ -189,7 +189,7 @@ This very simple example shows how the web server interacts transparently with t
 
 In the above sections, we get free access to the application from web requests. However, in the world of web applications, data access security is the first priority. When connecting to the 4D web server, users must be authentified and their navigation controlled.
 
-### Creating a table of users
+### Crear una tabla de usuarios
 
 The most simple and secured way to log a user on the 4D web server is based upon the following scenario:
 
@@ -222,7 +222,7 @@ $webUser.save()
 
 1. Open the Explorer and create a project method named "login".
 
-3. Write the following code:
+3. Escriba el siguiente código:
 
 ```4d
 var $indexUserId; $indexPassword : Integer
