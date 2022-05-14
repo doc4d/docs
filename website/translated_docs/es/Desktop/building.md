@@ -487,7 +487,7 @@ You can designate as many valid files as you want. When building an executable a
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
 
 
-### OS X signing certificate
+### Certificación de las aplicaciones en OS X
 
 The application builder can sign merged 4D applications under macOS (single-user applications, 4D Server and client parts under macOS). Signing an application authorizes it to be executed using the Gatekeeper functionality of macOS when the "Mac App Store and identified Developers" option is selected (see "About Gatekeeper" below).
 
@@ -551,7 +551,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 
 
-## Management of data file(s)
+## Gestión de archivos de datos
 
 ### Apertura del archivo de datos
 
