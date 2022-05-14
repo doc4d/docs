@@ -9,11 +9,11 @@ The **Maintenance** page of the 4D Server Administration window provides informa
 ![](assets/en/Admin/server-maintenance.png)
 
 
-## Last verification/compacting
+## Última verificación/compactación
 
 These areas indicate the date, time and status of the last [data verification](MSC/verify.md) and [compacting operation](MSC/compact.md) carried out on the database.
 
-### Verify Records and Indexes
+### Verificar registros e índices
 
 This button can be used to launch the verification operation directly, without interrupting the server. Note that the server may be noticeably slowed down during the operation.
 
