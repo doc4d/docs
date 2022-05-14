@@ -1,6 +1,6 @@
 ---
 id: errorPages
-title: Custom HTTP Error Pages
+title: Páginas de error HTTP personalizadas
 ---
 
 The 4D Web Server allows you to customize HTTP error pages sent to clients, based on the status code of the server response. Las páginas de error se refieren a:
@@ -12,7 +12,7 @@ The 4D Web Server allows you to customize HTTP error pages sent to clients, base
 For a full description of HTTP error status codes, you can refer to the [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) (Wikipedia).
 
 
-## Replacing default pages
+## Reemplazo de las páginas por defecto
 
 To replace default 4D Web Server error pages with your own pages you just need to:
 
