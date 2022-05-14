@@ -125,7 +125,7 @@ Enables preemptive web processes in your compiled applications. When **Use preem
 > This option does not apply to scalable sessions, REST processes (compiled mode), and web service processes (server or client).  See [Enabling the preemptive mode for the web server](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server).
 
 
-#### Inactive Process Timeout
+#### Tiempo de espera del proceso inactivo
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
@@ -135,7 +135,7 @@ Allows you to set the maximum timeout before closing for inactive Web processes 
 
 ### Web Passwords
 
-Set the authentication system that you want to apply to your Web server. Three options are proposed:
+Set the authentication system that you want to apply to your Web server. Se proponen tres opciones:
 
 Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol
 
@@ -227,14 +227,14 @@ The following table lists the fields available for each format (in alphabetical 
 | CS(HOST)       | X   | X   | Host field of the HTTP request                                             |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
-| CS_SIP         | X   | X   | IP address of the server                                                   |
+| CS_SIP         | X   | X   | Dirección IP del servidor                                                  |
 | CS_URI         | X   | X   | URI on which the request is made                                           |
 | CS_URI_QUERY | X   | X   | Request query parameters                                                   |
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                   |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                        |
 | PATH_ARGS      |     | X   | CGI parameters: string located after the "$" character                     |
-| STATUS         | X   | X   | Reply provided by the server                                               |
+| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                         |
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                         |
 | TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                             |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign).                      |
