@@ -92,6 +92,9 @@
 			"API/ZipFolderClass"
 		],
 		"Code Editor": [
+			"code-editor/overview",
+			"code-editor/interface",
+			"code-editor/write-class-method",
 			"code-editor/navigation"
 		],
 		"Debugging": [
