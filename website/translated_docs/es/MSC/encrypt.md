@@ -4,7 +4,9 @@ title: Página de cifrado
 sidebar_label: Página de cifrado
 ---
 
-Puede utilizar esta página para cifrar o *descifrar* (es decir, eliminar el cifrado) el archivo de datos, según el estado del atributo **Encriptable** definido para cada tabla de la base. For detailed information about data encryption in 4D, please refer to the "Encrypting data" section in the *Design Reference* manual.
+Puede utilizar esta página para cifrar o *descifrar* (es decir, eliminar el cifrado) el archivo de datos, según el estado del atributo **Encriptable** definido para cada tabla de la base.
+
+> For detailed information about data encryption in 4D, please refer to the "Encrypting data" section in the *Design Reference* manual. También puede leer la entrada del blog [Una mirada más profunda al cifrado de datos en 4D](https://blog.4d.com/a-deeper-look-into-4d-data-encryption/).
 
 Se crea una nueva carpeta cada vez que se realiza una operación de cifrado/descifrado. Se denomina "Replaced Files (Encrypting) *yyyy-mm-dd hh-mm-ss*> o "Replaced Files (Decrypting) *yyyy-mm-dd hh-mm-ss*".
 > El cifrado sólo está disponible en [modo mantenimiento](overview.md#display-in-maintenance-mode). If you attempt to carry out this operation in standard mode, a warning dialog will inform you that the application will be closed and restarted in maintenance mode
