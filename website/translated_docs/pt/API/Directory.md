@@ -543,10 +543,10 @@ A função `.files()` devolve <!-- REF #directory.files().Summary -->uma coleç�
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem na coleção os arquivos de primeiro nivel da pasta, assim como os arquivos ou pastas invisíveis. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constant              | Value | Comment                                                                             |
-| --------------------- | ----- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
+| Constant              | Value | Comment                                                                  |
+| --------------------- | ----- | ------------------------------------------------------------------------ |
+| `fk recursive`        | 1     | The collection contains files of the specified folder and its subfolders |
+| `fk ignore invisible` | 8     | Invisible files are not listed                                           |
 
 **Returned value**
 
@@ -643,10 +643,10 @@ A função `.folders()` devolve <!-- REF #directory.folders().Summary -->uma col
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem as pastas no primeiro nível da pasta. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constant              | Value | Comment                                                                             |
-| --------------------- | ----- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
+| Constant              | Value | Comment                                                                    |
+| --------------------- | ----- | -------------------------------------------------------------------------- |
+| `fk recursive`        | 1     | The collection contains folders of the specified folder and its subfolders |
+| `fk ignore invisible` | 8     | Invisible folders are not listed                                           |
 
 **Returned value**
 
