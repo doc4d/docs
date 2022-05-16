@@ -535,9 +535,9 @@ Standard sort support depends on the list box type:
 
 | List box type                  | Support of standard sort | Comentarios                                                                                                  |
 | ------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Colección de objetos           | Sí                       | <li>"This.a" or "This.a.b" columns are sortable.</li><li>The [list box source property](propertiesObject.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
+| Colección de objetos           | Sí                       | <li>"This.a" or "This.a.b" columns are sortable.</li><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
 | Colección de valores escalares | No                       | Use custom sort with [`orderBy()`](..\API\CollectionClass.md#orderby) function                             |
-| Entity selection               | Sí                       | <li>The [list box source property](propertiesObject.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Supported: sorts on object attribute properties (e.g. "This.data.city" when "data" is an object attribute)</li><li>Supported: sorts on related attributes (e.g. "This.company.name")</li><li>Not supported: sorts on object attribute properties through related attributes (e.g. "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](..\API\EntitySelectionClass.md#orderbyformula) function (see example below)</li> |
+| Entity selection               | Sí                       | <li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Supported: sorts on object attribute properties (e.g. "This.data.city" when "data" is an object attribute)</li><li>Supported: sorts on related attributes (e.g. "This.company.name")</li><li>Not supported: sorts on object attribute properties through related attributes (e.g. "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](..\API\EntitySelectionClass.md#orderbyformula) function (see example below)</li> |
 | Selección actual               | Sí                       | Only simple expressions are sortable (e.g. `[Table_1]Field_2`)                                               |
 | Named selection                | No                       |                                                                                                              |
 | Arrays                         | Sí                       | Columns bound to picture and pointer arrays are not sortable                                                 |
@@ -1044,6 +1044,7 @@ El atributo behavior ofrece variaciones a la representación estándar de los va
 ```4d
  C_OBJECT($ob3)
  OB SET($ob3;"valueType";"integer")
+
  OB SET($ob3;"value";-3)
  C_OBJECT($ob4)
  OB SET($ob4;"valueType";"integer")
