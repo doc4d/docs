@@ -3,19 +3,19 @@ id: gettingStarted
 title: Comencemos
 ---
 
-This "Getting started" section is geared at first-time users who want an overall overview on how to go from zero to a 4D website that handles data from the database. ¡Empecemos!
+Esta sección de "Primeros pasos" está orientada a los usuarios principiantes que desean una visión general sobre cómo pasar de cero a un sitio web 4D que maneja datos de la base. ¡Empecemos!
 
 
 ## Ejemplo Hello World
 
-Let's start by making the web server send "Hello World" to the browser. The most simple way to do this is to create a project, start the web server and write a small code that returns a text in the `On Web Connection` database method.
+Empecemos por hacer que el servidor web envíe "Hello World" al navegador. La forma más sencilla de hacerlo es crear un proyecto, iniciar el servidor web y escribir un pequeño código que devuelva un texto en el método base `On Web Connection`.
 
 ### Inicio del servidor web
 
-To start the 4D web server:
+Para iniciar el servidor Web 4D:
 
-1. Launch your 4D application and create a new, empty 4D project.
-2. In the **Run** menu, select **Start Web Server**.
+1. Inicie su aplicación 4D y cree un nuevo proyecto 4D vacío.
+2. En el menú **Ejecutar**, seleccione **Iniciar servidor web**.
 
 ¡Eso es todo! The web server is started (you can see that the menu item has become **Stop Web Server**). It is now ready to handle requests. To check it, we'll display the default home page.
 
