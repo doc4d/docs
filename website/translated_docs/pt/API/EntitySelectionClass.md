@@ -623,16 +623,16 @@ A função `.distinct()` <!-- REF #EntitySelectionClass.distinct().Summary -->re
 
 A coleção retornada é ordenada automaticamente. Valores **Null** não são retornados.
 
-In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Tipos são retornados na ordem abaixo:
+No parámetro *attributePath*, passe o atributo de entidade cujos valores distintos queira obter. Só valores escalares (texto, número, booleano, ou data) podemser manejados. Se *attributePath* levar a uma propriedade de objeto que conter valores de diferentes tipos, primeiro se agrupam por tipo e se ordenam depois. Tipos são retornados na ordem abaixo:
 
 1.  booleans
 2.  strings
 3.  numbers
 4.  dates
 
-You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
+Pode utilizar a notação `[]` para designar uma coleção quando *attributePath* for uma rota dentro de um objeto (ver exemplos).
 
-Como padrão, uma avaliação não-diacrítica é realizada. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a avaliação diferencie minúsculas de maiúsculas ou que diferencie letras acentuadas, passe a constante `dk diacritical` no parâmetro*option*.
 
 Um erro é retornado se:
 
@@ -641,14 +641,14 @@ Um erro é retornado se:
 
 #### Exemplos
 
-You want to get a collection containing a single element per country name:
+Se quiser obter uma coleção que contenha um só elemento por nome de país:
 
 ```4d
  var $countries : Collection
  $countries:=ds.Employee.all().distinct("address.country")
 ```
 
-`nicknames` is a collection and `extra` is an object attribute:
+`nicknames` é uma coleção e `extra` for um atributo de objeto:
 
 ```4d
 $values:=ds.Employee.all().distinct("extra.nicknames[].first")
@@ -672,35 +672,35 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 **.drop**( { *mode* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.drop().Params -->
-| Parameter | Type               |    | Descrição                                                                                        |
-| --------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------ |
-| mode      | Integer            | -> | `dk stop dropping on first error`: stops method execution on first non-droppable entity          |
-| Resultado | 4D.EntitySelection | <- | Empty entity selection if successful, else entity selection containing non-droppable entity(ies) |
+| Parameter | Type               |    | Descrição                                                                                                               |
+| --------- | ------------------ |:--:| ----------------------------------------------------------------------------------------------------------------------- |
+| mode      | Integer            | -> | `dk stop dropping on first error`: para a execução do método na primeira entidade não eliminável                        |
+| Resultado | 4D.EntitySelection | <- | Entidade de seleção vazia se for executada com êxito, se nenhuma entity selection contendo as entidades não elimináveis |
 <!-- END REF -->
 
 #### Descrição
 
-The `.drop()` function <!-- REF #EntitySelectionClass.drop().Summary -->removes the entities belonging to the entity selection from the table related to its dataclass within the datastore<!-- END REF -->. The entity selection remains in memory.
-> Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.
+A função `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->elimina as entidades pertencentes a seleção de entidades da tabela relacionada com sua dataclass no datastore<!-- END REF -->. A entity selection permanece na memoria.
+> A eliminação de entidades é permanente e não pode ser desfeita. É recomendado chamar esta ação em uma transação para ter uma opção de recuperação.
 
-If a locked entity is encountered during the execution of `.drop()`, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the `dk stop dropping on first error` constant in the *mode* parameter.
+Se encontrar uma entidade bloqueada durante a execução de `.drop()`, não é eliminado. Como padrão o método processa todas as entidades da seleção de entidades e retorna as entidades não elimináveis na entity selection. Se quiser que o método pare a execução na primeira entidade não eliminável encontrada, passe a constante `dk stop dropping on first error` no parâmetro *mode*.
 
 #### Exemplo
 
-Example without the `dk stop dropping on first error` option:
+Exemplo sem a opção `dk stop dropping on first error`:
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop() // $notDropped is an entity selection containing all the not dropped entities
- If($notDropped.length=0) //The delete action is successful, all the entities have been deleted
-    ALERT("You have dropped "+String($employees.length)+" employees") //The dropped entity selection remains in memory
+ $notDropped:=$employees.drop() // $notDropped for uma entity selection que contém todas as entidades não suprimidas
+ If($notDropped.length=0) //A ação de eliminação for exitosa, todas as entidades foram eliminadas
+    ALERT("You have dropped "+String($employees.length)+" employees") //A seleção de entidades eliminada permanece na memoria
  Else
     ALERT("Problem during drop, try later")
  End if
 ```
 
-Example with the `dk stop dropping on first error` option:
+Exemplo com a opção `dk stop dropping on first error`:
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
