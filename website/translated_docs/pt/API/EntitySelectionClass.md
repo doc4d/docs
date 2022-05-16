@@ -520,7 +520,7 @@ Um erro é retornado se:
 
 #### Exemplo
 
-We want to find out the total number of employees for a company without counting any whose job title has not been specified:
+Se quisermos encontrar o número total de empregados para uma empresa sem contar aqueles cujos titulos de mprego não foram especificados:
 
 ```4d
  var $sel : cs.EmployeeSelection
@@ -547,25 +547,25 @@ We want to find out the total number of employees for a company without counting
 **.copy**( { *option* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.copy().Params -->
-| Parameter | Type               |    | Descrição                                        |
-| --------- | ------------------ |:--:| ------------------------------------------------ |
-| option    | Integer            | -> | `ck shared`: return a shareable entity selection |
-| Resultado | 4D.EntitySelection | <- | Copy of the entity selection                     |
+| Parameter | Type               |    | Descrição                                                |
+| --------- | ------------------ |:--:| -------------------------------------------------------- |
+| option    | Integer            | -> | `ck shared`: devolve uma entity selection compartilhável |
+| Resultado | 4D.EntitySelection | <- | Cópia da entity selection                                |
 <!-- END REF -->
 
 #### Descrição
 
-The `.copy()` function <!-- REF #EntitySelectionClass.copy().Summary -->returns a copy of the original entity selection<!-- END REF -->.
+A função `.copy()` <!-- REF #EntitySelectionClass.copy().Summary -->devolve uma cópia da entity selection original<!-- END REF -->.
 
-> This function does not modify the original entity selection.
+> Esta função não modifica a entity selection original.
 
-By default, if the *option* parameter is omitted, the function returns a new, alterable entity selection (even if the function is applied to a shareable entity selection). Pass the `ck shared` constant in the *option* parameter if you want to create a shareable entity selection.
+Como padrão, se omitir o parámetro *option*, a função devolve uma nova entity selection alterável (mesmo se a função se aplicar a uma entity selection compartilhável). Passe a constante `ck shared` no parâmetro *option* se quiser criar uma entity selection compartilhável.
 
-> For information on the shareable property of entity selections, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
+> Para saber mais sobre propriedade compartilhável de entity selections, consulte [Entity selections compartilháveis ou modificáveis](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 #### Exemplo
 
-You create a new, empty entity selection of products when the form is loaded:
+Se criar uma nova seleção de entidade vazia de produtos quando o formulário for carregado:
 
 ```4d
  Case of
@@ -575,11 +575,11 @@ You create a new, empty entity selection of products when the form is loaded:
 
 ```
 
-Then this entity selection is updated with products and you want to share the products between several processes. You copy the Form.products entity selection as a shareable one:
+Então esta seleção de entidades é atualizada com produtos e se quiser compartilhar os produtos entre vários processos. Se copiar a seleçãod a entidade Form.products como compartilhável:
 
 ```4d
  ...
-  // The Form.products entity selection is updated
+  // A seleção de entidades de Form.products se atualiza
  Form.products.add(Form.selectedProduct)
 
  Use(Storage)
@@ -610,29 +610,29 @@ Then this entity selection is updated with products and you want to share the pr
 **.distinct**( *attributePath* : Text { ; *option* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.distinct().Params -->
-| Parameter     | Type    |    | Descrição                                                        |
-| ------------- | ------- |:--:| ---------------------------------------------------------------- |
-| attributePath | Texto   | -> | Rota do atributo cujos valores quer obter                        |
-| option        | Integer | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
-| Resultado     | Coleção | <- | Collection with only distinct values                             |
+| Parameter     | Type    |    | Descrição                                                       |
+| ------------- | ------- |:--:| --------------------------------------------------------------- |
+| attributePath | Texto   | -> | Rota do atributo cujos valores quer obter                       |
+| option        | Integer | -> | `dk diacritical`: avaliação diacríticos ("A" # "a" por exemplo) |
+| Resultado     | Coleção | <- | Coleção apenas com valores distintos                            |
 <!-- END REF -->
 
 #### Descrição
 
-The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->returns a collection containing only distinct (different) values from the *attributePath* in the entity selection<!-- END REF -->.
+A função `.distinct()` <!-- REF #EntitySelectionClass.distinct().Summary -->retorna uma coleção contendo apenas valores distintos (diferentes) da *attributePath* na entity selection<!-- END REF -->.
 
 A coleção retornada é ordenada automaticamente. Valores **Null** não são retornados.
 
-In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Tipos são retornados na ordem abaixo:
+No parámetro *attributePath*, passe o atributo de entidade cujos valores distintos queira obter. Só valores escalares (texto, número, booleano, ou data) podemser manejados. Se *attributePath* levar a uma propriedade de objeto que conter valores de diferentes tipos, primeiro se agrupam por tipo e se ordenam depois. Tipos são retornados na ordem abaixo:
 
 1.  booleans
 2.  strings
 3.  numbers
 4.  dates
 
-You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
+Pode utilizar a notação `[]` para designar uma coleção quando *attributePath* for uma rota dentro de um objeto (ver exemplos).
 
-Como padrão, uma avaliação não-diacrítica é realizada. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a avaliação diferencie minúsculas de maiúsculas ou que diferencie letras acentuadas, passe a constante `dk diacritical` no parâmetro*option*.
 
 Um erro é retornado se:
 
@@ -641,14 +641,14 @@ Um erro é retornado se:
 
 #### Exemplos
 
-You want to get a collection containing a single element per country name:
+Se quiser obter uma coleção que contenha um só elemento por nome de país:
 
 ```4d
  var $countries : Collection
  $countries:=ds.Employee.all().distinct("address.country")
 ```
 
-`nicknames` is a collection and `extra` is an object attribute:
+`nicknames` é uma coleção e `extra` for um atributo de objeto:
 
 ```4d
 $values:=ds.Employee.all().distinct("extra.nicknames[].first")
@@ -672,35 +672,35 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 **.drop**( { *mode* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.drop().Params -->
-| Parameter | Type               |    | Descrição                                                                                        |
-| --------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------ |
-| mode      | Integer            | -> | `dk stop dropping on first error`: stops method execution on first non-droppable entity          |
-| Resultado | 4D.EntitySelection | <- | Empty entity selection if successful, else entity selection containing non-droppable entity(ies) |
+| Parameter | Type               |    | Descrição                                                                                                               |
+| --------- | ------------------ |:--:| ----------------------------------------------------------------------------------------------------------------------- |
+| mode      | Integer            | -> | `dk stop dropping on first error`: para a execução do método na primeira entidade não eliminável                        |
+| Resultado | 4D.EntitySelection | <- | Entidade de seleção vazia se for executada com êxito, se nenhuma entity selection contendo as entidades não elimináveis |
 <!-- END REF -->
 
 #### Descrição
 
-The `.drop()` function <!-- REF #EntitySelectionClass.drop().Summary -->removes the entities belonging to the entity selection from the table related to its dataclass within the datastore<!-- END REF -->. The entity selection remains in memory.
-> Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.
+A função `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->elimina as entidades pertencentes a seleção de entidades da tabela relacionada com sua dataclass no datastore<!-- END REF -->. A entity selection permanece na memoria.
+> A eliminação de entidades é permanente e não pode ser desfeita. É recomendado chamar esta ação em uma transação para ter uma opção de recuperação.
 
-If a locked entity is encountered during the execution of `.drop()`, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the `dk stop dropping on first error` constant in the *mode* parameter.
+Se encontrar uma entidade bloqueada durante a execução de `.drop()`, não é eliminado. Como padrão o método processa todas as entidades da seleção de entidades e retorna as entidades não elimináveis na entity selection. Se quiser que o método pare a execução na primeira entidade não eliminável encontrada, passe a constante `dk stop dropping on first error` no parâmetro *mode*.
 
 #### Exemplo
 
-Example without the `dk stop dropping on first error` option:
+Exemplo sem a opção `dk stop dropping on first error`:
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop() // $notDropped is an entity selection containing all the not dropped entities
- If($notDropped.length=0) //The delete action is successful, all the entities have been deleted
-    ALERT("You have dropped "+String($employees.length)+" employees") //The dropped entity selection remains in memory
+ $notDropped:=$employees.drop() // $notDropped for uma entity selection que contém todas as entidades não suprimidas
+ If($notDropped.length=0) //A ação de eliminação for exitosa, todas as entidades foram eliminadas
+    ALERT("You have dropped "+String($employees.length)+" employees") //A seleção de entidades eliminada permanece na memoria
  Else
     ALERT("Problem during drop, try later")
  End if
 ```
 
-Example with the `dk stop dropping on first error` option:
+Exemplo com a opção `dk stop dropping on first error`:
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
@@ -1491,7 +1491,7 @@ You can add as many objects in the criteria collection as necessary.
 #### Descrição
 
 The `.orderByFormula()` function <!-- REF #EntitySelectionClass.orderByFormula().Summary -->returns a new, ordered entity selection<!-- END REF --> containing all entities of the entity selection in the order defined through the *formulaString* or *formulaObj* and, optionally, *sortOrder* and *settings* parameters.
-> This function does not modify the original entity selection.
+> Esta função não modifica a entity selection original.
 
 You can use either a *formulaString* or a *formulaObj* parameter:
 
@@ -1615,7 +1615,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 #### Descrição
 
 The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection<!-- END REF -->, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
-> This function does not modify the original entity selection.
+> Esta função não modifica a entity selection original.
 
 Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
@@ -1796,7 +1796,7 @@ A list box displays the Form.students entity selection and several clients work 
 #### Descrição
 
 The `.selected()` function <!-- REF #EntitySelectionClass.selected().Summary -->returns an object describing the position(s) of *selectedEntities* in the original entity selection<!-- END REF -->.
-> This function does not modify the original entity selection.
+> Esta função não modifica a entity selection original.
 
 Pass in the *selectedEntities* parameter an entity selection containing entities for which you want to know the position in the original entity selection. *selectedEntities* must be an entity selection belonging to the same dataclass as the original entity selection, otherwise an error 1587 - "The entity selection comes from an incompatible dataclass" is raised.
 
@@ -1865,7 +1865,7 @@ $result2:=$invoices.selected($creditSel)
 #### Descrição
 
 The `.slice()` function <!-- REF #EntitySelectionClass.slice().Summary -->returns a portion of an entity selection into a new entity selection<!-- END REF -->, selected from the *startFrom* index to the *end* index (*end* is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).
-> This function does not modify the original entity selection.
+> Esta função não modifica a entity selection original.
 
 The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
 
