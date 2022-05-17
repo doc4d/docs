@@ -247,7 +247,7 @@ For example, if objects of the current page and groups have been modified, you c
 ```
 
 
-#### `method` attribute
+#### atributo `method`
 
 When handling the `method` attribute of form objects, you can define the attribute value in two ways in macros:
 
