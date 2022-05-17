@@ -6,15 +6,15 @@ title: Configuración
 The 4D web server settings include security parameters, listening ports, defaults paths, and various options covering all the server features. 4D provides default values for every settings.
 
 
-## Where to configure settings?
+## ¿Donde configurar los parámetros?
 
 There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
 
-| Setting location                                              | Alcance                                  | Servidor web a utilizar                         |
-| ------------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
-| [objeto webServer](webServerObject.md)                        | Temporary (current session)              | Any web server, including component web servers |
-| `WEB SET OPTION` or a `WEB XXX` command                       | Temporary (current session)              | Servidor principal                              |
-| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (all sessions, stored on disk) | Servidor principal                              |
+| Setting location                                              | Alcance                                  | Servidor web a utilizar                                               |
+| ------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
+| [objeto webServer](webServerObject.md)                        | Temporal (sesión actual)                 | Todos los servidores web, incluidos los servidores web de componentes |
+| `WEB SET OPTION` o comando `WEB XXX`                          | Temporal (sesión actual)                 | Servidor principal                                                    |
+| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (all sessions, stored on disk) | Servidor principal                                                    |
 
 > Some settings are not available from all locations.
 
@@ -193,7 +193,7 @@ Indicates whether or not the web server will accept non-secure connections.
 | ----------------------------- | ---------------------------------------------------- | ----------- |
 | objeto webServer              | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | booleano    |
 | `WEB SET OPTION`              | `Web HTTPS enabled`                                  |             |
-| Caja de diálogo de parámetros | Configuration page/Enable HTTPS                      |             |
+| Caja de diálogo de parámetros | Página configuración/Activar HTTPS                   |             |
 
 Estado de la comunicación a través de HTTPS. Esta opción se describe en [esta sección](Admin/tls.md).
 
@@ -218,10 +218,10 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 
 ## HSTS Max Age
 
-| Puede ajustarse con | Nombre                                           | Comentarios       |
-| ------------------- | ------------------------------------------------ | ----------------- |
-| objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION`    | `Web HSTS max age`                               | number in seconds |
+| Puede ajustarse con | Nombre                                           | Comentarios        |
+| ------------------- | ------------------------------------------------ | ------------------ |
+| objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | número en segundos |
+| `WEB SET OPTION`    | `Web HSTS max age`                               | número en segundos |
 
 Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta información se almacena del lado del cliente durante el tiempo especificado. Default value is 63072000 (2 years)
 
@@ -502,7 +502,7 @@ To do so, put the ROBOTS.TXT file at the server's root. This file must be struct
 
 ```4d
    User-Agent: <name>
-   Disallow: <URL> or <beginning of the URL>
+   Disallow: <URL> o <beginning of the URL>
 ```
 
 Por ejemplo:
