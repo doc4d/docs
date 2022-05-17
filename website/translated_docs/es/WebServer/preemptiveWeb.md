@@ -1,35 +1,35 @@
 ---
 id: preemptiveWeb
-title: Using preemptive web processes
+title: Uso de procesos web apropiativos
 ---
 
 
-The 4D Web Server allows you to take full advantage of multi-core computers by using preemptive web processes in your applications. You can configure your web-related code, including 4D tags, web database methods or ORDA REST class functions to run simultaneously on as many cores as possible.
+El servidor web de 4D le permite aprovechar al máximo los ordenadores multinúcleo utilizando procesos web apropiativos en sus aplicaciones. Puede configurar su código relacionado con la web, incluyendo las etiquetas 4D, los métodos base Web o las funciones de clase REST de ORDA para que se ejecuten simultáneamente en tantos núcleos como sea posible.
 
-For in-depth information on preemptive process in 4D, please refer to the *Preemptive 4D processes* section in the [*4D Language Reference*](https://doc.4d.com).
+Para obtener información detallada sobre los procesos apropiativos en 4D, consulte la sección *Procesos 4D apropiativos* del [*manual de lenguaje*](https://doc.4d.com).
 
-## Availability of preemptive mode for web processes
+## Disponibilidad del modo apropiativo para los procesos web
 
-The following table indicates whether the preemptive mode is used or is available, depending on the execution context:
+La siguiente tabla indica si el modo apropiativo se utiliza o está disponible, dependiendo del contexto de ejecución:
 
-| 4D Server             | Interpreted ([debugger attached](../Debugging/debugging-remote.md)) | Interpreted (debugger detached) | Compilado     |
-| --------------------- | ------------------------------------------------------------------- | ------------------------------- | ------------- |
-| Servidor REST         | cooperative                                                         | apropiativo                     | apropiativo   |
-| Servidor Web          | cooperative                                                         | *web setting*                   | *web setting* |
-| Servidor Web Services | cooperative                                                         | *web setting*                   | *web setting* |
+| 4D Server             | Interpretado ([asociado al depurador](../Debugging/debugging-remote.md)) | Interpretado (no asociado al depurador) | Compilado       |
+| --------------------- | ------------------------------------------------------------------------ | --------------------------------------- | --------------- |
+| Servidor REST         | cooperativo                                                              | apropiativo                             | apropiativo     |
+| Servidor Web          | cooperativo                                                              | *parámetro web*                         | *parámetro web* |
+| Servidor Web Services | cooperativo                                                              | *parámetro web*                         | *parámetro web* |
 
-| 4D remote/single-user | Interpretado | Compilado     |
-| --------------------- | ------------ | ------------- |
-| Servidor REST         | cooperative  | apropiativo   |
-| Servidor Web          | cooperative  | *web setting* |
-| Servidor Web Services | cooperative  | *web setting* |
+| 4D remoto/monopuesto  | Interpretado | Compilado       |
+| --------------------- | ------------ | --------------- |
+| Servidor REST         | cooperativo  | apropiativo     |
+| Servidor Web          | cooperativo  | *parámetro web* |
+| Servidor Web Services | cooperativo  | *parámetro web* |
 
-- REST Server: handles [ORDA data model class functions](../REST/ClassFunctions.md)
-- Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md)
-- Web Service Server: handles SOAP requests
-- ***web setting*** means that the preemptive mode depends on a setting value:
-    - when [**Scalable sessions**](sessions.md#enabling-sessions) option is selected, the [preemptive mode is automatically used](sessions.md#preemptive-mode) for web processes.
-    - otherwise, the [**Use preemptive processes**](webServerConfig.md#use-preemptive-processes) option is taken into account.
+- Servidor REST: gestiona las [funciones de clase del modelo de datos ORDA](../REST/ClassFunctions.md)
+- Servidor web: maneja las [plantillas web](templates.md), [4DACTION y los métodos base](httpRequests.md)
+- Servidor de servicios web: gestiona las peticiones SOAP
+- ***web setting*** significa que el modo apropiativo depende de un valor de configuración:
+    - cuando la opción [**sesiones escalables**](sessions.md#enabling-sessions) está seleccionada, el [modo apropiativo se utiliza automáticamente](sessions.md#preemptive-mode) para los procesos web.
+    - de lo contrario, la opción [**Utilizar procesos apropiativos**](webServerConfig.md#use-preemptive-processes) se tiene en cuenta.
     - regarding Web service processes (server or client), preemptive mode is supported at method level. You just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler.
 
 
@@ -92,8 +92,8 @@ The following 4D Web Server URLs are thread-safe and can be used in preemptive m
 
 Both the Runtime Explorer and the 4D Server administration window display a specific icon for preemptive web processes:
 
-| Tipo de proceso       | Icono                                    |
-| --------------------- | ---------------------------------------- |
-| Preemptive web method | ![](assets/en/WebServer/processIcon.png) |
+| Tipo de proceso                  | Icono                                    |
+| -------------------------------- | ---------------------------------------- |
+| Método Web (proceso apropiativo) | ![](assets/en/WebServer/processIcon.png) |
 
 
