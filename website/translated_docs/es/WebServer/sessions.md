@@ -90,15 +90,15 @@ Privileges can be associated to sessions. On the web server, you can provide spe
 
 You can assign privileges usign the [`.setPrivileges()`](API/SessionClass.md#setprivileges) function. In your code, you can check the session's privileges to allow or deny access using the [`.hasPrivilege()`](API/SessionClass.md#hasprivilege) function. By default, new sessions do not have any privilege: they are **guest** sessions ([`.isGuest()`](API/SessionClass.md#isguest) function returns true).
 
-> In the current implementation (v18 R6), only the "WebAdmin" privilege is available.
+> En la implementación actual (v18 R6), sólo está disponible el privilegio "WebAdmin".
 
 Ejemplo:
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
-    //Access is granted, do nothing
+    //El acceso está concedido, no haga nada
 Else
-    //Display an authentication page
+    //Mostrar una página de autenticación
 End if
 ```
 
