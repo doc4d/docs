@@ -16,7 +16,7 @@ The 4D web server provides several features to handle HTTP requests:
 
 The `On Web Connection` database method can be used as the entry point for the 4D Web server.
 
-### Database method calls
+### Llamadas a métodos base
 
 The `On Web Connection` database method is automatically called when the server reveives any URL that is not a path to an existing page on the server. The database method is called with the URL.
 
@@ -28,14 +28,14 @@ For example, the URL "*a/b/c*" will call the database method, but "*a/b/c.html*"
 
 **On Web Connection**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text )
 
-| Parámetros | Tipo  |    | Descripción                                  |
-| ---------- | ----- |:--:| -------------------------------------------- |
-| $1         | Texto | <- | URL                                          |
-| $2         | Texto | <- | HTTP headers + HTTP body (up to 32 kb limit) |
-| $3         | Texto | <- | IP address of the web client (browser)       |
-| $4         | Texto | <- | Dirección IP del servidor                    |
-| $5         | Texto | <- | Nombre de usuario                            |
-| $6         | Texto | <- | Contraseña                                   |
+| Parámetros | Tipo  |    | Descripción                                               |
+| ---------- | ----- |:--:| --------------------------------------------------------- |
+| $1         | Texto | <- | URL                                                       |
+| $2         | Texto | <- | Encabezados HTTP + cuerpo HTTP (hasta un límite de 32 kb) |
+| $3         | Texto | <- | Dirección IP del cliente web (navegador)                  |
+| $4         | Texto | <- | Dirección IP del servidor                                 |
+| $5         | Texto | <- | Nombre de usuario                                         |
+| $6         | Texto | <- | Contraseña                                                |
 
 
 You must declare these parameters as shown below:
@@ -48,7 +48,7 @@ You must declare these parameters as shown below:
 //Código para el métodod
 ```
 
-Alternatively, you can use the [named parameters](Concepts/parameters.md#named-parameters) syntax:
+Como alternativa, puede utilizar la sintaxis [parámetros nombrados](Concepts/parameters.md#named-parameters):
 
 ```4d
 // On Web Connection database method
@@ -68,7 +68,7 @@ The first parameter ($1) is the URL entered by users in the address area of thei
 
 Let’s use an intranet connection as an example. Suppose that the IP address of your 4D Web Server machine is 123.4.567.89. La siguiente tabla muestra los valores de $1 en función de la URL introducida en el navegador web:
 
-| URL entered in web browser           | Valor del parámetro $1   |
+| URL introducida en el navegador web  | Valor del parámetro $1   |
 | ------------------------------------ | ------------------------ |
 | 123.4.567.89                         | /                        |
 | http://123.4.567.89                  | /                        |
@@ -83,23 +83,23 @@ Note that you are free to use this parameter at your convenience. 4D simply igno
 
 The second parameter ($2) is the header and the body of the HTTP request sent by the web browser. Note that this information is passed to your `On Web Connection` database method "as is". Its contents will vary depending on the nature of the web browser attempting the connection.
 
-If your application uses this information, it is up to you to parse the header and the body. You can use the `WEB GET HTTP HEADER` and the `WEB GET HTTP BODY` commands.
-> For performance reasons, the size of data passing through the $2 parameter must not exceed 32 KB. Beyond this size, they are truncated by the 4D HTTP server.
+Si su aplicación utiliza esta información, deberá analizar el encabezado y el cuerpo. Puede utilizar los comandos `WEB GET HTTP HEADER` y `WEB GET HTTP BODY`.
+> Por razones de rendimiento, el tamaño de los datos que pasan por el parámetro $2 no debe superar los 32 KB. Más allá de este tamaño, son truncados por el servidor HTTP de 4D.
 
 
-### $3 - Web client IP address
+### $3 - Dirección IP del cliente web
 
-El parámetro $3 recibe la dirección IP de la máquina del navegador. This information can allow you to distinguish between intranet and internet connections.
-> 4D returns IPv4 addresses in a hybrid IPv6/IPv4 format written with a 96-bit prefix, for example ::ffff:192.168.2.34 for the IPv4 address 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
+El parámetro $3 recibe la dirección IP de la máquina del navegador. Esta información puede permitirle distinguir entre las conexiones a la intranet y a Internet.
+> 4D devuelve las direcciones IPv4 en un formato híbrido IPv6/IPv4 escrito con un prefijo de 96 bits, por ejemplo ::ffff:192.168.2.34 para la dirección IPv4 192.168.2.34. Para más información, consulte la sección [Soporte IPv6](webServerConfig.md#about-ipv6-support).
 
-### $4 - Server IP address
+### $4 - Dirección IP del servidor
 
 The $4 parameter receives the IP address requested by the 4D Web Server. 4D allows for multi-homing, which allows you to use machines with more than one IP address. For more information, please refer to the [Configuration page](webServerConfig.html#ip-address-to-listen).
 
 ### $5 y $6 - Nombre de usuario y contraseña
 
 The $5 and $6 parameters receive the user name and password entered by the user in the standard identification dialog box displayed by the browser, if applicable (see the [authentication page](authentication.md)).
-> If the user name sent by the browser exists in 4D, the $6 parameter (the user’s password) is not returned for security reasons.
+> Si el nombre de usuario enviado por el navegador existe en 4D, el parámetro $6 (la contraseña del usuario) no se devuelve por razones de seguridad.
 
 
 
@@ -344,7 +344,7 @@ These commands are summarized in the following graphic:
 
 The 4D web server supports files uploaded in chunked transfer encoding from any Web client. Chunked transfer encoding is a data transfer mechanism specified in HTTP/1.1. It allows data to be transferred in a series of "chunks" (parts) without knowing the final data size. The 4D Web Server also supports chunked transfer encoding from the server to Web clients (using `WEB SEND RAW DATA`).
 
-## COMPILER_WEB Project Method
+## Método proyecto COMPILER_WEB
 
 The COMPILER\_WEB method, if it exists, is systematically called when the HTTP server receives a dynamic request and calls the 4D engine. This is the case, for example, when the 4D Web server receives a posted form or a URL to process in [`On Web Connection`](#on-web-connection). This method is intended to contain typing and/or variable initialization directives used during Web exchanges. It is used by the compiler when the application is compiled. The COMPILER\_WEB method is common to all the Web forms. Por defecto, el método COMPILER_WEB no existe. You must explicitly create it.
 
