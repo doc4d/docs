@@ -19,7 +19,7 @@ A variant type variable can contain a value of the following data types:
 - texto
 - time
 - null
-- undefined
+- indefinido
 
 > Arrays cannot be stored in variant variables.
 
