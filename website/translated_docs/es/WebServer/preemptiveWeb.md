@@ -14,15 +14,15 @@ The following table indicates whether the preemptive mode is used or is availabl
 
 | 4D Server             | Interpreted ([debugger attached](../Debugging/debugging-remote.md)) | Interpreted (debugger detached) | Compilado     |
 | --------------------- | ------------------------------------------------------------------- | ------------------------------- | ------------- |
-| Servidor REST         | cooperative                                                         | apropiativo                     | apropiativo   |
-| Servidor Web          | cooperative                                                         | *web setting*                   | *web setting* |
-| Servidor Web Services | cooperative                                                         | *web setting*                   | *web setting* |
+| Servidor REST         | cooperativo                                                         | apropiativo                     | apropiativo   |
+| Servidor Web          | cooperativo                                                         | *web setting*                   | *web setting* |
+| Servidor Web Services | cooperativo                                                         | *web setting*                   | *web setting* |
 
 | 4D remote/single-user | Interpretado | Compilado     |
 | --------------------- | ------------ | ------------- |
-| Servidor REST         | cooperative  | apropiativo   |
-| Servidor Web          | cooperative  | *web setting* |
-| Servidor Web Services | cooperative  | *web setting* |
+| Servidor REST         | cooperativo  | apropiativo   |
+| Servidor Web          | cooperativo  | *web setting* |
+| Servidor Web Services | cooperativo  | *web setting* |
 
 - REST Server: handles [ORDA data model class functions](../REST/ClassFunctions.md)
 - Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md)
