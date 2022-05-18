@@ -160,7 +160,7 @@ Result:
 
 ### VP ADD SHEET 
 
-<!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer ; *name* : Text )
+<!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *sheet* : Integer ; *name* : Text )
 <!-- END REF --> 
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
@@ -168,7 +168,7 @@ Result:
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
-|index|Integer|->	|Index of the new sheet|	
+|sheet|Integer|->	|Index of the new sheet|	
 |name|Text|->|Sheet name|	
 <!-- END REF --> 
 
@@ -178,7 +178,7 @@ The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a 
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
+In *sheet*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
 
 >Indexing starts at 0.
 
@@ -251,7 +251,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 ### VP ADD STYLESHEET
 
-<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *sheet* : Integer } ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
@@ -261,12 +261,12 @@ To span the First quarter and Second quarter cells across the two cells beside t
 |vpAreaName| Text|->|4D View Pro area form object name|
 |styleName|Text|->	|Name of style|	
 |styleObj|Object|->|Object defining attribute settings|	
-|scope|Integer|->|Target scope (default = current sheet)|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 <!-- END REF -->  
 
 #### Description
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and scope already exists in the document, this command will overwrite it with the new values. 
+The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and index already exists in the document, this command will overwrite it with the new values. 
 
 > Style sheets created by this command are saved with the document.
 
@@ -277,7 +277,7 @@ The *styleName* parameter lets you assign a name to the style sheet. If the name
 
 Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
 
-You can designate where to define the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+You can designate where to define the style sheet in the optional *sheet* parameter using the sheet index (indexing starts at 0) or with the following constants:
 
 *	`vk current sheet`
 *	`vk workbook`
@@ -881,7 +881,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
 |includeFormatInfo|	boolean|	True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
 |includeBindingSource|	Boolean | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).|
-|sheetIndex|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
+|sheet|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
 |pdfOptions|	object|	PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
 |csvOptions|object|	CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>|
 |\<customProperty>|	any|	Any custom property that will be available through the $3 parameter in the callback method.|
@@ -940,7 +940,7 @@ You want to export the current sheet in PDF:
 var $params: Object
 $params:=New object
 $params.format:=vk pdf format
-$params.sheetIndex:=-1
+$params.sheet:=-1
 $params.pdfOptions:=New object("title";"Annual Report";"author";Current user)
 VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 ```
@@ -1498,7 +1498,7 @@ $index:=VP Get current sheet("ViewProArea")
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
@@ -1506,7 +1506,7 @@ $index:=VP Get current sheet("ViewProArea")
 |Parameter|Type||Description|
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
-|sheetIndex |Integer|->|Index of the sheet to get the data context from|
+|sheet|Integer|->|Index of the sheet to get the data context from|
 |Result |Object &#124; Collection |<-|Data context|
 
 <!-- END REF -->  
@@ -1515,7 +1515,7 @@ $index:=VP Get current sheet("ViewProArea")
 
 The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications made to the contents of the data context.
 
-In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
+In *sheet*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
 The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context).
  
@@ -2258,16 +2258,16 @@ VP SET CELL STYLE($range;$style)
 
 ### VP Get stylesheet
 
-<!-- REF #_method_.VP Get stylesheet.Syntax -->**VP Get stylesheet** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } ) : Object<!-- END REF -->  
+<!-- REF #_method_.VP Get stylesheet.Syntax -->**VP Get stylesheet** ( *vpAreaName* : Text ; *styleName* : Text { ; *sheet* : Integer } ) : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
-|vpAreaName  |Text|->|4D View Pro area form object name|
-|styleName  |Text|->|Name of style|
-|scope  |Integer|->|Target scope (default = current sheet)|
-|Result  |Object|<-|Style sheet object|
+|vpAreaName|Text|->|4D View Pro area form object name|
+|styleName|Text|->|Name of style|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
+|Result|Object|<-|Style sheet object|
 <!-- END REF -->  
 
 #### Description
@@ -2278,7 +2278,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In *styleName*, pass the name of the style sheet to get.
 
-You can define where to get the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+You can define where to get the style sheet in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
 
 *	`vk current sheet`
 *	`vk workbook`  
@@ -2310,24 +2310,24 @@ borderTop:{color:green,style:10}
 
 ### VP Get stylesheets
 
-<!-- REF #_method_.VP Get stylesheets.Syntax -->**VP Get stylesheets** ( *vpAreaName* : Text { ; *scope* : Integer } ) : Collection<!-- END REF -->  
+<!-- REF #_method_.VP Get stylesheets.Syntax -->**VP Get stylesheets** ( *vpAreaName* : Text { ; *sheet* : Integer } ) : Collection<!-- END REF -->  
 
 <!-- REF #_method_.VP Get stylesheets.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName  |Text|->|4D View Pro area form object name|
-|scope  |Integer|->|Target scope (default = current sheet)|
+|sheet|Integer|->|Target scope (default = current sheet)|
 |Result  |Collection|<-|Collection of style sheet objects|
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *scope*<!-- END REF -->. 
+The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *sheet*<!-- END REF -->. 
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
-You can define where to get the style sheets in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+You can define where to get the style sheets in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
 
 *	`vk current sheet`
 *	`vk workbook`  
@@ -2773,16 +2773,16 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 ### VP Name
 
-<!-- REF #_method_.VP Name.Syntax -->**VP Name** ( *vpAreaName* : Text ; *rangeName* : Text { ; *scope* : Integer }  ) : Object <!-- END REF -->  
+<!-- REF #_method_.VP Name.Syntax -->**VP Name** ( *vpAreaName* : Text ; *rangeName* : Text { ; *sheet* : Integer }  ) : Object <!-- END REF -->  
 
 <!-- REF #_method_.VP Name.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|vpAreaName   |Text|->|4D View Pro area form object name|
-|rangeName   |Text|->|Existing range name|
-|scope   |Integer|->|Range location (current sheet if omitted)|
-|Result   |Object|<-|Range object of name|
+|vpAreaName|Text|->|4D View Pro area form object name|
+|rangeName|Text|->|Existing range name|
+|sheet|Integer|->|Range location (current sheet if omitted)|
+|Result|Object|<-|Range object of name|
 
 <!-- END REF -->  
 
@@ -2794,7 +2794,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 The *rangeName* parameter specifies an existing named cell range.
 
-In the optional *scope* parameter, you can designate a specific spreadsheet where *rangeName* is defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet or the entire workbook with the following constants:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where *rangeName* is defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet or the entire workbook with the following constants:
 
 *	`vk current sheet`
 *	`vk workbook`  
@@ -3046,16 +3046,16 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 ### VP REMOVE NAME
 
-<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *sheet* : Integer } ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|vpAreaName   |Text|->|4D View Pro area form object name|
-|name   |Text|->|Name of the named range or named formula to remove|
-|scope   |Integer|->|Target scope (default=current sheet)|
+|vpAreaName|Text|->|4D View Pro area form object name|
+|name|Text|->|Name of the named range or named formula to remove|
+|scope|Integer|->|Target scope (default=current sheet)|
 
 <!-- END REF -->  
 
@@ -3173,7 +3173,7 @@ Result:
 
 ### VP REMOVE STYLESHEET
 
-<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } ) <!-- END REF -->  
+<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *sheet* : Integer } ) <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE STYLESHEET.Params -->
 
@@ -3181,7 +3181,7 @@ Result:
 |---|---|---|---|
 |vpAreaName   |Text|->|4D View Pro area form object name|
 |styleName   |Text|->|Name of style to remove|
-|scope   |Integer|->|Target scope (default = current sheet)|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -3193,7 +3193,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 Pass the style sheet to remove in the *styleName* parameter.
 
-You can define where to remove the style in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+You can define where to remove the style in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
  
 *	`vk current sheet`
 *	`vk workbook`   
@@ -3895,9 +3895,9 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|vpAreaName |Text|->|4D View Pro area form object name|
-|columnCount |Integer|->|Number of columns|
-|sheet |Integer|->|Sheet index (current sheet if omitted)|
+|vpAreaName|Text|->|4D View Pro area form object name|
+|columnCount|Integer|->|Number of columns|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -3929,7 +3929,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 ### VP SET CURRENT SHEET
 
-<!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *index* : Integer)
+<!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *sheet* : Integer)
 <!-- END REF --> 
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
@@ -3937,7 +3937,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
-|index|Integer|<-|Index of the new current sheet|
+|sheet|Integer|<-|Index of the new current sheet|
 <!-- END REF --> 
 
 #### Description 
@@ -3946,7 +3946,7 @@ The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summa
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-In *index*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
+In *sheet*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
 
 > Indexing starts at 0.
 
@@ -4059,7 +4059,7 @@ End case
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object {; *sheetIndex* : Integer}} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object {; *sheetIndex* : Integer}} )<!-- END REF -->
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object } {; *sheet* : Integer} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object } {; *sheet* : Integer} )<!-- END REF -->
 
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
@@ -4070,7 +4070,7 @@ End case
 |dataObj|Object|->|Data object to load in the data context|
 |dataColl|Object|->|Data collection to load in the data context|
 |options |Object|->|Additional options|
-|sheetIndex |Integer|->|Sheet index|
+|sheet|Integer|->|Sheet index|
 
 <!-- END REF -->
 
@@ -4096,7 +4096,7 @@ In *options*, you can pass an object that specifies additional options. Possible
 |reset |Object|True to reset the sheet's contents before loading the new context, False (default) otherwise.|
 |autoGenerateColumns|Object| Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
 
-In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
+In *sheet*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
 
 If you export your document to an object using [VP Export to object](#vp-export-to-object), or to a 4DVP document using [VP EXPORT DOCUMENT](#vp-export-document), the `includeBindingSource` option lets you copy the contents of the current contexts as cell values in the exported object or document. For more details, refer to the description of those methods.
  
@@ -4292,7 +4292,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |styleObj |Object|->|Style object|
-|sheet |Integer|->|Sheet index (default = current sheet)|
+|sheet|Integer|->|Sheet index (default = current sheet)|
 
 <!-- END REF -->  
 
@@ -4477,7 +4477,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |paneObj |Object|->|Object containing frozen column and row information|
-|sheet |Integer|->|Sheet index (current sheet if omitted)|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -4573,7 +4573,7 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area name|
 |printInfo |Object|->|Object containing printing attributes|
-|sheet |Integer|->|Sheet index (current sheet if omitted)|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -4695,7 +4695,7 @@ VP SET ROW ATTRIBUTES($row;$properties)
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |rowCount |Integer|->|Number of rows|
-|sheet |Integer|->|Sheet index (current sheet if omitted)|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -4798,7 +4798,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 ### VP SET SHEET NAME
 
-<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} ) 
+<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; *sheet*: Integer} ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
@@ -4807,7 +4807,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |name|Text|->|New name for the sheet|
-|index |Integer|->|Index of the sheet to be renamed|
+|sheet|Integer|->|Index of the sheet to be renamed|
 
 <!-- END REF -->  
 
@@ -4819,7 +4819,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *name*, pass a new name for the sheet.
 
-In *index*, pass the index of the sheet to rename.
+In *sheet*, pass the index of the sheet to rename.
 
 > Indexing starts at 0.
 
@@ -4969,7 +4969,7 @@ Result:
 
 ### VP SET SHOW PRINT LINES
 
-<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} ) 
+<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; *sheet* : Integer} ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Params -->
@@ -4978,7 +4978,7 @@ Result:
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |visible|Boolean|->|Print lines displayed if True (default), hidden if False|
-|index |Integer|->|Sheet index|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
 
 <!-- END REF -->  
 
@@ -4990,7 +4990,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *visible*, pass `True` to display the print lines, and `False` to hide them. `True` is passed by default.
 
-In *index*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
 
 > Indexing starts at 0.
 
