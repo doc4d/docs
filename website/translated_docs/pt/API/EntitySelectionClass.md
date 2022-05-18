@@ -426,7 +426,7 @@ Um erro é retornado se:
 
 #### Exemplo
 
-We want to obtain a list of employees whose salary is higher than the average salary:
+Se quisermos obter uma lista de funcionários cujo salário for superior ao salário médio:
 
 ```4d
  var $averageSalary : Real
@@ -453,19 +453,19 @@ We want to obtain a list of employees whose salary is higher than the average sa
 **.contains**( *entity* : 4D.Entity ) : Boolean<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.contains().Params -->
-| Parameter | Type      |    | Descrição                                                      |
-| --------- | --------- |:--:| -------------------------------------------------------------- |
-| entity    | 4D.Entity | -> | Entity to evaluate                                             |
-| Resultado | Booleano  | <- | True if the entity belongs to the entity selection, else False |
+| Parameter | Type      |    | Descrição                                                     |
+| --------- | --------- |:--:| ------------------------------------------------------------- |
+| entity    | 4D.Entity | -> | Entidade a ser avaliada                                       |
+| Resultado | Booleano  | <- | Truse se a entidade pertencer à entity selection, senão False |
 <!-- END REF -->
 
 #### Descrição
 
-The `.contains()` function <!-- REF #EntitySelectionClass.contains().Summary -->returns true if entity reference belongs to the entity selection<!-- END REF -->, and false otherwise.
+A função `.contains()` <!-- REF #EntitySelectionClass.contains().Summary -->devolve true se a referência de entidade pertenecer à entity selection<!-- END REF -->, e false em caso contrário.
 
-In *entity*, specify the entity to search for in the entity selection. If entity is Null, the function will return false.
+Em *entity*, especifique a entidade a buscar na entity selection. Se a entidade for Null, a função devolverá false.
 
-If *entity* and the entity selection do not belong to the same dataclass, an error is raised.
+Se *entity* e a entity selection não pertencerem à mesma dataclass, se produz um erro.
 
 #### Exemplo
 
@@ -477,9 +477,9 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
  $employee:=ds.Employee.get(610)
 
  If($employees.contains($employee))
-    ALERT("The entity with primary key 610 has a last name beginning with H")
+    ALERT("A entidade com chave primaria 610 tem um sobrenome começando com H")
  Else
-    ALERT("The entity with primary key 610 does not have a last name beginning with H")
+    ALERT("A entidade com chave primária 610 não tem um sobrenome começando com H")
  End if
 ```
 
@@ -501,10 +501,10 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 **.count**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.count().Params -->
-| Parameter     | Type  |    | Descrição                                                         |
-| ------------- | ----- |:--:| ----------------------------------------------------------------- |
-| attributePath | Texto | -> | Path of the attribute to be used for calculation                  |
-| Resultado     | Real  | <- | Number of non null *attributePath* values in the entity selection |
+| Parameter     | Type  |    | Descrição                                                                 |
+| ------------- | ----- |:--:| ------------------------------------------------------------------------- |
+| attributePath | Texto | -> | Rota do atributo que se utilizará para o cálculo                          |
+| Resultado     | Real  | <- | Número de valores de *attributePath* que não são null na entity selection |
 <!-- END REF -->
 
 #### Descrição
@@ -1126,7 +1126,7 @@ Entity selections always have a `.length` property.
 <!-- REF #EntitySelectionClass.max().Params -->
 | Parameter     | Type  |    | Descrição                                        |
 | ------------- | ----- | -- | ------------------------------------------------ |
-| attributePath | Texto | -> | Path of the attribute to be used for calculation |
+| attributePath | Texto | -> | Rota do atributo que se utilizará para o cálculo |
 | Resultado     | any   | <- | Highest value of attribute                       |
 <!-- END REF -->
 
@@ -1178,7 +1178,7 @@ We want to find the highest salary among all the female employees:
 <!-- REF #EntitySelectionClass.min().Params -->
 | Parameter     | Type  |    | Descrição                                        |
 | ------------- | ----- |:--:| ------------------------------------------------ |
-| attributePath | Texto | -> | Path of the attribute to be used for calculation |
+| attributePath | Texto | -> | Rota do atributo que se utilizará para o cálculo |
 | Resultado     | any   | <- | Lowest value of attribute                        |
 <!-- END REF -->
 
@@ -1861,7 +1861,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 <!-- REF #EntitySelectionClass.sum().Params -->
 | Parameter     | Type  |    | Descrição                                        |
 | ------------- | ----- |:--:| ------------------------------------------------ |
-| attributePath | Texto | -> | Path of the attribute to be used for calculation |
+| attributePath | Texto | -> | Rota do atributo que se utilizará para o cálculo |
 | Resultado     | Real  | <- | Sum of entity selection values                   |
 <!-- END REF -->
 
