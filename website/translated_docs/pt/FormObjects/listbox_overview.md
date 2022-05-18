@@ -938,7 +938,7 @@ Exemplos:
 
 *   You want to display a drop-down list based on a "colors" list defined in the Tool box (containing the values "blue", "yellow", and "green"), save it as a value and display "blue" by default:
 
-![](assets/en/FormObjects/listbox_column_objectArray_colors.png)
+![](assets/fr/FormObjects/listbox_column_objectArray_colors.png)
 
 ```4d
     C_OBJECT($ob)
@@ -979,7 +979,7 @@ Exemplo:
 
 You want to display a combo box based on a "colors" list defined in the Tool box (containing the values "blue", "yellow", and "green") and display "green" by default:
 
-![](assets/en/FormObjects/listbox_column_objectArray_colors.png)
+![](assets/fr/FormObjects/listbox_column_objectArray_colors.png)
 
 ````4d
  C_OBJECT($ob)
