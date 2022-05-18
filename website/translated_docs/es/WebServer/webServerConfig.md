@@ -274,10 +274,10 @@ If you specify 0, 4D will use the default HTTP port number 80.
 
 ## HTTP Trace
 
-| Puede ajustarse con | Nombre                                         | Comentarios                     |
-| ------------------- | ---------------------------------------------- | ------------------------------- |
-| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booleano, falso por defecto     |
-| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| Puede ajustarse con | Nombre                                         | Comentarios                          |
+| ------------------- | ---------------------------------------------- | ------------------------------------ |
+| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booleano, falso por defecto          |
+| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, 0 por defecto (desactivado) |
 
 HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
 
