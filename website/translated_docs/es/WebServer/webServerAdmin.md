@@ -91,13 +91,13 @@ Website administration URLS allow you to control the website published on your s
 
 The **/4DSTATS** URL returns several items of information in an HTML table (displayable in a browser):
 
-| Elemento                  | Descripción                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| Tamaño actual de la caché | Current size of web server cache (in bytes)                  |
-| Tamaño máximo de la caché | Maximum size of cache (in bytes)                             |
-| Cached Object Max Size    | Maximum size of each object in the cache (in bytes)          |
-| Cache Use                 | Porcentaje de caché utilizado                                |
-| Cached Objects            | Number of objects found in the cache, **including pictures** |
+| Elemento                  | Descripción                                                        |
+| ------------------------- | ------------------------------------------------------------------ |
+| Tamaño actual de la caché | Tamaño actual de la caché del servidor web (en bytes)              |
+| Tamaño máximo de la caché | Tamaño máximo de la caché (en bytes)                               |
+| Cached Object Max Size    | Tamaño máximo de cada objeto en la caché (en bytes)                |
+| Cache Use                 | Porcentaje de caché utilizado                                      |
+| Cached Objects            | Número de objetos encontrados en la caché, **incluyendo imágenes** |
 
 This information can allow you to check the functioning of your server and eventually adapt the corresponding parameters.
 > The `WEB GET STATISTICS` command allows you to also obtain information about how the cache is being used for static pages.
@@ -106,14 +106,14 @@ This information can allow you to check the functioning of your server and event
 
 The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as the */4DSTATS* URL. The difference is that the **Cached Objects** field only counts HTML pages (without counting picture files). Moreover, this URL returns the **Filtered Objects** field.
 
-| Elemento                  | Descripción                                                            |
-| ------------------------- | ---------------------------------------------------------------------- |
-| Tamaño actual de la caché | Current size of web server cache (in bytes)                            |
-| Tamaño máximo de la caché | Maximum size of cache (in bytes)                                       |
-| Cached Object Max Size    | Maximum size of each object in the cache (in bytes)                    |
-| Cache Use                 | Porcentaje de caché utilizado                                          |
-| Cached Objects            | Number of objects found in the cache, **without pictures**             |
-| Objetos filtrados         | Number of objects in cache not counted by URL, in particular, pictures |
+| Elemento                  | Descripción                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| Tamaño actual de la caché | Tamaño actual de la caché del servidor web (en bytes)                                |
+| Tamaño máximo de la caché | Tamaño máximo de la caché (en bytes)                                                 |
+| Cached Object Max Size    | Tamaño máximo de cada objeto en la caché (en bytes)                                  |
+| Cache Use                 | Porcentaje de caché utilizado                                                        |
+| Cached Objects            | Número de objetos encontrados en la caché, **sin imágenes**                          |
+| Objetos filtrados         | Número de objetos en la caché que no se cuentan por URL, en particular, las imágenes |
 
 
 ### /4DCACHECLEAR
@@ -190,35 +190,35 @@ The WLF (WebStar Log Format) was developed specifically for the 4D WebSTAR serve
 ##### Configurar los campos
 
 When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields.
-> You cannot select the same field twice.
+> No puede seleccionar el mismo campo dos veces.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Campo          | ELF | WLF | Valor                                                                                                                       |
-| -------------- | --- | --- | --------------------------------------------------------------------------------------------------------------------------- |
-| BYTES_RECEIVED |     | X   | Number of bytes received by the server                                                                                      |
-| BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
-| C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                              |
-| C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                                                                       |
-| CONNECTION_ID  |     | X   | Connection ID number                                                                                                        |
-| CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                                                                     |
-| CS(HOST)       | X   | X   | Host field of the HTTP request                                                                                              |
-| CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                                                                          |
-| CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                           |
-| CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
-| CS_URI         | X   | X   | URI on which the request is made                                                                                            |
-| CS_URI_QUERY | X   | X   | Request query parameters                                                                                                    |
-| CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
-| DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
-| METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
-| PATH_ARGS      |     | X   | CGI parameters: string located after the “$” character                                                                      |
-| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                                                                          |
-| TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                                                                          |
-| TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                                                                              |
-| USER           | X   | X   | User name if authenticated; otherwise - (minus sign). If the user name contains spaces, they are replaced by _ (underlines) |
-| URL            |     | X   | URL requested by the client                                                                                                 |
+| Campo          | ELF | WLF | Valor                                                                                                                                                 |
+| -------------- | --- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                                                                                             |
+| BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                                                                                                   |
+| C_DNS          | X   | X   | Dirección IP del DNS (ELF: campo idéntico al campo C_IP)                                                                                              |
+| C_IP           | X   | X   | Dirección IP del cliente (por ejemplo 192.100.100.10)                                                                                                 |
+| CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                                               |
+| CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                                                                                          |
+| CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                                                                                                        |
+| CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                                                                                                   |
+| CS(USER_AGENT) | X   | X   | Información sobre el software y el sistema operativo del cliente                                                                                      |
+| CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                                             |
+| CS_URI         | X   | X   | URI sobre el que se realiza la petición                                                                                                               |
+| CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                                                                                                 |
+| CS_URI_STEM  | X   | X   | Parte de la solicitud sin los parámetros de la consulta                                                                                               |
+| DATE           | X   | X   | DD: día, MMM: abreviación de 3 letras para el mes (Jan, Feb,...), YYYY: año                                                                           |
+| METHOD         | X   | X   | Método HTTP utilizado para la solicitud enviada al servidor                                                                                           |
+| PATH_ARGS      |     | X   | Parámetros CGI: cadena situada después del caracter "$"                                                                                               |
+| STATUS         | X   | X   | Respuesta ofrecida por el servidor                                                                                                                    |
+| TIME           | X   | X   | HH: hora, MM: minutos, SS: segundos                                                                                                                   |
+| TRANSFER_TIME  | X   | X   | Tiempo solicitado por el servidor para generar la respuesta                                                                                           |
+| USER           | X   | X   | Nombre de usuario si está autenticado; en caso contrario, - (signo menos). Si el nombre de usuario contiene espacios, se sustituyen por _ (subrayado) |
+| URL            |     | X   | URL solicitado por el cliente                                                                                                                         |
 
-> Dates and times are given in GMT.
+> Las fechas y horas se indican en GMT.
 
 
 #### Frecuencia del backup
@@ -237,15 +237,15 @@ The automatic backup parameters for the logweb.txt are set on the **Web/Log (bac
 
 First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
-*   **No Backup**: The scheduled backup function is deactivated.
+*   **Sin copia de seguridad**: la función de copia de seguridad programada está desactivada.
 
-*   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
+*   **Cada X hora(s)**: esta opción se utiliza para programar las copias de seguridad con una base horaria. Puede introducir un valor entre 1 y 24 .
     *   **starting at**: Used to set the time at which the first back up will begin.
 
-*   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
+*   **Cada X día(s) a las X**: esta opción se utiliza para programar las copias de seguridad con una base diaria. Introduzca 1 si desea realizar una copia de seguridad diaria. Cuando esta opción está marcada, debe indicar la hora a la que debe comenzar la copia de seguridad.
 
-*   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired. For example, you can use this option to set two weekly backups: one on Wednesdays and one on Fridays.
+*   **Cada X semana(s), día a las X**: esta opción se utiliza para programar las copias de seguridad con una base semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. Cuando esta opción está marcada, debe indicar el día(s) de la semana y la hora que debe comenzar cada copia de seguridad. Si lo desea, puede seleccionar varios días de la semana. Por ejemplo, puede utilizar esta opción para definir dos copias de seguridad semanales: una el miércoles y una el viernes.
 
-*   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. When this option is checked, you must indicate the day of the month and the time when the backup must be started.
+*   **Cada X mes(es), el día X a las X**: esta opción se utiliza para programar las copias de seguridad con una base mensual. Introduzca 1 si desea realizar una copia de seguridad mensual. Cuando esta opción está marcada, debe indicar el día de cada mes y la hora a la cual debe comenzar la copia de seguridad.
 
 *   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
