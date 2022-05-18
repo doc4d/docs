@@ -91,13 +91,13 @@ Website administration URLS allow you to control the website published on your s
 
 The **/4DSTATS** URL returns several items of information in an HTML table (displayable in a browser):
 
-| Elemento                  | Descripción                                                  |
-| ------------------------- | ------------------------------------------------------------ |
-| Tamaño actual de la caché | Current size of web server cache (in bytes)                  |
-| Tamaño máximo de la caché | Maximum size of cache (in bytes)                             |
-| Cached Object Max Size    | Maximum size of each object in the cache (in bytes)          |
-| Cache Use                 | Porcentaje de caché utilizado                                |
-| Cached Objects            | Number of objects found in the cache, **including pictures** |
+| Elemento                  | Descripción                                                        |
+| ------------------------- | ------------------------------------------------------------------ |
+| Tamaño actual de la caché | Tamaño actual de la caché del servidor web (en bytes)              |
+| Tamaño máximo de la caché | Tamaño máximo de la caché (en bytes)                               |
+| Cached Object Max Size    | Tamaño máximo de cada objeto en la caché (en bytes)                |
+| Cache Use                 | Porcentaje de caché utilizado                                      |
+| Cached Objects            | Número de objetos encontrados en la caché, **incluyendo imágenes** |
 
 This information can allow you to check the functioning of your server and eventually adapt the corresponding parameters.
 > The `WEB GET STATISTICS` command allows you to also obtain information about how the cache is being used for static pages.
@@ -106,14 +106,14 @@ This information can allow you to check the functioning of your server and event
 
 The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as the */4DSTATS* URL. The difference is that the **Cached Objects** field only counts HTML pages (without counting picture files). Moreover, this URL returns the **Filtered Objects** field.
 
-| Elemento                  | Descripción                                                            |
-| ------------------------- | ---------------------------------------------------------------------- |
-| Tamaño actual de la caché | Current size of web server cache (in bytes)                            |
-| Tamaño máximo de la caché | Maximum size of cache (in bytes)                                       |
-| Cached Object Max Size    | Maximum size of each object in the cache (in bytes)                    |
-| Cache Use                 | Porcentaje de caché utilizado                                          |
-| Cached Objects            | Number of objects found in the cache, **without pictures**             |
-| Objetos filtrados         | Number of objects in cache not counted by URL, in particular, pictures |
+| Elemento                  | Descripción                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| Tamaño actual de la caché | Tamaño actual de la caché del servidor web (en bytes)                                |
+| Tamaño máximo de la caché | Tamaño máximo de la caché (en bytes)                                                 |
+| Cached Object Max Size    | Tamaño máximo de cada objeto en la caché (en bytes)                                  |
+| Cache Use                 | Porcentaje de caché utilizado                                                        |
+| Cached Objects            | Número de objetos encontrados en la caché, **sin imágenes**                          |
+| Objetos filtrados         | Número de objetos en la caché que no se cuentan por URL, en particular, las imágenes |
 
 
 ### /4DCACHECLEAR
@@ -190,13 +190,13 @@ The WLF (WebStar Log Format) was developed specifically for the 4D WebSTAR serve
 ##### Configurar los campos
 
 When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields.
-> You cannot select the same field twice.
+> No puede seleccionar el mismo campo dos veces.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
 | Campo          | ELF | WLF | Valor                                                                                                                       |
 | -------------- | --- | --- | --------------------------------------------------------------------------------------------------------------------------- |
-| BYTES_RECEIVED |     | X   | Number of bytes received by the server                                                                                      |
+| BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                                                                   |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                              |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                                                                       |
@@ -211,14 +211,14 @@ The following table lists the fields available for each format (in alphabetical 
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
-| PATH_ARGS      |     | X   | CGI parameters: string located after the “$” character                                                                      |
+| PATH_ARGS      |     | X   | Parámetros CGI: cadena situada después del caracter "$"                                                                     |
 | STATUS         | X   | X   | Respuesta ofrecida por el servidor                                                                                          |
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                                                                          |
 | TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                                                                              |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign). If the user name contains spaces, they are replaced by _ (underlines) |
 | URL            |     | X   | URL requested by the client                                                                                                 |
 
-> Dates and times are given in GMT.
+> Las fechas y horas se indican en GMT.
 
 
 #### Frecuencia del backup
