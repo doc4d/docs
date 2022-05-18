@@ -106,32 +106,32 @@ These properties are defined:
 
 The 4D Language contains [several commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) that can be used to control the web server. However, these commands are designed to work with a single (default) web server. When using these commands in the context of web server objects, make sure their scope is appropriate.
 
-| Comando                         | Alcance                              |
-| ------------------------------- | ------------------------------------ |
-| `SET DATABASE PARAMETER`        | Host application web server          |
-| `WEB CLOSE SESSION`             | Web server that received the request |
-| `WEB GET BODY PART`             | Web server that received the request |
-| `WEB Get body part count`       | Web server that received the request |
-| `WEB Get Current Session ID`    | Web server that received the request |
-| `WEB GET HTTP BODY`             | Web server that received the request |
-| `WEB GET HTTP HEADER`           | Web server that received the request |
-| `WEB GET OPTION`                | Host application web server          |
-| `WEB Get server info`           | Host application web server          |
-| `WEB GET SESSION EXPIRATION`    | Web server that received the request |
-| `WEB Get session process count` | Web server that received the request |
-| `WEB GET STATISTICS`            | Host application web server          |
-| `WEB GET VARIABLES`             | Web server that received the request |
-| `WEB Is secured connection`     | Web server that received the request |
-| `WEB Is server running`         | Host application web server          |
-| `WEB SEND BLOB`                 | Web server that received the request |
-| `WEB SEND FILE`                 | Web server that received the request |
-| `WEB SEND HTTP REDIRECT`        | Web server that received the request |
-| `WEB SEND RAW DATA`             | Web server that received the request |
-| `WEB SEND TEXT`                 | Web server that received the request |
-| `WEB SET HOME PAGE`             | Host application web server          |
-| `WEB SET HTTP HEADER`           | Web server that received the request |
-| `WEB SET OPTION`                | Host application web server          |
-| `WEB SET ROOT FOLDER`           | Host application web server          |
-| `WEB START SERVER`              | Host application web server          |
-| `WEB STOP SERVER`               | Host application web server          |
-| `WEB Validate digest`           | Web server that received the request |
+| Comando                         | Alcance                                  |
+| ------------------------------- | ---------------------------------------- |
+| `SET DATABASE PARAMETER`        | Aplicación local del servidor web        |
+| `WEB CLOSE SESSION`             | Servidor web que ha recibido la petición |
+| `WEB GET BODY PART`             | Servidor web que ha recibido la petición |
+| `WEB Get body part count`       | Servidor web que ha recibido la petición |
+| `WEB Get Current Session ID`    | Servidor web que ha recibido la petición |
+| `WEB GET HTTP BODY`             | Servidor web que ha recibido la petición |
+| `WEB GET HTTP HEADER`           | Servidor web que ha recibido la petición |
+| `WEB GET OPTION`                | Aplicación local del servidor web        |
+| `WEB Get server info`           | Aplicación local del servidor web        |
+| `WEB GET SESSION EXPIRATION`    | Servidor web que ha recibido la petición |
+| `WEB Get session process count` | Servidor web que ha recibido la petición |
+| `WEB GET STATISTICS`            | Aplicación local del servidor web        |
+| `WEB GET VARIABLES`             | Servidor web que ha recibido la petición |
+| `WEB Is secured connection`     | Servidor web que ha recibido la petición |
+| `WEB Is server running`         | Aplicación local del servidor web        |
+| `WEB SEND BLOB`                 | Servidor web que ha recibido la petición |
+| `WEB SEND FILE`                 | Servidor web que ha recibido la petición |
+| `WEB SEND HTTP REDIRECT`        | Servidor web que ha recibido la petición |
+| `WEB SEND RAW DATA`             | Servidor web que ha recibido la petición |
+| `WEB SEND TEXT`                 | Servidor web que ha recibido la petición |
+| `WEB SET HOME PAGE`             | Aplicación local del servidor web        |
+| `WEB SET HTTP HEADER`           | Servidor web que ha recibido la petición |
+| `WEB SET OPTION`                | Aplicación local del servidor web        |
+| `WEB SET ROOT FOLDER`           | Aplicación local del servidor web        |
+| `WEB START SERVER`              | Aplicación local del servidor web        |
+| `WEB STOP SERVER`               | Aplicación local del servidor web        |
+| `WEB Validate digest`           | Servidor web que ha recibido la petición |
