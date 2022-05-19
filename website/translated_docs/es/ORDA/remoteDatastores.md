@@ -41,7 +41,7 @@ In the following example, two processes are running for the same session:
 
 ![](assets/en/ORDA/sessionAdmin.png)
 
-## Locking and transactions
+## Bloqueo y transacciones
 
 ORDA features related to entity locking and transaction are managed at process level in remote datastores, just like in ORDA client/server mode:
 
