@@ -140,10 +140,10 @@ Los valores posibles son:
 ## .bodyCharset
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones          |
-| ------- | ----------------------- |
-| v18     | Support for UTF8 base64 |
-| v17 R5  | Añadidos                |
+| Versión | Modificaciones         |
+| ------- | ---------------------- |
+| v18     | Soporte de UTF8 base64 |
+| v17 R5  | Añadidos               |
 </details>
 
 <!-- REF #transporter.bodyCharset.Syntax -->
