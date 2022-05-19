@@ -50,12 +50,12 @@ The **User Settings** and **User Settings for Data File** dialog boxes contain a
 
 The following table lists the pages of settings found in the **User Settings** and **User Settings for Data File** dialog boxes and describes their main differences with respect to standard settings:
 
-| **Page of Structure Settings**                                                        | **Página de las Propiedades usuario** | **Page of User Settings for Data File** |
+| **Página de Propiedades estructura**                                                  | **Página de las Propiedades usuario** | **Page of User Settings for Data File** |
 | ------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------- |
 | [Página General](../settings/general.md)                                              | N/a                                   | N/a                                     |
 | [Página interfaz](../settings/interface.md)                                           | Identical to standard settings        | Identical to standard settings          |
 | [Página Compilador](../settings/compiler.md)                                          | N/a                                   | N/a                                     |
-| [Database/Data storage page](../settings/database.md#data-storage)                    | N/a                                   | N/a                                     |
+| [Página Base de datos/almacenamiento de datos](../settings/database.md#data-storage)  | N/a                                   | N/a                                     |
 | [Database/Memory page](../settings/database.md#memory)                                | Identical to standard settings        | Identical to standard settings          |
 | [Page Backup/Periodicidad](../settings/backup.md#scheduler)                           | N/a                                   | Identical to standard settings          |
 | [Backup/Configuration page](../settings/backup.md#configuration)                      | N/a                                   | Identical to standard settings          |
