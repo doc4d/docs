@@ -827,13 +827,13 @@
         "title": "Autenticación"
       },
       "WebServer/errorPages": {
-        "title": "Custom HTTP Error Pages"
+        "title": "Páginas de error HTTP personalizadas"
       },
       "WebServer/gettingStarted": {
         "title": "Comencemos"
       },
       "WebServer/httpRequests": {
-        "title": "Processing HTTP requests"
+        "title": "Procesamiento de peticiones HTTP"
       },
       "WebServer/preemptiveWeb": {
         "title": "Using preemptive web processes"
@@ -913,7 +913,7 @@
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",
-    "Description of log files|no description given": "Description of log files",
+    "Description of log files|no description given": "Descripción de los archivos de historial",
     "Command Line Interface|no description given": "Interfaz de línea de comando",
     "Preferences|no description given": "Preferencias",
     "https://doc.4d.com/4Dv19/4D/19.1/4D-Language-Reference.100-5652626.en.html|no description given": "https://doc.4d.com/4Dv19/4D/19.1/4D-Language-Reference.100-5652626.en.html",
