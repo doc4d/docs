@@ -25,18 +25,18 @@ La propiedad `.acceptUnsecureConnection` contiene <!-- REF #transporter.acceptUn
 
 It contains **False** if unencrypted connections are unallowed, in which case an error in returned when encrypted connection is not possible.
 
-Available secured ports are:
+Los puertos seguros disponibles son:
 
 - SMTP
     - 465: SMTPS
     - 587 or 25: SMTP with STARTTLS upgrade if supported by the server.
 
 - IMAP
-    - 143: IMAP non-encrypted port
+    - 143: Puerto IMAP no encriptado
     - 993: IMAP with STARTTLS upgrade if supported by the server
 
 - POP3
-    - 110: POP3 non-encrypted port
+    - 110: Puerto POP3 no encriptado
     - 995: POP3 con actualización STARTTLS si lo soporta el servidor.
 <!-- END REF -->
 
