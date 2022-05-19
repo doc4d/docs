@@ -11,7 +11,7 @@ title: netkit
 ## Table of contents
 
 * [OAuth2Provider class](#oauth2provider)
-* [Office365 class](#office365provider)
+* [Office365 class](#office365)
     * [Sending emails](#office365mailsend)
     * [Getting information on users](#office365userget)
 * [Tutorial : Authenticate to the Microsoft Graph API in service mode](#authenticate-to-the-microsoft-graph-api-in-service-mode)
