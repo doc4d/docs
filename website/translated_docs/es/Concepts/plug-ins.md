@@ -9,7 +9,7 @@ A medida que desarrolle una aplicación 4D, descubrirá muchas funcionalidades d
 
 A plug-in is a piece of code, written in any language such as C or C++, that 4D launches at start up. Añade funcionalidad a 4D y aumenta así su capacidad. A plug-in usually contains a set of routines given to the 4D developer. It can handle external areas and run external processes.
 
-## Where to find plug-ins?
+## ¿Dónde encontrar los plug-ins?
 
 Multiple plug-ins have already been written by the 4D community. Published plug-ins [can be found on GitHub](https://github.com/search?q=4d-plugin&type=Repositories). Additionnally, you can [develop your own plug-ins](Extensions/develop-plug-ins.md).
 
