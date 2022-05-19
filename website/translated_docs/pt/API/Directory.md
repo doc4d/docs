@@ -3,7 +3,7 @@ id: Directory
 title: Directory Class
 ---
 
-## Description
+## Descrição
 
 
 <!-- REF directory.creationDate.Desc -->
@@ -19,7 +19,7 @@ title: Directory Class
 **.creationDate** : Date<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.creationDate` devolve <!-- REF #directory.creationDate.Summary -->a data de criação da pasta<!-- END REF -->.
 
@@ -43,7 +43,7 @@ Essa propriedade é**apenas leitura**.
 
 
 
-#### Description
+#### Descrição
 
 A propriedade `.creationTime` devolve <!-- REF #directory.creationTime.Summary -->a hora de criação da pasta<!-- END REF --> (expressada como um número de segundos que começa em 00:00).
 
@@ -67,7 +67,7 @@ Essa propriedade é**apenas leitura**.
 **.exists** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.exists` devolve <!-- REF #directory.exists.Summary -->true se a pasta existir no disco<!-- END REF -->, e falso em caso contrário.
 
@@ -92,7 +92,7 @@ Essa propriedade é**apenas leitura**.
 **.extension** : Text<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.extension` <!-- REF #directory.extension.Summary -->devolve a extensão do nome da pasta (se houver)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the folder name does not have an extension.
 
@@ -116,7 +116,7 @@ Essa propriedade é**apenas leitura**.
 **.fullName** : Text<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.fullName` <!-- REF #directory.fullName.Summary -->devolve o nome completo da pasta, incluindo sua extensão (se houver)<!-- END REF -->.
 
@@ -140,7 +140,7 @@ Essa propriedade é**apenas leitura**.
 **.hidden** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.hidden` devolve <!-- REF #directory.hidden.Summary --> true se a pasta existir no disco ao nível do sistema<!-- END REF -->, e falso em caso contrário.
 
@@ -165,7 +165,7 @@ Essa propriedade é**apenas leitura**.
 
 
 
-#### Description
+#### Descrição
 
 A propriedade `.isAlias` retorna <!-- REF #directory.isAlias.Summary -->sempre**false** para um objeto `Folder`<!-- END REF -->.
 
@@ -188,7 +188,7 @@ Essa propriedade é**apenas leitura**.
 **.isFile** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.isFile` devolve <!-- REF #directory.isFile.Summary -->sempre **false** para uma pasta<!-- END REF -->.
 
@@ -211,7 +211,7 @@ Essa propriedade é**apenas leitura**.
 **.isFolder** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.isFolder` devolve <!-- REF #directory.isFolder.Summary -->sempre **false** para uma pasta<!-- END REF -->.
 
@@ -234,7 +234,7 @@ Essa propriedade é**apenas leitura**.
 **.isPackage** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.isPackage` devolve <!-- REF #directory.isPackage.Summary -->true se a pasta for um pacote em macOS (e existir no disco)<!-- END REF -->. Otherwise, it returns false.
 
@@ -260,7 +260,7 @@ Essa propriedade é**apenas leitura**.
 **.modificationDate** : Date<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.modificationDate` devolve <!-- REF #directory.modificationDate.Summary --> a data da última modificação da pasta<!-- END REF -->.
 
@@ -284,7 +284,7 @@ Essa propriedade é**apenas leitura**.
 **.modificationTime** : Time<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.modifficationTime` devolve <!-- REF #directory.modificationTime.Summary -->a hora de úlltima modificação da pasta<!-- END REF --> (expressada como um número de segundos que começa em 00:00).
 
@@ -309,7 +309,7 @@ Essa propriedade é**apenas leitura**.
 **.name** : Text<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.name` devolve <!-- REF #directory.name.Summary --> o nome da pasta, sem extensão (se houver)<!-- END REF -->.
 
@@ -332,7 +332,7 @@ Essa propriedade é**apenas leitura**.
 **.original** : 4D.Folder<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.original` devolve <!-- REF #directory.original.Summary -->o mesmo objeto Pasta que a Pasta<!-- END REF -->.
 
@@ -357,7 +357,7 @@ Essa propriedade é**apenas leitura**.
 **.parent** : 4D.Folder<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.parent` devolve <!-- REF #directory.parent.Summary -->o objeto pasta pai da pasta<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
 
@@ -383,7 +383,7 @@ Essa propriedade é**apenas leitura**.
 **.path** : Text<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.path` devolve <!-- REF #directory.path.Summary -->a rota POSIX da pasta<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
 
@@ -406,7 +406,7 @@ Essa propriedade é**apenas leitura**.
 **.platformPath** : Text<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A propriedade `.platformPath` devolve <!-- REF #directory.platformPath.Summary -->a rota da pasta expressa com a sintaxe da plataforma atual<!-- END REF -->.
 
@@ -434,16 +434,16 @@ Essa propriedade é**apenas leitura**.
 **.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D Folder<!-- END REF -->
 
 <!-- REF #directory.copyTo().Params -->
-| Parameter         | Type      |    | Description                                            |
+| Parameter         | Type      |    | Descrição                                              |
 | ----------------- | --------- |:--:| ------------------------------------------------------ |
 | destinationFolder | 4D.Folder | -> | Pasta de destino                                       |
 | newName           | Texto     | -> | Nome para a copia                                      |
 | overwrite         | Integer   | -> | `fk overwrite` para substituir os elementos existentes |
-| Result            | 4D.Folder | <- | Pasta ou arquivo copiado                               |
+| Resultado         | 4D.Folder | <- | Pasta ou arquivo copiado                               |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.copyTo()` <!-- REF #directory.copyTo().Summary -->copia o objeto `Folder` na *destinationFolder* especificado><!-- END REF -->.
 
@@ -490,13 +490,13 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 **.file**( *path* : Text ) : 4D.File<!-- END REF -->
 
 <!-- REF #directory.file().Params -->
-| Parameter | Type    |    | Description                                   |
+| Parameter | Type    |    | Descrição                                     |
 | --------- | ------- | -- | --------------------------------------------- |
 | path      | Texto   | -> | Rota POSIX relativa                           |
-| Result    | 4D.File | <- | Objeto `File` (null se a rota não for válida) |
+| Resultado | 4D.File | <- | Objeto `File` (null se a rota não for válida) |
 <!-- END REF -->
 
-#### Description
+#### Descrição
 
 A função `.file()` <!-- REF #directory.file().Summary -->cria um objeto `File` no objeto `Folder` e devolve sua referência<!-- END REF -->.
 
@@ -530,23 +530,23 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 **.files**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.files().Params -->
-| Parameter | Type    |    | Description                         |
+| Parameter | Type    |    | Descrição                           |
 | --------- | ------- | -- | ----------------------------------- |
 | options   | Integer | -> | Opções da lista de arquivos         |
-| Result    | Coleção | <- | Coleção de objetos de arquivo filho |
+| Resultado | Coleção | <- | Coleção de objetos de arquivo filho |
 <!-- END REF -->
 
-#### Description
+#### Descrição
 
 A função `.files()` devolve <!-- REF #directory.files().Summary -->uma coleção de objetos `File` contidos na pasta<!-- END REF -->.
 > Aliases or symbolic links are not resolved.
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem na coleção os arquivos de primeiro nivel da pasta, assim como os arquivos ou pastas invisíveis. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constant              | Value | Comment                                                                             |
-| --------------------- | ----- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
+| Constant              | Value | Comment                                                                  |
+| --------------------- | ----- | ------------------------------------------------------------------------ |
+| `fk recursive`        | 1     | The collection contains files of the specified folder and its subfolders |
+| `fk ignore invisible` | 8     | Invisible files are not listed                                           |
 
 **Returned value**
 
@@ -591,13 +591,13 @@ Se quiser obter todos os arquivos que não são invisíveis na pasta Documents:
 **.folder**( *path* : Text ) : 4D.Folder<!-- END REF -->
 
 <!-- REF #directory.folder().Params -->
-| Parameter | Type      |    | Description                                        |
+| Parameter | Type      |    | Descrição                                          |
 | --------- | --------- | -- | -------------------------------------------------- |
 | path      | Texto     | -> | Rota POSIX relativa                                |
-| Result    | 4D.Folder | <- | Objeto pasta criado (null se *path*não for válido) |
+| Resultado | 4D.Folder | <- | Objeto pasta criado (null se *path*não for válido) |
 <!-- END REF -->
 
-#### Description
+#### Descrição
 
 A função `.folder()` <!-- REF #directory.folder().Summary -->cria um objeto `Folder` dentro do objeto pai `Folder` e devolve sua referência<!-- END REF -->.
 
@@ -631,22 +631,22 @@ Um objeto `Folder` ou null se *path* não for válido.
 **.folders**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.folders().Params -->
-| Parameter | Type    |    | Description                       |
+| Parameter | Type    |    | Descrição                         |
 | --------- | ------- | -- | --------------------------------- |
 | options   | Integer | -> | Opções da lista de pasta          |
-| Result    | Coleção | <- | Coleção de objetos de pasta filho |
+| Resultado | Coleção | <- | Coleção de objetos de pasta filho |
 <!-- END REF -->
 
-#### Description
+#### Descrição
 
 A função `.folders()` devolve <!-- REF #directory.folders().Summary -->uma coleção de objetos `Folder` contidos na pasta pai<!-- END REF -->.
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem as pastas no primeiro nível da pasta. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constant              | Value | Comment                                                                             |
-| --------------------- | ----- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
+| Constant              | Value | Comment                                                                    |
+| --------------------- | ----- | -------------------------------------------------------------------------- |
+| `fk recursive`        | 1     | The collection contains folders of the specified folder and its subfolders |
+| `fk ignore invisible` | 8     | Invisible folders are not listed                                           |
 
 **Returned value**
 
@@ -678,14 +678,14 @@ Se quiser a coleção de todas as pastas e subpastas da pasta database:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #directory.getIcon().Params -->
-| Parameter | Type    |    | Description                                     |
+| Parameter | Type    |    | Descrição                                       |
 | --------- | ------- | -- | ----------------------------------------------- |
 | size      | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
-| Result    | Imagem  | <- | Icon                                            |
+| Resultado | Imagem  | <- | Icon                                            |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.getIcon()` <!-- REF #directory.getIcon().Summary -->devolve o icone da pasta<!-- END REF -->.
 
