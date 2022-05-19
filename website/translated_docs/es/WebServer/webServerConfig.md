@@ -6,15 +6,15 @@ title: Configuración
 The 4D web server settings include security parameters, listening ports, defaults paths, and various options covering all the server features. 4D provides default values for every settings.
 
 
-## Where to configure settings?
+## ¿Donde configurar los parámetros?
 
 There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
 
-| Setting location                                              | Alcance                                  | Servidor web a utilizar                         |
-| ------------------------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
-| [objeto webServer](webServerObject.md)                        | Temporary (current session)              | Any web server, including component web servers |
-| `WEB SET OPTION` or a `WEB XXX` command                       | Temporary (current session)              | Servidor principal                              |
-| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (all sessions, stored on disk) | Servidor principal                              |
+| Setting location                                              | Alcance                                  | Servidor web a utilizar                                               |
+| ------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
+| [objeto webServer](webServerObject.md)                        | Temporal (sesión actual)                 | Todos los servidores web, incluidos los servidores web de componentes |
+| `WEB SET OPTION` o comando `WEB XXX`                          | Temporal (sesión actual)                 | Servidor principal                                                    |
+| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (all sessions, stored on disk) | Servidor principal                                                    |
 
 > Some settings are not available from all locations.
 
@@ -184,7 +184,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 | `WEB SET OPTION`              | `Web HTTP enabled`                                           |             |
 | Caja de diálogo de parámetros | [Configuración/Activar HTTP](../settings/web.md#enable-http) |             |
 
-Indicates whether or not the web server will accept non-secure connections.
+Indica si el servidor web acepta o no conexiones no seguras.
 
 
 ## Activar HTTPS
@@ -193,7 +193,7 @@ Indicates whether or not the web server will accept non-secure connections.
 | ----------------------------- | ---------------------------------------------------- | ----------- |
 | objeto webServer              | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | booleano    |
 | `WEB SET OPTION`              | `Web HTTPS enabled`                                  |             |
-| Caja de diálogo de parámetros | Configuration page/Enable HTTPS                      |             |
+| Caja de diálogo de parámetros | Página configuración/Activar HTTPS                   |             |
 
 Estado de la comunicación a través de HTTPS. Esta opción se describe en [esta sección](Admin/tls.md).
 
@@ -218,10 +218,10 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 
 ## HSTS Max Age
 
-| Puede ajustarse con | Nombre                                           | Comentarios       |
-| ------------------- | ------------------------------------------------ | ----------------- |
-| objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION`    | `Web HSTS max age`                               | number in seconds |
+| Puede ajustarse con | Nombre                                           | Comentarios        |
+| ------------------- | ------------------------------------------------ | ------------------ |
+| objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | número en segundos |
+| `WEB SET OPTION`    | `Web HSTS max age`                               | número en segundos |
 
 Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta información se almacena del lado del cliente durante el tiempo especificado. Default value is 63072000 (2 years)
 
@@ -242,7 +242,7 @@ Compression level for all compressed HTTP exchanges for the 4D web server (clien
 
 Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
 
-## HTTP Compression Threshold
+## Umbral de compresión HTTP
 
 | Puede ajustarse con | Nombre                                                                       | Comentarios |
 | ------------------- | ---------------------------------------------------------------------------- | ----------- |
@@ -274,10 +274,10 @@ If you specify 0, 4D will use the default HTTP port number 80.
 
 ## HTTP Trace
 
-| Puede ajustarse con | Nombre                                         | Comentarios                     |
-| ------------------- | ---------------------------------------------- | ------------------------------- |
-| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Boolean, default = false        |
-| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| Puede ajustarse con | Nombre                                         | Comentarios                          |
+| ------------------- | ---------------------------------------------- | ------------------------------------ |
+| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booleano, falso por defecto          |
+| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, 0 por defecto (desactivado) |
 
 HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
 
@@ -297,7 +297,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
 
 
-## Inactive Process Timeout
+## Tiempo de espera del proceso inactivo
 
 | Puede ajustarse con           | Nombre                                                                                   | Comentarios |
 | ----------------------------- | ---------------------------------------------------------------------------------------- | ----------- |
@@ -310,7 +310,7 @@ Life duration (in minutes) of inactive processes associated with sessions. At th
 Default: 480 minutes (pass 0 to restore the default value)
 
 
-## Inactive Session Timeout
+## Tiempo de espera de las sesiones inactivas
 
 | Puede ajustarse con | Nombre                                                                   | Comentarios |
 | ------------------- | ------------------------------------------------------------------------ | ----------- |
@@ -357,11 +357,11 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 ## Keep Session
 
-| Puede ajustarse con           | Nombre                                                                                                                   | Comentarios                |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                       |                            |
-| `WEB SET OPTION`              | `Web keep session`                                                                                                       |                            |
-| Caja de diálogo de parámetros | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | only in converted projects |
+| Puede ajustarse con           | Nombre                                                                                                                   | Comentarios                       |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                       |                                   |
+| `WEB SET OPTION`              | `Web keep session`                                                                                                       |                                   |
+| Caja de diálogo de parámetros | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | sólo en los proyectos convertidos |
 
 Legacy session management enabling status for the 4D web server (deprecated).
 
@@ -502,7 +502,7 @@ To do so, put the ROBOTS.TXT file at the server's root. This file must be struct
 
 ```4d
    User-Agent: <name>
-   Disallow: <URL> or <beginning of the URL>
+   Disallow: <URL> o <beginning of the URL>
 ```
 
 Por ejemplo:
