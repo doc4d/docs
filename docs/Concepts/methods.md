@@ -259,7 +259,7 @@ To modify the properties of a project method:
 * select the **Method Properties...** command in the **Method** menu
 * on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu. The **Method Properties** dialog appears.
 
-**Note:** A batch setting function can be used to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
+**Note:** A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
 
 #### Name  
 
@@ -281,7 +281,7 @@ You can control how project methods are used and/or called in different contexts
 
 If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box (see [From the Execute Method dialog box](#from-the-execute-method-dialog-box)). 
 
-When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Method editor.
+When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
 
 ##### Shared by components and host database  
 
@@ -291,13 +291,15 @@ For more information about components, refer to the [Developing and installing 
 
 ##### Execute on Server  
 
-This attribute is only taken into account for a 4D application in client/server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called. 
+This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called. 
 
-For more information about this option, refer to [Execute on Server attribute](#execute-on-server).
+For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
 
 #### Execution mode  
 
-This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode.  If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. The compiler will then check that these methods are actually thread-safe.
+This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode. 
+
+If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. The compiler will then check that these methods are actually thread-safe.
 
 **Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html) section.
 
@@ -364,15 +366,6 @@ For more information, refer to [4D SQL engine implementation](https://doc.4d.co
 
 *This option is deprecated because it relies on legacy current record and current selection concepts. It is recommended to use** [ORDA data model class functions](https://developer.4d.com/docs/en/REST/classFunctions.html) for REST access. *
 
-#### Access and owner privileges  
-
-You can control access to methods by setting Access and Owner privileges for groups of users. For information about creating a password access system with users and groups, refer to the [Users and groups](https://doc.4d.com/4Dv19R5/4D/19-R5/Users-and-groups.200-5851325.en.html) chapter.
-
--   The "Access group" drop-down list controls which group can execute the method. If a user that is not in this group attempts to execute the method, 4D displays a message saying that the user's password does not allow them to execute the method.
--   The "Owner group" drop-down list controls which group can edit the method in the Design environment. If a user who is not in this group attempts to edit the method in the Design environment, 4D displays a message saying that the user does not have the access privilege to edit the method.
-
-Users who are assigned to both groups can use or modify the method without restriction.
-
 #### Batch setting for method attributes  
 
 Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
@@ -402,12 +395,12 @@ However, for testing and debugging purposes, 4D lets you manually execute projec
 
 Moreover, with 4D Server, you can indicate whether 4D Server should execute a project method on the server machine or on other clients' machines. You can execute methods in two ways:
 
--   From the Method editor window,
+-   From the [**Code Editor**](../code-editor/overview.md) window,
 -   From the Execute Method dialog box (project methods only).
 
-### From the method editor  
+### From the Code Editor 
 
-Each Method editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
+Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
 
 ![](https://doc.4d.com/4Dv19R5/picture/443881/pict443881.en.png)
 
