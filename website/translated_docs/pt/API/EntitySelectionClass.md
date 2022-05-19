@@ -477,8 +477,8 @@ Se *entity* e a entity selection não pertencerem à mesma dataclass, se produz 
 
 #### Descrição
 
-The `.count()` function <!-- REF #EntitySelectionClass.count().Summary -->returns the number of entities in the entity selection with a non-null value in *attributePath*<!-- END REF -->.
-> Only scalar values are taken into account. Object or collection type values are considered as null values.
+A função `.count()` <!-- REF #EntitySelectionClass.count().Summary -->devolve o número de entidades na entity selection com um valor não null em *attributePath*<!-- END REF -->.
+> Só são levados em consideração os valores escalares. Os valores de tipo objeto ou coleção são considerados valores nulos.
 
 Um erro é retornado se:
 
@@ -672,9 +672,9 @@ Exemplo com a opção `dk stop dropping on first error`:
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop(dk stop dropping on first error) //$notDropped is an entity selection containing the first not dropped entity
- If($notDropped.length=0) //The delete action is successful, all the entities have been deleted
-    ALERT("You have dropped "+String($employees.length)+" employees") //The dropped entity selection remains in memory
+ $notDropped:=$employees.drop(dk stop dropping on first error) //$notDropped é uma entity selection que contém a primeira entidade não eliminada
+ If($notDropped.length=0) //A ação de eliminação é exitosa, todas as entidades foram eliminadas
+    ALERT("You have dropped "+String($employees.length)+" employees") //A seleção de entidades eliminada permanece na memória
  Else
     ALERT("Problem during drop, try later")
  End if
@@ -703,33 +703,33 @@ Exemplo com a opção `dk stop dropping on first error`:
 
 
 <!-- REF #EntitySelectionClass.extract().Params -->
-| Parameter     | Type    |    | Descrição                                                                               |
-| ------------- | ------- |:--:| --------------------------------------------------------------------------------------- |
-| attributePath | Texto   | -> | Attribute path whose values must be extracted to the new collection                     |
-| targetPath    | Texto   | -> | Target attribute path or attribute name                                                 |
-| option        | Integer | -> | `ck keep null`: include null attributes in the returned collection (ignored by default) |
-| Resultado     | Coleção | <- | Collection containing extracted values                                                  |
+| Parámetros    | Tipo    |    | Descrição                                                                            |
+| ------------- | ------- |:--:| ------------------------------------------------------------------------------------ |
+| attributePath | Texto   | -> | Rota de atributo cujos valores serão extraídos para nova coleção                     |
+| targetpath    | Texto   | -> | Rota ou nome do atributo objetivo                                                    |
+| option        | Integer | -> | `ck keep null`: inclui os atributos null na coleção devolvida (ignorados por padrão) |
+| Resultado     | Coleção | <- | Collection contendo valores extraídos                                                |
 <!-- END REF -->
 
 #### Descrição
 
-The `.extract()` function <!-- REF #EntitySelectionClass.extract().Summary -->returns a collection containing *attributePath* values extracted from the entity selection<!-- END REF -->.
+A função `.extract()` <!-- REF #EntitySelectionClass.extract().Summary -->retorna una coleção que contenha os valores de *attributePath* extraídos da entity selection<!-- END REF -->.
 
-*attributePath* can refer to:
+*attributePath* pode ser:
 
-*   a scalar dataclass attribute,
-*   related entity,
-*   related entities.
+*   um atributo escalar de dataclass,
+*   entidade relacionada,
+*   entidades relacionadas.
 
-If *attributePath* is invalid, an empty collection is returned.
+Se *attributePath* não for válido, se devolve uma coleção vazia.
 
-This function accepts two syntaxes.
+Esta função aceita duas sintaxes.
 
 **.extract( attributePath : Text { ; option : Integer } ) : Collection**
 
-With this syntax, `.extract()` populates the returned collection with the *attributePath* values of the entity selection.
+Com esta sintaxe, `.extract()` preenche a coleção devolvida com os valores *attributePath* da entity selection.
 
-By default, entities for which *attributePath* is *null* or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as **null** elements in the returned collection.
+Como padrão, as entidades para as que *attributePath* for*null* ou indefinida são ignoradas na coleção resultante. Pode passar a constante `ck keep null` no parâmetro *option* para incluir esses valores como elementos**null**  na coleção retornada.
 
 
 *   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" are extracted as a collection of entities (duplications are kept).
