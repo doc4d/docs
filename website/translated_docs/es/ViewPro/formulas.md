@@ -69,17 +69,17 @@ The following operators can be used with two operands of the same type:
 
 List of operators from most to least important:
 
-| Operador        | Descripción                |
-| --------------- | -------------------------- |
-| ()              | Parenthesis (for grouping) |
-| -               | Negativo                   |
-| +               | Más                        |
-| %               | Porcentaje                 |
-| ^               | Exponente                  |
-| * y /           | Multiply and divide        |
-| + y -           | Add and Subtract           |
-| &               | Concatenar                 |
-| =  > < >= <= <> | Comparar                   |
+| Operador        | Descripción               |
+| --------------- | ------------------------- |
+| ()              | Paréntesis (para agrupar) |
+| -               | Negativo                  |
+| +               | Más                       |
+| %               | Porcentaje                |
+| ^               | Exponente                 |
+| * y /           | Multiply and divide       |
+| + y -           | Add and Subtract          |
+| &               | Concatenar                |
+| =  > < >= <= <> | Comparar                  |
 
 
 
