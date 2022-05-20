@@ -153,12 +153,12 @@ $x1-=5 //$x1=5
 $d1:=!2000-11-10!
 $d1-=10 // $d1=!2000-10-31!
 
-// Division
+// División
 $x3:=10
 $x3/=2 // $x3=5
 
 
-// Multiplication
+// Multiplicación
 $x2:=10
 $x2*=5 // $x2=10
 
@@ -321,7 +321,7 @@ ALERT($beverage) // "Beer" "Beer" : "Juice"
 ALERT($beverage) // "Beer"
 ```
 
-#### Handling data from a table
+#### Gestión de los datos de una tabla
 
 This example stores a person's full name in a variable, and handles the case when no first name or last name has been specified:
 
@@ -349,7 +349,7 @@ The following values are **falsy**:
 * Null picture
 * Null date !00-00-00!
 * "" - Cadenas vacías
-* [] - Empty collections
+* [] - Colecciones vacías
 * {} - Objetos vacios
 
 All other values are considered **truthy**, including:

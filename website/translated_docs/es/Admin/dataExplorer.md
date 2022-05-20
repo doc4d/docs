@@ -21,7 +21,7 @@ The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component f
 > The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) function.
 
 
-## Opening the Data Explorer
+## Apertura del Explorador de datos
 
 The Data Explorer page is automatically available when [the `WebAdmin` web server is started](webAdmin.md#starting-the-webadmin-web-server).
 

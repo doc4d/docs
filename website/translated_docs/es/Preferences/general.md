@@ -49,7 +49,7 @@ Hay tres opciones disponibles:
 *   **Never**: Opening a new document in 4D form editor or method editor will always result in creating a new window (tabs are never created).
 *   **Always**: Opening a new document in 4D form editor or method editors will always result in creating a new tab.
 
-### Appearance (macOS only)
+### Apariencia (sólo para macOS)
 
 This menu lets you select the color scheme to use for the **4D development** environment. The specified scheme will be applied to all editors and windows of the Design mode.
 

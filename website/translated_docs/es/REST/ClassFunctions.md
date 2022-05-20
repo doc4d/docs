@@ -89,7 +89,7 @@ Entities passed in parameters are referenced on the server through their key (*i
 
 See examples for [creating](#creating-an-entity) or [updating](#updating-an-entity) entities.
 
-#### Related entity parameter
+#### Parámetro de entidad asociado
 
 Same properties as for an [entity parameter](#entity-parameter). In addition, the related entity must exist and is referenced by __KEY containing its primary key.
 
