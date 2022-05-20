@@ -1,6 +1,6 @@
 ---
 id: components
-title: Components
+title: Componentes
 ---
 
 A 4D component is a set of 4D methods and forms representing one or more functionalities that can be installed in different applications. For example, you can develop a 4D e-mail component that manages every aspect of sending, receiving and storing e-mails in 4D applications.
@@ -79,7 +79,7 @@ Conversely, for security reasons, by default a component cannot execute project 
 
 ![](assets/en/Concepts/pict516563.en.png)
 
-Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the `EXECUTE FORMULA` or `EXECUTE METHOD` commands. For example:
+Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the `EXECUTE FORMULA` or `EXECUTE METHOD` commands. Por exemplo:
 
 ```4d 
 // Host Method

@@ -827,13 +827,13 @@
         "title": "Authentification"
       },
       "WebServer/errorPages": {
-        "title": "Custom HTTP Error Pages"
+        "title": "Pages d'erreur HTTP personnalisées"
       },
       "WebServer/gettingStarted": {
         "title": "Prise en main"
       },
       "WebServer/httpRequests": {
-        "title": "Processing HTTP requests"
+        "title": "Traitement des requêtes HTTP"
       },
       "WebServer/preemptiveWeb": {
         "title": "Using preemptive web processes"

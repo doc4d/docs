@@ -1,44 +1,44 @@
 ---
 id: httpRequests
-title: Processing HTTP requests
+title: Procesamiento de peticiones HTTP
 ---
 
-The 4D web server provides several features to handle HTTP requests:
+El servidor web de 4D ofrece varias funcionalidades para gestionar las peticiones HTTP:
 
-- the `On Web Connection` database method, a router for your web application,
-- the `/4DACTION` URL to call server-side code
-- `WEB GET VARIABLES` to get values from HTML objects sent to the server
-- other commands such as `WEB GET HTTP BODY`, `WEB GET HTTP HEADER`, or `WEB GET BODY PART` allow to customize the request processing, including cookies.
-- the *COMPILER_WEB* project method, to declare your variables.
+- el método base `On Web Connection`, un enrutador para su aplicación web,
+- la URL `/4DACTION` para llamar al código del lado del servidor
+- `WEB GET VARIABLES` para obtener valores de los objetos HTML enviados al servidor
+- otros comandos como `WEB GET HTTP BODY`, `WEB GET HTTP HEADER`, o `WEB GET BODY PART` permiten personalizar el tratamiento de las solicitudes, incluidas las cookies.
+- el método proyecto *COMPILER_WEB*, para declarar sus variables.
 
 
 ## On Web Connection
 
-The `On Web Connection` database method can be used as the entry point for the 4D Web server.
+El método base `On Web Connection` puede utilizarse como punto de entrada al servidor web de 4D.
 
-### Database method calls
+### Llamadas a métodos base
 
-The `On Web Connection` database method is automatically called when the server reveives any URL that is not a path to an existing page on the server. The database method is called with the URL.
+El método base `On Web Connection` se llama automáticamente cuando el servidor recibe cualquier URL que no sea una ruta a una página existente en el servidor. Se llama al método de la base de datos con la URL.
 
-For example, the URL "*a/b/c*" will call the database method, but "*a/b/c.html*" will not call the database method if the page "c.html" exists in the "a/b" subfolder of the [WebFolder](webServerConfig.md#root-folder).
+Por ejemplo, la URL "*a/b/c*" llamará al método base, pero "*a/b/c.html*" no llamará al método base si la página "c.html" existe en la subcarpeta "a/b" del [WebFolder](webServerConfig.md#root-folder).
 
-> The request should have previously been accepted by the [`On Web Authentication`](authentication.md#on-web-authentication) database method (if it exists) and the web server must be launched.
+> La petición debe haber sido aceptada previamente por el método base [`On Web Authentication`](authentication.md#on-web-authentication) (si existe) y el servidor web debe ser lanzado.
 
 ### Sintaxis
 
 **On Web Connection**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text )
 
-| Parámetros | Tipo  |    | Descripción                                  |
-| ---------- | ----- |:--:| -------------------------------------------- |
-| $1         | Texto | <- | URL                                          |
-| $2         | Texto | <- | HTTP headers + HTTP body (up to 32 kb limit) |
-| $3         | Texto | <- | IP address of the web client (browser)       |
-| $4         | Texto | <- | IP address of the server                     |
-| $5         | Texto | <- | Nombre de usuario                            |
-| $6         | Texto | <- | Contraseña                                   |
+| Parámetros | Tipo  |    | Descripción                                               |
+| ---------- | ----- |:--:| --------------------------------------------------------- |
+| $1         | Texto | <- | URL                                                       |
+| $2         | Texto | <- | Encabezados HTTP + cuerpo HTTP (hasta un límite de 32 kb) |
+| $3         | Texto | <- | Dirección IP del cliente web (navegador)                  |
+| $4         | Texto | <- | Dirección IP del servidor                                 |
+| $5         | Texto | <- | Nombre de usuario                                         |
+| $6         | Texto | <- | Contraseña                                                |
 
 
-You must declare these parameters as shown below:
+Debe declarar estos parámetros de la siguiente manera:
 
 ```4d
 //Método base On Web Connection
@@ -48,10 +48,10 @@ You must declare these parameters as shown below:
 //Código para el métodod
 ```
 
-Alternatively, you can use the [named parameters](Concepts/parameters.md#named-parameters) syntax:
+Como alternativa, puede utilizar la sintaxis [parámetros nombrados](Concepts/parameters.md#named-parameters):
 
 ```4d
-// On Web Connection database method
+// Método base On Web Connection
 #DECLARE ($url : Text; $header : Text; \
   $BrowserIP : Text; $ServerIP : Text; \
   $user : Text; $password : Text)
@@ -59,16 +59,16 @@ Alternatively, you can use the [named parameters](Concepts/parameters.md#named-p
 ```
 
 
-> Calling a 4D command that displays an interface element (`DIALOG`, `ALERT`, etc.) is not allowed and ends the method processing.
+> Llamar a un comando 4D que muestra un elemento de interfaz (`DIALOG`, `ALERT`, etc.) no está permitido y termina el procesamiento del método.
 
 
-### $1 - URL extra data
+### $1 - Datos adicionales de la URL
 
-The first parameter ($1) is the URL entered by users in the address area of their web browser, without the host address.
+El primer parámetro ($1) es la URL introducida por los usuarios en el área de direcciones de su navegador web, sin la dirección local.
 
-Let’s use an intranet connection as an example. Suppose that the IP address of your 4D Web Server machine is 123.4.567.89. La siguiente tabla muestra los valores de $1 en función de la URL introducida en el navegador web:
+Utilicemos como ejemplo una conexión de intranet. Supongamos que la dirección IP de su máquina 4D Web Server es 123.4.567.89. La siguiente tabla muestra los valores de $1 en función de la URL introducida en el navegador web:
 
-| URL entered in web browser           | Valor del parámetro $1   |
+| URL introducida en el navegador web  | Valor del parámetro $1   |
 | ------------------------------------ | ------------------------ |
 | 123.4.567.89                         | /                        |
 | http://123.4.567.89                  | /                        |
@@ -76,30 +76,30 @@ Let’s use an intranet connection as an example. Suppose that the IP address of
 | http://123.4.567.89/Customers/Add    | /Customers/Add           |
 | 123.4.567.89/Do_This/If_OK/Do_That | /Do_This/If_OK/Do_That |
 
-Note that you are free to use this parameter at your convenience. 4D simply ignores the value passed beyond the host part of the URL. For example, you can establish a convention where the value "*/Customers/Add*" means “go directly to add a new record in the `[Customers]` table.” By supplying the web users with a list of possible values and/or default bookmarks, you can provide shortcuts to different parts of your application. This way, web users can quickly access resources of your website without going through the entire navigation path each time they make a new connection.
+Tenga en cuenta que es libre de utilizar este parámetro a su conveniencia. 4D simplemente ignora el valor pasado más allá de la parte del host de la URL. Por ejemplo, puede establecer una convención en la que el valor "*/Customers/Add*" significa "ir directamente a añadir un nuevo registro en la tabla `[Customers]`.” Al proporcionar a los usuarios de la web una lista de posibles valores y/o marcadores por defecto, puede dar accesos directos a diferentes partes de su aplicación. De este modo, los usuarios de la web pueden acceder rápidamente a los recursos de su sitio web sin tener que recorrer toda la ruta de navegación cada vez que realicen una nueva conexión.
 
 
 ### $2 - Encabezado y cuerpo de la petición HTTP
 
-The second parameter ($2) is the header and the body of the HTTP request sent by the web browser. Note that this information is passed to your `On Web Connection` database method "as is". Its contents will vary depending on the nature of the web browser attempting the connection.
+El segundo parámetro ($2) es el encabezado y el cuerpo de la petición HTTP enviada por el navegador web. Tenga en cuenta que esta información se pasa a su método base `On Web Connection` "tal cual". Su contenido variará en función de la naturaleza del navegador web que intenta la conexión.
 
-If your application uses this information, it is up to you to parse the header and the body. You can use the `WEB GET HTTP HEADER` and the `WEB GET HTTP BODY` commands.
-> For performance reasons, the size of data passing through the $2 parameter must not exceed 32 KB. Beyond this size, they are truncated by the 4D HTTP server.
+Si su aplicación utiliza esta información, deberá analizar el encabezado y el cuerpo. Puede utilizar los comandos `WEB GET HTTP HEADER` y `WEB GET HTTP BODY`.
+> Por razones de rendimiento, el tamaño de los datos que pasan por el parámetro $2 no debe superar los 32 KB. Más allá de este tamaño, son truncados por el servidor HTTP de 4D.
 
 
-### $3 - Web client IP address
+### $3 - Dirección IP del cliente web
 
-El parámetro $3 recibe la dirección IP de la máquina del navegador. This information can allow you to distinguish between intranet and internet connections.
-> 4D returns IPv4 addresses in a hybrid IPv6/IPv4 format written with a 96-bit prefix, for example ::ffff:192.168.2.34 for the IPv4 address 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
+El parámetro $3 recibe la dirección IP de la máquina del navegador. Esta información puede permitirle distinguir entre las conexiones a la intranet y a Internet.
+> 4D devuelve las direcciones IPv4 en un formato híbrido IPv6/IPv4 escrito con un prefijo de 96 bits, por ejemplo ::ffff:192.168.2.34 para la dirección IPv4 192.168.2.34. Para más información, consulte la sección [Soporte IPv6](webServerConfig.md#about-ipv6-support).
 
-### $4 - Server IP address
+### $4 - Dirección IP del servidor
 
-The $4 parameter receives the IP address requested by the 4D Web Server. 4D allows for multi-homing, which allows you to use machines with more than one IP address. For more information, please refer to the [Configuration page](webServerConfig.html#ip-address-to-listen).
+El parámetro $4 recibe la dirección IP solicitada por el servidor web 4D. 4D permite el multi-homing, que permite utilizar máquinas con más de una dirección IP. Para más información, consulte la [página Configuración](webServerConfig.html#ip-address-to-listen).
 
 ### $5 y $6 - Nombre de usuario y contraseña
 
-The $5 and $6 parameters receive the user name and password entered by the user in the standard identification dialog box displayed by the browser, if applicable (see the [authentication page](authentication.md)).
-> If the user name sent by the browser exists in 4D, the $6 parameter (the user’s password) is not returned for security reasons.
+Los parámetros $5 y $6 reciben el nombre de usuario y la contraseña introducidos por el usuario en el cuadro de diálogo de identificación estándar que muestra el navegador, si procede (ver la página [autenticación](authentication.md)).
+> Si el nombre de usuario enviado por el navegador existe en 4D, el parámetro $6 (la contraseña del usuario) no se devuelve por razones de seguridad.
 
 
 
@@ -108,19 +108,19 @@ The $5 and $6 parameters receive the user name and password entered by the user 
 
 ***/4DACTION/***MethodName***<br> **/4DACTION/******MethodName/Param*
 
-| Parámetros | Tipo  |    | Descripción                                  |
-| ---------- | ----- |:--:| -------------------------------------------- |
-| MethodName | Texto | -> | Name of the 4D project method to be executed |
-| Param      | Texto | -> | Text parameter to pass to the project method |
+| Parámetros | Tipo  |    | Descripción                                 |
+| ---------- | ----- |:--:| ------------------------------------------- |
+| MethodName | Texto | -> | Nombre del método de proyecto 4D a ejecutar |
+| Param      | Texto | -> | Parámetro texto a pasar al método proyecto  |
 
-**Usage:** URL or Form action.
+**Uso:** URL o acción del formulario.
 
-This URL allows you to call the *MethodName* 4D project method with an optional *Param* text parameter. El método recibirá este parámetro en *$1*.
+Esta URL permite llamar al método proyecto 4D *MethodName* con un parámetro texto opcional *Param*. El método recibirá este parámetro en *$1*.
 
-- The 4D project method must have been [allowed for web requests](allowProject.md): the “Available through 4D tags and URLs (4DACTION...)” attribute value must have been checked in the properties of the method. If the attribute is not checked, the web request is rejected.
-- When 4D receives a `/4DACTION/MethodName/Param` request, the `On Web Authentication` database method (if it exists) is called.
+- El método proyecto 4D debe haber sido [permitido para peticiones web](allowProject.md): el valor del atributo "Disponible a través de etiquetas y URLs 4D (4DACTION...)" debe haber sido marcado en las propiedades del método. Si no se comprueba el atributo, se rechaza la solicitud web.
+- Cuando 4D recibes una petición `/4DACTION/MethodName/Param`, se llama el método base `On Web Authentication` (si existe).
 
-`4DACTION/` can be associated with a URL in a static Web page:
+`4DACTION/` puede asociarse a una URL en una página web estática:
 
 ```html
 <A HREF="/4DACTION/MyMethod/hello">Do Something</A>
@@ -344,7 +344,7 @@ These commands are summarized in the following graphic:
 
 The 4D web server supports files uploaded in chunked transfer encoding from any Web client. Chunked transfer encoding is a data transfer mechanism specified in HTTP/1.1. It allows data to be transferred in a series of "chunks" (parts) without knowing the final data size. The 4D Web Server also supports chunked transfer encoding from the server to Web clients (using `WEB SEND RAW DATA`).
 
-## COMPILER_WEB Project Method
+## Método proyecto COMPILER_WEB
 
 The COMPILER\_WEB method, if it exists, is systematically called when the HTTP server receives a dynamic request and calls the 4D engine. This is the case, for example, when the 4D Web server receives a posted form or a URL to process in [`On Web Connection`](#on-web-connection). This method is intended to contain typing and/or variable initialization directives used during Web exchanges. It is used by the compiler when the application is compiled. The COMPILER\_WEB method is common to all the Web forms. Por defecto, el método COMPILER_WEB no existe. You must explicitly create it.
 

@@ -16,16 +16,16 @@ You can create different types of drop-down lists with different features. To de
 
 | Tipo                           | Funcionalidades                                  | Tipo de expresión | Tipos de datos                  | Definición JSON                                                                                                                                               |
 | ------------------------------ | ------------------------------------------------ | ----------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Objeto                         | Built upon a collection                          | Objeto            | Numeric, Text, Date, or Time    | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
-| Array                          | Basado en un array                               | Array             | Numeric, Text, Date, or Time    | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
+| Objeto                         | Built upon a collection                          | Objeto            | Numeric, Text, Date o Time      | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
+| Array                          | Basado en un array                               | Array             | Numeric, Text, Date o Time      | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
 | Choice list saved as value     | Built upon a choice list (standard)              | Lista             | Valor del elemento seleccionado | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
 | Choice list saved as reference | Built upon a choice list. Item position is saved | Lista             | Selected item reference         | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
-| Hierarchical choice list       | Can display hierarchical contents                | Lista             | List reference                  | `dataSourceTypeHint: integer`                                                                                                                                 |
+| Lista de selección jerárquica  | Can display hierarchical contents                | Lista             | List reference                  | `dataSourceTypeHint: integer`                                                                                                                                 |
 | Acción estándar                | Automatically built by the action                | *any*             | *any except List reference*     | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
 
 
 
-## Handling drop-down lists
+## Gestión de listas desplegables
 
 ### Utilizar un objeto
 

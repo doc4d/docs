@@ -167,7 +167,7 @@ If you do not specify any default home page, the `On Web Connection` database me
 | ----------------------------- | -------------------------------------------------- | --------------------------------------------------- |
 | objeto webServer              | [`CORSEnabled`](API/WebServerClass.md#corsenabled) | Boolean, true to enable the CORS (false by default) |
 | `WEB SET OPTION`              | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
-| Caja de diálogo de parámetros | Página Options (II)/Activar CORS                   | Unchecked by default                                |
+| Caja de diálogo de parámetros | Página Options (II)/Activar CORS                   | Sin marcar por defecto                              |
 
 The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Por razones de seguridad, las peticiones "cross-domain" están prohibidas por defecto a nivel del navegador. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
 
@@ -244,7 +244,7 @@ Compression level for all compressed HTTP exchanges for the 4D web server (clien
 
 Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
 
-## HTTP Compression Threshold
+## Umbral de compresión HTTP
 
 | Puede ajustarse con | Nombre                                                                       | Comentarios |
 | ------------------- | ---------------------------------------------------------------------------- | ----------- |
@@ -276,10 +276,10 @@ If you specify 0, 4D will use the default HTTP port number 80.
 
 ## HTTP Trace
 
-| Puede ajustarse con | Nombre                                         | Comentarios                     |
-| ------------------- | ---------------------------------------------- | ------------------------------- |
-| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booleano, falso por defecto     |
-| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| Puede ajustarse con | Nombre                                         | Comentarios                          |
+| ------------------- | ---------------------------------------------- | ------------------------------------ |
+| objeto webServer    | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booleano, falso por defecto          |
+| `WEB SET OPTION`    | `Web HTTP TRACE`                               | Integer, 0 por defecto (desactivado) |
 
 HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
 
@@ -297,7 +297,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
 
 
-## Inactive Process Timeout
+## Tiempo de espera del proceso inactivo
 
 | Puede ajustarse con           | Nombre                                                                   | Comentarios |
 | ----------------------------- | ------------------------------------------------------------------------ | ----------- |
@@ -310,7 +310,7 @@ Life duration (in minutes) of inactive processes associated with sessions. At th
 Default: 480 minutes (pass 0 to restore the default value)
 
 
-## Inactive Session Timeout
+## Tiempo de espera de las sesiones inactivas
 
 | Puede ajustarse con | Nombre                                                                   | Comentarios |
 | ------------------- | ------------------------------------------------------------------------ | ----------- |
@@ -322,7 +322,7 @@ Life duration (in minutes) of inactive sessions (duration set in cookie). Al fin
 Default: 480 minutes (pass 0 to restore the default value)
 
 
-## IP Address to listen
+## Dirección IP de escucha
 
 | Puede ajustarse con           | Nombre                                                         | Comentarios |
 | ----------------------------- | -------------------------------------------------------------- | ----------- |
@@ -365,7 +365,7 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 Session management enabling status for the 4D web server. Session mechanism is described in the [Session Management](sessions.md) section.
 
-Default is true (enabled).
+True por defecto (activado).
 
 > When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
 
@@ -380,7 +380,7 @@ Default is true (enabled).
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
-This setting allows you to select the format of this file. Available values are:
+This setting allows you to select the format of this file. Valores disponibles:
 
 | Valor | Nombre del formato          | Descripción                                                                                                                                                                                                              |
 | ----- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

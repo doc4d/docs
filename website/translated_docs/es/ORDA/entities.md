@@ -171,7 +171,7 @@ You can assign or modify the value of a "1" related entity attribute from the "N
   //the related entity is updated
 ```
 
-## Creating an entity selection
+## Crear una entity selection
 
 You can create an object of type [entity selection](dsMapping.md#entity-selection) as follows:
 
@@ -337,7 +337,7 @@ ORDA provides you with two entity locking modes:
 - an automatic "optimistic" mode, suitable for most applications,
 - a "pessimistic" mode allowing you to lock entities prior to their access.
 
-### Automatic optimistic lock
+### Bloqueo automático optimista
 
 This automatic mechanism is based on the concept of "optimistic locking" which is particularly suited to the issues of web applications. This concept is characterized by the following operating principles:
 
@@ -406,7 +406,7 @@ These principles are shown in the following diagram:
 
 
 
-## Client/server optimization
+## Optimización cliente/servidor
 
 4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations. This optimization speeds up the execution of your 4D application by reducing drastically the volume of information transmitted over the network.
 
@@ -444,7 +444,7 @@ Thanks to the optimization, this request will only get data from used attributes
 
 
 
-### Using the context property
+### Uso de la propiedad context
 
 You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA methods that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
 
