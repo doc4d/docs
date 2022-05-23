@@ -234,7 +234,7 @@ Entity classes allow you to define **computed attributes** using specific keywor
 
 For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
-#### Alias attributes
+#### Atributos de los alias
 
 Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
 
@@ -351,7 +351,7 @@ The *$event* parameter contains the following properties:
 
 | Propiedad     | Tipo    | Descripción                                                                               |
 | ------------- | ------- | ----------------------------------------------------------------------------------------- |
-| attributeName | Texto   | Computed attribute name                                                                   |
+| attributeName | Texto   | Nombre de atributo calculado                                                              |
 | dataClassName | Texto   | Nombre de la clase de datos                                                               |
 | kind          | Texto   | "get"                                                                                     |
 | result        | Variant | Opcional. Add this property with Null value if you want a scalar attribute to return Null |
@@ -413,7 +413,7 @@ The *$event* parameter contains the following properties:
 
 | Propiedad     | Tipo    | Descripción                                   |
 | ------------- | ------- | --------------------------------------------- |
-| attributeName | Texto   | Computed attribute name                       |
+| attributeName | Texto   | Nombre de atributo calculado                  |
 | dataClassName | Texto   | Nombre de la clase de datos                   |
 | kind          | Texto   | "set"                                         |
 | value         | Variant | Value to be handled by the computed attribute |
@@ -451,7 +451,7 @@ This function supports three syntaxes:
     | Propiedad          | Tipo       | Descripción                                         |
     | ------------------ | ---------- | --------------------------------------------------- |
     | $result.query      | Texto      | Valid query string with placeholders (:1, :2, etc.) |
-    | $result.parameters | Collection | values for placeholders                             |
+    | $result.parameters | Collection | valors para marcadores                              |
 
 The `query` function executes whenever a query using the computed attribute is launched. It is useful to customize and optimize queries by relying on indexed attributes. When the `query` function is not implemented for a computed attribute, the search is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
 
@@ -461,7 +461,7 @@ The *$event* parameter contains the following properties:
 
 | Propiedad     | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                       |
 | ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| attributeName | Texto   | Computed attribute name                                                                                                                                                                                                                                                                                                                                           |
+| attributeName | Texto   | Nombre de atributo calculado                                                                                                                                                                                                                                                                                                                                      |
 | dataClassName | Texto   | Nombre de la clase de datos                                                                                                                                                                                                                                                                                                                                       |
 | kind          | Texto   | "query"                                                                                                                                                                                                                                                                                                                                                           |
 | value         | Variant | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                                     |
@@ -515,7 +515,7 @@ Function query fullName($event : Object)->$result : Object
 
 > Keep in mind that using placeholders in queries based upon user text input is recommended for security reasons (see [`query()` description](API/DataClassClass.md#query)).
 
-Calling code, for example:
+Código de llamada, por ejemplo:
 
 ```4d
 $emps:=ds.Employee.query("fullName = :1"; "Flora Pionsin")
@@ -536,7 +536,7 @@ End if
 
 ```
 
-Calling code, for example:
+Código de llamada, por ejemplo:
 
 ```4d
 // people aged between 20 and 21 years (-1 day)
@@ -567,7 +567,7 @@ The *$event* parameter contains the following properties:
 
 | Propiedad     | Tipo     | Descripción                                                                                                |
 | ------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| attributeName | Texto    | Computed attribute name                                                                                    |
+| attributeName | Texto    | Nombre de atributo calculado                                                                               |
 | dataClassName | Texto    | Nombre de la clase de datos                                                                                |
 | kind          | Texto    | "orderBy"                                                                                                  |
 | value         | Variant  | Value to be handled by the computed attribute                                                              |
@@ -614,7 +614,7 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
-## Alias attributes
+## Atributos de los alias
 
 ### Generalidades
 
@@ -767,7 +767,7 @@ $arch.save() //courseName and name are "Archaeology II"
 
 For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests.
 
-Remote requests include:
+Las peticiones remotas incluyen:
 
 - Requests sent by remote 4D applications connected through `Open datastore`
 - Peticiones REST
@@ -810,7 +810,7 @@ $id:=...
 
 ```
 
-When the code is called:
+Cuando se llama al código:
 
 ```4d
 var $remoteDS; $student; $status : Object
