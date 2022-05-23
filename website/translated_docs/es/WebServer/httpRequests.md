@@ -126,47 +126,47 @@ Esta URL permite llamar al método proyecto 4D *MethodName* con un parámetro te
 <A HREF="/4DACTION/MyMethod/hello">Do Something</A>
 ```
 
-The `MyMethod` project method should generally return a "reply" (sending of an HTML page using `WEB SEND FILE` or `WEB SEND TEXT`, etc.). Be sure to make the processing as short as possible in order not to block the browser.
+El método proyecto `MyMethod` debe devolver generalmente una "respuesta" (envío de una página HTML utilizando `WEB SEND FILE` o `WEB SEND TEXT`, etc.). mediante. Asegúrese de que el tratamiento sea lo más breve posible para no bloquear el navegador.
 
-> A method called by `/4DACTION` must not call interface elements (`DIALOG`, `ALERT`, etc.).
+> Un método llamado por `/4DACTION` no debe llamar a elementos de la interfaz (`DIALOG`, `ALERT`, etc.).
 
 #### Ejemplo
 
-This example describes the association of the `/4DACTION` URL with an HTML picture object in order to dynamically display a picture in the page. You insert the following instructions in a static HTML page:
+Este ejemplo describe la asociación de la URL `/4DACTION` con un objeto imagen HTML para mostrar dinámicamente una imagen en la página. Inserta las siguientes instrucciones en una página HTML estática:
 
 ```html
 <IMG SRC="/4DACTION/getPhoto/smith">
 ```
 
-The `getPhoto` method is as follows:
+El método `getPhoto` es el siguiente:
 
 ```4d
-C_TEXT($1) // This parameter must always be declared
+C_TEXT($1) // Este parámetro debe declararse siempre
 var $path : Text
 var $PictVar : Picture
 var $BlobVar : Blob
 
- //find the picture in the Images folder within the Resources folder 
+ //busca la imagen en la carpeta Imágenes dentro de la carpeta Resources 
 $path:=Get 4D folder(Current resources folder)+"Images"+Folder separator+$1+".psd"
 
-READ PICTURE FILE($path;$PictVar) //put the picture in the picture variable
-PICTURE TO BLOB($PictVar;$BLOB;".png") //convert the picture to ".png" format
+READ PICTURE FILE($path;$PictVar) //pone la imagen en la variable imagen
+PICTURE TO BLOB($PictVar;$BLOB;".png") //convierte la imagen en formato ".png".
 WEB SEND BLOB($BLOB;"image/png")
 ```
 
-### 4DACTION to post forms
+### 4DACCIÓN para publicar formularios
 
-The 4D Web server also allows you to use “posted” forms, which are static HTML pages that send data to the Web server, and to easily retrieve all the values. The POST type must be associated to them and the form’s action must imperatively start with /4DACTION/MethodName.
+El servidor web de 4D también le permite utilizar formularios "publicados", que son páginas HTML estáticas que envían datos al servidor web y recuperar fácilmente todos los valores. Se les debe asociar el tipo POST y la acción del formulario debe empezar imperativamente por /4DACTION/MethodName.
 
-A form can be submitted through two methods (both can be used with 4D):
-- POST, usually used to send data to the Web server,
-- GET, usually used to request data from the Web server.
+Un formulario puede ser enviado a través de dos métodos (ambos pueden ser utilizados con 4D):
+- POST, normalmente utilizado para enviar datos al servidor web,
+- GET, normalmente utilizado para solicitar datos del servidor web.
 
-> When the Web server receives a posted form, it calls the `On Web Authentication` database method (if it exists).
+> Cuando el servidor web recibe un formulario publicado, llama al método base `On Web Authentication` (si existe).
 
-In the called method, you must call the `WEB GET VARIABLES` command in order to [retrieve the names and values](#getting-values-from-the-requests) of all the fields included in an HTML page submitted to the server.
+En el método llamado, debe llamar al comando `WEB GET VARIABLES` para [recuperar los nombres y valores](#getting-values-from-the-requests) de todos los campos incluidos en una página HTML enviada al servidor.
 
-Example to define the action of a form:
+Ejemplo para definir la acción de un formulario:
 
 ```html
 <FORM ACTION="/4DACTION/MethodName" METHOD=POST>
@@ -174,9 +174,9 @@ Example to define the action of a form:
 
 #### Ejemplo
 
-In a Web application, we would like for the browsers to be able to search among the records by using a static HTML page. This page is called “search.htm”. The application contains other static pages that allow you to, for example, display the search result (“results.htm”). The POST type has been associated to the page, as well as the `/4DACTION/SEARCH` action.
+En una aplicación web, nos gustaría que los navegadores pudieran buscar entre los registros mediante una página HTML estática. Esta página se llama "search.htm". La aplicación contiene otras páginas estáticas que permiten, por ejemplo, mostrar el resultado de la búsqueda ("results.htm"). Se ha asociado el tipo POST a la página, así como la acción `/4DACTION/SEARCH`.
 
-Here is the HTML code that corresponds to this page:
+Aquí está el código HTML que corresponde a esta página:
 
 ```html
 <form action="/4daction/processForm" method=POST>
@@ -186,7 +186,7 @@ Here is the HTML code that corresponds to this page:
 </FORM>
 ```
 
-During data entry, type “ABCD” in the data entry area, check the "Whole word" option and validate it by clicking the **Search** button. In the request sent to the Web server:
+Durante la entrada de datos, escriba "ABCD" en el área de entrada de datos, marque la opción "Whole word" y valídela haciendo clic en el botón **Search**. En la solicitud enviada al servidor web:
 
 ```
 vName="ABCD"
@@ -194,18 +194,18 @@ vExact="Word"
 OK="Search"
 ```
 
-4D calls the `On Web Authentication` database method (if it exists), then the `processForm` project method is called, which is as follows:
+4D llama al método base `<On Web Authentication>` (si existe), luego se llama al método proyecto `processForm`, que es el siguiente:
 
 ```4d
- C_TEXT($1) //mandatory for compiled mode
+ C_TEXT($1) //obligatorio para el modo compilado
  C_LONGINT($vName)
  C_TEXT(vName;vLIST)
  ARRAY TEXT($arrNames;0)
  ARRAY TEXT($arrVals;0)
- WEB GET VARIABLES($arrNames;$arrVals) //we retrieve all the variables of the form
+ WEB GET VARIABLES($arrNames;$arrVals) //recuperamos todas las variables del formulario
  $vName:=Find in array($arrNames;"vName")
  vName:=$arrVals{$vName}
- If(Find in array($arrNames;"vExact")=-1) //If the option has not been checked
+ If(Find in array($arrNames;"vExact")=-1) //Si la opción no ha sido marcada
     vName:=vName+"@"
  End if
  QUERY([Jockeys];[Jockeys]Name=vName)
@@ -214,9 +214,9 @@ OK="Search"
     vLIST:=vLIST+[Jockeys]Name+" "+[Jockeys]Tel+"<BR>"
     NEXT RECORD([Jockeys])
  End while
- WEB SEND FILE("results.htm") //Send the list to the results.htm form
-  //which contains a reference to the variable vLIST,
-  //for example <!--4DHTML vLIST-->
+ WEB SEND FILE("results.htm") //Enviar la lista al formulario results.htm
+  //que contiene una referencia a la variable vLIST,
+  //por ejemplo <!--4DHTML vLIST-->
   //...
 End if
 ```
@@ -224,15 +224,15 @@ End if
 
 
 
-## Getting values from HTTP requests
+## Obtener valores de las peticiones HTTP
 
-4D's Web server lets you recover data sent through POST or GET requests, using Web forms or URLs.
+El servidor web de 4D le permite recuperar datos enviados a través de peticiones POST o GET, utilizando formularios web o URLs.
 
-When the Web server receives a request with data in the header or in the URL, 4D can retrieve the values of any HTML objects it contains. This principle can be implemented in the case of a Web form, sent for example using `WEB SEND FILE` or `WEB SEND BLOB`, where the user enters or modifies values, then clicks on the validation button.
+Cuando el servidor web recibe una petición con datos en el encabezado o en la URL, 4D puede recuperar los valores de cualquier objeto HTML que contenga. Este principio puede implementarse en el caso de un formulario web, enviado por ejemplo utilizando `WEB SEND FILE` o `WEB SEND BLOB`, en el que el usuario introduce o modifica valores y luego hace clic en el botón de validación.
 
-In this case, 4D can retrieve the values of the HTML objects found in the request using the `WEB GET VARIABLES` command. The `WEB GET VARIABLES` command retrieves the values as text.
+En este caso, 4D puede recuperar los valores de los objetos HTML encontrados en la petición utilizando el comando `WEB GET VARIABLES`. El comando `WEB GET VARIABLES` recupera los valores como texto.
 
-Consider the following HTML page source code:
+Considere el siguiente código fuente de la página HTML:
 
 ```html
 <html>
@@ -277,20 +277,20 @@ return false
 </html>
 ```
 
-When 4D sends the page to a Web Browser, it looks like this:
+Cuando 4D envía la página a un navegador web, tiene el siguiente aspecto:
 
 ![](assets/en/WebServer/spiders.png)
 
-The main features of this page are:
+Las principales características de esta página son:
 
-- It includes three **Submit** buttons: `vsbLogOn`, `vsbRegister` and `vsbInformation`.
-- When you click **Log On**, the submission of the form is first processed by the JavaScript function `LogOn`. If no name is entered, the form is not even submitted to 4D, and a JavaScript alert is displayed.
-- The form has a POST 4D method as well as a Submit script (*GetBrowserInformation*) that copies the browser properties to the four hidden objects whose names starts with *vtNav_App*. It also includes the `vtUserName` object.
+- Incluye tres botones **Submit**: `vsbLogOn`, `vsbRegister` y `vsbInformation`.
+- Cuando se hace clic en **Log On**, el envío del formulario se procesa primero por la función de JavaScript `LogOn`. Si no se introduce ningún nombre, el formulario ni siquiera se envía a 4D, y se muestra una alerta de JavaScript.
+- El formulario tiene un método POST 4D así como un script Submit (*GetBrowserInformation*) que copia las propiedades del navegador a los cuatro objetos ocultos cuyos nombres empiezan por *vtNav_App*. También incluye el objeto `vtUserName`.
 
-Let’s examine the 4D method `WWW_STD_FORM_POST` that is called when the user clicks on one of the buttons on the HTML form.
+Examinemos el método 4D `WWW_STD_FORM_POST` que se llama cuando el usuario hace clic en uno de los botones del formulario HTML.
 
 ```4d
-  // Retrieval of value of variables
+  // Recuperación del valor de las variables
  ARRAY TEXT($arrNames;0)
  ARRAY TEXT($arrValues;0)
  WEB GET VARIABLES($arrNames;$arrValues)
@@ -298,56 +298,56 @@ Let’s examine the 4D method `WWW_STD_FORM_POST` that is called when the user c
 
  Case of
 
-  // The Log On button was clicked
+  // Se ha presionado el botón Log On
     :(Find in array($arrNames;"vsbLogOn")#-1)
        $user :=Find in array($arrNames;"vtUserName")
        QUERY([WWW Users];[WWW Users]UserName=$arrValues{$user})
        $0:=(Records in selection([WWW Users])>0)
        If($0)
           WWW POST EVENT("Log On";WWW Log information)
-  // The WWW POST EVENT method saves the information in a database table
+  // El método WWW POST EVENT guarda la información en una tabla de la base
        Else
 
           $0:=WWW Register
-  // The WWW Register method lets a new Web user register
+  // El método WWW Register permite que un nuevo usuario de la Web se registre
        End if
 
-  // The Register button was clicked
+  // Se ha presionado el botón Register
     :(Find in array($arrNames;"vsbRegister")#-1)
        $0:=WWW Register
 
-  // The Information button was clicked
+  // Se ha presionado el botón de información
     :(Find in array($arrNames;"vsbInformation")#-1)
        WEB SEND FILE("userinfos.html")
  End case
 ```
 
-The features of this method are:
+Las funcionalidades de este método son:
 
-- The values of the variables *vtNav_appName*, *vtNav_appVersion*, *vtNav_appCodeName*, and *vtNav_userAgent* (bound to the HTML objects having the same names) are retrieved using the `WEB GET VARIABLES` command from HTML objects created by the *GetBrowserInformation* JavaScript script.
-- Out of the *vsbLogOn*, *vsbRegister* and *vsbInformation* variables bound to the three Submit buttons, only the one corresponding to the button that was clicked will be retrieved by the `WEB GET VARIABLES` command. When the submit is performed by one of these buttons, the browser returns the value of the clicked button to 4D. This tells you which button was clicked.
+- Los valores de las variables *vtNav_appName*, *vtNav_appVersion*, *vtNav_appCodeName*, y *vtNav_userAgent* (vinculadas a los objetos HTML que tienen los mismos nombres) se recuperan utilizando el comando `WEB GET VARIABLES` a partir de los objetos HTML creados por el script JavaScript *GetBrowserInformation*.
+- De las variables vinculadas *vsbLogOn*, *vsbRegister* y *vsbInformation* a los tres botones de envío, sólo la correspondiente al botón que se ha presionado será recuperada por el comando `WEB GET VARIABLES`. Cuando el envío se realiza mediante uno de estos botones, el navegador devuelve a 4D el valor del botón presionado. Esto le indica qué botón se ha presionado.
 
-Keep in main that with HTML, all objects are text objects. If you use a SELECT object, it is the value of the highlighted element in the object that is returned in the `WEB GET VARIABLES` command, and not the position of the element in the array as in 4D. `WEB GET VARIABLES` always returns values of the Text type.
+Tenga en cuenta que con HTML, todos los objetos son objetos de texto. Si se utiliza un objeto SELECT, es el valor del elemento resaltado en el objeto el que se devuelve en el comando `WEB GET VARIABLES`, y no la posición del elemento en el array como en 4D. `WEB GET VARIABLES` siempre devuelve valores de tipo Texto.
 
 
-## Other Web Server Commands
+## Otros comandos del servidor web
 
-The 4D web server provides several low-level web commands allowing you to develop custom processing of requests:
+El servidor web de 4D ofrece varios comandos web de bajo nivel que le permiten desarrollar un procesamiento personalizado de las solicitudes:
 
-- the `WEB GET HTTP BODY` command returns the body as raw text, allowing any parsing you may need
-- the `WEB GET HTTP HEADER` command return the headers of the request. It is useful to handle custom cookies, for example (along with the `WEB SET HTTP HEADER` command).
-- the `WEB GET BODY PART` and `WEB Get body part count` commands to parse the body part of a multi-part request and retrieve text values, but also files posted, using BLOBs.
+- el comando `WEB GET HTTP BODY` devuelve el cuerpo como texto sin procesar, permitiendo cualquier análisis que pueda necesitar
+- el comando `WEB GET HTTP HEADER` devuelve los encabezados de la petición. Es útil para manejar cookies personalizadas, por ejemplo (junto con el comando `WEB SET HTTP HEADER`).
+- los comandos `WEB GET BODY PART` y `WEB Get body part count` para analizar la parte del cuerpo de una petición de varias partes y recuperar los valores de texto, pero también los archivos publicados, utilizando BLOBs.
 
-These commands are summarized in the following graphic:
+Estos comandos se resumen en el siguiente gráfico:
 
 ![](assets/en/WebServer/httpCommands.png)
 
-The 4D web server supports files uploaded in chunked transfer encoding from any Web client. Chunked transfer encoding is a data transfer mechanism specified in HTTP/1.1. It allows data to be transferred in a series of "chunks" (parts) without knowing the final data size. The 4D Web Server also supports chunked transfer encoding from the server to Web clients (using `WEB SEND RAW DATA`).
+El servidor web de 4D ahora soporta archivos cargados con codificación chunked desde cualquier cliente web. La codificación de transferencia en trozos es un mecanismo de transferencia de datos especificado en HTTP/1.1. Permite transferir datos en una serie de "trozos" (partes) sin conocer el tamaño final de los datos. El servidor web de 4D también soporta la codificación de transferencia en trozos desde el servidor a los clientes web (utilizando `WEB SEND RAW DATA`).
 
 ## Método proyecto COMPILER_WEB
 
-The COMPILER\_WEB method, if it exists, is systematically called when the HTTP server receives a dynamic request and calls the 4D engine. This is the case, for example, when the 4D Web server receives a posted form or a URL to process in [`On Web Connection`](#on-web-connection). This method is intended to contain typing and/or variable initialization directives used during Web exchanges. It is used by the compiler when the application is compiled. The COMPILER\_WEB method is common to all the Web forms. Por defecto, el método COMPILER_WEB no existe. You must explicitly create it.
+El método COMPILER\WEB, si existe, es llamado sistemáticamente cuando el servidor HTTP recibe una petición dinámica y llama al motor 4D. Este es el caso, por ejemplo, cuando el servidor web de 4D recibe un formulario publicado o una URL para procesar en [`On Web Connection`](#on-web-connection). Este método está destinado a contener directivas de digitación y/o inicialización de variables utilizadas durante los intercambios web. Es utilizado por el compilador cuando se compila la aplicación. El método COMPILER\WEB es común a todos los formularios web. Por defecto, el método COMPILER_WEB no existe. Debe crearlo explícitamente.
 
-> The COMPILER_WEB project method is also called, if it exists, for each SOAP request accepted.
+> También se llama al método proyecto COMPILER_WEB, si existe, para cada solicitud SOAP aceptada.
 
 
