@@ -3,12 +3,12 @@ id: webServerConfig
 title: Configuración
 ---
 
-The 4D web server settings include security parameters, listening ports, defaults paths, and various options covering all the server features. 4D provides default values for every settings.
+Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de escucha, rutas por defecto y varias opciones que cubren todas las funcionalidades del servidor. 4D ofrece valores por defecto para todos los parámetros.
 
 
 ## Configurar los parámetros
 
-There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
+Hay diferentes maneras de configurar los parámetros del servidor web 4D, en función del alcance y del servidor que se quiera configurar:
 
 | Setting location                        | Alcance                                                  | Servidor web a utilizar                                               |
 | --------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------- |
@@ -16,7 +16,7 @@ There are different ways to configure the 4D web server settings, depending on t
 | `WEB SET OPTION` o comando `WEB XXX`    | Temporal (sesión actual)                                 | Servidor principal                                                    |
 | **Settings** dialog box (**Web** pages) | Permanente (todas las sesiones, almacenadas en el disco) | Servidor principal                                                    |
 
-> Some settings are not available from all locations.
+> Algunos parámetros no están disponibles desde todos los lugares.
 
 ## Caché
 
@@ -25,11 +25,11 @@ There are different ways to configure the 4D web server settings, depending on t
 | Caja de diálogo de parámetros | Configuration page/Use the 4D Web cache |             |
 | Caja de diálogo de parámetros | Configuration page/Page Cache Size      |             |
 
-Enables and configures the web page cache.
+Activa y configura la caché de las páginas web.
 
-The 4D web server has a cache that allows you to load static pages, GIF images, JPEG images (<512 kb) and style sheets (.css files) in memory, as they are requested. Using the cache allows you to significantly increase the web server’s performance when sending static pages. The cache is shared between all the web processes.
+El servidor web 4D dispone de una caché que permite cargar las páginas estáticas, las imágenes GIF, las imágenes JPEG (<512 kb) y las hojas de estilo (archivos.css) en memoria, a medida que se solicitan. El uso de la caché permite aumentar considerablemente el rendimiento del servidor web cuando se envían páginas estáticas. El caché se comparte entre todos los procesos web.
 
-You can modify the size of the cache in the **Pages Cache Size** area. The value you set depends on the number and size of your website’s static pages, as well as the resources that the host machines has at its disposal.
+Puede modificar el tamaño de la caché en el área **Tamaño de la caché de las páginas**. The value you set depends on the number and size of your website’s static pages, as well as the resources that the host machines has at its disposal.
 > While using your web database, you can check the performance of the cache by using the `WEB GET STATISTICS` command. If, for example, you notice that the cache’s rate of use is close to 100%, you may want to consider increasing the size that has been allocated to it. The [/4DSTATS] and [/4DHTMLSTATS] URLs allow you to also obtain information about the cache’s state.
 
 
