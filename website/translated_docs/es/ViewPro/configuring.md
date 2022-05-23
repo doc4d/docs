@@ -13,7 +13,7 @@ Using the area's property list, you can set [4D View Pro object properties](Form
 
 
 
-### Selecting a user interface
+### Selección de una interfaz usuario
 
 You can select the interface to use with your 4D View Pro form areas in the **Property List**, under **Appearance**:
 
@@ -79,25 +79,25 @@ The 4D View Pro sheet options object allows you to control various options of yo
 
 ### Apariencia de la hoja
 
-| Propiedad            |                        | Tipo         | Descripción                                                                                                                                                                                                                                                                                             |
-| -------------------- | ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| allowCellOverflow    |                        | booleano     | Specifies whether data can overflow into adjacent empty cells.                                                                                                                                                                                                                                          |
-| sheetTabColor        |                        | cadena       | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-| frozenlineColor      |                        | cadena       | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                |
-| clipBoardOptions     |                        | entero largo | The clipboard option. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
-| rejilla              |                        | objeto       | The grid line's options.                                                                                                                                                                                                                                                                                |
-|                      | color                  | cadena       | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-|                      | showVerticalGridline   | booleano     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                       |
-|                      | showHorizontalGridline | booleano     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                     |
-| rowHeaderVisible     |                        | booleano     | Specifies whether the row header is visible.                                                                                                                                                                                                                                                            |
-| colHeaderVisible     |                        | booleano     | Specifies whether the column header is visible.                                                                                                                                                                                                                                                         |
-| rowHeaderAutoText    |                        | entero largo | Specifies whether the row header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                   |
-| colHeaderAutoText    |                        | entero largo | Specifies whether the column header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                |
-| selectionBackColor   |                        | cadena       | The selection's background color for the sheet. (preferred RGBA format)                                                                                                                                                                                                                                 |
-| selectionBorderColor |                        | cadena       | The selection's border color for the sheet.                                                                                                                                                                                                                                                             |
-| sheetAreaOffset      |                        | objeto       | The sheetAreaOffset's options.                                                                                                                                                                                                                                                                          |
-|                      | left                   | entero largo | The offset left of sheet from host.                                                                                                                                                                                                                                                                     |
-|                      | top                    | entero largo | The offset top of sheet from host.                                                                                                                                                                                                                                                                      |
+| Propiedad            |                        | Tipo         | Descripción                                                                                                                                                                                                                                                                                               |
+| -------------------- | ---------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| allowCellOverflow    |                        | booleano     | Specifies whether data can overflow into adjacent empty cells.                                                                                                                                                                                                                                            |
+| sheetTabColor        |                        | cadena       | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                    |
+| frozenlineColor      |                        | cadena       | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
+| clipBoardOptions     |                        | entero largo | La opción portapapeles. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
+| rejilla              |                        | objeto       | The grid line's options.                                                                                                                                                                                                                                                                                  |
+|                      | color                  | cadena       | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                    |
+|                      | showVerticalGridline   | booleano     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                         |
+|                      | showHorizontalGridline | booleano     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                       |
+| rowHeaderVisible     |                        | booleano     | Specifies whether the row header is visible.                                                                                                                                                                                                                                                              |
+| colHeaderVisible     |                        | booleano     | Specifies whether the column header is visible.                                                                                                                                                                                                                                                           |
+| rowHeaderAutoText    |                        | entero largo | Specifies whether the row header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                     |
+| colHeaderAutoText    |                        | entero largo | Specifies whether the column header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                  |
+| selectionBackColor   |                        | cadena       | The selection's background color for the sheet. (preferred RGBA format)                                                                                                                                                                                                                                   |
+| selectionBorderColor |                        | cadena       | The selection's border color for the sheet.                                                                                                                                                                                                                                                               |
+| sheetAreaOffset      |                        | objeto       | The sheetAreaOffset's options.                                                                                                                                                                                                                                                                            |
+|                      | left                   | entero largo | The offset left of sheet from host.                                                                                                                                                                                                                                                                       |
+|                      | top                    | entero largo | The offset top of sheet from host.                                                                                                                                                                                                                                                                        |
 > All properties are optional.
 
 ### Protección de la hoja
@@ -138,7 +138,7 @@ For example, when using the [VP SET VALUE](method-list.md#vp-set-value) or [VP S
 
 Note that when creating your own format patterns, only the display of the data is modified. The value of the data remains unchanged.
 
-### Number and text formats
+### Formatos numérico y texto
 
 Number formats apply to all number types (e.g., positive, negative, and zeros).
 
@@ -170,7 +170,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_($* #,##0.00_)")
 ```
 
-### Date and time formats
+### Formatos fecha y hora
 
 4D View Pro provides the following constants for ISO 8601 date and time patterns:
 
@@ -214,15 +214,15 @@ To create your own date and time patterns, in your current localization, you can
 |       | yy                                 | Year, short                                      | 19                    |
 |       | yyyy                               | Año, formato largo                               | 2019                  |
 | Hora  |                                    |                                                  | (2:03:05 PM)          |
-|       | h                                  | Hour without leading zero. 0-23                  | 2                     |
-|       | hh                                 | Hour with leading zero. 00-23                    | 02                    |
+|       | h                                  | Hora sin cero precedente. 0-23                   | 2                     |
+|       | hh                                 | Hora con cero precedente. 00-23                  | 02                    |
 |       | m                                  | Minutes without leading zero. 0-59               | 3                     |
-|       | mm                                 | Minutes with leading zero. 00-59                 | 03                    |
+|       | mm                                 | Minutos con cero precedente. 00-59               | 03                    |
 |       | s                                  | Seconds without leading zero. 0-59               | 5                     |
-|       | ss                                 | Seconds with leading zero. 00-59                 | 05                    |
-|       | \[h]                              | Elapsed time in hours                            | 14 (puede superar 24) |
-|       | \[mm]                             | Elapsed time in minutes                          | 843                   |
-|       | \[ss]                             | Elapsed time in seconds                          | 50585                 |
+|       | ss                                 | Segundo con cero precedente. 00-59               | 05                    |
+|       | \[h]                              | Tiempo transcurrido en horas                     | 14 (puede superar 24) |
+|       | \[mm]                             | Tiempo transcurrido en minutos                   | 843                   |
+|       | \[ss]                             | Tiempo transcurrido en segundos                  | 50585                 |
 |       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                    |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
@@ -233,7 +233,7 @@ In addition to the special characters and codes described in the previous sectio
 | Caracter | Descripción                                                        | Ejemplo              |
 | -------- | ------------------------------------------------------------------ | -------------------- |
 | + y -    | Plus and minus signs                                               | ### + ### = ###,### |
-| ( )      | Left and right parenthesis                                         | (-###.##)            |
+| ( )      | Paréntesis izquierdo y derecho                                     | (-###.##)            |
 | :        | Dos puntos                                                         | hh:mm:ss             |
 | ^        | Caret                                                              | #\^#                |
 | '        | Apostrofe                                                          | '######              |
@@ -347,14 +347,14 @@ Page attributes are used to specify general document print settings.
 
 | Propiedad       | Tipo         | Descripción                                                                                                                                                                                         |
 | --------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| blackAndWhite   | booleano     | Printing in black and white only. <p>Default value = false</p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.</p>                                                                                                                 |
+| blackAndWhite   | booleano     | Printing in black and white only. <p>Valor por defecto: false</p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.</p>                                                                                                                 |
 | centering       | entero largo | How the contents are centered on the printed page. Available values: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (default), `vk print centering vertical` |
-| firstPageNumber | entero largo | The page number to print on the first page.<p>Default value = 1                                                                                                             |
+| firstPageNumber | entero largo | The page number to print on the first page.<p>Por defecto = 1                                                                                                               |
 | pageOrder       | entero largo | The order pages are printed. Available values: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                    |
 | pageRange       | texto        | The range of pages for printing                                                                                                                                                                     |
 | qualityFactor   | entero largo | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Por defecto = 2</p>                    |
 | useMax          | booleano     | Only columns and rows with data are printed.<p>Default value = true</p>                                                                                                                               |
-| zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Default value = 1</p>                                                                                                                          |
+| zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Por defecto = 1</p>                                                                                                                          |
 
 ### Tamaño del papel
 
@@ -376,8 +376,8 @@ Scale attributes are used to specify printing optimization and adjustments.
 
 | Propiedad      | Tipo         | Descripción                                                                                                                           |
 | -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Default value = "false"                |
-| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Default value = "false"                |
+| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Valor por defecto: "false"             |
+| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Valor por defecto: "false"             |
 | fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Por defecto = -1    |
 | fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Por defecto = -1 |
 
@@ -387,24 +387,24 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 
 | Propiedad        | Tipo         | Descripción                                                                                                                                                                      |
 | ---------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | booleano     | Prints the outline border.<p><p>Default value = "true"                                                                           |
+| showBorder       | booleano     | Imprime el borde del contorno.<p><p>Default value = "true"                                                                       |
 | showColumnHeader | entero largo | Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
-| showGridLine     | booleano     | Prints the gridlines.<p>Default value = "false"                                                                                                          |
+| showGridLine     | booleano     | Imprime las líneas de la cuadrícula.<p>Valor por defecto: "false"                                                                                        |
 | showRowHeader    | entero largo | Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
 
 ### Watermark
 
 Watermark attributes are used to superimpose text or an image onto the 4D View Pro area.
 
-| Propiedad |                | Tipo                 | Descripción                                                                                                                                                                      |
-| --------- | -------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| watermark |                | colección            | Collection of watermark settings. <p>Default value: undefined                                                                                            |
-|           | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                        |
-|           | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                      |
-|           | \[ ].page     | texto                | The page(s) where the watermark is printed.<p>For all pages: "all". For specific pages: page numbers or page ranges separated by commas. Ex.: "1,3,5-12" |
-|           | \[ ].width    | entero largo         | The width of the watermark text / image.                                                                                                                                         |
-|           | \[ ].x        | entero largo         | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                   |
-|           | \[ ].y        | entero largo         | The vertical coordinate of the top left point of the watermark text / image.                                                                                                     |
+| Propiedad |                | Tipo                 | Descripción                                                                                                                                                                               |
+| --------- | -------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| watermark |                | colección            | Collection of watermark settings. <p>Default value: undefined                                                                                                     |
+|           | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                                 |
+|           | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                               |
+|           | \[ ].page     | texto                | The page(s) where the watermark is printed.<p>Para todas las páginas: "all". For specific pages: page numbers or page ranges separated by commas. Ej.: "1,3,5-12" |
+|           | \[ ].width    | entero largo         | The width of the watermark text / image.                                                                                                                                                  |
+|           | \[ ].x        | entero largo         | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                            |
+|           | \[ ].y        | entero largo         | The vertical coordinate of the top left point of the watermark text / image.                                                                                                              |
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
@@ -503,7 +503,7 @@ It contains the following properties:
 
 | Propiedad    | Tipo de valor | Descripción                                  |
 | ------------ | ------------- | -------------------------------------------- |
-| version      | Entero largo  | Internal component version                   |
+| version      | Entero largo  | Versión del componente interno               |
 | dateCreation | Timestamp     | Creation date                                |
 | dateModified | Timestamp     | Last modification date                       |
 | meta         | Objeto        | Free contents, reserved for the 4D developer |
