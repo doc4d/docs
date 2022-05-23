@@ -1295,11 +1295,11 @@ Se a entity selection inicial e o parâmetro não forem relacionados com a mesma
 ```4d
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") // Returns "Colin Hetrick","Grady Harness", "Sherlock Holmes"
- $employee:=ds.Employee.get(686) //the entity with primary key 686 does not belong to the $employees entity selection
-  //It matches the employee "Mary Smith"
+ $employees:=ds.Employee.query("lastName = :1";"H@") // Devuelve "Colin Hetrick","Grady Harness", "Sherlock Holmes"
+ $employee:=ds.Employee.get(686) //a entidade com chave primária 686 não pertence a entity selection $employees 
+  //Coincide com a funcionária "Mary Smith"
 
- $result:=$employees.or($employee) //$result contains "Colin Hetrick", "Grady Harness", "Sherlock Holmes", "Mary Smith"
+ $result:=$employees.or($employee) //$result contém "Colin Hetrick", "Grady Harness", "Sherlock Holmes", "Mary Smith"
 ```
 
 <!-- END REF -->
@@ -1319,16 +1319,16 @@ Se a entity selection inicial e o parâmetro não forem relacionados com a mesma
 **.orderBy**( *pathString* : Text ) : 4D.EntitySelection<br>**.orderBy**( *pathObjects* : Collection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.orderBy().Params -->
-| Parameter   | Type               |    | Descrição                                                             |
-| ----------- | ------------------ |:--:| --------------------------------------------------------------------- |
-| pathString  | Texto              | -> | Attribute path(s) and sorting instruction(s) for the entity selection |
-| pathObjects | Coleção            | -> | Collection of criteria objects                                        |
-| Resultado   | 4D.EntitySelection | <- | New entity selection in the specified order                           |
+| Paramètres  | Tipo               |    | Descrição                                                                 |
+| ----------- | ------------------ |:--:| ------------------------------------------------------------------------- |
+| pathString  | Texto              | -> | Rota(s) de atributos e instruções de clasificação para a entity selection |
+| pathObjects | Coleção            | -> | Coleção de objetos criterio                                               |
+| Resultado   | 4D.EntitySelection | <- | Nova entity selection na ordem especificada                               |
 <!-- END REF -->
 
 #### Descrição
 
-The `.orderBy()` function <!-- REF #EntitySelectionClass.orderBy().Summary -->returns a new ordered entity selection containing all entities of the entity selection in the order specified by *pathString* or *pathObjects* criteria<!-- END REF -->.
+A função `.orderBy()` <!-- REF #EntitySelectionClass.orderBy().Summary -->devolve uma nova entity selection ordenada que contém todas as entidades da entity selection na ordem especificada pelos criterios *pathString* ou *pathObjects*<!-- END REF -->.
 > * This method does not modify the original entity selection.
 *   For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
 
