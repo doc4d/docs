@@ -3,33 +3,33 @@ id: webServerConfig
 title: Configuración
 ---
 
-The 4D web server settings include security parameters, listening ports, defaults paths, and various options covering all the server features. 4D provides default values for every settings.
+Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de escucha, rutas por defecto y varias opciones que cubren todas las funcionalidades del servidor. 4D ofrece valores por defecto para todos los parámetros.
 
 
-## ¿Donde configurar los parámetros?
+## ¿Dónde configurar los parámetros?
 
-There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
+Hay diferentes maneras de configurar los parámetros del servidor web 4D, en función del alcance y del servidor que se quiera configurar:
 
-| Setting location                                              | Alcance                                  | Servidor web a utilizar                                               |
-| ------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
-| [objeto webServer](webServerObject.md)                        | Temporal (sesión actual)                 | Todos los servidores web, incluidos los servidores web de componentes |
-| `WEB SET OPTION` o comando `WEB XXX`                          | Temporal (sesión actual)                 | Servidor principal                                                    |
-| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (all sessions, stored on disk) | Servidor principal                                                    |
+| Setting location                                                               | Alcance                                                  | Servidor web a utilizar                                               |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------- |
+| [objeto webServer](webServerObject.md)                                         | Temporal (sesión actual)                                 | Todos los servidores web, incluidos los servidores web de componentes |
+| `WEB SET OPTION` o comando `WEB XXX`                                           | Temporal (sesión actual)                                 | Servidor principal                                                    |
+| [Caja de diálogo de las **Propiedades**](../settings/web.md) (páginas **Web**) | Permanente (todas las sesiones, almacenadas en el disco) | Servidor principal                                                    |
 
-> Some settings are not available from all locations.
+> Algunos parámetros no están disponibles desde todos los lugares.
 
 ## Caché
 
-| Puede ajustarse con           | Nombre                                                                             | Comentarios |
-| ----------------------------- | ---------------------------------------------------------------------------------- | ----------- |
-| Caja de diálogo de parámetros | [Configuration page/Use the 4D Web cache](../settings/web.md#use-the-4d-web-cache) |             |
-| Caja de diálogo de parámetros | [Configuration page/Page Cache Size](../settings/web.md#page-cache-size)           |             |
+| Puede ajustarse con           | Nombre                                                                                            | Comentarios |
+| ----------------------------- | ------------------------------------------------------------------------------------------------- | ----------- |
+| Caja de diálogo de parámetros | [Página de configuración/Utilización de la caché Web 4D](../settings/web.md#use-the-4d-web-cache) |             |
+| Caja de diálogo de parámetros | [Página de configuración/Tamaño de la caché de las páginas](../settings/web.md#page-cache-size)   |             |
 
-Enables and configures the web page cache.
+Activa y configura la caché de las páginas web.
 
-The 4D web server has a cache that allows you to load static pages, GIF images, JPEG images (<512 kb) and style sheets (.css files) in memory, as they are requested. Using the cache allows you to significantly increase the web server’s performance when sending static pages. The cache is shared between all the web processes. When the cache is enabled, the 4D Web server looks for any static page requested by the browser in the cache first. If it finds the page, it sends it immediately. If not, 4D loads the page from disk and places it in the cache.
+El servidor web 4D dispone de una caché que permite cargar las páginas estáticas, las imágenes GIF, las imágenes JPEG (<512 kb) y las hojas de estilo (archivos.css) en memoria, a medida que se solicitan. El uso de la caché permite aumentar considerablemente el rendimiento del servidor web cuando se envían páginas estáticas. El caché se comparte entre todos los procesos web. Cuando la caché está activada, el servidor web de 4D busca primero en la caché toda página estática solicitada por el navegador. Si encuentra la página, la envía inmediatamente. Si no, 4D carga la página desde el disco y la coloca en la caché.
 
-You can modify the size of the cache in the **Pages Cache Size** area. The value you set depends on the number and size of your website’s static pages, as well as the resources that the host machines has at its disposal.
+Puede modificar el tamaño de la caché en el área **Tamaño de la caché de las páginas**. The value you set depends on the number and size of your website’s static pages, as well as the resources that the host machines has at its disposal.
 > While using your web database, you can check the performance of the cache by using the `WEB GET STATISTICS` command. If, for example, you notice that the cache’s rate of use is close to 100%, you may want to consider increasing the size that has been allocated to it. The [/4DSTATS] and [/4DHTMLSTATS] URLs allow you to also obtain information about the cache’s state.
 
 
