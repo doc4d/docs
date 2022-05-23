@@ -39,17 +39,17 @@ Le tableau suivant permet d'indiquer si l'utilisation du mode préemptif pour le
 
 Tout le code 4D exécuté par le serveur Web doit être thread-safe si vous souhaitez que les process Web soient lancés en mode préemptif. Lorsque l'option [Utiliser des process préemptifs](#availability-of-preemptive-mode-for-web-processes) est cochée dans le dialogue des Propriétés, les parties de l'application listées ci-dessous sont automatiquement évaluées par 4D Compiler :
 
-*   All web-related database methods:
+*   Toutes les méthodes base liées au web :
     *   [`On Web Authentication`](authentication.md#on-web-authentication)
     *   [`On Web Connection`](httpRequests.md#on-web-connection)
     *   [`On REST Authentication`](REST/configuration.md#using-the-on-rest-authentication-database-method)
     *   [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) et [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action)
 
-*   The `compiler_web` project method (regardless of its actual "Execution mode" property);
+*   La méthode projet `compiler_web` (indépendamment de sa propriété "Mode d'exécution") ;
 
 *   Tout code traité par la commande [`PROCESS 4D TAGS`](https://doc.4d.com/4dv19R/help/command/en/page816.html) en contexte Web, par exemple via des pages .shtml
 
-*   Any project method with the "Available through 4D tags and URLS (`4DACTION`, etc.)" attribute
+*   Toute méthode projet comportant l'attribut "Available through 4D tags and URLS (`4DACTION`, etc.)"
 
 *   Triggers for tables with "Expose as REST resource" attribute
 
