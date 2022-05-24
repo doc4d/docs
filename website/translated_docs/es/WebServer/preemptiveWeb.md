@@ -1,6 +1,6 @@
 ---
 id: preemptiveWeb
-title: Using preemptive web processes
+title: Uso de procesos web apropiativos
 ---
 
 
@@ -8,7 +8,7 @@ The 4D Web Server allows you to take full advantage of multi-core computers by u
 
 For in-depth information on preemptive process in 4D, please refer to the *Preemptive 4D processes* section in the [*4D Language Reference*](https://doc.4d.com).
 
-## Availability of preemptive mode for web processes
+## Disponibilidad del modo apropiativo para los procesos web
 
 The following table indicates whether the preemptive mode is used or is available, depending on the execution context:
 
@@ -66,7 +66,7 @@ For each of these methods and code parts, the compiler will check if the thread-
 
 Most of the web-related 4D commands and functions, database methods and URLs are thread-safe and can be used in preemptive mode.
 
-### 4D commands and database methods
+### Comandos 4D y métodos base
 
 All 4D web-related commands are thread-safe, *i.e.*:
 
@@ -93,7 +93,7 @@ The following 4D Web Server URLs are thread-safe and can be used in preemptive m
 *   *4dimgfield/* (generado por `PROCESS 4D TAGS` para la petición web en los campos imagen)
 *   *4dimg/* (generado por `PROCESS 4D TAGS` para la petición web en las variables imagen)
 
-### Preemptive web process icon
+### Icono de proceso web apropiativo
 
 Both the Runtime Explorer and the 4D Server administration window display a specific icon for preemptive web processes:
 
