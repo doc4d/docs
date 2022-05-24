@@ -129,7 +129,7 @@ Para cada proceso, se registran los siguientes campos:
 
 ## HTTPDebugLog.txt
 
-Este archivo de historial registra cada petición HTTP y cada respuesta en modo crudo. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
+Este archivo de historial registra cada petición HTTP y cada respuesta en modo crudo. Se registran las solicitudes completas, incluidos los encabezados; opcionalmente, también se pueden registrar las partes del cuerpo.
 
 Como iniciar este historial:
 
