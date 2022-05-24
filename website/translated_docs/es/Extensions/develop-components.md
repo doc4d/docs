@@ -1,6 +1,6 @@
 ---
 id: develop-components
-title: Developing Components
+title: Componentes de desarrollo
 ---
 
 A 4D component is a set of 4D functions, methods, and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). Por ejemplo, puede desarrollar un componente 4D de correo electrónico que gestione todos los aspectos del envío, la recepción y el almacenamiento de correos electrónicos en aplicaciones 4D.
@@ -158,8 +158,7 @@ Las variables locales, proceso e interproceso no se comparten entre los componen
 Ejemplo utilizando un array:
 
 ```4d
-//En el proyecto local:
-     ARRAY INTEGER( MyArray;10)
+//En el proyecto local: ARRAY INTEGER( MyArray;10)
      AMethod(-> MyArray)
 
 //En el componente, el método proyecto AMethod contiene:
@@ -243,7 +242,7 @@ SAVE RECORD($tablepointer->)
 
 ## Uso de tablas y campos
 
-Un componente no puede utilizar las tablas y campos definidos en la estructura 4D del proyecto matriz. Sin embargo, puede crear y utilizar bases externas, y luego utilizar sus tablas y campos según sus necesidades. Puede crear y gestionar bases externas utilizando SQL. Una base externa es un proyecto 4D independiente del proyecto 4D principal, pero con la que se puede trabajar desde el proyecto 4D principal. Utilizar una base externa significa designar temporalmente esta base como base actual, es decir, como la base de destino para las consultas SQL ejecutadas por 4D. Las bases externas se crean con el comando SQL `CREATE DATABASE`.
+Un componente no puede utilizar las tablas y campos definidos en la estructura 4D del proyecto matriz. Sin embargo, puede crear y utilizar bases externas, y luego utilizar sus tablas y campos según sus necesidades. Puede crear y gestionar bases externas utilizando SQL. Sin embargo, puede crear y utilizar bases externas, y luego utilizar sus tablas y campos según sus necesidades. Utilizar una base externa significa designar temporalmente esta base como base actual, es decir, como la base de destino para las consultas SQL ejecutadas por 4D. Las bases externas se crean con el comando SQL `CREATE DATABASE`.
 
 ### Ejemplo
 
@@ -324,7 +323,7 @@ Lectura en una base de datos externa:
 
 ## Utilización de formularios
 
-- Sólo los "formularios de proyecto" (formularios que no están asociados a ninguna tabla específica) pueden utilizarse en un componente. Todos los formularios proyecto presentes en el proyecto matriz pueden ser utilizados por el componente.
+- Sólo los "formularios de proyecto" (formularios que no están asociados a ninguna tabla específica) pueden utilizarse en un componente. Sólo los "formularios de proyecto" (formularios que no están asociados a ninguna tabla específica) pueden utilizarse en un componente.
 - Un componente puede llamar a formularios tabla del proyecto local. Tenga en cuenta que en este caso es necesario utilizar punteros en lugar de nombres de tablas entre paréntesis [] para especificar los formularios en el código del componente.
 
 > Si un componente utiliza el comando `ADD RECORD`, se mostrará el formulario de entrada actual del proyecto local, en el contexto del proyecto local. Consequently, if the form includes variables, the component will not have access to them.
