@@ -10,7 +10,7 @@ Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de
 
 Hay diferentes maneras de configurar los parámetros del servidor web 4D, en función del alcance y del servidor que se quiera configurar:
 
-| Setting location                                                               | Alcance                                                  | Servidor web a utilizar                                               |
+| Ubicación del parámetro                                                        | Alcance                                                  | Servidor web a utilizar                                               |
 | ------------------------------------------------------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------- |
 | [objeto webServer](webServerObject.md)                                         | Temporal (sesión actual)                                 | Todos los servidores web, incluidos los servidores web de componentes |
 | `WEB SET OPTION` o comando `WEB XXX`                                           | Temporal (sesión actual)                                 | Servidor principal                                                    |
@@ -200,18 +200,18 @@ Estado de la comunicación a través de HTTPS. Esta opción se describe en [esta
 
 ## Activar HSTS
 
-| Puede ajustarse con | Nombre                                             | Comentarios                                     |
-| ------------------- | -------------------------------------------------- | ----------------------------------------------- |
-| objeto webServer    | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
-| `WEB SET OPTION`    | `Web HSTS enabled`                                 | 0 (desactivado, por defecto) o 1 (activado)     |
+| Puede ajustarse con | Nombre                                             | Comentarios                                             |
+| ------------------- | -------------------------------------------------- | ------------------------------------------------------- |
+| objeto webServer    | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Booleano, true para activar HSTS (por defecto es false) |
+| `WEB SET OPTION`    | `Web HSTS enabled`                                 | 0 (desactivado, por defecto) o 1 (activado)             |
 
-HTTP Strict Transport Security (HSTS) status.
+Estado de HTTP Strict Transport Security (HSTS).
 
-When [HTTPS is enabled](#enable-https), keep in mind that if [HTTP is also enabled](#enable-http), the browser can still switch between HTTPS and HTTP (for example, in the browser URL area, the user can replace "https" by "http"). To forbid http redirections, you can [disable HTTP](#enable-http), however in this case an error message is displayed to client HTTP requests.
+Cuando [HTTPS está activado](#enable-https), recuerde que si [HTTP está también activado](#enable-http), el navegador puede cambiar entre HTTPS y HTTP (por ejemplo, en la zona de la URL del navegador, el usuario puede sustituir "https" por "http"). Para prohibir las redirecciones http, puede [desactivar el HTTP](#enable-http), sin embargo en este caso se muestra un mensaje de error a las peticiones HTTP del cliente.
 
-HSTS allows the 4D web server to declare that browsers should only interact with it via secure HTTPS connections. Once activated, the 4D web server will automatically add HSTS-related information to all response headers. Browsers will record the HSTS information the first time they receive a response from the 4D web server, then any future HTTP requests will automatically be transformed into HTTPS requests. The length of time this information is stored by the browser is specified with the Web **HSTS max age** setting.
+HSTS permite al servidor web 4D declarar que los navegadores sólo deben interactuar con él a través de conexiones HTTPS seguras. Una vez activado, el servidor web 4D añadirá automáticamente información relacionada con HSTS a todos los encabezadoss de las respuestas. Los navegadores registrarán la información HSTS la primera vez que reciban una respuesta del servidor web 4D, luego cualquier solicitud HTTP futura se transformará automáticamente en solicitudes HTTPS. El tiempo que esta información es almacenada por el navegador se especifica con el parámetro web **HSTS max age**.
 
-> HSTS requires that HTTPS is [enabled](enable-https) on the server. [HTTP](enable-http) must also be enabled to allow client initial connections.
+> HSTS requiere que HTTPS esté [activado](enable-https) en el servidor. [HTTP](enable-http) must also be enabled to allow client initial connections.
 
 > You can get the current connection mode using the `WEB Is secured connection` command.
 
@@ -413,7 +413,7 @@ By default, the value is 100. You can set the number anywhere between 10 and 320
 
 Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
 
-Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes. When a request reaches this limit, the 4D web server rejects it.
+Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes. Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes.
 
 Valores posibles: 500 000 a 2 147 483 648.
 
@@ -445,7 +445,7 @@ Valores posibles:
 - 3 = TLSv1_2 (por defecto)
 - 4 = TLSv1_3
 
-Si se modifica, el servidor debe reiniciarse para utilizar el nuevo valor.
+Valores posibles:
 
 > The minimum TLS version used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server and client/server connections.
 
@@ -498,7 +498,7 @@ In return, you must make sure in this case to systematically initialize the vari
 
 Certain robots (query engines, spiders...) scroll through web servers and static pages. If you do not want robots to be able to access your entire site, you can define which URLs they are not allowed to access.
 
-To do so, put the ROBOTS.TXT file at the server's root. This file must be structured in the following manner:
+To do so, put the ROBOTS. TXT file at the server's root. This file must be structured in the following manner:
 
 ```4d
    User-Agent: <name>
