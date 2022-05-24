@@ -48,7 +48,7 @@ When you switch from one mode to the other, 4D closes the current mode and opens
 
 If you modify your project in interpreted mode, you must recompile it in order to have your edits taken into account in compiled mode.
 
-## Compiler window features
+## Características de la ventana del compilador
 
 In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
 
@@ -84,7 +84,7 @@ Depending on circumstances and the programming style used, these warnings may be
 
 ![](assets/en/Project/compilerWin4.png)
 
-When this option is checked, the warnings (if any) are displayed in the window, after the other error types. They appear in italics:
+When this option is checked, the warnings (if any) are displayed in the window, after the other error types. Aparecen en itálica:
 
 ![](assets/en/Project/compilerWin5.png)
 
@@ -156,7 +156,7 @@ Two target options are proposed. The result depends on the processor of the mach
 | *Option*                                         | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
 | ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
-| **My processor (processor)**                     | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
+| **Mi procesador (procesador)**                   | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
 
 > Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang comes with the latest version of Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
@@ -289,11 +289,11 @@ To do this, you must surround the code to be excluded from range checking with t
 
 The classic compiler can be used on any platform, while the Silicon compiler can only be used on a Mac machine:
 
-|             | Compilar para Windows | Compilación para Intel Mac | Compile for Silicon Mac |
-| ----------- |:---------------------:|:--------------------------:|:-----------------------:|
-| En Windows  |       &#10003;        |          &#10003;          |        &#10007;         |
-| Intel Mac   |       &#10003;        |          &#10003;          |        &#10003;         |
-| Silicon Mac |       &#10003;        |          &#10003;          |        &#10003;         |
+|             | Compilar para Windows | Compilación para Intel Mac | Compilación para Mac Silicon |
+| ----------- |:---------------------:|:--------------------------:|:----------------------------:|
+| En Windows  |       &#10003;        |          &#10003;          |           &#10007;           |
+| Intel Mac   |       &#10003;        |          &#10003;          |           &#10003;           |
+| Silicon Mac |       &#10003;        |          &#10003;          |           &#10003;           |
 
 
 Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
@@ -318,7 +318,7 @@ Resulting compiled code is stored in the [Libraries](architecture.md#libraries) 
 
 - **Apple machine**: The Silicon compiler can only be run from an Apple machine.
 - **4D Project architecture**: The Silicon compiler is only available for 4D developments using [project architecture](architecture.md).
-- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *clang* requires Apple native libraries, which are provided by either the **Xcode** or **Developer Tools** package.
+- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation.
     - **If you already have** Xcode or Developer Tools installed on your computer, you only need to make sure that its version is compliant with 4D requirements.
     - **If you do not have** any of these tools installed on your computer, you will need to download one of them from the Apple Developer web site.
 
