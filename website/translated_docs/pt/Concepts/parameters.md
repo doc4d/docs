@@ -50,7 +50,7 @@ Input and output values are [evaluated](#values-or-references) at the moment of 
 - [sequentially numbered variables](#sequential-parameters).
 
 
-Both [named](#named-parameters) and [sequential](#sequential-parameters) syntaxes can be mixed with no restriction to declare parameters. For example:
+Both [named](#named-parameters) and [sequential](#sequential-parameters) syntaxes can be mixed with no restriction to declare parameters. Por exemplo:
 
 ```4d
 Function add($x : Integer)
@@ -117,13 +117,13 @@ $entitySelection:=ds.User.query("login=:1"; $user)
 
 ### Returned value
 
-You declare the return parameter of a function by adding an arrow (->) and the parameter definition after the input parameter(s) list. For example:
+You declare the return parameter of a function by adding an arrow (->) and the parameter definition after the input parameter(s) list. Por exemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer) -> $result : Integer
 ```
 
-You can also declare the return parameter only by adding `: type`, in which case it can be handled by a [return statement](#return-expression) or through `$0`in the [sequential syntax](#returned-value-1)). For example:
+You can also declare the return parameter only by adding `: type`, in which case it can be handled by a [return statement](#return-expression) or through `$0`in the [sequential syntax](#returned-value-1)). Por exemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
@@ -136,7 +136,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 ### Supported data types
 
-With named parameters, you can use the same data types as those which are [supported by the `var` keyword](variables.md#using-the-var-keyword), including class objects.  For example:
+With named parameters, you can use the same data types as those which are [supported by the `var` keyword](variables.md#using-the-var-keyword), including class objects.  Por exemplo:
 
 ```4d
 Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
@@ -230,7 +230,7 @@ Function square($x : Integer)
 > Internally, `return x` executes `$0:=x` or (if declared) `myReturnValue:=x`, and returns to the caller. If `return` is used without an expression, the function or method returns a null value of the declared return type (if any), otherwise *undefined*.
 
 
-The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. For example:
+The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. Por exemplo:
 
 
 ```4d
@@ -247,7 +247,7 @@ Function getValue
 
 ## Indireção dos parâmetros (${N})
 
-4D project methods accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression. `${N}` se denomina un **parâmetro genérico**.
+4D project methods accept a variable number of parameters. You can address those parameters with a `For... End for` loop, the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression. `${N}` se denomina un **parâmetro genérico**.
 
 
 
@@ -273,12 +273,11 @@ The method's parameters must be passed in the correct order, first the format an
  Result:=MySum("000";1;2;200) //"203"
 ```
 
-Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. For example:
+Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. Por exemplo:
 
 ```4d
 //foo method
-#DECLARE($p1: Text;$p2 : Text; $p3 : Date) 
-For($i;1;Count parameters)
+#DECLARE($p1: Text;$p2 : Text; $p3 : Date) For($i;1;Count parameters)
     ALERT("param "+String($i)+" = "+String(${$i}))
 End for
 ```
@@ -286,7 +285,7 @@ End for
 This method can be called:
 
 ```4d
-foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
+foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //extra parameters are passed
 ```
 
 > A indireção de parâmetros se gerencia melhor se respeitar a convenção abaixo: se só alguns dos parâmetros forem endereçados por indireção, devem ser passados depois dos outros.
@@ -304,7 +303,7 @@ Para declarar parâmetros genéricos, se utiliza uma diretriz do compilador à q
 
 > Declaring generic parameters can only be done with the [sequential syntax](#sequential-parameters).
 
-This command means that starting with the fourth parameter (included), the method can receive a variable number of parameters of text type. $1, $2 e $3 podem ser de qualquer tipo de dados. Entretanto, se usar $2 por indireção, o tipo de dados usados será do tipo genérico. Thus, it will be of the data type text, even if for you it was, for instance, of the data type Real.
+This command means that starting with the fourth parameter (included), the method can receive a variable number of parameters of text type. $1, $2 e $3 podem ser de qualquer tipo de dados. Entretanto, se usar $2 por indireção, o tipo de dados usados será do tipo genérico. $1, $2 e $3 podem ser de qualquer tipo de dados.
 
 > The number in the declaration has to be a constant and not a variable.
 
@@ -316,7 +315,7 @@ This command means that starting with the fourth parameter (included), the metho
 
 Even if it is not mandatory in [interpreted mode](interpreted.md), you must declare each parameter in the called methods or functions to prevent any trouble.
 
-When using the [named variable syntax](#named-parameters), parameters are automatically declared through the `#DECLARE` keyword or `Function` prototype. For example:
+When using the [named variable syntax](#named-parameters), parameters are automatically declared through the `#DECLARE` keyword or `Function` prototype. Por exemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer)-> $result : Integer
@@ -335,7 +334,7 @@ When using the [sequential variable syntax](#sequential-parameters), you need to
  $0:=Uppercase(Substring($1;1;1))+Lowercase(Substring($1;2))
 ```
 
-A utilização de comandos tais como `New process` com métodos processo que aceitem parâmetros também requer que os parâmetros se declarem explicitamente no método chamado. For example:
+A utilização de comandos tais como `New process` com métodos processo que aceitem parâmetros também requer que os parâmetros se declarem explicitamente no método chamado. Por exemplo:
 
 ```4d
 C_TEXT($string)
@@ -373,7 +372,7 @@ A declaração de parâmetros também é obrigatóiria nos contextos abaixo (ess
 
 - Triggers - The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Entretanto, se quiser declará-lo, deve fazer isso no próprio trigger.
 
-- Form objects that accept the `On Drag Over` form event - The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. Entretanto, se quiser fazer a declaração, deve fazer isso no método objeto. **Nota:** o compilador não inicializa o parâmetro $0. Portanto, logo que utilizar o evento formulário `On Drag Over`, deve inicializar $0. For example:
+- Form objects that accept the `On Drag Over` form event - The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. Entretanto, se quiser fazer a declaração, deve fazer isso no método objeto. **Nota:** o compilador não inicializa o parâmetro $0. Portanto, logo que utilizar o evento formulário `On Drag Over`, deve inicializar $0. Por exemplo:
 
 ```4d
  C_LONGINT($0)
@@ -431,7 +430,7 @@ Por exemplo, utilizando o método `CreatePerson`:
  var $person : Object
  $person:=New object("Name";"Smith";"Age";40)
  ChangeAge($person)
- ALERT(String($person.Age))  
+ ALERT(String($person.  
 ```
 
 No método `ChangeAge` pode escrever:
@@ -455,8 +454,8 @@ No método `ChangeAge` anterior, as propriedades Age e Name são obrigatórias e
   //ChangeAge
  var $1; $para : Object
  $para:=$1  
- $para.Age:=Num($para.Age)+10
- ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
+ $para. Age:=Num($para. Age)+10
+ ALERT(String($para. Name)+" is "+String($para. Age)+" years old.")
 ```
 Ambos parâmetros são opcionais: se não forem preenchidos, o resultado será "é 10 anos de idade", mas nenhum erro será gerado.
 
@@ -468,12 +467,9 @@ ChangeAge($person)
 
 //ChangeAge
 var $1;$para : Object
-$para:=$1  
-If ($para.toAdd=Null)
-    $para.toAdd:=10
-End if
-$para.Age:=Num($para.Age)+$para.toAdd
-ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
+$para:=$1 If ($para.toAdd=Null)
+    $para.toAdd:=10 End if
+$para. Age:=Num($para. Age)+$para.toAdd ALERT(String($para. Name)+" is "+String($para.
 ```
 
 Não precisará mudar seu código existente. Sempre funcionará como na versão anterior, mas se for necessário, é possível usar outro valor diferente de 10 anos.
@@ -490,7 +486,7 @@ No manual *Linguagem de 4D*, os caracteres { } (chaves) indicam parâmetros opci
 ALERT("Are you sure?";"Yes I am") //2 parâmetros ALERT("Time is over") //1 parâmetro
 ```
 
-4D methods and functions also accept such optional parameters. You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). For example:
+4D methods and functions also accept such optional parameters. You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). Por exemplo:
 
 ```4d
 // "concate" function of myClass Function concate ($param1 : Text ; $param2 : Text)->$result : Text
@@ -537,7 +533,7 @@ APPEND TEXT(vtSomeText) //Só mostrará a mensagem APPEND TEXT(vtSomeText;$path)
 
 ## Valores ou referências
 
-When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the **resulting value** to the local variables in the class function or subroutine. As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. Since its scope is local, if the value of a parameter is modified in the class function/subroutine, it does not change the value in the calling method. For example:
+When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the **resulting value** to the local variables in the class function or subroutine. As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. Por exemplo:
 
 ```4d
     //Esta é uma parte do código do método MY_METHOD DO_SOMETHING([People]Name) //Suponha que o valor [People]Name seja "williams" ALERT([People]Name)
@@ -577,7 +573,7 @@ Aqui é o parâmetro não for o campo, mas sim um ponteiro ao mesmo. Portanto, d
  ALERT($0)
 ```
 
-Esta segunda técnica de retornar um valor por uma subrotina se chama " utilizar uma função" É descrita no parágrafo [Funções](#functions). This is described in the [Returning values](#returning-values) paragraph.
+Esta segunda técnica de retornar um valor por uma subrotina se chama " utilizar uma função" É descrita no parágrafo [Funções](#functions). Esta segunda técnica de retornar um valor por uma subrotina se chama " utilizar uma função" É descrita no parágrafo [Funções](#functions).
 
 
 ### Casos particulares: objetos e coleções
@@ -593,7 +589,7 @@ Por exemplo, considere o método `CreatePerson` que cria um objeto e o envia com
  var $person : Object
  $person:=New object("Name";"Smith";"Age";40)
  ChangeAge($person)
- ALERT(String($person.Age))  
+ ALERT(String($person.  
 ```
 
 O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
@@ -601,8 +597,8 @@ O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
 ```4d
   //ChangeAge
  #DECLARE ($person : Object)
- $person.Age:=$person.Age+10
- ALERT(String($person.Age))
+ $person. Age:=$person. Age+10
+ ALERT(String($person.
 ```
 
 Quando executar o método `CreatePerson`, as duas caixas de alerta dirão "50" já que a mesma referência de objeto é manejada por ambos métodos.
