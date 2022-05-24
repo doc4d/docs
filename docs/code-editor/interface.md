@@ -13,15 +13,15 @@ You can customize the method editing area, for example by adding lists or hiding
 
 Each Method editor window contains a toolbar that provides instant access to basic functions related to method execution and editing.
 
-|Element|Icon| Description|
+|Element|Icon|Description|
 |---|---|---|
-| **Method execution**|![dropdown-list](assets/en/code-editor/execute-method.png) | This button causes the execution of the method. Using the menu associated with the button, you can select the type of execution. Only project and database methods can be run using this button. |
+|**Method execution**|![dropdown-list](assets/en/code-editor/execute-method.png)|This button causes the execution of the method. Using the menu associated with the button, you can select the type of execution. Only project and database methods can be run using this button.|
 | **Search**|![search-icon](assets/en/code-editor/search.png) | Allows performing a search in the current method.|
 | **Macros**| ![macros-button](assets/en/code-editor/macros.png) | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](../FormEditor/macros.md). |
 | **Expand all / Collapse all**|![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png) | These buttons allow expanding or collapsing all the control flow structures of the method. |
 | **Method information**| ![method-information-icon](assets/en/code-editor/method-information.png) | Displays the [Method Properties](../Concepts/methods.md#project-method-properties) dialog box (project methods only).|
-| **Last clipboard values**| ![last-clipboard-values-icon](assets/en/code-editor/expand-collapse-all.png) | Displays the last values stored in the clipboard.|
-| **Clipboards**| ![clipboard icons](assets/en/code-editor/clipboards.png) | Clipboards available in the code editor. You can use these clipboards by clicking on them directly or by using keyboard shortcuts. For more information, refer to [Writing classes and methods](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards). |
+| **Last clipboard values**| ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | Displays the last values stored in the clipboard.|
+| **Clipboards**| ![clipboard icons](assets/en/code-editor/clipboards.png) | Nine clipboards available in the code editor. You can use these clipboards by clicking on them directly or by using keyboard shortcuts. For more information, refer to [Writing classes and methods](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards). |
 | **Code navigation**| ![code-navigation-icons](assets/en/code-editor/tags.png) | Lets you navigate inside methods and classes with automatically tagged content or manually declared markers. See [Navigation dropdown](./navigation.md). |
 
 #### Lists area  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
