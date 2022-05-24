@@ -28,7 +28,7 @@ The page is active and updated permanently as soon as it is displayed. It should
 
 - clicking on the **Pause** button,
 - haciendo clic en la lista,
-- pressing the space bar.
+- presionando la barra espaciadora.
 
 When you pause the page, a "PAUSED" message appears and the button label changes to **Resume**. You can resume monitoring of the operations by performing the same action as for pausing.
 
@@ -47,7 +47,7 @@ In advanced mode (**Shift+Click** on the operation), additional information is d
 
 ![](assets/en/Admin/server-admin-monitor-adv2.png)
 
-## Snapshot button
+## Botón Instantánea
 
 The **Snapshot** button allows you to copy to the clipboard all the operations displayed in the RTM panel, as well as their related details (process and sub-operation info):
 

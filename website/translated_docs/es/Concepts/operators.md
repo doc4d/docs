@@ -37,7 +37,7 @@ $col:=New collection //$col is initialized with an empty collection
 > Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Estos errores son a menudo difíciles de reconocer por el compilador y conducen a una solución de problemas que requiere mucho tiempo.
 
 
-## Basic operators
+## Operadores básicos
 
 Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
 
@@ -321,7 +321,7 @@ ALERT($beverage) // "Beer" "Beer" : "Juice"
 ALERT($beverage) // "Beer"
 ```
 
-#### Handling data from a table
+#### Gestión de los datos de una tabla
 
 This example stores a person's full name in a variable, and handles the case when no first name or last name has been specified:
 

@@ -7,7 +7,7 @@ The `SMTPTransporter` class allows you to configure SMTP connections and send em
 
 
 
-### SMTP Transporter object
+### Objeto SMTP Transporter
 
 SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-new-transporter) command. They provide the following properties and functions:
 
@@ -238,10 +238,10 @@ La conexión SMTP se cierra automáticamente:
 ## .send()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones           |
-| ------- | ------------------------ |
-| v17 R5  | Support of mime contents |
-| v17 R4  | Añadidos                 |
+| Versión | Modificaciones             |
+| ------- | -------------------------- |
+| v17 R5  | Soporte de contenidos Mime |
+| v17 R4  | Añadidos                   |
 </details>
 
 <!-- REF #SMTPTransporterClass.send().Syntax -->

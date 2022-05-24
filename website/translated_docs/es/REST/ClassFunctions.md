@@ -22,9 +22,9 @@ $city:=ds.City.getCity("Aguada")
 
 ## Llamadas de las funciones
 
-Functions must always be called using REST **POST** requests (a GET request will receive an error).
+Las funciones deben llamarse siempre utilizando peticiones **POST** (una petición GET recibirá un error).
 
-Functions are called on the corresponding object on the server datastore.
+Las funciones son llamadas en el objeto correspondiente en el almacén de datos del servidor.
 
 | Función de clase                                                   | Sintaxis                                                                    |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ Entities passed in parameters are referenced on the server through their key (*i
 
 See examples for [creating](#creating-an-entity) or [updating](#updating-an-entity) entities.
 
-#### Related entity parameter
+#### Parámetro de entidad asociado
 
 Same properties as for an [entity parameter](#entity-parameter). In addition, the related entity must exist and is referenced by __KEY containing its primary key.
 

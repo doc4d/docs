@@ -528,10 +528,10 @@ El <!-- REF #WebServerClass.isRunning.Summary -->estado de ejecución del servid
 El valor de registro <!-- REF #WebServerClass.logRecording.Summary -->log (logweb.txt)<!-- END REF -->.
 
 *   0 = Do not record (default)
-*   1 = Record in CLF format
-*   2 = Record in DLF format
-*   3 = Record in ELF format
-*   4 = Record in WLF format
+*   1 = Registro en formato CLF
+*   2 = Registro en formato DLF
+*   3 = Registro en formato ELF
+*   4 = Registro en formato WLF
 
 <!-- END REF -->
 

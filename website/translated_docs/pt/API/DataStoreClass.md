@@ -42,14 +42,14 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| Parameter | Type         |    | Description                                     |
+| Parameter | Type         |    | Descrição                                       |
 | --------- | ------------ | -- | ----------------------------------------------- |
 | localID   | Texto        | -> | ID local del armazém de dados remoto a devolver |
-| Result    | cs.DataStore | <- | Referencia ao armazém de dados                  |
+| Resultado | cs.DataStore | <- | Referencia ao armazém de dados                  |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 O comando `ds` <!-- REF #_command_.ds.Summary -->devolve uma referência ao armazém de dados que coincide com o banco de dados 4D atual ou com o banco de dados designada por *localID*<!-- END REF -->.
 
@@ -111,15 +111,15 @@ Usar a datastore principal do banco de dados 4D:
 **Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.Open datastore.Params -->
-| Parameter      | Type         |    | Description                                                                  |
+| Parameter      | Type         |    | Descrição                                                                    |
 | -------------- | ------------ | -- | ---------------------------------------------------------------------------- |
 | connectionInfo | Objeto       | -> | Propriedades de conexão utilizadas para alcançar o armazém de datos remoto   |
 | localID        | Texto        | -> | Id para assignar ao armazém de dados aberto na aplicação local (obrigatorio) |
-| Result         | cs.DataStore | <- | Objeto do armazém de dados                                                   |
+| Resultado      | cs.DataStore | <- | Objeto do armazém de dados                                                   |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 O comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conecta a aplicação ao banco identificado por *connectionInfo* parameter<!-- END REF --> e retorna um objeto correpondente `cs.DataStore` associado com o alias local *localID*.
 
@@ -145,7 +145,7 @@ Quando abrir a sessão, as sentenças abaixo são equivalentes e devolvem uma re
 
 Passe em *connectionInfo* um objeto que desceva o armazém de dados remoto ao que quiser se conectar. Pode conter as propriedades abaixo (todas as propriedades são opcionais menos *hostname*):
 
-| Propriedade | Type          | Description                                                                                                                                                                                                                                                            |
+| Propriedade | Type          | Descrição                                                                                                                                                                                                                                                              |
 | ----------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hostname    | Texto         | Name or IP address of the remote database + ":" + port number (port number is mandatory)                                                                                                                                                                               |
 | user        | Texto         | User name                                                                                                                                                                                                                                                              |
@@ -219,7 +219,7 @@ Em caso de erro, o comando devolve **Null**. Se não for possível acessar o arm
 ***.dataclassName*** : 4D.DataClass<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 Cada classe de dados de um armazém de dados está disponível como uma propriedad de objeto [DataStore](ORDA/dsMapping.md#datastore)data. O objeto devolvido <!-- REF DataStoreClass.dataclassName.Summary -->contém uma descrição da classe de dados<!-- END REF -->.
 
@@ -229,10 +229,10 @@ Cada classe de dados de um armazém de dados está disponível como uma propried
 ```4d
  var $emp : cs.Employee
  var $sel : cs.EmployeeSelection
- $emp:=ds.Employee //$emp contains the Employee dataclass
- $sel:=$emp.all() //gets an entity selection of all employees
+ $emp:=ds.Employee //$emp contiene la dataclass Employee 
+ $sel:=$emp.all() //obtém uma seleção de entidades de todos os empregados
 
-  //you could also write directly:
+  //também pode escrever diretamente:
  $sel:=ds.Employee.all()
 ```
 
@@ -256,13 +256,13 @@ Cada classe de dados de um armazém de dados está disponível como uma propried
 **.cancelTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Type |  | Descrição                       |
 | --------- | ---- |::| ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.cancelTransaction()` <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancela a transação<!-- END REF --> aberta pela função [`.startTransaction()`](#starttransaction) no nível correspondente do processo atual para o datastore especificado.
 
@@ -294,13 +294,13 @@ Ver  exemplo da função [`.startTransaction()`](#starttransaction).
 
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
-| Parameter | Type   |    | Description                                                           |
+| Parameter | Type   |    | Descrição                                                             |
 | --------- | ------ |:--:| --------------------------------------------------------------------- |
-| Result    | Objeto | <- | Informação sobre o cifrado do armazém de dados atual e de cada tabela |
+| Resultado | Objeto | <- | Informação sobre o cifrado do armazém de dados atual e de cada tabela |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Summary -->devolve um objeto que proporciona o estado de criptografia do arquivo de datos atual<!-- END REF --> (ou seja, o arquivo de dados do `ds` datastore). Também se proporciona o estado de cada tabela.
 > Use the `Data file encryption status` command to determine the encryption status of any other data file.
@@ -310,7 +310,7 @@ A função `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Sum
 
 O objeto retornado contém as propriedades abaixo:
 
-| Propriedade |             |               | Type     | Description                                                                                     |
+| Propriedade |             |               | Type     | Descrição                                                                                       |
 | ----------- | ----------- | ------------- | -------- | ----------------------------------------------------------------------------------------------- |
 | isEncrypted |             |               | Booleano | True se o arquivo de dados estiver criptografado                                                |
 | keyProvided |             |               | Booleano | True se proporcionar a chave de encriptação que coincide com o arquivo de dados encriptados(*). |
@@ -336,7 +336,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //the database is encrypted
+ If($status.isEncrypted) //o banco de dados está encriptado
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -368,23 +368,23 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 **.getInfo()**: Object<!-- END REF -->
 
 <!-- REF #DataStoreClass.getInfo().Params -->
-| Parameter | Type   |    | Description              |
+| Parameter | Type   |    | Descrição                |
 | --------- | ------ |:--:| ------------------------ |
-| Result    | Objeto | <- | Propiedades de datastore |
+| Resultado | Objeto | <- | Propiedades de datastore |
 <!-- END REF -->
 
-#### Description
+#### Descrição
 
 A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um objeto que proporciona informação sobre a datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Returned object**
 
-| Propriedade | Type     | Description                                                                                                                                                              |
+| Propriedade | Type     | Descrição                                                                                                                                                                |
 | ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | type        | string   | <li>"4D": armazém de dados principal, disponível através de ds </li><li>"4D Server": datastore remoto, aberto com Open datastore</li>                                                                                                                       |
 | networked   | booleano | <li>True: a datastore se alcança através de uma conexão de rede.</li><li>False: não se alcança a datastore através de uma conexão de rede (base de dados local)</li>                                                                                                                       |
 | localID     | texto    | ID do armazém de dados na máquina. Corresponde à string localId dada com o comando `Open datastore`. String vazia ("") para o datastore principal.                       |
-| connection  | object   | Objeto descrevendo a conexão remota da datastore (não retornado para datastore principal) Propriedades disponiveis:<p><table><tr><th>Propriedade</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>texto</td><td>Endereço IP ou nome da datastore remota + ":" + número porta</td></tr><tr><td>tls</td><td>booleano</td><td>True se conexão segura for usada com a datastore remota</td></tr><tr><td>idleTimeout</td><td>number</td><td>Tempo de inatividade da sessão (em minutos)</td></tr><tr><td>user</td><td>texto</td><td>Usuario autentificado no datastore remoto</td></tr></table> |
+| connection  | object   | Objeto descrevendo a conexão remota da datastore (não retornado para datastore principal) Propriedades disponiveis:<p><table><tr><th>Propriedade</th><th>Type</th><th>Descrição</th></tr><tr><td>hostname</td><td>texto</td><td>Endereço IP ou nome da datastore remota + ":" + número porta</td></tr><tr><td>tls</td><td>booleano</td><td>True se conexão segura for usada com a datastore remota</td></tr><tr><td>idleTimeout</td><td>number</td><td>Tempo de inatividade da sessão (em minutos)</td></tr><tr><td>user</td><td>texto</td><td>Usuario autentificado no datastore remoto</td></tr></table> |
 
 *   Se a função `.getInfo()` for executada em um 4D Server ou 4D monoposto, `networked` é False.
 *   Se a função `.getInfo()` for executada em um 4D remoto, `networked` é True
@@ -438,13 +438,13 @@ Em um armazém de dados remoto:
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| Parameter | Type    |    | Description                                              |
+| Parameter | Type    |    | Descrição                                                |
 | --------- | ------- |:--:| -------------------------------------------------------- |
-| Result    | Coleção | <- | Coleção de objetos onde cada objeto descreve uma petição |
+| Resultado | Coleção | <- | Coleção de objetos onde cada objeto descreve uma petição |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->retorna as petições ORDA logadas na memória no lado do cliente<!-- END REF -->. O registro de petições de ORDA deve ter sido habilidado anteriormente aatravés da função [`.startRequestLog()`](#startrequestlog).
 
@@ -477,13 +477,13 @@ Ver o exemplo 2 de [`.startRequestLog()`](#startrequestlog).
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| Parameter | Type     |    | Description                                                                                       |
+| Parameter | Type     |    | Descrição                                                                                         |
 | --------- | -------- |:--:| ------------------------------------------------------------------------------------------------- |
-| Result    | Booleano | <- | True se o acesso ao Explorador de Dados estiver desativado, False se estiver ativado (por padrão) |
+| Resultado | Booleano | <- | True se o acesso ao Explorador de Dados estiver desativado, False se estiver ativado (por padrão) |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.isAdminProtected()` <!-- REF #DataStoreClass.isAdminProtected().Summary -->devolve `True` se o acesso a [Data Explorer](Admin/dataExplorer.md) foi desativado para a sessão de trabalho<!-- END REF -->.
 
@@ -511,13 +511,13 @@ Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAd
 **.makeSelectionsAlterable()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Type |  | Descrição                       |
 | --------- | ---- |::| ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.makeSelectionsAlterable()` <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->estabelece todas as seleções de entidades como editáveis por padrão nos datastores da aplicação atual<!-- END REF --> (incluindo [datastores remotos](ORDA/remoteDatastores.md)). Está pensado para ser utilizado uma vez, por exemplo no método base `On Startup`.
 
@@ -546,15 +546,15 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
-| Parameter     | Type   |    | Description                                        |
+| Parameter     | Type   |    | Descrição                                          |
 | ------------- | ------ | -- | -------------------------------------------------- |
 | curPassPhrase | Texto  | -> | Frase de cifrado atual                             |
 | curDataKey    | Objeto | -> | Chave de criptografia de dados atual               |
-| Result        | Objeto | <- | Resultado da coincidência da chave de criptografia |
+| Resultado     | Objeto | <- | Resultado da coincidência da chave de criptografia |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.provideDataKey()` <!-- REF #DataStoreClass.provideDataKey().Summary -->permite fornecer uma chave de cifrado de dados para o arquivo de dados atual da datastore e detecta se a chave coincide com os dados cifrados<!-- END REF -->. Esta função pode ser utilizada ao abrir um banco de dados criptografado, ou ao executar qualquer operação de criptografia que precise da chave de criptografia, como por exemplo voltar a criptografar o arquivo de dados.
 > * A função `.provideDataKey()` deve ser chamada em um banco de dados criptografada. Se for chamado em uma database não criptografada, o erro 2003 (a chave de criptografia não corresponde aos dados) é retornada. Utilize o comando `Estado de cifrado do arquivo de dados` para determinar se o banco de dados estiver cifrada.
@@ -570,11 +570,11 @@ Se aportar uma chave de cifrado de dados válida, se adicionar a *keyChain* da m
 *   todos os dados carregados desde tabelas criptografadas são descifradas na memória
 
 
-**Result**
+**Resultado**
 
 O resultado da ordem se descreve no objeto devolvido:
 
-| Propriedade |                          | Type     | Description                                                                                              |
+| Propriedade |                          | Type     | Descrição                                                                                                |
 | ----------- | ------------------------ | -------- | -------------------------------------------------------------------------------------------------------- |
 | success     |                          | Booleano | True se a chave da criptografia proporcionada coincide com os dados encriptados, False em caso contrário |
 |             |                          |          | As seguintes propriedades são devolvidas só se success for *FALSE*                                       |
@@ -623,13 +623,13 @@ Se não for dada uma *curPassphrase* ou *curDataKey*, `.provideDataKey()` devolv
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| Parameter | Type     |    | Description                                                                                                         |
+| Parameter | Type     |    | Descrição                                                                                                           |
 | --------- | -------- | -- | ------------------------------------------------------------------------------------------------------------------- |
 | status    | Booleano | -> | True para desativar o acesso Data Explorer aos dados do porto `webAdmin`, False (por padrão) para outorgar o acesso |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.setAdminProtection()` <!-- REF #DataStoreClass.setAdminProtection().Summary -->permite desabilitar qualquer acesso a dados em [porto de administração web](Admin/webAdmin.md#http-port), mesmo para o [Explorador de dados](Admin/dataExplorer.md) nas sessõs de `WebAdmin`<!-- END REF -->.
 
@@ -667,14 +667,14 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parameter | Type    |    | Description                           |
+| Parameter | Type    |    | Descrição                             |
 | --------- | ------- | -- | ------------------------------------- |
 | file      | 4D.File | -> | File object                           |
 | reqNum    | Integer | -> | Número de petiçõs a manter em memória |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->inicia o registro das petições ORDA do lado do cliente<!-- END REF -->.
 
@@ -743,13 +743,13 @@ Se quiser registrar as petições dos clientes ORDA na memória:
 **.startTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Type |  | Descrição                       |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.startTransaction()` <!-- REF #DataStoreClass.startTransaction().Summary -->inicia uma transação no processo atual no banco de dados que coincide com a datastore a qual se aplica<!-- END REF -->. Todas as mudanças realizadoas nas entidades do armazém de dados no processo da transação se armazenam temporariamente até que a transação se valida ou se cancela.
 > Se chamar a este método no armazém de dados principal (ou seja, o armazém de dados devolvido pelo comando `ds`), a transação se aplica a todas as operações realizadas no armazém de dados principal e no banco de dados subjacente, incluindo portanto ORDA e as linguagens clássicas.
@@ -811,13 +811,13 @@ Pode aninhar várias transações (subtransações). Cada transação ou subtran
 **.stopRequestLog()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Type |  | Descrição                       |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->detém qualquer registro de petições ORDA do lado do cliente<!-- END REF --> (em arquivo ou na memória). É particularmente útil quando se registrar um arquivo, já que realmente fecha o documento aberto no disco.
 
@@ -846,13 +846,13 @@ Ver exemplos [`.startRequestLog()`](#startrequestlog).
 **.validateTransaction()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Type |  | Descrição                       |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
 A função `.validateTransaction()` <!-- REF #DataStoreClass.validateTransaction().Summary -->aceita a transação <!-- END REF -->que se iniciou com [`.startTransaction()`](#starttransaction) no nível correspondente do datastore especificado.
 

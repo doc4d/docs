@@ -6,7 +6,7 @@ title: IMAPTransporter
 The `IMAPTransporter` class allows you to retrieve messages from a IMAP email server.
 
 
-### IMAP Transporter object
+### Objeto IMAP Transporter
 
 IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-new-transporter) command. They provide the following properties and functions:
 
@@ -1259,7 +1259,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 | msgsIDs        | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
 | allMsgs        | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
 | destinationBox | Texto      | -> | Mailbox to receive moved messages                         |
-| Resultado      | Objeto     | <- | Status of the move operation                              |
+| Resultado      | Objeto     | <- | Estado de la operación de desplazamiento                  |
 <!-- END REF -->
 
 
