@@ -119,8 +119,17 @@
       "Backup/settings": {
         "title": "Backup Settings"
       },
+      "code-editor/interface": {
+        "title": "Interface"
+      },
       "code-editor/navigation": {
         "title": "Navigation dropdown"
+      },
+      "code-editor/overview": {
+        "title": "Overview"
+      },
+      "code-editor/write-class-method": {
+        "title": "Writing classes and methods"
       },
       "Concepts/about": {
         "title": "About the 4D Language"
