@@ -7,8 +7,6 @@ By default, a window of the code editor consists of several areas: a toolbar, an
 
 ![dropdown-list](assets/en/code-editor/code-editor-hello.png)
 
-You can customize the method editing area, for example by adding lists or hiding line numbers.
-
 ## Interface
 
 Each Method editor window contains a toolbar that provides instant access to basic functions related to method execution and editing.
@@ -24,11 +22,23 @@ Each Method editor window contains a toolbar that provides instant access to bas
 | **Clipboards** | ![clipboard icons](assets/en/code-editor/clipboards.png) | Nine clipboards available in the code editor. You can use these clipboards by clicking on them directly or by using keyboard shortcuts. For more information, refer to [Writing classes and methods](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards). |
 | **Code navigation** | ![code-navigation-icons](assets/en/code-editor/tags.png) | Lets you navigate inside methods and classes with automatically tagged content or manually declared markers. See [Navigation dropdown](./navigation.md). |
 
-#### Lists area  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
+## Editing area
+
+The editing area contains the text of the method. You enter and modify the method text in this area. The editor automatically indents method text and colors the different syntax elements for clear code structure.
+
+You can customize the display of this area. Any customization is automatically passed on to all the windows of the editor.
+
+- **font** and **font size**: you set the character font and size to be used in the editing area on the [**Methods**](../Preferences/methods.md) page of the **Preferences**. You can also change the font size using the **Method > View** submenu: the **Bigger Font** and **Smaller Font** commands allow you to change the font size.
+- **style and color of syntax elements**: You can assign a specific color and/or style to each type of element of the 4D language. To do so, right-click on a language element (variable, keyword, etc.) and choose an option from the **Style** submenu. The modification is applied to all the elements of the same type in the current window as well as any other editor windows. You can also set these options on the [**Methods**](../Preferences/methods.md) page of the **Preferences**.
+- **spaces**: You can display the spaces between words using dots (.) instead of "blank space". To do this, choose the **View > White Spaces** command of the **Method** menu (a check mark indicates whether spaces are displayed). This function applies to all the code elements (command names, variables, comments, etc.). Not supported in classes.
+- **width of code endentations**: You can set this option on the [**Methods**](../Preferences/methods.md) page of the **Preferences**.
+- **interface colors**: You can change the different colors used in the interface of the editing area (highlighting, background, and so on) using the options found on the [**Methods**](../Preferences/methods.md) page of the **Preferences**.
+
+For more information about entering code in this area, refer to [Writing a method](https://doc.4d.com/4Dv19R4/4D/19-R4/Writing-a-method.300-5736961.en.html).
+
+### Lists area
 
 The lists area lets you display one or more lists of elements necessary for writing methods (commands, constants, forms, etc.). You can choose the number and contents of the lists displayed in the window.
-
-##### Lists display  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
 
 By default, the Method editor displays four lists. You can enlarge or reduce the relative width of each list area by dragging one of its partitions. It is also possible to adjust the size of the list area in relation to that of the editing area by dragging the dividing line between them.
 
@@ -69,30 +79,19 @@ You can display the following lists of items in the lists area of the Method edi
 
 **Note:** Except for the Macros element, all the lists are in alphabetical order.
 
-#### Break points area  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
+## Break points area
 
 This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
 
-To insert a break point, click in the break points area at the location you want it to be placed or choose the **Toggle Breakpoint** command from the context menu of the editor. A red dot indicates the presence of a break point.
-
-![](https://livedoc.4d.com/dynpict29400/picture/440848/pict440848.en.png)
-
-You can display the location of all the break points present in the database in the [Runtime Explorer](https://livedoc.4d.com/What-s-new/4D-Design-Reference-19-R4/Runtime-Explorer.200-5736712.en.html).
-
-To delete a break point, click the red dot or choose the **Toggle Breakpoint** command in the context menu again.
-
-To temporarily disable a break point or modify its properties, press the **Alt** key (Windows) or the **Option** key (Mac OS) while clicking on the break point or choose the **Edit Breakpoint...** command in the context menu of the editor. When you click the break point, the break point property window is displayed. For a complete description of break points, refer to [Break Points](https://livedoc.4d.com/4D-Language-Reference-14-R3/Debugging/Break-Points.300-1552187.en.html) in the 4D *Language Reference* manual.
-
-##### Displaying/hiding line numbers  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
-
 You can display or hide the line numbers in the break points area for each window of the Method editor.
 
-- The display of line numbers can be enabled or disabled by default using the **Show Line Numbers** option on the [Methods Page](https://livedoc.4d.com/4D-Design-Reference-19-R4/Preferences/Methods-Page.300-5736748.en.html)of the 4D Preferences.
-- It is also possible to modify this display separately for each window of the Method editor, using the **View> Line Numbers** command in the **Method** menu.
+- You can enable or disable the display of line numbers by default. To do this, use the  **Show Line Numbers** option on the [Methods Page](https://livedoc.4d.com/4D-Design-Reference-19-R4/Preferences/Methods-Page.300-5736748.en.html) of the **Preferences**.
 
-Displaying the line numbers makes it easier to find your way around in the window. The **Go to Line Number...** command in the **Method** menu also lets you take advantage of this display (see the "Goto Line..." section of [Find and replace in methods](https://livedoc.4d.com/4D-Design-Reference-19-R4/Editing-methods/Find-and-replace-in-methods.300-5736963.en.html)).
+- You can also modify this display separately for each window of the Code Editor, using the **View> Line Numbers** command in the **Method** menu.
 
-#### Status bar  ![Outline](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Outline")![Edit](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Edit")![Delete](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Delete")![Organize](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Organize")![See the differences](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "See the differences")![Anchor](https://livedoc.4d.com/dynpict29400/image/tool16x16/spacer.png "Anchor")
+Displaying the line numbers makes it easier to find your way around in the window. The **Go to Line Number...** command in the **Method** menu also lets you take advantage of this display.
+
+## Status bar
 
 The status bar located at the bottom right part of the editor window displays the position of the cursor at all times:
 
