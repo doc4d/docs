@@ -415,7 +415,7 @@ By default, the value is 100. You can set the number anywhere between 10 and 320
 
 Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
 
-This limit is used to avoid web server saturation due to incoming requests that are too large. When a request reaches this limit, the 4D web server rejects it.
+This limit is used to avoid web server saturation due to incoming requests that are too large. This limit is used to avoid web server saturation due to incoming requests that are too large.
 
 Possible values: 500 000 to 2 147 483 648.
 
@@ -516,11 +516,11 @@ In this case, robots are not allowed to access the entire site.
 
 ## Root Folder
 
-| Can be set with       | Nome                                             | Comments                                                                                                                              |
-| --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer object      | [`rootFolder`](API/WebServerClass.md#rootfolder) | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
-| `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                       |
-| Settings dialog box   | Configuration page/Default HTML Root             |                                                                                                                                       |
+| Can be set with       | Nome                                             | Comments                                                                                                                               |
+| --------------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| webServer object      | [`rootFolder`](API/WebServerClass.md#rootfolder) | Text property but can be a [`4D. Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
+| `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                        |
+| Settings dialog box   | Configuration page/Default HTML Root             |                                                                                                                                        |
 
 Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
 
