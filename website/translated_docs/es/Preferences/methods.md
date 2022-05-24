@@ -36,7 +36,7 @@ If key values are not defined in a custom theme, they default to the values from
 
 ## Definir el tema
 
-Defining a theme means:
+Definir un tema significa:
 
 - setting a global font and font size for the whole code editor,
 - assigning specific styles and colors to each 4D language element (fields, tables, variables, parameters, SQL, etc.), SQL language element (keywords, functions, etc.), and color backgrounds.
@@ -47,7 +47,7 @@ Combining different colors and styles is particularly useful for code maintenanc
 
 The **font** and **font size** menus allows you to select the font name and size used in the Method editor entry area for all categories.
 
-### 4D Language and SQL Language
+### Lenguaje 4D y lenguaje SQL
 
 You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
 
@@ -63,11 +63,11 @@ These options configure the various colors used in the Method editor and debugge
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Color de fondo**                                | Background color of Method editor window.                                                                                                                                |
 | **Border of the running line in the debugger**    | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
-| **Cursor line background color**                  | Background color of line containing the cursor.                                                                                                                          |
+| **Color de fondo de la línea del cursor**         | Background color of line containing the cursor.                                                                                                                          |
 | **Execution line background color**               | Background color of line being executed in the debugger.                                                                                                                 |
-| **Highlight of the found words**                  | Highlight color of words found in a search.                                                                                                                              |
-| **Highlight of the parentheses**                  | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
-| **Highlight of the blocks**                       | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
+| **Resaltar las palabras encontradas**             | Highlight color of words found in a search.                                                                                                                              |
+| **Destacar los paréntesis**                       | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
+| **Resaltado de los bloques**                      | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
 | **Highlight of the same variable or field**       | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options). |
 | **Highlight of the running line in the debugger** | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                            |
 | **Color de fondo de la selección**                | Background color of selection.                                                                                                                                           |
@@ -113,7 +113,7 @@ Lets you display the line numbers by default in each window of the Method editor
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
 
-#### Show clipboards
+#### Mostrar los portapapeles
 
 Lets you choose whether or not to show the multiple clipboards in the code editor.
 
@@ -129,13 +129,13 @@ When checked, the whole code belonging to a logical block (If/End if for example
 
 The highlight color can be set in the [Theme](#theme-definition) page.
 
-#### Always show block lines
+#### Mostrar siempre las líneas de bloques
 
 Allows to hide vertical block lines permanently. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
 
 ![](assets/en/Preferences/optionsBlockLines.png)
 
-#### Hide collapse/expand icons
+#### Ocultar los iconos contraer/expandir
 
 Allows you to hide all expand/collapse icons by default when displaying code. When the option is checked, node icons (as well as local block lines, see above), are displayed temporarily when the mouse is placed over a node:
 
