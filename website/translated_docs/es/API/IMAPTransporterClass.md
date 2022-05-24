@@ -1194,7 +1194,7 @@ En el primer parámetro, puede pasar:
 El parámetro opcional *updateSeen* permite indicar si el mensaje está marcado como "visto" en el buzón. Puede pasar:
 
 *   **True** - para marcar el mensaje como "visto" (indicando que el mensaje ha sido leído)
-*   **False** - para dejar intacto el estado "visto" del mensaje
+*   **False** - para dejar intacto el estado "visto" del mensaje > * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente, > * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error, > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
 > * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente,
 > * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error,
 > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
