@@ -904,7 +904,7 @@ donde:
 *   **value**: the value to compare to the current value of the property of each entity in the entity selection or element in the collection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property.<p><p> When using a constant value, the following rules must be respected:
     *   **text** type constant can be passed with or without simple quotes (see **Using quotes** below). To query a string within a string (a "contains" query), use the wildcard symbol (@) in value to isolate the string to be searched for as shown in this example: "@Smith@". The following keywords are forbidden for text constants: true, false.
     *   **boolean** type constants: **true** or **false** (case sensitive).
-    *   Valores constantes de tipo **numérico**: los decimales se separan con un '.' (punto).
+    *   Valores constantes de tipo **numérico**: los decimales se separan con un '.'
     *   **date** type constants: "YYYY-MM-DD" format
     *   Constantes **null**: utilizando la palabra clave "null" encontrará las propiedades **null** y **undefined**.
     *   en el caso de una búsqueda con un comparador IN, el *valor* debe ser una colección, o valores que coincidan con el tipo de la ruta del atributo entre \[ ] separados por comas (para las cadenas, los caracteres `"` deben escaparse con `\`).
@@ -1124,7 +1124,7 @@ En el parámetro *querySettings* se puede pasar un objeto que contenga opciones 
 
 **Sobre queryPlan y queryPath**
 
-La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Puede resultarle útil analizar esta información mientras desarrolla sus aplicaciones. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
+La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
 
 Por ejemplo, si ejecuta la siguiente búsqueda:
 
@@ -1137,9 +1137,9 @@ queryPlan:
 
 ```4d
 {Or:[{And:[{item:[index : Employee.salary ] < 50000},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.name ] = Lima West Kilo}]}]},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.revenues ] > 10000000}]}]}
 ```
 
@@ -1148,8 +1148,8 @@ queryPath:
 ```4d
 {steps:[{description:OR,time:63,recordsfounds:1388132,  
     steps:[{description:AND,time:32,recordsfounds:131,  
-    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:0,recordsfounds:131,  
-    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:31,recordsfounds:1388132,  
+    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:0,recordsfounds:131,  
+    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:31,recordsfounds:1388132,  
     steps:[{steps:[{description:[index : Company.revenues ] > 10000000,time:0,recordsfounds:933}]}]}]}]}
 ```
 
