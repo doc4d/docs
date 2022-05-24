@@ -152,17 +152,13 @@ The following *City* catalog is exposed in a remote datastore (partial view):
 The `City Class` provides an API:
 
 ```4d  
-// cs.City class
-
-Class extends DataClass
-
-Function getCityName()
+// cs. City class Class extends DataClass Function getCityName()
     var $1; $zipcode : Integer
-    var $zip : 4D.Entity
+    var $zip : 4D. Entity
     var $0 : Text
 
     $zipcode:=$1
-    $zip:=ds.ZipCode.get($zipcode)
+    $zip:=ds. ZipCode.get($zipcode)
     $0:="" 
 
     If ($zip#Null)
@@ -196,14 +192,9 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 #### Exemplo
 
 ```4d
-// cs.EmployeeSelection class
+// cs. EmployeeSelection class Class extends EntitySelection
 
-
-Class extends EntitySelection
-
-//Extract the employees with a salary greater than the average from this entity selection 
-
-Function withSalaryGreaterThanAverage
+//Extract the employees with a salary greater than the average from this entity selection Function withSalaryGreaterThanAverage
     C_OBJECT($0)
     $0:=This.query("salary > :1";This.average("salary")).orderBy("salary")
 
@@ -342,7 +333,7 @@ The *getter* function defines the data type of the computed attribute thanks to 
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Type    | Description                                                                               |
+| Propriedade   | Type    | Descrição                                                                                 |
 | ------------- | ------- | ----------------------------------------------------------------------------------------- |
 | attributeName | Texto   | Computed attribute name                                                                   |
 | dataClassName | Texto   | Dataclass name                                                                            |
@@ -404,7 +395,7 @@ The *$value* parameter receives the value assigned to the attribute.
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Type    | Description                                   |
+| Propriedade   | Type    | Descrição                                     |
 | ------------- | ------- | --------------------------------------------- |
 | attributeName | Texto   | Computed attribute name                       |
 | dataClassName | Texto   | Dataclass name                                |
@@ -440,7 +431,7 @@ This function supports three syntaxes:
     - If *$result* is a Text, it must be a valid query string
     - If *$result* is an Object, it must contain two properties:
 
-    | Propriedade        | Type    | Description                                         |
+    | Propriedade        | Type    | Descrição                                           |
     | ------------------ | ------- | --------------------------------------------------- |
     | $result.query      | Texto   | Valid query string with placeholders (:1, :2, etc.) |
     | $result.parameters | Coleção | values for placeholders                             |
@@ -451,7 +442,7 @@ The `query` function executes whenever a query using the computed attribute is l
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Type    | Description                                                                                                                                                                                                                                                                                                                                                      |
+| Propriedade   | Type    | Descrição                                                                                                                                                                                                                                                                                                                                                        |
 | ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | attributeName | Texto   | Computed attribute name                                                                                                                                                                                                                                                                                                                                          |
 | dataClassName | Texto   | Dataclass name                                                                                                                                                                                                                                                                                                                                                   |
@@ -584,7 +575,7 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Type     | Description                                                                                                |
+| Propriedade   | Type     | Descrição                                                                                                  |
 | ------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
 | attributeName | Texto    | Computed attribute name                                                                                    |
 | dataClassName | Texto    | Dataclass name                                                                                             |
@@ -800,16 +791,15 @@ Class extends DataClass
 //Public function
 exposed Function registerNewStudent($student : Object) -> $status : Object
 
-var $entity : cs.StudentsEntity
+var $entity : cs. StudentsEntity
 
-$entity:=ds.Students.new()
+$entity:=ds. Students.new()
 $entity.fromObject($student)
 $entity.school:=This.query("name=:1"; $student.schoolName).first()
 $entity.serialNumber:=This.computeSerialNumber()
 $status:=$entity.save()
 
-//Not exposed (private) function
-Function computeIDNumber()-> $id : Integer
+//Not exposed (private) function Function computeIDNumber()-> $id : Integer
 //compute a new ID number
 $id:=...
 
@@ -824,8 +814,8 @@ var $id : Integer
 $remoteDS:=Open datastore(New object("hostname"; "127.0.0.1:8044"); "students")
 $student:=New object("firstname"; "Mary"; "lastname"; "Smith"; "schoolName"; "Math school")
 
-$status:=$remoteDS.Schools.registerNewStudent($student) // OK
-$id:=$remoteDS.Schools.computeIDNumber() // Error "Unknown member method" 
+$status:=$remoteDS. Schools.registerNewStudent($student) // OK
+$id:=$remoteDS. Schools.computeIDNumber() // Error "Unknown member method" 
 ```
 
 
@@ -871,10 +861,10 @@ Class extends Entity
 local Function age() -> $age: Variant
 
 If (This.birthDate#!00-00-00!)
+    If (This.birthDate#!00-00-00!)
     $age:=Year of(Current date)-Year of(This.birthDate)
 Else 
-    $age:=Null
-End if
+    $age:=Null End if
 ```
 
 #### Checking attributes
@@ -908,8 +898,7 @@ var $status : Object
 //Form.student is loaded with all its attributes and updated on a Form
 $status:=Form.student.checkData()
 If ($status.success)
-    $status:=Form.student.save() // call the server
-End if
+    $status:=Form.student.save() // call the server End if
 ```
 
 
