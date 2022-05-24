@@ -91,7 +91,7 @@ When this option is selected, the web server does not provide any specific suppo
 
 In this mode, you can configure additional web server setttings:
 
--   [Maximum Concurrent Web Processes](#maximum-concurrent-web-processes)
+-   [Procesos Web simultáneos maximos](#maximum-concurrent-web-processes)
 -   [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts)
 -   [Use preemptive processes](#use-preemptive-web-processes)
 
@@ -103,7 +103,7 @@ This option enables the handling of legacy user sessions by the 4D HTTP server. 
 
 When selected, the [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts) option is automatically checked (and locked).
 
-#### Maximum Concurrent Web Processes
+#### Procesos Web simultáneos maximos
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
@@ -254,8 +254,8 @@ Configure the automatic backup parameters for the request log. Primero debe eleg
 
     -   **starting at**: Used to set the time at which the first back up will begin.
 -   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
--   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired. For example, you can use this option to set two weekly backups: one on Wednesdays and one on Fridays.
--   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. When this option is checked, you must indicate the day of the month and the time when the backup must be started.
+-   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
+-   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. Introduzca 1 si desea realizar una copia de seguridad mensual.
 -   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
 
 > In the case of scheduled backups, if the Web server was not launched when the backup was scheduled to occur, on the next startup 4D considers the backup as failed and applies the appropriate settings, set via the Database Settings.
