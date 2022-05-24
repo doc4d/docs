@@ -247,7 +247,7 @@ For example, if objects of the current page and groups have been modified, you c
 ```
 
 
-#### `method` attribute
+#### atributo `method`
 
 When handling the `method` attribute of form objects, you can define the attribute value in two ways in macros:
 
@@ -258,7 +258,7 @@ When handling the `method` attribute of form objects, you can define the attribu
 | Propiedad | Tipo | Descripción |
 | --------- | ---- | ----------- |
 |           |      |             |
- source|String|method code|
+ source|Cadena|Código del método|
 
 4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. This feature is only available for macro code.
 
@@ -306,7 +306,7 @@ Function onInvoke($editor : Object)->$result : Object
 | $resultMacro |                       | Objeto     | Object returned by [onInvoke](#oninvoke) |
 | $error       |                       | Collection | Error stack                              |
 |              | [].errCode            | Número     | Código de error                          |
-|              | [].message            | Texto      | Description of the error                 |
+|              | [].message            | Texto      | Descripción del error                    |
 |              | [].componentSignature | Texto      | Internal component signature             |
 
 The `onError` function is executed when the macros processor encounters an error.
