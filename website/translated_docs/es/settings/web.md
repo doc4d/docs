@@ -166,7 +166,7 @@ Enables Cross-origin resource sharing (CORS) service. See [Enable CORS Service](
 
 #### Domain names/HTTP methods allowed
 
-List of allowed hosts and methods for the CORS service. See [CORS Settings](../WebServer/webServerConfig.md#cors-settings).
+Lista de hosts y métodos permitidos para el servicio CORS. See [CORS Settings](../WebServer/webServerConfig.md#cors-settings).
 
 
 
