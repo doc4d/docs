@@ -15,7 +15,7 @@ Each Method editor window contains a toolbar that provides instant access to bas
 
 |Element|Icon|Description|
 |---|---|---|
-|**Method execution**|![dropdown-list](assets/en/code-editor/execute-method.png)|This button causes the execution of the method. Using the menu associated with the button, you can select the type of execution. Only project and database methods can be run using this button.|
+|**Method execution**|![execute-method](assets/en/code-editor/execute-method.png)|This button causes the execution of the method. Using the menu associated with the button, you can select the type of execution. Only project and database methods can be run using this button.|
 | **Search**|![search-icon](assets/en/code-editor/search.png) | Allows performing a search in the current method.|
 | **Macros**| ![macros-button](assets/en/code-editor/macros.png) | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](../FormEditor/macros.md). |
 | **Expand all / Collapse all**|![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png) | These buttons allow expanding or collapsing all the control flow structures of the method. |
