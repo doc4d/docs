@@ -950,7 +950,7 @@
         "title": "Procesamiento de peticiones HTTP"
       },
       "WebServer/preemptiveWeb": {
-        "title": "Using preemptive web processes"
+        "title": "Uso de procesos web apropiativos"
       },
       "WebServer/sessions": {
         "title": "Sesiones usuario"

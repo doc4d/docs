@@ -953,7 +953,7 @@
         "title": "Using preemptive web processes"
       },
       "WebServer/sessions": {
-        "title": "User sessions"
+        "title": "Sessions utilisateur"
       },
       "WebServer/templates": {
         "title": "Template pages"
