@@ -123,7 +123,7 @@ Here is the sequence of callback calls:
 The function returns a system worker object on which you can call functions and properties of the SystemWorker class.
 
 
-#### Examples on Windows
+#### Ejemplos en Windows
 
 1. To open Notepad and open a specific document:
 
@@ -577,7 +577,7 @@ Esta propiedad es **de sólo lectura**.
 | Parámetros | Tipo            |    | Descripción               |
 | ---------- | --------------- |:--:| ------------------------- |
 | timeout    | Real            | -> | Waiting time (in seconds) |
-| Resultado  | 4D.SystemWorker | <- | SystemWorker object       |
+| Resultado  | 4D.SystemWorker | <- | Objeto SystemWorker       |
 <!-- END REF -->
 
 
