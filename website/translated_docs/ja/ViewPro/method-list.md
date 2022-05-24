@@ -144,7 +144,7 @@ VP ADD SELECTION($currentSelection)
 
 ### VP ADD SHEET 
 
-<!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer ; *name* : Text )
+<!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *sheet* : Integer ; *name* : Text )
 <!-- END REF --> 
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
@@ -152,7 +152,7 @@ VP ADD SELECTION($currentSelection)
 | 引数         | タイプ     |    | 説明                      |
 | ---------- | ------- | -- | ----------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
-| index      | Integer | -> | 新しいシートのインデックス           |
+| sheet      | Integer | -> | 新しいシートのインデックス           |
 | name       | Text    | -> | シート名                    |	
 <!-- END REF --> 
 
@@ -162,7 +162,7 @@ VP ADD SELECTION($currentSelection)
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-*index* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
+In *sheet*, you can pass an index for the new sheet. 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
 > インデックスは 0 起点です。
 
 *name* 引数として、新しいシートの名前を渡します。 新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
@@ -234,22 +234,22 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 ### VP ADD STYLESHEET
 
-<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *sheet* : Integer } ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                           |
-| ---------- | ------- | -- | ---------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名      |
-| styleName  | Text    | -> | スタイルの名前                      |
-| styleObj   | Object  | -> | 属性設定を定義するオブジェクト              |
-| scope      | Integer | -> | ターゲットのスコープ (デフォルト = カレントシート) |
+| 引数         | タイプ     |    | 説明                          |
+| ---------- | ------- | -- | --------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
+| styleName  | Text    | -> | スタイルの名前                     |
+| styleObj   | Object  | -> | 属性設定を定義するオブジェクト             |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
 <!-- END REF -->  
 
 #### 説明
 
-`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とスコープを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 If a style sheet with the same name and index already exists in the document, this command will overwrite it with the new values.
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
@@ -260,7 +260,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 *styleObj* には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 スタイルプロパティの完全な一覧については、[スタイルオブジェクトプロパティ](configuring.md#スタイルオブジェクトプロパティ) を参照ください。
 
-任意の *scope* 引数を使用することで、スタイルシートをどこに定義するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
+You can designate where to define the style sheet in the optional *sheet* parameter using the sheet index (indexing starts at 0) or with the following constants:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -858,7 +858,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 | valuesOnly           | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
 | includeFormatInfo    | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
 | includeBindingSource | Boolean | 4DVP のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                                           |
-| sheetIndex           | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
+| sheet                | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
 | pdfOptions           | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
 | csvOptions           | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
 | \<customProperty>   | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                            |
@@ -917,7 +917,7 @@ VP EXPORT DOCUMENT("VPArea";$docPath)
 var $params: Object
 $params:=New object
 $params.format:=vk pdf format
-$params.sheetIndex:=-1
+$params.sheet:=-1
 $params.pdfOptions:=New object("title";"Annual Report";"author";Current user)
 VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 ```
@@ -1475,7 +1475,7 @@ $index:=VP Get current sheet("ViewProArea")
 | v19 R5 | 追加 |
 </details>
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
@@ -1483,7 +1483,7 @@ $index:=VP Get current sheet("ViewProArea")
 | 引数         | タイプ                      |    | 説明                       |
 | ---------- | ------------------------ | -- | ------------------------ |
 | vpAreaName | Object                   | -> | 4D View Pro フォームオブジェクト名  |
-| sheetIndex | Integer                  | -> | データコンテキストを取得するシートのインデックス |
+| sheet      | Integer                  | -> | データコンテキストを取得するシートのインデックス |
 | 戻り値        | Object &#124; Collection | <- | データコンテキスト                |
 
 <!-- END REF -->  
@@ -1492,7 +1492,7 @@ $index:=VP Get current sheet("ViewProArea")
 
 `VP Get data context` コマンドは、 <!-- REF #_method_.VP Get data context.Summary -->ワークシートのカレントのデータコンテキストを返します<!-- END REF -->。 返されるコンテキストには、データコンテキストの内容に対しておこなわれた変更を含みます。
 
-*sheetIndex* には、データコンテキストを取得するシートのインデックスを渡します。 インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
+In *sheet*, pass the index of the sheet to get the data context from. インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
 
 [VP SET DATA CONTEXT](#vp-set-data-context) により設定されたデータコンテキストの種類によって、関数はオブジェクトまたはコレクションを返します。
 
@@ -2232,16 +2232,16 @@ VP SET CELL STYLE($range;$style)
 
 ### VP Get stylesheet
 
-<!-- REF #_method_.VP Get stylesheet.Syntax -->**VP Get stylesheet** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } ) : Object<!-- END REF -->  
+<!-- REF #_method_.VP Get stylesheet.Syntax -->**VP Get stylesheet** ( *vpAreaName* : Text ; *styleName* : Text { ; *sheet* : Integer } ) : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| 引数         | タイプ     |    | 説明                           |
-| ---------- | ------- | -- | ---------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名      |
-| styleName  | Text    | -> | スタイルの名前                      |
-| scope      | Integer | -> | ターゲットのスコープ (デフォルト = カレントシート) |
-| 戻り値        | Object  | <- | スタイルシートオブジェクト                |
+| 引数         | タイプ     |    | 説明                          |
+| ---------- | ------- | -- | --------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
+| styleName  | Text    | -> | スタイルの名前                     |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | Object  | <- | スタイルシートオブジェクト               |
 <!-- END REF -->  
 
 #### 説明
@@ -2252,7 +2252,7 @@ VP SET CELL STYLE($range;$style)
 
 *styleName* には、取得するスタイルシートの名前を渡します。
 
-任意の *scope* 引数を使用することで、スタイルシートをどこから取得するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
+You can define where to get the style sheet in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2284,24 +2284,24 @@ borderTop:{color:green,style:10}
 
 ### VP Get stylesheets
 
-<!-- REF #_method_.VP Get stylesheets.Syntax -->**VP Get stylesheets** ( *vpAreaName* : Text { ; *scope* : Integer } ) : Collection<!-- END REF -->  
+<!-- REF #_method_.VP Get stylesheets.Syntax -->**VP Get stylesheets** ( *vpAreaName* : Text { ; *sheet* : Integer } ) : Collection<!-- END REF -->  
 
 <!-- REF #_method_.VP Get stylesheets.Params -->
 
 | 引数         | タイプ        |    | 説明                           |
 | ---------- | ---------- | -- | ---------------------------- |
 | vpAreaName | Text       | -> | 4D View Pro フォームオブジェクト名      |
-| scope      | Integer    | -> | ターゲットのスコープ (デフォルト = カレントシート) |
+| sheet      | Integer    | -> | ターゲットのスコープ (デフォルト = カレントシート) |
 | 戻り値        | Collection | <- | スタイルシートオブジェクトのコレクション         |
 <!-- END REF -->  
 
 #### 説明
 
-`VP Get stylesheets` コマンドは、 <!-- REF #_method_.VP Get stylesheets.Summary -->*scope* で指定されたスコープにおいて定義されているスタイルシートのコレクションを返します<!-- END REF -->。
+The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *sheet*<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-任意の *scope* 引数を使用することで、スタイルシートをどこから取得するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
+You can define where to get the style sheets in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2746,7 +2746,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 ### VP Name
 
-<!-- REF #_method_.VP Name.Syntax -->**VP Name** ( *vpAreaName* : Text ; *rangeName* : Text { ; *scope* : Integer }  ) : Object <!-- END REF -->  
+<!-- REF #_method_.VP Name.Syntax -->**VP Name** ( *vpAreaName* : Text ; *rangeName* : Text { ; *sheet* : Integer }  ) : Object <!-- END REF -->  
 
 <!-- REF #_method_.VP Name.Params -->
 
@@ -2754,7 +2754,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 | ---------- | ------- | -- | ----------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | rangeName  | Text    | -> | 既存のレンジ名                 |
-| scope      | Integer | -> | レンジの場所 (省略時はカレントシート)    |
+| sheet      | Integer | -> | レンジの場所 (省略時はカレントシート)    |
 | 戻り値        | Object  | <- | rangeName のレンジオブジェクト    |
 
 <!-- END REF -->  
@@ -2767,7 +2767,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 *rangeName* には、既存のセルレンジ名を渡します。
 
-任意の *scope* 引数として、*rangeName* のレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where *rangeName* is defined. 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -3017,7 +3017,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 ### VP REMOVE NAME
 
-<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *sheet* : Integer } ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
@@ -3143,15 +3143,15 @@ VP REMOVE SHEET("ViewProArea";2)
 
 ### VP REMOVE STYLESHEET
 
-<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } ) <!-- END REF -->  
+<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *sheet* : Integer } ) <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE STYLESHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                           |
-| ---------- | ------- | -- | ---------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名      |
-| styleName  | Text    | -> | 削除するスタイルの名前                  |
-| scope      | Integer | -> | ターゲットのスコープ (デフォルト = カレントシート) |
+| 引数         | タイプ     |    | 説明                          |
+| ---------- | ------- | -- | --------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
+| styleName  | Text    | -> | 削除するスタイルの名前                 |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -3163,7 +3163,7 @@ VP REMOVE SHEET("ViewProArea";2)
 
 *styleName* 引数には、削除するスタイルシートの名前を渡します。
 
-任意の *scope* 引数を使用することで、スタイルシートをどこから削除するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
+You can define where to remove the style in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -3897,7 +3897,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 ### VP SET CURRENT SHEET
 
-<!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *index* : Integer)
+<!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *sheet* : Integer)
 <!-- END REF --> 
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
@@ -3905,7 +3905,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 | 引数         | タイプ     |    | 説明                      |
 | ---------- | ------- | -- | ----------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
-| index      | Integer | <- | 新しいカレントシートのインデックス       |
+| sheet      | Integer | <- | 新しいカレントシートのインデックス       |
 <!-- END REF --> 
 
 #### 説明
@@ -3914,7 +3914,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-*index* 引数には、カレントシートに設定したいシートのインデックスを渡します。 index 引数が 0未満の場合、またはシートの総数より多い場合、コマンドは何もしません。
+In *sheet*, pass the index of the sheet to be set as current sheet. index 引数が 0未満の場合、またはシートの総数より多い場合、コマンドは何もしません。
 
 > インデックスは 0 起点です。
 
@@ -4025,7 +4025,7 @@ End case
 | v19 R5 | 追加 |
 </details>
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object {; *sheetIndex* : Integer}} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object {; *sheetIndex* : Integer}} )<!-- END REF -->
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object } {; *sheet* : Integer} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object } {; *sheet* : Integer} )<!-- END REF -->
 
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
@@ -4036,7 +4036,7 @@ End case
 | dataObj    | Object     | -> | データコンテキストに読み込むデータオブジェクト  |
 | dataColl   | Collection | -> | データコンテキストに読み込むデータのコレクション |
 | options    | Object     | -> | 追加のオプション                 |
-| sheetIndex | Integer    | -> | シートのインデックス               |
+| sheet      | Integer    | -> | シートのインデックス               |
 
 <!-- END REF -->
 
@@ -4062,7 +4062,7 @@ End case
 | reset               | Object | 新しいコンテキストを読み込む前にシートの内容をリセットする場合は true、それ以外は false (デフォルト)                                                              |
 | autoGenerateColumns | Object | コレクション型のデータの場合にのみ使用します。 データコンテキストがバインドされると同時に、カラムを自動生成する場合は true (デフォルト)。 この場合、次のルールが適用されます: <ul><li>*dataColl* がオブジェクトのコレクションの場合、属性名はカラムのタイトルとして使用されます (例題 2 参照)。</li><li>*dataColl* がスカラー値のサブコレクションを含む場合、各サブコレクションは一つの行の値を定義します (例題 3 参照)。 最初のサブコレクションにより、生成されるカラム数が決定します。</li></ul> |
 
-*sheetIndex* には、データコンテキストを受け取るシートのインデックスを渡します。 インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
+In *sheet*, pass the index of the sheet that will receive the data context. インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
 
 [VP Export to object](#vp-export-to-object) でドキュメントをオブジェクトにエクスポート、または [VP EXPORT DOCUMENT](#vp-export-document) でドキュメントを 4DVP ドキュメントにエクスポートする場合、`includeBindingSource` オプションを使うことで、現在のコンテキストの内容をエクスポート先のセルの値としてコピーすることができます。 詳細については、これらのメソッドの説明を参照ください。
 
@@ -4762,7 +4762,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 ### VP SET SHEET NAME
 
-<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} ) 
+<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; *sheet*: Integer} ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
@@ -4771,7 +4771,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 | ---------- | ------- | -- | ----------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | name       | Text    | -> | シートの新しい名称               |
-| index      | Integer | -> | 名称変更するシートのインデックス        |
+| sheet      | Integer | -> | 名称変更するシートのインデックス        |
 
 <!-- END REF -->  
 
@@ -4783,7 +4783,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 *name* 引数として、シートの新しい名前を渡します。
 
-*index* 引数には、名称変更するシートのインデックスを渡します。
+In *sheet*, pass the index of the sheet to rename.
 
 > インデックスは 0 起点です。
 
@@ -4933,7 +4933,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 ### VP SET SHOW PRINT LINES
 
-<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} ) 
+<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; *sheet* : Integer} ) 
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Params -->
@@ -4942,7 +4942,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                |
 | visible    | Boolean | -> | 印刷線を表示する場合は true (デフォルト)、非表示の場合は false |
-| index      | Integer | -> | シートのインデックス                             |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)            |
 
 <!-- END REF -->  
 
@@ -4954,7 +4954,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 *visible* には、印刷線を表示するには `True`、非表示にするには `False` を渡します。 デフォルトでは `True` が渡されます。
 
-*index* には、ターゲットシートのインデックスを渡します。 index が省略された場合、コマンドはカレントシートに対して適用されます。
+*sheet* には、ターゲットシートのインデックスを渡します。 index が省略された場合、コマンドはカレントシートに対して適用されます。
 
 > インデックスは 0 起点です。
 
