@@ -584,9 +584,9 @@ Value of the `SameSite` attribute value of the session cookie. This attribute al
 
 Hay tres valores disponibles:
 
-- "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
-- "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Estricto" (valor predeterminado del atributo `SameSite` para las cookies de sesión de 4D): las cookies sólo se enviarán en el contexto de primera parte, es decir, el contexto correspondiente al dominio del sitio y nunca a sitios web de terceros.
+- "Lax": las cookies no se envían en las subpeticiones de sitios cruzados (por ejemplo, para cargar imágenes o marcos en un sitio de terceros), sino que se envían cuando un usuario está navegando hacia el sitio de origen (es decir, sigue un enlace).
+- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. Cuando se utiliza el valor "None", el atributo cookie `Secure` también debe ser definido (o la cookie será bloqueada).
 
 The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
 
@@ -649,7 +649,7 @@ In some cases, other optimized internal functions may be invoked. Keep-alive con
 
 Two options allow you to set how the keep-alive connections work:
 
-*   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
+*   **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
 
 *   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
 
