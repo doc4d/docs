@@ -163,7 +163,7 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset. Summ
 
 **Possible values:**
 
-| Constant                 | Value                          | Comment                                                                                                       |
+| Constante                | Value                          | Comment                                                                                                       |
 | ------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                     |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                     |
@@ -217,7 +217,7 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset. The head
 
 **Possible values:**
 
-| Constant                 | Value                          | Comment                                                                                                   |
+| Constante                | Value                          | Comment                                                                                                   |
 | ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                |
