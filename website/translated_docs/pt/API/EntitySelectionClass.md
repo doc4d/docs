@@ -1438,7 +1438,7 @@ The *formulaString* or *formulaObj* is executed for each entity of the entity se
 
 By default if you omit the *sortOrder* parameter, the resulting entity selection is sorted in ascending order. Optionnally, you can pass one of the following values in the *sortOrder* parameter:
 
-| Constant      | Value | Comment                        |
+| Constante     | Value | Comment                        |
 | ------------- | ----- | ------------------------------ |
 | dk ascending  | 0     | Ascending sort order (default) |
 | dk descending | 1     | Descending sort order          |
