@@ -91,7 +91,7 @@ When this option is selected, the web server does not provide any specific suppo
 
 In this mode, you can configure additional web server setttings:
 
--   [Maximum Concurrent Web Processes](#maximum-concurrent-web-processes)
+-   [Procesos Web simultáneos maximos](#maximum-concurrent-web-processes)
 -   [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts)
 -   [Use preemptive processes](#use-preemptive-web-processes)
 
@@ -103,7 +103,7 @@ This option enables the handling of legacy user sessions by the 4D HTTP server. 
 
 When selected, the [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts) option is automatically checked (and locked).
 
-#### Maximum Concurrent Web Processes
+#### Procesos Web simultáneos maximos
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
