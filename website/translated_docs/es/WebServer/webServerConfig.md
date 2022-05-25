@@ -606,17 +606,17 @@ Campo "path" de la cookie de sesión. Se utiliza para controlar el alcance de la
 
 Valor del atributo `SameSite` de la cookie de sesión. Este atributo le permite declarar si su cookie debe estar restringida a un contexto de primera parte o del mismo sitio, como una protección contra ciertos ataques CSRF ([cross-site request forgery](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)).
 
-> For a detailed description of the `SameSite` attribute, please refer to the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) or [this web.dev page](https://web.dev/samesite-cookies-explained/).
+> Para una descripción detallada del atributo `SameSite`, consulte la [documentación de Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) o [esta página web.dev](https://web.dev/samesite-cookies-explained/).
 
 Hay tres valores disponibles:
 
-- "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
-- "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Estricto" (valor predeterminado del atributo `SameSite` para las cookies de sesión de 4D): las cookies sólo se enviarán en el contexto de primera parte, es decir, el contexto correspondiente al dominio del sitio y nunca a sitios web de terceros.
+- "Lax": las cookies no se envían en las subpeticiones de sitios cruzados (por ejemplo, para cargar imágenes o marcos en un sitio de terceros), sino que se envían cuando un usuario está navegando hacia el sitio de origen (es decir, sigue un enlace).
+- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. Cuando se utiliza el valor "None", el atributo cookie `Secure` también debe ser definido (o la cookie será bloqueada).
 
-The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
+El valor del atributo `Secure` de la cookie de sesión se define automáticamente en "True" si la conexión es HTTPS (sea cual sea el valor del atributo `SameSite`).
 
-> It is not recommended to set `SameSite=None` on a HTTP server since the `Secure` attribute will be missing (used in HTTPS only) and cookies will be blocked.
+> No se recomienda definir `SameSite=None` en un servidor HTTP ya que faltará el atributo `Secure` (utilizado sólo en HTTPS) y se bloquearán las cookies.
 
 
 
@@ -626,46 +626,46 @@ The `Secure` attribute value of the session cookie is automatically set to "True
 | ----------------------------- | ------------------------------------------------------------------------------------------------------ | ----------- |
 | Caja de diálogo de parámetros | [Página Opciones (I)/Máximo de Procesos Web Concurrentes](../settings/web.md#use-preemptive-processes) |             |
 
-This option enables the preemptive mode for your application's web server code when **No sessions** option is selected (the preemptive mode is always enabled with **scalable sessions**). When this option is checked in this context, the 4D compiler will automatically evaluate the thread-safety property of each piece of [web-related code](preemptiveWeb.md#thread-safety-of-4d-web-code) and return errors in case of incompatibility.
+Esta opción activa el modo apropiativo para el código del servidor web de su aplicación cuando se selecciona la opción **Sin sesiones** (el modo apropiativo siempre está activado con **sesiones escalables**). Cuando esta opción está marcada en este contexto, el compilador 4D evaluará automáticamente la propiedad hilo seguro de cada pieza de [código relacionado con la web](preemptiveWeb.md#thread-safety-of-4d-web-code) y devolverá errores en caso de incompatibilidad.
 
 
 
 
 ## Parámetros obsoletos
 
-The following settings are still supported but rely on deprecated features or technologies. It is usually recommended to keep default values.
+Los parámetros siguientes siguen siendo compatibles, pero se basan en funcionalidades o tecnologías obsoletas. Normalmente se recomienda conservar los valores por defecto.
 
-#### Allow database access through 4DSYNC URLs
+#### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
 
-This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
+Esta opción controla el soporte de las peticiones de sincronización HTTP que contienen las URLs obsoletas */4DSYNC*.
 
-#### Session IP Address Validation
+#### Validación de la dirección IP de la sesión
 
-> This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
+> Esta opción no está disponible en [modo sesiones evolutivas](WebServer/sessions.md) (no hay validación).
 
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
-
-
+Estado de validación de la dirección IP para las cookies de sesión. Por razones de seguridad, por defecto el servidor web 4D verifica la dirección IP de cada solicitud que contiene una cookie de sesión y la rechaza si esta dirección no coincide con la dirección IP utilizada para crear la cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. Por ejemplo, cuando los dispositivos móviles cambian entre las redes Wifi y 4G/5G, su dirección IP cambiará. En este caso, debe pasar 0 en esta opción para permitir que los clientes puedan seguir utilizando sus sesiones web aunque las direcciones IP cambien. Tenga en cuenta que este parámetro reduce el nivel de seguridad de su aplicación. Cuando se modifica, esta configuración es efectiva inmediatamente (no es necesario reiniciar el servidor HTTP).
 
 
-#### Send Extended Characters Directly
 
-When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
+
+#### Enviar directamente los caracteres extendidos
+
+Cuando esta opción está marcada, el servidor web envía los caracteres extendidos "tal cual" en las páginas semidinámicas, sin convertirlos en entidades HTML. Esta opción ha demostrado un aumento de la velocidad en la mayoría de los sistemas operativos extranjeros (especialmente el sistema japonés).
 
 
 #### Conexiones Keep-Alive
 
-The 4D Web Server can use keep-alive connections. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
+El servidor web 4D puede utilizar conexiones persistentes. La opción keep-alive permite mantener una única conexión TCP abierta para el conjunto de intercambios entre el navegador y el servidor para ahorrar recursos del sistema y optimizar las transferencias.
 
-The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. This option is enabled by default. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
+La opción **Utilizar las conexiones persistentes** activa o desactiva las conexiones TCP persistentes para el servidor web. Esta opción está activada por defecto. En la mayoría de los casos, es aconsejable mantener esta opción marcada ya que acelera los intercambios. Si el navegador web no soporta el mantenimiento de la conexión, el servidor web 4D cambia automáticamente a HTTP/1.0.
 
-The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
+La función de conexiones persistentes del servidor web 4D afecta a todas las conexiones TCP/IP (HTTP, HTTPS). Tenga en cuenta, sin embargo, que las conexiones keep-alive no siempre se utilizan para todos los procesos web de 4D.
 
-In some cases, other optimized internal functions may be invoked. Keep-alive connections are useful mainly for static pages.
+En algunos casos, se pueden invocar otras funciones internas optimizadas. Las conexiones persistentes son útiles principalmente para las páginas estáticas.
 
-Two options allow you to set how the keep-alive connections work:
+Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 
-*   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
+*   **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión permite evitar la inundación del servidor debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p> El valor por defecto (100) puede ser aumentado o disminuido en función de los recursos de la máquina que aloja el servidor 4D web.
 
-*   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
+*   **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web. Una vez finalizado este periodo, el servidor cierra la conexión.<p> Si el navegador web envía una solicitud después de cerrar la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.
 
