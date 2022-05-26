@@ -262,7 +262,7 @@ Pass the size expressed in bytes as value. By default, the compression threshold
 | ----------------------------- | -------------------------------------------- | ----------- |
 | objeto webServer              | [`HTTPPort`](API/WebServerClass.md#httpport) | number      |
 | `WEB SET OPTION`              | `Web port ID`                                |             |
-| Caja de diálogo de parámetros | Configuration page/HTTP Port                 |             |
+| Caja de diálogo de parámetros | Página Configuración/Puerto HTTP             |             |
 
 Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
 
@@ -292,7 +292,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | ----------------------------- | ---------------------------------------------- | ----------- |
 | objeto webServer              | [`HTTPSPort`](API/WebServerClass.md#httpsport) | number      |
 | `WEB SET OPTION`              | `Web HTTPS port ID`                            |             |
-| Caja de diálogo de parámetros | Configuration page/HTTPS Port                  |             |
+| Caja de diálogo de parámetros | Página Configuración/Puerto HTTPS              |             |
 
 Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
 
@@ -328,7 +328,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 | ----------------------------- | -------------------------------------------------------------- | ----------- |
 | objeto webServer              | [`IPAddressToListen`](API/WebServerClass.md#ipaddresstolisten) |             |
 | `WEB SET OPTION`              | `Web IP address to listen`                                     |             |
-| Caja de diálogo de parámetros | Configuration page/IP Address                                  | Menú popup  |
+| Caja de diálogo de parámetros | Página Configuración/Dirección IP                              | Menú popup  |
 
 IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
 
@@ -403,7 +403,7 @@ This setting allows you to select the format of this file. Valores disponibles:
 
 Strictly high limit of concurrent web processes that can be simultaneously open on the server. This parameter allows prevention of server saturation as the result of massive number of requests. When the maximum number of concurrent Web processes (minus one) is reached, 4D no longer creates new processes and sends the HTTP status `503 - Service Unavailable` to all new requests.
 
-By default, the value is 100. You can set the number anywhere between 10 and 32000.
+Por defecto, el valor es 100. You can set the number anywhere between 10 and 32000.
 
 
 ## Tamaño máximo de la petición
