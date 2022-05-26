@@ -48,7 +48,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | Fórmulas | Formula calculation and library |       X        |               X                |
 | Datos    | Gestión de los datos            |       X        |               X                |
 | Mostrar  | Presentación visual             |       X        |               X                |
-| Settings | Sheet presentation reference    |       X        |                                |
+| Settings | Presentación de la hoja         |       X        |                                |
 
 
 
@@ -98,7 +98,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 | sheetAreaOffset      |                        | objeto       | The sheetAreaOffset's options.                                                                                                                                                                                                                                                                            |
 |                      | left                   | entero largo | The offset left of sheet from host.                                                                                                                                                                                                                                                                       |
 |                      | top                    | entero largo | The offset top of sheet from host.                                                                                                                                                                                                                                                                        |
-> All properties are optional.
+> Todas las propiedades son opcionales.
 
 ### Protección de la hoja
 
@@ -122,7 +122,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 |                   | allowInsertColumns       | booleano | Specifies whether the user can insert columns, optional. Falso por defecto.                                                       |
 |                   | allowDeleteRows          | booleano | Specifies whether the user can delete rows, optional. Falso por defecto.                                                          |
 |                   | allowDeleteColumns       | booleano | Specifies whether the user can delete columns, optional. Falso por defecto.                                                       |
-> All properties are optional.
+> Todas las propiedades son opcionales.
 
 
 ## Formato de las celdas
@@ -152,13 +152,13 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 | @         | Formatter for text. Applies the format to all text in the cell                                                                                                                                                                                                                 | "\[Red]@" applies the red font color for text values.                                                                     |
 | *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                           | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
 | " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                   | "8%" será mostrado como: 8%                                                                                                |
-| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | 8% will be displayed as .08                                                                                                |
-| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# will display 1.54 as 1.5                                                                                               |
+| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | El 8% se mostrará como 0,08                                                                                                |
+| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# mostrará 1.54 como 1.5                                                                                                 |
 | ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                              | $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                       |
 | \        | Displays the character following it.                                                                                                                                                                                                                                           | #.00\? #.00\? #.00\? will display 123 as 123.00?                                                                        |
-| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# will display .75 as 3/4                                                                                                |
-| \[ ]     | Creates conditional formats.                                                                                                                                                                                                                                                   | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
-| E         | Scientific notation format.                                                                                                                                                                                                                                                    | #E+# - will display 1,500,500 as 2E+6                                                                                      |
+| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# mostrará .75 como 3/4                                                                                                  |
+| \[ ]     | Crea formatos condicionales.                                                                                                                                                                                                                                                   | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
+| E         | Formato notación científica.                                                                                                                                                                                                                                                   | #E+# - will display 1,500,500 as 2E+6                                                                                      |
 | \[color] | Formats the text or number in the color specified                                                                                                                                                                                                                              | \[Green]###.##\[Red]-###.###                                                                                             |
 
 
@@ -195,35 +195,35 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";?14:30:10?;"format";vk pattern full date time))
 ```
 
-### Custom date and time formats
+### Formato fecha y hora personalizados
 
 To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
 
 
-|       | Code<br>(not case-sensitive) | Descripción                                      | Ejemplo               |
-| ----- | ---------------------------------- | ------------------------------------------------ | --------------------- |
-| Fecha |                                    |                                                  | (January 1, 2019)     |
-|       | m                                  | Month number without leading zero                | 1                     |
-|       | mm                                 | Month number with leading zero                   | 01                    |
-|       | mmm                                | Nombre del mes, corto                            | Jan                   |
-|       | mmmm                               | Nombre del mes, long                             | January               |
-|       | d                                  | Day number without leading zero                  | 1                     |
-|       | dd                                 | Day number with leading zero                     | 01                    |
-|       | ddd                                | Día de la semana, corto                          | Tue                   |
-|       | dddd                               | Día de la semana, largo                          | Tuesday               |
-|       | yy                                 | Año, formato corto                               | 19                    |
-|       | yyyy                               | Año, formato largo                               | 2019                  |
-| Hora  |                                    |                                                  | (2:03:05 PM)          |
-|       | h                                  | Hora sin cero precedente. 0-23                   | 2                     |
-|       | hh                                 | Hora con cero precedente. 00-23                  | 02                    |
-|       | m                                  | Minutes without leading zero. 0-59               | 3                     |
-|       | mm                                 | Minutos con cero precedente. 00-59               | 03                    |
-|       | s                                  | Seconds without leading zero. 0-59               | 5                     |
-|       | ss                                 | Segundo con cero precedente. 00-59               | 05                    |
-|       | \[h]                              | Tiempo transcurrido en horas                     | 14 (puede superar 24) |
-|       | \[mm]                             | Tiempo transcurrido en minutos                   | 843                   |
-|       | \[ss]                             | Tiempo transcurrido en segundos                  | 50585                 |
-|       | AM/PM                              | Periodos del día. 24 hour fomat used if omitted. | PM                    |
+|       | Code<br>(no distingue entre mayúsculas y minúsculas) | Descripción                                      | Ejemplo               |
+| ----- | ---------------------------------------------------------- | ------------------------------------------------ | --------------------- |
+| Fecha |                                                            |                                                  | (January 1, 2019)     |
+|       | m                                                          | Month number without leading zero                | 1                     |
+|       | mm                                                         | Month number with leading zero                   | 01                    |
+|       | mmm                                                        | Nombre del mes, corto                            | Jan                   |
+|       | mmmm                                                       | Nombre del mes, long                             | January               |
+|       | d                                                          | Day number without leading zero                  | 1                     |
+|       | dd                                                         | Número de días con cero precedente               | 01                    |
+|       | ddd                                                        | Día de la semana, corto                          | Tue                   |
+|       | dddd                                                       | Día de la semana, largo                          | Tuesday               |
+|       | yy                                                         | Año, formato corto                               | 19                    |
+|       | yyyy                                                       | Año, formato largo                               | 2019                  |
+| Hora  |                                                            |                                                  | (2:03:05 PM)          |
+|       | h                                                          | Hora sin cero precedente. 0-23                   | 2                     |
+|       | hh                                                         | Hora con cero precedente. 00-23                  | 02                    |
+|       | m                                                          | Minutes without leading zero. 0-59               | 3                     |
+|       | mm                                                         | Minutos con cero precedente. 00-59               | 03                    |
+|       | s                                                          | Seconds without leading zero. 0-59               | 5                     |
+|       | ss                                                         | Segundo con cero precedente. 00-59               | 05                    |
+|       | \[h]                                                      | Tiempo transcurrido en horas                     | 14 (puede superar 24) |
+|       | \[mm]                                                     | Tiempo transcurrido en minutos                   | 843                   |
+|       | \[ss]                                                     | Tiempo transcurrido en segundos                  | 50585                 |
+|       | AM/PM                                                      | Periodos del día. 24 hour fomat used if omitted. | PM                    |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
 ### Símbolos adicionales
