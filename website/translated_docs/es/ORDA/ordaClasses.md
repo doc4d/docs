@@ -426,7 +426,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 
 > By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
-ORDA user classes have a different icon from regular classes. Empty classes are dimmed:
+ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
 
 ![](assets/en/ORDA/classORDA2.png)
 
