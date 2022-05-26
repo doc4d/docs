@@ -195,14 +195,14 @@ The following table lists the fields available for each format (in alphabetical 
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                              |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                                                                       |
-| CONNECTION_ID  |     | X   | Connection ID number                                                                                                        |
+| CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                     |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                                                                     |
 | CS(HOST)       | X   | X   | Host field of the HTTP request                                                                                              |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                                                                          |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                           |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
 | CS_URI         | X   | X   | URI on which the request is made                                                                                            |
-| CS_URI_QUERY | X   | X   | Request query parameters                                                                                                    |
+| CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                                                                       |
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
