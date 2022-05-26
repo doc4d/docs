@@ -10,7 +10,7 @@ Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de
 
 Hay diferentes maneras de configurar los parámetros del servidor web 4D, en función del alcance y del servidor que se quiera configurar:
 
-| Setting location                        | Alcance                                                  | Servidor web a utilizar                                               |
+| Ubicación del parámetro                 | Alcance                                                  | Servidor web a utilizar                                               |
 | --------------------------------------- | -------------------------------------------------------- | --------------------------------------------------------------------- |
 | [objeto webServer](webServerObject.md)  | Temporal (sesión actual)                                 | Todos los servidores web, incluidos los servidores web de componentes |
 | `WEB SET OPTION` o comando `WEB XXX`    | Temporal (sesión actual)                                 | Servidor principal                                                    |
@@ -526,7 +526,7 @@ Path of web server root folder, i.e. the folder in which 4D will search for the 
 
 Moreover, the HTML root folder defines, on the web server hard drive, the hierarchical level above which the files will not be accessible. If a requested URL or a 4D command tries to access a file located above the HTML root folder, an error is returned indicating that the file has not been found.
 
-By default, 4D defines a HTML Root folder named **WebFolder**. If it does not already exist, the HTML root folder is physically created on disk at the moment the Web server is launched for the first time. The root folder is created:
+By default, 4D defines a HTML Root folder named **WebFolder**. If it does not already exist, the HTML root folder is physically created on disk at the moment the Web server is launched for the first time. Se crea la carpeta raíz:
 - con 4D (local) y 4D Server, en el mismo nivel de la [carpeta del proyecto](Project/architecture.md#project-folder).
 - con 4D en modo remoto, en la carpeta de recursos locales.
 
@@ -594,7 +594,7 @@ The `Secure` attribute value of the session cookie is automatically set to "True
 
 
 
-## Use preemptive processes
+## Utilizar los procesos apropiativos
 
 | Puede ajustarse con           | Nombre                                            | Comentarios |
 | ----------------------------- | ------------------------------------------------- | ----------- |
@@ -649,7 +649,7 @@ In some cases, other optimized internal functions may be invoked. Keep-alive con
 
 Two options allow you to set how the keep-alive connections work:
 
-*   **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
+*   **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión permite evitar la inundación del servidor debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p> El valor por defecto (100) puede ser aumentado o disminuido en función de los recursos de la máquina que aloja el servidor 4D web.
 
-*   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
+*   **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web. Una vez finalizado este periodo, el servidor cierra la conexión.<p> Si el navegador web envía una solicitud después de cerrar la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.
 
