@@ -331,5 +331,5 @@ In any cases, the 4D Silicon compiler will warn you if your configuration does n
 
 The Silicon compiler is incremental, which means that:
 
-- During the very first compilation, **all 4D methods** are compiled. This step could take a certain time. However it only occurs once.
+- During the very first compilation, **all 4D methods** are compiled. This step could take a certain time. Sin embargo, sólo ocurre una vez.
 - During all subsequent compilations, only **new or modified methods** are processed, thus reducing drastically the compilation time. 
