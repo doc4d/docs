@@ -145,7 +145,7 @@ Ejemplo:
 ```
 
 
-## Authentication and Session
+## Autenticación y sesión
 
 - When a web management page is accessed by entering a URL and without prior identification, an authentication is required. The user must enter the [access key](#access-key) in an authentication dialog box. If the access key was not defined in the `WebAdmin` settings, no access via URL is possible.
 
