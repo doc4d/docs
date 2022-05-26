@@ -105,7 +105,7 @@ Changes the indentation value for the 4D code in the Method editor. The width mu
 
 Modifying this default value can be useful if your methods contain complex algorithms with many levels of embedding. Narrower indentation can be used in order to limit horizontal scrolling.
 
-#### Show Line Numbers
+#### Mostrar los números de línea
 
 Lets you display the line numbers by default in each window of the Method editor. You can also show/hide line numbers for the current window directly from the Method editor.
 
