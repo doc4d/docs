@@ -51,7 +51,7 @@ Adding a hyphen after the `MARK:` tag draws a separating line in the code editor
 
 ![mark-hyphen-image](assets/en/code-editor/mark-hyphen-editor.png)
 
-Results in this:
+Esto es lo que resulta:
 
 ![mark-hyphen-image](assets/en/code-editor/dropdown-organize.png)
 
