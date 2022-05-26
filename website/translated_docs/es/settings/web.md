@@ -61,7 +61,7 @@ Designate a default home page for the Web server. See [Default Home page](../Web
 
 #### Utilizar la caché Web de 4D
 
-Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
+Activa la caché de la página web. See [Cache](../WebServer/webServerConfig.md#cache).
 
 #### Tamaño de la caché de las páginas
 
@@ -241,7 +241,7 @@ The following table lists the fields available for each format (in alphabetical 
 | TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                             |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign).                      |
 |                |     |     | If the user name contains spaces, they are replaced by _ (underlines)      |
-| URL            |     | X   | URL requested by the client                                                |
+| URL            |     | X   | URL solicitado por el cliente                                              |
 
 > Las fechas y horas se indican en GMT.
 
