@@ -1469,7 +1469,7 @@ In the *settings* parameter, pass an object with the following properties:
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. Esto significa que:
 
-* the data is still there
+* los datos siguen estando ahí
 * the next time the data is needed, it will be asked to the server
 * 4D automatically removes expired data when the maximum number of entities is reached
 
