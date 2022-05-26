@@ -95,7 +95,7 @@ The optimization context is based upon the following implementations:
 
 #### Ejemplo
 
-Given the following code:
+Dado el siguiente código:
 
 ```4d
  $sel:=$ds.Employee.query("firstname = ab@")
