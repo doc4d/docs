@@ -348,7 +348,7 @@ This also works with selections:
 You can copy any selected expression from the Source Code Pane to the [Custom Watch Pane](#custom-watch-pane).
 
 1. In the Source code pane, select the expression to evaluate
-2. Do one of the following:
+2. Haga una de las siguientes cosas:
     * Drag and drop the selected text to the Expression area of the Custom Watch Pane
     * Press **Ctrl+D** (Windows) or **Cmd+D** (macOS)
     * Right-click the selected text **>** **Copy to Expression Pane**
@@ -399,7 +399,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 * **Toggle Breakpoint** (also available in Method editor): Alternately inserts or removes the breakpoint corresponding to the selected line. This modifies the breakpoint permanently: for instance, if you remove a breakpoint in the debugger, it no longer appears in the original method.
 * **Edit Breakpoint** (also available in Method editor): Displays the Breakpoint Properties dialog box. Any changes made modify the breakpoint permanently.
 
-### Find Next/Previous
+### Buscar siguiente/anterior
 
 Specific shortcuts allow you to find strings identical to the one selected:
 
