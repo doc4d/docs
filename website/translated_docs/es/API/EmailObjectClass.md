@@ -63,10 +63,10 @@ All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc
 
 An object with two properties:
 
-| Propiedad | Tipo  | Descripción                |
-| --------- | ----- | -------------------------- |
-| name      | Texto | Display name (can be null) |
-| email     | Texto | Correo electrónico         |
+| Propiedad | Tipo  | Descripción                       |
+| --------- | ----- | --------------------------------- |
+| name      | Texto | Nombre a mostrar (puede ser null) |
+| email     | Texto | Correo electrónico                |
 
 #### Collection
 
