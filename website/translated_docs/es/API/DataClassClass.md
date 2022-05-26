@@ -715,7 +715,7 @@ donde:
     | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
     | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
     |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
-    | Diferente de                         | #, !=       | Supports the wildcard (@)                                                                                      |
+    | Diferente de                         | #, !=       | Soporta el comodín (@)                                                                                         |
     |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
     | Menor que                            | <           |                                                                                                                |
     | Mayor que                            | >           |                                                                                                                |
