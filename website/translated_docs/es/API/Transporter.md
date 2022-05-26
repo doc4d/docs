@@ -386,7 +386,7 @@ La función envía una solicitud al servidor de correo y devuelve un objeto que 
 | statusText |                          | texto     | Status message returned by the mail server, or last error returned in the 4D error stack                     |
 | errors     |                          | colección | 4D error stack (not returned if a mail server response is received)                                          |
 |            | \[ ].errCode            | number    | Código de error 4D                                                                                           |
-|            | \[ ].message            | texto     | Description of the 4D error                                                                                  |
+|            | \[ ].message            | texto     | Descripción del error 4D                                                                                     |
 |            | \[ ].componentSignature | texto     | Firma del componente interno que ha devuelto el error                                                        |
 
 
