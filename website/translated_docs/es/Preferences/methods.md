@@ -121,7 +121,7 @@ Lets you choose whether or not to show the multiple clipboards in the code edito
 
 The corresponding [clipboard shorcuts](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) are still active when these clipboards are hidden.
 
-#### Highlight the logical blocks
+#### Resaltado de los bloques lógicos
 
 When checked, the whole code belonging to a logical block (If/End if for example) is highlighted when the mouse is placed over the expanded node:
 
@@ -141,7 +141,7 @@ Allows you to hide all expand/collapse icons by default when displaying code. Wh
 
 ![](assets/en/Preferences/optionsHideIcons.png)
 
-#### Insert () and closing } ) ] "
+#### Insertar () y añadir } ) ] " cierres
 
 Enables automatic insertion of () and closing braces while typing code. This option controls two automatic features:
 
