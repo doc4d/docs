@@ -22,7 +22,7 @@ This option allows you to configure the default 4D display at startup, when the 
 
 > This option is only used in binary databases; it is ignored in project architecture. Ver doc.4d.com.
 
-#### Window tabbing (macOS only)
+#### Ventana con pestañas (sólo en macOS)
 
 Starting with macOS Sierra, Mac applications can benefit from the Automatic Window Tabbing feature that helps organizing multiple windows: document windows are stacked into a single parent window and can be browsed through tabs. This feature is useful on small screens and/or when using a trackpad.
 
@@ -77,7 +77,7 @@ When this option is checked, 4D databases are automatically created in a folder 
 
 Thanks to this principle, under macOS the database folders appear as packages having specific properties. Under Windows, this has no particular impact.
 
-### Language of text comparison
+### Lenguaje de comparación de texte
 
 This parameter configures the default language used for character string processing and comparison in new databases. The language choice has a direct influence on the sorting and searching of text, as well as the character case, but it has no effect on the translation of texts or on the date, time or currency formats, which remain in the system language. By default (factory setting), 4D uses the current user language set in the system.
 
