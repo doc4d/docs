@@ -141,7 +141,7 @@ See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spread
 - campos,
 - project methods,
 - comandos del lenguaje 4D,
-- or any valid 4D expression.
+- o cualquier expresión válida de 4D.
 
 4D custom functions can receive [parameters](#parameters) from the 4D View Pro area, and return values.
 
