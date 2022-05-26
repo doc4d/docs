@@ -188,7 +188,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -275,7 +275,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -388,7 +388,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -493,7 +493,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -579,7 +579,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -681,7 +681,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -757,7 +757,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -1066,7 +1066,7 @@ You want to get the message with ID = 1:
 <!-- REF #IMAPTransporterClass.getMails().Params -->
 | Parámetros | Tipo       |    | Descripción                                              |
 | ---------- | ---------- |:--:| -------------------------------------------------------- |
-| ids        | Collection | -> | Collection of message ID                                 |
+| ids        | Collection | -> | Colección de identificadores de mensajes                 |
 | startMsg   | Integer    | -> | Sequence number of the first message                     |
 | endMsg     | Integer    | -> | Sequence number of the last message                      |
 | options    | Objeto     | -> | Message handling instructions                            |
@@ -1287,7 +1287,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -1361,11 +1361,11 @@ Para mover todos los mensajes del buzón actual:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Parámetros | Tipo       |    | Descripción                          |
-| ---------- | ---------- |:--:| ------------------------------------ |
-| startMsg   | Integer    | -> | Sequence number of the first message |
-| endMsg     | Integer    | -> | Sequence number of the last message  |
-| Resultado  | Collection | <- | Collection of unique IDs             |
+| Parámetros | Tipo       |    | Descripción                                     |
+| ---------- | ---------- |:--:| ----------------------------------------------- |
+| startMsg   | Integer    | -> | Sequence number of the first message            |
+| endMsg     | Integer    | -> | Sequence number of the last message             |
+| Resultado  | Collection | <- | Colección de identificadores de mensajes únicos |
 <!-- END REF -->
 
 
@@ -1469,7 +1469,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -1542,7 +1542,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -1822,7 +1822,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
@@ -1895,7 +1895,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
