@@ -287,7 +287,7 @@ When creating or editing data model classes, you must pay attention to the follo
 - You cannot override a native ORDA class function from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function.
 
 
-### Preemptive execution
+### Ejecución apropiativa
 
 When compiled, data model class functions are executed:
 
@@ -708,7 +708,7 @@ Class extends Entity
 Alias teachers courses.teacher //relatedEntities 
 ```
 
-In the Course dataclass:
+En la dataclass Course:
 
 - an alias attribute returns another label for the "name" attribute
 - an alias attribute returns the teacher name
@@ -913,7 +913,7 @@ End if
 
 
 
-## Support in 4D IDE
+## Soporte en 4D IDE
 
 
 ### Archivos de clase (class files)
@@ -930,7 +930,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 
 > By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
-ORDA user classes have a different icon from regular classes. Empty classes are dimmed:
+ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
 
 ![](assets/en/ORDA/classORDA2.png)
 
