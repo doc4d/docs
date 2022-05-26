@@ -25,7 +25,7 @@ Generar un paquete de proyecto puede realizarse utilizando:
 - or the [Build Application dialog](#application-builder).
 
 
-### Build application dialog
+### Diálogo crear aplicación
 
 To display the Build application dialog, select **Design** > **Build Application...** from the menu bar.
 
@@ -137,7 +137,7 @@ Puede definir un archivo de datos por defecto o permitir a los usuarios crear y 
 
 Es posible automatizar la actualización de las aplicaciones monopuesto fusionadas mediante una secuencia de comandos de lenguaje (ver [Actualización automática de aplicaciones servidor o monopuesto](https://doc.4d.com/4Dv17R6/4D/17-R6/Automatic-updating-of-server-or-single-user-applications.300-4354721.en.html).
 
-#### 4D Volume Desktop Location
+#### Ubicación de 4D Volume Desktop
 
 Para crear una aplicación autónoma, primero debe designar la carpeta que contiene el archivo 4D Volume Desktop:
 
@@ -218,7 +218,7 @@ On this tab, you can build customized client-server applications that are homoge
 A client/server application comes from the combination of three items:
 
 - Un proyecto 4D compilado,
-- The 4D Server application,
+- La aplicación 4D Server,
 - The 4D Volume Desktop application (macOS and/or Windows).
 
 Once built, a client/server application is composed of two customized parts: the Server portion (unique) and the Client portion (to install on each client machine).
@@ -250,11 +250,11 @@ Used to indicate the current version number for the application generated. A con
 
 **Preliminary Note:** The following terms are used in this section:
 
-| Nombre                         | Definición                                                                                                                                                                 |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project directory file         | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
-| Application directory file     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
-| Archivo de directorio de datos | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
+| Nombre                                 | Definición                                                                                                                                                                 |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Archivo de directorio del proyecto     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
+| Archivo de directorio de la aplicación | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
+| Archivo de directorio de datos         | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
 
 When you check this option, the project directory file is copied to the application directory file at build time.
 
@@ -300,7 +300,7 @@ Puede marcar esta opción:
 - along with the [**Build server application**](#build-server-application) option to build matching server and client parts for the current platform and (optionally) include the automatic update archive files,
 - without selecting the [**Build server application**](#build-server-application) option, usually to build the update archive file to be selected from the "concurrent" platform when building the server part.
 
-#### 4D Volume Desktop Location
+#### Ubicación de 4D Volume Desktop
 
 Designates the location on your disk of the 4D Volume Desktop application to be used to build the client part of your application.
 
@@ -356,7 +356,7 @@ On the client side, when the “old” client application tries to connect to th
 *   If the user clicks **OK**, the new version is downloaded to the client machine over the network. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor.
 *   If the user clicks **Cancel**, the update is cancelled; if the old version of the client application is not in the range of versions accepted by the server (please refer to the following paragraph), the application is closed and connection is impossible. Otherwise (by default), the connection is established.
 
-#### Forcing automatic updates
+#### Forzar las actualizaciones automáticas
 
 In some cases, you may want to prevent client applications from being able to cancel the update download. For example, if you used a new version of the 4D Server source application, the new version of the client application must absolutely be installed on each client machine.
 
@@ -385,7 +385,7 @@ The *\<ApplicationName>Client* folder contains the client portion of the applica
 The contents of these folders vary depending on the current platform:
 
 *   *Windows* - Each folder contains the application executable file, named *\<ApplicationName>Client.exe* for the client part and *\<ApplicationName>Server.exe* for the server part as well as the corresponding .rsr files. The folders also contain various files and folders necessary for the applications to work and customized items that may be in the original 4D Volume Desktop and 4D Server folders.
-*   *macOS* - Each folder contains only the application package, named \<ApplicationName> Client for the client part and \<ApplicationName> Server for the server part. Cada paquete contiene todos los elementos necesarios para que la aplicación funcione. Under macOS, launch a package by double-clicking it.
+*   *macOS* - Each folder contains only the application package, named \<ApplicationName> Client for the client part and \<ApplicationName> Server para la parte del servidor. Cada paquete contiene todos los elementos necesarios para que la aplicación funcione. Under macOS, launch a package by double-clicking it.
 
     > The macOS packages built contain the same items as the Windows subfolders. Para modificarlo, primero hay que mostrar su contenido (**Control+clic** en el icono).
 
