@@ -45,7 +45,7 @@ $type:= Value type($myblobObject) // 38 (object)
 $is4DBlob:= OB Instance of($myblobObject; 4D.Blob)  //True
 ```
 
-## Passing blobs as parameters
+## Pasar blobs como parámetros
 
 Scalar blobs and blob objects can be passed as parameters to 4D commands or plug-in routines that expect blob parameters.
 
