@@ -307,7 +307,7 @@ Function onInvoke($editor : Object)->$result : Object
 | $error       |                       | Collection | Error stack                              |
 |              | [].errCode            | Número     | Código de error                          |
 |              | [].message            | Texto      | Descripción del error                    |
-|              | [].componentSignature | Texto      | Internal component signature             |
+|              | [].componentSignature | Texto      | Firma del componente interno             |
 
 The `onError` function is executed when the macros processor encounters an error.
 
