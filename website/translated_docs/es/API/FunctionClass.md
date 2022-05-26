@@ -62,7 +62,7 @@ Or using the [.call()](#call) function:
  $text:=$f.call(Null;"Welcome to";String(Year of(Current date))) //returns "Welcome to 2019" (for example)
 ```
 
-#### Parameters to a single method
+#### Parámetros de un solo método
 
 For more convenience, when the formula is made of a single project method, parameters can be omitted in the formula object initialization. They can just be passed when the formula is called. Por ejemplo:
 
