@@ -8,7 +8,7 @@ The 4D Form editor supports macros. A macro is a set of instructions to perform 
 
 For example if you have a recurring report with specific formatting (e.g., certain text must appear in red and certain text must appear in green), you can create a macro to automatically set the color. You can create macros for the 4D Form editor that can:
 
-*   Create and execute 4D code
+*   Crear y ejecutar código 4D
 *   Mostrar las cajas de diálogo
 *   Seleccione los objetos de formulario
 *   Add / delete / modify forms, form objects as well as their properties
@@ -140,7 +140,7 @@ Custom properties, when used, are passed to the [constructor](#class-constructor
 
 
 
-## Instantiating macros in 4D
+## Instanciar las macros en 4D
 
 Each macro you want to instantiate in your project or component must be declared as a [4D class](Concepts/classes.md).
 
