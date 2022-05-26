@@ -431,7 +431,7 @@ The following methods automatically associate the optimization context of the so
 
 **Ejemplo**
 
-Given the following code:
+Dado el siguiente código:
 
 ```4d
  $sel:=$ds.Employee.query("firstname = ab@")
