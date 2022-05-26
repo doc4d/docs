@@ -211,7 +211,7 @@ The following table lists the fields available for each format (in alphabetical 
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                                                                          |
 | TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                                                                              |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign). If the user name contains spaces, they are replaced by _ (underlines) |
-| URL            |     | X   | URL requested by the client                                                                                                 |
+| URL            |     | X   | URL solicitado por el cliente                                                                                               |
 
 > Las fechas y horas se indican en GMT.
 
