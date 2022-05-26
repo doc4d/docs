@@ -424,7 +424,7 @@
         "title": "Componentes de desarrollo"
       },
       "Extensions/develop-plug-ins": {
-        "title": "Developing Plug-ins"
+        "title": "Plugins de desarrollo"
       },
       "Extensions/overview": {
         "title": "Generalidades"
@@ -923,7 +923,7 @@
         "title": "Configuring 4D View Pro Areas"
       },
       "ViewPro/formulas": {
-        "title": "Formulas and Functions"
+        "title": "Fórmulas y funciones"
       },
       "ViewPro/getting-started": {
         "title": "Comencemos"
