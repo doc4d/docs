@@ -5,7 +5,7 @@ title: Configuring 4D View Pro Areas
 
 The 4D View Pro area properties can be configured using the Property list. Spreadsheet properties are available through the language.
 
-## Form area properties
+## Propiedades del área de formulario
 
 Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](#4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
 
@@ -32,7 +32,7 @@ Interfaces allow for basic modifications and data manipulation. User-defined mod
 
 Enabling the Toolbar interface displays the [**Show Formula Bar**](FormObjects/properties_Appearance.md#show-formula-bar) option. When selected, the formula bar is visible below the Toolbar interface.
 
-With visible formula bar:
+Con barra de fórmula visible:
 
 ![](assets/en/ViewPro/vpToolbar.PNG)
 
@@ -40,15 +40,15 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Pestaña  | Acciones                        | Interfaz Cinta | Toolbar Interface |
-| -------- | ------------------------------- |:--------------:|:-----------------:|
-| File     | File manipulation               |       X        |                   |
-| Inicio   | Apariencia del texto            |       X        |         X         |
-| Insertar | Add items                       |       X        |         X         |
-| Fórmulas | Formula calculation and library |       X        |         X         |
-| Datos    | Data manipulation               |       X        |         X         |
-| Mostrar  | Visual presentation             |       X        |         X         |
-| Settings | Sheet presentation reference    |       X        |                   |
+| Pestaña  | Acciones                        | Interfaz Cinta | Interfaz Barra de herramientas |
+| -------- | ------------------------------- |:--------------:|:------------------------------:|
+| File     | Gestión de archivos             |       X        |                                |
+| Inicio   | Apariencia del texto            |       X        |               X                |
+| Insertar | Añadir elementos                |       X        |               X                |
+| Fórmulas | Formula calculation and library |       X        |               X                |
+| Datos    | Gestión de los datos            |       X        |               X                |
+| Mostrar  | Presentación visual             |       X        |               X                |
+| Settings | Sheet presentation reference    |       X        |                                |
 
 
 
@@ -85,7 +85,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 | sheetTabColor        |                        | cadena       | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                    |
 | frozenlineColor      |                        | cadena       | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
 | clipBoardOptions     |                        | entero largo | La opción portapapeles. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
-| rejilla              |                        | objeto       | The grid line's options.                                                                                                                                                                                                                                                                                  |
+| rejilla              |                        | objeto       | Las opciones de la línea de rejilla.                                                                                                                                                                                                                                                                      |
 |                      | color                  | cadena       | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                    |
 |                      | showVerticalGridline   | booleano     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                         |
 |                      | showHorizontalGridline | booleano     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                       |
@@ -111,21 +111,21 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 | protectionOptions |                          | objeto   | A value that indicates the elements that you want users to be able to change. If null : the protectionOptions parameter is reset. |
 |                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True por defecto.                                                   |
 |                   | allowSelectUnlockedCells | booleano | Specifies whether the user can select unlocked cells, optional. True por defecto.                                                 |
-|                   | allowSort                | booleano | Specifies whether the user can sort ranges, optional. False by default.                                                           |
-|                   | allowFilter              | booleano | Specifies whether the user can filter ranges, optional. False by default.                                                         |
-|                   | allowEditObjects         | booleano | Specifies whether the user can edit floating objects, optional. False by default.                                                 |
-|                   | allowResizeRows          | booleano | Specifies whether the user can resize rows, optional. False by default.                                                           |
-|                   | allowResizeColumns       | booleano | Specifies whether the user can resize columns, optional. False by default.                                                        |
-|                   | allowDragInsertRows      | booleano | Specifies whether the user can perform the drag operation to insert rows, optional. False by default.                             |
-|                   | allowDragInsertColumns   | booleano | Specifies whether the user can perform the drag operation to insert columns, optional. False by default.                          |
-|                   | allowInsertRows          | booleano | Specifies whether the user can insert rows, optional. False by default.                                                           |
-|                   | allowInsertColumns       | booleano | Specifies whether the user can insert columns, optional. False by default.                                                        |
-|                   | allowDeleteRows          | booleano | Specifies whether the user can delete rows, optional. False by default.                                                           |
-|                   | allowDeleteColumns       | booleano | Specifies whether the user can delete columns, optional. False by default.                                                        |
+|                   | allowSort                | booleano | Specifies whether the user can sort ranges, optional. Falso por defecto.                                                          |
+|                   | allowFilter              | booleano | Specifies whether the user can filter ranges, optional. Falso por defecto.                                                        |
+|                   | allowEditObjects         | booleano | Specifies whether the user can edit floating objects, optional. Falso por defecto.                                                |
+|                   | allowResizeRows          | booleano | Specifies whether the user can resize rows, optional. Falso por defecto.                                                          |
+|                   | allowResizeColumns       | booleano | Specifies whether the user can resize columns, optional. Falso por defecto.                                                       |
+|                   | allowDragInsertRows      | booleano | Specifies whether the user can perform the drag operation to insert rows, optional. Falso por defecto.                            |
+|                   | allowDragInsertColumns   | booleano | Specifies whether the user can perform the drag operation to insert columns, optional. Falso por defecto.                         |
+|                   | allowInsertRows          | booleano | Specifies whether the user can insert rows, optional. Falso por defecto.                                                          |
+|                   | allowInsertColumns       | booleano | Specifies whether the user can insert columns, optional. Falso por defecto.                                                       |
+|                   | allowDeleteRows          | booleano | Specifies whether the user can delete rows, optional. Falso por defecto.                                                          |
+|                   | allowDeleteColumns       | booleano | Specifies whether the user can delete columns, optional. Falso por defecto.                                                       |
 > All properties are optional.
 
 
-## Cell Format
+## Formato de las celdas
 
 
 Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods.
@@ -151,7 +151,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 | \_      | Skips the width of the next character.                                                                                                                                                                                                                                          | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
 | @         | Formatter for text. Applies the format to all text in the cell                                                                                                                                                                                                                  | "\[Red]@" applies the red font color for text values.                                                                     |
 | *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                            | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
-| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                    | "8%" will display as: 8%                                                                                                   |
+| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                    | "8%" será mostrado como: 8%                                                                                                |
 | %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                        | 8% will be displayed as .08                                                                                                |
 | \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                             | #.# will display 1.54 as 1.5                                                                                               |
 | ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                               | $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                       |
@@ -205,13 +205,13 @@ To create your own date and time patterns, in your current localization, you can
 | Fecha |                                    |                                                  | (January 1, 2019)     |
 |       | m                                  | Month number without leading zero                | 1                     |
 |       | mm                                 | Month number with leading zero                   | 01                    |
-|       | mmm                                | Month name, short                                | Jan                   |
+|       | mmm                                | Nombre del mes, corto                            | Jan                   |
 |       | mmmm                               | Nombre del mes, long                             | January               |
 |       | d                                  | Day number without leading zero                  | 1                     |
 |       | dd                                 | Day number with leading zero                     | 01                    |
 |       | ddd                                | Día de la semana, corto                          | Tue                   |
-|       | dddd                               | Day of week, long                                | Tuesday               |
-|       | yy                                 | Year, short                                      | 19                    |
+|       | dddd                               | Día de la semana, largo                          | Tuesday               |
+|       | yy                                 | Año, formato corto                               | 19                    |
 |       | yyyy                               | Año, formato largo                               | 2019                  |
 | Hora  |                                    |                                                  | (2:03:05 PM)          |
 |       | h                                  | Hora sin cero precedente. 0-23                   | 2                     |
@@ -241,14 +241,14 @@ In addition to the special characters and codes described in the previous sectio
 | < >      | Less-than and greater than signs                                   | ## >##              |
 | =        | Signo igual                                                        | #+#=##               |
 | /        | Forward slash. When used with numbers, displays them as fractions. | mm/dd/yyyy           |
-| !        | Exclamation point                                                  | $###.00!             |
+| !        | Signo de exclamación                                               | $###.00!             |
 | &        | Ampersand                                                          | "Hello" & "Welcome"  |
 | ~        | Tilde                                                              | ~##                  |
 |          | Space character                                                    |                      |
 | €        | Euro                                                               | €###.00              |
 | £        | Libra esterlina                                                    | £###.00              |
 | ¥        | Yen japonés                                                        | ¥###.00              |
-| $        | Dollar sign                                                        | $###.00              |
+| $        | Signo dólar                                                        | $###.00              |
 | ¢        | Cent sign                                                          | .00¢                 |
 
 
@@ -275,7 +275,7 @@ Column and row attributes are used to specify the beginning, end, and repetition
 | rowEnd            | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                       |
 | rowStart          | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                      |
 
-### Headers / Footers
+### Encabezados / Pies de página
 
 Header and footer attributes are used to specify text or images in the left, right, and center header/footer sections.
 
@@ -303,9 +303,9 @@ The following special characters allow the automatic addition or formatting of i
 
 | Caracter | Descripción                      | Ejemplo                                                               | Resultado                                         |
 | -------- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
-| &        | Escape character                 | (see examples below)                                                  |                                                   |
+| &        | Escape character                 | (ver ejemplos más abajo)                                              |                                                   |
 | P        | Página actual                    | printInfo.headerLeft:="This is page &P."                              | Esta es la página 5.|                             |
-| N        | Conteo de páginas                | printInfo.headerLeft:="There are &N pages."                           | There are 10 pages.                               |
+| N        | Conteo de páginas                | printInfo.headerLeft:="There are &N pages."                           | Hay 10 páginas.                                   |
 | D        | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | Es 2015/6/19.                                     |
 | T        | Hora actual                      | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
 | G        | Imagen                           | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
@@ -313,7 +313,7 @@ The following special characters allow the automatic addition or formatting of i
 | U        | Subrayado                        | printInfo.headerLeft:="&UThis is text."                               | <ins>This is text.</ins>                         |
 | B        | Negrita                          | printInfo.headerLeft:="&BThis is text."                               | **This is text.**                                 |
 | I        | Itálica                          | printInfo.headerLeft:="&IThis is text."                               | *This is text.*                                   |
-| "        | Font prefix                      | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
+| "        | Prefijo fuente                   | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
 | K        | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">This is text</span>.      |
 | F        | Workbook name                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
 | A        | Nombre de la hoja de cálculo     | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
@@ -324,7 +324,7 @@ Margin attributes are used to specify the 4D View Pro area margins for printing.
 
 | Propiedad |        | Tipo         | Descripción                                               |
 | --------- | ------ | ------------ | --------------------------------------------------------- |
-| margin    |        | objeto       | The print margins                                         |
+| margin    |        | objeto       | Los márgenes de impresión                                 |
 |           | top    | entero largo | Top margin, in hundredths of an inch. Por defecto = 75    |
 |           | bottom | entero largo | Bottom margin, in hundredths of an inch. Por defecto = 75 |
 |           | left   | entero largo | Left margin, in hundredths of an inch. Por defecto = 70   |
@@ -337,9 +337,9 @@ Margin attributes are used to specify the 4D View Pro area margins for printing.
 Orientation attributes are used to specify the direction the printed page layout.
 > This attribute defines rendering information only.
 
-| Propiedad   | Tipo         | Descripción                                                                                                               |
-| ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| orientation | entero largo | Page orientation. Available values: `vk print page orientation landscape`, `vk print page orientation portrait` (default) |
+| Propiedad   | Tipo         | Descripción                                                                                                                       |
+| ----------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| orientation | entero largo | Orientación de la página. Available values: `vk print page orientation landscape`, `vk print page orientation portrait` (default) |
 
 ### Página
 
@@ -353,7 +353,7 @@ Page attributes are used to specify general document print settings.
 | pageOrder       | entero largo | The order pages are printed. Available values: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                    |
 | pageRange       | texto        | The range of pages for printing                                                                                                                                                                     |
 | qualityFactor   | entero largo | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Por defecto = 2</p>                    |
-| useMax          | booleano     | Only columns and rows with data are printed.<p>Default value = true</p>                                                                                                                               |
+| useMax          | booleano     | Only columns and rows with data are printed.<p>Valor por defecto: true</p>                                                                                                                               |
 | zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Por defecto = 1</p>                                                                                                                          |
 
 ### Tamaño del papel
@@ -363,12 +363,12 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 *   Custom size - height and width attributes
 *   Standard size - kind attribute
 
-| Propiedad |        | Tipo         | Descripción                                                                                                      |
-| --------- | ------ | ------------ | ---------------------------------------------------------------------------------------------------------------- |
-| paperSize |        | objeto       | Paper dimensions (height, width) or specific format (kind) for printing.                                         |
-|           | height | entero largo | Height of the paper, in hundredths of an inch.                                                                   |
-|           | ancho  | entero largo | Width of the paper, in hundredths of an inch.                                                                    |
-|           | kind   | texto        | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Default value = "letter" |
+| Propiedad |        | Tipo         | Descripción                                                                                                         |
+| --------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------- |
+| paperSize |        | objeto       | Paper dimensions (height, width) or specific format (kind) for printing.                                            |
+|           | height | entero largo | Height of the paper, in hundredths of an inch.                                                                      |
+|           | ancho  | entero largo | Width of the paper, in hundredths of an inch.                                                                       |
+|           | kind   | texto        | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Valor por defecto: "letter" |
 
 * If the paper size is specified using the `height` and `width` properties,  [`VP Get print info`](./method-list.md#vp-get-print-info) returns a paper size with `custom` as value for `kind`.
 
@@ -393,24 +393,24 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 
 | Propiedad        | Tipo         | Descripción                                                                                                                                                                      |
 | ---------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | booleano     | Imprime el borde del contorno.<p><p>Default value = "true"                                                                       |
+| showBorder       | booleano     | Imprime el borde del contorno.<p><p>Valor por defecto: "true"                                                                    |
 | showColumnHeader | entero largo | Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
 | showGridLine     | booleano     | Imprime las líneas de la cuadrícula.<p>Valor por defecto: "false"                                                                                        |
 | showRowHeader    | entero largo | Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
 
-### Watermark
+### Marca de agua
 
 Watermark attributes are used to superimpose text or an image onto the 4D View Pro area.
 
-| Propiedad |                | Tipo                 | Descripción                                                                                                                                                                               |
-| --------- | -------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| watermark |                | colección            | Collection of watermark settings. <p>Default value: undefined                                                                                                     |
-|           | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                                 |
-|           | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                               |
-|           | \[ ].page     | texto                | The page(s) where the watermark is printed.<p>Para todas las páginas: "all". For specific pages: page numbers or page ranges separated by commas. Ej.: "1,3,5-12" |
-|           | \[ ].width    | entero largo         | The width of the watermark text / image.                                                                                                                                                  |
-|           | \[ ].x        | entero largo         | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                            |
-|           | \[ ].y        | entero largo         | The vertical coordinate of the top left point of the watermark text / image.                                                                                                              |
+| Propiedad     |                | Tipo                 | Descripción                                                                                                                                                                               |
+| ------------- | -------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| marca de agua |                | colección            | Collection of watermark settings. <p>Valor por defecto: indefinido                                                                                                |
+|               | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                                 |
+|               | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                               |
+|               | \[ ].page     | texto                | The page(s) where the watermark is printed.<p>Para todas las páginas: "all". For specific pages: page numbers or page ranges separated by commas. Ej.: "1,3,5-12" |
+|               | \[ ].width    | entero largo         | The width of the watermark text / image.                                                                                                                                                  |
+|               | \[ ].x        | entero largo         | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                            |
+|               | \[ ].y        | entero largo         | The vertical coordinate of the top left point of the watermark text / image.                                                                                                              |
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
@@ -468,7 +468,7 @@ Ejemplo:
 | --------------- | ---------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | font            |            | texto        | Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes. | A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-list.md#vp-font-to-object) and [`VP Object to font`](method-list.md#vp-object-to-font) |
 | formatter       |            | texto        | Pattern for value/time property.                                                                                                                                                                                                                                                                                                                                     | Number/text/date/time formats, special characters. See [Cell Format](#cell-format).                                                                                                                                                         |
-| isVerticalText  |            | booleano     | Specifies text direction.                                                                                                                                                                                                                                                                                                                                            | True = vertical text, False = horizontal text.                                                                                                                                                                                              |
+| isVerticalText  |            | booleano     | Especifica la dirección del texto.                                                                                                                                                                                                                                                                                                                                   | True = vertical text, False = horizontal text.                                                                                                                                                                                              |
 | labelOptions    |            | objeto       | Defines cell label options (watermark options).                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                             |
 |                 | alignement | entero largo | Specifies the position of the cell label. Optional property.                                                                                                                                                                                                                                                                                                         | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`                                     |
 |                 | visibility | entero largo | Specifies the visibility of the cell label. Optional property.                                                                                                                                                                                                                                                                                                       | `vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`                                                                                                                                                     |
@@ -476,15 +476,15 @@ Ejemplo:
 |                 | font       | texto        | Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.                                                                                                                                                                            |                                                                                                                                                                                                                                             |
 | textDecoration  |            | entero largo | Specifies the decoration added to text.                                                                                                                                                                                                                                                                                                                              | `vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`                                                                          |
 | textIndent      |            | entero largo | Defines the unit of text indention. 1 = 8 píxeles                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                             |
-| textOrientation |            | entero largo | Defines the rotation angle of the text in a cell. Number between -90 and 90                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                             |
-| watermark       |            | texto        | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
+| textOrientation |            | entero largo | Defines the rotation angle of the text in a cell. Número entre -90 y 90                                                                                                                                                                                                                                                                                              |                                                                                                                                                                                                                                             |
+| marca de agua   |            | texto        | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
 | wordWrap        |            | booleano     | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |
 
 #### Disposición
 
 | Propiedad   | Tipo         | Descripción                                                                                                         | Valores posibles                                                                                                     |
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| cellPadding | texto        | Defines the cell padding                                                                                            |                                                                                                                      |
+| cellPadding | texto        | Define el relleno de la celda                                                                                       |                                                                                                                      |
 | hAlign      | entero largo | Defines the horizontal alignment of cell contents.                                                                  | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
 | locked      | booleano     | Specifies cell protection status. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = locked, False = unlocked.                                                                                     |
 | shrinkToFit | booleano     | Specifies if the contents of the cell should be reduced.                                                            | True = reduced content, False = no reduction.                                                                        |
