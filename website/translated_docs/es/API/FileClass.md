@@ -352,7 +352,7 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 > Reading a .exe or .dll is only possible on Windows.
 
-All property values are Text.
+Todos los valores de propiedades son de tipo Texto.
 
 | Propiedad        | Tipo  |
 | ---------------- | ----- |
