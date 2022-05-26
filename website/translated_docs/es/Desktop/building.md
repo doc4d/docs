@@ -525,7 +525,7 @@ In 4D v18, the [built-in signing features](#os-x-signing-certificate) have been 
 
 For more information on the notarization concept, please refer to [this page on the Apple developer website](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow).
 
-## Customizing application icons
+## Personalizar los iconos de una aplicación
 
 4D associates a default icon with stand-alone, server, and client applications, however you can customize the icon for each application.
 
