@@ -113,7 +113,7 @@ Lets you display the line numbers by default in each window of the Method editor
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
 
-#### Highlight the logical blocks
+#### Resaltado de los bloques lógicos
 
 When checked, the whole code belonging to a logical block (If/End if for example) is highlighted when the mouse is placed over the expanded node:
 
@@ -133,7 +133,7 @@ Allows you to hide all expand/collapse icons by default when displaying code. Wh
 
 ![](assets/en/Preferences/optionsHideIcons.png)
 
-#### Insert () and closing } ) ] "
+#### Insertar () y añadir } ) ] " cierres
 
 Enables automatic insertion of () and closing braces while typing code. This option controls two automatic features:
 
