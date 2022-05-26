@@ -59,7 +59,7 @@ The server break point list is automatically restored if it becomes again the at
 
 The Break list is a page of the Runtime Explorer that lets you manage the breakpoints created in the Debugger Window or in the Method Editor. For more information on the Runtime Explorer, see its dedicated page in [the Design reference manual](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.en.html).
 
-To open the Break list page:
+Para abrir la página de la lista de puntos de ruptura:
 
 1. From the **Run menu**, click **Runtime Explorer...**
 
@@ -109,7 +109,7 @@ To enable or disable a caught command, click on the bullet (•) in front of the
 
 Para eliminar un punto de interrupción en el comando:
 
-1. Select a command in the list.
+1. Seleccione un comando en la lista.
 2. Press **Backspace** or **Delete** on your keyboard or click on the **Delete** button beneath the list (**Delete All** removes all commands in the list).
 
 ### Setting a Condition for catching a command
