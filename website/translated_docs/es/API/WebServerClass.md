@@ -504,7 +504,7 @@ La función `.stop()` <!-- REF #WebServerClass.stop().Summary -->detiene el serv
 
 El valor de registro <!-- REF #WebServerClass.logRecording.Summary -->log (logweb.txt)<!-- END REF -->.
 
-*   0 = Do not record (default)
+*   0 = No registrar (por defecto)
 *   1 = Registro en formato CLF
 *   2 = Registro en formato DLF
 *   3 = Registro en formato ELF
@@ -772,7 +772,7 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 | success   |                         | Booleano   | True if the web server was correctly started, False otherwise        |
 | errors    |                         | Collection | 4D error stack (not returned if the web server started successfully) |
 |           | \[].errCode            | Número     | Código de error 4D                                                   |
-|           | \[].message            | Texto      | Description of the 4D error                                          |
+|           | \[].message            | Texto      | Descripción del error 4D                                             |
 |           | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                |
 > Si el servidor web ya fue lanzado, se devuelve un error.
 
