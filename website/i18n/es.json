@@ -223,7 +223,7 @@
         "title": "Depurador"
       },
       "Debugging/debugging-remote": {
-        "title": "Debugging from remote machines"
+        "title": "Depuración desde máquinas remotas"
       },
       "Debugging/debugLogFiles": {
         "title": "Descripción de los archivos de historial"
