@@ -245,7 +245,7 @@ Para más información sobre CORS, consulte la página [Cross-origin resource sh
 
 Una <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts y métodos permitidos para el servicio CORS<!-- END REF --> (ver la propiedad [`CORSEnabled`](#corsenabled)). Cada objeto debe contener una propiedad **host** y, opcionalmente, una propiedad **methods**:
 
-*   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Several syntaxes are supported:
+*   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Se soportan varias sintaxis:
     -   192.168.5.17:8081
     -   192.168.5.17
     -   192.168.*
@@ -749,7 +749,7 @@ La <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de
 | Parámetros | Tipo   |    | Descripción                           |
 | ---------- | ------ | -- | ------------------------------------- |
 | parámetros | Objeto | -> | Web server settings to set at startup |
-| Resultado  | Objeto | <- | Status of the web server startup      |
+| Resultado  | Objeto | <- | Estado del inicio del servidor web    |
 
 
 <!-- END REF -->
