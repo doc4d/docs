@@ -764,7 +764,7 @@ La función `.extract()` <!-- REF #EntitySelectionClass.extract().Summary -->ret
 
 *attributePath* puede referirse a:
 
-*   a scalar dataclass attribute,
+*   un atributo escalar de dataclass,
 *   entidad relacionada,
 *   entidades relacionadas.
 
