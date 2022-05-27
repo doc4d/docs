@@ -385,7 +385,7 @@ The object returned by `.drop( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
-| Constante                                 | Value | Comment                                                                                                                                                                                                                                |
+| Constante                                 | Value | Comentário                                                                                                                                                                                                                             |
 | ----------------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using entity.drop( ), this error can be returned when dk force drop if stamp changed option is used. When using entity.lock( ), this error can be returned when dk reload if stamp changed option is used</li><p>**Associated statusText**: "Entity does not exist anymore" |
 | `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<br>**Associated statusText**: "Already locked"                                                                                                                                       |
@@ -704,7 +704,7 @@ $info:=$address.getRemoteContextAttributes()
 //$info = "persons,persons.lastname,persons.firstname"
 ```
 
-#### See also
+#### Veja também
 
 [EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
@@ -1006,7 +1006,7 @@ The object returned by `.lock( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of the *Result* object in case of error:
 
-| Constante                                 | Value | Comment                                                                                                                                                                                                                                                 |
+| Constante                                 | Value | Comentário                                                                                                                                                                                                                                              |
 | ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when dk force drop if stamp changed option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity does not exist anymore"                                           |
 | `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                            |
@@ -1172,7 +1172,7 @@ The object returned by `.reload( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
-| Constante                                 | Value | Comment                                                                                                                                                                                                                   |
+| Constante                                 | Value | Comentário                                                                                                                                                                                                                |
 | ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>***Associated statusText***: "Entity does not exist anymore" |
 | `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                           |
@@ -1264,7 +1264,7 @@ The object returned by `.save()` contains the following properties:
 
 The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
 
-| Constante                                 | Value | Comment                                                                                                                                                                                                                                                           |
+| Constante                                 | Value | Comentário                                                                                                                                                                                                                                                        |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                        |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                            |
@@ -1400,7 +1400,7 @@ Without filter parameter:
 employeeObject:=employeeSelected.toObject()
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
@@ -1433,7 +1433,7 @@ Extracting the primary key and the stamp:
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
@@ -1535,7 +1535,7 @@ Extracting some properties of `relatedEntities`:
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
@@ -1563,7 +1563,7 @@ Extracting a `relatedEntity` with simple form:
  employeeObject:=employeeSelected.toObject($coll)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
@@ -1582,7 +1582,7 @@ Extracting all the properties of a `relatedEntity`:
  employeeObject:=employeeSelected.toObject("employer.*")
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
@@ -1596,7 +1596,7 @@ Returns:
 }
 ```
 
-#### Example 7
+#### Exemplo 7
 
 Extracting some properties of a `relatedEntity`:
 
@@ -1607,7 +1607,7 @@ Extracting some properties of a `relatedEntity`:
  employeeObject:=employeeSelected.toObject($col)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 {
