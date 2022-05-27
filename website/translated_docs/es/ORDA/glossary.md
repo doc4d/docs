@@ -55,7 +55,7 @@ A datastore is the interface object provided by ORDA to reference a structure an
 
 Un datastore ofrece:
 
-*   a connection to the 4D database
+*   una conexión a la base de datos 4D
 *   a set of dataclasses to work with the database
 
 The database can be a 4D local database (the Main datastore), or a 4D Server database exposed as REST resource (a Remote datastore).
