@@ -134,7 +134,7 @@ Then you can get an entity selection of the "best" companies by executing:
 ```
 
 
-#### Example with a remote datastore
+#### Ejemplo con un datastore remoto
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
@@ -260,7 +260,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 
 
-## Exposed vs non-exposed functions
+## Funciones expuestas y no expuestas
 
 For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests.
 
