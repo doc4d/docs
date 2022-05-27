@@ -326,7 +326,7 @@ The *getter* function defines the data type of the computed attribute thanks to 
 
 - Scalar (text, boolean, date, time, number)
 - Objeto
-- Image
+- Imagem
 - BLOB
 - Entity (i.e. cs. EmployeeEntity)
 - Entity selection (i.e. cs. EmployeeSelection)
