@@ -409,7 +409,7 @@
         "title": "Object libraries"
       },
       "FormEditor/pictures": {
-        "title": "Pictures"
+        "title": "Imagens"
       },
       "FormEditor/action": {
         "title": "Action"
@@ -427,7 +427,7 @@
         "title": "Markers"
       },
       "FormEditor/menu": {
-        "title": "Menu"
+        "title": "Menú"
       },
       "FormEditor/print": {
         "title": "Print"
@@ -511,7 +511,7 @@
         "title": "Gridlines"
       },
       "FormObjects/propertiesHeaders": {
-        "title": "Headers"
+        "title": "Cabeçalhos"
       },
       "FormObjects/propertiesHelp": {
         "title": "Help"
@@ -925,7 +925,7 @@
     "Desktop applications|no description given": "Desktop applications",
     "Documentation updates|no description given": "Documentation updates",
     "Help Translate|recruit community translators for your project": "Help Translate",
-    "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
-    "Translate this Doc|recruitment message asking to translate the docs": "Translate"
+    "Edit this Doc|recruitment message asking to edit the doc source": "Editar",
+    "Translate this Doc|recruitment message asking to translate the docs": "Traduzir"
   }
 }
