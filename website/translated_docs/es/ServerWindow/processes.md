@@ -74,7 +74,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 | ![](assets/en/Admin/server-icon-20.png) | Gestor de sesiones TCP                                                                                                                                    |
 | ![](assets/en/Admin/server-icon-21.png) | Otro proceso                                                                                                                                              |
 | ![](assets/en/Admin/server-icon-22.png) | Proceso worker (cooperativo)                                                                                                                              |
-| ![](assets/en/Admin/server-icon-23.png) | 4D client process (preemptive)                                                                                                                            |
+| ![](assets/en/Admin/server-icon-23.png) | Proceso 4D client (apropiativo)                                                                                                                           |
 | ![](assets/en/Admin/server-icon-24.png) | Stored procedure (preemptive process)                                                                                                                     |
 | ![](assets/en/Admin/server-icon-25.png) | Proceso worker (apropiativo)                                                                                                                              |
 
