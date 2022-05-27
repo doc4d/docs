@@ -111,7 +111,7 @@ Accepted HTTP method(s) for the corresponding CORS host. The following HTTP meth
 
 Separate each method with a ";" (e,g,: "post;get"). If methods is empty, null, or undefined, all methods are enabled.
 
-#### See also
+#### Veja também
 
 [Enable CORS Service](#enable-cors-service)
 
@@ -173,7 +173,7 @@ When disabled (default), all cross site requests sent with CORS are ignored.
 
 For more information about CORS, please refer to the [Cross-origin resource sharing page](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) on Wikipedia.
 
-#### See also
+#### Veja também
 [CORS Settings](#cors-settings)
 
 ## Enable HTTP
@@ -382,7 +382,7 @@ This setting allows you to select the format of this file. Available values are:
 
 | Value | Format name          | Descrição                                                                                                                                                                                                                |
 | ----- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0     | No Log File          | Default                                                                                                                                                                                                                  |
+| 0     | No Log File          | Predefinição                                                                                                                                                                                                             |
 | 1     | Record in CLF format | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
 | 2     | Record in DLF format | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
 | 3     | Record in ELF format | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
