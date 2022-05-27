@@ -492,7 +492,7 @@ A função `.isAdminProtected()` <!-- REF #DataStoreClass.isAdminProtected(). Su
 
 Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAdmin`, mas pode ser desativada para evitar qualquer acesso aos dados por parte dos administradores (ver a função [`.setAdminProtection()`](#setadminprotection)).
 
-#### See also
+#### Veja também
 
 [`.setAdminProtection()`](#setadminprotection)
 
@@ -650,7 +650,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
  ds.setAdminProtection(True) //Desativa o acesso aos dados do Explorador de Dados
 ```
 
-#### See also
+#### Veja também
 
 [`.isAdminProtected()`](#isadminprotected)
 
