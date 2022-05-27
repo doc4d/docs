@@ -69,7 +69,7 @@ Hay tres opciones disponibles:
 If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 
 
-### Enable binary database creation
+### Activar la creación de bases de datos binarias
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
@@ -146,7 +146,7 @@ This area configures access to the 4D HTML documentation displayed in your curre
 
 Language of the HTML documentation to display. You can select a documentation in a different language from the application language.
 
-### Look in the local folder first
+### Primero buscar en la carpeta local
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
