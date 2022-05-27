@@ -32,7 +32,7 @@ When you check this option, the settings are separated into three dialog boxes:
 
 * **Propiedades estructura**
 * **Propiedades usuario**
-* **User Settings for Data file**
+* **Propiedades usuario para el archivo de datos**
 
 You can access these dialog boxes using the **Design > Settings...** menu or the **Settings** button in the toolbar:
 
@@ -59,7 +59,7 @@ The following table lists the pages of settings found in the **User Settings** a
 | [Página Base de datos/Memoria](../settings/database.md#memory)                        | Identical to standard settings        | Identical to standard settings          |
 | [Page Backup/Periodicidad](../settings/backup.md#scheduler)                           | N/a                                   | Identical to standard settings          |
 | [Backup/Configuration page](../settings/backup.md#configuration)                      | N/a                                   | Identical to standard settings          |
-| [Backup/Backup & Restore page](../settings/backup.md/#backup-restore)                 | N/a                                   | Identical to standard settings          |
+| [Página Backup & Backup y restaurar](../settings/backup.md/#backup-restore)           | N/a                                   | Identical to standard settings          |
 | [Client-server/Network options page](../settings/client-server.md/#network-options)   | Identical to standard settings        | Identical to standard settings          |
 | [Client-server/IP configuration page](../settings/client-server.md/#ip-configuration) | Identical to standard settings        | Identical to standard settings          |
 | [Web/Configuration page](../settings/web.md#configuration)                            | Identical to standard settings        | Identical to standard settings          |
@@ -100,7 +100,7 @@ In merged applications, the user settings file is placed at the following locati
 * In single-user versions: ProjectFolder/Database/Settings/settings.4DSettings
 * In client/server versions: ProjectFolder/Server Database/Settings/settings.4DSettings
 
-### User Settings for Data File
+### Propiedades usuario para archivo de datos
 
 The user settings file linked to the data file is automatically created and placed in a settings folder at the following location:
 
