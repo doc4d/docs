@@ -15,7 +15,7 @@ The TLS protocol (successor of SSL) has been designed to secure data exchanges b
 
 At the network level, the security protocol is inserted between the TCP/IP layer (low level) and the HTTP high level protocol. It has been designed mainly to work with HTTP.
 
-Network configuration using TSL:
+Configuración de la red utilizando TSL:
 
 ![](assets/en/WebServer/tls1.png)
 
