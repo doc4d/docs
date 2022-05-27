@@ -338,7 +338,7 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
  $employees:=ds.
 ```
 
-#### See also
+#### Veja também
 
 [**.toCollection()**](EntitySelectionClass.md#tocollection)
 
@@ -549,7 +549,7 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
  $dataClassAttribute:=ds. Employee[$pk] // Se necessário o atributo correspondente à chave primária é acessível
 ```
 
-#### See also
+#### Veja também
 
 [DataClassAttribute.exposed](DataClassAttributeClass.md#exposed)
 
@@ -709,7 +709,7 @@ onde:
 
 *   **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
 
-    | Comparison                           | Symbol(s)   | Comment                                                                                                        |
+    | Comparison                           | Symbol(s)   | Comentário                                                                                                     |
     | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
     | Equal to                             | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
     |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
@@ -1219,7 +1219,7 @@ Queremos desautorizar as fórmulas, por exemplo, quando el usuario introduz sua 
  End if
 ```
 
-#### See also
+#### Veja também
 
 [`.query()`](EntitySelectionClass.md#query) para seleções de entidades
 <!-- END REF -->
