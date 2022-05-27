@@ -91,7 +91,7 @@ Website administration URLS allow you to control the website published on your s
 
 The **/4DSTATS** URL returns several items of information in an HTML table (displayable in a browser):
 
-| Item                   | Descrição                                                    |
+| Elemento               | Descrição                                                    |
 | ---------------------- | ------------------------------------------------------------ |
 | Cache Current Size     | Current size of web server cache (in bytes)                  |
 | Cache Max Size         | Maximum size of cache (in bytes)                             |
@@ -106,7 +106,7 @@ This information can allow you to check the functioning of your server and event
 
 The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as the */4DSTATS* URL. The difference is that the **Cached Objects** field only counts HTML pages (without counting picture files). Moreover, this URL returns the **Filtered Objects** field.
 
-| Item                   | Descrição                                                              |
+| Elemento               | Descrição                                                              |
 | ---------------------- | ---------------------------------------------------------------------- |
 | Cache Current Size     | Current size of web server cache (in bytes)                            |
 | Cache Max Size         | Maximum size of cache (in bytes)                                       |
