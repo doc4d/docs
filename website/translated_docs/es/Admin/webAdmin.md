@@ -11,7 +11,7 @@ The WebAdmin handles the authentication of users with "WebAdmin" privileges, so 
 This feature can be used in 4D applications running headless as well as 4D applications running with interfaces.
 
 
-## Starting the WebAdmin web server
+## Iniciar el servidor web WebAdmin
 
 By default, the `WebAdmin` web server is not launched. You need to configure the launch at startup, or (in versions with interface) launch it manually using a menu item.
 
@@ -123,7 +123,7 @@ An access key is similar to a password but not associated to a login.
 - To delete the access key: click the **Modify** button, let the access key area empty and click **OK**.
 
 
-## WebAdmin Headless Configuration
+## Configuración de WebAdmin sin interfaz
 
 All [WebAdmin settings](#webadmin-settings) are stored in the `WebAdmin.4DSettings` file. There is one default `WebAdmin.4DSettings` file per 4D and 4D Server application, so that it is possible to deploy multiple applications on the same host machine.
 
