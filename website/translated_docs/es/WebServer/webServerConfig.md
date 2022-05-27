@@ -50,11 +50,11 @@ Con 4D en modo remoto, estos archivos deben estar ubicados en la carpeta de recu
 
 ## Conjunto de caracteres
 
-| Puede ajustarse con           | Nombre                                                            | Comentarios                  |
-| ----------------------------- | ----------------------------------------------------------------- | ---------------------------- |
-| objeto webServer              | `characterSet`                                                    | Entero MIBEnum o cadena Name |
-| `WEB SET OPTION`              | `Web character set`                                               | Entero MIBEnum o cadena Name |
-| Caja de diálogo de parámetros | [Options (II) page/Standard Set](../settings/web.md#standard-set) | Menú popup                   |
+| Puede ajustarse con           | Nombre                                                                     | Comentarios                  |
+| ----------------------------- | -------------------------------------------------------------------------- | ---------------------------- |
+| objeto webServer              | `characterSet`                                                             | Entero MIBEnum o cadena Name |
+| `WEB SET OPTION`              | `Web character set`                                                        | Entero MIBEnum o cadena Name |
+| Caja de diálogo de parámetros | [Página Opciones (II) /Conjunto estándar](../settings/web.md#standard-set) | Menú popup                   |
 
 Define el conjunto de caracteres que utilizará el servidor web de 4D. El valor por defecto depende del lenguaje del sistema operativo.
 > Esta configuración también se utiliza para generar informes rápidos en formato HTML.
@@ -82,7 +82,7 @@ Lista de hosts y métodos permitidos para el servicio CORS.
 
 #### Nombres de dominio (propiedad local)
 
-Nombre de dominio o dirección IP desde donde las páginas externas pueden enviar solicitudes de datos al Servidor a través de CORS. Multiple domain attributes can be added to create a white list. Several syntaxes are supported:
+Nombre de dominio o dirección IP desde donde las páginas externas pueden enviar solicitudes de datos al Servidor a través de CORS. Multiple domain attributes can be added to create a white list. Se soportan varias sintaxis:
 
 - 192.168.5.17:8081
 - 192.168.5.17
