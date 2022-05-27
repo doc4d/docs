@@ -82,7 +82,7 @@ This setting can be used to globally set the updating mode for the local instanc
 
 ## Página Configuración IP
 
-### Allow-Deny Configuration Table
+### Tabla de configuración Autorizar-Rechazar
 
 This table allows you to set access control rules for the database depending on 4D remote machine IP addresses. This option allows reinforcing security, for example, for strategic applications.
 
