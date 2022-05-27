@@ -213,9 +213,9 @@ Creation of a preferences file in the database folder:
 | Parámetros        | Tipo      |    | Descripción                                  |
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Texto     | -> | Name of the alias or shortcut                |
+| aliasName         | Texto     | -> | Nombre del alias o del atajo                 |
 | aliasType         | Integer   | -> | Tipo de enlace del alias                     |
-| Resultado         | 4D.File   | <- | Alias or shortcut file reference             |
+| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo  |
 <!-- END REF -->
 
 
@@ -352,7 +352,7 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 > Reading a .exe or .dll is only possible on Windows.
 
-All property values are Text.
+Todos los valores de propiedades son de tipo Texto.
 
 | Propiedad        | Tipo  |
 | ---------------- | ----- |
