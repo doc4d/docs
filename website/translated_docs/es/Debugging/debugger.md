@@ -385,7 +385,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 
 ![source-code-pane-context-window](assets/en/Debugging/sourceCodePaneContext.png)
 
-* **Goto Definition**: Goes to where the selected object is defined. This command is available for:
+* **Goto Definition**: Goes to where the selected object is defined. Este comando está disponible para:
   * *Project methods:* displays method contents in a new window of the Method editor
   * *Fields:* Displays field properties in the inspector of the Structure window
   * *Tables:* Displays table properties in the inspector of the Structure window
