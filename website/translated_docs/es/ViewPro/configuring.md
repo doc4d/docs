@@ -145,7 +145,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 
 | Caracter  | Descripción                                                                                                                                                                                                                                                                     | Ejemplo                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| 0         | Placeholder that displays zeros.                                                                                                                                                                                                                                                | #.00 will display 1.1 as 1.10                                                                                              |
+| 0         | Marcador de posición que muestra ceros.                                                                                                                                                                                                                                         | #.00 will display 1.1 as 1.10                                                                                              |
 | .         | Displays a decimal point                                                                                                                                                                                                                                                        | 0.00 will display 1999 as 1999.00                                                                                          |
 | ,         | Displays the thousands separator in a number.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 will display 12200000 as 12,200,000                                                                                    |
 | \_      | Skips the width of the next character.                                                                                                                                                                                                                                          | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
@@ -301,22 +301,22 @@ Header and footer attributes are used to specify text or images in the left, rig
 The following special characters allow the automatic addition or formatting of information in the header and footer when the 4D View Pro area is printed.
 
 
-| Caracter | Descripción                      | Ejemplo                                                               | Resultado                                         |
-| -------- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
-| &        | Escape character                 | (ver ejemplos más abajo)                                              |                                                   |
-| P        | Página actual                    | printInfo.headerLeft:="This is page &P."                              | Esta es la página 5.|                             |
-| N        | Conteo de páginas                | printInfo.headerLeft:="There are &N pages."                           | Hay 10 páginas.                                   |
-| D        | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | Es 2015/6/19.                                     |
-| T        | Hora actual                      | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
-| G        | Imagen                           | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
-| S        | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                               | ~~This is text.~~                                 |
-| U        | Subrayado                        | printInfo.headerLeft:="&UThis is text."                               | <ins>This is text.</ins>                         |
-| B        | Negrita                          | printInfo.headerLeft:="&BThis is text."                               | **This is text.**                                 |
-| I        | Itálica                          | printInfo.headerLeft:="&IThis is text."                               | *This is text.*                                   |
-| "        | Prefijo fuente                   | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
-| K        | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">This is text</span>.      |
-| F        | Workbook name                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
-| A        | Nombre de la hoja de cálculo     | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
+| Caracter | Descripción                       | Ejemplo                                                               | Resultado                                         |
+| -------- | --------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
+| &        | Escape character                  | (ver ejemplos más abajo)                                              |                                                   |
+| P        | Página actual                     | printInfo.headerLeft:="This is page &P."                              | Esta es la página 5.|                             |
+| N        | Conteo de páginas                 | printInfo.headerLeft:="There are &N pages."                           | Hay 10 páginas.                                   |
+| D        | Fecha actual (formato yyyy/mm/dd) | printInfo.headerLeft:="It is &D."                                     | Es 2015/6/19.                                     |
+| T        | Hora actual                       | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
+| G        | Imagen                            | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
+| S        | Strikethrough                     | printInfo.headerLeft:="&SThis is text."                               | ~~This is text.~~                                 |
+| U        | Subrayado                         | printInfo.headerLeft:="&UThis is text."                               | <ins>This is text.</ins>                         |
+| B        | Negrita                           | printInfo.headerLeft:="&BThis is text."                               | **This is text.**                                 |
+| I        | Itálica                           | printInfo.headerLeft:="&IThis is text."                               | *This is text.*                                   |
+| "        | Prefijo fuente                    | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
+| K        | Text Color prefix                 | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">This is text</span>.      |
+| F        | Workbook name                     | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
+| A        | Nombre de la hoja de cálculo      | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
 
 ### Márgenes
 
@@ -421,7 +421,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 4D View Pro style objects and style sheets allow you to control the graphical aspects and the look of your 4D View Pro documents.
 
-### Style objects & Style sheets
+### Objetos de estilo & Hojas de estilo
 
 Style objects contain the style settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. You can use style objects directly with the [VP SET CELL STYLE](method-list.md#vp-set-cell-style) and [VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) commands.
 
