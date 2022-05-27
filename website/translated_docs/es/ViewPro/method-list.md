@@ -39,10 +39,10 @@ Pass the new name for the formula in *name*. If the name is already used within 
 You can pass an object with additional properties for the named formula in *options*. Se soportan las siguientes propiedades:
 
 
-| Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scope     | Número | Alcance de la fórmula. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a formula name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
-| comment   | Texto  | Comment associated to named formula                                                                                                                                                                                                                                                                                                                                                                                                |
+| Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| scope     | Número | Alcance de la fórmula. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>El alcance determina si el nombre de una fórmula es local para una hoja de cálculo determinada (*scope*=sheet index or `vk current sheet`), o si es global a todo el libro de trabajo (*scope*=`vk workbook`). |
+| comment   | Texto  | Comment associated to named formula                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 #### Ejemplo
@@ -80,10 +80,10 @@ In *rangeObj*, pass the range that you want to name and in *name*, pass the new 
 You can pass an object with additional properties for the named range in *options*. Se soportan las siguientes propiedades:
 
 
-| Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scope     | Número | Alcance del rango. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
-| comment   | Texto  | Comment associated to named range                                                                                                                                                                                                                                                                                                                                                                                            |
+| Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scope     | Número | Alcance del rango. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>El alcance determina si el nombre de un rango es local para una hoja de cálculo determinada (*scope*=sheet index or `vk current sheet`), o si es global a todo el libro de trabajo (*scope*=`vk workbook`). |
+| comment   | Texto  | Comment associated to named range                                                                                                                                                                                                                                                                                                                                                                                                                     |
 > * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
 > * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
 
@@ -119,7 +119,7 @@ VP ADD RANGE NAME($range;"Total1")
 The `VP ADD SELECTION` command<!-- REF #_method_.VP ADD SELECTION. Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
 
 In *rangeObj*, pass a range object of cells to add to the current selection.
-> The active cell is not modified.
+> La celda activa no se modifica.
 
 #### Ejemplo
 
@@ -288,8 +288,7 @@ $styles.borderTop:=$borders
 
 VP ADD STYLESHEET("ViewProArea";"GreenDashDotStyle";$styles)
 
-//To apply the style
-VP SET CELL STYLE(VP Cells("ViewProArea";1;1;2;2);New object("name";"GreenDashDotStyle"))
+//Para aplicar el estiloVP SET CELL STYLE(VP Cells("ViewProArea";1;1;2;2);New object("name";"GreenDashDotStyle"))
 ```
 
 will create and apply the following style object named *GreenDashDotStyle*:
@@ -329,7 +328,7 @@ The `VP ALL` command<!-- REF #_method_.VP ALL. Summary -->returns a new range ob
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -374,7 +373,7 @@ The *column* parameter defines the column of the cell range's position. Pass the
 
 The *row* parameter defines the row of the cell range's position. Pass the row index in this parameter.
 
-In the optional *sheet* parameter, you can indicate the index of the sheet where the range will be defined. If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default.
+In the optional *sheet* parameter, you can indicate the index of the sheet where the range will be defined. Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual por defecto.
 
 > la indexación comienza en 0.
 
@@ -433,7 +432,7 @@ The *columnCount* parameter allows you to define the total number of columns the
 
 The *rowCount* parameter allows you to define the total number of rows the range is within. *rowCount* must be greater than 0.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual por defecto.
 
 
 #### Ejemplo
@@ -479,7 +478,7 @@ The *column* parameter defines the first column of the column range. Pass the co
 
 The optional *columnCount* parameter allows you to define the total number of columns of the range. *columnCount* must be greater than 0. If omitted, the value will be set to 1 by default and a column type range is created.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual por defecto.
 
 #### Ejemplo
 
@@ -1063,7 +1062,7 @@ You can pass the optional *searchCondition* parameter to specify how the search 
 | afterRow    | Integer  | The number of the row just before the starting row of the search. If the *rangeObj* is a combined range, the row number given must be from the first range. Default value: -1 (beginning of the *rangeObj*)          |
 | all         | Booleano | <li>True - All cells in *rangeObj* corresponding to *searchValue* are returned</li><li>False - (default value) Only the first cell in *rangeObj* corresponding to *searchValue* is returned</li>                                                                                                                                                                 |
 | flags       | Integer  | <table><tr><td>`vk find flag exact match`</td><td>The entire content of the cell must completely match the search value</td></tr><tr><td>`vk find flag ignore case`</td><td>Capital and lower-case letters are considered the same. Ej.: "a" es considerada como idéntica a "A".</td></tr><tr><td>`vk find flag none`</td><td>no search flags are considered (default)</td></tr><tr><td>`vk find flag use wild cards`</td><td>Wildcard characters (\*,?) can be used in the search string. Wildcard characters can be used in any string comparison to match any number of characters:<li>\* for zero or multiple characters (for example, searching for "bl*"  can find "bl", "black", or "blob")</li><li>? ? ? for a single character (for example, searching for "h?t" can find "hot", or "hit"</li></td></tr></table><p>Estos marcadores se pueden combinar. Por ejemplo:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>                                                                                     |
-| order       | Integer  | <table><tr><td>`vk find order by columns`</td><td>The search is performed by columns. Each row of a column is searched before the search continues to the next column.</td></tr><tr><td>`vk find order by rows`</td><td>The search is performed by rows. Each column of a row is searched before the search continues to the next row (default)</td></tr></table>                                                                                                                                                                                           |
+| order       | Integer  | <table><tr><td>`vk find order by columns`</td><td>The search is performed by columns. Each row of a column is searched before the search continues to the next column.</td></tr><tr><td>`vk find order by rows`</td><td>La búsqueda se realiza por líneas. Each column of a row is searched before the search continues to the next row (default)</td></tr></table>                                                                                                                                                                                           |
 | target      | Integer  | <table><tr><td>`vk find target formula`</td><td>The search is performed in the cell formula</td></tr><tr><td>`vk find target tag`</td><td>The search is performed in the cell tag</td></tr><tr><td>`vk find target text`</td><td>The search is performed in the cell text (default)</td></tr></table><p>Estos marcadores se pueden combinar. Por ejemplo:<p> <code>$search.target:=vk find target formula+vk find target text</code></p>                                                                                     |
 
 In the optional *replaceValue* parameter, you can pass text to take the place of any instance of the text in *searchValue* found in the *rangeObj*.
@@ -1101,10 +1100,10 @@ $condition.target:=vk find target text
 $condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+  // Reemplazar las celdas que contienen sólo "Total" en la hoja actual con "Grand Total"
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Check for empty range object 
+  // Comprobar si el objeto de rango está vacío
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1219,7 +1218,7 @@ The `VP Get active cell` command <!-- REF #_method_.VP Get active cell.Summary -
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -1361,7 +1360,7 @@ The `VP Get column count` command <!-- REF #_method_.VP Get column count.Summary
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -1434,7 +1433,7 @@ The `VP Get default style` command<!-- REF #_method_.VP Get default style. Summa
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -1613,7 +1612,7 @@ The `VP Get frozen panes` command <!-- REF #_method_.VP Get frozen panes.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 ##### Objeto devuelto
@@ -1714,7 +1713,7 @@ The `VP Get print info` command<!-- REF #_method_.VP Get print info. Summary -->
 
 Pass the the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0) whose printing attributes you want returned.  If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0) whose printing attributes you want returned.  Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -1837,7 +1836,7 @@ The `VP Get row count` command <!-- REF #_method_.VP Get row count.Summary -->re
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-You can define where to get the row count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+You can define where to get the row count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Ejemplo
@@ -1873,7 +1872,7 @@ The `VP Get selection` command<!-- REF #_method_.VP Get selection. Summary -->re
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 
@@ -2035,7 +2034,7 @@ The `VP Get sheet options` command<!-- REF #_method_.VP Get sheet options. Summa
 
 Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
+In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 
 #### Objeto devuelto
@@ -2121,10 +2120,10 @@ You want to center the text for the spanned cells in this document:
 ![](assets/en/ViewPro/cmd_vpGetSpans.PNG)
 
 ```4d
-// Search for all cell spans 
+// Buscar todas las celdas fusionadas 
 $range:=VP Get spans(VP All("ViewProArea"))
 
-//center text
+//centrar el texto
 $style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal align center)
 VP SET CELL STYLE($range;$style)
 ```
@@ -3258,7 +3257,7 @@ In *parameters* object, pass any of the following optional properties. These pro
 
 | Propiedad          | Tipo            | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ------------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area               | texto           | The name of the offscreen area. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| area               | texto           | El nombre del área fuera de la pantalla. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | onEvent            | objet (fórmula) | A callback method that will be launched when the offscreen area is ready. Puede ser:<p><p><li>an `onEvent` function of a class, or</li><li>un objeto `Formula`</li><p><p>By default, the callback method is called on the [`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), or [`On Timer`](Events/onTimer.md) events. <p><p>The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
 | autoQuit           | booleano        | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.<p><p>If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | timeout            | number          | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. If set to 0, no limitation is applied. Valor por defecto: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -3579,12 +3578,12 @@ VP SET BORDER(VP Cells("ViewProArea";1;1;3;3);$border;$option)
 This code demonstrates the difference between `VP SET BORDER` and setting borders with the [`VP SET CELL STYLE`](#vp-set-cell-style) command:
 
 ```4d
-// Set borders using VP SET BORDER
+// Definir los bordes con VP SET BORDER
 $border:=New object("color";"red";"style";vk line style thick)
 $option:=New object("outline";True)
 VP SET BORDER(VP Cells("ViewProArea";1;1;3;3);$border;$option)
 
-// // Set borders using VP SET CELL STYLE
+// // Definir los bordes con VP SET CELL STYLE
 $cellStyle:=New object
 $cellStyle.borderBottom:=New object("color";"blue";"style";vk line style thick)
 $cellStyle.borderRight:=New object("color";"blue";"style";vk line style thick)
@@ -3895,10 +3894,10 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 
 
 ```4d
-//Set the cell value as the current date and time
+//Definir el valor de la celda como la fecha y hora actuales
 VP SET DATE TIME VALUE(VP Cell("ViewProArea";6;2);Current time;Current date;vk pattern full date time)
 
-//Set the cell value as the 18th of December
+//Definir el valor de la celda como 18 de diciembre
 VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pattern sortable date time)
 ```
 
@@ -3945,10 +3944,10 @@ For information on patterns and formatting characters, please refer to the [Date
 
 
 ```4d
-//Set the cell value to the current date
+//Definir el valor de la celda para la fecha actual
 VP SET DATE VALUE(VP Cell("ViewProArea";4;2);Current date))
 
-//Set the cell value to a specific date with a designated format
+//Definir el valor de la celda para una fecha específica con un formato designado
 VP SET DATE VALUE(VP Cell("ViewProArea";4;4);Date("12/25/94");"d/m/yy ")
 VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 ```
@@ -4286,7 +4285,7 @@ $printInfo.rowEnd:=24
 
 $printInfo.showGridLine:=True
 
-//Add corporate logo
+//Añadir logo corporativo
 $printInfo.headerLeftImage:=logo.png
 $printInfo.headerLeft:="&G"
 
@@ -4295,10 +4294,10 @@ $printInfo.showColumnHeader:=vk print visibility hide
 $printInfo.fitPagesWide:=1
 $printInfo.fitPagesTall:=1
 
-//print PDF document
+//imprimir documento PDF 
 VP SET PRINT INFO ("ViewProArea";$printInfo)
 
-//export the PDF
+//exportar el PDF
 VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(ALERT("PDF ready!"))))
 ```
 
@@ -4751,10 +4750,10 @@ The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for
 #### Ejemplo
 
 ```4d
-//Set the value to the current time
+//Definir el valor para la hora actual
 VP SET TIME VALUE(VP Cell("ViewProArea";5;2);Current time)
 
-//Set the value to a specific time with a designated format
+//Definir el valor para una hora específica con un formato designado
 VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 ```
 
@@ -4916,7 +4915,7 @@ The following table lists the available workbook options:
 | allowUserDragDrop                     | booleano                | Drag and drop of range data is allowed                                                                                                                                                                                                                 |
 | allowUserDragFill                     | booleano                | Drag fill is allowed                                                                                                                                                                                                                                   |
 | allowUserEditFormula                  | booleano                | Formulas can be entered in cells                                                                                                                                                                                                                       |
-| allowUserResize                       | booleano                | Columns and rows can be resized                                                                                                                                                                                                                        |
+| allowUserResize                       | booleano                | Columnas y filas redimensionables                                                                                                                                                                                                                      |
 | allowUserZoom                         | booleano                | Zooming (ctrl + mouse wheel) is allowed                                                                                                                                                                                                                |
 | autoFitType                           | number                  | Content is formatted to fit in cells, or cells and headers. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> The content autofits cells and headers</td></tr></table>                                                                                                                                             |
 | backColor                             | cadena                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundImage is set.                                                          |
@@ -5018,7 +5017,7 @@ You want to view the cell in column AY, row 51 in the center of the 4D View Pro 
 
 ```4d
 $displayCell:=VP Cell("myVPArea";50;50)
-// Move the view to show the cell
+ // Mover la vista para mostrar la celda
 VP SHOW CELL($displayCell;vk position center;vk position center)
 ```
 
@@ -5030,7 +5029,7 @@ The same code with the vertical and horizontal selectors changed to show the sam
 
 ```4d
 $displayCell:=VP Cell("myVPArea";50;50)
-  // Move the view to show the cell
+  // Mover la vista para mostrar la celda
 VP SHOW CELL($displayCell;vk position top;vk position right)
 ```
 
