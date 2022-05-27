@@ -950,7 +950,7 @@ Se pueden utilizar dos tipos de marcadores: **indexed placeholders** y los **nam
 Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* puede contener, para los parámetros *attributePath*, *formula* y *value*:
 
 
-*   direct values (no placeholders),
+*   valores directos (sin marcadores),
 *   indexed placeholders and/or named placeholders.
 
 El uso de marcadores de posición en las búsquedas **se recomienda** por las siguientes razones:
