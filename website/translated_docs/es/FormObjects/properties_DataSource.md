@@ -10,7 +10,7 @@ When this option is selected, if a user enters a value that is not found in the 
 
 When the **automatic insertion** option is not set (default), the value entered is stored in the form object but not in the list in memory.
 
-This property is supported by:
+Esta propiedad es soportada por:
 
 - [Combo box](comboBox_overview.md) and [list box column](listbox_overview.md#list-box-columns) form objects associated to a choice list.
 - [Combo box](comboBox_overview.md) form objects whose associated list is filled by their array or object datasource.
@@ -184,7 +184,7 @@ List of values that will be used as default values for the list box column (arra
 
 > Do not make confusion between this property and the "[default value](properties_RangeOfValues.md#default-list-of-values)" property that allows to define a field value in new records.
 
-You must enter a list of values. In the Form editor, a specific dialog box allows you to enter values separated by carriage returns:
+Debe introducir una lista de valores. In the Form editor, a specific dialog box allows you to enter values separated by carriage returns:
 
 ![](assets/en/FormObjects/defaultValues.png)
 
