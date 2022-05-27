@@ -118,11 +118,11 @@ These reserved key combinations are listed in the following table:
 
 | Key (Windows)   | Key (macOS)        | Operation   |
 | --------------- | ------------------ | ----------- |
-| Ctrl+C          | Command+C          | Copy        |
-| Ctrl+Q          | Command+Q          | Quit        |
+| Ctrl+C          | Command+C          | Copiar      |
+| Ctrl+Q          | Command+Q          | Salir       |
 | Ctrl+V          | Command+V          | Paste       |
 | Ctrl+X          | Command+X          | Cut         |
-| Ctrl+Z          | Command+Z          | Undo        |
+| Ctrl+Z          | Command+Z          | Deshacer    |
 | Ctrl+. (period) | Comando+. (period) | Stop action |
 
 To assign a keyboard shortcut in the Menu editor:
