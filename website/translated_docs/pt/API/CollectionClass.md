@@ -1780,7 +1780,7 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 
 *   *ascOrDesc*: Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constante     | Type          | Value | Comment                                           |
+    | Constante     | Type          | Value | Comentário                                        |
     | ------------- | ------------- | ----- | ------------------------------------------------- |
     | ck ascending  | Inteiro longo | 0     | Elements are ordered in ascending order (default) |
     | ck descending | Inteiro longo | 1     | Elements are ordered in descending order          |
@@ -1795,7 +1795,7 @@ Se a coleção conter elementos de tipos diferentes, são primeiro agrupados por
 4.  numbers
 5.  objetos
 6.  collections
-7.  dates
+7.  datas
 
 #### Exemplo 1
 
@@ -2651,7 +2651,7 @@ Se a coleção conter elementos de tipos diferentes, são primeiro agrupados por
 4.  numbers
 5.  objetos
 6.  collections
-7.  dates
+7.  datas
 
 #### Exemplo 1
 
