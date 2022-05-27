@@ -46,7 +46,7 @@ SET DATABASE PARAMETER(Client Log Recording;1)
 ```
 > Esta declaração também começa um arquivo de histórico [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
 
-#### Headers
+#### Cabeçalhos
 
 Este arquivo começa com os cabeçalhos abaixo:
 
@@ -96,7 +96,7 @@ SET DATABASE PARAMETER(Client Log Recording;1) //lado remoto
 ```
 > Esta declaração também começa o arquivo de histórico [4DRequestsLog.txt](#4drequestslogtxt).
 
-#### Headers
+#### Cabeçalhos
 
 Este arquivo começa com os cabeçalhos abaixo:
 
