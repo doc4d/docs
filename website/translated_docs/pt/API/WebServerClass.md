@@ -83,7 +83,7 @@ The `WEB Server` command<!-- REF #_command_.WEB Server. Summary -->returns the d
 
 By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
 
-| Constante                      | Value | Comment                                                  |
+| Constante                      | Value | Comentário                                               |
 | ------------------------------ | ----- | -------------------------------------------------------- |
 | `Web server database`          | 1     | Current database Web server (default if omitted)         |
 | `Web server host database`     | 2     | Web server of the host database of a component           |
