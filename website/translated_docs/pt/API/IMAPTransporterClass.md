@@ -161,7 +161,7 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constante | Value | Comment                                     |
+    | Constante | Value | Comentário                                  |
     | --------- | ----- | ------------------------------------------- |
     | IMAP all  | 1     | Select all messages in the selected mailbox |
 
@@ -257,7 +257,7 @@ In the optional `options` parameter, you can pass an object to define the charse
 
 Possible charsets:
 
-| Constante                | Value                          | Comment                                                                                                   |
+| Constante                | Value                          | Comentário                                                                                                |
 | ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                 |
@@ -1445,7 +1445,7 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constante | Value | Comment                                     |
+    | Constante | Value | Comentário                                  |
     | --------- | ----- | ------------------------------------------- |
     | IMAP all  | 1     | Select all messages in the selected mailbox |
 
@@ -1748,7 +1748,7 @@ In the *name* parameter, pass the name of the mailbox to access. The name repres
 
 The optional *state* parameter defines the type of access to the mailbox. The possible values are:
 
-| Constante             | Value | Comment                                                                                                                                                               |
+| Constante             | Value | Comentário                                                                                                                                                            |
 | --------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1     | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                 |
 | IMAP read write state | 0     | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Default value) |
