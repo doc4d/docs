@@ -328,7 +328,7 @@ The `.4darchive` is copied at the following location:
 
 
 
-You can check the **Allow automatic update...** option for client applications running on the concurrent platform. This option is only enabled if:
+You can check the **Allow automatic update...** option for client applications running on the concurrent platform. Esta opción sólo se activa si:
 
 - the **Build server application** option is checked,
 - the **Allow automatic update...** option for client applications running on the current platform is checked.
@@ -343,7 +343,7 @@ This feature requires that you click on the **[...]** button and designate the l
 You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
 
 
-#### Displaying update notification
+#### Visualización de la notificación de actualización
 
 The client application update notification is carried out automatically following the server application update.
 
@@ -385,7 +385,7 @@ The *\<ApplicationName>Client* folder contains the client portion of the applica
 The contents of these folders vary depending on the current platform:
 
 *   *Windows* - Each folder contains the application executable file, named *\<ApplicationName>Client.exe* for the client part and *\<ApplicationName>Server.exe* for the server part as well as the corresponding .rsr files. The folders also contain various files and folders necessary for the applications to work and customized items that may be in the original 4D Volume Desktop and 4D Server folders.
-*   *macOS* - Each folder contains only the application package, named \<ApplicationName> Client for the client part and \<ApplicationName> Server para la parte del servidor. Cada paquete contiene todos los elementos necesarios para que la aplicación funcione. Under macOS, launch a package by double-clicking it.
+*   *macOS* - Each folder contains only the application package, named \<ApplicationName> Cliente para la parte cliente y \<ApplicationName> Server para la parte del servidor. Cada paquete contiene todos los elementos necesarios para que la aplicación funcione. Under macOS, launch a package by double-clicking it.
 
     > The macOS packages built contain the same items as the Windows subfolders. Para modificarlo, primero hay que mostrar su contenido (**Control+clic** en el icono).
 
@@ -512,7 +512,7 @@ The following optional modules can be deselected:
 
 
 
-## Licenses & Certificate page
+## Página Licences & Certificado
 
 The Licences & Certificate page can be used to:
 
@@ -585,7 +585,7 @@ Las [funciones de firma integradas](#os-x-signing-certificate) de 4D se han adap
 
 For more information on the notarization concept, please refer to [this page on the Apple developer website](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow).
 
-## Customizing application icons
+## Personalizar los iconos de una aplicación
 
 4D associates a default icon with stand-alone, server, and client applications, however you can customize the icon for each application.
 
@@ -665,7 +665,7 @@ You can select the data linking mode during the build application process. Puede
 - Use the **LastDataPathLookup** XML key (single-user application or server application).
 
 
-### Defining a default data folder
+### Definir una carpeta de datos por defecto
 
 4D allows you to define a default data file at the application building stage. Cuando la aplicación se lanza por primera vez, si no se encuentra ningún archivo de datos local (ver \[secuencia de lanzamiento descrita anteriormente\](#opening-the-data-file)), el archivo de datos por defecto se abre automáticamente y de forma silenciosa en modo de sólo lectura por 4D. Cuando la aplicación se lanza por primera vez, si no se encuentra ningún archivo de datos local (ver \[secuencia de lanzamiento descrita anteriormente\](#opening-the-data-file)), el archivo de datos por defecto se abre automáticamente y de forma silenciosa en modo de sólo lectura por 4D.
 
