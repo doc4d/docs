@@ -311,7 +311,7 @@ This function is mainly used in the context of debugging. One thing to keep in m
 
 In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
 
-#### See also
+#### Veja também
 
 [.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.setRemoteContextInfo()](#setremotecontextinfo)
 
@@ -457,7 +457,7 @@ $info:=$ds.getAllRemoteContexts()
 
 > This example serves as a demonstration, it is not meant for real implementation.
 
-#### See also
+#### Veja também
 
 [.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.setRemoteContextInfo()](#setremotecontextinfo)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
@@ -578,7 +578,7 @@ Since contexts behave as filters for attributes, if *main* is returned empty, it
 
 See the example from the [.setRemoteContextInfo()](#example-1-3) section.
 
-#### See also
+#### Veja também
 
 [.setRemoteContextInfo()](#setremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts) <br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
@@ -649,7 +649,7 @@ A função `.isAdminProtected()` <!-- REF #DataStoreClass.isAdminProtected(). Su
 
 Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAdmin`, mas pode ser desativada para evitar qualquer acesso aos dados por parte dos administradores (ver a função [`.setAdminProtection()`](#setadminprotection)).
 
-#### See also
+#### Veja também
 
 [`.setAdminProtection()`](#setadminprotection)
 
@@ -807,7 +807,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
  ds.setAdminProtection(True) //Desativa o acesso aos dados do Explorador de Dados
 ```
 
-#### See also
+#### Veja também
 
 [`.isAdminProtected()`](#isadminprotected)
 
@@ -934,7 +934,7 @@ persons.lastname, persons.firstname"; "main"; 30)
 // When you get the attributes in the context of the current item: Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children" 
 ```
-#### See also
+#### Veja também
 
 [.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
