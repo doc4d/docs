@@ -87,7 +87,7 @@ $employees:=Create entity selection([Employee])
 // em todas as entidades relacionadas com a classe de dados Employee
 ```
 
-#### See also
+#### Veja também
 
 [`dataClass.newSelection()`](DataClassClass.md#newselection)
 
@@ -637,7 +637,7 @@ No parámetro *attributePath*, passe o atributo de entidade cujos valores distin
 1.  booleans
 2.  strings
 3.  numbers
-4.  dates
+4.  datas
 
 Pode utilizar a notação `[]` para designar uma coleção quando *attributePath* for uma rota dentro de um objeto (ver exemplos).
 
@@ -996,7 +996,7 @@ $info:=$persons.getRemoteContextAttributes()
 //$info = "firstname,address,address.city"
 ```
 
-#### See also
+#### Veja também
 
 [Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
@@ -1527,7 +1527,7 @@ The *formulaString* or *formulaObj* is executed for each entity of the entity se
 
 By default if you omit the *sortOrder* parameter, the resulting entity selection is sorted in ascending order. Optionnally, you can pass one of the following values in the *sortOrder* parameter:
 
-| Constante     | Value | Comment                        |
+| Constante     | Value | Comentário                     |
 | ------------- | ----- | ------------------------------ |
 | dk ascending  | 0     | Ascending sort order (default) |
 | dk descending | 1     | Descending sort order          |
@@ -1659,7 +1659,7 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 More examples of queries can be found in the DataClass [`.query()`](DataClassClass.md#query) page.
 
-#### See also
+#### Veja também
 
 [`.query()`](DataClassClass.md#query) for dataclass
 
@@ -2055,7 +2055,7 @@ Example without filter or options parameter:
  $employeesCollection:=$employees.toCollection()
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2112,7 +2112,7 @@ $employees:=ds. Employee.all()
 $employeesCollection:=$employees.toCollection("";dk with primary key+dk with stamp)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2176,7 +2176,7 @@ $employees:=ds.Employee.all()
 $employeesCollection:=$employees.toCollection($filter;0;0;2)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2203,7 +2203,7 @@ $employeesCollection:=New collection
 $employeesCollection:=$employees.toCollection("firstName,lastName,employer")
 ```
 
-returns:
+retorna:
 
 ```4d
 [
@@ -2242,7 +2242,7 @@ $coll:=New collection("firstName";"lastName")
 $employeesCollection:=$employees.toCollection($coll)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2271,7 +2271,7 @@ $coll.push("employer.*")
 $employeesCollection:=$employees.toCollection($coll)
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2297,7 +2297,7 @@ Returns:
   ]
 ```
 
-#### Example 7
+#### Exemplo 7
 
 Example with extraction of some properties of a relatedEntity:
 
@@ -2325,7 +2325,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
     }]
 ```
 
-#### Example 8
+#### Exemplo 8
 
 Example with extraction of some properties of `relatedEntities`:
 
@@ -2335,7 +2335,7 @@ Example with extraction of some properties of `relatedEntities`:
  $employeesCollection:=$employees.toCollection("firstName, lastName, directReports.firstName")
 ```
 
-Returns:
+Retorna:
 
 ```4d
 [
@@ -2377,7 +2377,7 @@ Returns:
     }]
 ```
 
-#### Example 9
+#### Exemplo 9
 
 Example with extraction of all properties of `relatedEntities`:
 
