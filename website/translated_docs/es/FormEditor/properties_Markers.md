@@ -68,7 +68,7 @@ You can also place and use active objects in the Header area of output forms dis
 
 - Buttons, picture buttons,
 - Combo boxes, drop-down lists,  picture pop-up menus,
-- hierarchical lists, list boxes
+- listas jerárquicas, list boxes
 - Radio buttons, check boxes, 3D check boxes,
 - Progress indicators, rulers, steppers, spinners.
 
