@@ -242,22 +242,22 @@ Propriedades compatíveis dependem do tipo de list box.
 
 Form events on list box or list box column objects may return the following additional properties:
 
-| Propriedade      | Type     | Descrição                                                             |
-| ---------------- | -------- | --------------------------------------------------------------------- |
-| area             | texto    | List box object area ("header", "footer", "cell")                     |
-| areaName         | texto    | Name of the area                                                      |
-| column           | longint  | Column number                                                         |
-| columnName       | texto    | Name of the column                                                    |
-| footerName       | texto    | Name of the footer                                                    |
-| headerName       | texto    | Name of the header                                                    |
-| horizontalScroll | longint  | Positive if scroll is towards the right, negative if towards the left |
-| isRowSelected    | booleano | True if row is selected, else False                                   |
-| newPosition      | longint  | New position of the column or row                                     |
-| newSize          | longint  | New size (in pixels) of the column or row                             |
-| oldPosition      | longint  | Previous position of the column or row                                |
-| oldSize          | longint  | Previous size (in pixels) of the column or row                        |
-| row              | longint  | Row number                                                            |
-| verticalScroll   | longint  | Positive if scroll is towards the bottom, negative if towards the top |
+| Propriedade      | Type          | Descrição                                                             |
+| ---------------- | ------------- | --------------------------------------------------------------------- |
+| area             | texto         | List box object area ("header", "footer", "cell")                     |
+| areaName         | texto         | Name of the area                                                      |
+| column           | inteiro longo | Column number                                                         |
+| columnName       | texto         | Name of the column                                                    |
+| footerName       | texto         | Name of the footer                                                    |
+| headerName       | texto         | Name of the header                                                    |
+| horizontalScroll | inteiro longo | Positive if scroll is towards the right, negative if towards the left |
+| isRowSelected    | booleano      | True if row is selected, else False                                   |
+| newPosition      | inteiro longo | New position of the column or row                                     |
+| newSize          | inteiro longo | New size (in pixels) of the column or row                             |
+| oldPosition      | inteiro longo | Previous position of the column or row                                |
+| oldSize          | inteiro longo | Previous size (in pixels) of the column or row                        |
+| row              | inteiro longo | Row number                                                            |
+| verticalScroll   | inteiro longo | Positive if scroll is towards the bottom, negative if towards the top |
 > If an event occurs on a "fake" column or row that doesn't exist, an empty string is typically returned.
 
 
@@ -794,9 +794,9 @@ Regardless of how the data are displayed in the list box (hierarchically or not)
 
 This principle is implemented for internal arrays that can be used to manage:
 
-- colors
+- cores
 - background colors
-- styles
+- estilos
 - hidden rows
 - selections
 
