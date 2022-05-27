@@ -54,7 +54,7 @@ Hay tres opciones disponibles:
 If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 
 
-### Enable binary database creation
+### Activar la creación de bases de datos binarias
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
@@ -107,7 +107,7 @@ You can modify this location as desired, for example if you want to display the 
 
 URL access to the on-line documentation for the version on 4D Doc Center. 4D builds calls to the pages of the documentation based on this URL. You can modify it, for example if you want to display documentation in a different language from the application language. The test button to the right of the area launches the default browser to go to the URL specified.
 
-### Look in the local folder first
+### Primero buscar en la carpeta local
 
 This option (checked by default) sets where 4D will look for the documentation page called using the Explorer or the F1 key.
 
