@@ -2651,7 +2651,7 @@ Se a coleção conter elementos de tipos diferentes, são primeiro agrupados por
 4.  numbers
 5.  objetos
 6.  collections
-7.  dates
+7.  datas
 
 #### Exemplo 1
 
