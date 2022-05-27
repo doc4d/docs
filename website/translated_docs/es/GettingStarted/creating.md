@@ -33,7 +33,7 @@ Para abrir un proyecto existente desde 4D:
 
 1. Select **Open a local application project** in the Welcome Wizard dialog, <p>O<p> Select **Open/Local Project...** from the **File** menu or the **Open** toolbar button.<p> The standard Open dialog appears.
 
-2. Select the project's `.4dproject` file and click **Open**.<p> By default, the project is opened with its current data file. Other file types are suggested:
+2. Select the project's `.4dproject` file and click **Open**.<p> By default, the project is opened with its current data file. Se sugieren otros tipos de archivos:
 
     - *Packed project files*: `.4dz` extension  - deployment projects
     - *Shortcut files*: `.4DLink` extension - store additional parameters needed for opening projects or applications (addresses, identifiers, etc.)
