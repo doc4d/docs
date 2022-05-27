@@ -336,7 +336,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 ```
 The *getter* function is mandatory to declare the *attributeName* computed attribute. Whenever the *attributeName* is accessed, 4D evaluates the `Function get` code and returns the *$result* value.
 
-> A computed attribute can use the value of other computed attribute(s). Recursive calls generate errors.
+> A computed attribute can use the value of other computed attribute(s). Las llamadas recursivas generan errores.
 
 The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. The following resulting types are allowed:
 
