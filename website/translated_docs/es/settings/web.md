@@ -156,7 +156,7 @@ Define the set of characters to be used by the 4D Web server. See [Character Set
 
 ### Conexiones Keep-Alive
 
-See [Deprecated Settings](../WebServer/webServerConfig.md#keep-alive-connections).
+Ver [Propiedades obsoletas](../WebServer/webServerConfig.md#keep-alive-connections).
 
 ### Parámetros CORS
 
@@ -206,7 +206,7 @@ The log format menu provides the following options:
     -   Referer: Contains the URL of the page pointing to the requested document.
     -   User-agent: Contains the name and version of the browser or software of the client at the origin of the request.
 
-> The DLF format cannot be customized.
+> El formato DLF no se puede personalizar.
 
 -   **ELF (Extended Log Format)**: When this option is selected, the request log is generated in ELF format. The ELF format is very widespread in the world of HTTP browsers. It can be used to build sophisticated logs that meet specific needs. For this reason, the ELF format can be customized: it is possible to choose the fields to be recorded as well as their order of insertion into the file.
 
@@ -214,7 +214,7 @@ The log format menu provides the following options:
 
 **Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. You will need to select each field to be included in the log. You will need to select each field to be included in the log.
 
-**Note**: You cannot select the same field twice.
+**Nota**: no puede seleccionar el mismo campo dos veces.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
@@ -226,11 +226,11 @@ The following table lists the fields available for each format (in alphabetical 
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                      |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                    |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                    |
-| CS(HOST)       | X   | X   | Host field of the HTTP request                                             |
+| CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                             |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                  |
-| CS_URI         | X   | X   | URI on which the request is made                                           |
+| CS_URI         | X   | X   | URI sobre el que se realiza la petición                                    |
 | CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                      |
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                   |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year |
@@ -247,7 +247,7 @@ The following table lists the fields available for each format (in alphabetical 
 
 ## Historial (periodicidad)
 
-Configure the automatic backup parameters for the request log. Primero debe elegir la frecuencia (días, semanas, etc.) o el criterio de límite de tamaño de los archivos haciendo clic en el botón de opción correspondiente. A continuación, debe especificar el momento preciso de la copia de seguridad si es necesario.
+Configure los parámetros de copia de seguridad automática para el registro de las peticiones. Primero debe elegir la frecuencia (días, semanas, etc.) o el criterio de límite de tamaño de los archivos haciendo clic en el botón de opción correspondiente. A continuación, debe especificar el momento preciso de la copia de seguridad si es necesario.
 
 -   **No Backup**: The scheduled backup function is deactivated.
 -   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
