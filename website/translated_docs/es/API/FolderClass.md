@@ -103,7 +103,7 @@ En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utiliz
 | fk desktop folder          | 115   |                                                                                                     |
 | fk documents folder        | 117   | Carpeta Documentos del usuario                                                                      |
 | fk licenses folder         | 1     | Folder containing the machine's 4D license files                                                    |
-| fk logs folder             | 7     | Associated filesystem: "/LOGS"                                                                      |
+| fk logs folder             | 7     | Filesystem asociado: "/LOGS"                                                                        |
 | fk mobileApps folder       | 10    |                                                                                                     |
 | fk remote database folder  | 3     | 4D database folder created on each 4D remote machine                                                |
 | fk resources folder        | 6     | Associated filesystem: "/RESOURCES"                                                                 |
