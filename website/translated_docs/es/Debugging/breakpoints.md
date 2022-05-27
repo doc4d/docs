@@ -93,12 +93,12 @@ To open the Caught Commands page:
 
 ![runtime-explorer-window](assets/en/Debugging/catch-command.png)
 
-This page lists the commands to be caught during execution. It is composed of two columns:
+This page lists the commands to be caught during execution. Se compone de dos columnas:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any
 
-To add a command to be caught:
+Para añadir un punto de interrupción en el comando:
 
 1. Click on the **Add New Catch** button (in the shape of a +) located below the list. A new entry is added to the list with the `ALERT` command as default
 2. Click the **ALERT** label, type the name of the command you want to catch, then press **Enter**.
