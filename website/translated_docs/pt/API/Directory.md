@@ -415,7 +415,7 @@ Como padrão, a pasta é copiada com o nome da pasta original. Se quiser renomea
 
 Se já existir uma pasta com o mesmo nome em *destinationFolder*, por padrão 4D gera um erro. Pode passar a constante `fk overwrite` no parâmetro *overwrite* para ignorar e sobrescriber o arquivo existente
 
-| Constante      | Value | Comment                             |
+| Constante      | Value | Comentário                          |
 | -------------- | ----- | ----------------------------------- |
 | `fk overwrite` | 4     | Overwrite existing elements, if any |
 
@@ -506,7 +506,7 @@ A função `.files()` devolve <!-- REF #directory.files(). Summary -->uma coleç
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem na coleção os arquivos de primeiro nivel da pasta, assim como os arquivos ou pastas invisíveis. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constante             | Value | Comment                                                                  |
+| Constante             | Value | Comentário                                                               |
 | --------------------- | ----- | ------------------------------------------------------------------------ |
 | `fk recursive`        | 1     | The collection contains files of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible files are not listed                                           |
@@ -608,7 +608,7 @@ A função `.folders()` devolve <!-- REF #directory.folders(). Summary -->uma co
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem as pastas no primeiro nível da pasta. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Constante             | Value | Comment                                                                    |
+| Constante             | Value | Comentário                                                                 |
 | --------------------- | ----- | -------------------------------------------------------------------------- |
 | `fk recursive`        | 1     | The collection contains folders of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible folders are not listed                                           |
@@ -646,7 +646,7 @@ Se quiser a coleção de todas as pastas e subpastas da pasta database:
 | Parameter | Type    |    | Descrição                                       |
 | --------- | ------- | -- | ----------------------------------------------- |
 | size      | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
-| Resultado | Imagem  | <- | Icon                                            |
+| Resultado | Imagem  | <- | Ícone                                           |
 
 <!-- END REF -->
 
