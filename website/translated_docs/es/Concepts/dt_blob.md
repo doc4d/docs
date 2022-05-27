@@ -23,7 +23,7 @@ Each blob type has its advantages. Use the following table to determine which on
 | Alterable                            |  Sí  |   No    |
 | Shareable in objects and collections |  No  |   Sí    |
 | Pasado por referencia\*            |  No  |   Sí    |
-| Performance when accessing bytes     |  +   |    -    |
+| Rendimiento al acceder a los bytes   |  +   |    -    |
 | Tamaño máximo                        | 2GB  | Memoria |
 
 \*Unlike the 4D commands designed to take a scalar blob as a parameter, passing a scalar blob to a method duplicates it in memory. When working with methods, using blob objects (`4D.Blob`) is more efficient, as they are passed by reference.
@@ -156,7 +156,7 @@ SET BLOB SIZE ($myBlob ; 16*1024)
 
 ## Individually accessing bytes in a blob
 
-#### Accessing a scalar blob's bytes
+#### Acceder a los bytes de un blob escalar
 
 You can access individual bytes of a scalar blob using curly brackets `{}`. Within a blob, bytes are numbered from 0 to N-1, where N is the size of the BLOB:
 
