@@ -82,7 +82,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->true if the attribute is exposed in REST<!-- END REF -->.
 
 
-#### See also
+#### Veja também
 
 [DataClass.getInfo()](DataClassClass.md#getinfo)
 
@@ -143,7 +143,7 @@ A propriedade `.type` <!-- REF DataClassAttributeClass.type. Summary -->contém 
 
 <!-- END REF -->
 
-#### See also
+#### Veja também
 
 [.type](#type)
 
@@ -421,7 +421,7 @@ O tipo de valor conceitual depende do atributo [`.kind`](#kind).
 
 **Possible values:**
 
-| dataClassAttribute.kind | type                                                                                                                         | Comment                                                                                                                                                                                                                                               |
+| dataClassAttribute.kind | type                                                                                                                         | Comentário                                                                                                                                                                                                                                            |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | storage                 | "blob", "bool", "date", "image", "number", "object", or "string"                                                             | "number" is returned for any numeric types including duration. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
 | relatedEntity           | related dataClass name                                                                                                       | Ex: "Companies"                                                                                                                                                                                                                                       |
@@ -431,7 +431,7 @@ O tipo de valor conceitual depende do atributo [`.kind`](#kind).
 
 <!-- END REF -->
 
-#### See also
+#### Veja também
 
 [`.fieldType`](#fieldtype)
 
