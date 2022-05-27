@@ -42,7 +42,7 @@ Uma hora nula se escreve ?00:00:00?
 | Longint division         | Hora \ Número | Número   | ?02:03:04? \ 2         | 3692       |
 | Modulo                   | Hora % Hora    | Hora     | ?20:10:00? % ?04:20:00? | ?02:50:00? |
 | Modulo                   | Hora % Número  | Número   | ?02:03:04? % 2          | 0          |
-| Equality                 | Hora = Hora    | Booleano | ?01:02:03? = ?01:02:03? | True       |
+| Igual                    | Hora = Hora    | Booleano | ?01:02:03? = ?01:02:03? | True       |
 |                          |                |          | ?01:02:03? = ?01:02:04? | False      |
 | Desigualdade             | Hora # Hora    | Booleano | ?01:02:03? # ?01:02:04? | True       |
 |                          |                |          | ?01:02:03? # ?01:02:03? | False      |
