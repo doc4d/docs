@@ -82,7 +82,7 @@ The direction keys (arrows) allow you to move a cell in the direction indicated 
  Depending on the clicked area, the following options are also available:
 
 *   click on a column or row header: **Insert**, **Delete**, **Hide**, or **Unhide** the contents
-*   click on a cell or a cell range:
+*   haga clic en una celda o en un rango de celdas:
     *   **Filter**: allows hiding row through filters (see [Filtering rows](https://www.grapecity.com/spreadjs/docs/versions/v14/online/filter.html) in the SpreadJS documentation).
     *   **Sort**: sorts the column contents.
     *   **Insert Comment**: allows user to enter a comment for an area. When a comment has been entered for an area, the top left cell of the area displays a small red triangle:  
@@ -146,7 +146,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 | ranges    |                   | colección | Colección de rangos                                                 | always available                                   |
 |           | \[ ].name        | texto     | Nombre de rango                                                     | name                                               |
 |           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
-|           | \[ ].row         | number    | Row index (counting begins at 0)                                    | celda, celdas, línea, líneas                       |
+|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                       |
 |           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                     |
 |           | \[ ].column      | number    | Column index (counting begins at 0)                                 | celda, celdas, columna, columnas                   |
 |           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
