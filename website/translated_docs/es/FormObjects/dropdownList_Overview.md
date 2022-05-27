@@ -144,7 +144,7 @@ When the form is executed, 4D automatically manages the drop-down list during in
 
 When you have associated a drop-down list with a choice list and with a field or a variable, you can set the [**Data Type**](properties_DataSource.md#data-type) property to **Selected item value** or **Selected item reference**. Esta opción permite optimizar el tamaño de los datos guardados.
 
-### Using a hierarchical choice list
+### Uso de una lista de selección jerárquica
 
 A hierarchical drop-down list has a sublist associated with each item in the list. Here is an example of a hierarchical drop-down list:
 
