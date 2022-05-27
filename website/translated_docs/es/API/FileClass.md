@@ -214,7 +214,7 @@ Creation of a preferences file in the database folder:
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
 | aliasName         | Texto     | -> | Name of the alias or shortcut                |
 | aliasType         | Integer   | -> | Tipo de enlace del alias                     |
-| Resultado         | 4D.File   | <- | Alias or shortcut file reference             |
+| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo  |
 <!-- END REF -->
 
 
