@@ -89,11 +89,11 @@ By default, if the *type* parameter is omitted or contains an empty string, the 
 | xml       | application/xml               |
 | htm, html | text/html                     |
 | mp3       | audio/mpeg                    |
-| *other*   | application/octet-stream      |
+| *outro*   | application/octet-stream      |
 
 The optional *disposition* parameter lets you pass the `content-disposition` header of the attachment. You can pass one of the following constants from the "Mail" constant theme:
 
-| Constante                   | Value        | Comment                                                                                                                                                                                              |
+| Constante                   | Value        | Comentário                                                                                                                                                                                           |
 | --------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Set the Content-disposition header value to "attachment", which means that the attachment file must be provided as a link in the message.                                                            |
 | mail disposition inline     | "inline"     | Set the Content-disposition header value to "inline", which means that the attachment must be rendered within the message contents, at the "cid" location. The rendering depends on the mail client. |
