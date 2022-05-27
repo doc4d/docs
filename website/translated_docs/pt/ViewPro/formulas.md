@@ -57,7 +57,7 @@ The following operators can be used with two operands of the same type:
 
 | Operator | Comparison               |
 | -------- | ------------------------ |
-| =        | equal to                 |
+| =        | igual a                  |
 | <>       | different than           |
 | >        | greater than             |
 | <        | less than                |
@@ -138,7 +138,7 @@ See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spread
 4D custom functions provide access, from within your 4D View Pro formulas, to:
 
 - 4D process variables,
-- fields,
+- campos,
 - project methods,
 - 4D language commands,
 - or any valid 4D expression.
