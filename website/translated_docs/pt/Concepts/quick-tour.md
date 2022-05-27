@@ -57,7 +57,7 @@ MyOtherDate:=Current date+30
 
 A linha de código lê “MyOtherDate gets the current date plus 30 days.” This line declares the variable, assigns it with both the (temporary) date type and a content. A variable declared by assignment is interpreted as typeless, that is, it can be assigned with other types in other lines and then changes the type dynamically. A variable typed with `var` cannot change the type. In [compiled mode](interpreted.md) however, the type can never be changed, regardless of how the variable was declared.
 
-## Commands
+## Comandos
 
 Os comandos 4D são métodos integrados para realizar uma ação. Todos os comandos 4D, como `CREATE RECORD`, o `ALERT`, se descrevem no manual _Linguagem de 4D_, agrupados por temas. Comandos são frequentemente usados com parâmetros, que são passados em parênteses () e separados por ponto e vírgula (;). Exemplo:
 
