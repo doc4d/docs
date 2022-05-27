@@ -143,7 +143,7 @@ Then you can get an entity selection of the "best" companies by executing:
 > [Computed attributes](#computed-attributes) are defined in the [Entity Class](#entity-class).
 
 
-#### Example with a remote datastore
+#### Ejemplo con un datastore remoto
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
@@ -593,7 +593,7 @@ Function orderBy fullName($event : Object)-> $result : Text
     End if
 ```
 
-You can also write compact code:
+También puede escribir un código compacto:
 
 ```4d
 Function orderBy fullName($event : Object)-> $result : Text
@@ -622,7 +622,7 @@ An **alias** attribute is built above another attribute of the data model, named
 
 Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
-### How to define alias attributes
+### Cómo definir los atributos alias
 
 You create an alias attribute in a dataclass by using the `Alias` keyword in the [**entity class**](#entity-class) of the dataclass.
 
@@ -684,7 +684,7 @@ Alias attributes based upon relations have a specific [`path`](../API/DataClassA
 
 ### Ejemplos
 
-Considering the following model:
+Considerando el siguiente modelo:
 
 ![](assets/en/ORDA/alias1.png)
 
@@ -763,7 +763,7 @@ $arch.save() //courseName and name are "Archaeology II"
 
 
 
-## Exposed vs non-exposed functions
+## Funciones expuestas y no expuestas
 
 For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests.
 
