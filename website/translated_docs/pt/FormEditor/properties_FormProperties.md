@@ -150,7 +150,7 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 | ---------------- | --------- | --------------- |
 | memorizeGeometry | booleano  | true, false     |
 
-#### See also
+#### Veja também
 [**Save Value**](FormObjects/properties_Object.md#save-value)
 
 
