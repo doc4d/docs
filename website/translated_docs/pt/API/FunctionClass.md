@@ -122,7 +122,7 @@ Um objeto`4D.Function` contém um pedaço de código que pode ser executado de u
 <!-- REF #_command_.Formula.Params -->
 | Parameter  | Type         |    | Descrição                            |
 | ---------- | ------------ |:--:| ------------------------------------ |
-| formulaExp | Expression   | -> | Fórmula a ser retornada como objeto  |
+| formulaExp | Expressão    | -> | Fórmula a ser retornada como objeto  |
 | Resultado  | 4D. Function | <- | Função nativa encapsulando a fórmula |
 <!-- END REF -->
 
