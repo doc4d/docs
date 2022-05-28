@@ -316,7 +316,7 @@
         "title": "On Footer Click"
       },
       "Events/onGettingFocus": {
-        "title": "On Getting focus"
+        "title": "On getting focus"
       },
       "Events/onHeader": {
         "title": "On Header"
@@ -625,7 +625,7 @@
         "title": "Texto"
       },
       "FormObjects/viewProAreaOverview": {
-        "title": "4D View Pro area"
+        "title": "Área 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Web Area"
@@ -1064,6 +1064,6 @@
     "Documentation updates|no description given": "Documentation updates",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Editar",
-    "Translate this Doc|recruitment message asking to translate the docs": "Translate"
+    "Translate this Doc|recruitment message asking to translate the docs": "Traduzir"
   }
 }
