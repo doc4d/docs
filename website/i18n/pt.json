@@ -316,7 +316,7 @@
         "title": "On Footer Click"
       },
       "Events/onGettingFocus": {
-        "title": "On Getting focus"
+        "title": "On getting focus"
       },
       "Events/onHeader": {
         "title": "On Header"
@@ -625,7 +625,7 @@
         "title": "Texto"
       },
       "FormObjects/viewProAreaOverview": {
-        "title": "4D View Pro area"
+        "title": "Área 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Web Area"
