@@ -5,7 +5,7 @@ title: On Row Resize
 
 | Code | Can be called by                                        | Definition                                               |
 | ---- | ------------------------------------------------------- | -------------------------------------------------------- |
-| 60   | [4D View Pro Area](FormObjects/viewProArea_overview.md) | The height of a row is modified by a user with the mouse |
+| 60   | [Área 4D View Pro](FormObjects/viewProArea_overview.md) | The height of a row is modified by a user with the mouse |
 
 
 ## Descrição
