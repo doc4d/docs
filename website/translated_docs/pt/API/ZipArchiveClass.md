@@ -93,7 +93,7 @@ O estado do objeto retornado contém as propriedades abaixo:
 | Propriedade | Type     | Descrição                                                                                                                                |
 | ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | statusText  | Texto    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
-| status      | Integer  | Status code                                                                                                                              |
+| status      | Integer  | Código de estado                                                                                                                         |
 | success     | Booleano | True if archive created successfully, else false                                                                                         |
 
 
