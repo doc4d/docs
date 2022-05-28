@@ -1596,7 +1596,7 @@ Retorna:
 }
 ```
 
-#### Example 7
+#### Exemplo 7
 
 Extracting some properties of a `relatedEntity`:
 
