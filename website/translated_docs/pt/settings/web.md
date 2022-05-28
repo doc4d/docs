@@ -32,7 +32,7 @@ IP address on which the 4D web server will receive HTTP requests (4D local and 4
 Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
 
-#### HTTPS Port
+#### Porta HTTPS
 
 Allows you to modify the TCP/IP port number used by the Web server for secured HTTP connections over TLS (HTTPS protocol). See [HTTPS Port](../WebServer/webServerConfig.md#https-port).
 
