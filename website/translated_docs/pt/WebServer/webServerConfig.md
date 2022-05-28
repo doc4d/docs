@@ -286,7 +286,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 
 
 
-## HTTPS Port
+## Porta HTTPS
 
 | Can be set with     | Nome                                           | Comentários |
 | ------------------- | ---------------------------------------------- | ----------- |
