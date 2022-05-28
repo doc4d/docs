@@ -55,7 +55,7 @@ All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc
 
 #### Texto
 
-- single email: "somebody@domain.com"
+- correo electrónico único: "somebody@domain.com"
 - single display name+email: "Somebody <somebody@domain.com>"
 - several emails: "Somebody <somebody@domain.com>,me@home.org"
 
@@ -326,9 +326,9 @@ La propiedad `.keywords` contiene un <!-- REF #EmailObjectClass.keywords.Summary
 
 This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/html/rfc4021)).
 
-| Propiedad       | Tipo     | Valor                               |
-| --------------- | -------- | ----------------------------------- |
-| . \<keyword\> | booleano | Keyword to set (value must be true) |
+| Propiedad       | Tipo     | Valor                                            |
+| --------------- | -------- | ------------------------------------------------ |
+| . \<keyword\> | booleano | Palabra clave a definir (el valor debe ser true) |
 
 Palabras clave reservadas:
 * $draft - Indica que un mensaje es un borrador
