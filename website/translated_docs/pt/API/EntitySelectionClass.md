@@ -782,7 +782,7 @@ Como padrão, as entidades para as que *attributePath* for*null* ou indefinida s
 
 **.extract ( attributePath ; targetPath { ; ...attributePathN ; ... targetPathN}) : Collection**
 
-With this syntax, `.extract()` populates the returned collection with the *attributePath* properties. Each element of the returned collection is an object with *targetPath* properties filled with the corresponding *attributePath* properties. Null values are kept (*option* parameter is ignored with this syntax).
+Com esta sintaxe, `.extract()` preenche a coleção devolvida com as propriedades *attributePath* da entity selection. Each element of the returned collection is an object with *targetPath* properties filled with the corresponding *attributePath* properties. Null values are kept (*option* parameter is ignored with this syntax).
 
 If several *attributePath* are given, a *targetPath* must be given for each. Only valid pairs \[*attributePath*, *targetPath*] are extracted.
 
@@ -2203,7 +2203,7 @@ $employeesCollection:=New collection
 $employeesCollection:=$employees.toCollection("firstName,lastName,employer")
 ```
 
-returns:
+retorna:
 
 ```4d
 [
@@ -2297,7 +2297,7 @@ Retorna:
   ]
 ```
 
-#### Example 7
+#### Exemplo 7
 
 Example with extraction of some properties of a relatedEntity:
 
@@ -2325,7 +2325,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
     }]
 ```
 
-#### Example 8
+#### Exemplo 8
 
 Example with extraction of some properties of `relatedEntities`:
 
@@ -2377,7 +2377,7 @@ Retorna:
     }]
 ```
 
-#### Example 9
+#### Exemplo 9
 
 Example with extraction of all properties of `relatedEntities`:
 
