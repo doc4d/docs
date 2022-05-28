@@ -75,7 +75,7 @@ Check this option if you want the `WebAdmin` web server to be automatically laun
 
 #### Accept HTTP connections on localhost
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. By default, this option is checked.
+When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. Por defecto, esta opción está seleccionada.
 
 **Notas:**
 - Connections with HTTP other than localhost are never accepted.
@@ -89,7 +89,7 @@ Port number to use for connections through HTTP to the `WebAdmin` web server whe
 
 #### Aceptar HTTPS
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
+When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. Por defecto, esta opción está seleccionada.
 
 #### Puerto HTTPS
 
