@@ -62,12 +62,12 @@ By default, the most secured mode supported by the server is used.
 
 Los valores posibles son:
 
-| Valor    | Constantes                     | Comentario                             |
-| -------- | ------------------------------ | -------------------------------------- |
-| CRAM-MD5 | `IMAP authentication CRAM MD5` | Authentication using CRAM-MD5 protocol |
-| LOGIN    | `IMAP authentication login`    | Authentication using LOGIN protocol    |
-| OAUTH2   | `IMAP authentication OAUTH2`   | Authentication using OAuth2 protocol   |
-| PLAIN    | `IMAP authentication plain`    | Authentication using PLAIN protocol    |
+| Valor    | Constantes                     | Comentario                                  |
+| -------- | ------------------------------ | ------------------------------------------- |
+| CRAM-MD5 | `IMAP authentication CRAM MD5` | Authentication using CRAM-MD5 protocol      |
+| LOGIN    | `IMAP authentication login`    | Autenticación utilizando el protocolo LOGIN |
+| OAUTH2   | `IMAP authentication OAUTH2`   | Authentication using OAuth2 protocol        |
+| PLAIN    | `IMAP authentication plain`    | Autenticación utilizando el protocolo PLAIN |
 
 <!-- END REF -->
 
@@ -97,9 +97,9 @@ Los valores posibles son:
 | -------- | ------------------------------ | ---------------------------------------------- |
 | APOP     | `POP3 authentication APOP`     | Authentication using APOP protocol (POP3 only) |
 | CRAM-MD5 | `POP3 authentication CRAM-MD5` | Authentication using CRAM-MD5 protocol         |
-| LOGIN    | `POP3 authentication login`    | Authentication using LOGIN protocol            |
+| LOGIN    | `POP3 authentication login`    | Autenticación utilizando el protocolo LOGIN    |
 | OAUTH2   | `POP3 authentication OAUTH2`   | Authentication using OAuth2 protocol           |
-| PLAIN    | `POP3 authentication plain`    | Authentication using PLAIN protocol            |
+| PLAIN    | `POP3 authentication plain`    | Autenticación utilizando el protocolo PLAIN    |
 
 <!-- END REF -->
 
@@ -125,12 +125,12 @@ By default, the most secured mode supported by the server is used.
 
 Los valores posibles son:
 
-| Valor    | Constantes                     | Comentario                             |
-| -------- | ------------------------------ | -------------------------------------- |
-| CRAM-MD5 | `SMTP authentication CRAM MD5` | Authentication using CRAM-MD5 protocol |
-| LOGIN    | `SMTP authentication login`    | Authentication using LOGIN protocol    |
-| OAUTH2   | `SMTP authentication OAUTH2`   | Authentication using OAuth2 protocol   |
-| PLAIN    | `SMTP authentication plain`    | Authentication using PLAIN protocol    |
+| Valor    | Constantes                     | Comentario                                  |
+| -------- | ------------------------------ | ------------------------------------------- |
+| CRAM-MD5 | `SMTP authentication CRAM MD5` | Authentication using CRAM-MD5 protocol      |
+| LOGIN    | `SMTP authentication login`    | Autenticación utilizando el protocolo LOGIN |
+| OAUTH2   | `SMTP authentication OAUTH2`   | Authentication using OAuth2 protocol        |
+| PLAIN    | `SMTP authentication plain`    | Autenticación utilizando el protocolo PLAIN |
 
 <!-- END REF -->
 
