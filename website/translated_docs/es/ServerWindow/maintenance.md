@@ -9,11 +9,11 @@ The **Maintenance** page of the 4D Server Administration window provides informa
 ![](assets/en/Admin/server-maintenance.png)
 
 
-## Last verification/compacting
+## Última verificación/compactación
 
 These areas indicate the date, time and status of the last [data verification](MSC/verify.md) and [compacting operation](MSC/compact.md) carried out on the database.
 
-### Verify Records and Indexes
+### Verificar registros e índices
 
 This button can be used to launch the verification operation directly, without interrupting the server. Note that the server may be noticeably slowed down during the operation.
 
@@ -21,7 +21,7 @@ All the records and all the indexes of the database are verified. If you want to
 
 After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
 
-### Compact Data...
+### Compactar los datos...
 
 Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
 

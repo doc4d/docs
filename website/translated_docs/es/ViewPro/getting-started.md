@@ -23,7 +23,7 @@ However, 4D View Pro requires a license. You need to activate this license in yo
 ![](assets/en/ViewPro/licenseError.png)
 
 
-## Inserting a 4D View Pro area
+## Inserción de un área 4D View Pro
 
 4D View Pro documents are displayed and edited manually in a [4D form object](FormObjects/viewProArea_overview.md) named 4D View Pro. To select this object, click on the last tool in the object bar:
 
@@ -72,7 +72,7 @@ The **Carriage return** key validates the cell input and selects the cell below 
 The direction keys (arrows) allow you to move a cell in the direction indicated by the arrow.
 
 
-### Using the Context Menu
+### Utilización del menú contextual
 
 4D View Pro areas benefit from an automatic context menu that offers standard editing features such as copy and paste, but also basic spreadsheet features:
 
@@ -82,7 +82,7 @@ The direction keys (arrows) allow you to move a cell in the direction indicated 
  Depending on the clicked area, the following options are also available:
 
 *   click on a column or row header: **Insert**, **Delete**, **Hide**, or **Unhide** the contents
-*   click on a cell or a cell range:
+*   haga clic en una celda o en un rango de celdas:
     *   **Filter**: allows hiding row through filters (see [Filtering rows](https://www.grapecity.com/spreadjs/docs/versions/v14/online/filter.html) in the SpreadJS documentation).
     *   **Sort**: sorts the column contents.
     *   **Insert Comment**: allows user to enter a comment for an area. When a comment has been entered for an area, the top left cell of the area displays a small red triangle:  
@@ -118,7 +118,7 @@ VP SET COLUMN COUNT("myVpArea";5)
 > When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
 
 
-### Using range objects
+### Utilización de objetos de rango
 
 Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other methods to read from or write to specific locations in your document.
 
@@ -143,12 +143,12 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 | Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                    |
 | --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------- |
 | area      |                   | texto     | 4D View Pro area form object name                                   | always available                                   |
-| ranges    |                   | colección | Collection of range(s)                                              | always available                                   |
+| ranges    |                   | colección | Colección de rangos                                                 | always available                                   |
 |           | \[ ].name        | texto     | Nombre de rango                                                     | name                                               |
 |           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
-|           | \[ ].row         | number    | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
-|           | \[ ].rowCount    | number    | Row count                                                           | celdas, líneas                                     |
-|           | \[ ].column      | number    | Column index (counting begins at 0)                                 | cell, cells, column, columns                       |
+|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                       |
+|           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                     |
+|           | \[ ].column      | number    | Column index (counting begins at 0)                                 | celda, celdas, columna, columnas                   |
 |           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
 
 

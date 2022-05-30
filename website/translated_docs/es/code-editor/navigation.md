@@ -9,7 +9,7 @@ The navigation dropdown helps you organize your code and navigate more easily in
 
 Some tags are added automatically, and you can complement the dropdown list using [markers](#manual-tagging).
 
-## Code navigation
+## Navegación en el código
 
 Click an item in the dropdown list to go to its first line in the code. You can also navigate with arrow-keys and press **Enter**.
 
@@ -26,7 +26,7 @@ The following items are added automatically:
 | ![no-tag-icon](assets/en/code-editor/no-tag.png)                         | Sin etiqueta                                     |
 | ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
 | ![computed-attribute-icon](assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
-| ![function-icon](assets/en/code-editor/function.png)                     | Class function name                              |
+| ![function-icon](assets/en/code-editor/function.png)                     | Nombre de la función de clase                    |
 
 
 ## Etiquetado manual
@@ -47,11 +47,11 @@ You declare them by adding comments such as:
 
 Declarations are not case-sensitive; writing `fixme:` has the same effect.
 
-Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. So writing this:
+Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. Así que escribiendo esto:
 
 ![mark-hyphen-image](assets/en/code-editor/mark-hyphen-editor.png)
 
-Results in this:
+Esto es lo que resulta:
 
 ![mark-hyphen-image](assets/en/code-editor/dropdown-organize.png)
 

@@ -117,7 +117,7 @@ Available classes are accessible from their class stores. Two class stores are a
 
 #### cs -> classStore
 
-| Parameter  | Type   |    | Description                                   |
+| Parameter  | Type   |    | Descrição                                     |
 | ---------- | ------ | -- | --------------------------------------------- |
 | classStore | object | <- | User class store for the project or component |
 
@@ -135,7 +135,7 @@ $instance:=cs.myClass.new()
 
 #### 4D -> classStore
 
-| Parameter  | Type   |    | Description    |
+| Parameter  | Type   |    | Descrição      |
 | ---------- | ------ | -- | -------------- |
 | classStore | object | <- | 4D class store |
 
@@ -196,13 +196,13 @@ In the class definition file, function declarations use the `Function` keyword, 
 
 > **Tip:** Starting the function name with an underscore character ("_") will exclude the function from the autocompletion features in the 4D code editor. For example, if you declare `Function _myPrivateFunction` in `MyClass`, it will not be proposed in the code editor when you type in `"cs.MyClass. "`.
 
-Immediately following the function name, [parameters](#parameters) for the function can be declared with an assigned name and data type, including the return parameter (optional). For example:
+Immediately following the function name, [parameters](#parameters) for the function can be declared with an assigned name and data type, including the return parameter (optional). Por exemplo:
 
 ```4d
 Function computeArea($width : Integer; $height : Integer)->$area : Integer
 ```
 
-Within a class function, the `This` command is used as the object instance. For example:
+Within a class function, the `This` command is used as the object instance. Por exemplo:
 
 ```4d  
 Function setFullname($firstname : Text; $lastname : Text)
@@ -218,7 +218,7 @@ For a class function, the `Current method name` command returns: `<ClassName>.<F
 In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. The following syntaxes are supported:
 
 - use of the `()` operator. For example, `myObject.methodName("hello")`
-- use of a "4D.Function" class member method:
+- use of a "4D. Function" class member method:
     - [`apply()`](API/FunctionClass.md#apply)
     - [`call()`](API/FunctionClass.md#call)
 
@@ -237,7 +237,7 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 
 
-The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:
+The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. Por exemplo:
 
 ```4d
 Function add($x : Integer)
@@ -249,14 +249,14 @@ Function add($x : Integer)
 
 #### Return value
 
-You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. For example:
+You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. Por exemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
     $result:=$x+$y
 ```
 
-You can also declare the return parameter by adding only `: type` and use the [`return expression`](parameters.md#return-expression) (it will also end the function execution). For example:
+You can also declare the return parameter by adding only `: type` and use the [`return expression`](parameters.md#return-expression) (it will also end the function execution). Por exemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
@@ -268,24 +268,22 @@ Function add($x : Variant; $y : Integer): Integer
 #### Exemplo 1
 
 ```4d
-// Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+// Class: Rectangle Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// Function definition
-Function getArea()->$result : Integer
+// Function definition Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
 
 ```4d
 // In a project method
 
-var $rect : cs.Rectangle
+var $rect : cs. Rectangle
 var $area : Real
 
-$rect:=cs.Rectangle.new(50;100)  
+$rect:=cs. Rectangle.new(50;100)  
 $area:=$rect.getArea() //5000
 ```
 
@@ -382,8 +380,8 @@ Function get fullAddress()->$result : Object
 #### Sintaxe
 
 ```4d
-// Class: MyClass
-Class Constructor({$parameterName : type; ...})
+// Class: MyClass Class Constructor({$parameterName : type; ...})
+// code
 // code
 ```
 
@@ -399,16 +397,15 @@ For a class constructor function, the `Current method name` command returns: `<C
 
 ```4d
 // Class: MyClass
-// Class constructor of MyClass
-Class Constructor ($name : Text)
+// Class constructor of MyClass Class Constructor ($name : Text)
     This.name:=$name
 ```
 
 ```4d
 // In a project method
 // You can instantiate an object
-var $o : cs.MyClass
-$o:=cs.MyClass.new("HelloWorld")  
+var $o : cs. MyClass
+$o:=cs. MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
 ```
 
@@ -420,15 +417,14 @@ $o:=cs.MyClass.new("HelloWorld")
 #### Sintaxe
 
 ```4d
-// Class: ChildClass
-Class extends <ParentClass>
+// Class: ChildClass Class extends <ParentClass>
 ```
 
 The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
 
 Class extension must respect the following rules:
 
-- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
+- A user class cannot extend a built-in class (except 4D. Object which is extended by default for user classes)
 - A user class cannot extend a user class from another project or component.
 - A user class cannot extend itself.
 - It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
@@ -472,10 +468,10 @@ Class constructor ($side : Integer)
 Super {( param{;...;paramN} )} {-> Object}
 ```
 
-| Parameter | Type   |    | Description                                    |
+| Parameter | Type   |    | Descrição                                      |
 | --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| param     | misto  | -> | Parameter(s) to pass to the parent constructor |
+| Resultado | object | <- | Object's parent                                |
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
@@ -489,9 +485,7 @@ The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
 ```4d
 // inside myClass constructor
-var $text1; $text2 : Text
-Super($text1) //calls superclass constructor with a text param
-This.param:=$text2 // use second param
+var $text1; $text2 : Text Super($text1) //calls superclass constructor with a text param This.param:=$text2 // use second param
 ```
 
 2. Inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
@@ -506,15 +500,13 @@ Super.doSomething(42) //calls "doSomething" function
 This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
 
 ```4d
-// Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+// Class: Rectangle Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
-    This.width:=$width
-
-
-Function sayName()
+    This.width:=$width Function sayName()
     ALERT("Hi, I am a "+This.name+".")
+
+// Function definition
 
 // Function definition
 Function getArea()
@@ -524,20 +516,14 @@ Function getArea()
 ```
 
 ```4d
-//Class: Square
-
-Class extends Rectangle
-
-Class constructor ($side : Integer)
+//Class: Square Class extends Rectangle Class constructor ($side : Integer)
 
     // It calls the parent class's constructor with lengths
     // provided for the Rectangle's width and height
     Super($side;$side)
     // In derived classes, Super must be called before you
     // can use 'This'
-    This.name:="Square"
-
-Function getArea()
+    This.name:="Square" Function getArea()
     C_LONGINT($0)
     $0:=This.height*This.width
 ```
@@ -547,9 +533,7 @@ Function getArea()
 This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
 
 ```4d
-//Class: Rectangle
-
-Function nbSides()
+//Class: Rectangle Function nbSides()
     var $0 : Text
     $0:="I have 4 sides"
 ```
@@ -558,11 +542,7 @@ Function nbSides()
 You also created the `Square` class with a function calling the superclass function:
 
 ```4d
-//Class: Square
-
-Class extends Rectangle
-
-Function description()
+//Class: Square Class extends Rectangle Function description()
     var $0 : Text
     $0:=Super.nbSides()+" which are all equal"
 ```
@@ -572,7 +552,7 @@ Then you can write in a project method:
 ```4d
 var $square : Object
 var $message : Text
-$square:=cs.Square.new()
+$square:=cs. Square.new()
 $message:=$square.description() //I have 4 sides which are all equal
 ```
 
@@ -584,15 +564,15 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Parameter | Type   |    | Description    |
+| Parameter | Type   |    | Descrição      |
 | --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| Resultado | object | <- | Current object |
 
 The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv19/help/command/page1470.html).
 
 In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
+When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Por exemplo:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
@@ -602,9 +582,7 @@ $val:=$o.f() //42
 When a [class constructor](#class-constructor) function is used (with the [`new()`](API/ClassClass.md#new) function), its `This` is bound to the new object being constructed.
 
 ```4d
-//Class: ob
-
-Class Constructor  
+//Class: ob Class Constructor  
 
     // Create properties on This as
     // desired by assigning to them
@@ -623,9 +601,7 @@ $val:=$o.a //42
 In any cases, `This` refers to the object the method was called on, as if the method were on the object.
 
 ```4d
-//Class: ob
-
-Function f()
+//Class: ob Function f()
     $0:=This.a+This.b
 ```
 

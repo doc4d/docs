@@ -689,7 +689,7 @@ Each entry object in the `entries` collection has the following properties:
 | --------- | -------- | --------------------------------- |
 | data      | Objeto   | Object holding data on the entry. |
 | expired   | Booleano | True if the entry has expired.    |
-| key       | Texto    | Primary key of the entity.        |
+| key       | Texto    | Llave primaria de la entidad.     |
 
 The `data` object in each entry contains the following properties:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
@@ -1068,7 +1068,7 @@ To make it possible to perform such queries, ORDA allows a special syntax: you j
 ```
 **{x}** tells ORDA to create another reference for the relation attribute. It will then perform all the necessary bitmap operations internally. Note that **x** can be any number **except 0**: {1}, or {2}, or {1540}... ORDA only needs a unique reference in the query for each class index.
 
-In our example, it would be:
+En nuestro ejemplo, sería:
 
 ```4d
 // código válido
@@ -1124,7 +1124,7 @@ En el parámetro *querySettings* se puede pasar un objeto que contenga opciones 
 
 **Sobre queryPlan y queryPath**
 
-La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Puede resultarle útil analizar esta información mientras desarrolla sus aplicaciones. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
+La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
 
 Por ejemplo, si ejecuta la siguiente búsqueda:
 
@@ -1137,9 +1137,9 @@ queryPlan:
 
 ```4d
 {Or:[{And:[{item:[index : Employee.salary ] < 50000},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.name ] = Lima West Kilo}]}]},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.revenues ] > 10000000}]}]}
 ```
 
@@ -1148,8 +1148,8 @@ queryPath:
 ```4d
 {steps:[{description:OR,time:63,recordsfounds:1388132,  
     steps:[{description:AND,time:32,recordsfounds:131,  
-    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:0,recordsfounds:131,  
-    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:31,recordsfounds:1388132,  
+    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:0,recordsfounds:131,  
+    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:31,recordsfounds:1388132,  
     steps:[{steps:[{description:[index : Company.revenues ] > 10000000,time:0,recordsfounds:933}]}]}]}]}
 ```
 
@@ -1469,13 +1469,13 @@ In the *settings* parameter, pass an object with the following properties:
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. Esto significa que:
 
-* the data is still there
+* los datos siguen estando ahí
 * the next time the data is needed, it will be asked to the server
 * 4D automatically removes expired data when the maximum number of entities is reached
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
-`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
+`maxEntries` sets the max number of entities in the ORDA cache. Por defecto es 30 000.
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 

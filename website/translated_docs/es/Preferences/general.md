@@ -18,11 +18,11 @@ This option allows you to configure the default 4D display at startup, when the 
 *   **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
 > **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
 
-### Automatic form creation
+### Creación de formularios automática
 
 > This option is only used in binary databases; it is ignored in project architecture. Ver doc.4d.com.
 
-### Window tabbing (macOS only)
+### Ventana con pestañas (sólo en macOS)
 
 Starting with macOS Sierra, Mac applications can benefit from the Automatic Window Tabbing feature that helps organizing multiple windows: document windows are stacked into a single parent window and can be browsed through tabs. This feature is useful on small screens and/or when using a trackpad.
 
@@ -49,7 +49,7 @@ Hay tres opciones disponibles:
 *   **Never**: Opening a new document in 4D form editor or method editor will always result in creating a new window (tabs are never created).
 *   **Always**: Opening a new document in 4D form editor or method editors will always result in creating a new tab.
 
-### Appearance (macOS only)
+### Apariencia (sólo para macOS)
 
 This menu lets you select the color scheme to use for the **4D development** environment. The specified scheme will be applied to all editors and windows of the Design mode.
 
@@ -69,7 +69,7 @@ Hay tres opciones disponibles:
 If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 
 
-### Enable binary database creation
+### Activar la creación de bases de datos binarias
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
@@ -125,7 +125,7 @@ You can define the default contents of the `.gitignore` file by clicking the pen
 
 The [official git documentation](https://git-scm.com/docs/gitignore) is a great resource to understand how `.gitignore` files work.
 
-### Language of text comparison
+### Lenguaje de comparación de texte
 
 This parameter configures the default language used for character string processing and comparison in new databases. The language choice has a direct influence on the sorting and searching of text, as well as the character case, but it has no effect on the translation of texts or on the date, time or currency formats, which remain in the system language. By default (factory setting), 4D uses the current user language set in the system.
 
@@ -146,7 +146,7 @@ This area configures access to the 4D HTML documentation displayed in your curre
 
 Language of the HTML documentation to display. You can select a documentation in a different language from the application language.
 
-### Look in the local folder first
+### Primero buscar en la carpeta local
 
 > This option is only taken into account for command documentation access (excluding class functions).
 

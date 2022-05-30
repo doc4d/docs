@@ -7,7 +7,7 @@ title: Página Base de datos
 
 You use this page to configure data storage on disk for the 4D database.
 
-### General Settings
+### Parámetros generales
 
 
 #### Allow Read Only Data file Use
@@ -38,7 +38,7 @@ Three location options are provided:
 
 > This option is stored in the "extra properties" of the structure that is available when the structure definition is exported in XML (see [Exporting and importing structure definitions](https://doc.4d.com/4Dv19/4D/19/Exporting-and-importing-structure-definitions.300-5416829.en.html)).
 
-### Text comparison
+### Comparación de texto
 
 > If you change one of these options, you have to quit and reopen the database to make the change effective. Once the database is reopened, all of the database's indexes are automatically re-indexed.
 
@@ -81,7 +81,7 @@ To disable *MeCab*, just check the **Consider only non-alphanumeric chars for ke
 
 You use the settings on this tab to configure the cache memory for the database.
 
-### Database Cache Settings
+### Parámetros de la caché para la base
 
 -   **Calculation of adaptive cache**: When this option is checked, management of the memory cache is done dynamically by the system --- respecting limits that you set. This allows configuration of a high performance memory cache adapted to most configurations. The size of the memory cache is then calculated dynamically depending on set parameters. The values offered by default correspond to standard 4D usage.
 

@@ -51,7 +51,7 @@ Tracing stops and normal method execution resumes.
 
 > **Shift** + **F5** or **Shift** + clicking the **No Trace** button resumes execution. It also disables all the subsequent TRACE calls for the current process.
 
-#### Step Over
+#### Pasar por encima
 
 Executes the current method line, indicated by the program counter (the yellow arrow). The Debugger steps to the next line.
 
@@ -59,7 +59,7 @@ The Step Over button does not step into subroutines and functions, it stays at t
 
 In remote debugging, if the method executes on the server, the parent method is called after the last line of the child method executes. If the parent method is executed on the remote side, the **Step Over** button has the same effect as the **No Trace** button.
 
-#### Step Into
+#### Paso a paso detallado
 
 When a line that calls another method (subroutine or function) is executed, click this button to display the the other method and step through it.
 
@@ -76,12 +76,12 @@ Stops method execution, and returns to the state before the method started execu
 #### Detener y editar
 
 
-Pauses method execution. The method that is executing when you click the **Abort and Edit** button opens in the Method Editor.
+Pausa la ejecución del método. The method that is executing when you click the **Abort and Edit** button opens in the Method Editor.
 > **Tip**: Use this button when you know which changes are required in your code, and when these changes are required to pursue the testing of your methods. After you're finished with the changes, rerun the method.
 
 #### Editar
 
-Pauses method execution. The method that is executing at the time you click the Edit button opens in the Method Editor.
+Pausa la ejecución del método. The method that is executing at the time you click the Edit button opens in the Method Editor.
 
 If you use this button to modify a method, the modifications are only effective the next time it executes.
 
@@ -339,7 +339,7 @@ Hover your pointer over any expression to display a tool tip that indicates:
 
 ![source-code-pane](assets/en/Debugging/sourceCodePane.png)
 
-This also works with selections:
+Esto también funciona con las selecciones:
 
 ![source-code-pane-tip](assets/en/Debugging/sourcePaneTip.png)
 
@@ -348,7 +348,7 @@ This also works with selections:
 You can copy any selected expression from the Source Code Pane to the [Custom Watch Pane](#custom-watch-pane).
 
 1. In the Source code pane, select the expression to evaluate
-2. Do one of the following:
+2. Haga una de las siguientes cosas:
     * Drag and drop the selected text to the Expression area of the Custom Watch Pane
     * Press **Ctrl+D** (Windows) or **Cmd+D** (macOS)
     * Right-click the selected text **>** **Copy to Expression Pane**
@@ -385,7 +385,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 
 ![source-code-pane-context-window](assets/en/Debugging/sourceCodePaneContext.png)
 
-* **Goto Definition**: Goes to where the selected object is defined. This command is available for:
+* **Goto Definition**: Goes to where the selected object is defined. Este comando está disponible para:
   * *Project methods:* displays method contents in a new window of the Method editor
   * *Fields:* Displays field properties in the inspector of the Structure window
   * *Tables:* Displays table properties in the inspector of the Structure window
@@ -399,7 +399,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 * **Toggle Breakpoint** (also available in Method editor): Alternately inserts or removes the breakpoint corresponding to the selected line. This modifies the breakpoint permanently: for instance, if you remove a breakpoint in the debugger, it no longer appears in the original method.
 * **Edit Breakpoint** (also available in Method editor): Displays the Breakpoint Properties dialog box. Any changes made modify the breakpoint permanently.
 
-### Find Next/Previous
+### Buscar siguiente/anterior
 
 Specific shortcuts allow you to find strings identical to the one selected:
 
@@ -429,7 +429,7 @@ This section lists all the shortcuts available in the debugger window.
 * **Ctrl+E** (Windows) or **Cmd+E** (macOS) key combinations find the next strings identical to the one selected.
 * **Ctrl+Shift+E** (Windows) or **Cmd+Shift+E** (macOS) key combinations find the previous strings identical to the one selected.
 
-#### All Panes
+#### Todas las ventanas
 
 - **Ctrl** + **+/-** (Windows) or **Command** + **+/-** (macOS) increases or decreases the font size for a better readability. The modified font size is also applied to the Method editor and is stored in the Preferences.
 - **Ctrl + \*** (Windows) or **Command + \*** (macOS) forces the updating of the Watch Pane.

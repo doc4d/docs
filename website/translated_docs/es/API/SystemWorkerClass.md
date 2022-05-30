@@ -65,7 +65,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 <!-- REF #4D.SystemWorker.new().Params -->
 | Parámetros  | Tipo            |    | Descripción                                                   |
 | ----------- | --------------- |:--:| ------------------------------------------------------------- |
-| commandLine | Texto           | -> | Command line to execute                                       |
+| commandLine | Texto           | -> | Línea de comando a ejecutar                                   |
 | options     | Objeto          | -> | Parámetros worker                                             |
 | result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
 <!-- END REF -->
@@ -123,7 +123,7 @@ Here is the sequence of callback calls:
 The function returns a system worker object on which you can call functions and properties of the SystemWorker class.
 
 
-#### Examples on Windows
+#### Ejemplos en Windows
 
 1. To open Notepad and open a specific document:
 
@@ -390,7 +390,7 @@ Each element of the collection is an object with the following properties:
 | Propiedad              | Tipo   | Descripción                                           |
 | ---------------------- | ------ | ----------------------------------------------------- |
 | [].errorCode           | number | Código de error 4D                                    |
-| [].message             | texto  | Description of the 4D error                           |
+| [].message             | texto  | Descripción del error 4D                              |
 | [ ].componentSignature | texto  | Firma del componente interno que ha devuelto el error |
 
 If no error occured, `.errors` contains an empty collection. 
@@ -577,7 +577,7 @@ Esta propiedad es **de sólo lectura**.
 | Parámetros | Tipo            |    | Descripción               |
 | ---------- | --------------- |:--:| ------------------------- |
 | timeout    | Real            | -> | Waiting time (in seconds) |
-| Resultado  | 4D.SystemWorker | <- | SystemWorker object       |
+| Resultado  | 4D.SystemWorker | <- | Objeto SystemWorker       |
 <!-- END REF -->
 
 

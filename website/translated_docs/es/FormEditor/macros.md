@@ -4,11 +4,11 @@ title: Macros del editor de formularios
 ---
 
 
-The 4D Form editor supports macros. A macro is a set of instructions to perform an action or a sequence of actions. When called upon, the macro will execute its instructions and automatically perform the action(s).
+El editor de formularios 4D soporta macros. A macro is a set of instructions to perform an action or a sequence of actions. When called upon, the macro will execute its instructions and automatically perform the action(s).
 
 For example if you have a recurring report with specific formatting (e.g., certain text must appear in red and certain text must appear in green), you can create a macro to automatically set the color. You can create macros for the 4D Form editor that can:
 
-*   Create and execute 4D code
+*   Crear y ejecutar código 4D
 *   Mostrar las cajas de diálogo
 *   Seleccione los objetos de formulario
 *   Add / delete / modify forms, form objects as well as their properties
@@ -247,7 +247,7 @@ For example, if objects of the current page and groups have been modified, you c
 ```
 
 
-#### `method` attribute
+#### atributo `method`
 
 When handling the `method` attribute of form objects, you can define the attribute value in two ways in macros:
 
@@ -258,7 +258,7 @@ When handling the `method` attribute of form objects, you can define the attribu
 | Propiedad | Tipo | Descripción |
 | --------- | ---- | ----------- |
 |           |      |             |
- source|String|method code|
+ source|Cadena|Código del método|
 
 4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. This feature is only available for macro code.
 
@@ -306,8 +306,8 @@ Function onInvoke($editor : Object)->$result : Object
 | $resultMacro |                       | Objeto     | Object returned by [onInvoke](#oninvoke) |
 | $error       |                       | Collection | Error stack                              |
 |              | [].errCode            | Número     | Código de error                          |
-|              | [].message            | Texto      | Description of the error                 |
-|              | [].componentSignature | Texto      | Internal component signature             |
+|              | [].message            | Texto      | Descripción del error                    |
+|              | [].componentSignature | Texto      | Firma del componente interno             |
 
 The `onError` function is executed when the macros processor encounters an error.
 

@@ -18,7 +18,7 @@ Click **Select...** to set the font and size for the characters used by the `MES
 
 The default font and its size depend on the platform where 4D is running.
 
-> This property also affects the following parts of 4D: <li>certain preview areas of the Explorer</li><li>the ruler of the Form editor</li>
+> This property also affects the following parts of 4D: <li>certain preview areas of the Explorer</li><li>la regla del editor de formularios</li>
 Other options configure the display of various windows in the Application mode.
 
 -   **Splash screen**: When this option is deselected, the [splash screen of the current menu bar](Menus/bars.md#splash-screen) does not appear in the Application mode. When you hide this window, it is up to you to manage the display of all your windows by programming, for example in the `On Startup` database method.
@@ -37,7 +37,7 @@ Other options configure the display of various windows in the Application mode.
 
 This menu lets you select the color scheme to use at the main application level. A color scheme defines a global set of interface colors for texts, backgrounds, windows, etc., used in your forms.
 
-> This option only works on macOS. On Windows, the "Light" scheme is always used.
+> Esta opción sólo funciona en macOS. On Windows, the "Light" scheme is always used.
 
 The following schemes are available:
 

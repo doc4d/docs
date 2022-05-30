@@ -36,7 +36,7 @@ If key values are not defined in a custom theme, they default to the values from
 
 ## Definir el tema
 
-Defining a theme means:
+Definir un tema significa:
 
 - setting a global font and font size for the whole code editor,
 - assigning specific styles and colors to each 4D language element (fields, tables, variables, parameters, SQL, etc.), SQL language element (keywords, functions, etc.), and color backgrounds.
@@ -47,7 +47,7 @@ Combining different colors and styles is particularly useful for code maintenanc
 
 The **font** and **font size** menus allows you to select the font name and size used in the Method editor entry area for all categories.
 
-### 4D Language and SQL Language
+### Lenguaje 4D y lenguaje SQL
 
 You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
 
@@ -63,14 +63,14 @@ These options configure the various colors used in the Method editor and debugge
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Color de fondo**                                | Background color of Method editor window.                                                                                                                                |
 | **Border of the running line in the debugger**    | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
-| **Cursor line background color**                  | Background color of line containing the cursor.                                                                                                                          |
-| **Execution line background color**               | Background color of line being executed in the debugger.                                                                                                                 |
-| **Highlight of the found words**                  | Highlight color of words found in a search.                                                                                                                              |
-| **Highlight of the parentheses**                  | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
-| **Highlight of the blocks**                       | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
+| **Color de fondo de la línea del cursor**         | Background color of line containing the cursor.                                                                                                                          |
+| **Color de fondo de la línea en ejecución**       | Background color of line being executed in the debugger.                                                                                                                 |
+| **Resaltar las palabras encontradas**             | Highlight color of words found in a search.                                                                                                                              |
+| **Destacar los paréntesis**                       | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
+| **Resaltado de los bloques**                      | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
 | **Highlight of the same variable or field**       | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options). |
 | **Highlight of the running line in the debugger** | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                            |
-| **Color de fondo de la selección**                | Background color of selection.                                                                                                                                           |
+| **Color de fondo de la selección**                | Color de fondo de la selección.                                                                                                                                          |
 | **Texto sugerido**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
 
 
@@ -105,7 +105,7 @@ Changes the indentation value for the 4D code in the Method editor. The width mu
 
 Modifying this default value can be useful if your methods contain complex algorithms with many levels of embedding. Narrower indentation can be used in order to limit horizontal scrolling.
 
-#### Show Line Numbers
+#### Mostrar los números de línea
 
 Lets you display the line numbers by default in each window of the Method editor. You can also show/hide line numbers for the current window directly from the Method editor.
 
@@ -113,7 +113,7 @@ Lets you display the line numbers by default in each window of the Method editor
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
 
-#### Show clipboards
+#### Mostrar los portapapeles
 
 Lets you choose whether or not to show the multiple clipboards in the code editor.
 
@@ -121,7 +121,7 @@ Lets you choose whether or not to show the multiple clipboards in the code edito
 
 The corresponding [clipboard shorcuts](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) are still active when these clipboards are hidden.
 
-#### Highlight the logical blocks
+#### Resaltado de los bloques lógicos
 
 When checked, the whole code belonging to a logical block (If/End if for example) is highlighted when the mouse is placed over the expanded node:
 
@@ -129,19 +129,19 @@ When checked, the whole code belonging to a logical block (If/End if for example
 
 The highlight color can be set in the [Theme](#theme-definition) page.
 
-#### Always show block lines
+#### Mostrar siempre las líneas de bloques
 
 Allows to hide vertical block lines permanently. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
 
 ![](assets/en/Preferences/optionsBlockLines.png)
 
-#### Hide collapse/expand icons
+#### Ocultar los iconos contraer/expandir
 
 Allows you to hide all expand/collapse icons by default when displaying code. When the option is checked, node icons (as well as local block lines, see above), are displayed temporarily when the mouse is placed over a node:
 
 ![](assets/en/Preferences/optionsHideIcons.png)
 
-#### Insert () and closing } ) ] "
+#### Insertar () y añadir } ) ] " cierres
 
 Enables automatic insertion of () and closing braces while typing code. This option controls two automatic features:
 
@@ -162,7 +162,7 @@ Sets the graphic signaling of matching braces in the code. This signaling appear
 - **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
 - **Bold**: Braces displayed in bold.
 
-#### Highlighted variables and fields
+#### Resaltado de las variables y campos
 
 Allows to highlight all occurrences of the same variable or field in an open method window.
 
@@ -186,9 +186,9 @@ If you deselect this option, only the yellow arrow is shown.
 
 This area lets you configure autocomplete mechanisms in the Method editor to adapt it to your own work habits.
 
-|                                 | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Automatic opening of window for | Triggers the automatic display of the suggestion window for:<p> <ul><li>Constantes</li><li>Variables (local and interprocess) and object attributes</li><li>Tablas</li><li>Prototypes (*i.e.*, class functions)</li></ul><p><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:<p><p>![](assets/en/Preferences/suggestionsAutoOpen.png)<p><p>    You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
-| Validation of a suggestion for  | Sets the entry context that allows the Method editor to validate automatically the current suggestion displayed in the autocomplete window.<p><p><ul><li>**Tab and delimiters**<br>When this option is selected, you can validate the current selection with the Tab key or any delimiter that is relevant to the context. For example, if you enter "ALE" and then "(", 4D automatically writes "ALERT(" in the editor. Here is the list of delimiters that are taken into account:<br> ( ; : = < [ {</li><li>**Tab only**<br>When this option is selected, you can only use the Tab key to insert the current suggestion. Esto se puede utilizar más concretamente para facilitar la introducción de caracteres delimitadores en los nombres de los elementos, como ${1}.<p><p>**Note**: You can also double-click in the window or press the Carriage return key to validate a suggestion.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                    |
+|                                   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Apertura automática de la ventana | Triggers the automatic display of the suggestion window for:<p> <ul><li>Constantes</li><li>Variables (local and interprocess) and object attributes</li><li>Tablas</li><li>Prototypes (*i.e.*, class functions)</li></ul><p><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:<p><p>![](assets/en/Preferences/suggestionsAutoOpen.png)<p><p>    You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
+| Validación de una sugerencia      | Sets the entry context that allows the Method editor to validate automatically the current suggestion displayed in the autocomplete window.<p><p><ul><li>**Tab and delimiters**<br>When this option is selected, you can validate the current selection with the Tab key or any delimiter that is relevant to the context. For example, if you enter "ALE" and then "(", 4D automatically writes "ALERT(" in the editor. Here is the list of delimiters that are taken into account:<br> ( ; : = < [ {</li><li>**Tab only**<br>When this option is selected, you can only use the Tab key to insert the current suggestion. Esto se puede utilizar más concretamente para facilitar la introducción de caracteres delimitadores en los nombres de los elementos, como ${1}.<p><p>**Note**: You can also double-click in the window or press the Carriage return key to validate a suggestion.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                    |
 	
 

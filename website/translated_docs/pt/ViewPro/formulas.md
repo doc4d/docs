@@ -42,7 +42,7 @@ All formulas have operands and operators:
 
 4D View Pro supports five types of data. For each data type, specific literal values and operators are supported.
 
-| Data types                         | Values                                             | Operators                                                                                                                                                                                                                                         |
+| Tipos de dados                     | Values                                             | Operators                                                                                                                                                                                                                                         |
 | ---------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Número](Concepts/dt_number.md)    | 1.2<br>1.2 E3<br>1.2E-3<br>10.3x | + (addition)<br>- (subtraction)<br>* (multiplication)<br>/ (division)<br>^ (exponent, the number of times to multiply a number by itself)<br>% (percentage -- divide the number before the operator by one hundred) |
 | [Date](Concepts/dt_date.md)        | 10/24/2017                                         | + (date + number of days -> date)<br>+ (date + time -> date + time of day)<br>- (date - number of days -> date)<br>- (date - date -> number of days between the two)                                                            |
@@ -55,9 +55,9 @@ All formulas have operands and operators:
 
 The following operators can be used with two operands of the same type:
 
-| Operator | Comparison               |
+| Operator | Comparação               |
 | -------- | ------------------------ |
-| =        | equal to                 |
+| =        | igual a                  |
 | <>       | different than           |
 | >        | greater than             |
 | <        | less than                |
@@ -69,7 +69,7 @@ The following operators can be used with two operands of the same type:
 
 List of operators from most to least important:
 
-| Operator        | Description                |
+| Operator        | Descrição                  |
 | --------------- | -------------------------- |
 | ()              | Parenthesis (for grouping) |
 | -               | Negate                     |
@@ -112,7 +112,7 @@ A convenient, fast and accurate way to specify an absolute reference is to name 
 
 The following table shows the effect of the different notations:
 
-| Exemplo   | Type of reference | Description                                                                                                                                    |
+| Exemplo   | Type of reference | Descrição                                                                                                                                      |
 | --------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | C5        | Relative          | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                   |
 | $C$5      | Absolute          | Reference is absolute. Will always refer to cell C5 no matter where it is used.                                                                |
@@ -138,7 +138,7 @@ See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spread
 4D custom functions provide access, from within your 4D View Pro formulas, to:
 
 - 4D process variables,
-- fields,
+- campos,
 - project methods,
 - 4D language commands,
 - or any valid 4D expression.
@@ -243,7 +243,7 @@ For more information on supported incoming parameter types, please refer to the 
 * [picture](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg other types converted into png) creates a URI (data:image/png;base64,xxxx) and then used as the background in 4D View Pro in the cell where the formula is executed
 * [object](Concepts/dt_object.md) with the following two properties (allowing passing a date and time):
 
-    | Propriedade | Type | Description     |
+    | Propriedade | Type | Descrição       |
     | ----------- | ---- | --------------- |
     | value       | Date | Date value      |
     | time        | Real | Time in seconds |

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Access Control overview
+title: Presentación del control de acceso
 ---
 
 Si diferentes personas utilizan una aplicación, lo que suele ocurrir en la arquitectura cliente-servidor o de interfaces web, es necesario controlar el acceso u ofrecer diferentes funcionalidades según de los usuarios conectados. It is also essential to provide security for sensitive data, even in single-user applications.
@@ -57,6 +57,6 @@ SET USER ALIAS(Current system user)
 
 On a machine that is shared by several users, you can install the 4D application in a folder and give appropriate user access privileges to the folder at the OS level.
 
-#### Encrypting data
+#### Cifrado de datos
 
 If you want to protect access to the application data, we recommend to [encrypt data](MSC/encrypt.md) and provide the encryption key to the authorized user(s). 

@@ -6,7 +6,7 @@ title: Generalidades
 The 4D [project architecture](Project/architecture) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](Concepts/plug-ins). Components are made of 4D code, while plug-ins can be built using any language.
 
 
-## Preinstalled 4D components
+## Componentes 4D preinstalados
 
 4D includes by default a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page.
 
@@ -23,7 +23,7 @@ The 4D [project architecture](Project/architecture) is modular. You can provide 
 | [Interfaz 4D WritePro](https://github.com/4d/4D-WritePro-Interface)           | Manage [4D Write Pro](https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Write-Pro-Reference.100-5606477.en.html) palettes    | `WP CreatePreview`, `WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`       |
 
 
-## Third-party components
+## Componentes de terceros
 
 Puede desarrollar e instalar sus propios componentes 4D. See [this page](develop-components.md) for more information.
 

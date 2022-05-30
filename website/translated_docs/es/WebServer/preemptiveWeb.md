@@ -12,17 +12,17 @@ For in-depth information on preemptive process in 4D, please refer to the *Preem
 
 The following table indicates whether the preemptive mode is used or is available, depending on the execution context:
 
-| 4D Server             | Interpreted ([debugger attached](../Debugging/debugging-remote.md)) | Interpreted (debugger detached) | Compilado     |
-| --------------------- | ------------------------------------------------------------------- | ------------------------------- | ------------- |
-| Servidor REST         | cooperativo                                                         | apropiativo                     | apropiativo   |
-| Servidor Web          | cooperativo                                                         | *web setting*                   | *web setting* |
-| Servidor Web Services | cooperativo                                                         | *web setting*                   | *web setting* |
+| 4D Server             | Interpreted ([debugger attached](../Debugging/debugging-remote.md)) | Interpretado (no asociado al depurador) | Compilado       |
+| --------------------- | ------------------------------------------------------------------- | --------------------------------------- | --------------- |
+| Servidor REST         | cooperativo                                                         | apropiativo                             | apropiativo     |
+| Servidor Web          | cooperativo                                                         | *parámetro web*                         | *parámetro web* |
+| Servidor Web Services | cooperativo                                                         | *parámetro web*                         | *parámetro web* |
 
-| 4D remote/single-user | Interpretado | Compilado     |
-| --------------------- | ------------ | ------------- |
-| Servidor REST         | cooperativo  | apropiativo   |
-| Servidor Web          | cooperativo  | *web setting* |
-| Servidor Web Services | cooperativo  | *web setting* |
+| 4D remoto/monopuesto  | Interpretado | Compilado       |
+| --------------------- | ------------ | --------------- |
+| Servidor REST         | cooperativo  | apropiativo     |
+| Servidor Web          | cooperativo  | *parámetro web* |
+| Servidor Web Services | cooperativo  | *parámetro web* |
 
 - REST Server: handles [ORDA data model class functions](../REST/ClassFunctions.md)
 - Web Server: handles [web templates](templates.md), [4DACTION and database methods](httpRequests.md)
@@ -92,8 +92,8 @@ The following 4D Web Server URLs are thread-safe and can be used in preemptive m
 
 Both the Runtime Explorer and the 4D Server administration window display a specific icon for preemptive web processes:
 
-| Tipo de proceso       | Icono                                    |
-| --------------------- | ---------------------------------------- |
-| Preemptive web method | ![](assets/en/WebServer/processIcon.png) |
+| Tipo de proceso                  | Icono                                    |
+| -------------------------------- | ---------------------------------------- |
+| Método Web (proceso apropiativo) | ![](assets/en/WebServer/processIcon.png) |
 
 

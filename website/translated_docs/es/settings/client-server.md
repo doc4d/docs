@@ -5,11 +5,11 @@ title: Página Cliente/Servidor
 
 The Client-server pages group together parameters related to the use of the database in client-server mode. Naturally, these settings are only taken into account when the database is used in remote mode.
 
-## Network options page
+## Página Opciones red
 
 ### Red
 
-#### Publish database at startup
+#### Publicar la base al inicio
 
 This option lets you indicate whether or not the 4D Server database will appear in the list of published databases.
 
@@ -18,7 +18,7 @@ This option lets you indicate whether or not the 4D Server database will appear 
 
 > If you modify this parameter, you must restart the server database in order for it to be taken into account.
 
-#### Publication name
+#### Nombre de publicación
 
 This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the project file. You can enter any custom name you want.
 
@@ -36,7 +36,7 @@ To update any other client machines that are not connected, you just need to ent
 
 > Only databases published on the same port as the one set in 4D client are visible on the TCP/IP dynamic publication page.
 
-#### 4D Server and port numbers
+#### 4D Server y números de puerto
 
 4D Server uses three TCP ports for communications between internal servers and clients:
 
@@ -58,7 +58,7 @@ This device is used to set the timeout (period of inactivity beyond which the co
 
 When a timeout is selected, the server will close the connection of a client if it does not receive any requests from the latter during the specified time limit.
 
-### Client-Server Communication
+### Comunicación cliente-servidor
 
 #### Register Clients at Startup For Execute On Client
 
@@ -79,7 +79,7 @@ This setting can be used to globally set the updating mode for the local instanc
 
 ## Página Configuración IP
 
-### Allow-Deny Configuration Table
+### Tabla de configuración Autorizar-Rechazar
 
 This table allows you to set access control rules for the database depending on 4D remote machine IP addresses. This option allows reinforcing security, for example, for strategic applications.
 
