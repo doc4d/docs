@@ -92,7 +92,7 @@ You can display the following lists of items in the lists area of the Code Edito
 
 This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
 
-For more information on break points, see [Debugging](../Debugging/breakpoints.md#breakpoints)
+For more information on break points, see the [Debugging](../Debugging/breakpoints.md#breakpoints) section.
 
 You can display or hide the line numbers in the break points area for each window of the Code Editor.
 
