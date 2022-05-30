@@ -162,7 +162,7 @@ VP ADD SELECTION($currentSelection)
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *sheet*, you can pass an index for the new sheet. 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
+*sheet* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
 > インデックスは 0 起点です。
 
 *name* 引数として、新しいシートの名前を渡します。 新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
@@ -249,7 +249,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### 説明
 
-`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 If a style sheet with the same name and index already exists in the document, this command will overwrite it with the new values.
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
@@ -260,7 +260,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 *styleObj* には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 スタイルプロパティの完全な一覧については、[スタイルオブジェクトプロパティ](configuring.md#スタイルオブジェクトプロパティ) を参照ください。
 
-You can designate where to define the style sheet in the optional *sheet* parameter using the sheet index (indexing starts at 0) or with the following constants:
+任意の *sheet* 引数を使用することで、スタイルシートをどこに定義するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -1492,7 +1492,7 @@ $index:=VP Get current sheet("ViewProArea")
 
 `VP Get data context` コマンドは、 <!-- REF #_method_.VP Get data context.Summary -->ワークシートのカレントのデータコンテキストを返します<!-- END REF -->。 返されるコンテキストには、データコンテキストの内容に対しておこなわれた変更を含みます。
 
-In *sheet*, pass the index of the sheet to get the data context from. インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
+*sheet* には、データコンテキストを取得するシートのインデックスを渡します。 インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
 
 [VP SET DATA CONTEXT](#vp-set-data-context) により設定されたデータコンテキストの種類によって、関数はオブジェクトまたはコレクションを返します。
 
@@ -2252,7 +2252,7 @@ VP SET CELL STYLE($range;$style)
 
 *styleName* には、取得するスタイルシートの名前を渡します。
 
-You can define where to get the style sheet in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *sheet* 引数を使用することで、スタイルシートをどこから取得するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2297,11 +2297,11 @@ borderTop:{color:green,style:10}
 
 #### 説明
 
-The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *sheet*<!-- END REF -->.
+`VP Get stylesheets` コマンドは、 <!-- REF #_method_.VP Get stylesheets.Summary -->*sheet* で指定されたスコープにおいて定義されているスタイルシートのコレクションを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-You can define where to get the style sheets in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *sheet* 引数を使用することで、スタイルシートをどこから取得するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2767,7 +2767,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 *rangeName* には、既存のセルレンジ名を渡します。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where *rangeName* is defined. 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
+任意の *sheet* 引数として、*rangeName* のレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -3163,7 +3163,7 @@ VP REMOVE SHEET("ViewProArea";2)
 
 *styleName* 引数には、削除するスタイルシートの名前を渡します。
 
-You can define where to remove the style in the optional *sheet* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *sheet* 引数を使用することで、スタイルシートをどこから削除するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -3914,7 +3914,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *sheet*, pass the index of the sheet to be set as current sheet. index 引数が 0未満の場合、またはシートの総数より多い場合、コマンドは何もしません。
+*sheet* 引数には、カレントシートに設定したいシートのインデックスを渡します。 index 引数が 0未満の場合、またはシートの総数より多い場合、コマンドは何もしません。
 
 > インデックスは 0 起点です。
 
@@ -4062,7 +4062,7 @@ End case
 | reset               | Object | 新しいコンテキストを読み込む前にシートの内容をリセットする場合は true、それ以外は false (デフォルト)                                                              |
 | autoGenerateColumns | Object | コレクション型のデータの場合にのみ使用します。 データコンテキストがバインドされると同時に、カラムを自動生成する場合は true (デフォルト)。 この場合、次のルールが適用されます: <ul><li>*dataColl* がオブジェクトのコレクションの場合、属性名はカラムのタイトルとして使用されます (例題 2 参照)。</li><li>*dataColl* がスカラー値のサブコレクションを含む場合、各サブコレクションは一つの行の値を定義します (例題 3 参照)。 最初のサブコレクションにより、生成されるカラム数が決定します。</li></ul> |
 
-In *sheet*, pass the index of the sheet that will receive the data context. インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
+*sheet* には、データコンテキストを受け取るシートのインデックスを渡します。 インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
 
 [VP Export to object](#vp-export-to-object) でドキュメントをオブジェクトにエクスポート、または [VP EXPORT DOCUMENT](#vp-export-document) でドキュメントを 4DVP ドキュメントにエクスポートする場合、`includeBindingSource` オプションを使うことで、現在のコンテキストの内容をエクスポート先のセルの値としてコピーすることができます。 詳細については、これらのメソッドの説明を参照ください。
 
@@ -4783,7 +4783,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 *name* 引数として、シートの新しい名前を渡します。
 
-In *sheet*, pass the index of the sheet to rename.
+*sheet* 引数には、名称変更するシートのインデックスを渡します。
 
 > インデックスは 0 起点です。
 
