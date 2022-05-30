@@ -65,7 +65,7 @@ To ensure the correct evaluation of expressions processed via tags, regardless o
 
 ### Using the "." as decimal separator
 
-4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Regional settings are ignored. This feature facilitates code maintenance and compatibility between 4D languages and versions.
+4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Los parámetros regionales se ignoran. This feature facilitates code maintenance and compatibility between 4D languages and versions.
 
 
 ## 4DBASE
@@ -569,7 +569,7 @@ The `my_method` method can be as follows:
 
 With this syntax, the `4DLOOP` tag makes a loop as long as the *expression* returns `True`. The expression can be any valid Boolean expression and must contain a variable part to be evaluated in each loop to avoid infinite loops.
 
-For example, the following code:
+Por ejemplo, el siguiente código:
 
 ```html
 <!--#4DEVAL $i:=0-->
@@ -666,7 +666,7 @@ You can also insert 4D expressions. You can for example directly insert the cont
 
 In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT myvar--> : ## error # error code`.
 
-- You must use process variables.
+- Debe utilizar las variables proceso.
 - You can display the content of a picture field. However, it is not possible to display the content of a picture array item.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get:C1224([Rect]Desc;\"color\")-->`.
 - You will usually work with Text variables. However, you can also use BLOB variables. You just need to generate BLOBs in `Text without length` mode.

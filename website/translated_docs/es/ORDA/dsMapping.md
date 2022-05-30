@@ -31,7 +31,7 @@ Se aplican las siguientes reglas para todas las conversiones:
 > - la opción "Invisible" para tablas o campos, - la estructura virtual definida mediante `SET TABLE TITLES` o `SET FIELD TITLES`, - la propiedad "Manual" o "Automática" de las relaciones.
 
 
-### Rules for remote access control
+### Normas de control de acceso remoto
 
 When accessing a remote datastore through the `Open datastore` command or [REST requests](REST/gettingStarted.md), only tables and fields with the **Expose as REST resource** property are available remotely.
 
@@ -111,7 +111,7 @@ var $compClass : cs.Company //declares a $compClass object variable of the Compa
 $compClass:=ds.Company //assigns the Company dataclass reference to $compClass
 ```
 
-A dataclass object can contain:
+Un objeto dataclass puede contener:
 
 *   attributes
 *   atributos relacionales
@@ -147,7 +147,7 @@ This code assigns to `$nameAttribute` and `$revenuesAttribute` references to the
 All eligible fieds in a table are available as attributes of their parent [dataclass](#dataclass). For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each field that you want to be exposed as a dataclass attribute.
 
 
-#### Storage and Relation attributes
+#### Atributos de almacenamiento y relacionales
 
 Dataclass attributes come in several kinds: storage, relatedEntity, and relatedEntities. Attributes that are scalar (*i.e.*, provide only a single value) support the standard 4D data type (integer, text, object, etc.).
 

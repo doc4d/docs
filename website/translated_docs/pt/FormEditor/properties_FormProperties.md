@@ -8,7 +8,7 @@ title: Form Properties
 ## Color Scheme
 > Color scheme property is only applied on macOS.
 
-This property defines the color scheme for the form. By default when the property is not set, the value for a color scheme is **inherited** (the form uses the scheme defined at the [application level](https://doc.4d.com/4dv19/help/command/en/1762.html)). This can be changed for the form to one of the following two options:
+This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
 
 *   dark - light text on a dark background
 *   light - dark text on a light background
@@ -68,7 +68,7 @@ Supported types depend on the form category:
 
 | Form Type                | JSON grammar     | Descrição                                                     | Supported with              |
 | ------------------------ | ---------------- | ------------------------------------------------------------- | --------------------------- |
-| Detail Form              | detailScreen     | A display form for data entry and modification                | Project forms - Table forms |
+| Formulário detalhado     | detailScreen     | A display form for data entry and modification                | Project forms - Table forms |
 | Detail Form for Printing | detailPrinter    | A printed report with one page per record, such as an invoice | Project forms - Table forms |
 | List Form                | listScreen       | A form for listing records on the screen                      | Table forms                 |
 | List Form for Printing   | listPrinter      | A printed report that list records                            | Table forms                 |
@@ -150,7 +150,7 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 | ---------------- | --------- | --------------- |
 | memorizeGeometry | booleano  | true, false     |
 
-#### See also
+#### Veja também
 [**Save Value**](FormObjects/properties_Object.md#save-value)
 
 

@@ -134,7 +134,7 @@ Then you can get an entity selection of the "best" companies by executing:
 ```
 
 
-#### Example with a remote datastore
+#### Ejemplo con un datastore remoto
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
@@ -231,7 +231,7 @@ C_BOOLEAN($0)
 $0:=This.getPopulation()>50000
 ```
 
-Then you can call this code:
+Luego puede llamar este código:
 
 ```4d
 var $cityManager; $city : Object
@@ -260,7 +260,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 
 
-## Exposed vs non-exposed functions
+## Funciones expuestas y no expuestas
 
 For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests.
 
@@ -367,6 +367,10 @@ If (This.birthDate#!00-00-00!)
 Else 
     $age:=Null
 End if
+    $age:=Year of(Current date)-Year of(This.birthDate)
+Else 
+    $age:=Null
+End if
 ```
 
 #### Verificación de los atributos
@@ -422,7 +426,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 
 > By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
-ORDA user classes have a different icon from regular classes. Empty classes are dimmed:
+ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
 
 ![](assets/en/ORDA/classORDA2.png)
 

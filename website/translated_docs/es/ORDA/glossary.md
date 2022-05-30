@@ -55,7 +55,7 @@ A datastore is the interface object provided by ORDA to reference a structure an
 
 Un datastore ofrece:
 
-*   a connection to the 4D database
+*   una conexión a la base de datos 4D
 *   a set of dataclasses to work with the database
 
 The database can be a 4D local database (the Main datastore), or a 4D Server database exposed as REST resource (a Remote datastore).
@@ -91,7 +91,7 @@ For more information, see Entities.
 
 An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
-An entity selection contains:
+Una selección de entidades contiene:
 
 *   a set of 0 to X entity references,
 *   a length property (always),
@@ -140,7 +140,7 @@ In this documentation, "Mixed" data type is used to designate the various type o
 
 ## Bloqueo optimista
 
-In "optimistic lock" mode, entities are not locked explicitly before updating them. Each entity has an internal stamp that is automatically incremented each time the entity is saved on disk. The entity.save( ) or entity.drop( ) methods will return an error if the stamp of the loaded entity (in memory) and the stamp of the entity on disk do not match, or if the entity has been dropped. Optimistic locking is only available in ORDA implementation. See also "Pessimistic lock".
+In "optimistic lock" mode, entities are not locked explicitly before updating them. Each entity has an internal stamp that is automatically incremented each time the entity is saved on disk. The entity.save( ) or entity.drop( ) methods will return an error if the stamp of the loaded entity (in memory) and the stamp of the entity on disk do not match, or if the entity has been dropped. Optimistic locking is only available in ORDA implementation. Ver también " Bloqueo pesimista ".
 
 ## Bloqueo pesimista
 
