@@ -600,7 +600,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | ----------- | --------------------------- | ---- |
 | 設定ダイアログボックス | オプション (I) ページ / 最大同時Webプロセス |      |
 
-This option enables the preemptive mode for your application's web server code when **No sessions** option is selected (the preemptive mode is always enabled with **scalable sessions**). When this option is checked in this context, the 4D compiler will automatically evaluate the thread-safety property of each piece of [web-related code](preemptiveWeb.md#thread-safety-of-4d-web-code) and return errors in case of incompatibility.
+このオプションは、**セッションなし** オプションが選択されている場合に、アプリケーションの Webサーバーコードのプリエンプティブモードを有効にします (**スケーラブルセッション** では、プリエンプティブモードは常に有効です)。 このコンテキストにおいて当該オプションがチェックされているとき、4Dコンパイラは [Web関連のコード](preemptiveWeb.md#4d-webコードのスレッドセーフティ) それぞれのスレッドセーフプロパティを自動的に評価し、違反があった場合にはエラーを返します。
 
 
 
