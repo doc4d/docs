@@ -62,7 +62,7 @@ The `.size` property <!-- REF #Blob.size.Summary -->returns the size of a `4D.Bl
 | ---------- | ------- |:--:| ---------------------------------------------------------------------- |
 | start      | Real    | -> | index of the first byte to include in the new `4D.Blob`.               |
 | end        | Real    | -> | index of the first byte that will not be included in the new `4D.Blob` |
-| Resultado  | 4D.Blob | <- | New `4D.Blob`|<!-- END REF -->
+| Resultado  | 4D.Blob | <- | Nuevo `4D.Blob`|<!-- END REF -->
 
 |
 

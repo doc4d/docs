@@ -715,7 +715,7 @@ donde:
     | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
     | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
     |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
-    | Diferente de                         | #, !=       | Supports the wildcard (@)                                                                                      |
+    | Diferente de                         | #, !=       | Soporta el comodín (@)                                                                                         |
     |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
     | Menor que                            | <           |                                                                                                                |
     | Mayor que                            | >           |                                                                                                                |
@@ -728,7 +728,7 @@ donde:
 *   **value**: the value to compare to the current value of the property of each entity in the entity selection or element in the collection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property.<p><p> When using a constant value, the following rules must be respected:
     *   **text** type constant can be passed with or without simple quotes (see **Using quotes** below). To query a string within a string (a "contains" query), use the wildcard symbol (@) in value to isolate the string to be searched for as shown in this example: "@Smith@". The following keywords are forbidden for text constants: true, false.
     *   **boolean** type constants: **true** or **false** (case sensitive).
-    *   Valores constantes de tipo **numérico**: los decimales se separan con un '.' (punto). constantes de tipo de fecha: formato "YYYY-MM-DD"
+    *   Valores constantes de tipo **numérico**: los decimales se separan con un '.' constantes de tipo de fecha: formato "YYYY-MM-DD"
     *   Constantes **null**: utilizando la palabra clave "null" encontrará las propiedades **null** y **undefined**.
     *   en el caso de una búsqueda con un comparador IN, el valor debe ser una colección, o valores que coincidan con el tipo de la ruta del atributo entre \[ ] separados por comas (para las cadenas, los caracteres " deben escaparse con "\").
 *   **logicalOperator**: used to join multiple conditions in the query (optional). You can use one of the following logical operators (either the name or the symbol can be used):
@@ -738,7 +738,7 @@ donde:
     | AND        | &, &&, and              |
     | O          | &#124;,&#124;&#124;, or |
 
-*   **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). By default, the order is ascending. Pass 'desc' to define a descending order and 'asc' to define an ascending order.
+*   **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). Por defecto, el orden es ascendente. Pass 'desc' to define a descending order and 'asc' to define an ascending order.
 > *Si utiliza esta declaración, la entity selection devuelta está ordenada (para más información, consulte [Entity selections ordenadas vs desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
 
 **Utilizar comillas**
@@ -773,7 +773,7 @@ Se pueden utilizar dos tipos de marcadores: **indexed placeholders** y los **nam
 Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* puede contener, para los parámetros *attributePath*, *formula* y *value*:
 
 
-*   direct values (no placeholders),
+*   valores directos (sin marcadores),
 *   indexed placeholders and/or named placeholders.
 
 **Se recomienda utilizar marcadores de posición en las consultas** por las siguientes razones:
@@ -827,16 +827,16 @@ Por ejemplo, con las dos entidades siguientes:
 
 ```
 Entity 1:
-ds.People.name: "martin"
-ds.People.places: 
+ds. People.name: "martin"
+ds. People.places: 
     { "locations" : [ {
                 "kind":"home",
                 "city":"paris" 
             } ] }
 
 Entity 2:
-ds.People.name: "smith"
-ds.People.places: 
+ds. People.name: "smith"
+ds. People.places: 
     { "locations" : [ {
                 "kind":"home",
                 "city":"lyon" 
@@ -878,7 +878,7 @@ La fórmula debe haber sido creada con el comando `Formula` o `Formula from stri
 *   the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
 *   within the *formula*, the entity is available through the `This` object.
 *   si el objeto `Formula` es **null**, se genera el error 1626 ("Esperando un texto o una fórmula"), que llama a interceptar utilizando un método instalado con `ON ERR CALL`.
-> Por razones de seguridad, las llamadas a fórmulas dentro de los métodos `query(`) pueden ser desestimadas. See *querySettings* parameter description.
+> > Por razones de seguridad, las llamadas a fórmulas dentro de los métodos `query(`) pueden ser desestimadas. See *querySettings* parameter description.
 
 **Pasar parámetros a las fórmulas**
 
@@ -911,12 +911,12 @@ En el parámetro *querySettings* se puede pasar un objeto que contenga opciones 
 | args          | Objeto   | Parámetro(s) a pasar a las fórmulas, si las hay. El objeto **args** se recibirá en $1 dentro de las fórmulas y, por tanto, sus valores estarán disponibles a través de *$1.property* (ver ejemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | allowFormulas | Booleano | True para permitir las llamadas de fórmulas en la búsqueda (por defecto). Pase false para desautorizar la ejecución de fórmulas. Si se establece como false y `query()` recibe una fórmula, se envía un error (1278 - Fórmula no permitida en este método miembro).                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | context       | Texto    | Etiqueta para el contexto de optimización automática aplicado a la entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. Esta función está diseñada para el procesamiento cliente/servidor; para más información, consulte la sección **Optimización cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                                       |
-| queryPlan     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda justo antes de que se ejecute, es decir, la búsqueda planificada. La propiedad devuelta es un objeto que incluye cada búsqueda y sub búsqueda prevista (en el caso de una búsqueda compleja). Esta opción es útil durante la fase de desarrollo de una aplicación. Suele utilizarse junto con queryPath. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                                                                                     |
-| queryPath     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda tal cual es realizada. La propiedad devuelta es un objeto que contiene la ruta utilizada para la búsqueda (normalmente idéntica a la de queryPlan, pero puede diferir si el motor consigue optimizar la búsqueda), así como el tiempo de procesamiento y el número de registros encontrados. Esta opción es útil durante la fase de desarrollo de una aplicación. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                            |
+| queryPlan     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda justo antes de que se ejecute, es decir, la búsqueda planificada. La propiedad devuelta es un objeto que incluye cada búsqueda y sub búsqueda prevista (en el caso de una búsqueda compleja). Esta opción es útil durante la fase de desarrollo de una aplicación. Suele utilizarse junto con queryPath. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones`entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                                                                                      |
+| queryPath     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda tal cual es realizada. La propiedad devuelta es un objeto que contiene la ruta utilizada para la búsqueda (normalmente idéntica a la de queryPlan, pero puede diferir si el motor consigue optimizar la búsqueda), así como el tiempo de procesamiento y el número de registros encontrados. Esta opción es útil durante la fase de desarrollo de una aplicación. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones`entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                             |
 
 **Sobre queryPlan y queryPath**
 
-La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Puede resultarle útil analizar esta información mientras desarrolla sus aplicaciones. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
+La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
 
 Por ejemplo, si ejecuta la siguiente búsqueda:
 
@@ -929,9 +929,9 @@ queryPlan:
 
 ```4d
 {Or:[{And:[{item:[index : Employee.salary ] < 50000},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.name ] = Lima West Kilo}]}]},  
-    {item:Join on Table : Company  :  Employee.employerID = Company.ID,  
+    {item:Join on Table : Company  :  Employee.employerID = Company. ID,  
     subquery:[{item:[index : Company.revenues ] > 10000000}]}]}
 ```
 
@@ -940,8 +940,8 @@ queryPath:
 ```4d
 {steps:[{description:OR,time:63,recordsfounds:1388132,  
     steps:[{description:AND,time:32,recordsfounds:131,  
-    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:0,recordsfounds:131,  
-    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company.ID,time:31,recordsfounds:1388132,  
+    steps:[{description:[index : Employee.salary ] < 50000,time:16,recordsfounds:728260},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:0,recordsfounds:131,  
+    steps:[{steps:[{description:[index : Company.name ] = Lima West Kilo,time:0,recordsfounds:1}]}]}]},{description:Join on Table : Company  :  Employee.employerID = Company. ID,time:31,recordsfounds:1388132,  
     steps:[{steps:[{description:[index : Company.revenues ] > 10000000,time:0,recordsfounds:933}]}]}]}]}
 ```
 

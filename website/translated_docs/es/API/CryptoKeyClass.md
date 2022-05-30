@@ -184,7 +184,7 @@ La llave debe ser una llave RSA, el algoritmo es RSA-OAEP (ver [RFC 3447](https:
 | Propiedad         | Tipo  | Descripción                                                                                                                                                   |
 | ----------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | texto | Algoritmo Digest a utilizar. Por ejemplo: "SHA256", "SHA384" o "SHA512".                                                                                      |
-| encodingEncrypted | texto | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Por defecto es "Base64".                       |
+| encodingEncrypted | texto | Encoding used to convert the binary encrypted message into the result string. Puede ser "Base64", o "Base64URL". Por defecto es "Base64".                     |
 | encodingDecrypted | texto | Encoding used to convert the `message` parameter into the binary representation to encrypt. Can be "UTF-8", "Base64", or "Base64URL". Por defecto es "UTF-8". |
 
 
@@ -300,14 +300,14 @@ La función `.sign()` <!-- REF #CryptoKey.sign().Summary -->firma la representac
 | Propiedad         | Tipo     | Descripción                                                                                                                                                                                        |
 | ----------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | texto    | Algoritmo Digest a utilizar. Por ejemplo: "SHA256", "SHA384" o "SHA512". Cuando se utiliza para producir un JWT, el tamaño del hash debe coincidir con el tamaño del algoritmo PS@, ES@, RS@ o PS@ |
-| encodingEncrypted | texto    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Por defecto es "Base64".                                                            |
+| encodingEncrypted | texto    | Encoding used to convert the binary encrypted message into the result string. Puede ser "Base64", o "Base64URL". Por defecto es "Base64".                                                          |
 | pss               | booleano | Utilice el Probabilistic Signature Scheme (PSS). Se ignora si la llave no es una llave RSA. Pase `true` al producir un JWT para el algoritmo PS@                                                   |
 | encoding          | texto    | Representación que se utilizará para la firma de resultados. Los valores posibles son "Base64" o "Base64URL". Por defecto es "Base64".                                                             |
 
 
 #### *Resultado*
 
-Representación utf8 de la cadena *message*.
+`CryptoKey` debe contener una llave válida **privada**.
 <!-- END REF -->
 
 <!-- REF CryptoKey.size -->
@@ -369,9 +369,9 @@ Definido sólo para llaves RSA: <!-- REF #CryptoKey.size.Summary -->el tamaño d
 
 <!-- END REF -->
 
-La función `.verify()` <!-- REF #CryptoKey.verify().Summary -->verifica la firma base64 contra la representación utf8 del *message*<!-- END REF --> utilizando las llaves del objeto `CryptoKey` y las *options* proporcionadas.
+Representación utf8 de la cadena *message*.
 
-La `CryptoKey` debe contener una llave **pública** válida.
+La función `.verify()` <!-- REF #CryptoKey.verify().Summary -->verifica la firma base64 contra la representación utf8 del *message*<!-- END REF --> utilizando las llaves del objeto `CryptoKey` y las *options* proporcionadas.
 
 
 #### *options*
@@ -385,9 +385,9 @@ La `CryptoKey` debe contener una llave **pública** válida.
 
 #### *Resultado*
 
-La función devuelve un objeto de estado con la propiedad `success` definida como `true` si el `message` pudo ser verificado con éxito (es decir, la firma coincide).
+La `CryptoKey` debe contener una llave **pública** válida.
 
-En caso de que la firma no haya podido ser verificada por no haber sido firmada con el mismo *message*, llave o algoritmo, el objeto `status` que se devuelve contiene una colección de errores en `status.errors`.
+La función devuelve un objeto de estado con la propiedad `success` definida como `true` si el `message` pudo ser verificado con éxito (es decir, la firma coincide).
 
 | Propiedad | Tipo      | Descripción                                                 |
 | --------- | --------- | ----------------------------------------------------------- |

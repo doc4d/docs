@@ -11,7 +11,7 @@ The WebAdmin handles the authentication of users with "WebAdmin" privileges, so 
 This feature can be used in 4D applications running headless as well as 4D applications running with interfaces.
 
 
-## Starting the WebAdmin web server
+## Iniciar el servidor web WebAdmin
 
 By default, the `WebAdmin` web server is not launched. You need to configure the launch at startup, or (in versions with interface) launch it manually using a menu item.
 
@@ -75,7 +75,7 @@ Check this option if you want the `WebAdmin` web server to be automatically laun
 
 #### Accept HTTP connections on localhost
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. By default, this option is checked.
+When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. Por defecto, esta opción está seleccionada.
 
 **Notas:**
 - Connections with HTTP other than localhost are never accepted.
@@ -89,7 +89,7 @@ Port number to use for connections through HTTP to the `WebAdmin` web server whe
 
 #### Aceptar HTTPS
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
+When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. Por defecto, esta opción está seleccionada.
 
 #### Puerto HTTPS
 
@@ -123,7 +123,7 @@ An access key is similar to a password but not associated to a login.
 - To delete the access key: click the **Modify** button, let the access key area empty and click **OK**.
 
 
-## WebAdmin Headless Configuration
+## Configuración de WebAdmin sin interfaz
 
 All [WebAdmin settings](#webadmin-settings) are stored in the `WebAdmin.4DSettings` file. There is one default `WebAdmin.4DSettings` file per 4D and 4D Server application, so that it is possible to deploy multiple applications on the same host machine.
 
@@ -145,7 +145,7 @@ Ejemplo:
 ```
 
 
-## Authentication and Session
+## Autenticación y sesión
 
 - When a web management page is accessed by entering a URL and without prior identification, an authentication is required. The user must enter the [access key](#access-key) in an authentication dialog box. If the access key was not defined in the `WebAdmin` settings, no access via URL is possible.
 
