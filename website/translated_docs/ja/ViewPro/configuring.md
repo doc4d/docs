@@ -370,11 +370,11 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |           | width  | longint | 用紙の幅、100分の1インチ単位                                                                 |
 |           | kind   | テキスト    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。 `GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
-* If the paper size is specified using the `height` and `width` properties,  [`VP Get print info`](./method-list.md#vp-get-print-info) returns a paper size with `custom` as value for `kind`.
+* `height` と `width` プロパティで用紙サイズを指定した場合、[`VP Get print info`](./method-list.md#vp-get-print-info) が返す用紙サイズ属性の `kind` プロパティ値は `custom` です。
 
-* If you set the paper size using the `kind` property, you can use either:
-    * one of the formats in the [SpreadJS format list](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html)
-    * one of the formats returned by the [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/en/page785.html) command. In that case, [`VP Get print info`](./method-list.md#vp-get-print-info) returns the corresponding format with the height and width.
+* `kind` プロパティで用紙サイズを設定する場合、以下のいずれかを使用することができます:
+    * [ SpreadJS のフォーマットリスト](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html) のフォーマット
+    * [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/ja/page785.html) コマンドで返されるフォーマット。 この場合、[`VP Get print info`](./method-list.md#vp-get-print-info) は対応するフォーマットを高さと幅とともに返します。
 
 ### スケール
 
