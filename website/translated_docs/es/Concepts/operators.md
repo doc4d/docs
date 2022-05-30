@@ -178,7 +178,7 @@ The difference with the single [**&** and **|** boolean operators](dt_boolean.md
 
 ### Short-circuit AND operator (&&)
 
-The rule is as follows:
+La regla es la siguiente:
 
 Given `Expr1 && Expr2`:
 
@@ -305,7 +305,7 @@ La sintaxis es la siguiente:
 
 ### Ejemplos
 
-#### A simple example
+#### Un ejemplo sencillo
 
 ```4d
 var $age : Integer

@@ -5,11 +5,11 @@ title: Página Cliente/Servidor
 
 The Client-server pages group together parameters related to the use of the database in client-server mode. Naturally, these settings are only taken into account when the database is used in remote mode.
 
-## Network options page
+## Página Opciones red
 
 ### Red
 
-#### Publish database at startup
+#### Publicar la base al inicio
 
 This option lets you indicate whether or not the 4D Server database will appear in the list of published databases.
 
@@ -58,7 +58,7 @@ This device is used to set the timeout (period of inactivity beyond which the co
 
 When a timeout is selected, the server will close the connection of a client if it does not receive any requests from the latter during the specified time limit.
 
-### Client-Server Communication
+### Comunicación cliente-servidor
 
 #### Register Clients at Startup For Execute On Client
 
@@ -79,7 +79,7 @@ This setting can be used to globally set the updating mode for the local instanc
 
 ## Página Configuración IP
 
-### Allow-Deny Configuration Table
+### Tabla de configuración Autorizar-Rechazar
 
 This table allows you to set access control rules for the database depending on 4D remote machine IP addresses. This option allows reinforcing security, for example, for strategic applications.
 
