@@ -32,7 +32,7 @@ A continuación se describen las propiedades devueltas para cada clase de datos 
 | Propiedad | Tipo   | Descripción                                                                      |
 | --------- | ------ | -------------------------------------------------------------------------------- |
 | name      | Cadena | Nombre de la dataclass.                                                          |
-| uri       | Cadena | Un URI que permite obtener información sobre la |clase de datos y sus atributos. |
+| uri       | Cadena | A URI allowing you to obtain information about the dataclass and its attributes. |
 | dataURI   | Cadena | Un URI que permite ver los datos en la clase de datos.                           |
 
 
