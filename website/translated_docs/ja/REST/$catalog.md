@@ -28,11 +28,11 @@ title: '$catalog'
 
 データクラス毎に返されるプロパティの説明です:
 
-| プロパティ   | タイプ    | 説明                                |
-| ------- | ------ | --------------------------------- |
-| name    | String | データクラスの名称。                        |
-| uri     | String | データクラスとその属性に関する情報を取得するための URI です。 |
-| dataURI | String | データクラスのデータを取得するための URI です。        |
+| プロパティ   | タイプ    | 説明                                                                               |
+| ------- | ------ | -------------------------------------------------------------------------------- |
+| name    | String | データクラスの名称。                                                                       |
+| uri     | String | A URI allowing you to obtain information about the dataclass and its attributes. |
+| dataURI | String | データクラスのデータを取得するための URI です。                                                       |
 
 
 
