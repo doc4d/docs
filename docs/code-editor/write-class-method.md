@@ -123,7 +123,7 @@ In the example given below, typing the string "cop" causes the display of a blue
 When the characters you enter correspond to a single possibility, this suggested value appears greyed out (and is inserted if you hit the **Tab** key):
 ![](assets/en/code-editor/autocomplete-2.png) ---> ![](assets/en/code-editor/autocomplete-3.png)
 
-**Note:** If you checked the **Insert () and closing } ) ] "** option in the [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html) of the Preferences, 4D will also automatically add **()** after a 4D command, keyword or project method that requires one or more mandatory arguments (after accepting a suggestion or completion):
+**Note:** If you checked the **Insert () and closing } ) ] "** option in the **Methods** page of the **Preferences**, 4D will also automatically add **()** after a 4D command, keyword or project method that requires one or more mandatory arguments (after accepting a suggestion or completion):
 ![](assets/en/code-editor/insert-and-closing-1.png) -> ![](assets/en/code-editor/insert-and-closing-2.png)
 
 Autocompletion also works with code structures (e.g. If..End if, For each...End for each): when you enter the first part of the structure, the Code Editor will automatically suggest the closing part:
@@ -131,15 +131,15 @@ Autocompletion also works with code structures (e.g. If..End if, For each...End 
 
 If there are several suggestions available, 4D displays them in a pop-up list when you hit the **Tab** key:
 
-![](https://doc.4d.com/4Dv19R4/picture/441097/pict441097.en.png)
+![](assets/en/code-editor/autocomplete-popup.png)
 
 The list is in alphabetical order. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
 
-By default, you can also insert a suggested value by hitting one of the following delimiter **( ; : = < [ {** keys after selecting a value: the value inserted is then followed by the delimiter, ready for data entry.
+By default, you can also insert a suggested value by hitting one of the following delimiter `( ; : = < [ {` keys after selecting a value: the value inserted is then followed by the delimiter, ready for data entry.
 
-![](https://doc.4d.com/4Dv19R4/picture/441248/pict441248.en.png)  +  **(** key --> ![](https://doc.4d.com/4Dv19R4/picture/441250/pict441250.en.png)
+![](assets/en/code-editor/autocomplete-delimiter.png)  +  **(** key --> ![](assets/en/code-editor/autocomplete-delimiter-2.png)
 
-**Note:** You can disable the use of delimiters for inserting suggested values in the [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html) of the Preferences.
+**Note:** You can disable the use of delimiters for inserting suggested values in **Preferences** > **Methods** > **Options**.
 
 You can press the **Esc** key to close the pop-up list or you can continue typing while it is open. The values suggested in the pop-up list are updated as additional characters are typed.
 
@@ -158,30 +158,30 @@ If the characters typed correspond to different types of objects, the list displ
 * SQL keywords
 * Macros (displayed between < >)
 
-**Note:** For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found on the [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html) of the User preferences.
+**Note:** For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
 
-##### Object attributes  
+### Object attributes  
 
-With [Object Notation](https://doc.4d.com/4Dv19R4/4D/19-R4/Compatibility-page.300-5737012.en.html#3368899) enabled, 4D automatically displays case-sensitive suggestions of all valid object attribute names in 4D methods when you:
+4D automatically displays case-sensitive suggestions of all valid object attribute names in 4D methods when you:
 
-* type a "." after an object or
+* type a dot "." after an object or
 * use the Tab key after a dereferenced object pointer "->".
 
-![](https://doc.4d.com/4Dv19R4/picture/3574568/pict3574568.en.png)
+![](assets/en/code-editor/autocomplete-object-attributes.png)
 
 **Note:** The length attribute is always included for use with collections.
 
 Valid object attribute names are those which are compliant with ECMA Script standards. For more information, see [Object property identifiers](https://doc.4d.com/4Dv19R4/4D/19-R4/Using-object-notation.300-5739064.en.html#3305214).
 
-Once created, attribute names are stored in an internal global list and are available anytime a method is opened, closed or changes focus.
+Once created, attribute names are stored in an internal global list and are available anytime a method/class/function is opened, closed or changes focus.
 
-![](https://doc.4d.com/4Dv19R4/picture/3575080/pict3575080.en.png)
+![](assets/en/code-editor/autocomplete-object-attributes-2.png)
 
-The list of suggestions is dynamically updated while a method is being edited. When switching between windows, new/edited attribute names are always added to the global list. The list is also updated when you preview methods in the Explorer.
+The list of suggestions is dynamically updated while you edit code. When switching between windows, new/edited attribute names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
 
 When the database is restarted, the list is reinitialized.
 
-**Note:** You can disable the automatic display of attribute names on the [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html) of the Preferences.
+**Note:** You can disable the automatic display of object attributes in **Preferences** > **Methods** > **suggestions**.
 
 ## Selecting text  
 
@@ -189,16 +189,16 @@ When the database is restarted, the list is reinitialized.
 
 The **Select Enclosing Block** function is used to select the "enclosing block" of the code containing the insertion point. The enclosing block can be defined by:
 
-* Quotation marks,
-* Parentheses,
-* A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case), or,
-* Braces.
+* Quotation marks
+* Parentheses
+* A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case)
+* Braces
 
 If a block of text is already selected, the function selects the enclosing block of the next highest level and so on, until the entire method is selected.
 
 Pressing **Ctrl+Shift+B** (Windows) or **Command+Shift+B** (Mac OS) enables you to reverse this operation and deselect the last enclosing block selected.
 
-**Note:** If the insertion point is placed in an If or Else type structure, the enclosing block will be the one containing, respectively, the If or Else statement.
+**Note:** If the insertion point is placed in an `If` or `Else` type structure, the enclosing block will be the one containing, respectively, the `If` or `Else` statement.
 
 ### Double-clicking  
 
@@ -208,9 +208,10 @@ You can double-click to select individual "words". When the item name referenced
 
 Standard keyboard shortcuts to navigate the code are available in 4D's Code Editor.
 
-**Note:** Under Mac OS, substitute the **Command** key for the **Ctrl** key (Windows).
+**Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
 | **Shortcut** | **Action** |
+|--|--|
 | [Shift]+[right arrow] | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
 | [Shift]+[left arrow] | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left |
 | [Shift]+[down arrow] | Create and enlarge a selection, line by line, from the top to the bottom |
@@ -230,9 +231,9 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 ## Checking and correcting syntax errors  
 
-4D automatically checks the method syntax to see if it is correct. If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](https://doc.4d.com/4Dv19R4/picture/441044/pict441044.fr.png). When you move the mouse over the symbol, a help tip displays the cause of the error:
+4D automatically checks the method syntax to see if it is correct. If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](assets/en/code-editor/incorrect-expression-icon.png). When you move the mouse over the symbol, a help tip displays the cause of the error:
 
-![](https://doc.4d.com/4Dv19R4/picture/441041/pict441041.en.png)
+![](assets/en/code-editor/incorrect-expression-message.png)
 
 When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method is marked as having improper syntax, check and fix the entry. If the line is now correct, 4D removes the error symbol. When you save or close the window, the entire method is validated. You can also force validation by pressing the **Enter** key.
 
