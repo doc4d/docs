@@ -235,24 +235,30 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 ![](assets/en/code-editor/incorrect-expression-message.png)
 
-When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method is marked as having improper syntax, check and fix the entry. If the line is now correct, 4D removes the error symbol. When you save or close the window, the entire method is validated. You can also force validation by pressing the **Enter** key.
+When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method, class or function is marked as having improper syntax, check and fix the entry. If the line becomes correct, 4D removes the error symbol. When you save or close the window, the entire method is validated. You can also force validation by pressing the **Enter** key.
 
-When the method is validated, 4D checks for basic syntax errors and for the structure of the statements (If, End if and so on). 4D also checks for matching enclosing characters in the code such as parentheses or quotation marks. When you type an enclosing character, 4D indicates the match by framing the start/end characters with gray rectangles:
+When the method, class or function is validated, 4D checks for:
 
-![](https://doc.4d.com/4Dv19R4/picture/441055/pict441055.en.png)
+* basic syntax errors
+* the structure of statements (`If`, `End if` and so on)
+* matching enclosing characters in the code such as parentheses or quotation marks. When you type an enclosing character, 4D indicates the match by framing the start/end characters with gray rectangles:
 
-**Note:** If you click on an enclosing character in the code, 4D indicates its match with gray rectangles by default. You can modify the way 4D indicates matching enclosing characters or disable this feature by means of the "Matching parentheses" option on the [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html) of the Preferences.
+![](assets/en/code-editor/matching-enclosing-characters.png)
 
-The Code Editor can only check for obvious syntax errors (misspellings and the like). It does not check for errors that only occur during execution. Execution errors are caught by 4D when the method is executed. 4D provides a debugger (see [Debugging](https://doc.4d.com/4Dv19R4/4D/19-R4/Debugging.200-5738443.en.html)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](https://doc.4d.com/4Dv19R4/4D/19-R4/Compilation.200-5736724.en.html) chapter.
+> **Note:** If you click on an enclosing character in the code, 4D indicates its match with gray rectangles by default. You can modify the way 4D indicates matching enclosing characters or disable this feature in **Preferences** > **Methods** > **Options** > **Matching parentheses**.
+
+The Code Editor can only check for obvious syntax errors (misspellings and the like). It does not check for errors that only occur during execution. Execution errors are caught by 4D when the code is executed.
+
+4D has a built-in (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
 
 ## Using help tips and status bar  
 
-The Code Editor provides various contextual information using help tips which appear when you move the mouse over an object and the status bar, at the bottom of a Code Editor window.
+The Code Editor provides various contextual information using help tips. They appear when you mouse over an object and the status bar, at the bottom of a Code Editor window.
 
-* **Errors**: When you move the mouse over the symbol indicating an error to the left of the editing area, a help tip displays the cause of the error (see the "Checking and correcting syntax errors" section).
+* **Errors**: When you mouse over the symbol indicating an error to the left of the editing area, a help tip displays the cause of the error (see [Checking and correcting syntax errors](#checking-and-correcting-syntax-errors)).
 
-* **4D command documentation**: When you set the cursor in a command name or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**:\
-    ![](https://doc.4d.com/4Dv19R4/picture/3841624/pict3841624.en.png)\
+* **4D command documentation**: When you set the cursor in a command name or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**:
+    ![](https://doc.4d.com/4Dv19R4/picture/3841624/pict3841624.en.png)
     When you move the mouse over a 4D command, a help tip provides the command syntax along with a brief description of how it works.\
     ![](https://doc.4d.com/4Dv19R4/picture/443413/pict443413.en.png)
 
