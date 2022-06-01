@@ -29,11 +29,11 @@ Seules les dataclass exposées apparaissent dans cette liste pour le datastore d
 Voici une description des propriétés retournées pour chaque dataclass dans le datastore de votre projet :
 
 
-| Propriété | Type   | Description                                                                      |
-| --------- | ------ | -------------------------------------------------------------------------------- |
-| name      | Chaine | Nom de la dataclass.                                                             |
-| uri       | Chaine | A URI allowing you to obtain information about the dataclass and its attributes. |
-| dataURI   | Chaine | URI vous permettant d'afficher les données dans la dataclass.                    |
+| Propriété | Type   | Description                                                                          |
+| --------- | ------ | ------------------------------------------------------------------------------------ |
+| name      | Chaine | Nom de la dataclass.                                                                 |
+| uri       | Chaine | Un URI vous permettant d'obtenir des informations sur la dataclass et ses attributs. |
+| dataURI   | Chaine | URI vous permettant d'afficher les données dans la dataclass.                        |
 
 
 ### Exemple
