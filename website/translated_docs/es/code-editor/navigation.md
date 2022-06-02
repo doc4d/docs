@@ -24,7 +24,7 @@ The following items are added automatically:
 | Icono                                                                    | Elemento                                         |
 | ------------------------------------------------------------------------ | ------------------------------------------------ |
 | ![no-tag-icon](assets/en/code-editor/no-tag.png)                         | Sin etiqueta                                     |
-| ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
+| ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor o declaración de método        |
 | ![computed-attribute-icon](assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
 | ![function-icon](assets/en/code-editor/function.png)                     | Nombre de la función de clase                    |
 
