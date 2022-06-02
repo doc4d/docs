@@ -67,7 +67,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 | ![](assets/en/Admin/server-icon-13.png) | Stored procedure (process launched by a connected 4D and running on the server)                                                                           |
 | ![](assets/en/Admin/server-icon-14.png) | Web method (launched by a 4DACTION for example)                                                                                                           |
 | ![](assets/en/Admin/server-icon-15.png) | Método web (apropiativo)                                                                                                                                  |
-| ![](assets/en/Admin/server-icon-16.png) | SOAP method (launched by a Web Service)                                                                                                                   |
+| ![](assets/en/Admin/server-icon-16.png) | Método SOAP (lanzado por un Web Service)                                                                                                                  |
 | ![](assets/en/Admin/server-icon-17.png) | Método SOAP (apropiativo)                                                                                                                                 |
 | ![](assets/en/Admin/server-icon-18.png) | Logger (registrador)                                                                                                                                      |
 | ![](assets/en/Admin/server-icon-19.png) | Listener conexión TCP                                                                                                                                     |

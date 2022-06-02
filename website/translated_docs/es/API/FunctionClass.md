@@ -110,10 +110,10 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 ## Formula
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                   |
-| ------- | -------------------------------- |
-| v17 R6  | Renamed (New formula -> Formula) |
-| v17 R3  | Añadidos                         |
+| Versión | Modificaciones                      |
+| ------- | ----------------------------------- |
+| v17 R6  | Renombrado (New formula -> Formula) |
+| v17 R3  | Añadidos                            |
 </details>
 
 <!-- REF #_command_.Formula.Syntax -->
