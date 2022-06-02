@@ -36,7 +36,7 @@ Database objects available through the ORDA concept, i.e. datastore, dataclasses
 
 ## Data model function
 
-Function of an ORDA data model class.
+Función de una clase de modelo de datos ORDA.
 
 ## Dataclass
 
@@ -85,7 +85,7 @@ An entity is an object that corresponds to a dataclass model. An entity contains
 
 An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. However, an entity also contains related data. The purpose of the entity is to manage data (create, update, delete).
 
-For more information, see Entities.
+Para más información, consulte Entidades.
 
 ## Entity selection
 
