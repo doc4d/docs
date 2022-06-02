@@ -227,7 +227,7 @@ The entity selection properties are however enumerable:
 ```
 
 
-#### Ordered or unordered entity selection
+#### Entity selections ordenadas o no ordenadas
 
 For optimization reasons, by default 4D ORDA usually creates unordered entity selections, except when you use the `orderBy( )` method or use specific options. In this documentation, unless specified, "entity selection" usually refers to an "unordered entity selection".
 
