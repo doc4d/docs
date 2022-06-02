@@ -56,7 +56,7 @@ The Data Explorer supports the following web browsers:
 - Edge
 - FireFox
 
-The minimum resolution to use the Data Explorer is 1280x720. Recommended resolution is 1920x1080.
+The minimum resolution to use the Data Explorer is 1280x720. La resolución recomendada es de 1920x1080.
 
 ### Básicos
 

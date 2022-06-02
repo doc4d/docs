@@ -106,7 +106,7 @@ En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utiliz
 | fk logs folder             | 7     | Filesystem asociado: "/LOGS"                                                                        |
 | fk mobileApps folder       | 10    |                                                                                                     |
 | fk remote database folder  | 3     | 4D database folder created on each 4D remote machine                                                |
-| fk resources folder        | 6     | Associated filesystem: "/RESOURCES"                                                                 |
+| fk resources folder        | 6     | Filesystem asociado: "/RESOURCES"                                                                   |
 | fk system folder           | 100   |                                                                                                     |
 | fk user preferences folder | 0     | 4D folder that stores user preference files within the \<userName> directory.                      |
 | fk web root folder         | 8     | Current Web root folder of the database: if within the package "/PACKAGE/path", otherwise full path |
