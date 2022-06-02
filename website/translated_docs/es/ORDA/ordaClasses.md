@@ -67,7 +67,7 @@ Also, object instances from ORDA data model user classes benefit from their pare
 | Versión | Modificaciones                                                                                     |
 | ------- | -------------------------------------------------------------------------------------------------- |
 | v19 R4  | Alias attributes in the Entity Class                                                               |
-| v19 R3  | Computed attributes in the Entity Class                                                            |
+| v19 R3  | Atributos calculados en la Entity Class                                                            |
 | v18 R5  | Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords. |
 </details>
 
@@ -441,7 +441,7 @@ Function query <attributeName>($event : Object) -> $result : Object
 // code
 ```
 
-This function supports three syntaxes:
+Esta función soporta tres sintaxis:
 
 - With the first syntax, you handle the whole query through the `$event.result` object property.
 - Con la segunda y tercera sintaxis, la función devuelve un valor en *$result*:
