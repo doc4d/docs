@@ -1,6 +1,6 @@
 ---
 id: creating-using-macros
-title: Creating and using Macros
+title: Creating and using macros
 ---
 
 You can use macro-commands in your methods. Using macro-commands saves a lot of time during code entry.
@@ -142,13 +142,13 @@ In the context menu, macros are displayed in the order of the "Macros.xml" file 
 
 ## Autocomplete  
 
-By default, all macros are accessible using the autocomplete (aka type-ahead) function (see [Writing a method](https://doc.4d.com/4Dv19R4/4D/19-R4/Writing-a-method.300-5736961.en.html)). The *type_ahead* attribute of the `<macro>` tag can be used to exclude a macro from this type of operation.
+By default, all macros are accessible using the autocomplete (aka type-ahead) function (see [Writing a method](./write-class-method.md)). The *type_ahead* attribute of the `<macro>` tag can be used to exclude a macro from this type of operation.
 
 **Note:** If the macro contains the `<selection/>` tag, it will not appear in the autocomplete pop-up window.
 
 ## Code Editor list  
 
-You can display your macros in a list of the Code Editor (see [Writing a method](https://doc.4d.com/4Dv19R4/4D/19-R4/Writing-a-method.300-5736961.en.html)). Simply double-click on the name of a macro in the list in order to call it. It is not possible to exclude a specific macro from this list.
+You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Simply double-click on the name of a macro in the list in order to call it. It is not possible to exclude a specific macro from this list.
 
 ## Compatibility notes  
 

@@ -96,7 +96,8 @@
 			"code-editor/interface",
 			"code-editor/write-class-method",
 			"code-editor/creating-using-macros",
-			"code-editor/navigation"
+			"code-editor/navigation",
+			"code-editor/find-replace"
 		],
 		"Debugging": [
 			"Debugging/basics",
