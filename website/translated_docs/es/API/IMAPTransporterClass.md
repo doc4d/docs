@@ -850,10 +850,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 ## .getBoxList()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones               |
-| ------- | ---------------------------- |
-| v18 R4  | Añadidos                     |
-| v19     | Add `isSubscribed` parameter |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v18 R4  | Añadidos                         |
+| v19     | Adición parámetro `isSubscribed` |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxList().Syntax -->
@@ -1169,12 +1169,12 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Parámetros | Tipo     |    | Descripción                                                                                   |
-| ---------- | -------- |:--:| --------------------------------------------------------------------------------------------- |
-| msgNumber  | Integer  | -> | Sequence number of the message                                                                |
-| msgID      | Texto    | -> | ID único del mensaje                                                                          |
-| updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Resultado  | BLOB     | <- | Blob de la cadena MIME devuelta por el servidor de correo                                     |
+| Parámetros | Tipo     |    | Descripción                                                                               |
+| ---------- | -------- |:--:| ----------------------------------------------------------------------------------------- |
+| msgNumber  | Integer  | -> | Sequence number of the message                                                            |
+| msgID      | Texto    | -> | ID único del mensaje                                                                      |
+| updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. Si False, el mensaje se deja igual. |
+| Resultado  | BLOB     | <- | Blob de la cadena MIME devuelta por el servidor de correo                                 |
 <!-- END REF -->
 
 
@@ -1620,7 +1620,7 @@ SearchKey2 = NOT FLAGGED
 SearchKey3 = FLAGGED DRAFT
 ```
 
-> Matching is usually not case-sensitive
+> Las coincidencias no suelen diferenciar entre mayúsculas y minúsculas
 
 - Si el *searchCriteria* es una cadena null, la búsqueda será equivalente a un "seleccionar todo".
 - Si *searchCriteria* incluye varias llaves de búsqueda, el resultado es la intersección (función AND) de todos los mensajes que coinciden con esas llaves.
