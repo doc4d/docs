@@ -20,10 +20,10 @@ Hay diferentes maneras de configurar los parámetros del servidor web 4D, en fun
 
 ## Caché
 
-| Puede ajustarse con           | Nombre                                  | Comentarios |
-| ----------------------------- | --------------------------------------- | ----------- |
-| Caja de diálogo de parámetros | Configuration page/Use the 4D Web cache |             |
-| Caja de diálogo de parámetros | Configuration page/Page Cache Size      |             |
+| Puede ajustarse con           | Nombre                                                 | Comentarios |
+| ----------------------------- | ------------------------------------------------------ | ----------- |
+| Caja de diálogo de parámetros | Página de configuración/Utilización de la caché Web 4D |             |
+| Caja de diálogo de parámetros | Configuration page/Page Cache Size                     |             |
 
 Activa y configura la caché de las páginas web.
 
@@ -225,7 +225,7 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 | objeto webServer    | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | número en segundos |
 | `WEB SET OPTION`    | `Web HSTS max age`                               | número en segundos |
 
-Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta información se almacena del lado del cliente durante el tiempo especificado. Default value is 63072000 (2 years)
+Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta información se almacena del lado del cliente durante el tiempo especificado. El valor por defecto es 63072000 (2 años)
 
 > **Atención:** una vez activado HSTS, las conexiones de los clientes seguirán utilizando este mecanismo durante el tiempo especificado. Cuando esté probando sus aplicaciones, se recomienda definir una duración corta para poder cambiar entre los modos de conexión segura y no segura si es necesario.
 
@@ -334,7 +334,7 @@ IP address strings on which the 4D web server will receive HTTP requests (4D loc
 
 By default, no specific address is defined (**Any** value in the Settings dialog box), which means that the server responds to all IP addresses. When you designate a specific address, the server only responds to requests sent to this address. This feature is designed for 4D web servers located on machines with multiple TCP/IP addresses. It is, for example, frequently the case of most host providers.
 
-Possible values: IP address string. Both IPv6 string formats (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") and IPv4 string formats (e.g. "123.45.67.89") are supported.
+Valores posibles: cadena de direcciones IP. Both IPv6 string formats (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") and IPv4 string formats (e.g. "123.45.67.89") are supported.
 
 #### Acerca de la compatibilidad con IPv6
 
@@ -459,7 +459,7 @@ Valores posibles:
 | objeto webServer    | [`name`](API/WebServerClass.md#name) |             |
 
 
-Name of the web server application. Useful when component web servers are started.
+Nombre de la aplicación del servidor web. Useful when component web servers are started.
 
 ## Versión OpenSSL
 
