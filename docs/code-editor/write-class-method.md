@@ -258,31 +258,31 @@ The Code Editor provides various contextual information using help tips. They ap
 * **Errors**: When you mouse over the symbol indicating an error to the left of the editing area, a help tip displays the cause of the error (see [Checking and correcting syntax errors](#checking-and-correcting-syntax-errors)).
 
 * **4D command documentation**: When you set the cursor in a command name or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**:
-    ![](https://doc.4d.com/4Dv19R4/picture/3841624/pict3841624.en.png)
-    When you move the mouse over a 4D command, a help tip provides the command syntax along with a brief description of how it works.\
-    ![](https://doc.4d.com/4Dv19R4/picture/443413/pict443413.en.png)
+    ![](assets/en/code-editor/status-bar-bold.png)
+    When you move the mouse over a 4D command, a help tip provides the command syntax along with a brief description of how it works.
+    ![](assets/en/code-editor/status-bar-description.png)
 
-* **Variable type and description**: When you move the mouse over a variable, a help tip shows its type (if it has been explicitly defined in the method) and associated comment, if any.\
-    ![](https://doc.4d.com/4Dv19R4/picture/4618457/pict4618457.en.png)
+* **Variable type and description**: When you mouse over a variable, a help tip shows its type (if it has been explicitly defined in the method) and associated comment, if any.
+    ![](assets/en/code-editor/variable-type.png)
 
-* **Project methods**: When you move the mouse over a project method, a help tip displays:
+* **Project methods**: When you mouse over a project method or class function, a help tip displays:
 
   * either the comments specified in the Explorer, if any (see [Using comments](https://doc.4d.com/4Dv19R4/4D/19-R4/Using-comments.300-5736742.en.html)).
-  * or the first few lines of the method if it includes comments (lines beginning with // or /*...*/ comment block). It is common practice to insert documentation for the method as well as its parameters in the form of comments at the beginning of the method. You can get this information directly in the help tip, just make sure to first remove any comments found in the Explorer.\
-        Comments at the beginning of a method:\
-        ![](https://doc.4d.com/4Dv19R4/picture/3977175/pict3977175.en.png)\
-        Help tip in another method:\
-        ![](https://doc.4d.com/4Dv19R4/picture/443365/pict443365.fr.png)
+  * or the first few lines of the method or class function if it includes comments (lines beginning with // or /*...*/ comment block). It is common practice to insert documentation for the method as well as its parameters in the form of comments at the beginning of the method. You can get this information directly in the help tip, just make sure to first remove any comments found in the Explorer.
+        Comments at the beginning of a method:
+        ![](assets/en/code-editor/comments-method.png)
+        Help tip in another method:
+        ![](assets/en/code-editor/help-tip.png)
 
-## Display complete documentation of a command  
+## Display the complete documentation of a command  
 
 You can display the HTML documentation of a 4D language command at any time: to do so, select the complete command name or simply place the cursor in the name and press **F1**. The complete documentation of the command is displayed in a new window of your default browser.
 
-4D looks for the on-line documentation of the command (on the*4D Doc Center*site) or searches locally depending on the settings made in the application Preferences (see [Documentation location](https://doc.4d.com/4Dv19R4/4D/19-R4/General-Page.300-5736746.en.html#102865)).
+4D looks for the on-line documentation of the command (on the*4D Doc Center*site) or searches locally depending on the settings made in the application Preferences (see [Documentation location](../Preferences/general.md#documentation-location)).
 
-## Comment/ uncomment  
+## Comment/Uncomment  
 
-Comments are inactive lines of code. These lines are not interpreted by the program (4D does not apply any particular style within comments) and are not executed when the method is called.
+Comments are inactive lines of code. These lines are not interpreted by the program (4D does not apply any particular style within comments) and are not executed when the method or function is called.
 
 There are two ways to create comments:
 
@@ -312,14 +312,13 @@ Both inline and multiline comment blocks begin with /*and end with*/.
 
   * Multiline comments at the end of a line are not supported.-   Inline and multiline comment blocks are only supported in 4D v18 and newer. If using this syntax, opening the database with a version prior to 4D v18 could provoke interpretation errors. | Inline:
 
-![](https://doc.4d.com/4Dv19R4/picture/4618546/pict4618546.en.png)
+![](assets/en/code-editor/inline-comment.png)
 
-Multiline:\
-![](https://doc.4d.com/4Dv19R4/picture/4618549/pict4618549.en.png)
+Multiline:
+![](assets/en/code-editor/multiline-comment.png)
 
- |
+The **Comment/Uncomment** command, found in the **Method** menu as well as in the Code Editor context menu is used to mark a group of selected lines of code as single line comments, or, on the contrary, to remove the single line comment characters from a selection.
 
-The **Comment/Uncomment** command, found in the **Method** menu as well as in the Code Editor context menu, is used to mark a group of selected lines of code as single line comments, or, on the contrary, to remove the single line comment characters from a selection.\
 To use this command, select the code to be marked as commented, then select the **Comment/Uncomment** command:
 
 ![](https://doc.4d.com/4Dv19R4/picture/441334/pict441334.en.png) --> ![](https://doc.4d.com/4Dv19R4/picture/441336/pict441336.en.png)
