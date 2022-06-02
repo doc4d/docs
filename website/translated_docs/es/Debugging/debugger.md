@@ -90,7 +90,7 @@ If you use this button to modify a method, the modifications are only effective 
 #### Parámetros Guardar
 
 Saves the current configuration of the debugger window  and makes it the default configuration. Esto incluye:
-* the size and position of the window
+* el tamaño y la posición de la ventana
 * the position of the division lines and the contents of the area that evaluates the expressions
 
 These parameters are stored in the project.
@@ -334,8 +334,8 @@ This area also allows you to add or remove [**break points**](breakpoints.md).
 
 Hover your pointer over any expression to display a tool tip that indicates:
 
-* the declared type of the expression
-* the current value of the expression
+* el tipo declarado de la expresión
+* el valor actual de la expresión
 
 ![source-code-pane](assets/en/Debugging/sourceCodePane.png)
 
