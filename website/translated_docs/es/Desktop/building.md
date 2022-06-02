@@ -111,7 +111,7 @@ Si ha llamado a su aplicación, *MiComponente*, 4D creará una carpeta *Componen
 *\<destination>/Components/MyComponent.4dbase/MyComponent.4DZ*.
 
 La carpeta *MyComponent.4dbase* contiene:
--   *MyComponent.4DZ* file
+-   archivo *MyComponent.4DZ*
 -   A *Resources* folder - any associated Resources are automatically copied into this folder. Any other components and/or plugins folders are not copied (a component cannot use plug-ins or other components).
 
 
@@ -181,7 +181,7 @@ Si ha especificado "MyProject" como nombre de la aplicación, encontrará los si
     -   A software package named MyProject.app containing your application and all the items necessary for its operation, including the plug-ins, components and licenses. Para más información sobre la integración de plug-ins y componentes, consulte la sección \[Plugins y componentes\](#plugins-and-components). Para obtener más información sobre la integración de licencias, consulte la sección \[Licencias y certificados\](#licenses-and-certificate). **Note**: In macOS, the [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) command of the 4D language returns the pathname of the ApplicationName file (located in the Contents:macOS folder of the software package) and not that of the .comp file (Contents:Resources folder of the software package).
 
 
-#### Customizing 4D Volume Desktop folder
+#### Personalizar la carpeta 4D Volume Desktop
 
 Cuando se construye una aplicación independiente, 4D copia el contenido de la carpeta 4D Volume Desktop en la carpeta Destination > *Final Application*. A continuación, podrá personalizar el contenido de la carpeta 4D Volume Desktop original según sus necesidades. Puede, por ejemplo:
 
@@ -349,7 +349,7 @@ The client application update notification is carried out automatically followin
 
 It works as follows: when a new version of the client/server application is built using the application builder, the new client portion is copied as a compressed file in the **Upgrade4DClient** subfolder of the **ApplicationName** Server folder (in macOS, these folders are included in the server package). If you have followed the process for generating a cross-platform client application, a .*4darchive* update file is available for each platform:
 
-To trigger client application update notifications, simply replace the old version of the server application with the new one and then execute it. The rest of the process is automatic.
+To trigger client application update notifications, simply replace the old version of the server application with the new one and then execute it. El resto del proceso es automático.
 
 On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. The user can either update their version or cancel the dialog box.
 
