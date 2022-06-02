@@ -746,10 +746,10 @@ La <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de
 
 <!-- REF #WebServerClass.start().Params -->
 
-| Parámetros | Tipo   |    | Descripción                           |
-| ---------- | ------ | -- | ------------------------------------- |
-| parámetros | Objeto | -> | Web server settings to set at startup |
-| Resultado  | Objeto | <- | Estado del inicio del servidor web    |
+| Parámetros | Tipo   |    | Descripción                                     |
+| ---------- | ------ | -- | ----------------------------------------------- |
+| parámetros | Objeto | -> | Parámetros del servidor web a definir al inicio |
+| Resultado  | Objeto | <- | Estado del inicio del servidor web              |
 
 
 <!-- END REF -->
