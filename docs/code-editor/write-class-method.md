@@ -94,7 +94,7 @@ In addition to the standard copy-paste operation, 4D offers two additional funct
     |--|--|--|
     | **Windows** | Shift or Alt+click on clipboard icon | Ctrl+click on clipboard icon |
     |  |  | Ctrl+clipboard number |
-    | **Mac OS** | Shift or Alt+click on clipboard icon | Cmd+click on clipboard icon |
+    | **macOS** | Shift or Alt+click on clipboard icon | Cmd+click on clipboard icon |
     |  | Cmd+Shift+clipboard number | Cmd+clipboard number |
 
 ## Moving lines  
@@ -196,7 +196,7 @@ The **Select Enclosing Block** function is used to select the "enclosing block
 
 If a block of text is already selected, the function selects the enclosing block of the next highest level and so on, until the entire method is selected.
 
-Pressing **Ctrl+Shift+B** (Windows) or **Command+Shift+B** (Mac OS) enables you to reverse this operation and deselect the last enclosing block selected.
+Pressing **Ctrl+Shift+B** (Windows) or **Command+Shift+B** (macOS) enables you to reverse this operation and deselect the last enclosing block selected.
 
 **Note:** If the insertion point is placed in an `If` or `Else` type structure, the enclosing block will be the one containing, respectively, the `If` or `Else` statement.
 
@@ -321,7 +321,7 @@ The **Comment/Uncomment** command, found in the **Method** menu as well as i
 
 To use this command, select the code to be marked as commented, then select the **Comment/Uncomment** command:
 
-![](https://doc.4d.com/4Dv19R4/picture/441334/pict441334.en.png) --> ![](https://doc.4d.com/4Dv19R4/picture/441336/pict441336.en.png)
+![](assets/en/code-editor/comment-uncomment-1.png) --> ![](assets/en/code-editor/comment-uncomment-2.png)
 
 When the selection contains only active code, the **Comment** command is applied. When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only commented lines, the **Uncomment** command is applied.
 
@@ -348,9 +348,9 @@ In the following example, the **Carriage return** character (escape sequence \
 
 `ALERT("The operation has been completed successfully.\rYou may now disconnect.")`
 
-![](https://doc.4d.com/4Dv19R4/picture/3976978/pict3976978.en.png)
+![](assets/en/code-editor/carriage-return.png)
 
-**Warning:** The \ (backslash) character is used as a separator in pathnames under Windows. In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash \ with a double backslash \\. For instance, C:\Folder will become C:\\Folder. However, if you write "C:\MyDocuments\New", 4D will display "C:\\MyDocuments\New". In this case, the second backslashþis interpreted incorrectly as \N (an existing escape sequence). You must therefore enter a double backslash \\ when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
+**Warning:** The `\` (backslash) character is used as a separator in pathnames under Windows. In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash \ with a double backslash \\. For instance, C:\Folder will become C:\\Folder. However, if you write "C:\MyDocuments\New", 4D will display "C:\\MyDocuments\New". In this case, the second backslash is interpreted incorrectly as \N (an existing escape sequence). You must therefore enter a double backslash \\ when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
 
 ## Making code editing easier  
 
@@ -360,11 +360,11 @@ Several functions in the Code Editor make code easier to read and facilitate bro
 
 4D code located inside loops and conditions can now be collapsed or expanded, in order to facilitate the reading of methods:
 
-* Expanded code:\
-    ![](https://doc.4d.com/4Dv19R4/picture/441262/pict441262.en.png)
+* Expanded code:
+    ![](assets/en/code-editor/expanded-code.png)
 
-* Collapsed code:\
-    ![](https://doc.4d.com/4Dv19R4/picture/441264/pict441264.en.png)
+* Collapsed code:
+    ![](assets/en/code-editor/collapsed-code.png)
 
 If you place the mouse over the expand button [...], a help tip appears, displaying the first lines of the hidden code.
 
@@ -373,15 +373,15 @@ A collapsed portion of code can be selected, copied, pasted or deleted. All the 
 There are several ways to expand and collapse code:
 
 * Click on the expand/collapse icons ([+] and [-] under Windows) or on the opening button [...]
-* Use the commands of the **Method>Collapse/Expand** submenu:
+* Use the commands of the **Method > Collapse/Expand** submenu:
 
   * **Collapse Selection** / **Expand Selection**: collapses or expands all the code structures found in the text selection.
   * **Collapse Current Level** / **Expand Current Level**: collapses or expands the code structure at the level where the cursor is located. These commands are also available in the **context menu** of the editor.
-  * **Collapse All**** / ****Expand All**: collapses or expands all the loops and conditions of a method. These commands are also available in the toolbar of the editor: ![](https://doc.4d.com/4Dv19R4/picture/440625/pict440625.fr.png).
+  * **Collapse All** / **Expand All**: collapses or expands all the loops and conditions of a method. These commands are also available in the toolbar of the editor.
 
 ## Start of Block or End of Block  
 
-Two commands make it easier to move around within code structures (e.g. If...Else...End if):
+Two commands make it easier to move around within code structures (e.g. `If...Else...End if`):
 
 * **Start Of Block**: places the cursor at the start of the current structure, just before the initial keyword.
 * **End Of Block**: places the cursor at the end of the current structure, just after the final keyword.
@@ -389,7 +389,7 @@ Two commands make it easier to move around within code structures (e.g. If...Els
 These commands are found in the **Method** menu as well as the context menu of the editor. You can also use the following shortcuts:
 
 * Windows: **Ctrl + up arrow** or **Ctrl** + **down arrow**‚
-* Mac OS: **Command** + **up arrow** or **Command** +**down arrow**.
+* macOS: **Command** + **up arrow** or **Command** +**down arrow**.
 
 ## Using bookmarks  
 
@@ -401,17 +401,8 @@ A bookmark moves along with its original row if additional rows are inserted in 
 
 Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
 
-* **Toggle**: Associates a bookmark with the current line (where the cursor is located) if it does not already have one or removes the existing bookmark if it does. This function is also available using the **Toggle Bookmark** command of the editor's context menu or using the **Ctrl+F3** (Windows) or **Command+F3** (Mac OS) keyboard shortcut.
+* **Toggle**: Associates a bookmark with the current line (where the cursor is located) if it does not already have one or removes the existing bookmark if it does. This function is also available using the **Toggle Bookmark** command of the editor's context menu or using the **Ctrl+F3** (Windows) or **Command+F3** (macOS) keyboard shortcut.
 * **Remove All**: Removes all bookmarks from the foreground window.
 * **Goto Next** / **Goto Previous**: Enables browsing among bookmarks in the window. Selecting one of these commands places the cursor on the first character of the line associated with the bookmark concerned. You can also use the keyboard shortcuts **F3** (go to next) or **Shift+F3** (go to previous).
 
-**Note:** You can use bookmarks as markers for lines that contain an item found by a search. In this case, 4D automatically adds the bookmarks. For more information, refer to [Find and replace in methods](https://doc.4d.com/4Dv19R4/4D/19-R4/Find-and-replace-in-methods.300-5736963.en.html).
-
-## Note about language of commands and constants  
-
-In 4D versions prior to v15, the French version of the program provided a programming language in French, while all the other versions (English, German, etc.) contained a "universal" language, in English.\
-For example, command No. 53 was named **STOCKER ENREGISTREMENT** in French and **SAVE RECORD** in all the other languages. Local settings were also used for entering real numbers and dates.
-
-This has been modified beginning with 4D v15: by default, 4D's Code Editor uses the international "English-US" mode, regardless of the 4D application language or the local system settings and command No. 53 is now named **SAVE RECORD** in the French version of 4D. Lists, type-ahead windows, on-line help, etc., display the names of the commands and constants in English. For more information about this setting, refer to the [OLD RELATED MANY](https://doc.4d.com/4Dv19R4/4D/19-R4/OLD-RELATED-MANY.301-5739234.en.html) section.
-
-It still remains possible to restore the previous mode, based on local settings, using the "Use regional system settings" preference (see [Methods Page](https://doc.4d.com/4Dv19R4/4D/19-R4/Methods-Page.300-5736748.en.html)). Of course, regardless of the setting used, the principles for writing code described in this section remain the same.
+**Note:** You can use bookmarks as markers for lines that contain an item found by a search. In this case, 4D automatically adds the bookmarks. For more information, refer to [Find and replace in methods](./find-and-replace-in-methods).
