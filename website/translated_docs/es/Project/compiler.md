@@ -90,7 +90,7 @@ When this option is checked, the warnings (if any) are displayed in the window, 
 
 Double-clicking a warning opens the corresponding method.
 
-#### Disabling warnings during compilation
+#### Desactivar las advertencias durante la compilación
 
 You can selectively disable certain warnings during compilation by inserting the following into the code of a 4D method:
 
@@ -190,7 +190,7 @@ If you check the [**Generate the symbol file**](#generate-the-symbol-file) optio
 
 #### Lista de las variables proceso e interproceso
 
-These two lists contain four columns:
+Estas dos listas contienen cuatro columnas:
 
 - Names of process and interprocess variables and arrays used in your project. These variables are listed in alphabetical order.
 - Tipo de la variable. Types are set by compiler directive commands or are determined by the compiler based on the use of the variable. If the type of a variable cannot be determined, the column is empty.
