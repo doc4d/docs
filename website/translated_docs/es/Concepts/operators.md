@@ -354,7 +354,7 @@ The following values are **falsy**:
 
 All other values are considered **truthy**, including:
 
-* 0 - numeric zero (Integer or otherwise)
+* 0 - cero numérico (Entero u otro)
 
 In 4D, **truthy** and **falsy** evaluation reflects the **usability** of a value, which means that a truthy value exists and can be processed by the code without generating errors or unexpected results. The rationale behind this is to provide a convenient way to handle *undefined* and *null* values in objects and collections, so that a reduced number of [If…Else](./cf_branching.md#ifelseend-if) statements are necessary to avoid runtime errors.
 

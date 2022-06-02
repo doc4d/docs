@@ -26,7 +26,7 @@ By default, when the project is published:
 
 If you click on the **Reject new connections** button:
 - The button title changes to "Accept new connections."
-- No new desktop client can then connect. Clients attempting to connect will receive the following message:
+- Ningún nuevo cliente puede entonces conectarse. Clients attempting to connect will receive the following message:
 
 ![](assets/en/Admin/server-error.png)
 
