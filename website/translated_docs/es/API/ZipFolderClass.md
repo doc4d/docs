@@ -30,7 +30,7 @@ The following properties and functions from the [Folder](FolderClass.md) class a
 | [<!-- INCLUDE #directory.name.Syntax -->](FolderClass.md#name)                         |                                                                                                                                   |
 | [<!-- INCLUDE #directory.original.Syntax -->](FolderClass.md#original)                 |                                                                                                                                   |
 | [<!-- INCLUDE #directory.parent.Syntax -->](FolderClass.md#parent)                     | The archive's virtual `root` folder has no parent. However, the folders within the archive may have a parent other than the root. |
-| [<!-- INCLUDE #directory.path.Syntax -->](FolderClass.md#path)                         | Returns a path relative to the archive                                                                                            |
+| [<!-- INCLUDE #directory.path.Syntax -->](FolderClass.md#path)                         | Devuelve una ruta relativa al archivo                                                                                             |
 | [<!-- INCLUDE #directory.platformPath.Syntax -->](FolderClass.md#platformpath)         |                                                                                                                                   |
 
 
