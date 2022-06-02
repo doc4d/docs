@@ -709,21 +709,21 @@ donde:
 > * You can also pass directy a `formula` parameter object instead of the `queryString` parameter (recommended when formulas are more complex). See **formula parameter** paragraph below.
 > * Por razones de seguridad, las llamadas a fórmulas dentro de los métodos `query()` pueden ser desestimadas. See `querySettings` parameter description.
 
-*   **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
+*   **comparator**: symbol that compares *attributePath* and *value*. Se soportan los siguientes símbolos:
 
-    | Comparación                          | Símbolo(s)  | Comentario                                                                                                     |
-    | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
-    | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
-    |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
-    | Diferente de                         | #, !=       | Soporta el comodín (@)                                                                                         |
-    |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
-    | Menor que                            | <           |                                                                                                                |
-    | Mayor que                            | >           |                                                                                                                |
-    | Menor o igual que                    | <=          |                                                                                                                |
-    | Mayor o igual que                    | >=          |                                                                                                                |
-    | Incluído en                          | IN          | Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@) |
-    | Not condition applied on a statement | NOT         | Parenthesis are mandatory when NOT is used before a statement containing several operators                     |
-    | Contiene palabra clave               | %           | Keywords can be used in attributes of string or picture type                                                   |
+    | Comparación                           | Símbolo(s)  | Comentario                                                                                                     |
+    | ------------------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
+    | Igual a                               | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
+    |                                       | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
+    | Diferente de                          | #, !=       | Soporta el comodín (@)                                                                                         |
+    |                                       | !==, IS NOT | Considers the @ as a standard character                                                                        |
+    | Menor que                             | <           |                                                                                                                |
+    | Mayor que                             | >           |                                                                                                                |
+    | Menor o igual que                     | <=          |                                                                                                                |
+    | Mayor o igual que                     | >=          |                                                                                                                |
+    | Incluído en                           | IN          | Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@) |
+    | Condición No aplicada a una sentencia | NOT         | Parenthesis are mandatory when NOT is used before a statement containing several operators                     |
+    | Contiene palabra clave                | %           | Keywords can be used in attributes of string or picture type                                                   |
 
 *   **value**: the value to compare to the current value of the property of each entity in the entity selection or element in the collection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property.<p><p> When using a constant value, the following rules must be respected:
     *   **text** type constant can be passed with or without simple quotes (see **Using quotes** below). To query a string within a string (a "contains" query), use the wildcard symbol (@) in value to isolate the string to be searched for as shown in this example: "@Smith@". The following keywords are forbidden for text constants: true, false.

@@ -74,7 +74,7 @@ If this option is checked, when the user switches to the Application environment
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
 *   **Database...**
-*   **Database from Structure Definition...**
+*   **Base de datos a partir de una definición de estructura...**
 
 ![](assets/en/Preferences/general5.png)
 
@@ -92,7 +92,7 @@ When this option is checked, 4D databases are automatically created in a folder 
 
 Thanks to this principle, under macOS the database folders appear as packages having specific properties. Under Windows, this has no particular impact.
 
-### Include tokens in project source files
+### Incluir los tokens en los archivos fuente del proyecto
 
 When this option is checked, saved [method source files](../Project/architecture.md#sources) in new 4D projects will contain **tokens** for classic language and database objects (constants, commands, tables and fields). Tokens are additional characters such as `:C10` or `:5` inserted in the source code files, that allow renaming tables and fields and identifying elements whatever the 4D version (see [Using tokens in formulas](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html)).
 

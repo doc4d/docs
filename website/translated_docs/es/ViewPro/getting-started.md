@@ -16,7 +16,7 @@ Embedding 4D View Pro areas in your forms allows you to import and export spread
 
 ## Instalación y activación
 
-4D View Pro features are directly included in 4D, making it easy to deploy and manage. No additional installation is required.
+4D View Pro features are directly included in 4D, making it easy to deploy and manage. No se requiere ninguna instalación adicional.
 
 However, 4D View Pro requires a license. You need to activate this license in your application in order to use its features. When using this component without a license, the contents of an object that requires a 4D View Pro feature are not displayed at runtime, an error message is displayed instead:
 
@@ -36,7 +36,7 @@ You can also select a preconfigured 4D View Pro area in the [Object library](For
 You can [configure the area](configuring.md) using the Property List and 4D View Pro methods.
 
 
-## Selection, Input and Navigation Basics
+## Fundamentos de la selección, la entrada y de la navegación
 
 Spreadsheets are composed of rows and columns. A number is associated with each row. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
 
@@ -137,7 +137,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 4D View Pro range objects are composed of several properties:
 
-*   area - The name of the 4D View Pro area
+*   area - El nombre del área 4D View Pro
 *   ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
 | Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                    |
@@ -148,7 +148,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 |           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
 |           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                       |
 |           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                     |
-|           | \[ ].column      | number    | Column index (counting begins at 0)                                 | celda, celdas, columna, columnas                   |
+|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                      | celda, celdas, columna, columnas                   |
 |           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
 
 

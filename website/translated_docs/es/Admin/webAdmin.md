@@ -65,7 +65,7 @@ To open the Web Administration settings dialog box, select the **File > Web Admi
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
-The following dialog box is displayed:
+Se muestra la siguiente caja de diálogo:
 
 ![alt-text](assets/en/Admin/waSettings2.png)
 
@@ -73,7 +73,7 @@ The following dialog box is displayed:
 
 Check this option if you want the `WebAdmin` web server to be automatically launched when the 4D or 4D Server application starts ([see above](#launching-at-startup)). By default, this option is not checked.
 
-#### Accept HTTP connections on localhost
+#### Conexiones HTTP en localhost aceptadas
 
 When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. Por defecto, esta opción está seleccionada.
 
