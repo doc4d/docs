@@ -850,10 +850,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 ## .getBoxList()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones               |
-| ------- | ---------------------------- |
-| v18 R4  | Añadidos                     |
-| v19     | Add `isSubscribed` parameter |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v18 R4  | Añadidos                         |
+| v19     | Adición parámetro `isSubscribed` |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxList().Syntax -->
