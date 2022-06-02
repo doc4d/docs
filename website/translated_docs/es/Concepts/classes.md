@@ -204,7 +204,7 @@ Function getFullname()->$fullname : Text
 
 For a class function, the `Current method name` command returns: `<ClassName>.<FunctionName>`, for example "MyClass.myMethod".
 
-In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. The following syntaxes are supported:
+In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. Se soportan las siguientes sintaxis:
 
 - use of the `()` operator. For example, `myObject.methodName("hello")`
 - use of a "4D.Function" class member method:
