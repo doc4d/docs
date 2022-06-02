@@ -12,7 +12,7 @@ For example if you have a recurring report with specific formatting (e.g., certa
 *   Mostrar las cajas de diálogo
 *   Seleccione los objetos de formulario
 *   Add / delete / modify forms, form objects as well as their properties
-*   Modify project files (update, delete)
+*   Modificar los archivos del proyecto (actualizar, eliminar)
 
 Macros code supports [class functions](Concepts/classes.md) and [form object properties in JSON](FormObjects/properties_Reference.md) to let you define any custom feature in the Form editor.
 
