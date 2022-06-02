@@ -95,7 +95,7 @@ Keep in mind that once a group has been created, it cannot be deleted. If you wa
 
 Para crear un grupo:
 
-1. Select **Tool Box > Groups** in the **Design** menu or click  on the **Tool Box** button of the 4D toolbar then on the **Groups** button. 4D displays the groups editor window. La lista de grupos muestra todos los grupos del proyecto de aplicación.
+1. Select **Tool Box > Groups** in the **Design** menu or click  on the **Tool Box** button of the 4D toolbar then on the **Groups** button. 4D muestra la ventana del editor de grupos. La lista de grupos muestra todos los grupos del proyecto de aplicación.
 
 2. Click on the ![](assets/en/Users/PlussNew.png) button located below the list of groups.  
    OR  
