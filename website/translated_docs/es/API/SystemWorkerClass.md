@@ -110,7 +110,7 @@ All callback functions receive two object parameters. Their contents depend on t
 | $param2.type | Texto       | "response"   | "data"        | "error"       | "error"      | "termination" |
 | $param2.data | Text o Blob |              | received data | error data    |              |               |
 
-Here is the sequence of callback calls:
+Esta es la secuencia de llamadas de retorno:
 
 1. `onData` and `onDataError` are executed one or several times
 2. if called, `onError` is executed once (stops the system worker processing)
