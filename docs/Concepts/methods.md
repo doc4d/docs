@@ -395,14 +395,14 @@ However, for testing and debugging purposes, 4D lets you manually execute projec
 
 Moreover, with 4D Server, you can indicate whether 4D Server should execute a project method on the server machine or on other clients' machines. You can execute methods in two ways:
 
--   From the [**Code Editor**](../code-editor/overview.md) window,
--   From the Execute Method dialog box (project methods only).
+-   From the [Code Editor](../code-editor/overview.md) window,
+-   From the [Execute Method](#from-the-execute-method-dialog-box) dialog box (project methods only).
 
 ### From the Code Editor 
 
 Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
 
-![](https://doc.4d.com/4Dv19R5/picture/443881/pict443881.en.png)
+![](assets/en/concepts/execute-method.png)
 
 This button is only active for project methods and for the following database methods:
 
@@ -430,7 +430,7 @@ To execute a project method, simply select its name in the list and click on **
 
 If you check the **New Process** check box, the method you selected executes in another process. If the method is performing a time-consuming task such as printing a large set of records, you can continue to work with your database, adding records to a table, creating a graph to display data, and so on. For more information about processes, refer to [Processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) the 4D *Language Reference* manual.
 
-**4D Server Note****:**
+**4D Server Note**:
 
 -   If you want the method to be executed on the server machine rather than on the client machine, select the **On 4D Server** option in the To be executed menu. In this case, a new process, call the *stored procedure*, is created on the server machine in order to execute the method.
 
@@ -439,7 +439,3 @@ If you check the **New Process** check box, the method you selected executes i
 -   You can also choose to run the method on another client workstation. Other client workstations will not appear in the menu, unless they have been previously "registered" (for more information, refer to the description of the [REGISTER CLIENT](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.en.html).
 
 By default, the **locally** option is selected. With the 4D single-user version, this is the only option available.
-
-[Previous page](https://doc.4d.com/4Dv19R5/4D/19-R5/Find-and-replace-in-methods.300-5851555.en.html)
-
-[Next page](https://doc.4d.com/4Dv19R5/4D/19-R5/Users-and-groups.200-5851325.en.html)

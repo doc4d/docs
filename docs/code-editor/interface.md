@@ -13,7 +13,7 @@ Each Code Editor window contains a toolbar that provides instant access to basic
 
 | Element | Icon | Description |
 |--|--|--|
-| **Method execution** | ![execute-method](assets/en/code-editor/execute-method.png) | Executes the method. Using the menu associated with the button, you can select the type of execution. Only project and database methods can be run using this button. |
+| **Method execution** | ![execute-method](assets/en/code-editor/execute-method.png) | Each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.<li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>|
 | **Search** | ![search-icon](assets/en/code-editor/search.png) | Allows performing a search in the current method. |
 | **Macros** | ![macros-button](assets/en/code-editor/macros.png) | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](../FormEditor/macros.md). |
 | **Expand all / Collapse all** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png) | These buttons allow expanding or collapsing all the control flow structures of the method. |
@@ -124,3 +124,5 @@ The status bar located at the bottom right part of the editor window displays th
 - **Ln**: Line number
 - **Col**: Column number, i.e., the level in the hierarchy of programming structures. The first level is 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
 - **Ch**: Location of character in the line.
+
+
