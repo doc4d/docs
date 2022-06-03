@@ -1257,10 +1257,10 @@ $activeCell:=VP Get active cell("myVPArea")
 
 <!-- REF #_method_.VP Get binding path.Params -->
 
-| Parámetros | Tipo   |    | Descripción                             |
-| ---------- | ------ | -- | --------------------------------------- |
-| rangeObj   | Objeto | -> | Objeto rango                            |
-| Resultado  | Texto  | <- | Name of the attribute bound to the cell |
+| Parámetros | Tipo   |    | Descripción                              |
+| ---------- | ------ | -- | ---------------------------------------- |
+| rangeObj   | Objeto | -> | Objeto rango                             |
+| Resultado  | Texto  | <- | Nombre del atributo vinculado a la celda |
 
 <!-- END REF -->  
 
@@ -1598,12 +1598,12 @@ In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* de
 
 <!-- REF #_method_.VP Get formula by name.Params -->
 
-| Parámetros | Tipo   |    | Descripción                             |
-| ---------- | ------ | -- | --------------------------------------- |
-| vpAreaName | Texto  | -> | 4D View Pro area form object name       |
-| name       | Texto  | -> | Nombre del rango nombrado               |
-| scope      | Número | -> | Target scope (default=current sheet)    |
-| Resultado  | Texto  | <- | Named formula or named range definition |
+| Parámetros | Tipo   |    | Descripción                                 |
+| ---------- | ------ | -- | ------------------------------------------- |
+| vpAreaName | Texto  | -> | 4D View Pro area form object name           |
+| name       | Texto  | -> | Nombre del rango nombrado                   |
+| scope      | Número | -> | Target scope (default=current sheet)        |
+| Resultado  | Texto  | <- | Definición de la fórmula o rango con nombre |
 <!-- END REF -->  
 
 #### Descripción
@@ -2891,11 +2891,11 @@ $cellStyle.font:=VP Object to font($font)
 
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
 
-| Parámetros | Tipo         |    | Descripción                             |
-| ---------- | ------------ | -- | --------------------------------------- |
-| rangeObj   | Objeto       | -> | Cell range object                       |
-| dataObject | Objeto       | -> | Object containing the data to be pasted |
-| options    | Entero largo | -> | Specifies what is pasted                |
+| Parámetros | Tipo         |    | Descripción                           |
+| ---------- | ------------ | -- | ------------------------------------- |
+| rangeObj   | Objeto       | -> | Cell range object                     |
+| dataObject | Objeto       | -> | Objeto que contiene los datos a pegar |
+| options    | Entero largo | -> | Specifies what is pasted              |
 
 <!-- END REF -->  
 
@@ -3002,7 +3002,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 #### Ejemplo
 
-To refresh all formulas in the workbook:
+Para refrescar todas las fórmulas del libro de trabajo:
 
 ```4d
 VP RECOMPUTE FORMULAS("ViewProArea")
@@ -3087,7 +3087,7 @@ In *index*, pass the index of the sheet to remove. If the passed *index* does no
 
 #### Ejemplo
 
-The document currently has three sheets:
+El documento tiene actualmente tres hojas:
 
 ![](assets/en/ViewPro/vp-sheet-3.png)
 
@@ -4028,13 +4028,13 @@ End case
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                 |
-| ---------- | ------- | -- | ------------------------------------------- |
-| vpAreaName | Objeto  | -> | 4D View Pro area form object name           |
-| dataObj    | Objeto  | -> | Data object to load in the data context     |
-| dataColl   | Objeto  | -> | Data collection to load in the data context |
-| options    | Objeto  | -> | Opciones adicionales                        |
-| sheet      | Integer | -> | Índice de la hoja                           |
+| Parámetros | Tipo    |    | Descripción                                   |
+| ---------- | ------- | -- | --------------------------------------------- |
+| vpAreaName | Objeto  | -> | 4D View Pro area form object name             |
+| dataObj    | Objeto  | -> | Objeto datos a cargar en el contexto de datos |
+| dataColl   | Objeto  | -> | Data collection to load in the data context   |
+| options    | Objeto  | -> | Opciones adicionales                          |
+| sheet      | Integer | -> | Índice de la hoja                             |
 
 <!-- END REF -->
 
@@ -4055,10 +4055,10 @@ To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object wit
 
 In *options*, you can pass an object that specifies additional options. Possible properties are:
 
-| Propiedad           | Tipo   | Descripción                                                                                                                                                                                                    |
-| ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| reset               | Objeto | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                  |
-| autoGenerateColumns | Objeto | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul> |
+| Propiedad           | Tipo   | Descripción                                                                                                                                                                                                           |
+| ------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| reset               | Objeto | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                         |
+| autoGenerateColumns | Objeto | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. En este caso, se aplican las siguientes reglas: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul> |
 
 In *sheet*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
@@ -4296,11 +4296,11 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 <!-- REF #_method_.VP SET FIELD.Params -->
 
-| Parámetros    | Tipo    |    | Descripción                             |
-| ------------- | ------- | -- | --------------------------------------- |
-| rangeObj      | Objeto  | -> | Objeto rango                            |
-| campo         | Puntero | -> | Reference to field in virtual structure |
-| formatPattern | Texto   | -> | Formato del campo                       |
+| Parámetros    | Tipo    |    | Descripción                                  |
+| ------------- | ------- | -- | -------------------------------------------- |
+| rangeObj      | Objeto  | -> | Objeto rango                                 |
+| campo         | Puntero | -> | Referencia al campo en la estructura virtual |
+| formatPattern | Texto   | -> | Formato del campo                            |
 
 <!-- END REF -->  
 
