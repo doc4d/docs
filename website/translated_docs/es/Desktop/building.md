@@ -266,7 +266,7 @@ The application directory file is read-only. Modifications made to users, groups
 
 Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
 
-#### Allow connection of Silicon Mac clients
+#### Autorizar la conexión de los clientes Silicon Mac
 
 When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
 
