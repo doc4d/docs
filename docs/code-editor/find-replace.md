@@ -29,11 +29,15 @@ The search defined in this dialog box will be performed in the method located in
 
 When you click on **OK**, 4D begins searching from the current text insertion point and continues to the end of the method. The first item corresponding to the set criteria is thus selected in the Code Editor window. It is then possible to continue the search using the **Find Next** and **Find Previous** commands of the **Edit** menu.
 
-### Find Same  
+### Find Same
 
 The **Find Same** command is used to find character strings identical to the one selected. This command is only active if you have selected at least one character in the Code Editor.
 
-The search carried out is of the "Find Next" type in the current method.
+The search carried out is of the "Find Next" type in the current code editor window.
+
+### Find Same Next/Previous
+
+The **Find Same Next** and **Find Same Previous** commands are used to find character strings *strictly* identical to the ones selected. For example, the case must match.
 
 ### Bookmark All  
 
@@ -104,3 +108,4 @@ This command displays its results in a new window.
 This specific search command is located in the **Method** menu. It opens a dialog box where you can indicate the line number you want to find. When you click **OK**, the editor finds and highlights that line in the method. This type of search is useful when used in conjunction with the compiler, which flags runtime errors by the line number in which they occur.
 
 You can choose whether or not to display lines numbers in the Code Editor window. This option is described in the [Interface](./interface.md#break-points-area) section.
+

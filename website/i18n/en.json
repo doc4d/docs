@@ -119,6 +119,12 @@
       "Backup/settings": {
         "title": "Backup Settings"
       },
+      "code-editor/creating-using-macros": {
+        "title": "Creating and using macros"
+      },
+      "code-editor/find-replace": {
+        "title": "Find and replace"
+      },
       "code-editor/interface": {
         "title": "Interface"
       },
