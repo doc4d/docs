@@ -57,7 +57,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 La propiedad `.autoFilled` <!-- REF DataClassAttributeClass.autoFilled.Summary -->contiene True si el valor del atributo es llenado automáticamente por 4D<!-- END REF -->. This property corresponds to the following 4D field properties:
 
 *   "Autoincremento", para campos de tipo numérico
-*   "Auto UUID", for UUID (alpha type) fields.
+*   "Auto UUID", para los campos UUID (tipo alfa).
 
 This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 > For generic programming, you can use **Bool**(dataClassAttribute.autoFilled) to get a valid value (false) even if `.autoFilled` is not returned.
