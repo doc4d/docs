@@ -2197,10 +2197,10 @@ The following code checks if preview lines are displayed or hidden in the docume
 
 <!-- REF #_method_.VP Get spans.Params -->
 
-| Parámetros | Tipo   |    | Descripción                               |
-| ---------- | ------ | -- | ----------------------------------------- |
-| rangeObj   | Objeto | -> | Objeto rango                              |
-| Resultado  | Objeto | <- | Object of cell spans in the defined range |
+| Parámetros | Tipo   |    | Descripción                                      |
+| ---------- | ------ | -- | ------------------------------------------------ |
+| rangeObj   | Objeto | -> | Objeto rango                                     |
+| Resultado  | Objeto | <- | Objeto de celdas fusionadas en el rango definido |
 <!-- END REF -->  
 
 #### Descripción
@@ -2748,12 +2748,12 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 <!-- REF #_method_.VP Name.Params -->
 
-| Parámetros | Tipo    |    | Descripción                               |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Texto   | -> | 4D View Pro area form object name         |
-| rangeName  | Texto   | -> | Nombre del rango existente                |
-| sheet      | Integer | -> | Range location (current sheet if omitted) |
-| Resultado  | Objeto  | <- | Range object of name                      |
+| Parámetros | Tipo    |    | Descripción                                   |
+| ---------- | ------- | -- | --------------------------------------------- |
+| vpAreaName | Texto   | -> | 4D View Pro area form object name             |
+| rangeName  | Texto   | -> | Nombre del rango existente                    |
+| sheet      | Integer | -> | Ubicación del rango (hoja actual si se omite) |
+| Resultado  | Objeto  | <- | Range object of name                          |
 
 <!-- END REF -->  
 
@@ -2843,13 +2843,13 @@ The `VP Font to object` utility command<!-- REF #_method_.VP Font to object. Sum
 
 In *fontObj*, pass an object containing the font properties. Se soportan las siguientes propiedades:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                              | Valores posibles                                                                                                                                                                                                                                                                                                                                                  | Obligatorio |
-| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| family    | texto | Define la fuente.                                                                                                                                                        | any standard or generic font family. Ej. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                                        | Sí          |
-| size      | texto | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Sí          |
-| style     | texto | Estilo de fuente.                                                                                                                                                        | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                              | No          |
-| variant   | texto | Specifies font in small capital letters.                                                                                                                                 | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                        | No          |
-| weight    | texto | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                          | No          |
+| Propiedad | Tipo  | Descripción                                                                                                                                                              | Valores posibles                                                                                                                                                                                                                                                                                                                                                      | Obligatorio |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| family    | texto | Define la fuente.                                                                                                                                                        | any standard or generic font family. Ej. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                                            | Sí          |
+| size      | texto | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | un número con una de las siguientes unidades: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Sí          |
+| style     | texto | Estilo de fuente.                                                                                                                                                        | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                                  | No          |
+| variant   | texto | Specifies font in small capital letters.                                                                                                                                 | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                            | No          |
+| weight    | texto | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                              | No          |
 
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command.
@@ -3700,8 +3700,8 @@ You can define the position of the *borderStyleObj* (i.e., where the line is app
 
 | Propiedad       | Tipo     | Descripción                                                 |
 | --------------- | -------- | ----------------------------------------------------------- |
-| all             | booleano | Border line style applied to all borders.                   |
-| left            | booleano | Border line style applied to left border.                   |
+| all             | booleano | Estilo de la línea de borde aplicado a todos los bordes.    |
+| left            | booleano | Estilo de la línea de borde aplicado al borde izquierdo.    |
 | top             | booleano | Border line style applied to top border.                    |
 | right           | booleano | Border line style applied to right border.                  |
 | bottom          | booleano | Border line style applied to bottom border.                 |
@@ -3828,7 +3828,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the colu
 | --------------- | -------- | ---------------------------------------------------------------------------- |
 | ancho           | number   | Column width expressed in pixels                                             |
 | pageBreak       | booleano | True to insert a page break before the first column of the range, else false |
-| visible         | booleano | True if the column is visible, else false                                    |
+| visible         | booleano | True si la columna es visible, si no, false                                  |
 | redimensionable | booleano | True if the column can be resized, else false                                |
 | header          | texto    | Texto del encabezado de la columna                                           |
 
@@ -4028,13 +4028,13 @@ End case
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| vpAreaName | Objeto  | -> | 4D View Pro area form object name             |
-| dataObj    | Objeto  | -> | Objeto datos a cargar en el contexto de datos |
-| dataColl   | Objeto  | -> | Data collection to load in the data context   |
-| options    | Objeto  | -> | Opciones adicionales                          |
-| sheet      | Integer | -> | Índice de la hoja                             |
+| Parámetros | Tipo    |    | Descripción                                      |
+| ---------- | ------- | -- | ------------------------------------------------ |
+| vpAreaName | Objeto  | -> | 4D View Pro area form object name                |
+| dataObj    | Objeto  | -> | Objeto datos a cargar en el contexto de datos    |
+| dataColl   | Objeto  | -> | Colección datos a cargar en el contexto de datos |
+| options    | Objeto  | -> | Opciones adicionales                             |
+| sheet      | Integer | -> | Índice de la hoja                                |
 
 <!-- END REF -->
 
@@ -4220,12 +4220,12 @@ The *dateValue* parameter specifies a date value to be assigned to the *rangeObj
 
 The optional *formatPattern* defines a pattern for the *dateValue* parameter. Pass any custom format or you can use one of the following constants:
 
-| Constante               | Descripción                              | Configuración por defecto de US |
-| ----------------------- | ---------------------------------------- | ------------------------------- |
-| `vk pattern long date`  | ISO 8601 format for the full date        | "dddd, dd MMMM yyyy"            |
-| `vk pattern month day`  | Formato ISO 8601 para el mes y el día    | "MMMM dd"                       |
-| `vk pattern short date` | Abbreviated ISO 8601 format for the date | "MM/dd/yyyy"                    |
-| `vk pattern year month` | Formato ISO 8601 para el mes y el año    | "yyyy MMMM"                     |
+| Constante               | Descripción                           | Configuración por defecto de US |
+| ----------------------- | ------------------------------------- | ------------------------------- |
+| `vk pattern long date`  | ISO 8601 format for the full date     | "dddd, dd MMMM yyyy"            |
+| `vk pattern month day`  | Formato ISO 8601 para el mes y el día | "MMMM dd"                       |
+| `vk pattern short date` | Formato ISO 8601 corto para la fecha  | "MM/dd/yyyy"                    |
+| `vk pattern year month` | Formato ISO 8601 para el mes y el año | "yyyy MMMM"                     |
 
 For information on patterns and formatting characters, please refer to the [Date and time formats](configuring.md#date-and-time-formats) section.
 
@@ -4625,7 +4625,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the rows
 | height          | number   | Row height expressed in pixels                                            |
 | pageBreak       | booleano | True to insert a page break before the first row of the range, else false |
 | visible         | booleano | True si la fila es visible, si no, false                                  |
-| redimensionable | booleano | True if the row can be resized, else false                                |
+| redimensionable | booleano | True si la línea puede redimensionarse, si no, false                      |
 | header          | texto    | Texto del encabezado de la línea                                          |
 
 
@@ -4791,7 +4791,7 @@ The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
 
 El comando no hace nada si:
 
-* the new name contains forbidden characters
+* el nuevo nombre contiene caracteres prohibidos
 * the new name's value is blank
 * el nuevo nombre ya existe
 * the passed *index* does not exist
@@ -5073,7 +5073,7 @@ The command allows you to use a generic code to set and format the types of valu
 In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
 
 
-The parameter *valueObj* is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to *rangeObj*. It can include the following properties :
+The parameter *valueObj* is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to *rangeObj*. Puede contener las siguientes propiedades:
 
 | Propiedad | Tipo                                     | Descripción                                                                                                                                                      |
 | --------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -5195,7 +5195,7 @@ The following table lists the available workbook options:
 | ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | allowUserDragMerge                    | booleano                | The drag merge operation is allowed (select cells and drag the selection to merge cells)                                                                                                                                                               |
 | allowAutoCreateHyperlink              | booleano                | Enables automatic creation of hyperlinks in the spreadsheet.                                                                                                                                                                                           |
-| allowContextMenu                      | booleano                | The built-in context menu can be opened.                                                                                                                                                                                                               |
+| allowContextMenu                      | booleano                | Se puede abrir el menú contextual integrado.                                                                                                                                                                                                           |
 | allowCopyPasteExcelStyle              | booleano                | Styles from a spreadsheet can be copied and pasted to Excel, and vice-versa.                                                                                                                                                                           |
 | allowDynamicArray                     | booleano                | Enables dynamic arrays in worksheets                                                                                                                                                                                                                   |
 | allowExtendPasteRange                 | booleano                | Extends the pasted range if the pasted range is not enough for the pasted data                                                                                                                                                                         |
@@ -5210,7 +5210,7 @@ The following table lists the available workbook options:
 | autoFitType                           | number                  | Content is formatted to fit in cells, or cells and headers. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> El contenido se autoajusta a las celdas y encabezados</td></tr></table>                                                                                                                                             |
 | backColor                             | cadena                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundImage is set.                                                          |
 | backgroundImage                       | string / picture / file | Background image for the area.                                                                                                                                                                                                                         |
-| backgroundImageLayout                 | number                  | Cómo se muestra la imagen de fondo. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Llena el área.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Displayed with its original aspect ratio.</td></tr></table>                                                                                                                                                                     |
+| backgroundImageLayout                 | number                  | Cómo se muestra la imagen de fondo. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Llena el área.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Se muestra con su relación de aspecto original.</td></tr></table>                                                                                                                                                                     |
 | calcOnDemand                          | booleano                | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
 | columnResizeMode                      | number                  | Resize mode for columns. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                                |
 | copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                    |
@@ -5294,7 +5294,7 @@ Los siguientes selectores están disponibles:
 | Selector              | Descripción                                                                                                                                                                                                                                                                              | Disponible con *vPos* | Disponible con *hPos* |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
 | `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                         | X                     |                       |
-| `vk position center`  | Alineación al centro. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                              | X                     | X                     |
+| `vk position center`  | Alineación al centro. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Posición horizontal de la vista - celda o columna</li>                                                                                                              | X                     | X                     |
 | `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
 | `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                  |                       | X                     |
