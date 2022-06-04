@@ -45,7 +45,7 @@ This option must be selected at the 4D structure level for each table and each f
 Any modifications applied at the level of the database structure invalidate the current ORDA model layer. Estas modificaciones incluyen:
 
 *   adding or removing a table, a field, or a relation
-*   renaming of a table, a field, or a relation
+*   el cambio de nombre de una tabla, de un campo o de una relación
 *   changing a core property of a field (type, unique, index, autoincrement, null value support)
 
 When the current ORDA model layer has been invalidated, it is automatically reloaded and updated in subsequent calls of the local `ds` datastore on 4D and 4D Server. Note that existing references to ORDA objects such as entities or entity selections will continue to use the model from which they have been created, until they are regenerated.
@@ -96,7 +96,7 @@ The main (default) datastore is always available through the `ds` command, but t
 
 ### Dataclass
 
-A dataclass is the equivalent of a table. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
+Una dataclass es el equivalente de una tabla. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
 
 All dataclasses in a 4D project are available as a property of the `ds` datastore. For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each exposed table that you want to be exposed as dataclass in the datastore.
 
