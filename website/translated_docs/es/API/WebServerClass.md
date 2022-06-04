@@ -275,7 +275,7 @@ El <!-- REF #WebServerClass.debugLog.Summary -->estado del archivo de registro d
 *   0 = desactivado
 *   1 = enabled without body parts (body size is provided in this case)
 *   3 = enabled with body parts in response only
-*   5 = enabled with body parts in request only
+*   5 = activado con las partes del cuerpo en petición únicamente
 *   7 = enabled with body parts in response and request
 
 <!-- END REF -->
