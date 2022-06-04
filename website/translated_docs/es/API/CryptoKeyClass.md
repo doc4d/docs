@@ -71,12 +71,12 @@ La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary --> crea u
 
 #### *parámetros*
 
-| Propiedad       | Tipo    | Descripción                                    |
-| --------------- | ------- | ---------------------------------------------- |
-| [curve](#curve) | texto   | Nombre de la curva ECDSA                       |
-| [pem](#pem)     | texto   | PEM definition of an encryption key to load    |
-| [size](#size)   | integer | Tamaño de la llave RSA en bits                 |
-| [type](#type)   | texto   | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
+| Propiedad       | Tipo    | Descripción                                     |
+| --------------- | ------- | ----------------------------------------------- |
+| [curve](#curve) | texto   | Nombre de la curva ECDSA                        |
+| [pem](#pem)     | texto   | Definición PEM de una llave de cifrado a cargar |
+| [size](#size)   | integer | Tamaño de la llave RSA en bits                  |
+| [type](#type)   | texto   | Tipo de la llave: "RSA", "ECDSA" o "PEM"</li>   |
 
 
 #### *CryptoKey*
@@ -136,7 +136,7 @@ La llave debe ser una llave RSA, el algoritmo es RSA-OAEP (ver [RFC 3447](https:
 | ----------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | hash              | texto | Algoritmo Digest a utilizar. Por ejemplo: "SHA256", "SHA384" o "SHA512".                                                                                           |
 | encodingEncrypted | texto | Codificación utilizada para convertir el parámetro `mensaje` en la representación binaria a descifrar. Puede ser "Base64", o "Base64URL". Por defecto es "Base64". |
-| encodingDecrypted | texto | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Por defecto es "UTF-8".                    |
+| encodingDecrypted | texto | Encoding used to convert the binary decrypted message into the result string. Puede ser "UTF-8", "Base64" o "Base64URL". Por defecto es "UTF-8".                   |
 
 
 #### *Resultado*
@@ -181,11 +181,11 @@ La llave debe ser una llave RSA, el algoritmo es RSA-OAEP (ver [RFC 3447](https:
 
 ##### *options*
 
-| Propiedad         | Tipo  | Descripción                                                                                                                                                   |
-| ----------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | texto | Algoritmo Digest a utilizar. Por ejemplo: "SHA256", "SHA384" o "SHA512".                                                                                      |
-| encodingEncrypted | texto | Encoding used to convert the binary encrypted message into the result string. Puede ser "Base64", o "Base64URL". Por defecto es "Base64".                     |
-| encodingDecrypted | texto | Encoding used to convert the `message` parameter into the binary representation to encrypt. Can be "UTF-8", "Base64", or "Base64URL". Por defecto es "UTF-8". |
+| Propiedad         | Tipo  | Descripción                                                                                                                                                    |
+| ----------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | texto | Algoritmo Digest a utilizar. Por ejemplo: "SHA256", "SHA384" o "SHA512".                                                                                       |
+| encodingEncrypted | texto | Encoding used to convert the binary encrypted message into the result string. Puede ser "Base64", o "Base64URL". Por defecto es "Base64".                      |
+| encodingDecrypted | texto | Encoding used to convert the `message` parameter into the binary representation to encrypt. Puede ser "UTF-8", "Base64" o "Base64URL". Por defecto es "UTF-8". |
 
 
 #### *Resultado*
