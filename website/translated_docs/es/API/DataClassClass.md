@@ -83,7 +83,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### Ejemplo 3
 
-Considering the following table properties:
+Considerando las propiedades de tabla siguientes:
 
 ![](assets/en/API/dataclassAttribute2.png)
 
@@ -599,7 +599,7 @@ La función `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->devuelve 
 
 | Propiedad   | Tipo     | Descripción                                      |
 | ----------- | -------- | ------------------------------------------------ |
-| exposed     | Booleano | True if the dataclass is exposed in REST         |
+| exposed     | Booleano | True si la dataclass está expuesta en REST       |
 | name        | Texto    | Nombre de la dataclass                           |
 | primaryKey  | Texto    | Nombre de la llave primaria de la clase de datos |
 | tableNumber | Integer  | Número de la tabla 4D interna                    |
@@ -764,7 +764,7 @@ El objeto entidad se crea en memoria y no se guarda en la base de datos hasta qu
 
 All attributes of the entity are initialized with the **null** value.
 
-> Attributes can be initialized with default values if the **Map NULL values to blank values** option is selected at the 4D database structure level.
+> Los atributos se pueden inicializar con valores por defecto si se selecciona la opción **Traducir los NULL a valores vacío** al nivel de la estructura de la base 4D.
 
 #### Ejemplo
 
@@ -955,7 +955,7 @@ Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* 
 
 El uso de marcadores de posición en las búsquedas **se recomienda** por las siguientes razones:
 
-1.  It prevents malicious code insertion: if you directly use user-filled variables within the query string, a user could modifiy the query conditions by entering additional query arguments. For example, imagine a query string like:
+1.  It prevents malicious code insertion: if you directly use user-filled variables within the query string, a user could modifiy the query conditions by entering additional query arguments. Por ejemplo, imagine una cadena de búsqueda como:
 
     ```4d
      $vquery:="status = 'public' & name = "+myname //user enters their name
