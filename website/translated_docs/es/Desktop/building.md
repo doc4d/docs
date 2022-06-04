@@ -126,7 +126,7 @@ Esta pestaña le permite crear una versión autónoma y monopuesto de su aplicac
 Al marcar la opción **Crear una aplicación autónoma** y hacer clic en **Generar** se creará una aplicación autónoma (con doble clic) directamente desde su proyecto de aplicación.
 
 Los siguientes elementos son necesarios para la creación:
-- 4D Volume Desktop (the 4D database engine),
+- 4D Volume Desktop (el motor de la base de datos 4D),
 - an [appropriate license](#licenses)
 
 En Windows, esta función crea un archivo ejecutable (.exe). En macOS, se encarga de la creación de paquetes de software.
