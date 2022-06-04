@@ -299,11 +299,11 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 
 ## Tiempo de espera del proceso inactivo
 
-| Puede ajustarse con           | Nombre                                                                                   | Comentarios |
-| ----------------------------- | ---------------------------------------------------------------------------------------- | ----------- |
-| objeto webServer              | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout)                 |             |
-| `WEB SET OPTION`              | `Web inactive process timeout`                                                           |             |
-| Caja de diálogo de parámetros | [Options (I) page/Inactive Process Timeout](../settings/web.md#inactive-process-timeout) | Cursor      |
+| Puede ajustarse con           | Nombre                                                                                                    | Comentarios |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------- | ----------- |
+| objeto webServer              | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout)                                  |             |
+| `WEB SET OPTION`              | `Web inactive process timeout`                                                                            |             |
+| Caja de diálogo de parámetros | [Página Opciones (I)/Tiempo de espera de procesos inactivos](../settings/web.md#inactive-process-timeout) | Cursor      |
 
 Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
@@ -477,7 +477,7 @@ Version of the OpenSSL library used.
 True if PFS is available on the web server (see [TLS](Admin/tls.md#perfect-forward-secrecy-pfs) section).
 
 
-## Reuse temporary contexts (in remote mode)
+## Reutilizar los contextos temporales (en modo remoto)
 
 | Puede ajustarse con           | Nombre                                                                                           | Comentarios |
 | ----------------------------- | ------------------------------------------------------------------------------------------------ | ----------- |
