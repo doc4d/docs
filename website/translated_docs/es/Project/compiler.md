@@ -98,9 +98,9 @@ You can selectively disable certain warnings during compilation by inserting the
   //%W-<warning number>
 ```
 
-Only warnings with numbers can be disabled. Warning numbers are specified at the end of each message in the list of compilation errors. For example, to disable the following warning:
+Sólo se pueden desactivar los avisos con números. Warning numbers are specified at the end of each message in the list of compilation errors. For example, to disable the following warning:
 
-*1: Pointer in an array declaration (518.5)*
+*1: Puntero en una declaración de array (518.5)*
 
 ... you just need to write the following comment in a 4D method, preferably a `COMPILER_xxx` method (method compiled first):
 
@@ -211,7 +211,7 @@ The list of local variables is sorted by database method, project method, trigge
 
 This list is divided into three columns:
 
-- list of local variables used in the method;
+- la lista de las variables locales utilizadas en el método;
 - tipo de la variable;
 - number of dimensions if the variable is an array.
 
@@ -222,7 +222,7 @@ A complete list of your database and project methods is given at the end of the 
 - their type (procedure or function returning a value)
 - the data types of their parameters and the returned result
 - el número de llamadas
-- the Thread Safe or Thread Unsafe property.
+- la propiedad Thread Safe o Thread Unsafe.
 
 This information appears as follows:
 
