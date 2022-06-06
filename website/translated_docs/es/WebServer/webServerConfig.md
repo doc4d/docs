@@ -303,7 +303,7 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 | ----------------------------- | ------------------------------------------------------------------------ | ----------- |
 | objeto webServer              | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |             |
 | `WEB SET OPTION`              | `Web inactive process timeout`                                           |             |
-| Caja de diálogo de parámetros | Options (I) page/Inactive Process Timeout                                | Cursor      |
+| Caja de diálogo de parámetros | Página Opciones (I)/Tiempo de espera de procesos inactivos               | Cursor      |
 
 Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
@@ -619,7 +619,7 @@ This option controls the support of HTTP synchronization requests containing dep
 IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
 
 
-#### Reuse temporary contexts (in remote mode)
+#### Reutilizar los contextos temporales (en modo remoto)
 
 Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
 

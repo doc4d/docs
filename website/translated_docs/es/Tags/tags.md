@@ -48,7 +48,7 @@ Parsing the contents of a *template* source is done in two contexts:
 
 ### Tratamiento recursivo
 
-4D tags are interpreted recursively: 4D always attempts to reinterpret the result of a transformation and, if a new transformation has taken place, an additional interpretation is performed, and so on until the product obtained no longer requires any further transformation. For example, given the following statement:
+4D tags are interpreted recursively: 4D always attempts to reinterpret the result of a transformation and, if a new transformation has taken place, an additional interpretation is performed, and so on until the product obtained no longer requires any further transformation. Por ejemplo, dada la siguiente instrucción:
 
 ```html
 <!--#4DHTML [Mail]Letter_type-->
@@ -138,7 +138,7 @@ The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
 
 When a `<!--#4DCODE` sequence is detected that is followed by a space, a CR or a LF character, 4D interprets all the lines of code up to the next `-->` sequence. The code block itself can contain carriage returns, line feeds, or both; it will be interpreted sequentially by 4D.
 
-For example, you can write in a template:
+Por ejemplo, puede escribir en una plantilla:
 
 ```html
 <!--#4DCODE
@@ -267,7 +267,7 @@ The number of loops is based on the number of entities of the entity selection. 
     </table>
 ```
 
-#### Example with `PROCESS 4D TAGS`
+#### Ejemplo con `PROCESS 4D TAGS`
 
 ```4d
 var customers : cs.CustomersSelection
@@ -626,7 +626,7 @@ The following messages can be displayed:
 
 The `4DSCRIPT` tag allows you to execute 4D methods when processing the template. The presence of the `<!--#4DSCRIPT/MyMethod/MyParam-->` tag as an HTML comment launches the execution of the `MyMethod` method with the `Param` parameter as a string in `$1`.
 
-> If the tag is called in the context of a Web process, when the page is loaded, 4D calls the `On Web Authentication` database method (if it exists). If it returns True, 4D executes the method.
+> If the tag is called in the context of a Web process, when the page is loaded, 4D calls the `On Web Authentication` database method (if it exists). Si devuelve True, 4D ejecuta el método.
 
 El método debe devolver el texto en `$0`. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the `4DHTML` tag).
 
@@ -669,7 +669,7 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 - Debe utilizar las variables proceso.
 - You can display the content of a picture field. However, it is not possible to display the content of a picture array item.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get:C1224([Rect]Desc;\"color\")-->`.
-- You will usually work with Text variables. However, you can also use BLOB variables. You just need to generate BLOBs in `Text without length` mode.
+- Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. You just need to generate BLOBs in `Text without length` mode.
 
 
 

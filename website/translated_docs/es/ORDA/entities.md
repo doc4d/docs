@@ -102,7 +102,7 @@ For example, to set a storage attribute:
 ```
 > Pictures attributes cannot be assigned directly with a given path in an entity.
 
-Accessing a related attribute depends on the attribute kind. For example, with the following structure:
+Accessing a related attribute depends on the attribute kind. Por ejemplo, con la siguiente estructura:
 
 ![](assets/en/ORDA/entityAttributes.png)
 
@@ -313,7 +313,7 @@ All storage attributes (text, number, boolean, date) are available as properties
 
 Este código devuelve en *$localEmails* una colección de direcciones de correo electrónico como cadenas.
 
-### Entity selections and Relation attributes
+### Selecciones de entidades y atributos de relación
 
 In addition to the variety of ways you can query, you can also use relation attributes as properties of entity selections to return new entity selections. For example, consider the following structure:
 

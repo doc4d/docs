@@ -34,7 +34,7 @@ and the user enters "proportion", the field displays:
 
     (portion)
 
-The field actually contains "proportion". 4D accepts and stores the entire entry no matter what the display format. No se pierde ninguna información.
+El campo contiene realmente "proportion". 4D accepts and stores the entire entry no matter what the display format. No se pierde ninguna información.
 
 #### Gramática JSON
 
@@ -103,7 +103,7 @@ The table below shows choices available:
 
 Number formats control the way numbers appear when displayed or printed. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
 
-4D provides various default number formats.
+4D ofrece varios formatos de números por defecto.
 
 ### Marcadores
 
@@ -136,7 +136,7 @@ The numeric display formats (except for scientific notations) are automatically 
 > On Windows, when using the decimal separator key of the numeric keypad, 4D makes a distinction depending on the type of field where the cursor is located: *   in a Real type field, using this key will insert the decimal separator defined in the system, *   in any other type of field, this key inserts the character associated with the key, usually a period (.) or comma (,).
 
 
-### Decimal points and other display characters
+### Puntos decimales y otros caracteres de visualización
 
 You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
 
@@ -338,10 +338,10 @@ The table below shows the Time field display formats and gives examples:
 | Hour Min Sec                 | HH_MM_SS      |                                                                                                                                                  | 4 horas 30 minutos 25 segundos |
 | Hour Min                     | HH_MM           |                                                                                                                                                  | 4 horas 30 minutos             |
 | HH:MM AM/PM                  | hh_mm_am      |                                                                                                                                                  | 4:30 a.m.                      |
-| MM SS                        | mm_ss           | Time expressed as a duration from 00:00:00                                                                                                       | 270:25                         |
-| Min Sec                      | MM_SS           | Time expressed as a duration from 00:00:00                                                                                                       | 270 Minutos 25 Segundos        |
+| MM SS                        | mm_ss           | Hora expresada como duración a partir de las 00:00:00                                                                                            | 270:25                         |
+| Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                            | 270 Minutos 25 Segundos        |
 | ISO Date Time                | iso8601         | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
-| System time short            | - (por defecto) | Standard time format defined in the system                                                                                                       | 04:30:25                       |
+| System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                  | 04:30:25                       |
 | System time long abbreviated | systemMedium    | macOS only: Abbreviated time format defined in the system. <br>Windows: this format is the same as the System time short format            | 4•30•25 AM                     |
 | System time long             | systemLong      | macOS only: Long time format defined in the system. <br>Windows: this format is the same as the System time short format                   | 4:30:25 AM HNEC                |
 

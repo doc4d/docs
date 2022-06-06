@@ -221,10 +221,10 @@ El objeto resultante es una entity selection de la dataclass Employee sin duplic
 ## .add()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                            |
-| ------- | ----------------------------------------- |
-| v18 R5  | Only supports alterable entity selections |
-| v17     | Añadidos                                  |
+| Versión | Modificaciones                                |
+| ------- | --------------------------------------------- |
+| v18 R5  | Sólo soporta las entity selections alterables |
+| v17     | Añadidos                                      |
 </details>
 
 
@@ -359,10 +359,10 @@ Queremos tener una selección de empleados llamados "Jones" que vivan en Nueva Y
 ## .average()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                              |
-| ------- | ------------------------------------------- |
-| v18 R6  | Returns undefined if empty entity selection |
-| v17     | Añadidos                                    |
+| Versión | Modificaciones                                       |
+| ------- | ---------------------------------------------------- |
+| v18 R6  | Devuelve undefined si la entity selection está vacía |
+| v17     | Añadidos                                             |
 
 </details>
 
@@ -1095,10 +1095,10 @@ Las entity selections siempre tienen una propiedad `.length`.
 ## .max()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                              |
-| ------- | ------------------------------------------- |
-| v17     | Añadidos                                    |
-| v18 R6  | Returns undefined if empty entity selection |
+| Versión | Modificaciones                                       |
+| ------- | ---------------------------------------------------- |
+| v17     | Añadidos                                             |
+| v18 R6  | Devuelve undefined si la entity selection está vacía |
 
 </details>
 
@@ -1149,10 +1149,10 @@ Queremos encontrar el salario más alto entre todas las empleadas:
 ## .min()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                              |
-| ------- | ------------------------------------------- |
-| v17     | Añadidos                                    |
-| v18 R6  | Returns undefined if empty entity selection |
+| Versión | Modificaciones                                       |
+| ------- | ---------------------------------------------------- |
+| v17     | Añadidos                                             |
+| v18 R6  | Devuelve undefined si la entity selection está vacía |
 
 
 </details>

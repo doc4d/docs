@@ -157,7 +157,7 @@ A propertyPath is the path to a property in a given object. If the property is n
 
 ## Regular class
 
-User class not related to an ORDA object.
+Clase usuario no relacionada a un objeto ORDA.
 
 ## Related dataclass
 
