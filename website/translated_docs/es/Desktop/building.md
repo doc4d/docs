@@ -126,7 +126,7 @@ Esta pestaña le permite crear una versión autónoma y monopuesto de su aplicac
 Al marcar la opción **Crear una aplicación autónoma** y hacer clic en **Generar** se creará una aplicación autónoma (con doble clic) directamente desde su proyecto de aplicación.
 
 Los siguientes elementos son necesarios para la creación:
-- 4D Volume Desktop (the 4D database engine),
+- 4D Volume Desktop (el motor de la base de datos 4D),
 - an [appropriate license](#licenses)
 
 En Windows, esta función crea un archivo ejecutable (.exe). En macOS, se encarga de la creación de paquetes de software.
@@ -266,7 +266,7 @@ The application directory file is read-only. Modifications made to users, groups
 
 Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
 
-#### Allow connection of Silicon Mac clients
+#### Autorizar la conexión de los clientes Silicon Mac
 
 When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
 

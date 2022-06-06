@@ -18,14 +18,14 @@ Para crear un nuevo proyecto:
 2. Seleccione **Nuevo > Proyecto** desde el menú **Archivo**: <p>![](assets/en/getStart/projectCreate1.png)<p>O<p>(4D only) Select **Project...** from the **New** toolbar button:<p>![](assets/en/getStart/projectCreate2.png)<p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
 
 3. Introduzca el nombre de su carpeta de proyecto y haga clic en **Guardar**.<p> Este nombre se utilizará:
-    - as the name of the entire project folder,
+    - como nombre de la carpeta del proyecto,
     - como nombre del archivo .4DProject en el primer nivel de la carpeta "Project".
 
     Puedes elegir cualquier nombre permitido por su sistema operativo. However, if your project is intended to work on other systems or to be saved via a source control tool, you must take their specific naming recommendations into account.
 
 When you validate the **Save** dialog, 4D closes the current project (if any), creates a project folder at the indicated location, and puts all files needed for the project into it. Para más información, consulte [Arquitectura de un proyecto 4D](Project/architecture.md).
 
-You can then start developing your project.
+A continuación, puede empezar a desarrollar su proyecto.
 
 ## Abrir un proyecto
 
@@ -87,7 +87,7 @@ Files with the `.4DLink` extension are XML files that contain parameters intende
 
 XX represents the version number of the application. For example, "Favorites v19" for 4D v19.
 
-That folder is divided into two subfolders:
+Esa carpeta está dividida en dos subcarpetas:
 - the **Local** folder contains the `.4DLink` files that can be used to open local projects
 - the **Remote** folder contains the `.4DLink` files of recent remote projects
 
