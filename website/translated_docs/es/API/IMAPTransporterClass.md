@@ -250,10 +250,10 @@ El parámetro opcional `destinationBox` permite pasar el nombre del buzón donde
 
 En el parámetro opcional `options`, puede pasar un objeto para definir el charset y la codificación para partes específicas del correo electrónico. Propiedades disponibles:
 
-| Propiedad     | Tipo  | Descripción                                                                                                                                                                    |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| headerCharset | Texto | Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Possible values: See possible charsets table below |
-| bodyCharset   | Texto | Charset and encoding used for the html and text body contents of the email. Possible values: See possible charsets table below                                                 |
+| Propiedad     | Tipo  | Descripción                                                                                                                                                                                                                   |
+| ------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| headerCharset | Texto | Charset y codificación utilizados para las siguientes partes del correo electrónico: asunto, nombres de archivos adjuntos y atributo(s) del nombre del correo electrónico. Possible values: See possible charsets table below |
+| bodyCharset   | Texto | Charset y codificación utilizados para el contenido html y el texto del cuerpo del correo electrónico. Possible values: See possible charsets table below                                                                     |
 
 Charsets posibles:
 
