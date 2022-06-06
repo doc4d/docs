@@ -92,7 +92,12 @@
 			"API/ZipFolderClass"
 		],
 		"Code Editor": [
-			"code-editor/navigation"
+			"code-editor/overview",
+			"code-editor/interface",
+			"code-editor/write-class-method",
+			"code-editor/creating-using-macros",
+			"code-editor/navigation",
+			"code-editor/find-replace"
 		],
 		"Debugging": [
 			"Debugging/basics",
@@ -101,9 +106,9 @@
 			"Debugging/debugging-remote",
 			"Debugging/debugLogFiles"
 		],
-		"Transformation Tags":[
+		"Transformation Tags": [
 			"Tags/tags"
-		],	
+		],
 		"Settings": [
 			"settings/overview",
 			"settings/general",
