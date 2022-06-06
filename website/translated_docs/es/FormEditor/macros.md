@@ -174,7 +174,7 @@ Custom properties added to the [macro declaration](#declaring-macros) are return
 
 #### Ejemplo
 
-In the `formMacros.json` file:
+En el archivo `formMacros.json`:
 
 ```js
 {
@@ -231,7 +231,7 @@ Here are the properties that you can pass in the `$result` object if you want th
 | Propiedad         | Tipo       | Descripción                                                 |
 | ----------------- | ---------- | ----------------------------------------------------------- |
 | currentPage       | Objeto     | currentPage including objects modified by the macro, if any |
-| currentSelection  | Collection | currentSelection if modified by the macro                   |
+| currentSelection  | Collection | currentSelection si es modificada por la macro              |
 | formProperties    | Objeto     | formProperties if modified by the macro                     |
 | editor.groups     | Objeto     | group info, if groups are modified by the macro             |
 | editor.views      | Objeto     | view info, if views are modified by the macro               |

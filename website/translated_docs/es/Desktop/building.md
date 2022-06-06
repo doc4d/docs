@@ -126,7 +126,7 @@ Esta pestaña le permite crear una versión autónoma y monopuesto de su aplicac
 Al marcar la opción **Crear una aplicación autónoma** y hacer clic en **Generar** se creará una aplicación autónoma (con doble clic) directamente desde su proyecto de aplicación.
 
 Los siguientes elementos son necesarios para la creación:
-- 4D Volume Desktop (the 4D database engine),
+- 4D Volume Desktop (el motor de la base de datos 4D),
 - an [appropriate license](#licenses)
 
 En Windows, esta función crea un archivo ejecutable (.exe). En macOS, se encarga de la creación de paquetes de software.
@@ -246,7 +246,7 @@ Click on the **[...]** button and use the *Browse for folder* dialog box to loca
 
 Used to indicate the current version number for the application generated. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. El intervalo de compatibilidad de las aplicaciones del cliente y del servidor se define mediante el uso de [llaves XML](#build-application-settings) específicas).
 
-#### Allow connection of Silicon Mac clients
+#### Autorizar la conexión de los clientes Silicon Mac
 
 When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
 
