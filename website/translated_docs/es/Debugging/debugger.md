@@ -93,7 +93,7 @@ Saves the current configuration of the debugger window  and makes it the default
 * el tamaño y la posición de la ventana
 * the position of the division lines and the contents of the area that evaluates the expressions
 
-These parameters are stored in the project.
+Estos parámetros se almacenan en el proyecto.
 
 This action is not available in remote debugging mode (see [Debugging from Remote Machines]()).
 
@@ -120,7 +120,7 @@ Este tema le permite seguir los valores de los objetos o expresiones:
 * used in the line of code to be executed (the one marked with the program counter—the yellow arrow in the [Source Code Pane](#source-code-pane)),
 * used in the previous line of code
 
-Since the previous line of code is the one that was just executed before, this theme therefore shows the objects or expressions of the current line before and after that the line was executed.  Let's say you execute the following method:
+Since the previous line of code is the one that was just executed before, this theme therefore shows the objects or expressions of the current line before and after that the line was executed.  Digamos que ejecuta el siguiente método:
 
 ```4d
 TRACE

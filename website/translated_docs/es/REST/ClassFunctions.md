@@ -38,8 +38,8 @@ Las funciones son llamadas en el objeto correspondiente en el almacén de datos 
 
 
 
-> `/rest/{dataClass}/Function` can be used to call either a dataclass or an entity selection function (`/rest/{dataClass}` returns all entities of the DataClass as an entity selection).   
-> The function is searched in the entity selection class first. If not found, it is searched in the dataclass. In other words, if a function with the same name is defined in both the DataClass class and the EntitySelection class, the dataclass class function will never be executed.
+> `/rest/{dataClass}/Function` puede utilizarse para llamar a una función de dataclass o de selección de entidades (`/rest/{dataClass}` devuelve todas las entidades de la DataClass como una selección de entidades).   
+> La función se busca primero en la clase de selección de entidades. If not found, it is searched in the dataclass. In other words, if a function with the same name is defined in both the DataClass class and the EntitySelection class, the dataclass class function will never be executed.
 
 
 > All 4D code called from REST requests **must be thread-safe** if the project runs in compiled mode, because the REST Server always uses preemptive processes in this case (the [*Use preemptive process* setting value](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server) is ignored by the REST Server).
