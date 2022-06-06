@@ -35,7 +35,7 @@ Les process qui gèrent les sessions d'accès aux datastore apparaissent dans la
 
 *   <process name\>nom : "Gestionnaire REST : < nom du process > "
 *   type : type Worker Server HTTP
-*   session: session name is the user name passed to the `Open datastore` command.
+*   session : le nom de session est le nom d'utilisateur passé à la commande `Open datastore`.
 
 Dans l'exemple suivant, deux process sont en cours d'exécution pour la même session :
 
@@ -61,23 +61,23 @@ Si une demande est envoyée au datastore distant après la fermeture de la sessi
 
 ## Optimisation client/serveur
 
-4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Elles incluent :
-* the **optimization context**
-* the **ORDA cache**
+4D optimise automatiquement les requêtes ORDA qui utilisent des entity selections ou qui chargent des entités dans des configurations client/serveur (datastore accessible à distance à l'aide de `ds` ou de `Open datastore`). Ces optimisations accélèrent l'exécution de votre application 4D en réduisant drastiquement le volume d'informations transmises sur le réseau. Elles incluent :
+* le **contexte d'optimisation**
+* le **cache ORDA**
 
-### Context
+### Contexte
 
-The optimization context is based upon the following implementations:
+Le contexte d'optimisation est fondé sur ce qui suit :
 
-* Lorsqu'un client demande une sélection d'entité au serveur, 4D "apprend" automatiquement attributs de la sélection d'entité sont réellement utilisés côté client lors de l'exécution du code, et génère un "contexte d'optimisation" correspondant. Ce contexte est relié à la sélection d'entité et stocke les attributs utilisés. Il sera mis à jour dynamiquement si d'autres attributs sont utilisés par la suite. The following methods and functions trigger the learning phase:
-  * [`Créer une entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
+* Lorsqu'un client demande une sélection d'entité au serveur, 4D "apprend" automatiquement attributs de la sélection d'entité sont réellement utilisés côté client lors de l'exécution du code, et génère un "contexte d'optimisation" correspondant. Ce contexte est relié à la sélection d'entité et stocke les attributs utilisés. Il sera mis à jour dynamiquement si d'autres attributs sont utilisés par la suite. Les méthodes et fonctions suivantes déclenchent la phase d'apprentissage :
+  * [`Create entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
   * [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
   * [`dataClass.all()`](../API/DataClassClass.md#all)
   * [`dataClass.get()`](../API/DataClassClass.md#get)
   * [`dataClass.query()`](../API/DataClassClass.md#query)
   * [`entitySelection.query()`](../API/EntitySelectionClass.md#query)
 
-* Les requêtes ultérieures envoyées au serveur sur la même sélection d'entité réutilisent automatiquement le contexte d'optimisation et lisent uniquement les attributs nécessaires depuis le serveur, ce qui accélère le traitement. For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. the display of the next rows is optimized. The following functions automatically associate the optimization context of the source entity selection to the returned entity selection:
+* Les requêtes ultérieures envoyées au serveur sur la même sélection d'entité réutilisent automatiquement le contexte d'optimisation et lisent uniquement les attributs nécessaires depuis le serveur, ce qui accélère le traitement. For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. the display of the next rows is optimized. Les fonctions suivantes associent automatiquement le contexte d'optimisation de l'entity selection d'origine à l'entity selection retournée :
     *   [`entitySelection.and()`](../API/EntitySelectionClass.md#and)
     *   [`entitySelection.minus()`](../API/EntitySelectionClass.md#minus)
     *   [`entitySelection.or()`](../API/EntitySelectionClass.md#or)
