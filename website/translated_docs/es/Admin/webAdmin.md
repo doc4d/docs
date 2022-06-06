@@ -69,7 +69,7 @@ Se muestra la siguiente caja de diálogo:
 
 ![alt-text](assets/en/Admin/waSettings2.png)
 
-#### Web server administration automatic startup
+#### Inicio automático de la administración del servidor web
 
 Check this option if you want the `WebAdmin` web server to be automatically launched when the 4D or 4D Server application starts ([see above](#launching-at-startup)). By default, this option is not checked.
 
@@ -104,7 +104,7 @@ Path of the folder where the TLS certificate files are located. By default, the 
 
 Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in the "Logs" folder of the application -- *nn* is the file number). Las siguientes opciones están disponibles:
 
-- **Disable** (default)
+- **Desactivado** (por defecto)
 - **With all body parts** - enabled with body parts in response and request
 - **Without body parts** - enabled without body parts (body size is provided)
 - **With request body** - enabled with body part in request only

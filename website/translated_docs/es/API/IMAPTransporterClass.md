@@ -167,13 +167,13 @@ En el parámetro `msgIDs`, puede pasar:
 
 El parámetro `keywords` le permite pasar un objeto con valores de palabras clave para las banderas específicas que se añadirán a `msgIDs`. Puede pasar cualquiera de las siguientes palabras claves:
 
-| Parámetros | Tipo     | Descripción                                    |
-| ---------- | -------- | ---------------------------------------------- |
-| $draft     | Booleano | True to add the "draft" flag to the message    |
-| $seen      | Booleano | True to add the "seen" flag to the message     |
-| $flagged   | Booleano | True to add the "flagged" flag to the message  |
-| $answered  | Booleano | True to add the "answered" flag to the message |
-| $deleted   | Booleano | True to add the "deleted" flag to the message  |
+| Parámetros | Tipo     | Descripción                                     |
+| ---------- | -------- | ----------------------------------------------- |
+| $draft     | Booleano | True para añadir el marcador "draft" al mensaje |
+| $seen      | Booleano | True para añadir el marcador "seen" al mensaje  |
+| $flagged   | Booleano | True to add the "flagged" flag to the message   |
+| $answered  | Booleano | True to add the "answered" flag to the message  |
+| $deleted   | Booleano | True to add the "deleted" flag to the message   |
 > * Los valores falsos se ignoran.
 > * The interpretation of keyword flags may vary per mail client.
 
