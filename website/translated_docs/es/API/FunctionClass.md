@@ -386,13 +386,15 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 #### Descripción
 
-The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. The formula object can be created using the `Formula` or `Formula from string` commands.
+La función `.call()` <!-- REF #FunctionClass.call().Summary -->ejecuta el objeto `formula` al que se aplica y devuelve el valor resultante<!-- END REF --. El objeto fórmula puede ser creado con los comandos <code>Formula</code> o 
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the formula.
+`Formula from string`.
 
-You can also pass values to be used as *$1...$n* parameters in the formula using the optional *params* parameter(s).
+En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` dentro de la fórmula.
 
-Note that `.call()` is similar to [`.apply()`](#apply) except that parameters are passed directly.
+También puede pasar los valores a utilizar como parámetros *$1...$n* en la fórmula utilizando el parámetro opcional *params*).
+
+Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los parámetros se pasan directamente.
 
 #### Ejemplo 1
 
