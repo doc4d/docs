@@ -65,7 +65,7 @@ Date formats control the way dates appear when displayed or printed. For data en
 
 The table below shows choices available:
 
-| Format name                     | JSON String  | Example (US system)           |
+| Nom du format                   | Chaine JSON  | Exemple (système US)          |
 | ------------------------------- | ------------ | ----------------------------- |
 | System date short               | - (default)  | 03/25/20                      |
 | System date abbreviated *(1)*   | systemMedium | Wed, Mar 25, 2020             |
@@ -77,19 +77,19 @@ The table below shows choices available:
 | Internal date short             | short        | 03/25/2020                    |
 | ISO Date Time *(3)*             | iso8601      | 2020-03-25T00:00:00           |
 
-*(1)* To avoid ambiguity and in accordance with current practice, the abbreviated date formats display "jun" for June and "jul" for July. This particularity only applies to French versions of 4D.
+*(1)* Pour éviter toute ambiguïté et conformément à la pratique actuelle, les formats de date abrégés affichent "jun" pour juin et "jul" pour juillet. Cette particularité ne s'applique qu'aux versions françaises de 4D.
 
-*(2)* The year is displayed using two digits when it belongs to the interval (1930;2029) otherwise it will be displayed using four digits. This is by default but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html) command.
+*(2)* L'année est affichée avec deux chiffres lorsqu'elle appartient à l'intervalle (1930;2029), sinon elle est affichée avec quatre chiffres. Ce modèle est par défaut mais il peut être modifié à l'aide de la commande [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html).
 
-*(3)* The `ISO Date Time` format corresponds to the XML date and time representation standard (ISO8601). It is mainly intended to be used when importing/exporting data in XML format and in Web Services.
-> Regardless of the display format, if the year is entered with two digits then 4D assumes the century to be the 21st if the year belongs to the interval (00;29) and the 20th if it belongs to the interval (30;99). This is the default setting but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html) command.
+*(3)* Le format `ISO Date Time` correspond à la norme XML de représentation de la date et de l'heure (ISO8601). Il est principalement destiné à être utilisé lors de l'import/export de données au format XML et dans les services Web.
+> Quel que soit le format d'affichage, si l'année est saisie avec deux chiffres, 4D considère que le siècle est le 21ème si l'année appartient à l'intervalle (00;29) et le 20e si elle appartient à l'intervalle (30;99). Il s'agit du paramètre par défaut, mais il peut être modifié à l'aide de la commande [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html).
 
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                                                                                                                |
-| ---------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (can be combined with the other possible values) |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                     |
+| ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dateFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (peut être combiné avec les autres valeurs possibles) |
 
 #### Objets pris en charge
 
@@ -331,7 +331,7 @@ Time formats control the way times appear when displayed or printed. For data en
 
 The table below shows the Time field display formats and gives examples:
 
-| Format name                  | Chaine JSON  | Commentaires                                                                                                                                     | Exemple pour 04:30:25           |
+| Nom du format                | Chaine JSON  | Commentaires                                                                                                                                     | Exemple pour 04:30:25           |
 | ---------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
 | HH:MM:SS                     | hh_mm_ss   |                                                                                                                                                  | 04:30:25                        |
 | HH:MM                        | hh_mm        |                                                                                                                                                  | 04:30                           |
@@ -611,9 +611,9 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Grammaire JSON
 
-| Nom      | Type de données | Valeurs possibles                                  |
-| -------- | --------------- | -------------------------------------------------- |
-| wordwrap | string          | "automatic" (excluding list box), "normal", "none" |
+| Nom      | Type de données | Valeurs possibles                                         |
+| -------- | --------------- | --------------------------------------------------------- |
+| wordwrap | string          | "automatic" (à l'exception de list box), "normal", "none" |
 
 #### Objets pris en charge
 
