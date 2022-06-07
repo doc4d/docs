@@ -41,8 +41,8 @@ title: アクセスコントロールの概要
 この場合、次のようなコードを使用して、アプリケーション内でアクセスを許可または拒否することができます:
 
 ```4d
-If(Current system user = $user) //you can store users in a database table
-    // give access to some features
+If(Current system user = $user) // データベースのテーブルにユーザーを保存することができます
+    // 特定機能へのアクセス権を付与します
 End if
 ```
 
