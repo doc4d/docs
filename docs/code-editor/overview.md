@@ -1,138 +1,196 @@
 ---
 id: overview
-title: Overview
+title: About 4D Code
 ---
 
-4D has a powerful built-in code editor that offers a wide set of features for highly productive code editing such as intelligent code completion, code navigation, debugging, searching, and more.
 
-![](assets/en/code-editor/code-editor-overview.png)
+The 4D code used across you application is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md). 
 
-You can use the 4D code editor to write all your [methods](../Concepts/methods.md) or [classes](../Concepts/classes.md).
-
-The 4D code editor works much like a text editor. Writing code is usually a combination of typing text, selecting items or dragging them from the Explorer or other windows. Various type-ahead functions also help your writing code faster. Each method and class can include up to 32,000 lines of code or 2 GB of text.
-
-The 4D code editor provides basic syntax error-checking. Additional error-checking is performed when the method or class function is executed. For more information on how to handle errors, see [Debugging](../Debugging/basics.md).
+The 4D IDE provides you with various features to create, open, export, or delete your code. You can use the 4D [code editor](write-class-method.md) to work with your code.
 
 
-By default, a window of the code editor consists of several areas: a toolbar, an editing area, a lists area, a status bar and a break points area.
+## Creating methods
 
-![dropdown-list](assets/en/code-editor/code-editor-hello.png)
+A method in 4D is stored in a **.4dm** file located in the appropriate folder of the [`/Project/Sources/`](../Project/architecture.md#sources) folder. 
 
-## Toolbar
+You can create [several types of methods](../Concepts/methods.md):
 
-Each Code Editor window contains a toolbar that provides instant access to basic functions related to code execution and editing.
+- All types of methods can be created or opened from the **Explorer** window (except Object methods which are managed from the [Form editor](../FormEditor/formEditor.md)).
+- Project methods can also be created or opened from the **File** menu or toolbar (**New/Method...** or **Open/Method...**) or using shortcuts in the [Code editor window](write-class-method.md#shortcuts).
+- Triggers can also be created or opened from the Structure editor.
+- Form methods can also be created or opened from the [Form editor](../FormEditor/formEditor.md).
 
-| Element | Icon | Description |
-|--|--|--|
-| **Method execution** | ![execute-method](assets/en/code-editor/execute-method.png) | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.<li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>|
-| **Search** | ![search-icon](assets/en/code-editor/search.png) | Allows performing a search in the current window. |
-| **Macros** | ![macros-button](assets/en/code-editor/macros.png) | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](creating-using-macros.md). |
-| **Expand all / Collapse all** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png) | These buttons allow expanding or collapsing all the control flow structures of the code. |
-| **Method information** | ![method-information-icon](assets/en/code-editor/method-information.png) | Displays the [Method Properties](../Concepts/methods.md#project-method-properties) dialog box (project methods only). |
-| **Last clipboard values** | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | Displays the last values stored in the clipboard. |
-| **Clipboards** | ![clipboard icons](assets/en/code-editor/clipboards.png) | Nine clipboards available in the code editor. You can [use these clipboards][Writing classes and methods](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards) by clicking on them directly or by using keyboard shortcuts. You can use a [Preferences option](Preferences/methods.md#options-1) to hide them. |
-| **Code navigation** | ![code-navigation-icons](assets/en/code-editor/tags.png) | Lets you navigate inside methods and classes with automatically tagged content or manually declared markers. See [Navigation dropdown](./write-class-method.md#navigation-dropdown). |
+## Creating classes
 
-## Editing area
+A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. The name of the file is the class name. 
 
-This is where you write and edit your code. The editor automatically indents code text and colors the different syntax elements for clear code structure.
+You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
 
-### Customizing the editing area
-
-You can customize the display of the editing area. Any customization is automatically passed on to all the windows of the code editor:
-
-| Option | Description | Set in... |
-|--|--|--|
-|**font** and **font size**| Sets the character font and size to be used in the editing area| **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**
-|**style and color of syntax elements**| assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on).| Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md)|
-|**spaces**| You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.). | **Method > View > White Spaces**
-|**themes**| You can select the Dark or Light theme, or set a custom one | **Preferences** > [**Methods**](../Preferences/methods.md)
-|**width of code indentations**| Set the width of code indentations| **Preferences** > [**Methods**](../Preferences/methods.md)
-
-For more information about entering code in this area, refer to [Writing a method](#writing-a-method).
-
-## Lists area
-
-The lists area lets you display one or more lists of elements necessary for writing methods and classes (commands, constants, forms, etc.). You can choose the number and contents of the lists displayed in the window.
-
-By default, the Code Editor displays four lists. You can enlarge or reduce the relative width of each list area by dragging one of its partitions. It is also possible to adjust the size of the list area in relation to that of the editing area by dragging the dividing line between them.
-
-- Double-clicking on an item in a list causes it to be inserted into the editing area, at the location of the cursor.
-- To **modify the contents** of a list, click on the title area of the list concerned: a pop-up menu appears, enabling you to choose the type of item to be displayed.
-
-![](assets/en/code-editor/list-area.png)
-
-- To add or remove a list, click in the title area of one of the lists and choose the corresponding command in the pop-up menu.
-    Note that at least one list must be displayed in the editor window.
-
-    The **Remove this list** command is disabled when you click on the last list. If you want to hide all the lists, you must either click on the **show or hide lists**  button at the bottom right of the window or hide them by default in the **Preferences**.
-
-- You can hide the lists in all the windows in the following ways:
-  - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
-  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened.
-
-You can save the parameters set in the Code Editor window in the form of a template. For more information, refer to [Save as template](#save-as-template).
-
-### Available lists of items
-
-You can display the following lists of items in the lists area of the Code Editor window:
-
-- **All tables and fields**: Database table and field names in the form of a hierarchical list. When you insert a field name into the method by double-clicking on its name, 4D inserts it while respecting the syntax and adds the name of the table or subtable as the case may be.
-- **Table** (submenu): Field names of the table selected using the submenu.
-- **Current table**: Field names of the current table (available in triggers, form methods and object methods).
-- **Project forms**: Database project form names. When you double-click on a project form name, 4D inserts its while respecting the syntax: the form name is inserted between quotes.
-- **Table forms**: Database table and form names in the form of a hierarchical list. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. For example: [Table];"Form".
-- **Methods**: Database project method names.
-- **All folders**: Names of object folders and subfolders set in the database displayed in the form of a hierarchical list. Folders can be used to organize objects in a customized manner. They are managed from the Home Page of the Explorer.
-- **Folders** (submenu): Contents of the folder selected using the submenu.
-- **Macros**: Macro names defined for the database (see [Creating and using macros](#creating-and-using-macros)).
-- **Commands**: 4D language commands in alphabetical order.
-- **Commands by themes**: 4D language commands classified by theme in the form of a hierarchical list.
-- **Menu bars**: Names and numbers of menu bars created with the 4D Menu bar editor (see the [Menus and menu bars](#menus-and-menu-bars) chapter).
-- **Constants**: 4D constants and those of any plug-ins, classified by theme in the form of a hierarchical list.
-- **Lists**: Names of lists.
-- **Pictures**: Names and numbers of pictures stored in the 4D **Picture Library**.
-- **All plug-in commands**: Commands for all the plug-ins installed in the database, classified by theme in the form of a hierarchical list.
-- **Commands for the plug-in** (submenu): Commands of a specific plug-in selected using the submenu. By default, the following plug-in is available:
-- **SQL Keywords**: set of keywords recognized by the 4D SQL syntax parser. This list includes commands (e.g. SELECT), clauses (e.g. WHERE) as well as functions (ABS).
-- **SQL Functions**: 4D SQL functions.
-
-**Note:** Except for the Macros element, all the lists are in alphabetical order.
-
-## Break points area
-
-This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
-
-For more information on break points, see the [Debugging](../Debugging/breakpoints.md#breakpoints) section.
-
-You can display or hide the line numbers in the break points area for each window of the Code Editor.
-
-- To enable or disable the display of line numbers by default,  choose **Preferences** > **Methods** > **Show line numbers**.
-
-- To modify this display separately for each window of the Code Editor, choose **Method** > **View** > **Line Numbers**.
-
-Displaying the line numbers makes it easier to find your way around in the window. The **Method** > **Go to Line Number...** command in the also lets you take advantage of this display.
-
-## Save as template
-
-You can save the parameters set in the Code Editor window in the form of a template. Once the template is saved, the parameters set in it will be used for each new Code Editor window that is opened.
-
-The following parameters are stored in the template:
-
-- Relative size of the editing and list areas
-- Number of lists
-- Location and contents of each list
-- Relative width of each list
-
-To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
+For more information, please refer to the [Classes](../Concepts/classes.md) section.
 
 
-## Status bar
+## Deleting methods or classes
 
-The status bar located at the bottom right part of the editor window displays the position of the cursor at all times:
+To delete an existing method or class, you can:
 
-![](assets/en/code-editor/status-bar.png)
+- on your disk, remove the *.4dm* file from the "Sources" folder,
+- in the 4D Explorer, select the method or class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu. 
 
-- **Ln**: Line number
-- **Col**: Column number, i.e., the level in the hierarchy of programming structures. The first level is 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
-- **Ch**: Location of character in the line.
+> To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
+
+
+## Importing and exporting code
+  
+You can import and export a method or a class code in the form of a file. These commands are found in the **Method** menu of the Code editor. 
+
+- When you select the **Export Method...** command, a standard file saving dialog box appears, allowing you to choose the name, location and format of the export file (see below). As with printing, exporting does not take the collapsed state of code structures into account and the entire code is exported. 
+- When you select the **Import Method...** command, a standard file opening dialog box appears, allowing you to designate the file to be imported. Importing replaces the selected text in the method. To replace an existing method by an imported method, select the entire contents of the method before carrying out the import.
+
+The import/export function is multi-platform: a method exported under Mac OS can be imported under Windows and vice versa; 4D handles the conversion of characters when necessary.
+
+4D can export and import methods in two formats:
+
+- 4D method (extension *.c4d*): In this format, methods are exported in encoded form. The names of objects are tokenized. This format is used in particular for exchanging methods between 4D applications and plug-ins in different languages. Conversely, it is not possible to display them in a text editor.
+- Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
+
+
+## Project method properties
+
+After creating a project method, you can rename it and modify its properties. Project method properties mainly concern their access and security conditions (access by users, integrated servers or services) as well as their execution mode. 
+
+The other types of methods do not have specific properties. Their properties are related to those of the objects to which they are attached.
+
+To modify the properties of a project method:
+
+1.  In the [Code Editor](write-class-method.md): 
+* select the **Method Properties...** command in the **Method** menu
+* on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu. The **Method Properties** dialog appears.
+
+**Note:** A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
+
+#### Name  
+
+You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
+
+The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. If necessary, 4D sorts the list of methods again. 
+
+**Warning:** Changing the name of a method already used in the database can invalidate any methods or formulas that use the old method name and runs the risk of disrupting application functioning. You can rename the method manually but it is strongly recommended to use the renaming function for project methods, described in [Renaming](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.en.html). With this function, you can automatically update the name wherever the method is called throughout the Design environment.
+
+With 4D Server, the method name is changed on the server when you finish editing it. If more than one user is modifying the method name at the same time, the final method name will be the name specified by the last user to finish editing it. You may want to specify a method owner so that only certain users can change the method's name
+
+**Note:** Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned. 
+
+#### Attributes  
+
+You can control how project methods are used and/or called in different contexts using attributes. Note that you can set attributes for an entire selection of project methods using the Explorer (see following section).
+
+##### Invisible  
+
+If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box (see [From the Execute Method dialog box](#from-the-execute-method-dialog-box)). 
+
+When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
+
+##### Shared by components and host database  
+
+This attribute is used within the framework of components. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases. 
+
+For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
+
+##### Execute on Server  
+
+This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called. 
+
+For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
+
+#### Execution mode  
+
+This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode. 
+
+If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. The compiler will then check that these methods are actually thread-safe.
+
+**Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html) section.
+
+The following options are provided:
+
+-   **Can be run in preemptive processes**: By checking this option, you declare that the method is capable of being run in a preemptive process and therefore should be run in preemptive mode whenever possible. The "preemptive" property of the method is set to "capable".
+
+When this option is checked, the 4D compiler will verify that the method is actually capable and will return errors if this is not the case -- for example, if it directly or indirectly calls commands or methods that cannot be run in preemptive mode (the entire call chain is parsed but errors are only reported to the first sublevel). You can then edit the method so that it becomes thread-safe, or select another option.
+
+If the method's preemptive capability is approved, it is tagged "thread-safe" internally and will be executed in preemptive mode whenever the required conditions are met. This property defines its eligibility for preemptive mode but does not guarantee that the method will actually be run in preemptive mode, since this execution mode requires a specific context (see [When is a process started preemptively?](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html#2822148)).
+
+-   **Cannot be run in preemptive processes**: By checking this option, you declare that the method must never be run in preemptive mode, and therefore must always be run in cooperative mode, as in previous 4D versions. The "preemptive" property of the method is set to "incapable".
+
+When this option is checked, the 4D compiler will not verify the ability of the method to run preemptively; it is automatically tagged "thread-unsafe" internally (even if it is theoretically capable). When called at runtime, this method will "contaminate" any other methods in the same thread, thus forcing this thread to be executed in cooperative mode, even if the other methods are thread-safe.
+
+-   **Indifferent **(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. The "preemptive" property of the method is set to "indifferent".
+
+When this option is checked, the 4D compiler will evaluate the preemptive capability of the method and will tag it internally as "thread-safe" or "thread-unsafe". No error related to preemptive execution is returned. If the method is evaluated as thread-safe, at runtime it will not prevent preemptive thread execution when called in a preemptive context. Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.\
+
+Note that with this option, whatever the internal thread safety evaluation, the method will always be executed in cooperative mode when called directly by 4D as the first parent method (for example through the [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html) command). If tagged "thread-safe" internally, it is only taken into account when called from other methods inside a call chain.
+
+***Particular case*:** If the method has also the **Shared by components and host database** property (see [Project method properties](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.en.html)), setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**. 
+
+#### Available through  
+
+Availability attributes specify the external services which are allowed to explicitly call the method.
+
+##### Web Services  
+
+This attribute lets you publish the current method as a Web Service accessible via SOAP requests. For more information, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.en.html) chapter. When this option is checked, the **Published in WSDL** option is enabled.
+
+In the Explorer, project methods that are offered as a Web Service are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440512/pict440512.fr.png).
+
+**Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). If the method name is not in keeping with this, 4D does not assign the property.
+
+##### Published in WSDL  
+
+This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689). 
+
+In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png). 
+
+##### 4D tags and URLs (4DACTION...)  
+
+This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special 4DACTION URL used for calling 4D methods, nor the special 4DSCRIPT, 4DTEXT and 4DHTML tags (as well as the former 4DVAR and 4DHTMLVAR tags). For more information, refer to [URLs and Form Actions](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.en.html) and [4D Transformation Tags](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-Transformation-Tags.300-5830552.en.html) in the 4D *Language Reference* manual.
+
+In the Explorer, project methods with this attribute are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png).
+
+For security reasons, this option is unchecked by default. Each method that can be executed using the special Web URL or tags must be indicated individually.
+
+##### SQL  
+
+When it is checked, this option allows the project method to be executed by the SQL engine of 4D. By default, it is not selected, which means that, unless explicitly authorized, 4D project methods are protected and cannot be called by the SQL engine of 4D. 
+
+This property applies to all internal and external SQL queries --- executed via the ODBC driver, SQL code inserted between the [Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.en.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.en.html)  tags or the [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.en.html) command.
+
+**Notes:**
+
+-   Even if a method has the "SQL" attribute, access rights set at the level of the database settings and method properties are taken into account for the execution of the method.
+-   The ODBC **SQLProcedure** function only returns project methods with the "SQL" attribute.
+
+For more information, refer to [4D SQL engine implementation](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.en.html) in the 4D SQL manual.
+
+##### REST Server  
+
+*This option is deprecated because it relies on legacy current record and current selection concepts. It is recommended to use** [ORDA data model class functions](https://developer.4d.com/docs/en/REST/classFunctions.html) for REST access. *
+
+#### Batch setting for method attributes  
+
+Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
+
+For batch setting of method attributes:
+
+1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. The **Attributes for methods** dialog appears.
+2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch.
+The character string is used as a search criterion for the method names.
+Use the wildcard character @ to help define groups of methods:
+   -   To designate methods whose names begin with..., type @ at the end of the string. For example: web@
+    -   To designate methods whose names contain..., type @ in the middle of the string. For example: web@write
+    -   To designate methods whose names end with..., type @ at the beginning of the string. For example: @write
+    -   To designate all of the methods, just type @ in the area.\
+        **Notes:**
+        -   The search does not take upper/lower case into account.
+        -   You can enter several @ characters in the string, for example dtro_@web@pro.@
+3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied.
+    **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
+4.  Click on **Apply**. The modification is applied instantly to all the project methods designated by the character string entered.
+

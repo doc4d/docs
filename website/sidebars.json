@@ -91,13 +91,11 @@
 			"API/ZipFileClass",
 			"API/ZipFolderClass"
 		],
-		"Code Editor": [
+		"Handling Code": [
 			"code-editor/overview",
-			"code-editor/interface",
 			"code-editor/write-class-method",
-			"code-editor/creating-using-macros",
-			"code-editor/navigation",
-			"code-editor/find-replace"
+			"code-editor/find-replace",
+			"code-editor/creating-using-macros"
 		],
 		"Debugging": [
 			"Debugging/basics",

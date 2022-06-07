@@ -125,17 +125,11 @@
       "code-editor/find-replace": {
         "title": "Find and replace"
       },
-      "code-editor/interface": {
-        "title": "Interface"
-      },
-      "code-editor/navigation": {
-        "title": "Navigation dropdown"
-      },
       "code-editor/overview": {
-        "title": "Overview"
+        "title": "About 4D Code"
       },
       "code-editor/write-class-method": {
-        "title": "Writing classes and methods"
+        "title": "Code Editor"
       },
       "Concepts/about": {
         "title": "About the 4D Language"
@@ -998,7 +992,7 @@
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
       "Class API Reference": "Class API Reference",
-      "Code Editor": "Code Editor",
+      "Handling Code": "Handling Code",
       "Debugging": "Debugging",
       "Transformation Tags": "Transformation Tags",
       "Settings": "Settings",
