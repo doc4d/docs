@@ -710,9 +710,9 @@ In *text*, pass the text to write to the file. It can be a literal ("my text"), 
 Optionally, you can designate the character set to be used for writing the contents. Puede pasar:
 
 - en *charSetName*, una cadena que contiene el nombre del conjunto estándar (por ejemplo "ISO-8859-1" o "UTF-8"),
-- or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
+- o en *charSetNum*, el ID MIBEnum (número) del nombre del conjunto estándar.
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
 
 If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file unless the character set used contains the suffix "-no-bom" (e.g. "UTF-8-no-bom"). If you do not specify a character set, by default 4D uses the "UTF-8" character set without BOM.
 
