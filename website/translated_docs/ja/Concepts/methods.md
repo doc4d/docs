@@ -256,133 +256,132 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 プロジェクトメソッドのプロパティを変更するには:
 
 1.  [コードエディター](../code-editor/interface.md) にて:
-* select the **Method Properties...** command in the **Method** menu
-* on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu. The **Method Properties** dialog appears.
+* **メソッド** メニューから **メソッドプロパティ...** を選択します。
+* エクスプローラーの **メソッド** ページでプロジェクトメソッドを選択し、コンテキストメニューまたはオプションメニューから **メソッドプロパティ...** を選択します。 **メソッドプロパティ** ダイアログボックスが表示されます。
 
-**Note:** A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
+**注:** 一回の処理で複数のプロジェクトメソッドの属性を設定するために、属性の一括設定を使用できます ([属性の一括設定](#属性の一括設定) 参照)。
 
 #### 名称  
 
-You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
+**メソッドプロパティ** ウィンドウの **名称** エリア、またはエクスプローラーでプロジェクトメソッド名を変更できます。
 
-The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. If necessary, 4D sorts the list of methods again. 
+新しい名称は 4D の命名規則に沿っていなければなりません ([識別子](../Concepts/identifiers.md) 参照)。 同じ名称のメソッドが既に存在する場合、4D はその旨を知らせるメッセージを表示します。 名称変更後、4D メソッドリストをソートします。 
 
-**Warning:** Changing the name of a method already used in the database can invalidate any methods or formulas that use the old method name and runs the risk of disrupting application functioning. You can rename the method manually but it is strongly recommended to use the renaming function for project methods, described in [Renaming](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.en.html). With this function, you can automatically update the name wherever the method is called throughout the Design environment.
+**警告:** プロジェクトメソッドの名前を変更すると、そのメソッドを旧名称で呼び出している他のメソッドやフォーミュラなど、アプリケーションの機能が無効になるリスクがあります。 このため、この変更を手動ではなく、[名称変更](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.ja.html) で説明されているプロジェクトメソッド名の名称変更機能によりおこなうことが強く推奨されます。 この機能を使用すれば、デザイン環境における当該メソッドの呼び出し箇所がすべて自動的に更新されます (ただし EXECUTE METHOD など、文字列としてメソッド名が参照されている個所を除きます)。
 
-With 4D Server, the method name is changed on the server when you finish editing it. If more than one user is modifying the method name at the same time, the final method name will be the name specified by the last user to finish editing it. You may want to specify a method owner so that only certain users can change the method's name
+4D Server の場合、名称変更は変更終了後にサーバーに反映されます。 複数のユーザーが同時に名称を変更しようとすると、最後におこなわれた名称変更が適用されます。 メソッドのオーナーを指定すれば特定のユーザー以外はメソッド名を変更できないようにできます。
 
-**Note:** Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned. 
+**注:** データベースメソッドの名称を変更することはできません。 オブジェクトに紐付いたトリガー、フォームメソッド、オブジェクトメソッドも同様です。これらは関連先のオブジェクトにより名称を決定されます。 
 
 #### 属性  
 
-You can control how project methods are used and/or called in different contexts using attributes. Note that you can set attributes for an entire selection of project methods using the Explorer (see following section).
+属性を使用して、プロジェクトメソッドがどのコンテキストにおいて利用可能かを指定できます。 エクスプローラーを使用して複数のプロジェクトメソッドに対し、属性を一括して設定することもできます (後述参照)。
 
-##### Invisible  
+##### 非表示  
 
-If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box (see [From the Execute Method dialog box](#from-the-execute-method-dialog-box)). 
+ユーザーに対し、**実行** メニューの **メソッド...** から特定のメソッドを実行させたくない場合、このオプションを選択すればそのメソッドを非表示にできます。 非表示のメソッドはメソッド実行ダイアログボックスに表示されなくなります ([メソッド実行ダイアログボックスから実行](#メソッド実行ダイアログボックスから実行) 参照)。 
 
-When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
+プロジェクトメソッドを非表示にしても、データベースプログラマーはそれを使用することができます。 メソッドを非表示にしてもエクスプローラーのメソッドページやコードエディターのメソッドリストには表示されます。
 
-##### Shared by components and host database  
+##### コンポーネントとホストプロジェクト間で共有   
 
-This attribute is used within the framework of components. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases. 
+この属性は、コンポーネントのフレームワークで使用されます。 このオプションが選択されていると、アプリケーションがホストデータベースとして実行されている場合、そのメソッドがコンポーネントから実行可能になります。 また、アプリケーションがコンポーネントとして実行されている場合、そのメソッドはホストデータベースから実行可能となります。 
 
-For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
+コンポーネントについては [4Dコンポーネントの開発とインストール](../Extensions/develop-components.md) を参照ください。
 
-##### Execute on Server  
+##### サーバー上で実行  
 
-This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called. 
+この属性は、クライアント/サーバーモードの 4Dアプリケーションでのみ考慮されます。 このオプションが選択されていると、そのプロジェクトメソッドは呼び出し方に関わらず常にサーバー上で実行されます。 
 
-For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
+このオプションに関する詳細は 4D Serverリファレンスマニュアルの [サーバー上で実行属性](https://doc.4d.com/4Dv19R5/4D/19-R5/Execute-on-Server-attribute.300-5878333.ja.html) を参照ください。
 
-#### Execution mode  
+#### 実行モード  
 
-This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode. 
+このオプションを使用すると、メソッドのプリエンプティブ実行が可能であることを宣言できます。 デフォルトでは、4D はアプリケーション内のプロジェクトメソッドをすべてコオペラティブモードで実行します。 
 
-If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. The compiler will then check that these methods are actually thread-safe.
+プリエンプティブモード機能を利用したい場合、プリエンプティブモードで実行したいメソッドをすべて明示的に宣言する必要があります。 その後、コンパイラーがこれらのメソッドが実際にスレッドセーフであるかどうかをチェックします。
 
-**Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html) section.
+**注:** プリエンプティブモードでの実行は、コンパイルモードでのみ利用可能です。 詳細については、[プリエンプティブ4Dプロセス](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.ja.html) の章を参照ください。
 
-The following options are provided:
+以下のオプションが提供されています:
 
--   **Can be run in preemptive processes**: By checking this option, you declare that the method is capable of being run in a preemptive process and therefore should be run in preemptive mode whenever possible. The "preemptive" property of the method is set to "capable".
+-   **プリエンプティブプロセスで実行可能**: このオプションをチェックすると、当該メソッドはプリエンプティブプロセスでの実行が可能であり、可能な場合にはプリエンプティブモードで実行するべきと宣言します。 メソッドの "preemptive" プロパティは "capable" に設定されます。
 
-When this option is checked, the 4D compiler will verify that the method is actually capable and will return errors if this is not the case -- for example, if it directly or indirectly calls commands or methods that cannot be run in preemptive mode (the entire call chain is parsed but errors are only reported to the first sublevel). You can then edit the method so that it becomes thread-safe, or select another option.
+このオプションがチェックされている場合、4Dコンパイラーはメソッドが実際にプリエンプティブモードで実行可能かどうかを検証し、そうでない場合 (たとえば、プリエンプティブモードで実行不可能なコマンドやメソッドを直接的あるいは間接的に呼び出している場合など) にはエラーを返します。なお、コールチェーンはすべて解析されますが、最初のサブレベルに対してのみエラーが報告されます。 エラーの場合には、メソッドを編集してスレッドセーフにするか、あるいは別のオプションを選択します。
 
-If the method's preemptive capability is approved, it is tagged "thread-safe" internally and will be executed in preemptive mode whenever the required conditions are met. This property defines its eligibility for preemptive mode but does not guarantee that the method will actually be run in preemptive mode, since this execution mode requires a specific context (see [When is a process started preemptively?](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html#2822148)).
+メソッドのプリエンプティブ性が証明されると、内部で "thread safe" というタグ付けがされ、すべての要件が満たされればプリエンプティブモードで実行されます。 このプロパティはプリエンプティブモードの資格を定義しますが、メソッドが実際にプリエンプティブモードで実行されることを保証するものではありません。プリエンプティブ実行モードは特定のコンテキストを必要とするからです ([プロセスがプリエンプティブに実行される条件とは？](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.ja.html#2822148) を参照ください)。
 
--   **Cannot be run in preemptive processes**: By checking this option, you declare that the method must never be run in preemptive mode, and therefore must always be run in cooperative mode, as in previous 4D versions. The "preemptive" property of the method is set to "incapable".
+-   **プリエンプティブプロセスでは実行不可**: このオプションをチェックすると、当該メソッドはプリエンプティブモードでの実行は不可能であると宣言し、以前の 4D のバージョンと同様に常にコオペラティブモードで実行されます。 メソッドの "preemptive" プロパティは "incapable" に設定されます。
 
-When this option is checked, the 4D compiler will not verify the ability of the method to run preemptively; it is automatically tagged "thread-unsafe" internally (even if it is theoretically capable). When called at runtime, this method will "contaminate" any other methods in the same thread, thus forcing this thread to be executed in cooperative mode, even if the other methods are thread-safe.
+このオプションがチェックされている場合、4Dコンパイラーはメソッドがプリエンプティブ実行可能かどうかを検証しません。メソッドは内部で自動的に "thread unsafe" とタグ付けされます (たとえ、理論的にはスレッドセーフであってもです)。 ランタイムで呼び出された場合、このメソッドは同じスレッド内の他のメソッドを "汚染" し、他のメソッドがスレッドセーフであったとしても、スレッドはコオペラティブモードでの実行を強制されます。
 
--   **Indifferent **(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. The "preemptive" property of the method is set to "indifferent".
+-   **特に設定しない** (デフォルト): このオプションをチェックすると、当該メソッドについてはプリエンプティブプロパティを管理しないことを宣言します。 メソッドの "preemptive" プロパティは "indifferent" に設定されます。
 
-When this option is checked, the 4D compiler will evaluate the preemptive capability of the method and will tag it internally as "thread-safe" or "thread-unsafe". No error related to preemptive execution is returned. If the method is evaluated as thread-safe, at runtime it will not prevent preemptive thread execution when called in a preemptive context. Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.\
+このオプションがチェックされているとき、4Dコンパイラーはメソッドのプリエンプティブ性を評価し、内部的に "thread safe" あるいは "thread unsafe" のタグ付けをします。 プリエンプティブ実行に関するエラーは報告されません。 メソッドがスレッドセーフと評価されていれば、ランタイムでプリエンプティブコンテキストから呼び出された場合にはプリエンプティブスレッド実行を妨げません。 逆に、メソッドがスレッドアンセーフであると評価された場合には、ランタイムで呼び出された場合に、プリエンプティブなスレッド実行を不可能にします。
 
-Note that with this option, whatever the internal thread safety evaluation, the method will always be executed in cooperative mode when called directly by 4D as the first parent method (for example through the [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html) command). If tagged "thread-safe" internally, it is only taken into account when called from other methods inside a call chain.
+このオプションを使用した場合、内部でのスレッドセーフ評価に関わらず、最初の親メソッドとしてメソッドが 4D から直接呼び出された場合 (たとえば [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.ja.html) コマンドから呼び出された場合など)、メソッドは常にコオペラティブモードで実行されます。 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
 
-***Particular case*:** If the method has also the **Shared by components and host database** property (see [Project method properties](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.en.html)), setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**. 
+***特殊なケース*:** メソッドの **コンポーネントとホストプロジェクト間で共有** プロパティがチェックされている場合 ([プロジェクトメソッドプロパティ](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.ja.html) 参照)、**特に設定しない** オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。 共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。 
 
-#### Available through  
+#### 公開オプション  
 
-Availability attributes specify the external services which are allowed to explicitly call the method.
+公開オプション属性は、当該メソッドの呼び出しが明示的に許可された外部サービスを指定します。
 
 ##### Webサービス  
 
-This attribute lets you publish the current method as a Web Service accessible via SOAP requests. For more information, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.en.html) chapter. When this option is checked, the **Published in WSDL** option is enabled.
+この属性を使用して、SOAPリクエストでアクセス可能な Webサービスとして当該メソッドを公開することができます。 詳細は [Web サービスの公開と使用](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.ja.html) を参照ください。 このオプションを選択すると、**WSDL を公開** オプションを選択できるようになります。
 
-In the Explorer, project methods that are offered as a Web Service are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440512/pict440512.fr.png).
+エクスプローラーでは、Webサービスとして提供されるプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440512/pict440512.fr.png)。
 
-**Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). If the method name is not in keeping with this, 4D does not assign the property.
+**注:** メソッド名が XML の命名規則に準拠しない文字 (たとえばスペース) を含む場合、そのメソッドは Webサービスとして公開できません。 この場合、設定は保存できません。
 
-##### Published in WSDL  
+##### WSDL を公開  
 
-This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689). 
+この属性は "Webサービス" 属性が設定されている場合にのみ利用可能です。 この属性を設定すると、当該メソッドが 4Dアプリケーションの WSDLに 含まれます。 詳細については [WSDL ファイルを生成する](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.ja.html#502689) を参照ください。 
 
-In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png). 
+エクスプローラーでは、Webサービスとして提供され、WSDLで公開されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png)。 
 
-##### 4D tags and URLs (4DACTION...)  
+##### 4D タグと URL(4DACTION...)  
 
-This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special 4DACTION URL used for calling 4D methods, nor the special 4DSCRIPT, 4DTEXT and 4DHTML tags (as well as the former 4DVAR and 4DHTMLVAR tags). For more information, refer to [URLs and Form Actions](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.en.html) and [4D Transformation Tags](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-Transformation-Tags.300-5830552.en.html) in the 4D *Language Reference* manual.
+このオプションは、4D Webサーバーのセキュリティを強化するために使用されます。このオプションが選択されていない場合、4DACTION URL を使用した HTTPリクエスト、および4DSCRIPT、4DTEXT、4DHTML タグ (さらには以前の 4DVAR や 4DHTMLVAR タグ) から当該メソッドを直接呼び出すことができません。 詳細については 4D *ランゲージリファレンス* マニュアルの [URLとフォームアクション](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.ja.html) および [4D 変換タグ](Tags/tags.md) を参照ください。
 
-In the Explorer, project methods with this attribute are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png).
+エクスプローラーでは、この属性が設定されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png)。
 
-For security reasons, this option is unchecked by default. Each method that can be executed using the special Web URL or tags must be indicated individually.
+セキュリティのため、このオプションはデフォルトで選択されていません。 Web機能から直接呼び出されるメソッドには、このオプションを明示的に選択しなければなりません。
 
 ##### SQL  
 
-When it is checked, this option allows the project method to be executed by the SQL engine of 4D. By default, it is not selected, which means that, unless explicitly authorized, 4D project methods are protected and cannot be called by the SQL engine of 4D. 
+この属性が選択されていると、当該プロジェクトメソッドは 4D の SQLエンジンから実行可能となります。 デフォルトでは選択されておらず、明示的に許可されない限り 4Dメソッドは保護されており、4D SQLエンジンから呼び出すことはできません。 
 
-This property applies to all internal and external SQL queries --- executed via the ODBC driver, SQL code inserted between the [Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.en.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.en.html)  tags or the [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.en.html) command.
+このプロパティはすべての内部および外部SQLクエリ (ODBCドライバー経由、[Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.ja.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.ja.html) タグ内の SQLコード、または [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.ja.html) からの呼び出し) に適用されます。
 
 **注:**
 
--   Even if a method has the "SQL" attribute, access rights set at the level of the database settings and method properties are taken into account for the execution of the method.
--   The ODBC **SQLProcedure** function only returns project methods with the "SQL" attribute.
+-   メソッドに "SQL" 属性が設定されていても、メソッドの実行時にはデータベース設定およびメソッドプロパティに設定されたアクセス権が考慮されます。
+-   ODBC の **SQLProcedure** 関数は "SQL" 属性が設定されているプロジェクトメソッド名のみを返します。
 
-For more information, refer to [4D SQL engine implementation](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.en.html) in the 4D SQL manual.
+詳細については、SQLマニュアルの [4Dと4D SQLエンジン統合の原則](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.ja.html) を参照ください。
 
 ##### REST サーバー  
 
-*This option is deprecated because it relies on legacy current record and current selection concepts. It is recommended to use** [ORDA data model class functions](https://developer.4d.com/docs/en/REST/classFunctions.html) for REST access. *
+*このオプションは、従来のカレントレコードおよびカレントセレクションの概念に依存しており、廃止予定となっています。 RESTアクセスには、[ORDAデータモデルクラス関数](https://developer.4d.com/docs/en/REST/classFunctions.html) を使用することが推奨されます。 *
 
-#### Batch setting for method attributes  
+#### 属性の一括設定  
 
-Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
+"メソッド属性" ダイアログボックスを使用して、一回の操作で複数のプロジェクトメソッドに対して属性 (非表示、Webサービスで公開、等) を設定することができます。 この機能は、多数のプロジェクトメソッドの属性を一括して変更する場合に便利です。 また、開発の段階で、類似のメソッド群に共通の属性を素早く適用するのに使用することもできます。
 
-For batch setting of method attributes:
+メソッド属性の一括設定をおこなうには:
 
-1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. The **Attributes for methods** dialog appears.
-2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch. The character string is used as a search criterion for the method names. Use the wildcard character @ to help define groups of methods:
-   -   To designate methods whose names begin with..., type @ at the end of the string. For example: web@
-    -   To designate methods whose names contain..., type @ in the middle of the string. For example: web@write
-    -   To designate methods whose names end with..., type @ at the beginning of the string. For example: @write
-    -   To designate all of the methods, just type @ in the area.\
- **Notes:**
-        -   The search does not take upper/lower case into account.
-        -   You can enter several @ characters in the string, for example dtro_@web@pro.@
-3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
-4.  Click on **Apply**. The modification is applied instantly to all the project methods designated by the character string entered.
+1.  エクスプローラーの [メソッドページ](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.ja.html) からオプションメニューを展開し、**属性の一括設定...** コマンドを選択します。 "メソッド属性" ダイアログボックスが表示されます:
+2.  "一致するメソッド名" エリアに属性を一括設定するメソッドを指定するための名前条件を入力します。 入力した文字列を使用してメソッド名が検索されます。 "@" をワイルドカード文字として使用し、メソッドグループを選択できます:
+   -   前方一致で検索するには、文字列の最後に "@" を加えます。 例: web@
+    -   含む検索をするには、文字列の中に "@" を加えます。 例: web@write
+    -   後方一致で検索するには、文字列の先頭に "@" を加えます。 例: @write
+    -   すべてのメソッドを選択するには "@" のみを入力します。\<br /> **注:**
+        -   文字の大小は区別されません。
+        -   "@" は文字列内で複数回使用できます (例: dtro_@web@pro.@)
+3.  "更新する属性" エリアでは、ドロップダウンリストから更新対象の属性を選択し、**True** または **False** ラジオボタンを選択します。 **注:** "WSDL で公開する" 属性を True に設定した場合、"Webサービスとして公開" 属性が True に設定されたメソッドにのみ適用されます。
+4.  **適用** をクリックします。 検索条件に合致するプロジェクトメソッドに対し、属性の変更は即座に反映されます。
 
 ## Executing methods
 
@@ -415,7 +414,7 @@ The following execution modes are available:
 -   **Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).
 -   **Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).
 
-#### From the Execute Method dialog box  
+#### メソッド実行ダイアログボックスから実行  
 
 When you select the **Method...** command of the **Run** menu,  displays the **Execute Method** dialog.
 
