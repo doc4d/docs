@@ -66,7 +66,7 @@ The list of main updates in this documentation. For general information about ne
 - New [4DEACH](Tags/tags.md#4deach-and-4dendeach) transformation tag.
 - Web Server: new [SameSite session cookie](WebServer/webServerConfig.md#session-cookie-samesite) setting.
 - Dark and light color scheme support for [forms](FormEditor/properties_FormProperties.md#color-scheme) and [style sheets](FormEditor/createStylesheet.md#media-queries)
-- New default dark and light themes in [method editor preferences](Preferences/methods.md#theme-list).
+- New default dark and light themes in [Code Editor preferences](Preferences/methods.md#theme-list).
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
 - New, comprehensive [CLI](Admin/cli.md) page.
