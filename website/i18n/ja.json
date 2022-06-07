@@ -119,8 +119,23 @@
       "Backup/settings": {
         "title": "バックアップ設定"
       },
+      "code-editor/creating-using-macros": {
+        "title": "Creating and using macros"
+      },
+      "code-editor/find-replace": {
+        "title": "Find and replace"
+      },
+      "code-editor/interface": {
+        "title": "インターフェース"
+      },
       "code-editor/navigation": {
         "title": "ナビゲーションドロップダウン"
+      },
+      "code-editor/overview": {
+        "title": "概要"
+      },
+      "code-editor/write-class-method": {
+        "title": "Writing classes and methods"
       },
       "Concepts/about": {
         "title": "4D ランゲージについて"
@@ -624,13 +639,13 @@
       "FormObjects/text": {
         "title": "テキスト"
       },
-      "FormObjects/viewProAreaOverview": {
+      "FormObjects/viewProArea_overview": {
         "title": "4D View Pro エリア"
       },
       "FormObjects/webAreaOverview": {
         "title": "Webエリア"
       },
-      "FormObjects/writeProAreaOverview": {
+      "FormObjects/writeProArea_overview": {
         "title": "4D Write Pro エリア"
       },
       "GettingStarted/creating": {
