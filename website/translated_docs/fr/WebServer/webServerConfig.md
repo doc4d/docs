@@ -380,7 +380,7 @@ Démarre ou arrête l'enregistrement des requêtes reçues par le serveur Web 4D
 
 Ce paramètre vous permet de sélectionner le format de ce fichier. Valeurs possibles :
 
-| Valeur | Format name    | Description                                                                                                                                                                                                                                       |
+| Valeur | Nom du format  | Description                                                                                                                                                                                                                                       |
 | ------ | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0      | Pas de journal | Par défaut                                                                                                                                                                                                                                        |
 | 1      | CLF            | Format de journal commun - Chaque ligne du fichier représente une requête, telle que : `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Chaque champ est séparé par un espace et chaque ligne se termine par la séquence CR/LF. |
