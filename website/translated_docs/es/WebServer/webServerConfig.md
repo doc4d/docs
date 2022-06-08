@@ -82,7 +82,7 @@ Lista de hosts y métodos permitidos para el servicio CORS.
 
 #### Nombres de dominio (propiedad local)
 
-Nombre de dominio o dirección IP desde donde las páginas externas pueden enviar solicitudes de datos al Servidor a través de CORS. Multiple domain attributes can be added to create a white list. Se soportan varias sintaxis:
+Nombre de dominio o dirección IP desde donde las páginas externas pueden enviar solicitudes de datos al Servidor a través de CORS. Se pueden añadir múltiples atributos de dominio para crear una lista blanca. Se soportan varias sintaxis:
 
 - 192.168.5.17:8081
 - 192.168.5.17
@@ -109,7 +109,7 @@ Métodos HTTP aceptados para el host CORS correspondiente. Se soportan los sigui
 - TRACE
 - PATCH
 
-Separate each method with a ";" (e,g,: "post;get"). Si methods está vacío, null o indefinido, todos los métodos están activos.
+Separe cada método con un ";" (por ejemplo: "post;get"). Si methods está vacío, null o indefinido, todos los métodos están activos.
 
 #### Ver también
 
