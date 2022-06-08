@@ -62,7 +62,7 @@ class Index extends React.Component {
       cs: <translate>Client/Server</translate>,
       tls: <translate>TLS Protocol</translate>,
       debugging: <translate>Debugging</translate>,
-      codeEditor: <translate>Code Editor</translate>,
+      codeEditor: <translate>Handling Code</translate>,
       dataExplorer: <translate>Web Data Explorer</translate>,
       langRef: <translate>Language Reference (4D Doc Center)</translate>,
       users: <translate>Access Rights</translate>,
