@@ -247,7 +247,7 @@ Function add($x : Integer)
 
 #### Valor devuelto
 
-You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. Por ejemplo:
+Se declara el parámetro de retorno (opcional) añadiendo una flecha (`->`) y la definición del parámetro de retorno después de la lista de parámetros de entrada, o dos puntos (`:`) y el tipo de parámetro de retorno únicamente. Por ejemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
