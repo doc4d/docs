@@ -45,7 +45,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 - [**Operadores de fechas**](dt_date.md#date-operators)
 - [**Operadores de horas**](dt_time.md#time-operators)
 - [**Operadores numéricos**](dt_number.md#number-operators)
-- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
+- [**Operadores binarios**](dt_number.md#bitwise-operators) (en las expresiones **de enteros largos**)
 - [**Operadores de imágenes**](dt_picture.md#picture-operators)
 - [**Operadores en punteros**](dt_pointer.md#pointer-operators)
 - [**Operadores de cadenas**](dt_string.md#string-operators)
@@ -80,8 +80,8 @@ The following compound assignment operators are supported:
 | División       | Number /= Number   | Número | `$n/=5 //$n:=$n/5`                                                             |
 |                | Time /= Time       | Hora   | `$t1/=$t2 //$t1:=$t1/$t2`                                                      |
 |                | Time /= Number     | Número | `$t1/=5 //$t1:=$t1/5`                                                          |
-|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`                       |
-|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                           |
+|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (añadir $p2 debajo de $p1)`                           |
+|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`               |
 | Multiplicación | Text *= Number     | Texto  | `$t*="abc"  //$t:=$t*"abc"`                                                    |
 |                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                             |
 |                | Time *= Time       | Hora   | `$t1*=$t2 //$t1:=$t1*$t2`                                                      |
@@ -256,7 +256,7 @@ The following table summarizes the different cases and the value returned for th
 
 #### Ejemplo 1
 
-Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. But you can write the following:
+Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
 
 ```4d
 var $phone : Text
