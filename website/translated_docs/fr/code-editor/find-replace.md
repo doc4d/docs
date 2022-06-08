@@ -13,13 +13,13 @@ The Find/Replace commands for methods, classes or functions are located in **Edi
 
 **Note:** The find commands located above the **Find** submenu are not specific to the Code Editor but may be used to search for a value among all the methods, classes or functions, using the **Find in design** feature in the toolbar or in the **Edit** menu.
 
-## Find  
+## Chercher  
 
-Selecting the **Find...** command displays the following dialog box:
+La sélection de la sous-commande **Chercher...** du menu provoque l’affichage de la boîte de dialogue suivante :
 
 ![find-dialog](assets/en/code-editor/find-dialog.png)
 
-The search defined in this dialog box will be performed in the method located in the foreground.
+La recherche définie dans cette boîte de dialogue sera effectuée dans la fenêtre de la méthode située au premier plan.
 
 - The **Find What:** area enables you to enter the string of characters to be searched for. This area is a combo box that stores the last 15 character strings that have been searched for or replaced during the session. If you highlight text before choosing the **Find...** command, it will appear in this area. You can then either use this text or replace it with another.
 - The **Whole Word** option is used to limit the search to exact occurrences of the word being searched for. When this option is checked, for instance, a search for "client" will not find either "clients" or "myclient." By default, this option is not checked; therefore, a search for "var" will find "Myvar," "variation," etc. Be careful, unlike the **Whole Object Name** option of the Find in Design dialog box, the **Whole Word** option does not take object names into account. For example, with this option, searching for the string "My" in a method will find the "My Variable" variable. This is not the case for an overall search using the **Whole Object Name** option, where the same result will not be found in the context of the above example since the whole object name (of the variable found previously) is "My Variable" and therefore does not correspond exactly to the string entered ("My").
