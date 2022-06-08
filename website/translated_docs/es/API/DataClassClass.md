@@ -46,7 +46,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 Los atributos de las clases de datos son<!-- REF ClaseDeDatos.attributeName.Summary -->objetos que están disponibles directamente como propiedades<!-- END REF --> de estas clases.
 
 The returned objects are of the [`DataClassAttribute`](DataClassAttributeClass.md) class. These objects have properties that you can read to get information about your dataclass attributes.
-> Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
+> Los objetos del atributo Dataclass pueden ser modificados, pero la estructura subyacente de la base de datos no será alterada.
 
 #### Ejemplo 1
 

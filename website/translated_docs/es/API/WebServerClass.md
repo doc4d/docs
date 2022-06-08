@@ -4,15 +4,15 @@ title: WebServer
 ---
 
 
-The `WebServer` class API allows you to start and monitor a web server for the main (host) application as well as each hosted component (see the [Web Server object](WebServer/webServerObject.md) overview). This class is available from the `4D` class store.
+La API de la clase `WebServer` permite iniciar y supervisar un servidor web para la aplicación principal (host), así como para cada componente alojado (ver la descripción general de [Objeto servidor web](WebServer/webServerObject.md)). Esta clase está disponible en el almacén de clases de `4D`.
 
 
 
 ### Objeto servidor web
 
-Web server objects are instantiated with the [`WEB Server`](#web-server) command.
+Los objetos del servidor web se instancian con el comando [`WEB Server`](#web-server).
 
-They provide the following properties and functions:
+Ofrecen las siguientes propiedades y funciones:
 
 
 ### Resumen
@@ -71,10 +71,10 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parámetros | Tipo         |    | Descripción                                                    |
-| ---------- | ------------ | -- | -------------------------------------------------------------- |
-| option     | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
-| Resultado  | 4D.WebServer | <- | Objeto servidor web                                            |
+| Parámetros | Tipo         |    | Descripción                                                              |
+| ---------- | ------------ | -- | ------------------------------------------------------------------------ |
+| option     | Integer      | -> | Servidor web a obtener (por defecto si se omite = `Web server database`) |
+| Resultado  | 4D.WebServer | <- | Objeto servidor web                                                      |
 
 
 <!-- END REF -->
@@ -83,11 +83,11 @@ La función `.start()` <!-- REF #WebServerClass.start().Summary -->inicia el ser
 
 Por defecto, si se omite el parámetro *option*, el comando devuelve una referencia al servidor web de la base de datos, es decir, al servidor web por defecto. Para designar el servidor web a devolver, puede pasar una de las siguientes constantes en el parámetro *option*:
 
-| Constante                      | Valor | Comentario                                               |
-| ------------------------------ | ----- | -------------------------------------------------------- |
-| `Web server database`          | 1     | Current database Web server (default if omitted)         |
-| `Web server host database`     | 2     | Web server of the host database of a component           |
-| `Web server receiving request` | 3     | Web server that received the request (target Web server) |
+| Constante                      | Valor | Comentario                                                        |
+| ------------------------------ | ----- | ----------------------------------------------------------------- |
+| `Web server database`          | 1     | Servidor web de la base actual (por defecto si se omite)          |
+| `Web server host database`     | 2     | Servidor web de la base local de un componente                    |
+| `Web server receiving request` | 3     | Servidor web que ha recibido la solicitud (servidor web objetivo) |
 
 El objeto servidor web devuelto contiene los valores actuales de las propiedades del servidor web.
 
@@ -96,7 +96,7 @@ El objeto servidor web devuelto contiene los valores actuales de las propiedades
 El objeto servidor web devuelto contiene los valores actuales de las propiedades del servidor web.
 
 ```4d
-  // Method of a component
+  // Método de un componente
  var $hostWS : 4D.WebServer
  $hostWS:=WEB Server(Web server host database)
  If($hostWS.isRunning)
@@ -117,9 +117,9 @@ El objeto servidor web devuelto contiene los valores actuales de las propiedades
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| Parámetros | Tipo       |    | Descripción                                    |
-| ---------- | ---------- | -- | ---------------------------------------------- |
-| Resultado  | Collection | <- | Collection of the available Web server objects |
+| Parámetros | Tipo       |    | Descripción                                           |
+| ---------- | ---------- | -- | ----------------------------------------------------- |
+| Resultado  | Collection | <- | Colección de los objetos del servidor web disponibles |
 
 
 <!-- END REF -->
@@ -128,12 +128,12 @@ El <!-- REF #WebServerClass.name.Summary -->nombre de la aplicación del servido
 
 Queremos saber cuántos servidores web en funcionamiento hay disponibles:
 
-- one Web server for the host database (default Web server)
-- one Web server for each component.
+- un servidor web para la base de datos del host (servidor web por defecto)
+- un servidor web para cada componente.
 
 Una aplicación 4D puede contener de uno a varios servidores web:
 
-> The default Web server object is automatically loaded by 4D at startup. On the other hand, each component Web server that you want to use must be instantiated using the [`WEB Server`](#web-server) command.
+> El objeto servidor web por defecto es cargado automáticamente por 4D al inicio. Por otro lado, cada componente servidor web que se quiera utilizar debe ser instanciado utilizando el comando [`WEB Server`](#web-server).
 
 El comando `WEB Server list` devuelve todos los servidores web disponibles, estén o no en funcionamiento.
 
@@ -245,7 +245,7 @@ Para más información sobre CORS, consulte la página [Cross-origin resource sh
 
 Una <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts y métodos permitidos para el servicio CORS<!-- END REF --> (ver la propiedad [`CORSEnabled`](#corsenabled)). Cada objeto debe contener una propiedad **host** y, opcionalmente, una propiedad **methods**:
 
-*   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Se soportan varias sintaxis:
+*   **host** (texto, obligatorio): nombre de dominio o dirección IP desde donde las páginas externas pueden enviar solicitudes de datos al Servidor a través de CORS. Se pueden añadir múltiples atributos de dominio para crear una lista blanca. Si *host* no está presente o está vacío, el objeto se ignora. Se soportan varias sintaxis:
     -   192.168.5.17:8081
     -   192.168.5.17
     -   192.168.*
@@ -257,7 +257,7 @@ Una <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts y métodos p
     -   myProject.myDomain.com
     -   \*
 
-*   **methods** (text, optional): Accepted HTTP method(s) for the corresponding CORS host. Separate each method with a ";" (e,g,: "post;get"). If *methods* is empty, null, or undefined, all methods are enabled.
+*   **methods** (texto, opcional): método(s) HTTP aceptado(s) para el host CORS correspondiente. Separe cada método con un ";" (por ejemplo: "post;get"). Si *methods* está vacío, null o indefinido, todos los métodos están activos.
 
 <!-- END REF -->
 
@@ -273,10 +273,10 @@ Una <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts y métodos p
 El <!-- REF #WebServerClass.debugLog.Summary -->estado del archivo de registro de peticiones HTTP<!-- END REF --> (HTTPDebugLog_nn.txt, almacenado en la carpeta "Logs" de la aplicación -- nn es el número de archivo).
 
 *   0 = desactivado
-*   1 = enabled without body parts (body size is provided in this case)
-*   3 = enabled with body parts in response only
+*   1 = activado sin partes del cuerpo (en este caso se suministra el tamaño del cuerpo)
+*   3 = activado con las partes del cuerpo en respuesta únicamente
 *   5 = activado con las partes del cuerpo en petición únicamente
-*   7 = enabled with body parts in response and request
+*   7 = activado con las partes del cuerpo en respuesta y petición
 
 <!-- END REF -->
 
@@ -331,8 +331,8 @@ El <!-- REF #WebServerClass.HTTPCompressionLevel.Summary -->nivel de compresión
 
 Valores posibles:
 
-*   1 to 9 (where 1 is the fastest compression and 9 the highest).
-*   -1 = set a compromise between speed and rate of compression.
+*   1 a 9 (donde 1 es la compresión más rápida y 9 la más alta).
+*   -1 = definir un compromiso entre la velocidad y la tasa de compresión.
 
 Valores posibles:
 
@@ -425,7 +425,7 @@ El <!-- REF #WebServerClass.HTTPSPort.Summary -->número de puerto IP de escucha
 
 <!-- REF #WebServerClass.inactiveProcessTimeout.Syntax --> **.inactiveProcessTimeout** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> Esta propiedad no se devuelve en [modo sesiones escalables](#scalablesession).
 
 La <!-- REF #WebServerClass.inactiveProcessTimeout.Summary -->duración (en minutos) de los procesos de sesión heredados inactivos<!-- END REF -->. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base `On Web Legacy Close Session` y se destruye el contexto de la sesión heredada.
 
@@ -440,7 +440,7 @@ Por defecto = 480 minutos
 
 <!-- REF #WebServerClass.inactiveSessionTimeout.Syntax --> **.inactiveSessionTimeout** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> Esta propiedad no se devuelve en [modo sesiones escalables](#scalablesession).
 
 La <!-- REF #WebServerClass.inactiveSessionTimeout.Summary -->duración (en minutos) de las sesiones heredadas inactivas (duración establecida en la cookie)<!-- END REF -->. Al final de este periodo, la cookie de sesión expira y deja de ser enviada por el cliente HTTP.
 
@@ -551,7 +551,7 @@ Valores posibles: 500000 - 2147483647
 
 <!-- REF #WebServerClass.maxSessions.Syntax --> **.maxSessions** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> Esta propiedad no se devuelve en [modo sesiones escalables](#scalablesession).
 
 El <!-- REF #WebServerClass.maxSessions.Summary -->número máximo de sesiones simultáneas legacy<!-- END REF -->. Cuando se alcanza el límite, se cierra la sesión heredada más antigua (y se llama al método base `On Web Legacy Close Session`) si el servidor web necesita crear una nueva. El número de sesiones heredadas simultáneas no puede superar el número total de procesos web (propiedad `maxConcurrentProcesses`, 100 por defecto)
 
@@ -706,11 +706,11 @@ El campo <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" de la cook
 
 El valor de la cookie de sesión <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->"SameSite"<!-- END REF -->. Valores posibles (utilizando constantes):
 
-| Constante           | Valor    | Descripción                                                                                                                         |
-| ------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Web SameSite Strict | "Strict" | *Default value* - Cookies are only sent in a first-party context                                                                    |
-| Web SameSite Lax    | "Lax"    | Cookies are also sent on cross-site subrequests but only when a user is navigating to the origin site (i.e. when following a link). |
-| Web SameSite None   | "None"   | Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests.                                   |
+| Constante           | Valor    | Descripción                                                                                                                                                                |
+| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web SameSite Strict | "Strict" | *Valor por defecto* - Las cookies sólo se envían en un contexto de primera parte                                                                                           |
+| Web SameSite Lax    | "Lax"    | Las cookies también se envían en las sub-solicitudes entre sitios, pero sólo cuando un usuario está navegando hacia el sitio de origen (es decir, cuando sigue un enlace). |
+| Web SameSite None   | "None"   | Las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado.                                          |
 
 Ver la descripción de [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) para obtener información detallada.
 
@@ -767,13 +767,13 @@ Todas las configuraciones de los [objetos del Servidor Web](#web-server-object) 
 
 La función devuelve un objeto que describe el estado de lanzamiento del servidor web. Este objeto puede contener las siguientes propiedades:
 
-| Propiedad |                         | Tipo       | Descripción                                                          |
-| --------- | ----------------------- | ---------- | -------------------------------------------------------------------- |
-| success   |                         | Booleano   | True if the web server was correctly started, False otherwise        |
-| errors    |                         | Collection | 4D error stack (not returned if the web server started successfully) |
-|           | \[].errCode            | Número     | Código de error 4D                                                   |
-|           | \[].message            | Texto      | Descripción del error 4D                                             |
-|           | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                |
+| Propiedad |                         | Tipo       | Descripción                                                                   |
+| --------- | ----------------------- | ---------- | ----------------------------------------------------------------------------- |
+| success   |                         | Booleano   | True si el servidor web se ha iniciado correctamente, False en caso contrario |
+| errors    |                         | Collection | Pila de errores 4D (no se devuelve si el servidor web se inició con éxito)    |
+|           | \[].errCode            | Número     | Código de error 4D                                                            |
+|           | \[].message            | Texto      | Descripción del error 4D                                                      |
+|           | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                         |
 > Si el servidor web ya fue lanzado, se devuelve un error.
 
 #### Ejemplo
