@@ -567,7 +567,7 @@ This property is only used when drawing objects located in the body of a list fo
 ---
 ## Wordwrap
 
-> For [input](input_overview.md) objects, available when the [Multiline](properties_Entry.md#multiline) property is set to "yes" .
+> Pour les [input](input_overview.md), disponibles lorsque la propriété [Multiligne](properties_Entry.md#multiline) est définie sur "oui".
 
 Manages the display of contents when it exceeds the width of the object.
 
