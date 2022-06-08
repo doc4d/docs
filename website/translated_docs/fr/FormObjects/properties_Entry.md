@@ -99,26 +99,26 @@ For information about creating entry filters, see [Filter and format codes](http
 
 Ce tableau décrit les filtres de saisie du menu de sélection :
 
-| Filtres de saisie               | Description                                                                                                                                  |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~A                              | Permet la saisie de toute lettre, mais les transforme en caractères majuscules.                                                              |
-| &9                              | Permet tout chiffre.                                                                                                                         |
-| &A                              | Ne permet que la saisie de lettres majuscules.                                                                                               |
-| &a                              | Ne permet que la saisie de lettres (minuscules et majuscules).                                                                               |
-| &@                              | Ne permet que la saisie de caractères alphanumériques. Pas de caractères spéciaux.                                                           |
-| ~a##                            | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                         |
-| !0&9##/##/##                    | Standard date entry format. Display zeros in entry spaces. Allow any numbers.                                                                |
-| !0&9 Day: ## Month: ## Year: ## | Time entry format. Display zeros in entry spaces. Allow any numbers. Limited to hours and minutes.                                           |
-| !0&9##:##                       | Time entry format. Limited to hours and minutes. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                |
-| !0&9## Hrs ## Mins ## Secs      | Time entry format. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
-| !0&9Hrs: ## Mins: ## Secs: ##   | Time entry format. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
-| !0&9##-##-##-##                 | Local telephone number format. Display zeros in entry spaces. Allow any number. Three entries, hyphen, four entries.                         |
-| !_&9(###)!0###-####             | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                         |
-| !0&9###-###-###                 | Long distance telephone number. Display zeros in entry spaces. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
-| !0&9###-##-###                  | Social Security number. Display zeros in entry spaces. Allow any numbers.                                                                    |
-| ~"A-Z;0-9; ;,;.;-"              | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                |
-| &"a-z;0-9; ;,;.;-"              | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                         |
-| &"0-9;.;-"                      | Numbers. Allow only numbers, decimal points, and hyphens (minus sign).                                                                       |
+| Filtres de saisie               | Description                                                                                                                                                 |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ~A                              | Permet la saisie de toute lettre, mais les transforme en caractères majuscules.                                                                             |
+| &9                              | Permet tout chiffre.                                                                                                                                        |
+| &A                              | Ne permet que la saisie de lettres majuscules.                                                                                                              |
+| &a                              | Ne permet que la saisie de lettres (minuscules et majuscules).                                                                                              |
+| &@                              | Ne permet que la saisie de caractères alphanumériques. Pas de caractères spéciaux.                                                                          |
+| ~a##                            | State name abbreviation (e.g., CA). Permet la saisie de deux lettres, mais les transforme en caractères majuscules.                                         |
+| !0&9##/##/##                    | Filtre standard de saisie des dates. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre.                                        |
+| !0&9 Day: ## Month: ## Year: ## | Filtre personnalisé de saisie de date. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre. Limited to hours and minutes.        |
+| !0&9##:##                       | Filtre de saisie d’heure. Limited to hours and minutes. Affiche des zéros aux emplacements de saisie. Allow any four numbers, separated by a colon.         |
+| !0&9## Hrs ## Mins ## Secs      | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Allow any two numbers before each word.                                             |
+| !0&9Hrs: ## Mins: ## Secs: ##   | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Allow any two numbers after each word.                                              |
+| !0&9##-##-##-##                 | Local telephone number format. Affiche des zéros aux emplacements de saisie. Allow any number. Three entries, hyphen, four entries.                         |
+| !_&9(###)!0###-####             | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                                        |
+| !0&9###-###-###                 | Long distance telephone number. Affiche des zéros aux emplacements de saisie. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
+| !0&9###-##-###                  | Social Security number. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre.                                                     |
+| ~"A-Z;0-9; ;,;.;-"              | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                               |
+| &"a-z;0-9; ;,;.;-"              | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                        |
+| &"0-9;.;-"                      | Numbers. Allow only numbers, decimal points, and hyphens (minus sign).                                                                                      |
 
 
 #### Grammaire JSON
