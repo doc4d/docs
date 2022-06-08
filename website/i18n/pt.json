@@ -267,14 +267,14 @@
       "FormObjects/text": {
         "title": "Texto"
       },
-      "FormObjects/viewProAreaOverview": {
+      "FormObjects/viewProArea_overview": {
         "title": "Área 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Área Web"
       },
-      "FormObjects/writeProAreaOverview": {
-        "title": "Área 4D Write Pro"
+      "FormObjects/writeProArea_overview": {
+        "title": "4D Write Pro area"
       },
       "GettingStarted/installation": {
         "title": "Instalação e ativação"
