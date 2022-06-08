@@ -53,15 +53,7 @@ Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
 Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Datei anlegen:
 
-- Project folder
-    + Project
-
-
-
-
-        * Sources
-            - Classes
-                + Polygon.4dm
+Project folder Project Sources Classes Polygon.4dm
 
 ### Eine Klasse löschen
 
