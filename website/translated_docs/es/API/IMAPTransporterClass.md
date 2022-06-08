@@ -1651,7 +1651,7 @@ searchCriteria = HEADER CONTENT-TYPE "E" NOT SUBJECT "o" NOT HEADER CONTENT-TYPE
 ```
 ... devuelve los mensajes cuyo encabezado content-type contiene " e " y cuyo encabezado Subject no contiene " o " y cuyo encabezado content-type no es " Mixed ".
 
-As concerns the last two examples, notice that the result of the search is different when you remove the parentheses of the first search key list.
+En cuanto a los dos últimos ejemplos, observe que el resultado de la búsqueda es diferente cuando se eliminan los paréntesis de la primera lista de llaves de búsqueda.
 
 - The *searchCriteria* may include the optional \[CHARSET] specification. This consists of the "CHARSET" word followed by a registered \[CHARSET] (US ASCII, ISO-8859). It indicates the charset of the *searchCriteria* string. Therefore, you must convert the *searchCriteria* string into the specified charset if you use the \[CHARSET] specification (see the `CONVERT FROM TEXT` or `Convert to text` commands). By default, 4D encodes in Quotable Printable the searchCriteria string if it contains extended characters.
 
@@ -1741,10 +1741,10 @@ Search-keys may request the value to search for:
 
 #### Descripción
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. Esta función permite recuperar la información sobre el buzón.
+La función `.selectBox()` <!-- REF #IMAPTransporterClass.selectBox().Summary -->selecciona el buzón *name* como el buzón actual<!-- END REF -->. Esta función permite recuperar la información sobre el buzón.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
-In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+En el parámetro *name*, pase el nombre del buzón a acceder. El nombre representa una jerarquía inequívoca de izquierda a derecha, con niveles separados por un carácter delimitador específico. El delimitador se puede recuperar con la función [`.getDelimiter()`](#getdelimiter).
 
 The optional *state* parameter defines the type of access to the mailbox. Los valores posibles son:
 
@@ -1752,9 +1752,9 @@ The optional *state* parameter defines the type of access to the mailbox. Los va
 | --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1     | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                     |
 | IMAP read write state | 0     | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Valor por defecto) |
-> * The function generates an error and returns **Null** if *name* designates a non-existing mailbox.
-> * If there is no open connection, `.selectBox()` will open a connection.
-> * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
+> * La función genera un error y devuelve **Null** si *name* designa un buzón inexistente.
+> * Si no hay ninguna conexión abierta, `.selectBox()` abrirá una conexión.
+> * Si la conexión no se ha utilizado desde el retraso de conexión designado (ver `IMAP New transporter`), se llama automáticamente a la función [`.checkConnection()`](#checkconnection).
 
 **Objeto devuelto**
 
