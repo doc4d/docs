@@ -10,7 +10,7 @@ Usando a linguagem 4D, imprimir a mensagem tradicional ""Hello, world!" na tela 
 ALERT("Hello, World!")
 ```
 
-Esse código vai exibir um alerta normal de plataforma com a mensagem "hello world" contendo um botão OK. Para executar o código, precisa clicar no botão de execução do editor de Método:
+Esse código vai exibir um alerta normal de plataforma com a mensagem "hello world" contendo um botão OK. To execute the code, you just need to click on the execution button in the Code Editor:
 
 ![alt-text](assets/en/Concepts/helloworld.png)
 
@@ -99,7 +99,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 vRef:=Open document("PassFile";"TEXT";Read Mode) // abre documento em modo apenas leitura
 ```
 
-> Predefined constants appear <u>underlined</u> by default in the 4D Method editor.
+> Predefined constants appear <u>underlined</u> by default in the 4D Code Editor.
 
 ## Métodos
 

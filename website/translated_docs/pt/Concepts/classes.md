@@ -71,7 +71,7 @@ To delete an existing class, you can:
 - in the 4D Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
 
 
-### Using 4D interface
+### Using the 4D interface
 
 Class files are automatically stored at the appropriate location when created through the 4D interface, either via the **File** menu or the Explorer.
 

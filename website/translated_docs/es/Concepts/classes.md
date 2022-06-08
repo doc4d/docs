@@ -71,7 +71,7 @@ Para eliminar una clase existente, puede:
 - en el Explorador 4D, seleccionar la clase y hacer clic en ![](assets/en/Users/MinussNew.png) o elegir **Mover a la papelera** en el menú contextual.
 
 
-### Utilizar la interfaz 4D
+### Using the 4D interface
 
 Los archivos de clase se almacenan automáticamente en la ubicación adecuada cuando se crean a través de la interfaz de 4D, ya sea a través del menú **Archivo** o del Explorador.
 

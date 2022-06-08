@@ -119,8 +119,23 @@
       "Backup/settings": {
         "title": "Paramètres de sauvegarde"
       },
+      "code-editor/creating-using-macros": {
+        "title": "Creating and using macros"
+      },
+      "code-editor/find-replace": {
+        "title": "Find and replace"
+      },
+      "code-editor/interface": {
+        "title": "Interface"
+      },
       "code-editor/navigation": {
         "title": "Navigation dropdown"
+      },
+      "code-editor/overview": {
+        "title": "Aperçu"
+      },
+      "code-editor/write-class-method": {
+        "title": "Writing classes and methods"
       },
       "Concepts/about": {
         "title": "À propos du Langage 4D"
@@ -624,13 +639,13 @@
       "FormObjects/text": {
         "title": "Text"
       },
-      "FormObjects/viewProAreaOverview": {
+      "FormObjects/viewProArea_overview": {
         "title": "Zone 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Zone Web"
       },
-      "FormObjects/writeProAreaOverview": {
+      "FormObjects/writeProArea_overview": {
         "title": "Zone 4D Write Pro"
       },
       "GettingStarted/creating": {

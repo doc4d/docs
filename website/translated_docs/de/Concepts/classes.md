@@ -71,7 +71,7 @@ Um eine vorhandene Klasse zu löschen, können Sie:
 - Die Klasse im Explorer auswählen und am unteren Rand auf das Icon ![](assets/en/Users/MinussNew.png) klicken oder im Kontextmenü den Eintrag **In Papierkorb verschieben** wählen.
 
 
-### 4D Oberfläche verwenden
+### Using the 4D interface
 
 Beim Erstellen auf der 4D Oberfläche wird eine Datei Klasse automatisch an der passenden Stelle gespeichert, entweder über das Menü **Datei/Ablage** oder über den Explorer.
 
