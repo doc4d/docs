@@ -30,7 +30,7 @@ Each blob type has its advantages. Use the following table to determine which on
 
 > By default, 4D sets the maximum size of scalar blobs to 2GB, but this size limit may be lower depending on your OS and how much space is available.
 
-You cannot use operators on blobs.
+No se pueden utilizar operadores en los blobs.
 
 ## Checking if a variable holds a scalar blob or a `4D.Blob`
 
