@@ -89,7 +89,7 @@ Los valores posibles son:
 
 La propiedad `.authenticationMode` contiene el modo de autenticación utilizado para abrir la sesión en el servidor de correo.
 
-By default, the most secured mode supported by the server is used.
+Por defecto, se utiliza el modo más seguro soportado por el servidor.
 
 Los valores posibles son:
 
