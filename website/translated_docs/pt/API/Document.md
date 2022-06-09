@@ -20,7 +20,7 @@ title: Document Class
 
 #### Descrição
 
-The `.creationDate` property returns <!-- REF #document.creationDate. Summary -->the creation date of the file<!-- END REF -->.
+A propriedade `.creationDate` retorna <!-- REF #document.creationDate. Summary -->a data de criação do arquivo<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -43,7 +43,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.creationTime` property  returns <!-- REF #document.creationTime. Summary -->the creation  time of the file<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+A propriedade `.creationTime` retorna <!-- REF #document.creationTime. Summary -->a hora de criação do arquivo<!-- END REF --> (expresso como número de segundos a partir de 00:00).
 
 Essa propriedade é**apenas leitura**. 
 
@@ -64,7 +64,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.exists` property returns <!-- REF #document.exists. Summary -->true if the file exists on disk<!-- END REF -->, and false otherwise.
+A propriedade `.exists` retorna <!-- REF #document.exists. Summary -->true se o arquivo existir no disco<!-- END REF -->, senão false.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -85,7 +85,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.extension` property returns <!-- REF #document.extension. Summary -->the extension of the file name (if any)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the file name does not have an extension.
+A propriedade `.extension` retorna <!-- REF #document.extension. Summary -->a extensão do nome do arquivo (se houver)<!-- END REF -->. Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome do arquivo não tiver extensão.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -105,7 +105,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.fullName` property returns <!-- REF #document.fullName. Summary -->the full name of the file, including its extension (if any)<!-- END REF -->.
+A propriedade `.fullName` retorna <!-- REF #document.fullName. Summary -->o nome completo do arquivo, incluindo a extensão (se houver)<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -126,7 +126,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.hidden` property returns <!-- REF #document.hidden.Summary -->true if the file is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
+A propriedade `.hidden` devolve <!-- REF #document.hidden.Summary -->true se a pasta estiver como "escondida" ao nível do sistema<!-- END REF -->, e falso em caso contrário.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -147,7 +147,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.isAlias` property returns <!-- REF #document.isAlias. Summary -->true if the file is an alias, a shortcut, or a symbolic link<!-- END REF -->, and false otherwise.
+A propriedade `.isAlias` devolve <!-- REF #document.isAlias.Summary -->true se o arquivo for um alias, um atalho ou um link simbólico<!-- END REF -->, e falso em caso contrário.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -168,7 +168,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.isFile` property returns <!-- REF #document.isFile. Summary -->always true for a file<!-- END REF -->.
+A propriedade `.isFile` retorna <!-- REF #document.isFile. Summary -->sempre true para um arquivo<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -189,7 +189,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.isFolder` property returns <!-- REF #document.isFolder. Summary -->always false for a file<!-- END REF -->.
+A propriedade `.isFolder` retorna <!-- REF #document.isFolder. Summary -->sempre false para um arquivo<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**. 
 
@@ -210,7 +210,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrição
 
-The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
+A propriedade `.isWritable` retorna <!-- REF #document.isWritable.Summary -->true se o arquivo existir em disco e é editável<!-- END REF -->.
 > The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
 
 Essa propriedade é**apenas leitura**.
