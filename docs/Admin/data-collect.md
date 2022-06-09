@@ -8,9 +8,7 @@ To help us make our products always better, we automatically collect data regard
 This page explains:
 
 - what information is collected
-- where this information is stored and when it is sent to 4D data server
-- how to disable the automatic data collection in built client-server applications
-
+- where this information is stored and when it is sent to the 4D data server
 
 
 ## Collected information
@@ -33,14 +31,14 @@ Data are collected during the following events:
 |is headless|True|Information returned by Get Application Info|
 |4D version|1920|Information returned by Application Version|
 |4D build number|123456|Information returned by Application Version|
-|license|{"name":"4D Developer Professional 19R9 - SPECIAL FOR UNIT TESTS","products":[{"id":808464433,"name":"4D","allowedCount":1}]}|Information returned by Get License Info, only the name and the products part|
+|license|{"name":"4D Developer Professional 19R6 - SPECIAL FOR UNIT TESTS","products":[{"id":808464433,"name":"4D","allowedCount":1}]}|Information returned by Get License Info, only the name and the products part|
 
 
 ### Collected per database at opening
 
 |Data|Example|Description|
 |---|----|---|
-|id|hashed string|Unique id associated to the database (to avoid the same database to appear multiple times in the data collection)|
+|id|hashed string (*Polynomial Rolling hash*)|Unique id associated to the database (to avoid the same database to appear multiple times in the data collection)|
 |size of data file|419430400|Data file gives the path to the data file|
 |size of index|419430400|In the Maintenance and Security Center, the index size is stored in an array called DT_W_FileSize and it's the third element|
 size of cache|419430400|Information returned by Cache Info|
@@ -80,13 +78,3 @@ Once a week, the file is automatically sent over the network to our analysis dat
 
 > If the file could not be sent for some reason, it is nevertheless deleted and no error message is displayed on the 4D Server side. 
 
-
-## Disabling data collection in client/server built applications
-
-You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page). 
-
-To disable the collection, modify the value of the `DataCollection` key in the `info.plist` file of the merged server:
-
-|key|Default value|Value to disable collection|
-|---|---|---|
-|DataCollection|true|**false**|
