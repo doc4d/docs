@@ -2412,7 +2412,7 @@ The collection returned by `VP Get values` contains a two-dimensional collection
 
     | Propiedad | Tipo  | Descripción                                                 |
     | --------- | ----- | ----------------------------------------------------------- |
-    | value     | Fecha | Value in the cell (except- time)                            |
+    | value     | Fecha | Valor de la celda (excepto - time)                          |
     | time      | Real  | Time value (in seconds) if the value is of the js date type |
 
 
@@ -5142,10 +5142,10 @@ The *valuesCol* parameter is two-dimensional:
 *   The first-level collection contains subcollections of values. Each subcollection defines a row. Each subcollection defines a row.
 *   Each subcollection defines cell values for the row. Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
 
-    | Propiedad | Tipo                                     | Descripción                      |
-    | --------- | ---------------------------------------- | -------------------------------- |
-    | value     | Integer, Real, Boolean, Text, Date, Null | Value in the cell (except- time) |
-    | time      | Real                                     | Valor hora (en segundos)         |
+    | Propiedad | Tipo                                     | Descripción                        |
+    | --------- | ---------------------------------------- | ---------------------------------- |
+    | value     | Integer, Real, Boolean, Text, Date, Null | Valor de la celda (excepto - time) |
+    | time      | Real                                     | Valor hora (en segundos)           |
 
 #### Ejemplo
 
