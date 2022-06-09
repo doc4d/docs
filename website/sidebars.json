@@ -153,8 +153,9 @@
 		"TLS Protocol": [
 			"Admin/tls"
 		],
-		"License Management": [
-			"Admin/licenses"
+		"Licenses & Data Collection": [
+			"Admin/licenses",
+			"Admin/data-collect"
 		],
 		"Access Rights": [
 			"Users/overview",
