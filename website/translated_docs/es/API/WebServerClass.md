@@ -12,7 +12,7 @@ La API de la clase `WebServer` permite iniciar y supervisar un servidor web para
 
 Los objetos del servidor web se instancian con el comando [`WEB Server`](#web-server).
 
-They provide the following properties and functions:
+Ofrecen las siguientes propiedades y funciones:
 
 
 ### Resumen
