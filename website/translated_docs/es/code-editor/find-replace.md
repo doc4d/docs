@@ -13,7 +13,7 @@ The Find/Replace commands for methods, classes or functions are located in **Edi
 
 **Note:** The find commands located above the **Find** submenu are not specific to the Code Editor but may be used to search for a value among all the methods, classes or functions, using the **Find in design** feature in the toolbar or in the **Edit** menu.
 
-## Find  
+## Buscar  
 
 Selecting the **Find...** command displays the following dialog box:
 
