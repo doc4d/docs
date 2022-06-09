@@ -8,14 +8,19 @@ To help us make our products always better, we automatically collect data regard
 This page explains:
 
 - what information is collected
-- where this information is stored and when it is sent to 4D servers
+- where this information is stored and when it is sent to 4D data server
 - how to disable the automatic data collection in built client-server applications
 
 
 
 ## Collected information
 
-Data is collected at the following steps: at 4D Server startup, at database opening and closure, as well as at  webserver startup.
+Data are collected during the following events: 
+
+- 4D Server startup, 
+- database opening,
+- database closure,
+- webserver startup.
 
 ### Collected at 4D Server startup
 
@@ -83,5 +88,5 @@ You can disable the automatic data collection in [client/server built applicatio
 To disable the collection, modify the value of the `DataCollection` key in the `info.plist` file of the merged server:
 
 |key|Default value|Value to disable collection|
-|---|---|
-|DataCollection|true|**false**
+|---|---|---|
+|DataCollection|true|**false**|
