@@ -3,11 +3,11 @@ id: FileClass
 title: File
 ---
 
-`File` objects are created with the [`File`](#file) command. They contain references to disk files that may or may not actually exist on disk. For example, when you execute the `File` command to create a new file, a valid `File` object is created but nothing is actually stored on disk until you call the [`file.create( )`](#create) function.
+Los objetos `File` se crean con el comando [`File`](#file). Contienen referencias a archivos de disco que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando `File` para crear un nuevo archivo, se crea un objeto `File` válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función [`file.create( )`](#create).
 
 ### Ejemplo
 
-The following example creates a preferences file in the project folder:
+El siguiente ejemplo crea un archivo de preferencias en la carpeta del proyecto:
 
 ```code4d
 var $created : Boolean
@@ -84,7 +84,7 @@ El comando `File` <!-- REF #_command_.File.Summary -->crea y devuelve un nuevo o
 
 En el parámetro *path*, pase una ruta de archivo. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA/myfile.txt").
 
-> Only absolute pathnames are supported with the `File` command.
+> Sólo se admiten nombres de ruta absolutos con el comando `File`.
 
 Por defecto, 4D espera una ruta expresada con la sintaxis POSIX. Si trabaja con los nombres de ruta de plataforma (Windows o macOS), debe declararlo utilizando el parámetro *pathType*. Las siguientes constantes están disponibles:
 
