@@ -95,7 +95,8 @@
 			"code-editor/overview",
 			"code-editor/write-class-method",
 			"code-editor/find-replace",
-			"code-editor/creating-using-macros"
+			"code-editor/creating-using-macros",
+			"Tags/tags"
 		],
 		"Debugging": [
 			"Debugging/basics",
@@ -103,9 +104,6 @@
 			"Debugging/breakpoints",
 			"Debugging/debugging-remote",
 			"Debugging/debugLogFiles"
-		],
-		"Transformation Tags": [
-			"Tags/tags"
 		],
 		"Settings": [
 			"settings/overview",

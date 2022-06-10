@@ -87,7 +87,7 @@ You can display the following lists of items in the lists area of the Code Edito
 
 **Note:** Except for the Macros element, all the lists are in alphabetical order.
 
-#### Save as template
+### Save as template
 
 You can save the lists set in the Code Editor window in the form of a template. Once the template is saved, the parameters set in it will be used for each new Code Editor window that is opened.
 
@@ -414,6 +414,7 @@ There are two ways to create comments:
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
 ```//This is a comment\
+
  For(vCounter;1;2)\
   //comment\
   //comment\

@@ -104,7 +104,6 @@ class Index extends React.Component {
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
                   [${subContents.codeEditor}](${siteConfig.baseUrl}${this.props.language}/code-editor/overview.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
-	            [${subContents.tags}](${siteConfig.baseUrl}${this.props.language}/Tags/tags.html)<br>
 				[${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
