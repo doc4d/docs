@@ -256,7 +256,7 @@ The following table summarizes the different cases and the value returned for th
 
 #### Ejemplo 1
 
-Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. But you can write the following:
+Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
 
 ```4d
 var $phone : Text

@@ -103,10 +103,10 @@ Considerando las propiedades de tabla siguientes:
 ## .all()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                      |
-| ------- | ----------------------------------- |
-| v17 R5  | Support of the *settings* parameter |
-| v17     | Añadidos                            |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v17 R5  | Soporte del parámetro *settings* |
+| v17     | Añadidos                         |
 </details>
 
 

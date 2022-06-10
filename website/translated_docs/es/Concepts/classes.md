@@ -53,15 +53,7 @@ Al nombrar las clases, debe tener en cuenta las siguientes reglas:
 
 Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el siguiente archivo:
 
-- Carpeta Project
-    + Project
-
-
-
-
-        * Sources
-            - Clases
-                + Polygon.4dm
+Project folder Project Sources Classes Polygon.4dm
 
 ### Borrar una clase
 
@@ -156,7 +148,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto de la [clase "Class"](API/ClassClass.md). Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md).
 
-- String [`name`](API/ClassClass.md#name)
+- cadena [`name`](API/ClassClass.md#name)
 - objeto [`superclass`](API/ClassClass.md#superclass) (null si ninguno)
 - función [`new()`](API/ClassClass.md#new), que permite instanciar objetos de clase.
 
@@ -213,7 +205,7 @@ Function getFullname()->$fullname : Text
     $fullname:=This.firstName+" "+Uppercase(This.lastName)
 ```
 
-For a class function, the `Current method name` command returns: `<ClassName>.<FunctionName>`, for example "MyClass.myFunction".
+Para una función clase, el comando `Current method name` devuelve: `<ClassName>.<FunctionName>`, por ejemplo "MyClass.myFunction".
 
 In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. Se soportan las siguientes sintaxis:
 
@@ -249,7 +241,7 @@ Function add($x : Integer)
 
 #### Valor devuelto
 
-You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. Por ejemplo:
+Se declara el parámetro de retorno (opcional) añadiendo una flecha (`->`) y la definición del parámetro de retorno después de la lista de parámetros de entrada, o dos puntos (`:`) y el tipo de parámetro de retorno únicamente. Por ejemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
@@ -528,6 +520,11 @@ Function sayName()
 // Function definition
 Function getArea()
     var $0 : Integer
+    $0:=(This.height)*(This.width)
+
+// Function definition
+Function getArea()
+    var $0 : Integer
 
     $0:=(This.height)*(This.width)
 ```
@@ -660,7 +657,7 @@ Several commands of the 4D language allows you to handle class features.
 
 #### `OB Class ( object ) -> Object | Null`
 
-`OB Class` devuelve la clase del objeto pasado como parámetro.
+`OB Class` returns the class of the object passed in parameter.
 
 
 ### `OB Instance of`

@@ -53,15 +53,7 @@ When naming classes, you should keep in mind the following rules:
 
 For example, if you want to define a class named "Polygon", you need to create the following file:
 
-- Project folder
-    + Project
-
-
-
-
-        * Sources
-            - Classes
-                + Polygon.4dm
+Project folder Project Sources Classes Polygon.4dm
 
 ### Deleting a class
 

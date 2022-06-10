@@ -53,15 +53,7 @@ $hello:=$person.sayHello() // "Hello John Doe"
 
 たとえば、"Polygon" という名前のクラスを定義するには、次のファイルを作成する必要があります:
 
-- Project フォルダー
-    + Project
-
-
-
-
-        * Sources
-            - Classes
-                + Polygon.4dm
+Project フォルダー Project Sources Classes Polygon.4dm
 
 ### クラスの削除
 

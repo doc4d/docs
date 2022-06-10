@@ -53,15 +53,7 @@ Lorsque vous nommez des classes, gardez à l'esprit les règles suivantes :
 
 Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez créer le fichier suivant :
 
-- Dossier Project
-    + Project
-
-
-
-
-        * Sources
-            - Classes
-                + Polygon.4dm
+Project folder Project Sources Classes Polygon.4dm
 
 ### Supprimer une classe
 
