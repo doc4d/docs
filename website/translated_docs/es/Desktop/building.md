@@ -213,7 +213,7 @@ A client/server application comes from the combination of three items:
 
 - Un proyecto 4D compilado,
 - La aplicación 4D Server,
-- The 4D Volume Desktop application (macOS and/or Windows).
+- La aplicación 4D Volumen Desktop (macOS y/o Windows).
 
 Once built, a client/server application is composed of two customized parts: the Server portion (unique) and the Client portion (to install on each client machine).
 
