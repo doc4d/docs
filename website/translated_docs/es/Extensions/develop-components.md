@@ -101,7 +101,7 @@ component_method("host_method_name")
 > Tenga en cuenta que un método interpretado puede llamar a un método compilado, pero no a la inversa, salvo mediante el uso de los comandos  `EXECUTE METHOD` y `EXECUTE FORMULA`.
 
 
-## Sharing of classes and functions
+## Compartir las clases y las funciones
 
 By default, component classes and functions cannot be called from the 4D method editor of the host project. If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. Additionally, you can control how component classes and functions are suggested in the host method editor.
 

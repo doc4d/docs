@@ -5,11 +5,11 @@ title: Folder
 
 
 
-`Folder` objects are created with the [`Folder`](#folder) command. They contain references to folders that may or may not actually exist on disk. For example, when you execute the `Folder` command to create a new folder, a valid `Folder` object is created but nothing is actually stored on disk until you call the [`folder.create( )`](#create-) function.
+Los objetos `Folder` se crean con el comando [`Folder`](#folder). Contienen referencias a carpetas que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando `Folder` para crear una nueva carpeta, se crea un objeto `Folder` válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función [`folder.create( )`](#create-).
 
 ### Ejemplo
 
-The following example creates a "JohnSmith" folder:
+El siguiente ejemplo crea una carpeta "JohnSmith":
 
 ```code4d
 Form.curfolder:=Folder(fk database folder)
@@ -82,7 +82,7 @@ El comando `Folder` <!-- REF #_command_.Folder.Summary -->crea y devuelve un nue
 
 En el parámetro *path*, pase una ruta de carpeta. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA").
 
-> Only absolute pathnames are supported with the `Folder` command.
+> Sólo se soportan los nombres de ruta absolutos con el comando `Folder`.
 
 Por defecto, 4D espera una ruta expresada con la sintaxis POSIX. Si trabaja con los nombres de ruta de plataforma (Windows o macOS), debe declararlo utilizando el parámetro *pathType*. Las siguientes constantes están disponibles:
 
@@ -102,7 +102,7 @@ En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utiliz
 | fk database folder         | 4     | Filesystem asociado: "/PACKAGE"                                                                     |
 | fk desktop folder          | 115   |                                                                                                     |
 | fk documents folder        | 117   | Carpeta Documentos del usuario                                                                      |
-| fk licenses folder         | 1     | Folder containing the machine's 4D license files                                                    |
+| fk licenses folder         | 1     | Carpeta que contiene los archivos de licencia 4D de la máquina                                      |
 | fk logs folder             | 7     | Filesystem asociado: "/LOGS"                                                                        |
 | fk mobileApps folder       | 10    |                                                                                                     |
 | fk remote database folder  | 3     | 4D database folder created on each 4D remote machine                                                |
@@ -215,12 +215,12 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Parámetros        | Tipo      |    | Descripción                                  |
-| ----------------- | --------- | -- | -------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Texto     | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Tipo de enlace del alias                     |
-| Resultado         | 4D.File   | <- | Referencia de alias o de acceso directo      |
+| Parámetros        | Tipo      |    | Descripción                                          |
+| ----------------- | --------- | -- | ---------------------------------------------------- |
+| destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo |
+| aliasName         | Texto     | -> | Nombre del alias o del atajo                         |
+| aliasType         | Integer   | -> | Tipo de enlace del alias                             |
+| Resultado         | 4D.File   | <- | Referencia de alias o de acceso directo              |
 <!-- END REF -->
 
 
