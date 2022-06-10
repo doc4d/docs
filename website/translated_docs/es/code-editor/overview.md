@@ -60,13 +60,13 @@ After creating a project method, you can rename it and modify its properties. Pr
 
 The other types of methods do not have specific properties. Their properties are related to those of the objects to which they are attached.
 
-To modify the properties of a project method:
+To display the **Method Properties** dialog box for a project method, you can either:
 
-1.  In the [Code Editor](write-class-method.md):
-* select the **Method Properties...** command in the **Method** menu
-* on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu. The **Method Properties** dialog appears.
+- in the [Code Editor](write-class-method.md), select the **Method Properties...** command in the **Method** menu,
+- or on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu.
 
-**Note:** A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
+
+> A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
 
 #### Nombre
 
@@ -78,7 +78,7 @@ The new name must comply with 4D naming rules (see [Identifiers](../Concepts/ide
 
 With 4D Server, the method name is changed on the server when you finish editing it. If more than one user is modifying the method name at the same time, the final method name will be the name specified by the last user to finish editing it. You may want to specify a method owner so that only certain users can change the method's name
 
-**Note:** Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned.
+> Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned.
 
 #### Atributos
 
