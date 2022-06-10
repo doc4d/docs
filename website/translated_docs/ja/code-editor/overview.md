@@ -22,24 +22,24 @@ You can create [several types of methods](../Concepts/methods.md):
 
 ## クラスの作成
 
-A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. ファイル名がクラス名になります。
+4D においてユーザークラスとは、[`/Project/Sources/Classes/`](../Project/architecture.md#sources) フォルダーに保存された専用のメソッドファイル (**.4dm**) によって定義されます。 ファイル名がクラス名になります。
 
 You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
 
-For more information, please refer to the [Classes](../Concepts/classes.md) section.
+詳細については、[クラス](../Concepts/classes.md) を参照してください。
 
 
-## Deleting methods or classes
+## メソッドやクラスの削除
 
-To delete an existing method or class, you can:
+既存のメソッドやクラスを削除するには:
 
-- on your disk, remove the *.4dm* file from the "Sources" folder,
-- in the 4D Explorer, select the method or class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
+- ディスク上で "Sources" フォルダーより* .4dm* ファイルを削除します。
+- 4D エクスプローラーでは、メソッドやクラスを選択した状態で ![](assets/en/Users/MinussNew.png) をクリックするか、コンテキストメニューより **移動 ＞ ゴミ箱** を選択します。
 
 > To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
 
 
-## Importing and exporting code
+## コードのインポートとエクスポート
 
 You can import and export a method or a class code in the form of a file. These commands are found in the **Method** menu of the Code editor.
 
@@ -60,25 +60,25 @@ The import/export function is multi-platform: a method exported under Mac OS can
 
 他のタイプのメソッドには専用のプロパティがありません。 これらのメソッドのプロパティは、それらが関連付けられているオブジェクトに基づいて決定されます。
 
-プロジェクトメソッドのプロパティを変更するには:
+To display the **Method Properties** dialog box for a project method, you can either:
 
-1.  In the [Code Editor](write-class-method.md):
-* select the **Method Properties...** command in the **Method** menu
-* on the **Methods** page of the Explorer, **right-click** on the project method and select **Method Properties...** in the context menu or options menu. **メソッドプロパティ** ダイアログボックスが表示されます。
+- [コードエディター](write-class-method.md)において、**メソッド** メニューから **メソッドプロパティ...** を選択します。
+- または、エクスプローラーの **メソッド** ページでプロジェクトメソッドを選択し、コンテキストメニューまたはオプションメニューから **メソッドプロパティ...** を選択します。
 
-**Note:** A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
+
+> 一回の処理で複数のプロジェクトメソッドの属性を設定するために、属性の一括設定を使用できます ([属性の一括設定](#属性の一括設定) 参照)。
 
 #### 名称
 
-You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
+**メソッドプロパティ** ウィンドウの **名称** エリア、またはエクスプローラーでプロジェクトメソッド名を変更できます。
 
-The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). 同じ名称のメソッドが既に存在する場合、4D はその旨を知らせるメッセージを表示します。 名称変更後、4D メソッドリストをソートします。
+新しい名称は 4D の命名規則に沿っていなければなりません ([識別子](../Concepts/identifiers.md) 参照)。 同じ名称のメソッドが既に存在する場合、4D はその旨を知らせるメッセージを表示します。 名称変更後、4D メソッドリストをソートします。
 
-**Warning:** Changing the name of a method already used in the database can invalidate any methods or formulas that use the old method name and runs the risk of disrupting application functioning. You can rename the method manually but it is strongly recommended to use the renaming function for project methods, described in [Renaming](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.en.html). この機能を使用すれば、デザイン環境における当該メソッドの呼び出し箇所がすべて自動的に更新されます (ただし EXECUTE METHOD など、文字列としてメソッド名が参照されている個所を除きます)。
+**警告:** プロジェクトメソッドの名前を変更すると、そのメソッドを旧名称で呼び出している他のメソッドやフォーミュラなど、アプリケーションの機能が無効になるリスクがあります。 このため、この変更を手動ではなく、[名称変更](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.ja.html) で説明されているプロジェクトメソッド名の名称変更機能によりおこなうことが強く推奨されます。 この機能を使用すれば、デザイン環境における当該メソッドの呼び出し箇所がすべて自動的に更新されます (ただし EXECUTE METHOD など、文字列としてメソッド名が参照されている個所を除きます)。
 
 4D Server の場合、名称変更は変更終了後にサーバーに反映されます。 複数のユーザーが同時に名称を変更しようとすると、最後におこなわれた名称変更が適用されます。 メソッドのオーナーを指定すれば特定のユーザー以外はメソッド名を変更できないようにできます。
 
-**Note:** Database methods cannot be renamed. オブジェクトに紐付いたトリガー、フォームメソッド、オブジェクトメソッドも同様です。これらは関連先のオブジェクトにより名称を決定されます。
+> データベースメソッドの名称を変更することはできません。 オブジェクトに紐付いたトリガー、フォームメソッド、オブジェクトメソッドも同様です。これらは関連先のオブジェクトにより名称を決定されます。
 
 #### 属性
 
@@ -86,21 +86,21 @@ The new name must comply with 4D naming rules (see [Identifiers](../Concepts/ide
 
 ##### 非表示
 
-If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box (see [From the Execute Method dialog box](#from-the-execute-method-dialog-box)).
+ユーザーに対し、**実行** メニューの **メソッド...** から特定のメソッドを実行させたくない場合、このオプションを選択すればそのメソッドを非表示にできます。 非表示のメソッドはメソッド実行ダイアログボックスに表示されなくなります ([メソッド実行ダイアログボックスから実行](#メソッド実行ダイアログボックスから実行) 参照)。
 
-プロジェクトメソッドを非表示にしても、データベースプログラマーはそれを使用することができます。 It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
+プロジェクトメソッドを非表示にしても、データベースプログラマーはそれを使用することができます。 メソッドを非表示にしてもエクスプローラーのメソッドページやコードエディターのメソッドリストには表示されます。
 
 ##### コンポーネントとホストプロジェクト間で共有
 
 この属性は、コンポーネントのフレームワークで使用されます。 このオプションが選択されていると、アプリケーションがホストデータベースとして実行されている場合、そのメソッドがコンポーネントから実行可能になります。 また、アプリケーションがコンポーネントとして実行されている場合、そのメソッドはホストデータベースから実行可能となります。
 
-For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
+コンポーネントについては [4Dコンポーネントの開発とインストール](../Extensions/develop-components.md) を参照ください。
 
 ##### サーバー上で実行
 
 この属性は、クライアント/サーバーモードの 4Dアプリケーションでのみ考慮されます。 このオプションが選択されていると、そのプロジェクトメソッドは呼び出し方に関わらず常にサーバー上で実行されます。
 
-For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
+このオプションに関する詳細は 4D Serverリファレンスマニュアルの [サーバー上で実行属性](https://doc.4d.com/4Dv19R5/4D/19-R5/Execute-on-Server-attribute.300-5878333.ja.html) を参照ください。
 
 #### 実行モード
 
@@ -108,7 +108,7 @@ For more information on this option, refer to [Execute on Server attribute](#exe
 
 プリエンプティブモード機能を利用したい場合、プリエンプティブモードで実行したいメソッドをすべて明示的に宣言する必要があります。 その後、コンパイラーがこれらのメソッドが実際にスレッドセーフであるかどうかをチェックします。
 
-**Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html) section.
+**注:** プリエンプティブモードでの実行は、コンパイルモードでのみ利用可能です。 詳細については、[プリエンプティブ4Dプロセス](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.ja.html) の章を参照ください。
 
 以下のオプションが提供されています:
 
@@ -116,19 +116,19 @@ For more information on this option, refer to [Execute on Server attribute](#exe
 
 このオプションがチェックされている場合、4Dコンパイラーはメソッドが実際にプリエンプティブモードで実行可能かどうかを検証し、そうでない場合 (たとえば、プリエンプティブモードで実行不可能なコマンドやメソッドを直接的あるいは間接的に呼び出している場合など) にはエラーを返します。なお、コールチェーンはすべて解析されますが、最初のサブレベルに対してのみエラーが報告されます。 エラーの場合には、メソッドを編集してスレッドセーフにするか、あるいは別のオプションを選択します。
 
-メソッドのプリエンプティブ性が証明されると、内部で "thread safe" というタグ付けがされ、すべての要件が満たされればプリエンプティブモードで実行されます。 This property defines its eligibility for preemptive mode but does not guarantee that the method will actually be run in preemptive mode, since this execution mode requires a specific context (see [When is a process started preemptively?](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html#2822148)).
+メソッドのプリエンプティブ性が証明されると、内部で "thread safe" というタグ付けがされ、すべての要件が満たされればプリエンプティブモードで実行されます。 このプロパティはプリエンプティブモードの資格を定義しますが、メソッドが実際にプリエンプティブモードで実行されることを保証するものではありません。プリエンプティブ実行モードは特定のコンテキストを必要とするからです ([プロセスがプリエンプティブに実行される条件とは？](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.ja.html#2822148) を参照ください)。
 
 -   **プリエンプティブプロセスでは実行不可**: このオプションをチェックすると、当該メソッドはプリエンプティブモードでの実行は不可能であると宣言し、以前の 4D のバージョンと同様に常にコオペラティブモードで実行されます。 メソッドの "preemptive" プロパティは "incapable" に設定されます。
 
 このオプションがチェックされている場合、4Dコンパイラーはメソッドがプリエンプティブ実行可能かどうかを検証しません。メソッドは内部で自動的に "thread unsafe" とタグ付けされます (たとえ、理論的にはスレッドセーフであってもです)。 ランタイムで呼び出された場合、このメソッドは同じスレッド内の他のメソッドを "汚染" し、他のメソッドがスレッドセーフであったとしても、スレッドはコオペラティブモードでの実行を強制されます。
 
--   **Indifferent **(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. メソッドの "preemptive" プロパティは "indifferent" に設定されます。
+-   **特に設定しない** (デフォルト): このオプションをチェックすると、当該メソッドについてはプリエンプティブプロパティを管理しないことを宣言します。 メソッドの "preemptive" プロパティは "indifferent" に設定されます。
 
 このオプションがチェックされているとき、4Dコンパイラーはメソッドのプリエンプティブ性を評価し、内部的に "thread safe" あるいは "thread unsafe" のタグ付けをします。 プリエンプティブ実行に関するエラーは報告されません。 メソッドがスレッドセーフと評価されていれば、ランタイムでプリエンプティブコンテキストから呼び出された場合にはプリエンプティブスレッド実行を妨げません。 逆に、メソッドがスレッドアンセーフであると評価された場合には、ランタイムで呼び出された場合に、プリエンプティブなスレッド実行を不可能にします。
 
-Note that with this option, whatever the internal thread safety evaluation, the method will always be executed in cooperative mode when called directly by 4D as the first parent method (for example through the [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html) command). 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
+このオプションを使用した場合、内部でのスレッドセーフ評価に関わらず、最初の親メソッドとしてメソッドが 4D から直接呼び出された場合 (たとえば [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.ja.html) コマンドから呼び出された場合など)、メソッドは常にコオペラティブモードで実行されます。 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
 
-***Particular case*:** If the method has also the **Shared by components and host database** property (see [Project method properties](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.en.html)), setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
+***特殊なケース*:** メソッドの **コンポーネントとホストプロジェクト間で共有** プロパティがチェックされている場合 ([プロジェクトメソッドプロパティ](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.ja.html) 参照)、**特に設定しない** オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。 If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
 
 #### 公開オプション
 
