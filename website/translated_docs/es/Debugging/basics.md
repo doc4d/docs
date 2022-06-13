@@ -3,9 +3,9 @@ id: basics
 title: Básicos
 ---
 
-Los errores son comunes. It would be unusual to write a substantial number of lines of code without generating any errors. Conversely, treating and/or fixing errors is normal, too!
+Los errores son comunes. Sería inusual escribir un número importante de líneas de código sin generar errores. Por el contrario, tratar y/o corregir errores también es normal.
 
-The 4D development environment provides several debugging tools for all types of errors.
+El entorno de desarrollo 4D ofrece varias herramientas de depuración para todo tipo de errores.
 
 ## Tipos de error
 
