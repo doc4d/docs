@@ -383,11 +383,11 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 3.  "更新する属性" エリアでは、ドロップダウンリストから更新対象の属性を選択し、**True** または **False** ラジオボタンを選択します。 **注:** "WSDL で公開する" 属性を True に設定した場合、"Webサービスとして公開" 属性が True に設定されたメソッドにのみ適用されます。
 4.  **適用** をクリックします。 検索条件に合致するプロジェクトメソッドに対し、属性の変更は即座に反映されます。
 
-## Executing methods
+## メソッドの実行
 
-Project methods written in your application are usually called automatically during the use of the application via menu commands, buttons, other methods, and so on. As for database methods, they are executed in relation to specific events that occur in the application. 
+アプリケーションに定義されたプロジェクトメソッドは通常、アプリケーションの使用中にボタンやメニュー、他のメソッドなどから自動的に呼び出されます。 データベースメソッドについては、アプリケーションで発生する特定のイベントに反応して実行されます。 
 
-However, for testing and debugging purposes, 4D lets you manually execute project methods and certain database methods in Design mode. In this case, it is possible to run the method in a new process and/or directly in Debug mode, in order to check its execution step by step.
+しかし、テストやデバッグの目的で、プロジェクトメソッドや特定のデータベースメソッドをデザインモードで実行することができます。 この場合、メソッドを新規プロセスで実行するか、または直接デバッグモードで一行ごと実行できます。
 
 Moreover, with 4D Server, you can indicate whether 4D Server should execute a project method on the server machine or on other clients' machines. You can execute methods in two ways:
 
