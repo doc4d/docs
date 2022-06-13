@@ -1,12 +1,12 @@
 ---
 id: overview
-title: About 4D Code
+title: 4D コードについて
 ---
 
 
-The 4D code used across your application is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md).
+アプリケーションで使用される 4D コードは、 [メソッド](../Concepts/methods.md) および [クラス](../Concepts/classes.md) に記述されます。
 
-The 4D IDE provides you with various features to create, edit, export, or delete your code. You will usually use the 4D [code editor](write-class-method.md) to work with your code.
+4D IDE には、コードを作成・編集・エクスポート・削除するためのさまざまな機能があります。 通常は、4D の [コードエディター](write-class-method.md) を使用して、コードを管理します。
 
 
 ## Creating methods
