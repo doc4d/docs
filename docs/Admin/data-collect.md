@@ -38,7 +38,7 @@ Data is collected during the following events:
 
 |Data|Example|Notes|
 |---|----|---|
-|id|hashed string (*Polynomial Rolling hash*)|Unique id associated to the database|
+|id|hashed string|Unique id associated to the database (*Polynomial Rolling hash of the database name*)|
 |size of data file|419430400|Data file size in bytes|
 |size of index|419430400|Index size in bytes|
 |size of cache|419430400|Cache size in bytes|
@@ -54,7 +54,7 @@ Data is collected during the following events:
 
 |Data|Example|Notes|
 |---|----|---|
-|uptime|123456|Time elapsed (in seconds) since local 4D database was opened. For remote connections, time elapsed since the connection was made.|
+|uptime|123456|Time elapsed (in seconds) since local 4D database was opened|
 
 
 ### Collected per database at webserver startup
