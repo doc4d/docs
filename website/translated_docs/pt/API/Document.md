@@ -211,7 +211,7 @@ Essa propriedade é**apenas leitura**.
 #### Descrição
 
 A propriedade `.isWritable` retorna <!-- REF #document.isWritable.Summary -->true se o arquivo existir em disco e é editável<!-- END REF -->.
-> The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
+> A propriedade verifica a habilidade da aplicação 4D de escrever no disco (direitos de acesso), não depende apenas do atributo *writable* do arquivo.
 
 Essa propriedade é**apenas leitura**.
 
