@@ -11,53 +11,53 @@ El entorno de desarrollo 4D ofrece varias herramientas de depuración para todo 
 
 ### Errores de digitación
 
-Typing errors are detected by the Method editor. They are displayed in red and additional information is provided at the bottom of the window. He aquí un error de escritura:
+El editor de métodos detecta errores de digitación. Se muestran en rojo y se ofrece información adicional en la parte inferior de la ventana. He aquí un error de escritura:
 
 ![punto de ruptura](assets/en/Debugging/typing-error.png)
 
 
-Such typing errors usually cause syntax errors (in the above image, the name of the table is unknown). You get the description of the error when you validate the line of code. When this occurs, fix the typing error and type Enter to validate the fix.
+Estos errores de escritura suelen causar errores de sintaxis (en la imagen anterior, el nombre de la tabla es desconocido). Se obtiene la descripción del error cuando se valida la línea de código. Cuando esto ocurre, corrija el error de digitación y escriba Enter para validar la solución.
 
 ### Errores de sintaxis
 
-Some errors can be caught only when you execute the method. The [Syntax Error Window](#syntax-error-window) appears when an error occurs during code execution. Por ejemplo:
+Algunos errores sólo se pueden capturar cuando se ejecuta el método. La [ventana de error de sintáxis](#syntax-error-window) aparece cuando ocurre un error durante la ejecución del código. Por ejemplo:
 
 ![syntax-error](assets/en/Debugging/syntax-error.png)
 
-Expand the **Details** area to display the last error and its number.
+Expanda el área **Detalles** para mostrar el último error y su número.
 
 ### Errores del entorno
 
-Occasionally, there may not be enough memory to create a BLOB. Or, when you access a document on disk, the document may not exist or may already be opened by another application. These environmental errors do not directly occur because of your code or the way you wrote it. Most of the time, these errors are easy to treat with an [error catching method](Concepts/error-handling.md) installed using the `ON ERR CALL` command.
+Ocasionalmente, puede que no haya suficiente memoria para crear un BLOB. O, cuando acceda a un documento en el disco, el documento puede no existir o ya estar abierto por otra aplicación. Estos errores en el entorno no se producen directamente por su código o por la forma en que lo escribe. La mayoría de las veces estos errores son fáciles de tratar con un [método de captura de errores](Concepts/error-handling.md) instalado utilizando el comando `ON ERR CALL`.
 
 ### Errores de diseño o de lógica
 
-These are generally the most difficult type of error to find. Except for typing errors, all the error types listed above are to a certain extent covered by the expression "Design or logic error". Use the [Debugger](debugger.md) to detect them. Por ejemplo:
+Estos son generalmente los tipos de errores más difíciles de encontrar. A excepción de los errores de digitación, todos los tipos de errores listados arriba están cubiertos hasta cierto punto por la expresión "error de diseño o de lógica". Utilice el [depurador ](debugger.md) para detectarlos. Por ejemplo:
 
-- A *syntax error* may occur when you try to use a variable that is not yet initialized.
-- An *environmental error* can occur when you try to open a document, because that document's name is received by a subroutine that did not get the right value as a parameter.
+- Puede ocurrir un *error de sintaxis* cuando intenta utilizar una variable que aún no está inicializada.
+- Puede ocurrir un *error de entorno* cuando intenta abrir un documento, porque el nombre de ese documento es recibido por una subrutina que no obtuvo el valor correcto como parámetro.
 
-Design or logic errors also include such situations as:
+Los errores de diseño o de lógica también incluyen situaciones como:
 
-- A record is not properly updated because, while calling `SAVE RECORD`, you forgot to first test whether or not the record was locked.
-- A method does not do exactly what you expect, because the presence of an optional parameter is not tested.
+- Un registro no está correctamente actualizado porque, mientras se llama a `SAVE RECORD`, se olvidó de la primera prueba de si el registro estaba bloqueado o no.
+- Un método no hace exactamente lo que espera, ya que la presencia de un parámetro opcional no está probada.
 
-Sometimes the piece of code that displays the error may be different than the code that is actually the origin of the problem.
+A veces el código que muestra el error puede ser diferente al código que en realidad es el origen del problema.
 
 ### Errores de ejecución
 
-In Application mode, you might obtain errors that you don't see in interpreted mode. Aquí un ejemplo:
+En modo Aplicación, puede obtener errores que no ve en modo interpretado. Aquí un ejemplo:
 
 ![runtime-error](assets/en/Debugging/runtimeError.png)
 
-To quickly find the origin of the problem, reopen the interpreted version of the structure file, open the method and go to the corresponding line.
+Para encontrar rápidamente el origen del problema, vuelva a abrir la versión interpretada del archivo de estructura, abra el método y vaya a la línea correspondiente.
 
 ## Ventana de error de sintaxis
 
-The Syntax error window automatically appears when the execution of a method is interrupted. Esto puede ocurrir cuando:
+La ventana de error de sintaxis aparece automáticamente cuando se interrumpe la ejecución de un método. Esto puede ocurrir cuando:
 
-- an error prevents further code execution
-- the method produces a false assertion (see the `ASSERT` command)
+- un error impide que el código siga ejecutándose
+- el método produce una afirmación falsa (ver el comando `ASSERT`)
 
 ![syntax-error](assets/en/Debugging/syntax-error.png)
 
