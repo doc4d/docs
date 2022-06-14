@@ -179,8 +179,8 @@ If necessary, the function creates the folder hierachy as described in the [plat
 
 **Valor devuelto**
 
-*   **True** if the file is created successfully;
-*   **False** if a file with the same name already exists or if an error occured.
+*   **True** si el archivo se crea con éxito;
+*   **False** si ya existe un archivo con el mismo nombre o si ha ocurrido un error.
 
 #### Ejemplo
 
@@ -288,7 +288,7 @@ The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the fil
 If the file is currently open, an error is generated.
 
 If the file does not exist on disk, the function does nothing (no error is generated).
-> **WARNING**: `.delete( )` can delete any file on a disk. This includes documents created with other applications, as well as the applications themselves. `.delete( )` should be used with extreme caution. Deleting a file is a permanent operation and cannot be undone.
+> **ATENCIÓN**: `.delete( )` puede eliminar cualquier archivo de un disco. Esto incluye los documentos creados con otras aplicaciones, así como las propias aplicaciones. `.delete( )` debe utilizarse con extrema precaución. Eliminar un archivo es una operación permanente y no se puede deshacer.
 
 #### Ejemplo
 
