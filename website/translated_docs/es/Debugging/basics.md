@@ -61,37 +61,37 @@ La ventana de error de sintaxis aparece automáticamente cuando se interrumpe la
 
 ![syntax-error](assets/en/Debugging/syntax-error.png)
 
-The upper text area displays a message describing the error. The lower text area shows the line that was executing when the error occurred; the area where the error occurred is highlighted. The expanded Details section contains the "stack" of errors related to the process.
+El área de texto superior muestra un mensaje describiendo el error. El área de texto inferior muestra la línea que se estaba ejecutando cuando ocurrió el error; el área donde ocurrió el error se resalta. La sección Detalles extendida contiene la "pila" de errores relacionados con el proceso.
 
-The syntax error window proposes several options:
+La ventana de error de sintaxis propone varias opciones:
 
-- **Edit**: Stops all method execution. 4D switches to the Design environment and the method with the error opens in the Method editor, allowing you to fix it. Use this option when you immediately recognize the mistake and can fix it without further investigation.
+- **Modificar**: detiene la ejecución de todos los métodos. 4D cambia al entorno Diseño y el método con el error se abre en el editor de métodos, permitiéndole solucionarlo. Utilice esta opción cuando reconozca inmediatamente el error y pueda arreglarlo sin más investigación.
 
-- **Trace**: Enters Trace/Debugger mode. The [Debugger](debugger.md) window is displayed. If the current line has only executed partially, you may have to click the **Trace** button several times.
+- **Rastrear**: entra en modo Rastrear/Depurador. Se muestra la ventana del [Depurador](debugger.md). Si la línea actual solo se ha ejecutado parcialmente, es posible que tenga que hacer clic en el botón **rastrear** varias veces.
 
-- **Continue**: Execution continues. The line with the error may be partially executed, depending on where the error is located. Continue with caution: the error may prevent the rest of your method from executing properly. We recommend clicking **Continue** only if the error is in a trivial call (such as `SET WINDOW TITLE`) that does not prevent executing and testing the rest of your code.
+- **Continuar**: la ejecución continua. La línea con el error puede ser parcialmente ejecutada, dependiendo de donde se encuentre el error. Continúe con precaución: el error puede impedir que el resto de su método se ejecute correctamente. Recomendamos hacer clic en **Continuar** sólo si el error está en una llamada trivial (como `SET WINDOW TITLE`) que no impide ejecutar y probar el resto de su código.
 
-> Tip: To ignore an error that occurs repeatedly (for example, in loops), you can turn the **Continue** button into an **Ignore** button. Hold down **Alt** (Windows) or **Option** (macOS) key and click the **Continue** button the first time it appears. The button label changes to **Ignore** if the dialog is called again for the same error.
+> Consejo: para ignorar un error que ocurre repetidamente (por ejemplo, en bucles), puede convertir el botón **Continuar** en un botón **Ignorar**. Mantenga presionada la tecla **Alt** (Windows) u **Opción** (macOS) y haga clic en el botón **Continuar** la primera vez que aparece. La etiqueta del botón cambia a **Ignorar** si el diálogo es llamado de nuevo por el mismo error.
 
-- **Abort**: Stops method execution and returns to the state before the method started executing:
+- **Abandonar**: detiene la ejecución del método y devuelve al estado antes del inicio de la ejecución del método:
 
-    - If a form method or object method is executing in response to an event, it is stopped and you return to the form.
-    - If the method is executing from within the Application environment, you return to that environment.
+    - Si un método formulario o método objeto se está ejecutando en respuesta a un evento, se detiene y se vuelve al formulario.
+    - Si el método se está ejecutando desde dentro del entorno de la aplicación, volverá a ese entorno.
 
-- **Copy**: Copies the debugging information into the clipboard. The info describes the internal environment of the error (number, internal component, etc.). Está formateado como texto tabulado.
+- **Copiar**: copia la información de depuración en el portapapeles. La información describe el entorno interno del error (número, componente interno, etc.). Está formateado como texto tabulado.
 
-- **Save...**: Saves the contents of the syntax error window and the call chain in a `.txt` file.
+- **Guardar...**: guarda el contenido de la ventana de error de sintaxis y la cadena de llamadas en un archivo `.txt`.
 
 ## Depurador
 
-A common beginner mistake in dealing with error detection is to click **Abort** in the Syntax Error Window, go back to the Method Editor, and try to figure out what's going by looking at the code. ¡No lo haga! You will save plenty of time and energy by always using the **Debugger**.
+Un error común de principiantes en la detección de errores es hacer clic en **Abandonar** en la ventana de error de sintaxis, volver al editor de métodos, y tratar de averiguar qué está pasando mirando el código. ¡No lo haga! Ahorrará mucho tiempo y energía utilizando siempre el **Depurador**.
 
-The Debugger allows you to step through methods slowly. It displays all the information you need in order to understand why an error occurred. Once you have this information, you know how to fix the error.
+El depurador le permite pasar lentamente por los métodos. Muestra toda la información que necesita para entender por qué ha ocurrido un error. Una vez que tiene esta información, usted sabe cómo arreglar el error.
 
-Another reason to use the Debugger is for developing code. Sometimes you may write an algorithm that is more complex than usual. Despite all feelings of accomplishment, you can't be totally sure that your coding is 100% correct. Instead of running it "blind", you can use the `TRACE` command at the beginning of your code, then execute it step by step to keep an eye on what happens.
+Otra razón para usar el Depurador es el desarrollo del código. A veces se puede escribir un algoritmo que es más complejo de lo habitual. A pesar de todos los sentimientos de cumplimiento, no puede estar totalmente seguro de que su codificación sea 100% correcta. En lugar de ejecutarlo "ciego", puede utilizar el comando `TRACE` al comienzo de su código, luego ejecutarlo paso a paso para mantener un ojo en lo que sucede.
 
 ## Rupturas
 
-In the debugging process, you may need to skip the tracing of some parts of the code until a certain line. Or, you may want to trace the code when a given expression has a certain value (e.g. "$myVar > 1000"), or every time a specific 4D command is called.
+En el proceso de depuración, puede que necesite saltar el seguimiento de algunas partes del código hasta una línea determinada. O, puede querer rastrear el código cuando una expresión dada tiene un determinado valor (e.. "$myVar > 1000"), o cada vez que se llama un comando 4D específico.
 
-These needs are covered by **breakpoints** and **command catching** features. They can be configured from the method editor, the debugger, or the Runtime Explorer.
+Estas necesidades están cubiertas por **puntos de interrupción** y las funciones de **captura de comando**. Pueden configurarse desde el editor de métodos, el depurador o el Explorador de tiempos de ejecución.
