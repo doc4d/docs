@@ -1,6 +1,6 @@
 ---
 id: creating-using-macros
-title: Creating and using macros
+title: マクロの作成と利用
 ---
 
 You can use macro-commands in your methods. Using macro-commands saves a lot of time during code entry.
