@@ -20,7 +20,7 @@ Esta propiedad designa el tipo del [objeto formulario activo o inactivo](formObj
 
 #### Objetos soportados
 
-[4D View Pro area](viewProArea_overview) - [4D Write Pro area](writeProArea_overview) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress indicator](progressIndicator.md) - [Radio Button](radio_overview.md) -[Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
+[Área 4D View Pro](viewProArea_overview) - [Área 4D Write Pro](writeProArea_overview) - [Botón](button_overview.md) - [Rejilla de botones](buttonGrid_overview.md) - [Casilla de selección](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón imagen](pictureButton_overview.md) - [Menú emergente imagen](picturePopupMenu_overview.md) - [Área de Plug-in](pluginArea_overview.md) - [Indicador de progreso](progressIndicator.md) - [Botón de radio](radio_overview.md) -[Spinner](spinner.md) - [Splitter](splitters.md) - [Imagen estática](staticPicture.md) - [Stepper](stepper.md) - [Subformulario](subform_overview.md) - [Control de pestañas](tabControl.md) - [Área de texto](text.md) - [Área web](webArea_overview.md)
 
 
 ---
@@ -37,13 +37,13 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 #### Gramática JSON
 
-| Nombre | Tipos de datos | Valores posibles                                                     |
-| ------ | -------------- | -------------------------------------------------------------------- |
-| name   | cadena         | Any allowed name which does not belong to an already existing object |
+| Nombre | Tipos de datos | Valores posibles                                                 |
+| ------ | -------------- | ---------------------------------------------------------------- |
+| name   | cadena         | Todo nombre permitido que no pertenezca a un objeto ya existente |
 
 #### Objetos soportados
 
-[4D View Pro area](viewProArea_overview) - [4D Write Pro area](writeProArea_overview) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress indicator](progressIndicator.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Radio Button](radio_overview.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
+[Área 4D View Pro](viewProArea_overview) - [Área 4D Write Pro](writeProArea_overview) - [Botón](button_overview.md) - [Rejilla de botones](buttonGrid_overview.md) - [Casilla de selección](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón imagen](pictureButton_overview.md) - [Menú emergente imagen](picturePopupMenu_overview.md) - [Área de Plug-in](pluginArea_overview.md) - [Indicador de progreso](progressIndicator.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Imagen estática](staticPicture.md) - [Stepper](stepper.md) - [Botón Radio](radio_overview.md) - [Subformulario](subform_overview.md) - [Control de pestañas](tabControl.md) - [Área de texto](text.md) - [Área web](webArea_overview.md)
 
 
 ---
@@ -55,12 +55,12 @@ This feature is only supported for objects that contribute to the overall geomet
 
 Here is the list of objects whose value can be saved:
 
-| Objeto                                        | Valor guardado                                                                         |
-| --------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Casilla a seleccionar](checkbox_overview.md) | Value of associated variable (0, 1, 2)                                                 |
-| [Lista desplegable](dropdownList_Overview.md) | Número de línea seleccionada                                                           |
-| [Botón radio](radio_overview.md)              | Value of associated variable (1, 0, True or False for buttons according to their type) |
-| [Control de pestañas](tabControl.md)          | Número de pestaña seleccionada                                                         |
+| Objeto                                        | Valor guardado                                                                           |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Casilla a seleccionar](checkbox_overview.md) | Valor de la variable asociada (0, 1, 2)                                                  |
+| [Lista desplegable](dropdownList_Overview.md) | Número de línea seleccionada                                                             |
+| [Botón radio](radio_overview.md)              | Valor de la variable asociada (1, 0, True o False para los botones de acuerdo a su tipo) |
+| [Control de pestañas](tabControl.md)          | Número de pestaña seleccionada                                                           |
 
 
 #### Gramática JSON
@@ -71,7 +71,7 @@ Here is the list of objects whose value can be saved:
 
 #### Objetos soportados
 
-[Check Box](checkbox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Radio Button](radio_overview.md) - [Tab control](tabControl.md)
+[Casilla de selección](checkbox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Botón de radio](radio_overview.md) - [Control de pestañas](tabControl.md)
 
 
 
@@ -91,9 +91,9 @@ Variables or expressions can be enterable or non-enterable and can receive data 
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos            | Valores posibles                                                                                                                                                                                                                                                                                                       |
-| ---------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataSource | cadena o array de cadenas | <li>Variable, nombre de campo o cualquier expresión 4D. <li>Empty string for [dynamic variables](#dynamic-variables). <li>String array (collection of array names) for a [hierarchical listbox](listbox_overview.md#hierarchical-list-boxes) column] |
+| Nombre     | Tipos de datos            | Valores posibles                                                                                                                                                                                                                                                                                                          |
+| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataSource | cadena o array de cadenas | <li>Variable, nombre de campo o cualquier expresión 4D. <li>Cadena vacía para [variables dinámicas](#dynamic-variables). <li>String array (collection of array names) for a [hierarchical listbox](listbox_overview.md#hierarchical-list-boxes) column] |
 
 
 
@@ -318,7 +318,7 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 #### Objetos soportados
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Botón](button_overview.md) - [Casilla de selección](checkbox_overview.md) - [Encabezado List Box](listbox_overview.md#list-box-headers) - [Botón radio](radio_overview.md) - [ÁreaTexto](text.md)
 
 
 
@@ -336,9 +336,9 @@ There are several types of calculations available. The following table shows whi
 
 | Cálculo                | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
 | ---------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
-| Mínimo                 | X   | X     | X     | X    | X    |          | Same as column type                 |
-| Máximo                 | X   | X     | X     | X    | X    |          | Same as column type                 |
-| Suma                   | X   |       |       | X    | X    |          | Same as column type                 |
+| Mínimo                 | X   | X     | X     | X    | X    |          | Igual que el tipo de columna        |
+| Máximo                 | X   | X     | X     | X    | X    |          | Igual que el tipo de columna        |
+| Suma                   | X   |       |       | X    | X    |          | Igual que el tipo de columna        |
 | Conteo                 | X   | X     | X     | X    | X    | X        | Entero largo                        |
 | Promedio               | X   |       |       | X    |      |          | Real                                |
 | Desviación estándar(*) | X   |       |       | X    |      |          | Real                                |

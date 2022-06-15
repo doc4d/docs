@@ -31,15 +31,15 @@ You can create different types of drop-down lists with different features. To de
 
 > Esta funcionalidad sólo está disponible en los proyectos 4D.
 
-An [object](Concepts/dt_object.md) encapsulating a [collection](Concepts/dt_collection) can be used as the data source of a drop-down list. El objeto debe contener las siguientes propiedades:
+Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection) puede utilizarse como fuente de datos de una lista desplegable. El objeto debe contener las siguientes propiedades:
 
-| Propiedad      | Tipo                 | Descripción                                                                                                                                                                                                                                                         |
-| -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `values`       | Collection           | Obligatorio - Colección de valores escalares. Todos los valores deben ser del mismo tipo. Tipos soportados:<li>strings</li><li>numbers</li><li>fechas</li><li>horas</li>If empty or not defined, the drop-down list is empty |
-| `index`        | number               | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                                                                                |
-| `currentValue` | igual que Collection | Currently selected item (used as placeholder value if set by code)                                                                                                                                                                                                  |
+| Propiedad      | Tipo                 | Descripción                                                                                                                                                                                                                                                                      |
+| -------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `values`       | Collection           | Obligatorio - Colección de valores escalares. Todos los valores deben ser del mismo tipo. Tipos soportados:<li>strings</li><li>numbers</li><li>fechas</li><li>horas</li>Si está vacío o no está definido, la lista desplegable está vacía |
+| `index`        | number               | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                                                                                             |
+| `currentValue` | igual que Collection | Currently selected item (used as placeholder value if set by code)                                                                                                                                                                                                               |
 
-If the object contains other properties, they are ignored.
+Si el objeto contiene otras propiedades, se ignoran.
 
 To initialize the object associated to the drop-down list, you can:
 
