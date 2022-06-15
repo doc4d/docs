@@ -3,60 +3,60 @@ id: write-class-method
 title: コードエディター
 ---
 
-4D has a powerful built-in code editor that offers a wide set of features for highly productive code editing such as intelligent code completion, code navigation, debugging, searching, and more.
+4Dは、インテリジェントなコード補完、コードナビゲーション、デバッグ、検索など、生産性の高いコード編集のための幅広い機能を提供する強力なコードエディターを搭載しています。
 
 ![](assets/en/code-editor/code-editor-overview.png)
 
-The Code Editor works much like a text editor. Writing a method or a class is usually a combination of typing text, selecting components, and dragging items from the Explorer or other windows. You can also use various type-ahead functions to create methods faster.
+コードエディターはテキストエディターのように動作します。 メソッドやクラスの記述は通常、テキストの入力、コンポーネントの選択、そしてエクスプローラーやその他のウィンドウからのドラッグ操作によりおこないます。 メソッドの記述をより効率的におこなうために、タイプアヘッド機能も提供されています。
 
-You can scroll through the contents of methods, classes and functions, which can include up to 32,000 lines of code or 2 GB of text.
+メソッド、クラス、関数の内容はスクロールして確認することができ、最大32,000行、2GBのコードを記述できます。
 
-The 4D Code Editor provides basic syntax error-checking. Additional error-checking is performed when the code executes. For more information on how to handle errors, see [Debugging](../Debugging/basics.md).
+4Dのコードエディターは基本的なシンタックスチェック機能を提供します。 メソッド実行時には追加のエラーチェックがおこなわれます。 エラーハンドリングについての詳細は、[デバッガー](../Debugging/basics.md) の章を参照ください。
 
 
 ## ツールバー
 
-Each Code Editor window has a toolbar that provides instant access to basic functions related to code execution and editing.
+コードエディターにはメソッドの実行と編集に関連する基本的な機能に素早くアクセスするためのツールバーがあります。
 
-| Element                       | アイコン                                                                           | 説明                                                                                                                                                                                                                                                                                                                                             |
-| ----------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Method execution**          | ![execute-method](assets/en/code-editor/execute-method.png)                    | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.<li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>For more information on method execution, see [Calling Project Methods](../Concepts/methods.md#calling-project-methods). |
-| **Search**                    | ![search-icon](assets/en/code-editor/search.png)                               | Allows performing a search in the current window.                                                                                                                                                                                                                                                                                              |
-| **Macros**                    | ![macros-button](assets/en/code-editor/macros.png)                             | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](creating-using-macros.md).                                                                                                                                        |
-| **Expand all / Collapse all** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png)       | These buttons allow expanding or collapsing all the control flow structures of the code.                                                                                                                                                                                                                                                       |
-| **Method information**        | ![method-information-icon](assets/en/code-editor/method-information.png)       | Displays the [Method Properties](../Concepts/methods.md#project-method-properties) dialog box (project methods only).                                                                                                                                                                                                                          |
-| **Last clipboard values**     | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | Displays the last values stored in the clipboard.                                                                                                                                                                                                                                                                                              |
-| **Clipboards**                | ![clipboard icons](assets/en/code-editor/clipboards.png)                       | Nine clipboards available in the code editor. You can [use these clipboards](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards) by clicking on them directly or by using keyboard shortcuts. You can use a [Preferences option](Preferences/methods.md#options-1) to hide them.                                          |
-| **コードのナビゲーション**               | ![code-navigation-icons](assets/en/code-editor/tags.png)                       | Lets you navigate inside methods and classes with automatically tagged content or manually declared markers. See [Navigation dropdown](./write-class-method.md#navigation-dropdown).                                                                                                                                                           |
+| 機能                   | アイコン                                                                           | 説明                                                                                                                                                                                                              |
+| -------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **メソッド実行**           | ![execute-method](assets/en/code-editor/execute-method.png)                    | コードエディターウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。 このボタンに関連付けられているメニューから実行オプションを選択できます:<ul><li> **新規プロセスで実行**: 新規プロセスを作成し、そのプロセス内でメソッドを実行します。<li>**新規プロセスで実行してデバッグ**: 新規プロセスを作成し、デバッガーウィンドウを開いてメソッドを表示します。</li><li>**アプリケーションプロセスで実行**: アプリケーションプロセス内でメソッドを実行します (アプリケーションプロセス内とは、レコード表示ウィンドウと同じプロセス内ということです)。</li><li>**アプリケーションプロセスで実行してデバッグ**: アプリケーションプロセス内でデバッガーを開き、メソッドを表示します。</li></ul>メソッド実行の詳細については、 [プロジェクトメソッドの呼び出し](../Concepts/methods.md#プロジェクトメソッドの呼び出し) を参照ください。             |
+| **検索**               | ![search-icon](assets/en/code-editor/search.png)                               | 現在のウィンドウで検索をおこなうことができます。                                                                                                                                                                                        |
+| **マクロ**              | ![macros-button](assets/en/code-editor/macros.png)                             | 選択対象にマクロを挿入します。 ドロップダウンの矢印をクリックすると、利用可能なマクロがすべて表示されます。 詳細は [マクロの作成と利用](creating-using-macros.md) を参照してください。                                                                                                     |
+| **すべて折りたたむ / すべて展開** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png)       | これらのボタンを使用してコードの制御フロー構造を折りたたんだり展開したりできます。                                                                                                                                                                       |
+| **メソッド情報**           | ![method-information-icon](assets/en/code-editor/method-information.png)       | [メソッドプロパティ](../Concepts/methods.md#プロジェクトメソッドプロパティ) ダイアログボックスを表示します (プロジェクトメソッドのみ)。                                                                                                                             |
+| **最新のクリップボードの値**     | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | 直近でクリップボードに保存された値を表示します。                                                                                                                                                                                        |
+| **クリップボード**          | ![clipboard icons](assets/en/code-editor/clipboards.png)                       | コードエディターで利用可能な 9つのクリップボードです。 クリップボードのアイコンをクリックするか、あるいはキーボードショートカットによって、[これらのクリップボードを利用](./write-class-method.md#コピーペースト文字列を複数記憶する) できます。 [環境設定オプション](Preferences/methods.md#options-1) を使用するとそれらを非表示にすることができます。 |
+| **コードのナビゲーション**      | ![code-navigation-icons](assets/en/code-editor/tags.png)                       | 自動的にタグ付けされたコンテンツや手動で宣言されたマーカーを使用して、メソッドやクラス内を移動できます。 [ナビゲーションドロップダウン](./write-class-method.md#ナビゲーションドロップダウン) 参照。                                                                                               |
 
-## Editing area
+## 編集エリア
 
-This is where you [write and edit](write-class-method.md) your code. The editor automatically indents code text and colors the different syntax elements for clear code structure.
+このエリアを使用してコードを [入力/編集](write-class-method.md) します。 エディターは、コードテキストのインデントを自動で設定し、異なるシンタックス要素ごとに色を付けて、コード構造を明確に表示します。
 
-You can customize the display of the editing area. Any customization is automatically passed on to all the windows of the code editor:
+この編集エリアの表示はカスタマイズできます。 カスタマイズした内容は、すべてのコードエディターに反映されます:
 
-| オプション                                  | 説明                                                                                                                                                                                                          | Set in...                                                                                                                                      |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                          |
-| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
-| **spaces**                             | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                               |
-| **themes**                             | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
-| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
+| オプション                  | 説明                                                                                              | 設定場所                                                                                                                                  |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **フォント** と **フォントサイズ** | 編集エリアの文字フォントとサイズを設定します                                                                          | **環境設定** の [**メソッド**](../Preferences/methods.md) ページ、または **メソッド** メニューから **表示 ＞ フォントを大きく / フォントを小さく** で設定します。                         |
+| **シンタックス要素のスタイルとカラー**  | 4Dランゲージの要素タイプごとに異なる色やスタイルを割り当てることができます。  また、編集エリアのインターフェースで使用されている色 (ハイライト、背景色など) を変更することができます。 | ランゲージ要素 (変数、キーワード等) 上でコンテキストメニューを表示し、 **スタイル** サブメニューからオプションを選択します。 または、**環境設定** の [**メソッド**](../Preferences/methods.md) ページでも設定できます。 |
+| **スペース**               | 単語間のスペースを空白ではなくピリオド (.) で表示することができます。 この設定は、すべてのコード要素 (コマンド名、変数、コメントなど) に適用されます。                | **メソッド ＞ 表示 ＞ ホワイトスペース**                                                                                                              |
+| **テーマ**                | Dark または Light テーマが選択できるほか、カスタムテーマも設定可能です                                                       | **環境設定** ＞ [**メソッド**](../Preferences/methods.md)                                                                                      |
+| **コードインデント幅**          | コードのインデント幅を設定します                                                                                | **環境設定** ＞ [**メソッド**](../Preferences/methods.md)                                                                                      |
 
-## Lists area
+## リストエリア
 
-The lists area lets you display one or more lists of elements necessary for writing methods and classes (commands, constants, forms, etc.). You can choose the number and contents of the lists displayed in the window.
+リストエリアにはメソッドやクラスの記述に必要となるコード要素 (コマンド、定数、フォーム等) のリストを 1つ以上表示できます。 表示するリストの数や種類は変更することができます。
 
-By default, the Code Editor displays four lists. You can hide or show all lists by clicking on the icon at the botton right of the window. ![](assets/en/code-editor/show-hide-list.png)
+デフォルトで、コードエディターには 4つのリストが表示されます。 ウィンドウの右下にあるアイコンをクリックすると、すべてのリストを表示/非表示にすることができます。 ![](assets/en/code-editor/show-hide-list.png)
 
-You can enlarge or reduce the relative width of each list area by dragging one of its partitions. It is also possible to adjust the size of the list area in relation to that of the editing area by dragging the dividing line between them.
+リストの境界をドラッグして、リストの幅を相対的に調整できます。 また、編集エリアとの境界線をドラッグして、リストエリアの高さを調整できます。
 
-- Double-clicking on an item in a list causes it to be inserted into the editing area, at the location of the cursor.
-- To **modify the contents** of a list, click on the title area of the list concerned: a pop-up menu appears, enabling you to choose the type of item to be displayed.
+- リストの項目をダブルクリックすると、現在のカーソル位置にその項目が挿入されます。
+- リストの **表示内容を変更** するには、リストのタイトルエリアをクリックすると現れるポップアップメニューから表示したい項目を選択します。
 
 ![](assets/en/code-editor/list-area.png)
 
-- To add or remove a list, click in the title area of one of the lists and choose the corresponding command in the pop-up menu. The **Remove this list** command is disabled when you click on the last list. If you want to hide all the lists, you must either click on the **show or hide lists**  button at the bottom right of the window or hide them by default in the **Preferences**.
+- リストを追加/削除するには、リストのタイトルエリアをクリックし、一番下の対応するメニューを選択します。 **このリストを取り除く** コマンドは、リストが残り1つのときは無効になります。 すべてのリストを非表示にするには、ウィンドウ右下の **リストを表示\非表示** ボタンをクリックするか、**環境設定** でデフォルトで非表示にする必要があります。
 
 - You can hide the lists in all the windows in the following ways:
   - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
@@ -193,7 +193,7 @@ becomes
 
 This function is extremely useful for reversing a set of assignments used to get or set properties, or to correct input errors. To use this function, select the line(s) to be modified, then choose **Method** > **Swap Expression** or use the context menu of the area. Within the selection, only the lines assigning a value will be modified.
 
-### Multiple copy-paste and numbering of clipboards
+### コピー/ペースト文字列を複数記憶する
 
 In addition to the standard copy-paste operation, 4D offers two additional functions that let you work with the contents of different clipboards:
 

@@ -55,12 +55,12 @@ This feature is only supported for objects that contribute to the overall geomet
 
 Here is the list of objects whose value can be saved:
 
-| Objeto                                        | Valor guardado                                                                         |
-| --------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Casilla a seleccionar](checkbox_overview.md) | Value of associated variable (0, 1, 2)                                                 |
-| [Lista desplegable](dropdownList_Overview.md) | Número de línea seleccionada                                                           |
-| [Botón radio](radio_overview.md)              | Value of associated variable (1, 0, True or False for buttons according to their type) |
-| [Control de pestañas](tabControl.md)          | Número de pestaña seleccionada                                                         |
+| Objeto                                        | Valor guardado                                                                           |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Casilla a seleccionar](checkbox_overview.md) | Valor de la variable asociada (0, 1, 2)                                                  |
+| [Lista desplegable](dropdownList_Overview.md) | Número de línea seleccionada                                                             |
+| [Botón radio](radio_overview.md)              | Valor de la variable asociada (1, 0, True o False para los botones de acuerdo a su tipo) |
+| [Control de pestañas](tabControl.md)          | Número de pestaña seleccionada                                                           |
 
 
 #### Gramática JSON
@@ -71,7 +71,7 @@ Here is the list of objects whose value can be saved:
 
 #### Objetos soportados
 
-[Check Box](checkbox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Radio Button](radio_overview.md) - [Tab control](tabControl.md)
+[Casilla de selección](checkbox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Botón de radio](radio_overview.md) - [Control de pestañas](tabControl.md)
 
 
 

@@ -1,30 +1,30 @@
 ---
 id: overview
-title: About 4D Code
+title: 4D コードについて
 ---
 
 
-The 4D code used across your application is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md).
+アプリケーションで使用される 4D コードは、 [メソッド](../Concepts/methods.md) および [クラス](../Concepts/classes.md) に記述されます。
 
-The 4D IDE provides you with various features to create, edit, export, or delete your code. You will usually use the 4D [code editor](write-class-method.md) to work with your code.
+4D IDE には、コードを作成・編集・エクスポート・削除するためのさまざまな機能があります。 通常は、4D の [コードエディター](write-class-method.md) を使用して、コードを管理します。
 
 
-## Creating methods
+## メソッドの作成
 
-A method in 4D is stored in a **.4dm** file located in the appropriate folder of the [`/Project/Sources/`](../Project/architecture.md#sources) folder.
+4D のメソッドは、[`/Project/Sources/`](../Project/architecture.md#sources) フォルダーの適切なフォルダー内の **.4dm** ファイルに格納されます。
 
-You can create [several types of methods](../Concepts/methods.md):
+[いくつかの種類のメソッド](../Concepts/methods.md) を作成することができます:
 
-- All types of methods can be created or opened from the **Explorer** window (except Object methods which are managed from the [Form editor](../FormEditor/formEditor.md)).
-- Project methods can also be created or opened from the **File** menu or toolbar (**New/Method...** or **Open/Method...**) or using shortcuts in the [Code editor window](write-class-method.md#shortcuts).
-- Triggers can also be created or opened from the Structure editor.
-- Form methods can also be created or opened from the [Form editor](../FormEditor/formEditor.md).
+- すべてのメソッドは、**エクスプローラー** ウィンドウから作成または開くことができます ([フォームエディター](../FormEditor/formEditor.md) から管理されるオブジェクトメソッドを除く)。
+- プロジェクトメソッドは、**ファイル** メニューやツールバー (**新規/メソッド...** または **開く/メソッド...**)、[コードエディターウィンドウ](write-class-method.md#ショートカット) のショートカットを使っても作成したり開いたりできます。
+- トリガーは、ストラクチャーエディターからも作成したり開いたりできます。
+- フォームメソッドは、[フォームエディター](../FormEditor/formEditor.md) からも作成したり開いたりできます。
 
 ## クラスの作成
 
 4D においてユーザークラスとは、[`/Project/Sources/Classes/`](../Project/architecture.md#sources) フォルダーに保存された専用のメソッドファイル (**.4dm**) によって定義されます。 ファイル名がクラス名になります。
 
-You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
+クラスファイルは、**ファイル** メニューやツールバー (**新規/クラス...**)、あるいは **エクスプローラー** ウィンドウの **メソッド** ページにて作成可能です。
 
 詳細については、[クラス](../Concepts/classes.md) を参照してください。
 
@@ -36,22 +36,22 @@ You can create a class file from the **File** menu or toolbar (**New/Class...**)
 - ディスク上で "Sources" フォルダーより* .4dm* ファイルを削除します。
 - 4D エクスプローラーでは、メソッドやクラスを選択した状態で ![](assets/en/Users/MinussNew.png) をクリックするか、コンテキストメニューより **移動 ＞ ゴミ箱** を選択します。
 
-> To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
+> オブジェクトメソッドを削除するには、[フォームエディター](../FormEditor/formEditor.md) で、**オブジェクト** メニューから **オブジェクトメソッド消去** を選択します。
 
 
-## コードのインポートとエクスポート
+## メソッドの書き出しと読み込み
 
-You can import and export a method or a class code in the form of a file. These commands are found in the **Method** menu of the Code editor.
+メソッドやクラスのコードは、ファイルの形で書き出しおよび読み込みが可能です。 これをおこなうためのコマンドはコードエディターの **メソッド** メニューにあります。
 
-- When you select the **Export Method...** command, a standard file saving dialog box appears, allowing you to choose the name, location and format of the export file (see below). As with printing, exporting does not take the collapsed state of code structures into account and the entire code is exported.
-- When you select the **Import Method...** command, a standard file opening dialog box appears, allowing you to designate the file to be imported. Importing replaces the selected text in the method. To replace an existing method by an imported method, select the entire contents of the method before carrying out the import.
+- **メソッド書き出し...** コマンドを選択すると、標準のファイル保存ダイアログが表示され、書き出しファイルの名前と場所、およびフォーマットを選択することができます (後述参照)。 印刷と同様に、コードブロックが折りたたまれているかどうかに関わらず、コード全体が書き出されます。
+- **メソッド読み込み...** コマンドを選択すると、標準のファイルを開くダイアログが表示され、読み込むファイルを選択することができます。 読み込みをおこなうと、メソッド中で現在選択されているテキストが置き換えられます。 読み込んだメソッドで既存メソッドの全体を書き換えるには、読み込み前に既存メソッド内を全選択します。
 
-The import/export function is multi-platform: a method exported under Mac OS can be imported under Windows and vice versa; 4D handles the conversion of characters when necessary.
+読み込み/書き出し機能はマルチプラットフォーム対応です。macOS で書き出したメソッドを Windows で読み込むことができ、その逆も可能です。4D は必要に応じて文字の変換をおこないます。
 
-4D can export and import methods in two formats:
+メソッドの読み込みと書き出しには 2つのフォーマットを使用できます:
 
-- 4D method (extension *.c4d*): In this format, methods are exported in encoded form. The names of objects are tokenized. This format is used in particular for exchanging methods between 4D applications and plug-ins in different languages. Conversely, it is not possible to display them in a text editor.
-- Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
+- 4Dメソッド (*.c4d* 拡張子): このフォーマットでは、メソッドはエンコードされた形で書き出されます。 メソッド中のオブジェクト (コマンドなどの要素) の名称はトークナイズされます。 このフォーマットは、異なる言語 (非英語のコマンド名) を使用する 4Dアプリケーションやプラグイン間でメソッドをやり取りする場合に特に便利です。 その代わり、テキストエディターでメソッドを表示することはできません。
+- テキスト (*.txt* 拡張子): このフォーマットでは、メソッドがテキスト形式で書き出されます。 書き出したファイルは、標準のテキストエディターやソースコントロールツールで開くことができます。
 
 
 ## プロジェクトメソッドプロパティ
@@ -60,7 +60,7 @@ The import/export function is multi-platform: a method exported under Mac OS can
 
 他のタイプのメソッドには専用のプロパティがありません。 これらのメソッドのプロパティは、それらが関連付けられているオブジェクトに基づいて決定されます。
 
-To display the **Method Properties** dialog box for a project method, you can either:
+プロジェクトメソッドの **メソッドプロパティ** ダイアログボックスを表示するには、次の方法があります:
 
 - [コードエディター](write-class-method.md)において、**メソッド** メニューから **メソッドプロパティ...** を選択します。
 - または、エクスプローラーの **メソッド** ページでプロジェクトメソッドを選択し、コンテキストメニューまたはオプションメニューから **メソッドプロパティ...** を選択します。
@@ -128,7 +128,7 @@ To display the **Method Properties** dialog box for a project method, you can ei
 
 このオプションを使用した場合、内部でのスレッドセーフ評価に関わらず、最初の親メソッドとしてメソッドが 4D から直接呼び出された場合 (たとえば [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.ja.html) コマンドから呼び出された場合など)、メソッドは常にコオペラティブモードで実行されます。 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
 
-***特殊なケース*:** メソッドの **コンポーネントとホストプロジェクト間で共有** プロパティがチェックされている場合 ([プロジェクトメソッドプロパティ](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.ja.html) 参照)、**特に設定しない** オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。 If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
+***特殊なケース*:** メソッドの **コンポーネントとホストプロジェクト間で共有** プロパティがチェックされている場合 ([プロジェクトメソッドプロパティ](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.ja.html) 参照)、**特に設定しない** オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。 共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。
 
 #### 公開オプション
 
@@ -136,23 +136,23 @@ To display the **Method Properties** dialog box for a project method, you can ei
 
 ##### Webサービス
 
-この属性を使用して、SOAPリクエストでアクセス可能な Webサービスとして当該メソッドを公開することができます。 For more information, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.en.html) chapter. When this option is checked, the **Published in WSDL** option is enabled.
+この属性を使用して、SOAPリクエストでアクセス可能な Webサービスとして当該メソッドを公開することができます。 詳細は [Web サービスの公開と使用](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.ja.html) を参照ください。 このオプションを選択すると、**WSDL を公開** オプションを選択できるようになります。
 
-In the Explorer, project methods that are offered as a Web Service are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440512/pict440512.fr.png).
+エクスプローラーでは、Webサービスとして提供されるプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440512/pict440512.fr.png)。
 
-**Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). この場合、設定は保存できません。
+**注:** メソッド名が XML の命名規則に準拠しない文字 (たとえばスペース) を含む場合、そのメソッドは Webサービスとして公開できません。 この場合、設定は保存できません。
 
 ##### WSDL を公開
 
-この属性は "Webサービス" 属性が設定されている場合にのみ利用可能です。 この属性を設定すると、当該メソッドが 4Dアプリケーションの WSDLに 含まれます。 For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
+この属性は "Webサービス" 属性が設定されている場合にのみ利用可能です。 この属性を設定すると、当該メソッドが 4Dアプリケーションの WSDLに 含まれます。 詳細については [WSDL ファイルを生成する](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.ja.html#502689) を参照ください。
 
-In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png).
+エクスプローラーでは、Webサービスとして提供され、WSDLで公開されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png)。
 
 ##### 4D タグと URL(4DACTION...)
 
-このオプションは、4D Webサーバーのセキュリティを強化するために使用されます。このオプションが選択されていない場合、4DACTION URL を使用した HTTPリクエスト、および4DSCRIPT、4DTEXT、4DHTML タグ (さらには以前の 4DVAR や 4DHTMLVAR タグ) から当該メソッドを直接呼び出すことができません。 For more information, refer to [URLs and Form Actions](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.en.html) and [4D Transformation Tags](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-Transformation-Tags.300-5830552.en.html) in the 4D *Language Reference* manual.
+このオプションは、4D Webサーバーのセキュリティを強化するために使用されます。このオプションが選択されていない場合、4DACTION URL を使用した HTTPリクエスト、および4DSCRIPT、4DTEXT、4DHTML タグ (さらには以前の 4DVAR や 4DHTMLVAR タグ) から当該メソッドを直接呼び出すことができません。 詳細については 4D *ランゲージリファレンス* マニュアルの [URLとフォームアクション](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.ja.html) および [4D 変換タグ](Tags/tags.md) を参照ください。
 
-In the Explorer, project methods with this attribute are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png).
+エクスプローラーでは、この属性が設定されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png)。
 
 セキュリティのため、このオプションはデフォルトで選択されていません。 Web機能から直接呼び出されるメソッドには、このオプションを明示的に選択しなければなりません。
 
@@ -160,18 +160,18 @@ In the Explorer, project methods with this attribute are given a specific icon !
 
 この属性が選択されていると、当該プロジェクトメソッドは 4D の SQLエンジンから実行可能となります。 デフォルトでは選択されておらず、明示的に許可されない限り 4Dメソッドは保護されており、4D SQLエンジンから呼び出すことはできません。
 
-This property applies to all internal and external SQL queries --- executed via the ODBC driver, SQL code inserted between the [Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.en.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.en.html)  tags or the [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.en.html) command.
+このプロパティはすべての内部および外部SQLクエリ (ODBCドライバー経由、[Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.ja.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.ja.html) タグ内の SQLコード、または [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.ja.html) からの呼び出し) に適用されます。
 
 **注:**
 
 -   メソッドに "SQL" 属性が設定されていても、メソッドの実行時にはデータベース設定およびメソッドプロパティに設定されたアクセス権が考慮されます。
--   The ODBC **SQLProcedure** function only returns project methods with the "SQL" attribute.
+-   ODBC の **SQLProcedure** 関数は "SQL" 属性が設定されているプロジェクトメソッド名のみを返します。
 
-For more information, refer to [4D SQL engine implementation](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.en.html) in the 4D SQL manual.
+詳細については、SQLマニュアルの [4Dと4D SQLエンジン統合の原則](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.ja.html) を参照ください。
 
 ##### REST サーバー
 
-*このオプションは、従来のカレントレコードおよびカレントセレクションの概念に依存しており、廃止予定となっています。 It is recommended to use** [ORDA data model class functions](https://developer.4d.com/docs/en/REST/classFunctions.html) for REST access. *
+*このオプションは、従来のカレントレコードおよびカレントセレクションの概念に依存しており、廃止予定となっています。 RESTアクセスには、[ORDAデータモデルクラス関数](https://developer.4d.com/docs/en/REST/classFunctions.html) を使用することが推奨されます。** *
 
 #### 属性の一括設定
 
@@ -179,15 +179,15 @@ For more information, refer to [4D SQL engine implementation](https://doc.4d.com
 
 メソッド属性の一括設定をおこなうには:
 
-1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. "メソッド属性" ダイアログボックスが表示されます:
+1.  エクスプローラーの [メソッドページ](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.ja.html) からオプションメニューを展開し、**属性の一括設定...** コマンドを選択します。 "メソッド属性" ダイアログボックスが表示されます:
 2.  "一致するメソッド名" エリアに属性を一括設定するメソッドを指定するための名前条件を入力します。 入力した文字列を使用してメソッド名が検索されます。 "@" をワイルドカード文字として使用し、メソッドグループを選択できます:
    -   前方一致で検索するには、文字列の最後に "@" を加えます。 例: web@
     -   含む検索をするには、文字列の中に "@" を加えます。 例: web@write
     -   後方一致で検索するには、文字列の先頭に "@" を加えます。 例: @write
-    -   To designate all of the methods, just type @ in the area.\
-      **Notes:**
+    -   すべてのメソッドを選択するには "@" のみを入力します。\
+      **注:**
         -   文字の大小は区別されません。
         -   "@" は文字列内で複数回使用できます (例: dtro_@web@pro.@)
-3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
-4.  Click on **Apply**. 検索条件に合致するプロジェクトメソッドに対し、属性の変更は即座に反映されます。
+3.  "更新する属性" エリアでは、ドロップダウンリストから更新対象の属性を選択し、**True** または **False** ラジオボタンを選択します。 **注:** "WSDL で公開する" 属性を True に設定した場合、"Webサービスとして公開" 属性が True に設定されたメソッドにのみ適用されます。
+4.  **適用** をクリックします。 検索条件に合致するプロジェクトメソッドに対し、属性の変更は即座に反映されます。
 

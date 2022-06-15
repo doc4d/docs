@@ -389,49 +389,49 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 
 しかし、テストやデバッグの目的で、プロジェクトメソッドや特定のデータベースメソッドをデザインモードで実行することができます。 この場合、メソッドを新規プロセスで実行するか、または直接デバッグモードで一行ごと実行できます。
 
-Moreover, with 4D Server, you can indicate whether 4D Server should execute a project method on the server machine or on other clients' machines. You can execute methods in two ways:
+さらに 4D Server 環境においては、サーバー上でメソッドを実行するか、クライアント上で実行するかを指定できます。 メソッド実行は 2つの方法でおこなえます:
 
--   From the [Code Editor](../code-editor/overview.md) window,
--   From the [Execute Method](#from-the-execute-method-dialog-box) dialog box (project methods only).
+-   [コードエディター](../code-editor/overview.md) ウィンドウから
+-   [メソッド実行](#メソッド実行ダイアログボックスから実行) ダイアログボックスから (プロジェクトメソッドのみ)。
 
-### From the Code Editor 
+### メソッドエディターからメソッド実行 
 
-Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
+[**コードエディター**](../code-editor/overview.md) ウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。 このボタンに関連付けられているメニューから実行オプションを選択できます:
 
 ![](assets/en/concepts/execute-method.png)
 
-This button is only active for project methods and for the following database methods:
+このボタンは、プロジェクトメソッドと以下のデータベースメソッドでのみ利用できます:
 
 -   On Startup
 -   On Exit
 -   On Server Startup
 -   On Server Shutdown
 
-The following execution modes are available:
+以下の実行モードから選択できます:
 
--   **Run new process**: Creates a process and runs the method in standard mode in this process.
--   **Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.
--   **Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).
--   **Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).
+-   **新規プロセスで実行**: 新規プロセスを作成し、そのプロセス内でメソッドを実行します。
+-   **新規プロセスで実行してデバッグ**: 新規プロセスを作成し、デバッガーウィンドウを開いてメソッドを表示します。
+-   **アプリケーションプロセスで実行**: アプリケーションプロセス内でメソッドを実行します (アプリケーションプロセス内とは、レコード表示ウィンドウと同じプロセス内ということです)。
+-   **アプリケーションプロセスで実行してデバッグ**: アプリケーションプロセス内でデバッガーを開き、メソッドを表示します。
 
 #### メソッド実行ダイアログボックスから実行  
 
-When you select the **Method...** command of the **Run** menu,  displays the **Execute Method** dialog.
+**実行** メニューから **メソッド...** コマンドを選択すると、**メソッド実行** ダイアログボックスが表示されます。
 
-This dialog box lists all the project methods of the database, including shared project methods of components. On the other hand, project methods that have been declared invisible will not appear. 
+このダイアログボックスには、データベースのプロジェクトメソッド (コンポーネントの共有メソッドを含む) が表示されます。 一方、非表示属性が設定されたプロジェクトメソッドは表示されません。 
 
-To execute a project method, simply select its name in the list and click on **Execute**. To run a method step by step in Debug mode, click on **Debug**. For more information about the 4D debugger, refer to the [Debugging](../Debugging/basics.md) section. 
+プロジェクトメソッドを実行するには、リストからメソッドを選択し、**実行** をクリックします。 デバッグモードでメソッドを実行するには **デバッグ** をクリックします。 デバッガーに関する詳細は、[デバッガー](../Debugging/basics.md) の章を参照ください。 
 
-**4D Server Note**: The **Debug** option is not available if you execute the method on the server.
+**4D Serverに関する注記**: サーバー上でメソッドを実行する場合、**デバッグ** オプションは使用できません。
 
-If you check the **New Process** check box, the method you selected executes in another process. If the method is performing a time-consuming task such as printing a large set of records, you can continue to work with your database, adding records to a table, creating a graph to display data, and so on. For more information about processes, refer to [Processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) the 4D *Language Reference* manual.
+**新規プロセス** チェックボックスを選択すると、選択したメソッドは新規に作成されたプロセス内で実行されます。 大量の印刷など時間のかかる処理をメソッドがおこなう場合でもこのオプションを使用すれば、レコードの追加、グラフの作成などの処理をアプリケーションプロセスで継続できます。 プロセスに関する詳細は 4D *ランゲージリファレンス* マニュアルの [プロセス](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.ja.html) を参照ください。
 
-**4D Server Note**:
+**4D Serverに関する注記:**:
 
--   If you want the method to be executed on the server machine rather than on the client machine, select the **On 4D Server** option in the To be executed menu. In this case, a new process, call the *stored procedure*, is created on the server machine in order to execute the method.
+-   クライアントではなくサーバー上でメソッドを実行したい場合、実行モードメニューで **4D Server** を選択します。 この場合 *ストアドプロシージャー* と呼ばれるプロセスが新規にサーバー上で作成され、メソッドが実行されます。
 
-   This option can be used to reduce network traffic and optimize the functioning of 4D Server, in particular for methods that call data stored on the disk. All types of methods can be executed on the server machine or on another client machine, except for those that modify the user interface. In this case, stored procedures are ineffective.
+   このオプションを使用して、ネットワークトラフィックを減らしたり、4D Serverの動作を最適化したりできます (特にディスクに格納されたデータにアクセスする場合など)。 すべてのタイプのメソッドをサーバー上や他のクライアント上で実行できますが、ユーザーインターフェースを変更するものは例外です。 この場合、ストアドプロシージャーは効果がありません。
 
--   You can also choose to run the method on another client workstation. Other client workstations will not appear in the menu, unless they have been previously "registered" (for more information, refer to the description of the [REGISTER CLIENT](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.en.html).
+-   他のクライアントマシン上でメソッドを実行するよう選択することもできます。 他のクライアントマシンは、事前に登録されていなければメニューに表示されません (詳細は [REGISTER CLIENT](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.ja.html) の説明を参照ください)。
 
-By default, the **locally** option is selected. With the 4D single-user version, this is the only option available.
+デフォルトでは、**ローカル** オプションが選択されています。 4D シングルユーザーの場合、このオプションしか選択できません。
