@@ -758,13 +758,69 @@ In *options*, you can pass an object with additional options for the table. Poss
 |showHeader|Boolean|True to display a header. False otherwise|
 |showFooter|Boolean|True to display a footer. False otherwise|
 |useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row|
-|showResizeHandle|Boolean|For tables that don't have a *source* True, to display the resize handle|
+|showResizeHandle|Boolean|For tables that don't have a *source*, True to display the resize handle|
 |tableColumns|Collection|Collection of objects that hold information on the table's columns|
 
   In the tableColumns collection, each object has the following values: 
 
   |Property|Type|Description|Mandatory
-  |---|---|---|
+  |---|---|---|---|
+  |dataField|Text| table column's data field (to access the data context)| No
+  |name|Text|->| Table's column name | Yes
+  |formatter|Text|->| Table's column formatter | No
+
+#### Example
+
+```4d
+```
+
+#### See also
+
+[VP REMOVE TABLE](#vp-remove-table)<br/>[VP SET DATA CONTEXT](#vp-set-data-context)
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R6|Added
+</details>
+
+<!-- REF #_method_.VP CREATE TABLE.Syntax -->**VP CREATE TABLE** ( *rangeObj* : Object; *tableName* : Text {; *source* : Text}{; *options* : Object} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP CREATE TABLE.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|rangeObj|Object|->|Range object|
+|tableName|Text|->|Name for the table|
+|source|Text|->|Data context attribute name to display in the table|
+|options|Object|->|Additional options|
+<!-- END REF -->  
+
+#### Description
+
+The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
+
+In *rangeObj*, pass the cell range where the table will be created.
+
+In *tableName*, pass a name for the table.
+
+In *source*, you can pass an attribute name from the [data context](#vp-set-data-context). It will be displayed in the table.
+
+In *options*, you can pass an object with additional options for the table. Possible values are: 
+
+|Property|Type|Description|
+|---|---|---|
+|showHeader|Boolean|True to display a header. False otherwise|
+|showFooter|Boolean|True to display a footer. False otherwise|
+|useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row|
+|showResizeHandle|Boolean|For tables that don't have a *source*, True to display the resize handle|
+|tableColumns|Collection|Collection of objects that hold information on the table's columns|
+
+  In the tableColumns collection, each object has the following values: 
+
+  |Property|Type|Description|Mandatory
+  |---|---|---|---|
   |dataField|Text| table column's data field (to access the data context)| No
   |name|Text|->| Table's column name | Yes
   |formatter|Text|->| Table's column formatter | No
@@ -3148,6 +3204,54 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 #### See also
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP Get stylesheets](#vp-get-stylesheets)
+
+### VP REMOVE TABLE
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R6|Added
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheetId* : Integer}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName|Text|->|View Pro area name|
+|tableName|Text|->|Name of the table|
+|options|Integer|->|Additional options|
+|sheet|Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes the specified table<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the area where the table is located.
+
+In *tableName*, pass the name of the table to remove.
+
+In *options*, you can specify what is removed. Possible values are: 
+
+|Constant|Value|Description|
+|---|---|---|
+|vk remove table option remove all|0|->|Remove the table but keep the data and styles|
+|vk remove table option keep data|1|->|Keep the data|
+|vk remove table option keep style|2|->|Keep the style|
+
+You can define where to remove the table in the optional *sheet* parameter using the sheet index (indexing starts at 0)
+
+#### Example
+
+```4d
+```
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)
 
 ### VP RESET SELECTION
 
