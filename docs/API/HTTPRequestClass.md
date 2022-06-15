@@ -16,9 +16,7 @@ HTTPRequest objects provide the following properties and functions:
 
 ||
 |---|
-|[<!-- INCLUDE #FunctionClass.apply().Syntax -->](#apply)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FunctionClass.apply().Summary -->|
-|[<!-- INCLUDE #FunctionClass.call().Syntax -->](#call)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FunctionClass.call().Summary --> |
-|[<!-- INCLUDE #FunctionClass.source.Syntax -->](#source)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FunctionClass.source.Summary --> |
+|[<!-- INCLUDE #4D.HTTPRequest.new().Syntax -->](#4d-httprequest-new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.new().Summary -->|
 
 
 
