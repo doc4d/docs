@@ -792,7 +792,7 @@ By default, a non-diacritical evaluation is performed. If you want the evaluatio
 </details>
 
 <!-- REF #collection.every().Syntax -->
-**.every**({ *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
+**.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.every().Params -->
 |Parameter|Type||Description|
@@ -809,14 +809,14 @@ By default, a non-diacritical evaluation is performed. If you want the evaluatio
 
 The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *formula* object or *methodName* name<!-- END REF -->.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
 
-*formula* (or *methodName*) receives the following parameters:
+The callback receives the following parameters:
 
 *	in *$1.value*: element value to be evaluated
 *	in *$2*: param
@@ -1039,14 +1039,14 @@ The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new 
 
 >This function does not modify the original collection.
 
-You designate the 4D code (callback) to be executed to filter collection elements using either:
+You designate the callback to be executed to filter collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
 
-*formula* (or *methodName*) receives the following parameters:
+The callback receives the following parameters:
 
 *	in *$1.value*: element value to be evaluated
 *	in *$2*: param
@@ -1123,14 +1123,14 @@ The `.find()` function <!-- REF #collection.find().Summary -->returns the first 
 
 >This function does not modify the original collection.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
 
-*formula* (or *methodName*) receives the following parameters:
+The callback receives the following parameters:
 
 *	in *$1.value*: element value to be evaluated
 *	in *$2*: param
@@ -1215,14 +1215,14 @@ The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns 
 
 >This function does not modify the original collection.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
 
-*formula* (or *methodName*) receives the following parameters:
+The callback receives the following parameters:
 
 *	in *$1.value*: element value to be evaluated
 *	in *$2*: param
@@ -1615,10 +1615,10 @@ The `.map()` function <!-- REF #collection.map().Summary -->creates a new collec
 >This function does not modify the original collection.
 
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
 
@@ -1927,10 +1927,10 @@ This function returns a *shallow copy*, which means that objects or collections 
 >This function does not modify the original collection.
 
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide *extraParam* parameters to the callback if necessary.
 
@@ -2229,7 +2229,7 @@ More examples of queries can be found in the `dataClass.query()` page.
 </details>
 
 <!-- REF #collection.reduce().Syntax -->
-**.reduce**( *formula* : 4D.Function ) : any<br>**.reduce**( *formula* : 4D.Function ; *initValue* : any { ; *...param* : expression } ) : any<br>**.reduce**( *methodName* : Text ) : any <br>**.reduce**( *methodName* : Text ; *initValue* : any { ; *...param* : expression } ) : any <!-- END REF -->
+**.reduce**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br>**.reduce**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
 
 
 <!-- REF #collection.reduce().Params -->
@@ -2250,10 +2250,10 @@ The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *f
 
 >This function does not modify the original collection.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
@@ -2603,7 +2603,7 @@ The `.some()` function <!-- REF #collection.some().Summary -->returns true if at
 You designate the 4D code (callback) to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text). 
+- or *methodName*, the name of a project method (text). 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
 
