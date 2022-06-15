@@ -1658,12 +1658,12 @@ En cuanto a los dos últimos ejemplos, observe que el resultado de la búsqueda 
 ```
 searchCriteria = CHARSET "ISO-8859" BODY "Help"
 ```
-... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
+... significa que los criterios de búsqueda utilizan el conjunto de caracteres iso-8859 y el servidor tendrá que convertir los criterios de búsqueda antes de buscar, si es necesario.
 
 
 #### Tipos de valores de búsqueda
 
-Search-keys may request the value to search for:
+Las claves de búsqueda pueden solicitar el valor a buscar:
 
 - **Search-keys with a field-name value**: the field-name is the name of a header field. Ejemplo: `searchCriteria = SENTBEFORE 1-Feb-2020` (una fecha no suele necesitar comillas, ya que no contiene caracteres especiales)
 
