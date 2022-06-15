@@ -1658,12 +1658,12 @@ En cuanto a los dos últimos ejemplos, observe que el resultado de la búsqueda 
 ```
 searchCriteria = CHARSET "ISO-8859" BODY "Help"
 ```
-... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
+... significa que los criterios de búsqueda utilizan el conjunto de caracteres iso-8859 y el servidor tendrá que convertir los criterios de búsqueda antes de buscar, si es necesario.
 
 
 #### Tipos de valores de búsqueda
 
-Search-keys may request the value to search for:
+Las claves de búsqueda pueden solicitar el valor a buscar:
 
 - **Search-keys with a field-name value**: the field-name is the name of a header field. Ejemplo: `searchCriteria = SENTBEFORE 1-Feb-2020` (una fecha no suele necesitar comillas, ya que no contiene caracteres especiales)
 
@@ -1678,20 +1678,20 @@ Search-keys may request the value to search for:
 
 #### Teclas de búsqueda disponibles
 
-**ALL**: All messages in the mailbox.  
-**ANSWERED**: Messages with the \Answered flag set.  
-**UNANSWERED**: Messages that do not have the \Answered flag set.  
-**DELETED**: Messages with the \Deleted flag set.  
-**UNDELETED**: Messages that do not have the \Deleted flag set.  
-**DRAFT**: Messages with the \Draft flag set.  
-**UNDRAFT**: Messages that do not have the \Draft flag set.  
-**FLAGGED**: Messages with the \Flagged flag set.  
-**UNFLAGGED**: Messages that do not have the \Flagged flag set.  
-**RECENT**: Messages that have the \Recent flag set.  
-**OLD**: Messages that do not have the \Recent flag set.  
-**SEEN**: Messages that have the \Seen flag set.  
-**UNSEEN**: Messages that do not have the \Seen flag set.  
-**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.  
+**ALL**: todos los mensajes del buzón.  
+**ANSWERED**: mensajes con el marcador \Answered.  
+**UNANSWERED**: mensajes que no tienen el marcador \Answered.  
+**DELETED**: mensajes con el marcador \Deleted.  
+**UNDELETED**: mensajes que no tienen el marcador \Deleted.  
+**DRAFT**: mensajes con el marcador \Draft.  
+**UNDRAFT**: mensajes que no tienen el marcador \Draft.  
+**FLAGGED**: mensajes con el marcador \Flagged.  
+**UNFLAGGED**: mensajes que no tienen el marcador \Flagged.  
+**RECENT**: mensajes que tienen el marcador \Recent.  
+**OLD**: mensajes que no tienen el marcador \Recent.  
+**SEEN**: mensajes que tienen el marcador \Seen.  
+**UNSEEN**: Mensajes que no tienen el marcador \Seen.  
+**NEW**: mensajes que tienen el marcador \Recent pero no el marcador \Seen. This is functionally equivalent to “(RECENT UNSEEN)”.  
 ***KEYWORD ***flag******: Messages with the specified keyword set.  
 ***UNKEYWORD ***flag******: Messages that do not have the specified keyword set.  
 ***BEFORE ***date******: Messages whose internal date is earlier than the specified date.  
