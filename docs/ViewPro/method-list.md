@@ -745,6 +745,30 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
 
+In *rangeObj*, pass the cell range where the table will be created.
+
+In *name*, pass a name for the table.
+
+In *source*, you can pass an attribute name from the [data context](#vp-set-data-context). It will be displayed in the table.
+
+In *options*, you can pass an object with additional options for the table. Possible values are: 
+
+|Property|Type|Description|
+|---|---|---|
+|showHeader|Boolean|True to display a header. False otherwise|
+|showFooter|Boolean|True to display a footer. False otherwise|
+|useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row|
+|showResizeHandle|Boolean|For tables that don't have a *source* True, to display the resize handle|
+|tableColumns|Collection|Collection of objects that hold information on the table's columns|
+
+  In the tableColumns collection, each object has the following values: 
+
+  |Property|Type|Description|Mandatory
+  |---|---|---|
+  |dataField|Text| table column's data field (to access the data context)| No
+  |name|Text|->| Table's column name | Yes
+  |formatter|Text|->| Table's column formatter | No
+
 #### Example
 
 ```4d
@@ -752,7 +776,7 @@ The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->crea
 
 #### See also
 
-[VP REMOVE TABLE](#vp-remove-table)
+[VP REMOVE TABLE](#vp-remove-table)<br/>[VP SET DATA CONTEXT](#vp-set-data-context)
 
 ## D
 
