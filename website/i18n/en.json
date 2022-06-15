@@ -65,6 +65,9 @@
       "API/FunctionClass": {
         "title": "Formula"
       },
+      "API/HTTPRequestClass": {
+        "title": "HTTPRequest"
+      },
       "API/IMAPTransporterClass": {
         "title": "IMAPTransporter"
       },
@@ -994,7 +997,6 @@
       "Class API Reference": "Class API Reference",
       "Handling Code": "Handling Code",
       "Debugging": "Debugging",
-      "Transformation Tags": "Transformation Tags",
       "Settings": "Settings",
       "Preferences": "Preferences",
       "4D Server Administration Window": "4D Server Administration Window",
@@ -1047,7 +1049,7 @@
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "Debugging",
-    "Code Editor|no description given": "Code Editor",
+    "Handling Code|no description given": "Handling Code",
     "Web Data Explorer|no description given": "Web Data Explorer",
     "Language Reference (4D Doc Center)|no description given": "Language Reference (4D Doc Center)",
     "Access Rights|no description given": "Access Rights",
