@@ -154,8 +154,8 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 | " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                    | "8%" será mostrado como: 8%                                                                                                |
 | %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                        | El 8% se mostrará como 0,08                                                                                                |
 | \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                             | #.# mostrará 1.54 como 1.5                                                                                                 |
-| ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                               | $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                       |
-| \        | Displays the character following it.                                                                                                                                                                                                                                            | #.00\? #.00\? #.00\? will display 123 as 123.00?                                                                        |
+| ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                               | $?? $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                   |
+| \        | Displays the character following it.                                                                                                                                                                                                                                            | #.00\? #.00\? #.00\? #.00\? will display 123 as 123.00?                                                                |
 | /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                 | #/# mostrará .75 como 3/4                                                                                                  |
 | \[ ]     | Crea formatos condicionales.                                                                                                                                                                                                                                                    | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
 | E         | Formato notación científica.                                                                                                                                                                                                                                                    | #E+# - mostrará 2E+6 en lugar de 1,500,500                                                                                 |
@@ -264,16 +264,16 @@ In addition to the special characters and codes described in the previous sectio
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
-| Propiedad         | Tipo         | Descripción                                                                                                           |
-| ----------------- | ------------ | --------------------------------------------------------------------------------------------------------------------- |
-| columnEnd         | entero largo | The last column to print in a cell range. Valor por defecto = -1 (todas las columnas)                                 |
-| columnStart       | entero largo | The first column to print in a cell range. Valor por defecto = -1 (todas las columnas)                                |
-| repeatColumnEnd   | entero largo | The last column of a range of columns to print on the left of each page. Valor por defecto = -1 (todas las columnas)  |
-| repeatColumnStart | entero largo | The first column of a range of columns to print on the left of each page. Valor por defecto = -1 (todas las columnas) |
-| repeatRowEnd      | entero largo | The last row of a range of rows to print on the top of each page. Default value = -1 (all rows)                       |
-| repeatRowStart    | entero largo | The first row of a range of rows to print at the top of each page. Default value = -1 (all rows)                      |
-| rowEnd            | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                  |
-| rowStart          | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                                 |
+| Propiedad         | Tipo         | Descripción                                                                                             |
+| ----------------- | ------------ | ------------------------------------------------------------------------------------------------------- |
+| columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                    |
+| columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                   |
+| repeatColumnEnd   | entero largo | The last column of a range of columns to print on the left of each page. Default value = -1 (all rows)  |
+| repeatColumnStart | entero largo | The first column of a range of columns to print on the left of each page. Default value = -1 (all rows) |
+| repeatRowEnd      | entero largo | The last row of a range of rows to print on the top of each page. Default value = -1 (all rows)         |
+| repeatRowStart    | entero largo | The first row of a range of rows to print at the top of each page. Default value = -1 (all rows)        |
+| rowEnd            | entero largo | The last column to print in a cell range. Default value = -1 (all rows)                                 |
+| rowStart          | entero largo | The first column to print in a cell range. Default value = -1 (all rows)                                |
 
 ### Encabezados / Pies de página
 
@@ -327,8 +327,8 @@ Margin attributes are used to specify the 4D View Pro area margins for printing.
 | margin    |        | objeto       | Los márgenes de impresión                                    |
 |           | top    | entero largo | Top margin, in hundredths of an inch. Por defecto = 75       |
 |           | bottom | entero largo | Bottom margin, in hundredths of an inch. Por defecto = 75    |
-|           | left   | entero largo | Margen izquierdo, en centésimas de pulgada. Por defecto = 70 |
-|           | right  | entero largo | Margen derecho, en centésimas de pulgada. Por defecto = 70   |
+|           | left   | entero largo | Margen derecho, en centésimas de pulgada. Por defecto = 70   |
+|           | right  | entero largo | Margen izquierdo, en centésimas de pulgada. Por defecto = 70 |
 |           | header | entero largo | Header offset, in hundredths of an inch. Por defecto = 30    |
 |           | footer | entero largo | Footer offset, in hundredths of an inch. Por defecto = 30    |
 
