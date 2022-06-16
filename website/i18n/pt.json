@@ -125,17 +125,11 @@
       "code-editor/find-replace": {
         "title": "Find and replace"
       },
-      "code-editor/interface": {
-        "title": "Interface"
-      },
-      "code-editor/navigation": {
-        "title": "Navigation dropdown"
-      },
       "code-editor/overview": {
-        "title": "Visão Geral"
+        "title": "About 4D Code"
       },
       "code-editor/write-class-method": {
-        "title": "Writing classes and methods"
+        "title": "Code Editor"
       },
       "Concepts/about": {
         "title": "Sobre a linguagem 4D"
@@ -639,13 +633,13 @@
       "FormObjects/text": {
         "title": "Texto"
       },
-      "FormObjects/viewProArea_overview": {
+      "FormObjects/viewProAreaOverview": {
         "title": "Área 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Web Area"
       },
-      "FormObjects/writeProArea_overview": {
+      "FormObjects/writeProAreaOverview": {
         "title": "4D Write Pro area"
       },
       "GettingStarted/creating": {
@@ -998,7 +992,7 @@
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
       "Class API Reference": "Class API Reference",
-      "Code Editor": "Code Editor",
+      "Handling Code": "Handling Code",
       "Debugging": "Debugging",
       "Transformation Tags": "Transformation Tags",
       "Settings": "Settings",
