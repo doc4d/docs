@@ -747,11 +747,11 @@ The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->crea
 
 In *rangeObj*, pass the cell range where the table will be created.
 
-In *name*, pass a name for the table. The name:  
+In *name*, pass a name for the table. The name must:  
 
-* must be unique in the document
-* must include at least 5 characters and cannot include spaces
-* must start with a number
+* be unique in the document
+* include at least 5 characters and cannot include spaces
+* start with a number
 
 In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. If you don't specify a source, the command creates an empty table with the size defined in *rangeObj*.
 
