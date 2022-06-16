@@ -3222,9 +3222,9 @@ In *options*, you can specify what is removed. Possible values are:
 
 |Constant|Value|Description|
 |---|---|---|
-|vk remove table option remove all|0|->|Remove the table but keep the data and styles|
-|vk remove table option keep data|1|->|Keep the data|
-|vk remove table option keep style|2|->|Keep the style|
+|vk remove table option remove all|0|Remove the table but keep the data and styles|
+|vk remove table option keep data|1|Keep the data|
+|vk remove table option keep style|2|Keep the style|
 
 You can define where to remove the table in the optional *sheet* parameter using the sheet index (indexing starts at 0)
 
