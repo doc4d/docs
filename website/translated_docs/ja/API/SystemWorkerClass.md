@@ -600,7 +600,7 @@ $output:=$worker.response
 
 この関数は、SystemWorker オブジェクトを返します。
 
-> This function is not necessary if you created the `SystemWorker` from a 4D worker process.
+> `SystemWorker` を 4D のワーカープロセスから作成した場合、この関数は必要ありません。
 
 <!-- END REF -->
 
