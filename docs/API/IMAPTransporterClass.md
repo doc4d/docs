@@ -315,6 +315,7 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -324,6 +325,7 @@ $status:=$imap.append($msg; "Drafts")
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
 
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -1573,6 +1575,7 @@ $options:=New object
 $pw:=Request("Please enter your password:")
 
 If(OK=1) $options.host:="imap.gmail.com"
+
 $options.user:="test@gmail.com"
 $options.password:=$pw
 
