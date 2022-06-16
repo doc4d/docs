@@ -745,90 +745,74 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
 
-In *rangeObj*, pass the cell range where the table will be created.
+In *rangeObj*, pass the cell range where the table will be created. If you specify a *source*:
 
-In *name*, pass a name for the table.
+In *name*, pass a name for the table. The name:  
 
-In *source*, you can pass an attribute name from the [data context](#vp-set-data-context). It will be displayed in the table.
+* must be unique in the document
+* must include at least 5 characters and cannot include spaces
+* must start with a number
 
-In *options*, you can pass an object with additional options for the table. Possible values are: 
+In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. If you don't specify a source, the command creates an empty table with the size defined in *rangeObj*.
 
-|Property|Type|Description|
-|---|---|---|
-|showHeader|Boolean|True to display a header. False otherwise|
-|showFooter|Boolean|True to display a footer. False otherwise|
-|useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row|
-|showResizeHandle|Boolean|For tables that don't have a *source*, True to display the resize handle|
-|tableColumns|Collection|Collection of objects that hold information on the table's columns|
+If the *source* cannot be fully displayed in the document, no table is created.
 
-  In the tableColumns collection, each object has the following values: 
+In *options*, you can pass an object with additional options for the table. Possible values are:
 
-  |Property|Type|Description|Mandatory
-  |---|---|---|---|
-  |dataField|Text| table column's data field (to access the data context)| No
-  |name|Text|->| Table's column name | Yes
-  |formatter|Text|->| Table's column formatter | No
-
-#### Example
-
-```4d
-```
-
-#### See also
-
-[VP REMOVE TABLE](#vp-remove-table)<br/>[VP SET DATA CONTEXT](#vp-set-data-context)
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R6|Added
-</details>
-
-<!-- REF #_method_.VP CREATE TABLE.Syntax -->**VP CREATE TABLE** ( *rangeObj* : Object; *tableName* : Text {; *source* : Text}{; *options* : Object} )
-<!-- END REF -->  
-
-<!-- REF #_method_.VP CREATE TABLE.Params -->
-
-|Parameter|Type||Description|
+|Property|Type|Description|Default value
 |---|---|---|---|
-|rangeObj|Object|->|Range object|
-|tableName|Text|->|Name for the table|
-|source|Text|->|Data context attribute name to display in the table|
-|options|Object|->|Additional options|
-<!-- END REF -->  
+|showFooter|Boolean|Display a footer| False
+|showHeader|Boolean|Display a header| True
+|showResizeHandle|Boolean|For tables that don't have a *source*. Display the resize handle| False
+|tableColumns|Collection|Collection of objects that hold information on the table's columns| Undefined
+|useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row| False
 
-#### Description
-
-The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
-
-In *rangeObj*, pass the cell range where the table will be created.
-
-In *tableName*, pass a name for the table.
-
-In *source*, you can pass an attribute name from the [data context](#vp-set-data-context). It will be displayed in the table.
-
-In *options*, you can pass an object with additional options for the table. Possible values are: 
-
-|Property|Type|Description|
-|---|---|---|
-|showHeader|Boolean|True to display a header. False otherwise|
-|showFooter|Boolean|True to display a footer. False otherwise|
-|useFooterDropDownList|Boolean|Use the footer's dropdown list for an entire row|
-|showResizeHandle|Boolean|For tables that don't have a *source*, True to display the resize handle|
-|tableColumns|Collection|Collection of objects that hold information on the table's columns|
-
-  In the tableColumns collection, each object has the following values: 
+  In the *tableColumns* collection, each object has the following values:
 
   |Property|Type|Description|Mandatory
   |---|---|---|---|
   |dataField|Text| table column's data field (to access the data context)| No
-  |name|Text|->| Table's column name | Yes
   |formatter|Text|->| Table's column formatter | No
+  |name|Text|->| Table's column name | Yes
+
+  When you pass a *source* and a *tableColumns* option to the command, the columns of the table are created in the order they appear in the *tableColumns* collection.
+
+  If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
 #### Example
 
+To create a table form an entity selection:
+
 ```4d
+var $people: Collection
+var $data: Object
+
+// Create a data context
+$people:=ds.People.all().toCollection()
+
+$data:=New object()
+$data.people:=$people
+
+VP SET DATA CONTEXT("ViewProArea"; $data)
+
+// Define the columns for the table
+var $options: Object 
+
+$options:=New object
+$options.tableColumns:=New collection()
+$options.tableColumns.push(New object("name"; "First name"; "dataField"; "Firstname"))
+$options.tableColumns.push(New object("name"; "Last name"; "dataField"; "Lastname"))
+$options.tableColumns.push(New object("name"; "Email"; "dataField"; "email"))
+$options.tableColumns.push(New object("name"; "Birthday"; "dataField"; "Birthday"; "formatter"; "dddd dd MMMM yyyy"))
+$options.tableColumns.push(New object("name"; "Country"; "dataField"; "Country"))
+
+// Create a table from the collection 
+VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; 5; 2); "ContextTable"; "people"; $options)
 ```
+
+Here's the result:
+
+![](assets/en/ViewPro/vp-create-table.png)
 
 #### See also
 
@@ -3221,7 +3205,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 |Parameter|Type||Description|
 |---|---|---|---|
 |vpAreaName|Text|->|View Pro area name|
-|tableName|Text|->|Name of the table|
+|tableName|Text|->|Name of the table to remove|
 |options|Integer|->|Additional options|
 |sheet|Integer|->|Sheet index (current sheet if omitted)|
 <!-- END REF -->  
@@ -3230,11 +3214,11 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes the specified table<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the area where the table is located.
+In *vpAreaName*, pass the name of the area where the table to remove is located.
 
 In *tableName*, pass the name of the table to remove.
 
-In *options*, you can specify what is removed. Possible values are: 
+In *options*, you can specify what is removed. Possible values are:
 
 |Constant|Value|Description|
 |---|---|---|
@@ -3246,7 +3230,10 @@ You can define where to remove the table in the optional *sheet* parameter using
 
 #### Example
 
+To remove the "people" table in the second sheet and keep the data in the cells:
+
 ```4d
+VP REMOVE TABLE("ViewProArea"; "people"; 1; 2)
 ```
 
 #### See also
