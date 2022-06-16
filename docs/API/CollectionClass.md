@@ -824,7 +824,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
+*	(mandatory if you used a method) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *	*$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 In all cases, at the point when the `.every()` function encounters the first collection element evaluated to **false**, it stops calling the callback and returns **false**.
@@ -880,6 +880,7 @@ $b:=$c.every($f;Is real) //$b=false
 
 <details><summary>History</summary>
 |Version|Changes|
+
 |---|---|
 |v16 R6|Added|
 </details>
@@ -1054,7 +1055,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
+*	(mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
 *	*$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 
@@ -1138,7 +1139,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
+*	(mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *	*$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 
@@ -1230,7 +1231,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
+*	(mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *	*$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 By default, `.findIndex()` searches in the whole collection. Optionally, you can pass in *startFrom* the index of element from which to start the search.
@@ -1630,7 +1631,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (any type): new transformed value to add to the resulting collection
+*	(mandatory if you used a method) *$1.result* (any type): new transformed value to add to the resulting collection
 *	*$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 
@@ -1941,7 +1942,8 @@ The callback receives the following parameters:
 	- *$1.value2* (any type): second element value to be compared
 	- $2...$N (any type): extra parameters
 
-If you passed a *methodName*, it must set the following parameter:
+If you used a method, it must set the following parameter:
+
 - *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise
 
 #### Example 1
@@ -1976,11 +1978,11 @@ var $strings1; $strings2 : Collection
 $strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
 
 //using the character code:
-$strings2:=$strings1.orderByMethod("sortCollection";sk character codes)
+$strings2:=$strings1.orderByMethod(Function(sortCollection);sk character codes)
 // result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
 
 //using the language:
-$strings2:=$string1s.orderByMethod("sortCollection";sk strict)
+$strings2:=$string1s.orderByMethod(Function(sortCollection);sk strict)
 // result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ``` 
 
@@ -2292,7 +2294,7 @@ This example allows reducing several collection elements to a single one:
  $c.push(New collection(2;3))
  $c.push(New collection(4;5))
  $c.push(New collection(6;7))
- $r:=$c.reduce("Flatten") //$r=[0,1,2,3,4,5,6,7]
+ $r:=$c.reduce(Formula(Flatten)) //$r=[0,1,2,3,4,5,6,7]
 ```
 
 With the following ***Flatten*** method:
@@ -2616,7 +2618,7 @@ The callback receives the following parameters:
 
 It can set the following parameter(s): 
 
-*	(with *methodName* only) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
+*	(mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *	*$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
 In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
@@ -2690,12 +2692,13 @@ If `.sort()` is called with no parameters, only scalar values (number, text, dat
 If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. You can provide additional parameters to the callback if necessary.
 
 The callback receives the following parameters:
+
 - $1 (object), where:
 	- *$1.value* (any type): first element value to be compared
 	- *$1.value2* (any type): second element value to be compared
 - $2...$N (any type): extra parameters
 
-It can set the following parameter with *methodName* only:
+If you used a method, you must set the folllowing parameter:
 
 - *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise.
 
