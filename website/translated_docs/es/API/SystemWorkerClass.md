@@ -3,21 +3,21 @@ id: SystemWorkerClass
 title: SystemWorker
 ---
 
-System workers allow the 4D code to call any external process (a shell command, PHP, etc.) on the same machine. System workers are called asynchronously. By using callbacks, 4D makes it possible to communicate both ways.
+Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los System workers se llaman asíncronamente. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
 
-The `SystemWorker` class is available from the `4D` class store.
+La clase `SystemWorker` está disponible en el almacén de clases `4D`.
 
 ### Ejemplo
 
 ```4d
-    // Windows example to get access to the ipconfig information
+    // Ejemplo Windows para acceder a la información de ipconfig
 var $myWinWorker : 4D.SystemWorker
 var $ipConfig : Text
 $myWinWorker:= 4D.SystemWorker.new("ipconfig")
-$ipConfig:=$myWinWorker.wait(1).response //timeout 1 second
+$ipConfig:=$myWinWorker.wait(1).response //timeout 1 segundo
 
-    // macOS example to change the permissions for a file on macOS
-    // chmod is the macOS command used to modify file access
+    // ejemplo macOS para cambiar los permisos de un archivo en macOS
+    // chmod es el comando macOS utilizado para modificar el acceso a los archivos
 var $myMacWorker : 4D.SystemWorker
 $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
@@ -63,21 +63,21 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 <!-- REF #4D.SystemWorker.new().Syntax -->**4D.SystemWorker.new** ( *commandLine* : Text { ; options : Object } ) : 4D.SystemWorker<!-- END REF -->
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parámetros  | Tipo            |    | Descripción                                                   |
-| ----------- | --------------- |:--:| ------------------------------------------------------------- |
-| commandLine | Texto           | -> | Línea de comando a ejecutar                                   |
-| options     | Objeto          | -> | Parámetros worker                                             |
-| result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
+| Parámetros  | Tipo            |    | Descripción                                                          |
+| ----------- | --------------- |:--:| -------------------------------------------------------------------- |
+| commandLine | Texto           | -> | Línea de comando a ejecutar                                          |
+| options     | Objeto          | -> | Parámetros worker                                                    |
+| result      | 4D.SystemWorker | <- | Nuevo System worker asíncrono o null si el proceso no se ha iniciado |  
 <!-- END REF -->
 
 
 #### Descripción
 
-The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->creates and returns a `4D.SystemWorker` object that will execute the *commandLine* you passed as parameter to launch an external process<!-- END REF -->.
+La función `4D.SystemWorker.new()` <!-- REF #4D.SystemWorker.new().Summary -->crea y devuelve un objeto `4D.SystemWorker` que ejecutará el *commandLine* pasado como parámetro para lanzar un proceso externo<!-- END REF -->.
 
-The returned system worker object can be used to post messages to the worker and get the worker output.
+El objeto system worker devuelto puede utilizarse para enviar mensajes al worker y obtener los resultados del worker.
 
-If an error occurs during the creation of the proxy object, the function returns a `null` object and an error is thrown.
+Si se produce un error durante la creación del objeto proxy, la función devuelve un objeto `null` y se lanza un error.
 
 In the *commandLine* parameter, pass the full path of the application's file to be executed (posix syntax), as well as any required arguments, if necessary. If you pass only the application name, 4D will use the `PATH` environment variable to locate the executable.
 
