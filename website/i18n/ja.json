@@ -125,17 +125,11 @@
       "code-editor/find-replace": {
         "title": "Find and replace"
       },
-      "code-editor/interface": {
-        "title": "インターフェース"
-      },
-      "code-editor/navigation": {
-        "title": "ナビゲーションドロップダウン"
-      },
       "code-editor/overview": {
-        "title": "概要"
+        "title": "4D コードについて"
       },
       "code-editor/write-class-method": {
-        "title": "Writing classes and methods"
+        "title": "コードエディター"
       },
       "Concepts/about": {
         "title": "4D ランゲージについて"
@@ -639,13 +633,13 @@
       "FormObjects/text": {
         "title": "テキスト"
       },
-      "FormObjects/viewProArea_overview": {
+      "FormObjects/viewProAreaOverview": {
         "title": "4D View Pro エリア"
       },
       "FormObjects/webAreaOverview": {
         "title": "Webエリア"
       },
-      "FormObjects/writeProArea_overview": {
+      "FormObjects/writeProAreaOverview": {
         "title": "4D Write Pro エリア"
       },
       "GettingStarted/creating": {
@@ -998,7 +992,7 @@
       "4D Language Concepts": "ランゲージのコンセプト",
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
-      "Code Editor": "コードエディター",
+      "Handling Code": "コードの扱い方",
       "Debugging": "デバッガー",
       "Transformation Tags": "変換タグ",
       "Settings": "設定",
