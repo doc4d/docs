@@ -316,6 +316,7 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -345,7 +346,7 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 
 >**Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
 
-
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -799,6 +800,7 @@ $status:=$transporter.expunge()
 
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>History</summary>
