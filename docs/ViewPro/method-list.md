@@ -745,7 +745,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
 
-In *rangeObj*, pass the cell range where the table will be created. If you specify a *source*:
+In *rangeObj*, pass the cell range where the table will be created.
 
 In *name*, pass a name for the table. The name:  
 
