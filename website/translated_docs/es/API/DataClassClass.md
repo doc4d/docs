@@ -1004,16 +1004,16 @@ Por ejemplo, con las dos entidades siguientes:
 
 ```
 Entity 1:
-ds.People.name: "martin"
-ds.People.places:
+ds. People.name: "martin"
+ds. People.places:
     { "locations" : [ {
                 "kind":"home",
                 "city":"paris"
             } ] }
 
 Entity 2:
-ds.People.name: "smith"
-ds.People.places:
+ds. People.name: "smith"
+ds. People.places:
     { "locations" : [ {
                 "kind":"home",
                 "city":"lyon"
