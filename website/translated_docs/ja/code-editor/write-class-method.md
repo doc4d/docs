@@ -58,218 +58,218 @@ title: コードエディター
 
 - リストを追加/削除するには、リストのタイトルエリアをクリックし、一番下の対応するメニューを選択します。 **このリストを取り除く** コマンドは、リストが残り1つのときは無効になります。 すべてのリストを非表示にするには、ウィンドウ右下の **リストを表示\非表示** ボタンをクリックするか、**環境設定** でデフォルトで非表示にする必要があります。
 
-- You can hide the lists in all the windows in the following ways:
-  - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
-  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened.
+- すべてのウィンドウでリストを非表示にするには、次の方法があります:
+  - **メソッド** メニューの **表示＞リスト** オプションの選択を解除する
+  - **環境設定** の **メソッド** ページで **オプション** ＞ **リスト表示** の選択を解除する。 **環境設定** ダイアログボックスでおこなった変更は、開かれているメソッドやクラス、関数を一度閉じて再度開いたときに反映されます。
 
-#### Available lists of items
+#### リストのタイプ
 
-You can display the following lists of items in the lists area of the Code Editor window:
+コードエディターウィンドウのリストエリアには以下の項目を表示できます:
 
-- **All tables and fields**: Database table and field names in the form of a hierarchical list. When you insert a field name into the method by double-clicking on its name, 4D inserts it while respecting the syntax and adds the name of the table or subtable as the case may be.
-- **Table** (submenu): Field names of the table selected using the submenu.
-- **Current table**: Field names of the current table (available in triggers, form methods and object methods).
-- **Project forms**: Database project form names. When you double-click on a project form name, 4D inserts its while respecting the syntax: the form name is inserted between quotes.
-- **Table forms**: Database table and form names in the form of a hierarchical list. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. For example: [Table];"Form".
-- **Methods**: Database project method names.
-- **All folders**: Names of object folders and subfolders set in the database displayed in the form of a hierarchical list. Folders can be used to organize objects in a customized manner. They are managed from the Home Page of the Explorer.
-- **Folders** (submenu): Contents of the folder selected using the submenu.
-- **Macros**: Macro names defined for the database (see [Creating and using macros](#creating-and-using-macros)).
-- **Commands**: 4D language commands in alphabetical order.
-- **Commands by themes**: 4D language commands classified by theme in the form of a hierarchical list.
-- **Menu bars**: Names and numbers of menu bars [created with the 4D Menu bar editor](../Menus/creating.md).
-- **Constants**: 4D constants and those of any plug-ins, classified by theme in the form of a hierarchical list.
-- **Lists**: Names of lists.
-- **All plug-in commands**: Commands for all the plug-ins installed in the database (if any), classified by theme in the form of a hierarchical list.
-- **SQL Keywords**: set of keywords recognized by the 4D SQL syntax parser. This list includes commands (e.g. SELECT), clauses (e.g. WHERE) as well as functions (ABS).
-- **SQL Functions**: 4D SQL functions.
+- **すべてのテーブルとフィールド**: データベーステーブルとフィールドの名前 (階層リスト形式)。 ダブルクリックでフィールド名をコードに挿入すると、4D はシンタックスに合わせてテーブル名も挿入します。
+- **テーブル** (サブメニュー): サブメニューを使用して選択したテーブルのフィールド名。
+- **カレントテーブル**: カレントテーブルのフィールド名 (トリガー、フォームメソッド、オブジェクトメソッドで利用可能)。
+- **プロジェクトフォーム**: データベースのプロジェクトフォーム名。 プロジェクトフォーム名をダブルクリックすると、4D はダブルクォートで囲まれたフォーム名を挿入します。
+- **テーブルフォーム**: データベースのテーブルフォーム名 (階層リスト形式)。 ダブルクリックでテーブルフォーム名を挿入すると、4D はテーブル名の後にセミコロン、そしてダブルクォートで囲まれたフォーム名を挿入します。 例: [Table];"Form"。
+- **メソッド**: データベースに定義されたプロジェクトメソッド名。
+- **すべてのフォルダー**: データベースに定義されたオブジェクトフォルダーおよびサブフォルダー名 (階層リスト形式)。 フォルダーは、カスタマイズされた方法でオブジェクトをグループ化するために使用します。 フォルダーは、エクスプローラーのホームページで管理します。
+- **フォルダー** (サブメニュー): サブメニューを使用して選択されたフォルダーの中身。
+- **マクロ**: データベースに定義されたマクロ名 ([マクロの作成と利用](creating-and-using-macros.md) 参照)。
+- **コマンド**: 4Dランゲージコマンド (文字順)。
+- **コマンドリスト (テーマ順)**: テーマごとにグループ化された 4Dランゲージコマンド (階層リスト形式)。
+- **メニューバー**: [4Dメニューバーエディターで作成した](../Menus/creating.md) メニューバーの名前と番号。
+- **定数**: 4D やプラグインに定義された定数 (テーマ別階層リスト形式)。
+- **リスト**: リスト名。
+- **すべてのプラグインコマンド**: データベースにインストールされたプラグインのコマンド名 (テーマ別階層リスト形式)。
+- **SQLキーワード**: 4D の SQLシンタックスパーサーが解釈可能なキーワードのリスト。 このリストには、コマンド (例: SELECT)、句 (例: WHERE)、関数 (ABS) が含まれます。
+- **SQL関数**: 4D SQL 関数。
 
-**Note:** Except for the Macros element, all the lists are in alphabetical order.
+**注**: マクロ要素を除き、すべてのリストは文字順です。
 
-### Save as template
+### テンプレートとして保存
 
-You can save the lists set in the Code Editor window in the form of a template. Once the template is saved, the parameters set in it will be used for each new Code Editor window that is opened.
+コードエディターウィンドウに設定したリストをテンプレートとして保存できます。 テンプレートとして保存すると、新規にコードエディターを開くたびにその設定が使用されます。
 
-The following parameters are stored in the template:
+テンプレートには以下のパラメーターが保存されます:
 
-- Relative size of the editing and list areas
-- Number of lists
-- Location and contents of each list
-- Relative width of each list
+- 編集とリストエリアの相対サイズ
+- リストの数
+- 各リストの位置と表示内容
+- 各リストの相対幅
 
-To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
-
-
-## Break points area
-
-This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
-
-For more information on break points, see the [Debugging](../Debugging/breakpoints.md#breakpoints) section.
-
-You can display or hide the line numbers in the break points area for each window of the Code Editor.
-
-- To enable or disable the display of line numbers by default,  choose **Preferences** > **Methods** > **Show line numbers**.
-- To modify this display separately for each window of the Code Editor, choose **Method** > **View** > **Line Numbers**.
-
-Displaying the line numbers makes it easier to find your way around in the window. The **Method** > **Go to Line Number...** command in the also lets you take advantage of this display.
+設定をテンプレートとして保存するには、**メソッド** メニューから **テンプレートとして保存** を選択します。 テンプレートは即座に保存されます (ダイアログボックスは表示されません)。 設定は、4Dアプリケーションの **環境設定** に保存されます。 既存のテンプレートがあれば、上書きされます。
 
 
-## Status bar
+## ブレークポイントエリア
 
-The status bar located at the bottom right part of the editor window displays the position of the cursor at all times:
+編集エリアの左にあるこのエリアでは、行番号を表示したり、ブレークポイントを直接挿入したりできます。 ブレークポイントはプログラムのデバッグに使用します。 ブレークポイントが設定された場所でコード実行が停止し、デバッガーを表示します。
+
+ブレークポイントに関する詳細は、[デバッガー](../Debugging/breakpoints.md#ブレークポイント) の章を参照ください。
+
+コードエディターの各ウィンドウごとに、ブレークポイントエリアにおける行番号の表示/非表示を切り替えられます。
+
+- 行番号の表示/非表示のデフォルト設定は **環境設定** ＞ **メソッド** ページの **行番号を表示** で設定します。
+- 各ウィンドウの設定を切り替えるには、**メソッド** メニューの **表示** ＞ **行番号** を選択します。
+
+行番号を表示すると、ウィンドウ内で特定の行を見つけやすくなります。 **メソッド** メニューの **行番号を指定して移動...** コマンドを利用する場合も、この行番号を使用します。
+
+
+## ステータスバー
+
+エディターウィンドウの右下にはステータスバーがあり、カーソルの位置を表示します:
 
 ![](assets/en/code-editor/status-bar.png)
 
-- **Ln**: Line number
-- **Col**: Column number, i.e., the level in the hierarchy of programming structures. The first level is 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
-- **Ch**: Location of character in the line.
-- ![](assets/en/code-editor/show-hide-list.png): Hide/display lists.
+- **行**: 行番号
+- **階層**: 階層番号 (プログラム構造の階層レベル)。 先頭のレベルは 0 です。 この数値は、コード中でエラーが発生した際にインタープリターから提供されるのでデバッグ時に利用できます。
+- **文字**: 行内の文字位置。
+- ![](assets/en/code-editor/show-hide-list.png): リストの表示/非表示。
 
 
 
-## Typing and editing code
+## コードの入力と編集
 
-4D uses standard text editing techniques for typing and editing in the Code Editor.
+コードエディターへの入力と編集には標準のテキスト編集テクニックを使用します。
 
-The Code Editor uses display conventions (style, color) for the syntax elements. You can [customize these conventions](#customizing-the-editing-area). As you type, when you validate your entry, 4D evaluates the text of the line and applies the appropriate display format. 4D also indents each line to its proper level in relation to the preceding line when you use programming structures (If, End if...).
+コードエディターは、シンタックス要素ごとに、指定されたスタイルやカラーを使用した表示をおこないます。 この設定は[変更できます](#編集エリア)。 入力を確定するごとに、また改行を挿入する際に、4D は行のテキストを評価して適切な表示フォーマットを適用します。 また、If や End if などのプログラム構造が使用された場合、4D は自動でインデントをおこないます。
 
-You can use the arrow keys to move from line to line quickly. Using the arrow keys to move across several lines is quicker than clicking because the editor delays evaluating the line for errors.
+行に移動するには矢印キーを使用します。 矢印による移動では行の評価がおこなわれないため、クリックよりもすばやく移動できます。
 
-Under Windows, the code editor includes an Input Code Editor (IME) to facilitate code editing on Japanese or Chinese systems.
+Windows では、日本語や中国語を入力するために IME (Input Method Editor) がサポートされています。
 
-The Code Editor includes numerous [navigation shortcuts](#navigational-keyboard-shortcuts).
+コードエディターでは、複数の [ナビゲーションショートカット](#ショートカット) がサポートされています。
 
-### Adding items by drag-and-drop
+### ドラッグ＆ドロップによる追加
 
-When writing methods, you can drag and drop items:
+メソッドを記述する際に、ドラッグ＆ドロップを使用できます:
 
-* from the Explorer
-* within the same method, class, function
-* between methods, classes, and functions
+* エクスプローラーから
+* 同じメソッド・クラス・関数内で
+* メソッド・クラス・関数間で
 
-#### From the Explorer
+#### エクスプローラーから
 
-From the Explorer, you can drag and drop:
+エクスプローラーからは以下のものをドラッグ＆ドロップできます:
 
-* Table names, field names, form names and project methods from the Home page.
-* Table names and field names from the Tables page,
-* Table names and form names from the Forms page,
-* Project methods and form names from the Methods page,
-* Constants from the Constants page,
-* 4D commands from the Commands page.
+* ホームページからテーブル名、フィールド名、フォーム名、そしてプロジェクトメソッド。
+* テーブルページからテーブル名とフィールド名。
+* フォームページからテーブル名とフォーム名。
+* メソッドページからプロジェクトメソッドおよびフォーム名。
+* 定数ページから定数。
+* コマンドページから 4Dコマンド。
 
-When you drag and drop a component, 4D always uses the correct syntax for the component. For example, if you drag the field name "First Name" from the [People] table, it appears in the Code Editor as "[People]First Name." Similarly, if you drag the Form name "Input" from the People table, it appears in the Code Editor as "[People];"Input"."
+ドラッグ＆ドロップをおこなうと、4D は常に正しいシンタックスでオブジェクトを挿入します。 たとえば、[People]テーブルから "FirstName" フィールドをドロップすると、コードエディターには "[People]FirstName" が表示されます。 同様に、[People]テーブルから "Input" フォームをドロップすると、"[People];"Input"" と挿入されます。
 
-When you insert a command by dragging it from the **Commands** page of the Explorer, it appears with its syntax (which consists of all of its parameters) in the Code Editor. This feature simply reminds you of the parameters that the command expects. You can then use a syntax that better suits your usage.
+エクスプローラーの **コマンド** ページからコマンドをドラッグすると、コードエディターにはシンタックス (すべての引数が含まれる) も挿入されます。 この機能は、コマンドが期待する引数を確認するために存在します。 挿入されたシンタックスは、用途に合わせて編集できます。
 
-#### Within a method, class, function or between two different ones
+#### メソッド・クラス・関数内あるいはその間のドラッグ＆ドロップ:
 
-In the Code Editor, the drag-and-drop mechanism is activated as soon as a portion of text is selected. By default, the drag-and-drop mechanism moves the selected text. In order to copy it, hold down the **Ctrl** key (Windows) or the **Option** key (macOS) during the operation.
+コードエディターでテキストの一部を選択すると、ドラッグ＆ドロップメカニズムが有効になります。 デフォルトではドラッグ＆ドロップによりテキストが移動されます。 コピーをおこなうには **Ctrl** キー (Windows) または **Option** キー (macOS) を押しながら操作します。
 
-### Entry on several lines
+### 行を分割する
 
-You can write a single statement on several lines by terminating each line of the statement with a backslash `\` character. 4D will consider all the lines at once. For example, both the following statements are equivalent:
+1つのステートメントを複数行に記述することができます。これをおこなうには、ステートメントの各行をバックスラッシュ `\` 文字 (日本語Windowsの場合半角円マーク) で終了します。 このように複数行に分かれたコードを、4D は一行と解釈します。 たとえば、以下のステートメントは同等です:
 
 ![](assets/en/code-editor/entry-several-lines.png)
 
-### Changing case
+### 文字種の変換
 
-You can automatically modify the case of selected characters using the commands in **Methods** > **Case** or the context menu of the editor:
+**注**: この節の内容はアルファベットに対してのみ有効です。<br /><br /> **メソッド** メニューの **大文字/小文字** サブメニュー、またはエディターのコンテキストメニューを使用して、選択したテキストの文字の大小を変更することができます:
 
-* **Uppercase** / **Lowercase**: Switch the selected characters to uppercase or lowercase.
-* **camelCase** / **CamelCase** : Switch the selected characters to "camel case". This consists in changing each first letter of a group of attached words to uppercase. This type of notation is often used for variable nomenclatures. hireDate and PurchaseDate are examples of two variants of camel case notation.
+* **大文字** / **小文字**: 選択した文字を大文字または小文字に変換します。
+* **キャメルケース (先頭小文字)** / **キャメルケース (先頭大文字)** : 選択した文字をキャメルケースに変換します。 これは複数の単語を結合し、頭文字をそれぞれ大文字に変換するものです。 このような表記は、変数の命名法としてよく用いられます。 hireDate と PurchaseDate は、キャメルケース表記の 2つのバリエーションの例です。
 
-When you apply one of these commands to a text selection, the spaces and "_" characters are removed and the first letter of each word becomes uppercase.
+テキストにこれらのコマンドを適用すると、スペースと "_" 文字は取り除かれ、 各単語の先頭文字が大文字になります。
 
-### Swap expression
+### 式の入れ替え
 
-The **Swap Expression** function can be used to reverse the arguments of an expression assigning a value. For instance,
+**式の入れ替え** 機能を使用すると、代入式の左辺と右辺が入れ替わります。 たとえば:
 
 `variable1:=variable2`
 
-becomes
+は以下のようになります。
 
 `variable2:=variable1`
 
-This function is extremely useful for reversing a set of assignments used to get or set properties, or to correct input errors. To use this function, select the line(s) to be modified, then choose **Method** > **Swap Expression** or use the context menu of the area. Within the selection, only the lines assigning a value will be modified.
+この機能は、プロパティを取得したり設定したりする一連の代入式を逆にする場合や、入力間違いを訂正するのに便利です。 この機能を使用するには対象の行を選択し、**メソッド** メニューまたはエリアのコンテキストメニューから **式の入れ替え** コマンドを選択します。 選択された行のうち、値を代入する行だけが更新されます。
 
 ### コピー/ペースト文字列を複数記憶する
 
-In addition to the standard copy-paste operation, 4D offers two additional functions that let you work with the contents of different clipboards:
+標準のコピー/ペースト処理に加え、4D は異なるクリップボードの内容を操作するための 2つの追加機能を提供しています:
 
-* The program stores the last 10 "copy" or "cut" actions that were performed in the Code Editor in memory during the current session. Each of the different contents saved in this way can be reused at any time. To do this, use the **Clipboard History** command of the Code Editor context menu or the "Last Clipboard values" button of the toolbar:
+* 4D は現在のセッション中にコードエディター中でおこなわれた最新の 10個の "コピー" や "カット" アクションをメモリに格納します。 格納されたこれらの内容はいつでも再利用できます。 これには、コードエディターのコンテキストメニューから **クリップボード履歴** コマンドを使用するか、ツールバーの "最新のクリップボードの値" ボタンを使用します:
 
     ![](assets/en/code-editor/last-clipboard-values-2.png)
 
-    The first few words of the copied or cut items are displayed. Select an item to insert it at the current location of the cursor.
+    コピー/カットされたテキストの最初の数文字が表示されます。 項目を選択すると、保存されていたテキストがカーソル位置に挿入されます。
 
-* Nine additional numbered clipboards are available and can be employed directly using the buttons of the Code Editor toolbar or using keyboard shortcuts:
+* また、9つの番号付きクリップボードが用意されており、コードエディターツールバーのボタンあるいはキーボードショートカットで使用します:
 
 ![](assets/en/code-editor/clipboards-2.png)
-|Platform|Copy selected text to a clipboard|Paste contents of a clipboard at cursor location| |--|--|--| | **Windows** | Shift or Alt+click on clipboard icon | Ctrl+click on clipboard icon | |  |  | Ctrl+clipboard number | | **macOS** | Shift or Alt+click on clipboard icon | Cmd+click on clipboard icon | |  | Cmd+Shift+clipboard number | Cmd+clipboard number |
+|プラットフォーム|選択したテキストをクリップボードにコピー|カーソル位置にクリップボードの内容をペースト| |--|--|--| | **Windows** | クリップボードアイコン上で Shift+クリックあるいは Alt+クリック | クリップボードアイコン上で Ctrl+クリック | |  |  | Ctrl+クリップボード番号 | | **macOS** | クリップボードアイコン上で Shift+クリックあるいは Alt+クリック | クリップボードアイコン上で Cmd+クリック | |  | Cmd+Shift+クリップボード番号 | Cmd+クリップボード番号 |
 
-You can use a [Preferences option](Preferences/methods.md#options-1) to hide numbered clipboards.
+[環境設定オプション](Preferences/methods.md#options-1) を使用すると番号付きのクリップボードを非表示にすることができます。
 
 
-### Moving lines
+### 行の移動
 
-You can move the line where the cursor is directly without selecting it first using the **Move Lines Up** and **Move Lines Down** commands in the **Method** menu. You can also do this using the combination **Alt/Option** + **Up Arrow** or **Down Arrow**.
+カーソルのある行を選択せずに、上下に移動することができます。これには、**メソッド** メニューの **行を上に移動** / **行を下に移動** コマンドを使用します。 また、**Alt/Option** + **上矢印** / **下矢印** の組み合わせでも同様に操作できます。
 
-### Change bars
+### 更新行の通知
 
-Colored bars instantly show you where lines of code were modified since the method was opened:
+エディターで開いた後に更新されたコードの行には色つきのバーが表示されます:
 
 ![](assets/en/code-editor/change-bars.png)
 
-The change bars change colors to indicate whether or not the modifications were saved:
+変更が保存されたかどうかは、バーの色で表されます:
 
-* yellow: Row was modified and method has not yet been saved.
-* green: Row was modified and method has been saved.
+* 黄色: 行は変更されたが、保存されていない。
+* 緑色: 行は変更され、保存された。
 
-## Using the autocomplete functions
+## 自動補完機能
 
-The Code Editor provides autocomplete functions. 4D automatically displays suggestions based on the first few characters typed.
+コードエディターでは自動補完機能が提供されています。 4D は入力された最初の文字に基づき、自動で候補を提案します。
 
-In the example given below, typing the string "cop" causes the display of a blue triangle indicating that several suggestions are available:
+以下の例では、"cop" と入力したことにより三角が表示されています。これは複数の候補があることを示します:
 
 ![](assets/en/code-editor/autocomplete-1.png)
 
-When the characters you enter correspond to a single possibility, this suggested value appears greyed out (and is inserted if you hit the **Tab** key): ![](assets/en/code-editor/autocomplete-2.png) ---> ![](assets/en/code-editor/autocomplete-3.png)
+入力した文字に対応する候補が一つに絞り込まれた時、提案される値はグレーアウトされた状態で表示されます (この状態で **Tab** キーを押すと挿入されます): ![](assets/en/code-editor/autocomplete-2.png) ---> ![](assets/en/code-editor/autocomplete-3.png)
 
-> If you checked the **Insert () and closing } ) ] "** option in the **Methods** page of the **Preferences**, 4D will also automatically add **()** after a 4D command, keyword or project method that requires one or more mandatory arguments (after accepting a suggestion or completion): ![](assets/en/code-editor/insert-and-closing-1.png) -> ![](assets/en/code-editor/insert-and-closing-2.png)
+> **環境設定** の **メソッド** ページで、**() と閉じる } ) ] " を自動で挿入** オプションをチェックしている場合、4D はひとつ以上の必須の引数を持つ4D コマンド、キーワード、プロジェクトメソッドの後ろに (提案、あるいは補完を受け入れたあとに) 自動的に **()** を追加します: ![](assets/en/code-editor/insert-and-closing-1.png) -> ![](assets/en/code-editor/insert-and-closing-2.png)
 
-Autocompletion also works with code structures (e.g. If..End if, For each...End for each): when you enter the first part of the structure, the Code Editor will automatically suggest the closing part: ![](assets/en/code-editor/autocomplete-code-structures.png)
+自動補完機能は、コード構造 (フロー制御。例: If..End if, For each...End for each) などにも使用できます: 構造の最初の部分を入力し始めると、コードエディターは自動的に終わりの部分を提示します: ![](assets/en/code-editor/autocomplete-code-structures.png)
 
-If there are several suggestions available, 4D displays them in a pop-up list when you hit the **Tab** key:
+複数の候補がある場合、**Tab** キーを押すと 4D はそのポップアップリストを表示します:
 
 ![](assets/en/code-editor/autocomplete-popup.png)
 
-The list is in alphabetical order. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
+リストは文字順になっています。 ダブルクリックまたは矢印キーで値を選択してから、**Enter**、**Carriage Return** または **Tab** キーを押すと、その値が挿入されます。
 
-By default, you can also insert a suggested value by hitting one of the following delimiter `( ; : = < [ {` keys after selecting a value: the value inserted is then followed by the delimiter, ready for data entry.
+デフォルトでは、値を選択したあとに区切り文字 `( ; : = < [ {` を入力すると、自動で値の候補も (区切り文字の前に) 挿入されます。値のあとには区切り文字がつき、データの入力の準備ができた状態になります。
 
-![](assets/en/code-editor/autocomplete-delimiter.png)  +  **(** key --> ![](assets/en/code-editor/autocomplete-delimiter-2.png)
+![](assets/en/code-editor/autocomplete-delimiter.png)  +  **(** キー --> ![](assets/en/code-editor/autocomplete-delimiter-2.png)
 
-> You can disable the use of delimiters for inserting suggested values in **Preferences** > **Methods** > **Options**.
+> この区切り文字を使った候補の自動入力は、**環境設定** の **メソッド** ＞ **オプション** で無効にできます。
 
-You can press the **Esc** key to close the pop-up list or you can continue typing while it is open. The values suggested in the pop-up list are updated as additional characters are typed.
+**Esc** キーを押すとポップアップが閉じられます。また、ポップアップが開いたままの状態で入力を継続することもできます。 文字が入力されるに伴い、ポップアップで提案される内容も更新されます。
 
-If the characters typed correspond to different types of objects, the list displays them in their current style. The following types of objects can be displayed:
+入力された文字が複数の異なるオブジェクトに対応する場合、それらは対応するスタイルでリスト中に表示されます。 以下のタイプのオブジェクトが表示されます:
 
-* 4D commands
-* SQL commands
-* User methods
-* Table names
-* Field names
+* 4Dコマンド
+* SQLコマンド
+* プロジェクトメソッド
+* テーブル名
+* フィールド名
 * 定数
-* Local, process or interprocess variable, declared in the method
-* Object property names
-* Plug-in commands
-* 4D keywords
-* SQL keywords
-* Macros (displayed between < >)
+* メソッド内で宣言されているローカル、プロセス、インタープロセス変数
+* オブジェクトのプロパティ名
+* プラグインコマンド
+* 4Dキーワード
+* SQLキーワード
+* マクロ (&lt; &gt; の間に表示）
 
-> For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
+> 使いやすさの観点から、**定数**、**変数 (ローカルあるいはインタープロセス) およびオブジェクト属性**、**テーブル** に関するリストの自動表示を無効にできます。 これらのオプションは **環境設定** の **メソッド** ＞ **オプション** にあります。
 
 ### オブジェクトプロパティ
 
