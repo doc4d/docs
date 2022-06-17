@@ -497,7 +497,7 @@ El código siguiente:
 
 ### `<!--#4DLOOP array-->`
 
-This syntax makes a loop for each array item. The array current item is increased when each code portion is repeated.
+Esta sintaxis hace un bucle para cada elemento del array. The array current item is increased when each code portion is repeated.
 
 > This syntax cannot be used with two dimension arrays. In this case, it is better to combine a method with nested loops.
 
@@ -633,7 +633,7 @@ El método debe devolver el texto en `$0`. If the string starts with the code ch
 
 For example, let’s say that you insert the following comment `“Today is <!--#4DSCRIPT/MYMETH/MYPARAM-->”` into a template Web page. When loading the page, 4D calls the `On Web Authentication` database method, then calls the `MYMETH` method and passes the string “/MYPARAM” as the parameter `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
 
-The `MYMETH` method is as follows:
+El método `MYMETH` es el siguiente:
 
 ```4d
   //MYMETH
@@ -677,7 +677,7 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 
 
 
-## Alternative syntax for 4DTEXT, 4DHTML, 4DEVAL
+## Sintaxis alternativa para 4DTEXT, 4DHTML, 4DEVAL
 
 Several existing 4D transformation tags can be expressed using a $-based syntax:
 
