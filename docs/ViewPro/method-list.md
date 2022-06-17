@@ -772,8 +772,8 @@ In *options*, you can pass an object with additional options for the table. Poss
   |Property|Type|Description|Mandatory
   |---|---|---|---|
   |dataField|Text| table column's data field (to access the data context)| No
-  |formatter|Text| Table's column formatter | No
-  |name|Text| Table's column name | Yes
+  |formatter|Text| table column's formatter | No
+  |name|Text| table column's name | Yes
 
   When you pass a *source* and a *tableColumns* option to the command, the columns of the table are created in the order they appear in the *tableColumns* collection.
 
