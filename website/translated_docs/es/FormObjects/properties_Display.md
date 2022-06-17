@@ -63,7 +63,7 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
-The table below shows choices available:
+La siguiente tabla muestra las opciones disponibles:
 
 | Nombre del formato              | Cadena JSON     | Example (US system)           |
 | ------------------------------- | --------------- | ----------------------------- |
@@ -154,7 +154,7 @@ the point appears only if the user enters at least four digits.
 
 Spaces are treated as characters in number display formats.
 
-### Formats for positive, negative, and zero
+### Formatos para positivo, negativo y cero
 
 A number display format can have up to three parts allowing you to specify display formats for positive, negative, and zero values. You specify the three parts by separating them with semicolons as shown below:
 
