@@ -65,17 +65,17 @@ Date formats control the way dates appear when displayed or printed. For data en
 
 La siguiente tabla muestra las opciones disponibles:
 
-| Nombre del formato              | Cadena JSON     | Example (US system)           |
-| ------------------------------- | --------------- | ----------------------------- |
-| System date short               | - (por defecto) | 03/25/20                      |
-| System date abbreviated *(1)*   | systemMedium    | Wed, Mar 25, 2020             |
-| System date long                | systemLong      | Wednesday, March 25, 2020     |
-| RFC 822                         | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT |
-| Short Century                   | shortCentury    | 03/25/20 but 04/25/2032 *(2)* |
-| Internal date long              | largo           | March 25, 2020                |
-| Internal date abbreviated *(1)* | abbreviated     | Mar 25, 2020                  |
-| Internal date short             | short           | 03/25/2020                    |
-| ISO Date Time *(3)*             | iso8601         | 2020-03-25T00:00:00           |
+| Nombre del formato              | Cadena JSON     | Example (US system)            |
+| ------------------------------- | --------------- | ------------------------------ |
+| System date short               | - (por defecto) | 03/25/20                       |
+| System date abbreviated *(1)*   | systemMedium    | Wed, Mar 25, 2020              |
+| System date long                | systemLong      | Wednesday, March 25, 2020      |
+| RFC 822                         | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT  |
+| Short Century                   | shortCentury    | 03/25/20 pero 04/25/2032 *(2)* |
+| Internal date long              | largo           | March 25, 2020                 |
+| Internal date abbreviated *(1)* | abbreviated     | Mar 25, 2020                   |
+| Internal date short             | short           | 03/25/2020                     |
+| ISO Date Time *(3)*             | iso8601         | 2020-03-25T00:00:00            |
 
 *(1)* To avoid ambiguity and in accordance with current practice, the abbreviated date formats display "jun" for June and "jul" for July. This particularity only applies to French versions of 4D.
 
@@ -127,7 +127,7 @@ If the user enters a negative number, the leftmost character is displayed as a m
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
-Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. If the user enters 26, the field displays 26.
+Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. Si el usuario introduce 26, el campo muestra 26.
 
 
 ### Separator characters
@@ -140,7 +140,7 @@ The numeric display formats (except for scientific notations) are automatically 
 
 You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
 
-You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. For example, if you use the following format: 
+You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. Por ejemplo, si utiliza el siguiente formato: 
 
     $##0
 
