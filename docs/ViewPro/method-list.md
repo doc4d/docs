@@ -793,37 +793,35 @@ If you don't pass a *tableColumn* option, 4D View Pro will generate columns auto
 
   * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. The first subcollection's values are used as column titles.
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. The collection's indices are used as column titles.
 
 #### Example
 
 To create a table using a data context:
 
 ```4d
-var $people: Collection
-var $data: Object
-
-// Create a data context from an entity selection
-$people:=ds.People.all().toCollection()
+// Set a data context
+var $data : Object
 
 $data:=New object()
-$data.people:=$people
+$data.people:=New collection()
+$data.people.push(New object("firstName"; "John"; "lastName"; "Smith"; "email"; "johnsmith@gmail.com"))
+$data.people.push(New object("firstName"; "Mary"; "lastName"; "Poppins"; "email"; "marypoppins@gmail.com"))
+
 
 VP SET DATA CONTEXT("ViewProArea"; $data)
 
 // Define the columns for the table
-var $options: Object 
+var $options : Object
 
 $options:=New object
 $options.tableColumns:=New collection()
-$options.tableColumns.push(New object("name"; "First name"; "dataField"; "Firstname"))
-$options.tableColumns.push(New object("name"; "Last name"; "dataField"; "Lastname"))
+$options.tableColumns.push(New object("name"; "First name"; "dataField"; "firstName"))
+$options.tableColumns.push(New object("name"; "Last name"; "dataField"; "lastName"))
 $options.tableColumns.push(New object("name"; "Email"; "dataField"; "email"))
-$options.tableColumns.push(New object("name"; "Birthday"; "dataField"; "Birthday"; "formatter"; "dddd dd MMMM yyyy"))
-$options.tableColumns.push(New object("name"; "Country"; "dataField"; "Country"))
 
-// Create a table from the collection 
-VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; 5; 2); "ContextTable"; "people"; $options)
+// Create a table from the "people" collection
+VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; 3; 2); "ContextTable"; "people"; $options)
 ```
 
 Here's the result:
