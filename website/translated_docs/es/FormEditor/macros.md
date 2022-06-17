@@ -232,7 +232,7 @@ Here are the properties that you can pass in the `$result` object if you want th
 | ----------------- | ---------- | ----------------------------------------------------------- |
 | currentPage       | Objeto     | currentPage including objects modified by the macro, if any |
 | currentSelection  | Collection | currentSelection si es modificada por la macro              |
-| formProperties    | Objeto     | formProperties if modified by the macro                     |
+| formProperties    | Objeto     | formProperties si es modificado por la macro                |
 | editor.groups     | Objeto     | group info, if groups are modified by the macro             |
 | editor.views      | Objeto     | view info, if views are modified by the macro               |
 | editor.activeView | Cadena     | Nombres de vistas activos                                   |
