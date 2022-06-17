@@ -3256,14 +3256,14 @@ In *options*, you can specify additional behavior. Possible values are:
 |vk remove table option keep data|1|Keep the data|
 |vk remove table option keep style|2|Keep the style|
 
-You can define where to remove the table in the optional *sheet* parameter using the sheet index (indexing starts at 0)
+Table names are defined at sheet level. You can specify where the table is located using the optional *sheet* parameter (indexing starts at 0).
 
 #### Example
 
 To remove the "people" table in the second sheet and keep the data in the cells:
 
 ```4d
-VP REMOVE TABLE("ViewProArea"; "people"; 1; 2)
+VP REMOVE TABLE("ViewProArea"; "people"; vk remove table option keep data; 2)
 ```
 
 #### See also
