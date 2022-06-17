@@ -750,7 +750,7 @@ In *rangeObj*, pass the cell range where the table will be created.
 In *name*, pass a name for the table. The name must:  
 
 * be unique in the document
-* include at least 5 characters and cannot include spaces
+* include at least 5 characters, and cannot include spaces
 * start with a number
 
 In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. If you don't specify a source, the command creates an empty table with the size defined in *rangeObj*.
@@ -775,38 +775,37 @@ In *options*, you can pass an object with additional options for the table. Poss
   |formatter|Text| table column's formatter | No
   |name|Text| table column's name | Yes
 
-  When you pass a *source* and a *tableColumns* option to the command, the columns of the table are created in the order they appear in the *tableColumns* collection.
+There are two ways to fill a table: 
 
-  If you pass a source but no *tableColumns* option, the columns of the table are generated automatically.
+* manually, by passing a *tableColumns* collection in the *options* parameter. In that case, the columns are filled based on the information in *tableColumns*.
 
-  If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
+* automatically, by attaching a data context to the table using the *source* parameter. When the context data changes, the data displayed in the table is updated accordingly. 
 
-  If the column count of the range exceeds the number of columns in *tableColumns*, the table is filled with empty columns.
+When you pass both a *source* parameter and a *tableColumns* option to the command, *tableColumns* has priority.
 
-  If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
+If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
-If the columns are automatically generated, the columns are created and bound according to the first element's contents:
+If the column count of the range exceeds the number of columns in *tableColumns*, the table is filled with empty columns.
 
-* If the collection contains objects, the first object in the collection is used to create the columns. If the remaining objects in the collection have attributes that don't match the first object's attributes, they are not displayed in the table.
+If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-* If the collection contains scalar values, the collection in the first element is used to create the columns. If the other elements have collections with more elements, they are not displayed in the table.
-
-If the columns are automatically generated (no *tableColumn* option is passed), the titles of the columns are defined as follows:
+When the columns are automatically generated, their column titles are defined as follows:
 
 * If the data is a collection of objects, the attribute names are used as column titles. For example:
+
 `([{ LastName: \"Freehafer\", FirstName: \"Nancy\"},{ LastName: \"John\", FirstName: \"Doe\"})`
 
     Here the titles of the columns would be `LastName` and `FirstName`.
 
 * If the data is a collection of scalar values, the collection parameter is two-dimensional:
 
-* The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
+  * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-* Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribut as for VP SET VALUE. The number of columns created depends of the number of items of the subcollection in the first position of the first-level collection.
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The subcollection in the first position of the first-level collection determines how many columns are created. 
 
 #### Example
 
-To create a table form an entity selection:
+To create a table from an entity selection:
 
 ```4d
 var $people: Collection
