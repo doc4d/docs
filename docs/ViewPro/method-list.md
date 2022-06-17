@@ -764,7 +764,7 @@ In *options*, you can pass an object with additional options for the table. Poss
 |showFooter|Boolean|Display a footer| False
 |showHeader|Boolean|Display a header| True
 |showResizeHandle|Boolean|For tables that don't have a *source*. Display the resize handle| False
-|tableColumns|Collection|Collection of objects that hold information on the table's columns| Undefined
+|tableColumns|Collection|Collection of objects used to create the table's columns| Undefined
 |useFooterDropDownList|Boolean|Use a dropdown list in footer cells that calculate the total value of a column| False
 
   In the *tableColumns* collection, each object has the following values:
@@ -772,8 +772,8 @@ In *options*, you can pass an object with additional options for the table. Poss
   |Property|Type|Description|Mandatory
   |---|---|---|---|
   |dataField|Text| table column's data field (to access the data context)| No
-  |formatter|Text|->| Table's column formatter | No
-  |name|Text|->| Table's column name | Yes
+  |formatter|Text| Table's column formatter | No
+  |name|Text| Table's column name | Yes
 
   When you pass a *source* and a *tableColumns* option to the command, the columns of the table are created in the order they appear in the *tableColumns* collection.
 
