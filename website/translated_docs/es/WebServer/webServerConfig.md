@@ -143,7 +143,7 @@ Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](.
 | `WEB SET HOME PAGE`           |                                                                              | Puede ser diferente para cada proceso web |
 | Caja de diálogo de parámetros | [Configuration page/Default Home Page](../settings/web.md#default-home-page) |                                           |
 
-Designate a default home page for the web server. This page can be static or [semi-dynamic].
+Designate a default home page for the web server. Esta página puede ser estática o [semi-dynamic].
 
 By default, when the web server is launched for the first time, 4D creates a home page named "index.html" and puts it in the HTML root folder. If you do not modify this configuration, any browser connecting to the web server will obtain the following page:
 
@@ -251,7 +251,7 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 
 In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Este parámetro es útil para evitar la pérdida de tiempo de la máquina al comprimir los intercambios pequeños.
 
-Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
+Pasa el tamaño expresado en bytes como valor. By default, the compression threshold is set to 1024 bytes.
 
 
 ## Puerto HTTP
@@ -537,7 +537,7 @@ In this case, robots are not allowed to access the entire site.
 | `WEB SET ROOT FOLDER`         |                                                                              |                                                                                                                                       |
 | Caja de diálogo de parámetros | [Configuration page/Default HTML Root](../settings/web.md#default-html-root) |                                                                                                                                       |
 
-Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
+Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. La ruta de acceso está en formato POSIX (ruta completa). The web server will need to be restarted in order for the new root folder to be taken into account.
 
 Moreover, the HTML root folder defines, on the web server hard drive, the hierarchical level above which the files will not be accessible. If a requested URL or a 4D command tries to access a file located above the HTML root folder, an error is returned indicating that the file has not been found.
 
