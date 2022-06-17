@@ -781,7 +781,7 @@ In *options*, you can pass an object with additional options for the table. Poss
 
   * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-If you don't pass a *tableColumn* option, 4D View Pro will generate columns automatically, and the table's column titles are defined as follows:
+If you pass a *source* and you don't pass a *tableColumn* option, the command generates columns automatically, and the table's column titles are defined as follows:
 
 * If the data passed to the command is a collection of objects, the attribute names are used as column titles. For example:
 
