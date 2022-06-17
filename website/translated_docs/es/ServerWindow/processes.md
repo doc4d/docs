@@ -75,7 +75,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 | ![](assets/en/Admin/server-icon-21.png) | Otro proceso                                                                                                                                              |
 | ![](assets/en/Admin/server-icon-22.png) | Proceso worker (cooperativo)                                                                                                                              |
 | ![](assets/en/Admin/server-icon-23.png) | Proceso 4D client (apropiativo)                                                                                                                           |
-| ![](assets/en/Admin/server-icon-24.png) | Stored procedure (preemptive process)                                                                                                                     |
+| ![](assets/en/Admin/server-icon-24.png) | Procedimiento almacenado (proceso apropiativo)                                                                                                            |
 | ![](assets/en/Admin/server-icon-25.png) | Proceso worker (apropiativo)                                                                                                                              |
 
 > Each main 4D client process and its "twinned" 4D client base process are grouped together when the **Display processes by groups** option is checked.
