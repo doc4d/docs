@@ -61,7 +61,7 @@ These options configure the various colors used in the Code Editor and debugger 
 
 |                                                    | Descripción                                                                                                                                                              |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Color de fondo**                                 | Background color of Code Editor window.                                                                                                                                  |
+| **Color de fondo**                                 | Color de fondo de la ventana del editor de código.                                                                                                                       |
 | **Borde de la línea en ejecución en el depurador** | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
 | **Color de fondo de la línea del cursor**          | Background color of line containing the cursor.                                                                                                                          |
 | **Color de fondo de la línea en ejecución**        | Background color of line being executed in the debugger.                                                                                                                 |
