@@ -280,7 +280,7 @@ The following table summarizes the different cases and the value returned for th
 
 #### Ejemplo 1
 
-Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
+Supongamos que tiene una tabla llamada Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
 
 ```4d
 var $phone : Text
@@ -315,7 +315,7 @@ The ternary conditional operator allows you to write one-line conditional expres
 
 It takes three operands in the following order:
 
-* a condition followed by a question mark (?)
+* una condición seguida de un signo de interrogación (?)
 * an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:)
 * an expression to execute if the condition is [falsy](#truthy-and-falsy)
 
