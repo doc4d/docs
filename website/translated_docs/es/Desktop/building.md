@@ -221,10 +221,10 @@ Once built, a client/server application is composed of two customized parts: the
 
 Also, the client/server application is customized and its handling simplified:
 
-- To launch the server portion, the user simply double-clicks on the server application. The project file does not need to be selected.
-- To launch the client portion, the user simply double-clicks the client application, which connects directly to the server application. You do not need to choose a server in a connection dialog box. El cliente se dirige al servidor usando su nombre, cuando el cliente y el servidor están en la misma subred, o utilizando su dirección IP, que se define utilizando la llave XML `IPAddress` en el archivo buildapp.4DSettings. Si la conexión falla, \[se pueden implementar mecanismos alternativos específicos\](#management-of-client-connections). Puede "forzar" la visualización de la caja de diálogo de conexión estándar presionando la tecla **Opción** (macOS) o **Alt** (Windows) mientras inicia la aplicación cliente. Sólo la parte cliente puede conectarse a la parte del servidor correspondiente. If a user tries to connect to the server portion using a standard 4D application, an error message is returned and connection is impossible.
-- A client/server application can be set so that the client portion [can be updated automatically over the network](#copy-of-client-applications-in-the-server-application). You only need to create and distribute an initial version of the client application, subsequent updates are handled using the automatic update mechanism.
-- It is also possible to automate the update of the server part through the use of a sequence of language commands ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/en/page1291.html) and [RESTART 4D]((https://doc.4d.com/4dv19/help/command/en/page1292.html)).
+- Para lanzar la parte del servidor, el usuario simplemente hace doble clic en la aplicación servidor. No es necesario seleccionar el archivo proyecto.
+- Para lanzar la parte cliente, el usuario simplemente hace doble clic en la aplicación cliente, que se conecta directamente a la aplicación servidor. No es necesario elegir un servidor en una caja de diálogo de conexión. El cliente se dirige al servidor usando su nombre, cuando el cliente y el servidor están en la misma subred, o utilizando su dirección IP, que se define utilizando la llave XML `IPAddress` en el archivo buildapp.4DSettings. Si la conexión falla, \[se pueden implementar mecanismos alternativos específicos\](#management-of-client-connections). Puede "forzar" la visualización de la caja de diálogo de conexión estándar presionando la tecla **Opción** (macOS) o **Alt** (Windows) mientras inicia la aplicación cliente. Sólo la parte cliente puede conectarse a la parte del servidor correspondiente. Si un usuario intenta conectarse a la parte servidor utilizando una aplicación estándar 4D, se devuelve un mensaje de error y la conexión es imposible.
+- Una aplicación cliente/servidor puede configurarse para que la parte cliente [se actualice automáticamente a través de la red](#copy-of-client-applications-in-the-server-application). Sólo es necesario crear y distribuir una versión inicial de la aplicación cliente, las actualizaciones posteriores se gestionan mediante el mecanismo de actualización automática.
+- También es posible automatizar la actualización de la parte del servidor mediante el uso de una secuencia de comandos del lenguaje ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/en/page1291.html) y [RESTART 4D]((https://doc.4d.com/4dv19/help/command/en/page1292.html)).
 
 
 
@@ -367,7 +367,7 @@ Los elementos deben ser instalados:
     *   **Client application** - next to the *\<ApplicationName>Client* software package.
 
 
-### Embedding a single-user client application
+### Integrar una aplicación cliente monopuesto
 
 4D allows you to embed a compiled structure in the Client application. This feature can be used, for example, to provide users with a "portal" application, that gives access to different server applications thanks to the `OPEN DATABASE` command executing a `.4dlink` file.
 
@@ -573,7 +573,7 @@ Any standalone or server applications built with 4D stores the path of the last 
 The location of the application's user preferences folder corresponds to the path returned by the following statement:
 
 ```4d
-userPrefs:=Get 4D folder(Active 4D Folder)
+userPrefs:=Get 4D folder(Carpeta 4D activa)
 ```
 
 The data file path is stored in a dedicated file, named *lastDataPath.xml*.
