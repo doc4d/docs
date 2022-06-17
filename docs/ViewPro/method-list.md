@@ -777,17 +777,21 @@ In *options*, you can pass an object with additional options for the table. Poss
 
 There are two ways to fill a table: 
 
-* manually, by passing a *tableColumns* collection in the *options* parameter. In that case, the columns are filled based on the information in *tableColumns*.
+* manually, by passing a *tableColumns* collection in the *options* parameter. 
 
-* automatically, by attaching a data context to the table using the *source* parameter. When the context data changes, the data displayed in the table is updated accordingly. 
+* automatically, by attaching a data context to the table using the *source* parameter. When the context's data changes, the data displayed in the table is updated accordingly. 
 
-When you pass both a *source* parameter and a *tableColumns* option to the command, *tableColumns* has priority.
+#### Fill a table manually
 
-If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
+When you pass a *tableColumns* option, the columns are filled based on the information in the collection. In that case:
+  
+  * If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
-If the column count of the range exceeds the number of columns in *tableColumns*, the table is filled with empty columns.
+  * If the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
 
-If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
+  * If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
+
+### Fill a table automatically
 
 When the columns are automatically generated, their column titles are defined as follows:
 
