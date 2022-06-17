@@ -61,7 +61,7 @@ Hay tres opciones disponibles:
 *   **Light**: Use the Light Theme
 *   **Dark**: Use the Dark Theme
 
-> This preference is only supported on macOS. On Windows, the "Light" scheme is always used.
+> Esta preferencia sólo es compatible en macOS. On Windows, the "Light" scheme is always used.
 
 
 ### Exit Design when going to Application Environment
@@ -102,7 +102,7 @@ If you intend to use VCS or external code editors with your new projects, you mi
 
 > You can always get the code with tokens by calling [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) with 1 in the *option* parameter.
 
-#### Excluding tokens in existing projects
+#### Exclusión de los tokens en los proyectos existentes
 
 You can configure your existing projects to save code **without tokens** by inserting the following key in the [`<applicationName>.4DProject`](../Project/architecture.md#applicationname4dproject-file) file using a text editor:
 
