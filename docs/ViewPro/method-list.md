@@ -749,13 +749,13 @@ In *rangeObj*, pass the cell range where the table will be created.
 
 In *name*, pass a name for the table. The name must:  
 
-* be unique in the document
-* include at least 5 characters, and cannot include spaces
-* start with a number
+* be unique in the sheet
+* include at least 5 characters
+* cannot include spaces or start with a number
 
-In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. If you don't specify a source, the command creates an empty table with the size defined in *rangeObj*.
-
-If the *source* cannot be fully displayed in the document, no table is created.
+In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. This binds the table to the data context. When the data context is updated, the data displayed in the table is updated accordingly. Note that: 
+  * If you don't specify a *source*, the command creates an empty table with the size defined in *rangeObj*. 
+  * If the specified *source* cannot be fully displayed in the document, no table is created.
 
 In *options*, you can pass an object with additional options for the table. Possible values are:
 
@@ -767,25 +767,13 @@ In *options*, you can pass an object with additional options for the table. Poss
 |tableColumns|Collection|Collection of objects used to create the table's columns| Undefined
 |useFooterDropDownList|Boolean|Use a dropdown list in footer cells that calculate the total value of a column| False
 
-  In the *tableColumns* collection, each object has the following values:
+  The *tableColumns* collection determines the structure of the table's columns. Each object in the collection has the following values:
 
   |Property|Type|Description|Mandatory
   |---|---|---|---|
   |dataField|Text| table column's data field (to access the data context)| No
   |formatter|Text| table column's formatter | No
   |name|Text| table column's name | Yes
-
-There are two ways to fill a table: 
-
-* manually, by passing a *tableColumns* collection in the *options* parameter. 
-
-* automatically, by attaching a data context to the table using the *source* parameter. When the context's data changes, the data displayed in the table is updated accordingly. 
-
-> If you pass both a *tableColumn* option and a *source*, the table is filled using the *tableColumn* option.
-
-#### Fill a table manually
-
-When you pass a *tableColumns* option, the columns are filled based on the information in the collection. In that case:
   
   * If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
@@ -793,11 +781,9 @@ When you pass a *tableColumns* option, the columns are filled based on the infor
 
   * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-#### Fill a table automatically
+If you don't pass a *tableColumn* option, 4D View Pro will generate columns automatically, and the table's column titles are defined as follows:
 
-When the columns are automatically generated, their column titles are defined as follows:
-
-* If the data is a collection of objects, the attribute names are used as column titles. For example:
+* If the data passed to the command is a collection of objects, the attribute names are used as column titles. For example:
 
 `([{ LastName: \"Freehafer\", FirstName: \"Nancy\"},{ LastName: \"John\", FirstName: \"Doe\"})`
 
@@ -807,7 +793,7 @@ When the columns are automatically generated, their column titles are defined as
 
   * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created.
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. The first subcollection's values are used as column titles.
 
 #### Example
 
