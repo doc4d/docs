@@ -489,7 +489,7 @@ For each attribute (style, color and background color), an **inheritance** is im
 
 This way, if you want an object to inherit the attribute value from a higher level, you can use pass the `lk inherited` constant (default value) to the definition command or directly in the element of the corresponding style/color array. For example, given an array list box containing a standard font style with alternating colors: ![](assets/en/FormObjects/listbox_styles3.png)
 
-You perform the following modifications:
+Realiza las siguientes modificaciones:
 
 - change the background of row 2 to red using the [Row Background Color Array](properties_BackgroundAndBorder.md#row-background-color-array) property of the list box object,
 - change the style of row 4 to italics using the [Row Style Array](properties_Text.md#row-style-array) property of the list box object,
@@ -789,7 +789,7 @@ You set the cell display and options using specific attributes in each object (s
 
 #### Display formats and entry filters
 
-You cannot set display formats or entry filters for columns of object-type list boxes. They are automatically defined according to the value type. These are listed in the following table:
+You cannot set display formats or entry filters for columns of object-type list boxes. They are automatically defined according to the value type. Estos están listados en la siguiente tabla:
 
 | Tipo de valor | Formato por defecto                                        | Control de entrada    |
 | ------------- | ---------------------------------------------------------- | --------------------- |
@@ -1125,5 +1125,5 @@ Several events can be handled while using an object list box array:
     *   en un área combo box
     *   in a unit button (switch from value x to value x+1)
     *   in a check box (switch between checked/unchecked)
-*   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. This event is managed by the programmer.
-*   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. This event is managed by the programmer.
+*   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
+*   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.
