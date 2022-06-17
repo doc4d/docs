@@ -338,7 +338,7 @@ The *getter* function is mandatory to declare the *attributeName* computed attri
 
 > A computed attribute can use the value of other computed attribute(s). Las llamadas recursivas generan errores.
 
-The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. The following resulting types are allowed:
+The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. Se permiten los siguientes tipos resultantes:
 
 - Scalar (text, boolean, date, time, number)
 - Objeto
@@ -711,8 +711,8 @@ Alias teachers courses.teacher //relatedEntities
 En la dataclass Course:
 
 - an alias attribute returns another label for the "name" attribute
-- an alias attribute returns the teacher name
-- an alias attribute returns the student name
+- un atributo alias devuelve el nombre del profesor
+- un atributo alias devuelve el nombre del estudiante
 
 
 ```4d
@@ -726,7 +726,7 @@ Exposed Alias studentName student.name //scalar value
 
 ```
 
-You can then execute the following queries:
+Luego puede ejecutar las siguientes consultas:
 
 ```4d
 // Find course named "Archaeology"
@@ -956,7 +956,7 @@ For ORDA classes based upon the local datastore (`ds`), you can directly access 
 
 ### Editor de método
 
-In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:
+In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Ejemplo con una variable de clase Entity:
 
 ![](assets/en/ORDA/AutoCompletionEntity.png)
 
