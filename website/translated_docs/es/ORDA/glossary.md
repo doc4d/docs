@@ -42,7 +42,7 @@ Función de una clase de modelo de datos ORDA.
 
 A dataclass is an object model that describes the data. Tables in the database provided by the datastore are handled through dataclasses. Each table in the database provided by the datastore has a corresponding dataclass with the same name. Each field of the table is an attribute of the dataclass.
 
-A dataclass is related to a single datastore.
+Un dataclass está relacionado con un único datastore.
 
 
 ## DataClass class
