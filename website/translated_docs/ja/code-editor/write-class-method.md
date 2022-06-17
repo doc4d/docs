@@ -273,73 +273,73 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ### オブジェクトプロパティ
 
-4D automatically displays case-sensitive suggestions of all valid object property names in 4D code when you:
+4D は以下のタイミングで、4Dコード内にある有効なオブジェクトプロパティ名の、文字の大小の区別された提案を自動的に表示します:
 
-* type a dot "." after an object or
-* use the Tab key after a dereferenced object pointer "->".
+* オブジェクトの後にドット "." を入力した
+* 逆参照オブジェクトポインター "->" の後に Tab キーを使用した
 
 ![](assets/en/code-editor/autocomplete-object-attributes.png)
 
-> The `length` property is always included for use with collections.
+> `length` プロパティは、コレクションに対する提案に常に含まれます。
 
-Once created, property names are stored in an internal global list and are available anytime a method/class/function is opened, closed or changes focus.
+ひとたび作成されたプロパティ名は内部のグローバルなリストに登録され、メソッド/クラス/関数が開かれたり閉じられたり、フォーカスが変わるたびに利用可能です。
 
 ![](assets/en/code-editor/autocomplete-object-attributes-2.png)
 
-The list of suggestions is dynamically updated while you edit code. When switching between windows, new/edited property names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
+提案の一覧は、コード変更中にも動的に更新されます。 ウィンドウ間を切り替えるときに、新しい/編集されたプロパティ名は常にグローバルなリストに追加されます。 このリストはエクスプローラー内でメソッドやクラス、関数をプレビューする際にも更新されます。
 
-When the database is restarted, the list is reinitialized.
+データベースが再起動されると、リストは再度初期化されます。
 
-> You can disable the automatic display of object properties in **Preferences** > **Methods** > **suggestions**.
+> オブジェクトプロパティ名の自動表示は、**環境設定** の **メソッド** ページの提案セクションにて無効化することができます。
 
-## Selecting text
+## テキストの選択
 
-The **Select Enclosing Block** function is used to select the "enclosing block" of the code containing the insertion point. The enclosing block can be defined by:
+**ブロックを選択** 機能で、挿入カーソルが含まれるコードブロックを選択できます。 コードブロックは以下のように決定されます:
 
-* Quotation marks
-* Parentheses
-* A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case)
-* Braces
+* 引用符 (クォーテーションマーク)
+* 括弧
+* 論理構造 (If/Else/End if, While/End while, Repeat/Until, Case of/End case)
+* 中括弧
 
-If a block of text is already selected, the function selects the enclosing block of the next highest level and so on, until the entire method is selected.
+すでにブロックを選択している状態でこの機能を使用すると、さらに上のレベルのブロックが選択されます。
 
-Pressing **Ctrl+Shift+B** (Windows) or **Command+Shift+B** (macOS) enables you to reverse this operation and deselect the last enclosing block selected.
+**Ctrl+Shift+B** (Windows) または **Command+Shift+B** (macOS) を使用するとこの逆の操作をおこなうことができ、最後に選択されたブロックの選択が解除されます。
 
-**Note:** If the insertion point is placed in an `If` or `Else` type structure, the enclosing block will be the one containing, respectively, the `If` or `Else` statement.
+**注:** 挿入カーソルが `If` または `Else` タイプの構造の中にある場合、`If` または `Else` 構造ブロックが選択されます。
 
 
-You can double-click to select individual "words". When the item name referenced (command, constant, method, etc.) contains spaces, you can select the whole name (including spaces) by using the **Alt/Option + Double-click** combination.
+単語を選択するには、選択したい単語上でダブルクリックします。 参照される名前 (コマンド、定数、メソッド等) にスペースが含まれる場合には、**Alt/Option + ダブルクリック** でスペースを含む名前全体を選択できます。
 
 ### ショートカット
 
-Standard keyboard shortcuts to navigate the code are available in 4D's Code Editor.
+コードエディターでコード内を移動するのに、標準のキーボードショートカットを使用できます。
 
-**Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
+**注:** macOSでは **Ctrl** の代わりに **Command** を使用してください。
 
-| **ショートカット**                                 | **動作**                                                                                                                                 |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [Shift]+[right arrow]                       | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
-| [Shift]+[left arrow]                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
-| [Shift]+[down arrow]                        | Create and enlarge a selection, line by line, from the top to the bottom                                                               |
-| [Shift]+[up arrow]                          | Create and enlarge a selection, line by line, from the bottom to the top                                                               |
-| [Ctrl]+[Shift]+[right arrow]                | Create and enlarge the selection, word by word, from the right                                                                         |
-| [Ctrl]+[Shift]+[left arrow]                 | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
-| [Ctrl]+[right arrow]                        | Move the insertion point, word by word, from left to right                                                                             |
-| [Ctrl]+[left arrow]                         | Move the insertion point, word by word, from right to left                                                                             |
-| [Home]                                      | Place the insertion point at the beginning of the line                                                                                 |
-| [End]                                       | Place the insertion point at the end of the line                                                                                       |
-| [Ctrl]+[Home]                               | Place the insertion point at the beginning of the method                                                                               |
-| [Ctrl]+[End]                                | Place the insertion point at the end of the method                                                                                     |
-| [Shift]+[Home]                              | Select all the characters in the line that are to the left of the cursor                                                               |
-| [Shift]+[End]                               | Select all the characters in the line that are to the right of the cursor                                                              |
-| [PgUp]                                      | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
-| [PgDn]                                      | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
-| [Ctrl]+[K] on a project method name         | Open the project method in a new window                                                                                                |
-| [Alt]+double-click on a project method name | idem                                                                                                                                   |
-| [Ctrl]+click on a project method name       | idem                                                                                                                                   |
+| **ショートカット**                 | **アクション**                                     |
+| --------------------------- | --------------------------------------------- |
+| [Shift]+[右矢印]               | 選択範囲を作成し、一文字ずつ右に拡大します。または、選択範囲を一文字ずつ左から縮小します。 |
+| [Shift]+[左矢印]               | 選択範囲を作成し、一文字ずつ左に拡大します。または、選択範囲を一文字ずつ右から縮小します。 |
+| [Shift]+[下矢印]               | 選択範囲を作成し、上から下へと 1行ずつ拡大します。                    |
+| [Shift]+[上矢印]               | 選択範囲を作成し、下から上へと 1行ずつ拡大します。                    |
+| [Ctrl]+[Shift]+[右矢印]        | 選択範囲を単語単位で右方向に作成・拡大します。                       |
+| [Ctrl]+[Shift]+[左矢印]        | 選択範囲を作成し、単語単位で左に拡大します。または、選択範囲を単語単位で右から縮小します。 |
+| [Ctrl]+[右矢印]                | 挿入カーソルを単語単位で左から右に移動します。                       |
+| [Ctrl]+[左矢印]                | 挿入カーソルを単語単位で右から左に移動します。                       |
+| [Home]                      | 挿入カーソルを行の先頭に移動します。                            |
+| [End]                       | 挿入カーソルを行の最後に移動します。                            |
+| [Ctrl]+[Home]               | 挿入カーソルをメソッドの先頭に移動します。                         |
+| [Ctrl]+[End]                | 挿入カーソルをメソッドの最後に移動します。                         |
+| [Shift]+[Home]              | 行の先頭からカーソルまでを選択します。                           |
+| [Shift]+[End]               | カーソルから行の最後までを選択します。                           |
+| [PgUp]                      | メソッドをページ単位で上にスクロールします (挿入カーソル位置は変更されません)。     |
+| [PgDn]                      | メソッドをページ単位で下にスクロールします (挿入カーソル位置は変更されません)。     |
+| プロジェクトメソッド名上で [Ctrl]+[K]    | プロジェクトメソッドを新しいウィンドウで開きます。                     |
+| プロジェクトメソッド名上で [Alt]+ダブルクリック | 同上                                            |
+| プロジェクトメソッド名上で [Ctrl]+クリック   | 同上                                            |
 
 
-## Checking and correcting syntax errors
+## シンタックスエラーのチェックと訂正
 
 4D automatically checks the method syntax to see if it is correct. If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](assets/en/code-editor/incorrect-expression-icon.png). When you move the mouse over the symbol, a help tip displays the cause of the error:
 
