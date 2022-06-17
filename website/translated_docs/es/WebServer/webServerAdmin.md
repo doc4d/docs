@@ -62,7 +62,7 @@ Para ello, puede:
 -   4D: click on the **Clear Cache** button in the Web/Options (I) page of the Settings dialog box.
 -   4D Server: click on the **Clear Cache** button in the HTTP page of the [4D Server Administration window](Admin/server-admin.md#http-server-page).
 
-The cache is then immediately cleared.
+La caché se borra inmediatamente.
 > También puede utilizar la URL [/4DCACHECLEAR](#cacheclear).
 
 
@@ -208,7 +208,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                                                                     |
 | CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                                                                       |
-| CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
+| CS_URI_STEM  | X   | X   | Parte de la petición sin los parámetros de consulta                                                                         |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
 | PATH_ARGS      |     | X   | Parámetros CGI: cadena situada después del caracter "$"                                                                     |
