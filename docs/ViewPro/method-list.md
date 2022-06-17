@@ -801,7 +801,7 @@ When the columns are automatically generated, their column titles are defined as
 
 `([{ LastName: \"Freehafer\", FirstName: \"Nancy\"},{ LastName: \"John\", FirstName: \"Doe\"})`
 
-    Here the titles of the columns would be `LastName` and `FirstName`.
+  Here the titles of the columns would be `LastName` and `FirstName`.
 
 * If the data is a collection of scalar values, the collection parameter is two-dimensional:
 
@@ -811,7 +811,7 @@ When the columns are automatically generated, their column titles are defined as
 
 #### Example
 
-To create a table using a data context:
+To create a table manually, using a collecition:
 
 ```4d
 var $people: Collection
