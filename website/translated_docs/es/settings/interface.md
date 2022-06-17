@@ -18,7 +18,7 @@ Click **Select...** to set the font and size for the characters used by the `MES
 
 The default font and its size depend on the platform where 4D is running.
 
-> This property also affects the following parts of 4D: <li>certain preview areas of the Explorer</li><li>la regla del editor de formularios</li>
+> This property also affects the following parts of 4D: <li>ciertas áreas de vista previa del Explorador</li><li>la regla del editor de formularios</li>
 Other options configure the display of various windows in the Application mode.
 
 -   **Splash screen**: When this option is deselected, the [splash screen of the current menu bar](Menus/bars.md#splash-screen) does not appear in the Application mode. When you hide this window, it is up to you to manage the display of all your windows by programming, for example in the `On Startup` database method.
@@ -45,7 +45,7 @@ The following schemes are available:
 -   **Dark**: the application will use the Default Dark Theme ![](assets/en/settings/dark-appearance.png)
 -   **Inherited** (default): the application will inherit from the higher priority level (i.e., OS user preferences)
 
-> Default themes can be handled using CSS. For more information, please refer to the [Media Queries](../FormEditor/createStylesheet.md#media-queries) section.
+> Los temas por defecto pueden ser manejados utilizando CSS. For more information, please refer to the [Media Queries](../FormEditor/createStylesheet.md#media-queries) section.
 
 The main application scheme will be applied to forms by default. However, it can be overriden:
 
@@ -56,7 +56,7 @@ The main application scheme will be applied to forms by default. However, it can
 
 You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D form operations in your desktop applications. These shortcuts are identical for both platforms. Key icons indicate the corresponding Windows and macOS keys.
 
-The default shortcuts are as follows:
+Los accesos directos por defecto son los siguientes:
 
 -   Accept input form: **Enter**
 -   Cancel input form: **Esc**
