@@ -811,7 +811,7 @@ When the columns are automatically generated, their column titles are defined as
 
 #### Example
 
-To create a table manually, using a collecition:
+To create a table using a data context:
 
 ```4d
 var $people: Collection
