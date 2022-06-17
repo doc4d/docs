@@ -92,7 +92,7 @@ You can save the lists set in the Code Editor window in the form of a template. 
 
 The following parameters are stored in the template:
 
-- Relative size of the editing and list areas
+- Tamaño relativo de las áreas de edición y de la lista
 - Number of lists
 - Location and contents of each list
 - Relative width of each list
@@ -144,12 +144,12 @@ The Code Editor includes numerous [navigation shortcuts](#navigational-keyboard-
 When writing methods, you can drag and drop items:
 
 * from the Explorer
-* within the same method, class, function
+* dentro del mismo método, clase, función
 * between methods, classes, and functions
 
 #### From the Explorer
 
-From the Explorer, you can drag and drop:
+Desde el Explorador, puedes arrastrar y soltar:
 
 * Table names, field names, form names and project methods from the Home page.
 * Table names and field names from the Tables page,
@@ -168,7 +168,7 @@ In the Code Editor, the drag-and-drop mechanism is activated as soon as a portio
 
 ### Entry on several lines
 
-You can write a single statement on several lines by terminating each line of the statement with a backslash `\` character. 4D will consider all the lines at once. For example, both the following statements are equivalent:
+You can write a single statement on several lines by terminating each line of the statement with a backslash `\` character. 4D considerará todas las líneas a la vez. For example, both the following statements are equivalent:
 
 ![](assets/en/code-editor/entry-several-lines.png)
 
@@ -316,30 +316,30 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Atajo**                                   | **Acción**                                                                                                                             |
-| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [Shift]+[right arrow]                       | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
-| [Shift]+[left arrow]                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
-| [Shift]+[down arrow]                        | Create and enlarge a selection, line by line, from the top to the bottom                                                               |
-| [Shift]+[up arrow]                          | Create and enlarge a selection, line by line, from the bottom to the top                                                               |
-| [Ctrl]+[Shift]+[right arrow]                | Create and enlarge the selection, word by word, from the right                                                                         |
-| [Ctrl]+[Shift]+[left arrow]                 | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
-| [Ctrl]+[right arrow]                        | Move the insertion point, word by word, from left to right                                                                             |
-| [Ctrl]+[left arrow]                         | Move the insertion point, word by word, from right to left                                                                             |
-| [Home]                                      | Place the insertion point at the beginning of the line                                                                                 |
-| [End]                                       | Place the insertion point at the end of the line                                                                                       |
-| [Ctrl]+[Home]                               | Place the insertion point at the beginning of the method                                                                               |
-| [Ctrl]+[End]                                | Place the insertion point at the end of the method                                                                                     |
-| [Shift]+[Home]                              | Select all the characters in the line that are to the left of the cursor                                                               |
-| [Shift]+[End]                               | Select all the characters in the line that are to the right of the cursor                                                              |
-| [PgUp]                                      | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
-| [PgDn]                                      | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
-| [Ctrl]+[K] on a project method name         | Open the project method in a new window                                                                                                |
-| [Alt]+double-click on a project method name | idem                                                                                                                                   |
-| [Ctrl]+click on a project method name       | idem                                                                                                                                   |
+| **Atajo**                                           | **Acción**                                                                                                                             |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [Shift]+[right arrow]                               | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
+| [Shift]+[left arrow]                                | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
+| [Shift]+[down arrow]                                | Create and enlarge a selection, line by line, from the top to the bottom                                                               |
+| [Shift]+[up arrow]                                  | Create and enlarge a selection, line by line, from the bottom to the top                                                               |
+| [Ctrl]+[Shift]+[right arrow]                        | Create and enlarge the selection, word by word, from the right                                                                         |
+| [Ctrl]+[Shift]+[left arrow]                         | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
+| [Ctrl]+[right arrow]                                | Move the insertion point, word by word, from left to right                                                                             |
+| [Ctrl]+[left arrow]                                 | Move the insertion point, word by word, from right to left                                                                             |
+| [Home]                                              | Place the insertion point at the beginning of the line                                                                                 |
+| [End]                                               | Place the insertion point at the end of the line                                                                                       |
+| [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
+| [Ctrl]+[End]                                        | Place the insertion point at the end of the method                                                                                     |
+| [Shift]+[Home]                                      | Select all the characters in the line that are to the left of the cursor                                                               |
+| [Shift]+[End]                                       | Select all the characters in the line that are to the right of the cursor                                                              |
+| [PgUp]                                              | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
+| [PgDn]                                              | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
+| [Ctrl]+[K] on a project method name                 | Open the project method in a new window                                                                                                |
+| [Alt]+doble clic en el nombre de un método proyecto | idem                                                                                                                                   |
+| [Ctrl]+haga clic en el nombre de un método proyecto | idem                                                                                                                                   |
 
 
-## Checking and correcting syntax errors
+## Comprobación y corrección de errores de sintaxis
 
 4D automatically checks the method syntax to see if it is correct. If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](assets/en/code-editor/incorrect-expression-icon.png). When you move the mouse over the symbol, a help tip displays the cause of the error:
 
@@ -392,7 +392,7 @@ Hay dos maneras de crear comentarios:
 
 #### `//comment`
 
-Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
+Se utiliza para crear un comentario de una sola línea. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
 <pre>&lt;code class="//This is a comment\" spaces=">
  &lt;code class="//This is a comment\" spaces=">
@@ -412,7 +412,7 @@ Both inline and multiline comment blocks begin with /*and end with*/.
 
 - *Inline comments* -  can be anywhere in the code.The length of inline comments is limited to the maximum size of a line (32,000 characters). ![](assets/en/code-editor/inline-comment.png)
 
--   The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. There is no limit on the number of lines. ![](assets/en/code-editor/multiline-comment.png)
+-   The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. No hay límite en el número de líneas. ![](assets/en/code-editor/multiline-comment.png)
 
 > Multiline comments at the end of a line are not supported.-
 
@@ -483,7 +483,7 @@ Two commands make it easier to move around within code structures (e.g. `If...El
 * **Start Of Block**: places the cursor at the start of the current structure, just before the initial keyword.
 * **End Of Block**: places the cursor at the end of the current structure, just after the final keyword.
 
-These commands are found in the **Method** menu as well as the context menu of the editor. You can also use the following shortcuts:
+These commands are found in the **Method** menu as well as the context menu of the editor. También puede utilizar los siguientes atajos:
 
 * Windows: **Ctrl + up arrow** or **Ctrl** + **down arrow**‚
 * macOS: **Command** + **up arrow** or **Command** +**down arrow**.
@@ -494,7 +494,7 @@ These commands are found in the **Method** menu as well as the context menu of t
 
 ![](https://doc.4d.com/4Dv19R4/picture/443304/pict443304.en.png)
 
-A bookmark moves along with its original row if additional rows are inserted in the method. Bookmarks are saved with the methods.
+A bookmark moves along with its original row if additional rows are inserted in the method. Los marcadores se guardan con los métodos.
 
 Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
 
@@ -506,35 +506,35 @@ Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
 
 ## Navigation dropdown
 
-The navigation dropdown helps you organize your code and navigate more easily inside your classes and methods:
+La lista desplegable de navegación le ayuda a organizar su código y a navegar más fácilmente dentro de sus clases y métodos:
 
 ![dropdown-list](assets/en/code-editor/dropdown-list.png)
 
-Some tags are added automatically, and you can complement the dropdown list using [markers](#manual-tagging).
+Algunas etiquetas se añaden automáticamente y puede complementar la lista desplegable utilizando los [marcadores ](#manual-tagging).
 
 ### Navegación en el código
 
-Click an item in the dropdown list to go to its first line in the code. You can also navigate with arrow-keys and press **Enter**.
+Haga clic en un elemento de la lista desplegable para acceder a su primera línea en el código. También puede navegar con las teclas de flecha y presionar **Intro**.
 
 ### Etiquetado automático
 
-Constructors, method declarations, functions and computed attributes are automatically tagged and added to the dropdown list.
+Los constructores, las declaraciones de métodos, las funciones y los atributos calculados se etiquetan automáticamente y se añaden a la lista desplegable.
 
-When there is no tag in the class/method, the tool displays "No tag".
+Cuando no hay ninguna etiqueta en la clase/método, la herramienta muestra "Sin etiqueta".
 
-The following items are added automatically:
+Los siguientes elementos se añaden automáticamente:
 
-| Icono                                                                    | Elemento                                         |
-| ------------------------------------------------------------------------ | ------------------------------------------------ |
-| ![no-tag-icon](assets/en/code-editor/no-tag.png)                         | Sin etiqueta                                     |
-| ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor o declaración de método        |
-| ![computed-attribute-icon](assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
-| ![function-icon](assets/en/code-editor/function.png)                     | Nombre de la función de clase                    |
+| Icono                                                                    | Elemento                                       |
+| ------------------------------------------------------------------------ | ---------------------------------------------- |
+| ![no-tag-icon](assets/en/code-editor/no-tag.png)                         | Sin etiqueta                                   |
+| ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor o declaración de método      |
+| ![computed-attribute-icon](assets/en/code-editor/computed-attribute.png) | Atributo calculado (get, set, orderBy y query) |
+| ![function-icon](assets/en/code-editor/function.png)                     | Nombre de la función de clase                  |
 
 
 ### Etiquetado manual
 
-By adding markers in your code, you can add the following tags to the dropdown:
+Añadiendo marcadores en su código, puede añadir las siguientes etiquetas a la lista desplegable:
 
 | Icono                                                | Elemento       |
 | ---------------------------------------------------- | -------------- |
@@ -542,15 +542,15 @@ By adding markers in your code, you can add the following tags to the dropdown:
 | ![todo-tag-icon](assets/en/code-editor/todo-tag.png) | TODO: etiqueta |
 | ![fixme-icon](assets/en/code-editor/fixme-tag.png)   | FIXME: tag     |
 
-You declare them by adding comments such as:
+Se declaran añadiendo comentarios como:
 
 ```4d 
-// FIXME: Fix following items
+// FIXME: Corrige los siguientes elementos
 ```
 
-Declarations are not case-sensitive; writing `fixme:` has the same effect.
+Las declaraciones no distinguen entre mayúsculas y minúsculas; escribir `fixme:` tiene el mismo efecto.
 
-Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. Así que escribiendo esto:
+Añadir un guión después de la etiqueta `MARK:` dibuja una línea de separación en el editor de código y en el menú desplegable. Así que escribiendo esto:
 
 ![mark-hyphen-image](assets/en/code-editor/mark-hyphen-editor.png)
 
@@ -558,17 +558,17 @@ Esto es lo que resulta:
 
 ![mark-hyphen-image](assets/en/code-editor/dropdown-organize.png)
 
-All markers located inside functions are indented in the dropdown list, except for the `MARK:` tags located at the end of functions and not followed by instructions. Those will appear at the first level.
+Todos los marcadores situados dentro de las funciones tienen sangría en la lista desplegable, excepto las etiquetas `MARK:` situadas al final de las funciones y no seguidas de instrucciones. Estos aparecerán en el primer nivel.
 
 ### Orden de visualización
 
-Tags are displayed in their appearing order inside the method/class.
+Las etiquetas se muestran en su orden de aparición dentro del método/clase.
 
-To display the tags of a method or class in alphabetical order, do one of the following:
-* **right-click** the dropdown tool
-* hold **Cmd** on macOS or **Alt** on Windows, and click the dropdown tool
+Para mostrar las etiquetas de un método o de una clase en orden alfabético, realice una de las siguientes acciones:
+* **haga clic derecho** en la herramienta desplegable
+* mantenga **Cmd** en macOS o **Alt** en Windows, y haga clic en la herramienta de lista desplegable
 
-> Tags inside functions move with their parent items.
+> Las etiquetas dentro de las funciones se mueven con sus elementos padres.
 
 
 
