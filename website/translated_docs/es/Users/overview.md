@@ -28,7 +28,7 @@ Cuando se asigna una contraseña al Diseñador, todos los privilegios de acceso 
 Para desactivar el sistema de acceso por contraseña, basta con eliminar la contraseña del Diseñador.
 
 
-## Access control in single-user applications
+## Control de acceso en las aplicaciones monopuesto
 
 
 
