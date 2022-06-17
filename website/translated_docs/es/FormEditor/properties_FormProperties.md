@@ -11,7 +11,7 @@ title: Propiedades de los formularios
 This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
 
 *   dark - light text on a dark background
-*   light - dark text on a light background
+*   light - texto oscuro en un fondo claro
 > A defined color scheme can not be overridden by a CSS.
 
 #### Gramática JSON
@@ -70,7 +70,7 @@ Supported types depend on the form category:
 | ------------------------------- | ---------------- | ------------------------------------------------------------- | ---------------------------------------- |
 | Formulario detallado            | detailScreen     | A display form for data entry and modification                | Formularios proyecto - Formularios tabla |
 | Formulario detallado imprimible | detailPrinter    | A printed report with one page per record, such as an invoice | Formularios proyecto - Formularios tabla |
-| Formulario listado              | listScreen       | A form for listing records on the screen                      | Formularios tabla                        |
+| Formulario listado              | listScreen       | Un formulario para listar los registros en la pantalla        | Formularios tabla                        |
 | Formulario de lista imprimible  | listPrinter      | A printed report that list records                            | Formularios tabla                        |
 | Ninguno                         | *no destination* | A form with no specific feature                               | Formularios proyecto - Formularios tabla |
 
