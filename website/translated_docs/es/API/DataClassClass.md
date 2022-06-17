@@ -695,7 +695,7 @@ El objeto `data` de cada entrada contiene las siguientes propiedades:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
 | ---------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | __KEY                  | Cadena       | Llave primaria de la entidad                                                                                                 |
-| __STAMP                | Entero largo | Timestamp of the entity in the database                                                                                      |
+| __STAMP                | Entero largo | Timestamp de la entidad en la base de datos                                                                                  |
 | __TIMESTAMP            | Cadena       | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
 | dataClassAttributeName | Variant      | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
 
