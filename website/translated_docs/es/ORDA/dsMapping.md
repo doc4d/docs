@@ -11,7 +11,7 @@ La tecnología ORDA se basa en un mapeo automático de una estructura 4D subyace
 When you call a datastore using the `ds` or the `Open datastore` command, 4D automatically references tables and fields of the corresponding 4D structure as properties of the returned [datastore](#datastore) object:
 
 *   Tables are mapped to dataclasses.
-*   Fields are mapped to storage attributes.
+*   Los campos corresponden a los atributos de almacenamiento.
 *   Relations are mapped to relation attributes - relation names, defined in the Structure editor, are used as relation attribute names.
 
 ![](assets/en/ORDA/datastoreMapping.png)
@@ -116,7 +116,7 @@ Un objeto dataclass puede contener:
 *   attributes
 *   atributos relacionales
 
-The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. A query is done from a single dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
+The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. Una consulta se hace desde una única dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
 
 The dataclass object itself cannot be copied as an object:
 
