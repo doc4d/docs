@@ -781,15 +781,15 @@ In *options*, you can pass an object with additional options for the table. Poss
 
   If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
-  If the *columnCount* of the range exceeds the number of columns in *tableColumns*, the table is filled with empty columns.
+  If the column count of the range exceeds the number of columns in *tableColumns*, the table is filled with empty columns.
 
-  If the *columnCount* of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match *columnCount*.
+  If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
 If the columns are automatically generated, the columns are created and bound according to the first element's contents:
 
 * If the collection contains objects, the first object in the collection is used to create the columns. If the remaining objects in the collection have attributes that don't match the first object's attributes, they are not displayed in the table.
 
-* If the collection contains scalar values, the collection in the first element is used to create the columns. If the others elements have collection with more elements, they are not displayed in the table.
+* If the collection contains scalar values, the collection in the first element is used to create the columns. If the other elements have collections with more elements, they are not displayed in the table.
 
 If the columns are automatically generated (no *tableColumn* option is passed), the titles of the columns are defined as follows:
 
@@ -798,9 +798,10 @@ If the columns are automatically generated (no *tableColumn* option is passed), 
 
     Here the titles of the columns would be `LastName` and `FirstName`.
 
-* If the data is a scalar collection, the collection parameter is two-dimensional:
+* If the data is a collection of scalar values, the collection parameter is two-dimensional:
 
 * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
+
 * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribut as for VP SET VALUE. The number of columns created depends of the number of items of the subcollection in the first position of the first-level collection.
 
 #### Example
