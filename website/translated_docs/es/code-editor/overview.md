@@ -90,7 +90,7 @@ If you do not want users to be able to run a project method using the **Method..
 
 When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
 
-##### Shared by components and host database
+##### Compartido por los componentes y la base local
 
 This attribute is used within the framework of components. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases.
 
@@ -189,5 +189,5 @@ For batch setting of method attributes:
         -   The search does not take upper/lower case into account.
         -   You can enter several @ characters in the string, for example dtro_@web@pro.@
 3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
-4.  Click on **Apply**. The modification is applied instantly to all the project methods designated by the character string entered.
+4.  Haga clic en **Aplicar**. The modification is applied instantly to all the project methods designated by the character string entered.
 
