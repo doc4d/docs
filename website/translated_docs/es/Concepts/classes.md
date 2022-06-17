@@ -207,7 +207,7 @@ For a class function, the `Current method name` command returns: `<ClassName>.<F
 In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. Se soportan las siguientes sintaxis:
 
 - use of the `()` operator. For example, `myObject.methodName("hello")`
-- use of a "4D.Function" class member method:
+- utilización de un método miembro de la clase "4D.Function":
     - [`apply()`](API/FunctionClass.md#apply)
     - [`call()`](API/FunctionClass.md#call)
 
@@ -469,7 +469,7 @@ Function description()
     $0:=Super.nbSides()+" which are all equal"
 ```
 
-Then you can write in a project method:
+Entonces puede escribir en un método proyecto:
 
 ```4d
 var $square : Object
@@ -531,7 +531,7 @@ Function f()
     $0:=This.a+This.b
 ```
 
-Then you can write in a project method:
+Entonces puede escribir en un método proyecto:
 
 ```4d
 $o:=cs.ob.new()
