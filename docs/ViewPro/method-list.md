@@ -774,14 +774,14 @@ In *options*, you can pass an object with additional options for the table. Poss
   |dataField|Text| table column's data field (to access the data context)| No
   |formatter|Text| table column's formatter | No
   |name|Text| table column's name | Yes
-  
-  * If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
   * When the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
 
   * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-If you pass a *source* and you don't pass a *tableColumn* option, the command generates columns automatically, and the table's column titles are defined as follows:
+If you pass a *source* but no *tableColumn* option, the command generates columns automatically. In this case, *rangeObj* must be a cell range. Otherwise, the first cell of the range is used.
+
+When generating columns automatically, the following rules apply:
 
 * If the data passed to the command is a collection of objects, the attribute names are used as column titles. For example:
 
@@ -789,11 +789,16 @@ If you pass a *source* and you don't pass a *tableColumn* option, the command ge
 
   Here the titles of the columns would be `LastName` and `FirstName`.
 
-* If the data is a collection of scalar values, the collection parameter is two-dimensional:
+* If the data passed is a collection that holds scalar data, it is two dimensional:
 
   * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. The collection's indices are used as column titles.
+  * The subcollections' indices are used as column titles.
+
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. 
+
+  > This only works when generating columns automatically. You cannot use a collection of scalar data with the *tableColumns* option.
+
 
 #### Example
 
