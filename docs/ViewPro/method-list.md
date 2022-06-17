@@ -789,11 +789,11 @@ When you pass a *tableColumns* option, the columns are filled based on the infor
   
   * If *tableColumns* is `empty`, `undefined` or `null`, *rangeObj* must be a cell range, otherwise the first cell of the range is used.
 
-  * If the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
+  * When the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
 
-  * If the column count of the range is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
+  * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-### Fill a table automatically
+#### Fill a table automatically
 
 When the columns are automatically generated, their column titles are defined as follows:
 
@@ -3242,13 +3242,13 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 #### Description
 
-The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes the specified table<!-- END REF -->.
+The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes a table<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the area where the table to remove is located.
 
 In *tableName*, pass the name of the table to remove.
 
-In *options*, you can specify what is removed. Possible values are:
+In *options*, you can specify additional behavior. Possible values are:
 
 |Constant|Value|Description|
 |---|---|---|
