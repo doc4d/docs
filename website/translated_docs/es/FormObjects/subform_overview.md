@@ -96,7 +96,7 @@ Modifying the bound variable or expression triggers form events which let you sy
 
 
 
-#### Updating the contents of a parent form
+#### Actualizar el contenido de un formulario padre
 
 Caso 2: se modifica el contenido del subformulario y esta modificación debe pasar al formulario padre.
 
