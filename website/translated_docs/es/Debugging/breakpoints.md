@@ -114,10 +114,10 @@ Para eliminar un punto de interrupción en el comando:
 
 ### Setting a Condition for catching a command
 
-1. Click on the entry in the right column
+1. Haga clic en la entrada en la columna derecha
 2. Enter a 4D formula (expression, command call or project method) that returns a Boolean value.
 
-> To remove a condition, delete its formula.
+> Para eliminar una condición, borre su fórmula.
 
 Adding conditions allows you to stop execution when the command is invoked only if the condition is met. For example, if you associate the condition `Records in selection(\[Emp]>10)` with the break point on the `DELETE SELECTION` command, the code will not be stopped during execution of the `DELETE SELECTION` command if the current selection of the \[Emp] table only contains 9 records (or less).
 
