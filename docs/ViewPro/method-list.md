@@ -781,6 +781,8 @@ There are two ways to fill a table:
 
 * automatically, by attaching a data context to the table using the *source* parameter. When the context's data changes, the data displayed in the table is updated accordingly. 
 
+> If you pass both a *tableColumn* option and a *source*, the table is filled using the *tableColumn* option.
+
 #### Fill a table manually
 
 When you pass a *tableColumns* option, the columns are filled based on the information in the collection. In that case:
@@ -805,7 +807,7 @@ When the columns are automatically generated, their column titles are defined as
 
   * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The subcollection in the first position of the first-level collection determines how many columns are created.
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created.
 
 #### Example
 
