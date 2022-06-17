@@ -805,17 +805,17 @@ When the columns are automatically generated, their column titles are defined as
 
   * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The subcollection in the first position of the first-level collection determines how many columns are created. 
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `picture`. Time must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The subcollection in the first position of the first-level collection determines how many columns are created.
 
 #### Example
 
-To create a table from an entity selection:
+To create a table using a data context:
 
 ```4d
 var $people: Collection
 var $data: Object
 
-// Create a data context
+// Create a data context from an entity selection
 $people:=ds.People.all().toCollection()
 
 $data:=New object()
