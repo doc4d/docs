@@ -43,7 +43,7 @@ If you execute the following code:
   //$e2.name contains "Hammer"
 ```
 
-This is illustrated by the following graphic:
+Esto es ilustrado por el siguiente gráfico:
 
 ![](assets/en/ORDA/entityRef1.png)
 
@@ -404,5 +404,5 @@ These principles are shown in the following diagram:
 
 **Transaction locks** also apply to both classic and ORDA commands. In a multiprocess or a multi-user application, a lock set within a transaction on a record by a classic command will result in preventing any other processes to lock entities related to this record (or conversely), until the transaction is validated or canceled.
 
-*   Example with a lock set by a classic command:<br><br>![](assets/en/ORDA/concurrent2.png)
+*   Ejemplo con un bloqueo definido por un comando clásico:<br><br>![](assets/en/ORDA/concurrent2.png)
 *   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)
