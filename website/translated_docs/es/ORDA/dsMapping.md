@@ -192,7 +192,7 @@ The entity object itself cannot be copied as an object:
  $myentity:=OB Copy(ds.Employee.get(1)) //returns null
 ```
 
-The entity properties are however enumerable:
+Sin embargo, las propiedades de la entidad son enumerables:
 
 ```4d
  ARRAY TEXT($prop;0)
