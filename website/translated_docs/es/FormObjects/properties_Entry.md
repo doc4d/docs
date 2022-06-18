@@ -104,12 +104,12 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | ~A                                     | Allow any letters, but convert to uppercase.                                                                                                          |
 | &9                                     | Permitir sólo números.                                                                                                                                |
 | &A                                     | Allow only capital letters.                                                                                                                           |
-| &a                                     | Allow only letters (uppercase and lowercase).                                                                                                         |
+| &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
 | &@                                     | Allow only alphanumeric characters. No hay caracteres especiales.                                                                                     |
 | ~a##                                   | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                                  |
 | !0&9##/##/##                           | Standard date entry format. Display zeros in entry spaces. Permitir cualquier número.                                                                 |
 | !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Display zeros in entry spaces. Permitir cualquier número. Limited to hours and minutes.                                   |
-| !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                  |
+| !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Permitir cuatro números, separados por dos puntos.             |
 | !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
 | !0&9Horas: ## Minutas: ## Segundos: ## | Formato de entrada de hora. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
 | !0&9##-##-##-##                        | Local telephone number format. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, four entries.                         |
