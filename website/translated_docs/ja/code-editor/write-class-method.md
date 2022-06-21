@@ -341,58 +341,58 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ## シンタックスエラーのチェックと訂正
 
-4D automatically checks the method syntax to see if it is correct. If you enter text or select a component that is not syntactically correct, 4D displays a symbol to indicate the incorrect expression ![](assets/en/code-editor/incorrect-expression-icon.png). When you move the mouse over the symbol, a help tip displays the cause of the error:
+4D は自動でメソッドシンタックスをチェックします。 シンタックスが正しくない場合、4Dはそのことを示す記号を表示します ![](assets/en/code-editor/incorrect-expression-icon.png)。 マウスを記号に重ねるとエラーの内容が表示されます:
 
 ![](assets/en/code-editor/incorrect-expression-message.png)
 
-When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method, class or function is marked as having improper syntax, check and fix the entry. If the line becomes correct, 4D removes the error symbol. When you save or close the window, the entire method is validated. You can also force validation by pressing the **Enter** key.
+コード入力の際、テンキー側の **Enter** を押すと、改行されることなく現在の行のシンタックスチェックをおこなえます。 4Dは行を評価し、フォーマットし、エラーがあればそれを表示し、挿入カーソルを行の最後に移動します。 メソッドやクラス、関数の行にエラーがあると表示された場合には、それを修正してください。 正しく修正されると、4D はエラー記号を削除します。 保存したりウィンドウを閉じたりしたときはメソッド全体が評価されます。 **Enter** キーを押すと、強制的に評価をおこなえます。
 
-When the method, class or function is validated, 4D checks for:
+メソッド、クラス、関数を評価する際、4Dは以下をチェックします:
 
-* basic syntax errors
-* the structure of statements (`If`, `End if` and so on)
-* matching enclosing characters in the code such as parentheses or quotation marks. When you type an enclosing character, 4D indicates the match by framing the start/end characters with gray rectangles:
+* 基本的なシンタックスエラー
+* ステートメントの構造 (`If`, `End if` など)
+* 括弧やクォーテーションマークなどの対応 (ペアになっているか)。 閉じる文字を入力すると、4D は開始と終了文字を灰色の四角で囲み、それらがペアであることを示します:
 
 ![](assets/en/code-editor/matching-enclosing-characters.png)
 
-> If you click on an enclosing character in the code, 4D indicates its match with gray rectangles by default. You can modify the way 4D indicates matching enclosing characters or disable this feature in **Preferences** > **Methods** > **Options** > **Matching parentheses**.
+> コード中のこれらの閉じる文字をクリックすると、4D はデフォルトで対応するペアの文字を灰色の四角で囲みます。 この振る舞いは **環境設定** の **メソッド** ＞ **オプション** の **括弧のマッチング** で変更できます。
 
-The Code Editor can only check for obvious syntax errors (misspellings and the like). It does not check for errors that only occur during execution. Execution errors are caught by 4D when the code is executed.
+コードエディターではスペルミスなどの大きなシンタックスエラーしかチェックできません。 実行時エラーはチェックできません。 実行時エラーは、コードが実行されているときに 4D が検出します。
 
-4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
+このようなエラーを処理するために、4D はデバッガー ([デバッガー](../Debugging/debugger.md) 参照) を提供します。 また、コンパイラーもエラー検出には欠かせません。 コンパイラーについての詳細は、[コンパイル](../Project/compiler.md) を参照ください。
 
-## Using help tips and status bar
+## ヘルプTip とステータスバーを使用する
 
-The Code Editor provides various contextual information using help tips. They appear when you mouse over an object and the status bar, at the bottom of a Code Editor window.
+コードエディターは、カーソルの位置に応じた様々な情報をヘルプTip で提供します。 これらの情報は、マウスをオブジェクト上に重ねたときに表示されるほか、コードエディターウィンドウ下部のステータスバーにも表示されます。
 
-* **Errors**: When you mouse over the symbol indicating an error to the left of the editing area, a help tip displays the cause of the error (see [Checking and correcting syntax errors](#checking-and-correcting-syntax-errors)).
+* **エラー**: ブレークポイントエリアにエラーアイコンが表示されているとき、マウスをアイコンに重ねるとエラーの内容が表示されます ([シンタックスエラーのチェックと訂正](#シンタックスエラーのチェックと訂正) 参照)。
 
-* **4D command documentation**: When you set the cursor in a command name or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**: ![](assets/en/code-editor/status-bar-bold.png) When you move the mouse over a 4D command, a help tip provides the command syntax along with a brief description of how it works. ![](assets/en/code-editor/status-bar-description.png)
+* **4Dコマンドの説明**: 4Dコマンド名や変数にカーソルを置くと、ステータスバーにコマンドのシンタックスが表示されます。 引数を入力または選択すると、このエリアで現在の引数が **太字**で表示されます: ![](assets/en/code-editor/status-bar-bold.png) 4Dコマンド上にマウスを重ねると、コマンドシンタックスと簡単な説明がヘルプTip に表示されます。 ![](assets/en/code-editor/status-bar-description.png)
 
-* **Variable type and description**: When you mouse over a variable, a help tip shows its type (if it has been explicitly defined in the method) and associated comment, if any. ![](assets/en/code-editor/variable-type.png)
+* **変数型と詳細**: 変数にマウスを重ねると、その変数の型と (メソッド内で明示的に宣言されている場合)、付随したコメントが (あれば) ヘルプTip に表示されます。 ![](assets/en/code-editor/variable-type.png)
 
-* **Project methods**: When you mouse over a project method or class function, a help tip displays:
+* **プロジェクトメソッド**: プロジェクトメソッドまたはクラス関数にマウスを重ねると、以下の内容がヘルプTip に表示されます:
 
-  * either the comments specified in the Explorer.
-  * or the first few lines of the method or class function if it includes comments (lines beginning with // or /*...*/ comment block). It is common practice to insert documentation for the method as well as its parameters in the form of comments at the beginning of the method. You can get this information directly in the help tip, just make sure to first remove any comments found in the Explorer. Comments at the beginning of a method: ![](assets/en/code-editor/comments-method.png) Help tip in another method: ![](assets/en/code-editor/help-tip.png)
+  * エクスプローラーで設定されたコメント、
+  * または、メソッドまたはクラス関数の先頭コメント (// で始まる行、あるいは /*...*/ コメントブロック)。 メソッドの先頭に、そのメソッドや引数の説明をコメント形式で記述するのは一般的な方法です。 エクスプローラーコメントを削除すれば、こちらの内容をヘルプTip に表示できます。 メソッドの先頭コメント: ![](assets/en/code-editor/comments-method.png) 別のメソッドからこのメソッドを呼び出したときのヘルプTip: ![](assets/en/code-editor/help-tip.png)
 
-* You can also create a **dedicated documentation file** named `<MethodName>.md` in the `<package>/documentation` folder. See [Viewing documentation in the code editor](../Project/documentation.md#viewing-documentation-in-the-code-editor)
+* また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。 [コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
 
-## Display the complete documentation of a command
+## コマンドの完全なドキュメントを表示する
 
-You can display the HTML documentation of a 4D "classic" language command at any time: to do so, select the complete command name or simply place the cursor in the name and press **F1**. The complete documentation of the command is displayed in a new window of your default browser.
+4D の "クラシック" ランゲージコマンドの HTMLドキュメントをいつでも表示することができます。コマンド名を選択、またはその途中にカーソルを挿入し、**F1** を押します。 デフォルトブラウザーの新しいウィンドウにコマンドの完全なドキュメントが表示されます。
 
-4D looks for the on-line documentation of the command (on the *4D Doc Center* site) or searches locally depending on the settings made in the application Preferences (see [Documentation location](../Preferences/general.md#documentation-location)).
+アプリケーション環境設定 ([ドキュメントの場所](../Preferences/general.md#ドキュメントの場所)) に基づき、4D はオンラインリファレンス (*4D Doc Center* のサイト)、あるいはローカルからそのコマンドのドキュメントを探します。
 
-## Comment/Uncomment
+## コメント/アンコメント
 
-コメントとは、コード内の実行されないテキストのことです。 These lines are not interpreted by the program (4D does not apply any particular style within comments) and are not executed when the method or function is called.
+コメントとは、コード内の実行されないテキストのことです。 プログラムはコメント行をコードとして解釈せず (4D はコメントにスタイルを適用しません) メソッドまたは関数を呼び出してもそれらの行は実行されません。
 
 コメントの書き方は2通りあります:
 
-#### `//comment`
+#### `//コメント`
 
-Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
+単一行のコメントを作成するのに使用します。 行の先頭に// を挿入することで、単一行のコメントが作成されます。 単一行のコメントの最大長は、単一行の最大サイズ (32,000文字) までです。
 
 <pre>&lt;code class="//This is a comment\" spaces=">
  For(vCounter;1;2)\
@@ -402,91 +402,91 @@ Used to create a single line comment. Inserting // at the beginning of a line wi
  End for
 &lt;/code></pre>
 
-#### `/*comment*/`
+#### `/*コメント*/`
 
-Used to surround the content to create inline comments or multiline comment blocks.
+コンテンツを囲うことで、インラインコメントや複数行のコメントブロックを作成することができます。
 
-Both inline and multiline comment blocks begin with /*and end with*/.
+インラインコメントも、複数行コメントも、どちらも /* で始まり、*/ で終わります。
 
-- *Inline comments* -  can be anywhere in the code.The length of inline comments is limited to the maximum size of a line (32,000 characters). ![](assets/en/code-editor/inline-comment.png)
+- *インラインコメント* -  コード内のどこにでも記述することができます。インラインコメントの最大長は、行の最大サイズ (32,000文字) までです。 ![](assets/en/code-editor/inline-comment.png)
 
--   *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. There is no limit on the number of lines. ![](assets/en/code-editor/multiline-comment.png)
+-   *複数行コメントブロック* - 折りたたみ/展開が可能です。 複数行のコメントブロックはネスト構造にすることができ、それぞれのブロックを折りたたみ/展開することが可能です。 ブロックが折りたたまれている時でも、折りたたみ/展開可能なブロックの最初の行だけは引き続き表示されます。 複数行コメントの長さは、各行につき最大32,000文字までです。 行数については制限はありません。 ![](assets/en/code-editor/multiline-comment.png)
 
-> Multiline comments at the end of a line are not supported.-
+> 行末の複数行コメントはサポートされていません。
 
-The **Comment/Uncomment** command, found in the **Method** menu as well as in the Code Editor context menu is used to mark a group of selected lines of code as single line comments, or, on the contrary, to remove the single line comment characters from a selection. To use this command, select the code to be marked as commented, then select the **Comment/Uncomment** command:
+**メソッド** メニューやコードエディターのコンテキストメニューにある **コメント/アンコメント** コマンドを使用すると、選択した (複数の) 行を単一行コメント化およびその逆の操作をおこなえます。 このコマンドを使用するには適用したい行を選択し、**コメント/アンコメント** を選択します:
 
 ![](assets/en/code-editor/comment-uncomment-1.png) --> ![](assets/en/code-editor/comment-uncomment-2.png)
 
-When the selection contains only active code, the **Comment** command is applied. When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only commented lines, the **Uncomment** command is applied.
+選択行がアクティブなコードの場合、**コメント** コマンドが適用されます。 選択行にアクティブコードとコメントの両方が含まれる場合、すべての行に "//" が追加されます。この動作により、複数回コマンドを適用しても、その後のアンコメント時に初期のコメントが維持されます。 選択行がすべてコメントのみの場合、**アンコメント** コマンドが適用されます。
 
-> The **Comment/Uncomment** command only operates with full lines --- it cannot be used to comment only part of a line.
+> **コメント/アンコメント** コマンドは行全体に適用されます。行の一部のみをコメント化することはできません。
 
-## Using escape sequences
+## エスケープシーケンス
 
-The Code Editor allows you to use escape sequences (also called escape characters). An escape sequence is a sequence of characters that can be used to replace a "special" character.
+コードエディターでエスケープシーケンス (エスケープ文字) を使用できます。 エスケープシーケンスとは、特別な文字の代わりに使用される一連の文字です。
 
-The sequence consists of a backslash `\`, followed by a character. For instance, `\t` is an escape sequence for the **Tab** character. Escape sequences facilitate the entry of special characters: the previous example (`\t`) replaces the entry "Character(Tab)".
+エスケープシーケンスは一文字目がバックスラッシュ `\` であり、そのあとに文字が続きます。 たとえば `\t` は **Tab** 文字のエスケープシーケンスです。 エスケープシーケンスを使用すると特別な文字の入力が容易になります。たとえば `\t` を Char(Tab) の代わりに使用できます。
 
-In 4D, the following escape sequences can be used:
+4D では以下のエスケープシーケンスを使用できます:
 
-| エスケープシーケンス                    | 意味する文字   |
-| ----------------------------- | -------- |
-| `\n`                         | LF (行送り) |
-| `\t`                         | HT (タブ)  |
-| `\r`                         | CR (改行)  |
-| ``\\` |``&#96; (Backslash) |          |
-| `\"`                         | " (引用符)  |
+| エスケープシーケンス                   | 意味する文字   |
+| ---------------------------- | -------- |
+| `\n`                        | LF (行送り) |
+| `\t`                        | HT (タブ)  |
+| `\r`                        | CR (改行)  |
+| ``\\` |``&#96; (バックスラッシュ) |          |
+| `\"`                        | " (引用符)  |
 
 
-> It is possible to use either upper or lower case in escape sequences.
+> エスケープシーケンスでは文字の大小は区別されません。
 
-In the following example, the **Carriage return** character (escape sequence \r) is inserted in a statement in order to obtain the dialog box shown:
+以下の例題では、**キャリッジリターン** 文字 (エスケープシーケンス `\r`) を使用して、警告ダイアログに表示されるメッセージに改行を挿入しています:
 
 `ALERT("The operation has been completed successfully.\rYou may now disconnect.")`
 
 ![](assets/en/code-editor/carriage-return.png)
 
-**Warning:** The `\` (backslash) character is used as a separator in pathnames under Windows. In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash `\` with a double backslash ``\\`. For instance,``C:\Folder`will become`C:\\Folder`. However, if you write`"C:\MyDocuments\New"`, 4D will display`"C:\\MyDocuments\New"`. In this case, the second backslash is interpreted incorrectly as`\N`(an existing escape sequence). You must therefore enter a double backslash`\\` when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
+**警告**: `\` (バックスラッシュ) は Windows でパス名の区切り文字として使用されています。 通常、4D はコードエディターに入力された Windows のパス名のバックスラッシュを自動で `\` に置き換えることで、これを正しく解釈します。 たとえば、`C:\Folder` と入力すると `C:\\Folder` に変換されます。 しかし、`"C:\MyDocuments\New"` と入力した場合、4Dは `"C:\\MyDocuments\New"`と表示します。 この場合、二番目のバックスラッシュは `\N` (行送り) と解釈されてしまいます。 このようなケースでは、開発者がバックスラッシュを 2つ入力するようにしなければなりません。
 
-## Making code editing easier
+## コードの編集を容易にする
 
-Several functions in the Code Editor make code easier to read and facilitate browsing among the statements.
+コードエディターには、コードの可読性を高めたり、行のブラウズを容易にしたりする機能があります。
 
-### Expand / Collapse
+### 展開 / 折りたたみ
 
-4D code located inside loops and conditions can now be collapsed or expanded, in order to facilitate the reading of methods:
+ループや条件文の中にあるコードを折りたたんだり展開したりして、メソッドの可読性を高めることができます:
 
-* Expanded code: ![](assets/en/code-editor/expanded-code.png)
+* 展開されたコード:  ![](assets/en/code-editor/expanded-code.png)
 
-* Collapsed code: ![](assets/en/code-editor/collapsed-code.png)
+* 折りたたまれたコード: ![](assets/en/code-editor/collapsed-code.png)
 
-If you place the mouse over the expand button [...], a help tip appears, displaying the first lines of the hidden code.
+展開ボタン [...] の上にマウスを重ねるとヘルプTip が表示され、非表示になっているコードの先頭部分を見ることができます。
 
-A collapsed portion of code can be selected, copied, pasted or deleted. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
+折りたたまれたコード部分は、選択・コピー・ペースト・削除することができます。 折りたたみに含まれるすべての行が操作の対象となります。 このようなコードがペーストされると、自動で展開されます。
 
-There are several ways to expand and collapse code:
+コードを折りたたみ、展開する方法はいくつかあります:
 
-* Click on the expand/collapse icons ([+] and [-] under Windows) or on the opening button [...]
-* Use the commands of the **Method > Collapse/Expand** submenu:
+* 折りたたみ/展開アイコンまたは (Windows では [+] と [-]、macOSでは三角) をクリックする、または閉じられた状態では開くボタン [...] をクリックする
+* **メソッド ＞ 折りたたみ/展開** サブメニューを使用する:
 
-  * **Collapse Selection** / **Expand Selection**: collapses or expands all the code structures found in the text selection.
-  * **Collapse Current Level** / **Expand Current Level**: collapses or expands the code structure at the level where the cursor is located. These commands are also available in the **context menu** of the editor.
-  * **Collapse All** / **Expand All**: collapses or expands all the loops and conditions of a method. These commands are also available in the toolbar of the editor.
+  * **選択部を折りたたむ** / **選択部を展開する**: 選択されたテキスト中にあるすべてのコードを折りたたむまたは展開します。
+  * **現在のレベルを折りたたむ** / **現在のレベルを展開する**: カーソルが存在するレベルのコードを折りたたむまたは展開します。 このコマンドはエディターの **コンテキストメニュー** からもアクセスできます。
+  * **すべてを折りたたむ** / **すべてを展開する**: メソッド中のすべてのループと条件ブロックを折りたたむまたは展開します。 このコマンドはエディターのツールバーからもアクセスできます:。
 
-### Start of Block or End of Block
+### ブロックの先頭/ブロックの終端
 
-Two commands make it easier to move around within code structures (e.g. `If...Else...End if`):
+コード構造 (例: `If...Else...End if`) の中を移動することを容易にするための、2つのコマンドがあります:
 
-* **Start Of Block**: places the cursor at the start of the current structure, just before the initial keyword.
-* **End Of Block**: places the cursor at the end of the current structure, just after the final keyword.
+* **ブロックの先頭**: 現在のブロックの先頭にカーソルを移動します。
+* **ブロックの終端**: 現在のブロックの終端にカーソルを移動します。
 
-These commands are found in the **Method** menu as well as the context menu of the editor. You can also use the following shortcuts:
+このコマンドには **メソッド** メニューとエディターのコンテキストメニューからアクセスできます。 以下のショートカットも利用できます:
 
-* Windows: **Ctrl + up arrow** or **Ctrl** + **down arrow**‚
-* macOS: **Command** + **up arrow** or **Command** +**down arrow**.
+* Windows: **Ctrl** + **上矢印** または **Ctrl** + **下矢印**
+* macOS: **Command** + **上矢印** または **Command** + **下矢印**.
 
-### Using bookmarks
+### ブックマークを使用する
 
 4D lets you associate bookmarks with certain lines in your methods. You can then browse quickly within the code by passing from one bookmark to another using specific commands.
 
