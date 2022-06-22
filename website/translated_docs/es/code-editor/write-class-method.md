@@ -504,7 +504,7 @@ Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
 
 **Note:** You can use bookmarks as markers for lines that contain an item found by a search. In this case, 4D automatically adds the bookmarks. For more information, refer to [Find and replace in methods](./find-and-replace-in-methods).
 
-## Navigation dropdown
+## Despliegue de navegación
 
 La lista desplegable de navegación le ayuda a organizar su código y a navegar más fácilmente dentro de sus clases y métodos:
 
