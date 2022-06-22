@@ -1,6 +1,6 @@
 ---
 id: navigation
-title: Navigation dropdown
+title: Despliegue de navegación
 ---
 
 La lista desplegable de navegación le ayuda a organizar su código y a navegar más fácilmente dentro de sus clases y métodos:
