@@ -6,9 +6,9 @@ title: Fuente de datos
 ---
 ## Inserción automática
 
-When this option is selected, if a user enters a value that is not found in the list associated with the object, this value is automatically added to the list stored in memory.
+Cuando se selecciona esta opción, si un usuario introduce un valor que no se encuentra en la lista asociada al objeto, este valor se añade automáticamente a la lista almacenada en memoria.
 
-When the **automatic insertion** option is not set (default), the value entered is stored in the form object but not in the list in memory.
+Cuando la opción **inserción automática** no está definida (por defecto), el valor introducido se almacena en el objeto formulario pero no en la lista en memoria.
 
 Esta propiedad es soportada por:
 
@@ -54,7 +54,7 @@ You can also associate choice lists to objects using the [OBJECT SET LIST BY NAM
 
 #### Objetos soportados
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
+[Lista desplegable](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Lista jerárquica](list_overview.md#overview) - [Columna List Box](listbox_overview.md#list-box-columns)
 
 
 
