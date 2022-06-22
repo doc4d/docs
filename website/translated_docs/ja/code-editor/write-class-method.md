@@ -18,16 +18,16 @@ title: コードエディター
 
 コードエディターにはメソッドの実行と編集に関連する基本的な機能に素早くアクセスするためのツールバーがあります。
 
-| 機能                   | アイコン                                                                           | 説明                                                                                                                                                                                                              |
-| -------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **メソッド実行**           | ![execute-method](assets/en/code-editor/execute-method.png)                    | コードエディターウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。 このボタンに関連付けられているメニューから実行オプションを選択できます:<ul><li> **新規プロセスで実行**: 新規プロセスを作成し、そのプロセス内でメソッドを実行します。<li>**新規プロセスで実行してデバッグ**: 新規プロセスを作成し、デバッガーウィンドウを開いてメソッドを表示します。</li><li>**アプリケーションプロセスで実行**: アプリケーションプロセス内でメソッドを実行します (アプリケーションプロセス内とは、レコード表示ウィンドウと同じプロセス内ということです)。</li><li>**アプリケーションプロセスで実行してデバッグ**: アプリケーションプロセス内でデバッガーを開き、メソッドを表示します。</li></ul>メソッド実行の詳細については、 [プロジェクトメソッドの呼び出し](../Concepts/methods.md#プロジェクトメソッドの呼び出し) を参照ください。             |
-| **検索**               | ![search-icon](assets/en/code-editor/search.png)                               | 現在のウィンドウで検索をおこなうことができます。                                                                                                                                                                                        |
-| **マクロ**              | ![macros-button](assets/en/code-editor/macros.png)                             | 選択対象にマクロを挿入します。 ドロップダウンの矢印をクリックすると、利用可能なマクロがすべて表示されます。 詳細は [マクロの作成と利用](creating-using-macros.md) を参照してください。                                                                                                     |
-| **すべて折りたたむ / すべて展開** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png)       | これらのボタンを使用してコードの制御フロー構造を折りたたんだり展開したりできます。                                                                                                                                                                       |
-| **メソッド情報**           | ![method-information-icon](assets/en/code-editor/method-information.png)       | [メソッドプロパティ](../Concepts/methods.md#プロジェクトメソッドプロパティ) ダイアログボックスを表示します (プロジェクトメソッドのみ)。                                                                                                                             |
-| **最新のクリップボードの値**     | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | 直近でクリップボードに保存された値を表示します。                                                                                                                                                                                        |
-| **クリップボード**          | ![clipboard icons](assets/en/code-editor/clipboards.png)                       | コードエディターで利用可能な 9つのクリップボードです。 クリップボードのアイコンをクリックするか、あるいはキーボードショートカットによって、[これらのクリップボードを利用](./write-class-method.md#コピーペースト文字列を複数記憶する) できます。 [環境設定オプション](Preferences/methods.md#options-1) を使用するとそれらを非表示にすることができます。 |
-| **コードのナビゲーション**      | ![code-navigation-icons](assets/en/code-editor/tags.png)                       | 自動的にタグ付けされたコンテンツや手動で宣言されたマーカーを使用して、メソッドやクラス内を移動できます。 [ナビゲーションドロップダウン](./write-class-method.md#ナビゲーションドロップダウン) 参照。                                                                                               |
+| 機能                   | アイコン                                                                 | 説明                                                                                                                                                                                                              |
+| -------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **メソッド実行**           | ![メソッドの実行](assets/en/code-editor/execute-method.png)                 | コードエディターウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。 このボタンに関連付けられているメニューから実行オプションを選択できます:<ul><li> **新規プロセスで実行**: 新規プロセスを作成し、そのプロセス内でメソッドを実行します。<li>**新規プロセスで実行してデバッグ**: 新規プロセスを作成し、デバッガーウィンドウを開いてメソッドを表示します。</li><li>**アプリケーションプロセスで実行**: アプリケーションプロセス内でメソッドを実行します (アプリケーションプロセス内とは、レコード表示ウィンドウと同じプロセス内ということです)。</li><li>**アプリケーションプロセスで実行してデバッグ**: アプリケーションプロセス内でデバッガーを開き、メソッドを表示します。</li></ul>メソッド実行の詳細については、 [プロジェクトメソッドの呼び出し](../Concepts/methods.md#プロジェクトメソッドの呼び出し) を参照ください。             |
+| **検索**               | ![検索アイコン](assets/en/code-editor/search.png)                          | 現在のウィンドウで検索をおこなうことができます。                                                                                                                                                                                        |
+| **マクロ**              | ![マクロボタン](assets/en/code-editor/macros.png)                          | 選択対象にマクロを挿入します。 ドロップダウンの矢印をクリックすると、利用可能なマクロがすべて表示されます。 詳細は [マクロの作成と利用](creating-using-macros.md) を参照してください。                                                                                                     |
+| **すべて折りたたむ / すべて展開** | ![展開折りたたみボタン](assets/en/code-editor/expand-collapse-all.png)         | これらのボタンを使用してコードの制御フロー構造を折りたたんだり展開したりできます。                                                                                                                                                                       |
+| **メソッド情報**           | ![メソッド情報アイコン](assets/en/code-editor/method-information.png)          | [メソッドプロパティ](../Concepts/methods.md#プロジェクトメソッドプロパティ) ダイアログボックスを表示します (プロジェクトメソッドのみ)。                                                                                                                             |
+| **最新のクリップボードの値**     | ![最新のクリップボードの値アイコン](assets/en/code-editor/last-clipboard-values.png) | 直近でクリップボードに保存された値を表示します。                                                                                                                                                                                        |
+| **クリップボード**          | ![クリップボードアイコン](assets/en/code-editor/clipboards.png)                 | コードエディターで利用可能な 9つのクリップボードです。 クリップボードのアイコンをクリックするか、あるいはキーボードショートカットによって、[これらのクリップボードを利用](./write-class-method.md#コピーペースト文字列を複数記憶する) できます。 [環境設定オプション](Preferences/methods.md#options-1) を使用するとそれらを非表示にすることができます。 |
+| **コードのナビゲーション**      | ![コードナビゲーションアイコン](assets/en/code-editor/tags.png)                    | 自動的にタグ付けされたコンテンツや手動で宣言されたマーカーを使用して、メソッドやクラス内を移動できます。 [ナビゲーションドロップダウン](./write-class-method.md#ナビゲーションドロップダウン) 参照。                                                                                               |
 
 ## 編集エリア
 
@@ -488,19 +488,19 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ### ブックマークを使用する
 
-4D lets you associate bookmarks with certain lines in your methods. You can then browse quickly within the code by passing from one bookmark to another using specific commands.
+4Dでは、メソッドの特定の行にブックマークを付けることができます。 ブックマークを付けると、特別なコマンドを使用してブックマーク間を素早く移動できます。
 
 ![](https://doc.4d.com/4Dv19R4/picture/443304/pict443304.en.png)
 
-A bookmark moves along with its original row if additional rows are inserted in the method. Bookmarks are saved with the methods.
+コードが挿入されたり削除されたりしてブックマーク行が移動すると、ブックマークもそれに伴って移動します。 ブックマークはメソッドとともに保存されます。
 
-Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
+ブックマークは **メソッド** メニューの **ブックマーク** サブメニューから管理します:
 
-* **Toggle**: Associates a bookmark with the current line (where the cursor is located) if it does not already have one or removes the existing bookmark if it does. This function is also available using the **Toggle Bookmark** command of the editor's context menu or using the **Ctrl+F3** (Windows) or **Command+F3** (macOS) keyboard shortcut.
-* **Remove All**: Removes all bookmarks from the foreground window.
-* **Goto Next** / **Goto Previous**: Enables browsing among bookmarks in the window. Selecting one of these commands places the cursor on the first character of the line associated with the bookmark concerned. You can also use the keyboard shortcuts **F3** (go to next) or **Shift+F3** (go to previous).
+* **切り替える**: カーソルが存在する行にブックマークを設定します (まだブックマークが設定されていない場合)。すでにブックマークが設定されていれば、それを削除します。 エディターのコンテキストメニューの **ブックマークをトグル**、または **Ctrl+F3** (Windows) / **Command+F3** (macOS) キーボードショートカットからもこのコマンドにアクセスできます。
+* **すべてを削除**: 最前面のエディターのブックマークをすべて削除します。
+* **次に進む** / **前に戻る**: ウィンドウ内でブックマーク間を移動するのに使用します。 コマンドを選択すると、該当するブックマーク行の先頭にカーソルが移動します。 **F3** (次に進む) や **Shift+F3** (前に戻る) ショートカットも使用できます。
 
-**Note:** You can use bookmarks as markers for lines that contain an item found by a search. In this case, 4D automatically adds the bookmarks. For more information, refer to [Find and replace in methods](./find-and-replace-in-methods).
+**注**: 検索で見つかった項目を含む行のマーカーとしてブックマークを使用できます。 この場合、4D は自動でブックマークを追加します。 詳細については、[メソッド内の検索と置換](./find-and-replace-in-methods.md) を参照ください。
 
 ## ナビゲーションドロップダウン
 
