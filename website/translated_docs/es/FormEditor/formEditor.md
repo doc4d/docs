@@ -41,7 +41,7 @@ You can display or hide elements at any moment in the Form editor’s current wi
 
 ### Reglas
 
-Las reglas laterales e inferiores le ayudan a posicionar los objetos en el formulario. They can be [displayed or hidden](#display-options).
+Las reglas laterales e inferiores le ayudan a posicionar los objetos en el formulario. Pueden [mostrarse u ocultarse](#display-options).
 
 Select **Ruler definition...** from the **Form** menu to change measurement units so that the form displays inches, centimeters, or pixels.
 
