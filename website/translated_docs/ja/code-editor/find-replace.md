@@ -17,7 +17,7 @@ title: 検索と置換
 
 **検索...** コマンドを選択すると以下のダイアログボックスが表示されます:
 
-![find-dialog](assets/en/code-editor/find-dialog.png)
+![検索ダイアログ](assets/en/code-editor/find-dialog.png)
 
 このダイアログボックス内で定義された検索は最前面のメソッドに対して適用されます。
 
@@ -48,7 +48,7 @@ title: 検索と置換
 
 **置換** コマンドを選択すると以下のダイアログボックスが表示されます:
 
-![find-dialog](assets/en/code-editor/replace-dialog.png)
+![検索ダイアログ](assets/en/code-editor/replace-dialog.png)
 
 - **検索条件** エリアには、検索したい文字列や式を入力します。 検索ダイアログ同様、このエリアはコンボボックスで、最新の検索/置換条件を15個、4D が終了するまで保持します。 **置換...** コマンドを選択する前にエディター中でテキストをハイライトすると、このエリアにそのテキストが表示されます。
 - **置換文字** エリアには、検索条件として入力された文字を置換する文字列を入力します。 このエリアもコンボボックスで、最新の検索/置換条件を15個、4D が終了するまで保持します。
@@ -90,21 +90,21 @@ title: 検索と置換
 
 現在の項目とは、選択されているもの、あるいはカーソルが置かれているものです。 フィールド名、変数名、コマンド、文字列等が該当します。 たとえば、以下のアクションを実行するとデータベース中で *vlNbCmd* 変数のオカレンスを探します:
 
-![find-dialog](assets/en/code-editor/search-references.png)
+![検索ダイアログ](assets/en/code-editor/search-references.png)
 
 このコマンドの結果は新規ウィンドウに表示されます。
 
-## 呼び出し元を検索
+## 呼出し元を検索
 
-The **Search Callers** command in the **Method** menu is only enabled for project methods. It searches for all the objects (other methods or menus) that reference the project method.
+**メソッド** メニューの **呼出し元を検索...** コマンドはプロジェクトメソッドでのみ利用可能です。 このコマンドは、開かれているプロジェクトメソッドを参照しているすべてのオブジェクト (他のメソッドやメニュー) を検索します。
 
-**Note:** The **Search Callers...** command is also available in **Explorer** > **Methods**
+**注:** **呼出し元を検索...** コマンドは **エクスプローラー** の **メソッド** ページからも利用できます。
 
 このコマンドの結果は新規ウィンドウに表示されます。
 
-## Goto Line
+## 行番号を指定して移動
 
-This specific search command is located in the **Method** menu. It opens a dialog box where you can indicate the line number you want to find. When you click **OK**, the editor finds and highlights that line in the method. This type of search is useful when used in conjunction with the compiler, which flags runtime errors by the line number in which they occur.
+この検索コマンドは **メソッド** メニューの中にあります。 このコマンドは、移動したい行番号を指定するためのダイアログボックスを開きます。 **OK** ボタンをクリックすると、コマンドはメソッド内で該当行を検索し、ハイライトします。 このような検索は、実行時エラーでコンパイラーが示すエラー行を表示するのに便利です。
 
-You can choose whether or not to display lines numbers in the Code Editor window. This option is described in the [Overview](./write-class-method.md#using-bookmarks) section.
+コードエディターウィンドウに行番号を表示するかしないかは、選択することができます。 このオプションについては [ブレークポイントエリア](./write-class-method.md#ブレークポイントエリア) を参照ください。
 
