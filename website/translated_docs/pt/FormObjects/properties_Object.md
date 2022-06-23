@@ -344,7 +344,7 @@ There are several types of calculations available. The following table shows whi
 | Standard deviation(*) | X   |       |      | X    |      |      | Real                |
 | Variance(*)           | X   |       |      | X    |      |      | Real                |
 | Sum squares(*)        | X   |       |      | X    |      |      | Real                |
-| Custom ("none")       | X   | X     | X    | X    | X    | X    | Any                 |
+| Custom ("none")       | X   | X     | X    | X    | X    | X    | Qualquer            |
 
 (*) Only for array type list boxes.
 
