@@ -84,9 +84,9 @@ Right coordinate of the object in the form.
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| right | number    | minimum: 0      |
+| Nome    | Data Type | Possible Values |
+| ------- | --------- | --------------- |
+| direita | number    | minimum: 0      |
 
 #### Objects Supported
 
