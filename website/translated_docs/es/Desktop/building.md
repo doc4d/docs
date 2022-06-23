@@ -675,7 +675,7 @@ More specifically, the following cases are covered:
 - Allowing the distribution of merged applications with read-only data (for demo applications, for instance).
 
 
-To define and use a default data file:
+Para definir y utilizar un archivo de datos por defecto:
 
 - You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the application project folder. This file must be provided along with all other necessary files, depending on the project configuration: index (.4DIndx), external Blobs, journal, etc. Es su responsabilidad proveer un archivo de datos válido por defecto. Es su responsabilidad proveer un archivo de datos válido por defecto.
 - When the application is built, the default data folder is integrated into the merged application. All files within this default data folder are also embedded.
