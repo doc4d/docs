@@ -10,7 +10,7 @@ title: Propiedades de los formularios
 
 This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
 
-*   dark - light text on a dark background
+*   dark -- texto claro sobre fondo oscuro
 *   light - texto oscuro en un fondo claro
 > A defined color scheme can not be overridden by a CSS.
 
@@ -63,7 +63,7 @@ Each table in a database generally has at least two table forms. One for listing
 - Input form - used for data entry. It displays a single record per screen and typically has buttons for saving and canceling modifications to the record and for navigating from record to record (*i.e.*, First Record, Last Record, Previous Record, Next Record). ![](assets/en/FormObjects/formInput.png)
 
 
-Supported types depend on the form category:
+Los tipos soportados dependen de la categoría de formulario:
 
 
 | Tipo de formulario              | Gramática JSON   | Descripción                                                   | Soportado con                            |
