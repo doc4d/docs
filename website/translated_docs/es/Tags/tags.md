@@ -9,7 +9,7 @@ This principle is used in particular by the 4D Web server to build [web template
 
 These tags are generally to be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
 
-It is possible to mix several types of tags. For example, the following HTML structure is entirely feasible:
+Es posible mezclar varios tipos de etiquetas. For example, the following HTML structure is entirely feasible:
 
 ```html
 <HTML>
@@ -289,7 +289,7 @@ The *property* parameter is a text variable automatically filled with the name o
 
 The properties of the object are processed according to their creation order. Durante el bucle, se pueden añadir o eliminar propiedades en el objeto, sin modificar el número de bucles que quedarán en función del número original de propiedades del objeto.
 
-#### Example with the properties of an object
+#### Ejemplo con las propiedades de un objeto
 
 *getGamers* is a project method that returns an object like ("Mary"; 10; "Ann"; 20; "John"; 40) to figure gamer scores.
 
@@ -368,7 +368,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
 
-The two following codes are equivalent.
+Los dos códigos siguientes son equivalentes.
 
 Code using 4DELSE only:
 
@@ -611,7 +611,7 @@ Ejemplo:
 
 In case of an interpretation error, the text "`<!--#4DLOOP expression-->`: description" is inserted instead of the contents located between `<!--#4DLOOP -->` and `<!--#4DENDLOOP-->`.
 
-The following messages can be displayed:
+Se pueden mostrar los siguientes mensajes:
 
 - Unexpected expression type (standard error);
 - Incorrect table name (error on the table name);
