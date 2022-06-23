@@ -262,7 +262,7 @@ Pasa el tamaño expresado en bytes como valor. By default, the compression thres
 | `WEB SET OPTION`              | `Web port ID`                                                    |             |
 | Caja de diálogo de parámetros | [Página Configuración/Puerto HTTP](../settings/web.md#http-port) |             |
 
-Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
+Número de puerto IP (TCP) de escucha para HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
 
 > En macOS, la modificación del puerto HTTP permite iniciar el servidor web 4D sin ser el usuario raíz de la máquina (ver [macOS HelperTool](#macos-helpertool)).
 
@@ -425,7 +425,7 @@ Valores posibles: 500 000 a 2 147 483 648.
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
 | `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Maximum number of simultaneous sessions. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+Número máximo de sesiones simultáneas. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
 Default value: 100 (pass 0 to restore the default value).
 
