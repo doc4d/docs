@@ -397,9 +397,9 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 **.getAllRemoteContexts()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
-| Parámetros | Tipo   |    | Descripción                                |
-| ---------- | ------ | -- | ------------------------------------------ |
-| Resultado  | Objeto | <- | Collection of optimization context objects |
+| Parámetros | Tipo   |    | Descripción                                    |
+| ---------- | ------ | -- | ---------------------------------------------- |
+| Resultado  | Objeto | <- | Colección de objetos contextos de optimización |
 <!-- END REF -->
 
 > **Modo avanzado:** esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.
