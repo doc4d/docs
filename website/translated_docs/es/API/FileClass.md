@@ -348,7 +348,7 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 > La función sólo admite archivos .plist en formato xml (basados en texto). Se devuelve un error si se utiliza con un archivo .plist en formato binario.
 
-**Returned object with a .exe or .dll file**
+**Objeto devuelto con un archivo .exe o .dll**
 
 > La lectura de un .exe o .dll sólo es posible en Windows.
 
@@ -601,7 +601,7 @@ If you pass a null or empty text as value, an empty string is written in the pro
 
 ***info* parameter object with a .plist file**
 
-Each valid property set in the *info* object parameter is written in the .plist file as a key. Se acepta todo nombre de llave. Value types are preserved when possible.
+Each valid property set in the *info* object parameter is written in the .plist file as a key. Se acepta todo nombre de llave. Los tipos de valores se conservan cuando es posible.
 
 If a key set in the *info* parameter is already defined in the .plist file, its value is updated while keeping its original type. Other existing keys in the .plist file are left untouched.
 
