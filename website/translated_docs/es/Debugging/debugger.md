@@ -166,7 +166,7 @@ This theme is composed of the following subthemes:
 | Parámetros   | Lista de parámetros recibidos por el método                  | Sí                                |
 | Self         | Pointer to the current object, when tracing an Object Method | No                                |
 
-Arrays, like other variables, appear in the Interprocess, Process, and Local subthemes, depending on their scope. The debugger displays the first 100 elements. Inside the **Value** column, you can modify the values of array elements, but not the size of the arrays.
+Arrays, like other variables, appear in the Interprocess, Process, and Local subthemes, depending on their scope. El depurador muestra los primeros 100 elementos. Inside the **Value** column, you can modify the values of array elements, but not the size of the arrays.
 
 To display the variable types and their internal names, right click and check the **Show Types** option in the context menu:
 
@@ -260,7 +260,7 @@ En la imagen de arriba:
 
 You can double-click the name of any method to display its contents in the [Source Code Pane](#source-code-pane).
 
-Clicking the icon next to a method or function name expands or collapses the parameters and the result (if any). Values appear on the right side of the pane. Clicking on any value on the right side allows you to change the value of any parameter or function result.
+Clicking the icon next to a method or function name expands or collapses the parameters and the result (if any). Los valores aparecen en el lado derecho del panel. Clicking on any value on the right side allows you to change the value of any parameter or function result.
 
 To display the parameter type, check the **Show types** option in the contextual menu:
 
@@ -272,7 +272,7 @@ You can also use the [Get call chain](https://doc.4d.com/4dv19/help/command/en/p
 
 ## Panel de vigilancia personalizado
 
-The Custom Watch Pane is useful for evaluating expressions. It is similar to the [Watch Pane](#watch-pane), except here you decide which expressions are displayed. Any type of expression can be evaluated:
+The Custom Watch Pane is useful for evaluating expressions. It is similar to the [Watch Pane](#watch-pane), except here you decide which expressions are displayed. Todo tipo de expresión puede ser evaluada:
 
 * campo
 * variable
