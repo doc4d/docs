@@ -145,7 +145,7 @@ When writing methods, you can drag and drop items:
 
 * from the Explorer
 * dentro del mismo método, clase, función
-* between methods, classes, and functions
+* entre métodos, clases y funciones
 
 #### From the Explorer
 
@@ -334,7 +334,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Shift]+[End]                                       | Select all the characters in the line that are to the right of the cursor                                                              |
 | [PgUp]                                              | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
 | [PgDn]                                              | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
-| [Ctrl]+[K] on a project method name                 | Open the project method in a new window                                                                                                |
+| [Ctrl]+[K] on a project method name                 | Abrir el método proyecto en una nueva ventana                                                                                          |
 | [Alt]+doble clic en el nombre de un método proyecto | idem                                                                                                                                   |
 | [Ctrl]+haga clic en el nombre de un método proyecto | idem                                                                                                                                   |
 
