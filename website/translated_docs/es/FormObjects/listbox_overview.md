@@ -254,7 +254,7 @@ Los eventos formulario de los objetos list box o columnas de list box pueden dev
 | isRowSelected    | booleano     | True if row is selected, else False                                   |
 | newPosition      | entero largo | New position of the column or row                                     |
 | newSize          | entero largo | Nuevo tamaño (en píxeles) de la columna o línea                       |
-| oldPosition      | entero largo | Previous position of the column or row                                |
+| oldPosition      | entero largo | Posición anterior de la columna o línea                               |
 | oldSize          | entero largo | Previous size (in pixels) of the column or row                        |
 | row              | entero largo | Número de línea                                                       |
 | verticalScroll   | entero largo | Positive if scroll is towards the bottom, negative if towards the top |
@@ -386,7 +386,7 @@ The `On Before Data Entry` event is returned before `On Getting Focus`.
 In order to preserve data consistency for selection type and entity selection type list boxes, any modified record/entity is automatically saved as soon as the cell is validated, i.e.:
 
 - when the the cell is deactivated (user presses tab, clicks, etc.)
-- when the listbox is no longer focused,
+- cuando el listbox ya no tiene el foco,
 - when the form is no longer focused.
 
 The typical sequence of events generated during data entry or modification is as follows:
@@ -899,7 +899,7 @@ ARRAY OBJECT(obColumn;0) //column array
 ```
 
 ![](assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
-> Display format and entry filters cannot be set for an object column. They automatically depend on the value type.
+> Display format and entry filters cannot be set for an object column. Dependen automáticamente del tipo de valor.
 
 #### valueType y visualización de datos
 
@@ -947,25 +947,25 @@ Cada elemento del array de objetos es un objeto que puede contener uno o más at
 
 The only mandatory attribute is "valueType" and its supported values are "text", "real", "integer", "boolean", "color", and "event". The following table lists all the attributes supported in list box object arrays, depending on the "valueType" value (any other attributes are ignored). Display formats are detailed and examples are provided below.
 
-|                       | valueType                               | texto | real | integer | booleano | color | evento |
-| --------------------- | --------------------------------------- | ----- | ---- | ------- | -------- | ----- | ------ |
-| *Atributos*           | *Descripción*                           |       |      |         |          |       |        |
-| value                 | valor de la celda (entrada o salida)    | x     | x    | x       |          |       |        |
-| min                   | valor mínimo                            |       | x    | x       |          |       |        |
-| max                   | valor máximo                            |       | x    | x       |          |       |        |
-| behavior              | "threeStates" value                     |       |      | x       |          |       |        |
-| requiredList          | drop-down list defined in object        | x     | x    | x       |          |       |        |
-| choiceList            | combo box definido en objeto            | x     | x    | x       |          |       |        |
-| requiredListReference | 4D list ref, depends on "saveAs" value  | x     | x    | x       |          |       |        |
-| requiredListName      | 4D list name, depends on "saveAs" value | x     | x    | x       |          |       |        |
-| saveAs                | "reference" o "value"                   | x     | x    | x       |          |       |        |
-| choiceListReference   | 4D list ref, display combo box          | x     | x    | x       |          |       |        |
-| choiceListName        | 4D list name, display combo box         | x     | x    | x       |          |       |        |
-| unitList              | array de X elementos                    | x     | x    | x       |          |       |        |
-| unitReference         | índice del elemento seleccionado        | x     | x    | x       |          |       |        |
-| unitsListReference    | Ver lista de unidades 4D                | x     | x    | x       |          |       |        |
-| unitsListName         | 4D lista nombre de la unidad            | x     | x    | x       |          |       |        |
-| alternateButton       | añadir un botón alternativo             | x     | x    | x       | x        | x     |        |
+|                       | valueType                                         | texto | real | integer | booleano | color | evento |
+| --------------------- | ------------------------------------------------- | ----- | ---- | ------- | -------- | ----- | ------ |
+| *Atributos*           | *Descripción*                                     |       |      |         |          |       |        |
+| value                 | valor de la celda (entrada o salida)              | x     | x    | x       |          |       |        |
+| min                   | valor mínimo                                      |       | x    | x       |          |       |        |
+| max                   | valor máximo                                      |       | x    | x       |          |       |        |
+| behavior              | "threeStates" value                               |       |      | x       |          |       |        |
+| requiredList          | drop-down list defined in object                  | x     | x    | x       |          |       |        |
+| choiceList            | combo box definido en objeto                      | x     | x    | x       |          |       |        |
+| requiredListReference | 4D list ref, depends on "saveAs" value            | x     | x    | x       |          |       |        |
+| requiredListName      | Nombre de la lista 4D, depende del valor "saveAs" | x     | x    | x       |          |       |        |
+| saveAs                | "reference" o "value"                             | x     | x    | x       |          |       |        |
+| choiceListReference   | 4D list ref, display combo box                    | x     | x    | x       |          |       |        |
+| choiceListName        | 4D list name, display combo box                   | x     | x    | x       |          |       |        |
+| unitList              | array de X elementos                              | x     | x    | x       |          |       |        |
+| unitReference         | índice del elemento seleccionado                  | x     | x    | x       |          |       |        |
+| unitsListReference    | Ver lista de unidades 4D                          | x     | x    | x       |          |       |        |
+| unitsListName         | 4D lista nombre de la unidad                      | x     | x    | x       |          |       |        |
+| alternateButton       | añadir un botón alternativo                       | x     | x    | x       | x        | x     |        |
 
 #### value
 
