@@ -126,7 +126,7 @@ For an array list box, the **Variable or Expression** property usually holds the
 > This property is called **Data Type** in the Property List for Selection and collection type list box columns.
 
 
-Specify the data type for the expression or variable associated to the object. Note that main purpose of this setting is to configure options (such as display formats) available for the data type. It does not actually type the variable itself. En vista de la compilación de una base de datos, debe utilizar los comandos del lenguaje 4D del tema `Compilador`.
+Specify the data type for the expression or variable associated to the object. Note that main purpose of this setting is to configure options (such as display formats) available for the data type. En realidad, no escribe la variable en sí. En vista de la compilación de una base de datos, debe utilizar los comandos del lenguaje 4D del tema `Compilador`.
 
 However, this property has a typing function in the following specific cases:
 
@@ -261,7 +261,7 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 ## Título
 
-Allows inserting a label on an object. The font and the style of this label can be specified.
+Permite insertar una etiqueta en un objeto. The font and the style of this label can be specified.
 
 You can force a carriage return in the label by using the \ character (backslash).
 
