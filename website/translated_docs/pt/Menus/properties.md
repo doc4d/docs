@@ -121,7 +121,7 @@ These reserved key combinations are listed in the following table:
 | Ctrl+C          | Comando+C          | Copiar      |
 | Ctrl+Q          | Comando+Q          | Salir       |
 | Ctrl+V          | Comando+V          | Paste       |
-| Ctrl+X          | Comando+X          | Cut         |
+| Ctrl+X          | Comando+X          | Cortar      |
 | Ctrl+Z          | Comando+Z          | Deshacer    |
 | Ctrl+. (period) | Comando+. (period) | Stop action |
 
