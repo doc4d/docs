@@ -43,7 +43,7 @@ Associates a choice list with an object. It can be a choice list name (a list re
 | Nome       | Data Type        | Possible Values                                     |
 | ---------- | ---------------- | --------------------------------------------------- |
 | choiceList | list, collection | A list of possible values                           |
-| list       | list, collection | A list of possible values (hierarchical lists only) |
+| lista      | list, collection | A list of possible values (hierarchical lists only) |
 
 
 #### Objects Supported
@@ -212,9 +212,9 @@ All database tables can be used, regardless of whether the form is related to a 
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| table | number    | Table number    |
+| Nome   | Data Type | Possible Values |
+| ------ | --------- | --------------- |
+| tabela | number    | Table number    |
 
 #### Objects Supported
 [List Box](listbox_overview.md#overview)
