@@ -97,7 +97,7 @@ Una selección de entidades contiene:
 *   a length property (always),
 *   queryPlan and queryPath properties (if asked while querying).
 
-An entity selection can also be empty.
+Una selección de entidades también puede estar vacía.
 
 
 ## Generic class
@@ -148,7 +148,7 @@ A "pessimistic lock" means that an entity is locked prior to its being accessed,
 
 ## Propiedad
 
-See [Attribute](#attribute).
+Ver [Atributo](#attribute).
 > Attributes and properties are similar concepts. "Atributo" se utiliza para designar las propiedades de la dataclass que almacena datos, mientras que "propiedad" es más genérico y define un dato almacenado dentro de un objeto.
 
 ## PropertyPath
