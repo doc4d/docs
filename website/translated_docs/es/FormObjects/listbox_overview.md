@@ -295,7 +295,7 @@ The `On Before Data Entry` event is returned before `On Getting Focus`.
 In order to preserve data consistency for selection type and entity selection type list boxes, any modified record/entity is automatically saved as soon as the cell is validated, i.e.:
 
 - when the the cell is deactivated (user presses tab, clicks, etc.)
-- when the listbox is no longer focused,
+- cuando el listbox ya no tiene el foco,
 - when the form is no longer focused.
 
 The typical sequence of events generated during data entry or modification is as follows:
@@ -308,7 +308,7 @@ The typical sequence of events generated during data entry or modification is as
 |                                                                                 | Todos                                   | On After Keystroke                                                                                                                                                                                             |
 |                                                                                 | Todos                                   | On After Edit                                                                                                                                                                                                  |
 | Un usuario valida y abandona la celda                                           | List box de tipo selección              | Guardar                                                                                                                                                                                                        |
-|                                                                                 | List box de tipo selección de registro  | On saving an existing record trigger (if set)                                                                                                                                                                  |
+|                                                                                 | List box de tipo selección de registro  | Activación de On saving an existing record (si definido)                                                                                                                                                       |
 |                                                                                 | List box de tipo selección              | On Data Change(*)                                                                                                                                                                                              |
 |                                                                                 | List box de tipo selección de entidades | Entity is saved with automerge option, optimistic lock (see entity.save( )). In case of successful save, the entity is refreshed with the last update done. If the save operation fails, an error is displayed |
 |                                                                                 | Todos                                   | On Losing Focus                                                                                                                                                                                                |
@@ -483,7 +483,7 @@ For example, if you set a font style in the list box properties and another usin
 
 For each attribute (style, color and background color), an **inheritance** is implemented when the default value is used:
 
-- for cell attributes: attribute values of rows
+- para los atributos de las celdas: valores de atributos de las líneas
 - for row attributes: attribute values of columns
 - for column attributes: attribute values of the list box
 
@@ -527,7 +527,7 @@ Two printing modes are available: **preview mode** - which can be used to print 
 
 ### Modo de vista previa
 
-Printing a list box in preview mode consists of directly printing the list box and the form that contains it using the standard print commands or the **Print** menu command. The list box is printed as it is in the form. This mode does not allow precise control of the printing of the object; in particular, it does not allow you to print all the rows of a list box that contains more rows than it can display.
+Printing a list box in preview mode consists of directly printing the list box and the form that contains it using the standard print commands or the **Print** menu command. El list box se imprime tal como está en el formulario. This mode does not allow precise control of the printing of the object; in particular, it does not allow you to print all the rows of a list box that contains more rows than it can display.
 
 ### Modo avanzado
 
@@ -676,7 +676,7 @@ Al igual que con las selecciones, el comando `LISTBOX GET CELL POSITION` devolve
 
 *Non-hierarchical representation:* ![](assets/en/FormObjects/hierarch9.png)
 
-*Hierarchical representation:* ![](assets/en/FormObjects/hierarch10.png)
+*Representación jerárquica:* ![](assets/en/FormObjects/hierarch10.png)
 
 When all the rows of a sub-hierarchy are hidden, the break line is automatically hidden. En el ejemplo anterior, si las líneas 1 a 3 están ocultas, la línea de ruptura "Bretaña" no aparecerá.
 
@@ -695,7 +695,7 @@ Dado, por ejemplo, el siguiente list box (los nombres de los arrays asociados se
 
 *Non-hierarchical representation:* ![](assets/en/FormObjects/hierarch12.png)
 
-*Hierarchical representation:* ![](assets/en/FormObjects/hierarch13.png)
+*Representación jerárquica:* ![](assets/en/FormObjects/hierarch13.png)
 
 En modo jerárquico, los niveles de ruptura no son tenidos en cuenta por los arrays de modificación de estilo denominados `tStyle` y `tColors`. Para modificar el color o el estilo de los niveles de ruptura, debe ejecutar las siguientes instrucciones:
 
@@ -760,7 +760,7 @@ ARRAY OBJECT(obColumn;0) //column array
 ```
 
 ![](assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
-> Display format and entry filters cannot be set for an object column. They automatically depend on the value type.
+> Display format and entry filters cannot be set for an object column. Dependen automáticamente del tipo de valor.
 
 #### valueType y visualización de datos
 
@@ -775,15 +775,15 @@ When a list box column is associated with an object array, the way a cell is dis
 
 4D uses default widgets with regards to the "valueType" value (i.e., a "text" is displayed as a text input widget, a "boolean" as a check box), but alternate displays are also available through options (*e.g.*, a real can also be represented as a drop-down menu). The following table shows the default display as well as alternatives for each type of value:
 
-| valueType | Widget por defecto                             | Widget(s) alternativo(s)                                                                       |
-| --------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| texto     | entrada de texto                               | drop-down menu (required list) or combo box (choice list)                                      |
-| real      | controlled text input (numbers and separators) | drop-down menu (required list) or combo box (choice list)                                      |
-| integer   | controlled text input (numbers only)           | drop-down menu (required list) or combo box (choice list) or three-states check box            |
-| booleano  | casilla de selección                           | drop-down menu (required list)                                                                 |
-| color     | color de fondo                                 | texto                                                                                          |
-| evento    | botón con etiqueta                             |                                                                                                |
-|           |                                                | All widgets can have an additional unit toggle button or ellipsis button attached to the cell. |
+| valueType | Widget por defecto                                  | Widget(s) alternativo(s)                                                                       |
+| --------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| texto     | entrada de texto                                    | drop-down menu (required list) or combo box (choice list)                                      |
+| real      | entrada de texto controlada (números y separadores) | drop-down menu (required list) or combo box (choice list)                                      |
+| integer   | controlled text input (numbers only)                | drop-down menu (required list) or combo box (choice list) or three-states check box            |
+| booleano  | casilla de selección                                | drop-down menu (required list)                                                                 |
+| color     | color de fondo                                      | texto                                                                                          |
+| evento    | botón con etiqueta                                  |                                                                                                |
+|           |                                                     | All widgets can have an additional unit toggle button or ellipsis button attached to the cell. |
 
 You set the cell display and options using specific attributes in each object (see below).
 
@@ -808,25 +808,25 @@ Cada elemento del array de objetos es un objeto que puede contener uno o más at
 
 The only mandatory attribute is "valueType" and its supported values are "text", "real", "integer", "boolean", "color", and "event". The following table lists all the attributes supported in list box object arrays, depending on the "valueType" value (any other attributes are ignored). Display formats are detailed and examples are provided below.
 
-|                       | valueType                               | texto | real | integer | booleano | color | evento |
-| --------------------- | --------------------------------------- | ----- | ---- | ------- | -------- | ----- | ------ |
-| *Atributos*           | *Descripción*                           |       |      |         |          |       |        |
-| value                 | valor de la celda (entrada o salida)    | x     | x    | x       |          |       |        |
-| min                   | valor mínimo                            |       | x    | x       |          |       |        |
-| max                   | valor máximo                            |       | x    | x       |          |       |        |
-| behavior              | "threeStates" value                     |       |      | x       |          |       |        |
-| requiredList          | drop-down list defined in object        | x     | x    | x       |          |       |        |
-| choiceList            | combo box definido en objeto            | x     | x    | x       |          |       |        |
-| requiredListReference | 4D list ref, depends on "saveAs" value  | x     | x    | x       |          |       |        |
-| requiredListName      | 4D list name, depends on "saveAs" value | x     | x    | x       |          |       |        |
-| saveAs                | "reference" o "value"                   | x     | x    | x       |          |       |        |
-| choiceListReference   | 4D list ref, display combo box          | x     | x    | x       |          |       |        |
-| choiceListName        | 4D list name, display combo box         | x     | x    | x       |          |       |        |
-| unitList              | array de X elementos                    | x     | x    | x       |          |       |        |
-| unitReference         | índice del elemento seleccionado        | x     | x    | x       |          |       |        |
-| unitsListReference    | Ver lista de unidades 4D                | x     | x    | x       |          |       |        |
-| unitsListName         | 4D lista nombre de la unidad            | x     | x    | x       |          |       |        |
-| alternateButton       | añadir un botón alternativo             | x     | x    | x       | x        | x     |        |
+|                       | valueType                                         | texto | real | integer | booleano | color | evento |
+| --------------------- | ------------------------------------------------- | ----- | ---- | ------- | -------- | ----- | ------ |
+| *Atributos*           | *Descripción*                                     |       |      |         |          |       |        |
+| value                 | valor de la celda (entrada o salida)              | x     | x    | x       |          |       |        |
+| min                   | valor mínimo                                      |       | x    | x       |          |       |        |
+| max                   | valor máximo                                      |       | x    | x       |          |       |        |
+| behavior              | "threeStates" value                               |       |      | x       |          |       |        |
+| requiredList          | drop-down list defined in object                  | x     | x    | x       |          |       |        |
+| choiceList            | combo box definido en objeto                      | x     | x    | x       |          |       |        |
+| requiredListReference | 4D list ref, depends on "saveAs" value            | x     | x    | x       |          |       |        |
+| requiredListName      | Nombre de la lista 4D, depende del valor "saveAs" | x     | x    | x       |          |       |        |
+| saveAs                | "reference" o "value"                             | x     | x    | x       |          |       |        |
+| choiceListReference   | 4D list ref, display combo box                    | x     | x    | x       |          |       |        |
+| choiceListName        | 4D list name, display combo box                   | x     | x    | x       |          |       |        |
+| unitList              | array de X elementos                              | x     | x    | x       |          |       |        |
+| unitReference         | índice del elemento seleccionado                  | x     | x    | x       |          |       |        |
+| unitsListReference    | Ver lista de unidades 4D                          | x     | x    | x       |          |       |        |
+| unitsListName         | 4D lista nombre de la unidad                      | x     | x    | x       |          |       |        |
+| alternateButton       | añadir un botón alternativo                       | x     | x    | x       | x        | x     |        |
 
 #### value
 
