@@ -24,7 +24,7 @@ When the user enters "RB17621," the field displays:
 
     RB-1762-1
 
-The field actually contains "RB17621".
+El campo contiene realmente "RB17621".
 
 If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is: 
 
@@ -146,7 +146,7 @@ You can use any other characters in the format. When used alone, or placed befor
 
 a dollar sign always appears because it is placed before the placeholders.
 
-If characters are placed between placeholders, they appear only if digits are displayed on both sides. For example, if you define the format:
+If characters are placed between placeholders, they appear only if digits are displayed on both sides. Por ejemplo, si define el formato:
 
     ###.##0
 
@@ -438,7 +438,7 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 Allows a check box object to accept a third state. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
 
 
-#### Three-states check boxes in list box columns
+#### Casillas de verificación de tres estados en columnas list box
 
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
 *   0 = casilla no seleccionada,
