@@ -102,7 +102,7 @@ Una selección de entidades contiene:
 *   a length property (always),
 *   queryPlan and queryPath properties (if asked while querying).
 
-An entity selection can also be empty.
+Una selección de entidades también puede estar vacía.
 
 
 ## Generic class
@@ -153,7 +153,7 @@ A "pessimistic lock" means that an entity is locked prior to its being accessed,
 
 ## Propiedad
 
-See [Attribute](#attribute).
+Ver [Atributo](#attribute).
 > Attributes and properties are similar concepts. "Atributo" se utiliza para designar las propiedades de la dataclass que almacena datos, mientras que "propiedad" es más genérico y define un dato almacenado dentro de un objeto.
 
 ## PropertyPath
@@ -187,7 +187,7 @@ Entity selections may refer to related entities according to the relation attrib
 
 ## Remote datastore
 
-A 4D database opened on a 4D or 4D Server (available through HTTP) and exposed as a REST resource. This database can be referenced locally as a Datastore from other workstations, where it is assigned a locaID. The remote datastore can be used through ORDA concepts (datastore, dataclass, entity selection...). This use is submitted to a licencing system.
+A 4D database opened on a 4D or 4D Server (available through HTTP) and exposed as a REST resource. This database can be referenced locally as a Datastore from other workstations, where it is assigned a locaID. The remote datastore can be used through ORDA concepts (datastore, dataclass, entity selection...). Este uso se somete a un sistema de licencia.
 
 ## Sesión
 
@@ -203,7 +203,7 @@ A shallow copy only duplicates the structure of elements, and keeps the same int
 
 ## Sello
 
-Used in "optimistic" locking technology. All entities have an internal counter, the stamp, which is incremented each time the entity is saved. By automatically comparing stamps between an entity being saved and its version stored on disk, 4D can prevent concurrent modifications on the same entities.
+Utilizado en tecnología de bloqueo "optimista". All entities have an internal counter, the stamp, which is incremented each time the entity is saved. By automatically comparing stamps between an entity being saved and its version stored on disk, 4D can prevent concurrent modifications on the same entities.
 
 ## Atributo de almacenamiento
 
