@@ -21,7 +21,7 @@ When writing a formula, you can use different shortcuts:
 
 ![](assets/en/ViewPro/formulas.PNG)
 
-- type the first letter of a function to enter. A pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
+- escriba la primera letra de una función a ingresar. A pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
 
 ![](assets/en/ViewPro/formula2.PNG)
 
@@ -86,7 +86,7 @@ List of operators from most to least important:
 
 ## Referencias de celdas
 
-Formulas often refer to other cells by cell addresses. You can copy these formulas into other cells. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
+Formulas often refer to other cells by cell addresses. Puede copiar estas fórmulas a otras celdas. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
 
 ```
 = C6 + C7
