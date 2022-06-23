@@ -302,12 +302,12 @@ There are several types of calculations available. The following table shows whi
 | Minimum               | X   |       | X    | X    | X    |      | Same as column type |
 | Maximum               | X   |       | X    | X    | X    |      | Same as column type |
 | Sum                   | X   |       | X    |      | X    |      | Same as column type |
-| Count                 | X   | X     | X    | X    | X    | X    | Inteiro longo       |
+| Contagem              | X   | X     | X    | X    | X    | X    | Inteiro longo       |
 | Average               | X   |       |      | X    |      |      | Real                |
 | Standard deviation(*) | X   |       |      | X    |      |      | Real                |
 | Variance(*)           | X   |       |      | X    |      |      | Real                |
 | Sum squares(*)        | X   |       |      | X    |      |      | Real                |
-| Custom ("none")       | X   | X     | X    | X    | X    | X    | Any                 |
+| Custom ("none")       | X   | X     | X    | X    | X    | X    | Qualquer            |
 
 (*) Only for array type list boxes.
 
