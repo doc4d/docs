@@ -101,7 +101,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 
 | Filtro de entrada                      | Descripción                                                                                                                                           |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~A                                     | Allow any letters, but convert to uppercase.                                                                                                          |
+| ~A                                     | Permitir la entrada de toda letra, pero convertir a mayúsculas.                                                                                       |
 | &9                                     | Permitir sólo números.                                                                                                                                |
 | &A                                     | Allow only capital letters.                                                                                                                           |
 | &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
@@ -110,14 +110,14 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | !0&9##/##/##                           | Standard date entry format. Display zeros in entry spaces. Permitir cualquier número.                                                                 |
 | !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Display zeros in entry spaces. Permitir cualquier número. Limited to hours and minutes.                                   |
 | !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Permitir cuatro números, separados por dos puntos.             |
-| !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
-| !0&9Horas: ## Minutas: ## Segundos: ## | Formato de entrada de hora. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
+| !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Display zeros in entry spaces. Permitir dos números antes de cada palabra.                                                |
+| !0&9Horas: ## Minutas: ## Segundos: ## | Formato de entrada de hora. Display zeros in entry spaces. Permitir dos números después de cada palabra.                                              |
 | !0&9##-##-##-##                        | Local telephone number format. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, four entries.                         |
 | !_&9(###)!0###-####                    | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                                  |
 | !0&9###-###-###                        | Long distance telephone number. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, three entries, hyphen, four entries. |
 | !0&9###-##-###                         | Número de la Seguridad Social. Display zeros in entry spaces. Permitir cualquier número.                                                              |
 | ~"A-Z;0-9; ;,;.;-"                     | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                         |
-| &"a-z;0-9; ;,;.;-"                     | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                  |
+| &"a-z;0-9; ;,;.;-"                     | Letras mayúsculas y minúsculas y puntuación. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                  |
 | &"0-9;.;-"                             | Números. Allow only numbers, decimal points, and hyphens (minus sign).                                                                                |
 
 
@@ -149,7 +149,7 @@ When the **Focusable** property is enabled for an object, the object can have th
 <p>
 <p>
 
-* ![](assets/en/FormObjects/property_focusable2.png)<br>Check box is selected but cannot show focus|
+* ![](assets/en/FormObjects/property_focusable2.png)<br>La casilla de verificación está seleccionada pero no se puede mostrar el foco|
 
 
 When the **Focusable** property is selected for a non-enterable object, the user can select, copy or even drag-and-drop the contents of the area.
