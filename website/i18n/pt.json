@@ -550,7 +550,7 @@
         "title": "Cabeçalhos"
       },
       "FormObjects/propertiesHelp": {
-        "title": "Help"
+        "title": "Ajuda"
       },
       "FormObjects/propertiesHierarchy": {
         "title": "Hierarchy"
@@ -994,7 +994,7 @@
       "TLS Protocol": "TLS Protocol",
       "License Management": "License Management",
       "Access Rights": "Access Rights",
-      "MSC": "MSC",
+      "MSC": "CSM",
       "Backup and Restore": "Backup and Restore",
       "Web Server": "Web Server",
       "Web Development": "Web Development",
