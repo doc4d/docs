@@ -58,7 +58,7 @@ The following form events are available in the Property List for 4D View Pro are
 
 Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
 
-| Evento 4D estándar                              | Specific and extended 4D View Pro events              |
+| Evento 4D estándar                              | Eventos 4D View Pro específicos y extendidos          |
 | ----------------------------------------------- | ----------------------------------------------------- |
 | [On Load](../Events/onLoad.md)                  | [On VP Ready](../Events/onVpReady.md)                 |
 | [On Getting Focus](../Events/onGettingFocus.md) | [On Clicked](../Events/onClicked.md)                  |
@@ -89,7 +89,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 |                      | color                  | cadena       | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                       |
 |                      | showVerticalGridline   | booleano     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                            |
 |                      | showHorizontalGridline | booleano     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                          |
-| rowHeaderVisible     |                        | booleano     | Specifies whether the row header is visible.                                                                                                                                                                                                                                                                 |
+| rowHeaderVisible     |                        | booleano     | Especifica si el encabezado de la línea es visible.                                                                                                                                                                                                                                                          |
 | colHeaderVisible     |                        | booleano     | Specifies whether the column header is visible.                                                                                                                                                                                                                                                              |
 | rowHeaderAutoText    |                        | entero largo | Specifies whether the row header displays letters or numbers or is blank. Valores disponibles: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                     |
 | colHeaderAutoText    |                        | entero largo | Specifies whether the column header displays letters or numbers or is blank. Valores disponibles: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                  |
@@ -136,30 +136,30 @@ For example, when using the [VP SET VALUE](method-list.md#vp-set-value) or [VP S
 
 ![](assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
-Note that when creating your own format patterns, only the display of the data is modified. The value of the data remains unchanged.
+Note that when creating your own format patterns, only the display of the data is modified. El valor de los datos permanece sin cambios.
 
 ### Formatos numérico y texto
 
 Number formats apply to all number types (e.g., positive, negative, and zeros).
 
 
-| Caracter  | Descripción                                                                                                                                                                                                                                                                    | Ejemplo                                                                                                                    |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| 0         | Marcador de posición que muestra ceros.                                                                                                                                                                                                                                        | #.00 will display 1.1 as 1.10                                                                                              |
-| .         | Displays a decimal point                                                                                                                                                                                                                                                       | 0.00 will display 1999 as 1999.00                                                                                          |
-| ,         | Displays the thousands separator in a number.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 mostrará 12200000 como 12,200,000                                                                                      |
-| \_      | Salta el ancho del siguiente caracter.                                                                                                                                                                                                                                         | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
-| @         | Formatter for text. Aplica el formato a todo el texto de la celda                                                                                                                                                                                                              | "\[Red]@" applies the red font color for text values.                                                                     |
-| *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                           | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
-| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                   | "8%" será mostrado como: 8%                                                                                                |
-| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | El 8% se mostrará como 0,08                                                                                                |
-| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# mostrará 1.54 como 1.5                                                                                                 |
-| ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                              | $?? $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                   |
-| \        | Displays the character following it.                                                                                                                                                                                                                                           | #.00\? #.00\? #.00\? #.00\? will display 123 as 123.00?                                                                |
-| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# mostrará .75 como 3/4                                                                                                  |
-| \[ ]     | Crea formatos condicionales.                                                                                                                                                                                                                                                   | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
-| E         | Formato notación científica.                                                                                                                                                                                                                                                   | #E+# - mostrará 2E+6 en lugar de 1,500,500                                                                                 |
-| \[color] | Formats the text or number in the color specified                                                                                                                                                                                                                              | \[Green]###.##\[Red]-###.###                                                                                             |
+| Caracter  | Descripción                                                                                                                                                                                                                                                                  | Ejemplo                                                                                                                    |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 0         | Marcador de posición que muestra ceros.                                                                                                                                                                                                                                      | #.00 will display 1.1 as 1.10                                                                                              |
+| .         | Displays a decimal point                                                                                                                                                                                                                                                     | 0.00 will display 1999 as 1999.00                                                                                          |
+| ,         | Muestra el separador de miles en un número.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 mostrará 12200000 como 12,200,000                                                                                      |
+| \_      | Salta el ancho del siguiente caracter.                                                                                                                                                                                                                                       | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
+| @         | Formatter for text. Aplica el formato a todo el texto de la celda                                                                                                                                                                                                            | "\[Red]@" applies the red font color for text values.                                                                     |
+| *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                         | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
+| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                 | "8%" será mostrado como: 8%                                                                                                |
+| %         | Muestra los números como un porcentaje de 100.                                                                                                                                                                                                                               | El 8% se mostrará como 0,08                                                                                                |
+| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                          | #.# mostrará 1.54 como 1.5                                                                                                 |
+| ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                            | $?? $?? $?? $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                   |
+| \        | Displays the character following it.                                                                                                                                                                                                                                         | #.00\? #.00\? #.00\? #.00\? will display 123 as 123.00?                                                                |
+| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                              | #/# mostrará .75 como 3/4                                                                                                  |
+| \[ ]     | Crea formatos condicionales.                                                                                                                                                                                                                                                 | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
+| E         | Formato notación científica.                                                                                                                                                                                                                                                 | #E+# - mostrará 2E+6 en lugar de 1,500,500                                                                                 |
+| \[color] | Formats the text or number in the color specified                                                                                                                                                                                                                            | \[Green]###.##\[Red]-###.###                                                                                             |
 
 
 #### Ejemplo
@@ -284,13 +284,13 @@ Header and footer attributes are used to specify text or images in the left, rig
 | footerCenter      | texto                | The text and format of the center footer on printed pages. |
 | footerCenterImage | picture &#124; text* | The image for the center section of the footer.            |
 | footerLeft        | texto                | The text and format of the left footer on printed pages.   |
-| footerLeftImage   | picture &#124; text* | The image for the left section of the footer.              |
+| footerLeftImage   | picture &#124; text* | La imagen de la parte izquierda del pie de página.         |
 | footerRight       | texto                | The text and format of the right footer on printed pages.  |
 | footerRightImage  | picture &#124; text* | The image for the right section of the footer.             |
 | headerCenter      | texto                | The text and format of the center header on printed pages. |
 | headerCenterImage | picture &#124; text* | The image for the center section of the header.            |
 | headerLeft        | texto                | The text and format of the left header on printed pages.   |
-| headerLeftImage   | picture &#124; text* | The image for the left section of the header.              |
+| headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.          |
 | headerRight       | texto                | The text and format of the right header on printed pages.  |
 | headerRightImage  | picture &#124; text* | The image for the right section of the header.             |
 
@@ -304,7 +304,7 @@ The following special characters allow the automatic addition or formatting of i
 | Caracter | Descripción                       | Ejemplo                                                               | Resultado                                         |
 | -------- | --------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
 | &        | Escape character                  | (ver ejemplos más abajo)                                              |                                                   |
-| P        | Página actual                     | printInfo.headerLeft:="This is page &P."                              | Esta es la página 5.|                             |
+| P        | Página actual                     | printInfo.headerLeft:="Esta es la página &P."                         | Esta es la página 5.|                             |
 | N        | Conteo de páginas                 | printInfo.headerLeft:="There are &N pages."                           | Hay 10 páginas.                                   |
 | D        | Fecha actual (formato yyyy/mm/dd) | printInfo.headerLeft:="Es &D."                                        | Es 2015/6/19.                                     |
 | T        | Hora actual                       | printInfo.headerLeft:="Es &T."                                        | It is 16:30:36.                                   |
@@ -322,15 +322,15 @@ The following special characters allow the automatic addition or formatting of i
 
 Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
 
-| Propiedad |        | Tipo         | Descripción                                                  |
-| --------- | ------ | ------------ | ------------------------------------------------------------ |
-| margin    |        | objeto       | Los márgenes de impresión                                    |
-|           | top    | entero largo | Margen superior, en centésimas de pulgada. Por defecto = 75  |
-|           | bottom | entero largo | Bottom margin, in hundredths of an inch. Por defecto = 75    |
-|           | left   | entero largo | Margen derecho, en centésimas de pulgada. Por defecto = 70   |
-|           | right  | entero largo | Margen izquierdo, en centésimas de pulgada. Por defecto = 70 |
-|           | header | entero largo | Header offset, in hundredths of an inch. Por defecto = 30    |
-|           | footer | entero largo | Footer offset, in hundredths of an inch. Por defecto = 30    |
+| Propiedad |        | Tipo         | Descripción                                                     |
+| --------- | ------ | ------------ | --------------------------------------------------------------- |
+| margin    |        | objeto       | Los márgenes de impresión                                       |
+|           | top    | entero largo | Margen superior, en centésimas de pulgada. Por defecto = 75     |
+|           | bottom | entero largo | El margen inferior, en centésimas del pulgada. Por defecto = 75 |
+|           | left   | entero largo | Margen derecho, en centésimas de pulgada. Por defecto = 70      |
+|           | right  | entero largo | Margen izquierdo, en centésimas de pulgada. Por defecto = 70    |
+|           | header | entero largo | Header offset, in hundredths of an inch. Por defecto = 30       |
+|           | footer | entero largo | Footer offset, in hundredths of an inch. Por defecto = 30       |
 
 ### Orientación
 
@@ -352,13 +352,13 @@ Page attributes are used to specify general document print settings.
 | firstPageNumber | entero largo | El número de página a imprimir en la primera página.<p>Por defecto = 1                                                                                                             |
 | pageOrder       | entero largo | The order pages are printed. Valores disponibles: `vk print page order auto` (por defecto), `vk print page order down then over`, `vk print page order over then down`.                                    |
 | pageRange       | texto        | The range of pages for printing                                                                                                                                                                            |
-| qualityFactor   | entero largo | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Por defecto = 2</p>                           |
+| qualityFactor   | entero largo | El factor de calidad para la impresión (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Por defecto = 2</p>                    |
 | useMax          | booleano     | Only columns and rows with data are printed.<p>Valor por defecto: true</p>                                                                                                                                      |
 | zoomFactor      | real         | The amount to enlarge or reduce the printed page.<p>Por defecto = 1</p>                                                                                                                                 |
 
 ### Tamaño del papel
 
-Paper size attributes are used to specify the dimensions or model of paper to use for printing. There are two ways to define paper size:
+Paper size attributes are used to specify the dimensions or model of paper to use for printing. Hay dos maneras de definir el tamaño del papel:
 
 *   Custom size - height and width attributes
 *   Tamaño estándar - atributo kind
@@ -367,7 +367,7 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 | --------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------- |
 | paperSize |        | objeto       | Paper dimensions (height, width) or specific format (kind) for printing.                                            |
 |           | height | entero largo | Height of the paper, in hundredths of an inch.                                                                      |
-|           | ancho  | entero largo | Width of the paper, in hundredths of an inch.                                                                       |
+|           | ancho  | entero largo | Ancho del papel, en centésimas de pulgada.                                                                          |
 |           | kind   | texto        | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Valor por defecto: "letter" |
 
 ### Escala
@@ -402,7 +402,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 |               | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                                        |
 |               | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                                      |
 |               | \[ ].page     | texto                | La(s) página(s) donde se imprime la marca de agua.<p>Para todas las páginas: "all". For specific pages: page numbers or page ranges separated by commas. Ej.: "1,3,5-12" |
-|               | \[ ].width    | entero largo         | The width of the watermark text / image.                                                                                                                                                         |
+|               | \[ ].width    | entero largo         | El ancho del texto/imagen marca de agua.                                                                                                                                                         |
 |               | \[ ].x        | entero largo         | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                                   |
 |               | \[ ].y        | entero largo         | The vertical coordinate of the top left point of the watermark text / image.                                                                                                                     |
 
@@ -481,17 +481,17 @@ Ejemplo:
 | cellPadding | texto        | Define el relleno de la celda                                                                                       |                                                                                                                      |
 | hAlign      | entero largo | Defines the horizontal alignment of cell contents.                                                                  | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
 | locked      | booleano     | Specifies cell protection status. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = bloqueado, False = desbloqueado.                                                                              |
-| shrinkToFit | booleano     | Specifies if the contents of the cell should be reduced.                                                            | True = reduced content, False = no reduction.                                                                        |
+| shrinkToFit | booleano     | Specifies if the contents of the cell should be reduced.                                                            | True = contenido reducido, False = sin reducción.                                                                    |
 | tabStop     | booleano     | Specifies if the focus to the cell can be set using the Tab key.                                                    | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
 | vAlign      | entero largo | Specifies the vertical alignment of cell contents.                                                                  | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
 
 #### Style information
 
-| Propiedad  | Tipo  | Descripción                                                                                                                                                                                                                                                                      |
-| ---------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name       | texto | Defines the name of the style                                                                                                                                                                                                                                                    |
-| parentName | texto | Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Only available when using a style sheet. |
+| Propiedad  | Tipo  | Descripción                                                                                                                                                                                                                                                                                        |
+| ---------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name       | texto | Defines the name of the style                                                                                                                                                                                                                                                                      |
+| parentName | texto | Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Sólo está disponible cuando se utiliza una hoja de estilo. |
 
 
 
@@ -513,7 +513,7 @@ Contiene las siguientes propiedades:
 ## 4D View Pro Form Object Variable
 
 The 4D View Pro form object variable is the [object](Concepts/dt_object.md) variable associated to the 4D View Pro form area. It manages information used by the 4D View Pro object.
-> The 4D View Pro form object variable is for information purposes only (i.e., debugging). Under no circumstances should it be modified.
+> The 4D View Pro form object variable is for information purposes only (i.e., debugging). Bajo ninguna circunstancia debe modificarse.
 
 Contiene las siguientes propiedades:
 
