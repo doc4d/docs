@@ -149,7 +149,7 @@ The following *City* catalog is exposed in a remote datastore (partial view):
 
 ![](assets/en/ORDA/Orda_example.png)
 
-The `City Class` provides an API:
+La clase `City` ofrece una API:
 
 ```4d  
 // cs.City class
@@ -411,12 +411,12 @@ The *$value* parameter receives the value assigned to the attribute.
 
 The *$event* parameter contains the following properties:
 
-| Propiedad     | Tipo    | Descripción                                   |
-| ------------- | ------- | --------------------------------------------- |
-| attributeName | Texto   | Nombre de atributo calculado                  |
-| dataClassName | Texto   | Nombre de la clase de datos                   |
-| kind          | Texto   | "set"                                         |
-| value         | Variant | Value to be handled by the computed attribute |
+| Propiedad     | Tipo    | Descripción                              |
+| ------------- | ------- | ---------------------------------------- |
+| attributeName | Texto   | Nombre de atributo calculado             |
+| dataClassName | Texto   | Nombre de la clase de datos              |
+| kind          | Texto   | "set"                                    |
+| value         | Variant | Valor a tratar por el atributo calculado |
 
 #### Ejemplo
 
@@ -464,7 +464,7 @@ The *$event* parameter contains the following properties:
 | attributeName | Texto   | Nombre de atributo calculado                                                                                                                                                                                                                                                                                                                                      |
 | dataClassName | Texto   | Nombre de la clase de datos                                                                                                                                                                                                                                                                                                                                       |
 | kind          | Texto   | "query"                                                                                                                                                                                                                                                                                                                                                           |
-| value         | Variant | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                                     |
+| value         | Variant | Valor a tratar por el atributo calculado                                                                                                                                                                                                                                                                                                                          |
 | operator      | Texto   | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores posibles:<li>== (es igual a, @ es comodín)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (no es igual a, @ es comodín)</li><li>!== (no es igual a, @ no es comodín)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (mayor que)</li><li>>= (greater than or equal to)</li><li>IN (incluído en)</li><li>% (contiene palabra clave)</li> |
 | result        | Variant | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                          |
 
@@ -570,7 +570,7 @@ The *$event* parameter contains the following properties:
 | attributeName | Texto    | Nombre de atributo calculado                                                                               |
 | dataClassName | Texto    | Nombre de la clase de datos                                                                                |
 | kind          | Texto    | "orderBy"                                                                                                  |
-| value         | Variant  | Value to be handled by the computed attribute                                                              |
+| value         | Variant  | Valor a tratar por el atributo calculado                                                                   |
 | operator      | Texto    | "desc" o "asc" (por defecto)                                                                               |
 | descending    | Booleano | `true` for descending order, `false` for ascending order                                                   |
 | result        | Variant  | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
