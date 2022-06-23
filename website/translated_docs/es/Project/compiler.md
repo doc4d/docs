@@ -38,7 +38,7 @@ Use the **Previous Error** / **Next Error** commands of the **Method** menu to n
 
 The number of errors found during your first compilations may be daunting, but do not let this put you off. You will soon discover that they often spring from the same source, i.e., non-compliance with certain project conventions. The compiler always provides a [precise diagnosis](#error-files) of the errors in order to help you correct them.
 
-> Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
+> La compilación requiere una licencia apropiada. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
 
 ## Ejecutar la compilación
 
@@ -153,10 +153,10 @@ This setting allows you to select the processor family for which your 4D project
 
 Se proponen dos opciones de objetivo. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                         | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
-| **Mi procesador (procesador)**                   | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
+| *Option*                                               | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Todos los procesadores (Intel/AMD y Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
+| **Mi procesador (procesador)**                         | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
 
 > Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang viene con la última versión de Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
@@ -209,7 +209,7 @@ Estas dos listas contienen cuatro columnas:
 
 The list of local variables is sorted by database method, project method, trigger, form method, and object method, in the same order as in 4D.
 
-This list is divided into three columns:
+Esta lista está dividida en tres columnas:
 
 - la lista de las variables locales utilizadas en el método;
 - tipo de la variable;
