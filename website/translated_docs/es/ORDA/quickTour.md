@@ -65,7 +65,7 @@ $entity.city:="London"
 //$entity.ID se llena automáticamente
 ```
 
-Right now, the entity only exists in memory. To store it in the data file, you need to save it using the `save()` member method:
+Por el momento, la entidad sólo existe en la memoria. To store it in the data file, you need to save it using the `save()` member method:
 
 ```code4d
 $status:=$entity.save()
