@@ -63,7 +63,7 @@ By default, the Regular style has a light gray background with a label in the ce
 Only the Regular and Flat styles offer the [Default Button](properties_Appearance.md#default-button) property.
 
 
-### Flat
+### Plano
 
 The Flat button style is a standard system button (*i.e.*, a rectangle with a descriptive label) which executes code when a user clicks on it.
 
@@ -270,7 +270,7 @@ The colors (highlight and background) of a button with the Office XP style are b
 
 
 
-### Help
+### Ajuda
 
 
 The Help button style can be used to display a standard system help button. By default, the Help style is displayed as a question mark within a circle.
