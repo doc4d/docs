@@ -9,7 +9,7 @@ This principle is used in particular by the 4D Web server to build [web template
 
 These tags are generally to be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
 
-It is possible to mix several types of tags. For example, the following HTML structure is entirely feasible:
+Es posible mezclar varios tipos de etiquetas. For example, the following HTML structure is entirely feasible:
 
 ```html
 <HTML>
@@ -289,7 +289,7 @@ The *property* parameter is a text variable automatically filled with the name o
 
 The properties of the object are processed according to their creation order. Durante el bucle, se pueden añadir o eliminar propiedades en el objeto, sin modificar el número de bucles que quedarán en función del número original de propiedades del objeto.
 
-#### Example with the properties of an object
+#### Ejemplo con las propiedades de un objeto
 
 *getGamers* is a project method that returns an object like ("Mary"; 10; "Ann"; 20; "John"; 40) to figure gamer scores.
 
@@ -368,7 +368,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
 
-The two following codes are equivalent.
+Los dos códigos siguientes son equivalentes.
 
 Code using 4DELSE only:
 
@@ -611,13 +611,13 @@ Ejemplo:
 
 In case of an interpretation error, the text "`<!--#4DLOOP expression-->`: description" is inserted instead of the contents located between `<!--#4DLOOP -->` and `<!--#4DENDLOOP-->`.
 
-The following messages can be displayed:
+Se pueden mostrar los siguientes mensajes:
 
-- Unexpected expression type (standard error);
+- Tipo de expresión inesperado (error estándar);
 - Incorrect table name (error on the table name);
 - An array was expected (the variable is not an array or is a two dimension array);
 - The method does not exist;
-- Syntax error (when the method is executing);
+- Error de sintaxis (cuando el método se está ejecutando);
 - Access error (you do not have the appropriate access privileges to access the table or the method).
 - 4DENDLOOP expected (the `<!--#4DENDLOOP-->` number does not match the `<!--#4DLOOP -->`).
 
@@ -653,7 +653,7 @@ As 4D executes methods in their order of appearance, it is absolutely possible t
 #### Alternative syntax: `$4DTEXT(expression)`
 
 
-The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D variable or expression returning a value. For example, if you write (in an HTML page):
+The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D variable or expression returning a value. Por ejemplo, si se escribe (en una página HTML):
 
 ```html
 <P>Welcome to <!--#4DTEXT vtSiteName-->!</P>
