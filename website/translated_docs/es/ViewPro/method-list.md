@@ -890,7 +890,7 @@ When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` comma
 | $2       |               | texto    | The filepath of the exported 4D View Pro object        |
 | $3       |               | objeto   | A reference to the command's *paramObj*                |
 | $4       |               | objeto   | An object returned by the method with a status message |
-|          | .success      | booleano | True if export with success, False otherwise.          |
+|          | .success      | booleano | True si exporta con éxito, de lo contrario False.      |
 |          | .errorCode    | integer  | Código de error. May be returned by 4D or JavaScript.  |
 |          | .errorMessage | texto    | Mensaje de error. May be returned by 4D or JavaScript. |
 
@@ -1734,7 +1734,7 @@ var $panesObj : Object
 $panesObj:=VP Get frozen panes("ViewProArea")
 ```
 
-The returned object contains, for example:
+El objeto devuelto contiene, por ejemplo:
 
 ![](assets/en/ViewPro/cmd_vpGetFrozenpanes.PNG)
 
@@ -3703,7 +3703,7 @@ You can define the position of the *borderStyleObj* (i.e., where the line is app
 | all             | booleano | Estilo de la línea de borde aplicado a todos los bordes.    |
 | left            | booleano | Estilo de la línea de borde aplicado al borde izquierdo.    |
 | top             | booleano | Estilo de la línea de borde aplicado al borde superior.     |
-| right           | booleano | Border line style applied to right border.                  |
+| right           | booleano | Estilo de la línea de borde aplicado al borde derecho.      |
 | bottom          | booleano | Estilo de la línea de borde aplicado al borde inferior.     |
 | outline         | booleano | Border line style applied to outer borders only.            |
 | inside          | booleano | Border line style applied to inner borders only.            |
@@ -5298,7 +5298,7 @@ Los siguientes selectores están disponibles:
 | `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
 | `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                  |                       | X                     |
-| `vk position top`     | Vertical alignment to the top of cell or row                                                                                                                                                                                                                                             | X                     |                       |
+| `vk position top`     | Alineación vertical a la parte superior de la celda o de la línea                                                                                                                                                                                                                        | X                     |                       |
 > This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. La vista permanece inalterada.
 
 #### Ejemplo
