@@ -63,7 +63,7 @@ These options configure the various colors used in the Code Editor and debugger 
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Color de fondo**                                     | Color de fondo de la ventana del editor de código.                                                                                                                       |
 | **Borde de la línea en ejecución en el depurador**     | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
-| **Color de fondo de la línea del cursor**              | Background color of line containing the cursor.                                                                                                                          |
+| **Color de fondo de la línea del cursor**              | Color de fondo de la línea que contiene el cursor.                                                                                                                       |
 | **Color de fondo de la línea en ejecución**            | Background color of line being executed in the debugger.                                                                                                                 |
 | **Resaltar las palabras encontradas**                  | Color de resaltado de las palabras encontradas en una búsqueda.                                                                                                          |
 | **Destacar los paréntesis**                            | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
@@ -78,7 +78,7 @@ These options configure the various colors used in the Code Editor and debugger 
 ## Opciones
 
 
-This page configures Code Editor display options.
+Esta página configura las opciones de visualización del Editor de Código.
 
 ![](assets/en/Preferences/options.png)
 
@@ -143,7 +143,7 @@ Allows you to hide all expand/collapse icons by default when displaying code. Wh
 
 #### Insertar () y añadir } ) ] " cierres
 
-Enables automatic insertion of () and closing braces while typing code. This option controls two automatic features:
+Enables automatic insertion of () and closing braces while typing code. Esta opción controla dos funcionalidades automáticas:
 
 - **parentheses pair ()**: Added after a 4D command, keyword or project method inserted from a suggestion or completion list, if the inserted element requires one or more mandatory arguments. For example, if you type "C_OB" and press Tab, 4D writes "C_OBJECT()" and sets the insertion point inside the ().
 
