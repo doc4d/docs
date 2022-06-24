@@ -327,7 +327,7 @@ The [current version number](#current_version) is set on the Client/Server page 
 
 If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. La aplicación va a cerrar ahora.”
 
-There are many possible causes for this error. When you get this message, it is advisable to check the following parameters first off:
+Hay muchas causas posibles para este error. When you get this message, it is advisable to check the following parameters first off:
 
 *   **Pathnames** - Check the validity of the pathnames set in the application project via the Application builder dialog box or via XML keys (for example *ClientMacFolderToWin*). More particularly, check the pathnames to the versions of 4D Volume Desktop.
 *   **Read/write privileges** - On the client machine, check that the current user has write access rights for the client application update.
@@ -618,7 +618,7 @@ Para definir y utilizar un archivo de datos por defecto:
 - You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the application project folder. This file must be provided along with all other necessary files, depending on the project configuration: index (.4DIndx), external Blobs, journal, etc. Es su responsabilidad proveer un archivo de datos válido por defecto. Es su responsabilidad proveer un archivo de datos válido por defecto.
 - When the application is built, the default data folder is integrated into the merged application. All files within this default data folder are also embedded.
 
-The following graphic illustrates this feature:
+El siguiente gráfico ilustra esta funcionalidad:
 
 ![](assets/en/Project/DefaultData.png)
 
