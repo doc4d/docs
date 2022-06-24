@@ -319,7 +319,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 ---
 ## Edición con un solo clic
 
-Enables direct passage to edit mode in list boxes.
+Permite el paso directo al modo de edición en list boxes.
 
 When this option is enabled, list box cells switch to edit mode after a single user click, regardless of whether or not this area of the list box was selected beforehand. Note that this option allows cells to be edited even when the list box [selection mode](properties_ListBox.md#selection-mode) is set to "None".
 
