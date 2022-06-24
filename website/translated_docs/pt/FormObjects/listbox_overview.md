@@ -391,7 +391,7 @@ Para preservar consistência de dados para list boxes de tipo seleção e tipo s
 
 A sequencia típica de eventos gerados durante a entrada de dados ou modificação é como a seguir:
 
-| Action                                                                                    | Tipos Listbox                        | Sequencia de eventos                                                                                                                                                                                                      |
+| Ação                                                                                      | Tipos Listbox                        | Sequencia de eventos                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Uma célula troca para modo editar (ação de usuário ou uma chamada ao comando `EDIT ITEM`) | Todos                                | On Before Data Entry                                                                                                                                                                                                      |
 |                                                                                           | Todos                                | On Getting Focus                                                                                                                                                                                                          |
@@ -912,7 +912,7 @@ ARRAY OBJECT(obColumn;0) //column array
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
 
 *   "text": for a text value
-*   "real": for a numeric value that can include separators like a \<space>, <.>, or <,>
+*   "real": for a numeric value that can include separators like a \<space>, <.>, ou <,>
 *   "integer": for an integer value
 *   "boolean": for a True/False value
 *   "color": to define a background color
@@ -925,7 +925,7 @@ When a list box column is associated with an object array, the way a cell is dis
 | texto     | text input                                     | drop-down menu (required list) or combo box (choice list)                                      |
 | real      | controlled text input (numbers and separators) | drop-down menu (required list) or combo box (choice list)                                      |
 | integer   | controlled text input (numbers only)           | drop-down menu (required list) or combo box (choice list) or three-states check box            |
-| booleano  | check box                                      | drop-down menu (required list)                                                                 |
+| booleano  | caixa de verificação                           | drop-down menu (required list)                                                                 |
 | color     | background color                               | texto                                                                                          |
 | event     | button with label                              |                                                                                                |
 |           |                                                | All widgets can have an additional unit toggle button or ellipsis button attached to the cell. |
@@ -943,7 +943,7 @@ You cannot set display formats or entry filters for columns of object-type list 
 |            |                                                            | "0-9" and "." if min>=0 |
 | integer    | same as defined in object                                  | "0-9" and "-"           |
 |            |                                                            | "0-9" if min>=0         |
-| Booleano   | check box                                                  | N/A                     |
+| Booleano   | caixa de verificação                                       | N/A                     |
 | color      | N/A                                                        | N/A                     |
 | event      | N/A                                                        | N/A                     |
 
@@ -1009,9 +1009,9 @@ These attributes can be used to control the range of input values. When a cell i
 
 The behavior attribute provides variations to the regular representation of values. In 4D v15, a single variation is proposed:
 
-| Attribute | Available value(s) | valueType(s) | Descrição                                                                                                                                                                                    |
-| --------- | ------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| behavior  | threeStates        | integer      | Represents a numeric value as a three-states check box.<br> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
+| Atributo | Available value(s) | valueType(s) | Descrição                                                                                                                                                                                    |
+| -------- | ------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| behavior | threeStates        | integer      | Represents a numeric value as a three-states check box.<br> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
 
 ```4d
  C_OBJECT($ob3)
