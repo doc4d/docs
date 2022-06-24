@@ -129,7 +129,7 @@ For example, in a subform, inputs are bound to the `Form` object properties (of 
 
 ![](assets/en/FormObjects/subnew1.png)
 
-In the parent form, you display the subfom twice. Each subform container is bound to an expression which is a property of the `Form` object (of the parent form):
+En el formulario padre, se muestra el subfomulario dos veces. Each subform container is bound to an expression which is a property of the `Form` object (of the parent form):
 
 ![](assets/en/FormObjects/subnew2.png)
 
