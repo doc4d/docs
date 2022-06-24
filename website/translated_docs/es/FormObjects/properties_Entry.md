@@ -101,7 +101,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 
 | Filtro de entrada                      | Descripción                                                                                                                                           |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~A                                     | Allow any letters, but convert to uppercase.                                                                                                          |
+| ~A                                     | Permitir la entrada de toda letra, pero convertir a mayúsculas.                                                                                       |
 | &9                                     | Permitir sólo números.                                                                                                                                |
 | &A                                     | Allow only capital letters.                                                                                                                           |
 | &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
@@ -117,7 +117,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | !0&9###-###-###                        | Long distance telephone number. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, three entries, hyphen, four entries. |
 | !0&9###-##-###                         | Número de la Seguridad Social. Display zeros in entry spaces. Permitir cualquier número.                                                              |
 | ~"A-Z;0-9; ;,;.;-"                     | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                         |
-| &"a-z;0-9; ;,;.;-"                     | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                  |
+| &"a-z;0-9; ;,;.;-"                     | Letras mayúsculas y minúsculas y puntuación. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                  |
 | &"0-9;.;-"                             | Números. Allow only numbers, decimal points, and hyphens (minus sign).                                                                                |
 
 
@@ -149,7 +149,7 @@ When the **Focusable** property is enabled for an object, the object can have th
 <p>
 <p>
 
-* ![](assets/en/FormObjects/property_focusable2.png)<br>Check box is selected but cannot show focus|
+* ![](assets/en/FormObjects/property_focusable2.png)<br>La casilla de verificación está seleccionada pero no se puede mostrar el foco|
 
 
 When the **Focusable** property is selected for a non-enterable object, the user can select, copy or even drag-and-drop the contents of the area.
@@ -319,7 +319,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 ---
 ## Edición con un solo clic
 
-Enables direct passage to edit mode in list boxes.
+Permite el paso directo al modo de edición en list boxes.
 
 When this option is enabled, list box cells switch to edit mode after a single user click, regardless of whether or not this area of the list box was selected beforehand. Note that this option allows cells to be edited even when the list box [selection mode](properties_ListBox.md#selection-mode) is set to "None".
 
