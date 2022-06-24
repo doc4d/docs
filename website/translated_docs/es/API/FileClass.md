@@ -210,12 +210,12 @@ Creation of a preferences file in the database folder:
 **.createAlias**( *destinationFolder* : 4D.Folder ; *aliasName* : Text { ; *aliasType* : Integer } ) : 4D.File<!-- END REF -->
 
 <!--REF #FileClass.createAlias().Params -->
-| Parámetros        | Tipo      |    | Descripción                                  |
-| ----------------- | --------- | -- | -------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Texto     | -> | Nombre del alias o del atajo                 |
-| aliasType         | Integer   | -> | Tipo de enlace del alias                     |
-| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo  |
+| Parámetros        | Tipo      |    | Descripción                                          |
+| ----------------- | --------- | -- | ---------------------------------------------------- |
+| destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo |
+| aliasName         | Texto     | -> | Nombre del alias o del atajo                         |
+| aliasType         | Integer   | -> | Tipo de enlace del alias                             |
+| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo          |
 <!-- END REF -->
 
 
