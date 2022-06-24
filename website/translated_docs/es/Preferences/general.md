@@ -61,7 +61,7 @@ Hay tres opciones disponibles:
 *   **Light**: Use the Light Theme
 *   **Dark**: Use the Dark Theme
 
-> Esta preferencia sólo es compatible en macOS. On Windows, the "Light" scheme is always used.
+> Esta preferencia sólo es compatible en macOS. En Windows, se utiliza siempre el esquema "Light".
 
 
 ### Exit Design when going to Application Environment
