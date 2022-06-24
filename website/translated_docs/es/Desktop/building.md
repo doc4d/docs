@@ -258,7 +258,7 @@ Se utiliza para indicar el número de versión actual de la aplicación generada
 
 When you check this option, the project directory file is copied to the application directory file at build time.
 
-When you execute a built 4D Server application:
+Cuando ejecute una aplicación de servidor 4D generada:
 * If the server has a data directory file, it is loaded.
 * If the server does not have a data directory file, the application directory file is loaded.
 
@@ -369,7 +369,7 @@ The [current version number](#current_version) is set on the Client/Server page 
 
 If 4D cannot carry out the update of the client application, the client machine displays the following error message: "The update of the client application failed. La aplicación va a cerrar ahora."
 
-There are many possible causes for this error. When you get this message, it is advisable to check the following parameters first off:
+Hay muchas causas posibles para este error. When you get this message, it is advisable to check the following parameters first off:
 
 *   **Pathnames** - Check the validity of the pathnames set in the application project via the Application builder dialog box or via XML keys (for example *ClientMacFolderToWin*). More particularly, check the pathnames to the versions of 4D Volume Desktop.
 *   **Read/write privileges** - On the client machine, check that the current user has write access rights for the client application update.
@@ -500,7 +500,7 @@ A module is a built-in code library used by 4D to control specific features. If 
 
 > **Warning:** Deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is never called by your application, it is recommended to keep it selected.
 
-The following optional modules can be deselected:
+Los siguientes módulos opcionales pueden ser deseleccionados:
 
 - **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
 - **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
@@ -680,7 +680,7 @@ Para definir y utilizar un archivo de datos por defecto:
 - You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the application project folder. This file must be provided along with all other necessary files, depending on the project configuration: index (.4DIndx), external Blobs, journal, etc. Es su responsabilidad proveer un archivo de datos válido por defecto. Es su responsabilidad proveer un archivo de datos válido por defecto.
 - When the application is built, the default data folder is integrated into the merged application. All files within this default data folder are also embedded.
 
-The following graphic illustrates this feature:
+El siguiente gráfico ilustra esta funcionalidad:
 
 ![](assets/en/Project/DefaultData.png)
 
