@@ -6,7 +6,7 @@ title: Propiedades de los formularios
 ---
 
 ## Esquema de colores
-> Color scheme property is only applied on macOS.
+> La propiedad de esquema de color sólo se aplica en macOS.
 
 This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
 
@@ -66,13 +66,13 @@ Each table in a database generally has at least two table forms. One for listing
 Los tipos soportados dependen de la categoría de formulario:
 
 
-| Tipo de formulario              | Gramática JSON   | Descripción                                                   | Soportado con                            |
-| ------------------------------- | ---------------- | ------------------------------------------------------------- | ---------------------------------------- |
-| Formulario detallado            | detailScreen     | A display form for data entry and modification                | Formularios proyecto - Formularios tabla |
-| Formulario detallado imprimible | detailPrinter    | A printed report with one page per record, such as an invoice | Formularios proyecto - Formularios tabla |
-| Formulario listado              | listScreen       | Un formulario para listar los registros en la pantalla        | Formularios tabla                        |
-| Formulario de lista imprimible  | listPrinter      | A printed report that list records                            | Formularios tabla                        |
-| Ninguno                         | *no destination* | A form with no specific feature                               | Formularios proyecto - Formularios tabla |
+| Tipo de formulario              | Gramática JSON   | Descripción                                                      | Soportado con                            |
+| ------------------------------- | ---------------- | ---------------------------------------------------------------- | ---------------------------------------- |
+| Formulario detallado            | detailScreen     | Un formulario de visualización para introducir y modificar datos | Formularios proyecto - Formularios tabla |
+| Formulario detallado imprimible | detailPrinter    | A printed report with one page per record, such as an invoice    | Formularios proyecto - Formularios tabla |
+| Formulario listado              | listScreen       | Un formulario para listar los registros en la pantalla           | Formularios tabla                        |
+| Formulario de lista imprimible  | listPrinter      | A printed report that list records                               | Formularios tabla                        |
+| Ninguno                         | *no destination* | A form with no specific feature                                  | Formularios proyecto - Formularios tabla |
 
 
 #### Gramática JSON
