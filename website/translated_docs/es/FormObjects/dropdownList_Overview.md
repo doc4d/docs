@@ -140,7 +140,7 @@ When the form is executed, 4D automatically manages the drop-down list during in
 ![](assets/en/FormObjects/popupDropdown_choiceList.png)
 
 
-#### Selected item value or Selected item reference
+#### Valor del elemento seleccionado o Referencia del elemento seleccionado
 
 When you have associated a drop-down list with a choice list and with a field or a variable, you can set the [**Data Type**](properties_DataSource.md#data-type) property to **Selected item value** or **Selected item reference**. Esta opción permite optimizar el tamaño de los datos guardados.
 
