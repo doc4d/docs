@@ -44,7 +44,7 @@ This option must be selected at the 4D structure level for each table and each f
 
 Any modifications applied at the level of the database structure invalidate the current ORDA model layer. Estas modificaciones incluyen:
 
-*   adding or removing a table, a field, or a relation
+*   la adición o la eliminación de una tabla, de un campo, o de una relación
 *   el cambio de nombre de una tabla, de un campo o de una relación
 *   changing a core property of a field (type, unique, index, autoincrement, null value support)
 
@@ -249,6 +249,6 @@ Unordered entity selections are created in the following cases:
 > > > > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 
 > * > > * > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
-> * entity selections built upon remote datastores.
+> * selecciones de entidades basadas en datastores remotos.
 
 Note that when an ordered entity selection becomes an unordered entity selection, any repeated entity references are removed.
