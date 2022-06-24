@@ -105,12 +105,12 @@ Para crear un grupo:
 
 4D adds a new group to the list, named "New groupX" by default.
 
-3. Introduzca el nombre del nuevo grupo. The group name can be up to 15 characters long. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
+3. Introduzca el nombre del nuevo grupo. El nombre del grupo puede tener hasta 15 caracteres. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
 
 ### Placing users or groups into groups
 
-You can place any user or group into a group, and you can also place the group itself into several other groups. It is not mandatory to place a user in a group.
+You can place any user or group into a group, and you can also place the group itself into several other groups. No es obligatorio colocar a un usuario en un grupo.
 
 To place a user or group in a group, you simply need to check the "Member" option for each user or group in the member attribution area:
 
