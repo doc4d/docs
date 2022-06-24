@@ -38,7 +38,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 ## Fundamentos de la selección, la entrada y de la navegación
 
-Spreadsheets are composed of rows and columns. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
+Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
 
 ### Selecting cells, columns and rows
 
@@ -140,16 +140,16 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 *   area - El nombre del área 4D View Pro
 *   ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
-| Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                    |
-| --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------- |
-| area      |                   | texto     | 4D View Pro area form object name                                   | always available                                   |
-| ranges    |                   | colección | Colección de rangos                                                 | always available                                   |
-|           | \[ ].name        | texto     | Nombre de rango                                                     | name                                               |
-|           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
-|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                       |
-|           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                     |
-|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                      | celda, celdas, columna, columnas                   |
-|           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
+| Propiedad |                   | Tipo      | Descripción                                                                        | Disponible para                                                 |
+| --------- | ----------------- | --------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                                       | siempre disponible                                              |
+| ranges    |                   | colección | Colección de rangos                                                                | siempre disponible                                              |
+|           | \[ ].name        | texto     | Nombre de rango                                                                    | name                                                            |
+|           | \[ ].sheet       | number    | Índice de la hoja (índice de la hoja actual por defecto) (el conteo comienza en 0) | celda, celdass, línea, líneas, columna, columnas, todos, nombre |
+|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                                       | celda, celdas, línea, líneas                                    |
+|           | \[ ].rowCount    | number    | Número de líneas                                                                   | celdas, líneas                                                  |
+|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                                     | celda, celdas, columna, columnas                                |
+|           | \[ ].columnCount | number    | Conteo de columnas                                                                 | celdas, columnas                                                |
 
 
 
@@ -157,13 +157,13 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 
 
-## Importing and exporting documents
+## Importar y exportar documentos
 
-4D View Pro supports the import and export of several document formats:
+4D View Pro soporta la importación y exportación de varios formatos de documentos:
 
 * .4vp
 * .xlsx
 * .txt y .csv
 * .pdf (sólo para exportación)
 
-For more details, check out the description of [VP IMPORT DOCUMENT](method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](method-list.md#vp-export-document).
+Para más detalles, consulte la descripción de [VP IMPORT DOCUMENT](method-list.md#vp-import-document) y [VP EXPORT DOCUMENT](method-list.md#vp-export-document).
