@@ -76,7 +76,7 @@ Also, object instances from ORDA data model user classes benefit from their pare
 A 4D database exposes its own DataStore class in the `cs` class store.
 
 - **Extends**: 4D.DataStoreImplementation
-- **Class name**: cs.DataStore
+- **Nombre de clase**: cs.DataStore
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
@@ -140,7 +140,7 @@ The following *City* catalog is exposed in a remote datastore (partial view):
 
 ![](assets/en/ORDA/Orda_example.png)
 
-The `City Class` provides an API:
+La clase `City` ofrece una API:
 
 ```4d  
 // cs.City class
