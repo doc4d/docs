@@ -232,7 +232,7 @@ In addition to the special characters and codes described in the previous sectio
 | --------- | ------------------------------------------------------------------ | -------------------- |
 | + and -   | Plus and minus signs                                               | ### + ### = ###,### |
 | ( )       | Left and right parenthesis                                         | (-###.##)            |
-| :         | Colon                                                              | hh:mm:ss             |
+| :         | Dois pontos                                                        | hh:mm:ss             |
 | ^         | Caret                                                              | #\^#                |
 | '         | Apostrophe                                                         | '######              |
 | { }       | Curly brackets                                                     | {###,###,###}        |
@@ -320,15 +320,15 @@ The following special characters allow the automatic addition or formatting of i
 
 Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
 
-| Propriedade |        | Type          | Descrição                                                   |
-| ----------- | ------ | ------------- | ----------------------------------------------------------- |
-| margin      |        | object        | The print margins                                           |
-|             | top    | inteiro longo | Top margin, in hundredths of an inch. Default value = 75    |
-|             | bottom | inteiro longo | Bottom margin, in hundredths of an inch. Default value = 75 |
-|             | left   | inteiro longo | Left margin, in hundredths of an inch. Default value = 70   |
-|             | right  | inteiro longo | Right margin, in hundredths of an inch. Default value = 70  |
-|             | header | inteiro longo | Header offset, in hundredths of an inch. Default value = 30 |
-|             | footer | inteiro longo | Footer offset, in hundredths of an inch. Default value = 30 |
+| Propriedade |         | Type          | Descrição                                                   |
+| ----------- | ------- | ------------- | ----------------------------------------------------------- |
+| margin      |         | object        | The print margins                                           |
+|             | top     | inteiro longo | Top margin, in hundredths of an inch. Default value = 75    |
+|             | bottom  | inteiro longo | Bottom margin, in hundredths of an inch. Default value = 75 |
+|             | left    | inteiro longo | Left margin, in hundredths of an inch. Default value = 70   |
+|             | direita | inteiro longo | Right margin, in hundredths of an inch. Default value = 70  |
+|             | header  | inteiro longo | Header offset, in hundredths of an inch. Default value = 30 |
+|             | footer  | inteiro longo | Footer offset, in hundredths of an inch. Default value = 30 |
 
 ### Orientation
 
@@ -374,7 +374,7 @@ Paper size attributes are used to specify the dimensions or model of paper to us
     * one of the formats in the [SpreadJS format list](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html)
     * one of the formats returned by the [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/en/page785.html) command. In that case, [`VP Get print info`](./method-list.md#vp-get-print-info) returns the corresponding format with the height and width.
 
-### Scale
+### Escala
 
 Scale attributes are used to specify printing optimization and adjustments.
 
