@@ -193,7 +193,7 @@ A avaliação de uma propriedade de um objeto pode produzir às vezes um valor i
  - Picture: Empty picture
  - Boolean: False
  - String: ""
- - Number: 0
+ - Número: 0
  - Date: !00-00-00! if "Use date type instead of ISO date format in objects" setting is enabled, otherwise ""
  - Time: 0 (number of ms)
  - Undefined, Null: no change
