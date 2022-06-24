@@ -30,7 +30,7 @@ $myEntity.save() //save the entity
 
 ## Entidades y referencias
 
-An entity contains a reference to a 4D record. Different entities can reference the same 4D record. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
+Una entidad contiene una referencia a un registro 4D. Different entities can reference the same 4D record. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
 
 If you execute the following code:
 
@@ -106,14 +106,14 @@ Accessing a related attribute depends on the attribute kind. Por ejemplo, con la
 
 ![](assets/en/ORDA/entityAttributes.png)
 
-You can access data through the related object(s):
+Puede acceder a los datos a través del objeto(s) relacionado(s):
 
 ```4d
  $entity:=ds.Project.all().first().theClient //get the Company entity associated to the project
  $EntitySel:=ds.Company.all().first().companyProjects //get the selection of projects for the company
 ```
 
-Note that both *theClient* and *companyProjects* in the above example are primary relation attributes and represent a direct relationship between the two dataclasses. However, relation attributes can also be built upon paths through relationships at several levels, including circular references. For example, consider the following structure:
+Note that both *theClient* and *companyProjects* in the above example are primary relation attributes and represent a direct relationship between the two dataclasses. However, relation attributes can also be built upon paths through relationships at several levels, including circular references. Por ejemplo, consideremos la siguiente estructura:
 
 ![](assets/en/ORDA/entityAttributes2.png)
 
@@ -194,7 +194,7 @@ A **shareable** entity selection has the following characteristics:
 
 - it can be stored in a shared object or shared collection, and can be passed as parameter between several processes or workers;
 - it can be stored in several shared objects or collections, or in a shared object or collection which already belongs to a group (it does not have a *locking identifier*);
-- it does not allow the addition of new entities. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/EntitySelectionClass.md#copy) function, before calling [`.add()`](API/EntitySelectionClass.md#add).
+- no permite la adición de nuevas entidades. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/EntitySelectionClass.md#copy) function, before calling [`.add()`](API/EntitySelectionClass.md#add).
 
 > Most entity selection functions (such as [`.slice()`](API/EntitySelectionClass.md#slice), [`.and()`](API/EntitySelectionClass.md#and)...) support shareable entity selections since they do not need to alter the original entity selection (they return a new one).
 
@@ -235,7 +235,7 @@ $toModify:=ds.Company.all().copy() //$toModify is alterable
 A new entity selection **inherits** from the original entity selection nature in the following cases:
 
 - the new entity selection results from one of the various ORDA class functions applied to an existing entity selection ([.query()](API/EntitySelectionClass.md#query), [.slice()](API/EntitySelectionClass.md#slice), etc.) .
-- the new entity selection is based upon a relation:
+- la nueva selección de entidades se basa en una relación:
     - [entity.*attributeName*](API/EntityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute and the entity belongs to an entity selection (same nature as [.getSelection()](API/EntityClass.md#getselection) entity selection),
     - [entitySelection.*attributeName*](API/EntitySelectionClass.md#attributename) (e.g. "employees.employer") when *attributeName* is a related attribute (same nature as the entity selection),
     - [.extract()](API/EntitySelectionClass.md#extract) when the resulting collection contains entity selections (same nature as the entity selection).
@@ -315,7 +315,7 @@ Este código devuelve en *$localEmails* una colección de direcciones de correo 
 
 ### Selecciones de entidades y atributos de relación
 
-In addition to the variety of ways you can query, you can also use relation attributes as properties of entity selections to return new entity selections. For example, consider the following structure:
+In addition to the variety of ways you can query, you can also use relation attributes as properties of entity selections to return new entity selections. Por ejemplo, consideremos la siguiente estructura:
 
 ![](assets/en/ORDA/entitySelectionRelationAttributes.png)
 
