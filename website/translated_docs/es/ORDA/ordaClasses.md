@@ -78,7 +78,7 @@ Also, object instances from ORDA data model user classes benefit from their pare
 A 4D database exposes its own DataStore class in the `cs` class store.
 
 - **Extends**: 4D.DataStoreImplementation
-- **Class name**: cs.DataStore
+- **Nombre de clase**: cs.DataStore
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
@@ -466,7 +466,7 @@ The *$event* parameter contains the following properties:
 | kind          | Texto   | "query"                                                                                                                                                                                                                                                                                                                                                           |
 | value         | Variant | Valor a tratar por el atributo calculado                                                                                                                                                                                                                                                                                                                          |
 | operator      | Texto   | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores posibles:<li>== (es igual a, @ es comodín)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (no es igual a, @ es comodín)</li><li>!== (no es igual a, @ no es comodín)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (mayor que)</li><li>>= (greater than or equal to)</li><li>IN (incluído en)</li><li>% (contiene palabra clave)</li> |
-| result        | Variant | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                          |
+| result        | Variant | Valor a tratar por el atributo calculado. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                               |
 
 > If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
 
@@ -565,15 +565,15 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 The *$event* parameter contains the following properties:
 
-| Propiedad     | Tipo     | Descripción                                                                                                |
-| ------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| attributeName | Texto    | Nombre de atributo calculado                                                                               |
-| dataClassName | Texto    | Nombre de la clase de datos                                                                                |
-| kind          | Texto    | "orderBy"                                                                                                  |
-| value         | Variant  | Valor a tratar por el atributo calculado                                                                   |
-| operator      | Texto    | "desc" o "asc" (por defecto)                                                                               |
-| descending    | Booleano | `true` for descending order, `false` for ascending order                                                   |
-| result        | Variant  | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
+| Propiedad     | Tipo     | Descripción                                                                                           |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| attributeName | Texto    | Nombre de atributo calculado                                                                          |
+| dataClassName | Texto    | Nombre de la clase de datos                                                                           |
+| kind          | Texto    | "orderBy"                                                                                             |
+| value         | Variant  | Valor a tratar por el atributo calculado                                                              |
+| operator      | Texto    | "desc" o "asc" (por defecto)                                                                          |
+| descending    | Booleano | `true` for descending order, `false` for ascending order                                              |
+| result        | Variant  | Valor a tratar por el atributo calculado. Pass `Null` if you want to let 4D execute the default sort. |
 
 > You can use either the `operator` or the `descending` property. It is essentially a matter of programming style (see examples).
 
