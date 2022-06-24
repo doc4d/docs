@@ -435,12 +435,12 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 
 
-Allows a check box object to accept a third state. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
+Permite que un objeto casilla de selección acepte un tercer estado. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
 
 
-#### Three-states check boxes in list box columns
+#### Casillas de verificación de tres estados en columnas list box
 
-List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
+List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. Si se elige, se muestran los siguientes valores:
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
 *   2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
