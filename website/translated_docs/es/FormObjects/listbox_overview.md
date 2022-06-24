@@ -300,18 +300,18 @@ In order to preserve data consistency for selection type and entity selection ty
 
 The typical sequence of events generated during data entry or modification is as follows:
 
-| Acción                                                                          | Tipo(s) de Listbox                      | Secuencia de eventos                                                                                                                                                                                           |
-| ------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A cell switches to edit mode (user action or a call to the `EDIT ITEM` command) | Todos                                   | On Before Data Entry                                                                                                                                                                                           |
-|                                                                                 | Todos                                   | On Getting Focus                                                                                                                                                                                               |
-| Cuando se ha editado el valor de una celda                                      | Todos                                   | On Before Keystroke                                                                                                                                                                                            |
-|                                                                                 | Todos                                   | On After Keystroke                                                                                                                                                                                             |
-|                                                                                 | Todos                                   | On After Edit                                                                                                                                                                                                  |
-| Un usuario valida y abandona la celda                                           | List box de tipo selección              | Guardar                                                                                                                                                                                                        |
-|                                                                                 | List box de tipo selección de registro  | Activación de On saving an existing record (si definido)                                                                                                                                                       |
-|                                                                                 | List box de tipo selección              | On Data Change(*)                                                                                                                                                                                              |
-|                                                                                 | List box de tipo selección de entidades | Entity is saved with automerge option, optimistic lock (see entity.save( )). In case of successful save, the entity is refreshed with the last update done. If the save operation fails, an error is displayed |
-|                                                                                 | Todos                                   | On Losing Focus                                                                                                                                                                                                |
+| Acción                                                                          | Tipo(s) de Listbox                      | Secuencia de eventos                                                                                                                                                                                                |
+| ------------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A cell switches to edit mode (user action or a call to the `EDIT ITEM` command) | Todos                                   | On Before Data Entry                                                                                                                                                                                                |
+|                                                                                 | Todos                                   | On Getting Focus                                                                                                                                                                                                    |
+| Cuando se ha editado el valor de una celda                                      | Todos                                   | On Before Keystroke                                                                                                                                                                                                 |
+|                                                                                 | Todos                                   | On After Keystroke                                                                                                                                                                                                  |
+|                                                                                 | Todos                                   | On After Edit                                                                                                                                                                                                       |
+| Un usuario valida y abandona la celda                                           | List box de tipo selección              | Guardar                                                                                                                                                                                                             |
+|                                                                                 | List box de tipo selección de registro  | Activación de On saving an existing record (si definido)                                                                                                                                                            |
+|                                                                                 | List box de tipo selección              | On Data Change(*)                                                                                                                                                                                                   |
+|                                                                                 | List box de tipo selección de entidades | Entity is saved with automerge option, optimistic lock (see entity.save( )). In case of successful save, the entity is refreshed with the last update done. Si la operación de guardado falla, se mostrará un error |
+|                                                                                 | Todos                                   | On Losing Focus                                                                                                                                                                                                     |
 
 (*) With entity selection list boxes, in the On Data Change event:
 - the [Current item](properties_DataSource.md#current-item) object contains the value before modification.
@@ -432,7 +432,7 @@ You can write in the *UI_SetColor* method:
 
 ## Gestión de ordenaciones
 
-By default, a list box automatically handles standard column sorts when the header is clicked. A standard sort is an alphanumeric sort of column values, alternately ascending/descending with each successive click. All columns are always synchronized automatically.
+By default, a list box automatically handles standard column sorts when the header is clicked. A standard sort is an alphanumeric sort of column values, alternately ascending/descending with each successive click. Todas las columnas siempre se sincronizan automáticamente.
 
 You can prevent standard user sorts by deselecting the [Sortable](properties_Action.md#sortable) property of the list box.
 
@@ -674,7 +674,7 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
 
 Al igual que con las selecciones, el comando `LISTBOX GET CELL POSITION` devolverá los mismos valores para un list box jerárquico y un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, `LISTBOX GET CELL POSITION` devolverá la misma posición: (3;2).
 
-*Non-hierarchical representation:* ![](assets/en/FormObjects/hierarch9.png)
+*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch9.png)
 
 *Representación jerárquica:* ![](assets/en/FormObjects/hierarch10.png)
 
@@ -693,7 +693,7 @@ Las líneas de rotura no se tienen en cuenta en los arrays internos utilizados p
 
 Dado, por ejemplo, el siguiente list box (los nombres de los arrays asociados se especifican entre paréntesis):
 
-*Non-hierarchical representation:* ![](assets/en/FormObjects/hierarch12.png)
+*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch12.png)
 
 *Representación jerárquica:* ![](assets/en/FormObjects/hierarch13.png)
 
