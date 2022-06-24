@@ -4,7 +4,7 @@ title: Ajuda
 ---
 
 ---
-## Help Tip
+## Dica de Ajuda
 
 This property allows associating help messages with active objects in your forms. They can be displayed at runtime:
 
@@ -22,9 +22,9 @@ You can either:
 
 #### JSON Grammar
 
-|  Nome   | Data Type | Possible Values                       |
-|:-------:|:---------:| ------------------------------------- |
-| tooltip |   texto   | additional information to help a user |
+|  Nome   | Tipo de dados | Possible Values                       |
+|:-------:|:-------------:| ------------------------------------- |
+| tooltip |     texto     | additional information to help a user |
 
 #### Objects Supported
 
