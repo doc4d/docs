@@ -44,7 +44,7 @@ This option must be selected at the 4D structure level for each table and each f
 
 Any modifications applied at the level of the database structure invalidate the current ORDA model layer. Estas modificaciones incluyen:
 
-*   adding or removing a table, a field, or a relation
+*   la adición o la eliminación de una tabla, de un campo, o de una relación
 *   el cambio de nombre de una tabla, de un campo o de una relación
 *   changing a core property of a field (type, unique, index, autoincrement, null value support)
 
@@ -177,7 +177,7 @@ Keep in mind that these objects describe attributes, but do not give access to d
 
 ### Entity
 
-An entity is the equivalent of a record. It is actually an object that references a record in the database. It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
+Una entidad es el equivalente a un registro. It is actually an object that references a record in the database. It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
@@ -244,6 +244,6 @@ Unordered entity selections are created in the following cases:
 > > > > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 
 > * > > * > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
-> * entity selections built upon remote datastores.
+> * selecciones de entidades basadas en datastores remotos.
 
 Note that when an ordered entity selection becomes an unordered entity selection, any repeated entity references are removed.
