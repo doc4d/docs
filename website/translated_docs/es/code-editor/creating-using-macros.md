@@ -20,7 +20,7 @@ Macros are stored in one or more XML format (text) file(s). They can be placed i
 The "Macros v2" folder can be located:
 
 - En la carpeta 4D activa de la máquina. Macros are then shared for all the databases. **Note:** The location of the active 4D folder varies according to the operating system used. For more information, refer to the description of the [Get 4D folder](https://doc.4d.com/4Dv19R4/4D/19-R4/Get-4D-folder.301-5739515.en.html) command in the 4D *Language Reference* manual.
-- Next to the database structure file. Macros are only loaded for this structure.
+- Next to the database structure file. Las macros sólo se cargan para esta estructura.
 - For components: in the **Components** folder of the database. Macros are then only loaded if the component is installed.
 
 These three locations can be used simultaneously: it is possible to install a "Macros v2" folder in each location. The macros will be loaded in the following order: 4D folder, structure file, component 1... component X.
@@ -38,7 +38,7 @@ You can add customized macros in the "Macros.xml" file using a standard text edi
 
 In local mode, the macros file can be open while using 4D. The list of available macros is updated on each event activating 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
 
-Empty or erroneous macros are not displayed.
+No se muestran macros vacías o erróneas.
 
 ### Comprobación de la sintaxis de las macros personalizadas
 
@@ -63,7 +63,7 @@ In conformity with XML specifications, some element tags can include attributes.
 If the element accepts several attributes, you can group them in the same line of command, separated by a space:\
 <tag attribute1="value" attribute2="value" attribute3="value">
 
-Here is the list of tags and their mode of use:
+Aquí está la lista de etiquetas y su modo de uso:
 
 | **Element tags**                 | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -163,7 +163,7 @@ It is recommended to manage text selections using the [GET MACRO PARAMETER](htt
 
 If you do not pass this attribute, the previous mode is kept.
 
-### Incompatibilities related to the XML standard
+### Incompatibilidades relacionadas con el estándar XML
 
 Strict syntax rules must be observed in order for macros files to respect the XML standard. This may lead to incompatibilities with the code of macros created with previous versions and prevent the loading of XML files. The following are the main sources of malfunctioning:
 
