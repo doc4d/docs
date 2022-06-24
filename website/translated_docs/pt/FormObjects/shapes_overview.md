@@ -1,6 +1,6 @@
 ---
 id: shapesOverview
-title: Shapes
+title: Formas
 ---
 
 Shapes are [static objects](formObjects_overview.md#active-and-static-objects) that can be added to 4D forms.
@@ -12,7 +12,7 @@ Shapes are [static objects](formObjects_overview.md#active-and-static-objects) t
 - ovals
 
 
-## Rectangle
+## Retângulo
 
 A static rectangle is a decorative object for forms. Rectangles are constrained to squared shapes.
 
