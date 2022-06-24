@@ -10,7 +10,7 @@ title: On Alternative Click
 
 ## Descrição
 
-### Buttons
+### Botões
 
 Some button styles can be [linked to a pop-up menu](FormObjects/properties_TextAndPicture.md#with-pop-up-menu) and display an triangle. Clicking on this triangle causes a selection pop-up to appear that provides a set of alternative actions in relation to the primary button action.
 
