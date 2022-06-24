@@ -26,7 +26,7 @@ Execute the method -- it simply calls the debugger window. In the Expression are
 It means for example that, whenever you need to refer to the city field of the [Company] table, in ORDA you just need to write:
 
 ```code4d
-ds.Company.city //returns the name of the city
+ds.Company.city // devuelve el nombre de la ciudad
 ```
 
 > In the ORDA world, ds.Company is a **dataclass**. ds.Company.city is an **attribute**.
