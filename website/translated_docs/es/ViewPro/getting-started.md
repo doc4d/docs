@@ -38,7 +38,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 ## Fundamentos de la selección, la entrada y de la navegación
 
-Spreadsheets are composed of rows and columns. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
+Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
 
 ### Selecting cells, columns and rows
 
