@@ -219,7 +219,7 @@ Estas son las propiedades devueltas en el parámetro *$editor*:
 | $editor.editor.form              | Objeto     | Formulario completo                                                               |
 | $editor.editor.file              | File       | File object of the form file                                                      |
 | $editor.editor.name              | Cadena     | Nombre del formulario                                                             |
-| $editor.editor.table             | number     | Table number of the form, 0 for project form                                      |
+| $editor.editor.table             | number     | Número de tabla del formulario, 0 para el formulario proyecto                     |
 | $editor.editor.currentPageNumber | number     | The number of the current page                                                    |
 | $editor.editor.currentPage       | Objeto     | The current page, containing all the form objects and the entry order of the page |
 | $editor.editor.currentSelection  | Collection | Colección de nombres de objetos seleccionados                                     |
@@ -228,14 +228,14 @@ Estas son las propiedades devueltas en el parámetro *$editor*:
 
 Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. Todas las propiedades son opcionales:
 
-| Propiedad         | Tipo       | Descripción                                                 |
-| ----------------- | ---------- | ----------------------------------------------------------- |
-| currentPage       | Objeto     | currentPage including objects modified by the macro, if any |
-| currentSelection  | Collection | currentSelection si es modificada por la macro              |
-| formProperties    | Objeto     | formProperties si es modificado por la macro                |
-| editor.groups     | Objeto     | group info, if groups are modified by the macro             |
-| editor.views      | Objeto     | view info, if views are modified by the macro               |
-| editor.activeView | Cadena     | Nombres de vistas activos                                   |
+| Propiedad         | Tipo       | Descripción                                                      |
+| ----------------- | ---------- | ---------------------------------------------------------------- |
+| currentPage       | Objeto     | currentPage including objects modified by the macro, if any      |
+| currentSelection  | Collection | currentSelection si es modificada por la macro                   |
+| formProperties    | Objeto     | formProperties si es modificado por la macro                     |
+| editor.groups     | Objeto     | información de grupo, si los grupos son modificados por la macro |
+| editor.views      | Objeto     | view info, if views are modified by the macro                    |
+| editor.activeView | Cadena     | Nombres de vistas activos                                        |
 
 
 For example, if objects of the current page and groups have been modified, you can write:
@@ -253,14 +253,14 @@ When handling the `method` attribute of form objects, you can define the attribu
 
 - Using a [string containing the method file name/path](FormObjects/properties_Action.md#method).
 
-- Using an object with the following structure:
+- Utilizando un objeto con la siguiente estructura:
 
 | Propiedad | Tipo | Descripción |
 | --------- | ---- | ----------- |
 |           |      |             |
  source|Cadena|Código del método|
 
-4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. This feature is only available for macro code.
+4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. Esta función solo está disponible para el código macro.
 
 #### Propiedad `$4dId` en `currentPage.objects`
 
