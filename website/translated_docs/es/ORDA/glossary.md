@@ -19,7 +19,7 @@ An attribute is the smallest storage cell in a relational database (see also [Re
 
 ## AttributePath
 
-An attributePath is the path of an attribute inside a given dataclass or entity. See also [PropertyPath](#propertyPath).
+An attributePath is the path of an attribute inside a given dataclass or entity. Ver también [PropertyPath](#propertyPath).
 
 
 ## Class code
@@ -61,11 +61,11 @@ A datastore is the interface object provided by ORDA to reference a structure an
 Un datastore ofrece:
 
 *   una conexión a la base de datos 4D
-*   a set of dataclasses to work with the database
+*   un conjunto de clases de datos para trabajar con la base de datos
 
 The database can be a 4D local database (the Main datastore), or a 4D Server database exposed as REST resource (a Remote datastore).
 
-A datastore references only a single database. It is, however, possible to open several datastores to access several databases.
+Un datastore referencia solo a una base de datos. It is, however, possible to open several datastores to access several databases.
 
 ## DataStore class
 
@@ -88,7 +88,7 @@ A deep copy duplicates an object and all the references it contains. After a dee
 
 An entity is an object that corresponds to a dataclass model. An entity contains the same attributes as the dataclass.
 
-An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. However, an entity also contains related data. The purpose of the entity is to manage data (create, update, delete).
+An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. Sin embargo, una entidad también contiene los datos relacionados. The purpose of the entity is to manage data (create, update, delete).
 
 Para más información, consulte Entidades.
 
@@ -120,7 +120,7 @@ The Datastore object matching the opened 4D database (standalone or client/serve
 
 ## Método
 
-ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
+ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. Estos métodos también se llaman funciones miembros (member functions). Such methods are used by calling them on an instance of the object.
 
 For example, the `query()` method is a dataclass member function. Si ha almacenado un objeto dataclass en la variable `$myClass`, puede escribir:
 
@@ -154,7 +154,7 @@ A "pessimistic lock" means that an entity is locked prior to its being accessed,
 ## Propiedad
 
 Ver [Atributo](#attribute).
-> Attributes and properties are similar concepts. "Atributo" se utiliza para designar las propiedades de la dataclass que almacena datos, mientras que "propiedad" es más genérico y define un dato almacenado dentro de un objeto.
+> Los atributos y las propiedades son conceptos similares. "Atributo" se utiliza para designar las propiedades de la dataclass que almacena datos, mientras que "propiedad" es más genérico y define un dato almacenado dentro de un objeto.
 
 ## PropertyPath
 
