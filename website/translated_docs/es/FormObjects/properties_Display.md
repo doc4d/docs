@@ -435,7 +435,7 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 
 
-Allows a check box object to accept a third state. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
+Permite que un objeto casilla de selección acepte un tercer estado. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
 
 
 #### Casillas de verificación de tres estados en columnas list box
