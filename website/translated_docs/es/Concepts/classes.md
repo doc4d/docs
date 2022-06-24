@@ -327,7 +327,7 @@ Class extends <ParentClass>
 
 The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
 
-Class extension must respect the following rules:
+La extensión de clase debe respetar las siguientes reglas:
 
 - A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
 - A user class cannot extend a user class from another project or component.
@@ -378,11 +378,11 @@ Super {( param{;...;paramN} )} {-> Object}
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
-`Super` serves two different purposes:
+`Super` tiene dos propósitos diferentes:
 
 1. Inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
 
-- If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
+- If all class constructors in the inheritance tree are not properly called, error -10748 is generated. Es responsabilidad del desarrollador 4D asegurarse de que las llamadas sean válidas.
 - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
 - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
 
