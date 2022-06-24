@@ -264,7 +264,7 @@ Pasa el tamaño expresado en bytes como valor. By default, the compression thres
 | `WEB SET OPTION`              | `Web port ID`                                |             |
 | Caja de diálogo de parámetros | Página Configuración/Puerto HTTP             |             |
 
-Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
+Número de puerto IP (TCP) de escucha para HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
 
 > En macOS, la modificación del puerto HTTP permite iniciar el servidor web 4D sin ser el usuario raíz de la máquina (ver [macOS HelperTool](#macos-helpertool)).
 
@@ -294,7 +294,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | `WEB SET OPTION`              | `Web HTTPS port ID`                            |             |
 | Caja de diálogo de parámetros | Página Configuración/Puerto HTTPS              |             |
 
-Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
+Listening IP port number for HTTPS connections via TLS. Por defecto, el valor es 443 (valor estándar). See also [HTTP Port](#http-port) for information on port numbers.
 
 
 ## Tiempo de espera del proceso inactivo
@@ -427,7 +427,7 @@ Valores posibles: 500 000 a 2 147 483 648.
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
 | `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Maximum number of simultaneous sessions. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+Número máximo de sesiones simultáneas. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
 Default value: 100 (pass 0 to restore the default value).
 
@@ -459,7 +459,7 @@ Valores posibles:
 | objeto webServer    | [`name`](API/WebServerClass.md#name) |             |
 
 
-Nombre de la aplicación del servidor web. Useful when component web servers are started.
+Nombre de la aplicación del servidor web. Útil cuando se inician los servidores web de los componentes.
 
 ## Versión OpenSSL
 
@@ -606,7 +606,7 @@ This option enables the preemptive mode for your application's web server code w
 
 ## Parámetros obsoletos
 
-The following settings are still supported but rely on deprecated features or technologies. It is usually recommended to keep default values.
+The following settings are still supported but rely on deprecated features or technologies. Generalmente se recomienda mantener los valores por defecto.
 
 #### Permitir el acceso a la base de datos a través de las URL 4DSYNC
 
@@ -616,7 +616,7 @@ This option controls the support of HTTP synchronization requests containing dep
 
 > This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
 
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
+Estado de validación de la dirección IP para las cookies de sesión. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
 
 
 #### Reutilizar los contextos temporales (en modo remoto)
@@ -639,7 +639,7 @@ When this option is checked, the web server sends extended characters “as is�
 
 #### Conexiones Keep-Alive
 
-The 4D Web Server can use keep-alive connections. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
+El servidor web 4D puede utilizar conexiones persistentes. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
 
 The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. This option is enabled by default. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
 
