@@ -37,7 +37,7 @@ Other options configure the display of various windows in the Application mode.
 
 This menu lets you select the color scheme to use at the main application level. A color scheme defines a global set of interface colors for texts, backgrounds, windows, etc., used in your forms.
 
-> Esta opción sólo funciona en macOS. On Windows, the "Light" scheme is always used.
+> Esta opción sólo funciona en macOS. En Windows, se utiliza siempre el esquema "Light".
 
 The following schemes are available:
 
@@ -54,7 +54,7 @@ The main application scheme will be applied to forms by default. However, it can
 
 ## Atajos
 
-You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D form operations in your desktop applications. These shortcuts are identical for both platforms. Key icons indicate the corresponding Windows and macOS keys.
+You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D form operations in your desktop applications. Estos atajos son idénticos para ambas plataformas. Key icons indicate the corresponding Windows and macOS keys.
 
 Los accesos directos por defecto son los siguientes:
 
