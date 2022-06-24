@@ -295,7 +295,7 @@ Para la traducción de la base de datos, puede introducir una referencia XLIFF e
 This property sets the type of calculation to be done in a [column footer](listbox_overview.md#list-box-footers) area.
 > El cálculo de los pies de página también puede definirse con el comando 4D `LISTBOX SET FOOTER CALCULATION`.
 
-There are several types of calculations available. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
+Hay varios tipos de cálculos disponibles. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
 
 | Cálculo                | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
 | ---------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
