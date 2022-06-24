@@ -31,7 +31,7 @@ For more information, please refer to the [Classes](../Concepts/classes.md) sect
 
 ## Deleting methods or classes
 
-To delete an existing method or class, you can:
+Para eliminar un método o clase existente, puede:
 
 - on your disk, remove the *.4dm* file from the "Sources" folder,
 - in the 4D Explorer, select the method or class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
@@ -72,7 +72,7 @@ To display the **Method Properties** dialog box for a project method, you can ei
 
 You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
 
-The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. If necessary, 4D sorts the list of methods again.
+The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. Si es necesario, 4D ordena de nuevo la lista de métodos.
 
 **Warning:** Changing the name of a method already used in the database can invalidate any methods or formulas that use the old method name and runs the risk of disrupting application functioning. You can rename the method manually but it is strongly recommended to use the renaming function for project methods, described in [Renaming](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.en.html). With this function, you can automatically update the name wherever the method is called throughout the Design environment.
 
