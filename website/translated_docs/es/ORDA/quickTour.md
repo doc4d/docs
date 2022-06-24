@@ -26,7 +26,7 @@ Execute the method -- it simply calls the debugger window. In the Expression are
 It means for example that, whenever you need to refer to the city field of the [Company] table, in ORDA you just need to write:
 
 ```code4d
-ds.Company.city //returns the name of the city
+ds.Company.city // devuelve el nombre de la ciudad
 ```
 
 > In the ORDA world, ds.Company is a **dataclass**. ds.Company.city is an **attribute**.
@@ -65,7 +65,7 @@ $entity.city:="London"
 //$entity.ID se llena automáticamente
 ```
 
-Right now, the entity only exists in memory. To store it in the data file, you need to save it using the `save()` member method:
+Por el momento, la entidad sólo existe en la memoria. To store it in the data file, you need to save it using the `save()` member method:
 
 ```code4d
 $status:=$entity.save()
