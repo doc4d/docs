@@ -102,7 +102,7 @@ The following code, which must specify a relative path for each call:
 <!--#4DBASE WEBFOLDER-->
 ```
 
-For example, to set a directory for the home page:
+Por ejemplo, para definir un directorio para la página de inicio:
 
 ```html
 /* Index.html */
@@ -520,7 +520,7 @@ The following code example:
 
 ### `<!--#4DLOOP method-->`
 
-This syntax makes a loop as long as the method returns `True`. The method takes a Long Integer parameter type. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
+This syntax makes a loop as long as the method returns `True`. El método toma un tipo de parámetro Long Integer. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
 
 For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.
 
@@ -614,7 +614,7 @@ In case of an interpretation error, the text "`<!--#4DLOOP expression-->`: descr
 Se pueden mostrar los siguientes mensajes:
 
 - Tipo de expresión inesperado (error estándar);
-- Incorrect table name (error on the table name);
+- Nombre de tabla incorrecto (error en el nombre de la tabla);
 - An array was expected (the variable is not an array or is a two dimension array);
 - The method does not exist;
 - Error de sintaxis (cuando el método se está ejecutando);
@@ -668,7 +668,7 @@ También puede insertar expresiones 4D. You can for example directly insert the 
 In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT myvar--> : ## error # error code`.
 
 - Debe utilizar las variables proceso.
-- You can display the content of a picture field. However, it is not possible to display the content of a picture array item.
+- Puede mostrar el contenido de un campo imagen. However, it is not possible to display the content of a picture array item.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get:C1224([Rect]Desc;\"color\")-->`.
 - Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. You just need to generate BLOBs in `Text without length` mode.
 
