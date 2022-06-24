@@ -587,7 +587,7 @@ $status:=$transporter.send($email)
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v17 R4 | Adicionado |
-| v17 R5 | Modified   |
+| v17 R5 | Modificado |
 </details>
 
 
