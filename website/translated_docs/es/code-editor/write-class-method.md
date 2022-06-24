@@ -21,12 +21,12 @@ Each Code Editor window has a toolbar that provides instant access to basic func
 | Element                       | Icono                                                                          | Descripción                                                                                                                                                                                                                                                                                                                                    |
 | ----------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Method execution**          | ![execute-method](assets/en/code-editor/execute-method.png)                    | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.<li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>For more information on method execution, see [Calling Project Methods](../Concepts/methods.md#calling-project-methods). |
-| **Search**                    | ![search-icon](assets/en/code-editor/search.png)                               | Allows performing a search in the current window.                                                                                                                                                                                                                                                                                              |
+| **Search**                    | ![search-icon](assets/en/code-editor/search.png)                               | Permite realizar una búsqueda en la ventana actual.                                                                                                                                                                                                                                                                                            |
 | **Macros**                    | ![macros-button](assets/en/code-editor/macros.png)                             | Inserts a macro at the selection. Click the dropdown arrow to display a list of available macros. For more information on how to create and instantiate macros, see [Macros](creating-using-macros.md).                                                                                                                                        |
 | **Expand all / Collapse all** | ![expand-collapse-button](assets/en/code-editor/expand-collapse-all.png)       | These buttons allow expanding or collapsing all the control flow structures of the code.                                                                                                                                                                                                                                                       |
 | **Method information**        | ![method-information-icon](assets/en/code-editor/method-information.png)       | Displays the [Method Properties](../Concepts/methods.md#project-method-properties) dialog box (project methods only).                                                                                                                                                                                                                          |
-| **Last clipboard values**     | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | Displays the last values stored in the clipboard.                                                                                                                                                                                                                                                                                              |
-| **Clipboards**                | ![clipboard icons](assets/en/code-editor/clipboards.png)                       | Nine clipboards available in the code editor. You can [use these clipboards](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards) by clicking on them directly or by using keyboard shortcuts. You can use a [Preferences option](Preferences/methods.md#options-1) to hide them.                                          |
+| **Last clipboard values**     | ![last-clipboard-values-icon](assets/en/code-editor/last-clipboard-values.png) | Muestra los últimos valores almacenados en el portapapeles.                                                                                                                                                                                                                                                                                    |
+| **Clipboards**                | ![clipboard icons](assets/en/code-editor/clipboards.png)                       | Nueve portapapeles disponibles en el editor de código. You can [use these clipboards](./write-class-method.md#multiple-copy-paste-and-numbering-of-clipboards) by clicking on them directly or by using keyboard shortcuts. You can use a [Preferences option](Preferences/methods.md#options-1) to hide them.                                 |
 | **Navegación en el código**   | ![code-navigation-icons](assets/en/code-editor/tags.png)                       | Lets you navigate inside methods and classes with automatically tagged content or manually declared markers. See [Navigation dropdown](./write-class-method.md#navigation-dropdown).                                                                                                                                                           |
 
 ## Editing area
@@ -141,7 +141,7 @@ The Code Editor includes numerous [navigation shortcuts](#navigational-keyboard-
 
 ### Adding items by drag-and-drop
 
-When writing methods, you can drag and drop items:
+Al escribir métodos, puede arrastrar y soltar elementos:
 
 * from the Explorer
 * dentro del mismo método, clase, función
@@ -152,8 +152,8 @@ When writing methods, you can drag and drop items:
 Desde el Explorador, puedes arrastrar y soltar:
 
 * Table names, field names, form names and project methods from the Home page.
-* Table names and field names from the Tables page,
-* Table names and form names from the Forms page,
+* Nombres de tablas y nombres de campos de la página Tablas,
+* Nombres de tablas y formularios de la página Formularios,
 * Project methods and form names from the Methods page,
 * Constants from the Constants page,
 * 4D commands from the Commands page.
@@ -224,7 +224,7 @@ Colored bars instantly show you where lines of code were modified since the meth
 The change bars change colors to indicate whether or not the modifications were saved:
 
 * yellow: Row was modified and method has not yet been saved.
-* green: Row was modified and method has been saved.
+* verde: la línea fue modificada y el método ha sido guardado.
 
 ## Using the autocomplete functions
 
@@ -308,7 +308,7 @@ Pressing **Ctrl+Shift+B** (Windows) or **Command+Shift+B** (macOS) enables you t
 **Note:** If the insertion point is placed in an `If` or `Else` type structure, the enclosing block will be the one containing, respectively, the `If` or `Else` statement.
 
 
-You can double-click to select individual "words". When the item name referenced (command, constant, method, etc.) contains spaces, you can select the whole name (including spaces) by using the **Alt/Option + Double-click** combination.
+Puede hacer doble clic para seleccionar "palabras" individuales. When the item name referenced (command, constant, method, etc.) contains spaces, you can select the whole name (including spaces) by using the **Alt/Option + Double-click** combination.
 
 ### Atajos
 
@@ -329,7 +329,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Home]                                              | Place the insertion point at the beginning of the line                                                                                 |
 | [End]                                               | Place the insertion point at the end of the line                                                                                       |
 | [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
-| [Ctrl]+[End]                                        | Place the insertion point at the end of the method                                                                                     |
+| [Ctrl]+[End]                                        | Coloca el punto de inserción al final del método                                                                                       |
 | [Shift]+[Home]                                      | Select all the characters in the line that are to the left of the cursor                                                               |
 | [Shift]+[End]                                       | Select all the characters in the line that are to the right of the cursor                                                              |
 | [PgUp]                                              | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
@@ -378,7 +378,7 @@ The Code Editor provides various contextual information using help tips. They ap
 
 * You can also create a **dedicated documentation file** named `<MethodName>.md` in the `<package>/documentation` folder. See [Viewing documentation in the code editor](../Project/documentation.md#viewing-documentation-in-the-code-editor)
 
-## Display the complete documentation of a command
+## Mostrar la documentación completa de un comando
 
 You can display the HTML documentation of a 4D "classic" language command at any time: to do so, select the complete command name or simply place the cursor in the name and press **F1**. The complete documentation of the command is displayed in a new window of your default browser.
 
@@ -430,7 +430,7 @@ The Code Editor allows you to use escape sequences (also called escape character
 
 The sequence consists of a backslash `\`, followed by a character. For instance, `\t` is an escape sequence for the **Tab** character. Escape sequences facilitate the entry of special characters: the previous example (`\t`) replaces the entry "Character(Tab)".
 
-In 4D, the following escape sequences can be used:
+En 4D, se pueden utilizar las siguientes secuencias de escape:
 
 | Secuencias de escape          | Carácter reemplazado |
 | ----------------------------- | -------------------- |
