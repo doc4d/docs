@@ -1,6 +1,6 @@
 ---
 id: buttonOverview
-title: Button
+title: Botão
 ---
 
 A button is an active object that can be assigned an action (*e.g.*, a database task or an interface function) to perform when a user clicks on it.
@@ -296,7 +296,7 @@ The Help button style can be used to display a standard system help button. By d
 > The Help style does not support [Number of States](properties_TextAndPicture.md#number-of-states), [Picture pathname](properties_TextAndPicture.md#picture-pathname), and [Title/Picture Position](properties_TextAndPicture.md#title-picture-position) basic properties.
 
 
-### Circle
+### Círculo
 
 The Circle button style appears as a round system button. This button style is designed for macOS.
 
