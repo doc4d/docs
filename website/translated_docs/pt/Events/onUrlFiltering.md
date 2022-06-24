@@ -5,7 +5,7 @@ title: On URL Filtering
 
 | Code | Can be called by                            | Definition                        |
 | ---- | ------------------------------------------- | --------------------------------- |
-| 51   | [Web Area](FormObjects/webArea_overview.md) | A URL was blocked by the Web area |
+| 51   | [Área Web](FormObjects/webArea_overview.md) | A URL was blocked by the Web area |
 
 
 ## Descrição
