@@ -49,7 +49,7 @@ Define the default location of the Web site files and to indicate the hierarchic
 
 #### Página de inicio por defecto
 
-Designate a default home page for the Web server. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
+Designa una página de inicio por defecto para el servidor web. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
 
 
 
@@ -251,7 +251,7 @@ Configure los parámetros de copia de seguridad automática para el registro de 
 -   **Every X hour(s)**: This option is used to program backups on an hourly basis. Puede introducir un valor entre 1 y 24 .
 
     -   **starting at**: Used to set the time at which the first back up will begin.
--   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
+-   **Every X day(s) at X**: This option is used to program backups on a daily basis. Introduzca 1 si desea realizar una copia de seguridad diaria. When this option is checked, you must indicate the time when the backup must be started.
 -   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
 -   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. Introduzca 1 si desea realizar una copia de seguridad mensual.
 -   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
