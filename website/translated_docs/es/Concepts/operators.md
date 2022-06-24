@@ -313,7 +313,7 @@ This means that `a || b && c` is evaluated as `(a || b) && c`.
 
 The ternary conditional operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
 
-It takes three operands in the following order:
+Se necesitan tres operandos en el siguiente orden:
 
 * una condición seguida de un signo de interrogación (?)
 * an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:)
