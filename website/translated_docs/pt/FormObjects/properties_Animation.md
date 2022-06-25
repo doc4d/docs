@@ -68,7 +68,7 @@ Enables cycling through the contents of the picture button at the specified spee
 
 | Nome       | Tipo de dados | Possible Values |
 | ---------- | ------------- | --------------- |
-| frameDelay | integer       | minimum: 0      |
+| frameDelay | integer       | mínimo: 0       |
 
 #### Objects Supported
 
