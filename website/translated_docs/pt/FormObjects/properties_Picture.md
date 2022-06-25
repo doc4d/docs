@@ -39,7 +39,7 @@ The **Scaled to fit** format causes 4D to resize the picture to fit the dimensio
 
 ![](assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
-### Replicated
+### Replicado
 
 `JSON grammar: "tiled"`
 
