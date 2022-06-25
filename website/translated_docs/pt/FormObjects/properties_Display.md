@@ -112,7 +112,7 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 | Placeholder | Effect for leading or trailing zero |
 | ----------- | ----------------------------------- |
 | #           | Displays nothing                    |
-| 0           | Displays 0                          |
+| 0           | Mostra 0                            |
 | ^           | Displays a space (1)                |
 | *           | Displays an asterisk                |
 
@@ -299,7 +299,7 @@ If you have applied the **Scaled to fit centered (proportional)** format, the pi
 ![](assets/en/FormObjects/property_pictureFormat_ScaledProportional.png)
 
 
-### Replicated
+### Replicado
 
 `JSON grammar: "tiled"`
 
