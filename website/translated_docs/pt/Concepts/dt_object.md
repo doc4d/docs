@@ -134,7 +134,7 @@ Exemplo:
  x:=vPtr->a //x=10
 ```
 
-### Null value
+### Valor Null
 
 Quando se usar a notação de objeto, o valore **null** se torna compatível com o comando **Null** . Este comando pode ser usado para atribuir ou comparar o valor nulo com as propriedades de objeto ou elementos de coleção, por exemplo
 
