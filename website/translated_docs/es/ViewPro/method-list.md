@@ -880,7 +880,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 
 Once the export operation is finished, `VP EXPORT DOCUMENT` automatically triggers the execution of the method set in the *formula* property of the *paramObj*, if used.
 
-#### Passing a callback method (formula)
+#### Pasar un método retrollamada (fórmula)
 
 When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. The callback method will receive the following values in local variables:
 
@@ -1752,7 +1752,7 @@ El objeto devuelto contiene, por ejemplo:
 | ---------- | ---------- | -- | ------------------------------------------- |
 | vpAreaName | Texto      | -> | 4D View Pro area form object name           |
 | scope      | Número     | -> | Alcance objetivo (por defecto= hoja actual) |
-| Resultado  | Collection | <- | Existing names in the defined scope         |
+| Resultado  | Collection | <- | Nombres existentes en el alcance definido   |
 <!-- END REF -->  
 
 #### Descripción
@@ -2497,7 +2497,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 In *filePath*, pass the path and name of the document to be imported. Se soportan los siguientes formatos:
 
 * Les documents 4D View Pro (extensión ".4vp")
-* Microsoft Excel (extension ".xlsx")
+* Microsoft Excel (extensión ".xlsx")
 * text documents (extension ".txt", ".csv", the document must be in utf-8)
 
 If the document extension is not a recognized extension, such as `.4vp` or `.xlsx`, the document is considered a text document. You must pass a full path, unless the document is located at the same level as the Project folder, in which case you can just pass its name.
@@ -2716,7 +2716,7 @@ The *options* parameter has several properties:
 | Propiedad    | Tipo         | Descripción                                                                                                                                                                                            |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | copy         | Booleano     | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
-| pasteOptions | Entero largo | Specifies what is pasted. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                  |
+| pasteOptions | Entero largo | Specifies what is pasted. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                  |
 
 The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 #### Ejemplo
@@ -2849,7 +2849,7 @@ In *fontObj*, pass an object containing the font properties. Se soportan las sig
 | size      | texto | Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | un número con una de las siguientes unidades: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | Sí          |
 | style     | texto | Estilo de fuente.                                                                                                                                                        | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                                                  | No          |
 | variant   | texto | Especifica el tipo de letra en minúsculas.                                                                                                                               | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                            | No          |
-| weight    | texto | Defines the thickness of the font.                                                                                                                                       | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                              | No          |
+| weight    | texto | Define el grosor de la fuente.                                                                                                                                           | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                                              | No          |
 
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command.
@@ -3672,11 +3672,11 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 <!-- REF #_method_.VP SET BORDER.Params -->
 
-| Parámetros     | Tipo   |    | Descripción                         |
-| -------------- | ------ | -- | ----------------------------------- |
-| rangeObj       | Objeto | -> | Objeto rango                        |
-| borderStyleObj | Objeto | -> | Object containing border line style |
-| borderPosObj   | Objeto | -> | Object containing border placement  |
+| Parámetros     | Tipo   |    | Descripción                                     |
+| -------------- | ------ | -- | ----------------------------------------------- |
+| rangeObj       | Objeto | -> | Objeto rango                                    |
+| borderStyleObj | Objeto | -> | Objeto que contiene el estilo de línea de borde |
+| borderPosObj   | Objeto | -> | Objeto que contiene la posición del borde       |
 
 <!-- END REF -->  
 
@@ -3809,10 +3809,10 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Params -->
 
-| Parámetros  | Tipo   |    | Descripción                         |
-| ----------- | ------ | -- | ----------------------------------- |
-| rangeObj    | Objeto | -> | Objeto rango                        |
-| propertyObj | Objeto | -> | Object containing column properties |
+| Parámetros  | Tipo   |    | Descripción                                    |
+| ----------- | ------ | -- | ---------------------------------------------- |
+| rangeObj    | Objeto | -> | Objeto rango                                   |
+| propertyObj | Objeto | -> | Objeto que contiene las propiedades de columna |
 
 <!-- END REF -->  
 
@@ -5240,7 +5240,7 @@ The following table lists the available workbook options:
 | showDragDropTip                       | booleano                | Display the drag-drop tip.                                                                                                                                                                                                                             |
 | showDragFillSmartTag                  | booleano                | Display the drag fill dialog.                                                                                                                                                                                                                          |
 | showDragFillTip                       | booleano                | Display the drag-fill tip.                                                                                                                                                                                                                             |
-| showHorizontalScrollbar               | booleano                | Display the horizontal scroll bar.                                                                                                                                                                                                                     |
+| showHorizontalScrollbar               | booleano                | Mostrar la barra de desplazamiento horizontal.                                                                                                                                                                                                         |
 | showResizeTip                         | number                  | How to display the resize tip. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                          |
 | showScrollTip                         | number                  | How to display the scroll tip. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Se muestran las extremidades horizontales y verticales.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                          |
 | showVerticalScrollbar                 | booleano                | Display the vertical scroll bar.                                                                                                                                                                                                                       |
@@ -5358,7 +5358,7 @@ You've added two buttons to the form so that the user can suspend/resume calcula
 
 ![](assets/en/ViewPro/cmd_vpStopCalculations.PNG)
 
-The Suspend Computing button code:
+El código del botón Suspend Computing:
 
 ```4d
  //pause calculations while users enter information
