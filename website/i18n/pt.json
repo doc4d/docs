@@ -418,7 +418,7 @@
         "title": "Form Properties"
       },
       "FormEditor/formSize": {
-        "title": "Form Size"
+        "title": "Tamanho formulário"
       },
       "FormEditor/jsonReference": {
         "title": "JSON property list"
@@ -484,7 +484,7 @@
         "title": "Animação"
       },
       "FormObjects/propertiesAppearance": {
-        "title": "Appearance"
+        "title": "Aparência"
       },
       "FormObjects/propertiesBackgroundAndBorder": {
         "title": "Background and Border"
