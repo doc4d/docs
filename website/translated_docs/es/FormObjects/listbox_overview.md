@@ -387,7 +387,7 @@ In order to preserve data consistency for selection type and entity selection ty
 
 - when the the cell is deactivated (user presses tab, clicks, etc.)
 - cuando el listbox ya no tiene el foco,
-- when the form is no longer focused.
+- cuando el formulario ya no tiene el foco.
 
 The typical sequence of events generated during data entry or modification is as follows:
 
