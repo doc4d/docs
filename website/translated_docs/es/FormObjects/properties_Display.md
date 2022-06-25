@@ -109,12 +109,12 @@ Number formats control the way numbers appear when displayed or printed. For dat
 
 In each of the number display formats, the number sign (#), zero (0), caret (^), and asterisk (*) are used as placeholders. You create your own number formats by using one placeholder for each digit you expect to display.
 
-| Marcador | Effect for leading or trailing zero |
-| -------- | ----------------------------------- |
-| #        | No muestra nada                     |
-| 0        | Muestra 0                           |
-| ^        | Displays a space (1)                |
-| *        | Displays an asterisk                |
+| Marcador | Efecto para cero inicial o posterior |
+| -------- | ------------------------------------ |
+| #        | No muestra nada                      |
+| 0        | Muestra 0                            |
+| ^        | Displays a space (1)                 |
+| *        | Displays an asterisk                 |
 
 (1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
 
@@ -535,7 +535,7 @@ This property allows hiding the object in the Application environment.
 
 You can handle the Visibility property for most form objects. This property is mainly used to simplify dynamic interface development. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
 
-#### Automatic visibility in list forms
+#### Visibilidad automática en los formularios lista
 
 In the context of ["list" forms](FormEditor/properties_FormProperties.md#form-type), the Visibility property supports two specific values:
 
