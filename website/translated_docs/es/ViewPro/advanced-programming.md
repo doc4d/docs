@@ -7,7 +7,7 @@ A 4D View Pro Area is a [Web Area form object](../FormObjects/webArea_overview.m
 
 Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html), you can also call SpreadJS Javascript methods in 4D View Pro areas.
 
-## Hands-on example: Hiding the Ribbon
+## Ejemplo: ocultar la cinta
 
 Since 4D View Pro is a web area, you can select a webpage element and modify its behavior using Javascript. The following example hides the spreadJS [Ribbon](./configuring.md#ribbon):
 
@@ -23,7 +23,7 @@ $js+="window.dispatchEvent(new Event('resize'));"
 $answer:=WA Evaluate JavaScript(*; "ViewProArea"; $js)
 ```
 
-## Calling SpreadJS Javascript methods
+## Llamar los métodos Javascript de SpreadJS
 
 You can tap into the SpreadJS library of Javascript methods and call them directly to control your spreadsheets.
 
