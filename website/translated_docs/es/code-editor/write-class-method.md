@@ -35,13 +35,13 @@ This is where you [write and edit](write-class-method.md) your code. The editor 
 
 You can customize the display of the editing area. Any customization is automatically passed on to all the windows of the code editor:
 
-| Option                                 | Descripción                                                                                                                                                                                                 | Set in...                                                                                                                                                                                                  |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                                                                                      |
-| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
-| **spaces**                             | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                                                                                           |
-| **themes**                             | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
-| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
+| Option                                          | Descripción                                                                                                                                                                                                 | Set in...                                                                                                                                                                                                  |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **font** and **font size**                      | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                                                                                      |
+| **estilo y color de los elementos de sintaxis** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
+| **spaces**                                      | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                                                                                           |
+| **themes**                                      | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
+| **width of code indentations**                  | Define el ancho de las sangrías de código                                                                                                                                                                   | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
 
 ## Lists area
 
@@ -94,7 +94,7 @@ The following parameters are stored in the template:
 
 - Tamaño relativo de las áreas de edición y de la lista
 - Number of lists
-- Location and contents of each list
+- Ubicación y contenido de cada lista
 - Relative width of each list
 
 To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
@@ -155,8 +155,8 @@ Desde el Explorador, puedes arrastrar y soltar:
 * Nombres de tablas y nombres de campos de la página Tablas,
 * Nombres de tablas y formularios de la página Formularios,
 * Project methods and form names from the Methods page,
-* Constants from the Constants page,
-* 4D commands from the Commands page.
+* Constantes de la página de Constantes,
+* Comandos 4D de la página Comandos.
 
 When you drag and drop a component, 4D always uses the correct syntax for the component. For example, if you drag the field name "First Name" from the [People] table, it appears in the Code Editor as "[People]First Name." Similarly, if you drag the Form name "Input" from the People table, it appears in the Code Editor as "[People];"Input"."
 
@@ -244,7 +244,7 @@ If there are several suggestions available, 4D displays them in a pop-up list wh
 
 ![](assets/en/code-editor/autocomplete-popup.png)
 
-The list is in alphabetical order. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
+La lista está en orden alfabético. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
 
 By default, you can also insert a suggested value by hitting one of the following delimiter `( ; : = < [ {` keys after selecting a value: the value inserted is then followed by the delimiter, ready for data entry.
 
@@ -334,7 +334,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Shift]+[End]                                       | Select all the characters in the line that are to the right of the cursor                                                              |
 | [PgUp]                                              | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
 | [PgDn]                                              | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
-| [Ctrl]+[K] on a project method name                 | Abrir el método proyecto en una nueva ventana                                                                                          |
+| [Ctrl]+[K] en el nombre de un método proyecto       | Abrir el método proyecto en una nueva ventana                                                                                          |
 | [Alt]+doble clic en el nombre de un método proyecto | idem                                                                                                                                   |
 | [Ctrl]+haga clic en el nombre de un método proyecto | idem                                                                                                                                   |
 
@@ -432,13 +432,13 @@ The sequence consists of a backslash `\`, followed by a character. For instance,
 
 En 4D, se pueden utilizar las siguientes secuencias de escape:
 
-| Secuencias de escape          | Carácter reemplazado |
-| ----------------------------- | -------------------- |
-| `\n`                         | LF (Retorno línea)   |
-| `\t`                         | HT (Tabulación)      |
-| `\r`                         | CR (Retorno carro)   |
-| ``\\` |``&#96; (Backslash) |                      |
-| `\"`                         | " (Comillas)         |
+| Secuencias de escape              | Carácter reemplazado |
+| --------------------------------- | -------------------- |
+| `\n`                             | LF (Retorno línea)   |
+| `\t`                             | HT (Tabulación)      |
+| `\r`                             | CR (Retorno carro)   |
+| ``\\` |``&#96; (barra inversa) |                      |
+| `\"`                             | " (Comillas)         |
 
 
 > It is possible to use either upper or lower case in escape sequences.
