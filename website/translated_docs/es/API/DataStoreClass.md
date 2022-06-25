@@ -820,7 +820,7 @@ Se crea un método proyecto *protectDataFile* para llamar antes de los despliegu
 | contextName     | Texto        | -> | Nombre del contexto                                                       |
 | dataClassName   | Texto        | -> | Nombre de la dataclass                                                    |
 | dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore. Employee)                                |
-| attributes      | Texto        | -> | Attribute list separated by a comma                                       |
+| attributes      | Texto        | -> | Lista de atributos separados por comas                                    |
 | attributesColl  | Collection   | -> | Collection of attribute names (text)                                      |
 | contextType     | Texto        | -> | If provided, value must be "main" or "currentItem"                        |
 | pageLength      | Integer      | -> | Page length of the entity selection linked to the context (default is 80) |
