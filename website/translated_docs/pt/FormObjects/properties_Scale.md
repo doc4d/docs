@@ -46,7 +46,7 @@ Scale display measurement.
 
 |      Nome      | Tipo de dados | Possible Values |
 |:--------------:|:-------------:| --------------- |
-| graduationStep |    integer    | minimum: 0      |
+| graduationStep |    integer    | mínimo: 0       |
 
 
 #### Objects Supported
@@ -123,7 +123,7 @@ Minimum interval accepted between values during use. For numeric steppers, this 
 
 | Nome | Tipo de dados | Possible Values |
 |:----:|:-------------:| --------------- |
-| step |    integer    | minimum: 1      |
+| step |    integer    | mínimo: 1       |
 
 
 #### Objects Supported
