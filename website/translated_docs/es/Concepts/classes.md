@@ -331,7 +331,7 @@ La extensión de clase debe respetar las siguientes reglas:
 
 - A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
 - A user class cannot extend a user class from another project or component.
-- A user class cannot extend itself.
+- Una clase usuario no puede extenderse a sí misma.
 - It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
 
 Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
