@@ -51,7 +51,7 @@ Bottom coordinate of the object in the form.
 
 | Nome   | Tipo de dados | Possible Values |
 | ------ | ------------- | --------------- |
-| bottom | number        | minimum: 0      |
+| bottom | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -67,7 +67,7 @@ Left coordinate of the object on the form.
 
 | Nome | Tipo de dados | Possible Values |
 | ---- | ------------- | --------------- |
-| left | number        | minimum: 0      |
+| left | number        | mínimo: 0       |
 
 
 #### Objects Supported
@@ -85,7 +85,7 @@ Right coordinate of the object in the form.
 
 | Nome    | Tipo de dados | Possible Values |
 | ------- | ------------- | --------------- |
-| direita | number        | minimum: 0      |
+| direita | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -103,7 +103,7 @@ Top coordinate of the object in the form.
 
 | Nome | Tipo de dados | Possible Values |
 | ---- | ------------- | --------------- |
-| top  | number        | minimum: 0      |
+| top  | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -127,7 +127,7 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 
 | Nome         | Tipo de dados | Possible Values |
 | ------------ | ------------- | --------------- |
-| borderRadius | integer       | minimum: 0      |
+| borderRadius | integer       | mínimo: 0       |
 
 #### Objects Supported
 
@@ -146,7 +146,7 @@ This property designates an object's vertical size.
 
 | Nome   | Tipo de dados | Possible Values |
 | ------ | ------------- | --------------- |
-| height | number        | minimum: 0      |
+| height | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -166,7 +166,7 @@ This property designates an object's horizontal size.
 
 | Nome  | Tipo de dados | Possible Values |
 | ----- | ------------- | --------------- |
-| width | number        | minimum: 0      |
+| width | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -191,7 +191,7 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 
 | Nome     | Tipo de dados | Possible Values |
 | -------- | ------------- | --------------- |
-| maxWidth | number        | minimum: 0      |
+| maxWidth | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -209,7 +209,7 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 
 | Nome     | Tipo de dados | Possible Values |
 | -------- | ------------- | --------------- |
-| minWidth | number        | minimum: 0      |
+| minWidth | number        | mínimo: 0       |
 
 #### Objects Supported
 
