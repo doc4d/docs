@@ -101,7 +101,7 @@ The title of the button will be shifted to the right and toward the bottom for t
 
 | Nome         | Tipo de dados | Possible Values |
 | ------------ | ------------- | --------------- |
-| customOffset | number        | minimum: 0      |
+| customOffset | number        | mínimo: 0       |
 
 #### Objects Supported
 
@@ -129,7 +129,7 @@ The following states are represented:
 
 | Nome       | Tipo de dados | Possible Values |
 | ---------- | ------------- | --------------- |
-| iconFrames | number        | minimum: 1      |
+| iconFrames | number        | mínimo: 1       |
 
 #### Objects Supported
 
