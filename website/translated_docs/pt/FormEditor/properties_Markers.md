@@ -54,7 +54,7 @@ You can use the Footer area to print graphics, page numbers, the current date, o
 
 | Nome         | Tipo de dados | Possible Values |
 | ------------ | ------------- | --------------- |
-| markerFooter | integer       | minimum: 0      |
+| markerFooter | integer       | mínimo: 0       |
 
 
 ---
