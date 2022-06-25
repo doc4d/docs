@@ -128,7 +128,7 @@ Number of columns that must stay permanently displayed in the left part of the l
 
 | Nome              | Tipo de dados | Possible Values |
 | ----------------- | ------------- | --------------- |
-| lockedColumnCount | integer       | minimum: 0      |
+| lockedColumnCount | integer       | mínimo: 0       |
 
 #### Objects Supported
 
@@ -143,7 +143,7 @@ Number of columns that cannot be moved during execution.
 
 | Nome              | Tipo de dados | Possible Values |
 | ----------------- | ------------- | --------------- |
-| staticColumnCount | integer       | minimum: 0      |
+| staticColumnCount | integer       | mínimo: 0       |
 
 #### Objects Supported
 
@@ -164,7 +164,7 @@ Sets the number of columns of the list box.
 
 | Nome        | Tipo de dados | Possible Values |
 | ----------- | ------------- | --------------- |
-| columnCount | integer       | minimum: 1      |
+| columnCount | integer       | mínimo: 1       |
 
 #### Objects Supported
 
