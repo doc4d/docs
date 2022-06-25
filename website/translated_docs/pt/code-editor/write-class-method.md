@@ -316,7 +316,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Shortcut**                                | **Ação**                                                                                                                               |
+| **Atalho**                                  | **Ação**                                                                                                                               |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [Shift]+[right arrow]                       | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
 | [Shift]+[left arrow]                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
@@ -390,7 +390,7 @@ Comments are inactive lines of code. These lines are not interpreted by the prog
 
 There are two ways to create comments:
 
-#### `//comment`
+#### `//comentário`
 
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
