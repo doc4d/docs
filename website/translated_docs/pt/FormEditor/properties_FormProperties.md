@@ -41,7 +41,7 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 ---
 
 
-## Form Name
+## Nome do formulário
 
 This property is the name of the form itself and is used to refer to the form by name using the 4D language. The form name must comply with the [rules specified for identifiers](Concepts/identifiers.md) in 4D.
 
@@ -52,7 +52,7 @@ The form name is defined by the name of the folder that contains the form.4Dform
 
 ---
 
-## Form Type
+## Tipo de formulário
 
 The form type, *i.e.* its destination, defines the features that will be available to the form. For example, [markers](properties_Markers.md) can only be set for list (output) table forms.
 
@@ -66,7 +66,7 @@ Each table in a database generally has at least two table forms. One for listing
 Supported types depend on the form category:
 
 
-| Form Type                | JSON grammar     | Descrição                                                     | Supported with              |
+| Tipo de formulário       | JSON grammar     | Descrição                                                     | Supported with              |
 | ------------------------ | ---------------- | ------------------------------------------------------------- | --------------------------- |
 | Formulário detalhado     | detailScreen     | A display form for data entry and modification                | Project forms - Table forms |
 | Detail Form for Printing | detailPrinter    | A printed report with one page per record, such as an invoice | Project forms - Table forms |
