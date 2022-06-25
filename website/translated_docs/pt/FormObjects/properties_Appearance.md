@@ -1,6 +1,6 @@
 ---
 id: propertiesAppearance
-title: Appearance
+title: Aparência
 ---
 
 ---
@@ -82,7 +82,7 @@ An interface tool allowing the user to move the viewing area to the left or righ
 
 Available values:
 
-| Property List | JSON value  | Descrição                                                                                                                                                |
+| Property List | Valor JSON  | Descrição                                                                                                                                                |
 | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sim           | "visible"   | The scrollbar is always visible, even when it is not necessary (in other words, when the size of the object contents is smaller than that of the frame). |
 | No            | "hidden"    | The scrollbar is never visible                                                                                                                           |
@@ -106,7 +106,7 @@ Available values:
 [Vertical scroll bar](#vertical-scroll-bar)
 
 ---
-## Resolution
+## Resolução
 
 Sets the screen resolution for the 4D Write Pro area contents. By default, it is set to 72 dpi (macOS), which is the standard resolution for 4D forms on all platforms. Setting this property to 96 dpi will set a windows/web rendering on both macOS and Windows platforms. Setting this property to **automatic** means that document rendering will differ between macOS and Windows platforms.
 
@@ -364,7 +364,7 @@ An interface tool allowing the user to move the viewing area up and down.
 
 Available values:
 
-| Property List | JSON value  | Descrição                                                                                                                                                |
+| Property List | Valor JSON  | Descrição                                                                                                                                                |
 | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sim           | "visible"   | The scrollbar is always visible, even when it is not necessary (in other words, when the size of the object contents is smaller than that of the frame). |
 | No            | "hidden"    | The scrollbar is never visible                                                                                                                           |
