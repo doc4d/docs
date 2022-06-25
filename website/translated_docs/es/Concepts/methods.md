@@ -200,7 +200,7 @@ This button is only active for project methods and for the following database me
 
 From the [Code Editor](../code-editor/overview.md) window,
 
-#### From the Execute Method dialog box
+#### De la caja de diálogo Ejecutar método
 
 En 4D, algunos usos típicos de la recursividad son:
 
