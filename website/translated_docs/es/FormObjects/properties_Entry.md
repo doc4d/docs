@@ -105,8 +105,8 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | &9                                     | Permitir sólo números.                                                                                                                                |
 | &A                                     | Allow only capital letters.                                                                                                                           |
 | &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
-| &@                                     | Allow only alphanumeric characters. No hay caracteres especiales.                                                                                     |
-| ~a##                                   | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                                  |
+| &@                                     | Permitir sólo caracteres alfanuméricos. No hay caracteres especiales.                                                                                 |
+| ~a##                                   | Abreviatura del nombre del estado (por ej., CA). Allow any two letters, but convert to uppercase.                                                     |
 | !0&9##/##/##                           | Standard date entry format. Display zeros in entry spaces. Permitir cualquier número.                                                                 |
 | !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Display zeros in entry spaces. Permitir cualquier número. Limited to hours and minutes.                                   |
 | !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Permitir cuatro números, separados por dos puntos.             |
