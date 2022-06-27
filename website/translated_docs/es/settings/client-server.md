@@ -60,7 +60,7 @@ When a timeout is selected, the server will close the connection of a client if 
 
 ### Comunicación cliente-servidor
 
-#### Register Clients at Startup For Execute On Client
+#### Registrar los clientes al Inicio para Execute On Client
 
 When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv19/4D/19/Stored-procedures-on-client-machines.300-5422461.en.html).
 
@@ -68,11 +68,11 @@ When this option is checked, all the 4D remote machines connecting to the databa
 
 This option lets you activate the secured mode for communications between the server machine and the 4D remote machines. This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv19/4D/19/Encrypting-ClientServer-Connections.300-5422465.en.html) section.
 
-#### Update Resources folder during a session
+#### Actualizar la carpeta Resources durante una sesión
 
 This setting can be used to globally set the updating mode for the local instance of the **Resources** folder on the connected 4D machines when the **Resources** folder of the database is modified during the session (the **Resources** folder is automatically synchronized on the remote machine each time a session is opened). Three settings are available:
 
--   **Never**: The local **Resources** folder is not updated during the session. The notification sent by the server is ignored. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
+-   **Never**: The local **Resources** folder is not updated during the session. La notificación enviada por el servidor es ignorada. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
 -   **Always**: The synchronization of the local **Resources** folder is automatically carried out during the session whenever notification is sent by the server.
 -   **Ask**: When the notification is sent by the server, a dialog box is displayed on the client machines, indicating the modification. The user can then accept or refuse the synchronization of the local **Resources** folder.\ The **Resources** folder centralizes the custom files required for the database interface (translation files, pictures, etc.). Automatic or manual mechanisms can be used to notify each client when the contents of this folder have been modified. For more information, please refer to the [Managing the Resources folder](https://doc.4d.com/4Dv19/4D/19/Managing-the-Resources-folder.300-5422466.en.html) section.
 
@@ -89,7 +89,7 @@ The behavior of the configuration table is as follows:
 
 - The "Allow-Deny" column allows selecting the type of rule to apply (Allow or Deny) using a pop-up menu. Para añadir una regla, haga clic en el botón Añadir. A new row appears in the table. The **Delete** button lets you remove the current row.
 - The "IP Address" column allows setting the IP address(es) concerned by the rule. To specify an address, click in the column and enter the address in the following form: 123.45.67.89 (IPv4 format) or 2001:0DB8:0000:85A3:0000:0000:AC1F:8001 (IPv6 format). You can use an * (asterisk) character to specify "starts with" type addresses. For example, 192.168.* indicates all addresses starting with 192.168.
-- The application of rules is based on the display order of the table. If two rules are contradictory, priority is given to the rule located highest in the table. You can re-order rows by modifying the current sort (click the header of the column to alternate the direction of the sort). You can also move rows using drag and drop.
+- The application of rules is based on the display order of the table. If two rules are contradictory, priority is given to the rule located highest in the table. You can re-order rows by modifying the current sort (click the header of the column to alternate the direction of the sort). También puede mover las líneas utilizando arrastrar y soltar.
 - For security reasons, only addresses that actually match a rule will be allowed to connect. In other words, if the table only contains one or more Deny rules, all addresses will be refused because none will match at least one rule. If you want to deny only certain addresses (and allow others), add an Allow * rule at the end of the table. Por ejemplo:
     - Deny 192.168.* (deny all addresses beginning with 192.168)
     - Autorizar * (y permitir todas las demás direcciones)

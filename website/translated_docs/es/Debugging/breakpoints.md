@@ -41,7 +41,7 @@ This window is available from the Method Editor or the [Source Code Pane](debugg
 
 If a break point already exists, the window is displayed for that break point. Otherwise, a break point is created and the window is displayed for the newly created break point.
 
-Here is a description of the properties:
+A continuación se describen las propiedades:
 
 * **Location**: indicates the name of the method and the line number attached to the breakpoint.
 * **Break when following expression is true**: You can create **conditional breakpoints** by entering a 4D formula that returns `True` or `False`. For example, insert `Records in selection(\[aTable])=0` to make sure the break occurs only if there no record selected for the table \[aTable]. Breakpoint conditions are available in the **Condition** column of the [Break list](#break-list).
@@ -114,10 +114,10 @@ Para eliminar un punto de interrupción en el comando:
 
 ### Setting a Condition for catching a command
 
-1. Click on the entry in the right column
+1. Haga clic en la entrada en la columna derecha
 2. Enter a 4D formula (expression, command call or project method) that returns a Boolean value.
 
-> To remove a condition, delete its formula.
+> Para eliminar una condición, borre su fórmula.
 
 Adding conditions allows you to stop execution when the command is invoked only if the condition is met. For example, if you associate the condition `Records in selection(\[Emp]>10)` with the break point on the `DELETE SELECTION` command, the code will not be stopped during execution of the `DELETE SELECTION` command if the current selection of the \[Emp] table only contains 9 records (or less).
 

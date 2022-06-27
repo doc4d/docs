@@ -41,7 +41,7 @@ You can display or hide elements at any moment in the Form editor’s current wi
 
 ### Reglas
 
-Las reglas laterales e inferiores le ayudan a posicionar los objetos en el formulario. They can be [displayed or hidden](#display-options).
+Las reglas laterales e inferiores le ayudan a posicionar los objetos en el formulario. Pueden [mostrarse u ocultarse](#display-options).
 
 Select **Ruler definition...** from the **Form** menu to change measurement units so that the form displays inches, centimeters, or pixels.
 
@@ -73,7 +73,7 @@ La barra de herramientas contiene los siguientes elementos:
 
 ### Barra de objetos
 
-The object bar contains all the active and inactive objects that can be used in 4D forms. Some objects are grouped together by themes. Each theme includes several alternatives that you can choose between. When the object bar has the focus, you can select the buttons using the keys of the keyboard. The following table describes the object groups available and their associated shortcut key.
+The object bar contains all the active and inactive objects that can be used in 4D forms. Algunos objetos se agrupan por temas. Each theme includes several alternatives that you can choose between. When the object bar has the focus, you can select the buttons using the keys of the keyboard. The following table describes the object groups available and their associated shortcut key.
 
 | Botón                                   | Agrupar                                                                                                                                                                                                                                                   | Llave |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:-----:|

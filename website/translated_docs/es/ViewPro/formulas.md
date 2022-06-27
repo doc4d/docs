@@ -21,7 +21,7 @@ When writing a formula, you can use different shortcuts:
 
 ![](assets/en/ViewPro/formulas.PNG)
 
-- type the first letter of a function to enter. A pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
+- escriba la primera letra de una función a ingresar. A pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
 
 ![](assets/en/ViewPro/formula2.PNG)
 
@@ -40,7 +40,7 @@ All formulas have operands and operators:
 
 ## Valores y operadores
 
-4D View Pro supports five types of data. For each data type, specific literal values and operators are supported.
+4D View Pro soporta cinco tipos de datos. For each data type, specific literal values and operators are supported.
 
 | Tipos de datos                     | Valores                                            | Operadores                                                                                                                                                                                                                                        |
 | ---------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,7 +67,7 @@ The following operators can be used with two operands of the same type:
 
 ### Presedencia de los operadores
 
-List of operators from most to least important:
+Lista de los operadores de la mas a menos importante:
 
 | Operador        | Descripción               |
 | --------------- | ------------------------- |
@@ -86,7 +86,7 @@ List of operators from most to least important:
 
 ## Referencias de celdas
 
-Formulas often refer to other cells by cell addresses. You can copy these formulas into other cells. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
+Formulas often refer to other cells by cell addresses. Puede copiar estas fórmulas a otras celdas. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
 
 ```
 = C6 + C7
@@ -108,7 +108,7 @@ If you use only cell coordinates, for example, `C5`, 4D View Pro interprets the 
 
 You can mix absolute and relative references by inserting a dollar sign in front of the letter or the number alone, for example, `$C5` or `C$5`. A mixed reference allows you to specify either the row or the column as absolute, while allowing the other portion of the address to refer relatively.
 
-A convenient, fast and accurate way to specify an absolute reference is to name the cell and use that name in place of the cell address. A reference to a named cell is always absolute. You can create or modify named cells or named cell ranges using the [`VP ADD RANGE NAME`](method-list.md#vp-add-range-name) method.
+A convenient, fast and accurate way to specify an absolute reference is to name the cell and use that name in place of the cell address. Una referencia a una celda nombrada es siempre absoluta. You can create or modify named cells or named cell ranges using the [`VP ADD RANGE NAME`](method-list.md#vp-add-range-name) method.
 
 The following table shows the effect of the different notations:
 
@@ -278,7 +278,7 @@ VP SET CUSTOM FUNCTIONS("ViewProArea"; $o)
 
 Alternate solutions are available to declare fields or methods as functions in your 4D View Pro areas. These solutions are maintained for compatibility reasons and can be used in specific cases. However, using the [`VP SET CUSTOM FUNCTIONS`](method-list.md#vp-set-custom-functions) method is recommended.
 
-### Referencing fields using the virtual structure
+### Referenciación de campos mediante la estructura virtual
 
 
 4D View Pro allows you to reference 4D fields using the virtual structure of the database, i.e. declared through the [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) and/or [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) commands with the \* parameter. This alternate solution could be useful if your application already relies on a virtual structure (otherwise, [using `VP SET CUSTOM FUNCTIONS`](#4d-functions) is recommended).

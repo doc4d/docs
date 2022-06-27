@@ -130,7 +130,7 @@ In the 4D code, dynamic variables can be accessed using a pointer obtained with 
  $p->:=?12:00:00?
 ```
 
-There are two advantages with this mechanism:
+Este mecanismo tiene dos ventajas:
 
 - On the one hand, it allows the development of "subform" type components that can be used several times in the same host form. Let us take as an example the case of a datepicker subform that is inserted twice in a host form to set a start date and an end date. This subform will use objects for choosing the date of the month and the year. It will be necessary for these objects to work with different variables for the start date and the end date. Letting 4D create their variable with a unique name is a way of resolving this difficulty.
 - Por otra parte, puede utilizarse para limitar el uso de la memoria. In fact, form objects only work with process or inter-process variables. However, in compiled mode, an instance of each process variable is created in all the processes, including the server processes. This instance takes up memory, even when the form is not used during the session. Therefore, letting 4D create variables dynamically when loading the forms can save memory.
@@ -163,7 +163,7 @@ For an array list box, the **Variable or Expression** property usually holds the
 > This property is called [**Data Type**](properties_DataSource.md#data-type-expression-type) in the Property List for [selection](listbox_overview.md#selection-list-boxes) and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns and for [Drop-down Lists](dropdownList_Overview.md) associated to an [object](FormObjects/dropdownList_Overview.md#using-an-object) or an [array](FormObjects/dropdownList_Overview.md#using-an-array).
 
 
-Specify the data type for the expression or variable associated to the object. Note that main purpose of this setting is to configure options (such as display formats) available for the data type. It does not actually type the variable itself. In view of project compilation, you must [declare the variable](Concepts/variables.md#declaring-variables).
+Specify the data type for the expression or variable associated to the object. Note that main purpose of this setting is to configure options (such as display formats) available for the data type. En realidad, no escribe la variable en sí. In view of project compilation, you must [declare the variable](Concepts/variables.md#declaring-variables).
 
 However, this property has a typing function in the following specific cases:
 
@@ -298,7 +298,7 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 ## Título
 
-Allows inserting a label on an object. The font and the style of this label can be specified.
+Permite insertar una etiqueta en un objeto. The font and the style of this label can be specified.
 
 You can force a carriage return in the label by using the \ character (backslash).
 
@@ -332,7 +332,7 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 This property sets the type of calculation to be done in a [column footer](listbox_overview.md#list-box-footers) area.
 > The calculation for footers can also be set using the [`LISTBOX SET FOOTER CALCULATION`](https://doc.4d.com/4dv19/help/command/en/page1140.html) 4D command.
 
-There are several types of calculations available. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
+Hay varios tipos de cálculos disponibles. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
 
 | Cálculo                | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
 | ---------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
