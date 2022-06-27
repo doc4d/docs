@@ -13,7 +13,7 @@ The 4D language supports the operators you may already know from other languages
 The 4D language supports **binary** and **ternary** operators:
 
 - los operadores binarios operan en dos objetivos (como `2 + 3`) y aparecen entre sus dos objetivos.
-- ternary operators operate on three targets. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`). b : c</code>).
+- los operadores ternarios operan en tres objetivos. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`). b : c</code>).
 
 The values that operators affect are operands. En la expresión `1 + 2`, el símbolo + es un operador binario y sus dos operandos son los valores 1 y 2.
 
@@ -203,7 +203,7 @@ The difference with the single [**&** and **|** boolean operators](dt_boolean.md
 
 La regla es la siguiente:
 
-Given `Expr1 && Expr2`:
+Dado `Expr1 && Expr2`:
 
 The short-circuit AND operator evaluates operands from left to right, returning immediately with the value of the first falsy operand it encounters; if all values are [truthy](#truthy-and-falsy), the value of the last operand is returned.
 
@@ -280,7 +280,7 @@ The following table summarizes the different cases and the value returned for th
 
 #### Ejemplo 1
 
-Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
+Supongamos que tiene una tabla llamada Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
 
 ```4d
 var $phone : Text
@@ -313,9 +313,9 @@ This means that `a || b && c` is evaluated as `(a || b) && c`.
 
 The ternary conditional operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
 
-It takes three operands in the following order:
+Se necesitan tres operandos en el siguiente orden:
 
-* a condition followed by a question mark (?)
+* una condición seguida de un signo de interrogación (?)
 * an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:)
 * an expression to execute if the condition is [falsy](#truthy-and-falsy)
 

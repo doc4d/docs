@@ -39,8 +39,8 @@ You can customize the display of the editing area. Any customization is automati
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                          |
 | **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
-| **spaces**                             | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                               |
-| **themes**                             | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
+| **espaços**                            | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                               |
+| **temas**                              | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
 | **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
 
 ## Lists area
@@ -299,7 +299,7 @@ The **Select Enclosing Block** function is used to select the "enclosing block" 
 * Quotation marks
 * Parentheses
 * A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case)
-* Braces
+* Chaves
 
 If a block of text is already selected, the function selects the enclosing block of the next highest level and so on, until the entire method is selected.
 
@@ -316,7 +316,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Shortcut**                                | **Action**                                                                                                                             |
+| **Atalho**                                  | **Ação**                                                                                                                               |
 | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | [Shift]+[right arrow]                       | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left |
 | [Shift]+[left arrow]                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
@@ -390,7 +390,7 @@ Comments are inactive lines of code. These lines are not interpreted by the prog
 
 There are two ways to create comments:
 
-#### `//comment`
+#### `//comentário`
 
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 

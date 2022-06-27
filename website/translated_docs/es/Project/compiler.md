@@ -38,7 +38,7 @@ Use the **Previous Error** / **Next Error** commands of the **Method** menu to n
 
 The number of errors found during your first compilations may be daunting, but do not let this put you off. You will soon discover that they often spring from the same source, i.e., non-compliance with certain project conventions. The compiler always provides a [precise diagnosis](#error-files) of the errors in order to help you correct them.
 
-> Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
+> La compilación requiere una licencia apropiada. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
 
 ## Ejecutar la compilación
 
@@ -98,7 +98,7 @@ You can selectively disable certain warnings during compilation by inserting the
   //%W-<warning number>
 ```
 
-Sólo se pueden desactivar los avisos con números. Warning numbers are specified at the end of each message in the list of compilation errors. For example, to disable the following warning:
+Sólo se pueden desactivar los avisos con números. Warning numbers are specified at the end of each message in the list of compilation errors. Por ejemplo, para desactivar la siguiente advertencia:
 
 *1: Puntero en una declaración de array (518.5)*
 
@@ -153,12 +153,12 @@ This setting allows you to select the processor family for which your 4D project
 
 Se proponen dos opciones de objetivo. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                         | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
-| **Mi procesador (procesador)**                   | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
+| *Option*                                               | *en Windows Intel/AMD*                                                                    | *macOS Intel*                                                                               | *macOS Silicon*                                                                             |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **Todos los procesadores (Intel/AMD y Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
+| **Mi procesador (procesador)**                         | Código para Intel/AMD                                                                     | Código para Intel/AMD                                                                       | Código para Apple Silicon                                                                   |
 
-> Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang comes with the latest version of Xcode. See the [Silicon compiler requirements](#requirements) for more information.
+> Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang viene con la última versión de Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
 ### Default typing
 
@@ -209,7 +209,7 @@ Estas dos listas contienen cuatro columnas:
 
 The list of local variables is sorted by database method, project method, trigger, form method, and object method, in the same order as in 4D.
 
-This list is divided into three columns:
+Esta lista está dividida en tres columnas:
 
 - la lista de las variables locales utilizadas en el método;
 - tipo de la variable;
@@ -239,7 +239,7 @@ Although the errors can be accessed directly via the [compiler window](#compile)
 
 The length of the error file depends on the number of errors and warnings issued by the compiler.
 
-The structure of the error file is as follows:
+La estructura del archivo de errores es la siguiente:
 
 - At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D.
 - In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. These errors and warnings are listed using the following format:
@@ -249,7 +249,7 @@ The structure of the error file is as follows:
 
 If your project does not have any general errors, the file will not have a *General errors* section.
 
-An error file may contain three types of messages:
+Un archivo de error puede contener tres tipos de mensajes:
 
 - **Errors linked to a specific line**: these errors are displayed in context — the line in which they were found — with an explanation. The compiler reports this type of error when it encounters an expression in which it sees an inconsistency related to data type or syntax. In the compiler window, double–click on each error detected in order to open the method concerned directly in the 4D Code Editor, with the line containing the error highlighted.
 
@@ -296,13 +296,13 @@ The classic compiler can be used on any platform, while the Silicon compiler can
 | Silicon Mac |       &#10003;        |          &#10003;          |           &#10003;           |
 
 
-Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
+Ambos compiladores están integrados en 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
 
 
 
 ### Compilador clásico
 
-The classic compiler generates native compiled code for Intel/AMD processors on any machines. It does not require any specific configuration.
+The classic compiler generates native compiled code for Intel/AMD processors on any machines. No requiere ninguna configuración específica.
 
 Resulting compiled code is stored in the [DerivedData](architecture.md#deriveddata) folder of the project.
 

@@ -887,11 +887,11 @@ onde:
 
     | Comparação                           | Symbol(s)   | Comentário                                                                                                     |
     | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
-    | Equal to                             | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
+    | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
     |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
     | Not equal to                         | #, !=       | Supports the wildcard (@)                                                                                      |
     |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
-    | Less than                            | <           |                                                                                                                |
+    | Menor que                            | <           |                                                                                                                |
     | Greater than                         | >           |                                                                                                                |
     | Less than or equal to                | <=          |                                                                                                                |
     | Greater than or equal to             | >=          |                                                                                                                |
@@ -940,10 +940,10 @@ Pode usar parêntesis na pesquisa para dar prioridade ao cálculo Por exemplo, p
 
 Dois tipos de marcadores podem ser usados: **placeholders indexados ** e **placeholders nomeados**:
 
-|            | Marcadores de posição indexados                                                                                                                                                                                 | Placeholders nomeados                                                                                                                                                     |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Definition | Parameters are inserted as `:paramIndex` (for example :1, :2...) in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). You can use up to 128 *value* parameters | Parameters are inserted as `:paramName` (for example :myparam) and their values are provided in the attributes and/or parameters objects in the *querySettings* parameter |
-| Exemplo    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                                                                     | `$o.attributes:=New object("att";"city")`<br> `$o.parameters:=New object("name";"Chicago")`<br> `$r:=class.query(":att=:name";$o)`                            |
+|           | Marcadores de posição indexados                                                                                                                                                                                 | Placeholders nomeados                                                                                                                                                     |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definição | Parameters are inserted as `:paramIndex` (for example :1, :2...) in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). You can use up to 128 *value* parameters | Parameters are inserted as `:paramName` (for example :myparam) and their values are provided in the attributes and/or parameters objects in the *querySettings* parameter |
+| Exemplo   | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                                                                     | `$o.attributes:=New object("att";"city")`<br> `$o.parameters:=New object("name";"Chicago")`<br> `$r:=class.query(":att=:name";$o)`                            |
 
 Pode misturar os tipos de argumentos em *queryString*. Um *queryString* pode conter, para os parâmetros *attributePath*, *formula* e *value* :
 

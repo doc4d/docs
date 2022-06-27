@@ -31,7 +31,7 @@ For more information, please refer to the [Classes](../Concepts/classes.md) sect
 
 ## Deleting methods or classes
 
-To delete an existing method or class, you can:
+Para eliminar un método o clase existente, puede:
 
 - on your disk, remove the *.4dm* file from the "Sources" folder,
 - in the 4D Explorer, select the method or class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
@@ -50,7 +50,7 @@ The import/export function is multi-platform: a method exported under Mac OS can
 
 4D can export and import methods in two formats:
 
-- 4D method (extension *.c4d*): In this format, methods are exported in encoded form. The names of objects are tokenized. This format is used in particular for exchanging methods between 4D applications and plug-ins in different languages. Conversely, it is not possible to display them in a text editor.
+- 4D method (extension *.c4d*): In this format, methods are exported in encoded form. Los nombres de los objetos están tokenizados. This format is used in particular for exchanging methods between 4D applications and plug-ins in different languages. Conversely, it is not possible to display them in a text editor.
 - Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
 
 
@@ -72,13 +72,13 @@ To display the **Method Properties** dialog box for a project method, you can ei
 
 You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
 
-The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. If necessary, 4D sorts the list of methods again.
+The new name must comply with 4D naming rules (see [Identifiers](../Concepts/identifiers.md)). If a method with the same name already exists, 4D displays a message saying that the method name has already been used. Si es necesario, 4D ordena de nuevo la lista de métodos.
 
 **Warning:** Changing the name of a method already used in the database can invalidate any methods or formulas that use the old method name and runs the risk of disrupting application functioning. You can rename the method manually but it is strongly recommended to use the renaming function for project methods, described in [Renaming](https://doc.4d.com/4Dv19R5/4D/19-R5/Renaming.300-5851389.en.html). With this function, you can automatically update the name wherever the method is called throughout the Design environment.
 
 With 4D Server, the method name is changed on the server when you finish editing it. If more than one user is modifying the method name at the same time, the final method name will be the name specified by the last user to finish editing it. You may want to specify a method owner so that only certain users can change the method's name
 
-> Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned.
+> Los métodos base no pueden ser renombrados. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned.
 
 #### Atributos
 
@@ -90,7 +90,7 @@ If you do not want users to be able to run a project method using the **Method..
 
 When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
 
-##### Shared by components and host database
+##### Compartido por los componentes y la base local
 
 This attribute is used within the framework of components. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases.
 
@@ -110,7 +110,7 @@ If you want to benefit from the preemptive mode feature, you must explicitly dec
 
 **Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Preemptive-4D-processes.300-5830919.en.html) section.
 
-The following options are provided:
+Se ofrecen las siguientes opciones:
 
 -   **Can be run in preemptive processes**: By checking this option, you declare that the method is capable of being run in a preemptive process and therefore should be run in preemptive mode whenever possible. The "preemptive" property of the method is set to "capable".
 
@@ -177,7 +177,7 @@ For more information, refer to [4D SQL engine implementation](https://doc.4d.com
 
 Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
 
-For batch setting of method attributes:
+Para la configuración por lotes de los atributos del método:
 
 1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. The **Attributes for methods** dialog appears.
 2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch. The character string is used as a search criterion for the method names. Use the wildcard character @ to help define groups of methods:
@@ -189,5 +189,5 @@ For batch setting of method attributes:
         -   The search does not take upper/lower case into account.
         -   You can enter several @ characters in the string, for example dtro_@web@pro.@
 3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
-4.  Click on **Apply**. The modification is applied instantly to all the project methods designated by the character string entered.
+4.  Haga clic en **Aplicar**. The modification is applied instantly to all the project methods designated by the character string entered.
 

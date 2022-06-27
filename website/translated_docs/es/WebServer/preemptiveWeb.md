@@ -35,7 +35,7 @@ The following table indicates whether the preemptive mode is used or is availabl
 
 
 
-## Writing thread-safe web server code
+## Escribir código servidor web hilo seguro
 
 All 4D code executed by the web server must be thread-safe if you want your web processes to be run in preemptive mode. When the [preemptive mode is enabled](#availability-of-preemptive-mode-for-web-processes), the following parts of the application will be automatically evaluated by the 4D compiler:
 
