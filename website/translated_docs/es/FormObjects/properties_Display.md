@@ -24,7 +24,7 @@ When the user enters "RB17621," the field displays:
 
     RB-1762-1
 
-The field actually contains "RB17621".
+El campo contiene realmente "RB17621".
 
 If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is:
 
@@ -63,19 +63,19 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
-The table below shows choices available:
+La siguiente tabla muestra las opciones disponibles:
 
-| Nombre del formato              | Cadena JSON     | Example (US system)           |
-| ------------------------------- | --------------- | ----------------------------- |
-| System date short               | - (por defecto) | 03/25/20                      |
-| System date abbreviated *(1)*   | systemMedium    | Wed, Mar 25, 2020             |
-| System date long                | systemLong      | Wednesday, March 25, 2020     |
-| RFC 822                         | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT |
-| Short Century                   | shortCentury    | 03/25/20 but 04/25/2032 *(2)* |
-| Internal date long              | largo           | March 25, 2020                |
-| Internal date abbreviated *(1)* | abbreviated     | Mar 25, 2020                  |
-| Internal date short             | short           | 03/25/2020                    |
-| ISO Date Time *(3)*             | iso8601         | 2020-03-25T00:00:00           |
+| Nombre del formato              | Cadena JSON     | Example (US system)            |
+| ------------------------------- | --------------- | ------------------------------ |
+| System date short               | - (por defecto) | 03/25/20                       |
+| System date abbreviated *(1)*   | systemMedium    | Wed, Mar 25, 2020              |
+| System date long                | systemLong      | Wednesday, March 25, 2020      |
+| RFC 822                         | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT  |
+| Short Century                   | shortCentury    | 03/25/20 pero 04/25/2032 *(2)* |
+| Internal date long              | largo           | March 25, 2020                 |
+| Internal date abbreviated *(1)* | abbreviated     | Mar 25, 2020                   |
+| Internal date short             | short           | 03/25/2020                     |
+| ISO Date Time *(3)*             | iso8601         | 2020-03-25T00:00:00            |
 
 *(1)* To avoid ambiguity and in accordance with current practice, the abbreviated date formats display "jun" for June and "jul" for July. This particularity only applies to French versions of 4D.
 
@@ -109,12 +109,12 @@ Number formats control the way numbers appear when displayed or printed. For dat
 
 In each of the number display formats, the number sign (#), zero (0), caret (^), and asterisk (*) are used as placeholders. You create your own number formats by using one placeholder for each digit you expect to display.
 
-| Marcador | Effect for leading or trailing zero |
-| -------- | ----------------------------------- |
-| #        | No muestra nada                     |
-| 0        | Muestra 0                           |
-| ^        | Displays a space (1)                |
-| *        | Displays an asterisk                |
+| Marcador | Efecto para cero inicial o posterior |
+| -------- | ------------------------------------ |
+| #        | No muestra nada                      |
+| 0        | Muestra 0                            |
+| ^        | Displays a space (1)                 |
+| *        | Displays an asterisk                 |
 
 (1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
 
@@ -127,7 +127,7 @@ If the user enters a negative number, the leftmost character is displayed as a m
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
-Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. If the user enters 26, the field displays 26.
+Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. Si el usuario introduce 26, el campo muestra 26.
 
 
 ### Separator characters
@@ -140,13 +140,13 @@ The numeric display formats (except for scientific notations) are automatically 
 
 You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
 
-You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. For example, if you use the following format:
+You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. Por ejemplo, si utiliza el siguiente formato:
 
     $##0
 
 a dollar sign always appears because it is placed before the placeholders.
 
-If characters are placed between placeholders, they appear only if digits are displayed on both sides. For example, if you define the format:
+If characters are placed between placeholders, they appear only if digits are displayed on both sides. Por ejemplo, si define el formato:
 
     ###.##0
 
@@ -154,7 +154,7 @@ the point appears only if the user enters at least four digits.
 
 Spaces are treated as characters in number display formats.
 
-### Formats for positive, negative, and zero
+### Formatos para positivo, negativo y cero
 
 A number display format can have up to three parts allowing you to specify display formats for positive, negative, and zero values. You specify the three parts by separating them with semicolons as shown below:
 
@@ -435,12 +435,12 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 
 
-Allows a check box object to accept a third state. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
+Permite que un objeto casilla de selección acepte un tercer estado. La variable asociada a la casilla de selección devuelve el valor 2 cuando la casilla está en el tercer estado.
 
 
-#### Three-states check boxes in list box columns
+#### Casillas de verificación de tres estados en columnas list box
 
-List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
+List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. Si se elige, se muestran los siguientes valores:
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
 *   2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
@@ -535,7 +535,7 @@ This property allows hiding the object in the Application environment.
 
 You can handle the Visibility property for most form objects. This property is mainly used to simplify dynamic interface development. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The developer can then program their display using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv18/help/command/en/page603.html) command when needed.
 
-#### Automatic visibility in list forms
+#### Visibilidad automática en los formularios lista
 
 In the context of ["list" forms](FormEditor/properties_FormProperties.md#form-type), the Visibility property supports two specific values:
 
