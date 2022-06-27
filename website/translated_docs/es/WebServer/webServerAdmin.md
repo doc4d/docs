@@ -57,7 +57,7 @@ Este comando permite verificar que el servidor web, la visualización de la pág
 
 En cualquier momento, puede vacíar la caché de las páginas y de las imágenes que contiene (si, por ejemplo, ha modificado una página estática y quiere volver a cargarla en la caché).
 
-To do so, you just have to click on the **Clear Cache** button in the Web/Options (I) page of the Settings dialog box. The cache is then immediately cleared.
+To do so, you just have to click on the **Clear Cache** button in the Web/Options (I) page of the Settings dialog box. La caché se borra inmediatamente.
 > También puede utilizar la URL [/4DCACHECLEAR](#cacheclear).
 
 
@@ -203,7 +203,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                                                                     |
 | CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                                                                       |
-| CS_URI_STEM  | X   | X   | Part of request without query parameters                                                                                    |
+| CS_URI_STEM  | X   | X   | Parte de la petición sin los parámetros de consulta                                                                         |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year                                                  |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                                                                         |
 | PATH_ARGS      |     | X   | Parámetros CGI: cadena situada después del caracter "$"                                                                     |
@@ -234,10 +234,10 @@ Primero debe elegir la frecuencia (días, semanas, etc.) o el criterio de límit
 
 *   **No Backup**: The scheduled backup function is deactivated.
 
-*   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
+*   **Every X hour(s)**: This option is used to program backups on an hourly basis. Puede introducir un valor entre 1 y 24 .
     *   **starting at**: Used to set the time at which the first back up will begin.
 
-*   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
+*   **Every X day(s) at X**: This option is used to program backups on a daily basis. Introduzca 1 si desea realizar una copia de seguridad diaria. When this option is checked, you must indicate the time when the backup must be started.
 
 *   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
 

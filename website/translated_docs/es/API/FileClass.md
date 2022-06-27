@@ -104,7 +104,7 @@ En el parámetro *fileConstant*, pase un archivo 4D interno o sistema, utilizand
 | Backup settings file              | 1     | Archivo backup.4DSettings por defecto (formato xml), almacenado en la carpeta Settings del proyecto                                                                                                                                                                                                                                                                                                      |
 | Backup settings file for data     | 17    | archivo backup.4DSettings del archivo de datos (formato xml), almacenado en la carpeta Settings de la carpeta data                                                                                                                                                                                                                                                                                       |
 | Build application log file        | 14    | Archivo de historial actual en formato xml del generador de aplicaciones. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                                                                 |
-| Build application settings file   | 20    | Default settings file of the application builder ("buildApp.4DSettings"). Stored in the Settings folder of the project.                                                                                                                                                                                                                                                                                  |
+| Build application settings file   | 20    | Default settings file of the application builder ("buildApp.4DSettings"). Almacenado en la carpeta Settings del proyecto.                                                                                                                                                                                                                                                                                |
 | Compacting log file               | 6     | Log file of the most recent compacting done with the Compact data file command or the Maintenance and security center. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                    |
 | Current backup settings file      | 18    | backup.4DSettings file currently used by the application. It can be the backup settings file (default) or a custom user backup settings file defined for the data file                                                                                                                                                                                                                                   |
 | Debug log file                    | 12    | Log file created by the `SET DATABASE PARAMETER(Debug log recording)` command. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                                                            |
@@ -209,12 +209,12 @@ Creation of a preferences file in the database folder:
 **.createAlias**( *destinationFolder* : 4D.Folder ; *aliasName* : Text { ; *aliasType* : Integer } ) : 4D.File<!-- END REF -->
 
 <!--REF #FileClass.createAlias().Params -->
-| Parámetros        | Tipo      |    | Descripción                                  |
-| ----------------- | --------- | -- | -------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Texto     | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Tipo de enlace del alias                     |
-| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo  |
+| Parámetros        | Tipo      |    | Descripción                                          |
+| ----------------- | --------- | -- | ---------------------------------------------------- |
+| destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo |
+| aliasName         | Texto     | -> | Name of the alias or shortcut                        |
+| aliasType         | Integer   | -> | Tipo de enlace del alias                             |
+| Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo          |
 <!-- END REF -->
 
 
@@ -347,7 +347,7 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 > La función sólo admite archivos .plist en formato xml (basados en texto). Se devuelve un error si se utiliza con un archivo .plist en formato binario.
 
-**Returned object with a .exe or .dll file**
+**Objeto devuelto con un archivo .exe o .dll**
 
 > La lectura de un .exe o .dll sólo es posible en Windows.
 
@@ -600,7 +600,7 @@ If you pass a null or empty text as value, an empty string is written in the pro
 
 ***info* parameter object with a .plist file**
 
-Each valid property set in the *info* object parameter is written in the .plist file as a key. Se acepta todo nombre de llave. Value types are preserved when possible.
+Each valid property set in the *info* object parameter is written in the .plist file as a key. Se acepta todo nombre de llave. Los tipos de valores se conservan cuando es posible.
 
 If a key set in the *info* parameter is already defined in the .plist file, its value is updated while keeping its original type. Other existing keys in the .plist file are left untouched.
 

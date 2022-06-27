@@ -463,9 +463,9 @@ Name of the web server application. Useful when component web servers are starte
 
 ## OpenSSL Version
 
-| Can be set with  | Nome                                                     | Comentários |
-| ---------------- | -------------------------------------------------------- | ----------- |
-| webServer object | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Read-only   |
+| Can be set with  | Nome                                                     | Comentários     |
+| ---------------- | -------------------------------------------------------- | --------------- |
+| webServer object | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Somente leitura |
 
 Version of the OpenSSL library used.
 

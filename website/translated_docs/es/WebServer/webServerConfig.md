@@ -145,7 +145,7 @@ Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stor
 | `WEB SET HOME PAGE`           |                                                            | Puede ser diferente para cada proceso web |
 | Caja de diálogo de parámetros | Configuration page/Default Home Page                       |                                           |
 
-Designate a default home page for the web server. This page can be static or [semi-dynamic].
+Designate a default home page for the web server. Esta página puede ser estática o [semi-dynamic].
 
 By default, when the web server is launched for the first time, 4D creates a home page named "index.html" and puts it in the HTML root folder. If you do not modify this configuration, any browser connecting to the web server will obtain the following page:
 
@@ -207,7 +207,7 @@ Estado de la comunicación a través de HTTPS. Esta opción se describe en [esta
 | objeto webServer    | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Booleano, true para activar HSTS (por defecto es false) |
 | `WEB SET OPTION`    | `Web HSTS enabled`                                 | 0 (desactivado, por defecto) o 1 (activado)             |
 
-HTTP Strict Transport Security (HSTS) status.
+Estado de HTTP Strict Transport Security (HSTS).
 
 When [HTTPS is enabled](#enable-https), keep in mind that if [HTTP is also enabled](#enable-http), the browser can still switch between HTTPS and HTTP (for example, in the browser URL area, the user can replace "https" by "http"). To forbid http redirections, you can [disable HTTP](#enable-http), however in this case an error message is displayed to client HTTP requests.
 
@@ -253,7 +253,7 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 
 In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Este parámetro es útil para evitar la pérdida de tiempo de la máquina al comprimir los intercambios pequeños.
 
-Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
+Pasa el tamaño expresado en bytes como valor. By default, the compression threshold is set to 1024 bytes.
 
 
 ## Puerto HTTP
@@ -264,7 +264,7 @@ Pass the size expressed in bytes as value. By default, the compression threshold
 | `WEB SET OPTION`              | `Web port ID`                                |             |
 | Caja de diálogo de parámetros | Página Configuración/Puerto HTTP             |             |
 
-Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
+Número de puerto IP (TCP) de escucha para HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
 
 > En macOS, la modificación del puerto HTTP permite iniciar el servidor web 4D sin ser el usuario raíz de la máquina (ver [macOS HelperTool](#macos-helpertool)).
 
@@ -294,7 +294,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | `WEB SET OPTION`              | `Web HTTPS port ID`                            |             |
 | Caja de diálogo de parámetros | Página Configuración/Puerto HTTPS              |             |
 
-Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
+Listening IP port number for HTTPS connections via TLS. Por defecto, el valor es 443 (valor estándar). See also [HTTP Port](#http-port) for information on port numbers.
 
 
 ## Tiempo de espera del proceso inactivo
@@ -427,7 +427,7 @@ Valores posibles: 500 000 a 2 147 483 648.
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
 | `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Maximum number of simultaneous sessions. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+Número máximo de sesiones simultáneas. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
 Default value: 100 (pass 0 to restore the default value).
 
@@ -459,7 +459,7 @@ Valores posibles:
 | objeto webServer    | [`name`](API/WebServerClass.md#name) |             |
 
 
-Nombre de la aplicación del servidor web. Useful when component web servers are started.
+Nombre de la aplicación del servidor web. Útil cuando se inician los servidores web de los componentes.
 
 ## Versión OpenSSL
 
@@ -522,7 +522,7 @@ In this case, robots are not allowed to access the entire site.
 | `WEB SET ROOT FOLDER`         |                                                  |                                                                                                                                       |
 | Caja de diálogo de parámetros | Configuration page/Default HTML Root             |                                                                                                                                       |
 
-Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
+Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. La ruta de acceso está en formato POSIX (ruta completa). The web server will need to be restarted in order for the new root folder to be taken into account.
 
 Moreover, the HTML root folder defines, on the web server hard drive, the hierarchical level above which the files will not be accessible. If a requested URL or a 4D command tries to access a file located above the HTML root folder, an error is returned indicating that the file has not been found.
 
@@ -606,9 +606,9 @@ This option enables the preemptive mode for your application's web server code w
 
 ## Parámetros obsoletos
 
-The following settings are still supported but rely on deprecated features or technologies. It is usually recommended to keep default values.
+The following settings are still supported but rely on deprecated features or technologies. Generalmente se recomienda mantener los valores por defecto.
 
-#### Allow database Access through 4DSYNC URLs
+#### Permitir el acceso a la base de datos a través de las URL 4DSYNC
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
 
@@ -616,7 +616,7 @@ This option controls the support of HTTP synchronization requests containing dep
 
 > This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
 
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
+Estado de validación de la dirección IP para las cookies de sesión. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
 
 
 #### Reutilizar los contextos temporales (en modo remoto)
@@ -639,9 +639,9 @@ When this option is checked, the web server sends extended characters “as is�
 
 #### Conexiones Keep-Alive
 
-The 4D Web Server can use keep-alive connections. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
+El servidor web 4D puede utilizar conexiones persistentes. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
 
-The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. This option is enabled by default. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
+The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. Esta opción está activada por defecto. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
 
 The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
 
