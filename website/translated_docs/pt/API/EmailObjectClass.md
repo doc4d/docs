@@ -3,25 +3,25 @@ id: EmailObjectClass
 title: Email
 ---
 
-Creating, sending or receiving emails in 4D is done by handling an `Email` object.
+Criar, enviar ou receber e-mails em 4D é feito manipulando um objeto de `e-Mail`.
 
-`Email` objects are created when receiving mails through a *transporter* class function:
+Objetos`email` são criados ao receber e-mails através de uma função de classe *transporter*:
 
-- IMAP - [`.getMail()`](IMAPTransporterClass.md#getmail) and [`.getMails()`](IMAPTransporterClass.md#getmails) functions to get emails from an IMAP server
-- POP3 - [`.getMail()`](POP3TransporterClass.md#getmail) function to get an email from a POP3 server.
+- IMAP - [`.getMail()`](IMAPTransporterClass.md#getmail) e [`.getMails()`](IMAPTransporterClass.md#getmails) funções para obter e-mails de um servidor IMAP
+- POP3 - [`.getMail()`](POP3TransporterClass.md#getmail) função para receber um e-mail de um servidor POP3.
 
-> You can also create a new, blank `Email` object by calling the [`New object`](https://doc.4d.com/4dv18/help/command/en/page1471.html) 4D command, and then fill it with [Email object properties](#email-object).
+> Você também pode criar um novo, objeto `Email` em branco chamando o comando 4D [`Novo objeto`](https://doc.4d.com/4dv18/help/command/en/page1471.html), e, em seguida, preencha com [Propriedades do objeto de e-mail](#email-object).
 
-You send `Email` objects using the SMTP [`.send()`](SMTPTransporterClass.md#send) function.
+Você envia  objetos `e-Mail` usando a função SMTP [`.send()`](SMTPTransporterClass.md#send).
 
-[`MAIL Convert from MIME`](#mail-convert-from-mime) and [`MAIL Convert to MIME`](#mail-convert-to-mime) commands can be used to convert `Email` objects to and from MIME contents.
+[`MIME Converter do MIME`](#mail-convert-from-mime) e [`Converter para comandos MIME`](#mail-convert-to-mime) podem ser usados para converter objetos `Email` a partir de ou para conteúdos MME.
 
 
-### Email Object
+### Objeto Email
 
-Email objects provide the following properties:
+Objetos de e-mail fornecem as seguintes propriedades:
 
-> 4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the Email object.
+> 4D segue a [especificação JMAP](https://jmap.io/spec-mail.html) para formatar o objeto de e-mail.
 
 |                                                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,36 +49,36 @@ Email objects provide the following properties:
 | [<!-- INCLUDE #EmailObjectClass.to.Syntax -->](#to)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EmailObjectClass.to.Summary -->                                  |
 
 
-### Email Addresses
+### Endereços de Email
 
-All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) accept a value of text, object, or collection type.
+Todas as propriedades que contêm endereços de e-mail ([`de`](#from), [`cc`](#cc), [`bcc`](#bcc), [`a`](#to), [`remetente`](#sender), , [`responde`](#replyto)) aceita um valor de texto, objeto ou tipo de coleção.
 
 #### Texto
 
-- single email: "somebody@domain.com"
-- single display name+email: "Somebody <somebody@domain.com>"
-- several emails: "Somebody <somebody@domain.com>,me@home.org"
+- e-mail único: "somebody@domain.com"
+- um nome+email: "Somebody <somebody@domain.com>"
+- vários emails: "Somebody <somebody@domain.com>,me@home.org"
 
 #### Objeto
 
-An object with two properties:
+Um objeto com duas propriedades:
 
-| Propriedade | Type  | Descrição                  |
-| ----------- | ----- | -------------------------- |
-| name        | Texto | Display name (can be null) |
-| email       | Texto | Email address              |
+| Propriedade | Tipo  | Descrição                        |
+| ----------- | ----- | -------------------------------- |
+| name        | Texto | Nome de exibição (pode ser nulo) |
+| email       | Texto | Endereço de Email                |
 
 #### Coleção
 
-A collection of address objects.
+Uma coleção de objetos de endereço.
 
-### Handling body part
+### Gesttão do corpo do correio eletrônico
 
-The [`textBody`](#textbody) and [`htmlBody`](#htmlbody) properties are only used with the [SMTP.send()](SMTPTransporterClass.md#send) function to allow sending simple mails. When both property are filled, the MIME content-type multipart/alternative is used. The email client should then recognize the multipart/alternative part and display the text part or html part as necessary.
+As propriedades [`textBody`](#textbody) e [`htmlBody`](#htmlbody) são usadas apenas com o [SMTP. send()](SMTPTransporterClass.md#send) permitir envio de e-mails simples. Quando ambas as propriedades são preenchidas, o tipo de conteúdo MIME multiparte/alternativo é utilizada. O cliente de email deve reconhecer a parte multiparte/alternativa e exibir a parte do texto ou html conforme necessário.
 
-[`bodyStructure`](#bodystructure) and [`bodyValues`](#bodyvalues) are used for [SMTP](SMTPTransporterClass.md) when the [Email object](email-object) is built from a MIME document, e.g. when generated by the `MAIL Convert from MIME` command. In this case, both `bodyStructure` and `bodyValues` properties must be passed together, and it is not recommended to use `textBody` and `htmlBody`.
+[`bodyStructure`](#bodystructure) e [`bodyValues`](#bodyvalues) são utilizados para [SMTP](SMTPTransporterClass.md) quando o [objeto Email](email-object) for construído a partir de um documento MIME., ou seja,  quando gerado pelo comando `MAIL Convert from MIME`. Neste caso, tanto as propriedades `bodyStructure` e `bodyValues` devem ser passados juntas, e não é recomendado usar o `textBody` e `htmlBody`.
 
-#### Example of bodyStructure and bodyValues objects
+#### Exemplo de objetos bodyStructure e bodyValues
 
 ```json
 "bodyStructure": {
@@ -119,9 +119,9 @@ The [`textBody`](#textbody) and [`htmlBody`](#htmlbody) properties are only used
 
 
 
-The `.attachments` property contains a <!-- REF #EmailObjectClass.attachments. Summary -->collection of `4D. MailAttachment` object(s)<!-- END REF -->.
+A propriedade `.attachments` contém um <!-- REF #EmailObjectClass.attachments.Summary -->coleção de objetos `4D.MailAttachment`  <!-- END REF -->.
 
-Attachment objects are defined through the [`MAIL New attachment`](MailAttachmentClass.md#mail-new-attachment) command. Attachment objects have specific [properties and functions](MailAttachmentClass.md).
+Objetos de anexo são definidos através do comando [`MAIL New attachment`](MailAttachmentClass.md#mail-new-attachment). Objetos de anexos têm propriedades e funções específicas [](MailAttachmentClass.md).
 
 
 
@@ -134,7 +134,7 @@ Attachment objects are defined through the [`MAIL New attachment`](MailAttachmen
 
 #### Descrição
 
-The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc. Summary -->Blind Carbon Copy (BCC) hidden email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+A propriedade `.bcc` contiém a <!-- REF #EmailObjectClass.bcc.Summary -->cópia da mensagem invisível (BCC) dos [endereços ](#email-addresses)dos destinatários do correio eletrônico<!-- END REF -->.
 
 
 
@@ -147,21 +147,21 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc. Summary -->Blin
 
 #### Descrição
 
-The `.from` property contains the <!-- REF #EmailObjectClass.from. See <a href="#handling-body-part">Handling body part</a> section.
+A propriedade `.bodyStructure` contém  o objeto <!-- REF #EmailObjectClass.bodyStructure. Summary-->*EmailBodyPart* , ou seja, a estrutura MIME completa do corpo da mensagem (opcional)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
 
-The `.bodyStructure` object contains the following properties:
+O objeto `.bodyStructure` contém as seguintes propriedades:
 
-| Propriedade | Type                  | Value                                                                                                                                                   |
-| ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partID      | Texto                 | Identifies the part uniquely within the email                                                                                                           |
-| type        | Texto                 | (mandatory) Value of the Content-Type header field of the part                                                                                          |
-| charset     | Texto                 | Value of the charset parameter of the Content-Type header field                                                                                         |
-| encoding    | Texto                 | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
-| disposition | Texto                 | Value of the Content-Disposition header field of the part                                                                                               |
-| language    | Collection of texts   | List of language tags, as defined in [RFC3282](https://tools.ietf.org/html/rfc3282), in the Content-Language header field of the part, if present.      |
-| location    | Texto                 | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
-| subParts    | Collection of objects | Body parts of each child (collection of *EmailBodyPart* objects)                                                                                        |
-| headers     | Collection of objects | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property) |
+| Propriedade | Tipo                   | Valor                                                                                                                                                       |
+| ----------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| partID      | Texto                  | Identifica a parte de maneira única dentro do email                                                                                                         |
+| type        | Texto                  | (obrigatório) Valor do campo de cabeçalho Content-Type da parte                                                                                             |
+| charset     | Texto                  | Valor do parâmetro charset do campo de cabeçalho Content-Type                                                                                               |
+| encoding    | Texto                  | Se `isEncodingProblem=true`, o valor de Content-Transfer-Encoding é adicionado (por padrão indefinido)                                                      |
+| disposition | Texto                  | Valor do campo de cabeçalho Conteúdo - Disposição da parte                                                                                                  |
+| Línguagem   | Coleção de textos      | Lista de tags de idioma, conforme definido em [RFC3282](https://tools.ietf.org/html/rfc3282), no campo de cabeçalho Content-Language da parte, se presente. |
+| location    | Texto                  | URI, como definido em [RFC2557](https://tools.ietf.org/html/rfc2557), no campo de cabeçalho Content-Location da parte, se estiver presente.                 |
+| subParts    | Uma coleção de objetos | Partes do corpo de cada filho (coleção de objetos*EmailBodyPart* )                                                                                          |
+| headers     | Collection of objects  | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property)     |
 
 
 
