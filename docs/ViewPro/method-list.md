@@ -718,6 +718,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 #### See also
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
@@ -728,7 +729,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 |v19 R6|Added
 </details>
 
-<!-- REF #_method_.VP CREATE TABLE.Syntax -->**VP CREATE TABLE** ( *rangeObj* : Object; *name* : Text {; *source* : Text}{; *options* : Object} )
+<!-- REF #_method_.VP CREATE TABLE.Syntax -->**VP CREATE TABLE** ( *rangeObj* : Object ; *tableName* : Text {; *source* : Text} {; *options* : Object} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP CREATE TABLE.Params -->
@@ -736,24 +737,27 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 |Parameter|Type||Description|
 |---|---|---|---|
 |rangeObj|Object|->|Range object|
-|name|Text|->|Name for the table|
-|source|Text|->|Data context attribute name to display in the table|
+|tableName|Text|->|Name for the table|
+|source|Text|->|Data context property name to display in the table|
 |options|Object|->|Additional options|
 <!-- END REF -->  
 
 #### Description
 
-The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->.
+The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->. You can create a table in a range of cells to make managing and analyzing a group of related data easier. A table typically contains related data in rows and columns, and takes advantage of a [data context](#vp-set-data-context).
+
+![](assets/en/ViewPro/vp-create-table.png)
 
 In *rangeObj*, pass the cell range where the table will be created.
 
-In *name*, pass a name for the table. The name must:  
+In *tableName*, pass a name for the table. The name must:  
 
 * be unique in the sheet
 * include at least 5 characters
-* cannot include spaces or start with a number
+* not include spaces or start with a number
 
-In *source*, you can pass an attribute name from the [data context](#vp-set-data-context) to display its data in the table. This binds the table to the data context. When the data context is updated, the data displayed in the table is updated accordingly. Note that: 
+In *source*, you can pass a property name of a [data context](#vp-set-data-context) to display its data in the table. This binds the table to the data context. When the data context is updated, the data displayed in the table is updated accordingly. The *source* property must contain a collection of objects and each element represents a row. 
+
   * If you don't specify a *source*, the command creates an empty table with the size defined in *rangeObj*. 
   * If the specified *source* cannot be fully displayed in the document, no table is created.
 
@@ -764,40 +768,38 @@ In *options*, you can pass an object with additional options for the table. Poss
 |showFooter|Boolean|Display a footer| False
 |showHeader|Boolean|Display a header| True
 |showResizeHandle|Boolean|For tables that don't have a *source*. Display the resize handle| False
-|tableColumns|Collection|Collection of objects used to create the table's columns| Undefined
+|tableColumns|Collection|Collection of objects used to create the table's columns (see below)| Undefined
 |useFooterDropDownList|Boolean|Use a dropdown list in footer cells that calculate the total value of a column| False
 
-  The *tableColumns* collection determines the structure of the table's columns. Each object in the collection has the following values:
+The *tableColumns* collection determines the structure of the table's columns. Each object in the collection has the following values:
 
   |Property|Type|Description|Mandatory
   |---|---|---|---|
-  |dataField|Text| table column's data field (to access the data context)| No
+  |dataField|Text| table column's property name in the data context| No
   |formatter|Text| table column's formatter | No
   |name|Text| table column's name | Yes
+  
+The length of the *tableColumns* collection must be equal to the range column count:
 
   * When the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
-
   * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-If you pass a *source* but no *tableColumn* option, the command generates columns automatically. In this case, *rangeObj* must be a cell range. Otherwise, the first cell of the range is used.
+If you pass a *source* but no *tableColumn* option, the command generates columns automatically. In this case, *rangeObj* must be a cell range. Otherwise, the first cell of the range is used. When generating columns automatically, the following rules apply:
 
-When generating columns automatically, the following rules apply:
+* If the data passed to the command is a collection of objects, the property names are used as column titles. For example:
 
-* If the data passed to the command is a collection of objects, the attribute names are used as column titles. For example:
+```4d
+([{ LastName: \"Freehafer\", FirstName: \"Nancy\"},{ LastName: \"John\", FirstName: \"Doe\"})
+```
+Here the titles of the columns would be `LastName` and `FirstName`.
 
-`([{ LastName: \"Freehafer\", FirstName: \"Nancy\"},{ LastName: \"John\", FirstName: \"Doe\"})`
+* If the data passed to the command is a collection of scalar values, it must contain a collection of subcollections:
 
-  Here the titles of the columns would be `LastName` and `FirstName`.
-
-* If the data passed is a collection that holds scalar data, it is two dimensional:
-
-  * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
-
+  * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row. The number of values in the first subcollection determines how many columns are created.
   * The subcollections' indices are used as column titles.
+  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. A `Time` value must be an a object containing a time attribute, as described in [VP SET VALUE](#vp-set-value). 
 
-  * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. `Time` must be an a object containing a time attribute, as in [VP SET VALUE](#vp-set-value). The number of values in the first subcollection determines how many columns are created. 
-
-  > This only works when generating columns automatically. You cannot use a collection of scalar data with the *tableColumns* option.
+> This only works when generating columns automatically. You cannot use a collection of scalar data with the *tableColumns* option.
 
 
 #### Example
@@ -826,7 +828,7 @@ $options.tableColumns.push(New object("name"; "Last name"; "dataField"; "lastNam
 $options.tableColumns.push(New object("name"; "Email"; "dataField"; "email"))
 
 // Create a table from the "people" collection
-VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; 3; 2); "ContextTable"; "people"; $options)
+VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); "ContextTable"; "people"; $options)
 ```
 
 Here's the result:
@@ -1068,6 +1070,7 @@ Here's the result:
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv-result.png)
 
 #### See also
+
 
 [VP Convert to picture](#vp-convert-to-picture)<br/>[VP Export to object](#vp-export-to-object)<br/>[VP Column](#vp-import-document)<br/>[VP Print](#vp-print)
 
@@ -1592,6 +1595,7 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 |Parameter|Type| |Description|
 |---|---|---|---|
+
 |vpAreaName  |Text|->|4D View Pro area from object name|
 |sheet  |Integer|->|Sheet index (current sheet if omitted)|
 |Result  |Integer|<-|Total number of columns |
@@ -3216,7 +3220,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 |v19 R6|Added
 </details>
 
-<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheetId* : Integer}} )
+<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
@@ -3231,7 +3235,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 #### Description
 
-The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes a table<!-- END REF -->.
+The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes a table<!-- END REF --> that you created with [VP CREATE TABLE](#vp-create-table).
 
 In *vpAreaName*, pass the name of the area where the table to remove is located.
 
@@ -3241,9 +3245,9 @@ In *options*, you can specify additional behavior. Possible values are:
 
 |Constant|Value|Description|
 |---|---|---|
-|vk remove table option remove all|0|Remove the table but keep the data and styles|
-|vk remove table option keep data|1|Keep the data|
-|vk remove table option keep style|2|Keep the style|
+|vk table remove all|0|Remove all including style and data|
+|vk table remove style|1|Remove style but keep data|
+|vk table remove data|2|Remove data but keep style|
 
 Table names are defined at sheet level. You can specify where the table is located using the optional *sheet* parameter (indexing starts at 0).
 
@@ -3252,7 +3256,7 @@ Table names are defined at sheet level. You can specify where the table is locat
 To remove the "people" table in the second sheet and keep the data in the cells:
 
 ```4d
-VP REMOVE TABLE("ViewProArea"; "people"; vk remove table option keep data; 2)
+VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 ```
 
 #### See also
@@ -3920,6 +3924,7 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 The `VP SET COLUMN COUNT` command <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->defines the total number of columns in *vpAreaName*<!-- END REF -->.
 
+
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
 Pass the total number of columns in the *columnCount* parameter. *columnCount* must be greater than 0.
@@ -4129,6 +4134,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data)
 
 VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+
 ```
 
 ![](assets/en/ViewPro/vp-set-data-context-bind.png)
