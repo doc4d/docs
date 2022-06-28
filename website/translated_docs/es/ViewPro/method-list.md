@@ -858,7 +858,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | includeFormatInfo    | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
 | includeBindingSource | Booleano | 4DVP únicamente. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False en caso contrario. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                              |
 | sheetIndex           | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| pdfOptions           | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>título del documento.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>palabras clave asociadas al documento.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| pdfOptions           | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>título del documento.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>palabras clave asociadas al documento.</td></tr><tr><td>subject</td><td>texto</td><td>asunto del documento.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Objeto rango de celdas</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Delimitador de columna. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | \<customProperty>   | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
@@ -2122,7 +2122,7 @@ $sheetName:=VP Get sheet name("ViewProArea";2)
 | ---------- | ------- | -- | ------------------------------------------- |
 | vpAreaName | Texto   | -> | 4D View Pro area from object name           |
 | sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite) |
-| Resultado  | Objeto  | <- | Sheet options object                        |
+| Resultado  | Objeto  | <- | Objeto opciones de la hoja                  |
 <!-- END REF -->  
 
 #### Descripción
@@ -2396,7 +2396,7 @@ End if
 | Parámetros | Tipo       |    | Descripción          |
 | ---------- | ---------- | -- | -------------------- |
 | rangeObj   | Objeto     | -> | Objeto rango         |
-| Resultado  | Collection | <- | Collection of values |
+| Resultado  | Collection | <- | Colección de valores |
 <!-- END REF -->  
 
 #### Descripción
@@ -2753,7 +2753,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 | vpAreaName | Texto   | -> | 4D View Pro area form object name             |
 | rangeName  | Texto   | -> | Nombre del rango existente                    |
 | scope      | Integer | -> | Ubicación del rango (hoja actual si se omite) |
-| Resultado  | Objeto  | <- | Range object of name                          |
+| Resultado  | Objeto  | <- | Rango de nombre                               |
 
 <!-- END REF -->  
 
