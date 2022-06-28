@@ -6,6 +6,11 @@ title: ドキュメンテーション更新情報
 このドキュメントのおもな更新内容のリストです。 4D製品の新機能についての一般的な情報は、[doc.4d.com](https://doc.4d.com) の **リリースノート** を参照ください。
 
 
+## 4D v19 R6
+
+- 4D View Pro: new [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
+
+
 ## 4D v19 R5
 
 - ビルドされたクライアント/サーバーアプリケーション:
@@ -66,7 +71,7 @@ title: ドキュメンテーション更新情報
 - 新しい [4DEACH](Tags/tags.md#4deach-and-4dendeach) 変換タグ
 - Web サーバー: 新しい [SameSite セッションcookie](WebServer/webServerConfig.md#セッションcookie-samesite) 設定
 - [フォーム](FormEditor/properties_FormProperties.md#カラースキーム) および [スタイルシート](FormEditor/createStylesheet.md#メディアクエリ) 用のダークおよびライトカラースキームサポート
-- [コードエディター環境設定](Preferences/methods.md#テーマリスト) の新しいデフォルトの Dark および Lightテーマ
+- New default dark and light themes in [Code Editor preferences](Preferences/methods.md#theme-list).
 - Apple Silicon プロセッサー用の [ネイティブコンパイル](Project/compiler.md#コンパイラーメソッド)
 - エンティティセレクション型リストボックスの列で、[変数の計算](FormObjects/properties_Object.md#変数の計算) プロパティがサポートされるようになりました。
 - 新しい包括的な [CLI](Admin/cli.md) (コマンドラインインターフェース) ページ
