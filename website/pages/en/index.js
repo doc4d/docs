@@ -54,7 +54,7 @@ class Index extends React.Component {
       restServer: <translate>REST Server</translate>,
       msc: <translate>Maintenance and Security Center</translate>,
       backup: <translate>Backup and Restore</translate>,
-      licenses: <translate>License Management</translate>,
+      licenses: <translate>Licenses & Data Collection</translate>,
       buildApp: <translate>Build Application</translate>,
       webAdmin: <translate>Web Administration</translate>,
       serverAdmin: <translate>4D Server Administration Window</translate>,
