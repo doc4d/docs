@@ -119,7 +119,7 @@ The [`textBody`](#textbody) and [`htmlBody`](#htmlbody) properties are only used
 
 
 
-The `.attachments` property contains a <!-- REF #EmailObjectClass.attachments. Summary -->collection of `4D. MailAttachment` object(s)<!-- END REF -->.
+A propriedade `.attachments` contém um <!-- REF #EmailObjectClass.attachments.Summary -->coleção de objetos `4D.MailAttachment`  <!-- END REF -->.
 
 Attachment objects are defined through the [`MAIL New attachment`](MailAttachmentClass.md#mail-new-attachment) command. Attachment objects have specific [properties and functions](MailAttachmentClass.md).
 
@@ -134,7 +134,7 @@ Attachment objects are defined through the [`MAIL New attachment`](MailAttachmen
 
 #### Descrição
 
-The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc. Summary -->Blind Carbon Copy (BCC) hidden email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+A propriedade `.bcc` contiém a <!-- REF #EmailObjectClass.bcc.Summary -->cópia da mensagem invisível (BCC) dos [endereços ](#email-addresses)dos destinatários do correio eletrônico<!-- END REF -->.
 
 
 
@@ -147,7 +147,7 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc. Summary -->Blin
 
 #### Descrição
 
-The `.from` property contains the <!-- REF #EmailObjectClass.from. See <a href="#handling-body-part">Handling body part</a> section.
+A propriedade `.bodyStructure` contém  o objeto <!-- REF #EmailObjectClass.bodyStructure. Summary-->*EmailBodyPart* , ou seja, a estrutura MIME completa do corpo da mensagem (opcional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
 
 The `.bodyStructure` object contains the following properties:
 

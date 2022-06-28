@@ -6,6 +6,11 @@ title: Documentation updates
 The list of main updates in this documentation. For general information about new features in the 4D products, see the **release notes** on [doc.4d.com](https://doc.4d.com).
 
 
+## 4D v19 R6
+
+- 4D View Pro: new [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
+
+
 ## 4D v19 R5
 
 - Built Client/Server applications:
