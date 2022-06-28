@@ -773,43 +773,49 @@ End use
 ## .every()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.every().Syntax -->
-**.every**( *methodName* : Text { ;*...param* : any } ) : Boolean<br>**.every**( *startFrom* : Integer ; *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
+**.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.every().Params -->
-| 引数         | タイプ     |    | 説明                    |
-| ---------- | ------- |:--:| --------------------- |
-| startFrom  | Integer | -> | テストを開始するインデックス        |
-| methodName | Text    | -> | テストに呼び出すメソッド名         |
-| param      | Mixed   | -> | methodName に渡す引数      |
-| 戻り値        | Boolean | <- | すべての要素がテストをパスすれば true |
+| 引数         | タイプ         |    | 説明                                                |
+| ---------- | ----------- |:--:| ------------------------------------------------- |
+| startFrom  | Integer     | -> | テストを開始するインデックス                                    |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                                      |
+| methodName | テキスト        | -> | Name of a method                                  |
+| param      | Mixed       | -> | Parameter(s) to pass to *formula* or *methodName* |
+| 戻り値        | ブール         | <- | すべての要素がテストをパスすれば true                             |
 <!-- END REF -->
 
 
 #### 説明
 
-`.every()` 関数は、 <!-- REF #collection.every().Summary -->コレクション内の全要素が、*methodName* に指定したメソッドで実装されたテストにパスした場合には **true** を返します<!-- END REF -->。
+The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *formula* object or *methodName* name<!-- END REF -->.
 
+You designate the callback to be executed to evaluate collection elements using either:
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、テストをパスした要素の *$1.result* を true に設定しなければなりません。
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+
+The callback receives the following parameters:
 
 *   *$1.value*: 評価する要素の値
 *   *$2*: param
 *   *$N...*: paramN...
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+It can set the following parameter(s):
 
-*   *$1.result* (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
+*   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-`.every()` 関数は、*$1.result* に **false** を返すコレクション要素を発見すると、*methodName* メソッドの呼び出しをやめて **false** を返します。
+In all cases, at the point when the `.every()` function encounters the first collection element evaluated to **false**, it stops calling the callback and returns **false**.
 
 デフォルトでは、`.every()` はコレクション全体をテストします。 任意で、*startFrom* にテストを開始する要素のインデックスを渡すこともできます。
 
@@ -823,17 +829,14 @@ End use
 ```4d
 var $c : Collection  
 var $b : Boolean
+var $f : 4D.Function
+
+$f:=Formula($1.value>0)
 $c:=New collection
 $c.push(5;3;1;4;6;2)
-$b:=$c.every("NumberGreaterThan0") // true を返します
+$b:=$c.every($f) //returns true
 $c.push(-1)
-$b:=$c.every("NumberGreaterThan0") // false を返します
-```
-
-***NumberGreaterThan0*** メソッドの中身は以下のとおりです:
-
-```4d
-$1.result:=$1.value>0
+$b:=$c.every($f) //returns false
 ```
 
 #### 例題 2
@@ -843,22 +846,17 @@ $1.result:=$1.value>0
 ```4d
 var $c : Collection
 var $b : Boolean
+var $f : 4D.Function
+
+$f:=Formula(Value type($1.value)=$2
 $c:=New collection
 $c.push(5;3;1;4;6;2)
-$b:=$c.every("TypeLookUp";Is real) //$b=true
+$b:=$c.every($f;Is real) //$b=true
 $c:=$c.push(New object("name";"Cleveland";"zc";35049))
 $c:=$c.push(New object("name";"Blountsville";"zc";35031))
-$b:=$c.every("TypeLookUp";Is real) //$b=false
-```
-
-***TypeLookUp*** メソッドの中身は以下のとおりです:
-
-```4d
-#DECLARE ($toEval : Object ; $param : Integer) //$1; $2
-If(Value type($toEval.value)=$param)
-    $toEval.result:=True
-End if
+$b:=$c.every($f;Is real) //$b=false
 ``` 
+
 
 <!-- END REF -->
 
@@ -868,11 +866,10 @@ End if
 <!-- REF collection.extract().Desc -->
 ## .extract()
 
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
-</details>
+<details><summary>History</summary>
+|Version|Changes|
+
+|---|---| |v16 R6|Added| </details>
 
 <!-- REF #collection.extract().Syntax -->
 **.extract**( *propertyPath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *propertyPath* : Text ;  *targetPath* : Text  { ;...*propertyPathN* : Text ;... *targetPathN* : Text } ) : Collection<!-- END REF -->
@@ -1001,40 +998,47 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 ## .filter()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.filter().Syntax -->
-**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
+**.filter**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
 
 
 <!-- REF #collection.filter().Params -->
-| 引数         | タイプ        |    | 説明                                 |
-| ---------- | ---------- |:--:| ---------------------------------- |
-| methodName | Text       | -> | コレクションをフィルターするために呼び出すメソッド名         |
-| param      | Mixed      | -> | *methodName* に渡す引数                 |
-| 戻り値        | Collection | <- | フィルターされた要素を格納した新しいコレクション(シャロウ・コピー) |
+| 引数         | タイプ         |    | 説明                                                |
+| ---------- | ----------- |:--:| ------------------------------------------------- |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                                      |
+| methodName | テキスト        | -> | Name of a method                                  |
+| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
+| 戻り値        | コレクション      | <- | フィルターされた要素を格納した新しいコレクション(シャロウ・コピー)                |
 <!-- END REF -->
 
 
 #### 説明
 
-`.filter()` 関数は、 <!-- REF #collection.filter().Summary -->元のコレクション要素のうち、*methodName* メソッドの結果が **true** になる要素をすべて格納した新しいコレクションを返します<!-- END REF -->。 この関数は ***シャロウ・コピー*** を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which the *formula* or *methodName* result is **true**<!-- END REF -->. この関数は ***シャロウ・コピー*** を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、メソッドの条件を満たして新規コレクションに代入されるべき要素の *$1.result* を **true** に設定しなければなりません。
+You designate the callback to be executed to filter collection elements using either:
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
 
-*   *$1.value*: フィルターする要素の値
-*   *$2*: *param*
-*   *$N...*: param2...paramN
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+The callback receives the following parameters:
 
-*   *$1.result* (ブール): 要素の値がフィルターの条件に合致し、新コレクションに代入すべき場合に **true**
+*   *$1.value*: 評価する要素の値
+*   *$2*: param
+*   *$N...*: paramN...
+
+It can set the following parameter(s):
+
+*   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 
@@ -1043,20 +1047,10 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 コレクションから、長さが 6未満であるテキスト要素を取得します:
 
 ```4d
- var $col;$colNew : Collection
- $col:=New collection("hello";"world";"red horse";66;"tim";"san jose";"miami")
- $colNew:=$col.filter("LengthLessThan";6)
+var $col;$colNew : Collection
+$col:=New collection("hello";"world";"red horse";66;"tim";"san jose";"miami")
+$colNew:=$col.filter(Formula((Value type($1.value)=Is text) && (Length($1.value)<$2)); 6)
   //$colNew=["hello","world","tim","miami"]
-```
-
-***LengthLessThan*** メソッドのコードは以下のとおりです:
-
-```4d
- C_OBJECT($1)
- C_LONGINT($2)
- If(Value type($1.value)=Is text)
-    $1.result:=(Length($1.value))<$2
- End if
 ```
 
 #### 例題 2
@@ -1065,24 +1059,15 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 ```4d
  var $c;$c2;$c3 : Collection
+ var $f : 4D.Function
+
+ $f:=Formula(OB Get type($1;"value")=$2)
  $c:=New collection(5;3;1;4;6;2)
  $c.push(New object("name";"Cleveland";"zc";35049))
  $c.push(New object("name";"Blountsville";"zc";35031))
- $c2:=$c.filter("TypeLookUp";Is real) // $c2=[5,3,1,4,6,2]
- $c3:=$c.filter("TypeLookUp";Is object)
+ $c2:=$c.filter($f;Is real) // $c2=[5,3,1,4,6,2]
+ $c3:=$c.filter($f;Is object)
   // $c3=[{name:Cleveland,zc:35049},{name:Blountsville,zc:35031}]
-```
-
-***TypeLookUp*** メソッドのコードは以下のとおりです:
-
-```4d
- C_OBJECT($1)
- C_LONGINT($2)
- If(OB Get type($1;"value")=$2)
-
-
-    $1.result:=True
- End if
 ``` 
 
 <!-- END REF -->
@@ -1095,42 +1080,50 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 ## .find()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.find().Syntax -->
-**.find**( *methodName* : Text { ; *...param* : any } ) : any<br>**.find**( *startFrom* : Integer ; *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
+**.find**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : any<br>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
 
 
 <!-- REF #collection.find().Params -->
-| 引数         | タイプ     |    | 説明                               |
-| ---------- | ------- |:--:| -------------------------------- |
-| startFrom  | Integer | -> | 検索を開始するインデックス                    |
-| methodName | Text    | -> | 検索用に呼び出すメソッド名                    |
-| param      | any     | -> | *methodName* に渡す引数               |
-| 戻り値        | any     | <- | 最初に見つかった値。見つからなかった場合には Undefined |
+| 引数         | タイプ         |    | 説明                                                |
+| ---------- | ----------- |:--:| ------------------------------------------------- |
+| startFrom  | 整数          | -> | 検索を開始するインデックス                                     |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                                      |
+| methodName | テキスト        | -> | Name of a method                                  |
+| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
+| 戻り値        | any         | <- | 最初に見つかった値。見つからなかった場合には Undefined                  |
 <!-- END REF -->
 
 
 #### 説明
 
-`.find()` 関数は、 <!-- REF #collection.find().Summary -->*methodName* 引数のメソッドを各コレクション要素に適用して、**true** を返す最初の要素を返します<!-- END REF -->。
+The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *formula* or *methodName* result, applied on each element, returns **true**<!-- END REF -->.
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、条件を満たす最初の要素の *$1.result* を **true** に設定しなければなりません。
+You designate the callback to be executed to evaluate collection elements using either:
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
+
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+
+The callback receives the following parameters:
 
 *   *$1.value*: 評価する要素の値
-*   in *$2: param*
-*   *$N...*: param2...paramN
+*   *$2*: param
+*   *$N...*: paramN...
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+It can set the following parameter(s):
 
-*   *$1.result* (ブール): 要素の値が検索条件に合致する場合に **true**
+*   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
+
 
 デフォルトでは、`.find()` はコレクション全体をテストします。 任意で、*startFrom* に検索を開始する要素のインデックスを渡すこともできます。
 
@@ -1141,22 +1134,12 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 #### 例題 1
 
-長さが 5未満の最初のテキスト要素を取得します:
+You want to get the first text element with a length smaller than 5:
 
 ```4d
- var $col : Collection
- $col:=New collection("hello";"world";4;"red horse";"tim";"san jose")
- $value:=$col.find("LengthLessThan";5) //$value="tim"
-```
-
-***LengthLessThan*** メソッドのコードは以下のとおりです:
-
-```4d
- var $1 : Object
- var $2 : Integer
- If(Value type($1.value)=Is text)
-    $1.result:=(Length($1.value))<$2
- End if
+var $col : Collection
+$col:=New collection("hello";"world";4;"red horse";"tim";"san jose")
+$value:=$col.find(Formula((Value type($1.value)=Is text) && (Length($1.value)<$2)); 5) //$value="tim"
 ```
 
 #### 例題 2
@@ -1164,25 +1147,18 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 コレクション内を都市名で検索します:
 
 ```4d
- var $c : Collection
- var $c2 : Object
- $c:=New collection
- $c.push(New object("name";"Cleveland";"zc";35049))
- $c.push(New object("name";"Blountsville";"zc";35031))
- $c.push(New object("name";"Adger";"zc";35006))
- $c.push(New object("name";"Clanton";"zc";35046))
- $c.push(New object("name";"Clanton";"zc";35045))
- $c2:=$c.find("FindCity";"Clanton") //$c2={name:Clanton,zc:35046}
-```
+var $c : Collection
+var $c2 : Object
+$c:=New collection
+$c.push(New object("name"; "Cleveland"; "zc"; 35049))
+$c.push(New object("name"; "Blountsville"; "zc"; 35031))
+$c.push(New object("name"; "Adger"; "zc"; 35006))
+$c.push(New object("name"; "Clanton"; "zc"; 35046))
+$c.push(New object("name"; "Clanton"; "zc"; 35045))
 
-***FindCity*** メソッドのコードは以下のとおりです:
+$c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046}
 
-```4d
- var $1 : Object
- var $2 : Text
- $1.result:=$1.value.name=$2 // name は、コレクションのオブジェクト要素内のプロパティ名です
 ``` 
-
 <!-- END REF -->
 
 
@@ -1193,43 +1169,49 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 ## .findIndex()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 
 <!-- REF #collection.findIndex().Syntax -->
-**.findIndex**( *methodName* : Text { ; *...param* : any } ) : Integer<br>**.findIndex**( *startFrom* : Integer ; *methodName* : Text { ; *...param* : any } ) : Integer<!-- END REF -->
-
+**.findIndex**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : Integer<br>**.findIndex**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : Integer<!-- END REF -->
 
 
 <!-- REF #collection.findIndex().Params -->
-| 引数         | タイプ     |    | 説明                               |
-| ---------- | ------- |:--:| -------------------------------- |
-| startFrom  | Integer | -> | 検索を開始するインデックス                    |
-| methodName | Text    | -> | 検索用に呼び出すメソッド名                    |
-| param      | any     | -> | *methodName* に渡す引数               |
-| 戻り値        | Integer | <- | 最初に見つかった値のインデックス。見つからなかった場合には -1 |
+| 引数         | タイプ         |    | 説明                                                |
+| ---------- | ----------- |:--:| ------------------------------------------------- |
+| startFrom  | 整数          | -> | 検索を開始するインデックス                                     |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                                      |
+| methodName | テキスト        | -> | Name of a method                                  |
+| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
+| 戻り値        | 整数          | <- | 最初に見つかった値のインデックス。見つからなかった場合には -1                  |
 <!-- END REF -->
 
 
 #### 説明
 
-`.findIndex()` 関数は、 <!-- REF #collection.findIndex().Summary -->*methodName* 引数のメソッドを各コレクション要素に適用して、**true** を返す最初の要素のインデックスを返します<!-- END REF -->。
+The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *formula* or *methodName*, applied on each element, returns **true**<!-- END REF -->.
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、条件を満たす最初の要素の *$1.result* を **true** に設定しなければなりません。
+You designate the callback to be executed to evaluate collection elements using either:
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- *methodName*, the name of a project method (text).
+
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+
+The callback receives the following parameters:
 
 *   *$1.value*: 評価する要素の値
-*   in *$2: param*
-*   *$N...*: param2...paramN
+*   *$2*: param
+*   *$N...*: paramN...
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+It can set the following parameter(s):
 
-*   *$1.result* (ブール): 要素の値が検索条件に合致する場合に **true**
+*   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 デフォルトでは、`.findIndex()` はコレクション全体をテストします。 任意で、*startFrom* に検索を開始する要素のインデックスを渡すこともできます。
@@ -1243,26 +1225,17 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 コレクション内で最初に合致する都市名の位置を探します:
 
 ```4d
- var $c : Collection
- var $val2;$val3 : Integer
- $c:=New collection
- $c.push(New object("name";"Cleveland";"zc";35049))
- $c.push(New object("name";"Blountsville";"zc";35031))
- $c.push(New object("name";"Adger";"zc";35006))
- $c.push(New object("name";"Clanton";"zc";35046))
- $c.push(New object("name";"Clanton";"zc";35045))
- $val2:=$c.findIndex("FindCity";"Clanton") // $val2=3
- $val3:=$c.findIndex($val2+1;"FindCity";"Clanton") //$val3=4
-```
-
-***FindCity*** メソッドのコードは以下のとおりです:
-
-```4d
- var $1 : Object
- var $2 : Text
- $1.result:=$1.value.name=$2
+var $c : Collection
+var $val2;$val3 : Integer
+$c:=New collection
+$c.push(New object("name";"Cleveland";"zc";35049))
+$c.push(New object("name";"Blountsville";"zc";35031))
+$c.push(New object("name";"Adger";"zc";35006))
+$c.push(New object("name";"Clanton";"zc";35046))
+$c.push(New object("name";"Clanton";"zc";35045))
+$val2:=$c.findIndex(Formula($1.value.name=$2);"Clanton") // $val2=3
+$val3:=$c.findIndex($val2+1;Formula($1.value.name=$2);"Clanton") //$val3=4
 ``` 
-
 
 <!-- END REF -->
 
@@ -1283,11 +1256,11 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 **.indexOf**(  *toSearch* : expression { ; *startFrom* : Integer } ) : Integer <!-- END REF -->
 
 <!-- REF #collection.indexOf().Params -->
-| 引数        | タイプ        |    | 説明                                        |
-| --------- | ---------- |:--:| ----------------------------------------- |
-| toSearch  | expression | -> | コレクション内を検索する式                             |
-| startFrom | Integer    | -> | 検索を開始するインデックス                             |
-| 戻り値       | Integer    | <- | 最初に見つかった toSearch のインデックス。見つからなかった場合には -1 |
+| 引数        | タイプ |    | 説明                                        |
+| --------- | --- |:--:| ----------------------------------------- |
+| toSearch  | 式   | -> | コレクション内を検索する式                             |
+| startFrom | 整数  | -> | 検索を開始するインデックス                             |
+| 戻り値       | 整数  | <- | 最初に見つかった toSearch のインデックス。見つからなかった場合には -1 |
 <!-- END REF -->
 
 
@@ -1348,11 +1321,11 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 
 <!-- REF #collection.indices().Params -->
-| 引数          | タイプ        |    | 説明                               |
-| ----------- | ---------- |:--:| -------------------------------- |
-| queryString | Text       | -> | 検索条件                             |
-| value       | any        | -> | プレースホルダー使用時: 比較する値               |
-| 戻り値         | Collection | <- | queryString に合致するコレクション要素のインデックス |
+| 引数          | タイプ    |    | 説明                               |
+| ----------- | ------ |:--:| -------------------------------- |
+| queryString | テキスト   | -> | 検索条件                             |
+| value       | any    | -> | プレースホルダー使用時: 比較する値               |
+| 戻り値         | コレクション | <- | queryString に合致するコレクション要素のインデックス |
 <!-- END REF -->
 
 
@@ -1403,11 +1376,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.insert**( *index* : Integer ; *element* : any ) : Collection <!-- END REF -->
 
 <!-- REF #collection.insert().Params -->
-| 引数      | タイプ        |    | 説明               |
-| ------- | ---------- |:--:| ---------------- |
-| index   | Integer    | -> | 要素の挿入位置          |
-| element | any        | -> | コレクションに挿入する要素    |
-| 戻り値     | Collection | <- | 要素の挿入された元のコレクション |
+| 引数      | タイプ    |    | 説明               |
+| ------- | ------ |:--:| ---------------- |
+| index   | 整数     | -> | 要素の挿入位置          |
+| element | any    | -> | コレクションに挿入する要素    |
+| 戻り値     | コレクション | <- | 要素の挿入された元のコレクション |
 <!-- END REF -->
 
 
@@ -1454,11 +1427,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.join**( *delimiter* : Text { ; *option* : Integer } ) : Text <!-- END REF -->
 
 <!-- REF #collection.join().Params -->
-| 引数        | タイプ     |    | 説明                                               |
-| --------- | ------- |:--:| ------------------------------------------------ |
-| delimiter | Text    | -> | 要素間に用いる区切り文字                                     |
-| option    | Integer | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
-| 戻り値       | Text    | <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                      |
+| 引数        | タイプ  |    | 説明                                               |
+| --------- | ---- |:--:| ------------------------------------------------ |
+| delimiter | テキスト | -> | 要素間に用いる区切り文字                                     |
+| option    | 整数   | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
+| 戻り値       | テキスト | <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                      |
 <!-- END REF -->
 
 
@@ -1498,11 +1471,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.lastIndexOf**( *toSearch* : expression { ; *startFrom* : Integer } ) : Integer <!-- END REF -->
 
 <!-- REF #collection.lastIndexOf().Params -->
-| 引数        | タイプ        |    | 説明                                        |
-| --------- | ---------- |:--:| ----------------------------------------- |
-| toSearch  | expression | -> | コレクション内を検索する要素                            |
-| startFrom | Integer    | -> | 検索を開始するインデックス                             |
-| 戻り値       | Integer    | <- | 最後に見つかった toSearch のインデックス。見つからなかった場合には -1 |
+| 引数        | タイプ |    | 説明                                        |
+| --------- | --- |:--:| ----------------------------------------- |
+| toSearch  | 式   | -> | コレクション内を検索する要素                            |
+| startFrom | 整数  | -> | 検索を開始するインデックス                             |
+| 戻り値       | 整数  | <- | 最後に見つかった toSearch のインデックス。見つからなかった場合には -1 |
 <!-- END REF -->
 
 
@@ -1584,61 +1557,60 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .map()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.map().Syntax -->
-**.map**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
+**.map**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br>**.map**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
 
 
 <!-- REF #collection.map().Params -->
-| 引数         | タイプ        |    | 説明                       |
-| ---------- | ---------- |:--:| ------------------------ |
-| methodName | Text       | -> | コレクション要素を変換するのに使用するメソッド名 |
-| param      | any        | -> | methodName に渡す引数         |
-| 戻り値        | Collection | <- | 変換された値を格納する新しいコレクション     |
+| 引数         | タイプ         |    | 説明                                                |
+| ---------- | ----------- |:--:| ------------------------------------------------- |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                                      |
+| methodName | テキスト        | -> | Name of a method                                  |
+| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
+| 戻り値        | コレクション      | <- | 変換された値を格納する新しいコレクション                              |
 <!-- END REF -->
 
 
 #### 説明
 
-`.map()` 関数は、 <!-- REF #collection.map().Summary -->元のコレクションの各要素に対して *methodName* メソッドを呼び出した結果に基づいた、新しいコレクションを作成します<!-- END REF -->。 オプションで、*param* パラメーターに、*methodName* に渡す引数を指定することができます。 `.map()` は常に、元のコレクションと同じサイズのコレクションを返します。
+The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the *formula* 4D function or *methodName* method on each element of the original collection<!-- END REF -->. Optionally, you can pass parameters to *formula* or *methodName* using the *param* parameter(s). `.map()` は常に、元のコレクションと同じサイズのコレクションを返します。
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんな処理でも実行でき、引数はあってもなくても構いません。
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+You designate the callback to be executed to evaluate collection elements using either:
 
-*   *$1.value* (任意の型): マップする要素の値
-*   in *$2* (任意の型): *param*
-*   in *$N...* (任意の型): *paramN...*
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
 
+The callback receives the following parameters:
 
-*   *$1.result* (任意の型): 結果のコレクションに追加する、変換された値
-*   *$1.stop* (ブール): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
+*   *$1.value*: 評価する要素の値
+*   *$2*: param
+*   *$N...*: paramN...
+
+It can set the following parameter(s):
+
+*   (mandatory if you used a method) *$1.result* (any type): new transformed value to add to the resulting collection
+*   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
+
 
 #### 例題
 
 
 ```4d
- var $c; $c2 : Collection
- $c:=New collection(1;4;9;10;20)
- $c2:=$c.map("Percentage";$c.sum())
+var $c; $c2 : Collection
+$c:=New collection(1; 4; 9; 10; 20)
+$c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
   //$c2=[2.27,9.09,20.45,22.73,45.45]
-```
-
-***Percentage*** メソッドのコードは以下のとおりです:
-
-```4d
- var $1 : Object
- var $2 : Real
- $1.result:=Round(($1.value/$2)*100;2)
 ``` 
-
 
 <!-- END REF -->
 
@@ -1661,7 +1633,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 <!-- REF #collection.max().Params -->
 | 引数           | タイプ                                             |    | 説明                 |
 | ------------ | ----------------------------------------------- |:--:| ------------------ |
-| propertyPath | Text                                            | -> | 評価するオブジェクトプロパティのパス |
+| propertyPath | テキスト                                            | -> | 評価するオブジェクトプロパティのパス |
 | 戻り値          | Boolean, Text, Number, Collection, Object, Date | <- | コレクション内の最大値        |
 <!-- END REF -->
 
@@ -1712,7 +1684,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 <!-- REF #collection.min().Params -->
 | 引数           | タイプ                                             |    | 説明                 |
 | ------------ | ----------------------------------------------- |:--:| ------------------ |
-| propertyPath | Text                                            | -> | 評価するオブジェクトプロパティのパス |
+| propertyPath | テキスト                                            | -> | 評価するオブジェクトプロパティのパス |
 | 戻り値          | Boolean, Text, Number, Collection, Object, Date | <- | コレクション内の最小値        |
 <!-- END REF -->
 
@@ -1761,12 +1733,12 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 
 <!-- REF #collection.orderBy().Params -->
-| 引数          | タイプ        |    | 説明                                         |
-| ----------- | ---------- |:--:| ------------------------------------------ |
-| pathStrings | Text       | -> | コレクションの並べ替え基準とするプロパティパス                    |
-| pathObjects | Collection | -> | 条件オブジェクトのコレクション                            |
-| ascOrDesc   | Integer    | -> | `ck ascending` または `ck descending` (スカラー値) |
-| 戻り値         | Collection | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)               |
+| 引数          | タイプ    |    | 説明                                         |
+| ----------- | ------ |:--:| ------------------------------------------ |
+| pathStrings | テキスト   | -> | コレクションの並べ替え基準とするプロパティパス                    |
+| pathObjects | コレクション | -> | 条件オブジェクトのコレクション                            |
+| ascOrDesc   | 整数     | -> | `ck ascending` または `ck descending` (スカラー値) |
+| 戻り値         | コレクション | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)               |
 <!-- END REF -->
 
 
@@ -1794,10 +1766,10 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 *   *ascOrDesc* : Integer。 **Objects and collections** テーマから、以下の定数のいずれか一つを渡します:
 
-    | 定数            | タイプ     | 値 | 説明                   |
-    | ------------- | ------- | - | -------------------- |
-    | ck ascending  | Longint | 0 | 要素は昇順に並べられます (デフォルト) |
-    | ck descending | Longint | 1 | 要素は降順に並べられます         |
+    | 定数            | タイプ  | 値 | 説明                   |
+    | ------------- | ---- | - | -------------------- |
+    | ck ascending  | 倍長整数 | 0 | 要素は昇順に並べられます (デフォルト) |
+    | ck descending | 倍長整数 | 1 | 要素は降順に並べられます         |
 
     このシンタックスは、コレクション内のスカラー値のみを並べ替えます (オブジェクトやコレクションなどの他の型は並べ替えされないまま返されます)。
 
@@ -1891,40 +1863,51 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .orderByMethod()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.orderByMethod().Syntax -->
-**.orderByMethod**( *methodName* : Text { ; ...*extraParam* : expression } ) : Collection <!-- END REF -->
+**.orderByMethod**( *formula* : 4D.Function { ; ...*extraParam* : expression } ) : Collection<br>**.orderByMethod**( *methodName* : Text { ; ...*extraParam* : expression } ) : Collection<!-- END REF -->
 
 
 <!-- REF #collection.orderByMethod().Params -->
-| 引数         | タイプ        |    | 説明                           |
-| ---------- | ---------- |:--:| ---------------------------- |
-| methodName | Text       | -> | 並べ替え順の指定に使用するメソッド名           |
-| extraParam | 式          | -> | methodName に渡す引数             |
-| 戻り値        | Collection | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー) |
+| 引数         | タイプ         |    | 説明                           |
+| ---------- | ----------- |:--:| ---------------------------- |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト                 |
+| methodName | テキスト        | -> | Name of a method             |
+| extraParam | any         | -> | Parameter(s) to pass         |
+| 戻り値        | コレクション      | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー) |
 <!-- END REF -->
 
 
 #### 説明
 
-`.orderByMethod()` 関数は、 <!-- REF #collection.orderByMethod().Summary -->*methodName* メソッドを通して定義された順番でコレクション要素を並べ替えた新しいコレクションを返します<!-- END REF -->。
+The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *formula* 4D function or *methodName* method<!-- END REF -->.
 
 この関数は *シャロウ・コピー* を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、二つの値を比較して、最初の値が二つ目の値より低い場合に *$1.result* に **true** を返す比較メソッドの名称を渡します。 必要であれば *methodName* に追加の引数を渡すこともできます。
 
-*   *methodName* で指定したメソッドは以下の引数を受け取ります:
-    *   $1 (オブジェクト):
-        *   *$1.value* (任意の型): 比較する一つ目の要素の値
-        *   *$1.value2* (任意の型): 比較する二つ目の要素の値
-    *   $2...$N (任意の型): 追加の引数
-*   *methodName* で指定したメソッドでは、以下の引数を設定します:
-    *   *$1.result* (ブール): *$1.value < $1.value2* の場合は **true**、それ以外は **false**
+You designate the callback to be executed to evaluate collection elements using either:
+
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
+
+In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide *extraParam* parameters to the callback if necessary.
+
+The callback receives the following parameters:
+
+- $1 (オブジェクト):
+    - *$1.value* (任意の型): 比較する一つ目の要素の値
+    - *$1.value2* (任意の型): 比較する二つ目の要素の値
+    - $2...$N (任意の型): 追加の引数
+
+If you used a method, it must set the following parameter:
+
+- *$1.result* (ブール): *$1.value < $1.value2* の場合は **true**、それ以外は **false**
 
 #### 例題 1
 
@@ -1934,18 +1917,9 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
  var $c; $c2; $c3 : Collection
  $c:=New collection
  $c.push("33";"4";"1111";"222")
- $c2:=$c.orderBy() //$c2=["1111","222","33","4"], アルファベット順
- $c3:=$c.orderByMethod("NumAscending") // $c3=["4","33","222","1111"]
+ $c2:=$c.orderBy() //$c2=["1111","222","33","4"], alphabetical order
+ $c3:=$c.orderByMethod(Formula(Num($1.value)<Num($1.value2))) // $c3=["4","33","222","1111"]
 ```
-
- ***NumAscending*** メソッドのコードは以下のとおりです:
-
-
-```4d
- $1.result:=Num($1.value)<Num($1.value2)
-```
-
-
 
 #### 例題 2
 
@@ -1954,14 +1928,8 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ```4d
  var $fruits; $c2 : Collection
  $fruits:=New collection("Orange";"Apple";"Grape";"pear";"Banana";"fig";"Blackberry";"Passion fruit")
- $c2:=$fruits.orderByMethod("WordLength")
+ $c2:=$fruits.orderByMethod(Formula(Length(String($1.value))>Length(String($1.value2))))
   //$c2=[Passion fruit,Blackberry,Orange,Banana,Apple,Grape,pear,fig]
-```
-
-***WordLength*** メソッドのコードは以下のとおりです:
-
-```4d
- $1.result:=Length(String($1.value))>Length(String($1.value2))
 ```
 
 #### 例題 3
@@ -1972,20 +1940,20 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 var $strings1; $strings2 : Collection
 $strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
 
-// 文字コード順:
-$strings2:=$strings1.orderByMethod("sortCollection";sk character codes)
-// 結果 : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
+//using the character code:
+$strings2:=$strings1.orderByMethod(Function(sortCollection);sk character codes)
+// result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
 
-// アルファベット順:
-$strings2:=$string1s.orderByMethod("sortCollection";sk strict)
-// 結果 : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
+//using the language:
+$strings2:=$string1s.orderByMethod(Function(sortCollection);sk strict)
+// result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
 ***sortCollection*** メソッドのコードは以下のとおりです:
 
 ```4d
-var$1Object
-var$2Integer // 並べ替えオプション
+var $1 : Object
+var $2: Integer // sort option
 
 $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ``` 
@@ -2057,10 +2025,10 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 **.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
-| 引数      | タイプ        |    | 説明               |
-| ------- | ---------- |:--:| ---------------- |
-| element | Mixed      | -> | コレクションに追加する要素    |
-| 戻り値     | Collection | <- | 要素の追加された元のコレクション |
+| 引数      | タイプ    |    | 説明               |
+| ------- | ------ |:--:| ---------------- |
+| element | Mixed  | -> | コレクションに追加する要素    |
+| 戻り値     | コレクション | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
@@ -2117,12 +2085,12 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 
 
 <!-- REF #collection.query().Params -->
-| 引数            | タイプ        |    | 説明                                 |
-| ------------- | ---------- |:--:| ---------------------------------- |
-| queryString   | Text       | -> | 検索条件                               |
-| value         | Mixed      | -> | プレースホルダー使用時: 比較する値                 |
-| querySettings | Object     | -> | クエリオプション: parameters, attributes 他 |
-| 戻り値           | Collection | <- | queryString に合致するコレクション要素          |
+| 引数            | タイプ    |    | 説明                                 |
+| ------------- | ------ |:--:| ---------------------------------- |
+| queryString   | テキスト   | -> | 検索条件                               |
+| value         | Mixed  | -> | プレースホルダー使用時: 比較する値                 |
+| querySettings | オブジェクト | -> | クエリオプション: parameters, attributes 他 |
+| 戻り値           | コレクション | <- | queryString に合致するコレクション要素          |
 <!-- END REF -->
 
 
@@ -2214,42 +2182,49 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .reduce()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.reduce().Syntax -->
-**.reduce**( *methodName* : Text ) : any <br>**.reduce**( *methodName* : Text ; *initValue* : any { ; *...param* : expression } ) : any <!-- END REF -->
+**.reduce**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br>**.reduce**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
 
 
 <!-- REF #collection.reduce().Params -->
-| 引数         | タイプ                                             |    | 説明                                  |
-| ---------- | ----------------------------------------------- |:--:| ----------------------------------- |
-| methodName | Text                                            | -> | コレクション要素を処理するのに使用するメソッド名            |
-| initValue  | Text, Number, Object, Collection, Date, Boolean | -> | *methodName* の最初の呼び出しに最初の引数として使用する値 |
-| param      | 式                                               | -> | *methodName* に渡す引数                  |
-| 戻り値        | Text, Number, Object, Collection, Date, Boolean | <- | アキュムレーター値の結果                        |
+| 引数         | タイプ                                             |    | 説明                                                                                |
+| ---------- | ----------------------------------------------- |:--:| --------------------------------------------------------------------------------- |
+| formula    | 4D.Function                                     | -> | フォーミュラオブジェクト                                                                      |
+| methodName | テキスト                                            | -> | Name of a method                                                                  |
+| initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *formula* or *methodName* |
+| param      | 式                                               | -> | Parameter(s) to pass                                                              |
+| 戻り値        | Text, Number, Object, Collection, Date, Boolean | <- | アキュムレーター値の結果                                                                      |
 <!-- END REF -->
 
 
 #### 説明
 
 
-`.reduce()` 関数は、 <!-- REF #collection.reduce().Summary -->*methodName* コールバックメソッドをアキュムレーターおよびコレクションの各要素に (左から右へ) 適用して、単一の値にまとめます<!-- END REF -->。
+The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *formula* or *methodName* callback against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
 > このコマンドは、元のコレクションを変更しません。
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* はコレクションの各要素を受け取り、任意の処理を実行して、結果を *$1.accumulator* に蓄積します。この値は最終的に *$1.value* に返されます。
+You designate the callback to be executed to evaluate collection elements using either:
+
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
+
+The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
 *initValue* に引数を渡すことで、アキュムレーターを初期化することができます。 省略された場合は、*$1.accumulator* は *Undefined* から開始されます。
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+The callback receives the following parameters:
 
 *   *$1.value*: 処理する要素の値
 *   in *$2: param*
 *   in *$N...*: *paramN...*
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
+The callback sets the following parameter(s):
 
 *   *$1.accumulator*: メソッドで変更する値。*initValue* によって初期化します。
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
@@ -2259,19 +2234,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 
 ```4d
- C_COLLECTION($c)
- $c:=New collection(5;3;5;1;3;4;4;6;2;2)
- $r:=$c.reduce("Multiply";1) // 戻り値は 86400 です
+var $c : Collection
+$c:=New collection(5;3;5;1;3;4;4;6;2;2)
+$r:=$c.reduce(Formula($1.accumulator:=$1.accumulator*$1.value); 1)  //returns 86400
 ```
 
-
-***Multiply*** メソッドのコードは以下のとおりです:
-
-```4d
- If(Value type($1.value)=Is real)
-    $1.accumulator:=$1.accumulator*$1.value
- End if
-```
 
 #### 例題 2
 
@@ -2284,7 +2251,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
  $c.push(New collection(2;3))
  $c.push(New collection(4;5))
  $c.push(New collection(6;7))
- $r:=$c.reduce("Flatten") //$r=[0,1,2,3,4,5,6,7]
+ $r:=$c.reduce(Formula(Flatten)) //$r=[0,1,2,3,4,5,6,7]
 ```
 
 ***Flatten*** メソッドのコードは以下のとおりです:
@@ -2315,11 +2282,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 
 <!-- REF #collection.remove().Params -->
-| 引数      | タイプ        |    | 説明                   |
-| ------- | ---------- |:--:| -------------------- |
-| index   | Integer    | -> | 削除を開始する要素の位置         |
-| howMany | Integer    | -> | 削除する要素の数、省略時は 1要素を削除 |
-| 戻り値     | Collection | <- | 要素が削除された元のコレクション     |
+| 引数      | タイプ    |    | 説明                   |
+| ------- | ------ |:--:| -------------------- |
+| index   | 整数     | -> | 削除を開始する要素の位置         |
+| howMany | 整数     | -> | 削除する要素の数、省略時は 1要素を削除 |
+| 戻り値     | コレクション | <- | 要素が削除された元のコレクション     |
 <!-- END REF -->
 
 
@@ -2379,9 +2346,9 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 <!-- REF #collection.resize().Params -->
 | 引数           | タイプ                                             |    | 説明              |
 | ------------ | ----------------------------------------------- |:--:| --------------- |
-| size         | Integer                                         | -> | コレクションの新しいサイズ   |
+| size         | 整数                                              | -> | コレクションの新しいサイズ   |
 | defaultValue | Number, Text, Object, Collection, Date, Boolean | -> | 新規要素のデフォルト値     |
-| 戻り値          | Collection                                      | <- | リサイズされた元のコレクション |
+| 戻り値          | コレクション                                          | <- | リサイズされた元のコレクション |
 <!-- END REF -->
 
 
@@ -2434,9 +2401,9 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.reverse( )** : Collection <!-- END REF -->
 
 <!-- REF #collection.reverse().Params -->
-| 引数  | タイプ        |    | 説明                  |
-| --- | ---------- |:--:| ------------------- |
-| 戻り値 | Collection | <- | 逆順に要素を格納した新しいコレクション |
+| 引数  | タイプ    |    | 説明                  |
+| --- | ------ |:--:| ------------------- |
+| 戻り値 | コレクション | <- | 逆順に要素を格納した新しいコレクション |
 <!-- END REF -->
 
 
@@ -2519,11 +2486,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.slice**( *startFrom* : Integer { ; *end* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.slice().Params -->
-| 引数        | タイプ        |    | 説明                           |
-| --------- | ---------- |:--:| ---------------------------- |
-| startFrom | Integer    | -> | 開始インデックス (含まれる)              |
-| end       | Integer    | -> | 終了インデックス (含まれない)             |
-| 戻り値       | Collection | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
+| 引数        | タイプ    |    | 説明                           |
+| --------- | ------ |:--:| ---------------------------- |
+| startFrom | 整数     | -> | 開始インデックス (含まれる)              |
+| end       | 整数     | -> | 終了インデックス (含まれない)             |
+| 戻り値       | コレクション | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
 <!-- END REF -->
 
 
@@ -2561,44 +2528,51 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .some()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.some().Syntax -->
-**.some**( *methodName* : Text { ; *...param* : any } ) : Boolean<br>**.some**( *startFrom* : Integer ; *methodName* : Text { ; *...param* : any } ) : Boolean<!-- END REF -->
+**.some**( { *startFrom* : Integer ; } *formula* : 4D.Function { ; *...param* : any } ) : Boolean<br>**.some**( { *startFrom* : Integer ; } *methodName* : Text { ; *...param* : any } ) : Boolean<!-- END REF -->
 
 
 <!-- REF #collection.some().Params -->
-| 引数         | タイプ     |    | 説明                        |
-| ---------- | ------- |:--:| ------------------------- |
-| startFrom  | Integer | -> | テストを開始するインデックス            |
-| methodName | Text    | -> | テストに呼び出すメソッド名             |
-| param      | Mixed   | -> | *methodName* に渡す引数        |
-| 戻り値        | Boolean | <- | 少なくとも一つの要素がテストをパスすれば true |
+| 引数         | タイプ         |    | 説明                        |
+| ---------- | ----------- |:--:| ------------------------- |
+| startFrom  | 整数          | -> | テストを開始するインデックス            |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト              |
+| methodName | テキスト        | -> | Name of a method          |
+| param      | Mixed       | -> | Parameter(s) to pass      |
+| 戻り値        | ブール         | <- | 少なくとも一つの要素がテストをパスすれば true |
 <!-- END REF -->
 
 
 #### 説明
 
-`.some()` 関数は、 <!-- REF #collection.some().Summary -->少なくとも一つのコレクション要素が、*methodName* に指定したメソッドで実装されたテストにパスした場合に **true** を返します<!-- END REF --> 。
+The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test implemented in the provided *formula* or *methodName* code<!-- END REF -->.
+
+You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+
+- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- or *methodName*, the name of a project method (text).
+
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
 
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、テストをパスした最初の要素の *$1.result* を **true** に設定しなければなりません。
+The callback receives the following parameters:
 
-*methodName* で指定したメソッドは以下の引数を受け取ります:
+*   *$1.value*: 処理する要素の値
+*   in *$2: param*
+*   in *$N...*: *paramN...*
 
-*   *$1.value*: 評価する要素の値
-*   *$2*: param
-*   *$N...*: param2...paramN
+It can set the following parameter(s):
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
-
-*   *$1.result* (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
+*   (mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-`.some()` 関数は、*$1.result* に **true** を返す最初のコレクション要素を発見すると、*methodName* メソッドの呼び出しをやめて **true** を返します。
+In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
 
 デフォルトでは、`.some()` はコレクション全体をテストします。 オプションとして、*startFrom* 引数を渡すことで、テストを開始するコレクション要素のインデックスを指定することができます。
 
@@ -2609,27 +2583,23 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 #### 例題
 
+You want to know if at least one collection value is >0.
 
 ```4d
  var $c : Collection
  var $b : Boolean
  $c:=New collection
  $c.push(-5;-3;-1;-4;-6;-2)
- $b:=$c.some("NumberGreaterThan0") // 戻り値は false
+ $b:=$c.some(Formula($1.value>0)) // $b=false
  $c.push(1)
- $b:=$c.some("NumberGreaterThan0") // 戻り値は true
+ $b:=$c.some(Formula($1.value>0)) // $b=true
 
  $c:=New collection
  $c.push(1;-5;-3;-1;-4;-6;-2)
- $b:=$c.some("NumberGreaterThan0") //$b=true
- $b:=$c.some(1;"NumberGreaterThan0") //$b=false
+ $b:=$c.some(Formula($1.value>0)) //$b=true
+ $b:=$c.some(1;Formula($1.value>0)) //$b=false
 ```
 
-*NumberGreaterThan0* メソッドのコードは以下のとおりです:
-
-```4d
- $1.result:=$1.value>0
-```
 
 
 <!-- END REF -->
@@ -2642,41 +2612,45 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .sort()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R6 | 追加 |
+| バージョン  | 内容                 |
+| ------ | ------------------ |
+| v19 R6 | Support of formula |
+| v16 R6 | 追加                 |
 </details>
 
 <!-- REF #collection.sort().Syntax -->
-**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection <!-- END REF -->
+**.sort**( *formula* : 4D.Function { ; *...extraParam* : any } ) : Collection<br>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection <!-- END REF -->
 
 
 <!-- REF #collection.sort().Params -->
-| 引数         | タイプ        |    | 説明                 |
-| ---------- | ---------- |:--:| ------------------ |
-| methodName | Text       | -> | 並べ替え順の指定に使用するメソッド名 |
-| extraParam | any        | -> | methodName に渡す引数   |
-| 戻り値        | Collection | <- | 並べ替えられた元のコレクション    |
+| 引数         | タイプ         |    | 説明               |
+| ---------- | ----------- |:--:| ---------------- |
+| formula    | 4D.Function | -> | フォーミュラオブジェクト     |
+| methodName | テキスト        | -> | Name of a method |
+| extraParam | any         | -> | methodName に渡す引数 |
+| 戻り値        | コレクション      | <- | 並べ替えられた元のコレクション  |
 <!-- END REF -->
 
 
 #### 説明
 
-`.sort()` 関数は、 <!-- REF #collection.sort().Summary -->コレクションの要素を並べ替えます<!-- END REF --> 。戻り値は並べ替えられた元のコレクションです。
+The `.sort()` function <!-- REF #collection.sort().Summary -->sorts the elements of the original collection and also returns the sorted collection<!-- END REF --> .
 > このコマンドは、元のコレクションを変更します。
 
 引数もなしに呼び出された場合、`.sort()` はスカラー値 (数値、テキスト、日付、ブール) のみを並べ替えます。 デフォルトでは、要素はそれぞれの型に応じて昇順で並べ替えられます。
 
-カスタマイズされた順番や、型に関係なくコレクション要素を並べ替えたい場合には、二つの値を比較して、最初の値が二つ目の値より低い場合に *$1.result* に **true** を返す比較メソッドの名称を *methodName* に渡します。 必要であれば *methodName* に追加の引数を渡すこともできます。
+If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. You can provide additional parameters to the callback if necessary.
 
-*   *methodName* で指定したメソッドは以下の引数を受け取ります:
-    *   $1 (オブジェクト):
-        *   *$1.value* (任意の型): 比較する一つ目の要素の値
-        *   *$1.value2* (任意の型): 比較する二つ目の要素の値
-    *   $2...$N (任意の型): 追加の引数
+The callback receives the following parameters:
 
-*methodName* で指定したメソッドでは、以下の引数を設定します:
-    *   *$1.result* (ブール): *$1.value < $1.value2* の場合は **true**、それ以外は **false**
+- $1 (オブジェクト):
+    - *$1.value* (任意の型): 比較する一つ目の要素の値
+    - *$1.value2* (任意の型): 比較する二つ目の要素の値
+- $2...$N (任意の型): 追加の引数
+
+If you used a method, you must set the folllowing parameter:
+
+- *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise.
 
 コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
 
@@ -2709,17 +2683,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 #### 例題 3
 
 ```4d
- var $col; $col2; $col3 : Collection
- $col:=New collection(33;4;66;1111;222)
- $col2:=$col.sort() // 数値順: [4,33,66,222,1111]
- $col3:=$col.sort("numberOrder") // アルファベット順: [1111,222,33,4,66]
+var $col; $col2; $col3 : Collection
+$col:=New collection(33;4;66;1111;222)
+$col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
+$col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sort: [1111,222,33,4,66]
 ```
-
-```4d
-  // numberOrder プロジェクトメソッド
- var $1 : Object
- $1.result:=String($1.value)<String($1.value2)
-``` 
  
 <!-- END REF -->
 
@@ -2741,8 +2709,8 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 <!-- REF #collection.sum().Params -->
 | 引数           | タイプ  |    | 説明                    |
 | ------------ | ---- |:--:| --------------------- |
-| propertyPath | Text | -> | 計算に使用するオブジェクトプロパティのパス |
-| 戻り値          | Real | <- | コレクション要素の値の合計         |
+| propertyPath | テキスト | -> | 計算に使用するオブジェクトプロパティのパス |
+| 戻り値          | 実数   | <- | コレクション要素の値の合計         |
 <!-- END REF -->
 
 
@@ -2804,7 +2772,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 | 引数    | タイプ                                    |    | 説明               |
 | ----- | -------------------------------------- |:--:| ---------------- |
 | value | Text, Number, Object, Collection, Date | -> | コレクションの先頭に挿入する値  |
-| 戻り値   | Real                                   | <- | 要素の追加された元のコレクション |
+| 戻り値   | 実数                                     | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
