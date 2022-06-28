@@ -574,13 +574,13 @@ Para salvar o conteúdo de um documento em um campo `BLOB`:
 
 A função `.getIcon()` retorna <!-- REF #document.getIcon().Summary -->o ícone do arquivo<!-- END REF -->.
 
-O parâmetro opcional *size* especifica as dimensões em píxels do icone devolvido. Este valor representa em realidade a longitude do lado do quadrado que contém o icone. Icons are usually defined in 32x32 pixels (“large icons”) or 16x16 pixels (“small icons”). Se passar 0 ou omitir este parâmetro, se devolve a versão 'icone grande'
+O parâmetro opcional *size* especifica as dimensões em píxels do icone devolvido. Este valor representa em realidade a longitude do lado do quadrado que contém o icone. Icones são geralmente definidos como 32x32 píxels ('icones grandes') ou 16x16 ('icones pequenos'). Se passar 0 ou omitir este parâmetro, se devolve a versão 'icone grande'
 
-If the file does not exist on disk, a default blank icon is returned.
+Se o arquivo não existir no disco, um ícone em branco padrão será retornado.
 
-**Returned value**
+**Valor retornado**
 
-File icon [picture](../Concepts/picture.html).
+Ícone de arquivo [imagem](../Concepts/picture.html).
 
 
 
@@ -602,46 +602,46 @@ File icon [picture](../Concepts/picture.html).
 
 
 <!-- REF #document.getText().Params -->
-| Parameter   | Type    |    | Descrição                       |
-| ----------- | ------- | -- | ------------------------------- |
-| charSetName | Texto   | -> | Name of character set           |
-| charSetNum  | Integer | -> | Number of character set         |
-| breakMode   | Integer | -> | Processing mode for line breaks |
-| Resultado   | Texto   | <- | Text from the document          |
+| Parâmetros  | Tipo    |    | Descrição                                   |
+| ----------- | ------- | -- | ------------------------------------------- |
+| charSetName | Texto   | -> | Nome do conjunto de caracteres              |
+| charSetNum  | Integer | -> | Número de conjuntos de caracteres           |
+| breakMode   | Integer | -> | Modo de processamento para quebras de linha |
+| Resultado   | Texto   | <- | Texto do documento                          |
 <!-- END REF -->
 
 
 #### Descrição
-The `.getText()` function<!-- REF #document.getText(). Summary -->returns the contents of the file as text <!-- END REF -->.
+A função `.getText()` <!-- REF #document.getText().Summary -->retorna o conteúdo do arquivo como texto <!-- END REF -->.
 
-Optionally, you can designate the character set to be used for reading the contents. You can pass either:
+Opcionalmente, você pode designar o conjunto de caracteres a ser usado na leitura do conteúdo. Você pode passar também:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
-- or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
+- em *charSetName*, uma string que contém o nome padrão definido (por exemplo "ISO-8859-1" ou "UTF-8"),
+- ou em *charSetNum*, o MIBEnum ID (número) do nome de configuração padrão.
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> Para a lista de conjuntos de caracteres suportados por 4D, consulte a descrição do comando `CONVERT FROM TEXT`.
 
-If the document contains a Byte Order Mark (BOM), 4D uses the character set that it has set instead of the one specified in *charSetName* or *charSetNum* (this parameter is then ignored). If the document does not contain a BOM and if *charSetName* or *charSetNum* is omitted, by default 4D uses the "UTF-8" character set.
+Se o documento contiver uma nota de ordem de byte (BOM), 4D usa o conjunto de caracteres que definiu em vez do especificado no *charSetName* ou *charSetNum* (este parâmetro é então ignorado). Se o documento não contiver uma LDM e se o *charSetName* ou *charSetNum* for omitido, por padrão 4D usa o conjunto de caracteres "UTF-8".
 
-In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters in the document. The following constants of the "System Documents" theme are available:
+Em *breakMode*, você pode passar um número indicando o processamento a aplicar aos caracteres de fim de linha no documento. As seguintes constantes do tema "Documentos do Sistema" estão disponíveis:
 
-| Constante                     | Value | Comentário                                                                                                                                                          |
-| ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0     | No processing                                                                                                                                                       |
-| `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-| `Document with CRLF`          | 2     | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
-| `Document with CR`            | 3     | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
-| `Document with LF`            | 4     | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
+| Constante                     | Valor | Comentário                                                                                                                                                                     |
+| ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Document unchanged`          | 0     | Não processado                                                                                                                                                                 |
+| `Document with native format` | 1     | (Padrão) As quebras de linha são convertidas para o formato nativo do sistema operacional: CR (retorno de carro) sob OS X, CRLF (retorno do carro + salto de linha) em Windows |
+| `Documento com CRLF`          | 2     | Quebras de linha são convertidas em formato Windows: CRLF (retorno de carro + quebra de linha)                                                                                 |
+| `Documento com CR`            | 3     | Quebras de linha são convertidas para o formato OS X: CR (retorno de carro)                                                                                                    |
+| `Documento com LF`            | 4     | Quebras de linha são convertidas em formato Unix: LF (feed de linha)                                                                                                           |
 
-By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
+Por padrão, ao omitir o parâmetro *breakMode* , as quebras de linha são processadas no modo nativo (1).
 
-**Returned value**
+**Valor retornado**
 
-Text of the file.
+Texto do arquivo.
 
 #### Exemplo
 
-Given the following text document (fields are separated by tabs):
+Dado o seguinte documento de texto (os campos são separados por tabulações):
 
 ```4d
 id name price vat
@@ -649,29 +649,29 @@ id name price vat
 2 café 1.05€ 19.6
 ```
 
-When you execute this code:
+Quando você executar este código:
 
 
 ```4d
- $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 by default
+ $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 por padrão
  $txt:=$myFile.getText()
 ```
-... you get the following for `$txt`:
+... você recebe o seguinte por `$txt`:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
 with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
 
-Here is another example with the same file, but a different line delimiter:
+Aqui está outro exemplo com o mesmo arquivo, mas um delimitador de linha diferente:
 
 ```4d
- $txt:=$myFile.getText("UTF-8", Document with LF)
+ $txt:=$myFile.getText("UTF-8", Documento com LF)
 ```
-In this case, the contents of `$txt` are as follows:
+Neste caso, o conteúdo de `$txt` é o seguinte:
 
 "id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
-This time `\n` (LF) is used as line delimiter.
+Este tempo `\n` (LF) é usado como delimitador de linha.
 
 
 
