@@ -75,7 +75,7 @@ HTTPRequest objects provide the following properties and functions:
 ## 4D.HTTPRequest.new()
 
 <!-- REF #4D.HTTPRequest.new().Syntax -->
-**4D.HTTPRequest.new()** ( *url* : Text { ; *options* : Object } ) : 4D.HTTPRequest<!-- END REF -->
+**4D.HTTPRequest.new**( *url* : Text { ; *options* : Object } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.new().Params -->
 |Parameter|Type||Description|
@@ -343,7 +343,7 @@ The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of 
 ## .wait()
 
 <!-- REF #4D.HTTPRequest.wait().Syntax -->
-**.wait()** ( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
+**.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.wait().Params -->
 |Parameter|Type||Description|
