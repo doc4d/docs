@@ -53,7 +53,7 @@ Tracing stops and normal method execution resumes.
 
 #### Pasar por encima
 
-Executes the current method line, indicated by the program counter (the yellow arrow). The Debugger steps to the next line.
+Executes the current method line, indicated by the program counter (the yellow arrow). El depurador pasa a la siguiente línea.
 
 The Step Over button does not step into subroutines and functions, it stays at the level of the method you're currently tracing. If you want to also trace subroutines and functions calls, use the **Step Into** button.
 
@@ -190,7 +190,7 @@ Like the Constants page of the Explorer window, this theme displays predefined c
 
 #### Semáforos
 
-This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. Global semaphores are not displayed.
+This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. No se muestran los semáforos globales.
 
 #### Procesos
 
