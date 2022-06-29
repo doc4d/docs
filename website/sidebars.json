@@ -79,6 +79,7 @@
 			"API/FileClass",
 			"API/FolderClass",
 			"API/FunctionClass",
+			"API/HTTPRequestClass",
 			"API/IMAPTransporterClass",
 			"API/MailAttachmentClass",
 			"API/POP3TransporterClass",
