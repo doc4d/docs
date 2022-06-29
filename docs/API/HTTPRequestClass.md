@@ -121,8 +121,7 @@ In the *options* parameter, pass an object containing properties to configure th
 |---|---|---|---|
 |body|Variant|Body of the request. Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers|undefined|
 |certificatesFolder|Folder|Sets the active client certificates folder|undefined|
-|dataType|Text|Type of the response body attribute. Values: "text", "blob", "object", or "auto".
-If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise)|"auto"|
+|dataType|Text|Type of the response body attribute. Values: "text", "blob", "object", or "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise)|"auto"|
 |encoding|Text|Encoding of the request body content if it's a text, ignored if content-type is set inside the headers|"UTF-8"|
 |headers|Object|Headers of the request. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)|Empty object|
 |method|Text|"POST", "GET", or other method|"GET"|
