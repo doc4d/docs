@@ -50,7 +50,7 @@ ORDA features related to entity locking and transaction are managed at process l
 *   Classic 4D language commands (`START TRANSACTION`, `VALIDATE TRANSACTION`, `CANCEL TRANSACTION`) only apply to the main datastore (returned by `ds`). If an entity from a remote datastore is hold by a transaction in a process, other processes cannot update it, even if these processes share the same session.
 *   Locks on entities are removed and transactions are rollbacked:
     *   when the process is killed.
-    *   when the session is closed on the server
+    *   cuando la sesión se cierra en el servidor
     *   when the session is killed from the server administration window.
 
 ### Cierre de las sesiones
@@ -114,7 +114,7 @@ You can increase the benefits of the optimization by using the **context** prope
 All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). The same optimization context property can be passed to unlimited number of entity selections on the same dataclass. Keep in mind, however, that a context is automatically updated when new attributes are used in other parts of the code. Reusing the same context in different codes could result in overloading the context and then, reduce its efficiency.
 > A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the [`dataClass.get()`](../API/DataClassClass.md#get) function).
 
-**Example with `dataClass.query()`:**
+**Ejemplo con `dataClass.query()`:**
 
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
