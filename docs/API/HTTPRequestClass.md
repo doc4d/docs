@@ -12,11 +12,11 @@ title: HTTPRequest
 
 The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httprequest-object) that can be used to configure and send requests to an HTTP server, as well as to process the HTTP server responses. 
 
-You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
+The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
 
 ### Example
 
-Create a class for the request options:
+Create a `MyHttpRequestOptions` class for the request options:
 
 ```4d
 Class constructor($method : Text; $headers : Object; $body : Text)
@@ -24,10 +24,10 @@ This.method:=$method
 This.headers:=$headers
 This.body:=$body
 
-Function onResponse($request : 4D.HTTPRequest; $event : 4D.HTTPEvent)
+Function onResponse($request : 4D.HTTPRequest; $event : Object)
 //My onResponse method, if you want to handle the request asynchronously
 
-Function onError($request : 4D.HTTPRequest; $event : 4D.HTTPEvent)
+Function onError($request : 4D.HTTPRequest; $event : Object)
 //My onError method, if you want to handle the request asynchronously
 ```
 
@@ -39,12 +39,12 @@ $headers:=New object()
 $headers["field1"]:="value1" 
 
 var myHttpRequestOptions : cs.MyHttpRequestOptions
-myHttpRequestOptions :=cs.MyHttpRequestOptions.new("GET"; $headers; "")
+myHttpRequestOptions := cs.MyHttpRequestOptions.new("GET"; $headers; "")
 
 var $request : 4D.HTTPRequest
 $request:=4D.HTTPRequest.new("www.google.com"; myHttpRequestOptions)
-$request.wait() //If you want to handle the request synchronously.
-//Now I can use $request.response to access the result of my request or $request.error to check the error that happened.
+$request.wait() //If you want to handle the request synchronously
+//Now you can use $request.response to access the result of the request or $request.error to check the error that happened.
 ```
 
 ### HTTPRequest Object
@@ -98,7 +98,7 @@ In *url*, pass the URL where you want to send the request. The syntax to use is:
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 {https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
-If you omit the protocol part (http:// or https://), a https request is sent. 
+If you omit the protocol part (`http://` or `https://`), a https request is sent. 
 
 For example, you can pass the following strings:
 
@@ -115,27 +115,57 @@ For example, you can pass the following strings:
 
 #### `options` parameter
 
-In the *options* parameter, pass an object containing properties to configure the HTTP request:
+In the *options* parameter, pass an object that can contain the following properties:
 
 |Property|Type|Description|Default|
 |---|---|---|---|
-|body|Variant|Body of the request. Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers|undefined|
-|certificatesFolder|Folder|Sets the active client certificates folder|undefined|
+|body|Variant|Body of the request (required in case of `post` or `put` requests). Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers|undefined|
+|certificatesFolder|[Folder](#FolderClass.md)|Sets the active client certificates folder|undefined|
 |dataType|Text|Type of the response body attribute. Values: "text", "blob", "object", or "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise)|"auto"|
-|encoding|Text|Encoding of the request body content if it's a text, ignored if content-type is set inside the headers|"UTF-8"|
+|encoding|Text|Used only in case of requests with a `body` (`post` or `put` methods). Encoding of the request body content if it's a text, ignored if content-type is set inside the headers|"UTF-8"|
 |headers|Object|Headers of the request. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)|Empty object|
 |method|Text|"POST", "GET", or other method|"GET"|
 |minTLSVersion|Text|Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"|"`TLSv1_2`"|
-|onData|[Formula object](#FunctionClass.md)|Callback when data from the body is received.<li>$1 contains the [HTTPRequest object]</li><li>$2 contains a [HTTPEvent object](HTTPEventClass.md)</li>|undefined|
-|onError|[Formula object](#FunctionClass.md)|Callback when an error occurs.<li>$1 contains the [`HTTPRequest` object](#httprequest-object)</li><li>$2 contains a [`HTTPEvent` object](HTTPEventClass.md)</li>|undefined|
-|onHeaders|[Formula object](#FunctionClass.md)|Callback when the headers are received.<li>$1 contains the [`HTTPRequest` object](#httprequest-object)</li><li>$2 contains a [`HTTPEvent` object](HTTPEventClass.md)</li>|undefined|
-|onResponse|[Formula object](#FunctionClass.md)|Callback when a response is received.<li>$1 contains the [`HTTPRequest` object](#httprequest-object)</li><li>$2 contains a [`HTTPEvent` object](HTTPEventClass.md)</li>|undefined|
-|onTerminate|[Formula object](#FunctionClass.md)|Callback when the request is over.<li>$1 contains the [`HTTPRequest` object](#httprequest-object)</li><li>$2 contains a [`HTTPEvent` object](HTTPEventClass.md)</li>|undefined|
+|onData|[Function](#FunctionClass.md)|Callback when data from the body is received. It receives two objects as parameters (see below)|undefined|
+|onError|[Function](#FunctionClass.md)|Callback when an error occurs. It receives two objects as parameters (see below)|undefined|
+|onHeaders|[Function](#FunctionClass.md)|Callback when the headers are received. It receives two objects as parameters (see below)|undefined|
+|onResponse|[Function](#FunctionClass.md)|Callback when a response is received. It receives two objects as parameters (see below)|undefined|
+|onTerminate|[Function](#FunctionClass.md)|Callback when the request is over. It receives two objects as parameters (see below)|undefined|
 |protocol|Text|"auto" or "HTTP1". "auto" means HTTP1 in the current implementation|"auto"|
 |proxyAuthentication|[authentication object](#authentication-object)|Object handling proxy authentication|undefined|
 |serverAuthentication|[authentication object](#authentication-object)|Object handling server authentication|undefined|
-|returnResponseBody|Boolean|If false, the response body is not returned in the [`HTTPResponse` object](HTTPResponseClass.md). Returns an error if false and `onData` is undefined|True|
+|returnResponseBody|Boolean|If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined|True|
 |timeout|Real|Timeout in seconds. Undefined = no timeout|Undefined|
+
+#### Callback functions
+
+All callback functions receive two object parameters:
+
+|Parameter|Type|
+|---|---|
+|$param1|[`HTTPRequest` object](#httprequest-object)|
+|$param2|[`Event` object](#event-object)|
+
+
+Here is the sequence of callback calls:
+
+1. `onHeaders` is always called once
+2. `onData` is called zero or several times
+3. If an error occurs, `onError` is executed once (terminates the request)
+4. If no error occured, `onResponse` is always called once
+5. `onTerminate` is always executed
+
+
+
+#### event object
+
+An `event` object is returned when a [callback function](#callback-functions) is called. It contains the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|.data|blob|Received data. It is always *undefined* except in the `onData` callback|
+|.type|text|Type of event. Possible values: "response", "error", "headers", "data", or "terminate|
+
 
 
 
@@ -149,19 +179,10 @@ An authentication object handles the `options.serverAuthentication` or `options.
 |password|Text|Password used for authentication|undefined|
 |method|Text|Method used for authentication:"basic", "digest", "auto"|"auto"|
 
+
 <!-- END REF -->
 
-#### Callbacks order
 
-Callbacks are received in the following order:
-
-|Events|Callbacks|
-|---|---|
-|Headers are received|onHeaders is called|
-|Body data is received|onData is called|
-|Body is fully received|<li>onData is called</li><li>onResponse is called</li><li>onTerminate is called</li>|
-|An error is raised|<li>onError is called</li><li>onTerminate is called</li>|
-|Terminate is called|onTerminate is called
 
 
 <!-- REF #4D.HTTPRequest.dataType.Desc -->
@@ -254,11 +275,22 @@ The `.protocol` property contains <!-- REF #4D.HTTPRequest.protocol.Summary -->t
 
 
 <!-- REF #4D.HTTPRequest.response.Syntax -->
-**response** : [HTTPResponse](HTTPResponseClass.md)<!-- END REF -->
+**response** : Object<!-- END REF -->
 
 #### Description
 
-The `.response` property contains <!-- REF #4D.HTTPRequest.response.Summary -->the [`HTTPResponse`](HTTPResponseClass.md) object if the request has received at least the status code, undefined otherwise<!-- END REF -->.
+The `.response` property contains <!-- REF #4D.HTTPRequest.response.Summary -->the response to the request if it has received at least the status code, undefined otherwise<!-- END REF -->. 
+
+A `response` object is a non-sharable object. It provides the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|.body|Variant|Body of the response. The type of the message is defined according to the [`dataType`](#datatype) property. Undefined if the body has not been received yet|
+|.headers|Object|Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Undefined if the headers have not been received yet.|
+|.status|Number|Status code of the response|
+|.statusText|Text|Message explaining the status code|
+
+
 
 <!-- END REF -->
 
@@ -293,7 +325,7 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 
 > This function is thread-safe.
 
-The `4D.HTTPRequest.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. 
+The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. It triggers the `onTerminate` event. 
 
 <!-- END REF -->
 
