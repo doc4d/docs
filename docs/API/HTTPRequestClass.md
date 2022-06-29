@@ -90,20 +90,21 @@ HTTPRequest objects provide the following properties and functions:
 
 The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in *url* with the defined *options*, and returns a `4D.HTTPRequest` object<!-- END REF -->. 
 
-The returned `HTTPRequest` object contains is used to process responses from the HTTP server and call methods. 
+The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods. 
 
 In *url*, pass the URL where you want to send the request. The syntax to use is:
 
 ```
-http://[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
-https://[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
+{http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
+{https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
+If you omit the protocol part, a https request is sent. 
 
 For example, you can pass the following strings:
 
 ```
     http://www.myserver.com
-    https://www.myserver.com/path
+    www.myserver.com/path
     http://www.myserver.com/path?name="jones"
     https://www.myserver.com/login
     http://123.45.67.89:8083
@@ -133,7 +134,7 @@ If "auto", the type of the body content will be deduced from its MIME type (obje
 |onTerminate|[Formula object](#FunctionClass.md)|Callback when the request is over.<li>$1 contains the [`HTTPRequest` object](#httprequest-object)</li><li>$2 contains a [`HTTPEvent` object](HTTPEventClass.md)</li>|undefined|
 |protocol|Text|"auto" or "HTTP1". "auto" means HTTP1 in the current implementation|"auto"|
 |proxyAuthentication|[authentication object](#authentication-object)|Object handling proxy authentication|undefined|
-|proxyAuthentication|[authentication object](#authentication-object)|Object handling proxy authentication|undefined|
+|serverAuthentication|[authentication object](#authentication-object)|Object handling server authentication|undefined|
 |returnResponseBody|Boolean|If false, the response body is not returned in the [`HTTPResponse` object](HTTPResponseClass.md). Returns an error if false and `onData` is undefined|undefined|
 |timeout|Real|Timeout in seconds. Undefined = no timeout|True|
 
