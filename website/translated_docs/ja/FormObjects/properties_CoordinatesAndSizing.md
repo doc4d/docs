@@ -170,7 +170,7 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [Line](shapes_overview.md#line) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
+[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [入力](input_overview.md) - [リストボックス](listbox_overview.md) - [線](shapes_overview.md#線) - [リストボックス列](listbox_overview.md#リストボックス列) - [楕円](shapes_overview.md#楕円) - [ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [ルーラー](ruler.md) - [四角](shapes_overview.md#四角) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [スタティックピクチャー](staticPicture.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [テキストエリア](text.md) - [Web エリア](webArea_overview.md)
 
 
 
@@ -281,10 +281,10 @@ RowHeights{5}:=3
 
 
 ---
-## Horizontal Padding
+## 横方向パディング
 
 
-Sets a horizontal padding for the cells. The value is set in pixels (default = 0).
+セルの水平方向のパディングを設定します。 値はピクセル単位です (デフォルトは 0)。
 
 ![](assets/en/FormObjects/padding.png)
 
@@ -292,33 +292,33 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 
 #### JSON 文法
 
-| 名称                | データタイプ | とりうる値                          |
-| ----------------- | ------ | ------------------------------ |
-| horizontalPadding | number | Number of pixels (must be >=0) |
+| 名称                | データタイプ | とりうる値       |
+| ----------------- | ------ | ----------- |
+| horizontalPadding | number | ピクセル数 (>=0) |
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
+[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [フッター](properties_Footers.md) - [ヘッダー](properties_Headers.md)
 
 #### 参照
-[Vertical Padding](#vertical-padding)
+[縦方向パディング](#vertical-padding)
 
 ---
-## Vertical Padding
+## 縦方向パディング
 
 
-Sets a vertical padding for the cells. The value is set in pixels (default = 0).
+セルの垂直方向のパディングを設定します。 値はピクセル単位です (デフォルトは 0)。
 
 
 #### JSON 文法
 
-| 名称              | データタイプ | とりうる値                          |
-| --------------- | ------ | ------------------------------ |
-| verticalPadding | number | Number of pixels (must be >=0) |
+| 名称              | データタイプ | とりうる値       |
+| --------------- | ------ | ----------- |
+| verticalPadding | number | ピクセル数 (>=0) |
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
+[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [フッター](properties_Footers.md) - [ヘッダー](properties_Headers.md)
 
 #### 参照
-[Horizontal Padding](#horizontal-padding)
+[横方向パディング](#horizontal-padding)
