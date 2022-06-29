@@ -8,6 +8,9 @@
       "Admin/cli": {
         "title": "コマンドライン・インターフェース"
       },
+      "Admin/data-collect": {
+        "title": "データ収集について"
+      },
       "Admin/dataExplorer": {
         "title": "Webデータエクスプローラー"
       },
@@ -1001,7 +1004,7 @@
       "Web Administration": "Web 管理",
       "Command Line Interface": "コマンドライン・インターフェース",
       "TLS Protocol": "TLSプロトコル",
-      "License Management": "ライセンス管理",
+      "Licenses & Data Collection": "ライセンス＆データ収集",
       "Access Rights": "アクセス権限",
       "MSC": "MSC",
       "Backup and Restore": "バックアップと復元",
@@ -1047,7 +1050,7 @@
     "Client/Server|no description given": "クライアント/サーバー",
     "TLS Protocol|no description given": "TLSプロトコル",
     "Debugging|no description given": "デバッガー",
-    "Code Editor|no description given": "コードエディター",
+    "Handling Code|no description given": "コードの扱い方",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
