@@ -38,7 +38,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 ## Fundamentos de la selección, la entrada y de la navegación
 
-Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
+Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Las celdas pueden ser seleccionadas y sus contenidos editados.
 
 ### Selecting cells, columns and rows
 
@@ -138,7 +138,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 4D View Pro range objects are composed of several properties:
 
 *   area - El nombre del área 4D View Pro
-*   ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
+*   rangos - Una colección de objeto(s) rango. Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
 | Propiedad |                   | Tipo      | Descripción                                                                        | Disponible para                                                 |
 | --------- | ----------------- | --------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------- |
