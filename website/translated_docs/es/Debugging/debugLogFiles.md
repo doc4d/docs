@@ -495,7 +495,7 @@ The log configuration file is a `.json` file that can contain the following prop
 
 ### Ejemplo
 
-Here is an example of log configuration file:
+Este es un ejemplo de archivo de configuración de log:
 
 ```json
 {
