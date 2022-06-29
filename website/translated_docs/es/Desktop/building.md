@@ -262,7 +262,7 @@ Cuando ejecute una aplicación de servidor 4D generada:
 * If the server has a data directory file, it is loaded.
 * If the server does not have a data directory file, the application directory file is loaded.
 
-The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file. If no data directory file already exists, it is automatically created. If the application directory file was embedded, it is duplicated as data directory file.
+El archivo de directorio de la aplicación es de sólo lectura. Modifications made to users, groups and permissions during server execution are stored in the data directory file. If no data directory file already exists, it is automatically created. If the application directory file was embedded, it is duplicated as data directory file.
 
 Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
 
@@ -397,7 +397,7 @@ If you checked the “Allow automatic update of client application” option, an
 If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. Estos elementos son los siguientes:
 
 - archivos *cert.pem* y *key.pem* (opcional): etos archivos se utilizan para las conexiones TLS y por los comandos de encriptación de datos,
-- Default Web root folder (WebFolder).
+- Carpeta raíz web por defecto (WebFolder).
 
 Los elementos deben ser instalados:
 *   **en Windows**
@@ -424,7 +424,7 @@ El escenario básico es:
 2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
     - `DatabaseToEmbedInClientWinFolder`
     - `DatabaseToEmbedInClientMacFolder`
-3. Build the client-server application. This will have following effects:
+3. Genere la aplicación cliente-servidor. This will have following effects:
     - the whole folder of the single user application is copied inside the "Database" folder of the merged client
     - the *EnginedServer.4Dlink* file of the "Database" folder is not generated
     - the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
