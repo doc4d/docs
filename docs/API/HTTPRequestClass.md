@@ -150,10 +150,10 @@ All callback functions receive two object parameters:
 Here is the sequence of callback calls:
 
 1. `onHeaders` is always called once
-2. `onData` is called zero or several times
-3. If an error occurs, `onError` is executed once (terminates the request)
-4. If no error occured, `onResponse` is always called once
-5. `onTerminate` is always executed
+2. `onData` is called zero or several times (not called if the request does not have a body)
+3. If no error occured, `onResponse` is always called once
+4. If an error occurs, `onError` is executed once (and terminates the request)
+5. `onTerminate` is always executed once 
 
 
 
