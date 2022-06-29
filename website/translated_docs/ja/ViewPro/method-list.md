@@ -142,10 +142,10 @@ VP ADD SELECTION($currentSelection)
 
 [VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
-### VP ADD SHEET 
+### VP ADD SHEET
 
 <!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer ; *name* : Text )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
 
@@ -153,12 +153,12 @@ VP ADD SELECTION($currentSelection)
 | ---------- | ------- | -- | ----------------------- |
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | index      | Integer | -> | 新しいシートのインデックス           |
-| name       | Text    | -> | シート名                    |	
-<!-- END REF --> 
+| name       | Text    | -> | シート名                    |
+<!-- END REF -->
 
 #### 説明
 
-`VP ADD SHEET` コマンドは、 <!-- REF #_method_.VP ADD SHEET.Summary -->*vpAreaName* にロードされているドキュメントにシートを挿入します。<!-- END REF --> 
+`VP ADD SHEET` コマンドは、 <!-- REF #_method_.VP ADD SHEET.Summary -->*vpAreaName* にロードされているドキュメントにシートを挿入します。<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -188,14 +188,14 @@ VP ADD SHEET("ViewProArea";2;"March")
 ### VP ADD SPAN
 
 <!-- REF #_method_.VP ADD SPAN.Syntax -->**VP ADD SPAN** ( *rangeObj* : Object )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP ADD SPAN.Params -->
 
 | 引数       | タイプ    |    | 説明        |
 | -------- | ------ | -- | --------- |
 | rangeObj | Object | -> | レンジオブジェクト |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
@@ -234,7 +234,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 ### VP ADD STYLESHEET
 
-<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
@@ -588,7 +588,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 | 引数             | タイプ    |    | 説明                 |
 | -------------- | ------ | -- | ------------------ |
 | 4DViewDocument | BLOB   | -> | 4D View ドキュメント     |
-| 戻り値            | Object | <- | 4D View Pro オブジェクト |	
+| 戻り値            | Object | <- | 4D View Pro オブジェクト |
 
 
 <!-- END REF -->  
@@ -624,7 +624,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 | -------- | ------ | -- | ------------------------------- |
 | vpObject | Object | -> | 変換するエリアを格納した 4D View Pro オブジェクト |
 | rangeObj | Object | -> | レンジオブジェクト                       |
-| 戻り値      | Object | <- | エリアの SVGピクチャー                   |	
+| 戻り値      | Object | <- | エリアの SVGピクチャー                   |
 
 
 <!-- END REF -->  
@@ -732,6 +732,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 ```
 
 #### 参照
+
 
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -959,7 +960,7 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv.png)
 
-```4d 
+```4d
 var $params : Object
 $params:=New object
 $params.range:=VP Cells("ViewProArea";0;0;2;5)
@@ -1101,13 +1102,13 @@ $range:=VP All("ViewProArea")
 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True // ドキュメント全体を検索します
+$condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // 戻り値のレンジオブジェクトが空かどうかをチェックします
+  // Check for empty range object
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1235,7 +1236,7 @@ size:16pt
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
 
-  // 返されるレンジオブジェクトには以下が格納されています:
+  //returns a range object containing:
   //$activeCell.ranges[0].column=3
   //$activeCell.ranges[0].row=4
   //$activeCell.ranges[0].sheet=0
@@ -1432,7 +1433,7 @@ $colCount:=VP Get column count("ViewProarea")
 ### VP Get current sheet
 
 <!-- REF #_method_.VP Get current sheet.Syntax -->**VP Get current sheet** ( *vpAreaName* : Text )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 
@@ -1440,12 +1441,12 @@ $colCount:=VP Get column count("ViewProarea")
 | ----------- | ------- | -- | ----------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | ファンクションの戻り値 | Integer | <- | カレントシートのインデックス          |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
 `VP Get current sheet` コマンドは、 <!-- REF #_method_.VP Get current sheet.Summary -->*vpAreaName* 引数で指定した View Pro エリアのカレントシートのインデックスを返します。 カレントシートとは、ドキュメント内で選択されているシートのことです。
-<!-- END REF --> 
+<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -1997,7 +1998,7 @@ $currentSelection:=VP Get selection("myVPArea")
 ### VP Get sheet count
 
 <!-- REF #_method_.VP Get sheet count.Syntax -->**VP Get sheet count** ( *vpAreaName* : Text ) : Integer
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get sheet count.Params -->
 
@@ -2005,12 +2006,12 @@ $currentSelection:=VP Get selection("myVPArea")
 | ----------- | ------- | -- | ----------------------- |
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | ファンクションの戻り値 | Integer | <- | シートの数                   |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
 `VP Get sheet count` コマンドは、 <!-- REF #_method_.VP Get sheet count.Summary -->*vpAreaName* で指定したエリアにロードされているドキュメント内にあるシート数を返します。
-<!-- END REF --> 
+<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2037,7 +2038,7 @@ $currentSelection:=VP Get selection("myVPArea")
 ### VP Get sheet index
 
 <!-- REF #_method_.VP Get sheet index.Syntax -->**VP Get sheet index** ( *vpAreaName* : Text ; *name* : Text ) : Integer
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get sheet index.Params -->
 
@@ -2046,12 +2047,12 @@ $currentSelection:=VP Get selection("myVPArea")
 | vpAreaName  | Text | -> | 4D View Pro フォームオブジェクト名 |
 | name        | テキスト | -> | シート名                    |
 | ファンクションの戻り値 | 整数   | <- | シートのインデックス              |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
 `VP Get sheet index` コマンドは、 <!-- REF #_method_.VP Get sheet index.Summary -->*vpAreaName* 引数で指定したエリア内の、シート名で指定したシートのインデックスを返します。
-<!-- END REF --> 
+<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2077,7 +2078,7 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") // 2 を返し�
 ### VP Get sheet name
 
 <!-- REF #_method_.VP Get sheet name.Syntax -->**VP Get sheet name** ( *vpAreaName* : Text ; *sheet* : Integer ) : Text
-<!-- END REF --> 
+<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get sheet name.Params -->
@@ -2087,12 +2088,12 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") // 2 を返し�
 | vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名 |
 | sheet       | Integer | -> | シートのインデックス              |
 | ファンクションの戻り値 | テキスト    | <- | シート名                    |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
 `VP Get sheet name` コマンドは、 <!-- REF #_method_.VP Get sheet name.Summary -->*vpAreaName* で指定したエリア内の、インデックスで指定したシートの名前を返します。
-<!-- END REF --> 
+<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2157,7 +2158,7 @@ End if
 ### VP Get show print lines
 
 <!-- REF #_method_.VP Get show print lines.Syntax -->**VP Get show print lines** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Boolean
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
@@ -2166,12 +2167,12 @@ End if
 | vpAreaName  | Text | -> | 4D View Pro フォームオブジェクト名       |
 | sheet       | 整数   | <- | シートのインデックス                    |
 | ファンクションの戻り値 | ブール  | <- | 印刷線が表示状態であれば true、それ以外は false |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
 `VP Get show print lines` コマンドは、 <!-- REF #_method_.VP Get show print lines.Summary -->印刷プレビューの線が表示状態であれば `true` を、非表示であれば `false` を返します。
-<!-- END REF --> 
+<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2218,10 +2219,10 @@ End if
 ![](assets/en/ViewPro/cmd_vpGetSpans.PNG)
 
 ```4d
-// すべてのセル結合を検索します
+// Search for all cell spans
 $range:=VP Get spans(VP All("ViewProArea"))
 
-// テキストを中央揃えにします
+//center text
 $style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal align center)
 VP SET CELL STYLE($range;$style)
 ```
@@ -2320,10 +2321,10 @@ $styles:=VP Get stylesheets("ViewProArea")
 [
    {
      backColor:green,
-     borderLeft:{color:green,style:10}, 
-     borderTop:{color:green,style:10}, 
-     borderRight:{color:green,style:10}, 
-     borderBottom:{color:green,style:10}, 
+     borderLeft:{color:green,style:10},
+     borderTop:{color:green,style:10},
+     borderRight:{color:green,style:10},
+     borderBottom:{color:green,style:10},
      name:GreenDashDotStyle
    },
    {
@@ -2958,7 +2959,7 @@ dataObject に存在しない要素を *options* で指定した場合 (例: フ
 *   `vk workbook`
 
 
-> * 4D View Pro エリアは、`VP PRINT` コマンドによってのみ印刷可能です。 
+> * 4D View Pro エリアは、`VP PRINT` コマンドによってのみ印刷可能です。
 > * 4Dコマンドの **印刷** テーマのコマンドは、`VP PRINT` ではサポートされません。
 > * このコマンドは、最終的なエンドユーザーが個別に印刷を実行することを想定しています。 自動化印刷ジョブについては、[VP EXPORT DOCUMENT](#vp-export-document) コマンドで 4D View Pro エリアを PDF に書き出すことが推奨されます。
 
@@ -3017,7 +3018,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 ### VP REMOVE NAME
 
-<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
@@ -3095,7 +3096,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 3つ目のシートを削除します:
 
-```4d 
+```4d
 VP REMOVE SHEET("ViewProArea";2)
 ```
 
@@ -3389,11 +3390,11 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 
 ```4d
-// cs.OffscreenArea クラス宣言 
+// cs.OffscreenArea class declaration
 Class constructor ($path : Text)
     This.filePath:=$path
 
-// この関数はオフスクリーンエリアの各イベントごとに呼び出されます
+// This function will be called on each event of the offscreen area
 Function onEvent()
     Case of
         :(FORM Event.code=On VP Ready)
@@ -3437,23 +3438,23 @@ Function onEvent()
             SET TIMER(60)
 
         :(FORM Event.code=On VP Range Changed)
-    // 計算の完了を感知し、 タイマーを再スタートさせます
+    // 計算の完了を感知し、 Restarts the timer
             If(This.isWaiting)
                 SET TIMER(60)
             End if
 
         :(FORM Event.code=On Timer)
-    // この時点以降、他の 4D View コマンドを呼び出してもタイマーが再スタートしないようにします
+    // To be sure to not restart the timer if you call others 4D View command after this point
             This.isWaiting:=False
 
-    // タイマーを停止します
+    // Stop the timer
             SET TIMER(0)
 
-    // PDF 書き出しを開始します
+    // Start the PDF export
             VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
 
         :(FORM Event.code=On URL Loading Error)
-            CANCEL 
+            CANCEL
     End case
 ```
 
@@ -3898,7 +3899,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 ### VP SET CURRENT SHEET
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *index* : Integer)
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
@@ -3906,7 +3907,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 | ---------- | ---- | -- | ----------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 | index      | 整数   | <- | 新しいカレントシートのインデックス       |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### 説明
 
@@ -4133,14 +4134,14 @@ var $options : Object
 
 $data:= New collection()
 
-// 日付はスカラー値として渡すことができます
-$data.push(New collection("Date"; Current date)) 
+// Dates can be passed as scalar values
+$data.push(New collection("Date"; Current date))
 
-// 時間はオブジェクト属性として渡す必要があります
+// Time values must be passed as object attributes
 $data.push(New collection("Time"; New object("time"; 5140)))
 
-// 日付 + 時間の例
-$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+// Date + time example
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140)))
 
 $options:=New object("autoGenerateColumns"; True)
 
@@ -4345,7 +4346,9 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
 
-*formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
+*formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。
+
+> If the *formula* is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
 
 任意の *formatPattern* 引数は、*formula* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
@@ -4363,6 +4366,12 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
+```
+
+#### 例題 3
+
+```4d
+VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
 ```
 
 #### 参照
@@ -4390,8 +4399,10 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 
 *formulasCol* 引数は 2次元構造のコレクションです:
 
-*   第1レベルのコレクションは、フォーミュラのサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。
-*   それぞれのサブコレクションは行におけるセルの値を定義します。 値は、セルに割り当てるフォーミュラを格納したテキスト要素でなくてはなりません。 > 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-methods) コマンドで許可されている必要があります。
+* 第1レベルのコレクションは、フォーミュラのサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。
+* それぞれのサブコレクションは行におけるセルの値を定義します。 値は、セルに割り当てるフォーミュラを格納したテキスト要素でなくてはなりません。
+
+> If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
 
 *rangeObj* 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
@@ -4762,7 +4773,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 ### VP SET SHEET NAME
 
-<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} ) 
+<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
@@ -4933,7 +4944,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 ### VP SET SHOW PRINT LINES
 
-<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} ) 
+<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Params -->
@@ -5166,7 +5177,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 [VP Get formulas](configuring.md#vp-get-formulas)<br/>[VP Get value](#vp-get-value)<br/>[VP Get Values](#vp-get-values)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
 
-### VP SET WORKBOOK OPTIONS 
+### VP SET WORKBOOK OPTIONS
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
 
