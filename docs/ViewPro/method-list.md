@@ -719,6 +719,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 #### See also
 
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
@@ -3487,6 +3488,7 @@ $result:=VP Run offscreen area($o)
 
 You want to load a large document offscreen, wait for all calculations to complete evaluating, and export it as a PDF:
 
+
 ```4d
 //cs.OffscreenArea class declaration
 Class constructor($pdfPath : Text)
@@ -4395,7 +4397,10 @@ The `VP SET FORMULA` command <!-- REF #_method_.VP SET FORMULA.Summary -->assign
 
 In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the formula specified will be linked in each cell.
 
-The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
+The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. 
+
+> If the *formula* is a string, use the period `.` as numerical separator and the comma `,` as parameter separator.
+> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
 The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *formula*.
 
@@ -4413,6 +4418,12 @@ To remove the formula:
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
+```
+
+#### Example 3
+
+```4d
+VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
 ```
 
 #### See also
@@ -4443,7 +4454,8 @@ The *formulasCol* is a two-dimensional collection:
 * The first-level collection contains subcollections of formulas. Each subcollection defines a row.
 * Each subcollection defines cell values for the row. Values must be text elements containing the formulas to assign to the cells.
 
- >If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods) command.
+> If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator.
+> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
 You remove the formulas in *rangeObj* by replacing them with an empty string ("").
 
