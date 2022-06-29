@@ -8,6 +8,9 @@
       "Admin/cli": {
         "title": "Interface de ligne de commande"
       },
+      "Admin/data-collect": {
+        "title": "About Data Collection"
+      },
       "Admin/dataExplorer": {
         "title": "Explorateur de données Web"
       },
@@ -1001,7 +1004,7 @@
       "Web Administration": "Administration Web",
       "Command Line Interface": "Interface de ligne de commande",
       "TLS Protocol": "Protocole TLS",
-      "License Management": "Gestion des licences",
+      "Licenses & Data Collection": "Licenses & Data Collection",
       "Access Rights": "Droits d'accès",
       "MSC": "CSM",
       "Backup and Restore": "Sauvegarde et restitution",
@@ -1047,7 +1050,7 @@
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol|no description given": "Protocole TLS",
     "Debugging|no description given": "Débogage",
-    "Code Editor|no description given": "Éditeur de code",
+    "Handling Code|no description given": "Handling Code",
     "Web Data Explorer|no description given": "Explorateur de données Web",
     "Language Reference (4D Doc Center)|no description given": "Langage (4D Doc Center)",
     "Access Rights|no description given": "Droits d'accès",
