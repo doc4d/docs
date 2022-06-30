@@ -207,7 +207,7 @@ On this tab, you can build customized client-server applications that are homoge
 
 ![](assets/en/Project/buildappCSProj.png)
 
-### What is a Client/Server application?
+### ¿Qué es una aplicación cliente/servidor?
 
 A client/server application comes from the combination of three items:
 
@@ -355,7 +355,7 @@ If you checked the “Allow automatic update of client application” option, an
 If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. Estos elementos son los siguientes:
 
 - archivos *cert.pem* y *key.pem* (opcional): etos archivos se utilizan para las conexiones SSL y por los comandos de encriptación de datos,
-- Default Web root folder (WebFolder).
+- Carpeta raíz web por defecto (WebFolder).
 
 Los elementos deben ser instalados:
 *   **en Windows**
@@ -382,7 +382,7 @@ El escenario básico es:
 2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
     - `DatabaseToEmbedInClientWinFolder`
     - `DatabaseToEmbedInClientMacFolder`
-3. Build the client-server application. This will have following effects:
+3. Genere la aplicación cliente-servidor. This will have following effects:
     - the whole folder of the single user application is copied inside the "Database" folder of the merged client
     - the *EnginedServer.4Dlink* file of the "Database" folder is not generated
     - the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
