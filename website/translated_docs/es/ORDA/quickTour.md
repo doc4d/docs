@@ -146,7 +146,7 @@ Para crear un grupo:
 3. Introduzca el nombre del nuevo grupo. El nombre del grupo puede tener hasta 15 caracteres. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
 
-### Placing users or groups into groups
+### Colocar los usuarios o los grupos en grupos
 
 You can place any user or group into a group, and you can also place the group itself into several other groups. No es obligatorio colocar a un usuario en un grupo.
 
