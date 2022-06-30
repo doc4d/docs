@@ -808,7 +808,7 @@ The callback receives the following parameters:
 *   en *$2*: param
 *   en *$N...*: paramN...
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (Boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -1031,7 +1031,7 @@ The callback receives the following parameters:
 *   en *$2*: param
 *   en *$N...*: paramN...
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
 *   *$1.stop* (Boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -1113,7 +1113,7 @@ The callback receives the following parameters:
 *   en *$2*: param
 *   en *$N...*: paramN...
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (Boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -1203,7 +1203,7 @@ The callback receives the following parameters:
 *   en *$2*: param
 *   en *$N...*: paramN...
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (Boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -1585,7 +1585,7 @@ The callback receives the following parameters:
 *   en *$2*: param
 *   en *$N...*: paramN...
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (any type): new transformed value to add to the resulting collection
 *   *$1.stop* (Boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -2536,7 +2536,7 @@ The callback receives the following parameters:
 *   en *$2: param*
 *   en *$N...*: *paramN...*
 
-It can set the following parameter(s):
+Puede definir los siguientes parámetros:
 
 *   (mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
