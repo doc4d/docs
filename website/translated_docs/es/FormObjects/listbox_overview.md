@@ -244,7 +244,7 @@ Los eventos formulario de los objetos list box o columnas de list box pueden dev
 
 | Propiedad        | Tipo         | Descripción                                                           |
 | ---------------- | ------------ | --------------------------------------------------------------------- |
-| area             | texto        | List box object area ("header", "footer", "cell")                     |
+| area             | texto        | Área de objeto list box ("header", "footer", "cell")                  |
 | areaName         | texto        | Nombre del área                                                       |
 | column           | entero largo | Número de columna                                                     |
 | columnName       | texto        | Nombre de la columna                                                  |
@@ -721,7 +721,7 @@ When you select at least one column in addition to the first one in a list box o
 
 ![](assets/en/FormObjects/listbox_hierarchy1.png)
 
-This command is a shortcut to define a hierarchy. Cuando se selecciona, se llevan a cabo las siguientes acciones:
+Este comando es un acceso directo para definir una jerarquía. Cuando se selecciona, se llevan a cabo las siguientes acciones:
 
 *   The **Hierarchical list box** option is checked for the object in the Property List.
 *   Las variables de las columnas se utilizan para definir la jerarquía. Reemplazan las variables ya definidas.
@@ -969,7 +969,7 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 
 #### value
 
-Cell values are stored in the "value" attribute. This attribute is used for input as well as output. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
+Los valores de las celdas se almacenan en el atributo "valor". This attribute is used for input as well as output. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
 
 ````4d
  ARRAY OBJECT(obColumn;0) //array columna 
@@ -1264,7 +1264,7 @@ Several events can be handled while using an object list box array:
     *   en una lista desplegable
     *   en un área combo box
     *   in a unit button (switch from value x to value x+1)
-    *   in a check box (switch between checked/unchecked)
+    *   en una casilla de selección (cambia entre marcado/desmarcado)
 *   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
 *   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.
 
