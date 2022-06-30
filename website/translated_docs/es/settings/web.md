@@ -36,7 +36,7 @@ Indicates whether or not the Web server will accept secure connections. See [Ena
 
 Allows you to modify the TCP/IP port number used by the Web server for secured HTTP connections over TLS (HTTPS protocol). See [HTTPS Port](../WebServer/webServerConfig.md#https-port).
 
-#### Allow database access through 4DSYNC URLs
+#### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
 
 *Compatibility Note*: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
 
@@ -236,7 +236,7 @@ The following table lists the fields available for each format (in alphabetical 
 | PATH_ARGS      |     | X   | CGI parameters: string located after the "$" character                     |
 | STATUS         | X   | X   | Respuesta ofrecida por el servidor                                         |
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                         |
-| TRANSFER_TIME  | X   | X   | Time requested by server to generate the reply                             |
+| TRANSFER_TIME  | X   | X   | Tiempo solicitado por el servidor para generar la respuesta                |
 | USER           | X   | X   | User name if authenticated; otherwise - (minus sign).                      |
 |                |     |     | If the user name contains spaces, they are replaced by _ (underlines)      |
 | URL            |     | X   | URL solicitado por el cliente                                              |
