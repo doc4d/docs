@@ -644,7 +644,7 @@ The connection procedure for merged client applications supports cases where the
 
 ### Storing the last server path
 
-The last used and validated server path is automatically saved in a file named "lastServer.xml" in the application's user preferences folder. This folder is stored at the following location:
+The last used and validated server path is automatically saved in a file named "lastServer.xml" in the application's user preferences folder. Esta carpeta se guarda en la siguiente ubicación:
 
 ```4d
 prefsUsuario:=Get 4D folder(Carpeta 4D activa)
