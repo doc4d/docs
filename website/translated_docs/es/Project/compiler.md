@@ -224,7 +224,7 @@ A complete list of your database and project methods is given at the end of the 
 - el número de llamadas
 - la propiedad Thread Safe o Thread Unsafe.
 
-This information appears as follows:
+Esta información aparece así:
 
 ```
 Procedure or Function <Method name>(parameter data types):
@@ -328,5 +328,5 @@ In any cases, the 4D Silicon compiler will warn you if your configuration does n
 
 The Silicon compiler is incremental, which means that:
 
-- During the very first compilation, **all 4D methods** are compiled. This step could take a certain time. Sin embargo, sólo ocurre una vez.
+- During the very first compilation, **all 4D methods** are compiled. Este paso podría tomar un cierto tiempo. Sin embargo, sólo ocurre una vez.
 - During all subsequent compilations, only **new or modified methods** are processed, thus reducing drastically the compilation time. 
