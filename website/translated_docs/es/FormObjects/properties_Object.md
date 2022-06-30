@@ -27,7 +27,7 @@ Esta propiedad designa el tipo del [objeto formulario activo o inactivo](formObj
 ## Nombre del objeto
 
 Each active form object is associated with an object name. Each object name must be unique.
-> Object names are limited to a size of 255 bytes.
+> Los nombres de objetos están limitados a un tamaño de 255 bytes.
 
 When using 4D’s language, you can refer to an active form object by its object name (for more information about this, refer to [Object Properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Object-Properties.300-4128195.en.html) in the 4D Language Reference manual).
 
