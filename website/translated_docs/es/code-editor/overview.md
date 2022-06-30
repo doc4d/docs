@@ -48,7 +48,7 @@ You can import and export a method or a class code in the form of a file. These 
 
 The import/export function is multi-platform: a method exported under Mac OS can be imported under Windows and vice versa; 4D handles the conversion of characters when necessary.
 
-4D can export and import methods in two formats:
+4D puede exportar e importar métodos en dos formatos:
 
 - 4D method (extension *.c4d*): In this format, methods are exported in encoded form. Los nombres de los objetos están tokenizados. This format is used in particular for exchanging methods between 4D applications and plug-ins in different languages. Conversely, it is not possible to display them in a text editor.
 - Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
