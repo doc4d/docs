@@ -7,7 +7,7 @@ title: Editor de código
 
 ![](assets/en/code-editor/code-editor-overview.png)
 
-The Code Editor works much like a text editor. Writing a method or a class is usually a combination of typing text, selecting components, and dragging items from the Explorer or other windows. You can also use various type-ahead functions to create methods faster.
+El editor de código funciona como un editor de texto. Writing a method or a class is usually a combination of typing text, selecting components, and dragging items from the Explorer or other windows. You can also use various type-ahead functions to create methods faster.
 
 You can scroll through the contents of methods, classes and functions, which can include up to 32,000 lines of code or 2 GB of text.
 
@@ -373,7 +373,7 @@ The Code Editor provides various contextual information using help tips. They ap
 
 * **Project methods**: When you mouse over a project method or class function, a help tip displays:
 
-  * either the comments specified in the Explorer.
+  * o los comentarios especificados en el Explorador.
   * or the first few lines of the method or class function if it includes comments (lines beginning with // or /*...*/ comment block). It is common practice to insert documentation for the method as well as its parameters in the form of comments at the beginning of the method. You can get this information directly in the help tip, just make sure to first remove any comments found in the Explorer. Comments at the beginning of a method: ![](assets/en/code-editor/comments-method.png) Help tip in another method: ![](assets/en/code-editor/help-tip.png)
 
 * You can also create a **dedicated documentation file** named `<MethodName>.md` in the `<package>/documentation` folder. See [Viewing documentation in the code editor](../Project/documentation.md#viewing-documentation-in-the-code-editor)
