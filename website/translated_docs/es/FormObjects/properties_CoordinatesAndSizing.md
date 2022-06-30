@@ -284,7 +284,7 @@ Asumiendo que la unidad de las líneas es "líneas", entonces la quinta línea d
 ## Horizontal Padding
 
 
-Sets a horizontal padding for the cells. The value is set in pixels (default = 0).
+Establece un relleno horizontal para las celdas. El valor se establece en píxeles (por defecto = 0).
 
 ![](assets/en/FormObjects/padding.png)
 
@@ -307,7 +307,7 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 ## Vertical Padding
 
 
-Sets a vertical padding for the cells. The value is set in pixels (default = 0).
+Establece un relleno vertical para las celdas. El valor se establece en píxeles (por defecto = 0).
 
 
 #### Gramática JSON
