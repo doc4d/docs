@@ -13,7 +13,7 @@ This page explains:
 
 ## Collected information
 
-Data is collected during the following events:
+Los datos se recogen durante los siguientes eventos:
 
 - 4D Server startup,
 - database opening,
@@ -27,7 +27,7 @@ Data is collected during the following events:
 | CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nombre, tipo y velocidad del procesador                      |
 | numberOfCores | 4                                                                                                    | Total number of cores                                        |
 | memory        | 419430400                                                                                            | Volume of memory storage (in bytes) available on the machine |
-| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Operating system version and build number                    |
+| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versión del sistema operativo y número de build              |
 | headless      | false                                                                                                | True if the application is running in headless mode          |
 | version       | 1960                                                                                                 | Número de versión de la aplicación 4D                        |
 | buildNumber   | 123456                                                                                               | Build number of the 4D application                           |
