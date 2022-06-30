@@ -102,7 +102,7 @@ En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utiliz
 | fk database folder         | 4     | Filesystem asociado: "/PACKAGE"                                                                     |
 | fk desktop folder          | 115   |                                                                                                     |
 | fk documents folder        | 117   | Carpeta Documentos del usuario                                                                      |
-| fk licenses folder         | 1     | Folder containing the machine's 4D license files                                                    |
+| fk licenses folder         | 1     | Carpeta que contiene los archivos de licencia 4D de la máquina                                      |
 | fk logs folder             | 7     | Filesystem asociado: "/LOGS"                                                                        |
 | fk mobileApps folder       | 10    |                                                                                                     |
 | fk remote database folder  | 3     | 4D database folder created on each 4D remote machine                                                |
@@ -290,17 +290,17 @@ The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the f
 
 By default, for security reasons, if you omit the option parameter, `.delete( )` only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:
 
-| Constante              | Valor | Comentario                                       |
-| ---------------------- | ----- | ------------------------------------------------ |
-| `Delete only if empty` | 0     | Elimina la carpeta sólo cuando está vacía        |
-| `Delete with contents` | 1     | Deletes folder along with everything it contains |
+| Constante              | Valor | Comentario                                        |
+| ---------------------- | ----- | ------------------------------------------------- |
+| `Delete only if empty` | 0     | Elimina la carpeta sólo cuando está vacía         |
+| `Delete with contents` | 1     | Elimina la carpeta junto con todo lo que contiene |
 
 When `Delete only if empty` is passed or if you omit the option parameter:
 
 *   La carpeta sólo se elimina si está vacía; en caso contrario, el comando no hace nada y se genera un error -47.
 *   Si la carpeta no existe, se genera el error -120.
 
-When `Delete with contents` is passed:
+Cuando se pasa `Delete with contents`:
 
 *   La carpeta, junto con todo su contenido, se elimina. **Advertencia**: incluso esta carpeta y/o su contenido estén bloqueados o definidos como de sólo lectura, si el usuario actual tiene los derechos de acceso adecuados, la carpeta (y su contenido) aún se elimina.
 *   Si esta carpeta, o cualquiera de los archivos que contiene, no puede ser eliminada, la eliminación se interrumpe tan pronto como se detecta el primer elemento inaccesible y se devuelve un error(*). En este caso, la carpeta puede ser eliminada sólo parcialmente. Cuando se interrumpe el borrado, puede utilizar el comando `GET LAST ERROR STACK` para recuperar el nombre y la ruta de acceso del archivo infractor.
