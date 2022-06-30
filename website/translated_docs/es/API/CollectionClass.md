@@ -802,7 +802,7 @@ You designate the callback to be executed to evaluate collection elements using 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
@@ -1025,7 +1025,7 @@ You designate the callback to be executed to filter collection elements using ei
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
@@ -1107,7 +1107,7 @@ You designate the callback to be executed to evaluate collection elements using 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
@@ -1197,7 +1197,7 @@ You designate the callback to be executed to evaluate collection elements using 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
@@ -1579,7 +1579,7 @@ You designate the callback to be executed to evaluate collection elements using 
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
@@ -1884,7 +1884,7 @@ You designate the callback to be executed to evaluate collection elements using 
 
 In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide *extraParam* parameters to the callback if necessary.
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 - $1 (objeto), donde:
     - *$1.value* (todo tipo): primer valor del elemento a comparar
@@ -2196,7 +2196,7 @@ The callback takes each collection element and performs any desired operation to
 
 Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite, *$1.accumulator>* comienza con *Undefined*.
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a procesar
 *   en *$2: param*
@@ -2530,7 +2530,7 @@ You designate the 4D code (callback) to be executed to evaluate collection eleme
 The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
 
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 *   en *$1.value*: valor del elemento a procesar
 *   en *$2: param*
@@ -2607,7 +2607,7 @@ Si se llama a `.sort()` sin parámetros, sólo se ordenan los valores escalares 
 
 If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. You can provide additional parameters to the callback if necessary.
 
-The callback receives the following parameters:
+La retrollamada recibe los siguientes parámetros:
 
 - $1 (objeto), donde:
     - *$1.value* (todo tipo): primer valor del elemento a comparar
