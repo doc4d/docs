@@ -292,7 +292,7 @@ By default, for security reasons, if you omit the option parameter, `.delete( )`
 
 | Constante              | Valor | Comentario                                       |
 | ---------------------- | ----- | ------------------------------------------------ |
-| `Delete only if empty` | 0     | Deletes folder only when it is empty             |
+| `Delete only if empty` | 0     | Elimina la carpeta sólo cuando está vacía        |
 | `Delete with contents` | 1     | Deletes folder along with everything it contains |
 
 When `Delete only if empty` is passed or if you omit the option parameter:
