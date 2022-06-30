@@ -1102,13 +1102,13 @@ $range:=VP All("ViewProArea")
 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True //Search entire document
+$condition.all:=True // ドキュメント全体を検索します
 $condition.flags:=vk find flag exact match
 
-  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Check for empty range object
+  // 戻り値のレンジオブジェクトが空かどうかをチェックします
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1236,7 +1236,7 @@ size:16pt
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
 
-  //returns a range object containing:
+  // 返されるレンジオブジェクトには以下が格納されています:
   //$activeCell.ranges[0].column=3
   //$activeCell.ranges[0].row=4
   //$activeCell.ranges[0].sheet=0
@@ -2219,10 +2219,10 @@ End if
 ![](assets/en/ViewPro/cmd_vpGetSpans.PNG)
 
 ```4d
-// Search for all cell spans
+// すべてのセル結合を検索します
 $range:=VP Get spans(VP All("ViewProArea"))
 
-//center text
+// テキストを中央揃えにします
 $style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal align center)
 VP SET CELL STYLE($range;$style)
 ```
@@ -3390,11 +3390,11 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 
 ```4d
-// cs.OffscreenArea class declaration
+// cs.OffscreenArea クラス宣言 
 Class constructor ($path : Text)
     This.filePath:=$path
 
-// This function will be called on each event of the offscreen area
+// この関数はオフスクリーンエリアの各イベントごとに呼び出されます
 Function onEvent()
     Case of
         :(FORM Event.code=On VP Ready)
@@ -3438,23 +3438,23 @@ Function onEvent()
             SET TIMER(60)
 
         :(FORM Event.code=On VP Range Changed)
-    // 計算の完了を感知し、 Restarts the timer
+    // 計算の完了を感知し、 タイマーを再スタートさせます
             If(This.isWaiting)
                 SET TIMER(60)
             End if
 
         :(FORM Event.code=On Timer)
-    // To be sure to not restart the timer if you call others 4D View command after this point
+    // この時点以降、他の 4D View コマンドを呼び出してもタイマーが再スタートしないようにします
             This.isWaiting:=False
 
-    // Stop the timer
+    // タイマーを停止します
             SET TIMER(0)
 
-    // Start the PDF export
+    // PDF 書き出しを開始します
             VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
 
         :(FORM Event.code=On URL Loading Error)
-            CANCEL
+            CANCEL 
     End case
 ```
 
@@ -4134,13 +4134,13 @@ var $options : Object
 
 $data:= New collection()
 
-// Dates can be passed as scalar values
+// 日付はスカラー値として渡すことができます
 $data.push(New collection("Date"; Current date))
 
-// Time values must be passed as object attributes
+// 時間はオブジェクト属性として渡す必要があります
 $data.push(New collection("Time"; New object("time"; 5140)))
 
-// Date + time example
+// 日付 + 時間の例
 $data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140)))
 
 $options:=New object("autoGenerateColumns"; True)
@@ -4335,8 +4335,8 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 | 引数            | タイプ    |    | 説明               |
 | ------------- | ------ | -- | ---------------- |
 | rangeObj      | Object | -> | レンジオブジェクト        |
-| formula       | テキスト   | -> | フォーミュラまたは 4Dメソッド |
-| formatPattern | テキスト   | -> | フィールドのフォーマット     |
+| formula       | Text   | -> | フォーミュラまたは 4Dメソッド |
+| formatPattern | Text   | -> | フィールドのフォーマット     |
 
 <!-- END REF -->  
 
@@ -4348,7 +4348,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 *formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。
 
-> If the *formula* is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
+> *formula* が文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
 
 任意の *formatPattern* 引数は、*formula* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
@@ -4371,7 +4371,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 #### 例題 3
 
 ```4d
-VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
+VP SET FORMULA($range;"SUM(A1,B7,C11)") // 引数の区切り文字に ","
 ```
 
 #### 参照
@@ -4402,7 +4402,7 @@ VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
 * 第1レベルのコレクションは、フォーミュラのサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。
 * それぞれのサブコレクションは行におけるセルの値を定義します。 値は、セルに割り当てるフォーミュラを格納したテキスト要素でなくてはなりません。
 
-> If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
+> フォーミュラが文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
 
 *rangeObj* 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
