@@ -29,7 +29,7 @@ You can create different types of drop-down lists with different features. To de
 
 ### Utilizar un objeto
 
-> This feature is only available in 4D projects.
+> Esta funcionalidad sólo está disponible en proyectos 4D.
 
 Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection) puede utilizarse como fuente de datos de una lista desplegable. El objeto debe contener las siguientes propiedades:
 
