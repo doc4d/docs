@@ -219,7 +219,7 @@ The number of loops is based on the number of elements of the collection. At eac
     </table>
 ```
 
-#### Example with a collection of objects
+#### Ejemplo con una colección de objetos
 
 *getSalesPersons* returns a collection of objects.
 
