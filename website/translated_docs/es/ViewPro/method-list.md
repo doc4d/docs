@@ -762,7 +762,7 @@ The length of the *tableColumns* collection must be equal to the range column co
   * When the column count in *rangeObj* exceeds the number of columns in *tableColumns*, the table is filled with additional empty columns.
   * When the column count in *rangeObj* is inferior to the number of *tableColumns*, the table displays a number of columns that match the range's column count.
 
-If you pass a *source* but no *tableColumn* option, the command generates columns automatically. In this case, *rangeObj* must be a cell range. Otherwise, the first cell of the range is used. When generating columns automatically, the following rules apply:
+If you pass a *source* but no *tableColumn* option, the command generates columns automatically. In this case, *rangeObj* must be a cell range. De lo contrario, se utilizará la primera celda del rango. When generating columns automatically, the following rules apply:
 
 * If the data passed to the command is a collection of objects, the property names are used as column titles. Por ejemplo:
 
