@@ -27,7 +27,7 @@ Hay diferentes maneras de configurar los parámetros del servidor web 4D, en fun
 
 Activa y configura la caché de las páginas web.
 
-El servidor web 4D dispone de una caché que permite cargar las páginas estáticas, las imágenes GIF, las imágenes JPEG (<512 kb) y las hojas de estilo (archivos.css) en memoria, a medida que se solicitan. El uso de la caché permite aumentar considerablemente el rendimiento del servidor web cuando se envían páginas estáticas. El caché se comparte entre todos los procesos web. When the cache is enabled, the 4D Web server looks for any static page requested by the browser in the cache first. If it finds the page, it sends it immediately. If not, 4D loads the page from disk and places it in the cache.
+El servidor web 4D dispone de una caché que permite cargar las páginas estáticas, las imágenes GIF, las imágenes JPEG (<512 kb) y las hojas de estilo (archivos.css) en memoria, a medida que se solicitan. El uso de la caché permite aumentar considerablemente el rendimiento del servidor web cuando se envían páginas estáticas. El caché se comparte entre todos los procesos web. When the cache is enabled, the 4D Web server looks for any static page requested by the browser in the cache first. Si encuentra la página, la envía inmediatamente. If not, 4D loads the page from disk and places it in the cache.
 
 Puede modificar el tamaño de la caché en el área **Tamaño de la caché de las páginas**. El valor a definir depende del número y del tamaño de las páginas estáticas de su sitio web, así como de los recursos de que dispongan las máquinas locales.
 > Mientras utiliza su base de datos web, puede verificar el rendimiento de la caché utilizando el comando `WEB GET STATISTICS`. Si, por ejemplo, observa que la tasa de uso de la caché se acerca al 100%, puede considerar aumentar el tamaño que se le ha asignado. Los URL [/4DSTATS] y [/4DHTMLSTATS] también permiten obtener información sobre el estado de la caché.
@@ -137,11 +137,11 @@ Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](.
 
 ## Página de inicio por defecto
 
-| Puede ajustarse con           | Nombre                                                                       | Comentarios                               |
-| ----------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------- |
-| objeto webServer              | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage)                   | Texto                                     |
-| `WEB SET HOME PAGE`           |                                                                              | Puede ser diferente para cada proceso web |
-| Caja de diálogo de parámetros | [Configuration page/Default Home Page](../settings/web.md#default-home-page) |                                           |
+| Puede ajustarse con           | Nombre                                                                                        | Comentarios                               |
+| ----------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| objeto webServer              | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage)                                    | Texto                                     |
+| `WEB SET HOME PAGE`           |                                                                                               | Puede ser diferente para cada proceso web |
+| Caja de diálogo de parámetros | [Página Configuración/Página de bienvenida por defecto](../settings/web.md#default-home-page) |                                           |
 
 Designate a default home page for the web server. Esta página puede ser estática o [semi-dynamic].
 
@@ -465,7 +465,7 @@ Nombre de la aplicación del servidor web. Útil cuando se inician los servidore
 | ------------------- | -------------------------------------------------------- | ------------ |
 | objeto webServer    | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Sólo lectura |
 
-Version of the OpenSSL library used.
+Versión de la librería OpenSSL utilizada.
 
 
 ## Perfect Forward Secrecy
@@ -531,11 +531,11 @@ In this case, robots are not allowed to access the entire site.
 
 ## Root Folder
 
-| Puede ajustarse con           | Nombre                                                                       | Comentarios                                                                                                                           |
-| ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| objeto webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder)                             | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
-| `WEB SET ROOT FOLDER`         |                                                                              |                                                                                                                                       |
-| Caja de diálogo de parámetros | [Configuration page/Default HTML Root](../settings/web.md#default-html-root) |                                                                                                                                       |
+| Puede ajustarse con           | Nombre                                                                             | Comentarios                                                                                                                           |
+| ----------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| objeto webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder)                                   | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
+| `WEB SET ROOT FOLDER`         |                                                                                    |                                                                                                                                       |
+| Caja de diálogo de parámetros | [Página Configuración/Raiz HTML por defecto](../settings/web.md#default-html-root) |                                                                                                                                       |
 
 Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. La ruta de acceso está en formato POSIX (ruta completa). The web server will need to be restarted in order for the new root folder to be taken into account.
 
@@ -635,7 +635,7 @@ This option enables the preemptive mode for your application's web server code w
 
 The following settings are still supported but rely on deprecated features or technologies. Generalmente se recomienda mantener los valores por defecto.
 
-#### Allow database access through 4DSYNC URLs
+#### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
 
