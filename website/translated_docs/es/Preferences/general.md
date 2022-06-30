@@ -144,7 +144,7 @@ This area configures access to the 4D HTML documentation displayed in your curre
 
 ### Lenguaje de la documentación
 
-Language of the HTML documentation to display. You can select a documentation in a different language from the application language.
+Lenguaje de la documentación HTML a mostrar. You can select a documentation in a different language from the application language.
 
 ### Primero buscar en la carpeta local
 
