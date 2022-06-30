@@ -30,7 +30,7 @@ This option lets you change the TCP port number on which 4D Server publishes the
 
 Customizing this value is necessary when you want to use several 4D applications on the same machine; in this case, you must specify a different port number for each application. When you modify this value from 4D Server or 4D, it is automatically passed on to all the 4D machines connected to the database.
 
-To update any other client machines that are not connected, you just need to enter the new port number (preceded by a colon) after the IP address of the server machine on the **Custom** tab of the connection dialog box at the time of the next connection. For example, if the new port number is 19888:
+To update any other client machines that are not connected, you just need to enter the new port number (preceded by a colon) after the IP address of the server machine on the **Custom** tab of the connection dialog box at the time of the next connection. Por ejemplo, si el nuevo número de puerto es 19888:
 
 ![](assets/en/settings/client-server-network.png)
 
@@ -44,7 +44,7 @@ To update any other client machines that are not connected, you just need to ent
 -   **Application Server**: 19813 by default (can be modified via the "Client-Server/Configuration" page of the Preferences, see above).
 -   **DB4D Server** (database server): 19814 by default . This port number cannot be modified directly but it always consists of the application server port number + 1.\ When a 4D client connects to 4D Server, it uses the TCP port of the application server (19813 or the port indicated after the colon ':' in the IP address shown in the connection dialog box). Connection to other servers via their respective ports is then automatic; it is no longer necessary to specify them.\ Note that in the case of access via a router or a firewall, the three TCP ports must be opened explicitly.
 
-#### Authentication of user with domain server
+#### Autenticación del usuario con el servidor de dominio
 
 This option allows you to implement SSO (*Single Sign On*) capabilities in your 4D Server database on Windows. When you check this option, 4D transparently connects to the Active directory of the Windows domain server and gets the available authentication tokens. This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
 
@@ -54,7 +54,7 @@ When Single Sign On (SSO) is enabled (see above), you must fill in this field if
 
 #### Client-Server Connections Timeout
 
-This device is used to set the timeout (period of inactivity beyond which the connection is closed) between 4D Server and the client machines connecting to it. The Unlimited option removes the timeout. When this option is selected, client activity control is eliminated.
+This device is used to set the timeout (period of inactivity beyond which the connection is closed) between 4D Server and the client machines connecting to it. La opción ilimitada elimina el tiempo de espera. When this option is selected, client activity control is eliminated.
 
 When a timeout is selected, the server will close the connection of a client if it does not receive any requests from the latter during the specified time limit.
 
