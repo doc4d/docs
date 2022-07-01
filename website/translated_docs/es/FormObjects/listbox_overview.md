@@ -456,7 +456,7 @@ You can set the value of the variable (for example, Header2:=2) in order to “f
 > The `OBJECT SET FORMAT` command offers specific support for icons in list box headers, which can be useful when you want to work with a customized sort icon.
 
 
-## Managing row colors, styles, and display
+## Gestión de los colores, estilos y visualización de las líneas
 
 There are several different ways to set background colors, font colors and font styles for list boxes:
 
@@ -484,7 +484,7 @@ For example, if you set a font style in the list box properties and another usin
 For each attribute (style, color and background color), an **inheritance** is implemented when the default value is used:
 
 - para los atributos de las celdas: valores de atributos de las líneas
-- for row attributes: attribute values of columns
+- para los atributos líneas: valores de atributos de columnas
 - for column attributes: attribute values of the list box
 
 This way, if you want an object to inherit the attribute value from a higher level, you can use pass the `lk inherited` constant (default value) to the definition command or directly in the element of the corresponding style/color array. For example, given an array list box containing a standard font style with alternating colors: ![](assets/en/FormObjects/listbox_styles3.png)
@@ -583,7 +583,7 @@ When you select at least one column in addition to the first one in a list box o
 
 ![](assets/en/FormObjects/listbox_hierarchy1.png)
 
-This command is a shortcut to define a hierarchy. Cuando se selecciona, se llevan a cabo las siguientes acciones:
+Este comando es un acceso directo para definir una jerarquía. Cuando se selecciona, se llevan a cabo las siguientes acciones:
 
 *   The **Hierarchical list box** option is checked for the object in the Property List.
 *   Las variables de las columnas se utilizan para definir la jerarquía. Reemplazan las variables ya definidas.
@@ -779,7 +779,7 @@ When a list box column is associated with an object array, the way a cell is dis
 | --------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | texto     | entrada de texto                                    | drop-down menu (required list) or combo box (choice list)                                      |
 | real      | entrada de texto controlada (números y separadores) | drop-down menu (required list) or combo box (choice list)                                      |
-| integer   | controlled text input (numbers only)                | drop-down menu (required list) or combo box (choice list) or three-states check box            |
+| integer   | entrada de texto controlada (números únicamente)    | drop-down menu (required list) or combo box (choice list) or three-states check box            |
 | booleano  | casilla de selección                                | drop-down menu (required list)                                                                 |
 | color     | color de fondo                                      | texto                                                                                          |
 | evento    | botón con etiqueta                                  |                                                                                                |
@@ -830,7 +830,7 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 
 #### value
 
-Cell values are stored in the "value" attribute. This attribute is used for input as well as output. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
+Los valores de las celdas se almacenan en el atributo "valor". This attribute is used for input as well as output. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
 
 ````4d
  ARRAY OBJECT(obColumn;0) //array columna 
@@ -1124,6 +1124,6 @@ Several events can be handled while using an object list box array:
     *   en una lista desplegable
     *   en un área combo box
     *   in a unit button (switch from value x to value x+1)
-    *   in a check box (switch between checked/unchecked)
+    *   en una casilla de selección (cambia entre marcado/desmarcado)
 *   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
 *   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.

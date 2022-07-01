@@ -65,17 +65,17 @@ Date formats control the way dates appear when displayed or printed. For data en
 
 La siguiente tabla muestra las opciones disponibles:
 
-| Nombre del formato              | Cadena JSON     | Example (US system)            |
-| ------------------------------- | --------------- | ------------------------------ |
-| System date short               | - (por defecto) | 03/25/20                       |
-| System date abbreviated *(1)*   | systemMedium    | Wed, Mar 25, 2020              |
-| System date long                | systemLong      | Wednesday, March 25, 2020      |
-| RFC 822                         | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT  |
-| Short Century                   | shortCentury    | 03/25/20 pero 04/25/2032 *(2)* |
-| Internal date long              | largo           | March 25, 2020                 |
-| Internal date abbreviated *(1)* | abbreviated     | Mar 25, 2020                   |
-| Internal date short             | short           | 03/25/2020                     |
-| ISO Date Time *(3)*             | iso8601         | 2020-03-25T00:00:00            |
+| Nombre del formato            | Cadena JSON     | Example (US system)            |
+| ----------------------------- | --------------- | ------------------------------ |
+| System date short             | - (por defecto) | 03/25/20                       |
+| System date abbreviated *(1)* | systemMedium    | Wed, Mar 25, 2020              |
+| System date long              | systemLong      | Wednesday, March 25, 2020      |
+| RFC 822                       | rfc822          | Tue, 25 Mar 2020 22:00:00 GMT  |
+| Short Century                 | shortCentury    | 03/25/20 pero 04/25/2032 *(2)* |
+| Internal date long            | largo           | March 25, 2020                 |
+| Fecha interna abreviada *(1)* | abbreviated     | Mar 25, 2020                   |
+| Internal date short           | short           | 03/25/2020                     |
+| ISO Date Time *(3)*           | iso8601         | 2020-03-25T00:00:00            |
 
 *(1)* To avoid ambiguity and in accordance with current practice, the abbreviated date formats display "jun" for June and "jul" for July. This particularity only applies to French versions of 4D.
 
@@ -140,7 +140,7 @@ The numeric display formats (except for scientific notations) are automatically 
 
 You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
 
-You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. Por ejemplo, si utiliza el siguiente formato:
+Puede utilizar cualquier otro caracter en el formato. When used alone, or placed before or after placeholders, the characters always appear. Por ejemplo, si utiliza el siguiente formato:
 
     $##0
 
@@ -265,7 +265,7 @@ The following table shows how different formats affect the display of numbers. T
 
 Picture formats control how pictures appear when displayed or printed. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
 
-The truncation and scaling options do not affect the picture itself. The contents of a Picture field are always saved. Only the display on the particular form is affected by the picture display format.
+The truncation and scaling options do not affect the picture itself. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
 
 ### A escala para ajustarse
 
@@ -443,7 +443,7 @@ Permite que un objeto casilla de selección acepte un tercer estado. La variable
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. Si se elige, se muestran los siguientes valores:
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
-*   2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
+*   2 (or any value >0) = semi-checked box (third state). Para la entrada de datos, este estado devuelve el valor 2.
 *   -1 = invisible check box,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
@@ -497,7 +497,7 @@ This option is available for columns with any type of contents, except pictures 
 *   When the property is enabled (default), if the contents of a list box cell exceed the width of the column, they are truncated and an ellipsis is displayed:
 
     ![](assets/en/FormObjects/property_truncate1.png)
-> The position of the ellipsis depends on the OS. In the above example (Windows), it is added on the right side of the text. On macOS, the ellipsis is added in the middle of the text.
+> La posición de la elipsis depende del sistema operativo. In the above example (Windows), it is added on the right side of the text. On macOS, the ellipsis is added in the middle of the text.
 
 *   When the property is disabled, if the contents of a cell exceed the width of the column, they are simply clipped with no ellipsis added:
 
@@ -600,7 +600,7 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 ![](assets/en/FormObjects/property_wordwrap2.png)
 
 
-#### Automatic for input (default option)
+#### Automático para entrada (opción por defecto)
 `Gramática JSON: "automatic"`
 
 - In single-line areas, words located at the end of lines are truncated and there are no line returns.

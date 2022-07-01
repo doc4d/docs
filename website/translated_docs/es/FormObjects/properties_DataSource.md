@@ -158,7 +158,7 @@ Debe introducir una lista de valores. In the Form editor, a specific dialog box 
 
 This description is specific to [selection](listbox_overview.md#selection-list-boxes) and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns. See also **[Variable or Expression](properties_Object.md#variable-or-expression)** section.
 
-A 4D expression to be associated with a column. Puede introducir:
+Una expresión 4D que se asociará a una columna. Puede introducir:
 
 - A **simple variable** (in this case, it must be explicitly declared for compilation). You can use any type of variable except BLOBs and arrays. The value of the variable will be generally calculated in the `On Display Detail` event.
 
