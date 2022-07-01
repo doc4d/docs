@@ -1,20 +1,49 @@
 ---
-id: FileClass
-title: File
+id: FileHandleClass
+title: FileHandle
 ---
 
-`File` objects are created with the [`File`](#file) command. They contain references to disk files that may or may not actually exist on disk. For example, when you execute the `File` command to create a new file, a valid `File` object is created but nothing is actually stored on disk until you call the [`file.create( )`](#create) function.
+The `FileHandle` class allows you to read, write, or append contents to an opened [`File`](FileClass) object. File handle objects are created with the [`file.open()`](FileClass#open) function. 
+
+File handles have functions to access any part of a document and, from there, to read or write their contents sequentially. 
+
 
 ### Example
 
 The following example creates a preferences file in the project folder:
 
 ```code4d
-var $created : Boolean
-$created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
+var $f : 4D.File
+var $fhandle : 4D.FileHandle
+$f:=Folder(Database folder).file("example.txt") 
+
+//reading line by line
+$lines:=New collection
+$fhandle:=$f.open("read")
+While (Not($fhandle.eof))
+	$lines.push($fhandle.readLine())
+End while
+
+//Writing line by line
+$fhandle:=$f.open("write")
+$fhandle.offset:=$fhandle.getSize()
+$text:="Hello World"
+For ($line; 1; 4)
+    $fhandle.writeLine($text+String($line))
+End for
+
+//Specifying a stop character, reading a file content until the stop character is reached
+$stopChar:=Char(Double quote)
+$fhandle:=$f.open("read")
+$text:=$fhandle.readText($stopChar)
+
+
+//Append to file
+$fhandle:=$f.open("append")
+$fhandle.writeLine($text+String($line))//Will add this at the end of the file content)
 ```
 
-### File object
+### FileHandle object
 
 ||
 |---|
@@ -40,7 +69,6 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 |[<!-- INCLUDE #document.modificationTime.Syntax -->](#modificationtime)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.modificationTime.Summary -->|
 |[<!-- INCLUDE #FileClass.moveTo().Syntax -->](#moveto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.moveTo().Summary -->|
 |[<!-- INCLUDE #document.name.Syntax -->](#name)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.name.Summary -->|
-|[<!-- INCLUDE #FileClass.open().Syntax -->](#open)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.open().Summary -->|
 |[<!-- INCLUDE #document.original.Syntax -->](#original)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.original.Summary -->|
 |[<!-- INCLUDE #document.parent.Syntax -->](#parent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.parent.Summary -->|
 |[<!-- INCLUDE #document.path.Syntax -->](#path)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.path.Summary -->|
@@ -491,53 +519,6 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!-- INCLUDE document.name.Desc -->
 
 
-
-<!-- REF file.open().Desc -->
-## .open()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R7|Added
-</details>
-
-
-<!--REF #FileClass.open().Syntax -->
-**.open**( *mode* : Text ) : 4D.FileHandle<!-- END REF -->
-
-<!--REF #FileClass.open().Params -->
-|Parameter|Type||Description|
-|---|---|---|---|
-|mode|Text|->|Opening mode: "read", "write", "append"|
-|Result|[4D.FileHandle](FileHandleClass)|<-|New File handle|
-<!-- END REF -->
-
-#### Description
-
-The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object with the specified *mode* on the file<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents of the file. 
-
-In mode, pass the opening mode for the file handle:
-
-|*mode*|Description|
-|---|---|
-|"read"|Creates a file handle to read values|
-|"write"|Creates a file handle to write values at the beginning|
-|"append"|Creates a file handle to write values at the end|
-
-
-#### Example
-
-You want to create a file handle for reading the "ReadMe.txt" file:
-
-```4d
-var $f : 4D.File
-var $fhandle : 4D.FileHandle
-
-$f:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
-$fhandle:=$f.open("read")
-
-```
-<!-- END REF -->
 
 <!-- INCLUDE document.original.Desc -->
 
