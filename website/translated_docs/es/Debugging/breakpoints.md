@@ -70,11 +70,11 @@ Para abrir la página de la lista de puntos de ruptura:
 Utilizando esta ventana, puede:
 
 * Set conditions for breakpoints in the **Conditions** column
-* Enable or disable breakpoints by clicking the bullets in the margin. Disabled breakpoints display transparent bullets
+* Enable or disable breakpoints by clicking the bullets in the margin. Los puntos de interrupción desactivados muestran balas transparentes
 * Delete breakpoints by pressing the `Delete` or `Backspace` key, or click on the **Delete** button below the list.
 * Open the methods where the breakpoint are located by double-clicking any line in the list
 
-You cannot add new breakpoints from this window. Breakpoints can only be created from within the Debugger window or the Method Editor.
+No puede añadir nuevos puntos de interrupción desde esta ventana. Breakpoints can only be created from within the Debugger window or the Method Editor.
 
 
 ## Comandos de captura
