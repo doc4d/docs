@@ -206,7 +206,7 @@ For a class function, the `Current method name` command returns: `<ClassName>.<F
 
 In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. Se soportan las siguientes sintaxis:
 
-- use of the `()` operator. For example, `myObject.methodName("hello")`
+- utilización del operador `()`. For example, `myObject.methodName("hello")`
 - utilización de un método miembro de la clase "4D.Function":
     - [`apply()`](API/FunctionClass.md#apply)
     - [`call()`](API/FunctionClass.md#call)
@@ -371,10 +371,10 @@ Class constructor ($side : Integer)
 Super {( param{;...;paramN} )} {-> Object} 
 ```
 
-| Parámetros | Tipo   |    | Descripción                                    |
-| ---------- | ------ | -- | ---------------------------------------------- |
-| param      | mixto  | -> | Parameter(s) to pass to the parent constructor |
-| Resultado  | objeto | <- | Padre del objeto                               |
+| Parámetros | Tipo   |    | Descripción                                           |
+| ---------- | ------ | -- | ----------------------------------------------------- |
+| param      | mixto  | -> | Parámetro(s) a pasar al constructor de la clase padre |
+| Resultado  | objeto | <- | Padre del objeto                                      |
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 

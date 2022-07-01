@@ -143,7 +143,7 @@ Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stor
 | ----------------------------- | ---------------------------------------------------------- | ----------------------------------------- |
 | objeto webServer              | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Texto                                     |
 | `WEB SET HOME PAGE`           |                                                            | Puede ser diferente para cada proceso web |
-| Caja de diálogo de parámetros | Configuration page/Default Home Page                       |                                           |
+| Caja de diálogo de parámetros | Página Configuración/Página de bienvenida por defecto      |                                           |
 
 Designate a default home page for the web server. Esta página puede ser estática o [semi-dynamic].
 
@@ -467,7 +467,7 @@ Nombre de la aplicación del servidor web. Útil cuando se inician los servidore
 | ------------------- | -------------------------------------------------------- | ------------ |
 | objeto webServer    | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Sólo lectura |
 
-Version of the OpenSSL library used.
+Versión de la librería OpenSSL utilizada.
 
 
 ## Perfect Forward Secrecy
@@ -520,7 +520,7 @@ In this case, robots are not allowed to access the entire site.
 | ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | objeto webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder) | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
 | `WEB SET ROOT FOLDER`         |                                                  |                                                                                                                                       |
-| Caja de diálogo de parámetros | Configuration page/Default HTML Root             |                                                                                                                                       |
+| Caja de diálogo de parámetros | Página Configuración/Raiz HTML por defecto       |                                                                                                                                       |
 
 Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. La ruta de acceso está en formato POSIX (ruta completa). The web server will need to be restarted in order for the new root folder to be taken into account.
 

@@ -67,7 +67,7 @@ The datastore is the interface object to a database. It builds a representation 
 
 When handled through the code, the datastore is an object whose properties are all of the [dataclasses](#dataclass) which have been specifically exposed.
 
-4D allows you to handle the following datastores:
+4D le permite gestionar los siguientes datastores:
 
 - the local datastore, based on the current 4D database, returned by the `ds` command (the main datastore).
 - one or more remote datastore(s) exposed as REST resources in remote 4D databases, returned by the `Open datastore` command.
@@ -81,7 +81,7 @@ $mydatastore:=OB Copy(ds) //devuelve null
 ```
 
 
-The datastore properties are however enumerable:
+Las propiedades del datastore son sin embargo enumerables:
 
 
 ```4d 
@@ -124,7 +124,7 @@ The dataclass object itself cannot be copied as an object:
 $mydataclass:=OB Copy(ds.Employee) //devuelve null
 ```
 
-The dataclass properties are however enumerable:
+Las propiedades de la dataclass son sin embargo enumerables:
 
 ```code4d 
 ARRAY TEXT($prop;0)

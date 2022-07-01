@@ -219,7 +219,7 @@ The number of loops is based on the number of elements of the collection. At eac
     </table>
 ```
 
-#### Example with a collection of objects
+#### Ejemplo con una colección de objetos
 
 *getSalesPersons* returns a collection of objects.
 
@@ -387,7 +387,7 @@ Code using 4DELSE only:
 <!--#4DENDIF-->
 ```
 
-Similar code using the `4DELSEIF` tag:
+Código similar utilizando la etiqueta `4DELSEIF`:
 
 ```html
 <!--#4DIF Condition1-->
@@ -432,7 +432,7 @@ This example inserts different pages depending on which user is connected:
 
 ## 4DINCLUDE
 
-#### Syntax: `<!--#4DINCLUDE path-->`
+#### Sintaxis: `<!--#4DINCLUDE path-->`
 
 This tag is mainly designed to include an HTML page (indicated by the *path* parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). This lets you avoid conflicts related to meta tags present in the headers.
 
