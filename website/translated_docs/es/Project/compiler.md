@@ -192,9 +192,9 @@ If you check the [**Generate the symbol file**](#generate-the-symbol-file) optio
 
 Estas dos listas contienen cuatro columnas:
 
-- Names of process and interprocess variables and arrays used in your project. These variables are listed in alphabetical order.
+- Names of process and interprocess variables and arrays used in your project. Estas variables están listadas en orden alfabético.
 - Tipo de la variable. Types are set by compiler directive commands or are determined by the compiler based on the use of the variable. If the type of a variable cannot be determined, the column is empty.
-- Number of dimensions if the variable is an array.
+- Número de dimensiones si la variable es un array.
 - Reference to the context in which the compiler established the type of the variable. If the variable is used in several contexts, the context mentioned is the one used by the compiler to determine its type.
     - If the variable was found in a database method, the database method name is given, preceded by (M)*.
     - If the variable was found in a project method, the method is identified as it has been defined in 4D, preceded by (M).
@@ -213,7 +213,7 @@ Esta lista está dividida en tres columnas:
 
 - la lista de las variables locales utilizadas en el método;
 - tipo de la variable;
-- number of dimensions if the variable is an array.
+- número de dimensiones si la variable es un array.
 
 #### Lista completa de los métodos
 
@@ -224,7 +224,7 @@ A complete list of your database and project methods is given at the end of the 
 - el número de llamadas
 - la propiedad Thread Safe o Thread Unsafe.
 
-This information appears as follows:
+Esta información aparece así:
 
 ```
 Procedure or Function <Method name>(parameter data types):
@@ -331,5 +331,5 @@ In any cases, the 4D Silicon compiler will warn you if your configuration does n
 
 The Silicon compiler is incremental, which means that:
 
-- During the very first compilation, **all 4D methods** are compiled. This step could take a certain time. Sin embargo, sólo ocurre una vez.
+- During the very first compilation, **all 4D methods** are compiled. Este paso podría tomar un cierto tiempo. Sin embargo, sólo ocurre una vez.
 - During all subsequent compilations, only **new or modified methods** are processed, thus reducing drastically the compilation time. 

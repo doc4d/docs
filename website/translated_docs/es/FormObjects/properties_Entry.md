@@ -79,7 +79,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 An entry filter controls exactly what the user can type during data entry. Unlike [required lists](properties_RangeOfValues.md#required-list) for example, entry filters operate on a character-by-character basis. For example, if a part number always consists of two letters followed by three digits, you can use an entry filter to restrict the user to that pattern. You can even control the particular letters and numbers.
 
-An entry filter operates only during data entry. It has no effect on data display after the user deselects the object. In general, you use entry filters and [display formats](properties_Display.md) together. The filter constrains data entry and the format ensures proper display of the value after data entry.
+Un filtro de entrada sólo funciona durante la entrada de datos. It has no effect on data display after the user deselects the object. In general, you use entry filters and [display formats](properties_Display.md) together. The filter constrains data entry and the format ensures proper display of the value after data entry.
 
 During data entry, an entry filter evaluates each character as it is typed. If the user attempts to type an invalid character (a number instead of a letter, for example), 4D simply does not accept it. The null character remains unchanged until the user types a valid character.
 
@@ -89,7 +89,7 @@ Entry filters can also be used to display required formatting characters so that
 
 Most of the time, you can use one of the [built-in filters](#default-entry-filters) of 4D for what you need; however, you can also create and use custom filters:
 
-- you can directly enter a filter definition string
+- puede introducir directamente una cadena de definición de filtro
 - or you can enter the name of an entry filter created in the Filters editor in the Toolbox. The names of custom filters you create begin with a vertical bar (|).
 
 For information about creating entry filters, see [Filter and format codes](https://doc.4d.com/4Dv18/4D/18/Filter-and-format-codes.300-4575706.en.html).
@@ -106,13 +106,13 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | &A                                     | Allow only capital letters.                                                                                                                           |
 | &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
 | &@                                     | Permitir sólo caracteres alfanuméricos. No hay caracteres especiales.                                                                                 |
-| ~a##                                   | Abreviatura del nombre del estado (por ej., CA). Allow any two letters, but convert to uppercase.                                                     |
+| ~a##                                   | Abreviatura del nombre del estado (por ej., CA). Permite la entrada de dos letras, pero las convierte en mayúsculas.                                  |
 | !0&9##/##/##                           | Standard date entry format. Display zeros in entry spaces. Permitir cualquier número.                                                                 |
 | !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Display zeros in entry spaces. Permitir cualquier número. Limited to hours and minutes.                                   |
 | !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Permitir cuatro números, separados por dos puntos.             |
 | !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Display zeros in entry spaces. Permitir dos números antes de cada palabra.                                                |
 | !0&9Horas: ## Minutas: ## Segundos: ## | Formato de entrada de hora. Display zeros in entry spaces. Permitir dos números después de cada palabra.                                              |
-| !0&9##-##-##-##                        | Local telephone number format. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, four entries.                         |
+| !0&9##-##-##-##                        | Local telephone number format. Display zeros in entry spaces. Permitir cualquier número. Tres entradas, guión, cuatro entradas.                       |
 | !_&9(###)!0###-####                    | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                                  |
 | !0&9###-###-###                        | Long distance telephone number. Display zeros in entry spaces. Permitir cualquier número. Three entries, hyphen, three entries, hyphen, four entries. |
 | !0&9###-##-###                         | Número de la Seguridad Social. Display zeros in entry spaces. Permitir cualquier número.                                                              |
@@ -145,7 +145,7 @@ When the **Focusable** property is enabled for an object, the object can have th
 
 > An [input object](input_overview.md) is always focusable if it has the [Enterable](#enterable) property.
 
-* ![](assets/en/FormObjects/property_focusable1.png)<br>Check box shows focus when selected
+* ![](assets/en/FormObjects/property_focusable1.png)<br>Casilla de verificación muestra el foco cuando se selecciona
 <p>
 <p>
 

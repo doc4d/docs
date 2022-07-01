@@ -9,7 +9,7 @@ A spreadsheet formula is an expression that calculates the value of a cell.
 
 ### Entrada de las fórmulas
 
-To enter a formula in a 4D View Pro area:
+Para introducir una fórmula en un área 4D View Pro:
 
 1.  Select the cell into which you will enter the formula or function.
 2.  Introduzca = (el signo igual).
@@ -29,7 +29,7 @@ You can also create named formulas that can be called via their name. To do so, 
 
 ### Operadores y operandos
 
-All formulas have operands and operators:
+Todas las fórmulas tienen operandos y operadores:
 
 *   **Operators**: see [Values and operators](#values-and-operators) below.
 *   **Operands** include several categories:
@@ -250,7 +250,7 @@ For more information on supported incoming parameter types, please refer to the 
 
 If the 4D method returns nothing, an empty string is automatically returned.
 
-An error is returned in the 4D View Pro cell if:
+Se devuelve un error en la celda 4D View Pro si:
 
 *   the 4D method returns another type other than those listed above,
 *   an error occurred during 4D method execution (when user clicks on "abort" button).

@@ -142,10 +142,10 @@ Résultat :
 
 [VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
-### VP ADD SHEET 
+### VP ADD SHEET
 
 <!-- REF #_method_.VP ADD SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer )<br>**VP ADD SHEET** ( *vpAreaName* : Text ; *index* : Integer ; *name* : Text )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
 
@@ -153,12 +153,12 @@ Résultat :
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | index      | Integer | -> | Indice de la nouvelle feuille           |
-| name       | Text    | -> | Nom de la feuille                       |	
-<!-- END REF --> 
+| name       | Text    | -> | Nom de la feuille                       |
+<!-- END REF -->
 
 #### Description
 
-La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère une feuille dans le document chargé dans *vpAreaName*.<!-- END REF --> 
+La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère une feuille dans le document chargé dans *vpAreaName*.<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -188,14 +188,14 @@ VP ADD SHEET("ViewProArea";2;"March")
 ### VP ADD SPAN
 
 <!-- REF #_method_.VP ADD SPAN.Syntax -->**VP ADD SPAN** ( *rangeObj* : Object )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP ADD SPAN.Params -->
 
 | Paramètres | Type   |    | Description |
 | ---------- | ------ | -- | ----------- |
 | rangeObj   | Object | -> | Objet plage |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
@@ -234,7 +234,7 @@ Pour fusionner les cellules First quarter et Second quarter avec les deux cellul
 
 ### VP ADD STYLESHEET
 
-<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP ADD STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Integer } )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
@@ -588,7 +588,7 @@ Vous souhaitez combiner des plages de type cellule, colonne et ligne dans une no
 | Paramètres     | Type   |    | Description       |
 | -------------- | ------ | -- | ----------------- |
 | 4DViewDocument | Blob   | -> | Document 4D View  |
-| Résultat       | Object | <- | Objet 4D View Pro |	
+| Résultat       | Object | <- | Objet 4D View Pro |
 
 
 <!-- END REF -->  
@@ -624,7 +624,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 | ---------- | ------ | -- | ----------------------------------------------- |
 | vpObject   | Object | -> | Objet 4D View Pro contenant la zone à convertir |
 | rangeObj   | Object | -> | Objet plage                                     |
-| Résultat   | Object | <- | Image SVG de la zone                            |	
+| Résultat   | Object | <- | Image SVG de la zone                            |
 
 
 <!-- END REF -->  
@@ -732,6 +732,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 ```
 
 #### Voir aussi
+
 
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -959,7 +960,7 @@ Vous souhaitez exporter la feuille courante dans un fichier `.txt` avec des vale
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv.png)
 
-```4d 
+```4d
 var $params : Object
 $params:=New object
 $params.range:=VP Cells("ViewProArea";0;0;2;5)
@@ -1097,22 +1098,22 @@ Pour trouver "Total" et le remplacer par "Grand Total" :
 ```4d
 var $range;$condition;$result : Object
 
- $range:=VP All("ViewProArea")
+$range:=VP All("ViewProArea")
 
- $condition:=New object
- $condition.target:=vk find target text
- $condition.all:=True //Rechercher le document entier
- $condition.flags:=vk find flag exact match
+$condition:=New object
+$condition.target:=vk find target text
+$condition.all:=True //Search entire document
+$condition.flags:=vk find flag exact match
 
-  // Remplacer les cellules contenant uniquement 'Total' dans la feuille courante par "Grand Total"
- $result:=VP Find($range;"Total";$condition;"Grand Total")
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+$result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Rechercher un objet de plage vide
- If($result.ranges.length=0)
-    ALERT("Aucun résultat trouvé")
- Else
-    ALERT($result.ranges.length+" résultats trouvés")
- End if
+  // Check for empty range object
+If($result.ranges.length=0)
+    ALERT("No result found")
+Else
+    ALERT($result.ranges.length+" results found")
+End if
 ```
 
 
@@ -1235,7 +1236,7 @@ Le code suivant récupèrera les coordonnées de la cellule active :
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
 
-  //returns a range object containing: 
+  //returns a range object containing:
   //$activeCell.ranges[0].column=3
   //$activeCell.ranges[0].row=4
   //$activeCell.ranges[0].sheet=0
@@ -1432,7 +1433,7 @@ $colCount:=VP Get column count("ViewProarea")
 ### VP Get current sheet
 
 <!-- REF #_method_.VP Get current sheet.Syntax -->**VP Get current sheet** ( *vpAreaName* : Text )
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 
@@ -1440,12 +1441,12 @@ $colCount:=VP Get column count("ViewProarea")
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | Résultat   | Integer | <- | Indice de la feuille courante           |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
 La commande `VP Get current sheet` <!-- REF #_method_.VP Get current sheet.Summary -->retourne l'indice de la feuille courante dans *vpAreaName*. La feuille courante est la feuille sélectionnée dans le document.
-<!-- END REF --> 
+<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -1997,7 +1998,7 @@ $currentSelection:=VP Get selection("myVPArea")
 ### VP Get sheet count
 
 <!-- REF #_method_.VP Get sheet count.Syntax -->**VP Get sheet count** ( *vpAreaName* : Text ) : Integer
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get sheet count.Params -->
 
@@ -2005,12 +2006,12 @@ $currentSelection:=VP Get selection("myVPArea")
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | Résultat   | Integer | <- | Nombre de feuilles                      |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
 La commande `VP Get sheet count` <!-- REF #_method_.VP Get sheet count.Summary -->retourne le nombre de feuilles contenues dans le document chargé dans *vpAreaName*.
-<!-- END REF --> 
+<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -2036,7 +2037,7 @@ Pour obtenir le nombre de feuilles et définir la feuille courante comme étant 
 ### VP Get sheet index
 
 <!-- REF #_method_.VP Get sheet index.Syntax -->**VP Get sheet index** ( *vpAreaName* : Text ; *name* : Text ) : Integer
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get sheet index.Params -->
 
@@ -2045,12 +2046,12 @@ Pour obtenir le nombre de feuilles et définir la feuille courante comme étant 
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | name       | Text    | -> | Nom de la feuille                       |
 | Résultat   | Integer | <- | Indice de la feuille                    |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
 La commande `VP Get sheet index` <!-- REF #_method_.VP Get sheet index.Summary -->retourne l'index d'une feuille en fonction de son nom dans *vpAreaName*.
-<!-- END REF --> 
+<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -2076,7 +2077,7 @@ $index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //retourne 2
 ### VP Get sheet name
 
 <!-- REF #_method_.VP Get sheet name.Syntax -->**VP Get sheet name** ( *vpAreaName* : Text ; *sheet* : Integer ) : Text
-<!-- END REF --> 
+<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get sheet name.Params -->
@@ -2086,12 +2087,12 @@ $index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //retourne 2
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | sheet      | Integer | -> | Indice de la feuille                    |
 | Résultat   | Text    | <- | Nom de la feuille                       |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
 La commande `VP Get sheet name` <!-- REF #_method_.VP Get sheet name.Summary -->retourne le nom d'une feuille en fonction de son index dans *vpAreaName*.
-<!-- END REF --> 
+<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -2156,7 +2157,7 @@ $options:=VP Get sheet options("ViewProArea")
 ### VP Get show print lines
 
 <!-- REF #_method_.VP Get show print lines.Syntax -->**VP Get show print lines** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Boolean
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
@@ -2165,12 +2166,12 @@ $options:=VP Get sheet options("ViewProArea")
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro                    |
 | sheet      | Integer | <- | Indice de la feuille                                       |
 | Résultat   | Booléen | <- | True si les lignes d'impression sont visibles, sinon False |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
 La commande `VP Get show print lines` <!-- REF #_method_.VP Get show print lines.Summary -->retourne `True` si les lignes d'aperçu avant impression sont visibles et `False` si elles sont masquées.
-<!-- END REF --> 
+<!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -2217,12 +2218,12 @@ Pour centrer le texte des cellules fusionnées dans ce document :
 ![](assets/en/ViewPro/cmd_vpGetSpans.PNG)
 
 ```4d
-// Rechercher toutes les cellules fusionnées
- $range:=VP Get spans(VP All("ViewProArea"))
+// Search for all cell spans
+$range:=VP Get spans(VP All("ViewProArea"))
 
- //centrer le texte
- $style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal align center)
- VP SET CELL STYLE($range;$style)
+//center text
+$style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal align center)
+VP SET CELL STYLE($range;$style)
 ```
 
 #### Voir aussi
@@ -2319,10 +2320,10 @@ Dans ce cas, la feuille courante utilise deux objets style :
 [
    {
      backColor:green,
-     borderLeft:{color:green,style:10}, 
-     borderTop:{color:green,style:10}, 
-     borderRight:{color:green,style:10}, 
-     borderBottom:{color:green,style:10}, 
+     borderLeft:{color:green,style:10},
+     borderTop:{color:green,style:10},
+     borderRight:{color:green,style:10},
+     borderBottom:{color:green,style:10},
      name:GreenDashDotStyle
    },
    {
@@ -2957,7 +2958,7 @@ Dans le paramètre optionnel *sheet*, vous pouvez définir une feuille (sheet) s
 *   `vk workbook`
 
 
-> * 4D View Pro areas can only be printed with the `VP PRINT` command. 
+> * 4D View Pro areas can only be printed with the `VP PRINT` command.
 > * Commands from the 4D **Printing** language theme are not supported by `VP PRINT`.
 > * This command is intended for individual printing by the final end user. For automated print jobs, it is advised to export the 4D View Pro area as a PDF with the [VP EXPORT DOCUMENT](#vp-export-document) method.
 
@@ -3016,7 +3017,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 ### VP REMOVE NAME
 
-<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } ) 
+<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
@@ -3094,7 +3095,7 @@ The document currently has three sheets:
 
 Remove the third sheet:
 
-```4d 
+```4d
 VP REMOVE SHEET("ViewProArea";2)
 ```
 
@@ -3387,19 +3388,19 @@ Vous souhaitez créer une zone 4D View Pro hors écran et lire la valeur d'une c
 
 
 ```4d
-// Déclaration de la classe OffscreenArea
- Class constructor ($path : Text)
+// cs.OffscreenArea class declaration
+Class constructor ($path : Text)
     This.filePath:=$path
 
-  //  Cette fonction sera appelée sur chaque événement de la zone hors écran
- Fonction onEvent
-     Case of
+// This function will be called on each event of the offscreen area
+Function onEvent()
+    Case of
         :(FORM Event.code=On VP Ready)
             VP IMPORT DOCUMENT(This.area;This.filePath)
             This.result:=VP Get value(VP Cell(This.area;6;22))
 
-       ALERT("La cellule G23 contient la valeur : "+String(This.result))
- End case
+            ALERT("The G23 cell contains the value: "+String(This.result))
+    End case
 ```
 
 La méthode callback (de rétro-appel) *OffscreenArea* :
@@ -3435,23 +3436,23 @@ Function onEvent()
             SET TIMER(60)
 
         :(FORM Event.code=On VP Range Changed)
-    // Fin du calcul détectée. Redémarrer le minuteur
+    // Fin du calcul détectée. Restarts the timer
             If(This.isWaiting)
                 SET TIMER(60)
             End if
 
         :(FORM Event.code=On Timer)
-    // Pour être sûr de ne pas redémarrer le minuteur si vous appelez d'autres commandes 4D View après ce point
+    // To be sure to not restart the timer if you call others 4D View command after this point
             This.isWaiting:=False
 
-    // Stopper le minuteur
+    // Stop the timer
             SET TIMER(0)
 
-    // Démarrer l'export PDF
+    // Start the PDF export
             VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
 
         :(FORM Event.code=On URL Loading Error)
-            CANCEL 
+            CANCEL
     End case
 ```
 
@@ -3896,7 +3897,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 ### VP SET CURRENT SHEET
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; *index* : Integer)
-<!-- END REF --> 
+<!-- END REF -->
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
@@ -3904,7 +3905,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
 | index      | Integer | <- | Index of the new current sheet          |
-<!-- END REF --> 
+<!-- END REF -->
 
 #### Description
 
@@ -4132,13 +4133,13 @@ var $options : Object
 $data:= New collection()
 
 // Dates can be passed as scalar values
-$data.push(New collection("Date"; Current date)) 
+$data.push(New collection("Date"; Current date))
 
 // Time values must be passed as object attributes
 $data.push(New collection("Time"; New object("time"; 5140)))
 
 // Date + time example
-$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140)))
 
 $options:=New object("autoGenerateColumns"; True)
 
@@ -4343,7 +4344,9 @@ La commande `VP SET FORMULA` <!-- REF #_method_.VP SET FORMULA.Summary -->assign
 
 Dans *rangeObj*, passez la plage de cellule(s) (créée par exemple avec [`VP Cell`](#vp-cell) ou [`VP Column`](#vp-column)) dont vous souhaitez indiquer la valeur. Dans *rangeObj*, passez la plage de cellule(s) (créée par exemple avec [`VP Cell`](#vp-cell) ou [`VP Column`](#vp-column)) dont vous souhaitez indiquer la valeur.
 
-Le paramètre *formula* indique un nom de formule ou de méthode 4D à assigner à *rangeObj*. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-method).
+Le paramètre *formula* indique un nom de formule ou de méthode 4D à assigner à *rangeObj*.
+
+> If the *formula* is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-method).
 
 Le paramètre optionnel *formatPattern* définit un [pattern](configuring.md#cell-format) (modèle) pour le paramètre *formula*.
 
@@ -4361,6 +4364,12 @@ Pour supprimer la formule :
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
+```
+
+#### Exemple 3
+
+```4d
+VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
 ```
 
 #### Voir aussi
@@ -4388,8 +4397,10 @@ Dans *rangeObj*, passez une plage de la cellule (créée avec [VP Cell](#vp-cell
 
 Le paramètre *formulasCol* est une collection bidimensionnelle :
 
-*   La collection de premier niveau contient des sous-collections de formules. Chaque sous-collection définit une ligne.
-*   Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs doivent être des éléments textuels contenant les formules à associer aux cellules. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-methods).
+* La collection de premier niveau contient des sous-collections de formules. Chaque sous-collection définit une ligne.
+* Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs doivent être des éléments textuels contenant les formules à associer aux cellules.
+
+> If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. Si une méthode 4D est utilisée, elle doit être autorisée à l'aide de la commande [`VP SET ALLOWED METHODS`](#vp-set-allowed-method).
 
 Vous pouvez supprimer les formules dans *rangeObj* en les remplaçant par une chaîne vide ("").
 
@@ -4760,7 +4771,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 ### VP SET SHEET NAME
 
-<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} ) 
+<!-- REF #_method_.VP SET SHEET NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Integer} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
@@ -4931,7 +4942,7 @@ Résultat :
 
 ### VP SET SHOW PRINT LINES
 
-<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} ) 
+<!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Params -->
@@ -5181,7 +5192,7 @@ $param:=New collection
 
 [VP Get formulas](configuring.md#vp-get-formulas)<br/>[VP Get value](#vp-get-value)<br/>[VP Get Values](#vp-get-values)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
 
-### VP SET WORKBOOK OPTIONS 
+### VP SET WORKBOOK OPTIONS
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
 
