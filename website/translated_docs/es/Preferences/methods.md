@@ -131,7 +131,7 @@ The highlight color can be set in the [Theme](#theme-definition) page.
 
 #### Mostrar siempre las líneas de bloques
 
-Allows to hide vertical block lines permanently. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
+Permite ocultar permanentemente las líneas verticales de bloques. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
 
 ![](assets/en/Preferences/optionsBlockLines.png)
 
