@@ -40,7 +40,7 @@ You have also noticed the extra `hires` property in the ds.Company dataclass. It
 It means that, whenever you need to access the list of employees working for a company, in ORDA you just need to write:
 
 ```code4d
-ds.Company.hires //returns the list of employees
+ds.Company.hires //devuelve la lista de empleados
 ```
 
 Pero no vaya tan rápido. Let's see now how to record data in ORDA dataclasses.
