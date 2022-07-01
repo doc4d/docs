@@ -8,11 +8,11 @@ title: ドキュメンテーション更新情報
 
 ## 4D v19 R6
 
-- New [HTTPRequest](API/HTTPRequest) class.
-- Collection functions that can call code now support function objects as *formula* parameter: [`.every()`](API/CollectionClass.md#every), [`.filter()`](API/CollectionClass.md#filter), [`.find()`](API/CollectionClass.md#find), [`.findIndex()`](API/CollectionClass.md#findindex), [`.map()`](API/CollectionClass.md#map), [`.orderByMethod()`](API/CollectionClass.md#orderbymethod), [`.reduce()`](API/CollectionClass.md#reduce), [`.some()`](API/CollectionClass.md#some), [`.sort()`](API/CollectionClass.md#sort)
-- Listbox cells support [horizontal](FormObjects/properties_CoordinatesAndSizing.md#horizontal-padding) and [vertical](FormObjects/properties_CoordinatesAndSizing.md#vertical-padding) padding.
-- 4D View Pro: new [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
-- New page explaining [why and how 4D collects data](Admin/data-collect).
+- 新しい [HTTPRequest](API/HTTPRequest) クラス。
+- コードを呼び出す Collectionクラス関数は、*formula* 引数として Formulaオブジェクトをサポートするようになりました: [`.every()`](API/CollectionClass.md#every), [`.filter()`](API/CollectionClass.md#filter), [`.find()`](API/CollectionClass.md#find), [`.findIndex()`](API/CollectionClass.md#findindex), [`.map()`](API/CollectionClass.md#map), [`.orderByMethod()`](API/CollectionClass.md#orderbymethod), [`.reduce()`](API/CollectionClass.md#reduce), [`.some()`](API/CollectionClass.md#some), [`.sort()`](API/CollectionClass.md#sort)
+- リストボックスのセルは、[横方向](FormObjects/properties_CoordinatesAndSizing.md#横方向パディング) および [縦方向](FormObjects/properties_CoordinatesAndSizing.md#縦方向パディング) のパディングをサポートするようになりました。
+- 4D View Pro: 新しい [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) と [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) コマンドを使用して、シート内のテーブルを操作します。
+- [4D がデータを収集する理由と方法](Admin/data-collect) について詳細を説明する新しいページ
 
 
 ## 4D v19 R5
