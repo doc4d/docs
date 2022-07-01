@@ -15,7 +15,7 @@ The 4D language supports **binary** and **ternary** operators:
 - los operadores binarios operan en dos objetivos (como `2 + 3`) y aparecen entre sus dos objetivos.
 - los operadores ternarios operan en tres objetivos. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`). b : c</code>).
 
-The values that operators affect are operands. En la expresión `1 + 2`, el símbolo + es un operador binario y sus dos operandos son los valores 1 y 2.
+Los valores que los operadores afectan son los operandos. En la expresión `1 + 2`, el símbolo + es un operador binario y sus dos operandos son los valores 1 y 2.
 
 
 

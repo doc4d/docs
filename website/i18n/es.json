@@ -8,6 +8,9 @@
       "Admin/cli": {
         "title": "Interfaz de línea de comando"
       },
+      "Admin/data-collect": {
+        "title": "About Data Collection"
+      },
       "Admin/dataExplorer": {
         "title": "Explorador de datos Web"
       },
@@ -929,7 +932,7 @@
         "title": "Presentación del control de acceso"
       },
       "ViewPro/advanced-programming": {
-        "title": "Advanced programming with Javascript"
+        "title": "Programación avanzada con Javascript"
       },
       "ViewPro/configuring": {
         "title": "Configuring 4D View Pro Areas"
@@ -1001,7 +1004,7 @@
       "Web Administration": "Administración Web",
       "Command Line Interface": "Interfaz de línea de comando",
       "TLS Protocol": "Protocolo TLS",
-      "License Management": "Gestión de licencias",
+      "Licenses & Data Collection": "Licenses & Data Collection",
       "Access Rights": "Derechos de acceso",
       "MSC": "CSM",
       "Backup and Restore": "Copia de seguridad y restauración",
@@ -1047,7 +1050,7 @@
     "Client/Server|no description given": "Cliente/Servidor",
     "TLS Protocol|no description given": "Protocolo TLS",
     "Debugging|no description given": "Depuración",
-    "Code Editor|no description given": "Editor de código",
+    "Handling Code|no description given": "Handling Code",
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",

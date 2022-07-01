@@ -7,7 +7,7 @@ title: Editor de código
 
 ![](assets/en/code-editor/code-editor-overview.png)
 
-The Code Editor works much like a text editor. Writing a method or a class is usually a combination of typing text, selecting components, and dragging items from the Explorer or other windows. You can also use various type-ahead functions to create methods faster.
+El editor de código funciona como un editor de texto. Writing a method or a class is usually a combination of typing text, selecting components, and dragging items from the Explorer or other windows. You can also use various type-ahead functions to create methods faster.
 
 You can scroll through the contents of methods, classes and functions, which can include up to 32,000 lines of code or 2 GB of text.
 
@@ -47,7 +47,7 @@ You can customize the display of the editing area. Any customization is automati
 
 The lists area lets you display one or more lists of elements necessary for writing methods and classes (commands, constants, forms, etc.). You can choose the number and contents of the lists displayed in the window.
 
-By default, the Code Editor displays four lists. You can hide or show all lists by clicking on the icon at the botton right of the window. ![](assets/en/code-editor/show-hide-list.png)
+Por defecto, el editor de código muestra cuatro listas. You can hide or show all lists by clicking on the icon at the botton right of the window. ![](assets/en/code-editor/show-hide-list.png)
 
 You can enlarge or reduce the relative width of each list area by dragging one of its partitions. It is also possible to adjust the size of the list area in relation to that of the editing area by dragging the dividing line between them.
 
@@ -79,7 +79,7 @@ You can display the following lists of items in the lists area of the Code Edito
 - **Commands by themes**: 4D language commands classified by theme in the form of a hierarchical list.
 - **Menu bars**: Names and numbers of menu bars [created with the 4D Menu bar editor](../Menus/creating.md).
 - **Constants**: 4D constants and those of any plug-ins, classified by theme in the form of a hierarchical list.
-- **Lists**: Names of lists.
+- **Listas**: nombres de listas.
 - **All plug-in commands**: Commands for all the plug-ins installed in the database (if any), classified by theme in the form of a hierarchical list.
 - **SQL Keywords**: set of keywords recognized by the 4D SQL syntax parser. This list includes commands (e.g. SELECT), clauses (e.g. WHERE) as well as functions (ABS).
 - **SQL Functions**: 4D SQL functions.
@@ -228,7 +228,7 @@ The change bars change colors to indicate whether or not the modifications were 
 
 ## Using the autocomplete functions
 
-The Code Editor provides autocomplete functions. 4D automatically displays suggestions based on the first few characters typed.
+El editor de código ofrece funciones de autocompletado. 4D automatically displays suggestions based on the first few characters typed.
 
 In the example given below, typing the string "cop" causes the display of a blue triangle indicating that several suggestions are available:
 
@@ -254,7 +254,7 @@ By default, you can also insert a suggested value by hitting one of the followin
 
 You can press the **Esc** key to close the pop-up list or you can continue typing while it is open. The values suggested in the pop-up list are updated as additional characters are typed.
 
-If the characters typed correspond to different types of objects, the list displays them in their current style. The following types of objects can be displayed:
+If the characters typed correspond to different types of objects, the list displays them in their current style. Se pueden mostrar los siguientes tipos de objetos:
 
 * 4D commands
 * SQL commands
@@ -327,7 +327,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Ctrl]+[right arrow]                                | Move the insertion point, word by word, from left to right                                                                             |
 | [Ctrl]+[left arrow]                                 | Move the insertion point, word by word, from right to left                                                                             |
 | [Home]                                              | Place the insertion point at the beginning of the line                                                                                 |
-| [End]                                               | Place the insertion point at the end of the line                                                                                       |
+| [End]                                               | Coloca el punto de inserción al final de la línea                                                                                      |
 | [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
 | [Ctrl]+[End]                                        | Coloca el punto de inserción al final del método                                                                                       |
 | [Shift]+[Home]                                      | Select all the characters in the line that are to the left of the cursor                                                               |
@@ -373,7 +373,7 @@ The Code Editor provides various contextual information using help tips. They ap
 
 * **Project methods**: When you mouse over a project method or class function, a help tip displays:
 
-  * either the comments specified in the Explorer.
+  * o los comentarios especificados en el Explorador.
   * or the first few lines of the method or class function if it includes comments (lines beginning with // or /*...*/ comment block). It is common practice to insert documentation for the method as well as its parameters in the form of comments at the beginning of the method. You can get this information directly in the help tip, just make sure to first remove any comments found in the Explorer. Comments at the beginning of a method: ![](assets/en/code-editor/comments-method.png) Help tip in another method: ![](assets/en/code-editor/help-tip.png)
 
 * You can also create a **dedicated documentation file** named `<MethodName>.md` in the `<package>/documentation` folder. See [Viewing documentation in the code editor](../Project/documentation.md#viewing-documentation-in-the-code-editor)

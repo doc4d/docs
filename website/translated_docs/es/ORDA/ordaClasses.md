@@ -345,7 +345,7 @@ The *getter* function defines the data type of the computed attribute thanks to 
 - Imagen
 - BLOB
 - Entity (i.e. cs.EmployeeEntity)
-- Entity selection (i.e. cs.EmployeeSelection)
+- Entity selection (p.e. cs.EmployeeeSelection)
 
 The *$event* parameter contains the following properties:
 
@@ -359,7 +359,7 @@ The *$event* parameter contains the following properties:
 
 #### Ejemplos
 
-- *fullName* computed attribute:
+- El campo calculado *fullName*:
 
 ```4d
 Function get fullName($event : Object)-> $fullName : Text
@@ -559,7 +559,7 @@ Function orderBy <attributeName>($event : Object)-> $result : Text
 // code
 ```
 
-The `orderBy` function executes whenever the computed attribute needs to be ordered. It allows sorting the computed attribute. For example, you can sort *fullName* on first names then last names, or conversely. When the `orderBy` function is not implemented for a computed attribute, the sort is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
+The `orderBy` function executes whenever the computed attribute needs to be ordered. Permite ordenar el atributo calculado. For example, you can sort *fullName* on first names then last names, or conversely. When the `orderBy` function is not implemented for a computed attribute, the sort is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
 
 > Calling an `orderBy` function on computed attributes of type Entity class or Entity selection class **is not supported**.
 
@@ -601,7 +601,7 @@ Function orderBy fullName($event : Object)-> $result : Text
 
 ```
 
-Conditional code is necessary in some cases:
+El código condicional es necesario en algunos casos:
 
 ```4d
 Function orderBy age($event : Object)-> $result : Text

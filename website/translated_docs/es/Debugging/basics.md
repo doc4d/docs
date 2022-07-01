@@ -11,7 +11,7 @@ El entorno de desarrollo 4D ofrece varias herramientas de depuración para todo 
 
 ### Errores de digitación
 
-Typing errors are detected by the Code Editor. Se muestran en rojo y se ofrece información adicional en la parte inferior de la ventana. He aquí un error de escritura:
+Los errores de escritura son detectados por el Editor de código. Se muestran en rojo y se ofrece información adicional en la parte inferior de la ventana. He aquí un error de escritura:
 
 ![punto de ruptura](assets/en/Debugging/typing-error.png)
 

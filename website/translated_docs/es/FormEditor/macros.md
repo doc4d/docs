@@ -234,7 +234,7 @@ Here are the properties that you can pass in the `$result` object if you want th
 | currentSelection  | Collection | currentSelection si es modificada por la macro                   |
 | formProperties    | Objeto     | formProperties si es modificado por la macro                     |
 | editor.groups     | Objeto     | información de grupo, si los grupos son modificados por la macro |
-| editor.views      | Objeto     | view info, if views are modified by the macro                    |
+| editor.views      | Objeto     | ver información, si las vistas son modificadas por la macro      |
 | editor.activeView | Cadena     | Nombres de vistas activos                                        |
 
 

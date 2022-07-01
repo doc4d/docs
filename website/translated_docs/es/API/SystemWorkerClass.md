@@ -125,7 +125,7 @@ The function returns a system worker object on which you can call functions and 
 
 #### Ejemplos en Windows
 
-1. To open Notepad and open a specific document:
+1. Para abrir el Bloc de notas y abrir un documento específico:
 
 ```4d
 var $sw : 4D.SystemWorker
@@ -591,7 +591,7 @@ Actually, `.wait()` waits until the end of processing of the `onTerminate` formu
 
 During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances. You can exit from a `.wait()` by calling [`terminate()`](#terminate) from a callback.
 
-This function returns the SystemWorker object.
+Esta función devuelve el objeto SystemWorker.
 
 > This function is not necessary if you created the `SystemWorker` form a 4D worker process.
 

@@ -116,7 +116,7 @@ Since entities are managed as references, data is loaded only when necessary, i.
 
 ## Datastore principal
 
-The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
+The Datastore object matching the opened 4D database (standalone or client/server). El datastore principal es devuelto por el comando ds.
 
 ## Método
 
