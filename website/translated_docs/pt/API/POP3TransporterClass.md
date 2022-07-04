@@ -271,7 +271,7 @@ O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 | Parameter | Type    |    | Descrição                                        |
 | --------- | ------- |:--:| ------------------------------------------------ |
 | msgNumber | Integer | -> | Número da mensagem que na lista                  |
-| Resultado | Objeto  | <- | [Email object](EmailObjectClass.md#email-object) |
+| Resultado | Objeto  | <- | [Objeto Email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
