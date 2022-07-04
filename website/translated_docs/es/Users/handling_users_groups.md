@@ -181,11 +181,11 @@ Groups are assigned access privileges to specific parts or features of the appli
 - Servidor REST,
 - Servidor SQL.
 
-These accesses are defined in the Settings dialog. El siguiente ejemplo muestra los derechos de acceso del explorador de diseño y tiempo de ejecución asignados al grupo "Devs":
+Estos accesos se definen en la caja de diálogo Parámetros. El siguiente ejemplo muestra los derechos de acceso del explorador de diseño y tiempo de ejecución asignados al grupo "Devs":
 
 ![](assets/en/Users/Access1.png)
 
-You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). Esta distribución se define en el editor Grupos.
 
 ## Archivo directory.json
 

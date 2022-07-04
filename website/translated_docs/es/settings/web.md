@@ -225,7 +225,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                    |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                    |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                             |
-| CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
+| CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                        |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                  |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                    |
@@ -254,7 +254,7 @@ Configure los parámetros de copia de seguridad automática para el registro de 
 -   **Every X day(s) at X**: This option is used to program backups on a daily basis. Introduzca 1 si desea realizar una copia de seguridad diaria. When this option is checked, you must indicate the time when the backup must be started.
 -   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Introduzca 1 si desea realizar una copia de seguridad semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
 -   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. Introduzca 1 si desea realizar una copia de seguridad mensual.
--   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
+-   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. Puede definir un límite de tamaño de 1, 10, 100 o 1000 MB.
 
 > En el caso de las copias de seguridad programadas, si el servidor web no fue lanzado cuando se programó la copia de seguridad, en el siguiente lanzamiento 4D considera que la copia de seguridad ha fallado y aplica los parámetros adecuados, definidos en las Propiedades de la base.
 

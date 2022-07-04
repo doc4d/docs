@@ -203,7 +203,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                     |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                                                                     |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                                                                              |
-| CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                                                                          |
+| CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                                                                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                           |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                   |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                                                                     |
@@ -248,4 +248,4 @@ Primero debe elegir la frecuencia (días, semanas, etc.) o el criterio de límit
 
 *   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Introduzca 1 si desea realizar una copia de seguridad mensual. Introduzca 1 si desea realizar una copia de seguridad mensual.
 
-*   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
+*   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. Puede definir un límite de tamaño de 1, 10, 100 o 1000 MB.

@@ -59,7 +59,7 @@ Hay tres opciones disponibles:
 
 *   **According to System Color Scheme Preferences** (default): Use the color scheme defined in the macOS System Preferences.
 *   **Light**: Use the Light Theme
-*   **Dark**: Use the Dark Theme
+*   **Sombra**: utilizar el tema Sombra
 
 > Esta preferencia sólo es compatible en macOS. En Windows, se utiliza siempre el esquema "Light".
 

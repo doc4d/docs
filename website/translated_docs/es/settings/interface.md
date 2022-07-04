@@ -58,7 +58,7 @@ You use the Shortcuts area for viewing and modifying default shortcuts for three
 
 Los accesos directos por defecto son los siguientes:
 
--   Accept input form: **Enter**
+-   Aceptación de formulario de entrada: **Entrada**
 -   Cancel input form: **Esc**
 -   Add to subform: **Ctrl+Shift+/** (Windows) or **Command+Shift+/** (macOS)
 
