@@ -233,7 +233,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 <!-- REF #IMAPTransporterClass.append().Params -->
 | Parameter      | Type   |    | Descrição                       |
 | -------------- | ------ |:--:| ------------------------------- |
-| mailObj        | Objeto | -> | Email object                    |
+| mailObj        | Objeto | -> | Objeto Email                    |
 | destinationBox | Texto  | -> | Mailbox to receive Email object |
 | options        | Objeto | -> | Object containing charset info  |
 | Resultado      | Objeto | <- | Status of the append operation  |
@@ -992,7 +992,7 @@ Mailbox name delimiter character.
 | msgNumber | Integer | -> | Sequence number of the message                   |
 | msgID     | Texto   | -> | ID única da mensagem                             |
 | options   | Objeto  | -> | Message handling instructions                    |
-| Resultado | Objeto  | <- | [Email object](EmailObjectClass.md#email-object) |
+| Resultado | Objeto  | <- | [Objeto Email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
@@ -1005,7 +1005,7 @@ In the first parameter, you can pass either:
 *   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
 *   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
 
-The optional *options* parameter allows you pass an object defining additional instructions for handling the message. The following properties are available:
+The optional *options* parameter allows you pass an object defining additional instructions for handling the message. As seguintes propriedades estão disponíveis:
 
 | Propriedade | Type     | Descrição                                                                                                                   |
 | ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
