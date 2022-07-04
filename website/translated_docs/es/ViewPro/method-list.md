@@ -203,7 +203,7 @@ The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of c
 
 In *rangeObj*, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
 
-> - Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
+> - Sólo se muestran los datos de la celda superior izquierda. Data in the other combined cells is hidden until the span is removed.
 > - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
 
 #### Ejemplo
@@ -619,11 +619,11 @@ $vpObj:=VP Convert from 4D View($pvblob)
 
 <!-- REF #_method_.VP Convert to picture.Params -->
 
-| Parámetros | Tipo   |    | Descripción                                       |
-| ---------- | ------ | -- | ------------------------------------------------- |
-| vpObject   | Objeto | -> | 4D View Pro object containing the area to convert |
-| rangeObj   | Objeto | -> | Objeto rango                                      |
-| Resultado  | Objeto | <- | Imagen SVG del área                               |
+| Parámetros | Tipo   |    | Descripción                                         |
+| ---------- | ------ | -- | --------------------------------------------------- |
+| vpObject   | Objeto | -> | Objeto 4D View Pro que contiene el área a convertir |
+| rangeObj   | Objeto | -> | Objeto rango                                        |
+| Resultado  | Objeto | <- | Imagen SVG del área                                 |
 
 
 <!-- END REF -->  
@@ -1769,7 +1769,7 @@ You can define where to get the names in *scope* using either the sheet index (c
 
 ##### Colección devuelta
 
-The returned collection contains one object per name. The following object properties can be returned:
+The returned collection contains one object per name. Las propiedades de objetos siguientes pueden ser devueltas:
 
 | Propiedad           | Tipo  | Descripción                    |
 | ------------------- | ----- | ------------------------------ |
@@ -2103,7 +2103,7 @@ If the passed sheet index does not exist, the method returns an empty name.
 
 #### Ejemplo
 
-Get the name of the third sheet in the document:
+Obtener el nombre de la tercera hoja en el documento:
 
 ```4d
 $sheetName:=VP Get sheet name("ViewProArea";2)
@@ -2161,11 +2161,11 @@ End if
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
-| Parámetros | Tipo     |    | Descripción                                      |
-| ---------- | -------- | -- | ------------------------------------------------ |
-| vpAreaName | Texto    | -> | 4D View Pro area form object name                |
-| sheet      | Integer  | <- | Índice de la hoja                                |
-| Resultado  | Booleano | <- | True if print lines are visible, False otherwise |
+| Parámetros | Tipo     |    | Descripción                                                         |
+| ---------- | -------- | -- | ------------------------------------------------------------------- |
+| vpAreaName | Texto    | -> | 4D View Pro area form object name                                   |
+| sheet      | Integer  | <- | Índice de la hoja                                                   |
+| Resultado  | Booleano | <- | True si las líneas de impresión son visibles, de lo contrario False |
 <!-- END REF -->
 
 #### Descripción
@@ -3699,17 +3699,17 @@ You can define the position of the *borderStyleObj* (i.e., where the line is app
 
 
 
-| Propiedad       | Tipo     | Descripción                                                 |
-| --------------- | -------- | ----------------------------------------------------------- |
-| all             | booleano | Estilo de la línea de borde aplicado a todos los bordes.    |
-| left            | booleano | Estilo de la línea de borde aplicado al borde izquierdo.    |
-| top             | booleano | Estilo de la línea de borde aplicado al borde superior.     |
-| right           | booleano | Estilo de la línea de borde aplicado al borde derecho.      |
-| bottom          | booleano | Estilo de la línea de borde aplicado al borde inferior.     |
-| outline         | booleano | Border line style applied to outer borders only.            |
-| inside          | booleano | Border line style applied to inner borders only.            |
-| innerHorizontal | booleano | Border line style applied to inner horizontal borders only. |
-| innerVertical   | booleano | Border line style applied to inner vertical borders only.   |
+| Propiedad       | Tipo     | Descripción                                                              |
+| --------------- | -------- | ------------------------------------------------------------------------ |
+| all             | booleano | Estilo de la línea de borde aplicado a todos los bordes.                 |
+| left            | booleano | Estilo de la línea de borde aplicado al borde izquierdo.                 |
+| top             | booleano | Estilo de la línea de borde aplicado al borde superior.                  |
+| right           | booleano | Estilo de la línea de borde aplicado al borde derecho.                   |
+| bottom          | booleano | Estilo de la línea de borde aplicado al borde inferior.                  |
+| outline         | booleano | Estilo de línea de borde aplicado únicamente a los bordes exteriores.    |
+| inside          | booleano | Estilo de la línea de borde aplicado únicamente a los bordes interiores. |
+| innerHorizontal | booleano | Border line style applied to inner horizontal borders only.              |
+| innerVertical   | booleano | Border line style applied to inner vertical borders only.                |
 
 
 #### Ejemplo 1
@@ -3919,7 +3919,7 @@ In *index*, pass the index of the sheet to be set as current sheet. If the index
 
 #### Ejemplo
 
-The document's current sheet is the first sheet:
+La hoja actual del documento es la primera hoja:
 
 ![first-sheet-selected](assets/en/ViewPro/vp-sheet-3-select.png)
 
@@ -5182,10 +5182,10 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
-| Parámetros | Tipo   |    | Descripción                                      |
-| ---------- | ------ | -- | ------------------------------------------------ |
-| vpAreaName | Texto  | -> | 4D View Pro area form object name                |
-| optionObj  | Objeto | -> | Object containing the workbook options to be set |
+| Parámetros | Tipo   |    | Descripción                                                     |
+| ---------- | ------ | -- | --------------------------------------------------------------- |
+| vpAreaName | Texto  | -> | 4D View Pro area form object name                               |
+| optionObj  | Objeto | -> | Objeto que contiene las opciones del libro de trabajo a definir |
 <!-- END REF -->  
 
 #### Descripción
@@ -5225,7 +5225,7 @@ The following table lists the available workbook options:
 | calcOnDemand                          | booleano                | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
 | columnResizeMode                      | number                  | Resize mode for columns. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                                |
 | copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                    |
-| customList                            | colección               | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).         |
+| customList                            | colección               | The list for users to customize drag fill, prioritize matching this list in each fill. Cada elemento de colección es una colección de cadenas. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).  |
 | cutCopyIndicatorBorderColor           | cadena                  | Border color for the indicator displayed when the user cuts or copies the selection.                                                                                                                                                                   |
 | cutCopyIndicatorVisible               | booleano                | Display an indicator when copying or cutting the selected item.                                                                                                                                                                                        |
 | defaultDragFillType                   | number                  | The default drag fill type. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> Borra los valores de las celdas.</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> Llena las celdas con valores y no con formato. </td></tr></table>                                                                                                                                                                             |
@@ -5304,7 +5304,7 @@ Los siguientes selectores están disponibles:
 
 | Selector              | Descripción                                                                                                                                                                                                                                                                              | Disponible con *vPos* | Disponible con *hPos* |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
-| `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                         | X                     |                       |
+| `vk position bottom`  | Alineación vertical a la parte inferior de la celda o de la línea.                                                                                                                                                                                                                       | X                     |                       |
 | `vk position center`  | Alineación al centro. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Posición vertical de la vista - celda o línea</li><li>Posición horizontal de la vista - celda o columna</li>                                                                                                              | X                     | X                     |
 | `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |

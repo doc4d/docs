@@ -90,4 +90,4 @@ If a machine tries to attach the debugger while it is already attached, the atta
 Adjuntar el depurador en este caso requiere que:
 
 * the attached debugger is detached from the server or from the remote 4D client using respectively the **Detach debugger** or **Detach remote debugger** menu command,
-* the attached remote 4D client session is closed.
+* se cierra la sesión del cliente 4D remoto adjunto.
