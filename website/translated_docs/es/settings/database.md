@@ -89,7 +89,7 @@ You use the settings on this tab to configure the cache memory for the database.
     -   **Percentage of available memory used for cache**: Percentage of the remaining memory allocated to the cache by default.\ To obtain the size allocated by default to the cache, simply perform the following calculation: (Physical memory -- Physical memory to be reserved) X Percentage of the memory used for the cache. In the adaptive mode, the size of the memory cache varies dynamically depending on the needs of the application and the system. You can set limits using the following two options:
     -   **Minimum Size**: Minimum amount of memory that must be reserved for the cache. Este valor no puede ser inferior a 100 MB.
     -   **Maximum Size**: Maximum amount of memory that can be used by the cache. This value is virtually unlimited.\  
-      Setting limits is particularly useful for databases that are distributed on machines for which you do not know the memory configuration a priori. In this case, the limits set let you guarantee a minimum performance in all cases. The following diagram illustrates this behavior:
+      Setting limits is particularly useful for databases that are distributed on machines for which you do not know the memory configuration a priori. In this case, the limits set let you guarantee a minimum performance in all cases. El siguiente diagrama ilustra este comportamiento:
 
     Example for calculating cache memory: *Physical memory to reserve = 256 MB Percentage of the available memory used for the cache = 50% Maximum size = 1 GB Minimum size = 128 MB*
 
