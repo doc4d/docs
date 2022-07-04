@@ -65,7 +65,7 @@ The returned "__STATUS" object has the following properties:
 |              | task_name      | texto    | Nombre del proceso                                                                                                                                          |
 |              | client_version | texto    | Versión del cliente                                                                                                                                         |
 |              |                |          | ***Disponible sólo para un bloqueo por sesión REST:***                                                                                                      |
-|              | host           | texto    | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
+|              | host           | texto    | URL que bloqueó la entidad (por ejemplo, "127.0.0.1:8043")                                                                                                  |
 |              | IPAddr         | texto    | Dirección IP del bloqueo (por ejemplo: "127.0.0.1")                                                                                                         |
 |              | recordNumber   | number   | Record number of the locked record                                                                                                                          |
 |              | userAgent      | texto    | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
