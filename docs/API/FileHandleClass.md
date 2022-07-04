@@ -3,14 +3,13 @@ id: FileHandleClass
 title: FileHandle
 ---
 
-The `FileHandle` class allows you to read, write, or append contents to an opened [`File`](FileClass) object. File handle objects are created with the [`file.open()`](FileClass#open) function. 
+The `FileHandle` class has functions that allow you to sequentially read from or append contents to an opened [`File`](FileClass) object. A file handle can access any part of a document. 
 
-File handles have functions to access any part of a document and, from there, to read or write their contents sequentially. 
+File handle objects are created with the [`file.open()`](FileClass#open) function. 
 
+> To read or write a whole document at once, you might consider usign the [file.getText()](FileClass.md#gettext) and [file.setText()](FileClass.md#settext) functions. 
 
 ### Example
-
-The following example creates a preferences file in the project folder:
 
 ```code4d
 var $f : 4D.File
@@ -40,185 +39,344 @@ $text:=$fhandle.readText($stopChar)
 
 //Append to file
 $fhandle:=$f.open("append")
-$fhandle.writeLine($text+String($line))//Will add this at the end of the file content)
+$fhandle.writeLine($text+String($line))//Will add this at the end of the file content
 ```
 
 ### FileHandle object
 
 ||
 |---|
-|[<!-- INCLUDE #document.copyTo().Syntax -->](#copyto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.copyTo().Summary -->|
-|[<!-- INCLUDE #FileClass.create().Syntax -->](#create)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.create().Summary -->|
-|[<!-- INCLUDE #FileClass.createAlias().Syntax -->](#createalias)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.createAlias().Summary -->|
-|[<!-- INCLUDE #document.creationDate.Syntax -->](#creationdate)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.creationDate.Summary -->|
-|[<!-- INCLUDE #document.creationTime.Syntax -->](#creationtime)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.creationTime.Summary -->|
-|[<!-- INCLUDE #FileClass.delete().Syntax -->](#delete)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.delete().Summary -->|
-|[<!-- INCLUDE #document.exists.Syntax -->](#exists)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.exists.Summary -->|
-|[<!-- INCLUDE #document.extension.Syntax -->](#extension)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.extension.Summary -->|
-|[<!-- INCLUDE #document.fullName.Syntax -->](#fullname)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.fullName.Summary -->|
-|[<!-- INCLUDE #FileClass.getAppInfo().Syntax -->](#getappinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.getAppInfo().Summary -->|
-|[<!-- INCLUDE #document.getContent().Syntax -->](#getcontent)<p><!-- INCLUDE #document.getContent().Summary -->|
-|[<!-- INCLUDE #document.getIcon().Syntax -->](#geticon)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.getIcon().Summary -->|
-|[<!-- INCLUDE #document.getText().Syntax -->](#gettext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.getText().Summary -->|
-|[<!-- INCLUDE #document.hidden.Syntax -->](#hidden)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.hidden.Summary -->|
-|[<!-- INCLUDE #document.isAlias.Syntax -->](#isalias)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.isAlias.Summary -->
-|[<!-- INCLUDE #document.isFile.Syntax -->](#isfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.isFile.Summary -->|
-|[<!-- INCLUDE #document.isFolder.Syntax -->](#isfolder)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.isFolder.Summary -->|
-|[<!-- INCLUDE #document.isWritable.Syntax -->](#iswritable)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.isWritable.Summary -->|
-|[<!-- INCLUDE #document.modificationDate.Syntax -->](#modificationdate)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.modificationDate.Summary -->|
-|[<!-- INCLUDE #document.modificationTime.Syntax -->](#modificationtime)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.modificationTime.Summary -->|
-|[<!-- INCLUDE #FileClass.moveTo().Syntax -->](#moveto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.moveTo().Summary -->|
-|[<!-- INCLUDE #document.name.Syntax -->](#name)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.name.Summary -->|
-|[<!-- INCLUDE #document.original.Syntax -->](#original)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.original.Summary -->|
-|[<!-- INCLUDE #document.parent.Syntax -->](#parent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.parent.Summary -->|
-|[<!-- INCLUDE #document.path.Syntax -->](#path)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.path.Summary -->|
-|[<!-- INCLUDE #document.platformPath.Syntax -->](#platformpath)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.platformPath.Summary -->|
-|[<!-- INCLUDE #FileClass.rename().Syntax -->](#rename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.rename().Summary -->|
-|[<!-- INCLUDE #FileClass.setAppInfo().Syntax -->](#setappinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.setAppInfo().Summary -->|
-|[<!-- INCLUDE #FileClass.setContent().Syntax -->](#setcontent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.setContent().Summary -->|
-|[<!-- INCLUDE #FileClass.setText().Syntax -->](#settext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.setText().Summary -->|
-|[<!-- INCLUDE #document.size.Syntax -->](#size)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.size.Summary -->|
+|[<!-- INCLUDE #FileHandleClass.eof.Syntax -->](#eof)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.eof.Summary -->|
+|[<!-- INCLUDE #FileHandleClass.getSize().Syntax -->](#getsize)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.getSize().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.readBlob().Syntax -->](#readblob)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.readBlob().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.readLine().Syntax -->](#readline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.readLine().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.readText().Syntax -->](#readtext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.readText().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.setSize().Syntax -->](#setsize)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.setSize().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.writeBlob().Syntax -->](#writeblob)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeBlob().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.writeLine().Syntax -->](#writeline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeLine().Summary -->|
+|[<!-- INCLUDE #FileHandleClass.writeText().Syntax -->](#writetext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeText().Summary -->|
 
 
 
-## File
+
+<!-- REF FileHandleClass.eof.Desc -->
+## .eof
 
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
-|v17 R5|Added|
+|v19 R7|Added
 </details>
 
-<!-- REF #_command_.File.Syntax -->
-**File** ( *path* : Text { ; *pathType* : Integer }{ ; *\** } ) : 4D.File<br>**File** ( *fileConstant* : Integer { ; *\** } ) : 4D.File<!-- END REF -->
+<!-- REF #FileHandleClass.eof.Syntax -->
+**.eof** : Boolean<!-- END REF -->
 
 
-<!-- REF #_command_.File.Params -->
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|path|Text|->|File path|
-|fileConstant|Integer|->|4D file constant|
-|pathType|Integer|->|`fk posix path` (default) or `fk platform path`|
-|*||->|* to return file of host database|
-|Result|4D.File|<-|New file object|
+#### Description
+
+The `.eof` property returns <!-- REF #FileHandleClass.eof.Summary -->True is the `offset` reached the end of the file, and False otherwise<!-- END REF -->.
+
+This property is **read-only**. 
+
 <!-- END REF -->
 
 
-#### Description
 
-The `File` command <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. The command accepts two syntaxes:
-
-**File ( path { ; pathType } { ; \* })**
-
-In the *path* parameter, pass a file path string. You can use a custom string or a filesystem (e.g., "/DATA/myfile.txt").
-
-> Only absolute pathnames are supported with the `File` command.
-
-By default, 4D expects a path expressed with the POSIX syntax. If you work with platform pathnames (Windows or macOS), you must declare it using the *pathType* parameter. The following constants are available:
-
-|Constant|Value|Comment|
-|---|---|---|
-|fk platform path|1|Path expressed with a platform-specific syntax (mandatory in case of platform pathname)|
-|fk posix path|0|Path expressed with POSIX syntax (default)
-
-**File ( fileConstant { ; \* } )**
-
-In the *fileConstant* parameter, pass a 4D built-in or system file, using one of the following constants:
-
-|Constant|Value|Comment|
-|---|---|---|
-|Backup history file|19|Backup history file (see Configuration and trace files). Stored in the backup destination folder. |
-|Backup log file|13|Current backup journal file. Stored in the application Logs folder.|
-|Backup settings file|1|Default backup.4DSettings file (xml format), stored in the Settings folder of the project|
-|Backup settings file for data|17|backup.4DSettings file (xml format) for the data file, stored in the Settings folder of the data folder|
-|Build application log file|14|Current log file in xml format of the application builder. Stored in the Logs folder. |
-|Build application settings file|20|Default settings file of the application builder ("buildApp.4DSettings"). Stored in the Settings folder of the project.|
-|Compacting log file|6|Log file of the most recent compacting done with the Compact data file command or the Maintenance and security center. Stored in the Logs folder.|
-|Current backup settings file|18|backup.4DSettings file currently used by the application. It can be the backup settings file (default) or a custom user backup settings file defined for the data file|
-|Debug log file|12|Log file created by the `SET DATABASE PARAMETER(Debug log recording)` command. Stored in the Logs folder. |
-|Diagnostic log file|11|Log file created by the `SET DATABASE PARAMETER(Diagnostic log recording)` command. Stored in the Logs folder. |
-|Directory file|16|directory.json file, containing the description of users and groups (if any) for the project application. It can be located either in the user settings folder (default, global to the project), or in the data settings folder (specific to a data file). |
-|HTTP debug log file|9|Log file created by the `WEB SET OPTION(Web debug log)` command. Stored in the Logs folder. |
-|HTTP log file|8|Log file created by the `WEB SET OPTION(Web log recording)` command. Stored in Logs folder.|
-|IMAP Log file|23|Log file created by the `SET DATABASE PARAMETER(IMAP Log)` command. Stored in the Logs folder.|  
-|Last backup file|2|Last backup file, named \<applicationName>[bkpNum].4BK, stored at a custom location.|
-|Last journal integration log file|22|Full pathname of the last journal integration log file (stored in the Logs folder of the restored application), if any. This file is created, in auto-repair mode, as soon as a log file integration occurred|
-|Repair log file|7|Log file of database repairs made on the database in the Maintenance and Security Center (MSC). Stored in the Logs folder.|
-|Request log file|10|Standard client/server request log file (excluding Web requests) created by the `SET DATABASE PARAMETER(4D Server log recording)` or `SET DATABASE PARAMETER(Client log recording)` commands. If executed on the server, the server log file is returned (stored in the Logs folder on the server). If executed on the client, the client log file is returned (stored in the client local Logs folder). |
-|SMTP log file|15|Log file created by the `SET DATABASE PARAMETER(SMTP Log)` command. Stored in the Logs folder. |
-|User settings file|3|settings.4DSettings file for all data files, stored in Preferences folder next to structure file if enabled.|
-|User settings file for data|4|settings.4DSettings file for current data file, stored in Preferences folder next to the data file.|
-|Verification log file|5|Log files created by the `VERIFY CURRENT DATA FILE` and `VERIFY DATA FILE` commands or the Maintenance and Security Center (MSC). Stored in the Logs folder. |
-
-If the target *fileConstant* does not exist, a null object is returned. No errors are raised.
-
-If the command is called from a component, pass the optional * parameter to get the path of the host database. Otherwise, if you omit the * parameter, a null object is always returned.  
-
-
-## 4D.File.new()
+<!-- REF FileHandleClass.getSize().Desc -->
+## .getSize()
 
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
-|v18 R6|Added
+|v19 R7|Added
 </details>
 
-<!-- REF #4D.File.new().Syntax -->**4D.File.new** ( *path* : Text { ; *pathType* : Integer }{ ; *\** } ) : 4D.File<br>**4D.File.new** ( *fileConstant* : Integer { ; *\** } ) : 4D.File<!-- END REF -->
+<!--REF #FileHandleClass.getSize().Syntax -->
+**.getSize()** : Real <!-- END REF -->
 
-
-#### Description
-
-The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. It is identical to the [`File`](#file) command (shortcut).
-
-> It is recommended to use the [`File`](#file) shortcut command instead of `4D.File.new()`.
-
-
-<!-- INCLUDE document.copyTo().Desc -->
-
-
-
-<!-- REF file.create().Desc -->
-## .create()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v17 R5|Added
-</details>
-
-<!--REF file.create().Note -->
-**Not available for ZIP archives**<!-- END REF -->
-
-
-<!--REF #FileClass.create().Syntax -->
-**.create()** : Boolean <!-- END REF -->
-
-<!--REF #FileClass.create().Params -->
+<!--REF #FileHandleClass.getSize().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|Result|Boolean|<-|True if the file was created successfully, false otherwise|
+|Result|Real|<-|Size of the document in bytes|
 <!-- END REF -->
 
 #### Description
 
-The `.create()` function <!-- REF #FileClass.create().Summary -->creates a file on disk according to the properties of the `File` object<!-- END REF -->.
+The `.getSize()` function <!-- REF #FileHandleClass.getSize().Summary -->returns the current size of the document, expressed in bytes<!-- END REF -->.
 
-If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. If the file already exists on disk, the function does nothing (no error is thrown) and returns false.
+> This function returns the same value as the ([.size](FileClass#size)) property of the `File` class.
 
-**Returned value**
+#### See also
 
-*	**True** if the file is created successfully;
-*	**False** if a file with the same name already exists or if an error occured.
+[.setSize()](#setsize), [file.size](FileClass#size)
 
-#### Example
-
-Creation of a preferences file in the database folder:
-
-```4d
- var $created : Boolean
- $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
-```
 <!-- END REF -->
+
+
+<!-- REF FileHandleClass.offset.Desc -->
+## .offset
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #FileHandleClass.offset.Syntax -->
+**.offset** : Real<!-- END REF -->
+
+
+#### Description
+
+The `.offset` property returns <!-- REF #FileHandleClass.offset.Summary -->the current offset of the data stream (position inside the document)<!-- END REF -->. The offset value is automatically updated after read and write operations.
+
+Setting the `.offset` will change its value.
+ 
+- If the passed value is negative, the `.offset` is set to the start (zero). 
+- If the passed value is higher than the size of the file,  the `.offset` is set to the end of the file (size of file).
+
+This property is **read/write**. 
+
+<!-- END REF -->
+
+
+
+<!-- REF FileHandleClass.readBlob().Desc -->
+## .readBlob()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.readBlob().Syntax -->
+**.readBlob**( *bytes* : Real ) : [4D.Blob](BlobClass) <!-- END REF -->
+
+<!--REF #FileHandleClass.readBlob().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|*bytes*|Real|->|Number of bytes to be read|
+|Result|[4D.Blob](BlobClass)|<-|Bytes read from the file|
+<!-- END REF -->
+
+#### Description
+
+The `.readBlob()` function <!-- REF #FileHandleClass.readBlob().Summary -->returns a blob a *bytes* size from the file, starting from the current position <!-- END REF -->.
+
+When this function is executed, the current position ([.offset](#offset)) is updated after the last byte read.
+
+#### See also
+
+[.writeBlob()](#writeblob)
+
+<!-- END REF -->
+
+
+
+
+<!-- REF FileHandleClass.readLine().Desc -->
+## .readLine()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.readLine().Syntax -->
+**.readLine()** : Text <!-- END REF -->
+
+<!--REF #FileHandleClass.readLine().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Text|<-|Line of text|
+<!-- END REF -->
+
+#### Description
+
+The `.readLine()` function <!-- REF #FileHandleClass.readLine().Summary -->returns a line of text from the current position until an end-of-line delimiter is encountered or the end of the document is reached<!-- END REF -->.
+
+When this function is executed, the current position ([.offset](#offset)) is updated.
+
+#### See also
+
+[.readText()](#readtext), [.writeLine()](#writeline)
+
+<!-- END REF -->
+
+
+<!-- REF FileHandleClass.readText().Desc -->
+## .readText()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.readText().Syntax -->
+**.readText**( *stopChar* : Text ) : Text <!-- END REF -->
+
+<!--REF #FileHandleClass.readText().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|*stopChar*|Text|->|Character(s) at which to stop reading|
+|Result|Text|<-|Text from the file|
+<!-- END REF -->
+
+#### Description
+
+The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* string is encountered<!-- END REF -->.
+
+When this function is executed, the current position ([.offset](#offset)) is updated after the *stopChar* string.
+
+#### See also
+
+[.readLine()](#readline), [.writeText()](#writetext)
+
+<!-- END REF -->
+
+
+<!-- REF FileHandleClass.setSize().Desc -->
+
+## .setSize()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.setSize().Syntax -->  
+**.setSize**( *size* : Real ) <!-- END REF -->
+
+<!--REF #FileHandleClass.setSize().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|setSize|Real|->|New size of the document in bytes|
+<!-- END REF -->
+
+#### Description
+
+The `.setSize()` function <!-- REF #FileHandleClass.setSize().Summary -->sets a new *size* in bytes for the document<!-- END REF -->.
+
+If the *size* value is less than the current document size, the document content is truncated from the beginning to get the new *size* .  
+If the *size* value is greater than the current document size, spaces characters (" ") are added at the end of the document until the requested *size* is reached.
+
+#### See also
+
+[.getSize()](#getsize), [file.size](FileClass#size)
+
+<!-- END REF -->
+
+
+<!-- REF FileHandleClass.writeBlob().Desc -->
+## .writeBlob()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.writeBlob().Syntax -->
+**.writeBlob**( *blob* : 4D.Blob ) <!-- END REF -->
+
+<!--REF #FileHandleClass.writeBlob().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|*blob*|[4D.Blob](BlobClass)|->|Blob to write in the file|
+<!-- END REF -->
+
+#### Description
+
+The `.writeBlob()` function <!-- REF #FileHandleClass.writeBlob().Summary -->writes *blob* into the file, starting from the current position <!-- END REF -->.
+
+When this function is executed, the current position ([.offset](#offset)) is updated after the last byte written.
+
+#### See also
+
+[.readBlob()](#readblob)
+
+<!-- END REF -->
+
+
+
+<!-- REF FileHandleClass.writeLine().Desc -->
+## .writeLine()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.writeLine().Syntax -->
+**.writeLine**( *lineOfText* : Text ) <!-- END REF -->
+
+<!--REF #FileHandleClass.writeLine().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|*lineOfText*|Text|->|Text to write (with end-of-line delimiter)|
+<!-- END REF -->
+
+#### Description
+
+The `.writeLine()` function <!-- REF #FileHandleClass.writeLine().Summary -->writes *lineOfText* content at the current position and inserts an end-of-line delimiter<!-- END REF --> (unlike the [.writeText()](#writetext) function).
+
+When this function is executed, the current position ([.offset](#offset)) is updated after the end-of-line delimiter.
+
+#### See also
+
+[.readLine()](#readline), [.writeText()](#writetext)
+
+<!-- END REF -->
+
+
+<!-- REF FileHandleClass.writeText().Desc -->
+## .writeText()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!--REF #FileHandleClass.writeText().Syntax -->
+**.writeText**( *lineOfText* : Text )<!-- END REF -->
+
+<!--REF #FileHandleClass.writeText().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|*lineOfText*|Text|->|Text to write (without end-of-line delimiter)|
+<!-- END REF -->
+
+#### Description
+
+The `.writeText()` function <!-- REF #FileHandleClass.writeText().Summary -->writes *lineOfText* content at the current position and does not insert an end-of-line delimiter<!-- END REF --> (unlike the [.writeLine()](#writeline) function).
+
+When this function is executed, the current position ([.offset](#offset)) is updated after the next end-of-line delimiter.
+
+#### See also
+
+[.readText()](#readtext), [.writeLine()](#writeline)
+
+<!-- END REF -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

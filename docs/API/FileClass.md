@@ -503,7 +503,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.open().Syntax -->
-**.open**( *mode* : Text ) : 4D.FileHandle<!-- END REF -->
+**.open**( { *mode* : Text } ) : 4D.FileHandle<!-- END REF -->
 
 <!--REF #FileClass.open().Params -->
 |Parameter|Type||Description|
@@ -514,15 +514,15 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 #### Description
 
-The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object with the specified *mode* on the file<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents of the file. 
+The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object with the specified *mode* on the file<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file. 
 
-In mode, pass the opening mode for the file handle:
+In *mode*, pass the opening mode for the file handle:
 
 |*mode*|Description|
 |---|---|
-|"read"|Creates a file handle to read values|
-|"write"|Creates a file handle to write values at the beginning|
-|"append"|Creates a file handle to write values at the end|
+|"read"|Creates a file handle to read values from the file. Default if *mode* is omitted|
+|"write"|Creates a file handle to write values to the file (starting at the beginning of the file content)|
+|"append"|Creates a file handle to write values to the file (starting at the end of the file content)|
 
 
 #### Example
