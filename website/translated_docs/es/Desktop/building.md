@@ -477,11 +477,11 @@ Once you have selected a file, the list will indicate the characteristics of the
 *   **License #** - Product license number
 *   **License** - Name of the product
 *   **Expiration date** - Expiration date of the license (if any)
-*   **Path** -  Location on disk
+*   **Ruta de acceso** - Ubicación en el disco
 
 If a license is not valid, a message will warn you.
 
-You can designate as many valid files as you want. When building an executable application, 4D will use the most appropriate license available.
+Puede designar tantos archivos válidos como desee. When building an executable application, 4D will use the most appropriate license available.
 > Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-4DDP").
 
 After the application is built, a new deployment license file is automatically included in the Licenses folder next to the executable application (Windows) or in the package (macOS).
