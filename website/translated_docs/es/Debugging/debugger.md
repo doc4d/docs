@@ -30,7 +30,7 @@ When called, the debugger window provides the name of the method or class functi
 
 Displaying a new debugger window uses the same configuration as the last window displayed in the same session. If you run several user processes, you can trace them independently and have one debugger window open for each process.
 
-The Debugger window is usually displayed on the machine where the code is executed. With a single-user application, it is always displayed on the machine running the application. With a client/server application, it is displayed:
+The Debugger window is usually displayed on the machine where the code is executed. With a single-user application, it is always displayed on the machine running the application. Con una aplicación cliente/servidor se muestra:
 
 - en el 4D remoto para el código que se ejecuta localmente
 - on the server machine for code running on the server (for example, a method with the **execute on server** option).
@@ -47,7 +47,7 @@ The debugger's tool bar includes several buttons, associated with default shortc
 
 #### Fin del rastreo
 
-Tracing stops and normal method execution resumes.
+Detener el modo Seguimiento y reanudar el curso normal de la ejecución del método.
 
 > **Shift** + **F5** or **Shift** + clicking the **No Trace** button resumes execution. It also disables all the subsequent TRACE calls for the current process.
 
@@ -156,7 +156,7 @@ $c:=a+b
 
 #### Variables
 
-This theme is composed of the following subthemes:
+Este tema se compone de los siguientes subtemas:
 
 | Subtema      | Descripción                                                  | ¿Se pueden modificar los valores? |
 | ------------ | ------------------------------------------------------------ | --------------------------------- |
@@ -238,7 +238,7 @@ Additional options are available from the contextual menu of the Watch pane.
 * **Show Field and Table Numbers**: Displays the number of each table or field. Useful if you work with table or field numbers, or with pointers using commands such as `Table` or `Field`.
 * **Show Icons**: Displays an icon denoting the object type for each object. You can turn this option off in order to speed up the display, or just because you prefer to use only the **Show Types** option.
 * **Sorted Tables and Fields**: Sorts the tables and fields in alphabetical order within their respective lists.
-* **Show Integers in Hexadecimal**: Numbers are usually displayed in decimal notation. This option displays them in hexadecimal notation. Note: To enter a numeric value in hexadecimal, type 0x (zero + "x"), followed by the hexadecimal digits.
+* **Show Integers in Hexadecimal**: Numbers are usually displayed in decimal notation. Esta opción los muestra en notación hexadecimal. Note: To enter a numeric value in hexadecimal, type 0x (zero + "x"), followed by the hexadecimal digits.
 * **Enable activity monitoring**: Activates the monitoring of activity (advanced checking of internal activity of the application) and displays the information retrieved in the additional themes: **Scheduler**, **Web** and **Network**.
 
 ## Panel de la cadena de llamadas
