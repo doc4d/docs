@@ -4,7 +4,7 @@ title: はじめに
 ---
 
 
-4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) and specific [methods](method-list.md). これにより、先進的なスプレッドシート機能をプロジェクトに埋め込むことが可能です。
+4D View Pro は、[4D フォームエリア](FormObjects/viewProArea_overview.md) と専用の [メソッド](method-list.md) が含まれる [4Dコンポーネント](Concepts/components.md) です。 これにより、先進的なスプレッドシート機能をプロジェクトに埋め込むことが可能です。
 
 
 ![](assets/en/ViewPro/vpSpreadsheet.png)
