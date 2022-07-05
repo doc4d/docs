@@ -503,26 +503,47 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.open().Syntax -->
-**.open**( { *mode* : Text } ) : 4D.FileHandle<!-- END REF -->
+**.open**( { *mode* : Text } ) : 4D.FileHandle<br>**.open**( { *options* : Object } ) : 4D.FileHandle<!-- END REF -->
 
 <!--REF #FileClass.open().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
 |mode|Text|->|Opening mode: "read", "write", "append"|
-|Result|[4D.FileHandle](FileHandleClass)|<-|New File handle|
+|options|Object|->|Opening options|
+|Result|[4D.FileHandle](FileHandleClass)|<-|New File handle object|
 <!-- END REF -->
 
 #### Description
 
-The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object with the specified *mode* on the file<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file. 
+The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified *mode* or with the specified *options*<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file. 
 
-In *mode*, pass the opening mode for the file handle:
+If you use the *mode* parameter, pass the opening mode for the file handle:
 
 |*mode*|Description|
 |---|---|
-|"read"|Creates a file handle to read values from the file. Default if *mode* is omitted|
+|"read"|(Default) Creates a file handle to read values from the file.|
 |"write"|Creates a file handle to write values to the file (starting at the beginning of the file content)|
 |"append"|Creates a file handle to write values to the file (starting at the end of the file content)|
+
+
+If you use the *options* parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
+
+|*options*|Type|Description|Default|
+|---|---|---|---|
+|`.mode`|Text|Opening mode (see *mode* above)|"read"|
+|`.charset`|Text|Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8")|"UTF-8"|
+|`.breakModeRead`|Number|Processing mode for line breaks used when reading in the file (see below)|1|
+|`.breakModeWrite`|Number|Processing mode for line breaks used when writing to the file (see below)|1|
+
+The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values:
+
+|Break mode value|Description|
+|---|---|
+|0|No processing|
+|1|(Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows|
+|2|Line breaks are converted to CRLF (carriage return + line feed), the default Windows format|
+|3|Line breaks are converted to CR (carriage return), the default Classic Mac OS format|
+|4|Line breaks are converted to LF (line feed), the default Unix and macOS format|
 
 
 #### Example
