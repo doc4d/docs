@@ -17,7 +17,7 @@ Un combo box se inicializa exactamente igual que una [lista desplegable](dropdow
 
 ### Utilizar un objeto
 
-> This feature is only available in 4D projects.
+> Esta funcionalidad sólo está disponible en proyectos 4D.
 
 Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection) puede utilizarse como fuente de datos de un combo box. El objeto debe contener las siguientes propiedades:
 
@@ -28,7 +28,7 @@ Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_col
 
 Si el objeto contiene otras propiedades, se ignoran.
 
-When the user enters text into the combo box, the `currentValue` property of the object gets the entered text.
+Cuando el usuario introduce texto en el combo box, la propiedad `currentValue` del objeto obtiene el texto introducido.
 
 ### Utilizar un array
 
