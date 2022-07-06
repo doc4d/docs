@@ -44,7 +44,7 @@ var MyDate : Date
 The `var` keyword allows declaring object variables of a defined class type, for example:
 
 ```4d
-var myPerson : cs.Person 
+var myPerson : cs. Person 
 //variable of the Person user class
 ```
 
@@ -206,8 +206,7 @@ $o:=cs.myClass.new()
 In the `myClass` class method, use the `Function <methodName>`  statement to define the *methodName* class member method. A class member method can receive and return parameters like any method, and use `This` as the object instance.
 
 ```4d  
-//in the myClass.4dm file
-Function hello
+//in the myClass.4dm file Function hello
   C_TEXT($0)
   $0:="Hello "+This.who
 ```
@@ -215,37 +214,25 @@ Function hello
 To execute a class member method, just use the `()` operator on the member method of the object instance.
 
 ```4d
-$o:=cs.myClass.new()
-$o.who:="World"
-$message:=$o.myClass.hello()  
-//$message: "Hello World"
+$f:=New object
+$f.message:=New formula(ALERT("Hello world!"))
+$f.message() //displays "Hello world!"
 ```
 
 Optionally, use the `Class constructor` keyword to declare properties of the object.
 
 ```4d  
-//in the Rectangle.4dm file
-Class constructor
-C_LONGINT($1;$2)
-This.height:=$1
-This.width:=$2  
-This.name:="Rectangle"
+//in the Rectangle.4dm file Class constructor C_LONGINT($1;$2)
+This.height:=$1 This.width:=$2 This.name:="Rectangle"
 ```
 
 A class can extend another class by using `Class extends <ClassName>`. Superclasses can be called using the `Super` command. Por exemplo:
 
 ```4d  
-//in the Square.4dm file
-Class extends rectangle
-
-Class constructor
-C_LONGINT($1)
+//in the Square.4dm file Class extends rectangle Class constructor C_LONGINT($1)
 
   // It calls the parent class's constructor with lengths   
-  // provided for the Rectangle's width and height
-Super($1;$1)
-
-This.name:="Square"
+  // provided for the Rectangle's width and height Super($1;$1) This.name:="Square"
 ```
 
 
