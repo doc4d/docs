@@ -4,19 +4,19 @@ title: HTTPRequest
 ---
 
 <details><summary>履歴</summary>
-| バージョン  | 内容          |
-| ------ | ----------- |
-| v19 R6 | Class added |
+| バージョン  | 内容     |
+| ------ | ------ |
+| v19 R6 | クラスを追加 |
 </details>
 
 
-The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httprequest-object) that can be used to configure and send requests to an HTTP server, as well as to process the HTTP server responses.
+`HTTPRequest` クラスを使って、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を扱うことができます。このオブジェクトは、HTTPサーバーへのリクエストの設定と送信、および HTTPサーバーのレスポンスを処理するのに使用します。
 
-The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
+`HTTPRequest` クラスは、`4D` クラスストアにて提供されています。 HTTPリクエストを作成・送信するには、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を返す [4D.HTTPRequest.new()](#4dhttprequestnew) 関数を使用します。
 
 ### 例題
 
-Create a `MyHttpRequestOptions` class for the request options:
+リクエスト設定用の `MyHttpRequestOptions` クラスを作成します:
 
 ```4d
 Class constructor($method : Text; $headers : Object; $body : Text)
@@ -25,13 +25,13 @@ This.headers:=$headers
 This.body:=$body
 
 Function onResponse($request : 4D.HTTPRequest; $event : Object)
-//My onResponse method, if you want to handle the request asynchronously
+// リクエストを非同期的に処理する場合、onResponse メソッドをここに書きます
 
 Function onError($request : 4D.HTTPRequest; $event : Object)
-//My onError method, if you want to handle the request asynchronously
+// リクエストを非同期的に処理する場合、onError メソッドをここに書きます
 ```
 
-You can now create your request:
+このクラスを使って、次のようにリクエストを作成できます:
 
 ```4d
 var $headers : Object
@@ -43,15 +43,15 @@ myHttpRequestOptions := cs.MyHttpRequestOptions.new("GET"; $headers; "")
 
 var $request : 4D.HTTPRequest
 $request:=4D.HTTPRequest.new("www.google.com"; myHttpRequestOptions)
-$request.wait() //If you want to handle the request synchronously
-//Now you can use $request.response to access the result of the request or $request.error to check the error that happened.
+$request.wait() // リクエストを同期的に処理する場合
+// $request.response からリクエストの結果を取得したり、$request.error からエラーの詳細を確認したりできます
 ```
 
-### HTTPRequest Object
+### HTTPRequest オブジェクト
 
-An HTTPRequest object is a non-sharable object.
+HTTPRequest オブジェクトは共有できないオブジェクトです。
 
-HTTPRequest objects provide the following properties and functions:
+HTTPRequest オブジェクトは次のプロパティや関数を提供します:
 
 |                                                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -78,29 +78,29 @@ HTTPRequest objects provide the following properties and functions:
 **4D.HTTPRequest.new**( *url* : Text { ; *options* : Object } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| 引数      | タイプ            |    | 説明                               |
-| ------- | -------------- |:--:| -------------------------------- |
-| url     | テキスト           | -> | URL to which to send the request |
-| options | オブジェクト         | -> | Request configuration properties |
-| 戻り値     | 4D.HTTPRequest | <- | New HTTPRequest object           |
+| 引数      | タイプ            |    | 説明                    |
+| ------- | -------------- |:--:| --------------------- |
+| url     | Text           | -> | リクエストの送信先URL          |
+| options | Object         | -> | リクエスト設定プロパティ          |
+| 戻り値     | 4D.HTTPRequest | <- | 新規 HTTPRequest オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in *url* with the defined *options*, and returns a `4D.HTTPRequest` object<!-- END REF -->.
+`4D.HTTPRequest.new()` 関数は、 <!-- REF #4D.HTTPRequest.new().Summary -->*options* 引数で指定した設定に基づいて HTTPリクエストを作成し、*url* 引数で定義される HTTPサーバーに送信して、`4D.HTTPRequest` オブジェクトを返します<!-- END REF -->.
 
-The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods.
+返される `HTTPRequest` オブジェクトは、HTTPサーバーのレスポンスの処理と、メソッドを呼び出すのに使用されます。
 
-In *url*, pass the URL where you want to send the request. The syntax to use is:
+*url* には、リクエスト送信先の URL を渡します。 シンタックスは以下の通りです:
 
 ```
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 {https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
-If you omit the protocol part (`http://` or `https://`), a https request is sent.
+プロトコル部分 (`http://` または `https://`) を省略した場合には、https リクエストが送信されます。
 
-For example, you can pass the following strings:
+たとえば、次の文字列を受け渡すことができます:
 
 ```
     http://www.myserver.com
@@ -113,71 +113,71 @@ For example, you can pass the following strings:
     http://[2001:0db8:0000:0000:0000:ff00:0042:8329]:8080/index.html (**)
 ```
 
-#### `options` parameter
+#### `options` 引数
 
 *options* に渡すオブジェクトは、次のプロパティを持つことができます:
 
-| プロパティ                | タイプ                                             | 説明                                                                                                                                                                                                                                                                | デフォルト        |
-| -------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| body                 | バリアント                                           | Body of the request (required in case of `post` or `put` requests). Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers                                                        | 未定義          |
-| certificatesFolder   | [Folder](#FolderClass.md)                       | Sets the active client certificates folder                                                                                                                                                                                                                        | 未定義          |
-| dataType             | テキスト                                            | Type of the response body attribute. Values: "text", "blob", "object", or "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise) | "auto"       |
-| encoding             | テキスト                                            | Used only in case of requests with a `body` (`post` or `put` methods). Encoding of the request body content if it's a text, ignored if content-type is set inside the headers                                                                                     | "UTF-8"      |
-| headers              | オブジェクト                                          | Headers of the request. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                      | Empty object |
-| method               | テキスト                                            | "POST", "GET", or other method                                                                                                                                                                                                                                    | "GET"        |
-| minTLSVersion        | テキスト                                            | Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                               | "`TLSv1_2`"  |
-| onData               | [Function](#FunctionClass.md)                   | Callback when data from the body is received. コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                                                                | 未定義          |
-| onError              | [Function](#FunctionClass.md)                   | Callback when an error occurs. コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                                                                               | 未定義          |
-| onHeaders            | [Function](#FunctionClass.md)                   | Callback when the headers are received. コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                                                                      | 未定義          |
-| onResponse           | [Function](#FunctionClass.md)                   | Callback when a response is received. コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                                                                        | 未定義          |
-| onTerminate          | [Function](#FunctionClass.md)                   | Callback when the request is over. コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                                                                           | 未定義          |
-| protocol             | テキスト                                            | "auto" or "HTTP1". "auto" means HTTP1 in the current implementation                                                                                                                                                                                               | "auto"       |
-| proxyAuthentication  | [authentication object](#authentication-object) | Object handling proxy authentication                                                                                                                                                                                                                              | 未定義          |
-| serverAuthentication | [authentication object](#authentication-object) | Object handling server authentication                                                                                                                                                                                                                             | 未定義          |
-| returnResponseBody   | ブール                                             | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                            | True         |
-| timeout              | 実数                                              | タイムアウト (秒単位) Undefined = no timeout                                                                                                                                                                                                                               | 未定義          |
+| プロパティ                | タイプ                                             | 説明                                                                                                                                                                       | デフォルト       |
+| -------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| body                 | Variant                                         | リクエストの本文 (`post` または `put` リクエストの場合に必須)。 テキスト、BLOB、またはオブジェクトを指定できます。 ヘッダー内で設定されていない限り、content-type は当プロパティの型によって決定されます。                                                  | 未定義         |
+| certificatesFolder   | [Folder](#FolderClass.md)                       | 使用するクライアント証明書フォルダーを指定します。                                                                                                                                                | 未定義         |
+| dataType             | Text                                            | レスポンス本文のデータ型。 値: "text", "blob", "object", または "auto"。 "auto" の場合、本文の型は MIMEタイプから推定されます (JSON ならオブジェクト、テキスト・javascript・xml・httpメッセージ・URLエンコードされたフォームなどはテキスト、それ以外は BLOB)。 | "auto"      |
+| encoding             | Text                                            | `body` のあるリクエストの場合にのみ使用 (`post` または `put` メソッド)。 本文がテキストの場合のエンコーディング。ヘッダーにて content-type が指定されている場合は無視されます。                                                              | "UTF-8"     |
+| headers              | Object                                          | リクエストのヘッダー。 シンタックス: `headers.key=value` (同じ key に対して *value* を複数指定する場合、*value* にコレクションを使用できます)                                                                           | 空のオブジェクト    |
+| method               | Text                                            | "POST"、"GET"、またはその他のメソッド                                                                                                                                                 | "GET"       |
+| minTLSVersion        | Text                                            | TLS の最小バージョンを指定します: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                   | "`TLSv1_2`" |
+| onData               | [Function](#FunctionClass.md)                   | 本文のデータ受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                   | 未定義         |
+| onError              | [Function](#FunctionClass.md)                   | エラー発生時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                      | 未定義         |
+| onHeaders            | [Function](#FunctionClass.md)                   | ヘッダー受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                     | 未定義         |
+| onResponse           | [Function](#FunctionClass.md)                   | レスポンス受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                    | 未定義         |
+| onTerminate          | [Function](#FunctionClass.md)                   | リクエスト終了時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                    | 未定義         |
+| protocol             | Text                                            | "auto" または "HTTP1"。 "auto" は現在の実装における HTTP1 を意味します。                                                                                                                      | "auto"      |
+| proxyAuthentication  | [authentication object](#authentication-object) | プロキシ認証のためのオブジェクト                                                                                                                                                         | 未定義         |
+| serverAuthentication | [authentication object](#authentication-object) | サーバー認証のためのオブジェクト                                                                                                                                                         | 未定義         |
+| returnResponseBody   | Boolean                                         | false の場合、レスポンス本文は [`response` オブジェクト](#response) に返されません。 false かつ `onData` が未定義の場合にエラーを返します。                                                                           | True        |
+| timeout              | Real                                            | タイムアウト (秒単位) 未定義 = タイムアウトなし                                                                                                                                              | 未定義         |
 
-#### Callback functions
+#### コールバック関数
 
-All callback functions receive two object parameters:
+すべてのコールバック関数は、2つのオブジェクト引数を受け取ります:
 
 | 引数      | タイプ                                         |
 | ------- | ------------------------------------------- |
-| $param1 | [`HTTPRequest` object](#httprequest-object) |
-| $param2 | [`Event` object](#event-object)             |
+| $param1 | [`HTTPRequest` オブジェクト](#httprequest-object) |
+| $param2 | [`event` オブジェクト](#event-object)             |
 
 
 以下は、コールバック呼び出しの流れです:
 
-1. `onHeaders` is always called once
-2. `onData` is called zero or several times (not called if the request does not have a body)
-3. If no error occured, `onResponse` is always called once
-4. If an error occurs, `onError` is executed once (and terminates the request)
-5. `onTerminate` is always executed once
+1. `onHeaders` は常に 1回呼び出されます。
+2. `onData` は 0回または複数回呼び出されます (リクエストに本文がない場合は呼び出されません)。
+3. エラーが発生しなかった場合、`onResponse` は常に 1回呼び出されます。
+4. エラーが発生した場合、 `onError` が 1回実行されます (そしてリクエストを終了します)。
+5. `onTerminate` は常に 1回実行されます。
 
 
 
-#### event object
+#### event オブジェクト
 
-An `event` object is returned when a [callback function](#callback-functions) is called. このオブジェクトには次のプロパティが含まれます:
+`event` オブジェクトは、[コールバック関数](#コールバック関数) が呼ばれたときに返されます。 このオブジェクトには次のプロパティが含まれます:
 
-| プロパティ | タイプ  | 説明                                                                                    |
-| ----- | ---- | ------------------------------------------------------------------------------------- |
-| .data | blob | Received data. It is always *undefined* except in the `onData` callback               |
-| .type | テキスト | Type of event. Possible values: "response", "error", "headers", "data", or "terminate |
-
-
+| プロパティ | タイプ  | 説明                                                                     |
+| ----- | ---- | ---------------------------------------------------------------------- |
+| .data | blob | 取得データ。 *onData* コールバック以外の場合は常に `undefined` です。                         |
+| .type | text | イベントの種類。 取り得る値: "response", "error", "headers", "data", または "terminate |
 
 
-#### authentication object
 
-An authentication object handles the `options.serverAuthentication` or `options.proxyAuthentication` property. It can contain the following properties:
 
-| プロパティ    | タイプ  | 説明                                                       | デフォルト  |
-| -------- | ---- | -------------------------------------------------------- | ------ |
-| name     | テキスト | Name used for authentication                             | 未定義    |
-| password | テキスト | Password used for authentication                         | 未定義    |
-| method   | テキスト | Method used for authentication:"basic", "digest", "auto" | "auto" |
+#### authentication オブジェクト
+
+authentication オブジェクトは `options.serverAuthentication` または `options.proxyAuthentication` プロパティに使用します。 このオブジェクトには以下のプロパティを含めることができます:
+
+| プロパティ    | タイプ  | 説明                              | デフォルト  |
+| -------- | ---- | ------------------------------- | ------ |
+| name     | Text | 認証に使用する名前                       | 未定義    |
+| password | Text | 認証に使用するパスワード                    | 未定義    |
+| method   | Text | 認証方法: "basic", "digest", "auto" | "auto" |
 
 
 <!-- END REF -->
@@ -194,7 +194,7 @@ An authentication object handles the `options.serverAuthentication` or `options.
 
 #### 説明
 
-The `.dataType` property contains <!-- REF #4D.HTTPRequest.dataType.Summary -->the `dataType` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "auto" if it was omitted<!-- END REF -->. 
+`.dataType` プロパティは、 <!-- REF #4D.HTTPRequest.dataType.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `dataType` を格納します (省略時は "auto")。<!-- END REF -->. 
 
 <!-- END REF -->
 
@@ -206,7 +206,7 @@ The `.dataType` property contains <!-- REF #4D.HTTPRequest.dataType.Summary -->t
 
 #### 説明
 
-The `.encoding` property contains <!-- REF #4D.HTTPRequest.encoding.Summary -->the `encoding` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "UTF-8" if it was omitted<!-- END REF -->. 
+`.encoding` プロパティは、 <!-- REF #4D.HTTPRequest.encoding.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `encoding` を格納します (省略時は "UTF-8")。<!-- END REF -->. 
 
 <!-- END REF -->
 
@@ -218,16 +218,16 @@ The `.encoding` property contains <!-- REF #4D.HTTPRequest.encoding.Summary -->t
 
 #### 説明
 
-The `.errors` property contains <!-- REF #4D.HTTPRequest.errors.Summary -->the collection of all the errors if at least one error has been triggered<!-- END REF -->.
+`.errors` プロパティは、 <!-- REF #4D.HTTPRequest.errors.Summary -->少なくとも 1つのエラーが発生した場合、全エラーのコレクションを格納します<!-- END REF -->.
 
-Here is the contents of the `.errors` property:
+`.errors` プロパティの内容は次の通りです:
 
-| プロパティ  |                       | タイプ    | 説明                              |
-| ------ | --------------------- | ------ | ------------------------------- |
-| errors |                       | コレクション | 4D error stack in case of error |
-|        | [].errCode            | 数値     | 4Dエラーコード                        |
-|        | [].message            | テキスト   | 4Dエラーの詳細                        |
-|        | [].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名             |
+| プロパティ  |                       | タイプ        | 説明                  |
+| ------ | --------------------- | ---------- | ------------------- |
+| errors |                       | Collection | エラー発生時の 4Dエラースタック   |
+|        | [].errCode            | Number     | 4Dエラーコード            |
+|        | [].message            | Text       | 4Dエラーの詳細            |
+|        | [].componentSignature | Text       | エラーを返した内部コンポーネントの署名 |
 
 <!-- END REF -->
 
@@ -241,7 +241,7 @@ Here is the contents of the `.errors` property:
 
 #### 説明
 
-The `.headers` property contains <!-- REF #4D.HTTPRequest.headers.Summary -->the `headers` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains an empty object. 
+`.headers` プロパティは、 <!-- REF #4D.HTTPRequest.headers.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `headers` を格納します。<!-- END REF -->. (省略された場合は空のオブジェクト) 
 
 <!-- END REF -->
 
@@ -254,7 +254,7 @@ The `.headers` property contains <!-- REF #4D.HTTPRequest.headers.Summary -->the
 
 #### 説明
 
-The `.method` property contains <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains "GET". 
+`.method` プロパティは、 <!-- REF #4D.HTTPRequest.method.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `method` を格納します。<!-- END REF -->. (省略された場合は "GET") 
 
 <!-- END REF -->
 
@@ -266,7 +266,7 @@ The `.method` property contains <!-- REF #4D.HTTPRequest.method.Summary -->the `
 
 #### 説明
 
-The `.protocol` property contains <!-- REF #4D.HTTPRequest.protocol.Summary -->the `protocol` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted or if "auto" was used, contains the version of the protocol used. 
+`.protocol` プロパティは、 <!-- REF #4D.HTTPRequest.protocol.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `protocol` を格納します。<!-- END REF -->. (省略時、または "auto" の場合は、使用されたプロトコルのバージョン) 
 
 <!-- END REF -->
 
@@ -279,16 +279,16 @@ The `.protocol` property contains <!-- REF #4D.HTTPRequest.protocol.Summary -->t
 
 #### 説明
 
-The `.response` property contains <!-- REF #4D.HTTPRequest.response.Summary -->the response to the request if it has received at least the status code, undefined otherwise<!-- END REF -->.
+`.response` プロパティは、 <!-- REF #4D.HTTPRequest.response.Summary -->少なくともステータスコードを受け取った場合には、リクエストへのレスポンスを格納します (それ以外の場合は未定義)。<!-- END REF -->.
 
-A `response` object is a non-sharable object. It provides the following properties:
+`response` オブジェクトは共有できないオブジェクトです。 このオブジェクトは次のプロパティを提供します:
 
-| プロパティ       | タイプ    | 説明                                                                                                                                                                      |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| .body       | バリアント  | Body of the response. The type of the message is defined according to the [`dataType`](#datatype) property. Undefined if the body has not been received yet             |
-| .headers    | オブジェクト | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Undefined if the headers have not been received yet. |
-| .status     | 数値     | Status code of the response                                                                                                                                             |
-| .statusText | テキスト   | Message explaining the status code                                                                                                                                      |
+| プロパティ       | タイプ     | 説明                                                                                                     |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| .body       | Variant | レスポンスのボディ。 メッセージのデータ型は [`dataType`](#datatype) プロパティによって定義されています。 ボディがまだ受信されていない場合は未定義です。              |
+| .headers    | Object  | レスポンスのヘッダー。 `headers.key` = value (同じ key が複数指定されている場合、*value* はコレクションでありえます) ヘッダーがまだ受信されていない場合は未定義です。 |
+| .status     | Number  | レスポンスのステータスコード                                                                                         |
+| .statusText | Text    | ステータスコードを説明するメッセージ                                                                                     |
 
 
 
@@ -303,7 +303,7 @@ A `response` object is a non-sharable object. It provides the following properti
 
 #### 説明
 
-The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True. 
+`.returnResponseBody` プロパティは、 <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `returnResponseBody` を格納します<!-- END REF -->. (省略された場合は true)。 
 
 <!-- END REF -->
 
@@ -323,9 +323,9 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 
 #### 説明
 
-> This function is thread-safe.
+> この関数はスレッドセーフです。
 
-The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. It triggers the `onTerminate` event. 
+`.terminate()` 関数は、 <!-- REF #4D.HTTPRequest.terminate().Summary -->HTTPリクエストを中止します。<!-- END REF -->. また、`onTerminate` イベントをトリガーします。 
 
 <!-- END REF -->
 
@@ -338,7 +338,7 @@ The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->abor
 
 #### 説明
 
-The `.terminated` property contains <!-- REF #4D.HTTPRequest.terminated.Summary -->True if the request is terminated (after the call to `onTerminate`), false otherwise<!-- END REF -->.
+`.terminated` プロパティは、 <!-- REF #4D.HTTPRequest.terminated.Summary -->リクエストが終了された場合 (`onTerminate` への呼び出し後) は true を格納します (それ以外は false)。<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -351,7 +351,7 @@ The `.terminated` property contains <!-- REF #4D.HTTPRequest.terminated.Summary 
 
 #### 説明
 
-The `.timeout` property contains <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains Undefined. 
+`.timeout` プロパティは、 <!-- REF #4D.HTTPRequest.timeout.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `timeout` を格納します<!-- END REF -->. (省略された場合は未定義)。 
 
 <!-- END REF -->
 
@@ -365,7 +365,7 @@ The `.timeout` property contains <!-- REF #4D.HTTPRequest.timeout.Summary -->the
 
 #### 説明
 
-The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of the HTTP request<!-- END REF -->. 
+`.url` プロパティは、 <!-- REF #4D.HTTPRequest.url.Summary -->HTTPリクエストの URL を格納します。<!-- END REF -->. 
 
 <!-- END REF -->
 
@@ -378,22 +378,22 @@ The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of 
 **.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.wait().Params -->
-| 引数   | タイプ            |    | 説明                                               |
-| ---- | -------------- |:--:| ------------------------------------------------ |
-| time | 実数             | -> | Maximum time in seconds to wait for the response |
-| 戻り値  | 4D.HTTPRequest | <- | HTTPRequest object                               |
+| 引数   | タイプ            |    | 説明                 |
+| ---- | -------------- |:--:| ------------------ |
+| time | Real           | -> | レスポンスを待機する最長時間 (秒) |
+| 戻り値  | 4D.HTTPRequest | <- | HTTPRequest オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-> This function is thread-safe.
+> この関数はスレッドセーフです。
 
-The `4D.HTTPRequest.wait()` function <!-- REF #4D.HTTPRequest.wait().Summary -->waits for the response from the server<!-- END REF -->.
+`4D.HTTPRequest.wait()` 関数は、 <!-- REF #4D.HTTPRequest.wait().Summary -->サーバーのレスポンスを待ちます。<!-- END REF -->.
 
-If a *time* parameter is passed, the function will wait at most the defined number of seconds.
+*time* 引数が渡されると、関数は最長で、定義された秒数だけ待機します。
 
-If the response from the server has already arrived, the function returns immediately.
+サーバーのレスポンスがすでに到着している場合、関数は即座に返されます。
 <!-- END REF -->
 
 
