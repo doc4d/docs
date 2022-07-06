@@ -147,7 +147,7 @@ Tenga en cuenta que la entidad correspondiente se vuelve a cargar desde el almac
 *index* puede ser cualquier número entre 0 y `.length`-1.
 
 *   Si *index* está fuera de rango, se devuelve un error.
-*   Si *index* corresponde a una entidad descartada, se devuelve un valor Null.
+*   Si el "kind" de *attributeName* es `storage`: `.attributeName` devuelve una colección de valores del mismo tipo que *attributeName*.
 > > **Atención**: `EntitySelection[index]` es una expresión no asignable, lo que significa que no puede utilizarse como referencia editable de la entidad con métodos como [`.lock()`](EntityClass.md#lock) o [`.save()`](EntityClass.md#save). Para trabajar con la entidad correspondiente, es necesario asignar la expresión devuelta a una expresión asignable, como una variable. Ejemplos:
 
 ```4d
@@ -351,7 +351,7 @@ Las llamadas a la función se pueden encadenar:
 La función `.and()` <!-- REF #EntitySelectionClass.and().Summary -->combina la entity selection con el parámetro *entity* o *entitySelection* utilizando el operador lógico AND<!-- END REF -->; devuelve una nueva entity selection no ordenada que contiene sólo las entidades a las que se hace referencia tanto en la entity selection y el parámetro.
 
 *   Si pasa *entity* como parámetro, se combina esta entidad con la entity selection. Si la entidad pertenece a la entity selection, se devuelve una nueva entity selection que sólo contiene la entidad. En caso contrario, se devuelve una selección de entidades vacía.
-*   Si pasa *entitySelection* como parámetro, combina ambas entity selections. Se devuelve una nueva selección de entidades que contiene sólo las entidades a las que se hace referencia en ambas selecciones. Si no hay ninguna entidad intersectada, se devuelve una entity selection vacía.
+*   Si pasa *entity* como parámetro, se compara esta entidad con la entity selection. Si la entidad pertenece a la entity selection, se devuelve una nueva referencia a la entity selection. En caso contrario, se devuelve una nueva entity selection que contiene la entity selection original y la entidad.
 > > Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial o el parámetro *entitySelection* están vacíos, o si *entity* es Null, se devuelve una entity selection vacía.
@@ -1382,8 +1382,8 @@ Queremos tener una selección de empleadas llamadas "Jones" que vivan en Nueva Y
 
 La función `.or()` <!-- REF #EntitySelectionClass.or().Summary -->combina la entity selection con el parámetro *entity* o *entitySelection* utilizando el operador lógico (no excluyente) OR<!-- END REF -->; devuelve una nueva entitySelection no ordenada que contiene todas las entidades de la entitySelection y del parámetro.
 
-*   Si pasa *entity* como parámetro, se compara esta entidad con la entity selection. Si la entidad pertenece a la entity selection, se devuelve una nueva referencia a la entity selection. En caso contrario, se devuelve una nueva entity selection que contiene la entity selection original y la entidad.
-*   Si pasa *entitySelection* como parámetro, compara ambas entity selections. Se devuelve una nueva entity selection que contiene las entidades pertenecientes a la selección de entidades original o *entitySelection* (o no es exclusiva, las entidades referenciadas en ambas selecciones no se duplican en la selección resultante).
+*   Si pasa *entitySelection* como parámetro, compara ambas entity selections. Se devuelve una nueva selección de entidades que contiene sólo las entidades a las que se hace referencia en ambas selecciones. En caso contrario, se devuelve una nueva entity selection que contiene la entity selection original y la entidad.
+*   Si la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía. Si la entity selection original está vacía, se devuelve una referencia a *entitySelection* o una entity selection que sólo contiene *entity*.
 > > Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía. Si la entity selection original está vacía, se devuelve una referencia a *entitySelection* o una entity selection que sólo contiene *entity*.
