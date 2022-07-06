@@ -196,7 +196,7 @@ Pode passar qualquer número de valores dos tipos compatíveis abaixo:
 *   time (stored as number of milliseconds - real)
 *   null
 *   shared object(*)
-*   shared collection(*)
+*   shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 
 (*)Quando um objeto partilhado ou coleção forem adicionadas a uma coleção partilhada, partilham o mesmo *locking identifier*. Para saber mais sobre esse ponto, veja o guia **4D Developer**'.
@@ -462,10 +462,8 @@ $lastnames:=JSON Parse($text) //$lastnames is a regular collection
 
 $sharedLastnames:=$lastnames.copy(ck shared) //$sharedLastnames is a shared collection
 
-//Now we can put $sharedLastnames into $sharedObject
-Use($sharedObject)
-    $sharedObject.lastnames:=$sharedLastnames
-End use
+//Now we can put $sharedLastnames into $sharedObject Use($sharedObject)
+    $sharedObject.lastnames:=$sharedLastnames End use
 ```
 
 
@@ -497,11 +495,8 @@ var $text : Text
 $text:=Document to text(Get 4D folder(Current resources folder)+"lastnames.txt")
 $lastnames:=JSON Parse($text) //$lastnames is a regular collection
 
-$sharedLastnames:=$lastnames.copy(ck shared) // shared copy
-
-Use(Storage)
-    Storage.lastnames:=$sharedLastnames
-End use
+$sharedLastnames:=$lastnames.copy(ck shared) // shared copy Use(Storage)
+    Storage.lastnames:=$sharedLastnames End use
 ```
 
 #### Exemplo 4
@@ -852,10 +847,8 @@ $b:=$c.every("TypeLookUp";Is real) //$b=false
 Com o método ***TypeLookUp***:
 
 ```4d
-#DECLARE ($toEval : Object ; $param : Integer) //$1; $2
-If(Value type($toEval.value)=$param)
-    $toEval.result:=True
-End if
+#DECLARE ($toEval : Object ; $param : Integer) //$1; $2 If(Value type($toEval.value)=$param)
+    $toEval.result:=True End if
 ```
 
 
@@ -2174,7 +2167,7 @@ Este exemplo devolve as pessoas contratadas há mais de 90 dias:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 if today is 01/10/2018
 ```
 
 
@@ -2305,7 +2298,7 @@ The `.remove()` function <!-- REF #collection.remove(). Summary -->removes one o
 > This function modifies the original collection.
 
 In *index*, pass the position where you want the element to be removed from the collection.
-> **Warning**: Keep in mind that collection elements are numbered from 0. If *index* is greater than the length of the collection, actual starting index will be set to the length of the collection.
+> **Warning**: Keep in mind that collection elements are numbered from 0. If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 *   If *index* < 0, it is recalculated as *index:=index+length* (it is considered as the offset from the end of the collection).
 *   If the calculated value < 0, *index* is set to 0.
@@ -2421,9 +2414,14 @@ The `.sort()` function <!-- REF #collection.sort(). Na coleção original é uma
 
 
 ```4d
- var $c; $c2 : Collection
- $c:=New collection(1;3;5;2;4;6)
- $c2:=$c.reverse() //$c2=[6,4,2,5,3,1]
+ var $c : Collection
+ $c:=New collection
+ $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
+ $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 
