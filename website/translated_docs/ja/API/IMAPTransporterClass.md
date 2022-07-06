@@ -1559,7 +1559,7 @@ var $options; $transporter; $status : object
 
 $options:=New object
 
-$pw:=Request("Please enter your password:")
+$pw:=Request("パスワードを入力してください:")
 
 If(OK=1) $options.host:="imap.gmail.com"
 
@@ -1568,11 +1568,11 @@ $options.password:=$pw
 
 $transporter:=IMAP New transporter($options)
 
-// rename mailbox
+// メールボックスの名称変更
 $status:=$transporter.renameBox("Invoices"; "Bills")
 
 If ($status.success)
-   ALERT("Mailbox renaming successful!")
+   ALERT("メールボックスの名称が変更されました。")
    Else
    ALERT("エラー: "+$status.statusText)
  End if
