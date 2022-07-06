@@ -400,7 +400,7 @@ Una función class constructor, que puede aceptar los [parámetros](#parameters)
 
 En ese caso, cuando se llama a la función [`new()`](API/ClassClass.md#new), el class constructor es llamado con los parámetros opcionalmente pasados a la función `new()`.
 
-Para una función class constructor, el comando `Current method name` devuelve: `<ClassName>:constructor`, por ejemplo "MyClass:constructor".
+The type of the computed property is defined by the `$return` type declaration of the *getter*.
 
 
 
@@ -530,11 +530,18 @@ Function getArea()
     var $0 : Integer
     $0:=(This.height)*(This.width)
 
-// Function definition
-Function getArea()
-    var $0 : Integer
+//Class: Square
 
-    $0:=(This.height)*(This.width)
+Class extends Rectangle
+
+Class constructor ($side : Integer)
+
+    // Llama al class constructor de la clase padre con longitudes
+    // proporcionados para el ancho y alto del rectángulo
+    Super($side;$side)
+    // En las clases derivadas, Super debe ser llamado antes de que 
+    // pueda utilizar 'This'
+    This.
 ```
 
 ```4d
