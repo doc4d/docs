@@ -244,7 +244,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 La función `.append()` <!-- REF #IMAPTransporterClass.append().Summary -->añade el objeto `mailObj` a la caja `destinationBox`<!-- END REF -->.
 
-En el parámetro `mailObj`, pase un objeto Email. Para una descripción completa de las propiedades del correo, ver [objeto Email](EmailObjectClass.md#email-object). La función `.append()` soporta los marcadores de palabras clave en el atributo `keywords` de los objetos email.
+En el parámetro `mailObj`, pase un objeto Email. En el parámetro `mailObj`, pase un objeto Email. La función `.append()` soporta los marcadores de palabras clave en el atributo `keywords` de los objetos email.
 
 El parámetro opcional `destinationBox` permite pasar el nombre del buzón donde se añadirá el objeto `mailObj`. Si se omite, se utiliza el buzón actual.
 
