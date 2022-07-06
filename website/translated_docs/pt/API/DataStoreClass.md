@@ -305,7 +305,7 @@ Ver  exemplo da função [`.startTransaction()`](#starttransaction).
 
 #### Descrição
 
-The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts(). Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+Objeto descrevendo a conexão remota da datastore (não retornado para datastore principal) Propriedades disponiveis: Propriedades disponiveis:
 
 This function is mainly used in the context of debugging. One thing to keep in mind is that when you open the debugger, it sends requests to the server and queries all the dataclass attributes to display them. This can overload your contexts with unnecessary data.
 
@@ -414,7 +414,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
 #### Descrição
 
-The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
+The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts(). Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
 
 > For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
@@ -557,7 +557,7 @@ Em um armazém de dados remoto:
 
 #### Descrição
 
-The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo(). Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->.
+The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo(). Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
 
 For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
@@ -845,7 +845,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 #### Descrição
 
-The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo(). Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
+The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo(). Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->.
 
 When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
 * the first entity is not fully loaded as done in automatic mode
