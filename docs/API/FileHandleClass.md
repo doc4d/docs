@@ -23,10 +23,16 @@ While (Not($fhandle.eof))
 	$lines.push($fhandle.readLine())
 End while
 
-//Writing line by line
+//Writing line by line from the start
 $fhandle:=$f.open("write")
-$fhandle.offset:=$fhandle.getSize()
 $text:="Hello World"
+For ($line; 1; 4)
+    $fhandle.writeLine($text+String($line))
+End for
+
+//Writing line by line from the end
+$fhandle:=$f.open("append")
+$text:="Hello New World"
 For ($line; 1; 4)
     $fhandle.writeLine($text+String($line))
 End for
@@ -35,11 +41,6 @@ End for
 $stopChar:=Char(Double quote)
 $fhandle:=$f.open("read")
 $text:=$fhandle.readText($stopChar)
-
-
-//Append to file
-$fhandle:=$f.open("append")
-$fhandle.writeLine($text+String($line))//Will add this at the end of the file content
 ```
 
 ### FileHandle object
@@ -206,7 +207,7 @@ The `.getSize()` function <!-- REF #FileHandleClass.getSize().Summary -->returns
 
 #### Description
 
-The `.mode` property returns <!-- REF #FileHandleClass.mode.Summary -->the mode in which the file handle was created: "read", "writ", or "append"<!-- END REF -->.
+The `.mode` property returns <!-- REF #FileHandleClass.mode.Summary -->the mode in which the file handle was created: "read", "write", or "append"<!-- END REF -->.
 
 The mode can be defined at the handle creation with the [`file.open()`](FileClass#open) function. Default is "read".
 
@@ -325,17 +326,19 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 <!--REF #FileHandleClass.readText().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|*stopChar*|Text|->|Character(s) at which to stop reading|
+|*stopChar*|Text|->|Character at which to stop reading|
 |Result|Text|<-|Text from the file|
 <!-- END REF -->
 
 #### Description
 
-The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* string is encountered<!-- END REF -->.
+The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* character is encountered<!-- END REF -->.
 
-When this function is executed, the current position ([.offset](#offset)) is updated after the *stopChar* string.
+The *stopChar* character is not included in the returned text. It you pass a string in *stopChar*, the first character is used as *stopChar*.
 
-If the *stopChar* string is not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched. 
+When this function is executed, the ([.offset](#offset)) is placed just before the *stopChar* character. 
+
+If the *stopChar* character is not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched. 
 
 #### See also
 
