@@ -109,7 +109,7 @@ Each element of the collection or each entity is available as an object that can
 
 When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.
 
-When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various functions of the [Collection class](../API/CollectionClass.md), you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Par exemple :
+When the data source is a collection, any modifications made in the list box values are reflected in the collection. When the data source is a collection, any modifications made in the list box values are reflected in the collection. Par exemple :
 
 ```4d
 myCol:=myCol.push("new value") //display new value in list box
@@ -591,7 +591,7 @@ The value of the [column header variable](properties_Object.md#variable-or-expre
 
 Vous pouvez définir la valeur de la variable (par exemple, Header2:=2) afin de "forcer" l'affichage de la flèche de tri. The column sort itself is not modified in this case; it is up to the developer to handle it.
 
-> La commande [`OBJECT SET FORMAT`](https://doc.4d.com/4dv19/help/command/en/page236.html) permet une prise en charge spécifique des icônes dans les en-têtes de listbox, ce qui peut être utile lorsque vous souhaitez travailler avec une icône de tri personnalisée.
+> Seules les [list box de type tableau](#array-list-boxes) peuvent être hiérarchiques.
 
 
 ## Managing row colors, styles, and display
