@@ -196,8 +196,8 @@ Puede pasar cualquier número de valores de los siguientes tipos soportados:
 *   time (almacenado como número de milisegundos - real)
 *   null
 *   objeto compartido(*)
-*   collection compartida(*)
-> A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+*   collection compartida(*) > A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+> Esta función modifica la colección original.
 
 (*)Cuando un objeto o colección compartida se añade a una colección compartida, comparten el mismo *identificador de bloqueo*. Para obtener más información sobre este punto, consulte la guía del **Desarrollador 4D**.
 
@@ -342,7 +342,7 @@ La función `.combine()` <!-- REF #collection.combine().Summary -->inserta *col2
 > Esta función modifica la colección original.
 
 Por defecto, los elementos *col2* se añaden al final de la colección original. Puede pasar en *index* la posición en la que quiere que se inserten los elementos *col2* en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el *índice* inicial real se fijará en la longitud de la colección.
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -519,6 +519,11 @@ Este ejemplo ilustra el uso de la opción `ck resolve pointers`:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
+
+ $what:="You!"
+ $col3:=$col2.copy(ck resolve pointers)
+ ALERT($col3[0].alpha+" "+$col3[1].what) //muestra "Hello You!"
  ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
 
  $what:="You!"
@@ -737,7 +742,7 @@ Si la colección contiene objetos, puede pasar el parámetro *propertyPath* para
 La función `.equal()` <!-- REF #collection.equal().Summary -->compara collection con collection2 <!-- END REF -->y devuelve **true** si son idénticas (comparación profunda/deep comparison).
 
 Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluación diferencie entre mayúsculas y minúsculas o que diferencie los caracteres acentuados, pase la constante `ck diacritical` en el parámetro option.
-> Los elementos con valores **Null** no son iguales a los elementos Undefined.
+> Esta función no modifica la colección original.
 
 #### Ejemplo
 
@@ -1408,7 +1413,7 @@ La función `.insert()` <!-- REF #collection.insert().Summary -->inserta *elemen
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere que se inserte el elemento en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
 *   Si *index* <0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -2117,7 +2122,7 @@ valor del comparador propertyPath {logicalOperator propertyPath comparator value
 
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value* y *querySettings*, consulte la descripción de la función [`dataClass.query()`](DataClassClass.md#query).
 
-> Las fórmulas no son soportadas por la función `collection.query()`, ni en el parámetro *queryString* ni como parámetro del objeto *formula*.
+> Esta función no modifica la colección original.
 
 #### Ejemplo 1
 
@@ -2142,6 +2147,10 @@ Para obtener información detallada sobre cómo construir una consulta utilizand
  $c:=New collection
  $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
  $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
  $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
@@ -2174,7 +2183,7 @@ Este ejemplo devuelve las personas contratadas hace más de 90 días:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018 si hoy es 01/10/2018
 ```
 
 
@@ -2305,7 +2314,7 @@ La función `.remove()` <!-- REF #collection.remove().Summary --> elimina uno o 
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0. Si *índice* es mayor que la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
+> Esta función no modifica la colección original. Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*).
 
 *   Si *index* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 *   Si el valor calculado < 0, *index* toma el valor 0.
