@@ -335,6 +335,8 @@ The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->retur
 
 When this function is executed, the current position ([.offset](#offset)) is updated after the *stopChar* string.
 
+If the *stopChar* string is not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched. 
+
 #### See also
 
 [.readLine()](#readline), [.writeText()](#writetext)
@@ -366,7 +368,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 The `.setSize()` function <!-- REF #FileHandleClass.setSize().Summary -->sets a new *size* in bytes for the document<!-- END REF -->.
 
 If the *size* value is less than the current document size, the document content is truncated from the beginning to get the new *size* .  
-If the *size* value is greater than the current document size, spaces characters (" ") are added at the end of the document until the requested *size* is reached.
+If the *size* value is greater than the current document size, `0x00` characters are added at the end of the document until the requested *size* is reached.
 
 #### See also
 
