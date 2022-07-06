@@ -505,27 +505,29 @@ Para crear un nuevo buzón "Invoices":
 
 
 ```4d
-var $pw : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //Obligatorio
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:")
-If(OK=1)
-$options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //crear transportador
+ $transporter:=IMAP New transporter($server)
 
-$transporter:=IMAP New transporter($options)
+  //seleccionar buzón
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-$status:=$transporter.createBox("Invoices")
-
-If ($status.success)
-ALERT("Mailbox creation successful!")
-Else
-ALERT("Error: "+$status.statusText)
-End if
-End if
+  If($boxInfo.mailCount>0)
+        // recuperar los encabezados de los últimos 20 mensajes sin marcarlos como leídos
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
+End for each
+ End if
 ```
 
 <!-- END REF -->
@@ -711,6 +713,10 @@ $status:=$transporter.deleteBox($name)
 
 If ($status.success)
     ALERT("Mailbox deletion successful!")
+    Else
+    ALERT("Error: "+$status.statusText)
+    End if
+End if
     Else
     ALERT("Error: "+$status.statusText)
     End if
@@ -1094,9 +1100,9 @@ El parámetro opcional *options* permite definir las partes de los mensajes a de
 
 La segunda sintaxis permite recuperar los mensajes en función de un rango secuencial. Los valores pasados representan la posición de los mensajes en el buzón.
 
-En el parámetro *startMsg*, pase un valor *entero* correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
+En el parámetro *startMsg*, pase un valor entero correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
 
-En el parámetro *endMsg*, pase un valor *entero* correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
+En el parámetro *endMsg*, pase un valor entero correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
 
 El parámetro opcional *options* permite definir las partes de los mensajes a devolver.
 
@@ -1193,8 +1199,8 @@ El parámetro opcional *updateSeen* permite indicar si el mensaje está marcado 
 
 *   **True** - para marcar el mensaje como "visto" (indicando que el mensaje ha sido leído)
 *   **False** - para dejar intacto el estado "visto" del mensaje > * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente, > * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error, > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
-> * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente,
-> * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error,
+> * La función genera un error y devuelve **Null** si *name* designa un buzón inexistente.
+> * Si no hay ninguna conexión abierta, `.selectBox()` abrirá una conexión.
 > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
 
 
@@ -1274,7 +1280,7 @@ Puede pasar:
 
 El parámetro *destinationBox* permite pasar un valor texto con el nombre del buzón donde los mensajes serán desplazados.
 
-> Esta función sólo la soportan los servidores IMAP que cumplen con el RFC [8474](https://tools.ietf.org/html/rfc8474).
+> Esta función se basa en la especificación del [protocolo IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
 
 **Objeto devuelto**
@@ -1373,9 +1379,9 @@ Para mover todos los mensajes del buzón actual:
 
 La función `.numToID()` <!-- REF #IMAPTransporterClass.numToID().Summary -->convierte los números de secuencia en IDs únicos IMAP para los mensajes en el rango secuencial designado por *startMsg* y *endMsg*<!-- END REF --> en el buzón actualmente seleccionado.
 
-En el parámetro *startMsg*, pase un valor entero correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
+En el parámetro *startMsg*, pase un valor *entero* correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
 
-En el parámetro *endMsg*, pase un valor entero correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
+En el parámetro *endMsg*, pase un valor *entero* correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
 
 
 #### Resultado
@@ -1573,6 +1579,10 @@ If ($status.success)
    ALERT("Error: "+$status.statusText)
  End if
 End if
+   Else
+   ALERT("Error: "+$status.statusText)
+ End if
+End if
 ```
 
 <!-- END REF -->
@@ -1608,7 +1618,7 @@ End if
 
 #### Descripción
 
-> Esta función se basa en la especificación del [protocolo IMAP](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
+> Las coincidencias no suelen diferenciar entre mayúsculas y minúsculas
 
 La función `.searchMails()` <!-- REF #IMAPTransporterClass.searchMails().Summary -->busca los mensajes que coincidan con el *searchCriteria* en el buzón actual<!-- END REF -->. El parámetro *searchCriteria* contiene una o varias palabras clave de búsqueda.
 
@@ -1620,7 +1630,7 @@ SearchKey2 = NOT FLAGGED
 SearchKey3 = FLAGGED DRAFT
 ```
 
-> Las coincidencias no suelen diferenciar entre mayúsculas y minúsculas
+> Para obtener la información de un buzón sin cambiar el buzón actual, utilice [`.getBoxInfo()`](#getboxinfo).
 
 - Si el *searchCriteria* es una cadena null, la búsqueda será equivalente a un "seleccionar todo".
 - Si *searchCriteria* incluye varias llaves de búsqueda, el resultado es la intersección (función AND) de todos los mensajes que coinciden con esas llaves.
@@ -1854,6 +1864,10 @@ If ($status.success)
    ALERT("Error: "+$status.statusText)
    End if
 End if
+   Else
+   ALERT("Error: "+$status.statusText)
+   End if
+End if
 ```
 
 <!-- END REF -->
@@ -1923,6 +1937,10 @@ $status:=$transporter.unsubscribe($name)
 
 If ($status.success)
    ALERT("Mailbox unsubscription successful!")
+   Else
+   ALERT("Error: "+$status.statusText)
+   End if
+End if
    Else
    ALERT("Error: "+$status.statusText)
    End if
