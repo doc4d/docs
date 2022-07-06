@@ -109,7 +109,7 @@ Each element of the collection or each entity is available as an object that can
 
 Quando a fonte de dados for uma seleção de entidades, qualquer modificação feita no lado da list box são salvas automaticamente na database. Do outro lado, modificações feitas na database são visíveis na list box depois que as entidades tocadas foram recarregadas.
 
-Quando a fonte de dados for uma coleção, qualquer modificação feita nos valores da list box são refletidas na coleção. On the other hand, if modifications are done on the collection using for example the various functions of the [Collection class](../API/CollectionClass.md), you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por exemplo:
+Quando a fonte de dados for uma coleção, qualquer modificação feita nos valores da list box são refletidas na coleção. Quando a fonte de dados for uma coleção, qualquer modificação feita nos valores da list box são refletidas na coleção. Por exemplo:
 
 ```4d
 myCol:=myCol.push("new value") //exibir novo valor na list box
@@ -560,7 +560,7 @@ You want to sort a list box using values of a property stored in a related objec
 
 ![](assets/en/FormObjects/relationLB.png)
 
-You design a list box of the entity selection type, bound to the `Form.child` expression. In the `On Load` form event, you execute `Form.child:=ds.Child.all()`.
+You design a list box of the entity selection type, bound to the `Form.child` expression. In the `On Load` form event, you execute `Form.child:=ds. Child.all()`.
 
 You display two columns:
 
