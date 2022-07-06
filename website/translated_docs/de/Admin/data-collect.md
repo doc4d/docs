@@ -72,7 +72,7 @@ Collected data is written in a text file (JSON format) when 4D Server quits. The
 - on Windows: `Users\[userName]\AppData\Roaming\4D Server`
 - on macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
 
-Once a week, the file is automatically sent over the network to 4D. The file is then deleted from the active 4D folder.
+Once a week, the file is automatically sent over the network to 4D. The file is then deleted from the active 4D folder. The file is then deleted from the active 4D folder.
 
 ![](assets/en/Admin/data-collect.png)
 

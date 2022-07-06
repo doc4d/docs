@@ -15,24 +15,17 @@ Once a user class is defined, you can **instantiate** objects of this class anyw
 For example, you could create a `Person` class with the following definition:
 
 ```4d  
-//Class: Person.4dm
-Class constructor($firstname : Text; $lastname : Text)
-    This.firstName:=$firstname
-    This.lastName:=$lastname
-
-Function get fullName() -> $fullName : text
-    $fullName:=This.firstName+" "+This.lastName
-
-Function sayHello()->$welcome : Text
-    $welcome:="Hello "+This.fullName
+// Class: MyClass Class Constructor({$parameterName : type; ...})
+// code
+// code
 ```
 
 In a method, creating a "Person":
 
 ```
-var $person : cs.Person //object of Person class  
+var $person : cs. Person //object of Person class  
 var $hello : Text
-$person:=cs.Person.new("John";"Doe")
+$person:=cs. Person.new("John";"Doe")
 // $person:{firstName: "John"; lastName: "Doe"; fullName: "John Doe"}
 $hello:=$person.sayHello() //"Hello John Doe"
 ```

@@ -776,7 +776,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 </details>
 
 
-<!-- REF #collection.every().Syntax --> **.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
+<!-- REF #collection.every().Syntax --> As fórmulas não tem compatibilidade com a função `collection.query()`, nem com o parâmetro *queryString* nem como parâmetro do objeto *fórmula*.<!-- END REF -->
 
 
 <!-- REF #collection.every().Params -->
@@ -793,7 +793,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 
 #### Descrição
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *formula* object or *methodName* name<!-- END REF -->.
+The `.every()` function <!-- REF #collection.every(). Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *formula* object or *methodName* name<!-- END REF -->.
 
 You designate the callback to be executed to evaluate collection elements using either:
 
@@ -825,16 +825,14 @@ By default, `.some()` tests the whole collection. Optionally, you can pass the i
 #### Exemplo 1
 
 ```4d
-var $c : Collection  
-var $b : Boolean
-var $f : 4D.Function
+var $c : Collection
+ $c:=New collection
+ $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
+ $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
 
-$f:=Formula($1.value>0)
-$c:=New collection
-$c.push(5;3;1;4;6;2)
-$b:=$c.every($f) //returns true
-$c.push(-1)
-$b:=$c.every($f) //returns false
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 #### Exemplo 2
@@ -844,7 +842,7 @@ Esse exemplo testa que todos os elementos da coleção sejam do tipo real:
 ```4d
 var $c : Collection
 var $b : Boolean
-var $f : 4D.Function
+var $f : 4D. Function
 
 $f:=Formula(Value type($1.value)=$2
 $c:=New collection
@@ -998,7 +996,7 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 </details>
 
 
-<!-- REF #collection.filter().Syntax --> **.filter**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
+<!-- REF #collection.filter().Syntax --> **.filter**( *formula* : 4D. Function { ; *...param* : any } ) : Collection<br>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
 
 
 
@@ -1015,7 +1013,7 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 
 #### Descrição
 
-The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which the *formula* or *methodName* result is **true**<!-- END REF -->. Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+A função `.query()` <!-- REF #collection.query(). Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 You designate the callback to be executed to filter collection elements using either:
@@ -1023,7 +1021,7 @@ You designate the callback to be executed to filter collection elements using ei
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1054,7 +1052,7 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 
 ```4d
  var $c;$c2;$c3 : Collection
- var $f : 4D.Function
+ var $f : 4D. Function
 
  $f:=Formula(OB Get type($1;"value")=$2)
  $c:=New collection(5;3;1;4;6;2)
@@ -1079,7 +1077,7 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 </details>
 
 
-<!-- REF #collection.find().Syntax --> **.find**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : any<br>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
+<!-- REF #collection.find().Syntax --> **.find**( { *startFrom* : Integer ; }  *formula* : 4D. Function { ; *...param* : any } ) : any<br>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
 
 
 
@@ -1097,7 +1095,7 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 
 #### Descrição
 
-The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *formula* or *methodName* result, applied on each element, returns **true**<!-- END REF -->.
+The `.find()` function <!-- REF #collection.find(). Summary -->returns the first value in the collection for which *formula* or *methodName* result, applied on each element, returns **true**<!-- END REF -->.
 > This function does not modify the original collection.
 
 You designate the callback to be executed to evaluate collection elements using either:
@@ -1105,7 +1103,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1169,7 +1167,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 
 
 
-<!-- REF #collection.findIndex().Syntax --> **.findIndex**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : Integer<br>**.findIndex**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : Integer<!-- END REF -->
+<!-- REF #collection.findIndex().Syntax --> **.findIndex**( { *startFrom* : Integer ; }  *formula* : 4D. Function { ; *...param* : any } ) : Integer<br>**.findIndex**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : Integer<!-- END REF -->
 
 
 
@@ -1187,7 +1185,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 
 #### Descrição
 
-The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *formula* or *methodName*, applied on each element, returns **true**<!-- END REF -->.
+The `.findIndex()` function <!-- REF #collection.findIndex(). Summary -->returns the index, in the collection, of the first value for which *formula* or *methodName*, applied on each element, returns **true**<!-- END REF -->.
 > This function does not modify the original collection.
 
 You designate the callback to be executed to evaluate collection elements using either:
@@ -1195,7 +1193,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1551,7 +1549,7 @@ A propriedade `.length` é iniciada quando a coleção for criada. Adicionar ou 
 </details>
 
 
-<!-- REF #collection.map().Syntax --> **.map**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br>**.map**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.map().Syntax --> **.map**( *formula* : 4D. Function { ; *...param* : any } ) : Collection<br>**.map**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
 
 
 
@@ -1568,7 +1566,7 @@ A propriedade `.length` é iniciada quando a coleção for criada. Adicionar ou 
 
 #### Descrição
 
-The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the *formula* 4D function or *methodName* method on each element of the original collection<!-- END REF -->. Optionally, you can pass parameters to *formula* or *methodName* using the *param* parameter(s). `.map()` sempre retorna uma coleção com o mesmo tamanho que a coleção original.
+The `.map()` function <!-- REF #collection.map(). Summary -->creates a new collection based upon the result of the call of the *formula* 4D function or *methodName* method on each element of the original collection<!-- END REF -->. Optionally, you can pass parameters to *formula* or *methodName* using the *param* parameter(s). `.map()` sempre retorna uma coleção com o mesmo tamanho que a coleção original.
 > This function does not modify the original collection.
 
 
@@ -1577,7 +1575,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1679,7 +1677,7 @@ Se *end* < 0 , é recalculado como sendo *end:=end+length*.
 
 #### Descrição
 
-A função `.min()` <!-- REF #collection.min().Summary -->retorna o elemento com o menor valor na coleção<!-- END REF --> (o primeiro elemento da coleção como seria ordenado de forma ascendente usando a função [`.sort()`](#sort)).
+A função `.min()` <!-- REF #collection.min(). Summary -->retorna o elemento com o menor valor na coleção<!-- END REF --> (o primeiro elemento da coleção como seria ordenado de forma ascendente usando a função [`.sort()`](#sort)).
 > This function does not modify the original collection.
 
 Se a coleção conter diferentes tipos de valores, a função `.min()` devolverá o valor mínimo dentro do primeiro tipo de elemento na ordem da lista de tipos (ver a descrição de [`.sort()`](#sort)).
@@ -1732,7 +1730,7 @@ Se a coleção estiver vazia, `.min()` devolve *Undefined*.
 
 #### Descrição
 
-A função `.orderBy()` <!-- REF #collection.orderBy().Summary --> devolve uma nova coleção que contém todos os elementos da coleção na ordem especificado<!-- END REF -->.
+A função `.orderBy()` <!-- REF #collection.orderBy(). Summary --> devolve uma nova coleção que contém todos os elementos da coleção na ordem especificado<!-- END REF -->.
 
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
@@ -1854,7 +1852,7 @@ Ordenar com uma rota de propriedade:
 </details>
 
 
-<!-- REF #collection.orderByMethod().Syntax --> **.orderByMethod**( *formula* : 4D.Function { ; ...*extraParam* : expression } ) : Collection<br>**.orderByMethod**( *methodName* : Text { ; ...*extraParam* : expression } ) : Collection<!-- END REF -->
+<!-- REF #collection.orderByMethod().Syntax --> **.orderByMethod**( *formula* : 4D. Function { ; ...*extraParam* : expression } ) : Collection<br>**.orderByMethod**( *methodName* : Text { ; ...*extraParam* : expression } ) : Collection<!-- END REF -->
 
 
 
@@ -1871,7 +1869,7 @@ Ordenar com uma rota de propriedade:
 
 #### Descrição
 
-The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *formula* 4D function or *methodName* method<!-- END REF -->.
+The `.orderByMethod()` function <!-- REF #collection.orderByMethod(). Summary -->returns a new collection containing all elements of the collection in the order defined through the *formula* 4D function or *methodName* method<!-- END REF -->.
 
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
@@ -1971,7 +1969,7 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 
 #### Descrição
 
-A função `.pop()` <!-- REF #colección.pop().Resumen --> elimina o último elemento da coleção e o devolve como resultado da função<!-- END REF -->.
+A função `.pop()` <!-- REF #colección.pop(). Resumen --> elimina o último elemento da coleção e o devolve como resultado da função<!-- END REF -->.
 > This function modifies the original collection.
 
 Quando for aplicado a uma coleção vazia, `.pop()` devolve ***undefined***.
@@ -2017,7 +2015,7 @@ Quando for aplicado a uma coleção vazia, `.pop()` devolve ***undefined***.
 
 #### Descrição
 
-A função `.push()` <!-- REF #collection.push().Summary -->adiciona um ou mais *elementos* ao final da instância da coleção e devolve a coleção editada<!-- END REF -->.
+A função `.push()` <!-- REF #collection.push(). Summary -->adiciona um ou mais *elementos* ao final da instância da coleção e devolve a coleção editada<!-- END REF -->.
 > This function modifies the original collection.
 
 
@@ -2076,7 +2074,7 @@ Se quiser ordenar a coleção resultante:
 
 #### Descrição
 
-A função `.query()` <!-- REF #collection.query().Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 O parâmetro *queryString* usa a sintaxe abaixo:
@@ -2165,7 +2163,7 @@ Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 </details>
 
 
-<!-- REF #collection.reduce().Syntax --> **.reduce**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br>**.reduce**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduce().Syntax --> **.reduce**( *formula* : 4D. Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br>**.reduce**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
 
 
 
@@ -2184,7 +2182,7 @@ Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 #### Descrição
 
 
-The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *formula* or *methodName* callback against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
+The `.reduce()` function <!-- REF #collection.reduce(). Summary -->applies the *formula* or *methodName* callback against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
 > This function does not modify the original collection.
 
 You designate the callback to be executed to evaluate collection elements using either:
@@ -2270,7 +2268,7 @@ Com o método ***Flatten***:
 
 #### Descrição
 
-The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or more element(s) from the specified *index* position in the collection and returns the edited collection<!-- END REF -->.
+The `.remove()` function <!-- REF #collection.remove(). Summary -->removes one or more element(s) from the specified *index* position in the collection and returns the edited collection<!-- END REF -->.
 > This function modifies the original collection.
 
 In *index*, pass the position where you want the element to be removed from the collection.
@@ -2330,7 +2328,7 @@ If you try to remove an element from an empty collection, the method does nothin
 
 #### Descrição
 
-The `.resize()` function <!-- REF #collection.resize().Summary -->sets the collection length to the specified new size and returns the resized collection<!-- END REF -->.
+The `.resize()` function <!-- REF #collection.resize(). Summary -->sets the collection length to the specified new size and returns the resized collection<!-- END REF -->.
 > This function modifies the original collection.
 
 *   If *size* < collection length, exceeding elements are removed from the collection.
@@ -2383,7 +2381,7 @@ By default, new elements are filled will **null** values. You can specify the va
 
 #### Descrição
 
-The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a deep copy of the collection with all its elements in reverse order<!-- END REF -->. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+The `.sort()` function <!-- REF #collection.sort(). Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.</p>
 > This function does not modify the original collection.
 
 #### Exemplo
@@ -2421,7 +2419,7 @@ The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a de
 
 #### Descrição
 
-The `.shift()` function <!-- REF #collection.shift().Summary -->removes the first element of the collection and returns it as the function result<!-- END REF -->.
+The `.shift()` function <!-- REF #collection.shift(). Summary -->removes the first element of the collection and returns it as the function result<!-- END REF -->.
 > This function modifies the original collection.
 
 If the collection is empty, this method does nothing.
@@ -2466,7 +2464,7 @@ If the collection is empty, this method does nothing.
 
 #### Descrição
 
-The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portion of a collection into a new collection<!-- END REF -->, selected from *startFrom* index to *end* index (end not included). This function returns a *shallow copy* of the collection. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+A função `.query()` <!-- REF #collection.query(). Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 The returned collection contains the element specified by *startFrom* and all subsequent elements up to, but not including, the element specified by *end*. If only the *startFrom* parameter is specified, the returned collection contains all elements from *startFrom* to the last element of the original collection.
@@ -2502,7 +2500,7 @@ The returned collection contains the element specified by *startFrom* and all su
 </details>
 
 
-<!-- REF #collection.some().Syntax --> **.some**( { *startFrom* : Integer ; } *formula* : 4D.Function { ; *...param* : any } ) : Boolean<br>**.some**( { *startFrom* : Integer ; } *methodName* : Text { ; *...param* : any } ) : Boolean<!-- END REF -->
+<!-- REF #collection.some().Syntax --> **.some**( { *startFrom* : Integer ; } *formula* : 4D. Function { ; *...param* : any } ) : Boolean<br>**.some**( { *startFrom* : Integer ; } *methodName* : Text { ; *...param* : any } ) : Boolean<!-- END REF -->
 
 
 
@@ -2520,7 +2518,7 @@ The returned collection contains the element specified by *startFrom* and all su
 
 #### Descrição
 
-The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test implemented in the provided *formula* or *methodName* code<!-- END REF -->.
+The `.some()` function <!-- REF #collection.some(). Summary -->returns true if at least one element in the collection successfully passed a test implemented in the provided *formula* or *methodName* code<!-- END REF -->.
 
 You designate the 4D code (callback) to be executed to evaluate collection elements using either:
 
@@ -2583,7 +2581,7 @@ You want to know if at least one collection value is >0.
 </details>
 
 
-<!-- REF #collection.sort().Syntax --> **.sort**( *formula* : 4D.Function { ; *...extraParam* : any } ) : Collection<br>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.sort().Syntax --> **.sort**( *formula* : 4D. Function { ; *...extraParam* : any } ) : Collection<br>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection <!-- END REF -->
 
 
 
@@ -2682,7 +2680,7 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 
 #### Descrição
 
-The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
+The `.sum()` function <!-- REF #collection.sum(). Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
 
 Apenas elementos numéricos são considerados para cálculos (outros tipos são ignorados).
 
@@ -2743,7 +2741,7 @@ Se a coleção contiver objetos, passe o parâmetro *propertyPath* para indicar 
 
 #### Descrição
 
-The `.unshift()` function <!-- REF #collection.unshift().Summary -->inserts the given *value*(s) at the beginning of the collection <!-- END REF -->and returns the modified collection.
+The `.unshift()` function <!-- REF #collection.unshift(). Summary -->inserts the given *value*(s) at the beginning of the collection <!-- END REF -->and returns the modified collection.
 > This function modifies the original collection.
 
 If several values are passed, they are inserted all at once, which means that they appear in the resulting collection in the same order as in the argument list.

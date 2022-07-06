@@ -1023,7 +1023,7 @@ You designate the callback to be executed to filter collection elements using ei
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1105,7 +1105,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1195,7 +1195,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1577,7 +1577,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 La retrollamada recibe los siguientes parámetros:
 

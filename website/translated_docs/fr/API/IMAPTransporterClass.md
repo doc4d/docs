@@ -311,6 +311,8 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -320,6 +322,7 @@ $status:=$imap.append($msg; "Drafts")
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
 
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -338,7 +341,7 @@ $status:=$imap.append($msg; "Drafts")
 La propriété `.checkConnectionDelay` contient la <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->durée maximale (en secondes) autorisée avant vérification de la connexion au serveur<!-- END REF -->.  Si cette durée est dépassée entre deux appels de méthodes, la connexion au serveur sera vérifiée. Par défaut, si la propriété n'a pas été définie dans l'objet *server*, la valeur est de 300.
 > **Attention** : Assurez-vous que le timeout défini est inférieur au timeout du serveur, sinon le timeout du client sera inutile.
 
-
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -793,6 +796,7 @@ $status:=$transporter.expunge()
 
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>Historique</summary>
@@ -1546,24 +1550,27 @@ La fonction retourne un objet décrivant le statut IMAP :
 Pour renommer la mailbox “Invoices” en “Bills”:
 
 ```4d
-var $pw : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //obligatoire
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:")
+  //create transporter
+ $transporter:=IMAP New transporter($server)
 
-If(OK=1) $options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //select mailbox
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-$transporter:=IMAP New transporter($options)
-
-// renommer la boite de réception
-$status:=$transporter.renameBox("Invoices"; "Bills")
-
-If ($status.success)
-   ALERT("Mailbox renaming successful!")
+  If($boxInfo.mailCount>0)
+        // récupérer les en-têtes des 20 derniers messages sans les marquer comme lus
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
    Else
    ALERT("Error: "+$status.statusText)
  End if
