@@ -103,7 +103,7 @@ component_method("host_method_name")
 
 ## Compartir las clases y las funciones
 
-Por defecto, las clases y funciones de los componentes no pueden ser llamadas desde el editor de métodos 4D del proyecto local. Si quiere exponer las clases y funciones del componente en el proyecto local, necesita declarar un espacio de nombres del componente. Además, puede controlar cómo se sugieren las clases y las funciones de los componentes en el editor de métodos local.
+Por defecto, las clases y funciones de los componentes no pueden ser llamadas desde el editor de métodos 4D del proyecto local. Si quiere exponer las clases y funciones del componente en el proyecto local, necesita declarar un espacio de nombres del componente. Si quiere exponer las clases y funciones del componente en el proyecto local, necesita declarar un espacio de nombres del componente.
 
 ### Declarar del namespace
 
