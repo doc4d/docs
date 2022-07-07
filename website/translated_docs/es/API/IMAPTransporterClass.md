@@ -311,6 +311,8 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -320,6 +322,7 @@ $status:=$imap.append($msg; "Drafts")
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
 
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -338,7 +341,7 @@ $status:=$imap.append($msg; "Drafts")
 La propiedad `.checkConnectionDelay` contiene la <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->duración máxima (en segundos) permitida antes de verificar la conexión al servidor<!-- END REF -->.  Si se supera este tiempo entre dos llamadas al método, se comprobará la conexión con el servidor. Por defecto, si la propiedad no se ha definido en el objeto *server<*, el valor es de 300.
 > **Atención**: asegúrese de que el tiempo de espera definido sea menor que el tiempo de espera del servidor, de lo contrario el tiempo de espera del cliente será inútil.
 
-
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -791,12 +794,13 @@ $status:=$transporter.expunge()
 
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones      |
-| ------- | ------------------- |
-| v18 R5  | *name<* es opcional |
+| Versión | Modificaciones     |
+| ------- | ------------------ |
+| v18 R5  | *name* es opcional |
 
 |v18 R4|Added| </details>
 
@@ -930,7 +934,7 @@ Si la cuenta no contiene buzones, se devuelve una colección vacía.
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
 | Parámetros | Tipo  |    | Descripción                       |
 | ---------- | ----- |:--:| --------------------------------- |
-| Resultado  | Texto | <- | Caracter delimitador de jerarquía |
+| Resultado  | Texto | <- | Carácter delimitador de jerarquía |
 <!-- END REF -->
 
 
@@ -946,7 +950,7 @@ El delimitador es un carácter que puede utilizarse para:
 
 #### Resultado
 
-Caracter delimitador del nombre del buzón.
+Carácter delimitador del nombre del buzón.
 > * Si no hay ninguna conexión abierta, `getDelimiter()` abrirá una conexión.
 > * Si la conexión no se ha utilizado desde el [retraso de conexión](#checkconnectiondelay) designado, la función [`.checkConnection()`](#checkconnection) se llama automáticamente.
 
@@ -1069,7 +1073,7 @@ Quiere obtener el mensaje con ID = 1:
 | ids        | Collection | -> | Colección de identificadores de mensajes                 |
 | startMsg   | Integer    | -> | Número de secuencia del primer mensaje                   |
 | endMsg     | Integer    | -> | Número de secuencia del último mensaje                   |
-| options    | Objeto     | -> | Instrucciones sobre el manejo de mensajes                |
+| options    | Objeto     | -> | Instrucciones sobre la gestión de mensajes               |
 | Resultado  | Objeto     | <- | Objeto que contiene:<br><ul><li>una colección de [objetos Email](EmailObjectClass.md#email-object) y</li><li>una colección de identificadores o números para los mensajes que faltan, si los hay</li></ul> |
 <!-- END REF -->
 
@@ -1118,7 +1122,7 @@ El parámetro opcional *options* permite definir las partes de los mensajes a de
 | Propiedad | Tipo       | Descripción                                                                                                                           |
 | --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | lista     | Collection | Colección de objetos [`Email`](EmailObjectClass.md#email-object). Si no se encuentran objetos Email, se devuelve una colección vacía. |
-| notFound  | Collection | Colección de:<br><ul><li>primera sintaxis - IDs de mensajes pasados previamente que no existen</li><li>segunda sintaxis - números de secuencia de los mensajes entre startMsg y endMsg que no existen</li></ul>Se devuelve una colección vacía si se encuentran todos los mensajes.                 |
+| notFound  | Collection | Collection de:<br><ul><li>primera sintaxis - IDs de mensajes pasados previamente que no existen</li><li>segunda sintaxis - números de secuencia de los mensajes entre startMsg y endMsg que no existen</li></ul>Se devuelve una colección vacía si se encuentran todos los mensajes.                |
 
 
 #### Ejemplo
@@ -1265,7 +1269,7 @@ El parámetro opcional *updateSeen* permite indicar si el mensaje está marcado 
 
 #### Descripción
 
-La función `move()` <!-- REF #IMAPTransporterClass.move().Summary -->mueve los mensajes definidos en *msgsIDs* o *allMsgs* a la *destinationBox*en el servidor IMAP<!-- END REF -->.
+La función `.move()` <!-- REF #IMAPTransporterClass.move().Summary -->mueve los mensajes definidos en *msgsIDs* o *allMsgs* a la *destinationBox* en el servidor IMAP<!-- END REF -->.
 
 Puede pasar:
 
@@ -1434,7 +1438,7 @@ La función devuelve una colección de cadenas (IDs únicos).
 
 #### Descripción
 
-La función `.removeFlags()` <!-- REF #IMAPTransporterClass.removeFlags().Summary -->elimina las banderas de los `msgIDs<` para las `keywords` definidas<!-- END REF -->.
+La función `.removeFlags()` <!-- REF #IMAPTransporterClass.removeFlags().Summary -->elimina las banderas de los `msgIDs` para las `keywords` definidas<!-- END REF -->.
 
 En el parámetro `msgIDs`, puede pasar:
 
@@ -1551,24 +1555,27 @@ La función devuelve un objeto que describe el estado IMAP:
 Para cambiar el nombre de su buzón de "Invoices" a "Bills":
 
 ```4d
-var $pw : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //Obligatorio
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:")
+  //crear transportador
+ $transporter:=IMAP New transporter($server)
 
-If(OK=1) $options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //seleccionar buzón
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-$transporter:=IMAP New transporter($options)
-
-// renombrar buzón
-$status:=$transporter.renameBox("Invoices"; "Bills")
-
-If ($status.success)
-   ALERT("Mailbox renaming successful!")
+  If($boxInfo.mailCount>0)
+        // recuperar los encabezados de los últimos 20 mensajes sin marcarlos como leídos
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
    Else
    ALERT("Error: "+$status.statusText)
  End if
@@ -1653,7 +1660,7 @@ searchCriteria = HEADER CONTENT-TYPE "E" NOT SUBJECT "o" NOT HEADER CONTENT-TYPE
 
 En cuanto a los dos últimos ejemplos, observe que el resultado de la búsqueda es diferente cuando se eliminan los paréntesis de la primera lista de llaves de búsqueda.
 
-- El parámetro *searchCriteria* puede incluir opcionalmente la instrucción \[CHARSET]. Esta instrucción consiste en la palabra "CHARSET" seguida de un conjunto de caracteres definido \[CHARSET] (US ASCII, ISO-8859). Indica el conjunto de caracteres de la cadena *searchCriteria*. Por lo tanto, debe convertir la cadena *searchCriteria* en el conjunto de caracteres especificado si utiliza la instrucción \[CHARSET] (ver los comandos `CONVERT FROM TEXT` o `Convert to text`). Por defecto, 4D codifica la cadena de criterios searchCriteria en Quotable Printable si contiene los caracteres extendidos.
+- The *searchCriteria* may include the optional \[CHARSET] specification. This consists of the "CHARSET" word followed by a registered \[CHARSET] (US ASCII, ISO-8859). It indicates the charset of the *searchCriteria* string. Therefore, you must convert the *searchCriteria* string into the specified charset if you use the \[CHARSET] specification (see the `CONVERT FROM TEXT` or `Convert to text` commands). By default, 4D encodes in Quotable Printable the searchCriteria string if it contains extended characters.
 
 ```
 searchCriteria = CHARSET "ISO-8859" BODY "Help"
@@ -1665,15 +1672,15 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 Las claves de búsqueda pueden solicitar el valor a buscar:
 
-- **Valores de tipo fecha**: los valores de tipo fecha se colocan en cadenas con el siguiente formato: *date-day+"-"+date-month+"-"+date-year* donde date-day indica la fecha del día del mes (2 caracteres como máximo), date-month indica el mes (Jan/Feb/Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Dec) y date-year indica el año (4 dígitos). Ejemplo: `searchCriteria = SENTBEFORE 1-Feb-2020` (una fecha no suele necesitar comillas, ya que no contiene caracteres especiales)
+- **Search-keys with a field-name value**: the field-name is the name of a header field. Ejemplo: `searchCriteria = SENTBEFORE 1-Feb-2020` (una fecha no suele necesitar comillas, ya que no contiene caracteres especiales)
 
-- **Valores de tipo cadena**: la cadena puede contener cualquier caracter y debe ir entre comillas. Si la cadena no contiene ningún caracter especial, como el espacio, por ejemplo, no es necesario colocarla entre comillas. Al colocar entre comillas estas cadenas se garantiza que su valor se interpretará correctamente. Ejemplo: `criterios de búsqueda = FROM "SMITH"` Para todas las llaves de búsqueda que utilizan cadenas, un mensaje coincide con la llave si la cadena es una subcadena del campo. Las coincidencias no diferencian entre mayúsculas y minúsculas.
+- **Search-keys with a string value**: the string may contain any character and must be quoted. If the string does not contain any special characters, like the space character for instance, it does not need to be quoted. Quoting such strings will ensure that your string value will be correctly interpreted. Ejemplo: `criterios de búsqueda = FROM "SMITH"` Para todas las llaves de búsqueda que utilizan cadenas, un mensaje coincide con la llave si la cadena es una subcadena del campo. Las coincidencias no diferencian entre mayúsculas y minúsculas.
 
 - **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
 
-- **Marcadores**: los valores de tipo marcador (flags) aceptan una o varias palabras claves (incluyendo marcadores estándar) separados por espacios. Ejemplo: `searchCriteria = KEYWORD \Flagged \Draft`
+- **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = KEYWORD \Flagged \Draft`
 
-- **Conjunto de mensajes**: identifica un conjunto de mensajes. En el caso de los números de secuencia de los mensajes, se trata de números consecutivos desde el 1 hasta el número total de mensajes en el buzón. Los números son separados por coma; un dos puntos (:) delimita entre dos números inclusive. Ejemplos: `2,4:7,9,12:*` es `2,4,5,6,7,9,12,13,14,15` para un buzón con 15 mensajes. `searchCriteria = 1:5 ANSWERED` busca en la selección de mensajes 1 a 5, los mensajes que tienen el marcador \Answered. `searchCriteria= 2,4 ANSWERED` busca en la selección de mensajes (números de mensaje 2 y 4) los mensajes que tienen el marcador \Answered.
+- **Search-keys with a message set value**: Identifies a set of messages. For message sequence numbers, these are consecutive numbers from 1 to the total number of messages in the mailbox. A comma delimits individual numbers; a colon delimits between two numbers inclusive. Ejemplos: `2,4:7,9,12:*` es `2,4,5,6,7,9,12,13,14,15` para un buzón con 15 mensajes. `searchCriteria = 1:5 ANSWERED` search in message selection from message sequence number 1 to 5 for messages which have the \Answered flag set. `searchCriteria= 2,4 ANSWERED` search in the message selection (message numbers 2 and 4) for messages which have the \Answered flag set.
 
 
 #### Teclas de búsqueda disponibles

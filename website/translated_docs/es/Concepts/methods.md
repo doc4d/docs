@@ -34,6 +34,8 @@ Un método proyecto puede tener uno de los siguientes papeles, dependiendo de c�
 - Método de gestión de proceso
 - Métodos de gestión de eventos o errores
 
+You can also execute your project methods manually, for testing purpose for example.
+
 ### Subrutinas
 
 Una subrutina es un método proyecto que puede considerarse como un ayudante. Realiza aquellas tareas que otros métodos le solicitan. Una función es una subrutina que devuelve un valor al método que la llamó.
@@ -170,6 +172,51 @@ Un **método proyecto** es un método proyecto que se llama cuando se inicia un 
 Un **método de gestión de eventos** es un método dedicado a la gestión de eventos, que se ejecuta en un proceso diferente del método de gestión de procesos. Generalmente, para la gestión de eventos, 4D se encarga de la mayor parte. Por ejemplo, durante la entrada de datos, 4D detecta las pulsaciones de las teclas y los clics, y luego llama a los métodos objeto y formulario correspondientes para que usted pueda responder adecuadamente a los eventos desde estos métodos. Para más información, consulte la descripción del comando `ON EVENT CALL`.
 
 Un **método de gestión de errores** es un método proyecto basado en interrupciones. Cada vez que se produce un error o una excepción, se ejecuta dentro del proceso en el que se instaló. Para más información, consulte la descripción del comando `ON ERR CALL`.
+
+
+### Execution mode
+
+Project methods written in your application are usually called automatically during the use of the application via menu commands, buttons, other methods, and so on. As for database methods, they are executed in relation to specific events that occur in the application.
+
+However, for testing and debugging purposes, 4D lets you manually execute project methods and certain database methods in Design mode. In this case, it is possible to run the method in a new process and/or directly in Debug mode, in order to check its execution step by step.
+
+The following execution modes are available:
+
+-   El método A puede llamar al método B que puede llamar a A, por lo que A volverá a llamar a B y así sucesivamente.
+-   Un método puede llamarse a sí mismo.
+
+#### From the Code Editor
+
+Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
+
+![](assets/en/concepts/execute-method.png)
+
+This button is only active for project methods and for the following database methods:
+
+-   On Startup
+-   On Exit
+-   On Server Startup
+-   On Server Shutdown
+
+From the [Code Editor](../code-editor/overview.md) window,
+
+#### De la caja de diálogo Ejecutar método
+
+En 4D, algunos usos típicos de la recursividad son:
+
+This dialog box lists all the project methods of the database, including shared project methods of components. On the other hand, project methods that have been declared invisible will not appear.
+
+To execute a project method, simply select its name in the list and click on **Execute**. To run a method step by step in Debug mode, click on **Debug**. For more information about the 4D debugger, refer to the [Debugging](../Debugging/basics.md) section.
+
+If you check the **New Process** check box, the method you selected executes in another process. If the method is performing a time-consuming task such as printing a large set of records, you can continue to work with your database, adding records to a table, creating a graph to display data, and so on. For more information about processes, refer to [Processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) the 4D *Language Reference* manual.
+
+To modify the properties of a project method:
+
+-   If you want the method to be executed on the server machine rather than on the client machine, select the **On 4D Server** option in the To be executed menu. In this case, a new process, call the *stored procedure*, is created on the server machine in order to execute the method. This option can be used to reduce network traffic and optimize the functioning of 4D Server, in particular for methods that call data stored on the disk. All types of methods can be executed on the server machine or on another client machine, except for those that modify the user interface. En este caso, los procedimientos almacenados son ineficaces.
+-   You can also choose to run the method on another client workstation. Other client workstations will not appear in the menu, unless they have been previously "registered" (for more information, refer to the description of the [REGISTER CLIENT](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.en.html).
+
+By default, the **locally** option is selected. With the 4D single-user version, this is the only option available.
+
 
 ## Métodos proyecto recursivos
 

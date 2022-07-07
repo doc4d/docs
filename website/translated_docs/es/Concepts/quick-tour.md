@@ -10,7 +10,7 @@ Utilizando el lenguaje 4D, la impresión del tradicional mensaje "Hello, world!"
 ALERT("Hello, World!")
 ```
 
-Este código mostrará una caja de diálogo de alerta estándar de la plataforma con el mensaje "Hello, World!", que contiene un botón de OK. Para ejecutar el código, basta con hacer clic en el botón de ejecución en el editor de métodos:
+Este código mostrará una caja de diálogo de alerta estándar de la plataforma con el mensaje "Hello, World!", que contiene un botón de OK. To execute the code, you just need to click on the execution button in the Code Editor:
 
 ![alt-text](assets/en/Concepts/helloworld.png)
 
@@ -103,7 +103,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 vRef:=Open document("PassFile";"TEXT";Read Mode) // abrir el documento en modo de sólo lectura
 ```
 
-> Las constantes predefinidas aparecen <u>subrayadas</u> por defecto en el editor de métodos 4D.
+> Predefined constants appear <u>underlined</u> by default in the 4D Code Editor.
 
 ## Métodos
 

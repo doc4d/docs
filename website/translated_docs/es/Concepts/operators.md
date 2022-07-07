@@ -3,17 +3,17 @@ id: operators
 title: Operadores
 ---
 
-Un operador es un símbolo o un grupo de símbolos que utiliza para verificar, modificar o combinar los valores. Usted ya conoce a la mayoría de los operadores. Por ejemplo, `1 + 2` utiliza el operador de adición (o signo más) para sumar dos números, y el resultado es 3. Los operadores de comparación, como = o >, le permiten comparar dos o más valores.
+An operator is a symbol or a group of symbols that you use to check, modify, or combine values. Usted ya conoce a la mayoría de los operadores. For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values.
 
-El lenguaje 4D es compatible con los operadores que ya conoce de otros lenguajes como C o JavaScript. Sin embargo, el operador de asignación es `:=` para evitar que se utilice de forma errónea cuando el operador "igual a" (`=`) está planeado. [Los operadores básicos](#basic-operators) como los operadores aritméticos (+, -, *, /, %...) y los operadores de comparación (=, >, >=.) puede utilizarse con números, pero también con datos booleanos, textos, fecha, hora, puntero o imagen. Al igual que JavaScript, el lenguaje 4D soporta el concepto de valores [truthy y falsy](#truthy-and-falsy), que se utilizan en [los operadores de corto-cicrcuit](#short-circuit-operators).
+The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. [Basic operators](#basic-operators) such as arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with boolean, text, date, time, pointer, or picture data types. Like JavaScript, the 4D language supports the concept of [truthy and falsy values](#truthy-and-falsy), which in use in [short-cicrcuit operators](#short-circuit-operators).
 
 
 ## Terminología
 
-El lenguaje 4D soporta los operadores **binarios** y **ternarios**:
+The 4D language supports **binary** and **ternary** operators:
 
 - los operadores binarios operan en dos objetivos (como `2 + 3`) y aparecen entre sus dos objetivos.
-- los operadores ternarios operan en tres objetivos. Como el C, 4D solo tiene un operador ternario, el [operador condicional ternario](#ternary-operator) (`a ? b : c`).
+- los operadores ternarios operan en tres objetivos. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`). b : c</code>).
 
 Los valores que los operadores afectan son los operandos. En la expresión `1 + 2`, el símbolo + es un operador binario y sus dos operandos son los valores 1 y 2.
 
@@ -21,7 +21,7 @@ Los valores que los operadores afectan son los operandos. En la expresión `1 + 
 
 ## Asignación
 
-El **operador de asignación** (`a:=b`) inicializa o actualiza el valor de `a` con el valor de `b`:
+The **assignment operator** (`a:=b`) initializes or updates the value of `a` with the value of `b`:
 
 ```4d
 $myNumber:=3 //assigns 3 to MyNumber variable  
@@ -40,26 +40,26 @@ $myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
 $col:=New collection //$col is initialized with an empty collection
 ```
 
-> NO confunda el operador de asignación `:=` con el operador de comparación de igualdad `=`. Se ha elegido deliberadamente un operador de asignación diferente (y no `=`) para evitar los problemas y la confusión que suelen producirse con == o === en otros lenguajes de programación. Estos errores son a menudo difíciles de reconocer por el compilador y conducen a una solución de problemas que requiere mucho tiempo.
+> Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Estos errores son a menudo difíciles de reconocer por el compilador y conducen a una solución de problemas que requiere mucho tiempo.
 
 
 ## Operadores básicos
 
-Los resultados del operador dependen de los **tipos de datos** a los que se aplican. 4D soporta diferentes operadores en tipos de datos escalares. Se describen con los tipos de datos, en las siguientes secciones:
+Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
 
-- [**Operadores lógicos**](dt_boolean.md#logical-operators) (en las expresiones **booleanas**)
+- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
 - [**Operadores de fechas**](dt_date.md#date-operators)
 - [**Operadores de horas**](dt_time.md#time-operators)
 - [**Operadores numéricos**](dt_number.md#number-operators)
-- [**Operadores binarios**](dt_number.md#bitwise-operators) (en las expresiones **de enteros largos**)
+- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
 - [**Operadores de imágenes**](dt_picture.md#picture-operators)
 - [**Operadores en punteros**](dt_pointer.md#pointer-operators)
 - [**Operadores de cadenas**](dt_string.md#string-operators)
 
 
-## Operadores de asignación compuestos
+## Compound assignment operators
 
-4D ofrece **operadores de asignación compuestos** que combinan la asignación con otra operación. Un ejemplo es el operador de asignación adicional (`+=`):
+4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
 
 ```4d
 $a:=1 
@@ -67,38 +67,38 @@ $a+=2 // $a=3
 ```
 
 
-Se admiten los siguientes operadores de asignación compuestos:
+The following compound assignment operators are supported:
 
-| Operador       | Sintaxis           | Asigna | Ejemplo                                                                        |
-| -------------- | ------------------ | ------ | ------------------------------------------------------------------------------ |
-| Adición        | Text += Text       | Texto  | `$t+=" World"  //$t:=$t+" World"`                                              |
-|                | Number += Number   | Número | `$n+=5 //$n:=$n+5`                                                             |
-|                | Date += Number     | Fecha  | `$d+=5 //$d:=$d+5`                                                             |
-|                | Time += Time       | Hora   | `$t1+=$t2 //$t1:=$t1+$t2`                                                      |
-|                | Time += Number     | Número | `$t1+=5 //$t1:=$t1+5`                                                          |
-|                | Picture += Picture | Imagen | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`                        |
-|                | Picture += Number  | Imagen | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)`            |
-| Resta          | Number -= Number   | Número | `$n-=5 //$n:=$n-5`                                                             |
-|                | Date -= Number     | Fecha  | `$d-=5 //$d:=$d-5`                                                             |
-|                | Time -= Time       | Hora   | `$t1-=$t2 //$t1:=$t1-$t2`                                                      |
-|                | Time -= Number     | Número | `$t1-=5 //$t1:=$t1-5`                                                          |
-|                | Picture -= Number  | Imagen | `$p1-=5 //$p1:=$p1-5 (mover horizontalemente $p1 de 5 píxeles a la izquierda)` |
-| División       | Number /= Number   | Número | `$n/=5 //$n:=$n/5`                                                             |
-|                | Time /= Time       | Hora   | `$t1/=$t2 //$t1:=$t1/$t2`                                                      |
-|                | Time /= Number     | Número | `$t1/=5 //$t1:=$t1/5`                                                          |
-|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (añadir $p2 debajo de $p1)`                           |
-|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`               |
-| Multiplicación | Text *= Number     | Texto  | `$t*="abc"  //$t:=$t*"abc"`                                                    |
-|                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                             |
-|                | Time *= Time       | Hora   | `$t1*=$t2 //$t1:=$t1*$t2`                                                      |
-|                | Time *= Number     | Número | `$t1*=5 //$t1:=$t1*5`                                                          |
-|                | Picture *= Number  | Imagen | `$p1*=5 //$p1:=$p1*5 (redimensionar $p1 de 5)`                                 |
+| Operador       | Sintaxis           | Asigna | Ejemplo                                                             |
+| -------------- | ------------------ | ------ | ------------------------------------------------------------------- |
+| Adición        | Text += Text       | Texto  | `$t+=" World"  //$t:=$t+" World"`                                   |
+|                | Number += Number   | Número | `$n+=5 //$n:=$n+5`                                                  |
+|                | Date += Number     | Fecha  | `$d+=5 //$d:=$d+5`                                                  |
+|                | Time += Time       | Hora   | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
+|                | Time += Number     | Número | `$t1+=5 //$t1:=$t1+5`                                               |
+|                | Picture += Picture | Imagen | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`             |
+|                | Picture += Number  | Imagen | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)` |
+| Resta          | Number -= Number   | Número | `$n-=5 //$n:=$n-5`                                                  |
+|                | Date -= Number     | Fecha  | `$d-=5 //$d:=$d-5`                                                  |
+|                | Time -= Time       | Hora   | `$t1-=$t2 //$t1:=$t1-$t2`                                           |
+|                | Time -= Number     | Número | `$t1-=5 //$t1:=$t1-5`                                               |
+|                | Picture -= Number  | Imagen | `$p1-=5 //$p1:=$p1-5 (move $p1 horizontally 5 pixels to the left)`  |
+| División       | Number /= Number   | Número | `$n/=5 //$n:=$n/5`                                                  |
+|                | Time /= Time       | Hora   | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
+|                | Time /= Number     | Número | `$t1/=5 //$t1:=$t1/5`                                               |
+|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
+|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`    |
+| Multiplicación | Text *= Number     | Texto  | `$t*="abc"  //$t:=$t*"abc"`                                         |
+|                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                  |
+|                | Time *= Time       | Hora   | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
+|                | Time *= Number     | Número | `$t1*=5 //$t1:=$t1*5`                                               |
+|                | Picture *= Number  | Imagen | `$p1*=5 //$p1:=$p1*5 (redimensionar $p1 de 5)`                      |
 
-Estos operadores se aplican a todas las [expresiones asignables](quick-tour.md#assignable-vs-non-assignable-expressions) (excepto de las imágenes como propiedades de objeto o elementos de colección).
+These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
 
-La operación "source `operator` value" no es estrictamente equivalente a "source := source `operator` value" porque la expresión que designa la fuente (variable, campo, propiedad del objeto, elemento de colección) sólo se evalúa una vez. Por ejemplo, en una expresión tal como `getPointer()->+=1` el método `getPointer` es llamado sólo una vez.
+The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
 
-> [La indexación de caracteres en el texto](dt_string.md#character-reference-symbols) y [la indexación de bytes en el blob](dt_blob.md#accessing-a-scalar-blobs-bytes) no soporta a estos operadores.
+> [Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators.
 #### Ejemplos
 
 ```4d
@@ -199,12 +199,12 @@ $x1-=5 //$x1=5
 $d1:=!2000-11-10!
 $d1-=10 // $d1=!2000-10-31!
 
-// División
+// Division
 $x3:=10
 $x3/=2 // $x3=5
 
 
-// Multiplicación
+// Multiplication
 $x2:=10
 $x2*=5 // $x2=10
 
@@ -386,11 +386,11 @@ $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$per
 
 ## Truthy y falsy
 
-Además de un tipo, cada valor también tiene un valor booleano inherente, conocido generalmente como **truthy** o **falsy<**.
+As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
 
 > **truthy** and **falsy** values are only evaluated by [short-circuit](#short-circuit-operators) and [ternary](#ternary-operator) operators.
 
-Los siguientes valores son **falsy**:
+The following values are **falsy**:
 
 * false
 * Null
@@ -401,7 +401,7 @@ Los siguientes valores son **falsy**:
 * Null picture
 * Null date !00-00-00!
 * "" - Cadenas vacías
-* [] - Colecciones vacías
+* [] - Empty collections
 * {} - Objetos vacios
 
 All other values are considered **truthy**, including:

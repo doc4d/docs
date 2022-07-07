@@ -253,7 +253,7 @@ Para recuperar a lista dos arquivos e pastas no arquivo:
  $files:=$archive.root.files()
 ```
 
-Para ler todos os conteúdos de um arquivo sem extraí-lo da pasta raiz:
+Para ler todos os conteúdos de um arquivo sem extraí-lo da pasta root:
 
 ```4d
 
@@ -264,7 +264,7 @@ Para ler todos os conteúdos de um arquivo sem extraí-lo da pasta raiz:
  End if
 ```
 
-Para extrair da pasta raiz:
+Para extrair da pasta root:
 
 ```4d
   //extrair um arquivo

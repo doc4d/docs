@@ -91,7 +91,7 @@ Les zones 4D View Pro bénéficient d'un menu contextuel automatique qui offre d
 
 ## Utilisation des méthodes 4D View Pro
 
-Les méthodes 4D View Pro peuvent être utilisées dans l'éditeur de méthodes 4D, tout comme les commandes du langage 4D.
+4D View Pro methods can be used in the 4D Code Editor, just like 4D language commands.
 
 4D View Pro étant un composant 4D intégré, vous pouvez accéder à sa liste de méthodes à partir de l'Explorateur, dans la section **Méthodes composants** :
 
@@ -142,9 +142,9 @@ Les objets plage 4D View Pro sont composés de plusieurs propriétés :
 
 | Propriété |                   | Type       | Description                                                                                | Disponible pour                                                |
 | --------- | ----------------- | ---------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| area      |                   | Texte      | Nom d'objet formulaire zone 4D View Pro                                                    | toujours disponible                                            |
+| area      |                   | text       | Nom d'objet formulaire zone 4D View Pro                                                    | toujours disponible                                            |
 | ranges    |                   | collection | Collection de plage(s)                                                                     | toujours disponible                                            |
-|           | \[ ].name        | Texte      | Nom de plage                                                                               | name                                                           |
+|           | \[ ].name        | Texte      | Nom de plage                                                                               | nom                                                            |
 |           | \[ ].sheet       | number     | Indice de la feuille (par défaut, indice de la feuille courante) (le comptage démarre à 0) | cellule, cellules, ligne, lignes, colonne, colonnes, tout, nom |
 |           | \[ ].row         | number     | Indice de la ligne (le comptage démarre à 0)                                               | cellule, cellules, ligne, lignes                               |
 |           | \[ ].rowCount    | number     | Row count                                                                                  | cellule, lignes                                                |

@@ -23,7 +23,7 @@ var $txt : Text
 $path:=Folder(fk desktop folder).file("MyDocs/Archive.zip")
 $archive:=ZIP Read archive($path)
 $zipFolder:=$archive.root // guardar la carpeta principal del zip
-$zipFile:=$zipFolder.files()[0] //leer la primera carpeta comprimida
+$zipFile:=$zipFolder.files()[0] //leer el primer archivo comprimido
 
 If($zipFile.extension=".txt")
     $txt:=$zipFile.getText()
@@ -63,7 +63,7 @@ End if
 
 #### Descripción
 
-El comando `ZIP Create archive`<!-- REF #_command_.ZIP Create archive. Summary -->crea un objeto archivo ZIP comprimido y devuelve el estado de la operación<!-- END REF -->.
+El comando `ZIP Create archive` <!-- REF #_command_.ZIP Create archive.Summary -->crea un objeto archivo ZIP comprimido y devuelve el estado de la operación<!-- END REF -->.
 
 Puede pasar un objeto 4D.File, 4D.Folder, o una estructura zip como primer parámetro:
 
@@ -216,7 +216,7 @@ $err:=ZIP Create archive($zip; $destination)
 
 #### Descripción
 
-El comando `ZIP Read archive`<!-- REF #_command_.ZIP Read archive. Summary -->recupera el contenido del *zipFile* y lo devuelve como un objeto `4D.ZipArchive`<!-- END REF -->.
+El comando `ZIP Read archive` <!-- REF #_command_.ZIP Read archive.Summary -->recupera el contenido del *zipFile* y lo devuelve como un objeto `4D.ZipArchive`<!-- END REF -->.
 
 > Este comando no descomprime el archivo ZIP, sólo ofrece una vista de su contenido. Para extraer el contenido de un archivo, es necesario utilizar métodos como [file.copyTo()](Document.md#copyto) o [folder.copyTo()](Directory.md#copyto).
 

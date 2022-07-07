@@ -236,7 +236,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 | mailObj        | Object | -> | Email オブジェクト            |
 | destinationBox | Text   | -> | Emailオブジェクトを受信するメールボックス |
 | options        | Object | -> | 文字セット情報を格納したオブジェクト      |
-| 戻り値            | Object | <- | append処理のステータス          |
+| 戻り値            | Result | <- | append処理のステータス          |
 <!-- END REF -->
 
 
@@ -311,6 +311,8 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -320,6 +322,7 @@ $status:=$imap.append($msg; "Drafts")
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
 
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -338,7 +341,7 @@ $status:=$imap.append($msg; "Drafts")
 `.checkConnectionDelay` 関数は、 <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->サーバー接続をチェックするまでの最長時間 (秒単位)<!-- END REF -->を格納します。  関数呼び出しの間隔がこの時間を超過する場合、サーバー接続が確認されます。 プロパティが *server* オブジェクトによって設定されていない場合は、デフォルトで 300 という値が使用されます。
 > **警告**: 定義されたタイムアウトが、サーバータイムアウトより短いようにしてください。そうでない場合、クライアントタイムアウトは無意味になります。
 
-
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -486,14 +489,14 @@ $status:=$imap.append($msg; "Drafts")
 
 この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ        | 説明                                                 |
-| ---------- | ----------------------- | ---------- | -------------------------------------------------- |
-| success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
-| statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
-| errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | Number     | 4Dエラーコード                                           |
-|            | \[].message            | Text       | 4Dエラーの詳細                                           |
-|            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
+| プロパティ      |                         | タイプ                         | 説明                                                 |
+| ---------- | ----------------------- | --------------------------- | -------------------------------------------------- |
+| success    |                         | Boolean                     | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | Text                        | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | Collection                  | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+|            | \[].errcode            | Number                      | 4Dエラーコード                                           |
+|            | \[].message            | Text                        | 4Dエラーの詳細                                           |
+|            | \[].componentSignature | Description of the 4D error | エラーを返した内部コンポーネントの署名                                |
 
 
 
@@ -739,7 +742,7 @@ End if
 <!-- REF IMAPTransporterClass.expunge().Params -->
 | 引数  | タイプ    |    | 説明              |
 | --- | ------ |:--:| --------------- |
-| 戻り値 | オブジェクト | <- | expunge処理のステータス |
+| 戻り値 | Object | <- | expunge処理のステータス |
 <!-- END REF -->
 
 #### 説明
@@ -790,6 +793,7 @@ $status:=$transporter.expunge()
 
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>履歴</summary>
@@ -805,8 +809,8 @@ $status:=$transporter.expunge()
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
 | 引数   | タイプ    |    | 説明             |
 | ---- | ------ |:--:| -------------- |
-| name | テキスト   | -> | メールボックスの名称     |
-| 戻り値  | オブジェクト | <- | boxInfo オブジェクト |
+| name | Text   | -> | メールボックスの名称     |
+| 戻り値  | Object | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
@@ -859,10 +863,10 @@ $status:=$transporter.expunge()
 **.getBoxList**( { *parameters* : Object } ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
-| 引数         | タイプ    |    | 説明                    |
-| ---------- | ------ |:--:| --------------------- |
-| parameters | オブジェクト | -> | 引数のオブジェクト             |
-| 戻り値        | コレクション | <- | mailbox オブジェクトのコレクション |
+| 引数         | タイプ        |    | 説明                    |
+| ---------- | ---------- |:--:| --------------------- |
+| parameters | Object     | -> | 引数のオブジェクト             |
+| 戻り値        | Collection | <- | mailbox オブジェクトのコレクション |
 <!-- END REF -->
 
 
@@ -929,7 +933,7 @@ $status:=$transporter.expunge()
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
 | 引数  | タイプ  |    | 説明      |
 | --- | ---- |:--:| ------- |
-| 戻り値 | テキスト | <- | 階層区切り文字 |
+| 戻り値 | Text | <- | 階層区切り文字 |
 <!-- END REF -->
 
 
@@ -985,12 +989,12 @@ $status:=$transporter.expunge()
 **.getMail**( *msgNumber*: Integer { ; *options* : Object } ) : Object<br>**.getMail**( *msgID*: Text { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMail().Params -->
-| 引数        | タイプ    |    | 説明                                               |
-| --------- | ------ |:--:| ------------------------------------------------ |
-| msgNumber | 整数     | -> | メッセージのシーケンス番号                                    |
-| msgID     | テキスト   | -> | メッセージの固有ID                                       |
-| options   | オブジェクト | -> | メッセージ管理オプション                                     |
-| 戻り値       | オブジェクト | <- | [Email オブジェクト](EmailObjectClass.md#email-オブジェクト) |
+| 引数        | タイプ     |    | 説明                                               |
+| --------- | ------- |:--:| ------------------------------------------------ |
+| msgNumber | Integer | -> | メッセージのシーケンス番号                                    |
+| msgID     | Text    | -> | メッセージの固有ID                                       |
+| options   | Object  | -> | メッセージ管理オプション                                     |
+| 戻り値       | Object  | <- | [Email オブジェクト](EmailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
 
 
@@ -1558,6 +1562,7 @@ $options:=New object
 $pw:=Request("パスワードを入力してください:")
 
 If(OK=1) $options.host:="imap.gmail.com"
+
 $options.user:="test@gmail.com"
 $options.password:=$pw
 
@@ -1730,11 +1735,11 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| 引数    | タイプ    |    | 説明             |
-| ----- | ------ |:--:| -------------- |
-| name  | テキスト   | -> | メールボックスの名称     |
-| state | 整数     | -> | メールボックスのアクセス状態 |
-| 戻り値   | オブジェクト | <- | boxInfo オブジェクト |
+| 引数    | タイプ     |    | 説明             |
+| ----- | ------- |:--:| -------------- |
+| name  | Text    | -> | メールボックスの名称     |
+| state | Integer | -> | メールボックスのアクセス状態 |
+| 戻り値   | Object  | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
@@ -1761,7 +1766,7 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 | プロパティ      | タイプ    | 説明                      |
 | ---------- | ------ | ----------------------- |
-| name       | テキスト   | メールボックスの名称              |
+| name       | Text   | メールボックスの名称              |
 | mailCount  | number | メールボックス内のメッセージの数        |
 | mailRecent | number | "recent" フラグがついたメッセージの数 |
 
@@ -1800,8 +1805,8 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
 | 引数   | タイプ    |    | 説明                |
 | ---- | ------ |:--:| ----------------- |
-| name | テキスト   | -> | メールボックスの名称        |
-| 戻り値  | オブジェクト | <- | subscribe処理のステータス |
+| name | Text   | -> | メールボックスの名称        |
+| 戻り値  | Object | <- | subscribe処理のステータス |
 <!-- END REF -->
 
 

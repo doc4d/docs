@@ -8,7 +8,7 @@ Le Web Server de 4D vous permet de tirer pleinement parti des ordinateurs multi-
 
 Pour plus d'informations sur la fonctionnalité des process préemptifs dans 4D, veuillez vous référer à la section *Process 4D préemptifs* du [*manuel de language 4D*](https://doc.4d.com).
 
-## Availability of preemptive mode for web processes
+## Disponibilité du mode préemptif pour les pocess Web
 
 Le tableau suivant permet d'indiquer si l'utilisation du mode préemptif pour les process Web est disponible dans le contexte d'exécution suivant :
 
@@ -73,7 +73,7 @@ Les méthodes base ci-dessous sont thread-safe et peuvent être utilisées en mo
 Bien sûr, le code exécuté par ces méthodes doit aussi être thread-safe.
 
 
-### Web Server URLs
+### URL Web Server
 
 Les URLs Web Server ci-dessous sont thread-safe et peuvent être utilisées en mode préemptif :
 

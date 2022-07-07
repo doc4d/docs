@@ -22,12 +22,12 @@ El generador de aplicaciones le permite:
 Generar un paquete de proyecto puede realizarse utilizando:
 
 - el comando [`BUILD APPLICATION`](https://doc.4d.com/4dv19/help/command/en/page871.html),
-- o el diálogo del [Generador de aplicaciones](#application-builder).
+- or the [Build Application dialog](#application-builder).
 
 
 ### Diálogo crear aplicación
 
-Para mostrar la caja de diálogo Generar la aplicación, seleccione **Diseño** > **Generar la aplicación...** en la barra de menús.
+To display the Build application dialog, select **Design** > **Build Application...** from the menu bar.
 
 ![](assets/en/Project/buildappProj.png)
 
@@ -42,7 +42,7 @@ La generación sólo puede efectuarse una vez compilado el proyecto. Si seleccio
 ### buildApp.4DSettings
 
 
-Cada parámetro de generación de la aplicación se almacena como una llave XML en el archivo proyecto de la aplicación llamada `"buildApp.4DSettings"`, ubicado en la carpeta [`Settings` del proyecto](../Project/architecture.md#settings-1).
+Each build application parameter is stored as an XML key in the application project file named `buildApp.4DSettings` XML file, located in the [`Settings` folder of the project](../Project/architecture.md#settings-1).
 
 Los parámetros por defecto se utilizan la primera vez que se utiliza la caja de diálogo del Generador de aplicaciones. El contenido del archivo proyecto se actualiza, si es necesario, al hacer clic en **Construir** o **Guardar los parámetros**. Puede definir varios archivos de parámetros XML para el mismo proyecto y utilizarlos con el comando [BUILD APPLICATION](https://doc.4d.com/4dv19/help/command/en/page871.html).
 
@@ -84,13 +84,13 @@ Esta pestaña le permite generar un archivo de estructura compilado estándar y/
 
 Genera una aplicación que sólo contiene código compilado.
 
-Esta funcionalidad crea un archivo *.4dz* en una carpeta *Compiled Database/\<project name>*. Por ejemplo, si ha llamado a su aplicación "MyProject", 4D creará:
+Esta funcionalidad crea un archivo *.4dz* en una carpeta *Compiled Database/\<project name>*. For example, if you have named your application "MyProject", 4D will create:
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
 Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. El tamaño compacto y optimizado de los archivos .4dz hace que los paquetes de proyectos sean fáciles de desplegar.
 
-> Al generar archivos .4dz, 4D utiliza por defecto un formato zip **estándar**. La ventaja de este formato es que es fácilmente legible por cualquier herramienta unzip. Si no desea utilizar este formato estándar, añada la llave XML `UseStandardZipFormat` con el valor `False` en su archivo [`buildApp. 4DSettings`](#build-application-settings) (para más información, consulte el manual [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html)).
+> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html) manual).
 
 
 
@@ -188,7 +188,7 @@ Cuando se construye una aplicación independiente, 4D copia el contenido de la c
 *   Instalar una versión de 4D Volume Desktop correspondiente a un lenguaje específico;
 *   Añadir una carpeta *PlugIns* personalizada;
 *   Personalizar el contenido de la carpeta *Resources*.
-> En macOS, 4D Volume Desktop se ofrece en forma de paquete de software. Puede visualizar su contenido (**Control+clic** en el icono) para poder modificarlo.
+> The macOS packages built contain the same items as the Windows subfolders. Puede visualizar su contenido (**Control+clic** en el icono) para poder modificarlo.
 
 
 #### Ubicación de los archivos web
@@ -209,23 +209,23 @@ Los elementos deben ser instalados:
 
 ## Página Cliente/Servidor
 
-En esta pestaña, usted puede construir aplicaciones cliente y servidor personalizadas que son homogénicas, multiplataforma y con una opción de actualización automática.
+On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option.
 
 ![](assets/en/Desktop/client-server-buildapp.png)
 
 ### ¿Qué es una aplicación cliente/servidor?
 
-Una aplicación cliente/servidor proviene de la combinación de tres elementos:
+A client/server application comes from the combination of three items:
 
 - Un proyecto 4D compilado,
 - La aplicación 4D Server,
 - La aplicación 4D Volumen Desktop (macOS y/o Windows).
 
-Una vez generada, una aplicación cliente/servidor se compone de dos partes personalizadas: la parte Servidor (única) y la parte Cliente (a instalar en cada máquina cliente).
+Once built, a client/server application is composed of two customized parts: the Server portion (unique) and the Client portion (to install on each client machine).
 
-> Si desea desplegar una aplicación cliente/servidor en un entorno heterogéneo (aplicaciones cliente ejecutándose en máquinas Intel/AMD y Apple Silicon), se recomienda [compilar el proyecto para todos los procesadores](Project/compiler.md#compilation-target) en una máquina macOS, para que todas las aplicaciones clientes funcionen de forma nativa.
+> If you want to deploy a client/server application in an heterogeneous environment (client applications running on Intel/AMD and Apple Silicon machines), it is recommended to [compile the project for all processors](Project/compiler.md#compilation-target) on a macOS machine, so that all client applications will run natively.
 
-Además, se personaliza la aplicación cliente/servidor y se simplifica su manejo:
+Also, the client/server application is customized and its handling simplified:
 
 - Para lanzar la parte del servidor, el usuario simplemente hace doble clic en la aplicación servidor. No es necesario seleccionar el archivo proyecto.
 - Para lanzar la parte cliente, el usuario simplemente hace doble clic en la aplicación cliente, que se conecta directamente a la aplicación servidor. No es necesario elegir un servidor en una caja de diálogo de conexión. El cliente se dirige al servidor usando su nombre, cuando el cliente y el servidor están en la misma subred, o utilizando su dirección IP, que se define utilizando la llave XML `IPAddress` en el archivo buildapp.4DSettings. Si la conexión falla, \[se pueden implementar mecanismos alternativos específicos\](#management-of-client-connections). Puede "forzar" la visualización de la caja de diálogo de conexión estándar presionando la tecla **Opción** (macOS) o **Alt** (Windows) mientras inicia la aplicación cliente. Sólo la parte cliente puede conectarse a la parte del servidor correspondiente. Si un usuario intenta conectarse a la parte servidor utilizando una aplicación estándar 4D, se devuelve un mensaje de error y la conexión es imposible.
@@ -236,25 +236,25 @@ Además, se personaliza la aplicación cliente/servidor y se simplifica su manej
 
 ### Construir aplicación servidor
 
-Marque esta opción para generar la parte del servidor de su aplicación durante la fase de construcción. Debe designar la ubicación en su disco de la aplicación 4D Server que va a utilizar. Debe designar la ubicación en su disco de la aplicación 4D Server que va a utilizar.
+Check this option to generate the server part of your application during the building phase. Debe designar la ubicación en su disco de la aplicación 4D Server que va a utilizar. Debe designar la ubicación en su disco de la aplicación 4D Server que va a utilizar.
 
 #### Ubicación de 4D Server
 
-Haga clic en el botón **[...]** y utilice la caja de diálogo *Navegar carpeta* para localizar la aplicación 4D Server. En macOS, debe seleccionar directamente el paquete 4D Server.
+Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
 
 #### Versión actual
 
-Se utiliza para indicar el número de versión actual de la aplicación generada. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. El intervalo de compatibilidad para las aplicaciones cliente y servidor se define mediante el uso de [llaves XML](#buildapp4dsettings) específicas).
+Used to indicate the current version number for the application generated. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. The interval of compatibility for client and server applications is set using specific [XML keys](#buildapp4dsettings)).
 
-#### Integrar el proyecto Usuarios y Grupos en la aplicación servidor creada
+#### Embed the project Users and Groups in built server application
 
-**Nota preliminar:** en esta sección se utilizan los siguientes términos:
+**Preliminary Note:** The following terms are used in this section:
 
-| Nombre                                 | Definición                                                                                                                                                                    |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Archivo de directorio del proyecto     | archivo [directory.json](../Users/handling_users_groups.md#directoryjson-file) ubicado en la [carpeta Settings](../Project/architecture.md#settings-1) del proyecto           |
-| Archivo de directorio de la aplicación | archivo [directory.json](../Users/handling_users_groups.md#directoryjson-file) ubicado en la [carpeta Settings](../Project/architecture.md#settings-1) del servidor 4D creado |
-| Archivo de directorio de datos         | archivo [directory.json](../Users/handling_users_groups.md#directoryjson-file) en la carpeta [Data > Settings](../Project/architecture.md#settings)                           |
+| Nombre                                 | Definición                                                                                                                                                                 |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Archivo de directorio del proyecto     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
+| Archivo de directorio de la aplicación | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
+| Archivo de directorio de datos         | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
 
 When you check this option, the project directory file is copied to the application directory file at build time.
 

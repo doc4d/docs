@@ -38,7 +38,7 @@ Estos son algunos ejemplos de constantes de tipo hora:
 
 Una hora nula se escribe ?00:00:00?
 
-**Consejo:** el Editor de métodos incluye un acceso directo para introducir una hora nula. Para escribir una hora nula, introduzca el carácter de interrogante (?) y pulse Intro.
+**Tip:** The Code Editor includes a shortcut for entering a null time. Para escribir una hora nula, introduzca el carácter de interrogante (?) y pulse Intro.
 
 ## Operadores de horas
 

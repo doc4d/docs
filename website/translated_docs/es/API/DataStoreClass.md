@@ -793,7 +793,7 @@ En este caso, puede llamar a esta función para deshabilitar el acceso a los dat
 Se crea un método proyecto *protectDataFile* para llamar antes de los despliegues, por ejemplo:
 
 ```4d
- ds.setAdminProtection(True) //Desactiva el acceso a los datos del Explorador de Datos
+ ds.setAdminProtection(True) //Desactiva el acceso a los datos del Explorador de datos
 ```
 
 #### Ver también

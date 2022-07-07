@@ -169,7 +169,7 @@ Le paramètre `keywords` vous permet de passer un objet avec des valeurs de mots
 
 | Paramètres | Type    | Description                                         |
 | ---------- | ------- | --------------------------------------------------- |
-| $draft     | Boolean | True pour ajouter le marqueur "draft" au message    |
+| $draft     | Booléen | True pour ajouter le marqueur "draft" au message    |
 | $seen      | Booléen | True pour ajouter le marqueur "seen" au message     |
 | $flagged   | Booléen | True pour ajouter le marqueur "flagged" au message  |
 | $answered  | Booléen | True pour ajouter le marqueur "répondu" au message  |
@@ -184,10 +184,10 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 | Propriété  |                         | Type       | Description                                                                                            |
 | ---------- | ----------------------- | ---------- | ------------------------------------------------------------------------------------------------------ |
-| success    |                         | Boolean    | Vrai si l'opération est réussie, sinon Faux                                                            |
+| success    |                         | Booléen    | Vrai si l'opération est réussie, sinon Faux                                                            |
 | statusText |                         | Text       | Message du statut retourné par le serveur IMAP, ou dernière erreur retournée dans la pile d'erreurs 4D |
 | errors     |                         | Collection | Pile d'erreurs 4D (non retournée si une réponse du serveur IMAP est reçue)                             |
-|            | \[].errcode            | Number     | Code d'erreur 4D                                                                                       |
+|            | \[].errcode            | Nombre     | Code d'erreur 4D                                                                                       |
 |            | \[].message            | Text       | Description de l'erreur 4D                                                                             |
 |            | \[].componentSignature | Text       | Signature du composant interne qui a retourné l'erreur                                                 |
 
@@ -311,6 +311,8 @@ $status:=$imap.append($msg; "Drafts")
 
 
 
+
+
 <!-- INCLUDE transporter.authenticationModeIMAP.Desc -->
 
 
@@ -320,6 +322,7 @@ $status:=$imap.append($msg; "Drafts")
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
 
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -338,7 +341,7 @@ $status:=$imap.append($msg; "Drafts")
 La propriété `.checkConnectionDelay` contient la <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->durée maximale (en secondes) autorisée avant vérification de la connexion au serveur<!-- END REF -->.  Si cette durée est dépassée entre deux appels de méthodes, la connexion au serveur sera vérifiée. Par défaut, si la propriété n'a pas été définie dans l'objet *server*, la valeur est de 300.
 > **Attention** : Assurez-vous que le timeout défini est inférieur au timeout du serveur, sinon le timeout du client sera inutile.
 
-
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -793,6 +796,7 @@ $status:=$transporter.expunge()
 
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>Historique</summary>
@@ -1546,24 +1550,27 @@ La fonction retourne un objet décrivant le statut IMAP :
 Pour renommer la mailbox “Invoices” en “Bills”:
 
 ```4d
-var $pw : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //obligatoire
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:")
+  //create transporter
+ $transporter:=IMAP New transporter($server)
 
-If(OK=1) $options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //select mailbox
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-$transporter:=IMAP New transporter($options)
-
-// renommer la boite de réception
-$status:=$transporter.renameBox("Invoices"; "Bills")
-
-If ($status.success)
-   ALERT("Mailbox renaming successful!")
+  If($boxInfo.mailCount>0)
+        // récupérer les en-têtes des 20 derniers messages sans les marquer comme lus
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
    Else
    ALERT("Error: "+$status.statusText)
  End if

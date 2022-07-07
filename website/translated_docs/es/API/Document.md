@@ -366,7 +366,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.parent` devuelve <!-- REF #document.parent.Summary -->el objeto carpeta padre del archivo<!-- END REF -->. Si la ruta representa una ruta del sistema (por ejemplo, "/DATA/"), se devuelve la ruta del sistema.
+La propiedad `.parent` devuelve <!-- REF #document.parent.Summary -->el objeto carpeta padre del archivo<!-- END REF -->. Si la ruta representa una filesystem (por ejemplo, "/DATA/"), se devuelve el filesystem.
 
 Esta propiedad es **de sólo lectura**. 
 

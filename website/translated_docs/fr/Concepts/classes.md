@@ -53,15 +53,7 @@ Lorsque vous nommez des classes, gardez à l'esprit les règles suivantes :
 
 Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez créer le fichier suivant :
 
-- Dossier Project
-    + Project
-
-
-
-
-        * Sources
-            - Classes
-                + Polygon.4dm
+Project folder Project Sources Classes Polygon.4dm
 
 ### Supprimer une classe
 
@@ -71,7 +63,7 @@ Pour supprimer une classe existante, vous pouvez :
 - dans l'Explorateur 4D, sélectionner la classe et cliquer sur ![](assets/en/Users/MinussNew.png) ou choisir **Déplacer vers la corbeille** dans le menu contextuel.
 
 
-### Utiliser l'interface 4D
+### Using the 4D interface
 
 Les fichiers de classe sont automatiquement stockés à l'emplacement approprié lorsqu'ils sont créés via l'interface de 4D, soit via le menu **Fichier**, soit via l'Explorateur.
 

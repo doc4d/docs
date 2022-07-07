@@ -8,6 +8,9 @@
       "Admin/cli": {
         "title": "Interfaz de línea de comando"
       },
+      "Admin/data-collect": {
+        "title": "About Data Collection"
+      },
       "Admin/dataExplorer": {
         "title": "Explorador de datos Web"
       },
@@ -119,8 +122,17 @@
       "Backup/settings": {
         "title": "Parámetros de la copia de seguridad"
       },
-      "code-editor/navigation": {
-        "title": "Despliegue de navegación"
+      "code-editor/creating-using-macros": {
+        "title": "Creating and using macros"
+      },
+      "code-editor/find-replace": {
+        "title": "Find and replace"
+      },
+      "code-editor/overview": {
+        "title": "About 4D Code"
+      },
+      "code-editor/write-class-method": {
+        "title": "Editor de código"
       },
       "Concepts/about": {
         "title": "Acerca del lenguaje 4D"
@@ -624,13 +636,13 @@
       "FormObjects/text": {
         "title": "Texto"
       },
-      "FormObjects/viewProArea_overview": {
+      "FormObjects/viewProAreaOverview": {
         "title": "Área 4D View Pro"
       },
       "FormObjects/webAreaOverview": {
         "title": "Área Web"
       },
-      "FormObjects/writeProArea_overview": {
+      "FormObjects/writeProAreaOverview": {
         "title": "Área 4D Write Pro"
       },
       "GettingStarted/creating": {
@@ -983,7 +995,7 @@
       "4D Language Concepts": "Conceptos del lenguaje 4D",
       "ORDA": "ORDA",
       "Class API Reference": "Clases API",
-      "Code Editor": "Editor de código",
+      "Handling Code": "Handling Code",
       "Debugging": "Depuración",
       "Transformation Tags": "Etiquetas Transformación",
       "Settings": "Settings",
@@ -992,7 +1004,7 @@
       "Web Administration": "Administración Web",
       "Command Line Interface": "Interfaz de línea de comando",
       "TLS Protocol": "Protocolo TLS",
-      "License Management": "Gestión de licencias",
+      "Licenses & Data Collection": "Licenses & Data Collection",
       "Access Rights": "Derechos de acceso",
       "MSC": "CSM",
       "Backup and Restore": "Copia de seguridad y restauración",
@@ -1038,11 +1050,11 @@
     "Client/Server|no description given": "Cliente/Servidor",
     "TLS Protocol|no description given": "Protocolo TLS",
     "Debugging|no description given": "Depuración",
-    "Code Editor|no description given": "Editor de código",
+    "Handling Code|no description given": "Handling Code",
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",
-    "Description of log files|no description given": "Descripción de los archivos de historial",
+    "Description of log files|no description given": "Descripción de los archivos históricos",
     "Command Line Interface|no description given": "Interfaz de línea de comando",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferencias",

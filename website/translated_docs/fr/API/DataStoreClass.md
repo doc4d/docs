@@ -155,7 +155,7 @@ Passez dans *connectionInfo* un objet décrivant le datastore distant auquel vou
 | user        | Text    | Nom d'utilisateur                                                                                                                                                                                                                                                                                                                                |
 | password    | Text    | Mot de passe de l'utilisateur                                                                                                                                                                                                                                                                                                                    |
 | idleTimeout | Longint | Délai d'inactivité de la session (exprimé en minutes), au terme duquel la session est automatiquement fermée par 4D. Si cette propriété est omise, la valeur par défaut est 60 (1h). La valeur ne peut pas être < 60 (si une valeur inférieure est passée, le timeout est fixé à 60). Pour plus d'informations, voir **Fermeture des sessions**. |
-| tls         | Boolean | Utilisez une connexion sécurisée(*). Si cette propriété est omise, "false" par défaut. L'utilisation d'une connexion sécurisée est recommandée dans la mesure du possible.                                                                                                                                                                       |
+| tls         | Booléen | Utilisez une connexion sécurisée(*). Si cette propriété est omise, "false" par défaut. L'utilisation d'une connexion sécurisée est recommandée dans la mesure du possible.                                                                                                                                                                       |
 | type        | Text    | Doit être "4D Server"                                                                                                                                                                                                                                                                                                                            |
 
 (*) Si tls est vrai, le protocole HTTPS est utilisé si :
@@ -344,14 +344,14 @@ L'objet retourné contient les propriétés suivantes :
 
 | Propriété   |             |               | Type    | Description                                                                               |
 | ----------- | ----------- | ------------- | ------- | ----------------------------------------------------------------------------------------- |
-| isEncrypted |             |               | Boolean | Vrai si le fichier de données est chiffré                                                 |
-| keyProvided |             |               | Boolean | Vrai si la clé de chiffrement correspondant au fichier de données chiffré est fournie(*). |
+| isEncrypted |             |               | Booléen | Vrai si le fichier de données est chiffré                                                 |
+| keyProvided |             |               | Booléen | Vrai si la clé de chiffrement correspondant au fichier de données chiffré est fournie(*). |
 | tables      |             |               | Object  | Objet contenant autant de propriétés que de tables chiffrables ou chiffrées.              |
 |             | *tableName* |               | Object  | Table chiffrable ou chiffrée                                                              |
 |             |             | name          | Text    | Nom de la table                                                                           |
-|             |             | num           | Number  | Numéro de la table                                                                        |
-|             |             | isEncryptable | Boolean | Vrai si la table est déclarée chiffrable dans le fichier de structure                     |
-|             |             | isEncrypted   | Boolean | Vrai si les enregistrements de la table sont chiffrés dans le fichier de données          |
+|             |             | num           | Nombre  | Numéro de la table                                                                        |
+|             |             | isEncryptable | Booléen | Vrai si la table est déclarée chiffrable dans le fichier de structure                     |
+|             |             | isEncrypted   | Booléen | Vrai si les enregistrements de la table sont chiffrés dans le fichier de données          |
 
 (*) La clé de chiffrement peut être fournie :
 
@@ -486,8 +486,8 @@ La fonction `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D" : datastore principal, disponible via ds </li><li>"4D Server" : datastore distant ouvert avec Open datastore</li>                                                                                                                          |
 | networked  | boolean | <li>Vrai : le datastore est accessible via une connexion réseau.</li><li>Faux : le datastore n'est pas accessible via une connexion réseau (base locale)</li>                                                                                                                        |
-| localID    | text    | Identifiant du datastore sur la machine. Correspond à la chaîne localID donnée avec la commande `Open datastore`. Chaîne vide ("") pour le datastore principal.             |
-| connection | object  | Objet décrivant la connexion au datastore distant (non retourné pour le datastore principal). Propriétés disponibles :<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>text</td><td>Adresse IP ou nom du datastore distant + ":" + numéro de port</td></tr><tr><td>tls</td><td>boolean</td><td>Vrai si une connexion sécurisée est utilisée avec le datastore distant</td></tr><tr><td>idleTimeout</td><td>number</td><td>Delai d'inactivité autorisé de la session (en minutes)</td></tr><tr><td>user</td><td>text</td><td>Utilisateur authentifié sur le datastore distant</td></tr></table> |
+| localID    | Texte   | Identifiant du datastore sur la machine. Correspond à la chaîne localID donnée avec la commande `Open datastore`. Chaîne vide ("") pour le datastore principal.             |
+| connection | object  | Objet décrivant la connexion au datastore distant (non retourné pour le datastore principal). Propriétés disponibles :<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>Texte</td><td>Adresse IP ou nom du datastore distant + ":" + numéro de port</td></tr><tr><td>tls</td><td>boolean</td><td>Vrai si une connexion sécurisée est utilisée avec le datastore distant</td></tr><tr><td>idleTimeout</td><td>number</td><td>Delai d'inactivité autorisé de la session (en minutes)</td></tr><tr><td>user</td><td>Texte</td><td>Utilisateur authentifié sur le datastore distant</td></tr></table> |
 
 *   Si la fonction `.getInfo()` est exécutée sur un 4D Server ou un 4D monoposte, `networked` est Faux.
 *   Si la fonction `.getInfo()` est exécutée sur un 4D distant, `networked` est Vrai

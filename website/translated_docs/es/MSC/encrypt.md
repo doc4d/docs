@@ -12,29 +12,29 @@ Se crea una nueva carpeta cada vez que se realiza una operación de cifrado/desc
 > El cifrado sólo está disponible en [modo mantenimiento](overview.md#display-in-maintenance-mode). Si intenta realizar esta operación en modo estándar, un diálogo de advertencia le informará de que la aplicación se cerrará y se reiniciará en modo de mantenimiento
 
 **Atención:**
-- Cifrar un archivo de datos es una operación de larga duración. Muestra un indicador de progreso (que puede ser interrumpido por el usuario). Note also that an application encryption operation always includes a compacting step.
+- Cifrar un archivo de datos es una operación de larga duración. Muestra un indicador de progreso (que puede ser interrumpido por el usuario). Tenga en cuenta también que una operación de encriptación de una aplicación incluye un paso de compactación.
 - Cada operación de cifrado produce una copia del archivo de datos, lo que aumenta el tamaño de la carpeta de la aplicación. Es importante tener esto en cuenta (especialmente en macOS, donde las aplicaciones 4D aparecen como paquetes) para que el tamaño de la aplicación no aumente excesivamente. Mover o eliminar manualmente las copias del archivo original dentro del paquete puede ser útil para minimizar el tamaño del paquete.
 
 ## Cifrar datos por primera vez
 Para cifrar los datos por primera vez con el CSM es necesario seguir los siguientes pasos:
 
 1. En el editor de estructuras, marque el atributo **Encriptable** de cada tabla cuyos datos desee encriptar. Ver la sección "Propiedades de las tablas".
-2. Abra la página de encriptación del CSM. If you open the page without setting any tables as **Encryptable**, the following message is displayed in the page: ![](assets/en/MSC/MSC_encrypt1.png) Otherwise, the following message is displayed: ![](assets/en/MSC/MSC_encrypt2.png)<p> This means that the **Encryptable** status for at least one table has been modified and the data file still has not been encrypted. **Nota: **El mismo mensaje se muestra cuando el estado **Encriptable** se ha modificado en un archivo de datos ya encriptado o después de que el archivo de datos haya sido desencriptado (ver más abajo).
+2. Abra la página de encriptación del CSM. Si abre la página sin definir las tablas como **Encriptables**, aparecerá el siguiente mensaje en la página: ![](assets/en/MSC/MSC_encrypt1.png) En caso contrario, se muestra el siguiente mensaje: ![](assets/en/MSC/MSC_encrypt2.png)<p> Esto significa que el estado **Encriptable** de al menos una tabla ha sido modificado y el archivo de datos aún no ha sido encriptado. **Nota: **El mismo mensaje se muestra cuando el estado **Encriptable** se ha modificado en un archivo de datos ya encriptado o después de que el archivo de datos haya sido desencriptado (ver más abajo).
 3. Haga clic en el botón Encriptar imagen.  
    <img src="assets/es/MSC/MSC_encrypt3.png" alt=" />  
    Se le pedirá que introduzca una frase secreta para su archivo de datos: ![](assets/es/MSC/MSC_encrypt4.png) La frase secreta se utiliza para generar la llave de cifrado de los datos. Una frase secreta es una versión más segura de una contraseña y puede contener un gran número de caracteres. For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" The security level indicator can help you evaluate the strength of your passphrase: ![](assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level) El indicador de nivel de seguridad puede ayudarle a evaluar la fuerza de tu frase secreta: <img src="assets/es/MSC/MSC_encrypt5.png" alt=" /> (el verde intenso es el nivel más alto)
 4. Introduzca para confirmar su frase secreta segura.
 
-A continuación, se inicia el proceso de encriptación. If the MSC was opened in standard mode, the application is reopened in maintenance mode.
+A continuación, se inicia el proceso de encriptación. Si el CSM se abrió en modo estándar, la aplicación se reabre en modo mantenimiento.
 
 4D ofrece guardar la llave de encriptación (ver [Guardar la llave de encriptación](#saving-the-encryption-key) más abajo). Puedes hacerlo en este momento o más adelante. También puede abrir el archivo de historial de encriptación.
 
 Si el proceso de encriptación es exitoso, la página de encriptación muestra los botones de operaciones de mantenimiento de encriptación.
 
-**Atención:** durante la operación de encriptación, 4D crea un nuevo archivo de datos vacío y lo llena con los datos del archivo de datos original. Los registros correspondientes a las tablas "encriptadas" se encriptan y luego se copian, los demás registros sólo se copian (también se ejecuta una operación de compactación). Si la operación tiene éxito, el archivo de datos original se traslada a una carpeta de "Archivos reemplazados (encriptados)". If you intend to deliver an encrypted data file, make sure to move/remove any unencrypted data file from the application folder beforehand.
+**Atención:** durante la operación de encriptación, 4D crea un nuevo archivo de datos vacío y lo llena con los datos del archivo de datos original. Los registros correspondientes a las tablas "encriptadas" se encriptan y luego se copian, los demás registros sólo se copian (también se ejecuta una operación de compactación). Si la operación tiene éxito, el archivo de datos original se traslada a una carpeta de "Archivos reemplazados (encriptados)". Si tiene la intención de entregar un archivo de datos encriptado, asegúrese antes de mover/eliminar cualquier archivo de datos no encriptado de la carpeta de la aplicación.
 
 ## Operaciones de mantenimiento de la encriptación
-When an application is encrypted (see above), the Encrypt page provides several encryption maintenance operations, corresponding to standard scenarios. ![](assets/en/MSC/MSC_encrypt6.png)
+Cuando una aplicación está encriptada (ver arriba), la página Encriptar ofrece varias operaciones de mantenimiento de la encriptación, correspondientes a los escenarios estándar. ![](assets/en/MSC/MSC_encrypt6.png)
 
 
 ### Suministrar la llave de encriptación de datos actual
@@ -79,17 +79,17 @@ El archivo de datos se descifra completamente y se muestra un mensaje de confirm
 
 ## Guardar la llave de encriptación
 
-4D le permite guardar la llave de encriptación de datos en un archivo dedicado. Storing this file on an external device such a USB key will facilitate the use of an encrypted application, since the user would only need to connect the device to provide the key before opening the application in order to access encrypted data.
+4D le permite guardar la llave de encriptación de datos en un archivo dedicado. El almacenamiento de este archivo en un dispositivo externo, como una llave USB, facilitará el uso de una aplicación cifrada, ya que el usuario sólo tendría que conectar el dispositivo para entregar la llave antes de abrir la aplicación para acceder a los datos cifrados.
 
 Puede guardar la llave de encriptación cada vez que se proporcione una nueva frase secreta:
 
-- when the application is encrypted for the first time,
-- when the application is re-encrypted with a new passphrase.
+- cuando la aplicación se encripta por primera vez,
+- cuando la aplicación se vuelve a encriptar con una nueva frase secreta.
 
 Las llaves de encriptación sucesivas pueden ser almacenadas en el mismo dispositivo.
 
 ## Archivo de historial
-After an encryption operation has been completed, 4D generates a file in the Logs folder of the application. It is created in XML format and named "*ApplicationName_Encrypt_Log_yyyy-mm-dd hh-mm-ss.xml*" or "*ApplicationName_Decrypt_Log_yyyy-mm-dd hh-mm-ss.xml*".
+Una vez finalizada una operación de encriptación, 4D genera un archivo en la carpeta Logs de la aplicación. Se crea en formato XML y se llama "*ApplicationName_Encrypt_Log_yyyy-mm-dd hh-mm-ss.xml*" o "*ApplicationName_Decrypt_Log_yyyy-mm-dd hh-mm-ss.xml*".
 
 Cada vez que se genera un nuevo archivo de registro, aparece un botón para abrirlo en la página del CSM.
 
