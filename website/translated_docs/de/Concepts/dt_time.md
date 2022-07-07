@@ -27,7 +27,7 @@ Hier ein paar Beispiele:
 
 Eine Leerzeit wird als ?00:00:00? angegeben.
 
-**Tipp:** Der Methodeneditor hat ein Tastaturkürzel für Leerzeit. Tippen Sie ein Fragezeichen (?) und drücken die Eingabetaste.
+**Tip:** The Code Editor includes a shortcut for entering a null time. Tippen Sie ein Fragezeichen (?) und drücken die Eingabetaste.
 
 ## Zeitoperatoren
 
