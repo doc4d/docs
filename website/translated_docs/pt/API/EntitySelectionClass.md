@@ -780,7 +780,7 @@ Como padrão, as entidades para as que *attributePath* for*null* ou indefinida s
 
 **.extract ( attributePath ; targetPath { ; ...attributePathN ; ... targetPathN}) : Collection**
 
-Com esta sintaxe, `.extract()` preenche a coleção devolvida com as propriedades *attributePath* da entity selection. Cada elemento da coleção devolvida é um objeto com as propriedades *targetPath* preenchidas com as propriedades *attributePath* correspondentes. Null values are kept (*option* parameter is ignored with this syntax).
+Com esta sintaxe, `.extract()` preenche a coleção devolvida com as propriedades *attributePath* da entity selection. Cada elemento da coleção devolvida é um objeto com as propriedades *targetPath* preenchidas com as propriedades *attributePath* correspondentes. Valores null são mantidos (o parâmetro *option* é ignorado com essa sintaxe).
 
 Se vários *attributePath*, forem dados, deve dar um *targetPath* para cada um. Só se extraem os pares válidos \[*attributePath*, *targetPath*].
 
@@ -1444,7 +1444,7 @@ You must use a criteria parameter to define how the entities must be sorted. Two
 "attributePath1 {desc or asc}, attributePath2 {desc or asc},..."
 ```
 
-The order in which the attributes are passed determines the sorting priority of the entities. By default, attributes are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
+The order in which the attributes are passed determines the sorting priority of the entities. By default, attributes are sorted in ascending order. Pode definir a ordem de clasificação de uma propriedade na string de critérios, separado da rota da propriedade por um só espaço: passe "asc" para ordenar em ordem ascendente ou "desc" em ordem descendente.
 
 *   *pathObjects* (collection): each element of the collection contains an object structured in the following way:
 
