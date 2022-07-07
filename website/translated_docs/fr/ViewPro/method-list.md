@@ -162,7 +162,7 @@ La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère un
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
-Dans *index*, vous pouvez passer un numéro pour la nouvelle feuille. In *sheet*, you can pass an index for the new sheet. Si l'*index* passé est inférieur ou égal à 0, la commande insère la nouvelle feuille au début.
+Dans *index*, vous pouvez passer un numéro pour la nouvelle feuille. Si l'*index* est supérieur au nombre de feuilles, la commande insère la nouvelle feuille après les feuilles existantes. In *sheet*, you can pass an index for the new sheet.
 > La numérotation démarre à 0.
 
 Dans *name*, vous pouvez passer un nom pour la nouvelle feuille. Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
