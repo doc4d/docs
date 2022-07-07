@@ -5,22 +5,22 @@ title: Página Base de datos
 
 ## Página Almacenamiento de datos
 
-You use this page to configure data storage on disk for the 4D database.
+Esta página permite configurar el almacenamiento de datos de la base 4D en el disco.
 
 ### Parámetros generales
 
 
-#### Allow Read Only Data file Use
+#### Autorizar el uso de archivos de datos de sólo lectura
 
-This option allows configuration of the application operation when opening a locked data file at the operating system level. 4D includes a mechanism that automatically prevents the opening of a database when its data file, or one of its segments, is locked. In this case, when this detection option is activated, 4D displays a warning message and does not open the database:
+Esta opción permite configurar el funcionamiento de la aplicación al abrir un archivo de datos bloqueado a nivel del sistema operativo. 4D incluye un mecanismo que impide automáticamente la apertura de una base cuando su archivo de datos, o uno de sus segmentos está bloqueado. En este caso, cuando se activa esta opción de detección, 4D muestra un mensaje de advertencia y no abre la base:
 
 ![](assets/en/settings/data-locked.png)
 
-Unless this option is checked, it is not possible to open a database when its data file is locked (default operation for 4D databases).
+A menos que se marque esta opción, no es posible abrir una base cuando su archivo de datos está bloqueado (funcionamiento por defecto para las bases 4D).
 
 #### Sobre el bloqueo de archivos
 
-Locked files can be read but their contents cannot be modified. For example, files are locked when they are stored on a non-rewritable support (DVD type) or when they are copied from this type of support. 4D can work in a transparent manner with locked data files, which allows, more particularly, the use of projects stored on DVD. However, this operation runs the risk of inadvertent use of a locked data file in which modifications will not be saved. This is why by default 4D does not allow databases with a locked data file to be opened.
+Los archivos bloqueados pueden ser leídos pero su contenido no puede ser modificado. For example, files are locked when they are stored on a non-rewritable support (DVD type) or when they are copied from this type of support. 4D can work in a transparent manner with locked data files, which allows, more particularly, the use of projects stored on DVD. However, this operation runs the risk of inadvertent use of a locked data file in which modifications will not be saved. This is why by default 4D does not allow databases with a locked data file to be opened.
 
 ### Temporary Folder Location
 
@@ -67,18 +67,15 @@ Three location options are provided:
 
 #### Soporte de Mecab (versión japonesa)
 
-On Japanese systems, 4D supports the *Mecab* library, with a indexing algorithm for keywords that is particularly suited for the Japanese language.
+On Japanese systems, 4D supports the *MeCab* library, with a indexing algorithm for keywords that is particularly suited for the Japanese language.
 
-This algorithm is used by default in Japanese versions of 4D. **Consider only non-alphanumeric chars for keywords**: Modifies the algorithm used by 4D to identify keyword separators and hence build their indexes.
+This algorithm is used by default in Japanese versions of 4D. If needed, you can disable the use of the *MeCab* algorithm and use the conventional *ICU* library.
 
-If needed, you can disable the use of the *Mecab* algorithm and use the conventional *ICU* library.
-
-To disable *Mecab*, just check the **Consider only non-alphanumeric chars for keywords** option:
+To disable *MeCab*, just check the **Consider only non-alphanumeric chars for keywords** option:
 
 
 ![](assets/en/settings/non-alphanumeric-chars.png)
 
-> **Note:** You can also disable the use of Mecab by deleting or renaming the Resources/mecab folder of your 4D Japanese application.
 
 ## Página Memoria
 
@@ -89,8 +86,7 @@ You use the settings on this tab to configure the cache memory for the database.
 -   **Calculation of adaptive cache**: When this option is checked, management of the memory cache is done dynamically by the system --- respecting limits that you set. This allows configuration of a high performance memory cache adapted to most configurations. The size of the memory cache is then calculated dynamically depending on set parameters. The values offered by default correspond to standard 4D usage.
 
     -   **Memory to be reserved for other applications and for the system**: Portion of the RAM memory to reserve for the System and other applications. This value is increased for optimization when other applications are running on the same machine as 4D.
-    -   **Percentage of available memory used for cache**: Percentage of the remaining memory allocated to the cache by default.\
-      To obtain the size allocated by default to the cache, simply perform the following calculation: (Physical memory -- Physical memory to be reserved) X Percentage of the memory used for the cache. In the adaptive mode, the size of the memory cache varies dynamically depending on the needs of the application and the system. You can set limits using the following two options:
+    -   **Percentage of available memory used for cache**: Percentage of the remaining memory allocated to the cache by default.\ To obtain the size allocated by default to the cache, simply perform the following calculation: (Physical memory -- Physical memory to be reserved) X Percentage of the memory used for the cache. In the adaptive mode, the size of the memory cache varies dynamically depending on the needs of the application and the system. You can set limits using the following two options:
     -   **Minimum Size**: Minimum amount of memory that must be reserved for the cache. Este valor no puede ser inferior a 100 MB.
     -   **Maximum Size**: Maximum amount of memory that can be used by the cache. This value is virtually unlimited.\  
       Setting limits is particularly useful for databases that are distributed on machines for which you do not know the memory configuration a priori. In this case, the limits set let you guarantee a minimum performance in all cases. El siguiente diagrama ilustra este comportamiento:
@@ -103,7 +99,7 @@ You use the settings on this tab to configure the cache memory for the database.
 
     The size of the memory cache that you enter will be reserved for the 4D database, regardless of the state of machine resources. This setting can be used in certain specific configurations, or when the database is designed to be used on dissimilar systems in terms of memory. In most cases, the adaptive cache offers better performance.
 
--   **Flush Cache every... Seconds/Minutes**: Specifies the time period between each automatic saving of the data cache, i.e., its writing to disk. 4D saves the data placed in the cache at regular intervals. You can specify any time interval between 1 second and 500 minutes. By default, 4D saves your data every 20 seconds. The application also saves your data to disk each time you change to another environment or exit the application. You can also call the [FLUSH CACHE](https://doc.4d.com/4dv19R/help/command/en/page297.html) command to trigger the flush at any moment.
+-   **Escritura caché cada... Seconds/Minutes**: Specifies the time period between each automatic saving of the data cache, i.e., its writing to disk. 4D saves the data placed in the cache at regular intervals. You can specify any time interval between 1 second and 500 minutes. By default, 4D saves your data every 20 seconds. The application also saves your data to disk each time you change to another environment or exit the application. You can also call the [FLUSH CACHE](https://doc.4d.com/4dv19R/help/command/en/page297.html) command to trigger the flush at any moment.
 
     When you anticipate heavy data entry, consider setting a short time interval between saves. In case of a power failure, you will only lose the data entered since the previous save (if the database is running without a log file).
 

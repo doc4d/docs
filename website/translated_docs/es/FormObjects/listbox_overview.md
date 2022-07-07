@@ -112,7 +112,7 @@ When the data source is an entity selection, any modifications made on the list 
 When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various functions of the [Collection class](../API/CollectionClass.md), you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por ejemplo:
 
 ```4d
-myCol:=myCol.push("new value") //display new value in list box
+myCol:=myCol.push("new value") //mostrar el nuevo valor en el list box
 ```
 
 
@@ -510,7 +510,7 @@ You can write in the *UI_SetColor* method:
 
 ```4d
  If(Is in set("$SampleSet"))
-    $color:=0x0080C080 // green background
+    $color:=0x0080C080 // fondo verde
  Else
     $color:=lk inherited
  End if
@@ -1059,9 +1059,9 @@ El atributo behavior ofrece variaciones a la representación estándar de los va
 Cuando un atributo "choiceList" o "requiredList" está presente dentro del objeto, la entrada de texto se sustituye por una lista desplegable o un combo box, dependiendo del atributo:
 
 *   Si el atributo es "choiceList", la celda se muestra como un combo box. Esto significa que el usuario puede seleccionar o escribir un valor.
-*   If the attribute is "requiredList" then the cell is displayed as a drop-down list and the user can only select one of the values provided in the list.
+*   Si el atributo es "requiredList", la celda se muestra como una lista desplegable y el usuario sólo puede seleccionar uno de los valores de la lista.
 
-In both cases, a "value" attribute can be used to preselect a value in the widget.
+En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
 > Los valores del widget se definen a través de un array. Si quiere asociar el widget a una lista 4D existente, debe utilizar los atributos "requiredListReference", "requiredListName", "choiceListReference" o "choiceListName".
 
 Ejemplos:
@@ -1099,7 +1099,7 @@ Ejemplos:
 
 Los atributos "requiredListName" y "requiredListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se mostrará entonces como una lista desplegable. Esto significa que el usuario sólo puede seleccionar uno de los valores proporcionados en la lista.
 
-Utilice "requiredListName" o "requiredListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. In both cases, a "value" attribute can be used to preselect a value in the widget.
+Utilice "requiredListName" o "requiredListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
 > * Si desea definir estos valores a través de un simple array, debe utilizar el atributo "requiredList".
 > * Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
 
@@ -1140,7 +1140,7 @@ Ejemplos:
 
 Los atributos "choiceListName" and "choiceListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se muestra entonces como un combo box, lo que significa que el usuario puede seleccionar o escribir un valor.
 
-Utilice "choiceListName" o "choiceListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. In both cases, a "value" attribute can be used to preselect a value in the widget.
+Utilice "choiceListName" o "choiceListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
 > * Si desea definir estos valores a través de un simple array, debe utilizar el atributo "choiceList".
 > * Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
 
@@ -1236,12 +1236,12 @@ El atributo valueType de valor "color" permite mostrar un color o un texto.
 ![](assets/en/FormObjects/listbox_column_objectArray_colorValue.png)
 
 
-*   If the value is a text, then the text is displayed (*e.g.*: "value";"Automatic").
+*   Si el valor es un texto, entonces se muestra el texto (*por ejemplo*: "valor"; "Automatic").
 
 
 #### event valueType
 
-The "event" valueType displays a simple button that generates an `On Clicked` event when clicked. No se puede pasar ni devolver ningún dato o valor.
+El "event" valueType muestra un botón que genera un evento `On Clicked` al ser presionado. No se puede pasar ni devolver ningún dato o valor.
 
 Opcionalmente, se puede pasar un atributo "label".
 
@@ -1257,16 +1257,16 @@ OB SET($ob;"label";"Edit...")
 
 
 ### Gestión de eventos
-Several events can be handled while using an object list box array:
+Se pueden manejar varios eventos mientras se utiliza un array list box de objetos:
 
-*   **On Data Change**: An `On Data Change` event is triggered when any value has been modified either:
+*   **On Data Change**: un evento `On Data Change` se dispara cuando se ha modificado algún valor:
     *   en un área de entrada de texto
     *   en una lista desplegable
     *   en un área combo box
-    *   in a unit button (switch from value x to value x+1)
-    *   en una casilla de selección (cambia entre marcado/desmarcado)
-*   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
-*   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.
+    *   botón de unidad (pasa de valor x a valor x+1)
+    *   en una casilla de selección ( cambia entre marcado/desmarcado)
+*   **On Clicked**: cuando el usuario haga clic en un botón instalado con el "event" atributo *valueType*, se generará un evento `On Clicked`. Este evento es gestionado por el programador.
+*   **On Alternative Click**: cuando el usuario haga clic en un botón de elipsis (atributo "alternateButton"), se generará un evento `On Alternative Click`. Este evento es gestionado por el programador.
 
 
 
