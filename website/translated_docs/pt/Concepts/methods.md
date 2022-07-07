@@ -91,8 +91,7 @@ The `Formula` or `Formula from string` commands allow you to create native formu
 To execute a method stored in an object property, use the **( )** operator after the property name. Por exemplo:
 
 ```4d
-//myAlert
-ALERT("Hello world!")
+//myAlert ALERT("Hello world!")
 ```
 
 Then `myAlert` can be encapsulated in any object and called:
@@ -112,8 +111,7 @@ $o["custom_Alert"]() //exibe "Hello world!"
 You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… just like with 4D project methods:
 
 ```4d
-//fullName method
-C_TEXT($0;$1;$2)
+//fullName method C_TEXT($0;$1;$2)
 $0:=$1+" "+$2
 ```
 
@@ -130,8 +128,7 @@ $result:=$o.full_name("John";"Smith")
 Combined with the `This`function, such object methods allow writing powerful generic code. Por exemplo:
 
 ```4d
-//fullName2 method
-C_TEXT($0)
+//fullName2 method C_TEXT($0)
 $0:=This.firstName+" "+This.lastName
 ```
 
@@ -216,6 +213,8 @@ For this example, we assume the values in the fields are unique (there are no tw
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
        ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
+    End if
+ End if
     End if
  End if
 ```
