@@ -129,7 +129,7 @@ comentarios
     End for
 ```
 
-Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). The parameters are passed to the method in parentheses, following the name of the method. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Um método pode devolver um único valor no parâmetro $0. Quando chamar um método, apenas digite seu nome:
+Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). The parameters are passed to the method in parentheses, following the name of the method. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Além disso, pode direcionar múltiplos parâmetros consecutivos com a sintaxe ${n} onde n, expressão numérica, é o número do parâmetro. Um método pode devolver um único valor no parâmetro $0. Quando chamar um método, apenas digite seu nome:
 
 ```4d
 $f:=New object
@@ -181,6 +181,7 @@ Note that if the object property value is an object that encapsulates a method (
 ```
 $f:=New object
 $f.message:=New formula(ALERT("Hello world!"))
+$f.message() //displays "Hello world!"
 $f.message() //displays "Hello world!"
 ```
 
