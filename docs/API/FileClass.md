@@ -537,13 +537,13 @@ If you use the *options* parameter, you can pass more options for the file handl
 
 The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values:
 
-|Break mode value|Description|
-|---|---|
-|0|No processing|
-|1|(Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows|
-|2|Line breaks are converted to CRLF (carriage return + line feed), the default Windows format|
-|3|Line breaks are converted to CR (carriage return), the default Classic Mac OS format|
-|4|Line breaks are converted to LF (line feed), the default Unix and macOS format|
+|Break mode value|Constant|Description|
+|---|---|---|
+|0|`Document unchanged`|No processing|
+|1|`Document with native format`|(Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows|
+|2|`Document with CRLF`|Line breaks are converted to CRLF (carriage return + line feed), the default Windows format|
+|3|`Document with CR`|Line breaks are converted to CR (carriage return), the default Classic Mac OS format|
+|4|`Document with LF`|Line breaks are converted to LF (line feed), the default Unix and macOS format|
 
 
 #### Example
