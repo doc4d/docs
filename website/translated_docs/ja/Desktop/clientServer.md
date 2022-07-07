@@ -46,15 +46,15 @@ title: クライアント/サーバー管理
 
 公開されているプロジェクトが **利用可** タブに見つからない場合には、**カスタム** タブを開きます。 カスタムページでは、IPアドレスでネットワーク上のサーバーを指定し、それに任意の名前をつけられます。
 
-![](assets/en/getStart/serverConnect2.png)
+![](assets/en/Desktop/serverConnect2.png)
 
 
 - **プロジェクト名**: 4D Server プロジェクトのローカル名を指定できます。 この名前は **最近使用** ページでプロジェクトを参照する際に使用されます。
 - **ネットワークアドレス**: 4D Server が起動されたマシンの IPアドレスを指定します。 <p>2つのサーバーが同じマシン上で同時に起動されているときは、IPアドレスの後にコロンとポート番号を続けます。例えば: `192.168.92.104:19820`。 <p>デフォルトで、4D Server の公開ポートは 19813 です。 この番号は、プロジェクト設定で変更できます。
 
-このページでサーバーを指定したら、**OK** ボタンをクリックしてサーバーに接続できます。
+> The **Activate development mode** option opens the remote connection in a special read/write mode and requires to access the project folder from the remote 4D (compatibility option).
 
-> データベースが暗号化されて公開されている場合、名前の前にキャレット (^) を置かなければなりません。そうでなければ接続は拒否されます。 詳細はクライアント/サーバー接続の暗号化を参照してください。
+このページでサーバーを指定したら、**OK** ボタンをクリックしてサーバーに接続できます。
 
 サーバーとの接続が確立されると、そのリモートプロジェクトは **最近使用** タブのリストに加えられます。
 
@@ -77,6 +77,8 @@ title: クライアント/サーバー管理
 ## 4D と 4D Server の同じマシン上での使用
 
 同じマシン上で 4D が 4D Server に接続すると、アプリケーションはシングルユーザーモードの 4D のようにふるまい、デザイン環境にてプロジェクトファイルの編集が可能です。 この機能により、クライアント/サーバーアプリケーションを運用時と同じコンテキストで開発することができます。
+
+> When 4D connects to a 4D Server on the same machine, the **development mode** is automatically activated, whatever the [opening option](#opening-a-remote-project) status.
 
 デザイン環境にて 4D が **すべてを保存** アクションを (**ファイル** メニューを使って明示的に、または、アプリケーションモードへの移行により暗示的に) おこなうと、4D Server は同期的にプロジェクトファイルをリロードします。 4D Server によるプロジェクトファイルのリロードが完了するのを待って、4D は続行します。
 
