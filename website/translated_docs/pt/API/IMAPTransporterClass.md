@@ -315,7 +315,7 @@ $status:=$imap.append($msg; "Drafts")
 
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
-
+<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -333,6 +333,8 @@ $status:=$imap.append($msg; "Drafts")
 
 The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  If this time is exceeded between two method calls, the connection to the server will be checked. By default, if the property has not been set in the *server* object, the value is 300.
 > **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
+
+<!-- END REF -->
 
 <!-- INCLUDE transporter.connectionTimeOut.Desc -->
 
@@ -780,6 +782,7 @@ $status:=$transporter.expunge()
 <!-- END REF -->
 
 <!-- REF IMAPTransporterClass.getBoxInfo().Desc -->
+
 ## .getBoxInfo()
 
 <details><summary>Histórico</summary>
@@ -1543,19 +1546,27 @@ The function returns an object describing the IMAP status:
 To to rename your “Invoices” mailbox to “Bills”:
 
 ```4d
-var $pw : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //Mandatory
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:") If(OK=1) $options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //create transporter
+ $transporter:=IMAP New transporter($server)
 
-$transporter:=IMAP New transporter($options)
+  //select mailbox
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-// rename mailbox
-$status:=$transporter.renameBox("Invoices"; "Bills")
+  If($boxInfo.mailCount>0)
+        // retrieve the headers of the last 20 messages without marking them as read
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
    ALERT("Error: "+$status.statusText)
 End if End if
 ```
