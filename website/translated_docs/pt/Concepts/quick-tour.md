@@ -172,6 +172,7 @@ Note that if the object property value is an object that encapsulates a method (
 $f:=New object
 $f.message:=New formula(ALERT("Hello world!"))
 $f.message() //displays "Hello world!"
+$f.message() //displays "Hello world!"
 ```
 
 To access a collection element, you have to pass the element number embedded in square brackets:
