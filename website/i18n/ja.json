@@ -68,6 +68,9 @@
       "API/FunctionClass": {
         "title": "Formula"
       },
+      "API/HTTPRequestClass": {
+        "title": "HTTPRequest"
+      },
       "API/IMAPTransporterClass": {
         "title": "IMAPTransporter"
       },
@@ -997,7 +1000,6 @@
       "Class API Reference": "クラス API リファレンス",
       "Handling Code": "コードの扱い方",
       "Debugging": "デバッガー",
-      "Transformation Tags": "変換タグ",
       "Settings": "設定",
       "Preferences": "環境設定",
       "4D Server Administration Window": "4D Server 管理ウィンドウ",
