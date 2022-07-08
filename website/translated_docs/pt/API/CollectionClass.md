@@ -196,7 +196,7 @@ Pode passar qualquer número de valores dos tipos compatíveis abaixo:
 *   time (stored as number of milliseconds - real)
 *   null
 *   shared object(*)
-*   shared collection(*)
+*   shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 
 (*)Quando um objeto partilhado ou coleção forem adicionadas a uma coleção partilhada, partilham o mesmo *locking identifier*. Para saber mais sobre esse ponto, veja o guia **4D Developer**'.
@@ -462,10 +462,8 @@ $lastnames:=JSON Parse($text) //$lastnames is a regular collection
 
 $sharedLastnames:=$lastnames.copy(ck shared) //$sharedLastnames is a shared collection
 
-//Now we can put $sharedLastnames into $sharedObject
-Use($sharedObject)
-    $sharedObject.lastnames:=$sharedLastnames
-End use
+//Now we can put $sharedLastnames into $sharedObject Use($sharedObject)
+    $sharedObject.lastnames:=$sharedLastnames End use
 ```
 
 
@@ -497,11 +495,8 @@ var $text : Text
 $text:=Document to text(Get 4D folder(Current resources folder)+"lastnames.txt")
 $lastnames:=JSON Parse($text) //$lastnames is a regular collection
 
-$sharedLastnames:=$lastnames.copy(ck shared) // shared copy
-
-Use(Storage)
-    Storage.lastnames:=$sharedLastnames
-End use
+$sharedLastnames:=$lastnames.copy(ck shared) // shared copy Use(Storage)
+    Storage.lastnames:=$sharedLastnames End use
 ```
 
 #### Exemplo 4
@@ -806,19 +801,19 @@ The callback receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
-*   in *$N...*: paramN...
+*   *$N*: paramN...
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
-*   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (Booleano, opcional): **true** para parar o método callback. The returned value is the last calculated.
 
 In all cases, at the point when the `.every()` function encounters the first collection element evaluated to **false**, it stops calling the callback and returns **false**.
 
 By default, `.some()` tests the whole collection. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
 
-*   If *startFrom* >= the collection's length, **false** is returned, which means the collection is not tested.
-*   If *startFrom* < 0, it is considered as the offset from the end of the collection ( *startFrom:=startFrom+length*).
+*   Se *startFrom* >= tamanho da coleção, é retornado **false**, o que significa que a coleção não é testada.
+*   Se *startFrom* < 0, é considerada como offset do final da coleção( *startFrom:=startFrom+length*).
 *   If *startFrom* = 0, the whole collection is searched (default).
 
 
@@ -889,10 +884,10 @@ Os conteúdos da coleção retornada depende do parâmetro *targetPath*:
 
 *   Se o parâmetro *targetPath* for omitido, `.extract()` preenche a nova coleção com os valores *propertyPath* da coleção original.
 
-    By default, elements for which *propertyPath* is null or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as null elements in the returned collection.
+    Como padrão, elementos para os quais *propertyPath* for null ou undefined são ignorados na coleção resultante. Pode passar a constante `ck keep null` no parâmetro *option* para incluir esses valores como elementos null na coleção retornada.
 
 
-*   If one or more *targetPath* parameter(s) are passed, `.extract()` populates the new collection with the *propertyPath* properties and each element of the new collection is an object with *targetPath* properties filled with the corresponding *propertyPath* properties. Null values are kept (*option* parameter is ignored with this syntax).
+*   Se um ou mais parâmetros *targetPath* forem passados,, `.extract()` preenche a nova coelção com as propriedades *propertyPath* e cada elemento da nova coleção é um objeto com as propriedades *targetPath* preenchidas com as propriedades correspondentes *propertyPath*. Valores null são mantidos (o parâmetro *option* é ignorado com essa sintaxe).
 
 
 #### Exemplo 1
@@ -960,15 +955,15 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 Se *index* < 0, será recalculado como  *index:=index+length* (é considerado como o offset do final da coleção).
 > This function modifies the original collection.
 
-*   If the *startFrom* parameter is omitted, *value* is set to all collection elements (*startFrom*=0).
-*   If the *startFrom* parameter is passed and *end* omitted, *value* is set to collection elements starting at *startFrom* to the last element of the collection (*end*=length).
-*   If both the *startFrom* parameter and *end* are passed, *value* is set to collection elements starting at *startFrom* to the element *end*.
+*   Se o parâmetro *startFrom* for omitido, *value* é estabelecido para todos os elementos coleção (*startFrom*=0).
+*   Se o parâmetro *startFrom* for passado e o parâmetro*end* for omitido, *value* é estabelecido para elementos de coleção começando com *startFrom* até o elemento final da coleção (*end*=length).
+*   Se tanto *startFrom* quanto *end* forem passados, *value* é estabelecido para elementos coleção começando em *startFrom* ao elemento *end*.
 
 Em caso de inconsistências, as regras abaixos são seguidas:
 
-*   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection). If the calculated value is negative, *startFrom* is set to 0.
-*   If *end* < 0 , it is recalculated as *end:=end+length*.
-*   If *end* < *startFrom* (passed or calculated values), the method does nothing.
+*   Se *index* < 0, será recalculado como *startFrom:=startFrom+length* (é considerado como o offset do final da coleção). Se o valor calculado for negativo, *startFrom* toma o valor 0.
+*   Se *end* < 0 , é recalculado como sendo *end:=end+length*.
+*   Se *end* < *startFrom* (valores passados ou calculados), o método não faz nada.
 
 
 #### Exemplo
@@ -1027,12 +1022,12 @@ The callback receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
-*   in *$N...*: paramN...
+*   *$N*: paramN...
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
-*   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (Booleano, opcional): **true** para parar o método callback. The returned value is the last calculated.
 
 
 #### Exemplo 1
@@ -1109,12 +1104,12 @@ The callback receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
-*   in *$N...*: paramN...
+*   *$N*: paramN...
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
-*   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (Booleano, opcional): **true** para parar o método callback. The returned value is the last calculated.
 
 
 Como padrão, `.findIndex()` testa a coleção completa. Opcionalmente pode passar em *startFrom* o índice do elemento a partir do qual vai começar a pesquisa.
@@ -1199,12 +1194,12 @@ The callback receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
-*   in *$N...*: paramN...
+*   *$N*: paramN...
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
-*   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (Booleano, opcional): **true** para parar o método callback. The returned value is the last calculated.
 
 Como padrão, `.every()` testa a coleção completa. Opcionalmente pode passar em *startFrom* o índice do elemento a partir do qual vai começar a pesquisa.
 
@@ -1263,7 +1258,7 @@ Se *startFrom* = 0, a coleção inteira é pesquisada (padrão).
 Em *toSearch*, passe a expressão para encontrar na coleção. Pode passar:
 
 *   a scalar value (text, number, boolean, date),
-*   the null value,
+*   o valor null,
 *   an object or a collection reference.
 
 *toSearch* deve corresponder exatamente com o elemento a encontrar (as mesmas regras que para o operador de igualdade do tipo dados é aplicado).
@@ -1327,7 +1322,7 @@ A função `.indices()` trabalha exatamente da mesma forma que a função [`.que
 O parâmetro *queryString* usa a sintaxe abaixo:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+valor de comparação propertyPath {valor de comparação logicalOperator propertyPath}
 ```
 
 Para uma descrição detalhada dos parâmetros *queryString* e *value*, veja a função `dataClass.query()`.
@@ -1382,9 +1377,9 @@ A função `.insert()` <!-- REF #collection.insert(). Summary --> insere *elemen
 In *index*, passe a posição onde quiser que o elemento seja inserido na coleção.
 > **Warning**: Keep in mind that collection elements are numbered from 0.
 
-*   If *index* > the length of the collection, actual starting index will be set to the length of the collection.
-*   If *index* <0, it is recalculated as *index:=index+length* (it is considered as the offset from the end of the collection).
-*   If the calculated value is negative, index is set to 0.
+*   Se *index* > o tamanho da coleção, o índice de início é estabelecido como o tamanho da coleção.
+*   Se *index* < 0, será recalculado como  *index:=index+length* (é considerado como o offset do final da coleção).
+*   Se o valor calculado for negativo, index será estabelecido como 0.
 
 Qualquer tipo de elemento aceito por uma coleção pode ser inserido, mesmo outra coleção.
 
@@ -1476,16 +1471,16 @@ A função`.lastIndexOf()` <!-- REF #collection.lastIndexOf(). Summary -->pesqui
 Em *toSearch*, passe a expressão para encontrar na coleção. Pode passar:
 
 *   a scalar value (text, number, boolean, date),
-*   the null value,
+*   o valor null,
 *   an object or a collection reference.
 
 Opcionalmente pode passar o índice da coleção para a qual iniciar a pesquisa reversa em *startFrom*.
 
 Se *startFrom* = 0, a coleção inteira é pesquisada (padrão).
 
-*   If *startFrom* >= the collection's length minus one (coll.length-1), the whole collection is searched (default).
-*   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection). If the calculated value is negative, -1 is returned (the collection is not searched). **Note:** Even if *startFrom* is negative, the collection is still searched from right to left.
-*   If *startFrom* = 0, -1 is returned, which means the collection is not searched.
+*   Se *startFrom* >= o tamanho da coleção menos um (coll.length-1), a coleção inteira é pesquisada (padrão).
+*   Se *index* < 0, será recalculado como *startFrom:=startFrom+length* (é considerado como o offset do final da coleção). Se o valor calculado for negativo, -1 é retornado (a coleção não é pesquisada). **Nota**: Mesmo se *startFrom* for negativo, a coleção ainda é pesquisada da direita para esquerda.
+*   Se *startFrom* = 0, é retornado -1, o que significa que a coleção não é pesquisada.
 
 #### Exemplo
 
@@ -1529,9 +1524,9 @@ A propriedade `.length` é iniciada quando a coleção for criada. Adicionar ou 
 
 
 ```4d
- var $col : Collection //$col.length initialized to 0
- $col:=New collection("one";"two";"three") //$col.length updated to 3
- $col[4]:="five" //$col.length updated to 5
+ var $col : Collection //$col.length inicializa em 0
+ $col:=New collection("one";"two";"three") //$col.length atualizado a  3
+ $col[4]:="five" //$col.length atualizado a 5
  $vSize:=$col.remove(0;3).length //$vSize=2
 ```
 
@@ -1581,12 +1576,12 @@ The callback receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
-*   in *$N...*: paramN...
+*   *$N*: paramN...
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (any type): new transformed value to add to the resulting collection
-*   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (Booleano, opcional): **true** para parar o método callback. The returned value is the last calculated.
 
 
 #### Exemplo
@@ -1739,9 +1734,9 @@ Se não passar nenhum parâmetro, a função ordena os valores escalares da cole
 
 Também pode passar um parâmetro de critérios para definir como devem ordenar-se os elementos da coleção. Três sintaxes são compatíveis com esse parâmetro:
 
-*   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
+*   *pathStrings* : Text (fórmula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contém uma fórmula composta de 1 a x rotas de propriedades e (opcionalmente) ordens de classificação, separados por vírgulas. A ordem na qual as propriedades são passadas determina a prioridade de ordenação dos elementos da coleção Como padrão as propriedades são ordenadas de forma ascendente. Pode definir a ordem de clasificação de uma propriedade na string de critérios, separado da rota da propriedade por um só espaço: passe "asc" para ordenar em ordem ascendente ou "desc" em ordem descendente.
 
-*   *pathObjects* : Collection. You can add as many objects in the *pathObjects* collection as necessary. By default, properties are sorted in ascending order ("descending" is false). Each element of the collection contains an object structured in the following way:
+*   *pathObjects* : Collection. Pode adicionar tantos objetos na coleção *pathObjects* como seja necessário. Como padrão, as propriedades se classificam em ordem ascendente ("descending" é false). Cada elemento da coleção contém um objeto estruturado da seguinte maneira:
 
 ```4d
 {
@@ -1750,14 +1745,14 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 }
 ```
 
-*   *ascOrDesc*: Integer. You pass one of the following constants from the **Objects and collections** theme:
+*   *ascOrDesc*: Integer. Se passar uma das seguintes constantes do tema **Objects and collections**:
 
-    | Constante     | Type          | Value | Comentário                                        |
-    | ------------- | ------------- | ----- | ------------------------------------------------- |
-    | ck ascending  | Inteiro longo | 0     | Elements are ordered in ascending order (default) |
-    | ck descending | Inteiro longo | 1     | Elements are ordered in descending order          |
+    | Constante     | Type          | Value | Comentário                                                  |
+    | ------------- | ------------- | ----- | ----------------------------------------------------------- |
+    | ck ascending  | Inteiro longo | 0     | Os elementos são ordenados de forma ascendente (por padrão) |
+    | ck descending | Inteiro longo | 1     | Os elementos são ordenados de forma descendente             |
 
-    This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
+    Essa sintaxe ordena apenas os valores escalares da coleção (outros tipos de elementos como objetos ou coleções são retornados sem ordenar).
 
 Se a coleção conter elementos de tipos diferentes, são primeiro agrupados por tipo e ordenados depois. Se *attributePath* levar a uma propriedade de objeto que conter valores de diferentes tipos, primeiro se agrupam por tipo e se ordenam depois.
 
@@ -1884,14 +1879,14 @@ In the callback, pass some code that compares two values and returns **true** if
 
 The callback receives the following parameters:
 
-- $1 (object), where:
-    - *$1.value* (any type): first element value to be compared
-    - *$1.value2* (any type): second element value to be compared
-    - $2...$N (any type): extra parameters
+- $1 (objeto), onde:
+    - em *$1.value* (qualquer tipo): primeiro elemento a ser comparado
+    - em *$1.value2* (qualquer tipo): segundo elemento a ser comparado
+    - $2...$N (qualquer tipo): parâmetros adicionais
 
 If you used a method, it must set the following parameter:
 
-- *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise
+- *$1.result* (boolean): **true** se *$1.value < $1.value2*, **false** do contrário
 
 #### Exemplo 1
 
@@ -2080,7 +2075,7 @@ Esta função devolve uma *cópia superficial*, o que significa que os objetos o
 O parâmetro *queryString* usa a sintaxe abaixo:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+valor de comparação propertyPath {valor de comparação logicalOperator propertyPath}
 ```
 
 Para obter informação detalhada sobre como construir uma consulta utilizando os parâmetros *queryString*, *value* e *querySettings*, consulte a descrição da função [`dataClass.query()`](DataClassClass.md#query).
@@ -2134,7 +2129,7 @@ Este exemplo devolve as pessoas cujo nome não começa por uma string de uma var
 Este exemplo devolve as pessoas cuja idade não se conhece (propriedade definida como null ou indefinida):
 
 ```4d
- $col:=$c.query("age=null") //placeholders not allowed with "null"
+ $col:=$c.query("age=null") //não são permitidos placeholders ou marcadores de posição com "null"
   //$col=[{name:Wesson...},{name:Sterling...},{name:Mark...}]
 ```
 
@@ -2142,7 +2137,7 @@ Este exemplo devolve as pessoas contratadas há mais de 90 dias:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 se hoje for 01/10/2018
 ```
 
 
@@ -2196,14 +2191,14 @@ Pode passar o valor para inicializar o acumulador em *initValue*. Se omitido, *$
 
 The callback receives the following parameters:
 
-*   in *$1.value*: element value to be processed
+*   em *$1.value*: valor elemento a ser processado
 *   in *$2: param*
-*   in *$N...*: *paramN...*
+*   em *$N...*: *paramN...*
 
 The callback sets the following parameter(s):
 
-*   *$1.accumulator*: value to be modified by the function and which is initialized by *initValue*.
-*   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.accumulator*: valor que vai ser modificado pela função e que é inicializado por *initValue*.
+*   *$1.stop* (boolean, opcional): **true** para parar o callback do método. The returned value is the last calculated.
 
 
 #### Exemplo 1
@@ -2272,7 +2267,7 @@ The `.remove()` function <!-- REF #collection.remove(). Summary -->removes one o
 > This function modifies the original collection.
 
 In *index*, pass the position where you want the element to be removed from the collection.
-> **Warning**: Keep in mind that collection elements are numbered from 0. If *index* is greater than the length of the collection, actual starting index will be set to the length of the collection.
+> **Warning**: Keep in mind that collection elements are numbered from 0. If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 *   If *index* < 0, it is recalculated as *index:=index+length* (it is considered as the offset from the end of the collection).
 *   If the calculated value < 0, *index* is set to 0.
@@ -2388,9 +2383,14 @@ The `.sort()` function <!-- REF #collection.sort(). Na coleção original é uma
 
 
 ```4d
- var $c; $c2 : Collection
- $c:=New collection(1;3;5;2;4;6)
- $c2:=$c.reverse() //$c2=[6,4,2,5,3,1]
+ var $c : Collection
+ $c:=New collection
+ $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
+ $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 
@@ -2469,9 +2469,9 @@ A função `.query()` <!-- REF #collection.query(). Summary --> devolve todos os
 
 The returned collection contains the element specified by *startFrom* and all subsequent elements up to, but not including, the element specified by *end*. If only the *startFrom* parameter is specified, the returned collection contains all elements from *startFrom* to the last element of the original collection.
 
-*   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection).
+*   Se *index* < 0, será recalculado como *startFrom:=startFrom+length* (é considerado como o offset do final da coleção).
 *   If the calculated value < 0, *startFrom* is set to 0.
-*   If *end* < 0 , it is recalculated as *end:=end+length*.
+*   Se *end* < 0 , é recalculado como sendo *end:=end+length*.
 *   If *end < startFrom* (passed or calculated values), the method does nothing.
 
 #### Exemplo
@@ -2530,14 +2530,14 @@ The callback is called with the parameter(s) passed in *param* (optional). The c
 
 The callback receives the following parameters:
 
-*   in *$1.value*: element value to be processed
+*   em *$1.value*: valor elemento a ser processado
 *   in *$2: param*
-*   in *$N...*: *paramN...*
+*   em *$N...*: *paramN...*
 
 It can set the following parameter(s):
 
 *   (mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
-*   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.stop* (boolean, opcional): **true** para parar o callback do método. The returned value is the last calculated.
 
 In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
 
@@ -2607,10 +2607,10 @@ If you want to sort the collection elements in some other order or sort any type
 
 The callback receives the following parameters:
 
-- $1 (object), where:
-    - *$1.value* (any type): first element value to be compared
-    - *$1.value2* (any type): second element value to be compared
-- $2...$N (any type): extra parameters
+- $1 (objeto), onde:
+    - em *$1.value* (qualquer tipo): primeiro elemento a ser comparado
+    - em *$1.value2* (qualquer tipo): segundo elemento a ser comparado
+- $2...$N (qualquer tipo): parâmetros adicionais
 
 If you used a method, you must set the folllowing parameter:
 
