@@ -54,8 +54,6 @@ O resultado é parecido mas o _MethodB_ é avaliado somente se necessário.
  Else
     ALERT("Não introduciu um nome.")
  End if
- End if
- End if
 ```
 
 **Dica:** A ramificação pode ser realizada sem que as instruções sejam executadas em um caso ou no outro. Quando desenvolver um algoritmo ou uma aplicação especializada, nada impede que escreva:
