@@ -1,5 +1,5 @@
 ---
-id: clases
+id: classes
 title: Clases
 ---
 
@@ -63,7 +63,7 @@ Para eliminar una clase existente, puede:
 - en el Explorador 4D, seleccionar la clase y hacer clic en ![](assets/en/Users/MinussNew.png) o elegir **Mover a la papelera** en el menú contextual.
 
 
-### Using the 4D interface
+### Utilizar la interfaz 4D
 
 Los archivos de clase se almacenan automáticamente en la ubicación adecuada cuando se crean a través de la interfaz de 4D, ya sea a través del menú **Archivo** o del Explorador.
 
@@ -520,20 +520,8 @@ Function sayName()
 // Function definition
 Function getArea()
     var $0 : Integer
+
     $0:=(This.height)*(This.width)
-
-//Class: Square
-
-Class extends Rectangle
-
-Class constructor ($side : Integer)
-
-    // Llama al class constructor de la clase padre con longitudes
-    // proporcionados para el ancho y alto del rectángulo
-    Super($side;$side)
-    // En las clases derivadas, Super debe ser llamado antes de que 
-    // pueda utilizar 'This'
-    This.
 ```
 
 ```4d
