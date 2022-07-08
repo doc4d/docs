@@ -68,6 +68,9 @@
       "API/FunctionClass": {
         "title": "Formula"
       },
+      "API/HTTPRequestClass": {
+        "title": "HTTPRequest"
+      },
       "API/IMAPTransporterClass": {
         "title": "IMAPTransporter"
       },
@@ -123,13 +126,13 @@
         "title": "Parámetros de la copia de seguridad"
       },
       "code-editor/creating-using-macros": {
-        "title": "Creating and using macros"
+        "title": "Creación y uso de macros"
       },
       "code-editor/find-replace": {
         "title": "Find and replace"
       },
       "code-editor/overview": {
-        "title": "About 4D Code"
+        "title": "Sobre el código 4D"
       },
       "code-editor/write-class-method": {
         "title": "Editor de código"
@@ -997,7 +1000,6 @@
       "Class API Reference": "Clases API",
       "Handling Code": "Handling Code",
       "Debugging": "Depuración",
-      "Transformation Tags": "Etiquetas Transformación",
       "Settings": "Settings",
       "Preferences": "Preferencias",
       "4D Server Administration Window": "Ventana de administración de 4D Server",
@@ -1054,7 +1056,7 @@
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",
-    "Description of log files|no description given": "Descripción de los archivos históricos",
+    "Description of log files|no description given": "Descripción de los archivos de historial",
     "Command Line Interface|no description given": "Interfaz de línea de comando",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferencias",
