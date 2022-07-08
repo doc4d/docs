@@ -36,7 +36,7 @@ You can modify this file or the contents of the folder subsequently as desired (
 
 You can add customized macros in the "Macros.xml" file using a standard text editor or by programming. You can also add XML files of customized macros in this folder.
 
-In local mode, the macros file can be open while using 4D. The list of available macros is updated on each event activating 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
+In local mode, the macros file can be open while using 4D.  The list of available macros is updated on each event activating 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
 
 Empty or erroneous macros are not displayed.
 
@@ -168,4 +168,4 @@ Strict syntax rules must be observed in order for macros files to respect the XM
 
 - Comments of the "// my comment" type, allowed inside `<macro>` elements in previous versions of 4D, are not compatible with the XML syntax. The lines of comments must respect the standard `"<!-- my comment -->"` form.
 - The `<>` symbols used more particularly for interprocess object names must be encoded. For example, the *<>params* variable must be written `&lt;>params`.
-- The initial `<macros>` declaration tag could be omitted in previous versions of 4D. It is now mandatory; otherwise, the file will not be loaded.
+- The initial `<macros>` declaration tag could be omitted in previous versions of 4D.  It is now mandatory; otherwise, the file will not be loaded.
