@@ -7,7 +7,7 @@ Using the tabs on the **Web** page, you can configure various aspects of the int
 
 ## Configuración
 
-### Publishing Information
+### Información de publicación
 
 #### Lanzar el servidor web al inicio
 
