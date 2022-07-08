@@ -1,6 +1,6 @@
 ---
 id: debugLogFiles
-title: Descripción de los archivos históricos
+title: Descripción de los archivos de historial
 ---
 
 Las aplicaciones 4D pueden generar varios archivos de historial que son útiles para depurar u optimizar su ejecución. Los historiales suelen iniciarse o detenerse utilizando selectores de los comandos [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) o [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) y se almacenan en la carpeta [Logs folder](Project/architecture.md#logs) del proyecto.
@@ -42,7 +42,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1)
-//del lado remoto
+////del lado remoto
 ```
 > Esta instrucción también inicia el archivo de historial [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
 
@@ -92,7 +92,7 @@ SET DATABASE PARAMETER(4D Server log recording;1) //lado servidor
 *   en un cliente:
 
 ```4d
-SET DATABASE PARAMETER(Client Log Recording;1) //del lado remoto
+SET DATABASE PARAMETER(Client Log Recording;1) ////del lado remoto
 ```
 > Esta instrucción también inicia el archivo de historial [4DRequestsLog.txt](#4drequestslogtxt).
 
@@ -144,12 +144,12 @@ Los siguientes campos se registran tanto para la solicitud como para la respuest
 | ---------------- | ------------------------------------------------------------------ |
 | SocketID         | ID del socket utilizado para la comunicación                       |
 | PeerIP           | Dirección IPv4 del host (cliente)                                  |
-| PeerPort         | Puerto utilizado por host (cliente)                                |
+| PeerPort         | Puerto utilizado por el host (cliente)                             |
 | TimeStamp        | Timestamp en milisegundos (desde el inicio del sistema)            |
 | ConnectionID     | Conexión UUID (UUID del VTCPSocket utilizado para la comunicación) |
 | SequenceNumber   | Número de operación único y secuencial en la sesión de historial   |
 
-## 4DDebugLog.txt (estándar)
+## 4DDebugLog.txt (standard)
 
 Este archivo de historial registra cada evento que se produce a nivel de programación 4D. El modo estándar ofrece una visión básica de los eventos.
 
@@ -274,7 +274,7 @@ Los archivos de historial pueden producirse en dos versiones:
 *   una versión extendida:
     *   adjunto(s) incluido(s) no hay reciclaje automático
     *   nombre personalizado
-    *   reservado con fines específicos
+    *   reservado para fines específicos
 
     Para iniciar este historial:
 
@@ -352,7 +352,7 @@ You can use a **log configuration file** to easily manage log recording in a pro
 
 ### Cómo activar el archivo
 
-Hay varias maneras de activar el archivo de configuración de los logs:
+There are several ways to enable the log configuration file:
 
 - On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. Se activa inmediatamente en el servidor.
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
@@ -364,7 +364,7 @@ Hay varias maneras de activar el archivo de configuración de los logs:
 
 ### Descripción del archivo JSON
 
-El archivo de configuración de log es un archivo `.json` que puede contener las siguientes propiedades:
+The log configuration file is a `.json` file that can contain the following properties:
 
 ```json
 {
