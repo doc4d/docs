@@ -60,7 +60,7 @@ You can enlarge or reduce the relative width of each list area by dragging one o
 
 - You can hide the lists in all the windows in the following ways:
   - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
-  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened.
+  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. These options are found in **Preferences** > **Methods** > **Options**
 
 #### Available lists of items
 
@@ -395,11 +395,13 @@ Es gibt zwei Varianten zum Erstellen von Kommentaren:
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
 <pre>&lt;code class="//This is a comment\" spaces=">
+ &lt;code class="//This is a comment\" spaces=">
  For(vCounter;1;2)\
   //comment\
   //comment\
   //comment\
  End for
+&lt;/code>
 &lt;/code></pre>
 
 #### `/*comment*/`
