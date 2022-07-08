@@ -123,7 +123,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | certificatesFolder   | [Folder](#FolderClass.md)                       | Sets the active client certificates folder                                                                                                                                                                                                                        | indefinido   |
 | dataType             | Texto                                           | Type of the response body attribute. Values: "text", "blob", "object", or "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise) | "auto"       |
 | encoding             | Texto                                           | Used only in case of requests with a `body` (`post` or `put` methods). Encoding of the request body content if it's a text, ignored if content-type is set inside the headers                                                                                     | "UTF-8"      |
-| headers              | Objeto                                          | Headers of the request. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                      | Empty object |
+| headers              | Objeto                                          | Encabezados de la petición. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                  | Empty object |
 | method               | Texto                                           | "POST", "GET", or other method                                                                                                                                                                                                                                    | "GET"        |
 | minTLSVersion        | Texto                                           | Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                               | "`TLSv1_2`"  |
 | onData               | [Function](#FunctionClass.md)                   | Callback when data from the body is received. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                      | indefinido   |
@@ -135,7 +135,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | proxyAuthentication  | [authentication object](#authentication-object) | Object handling proxy authentication                                                                                                                                                                                                                              | indefinido   |
 | serverAuthentication | [authentication object](#authentication-object) | Object handling server authentication                                                                                                                                                                                                                             | indefinido   |
 | returnResponseBody   | Booleano                                        | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                            | True         |
-| timeout              | Real                                            | Tiempo de espera en segundos. Undefined = no timeout                                                                                                                                                                                                              | Indefinido   |
+| timeout              | Real                                            | Tiempo de espera en segundos. Indefinido = sin tiempo de espera                                                                                                                                                                                                   | Indefinido   |
 
 #### Callback functions
 
@@ -161,10 +161,10 @@ Esta es la secuencia de llamadas de retorno:
 
 An `event` object is returned when a [callback function](#callback-functions) is called. Contiene las siguientes propiedades:
 
-| Propiedad | Tipo  | Descripción                                                                           |
-| --------- | ----- | ------------------------------------------------------------------------------------- |
-| .data     | blob  | Received data. It is always *undefined* except in the `onData` callback               |
-| .type     | texto | Type of event. Possible values: "response", "error", "headers", "data", or "terminate |
+| Propiedad | Tipo  | Descripción                                                                            |
+| --------- | ----- | -------------------------------------------------------------------------------------- |
+| .data     | blob  | Datos recibidos. It is always *undefined* except in the `onData` callback              |
+| .type     | texto | Tipo de evento. Possible values: "response", "error", "headers", "data", or "terminate |
 
 
 
@@ -325,7 +325,7 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 
 > This function is thread-safe.
 
-The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. It triggers the `onTerminate` event. 
+The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborta la petición HTTP<!-- END REF -->. It triggers the `onTerminate` event. 
 
 <!-- END REF -->
 
