@@ -37,7 +37,7 @@ El administrador puede:
 
 El administrador no puede:
 - modificar el usuario Diseñador
-- por defecto, el acceso a las partes protegidas de la aplicación. En particular, el administrador no puede acceder al modo Diseño si está restringido. El Administrador debe formar parte de uno o más grupos para tener privilegios de acceso en la aplicación. El administrador se coloca en todos los grupos nuevos, pero puede eliminar el nombre del administrador de cualquier grupo.
+- por defecto, el acceso a las partes protegidas de la aplicación. En particular, el administrador no puede acceder al modo Diseño si está restringido. En particular, el administrador no puede acceder al modo Diseño si está restringido. El administrador se coloca en todos los grupos nuevos, pero puede eliminar el nombre del administrador de cualquier grupo.
 
 Tanto el Diseñador como el Administrador están disponibles por defecto en todas las aplicaciones. En la [caja de diálogo de gestión de usuarios](#users-and-groups-editor), los iconos del Diseñador y del Administrador se muestran en rojo y verde respectivamente:
 
@@ -74,7 +74,7 @@ La lista de usuarios muestra todos los usuarios, incluyendo el [Diseñador y el 
 
 4D añade un nuevo usuario a la lista, llamado por defecto "Nuevo usuarioX".
 
-3. Introduzca el nombre de usuario. Este nombre será utilizado por el usuario para abrir la aplicación. Puede renombrar un usuario en cualquier momento utilizando el comando **Renombrar** del menú contextual, o utilizando los atajos Alt+clic (Windows) u Opción+clic (macOS), o haciendo dos veces clic en el nombre que quiera cambiar.
+3. Introduzca el nombre de usuario. Introduzca el nombre de usuario. Puede renombrar un usuario en cualquier momento utilizando el comando **Renombrar** del menú contextual, o utilizando los atajos Alt+clic (Windows) u Opción+clic (macOS), o haciendo dos veces clic en el nombre que quiera cambiar.
 
 4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. You can use up to 15 alphanumeric characters for a password. El editor de contraseñas es sensible a las mayúsculas y minúsculas.
 
