@@ -47,8 +47,8 @@ The returned objects are of the [`DataClassAttribute`](DataClassAttributeClass.m
 #### Exemplo 1
 
 ```4d
-$salary:=ds.Employee.salary //returns the salary attribute in the Employee dataclass
-$compCity:=ds.Company["city"] //returns the city attribute in the Company dataclass
+$salary:=ds. Employee.salary //returns the salary attribute in the Employee dataclass
+$compCity:=ds. Company["city"] //returns the city attribute in the Company dataclass
 ```
 
 
@@ -62,16 +62,16 @@ Considering the following database structure:
 ```4d
 var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
- $firstnameAtt:=ds.Employee.firstname
+ $firstnameAtt:=ds. Employee.firstname
   //{name:firstname,kind:storage,fieldType:0,type:string,fieldNumber:2,indexed:true,
   //keyWordIndexed:false,autoFilled:false,mandatory:false,unique:false}
 
- $employerAtt:=ds.Employee.employer
+ $employerAtt:=ds. Employee.employer
   //{name:employer,kind:relatedEntity,relatedDataClass:Company,
   //fieldType:38,type:Company,inverseName:employees}
   //38=Is object
 
- $employeesAtt:=ds.Company.employees
+ $employeesAtt:=ds. Company.employees
   //{name:employees,kind:relatedEntities,relatedDataClass:Employee,
   //fieldType:42,type:EmployeeSelection,inverseName:employer}
   //42=Is collection
@@ -86,7 +86,7 @@ Considering the following table properties:
 
 ```4d
  var $sequenceNumberAtt : Object
- $sequenceNumberAtt=ds.Employee.sequenceNumber
+ $sequenceNumberAtt=ds. Employee.sequenceNumber
   //{name:sequenceNumber,kind:storage,fieldType:0,type:string,fieldNumber:13,
   //indexed:true,keyWordIndexed:false,autoFilled:true,mandatory:false,unique:true}
 ```
@@ -139,8 +139,8 @@ No  parâmetro *querySettings* é possível passar um objeto que conteha opçõe
 #### Exemplo
 
 ```4d
- var $allEmp : cs.EmployeeSelection
- $allEmp:=ds.Employee.all()
+ var $allEmp : cs. EmployeeSelection
+ $allEmp:=ds. Employee.all()
 ```
 
 
@@ -190,7 +190,7 @@ Para cada objeto de *objectCol*:
     *   If the primary key is given (as is) and exists, an error is sent
     *   If the primary key is given (as is) and does not exist, the entity is created
     *   If the primary is not given, the entity is created and the primary key value is assigned with respect to standard database rules.
-> The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
+> > The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
 
 **Entidades relacionadas**
 
@@ -437,15 +437,15 @@ Este exemplo ilustra o uso da propriedade *context* :
 **.getDataStore()** : cs. DataStore<!-- END REF -->
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parameter | Type         |    | Descrição                    |
-| --------- | ------------ |:--:| ---------------------------- |
-| Resultado | cs.DataStore | <- | Datastore da classe de dados |
+| Parameter | Type          |    | Descrição                    |
+| --------- | ------------- |:--:| ---------------------------- |
+| Resultado | cs. DataStore | <- | Datastore da classe de dados |
 <!-- END REF -->
 
 
 #### Descrição
 
-The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+The `.getDataStore()` function<!-- REF #DataClassClass.getDataStore(). Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
 
 A datastore pode ser:
 
@@ -500,7 +500,7 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 
 #### Descrição
 
-The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta função é útil para configurar o código genérico.
+The `.getInfo()` function<!-- REF #DataClassClass.getInfo(). Summary -->returns an object providing information about the dataclass<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Returned object**
 
@@ -578,7 +578,7 @@ The `.getInfo()` function <!-- REF #DataClassClass.getInfo().Summary -->returns 
 
 #### Descrição
 
-The `.new()` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+The `.new()` function<!-- REF #DataClassClass.new(). Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
 
 O objeto entidade se cria em memória e não se guarda no banco de dados até que se chama a função [`.save( )`](EntityClass.md#save). Se a entidade for apagada antes de ser salva, não se pode recuperar.
 
@@ -626,7 +626,7 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 #### Descrição
 
-The `.newSelection()` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+The `.newSelection()` function<!-- REF #DataClassClass.newSelection(). Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
 
 > Para mais informação sobre as seleçõees de entidades não compartilháveis, consulte [esta seção](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
@@ -677,7 +677,7 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 
 #### Descrição
 
-The `.query()` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
+The `.query()` function<!-- REF #DataClassClass.query(). Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
 
 Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
@@ -693,7 +693,7 @@ attributePath|formula comparator value
 
 onde:
 
-*   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). Também pode usar um **placeholder** (ver abaixo).
+*   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). Também pode usar um **placeholder** (ver abaixo).
 > *You cannot use directly attributes whose name contains special characters such as ".", "\[ ]", or "=", ">", "#"..., because they will be incorrectly evaluated in the query string. If you need to query on such attributes, you must consider using placeholders, which allow an extended range of characters in attribute paths (see* **Using placeholders** *below).*
 
 *   **formula**: a valid formula passed as `Text` or `Object`. The formula will be evaluated for each processed entity and must return a boolean value. Within the formula, the entity is available through the `This` object.
