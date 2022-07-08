@@ -152,7 +152,7 @@ The `VP ADD SHEET` command<!-- REF #_method_.VP ADD SHEET. Summary -->inserts a 
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones. In *sheet*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning.
+In *sheet*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
 > Indexing starts at 0.
 
 In *name*, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
@@ -594,7 +594,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 
 #### Descrição
 
-The `VP Convert to picture` command<!-- REF #_method_.VP Convert to picture. Summary -->converts the *vpObject* 4D View Pro object (or the *rangeObj* range within *vpObject*) to a SVG picture<!-- END REF -->.
+The `VP Convert to picture` command <!-- REF #_method_.VP Convert to picture.Summary -->converts the *vpObject* 4D View Pro object (or the *rangeObj* range within *vpObject*) to a SVG picture<!-- END REF -->.
 
 This command is useful, for example:
 
@@ -616,7 +616,7 @@ Document contents are converted with respect to their viewing attributes, includ
 * Row height
 * Column width
 * Hidden columns / rows.
-> > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
+> Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### Function result
 
@@ -721,7 +721,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 #### Descrição
 
-The `VP CREATE TABLE` command<!-- REF #_method_.VP CREATE TABLE. Summary -->creates a table in the specified range<!-- END REF -->. You can create a table in a range of cells to make managing and analyzing a group of related data easier. A table typically contains related data in rows and columns, and takes advantage of a [data context](#vp-set-data-context).
+The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->. You can create a table in a range of cells to make managing and analyzing a group of related data easier. A table typically contains related data in rows and columns, and takes advantage of a [data context](#vp-set-data-context).
 
 ![](assets/en/ViewPro/vp-create-table.png)
 
@@ -772,7 +772,7 @@ Here the titles of the columns would be `LastName` and `FirstName`.
 
 * If the data passed to the command is a collection of scalar values, it must contain a collection of subcollections:
 
-  * The first-level collection contains subcollections of values. Each subcollection defines a row. Each subcollection defines a row. The number of values in the first subcollection determines how many columns are created.
+  * The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row. The number of values in the first subcollection determines how many columns are created.
   * The subcollections' indices are used as column titles.
   * Each subcollection defines cell values for the row. Values can be `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` or `Picture`. A `Time` value must be an a object containing a time attribute, as described in [VP SET VALUE](#vp-set-value).
 
@@ -790,7 +790,10 @@ var $data : Object
 $data:=New object()
 $data.people:=New collection()
 $data.people.push(New object("firstName"; "John"; "lastName"; "Smith"; "email"; "johnsmith@gmail.com"))
-$data.people.push(New object("firstName"; "Mary"; "lastName"; "Poppins"; "email"; "marypoppins@gmail.com")) VP SET DATA CONTEXT("ViewProArea"; $data)
+$data.people.push(New object("firstName"; "Mary"; "lastName"; "Poppins"; "email"; "marypoppins@gmail.com"))
+
+
+VP SET DATA CONTEXT("ViewProArea"; $data)
 
 // Define the columns for the table
 var $options : Object
@@ -801,7 +804,8 @@ $options.tableColumns.push(New object("name"; "First name"; "dataField"; "firstN
 $options.tableColumns.push(New object("name"; "Last name"; "dataField"; "lastName"))
 $options.tableColumns.push(New object("name"; "Email"; "dataField"; "email"))
 
-// Create a table from the "people" collection VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); "ContextTable"; "people"; $options)
+// Create a table from the "people" collection
+VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); "ContextTable"; "people"; $options)
 ```
 
 Here's the result:
@@ -833,7 +837,7 @@ In *rangeObj*, pass an object containing a range of columns to remove. If the pa
 
 * both columns and rows, only the columns are removed.
 * only rows, the command does nothing.
-> > > Columns are deleted from right to left.
+> Columns are deleted from right to left.
 
 #### Exemplo
 
@@ -864,13 +868,13 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 #### Descrição
 
-The `VP DELETE ROWS` command<!-- REF #_method_.VP DELETE ROWS. Summary -->removes the rows  in the *rangeObj*<!-- END REF -->.
+The `VP DELETE ROWS` command <!-- REF #_method_.VP DELETE ROWS.Summary -->removes the rows  in the *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass an object containing a range of rows  to remove. If the passed range contains:
 
 * both columns and rows, only the rows  are removed.
 * only columns, the command does nothing.
-> > > Rows are deleted from bottom to top.
+> Rows are deleted from bottom to top.
 
 #### Exemplo
 
@@ -1613,7 +1617,7 @@ will return this information in the *$defaultStyle* object:
 
 #### Descrição
 
-The `VP Get formula` command<!-- REF #_method_.VP Get formula. Summary -->retrieves the formula from a designated cell range<!-- END REF -->.
+The `VP Get formula` command <!-- REF #_method_.VP Get formula.Summary -->retrieves the formula from a designated cell range<!-- END REF -->.
 
 In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* designates multiple cells or multiple ranges, the formula of the first cell is returned. If *rangeObj* is a cell that does not contain a formula, the method returns an empty string.
 
@@ -1739,7 +1743,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 #### Descrição
 
-The `VP Get frozen panes` command<!-- REF #_method_.VP Get frozen panes. Summary -->returns an object with information about the frozen columns and rows in *vpAreaName*<!-- END REF -->.
+The `VP Get frozen panes` command <!-- REF #_method_.VP Get frozen panes.Summary -->returns an object with information about the frozen columns and rows in *vpAreaName*<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -1836,7 +1840,7 @@ $list:=VP Get names("ViewProArea";2) //names in 3rd sheet
 
 #### Descrição
 
-The `VP Get print info` command<!-- REF #_method_.VP Get print info. Summary -->returns an object containing the print attributes of the *vpAreaName*<!-- END REF -->.
+The `VP Get print info` command <!-- REF #_method_.VP Get print info.Summary -->returns an object containing the print attributes of the *vpAreaName*<!-- END REF -->.
 
 Pass the the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
@@ -2312,7 +2316,7 @@ borderTop:{color:green,style:10}
 
 #### Descrição
 
-The `VP Get stylesheets` command<!-- REF #_method_.VP Get stylesheets. Summary -->returns the collection of defined style sheet objects from the designated *sheet*<!-- END REF -->.
+The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *sheet*<!-- END REF -->.
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -3182,7 +3186,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 #### Descrição
 
-The `VP REMOVE TABLE` command<!-- REF #_method_.VP REMOVE TABLE. Summary -->removes a table<!-- END REF --> that you created with [VP CREATE TABLE](#vp-create-table).
+The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes a table<!-- END REF --> that you created with [VP CREATE TABLE](#vp-create-table).
 
 In *vpAreaName*, pass the name of the area where the table to remove is located.
 
@@ -3337,7 +3341,7 @@ $row:=VP Row("ViewProArea";9) // row 10
 
 #### Descrição
 
-The `VP ROW AUTOFIT` command<!-- REF #_method_.VP ROW AUTOFIT. Summary -->automatically sizes the row(s) in *rangeObj* according to their contents<!-- END REF -->.
+The `VP ROW AUTOFIT` command <!-- REF #_method_.VP ROW AUTOFIT.Summary -->automatically sizes the row(s) in *rangeObj* according to their contents<!-- END REF -->.
 
 In *rangeObj*, pass a range object containing a range of the rows whose size will be automatically handled.
 
@@ -3408,10 +3412,12 @@ The following commands can be used in the callback method:
 You want to create an offscreen 4D View Pro area and get the value of a cell:
 
 ```4d
-// cs. OffscreenArea class declaration Class constructor ($path : Text)
+// cs.OffscreenArea class declaration 
+Class constructor ($path : Text)
  This.filePath:=$path
 
-// This function will be called on each event of the offscreen area Function onEvent()
+// This function will be called on each event of the offscreen area 
+Function onEvent()
  Case of
   :(FORM Event.code=On VP Ready)
       VP IMPORT DOCUMENT(This.area;This.filePath)
@@ -3435,10 +3441,13 @@ You want to load a large document offscreen, wait for all calculations to comple
 
 
 ```4d
-//cs. OffscreenArea class declaration Class constructor($pdfPath : Text)
+//cs.OffscreenArea class declaration
+Class constructor($pdfPath : Text)
  This.pdfPath:=$pdfPath
  This.autoQuit:=False
- This.isWaiting:=False Function onEvent()
+ This.isWaiting:=False
+
+Function onEvent()
  Case of
      :(FORM Event.code=On VP Ready)
  // Document import
@@ -5058,7 +5067,7 @@ In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) wh
 
 The *valuesCol* parameter is two-dimensional:
 
-* The first-level collection contains subcollections of values. Each subcollection defines a row. Each subcollection defines a row.
+* The first-level collection contains subcollections of values. Each subcollection defines a row. Pass an empty collection to skip a row.
 * Each subcollection defines cell values for the row. Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
 
  | Propriedade | Type                                     | Descrição                        |
