@@ -1,6 +1,6 @@
 ---
 id: creating-using-macros
-title: Creating and using macros
+title: Creación y uso de macros
 ---
 
 Puede utilizar macrocomandos en sus métodos. Using macro-commands saves a lot of time during code entry.
@@ -13,7 +13,7 @@ Macros are stored in one or more XML format (text) file(s). They can be placed i
 
 Las macros 4D están escritas en formato XML. You can use the 4D default macro file as is or modify it.
 
-## Location of macros
+## Ubicación de las macros
 
 4D loads the macros from a folder named **Macros v2**. Macros must be in the form of one or more XML files that are placed in this folder.
 
@@ -25,7 +25,7 @@ La carpeta "Macros v2" puede ser ubicada:
 
 These three locations can be used simultaneously: it is possible to install a "Macros v2" folder in each location. The macros will be loaded in the following order: 4D folder, structure file, component 1... component X.
 
-## Default macros
+## Macros por defecto
 
 
 4D offers a set of default macros corresponding, in particular, to the list of keywords in previous versions of 4D. These macros are included in the default "*Macros.xml*" file, placed in the "Macros v2" folder that is created in the active 4D folder of the machine during the initial startup of 4D.
@@ -104,8 +104,8 @@ Este es un ejemplo de definición de una macro:
 
 | **Content of macro**                                 | **Comentarios**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<?xml version="1.0"...?>`                     | XML declaration                                                                                                                                 |
-| `<!DOCTYPE macros SYSTEM>`                     | Document declaration                                                                                                                            |
+| `<?xml version="1.0"...?>`                     | Declaración XML                                                                                                                                 |
+| `<!DOCTYPE macros SYSTEM>`                     | Declaración del documento                                                                                                                       |
 | `<macros>`                                     | Start of macros XML file                                                                                                                        |
 | `<macro name="RecordLoop">`                    | Start of macro definition and name                                                                                                              |
 | `<text>`                                       | Start of macro code                                                                                                                             |
@@ -113,9 +113,9 @@ Este es un ejemplo de definición de una macro:
 | SAVE RECORD(`<Selection/>`)                    |                                                                                                                                                 |
 | NEXT RECORD(`<Selection/>`)                    |                                                                                                                                                 |
 | End for                                              |                                                                                                                                                 |
-| `</text>`                                      | End of macro code                                                                                                                               |
-| `</macro>`                                     | End of macro definition                                                                                                                         |
-| `</macros>`                                    | End of macros XML file                                                                                                                          |
+| `</text>`                                      | Fin del código macro                                                                                                                            |
+| `</macro>`                                     | Fin de la definición de macro                                                                                                                   |
+| `</macros>`                                    | Fin del archivo XML de macros                                                                                                                   |
 
 ## Sobre la etiqueta `<method>`
 
@@ -127,7 +127,7 @@ The code of a called method is executed in a new process. This process is killed
 
 > **Note:** The structure process remains frozen until the called method execution is completed. You must make sure that the execution is quick and that there is no risk of it blocking the application. If this occurs, use the **Ctrl+F8** (Windows) or **Command+F8** (Mac OS) command to "kill" the process.
 
-## Calling macros
+## Llamando macros
 
 By default, macros can be called using the context menu or toolbar of the Code Editor, the autocomplete function, or a specific list at the bottom of the Code Editor window.
 
