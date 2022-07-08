@@ -131,7 +131,7 @@ $instance:=cs.myClass.new()
 | ---------- | ------ | -- | -------------- |
 | classStore | objeto | <- | Class store 4D |
 
-El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a las APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
+El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
 
 #### Ejemplo
 
@@ -148,7 +148,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto de la [clase "Class"](API/ClassClass.md). Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md).
 
-- cadena [`name`](API/ClassClass.md#name)
+- String [`name`](API/ClassClass.md#name)
 - objeto [`superclass`](API/ClassClass.md#superclass) (null si ninguno)
 - función [`new()`](API/ClassClass.md#new), que permite instanciar objetos de clase.
 
@@ -392,7 +392,7 @@ A class constructor function, which can accept [parameters](#parameters), can be
 
 In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
 
-Para una función class constructor, el comando `Current method name` devuelve: `<ClassName>:constructor`, por ejemplo "MyClass:constructor".
+The type of the computed property is defined by the `$return` type declaration of the *getter*.
 
 
 
@@ -522,11 +522,18 @@ Function getArea()
     var $0 : Integer
     $0:=(This.height)*(This.width)
 
-// Function definition
-Function getArea()
-    var $0 : Integer
+//Class: Square
 
-    $0:=(This.height)*(This.width)
+Class extends Rectangle
+
+Class constructor ($side : Integer)
+
+    // Llama al class constructor de la clase padre con longitudes
+    // proporcionados para el ancho y alto del rectángulo
+    Super($side;$side)
+    // En las clases derivadas, Super debe ser llamado antes de que 
+    // pueda utilizar 'This'
+    This.
 ```
 
 ```4d

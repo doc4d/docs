@@ -103,7 +103,7 @@ component_method("host_method_name")
 
 ## Sharing of classes and functions
 
-By default, component classes and functions cannot be called from the 4D Code Editor of the host project. If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. Additionally, you can control how component classes and functions are suggested in the host Code Editor.
+If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. By default, component classes and functions cannot be called from the 4D Code Editor of the host project. Additionally, you can control how component classes and functions are suggested in the host Code Editor.
 
 ### Declaring the component namespace
 
