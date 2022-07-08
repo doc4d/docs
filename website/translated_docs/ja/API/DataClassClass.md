@@ -679,7 +679,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### 説明
 
-`.query()` 関数は、データクラスの全エンティティから、 <!-- REF #DataClassClass.query().Summary -->*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
+`.query()` 関数は、データクラスの全エンティティから、 <!-- REF #DataClassClass.query().Summary -->*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。 戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
