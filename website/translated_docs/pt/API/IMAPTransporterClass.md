@@ -1546,29 +1546,29 @@ The function returns an object describing the IMAP status:
 To to rename your “Invoices” mailbox to “Bills”:
 
 ```4d
-var $server,$boxInfo,$result : Object
- var $transporter : 4D.IMAPTransporter
+var $pw : text
+var $options; $transporter; $status : object
 
- $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
- $server.port:=993
- $server.user:="4d@gmail.com"
- $server.password:="XXXXXXXX"
+$options:=New object
 
-  //create transporter
- $transporter:=IMAP New transporter($server)
+$pw:=Request("Please enter your password:")
 
-  //select mailbox
- $boxInfo:=$transporter.selectBox("INBOX")
+If(OK=1) $options.host:="imap.gmail.com"
 
-  If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
-    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
-        New object("withBody";False;"updateSeen";False))
-    For each($mail;$result.list)
-        // ...
+$options.user:="test@gmail.com"
+$options.password:=$pw
+
+$transporter:=IMAP New transporter($options)
+
+// rename mailbox
+$status:=$transporter.renameBox("Invoices"; "Bills")
+
+If ($status.success)
+   ALERT("Mailbox renaming successful!")
+   Else
    ALERT("Error: "+$status.statusText)
-End if End if
+ End if
+End if
 ```
 
 
