@@ -112,7 +112,9 @@ The following elements are required for the build:
 - 4D Volume Desktop (the 4D database engine),
 - an [appropriate license](#licenses)
 
-On Windows, this feature creates an executable file (.exe). On macOS, it handles the creation of software packages. The principle consists of merging a compiled structure file with 4D Volume Desktop. The functionality provided by the 4D Volume Desktop file is linked with the product offer to which you have subscribed. For more information about this point, refer to the sales documentation and to the [4D Store](http://www.4d.com/).
+On Windows, this feature creates an executable file (.exe). On macOS, it handles the creation of software packages.
+
+The principle consists of merging a compiled structure file with 4D Volume Desktop. The functionality provided by the 4D Volume Desktop file is linked with the product offer to which you have subscribed. For more information about this point, refer to the sales documentation and to the [4D Store](http://www.4d.com/).
 
 You can define a default data file or allow users to create and use their own data file (see the [Data file management in final applications](https://doc.4d.com/4Dv17R6/4D/17-R6/Data-file-management-in-final-applications.300-4354729.en.html) section).
 
@@ -122,7 +124,14 @@ It is possible to automate the update of merged single-user applications by mean
 
 In order to build a stand-alone application, you must first designate the folder containing the 4D Volume Desktop file:
 
-*   *Windows* - the folder contains the 4D Volume Desktop.4DE, 4D Volume Desktop.RSR, as well as various files and folders required for its operation. These items must be placed at the same level as the selected folder. *macOS* - 4D Volume Desktop is provided in the form of a structured software package containing various generic files and folders. To select the 4D Volume Desktop folder, click on the **[...]** button. A dialog box appears allowing you to designate the 4D Volume Desktop folder (Windows) or package (macOS). Once the folder is selected, its complete pathname is displayed and, if it actually contains 4D Volume Desktop, the option for building an executable application is activated. #### Generated files When you click on the **Build** button, 4D automatically creates a **Final Application** folder in the specified **Destination Folder**. Inside the Final Application folder is a subfolder with the name of the specified application in it. If you have specified "MyProject" as the name of the application, you will find the following files in this subfolder (aka MyProject): * For example, if you use 4D Developer v18, you must select a 4D Volume Desktop v18.</p> </blockquote>
+*   *Windows* - the folder contains the 4D Volume Desktop.4DE, 4D Volume Desktop.RSR, as well as various files and folders required for its operation. These items must be placed at the same level as the selected folder.
+*   *macOS* - 4D Volume Desktop is provided in the form of a structured software package containing various generic files and folders.
+
+To select the 4D Volume Desktop folder, click on the **[...]** button. A dialog box appears allowing you to designate the 4D Volume Desktop folder (Windows) or package (macOS).
+
+Once the folder is selected, its complete pathname is displayed and, if it actually contains 4D Volume Desktop, the option for building an executable application is activated.
+
+> The 4D Volume Desktop version number must match the 4D Developer Edition version number. For example, if you use 4D Developer v18, you must select a 4D Volume Desktop v18.
 
 #### Data linking mode
 
@@ -144,11 +153,11 @@ If you have specified "MyProject" as the name of the application, you will find 
 *   *Windows*
     *   MyProject.exe  - Your executable and a MyProject.rsr (the application resources)
     *   4D Extensions folder, Resources folder, various libraries (DLL), Native Components folder, SASL Plugins folder - Files necessary for the operation of the application
-    *   Database folder  - Includes a Resources folder and  MyProject.4DZ file. They make up the compiled structure of the database as well as the database Resources folder. **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applicatons).
+    *   Database folder  - Includes a Resources folder and  MyProject.4DZ file. They make up the compiled structure of the database as well as the database Resources folder. **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applicatons).</li>
     *   (Optional) Components folder and/or Plugins folder - Contains any components and/or plug-in files included in the database. For more information about this, refer to the \[Plugins and components\](#plugins-and-components) section. Licenses folder - An XML file of license numbers integrated into the application. For more information about this, refer to the \[Licenses & Certificate\](#licenses-and-certificate) section. For more information about this, refer to the [Licenses & Certificate](#licenses-and-certificate) section.
     *   Additional items added to the 4D Volume Desktop folder, if any (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)).
 
-    All these items must be kept in the same folder in order for the executable to operate.
+    All these items must be kept in the same folder in order for the executable to operate.</ul></li>
 
 *   *macOS*
     -   A software package named MyProject.app containing your application and all the items necessary for its operation, including the plug-ins, components and licenses. For more information about integrating plug-ins and components, refer to the \[Plugins and components\](#plugins-and-components) section. For more information about integrating licenses, refer to the \[Licenses & Certificate\](#licenses-and-certificate) section. **Note**: In macOS, the \[Application file\](https://doc.4d.com/4Dv17R6/4D/17-R6/Application-file.301-4311297.en.html) command of the 4D language returns the pathname of the ApplicationName file (located in the Contents:macOS folder of the software package) and not that of the .comp file (Contents:Resources folder of the software package). #### Customizing 4D Volume Desktop folder When building a stand-alone application, 4D copies the contents of the 4D Volume Desktop folder into Destination folder > *Final Application* folder. You're then able to customize the contents of the original 4D Volume Desktop folder according to your needs. You can, for example:</p>
