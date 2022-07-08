@@ -152,7 +152,7 @@ VP ADD SELECTION($currentSelection)
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-*index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。 *sheet* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。
+*sheet* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
 > インデックスは 0 起点です。
 
 *name* 引数として、新しいシートの名前を渡します。 新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
@@ -618,8 +618,8 @@ $vpObj:=VP Convert from 4D View($pvblob)
 * ピクチャー
 * 行高さ
 * カラム幅
-* 非表示のカラム / 行 > 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。 > インデックスは 0 起点です。
-> インデックスは 0 起点です。
+* 非表示のカラム / 行
+> 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
 
 #### ファンクションの戻り値
 
@@ -775,7 +775,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 * スカラー値のコレクションを各行のデータとして渡すには、それらはサブコレクションとしてコレクションに格納されている必要があります:
 
-  * 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 それぞれのサブコレクションは行を定義します。 最初のサブコレクションに格納されている値の数により、生成されるカラム数が決定します。
+  * 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 行をスキップするには空のコレクションを渡します。 最初のサブコレクションに格納されている値の数により、生成されるカラム数が決定します。
   * 列のタイトルとして、サブコレクションのインデックスが使用されます。
   * それぞれのサブコレクションは行におけるセルの値を定義します。 `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` または `Picture` の値が可能です。 `Time` の値は、[VP SET VALUE](#vp-set-value) でも記述されているように、time 属性を含むオブジェクトでなければなりません。
 
@@ -2547,7 +2547,7 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 |            | rowDelimiter    | text   | 行の区切り文字。 渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                                   |
 |            | columnDelimiter | text   | カラムの区切り文字。 デフォルト: ","                                                                                                                                                          |
 
-> `VP RECOMPUTE FORMULAS` コマンドを使用する前に [VP SUSPEND COMPUTING](#vp-suspend-computing)コマンドが実行されていないようにしてください。
+> CSV形式および、ユーザー定義区切りの値 (DSV) については、こちらの [Wikipedia の記事](https://en.wikipedia.org/wiki/Delimiter-separated_values) (英文) を参照ください。
 
 #### 例題 1
 
@@ -2862,7 +2862,7 @@ VP NEW DOCUMENT("myVPArea")
 
 | プロパティ   | タイプ  | 説明                                                                                                                                                   | とりうる値                                                                                                                                                                                                                                                                                                                               | 必須 |
 | ------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -- |
-| family  | text | フォントを指定します。                                                                                                                                          | 標準の、あるいは一般的なフォントファミリー。 例:  例:  "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                    | ◯  |
+| family  | text | フォントを指定します。                                                                                                                                          | 標準の、あるいは一般的なフォントファミリー。 例:  "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                                        | ◯  |
 | size    | text | フォントのサイズを定義します。<p><p>"font-size/line-height" の形で line-height をfont-size に追加することもできます: 例: "15pt/20pt" | 以下のいずれかの単位を伴う数値: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>あるいは、以下の定数のいずれか 1つ:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li> | ◯  |
 | style   | text | フォントのスタイル。                                                                                                                                           | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                                | ×  |
 | variant | text | スモールキャピタルのフォントを定義します。                                                                                                                                | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                          | ×  |
@@ -3045,7 +3045,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 *name* には、削除したい命名レンジあるいは命名フォーミュラの名前を渡します。
 
-*scope* 引数を使用することで、命名レンジまたは命名フォーミュラをどこから削除するのか、指定することができます。 その際、シートのインデックス (0 起点) を渡すか、以下の定数のいずれかを渡します:
+*scope* 引数を使用することで、命名レンジまたは命名フォーミュラをどこから削除するのか、指定することができます。その際、シートのインデックス (0 起点) を渡すか、以下の定数のいずれかを渡します:
 
 * `vk current sheet`
 * `vk workbook`
@@ -3474,29 +3474,6 @@ Function onEvent()
             This.isWaiting:=True
 
     // 計算が完了したかを検証するタイマーをスタートさせます
- // この間に "On VP Range Changed" イベントが発生した場合、タイマーはリスタートされます
- // 時間はコンピューターの設定に応じて定義されなければなりません
-   SET TIMER(60)
-
-       :(FORM Event.code=On VP Range Changed)
-    // 計算の完了を感知し、 タイマーを再スタートさせます
-            If(This.isWaiting)
-                SET TIMER(60)
-            End if
-
-       :(FORM Event.code=On Timer)
-    // この時点以降、他の 4D View コマンドを呼び出してもタイマーが再スタートしないようにします
-            This.isWaiting:=False
-
-    // タイマーを停止します
-            SET TIMER(0)
-
-    // PDF 書き出しを開始します
-            VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
-
-       :(FORM Event.code=On URL Loading Error)
-            CANCEL 
-    End case
  // この間に "On VP Range Changed" イベントが発生した場合、タイマーはリスタートされます
  // 時間はコンピューターの設定に応じて定義されなければなりません
    SET TIMER(60)
@@ -4009,7 +3986,7 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 | プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ------------------------ | ---------- | ---------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<customFunction>` |            |            | Object              | カスタムファンクションの名前。 カスタムファンクションの名前。 `<functionName>` プロパティ名は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                                                                             |
+| `<customFunction>` |            |            | Object              | カスタムファンクションの名前。 `<customFunction>` は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                                                                                                 |
 |                          | formula    |            | Object              | 4Dフォーミュラオブジェクト (必須)。 `Formula` コマンド参照。                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |                          | parameters |            | Object の Collection | 引数のコレクション (フォーミュラ内で定義されている順)                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |                          |            | \[ ].name | Text                | 4D View Pro に表示する引数の名前。                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -4175,14 +4152,23 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 #### 例題 4 - 日付と時間のシンタックス
 
 ```4d
-$param:=New collection
-$param.push(New collection(1;2;3;False)) // 1行目用に 4つの値を設定します
-$param.push(New collection) // 2行目は空行です
-$param.push(New collection(4;5;Null;"hello";"world")) // 3行目用に 5つの値を設定します
-$param.push(New collection(6;7;8;9)) // 4行目用に 4つの値を設定します
-$param.push(New collection(Null;New object("value";Current date;"time";42))) // 5行目用に 1つの値を設定します
+var $data : Collection
+var $options : Object
 
-VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
+$data:= New collection()
+
+// 日付はスカラー値として渡すことができます
+$data.push(New collection("Date"; Current date)) 
+
+// 時間はオブジェクト属性として渡す必要があります
+$data.push(New collection("Time"; New object("time"; 5140)))
+
+// 日付 + 時間の例
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
 カラムが生成された後の結果です:
@@ -5170,7 +5156,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 *valuesCol* 引数は 2次元構造のコレクションです:
 
-* 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 それぞれのサブコレクションは行を定義します。
+* 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 行をスキップするには空のコレクションを渡します。
 * それぞれのサブコレクションは行におけるセルの値を定義します。 値は整数、実数、ブール、テキスト、日付、Null、オブジェクトのいずれかです。 値がオブジェクトの場合、以下のプロパティを持つことができます:
 
  | プロパティ | タイプ                                      | 説明             |
