@@ -14,14 +14,14 @@ En macOS, las listas desplegables también se denominan a veces "menú emergente
 
 You can create different types of drop-down lists with different features. To define a type, select the appropriate **Expression Type** and **Data Type** values in the Property list, or use their JSON equivalent.
 
-| Tipo                           | Funcionalidades                                  | Tipo de expresión | Tipos de datos                  | Definición JSON                                                                                                                                               |
-| ------------------------------ | ------------------------------------------------ | ----------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Objeto                         | Built upon a collection                          | Objeto            | Numeric, Text, Date o Time      | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
-| Array                          | Basado en un array                               | Array             | Numeric, Text, Date o Time      | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
-| Choice list saved as value     | Built upon a choice list (standard)              | Lista             | Valor del elemento seleccionado | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
-| Choice list saved as reference | Built upon a choice list. Item position is saved | Lista             | Selected item reference         | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
-| Lista de selección jerárquica  | Can display hierarchical contents                | Lista             | List reference                  | `dataSourceTypeHint: integer`                                                                                                                                 |
-| Acción estándar                | Automatically built by the action                | *any*             | *any except List reference*     | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
+| Tipo                           | Funcionalidades                                  | Tipo de expresión | Tipos de datos                       | Definición JSON                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------ | ----------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objeto                         | Built upon a collection                          | Objeto            | Numeric, Text, Date o Time           | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
+| Array                          | Basado en un array                               | Array             | Numeric, Text, Date o Time           | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
+| Choice list saved as value     | Built upon a choice list (standard)              | Lista             | Valor del elemento seleccionado      | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
+| Choice list saved as reference | Built upon a choice list. Item position is saved | Lista             | Referencia del elemento seleccionado | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
+| Lista de selección jerárquica  | Can display hierarchical contents                | Lista             | List reference                       | `dataSourceTypeHint: integer`                                                                                                                                 |
+| Acción estándar                | Automatically built by the action                | *any*             | *toda referencia de lista excepto*   | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
 
 
 
@@ -29,7 +29,7 @@ You can create different types of drop-down lists with different features. To de
 
 ### Utilizar un objeto
 
-> Esta funcionalidad sólo está disponible en los proyectos 4D.
+> Esta funcionalidad sólo está disponible en proyectos 4D.
 
 Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection) puede utilizarse como fuente de datos de una lista desplegable. El objeto debe contener las siguientes propiedades:
 
