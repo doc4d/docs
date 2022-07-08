@@ -1,5 +1,5 @@
 ---
-id: clases
+id: classes
 title: Clases
 ---
 
@@ -63,7 +63,7 @@ Para eliminar una clase existente, puede:
 - en el Explorador 4D, seleccionar la clase y hacer clic en ![](assets/en/Users/MinussNew.png) o elegir **Mover a la papelera** en el menú contextual.
 
 
-### Using the 4D interface
+### Utilizar la interfaz 4D
 
 Los archivos de clase se almacenan automáticamente en la ubicación adecuada cuando se crean a través de la interfaz de 4D, ya sea a través del menú **Archivo** o del Explorador.
 
@@ -131,7 +131,7 @@ $instance:=cs.myClass.new()
 | ---------- | ------ | -- | -------------- |
 | classStore | objeto | <- | Class store 4D |
 
-El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a las APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
+El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
 
 #### Ejemplo
 
@@ -148,7 +148,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto de la [clase "Class"](API/ClassClass.md). Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md).
 
-- cadena [`name`](API/ClassClass.md#name)
+- String [`name`](API/ClassClass.md#name)
 - objeto [`superclass`](API/ClassClass.md#superclass) (null si ninguno)
 - función [`new()`](API/ClassClass.md#new), que permite instanciar objetos de clase.
 
@@ -392,7 +392,7 @@ A class constructor function, which can accept [parameters](#parameters), can be
 
 In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
 
-Para una función class constructor, el comando `Current method name` devuelve: `<ClassName>:constructor`, por ejemplo "MyClass:constructor".
+The type of the computed property is defined by the `$return` type declaration of the *getter*.
 
 
 
@@ -516,11 +516,6 @@ Class constructor($width : Integer; $height : Integer)
 
 Function sayName()
     ALERT("Hi, I am a "+This.name+".")
-
-// Function definition
-Function getArea()
-    var $0 : Integer
-    $0:=(This.height)*(This.width)
 
 // Function definition
 Function getArea()
