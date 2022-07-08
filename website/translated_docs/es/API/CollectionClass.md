@@ -196,8 +196,8 @@ Puede pasar cualquier número de valores de los siguientes tipos soportados:
 *   time (almacenado como número de milisegundos - real)
 *   null
 *   objeto compartido(*)
-*   collection compartida(*)
-> A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+*   collection compartida(*) > A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+> Esta función modifica la colección original.
 
 (*)Cuando un objeto o colección compartida se añade a una colección compartida, comparten el mismo *identificador de bloqueo*. Para obtener más información sobre este punto, consulte la guía del **Desarrollador 4D**.
 
@@ -342,7 +342,7 @@ La función `.combine()` <!-- REF #collection.combine().Summary -->inserta *col2
 > Esta función modifica la colección original.
 
 Por defecto, los elementos *col2* se añaden al final de la colección original. Puede pasar en *index* la posición en la que quiere que se inserten los elementos *col2* en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el *índice* inicial real se fijará en la longitud de la colección.
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -519,6 +519,11 @@ Este ejemplo ilustra el uso de la opción `ck resolve pointers`:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
+
+ $what:="You!"
+ $col3:=$col2.copy(ck resolve pointers)
+ ALERT($col3[0].alpha+" "+$col3[1].what) //muestra "Hello You!"
  ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
 
  $what:="You!"
@@ -737,7 +742,7 @@ Si la colección contiene objetos, puede pasar el parámetro *propertyPath* para
 La función `.equal()` <!-- REF #collection.equal().Summary -->compara collection con collection2 <!-- END REF -->y devuelve **true** si son idénticas (comparación profunda/deep comparison).
 
 Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluación diferencie entre mayúsculas y minúsculas o que diferencie los caracteres acentuados, pase la constante `ck diacritical` en el parámetro option.
-> Los elementos con valores **Null** no son iguales a los elementos Undefined.
+> Esta función no modifica la colección original.
 
 #### Ejemplo
 
@@ -894,7 +899,7 @@ El contenido de la colección devuelta depende del parámetro *targetPath*:
     Por defecto, los elementos cuya *propertyPath* es null o indefinida se ignoran en la colección resultante. Puede pasar la constante `ck keep null` en el parámetro *option* para incluir estos valores como elementos nulos en la colección devuelta.
 
 
-*   Si se pasan uno o más parámetros *targetPath*, `.extract()` rellena la nueva colección con las propiedades *propertyPath* y cada elemento de la nueva colección es un objeto con propiedades *targetPath* rellenadas con las propiedades *propertyPath* correspondientes. Se mantienen los valores null (el parámetro *option* se ignora) con esta sintaxis.
+*   Si se pasan uno o más parámetros *targetPath*, `.extract()` rellena la nueva colección con las propiedades *propertyPath* y cada elemento de la nueva colección es un objeto con propiedades *targetPath* rellenadas con las correspondientes propiedades *propertyPath*. Se mantienen los valores null (el parámetro *option* se ignora) con esta sintaxis.
 
 
 #### Ejemplo 1
@@ -1329,7 +1334,7 @@ La función `.indices()` funciona exactamente igual que la función [`.query()`]
 El parámetro *queryString* utiliza la siguiente sintaxis:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+Valor del comparador propertyPath {logicalOperator propertyPath comparator value}
 ```
 
 Para una descripción detallada de los parámetros *queryString* y *value*, consulte la función `dataClass.query()`.
@@ -1382,7 +1387,7 @@ La función `.insert()` <!-- REF #collection.insert().Summary -->inserta *elemen
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere que se inserte el elemento en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
 *   Si *index* <0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -1741,7 +1746,7 @@ Si no se pasa ningún parámetro, la función ordena los valores escalares de la
 
 También puede pasar un parámetro de criterios para definir cómo deben ordenarse los elementos de la colección. Se admiten tres sintaxis para este parámetro:
 
-*   *pathStrings*: Texto (fórmula). **Sintaxis**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (orden por defecto: asc). *pathStrings* contiene una fórmula compuesta de 1 a x rutas de propiedades y (opcionalmente) órdenes de clasificación, separados por comas. El orden en que se pasan las propiedades determina la prioridad de ordenación de los elementos de la colección. Por defecto, las propiedades se clasifican en orden ascendente. Puede definir el orden de clasificación de una propiedad en la cadena de criterios, separado de la ruta de la propiedad por un solo espacio: pase "asc" para ordenar en orden ascendente o "desc" en orden descendente.
+*   *pathStrings* : Text (fórmula). **Sintaxis**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (orden por defecto: asc). *pathStrings* contiene una fórmula compuesta de 1 a x rutas de propiedades y (opcionalmente) órdenes de clasificación, separados por comas. El orden en que se pasan las propiedades determina la prioridad de ordenación de los elementos de la colección. Por defecto, las propiedades se clasifican en orden ascendente. Puede definir el orden de clasificación de una propiedad en la cadena de criterios, separado de la ruta de la propiedad por un solo espacio: pase "asc" para ordenar en orden ascendente o "desc" en orden descendente.
 
 *   *pathObjects* : Collection. Puede añadir tantos objetos en la colección *pathObjects* como sea necesario. Por defecto, las propiedades se clasifican en orden ascendente ("descending" es false). Cada elemento de la colección contiene un objeto estructurado de la siguiente manera:
 
@@ -1863,7 +1868,7 @@ Ordenar con una ruta de propiedad:
 | ---------- | ----------- |:--:| -------------------------------------------------- |
 | formula    | 4D.Function | -> | Objeto formula                                     |
 | methodName | Texto       | -> | Name of a method                                   |
-| extraParam | any         | -> | Parameter(s) to pass                               |
+| extraParam | any         | -> | Parámetro(s) a pasar                               |
 | Resultado  | Collection  | <- | Copia ordenada de la colección (copia superficial) |
 
 <!-- END REF -->
@@ -2082,12 +2087,12 @@ La función `.query()` <!-- REF #collection.query().Summary --> devuelve todos l
 El parámetro *queryString* utiliza la siguiente sintaxis:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+Valor del comparador propertyPath {logicalOperator propertyPath comparator value}
 ```
 
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value* y *querySettings*, consulte la descripción de la función [`dataClass.query()`](DataClassClass.md#query).
 
-> Las fórmulas no son soportadas por la función `collection.query()`, ni en el parámetro *queryString* ni como parámetro del objeto *formula*.
+> Esta función no modifica la colección original.
 
 #### Ejemplo 1
 
@@ -2112,6 +2117,10 @@ Para obtener información detallada sobre cómo construir una consulta utilizand
  $c:=New collection
  $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
  $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
  $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
@@ -2144,7 +2153,7 @@ Este ejemplo devuelve las personas contratadas hace más de 90 días:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018 si hoy es 01/10/2018
 ```
 
 
@@ -2175,7 +2184,7 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 | formula    | 4D.Function                                     | -> | Objeto formula                                                                    |
 | methodName | Texto                                           | -> | Name of a method                                                                  |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *formula* or *methodName* |
-| param      | expresión                                       | -> | Parameter(s) to pass                                                              |
+| param      | expresión                                       | -> | Parámetro(s) a pasar                                                              |
 | Resultado  | Text, Number, Object, Collection, Date, Boolean | <- | Resultado del valor del acumulador                                                |
 
 <!-- END REF -->
@@ -2274,7 +2283,7 @@ La función `.remove()` <!-- REF #collection.remove().Summary --> elimina uno o 
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0. Si *índice* es mayor que la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
+> Esta función no modifica la colección original. Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*).
 
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 *   Si el valor calculado < 0, *index* toma el valor 0.
@@ -2512,7 +2521,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                             |
 | formula    | 4D.Function | -> | Objeto formula                                               |
 | methodName | Texto       | -> | Name of a method                                             |
-| param      | Mixed       | -> | Parameter(s) to pass                                         |
+| param      | Mixed       | -> | Parámetro(s) a pasar                                         |
 | Resultado  | Booleano    | <- | True si al menos un elemento ha superado la prueba con éxito |
 
 <!-- END REF -->
