@@ -160,7 +160,7 @@ Se proponen dos opciones de objetivo. The result depends on the processor of the
 
 > Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang viene con la última versión de Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
-### Default typing
+### Digitación por defecto
 
 Use this area to set the default type for ambiguous database objects.
 
