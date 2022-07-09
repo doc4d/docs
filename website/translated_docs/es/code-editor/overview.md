@@ -54,7 +54,7 @@ The import/export function is multi-platform: a method exported under Mac OS can
 - Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
 
 
-## Project method properties
+## Propiedades del método proyecto
 
 After creating a project method, you can rename it and modify its properties. Project method properties mainly concern their access and security conditions (access by users, integrated servers or services) as well as their execution mode.
 
