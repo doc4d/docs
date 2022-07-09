@@ -144,7 +144,7 @@ All callback functions receive two object parameters:
 | Parámetros | Tipo                                        |
 | ---------- | ------------------------------------------- |
 | $param1    | [`HTTPRequest` object](#httprequest-object) |
-| $param2    | [`Event` object](#event-object)             |
+| $param2    | [`Event` objeto](#event-object)             |
 
 
 Esta es la secuencia de llamadas de retorno:
