@@ -408,7 +408,7 @@ The Form editor allows you to view your forms with or without applied CSS values
 When [style sheets](createStylesheet.md) have been defined, forms (including inherited forms and subforms) are opened in the CSS Preview mode for your operating system by default.
 
 
-### Selecting CSS Preview Mode
+### Seleccionando el modo de vista previa CSS
 
 The Form editor toolbar provides a CSS button for viewing styled objects:
 
