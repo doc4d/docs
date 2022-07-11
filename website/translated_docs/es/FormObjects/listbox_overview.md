@@ -466,13 +466,13 @@ There are several different ways to set background colors, font colors and font 
 - at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 
 
-### Priority & inheritance
+### Prioridad & herencia
 
 Priority and inheritance principles are observed when the same property is set at more than one level.
 
 | Nivel de prioridad | Ubicación del parámetro                                              |
 | ------------------ | -------------------------------------------------------------------- |
-| alta prioridad     | Cell (if multi-style text)                                           |
+| alta prioridad     | Celda (si texto multiestilo)                                         |
 |                    | Arrays de columnas/métodos                                           |
 |                    | Arrays/métodos de Listbox                                            |
 |                    | Propiedades de la columna                                            |
