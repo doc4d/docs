@@ -9,7 +9,7 @@ The `FileHandle` class has functions that allow you to sequentially read from or
 
 File handle objects are created with the [`file.open()`](FileClass#open) function. 
 
-> Thanks to the standard 4D object *refcounting*, a file handle is automatically deleted when it is no longer referenced and thus, the requested [`File`](FileClass) is automatically closed. Consequently, you don't need to worry about closing documents. 
+Thanks to the standard 4D object *refcounting*, a file handle is automatically deleted when it is no longer referenced and thus, the requested [`File`](FileClass) object is automatically closed. Consequently, with file handles you don't need to worry about closing documents. 
 
 
 ### Example
