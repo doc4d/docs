@@ -616,7 +616,7 @@ Se pueden mostrar los siguientes mensajes:
 - Tipo de expresión inesperado (error estándar);
 - Nombre de tabla incorrecto (error en el nombre de la tabla);
 - An array was expected (the variable is not an array or is a two dimension array);
-- The method does not exist;
+- El método no existe;
 - Error de sintaxis (cuando el método se está ejecutando);
 - Access error (you do not have the appropriate access privileges to access the table or the method).
 - 4DENDLOOP expected (the `<!--#4DENDLOOP-->` number does not match the `<!--#4DLOOP -->`).
