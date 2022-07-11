@@ -359,7 +359,7 @@ The yellow arrow in the left margin of the Source Code pane is called the progra
 
 By default, the program counter line (also called the running line) is highlighted in the debugger. You can customize the highlight color in the [Methods page of the Preferences](Preferences/methods.md).
 
-#### Moving the program counter
+#### Mover el contador del programa
 
 For debugging purposes, you can move the program counter for the method at the top of the call chain (the method currently executing). To do so, click and drag the yellow arrow to another line.
 
