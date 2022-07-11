@@ -388,7 +388,7 @@ Une fonction class constructor, qui accepte des [paramètres](#parameters), peut
 
 Dans ce cas, lorsque vous appelez la fonction [`new()`](API/ClassClass.md#new), le class constructor est appelé avec les paramètres optionnellement passés à la fonction `new()`.
 
-Pour une fonction class constructor, la commande `Current method name` retourne : `<ClassName>:constructor`, par exemple "MyClass.constructor".
+Une fonction class constructor, qui accepte des [paramètres](#parameters), peut être utilisée pour définir une classe utilisateur.
 
 
 
@@ -439,26 +439,26 @@ Une classe étendue peut appeler le constructeur de sa classe parente en utilisa
 Cet exemple crée une classe nommée `Square` à partir d'une classe nommée `Polygon`.
 
 ```4d
-//Class: Square
-
-//path: Classes/Square.4dm 
-
-Class extends Polygon
-
-Class constructor ($side : Integer)
-
-    // Il appelle le constructeur de la classe parente avec les longueurs
-    // fournies pour la largeur et la hauteur du polygone.
-    Super($side;$side)
-    // Dans les classes dérivées, Super doit être appelé avant que vous puissiez
-    // utiliser 'This'.
-    This.name:="Square"
+// Class: Rectangle
+Class constructor($width : Integer; $height : Integer)
+    This.name:="Rectangle"
+    This.height:=$height
+    This.width:=$width
 
 
+Function sayName()
+    ALERT("Hi, I am a "+This.name+".")
 
-    Function getArea()
-        C_LONGINT($0)
-        $0:=This.height*This.width
+// Définition de fonction
+Function getArea()
+    var $0 : Integer
+    $0:=(This.height)*(This.width)
+
+// Function definition
+Function getArea()
+    var $0 : Integer
+
+    $0:=(This.height)*(This.width)
 ```
 
 ### `Super`
@@ -518,11 +518,13 @@ Function getArea()
     var $0 : Integer
     $0:=(This.height)*(This.width)
 
-// Function definition
-Function getArea()
-    var $0 : Integer
+This.name:="Square"
 
-    $0:=(This.height)*(This.width)
+
+
+    Function getArea()
+        C_LONGINT($0)
+        $0:=This.height*This.width
 ```
 
 ```4d

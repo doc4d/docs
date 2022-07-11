@@ -164,10 +164,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Parámetros | Tipo     |    | Descripción                                                  |
-| ---------- | -------- |:--:| ------------------------------------------------------------ |
-| privilege  | Texto    | <- | Nombre del privilegio a verificar                            |
-| Resultado  | Booleano | <- | True si la sesión tiene *privilege*, False en caso contrario |
+| Parámetros | Tipo    |    | Descripción                                                  |
+| ---------- | ------- |:--:| ------------------------------------------------------------ |
+| privilege  | Text    | <- | Nombre del privilegio a verificar                            |
+| Resultado  | Boolean | <- | True si la sesión tiene *privilege*, False en caso contrario |
 <!-- END REF -->
 
 
@@ -247,9 +247,9 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parámetros | Tipo     |    | Descripción                                                    |
-| ---------- | -------- |:--:| -------------------------------------------------------------- |
-| Resultado  | Booleano | <- | True si la sesión es una sesión Guest, False en caso contrario |
+| Parámetros | Tipo    |    | Descripción                                                    |
+| ---------- | ------- |:--:| -------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True si la sesión es una sesión Guest, False en caso contrario |
 <!-- END REF -->
 
 #### Descripción
@@ -287,9 +287,9 @@ End if
 <!-- REF #SessionClass.setPrivileges().Params -->
 | Parámetros | Tipo       |    | Descripción                                                 |
 | ---------- | ---------- |:--:| ----------------------------------------------------------- |
-| privilege  | Texto      | -> | Nombre del privilegio                                       |
+| privilege  | Text       | -> | Nombre del privilegio                                       |
 | privileges | Collection | -> | Colección de nombres de privilegios                         |
-| parámetros | Objeto     | -> | Objeto con una propiedad "privilegios" (cadena o colección) |
+| parámetros | Object     | -> | Objeto con una propiedad "privilegios" (cadena o colección) |
 <!-- END REF -->
 
 #### Descripción

@@ -19,7 +19,7 @@ Les valeurs que les opérateurs affectent sont des opérandes. Dans l'expression
 
 
 
-## Opérateur d'assignation
+## Assignation
 
 **L'opérateur d'affectation** (`a:=b`) initialise ou met à jour la valeur de `a` avec la valeur de `b` :
 
@@ -292,7 +292,7 @@ Les valeurs suivantes sont **falsy**:
 
 * false
 * Null
-* undefined
+* indéfini
 * Null object
 * Null collection
 * Null pointer

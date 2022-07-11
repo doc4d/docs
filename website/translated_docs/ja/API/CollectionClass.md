@@ -1183,7 +1183,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 <!-- REF #collection.findIndex().Params -->
 | 引数         | タイプ         |    | 説明                               |
 | ---------- | ----------- |:--:| -------------------------------- |
-| startFrom  | Integer     | -> | 検索を開始するインデックス                    |
+| startFrom  | 整数          | -> | 検索を開始するインデックス                    |
 | formula    | 4D.Function | -> | フォーミュラオブジェクト                     |
 | methodName | Text        | -> | メソッド名                            |
 | param      | any         | -> | *formula* または *methodName* に渡す引数 |
@@ -1256,11 +1256,11 @@ $val3:=$c.findIndex($val2+1;Formula($1.value.name=$2);"Clanton") //$val3=4
 **.indexOf**(  *toSearch* : expression { ; *startFrom* : Integer } ) : Integer <!-- END REF -->
 
 <!-- REF #collection.indexOf().Params -->
-| 引数        | タイプ        |    | 説明                                        |
-| --------- | ---------- |:--:| ----------------------------------------- |
-| toSearch  | expression | -> | コレクション内を検索する式                             |
-| startFrom | Integer    | -> | 検索を開始するインデックス                             |
-| 戻り値       | Integer    | <- | 最初に見つかった toSearch のインデックス。見つからなかった場合には -1 |
+| 引数        | タイプ |    | 説明                                        |
+| --------- | --- |:--:| ----------------------------------------- |
+| toSearch  | 式   | -> | コレクション内を検索する式                             |
+| startFrom | 整数  | -> | 検索を開始するインデックス                             |
+| 戻り値       | 整数  | <- | 最初に見つかった toSearch のインデックス。見つからなかった場合には -1 |
 <!-- END REF -->
 
 
@@ -1321,11 +1321,11 @@ $val3:=$c.findIndex($val2+1;Formula($1.value.name=$2);"Clanton") //$val3=4
 
 
 <!-- REF #collection.indices().Params -->
-| 引数          | タイプ        |    | 説明                               |
-| ----------- | ---------- |:--:| -------------------------------- |
-| queryString | Text       | -> | 検索条件                             |
-| value       | any        | -> | プレースホルダー使用時: 比較する値               |
-| 戻り値         | Collection | <- | queryString に合致するコレクション要素のインデックス |
+| 引数          | タイプ    |    | 説明                               |
+| ----------- | ------ |:--:| -------------------------------- |
+| queryString | テキスト   | -> | 検索条件                             |
+| value       | any    | -> | プレースホルダー使用時: 比較する値               |
+| 戻り値         | コレクション | <- | queryString に合致するコレクション要素のインデックス |
 <!-- END REF -->
 
 
@@ -1376,11 +1376,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.insert**( *index* : Integer ; *element* : any ) : Collection <!-- END REF -->
 
 <!-- REF #collection.insert().Params -->
-| 引数      | タイプ        |    | 説明               |
-| ------- | ---------- |:--:| ---------------- |
-| index   | Integer    | -> | 要素の挿入位置          |
-| element | any        | -> | コレクションに挿入する要素    |
-| 戻り値     | Collection | <- | 要素の挿入された元のコレクション |
+| 引数      | タイプ    |    | 説明               |
+| ------- | ------ |:--:| ---------------- |
+| index   | 整数     | -> | 要素の挿入位置          |
+| element | any    | -> | コレクションに挿入する要素    |
+| 戻り値     | コレクション | <- | 要素の挿入された元のコレクション |
 <!-- END REF -->
 
 
@@ -1427,11 +1427,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.join**( *delimiter* : Text { ; *option* : Integer } ) : Text <!-- END REF -->
 
 <!-- REF #collection.join().Params -->
-| 引数        | タイプ     |    | 説明                                               |
-| --------- | ------- |:--:| ------------------------------------------------ |
-| delimiter | Text    | -> | 要素間に用いる区切り文字                                     |
-| option    | Integer | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
-| 戻り値       | Text    | <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                      |
+| 引数        | タイプ  |    | 説明                                               |
+| --------- | ---- |:--:| ------------------------------------------------ |
+| delimiter | テキスト | -> | 要素間に用いる区切り文字                                     |
+| option    | 整数   | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
+| 戻り値       | テキスト | <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                      |
 <!-- END REF -->
 
 
@@ -1633,7 +1633,7 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 <!-- REF #collection.max().Params -->
 | 引数           | タイプ                                             |    | 説明                 |
 | ------------ | ----------------------------------------------- |:--:| ------------------ |
-| propertyPath | Text                                            | -> | 評価するオブジェクトプロパティのパス |
+| propertyPath | テキスト                                            | -> | 評価するオブジェクトプロパティのパス |
 | 戻り値          | Boolean, Text, Number, Collection, Object, Date | <- | コレクション内の最大値        |
 <!-- END REF -->
 
@@ -1684,7 +1684,7 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 <!-- REF #collection.min().Params -->
 | 引数           | タイプ                                             |    | 説明                 |
 | ------------ | ----------------------------------------------- |:--:| ------------------ |
-| propertyPath | Text                                            | -> | 評価するオブジェクトプロパティのパス |
+| propertyPath | テキスト                                            | -> | 評価するオブジェクトプロパティのパス |
 | 戻り値          | Boolean, Text, Number, Collection, Object, Date | <- | コレクション内の最小値        |
 <!-- END REF -->
 
@@ -1733,12 +1733,12 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 
 
 <!-- REF #collection.orderBy().Params -->
-| 引数          | タイプ        |    | 説明                                         |
-| ----------- | ---------- |:--:| ------------------------------------------ |
-| pathStrings | Text       | -> | コレクションの並べ替え基準とするプロパティパス                    |
-| pathObjects | Collection | -> | 条件オブジェクトのコレクション                            |
-| ascOrDesc   | Integer    | -> | `ck ascending` または `ck descending` (スカラー値) |
-| 戻り値         | Collection | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)               |
+| 引数          | タイプ    |    | 説明                                         |
+| ----------- | ------ |:--:| ------------------------------------------ |
+| pathStrings | テキスト   | -> | コレクションの並べ替え基準とするプロパティパス                    |
+| pathObjects | コレクション | -> | 条件オブジェクトのコレクション                            |
+| ascOrDesc   | 整数     | -> | `ck ascending` または `ck descending` (スカラー値) |
+| 戻り値         | コレクション | <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)               |
 <!-- END REF -->
 
 
@@ -1766,10 +1766,10 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 
 *   *ascOrDesc* : Integer。 **Objects and collections** テーマから、以下の定数のいずれか一つを渡します:
 
-    | 定数            | タイプ     | 値 | 説明                   |
-    | ------------- | ------- | - | -------------------- |
-    | ck ascending  | Longint | 0 | 要素は昇順に並べられます (デフォルト) |
-    | ck descending | Longint | 1 | 要素は降順に並べられます         |
+    | 定数            | タイプ  | 値 | 説明                   |
+    | ------------- | ---- | - | -------------------- |
+    | ck ascending  | 倍長整数 | 0 | 要素は昇順に並べられます (デフォルト) |
+    | ck descending | 倍長整数 | 1 | 要素は降順に並べられます         |
 
     このシンタックスは、コレクション内のスカラー値のみを並べ替えます (オブジェクトやコレクションなどの他の型は並べ替えされないまま返されます)。
 
@@ -2024,10 +2024,10 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 **.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
-| 引数      | タイプ        |    | 説明               |
-| ------- | ---------- |:--:| ---------------- |
-| element | Mixed      | -> | コレクションに追加する要素    |
-| 戻り値     | Collection | <- | 要素の追加された元のコレクション |
+| 引数      | タイプ    |    | 説明               |
+| ------- | ------ |:--:| ---------------- |
+| element | Mixed  | -> | コレクションに追加する要素    |
+| 戻り値     | コレクション | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
@@ -2084,12 +2084,12 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 
 
 <!-- REF #collection.query().Params -->
-| 引数            | タイプ        |    | 説明                                 |
-| ------------- | ---------- |:--:| ---------------------------------- |
-| queryString   | Text       | -> | 検索条件                               |
-| value         | Mixed      | -> | プレースホルダー使用時: 比較する値                 |
-| querySettings | Object     | -> | クエリオプション: parameters, attributes 他 |
-| 戻り値           | Collection | <- | queryString に合致するコレクション要素          |
+| 引数            | タイプ    |    | 説明                                 |
+| ------------- | ------ |:--:| ---------------------------------- |
+| queryString   | テキスト   | -> | 検索条件                               |
+| value         | Mixed  | -> | プレースホルダー使用時: 比較する値                 |
+| querySettings | オブジェクト | -> | クエリオプション: parameters, attributes 他 |
+| 戻り値           | コレクション | <- | queryString に合致するコレクション要素          |
 <!-- END REF -->
 
 
@@ -2281,11 +2281,11 @@ $r:=$c.reduce(Formula($1.accumulator:=$1.accumulator*$1.value); 1)  // 戻り値
 
 
 <!-- REF #collection.remove().Params -->
-| 引数      | タイプ        |    | 説明                   |
-| ------- | ---------- |:--:| -------------------- |
-| index   | Integer    | -> | 削除を開始する要素の位置         |
-| howMany | Integer    | -> | 削除する要素の数、省略時は 1要素を削除 |
-| 戻り値     | Collection | <- | 要素が削除された元のコレクション     |
+| 引数      | タイプ    |    | 説明                   |
+| ------- | ------ |:--:| -------------------- |
+| index   | 整数     | -> | 削除を開始する要素の位置         |
+| howMany | 整数     | -> | 削除する要素の数、省略時は 1要素を削除 |
+| 戻り値     | コレクション | <- | 要素が削除された元のコレクション     |
 <!-- END REF -->
 
 
@@ -2345,9 +2345,9 @@ $r:=$c.reduce(Formula($1.accumulator:=$1.accumulator*$1.value); 1)  // 戻り値
 <!-- REF #collection.resize().Params -->
 | 引数           | タイプ                                             |    | 説明              |
 | ------------ | ----------------------------------------------- |:--:| --------------- |
-| size         | Integer                                         | -> | コレクションの新しいサイズ   |
+| size         | 整数                                              | -> | コレクションの新しいサイズ   |
 | defaultValue | Number, Text, Object, Collection, Date, Boolean | -> | 新規要素のデフォルト値     |
-| 戻り値          | Collection                                      | <- | リサイズされた元のコレクション |
+| 戻り値          | コレクション                                          | <- | リサイズされた元のコレクション |
 <!-- END REF -->
 
 
@@ -2400,9 +2400,9 @@ $r:=$c.reduce(Formula($1.accumulator:=$1.accumulator*$1.value); 1)  // 戻り値
 **.reverse( )** : Collection <!-- END REF -->
 
 <!-- REF #collection.reverse().Params -->
-| 引数  | タイプ        |    | 説明                  |
-| --- | ---------- |:--:| ------------------- |
-| 戻り値 | Collection | <- | 逆順に要素を格納した新しいコレクション |
+| 引数  | タイプ    |    | 説明                  |
+| --- | ------ |:--:| ------------------- |
+| 戻り値 | コレクション | <- | 逆順に要素を格納した新しいコレクション |
 <!-- END REF -->
 
 
@@ -2485,11 +2485,11 @@ $r:=$c.reduce(Formula($1.accumulator:=$1.accumulator*$1.value); 1)  // 戻り値
 **.slice**( *startFrom* : Integer { ; *end* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.slice().Params -->
-| 引数        | タイプ        |    | 説明                           |
-| --------- | ---------- |:--:| ---------------------------- |
-| startFrom | Integer    | -> | 開始インデックス (含まれる)              |
-| end       | Integer    | -> | 終了インデックス (含まれない)             |
-| 戻り値       | Collection | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
+| 引数        | タイプ    |    | 説明                           |
+| --------- | ------ |:--:| ---------------------------- |
+| startFrom | 整数     | -> | 開始インデックス (含まれる)              |
+| end       | 整数     | -> | 終了インデックス (含まれない)             |
+| 戻り値       | コレクション | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
 <!-- END REF -->
 
 
@@ -2708,8 +2708,8 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) // アルファベ
 <!-- REF #collection.sum().Params -->
 | 引数           | タイプ  |    | 説明                    |
 | ------------ | ---- |:--:| --------------------- |
-| propertyPath | Text | -> | 計算に使用するオブジェクトプロパティのパス |
-| 戻り値          | Real | <- | コレクション要素の値の合計         |
+| propertyPath | テキスト | -> | 計算に使用するオブジェクトプロパティのパス |
+| 戻り値          | 実数   | <- | コレクション要素の値の合計         |
 <!-- END REF -->
 
 
@@ -2771,7 +2771,7 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) // アルファベ
 | 引数    | タイプ                                    |    | 説明               |
 | ----- | -------------------------------------- |:--:| ---------------- |
 | value | Text, Number, Object, Collection, Date | -> | コレクションの先頭に挿入する値  |
-| 戻り値   | Real                                   | <- | 要素の追加された元のコレクション |
+| 戻り値   | 実数                                     | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
