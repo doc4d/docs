@@ -184,7 +184,7 @@ This theme contains the name of each dynamic object included in the current form
 
 Some objects, such as list box arrays, can be presented as two distinct objects, the variable of the object itself and its data source.
 
-#### Constantes
+#### Constants
 
 Like the Constants page of the Explorer window, this theme displays predefined constants provided by 4D. The expressions from this theme cannot be modified.
 

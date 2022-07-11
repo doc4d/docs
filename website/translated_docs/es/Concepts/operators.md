@@ -261,7 +261,7 @@ Say you have an online store, and some products have a tax rate applied, and oth
 
 To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
 
-So you can write this:
+Así que puede escribir esto:
 
 ```4d
 var $tax : Variant
@@ -401,7 +401,7 @@ The following values are **falsy**:
 * Null picture
 * Null date !00-00-00!
 * "" - Cadenas vacías
-* [] - Empty collections
+* [] - Colecciones vacías
 * {} - Objetos vacios
 
 All other values are considered **truthy**, including:

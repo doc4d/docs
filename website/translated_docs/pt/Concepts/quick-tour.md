@@ -91,7 +91,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 ```
 4D SVG é incluído em 4D.
 
-## Constantes
+## Constants
 
 4D oferece um conjunto extensivo de constantes predefinidas, cujos valores são acessíveis por nome. Isso permite escrever código mais legível. Por exemplo, `Read Mode` é uma constante (valor 2).
 

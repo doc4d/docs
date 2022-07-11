@@ -566,7 +566,7 @@ You design a list box of the entity selection type, bound to the `Form.child` ex
 
 You display two columns:
 
-| Nombre del hijo | Parent's nickname            |
+| Nombre del hijo | Apodo del padre              |
 | --------------- | ---------------------------- |
 | `This.name`     | `This.parent.extra.nickname` |
 
@@ -606,13 +606,13 @@ There are several different ways to set background colors, font colors and font 
 - at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 
 
-### Priority & inheritance
+### Prioridad & herencia
 
 Priority and inheritance principles are observed when the same property is set at more than one level.
 
 | Nivel de prioridad | Ubicación del parámetro                                              |
 | ------------------ | -------------------------------------------------------------------- |
-| alta prioridad     | Cell (if multi-style text)                                           |
+| alta prioridad     | Celda (si texto multiestilo)                                         |
 |                    | Arrays de columnas/métodos                                           |
 |                    | Arrays/métodos de Listbox                                            |
 |                    | Propiedades de la columna                                            |
@@ -868,7 +868,7 @@ En este caso, debe llenar y vaciar los arrays por código. Los principios que de
 
 
 
-## Object arrays in columns
+## Arrays de objetos en columnas
 
 Las columnas de list box pueden manejar arrays de objetos. Como los arrays de objetos pueden contener diferentes tipos de datos, esta nueva y poderosa funcionalidad permite mezclar diferentes tipos de entrada en las líneas de una misma columna, y mostrar también varios widgets. Por ejemplo, puede insertar una entrada de texto en la primera línea, una casilla de selección en la segunda y una lista desplegable en la tercera. Los arrays de objetos también dan acceso a nuevos tipos de widgets, como botones o selectores de color.
 

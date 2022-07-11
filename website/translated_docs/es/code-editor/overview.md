@@ -1,6 +1,6 @@
 ---
 id: overview
-title: About 4D Code
+title: Sobre el código 4D
 ---
 
 
@@ -54,7 +54,7 @@ The import/export function is multi-platform: a method exported under Mac OS can
 - Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
 
 
-## Project method properties
+## Propiedades del método proyecto
 
 After creating a project method, you can rename it and modify its properties. Project method properties mainly concern their access and security conditions (access by users, integrated servers or services) as well as their execution mode.
 
@@ -96,13 +96,13 @@ This attribute is used within the framework of components. When it is checked, i
 
 For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
 
-##### Execute on Server
+##### Ejecutar en el servidor
 
 This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called.
 
 For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
 
-#### Execution mode
+#### Modo Ejecución
 
 This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode.
 
@@ -130,7 +130,7 @@ Note that with this option, whatever the internal thread safety evaluation, the 
 
 ***Particular case*:** If the method has also the **Shared by components and host database** property (see [Project method properties](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.en.html)), setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
 
-#### Available through
+#### Disponible a través de
 
 Availability attributes specify the external services which are allowed to explicitly call the method.
 
@@ -142,7 +142,7 @@ In the Explorer, project methods that are offered as a Web Service are given a s
 
 **Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). If the method name is not in keeping with this, 4D does not assign the property.
 
-##### Published in WSDL
+##### Publicado en WSDL
 
 This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
 
@@ -181,8 +181,8 @@ Para la configuración por lotes de los atributos del método:
 
 1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. The **Attributes for methods** dialog appears.
 2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch. The character string is used as a search criterion for the method names. Use the wildcard character @ to help define groups of methods:
-   -   To designate methods whose names begin with..., type @ at the end of the string. For example: web@
-    -   To designate methods whose names contain..., type @ in the middle of the string. For example: web@write
+   -   To designate methods whose names begin with..., type @ at the end of the string. Por ejemplo: web@
+    -   To designate methods whose names contain..., type @ in the middle of the string. Por ejemplo: web@write
     -   To designate methods whose names end with..., type @ at the beginning of the string. For example: @write
     -   To designate all of the methods, just type @ in the area.\
       **Notes:**

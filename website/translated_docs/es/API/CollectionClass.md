@@ -1868,7 +1868,7 @@ Ordenar con una ruta de propiedad:
 | ---------- | ----------- |:--:| -------------------------------------------------- |
 | formula    | 4D.Function | -> | Objeto formula                                     |
 | methodName | Texto       | -> | Name of a method                                   |
-| extraParam | any         | -> | Parameter(s) to pass                               |
+| extraParam | any         | -> | Parámetro(s) a pasar                               |
 | Resultado  | Collection  | <- | Copia ordenada de la colección (copia superficial) |
 
 <!-- END REF -->
@@ -2184,7 +2184,7 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 | formula    | 4D.Function                                     | -> | Objeto formula                                                                    |
 | methodName | Texto                                           | -> | Name of a method                                                                  |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *formula* or *methodName* |
-| param      | expresión                                       | -> | Parameter(s) to pass                                                              |
+| param      | expresión                                       | -> | Parámetro(s) a pasar                                                              |
 | Resultado  | Text, Number, Object, Collection, Date, Boolean | <- | Resultado del valor del acumulador                                                |
 
 <!-- END REF -->
@@ -2521,7 +2521,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                             |
 | formula    | 4D.Function | -> | Objeto formula                                               |
 | methodName | Texto       | -> | Name of a method                                             |
-| param      | Mixed       | -> | Parameter(s) to pass                                         |
+| param      | Mixed       | -> | Parámetro(s) a pasar                                         |
 | Resultado  | Booleano    | <- | True si al menos un elemento ha superado la prueba con éxito |
 
 <!-- END REF -->

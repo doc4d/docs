@@ -185,7 +185,7 @@ The following execution modes are available:
 -   El método A puede llamar al método B que puede llamar a A, por lo que A volverá a llamar a B y así sucesivamente.
 -   Un método puede llamarse a sí mismo.
 
-#### From the Code Editor
+#### Desde el Editor de código
 
 Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired:
 

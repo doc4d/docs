@@ -557,12 +557,12 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 > When the HTML root folder is modified, the cache is cleared so as to not store files whose access is restricted.
 
 
-## Scalable Sessions
+## Sesiones escalables
 
 | Puede ajustarse con           | Nombre                                                                                                                     | Comentarios |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | objeto webServer              | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                                 |             |
-| `WEB SET OPTION`              | `Web scalable session`                                                                                                     |             |
+| `WEB SET OPTION`              | `Sesión escalable web`                                                                                                     |             |
 | Caja de diálogo de parámetros | [Options (I) page/Scalable sessions (multi-process sessions)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
 Scalable session management enabling status for the 4D web server. Web server sessions are detailed in the [User sessions](sessions.md) page.

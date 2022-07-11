@@ -5,7 +5,7 @@ title: About Data Collection
 
 To help us make our products always better, we automatically collect data regarding usage statistics on running 4D Server applications. Collected data is completely anonymous and data is transferred with no impact on the user experience.
 
-This page explains:
+Esta página explica:
 
 - what information is collected
 - where information is stored and when it is sent to 4D
@@ -16,8 +16,8 @@ This page explains:
 Los datos se recogen durante los siguientes eventos:
 
 - 4D Server startup,
-- database opening,
-- database closure,
+- apertura de base de datos,
+- cierre de base de datos,
 - web server startup.
 
 ### Collected at 4D Server startup
@@ -39,9 +39,9 @@ Los datos se recogen durante los siguientes eventos:
 | Datos                   | Ejemplo                                                 | Notas                                                                                 |
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | id                      | hashed string                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
-| dataFileSize            | 419430400                                               | Data file size in bytes                                                               |
-| indexesSize             | 419430400                                               | Index size in bytes                                                                   |
-| cacheSize               | 419430400                                               | Cache size in bytes                                                                   |
+| dataFileSize            | 419430400                                               | Tamaño del archivo de datos en bytes                                                  |
+| indexesSize             | 419430400                                               | Tamaño del índice en bytes                                                            |
+| cacheSize               | 419430400                                               | Tamaño de caché en bytes                                                              |
 | usingLegacyNetworkLayer | fasle                                                   | True if legacy network layer used for the application server                          |
 | isEncrypted             | true                                                    | True si el archivo de datos está encriptado                                           |
 | isCompiled              | true                                                    | True si la aplicación está compilada                                                  |
