@@ -16,7 +16,7 @@ The number sign (#) is the placeholder for an alphanumeric display format. You c
 
 For example, consider a part number with a format such as "RB-1762-1".
 
-The alpha format would be:
+El formato alfa sería:
 
     ##-####-#
 
