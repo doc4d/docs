@@ -56,7 +56,7 @@ Hay varios tipos de list box, con sus propios comportamientos y propiedades espe
 - **Arrays**: cada columna está ligada a un array 4D. Los list boxes basados en arrays pueden mostrarse como [cajas de lista jerárquicas](listbox_overview.md#hierarchical-list-boxes).
 - **Selección** (**Selección actual** o **Selección con nombre**): cada columna está vinculada a una expresión (por ejemplo, un campo) que se evalúa para cada registro de la selección.
 - **Collection or Entity selection**: each column is bound to an expression which is evaluated for every element of the collection or every entity of the entity selection.
-> > > > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
+> > > > > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
 
 
 ### Gestión de list boxes
@@ -109,10 +109,10 @@ Each element of the collection or each entity is available as an object that can
 
 When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.
 
-When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various functions of the [Collection class](../API/CollectionClass.md), you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por ejemplo:
+When the data source is a collection, any modifications made in the list box values are reflected in the collection. When the data source is a collection, any modifications made in the list box values are reflected in the collection. Por ejemplo:
 
 ```4d
-myCol:=myCol.push("new value") //mostrar el nuevo valor en el list box
+myCol:=myCol.push("new value") //display new value in list box
 ```
 
 
@@ -510,7 +510,7 @@ You can write in the *UI_SetColor* method:
 
 ```4d
  If(Is in set("$SampleSet"))
-    $color:=0x0080C080 // fondo verde
+    $color:=0x0080C080 // green background
  Else
     $color:=lk inherited
  End if
@@ -564,7 +564,7 @@ You design a list box of the entity selection type, bound to the `Form.child` ex
 
 You display two columns:
 
-| Nombre del hijo | Parent's nickname            |
+| Nombre del hijo | Apodo del padre              |
 | --------------- | ---------------------------- |
 | `This.name`     | `This.parent.extra.nickname` |
 
@@ -604,13 +604,13 @@ There are several different ways to set background colors, font colors and font 
 - at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 
 
-### Priority & inheritance
+### Prioridad & herencia
 
 Priority and inheritance principles are observed when the same property is set at more than one level.
 
 | Nivel de prioridad | Ubicación del parámetro                                              |
 | ------------------ | -------------------------------------------------------------------- |
-| alta prioridad     | Cell (if multi-style text)                                           |
+| alta prioridad     | Celda (si texto multiestilo)                                         |
 |                    | Arrays de columnas/métodos                                           |
 |                    | Arrays/métodos de Listbox                                            |
 |                    | Propiedades de la columna                                            |
@@ -752,7 +752,7 @@ Si este list box se muestra en forma jerárquica (los tres primeros arrays está
 
 Los arrays no se ordenan antes de construir la jerarquía. Si, por ejemplo, un array contiene los datos AAABBAACC, la jerarquía obtenida será:
 
-    > En este contexto, sólo la sintaxis que utiliza la variable array puede funcionar con los comandos de la propiedad del objeto porque los arrays no tienen ningún objeto asociado.
+    > &gt; En este contexto, sólo la sintaxis que utiliza la variable array puede funcionar con los comandos de la propiedad del objeto porque los arrays no tienen ningún objeto asociado.
 
 Para desplegar o contraer un "nodo" jerárquico, basta con hacer clic en él. If you **Alt+click** (Windows) or **Option+click** (macOS) on the node, all its sub-elements will be expanded or collapsed as well. Estas operaciones también pueden realizarse por programación utilizando los comandos `LISTBOX EXPAND` y `LISTBOX COLLAPSE`.
 
@@ -812,9 +812,9 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
 
 Al igual que con las selecciones, el comando `LISTBOX GET CELL POSITION` devolverá los mismos valores para un list box jerárquico y un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, `LISTBOX GET CELL POSITION` devolverá la misma posición: (3;2).
 
-*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch9.png)
+*Representación jerárquica:* ![](assets/en/FormObjects/hierarch9.png)
 
-*Representación jerárquica:* ![](assets/en/FormObjects/hierarch10.png)
+*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch10.png)
 
 When all the rows of a sub-hierarchy are hidden, the break line is automatically hidden. En el ejemplo anterior, si las líneas 1 a 3 están ocultas, la línea de ruptura "Bretaña" no aparecerá.
 
@@ -829,11 +829,11 @@ Si el usuario selecciona una línea de ruptura, `LISTBOX GET CELL POSITION` devu
 
 Las líneas de rotura no se tienen en cuenta en los arrays internos utilizados para gestionar el aspecto gráfico de los list box (estilos y colores). No obstante, es posible modificar estas características para las líneas de ruptura mediante los comandos de gestión gráfica de los objetos. Basta con ejecutar los comandos adecuados en los arrays que constituyen la jerarquía.
 
-Dado, por ejemplo, el siguiente list box (los nombres de los arrays asociados se especifican entre paréntesis):
+El siguiente list box fue diseñado utilizando un array de objetos:
 
-*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch12.png)
+*Representación jerárquica:* ![](assets/en/FormObjects/hierarch12.png)
 
-*Representación jerárquica:* ![](assets/en/FormObjects/hierarch13.png)
+*Representación no jerárquica:* ![](assets/en/FormObjects/hierarch13.png)
 
 En modo jerárquico, los niveles de ruptura no son tenidos en cuenta por los arrays de modificación de estilo denominados `tStyle` y `tColors`. Para modificar el color o el estilo de los niveles de ruptura, debe ejecutar las siguientes instrucciones:
 
@@ -866,7 +866,7 @@ En este caso, debe llenar y vaciar los arrays por código. Los principios que de
 
 
 
-## Object arrays in columns
+## Arrays de objetos en columnas
 
 Las columnas de list box pueden manejar arrays de objetos. Como los arrays de objetos pueden contener diferentes tipos de datos, esta nueva y poderosa funcionalidad permite mezclar diferentes tipos de entrada en las líneas de una misma columna, y mostrar también varios widgets. Por ejemplo, puede insertar una entrada de texto en la primera línea, una casilla de selección en la segunda y una lista desplegable en la tercera. Los arrays de objetos también dan acceso a nuevos tipos de widgets, como botones o selectores de color.
 
@@ -892,6 +892,7 @@ ARRAY OBJECT(obColumn;0) //column array
  C_OBJECT($ob) //first element
  OB SET($ob;"valueType";"text") //defines the value type (mandatory)
  OB SET($ob;"value";"Hello World!") //define el valor
+ APPEND TO ARRAY(obColumn;$ob) //define el valor
  APPEND TO ARRAY(obColumn;$ob) //define el valor
  APPEND TO ARRAY(obColumn;$ob) //define el valor
  APPEND TO ARRAY(obColumn;$ob) //define el valor
@@ -999,6 +1000,27 @@ Los valores de las celdas se almacenan en el atributo "valor". This attribute is
  ARRAY OBJECT(obColumn;0) //array columna 
  C_OBJECT($ob1)
  $entry:="Hello world!"
+ ARRAY OBJECT(obColumn;0) //array columna 
+ C_OBJECT($ob1)
+ $entry:="Hello world!"
+ OB SET($ob1;"valueType";"text")
+ OB SET($ob1;"value";$entry) // si el usuario introduce un nuevo valor, $entry contendrá el valor editado
+ C_OBJECT($ob2)
+ OB SET($ob2;"valueType";"real")
+ OB SET($ob2;"value";2/3)
+ C_OBJECT($ob3)
+ OB SET($ob3;"valueType";"boolean")
+ OB SET($ob3;"value";True)
+
+ APPEND TO ARRAY(obColumn;$ob1)
+ APPEND TO ARRAY(obColumn;$ob2)
+ APPEND TO ARRAY(obColumn;$ob3)
+ ARRAY OBJECT(obColumn;0) //array columna 
+ C_OBJECT($ob1)
+ $entry:="Hello world!"
+ ARRAY OBJECT(obColumn;0) //array columna 
+ C_OBJECT($ob1)
+ $entry:="Hello world!"
  OB SET($ob1;"valueType";"text")
  OB SET($ob1;"value";$entry) // si el usuario introduce un nuevo valor, $entry contendrá el valor editado
  C_OBJECT($ob2)
@@ -1059,9 +1081,9 @@ El atributo behavior ofrece variaciones a la representación estándar de los va
 Cuando un atributo "choiceList" o "requiredList" está presente dentro del objeto, la entrada de texto se sustituye por una lista desplegable o un combo box, dependiendo del atributo:
 
 *   Si el atributo es "choiceList", la celda se muestra como un combo box. Esto significa que el usuario puede seleccionar o escribir un valor.
-*   Si el atributo es "requiredList", la celda se muestra como una lista desplegable y el usuario sólo puede seleccionar uno de los valores de la lista.
+*   If the attribute is "requiredList" then the cell is displayed as a drop-down list and the user can only select one of the values provided in the list.
 
-En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
+In both cases, a "value" attribute can be used to preselect a value in the widget.
 > Los valores del widget se definen a través de un array. Si quiere asociar el widget a una lista 4D existente, debe utilizar los atributos "requiredListReference", "requiredListName", "choiceListReference" o "choiceListName".
 
 Ejemplos:
@@ -1099,7 +1121,7 @@ Ejemplos:
 
 Los atributos "requiredListName" y "requiredListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se mostrará entonces como una lista desplegable. Esto significa que el usuario sólo puede seleccionar uno de los valores proporcionados en la lista.
 
-Utilice "requiredListName" o "requiredListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
+Utilice "requiredListName" o "requiredListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. In both cases, a "value" attribute can be used to preselect a value in the widget.
 > * Si desea definir estos valores a través de un simple array, debe utilizar el atributo "requiredList".
 > * Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
 
@@ -1140,7 +1162,7 @@ Ejemplos:
 
 Los atributos "choiceListName" and "choiceListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se muestra entonces como un combo box, lo que significa que el usuario puede seleccionar o escribir un valor.
 
-Utilice "choiceListName" o "choiceListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
+Utilice "choiceListName" o "choiceListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. In both cases, a "value" attribute can be used to preselect a value in the widget.
 > * Si desea definir estos valores a través de un simple array, debe utilizar el atributo "choiceList".
 > * Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
 
@@ -1217,6 +1239,11 @@ $entry:="Hello world!"
 OB SET($ob;"valueType";"text")
 OB SET($ob;"alternateButton";True)
 OB SET($ob;"value";$entry)
+C_OBJECT($ob1)
+$entry:="Hello world!"
+OB SET($ob;"valueType";"text")
+OB SET($ob;"alternateButton";True)
+OB SET($ob;"value";$entry)
 ```
 
 ![](assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
@@ -1236,12 +1263,12 @@ El atributo valueType de valor "color" permite mostrar un color o un texto.
 ![](assets/en/FormObjects/listbox_column_objectArray_colorValue.png)
 
 
-*   Si el valor es un texto, entonces se muestra el texto (*por ejemplo*: "valor"; "Automatic").
+*   If the value is a text, then the text is displayed (*e.g.*: "value";"Automatic").
 
 
 #### event valueType
 
-El "event" valueType muestra un botón que genera un evento `On Clicked` al ser presionado. No se puede pasar ni devolver ningún dato o valor.
+The "event" valueType displays a simple button that generates an `On Clicked` event when clicked. No se puede pasar ni devolver ningún dato o valor.
 
 Opcionalmente, se puede pasar un atributo "label".
 
@@ -1257,16 +1284,16 @@ OB SET($ob;"label";"Edit...")
 
 
 ### Gestión de eventos
-Se pueden manejar varios eventos mientras se utiliza un array list box de objetos:
+Several events can be handled while using an object list box array:
 
-*   **On Data Change**: un evento `On Data Change` se dispara cuando se ha modificado algún valor:
+*   **On Data Change**: An `On Data Change` event is triggered when any value has been modified either:
     *   en un área de entrada de texto
     *   en una lista desplegable
     *   en un área combo box
-    *   botón de unidad (pasa de valor x a valor x+1)
-    *   en una casilla de selección ( cambia entre marcado/desmarcado)
-*   **On Clicked**: cuando el usuario haga clic en un botón instalado con el "event" atributo *valueType*, se generará un evento `On Clicked`. Este evento es gestionado por el programador.
-*   **On Alternative Click**: cuando el usuario haga clic en un botón de elipsis (atributo "alternateButton"), se generará un evento `On Alternative Click`. Este evento es gestionado por el programador.
+    *   in a unit button (switch from value x to value x+1)
+    *   en una casilla de selección (cambia entre marcado/desmarcado)
+*   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
+*   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.
 
 
 
