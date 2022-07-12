@@ -9,7 +9,7 @@ The 4D code used across your application is written in [methods](../Concepts/met
 The 4D IDE provides you with various features to create, edit, export, or delete your code. You will usually use the 4D [code editor](write-class-method.md) to work with your code.
 
 
-## Creating methods
+## Creación de métodos
 
 A method in 4D is stored in a **.4dm** file located in the appropriate folder of the [`/Project/Sources/`](../Project/architecture.md#sources) folder.
 
