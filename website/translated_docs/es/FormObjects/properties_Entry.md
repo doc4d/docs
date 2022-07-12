@@ -103,11 +103,11 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ~A                                     | Permitir la entrada de toda letra, pero convertir a mayúsculas.                                                                                       |
 | &9                                     | Permitir sólo números.                                                                                                                                |
-| &A                                     | Allow only capital letters.                                                                                                                           |
+| &A                                     | Permitir sólo letras mayúsculas.                                                                                                                      |
 | &a                                     | Permitir sólo letras (mayúsculas y minúsculas).                                                                                                       |
 | &@                                     | Permitir sólo caracteres alfanuméricos. No hay caracteres especiales.                                                                                 |
 | ~a##                                   | Abreviatura del nombre del estado (por ej., CA). Permite la entrada de dos letras, pero las convierte en mayúsculas.                                  |
-| !0&9##/##/##                           | Standard date entry format. Display zeros in entry spaces. Permitir cualquier número.                                                                 |
+| !0&9##/##/##                           | Formato de entrada de fechas estándar. Display zeros in entry spaces. Permitir cualquier número.                                                      |
 | !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Display zeros in entry spaces. Permitir cualquier número. Limitado a horas y minutos.                                     |
 | !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Display zeros in entry spaces. Permitir cuatro números, separados por dos puntos.             |
 | !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Display zeros in entry spaces. Permitir dos números antes de cada palabra.                                                |
@@ -236,7 +236,7 @@ The placeholder text is displayed again if the contents of the field is erased.
 
 A placeholder can be displayed for the following types of data:
 
-- string (text or alpha)
+- cadena (text o alpha)
 - date and time when the **Blank if null** property is enabled.
 
 You can use an XLIFF reference in the ":xliff:resname" form as a placeholder, for example: 
