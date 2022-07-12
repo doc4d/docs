@@ -65,7 +65,7 @@ If the element accepts several attributes, you can group them in the same line o
 
 Aquí está la lista de etiquetas y su modo de uso:
 
-| **Element tags**                 | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Etiquetas de elementos**       | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<macros> </macros>` | Start and end of macro file (mandatory tag).                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `<macro> </macro>`   | Start and end of the definition of a macro and its attributes.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -102,7 +102,7 @@ Aquí está la lista de etiquetas y su modo de uso:
 
 Este es un ejemplo de definición de una macro:
 
-| **Content of macro**                                 | **Comentarios**                                                                                                                                 |
+| **Contenido de la macro**                            | **Comentarios**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<?xml version="1.0"...?>`                     | Declaración XML                                                                                                                                 |
 | `<!DOCTYPE macros SYSTEM>`                     | Declaración del documento                                                                                                                       |
@@ -141,13 +141,13 @@ The *in_menu* attribute of the `<macro>` tag is used to set whether or not the
 
 In the context menu, macros are displayed in the order of the "Macros.xml" file and any additional XML files. It is thus possible to change the order by modifying these files.
 
-### Autocomplete
+### Autocompletar
 
 By default, all macros are accessible using the autocomplete (aka type-ahead) function (see [Writing a method](./write-class-method.md)). The *type_ahead* attribute of the `<macro>` tag can be used to exclude a macro from this type of operation.
 
 **Note:** If the macro contains the `<selection/>` tag, it will not appear in the autocomplete pop-up window.
 
-### Code Editor list
+### Lista del editor de código
 
 You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Simply double-click on the name of a macro in the list in order to call it. It is not possible to exclude a specific macro from this list.
 
