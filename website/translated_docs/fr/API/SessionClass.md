@@ -167,7 +167,7 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 | Paramètres | Type    |    | Description                                           |
 | ---------- | ------- |:--:| ----------------------------------------------------- |
 | privilege  | Text    | <- | Nom du privilège à vérifier                           |
-| Résultat   | Boolean | <- | Vrai si la session dispose du *privilege*, sinon Faux |
+| Résultat   | Booléen | <- | Vrai si la session dispose du *privilege*, sinon Faux |
 <!-- END REF -->
 
 
@@ -221,11 +221,9 @@ Cette propriété est en **lecture-écriture**.
 
 ```4d
 If (Session.isGuest())
-        // La session d'un invité se ferme après 60 minutes d'inactivité.
-    Session.idleTimeout:=60
+        // La session d'un invité se ferme après 60 minutes d'inactivité. Session.idleTimeout:=60
 Else
-        //D'autres sessions se fermeront après 60 minutes d'inactivité.
-    Session.idleTimeout:=120
+        //D'autres sessions se fermeront après 60 minutes d'inactivité. Session.idleTimeout:=120
 End if
 
 ```
@@ -249,7 +247,7 @@ End if
 <!-- REF #SessionClass.isGuest().Params -->
 | Paramètres | Type    |    | Description                                      |
 | ---------- | ------- |:--:| ------------------------------------------------ |
-| Résultat   | Boolean | <- | Vrai s'il s'agit d'une session Guest, sinon Faux |
+| Résultat   | Booléen | <- | Vrai s'il s'agit d'une session Guest, sinon Faux |
 <!-- END REF -->
 
 #### Description
