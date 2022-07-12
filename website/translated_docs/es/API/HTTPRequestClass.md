@@ -47,7 +47,7 @@ $request.wait() //If you want to handle the request synchronously
 //Now you can use $request.response to access the result of the request or $request.error to check the error that happened.
 ```
 
-### HTTPRequest Object
+### Objeto HTTPRequest
 
 An HTTPRequest object is a non-sharable object.
 
@@ -82,7 +82,7 @@ HTTPRequest objects provide the following properties and functions:
 | ---------- | -------------- |:--:| -------------------------------- |
 | url        | Texto          | -> | URL to which to send the request |
 | options    | Objeto         | -> | Request configuration properties |
-| Resultado  | 4D.HTTPRequest | <- | New HTTPRequest object           |
+| Resultado  | 4D.HTTPRequest | <- | Nuevo objeto HTTPRequest         |
 <!-- END REF -->
 
 
@@ -92,7 +92,7 @@ The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->cr
 
 The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods.
 
-In *url*, pass the URL where you want to send the request. The syntax to use is:
+In *url*, pass the URL where you want to send the request. La sintaxis a utilizar es:
 
 ```
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
@@ -131,13 +131,13 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | onHeaders            | [Function](#FunctionClass.md)                   | Callback when the headers are received. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                            | indefinido   |
 | onResponse           | [Function](#FunctionClass.md)                   | Callback when a response is received. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                              | indefinido   |
 | onTerminate          | [Function](#FunctionClass.md)                   | Callback when the request is over. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                 | indefinido   |
-| protocol             | Texto                                           | "auto" or "HTTP1". "auto" means HTTP1 in the current implementation                                                                                                                                                                                               | "auto"       |
+| protocol             | Texto                                           | "auto" o "HTTP1". "auto" means HTTP1 in the current implementation                                                                                                                                                                                                | "auto"       |
 | proxyAuthentication  | [authentication object](#authentication-object) | Object handling proxy authentication                                                                                                                                                                                                                              | indefinido   |
 | serverAuthentication | [authentication object](#authentication-object) | Object handling server authentication                                                                                                                                                                                                                             | indefinido   |
 | returnResponseBody   | Booleano                                        | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                            | True         |
 | timeout              | Real                                            | Tiempo de espera en segundos. Indefinido = sin tiempo de espera                                                                                                                                                                                                   | Indefinido   |
 
-#### Callback functions
+#### Función callback (retrollamada)
 
 All callback functions receive two object parameters:
 
@@ -285,7 +285,7 @@ A `response` object is a non-sharable object. It provides the following properti
 
 | Propiedad   | Tipo    | Descripción                                                                                                                                                             |
 | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| .body       | Variant | Body of the response. The type of the message is defined according to the [`dataType`](#datatype) property. Undefined if the body has not been received yet             |
+| .body       | Variant | Cuerpo de la respuesta. The type of the message is defined according to the [`dataType`](#datatype) property. Undefined if the body has not been received yet           |
 | .headers    | Objeto  | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Undefined if the headers have not been received yet. |
 | .status     | Número  | Status code of the response                                                                                                                                             |
 | .statusText | Texto   | Message explaining the status code                                                                                                                                      |
@@ -381,7 +381,7 @@ The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of 
 | Parámetros | Tipo           |    | Descripción                                      |
 | ---------- | -------------- |:--:| ------------------------------------------------ |
 | time       | Real           | -> | Maximum time in seconds to wait for the response |
-| Resultado  | 4D.HTTPRequest | <- | HTTPRequest object                               |
+| Resultado  | 4D.HTTPRequest | <- | Objeto HTTPRequest                               |
 <!-- END REF -->
 
 
