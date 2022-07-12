@@ -52,6 +52,7 @@ Este comando só funciona quando [estão ativadas as sessões escaláveis](WebSe
 Quando se habilitam as sessões escaláveis, o objeto `Sessão` está disponível desde qualquer processo web nos seguintes contextos:
 
 - `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
+- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
 - ORDA [Data Model Class functions](ORDA/ordaClasses.md) called with REST requests,
 - code processed through 4D tags in semi-dynamic pages (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - project methods with the "Available through 4D tags and URLs (4DACTION...)" attribute and called through 4DACTION/ urls.
