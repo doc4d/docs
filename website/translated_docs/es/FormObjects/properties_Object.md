@@ -299,9 +299,9 @@ Hay varios tipos de cálculos disponibles. The following table shows which calcu
 
 | Cálculo                 | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
 | ----------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
-| Mínimo                  | X   |       | X     | X    | X    |          | Same as column type                 |
-| Máximo                  | X   |       | X     | X    | X    |          | Same as column type                 |
-| Suma                    | X   |       | X     |      | X    |          | Same as column type                 |
+| Mínimo                  | X   |       | X     | X    | X    |          | Igual que el tipo de columna        |
+| Máximo                  | X   |       | X     | X    | X    |          | Igual que el tipo de columna        |
+| Suma                    | X   |       | X     |      | X    |          | Igual que el tipo de columna        |
 | Conteo                  | X   | X     | X     | X    | X    | X        | Entero largo                        |
 | Promedio                | X   |       |       | X    |      |          | Real                                |
 | Desviación estándar(*)  | X   |       |       | X    |      |          | Real                                |
