@@ -685,11 +685,11 @@ El objeto devuelto tiene las siguientes propiedades:
 
 Each entry object in the `entries` collection has the following properties:
 
-| Propiedad | Tipo     | Descripción                       |
-| --------- | -------- | --------------------------------- |
-| data      | Objeto   | Object holding data on the entry. |
-| expired   | Booleano | True if the entry has expired.    |
-| key       | Texto    | Llave primaria de la entidad.     |
+| Propiedad | Tipo     | Descripción                                  |
+| --------- | -------- | -------------------------------------------- |
+| data      | Objeto   | Objeto que contiene los datos de la entrada. |
+| expired   | Booleano | True si la entrada ha expirado.              |
+| key       | Texto    | Llave primaria de la entidad.                |
 
 The `data` object in each entry contains the following properties:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
@@ -1046,7 +1046,7 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 ... la búsqueda sólo devolverá "martin" porque tiene un elemento "locations" cuyo "kind" es "home" y cuyo "city" es "paris". La búsqueda no devolverá "smith" porque los valores "home" y "paris" no están en el mismo elemento de colección.
 
 
-**Queries in many-to-many relations**
+**Búsquedas en las relaciones Muchos a Muchos**
 
 ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
 
