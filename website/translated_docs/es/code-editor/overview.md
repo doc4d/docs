@@ -29,7 +29,7 @@ You can create a class file from the **File** menu or toolbar (**New/Class...**)
 For more information, please refer to the [Classes](../Concepts/classes.md) section.
 
 
-## Deleting methods or classes
+## Eliminando métodos o clases
 
 Para eliminar un método o clase existente, puede:
 
@@ -148,7 +148,7 @@ This attribute is only available when the "Web Service" attribute is checked. It
 
 In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png).
 
-##### 4D tags and URLs (4DACTION...)
+##### Etiquetas 4D y URLs (4DACTION...)
 
 This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special 4DACTION URL used for calling 4D methods, nor the special 4DSCRIPT, 4DTEXT and 4DHTML tags (as well as the former 4DVAR and 4DHTMLVAR tags). For more information, refer to [URLs and Form Actions](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.en.html) and [4D Transformation Tags](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-Transformation-Tags.300-5830552.en.html) in the 4D *Language Reference* manual.
 
