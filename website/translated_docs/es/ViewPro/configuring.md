@@ -310,12 +310,12 @@ The following special characters allow the automatic addition or formatting of i
 | T        | Hora actual                       | printInfo.headerLeft:="Es &T."                                        | Es 16:30:36.                                      |
 | G        | Imagen                            | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
 | S        | Strikethrough                     | printInfo.headerLeft:="&SEsto es texto."                              | ~~Esto es texto.~~                                |
-| U        | Subrayado                         | printInfo.headerLeft:="&UEsto es texto."                              | <ins>This is text.</ins>                         |
-| B        | Negrita                           | printInfo.headerLeft:="&BEsto es texto."                              | **This is text.**                                 |
-| I        | Itálica                           | printInfo.headerLeft:="&IEsto es texto."                              | *This is text.*                                   |
+| U        | Subrayado                         | printInfo.headerLeft:="&UEsto es texto."                              | <ins>Esto es texto.</ins>                         |
+| B        | Negrita                           | printInfo.headerLeft:="&BEsto es texto."                              | **Esto es texto.**                                |
+| I        | Itálica                           | printInfo.headerLeft:="&IEsto es texto."                              | *Esto es texto.*                                  |
 | "        | Prefijo fuente                    | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
 | K        | Prefijo de color de texto         | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">Esto es texto</span>.     |
-| F        | Workbook name                     | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
+| F        | Nombre del libro                  | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
 | A        | Nombre de la hoja de cálculo      | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
 
 ### Márgenes
@@ -347,7 +347,7 @@ Page attributes are used to specify general document print settings.
 
 | Propiedad       | Tipo         | Descripción                                                                                                                                                                                                  |
 | --------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| blackAndWhite   | booleano     | Printing in black and white only. <p>Valor por defecto: false</p><p>**Nota**: los PDFs no se ven afectados por este atributo. Colors in PDFs remain.</p>                                                                                                                          |
+| blackAndWhite   | booleano     | Printing in black and white only. <p>Valor por defecto: false</p><p>**Nota**: los PDFs no se ven afectados por este atributo. Los colores en PDFs permanecen.</p>                                                                                                                          |
 | centering       | entero largo | Como se centran los contenidos en la página impresa. Valores disponibles: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (por defecto), `vk print centering vertical` |
 | firstPageNumber | entero largo | El número de página a imprimir en la primera página.<p>Por defecto = 1                                                                                                               |
 | pageOrder       | entero largo | The order pages are printed. Valores disponibles: `vk print page order auto` (por defecto), `vk print page order down then over`, `vk print page order over then down`.                                      |
@@ -510,8 +510,8 @@ Contiene las siguientes propiedades:
 | Propiedad    | Tipo de valor | Descripción                                            |
 | ------------ | ------------- | ------------------------------------------------------ |
 | version      | Entero largo  | Versión del componente interno                         |
-| dateCreation | Timestamp     | Creation date                                          |
-| dateModified | Timestamp     | Last modification date                                 |
+| dateCreation | Timestamp     | Fecha de creación                                      |
+| dateModified | Timestamp     | Fecha última modificación                              |
 | meta         | Objeto        | Contenido gratuito, reservado para el desarrollador 4D |
 | spreadJS     | Objeto        | Reservado para el componente 4D View Pro               |
 

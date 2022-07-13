@@ -11,11 +11,11 @@ Esta página explica:
 - where information is stored and when it is sent to 4D
 
 
-## Collected information
+## Información recopilada
 
 Los datos se recogen durante los siguientes eventos:
 
-- 4D Server startup,
+- Inicio de 4D Server,
 - apertura de base de datos,
 - cierre de base de datos,
 - web server startup.
@@ -25,7 +25,7 @@ Los datos se recogen durante los siguientes eventos:
 | Datos         | Ejemplo                                                                                              | Notas                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nombre, tipo y velocidad del procesador                      |
-| numberOfCores | 4                                                                                                    | Total number of cores                                        |
+| numberOfCores | 4                                                                                                    | Número total de núcleos                                      |
 | memory        | 419430400                                                                                            | Volume of memory storage (in bytes) available on the machine |
 | system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versión del sistema operativo y número de build              |
 | headless      | false                                                                                                | True if the application is running in headless mode          |
@@ -38,7 +38,7 @@ Los datos se recogen durante los siguientes eventos:
 
 | Datos                   | Ejemplo                                                 | Notas                                                                                 |
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| id                      | hashed string                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
+| id                      | cadena hashed                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
 | dataFileSize            | 419430400                                               | Tamaño del archivo de datos en bytes                                                  |
 | indexesSize             | 419430400                                               | Tamaño del índice en bytes                                                            |
 | cacheSize               | 419430400                                               | Tamaño de caché en bytes                                                              |
@@ -59,9 +59,9 @@ Los datos se recogen durante los siguientes eventos:
 
 ### Collected per database at web server startup
 
-| Datos     | Ejemplo          | Notas       |
-| --------- | ---------------- | ----------- |
-| webServer | {"started":true} | Always true |
+| Datos     | Ejemplo          | Notas        |
+| --------- | ---------------- | ------------ |
+| webServer | {"started":true} | Siempre true |
 
 
 

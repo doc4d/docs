@@ -65,7 +65,7 @@ Date formats control the way dates appear when displayed or printed. For data en
 
 La siguiente tabla muestra las opciones disponibles:
 
-| Nombre del formato            | Cadena JSON     | Example (US system)            |
+| Nombre del formato            | Cadena JSON     | Ejemplo (sistema USA)          |
 | ----------------------------- | --------------- | ------------------------------ |
 | System date short             | - (por defecto) | 03/25/20                       |
 | System date abbreviated *(1)* | systemMedium    | Wed, Mar 25, 2020              |
@@ -444,7 +444,7 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
 *   2 (or any value >0) = semi-checked box (third state). Para la entrada de datos, este estado devuelve el valor 2.
-*   -1 = invisible check box,
+*   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
 *   -4 = semi-checked box, not enterable

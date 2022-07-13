@@ -83,7 +83,7 @@ Los tipos soportados dependen de la categoría de formulario:
 
 ---
 
-## Inherited Form Name
+## Nombre del formulario heredado
 
 This property designates the [form to inherit](forms.md#inherited-forms) in the current form.
 

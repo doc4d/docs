@@ -281,7 +281,7 @@ Asumiendo que la unidad de las líneas es "líneas", entonces la quinta línea d
 
 
 ---
-## Horizontal Padding
+## Relleno horizontal
 
 
 Establece un relleno horizontal para las celdas. El valor se establece en píxeles (por defecto = 0).
@@ -301,10 +301,10 @@ Establece un relleno horizontal para las celdas. El valor se establece en píxel
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### Ver también
-[Vertical Padding](#vertical-padding)
+[Relleno vertical](#vertical-padding)
 
 ---
-## Vertical Padding
+## Relleno vertical
 
 
 Establece un relleno vertical para las celdas. El valor se establece en píxeles (por defecto = 0).
@@ -321,4 +321,4 @@ Establece un relleno vertical para las celdas. El valor se establece en píxeles
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### Ver también
-[Horizontal Padding](#horizontal-padding)
+[Relleno horizontal](#horizontal-padding)
