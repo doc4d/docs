@@ -6,17 +6,17 @@ title: HTTPRequest
 <details><summary>Histórico</summary>
 | Versión | Modificaciones |
 | ------- | -------------- |
-| v19 R6  | Class added    |
+| v19 R6  | Clase añadida  |
 </details>
 
 
-The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httprequest-object) that can be used to configure and send requests to an HTTP server, as well as to process the HTTP server responses.
+La clase `HTTPRequest` permite manejar objetos [`HTTPRequest`](#httprequest-object) que pueden ser utilizados para configurar y enviar peticiones a un servidor HTTP, así como para procesar las respuestas del servidor HTTP.
 
-The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
+La clase `HTTPRequest` está disponible en el almacén de clases `4D`. Para crear y enviar peticiones HTTP se utiliza la función [4D.HTTPRequest.new()](#4dhttprequestnew), que devuelve un objeto [`HTTPRequest`](#httprequest-object).
 
 ### Ejemplo
 
-Create a `MyHttpRequestOptions` class for the request options:
+Crear una clase `MyHttpRequestOptions` para las opciones de la petición:
 
 ```4d
 Class constructor($method : Text; $headers : Object; $body : Text)
@@ -25,10 +25,10 @@ This.headers:=$headers
 This.body:=$body
 
 Function onResponse($request : 4D.HTTPRequest; $event : Object)
-//My onResponse method, if you want to handle the request asynchronously
+// Mi método onResponse, si quiere manejar la petición de forma asíncrona
 
 Function onError($request : 4D.HTTPRequest; $event : Object)
-//My onError method, if you want to handle the request asynchronously
+// Mi método onError, si quiere manejar la petición de forma asíncrona
 ```
 
 Ahora puede crear su petición:
@@ -43,15 +43,15 @@ myHttpRequestOptions := cs.MyHttpRequestOptions.new("GET"; $headers; "")
 
 var $request : 4D.HTTPRequest
 $request:=4D.HTTPRequest.new("www.google.com"; myHttpRequestOptions)
-$request.wait() //If you want to handle the request synchronously
-//Now you can use $request.response to access the result of the request or $request.error to check the error that happened.
+$request.wait() // Si desea gestionar la solicitud de forma sincrónica
+// Ahora puede utilizar $request.response para acceder al resultado de la petición o $request.error para comprobar el error que se ha producido.
 ```
 
 ### Objeto HTTPRequest
 
-An HTTPRequest object is a non-sharable object.
+Un objeto HTTPRequest es un objeto no compartible.
 
-HTTPRequest objects provide the following properties and functions:
+Los objetos HTTPRequest ofrecen las siguientes propiedades y funciones:
 
 |                                                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -88,7 +88,7 @@ HTTPRequest objects provide the following properties and functions:
 
 #### Descripción
 
-The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in *url* with the defined *options*, and returns a `4D.HTTPRequest` object<!-- END REF -->.
+La función `4D.HTTPRequest.new()` <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in *url* with the defined *options*, and returns a `4D.HTTPRequest` object<!-- END REF -->.
 
 The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods.
 
