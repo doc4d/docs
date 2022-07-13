@@ -7,7 +7,7 @@ title: Clases del modelo de datos
 
 ORDA allows you to create high-level class functions above the data model. This allows you to write business-oriented code and "publish" it just like an API. Datastore, dataclasses, entity selections, and entities are all available as class objects that can contain functions.
 
-For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. It would be as simple as calling:
+For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. Sería tan sencillo como llamar:
 
 ```4d
 $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
@@ -94,7 +94,7 @@ Function getDesc
 ```
 
 
-This function can then be called:
+Esta función puede ser llamada:
 
 ```4d
 $desc:=ds.getDesc() //"Database exposing..."

@@ -7,7 +7,7 @@ To help us make our products always better, we automatically collect data regard
 
 Esta página explica:
 
-- what information is collected
+- qué información se recopila
 - where information is stored and when it is sent to 4D
 
 
@@ -47,7 +47,7 @@ Los datos se recogen durante los siguientes eventos:
 | isCompiled              | true                                                    | True si la aplicación está compilada                                                  |
 | isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                              |
 | isProjectMode           | true                                                    | True si la aplicación es un proyecto                                                  |
-| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Information on mobile sessions                                                        |
+| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Información sobre sesiones móviles                                                    |
 
 
 ### Collected per database at closure
@@ -65,7 +65,7 @@ Los datos se recogen durante los siguientes eventos:
 
 
 
-## When is it stored and sent?
+## ¿Cuándo se almacena y envia?
 
 Collected data is written in a text file (JSON format) when 4D Server quits. The file is stored inside the [active 4D folder](https://doc.4d.com/4dv19/help/command/en/page485.html), i.e.:
 

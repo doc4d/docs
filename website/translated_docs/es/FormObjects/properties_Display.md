@@ -26,7 +26,7 @@ When the user enters "RB17621," the field displays:
 
 El campo contiene realmente "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is: 
+If the user enters more characters than the format allows, 4D displays the last characters. Por ejemplo, si el formato es: 
 
     (#######)
 
@@ -359,7 +359,7 @@ The table below shows the Time field display formats and gives examples:
 
 
 ---
-## Text when False/Text when True
+## Texto cuando False/Texto cuando True
 
 When a [boolean expression](properties_Object.md#expression-type) is displayed as:
 - a text in an [input object](input_overview.md)
@@ -447,7 +447,7 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 *   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
-*   -4 = semi-checked box, not enterable
+*   -4 = casilla semi-marcada, no editable
 
 In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
 

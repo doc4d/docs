@@ -292,9 +292,9 @@ Establece un relleno horizontal para las celdas. El valor se establece en píxel
 
 #### Gramática JSON
 
-| Nombre            | Tipos de datos | Valores posibles               |
-| ----------------- | -------------- | ------------------------------ |
-| horizontalPadding | number         | Number of pixels (must be >=0) |
+| Nombre            | Tipos de datos | Valores posibles                 |
+| ----------------- | -------------- | -------------------------------- |
+| horizontalPadding | number         | Número de píxeles (debe ser >=0) |
 
 #### Objetos soportados
 
@@ -312,9 +312,9 @@ Establece un relleno vertical para las celdas. El valor se establece en píxeles
 
 #### Gramática JSON
 
-| Nombre          | Tipos de datos | Valores posibles               |
-| --------------- | -------------- | ------------------------------ |
-| verticalPadding | number         | Number of pixels (must be >=0) |
+| Nombre          | Tipos de datos | Valores posibles                 |
+| --------------- | -------------- | -------------------------------- |
+| verticalPadding | number         | Número de píxeles (debe ser >=0) |
 
 #### Objetos soportados
 

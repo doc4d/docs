@@ -430,7 +430,7 @@ Once a CSS preview mode is selected, objects are automatically displayed with th
 > When copying or duplicating objects, only the CSS references (if any) and the JSON values are copied.
 
 
-### CSS support in the Property List
+### Soporte CSS en la Lista de Propiedades
 
 In CSS Preview mode, if the value of an attribute has been defined in a style sheet, the attribute's name will appear with a CSS icon displayed next to it in the Property List. For example, the attribute values defined in this style sheet:
 

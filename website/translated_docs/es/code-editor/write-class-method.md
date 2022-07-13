@@ -70,7 +70,7 @@ You can display the following lists of items in the lists area of the Code Edito
 - **Table** (submenu): Field names of the table selected using the submenu.
 - **Current table**: Field names of the current table (available in triggers, form methods and object methods).
 - **Project forms**: Database project form names. When you double-click on a project form name, 4D inserts its while respecting the syntax: the form name is inserted between quotes.
-- **Table forms**: Database table and form names in the form of a hierarchical list. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. For example: [Table];"Form".
+- **Table forms**: Database table and form names in the form of a hierarchical list. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. Por ejemplo: [Table];"Form".
 - **Methods**: Database project method names.
 - **All folders**: Names of object folders and subfolders set in the database displayed in the form of a hierarchical list. Folders can be used to organize objects in a customized manner. They are managed from the Home Page of the Explorer.
 - **Folders** (submenu): Contents of the folder selected using the submenu.
@@ -95,7 +95,7 @@ The following parameters are stored in the template:
 - Tamaño relativo de las áreas de edición y de la lista
 - Number of lists
 - Ubicación y contenido de cada lista
-- Relative width of each list
+- Ancho relativo de cada lista
 
 To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
 
@@ -139,7 +139,7 @@ Under Windows, the code editor includes an Input Code Editor (IME) to facilitate
 
 The Code Editor includes numerous [navigation shortcuts](#navigational-keyboard-shortcuts).
 
-### Adding items by drag-and-drop
+### Añadiendo elementos por arrastrar y soltar
 
 Al escribir métodos, puede arrastrar y soltar elementos:
 
@@ -267,7 +267,7 @@ If the characters typed correspond to different types of objects, the list displ
 * Plug-in commands
 * 4D keywords
 * Palabras clave SQL
-* Macros (displayed between < >)
+* Macros (mostradas entre < >)
 
 > For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
 
@@ -275,7 +275,7 @@ If the characters typed correspond to different types of objects, the list displ
 
 4D automatically displays case-sensitive suggestions of all valid object property names in 4D code when you:
 
-* type a dot "." after an object or
+* escribe un punto "." después de un objeto o
 * use the Tab key after a dereferenced object pointer "->".
 
 ![](assets/en/code-editor/autocomplete-object-attributes.png)
@@ -322,8 +322,8 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Shift]+[flecha izquierda]                          | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left  |
 | [Shift]+[flecha abajo]                              | Create and enlarge a selection, line by line, from the top to the bottom                                                               |
 | [Shift]+[flecha arriba]                             | Create and enlarge a selection, line by line, from the bottom to the top                                                               |
-| [Ctrl]+[Shift]+[right arrow]                        | Create and enlarge the selection, word by word, from the right                                                                         |
-| [Ctrl]+[Shift]+[left arrow]                         | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
+| [Ctrl]+[Shift]+[flecha derecha]                     | Create and enlarge the selection, word by word, from the right                                                                         |
+| [Ctrl]+[Shift]+[flecha izquierda]                   | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
 | [Ctrl]+[flecha derecha]                             | Move the insertion point, word by word, from left to right                                                                             |
 | [Ctrl]+[left arrow]                                 | Move the insertion point, word by word, from right to left                                                                             |
 | [Home]                                              | Place the insertion point at the beginning of the line                                                                                 |
@@ -361,7 +361,7 @@ The Code Editor can only check for obvious syntax errors (misspellings and the l
 
 4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
 
-## Using help tips and status bar
+## Utilizando consejos de ayuda y barra de estado
 
 The Code Editor provides various contextual information using help tips. They appear when you mouse over an object and the status bar, at the bottom of a Code Editor window.
 
@@ -478,7 +478,7 @@ There are several ways to expand and collapse code:
   * **Collapse Current Level** / **Expand Current Level**: collapses or expands the code structure at the level where the cursor is located. These commands are also available in the **context menu** of the editor.
   * **Collapse All** / **Expand All**: collapses or expands all the loops and conditions of a method. These commands are also available in the toolbar of the editor.
 
-### Start of Block or End of Block
+### Inicio del bloque o fin del bloque
 
 Two commands make it easier to move around within code structures (e.g. `If...Else...End if`):
 
