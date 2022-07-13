@@ -382,7 +382,7 @@ El escenario básico es:
 2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
     - `DatabaseToEmbedInClientWinFolder`
     - `DatabaseToEmbedInClientMacFolder`
-3. Genere la aplicación cliente-servidor. This will have following effects:
+3. Genere la aplicación cliente-servidor. Esto tendrá los siguientes efectos:
     - the whole folder of the single user application is copied inside the "Database" folder of the merged client
     - the *EnginedServer.4Dlink* file of the "Database" folder is not generated
     - the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
@@ -625,7 +625,7 @@ El siguiente gráfico ilustra esta funcionalidad:
 When the default data file is detected at first launch, it is silently opened in read-only mode, thus allowing you to execute any custom operations that do not modify the data file itself.
 
 
-## Management of client connection(s)
+## Gestión de la conexión(es) de las aplicaciones clientes
 
 The management of connections by client applications covers the mechanisms by which a merged client application connects to the target server, once it is in its production environment.
 
@@ -642,7 +642,7 @@ The connection procedure for merged client applications supports cases where the
     - If the user clicks on the **Quit** button, the client application quits.
 - If the connection is successful, the client application saves this connection information in the application's user preferences folder for future use.
 
-### Storing the last server path
+### Almacenando la última ruta del servidor
 
 The last used and validated server path is automatically saved in a file named "lastServer.xml" in the application's user preferences folder. Esta carpeta se guarda en la siguiente ubicación:
 
