@@ -365,7 +365,7 @@ Todos los valores de propiedades son de tipo Texto.
 | FileVersion      | Texto |
 | OriginalFilename | Texto |
 
-**Returned object with a .plist file**
+**Objeto devuelto con un archivo .plist**
 
 The xml file contents is parsed and keys are returned as properties of the object, preserving their types (text, boolean, number). `.plist dict` is returned as a JSON object and `.plist array` is returned as a JSON array.
 
