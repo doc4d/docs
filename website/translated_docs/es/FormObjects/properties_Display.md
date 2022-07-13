@@ -447,7 +447,7 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 *   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
-*   -4 = semi-checked box, not enterable
+*   -4 = casilla semi-marcada, no editable
 
 In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
 
