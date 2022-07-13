@@ -161,7 +161,7 @@ Los siguientes campos se registran tanto para la solicitud como para la respuest
 
 ### logweb.txt
 
-The [web log recording file](webServerConfig.md#log-recording) can be enabled using the [`web server` object](webServerObject.md), the `WEB SET OPTION` command, or the **Web/Log (type)** page of the settings. You need to select the log format.
+The [web log recording file](webServerConfig.md#log-recording) can be enabled using the [`web server` object](webServerObject.md), the `WEB SET OPTION` command, or the **Web/Log (type)** page of the settings. Debe seleccionar el formato de historial.
 
 #### CLF/DLF
 
