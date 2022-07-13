@@ -6,6 +6,11 @@ title: Documentation updates
 The list of main updates in this documentation. For general information about new features in the 4D products, see the **release notes** on [doc.4d.com](https://doc.4d.com). 
 
 
+## 4D v19 R7
+
+- Related data and computed/alias attributes can be displayed in the [Data Explorer](Admin/dataExplorer.md#basics).
+
+
 ## 4D v19 R6
 
 - New [HTTPRequest](API/HTTPRequestClass.md) class.
