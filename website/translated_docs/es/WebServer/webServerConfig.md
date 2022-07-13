@@ -20,10 +20,10 @@ Hay diferentes maneras de configurar los parámetros del servidor web 4D, en fun
 
 ## Caché
 
-| Puede ajustarse con           | Nombre                                                 | Comentarios |
-| ----------------------------- | ------------------------------------------------------ | ----------- |
-| Caja de diálogo de parámetros | Página de configuración/Utilización de la caché Web 4D |             |
-| Caja de diálogo de parámetros | Configuration page/Page Cache Size                     |             |
+| Puede ajustarse con           | Nombre                                                    | Comentarios |
+| ----------------------------- | --------------------------------------------------------- | ----------- |
+| Caja de diálogo de parámetros | Página de configuración/Utilización de la caché Web 4D    |             |
+| Caja de diálogo de parámetros | Página de configuración/Tamaño de la caché de las páginas |             |
 
 Activa y configura la caché de las páginas web.
 
@@ -632,7 +632,7 @@ In return, you must make sure in this case to systematically initialize the vari
 
 
 
-#### Send Extended Characters Directly
+#### Enviar directamente los caracteres extendidos
 
 When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
 
