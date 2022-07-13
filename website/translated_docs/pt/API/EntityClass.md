@@ -8,8 +8,8 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 
 ### Resumo
 
-|                                                                                                                                                                                                                                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE EntityClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE EntityClass.attributeName.Summary -->|
 | [<!-- INCLUDE #EntityClass.clone().Syntax -->](#clone)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.clone().Summary -->|
 | [<!-- INCLUDE #EntityClass.diff().Syntax -->](#diff)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.diff().Summary -->|
@@ -18,7 +18,6 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 | [<!-- INCLUDE #EntityClass.fromObject().Syntax -->](#fromobject)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.fromObject().Summary -->|
 | [<!-- INCLUDE #EntityClass.getDataClass().Syntax -->](#getdataclass)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getDataClass().Summary -->|
 | [<!-- INCLUDE #EntityClass.getKey().Syntax -->](#getkey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getKey().Summary -->|
-| [<!-- INCLUDE #EntityClass.getRemoteContextAttributes().Syntax -->](#getremotecontextattributes)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getRemoteContextAttributes().Summary -->|
 | [<!-- INCLUDE #EntityClass.getSelection().Syntax -->](#getselection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getSelection().Summary -->|
 | [<!-- INCLUDE #EntityClass.getStamp().Syntax -->](#getstamp)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getStamp().Summary -->|
 | [<!-- INCLUDE #EntityClass.indexOf().Syntax -->](#indexof)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.indexOf().Summary -->|
@@ -54,7 +53,7 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 
 #### Descrição
 
-Any dataclass attribute is available as a property of an entity, which<!-- REF EntityClass.attributeName. Summary -->stores the attribute value for the entity<!-- END REF -->.
+Qualquer atributo dataclass está disponível como propriedade de uma entidade, que <!-- REF EntityClass.attributeName.Summary -->armazena o valor do atributo para a entidade<!-- END REF -->.
 > Dataclass attributes can also be reached using the alternate syntax with \[ ].
 
 The attribute value type depends on the attribute [kind](DataClassAttributeClass.md#kind) (relation or storage):
@@ -67,8 +66,8 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 #### Exemplo
 
 ```4d
- var $myEntity : cs.EmployeeEntity
- $myEntity:=ds.Employee.new() //Create a new entity
+ var $myEntity : cs. EmployeeEntity
+ $myEntity:=ds. Employee.new() //Create a new entity
  $myEntity.name:="Dupont" // assign 'Dupont' to the 'name' attribute
  $myEntity.firstname:="John" //assign 'John' to the 'firstname' attribute
  $myEntity.save() //save the entity
@@ -90,28 +89,28 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 
 
 <!-- REF #EntityClass.clone().Syntax -->
-If *attributeName* kind is **storage**: `.attributeName` returns a value of the same type as *attributeName*.<!-- END REF -->
+**.clone()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.clone().Params -->
-| Parameter | Type       |    | Descrição                         |
-| --------- | ---------- |:--:| --------------------------------- |
-| Resultado | 4D. Entity | <- | New entity referencing the record |
+| Parameter | Type       |    | Descrição                              |
+| --------- | ---------- |:--:| -------------------------------------- |
+| Resultado | 4D. Entity | <- | Nova entidade referenciando o registro |
 <!-- END REF -->
 
 
 #### Descrição
 
-The `.clone()` function<!-- REF #EntityClass.clone(). Summary -->creates in memory a new entity referencing the same record as the original entity<!-- END REF -->. This function allows you to update entities separately.
+A função `.clone()`<!-- REF #EntityClone().clone().Summary -->cria em memória uma nova entidade referenciando o mesmo registro que a entidade original<!-- END REF -->. Esta função permite que você atualize as entidades separadamente.
 > Keep in mind that any modifications done to entities will be saved in the referenced record only when the [`.save( )`](#save) function is executed.
 
-This function can only be used with entities already saved in the database. It cannot be called on a newly created entity (for which [`.isNew()`](#isnew) returns **True**).
+Esta função só pode ser usada com entidades já salvas no banco de dados. Ele não pode ser chamado em uma entidade recém-criada (para a qual [`.isNew()`](#isnew) retorna **Verdadeiro**).
 
 
 #### Exemplo
 
 ```4d
- var $emp; $empCloned : cs.EmployeeEntity
- $emp:=ds.Employee.get(672)
+ var $emp; $empCloned : cs. EmployeeEntity
+ $emp:=ds. Employee.get(672)
  $empCloned:=$emp.clone()
 
  $emp.lastName:="Smith" //Updates done on $emp are not done on $empCloned
@@ -138,42 +137,42 @@ This function can only be used with entities already saved in the database. It c
 
 
 <!-- REF #EntityClass.diff().Params -->
-| Parameter           | Type       |    | Descrição                                      |
-| ------------------- | ---------- |:--:| ---------------------------------------------- |
-| entityToCompare     | 4D. Entity | -> | Entity to be compared with the original entity |
-| attributesToCompare | Coleção    | -> | Name of attributes to be compared              |
-| Resultado           | Coleção    | <- | Differences between the entities               |
+| Parameter           | Type       |    | Descrição                                        |
+| ------------------- | ---------- |:--:| ------------------------------------------------ |
+| entityToCompare     | 4D. Entity | -> | Entidade a ser comparada com a entidade original |
+| attributesToCompare | Coleção    | -> | Nome dos atributos a serem comparados            |
+| Resultado           | Coleção    | <- | Diferenças entre as entidades                    |
 <!-- END REF -->
 
 
 #### Descrição
 
-The `.diff()` function<!-- REF #EntityClass.diff(). Summary -->compares the contents of two entities and returns their differences<!-- END REF -->.
+A função `.diff()` <!-- REF #EntityClass.diff().Summary -->compara o conteúdo de duas entidades e retorna suas diferenças<!-- END REF -->.
 
-In *entityToCompare*, pass the entity to be compared to the original entity.
+No *entityToCompare*, passe a entidade a ser comparada à entidade original.
 
-In *attributesToCompare*, you can designate specific attributes to compare. If provided, the comparison is done only on the specified attributes. If not provided, all differences between the entities are returned.
+Em *attributesToCompare*, pode designar atributos específicos para comparar. Se fornecida, a comparação é feita apenas nos atributos especificados. Se não for fornecida, todas as diferenças entre as entidades são devolvidas.
 
-The differences are returned as a collection of objects whose properties are:
+As diferenças são retornadas como uma coleção de objetos cujas propriedades são:
 
-| Property name | Type                            | Descrição                                   |
-| ------------- | ------------------------------- | ------------------------------------------- |
-| attributeName | String                          | Name of the attribute                       |
-| value         | any - Depends on attribute type | Value of the attribute in the entity        |
-| otherValue    | any - Depends on attribute type | Value of the attribute in *entityToCompare* |
+| Property name | Type                              | Descrição                              |
+| ------------- | --------------------------------- | -------------------------------------- |
+| attributeName | String                            | Nome do atributo                       |
+| value         | any - Depende do tipo de atributo | Valor do atributo na entidade          |
+| otherValue    | any - Depende do tipo de atributo | Valor do atributo em *entityToCompare* |
 
-Only attributes with different values are included in the collection. If no differences are found, `.diff()` returns an empty collection.
+Apenas atributos com valores diferentes estão incluídos na coleção. Se nenhuma diferença for encontrada, `.diff()` retorna uma coleção vazia.
 
-The function applies for properties whose [kind](DataClassAttributeClass.md#kind) is **storage** or **relatedEntity**. In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
+A função se aplica para propriedades cujo [tipo](DataClassAttributeClass.md#kind) é **de armazenamento** ou **relacionada a Entidade**. No caso de uma entidade relacionada ter sido atualizada (ou seja, a chave estrangeira), o nome da entidade relacionada e seu nome de chave primária são retornados como propriedades *attributeName* ( value** e *outroValue* estão vazios para o nome da entidade relacionada).
 
-If one of the compared entities is **Null**, an error is raised.
+Se uma das entidades comparadas for **Null**, um erro é gerado.
 
 #### Exemplo 1
 
 
 ```4d
  var $diff1; $diff2 : Collection
- employee:=ds.Employee.query("ID=1001").first()
+ employee:=ds. Employee.query("ID=1001").first()
  $clone:=employee.clone()
  employee.firstName:="MARIE"
  employee.lastName:="SOPHIE"
@@ -228,13 +227,13 @@ $diff2:
  vCompareResult3:=New collection
  $attributesToInspect:=New collection
 
- $e1:=ds.Employee.get(636)
- $e2:=ds.Employee.get(636)
+ $e1:=ds. Employee.get(636)
+ $e2:=ds. Employee.get(636)
 
  $e1.firstName:=$e1.firstName+" update"
  $e1.lastName:=$e1.lastName+" update"
 
- $c:=ds.Company.get(117)
+ $c:=ds. Company.get(117)
  $e1.employer:=$c
  $e2.salary:=100
 
@@ -398,10 +397,10 @@ The object returned by `.drop( )` contains the following properties:
 Example without `dk force drop if stamp changed` option:
 
 ```4d
- var $employees : cs.EmployeeSelection
- var $employee : cs.EmployeeEntity
+ var $employees : cs. EmployeeSelection
+ var $employee : cs. EmployeeEntity
  var $status : Object
- $employees:=ds.Employee.query("lastName=:1";"Smith")
+ $employees:=ds. Employee.query("lastName=:1";"Smith")
  $employee:=$employees.first()
  $status:=$employee.drop()
  Case of
@@ -417,10 +416,10 @@ Example without `dk force drop if stamp changed` option:
 Example with `dk force drop if stamp changed` option:
 
 ```4d
- var $employees : cs.EmployeeSelection
- var $employee : cs.EmployeeEntity
+ var $employees : cs. EmployeeSelection
+ var $employee : cs. EmployeeEntity
  var $status : Object
- $employees:=ds.Employee.query("lastName=:1";"Smith")
+ $employees:=ds. Employee.query("lastName=:1";"Smith")
  $employee:=$employees.first()
  $status:=$employee.drop(dk force drop if stamp changed)
  Case of
@@ -464,9 +463,9 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 #### Exemplo
 
 ```4d
- var $employees : cs.EmployeeSelection
- var $employee; $firstEmployee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
+ var $employees : cs. EmployeeSelection
+ var $employee; $firstEmployee : cs. EmployeeEntity
+ $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
  $employee:=$employees[2]
  $firstEmployee:=$employee.first() //$firstEmployee is the first entity of the $employees entity selection
 ```
@@ -533,8 +532,8 @@ The following code will create an entity with manager and employer related entit
 
 ```4d
  var $o : Object
- var $entity : cs.EmpEntity
- $entity:=ds.Emp.new()
+ var $entity : cs. EmpEntity
+ $entity:=ds. Emp.new()
  $entity.fromObject($o)
  $entity.save()
 ```
@@ -597,8 +596,8 @@ The following generic code duplicates any entity:
   //duplicate_entity method 
   //duplicate_entity($entity) 
 
- #DECLARE($entity : 4D.Entity)  
- var $entityNew : 4D.Entity
+ #DECLARE($entity : 4D. Entity)  
+ var $entityNew : 4D. Entity
  var $status : Object
 
  $entityNew:=$entity.getDataClass().new() //create a new entity in the parent dataclass
@@ -644,9 +643,9 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 
 
 ```4d
- var $employees : cs.EmployeeSelection
- var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName=:1";"Smith")
+ var $employees : cs. EmployeeSelection
+ var $employee : cs. EmployeeEntity
+ $employees:=ds. Employee.query("lastName=:1";"Smith")
  $employee:=$employees[0]
  ALERT("The primary key is "+$employee.getKey(dk key as string))
 ```
@@ -654,59 +653,7 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 <!-- END REF -->
 
 
-<!-- REF EntityClass.getRemoteContextAttributes().Desc -->
-## .getRemoteContextAttributes()
 
-<details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v19R5  | Adicionado |
-</details>
-
-<!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->
-**.getRemoteContextAttributes()** : Text<!-- END REF -->
-
-<!-- REF #EntityClass.getRemoteContextAttributes().Params -->
-| Parameter | Type  |    | Descrição                                                     |
-| --------- | ----- | -- | ------------------------------------------------------------- |
-| result    | Texto | <- | Context attributes linked to the entity, separated by a comma |
-<!-- END REF -->
-
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
-
-
-#### Descrição
-
-The `.getRemoteContextAttributes()` function<!-- REF #EntityClass.getRemoteContextAttributes(). Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
-
-If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity, the function returns an empty Text.
-
-#### Exemplo
-
-```4d
-var $ds : 4D. DataStoreImplementation
-var $address : cs. AddressEntity
-var $p : cs. PersonsEntity
-var $contextA : Object
-var $info : Text
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$address:=$ds. Address.get(1; $contextA)
-$text:="" For each ($p; $address.persons)
-    $text:=$p.firstname+" "+$p.lastname End for each 
-
-$info:=$address.getRemoteContextAttributes()
-
-//$info = "persons,persons.lastname,persons.firstname"
-```
-
-#### Veja também
-
-[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()
@@ -994,7 +941,7 @@ The object returned by `.lock( )` contains the following properties:
 |                  | task_name           | texto                 | Process name                                                                                                                                                |
 |                  | client_version      | texto                 | Version of the client                                                                                                                                       |
 |                  |                     |                       | ***Available only for a REST session lock:***                                                                                                               |
-|                  | host                | texto                 | URL that locked the entity (e.g. "www.myserver.com")                                                                                                        |
+|                  | host                | texto                 | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
 |                  | IPAddr              | texto                 | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
 |                  | userAgent           | texto                 | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                       | ***Available only in case of serious error*** (primary key already exists, disk full...):                                                                   |
