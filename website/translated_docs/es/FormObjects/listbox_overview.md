@@ -363,7 +363,7 @@ To determine which rows are selected, you have to check whether they are include
 
 Keep in mind that expressions are automatically re-evaluated each time the:
 - la selección de list box cambia.
-- list box gets or loses the focus.
+- list box obtiene o pierde el foco.
 - form window containing the list box becomes, or ceases to be, the frontmost window.
 
 
@@ -765,12 +765,12 @@ ARRAY OBJECT(obColumn;0) //column array
 
 #### valueType y visualización de datos
 
-When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
+When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Los valores valueType soportados son:
 
 *   "text": para un valor de texto
 *   "real": for a numeric value that can include separators like a \<space>, <.>, o <,>
 *   "integer": para un valor entero
-*   "boolean": for a True/False value
+*   "boolean": para un valor True/False
 *   "color": para definir un color de fondo
 *   "event": para mostrar un botón con una etiqueta.
 
@@ -788,7 +788,7 @@ When a list box column is associated with an object array, the way a cell is dis
 
 You set the cell display and options using specific attributes in each object (see below).
 
-#### Display formats and entry filters
+#### Formatos de visualización y filtros de entrada
 
 You cannot set display formats or entry filters for columns of object-type list boxes. They are automatically defined according to the value type. Estos están listados en la siguiente tabla:
 
@@ -816,13 +816,13 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 | min                   | valor mínimo                                      |       | x    | x       |          |       |        |
 | max                   | valor máximo                                      |       | x    | x       |          |       |        |
 | behavior              | Valor "tres Estados"                              |       |      | x       |          |       |        |
-| requiredList          | drop-down list defined in object                  | x     | x    | x       |          |       |        |
+| requiredList          | lista desplegable definida en objeto              | x     | x    | x       |          |       |        |
 | choiceList            | combo box definido en objeto                      | x     | x    | x       |          |       |        |
 | requiredListReference | 4D list ref, depends on "saveAs" value            | x     | x    | x       |          |       |        |
 | requiredListName      | Nombre de la lista 4D, depende del valor "saveAs" | x     | x    | x       |          |       |        |
 | saveAs                | "reference" o "value"                             | x     | x    | x       |          |       |        |
 | choiceListReference   | 4D list ref, display combo box                    | x     | x    | x       |          |       |        |
-| choiceListName        | 4D list name, display combo box                   | x     | x    | x       |          |       |        |
+| choiceListName        | Nombre de la lista 4D, mostrar combo box          | x     | x    | x       |          |       |        |
 | unitList              | array de X elementos                              | x     | x    | x       |          |       |        |
 | unitReference         | índice del elemento seleccionado                  | x     | x    | x       |          |       |        |
 | unitsListReference    | Ver lista de unidades 4D                          | x     | x    | x       |          |       |        |
