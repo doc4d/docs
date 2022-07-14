@@ -112,7 +112,7 @@ Para eliminar un punto de interrupción en el comando:
 1. Seleccione un comando en la lista.
 2. Press **Backspace** or **Delete** on your keyboard or click on the **Delete** button beneath the list (**Delete All** removes all commands in the list).
 
-### Setting a Condition for catching a command
+### Definir una condición para un punto de interrupción en un comando
 
 1. Haga clic en la entrada en la columna derecha
 2. Enter a 4D formula (expression, command call or project method) that returns a Boolean value.
