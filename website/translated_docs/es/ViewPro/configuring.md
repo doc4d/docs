@@ -228,7 +228,7 @@ To create your own date and time patterns, in your current localization, you can
 
 ### Símbolos adicionales
 
-In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. They appear "as-is" within the pattern.
+In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. Aparecen "tal cual" dentro del patrón.
 
 | Caracter | Descripción                                                                         | Ejemplo              |
 | -------- | ----------------------------------------------------------------------------------- | -------------------- |
@@ -399,7 +399,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 | Propiedad     |                | Tipo                 | Descripción                                                                                                                                                                                      |
 | ------------- | -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | marca de agua |                | colección            | Collection of watermark settings. <p>Valor por defecto: indefinido                                                                                                       |
-|               | \[ ].height   | entero largo         | The height of the watermark text / image.                                                                                                                                                        |
+|               | \[ ].height   | entero largo         | La altura del texto/imagen de la marca de agua.                                                                                                                                                  |
 |               | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                                      |
 |               | \[ ].page     | texto                | La(s) página(s) donde se imprime la marca de agua.<p>Para todas las páginas: "all". For specific pages: page numbers or page ranges separated by commas. Ej.: "1,3,5-12" |
 |               | \[ ].width    | entero largo         | El ancho del texto/imagen marca de agua.                                                                                                                                                         |
