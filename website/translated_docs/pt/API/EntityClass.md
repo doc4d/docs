@@ -906,15 +906,15 @@ A função `.isNew()` <!-- REF #EntityClass.isNew(). ummary --> retorna True se 
 
 
 <!-- REF #EntityClass.last().Params -->
-| Parameter | Type       |    | Descrição                                                           |
-| --------- | ---------- |:--:| ------------------------------------------------------------------- |
-| Resultado | 4D. Entity | <- | Reference to last entity of an entity selection (Null if not found) |
+| Parameter | Type       |    | Descrição                                                                                 |
+| --------- | ---------- |:--:| ----------------------------------------------------------------------------------------- |
+| Resultado | 4D. Entity | <- | Referência para a última entidade de uma seleção de entidade (Null se não for encontrado) |
 
 <!-- END REF -->
 
 #### Descrição
 
-The `.last()` function <!-- REF #EntityClass.last(). Summary -->returns a reference to the entity in last position of the entity selection which the entity belongs to<!-- END REF -->.
+A função `.last()` <!-- REF #EntityClass.last(). Summary --> retorna uma referência à entidade na última posição da seleção da entidade a que a entidade pertence <!-- END REF -->.
 
 Se a entidade não pertence a nenhuma seleção de entidade existente (ex: [.getSelection( )](#getselection) retorna Null), a função retorna um valor nulo.
 
@@ -923,11 +923,11 @@ Se a entidade não pertence a nenhuma seleção de entidade existente (ex: [.get
 
 
 ```4d
- var $employees : cs. EmployeeSelection
- var $employee; $lastEmployee : cs. EmployeeEntity
- $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
+ var $employees : cs.ColaboradoreSelection
+ var $employee; $lastEmployee : cs.ColaboradoreEntity
+ $employees:=ds.Empregado. uery("Sobrenome = :1";"H@") //Esta seleção da entidade contém 3 entidades
  $employee:=$employees[0]
- $lastEmployee:=$employee.last() //$lastEmployee is the last entity of the $employees entity selection
+ $lastEmployee:=$employee. ast() //$lastEmployee é a última entidade da seleção de $employees entidade
 ```
 
 
@@ -948,18 +948,18 @@ Se a entidade não pertence a nenhuma seleção de entidade existente (ex: [.get
 
 
 <!-- REF #EntityClass.lock().Params -->
-| Parameter | Type    |    | Descrição                                                            |
-| --------- | ------- |:--:| -------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk reload if stamp changed`: Reload before locking if stamp changed |
-| Resultado | Objeto  | <- | Result of lock operation                                             |
+| Parameter | Type    |    | Descrição                                                                            |
+| --------- | ------- |:--:| ------------------------------------------------------------------------------------ |
+| mode      | Integer | -> | `dk reload if stamp changed`: Recarregar antes de bloquear se o carimbo for alterado |
+| Resultado | Objeto  | <- | Resultado da operação de bloqueio                                                    |
 
 <!-- END REF -->
 
 #### Descrição
 
-The `.unlock()` function <!-- REF #EntityClass.unlock(). Summary -->removes the pessimistic lock on the record matching the entity<!-- END REF --> in the datastore and table related to its dataclass.
+A função `.lock()` <!-- REF #EntityClass.lock().Summary -->coloca um bloqueio pessimista no registro referenciado pela entidade<!-- END REF -->. O bloqueio de [é definido](ORDA/entities.md#entity-locking) para um registro e todas as referências da entidade no processo atual.
 
-Other processes will see this record as locked (the `result.success` property will contain False if they try to lock the same entity using this function). Only functions executed in the "locking" session are allowed to edit and save the attributes of the entity. The entity can be loaded as read-only by other sessions, but they will not be able to enter and save values.
+Outros processos verão este registro como bloqueado (o resultado. `a propriedade` uccess conterá Falso se eles tentarem bloquear a mesma entidade usando esta função). Só as funções executadas na sessão de "bloqueio" são permitidas para editar e guardar os atributos da entidade. A entidade pode ser carregada como apenas leitura por outras sessões, mas não serão capazes de introduzir e guardar valores.
 
 A record locked by `.lock()` is unlocked:
 
