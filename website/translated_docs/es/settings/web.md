@@ -92,7 +92,7 @@ When this option is selected, the web server does not provide any specific suppo
 In this mode, you can configure additional web server setttings:
 
 -   [Procesos Web simultáneos maximos](#maximum-concurrent-web-processes)
--   [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts)
+-   [Reutilización de los contextos temporales (4D en modo remoto)](#reuse-temporary-contexts)
 -   [Utilizar los procesos apropiativos](#use-preemptive-web-processes)
 
 #### Sesiones antiguas (sesiones procesos únicos)
