@@ -180,9 +180,9 @@ By default, the object uses the current keyboard layout.
 
 #### Gramática JSON
 
-| Nombre          | Tipos de datos | Valores posibles                                                          |
-| --------------- | -------------- | ------------------------------------------------------------------------- |
-| keyboardDialect | texto          | Language code, for example "ar-ma" or "cs". Ver RFC3066, ISO639 e ISO3166 |
+| Nombre          | Tipos de datos | Valores posibles                                                               |
+| --------------- | -------------- | ------------------------------------------------------------------------------ |
+| keyboardDialect | texto          | Código del lenguaje, por ejemplo "ar-ma" o "cs". Ver RFC3066, ISO639 e ISO3166 |
 
 
 #### Objetos soportados
