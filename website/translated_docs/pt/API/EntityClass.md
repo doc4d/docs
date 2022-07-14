@@ -626,19 +626,19 @@ O seguinte código genérico duplica qualquer entidade:
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getKey().Params -->
-| Parameter | Type    |    | Descrição                                                                               |
-| --------- | ------- |:--:| --------------------------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk key as string`: primary key is returned as a string, no matter the primary key type |
-| Resultado | Texto   | <- | Value of the text primary key of the entity                                             |
-| Resultado | Integer | <- | Value of the numeric primary key of the entity                                          |
+| Parameter | Type    |    | Descrição                                                                                              |
+| --------- | ------- |:--:| ------------------------------------------------------------------------------------------------------ |
+| mode      | Integer | -> | `dk key as string`: a chave primária se devolve como uma string, sem importar o tipo de chave primária |
+| Resultado | Texto   | <- | Valor do texto chave primária da entidade                                                              |
+| Resultado | Integer | <- | Valor da chave primária numérica da entidade                                                           |
 
 <!-- END REF -->
 
 #### Descrição
 
-The `.getKey()` function<!-- REF #EntityClass.getKey(). Summary -->returns the primary key value of the entity<!-- END REF -->.
+O `.getKey()` função <!-- REF #EntityClass.getKey().Summary -->devolve o valor chave primário da entidade<!-- END REF -->.
 
-Primary keys can be numbers (Integer) or strings. You can "force" the returned primary key value to be a string, no matter the actual primary key type, by passing the `dk key as string` option in the *mode* parameter.
+As chaves primárias podem ser números (Inteiro) ou strings. Você pode "forçar" o valor da chave primária retornado para ser uma string, independentemente do tipo de chave primária real, passando a `dk key como string` opção no parâmetro *modo*.
 
 #### Exemplo
 
@@ -722,16 +722,16 @@ $info:=$address.getRemoteContextAttributes()
 **.getSelection()**: 4D. EntitySelection<!-- END REF -->
 
 <!-- REF #EntityClass.getSelection().Params -->
-| Parameter | Type                |    | Descrição                                                        |
-| --------- | ------------------- |:--:| ---------------------------------------------------------------- |
-| Resultado | 4D. EntitySelection | <- | Entity selection to which the entity belongs (Null if not found) |
+| Parameter | Type                |    | Descrição                                                                 |
+| --------- | ------------------- |:--:| ------------------------------------------------------------------------- |
+| Resultado | 4D. EntitySelection | <- | Seleção de entidade a que pertence a entidade (ull se não for encontrado) |
 <!-- END REF -->
 
 #### Descrição
 
-The `.getSelection()` function<!-- REF #EntityClass.getSelection(). Summary -->returns the entity selection which the entity belongs to<!-- END REF -->.
+A função `.getSelection()` <!-- REF #EntityClass.getSelection().Summary -->retorna a seleção da entidade a que a entidade pertence<!-- END REF -->.
 
-If the entity does not belong to an entity selection, the function returns Null.
+Se a entidade não pertence à seleção de uma entidade, a função retorna Null.
 
 #### Exemplo
 
