@@ -12,11 +12,11 @@ La interfaz del editor de formularios muestra cada formulario JSON en su propia 
 
 ### Opciones de visualización
 
-You can show or hide several interface elements on the current page of the form:
+Puede mostrar u ocultar varios elementos de la interfaz en la página actual del formulario:
 
-- **Inherited Form**: Inherited form objects (if there is an [inherited form](forms.md#inherited-forms)).
-- **Page 0**: Objects from [page 0](forms.md#form-pages). Esta opción permite distinguir entre los objetos de la página actual del formulario y los de la página 0.
-- **Paper**: Borders of the printing page, which are shown as gray lines. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
+- **Formulario heredado**: objetos formulario heredados (si hay un [formulario heredado](forms.md#inherited-forms)).
+- **Página 0**: objetos de [página 0](forms.md#form-pages). Esta opción permite distinguir entre los objetos de la página actual del formulario y los de la página 0.
+- **Papel**: bordes de la página de impresión, que se muestran como líneas grises. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
 - **Rulers**: Rulers of the Form editor’s window.
 - **Markers**: Output control lines and associated markers that show the limits of the form’s different areas. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
 - **Etiquetas de los marcadores**: etiquetas de los marcadores, disponibles sólo cuando se muestran las líneas de control de salida. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
