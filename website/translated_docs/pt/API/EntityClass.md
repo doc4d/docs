@@ -625,19 +625,19 @@ O seguinte código genérico duplica qualquer entidade:
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getKey().Params -->
-| Parameter | Type    |    | Descrição                                                                               |
-| --------- | ------- |:--:| --------------------------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk key as string`: primary key is returned as a string, no matter the primary key type |
-| Resultado | Texto   | <- | Value of the text primary key of the entity                                             |
-| Resultado | Integer | <- | Value of the numeric primary key of the entity                                          |
+| Parameter | Type    |    | Descrição                                                                                              |
+| --------- | ------- |:--:| ------------------------------------------------------------------------------------------------------ |
+| mode      | Integer | -> | `dk key as string`: a chave primária se devolve como uma string, sem importar o tipo de chave primária |
+| Resultado | Texto   | <- | Valor do texto chave primária da entidade                                                              |
+| Resultado | Integer | <- | Valor da chave primária numérica da entidade                                                           |
 
 <!-- END REF -->
 
 #### Descrição
 
-The `.getKey()` function<!-- REF #EntityClass.getKey(). Summary -->returns the primary key value of the entity<!-- END REF -->.
+O `.getKey()` função <!-- REF #EntityClass.getKey().Summary -->devolve o valor chave primário da entidade<!-- END REF -->.
 
-Primary keys can be numbers (Integer) or strings. You can "force" the returned primary key value to be a string, no matter the actual primary key type, by passing the `dk key as string` option in the *mode* parameter.
+As chaves primárias podem ser números (Inteiro) ou strings. Você pode "forçar" o valor da chave primária retornado para ser uma string, independentemente do tipo de chave primária real, passando a `dk key como string` opção no parâmetro *modo*.
 
 #### Exemplo
 
@@ -669,30 +669,30 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 **.getSelection()**: 4D. EntitySelection<!-- END REF -->
 
 <!-- REF #EntityClass.getSelection().Params -->
-| Parameter | Type                |    | Descrição                                                        |
-| --------- | ------------------- |:--:| ---------------------------------------------------------------- |
-| Resultado | 4D. EntitySelection | <- | Entity selection to which the entity belongs (Null if not found) |
+| Parameter | Type                |    | Descrição                                                                 |
+| --------- | ------------------- |:--:| ------------------------------------------------------------------------- |
+| Resultado | 4D. EntitySelection | <- | Seleção de entidade a que pertence a entidade (ull se não for encontrado) |
 <!-- END REF -->
 
 #### Descrição
 
-The `.getSelection()` function<!-- REF #EntityClass.getSelection(). Summary -->returns the entity selection which the entity belongs to<!-- END REF -->.
+A função `.getSelection()` <!-- REF #EntityClass.getSelection().Summary -->retorna a seleção da entidade a que a entidade pertence<!-- END REF -->.
 
-If the entity does not belong to an entity selection, the function returns Null.
+Se a entidade não pertence à seleção de uma entidade, a função retorna Null.
 
 #### Exemplo
 
 
 ```4d
- var $emp : cs. EmployeeEntity
- var $employees; $employees2 : cs. EmployeeSelection
- $emp:=ds. Employee.get(672) // This entity does not belong to any entity selection
- $employees:=$emp.getSelection() // $employees is Null
+ var $emp : cs.ColaboradoreEntity
+ var $employees; $employees2 : cs.FuncionárioSeleção
+ $emp:=ds.Empregado. et(672) // Esta entidade não pertence a nenhuma entidade selecionada
+ $employees:=$emp. etSelection() // $employees é Nulo
 
- $employees2:=ds. Employee.query("lastName=:1";"Smith") //This entity selection contains 6 entities
- $emp:=$employees2[0]  // This entity belongs to an entity selection
+ $employees2:=ds. Colaborador. uery("Sobrenome=:1"; Punir") ///Esta seleção de entidade contém 6 entidades
+ $emp:=$employees2[0]  // Esta entidade pertence à uma seleção de entidade
 
- ALERT("The entity selection contains "+String($emp.getSelection().length)+" entities")
+ ALERT("A seleção da entidade contém "+String($emp. entidades etSelection().length)+"")
 ```
 
 <!-- END REF -->
@@ -713,17 +713,17 @@ If the entity does not belong to an entity selection, the function returns Null.
 **.getStamp()** : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getStamp().Params -->
-| Parameter | Type    |    | Descrição                                               |
-| --------- | ------- |:--:| ------------------------------------------------------- |
-| Resultado | Integer | <- | Stamp of the entity (0 if entity has just been created) |
+| Parameter | Type    |    | Descrição                                        |
+| --------- | ------- |:--:| ------------------------------------------------ |
+| Resultado | Integer | <- | Estampa da entidade (0 se a entidade foi criada) |
 <!-- END REF -->
 
 #### Descrição
 
-The `.getStamp()` function<!-- REF #EntityClass.getStamp(). Summary -->returns the current value of the stamp of the entity<!-- END REF -->.
+A função `.getStamp()` <!-- REF #EntityClass.getStamp().Summary --> retorna o valor atual do selo da entidade<!-- END REF -->.
 
-The internal stamp is automatically incremented by 4D each time the entity is saved. It manages concurrent user access and modifications to the same entities (see [**Entity locking**](ORDA/entities.md#entity-locking)).
-> For a new entity (never saved), the function returns 0. To know if an entity has just been created, it is recommended to use [.isNew()](#isnew).
+O selo interno é automaticamente incrementado por 4D cada vez que a entidade é gravada. Gere o acesso de usuários simultâneos e modificações às mesmas entidades (ver [**bloqueio de entidades**](ORDA/entities.md#entity-locking)).
+> Para uma nova entidade (nunca salva), a função retorna 0. Para saber se uma entidade acabou de ser criada, recomenda-se a utilização de [.isNew()](#isnew).
 
 
 #### Exemplo
@@ -762,19 +762,19 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 **.indexOf**( { *entitySelection* : 4D. EntitySelection } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.indexOf().Params -->
-| Parameter       | Type                |    | Descrição                                                          |
-| --------------- | ------------------- |:--:| ------------------------------------------------------------------ |
-| entitySelection | 4D. EntitySelection | -> | Position of the entity is given according to this entity selection |
-| Resultado       | Integer             | <- | Position of the entity in an entity selection                      |
+| Parameter       | Type                |    | Descrição                                                            |
+| --------------- | ------------------- |:--:| -------------------------------------------------------------------- |
+| entitySelection | 4D. EntitySelection | -> | A posição da entidade é dada de acordo com a selecção desta entidade |
+| Resultado       | Integer             | <- | Posição da entidade numa selecção de entidade                        |
 <!-- END REF -->
 
 #### Descrição
 
-The `.indexOf()` function<!-- REF #EntityClass.indexOf(). Summary -->returns the position of the entity in an entity selection<!-- END REF -->.
+A função `.indexOf()` <!-- REF #EntityClass.indexOf().Summary -->retorna a posição da entidade em uma seleção de entidade<!-- END REF -->.
 
-By default if the *entitySelection* parameter is omitted, the function returns the entity's position within its own entity selection. Otherwise, it returns the position of the entity within the specified *entitySelection*.
+Por padrão, se o parâmetro *entitySelection* for omitido, a função retorna a posição da entidade dentro de sua própria seleção de entidade. Caso contrário, ele retorna a posição da entidade dentro da *entitySelection*.
 
-The resulting value is included between 0 and the length of the entity selection -1.
+O valor resultante é incluído entre 0 e o comprimento da selecção da entidade -1.
 
 *   If the entity does not have an entity selection or does not belong to *entitySelection*, the function returns -1.
 *   If *entitySelection* is Null or does not belong to the same dataclass as the entity, an error is raised.
