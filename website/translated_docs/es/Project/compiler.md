@@ -256,7 +256,7 @@ Un archivo de error puede contener tres tipos de mensajes:
     - The data type of a process variable could not be determined.
     - Dos tipos diferentes de objetos tienen el mismo nombre. General errors are so named because they cannot be linked to any specific method. In the first case, the compiler could not perform a specified typing anywhere in the project. In the second, it was unable to decide whether to associate a given name with one object rather than with another.
 
-- **Warnings**: Warnings are not errors. They do not prevent the project from being compiled, but simply point out potential code errors. In the compiler window, warnings appear in italics. Double-click on each warning to open the method concerned directly in the 4D Method editor, with the line containing the warning highlighted.
+- **Warnings**: Warnings are not errors. They do not prevent the project from being compiled, but simply point out potential code errors. En la ventana del compilador, las advertencias aparecen en itálica. Double-click on each warning to open the method concerned directly in the 4D Method editor, with the line containing the warning highlighted.
 
 
 
