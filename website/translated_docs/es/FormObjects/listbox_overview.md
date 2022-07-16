@@ -970,7 +970,7 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 
 #### value
 
-Los valores de las celdas se almacenan en el atributo "valor". This attribute is used for input as well as output. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
+Los valores de las celdas se almacenan en el atributo "valor". Este atributo se utiliza tanto para la entrada como para la salida. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
 
 ````4d
  ARRAY OBJECT(obColumn;0) //array columna 
@@ -1290,7 +1290,7 @@ Several events can be handled while using an object list box array:
     *   en un área de entrada de texto
     *   en una lista desplegable
     *   en un área combo box
-    *   in a unit button (switch from value x to value x+1)
+    *   en un botón de unidad (cambiar del valor x al valor x+1)
     *   en una casilla de selección (cambia entre marcado/desmarcado)
 *   **On Clicked**: When the user clicks on a button installed using the "event" *valueType* attribute, an `On Clicked` event will be generated. Este evento es gestionado por el programador.
 *   **On Alternative Click**: When the user clicks on an ellipsis button ("alternateButton" attribute), an `On Alternative Click` event will be generated. Este evento es gestionado por el programador.
