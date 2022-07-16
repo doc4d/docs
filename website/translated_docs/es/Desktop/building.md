@@ -358,7 +358,7 @@ Hay muchas causas posibles para este error. When you get this message, it is adv
 ### Archivos generados
 
 Once a client/server application is built, you will find a new folder in the destination folder named **Client Server executable**. This folder contains two subfolders, *\<ApplicationName>Client* and *\<ApplicationName>Server*.
-> These folders are not generated if an error occurs. In this case, open the [log file](#log-file) in order to find out the cause of the error.
+> Estas carpetas no se generan si ocurre un error. In this case, open the [log file](#log-file) in order to find out the cause of the error.
 
 The *\<ApplicationName>Client* folder contains the client portion of the application corresponding to the execution platform of the application builder. Esta carpeta debe instalarse en cada máquina cliente. The *\<ApplicationName>Server* folder contains the server portion of the application.
 
@@ -414,7 +414,7 @@ El escenario básico es:
 Automatic update 4D Server features ([Current version](#current-version) number, `SET UPDATE FOLDER` command...) work with single-user application as with standard remote application. At connection, the single-user application compares its `CurrentVers` key to the 4D Server version range. If outside the range, the updated client application is downloaded from the server and the Updater launches the local update process.
 
 
-### Customizing client and/or server cache folder names
+### Personalizar nombres de carpeta de caché cliente y/o servidor
 
 Client and server cache folders are used to store shared elements such as resources or components. They are required to manage exchanges between server and remote clients. Client/server applications use default pathnames for both client and server system cache folders.
 
@@ -479,7 +479,7 @@ If there is a conflict between two different versions of the same plug-in (one l
 
 ## Página Licences & Certificado
 
-The Licences & Certificate page can be used to:
+La página de Licencias & Certificados puede utilizarse para:
 
 *   designate the license number(s) that you want to integrate into your single-user stand-alone application
 *   sign the application by means of a certificate in macOS.
@@ -503,7 +503,7 @@ Once you have selected a file, the list will indicate the characteristics of the
 *   **Expiration date** - Expiration date of the license (if any)
 *   **Ruta de acceso** - Ubicación en el disco
 
-If a license is not valid, a message will warn you.
+Si una licencia no es válida, un mensaje le avisará.
 
 Puede designar tantos archivos válidos como desee. When building an executable application, 4D will use the most appropriate license available.
 > Dedicated "R" licenses are required to build applications based upon "R-release" versions (license numbers for "R" products start with "R-4DDP").
@@ -633,7 +633,7 @@ You can select the data linking mode during the build application process. Puede
 
 4D allows you to define a default data file at the application building stage. Cuando la aplicación se lanza por primera vez, si no se encuentra ningún archivo de datos local (ver \[secuencia de lanzamiento descrita anteriormente\](#opening-the-data-file)), el archivo de datos por defecto se abre automáticamente y de forma silenciosa en modo de sólo lectura por 4D. Cuando la aplicación se lanza por primera vez, si no se encuentra ningún archivo de datos local (ver \[secuencia de lanzamiento descrita anteriormente\](#opening-the-data-file)), el archivo de datos por defecto se abre automáticamente y de forma silenciosa en modo de sólo lectura por 4D.
 
-More specifically, the following cases are covered:
+Más específicamente, se cubren los siguientes casos:
 
 - Avoiding the display of the 4D "Open Data File" dialog box when launching a new or updated merged application. You can detect, for example at startup, that the default data file has been opened and thus execute your own code and/or dialogs to create or select a local data file.
 - Allowing the distribution of merged applications with read-only data (for demo applications, for instance).
