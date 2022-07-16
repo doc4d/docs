@@ -3038,11 +3038,11 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                        |
-| ---------- | ------- | -- | -------------------------------------------------- |
-| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro       |
-| name       | Texto   | -> | Name of the named range or named formula to remove |
-| scope      | Integer | -> | Alcance objetivo (por defecto=hoja actual)         |
+| Parámetros | Tipo    |    | Descripción                                             |
+| ---------- | ------- | -- | ------------------------------------------------------- |
+| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro            |
+| name       | Texto   | -> | Nombre del rango nombrado o fórmula nombrada a eliminar |
+| scope      | Integer | -> | Alcance objetivo (por defecto=hoja actual)              |
 
 
 <!-- END REF -->
@@ -3349,7 +3349,7 @@ In *rangeObj*, pass a range object containing a range of the rows whose size wil
 
 #### Ejemplo
 
-The following rows don't correctly display the text:
+Las siguientes líneas no muestran correctamente el texto:
 
 ![](assets/en/ViewPro/cmd_vpRowAutoFit1.PNG)
 
@@ -3399,9 +3399,9 @@ In *parameters* object, pass any of the following optional properties. These pro
 
 The following property is automatically added by the command if necessary:
 
-| Propiedad      | Tipo     | Descripción                                        |
-| -------------- | -------- | -------------------------------------------------- |
-| timeoutReached | booleano | Added with true value if timeout has been exceeded |
+| Propiedad      | Tipo     | Descripción                                                     |
+| -------------- | -------- | --------------------------------------------------------------- |
+| timeoutReached | booleano | Añadido con el valor true si se ha excedido el tiempo de espera |
 
 
 > The offscreen area is only available during the execution of the `VP Run offscreen area` command. It will automatically be destroyed once execution has ended.
@@ -3437,7 +3437,7 @@ Function onEvent()
     End case
 ```
 
-The *OffscreenArea* callback method:
+El método de retrollamada *OffscreenArea*:
 
 
 ```4d
@@ -3490,7 +3490,7 @@ Function onEvent()
     End case
 ```
 
-The *OffscreenArea* callback method:
+El método de retrollamada *OffscreenArea*:
 
 ```4d
 $o:=cs.OffscreenArea.new()
@@ -3700,7 +3700,7 @@ You can define the position of the *borderStyleObj* (i.e., where the line is app
 
 #### Ejemplo 1
 
-This code produces a border around the entire range:
+Este código produce un borde alrededor de todo el rango:
 
 ```4d
 $border:=New object("color";"red";"style";vk line style thick)
@@ -4684,7 +4684,7 @@ El comando no hace nada si:
 
 #### Ejemplo
 
-Set the third sheet's name to "Total first quarter":
+Establezca el nombre de la tercera hoja como "Total first quarter":
 
 ```4d
 VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
@@ -5116,12 +5116,12 @@ The following table lists the available workbook options:
 | backgroundImageLayout                 | number                  | Cómo se muestra la imagen de fondo. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> En el centro del área.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Llena el área.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Se muestra con su relación de aspecto original.</td></tr></table>                                                                                                                                                                     |
 | calcOnDemand                          | booleano                | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
 | columnResizeMode                      | number                  | Resize mode for columns. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                                |
-| copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                    |
+| copyPasteHeaderOptions                | number                  | Encabezados para incluir cuando se copian o pegan datos. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                |
 | customList                            | colección               | The list for users to customize drag fill, prioritize matching this list in each fill. Cada elemento de colección es una colección de cadenas. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).  |
 | cutCopyIndicatorBorderColor           | cadena                  | Border color for the indicator displayed when the user cuts or copies the selection.                                                                                                                                                                   |
 | cutCopyIndicatorVisible               | booleano                | Display an indicator when copying or cutting the selected item.                                                                                                                                                                                        |
 | defaultDragFillType                   | number                  | The default drag fill type. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> Llena automáticamente las celdas. </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> Borra los valores de las celdas.</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> Rellena las celdas sólo con formato.</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> Llena las celdas con valores y no con formato. </td></tr></table>                                                                                                                                                                             |
-| enableAccessibility                   | booleano                | Accessibility support is enabled in the spreadsheet.                                                                                                                                                                                                   |
+| enableAccessibility                   | booleano                | El soporte de accesibilidad está activado en la hoja de cálculo.                                                                                                                                                                                       |
 | enableFormulaTextbox                  | booleano                | The formula text box is enabled.                                                                                                                                                                                                                       |
 | grayAreaBackColor                     | cadena                  | A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                              |
 | highlightInvalidData                  | booleano                | Los datos inválidos son resaltados.                                                                                                                                                                                                                    |
