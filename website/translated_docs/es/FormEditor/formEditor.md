@@ -441,7 +441,7 @@ stroke: #800080;
 }
 ```
 
-are displayed with a CSS icon in the Property List:
+se muestran con un icono CSS en la lista de propiedades:
 
 ![](assets/en/FormEditor/cssPpropList.png)
 
