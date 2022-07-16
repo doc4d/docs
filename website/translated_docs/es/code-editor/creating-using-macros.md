@@ -42,7 +42,7 @@ No se muestran macros vacías o erróneas.
 
 ### Comprobación de la sintaxis de las macros personalizadas
 
-The macro-command files of 4D must be in conformity with the XML standard. This means more particularly that XML declaration `<?xml version="1.0" ...?>` and document declaration `<!DOCTYPE macros SYSTEM "http://www.4d.com/dtd/2007/macros.dtd">` statements are mandatory at the beginning of a macro file in order for it to be loaded. The different types of XML encoding are supported. However, it is recommended to use encoding that is Mac/PC (UTF-8) compatible. 4D provides a DTD that can be used to validate the macro files. Este archivo se encuentra en la siguiente ubicación:
+The macro-command files of 4D must be in conformity with the XML standard. This means more particularly that XML declaration `<?xml version="1.0" ...?>` and document declaration `<!DOCTYPE macros SYSTEM "http://www.4d.com/dtd/2007/macros.dtd">` statements are mandatory at the beginning of a macro file in order for it to be loaded. Se soportan los diferentes tipos de codificación XML. However, it is recommended to use encoding that is Mac/PC (UTF-8) compatible. 4D provides a DTD that can be used to validate the macro files. Este archivo se encuentra en la siguiente ubicación:
 
 - Windows: \Resources\DTD\macros.dtd
 - Mac OS: :Contents:Resources:DTD:macros.dtd
