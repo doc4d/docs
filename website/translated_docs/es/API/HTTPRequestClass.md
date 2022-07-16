@@ -100,7 +100,7 @@ In *url*, pass the URL where you want to send the request. La sintaxis a utiliza
 ```
 If you omit the protocol part (`http://` or `https://`), a https request is sent.
 
-For example, you can pass the following strings:
+Por ejemplo, puede pasar las siguientes cadenas:
 
 ```
     http://www.myserver.com
@@ -131,7 +131,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | onHeaders            | [Function](#FunctionClass.md)                   | Retrollamada cuando se reciben los encabezados. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                            | indefinido   |
 | onResponse           | [Function](#FunctionClass.md)                   | Retrollamada cuando se recibe una respuesta. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                               | indefinido   |
 | onTerminate          | [Function](#FunctionClass.md)                   | Retrollamada cuando la petición haya terminado. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                            | indefinido   |
-| protocol             | Texto                                           | "auto" o "HTTP1". "auto" means HTTP1 in the current implementation                                                                                                                                                                                                        | "auto"       |
+| protocol             | Texto                                           | "auto" o "HTTP1". "auto" significa HTTP1 en la implementación actual                                                                                                                                                                                                      | "auto"       |
 | proxyAuthentication  | [authentication object](#authentication-object) | Autenticación del proxy de gestión de objetos                                                                                                                                                                                                                             | indefinido   |
 | serverAuthentication | [authentication object](#authentication-object) | Autenticación del servidor de gestión de objetos                                                                                                                                                                                                                          | indefinido   |
 | returnResponseBody   | Booleano                                        | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                                    | True         |
@@ -153,7 +153,7 @@ Esta es la secuencia de llamadas de retorno:
 2. `onData` is called zero or several times (not called if the request does not have a body)
 3. If no error occured, `onResponse` is always called once
 4. If an error occurs, `onError` is executed once (and terminates the request)
-5. `onTerminate` is always executed once
+5. `onTerminate` se ejecuta siempre una vez
 
 
 
@@ -378,10 +378,10 @@ La propiedad `.url` contiene <!-- REF #4D.HTTPRequest.url.Summary -->la URL de l
 **.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.wait().Params -->
-| Parámetros | Tipo           |    | Descripción                                      |
-| ---------- | -------------- |:--:| ------------------------------------------------ |
-| time       | Real           | -> | Maximum time in seconds to wait for the response |
-| Resultado  | 4D.HTTPRequest | <- | Objeto HTTPRequest                               |
+| Parámetros | Tipo           |    | Descripción                                         |
+| ---------- | -------------- |:--:| --------------------------------------------------- |
+| time       | Real           | -> | Tiempo máximo en segundos para esperar la respuesta |
+| Resultado  | 4D.HTTPRequest | <- | Objeto HTTPRequest                                  |
 <!-- END REF -->
 
 
