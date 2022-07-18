@@ -133,7 +133,7 @@ In the ORDA architecture, relation attributes directly contain data related to e
 *   An N->1 type relation attribute (**relatedEntity** kind) contains an entity
 *   A 1->N type relation attribute (**relatedEntities** kind) contains an entity selection
 
-Let's look at the following (simplified) structure:
+Veamos la siguiente estructura (simplificada):
 
 ![](assets/en/ORDA/entityAttributes3.png)
 
@@ -348,9 +348,9 @@ This automatic mechanism is based on the concept of "optimistic locking" which i
 *   Each entity has an internal locking stamp that is incremented each time it is saved.
 *   When a user or process tries to save an entity using the `entity.save( )` method, 4D compares the stamp value of the entity to be saved with that of the entity found in the data (in the case of a modification):
     *   When the values match, the entity is saved and the internal stamp value is incremented.
-    *   When the values do not match, it means that another user has modified this entity in the meantime. The save is not performed and an error is returned.
+    *   When the values do not match, it means that another user has modified this entity in the meantime. No se guarda y se devuelve un error.
 
-The following diagram illustrates optimistic locking:
+El siguiente diagrama ilustra el bloqueo optimista:
 
 1. Dos procesos cargan la misma entidad.<br><br>![](assets/en/ORDA/optimisticLock1.png)
 
@@ -359,7 +359,7 @@ The following diagram illustrates optimistic locking:
 3. The second process also modifies the loaded entity and validates its changes. Se llama al método `entity.save( )`. Since the stamp value of the modified entity does not match the one of the entity stored in the data, the save is not performed and an error is returned.<br><br>![](assets/en/ORDA/optimisticLock3.png)
 
 
-This can also be illustrated by the following code:
+Esto también puede ilustrarse con el siguiente código:
 
 ```4d
  $person1:=ds.Person.get(1) //Reference to entity
@@ -405,4 +405,4 @@ These principles are shown in the following diagram:
 **Transaction locks** also apply to both classic and ORDA commands. In a multiprocess or a multi-user application, a lock set within a transaction on a record by a classic command will result in preventing any other processes to lock entities related to this record (or conversely), until the transaction is validated or canceled.
 
 *   Ejemplo con un bloqueo definido por un comando clásico:<br><br>![](assets/en/ORDA/concurrent2.png)
-*   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)
+*   Ejemplo con un bloqueo definido por una función ORDA:<br><br>![](assets/en/ORDA/concurrent3.png)

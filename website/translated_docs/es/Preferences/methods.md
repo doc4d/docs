@@ -24,7 +24,7 @@ A **myTheme** theme is automatically added if you already customized method edit
 
 ### Creación de temas personalizados
 
-You can create themes that you can fully customize. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
+Puede crear temas totalmente personalizables. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
 
 ### Archivos de temas personalizados
 
@@ -78,7 +78,7 @@ These options configure the various colors used in the Method editor and debugge
 ## Opciones
 
 
-This page configures Method editor display options.
+Esta página configura las opciones de visualización del editor de métodos.
 
 ![](assets/en/Preferences/options.png)
 
@@ -168,7 +168,7 @@ Allows to highlight all occurrences of the same variable or field in an open met
 
 ![](assets/en/Preferences/optionsVariables.png)
 
-- **No**(default): No highlight
+- **No**(por defecto): no resaltado
 - **On cursor**: All occurrences are highlighted when the text is clicked
 - **On selection**: All occurrences are highlighted when the text is selected
 
