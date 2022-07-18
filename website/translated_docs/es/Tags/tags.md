@@ -132,7 +132,7 @@ In the "head.html" file, the current folder is modified through `<!--#4DBASE -->
 
 ## 4DCODE
 
-#### Syntax: `<!--#4DCODE codeLines-->`
+#### Sintaxis: `<!--#4DCODE codeLines-->`
 
 The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
 
@@ -499,7 +499,7 @@ El código siguiente:
 
 Esta sintaxis hace un bucle para cada elemento del array. The array current item is increased when each code portion is repeated.
 
-> This syntax cannot be used with two dimension arrays. In this case, it is better to combine a method with nested loops.
+> Esta sintaxis no se puede utilizar con arrays de dos dimensiones. In this case, it is better to combine a method with nested loops.
 
 The following code example:
 

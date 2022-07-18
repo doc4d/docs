@@ -118,7 +118,7 @@ Para cada processo, os campos abaixo são registrados:
 | systemid                          | ID de sistema                                                           |
 | server\_process\_id           | ID de processo no servidor                                              |
 | remote\_process\_id           | Id de processo no cliente                                               |
-| process\_name                   | Process name                                                            |
+| process\_name                   | Nome de processo                                                        |
 | cID                               | Identificador de conexão 4D                                             |
 | uID                               | Identificador de Cliente 4D                                             |
 | IP Client                         | IPv4/IPv6アドレス                                                           |

@@ -20,7 +20,7 @@ El formato alfa sería:
 
     ##-####-#
 
-When the user enters "RB17621," the field displays:
+Cuando el usuario introduce "RB17621," el campo muestra:
 
     RB-1762-1
 
@@ -30,7 +30,7 @@ If the user enters more characters than the format allows, 4D displays the last 
 
     (#######)
 
-and the user enters "proportion", the field displays:
+y el usuario introduce "proporción", el campo muestra:
 
     (portion)
 
@@ -343,7 +343,7 @@ The table below shows the Time field display formats and gives examples:
 | ISO Date Time                | iso8601         | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
 | System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                  | 04:30:25                       |
 | System time long abbreviated | systemMedium    | macOS only: Abbreviated time format defined in the system. <br>Windows: this format is the same as the System time short format            | 4•30•25 AM                     |
-| System time long             | systemLong      | macOS only: Long time format defined in the system. <br>Windows: this format is the same as the System time short format                   | 4:30:25 AM HNEC                |
+| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format     | 4:30:25 AM HNEC                |
 
 #### Gramática JSON
 
