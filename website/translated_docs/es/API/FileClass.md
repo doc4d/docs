@@ -285,7 +285,7 @@ You want to create an alias to a file in your database folder:
 
 The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the file<!-- END REF -->.
 
-If the file is currently open, an error is generated.
+Si el archivo está abierto, se genera un error.
 
 If the file does not exist on disk, the function does nothing (no error is generated).
 > **ATENCIÓN**: `.delete( )` puede eliminar cualquier archivo de un disco. Esto incluye los documentos creados con otras aplicaciones, así como las propias aplicaciones. `.delete( )` debe utilizarse con extrema precaución. Eliminar un archivo es una operación permanente y no se puede deshacer.
@@ -333,9 +333,9 @@ You want to delete a specific file in the database folder:
 **.getAppInfo**() : Object<!-- END REF -->
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                                           |
-| ---------- | ------ | -- | ----------------------------------------------------- |
-| Resultado  | Objeto | <- | Contents of .exe/.dll version resource or .plist file |
+| Parámetros | Tipo   |    | Descripción                                                 |
+| ---------- | ------ | -- | ----------------------------------------------------------- |
+| Resultado  | Objeto | <- | Contenido del archivo de recurso versión .exe/.dll o .plist |
 <!-- END REF -->
 
 

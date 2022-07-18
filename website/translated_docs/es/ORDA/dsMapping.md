@@ -184,7 +184,7 @@ The purpose of the entity is to manage data (create, update, delete). When an en
 The entity object itself cannot be copied as an object:
 
 ```4d
- $myentity:=OB Copy(ds.Employee.get(1)) //returns null
+ $myentity:=OB Copy(ds.Employee.get(1)) //devuelve null
 ```
 
 Sin embargo, las propiedades de la entidad son enumerables:

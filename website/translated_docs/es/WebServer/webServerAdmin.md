@@ -129,7 +129,7 @@ The */4DWEBTEST* URL is designed to check the web server status. When this URL i
 
 ## Logs
 
-4D allows you to generate two logs of web requests:
+4D le permite generar dos historiales de peticiones web:
 
 - a debug log, useful in the web server development phase (*HTTPDebugLog.txt*),
 - a standardized web request log, rather used for statistic purposes (*logweb.txt*).

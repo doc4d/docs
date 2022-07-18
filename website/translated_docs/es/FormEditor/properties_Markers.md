@@ -108,7 +108,7 @@ A Break level 1 occurs after the records grouped by the first sorted field are p
 | B2       | Nivel de ruptura 2 | Segundo campo ordenado          |
 | B3       | Nivel de ruptura 3 | Tercer campo ordenado           |
 
-Additional Header areas are associated with Breaks. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
+Las áreas adicionales del encabezado están asociadas a las interrupciones. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
 
 | Etiqueta | Descripción              | Prints after groups created by: |
 | -------- | ------------------------ | ------------------------------- |
