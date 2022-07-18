@@ -64,7 +64,7 @@ Hay tres opciones disponibles:
 > Esta preferencia sólo es compatible en macOS. En Windows, se utiliza siempre el esquema "Light".
 
 
-### Exit Design when going to Application Environment
+### Salir del modo Diseño al ir al modo Aplicación
 
 If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 

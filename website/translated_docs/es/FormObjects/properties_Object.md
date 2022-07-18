@@ -53,7 +53,7 @@ This property is available when the [Save Geometry](FormEditor/properties_FormPr
 
 This feature is only supported for objects that contribute to the overall geometry of the form. For example, this option is available for check boxes because their value can be used to hide or display additional areas in the window.
 
-Here is the list of objects whose value can be saved:
+Esta es la lista de objetos cuyo valor se puede guardar:
 
 | Objeto                                        | Valor guardado                                                                           |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------- |
