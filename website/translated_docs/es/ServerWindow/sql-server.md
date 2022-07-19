@@ -24,7 +24,7 @@ This button toggles and can be used to control the activation of the 4D Server S
 
 > The SQL server can also be launched automatically on application startup (option in the Settings) or by programming.
 
-## Información
+## Information
 
 ### Configuración
 
@@ -34,8 +34,8 @@ These parameters can be modified via the 4D Settings.
 
 ### Conecciones
 
-Number of SQL connections currently open on 4D Server.
+Número de conexiones SQL abiertas actualmente en 4D Server.
 
 ### Conexiones máximas
 
-Maximum number of simultaneous SQL connections allowed. This value depends on the license installed on the server machine.
+Número máximo de conexiones SQL simultáneas autorizadas. This value depends on the license installed on the server machine.
