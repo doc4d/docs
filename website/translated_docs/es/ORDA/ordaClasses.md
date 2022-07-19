@@ -190,7 +190,7 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 
 - **Extends**: 4D.EntitySelection
 - **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Ejemplo**: cs.EmployeeSelection
 
 
 #### Ejemplo
@@ -289,7 +289,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 ### Ejecución apropiativa
 
-When compiled, data model class functions are executed:
+Cuando se compilan, las funciones de clase del modelo de datos se ejecutan:
 
 - in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
 - in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
@@ -640,7 +640,7 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 *targetPath* is an attribute path containing one or more levels, such as "employee.company.name". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name.
 
-An alias can be used as a part of a path of another alias.
+Un alias puede ser utilizado como parte de una ruta de otro alias.
 
 A [computed attribute](#computed-attributes-1) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid.
 
