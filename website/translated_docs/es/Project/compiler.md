@@ -219,7 +219,7 @@ Esta lista está dividida en tres columnas:
 
 A complete list of your database and project methods is given at the end of the file with:
 
-- their type (procedure or function returning a value)
+- su tipo (procedimiento o función que devuelve un valor)
 - the data types of their parameters and the returned result
 - el número de llamadas
 - la propiedad Thread Safe o Thread Unsafe.
