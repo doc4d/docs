@@ -149,7 +149,7 @@ In "optimistic lock" mode, entities are not locked explicitly before updating th
 
 ## Bloqueo pesimista
 
-A "pessimistic lock" means that an entity is locked prior to its being accessed, using the entity.lock( ) method. Other processes can neither update nor drop the entity until it is unlocked. The classic 4D language only allows pessimistic locks. Ver "Bloqueo optimista".
+A "pessimistic lock" means that an entity is locked prior to its being accessed, using the entity.lock( ) method. Other processes can neither update nor drop the entity until it is unlocked. El lenguaje 4D clásico sólo permite bloqueos pesimistas. Ver "Bloqueo optimista".
 
 ## Propiedad
 
@@ -166,7 +166,7 @@ Clase usuario no relacionada a un objeto ORDA.
 
 ## Related dataclass
 
-These are dataclasses linked by relation attributes.
+Estas son dataclasses vinculadas por los atributos de relación.
 
 ## Atributo relacional
 
@@ -193,7 +193,7 @@ A 4D database opened on a 4D or 4D Server (available through HTTP) and exposed a
 
 When the 4D application connects to a Remote datastore, a session is created on the 4D Server (HTTP). A session cookie is generated and associated to the local datastore id.
 
-Cada vez que se abre una nueva sesión, se utiliza una licencia. Each time a session is closed, the license is freed.
+Cada vez que se abre una nueva sesión, se utiliza una licencia. Cada vez que se cierra una sesión, se libera la licencia.
 
 Inactive sessions are automatically closed after a timeout. The default timeout is 48 hours, it can be set by the developer (it must be >= 60 minutes).
 
