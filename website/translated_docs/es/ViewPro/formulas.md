@@ -17,7 +17,7 @@ Para introducir una fórmula en un área 4D View Pro:
 
 When writing a formula, you can use different shortcuts:
 
-- click on a cell to enter its reference in the formula:
+- haga clic en una celda para introducir su referencia en la fórmula:
 
 ![](assets/en/ViewPro/formulas.PNG)
 
@@ -86,7 +86,7 @@ Lista de los operadores de la mas a menos importante:
 
 ## Referencias de celdas
 
-Formulas often refer to other cells by cell addresses. Puede copiar estas fórmulas a otras celdas. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
+Las fórmulas a menudo se refieren a otras celdas por medio de direcciones de celdas. Puede copiar estas fórmulas a otras celdas. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
 
 ```
 = C6 + C7
@@ -200,11 +200,11 @@ We want to print "Hello World" in a 4D View Pro area cell using a 4D project met
  End case
 ```
 
-3.  Edit the content of a cell in a 4D View Pro area and type:
+3.  Edite el contenido de una celda en un área 4D View Pro y escriba:
 
     ![](assets/en/ViewPro/vpProjMeth1.PNG)
 
-    "myMethod" is then called by 4D and the cell displays:
+    "myMethod" es entonces llamado por 4D y la la celda se muestra:
 
     ![](assets/en/ViewPro/vpProjMeth2.PNG)
 
@@ -289,7 +289,7 @@ Alternate solutions are available to declare fields or methods as functions in y
 
 *   The field must belong to the virtual structure of the database, i.e. it must be declared through the [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) and/or [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) commands with the \* parameter (see example),
 *   Table and field names must be ECMA compliant (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)),
-*   The field type must be supported by 4D View Pro (see above).
+*   El tipo de campo debe ser soportado por 4D View Pro (ver arriba).
 
 An error is returned in the 4D View Pro cell if the formula calls a field which is not compliant.
 
@@ -340,7 +340,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
 ![](assets/en/ViewPro/vpFieldMeth2.PNG)
 
 
-4.  Select EMP_NAME (use the Tab key) and enter the closing ).
+4.  Seleccione EMP_NAME (utilice la tecla Tab) e introduzca el cierre).
 
 ![](assets/en/ViewPro/vpFieldMeth3.PNG)
 
