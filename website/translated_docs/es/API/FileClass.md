@@ -184,7 +184,7 @@ If necessary, the function creates the folder hierachy as described in the [plat
 
 #### Ejemplo
 
-Creation of a preferences file in the database folder:
+Creación de un archivo de preferencias en la carpeta principal:
 
 ```4d
  var $created : Boolean
@@ -542,7 +542,7 @@ El objeto `File` renombrado.
 
 #### Ejemplo
 
-You want to rename "ReadMe.txt" in "ReadMe_new.txt":
+Quieresrenombrar "ReadMe.txt" como "ReadMe_new.txt":
 
 ```4d
  $toRename:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
