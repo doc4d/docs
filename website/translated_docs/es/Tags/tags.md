@@ -76,7 +76,7 @@ The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!
 
 When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--#4DBASE -->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
 
-The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). The designated folder must be located inside the Web folder.
+The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). La carpeta designada debe estar ubicada dentro de la carpeta Web.
 
 Pass the "WEBFOLDER" keyword to restore the default path (relative to the page).
 
@@ -660,7 +660,7 @@ The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D var
 
 Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
 
-También puede insertar expresiones 4D. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). The expression conversion follows the same rules as the variable ones. Moreover, the expression must comply with 4D syntax rules.
+También puede insertar expresiones 4D. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). The expression conversion follows the same rules as the variable ones. Además, la expresión debe cumplir con las reglas de sintaxis 4D.
 
 > For security reasons, it is recommended to use this tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
 
