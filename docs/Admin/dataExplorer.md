@@ -80,6 +80,7 @@ The page contains several areas:
 	![alt-text](assets/en/Admin/dataExplorer4b.png)
 
 
+
 	- The name of the selected dataclass is added as a tab above the data grid. Using these tabs, you can switch between dataclasses that have been already selected. You can remove a referenced dataclass by clicking the "remove" icon at the right of the dataclass name. 
 	- You can reduce the number of columns by unchecking attributes in the left side. You can also switch the columns in the data grid using drag and drop. You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible). 
 	- If an operation requires a long time, a progress bar is displayed. You can stop the running operation at any moment by clicking on the red button:
@@ -90,9 +91,14 @@ The page contains several areas:
 
 - On the right side is the **Details area**: it displays the attribute values of the currently selected entity as well as **related data**, if any. You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.   
 	- All attribute types are displayed, including pictures, objects (expressed in json) as well as [computed](../ORDA/ordaClasses.md#computed-attributes-1) and [alias](../ORDA/ordaClasses.md#alias-attributes-1) attributes. 
-	- related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:
+	- Related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:
 
 ![alt-text](assets/en/Admin/dataExplorerRelated.png)
+
+	- **Ctrl+ Click** (Windows) or **Cmd Click** (macOS) on a related attribute name in the right side area displays the values of the attribute in an independant, floating area:
+
+![alt-text](assets/en/Admin/dataExplorerFloat.png)
+
 
 
 ### Updating contents
