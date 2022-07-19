@@ -43,7 +43,7 @@ The activity of the process is the percentage of time that 4D Server has devoted
 - Nombre del proceso,
 - Number of the process (as returned by the [`New process`](https://doc.4d.com/4dv19/help/command/en/page317.html) command for example). The process number is the number assigned on the server. In the case of a global process, this number may be different from that assigned on the client machine.
 - Estado actual del proceso,
-- Running time (in seconds) of the process since its creation,
+- Tiempo de ejecución (en segundos) del proceso desde su creación,
 - Percentage of time that 4D Server has devoted to this process (ratio).
 
 ## Tipo del proceso
@@ -63,7 +63,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 | ![](assets/en/Admin/server-icon-9.png)  | Spare process (former or future "4D client database process")                                                                                             |
 | ![](assets/en/Admin/server-icon-10.png) | Worker servidor SQL                                                                                                                                       |
 | ![](assets/en/Admin/server-icon-11.png) | Proceso worker servidor HTTP                                                                                                                              |
-| ![](assets/en/Admin/server-icon-12.png) | 4D client process (process running on the connected 4D)                                                                                                   |
+| ![](assets/en/Admin/server-icon-12.png) | Proceso 4D client (proceso que se ejecuta en el 4D conectado)                                                                                             |
 | ![](assets/en/Admin/server-icon-13.png) | Stored procedure (process launched by a connected 4D and running on the server)                                                                           |
 | ![](assets/en/Admin/server-icon-14.png) | Método web (lanzado por 4DACTION por ejemplo)                                                                                                             |
 | ![](assets/en/Admin/server-icon-15.png) | Método web (apropiativo)                                                                                                                                  |
