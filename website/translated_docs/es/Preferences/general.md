@@ -31,7 +31,7 @@ You can benefit from this feature in the following environments (with 4D 64-bit 
 *   Ventana del editor de métodos
 *   Ventana del editor de formularios
 
-All windows from these editors can be put in tab form:
+Todas las ventanas de estos editores se pueden poner en forma de pestaña:
 
 ![](assets/en/Preferences/general2.png)
 
