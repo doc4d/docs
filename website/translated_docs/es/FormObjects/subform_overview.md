@@ -119,7 +119,7 @@ Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime
 > If the variable or expression value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform, 2-Form method of subform, 3-Object methods of parent form, 4-Form method of parent form
 
 
-### Synchronizing parent form and subform (multiple values)
+### Sincronizando formulario padre y subformulario (múltiples valores)
 
 By default, 4D binds a variable or expression of [object type](properties_Object.md#expression-type) to each subform. The contents of this object can be read and/or modified from within the parent form and from the subform, allowing you to share multiple values in a local context.
 
