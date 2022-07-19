@@ -59,12 +59,12 @@ The returned "__STATUS" object has the following properties:
 
 The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
 
-| status | statusText                      | Comentário                                                                                                      |
-| ------ | ------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 2      | "Stamp has changed"             | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista). |
-| 3      | "Already locked"                | The entity is locked by a pessimistic lock.                                                                     |
-| 4      | "Other error"                   | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.                     |
-| 5      | "Entity does not exist anymore" | A entidade não existe mais nos dados.                                                                           |
+| status | statusText                      | Comentário                                                                                                         |
+| ------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 2      | "Stamp has changed"             | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).    |
+| 3      | "Already locked"                | A entidade está fechada por uma fechadura pessimista.                                                              |
+| 4      | "Other error"                   | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc. |
+| 5      | "Entity does not exist anymore" | A entidade não existe mais nos dados.                                                                              |
 
 
 
