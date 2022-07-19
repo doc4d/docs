@@ -192,7 +192,7 @@ The following table lists the fields available for each format (in alphabetical 
 | Campo          | ELF | WLF | Valor                                                                                                                       |
 | -------------- | --- | --- | --------------------------------------------------------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                                                                   |
-| BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
+| BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                                                                         |
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                              |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                                                                       |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                     |
