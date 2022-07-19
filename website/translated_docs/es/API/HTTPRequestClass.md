@@ -126,7 +126,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | headers              | Objeto                                          | Encabezados de la petición. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                          | Empty object |
 | method               | Texto                                           | "POST", "GET" u otro método                                                                                                                                                                                                                                               | "GET"        |
 | minTLSVersion        | Texto                                           | Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                                       | "`TLSv1_2`"  |
-| onData               | [Function](#FunctionClass.md)                   | Callback when data from the body is received. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                              | indefinido   |
+| onData               | [Function](#FunctionClass.md)                   | Retrollamada cuando se reciben los datos del cuerpo. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                       | indefinido   |
 | onError              | [Function](#FunctionClass.md)                   | Retrollamada cuando ocurre un error. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                       | indefinido   |
 | onHeaders            | [Function](#FunctionClass.md)                   | Retrollamada cuando se reciben los encabezados. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                            | indefinido   |
 | onResponse           | [Function](#FunctionClass.md)                   | Retrollamada cuando se recibe una respuesta. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                               | indefinido   |
@@ -139,7 +139,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 
 #### Función callback (retrollamada)
 
-All callback functions receive two object parameters:
+Todas las funciones de retrollamada reciben dos parámetros objeto:
 
 | Parámetros | Tipo                                        |
 | ---------- | ------------------------------------------- |
@@ -171,7 +171,7 @@ An `event` object is returned when a [callback function](#callback-functions) is
 
 #### authentication object
 
-An authentication object handles the `options.serverAuthentication` or `options.proxyAuthentication` property. It can contain the following properties:
+An authentication object handles the `options.serverAuthentication` or `options.proxyAuthentication` property. Puede contener las siguientes propiedades:
 
 | Propiedad  | Tipo  | Descripción                                              | Por defecto |
 | ---------- | ----- | -------------------------------------------------------- | ----------- |
@@ -190,7 +190,7 @@ An authentication object handles the `options.serverAuthentication` or `options.
 
 
 <!-- REF #4D.HTTPRequest.dataType.Syntax -->
-**dataType** : Text<!-- END REF -->
+**dataType**: Text<!-- END REF -->
 
 #### Descripción
 
@@ -202,7 +202,7 @@ La propiedad `.dataType` contiene <!-- REF #4D.HTTPRequest.dataType.Summary -->t
 ## .encoding
 
 <!-- REF #4D.HTTPRequest.encoding.Syntax -->
-**encoding** : Text<!-- END REF -->
+**encoding**: Text<!-- END REF -->
 
 #### Descripción
 
@@ -214,7 +214,7 @@ La propiedad `.encoding` contiene <!-- REF #4D.HTTPRequest.encoding.Summary -->t
 ## .errors
 
 <!-- REF #4D.HTTPRequest.errors.Syntax -->
-**errors** : Collection<!-- END REF -->
+**errors**: Collection<!-- END REF -->
 
 #### Descripción
 
@@ -347,7 +347,7 @@ La propiedad `.terminated` contiene <!-- REF #4D.HTTPRequest.terminated.Summary 
 ## .timeout
 
 <!-- REF #4D.HTTPRequest.timeout.Syntax -->
-**timeout** : Real<!-- END REF -->
+**timeout**: Real<!-- END REF -->
 
 #### Descripción
 
