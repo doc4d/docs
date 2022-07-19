@@ -159,7 +159,7 @@ You can designate another default home page by entering its pathname.
 
 For example, if you want the default home page to be "MyHome.htm", and it is located in the "Web" folder (itself located in the default HTML root folder), use "Web/MyHome.htm".
 
-If you do not specify any default home page, the `On Web Connection` database method is called. It is up to you to process the request procedurally.
+If you do not specify any default home page, the `On Web Connection` database method is called. Le corresponde a usted gestionar la petición procesalmente.
 
 ## Activar CORS
 

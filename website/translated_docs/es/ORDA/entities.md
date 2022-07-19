@@ -30,7 +30,7 @@ $myEntity.save() //save the entity
 
 ## Entidades y referencias
 
-Una entidad contiene una referencia a un registro 4D. Different entities can reference the same 4D record. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
+Una entidad contiene una referencia a un registro 4D. Diferentes entidades pueden referenciar el mismo registro 4D. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
 
 Si ejecuta el siguiente código:
 
@@ -63,7 +63,7 @@ Esto es ilustrado por el siguiente gráfico:
 
 ![](assets/en/ORDA/entityRef2.png)
 
-Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
+Sin embargo, hay que tener en cuenta que las entidades se refieren al mismo registro. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
 
 In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. Por ejemplo:
 
@@ -117,7 +117,7 @@ Note that both *theClient* and *companyProjects* in the above example are primar
 
 ![](assets/en/ORDA/entityAttributes2.png)
 
-Each employee can be a manager and can have a manager. To get the manager of the manager of an employee, you can simply write:
+Cada empleado puede ser gerente y puede tener un gerente. To get the manager of the manager of an employee, you can simply write:
 
 ```4d
  $myEmp:=ds.Employee.get(50)
@@ -395,7 +395,7 @@ Using both classic and ORDA commands to lock records is based upon the following
 *   A lock set with a classic 4D command on a record prevents ORDA to lock the entity matching the record.
 *   A lock set with ORDA on an entity prevents classic 4D commands to lock the record matching the entity.
 
-These principles are shown in the following diagram:
+Estos principios se muestran en el siguiente diagrama:
 
 ![](assets/en/ORDA/concurrent1.png)
 
@@ -410,7 +410,7 @@ These principles are shown in the following diagram:
 
 4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations. This optimization speeds up the execution of your 4D application by reducing drastically the volume of information transmitted over the network.
 
-The following optimization mechanisms are implemented:
+Se aplican los siguientes mecanismos de optimización:
 
 *   When a client requests an entity selection from the server, 4D automatically "learns" which attributes of the entity selection are actually used on the client side during the code execution, and builds a corresponding "optimization context". This context is attached to the entity selection and stores the used attributes. It will be dynamically updated if other attributes are used afterwards.
 
@@ -453,7 +453,7 @@ A same optimization context property can be passed to unlimited number of entity
 
 
 
-**Example with `dataClass.query( )` method:**
+**Ejemplo con el método `dataClass.query( )`:**
 
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
