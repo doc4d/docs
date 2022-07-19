@@ -719,6 +719,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 #### See also
 
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
@@ -2298,6 +2299,7 @@ VP SET CELL STYLE($range;$style)
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName|Text|->|4D View Pro area form object name|
+
 |styleName|Text|->|Name of style|
 |sheet|Integer|->|Sheet index (current sheet if omitted)|
 |Result|Object|<-|Style sheet object|
@@ -2775,6 +2777,59 @@ The results is:
 
 [VP DELETE COLUMNS](#vp-delete-columns)<br/>[VP DELETE ROWS](#vp-delete-rows)<br/>[VP INSERT COLUMNS](#vp-insert-columns)
 
+### VP INSERT TABLE COLUMNS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Syntax -->**VP INSERT TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *insertAfter* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|column|Integer|->|Index in the table of the starting column to insert|
+|count|Text|->|Number of columns to add (must be >0) |
+|insertAfter|Integer|->|`vk table insert before` or `vk table insert after` *column*|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP INSERT TABLE COLUMNS` command <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->inserts one or *count* empty column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->. 
+
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the column(s) must be inserted before or after the *column* index:
+
+|Constant|Value|Description|
+|---|---|---|
+|`vk table insert before`|0|Insert column(s) before the *column* (default if omitted)|
+|`vk table insert after`|1|Insert column(s) after the *column*|
+
+This command inserts some columns in the *tableName* table, NOT in the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved right according to the number of added columns.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To insert two columns in the "dataContext" table before the 3rd row: 
+
+```4d
+VP INSERT TABLE COLUMNS("ViewProArea"; "dataContext"; 3;2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
 
 ### VP INSERT TABLE ROWS
 
@@ -2803,20 +2858,22 @@ The results is:
 
 The `VP INSERT TABLE ROWS` command <!-- REF #_method_.VP INSERT TABLE ROWS.Summary -->inserts one or *count* empty row(s) in the specified *tableName* at the specified *row* index<!-- END REF -->. 
 
-In the *insertAfter* parameter, you can pass one of the following constants to indicate if the row(s) must be inserted before or after the row index:
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the row(s) must be inserted before or after the *row* index:
 
 |Constant|Value|Description|
 |---|---|---|
 |`vk table insert before`|0|Insert row(s) before the *row* (default if omitted)|
 |`vk table insert after`|1|Insert row(s) after the *row*|
 
-This command insert some rows in the *tableName* table, NOT in the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved down according to the number of added rows.
-If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection.
+This command inserts some rows in the *tableName* table, NOT in the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved down according to the number of added rows.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
 
 
 #### Example
 
-To insert two rows in the "dataContext" table:
+To insert one row in the "dataContext" table before the 2nd row:
 
 ```4d
 VP INSERT TABLE ROWS("ViewProArea"; "dataContext"; 2)
@@ -3367,6 +3424,100 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 #### See also
 
 [VP CREATE TABLE](#vp-create-table)
+
+
+### VP REMOVE TABLE COLUMNS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Syntax -->**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|column|Integer|->|Index in the table of the starting column to remove|
+|count|Text|->|Number of columns to remove (must be >0) |
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE TABLE COLUMNS` command <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Summary -->removes one or *count* column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->. The command removes values and styles.
+
+The command removes columns from the *tableName* table, NOT from the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved letf according to the number of removed columns.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To remove two columns from 3rd column of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE COLUMNS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE COLUMNS](#vp-insert-table-columns)<br/>[VP REMOVE TABLE ROWS](#vp-remove-table-rows)
+
+
+
+### VP REMOVE TABLE ROWS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Syntax -->**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|row|Integer|->|Index in the table of the starting row to remove|
+|count|Text|->|Number of rows to remove (must be >0) |
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE TABLE ROWS` command <!-- REF #_method_.VP REMOVE TABLE ROWS.Summary -->removes one or *count* row(s) from the specified *tableName* at the specified *row* index<!-- END REF -->. The command removes values and styles.
+
+This command removes rows from the *tableName* table, NOT from the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved up according to the number of removed rows.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To remove two rows from 3rd row of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE ROWS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
+
 
 ### VP RESET SELECTION
 
