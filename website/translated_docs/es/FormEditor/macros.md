@@ -224,7 +224,7 @@ Estas son las propiedades devueltas en el parámetro *$editor*:
 | $editor.editor.currentPage       | Objeto     | The current page, containing all the form objects and the entry order of the page |
 | $editor.editor.currentSelection  | Collection | Colección de nombres de objetos seleccionados                                     |
 | $editor.editor.formProperties    | Objeto     | Properties of the current form                                                    |
-| $editor.editor.target            | cadena     | Name of the object under the mouse when clicked on a macro                        |
+| $editor.editor.target            | cadena     | Nombre del objeto bajo el ratón cuando se hace clic en una macro                  |
 
 Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. Todas las propiedades son opcionales:
 
@@ -289,6 +289,10 @@ Function onInvoke($editor : Object)->$result : Object
 
     Else 
         ALERT("Please select a form object.")
+    End if 
+
+    // Notificar la modificación a 4D
+    $result:=New object("currentPage"; $editor.editor.currentPage)
     End if 
 
     // Notificar la modificación a 4D
