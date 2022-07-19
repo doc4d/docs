@@ -39,5 +39,5 @@ To reset the parameters to their default values and remove the bold style indica
 
 ![](assets/en/Preferences/overviewSettings.png)
 
-This button resets all the parameters of the current page. It becomes active when at least one parameter has been modified on the current page.
+Este botón reinicializa todos los parámetros de la página actual. It becomes active when at least one parameter has been modified on the current page.
 
