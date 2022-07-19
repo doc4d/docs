@@ -121,7 +121,7 @@ Set to **\<None>** in the Property List (or " " in JSON) to inherited from a pro
 
 Para que un formulario componente sea seleccionado como [subformulario](FormObjects/subform_overview.md) en una aplicación anfitriona, debe haber sido compartido explícitamente. When this property is selected, the form will be published in the host application.
 
-Only project forms can be specified as published subforms.
+Sólo los proyectos formulario se pueden especificar como subformularios publicados.
 
 
 
