@@ -178,7 +178,7 @@ Define el número de columnas del list box.
 
 `List box de tipo array`
 
-A 4D array controlling the display of list box rows.
+Un array 4D que controla la visualización de las líneas del list box.
 
 You can set the "hidden", "disabled" and "selectable" interface properties for each row in an array-based list box using this array. It can also be designated using the `LISTBOX SET ARRAY` command.
 
@@ -198,7 +198,7 @@ To change the status for a row, you just need to set the appropriate constant(s)
 
 ![](assets/en/FormObjects/listbox_styles5.png)
 
-You can define several interface properties at once:
+Puede definir varias propiedades de la interfaz a la vez:
 
 ```4d
  aLControlArr{8}:=lk row is not selectable + lk row is disabled
