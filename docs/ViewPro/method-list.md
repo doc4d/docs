@@ -72,7 +72,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 |Parameter|Type| |Description|
 |---|---|---|---|
-|rangeObj| Text|->|Range object |
+|rangeObj| Object|->|Range object |
 |name|Text|->|Name for the fomula|
 |options|Object|->|Options for the named formula|
 <!-- END REF -->  
@@ -720,6 +720,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
@@ -767,7 +768,7 @@ In *options*, you can pass an object with additional options for the table. Poss
 
 |Property|Type|Description|Default value
 |---|---|---|---|
-|allowAutoExpand|Boolean|True to expand the columns or rows of the table when a value is added to the table. | True
+|allowAutoExpand|Boolean|True to expand columns or rows of the table when values are added in empty adjacent cells.| True
 |showFooter|Boolean|Display a footer| False
 |showHeader|Boolean|Display a header| True
 |showResizeHandle|Boolean|For tables that don't have a *source*. Display the resize handle| False
@@ -2399,6 +2400,52 @@ In this case, the current sheet uses two style objects:
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)
 
 
+### VP Get table range
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP Get table range.Syntax -->**VP Get table range** ( *vpAreaName* : Text ; *tableName* : Text {; *onlyData* : Integer {; *sheet* : Integer }} ) : Object<!-- END REF -->  
+
+<!-- REF #_method_.VP Get tables.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|onlyData|Integer|->|`vk table full range` (default) or `vk table data range`|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+|Result  |Object|<-|Range that contains the table|
+<!-- END REF -->  
+
+#### Description
+
+The `VP Get table range` command <!-- REF #_method_.VP Get table range.Summary -->returns the range of *tableName*<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the 4D View Pro area.
+
+In the *onlyData* parameter, you can pass one of the following constants to indicate if you want to get the data only:
+
+|Constant|Value|Description|
+|---|---|---|
+|`vk table full range`|0|Get the cell range for the table area with footer and header (default if omitted)|
+|`vk table data range`|1|Get the cell range for the table data area only|
+
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+
+>Indexing starts at 0.
+
+
+
+#### See also
+
+[VP RESIZE TABLE](#vp-resize-table)
+
+
+
 ### VP Get tables
 
 <details><summary>History</summary>
@@ -3200,6 +3247,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 >Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
 
+
 #### Example
 
 To refresh all formulas in the workbook:
@@ -3382,7 +3430,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 |v19 R6|Added
 </details>
 
-<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
+<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *vpAreaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
@@ -3555,6 +3603,48 @@ VP RESET SELECTION("myVPArea")
 #### See also
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
+
+
+### VP RESIZE TABLE
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP RESIZE TABLE.Syntax -->**VP RESIZE TABLE** ( *rangeObj* : Object; *tableName* : Text )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP RESIZE TABLE.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|rangeObj|Object|->|New range for the table|
+|tableName|Text|->|Name of the table|
+<!-- END REF -->  
+
+#### Description
+
+The `VP RESIZE TABLE` command <!-- REF #_method_.VP RESIZE TABLE.Summary -->changes the *tableName* size with regards to the *rangeObj*<!-- END REF -->.
+
+The following rules apply:
+
+- Headers must remain in the same row and the resulting table range must overlap the original table range.
+- If the row count of the resized table is inferior to the initial row count, values inside cropped rows or columns are kept if they were not bound, otherwise they are removed.
+- If the table expands on cells containing data:
+	- if rows are added, data is deleted,
+	- if columns are added, data are kept and are displayed in new columns.
+
+If *tableName* does not exist, nothing happens.
+
+
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)<br/>[VP Get table range](#vp-get-table-range)
+
+
 
 ### VP RESUME COMPUTING
 
@@ -4873,6 +4963,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 #### Example
 
 The following code will print a 4D View Pro area to a PDF document:
+
 
 ```4d
 var $printInfo : Object
