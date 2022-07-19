@@ -277,7 +277,7 @@ The **Scaled to fit** format causes 4D to resize the picture to fit the dimensio
 
 ### Truncado (centrado y no centrado)
 
-`JSON grammar: "truncatedCenter" / "truncatedTopLeft"`
+`Gramática JSON: "truncatedCenter" / "truncatedTopLeft"`
 
 The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D crops equally from each edge and from the top and bottom.
 
@@ -365,7 +365,7 @@ When a [boolean expression](properties_Object.md#expression-type) is displayed a
 - a text in an [input object](input_overview.md)
 - a ["popup"](properties_Display.md#display-type) in a [list box column](listbox_overview.md#list-box-columns),
 
-... you can select the text to display for each value:
+... puede seleccionar el texto que se mostrará para cada valor:
 - **Text when True** - the text to be displayed when the value is "true"
 - **Text when False** - the text to be displayed when the value is "false"
 
@@ -390,7 +390,7 @@ Used to associate a display format with the column data. The formats provided de
 
 Boolean and number (numeric or integer) columns can be displayed as check boxes. In this case, the [Title](#title) property can be defined.
 
-Boolean columns can also be displayed as pop-up menus. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
+Las columnas booleanas también pueden mostrarse como menús emergentes. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
 
 #### Gramática JSON
 
@@ -467,7 +467,7 @@ In this case as well, the [Title](#title) property is also available so that the
 ---
 ## Título
 
-This property is available for a list box column if:
+Esta propiedad está disponible para una columna de list box si:
 - the [column type](properties_Object.md#expression-type) is **boolean** and its [display type](properties_Display.md#display-type) is "Check Box"
 - the [column type](properties_Object.md#expression-type) is **number** (numeric or integer) and its [display type](properties_Display.md#display-type) is "Three-states Checkbox".
 
@@ -587,7 +587,7 @@ When this option is selected, text automatically wraps to the next line whenever
 #### Unchecked for list box/No for input
 `Gramática JSON: "none"`
 
-When this option is selected, 4D does not do any automatic line returns and the last word that can be displayed may be truncated. In text type areas, carriage returns are supported:
+When this option is selected, 4D does not do any automatic line returns and the last word that can be displayed may be truncated. En las áreas de tipo de texto, se soportan los retornos de carro:
 
 ![](assets/en/FormObjects/wordwrap3.png)
 
