@@ -3,7 +3,7 @@ id: configuring
 title: Configuring 4D View Pro Areas
 ---
 
-The 4D View Pro area properties can be configured using the Property list. Spreadsheet properties are available through the language.
+The 4D View Pro area properties can be configured using the Property list. Las propiedades de las hojas de cálculo están disponibles a través del lenguaje.
 
 ## Propiedades del área de formulario
 
@@ -112,7 +112,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 |                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True por defecto.                                                     |
 |                   | allowSelectUnlockedCells | booleano | Specifies whether the user can select unlocked cells, optional. True por defecto.                                                   |
 |                   | allowSort                | booleano | Especifica si el usuario puede ordenar rangos, opcional. Falso por defecto.                                                         |
-|                   | allowFilter              | booleano | Specifies whether the user can filter ranges, optional. Falso por defecto.                                                          |
+|                   | allowFilter              | booleano | Especifica si el usuario puede filtrar rangos, opcional. Falso por defecto.                                                         |
 |                   | allowEditObjects         | booleano | Specifies whether the user can edit floating objects, optional. Falso por defecto.                                                  |
 |                   | allowResizeRows          | booleano | Specifies whether the user can resize rows, optional. Falso por defecto.                                                            |
 |                   | allowResizeColumns       | booleano | Specifies whether the user can resize columns, optional. Falso por defecto.                                                         |
@@ -151,7 +151,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 | \_      | Salta el ancho del siguiente caracter.                                                                                                                                                                                                                                        | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
 | @         | Formatter for text. Aplica el formato a todo el texto de la celda                                                                                                                                                                                                             | "\[Red]@" applies the red font color for text values.                                                                     |
 | *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                          | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
-| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                  | "8%" será mostrado como: 8%                                                                                                |
+| " "       | Muestra el texto entre comillas sin interpretarlo.                                                                                                                                                                                                                            | "8%" será mostrado como: 8%                                                                                                |
 | %         | Muestra los números como un porcentaje de 100.                                                                                                                                                                                                                                | El 8% se mostrará como 0,08                                                                                                |
 | \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                           | #.# mostrará 1.54 como 1.5                                                                                                 |
 | ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Normalmente se utiliza para alinear números por punto decimal.                                                                                                                                | $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                               |
@@ -177,7 +177,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 | Constante                                 | Valor                                | Comentario                                                                                                                                                                                                                  |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy HH:mm:ss"                                              |
-| `vk pattern long date`                    | "_longDatePattern_"                  | ISO 8601 format for the full date in current localization.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy"                                                                |
+| `vk pattern long date`                    | "_longDatePattern_"                  | Formato ISO 8601 para la fecha completa en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy"                                                        |
 | `vk pattern long time`                    | "_longTimePattern_"                  | ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"                                                                                  |
 | `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                          |
 | `vk pattern short date`                   | "_shortDatePattern_"                 | Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"                                                                    |
@@ -255,7 +255,7 @@ In addition to the special characters and codes described in the previous sectio
 
 ## Atributos de impresión
 
-4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
+4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. Estos atributos son manejados por los siguientes comandos:
 
 *   [VP SET PRINT INFO](method-list.md#vp-set-print-info)
 *   [VP Get print info](method-list.md#vp-get-print-info)
@@ -279,20 +279,20 @@ Column and row attributes are used to specify the beginning, end, and repetition
 
 Header and footer attributes are used to specify text or images in the left, right, and center header/footer sections.
 
-| Propiedad         | Tipo                 | Descripción                                                |
-| ----------------- | -------------------- | ---------------------------------------------------------- |
-| footerCenter      | texto                | The text and format of the center footer on printed pages. |
-| footerCenterImage | picture &#124; text* | La imagen para la sección central del pie de página.       |
-| footerLeft        | texto                | The text and format of the left footer on printed pages.   |
-| footerLeftImage   | picture &#124; text* | La imagen de la parte izquierda del pie de página.         |
-| footerRight       | texto                | The text and format of the right footer on printed pages.  |
-| footerRightImage  | picture &#124; text* | La imagen de la parte derecha del pie de página.           |
-| headerCenter      | texto                | The text and format of the center header on printed pages. |
-| headerCenterImage | picture &#124; text* | La imagen para la sección central del encabezado.          |
-| headerLeft        | texto                | The text and format of the left header on printed pages.   |
-| headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.          |
-| headerRight       | texto                | The text and format of the right header on printed pages.  |
-| headerRightImage  | picture &#124; text* | La imagen de la sección derecha del encabezado.            |
+| Propiedad         | Tipo                 | Descripción                                                              |
+| ----------------- | -------------------- | ------------------------------------------------------------------------ |
+| footerCenter      | texto                | El texto y el formato del pie de página central en las páginas impresas. |
+| footerCenterImage | picture &#124; text* | La imagen para la sección central del pie de página.                     |
+| footerLeft        | texto                | The text and format of the left footer on printed pages.                 |
+| footerLeftImage   | picture &#124; text* | La imagen de la parte izquierda del pie de página.                       |
+| footerRight       | texto                | The text and format of the right footer on printed pages.                |
+| footerRightImage  | picture &#124; text* | La imagen de la parte derecha del pie de página.                         |
+| headerCenter      | texto                | El texto y el formato del encabezado central en las páginas impresas.    |
+| headerCenterImage | picture &#124; text* | La imagen para la sección central del encabezado.                        |
+| headerLeft        | texto                | The text and format of the left header on printed pages.                 |
+| headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.                        |
+| headerRight       | texto                | The text and format of the right header on printed pages.                |
+| headerRightImage  | picture &#124; text* | La imagen de la sección derecha del encabezado.                          |
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. En Windows, la extensión del archivo debe ser indicada. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
@@ -494,10 +494,10 @@ Ejemplo:
 
 #### Información de estilo
 
-| Propiedad  | Tipo  | Descripción                                                                                                                                                                                                                                                                                        |
-| ---------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name       | texto | Define el nombre del estilo                                                                                                                                                                                                                                                                        |
-| parentName | texto | Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Sólo está disponible cuando se utiliza una hoja de estilo. |
+| Propiedad  | Tipo  | Descripción                                                                                                                                                                                                                                                                                         |
+| ---------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name       | texto | Define el nombre del estilo                                                                                                                                                                                                                                                                         |
+| parentName | texto | Especifica el estilo en el que se basa el estilo actual. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Sólo está disponible cuando se utiliza una hoja de estilo. |
 
 
 
@@ -518,7 +518,7 @@ Contiene las siguientes propiedades:
 
 ## 4D View Pro Form Object Variable
 
-The 4D View Pro form object variable is the [object](Concepts/dt_object.md) variable associated to the 4D View Pro form area. It manages information used by the 4D View Pro object.
+The 4D View Pro form object variable is the [object](Concepts/dt_object.md) variable associated to the 4D View Pro form area. Gestiona la información utilizada por el objeto 4D View Pro.
 > The 4D View Pro form object variable is for information purposes only (i.e., debugging). Bajo ninguna circunstancia debe modificarse.
 
 Contiene las siguientes propiedades:
@@ -529,7 +529,7 @@ Contiene las siguientes propiedades:
 | ViewPro.callbacks      | Objeto        | Stores temporary information necessary for commands requiring callbacks such as importing and exporting.                                                                                                                                                                                                                     |
 | ViewPro.commandBuffers | Collection    | Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent. |
 | ViewPro.events         | Objeto        | [Event](#form-events) list.                                                                                                                                                                                                                                                                                                  |
-| ViewPro.formulaBar     | Booleano      | Indicates whether or not the formula bar is displayed. Disponible sólo para la interfaz de la "barra de herramientas".                                                                                                                                                                                                       |
+| ViewPro.formulaBar     | Booleano      | Indica si se muestra o no la barra de fórmulas. Disponible sólo para la interfaz de la "barra de herramientas".                                                                                                                                                                                                              |
 | ViewPro.inited         | Booleano      | Indicates whether or not the 4D View Pro area has been initialized (see [On VP Ready](Events/onVpReady.md) event).                                                                                                                                                                                                           |
 | ViewPro.interface      | Texto         | Specifies the type of user interface:"ribbon", "toolbar", "none".                                                                                                                                                                                                                                                            |
 
