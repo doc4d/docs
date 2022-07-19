@@ -30,7 +30,7 @@ When a form is opened in the editor, interface elements are displayed or hidden 
 - the **New form default display** options set in the Preferences - unchecked options cannot be displayed by default.
 - the current [form type](properties_FormProperties.md#form-type):
     - Markers and marker labels are always displayed by default on list forms
-    - Paper is displayed by default on "for printing" forms.
+    - Papel aparece por defecto en los formularios "a imprimir".
 
 #### Mostrar/Ocultar elementos
 
@@ -417,11 +417,11 @@ The Form editor toolbar provides a CSS button for viewing styled objects:
 
 Select one of the following preview modes from the menu:
 
-| Icono barra de herramientas          | Modo de vista previa CSS | Descripción                                                                                                   |
-| ------------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| ![](assets/en/FormEditor/cssNo.png)  | Ninguno                  | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.              |
-| ![](assets/en/FormEditor/cssWin.png) | Windows                  | CSS values for Windows platform are applied in the form. CSS values and icons displayed in the Property List. |
-| ![](assets/en/FormEditor/cssMac.png) | macOS                    | CSS values for macOS platform are applied in the form. CSS values and icons displayed in the Property List.   |
+| Icono barra de herramientas          | Modo de vista previa CSS | Descripción                                                                                                                                |
+| ------------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![](assets/en/FormEditor/cssNo.png)  | Ninguno                  | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.                                           |
+| ![](assets/en/FormEditor/cssWin.png) | Windows                  | CSS values for Windows platform are applied in the form. Los valores e iconos CSS que se muestran en la lista de propiedades.              |
+| ![](assets/en/FormEditor/cssMac.png) | macOS                    | Los valores CSS para la plataforma macOS se aplican en el formulario. Los valores e iconos CSS que se muestran en la lista de propiedades. |
 > If a font size too large for an object is defined in a style sheet or JSON, the object will automatically be rendered to accommodate the font, however the size of the object will not be changed.
 
 The CSS preview mode reflects the priority order applied to style sheets vs JSON attributes as defined in the [JSON vs Style Sheet](stylesheets.html#json-vs-style-sheet) section.
