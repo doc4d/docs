@@ -913,17 +913,17 @@ A record locked by `.lock()` is unlocked:
 
 Por padrão, se o parâmetro *modo* for omitido, a função retornará um erro (veja abaixo) se a mesma entidade tiver sido modificada (ou seja, O selo mudou) por outro processo ou usuário nesse meio tempo.
 
-Otherwise, you can pass the `dk reload if stamp changed` option in the *mode* parameter: in this case, no error is returned and the entity is reloaded when the stamp has changed (if the entity still exists and the primary key is still the same).
+Caso contrário, você pode passar o parâmetro`dk reload if stamp changed` no parâmetro *mode* : neste caso, nenhum erro é retornado e a entidade é recarregada quando o selo mudou (se a entidade ainda existir e a chave primária ainda for a mesma).
 
 **Resultado**
 
-The object returned by `.lock( )` contains the following properties:
+O objeto retornado por `.lock( )` contém as seguintes propriedades:
 
 | Propriedade      |                           | Type                   | Descrição                                                                                                                                                   |
 | ---------------- | ------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                           | booleano               | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise.                                         |
-|                  |                           |                        | ***Available only if `dk reload if stamp changed` option is used:***                                                                                        |
-| **wasReloaded**  |                           | booleano               | true if the entity was reloaded with success, false otherwise.                                                                                              |
+| success          |                           | booleano               | true se a ação de bloqueio for bem sucedida (ou se a entidade já estiver bloqueada no processo atual), falso caso contrário.                                |
+|                  |                           |                        | ***Disponível apenas se a opção`dk reload if stamp changed` for usada:***                                                                                   |
+| **wasReloaded**  |                           | booleano               | verdadeiro se a entidade foi recarregada com sucesso, falso caso contrário.                                                                                 |
 |                  |                           |                        | ***Disponível apenas em caso de erro:***                                                                                                                    |
 | status(\*)     |                           | number                 | Código de erro, ver abaixo                                                                                                                                  |
 | statusText(\*) |                           | texto                  | Descrição do erro, ver abaixo                                                                                                                               |
@@ -931,10 +931,10 @@ The object returned by `.lock( )` contains the following properties:
 | lockKindText     |                           | texto                  | "Locked by record" if locked by a 4D process, "Locked by session" if locked by a REST session                                                               |
 | lockInfo         |                           | object                 | Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).                                              |
 |                  |                           |                        | ***Available only for a 4D process lock:***                                                                                                                 |
-|                  | task_id                   | number                 | Process ID                                                                                                                                                  |
+|                  | task_id                   | number                 | ID do processo                                                                                                                                              |
 |                  | user_name                 | texto                  | Nome de usuário de sessão na máquina                                                                                                                        |
-|                  | user4d_alias              | texto                  | Name or alias of the 4D user                                                                                                                                |
-|                  | user4d_id                 | number                 | User id in the 4D database directory                                                                                                                        |
+|                  | user4d_alias              | texto                  | Nome ou apelido do usuário 4D                                                                                                                               |
+|                  | user4d_id                 | number                 | Id do usuário no diretório do banco de dados 4D                                                                                                             |
 |                  | host_name                 | texto                  | Nome da máquina                                                                                                                                             |
 |                  | task_name                 | texto                  | Nome de processo                                                                                                                                            |
 |                  | client_version            | texto                  | Version of the client                                                                                                                                       |
@@ -942,26 +942,26 @@ The object returned by `.lock( )` contains the following properties:
 |                  | host                      | texto                  | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
 |                  | IPAddr                    | texto                  | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
 |                  | userAgent                 | texto                  | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
-|                  |                           |                        | ***Available only in case of serious error*** (primary key already exists, disk full...):                                                                   |
+|                  |                           |                        | ***Disponível apenas em caso de erro grave*** (a chave primária já existir, o disco estar cheio...):                                                        |
 | errors           |                           | uma coleção de objetos |                                                                                                                                                             |
 |                  | message                   | texto                  | Mensagem de erro                                                                                                                                            |
 |                  | assinatura de componentes | texto                  | assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                                                        |
 |                  | errCode                   | number                 | Error code                                                                                                                                                  |
 
 
-(\*) The following values can be returned in the *status* and *statusText* properties of the *Result* object in case of error:
+(\*) Os seguintes valores podem ser devolvidos nas propriedades *status* e *statusText* do objecto *Result* em caso de erro:
 
 | Constante                                 | Value | Comentário                                                                                                                                                                                                                                            |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). When using `.drop( )`, this error can be returned when dk force drop if stamp changed option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**statusText asociado**: "A entidade já não existe"                                                    |
-| `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                          |
-| `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"                                                             |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). Ao usar `.drop( )`, este erro pode ser retornado quando a opção "dk force drop if stamp changed" for usada. Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br>**statusText asociado**: "A entidade já não existe"                                                    |
+| `dk status locked`                        | 3     | A entidade está fechada por uma fechadura pessimista.<p><p>**Associado statusText**: "Já bloqueado"                                                                                                   |
+| `dk status serious error`                 | 4     | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc.<p><p>**Texto status associado**: "Outro erro"                                      |
 | `dk status stamp has changed`             | 2     | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).<li>com `.save( )`: erro apenas se a opção `dk auto merge' não for utilizada</li><li>com `.drop( )`: erro apenas se a opção `dk force drop if stamp changed' não for utilizada</li><li>com `.lock( )`: erro apenas se a opção `dk reload if stamp changed` não for usada</li><br>**Associated statusText**: "Stamp has changed" |
 
 
 #### Exemplo 1
 
-Example with error:
+Exemplo com erro:
 
 ```4d
  var $employee : cs. EmployeeEntity
@@ -979,7 +979,7 @@ Example with error:
 
 #### Exemplo 2
 
-Example with `dk reload if stamp changed` option:
+Exemplo com `dk reload se o selo mudou a opção`:
 
 ```4d
  var $employee : cs. EmployeeEntity
@@ -1012,15 +1012,15 @@ Example with `dk reload if stamp changed` option:
 
 
 <!-- REF #EntityClass.next().Params -->
-| Parameter | Type       |    | Descrição                                                            |
-| --------- | ---------- |:--:| -------------------------------------------------------------------- |
-| Resultado | 4D. Entity | <- | Reference to next entity in the entity selection (Null if not found) |
+| Parameter | Type       |    | Descrição                                                                                  |
+| --------- | ---------- |:--:| ------------------------------------------------------------------------------------------ |
+| Resultado | 4D. Entity | <- | Referência para a próxima entidade de uma seleção de entidade (Null se não for encontrado) |
 
 <!-- END REF -->
 
 #### Descrição
 
-The `.next()` function <!-- REF #EntityClass.next(). Summary -->returns a reference to the next entity in the entity selection which the entity belongs to<!-- END REF -->.
+A função `.next()` <!-- REF #EntityClass.next(). Summary --> retorna uma referência à próxima entidade na seleção da entidade à qual a entidade pertence<!-- END REF -->.
 
 If the entity does not belong to any existing entity selection (i.e. [.getSelection()](#getselection) returns Null), the function returns a Null value.
 
@@ -1123,7 +1123,7 @@ The object returned by `.reload( )` contains the following properties:
 
 | Constante                                 | Value | Comentário                                                                                                                                                                                                            |
 | ----------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>***Associated statusText***: "Entity does not exist anymore" |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br>***Associated statusText***: "Entity does not exist anymore" |
 | `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                       |
 
 
@@ -1218,9 +1218,9 @@ The following values can be returned in the `status` and `statusText` properties
 | Constante                                 | Value | Comentário                                                                                                                                                                                                                                                      |
 | ----------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                      |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                              |
-| `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                                    |
-| `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"                                                                       |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                              |
+| `dk status locked`                        | 3     | A entidade está fechada por uma fechadura pessimista.<p><p>**Associado statusText**: "Já bloqueado"                                                                                                             |
+| `dk status serious error`                 | 4     | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc.<p><p>**Texto status associado**: "Outro erro"                                                |
 | `dk status stamp has changed`             | 2     | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).<br><li>com `.save( )`: erro apenas se a opção `dk auto merge' não for utilizada</li><li>com `.drop( )`: erro apenas se a opção `dk force drop if stamp changed' não for utilizada</li><li>com `.lock( )`: erro apenas se a opção `dk reload if stamp changed` não for usada</li><br>**Associated statusText**: "Stamp has changed" |
 
 
