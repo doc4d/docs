@@ -85,7 +85,7 @@ When the **User Settings** feature is enabled, user settings edited by the [SET 
 
 ## Archivos settings.4DSettings
 
-When you [check the **Enable User Settings** option](#enabling-user-settings), user settings files are automatically created. Their location depends on the type of user settings defined.
+When you [check the **Enable User Settings** option](#enabling-user-settings), user settings files are automatically created. Su ubicación depende del tipo de propiedad usuario definida.
 
 ### Parámetros usuario (estándar)
 

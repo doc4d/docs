@@ -186,7 +186,7 @@ Para la configuración por lotes de los atributos del método:
     -   To designate methods whose names end with..., type @ at the beginning of the string. For example: @write
     -   To designate all of the methods, just type @ in the area.\
       **Notes:**
-        -   The search does not take upper/lower case into account.
+        -   La búsqueda no tiene en cuenta las mayúsculas/minúsculas.
         -   You can enter several @ characters in the string, for example dtro_@web@pro.@
 3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
 4.  Haga clic en **Aplicar**. The modification is applied instantly to all the project methods designated by the character string entered.

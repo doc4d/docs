@@ -34,8 +34,8 @@ These parameters can be modified via the 4D Settings.
 
 ### Conecciones
 
-Number of SQL connections currently open on 4D Server.
+Número de conexiones SQL abiertas actualmente en 4D Server.
 
 ### Conexiones máximas
 
-Maximum number of simultaneous SQL connections allowed. This value depends on the license installed on the server machine.
+Número máximo de conexiones SQL simultáneas autorizadas. This value depends on the license installed on the server machine.

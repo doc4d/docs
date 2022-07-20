@@ -45,7 +45,7 @@ To initialize the object associated to the drop-down list, you can:
 
 * Introduzca una lista de valores por defecto en las propiedades del objeto seleccionando "\<Static List>" en el tema [Fuente de datos](properties_DataSource.md) de la lista de propiedades. The default values are loaded into an object automatically.
 
-* Execute code that creates the object and its properties. For example, if "myList" is the [variable](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
+* Ejecutar código que crea el objeto y sus propiedades. For example, if "myList" is the [variable](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
 
 ```4d
 // Form.myDrop is the datasource of the form object
@@ -56,7 +56,7 @@ Form.myDrop.index:=-1  //currentValue is a placeholder
 Form.myDrop.currentValue:="Select a fruit" 
 ```
 
-The drop-down list is displayed with the placeholder string:
+La lista desplegable se muestra con la cadena del marcador de posición:
 
 ![](assets/en/FormObjects/fruits2.png)
 

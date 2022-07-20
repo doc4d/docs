@@ -4,7 +4,7 @@ title: Página del servidor HTTP
 ---
 
 
-The **HTTP Server** page groups together information about the operation of the Web server and SOAP server of 4D Server. The Web server lets you publish Web content such as HTML pages or pictures for Web browsers, and to handle REST requests. The SOAP server manages the publication of Web Services. These servers rely on the internal HTTP server of 4D Server.
+The **HTTP Server** page groups together information about the operation of the Web server and SOAP server of 4D Server. The Web server lets you publish Web content such as HTML pages or pictures for Web browsers, and to handle REST requests. The SOAP server manages the publication of Web Services. Estos servidores dependen del servidor HTTP interno de 4D Server.
 
 ![](assets/en/Admin/server-admin-web-page.png)
 

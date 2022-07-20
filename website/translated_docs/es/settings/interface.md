@@ -8,7 +8,7 @@ You use the Interface page to set various options related to the project interfa
 
 ## General
 
-This area lets you set various options concerning display.
+Esta área le permite configurar varias opciones relativas a la visualización.
 
 ![](assets/en/settings/interface-page.png)
 
@@ -54,7 +54,7 @@ The main application scheme will be applied to forms by default. Sin embargo, se
 
 ## Atajos
 
-You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D form operations in your desktop applications. Estos atajos son idénticos para ambas plataformas. Key icons indicate the corresponding Windows and macOS keys.
+You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D form operations in your desktop applications. Estos atajos son idénticos para ambas plataformas. Los iconos de las teclas indican las teclas correspondientes a Windows y a macOS.
 
 Los accesos directos por defecto son los siguientes:
 
