@@ -72,11 +72,11 @@ Lista de cifrado utilizada para el protocolo seguro; establece la prioridad de l
 
 ## Parámetros CORS
 
-| Puede ajustarse con           | Nombre                                                                                                          | Comentarios                                                                            |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| objeto webServer              | [`CORSSettings`](API/WebServerClass.md#corssettings)                                                            | Colección de objetos (Lista de hosts y métodos permitidos para el servicio CORS)       |
-| `WEB SET OPTION`              | `Web CORS settings`                                                                                             | Colección de objetos (Lista de hosts y métodos permitidos para el servicio CORS)       |
-| Caja de diálogo de parámetros | [Options (II) page/Domain names and HTTP methods allowed](../settings/web.md#domain-names-HTTP-methods-allowed) | Haga clic en el botón [+] para añadir un nombre de dominio permitido y su(s) método(s) |
+| Puede ajustarse con           | Nombre                                                                                                                    | Comentarios                                                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| objeto webServer              | [`CORSSettings`](API/WebServerClass.md#corssettings)                                                                      | Colección de objetos (Lista de hosts y métodos permitidos para el servicio CORS)       |
+| `WEB SET OPTION`              | `Web CORS settings`                                                                                                       | Colección de objetos (Lista de hosts y métodos permitidos para el servicio CORS)       |
+| Caja de diálogo de parámetros | [Página Options (II)/Nombres de dominio y Métodos HTTP autorizados](../settings/web.md#domain-names-HTTP-methods-allowed) | Haga clic en el botón [+] para añadir un nombre de dominio permitido y su(s) método(s) |
 
 Lista de hosts y métodos permitidos para el servicio CORS.
 
@@ -126,13 +126,13 @@ Separe cada método con un ";" (por ejemplo: "post;get"). Si methods está vací
 
 Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt), stored in the "Logs" folder of the application -- nn is the file number). Es útil para depurar problemas relacionados con el servidor web. Registra cada solicitud y cada respuesta en modo bruto. Se registran las solicitudes completas, incluidos los encabezados; opcionalmente, también se pueden registrar las partes del cuerpo.
 
-| Valor | Constante                      | Descripción                                                                           |
-| ----- | ------------------------------ | ------------------------------------------------------------------------------------- |
-| 0     | wdl disable                    | Los debug logs Web HTTP son desactivados                                              |
-| 1     | wdl enable without body        | Web HTTP debug log is enabled without body parts (body size is provided in this case) |
-| 3     | wdl enable with response body  | Web HTTP debug log is enabled with body part in response only                         |
-| 5     | wdl enable with request body   | Web HTTP debug log is enabled with body part in request only                          |
-| 7     | wdl enable with all body parts | Web HTTP debug log is enabled with body parts in response and request                 |
+| Valor | Constante                      | Descripción                                                                              |
+| ----- | ------------------------------ | ---------------------------------------------------------------------------------------- |
+| 0     | wdl disable                    | Los debug logs Web HTTP son desactivados                                                 |
+| 1     | wdl enable without body        | Web HTTP debug log is enabled without body parts (body size is provided in this case)    |
+| 3     | wdl enable with response body  | Web HTTP debug log is enabled with body part in response only                            |
+| 5     | wdl enable with request body   | Los debug logs Web HTTP son activados con la partes del cuerpo en la petición únicamente |
+| 7     | wdl enable with all body parts | Web HTTP debug log is enabled with body parts in response and request                    |
 
 
 ## Página de inicio por defecto
@@ -240,7 +240,7 @@ Specifies the maximum length of time (in seconds) that HSTS is active for each n
 
 Compression level for all compressed HTTP exchanges for the 4D web server (client requests or server replies). This setting lets you optimize exchanges by either privileging speed of execution (less compression) or the amount of compression (less speed). The choice of a value depends on the size and type of data exchanged.
 
-Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
+Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. Por defecto, el nivel de compresión es 1 (compresión más rápida).
 
 ## Umbral de compresión HTTP
 
@@ -294,7 +294,7 @@ Activación del método HTTP TRACE en el servidor web 4D. For security reasons, 
 
 |Settings dialog box|[Configuration page/HTTPS Port](../settings/web.md#https-port)||
 
-Listening IP port number for HTTPS connections via TLS. Por defecto, el valor es 443 (valor estándar). See also [HTTP Port](#http-port) for information on port numbers.
+Número de puerto IP de escucha para las conexiones HTTPS vía TLS. Por defecto, el valor es 443 (valor estándar). See also [HTTP Port](#http-port) for information on port numbers.
 
 
 ## Tiempo de espera del proceso inactivo
@@ -307,7 +307,7 @@ Listening IP port number for HTTPS connections via TLS. Por defecto, el valor es
 
 Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
-Default: 480 minutes (pass 0 to restore the default value)
+Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
 
 ## Tiempo de espera de las sesiones inactivas
@@ -319,7 +319,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 Life duration (in minutes) of inactive sessions (duration set in cookie). Al final de este periodo, la cookie de sesión expira y deja de ser enviada por el cliente HTTP.
 
-Default: 480 minutes (pass 0 to restore the default value)
+Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
 
 ## Dirección IP de escucha
@@ -376,9 +376,9 @@ Legacy session management enabling status for the 4D web server (deprecated).
 | `WEB SET OPTION`              | `Web log recording`                                  |             |
 | Caja de diálogo de parámetros | [Página log (tipo)](../settings/web.md#log-format)   | Menú popup  |
 
-Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
+Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. Por defecto, las peticiones no se registran (0/Sin archivo de registro). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
-This setting allows you to select the format of this file. Valores disponibles:
+Este parámetro permite seleccionar el formato de este archivo. Valores disponibles:
 
 | Valor | Nombre del formato          | Descripción                                                                                                                                                                                                                               |
 | ----- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

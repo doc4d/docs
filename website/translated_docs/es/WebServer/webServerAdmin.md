@@ -201,7 +201,7 @@ The following table lists the fields available for each format (in alphabetical 
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                              |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                                                                       |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                     |
-| CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                                                                     |
+| CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                                                                |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                                                                              |
 | CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                                                                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                           |

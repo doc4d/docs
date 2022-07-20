@@ -11,7 +11,7 @@ title: Glosario
 
 ## Atributo
 
-An attribute is the smallest storage cell in a relational database (see also [Relation attribute](#relation-attribute)). Do not confuse dataclass attributes and entity attributes:
+An attribute is the smallest storage cell in a relational database (see also [Relation attribute](#relation-attribute)). No hay que confundir los atributos de la dataclass con los atributos de las entidades:
 
 *   In a dataclass object, each property is a dataclass attribute that maps to a corresponding field in the corresponding table (same name and type).
 *   In an entity object, entity attributes are properties that contain values for the corresponding datastore attributes.
@@ -45,7 +45,7 @@ Función de una clase de modelo de datos ORDA.
 
 ## Dataclass
 
-A dataclass is an object model that describes the data. Tables in the database provided by the datastore are handled through dataclasses. Each table in the database provided by the datastore has a corresponding dataclass with the same name. Each field of the table is an attribute of the dataclass.
+Una dataclass es un modelo de objeto que describe los datos. Tables in the database provided by the datastore are handled through dataclasses. Each table in the database provided by the datastore has a corresponding dataclass with the same name. Each field of the table is an attribute of the dataclass.
 
 Un dataclass está relacionado con un único datastore.
 
@@ -145,7 +145,7 @@ In this documentation, "Mixed" data type is used to designate the various type o
 
 ## Bloqueo optimista
 
-In "optimistic lock" mode, entities are not locked explicitly before updating them. Each entity has an internal stamp that is automatically incremented each time the entity is saved on disk. The entity.save( ) or entity.drop( ) methods will return an error if the stamp of the loaded entity (in memory) and the stamp of the entity on disk do not match, or if the entity has been dropped. Optimistic locking is only available in ORDA implementation. Ver también " Bloqueo pesimista ".
+In "optimistic lock" mode, entities are not locked explicitly before updating them. Each entity has an internal stamp that is automatically incremented each time the entity is saved on disk. The entity.save( ) or entity.drop( ) methods will return an error if the stamp of the loaded entity (in memory) and the stamp of the entity on disk do not match, or if the entity has been dropped. El bloqueo optimista sólo está disponible en la implementación ORDA. Ver también " Bloqueo pesimista ".
 
 ## Bloqueo pesimista
 
