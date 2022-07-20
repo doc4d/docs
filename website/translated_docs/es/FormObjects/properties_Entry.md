@@ -77,7 +77,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 ---
 ## Filtro de entrada
 
-An entry filter controls exactly what the user can type during data entry. Unlike [required lists](properties_RangeOfValues.md#required-list) for example, entry filters operate on a character-by-character basis. For example, if a part number always consists of two letters followed by three digits, you can use an entry filter to restrict the user to that pattern. You can even control the particular letters and numbers.
+An entry filter controls exactly what the user can type during data entry. Unlike [required lists](properties_RangeOfValues.md#required-list) for example, entry filters operate on a character-by-character basis. For example, if a part number always consists of two letters followed by three digits, you can use an entry filter to restrict the user to that pattern. Incluso puede controlar las letras y números en particular.
 
 Un filtro de entrada sólo funciona durante la entrada de datos. It has no effect on data display after the user deselects the object. In general, you use entry filters and [display formats](properties_Display.md) together. The filter constrains data entry and the format ensures proper display of the value after data entry.
 
@@ -174,7 +174,7 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 This property associates a specific keyboard layout to an [input object](input_overview.md). For example, in an international application, if a form contains a field whose contents must be entered in Greek characters, you can associate the "Greek" keyboard layout with this field. This way, during data entry, the keyboard configuration is automatically changed when this field has the focus.
 
-By default, the object uses the current keyboard layout.
+Por defecto, el objeto utiliza la disposición actual del teclado.
 
 > You can also set and get the keyboard dynamically using the `OBJECT SET KEYBOARD LAYOUT` and `OBJECT Get keyboard layout` commands.
 
@@ -226,7 +226,7 @@ Cuando se selecciona este valor, la propiedad es gestionada por la opción [Reto
 ---
 ## Marcador
 
-4D can display placeholder text in the fields of your forms.
+4D puede mostrar texto con marcador de posición en los campos de sus formularios.
 
 Placeholder text appears as watermark text in a field, supplying a help tip, indication or example for the data to be entered. This text disappears as soon as the user enters a character in the area:
 
@@ -291,7 +291,7 @@ You can configure this option by clicking the [...] button in the Shortcuts prop
 
 
 ![](assets/en/FormObjects/property_shortcut.png)
-> You can also assign a shortcut to a custom menu command. If there is a conflict between two shortcuts, the active object has priority. For more information about associating shortcuts with menus, refer to [Setting menu properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Setting-menu-properties.300-4163525.en.html).
+> También puede asignar un acceso directo a un comando de menú personalizado. If there is a conflict between two shortcuts, the active object has priority. For more information about associating shortcuts with menus, refer to [Setting menu properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Setting-menu-properties.300-4163525.en.html).
 
 To view a list of all the shortcuts used in the 4D Design environment, see the [Shortcuts Page](https://doc.4d.com/4Dv17R5/4D/17-R5/Shortcuts-Page.300-4163701.en.html) in the Preferences dialog box.
 
