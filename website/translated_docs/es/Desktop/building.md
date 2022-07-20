@@ -333,7 +333,7 @@ You can check the **Allow automatic update...** option for client applications r
 - the **Build server application** option is checked,
 - the **Allow automatic update...** option for client applications running on the current platform is checked.
 
-This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
+This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. El archivo a seleccionar depende de la plataforma actual del servidor:
 
 | Plataforma del servidor actual | Archivo requerido                                           | Detalles                                                                                                                                                                   |
 | ------------------------------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -533,8 +533,8 @@ You must designate the files that contain your Developer license as well as thos
 
 Once you have selected a file, the list will indicate the characteristics of the license that it contains.
 
-*   **License #** - Product license number
-*   **License** - Name of the product
+*   **Licencia #** - número de licencia del producto
+*   **Licencia** - Nombre del producto
 *   **Expiration date** - Expiration date of the license (if any)
 *   **Ruta de acceso** - Ubicación en el disco
 
@@ -642,7 +642,7 @@ The data file path is stored in a dedicated file, named *lastDataPath.xml*.
 
 Thanks to this architecture, when you provide an update of your application, the local user data file (last data file used) is opened automatically at first launch.
 
-This mechanism is usually suitable for standard deployments. However, for specific needs, for example if you duplicate your merged applications, you might want to change the way that the data file is linked to the application (described below).
+Este mecanismo suele ser adecuado para los despliegues estándar. However, for specific needs, for example if you duplicate your merged applications, you might want to change the way that the data file is linked to the application (described below).
 
 #### Configuring the data linking mode
 
@@ -678,7 +678,7 @@ Más específicamente, se cubren los siguientes casos:
 Para definir y utilizar un archivo de datos por defecto:
 
 - You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the application project folder. This file must be provided along with all other necessary files, depending on the project configuration: index (.4DIndx), external Blobs, journal, etc. Es su responsabilidad proveer un archivo de datos válido por defecto. Es su responsabilidad proveer un archivo de datos válido por defecto.
-- When the application is built, the default data folder is integrated into the merged application. All files within this default data folder are also embedded.
+- When the application is built, the default data folder is integrated into the merged application. Todos los archivos dentro de esta carpeta por defecto también están anidados.
 
 El siguiente gráfico ilustra esta funcionalidad:
 
