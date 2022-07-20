@@ -78,7 +78,7 @@ La lista de las principales actualizaciones de esta documentación. For general 
 - New default dark and light themes in [Code Editor preferences](Preferences/methods.md#theme-list).
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
-- New, comprehensive [CLI](Admin/cli.md) page.
+- Nueva, página [CLI](Admin/cli.md) completa.
 
 
 
