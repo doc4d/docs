@@ -74,7 +74,7 @@ When handled through the code, the datastore is an object whose properties are a
 
 A datastore references only a single local or remote database.
 
-The datastore object itself cannot be copied as an object:
+El objeto datastore en sí no puede ser copiado como un objeto:
 
 ```4d 
 $mydatastore:=OB Copy(ds) //devuelve null
@@ -118,7 +118,7 @@ Un objeto dataclass puede contener:
 
 The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. Una consulta se hace desde una única dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
 
-The dataclass object itself cannot be copied as an object:
+El objeto dataclass mismo no puede copiarse como un objeto:
 
 ```4d 
 $mydataclass:=OB Copy(ds.Employee) //devuelve null
@@ -181,7 +181,7 @@ Una entidad es el equivalente a un registro. It is actually an object that refer
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
-The entity object itself cannot be copied as an object:
+El objeto entidad en sí no puede ser copiado como un objeto:
 
 ```4d
  $myentity:=OB Copy(ds.Employee.get(1)) //devuelve null
@@ -217,7 +217,7 @@ The entity selection object itself cannot be copied as an object:
  $myentitysel:=OB Copy(ds.Employee.all()) //returns null
 ```
 
-The entity selection properties are however enumerable:
+Las propiedades de las selecciones de entidades son sin embargo enumerables:
 
 ```4d
  ARRAY TEXT($prop;0)

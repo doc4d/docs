@@ -102,7 +102,7 @@ Por ejemplo, para definir un atributo de almacenamiento:
 ```
 > Pictures attributes cannot be assigned directly with a given path in an entity.
 
-Accessing a related attribute depends on the attribute kind. Por ejemplo, con la siguiente estructura:
+El acceso a un atributo relacionado depende del tipo de atributo. Por ejemplo, con la siguiente estructura:
 
 ![](assets/en/ORDA/entityAttributes.png)
 

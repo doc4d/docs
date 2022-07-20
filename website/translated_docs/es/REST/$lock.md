@@ -44,7 +44,7 @@ An entity locked by the REST API can only be unlocked:
 
 A `?$lock` request returns a JSON object with `"result"=true` if the lock operation was successful and `"result"=false` if it failed.
 
-The returned "__STATUS" object has the following properties:
+El objeto "__STATUS" devuelto tiene las siguientes propiedades:
 
 | Propiedad    |  | Tipo     | Descripción                                                                                                                                     |
 | ------------ |  | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |

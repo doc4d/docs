@@ -26,7 +26,7 @@ Esta propiedad designa el tipo del [objeto formulario activo o inactivo](formObj
 ---
 ## Nombre del objeto
 
-Each active form object is associated with an object name. Cada nombre de objeto debe ser único.
+Cada objeto de formulario activo está asociado a un nombre de objeto. Cada nombre de objeto debe ser único.
 > Los nombres de objetos están limitados a un tamaño de 255 bytes.
 
 When using 4D’s language, you can refer to an active form object by its object name (for more information about this, refer to [Object Properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Object-Properties.300-4128195.en.html) in the 4D Language Reference manual).
@@ -81,7 +81,7 @@ Esta es la lista de objetos cuyo valor se puede guardar:
 > See also **[Expression](properties_DataSource.md#expression)** for Selection and collection type list box columns.
 
 
-Esta propiedad especifica la fuente de los datos. Each active form object is associated with an object name and a variable name. The variable name can be different from the object’s name. In the same form, you can use the same variable several times while each [object name](#object-name) must be unique.
+Esta propiedad especifica la fuente de los datos. Each active form object is associated with an object name and a variable name. El nombre de la variable puede ser diferente del nombre del objeto. In the same form, you can use the same variable several times while each [object name](#object-name) must be unique.
 > El tamaño del nombre de la variable está limitado a 31 bytes. See [Identifiers](Concepts/identifiers.md) section for more information about naming rules.
 
 The form object variables allow you to control and monitor the objects. For example, when a button is clicked, its variable is set to 1; at all other times, it is 0. The expression associated with a progress indicator lets you read and change the current setting.
@@ -217,9 +217,9 @@ The collection or the entity selection must be available to the form when it is 
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                             |
-| ---------- | -------------- | ------------------------------------------------------------ |
-| dataSource | cadena         | Expression that returns a collection or an entity selection. |
+| Nombre     | Tipos de datos | Valores posibles                                                   |
+| ---------- | -------------- | ------------------------------------------------------------------ |
+| dataSource | cadena         | Expresión que devuelve una colección o una selección de entidades. |
 
 #### Objetos soportados
 
@@ -306,7 +306,7 @@ You can force a carriage return in the label by using the \ character (backslash
 
 Para insertar un \ en la etiqueta, ingrese "&#92;&#92;".
 
-By default, the label is placed in the center of the object. When the object also contains an icon, you can modify the relative location of these two elements using the [Title/Picture Position](properties_TextAndPicture.md#title-picture-position) property.
+Por defecto, la etiqueta se coloca en el centro del objeto. When the object also contains an icon, you can modify the relative location of these two elements using the [Title/Picture Position](properties_TextAndPicture.md#title-picture-position) property.
 
 For application translation purposes, you can enter an XLIFF reference in the title area of a button (see [Appendix B: XLIFF architecture](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html)).
 

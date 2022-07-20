@@ -181,7 +181,7 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 
 - **Extends**: 4D.EntitySelection
 - **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Ejemplo**: cs.EmployeeSelection
 
 
 #### Ejemplo
