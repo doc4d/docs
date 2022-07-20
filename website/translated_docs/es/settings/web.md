@@ -223,7 +223,7 @@ The following table lists the fields available for each format (in alphabetical 
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)             |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                      |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                    |
-| CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                    |
+| CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP               |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                             |
 | CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                        |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
@@ -233,7 +233,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS_URI_STEM  | X   | X   | Parte de la petición sin los parámetros de consulta                        |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year |
 | METHOD         | X   | X   | HTTP method used for the request sent to the server                        |
-| PATH_ARGS      |     | X   | CGI parameters: string located after the "$" character                     |
+| PATH_ARGS      |     | X   | Parámetros de la CGI: cadena situada después del caracter "$"              |
 | STATUS         | X   | X   | Respuesta ofrecida por el servidor                                         |
 | TIME           | X   | X   | HH: hour, MM: minutes, SS: seconds                                         |
 | TRANSFER_TIME  | X   | X   | Tiempo solicitado por el servidor para generar la respuesta                |
@@ -268,7 +268,7 @@ Para más información sobre el soporte de los servicios web en 4D, consulte el 
 
 Esta área contiene varias opciones relativas con el uso de 4D como un "servidor" de Servicios Web, es decir la publicación de los métodos proyecto en forma de Servicios Web.
 
--   **Allow Web Services Requests**: This option lets you initialize the publication of Web Services. If this option has not been checked, 4D refuses SOAP requests and does not generate a WSDL - even if methods have the *Published in WSDL* attribute. When this option is checked, 4D creates the WSDL file.
+-   **Allow Web Services Requests**: This option lets you initialize the publication of Web Services. If this option has not been checked, 4D refuses SOAP requests and does not generate a WSDL - even if methods have the *Published in WSDL* attribute. Cuando esta opción está marcada, 4D crea el archivo WSDL.
 -   **Web Service Name**: This area lets you change the "generic name" of the Web Service. This name is used to differentiate the services both at the SOAP server level (when the server publishes several different Web Services), as well as in the Web Services directories. Por defecto, 4D utiliza el nombre A_WebService.
 -   **Web Services Namespace**: This area is used to change the namespace of the Web Services published by 4D. Each Web Service published on the Internet must be unique. The uniqueness of the names of Web Services is ensured by using XML namespaces. A namespace is an arbitrary character string used to identify a set of XML tags in a unique way. Typically, the namespace begins with the URL of the company (http://mycompany.com/mynamespace). In this case, it is not indispensable to have anything in particular at the URL indicated; what matters is that the character string used is unique. By default, 4D uses the following namespace: http://www.4d.com/namespace/default.
 

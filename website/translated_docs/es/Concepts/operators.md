@@ -86,7 +86,7 @@ The following compound assignment operators are supported:
 | División       | Number /= Number   | Número | `$n/=5 //$n:=$n/5`                                                  |
 |                | Time /= Time       | Hora   | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
 |                | Time /= Number     | Número | `$t1/=5 //$t1:=$t1/5`                                               |
-|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
+|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (añadir $p2 debajo de $p1)`                |
 |                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`    |
 | Multiplicación | Text *= Number     | Texto  | `$t*="abc"  //$t:=$t*"abc"`                                         |
 |                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                  |

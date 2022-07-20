@@ -241,4 +241,4 @@ Define la carpeta raíz por defecto del servidor web 4D para las páginas, las i
 
 ## Archivo `.gitignore` (opcional)
 
-File that specifies which files will be ignored by git. You can include a gitignore file in your projects using the **Create .gitignore file** option on the **General** page of the preferences. To configure the contents of that file, see [Create `.gitignore` file](Preferences/general.md#create-gitignore-file).
+Archivo que especifica los archivos que serán ignorados por git. You can include a gitignore file in your projects using the **Create .gitignore file** option on the **General** page of the preferences. To configure the contents of that file, see [Create `.gitignore` file](Preferences/general.md#create-gitignore-file).
