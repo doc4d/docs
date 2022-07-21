@@ -52,7 +52,7 @@ By default, 4D creates a variable or expression of [object type](properties_Obje
 
 
 
-### Synchronizing parent form and subform (single value)
+### Sincronizando formulario padre y subformulario (valor único)
 
 Binding the same variable or expression to your subform container and other objects of the parent form lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Imagine a subform representing a clock, inserted into a parent form containing an enterable variable of the Time type:
 
