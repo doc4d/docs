@@ -517,7 +517,7 @@ Los siguientes módulos opcionales pueden ser deseleccionados:
 La página de Licencias & Certificados puede utilizarse para:
 
 *   designate the license number(s) that you want to integrate into your single-user stand-alone application
-*   sign the application by means of a certificate in macOS.
+*   firmar la aplicación mediante un certificado en macOS.
 
 ![](assets/en/Admin/buildappCertif.png)
 
@@ -737,7 +737,7 @@ You can choose whether or not to display the standard server selection dialog bo
   `ServerSelectionAllowed`: **True** ![](assets/en/Project/connect2.png) ![](assets/en/Project/connect3.png)
 
 
-## Automatic updating of server or single-user applications
+## Actualización automática de aplicaciones servidor o monopuesto
 
 In principle, updating server applications or merged single-user applications require user intervention (or programming custom system routines): whenever a new version of the merged application is available, you have to exit the application in production and manually replace the old files with the new ones; then restart the application and select the current data file.
 
