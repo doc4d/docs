@@ -123,7 +123,7 @@ The `<method>` tag allows you to generate and use macro-commands that execute 4D
 
 `<method>MyMethod("<method_name/>")</method>`
 
-The code of a called method is executed in a new process. This process is killed once the method is executed.
+The code of a called method is executed in a new process. Este proceso se cierra una vez se ejecuta el método.
 
 > **Note:** The structure process remains frozen until the called method execution is completed. You must make sure that the execution is quick and that there is no risk of it blocking the application. If this occurs, use the **Ctrl+F8** (Windows) or **Command+F8** (Mac OS) command to "kill" the process.
 
