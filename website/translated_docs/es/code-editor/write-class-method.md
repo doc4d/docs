@@ -469,7 +469,7 @@ If you place the mouse over the expand button [...], a help tip appears, display
 
 A collapsed portion of code can be selected, copied, pasted or deleted. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
 
-There are several ways to expand and collapse code:
+Hay varias formas de expandir y contraer código:
 
 * Click on the expand/collapse icons ([+] and [-] under Windows) or on the opening button [...]
 * Use the commands of the **Method > Collapse/Expand** submenu:
