@@ -482,7 +482,7 @@ If there is a conflict between two different versions of the same plug-in (one l
 La página de Licencias & Certificados puede utilizarse para:
 
 *   designate the license number(s) that you want to integrate into your single-user stand-alone application
-*   sign the application by means of a certificate in macOS.
+*   firmar la aplicación mediante un certificado en macOS.
 
 ![](assets/en/Admin/buildappCertif.png)
 
