@@ -60,7 +60,7 @@ However, the updated ORDA model layer is not automatically available in the foll
 
 ### Datastore
 
-El datastore es el objeto de interfaz de una base de datos. It builds a representation of the whole database as object. A datastore is made of a **model** and **data**:
+El datastore es el objeto de interfaz de una base de datos. Crea una representación de toda la base como objeto. A datastore is made of a **model** and **data**:
 
 - The model contains and describes all the dataclasses that make up the datastore. Es independiente de la propia base de datos subyacente.
 - Data refers to the information that is going to be used and stored in this model. For example, names, addresses, and birthdates of employees are pieces of data that you can work with in a datastore.
