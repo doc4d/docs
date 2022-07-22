@@ -203,7 +203,7 @@ The number of loops is based on the number of elements of the collection. At eac
 
 #### Ejemplo con una colección de valores escalares
 
-*getNames* returns a collection of strings. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
+*getNames* devuelve una colección de cadenas. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
 
 
 ```html
