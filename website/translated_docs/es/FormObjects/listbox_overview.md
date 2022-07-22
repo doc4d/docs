@@ -533,7 +533,7 @@ By default, a list box provides standard column sorts when the header is clicked
 
 You can enable or disable standard user sorts by disabling the [Sortable](properties_Action.md#sortable) property of the list box (enabled by default).
 
-Standard sort support depends on the list box type:
+El soporte de ordenación estándar depende del tipo de list box:
 
 | Tipo de list box               | Support of standard sort | Comentarios                                                                                                  |
 | ------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
