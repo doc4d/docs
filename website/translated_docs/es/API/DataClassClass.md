@@ -707,7 +707,7 @@ In the following example, `$ds.Persons.all()` loads the first entity with all it
 
 Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 
-Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+Only the first entity of the `Address` dataclass is stored in the cache. Se carga durante la primera iteración del bucle.
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -1048,7 +1048,7 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 
 **Búsquedas en las relaciones Muchos a Muchos**
 
-ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
+ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. Por ejemplo, de una mirada a la siguiente estructura:
 
 ![alt-text](assets/en/API/manytomany.png)
 
