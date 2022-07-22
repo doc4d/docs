@@ -23,7 +23,7 @@ The `localID` is local to the machine that connects to the remote datastore, whi
 *   If another process of the same application opens the same remote datastore but with another `localID`, it will create a new session on the remote datastore.
 *   If another machine connects to the same remote datastore with the same `localID`, it will create another session with another cookie.
 
-These principles are illustrated in the following graphics:
+Estos principios se ilustran en los gráficos siguientes:
 
 ![](assets/en/ORDA/sessions.png)
 
