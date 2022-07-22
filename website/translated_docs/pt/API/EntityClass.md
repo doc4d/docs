@@ -1114,10 +1114,10 @@ O objeto retornado por `.reload( )` contém as seguintes propriedades:
 
 (\*) Os seguintes valores podem ser devolvidos nas propriedades *status* e *statusText* do objecto *Result* em caso de erro:
 
-| Constante                                 | Value | Comentário                                                                                                                                                                                                            |
-| ----------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). a entidade foi eliminada e substituída por outra com outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br>***Associated statusText***: "Entity does not exist anymore" |
-| `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                       |
+| Constante                                 | Value | Comentário                                                                                                                                                                                                      |
+| ----------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). a entidade foi eliminada e substituída por outra com outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br>***statusText associado***: "a entidade já não existe" |
+| `dk status serious error`                 | 4     | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc.<br>***Texto status associado***: "Outro erro"                                          |
 
 
 #### Exemplo
@@ -1157,10 +1157,10 @@ O objeto retornado por `.reload( )` contém as seguintes propriedades:
 
 
 <!-- REF #EntityClass.save().Params -->
-| Parameter | Type    |    | Descrição                                         |
-| --------- | ------- |:--:| ------------------------------------------------- |
-| mode      | Integer | -> | `dk auto merge`: Enables the automatic merge mode |
-| Resultado | Objeto  | <- | Result of save operation                          |
+| Parâmetros | Tipo    |    | Descrição                                           |
+| ---------- | ------- |:--:| --------------------------------------------------- |
+| mode       | Integer | -> | `dk auto merge`: Permite o modo de fusão automática |
+| Resultado  | Objeto  | <- | Resultado da operação de salvamento                 |
 
 <!-- END REF -->
 
