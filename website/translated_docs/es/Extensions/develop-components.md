@@ -19,7 +19,7 @@ You can develop 4D components for your own needs and keep them private. You can 
 Creating and installing 4D components is carried out directly from 4D:
 
 - To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). Puede utilizar alias o atajos.
-- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
+- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. Sin embargo, un componente no puede utilizar subcomponentes por sí mismo.
 - A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. No puede llamar a los métodos base ni a los triggers.
 - You cannot use the datastore, standard tables, or data files in 4D components. Sin embargo, un componente puede crear y/o utilizar tablas, campos y archivos de datos utilizando mecanismos de bases externas. Se trata de bases 4D independientes con las que se trabaja utilizando comandos SQL.
 - Un proyecto local que se ejecuta en modo interpretado puede utilizar componentes interpretados o compilados. Un proyecto local que se ejecuta en modo compilado no puede utilizar componentes interpretados. En este caso, sólo se pueden utilizar componentes compilados.
