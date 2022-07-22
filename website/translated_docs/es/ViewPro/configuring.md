@@ -114,14 +114,14 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 |                   | allowSort                | booleano | Especifica si el usuario puede ordenar rangos, opcional. Falso por defecto.                                                         |
 |                   | allowFilter              | booleano | Especifica si el usuario puede filtrar rangos, opcional. Falso por defecto.                                                         |
 |                   | allowEditObjects         | booleano | Specifies whether the user can edit floating objects, optional. Falso por defecto.                                                  |
-|                   | allowResizeRows          | booleano | Specifies whether the user can resize rows, optional. Falso por defecto.                                                            |
-|                   | allowResizeColumns       | booleano | Specifies whether the user can resize columns, optional. Falso por defecto.                                                         |
+|                   | allowResizeRows          | booleano | Indica si el usuario puede redimensionar las líneas, opcional. Falso por defecto.                                                   |
+|                   | allowResizeColumns       | booleano | Indica si el usuario puede redimensionar las columnas, opcional. Falso por defecto.                                                 |
 |                   | allowDragInsertRows      | booleano | Specifies whether the user can perform the drag operation to insert rows, optional. Falso por defecto.                              |
 |                   | allowDragInsertColumns   | booleano | Specifies whether the user can perform the drag operation to insert columns, optional. Falso por defecto.                           |
-|                   | allowInsertRows          | booleano | Specifies whether the user can insert rows, optional. Falso por defecto.                                                            |
-|                   | allowInsertColumns       | booleano | Specifies whether the user can insert columns, optional. Falso por defecto.                                                         |
-|                   | allowDeleteRows          | booleano | Specifies whether the user can delete rows, optional. Falso por defecto.                                                            |
-|                   | allowDeleteColumns       | booleano | Specifies whether the user can delete columns, optional. Falso por defecto.                                                         |
+|                   | allowInsertRows          | booleano | Indica si el usuario puede insertar las líneas, opcional. Falso por defecto.                                                        |
+|                   | allowInsertColumns       | booleano | Indica si el usuario puede insertar las columnas, opcional. Falso por defecto.                                                      |
+|                   | allowDeleteRows          | booleano | Indica si el usuario puede eliminar las líneas, opcional. Falso por defecto.                                                        |
+|                   | allowDeleteColumns       | booleano | Indica si el usuario puede eliminar las columnas, opcional. Falso por defecto.                                                      |
 > Todas las propiedades son opcionales.
 
 
@@ -149,7 +149,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 | .         | Muestra un punto decimal                                                                                                                                                                                                                                                     | 0.00 will display 1999 as 1999.00                                                                                          |
 | ,         | Muestra el separador de miles en un número.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 mostrará 12200000 como 12,200,000                                                                                      |
 | \_      | Salta el ancho del siguiente caracter.                                                                                                                                                                                                                                       | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
-| @         | Formatter for text. Aplica el formato a todo el texto de la celda                                                                                                                                                                                                            | "\[Red]@" applies the red font color for text values.                                                                     |
+| @         | Formatter for text. Aplica el formato a todo el texto de la celda                                                                                                                                                                                                            | "\[Red]@" aplica el color de fuente rojo para los valores de texto.                                                       |
 | *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                         | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
 | " "       | Muestra el texto entre comillas sin interpretarlo.                                                                                                                                                                                                                           | "8%" será mostrado como: 8%                                                                                                |
 | %         | Muestra los números como un porcentaje de 100.                                                                                                                                                                                                                               | El 8% se mostrará como 0,08                                                                                                |
@@ -178,7 +178,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy HH:mm:ss"                                                |
 | `vk pattern long date`                    | "_longDatePattern_"                  | Formato ISO 8601 para la fecha completa en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy"                                                          |
-| `vk pattern long time`                    | "_longTimePattern_"                  | ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"                                                                                    |
+| `vk pattern long time`                    | "_longTimePattern_"                  | Formato ISO 8601 para la hora en la localización actual.<p><p>USA default pattern: "HH:mm:ss"                                                                                 |
 | `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                           |
 | `vk pattern short date`                   | "_shortDatePattern_"                 | Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"                                                                    |
 | `vk pattern short time`                   | "_shortTimePattern_"                 | Abbreviated ISO 8601 format for the time in current localization.<p><p>Patrón por defecto USA: "HH:mm"                                                                      |
@@ -279,20 +279,20 @@ Column and row attributes are used to specify the beginning, end, and repetition
 
 Header and footer attributes are used to specify text or images in the left, right, and center header/footer sections.
 
-| Propiedad         | Tipo                 | Descripción                                                              |
-| ----------------- | -------------------- | ------------------------------------------------------------------------ |
-| footerCenter      | texto                | El texto y el formato del pie de página central en las páginas impresas. |
-| footerCenterImage | picture &#124; text* | La imagen para la sección central del pie de página.                     |
-| footerLeft        | texto                | The text and format of the left footer on printed pages.                 |
-| footerLeftImage   | picture &#124; text* | La imagen de la parte izquierda del pie de página.                       |
-| footerRight       | texto                | The text and format of the right footer on printed pages.                |
-| footerRightImage  | picture &#124; text* | La imagen de la parte derecha del pie de página.                         |
-| headerCenter      | texto                | El texto y el formato del encabezado central en las páginas impresas.    |
-| headerCenterImage | picture &#124; text* | La imagen para la sección central del encabezado.                        |
-| headerLeft        | texto                | The text and format of the left header on printed pages.                 |
-| headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.                        |
-| headerRight       | texto                | The text and format of the right header on printed pages.                |
-| headerRightImage  | picture &#124; text* | La imagen de la sección derecha del encabezado.                          |
+| Propiedad         | Tipo                 | Descripción                                                                |
+| ----------------- | -------------------- | -------------------------------------------------------------------------- |
+| footerCenter      | texto                | El texto y el formato del pie de página central en las páginas impresas.   |
+| footerCenterImage | picture &#124; text* | La imagen para la sección central del pie de página.                       |
+| footerLeft        | texto                | El texto y el formato del pie de página izquierdo en las páginas impresas. |
+| footerLeftImage   | picture &#124; text* | La imagen de la parte izquierda del pie de página.                         |
+| footerRight       | texto                | The text and format of the right footer on printed pages.                  |
+| footerRightImage  | picture &#124; text* | La imagen de la parte derecha del pie de página.                           |
+| headerCenter      | texto                | El texto y el formato del encabezado central en las páginas impresas.      |
+| headerCenterImage | picture &#124; text* | La imagen para la sección central del encabezado.                          |
+| headerLeft        | texto                | El texto y el formato del encabezado izquierdo en las páginas impresas.    |
+| headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.                          |
+| headerRight       | texto                | The text and format of the right header on printed pages.                  |
+| headerRightImage  | picture &#124; text* | La imagen de la sección derecha del encabezado.                            |
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. En Windows, la extensión del archivo debe ser indicada. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
@@ -481,7 +481,7 @@ Ejemplo:
 | cellPadding | texto        | Define el relleno de la celda                                                                                       |                                                                                                                      |
 | hAlign      | entero largo | Define la alineación horizontal del contenido de la celda.                                                          | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
 | locked      | booleano     | Specifies cell protection status. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = bloqueado, False = desbloqueado.                                                                              |
-| shrinkToFit | booleano     | Specifies if the contents of the cell should be reduced.                                                            | True = contenido reducido, False = sin reducción.                                                                    |
+| shrinkToFit | booleano     | Especifica si el contenido de la celda debe ser reducido.                                                           | True = contenido reducido, False = sin reducción.                                                                    |
 | tabStop     | booleano     | Specifies if the focus to the cell can be set using the Tab key.                                                    | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
 | vAlign      | entero largo | Especifica la alineación vertical del contenido de la celda.                                                        | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
