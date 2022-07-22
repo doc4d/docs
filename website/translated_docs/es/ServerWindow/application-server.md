@@ -11,7 +11,7 @@ The Application Server page groups together information about the desktop applic
 
 The upper part of the page provides information about the current status of the 4D Server application server.
 
-- **State**: Started or Stopped.
+- **Estado**: Iniciado o Detenido.
 - **Starting time**: Date and time the application server was launched. This date corresponds to the opening of the project by 4D Server.
 - **Uptime**: Time elapsed since last opening of the project by the server.
 
@@ -25,7 +25,7 @@ Por defecto, cuando se publica el proyecto:
 - The project name is published in the remote connection dialog box (if the "At Startup Publish Database Name in the Connection Dialog" option is checked in the Preferences).
 
 If you click on the **Reject new connections** button:
-- The button title changes to "Accept new connections."
+- El título del botón cambia a "Aceptar nuevas conexiones."
 - Ningún nuevo cliente puede entonces conectarse. Clients attempting to connect will receive the following message:
 
 ![](assets/en/Admin/server-error.png)
