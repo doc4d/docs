@@ -225,7 +225,7 @@ The `.createAlias()` function <!-- REF #FileClass.createAlias().Summary -->creat
 
 Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
-By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
+Por defecto en macOS, la función crea un alias estándar. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
 
 | Constante          | Valor | Comentario                         |
 | ------------------ | ----- | ---------------------------------- |
