@@ -29,7 +29,7 @@ Código para la(s) función(es) de clase usuarios.
 
 ## Atributo calculado
 
-A computed attribute doesn't actually store information. Instead, it determines its value based on other values from the same entity or from other entities, attributes or functions. When a computed attribute is referenced, the underlying "computation" is evaluated to determine the value. Computed attributes may even be assigned values where user-defined code determines what to do during the assignment.
+Un atributo calculado no almacena realmente información. Instead, it determines its value based on other values from the same entity or from other entities, attributes or functions. When a computed attribute is referenced, the underlying "computation" is evaluated to determine the value. Computed attributes may even be assigned values where user-defined code determines what to do during the assignment.
 
 ## Data model class
 
@@ -86,7 +86,7 @@ A deep copy duplicates an object and all the references it contains. After a dee
 
 ## Entity
 
-An entity is an object that corresponds to a dataclass model. An entity contains the same attributes as the dataclass.
+An entity is an object that corresponds to a dataclass model. Una entidad contiene los mismos atributos que la dataclass.
 
 An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. Sin embargo, una entidad también contiene los datos relacionados. The purpose of the entity is to manage data (create, update, delete).
 
