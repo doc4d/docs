@@ -251,7 +251,7 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 
 In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Este parámetro es útil para evitar la pérdida de tiempo de la máquina al comprimir los intercambios pequeños.
 
-Pasa el tamaño expresado en bytes como valor. By default, the compression threshold is set to 1024 bytes.
+Pasa el tamaño expresado en bytes como valor. Por defecto, el límite de compresión está fijado en 1024 bytes.
 
 
 ## Puerto HTTP
@@ -559,11 +559,11 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 
 ## Sesiones escalables
 
-| Puede ajustarse con           | Nombre                                                                                                                     | Comentarios |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| objeto webServer              | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                                 |             |
-| `WEB SET OPTION`              | `Sesión escalable web`                                                                                                     |             |
-| Caja de diálogo de parámetros | [Options (I) page/Scalable sessions (multi-process sessions)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
+| Puede ajustarse con           | Nombre                                                                                                                         | Comentarios |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| objeto webServer              | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                                     |             |
+| `WEB SET OPTION`              | `Sesión escalable web`                                                                                                         |             |
+| Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones escalables (sesiones multiproceso)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
 Scalable session management enabling status for the 4D web server. Web server sessions are detailed in the [User sessions](sessions.md) page.
 
