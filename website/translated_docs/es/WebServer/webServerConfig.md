@@ -253,7 +253,7 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 
 In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Este parámetro es útil para evitar la pérdida de tiempo de la máquina al comprimir los intercambios pequeños.
 
-Pasa el tamaño expresado en bytes como valor. By default, the compression threshold is set to 1024 bytes.
+Pasa el tamaño expresado en bytes como valor. Por defecto, el límite de compresión está fijado en 1024 bytes.
 
 
 ## Puerto HTTP
