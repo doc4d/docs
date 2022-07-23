@@ -10,7 +10,7 @@ Multi-user development is managed via standard **source control** repository too
 
 ## Crear un proyecto
 
-New 4D application projects can be created from **4D** or **4D Server**. In any case, project files are stored on the local machine.
+New 4D application projects can be created from **4D** or **4D Server**. En cualquier caso, los archivos del proyecto se almacenan en la máquina local.
 
 Para crear un nuevo proyecto:
 
