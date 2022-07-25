@@ -195,7 +195,7 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 > La fecha y hora son locales al servidor.
 
--   request: request sent by the client (ex. GET /index.htm HTTP/1.0)
+-   petición: solicitud enviada por el cliente (por ejemplo, GET /index.htm HTTP/1.0)
 -   estado: respuesta dada por el servidor.
 -   length: size of the data returned (except the HTTP header) or 0.
 
@@ -228,7 +228,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP               |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                             |
 | CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                        |
-| CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
+| CS(USER_AGENT) | X   | X   | Información sobre el software y el sistema operativo del cliente           |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                  |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                    |
 | CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                      |
