@@ -159,6 +159,6 @@ Define dónde buscará 4D las páginas de documentación.
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
-Indica la ubicación de la documentación HTML estática. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
+Indica la ubicación de la documentación HTML estática. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. Si esta subcarpeta no está presente, la ubicación se muestra en rojo.
 
 You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). 
