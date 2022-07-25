@@ -24,6 +24,6 @@ La lista de las principales actualizaciones de esta documentación. Para obtener
 - [Entity Selection Class](API/EntitySelectionClass.md): `.average()`, `.max()` and `.min()` functions now return *undefined* if the entity selection is empty.
 - [IMAP Mail](API/IMAPTransporterClass.md), [POP3 Mail](API/POP3TransporterClass.md) and [SMTP Mail](API/SMTPTransporterClass.md): `authenticationMode` property enables OAuth 2.0
 - [IMAP Mail](API/IMAPTransporterClass.md): new `.expunge()` and `.append()` functions
-- New [WebAdmin](Admin/webAdmin.md) web server component
+- Nuevo componente [WebAdmin](Admin/webAdmin.md) del servidor web
 - Nueva interfaz [DataExplorer](Admin/dataExplorer)
 - New web [user sessions](WebServer/sessions.md) and [their API](API/SessionClass.md).
