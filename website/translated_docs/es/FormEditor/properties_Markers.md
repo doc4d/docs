@@ -45,7 +45,7 @@ Puede hacer el área Detalle más pequeña o más grande. Whatever you place in 
 
 ## Pie del formulario
 
-The Form Footer area is displayed on screen under the list of records. It is always printed at the bottom of every page of a report. The Footer area is defined as the area between the Break control line and the Footer control line.
+The Form Footer area is displayed on screen under the list of records. Siempre se imprime al final de cada página de un informe. The Footer area is defined as the area between the Break control line and the Footer control line.
 Puede hacer que el área del pie de página sea más pequeña o más grande.<p>
 
 You can use the Footer area to print graphics, page numbers, the current date, or any text you want at the bottom of each page of a report. For output forms designed for use on screen, the Footer area typically contains buttons that give the user options such as doing a search or sort, printing records, or putting away the current report. Se aceptan los objetos activos.
