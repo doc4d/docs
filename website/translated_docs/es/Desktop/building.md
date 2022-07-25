@@ -474,7 +474,7 @@ Customizing the server-side cache folder name is useful when you run several ide
 On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
 
 
-The page lists the elements loaded by the current 4D application:
+La página lista los elementos cargados por la aplicación 4D actual:
 
 ![](assets/en/Desktop/buildappcomps.png)
 
@@ -616,14 +616,14 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 ### Apertura del archivo de datos
 
-When a user launches a merged application or an update (single-user or client/server applications), 4D tries to select a valid data file. Several locations are examined by the application successively.
+When a user launches a merged application or an update (single-user or client/server applications), 4D tries to select a valid data file. Varias ubicaciones son examinadas sucesivamente por la aplicación.
 
 La secuencia de lanzamiento de una aplicación fusionada es:
 
 1. 4D tries to open the last data file opened, [as described below](#last-data-file-opened) (not applicable during initial launch).
 2. If not found, 4D tries to open the data file in a default data folder next to the .4DZ file in read-only mode.
 3. If not found, 4D tries to open the standard default data file (same name and same location as the .4DZ file).
-4. If not found, 4D displays a standard "Open data file" dialog box.
+4. Si no se encuentra, 4D muestra una caja de diálogo estándar "Abrir archivo de datos".
 
 
 ### Último archivo de datos abierto
