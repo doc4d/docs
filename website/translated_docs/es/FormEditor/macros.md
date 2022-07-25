@@ -228,14 +228,14 @@ Estas son las propiedades devueltas en el parámetro *$editor*:
 
 Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. Todas las propiedades son opcionales:
 
-| Propiedad         | Tipo       | Descripción                                                      |
-| ----------------- | ---------- | ---------------------------------------------------------------- |
-| currentPage       | Objeto     | currentPage including objects modified by the macro, if any      |
-| currentSelection  | Collection | currentSelection si es modificada por la macro                   |
-| formProperties    | Objeto     | formProperties si es modificado por la macro                     |
-| editor.groups     | Objeto     | información de grupo, si los grupos son modificados por la macro |
-| editor.views      | Objeto     | ver información, si las vistas son modificadas por la macro      |
-| editor.activeView | Cadena     | Nombres de vistas activos                                        |
+| Propiedad         | Tipo       | Descripción                                                             |
+| ----------------- | ---------- | ----------------------------------------------------------------------- |
+| currentPage       | Objeto     | currentPage incluyendo los objetos modificados por la macro, si los hay |
+| currentSelection  | Collection | currentSelection si es modificada por la macro                          |
+| formProperties    | Objeto     | formProperties si es modificado por la macro                            |
+| editor.groups     | Objeto     | información de grupo, si los grupos son modificados por la macro        |
+| editor.views      | Objeto     | ver información, si las vistas son modificadas por la macro             |
+| editor.activeView | Cadena     | Nombres de vistas activos                                               |
 
 
 For example, if objects of the current page and groups have been modified, you can write:

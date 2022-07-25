@@ -223,7 +223,7 @@ Colored bars instantly show you where lines of code were modified since the meth
 
 The change bars change colors to indicate whether or not the modifications were saved:
 
-* yellow: Row was modified and method has not yet been saved.
+* amarillo: la línea fue modificada y el método aún no ha sido guardado.
 * verde: la línea fue modificada y el método ha sido guardado.
 
 ## Using the autocomplete functions
@@ -469,7 +469,7 @@ If you place the mouse over the expand button [...], a help tip appears, display
 
 A collapsed portion of code can be selected, copied, pasted or deleted. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
 
-There are several ways to expand and collapse code:
+Hay varias formas de expandir y contraer código:
 
 * Click on the expand/collapse icons ([+] and [-] under Windows) or on the opening button [...]
 * Use the commands of the **Method > Collapse/Expand** submenu:
