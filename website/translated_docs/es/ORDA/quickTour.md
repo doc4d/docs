@@ -9,7 +9,7 @@ Since ORDA is object-based, using ORDA requires basic knowledge in object progra
 
 The ORDA datastore is automatically based upon a 4D database structure, provided it complies with the [ORDA prerequisites](overview.md#orda-prerequisites).
 
-This example will use the following simple 4D database structure:
+Este ejemplo utilizará la siguiente estructura de base de datos 4D simple:
 
 ![](assets/en/ORDA/struc.png)
 
