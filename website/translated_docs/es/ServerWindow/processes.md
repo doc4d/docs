@@ -33,7 +33,7 @@ The lower area of the window is used to display the graphic representation of th
 
 > You can select several rows by holding down the **Shift** key for an adjacent selection or **Ctrl** (Windows) / **Command** (macOS) for a non-adjacent selection.
 
-The activity of the process is the percentage of time that 4D Server has devoted to this process (ratio). The window provides the following information for each process:
+The activity of the process is the percentage of time that 4D Server has devoted to this process (ratio). La ventana ofrece la siguiente información para cada proceso:
 
 - Tipo de proceso (ver abajo),
 - Sesión/Información:
@@ -97,5 +97,5 @@ The page also has five control buttons that act on the selected process(es). Ten
 
 > You can also debug a process directly without displaying the confirmation dialog box by holding down the **Alt** key while clicking on this button.
 
-- **Watch users**: used to display, on the [Users page](users.md), all the processes of the selected user(s). This button is active when at least one user process is selected.
+- **Watch users**: used to display, on the [Users page](users.md), all the processes of the selected user(s). Este botón se activa cuando se selecciona al menos un proceso de usuario.
 
