@@ -32,7 +32,7 @@ For a picture type [input](input_overview.md), in addition to standard editing c
 
 For a [multi-style](properties_Text.md#multi-style) text type [input](input_overview.md), in addition to standard editing commands, the context menu provides the following commands:
 - **Fonts...**: displays the font system dialog box
-- **Recent fonts**: displays the names of recent fonts selected during the session. The list can store up to 10 fonts (beyond that, the last font used replaces the oldest). By default, this list is empty and the option is not displayed. You can manage this list using the `SET RECENT FONTS` and `FONT LIST` commands.
+- **Recent fonts**: displays the names of recent fonts selected during the session. The list can store up to 10 fonts (beyond that, the last font used replaces the oldest). Por defecto, esta lista está vacía y la opción no se muestra. You can manage this list using the `SET RECENT FONTS` and `FONT LIST` commands.
 - commands for supported style modifications: font, size, style, color and background color. When the user modifies a style attribute via this pop-up menu, 4D generates the `On After Edit` form event.
 
 For a [Web Area](webArea_overview.md), the contents of the menu depend of the rendering engine of the platform. It is possible to control access to the context menu via the [`WA SET PREFERENCE`](https://doc.4d.com/4Dv17R6/4D/17-R6/WA-SET-PREFERENCE.301-4310780.en.html) command.
@@ -118,7 +118,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | !0&9###-##-###                         | Número de la Seguridad Social. Mostrar ceros en los espacios de entrada. Permitir cualquier número.                                                                      |
 | ~"A-Z;0-9; ;,;.;-"                     | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                                            |
 | &"a-z;0-9; ;,;.;-"                     | Letras mayúsculas y minúsculas y puntuación. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                                                     |
-| &"0-9;.;-"                             | Números. Allow only numbers, decimal points, and hyphens (minus sign).                                                                                                   |
+| &"0-9;.;-"                             | Números. Sólo se permiten números, puntos decimales y guiones (signo menos).                                                                                             |
 
 
 #### Gramática JSON
@@ -232,7 +232,7 @@ Placeholder text appears as watermark text in a field, supplying a help tip, ind
 
 The placeholder text is displayed again if the contents of the field is erased.
 
-A placeholder can be displayed for the following types of data:
+Se puede mostrar un marcador de posición para los siguientes tipos de datos:
 
 - cadena (text o alpha)
 - date and time when the **Blank if null** property is enabled.
