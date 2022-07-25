@@ -12,7 +12,7 @@ The Application Server page groups together information about the desktop applic
 The upper part of the page provides information about the current status of the 4D Server application server.
 
 - **Estado**: Iniciado o Detenido.
-- **Starting time**: Date and time the application server was launched. This date corresponds to the opening of the project by 4D Server.
+- **Starting time**: Date and time the application server was launched. Esta fecha corresponde a la apertura del proyecto por parte de 4D Server.
 - **Uptime**: Time elapsed since last opening of the project by the server.
 
 ## Aceptar/Rechazar nuevas conexiones
@@ -26,7 +26,7 @@ Por defecto, cuando se publica el proyecto:
 
 If you click on the **Reject new connections** button:
 - El título del botón cambia a "Aceptar nuevas conexiones."
-- Ningún nuevo cliente puede entonces conectarse. Clients attempting to connect will receive the following message:
+- Ningún nuevo cliente puede entonces conectarse. Los clientes que intenten conectarse recibirán el siguiente mensaje:
 
 ![](assets/en/Admin/server-error.png)
 
