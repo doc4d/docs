@@ -170,7 +170,7 @@ Function getCityName()
     End if
 ```
 
-The client application opens a session on the remote datastore:
+La aplicación cliente abre una sesión en el datastore remoto:
 
 ```4d
 $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManager")
@@ -575,7 +575,7 @@ The *$event* parameter contains the following properties:
 | descending    | Booleano | `true` for descending order, `false` for ascending order                                              |
 | result        | Variant  | Valor a tratar por el atributo calculado. Pass `Null` if you want to let 4D execute the default sort. |
 
-> You can use either the `operator` or the `descending` property. It is essentially a matter of programming style (see examples).
+> You can use either the `operator` or the `descending` property. Es esencialmente una cuestión de estilo de programación (ver ejemplos).
 
 You can return the `orderBy` string either in the `$event.result` object property or in the *$result* function result. If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
 
@@ -710,7 +710,7 @@ Alias teachers courses.teacher //relatedEntities
 
 En la dataclass Course:
 
-- an alias attribute returns another label for the "name" attribute
+- un atributo alias devuelve otra etiqueta para el atributo "name"
 - un atributo alias devuelve el nombre del profesor
 - un atributo alias devuelve el nombre del estudiante
 
@@ -928,7 +928,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 ![](assets/en/ORDA/ORDA_Classes-3.png)
 
 
-> By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
+> Por defecto, las clases ORDA vacías no se muestran en el Explorador. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
 ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
 
