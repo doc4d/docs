@@ -22,16 +22,16 @@ Los datos se recogen durante los siguientes eventos:
 
 ### Collected at 4D Server startup
 
-| Datos         | Ejemplo                                                                                              | Notas                                                            |
-| ------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nombre, tipo y velocidad del procesador                          |
-| numberOfCores | 4                                                                                                    | Número total de núcleos                                          |
-| memory        | 419430400                                                                                            | Volume of memory storage (in bytes) available on the machine     |
-| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versión del sistema operativo y número de build                  |
-| headless      | false                                                                                                | True si la aplicación se ejecuta en modo sin interfaz            |
-| version       | 1960                                                                                                 | Número de versión de la aplicación 4D                            |
-| buildNumber   | 123456                                                                                               | Build number of the 4D application                               |
-| license       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Nombre comercial y descripción de las licencias de los productos |
+| Datos         | Ejemplo                                                                                              | Notas                                                                    |
+| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nombre, tipo y velocidad del procesador                                  |
+| numberOfCores | 4                                                                                                    | Número total de núcleos                                                  |
+| memory        | 419430400                                                                                            | Volumen de almacenamiento de memoria (en bytes) disponible en la máquina |
+| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versión del sistema operativo y número de build                          |
+| headless      | false                                                                                                | True si la aplicación se ejecuta en modo sin interfaz                    |
+| version       | 1960                                                                                                 | Número de versión de la aplicación 4D                                    |
+| buildNumber   | 123456                                                                                               | Build number of the 4D application                                       |
+| license       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Nombre comercial y descripción de las licencias de los productos         |
 
 
 ### Collected per database at opening
@@ -42,7 +42,7 @@ Los datos se recogen durante los siguientes eventos:
 | dataFileSize            | 419430400                                               | Tamaño del archivo de datos en bytes                                                  |
 | indexesSize             | 419430400                                               | Tamaño del índice en bytes                                                            |
 | cacheSize               | 419430400                                               | Tamaño de caché en bytes                                                              |
-| usingLegacyNetworkLayer | fasle                                                   | True if legacy network layer used for the application server                          |
+| usingLegacyNetworkLayer | fasle                                                   | True si se utiliza la capa de red heredada para el servidor de aplicaciones           |
 | isEncrypted             | true                                                    | True si el archivo de datos está encriptado                                           |
 | isCompiled              | true                                                    | True si la aplicación está compilada                                                  |
 | isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                              |
@@ -52,9 +52,9 @@ Los datos se recogen durante los siguientes eventos:
 
 ### Collected per database at closure
 
-| Datos  | Ejemplo | Notas                                                        |
-| ------ | ------- | ------------------------------------------------------------ |
-| uptime | 123456  | Time elapsed (in seconds) since local 4D database was opened |
+| Datos  | Ejemplo | Notas                                                                 |
+| ------ | ------- | --------------------------------------------------------------------- |
+| uptime | 123456  | Tiempo transcurrido (en segundos) desde que se abrió la base 4D local |
 
 
 ### Collected per database at web server startup
