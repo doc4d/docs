@@ -6,7 +6,7 @@ title: Visualización
 ---
 ## Formato Alfa
 
-Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Here is a list of formats provided for alphanumeric fields:
+Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Aquí hay una lista de formatos suministrados para los campos alfanuméricos:
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
@@ -152,7 +152,7 @@ If characters are placed between placeholders, they appear only if digits are di
 
 the point appears only if the user enters at least four digits.
 
-Spaces are treated as characters in number display formats.
+Los espacios se tratan como caracteres en los formatos de visualización de números.
 
 ### Formatos para positivo, negativo y cero
 

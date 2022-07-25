@@ -482,7 +482,7 @@ If there is a conflict between two different versions of the same plug-in (one l
 La página de Licencias & Certificados puede utilizarse para:
 
 *   designate the license number(s) that you want to integrate into your single-user stand-alone application
-*   sign the application by means of a certificate in macOS.
+*   firmar la aplicación mediante un certificado en macOS.
 
 ![](assets/en/Admin/buildappCertif.png)
 
@@ -582,7 +582,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 When a user launches a merged application or an update (single-user or client/server applications), 4D tries to select a valid data file. Several locations are examined by the application successively.
 
-The opening sequence for launching a merged application is:
+La secuencia de lanzamiento de una aplicación fusionada es:
 
 1. 4D tries to open the last data file opened, [as described below](#last-data-file-opened) (not applicable during initial launch).
 2. If not found, 4D tries to open the data file in a default data folder next to the .4DZ file in read-only mode.

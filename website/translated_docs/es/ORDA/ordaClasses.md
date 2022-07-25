@@ -472,7 +472,7 @@ The *$event* parameter contains the following properties:
 
 #### Ejemplos
 
-- Query on the *fullName* computed attribute.
+- Búsqueda en el atributo calculado *fullName*.
 
 ```4d
 Function query fullName($event : Object)->$result : Object

@@ -15,7 +15,7 @@ Para introducir una fórmula en un área 4D View Pro:
 2.  Introduzca = (el signo igual).
 3.  Type the formula and hit the **Enter** key.
 
-When writing a formula, you can use different shortcuts:
+Al escribir una fórmula, puede utilizar diferentes atajos:
 
 - haga clic en una celda para introducir su referencia en la fórmula:
 
@@ -115,7 +115,7 @@ The following table shows the effect of the different notations:
 | Ejemplo            | Tipo de referencia | Descripción                                                                                                                                        |
 | ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | C5                 | Relativo           | Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used                       |
-| $C$5               | Absoluto           | La referencia es absoluta. Will always refer to cell C5 no matter where it is used.                                                                |
+| $C$5               | Absoluto           | La referencia es absoluta. Siempre se referirá a la celda C5 sin importar dónde se utilice.                                                        |
 | $C5                | Mixed              | Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.               |
 | C$5                | Mixed              | Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used                |
 | Nombre de la celda | Absoluto           | La referencia es absoluta. Will always refer to the [named cell or range](method-list.md#vp-add-range-name) no matter where the reference is used. |
@@ -178,7 +178,7 @@ $o.DRIVERS_LICENCE.parameters.push(New object("name"; "ID"; "type"; Is longint))
 
 We want to print "Hello World" in a 4D View Pro area cell using a 4D project method:
 
-1.  Create a "myMethod" project method with the following code:
+1.  Cree un método proyecto "myMethod" con el siguiente código:
 
 ```4d
  #DECLARE->$hw Text

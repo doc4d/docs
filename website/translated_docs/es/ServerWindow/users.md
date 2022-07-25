@@ -19,7 +19,7 @@ You can also sort the list of column values by clicking on its header. Click sev
 
 For each user connected to the server, the list provides the following information:
 
-- System of the client machine (macOS or Windows) as an icon.
+- Sistema de la máquina cliente (macOS o Windows) como un icono.
 - **4D User**: Name of the 4D user, or alias if set with the [`SET USER ALIAS`](https://doc.4d.com/4dv19/help/command/en/page1666.html) command on the user machine. If passwords are not activated and no alias has been set, all users are named "Designer".
 - **Machine name**: Name of the remote machine.
 - **Session name**: Name of the session opened on the remote machine.

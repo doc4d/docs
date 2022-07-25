@@ -25,7 +25,7 @@ In the following example, a break point (the red bullet) has been set, in the de
 
 In the above example, clicking the [**No Trace**](./debugger.md/#no-trace) button resumes normal execution up to the line marked with the break point. That line is not executed itself — you are taken back to trace mode. Setting a break point beyond the program counter and clicking the **No Trace** button allows you to skip portions of the method being traced.
 
-To remove a break point, click the corresponding bullet.
+Para eliminar un punto de ruptura, haga clic en la viñeta correspondiente.
 
 
 ### Propiedades de los puntos de interrupción
@@ -93,7 +93,7 @@ To open the Caught Commands page:
 
 ![runtime-explorer-window](assets/en/Debugging/catch-command.png)
 
-This page lists the commands to be caught during execution. Se compone de dos columnas:
+Esta página lista los puntos de interrupción en el comando durante la ejecución. Se compone de dos columnas:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any

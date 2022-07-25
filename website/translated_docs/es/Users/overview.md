@@ -17,7 +17,7 @@ Si diferentes personas utilizan una aplicación, lo que suele ocurrir en la arqu
 
 ## Control de acceso en las aplicaciones multiusuario
 
-Multi-user applications are deployed with 4D Server. Incluyen aplicaciones cliente-servidor, web o REST.
+Las aplicaciones multiusuario se despliegan con 4D Server. Incluyen aplicaciones cliente-servidor, web o REST.
 
 In multi-user applications, access control is done through [4D users and groups](handling_users_groups.md). You create users, assign passwords, create access groups that have different levels of privileges in the application.
 

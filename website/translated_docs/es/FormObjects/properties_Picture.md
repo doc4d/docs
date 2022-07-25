@@ -8,11 +8,11 @@ title: Imagen
 
 Ruta de una imagen source estática para un [botón imagen](pictureButton_overview.md), [menú emergente de imagen](picturePopupMenu_overview.md), o [imagen estática](staticPicture.md). Debe utilizar la sintaxis POSIX.
 
-The following locations can be used for static pictures:
+Las siguientes ubicaciones pueden utilizarse para las imágenes estáticas:
 
 - in the **Resources** folder of the project. Appropriate when you want to share static pictures between several forms in the project. En este caso, el nombre de la ruta es "/RESOURCES/\<picture path\>".
 - en una carpeta de imágenes (por ejemplo, llamada **Images**) dentro de la carpeta del formulario. Apropiado cuando las imágenes estáticas se utilizan sólo en el formulario y/o se quiere poder mover o duplicar todo el formulario dentro del proyecto o de diferentes proyectos. En este caso, el nombre de la ruta es ""\<picture path\>" y se resuelve desde la raíz de la carpeta del formulario.
-- en una variable imagen 4D. The picture must be loaded in memory when the form is executed. In this case, the Pathname is "var:\<variableName\>".
+- en una variable imagen 4D. The picture must be loaded in memory when the form is executed. En este caso, el nombre de la ruta es "var:\<variableName\>".
 
 
 #### Gramática JSON
