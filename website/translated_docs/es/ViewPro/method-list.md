@@ -123,7 +123,7 @@ Actualmente tienes celdas seleccionadas:
 
 ![](assets/en/ViewPro/cmd_vpAddSelection1.PNG)
 
-The following code will add cells to your selection:
+El siguiente código añadirá celdas a su selección:
 
 ```4d
 $currentSelection:=VP Cells("myVPArea";3;4;2;3)
@@ -364,7 +364,7 @@ $all:=VP All("ViewProArea") // todas las celdas de la hoja actual
 
 The `VP Cell` command<!-- REF #_method_.VP Cell. Summary -->returns a new range object referencing a specific cell<!-- END REF -->.
 
-> This command is intended for ranges of a single cell. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
+> Este comando se aplica a los rangos de una sola celda. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -427,7 +427,7 @@ The *column* parameter defines the first column of the cell range. Pass the colu
 
 In the *row* parameter, you can define the row(s) of the cell range's position. Pase el índice de la línea (el conteo comienza en 0) en este parámetro. If the range is within multiple rows, you should also use the *rowCount* parameter.
 
-The *columnCount* parameter allows you to define the total number of columns the range is within. *columnCount* must be greater than 0.
+The *columnCount* parameter allows you to define the total number of columns the range is within. *columnCount* debe ser mayor que 0.
 
 The *rowCount* parameter allows you to define the total number of rows the range is within. *rowCount* debe ser mayor que 0.
 
@@ -474,7 +474,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 The *column* parameter defines the first column of the column range. Pass the column index (counting begins at 0)  in this parameter. If the range contains multiple columns, you should also use the optional *columnCount* parameter.
 
-The optional *columnCount* parameter allows you to define the total number of columns of the range. *columnCount* must be greater than 0. If omitted, the value will be set to 1 by default and a column type range is created.
+The optional *columnCount* parameter allows you to define the total number of columns of the range. *columnCount* debe ser mayor que 0. If omitted, the value will be set to 1 by default and a column type range is created.
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual por defecto.
 
@@ -526,7 +526,7 @@ La selección de las columnas y la ejecución de este código:
  VP COLUMN AUTOFIT(VP Get selection("ViewProarea"))
 ```
 
-... resizes the columns to fit the size of the contents:
+... redimensiona las columnas para ajustarse al tamaño de los contenidos:
 
 ![](assets/en/ViewPro/cmd_vpColumnAutoFit2.PNG)
 
@@ -636,7 +636,7 @@ In *vpObject*, pass the 4D View Pro object that you want to convert. This object
 
 In *rangeObj*, pass a range of cells to convert. By default, if this parameter is omitted, the whole document contents are converted.
 
-Document contents are converted with respect to their viewing attributes, including formats (see note above), visibility of headers, columns and rows. The conversion of the following elements is supported:
+Document contents are converted with respect to their viewing attributes, including formats (see note above), visibility of headers, columns and rows. La conversión de los siguientes elementos es soportada:
 
 * Text : style / font / size / alignment / orientation / rotation / format
 * Cell background : color / image
@@ -871,7 +871,7 @@ The `VP DELETE COLUMNS` command<!-- REF #_method_.VP DELETE COLUMNS. Summary -->
 
 In *rangeObj*, pass an object containing a range of columns to remove. Si el rango pasado contiene:
 
-* both columns and rows, only the columns are removed.
+* de las columnas y de las líneas, sólo se eliminan las columnas.
 * únicamente las líneas, el comando no hace nada.
 > Las columnas se borran de derecha a izquierda.
 
@@ -979,7 +979,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | csvOptions           | objeto   | CSV únicamente (opcional) - Opciones para la exportación en csv <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Objeto rango de celdas</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Delimitador de columna. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | \<customProperty>   | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
-**Notes about Excel format**:
+**Notas sobre el formato Excel**:
 
 * When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list from GrapeCity](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html).
 * Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
@@ -1190,7 +1190,7 @@ The function returns a range object describing each search value that was found 
 
 #### Ejemplo 1
 
-To find the first cell containing the word "Total":
+Para encontrar la primera celda que contenga la palabra "Total":
 
 ```4d
 var $range;$result : Object
@@ -1555,7 +1555,7 @@ $colCount:=VP Get column count("ViewProarea")
 
 #### Descripción
 
-The `VP Get current sheet` command<!-- REF #_method_.VP Get current sheet. Summary -->returns the index of the current sheet in *vpAreaName*. The current sheet is the selected sheet in the document.
+The `VP Get current sheet` command<!-- REF #_method_.VP Get current sheet. Summary -->returns the index of the current sheet in *vpAreaName*. La hoja actual es la hoja seleccionada en el documento.
 <!-- END REF -->
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
@@ -1784,7 +1784,7 @@ In *rangeObj*, pass a range whose formulas you want to retrieve. If *rangeObj* d
 La colección devuelta es bidimensional:
 
 * The first-level collection contains subcollections of formulas. Cada subcolección representa una línea.
-* Each subcollection defines cell values for the row. Values are text elements containing the cell formulas.
+* Cada subcolección define los valores de las celdas de la línea. Values are text elements containing the cell formulas.
 
 #### Ejemplo
 
@@ -1812,11 +1812,11 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 <!-- REF #_method_.VP Get frozen panes.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                         |
-| ---------- | ------- | -- | --------------------------------------------------- |
-| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro        |
-| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)         |
-| Resultado  | Objeto  | <- | Object containing frozen column and row information |
+| Parámetros | Tipo    |    | Descripción                                                            |
+| ---------- | ------- | -- | ---------------------------------------------------------------------- |
+| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro                           |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)                            |
+| Resultado  | Objeto  | <- | Objeto que contiene la información de las columnas y líneas congeladas |
 
 <!-- END REF -->
 
@@ -1834,10 +1834,10 @@ The command returns an object describing the frozen columns and rows. Este objet
 
 | Propiedad           | Tipo    | Descripción                                                    |
 | ------------------- | ------- | -------------------------------------------------------------- |
-| columnCount         | Integer | The number of frozen columns on the left of the sheet          |
+| columnCount         | Integer | El número de columnas congeladas a la izquierda de la hoja     |
 | trailingColumnCount | Integer | The number of frozen columns on the right of the sheet         |
 | rowCount            | Integer | El número de líneas congeladas en la parte superior de la hoja |
-| trailingRowCount    | Integer | The number of frozen rows on the bottom of the sheet           |
+| trailingRowCount    | Integer | El número de líneas congeladas en la parte inferior de la hoja |
 
 #### Ejemplo
 
@@ -1885,7 +1885,7 @@ You can define where to get the names in *scope* using either the sheet index (c
 
 ##### Colección devuelta
 
-The returned collection contains one object per name. Las propiedades de objetos siguientes pueden ser devueltas:
+La colección devuelta contiene un objeto por nombre. Las propiedades de objetos siguientes pueden ser devueltas:
 
 | Propiedad           | Tipo  | Descripción                   |
 | ------------------- | ----- | ----------------------------- |
@@ -2181,7 +2181,7 @@ En el siguiente documento:
 
 ![](assets/en/ViewPro/vp-sheet-index-name.png)
 
-Get the index of the sheet called "Total first quarter":
+Obtiene el índice de la hoja llamada "Total first quarter":
 
 ```4d
 $index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //devuelve 2
@@ -2536,7 +2536,7 @@ In *rangeObj*, pass a range whose values you want to retrieve. If *rangeObj* inc
 The collection returned by `VP Get values` contains a two-dimensional collection:
 
 * Each element of the first-level collection represents a row and contains a subcollection of values
-* Each subcollection contains cell values for the row. Los valores pueden ser Integer, Real, Boolean, Text, Null. If a value is a date or time, it is returned in an object with the following properties:
+* Cada subcolección contiene los valores de las celdas de la línea. Los valores pueden ser Integer, Real, Boolean, Text, Null. If a value is a date or time, it is returned in an object with the following properties:
 
  | Propiedad | Tipo  | Descripción                                                 |
  | --------- | ----- | ----------------------------------------------------------- |
@@ -2906,7 +2906,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 #### Ejemplo
 
-You want to give a value to the "Total" named range.
+Quiere asignar un valor al rango llamado "Total".
 
 ```4d
 // name the B5 cell as Total
@@ -4055,7 +4055,7 @@ The `VP SET COLUMN COUNT` command<!-- REF #_method_.VP SET COLUMN COUNT. Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-Pass the total number of columns in the *columnCount* parameter. *columnCount* must be greater than 0.
+Pass the total number of columns in the *columnCount* parameter. *columnCount* debe ser mayor que 0.
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). Si se omite, se utiliza por defecto la hoja de cálculo actual. You can explicitly select the current spreadsheet with the following constant:
 
@@ -4092,7 +4092,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 #### Descripción
 
-The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . The current sheet is the selected sheet in the document.
+The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . La hoja actual es la hoja seleccionada en el documento.
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
@@ -4594,7 +4594,7 @@ In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose
 The *formulasCol* is a two-dimensional collection:
 
 * The first-level collection contains subcollections of formulas. Cada subcolección define una línea.
-* Each subcollection defines cell values for the row. Values must be text elements containing the formulas to assign to the cells.
+* Cada subcolección define los valores de las celdas de la línea. Values must be text elements containing the formulas to assign to the cells.
 
 > If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
@@ -4641,11 +4641,11 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 
 <!-- REF #_method_.VP SET FROZEN PANES.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                         |
-| ---------- | ------- | -- | --------------------------------------------------- |
-| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro        |
-| paneObj    | Objeto  | -> | Object containing frozen column and row information |
-| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)         |
+| Parámetros | Tipo    |    | Descripción                                                            |
+| ---------- | ------- | -- | ---------------------------------------------------------------------- |
+| vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro                           |
+| paneObj    | Objeto  | -> | Objeto que contiene la información de las columnas y líneas congeladas |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)                            |
 
 
 <!-- END REF -->
@@ -4663,10 +4663,10 @@ You can pass an object defining the columns and rows to freeze in the *paneObj* 
 
 | Propiedad           | Tipo    | Descripción                                                    |
 | ------------------- | ------- | -------------------------------------------------------------- |
-| columnCount         | Integer | The number of frozen columns on the left of the sheet          |
+| columnCount         | Integer | El número de columnas congeladas a la izquierda de la hoja     |
 | trailingColumnCount | Integer | The number of frozen columns on the right of the sheet         |
 | rowCount            | Integer | El número de líneas congeladas en la parte superior de la hoja |
-| trailingRowCount    | Integer | The number of frozen rows on the bottom of the sheet           |
+| trailingRowCount    | Integer | El número de líneas congeladas en la parte inferior de la hoja |
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite, se utiliza por defecto la hoja de cálculo actual. You can explicitly select the current spreadsheet with the following constant:
 
@@ -5363,7 +5363,7 @@ In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) wh
 The *valuesCol* parameter is two-dimensional:
 
 * The first-level collection contains subcollections of values. Cada subcolección define una línea. Each subcollection defines a row.
-* Each subcollection defines cell values for the row. Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
+* Cada subcolección define los valores de las celdas de la línea. Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
 
  | Propiedad | Tipo                                     | Descripción                        |
  | --------- | ---------------------------------------- | ---------------------------------- |
@@ -5437,7 +5437,7 @@ The following table lists the available workbook options:
 | backColor                             | cadena                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundImage is set.                                                          |
 | backgroundImage                       | string / picture / file | Imagen de fondo para el área.                                                                                                                                                                                                                          |
 | backgroundImageLayout                 | number                  | Cómo se muestra la imagen de fondo. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk image layout center </td><td>1</td><td> En el centro del área.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Llena el área.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Se muestra con su relación de aspecto original.</td></tr></table>                                                                                                                                                                     |
-| calcOnDemand                          | booleano                | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
+| calcOnDemand                          | booleano                | Las fórmulas se calculan sólo cuando se piden.                                                                                                                                                                                                         |
 | columnResizeMode                      | number                  | Resize mode for columns. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Usar modo dividido (es decir, las columnas restantes no se ven afectadas)</td></tr></table>                                                                                                                                                                                |
 | copyPasteHeaderOptions                | number                  | Encabezados para incluir cuando se copian o pegan datos. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>  Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                |
 | customList                            | colección               | The list for users to customize drag fill, prioritize matching this list in each fill. Cada elemento de colección es una colección de cadenas. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).  |

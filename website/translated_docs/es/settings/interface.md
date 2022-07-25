@@ -18,7 +18,7 @@ Click **Select...** to set the font and size for the characters used by the `MES
 
 The default font and its size depend on the platform where 4D is running.
 
-> This property also affects the following parts of 4D: <li>ciertas áreas de vista previa del Explorador</li><li>la regla del editor de formularios</li>
+> Esta propiedad también afecta a las siguientes partes de 4D: <li>ciertas áreas de vista previa del Explorador</li><li>la regla del editor de formularios</li>
 Other options configure the display of various windows in the Application mode.
 
 -   **Splash screen**: When this option is deselected, the [splash screen of the current menu bar](Menus/bars.md#splash-screen) does not appear in the Application mode. When you hide this window, it is up to you to manage the display of all your windows by programming, for example in the `On Startup` database method.

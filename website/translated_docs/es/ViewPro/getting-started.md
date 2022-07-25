@@ -38,7 +38,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 ## Fundamentos de la selección, la entrada y de la navegación
 
-Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Las celdas pueden ser seleccionadas y sus contenidos editados.
+Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. La intersección de una línea y de una columna constituye una celda. Las celdas pueden ser seleccionadas y sus contenidos editados.
 
 ### Selecting cells, columns and rows
 
@@ -101,7 +101,7 @@ For a detailed list of component methods, see [Method list](method-list.md).
 
 ### Abordando un área 4D View Pro
 
-A 4D View Pro area handles several objects and elements.
+Un área 4D View Pro maneja varios objetos y elementos.
 
 ![](assets/en/ViewPro/vpDocument.PNG)
 

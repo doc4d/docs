@@ -26,6 +26,6 @@ This area allows [component developers](../Extensions/develop-components.md) to 
 
 Use this area to declare a namespace for the component classes and functions in the code on host projects. See [Declaring the component namespace](../Extensions/develop-components.md#declaring-the-component-namespace).
 
-### Generate syntax file for code completion when compiled
+### Generar el archivo de sintaxis para completar el código cuando se compila
 
 When you check this option, a syntax file (JSON format) is automatically created during the compilation phase. See [Code completion for compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components). 

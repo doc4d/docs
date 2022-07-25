@@ -283,12 +283,12 @@ La propiedad `.response` contiene <!-- REF #4D.HTTPRequest.response.Summary -->t
 
 A `response` object is a non-sharable object. Ofrece las siguientes propiedades:
 
-| Propiedad   | Tipo    | Descripción                                                                                                                                                             |
-| ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| .body       | Variant | Cuerpo de la respuesta. The type of the message is defined according to the [`dataType`](#datatype) property. Indefinido si el cuerpo no se ha recibido todavía         |
-| .headers    | Objeto  | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Undefined if the headers have not been received yet. |
-| .status     | Número  | Código de estado de la respuesta                                                                                                                                        |
-| .statusText | Texto   | Mensaje explicando el código de estado                                                                                                                                  |
+| Propiedad   | Tipo    | Descripción                                                                                                                                                                |
+| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| .body       | Variant | Cuerpo de la respuesta. The type of the message is defined according to the [`dataType`](#datatype) property. Indefinido si el cuerpo no se ha recibido todavía            |
+| .headers    | Objeto  | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Indefinido si el los encabezados no se ha recibido aún. |
+| .status     | Número  | Código de estado de la respuesta                                                                                                                                           |
+| .statusText | Texto   | Mensaje explicando el código de estado                                                                                                                                     |
 
 
 
