@@ -203,7 +203,7 @@ The number of loops is based on the number of elements of the collection. At eac
 
 #### Ejemplo con una colección de valores escalares
 
-*getNames* returns a collection of strings. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
+*getNames* devuelve una colección de cadenas. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
 
 
 ```html
@@ -436,7 +436,7 @@ This example inserts different pages depending on which user is connected:
 
 This tag is mainly designed to include an HTML page (indicated by the *path* parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). This lets you avoid conflicts related to meta tags present in the headers.
 
-However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. It is up to you to verify the consistency of the meta tags.
+However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
 
 The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or loops (`<!--#4DLOOP-->`). It is very convenient to include banners according to a criteria or randomly. When including, regardless of the file name extension, 4D analyzes the called page and then inserts the contents (modified or not) in the page originating the `4DINCLUDE` call.
 
@@ -446,7 +446,7 @@ In *path*, put the path leading to the document to include. Warning: In the case
 
 > You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Furthermore, 4D verifies that inclusions are not recursive.
+The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
 
 In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
 
@@ -484,7 +484,7 @@ El código siguiente:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  FIRST RECORD([People])
@@ -508,7 +508,7 @@ The following code example:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  For($Elem;1;Size of array(arr_names))
@@ -533,7 +533,7 @@ The following code example:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  If(AuthenticationWebOK)
