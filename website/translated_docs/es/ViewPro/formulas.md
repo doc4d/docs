@@ -178,7 +178,7 @@ $o.DRIVERS_LICENCE.parameters.push(New object("name"; "ID"; "type"; Is longint))
 
 We want to print "Hello World" in a 4D View Pro area cell using a 4D project method:
 
-1.  Create a "myMethod" project method with the following code:
+1.  Cree un método proyecto "myMethod" con el siguiente código:
 
 ```4d
  #DECLARE->$hw Text

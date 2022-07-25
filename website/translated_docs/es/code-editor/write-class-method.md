@@ -223,7 +223,7 @@ Colored bars instantly show you where lines of code were modified since the meth
 
 The change bars change colors to indicate whether or not the modifications were saved:
 
-* yellow: Row was modified and method has not yet been saved.
+* amarillo: la línea fue modificada y el método aún no ha sido guardado.
 * verde: la línea fue modificada y el método ha sido guardado.
 
 ## Using the autocomplete functions
