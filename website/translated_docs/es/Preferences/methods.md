@@ -13,7 +13,7 @@ This page allows selecting, creating, or configuring Method editor themes. A the
 
 ### Lista de temas
 
-In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D ofrece dos temas por defecto:
+En esta lista, se selecciona el tema que se aplicará al editor de código. All available themes are displayed, including custom themes (if any). 4D ofrece dos temas por defecto:
 
 *   **Tema Light por defecto**
 *   **Tema oscuro por defecto**
