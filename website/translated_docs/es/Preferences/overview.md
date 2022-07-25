@@ -14,7 +14,7 @@ You can access the Preferences dialog box from the **Edit > Preferences...** men
 
 ![](assets/en/Preferences/overviewAccess.png)
 
-This menu option is available even when there is no open project.
+Esta opción de menú está disponible incluso cuando no hay ningún proyecto abierto.
 
 You can also display the Preferences dialog box in Application mode using the "Preferences" standard action (associated with a menu item or a button) or using the `OPEN SETTINGS WINDOW` command.
 
