@@ -68,9 +68,9 @@ The **Watch** page (**Web** heading) in the Runtime Explorer displays web server
 
 *   **Web Cache Usage**: indicates the number of pages present in the web cache as well as its use percentage. This information is only available if the web server is active and if the cache size is greater than 0.
 
-*   **Web Server Elapsed Time**: indicates the duration of use (in hours:minutes:seconds format) of the Web server. This information is only available if the web server is active.
+*   **Web Server Elapsed Time**: indicates the duration of use (in hours:minutes:seconds format) of the Web server. Esta información sólo está disponible si el servidor web está activo.
 
-*   **Web Hits Count**: indicates the total number of HTTP requests received since the web server boot, as well as an instantaneous number of requests per second (measure taken between two Runtime Explorer updates). This information is only available if the web server is active.
+*   **Web Hits Count**: indicates the total number of HTTP requests received since the web server boot, as well as an instantaneous number of requests per second (measure taken between two Runtime Explorer updates). Esta información sólo está disponible si el servidor web está activo.
 
 
 
@@ -199,7 +199,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                                                                                     |
 | CS(HOST)       | X   | X   | Campo Host de la petición HTTP                                                                                                                   |
 | CS(REFERER)    | X   | X   | URL de la página que apunta al documento solicitado                                                                                              |
-| CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client                                                                                |
+| CS(USER_AGENT) | X   | X   | Información sobre el software y el sistema operativo del cliente                                                                                 |
 | CS_SIP         | X   | X   | Dirección IP del servidor                                                                                                                        |
 | CS_URI         | X   | X   | URI sobre el que se realiza la petición                                                                                                          |
 | CS_URI_QUERY | X   | X   | Parámetros de consulta de la petición                                                                                                            |
