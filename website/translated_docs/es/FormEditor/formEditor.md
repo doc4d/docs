@@ -28,7 +28,7 @@ Puede mostrar u ocultar varios elementos de la interfaz en la página actual del
 When a form is opened in the editor, interface elements are displayed or hidden by default, depending on:
 
 - the **New form default display** options set in the Preferences - unchecked options cannot be displayed by default.
-- the current [form type](properties_Form.md#form-type):
+- el [tipo de formulario](properties_Form.md#form-type) actual:
     - Markers and marker labels are always displayed by default on list forms
     - Papel aparece por defecto en los formularios "a imprimir".
 
