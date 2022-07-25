@@ -332,7 +332,7 @@ Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
 IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
 
-By default, no specific address is defined (**Any** value in the Settings dialog box), which means that the server responds to all IP addresses. When you designate a specific address, the server only responds to requests sent to this address. This feature is designed for 4D web servers located on machines with multiple TCP/IP addresses. It is, for example, frequently the case of most host providers.
+By default, no specific address is defined (**Any** value in the Settings dialog box), which means that the server responds to all IP addresses. When you designate a specific address, the server only responds to requests sent to this address. This feature is designed for 4D web servers located on machines with multiple TCP/IP addresses. Por ejemplo, es el caso frecuente de la mayoría de los proveedores de hosting.
 
 Valores posibles: cadena de direcciones IP. Both IPv6 string formats (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") and IPv4 string formats (e.g. "123.45.67.89") are supported.
 
@@ -413,7 +413,7 @@ Por defecto, el valor es 100. Puede definir el número entre 10 y 32000.
 | objeto webServer    | [`maxRequestSize`](API/WebServerClass.md#maxrequestsize) |             |
 | `WEB SET OPTION`    | `Web maximum requests size`                              |             |
 
-Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
+Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. Por defecto, el valor es de 2 000 000, es decir, algo menos de 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
 
 Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes. Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes.
 
@@ -511,7 +511,7 @@ Otro ejemplo:
    Disallow: /
 ```
 
-In this case, robots are not allowed to access the entire site.
+En este caso, los robots no pueden acceder a todo el sitio.
 
 
 ## Root Folder
@@ -645,7 +645,7 @@ The **Use Keep-Alive Connections** option enables or disables keep-alive TCP con
 
 The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
 
-In some cases, other optimized internal functions may be invoked. Keep-alive connections are useful mainly for static pages.
+En algunos casos, se pueden invocar otras funciones internas optimizadas. Keep-alive connections are useful mainly for static pages.
 
 Two options allow you to set how the keep-alive connections work:
 
