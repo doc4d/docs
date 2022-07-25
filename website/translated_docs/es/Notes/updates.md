@@ -16,7 +16,7 @@ La lista de las principales actualizaciones de esta documentación. For general 
 - New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
 - New REST request to [lock/unlock](REST/$lock.md) entities.
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list.md#vp-paste-from-object).
-- New [SystemWorker class](API/SystemWorkerClass.md).
+- Nuevo [Clase SystemWorker](API/SystemWorkerClass.md).
 
 
 ## 4D v19 R3
@@ -60,6 +60,6 @@ La lista de las principales actualizaciones de esta documentación. For general 
 - [Entity Selection Class](API/EntitySelectionClass.md): `.average()`, `.max()` and `.min()` functions now return *undefined* if the entity selection is empty.
 - [IMAP Mail](API/IMAPTransporterClass.md), [POP3 Mail](API/POP3TransporterClass.md) and [SMTP Mail](API/SMTPTransporterClass.md): `authenticationMode` property enables OAuth 2.0
 - [IMAP Mail](API/IMAPTransporterClass.md): new `.expunge()` and `.append()` functions
-- New [WebAdmin](Admin/webAdmin.md) web server component
+- Nuevo componente [WebAdmin](Admin/webAdmin.md) del servidor web
 - Nueva interfaz [DataExplorer](Admin/dataExplorer)
 - New web [user sessions](WebServer/sessions.md) and [their API](API/SessionClass.md).
