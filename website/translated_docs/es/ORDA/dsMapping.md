@@ -211,7 +211,7 @@ Entity selections can be "sorted" or "unsorted" ([see below](#ordered-or-unorder
 
 > Entity selections can also be "shareable" or "non-shareable", depending on [how they have been created](entities.md#shareable-or-alterable-entity-selections).
 
-The entity selection object itself cannot be copied as an object:
+El objeto selección de entidades en sí no puede ser copiado como un objeto:
 
 ```4d
  $myentitysel:=OB Copy(ds.Employee.all()) //returns null
@@ -236,7 +236,7 @@ Ordered entity selections are created only when necessary or when specifically r
 *   result of an `orderBy()` on a selection (of any type) or an `orderBy()` on a dataclass
 *   result of the `newSelection()` method with the `dk keep ordered` option
 
-Unordered entity selections are created in the following cases:
+Las selecciones de entidades desordenadas se crean en los siguientes casos:
 
 *   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
 *   result of the `newSelection()` method without option,
