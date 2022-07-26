@@ -9,7 +9,7 @@ Since ORDA is object-based, using ORDA requires basic knowledge in object progra
 
 The ORDA datastore is automatically based upon a 4D database structure, provided it complies with the [ORDA prerequisites](overview.md#orda-prerequisites).
 
-This example will use the following simple 4D database structure:
+Este ejemplo utilizará la siguiente estructura de base de datos 4D simple:
 
 ![](assets/en/ORDA/struc.png)
 
@@ -141,7 +141,7 @@ Para crear un grupo:
 
 > The Duplicate command can be used to create several groups having the same characteristics quickly.
 
-4D adds a new group to the list, named "New groupX" by default.
+4D añade un nuevo grupo a la lista, llamado por defecto "Nuevo grupoX".
 
 3. Introduzca el nombre del nuevo grupo. El nombre del grupo puede tener hasta 15 caracteres. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
@@ -162,7 +162,7 @@ To remove a user or group from another group, you just need to deselect the corr
 
 ### Asignar un grupo a un plug-in o a un servidor
 
-You can assign a group privileges to any plug-ins installed in the database. This includes all the 4D plug-ins and any third-party plug-ins.
+You can assign a group privileges to any plug-ins installed in the database. Esto incluye todos los plug-ins de 4D y los de terceros.
 
 Distributing access to the plug-ins lets you control the use of the licenses you possess for these plug-ins. Any users that do not belong to the access group of a plug-in cannot load this plug-in.
 
@@ -172,7 +172,7 @@ The “Plug-in” area on the Groups page of the tool box lists all the plug-ins
 
 ![](assets/en/Users/plugins.png)
 
-The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. These licenses are considered as plug-in licenses by 4D Server. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
+The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. Estas licencias son consideradas por 4D Server como licencias de plug-in. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
 
 
 ### Un esquema de acceso jerárquico
