@@ -1,6 +1,6 @@
 ---
 id: overview
-title: About 4D Code
+title: Sobre el código 4D
 ---
 
 
@@ -9,7 +9,7 @@ The 4D code used across your application is written in [methods](../Concepts/met
 The 4D IDE provides you with various features to create, edit, export, or delete your code. You will usually use the 4D [code editor](write-class-method.md) to work with your code.
 
 
-## Creating methods
+## Creación de métodos
 
 A method in 4D is stored in a **.4dm** file located in the appropriate folder of the [`/Project/Sources/`](../Project/architecture.md#sources) folder.
 
@@ -29,7 +29,7 @@ You can create a class file from the **File** menu or toolbar (**New/Class...**)
 For more information, please refer to the [Classes](../Concepts/classes.md) section.
 
 
-## Deleting methods or classes
+## Eliminando métodos o clases
 
 Para eliminar un método o clase existente, puede:
 
@@ -44,7 +44,7 @@ Para eliminar un método o clase existente, puede:
 You can import and export a method or a class code in the form of a file. These commands are found in the **Method** menu of the Code editor.
 
 - When you select the **Export Method...** command, a standard file saving dialog box appears, allowing you to choose the name, location and format of the export file (see below). As with printing, exporting does not take the collapsed state of code structures into account and the entire code is exported.
-- When you select the **Import Method...** command, a standard file opening dialog box appears, allowing you to designate the file to be imported. Importing replaces the selected text in the method. To replace an existing method by an imported method, select the entire contents of the method before carrying out the import.
+- When you select the **Import Method...** command, a standard file opening dialog box appears, allowing you to designate the file to be imported. La importación sustituye el texto seleccionado en el método. To replace an existing method by an imported method, select the entire contents of the method before carrying out the import.
 
 The import/export function is multi-platform: a method exported under Mac OS can be imported under Windows and vice versa; 4D handles the conversion of characters when necessary.
 
@@ -54,11 +54,11 @@ The import/export function is multi-platform: a method exported under Mac OS can
 - Text (extension *.txt*): In this format, methods are exported in text-only form. In this case, the methods are readable using a standard text editor or a source control tool.
 
 
-## Project method properties
+## Propiedades del método proyecto
 
 After creating a project method, you can rename it and modify its properties. Project method properties mainly concern their access and security conditions (access by users, integrated servers or services) as well as their execution mode.
 
-The other types of methods do not have specific properties. Their properties are related to those of the objects to which they are attached.
+Los otros tipos de métodos no tienen propiedades específicas. Their properties are related to those of the objects to which they are attached.
 
 To display the **Method Properties** dialog box for a project method, you can either:
 
@@ -96,13 +96,13 @@ This attribute is used within the framework of components. When it is checked, i
 
 For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
 
-##### Execute on Server
+##### Ejecutar en el servidor
 
 This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called.
 
 For more information on this option, refer to [Execute on Server attribute](#execute-on-server).
 
-#### Execution mode
+#### Modo Ejecución
 
 This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode.
 
@@ -124,13 +124,13 @@ When this option is checked, the 4D compiler will not verify the ability of the 
 
 -   **Indifferent **(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. The "preemptive" property of the method is set to "indifferent".
 
-When this option is checked, the 4D compiler will evaluate the preemptive capability of the method and will tag it internally as "thread-safe" or "thread-unsafe". No error related to preemptive execution is returned. If the method is evaluated as thread-safe, at runtime it will not prevent preemptive thread execution when called in a preemptive context. Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.\
+When this option is checked, the 4D compiler will evaluate the preemptive capability of the method and will tag it internally as "thread-safe" or "thread-unsafe". No se devuelve ningún error relacionado con la ejecución apropiativa. If the method is evaluated as thread-safe, at runtime it will not prevent preemptive thread execution when called in a preemptive context. Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.\
 
 Note that with this option, whatever the internal thread safety evaluation, the method will always be executed in cooperative mode when called directly by 4D as the first parent method (for example through the [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html) command). If tagged "thread-safe" internally, it is only taken into account when called from other methods inside a call chain.
 
 ***Particular case*:** If the method has also the **Shared by components and host database** property (see [Project method properties](https://doc.4d.com/4Dv19R5/4D/19-R5/Project-method-properties.300-5851552.en.html)), setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
 
-#### Available through
+#### Disponible a través de
 
 Availability attributes specify the external services which are allowed to explicitly call the method.
 
@@ -142,13 +142,13 @@ In the Explorer, project methods that are offered as a Web Service are given a s
 
 **Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). If the method name is not in keeping with this, 4D does not assign the property.
 
-##### Published in WSDL
+##### Publicado en WSDL
 
 This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
 
 In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png).
 
-##### 4D tags and URLs (4DACTION...)
+##### Etiquetas 4D y URLs (4DACTION...)
 
 This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special 4DACTION URL used for calling 4D methods, nor the special 4DSCRIPT, 4DTEXT and 4DHTML tags (as well as the former 4DVAR and 4DHTMLVAR tags). For more information, refer to [URLs and Form Actions](https://doc.4d.com/4Dv19R5/4D/14-R2/URLs-and-Form-Actions.300-1342176.en.html) and [4D Transformation Tags](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-Transformation-Tags.300-5830552.en.html) in the 4D *Language Reference* manual.
 
@@ -180,13 +180,13 @@ Using the "Attributes for methods" dialog box, you can modify an attribute (Invi
 Para la configuración por lotes de los atributos del método:
 
 1.  On the [Methods Page](https://doc.4d.com/4Dv19R5/4D/19-R5/Methods-Page.300-5851337.en.html) of the 4D Explorer, expand the options menu, then choose the **Batch setting of attributes...** command. The **Attributes for methods** dialog appears.
-2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch. The character string is used as a search criterion for the method names. Use the wildcard character @ to help define groups of methods:
-   -   To designate methods whose names begin with..., type @ at the end of the string. For example: web@
-    -   To designate methods whose names contain..., type @ in the middle of the string. For example: web@write
+2.  In the "Matching method name:" area, enter a string that lets you designate the methods you want to modify as a batch. The character string is used as a search criterion for the method names. Utilice el carácter comodín @ para ayudar a definir los grupos de métodos:
+   -   To designate methods whose names begin with..., type @ at the end of the string. Por ejemplo: web@
+    -   To designate methods whose names contain..., type @ in the middle of the string. Por ejemplo: web@write
     -   To designate methods whose names end with..., type @ at the beginning of the string. For example: @write
     -   To designate all of the methods, just type @ in the area.\
       **Notes:**
-        -   The search does not take upper/lower case into account.
+        -   La búsqueda no tiene en cuenta las mayúsculas/minúsculas.
         -   You can enter several @ characters in the string, for example dtro_@web@pro.@
 3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied. **Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
 4.  Haga clic en **Aplicar**. The modification is applied instantly to all the project methods designated by the character string entered.

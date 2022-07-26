@@ -4,7 +4,7 @@ title: Página del servidor HTTP
 ---
 
 
-The **HTTP Server** page groups together information about the operation of the Web server and SOAP server of 4D Server. The Web server lets you publish Web content such as HTML pages or pictures for Web browsers, and to handle REST requests. The SOAP server manages the publication of Web Services. These servers rely on the internal HTTP server of 4D Server.
+The **HTTP Server** page groups together information about the operation of the Web server and SOAP server of 4D Server. The Web server lets you publish Web content such as HTML pages or pictures for Web browsers, and to handle REST requests. El servidor SOAP gestiona la publicación de los servicios web. Estos servidores dependen del servidor HTTP interno de 4D Server.
 
 ![](assets/en/Admin/server-admin-web-page.png)
 
@@ -32,7 +32,7 @@ This button toggles and can be used to control the activation of the 4D Server H
 
 This area provides specific information about the Web server of 4D Server.
 
-- **Web requests**: Accepted or Rejected. This information indicates whether the Web server is activated. Since the Web server is directly linked to the HTTP server, Web requests are accepted when the HTTP server is started and rejected when it is stopped.
+- **Web requests**: Accepted or Rejected. Esta información indica si el servidor web está activado. Since the Web server is directly linked to the HTTP server, Web requests are accepted when the HTTP server is started and rejected when it is stopped.
 - **Maximum connections**: Maximum number of Web connections allowed. This value depends on the license installed on the server machine.
 
 ## Información SOAP
@@ -45,7 +45,7 @@ This area provides specific information about the SOAP server of 4D Server and i
 
 If you click on the **Accept SOAP requests** button and the HTTP server is stopped, 4D automatically starts it.
 
-## HTTP Server Configuration
+## Configuración servidor HTTP
 
 This area provides information about the configuration parameters and operation of the HTTP server:
 

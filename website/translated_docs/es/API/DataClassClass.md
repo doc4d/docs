@@ -685,16 +685,16 @@ El objeto devuelto tiene las siguientes propiedades:
 
 Each entry object in the `entries` collection has the following properties:
 
-| Propiedad | Tipo     | Descripción                       |
-| --------- | -------- | --------------------------------- |
-| data      | Objeto   | Object holding data on the entry. |
-| expired   | Booleano | True if the entry has expired.    |
-| key       | Texto    | Llave primaria de la entidad.     |
+| Propiedad | Tipo     | Descripción                                  |
+| --------- | -------- | -------------------------------------------- |
+| data      | Objeto   | Objeto que contiene los datos de la entrada. |
+| expired   | Booleano | True si la entrada ha expirado.              |
+| key       | Texto    | Llave primaria de la entidad.                |
 
 The `data` object in each entry contains the following properties:
 | Propiedad              | Tipo         | Descripción                                                                                                                  |
 | ---------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| __KEY                  | Cadena       | Primary key of the entity                                                                                                    |
+| __KEY                  | Cadena       | Llave primaria de la entidad                                                                                                 |
 | __STAMP                | Entero largo | Timestamp de la entidad en la base de datos                                                                                  |
 | __TIMESTAMP            | Cadena       | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
 | dataClassAttributeName | Variant      | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
@@ -707,7 +707,7 @@ In the following example, `$ds.Persons.all()` loads the first entity with all it
 
 Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 
-Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+Only the first entity of the `Address` dataclass is stored in the cache. Se carga durante la primera iteración del bucle.
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -1046,9 +1046,9 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 ... la búsqueda sólo devolverá "martin" porque tiene un elemento "locations" cuyo "kind" es "home" y cuyo "city" es "paris". La búsqueda no devolverá "smith" porque los valores "home" y "paris" no están en el mismo elemento de colección.
 
 
-**Queries in many-to-many relations**
+**Búsquedas en las relaciones Muchos a Muchos**
 
-ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. For example, take a look at the following structure:
+ORDA offers a special syntax to facilitate queries in many-to-many relations. In this context, you may need to search for different values with an `AND` operator BUT in the same attribute. Por ejemplo, de una mirada a la siguiente estructura:
 
 ![alt-text](assets/en/API/manytomany.png)
 

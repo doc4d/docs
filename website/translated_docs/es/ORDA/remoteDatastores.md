@@ -23,7 +23,7 @@ The `localID` is local to the machine that connects to the remote datastore, whi
 *   If another process of the same application opens the same remote datastore but with another `localID`, it will create a new session on the remote datastore.
 *   If another machine connects to the same remote datastore with the same `localID`, it will create another session with another cookie.
 
-These principles are illustrated in the following graphics:
+Estos principios se ilustran en los gráficos siguientes:
 
 ![](assets/en/ORDA/sessions.png)
 
@@ -33,7 +33,7 @@ These principles are illustrated in the following graphics:
 
 Processes that manage sessions for datastore access are shown in the 4D Server administration window:
 
-*   name: "REST Handler: \<process name\>"
+*   nombre: "REST Handler: \<process name\>"
 *   type: HTTP Server Worker type
 *   session: session name is the user name passed to the `Open datastore` command.
 
@@ -51,7 +51,7 @@ ORDA features related to entity locking and transaction are managed at process l
 *   Locks on entities are removed and transactions are rollbacked:
     *   when the process is killed.
     *   cuando la sesión se cierra en el servidor
-    *   when the session is killed from the server administration window.
+    *   cuando la sesión es terminada desde la ventana de administración del servidor.
 
 ### Cierre de las sesiones
 
@@ -62,7 +62,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 ## Optimización cliente/servidor
 
 4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Incluyen:
-* the **optimization context**
+* el **contexto de optimización**
 * la **caché ORDA**
 
 ### Contexto
@@ -160,13 +160,13 @@ For example, the following code loads the selected entity and allows browsing in
  $myEntity:=$myEntity.next() //loads the next entity using the same context
 ```
 
-#### Preconfiguring contexts
+#### Preconfiguración de contextos
 
 An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries on customers, another context for queries on products, etc.
 
 If you want to deliver final applications with the highest level of optimization, you can preconfigure your contexts and thus save learning phases by following these steps:
 
-1. Design your algorithms.
+1. Diseñe sus algoritmos.
 2. Run your application and let the automatic learning mechanism fill the optimization contexts.
 3. Call the [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) or [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) function to collect  contexts. You can use the [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) and [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) functions to analyse how your algorithms use attributes.
 4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
@@ -176,7 +176,7 @@ If you want to deliver final applications with the highest level of optimization
 
 For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds.
 
-The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
+The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Los datos caducados permanecen en la caché hasta que se necesite el espacio.
 
 By default, the ORDA cache is transparently handled by 4D. However, you can control its contents using the following ORDA class functions:
 

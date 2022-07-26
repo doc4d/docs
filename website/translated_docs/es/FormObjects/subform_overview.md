@@ -47,12 +47,12 @@ You can bind [a variable or an expression](properties_Object.md#variable-or-expr
 
 By default, 4D creates a variable or expression of [object type](properties_Object.md#expression-type) for a subform container, which allows you to share values in the context of the subform using the `Form` command ([see below](#using-the-subform-bound-object)). However, you can use a variable or expression of any scalar type (time, integer, etc.) especially if you only need to share a single value:
 
-- Define a bound variable or expression of a scalar type and call the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands to exchange values when [On Bound Variable Change](../Events/onBoundVariableChange.md) or [On Data Change](../Events/onDataChange.md) form events occur. This solution is recommended to synchronize a single value.
-- Define a bound variable or expression of the **object** type and use the `Form` command to access its properties from the subform. This solution is recommended to synchronize several values.
+- Define a bound variable or expression of a scalar type and call the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands to exchange values when [On Bound Variable Change](../Events/onBoundVariableChange.md) or [On Data Change](../Events/onDataChange.md) form events occur. Esta solución se recomienda para sincronizar un solo valor.
+- Define a bound variable or expression of the **object** type and use the `Form` command to access its properties from the subform. Esta solución se recomienda para sincronizar varios valores.
 
 
 
-### Synchronizing parent form and subform (single value)
+### Sincronizando formulario padre y subformulario (valor único)
 
 Binding the same variable or expression to your subform container and other objects of the parent form lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Imagine a subform representing a clock, inserted into a parent form containing an enterable variable of the Time type:
 
@@ -63,7 +63,7 @@ In the parent form, both objects (time variable and subform container) ***have t
 In the subform, the clock object is managed through the `Form.clockValue` property.
 
 
-#### Updating the contents of a subform
+#### Actualizando el contenido de un subformulario
 
 Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform.
 
@@ -119,11 +119,11 @@ Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime
 > If the variable or expression value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform, 2-Form method of subform, 3-Object methods of parent form, 4-Form method of parent form
 
 
-### Synchronizing parent form and subform (multiple values)
+### Sincronizando formulario padre y subformulario (múltiples valores)
 
 By default, 4D binds a variable or expression of [object type](properties_Object.md#expression-type) to each subform. The contents of this object can be read and/or modified from within the parent form and from the subform, allowing you to share multiple values in a local context.
 
-When bound a the subform container, this object is returned by the `Form` command directly in the subform. Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself and thus, available to the parent form. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. No event management is necessary.
+When bound a the subform container, this object is returned by the `Form` command directly in the subform. Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself and thus, available to the parent form. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. No es necesaria ninguna gestión de eventos.
 
 For example, in a subform, inputs are bound to the `Form` object properties (of the subform form):
 
@@ -149,7 +149,7 @@ If you modify a value either in the parent form or in the subform, it is automat
 
 ![](assets/en/FormObjects/subnew4.png) ![](assets/en/FormObjects/subnew5.png)
 
-### Using pointers (compatibility)
+### Uso de punteros (compatibilidad)
 
 In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
 

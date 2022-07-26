@@ -68,6 +68,9 @@
       "API/FunctionClass": {
         "title": "Formula"
       },
+      "API/HTTPRequestClass": {
+        "title": "HTTPRequest"
+      },
       "API/IMAPTransporterClass": {
         "title": "IMAPTransporter"
       },
@@ -123,13 +126,13 @@
         "title": "Parámetros de la copia de seguridad"
       },
       "code-editor/creating-using-macros": {
-        "title": "Creating and using macros"
+        "title": "Creación y uso de macros"
       },
       "code-editor/find-replace": {
         "title": "Find and replace"
       },
       "code-editor/overview": {
-        "title": "About 4D Code"
+        "title": "Sobre el código 4D"
       },
       "code-editor/write-class-method": {
         "title": "Editor de código"
@@ -997,14 +1000,13 @@
       "Class API Reference": "Clases API",
       "Handling Code": "Handling Code",
       "Debugging": "Depuración",
-      "Transformation Tags": "Etiquetas Transformación",
       "Settings": "Settings",
       "Preferences": "Preferencias",
       "4D Server Administration Window": "Ventana de administración de 4D Server",
       "Web Administration": "Administración Web",
       "Command Line Interface": "Interfaz de línea de comando",
       "TLS Protocol": "Protocolo TLS",
-      "Licenses & Data Collection": "Licenses & Data Collection",
+      "Licenses & Data Collection": "Licencias y recopilación de datos",
       "Access Rights": "Derechos de acceso",
       "MSC": "CSM",
       "Backup and Restore": "Copia de seguridad y restauración",

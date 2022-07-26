@@ -121,7 +121,7 @@ Indica una variable o expresión a la que se le asignará un entero largo que in
 ---
 ## Data Type (expression type)
 
-Defines the data type for the displayed expression. This property is used with:
+Define el tipo de datos para la expresión mostrada. This property is used with:
 
 - [List box columns](listbox_overview.md#list-box-columns) of the selection and collection types.
 - [Drop-down lists](dropdownList_Overview.md) associated to objects or arrays.
@@ -132,7 +132,7 @@ See also [**Expression Type**](properties_Object.md#expression-type) section.
 
 | Nombre             | Tipos de datos | Valores posibles                                   |
 | ------------------ | -------------- | -------------------------------------------------- |
-| dataSourceTypeHint | cadena         | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
+| dataSourceTypeHint | cadena         | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Sólo para Array/selección list box*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
 
 
 #### Objetos soportados
@@ -157,7 +157,7 @@ Hay tres opciones disponibles:
 
 Using the **Selected item reference** option requires compliance with the following principles:
 - To be able to store the reference, the field or variable data source must be of the Number type (regardless of the type of value displayed in the list). The [expression](properties_Object.md#expression-type) property is automatically set.
-- Valid and unique references must be associated with list items.
+- Las referencias válidas y únicas deben estar asociadas a los elementos de la lista.
 - The drop-down list must be associated with a field or a variable.
 
 
@@ -198,7 +198,7 @@ Debe introducir una lista de valores. In the Form editor, a specific dialog box 
 
 #### Objetos soportados
 
-[List Box Column (array type only)](listbox_overview.md#list-box-columns)
+[Columna List Box (sólo tipo array)](listbox_overview.md#list-box-columns)
 
 
 
@@ -290,7 +290,7 @@ This option lets you optimize memory usage: storing numeric values in fields use
 Using this property requires compliance with the following principles:
 
 - To be able to store the reference, the field or variable data source must be of the Number type (regardless of the type of value displayed in the list). The [expression](properties_Object.md#expression-type) property is automatically set.
-- Valid and unique references must be associated with list items.
+- Las referencias válidas y únicas deben estar asociadas a los elementos de la lista.
 
 
 #### Gramática JSON
@@ -326,9 +326,9 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 ---
 ## Selección de nombres
-`Named selection list boxes`
+`List boxes de tipo selección nombrada`
 
-Especifica la selección con nombre que se utilizará. You must enter the name of a valid named selection. It can be a process or interprocess named selection. The contents of the list box will be based on this selection. The named selection chosen must exist and be valid at the time the list box is displayed, otherwise the list box will be displayed blank.
+Especifica la selección con nombre que se utilizará. Debe introducir el nombre de una selección nombrada válida. Puede ser una selección nombrada proceso o interproceso. El contenido del list box se basará en esta selección. The named selection chosen must exist and be valid at the time the list box is displayed, otherwise the list box will be displayed blank.
 
 > Las selecciones con nombre son listas ordenadas de registros. They are used to keep the order and current record of a selection in memory. For more information, refer to **Named Selections** section in the *4D Language Reference manual*.
 

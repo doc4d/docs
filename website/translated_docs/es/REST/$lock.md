@@ -9,7 +9,7 @@ Locks and unlocks an entity using the [pessimistic mechanism](../ORDA/entities.m
 
 ## Sintaxis
 
-To lock an entity for other sessions and 4D processes:
+Para bloquear una entidad para las otras sesiones y procesos 4D:
 
 ```
 /?$lock=true
@@ -35,7 +35,7 @@ A locked entity is seen as *locked* (i.e. lock / unlock / update / delete action
 - otras sesiones REST
 - 4D processes (client/server, remote datastore, standalone) running on the REST server.
 
-An entity locked by the REST API can only be unlocked:
+Una entidad bloqueada por la API REST sólo puede ser desbloqueada:
 
 - by its locker, i.e. a `/?$lock=false` in the REST session that sets `/?$lock=true`
 - or if the session's [inactivity timeout]($directory.md) is reached (the session is closed).
@@ -44,7 +44,7 @@ An entity locked by the REST API can only be unlocked:
 
 A `?$lock` request returns a JSON object with `"result"=true` if the lock operation was successful and `"result"=false` if it failed.
 
-The returned "__STATUS" object has the following properties:
+El objeto "__STATUS" devuelto tiene las siguientes propiedades:
 
 | Propiedad    |                | Tipo     | Descripción                                                                                                                                                 |
 | ------------ | -------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ The returned "__STATUS" object has the following properties:
 |              | task_name      | texto    | Nombre del proceso                                                                                                                                          |
 |              | client_version | texto    | Versión del cliente                                                                                                                                         |
 |              |                |          | ***Disponible sólo para un bloqueo por sesión REST:***                                                                                                      |
-|              | host           | texto    | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
+|              | host           | texto    | URL que bloqueó la entidad (por ejemplo, "127.0.0.1:8043")                                                                                                  |
 |              | IPAddr         | texto    | Dirección IP del bloqueo (por ejemplo: "127.0.0.1")                                                                                                         |
 |              | recordNumber   | number   | Record number of the locked record                                                                                                                          |
 |              | userAgent      | texto    | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |

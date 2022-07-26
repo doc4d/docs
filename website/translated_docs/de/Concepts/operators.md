@@ -253,7 +253,7 @@ It takes three operands in the following order:
 
 The syntax is as follows:
 
-`condition ? condition ? exprIfTruthy : exprIfFalsy condition ? exprIfTruthy : exprIfFalsy`
+`condition ? condition ? exprIfTruthy : exprIfFalsy condition ? exprIfTruthy : exprIfFalsy condition ? exprIfTruthy : exprIfFalsy`
 
 > Since the [token syntax](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid any conflicts.
 
@@ -272,6 +272,8 @@ ALERT($beverage) // "Beer" "Beer" : "Juice"
 
 ALERT($beverage) // "Beer" "Beer" : "Juice"
 
+ALERT($beverage) // "Beer" "Beer" : "Juice"
+
 ALERT($beverage) // "Beer"
 ```
 
@@ -283,7 +285,7 @@ This example stores a person's full name in a variable, and handles the case whe
 var $fullname : Text
 
 // If one of the names is missing, store the one that exists, otherwise store an empty string
-$fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
+$fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || "" ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
 ## Truthy and falsy

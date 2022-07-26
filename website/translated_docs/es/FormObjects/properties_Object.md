@@ -26,7 +26,7 @@ Esta propiedad designa el tipo del [objeto formulario activo o inactivo](formObj
 ---
 ## Nombre del objeto
 
-Each active form object is associated with an object name. Each object name must be unique.
+Cada objeto de formulario activo está asociado a un nombre de objeto. Cada nombre de objeto debe ser único.
 > Los nombres de objetos están limitados a un tamaño de 255 bytes.
 
 When using 4D’s language, you can refer to an active form object by its object name (for more information about this, refer to [Object Properties](https://doc.4d.com/4Dv17R5/4D/17-R5/Object-Properties.300-4128195.en.html) in the 4D Language Reference manual).
@@ -53,7 +53,7 @@ This property is available when the [Save Geometry](FormEditor/properties_FormPr
 
 This feature is only supported for objects that contribute to the overall geometry of the form. For example, this option is available for check boxes because their value can be used to hide or display additional areas in the window.
 
-Here is the list of objects whose value can be saved:
+Esta es la lista de objetos cuyo valor se puede guardar:
 
 | Objeto                                        | Valor guardado                                                                           |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------- |
@@ -81,7 +81,7 @@ Here is the list of objects whose value can be saved:
 > See also **[Expression](properties_DataSource.md#expression)** for Selection and collection type list box columns.
 
 
-Esta propiedad especifica la fuente de los datos. Each active form object is associated with an object name and a variable name. The variable name can be different from the object’s name. In the same form, you can use the same variable several times while each [object name](#object-name) must be unique.
+Esta propiedad especifica la fuente de los datos. Each active form object is associated with an object name and a variable name. El nombre de la variable puede ser diferente del nombre del objeto. In the same form, you can use the same variable several times while each [object name](#object-name) must be unique.
 > El tamaño del nombre de la variable está limitado a 31 bytes. See [Identifiers](Concepts/identifiers.md) section for more information about naming rules.
 
 The form object variables allow you to control and monitor the objects. For example, when a button is clicked, its variable is set to 1; at all other times, it is 0. The expression associated with a progress indicator lets you read and change the current setting.
@@ -108,7 +108,7 @@ You can use an [expression](Concepts/quick-tour.md#expressions) as data source f
 
 You can leave it up to 4D to create variables associated with your form objects (buttons, enterable variables, check boxes, etc.) dynamically and according to your needs. To do this, simply leave the "Variable or Expression" property (or `dataSource` JSON field) blank.
 
-When a variable is not named, when the form is loaded, 4D creates a new variable for the object, with a calculated name that is unique in the space of the process variables of the interpreter (which means that this mechanism can be used even in compiled mode). This temporary variable will be destroyed when the form is closed. In order for this principle to work in compiled mode, it is imperative that dynamic variables are explicitly typed. There are two ways to do this:
+When a variable is not named, when the form is loaded, 4D creates a new variable for the object, with a calculated name that is unique in the space of the process variables of the interpreter (which means that this mechanism can be used even in compiled mode). This temporary variable will be destroyed when the form is closed. In order for this principle to work in compiled mode, it is imperative that dynamic variables are explicitly typed. Hay dos maneras de hacer esto:
 
 - You can set the type using the [Expression type](#expression-type) property.
 - You can use a specific initialization code when the form is loaded that uses, for example, the `VARIABLE TO VARIABLE` command:
@@ -168,7 +168,7 @@ Specify the data type for the expression or variable associated to the object. N
 However, this property has a typing function in the following specific cases:
 
 - **[Dynamic variables](#dynamic-variables)**: you can use this property to declare the type of dynamic variables.
-- **[List Box Columns](listbox_overview.md#list-box-columns)**: this property is used to associate a display format with the column data. The formats provided will depend on the variable type (array type list box) or the data/field type (selection and collection type list boxes). The standard 4D formats that can be used are: Alpha, Numeric, Date, Time, Picture and Boolean. The Text type does not have specific display formats. Todos los formatos personalizados existentes también están disponibles.
+- **[List Box Columns](listbox_overview.md#list-box-columns)**: this property is used to associate a display format with the column data. The formats provided will depend on the variable type (array type list box) or the data/field type (selection and collection type list boxes). The standard 4D formats that can be used are: Alpha, Numeric, Date, Time, Picture and Boolean. El tipo Texto no tiene formatos de visualización específicos. Todos los formatos personalizados existentes también están disponibles.
 - **[Picture variables](input_overview.md)**: you can use this menu to declare the variables before loading the form in interpreted mode. Specific native mechanisms govern the display of picture variables in forms. These mechanisms require greater precision when configuring variables: from now on, they must have already been declared before loading the form — i.e., even before the `On Load` form event — unlike other types of variables. To do this, you need either for the statement `C_PICTURE(varName)` to have been executed before loading the form (typically, in the method calling the `DIALOG` command), or for the variable to have been typed at the form level using the expression type property. Otherwise, the picture variable will not be displayed correctly (only in interpreted mode).
 
 
@@ -213,13 +213,13 @@ The collection or the entity selection must be available to the form when it is 
 
 *   if you used a collection of objects, you can call **This** in the datasource expression to access each property value, for example **This.\<propertyPath>**.
 *   if you used an entity selection, you can call **This** in the datasource expression to access each attribute value, for example  **This.\<attributePath>**.
-> > > > If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling **This.value** in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the [ORDA](https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html) chapter.
+> > > > > If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling **This.value** in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the [ORDA](https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html) chapter.
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                             |
-| ---------- | -------------- | ------------------------------------------------------------ |
-| dataSource | cadena         | Expression that returns a collection or an entity selection. |
+| Nombre     | Tipos de datos | Valores posibles                                                   |
+| ---------- | -------------- | ------------------------------------------------------------------ |
+| dataSource | cadena         | Expresión que devuelve una colección o una selección de entidades. |
 
 #### Objetos soportados
 
@@ -265,9 +265,9 @@ Name of the [plug-in external area](pluginArea_overview.md) associated to the ob
 
 #### Gramática JSON
 
-| Nombre         | Tipos de datos | Valores posibles                                              |
-| -------------- | -------------- | ------------------------------------------------------------- |
-| pluginAreaKind | cadena         | Name of the plug-in external area (starts with a % character) |
+| Nombre         | Tipos de datos | Valores posibles                                                 |
+| -------------- | -------------- | ---------------------------------------------------------------- |
+| pluginAreaKind | cadena         | Nombre del área externa del plug-in (comienza con un carácter %) |
 
 
 #### Objetos soportados
@@ -298,7 +298,7 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 ## Título
 
-Permite insertar una etiqueta en un objeto. The font and the style of this label can be specified.
+Permite insertar una etiqueta en un objeto. Se puede especificar la fuente y el estilo de esta etiqueta.
 
 You can force a carriage return in the label by using the \ character (backslash).
 
@@ -306,7 +306,7 @@ You can force a carriage return in the label by using the \ character (backslash
 
 Para insertar un \ en la etiqueta, ingrese "&#92;&#92;".
 
-By default, the label is placed in the center of the object. When the object also contains an icon, you can modify the relative location of these two elements using the [Title/Picture Position](properties_TextAndPicture.md#title-picture-position) property.
+Por defecto, la etiqueta se coloca en el centro del objeto. When the object also contains an icon, you can modify the relative location of these two elements using the [Title/Picture Position](properties_TextAndPicture.md#title-picture-position) property.
 
 For application translation purposes, you can enter an XLIFF reference in the title area of a button (see [Appendix B: XLIFF architecture](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html)).
 
@@ -334,17 +334,17 @@ This property sets the type of calculation to be done in a [column footer](listb
 
 Hay varios tipos de cálculos disponibles. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
 
-| Cálculo                | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
-| ---------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
-| Mínimo                 | X   | X     | X     | X    | X    |          | Same as column type                 |
-| Máximo                 | X   | X     | X     | X    | X    |          | Same as column type                 |
-| Suma                   | X   |       |       | X    | X    |          | Same as column type                 |
-| Conteo                 | X   | X     | X     | X    | X    | X        | Entero largo                        |
-| Promedio               | X   |       |       | X    |      |          | Real                                |
-| Desviación estándar(*) | X   |       |       | X    |      |          | Real                                |
-| Varianza(*)            | X   |       |       | X    |      |          | Real                                |
-| Suma de cuadrados(*)   | X   |       |       | X    |      |          | Real                                |
-| Custom ("none")        | X   | X     | X     | X    | X    | X        | Cualquiera                          |
+| Cálculo                 | Num | Texto | Fecha | Hora | Bool | Imágenes | tipos de variables de pie de página |
+| ----------------------- | --- | ----- | ----- | ---- | ---- | -------- | ----------------------------------- |
+| Mínimo                  | X   | X     | X     | X    | X    |          | Igual que el tipo de columna        |
+| Máximo                  | X   | X     | X     | X    | X    |          | Igual que el tipo de columna        |
+| Suma                    | X   |       |       | X    | X    |          | Igual que el tipo de columna        |
+| Conteo                  | X   | X     | X     | X    | X    | X        | Entero largo                        |
+| Promedio                | X   |       |       | X    |      |          | Real                                |
+| Desviación estándar(*)  | X   |       |       | X    |      |          | Real                                |
+| Varianza(*)             | X   |       |       | X    |      |          | Real                                |
+| Suma de cuadrados(*)    | X   |       |       | X    |      |          | Real                                |
+| Personalizado ("None ") | X   | X     | X     | X    | X    | X        | Cualquiera                          |
 
 (*) Sólo para list boxes de tipo array.
 

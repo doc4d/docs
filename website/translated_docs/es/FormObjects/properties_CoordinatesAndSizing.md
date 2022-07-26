@@ -21,7 +21,7 @@ Cuando esta propiedad está activada, la altura de cada línea se calcula autom�
 
 *   El cálculo de la altura de línea no tiene en cuenta:
     *   contenido de columna oculta
-    *   La propiedad Row Height Array no se tiene en cuenta para los list box jerárquicos.
+    *   Para los list box de tipo array, esta propiedad sólo está disponible si la opción [Altura de línea automática](#automatic-row-height) no está seleccionada.
 > Algunos objetos pueden tener una altura predefinida que no se puede modificar.
 
 
@@ -281,7 +281,7 @@ Asumiendo que la unidad de las líneas es "líneas", entonces la quinta línea d
 
 
 ---
-## Horizontal Padding
+## Relleno horizontal
 
 
 Establece un relleno horizontal para las celdas. El valor se establece en píxeles (por defecto = 0).
@@ -292,19 +292,19 @@ Establece un relleno horizontal para las celdas. El valor se establece en píxel
 
 #### Gramática JSON
 
-| Nombre            | Tipos de datos | Valores posibles               |
-| ----------------- | -------------- | ------------------------------ |
-| horizontalPadding | number         | Number of pixels (must be >=0) |
+| Nombre            | Tipos de datos | Valores posibles                 |
+| ----------------- | -------------- | -------------------------------- |
+| horizontalPadding | number         | Número de píxeles (debe ser >=0) |
 
 #### Objetos soportados
 
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### Ver también
-[Vertical Padding](#vertical-padding)
+[Relleno vertical](#vertical-padding)
 
 ---
-## Vertical Padding
+## Relleno vertical
 
 
 Establece un relleno vertical para las celdas. El valor se establece en píxeles (por defecto = 0).
@@ -312,13 +312,13 @@ Establece un relleno vertical para las celdas. El valor se establece en píxeles
 
 #### Gramática JSON
 
-| Nombre          | Tipos de datos | Valores posibles               |
-| --------------- | -------------- | ------------------------------ |
-| verticalPadding | number         | Number of pixels (must be >=0) |
+| Nombre          | Tipos de datos | Valores posibles                 |
+| --------------- | -------------- | -------------------------------- |
+| verticalPadding | number         | Número de píxeles (debe ser >=0) |
 
 #### Objetos soportados
 
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### Ver también
-[Horizontal Padding](#horizontal-padding)
+[Relleno horizontal](#horizontal-padding)

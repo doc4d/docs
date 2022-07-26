@@ -184,7 +184,7 @@ If necessary, the function creates the folder hierachy as described in the [plat
 
 #### Ejemplo
 
-Creation of a preferences file in the database folder:
+Creación de un archivo de preferencias en la carpeta principal:
 
 ```4d
  var $created : Boolean
@@ -225,7 +225,7 @@ The `.createAlias()` function <!-- REF #FileClass.createAlias().Summary -->creat
 
 Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
-By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
+Por defecto en macOS, la función crea un alias estándar. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
 
 | Constante          | Valor | Comentario                         |
 | ------------------ | ----- | ---------------------------------- |
@@ -286,14 +286,14 @@ You want to create an alias to a file in your database folder:
 
 The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the file<!-- END REF -->.
 
-If the file is currently open, an error is generated.
+Si el archivo está abierto, se genera un error.
 
 If the file does not exist on disk, the function does nothing (no error is generated).
 > **ATENCIÓN**: `.delete( )` puede eliminar cualquier archivo de un disco. Esto incluye los documentos creados con otras aplicaciones, así como las propias aplicaciones. `.delete( )` debe utilizarse con extrema precaución. Eliminar un archivo es una operación permanente y no se puede deshacer.
 
 #### Ejemplo
 
-You want to delete a specific file in the database folder:
+Desea eliminar un archivo específico en la carpeta de la base de datos:
 
 ```4d
  $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
@@ -334,9 +334,9 @@ You want to delete a specific file in the database folder:
 **.getAppInfo**() : Object<!-- END REF -->
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                                           |
-| ---------- | ------ | -- | ----------------------------------------------------- |
-| Resultado  | Objeto | <- | Contents of .exe/.dll version resource or .plist file |
+| Parámetros | Tipo   |    | Descripción                                                 |
+| ---------- | ------ | -- | ----------------------------------------------------------- |
+| Resultado  | Objeto | <- | Contenido del archivo de recurso versión .exe/.dll o .plist |
 <!-- END REF -->
 
 
@@ -365,7 +365,7 @@ Todos los valores de propiedades son de tipo Texto.
 | FileVersion      | Texto |
 | OriginalFilename | Texto |
 
-**Returned object with a .plist file**
+**Objeto devuelto con un archivo .plist**
 
 The xml file contents is parsed and keys are returned as properties of the object, preserving their types (text, boolean, number). `.plist dict` is returned as a JSON object and `.plist array` is returned as a JSON array.
 
@@ -543,7 +543,7 @@ El objeto `File` renombrado.
 
 #### Ejemplo
 
-You want to rename "ReadMe.txt" in "ReadMe_new.txt":
+Quieresrenombrar "ReadMe.txt" como "ReadMe_new.txt":
 
 ```4d
  $toRename:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
@@ -599,11 +599,11 @@ Each valid property set in the *info* object parameter is written in the version
 If you pass a null or empty text as value, an empty string is written in the property. If you pass a value type different from text, it is stringified.
 
 
-***info* parameter object with a .plist file**
+**Parámetro *info* con un un archivo .plist**
 
 Each valid property set in the *info* object parameter is written in the .plist file as a key. Se acepta todo nombre de llave. Los tipos de valores se conservan cuando es posible.
 
-If a key set in the *info* parameter is already defined in the .plist file, its value is updated while keeping its original type. Other existing keys in the .plist file are left untouched.
+If a key set in the *info* parameter is already defined in the .plist file, its value is updated while keeping its original type. Las demás llaves existentes en el archivo .plist no se modifican.
 
 > To define a Date type value, the format to use is a json timestamp string formated in ISO UTC without milliseconds ("2003-02-01T01:02:03Z") like in the Xcode plist editor.
 

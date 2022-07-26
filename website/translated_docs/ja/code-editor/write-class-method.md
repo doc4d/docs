@@ -206,7 +206,7 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 * また、9つの番号付きクリップボードが用意されており、コードエディターツールバーのボタンあるいはキーボードショートカットで使用します:
 
 ![](assets/en/code-editor/clipboards-2.png)
-|プラットフォーム|選択したテキストをクリップボードにコピー|カーソル位置にクリップボードの内容をペースト| |--|--|--| | **Windows** | クリップボードアイコン上で Shift+クリックあるいは Alt+クリック | クリップボードアイコン上で Ctrl+クリック | |  |  | Ctrl+クリップボード番号 | | **macOS** | クリップボードアイコン上で Shift+クリックあるいは Alt+クリック | クリップボードアイコン上で Cmd+クリック | |  | Cmd+Shift+クリップボード番号 | Cmd+クリップボード番号 |
+[環境設定オプション](Preferences/methods.md#options-1) を使用すると番号付きのクリップボードを非表示にすることができます。
 
 [環境設定オプション](Preferences/methods.md#options-1) を使用すると番号付きのクリップボードを非表示にすることができます。
 
@@ -246,9 +246,9 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 リストは文字順になっています。 ダブルクリックまたは矢印キーで値を選択してから、**Enter**、**Carriage Return** または **Tab** キーを押すと、その値が挿入されます。
 
-デフォルトでは、値を選択したあとに区切り文字 `( ; : = < [ {` を入力すると、自動で値の候補も (区切り文字の前に) 挿入されます。値のあとには区切り文字がつき、データの入力の準備ができた状態になります。
++  **(** キー -->
 
-![](assets/en/code-editor/autocomplete-delimiter.png)  +  **(** キー --> ![](assets/en/code-editor/autocomplete-delimiter-2.png)
+![](assets/en/code-editor/autocomplete-delimiter.png)  **Esc** キーを押すとポップアップが閉じられます。 ![](assets/en/code-editor/autocomplete-delimiter-2.png)
 
 > この区切り文字を使った候補の自動入力は、**環境設定** の **メソッド** ＞ **オプション** で無効にできます。
 
@@ -395,11 +395,13 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 単一行のコメントを作成するのに使用します。 行の先頭に// を挿入することで、単一行のコメントが作成されます。 単一行のコメントの最大長は、単一行の最大サイズ (32,000文字) までです。
 
 <pre>&lt;code class="//This is a comment\" spaces=">
+ &lt;code class="//This is a comment\" spaces=">
  For(vCounter;1;2)\
   //comment\
   //comment\
   //comment\
  End for
+&lt;/code>
 &lt;/code></pre>
 
 #### `/*コメント*/`

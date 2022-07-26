@@ -31,7 +31,7 @@ The "Overview" area provides various information concerning the system, applicat
 - **System Information**: Computer, system and IP address of server
 - **Application Information**: Internal version number of 4D Server and Volume Shadow Copy status
 - **Maximum connections**: Number of simultaneous connections allowed by type of server
-- **License**: Description of license. When the product license or one of its attached expansions expires in less than 10 days, e.g. in case of a subscription-license, 4D Server tries to automatically renew the license from the 4D user account. In this case, if the automatic renewal failed for some reason (connection error, invalid account status, non-prolongated contract...), a warning icon is displayed next to the license to alert the server administrator. Additional information about the license renewal status can be displayed in a tip when you hover the mouse over the area:
+- **Licencia**: descripción de la licencia. When the product license or one of its attached expansions expires in less than 10 days, e.g. in case of a subscription-license, 4D Server tries to automatically renew the license from the 4D user account. In this case, if the automatic renewal failed for some reason (connection error, invalid account status, non-prolongated contract...), a warning icon is displayed next to the license to alert the server administrator. Additional information about the license renewal status can be displayed in a tip when you hover the mouse over the area:
 
 ![](assets/en/Admin/server-licence-failed.png)
 
@@ -44,4 +44,4 @@ The "Details" area repeats part of the information displayed in the graphic area
 - **Hard drive**: Overall capacity of the hard disk and distribution of the space used by the database data (data file + data index), the space used by other files and the free space available.
 - **Memory**: RAM memory installed on the machine and amount of memory used by 4D Server, by other applications or that is free. The memory used by 4D Server can also be displayed dynamically in the graphic area.
 - **Processors**: Instant occupancy rate for processor(s) of the machine by 4D Server and by other applications. Esta tasa se recalcula constantemente. The occupancy rate by 4D Server can also be displayed dynamically in the graphic area.
-- **Network**: Instantaneous number of bytes sent and received by the machine (server or client). This value is updated constantly. The number of bytes received by can also be displayed dynamically in the graphic area.
+- **Network**: Instantaneous number of bytes sent and received by the machine (server or client). Este valor se actualiza constantemente. The number of bytes received by can also be displayed dynamically in the graphic area.

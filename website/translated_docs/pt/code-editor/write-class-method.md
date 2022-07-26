@@ -261,7 +261,7 @@ If the characters typed correspond to different types of objects, the list displ
 * User methods
 * Table names
 * Field names
-* Constantes
+* Constants
 * Local, process or interprocess variable, declared in the method
 * Object property names
 * Plug-in commands
@@ -395,11 +395,13 @@ There are two ways to create comments:
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
 <pre>&lt;code class="//This is a comment\" spaces=">
+ &lt;code class="//This is a comment\" spaces=">
  For(vCounter;1;2)\
   //comment\
   //comment\
   //comment\
  End for
+&lt;/code>
 &lt;/code></pre>
 
 #### `/*comment*/`

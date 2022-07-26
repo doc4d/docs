@@ -67,7 +67,7 @@ title: データ収集について
 
 ## 保存と送信のタイミング
 
-収集されたデータは、4D Server の終了時にテキストファイル (JSON形式) に書き込まれます。 このファイルは、[Active 4D Folder](https://doc.4d.com/4dv19/help/command/ja/page485.html) に格納されます。つまり:
+収集されたデータは、4D Server の終了時にテキストファイル (JSON形式) に書き込まれます。 このファイルは、[Active 4D Folder](https://doc.4d.com/4dv19/help/command/ja/page485.html) に格納されます。 つまり:
 
 - Windows: `Users\[userName]\AppData\Roaming\4D Server`
 - macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`

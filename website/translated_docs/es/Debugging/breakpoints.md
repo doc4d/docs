@@ -8,7 +8,7 @@ title: Puntos de ruptura y captura de comandos
 
 Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
 
-You set breakpoints on any line of code where you want the execution to be paused. You can associate a condition to the break point.
+You set breakpoints on any line of code where you want the execution to be paused. Puede asociar una condición al punto de ruptura.
 
 Catching a command enables you to start tracing the execution of any process as soon as a command is called by that process.
 
@@ -25,7 +25,7 @@ In the following example, a break point (the red bullet) has been set, in the de
 
 In the above example, clicking the [**No Trace**](./debugger.md/#no-trace) button resumes normal execution up to the line marked with the break point. That line is not executed itself — you are taken back to trace mode. Setting a break point beyond the program counter and clicking the **No Trace** button allows you to skip portions of the method being traced.
 
-To remove a break point, click the corresponding bullet.
+Para eliminar un punto de ruptura, haga clic en la viñeta correspondiente.
 
 
 ### Propiedades de los puntos de interrupción
@@ -83,7 +83,7 @@ The **Catch** tab of the Runtime Explorer lets you add additional breaks to your
 
 Catching a command is a convenient way to trace large portions of code without setting break points at arbitrary locations. For example, if a record that should not be deleted is deleted after you've executed one or several processes, you can try to reduce the field of your investigation by catching commands such as `DELETE RECORD` and `DELETE SELECTION`. Each time these commands are called, you can check if the record in question has been deleted, and thus isolate the faulty part of the code.
 
-Feel free to combine breakpoints and command catching.
+Los puntos de interrupción y los comandos de captura se pueden utilizar combinados.
 
 To open the Caught Commands page:
 
@@ -93,7 +93,7 @@ To open the Caught Commands page:
 
 ![runtime-explorer-window](assets/en/Debugging/catch-command.png)
 
-This page lists the commands to be caught during execution. Se compone de dos columnas:
+Esta página lista los puntos de interrupción en el comando durante la ejecución. Se compone de dos columnas:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any
@@ -103,7 +103,7 @@ Para añadir un punto de interrupción en el comando:
 1. Click on the **Add New Catch** button (in the shape of a +) located below the list. A new entry is added to the list with the `ALERT` command as default
 2. Click the **ALERT** label, type the name of the command you want to catch, then press **Enter**.
 
-To enable or disable a caught command, click on the bullet (•) in front of the command label. The bullet is transparent when the command is disabled.
+To enable or disable a caught command, click on the bullet (•) in front of the command label. La bala es transparente cuando el comando está desactivado.
 
 > Disabling a caught command has almost the same effect as deleting it. During execution, the debugger spends almost no time on the entry. The advantage of disabling an entry is that you do not have to recreate it when you need it again.
 
@@ -112,7 +112,7 @@ Para eliminar un punto de interrupción en el comando:
 1. Seleccione un comando en la lista.
 2. Press **Backspace** or **Delete** on your keyboard or click on the **Delete** button beneath the list (**Delete All** removes all commands in the list).
 
-### Setting a Condition for catching a command
+### Definir una condición para un punto de interrupción en un comando
 
 1. Haga clic en la entrada en la columna derecha
 2. Enter a 4D formula (expression, command call or project method) that returns a Boolean value.

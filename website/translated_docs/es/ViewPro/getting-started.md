@@ -4,7 +4,7 @@ title: Comencemos
 ---
 
 
-4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) an specific [methods](method-list.md). It allows you to embed advanced spreadsheet features in your projects.
+4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) and specific [methods](method-list.md). It allows you to embed advanced spreadsheet features in your projects.
 
 
 ![](assets/en/ViewPro/vpSpreadsheet.png)
@@ -38,11 +38,11 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 ## Fundamentos de la selección, la entrada y de la navegación
 
-Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Las celdas pueden ser seleccionadas y sus contenidos editados.
+Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. La intersección de una línea y de una columna constituye una celda. Las celdas pueden ser seleccionadas y sus contenidos editados.
 
 ### Selecting cells, columns and rows
 
-*   To select a cell, simply click on it or use the direction arrows on the keyboard. Its content (or formula) is displayed within the cell.
+*   To select a cell, simply click on it or use the direction arrows on the keyboard. Su contenido (o fórmula) se muestra dentro de la celda.
 
 *   To select several continuous cells, drag the mouse from one end of the selection to the other. You can also click on the two ends of the selection while holding down the Shift key.
 
@@ -50,7 +50,7 @@ Las hojas de cálculo se componen de líneas y columnas. A cada línea se le aso
 
 *   To select a column, click on the corresponding letter (or set of letters).
 
-*   To select a row, click on the corresponding number.
+*   Para seleccionar una línea, haga clic en el número correspondiente.
 
 *   To select a group of cells that are not continuous, hold down the **Ctrl** key (Windows) or **Command** key (Mac) and click on each cell to be selected.
 
@@ -84,12 +84,12 @@ The direction keys (arrows) allow you to move a cell in the direction indicated 
 *   click on a column or row header: **Insert**, **Delete**, **Hide**, or **Unhide** the contents
 *   haga clic en una celda o en un rango de celdas:
     *   **Filter**: allows hiding row through filters (see [Filtering rows](https://www.grapecity.com/spreadjs/docs/versions/v14/online/filter.html) in the SpreadJS documentation).
-    *   **Sort**: sorts the column contents.
+    *   **Ordenar**: ordena el contenido de la columna.
     *   **Insert Comment**: allows user to enter a comment for an area. When a comment has been entered for an area, the top left cell of the area displays a small red triangle:  
       ![](assets/en/ViewPro/vpContext2.PNG)
 
 
-## Using 4D View Pro methods
+## Utilización de los métodos 4D View Pro
 
 4D View Pro methods can be used in the 4D Code Editor, just like 4D language commands.
 
@@ -99,9 +99,9 @@ Since 4D View Pro is a built-in 4D component, you can access its list of methods
 
 For a detailed list of component methods, see [Method list](method-list.md).
 
-### Addressing a 4D View Pro area
+### Abordando un área 4D View Pro
 
-A 4D View Pro area handles several objects and elements.
+Un área 4D View Pro maneja varios objetos y elementos.
 
 ![](assets/en/ViewPro/vpDocument.PNG)
 
@@ -120,7 +120,7 @@ VP SET COLUMN COUNT("myVpArea";5)
 
 ### Utilización de objetos de rango
 
-Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other methods to read from or write to specific locations in your document.
+Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. Esta área puede estar compuesta de una o varias celdas. Using 4D View Pro methods, you can create ranges and pass them to other methods to read from or write to specific locations in your document.
 
 For example, to create a range object for the following cells:
 
@@ -140,16 +140,16 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 *   area - El nombre del área 4D View Pro
 *   rangos - Una colección de objeto(s) rango. Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
-| Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                    |
-| --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------- |
-| area      |                   | texto     | 4D View Pro area form object name                                   | always available                                   |
-| ranges    |                   | colección | Colección de rangos                                                 | always available                                   |
-|           | \[ ].name        | texto     | Nombre de rango                                                     | name                                               |
-|           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
-|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                       |
-|           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                     |
-|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                      | celda, celdas, columna, columnas                   |
-|           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                   |
+| Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                                |
+| --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
+| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                        | always available                                               |
+| ranges    |                   | colección | Colección de rangos                                                 | always available                                               |
+|           | \[ ].name        | texto     | Nombre de rango                                                     | name                                                           |
+|           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | celda, celdas, línea, líneas, columna, columnas, todos, nombre |
+|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                                   |
+|           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                                 |
+|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                      | celda, celdas, columna, columnas                               |
+|           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                               |
 
 
 
@@ -157,7 +157,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 
 
-## Importing and exporting documents
+## Importar y exportar documentos
 
 4D View Pro supports the import and export of several document formats:
 

@@ -18,12 +18,12 @@ This option allows setting the value (in points) of the step used for moving or 
 
 This option allows setting the behavior of the Form editor when moving an object using the mouse beyond window limits.
 
-*   **Autoscroll**: When this option is checked, this action causes the scroll of the form in the window, as if you clicked on the scroll bars. This behavior is useful for moving objects in large forms.
+*   **Autoscroll**: When this option is checked, this action causes the scroll of the form in the window, as if you clicked on the scroll bars. Este comportamiento es útil para mover los objetos en los formularios de gran tamaño.
 *   **Start drag and drop**: When this option is checked, this action is interpreted as a drag and drop. The form window is not modified and the moved object can be dropped in another window (if its contents are compatible), for example, in another form. This behavior is useful for recycling objects among several forms or using object libraries (see [Creating and using custom object libraries](FormEditor/objectLibrary.md#creating-and-using-custom-object-libraries)).
 
 You can configure this option depending on your work habits and development needs.
 
-### Activate auto alignment by default
+### Activar alineación automática por defecto
 
 This option activates auto alignment by default in each new window of the Form editor. It is possible to modify this option individually in each window (refer to [Using the magnetic grid](FormEditor/formEditor.md#using-the-magnetic-grid)).
 

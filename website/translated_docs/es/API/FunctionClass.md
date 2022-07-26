@@ -266,7 +266,7 @@ Llamar a una fórmula utilizando la notación de objetos:
 
 The `Formula from string` command<!-- REF #_command_.Formula from string. Summary -->creates a 4D.Function object based upon the *formulaString*<!-- END REF -->.  *formulaString* can be as simple as a single value or complex, such as a project method with parameters.
 
-This command is similar to [`Formula`](#formula), except that it handles a text-based formula. In most cases, it is recommended to use the `Formula` command. `Formula from string` should only be used when the original formula was expressed as text (e.g., stored externally in a JSON file). In this context, using syntax with tokens is highly advised.
+This command is similar to [`Formula`](#formula), except that it handles a text-based formula. In most cases, it is recommended to use the `Formula` command. `Formula from string` should only be used when the original formula was expressed as text (e.g., stored externally in a JSON file). En este contexto, el uso de la sintaxis con tokens es muy aconsejable.
 > Dado que no se puede acceder al contenido de las variables locales por su nombre en el modo compilado, no se pueden utilizar en *formulaString*. Un intento de acceder a una variable local con `Formula from string` dará lugar a un error (-10737).
 
 
@@ -327,17 +327,26 @@ In the *thisObj* parameter, you can pass a reference to the object to be used as
 
 You can also pass a collection to be used as $1...$n parameters in the formula using the optional *formulaParams* parameter.
 
-Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection. This can be useful for passing calculated results.
+Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection. Esto puede ser útil para pasar los resultados calculados.
 
 
 #### Ejemplo 1
 
 ```4d
  var $f : 4D.Function
- $f:=Formula($1+$2+$3)
 
- $c:=New collection(10;20;30)
- $result:=$f.apply(Null;$c) // devuelve 60
+ $f:=Formula(myMethod)
+  //Writing Formula(myMethod($1;$2)) no es necesario
+ $text:=$f.call(Null;"Hello";"World") //devuelve "Hello World"
+ $text:=$f.call() //devuelve "How are you?"
+
+  //myMethod
+ #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
+ If(Count parameters=2)
+    $return:=$param1+" "+$param2
+ Else
+    $return:="How are you?"
+ End if
 ```
 
 

@@ -8,17 +8,17 @@ title: ドキュメンテーション更新情報
 
 ## 4D v19 R6
 
-- 新しい [HTTPRequest](API/HTTPRequest) クラス。
+- 新しい [HTTPRequest](API/HTTPRequestClass.md) クラス。
 - コードを呼び出す Collectionクラス関数は、*formula* 引数として Formulaオブジェクトをサポートするようになりました: [`.every()`](API/CollectionClass.md#every), [`.filter()`](API/CollectionClass.md#filter), [`.find()`](API/CollectionClass.md#find), [`.findIndex()`](API/CollectionClass.md#findindex), [`.map()`](API/CollectionClass.md#map), [`.orderByMethod()`](API/CollectionClass.md#orderbymethod), [`.reduce()`](API/CollectionClass.md#reduce), [`.some()`](API/CollectionClass.md#some), [`.sort()`](API/CollectionClass.md#sort)
 - リストボックスのセルは、[横方向](FormObjects/properties_CoordinatesAndSizing.md#横方向パディング) および [縦方向](FormObjects/properties_CoordinatesAndSizing.md#縦方向パディング) のパディングをサポートするようになりました。
 - 4D View Pro: 新しい [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) と [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) コマンドを使用して、シート内のテーブルを操作します。
-- [4D がデータを収集する理由と方法](Admin/data-collect) について詳細を説明する新しいページ
+- [4D がデータを収集する理由と方法](Admin/data-collect.md) について詳細を説明する新しいページ
 
 
 ## 4D v19 R5
 
 - ビルドされたクライアント/サーバーアプリケーション:
-    - ビルド時に、プロジェクトの [directory.json ファイル](../Users/handling_users_groups.md#directoryjson-file) を [サーバーに埋め込む](../Desktop/building.md#ビルドしたサーバーアプリケーションにプロジェクトのユーザーとグループを埋め込む) ことができるようになりました。これにより、基本的なセキュリティのユーザーとグループ構成でクライアント/サーバーアプリケーションを運用することができます。
+    - ビルド時に、プロジェクトの [directory.json ファイル](../Users/handling_users_groups.md#directoryjson-file) を [サーバーに埋め込む](../Desktop/building.md#ビルドしたサーバーアプリケーションにプロジェクトのユーザーとグループを埋め込む) ことができるようになりました。 これにより、基本的なセキュリティのユーザーとグループ構成でクライアント/サーバーアプリケーションを運用することができます。
     - ビルドするアプリケーションで、[使用しないモジュールの選択を解除](../Desktop/building.md#モジュールの選択解除) できるようになりました。
 
 - [クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化): 新しいクラス関数により、ORDAキャッシュと最適化コンテキストの内容を操作することができます。 詳細は、[コンテキストの事前設定](../ORDA/remoteDatastores.md#コンテキストの事前設定) および [ORDAキャッシュ](../ORDA/remoteDatastores.md#ordaキャッシュ) を参照ください。
@@ -34,7 +34,7 @@ title: ドキュメンテーション更新情報
 
 ## 4D v19 R4
 
-- ORDAクラス: [エイリアス属性](ORDA/ordaClasses.md#エイリアス属性) が利用可能に。
+- ORDAクラス: [エイリアス属性](ORDA/ordaClasses.md#エイリアス属性-1) が利用可能に。
 
 - ループにおける [break と continue](Concepts/cf_looping.md#break-と-continue) 文のサポート。
 - [return](Concepts/flow-control.md#return-expression) 文と、値を返すための [return {expression}](Concepts/parameters.md#return-expression) 文のサポート。

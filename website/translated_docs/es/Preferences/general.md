@@ -16,7 +16,7 @@ This option allows you to configure the default 4D display at startup, when the 
 *   **Open last used project**: 4D directly opens the last project used; no opening dialog box appears. >To force the display of the opening dialog box when this option is selected, hold down the **Alt** (Windows) or **Option** (macOS) key while launching the project.
 *   **Open Remote Project dialog**: 4D displays the standard 4D Server logon dialog, allowing you to select a project published on the network.
 *   **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
-> **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
+> > **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
 
 ### Creación de formularios automática
 
@@ -31,7 +31,7 @@ You can benefit from this feature in the following environments (with 4D 64-bit 
 *   Code Editor windows
 *   Ventana del editor de formularios
 
-All windows from these editors can be put in tab form:
+Todas las ventanas de estos editores se pueden poner en forma de pestaña:
 
 ![](assets/en/Preferences/general2.png)
 
@@ -59,12 +59,12 @@ Hay tres opciones disponibles:
 
 *   **According to System Color Scheme Preferences** (default): Use the color scheme defined in the macOS System Preferences.
 *   **Light**: Use the Light Theme
-*   **Dark**: Use the Dark Theme
+*   **Sombra**: utilizar el tema Sombra
 
 > Esta preferencia sólo es compatible en macOS. En Windows, se utiliza siempre el esquema "Light".
 
 
-### Exit Design when going to Application Environment
+### Salir del modo Diseño al ir al modo Aplicación
 
 If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 
@@ -73,7 +73,7 @@ If this option is checked, when the user switches to the Application environment
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
-*   **Database...**
+*   **Base de datos...**
 *   **Base de datos a partir de una definición de estructura...**
 
 ![](assets/en/Preferences/general5.png)
@@ -150,15 +150,15 @@ Lenguaje de la documentación HTML a mostrar. You can select a documentation in 
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
-Sets where 4D will look for documentation pages.
+Define dónde buscará 4D las páginas de documentación.
 
-*   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
+*   When checked (default), 4D first looks for the page in the local folder (see below). Si se encuentra, 4D muestra la página en el navegador actual. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
 *   If it is not found, 4D displays an error message in the browser. When not checked, 4D looks for the desired page directly in the on-line documentation Web site and displays it in the current browser.
 
 ### Carpeta local
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
-Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
+Indica la ubicación de la documentación HTML estática. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. Si esta subcarpeta no está presente, la ubicación se muestra en rojo.
 
 You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). 

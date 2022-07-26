@@ -52,6 +52,7 @@ Cette commande fonctionne uniquement lorsque les [sessions extensibles sont acti
 Lorsque les sessions extensibles sont activées, l'objet `Session` est disponible depuis n'importe quel process web dans les contextes suivants :
 
 - Méthodes base `On Web Authentication`, `On Web Connection`, et `On REST Authentication`,
+- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
 - Les [fonctions Data Model Class](ORDA/ordaClasses.md) ORDA appelées par des requêtes REST,
 - le code traité par les balises 4D dans les pages semi-dynamiques (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - les méthodes projet avec l'attribut "Available through 4D tags and URLs (4DACTION...)" et appelées via les urls 4DACTION/.
@@ -221,11 +222,9 @@ Cette propriété est en **lecture-écriture**.
 
 ```4d
 If (Session.isGuest())
-        // La session d'un invité se ferme après 60 minutes d'inactivité.
-    Session.idleTimeout:=60
+        // La session d'un invité se ferme après 60 minutes d'inactivité. Session.idleTimeout:=60
 Else
-        //D'autres sessions se fermeront après 60 minutes d'inactivité.
-    Session.idleTimeout:=120
+        //D'autres sessions se fermeront après 60 minutes d'inactivité. Session.idleTimeout:=120
 End if
 
 ```

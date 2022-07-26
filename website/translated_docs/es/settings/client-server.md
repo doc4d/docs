@@ -20,7 +20,7 @@ This option lets you indicate whether or not the 4D Server database will appear 
 
 #### Nombre de publicación
 
-This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the project file. Puede introducir cualquier nombre personalizado que desee.
+This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). Por defecto, 4D Server utiliza el nombre del archivo de proyecto. Puede introducir cualquier nombre personalizado que desee.
 
 > This parameter is not taken into account in custom client-server applications. In theory, the client application connects directly to the server application, without passing by the connection dialog box. However, in the event of an error, this dialog box can appear; in this case, the publication name of the server application is the name of the compiled project.
 
@@ -52,7 +52,7 @@ This option allows you to implement SSO (*Single Sign On*) capabilities in your 
 
 When Single Sign On (SSO) is enabled (see above), you must fill in this field if you want to use Kerberos as your authentication protocol. This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
 
-#### Client-Server Connections Timeout
+#### Tiempo de espera de conexiones Cliente-Servidor
 
 This device is used to set the timeout (period of inactivity beyond which the connection is closed) between 4D Server and the client machines connecting to it. La opción ilimitada elimina el tiempo de espera. When this option is selected, client activity control is eliminated.
 
@@ -64,13 +64,13 @@ When a timeout is selected, the server will close the connection of a client if 
 
 When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv19/4D/19/Stored-procedures-on-client-machines.300-5422461.en.html).
 
-#### Encrypt Client-Server Communications
+#### Cifrar las comunicaciones Cliente-Servidor
 
 This option lets you activate the secured mode for communications between the server machine and the 4D remote machines. This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv19/4D/19/Encrypting-ClientServer-Connections.300-5422465.en.html) section.
 
 #### Actualizar la carpeta Resources durante una sesión
 
-This setting can be used to globally set the updating mode for the local instance of the **Resources** folder on the connected 4D machines when the **Resources** folder of the database is modified during the session (the **Resources** folder is automatically synchronized on the remote machine each time a session is opened). Three settings are available:
+This setting can be used to globally set the updating mode for the local instance of the **Resources** folder on the connected 4D machines when the **Resources** folder of the database is modified during the session (the **Resources** folder is automatically synchronized on the remote machine each time a session is opened). Hay tres parámetros disponibles:
 
 -   **Never**: The local **Resources** folder is not updated during the session. La notificación enviada por el servidor es ignorada. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
 -   **Always**: The synchronization of the local **Resources** folder is automatically carried out during the session whenever notification is sent by the server.
@@ -83,15 +83,15 @@ This setting can be used to globally set the updating mode for the local instanc
 
 This table allows you to set access control rules for the database depending on 4D remote machine IP addresses. This option allows reinforcing security, for example, for strategic applications.
 
-> This configuration table does not control Web connections.
+> Esta tabla de configuración no controla las conexiones web.
 
-The behavior of the configuration table is as follows:
+El funcionamiento de la tabla de configuración es el siguiente:
 
 - The "Allow-Deny" column allows selecting the type of rule to apply (Allow or Deny) using a pop-up menu. Para añadir una regla, haga clic en el botón Añadir. A new row appears in the table. The **Delete** button lets you remove the current row.
 - The "IP Address" column allows setting the IP address(es) concerned by the rule. To specify an address, click in the column and enter the address in the following form: 123.45.67.89 (IPv4 format) or 2001:0DB8:0000:85A3:0000:0000:AC1F:8001 (IPv6 format). You can use an * (asterisk) character to specify "starts with" type addresses. For example, 192.168.* indicates all addresses starting with 192.168.
 - The application of rules is based on the display order of the table. If two rules are contradictory, priority is given to the rule located highest in the table. You can re-order rows by modifying the current sort (click the header of the column to alternate the direction of the sort). También puede mover las líneas utilizando arrastrar y soltar.
 - For security reasons, only addresses that actually match a rule will be allowed to connect. In other words, if the table only contains one or more Deny rules, all addresses will be refused because none will match at least one rule. If you want to deny only certain addresses (and allow others), add an Allow * rule at the end of the table. Por ejemplo:
-    - Deny 192.168.* (deny all addresses beginning with 192.168)
+    - Denegar 192.168.* (denegar todas las direcciones que empiecen por 192.168)
     - Autorizar * (y permitir todas las demás direcciones)
 
 By default, no connection restrictions are applied by 4D Server: the first row of the table contains the Allow label and the * (all addresses) character.

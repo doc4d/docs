@@ -34,6 +34,9 @@ $myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
 $col:=New collection //$col is initialized with an empty collection $myNumber:=3 //assigns 3 to MyNumber variable  
 $myDate:=!2018/01/21! //assigns a date literal
 $myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
+$col:=New collection //$col is initialized with an empty collection $myNumber:=3 //assigns 3 to MyNumber variable  
+$myDate:=!2018/01/21! //assigns a date literal
+$myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
 $col:=New collection //$col is initialized with an empty collection
 ```
 
@@ -54,7 +57,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 - [**Operadores de cadenas**](dt_string.md#string-operators)
 
 
-## Compound assignment operators
+## Operadores de asignación compuestos
 
 4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
 
@@ -83,8 +86,8 @@ The following compound assignment operators are supported:
 | División       | Number /= Number   | Número | `$n/=5 //$n:=$n/5`                                                  |
 |                | Time /= Time       | Hora   | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
 |                | Time /= Number     | Número | `$t1/=5 //$t1:=$t1/5`                                               |
-|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
-|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
+|                | Picture /= Picture | Imagen | `$p1/=$p2 //$p1:=$p1/$p2 (añadir $p2 debajo de $p1)`                |
+|                | Picture /= Number  | Imagen | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`    |
 | Multiplicación | Text *= Number     | Texto  | `$t*="abc"  //$t:=$t*"abc"`                                         |
 |                | Number *= Number   | Número | `$n*=5 //$n:=$n*5`                                                  |
 |                | Time *= Time       | Hora   | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
@@ -187,6 +190,26 @@ $x2*=5 // $x2=10
 
 $t2:="Hello" 
 $t2*=2 // $t2="HelloHello"
+$d+=10 //$d=!2000-11-20!
+
+// Resta
+$x1:=10
+$x1-=5 //$x1=5
+
+$d1:=!2000-11-10!
+$d1-=10 // $d1=!2000-10-31!
+
+// Division
+$x3:=10
+$x3/=2 // $x3=5
+
+
+// Multiplication
+$x2:=10
+$x2*=5 // $x2=10
+
+$t2:="Hello" 
+$t2*=2 // $t2="HelloHello"
 
 ```
 
@@ -228,6 +251,7 @@ $v:=5 && !00-00-00! // 00/00/00
 $v := 5 && 10 && "hello" //"hello" // 00/00/00
 $v := 5 && 10 && "hello" //"hello" // 00/00/00
 $v := 5 && 10 && "hello" //"hello" // 00/00/00
+$v := 5 && 10 && "hello" //"hello" // 00/00/00
 $v := 5 && 10 && "hello" //"hello"
 ```
 
@@ -237,7 +261,7 @@ Say you have an online store, and some products have a tax rate applied, and oth
 
 To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
 
-So you can write this:
+Así que puede escribir esto:
 
 ```4d
 var $tax : Variant
@@ -344,6 +368,8 @@ ALERT($beverage) // "Beer" "Beer" : "Juice"
 
 ALERT($beverage) // "Beer" "Beer" : "Juice"
 
+ALERT($beverage) // "Beer" "Beer" : "Juice"
+
 ALERT($beverage) // "Beer"
 ```
 
@@ -355,7 +381,7 @@ This example stores a person's full name in a variable, and handles the case whe
 var $fullname : Text
 
 // If one of the names is missing, store the one that exists, otherwise store an empty string
-$fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
+$fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || "" ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
 ## Truthy y falsy
@@ -375,7 +401,7 @@ The following values are **falsy**:
 * Null picture
 * Null date !00-00-00!
 * "" - Cadenas vacías
-* [] - Empty collections
+* [] - Colecciones vacías
 * {} - Objetos vacios
 
 All other values are considered **truthy**, including:

@@ -19,7 +19,7 @@ You can develop 4D components for your own needs and keep them private. You can 
 Creating and installing 4D components is carried out directly from 4D:
 
 - To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). Puede utilizar alias o atajos.
-- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
+- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. Sin embargo, un componente no puede utilizar subcomponentes por sí mismo.
 - A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. No puede llamar a los métodos base ni a los triggers.
 - You cannot use the datastore, standard tables, or data files in 4D components. Sin embargo, un componente puede crear y/o utilizar tablas, campos y archivos de datos utilizando mecanismos de bases externas. Se trata de bases 4D independientes con las que se trabaja utilizando comandos SQL.
 - Un proyecto local que se ejecuta en modo interpretado puede utilizar componentes interpretados o compilados. Un proyecto local que se ejecuta en modo compilado no puede utilizar componentes interpretados. En este caso, sólo se pueden utilizar componentes compilados.
@@ -103,9 +103,9 @@ component_method("host_method_name")
 
 ## Compartir las clases y las funciones
 
-If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. By default, component classes and functions cannot be called from the 4D Code Editor of the host project. Additionally, you can control how component classes and functions are suggested in the host Code Editor.
+By default, component classes and functions cannot be called from the 4D Code Editor of the host project. If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. Additionally, you can control how component classes and functions are suggested in the host Code Editor.
 
-### Declaring the component namespace
+### Declaración del namespace
 
 To allow classes and functions of your component to be exposed in the host projects, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty: component classes are not available outside of the component context.
 
@@ -124,13 +124,13 @@ $area:=$rect.getArea()
 
 Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
-A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
+Las clases ORDA de un componente no están disponibles en el proyecto local. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
 
 ### Clases ocultas
 
 Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
 
-Note however that they can still be used if you know their names. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
+Sin embargo, hay que tener en cuenta que pueden seguir utilizándose si se conocen sus nombres. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
 
 ```4d
 $rect:=cs.eGeometry._Rectangle.new(10;20)

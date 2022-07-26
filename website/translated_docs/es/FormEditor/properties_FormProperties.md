@@ -8,11 +8,11 @@ title: Propiedades de los formularios
 ## Esquema de colores
 > La propiedad de esquema de color sólo se aplica en macOS.
 
-This property defines the color scheme for the form. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
+Esta propiedad define el esquema de colores para el formulario. This property defines the color scheme for the form. This can be changed for the form to one of the following two options:
 
 *   dark -- texto claro sobre fondo oscuro
-*   light - texto oscuro en un fondo claro
-> A defined color scheme can not be overridden by a CSS.
+*   light - texto oscuro en un fondo claro > A defined color scheme can not be overridden by a CSS.
+> El número de caracteres para el título de una ventana está limitado a 31.
 
 #### Gramática JSON
 
@@ -60,7 +60,7 @@ Each table in a database generally has at least two table forms. One for listing
 
 - Output form - the *output form* or *list form* displays a list of records, with a single line per record. The results of queries are shown in an output form and users can double-click a line to display the input form for that record. ![](assets/en/FormObjects/formOutput.png)
 
-- Input form - used for data entry. It displays a single record per screen and typically has buttons for saving and canceling modifications to the record and for navigating from record to record (*i.e.*, First Record, Last Record, Previous Record, Next Record). ![](assets/en/FormObjects/formInput.png)
+- Formulario de entrada - utilizado para la entrada de datos. It displays a single record per screen and typically has buttons for saving and canceling modifications to the record and for navigating from record to record (*i.e.*, First Record, Last Record, Previous Record, Next Record). ![](assets/en/FormObjects/formInput.png)
 
 
 Los tipos soportados dependen de la categoría de formulario:
@@ -69,7 +69,7 @@ Los tipos soportados dependen de la categoría de formulario:
 | Tipo de formulario              | Gramática JSON   | Descripción                                                      | Soportado con                            |
 | ------------------------------- | ---------------- | ---------------------------------------------------------------- | ---------------------------------------- |
 | Formulario detallado            | detailScreen     | Un formulario de visualización para introducir y modificar datos | Formularios proyecto - Formularios tabla |
-| Formulario detallado imprimible | detailPrinter    | A printed report with one page per record, such as an invoice    | Formularios proyecto - Formularios tabla |
+| Formulario detallado imprimible | detailPrinter    | Un informe impreso con una página por registro, como una factura | Formularios proyecto - Formularios tabla |
 | Formulario listado              | listScreen       | Un formulario para listar los registros en la pantalla           | Formularios tabla                        |
 | Formulario de lista imprimible  | listPrinter      | A printed report that list records                               | Formularios tabla                        |
 | Ninguno                         | *no destination* | A form with no specific feature                                  | Formularios proyecto - Formularios tabla |
@@ -83,7 +83,7 @@ Los tipos soportados dependen de la categoría de formulario:
 
 ---
 
-## Inherited Form Name
+## Nombre del formulario heredado
 
 This property designates the [form to inherit](forms.md#inherited-forms) in the current form.
 
@@ -110,9 +110,9 @@ Set to **\<None>** in the Property List (or " " in JSON) to inherited from a pro
 
 #### Gramática JSON
 
-| Nombre             | Tipos de datos  | Valores posibles           |
-| ------------------ | --------------- | -------------------------- |
-| inheritedFormTable | string o number | table name or table number |
+| Nombre             | Tipos de datos  | Valores posibles                  |
+| ------------------ | --------------- | --------------------------------- |
+| inheritedFormTable | string o number | nombre de tabla o número de tabla |
 
 
 ---
@@ -121,7 +121,7 @@ Set to **\<None>** in the Property List (or " " in JSON) to inherited from a pro
 
 Para que un formulario componente sea seleccionado como [subformulario](FormObjects/subform_overview.md) en una aplicación anfitriona, debe haber sido compartido explícitamente. When this property is selected, the form will be published in the host application.
 
-Only project forms can be specified as published subforms.
+Sólo los proyectos formulario se pueden especificar como subformularios publicados.
 
 
 
@@ -140,7 +140,7 @@ Cuando se utiliza esta opción, si la ventana se abre utilizando el comando `Ope
 
 *   la página actual,
 *   la posición, el tamaño y la visibilidad de cada objeto del formulario (incluyendo el tamaño y la visibilidad de las columnas de list box).
-> Esta opción no tiene en cuenta los objetos generados con el comando `OBJECT DUPLICATE`. Para que un usuario pueda recuperar su entorno al utilizar este comando, el desarrollador debe repetir la secuencia de creación, definición y posicionamiento de los objetos.
+> > Esta opción no tiene en cuenta los objetos generados con el comando `OBJECT DUPLICATE`. Para que un usuario pueda recuperar su entorno al utilizar este comando, el desarrollador debe repetir la secuencia de creación, definición y posicionamiento de los objetos.
 
 Cuando se selecciona esta opción, la opción [Guardar valor](FormObjects/properties_Object.md#save-value) está disponible para ciertos objetos.
 
@@ -163,9 +163,7 @@ El título de la ventana se utiliza cuando se abre el formulario mediante los co
 Puede utilizar referencias dinámicas para definir los nombres de ventana de los formularios, *es decir*:
 
 *   Una referencia estándar XLIFF almacenada en la carpeta Resources.
-*   Una etiqueta de tabla o de campo: la sintaxis a aplicar es <?[TableNum]FieldNum> o 
-  
-  <?[TableName]FieldName>.
+*   Una etiqueta de tabla o de campo: la sintaxis a aplicar es <?[TableNum]FieldNum> o
 *   Una variable o un campo: la sintaxis a aplicar es \<VariableName> o <[TableName]FieldName>. El valor actual del campo o de la variable se mostrará en el título de la ventana.
 
 > El número de caracteres para el título de una ventana está limitado a 31.

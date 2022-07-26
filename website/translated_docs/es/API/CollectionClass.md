@@ -196,8 +196,8 @@ Puede pasar cualquier número de valores de los siguientes tipos soportados:
 *   time (almacenado como número de milisegundos - real)
 *   null
 *   objeto compartido(*)
-*   collection compartida(*)
-> A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+*   collection compartida(*) > A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+> Esta función modifica la colección original.
 
 (*)Cuando un objeto o colección compartida se añade a una colección compartida, comparten el mismo *identificador de bloqueo*. Para obtener más información sobre este punto, consulte la guía del **Desarrollador 4D**.
 
@@ -342,7 +342,7 @@ La función `.combine()` <!-- REF #collection.combine().Summary -->inserta *col2
 > Esta función modifica la colección original.
 
 Por defecto, los elementos *col2* se añaden al final de la colección original. Puede pasar en *index* la posición en la que quiere que se inserten los elementos *col2* en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el *índice* inicial real se fijará en la longitud de la colección.
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -519,6 +519,11 @@ Este ejemplo ilustra el uso de la opción `ck resolve pointers`:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
+
+ $what:="You!"
+ $col3:=$col2.copy(ck resolve pointers)
+ ALERT($col3[0].alpha+" "+$col3[1].what) //muestra "Hello You!"
  ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
 
  $what:="You!"
@@ -737,7 +742,7 @@ Si la colección contiene objetos, puede pasar el parámetro *propertyPath* para
 La función `.equal()` <!-- REF #collection.equal().Summary -->compara collection con collection2 <!-- END REF -->y devuelve **true** si son idénticas (comparación profunda/deep comparison).
 
 Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluación diferencie entre mayúsculas y minúsculas o que diferencie los caracteres acentuados, pase la constante `ck diacritical` en el parámetro option.
-> Los elementos con valores **Null** no son iguales a los elementos Undefined.
+> Esta función no modifica la colección original.
 
 #### Ejemplo
 
@@ -771,7 +776,7 @@ Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluaci
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -784,7 +789,7 @@ Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluaci
 | ---------- | ----------- |:--:| ---------------------------------------------------------- |
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                           |
 | formula    | 4D.Function | -> | Objeto formula                                             |
-| methodName | Texto       | -> | Name of a method                                           |
+| methodName | Texto       | -> | Nombre de un método                                        |
 | param      | Mixed       | -> | Parameter(s) to pass to *formula* or *methodName*          |
 | Resultado  | Booleano    | <- | True si todos los elementos han pasado la prueba con éxito |
 
@@ -800,7 +805,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -894,7 +899,7 @@ El contenido de la colección devuelta depende del parámetro *targetPath*:
     Por defecto, los elementos cuya *propertyPath* es null o indefinida se ignoran en la colección resultante. Puede pasar la constante `ck keep null` en el parámetro *option* para incluir estos valores como elementos nulos en la colección devuelta.
 
 
-*   Si se pasan uno o más parámetros *targetPath*, `.extract()` rellena la nueva colección con las propiedades *propertyPath* y cada elemento de la nueva colección es un objeto con propiedades *targetPath* rellenadas con las propiedades *propertyPath* correspondientes. Se mantienen los valores null (el parámetro *option* se ignora) con esta sintaxis.
+*   Si se pasan uno o más parámetros *targetPath*, `.extract()` rellena la nueva colección con las propiedades *propertyPath* y cada elemento de la nueva colección es un objeto con propiedades *targetPath* rellenadas con las correspondientes propiedades *propertyPath*. Se mantienen los valores null (el parámetro *option* se ignora) con esta sintaxis.
 
 
 #### Ejemplo 1
@@ -993,7 +998,7 @@ En caso de incoherencia, se aplican las siguientes reglas:
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -1006,7 +1011,7 @@ En caso de incoherencia, se aplican las siguientes reglas:
 | Parámetros | Tipo        |    | Descripción                                                          |
 | ---------- | ----------- |:--:| -------------------------------------------------------------------- |
 | formula    | 4D.Function | -> | Objeto formula                                                       |
-| methodName | Texto       | -> | Name of a method                                                     |
+| methodName | Texto       | -> | Nombre de un método                                                  |
 | param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*                    |
 | Resultado  | Collection  | <- | Nueva colección que contiene elementos filtrados (copia superficial) |
 
@@ -1023,7 +1028,7 @@ You designate the callback to be executed to filter collection elements using ei
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1074,7 +1079,7 @@ Quiere filtrar los elementos según su tipo de valor:
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -1088,7 +1093,7 @@ Quiere filtrar los elementos según su tipo de valor:
 | ---------- | ----------- |:--:| ------------------------------------------------------- |
 | startFrom  | Integer     | -> | Índice para iniciar la búsqueda en                      |
 | formula    | 4D.Function | -> | Objeto formula                                          |
-| methodName | Texto       | -> | Name of a method                                        |
+| methodName | Texto       | -> | Nombre de un método                                     |
 | param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*       |
 | Resultado  | any         | <- | Primer valor encontrado, o Undefined si no se encuentra |
 
@@ -1105,7 +1110,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1163,7 +1168,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -1178,7 +1183,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 | ---------- | ----------- |:--:| ----------------------------------------------------------- |
 | startFrom  | Integer     | -> | Índice para iniciar la búsqueda en                          |
 | formula    | 4D.Function | -> | Objeto formula                                              |
-| methodName | Texto       | -> | Name of a method                                            |
+| methodName | Texto       | -> | Nombre de un método                                         |
 | param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*           |
 | Resultado  | Integer     | <- | Índice del primer valor encontrado, o -1 si no se encuentra |
 
@@ -1195,7 +1200,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1329,7 +1334,7 @@ La función `.indices()` funciona exactamente igual que la función [`.query()`]
 El parámetro *queryString* utiliza la siguiente sintaxis:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+Valor del comparador propertyPath {logicalOperator propertyPath comparator value}
 ```
 
 Para una descripción detallada de los parámetros *queryString* y *value*, consulte la función `dataClass.query()`.
@@ -1382,7 +1387,7 @@ La función `.insert()` <!-- REF #collection.insert().Summary -->inserta *elemen
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere que se inserte el elemento en la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0.
+> Esta función no modifica la colección original.
 
 *   Si *índice* > la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
 *   Si *index* <0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
@@ -1546,7 +1551,7 @@ La propiedad `.length` se inicializa cuando se crea la colección. Añadir o eli
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -1559,7 +1564,7 @@ La propiedad `.length` se inicializa cuando se crea la colección. Añadir o eli
 | Parámetros | Tipo        |    | Descripción                                       |
 | ---------- | ----------- |:--:| ------------------------------------------------- |
 | formula    | 4D.Function | -> | Objeto formula                                    |
-| methodName | Texto       | -> | Name of a method                                  |
+| methodName | Texto       | -> | Nombre de un método                               |
 | param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
 | Resultado  | Collection  | <- | Colección de valores transformados                |
 
@@ -1577,7 +1582,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1741,7 +1746,7 @@ Si no se pasa ningún parámetro, la función ordena los valores escalares de la
 
 También puede pasar un parámetro de criterios para definir cómo deben ordenarse los elementos de la colección. Se admiten tres sintaxis para este parámetro:
 
-*   *pathStrings*: Texto (fórmula). **Sintaxis**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (orden por defecto: asc). *pathStrings* contiene una fórmula compuesta de 1 a x rutas de propiedades y (opcionalmente) órdenes de clasificación, separados por comas. El orden en que se pasan las propiedades determina la prioridad de ordenación de los elementos de la colección. Por defecto, las propiedades se clasifican en orden ascendente. Puede definir el orden de clasificación de una propiedad en la cadena de criterios, separado de la ruta de la propiedad por un solo espacio: pase "asc" para ordenar en orden ascendente o "desc" en orden descendente.
+*   *pathStrings* : Text (fórmula). **Sintaxis**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (orden por defecto: asc). *pathStrings* contiene una fórmula compuesta de 1 a x rutas de propiedades y (opcionalmente) órdenes de clasificación, separados por comas. El orden en que se pasan las propiedades determina la prioridad de ordenación de los elementos de la colección. Por defecto, las propiedades se clasifican en orden ascendente. Puede definir el orden de clasificación de una propiedad en la cadena de criterios, separado de la ruta de la propiedad por un solo espacio: pase "asc" para ordenar en orden ascendente o "desc" en orden descendente.
 
 *   *pathObjects* : Collection. Puede añadir tantos objetos en la colección *pathObjects* como sea necesario. Por defecto, las propiedades se clasifican en orden ascendente ("descending" es false). Cada elemento de la colección contiene un objeto estructurado de la siguiente manera:
 
@@ -1849,7 +1854,7 @@ Ordenar con una ruta de propiedad:
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -1862,8 +1867,8 @@ Ordenar con una ruta de propiedad:
 | Parámetros | Tipo        |    | Descripción                                        |
 | ---------- | ----------- |:--:| -------------------------------------------------- |
 | formula    | 4D.Function | -> | Objeto formula                                     |
-| methodName | Texto       | -> | Name of a method                                   |
-| extraParam | any         | -> | Parameter(s) to pass                               |
+| methodName | Texto       | -> | Nombre de un método                                |
+| extraParam | any         | -> | Parámetro(s) a pasar                               |
 | Resultado  | Collection  | <- | Copia ordenada de la colección (copia superficial) |
 
 <!-- END REF -->
@@ -2082,12 +2087,12 @@ La función `.query()` <!-- REF #collection.query().Summary --> devuelve todos l
 El parámetro *queryString* utiliza la siguiente sintaxis:
 
 ```4d
-propertyPath comparator value {logicalOperator propertyPath comparator value}
+Valor del comparador propertyPath {logicalOperator propertyPath comparator value}
 ```
 
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value* y *querySettings*, consulte la descripción de la función [`dataClass.query()`](DataClassClass.md#query).
 
-> Las fórmulas no son soportadas por la función `collection.query()`, ni en el parámetro *queryString* ni como parámetro del objeto *formula*.
+> Esta función no modifica la colección original.
 
 #### Ejemplo 1
 
@@ -2112,6 +2117,10 @@ Para obtener información detallada sobre cómo construir una consulta utilizand
  $c:=New collection
  $c.push(New object("name";"Smith";"dateHired";!22-05-2002!;"age";45))
  $c.push(New object("name";"Wesson";"dateHired";!30-11-2017!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
  $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
@@ -2144,7 +2153,7 @@ Este ejemplo devuelve las personas contratadas hace más de 90 días:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018 si hoy es 01/10/2018
 ```
 
 
@@ -2160,7 +2169,7 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -2173,9 +2182,9 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 | Parámetros | Tipo                                            |    | Descripción                                                                       |
 | ---------- | ----------------------------------------------- |:--:| --------------------------------------------------------------------------------- |
 | formula    | 4D.Function                                     | -> | Objeto formula                                                                    |
-| methodName | Texto                                           | -> | Name of a method                                                                  |
+| methodName | Texto                                           | -> | Nombre de un método                                                               |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *formula* or *methodName* |
-| param      | expresión                                       | -> | Parameter(s) to pass                                                              |
+| param      | expresión                                       | -> | Parámetro(s) a pasar                                                              |
 | Resultado  | Text, Number, Object, Collection, Date, Boolean | <- | Resultado del valor del acumulador                                                |
 
 <!-- END REF -->
@@ -2202,7 +2211,7 @@ La retrollamada recibe los siguientes parámetros:
 *   en *$2: param*
 *   en *$N...*: *paramN...*
 
-The callback sets the following parameter(s):
+La retrollamada define los siguientes parámetros:
 
 *   *$1.accumulator*: valor que va a ser modificado por la función y que es inicializado por *initValue*.
 *   *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -2274,7 +2283,7 @@ La función `.remove()` <!-- REF #collection.remove().Summary --> elimina uno o 
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0. Si *índice* es mayor que la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
+> Esta función no modifica la colección original. Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*).
 
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 *   Si el valor calculado < 0, *index* toma el valor 0.
@@ -2497,7 +2506,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -2511,8 +2520,8 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 | ---------- | ----------- |:--:| ------------------------------------------------------------ |
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                             |
 | formula    | 4D.Function | -> | Objeto formula                                               |
-| methodName | Texto       | -> | Name of a method                                             |
-| param      | Mixed       | -> | Parameter(s) to pass                                         |
+| methodName | Texto       | -> | Nombre de un método                                          |
+| param      | Mixed       | -> | Parámetro(s) a pasar                                         |
 | Resultado  | Booleano    | <- | True si al menos un elemento ha superado la prueba con éxito |
 
 <!-- END REF -->
@@ -2527,7 +2536,7 @@ You designate the 4D code (callback) to be executed to evaluate collection eleme
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. Recibe un objeto `` en el primer parámetro ($1).
 
 
 La retrollamada recibe los siguientes parámetros:
@@ -2578,7 +2587,7 @@ You want to know if at least one collection value is >0.
 <details><summary>Histórico</summary>
 | Versión | Modificaciones     |
 | ------- | ------------------ |
-| v19 R6  | Support of formula |
+| v19 R6  | Soporte de fórmula |
 | v16 R6  | Añadidos           |
 </details>
 
@@ -2591,7 +2600,7 @@ You want to know if at least one collection value is >0.
 | Parámetros | Tipo        |    | Descripción                 |
 | ---------- | ----------- |:--:| --------------------------- |
 | formula    | 4D.Function | -> | Objeto formula              |
-| methodName | Texto       | -> | Name of a method            |
+| methodName | Texto       | -> | Nombre de un método         |
 | extraParam | any         | -> | Parámetros del método       |
 | Resultado  | Collection  | <- | Colección original ordenada |
 
@@ -2614,7 +2623,7 @@ La retrollamada recibe los siguientes parámetros:
     - *$1.value2* (todo tipo): segundo valor del elemento a comparar
 - $2...$N (cualquier tipo): parámetros adicionales
 
-If you used a method, you must set the folllowing parameter:
+Si utilizó un método, debe definir el siguiente parámetro:
 
 - *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise.
 

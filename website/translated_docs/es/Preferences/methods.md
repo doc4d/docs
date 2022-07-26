@@ -13,7 +13,7 @@ This page allows selecting, creating, or configuring Code Editor themes. A theme
 
 ### Lista de temas
 
-In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D provides two themes by default:
+En esta lista, se selecciona el tema que se aplicará al editor de código. All available themes are displayed, including custom themes (if any). 4D ofrece dos temas por defecto:
 
 *   **Tema Light por defecto**
 *   **Tema oscuro por defecto**
@@ -24,7 +24,7 @@ A **myTheme** theme is automatically added if you already customized Code Editor
 
 ### Creación de temas personalizados
 
-You can create themes that you can fully customize. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
+Puede crear temas totalmente personalizables. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
 
 ### Archivos de temas personalizados
 
@@ -64,7 +64,7 @@ These options configure the various colors used in the Code Editor and debugger 
 | **Color de fondo**                                     | Color de fondo de la ventana del editor de código.                                                                                                                       |
 | **Borde de la línea en ejecución en el depurador**     | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
 | **Color de fondo de la línea del cursor**              | Color de fondo de la línea que contiene el cursor.                                                                                                                       |
-| **Color de fondo de la línea en ejecución**            | Background color of line being executed in the debugger.                                                                                                                 |
+| **Color de fondo de la línea en ejecución**            | Color de fondo de la línea que se está ejecutando en el depurador.                                                                                                       |
 | **Resaltar las palabras encontradas**                  | Color de resaltado de las palabras encontradas en una búsqueda.                                                                                                          |
 | **Destacar los paréntesis**                            | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
 | **Resaltado de los bloques**                           | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
@@ -87,7 +87,7 @@ Esta página configura las opciones de visualización del Editor de Código.
 
 
 
-#### 4D Programming Language (Use regional system settings)
+#### Lenguaje de programación 4D (Utilice los parámetros regionales del sistema)
 
 Allows you to disable/enable the "international" code settings for the local 4D application.
 - **unchecked** (default): English-US settings and the English programming language are used in 4D methods.
@@ -97,7 +97,7 @@ Allows you to disable/enable the "international" code settings for the local 4D 
 
 #### Indentación
 
-Changes the indentation value for the 4D code in the Code Editor. The width must be specified in points (10 by default).
+Changes the indentation value for the 4D code in the Code Editor. El ancho debe especificarse en puntos (10 por defecto).
 
 4D code is automatically indented in order to reveal its structure:
 
@@ -131,7 +131,7 @@ The highlight color can be set in the [Theme](#theme-definition) page.
 
 #### Mostrar siempre las líneas de bloques
 
-Permite ocultar permanentemente las líneas verticales de bloques. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
+Permite ocultar permanentemente las líneas verticales de bloques. Las líneas de bloque están diseñadas para conectar visualmente los nodos. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
 
 ![](assets/en/Preferences/optionsBlockLines.png)
 
@@ -168,27 +168,27 @@ Allows to highlight all occurrences of the same variable or field in an open met
 
 ![](assets/en/Preferences/optionsVariables.png)
 
-- **No**(default): No highlight
+- **No**(por defecto): no resaltado
 - **On cursor**: All occurrences are highlighted when the text is clicked
 - **On selection**: All occurrences are highlighted when the text is selected
 
 The highlight color can be set in the [Theme](#theme-definition) page.
 
-#### Debug (Highlight the line running)
+#### Depurar (Resaltar la línea en ejecución)
 
 Highlights the line that is currenty running in the debugger in addition to the regular yellow arrow indicator.
 
 ![](assets/en/Preferences/optionsLine.png)
 
-If you deselect this option, only the yellow arrow is shown.
+Si deselecciona esta opción, sólo se mostrará la flecha amarilla.
 
 ### Sugerencias
 
 This area lets you configure autocomplete mechanisms in the Code Editor to adapt it to your own work habits.
 
-|                                   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Apertura automática de la ventana | Triggers the automatic display of the suggestion window for:<p> <ul><li>Constantes</li><li>Variables (local and interprocess) and object attributes</li><li>Tablas</li><li>Prototipos (es decir las funciones de clase)</li></ul><p><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:<p><p>![](assets/en/Preferences/suggestionsAutoOpen.png)<p><p>    You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
-| Validación de una sugerencia      | Sets the entry context that allows the Code Editor to validate automatically the current suggestion displayed in the autocomplete window.<p><p><ul><li>**Tab and delimiters**<br>When this option is selected, you can validate the current selection with the Tab key or any delimiter that is relevant to the context. For example, if you enter "ALE" and then "(", 4D automatically writes "ALERT(" in the editor. Here is the list of delimiters that are taken into account:<br> ( ; : = < [ {</li><li>**Tab only**<br>When this option is selected, you can only use the Tab key to insert the current suggestion. Esto se puede utilizar más concretamente para facilitar la introducción de caracteres delimitadores en los nombres de los elementos, como ${1}.<p><p>**Note**: You can also double-click in the window or press the Carriage return key to validate a suggestion.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                      |
+|                                   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Apertura automática de la ventana | Activa la visualización automática de la ventana de sugerencias para:<p> <ul><li>Constantes</li><li>Variables (locales e interproceso) y atributos de objetos</li><li>Tablas</li><li>Prototipos (es decir las funciones de clase)</li></ul><p><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:<p><p>![](assets/en/Preferences/suggestionsAutoOpen.png)<p><p>    You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
+| Validación de una sugerencia      | Sets the entry context that allows the Code Editor to validate automatically the current suggestion displayed in the autocomplete window.<p><p><ul><li>**Tab and delimiters**<br>When this option is selected, you can validate the current selection with the Tab key or any delimiter that is relevant to the context. For example, if you enter "ALE" and then "(", 4D automatically writes "ALERT(" in the editor. Here is the list of delimiters that are taken into account:<br> ( ; : = < [ {</li><li>**Tab only**<br>When this option is selected, you can only use the Tab key to insert the current suggestion. Esto se puede utilizar más concretamente para facilitar la introducción de caracteres delimitadores en los nombres de los elementos, como ${1}.<p><p>**Note**: You can also double-click in the window or press the Carriage return key to validate a suggestion.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                               |
 	
 

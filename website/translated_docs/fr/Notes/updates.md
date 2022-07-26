@@ -8,11 +8,11 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 ## 4D v19 R6
 
-- New [HTTPRequest](API/HTTPRequest) class.
+- New [HTTPRequest](API/HTTPRequestClass.md) class.
 - Collection functions that can call code now support function objects as *formula* parameter: [`.every()`](API/CollectionClass.md#every), [`.filter()`](API/CollectionClass.md#filter), [`.find()`](API/CollectionClass.md#find), [`.findIndex()`](API/CollectionClass.md#findindex), [`.map()`](API/CollectionClass.md#map), [`.orderByMethod()`](API/CollectionClass.md#orderbymethod), [`.reduce()`](API/CollectionClass.md#reduce), [`.some()`](API/CollectionClass.md#some), [`.sort()`](API/CollectionClass.md#sort)
 - Listbox cells support [horizontal](FormObjects/properties_CoordinatesAndSizing.md#horizontal-padding) and [vertical](FormObjects/properties_CoordinatesAndSizing.md#vertical-padding) padding.
 - 4D View Pro: new [VP CREATE TABLE](ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
-- New page explaining [why and how 4D collects data](Admin/data-collect).
+- New page explaining [why and how 4D collects data](Admin/data-collect.md).
 
 
 ## 4D v19 R5
@@ -34,7 +34,7 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 ## 4D v19 R4
 
-- Les [attributs d'alias](ORDA/ordaClasses.md#alias-attributes) sont disponibles dans les classes ORDA.
+- [Alias attributes](ORDA/ordaClasses.md#alias-attributes-1) are available in ORDA classes.
 
 - Prise en charge des instructions [break et continue](Concepts/cf_looping.md#break-and-continue) dans les boucles.
 - Prise en charge de l'instruction [return](Concepts/flow-control.md#return-expression) et de [l'expression return](Concepts/parameters.md#return-expression) pour retourner des valeurs.

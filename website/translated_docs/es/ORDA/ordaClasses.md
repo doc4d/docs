@@ -7,7 +7,7 @@ title: Clases del modelo de datos
 
 ORDA allows you to create high-level class functions above the data model. This allows you to write business-oriented code and "publish" it just like an API. Datastore, dataclasses, entity selections, and entities are all available as class objects that can contain functions.
 
-For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. It would be as simple as calling:
+For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. Sería tan sencillo como llamar:
 
 ```4d
 $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
@@ -94,7 +94,7 @@ Function getDesc
 ```
 
 
-This function can then be called:
+Esta función puede ser llamada:
 
 ```4d
 $desc:=ds.getDesc() //"Database exposing..."
@@ -108,7 +108,7 @@ Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
 - **Extends**: 4D.DataClass
 - **Class name**: cs.*DataClassName* (where *DataClassName* is the table name)
-- **Example name**: cs.Employee
+- **Ejemplo**: cs.Employee
 
 
 
@@ -170,7 +170,7 @@ Function getCityName()
     End if
 ```
 
-The client application opens a session on the remote datastore:
+La aplicación cliente abre una sesión en el datastore remoto:
 
 ```4d
 $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManager")
@@ -190,7 +190,7 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 
 - **Extends**: 4D.EntitySelection
 - **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Ejemplo**: cs.EmployeeSelection
 
 
 #### Ejemplo
@@ -221,7 +221,7 @@ Each table exposed with ORDA offers an Entity class in the `cs` class store.
 
 - **Extends**: 4D.Entity
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
-- **Example name**: cs.CityEntity
+- **Ejemplo**: cs.CityEntity
 
 #### Atributos calculados
 
@@ -289,7 +289,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 ### Ejecución apropiativa
 
-When compiled, data model class functions are executed:
+Cuando se compilan, las funciones de clase del modelo de datos se ejecutan:
 
 - in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
 - in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
@@ -472,7 +472,7 @@ The *$event* parameter contains the following properties:
 
 #### Ejemplos
 
-- Query on the *fullName* computed attribute.
+- Búsqueda en el atributo calculado *fullName*.
 
 ```4d
 Function query fullName($event : Object)->$result : Object
@@ -575,7 +575,7 @@ The *$event* parameter contains the following properties:
 | descending    | Booleano | `true` for descending order, `false` for ascending order                                              |
 | result        | Variant  | Valor a tratar por el atributo calculado. Pass `Null` if you want to let 4D execute the default sort. |
 
-> You can use either the `operator` or the `descending` property. It is essentially a matter of programming style (see examples).
+> You can use either the `operator` or the `descending` property. Es esencialmente una cuestión de estilo de programación (ver ejemplos).
 
 You can return the `orderBy` string either in the `$event.result` object property or in the *$result* function result. If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
 
@@ -640,14 +640,14 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 *targetPath* is an attribute path containing one or more levels, such as "employee.company.name". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name.
 
-An alias can be used as a part of a path of another alias.
+Un alias puede ser utilizado como parte de una ruta de otro alias.
 
 A [computed attribute](#computed-attributes-1) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid.
 
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
 
-### Using alias attributes
+### Uso de los atributos alias
 
 Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in class functions such as:
 
@@ -710,7 +710,7 @@ Alias teachers courses.teacher //relatedEntities
 
 En la dataclass Course:
 
-- an alias attribute returns another label for the "name" attribute
+- un atributo alias devuelve otra etiqueta para el atributo "name"
 - un atributo alias devuelve el nombre del profesor
 - un atributo alias devuelve el nombre del estudiante
 
@@ -772,7 +772,7 @@ Las peticiones remotas incluyen:
 - Requests sent by remote 4D applications connected through `Open datastore`
 - Peticiones REST
 
-> Regular 4D client/server requests are not impacted. Data model class functions are always available in this architecture.
+> Las peticiones cliente/servidor 4D estándar no se ven afectadas. Data model class functions are always available in this architecture.
 
 A function that is not exposed is not available on remote applications and cannot be called on any object instance from a REST request. If a remote application tries to access a non-exposed function, the "-10729 - Unknown member method" error is returned.
 
@@ -928,7 +928,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 ![](assets/en/ORDA/ORDA_Classes-3.png)
 
 
-> By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
+> Por defecto, las clases ORDA vacías no se muestran en el Explorador. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
 ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
 

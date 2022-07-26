@@ -35,13 +35,13 @@ This is where you [write and edit](write-class-method.md) your code. The editor 
 
 You can customize the display of the editing area. Any customization is automatically passed on to all the windows of the code editor:
 
-| Option                                 | Description                                                                                                                                                                                                 | Set in...                                                                                                                                                                                                  |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                                                                                      |
-| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
-| **spaces**                             | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                                                                                           |
-| **themes**                             | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
-| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
+| Option                                 | Description                                                                                                                                                                                                 | Set in...                                                                                                                                      |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                          |
+| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
+| **spaces**                             | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                               |
+| **themes**                             | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
+| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                     |
 
 ## Lists area
 
@@ -60,7 +60,7 @@ You can enlarge or reduce the relative width of each list area by dragging one o
 
 - You can hide the lists in all the windows in the following ways:
   - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
-  - For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
+  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened.
 
 #### Available lists of items
 
@@ -191,7 +191,7 @@ becomes
 
 `variable2:=variable1`
 
-This function is extremely useful for reversing a set of assignments used to get or set properties, or to correct input errors. Within the selection, only the lines assigning a value will be modified. To use this function, select the line(s) to be modified, then choose **Method** > **Swap Expression** or use the context menu of the area.
+This function is extremely useful for reversing a set of assignments used to get or set properties, or to correct input errors. To use this function, select the line(s) to be modified, then choose **Method** > **Swap Expression** or use the context menu of the area. Within the selection, only the lines assigning a value will be modified.
 
 ### Multiple copy-paste and numbering of clipboards
 
@@ -238,7 +238,7 @@ When the characters you enter correspond to a single possibility, this suggested
 
 > If you checked the **Insert () and closing } ) ] "** option in the **Methods** page of the **Preferences**, 4D will also automatically add **()** after a 4D command, keyword or project method that requires one or more mandatory arguments (after accepting a suggestion or completion): ![](assets/en/code-editor/insert-and-closing-1.png) -> ![](assets/en/code-editor/insert-and-closing-2.png)
 
-Autocompletion also works with code structures (e.g. If..End if, For each...End for each): when you enter the first part of the structure, the Code Editor will automatically suggest the closing part:![](assets/en/code-editor/autocomplete-code-structures.png)
+Autocompletion also works with code structures (e.g. If..End if, For each...End for each): when you enter the first part of the structure, the Code Editor will automatically suggest the closing part: ![](assets/en/code-editor/autocomplete-code-structures.png)
 
 If there are several suggestions available, 4D displays them in a pop-up list when you hit the **Tab** key:
 
@@ -269,7 +269,7 @@ If the characters typed correspond to different types of objects, the list displ
 * SQL keywords
 * Macros (displayed between < >)
 
-> For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened. Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option.
+> For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
 
 ### Propriétés des objets
 
@@ -286,7 +286,7 @@ Once created, property names are stored in an internal global list and are avail
 
 ![](assets/en/code-editor/autocomplete-object-attributes-2.png)
 
-The list of suggestions is dynamically updated while you edit code. The list is also updated when you preview a method, class or function in the Explorer. When switching between windows, new/edited property names are always added to the global list.
+The list of suggestions is dynamically updated while you edit code. When switching between windows, new/edited property names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
 
 When the database is restarted, the list is reinitialized.
 
@@ -359,7 +359,7 @@ When the method, class or function is validated, 4D checks for:
 
 The Code Editor can only check for obvious syntax errors (misspellings and the like). It does not check for errors that only occur during execution. Execution errors are caught by 4D when the code is executed.
 
-The compiler also provides indispensable help for detecting errors. 4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
+4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
 
 ## Using help tips and status bar
 
@@ -395,13 +395,11 @@ Voici deux manières de créer des commentaires :
 Used to create a single line comment. Inserting // at the beginning of a line will create a single line comment. The length of single line comments is limited to the maximum size of a line (32,000 characters).
 
 <pre>&lt;code class="//This is a comment\" spaces=">
- &lt;code class="//This is a comment\" spaces=">
  For(vCounter;1;2)\
   //comment\
   //comment\
   //comment\
  End for
-&lt;/code>
 &lt;/code></pre>
 
 #### `/*comment*/`
@@ -412,7 +410,7 @@ Both inline and multiline comment blocks begin with /*and end with*/.
 
 - *Inline comments* -  can be anywhere in the code.The length of inline comments is limited to the maximum size of a line (32,000 characters). ![](assets/en/code-editor/inline-comment.png)
 
--   The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. There is no limit on the number of lines. ![](assets/en/code-editor/multiline-comment.png)
+-   *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. There is no limit on the number of lines. ![](assets/en/code-editor/multiline-comment.png)
 
 > Multiline comments at the end of a line are not supported.-
 
@@ -420,7 +418,7 @@ The **Comment/Uncomment** command, found in the **Method** menu as well as in th
 
 ![](assets/en/code-editor/comment-uncomment-1.png) --> ![](assets/en/code-editor/comment-uncomment-2.png)
 
-When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only active code, the **Comment** command is applied. When the selection contains only commented lines, the **Uncomment** command is applied.
+When the selection contains only active code, the **Comment** command is applied. When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only commented lines, the **Uncomment** command is applied.
 
 > The **Comment/Uncomment** command only operates with full lines --- it cannot be used to comment only part of a line.
 

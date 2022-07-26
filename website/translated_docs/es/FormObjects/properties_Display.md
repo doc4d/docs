@@ -6,7 +6,7 @@ title: Visualización
 ---
 ## Formato Alfa
 
-Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Here is a list of formats provided for alphanumeric fields:
+Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Aquí hay una lista de formatos suministrados para los campos alfanuméricos:
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
@@ -16,21 +16,21 @@ The number sign (#) is the placeholder for an alphanumeric display format. You c
 
 For example, consider a part number with a format such as "RB-1762-1".
 
-The alpha format would be:
+El formato alfa sería:
 
     ##-####-#
 
-When the user enters "RB17621," the field displays:
+Cuando el usuario introduce "RB17621," el campo muestra:
 
     RB-1762-1
 
 El campo contiene realmente "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is: 
+If the user enters more characters than the format allows, 4D displays the last characters. Por ejemplo, si el formato es: 
 
     (#######)
 
-and the user enters "proportion", the field displays:
+y el usuario introduce "proporción", el campo muestra:
 
     (portion)
 
@@ -65,7 +65,7 @@ Date formats control the way dates appear when displayed or printed. For data en
 
 La siguiente tabla muestra las opciones disponibles:
 
-| Nombre del formato            | Cadena JSON     | Example (US system)            |
+| Nombre del formato            | Cadena JSON     | Ejemplo (sistema USA)          |
 | ----------------------------- | --------------- | ------------------------------ |
 | System date short             | - (por defecto) | 03/25/20                       |
 | System date abbreviated *(1)* | systemMedium    | Wed, Mar 25, 2020              |
@@ -113,8 +113,8 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 | -------- | ------------------------------------ |
 | #        | No muestra nada                      |
 | 0        | Muestra 0                            |
-| ^        | Displays a space (1)                 |
-| *        | Displays an asterisk                 |
+| ^        | Muestra un espacio (1)               |
+| *        | Muestra un asterisco                 |
 
 (1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
 
@@ -130,7 +130,7 @@ Each placeholder character has a different effect on the display of leading or t
 Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. Si el usuario introduce 26, el campo muestra 26.
 
 
-### Separator characters
+### Caracteres separadores
 
 The numeric display formats (except for scientific notations) are automatically based on regional system parameters. 4D replaces the “.” and “,” characters by, respectively, the decimal separator and the thousand separator defined in the operating system. The period and comma are thus considered as placeholder characters, following the example of 0 or #.
 > On Windows, when using the decimal separator key of the numeric keypad, 4D makes a distinction depending on the type of field where the cursor is located: *   in a Real type field, using this key will insert the decimal separator defined in the system, *   in any other type of field, this key inserts the character associated with the key, usually a period (.) or comma (,).
@@ -150,9 +150,9 @@ If characters are placed between placeholders, they appear only if digits are di
 
     ###.##0
 
-the point appears only if the user enters at least four digits.
+el punto aparece sólo si el usuario introduce al menos cuatro dígitos.
 
-Spaces are treated as characters in number display formats.
+Los espacios se tratan como caracteres en los formatos de visualización de números.
 
 ### Formatos para positivo, negativo y cero
 
@@ -277,9 +277,9 @@ The **Scaled to fit** format causes 4D to resize the picture to fit the dimensio
 
 ### Truncado (centrado y no centrado)
 
-`JSON grammar: "truncatedCenter" / "truncatedTopLeft"`
+`Gramática JSON: "truncatedCenter" / "truncatedTopLeft"`
 
-The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D crops equally from each edge and from the top and bottom.
+The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D recorta por igual desde cada borde y desde la parte superior e inferior.
 
 The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D crops from the right and bottom.
 > When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
@@ -288,7 +288,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 ### Scaled to fit (proportional) and Scaled to fit centered (proportional)
 
-`JSON grammar: "proportionalTopLeft" / "proportionalCenter"`
+`Gramática JSON: "proportionalTopLeft" / "proportionalCenter"`
 
 When you use **Scaled to fit (proportional)**, the picture is reduced proportionally on all sides to fit the area created for the picture. The **Scaled to fit centered (proportional)** option does the same, but centers the picture in the picture area.
 
@@ -342,8 +342,8 @@ The table below shows the Time field display formats and gives examples:
 | Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                            | 270 Minutos 25 Segundos        |
 | ISO Date Time                | iso8601         | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
 | System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                  | 04:30:25                       |
-| System time long abbreviated | systemMedium    | macOS only: Abbreviated time format defined in the system. <br>Windows: this format is the same as the System time short format            | 4•30•25 AM                     |
-| System time long             | systemLong      | macOS only: Long time format defined in the system. <br>Windows: this format is the same as the System time short format                   | 4:30:25 AM HNEC                |
+| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: this format is the same as the System time short format       | 4•30•25 AM                     |
+| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format     | 4:30:25 AM HNEC                |
 
 #### Gramática JSON
 
@@ -359,13 +359,13 @@ The table below shows the Time field display formats and gives examples:
 
 
 ---
-## Text when False/Text when True
+## Texto cuando False/Texto cuando True
 
 When a [boolean expression](properties_Object.md#expression-type) is displayed as:
 - a text in an [input object](input_overview.md)
 - a ["popup"](properties_Display.md#display-type) in a [list box column](listbox_overview.md#list-box-columns),
 
-... you can select the text to display for each value:
+... puede seleccionar el texto que se mostrará para cada valor:
 - **Text when True** - the text to be displayed when the value is "true"
 - **Text when False** - the text to be displayed when the value is "false"
 
@@ -386,11 +386,11 @@ When a [boolean expression](properties_Object.md#expression-type) is displayed a
 ---
 ## Tipo de visualización
 
-Used to associate a display format with the column data. The formats provided depends on the variable type (array type list box) or the data/field type (selection and collection type list boxes).
+Utilizado para asociar un formato de visualización con los datos de la columna. The formats provided depends on the variable type (array type list box) or the data/field type (selection and collection type list boxes).
 
 Boolean and number (numeric or integer) columns can be displayed as check boxes. In this case, the [Title](#title) property can be defined.
 
-Boolean columns can also be displayed as pop-up menus. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
+Las columnas booleanas también pueden mostrarse como menús emergentes. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
 
 #### Gramática JSON
 
@@ -411,7 +411,7 @@ Boolean columns can also be displayed as pop-up menus. In this case, the [Text w
 
 When this property is enabled, the object is not drawn on the form, however it can still be activated.
 
-In particular, this property allows implementing "invisible" buttons.  Non-rendered buttons can be placed on top of graphic objects. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
+In particular, this property allows implementing "invisible" buttons.  Los botones no renderizados pueden colocarse sobre los objetos gráficos. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
 
 
 #### Gramática JSON
@@ -444,10 +444,10 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
 *   2 (or any value >0) = semi-checked box (third state). Para la entrada de datos, este estado devuelve el valor 2.
-*   -1 = invisible check box,
+*   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
-*   -4 = semi-checked box, not enterable
+*   -4 = casilla semi-marcada, no editable
 
 In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
 
@@ -467,7 +467,7 @@ In this case as well, the [Title](#title) property is also available so that the
 ---
 ## Título
 
-This property is available for a list box column if:
+Esta propiedad está disponible para una columna de list box si:
 - the [column type](properties_Object.md#expression-type) is **boolean** and its [display type](properties_Display.md#display-type) is "Check Box"
 - the [column type](properties_Object.md#expression-type) is **number** (numeric or integer) and its [display type](properties_Display.md#display-type) is "Three-states Checkbox".
 
@@ -497,7 +497,7 @@ This option is available for columns with any type of contents, except pictures 
 *   When the property is enabled (default), if the contents of a list box cell exceed the width of the column, they are truncated and an ellipsis is displayed:
 
     ![](assets/en/FormObjects/property_truncate1.png)
-> La posición de la elipsis depende del sistema operativo. In the above example (Windows), it is added on the right side of the text. On macOS, the ellipsis is added in the middle of the text.
+> La posición de la elipsis depende del sistema operativo. In the above example (Windows), it is added on the right side of the text. En macOS, la elipsis se añade en medio del texto.
 
 *   When the property is disabled, if the contents of a cell exceed the width of the column, they are simply clipped with no ellipsis added:
 
@@ -587,7 +587,7 @@ When this option is selected, text automatically wraps to the next line whenever
 #### Unchecked for list box/No for input
 `Gramática JSON: "none"`
 
-When this option is selected, 4D does not do any automatic line returns and the last word that can be displayed may be truncated. In text type areas, carriage returns are supported:
+When this option is selected, 4D does not do any automatic line returns and the last word that can be displayed may be truncated. En las áreas de tipo de texto, se soportan los retornos de carro:
 
 ![](assets/en/FormObjects/wordwrap3.png)
 

@@ -192,7 +192,7 @@ You can pass any number of values of the following supported types:
 *   time (stored as number of milliseconds - real)
 *   Null
 *   shared object(*)
-*   shared collection(*)
+*   shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 
 (*)When a shared object or collection is added to a shared collection, they share the same *locking identifier*. For more information on this point, refer to the **4D Developer**'s guide.
@@ -1028,7 +1028,7 @@ You designate the callback to be executed to filter collection elements using ei
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1111,7 +1111,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1201,7 +1201,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -1588,7 +1588,7 @@ You designate the callback to be executed to evaluate collection elements using 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
 - or *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
 
 The callback receives the following parameters:
 
@@ -2136,6 +2136,10 @@ For detailed information on how to build a query using *queryString*, *value* an
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 This example returns persons whose name contains "in":
@@ -2164,7 +2168,7 @@ This example returns persons hired more than 90 days ago:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 if today is 01/10/2018
 ```
 
 
@@ -2296,7 +2300,7 @@ The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or
 > This function modifies the original collection.
 
 In *index*, pass the position where you want the element to be removed from the collection.
-> **Warning**: Keep in mind that collection elements are numbered from 0. If *index* is greater than the length of the collection, actual starting index will be set to the length of the collection.
+> **Warning**: Keep in mind that collection elements are numbered from 0. If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 *   If *index* < 0, it is recalculated as *index:=index+length* (it is considered as the offset from the end of the collection).
 *   If the calculated value < 0, *index* is set to 0.

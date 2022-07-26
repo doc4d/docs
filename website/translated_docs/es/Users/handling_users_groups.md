@@ -37,7 +37,7 @@ El administrador puede:
 
 El administrador no puede:
 - modificar el usuario Diseñador
-- por defecto, el acceso a las partes protegidas de la aplicación. En particular, el administrador no puede acceder al modo Diseño si está restringido. El Administrador debe formar parte de uno o más grupos para tener privilegios de acceso en la aplicación. El administrador se coloca en todos los grupos nuevos, pero puede eliminar el nombre del administrador de cualquier grupo.
+- por defecto, el acceso a las partes protegidas de la aplicación. En particular, el administrador no puede acceder al modo Diseño si está restringido. En particular, el administrador no puede acceder al modo Diseño si está restringido. El administrador se coloca en todos los grupos nuevos, pero puede eliminar el nombre del administrador de cualquier grupo.
 
 Tanto el Diseñador como el Administrador están disponibles por defecto en todas las aplicaciones. En la [caja de diálogo de gestión de usuarios](#users-and-groups-editor), los iconos del Diseñador y del Administrador se muestran en rojo y verde respectivamente:
 
@@ -74,9 +74,9 @@ La lista de usuarios muestra todos los usuarios, incluyendo el [Diseñador y el 
 
 4D añade un nuevo usuario a la lista, llamado por defecto "Nuevo usuarioX".
 
-3. Introduzca el nombre de usuario. Este nombre será utilizado por el usuario para abrir la aplicación. Puede renombrar un usuario en cualquier momento utilizando el comando **Renombrar** del menú contextual, o utilizando los atajos Alt+clic (Windows) u Opción+clic (macOS), o haciendo dos veces clic en el nombre que quiera cambiar.
+3. Introduzca el nombre de usuario. Introduzca el nombre de usuario. Puede renombrar un usuario en cualquier momento utilizando el comando **Renombrar** del menú contextual, o utilizando los atajos Alt+clic (Windows) u Opción+clic (macOS), o haciendo dos veces clic en el nombre que quiera cambiar.
 
-4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. You can use up to 15 alphanumeric characters for a password. El editor de contraseñas es sensible a las mayúsculas y minúsculas.
+4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. Puede utilizar hasta 15 caracteres alfanuméricos para una contraseña. El editor de contraseñas es sensible a las mayúsculas y minúsculas.
 
 > Users can change their password at any time according to the options in the "Security" page of the structure settings, or using the `CHANGE PASSWORD` command.
 
@@ -89,7 +89,7 @@ The membership of users to different groups can also be set by group on the [Gro
 
 To delete a user, select it then click the deletion button or use the **Delete** command of the context menu. ![](assets/en/Users/MinussNew.png)
 
-Deleted user names no longer appear in the Users editor. Note that the IDs for deleted users are reassigned when new user accounts are created.
+Los nombres de usuario borrados ya no aparecen en el editor de usuarios. Note that the IDs for deleted users are reassigned when new user accounts are created.
 
 ### Propiedades de los usuarios
 
@@ -100,7 +100,7 @@ Deleted user names no longer appear in the Users editor. Note that the IDs for d
 
 ## Editor de grupos
 
-The editor for groups is located in the Toolbox of 4D.
+El editor de grupos se encuentra en la caja de herramientas de 4D.
 
 ### Configurar grupos
 
@@ -118,7 +118,7 @@ Para crear un grupo:
 
 > The Duplicate command can be used to create several groups having the same characteristics quickly.
 
-4D adds a new group to the list, named "New groupX" by default.
+4D añade un nuevo grupo a la lista, llamado por defecto "Nuevo grupoX".
 
 3. Introduzca el nombre del nuevo grupo. El nombre del grupo puede tener hasta 15 caracteres. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
@@ -140,7 +140,7 @@ To remove a user or group from another group, you just need to deselect the corr
 
 ### Asignar un grupo a un plug-in o a un servidor
 
-You can assign a group privileges to any plug-ins installed in the project. This includes all the 4D plug-ins and any third-party plug-ins.
+You can assign a group privileges to any plug-ins installed in the project. Esto incluye todos los plug-ins de 4D y los de terceros.
 
 Distributing access to the plug-ins lets you control the use of the licenses you possess for these plug-ins. Any users that do not belong to the access group of a plug-in cannot load this plug-in.
 
@@ -150,12 +150,12 @@ The “Plug-in” area on the Groups page of the tool box lists all the plug-ins
 
 ![](assets/en/Users/plugins.png)
 
-The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. These licenses are considered as plug-in licenses by 4D Server. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
+The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. Estas licencias son consideradas por 4D Server como licencias de plug-in. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
 
 
 ### Un esquema de acceso jerárquico
 
-The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. This section discusses several approaches to such a scheme.
+The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. Esta sección describe varios enfoques de este esquema.
 
 In this example, a user is assigned to one of three groups depending on their level of responsibility. Users assigned to the Accounting group are responsible for data entry. Users assigned to the Finances group are responsible for maintaining the data, including updating records and deleting outdated records. Users assigned to the General Management group are responsible for analyzing the data, including performing searches and printing analytical reports.
 
@@ -181,11 +181,11 @@ Groups are assigned access privileges to specific parts or features of the appli
 - Servidor REST,
 - Servidor SQL.
 
-These accesses are defined in the Settings dialog. El siguiente ejemplo muestra los derechos de acceso del explorador de diseño y tiempo de ejecución asignados al grupo "Devs":
+Estos accesos se definen en la caja de diálogo Parámetros. El siguiente ejemplo muestra los derechos de acceso del explorador de diseño y tiempo de ejecución asignados al grupo "Devs":
 
 ![](assets/en/Users/Access1.png)
 
-You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). Esta distribución se define en el editor Grupos.
 
 ## Archivo directory.json
 

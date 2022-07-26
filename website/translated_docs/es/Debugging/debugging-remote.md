@@ -61,11 +61,11 @@ Para volver a conectar el depurador al servidor:
 1. En el cliente 4D remoto que tiene el depurador conectado, seleccione **Ejecutar** > **Separar depurador remoto**.
 2. En la barra de menú de 4D Server, seleccione **Editar** > **Adjuntar depurador**.
 
-> When the debugger is attached to the server (default), all server processes are automatically executed in cooperative mode to enable debugging. This can have a significant impact on performance. When you don't need to debug on the server machine, it is recommended to detach the debugger and attach it to a remote machine if necessary.
+> When the debugger is attached to the server (default), all server processes are automatically executed in cooperative mode to enable debugging. Esto puede tener un impacto significativo en el rendimiento. When you don't need to debug on the server machine, it is recommended to detach the debugger and attach it to a remote machine if necessary.
 
 
 
-## Attaching debugger at startup
+## Adjuntar el depurador al inicio
 
 4D allows you to automatically attach the debugger to a remote 4D client or the server at startup:
 
@@ -90,4 +90,4 @@ If a machine tries to attach the debugger while it is already attached, the atta
 Adjuntar el depurador en este caso requiere que:
 
 * the attached debugger is detached from the server or from the remote 4D client using respectively the **Detach debugger** or **Detach remote debugger** menu command,
-* the attached remote 4D client session is closed.
+* se cierra la sesión del cliente 4D remoto adjunto.
