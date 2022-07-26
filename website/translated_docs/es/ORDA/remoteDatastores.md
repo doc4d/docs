@@ -51,7 +51,7 @@ ORDA features related to entity locking and transaction are managed at process l
 *   Locks on entities are removed and transactions are rollbacked:
     *   when the process is killed.
     *   cuando la sesión se cierra en el servidor
-    *   when the session is killed from the server administration window.
+    *   cuando la sesión es terminada desde la ventana de administración del servidor.
 
 ### Cierre de las sesiones
 

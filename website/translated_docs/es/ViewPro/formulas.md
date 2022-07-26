@@ -13,7 +13,7 @@ Para introducir una fórmula en un área 4D View Pro:
 
 1.  Select the cell into which you will enter the formula or function.
 2.  Introduzca = (el signo igual).
-3.  Type the formula and hit the **Enter** key.
+3.  Escriba la fórmula y presione la tecla **Intro**.
 
 Al escribir una fórmula, puede utilizar diferentes atajos:
 
@@ -233,7 +233,7 @@ For more information on supported incoming parameter types, please refer to the 
 > If you do not declare parameters, values can be sequentially passed to methods (they will be received in $1, $2...) and their type will be automatically converted. Dates in *jstype* will be passed as [object](Concepts/dt_object.md) in 4D code with two properties:   
 > |Property|    Type|   Description| |---|---|---| |value|   Date|   Date value| |time |Real|  Time in seconds|
 
-4D project methods can also return values in the 4D View Pro cell formula via $0. The following data types are supported for returned parameters:
+4D project methods can also return values in the 4D View Pro cell formula via $0. Los siguientes tipos de datos son soportados para los parámetros devueltos:
 
 * [text](Concepts/dt_string.md) (converted to string in 4D View Pro)
 * [real](Concepts/dt_number.md)/[longint](Concepts/dt_number.md) (converted to number in 4D View Pro)
@@ -252,7 +252,7 @@ If the 4D method returns nothing, an empty string is automatically returned.
 
 Se devuelve un error en la celda 4D View Pro si:
 
-*   the 4D method returns another type other than those listed above,
+*   el método 4D devuelve otro tipo distinto de los mencionados anteriormente,
 *   an error occurred during 4D method execution (when user clicks on "abort" button).
 
 #### Ejemplo
@@ -345,7 +345,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
 ![](assets/en/ViewPro/vpFieldMeth3.PNG)
 
 
-5.  Validate the field to display the name of the current employee:
+5.  Valide el campo para mostrar el nombre del empleado actual:
 
 ![](assets/en/ViewPro/vpFieldMeth4.PNG)
 > La tabla \[Employee] debe tener un registro actual.

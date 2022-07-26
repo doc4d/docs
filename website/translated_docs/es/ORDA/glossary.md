@@ -82,7 +82,7 @@ A deep copy duplicates an object and all the references it contains. After a dee
 
 ## ds
 
-`ds` is the 4D language command that returns a [datastore](dsMapping.md#datastore) object reference. It matches the datastore available upon the 4D main database.
+`ds` is the 4D language command that returns a [datastore](dsMapping.md#datastore) object reference. Coincide con el datastore disponible en la base de datos principal 4D.
 
 ## Entity
 
@@ -100,14 +100,14 @@ Una selección de entidades contiene:
 
 *   un conjunto de 0 a X referencias de entidades,
 *   a length property (always),
-*   queryPlan and queryPath properties (if asked while querying).
+*   las propiedades queryPlan y queryPath (si se preguntan durante la consulta).
 
 Una selección de entidades también puede estar vacía.
 
 
 ## Generic class
 
-Built-in class for ORDA objects such as entities, or dataclasses. Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
+Clase integrada para los objetos ORDA tales como las entidades o las dataclasses. Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
 
 
 ## Lazy loading
