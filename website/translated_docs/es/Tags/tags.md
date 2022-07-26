@@ -521,7 +521,7 @@ The following code example:
 
 This syntax makes a loop as long as the method returns `True`. El método toma un tipo de parámetro Long Integer. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
 
-For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.
+For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). Si la autenticación es correcta, se procederá a la etapa de inicialización.
 
 `C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
