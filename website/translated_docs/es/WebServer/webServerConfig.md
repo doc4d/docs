@@ -628,7 +628,7 @@ When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maint
 In return, you must make sure in this case to systematically initialize the variables used in 4D methods in order to avoid getting incorrect results. Similarly, it is necessary to erase any current selections or records defined during the previous request.
 > * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
 > 
-> * This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
+> * Esta opción sólo tiene efecto con un servidor web 4D en modo remoto. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
 
 
 
