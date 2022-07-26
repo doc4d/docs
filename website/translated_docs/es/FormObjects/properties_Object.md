@@ -228,9 +228,9 @@ Name of the [plug-in external area](pluginArea_overview.md) associated to the ob
 
 #### Gramática JSON
 
-| Nombre         | Tipos de datos | Valores posibles                                              |
-| -------------- | -------------- | ------------------------------------------------------------- |
-| pluginAreaKind | cadena         | Name of the plug-in external area (starts with a % character) |
+| Nombre         | Tipos de datos | Valores posibles                                                 |
+| -------------- | -------------- | ---------------------------------------------------------------- |
+| pluginAreaKind | cadena         | Nombre del área externa del plug-in (comienza con un carácter %) |
 
 
 #### Objetos soportados
