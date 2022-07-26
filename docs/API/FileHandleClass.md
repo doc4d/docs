@@ -5,9 +5,9 @@ title: FileHandle
 
 The `FileHandle` class has functions that allow you to sequentially read from or append contents to an opened [`File`](FileClass) object. A file handle can access any part of a document. 
 
-> To read or write a whole document at once, you might consider using the [file.getText()](FileClass.md#gettext) and [file.setText()](FileClass.md#settext) functions. 
-
 File handle objects are created with the [`file.open()`](FileClass#open) function. 
+
+> To read or write a whole document at once, you might consider using the [file.getText()](FileClass.md#gettext) and [file.setText()](FileClass.md#settext) functions. 
 
 Thanks to the standard 4D object *refcounting*, a file handle is automatically deleted when it is no longer referenced and thus, the requested [`File`](FileClass) object is automatically closed. Consequently, with file handles you don't need to worry about closing documents. 
 
@@ -19,13 +19,6 @@ var $f : 4D.File
 var $fhandle : 4D.FileHandle
 $f:=Folder(Database folder).file("example.txt") 
 
-//reading line by line
-$lines:=New collection
-$fhandle:=$f.open("read")
-While (Not($fhandle.eof))
-	$lines.push($fhandle.readLine())
-End while
-
 //Writing line by line from the start
 $fhandle:=$f.open("write")
 $text:="Hello World"
@@ -35,18 +28,32 @@ End for
 
 //Writing line by line from the end
 $fhandle:=$f.open("append")
-$text:="Hello New World"
+$text:="Hello New World!"
 For ($line; 1; 4)
     $fhandle.writeLine($text+String($line))
 End for
 
-//Specifying a stop character, reading a file content until the stop character is reached
-$stopChar:=Char(Double quote)
-$fhandle:=$f.open("read")
+//Reading using a stop character and an object parameter
+$o:=New object()
+$o.mode:="read"
+$o.charset:="UTF-8"
+$o.breakModeRead:=Document with CRLF
+$stopChar:="!"
+$fhandle:=$f.open($o)
 $text:=$fhandle.readText($stopChar)
+
+//Reading line by line
+$lines:=New collection
+$fhandle:=$f.open("read")
+While (Not($fhandle.eof))
+	$lines.push($fhandle.readLine())
+End while
+
 ```
 
 ### FileHandle object
+
+File handle objects cannot be shared.
 
 ||
 |---|
@@ -85,7 +92,7 @@ $text:=$fhandle.readText($stopChar)
 The `.breakModeRead` property returns <!-- REF #FileHandleClass.breakModeRead.Summary -->the processing mode for line breaks used when reading the file<!-- END REF -->.
 
 
-The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass#open) function (see [the `.open()` function](FileClass#open) for more information). Default is 1.
+The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
 
 This property is **read-only**. 
 
@@ -109,7 +116,7 @@ This property is **read-only**.
 
 The `.breakModeWrite` property returns <!-- REF #FileHandleClass.breakModeWrite.Summary -->the processing mode for line breaks used when writing to the file<!-- END REF -->.
 
-The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass#open) function (see [the `.open()` function](FileClass#open) for more information). Default is 1.
+The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
 
 This property is **read-only**. 
 
@@ -308,6 +315,9 @@ The `.readLine()` function <!-- REF #FileHandleClass.readLine().Summary -->retur
 
 When this function is executed, the current position ([.offset](#offset)) is updated.
 
+> When this function is executed for the first time on a file handle, the whole document contents is loaded in a buffer. 
+
+
 #### See also
 
 [.readText()](#readtext), [.writeLine()](#writeline)
@@ -325,7 +335,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 </details>
 
 <!--REF #FileHandleClass.readText().Syntax -->
-**.readText**( *stopChar* : Text ) : Text <!-- END REF -->
+**.readText**( { *stopChar* : Text } ) : Text <!-- END REF -->
 
 <!--REF #FileHandleClass.readText().Params -->
 |Parameter|Type||Description|
@@ -338,11 +348,15 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 
 The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* character is encountered<!-- END REF -->.
 
-The *stopChar* character is not included in the returned text. It you pass a string in *stopChar*, the first character is used as *stopChar*.
+By default, this function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeRead`](#breakmoderead) property.  
 
-When this function is executed, the ([.offset](#offset)) is placed just before the *stopChar* character. 
+The *stopChar* character is not included in the returned text. It you pass a string in *stopChar*, the first character is used as *stopChar*. If you omit the *stopChar* parameter, the whole document text is returned.  
 
-If the *stopChar* character is not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched. 
+When this function is executed, the ([.offset](#offset)) is placed just after the *stopChar* character. 
+
+If the *stopChar* character is passed and not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched. 
+
+> When this function is executed for the first time on a file handle, the whole document contents is loaded in a buffer. 
 
 #### See also
 
@@ -367,15 +381,14 @@ If the *stopChar* character is not found, `.readText()` returns an empty string 
 <!--REF #FileHandleClass.setSize().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|setSize|Real|->|New size of the document in bytes|
+|size|Real|->|New size of the document in bytes|
 <!-- END REF -->
 
 #### Description
 
 The `.setSize()` function <!-- REF #FileHandleClass.setSize().Summary -->sets a new *size* in bytes for the document<!-- END REF -->.
 
-If the *size* value is less than the current document size, the document content is truncated from the beginning to get the new *size* .  
-If the *size* value is greater than the current document size, `0x00` characters are added at the end of the document until the requested *size* is reached.
+If the *size* value is less than the current document size, the document content is truncated from the beginning to get the new *size* . 
 
 #### See also
 
@@ -431,18 +444,18 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 <!--REF #FileHandleClass.writeLine().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|*lineOfText*|Text|->|Text to write (with end-of-line delimiter)|
+|*lineOfText*|Text|->|Text to write|
 <!-- END REF -->
 
 #### Description
 
-The `.writeLine()` function <!-- REF #FileHandleClass.writeLine().Summary -->writes *lineOfText* content at the current position and inserts an end-of-line delimiter<!-- END REF --> (unlike the [.writeText()](#writetext) function).
+The `.writeLine()` function <!-- REF #FileHandleClass.writeLine().Summary -->writes *lineOfText* content at the current position and inserts an end-of-line delimiter<!-- END REF --> (unlike the [.writeText()](#writetext) function). By default, a native end-of-line delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.  
 
 When this function is executed, the current position ([.offset](#offset)) is updated after the end-of-line delimiter.
 
 #### See also
 
-[.readLine()](#readline), [.writeText()](#writetext)
+[.breakModeWrite](#breakmodewrite), [.readLine()](#readline), [.writeText()](#writetext)
 
 <!-- END REF -->
 
@@ -457,23 +470,23 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 </details>
 
 <!--REF #FileHandleClass.writeText().Syntax -->
-**.writeText**( *lineOfText* : Text )<!-- END REF -->
+**.writeText**( *textToWrite* : Text )<!-- END REF -->
 
 <!--REF #FileHandleClass.writeText().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|*lineOfText*|Text|->|Text to write (without end-of-line delimiter)|
+|*textToWrite*|Text|->|Text to write|
 <!-- END REF -->
 
 #### Description
 
-The `.writeText()` function <!-- REF #FileHandleClass.writeText().Summary -->writes *lineOfText* content at the current position and does not insert an end-of-line delimiter<!-- END REF --> (unlike the [.writeLine()](#writeline) function).
+The `.writeText()` function <!-- REF #FileHandleClass.writeText().Summary -->writes *textToWrite* content at the current position and does not insert a final end-of-line delimiter<!-- END REF --> (unlike the [.writeLine()](#writeline) function). This function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.  
 
 When this function is executed, the current position ([.offset](#offset)) is updated after the next end-of-line delimiter.
 
 #### See also
 
-[.readText()](#readtext), [.writeLine()](#writeline)
+[.breakModeWrite](#breakmodewrite), [.readText()](#readtext), [.writeLine()](#writeline)
 
 <!-- END REF -->
 

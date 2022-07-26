@@ -517,16 +517,15 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified *mode* or with the specified *options*<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file. 
 
-If you use the *mode* parameter, pass the opening mode for the file handle:
+If you use the *mode* (text) parameter, pass the opening mode for the file handle:
 
 |*mode*|Description|
 |---|---|
-|"read"|(Default) Creates a file handle to read values from the file.|
-|"write"|Creates a file handle to write values to the file (starting at the beginning of the file content)|
-|"append"|Creates a file handle to write values to the file (starting at the end of the file content)|
+|"read"|(Default) Creates a file handle to read values from the file. If the file does not exist on disk, an error is returned. You can open as many file handles as you want in "read" mode on the same File object.|
+|"write"|Creates a file handle to write values to the file (starting at the beginning of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "write" mode on the same File object.|
+|"append"|Creates a file handle to write values to the file (starting at the end of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "append" mode on the same File object.|
 
-
-If you use the *options* parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
+If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
 
 |*options*|Type|Description|Default|
 |---|---|---|---|
