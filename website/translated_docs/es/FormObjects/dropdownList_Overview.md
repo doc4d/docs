@@ -150,7 +150,7 @@ A hierarchical drop-down list has a sublist associated with each item in the lis
 
 ![](assets/en/FormObjects/popupDropdown_hierar.png)
 
-> In forms, hierarchical drop-down lists are limited to two levels.
+> En los formularios, las listas desplegables jerárquicas están limitadas a dos niveles.
 
 You can assign the hierarchical choice list to the drop-down list object using the [Choice List](properties_DataSource.md#choice-list) field of the Property List.
 

@@ -124,13 +124,13 @@ $area:=$rect.getArea()
 
 Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
-A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
+Las clases ORDA de un componente no están disponibles en el proyecto local. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
 
 ### Clases ocultas
 
 Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
 
-Note however that they can still be used if you know their names. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
+Sin embargo, hay que tener en cuenta que pueden seguir utilizándose si se conocen sus nombres. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
 
 ```4d
 $rect:=cs.eGeometry._Rectangle.new(10;20)

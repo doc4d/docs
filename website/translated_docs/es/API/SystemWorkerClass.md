@@ -95,7 +95,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | onDataError      | Formula  | indefinido  | Callback for the external process errors (*stderr* of the external process). Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                                              |
 | onError          | Formula  | indefinido  | Callback for execution errors, returned by the system worker in case of unusual runtime conditions (system errors). Recibe dos objetos como parámetros (ver abajo)</li>                                                                                                                                                                  |
 | onTerminate      | Formula  | indefinido  | Retrollamada cuando el proceso externo se termina. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                                                                        |
-| timeout          | Número   | indefinido  | Time in seconds before the process is killed if it is still alive                                                                                                                                                                                                                                                                        |
+| timeout          | Número   | indefinido  | Tiempo en segundos antes de que el proceso sea eliminado si aún está activo                                                                                                                                                                                                                                                              |
 | dataType         | Texto    | "text"      | Type of the response body content. Valores posibles: "text" (por defecto), "blob".                                                                                                                                                                                                                                                       |
 | encoding         | Texto    | "UTF-8"     | Sólo si `dataType="text"`. Codificación del contenido del cuerpo de la respuesta. For the list of available values, see the [`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/en/page1011.html) command description                                                                                                           |
 | variables        | Objeto   |             | Define las variables de entorno personalizadas para el system worker. Syntax: `variables.key=value`, where `key` is the variable name and `value` its value. Los valores se convierten en cadenas de caracters cuando es posible. El valor no puede contener un '='. If not defined, the system worker inherits from the 4D environment. |
@@ -454,10 +454,10 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
-| Parámetros  | Tipo  |    | Descripción                                                       |
-| ----------- | ----- |:--:| ----------------------------------------------------------------- |
-| message     | Texto | -> | Text to write on the input stream (stdin) of the external process |
-| messageBLOB | Blob  | -> | Bytes escritos en el flujo de entrada                             |
+| Parámetros  | Tipo  |    | Descripción                                                         |
+| ----------- | ----- |:--:| ------------------------------------------------------------------- |
+| message     | Texto | -> | Texto a escribir en el flujo de entrada (stdin) del proceso externo |
+| messageBLOB | Blob  | -> | Bytes escritos en el flujo de entrada                               |
 <!-- END REF -->
 
 #### Descripción
