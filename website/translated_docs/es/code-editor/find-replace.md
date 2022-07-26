@@ -88,7 +88,7 @@ If no element is selected, the command opens the documentation of the method cur
 
 **Note:** The **Search Callers...** command is also available in **Explorer** > **Methods**
 
-The current item is either the one selected or the one where the cursor is located. It can be a field name, variable name, command, string, and so on. For example, the following action looks for all the occurrences of the *vlNbCmd* variable in the database:
+The current item is either the one selected or the one where the cursor is located. Puede ser un nombre de campo, un nombre de variable, un comando, una cadena, etc. For example, the following action looks for all the occurrences of the *vlNbCmd* variable in the database:
 
 ![find-dialog](assets/en/code-editor/search-references.png)
 
