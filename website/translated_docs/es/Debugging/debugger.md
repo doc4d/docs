@@ -137,7 +137,7 @@ $c:=a+b
 
     La variable `$a` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
-2. You click the **Step Over** button. The program counter is now set to the line `b:=a+1`. En este punto, el tema muestra:
+2. You click the **Step Over** button. El contador del programa se pone ahora en la línea `b:=a+1`. En este punto, el tema muestra:
 
     | $a | 1          |
     | -- | ---------- |
@@ -224,7 +224,7 @@ This theme displays information regarding the main Web server of the application
 * Web Hits Count: total number of HTTP requests received since Web server launch, as well as the instantaneous number of requests per second
 * Number of active Web processes: number of active Web processes, all Web processes together
 
-The expressions contained within this theme cannot be modified.
+Las expresiones contenidas en este tema no pueden ser modificadas.
 
 ### Menú contextual de la ventana de expresión
 
@@ -247,7 +247,7 @@ A method may call other methods or class functions, which may call other methods
 
 ![call-chain-pane](assets/en/Debugging/call-chain-example.png)
 
-Each main level item is the name of a method or class function. The top item is the one you are currently tracing, the next main level item is the name of the caller (the method or function that called the one you are currently tracing), the next one is the caller's caller, and so on.
+Cada elemento del nivel principal es el nombre de un método o función clase. The top item is the one you are currently tracing, the next main level item is the name of the caller (the method or function that called the one you are currently tracing), the next one is the caller's caller, and so on.
 
 En la imagen de arriba:
 
@@ -284,7 +284,7 @@ The Custom Watch Pane is useful for evaluating expressions. It is similar to the
 
 ![custom-Watch-pane](assets/en/Debugging/custom-watch-pane.png)
 
-You can evaluate any expression that can be shown in text form. This does not cover picture and BLOB fields or variables. To display BLOB contents, you can use BLOB commands, such as [BLOB to text](https://doc.4d.com/4dv19/help/command/en/page555.html).
+Puede evaluar toda expresión que pueda mostrarse en forma de texto. This does not cover picture and BLOB fields or variables. To display BLOB contents, you can use BLOB commands, such as [BLOB to text](https://doc.4d.com/4dv19/help/command/en/page555.html).
 
 ### Gestión de expresiones
 
@@ -363,7 +363,7 @@ By default, the program counter line (also called the running line) is highlight
 
 For debugging purposes, you can move the program counter for the method at the top of the call chain (the method currently executing). Para ello, haga clic y arrastre la flecha amarilla a otra línea.
 
-This only tells the debugger to pursue tracing or executing from a different point. It does not execute lines or cancel their execution. All current settings, fields, variables, etc. are not impacted.
+This only tells the debugger to pursue tracing or executing from a different point. It does not execute lines or cancel their execution. Todos los ajustes, campos, variables, etc. actuales no se ven afectados.
 
 Por ejemplo:
 

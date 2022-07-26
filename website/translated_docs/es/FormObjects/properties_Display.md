@@ -150,7 +150,7 @@ If characters are placed between placeholders, they appear only if digits are di
 
     ###.##0
 
-the point appears only if the user enters at least four digits.
+el punto aparece sólo si el usuario introduce al menos cuatro dígitos.
 
 Los espacios se tratan como caracteres en los formatos de visualización de números.
 
@@ -411,7 +411,7 @@ Las columnas booleanas también pueden mostrarse como menús emergentes. In this
 
 When this property is enabled, the object is not drawn on the form, however it can still be activated.
 
-In particular, this property allows implementing "invisible" buttons.  Non-rendered buttons can be placed on top of graphic objects. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
+In particular, this property allows implementing "invisible" buttons.  Los botones no renderizados pueden colocarse sobre los objetos gráficos. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
 
 
 #### Gramática JSON
