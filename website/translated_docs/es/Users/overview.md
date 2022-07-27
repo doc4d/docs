@@ -7,7 +7,7 @@ Si diferentes personas utilizan una aplicación, lo que suele ocurrir en la arqu
 
 4D access control strategy depends on your deployment configuration:
 
-- in multi-user applications, you can rely on 4D users and groups,
+- en las aplicaciones multiusuario, puede confiar en los usuarios y grupos 4D,
 - in single-user applications, user access is controlled through the system session, using commands such as [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html).
 
 > Consulte la documentación [Guía de seguridad de 4D](https://blog.4d.com/4d-security-guide/) para una visión de conjunto de las funciones de seguridad de 4D.
