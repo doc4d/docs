@@ -84,8 +84,4 @@ Once a week, the file is automatically sent over the network to 4D. The file is 
 
 You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page).
 
-To disable the collection, modify the value of the `DataCollection` key in the `info.plist` file of the merged server:
-
-| key            | Valeur par défaut | Value to disable collection |
-| -------------- | ----------------- | --------------------------- |
-| DataCollection | true              | false                       |
+To disable the collection, pass the value **False** to the [`ServerDataCollection`](https://doc.4d.com/4Dv19R6/4D/19-R6/ServerDataCollection.300-6011712.en.html) key in the `buildApp.4DSettings` file, used to build the client/server application.
