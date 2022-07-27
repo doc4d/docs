@@ -655,9 +655,9 @@ This may be unsuitable if you want to duplicate a merged application intended to
 This mode allows you to duplicate your merged applications without breaking the link to the data file. However, with this option, if the application package is moved on the disk, the user will be prompted for a data file, since the application path will no longer match the "executablePath" attribute (after a user has selected a data file, the *lastDataPath.xml* file is updated accordingly).
 
 
-*Duplication when data linked by application name:* ![](assets/en/Project/datalinking1.png)
+*Duplicación cuando los datos están vinculados por el nombre de la aplicación:* ![](assets/en/Project/datalinking1.png)
 
-*Duplication when data linked by application path:* ![](assets/en/Project/datalinking2.png)
+*Duplicación cuando los datos están vinculados por la ruta de la aplicación:* ![](assets/en/Project/datalinking2.png)
 
 You can select the data linking mode during the build application process. Puede:
 

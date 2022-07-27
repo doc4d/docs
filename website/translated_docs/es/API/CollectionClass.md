@@ -1198,7 +1198,7 @@ The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns 
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text).
+- *methodName*, el nombre de un método proyecto (texto).
 
 The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 

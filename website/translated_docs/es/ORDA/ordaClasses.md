@@ -376,7 +376,7 @@ Function get fullName($event : Object)-> $fullName : Text
     End case 
 ```
 
-- A computed attribute can be based upon an entity related attribute:
+- Un atributo calculado puede basarse en un atributo relativo a una entidad:
 
 ```4d
 Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
@@ -618,7 +618,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 ### Generalidades
 
-An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass.
+An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. Puede definir tantos atributos de alias como desee en una clase de datos.
 
 Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
