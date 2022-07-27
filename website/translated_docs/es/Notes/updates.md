@@ -6,6 +6,12 @@ title: Actualizaciones de la documentación
 La lista de las principales actualizaciones de esta documentación. Para obtener información general sobre las nuevas funcionalidades de los productos 4D, consulte las **release notes** en [doc.4d.com](https://doc.4d.com).
 
 
+## 4D v19 R7
+
+- New [FileHandle](API/FileHandleClass.md) class and new [`.open()`](API/FileClass.md) function in the `File` class.
+
+
+
 ## 4D v19 R6
 
 - Nueva clase [HTTPRequest](API/HTTPRequestClass.md).

@@ -6,6 +6,12 @@ title: ドキュメンテーション更新情報
 このドキュメントのおもな更新内容のリストです。 4D製品の新機能についての一般的な情報は、[doc.4d.com](https://doc.4d.com) の **リリースノート** を参照ください。
 
 
+## 4D v19 R7
+
+- 新しい [FileHandle](API/FileHandleClass.md) クラスと、`File` クラスの新しい [`.open()`](API/FileClass.md) 関数。
+
+
+
 ## 4D v19 R6
 
 - 新しい [HTTPRequest](API/HTTPRequestClass.md) クラス。

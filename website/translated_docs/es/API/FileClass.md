@@ -16,8 +16,8 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 ### Objeto File
 
-|                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #document.copyTo().Syntax -->](#copyto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.copyTo().Summary -->|
 | [<!-- INCLUDE #FileClass.create().Syntax -->](#create)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.create().Summary -->|
 | [<!-- INCLUDE #FileClass.createAlias().Syntax -->](#createalias)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.createAlias().Summary -->|
@@ -41,6 +41,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | [<!-- INCLUDE #document.modificationTime.Syntax -->](#modificationtime)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.modificationTime.Summary -->|
 | [<!-- INCLUDE #FileClass.moveTo().Syntax -->](#moveto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.moveTo().Summary -->|
 | [<!-- INCLUDE #document.name.Syntax -->](#name)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.name.Summary -->|
+| [<!-- INCLUDE #FileClass.open().Syntax -->](#open)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.open().Summary -->|
 | [<!-- INCLUDE #document.original.Syntax -->](#original)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.original.Summary -->|
 | [<!-- INCLUDE #document.parent.Syntax -->](#parent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.parent.Summary -->|
 | [<!-- INCLUDE #document.path.Syntax -->](#path)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.path.Summary -->|
@@ -491,6 +492,73 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!-- INCLUDE document.name.Desc -->
 
 
+
+<!-- REF file.open().Desc -->
+## .open()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R7  | Añadidos       |
+</details>
+
+
+<!--REF #FileClass.open().Syntax -->
+**.open**( { *mode* : Text } ) : 4D.FileHandle<br>**.open**( { *options* : Object } ) : 4D.FileHandle<!-- END REF -->
+
+<!--REF #FileClass.open().Params -->
+| Parámetros | Tipo                             |    | Descripción                             |
+| ---------- | -------------------------------- | -- | --------------------------------------- |
+| mode       | Texto                            | -> | Opening mode: "read", "write", "append" |
+| options    | Objeto                           | -> | Opening options                         |
+| Resultado  | [4D.FileHandle](FileHandleClass) | <- | New File handle object                  |
+<!-- END REF -->
+
+#### Descripción
+
+The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified *mode* or with the specified *options*<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file.
+
+If you use the *mode* (text) parameter, pass the opening mode for the file handle:
+
+| *mode*   | Descripción                                                                                                                                                                                                                      |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "read"   | (Default) Creates a file handle to read values from the file. If the file does not exist on disk, an error is returned. You can open as many file handles as you want in "read" mode on the same File object.                    |
+| "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "write" mode on the same File object. |
+| "append" | Creates a file handle to write values to the file (starting at the end of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "append" mode on the same File object.      |
+
+If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
+
+| *options*         | Tipo   | Descripción                                                                                                                   | Por defecto |
+| ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `.mode`           | Texto  | Opening mode (see *mode* above)                                                                                               | "read"      |
+| `.charset`        | Texto  | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"     |
+| `.breakModeRead`  | Número | Processing mode for line breaks used when reading in the file (see below)                                                     | 1           |
+| `.breakModeWrite` | Número | Processing mode for line breaks used when writing to the file (see below)                                                     | 1           |
+
+The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values:
+
+| Break mode value | Constante                     | Descripción                                                                                                                                                    |
+| ---------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0                | `Document unchanged`          | Sin procesar                                                                                                                                                   |
+| 1                | `Document with native format` | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
+| 2                | `Document with CRLF`          | Los saltos de línea se convierten en CRLF (retorno de carro + salto de línea), el formato predeterminado de Windows                                            |
+| 3                | `Document with CR`            | Los saltos de línea se convierten en CR (retorno de carro), el formato clásico por defecto de Mac OS                                                           |
+| 4                | `Document with LF`            | Los saltos de línea se convierten en LF (salto de línea), el formato por defecto de Unix y macOS                                                               |
+
+
+#### Ejemplo
+
+You want to create a file handle for reading the "ReadMe.txt" file:
+
+```4d
+var $f : 4D.File
+var $fhandle : 4D.FileHandle
+
+$f:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
+$fhandle:=$f.open("read")
+
+```
+<!-- END REF -->
 
 <!-- INCLUDE document.original.Desc -->
 

@@ -151,7 +151,7 @@ Esta es la secuencia de llamadas de retorno:
 
 1. `onHeaders` se llama siempre una vez
 2. `onData` is called zero or several times (not called if the request does not have a body)
-3. If no error occured, `onResponse` is always called once
+3. Si no se produce ningún error, `onResponse` se llama siempre una vez
 4. If an error occurs, `onError` is executed once (and terminates the request)
 5. `onTerminate` se ejecuta siempre una vez
 

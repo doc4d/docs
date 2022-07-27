@@ -69,7 +69,7 @@ Un datastore referencia solo a una base de datos. It is, however, possible to op
 
 ## DataStore class
 
-Class for datastore objects, in which you can add custom functions.
+Clase para los objetos datastore, en la que puede agregar funciones personalizadas.
 
 
 ## DataStoreImplementation
@@ -120,7 +120,7 @@ The Datastore object matching the opened 4D database (standalone or client/serve
 
 ## Método
 
-ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. Estos métodos también se llaman funciones miembros (member functions). Such methods are used by calling them on an instance of the object.
+ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. Estos métodos también se llaman funciones miembros (member functions). Estos métodos se utilizan llamándolos sobre una instancia del objeto.
 
 For example, the `query()` method is a dataclass member function. Si ha almacenado un objeto dataclass en la variable `$myClass`, puede escribir:
 

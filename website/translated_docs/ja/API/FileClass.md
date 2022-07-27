@@ -16,8 +16,8 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 ### File オブジェクト
 
-|                                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|                                                                                                                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #document.copyTo().Syntax -->](#copyto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.copyTo().Summary -->|
 | [<!-- INCLUDE #FileClass.create().Syntax -->](#create)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.create().Summary -->|
 | [<!-- INCLUDE #FileClass.createAlias().Syntax -->](#createalias)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.createAlias().Summary -->|
@@ -41,6 +41,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | [<!-- INCLUDE #document.modificationTime.Syntax -->](#modificationtime)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.modificationTime.Summary -->|
 | [<!-- INCLUDE #FileClass.moveTo().Syntax -->](#moveto)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.moveTo().Summary -->|
 | [<!-- INCLUDE #document.name.Syntax -->](#name)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.name.Summary -->|
+| [<!-- INCLUDE #FileClass.open().Syntax -->](#open)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.open().Summary -->|
 | [<!-- INCLUDE #document.original.Syntax -->](#original)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.original.Summary -->|
 | [<!-- INCLUDE #document.parent.Syntax -->](#parent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.parent.Summary -->|
 | [<!-- INCLUDE #document.path.Syntax -->](#path)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.path.Summary -->|
@@ -490,6 +491,73 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!-- INCLUDE document.name.Desc -->
 
 
+
+<!-- REF file.open().Desc -->
+## .open()
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R7 | 追加 |
+</details>
+
+
+<!--REF #FileClass.open().Syntax -->
+**.open**( { *mode* : Text } ) : 4D.FileHandle<br>**.open**( { *options* : Object } ) : 4D.FileHandle<!-- END REF -->
+
+<!--REF #FileClass.open().Params -->
+| 引数      | タイプ                              |    | 説明                               |
+| ------- | -------------------------------- | -- | -------------------------------- |
+| mode    | Text                             | -> | 開くモード: "read", "write", "append" |
+| options | Object                           | -> | 開くオプション                          |
+| 戻り値     | [4D.FileHandle](FileHandleClass) | <- | 新規の FileHandle オブジェクト            |
+<!-- END REF -->
+
+#### 説明
+
+`.open()` 関数は、 <!-- REF #FileClass.open().Summary -->対象のファイルについて、指定のモード (*mode*) またはオプション (*options*) で新規の [4D.FileHandle](FileHandleClass) オブジェクトを作成し、返します<!-- END REF -->。 [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
+
+*mode* (text) 引数として、どのモードで FileHandle を開くかを指定します。
+
+| *mode*   | 説明                                                                                                                                          |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| "read"   | (デフォルト) ファイルから値を読み取るための FileHandle を作成します。 ディスク上にファイルが存在しない場合は、エラーが返されます。 "read" モードの FileHandle は、同じ File オブジェクトに対していくつでも開くことができます。        |
+| "write"  | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの先頭から)。 ディスク上にファイルが存在しない場合は、作成されます。 "write" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。  |
+| "append" | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの最後から)。 ディスク上にファイルが存在しない場合は、作成されます。 "append" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。 |
+
+*option* (object) 引数を使って、以下のプロパティを通じて FileHandle にさらなるオプションを渡すことができます (これらのプロパティは、開かれた [FileHandle オブジェクト](FileHandleClass) から取得できます)。
+
+| *options*         | タイプ    | 説明                                                                     | デフォルト   |
+| ----------------- | ------ | ---------------------------------------------------------------------- | ------- |
+| `.mode`           | Text   | 開くモード (上記の *mode* 参照)                                                  | "read"  |
+| `.charset`        | Text   | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8" |
+| `.breakModeRead`  | Number | ファイルの読み取り時に使用される改行の処理モード (下記参照)                                        | 1       |
+| `.breakModeWrite` | Number | ファイルの書き込み時に使用される改行の処理モード (下記参照)                                        | 1       |
+
+`.breakModeRead` と `.breakModeWrite` は、改行文字に適用する処理を指定します。 以下のいずれかの値を使用できます:
+
+| 改行モードの値 | 定数                            | 説明                                                                                                       |
+| ------- | ----------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 0       | `Document unchanged`          | 何も処理をしません。                                                                                               |
+| 1       | `Document with native format` | (デフォルト) 改行は OS のネイティブフォーマットに変換されます。 macOS では LF (ラインフィード) に、Windows では CRLF (キャリッジリターン＋ラインフィード) に変換されます。 |
+| 2       | `Document with CRLF`          | 改行は Windows のデフォルトフォーマットである CRLF (キャリッジリターン＋ラインフィード) へと変換されます。                                           |
+| 3       | `Document with CR`            | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                 |
+| 4       | `Document with LF`            | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                                |
+
+
+#### 例題
+
+"ReadMe.txt" ファイルを読み取るための FileHandle を作成します:
+
+```4d
+var $f : 4D.File
+var $fhandle : 4D.FileHandle
+
+$f:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
+$fhandle:=$f.open("read")
+
+```
+<!-- END REF -->
 
 <!-- INCLUDE document.original.Desc -->
 

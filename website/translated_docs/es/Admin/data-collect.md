@@ -9,6 +9,7 @@ Esta página explica:
 
 - qué información se recopila
 - dónde se almacena la información y cuándo se envía a 4D
+- how to disable automatic data collection in client/server built applications.
 
 
 ## Información recopilada
@@ -76,4 +77,15 @@ Once a week, the file is automatically sent over the network to 4D. A continuaci
 
 ![](assets/en/Admin/data-collect.png)
 
-> If the file could not be sent for some reason, it is nevertheless deleted and no error message is displayed on the 4D Server side. 
+> If the file could not be sent for some reason, it is nevertheless deleted and no error message is displayed on the 4D Server side.
+
+
+## Disabling data collection in client/server built applications
+
+You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page).
+
+To disable the collection, modify the value of the `DataCollection` key in the `info.plist` file of the merged server:
+
+| key            | Valor por defecto | Value to disable collection |
+| -------------- | ----------------- | --------------------------- |
+| DataCollection | true              | false                       |

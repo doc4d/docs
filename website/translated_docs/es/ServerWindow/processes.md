@@ -57,7 +57,7 @@ Cada proceso se identifica con un icono y un tipo. The color and form of the ico
 | ![](assets/en/Admin/server-icon-3.png)  | Servidor DB4D (motor de base de datos)                                                                                                                             |
 | ![](assets/en/Admin/server-icon-4.png)  | Servidor Web                                                                                                                                                       |
 | ![](assets/en/Admin/server-icon-5.png)  | Servidor SOAP                                                                                                                                                      |
-| ![](assets/en/Admin/server-icon-6.png)  | Protected 4D client process (development process of a connected 4D)                                                                                                |
+| ![](assets/en/Admin/server-icon-6.png)  | Proceso cliente 4D protegido (proceso de desarrollo de un 4D conectado)                                                                                            |
 | ![](assets/en/Admin/server-icon-7.png)  | Proceso cliente 4D principal (proceso principal de un 4D conectado). Collaborative process, equivalent on the server of the process created on the client machine) |
 | ![](assets/en/Admin/server-icon-8.png)  | 4D client base process (process parallel to a 4D client process. Preemptive process responsible for controlling the corresponding main 4D client process)          |
 | ![](assets/en/Admin/server-icon-9.png)  | Spare process (former or future "4D client database process")                                                                                                      |

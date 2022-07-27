@@ -62,6 +62,9 @@
       "API/FileClass": {
         "title": "File"
       },
+      "API/FileHandleClass": {
+        "title": "FileHandle"
+      },
       "API/FolderClass": {
         "title": "Folder"
       },
@@ -1044,7 +1047,7 @@
     "REST Server|no description given": "Servidor REST",
     "Maintenance and Security Center|no description given": "Centro de mantenimiento y seguridad",
     "Backup and Restore|no description given": "Copia de seguridad y restauración",
-    "License Management|no description given": "Gestión de licencias",
+    "Licenses & Data Collection|no description given": "Licencias y recopilación de datos",
     "Build Application|no description given": "Generador de aplicaciones",
     "Web Administration|no description given": "Administración Web",
     "4D Server Administration Window|no description given": "Ventana de administración de 4D Server",
