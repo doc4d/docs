@@ -97,9 +97,9 @@ Allows you to disable/enable the "international" code settings for the local 4D 
 
 #### Indentación
 
-Changes the indentation value for the 4D code in the Method editor. El ancho debe especificarse en puntos (10 por defecto).
+Cambia el valor de indentación del código 4D en el editor de métodos. El ancho debe especificarse en puntos (10 por defecto).
 
-4D code is automatically indented in order to reveal its structure:
+El código 4D es indentado automáticamente para revelar su estructura:
 
 ![](assets/en/Preferences/optionsIndent.png)
 

@@ -30,7 +30,7 @@ title: Lista de los métodos
 #### Descripción
 
 The `VP ADD FORMULA NAME` command <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->creates or modifies a named formula in the open document<!-- END REF -->.
-> Named formulas created by this command are saved with the document.
+> Las fórmulas nombradas creadas por este comando se guardan en el documento.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -1206,7 +1206,7 @@ The `VP Font to object` utility command<!-- REF #_method_.VP Font to object. Sum
 
 In the *font* parameter, pass a font shorthand string to specify the different properties of a font (e.g., "12 pt Arial"). You can learn more about font shorthand strings [in this page](https://www.w3schools.com/cssref/pr_font_font.asp) for example.
 
-The returned object contains defined font attributes as properties. For more information about the available properties, see the [VP Object to font](#vp-object-to-font) command.
+El objeto devuelto contiene los atributos de fuente definidos como propiedades. For more information about the available properties, see the [VP Object to font](#vp-object-to-font) command.
 
 #### Ejemplo 1
 
@@ -2198,7 +2198,7 @@ In *rangeObj*, pass a range of cell spans you want to retrieve. If *rangeObj* do
 
 #### Ejemplo
 
-You want to center the text for the spanned cells in this document:
+Para centrar el texto de las celdas fusionadas en este documento:
 
 ![](assets/en/ViewPro/cmd_vpGetSpans.PNG)
 
@@ -5040,7 +5040,7 @@ In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) wh
 The *valuesCol* parameter is two-dimensional:
 
 *   The first-level collection contains subcollections of values. Cada subcolección define una línea. Each subcollection defines a row.
-*   Cada subcolección define los valores de las celdas de la línea. Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
+*   Cada subcolección define los valores de las celdas de la línea. Los valores pueden ser enteros, reales, booleanos, texto, fecha, null u objeto. If the value is an object, it can have the following properties:
 
     | Propiedad | Tipo                                     | Descripción                        |
     | --------- | ---------------------------------------- | ---------------------------------- |
@@ -5088,7 +5088,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *optionObj*, pass the workbook options to apply to *vpAreaName*.
 
-If *optionObj* is empty, the command does nothing.
+Si *optionObj* está vacío, el comando no hace nada.
 
 Modified workbook options are saved with the document.
 
@@ -5196,14 +5196,14 @@ In *rangeObj*, pass a range of cells as an object to designate the cells to be v
 
 Los siguientes selectores están disponibles:
 
-| Selector              | Descripción                                                                                                                                                                                                                                                                              | Disponible con *vPos* | Disponible con *hPos* |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
-| `vk position bottom`  | Alineación vertical a la parte inferior de la celda o de la línea.                                                                                                                                                                                                                       | X                     |                       |
-| `vk position center`  | Alineación al centro. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Posición vertical de la vista - celda o línea</li><li>Posición horizontal de la vista - celda o columna</li>                                                                                                              | X                     | X                     |
-| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
-| `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
-| `vk position right`   | Alineación horizontal a la derecha de la celda o de la columna                                                                                                                                                                                                                           |                       | X                     |
-| `vk position top`     | Alineación vertical a la parte superior de la celda o de la línea                                                                                                                                                                                                                        | X                     |                       |
+| Selector              | Descripción                                                                                                                                                                                                                                                                                         | Disponible con *vPos* | Disponible con *hPos* |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
+| `vk position bottom`  | Alineación vertical a la parte inferior de la celda o de la línea.                                                                                                                                                                                                                                  | X                     |                       |
+| `vk position center`  | Alineación al centro. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Posición vertical de la vista - celda o línea</li><li>Posición horizontal de la vista - celda o columna</li>                                                                                                                         | X                     | X                     |
+| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                              |                       | X                     |
+| `vk position nearest` | Alineación al límite más cercano (arriba, abajo, izquierda, derecha, centro). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
+| `vk position right`   | Alineación horizontal a la derecha de la celda o de la columna                                                                                                                                                                                                                                      |                       | X                     |
+| `vk position top`     | Alineación vertical a la parte superior de la celda o de la línea                                                                                                                                                                                                                                   | X                     |                       |
 > This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. La vista permanece inalterada.
 
 #### Ejemplo
