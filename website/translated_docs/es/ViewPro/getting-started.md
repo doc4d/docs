@@ -140,16 +140,16 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 *   area - El nombre del área 4D View Pro
 *   rangos - Una colección de objeto(s) rango. Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
-| Propiedad |                   | Tipo      | Descripción                                                         | Disponible para                                                |
-| --------- | ----------------- | --------- | ------------------------------------------------------------------- | -------------------------------------------------------------- |
-| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                        | always available                                               |
-| ranges    |                   | colección | Colección de rangos                                                 | always available                                               |
-|           | \[ ].name        | texto     | Nombre de rango                                                     | name                                                           |
-|           | \[ ].sheet       | number    | Sheet index (current sheet index by default) (counting begins at 0) | celda, celdas, línea, líneas, columna, columnas, todos, nombre |
-|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                        | celda, celdas, línea, líneas                                   |
-|           | \[ ].rowCount    | number    | Número de líneas                                                    | celdas, líneas                                                 |
-|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                      | celda, celdas, columna, columnas                               |
-|           | \[ ].columnCount | number    | Conteo de columnas                                                  | celdas, columnas                                               |
+| Propiedad |                   | Tipo      | Descripción                                                                         | Disponible para                                                |
+| --------- | ----------------- | --------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                                        | always available                                               |
+| ranges    |                   | colección | Colección de rangos                                                                 | always available                                               |
+|           | \[ ].name        | texto     | Nombre de rango                                                                     | name                                                           |
+|           | \[ ].sheet       | number    | Índice de la hoja (por defecto, índice de la hoja actual) (el conteo comienza en 0) | celda, celdas, línea, líneas, columna, columnas, todos, nombre |
+|           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                                        | celda, celdas, línea, líneas                                   |
+|           | \[ ].rowCount    | number    | Número de líneas                                                                    | celdas, líneas                                                 |
+|           | \[ ].column      | number    | Índice de la columna (el conteo comienza en 0)                                      | celda, celdas, columna, columnas                               |
+|           | \[ ].columnCount | number    | Conteo de columnas                                                                  | celdas, columnas                                               |
 
 
 
