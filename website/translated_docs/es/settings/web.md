@@ -89,7 +89,7 @@ When you select this option (recommended), a user session is managed through a *
 
 When this option is selected, the web server does not provide any specific support for [user sessions](../WebServer/sessions.md). Successive requests from web clients are always independent and no context is maintained on the server.
 
-In this mode, you can configure additional web server setttings:
+En este modo, puede configurar los parámetros del servidor web adicionales:
 
 -   [Procesos Web simultáneos maximos](#maximum-concurrent-web-processes)
 -   [Reutilización de los contextos temporales (4D en modo remoto)](#reuse-temporary-contexts)
