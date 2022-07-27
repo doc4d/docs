@@ -176,7 +176,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 | Constante                                 | Valor                                | Comentario                                                                                                                                                                                                                        |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy HH:mm:ss"                                                    |
+| `vk pattern full date time`               | "_fullDateTimePattern_"              | Formato ISO 8601 para la fecha y la hora completas en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy HH:mm:ss"                                          |
 | `vk pattern long date`                    | "_longDatePattern_"                  | Formato ISO 8601 para la fecha completa en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy"                                                              |
 | `vk pattern long time`                    | "_longTimePattern_"                  | Formato ISO 8601 para la hora en la localización actual.<p><p>USA default pattern: "HH:mm:ss"                                                                                     |
 | `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                                |
@@ -380,12 +380,12 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 
 Scale attributes are used to specify printing optimization and adjustments.
 
-| Propiedad      | Tipo         | Descripción                                                                                                                           |
-| -------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Valor por defecto: "false"             |
-| bestFitRows    | booleano     | Row height is adjusted to fit the tallest text height for printing. <p>Valor por defecto: "false"             |
-| fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Por defecto = -1    |
-| fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Por defecto = -1 |
+| Propiedad      | Tipo         | Descripción                                                                                                                             |
+| -------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| bestFitColumns | booleano     | Column width is adjusted to fit the largest text width for printing.<p>Valor por defecto: "false"               |
+| bestFitRows    | booleano     | La altura de la línea se ajusta a la altura del texto más alto para la impresión. <p>Valor por defecto: "false" |
+| fitPagesTall   | entero largo | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Por defecto = -1      |
+| fitPagesWide   | entero largo | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Por defecto = -1   |
 
 ### Mostrar / Ocultar
 
