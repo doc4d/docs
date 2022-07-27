@@ -8,7 +8,7 @@ title: ドキュメンテーション更新情報
 
 ## 4D v19 R7
 
-- 新しい [FileHandle](API/FileHandleClass.md) クラスと、`File` クラスの新しい [`.open()`](API/FileClass.md) 関数。
+- New [FileHandle](API/FileHandleClass.md) class and new [`.open()`](API/FileClass.md#open) function in the `File` class.
 
 
 
