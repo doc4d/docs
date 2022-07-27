@@ -331,19 +331,19 @@ Time formats control the way times appear when displayed or printed. For data en
 
 The table below shows the Time field display formats and gives examples:
 
-| Nombre del formato           | Cadena JSON     | Comentarios                                                                                                                                      | Ejemplo para 04:30:25          |
-| ---------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| HH:MM:SS                     | hh_mm_ss      |                                                                                                                                                  | 04:30:25                       |
-| HH:MM                        | hh_mm           |                                                                                                                                                  | 04:30                          |
-| Hour Min Sec                 | HH_MM_SS      |                                                                                                                                                  | 4 horas 30 minutos 25 segundos |
-| Hour Min                     | HH_MM           |                                                                                                                                                  | 4 horas 30 minutos             |
-| HH:MM AM/PM                  | hh_mm_am      |                                                                                                                                                  | 4:30 a.m.                      |
-| MM SS                        | mm_ss           | Hora expresada como duración a partir de las 00:00:00                                                                                            | 270:25                         |
-| Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                            | 270 Minutos 25 Segundos        |
-| ISO Date Time                | iso8601         | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
-| System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                  | 04:30:25                       |
-| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: this format is the same as the System time short format       | 4•30•25 AM                     |
-| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format     | 4:30:25 AM HNEC                |
+| Nombre del formato           | Cadena JSON     | Comentarios                                                                                                                                               | Ejemplo para 04:30:25          |
+| ---------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| HH:MM:SS                     | hh_mm_ss      |                                                                                                                                                           | 04:30:25                       |
+| HH:MM                        | hh_mm           |                                                                                                                                                           | 04:30                          |
+| Hour Min Sec                 | HH_MM_SS      |                                                                                                                                                           | 4 horas 30 minutos 25 segundos |
+| Hour Min                     | HH_MM           |                                                                                                                                                           | 4 horas 30 minutos             |
+| HH:MM AM/PM                  | hh_mm_am      |                                                                                                                                                           | 4:30 a.m.                      |
+| MM SS                        | mm_ss           | Hora expresada como duración a partir de las 00:00:00                                                                                                     | 270:25                         |
+| Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                                     | 270 Minutos 25 Segundos        |
+| ISO Date Time                | iso8601         | Corresponde al estándar XML para representar datos relacionados con la hora. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
+| System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                           | 04:30:25                       |
+| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: this format is the same as the System time short format                | 4•30•25 AM                     |
+| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format              | 4:30:25 AM HNEC                |
 
 #### Gramática JSON
 
@@ -578,7 +578,7 @@ When this option is selected, text automatically wraps to the next line whenever
 
 - In single-line columns/areas, only the last word that can be displayed entirely is displayed. 4D inserts line returns; it is possible to scroll the contents of the area by pressing the down arrow key.
 
-- In multiline columns/areas, 4D carries out automatic line returns.
+- En las columnas/áreas multilínea, 4D realiza retornos de línea automáticos.
 
 ![](assets/en/FormObjects/wordwrap2.png)
 
