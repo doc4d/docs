@@ -8,7 +8,7 @@ La lista de las principales actualizaciones de esta documentación. Para obtener
 
 ## 4D v19 R7
 
-- New [FileHandle](API/FileHandleClass.md) class and new [`.open()`](API/FileClass.md) function in the `File` class.
+- New [FileHandle](API/FileHandleClass.md) class and new [`.open()`](API/FileClass.md#open) function in the `File` class.
 
 
 
