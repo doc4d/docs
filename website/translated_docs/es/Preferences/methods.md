@@ -99,7 +99,7 @@ Allows you to disable/enable the "international" code settings for the local 4D 
 
 Changes the indentation value for the 4D code in the Code Editor. El ancho debe especificarse en puntos (10 por defecto).
 
-4D code is automatically indented in order to reveal its structure:
+El código 4D es indentado automáticamente para revelar su estructura:
 
 ![](assets/en/Preferences/optionsIndent.png)
 
@@ -111,7 +111,7 @@ Lets you display the line numbers by default in each window of the Code Editor. 
 
 #### Mostrar las listas
 
-Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Code Editor window is opened. You can also show or hide each list directly from the Code Editor.
+Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Code Editor window is opened. También puede mostrar u ocultar cada lista directamente desde el Editor de código.
 
 #### Mostrar los portapapeles
 
