@@ -9,7 +9,7 @@ title: データ収集について
 
 - どのような情報が収集されるか
 - どこに情報が保存され、いつ 4Dに送信されるか
-- クライアント/サーバーのビルドされたアプリケーションで自動データ収集を無効にする方法。
+- ビルドされたクライアント/サーバーアプリケーションで自動データ収集を無効にする方法。
 
 
 ## 収集される情報
@@ -80,12 +80,8 @@ title: データ収集について
 > 何らかの理由でファイルを送信できなかった場合でも、ファイルは削除され、4D Server にエラーメッセージは表示されません。
 
 
-## クライアント/サーバーのビルドされたアプリケーションで自動データ収集を無効にする
+## ビルドされたクライアント/サーバーアプリケーションで自動データ収集を無効にする
 
-[クライアント/サーバーのビルドされたアプリケーション](../Desktop/building.md#クライアントサーバーページ) で、自動データ収集を無効にすることができます。
+[ビルドされたクライアント/サーバーのアプリケーション](../Desktop/building.md#クライアントサーバーページ) で、自動データ収集を無効にすることができます。
 
-To disable the collection, modify the value of the `DataCollection` key in the `info.plist` file of the merged server:
-
-| key            | デフォルト値 | Value to disable collection |
-| -------------- | ------ | --------------------------- |
-| DataCollection | true   | false                       |
+To disable the collection, pass the value **False** to the [`ServerDataCollection`](https://doc.4d.com/4Dv19R6/4D/19-R6/ServerDataCollection.300-6011712.en.html) key in the `buildApp.4DSettings` file, used to build the client/server application.
