@@ -68,7 +68,6 @@ File handle objects cannot be shared.
 |[<!-- INCLUDE #FileHandleClass.readLine().Syntax -->](#readline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.readLine().Summary -->|
 |[<!-- INCLUDE #FileHandleClass.readText().Syntax -->](#readtext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.readText().Summary -->|
 |[<!-- INCLUDE #FileHandleClass.setSize().Syntax -->](#setsize)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.setSize().Summary -->|
-|[<!-- INCLUDE #FileHandleClass.setSize().Syntax -->](#setsize)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.setSize().Summary -->|
 |[<!-- INCLUDE #FileHandleClass.writeBlob().Syntax -->](#writeblob)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeBlob().Summary -->|
 |[<!-- INCLUDE #FileHandleClass.writeLine().Syntax -->](#writeline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeLine().Summary -->|
 |[<!-- INCLUDE #FileHandleClass.writeText().Syntax -->](#writetext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileHandleClass.writeText().Summary -->|
