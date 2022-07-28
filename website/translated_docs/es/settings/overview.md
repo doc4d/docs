@@ -15,7 +15,7 @@ The Settings configure how the current project functions. These parameters may b
 Puede acceder a la caja de diálogo Parámetros:
 
 -   using the **Design > Settings...** menu option
--   by clicking **Settings** on the 4D toolbar
+-   haciendo clic en **Parámetros** en la barra de herramientas 4D
 -   on 4D Server, using the **Edit > Settings...** menu option
 
 When [**User settings** mode is enabled](../Desktop/user-settings.md), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
