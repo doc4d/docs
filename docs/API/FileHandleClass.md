@@ -84,7 +84,7 @@ File handle objects cannot be shared.
 </details>
 
 <!-- REF #FileHandleClass.breakModeRead.Syntax -->
-**.breakModeRead** : Real<!-- END REF -->
+**.breakModeRead** : Text<!-- END REF -->
 
 
 #### Description
@@ -92,7 +92,10 @@ File handle objects cannot be shared.
 The `.breakModeRead` property returns <!-- REF #FileHandleClass.breakModeRead.Summary -->the processing mode for line breaks used when reading the file<!-- END REF -->.
 
 
-The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
+The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is "native". 
+
+> The `.breakModeRead` property always contains a text value, even if the `.open()` option was set using a number (constant).
+
 
 This property is **read-only**. 
 
@@ -109,14 +112,17 @@ This property is **read-only**.
 </details>
 
 <!-- REF #FileHandleClass.breakModeWrite.Syntax -->
-**.breakModeWrite** : Real<!-- END REF -->
+**.breakModeWrite** : Text<!-- END REF -->
 
 
 #### Description
 
 The `.breakModeWrite` property returns <!-- REF #FileHandleClass.breakModeWrite.Summary -->the processing mode for line breaks used when writing to the file<!-- END REF -->.
 
-The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
+The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is "native".
+
+> The `.breakModeWrite` property always contains a text value, even if the `.open()` option was set using a number (constant).
+
 
 This property is **read-only**. 
 
