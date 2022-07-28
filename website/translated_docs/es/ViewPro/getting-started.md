@@ -25,7 +25,7 @@ Sin embargo, 4D View Pro requiere una licencia. You need to activate this licens
 
 ## Inserción de un área 4D View Pro
 
-4D View Pro documents are displayed and edited manually in a [4D form object](FormObjects/viewProArea_overview.md) named 4D View Pro. To select this object, click on the last tool in the object bar:
+4D View Pro documents are displayed and edited manually in a [4D form object](FormObjects/viewProArea_overview.md) named 4D View Pro. Para seleccionar este objeto, haga clic en la última herramienta de la barra de objetos:
 
 ![](assets/en/ViewPro/vpArea.png)
 
@@ -54,7 +54,7 @@ Las hojas de cálculo se componen de líneas y columnas. A cada línea se le aso
 
 *   To select a group of cells that are not continuous, hold down the **Ctrl** key (Windows) or **Command** key (Mac) and click on each cell to be selected.
 
-*   To deselect cells, simply click anywhere within the spreadsheet.
+*   Para deseleccionar las celdas, basta con hacer clic en cualquier lugar de la hoja de cálculo.
 
 ### Entrada de datos
 
