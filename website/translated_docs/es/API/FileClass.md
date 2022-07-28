@@ -526,25 +526,27 @@ If you use the *mode* (text) parameter, pass the opening mode for the file handl
 | "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "write" mode on the same File object. |
 | "append" | Creates a file handle to write values to the file (starting at the end of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "append" mode on the same File object.      |
 
-If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
+> The *mode* value is case sensitive.
 
-| *options*         | Tipo   | Descripción                                                                                                                   | Por defecto |
-| ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| `.mode`           | Texto  | Opening mode (see *mode* above)                                                                                               | "read"      |
-| `.charset`        | Texto  | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"     |
-| `.breakModeRead`  | Número | Processing mode for line breaks used when reading in the file (see below)                                                     | 1           |
-| `.breakModeWrite` | Número | Processing mode for line breaks used when writing to the file (see below)                                                     | 1           |
+If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
 
-The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values:
+| *options*         | Tipo           | Descripción                                                                                                                   | Por defecto   |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `.mode`           | Texto          | Opening mode (see *mode* above)                                                                                               | "read"        |
+| `.charset`        | Texto          | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"       |
+| `.breakModeRead`  | Text or Number | Processing mode for line breaks used when reading in the file (see below)                                                     | "native" or 1 |
+| `.breakModeWrite` | Text or Number | Processing mode for line breaks used when writing to the file (see below)                                                     | "native" or 1 |
 
-| Break mode value | Constante                     | Descripción                                                                                                                                                    |
-| ---------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0                | `Document unchanged`          | Sin procesar                                                                                                                                                   |
-| 1                | `Document with native format` | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
-| 2                | `Document with CRLF`          | Los saltos de línea se convierten en CRLF (retorno de carro + salto de línea), el formato predeterminado de Windows                                            |
-| 3                | `Document with CR`            | Los saltos de línea se convierten en CR (retorno de carro), el formato clásico por defecto de Mac OS                                                           |
-| 4                | `Document with LF`            | Los saltos de línea se convierten en LF (salto de línea), el formato por defecto de Unix y macOS                                                               |
+The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values (text or number):
 
+| Break mode as text | Break mode as number (constant)   | Descripción                                                                                                                                                    |
+| ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "native"           | 1 (`Document with native format`) | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
+| "crlf"             | 2 (`Document with CRLF`)          | Los saltos de línea se convierten en CRLF (retorno de carro + salto de línea), el formato predeterminado de Windows                                            |
+| "cr"               | 3 (`Document with CR`)            | Los saltos de línea se convierten en CR (retorno de carro), el formato clásico por defecto de Mac OS                                                           |
+| "lf"               | 4 (`Document with LF`)            | Los saltos de línea se convierten en LF (salto de línea), el formato por defecto de Unix y macOS                                                               |
+
+> The *break mode as text* value is case sensitive.
 
 #### Ejemplo
 
