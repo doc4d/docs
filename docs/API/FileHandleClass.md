@@ -372,7 +372,6 @@ If the *stopChar* parameter is passed and not found, `.readText()` returns an em
 
 
 <!-- REF FileHandleClass.setSize().Desc -->
-
 ## .setSize()
 
 <details><summary>History</summary>
@@ -381,8 +380,8 @@ If the *stopChar* parameter is passed and not found, `.readText()` returns an em
 |v19 R7|Added
 </details>
 
-<!--REF #FileHandleClass.setSize().Syntax -->  
-**.setSize**( *size* : Real ) <!-- END REF -->
+<!--REF #FileHandleClass.setSize().Syntax -->
+**.setSize**( *size* : Real )<!-- END REF -->
 
 <!--REF #FileHandleClass.setSize().Params -->
 |Parameter|Type||Description|
