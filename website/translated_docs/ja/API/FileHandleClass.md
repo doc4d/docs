@@ -84,7 +84,7 @@ File handle objects cannot be shared.
 </details>
 
 <!-- REF #FileHandleClass.breakModeRead.Syntax -->
-**.breakModeRead** : Real<!-- END REF -->
+**.breakModeRead** : Text<!-- END REF -->
 
 
 #### 説明
@@ -92,7 +92,10 @@ File handle objects cannot be shared.
 The `.breakModeRead` property returns <!-- REF #FileHandleClass.breakModeRead.Summary -->the processing mode for line breaks used when reading the file<!-- END REF -->.
 
 
-The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
+The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is "native".
+
+> The `.breakModeRead` property always contains a text value, even if the `.open()` option was set using a number (constant).
+
 
 このプロパティは **読み取り専用** です。 
 
@@ -109,14 +112,17 @@ The `.breakModeRead` property can be defined at the handle creation with the [`f
 </details>
 
 <!-- REF #FileHandleClass.breakModeWrite.Syntax -->
-**.breakModeWrite** : Real<!-- END REF -->
+**.breakModeWrite** : Text<!-- END REF -->
 
 
 #### 説明
 
 The `.breakModeWrite` property returns <!-- REF #FileHandleClass.breakModeWrite.Summary -->the processing mode for line breaks used when writing to the file<!-- END REF -->.
 
-The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is 1.
+The `.breakModeWrite` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is "native".
+
+> The `.breakModeWrite` property always contains a text value, even if the `.open()` option was set using a number (constant).
+
 
 このプロパティは **読み取り専用** です。 
 
@@ -338,23 +344,23 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 **.readText**( { *stopChar* : Text } ) : Text <!-- END REF -->
 
 <!--REF #FileHandleClass.readText().Params -->
-| 引数         | タイプ  |    | 説明                                 |
-| ---------- | ---- | -- | ---------------------------------- |
-| *stopChar* | テキスト | -> | Character at which to stop reading |
-| 戻り値        | テキスト | <- | Text from the file                 |
+| 引数         | タイプ  |    | 説明                                    |
+| ---------- | ---- | -- | ------------------------------------- |
+| *stopChar* | テキスト | -> | Character(s) at which to stop reading |
+| 戻り値        | テキスト | <- | Text from the file                    |
 <!-- END REF -->
 
 #### 説明
 
-The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* character is encountered<!-- END REF -->.
+The `.readText()` function <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* string is encountered (if passed) or the end of file is reached<!-- END REF -->.
 
-By default, this function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeRead`](#breakmoderead) property.
+This function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeRead`](#breakmoderead) property.
 
-The *stopChar* character is not included in the returned text. It you pass a string in *stopChar*, the first character is used as *stopChar*. If you omit the *stopChar* parameter, the whole document text is returned.
+The *stopChar* character string is not included in the returned text. If you omit the *stopChar* parameter, the whole document text is returned.
 
-When this function is executed, the ([.offset](#offset)) is placed just after the *stopChar* character.
+When this function is executed, the ([.offset](#offset)) is placed just after the *stopChar* string.
 
-If the *stopChar* character is passed and not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched.
+If the *stopChar* parameter is passed and not found, `.readText()` returns an empty string and the [.offset](#offset) is left untouched.
 
 > When this function is executed for the first time on a file handle, the whole document contents is loaded in a buffer.
 
@@ -366,7 +372,6 @@ If the *stopChar* character is passed and not found, `.readText()` returns an em
 
 
 <!-- REF FileHandleClass.setSize().Desc -->
-
 ## .setSize()
 
 <details><summary>履歴</summary>
@@ -375,8 +380,8 @@ If the *stopChar* character is passed and not found, `.readText()` returns an em
 | v19 R7 | 追加 |
 </details>
 
-<!--REF #FileHandleClass.setSize().Syntax -->  
-**.setSize**( *size* : Real ) <!-- END REF -->
+<!--REF #FileHandleClass.setSize().Syntax -->
+**.setSize**( *size* : Real )<!-- END REF -->
 
 <!--REF #FileHandleClass.setSize().Params -->
 | 引数   | タイプ |    | 説明                                |
