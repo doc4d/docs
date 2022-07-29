@@ -10,11 +10,11 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
-You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. In this case, the format cannot be modified in the object properties. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
+You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
 
 The number sign (#) is the placeholder for an alphanumeric display format. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
 
-For example, consider a part number with a format such as "RB-1762-1".
+Por ejemplo, considere un número de parte con un formato como "RB-1762-1".
 
 El formato alfa sería:
 
@@ -263,7 +263,7 @@ The following table shows how different formats affect the display of numbers. T
 ---
 ## Formato imagen
 
-Picture formats control how pictures appear when displayed or printed. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
+Los formatos Imagen controlan la apariencia de las imágenes cuando se muestran o se imprimen. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
 
 The truncation and scaling options do not affect the picture itself. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
 
@@ -286,7 +286,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 ![](assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
-### Scaled to fit (proportional) and Scaled to fit centered (proportional)
+### Escala de ajuste (proporcional) y Escala de ajuste centrada (proporcional)
 
 `Gramática JSON: "proportionalTopLeft" / "proportionalCenter"`
 
@@ -411,7 +411,7 @@ Las columnas booleanas también pueden mostrarse como menús emergentes. In this
 
 When this property is enabled, the object is not drawn on the form, however it can still be activated.
 
-In particular, this property allows implementing "invisible" buttons.  Los botones no renderizados pueden colocarse sobre los objetos gráficos. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
+En particular, esta propiedad permite implementar botones "invisibles".  Los botones no renderizados pueden colocarse sobre los objetos gráficos. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
 
 
 #### Gramática JSON
