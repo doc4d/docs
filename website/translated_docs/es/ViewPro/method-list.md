@@ -181,7 +181,7 @@ El documento tiene actualmente 3 hojas:
 
 ![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
-To insert a sheet at the third position (index 2) and name it "March":
+Para insertar una hoja en la tercera posición (índice 2) y nombrarla "March":
 
 ```4d
 VP ADD SHEET("ViewProArea";2;"March")
@@ -211,7 +211,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
 
-En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
 
 > - Sólo se muestran los datos de la celda superior izquierda. Data in the other combined cells is hidden until the span is removed.
 > - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
@@ -494,7 +494,7 @@ The `VP Column` command<!-- REF #_method_.VP Column. Summary -->returns a new ra
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-The *column* parameter defines the first column of the column range. Pass the column index (counting begins at 0)  in this parameter. If the range contains multiple columns, you should also use the optional *columnCount* parameter.
+The *column* parameter defines the first column of the column range. Pase el índice de la columna (el conteo comienza en 0) en este parámetro. If the range contains multiple columns, you should also use the optional *columnCount* parameter.
 
 The optional *columnCount* parameter allows you to define the total number of columns of the range. *columnCount* debe ser mayor que 0. If omitted, the value will be set to 1 by default and a column type range is created.
 
@@ -665,7 +665,7 @@ Este comando es útil, por ejemplo:
 In *vpObject*, pass the 4D View Pro object that you want to convert. This object must have been previously parsed using [VP Export to object](#vp-export-to-object) or saved using [VP EXPORT DOCUMENT](#vp-export-document).
 > SVG conversion process requires that expressions and formats (cf. [Cell Format](configuring.md#cell-format)) included in the 4D View Pro area be evaluated at least once, so that they can be correctly exported. If you convert a document that was not evaluated beforehand, expressions or formats may be rendered in an unexpected way.
 
-In *rangeObj*, pass a range of cells to convert. By default, if this parameter is omitted, the whole document contents are converted.
+En *rangeObj*, pase un rango de celdas a convertir. By default, if this parameter is omitted, the whole document contents are converted.
 
 Document contents are converted with respect to their viewing attributes, including formats (see note above), visibility of headers, columns and rows. La conversión de los siguientes elementos es soportada:
 
@@ -732,7 +732,7 @@ You can pass an optional *options* parameter with the following properties:
 | Propiedad   | Tipo         | Descripción                                                                                                               |
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | copy        | Booleano     | *True* (default) to keep the copied values, formatting and formulas after the command executes. *False* para eliminarlos. |
-| copyOptions | Entero largo | Especifica lo que se copia o mueve. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Copies all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia únicamente los formatos.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia los valores y el formato.</td></tr></table></p>                                            |
+| copyOptions | Entero largo | Especifica lo que se copia o mueve. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Copia todos los objetos de datos, incluidos los valores, formatos y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia únicamente los formatos.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia los valores y el formato.</td></tr></table></p>                                            |
 
 The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
@@ -889,14 +889,14 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | formula            | objeto   | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                           |
 | valuesOnly         | booleano | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | includeFormatInfo  | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                     |
-| sheetIndex         | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| sheetIndex         | number   | PDF únicamente (opcional) - Índice de la hoja a exportar (empezando por 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | pdfOptions         | objeto   | PDF únicamente (opcional) - Opciones para la exportación en pdf <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>título del documento.</td></tr><tr><td>author</td><td>texto</td><td>nombre de la persona que creó ese documento.</td></tr><tr><td>keywords</td><td>texto</td><td>palabras clave asociadas al documento.</td></tr><tr><td>subject</td><td>texto</td><td>asunto del documento.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | csvOptions         | objeto   | CSV únicamente (opcional) - Opciones para la exportación en csv <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Objeto rango de celdas</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Delimitador de línea. Por defecto: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Delimitador de columna. Por defecto: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | \<customProperty> | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 **Notas sobre el formato Excel**:
 
-* When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list from GrapeCity](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html).
+* When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. Por ejemplo, los métodos y fórmulas 4D no son soportados por Excel. You can verify other settings with [this list from GrapeCity](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html).
 * Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
 
 
@@ -1097,7 +1097,7 @@ You can pass the optional *searchCondition* parameter to specify how the search 
 | Propiedad   | Tipo     | Descripción                                                                                                                                                                                                          |
 | ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | afterColumn | Integer  | The number of the column just before the starting column of the search. If the *rangeObj* is a combined range, the column number given must be from the first range. Default value: -1 (beginning of the *rangeObj*) |
-| afterRow    | Integer  | The number of the row just before the starting row of the search. If the *rangeObj* is a combined range, the row number given must be from the first range. Default value: -1 (beginning of the *rangeObj*)          |
+| afterRow    | Integer  | El número de la línea justo antes de la línea inicial de la búsqueda. If the *rangeObj* is a combined range, the row number given must be from the first range. Default value: -1 (beginning of the *rangeObj*)      |
 | all         | Booleano | <li>True - All cells in *rangeObj* corresponding to *searchValue* are returned</li><li>False - (default value) Only the first cell in *rangeObj* corresponding to *searchValue* is returned</li>                                                                                                                                                                 |
 | flags       | Integer  | <table><tr><td>`vk find flag exact match`</td><td>The entire content of the cell must completely match the search value</td></tr><tr><td>`vk find flag ignore case`</td><td>Las letras mayúsculas y minúsculas se consideran iguales. Ej.: "a" es considerada como idéntica a "A".</td></tr><tr><td>`vk find flag none`</td><td>no se consideran los indicadores de búsqueda (por defecto)</td></tr><tr><td>`vk find flag use wild cards`</td><td>Los caracteres genéricos (\*,?) se pueden utilizar en la cadena de búsqueda. Wildcard characters can be used in any string comparison to match any number of characters:<li>\* for zero or multiple characters (for example, searching for "bl*"  can find "bl", "black", or "blob")</li><li>? ? ? ? for a single character (for example, searching for "h?t" can find "hot", or "hit"</li></td></tr></table><p>Estos marcadores se pueden combinar. Por ejemplo:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>                                                                                     |
 | order       | Integer  | <table><tr><td>`vk find order by columns`</td><td>La búsqueda se realiza por columnas. Each row of a column is searched before the search continues to the next column.</td></tr><tr><td>`vk find order by rows`</td><td>La búsqueda se realiza por líneas. Each column of a row is searched before the search continues to the next row (default)</td></tr></table>                                                                                                                                                                                           |
@@ -1270,7 +1270,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 ![](assets/en/ViewPro/cmd_vpGetActiveCell.PNG)
 
-The following code will retrieve the coordinates of the active cell:
+El siguiente código recuperará las coordenadas de la celda activa:
 
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
@@ -1381,7 +1381,7 @@ $range:=VP Column("ViewProArea";1;2)
 $attr:=VP Get column attributes($range)
 ```
 
-... will return a collection of the attributes within the given range:
+... devolverá una colección de los atributos dentro del rango dado:
 
 ![](assets/en/ViewPro/cmd_vpGetColumnAttributes.PNG)
 
@@ -1585,10 +1585,10 @@ You can define where to get the formula in *scope* using either the sheet index 
 
 El objeto devuelto contiene las siguientes propiedades:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                 |
-| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula   | Texto | Text of the formula corresponding to the named formula or named range. For named ranges, the formula is a sequence of absolute coordinates. |
-| comment   | Texto | Comment corresponding to the named formula or named range                                                                                   |
+| Propiedad | Tipo  | Descripción                                                                                                                                                     |
+| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula   | Texto | Texto de la fórmula correspondiente a la fórmula nombrada o al rango nombrado. Para los rangos nombrados, la fórmula es una secuencia de coordenadas absolutas. |
+| comment   | Texto | Comment corresponding to the named formula or named range                                                                                                       |
 
 #### Ejemplo
 
@@ -1911,7 +1911,7 @@ You can define where to get the row count in the optional *sheet* parameter usin
 
 #### Ejemplo
 
-The following code returns the number of rows in the 4D View Pro area:
+El siguiente código devuelve el número de líneas en el área 4D View Pro:
 
 ```4d
 var $rowCount : Integer
@@ -1996,7 +1996,7 @@ En el siguiente documento:
 
 ![](assets/en/ViewPro/vp-sheet-3.png)
 
-Get the sheet count and set the current sheet to the last sheet:
+Obtener el número de hojas y define la hoja actual como la última hoja:
 
 ```4d
  $count:=VP Get sheet count("ViewProArea")
@@ -2111,7 +2111,7 @@ $sheetName:=VP Get sheet name("ViewProArea";2)
 
 The `VP Get sheet options` command<!-- REF #_method_.VP Get sheet options. Summary -->returns an object containing the current sheet options of the *vpAreaName* area<!-- END REF -->.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pase el nombre del área de 4D View Pro en *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
@@ -2507,14 +2507,14 @@ An error is returned if the `filePath` parameter is invalid, or if the file is m
 
 The optional *paramObj* parameter allows you to define properties for the imported document:
 
-| Parámetros |                 | Tipo   | Descripción                                                                                                                                                                                                                                              |
-| ---------- | --------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula    |                 | objeto | A callback method name to be launched when the import has completed. The method must use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula). |
-| contraseña |                 | texto  | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                      |
-| csvOptions |                 | objeto | opciones de importación csv                                                                                                                                                                                                                              |
-|            | range           | objeto | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
-|            | rowDelimiter    | texto  | Delimitador de línea. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                   |
-|            | columnDelimiter | texto  | Delimitador de columna. Por defecto: ","                                                                                                                                                                                                                 |
+| Parámetros |                 | Tipo   | Descripción                                                                                                                                                                                                                                                                 |
+| ---------- | --------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula    |                 | objeto | Un nombre de método de retollamada que se lanzará cuando la importación haya terminado. The method must use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula). |
+| contraseña |                 | texto  | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                                         |
+| csvOptions |                 | objeto | opciones de importación csv                                                                                                                                                                                                                                                 |
+|            | range           | objeto | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                                               |
+|            | rowDelimiter    | texto  | Delimitador de línea. Si no está presente, el delimitador es determinado automáticamente por 4D.                                                                                                                                                                            |
+|            | columnDelimiter | texto  | Delimitador de columna. Por defecto: ","                                                                                                                                                                                                                                    |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
@@ -2722,7 +2722,7 @@ The *options* parameter has several properties:
 | Propiedad    | Tipo         | Descripción                                                                                                                                                                                            |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | copy         | Booleano     | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
-| pasteOptions | Entero largo | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                 |
+| pasteOptions | Entero largo | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                 |
 
 The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 #### Ejemplo
@@ -2820,7 +2820,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 #### Ejemplo
 
-You want to display an empty document in the "myVPArea" form object:
+Quiere mostrar un documento vacío en el objeto formulario "myVPArea":
 
 ```4d
 VP NEW DOCUMENT("myVPArea")
@@ -2923,14 +2923,14 @@ In *dataObject*, pass the object that contains the cell data, formatting, and fo
 
 In the optional *options* parameter, you can specify what to paste in the cell range. Valores posibles:
 
-| Constante                                      | Descripción                                                          |
-| ---------------------------------------------- | -------------------------------------------------------------------- |
-| `vk clipboard options all`                     | Pastes all data objects, including values, formatting, and formulas. |
-| `vk clipboard options formatting`              | Pega sólo el formato.                                                |
-| `vk clipboard options formulas`                | Pegar sólo las fórmulas.                                             |
-| `vk clipboard options formulas and formatting` | Pega fórmulas y formato.                                             |
-| `vk clipboard options values`                  | Pega sólo valores.                                                   |
-| `vk clipboard options value and formatting`    | Pega valores y formato.                                              |
+| Constante                                      | Descripción                                                              |
+| ---------------------------------------------- | ------------------------------------------------------------------------ |
+| `vk clipboard options all`                     | Pega todos los objetos de datos, incluyendo valores, formato y fórmulas. |
+| `vk clipboard options formatting`              | Pega sólo el formato.                                                    |
+| `vk clipboard options formulas`                | Pegar sólo las fórmulas.                                                 |
+| `vk clipboard options formulas and formatting` | Pega fórmulas y formato.                                                 |
+| `vk clipboard options values`                  | Pega sólo valores.                                                       |
+| `vk clipboard options value and formatting`    | Pega valores y formato.                                                  |
 
 The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
@@ -3137,7 +3137,7 @@ VP REMOVE SHEET("ViewProArea";2)
 
 The `VP REMOVE SPAN` command<!-- REF #_method_.VP REMOVE SPAN. Summary -->removes the span from the cells in *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass a range object of the cell span. The spanned cells in the range are divided into individual cells.
+In *rangeObj*, pass a range object of the cell span. Las celdas fusionadas en el rango se dividen en celdas individuales.
 
 #### Ejemplo
 
@@ -3810,7 +3810,7 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 The `VP SET COLUMN ATTRIBUTES` command<!-- REF #_method_.VP SET COLUMN ATTRIBUTES. Summary -->applies the attributes defined in the *propertyObj* to the columns in the *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass an object containing a range. If the range contains both columns and rows, attributes are applied only to the columns.
+En *rangeObj*, pase un objeto que contenga un rango. If the range contains both columns and rows, attributes are applied only to the columns.
 
 The *propertyObj* parameter lets you specify the attributes to apply to the columns in the *rangeObj*. Estos atributos son:
 
@@ -3873,7 +3873,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 #### Ejemplo
 
-The following code defines five columns in the 4D View Pro area:
+El siguiente código define cinco columnas en el área de 4D View Pro:
 
 ```4d
 VP SET COLUMN COUNT("ViewProArea";5)
@@ -3950,7 +3950,7 @@ The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when
 
 > If `VP SET CUSTOM FUNCTIONS` is called multiple times for the same area, in the same session, only the last call is taken into account.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pase el nombre del área de 4D View Pro en *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
 In the *formulaObj* parameter, pass an object containing the 4D formulas that can be called from 4D View Pro formulas as well as additional properties. Each `customFunction` property passed in *formulaObj* becomes the name of a function in the 4D View Pro area.
 
@@ -4325,7 +4325,7 @@ The `VP SET FROZEN PANES` command<!-- REF #_method_.VP SET FROZEN PANES. Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-You can pass an object defining the columns and rows to freeze in the *paneObj* parameter. Setting the value of any of the column or row properties equal to zero resets (unfreezes) the property. If a property is set to less than zero, the command does nothing. Puede pasar:
+You can pass an object defining the columns and rows to freeze in the *paneObj* parameter. Setting the value of any of the column or row properties equal to zero resets (unfreezes) the property. Si una propiedad está definida como menor que cero, el comando no hace nada. Puede pasar:
 
 | Propiedad           | Tipo    | Descripción                                                    |
 | ------------------- | ------- | -------------------------------------------------------------- |
@@ -4509,7 +4509,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the rows
 
 #### Ejemplo
 
-You want to change the size of the second row and set the header:
+Quiere cambiar el tamaño de la segunda línea y definir el encabezado:
 
 ```4d
 var $row; $properties : Object
@@ -4713,7 +4713,7 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 
 The `VP SET SHEET OPTIONS` command<!-- REF #_method_.VP SET SHEET OPTIONS. Summary -->allows defining various sheet options of the *vpAreaName* area<!-- END REF -->.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pase el nombre del área de 4D View Pro en *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
 Pass an object containing definitions for the options to set in the *sheetOptions* parameter. To view the full list of the available options, see the [Sheet Options](configuring.md#sheet-options) paragraph.
 
@@ -5040,7 +5040,7 @@ In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) wh
 The *valuesCol* parameter is two-dimensional:
 
 *   The first-level collection contains subcollections of values. Cada subcolección define una línea. Each subcollection defines a row.
-*   Cada subcolección define los valores de las celdas de la línea. Los valores pueden ser enteros, reales, booleanos, texto, fecha, null u objeto. If the value is an object, it can have the following properties:
+*   Cada subcolección define los valores de las celdas de la línea. Los valores pueden ser enteros, reales, booleanos, texto, fecha, null u objeto. Si el valor es un objeto, puede tener las siguientes propiedades:
 
     | Propiedad | Tipo                                     | Descripción                        |
     | --------- | ---------------------------------------- | ---------------------------------- |
@@ -5132,7 +5132,7 @@ The following table lists the available workbook options:
 | numbersFitMode                        | number                  | Changes display mode when date/number data width is longer than column width. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk numbers fit mode mask</td><td>0</td><td> Replace data content with "###" and shows tip</td></tr><tr><td> vk numbers fit mode overflow </td><td>1</td><td> Display data content as a string. Si la siguiente celda está vacía, se desborda el contenido.</td></tr></table>                                                                                                                           |
 | pasteSkipInvisibleRange               | booleano                | Pegar u omitir pegar datos en rangos invisibles: <ul><li>False (por defecto): pegar datos</li><li>True: omitir el pegado en rangos invisibles</li></ul>See [Grapecity's docs](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) for more information on invisible ranges.                    |
 | referenceStyle                        | number                  | Style for cell and range references in cell formulas. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk reference style A1 </td><td>0</td><td> Utilizar el estilo A1.</td></tr><tr><td> vk reference style R1C1 </td><td>1</td><td> Utilizar el estilo R1C1</td></tr></table>                                                                                                                                                   |
-| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                               |
+| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> Dibuja dos líneas cortas cuando la línea o la columna se redimensiona a cero.</td></tr></table>                                                                                                                                               |
 | rowResizeMode                         | number                  | La forma en que se redimensionan las líneas. Los valores disponibles son los mismos qe columnResizeMode                                                                                                                                                |
 | scrollbarAppearance                   | number                  | Apariencia de la barra de desplazamiento. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk scrollbar appearance mobile</td><td>1</td><td> Apariencia de la barra de desplazamiento móvil.</td></tr><tr><td> vk scrollbar appearance skin (por defecto)</td><td>0</td><td> Aspecto de la barra de desplazamiento clásica similar a la de Excel.</td></tr></table>                                                                                                                                                               |
 | scrollbarMaxAlign                     | booleano                | The scroll bar aligns with the last row and column of the active sheet.                                                                                                                                                                                |
