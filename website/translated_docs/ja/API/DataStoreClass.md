@@ -337,9 +337,9 @@ user / password / timeout / tls を指定してリモートデータストアに
 ```4d
  var $status : Object
 
- $status:=dataStore.encryptionStatus()
+ $status:=ds.encryptionStatus()
 
- If($status.isEncrypted) // データベースが暗号化されていれば
+ If($status.isEncrypted) //the database is encrypted
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -347,7 +347,7 @@ user / password / timeout / tls を指定してリモートデータストアに
           $vcount:=$vcount+1
        End if
     End for each
-    ALERT("データベースには "+String($vcount)+" 件の暗号化されたテーブルが存在しています。")
+    ALERT(String($vcount)+" encrypted table(s) in this datastore.")
  Else
     ALERT("このデータベースは暗号化されていません。")
  End if
