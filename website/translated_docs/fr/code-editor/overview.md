@@ -1,37 +1,37 @@
 ---
 id: overview
-title: About 4D Code
+title: À propos du code 4D
 ---
 
 
-The 4D code used across your application is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md).
+Le code 4D utilisé dans votre application est écrit dans les [méthodes ](../Concepts/methods.md) et les [classes ](../Concepts/classes.md).
 
-The 4D IDE provides you with various features to create, edit, export, or delete your code. You will usually use the 4D [code editor](write-class-method.md) to work with your code.
+L'IDE de 4D vous offre diverses fonctionnalités pour créer, modifier, exporter ou supprimer votre code. Vous utiliserez généralement l'[éditeur de code de 4D](write-class-method.md) pour travailler avec votre code.
 
 
-## Creating methods
+## Créer des méthodes
 
-A method in 4D is stored in a **.4dm** file located in the appropriate folder of the [`/Project/Sources/`](../Project/architecture.md#sources) folder.
+Une méthode dans 4D est stockée dans un fichier **.4dm** situé dans le dossier approprié du dossier [`/Project/Sources/`](../Project/architecture.md#sources) .
 
-You can create [several types of methods](../Concepts/methods.md):
+Vous pouvez créer [plusieurs types de méthodes](../Concepts/methods.md) :
 
-- All types of methods can be created or opened from the **Explorer** window (except Object methods which are managed from the [Form editor](../FormEditor/formEditor.md)).
-- Project methods can also be created or opened from the **File** menu or toolbar (**New/Method...** or **Open/Method...**) or using shortcuts in the [Code editor window](write-class-method.md#shortcuts).
-- Triggers can also be created or opened from the Structure editor.
-- Form methods can also be created or opened from the [Form editor](../FormEditor/formEditor.md).
+- Tous les types de méthodes peuvent être créés ou ouverts à partir de la fenêtre de l'**Explorateur** (à l'exception des méthodes Objet qui sont gérées à partir de l'[éditeur de formulaires](../FormEditor/formEditor.md)).
+- Les méthodes projet peuvent également être créées ou ouvertes à partir du menu **Fichier ** ou de la barre d'outils (**Nouveau/Méthode...** ou **Ouvrir/Méthode...**) ou à l'aide de raccourcis dans la fenêtre de l'[éditeur de code](write-class-method.md#shortcuts).
+- Les triggers peuvent également être créés ou ouverts à partir de l'éditeur de Structure.
+- Les méthodes formulaire peuvent également être créées ou ouvertes à partir de l'[éditeur de formulaires](../FormEditor/formEditor.md).
 
 ## Créer des classes
 
-A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. Le nom du fichier est le nom de la classe.
+Une classe utilisateur dans 4D est définie par un fichier de méthode spécifique (**.4dm**), stocké dans le dossier [`/Project/Sources/Classes/`](../Project/architecture.md#sources) . Le nom du fichier est le nom de la classe.
 
-You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
+Vous pouvez créer un fichier de classe à partir du menu ou de la barre d'outils **Fichier** (**Nouveau/Classe...**) ou dans la page **Méthodes** de la fenêtre de l'**Explorateur** .
 
-For more information, please refer to the [Classes](../Concepts/classes.md) section.
+Pour plus d'informations, reportez-vous à la section [Classes](../Concepts/classes.md).
 
 
-## Deleting methods or classes
+## Supprimer des méthodes ou des classes
 
-To delete an existing method or class, you can:
+Pour supprimer une méthode ou une classe existante, vous pouvez :
 
 - on your disk, remove the *.4dm* file from the "Sources" folder,
 - in the 4D Explorer, select the method or class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
