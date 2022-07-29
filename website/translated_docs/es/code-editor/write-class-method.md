@@ -58,7 +58,7 @@ You can enlarge or reduce the relative width of each list area by dragging one o
 
 - To add or remove a list, click in the title area of one of the lists and choose the corresponding command in the pop-up menu. The **Remove this list** command is disabled when you click on the last list. If you want to hide all the lists, you must either click on the **show or hide lists**  button at the bottom right of the window or hide them by default in the **Preferences**.
 
-- You can hide the lists in all the windows in the following ways:
+- Puede ocultar las listas en todas las ventanas de las siguientes maneras:
   - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
   - For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
 
@@ -102,7 +102,7 @@ To save a Code Editor window as a template, choose **Method** > **Save As Templa
 
 ## Break points area
 
-This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
+This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Los puntos de interrupción son útiles durante la fase de depuración de su programación. They stop the execution of your code at specific locations and display the debugger.
 
 For more information on break points, see the [Debugging](../Debugging/breakpoints.md#breakpoints) section.
 
@@ -122,7 +122,7 @@ The status bar located at the bottom right part of the editor window displays th
 
 - **Ln**: Line number
 - **Col**: Column number, i.e., the level in the hierarchy of programming structures. El primer nivel es 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
-- **Ch**: Location of character in the line.
+- **Ch**: ubicación del caracter en la línea.
 - ![](assets/en/code-editor/show-hide-list.png): Ocultar/mostrar listas.
 
 
@@ -164,7 +164,7 @@ When you insert a command by dragging it from the **Commands** page of the Explo
 
 #### Dentro de un método, clase, función o entre dos diferentes
 
-In the Code Editor, the drag-and-drop mechanism is activated as soon as a portion of text is selected. By default, the drag-and-drop mechanism moves the selected text. In order to copy it, hold down the **Ctrl** key (Windows) or the **Option** key (macOS) during the operation.
+In the Code Editor, the drag-and-drop mechanism is activated as soon as a portion of text is selected. Por defecto, el mecanismo de arrastrar y soltar mueve el texto seleccionado. In order to copy it, hold down the **Ctrl** key (Windows) or the **Option** key (macOS) during the operation.
 
 ### Entrada en varias líneas
 
@@ -443,7 +443,7 @@ En 4D, se pueden utilizar las siguientes secuencias de escape:
 | `\"`                             | " (Comillas)         |
 
 
-> It is possible to use either upper or lower case in escape sequences.
+> Es posible utilizar mayúsculas o minúsculas en las secuencias de escape.
 
 In the following example, the **Carriage return** character (escape sequence \r) is inserted in a statement in order to obtain the dialog box shown:
 
@@ -467,7 +467,7 @@ Several functions in the Code Editor make code easier to read and facilitate bro
 
 If you place the mouse over the expand button [...], a help tip appears, displaying the first lines of the hidden code.
 
-A collapsed portion of code can be selected, copied, pasted or deleted. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
+Se puede seleccionar, copiar, pegar o eliminar una porción de código contraída. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
 
 Hay varias formas de expandir y contraer código:
 
