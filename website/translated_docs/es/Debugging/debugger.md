@@ -200,7 +200,7 @@ This theme lists the processes started since the beginning of the working sessio
 
 Este tema lista las tablas y los campos en la base 4D. For each Table item, the Value column displays the size of the current selection for the current process as well as the number of **locked records**.
 
-For each Field item, the Value column displays the value of the field for the current record (except picture and BLOB). You can modify the field values but not the the tables' information.
+For each Field item, the Value column displays the value of the field for the current record (except picture and BLOB). Puede modificar los valores de los campos pero no la información de las tablas.
 
 #### Conjuntos
 
@@ -391,7 +391,7 @@ The contextual menu of the Source Code Pane provides access to several functions
   * *Tables:* Displays table properties in the inspector of the Structure window
   * *Forms:* Displays form in the Form editor
   * *Variables* (local, process, interprocess or $n parameter): displays the line in the current method or among the compiler methods where the variable is declared
-* **Search References** (also available in Method editor): Searches all project objects (methods and forms) in which the current element of the method is referenced. The current element is the one selected or the one where the cursor is located. This can be the name of a field, variable, command, string, and so on. Search results are displayed in a new standard results window.
+* **Search References** (also available in Method editor): Searches all project objects (methods and forms) in which the current element of the method is referenced. The current element is the one selected or the one where the cursor is located. Este puede ser el nombre de un campo, variable, comando, cadena, etc. Search results are displayed in a new standard results window.
 * **Copy**: Standard copy of the selected expression to the pasteboard.
 * **Copy to Expression Pane**: Copy the selected expression to the Custom Watch Pane.
 * **Run to Cursor**:Executes statements found between the program counter and the selected line of the method (where the cursor is found).
@@ -410,7 +410,7 @@ The search is carried out only if you select at least one character in the Sourc
 
 ## Atajos
 
-This section lists all the shortcuts available in the debugger window.
+Esta sección lista todos los atajos disponibles en la ventana del depurador.
 
 > The tool bar also has [shortcuts](#tool-bar-buttons).
 
