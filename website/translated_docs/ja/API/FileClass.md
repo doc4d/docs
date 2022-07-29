@@ -525,27 +525,27 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 | "write"  | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの先頭から)。 ディスク上にファイルが存在しない場合は、作成されます。 "write" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。  |
 | "append" | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの最後から)。 ディスク上にファイルが存在しない場合は、作成されます。 "append" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。 |
 
-> The *mode* value is case sensitive.
+> *mode* の値は、文字の大小を区別します。
 
-If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
+*option* (object) 引数を使って、以下のプロパティを通じて FileHandle にさらなるオプションを渡すことができます (これらのプロパティはその後、開かれた [FileHandle オブジェクト](FileHandleClass) から取得できます)。
 
-| *options*         | タイプ            | 説明                                                                     | デフォルト         |
-| ----------------- | -------------- | ---------------------------------------------------------------------- | ------------- |
-| `.mode`           | Text           | 開くモード (上記の *mode* 参照)                                                  | "read"        |
-| `.charset`        | Text           | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8"       |
-| `.breakModeRead`  | Text or Number | ファイルの読み取り時に使用される改行の処理モード (下記参照)                                        | "native" or 1 |
-| `.breakModeWrite` | Text or Number | ファイルの書き込み時に使用される改行の処理モード (下記参照)                                        | "native" or 1 |
+| *options*         | タイプ             | 説明                                                                     | デフォルト          |
+| ----------------- | --------------- | ---------------------------------------------------------------------- | -------------- |
+| `.mode`           | Text            | 開くモード (上記の *mode* 参照)                                                  | "read"         |
+| `.charset`        | Text            | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8"        |
+| `.breakModeRead`  | Text または Number | ファイルの読み取り時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
+| `.breakModeWrite` | Text または Number | ファイルの書き込み時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
 
-`.breakModeRead` と `.breakModeWrite` は、改行文字に適用する処理を指定します。 You can use one of the following values (text or number):
+`.breakModeRead` と `.breakModeWrite` は、改行文字に適用する処理を指定します。 以下のいずれかの値を使用できます (テキストまたは数値):
 
-| Break mode as text | Break mode as number (constant)   | 説明                                                                                                                                                             |
-| ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "native"           | 1 (`Document with native format`) | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
-| "crlf"             | 2 (`Document with CRLF`)          | 改行は Windows のデフォルトフォーマットである CRLF (キャリッジリターン＋ラインフィード) へと変換されます。                                                                                                 |
-| "cr"               | 3 (`Document with CR`)            | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                                                                       |
-| "lf"               | 4 (`Document with LF`)            | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                                                                                      |
+| 改行モードの値 (テキスト) | 改行モードの値 (数値/定数)                   | 説明                                                                                                       |
+| -------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| "native"       | 1 (`Document with native format`) | (デフォルト) 改行は OS のネイティブフォーマットに変換されます。 macOS では LF (ラインフィード) に、Windows では CRLF (キャリッジリターン＋ラインフィード) に変換されます。 |
+| "crlf"         | 2 (`Document with CRLF`)          | 改行は Windows のデフォルトフォーマットである CRLF (キャリッジリターン＋ラインフィード) へと変換されます。                                           |
+| "cr"           | 3 (`Document with CR`)            | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                 |
+| "lf"           | 4 (`Document with LF`)            | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                                |
 
-> The *break mode as text* value is case sensitive.
+> *break mode as text* の値は、文字の大小を区別します。
 
 #### 例題
 
