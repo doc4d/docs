@@ -28,7 +28,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | [<!-- INCLUDE #document.extension.Syntax -->](#extension)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.extension.Summary -->                       |
 | [<!-- INCLUDE #document.fullName.Syntax -->](#fullname)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.fullName.Summary -->                          |
 | [<!-- INCLUDE #FileClass.getAppInfo().Syntax -->](#getappinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #FileClass.getAppInfo().Summary -->              |
-| [<!-- INCLUDE #document.getContent().Syntax -->](#getcontent)<p><!-- INCLUDE #document.getContent().Summary -->                                       |
+| [<!-- INCLUDE #document.getContent().Syntax -->](#getcontent)<p><!-- INCLUDE #document.getContent().Summary -->                                        |
 | [<!-- INCLUDE #document.getIcon().Syntax -->](#geticon)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.getIcon().Summary -->                        |
 | [<!-- INCLUDE #document.getText().Syntax -->](#gettext)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.getText().Summary -->                        |
 | [<!-- INCLUDE #document.hidden.Syntax -->](#hidden)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #document.hidden.Summary -->                               |
@@ -491,25 +491,27 @@ If you use the *mode* (text) parameter, pass the opening mode for the file handl
 | "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "write" mode on the same File object. |
 | "append" | Creates a file handle to write values to the file (starting at the end of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "append" mode on the same File object.      |
 
-If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read from the opened [file handle object](FileHandleClass)):
+> The *mode* value is case sensitive.
 
-| *options*         | Type   | Description                                                                                                                   | Par défaut |
-| ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| `.mode`           | Text   | Opening mode (see *mode* above)                                                                                               | "read"     |
-| `.charset`        | Text   | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"    |
-| `.breakModeRead`  | Nombre | Processing mode for line breaks used when reading in the file (see below)                                                     | 1          |
-| `.breakModeWrite` | Nombre | Processing mode for line breaks used when writing to the file (see below)                                                     | 1          |
+If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
 
-The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values:
+| *options*         | Type           | Description                                                                                                                   | Par défaut    |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `.mode`           | Text           | Opening mode (see *mode* above)                                                                                               | "read"        |
+| `.charset`        | Text           | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"       |
+| `.breakModeRead`  | Text or Number | Processing mode for line breaks used when reading in the file (see below)                                                     | "native" or 1 |
+| `.breakModeWrite` | Text or Number | Processing mode for line breaks used when writing to the file (see below)                                                     | "native" or 1 |
 
-| Break mode value | Constante                     | Description                                                                                                                                                    |
-| ---------------- | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0                | `Document unchanged`          | Aucun traitement                                                                                                                                               |
-| 1                | `Document with native format` | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
-| 2                | `Document with CRLF`          | Les fins de ligne sont converties en CRLF (retour chariot + saut de ligne), le format par défaut de Windows                                                    |
-| 3                | `Document with CR`            | Les fins de ligne sont converties en CR (retour chariot), le format MacOS classique par défaut                                                                 |
-| 4                | `Document with LF`            | Les fins de ligne sont converties en LF (line feed), le format Unix et macOS par défaut                                                                        |
+The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values (text or number):
 
+| Break mode as text | Break mode as number (constant)   | Description                                                                                                                                                    |
+| ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "native"           | 1 (`Document with native format`) | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
+| "crlf"             | 2 (`Document with CRLF`)          | Les fins de ligne sont converties en CRLF (retour chariot + saut de ligne), le format par défaut de Windows                                                    |
+| "cr"               | 3 (`Document with CR`)            | Les fins de ligne sont converties en CR (retour chariot), le format MacOS classique par défaut                                                                 |
+| "lf"               | 4 (`Document with LF`)            | Les fins de ligne sont converties en LF (line feed), le format Unix et macOS par défaut                                                                        |
+
+> The *break mode as text* value is case sensitive.
 
 #### Exemple
 
