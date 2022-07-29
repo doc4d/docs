@@ -23,7 +23,7 @@ Por razones de seguridad, por defecto, 4D no responde a las peticiones REST. Si 
 
 El mensaje de advertencia "Atención, verifique los privilegios de acceso" aparece cuando se marca esta opción para llamar la atención sobre el hecho de que cuando se activan los servicios REST, por defecto el acceso a los objetos de la base de datos es gratuito mientras no se hayan configurado los accesos REST.
 
-> You must restart the 4D application for your changes to take effect.
+> Debe reiniciar la aplicación 4D para que los cambios surtan efecto.
 
 
 ## Configuración del acceso REST
