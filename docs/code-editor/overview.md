@@ -86,9 +86,9 @@ You can control how project methods are used and/or called in different contexts
 
 ##### Invisible  
 
-If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box (see [From the Execute Method dialog box](#from-the-execute-method-dialog-box)). 
+If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box. 
 
-When you make a project method invisible, it is still available to database programmers. It remains listed on the [Current form table](https://doc.4d.com/4Dv19R5/4D/19-R5/Current-form-table.301-5830420.en.html) of the Explorer and in the list of routines in the Code Editor.
+When you make a project method invisible, it is still available to database programmers. It remains listed on the method list of the Explorer and of the Code Editor.
 
 ##### Shared by components and host database  
 
