@@ -23,7 +23,7 @@ After verification, a report file is generated in XML format on the server in th
 
 ### Compactar los datos...
 
-Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
+Este botón puede utilizarse para lanzar directamente una operación de compactación de datos. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
 
 ![](assets/en/Admin/server-shut.png)
 
@@ -51,7 +51,7 @@ This button can be used to immediately close and restart the project. When you c
 
 This area indicates the date and time of the [last backup](MSC/backup.md) of the database and provides information about the next scheduled automatic backup (if any). Automatic backups are configured using the **Scheduler** page of the structure settings.
 
-- **Last backup**: date and time of last backup.
+- **Última copia de seguridad**: fecha y hora de la última copia de seguridad.
 - **Next backup**: date and time of next scheduled backup.
 - **Needed space**: estimated space needed for the backup. The actual size of the backup file may vary according to the settings (compression, etc.) and according to variations of the data file.
 - **Available space**: space available on the backup volume.
