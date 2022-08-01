@@ -331,7 +331,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
 | [Ctrl]+[End]                                        | Coloca el punto de inserción al final del método                                                                                       |
 | [Shift]+[Home]                                      | Select all the characters in the line that are to the left of the cursor                                                               |
-| [Shift]+[End]                                       | Select all the characters in the line that are to the right of the cursor                                                              |
+| [Shift]+[End]                                       | Selecciona todos los caracteres de la línea que están a la derecha del cursor                                                          |
 | [PgUp]                                              | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                       |
 | [PgDn]                                              | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                       |
 | [Ctrl]+[K] en el nombre de un método proyecto       | Abrir el método proyecto en una nueva ventana                                                                                          |
