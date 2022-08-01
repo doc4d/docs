@@ -228,7 +228,7 @@ Cuando se selecciona este valor, la propiedad es gestionada por la opción [Reto
 
 4D puede mostrar texto con marcador de posición en los campos de sus formularios.
 
-Placeholder text appears as watermark text in a field, supplying a help tip, indication or example for the data to be entered. This text disappears as soon as the user enters a character in the area:
+Placeholder text appears as watermark text in a field, supplying a help tip, indication or example for the data to be entered. Este texto desaparece tan pronto como el usuario ingrese un carácter en el área:
 
 ![](assets/en/FormObjects/property_placeholder.png)
 
