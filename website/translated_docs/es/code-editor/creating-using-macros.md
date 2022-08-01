@@ -36,7 +36,7 @@ You can modify this file or the contents of the folder subsequently as desired (
 
 You can add customized macros in the "Macros.xml" file using a standard text editor or by programming. You can also add XML files of customized macros in this folder.
 
-In local mode, the macros file can be open while using 4D. The list of available macros is updated on each event activating 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
+In local mode, the macros file can be open while using 4D. La lista de macros disponibles se actualiza en cada evento de activación de 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
 
 No se muestran macros vacías o erróneas.
 
@@ -51,7 +51,7 @@ If a macros file does not contain the declaration statements or cannot be valida
 
 ## Syntax of 4D macros
 
-4D macros are built using customized XML tags called "elements."
+Las macros 4D se crean utilizando etiquetas XML personalizadas llamadas "elementos"
 
 Some tags indicate the start and end of the definition (double tags of the type `<tag> </tag>`), others are replaced by insertion context values (`<tag/>`).
 
@@ -139,7 +139,7 @@ By default, all macros can be called via the context menu of the Code Editor (us
 
 The *in_menu* attribute of the `<macro>` tag is used to set whether or not the macro appears in this menu.
 
-In the context menu, macros are displayed in the order of the "Macros.xml" file and any additional XML files. It is thus possible to change the order by modifying these files.
+In the context menu, macros are displayed in the order of the "Macros.xml" file and any additional XML files. Por lo tanto, es posible cambiar el orden modificando estos archivos.
 
 ### Autocompletar
 
