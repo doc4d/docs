@@ -63,7 +63,7 @@ Para abrir la página de la lista de puntos de ruptura:
 
 1. From the **Run menu**, click **Runtime Explorer...**
 
-2. Click the **Break** tab to display the Break list:
+2. Haga clic en la pestaña **Break** para mostrar la lista de pausas:
 
 ![break-list-runtime-explorer](assets/en/Debugging/break-list.png)
 
