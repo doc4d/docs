@@ -97,7 +97,7 @@ Allows you to disable/enable the "international" code settings for the local 4D 
 
 #### Indentación
 
-Changes the indentation value for the 4D code in the Code Editor. El ancho debe especificarse en puntos (10 por defecto).
+Cambia el valor de indentación del código 4D en el editor de código. El ancho debe especificarse en puntos (10 por defecto).
 
 El código 4D es indentado automáticamente para revelar su estructura:
 

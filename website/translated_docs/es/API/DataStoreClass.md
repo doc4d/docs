@@ -890,7 +890,7 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 #### Ejemplo 2
 
-The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
+The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. Las entidades devueltas sólo contienen el atributo `zipCode`.
 
 For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
 

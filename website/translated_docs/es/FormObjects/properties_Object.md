@@ -350,7 +350,7 @@ Hay varios tipos de cálculos disponibles. The following table shows which calcu
 
 > Only declared or dynamic [variables](Concepts/variables.md) can be used to display footer calculations. Other kinds of [expressions](Concepts/quick-tour.md#expressions) such as `Form.value` are not supported.
 
-Automatic calculations ignore the shown/hidden state of list box rows. If you want to restrict a calculation to only visible rows, you must use a custom calculation.
+Los cálculos automáticos ignoran el estado mostrado/oculto de las líneas list box. If you want to restrict a calculation to only visible rows, you must use a custom calculation.
 
 *Null* no se tienen en cuenta para ningún cálculo.
 
