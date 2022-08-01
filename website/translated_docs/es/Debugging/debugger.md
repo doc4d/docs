@@ -49,7 +49,7 @@ The debugger's tool bar includes several buttons, associated with default shortc
 
 Detener el modo Seguimiento y reanudar el curso normal de la ejecución del método.
 
-> **Shift** + **F5** or **Shift** + clicking the **No Trace** button resumes execution. It also disables all the subsequent TRACE calls for the current process.
+> **Shift** + **F5** or **Shift** + clicking the **No Trace** button resumes execution. También desactiva todas las llamadas a TRACE posteriores en el proceso actual.
 
 #### Pasar por encima
 
@@ -129,7 +129,7 @@ $b:=a+1
 $c:=a+b
 ```
 
-1. A Debugger window opens with the program counter set to the line with `a:=1`. At this point the **Line Objects** theme displays:
+1. A Debugger window opens with the program counter set to the line with `a:=1`. En este punto aparece el tema **Objetos Línea**:
 
     | $a | Indefinido |
     | -- | ---------- |
