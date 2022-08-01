@@ -26,7 +26,7 @@ This area indicates the date, time and status of the last  carried out on the da
 
 ### Compactar los datos...
 
-Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
+Este botón puede utilizarse para lanzar directamente una operación de compactación de datos. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
 
 ![](assets/en/Admin/server-shut.png)
 
