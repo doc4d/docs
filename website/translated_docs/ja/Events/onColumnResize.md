@@ -3,9 +3,9 @@ id: onColumnResize
 title: On Column Resize
 ---
 
-| コード | 呼び出し元                                                                                                                                                      | 定義                                               |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| 33  | [4D View Pro エリア](FormObjects/viewProArea_overview.md) - [リストボックス](FormObjects/listbox_overview.md) - [リストボックス列](FormObjects/listbox_overview.md#リストボックス列) | ユーザーのマウス操作によって、またはフォームウィンドウのリサイズによって、カラムの幅が変更された |
+| コード | 呼び出し元                                                                                                                                                                                | 定義                                               |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| 33  | [4D View Pro Area](../FormObjects/viewProArea_overview.md) - [List Box](../FormObjects/listbox_overview.md) - [List Box Column](../FormObjects/listbox_overview.md#list-box-columns) | ユーザーのマウス操作によって、またはフォームウィンドウのリサイズによって、カラムの幅が変更された |
 
 
 ## 説明
@@ -14,7 +14,7 @@ title: On Column Resize
 
 このイベントは、ユーザーによってリストボックスの列幅が変更されたときに生成されます。 このイベントは "ライブ" にトリガーされます。つまり、対象となるリストボックスあるいはカラムがリサイズされている間はずっと継続して送信されつづけます。 リサイズはユーザーによって手動でおこなわれるか、あるいはフォームウィンドウ自身のリサイズの結果リストボックスとそのカラムがリサイズされる場合も含みます (手動によるフォームのリサイズおよび `RESIZE FORM WINDOW` コマンドを使用したリサイズ)。
 
-> [余白カラム](FormObjects/propertiesResizingOptions.html#余白カラムについて) がリサイズされた場合には、`On Column Resize` イベントはトリガーされません
+> The `On Column Resize` event is not triggered when a [fake column](../FormObjects/properties_ResizingOptions.md#about-the-fake-blank-column) is resized.
 
 ### 4D View Pro
 
