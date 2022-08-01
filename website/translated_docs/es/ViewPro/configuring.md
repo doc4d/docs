@@ -268,7 +268,7 @@ Column and row attributes are used to specify the beginning, end, and repetition
 | ----------------- | ------------ | ------------------------------------------------------------------------------------------------------------------- |
 | columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                |
 | columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                               |
-| repeatColumnEnd   | entero largo | The last column of a range of columns to print on the left of each page. Default value = -1 (all rows)              |
+| repeatColumnEnd   | entero largo | La última columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)   |
 | repeatColumnStart | entero largo | The first column of a range of columns to print on the left of each page. Default value = -1 (all rows)             |
 | repeatRowEnd      | entero largo | La última línea de un rango de líneas a imprimir en la parte superior de cada página. Default value = -1 (all rows) |
 | repeatRowStart    | entero largo | The first row of a range of rows to print at the top of each page. Default value = -1 (all rows)                    |
@@ -365,7 +365,7 @@ Paper size attributes are used to specify the dimensions or model of paper to us
 
 | Propiedad |        | Tipo         | Descripción                                                                                                         |
 | --------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------- |
-| paperSize |        | objeto       | Paper dimensions (height, width) or specific format (kind) for printing.                                            |
+| paperSize |        | objeto       | Dimensiones del papel (alto, ancho) o formato específico (tipo) para la impresión.                                  |
 |           | height | entero largo | La altura del papel, en centésimas del pulgada.                                                                     |
 |           | ancho  | entero largo | Ancho del papel, en centésimas de pulgada.                                                                          |
 |           | kind   | texto        | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Valor por defecto: "letter" |
