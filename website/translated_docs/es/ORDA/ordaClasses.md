@@ -336,7 +336,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 ```
 The *getter* function is mandatory to declare the *attributeName* computed attribute. Whenever the *attributeName* is accessed, 4D evaluates the `Function get` code and returns the *$result* value.
 
-> A computed attribute can use the value of other computed attribute(s). Las llamadas recursivas generan errores.
+> Un atributo calculado puede utilizar el valor de otro(s) atributo(s) calculado(s). Las llamadas recursivas generan errores.
 
 The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. Se permiten los siguientes tipos resultantes:
 
@@ -565,15 +565,15 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 The *$event* parameter contains the following properties:
 
-| Propiedad     | Tipo     | Descripción                                                                                           |
-| ------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| attributeName | Texto    | Nombre de atributo calculado                                                                          |
-| dataClassName | Texto    | Nombre de la clase de datos                                                                           |
-| kind          | Texto    | "orderBy"                                                                                             |
-| value         | Variant  | Valor a tratar por el atributo calculado                                                              |
-| operator      | Texto    | "desc" o "asc" (por defecto)                                                                          |
-| descending    | Booleano | `true` for descending order, `false` for ascending order                                              |
-| result        | Variant  | Valor a tratar por el atributo calculado. Pass `Null` if you want to let 4D execute the default sort. |
+| Propiedad     | Tipo     | Descripción                                                                                              |
+| ------------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| attributeName | Texto    | Nombre de atributo calculado                                                                             |
+| dataClassName | Texto    | Nombre de la clase de datos                                                                              |
+| kind          | Texto    | "orderBy"                                                                                                |
+| value         | Variant  | Valor a tratar por el atributo calculado                                                                 |
+| operator      | Texto    | "desc" o "asc" (por defecto)                                                                             |
+| descending    | Booleano | `true` for descending order, `false` for ascending order                                                 |
+| result        | Variant  | Valor a tratar por el atributo calculado. Pase `Null` si desea que 4D ejecute la ordenación por defecto. |
 
 > You can use either the `operator` or the `descending` property. Es esencialmente una cuestión de estilo de programación (ver ejemplos).
 
@@ -620,7 +620,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. Puede definir tantos atributos de alias como desee en una clase de datos.
 
-Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
+Los atributos del alias son particularmente útiles para manejar las relaciones N a N. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
 ### Cómo definir los atributos alias
 
@@ -751,7 +751,7 @@ ds. Teacher.query("students.name = :1";"Martin")
 ```
 
 
-You can also edit the value of the *courseName* alias:
+También puede editar el valor del alias *courseName*:
 
 ```4d
 // Rename a course using its alias attribute
@@ -940,7 +940,7 @@ To create an ORDA class file, you just need to double-click on the corresponding
 Class extends Entity
 ```
 
-Once a class is defined, its name is no longer dimmed in the Explorer.
+Una vez definida una clase, su nombre ya no aparece atenuado en el Explorador.
 
 
 ### Editar las clases

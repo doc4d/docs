@@ -20,7 +20,7 @@ Indicates whether or not the Web server will accept non-secure connections. See 
 
 #### Puerto HTTP
 
-Número de puerto IP (TCP) de escucha para HTTP. See [HTTP Port](../WebServer/webServerConfig.md#http-port).
+Número de puerto IP (TCP) de escucha para HTTP. Ver [Puerto HTTP](../WebServer/webServerConfig.md#http-port).
 
 #### Dirección IP
 
@@ -29,7 +29,7 @@ IP address on which the 4D web server will receive HTTP requests (4D local and 4
 
 #### Activar HTTPS
 
-Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
+Indica si el servidor web acepta conexiones seguras. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
 
 #### Puerto HTTPS
@@ -197,7 +197,7 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 -   petición: solicitud enviada por el cliente (por ejemplo, GET /index.htm HTTP/1.0)
 -   estado: respuesta dada por el servidor.
--   length: size of the data returned (except the HTTP header) or 0.
+-   longitud: tamaño de los datos devueltos (excepto el encabezado HTTP) o 0.
 
 > **Nota:** por razones de rendimiento, las operaciones se guardan en una memoria búfer por paquetes de 1Kb antes de ser escritas en el disco. Las operaciones también se escriben en disco si no se ha enviado ninguna petición cada 5 segundos. Los valores posibles del estado son los siguientes: 200: OK 204: Sin contenido 302: Redirección 304: No modificado 400: Petición incorrecta 401: Autenticación requerida 404: No encontrada 500: Error interno El formato CLF no puede ser personalizado.
 
@@ -208,9 +208,9 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 > El formato DLF no se puede personalizar.
 
--   **ELF (Extended Log Format)**: When this option is selected, the request log is generated in ELF format. The ELF format is very widespread in the world of HTTP browsers. It can be used to build sophisticated logs that meet specific needs. For this reason, the ELF format can be customized: it is possible to choose the fields to be recorded as well as their order of insertion into the file.
+-   **ELF (Extended Log Format)**: When this option is selected, the request log is generated in ELF format. El formato ELF está muy extendido en el mundo de los navegadores HTTP. It can be used to build sophisticated logs that meet specific needs. For this reason, the ELF format can be customized: it is possible to choose the fields to be recorded as well as their order of insertion into the file.
 
--   **WLF (WebStar Log Format)**: When this option is selected, the request log is generated in WLF format. WLF format was developed specifically for the 4D WebSTAR server. Es similar al formato ELF, con sólo unos pocos campos adicionales. Al igual que el formato ELF, se puede personalizar.
+-   **WLF (WebStar Log Format)**: When this option is selected, the request log is generated in WLF format. El formato WLF se desarrolló específicamente para el servidor 4D WebSTAR. Es similar al formato ELF, con sólo unos pocos campos adicionales. Al igual que el formato ELF, se puede personalizar.
 
 **Configurar los campos** Cuando selecciona el formato ELF (Extended Log Format) o WLF (WebStar Log Format), el área "Weg Log Token Selection" muestra los campos disponibles para el formato elegido. You will need to select each field to be included in the log. Deberá seleccionar cada campo para incluirlo en el registro.
 
