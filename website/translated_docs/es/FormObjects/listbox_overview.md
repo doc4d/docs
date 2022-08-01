@@ -103,7 +103,7 @@ In the case of a list box based on the current selection of a table, any modific
 
 ### List box colección o entity selection
 
-In this type of list box, each column must be associated to an expression. The contents of each row is then evaluated per collection element or per entity of the entity selection.
+En este tipo de list box, cada columna debe estar asociada a una expresión. The contents of each row is then evaluated per collection element or per entity of the entity selection.
 
 Each element of the collection or each entity is available as an object that can be accessed through the [This](../Concepts/classes.md#this) keyword. A column expression can be a property path, a project method, a variable, or any formula, accessing each entity or collection element object through `This`, for example `This.<propertyPath>` (or `This.value` in case of a collection of scalar values). You can use the `LISTBOX SET COLUMN FORMULA` and `LISTBOX INSERT COLUMN FORMULA` commands to modify columns programmatically.
 
@@ -540,7 +540,7 @@ El soporte de ordenación estándar depende del tipo de list box:
 | Colección de objetos           | Sí                       | <li>Las columnas "This.a" o "This.a.b" son ordenables.</li><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
 | Colección de valores escalares | No                       | Use custom sort with [`orderBy()`](..\API\CollectionClass.md#orderby) function                             |
 | Entity selection               | Sí                       | <li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Supported: sorts on object attribute properties (e.g. "This.data.city" when "data" is an object attribute)</li><li>Soportado: ordena los atributos relacionados (por ejemplo, "This.company.name")</li><li>Not supported: sorts on object attribute properties through related attributes (e.g. "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](..\API\EntitySelectionClass.md#orderbyformula) function (see example below)</li> |
-| Selección actual               | Sí                       | Only simple expressions are sortable (e.g. `[Table_1]Field_2`)                                               |
+| Selección actual               | Sí                       | Sólo se pueden ordenar las expresiones simples (por ejemplo, `[Table_1]Campo_2`)                             |
 | Named selection                | No                       |                                                                                                              |
 | Arrays                         | Sí                       | Las columnas vinculadas a arrays de imágenes y punteros no se pueden ordenar                                 |
 
