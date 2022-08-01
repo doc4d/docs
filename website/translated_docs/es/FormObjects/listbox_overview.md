@@ -294,7 +294,7 @@ The `On Before Data Entry` event is returned before `On Getting Focus`.
 
 In order to preserve data consistency for selection type and entity selection type list boxes, any modified record/entity is automatically saved as soon as the cell is validated, i.e.:
 
-- when the the cell is deactivated (user presses tab, clicks, etc.)
+- cuando se desactiva la celda (el usuario presiona el tabulador, hace clic, etc.)
 - cuando el listbox ya no tiene el foco,
 - cuando el formulario ya no tiene el foco.
 
@@ -461,7 +461,7 @@ You can set the value of the variable (for example, Header2:=2) in order to “f
 There are several different ways to set background colors, font colors and font styles for list boxes:
 
 - at the level of the [list box object properties](#list-box-objects),
-- at the level of the [column properties](#list-box-columns),
+- a nivel de las [propiedades de la columna](#list-box-columns),
 - using [arrays or expressions properties](#using-arrays-and-expressions) for the list box and/or for each column,
 - at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 
