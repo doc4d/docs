@@ -14,7 +14,7 @@ Las siguientes opciones están disponibles:
 
 ## Editor de estructura
 
-This group of options configures the display of the 4D Structure editor.
+Este grupo de opciones configura la visualización del editor de estructura de 4D.
 
 ### Calidad gráfica de la estructura
 
