@@ -78,7 +78,7 @@ If (Form event code=On Bound Variable Change) //bound variable or expression was
 End if
 ```
 
-It updates the value of `Form.clockValue` in the subform:
+Actualiza el valor de `Form.clockValue` en el subformulario:
 
 ![](assets/en/FormObjects/update-subform.png)
 
