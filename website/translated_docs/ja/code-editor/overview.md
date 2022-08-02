@@ -86,9 +86,9 @@ title: 4D コードについて
 
 ##### 非表示
 
-ユーザーに対し、**実行** メニューの **メソッド...** から特定のメソッドを実行させたくない場合、このオプションを選択すればそのメソッドを非表示にできます。 An invisible method does not appear in the method execution dialog box.
+ユーザーに対し、**実行** メニューの **メソッド...** から特定のメソッドを実行させたくない場合、このオプションを選択すればそのメソッドを非表示にできます。 非表示のメソッドは、メソッド実行ダイアログボックスに表示されません。
 
-プロジェクトメソッドを非表示にしても、データベースプログラマーはそれを使用することができます。 It remains listed on the method list of the Explorer and of the Code Editor.
+プロジェクトメソッドを非表示にしても、データベースプログラマーはそれを使用することができます。 これらは、エクスプローラーやコードエディターのメソッドリストには引き続き表示されます。
 
 ##### コンポーネントとホストプロジェクト間で共有
 
@@ -100,7 +100,7 @@ title: 4D コードについて
 
 この属性は、クライアント/サーバーモードの 4Dアプリケーションでのみ考慮されます。 このオプションが選択されていると、そのプロジェクトメソッドは呼び出し方に関わらず常にサーバー上で実行されます。
 
-For more information on this option, refer to [Execute on Server attribute](https://doc.4d.com/4Dv19R6/4D/19-R6/Execute-on-Server-attribute.300-5941841.en.html).
+このオプションに関する詳細は、4D Serverリファレンスマニュアルの <a href="[サーバー上で実行属性](https://doc.4d.com/4Dv19R6/4D/19-R6/Execute-on-Server-attribute.300-5941841.ja.html) を参照ください。
 
 #### 実行モード
 
@@ -108,7 +108,7 @@ For more information on this option, refer to [Execute on Server attribute](http
 
 プリエンプティブモード機能を利用したい場合、プリエンプティブモードで実行したいメソッドをすべて明示的に宣言する必要があります。 その後、コンパイラーがこれらのメソッドが実際にスレッドセーフであるかどうかをチェックします。
 
-**注:** プリエンプティブモードでの実行は、コンパイルモードでのみ利用可能です。 For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) section.
+**注:** プリエンプティブモードでの実行は、コンパイルモードでのみ利用可能です。 詳細については、<a href="[">プリエンプティブ4Dプロセス](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.ja.html) の章を参照ください。
 
 以下のオプションが提供されています:
 
@@ -122,13 +122,13 @@ For more information on this option, refer to [Execute on Server attribute](http
 
 このオプションがチェックされている場合、4Dコンパイラーはメソッドがプリエンプティブ実行可能かどうかを検証しません。メソッドは内部で自動的に "thread unsafe" とタグ付けされます (たとえ、理論的にはスレッドセーフであってもです)。 ランタイムで呼び出された場合、このメソッドは同じスレッド内の他のメソッドを "汚染" し、他のメソッドがスレッドセーフであったとしても、スレッドはコオペラティブモードでの実行を強制されます。
 
--   **Indifferent**(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. メソッドの "preemptive" プロパティは "indifferent" に設定されます。
+-   **特に設定しない** (デフォルト): このオプションをチェックすると、当該メソッドについてはプリエンプティブプロパティを管理しないことを宣言します。 メソッドの "preemptive" プロパティは "indifferent" に設定されます。
 
-このオプションがチェックされているとき、4Dコンパイラーはメソッドのプリエンプティブ性を評価し、内部的に "thread safe" あるいは "thread unsafe" のタグ付けをします。 プリエンプティブ実行に関するエラーは報告されません。 メソッドがスレッドセーフと評価されていれば、ランタイムでプリエンプティブコンテキストから呼び出された場合にはプリエンプティブスレッド実行を妨げません。 Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.
+このオプションがチェックされているとき、4Dコンパイラーはメソッドのプリエンプティブ性を評価し、内部的に "thread safe" あるいは "thread unsafe" のタグ付けをします。 プリエンプティブ実行に関するエラーは報告されません。 メソッドがスレッドセーフと評価されていれば、ランタイムでプリエンプティブコンテキストから呼び出された場合にはプリエンプティブスレッド実行を妨げません。 逆に、メソッドがスレッドアンセーフであると評価された場合には、ランタイムで呼び出された場合に、プリエンプティブなスレッド実行を不可能にします。
 
 このオプションを使用した場合、内部でのスレッドセーフ評価に関わらず、最初の親メソッドとしてメソッドが 4D から直接呼び出された場合 (たとえば [New process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.ja.html) コマンドから呼び出された場合など)、メソッドは常にコオペラティブモードで実行されます。 内部で "thread-safe" とタグ付けされている場合、そのタグはコールチェーン内で他のメソッドから呼び出された場合に限り考慮されます。
 
-***Particular case*:** If the method has also the [**Shared by components and host database**](shared-by-components-and-host-database) property, setting the **Indifferent** option will automatically tag the method as thread-unsafe. 共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。
+***特殊なケース*:** メソッドの [**コンポーネントとホストプロジェクト間で共有**](コンポーネントとホストプロジェクト間で共有) プロパティがチェックされている場合、**特に設定しない** オプションを選択するとメソッドは自動的にスレッドアンセーフであるとタグ付けされます。 共有コンポーネントメソッドをスレッドセーフにしたい場合には、**プリエンプティブプロセスで実行可能** オプションを明示的に選択する必要があります。
 
 #### 公開オプション
 
@@ -150,7 +150,7 @@ For more information on this option, refer to [Execute on Server attribute](http
 
 ##### 4D タグと URL(4DACTION...)
 
-This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special [4DACTION URL](../WebServer/httpRequests.md#4daction) used for calling 4D methods, nor the special [4DSCRIPT, 4DTEXT and 4DHTML tags](../Tags/tags.md).
+このオプションは、4D Webサーバーのセキュリティを強化するために使用されます。このオプションが選択されていない場合、[4DACTION URL](../WebServer/httpRequests.md#4daction) を使用した HTTPリクエスト、および [4DSCRIPT、4DTEXT、4DHTML タグ](../Tags/tags.md) から当該メソッドを直接呼び出すことができません。
 
 エクスプローラーでは、この属性が設定されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png)。
 
@@ -185,14 +185,14 @@ This option is used to reinforce 4D Web server security: when it is not checked,
 
 "@" をワイルドカード文字として使用し、メソッドグループを選択できます:
 
-- 前方一致で検索するには、文字列の最後に "@" を加えます。 For example: `web@`
-- 含む検索をするには、文字列の中に "@" を加えます。 For example: `web@write`
-- 後方一致で検索するには、文字列の先頭に "@" を加えます。 For example: `@write`
-- To designate all of the methods, just type @ in the area.
+- 前方一致で検索するには、文字列の最後に "@" を加えます。 例: `web@`
+- 含む検索をするには、文字列の中に "@" を加えます。 例: `web@write`
+- 後方一致で検索するには、文字列の先頭に "@" を加えます。 例: `@write`
+- すべてのメソッドを選択するには "@" のみを入力します。
 
 **注:**
 - 文字の大小は区別されません。
-- You can enter several @ characters in the string, for example `dtro_@web@pro.@`
+- "@" は文字列内で複数回使用できます (例: `dtro_@web@pro.@`)
 
 3.  "更新する属性" エリアでは、ドロップダウンリストから更新対象の属性を選択し、**True** または **False** ラジオボタンを選択します。
 
