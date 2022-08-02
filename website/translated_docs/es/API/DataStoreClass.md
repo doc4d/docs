@@ -815,15 +815,15 @@ Se crea un método proyecto *protectDataFile* para llamar antes de los despliegu
 **.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
-| Parámetros      | Tipo         |    | Descripción                                                               |
-| --------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| contextName     | Texto        | -> | Nombre del contexto                                                       |
-| dataClassName   | Texto        | -> | Nombre de la dataclass                                                    |
-| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore. Employee)                                |
-| attributes      | Texto        | -> | Lista de atributos separados por comas                                    |
-| attributesColl  | Collection   | -> | Colección de nombres de atributos (text)                                  |
-| contextType     | Texto        | -> | Si se suministra, el valor debe ser "main" o "currentItem"                |
-| pageLength      | Integer      | -> | Page length of the entity selection linked to the context (default is 80) |
+| Parámetros      | Tipo         |    | Descripción                                                                                 |
+| --------------- | ------------ | -- | ------------------------------------------------------------------------------------------- |
+| contextName     | Texto        | -> | Nombre del contexto                                                                         |
+| dataClassName   | Texto        | -> | Nombre de la dataclass                                                                      |
+| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore. Employee)                                                  |
+| attributes      | Texto        | -> | Lista de atributos separados por comas                                                      |
+| attributesColl  | Collection   | -> | Colección de nombres de atributos (text)                                                    |
+| contextType     | Texto        | -> | Si se suministra, el valor debe ser "main" o "currentItem"                                  |
+| pageLength      | Integer      | -> | Longitud de la página de la selección de entidades asociada al contexto (por defecto es 80) |
 <!-- END REF -->
 
 
