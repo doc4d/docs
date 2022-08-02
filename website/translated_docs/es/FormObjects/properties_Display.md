@@ -101,7 +101,7 @@ La siguiente tabla muestra las opciones disponibles:
 ## Formato de número
 > Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
 
-Number formats control the way numbers appear when displayed or printed. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
+Los formatos numéricos controlan la forma en que aparecen los números cuando se muestran o imprimen. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
 
 4D ofrece varios formatos de números por defecto.
 
@@ -329,7 +329,7 @@ If the field is reduced to a size smaller than that of the original picture, the
 Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for times must only be selected among the 4D built-in formats.
 
-The table below shows the Time field display formats and gives examples:
+La siguiente tabla muestra los formatos de visualización de los campos de hora y da ejemplos:
 
 | Nombre del formato           | Cadena JSON     | Comentarios                                                                                                                                               | Ejemplo para 04:30:25          |
 | ---------------------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
@@ -533,7 +533,7 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 This property allows hiding the object in the Application environment.
 
-You can handle the Visibility property for most form objects. This property is mainly used to simplify dynamic interface development. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
+You can handle the Visibility property for most form objects. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
 
 #### Visibilidad automática en los formularios lista
 
