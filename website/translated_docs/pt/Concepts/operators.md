@@ -59,30 +59,30 @@ $a+=2 // $a=3
 
 The following compound assignment operators are supported:
 
-| Operator       | Sintaxe            | Assigns | Exemplo                                                             |
-| -------------- | ------------------ | ------- | ------------------------------------------------------------------- |
-| Addition       | Text += Text       | Texto   | `$t+=" World"  //$t:=$t+" World"`                                   |
-|                | Number += Number   | Número  | `$n+=5 //$n:=$n+5`                                                  |
-|                | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                                                  |
-|                | Time += Time       | Hora    | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
-|                | Time += Number     | Número  | `$t1+=5 //$t1:=$t1+5`                                               |
-|                | Picture += Picture | Imagem  | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`             |
-|                | Picture += Number  | Imagem  | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)` |
-| Subtraction    | Number -= Number   | Número  | `$n-=5 //$n:=$n-5`                                                  |
-|                | Date -= Number     | Date    | `$d-=5 //$d:=$d-5`                                                  |
-|                | Time -= Time       | Hora    | `$t1-=$t2 //$t1:=$t1-$t2`                                           |
-|                | Time -= Number     | Número  | `$t1-=5 //$t1:=$t1-5`                                               |
-|                | Picture -= Number  | Imagem  | `$p1-=5 //$p1:=$p1-5 (move $p1 horizontally 5 pixels to the left)`  |
-| Division       | Number /= Number   | Número  | `$n/=5 //$n:=$n/5`                                                  |
-|                | Time /= Time       | Hora    | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
-|                | Time /= Number     | Número  | `$t1/=5 //$t1:=$t1/5`                                               |
-|                | Picture /= Picture | Imagem  | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
-|                | Picture /= Number  | Imagem  | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
-| Multiplication | Text *= Number     | Texto   | `$t*="abc"  //$t:=$t*"abc"`                                         |
-|                | Number *= Number   | Número  | `$n*=5 //$n:=$n*5`                                                  |
-|                | Time *= Time       | Hora    | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
-|                | Time *= Number     | Número  | `$t1*=5 //$t1:=$t1*5`                                               |
-|                | Picture *= Number  | Imagem  | `$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`                             |
+| Operator      | Sintaxe            | Assigns | Exemplo                                                             |
+| ------------- | ------------------ | ------- | ------------------------------------------------------------------- |
+| Addition      | Text += Text       | Texto   | `$t+=" World"  //$t:=$t+" World"`                                   |
+|               | Number += Number   | Número  | `$n+=5 //$n:=$n+5`                                                  |
+|               | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                                                  |
+|               | Time += Time       | Hora    | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
+|               | Time += Number     | Número  | `$t1+=5 //$t1:=$t1+5`                                               |
+|               | Picture += Picture | Imagem  | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`             |
+|               | Picture += Number  | Imagem  | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)` |
+| Subtração     | Number -= Number   | Número  | `$n-=5 //$n:=$n-5`                                                  |
+|               | Date -= Number     | Date    | `$d-=5 //$d:=$d-5`                                                  |
+|               | Time -= Time       | Hora    | `$t1-=$t2 //$t1:=$t1-$t2`                                           |
+|               | Time -= Number     | Número  | `$t1-=5 //$t1:=$t1-5`                                               |
+|               | Picture -= Number  | Imagem  | `$p1-=5 //$p1:=$p1-5 (move $p1 horizontally 5 pixels to the left)`  |
+| Division      | Number /= Number   | Número  | `$n/=5 //$n:=$n/5`                                                  |
+|               | Time /= Time       | Hora    | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
+|               | Time /= Number     | Número  | `$t1/=5 //$t1:=$t1/5`                                               |
+|               | Picture /= Picture | Imagem  | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
+|               | Picture /= Number  | Imagem  | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
+| Multiplicação | Text *= Number     | Texto   | `$t*="abc"  //$t:=$t*"abc"`                                         |
+|               | Number *= Number   | Número  | `$n*=5 //$n:=$n*5`                                                  |
+|               | Time *= Time       | Hora    | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
+|               | Time *= Number     | Número  | `$t1*=5 //$t1:=$t1*5`                                               |
+|               | Picture *= Number  | Imagem  | `$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`                             |
 
 These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
 
@@ -231,7 +231,7 @@ var $name: Text
 $name:=$person.maidenName || $person.name
 ```
 
-### Precedence
+### Precedência
 
 The `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
 

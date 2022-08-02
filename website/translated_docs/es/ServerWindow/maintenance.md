@@ -43,7 +43,7 @@ This area indicates the duration of the 4D Server application execution since th
 
 ### Reiniciar el servidor...
 
-This button can be used to immediately close and restart the project. When you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation. After validation, 4D Server automatically closes and reopens the project. A continuación, los usuarios de 4D pueden volver a conectarse.
+This button can be used to immediately close and restart the project. When you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation. Tras la validación, 4D Server cierra automáticamente el proyecto y lo vuelve a abrir. A continuación, los usuarios de 4D pueden volver a conectarse.
 
 > If the request for restarting was carried out from a remote 4D machine, this machine is automatically reconnected by 4D Server.
 
