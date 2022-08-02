@@ -3,11 +3,11 @@ id: booleano
 title: Booleano
 ---
 
-A boolean field, variable or expression can be either TRUE or FALSE.
+Um campo booleano, variável ou expressão pode ser VERDADEIRO ou FALSO.
 
-## Boolean functions
+## Funções booleanas
 
-4D provides the Boolean functions `True`, `False`, and `Not` in the dedicated **Boolean** theme. For more information, see the descriptions of these commands
+4D fornece as funções booleanas `True`, `False`, e `Not` no tema dedicado **Boolean** . For more information, see the descriptions of these commands
 
 ### Exemplo
 
