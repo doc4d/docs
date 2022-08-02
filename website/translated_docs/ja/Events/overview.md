@@ -116,5 +116,5 @@ End if
 
 イベントに対応するプロパティが選択されている場合にのみ、フォームやオブジェクトのメソッドが呼び出されることに留意してください。 デザインモードのフォームエディターのプロパティリストでイベントを無効にすると、メソッドが呼び出される回数を減らすことができ、フォームの実行速度を最適化できます。
 
-> WARNING: The [On Load](onLoad.md) and [On Unload](onUnload.md) events are generated for objects if they are enabled for both the objects and the form to which the objects belong. オブジェクトのみでイベントが有効になっている場合、イベントは生成されません。 これら 2つのイベントはフォームレベルでも有効にされていなければなりません。
+> 警告: オブジェクトの [On Load](onLoad.md) と [On Unload](onUnload.md) イベントが生成されるには、オブジェクトとオブジェクトが属するフォームの両方で有効にされていなければなりません。 オブジェクトのみでイベントが有効になっている場合、イベントは生成されません。 これら 2つのイベントはフォームレベルでも有効にされていなければなりません。
 
