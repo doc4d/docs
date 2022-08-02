@@ -182,7 +182,7 @@ You can create an object of type [entity selection](dsMapping.md#entity-selectio
 *   Using one of the various functions from the [Entity selection class](API/EntitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/EntitySelectionClass.md#or);
 *   Using a relation attribute of type "related entities" (see below).
 
-You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Different entity selections can contain references to the same entities.
+You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Diferentes selecciones de entidades pueden contener las referencias a las mismas entidades.
 
 ### Entity selections compartibles o modificables
 
@@ -377,7 +377,7 @@ When this situation occurs, you can, for example, reload the entity from the dis
 
 Puede bloquear y desbloquear las entidades bajo pedido cuando acceda a los datos. When an entity is getting locked by a process, it is loaded in read/write in this process but it is locked for all other processes. The entity can only be loaded in read-only mode in these processes; its values cannot be edited or saved.
 
-This feature is based upon two methods of the `Entity` class:
+Esta funcionalidad se basa en dos métodos de la clase `Entity`:
 
 *   `entity.lock()`
 *   `entity.unlock()`
