@@ -647,7 +647,7 @@ The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTT
 
 En algunos casos, se pueden invocar otras funciones internas optimizadas. Keep-alive connections are useful mainly for static pages.
 
-Two options allow you to set how the keep-alive connections work:
+Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 
 *   **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión permite evitar la inundación del servidor debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p> El valor por defecto (100) puede ser aumentado o disminuido en función de los recursos de la máquina que aloja el servidor 4D web.
 

@@ -242,22 +242,22 @@ Las propiedades soportadas dependen del tipo de list box.
 
 Los eventos formulario de los objetos list box o columnas de list box pueden devolver las siguientes propiedades adicionales:
 
-| Propiedad        | Tipo         | Descripción                                                           |
-| ---------------- | ------------ | --------------------------------------------------------------------- |
-| area             | texto        | Área de objeto list box ("header", "footer", "cell")                  |
-| areaName         | texto        | Nombre del área                                                       |
-| column           | entero largo | Número de columna                                                     |
-| columnName       | texto        | Nombre de la columna                                                  |
-| footerName       | texto        | Nombre del pie                                                        |
-| headerName       | texto        | Nombre del encabezado                                                 |
-| horizontalScroll | entero largo | Positive if scroll is towards the right, negative if towards the left |
-| isRowSelected    | booleano     | True si la línea está seleccionada, de lo contrario False             |
-| newPosition      | entero largo | Nueva posición de la columna o línea                                  |
-| newSize          | entero largo | Nuevo tamaño (en píxeles) de la columna o línea                       |
-| oldPosition      | entero largo | Posición anterior de la columna o línea                               |
-| oldSize          | entero largo | Tamaño anterior (en píxeles) de la columna o línea                    |
-| row              | entero largo | Número de línea                                                       |
-| verticalScroll   | entero largo | Positive if scroll is towards the bottom, negative if towards the top |
+| Propiedad        | Tipo         | Descripción                                                                          |
+| ---------------- | ------------ | ------------------------------------------------------------------------------------ |
+| area             | texto        | Área de objeto list box ("header", "footer", "cell")                                 |
+| areaName         | texto        | Nombre del área                                                                      |
+| column           | entero largo | Número de columna                                                                    |
+| columnName       | texto        | Nombre de la columna                                                                 |
+| footerName       | texto        | Nombre del pie                                                                       |
+| headerName       | texto        | Nombre del encabezado                                                                |
+| horizontalScroll | entero largo | Positivo si el desplazamiento es hacia la derecha, negativo si es hacia la izquierda |
+| isRowSelected    | booleano     | True si la línea está seleccionada, de lo contrario False                            |
+| newPosition      | entero largo | Nueva posición de la columna o línea                                                 |
+| newSize          | entero largo | Nuevo tamaño (en píxeles) de la columna o línea                                      |
+| oldPosition      | entero largo | Posición anterior de la columna o línea                                              |
+| oldSize          | entero largo | Tamaño anterior (en píxeles) de la columna o línea                                   |
+| row              | entero largo | Número de línea                                                                      |
+| verticalScroll   | entero largo | Positivo si el desplazamiento es hacia abajo, negativo si es hacia arriba            |
 > If an event occurs on a "fake" column or row that doesn't exist, an empty string is typically returned.
 
 
@@ -385,7 +385,7 @@ The `On Before Data Entry` event is returned before `On Getting Focus`.
 
 In order to preserve data consistency for selection type and entity selection type list boxes, any modified record/entity is automatically saved as soon as the cell is validated, i.e.:
 
-- when the the cell is deactivated (user presses tab, clicks, etc.)
+- cuando se desactiva la celda (el usuario presiona el tabulador, hace clic, etc.)
 - cuando el listbox ya no tiene el foco,
 - cuando el formulario ya no tiene el foco.
 
@@ -599,7 +599,7 @@ You can set the value of the variable (for example, Header2:=2) in order to "for
 There are several different ways to set background colors, font colors and font styles for list boxes:
 
 - at the level of the [list box object properties](#list-box-objects),
-- at the level of the [column properties](#list-box-columns),
+- a nivel de las [propiedades de la columna](#list-box-columns),
 - using [arrays or expressions properties](#using-arrays-and-expressions) for the list box and/or for each column,
 - at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 

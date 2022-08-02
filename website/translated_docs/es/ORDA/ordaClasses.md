@@ -436,7 +436,7 @@ To create an ORDA class file, you just need to double-click on the corresponding
 Class extends Entity
 ```
 
-Once a class is defined, its name is no longer dimmed in the Explorer.
+Una vez definida una clase, su nombre ya no aparece atenuado en el Explorador.
 
 
 ### Editar las clases
