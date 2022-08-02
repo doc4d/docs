@@ -3,7 +3,7 @@ id: depurador
 title: Depurador
 ---
 
-The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through your code slowly and examine the information. This process is called "tracing".
+The debugger is useful when you need to spot errors or monitor the execution of methods. Le permite recorrer su código lentamente y examinar la información. Este proceso se llama "rastreo".
 
 ![debugger-window-local](assets/en/Debugging/debugger-window-intro.png)
 
@@ -401,7 +401,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 
 ### Buscar siguiente/anterior
 
-Specific shortcuts allow you to find strings identical to the one selected:
+Los atajos específicos permiten encontrar cadenas idénticas a la seleccionada:
 
 * To search for the next identical strings, press **Ctrl+E** (Windows) or **Cmd+E** (macOS)
 * To search for the previous identical strings, press **Ctrl+Shift+E** (Windows) or **Cmd+Shift+E** (macOS)
