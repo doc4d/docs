@@ -105,7 +105,7 @@ You can modify this location as desired, for example if you want to display the 
 
 ### Sitio Web
 
-URL access to the on-line documentation for the version on 4D Doc Center. 4D builds calls to the pages of the documentation based on this URL. You can modify it, for example if you want to display documentation in a different language from the application language. The test button to the right of the area launches the default browser to go to the URL specified.
+Acceso URL a la documentación en línea de la versión en el 4D Doc Center. 4D builds calls to the pages of the documentation based on this URL. You can modify it, for example if you want to display documentation in a different language from the application language. The test button to the right of the area launches the default browser to go to the URL specified.
 
 ### Primero buscar en la carpeta local
 
