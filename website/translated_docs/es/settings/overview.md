@@ -14,7 +14,7 @@ The Settings configure how the current project functions. These parameters may b
 
 Puede acceder a la caja de diálogo Parámetros:
 
--   using the **Design > Settings...** menu option
+-   utilizando la opción de menú **Diseño > Parámetros...**
 -   haciendo clic en **Parámetros** en la barra de herramientas 4D
 -   on 4D Server, using the **Edit > Settings...** menu option
 
