@@ -44,7 +44,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 // リモートサイド
 ```
-> This statement also starts the [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt) log file.
+> この宣言は [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt) ログファイルも開始させます。
 
 #### ヘッダー
 
