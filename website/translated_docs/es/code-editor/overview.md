@@ -41,7 +41,7 @@ Para eliminar un método o clase existente, puede:
 
 ## Importing and exporting code
 
-You can import and export a method or a class code in the form of a file. These commands are found in the **Method** menu of the Code editor.
+Puede importar y exportar un método o un código de una clase en forma de archivo. These commands are found in the **Method** menu of the Code editor.
 
 - When you select the **Export Method...** command, a standard file saving dialog box appears, allowing you to choose the name, location and format of the export file (see below). As with printing, exporting does not take the collapsed state of code structures into account and the entire code is exported.
 - When you select the **Import Method...** command, a standard file opening dialog box appears, allowing you to designate the file to be imported. La importación sustituye el texto seleccionado en el método. To replace an existing method by an imported method, select the entire contents of the method before carrying out the import.
@@ -106,7 +106,7 @@ For more information on this option, refer to [Execute on Server attribute](http
 
 This option allows you to declare the method eligible for execution in preemptive mode. By default, 4D executes all the project methods of your applications in cooperative mode.
 
-If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. The compiler will then check that these methods are actually thread-safe.
+If you want to benefit from the preemptive mode feature, you must explicitly declare all the methods that you want to be started in preemptive mode. El compilador verificará entonces que estos métodos sean realmente hilo seguro.
 
 **Note:** Execution in preemptive mode is only available in compiled mode. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) section.
 
@@ -144,7 +144,7 @@ In the Explorer, project methods that are offered as a Web Service are given a s
 
 ##### Publicado en WSDL
 
-This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
+This attribute is only available when the "Web Service" attribute is checked. Permite incluir el método actual en el WSDL de la aplicación 4D. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
 
 In the Explorer, project methods that are offered as a Web Service and published in WSDL are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440526/pict440526.fr.png).
 
