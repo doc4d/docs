@@ -310,7 +310,7 @@ The `.4darchive` is copied at the following location:
 
 You can check the **Allow automatic update...** option for client applications running on the concurrent platform. Esta opción sólo se activa si:
 
-- the **Build server application** option is checked,
+- la opción **Crear aplicación servidor** está marcada,
 - the **Allow automatic update...** option for client applications running on the current platform is checked.
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. El archivo a seleccionar depende de la plataforma actual del servidor:
