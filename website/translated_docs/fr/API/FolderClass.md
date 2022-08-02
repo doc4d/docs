@@ -113,6 +113,9 @@ Dans le paramètre *folderConstant*, passez un dossier 4D interne ou un dossier 
 
 Si la commande est appelée à partir d'un composant, passez le paramètre optionnel * pour lire le chemin de la base hôte. Sinon, si vous omettez le paramètre *, un objet null est systématiquement retourné.
 
+> On Windows, in merged clients, the location of built-in folders is modified if the `ShareLocalResourcesOnWindowsClient` [BuildApp key](../Desktop/building.md#buildapp4dsettings) is used.
+
+
 
 ## 4D.Folder.new()
 

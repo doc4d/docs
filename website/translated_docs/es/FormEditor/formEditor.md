@@ -12,12 +12,12 @@ La interfaz del editor de formularios muestra cada formulario JSON en su propia 
 
 ### Opciones de visualización
 
-You can show or hide several interface elements on the current page of the form:
+Puede mostrar u ocultar varios elementos de la interfaz en la página actual del formulario:
 
-- **Inherited Form**: Inherited form objects (if there is an [inherited form](forms.md#inherited-forms)).
-- **Page 0**: Objects from [page 0](forms.md#form-pages). Esta opción permite distinguir entre los objetos de la página actual del formulario y los de la página 0.
-- **Paper**: Borders of the printing page, which are shown as gray lines. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
-- **Rulers**: Rulers of the Form editor’s window.
+- **Formulario heredado**: objetos formulario heredados (si hay un [formulario heredado](forms.md#inherited-forms)).
+- **Página 0**: objetos de [página 0](forms.md#form-pages). Esta opción permite distinguir entre los objetos de la página actual del formulario y los de la página 0.
+- **Papel**: bordes de la página de impresión, que se muestran como líneas grises. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
+- **Reglas**: Reglas de la ventana del editor de formularios.
 - **Markers**: Output control lines and associated markers that show the limits of the form’s different areas. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
 - **Etiquetas de los marcadores**: etiquetas de los marcadores, disponibles sólo cuando se muestran las líneas de control de salida. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
 - **Límites**: límites del formulario. Cuando se selecciona esta opción, el formulario se muestra en el editor de formularios tal y como aparece en el modo Aplicación. De esta manera puede ajustar su formulario sin tener que cambiar al modo Aplicación para ver el resultado.
@@ -30,7 +30,7 @@ When a form is opened in the editor, interface elements are displayed or hidden 
 - the **New form default display** options set in the Preferences - unchecked options cannot be displayed by default.
 - the current [form type](properties_FormProperties.md#form-type):
     - Markers and marker labels are always displayed by default on list forms
-    - Paper is displayed by default on "for printing" forms.
+    - Papel aparece por defecto en los formularios "a imprimir".
 
 #### Mostrar/Ocultar elementos
 
@@ -73,7 +73,7 @@ La barra de herramientas contiene los siguientes elementos:
 
 ### Barra de objetos
 
-The object bar contains all the active and inactive objects that can be used in 4D forms. Algunos objetos se agrupan por temas. Each theme includes several alternatives that you can choose between. When the object bar has the focus, you can select the buttons using the keys of the keyboard. The following table describes the object groups available and their associated shortcut key.
+The object bar contains all the active and inactive objects that can be used in 4D forms. Algunos objetos se agrupan por temas. Cada tema incluye varias alternativas entre las que puede elegir. When the object bar has the focus, you can select the buttons using the keys of the keyboard. The following table describes the object groups available and their associated shortcut key.
 
 | Botón                                   | Agrupar                                                                                                                                                                                                                                                   | Llave |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:-----:|
@@ -415,13 +415,13 @@ The Form editor toolbar provides a CSS button for viewing styled objects:
 
 ![](assets/en/FormEditor/cssToolbar.png)
 
-Select one of the following preview modes from the menu:
+Seleccione uno de los siguientes modos de vista previa en el menú:
 
-| Icono barra de herramientas          | Modo de vista previa CSS | Descripción                                                                                                   |
-| ------------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| ![](assets/en/FormEditor/cssNo.png)  | Ninguno                  | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.              |
-| ![](assets/en/FormEditor/cssWin.png) | Windows                  | CSS values for Windows platform are applied in the form. CSS values and icons displayed in the Property List. |
-| ![](assets/en/FormEditor/cssMac.png) | macOS                    | CSS values for macOS platform are applied in the form. CSS values and icons displayed in the Property List.   |
+| Icono barra de herramientas          | Modo de vista previa CSS | Descripción                                                                                                                                  |
+| ------------------------------------ | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![](assets/en/FormEditor/cssNo.png)  | Ninguno                  | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.                                             |
+| ![](assets/en/FormEditor/cssWin.png) | Windows                  | Los valores CSS para la plataforma Windows se aplican en el formulario. Los valores e iconos CSS que se muestran en la lista de propiedades. |
+| ![](assets/en/FormEditor/cssMac.png) | macOS                    | Los valores CSS para la plataforma macOS se aplican en el formulario. Los valores e iconos CSS que se muestran en la lista de propiedades.   |
 > If a font size too large for an object is defined in a style sheet or JSON, the object will automatically be rendered to accommodate the font, however the size of the object will not be changed.
 
 The CSS preview mode reflects the priority order applied to style sheets vs JSON attributes as defined in the [JSON vs Style Sheet](stylesheets.html#json-vs-style-sheet) section.
@@ -442,7 +442,7 @@ stroke: #800080;
 }
 ```
 
-are displayed with a CSS icon in the Property List:
+se muestran con un icono CSS en la lista de propiedades:
 
 ![](assets/en/FormEditor/cssPpropList.png)
 
@@ -453,7 +453,7 @@ An attribute value defined in a style sheet can be overridden in the JSON form d
 
 | Icono                                      | Descripción                                                                                                                                                        |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/cssIcon.png)      | Indicates that an attribute value has been defined in a style sheet                                                                                                |
+| ![](assets/en/FormEditor/cssIcon.png)      | Indica que un valor de atributo ha sido definido en una hoja de estilo                                                                                             |
 | ![](assets/en/FormEditor/cssImportant.png) | Indicates that an attribute value has been defined in a style sheet with the `!important` declaration                                                              |
 | ![](assets/en/FormEditor/cssIconMixed.png) | Displayed when an attribute value defined in a style sheet for at least one item in a group or a selection of multiple objects is different from the other objects |
 

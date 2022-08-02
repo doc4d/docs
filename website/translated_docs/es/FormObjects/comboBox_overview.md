@@ -19,7 +19,7 @@ Un combo box se inicializa exactamente igual que una [lista desplegable](dropdow
 
 > Esta funcionalidad sólo está disponible en proyectos 4D.
 
-Un [objeto](Concepts/dt_object.md) encapsulando una [colección](Concepts/dt_collection) puede utilizarse como fuente de datos de un combo box. El objeto debe contener las siguientes propiedades:
+An [object](Concepts/dt_object.md) encapsulating a [collection](../Concepts/dt_collection.md) can be used as the data source of a combo box. El objeto debe contener las siguientes propiedades:
 
 | Propiedad      | Tipo                 | Descripción                                                                                                                                                                                                                                                              |
 | -------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -50,7 +50,7 @@ Please refer to **Using a choice** in the [drop-down list page](dropdownList_Ove
 
 ## Opciones
 
-Combo box type objects accept two specific options:
+Los objetos de tipo combo box aceptan dos opciones específicas:
 
 - [Automatic insertion](properties_DataSource.md#automatic-insertion): enables automatically adding a value to the data source when a user enters a value that is not found in the list associated with the combo box.
 - [Exclusión](properties_RangeOfValues.md#excluded-list) (lista de valores excluidos): permite establecer una lista cuyos valores no pueden introducirse en el combo box. Si se introduce un valor excluido, no se acepta y se muestra un mensaje de error.

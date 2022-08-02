@@ -60,9 +60,9 @@ However, the updated ORDA model layer is not automatically available in the foll
 
 ### Datastore
 
-The datastore is the interface object to a database. It builds a representation of the whole database as object. A datastore is made of a **model** and **data**:
+El datastore es el objeto de interfaz de una base de datos. Crea una representación de toda la base como objeto. A datastore is made of a **model** and **data**:
 
-- The model contains and describes all the dataclasses that make up the datastore. It is independant from the underlying database itself.
+- The model contains and describes all the dataclasses that make up the datastore. Es independiente de la propia base de datos subyacente.
 - Data refers to the information that is going to be used and stored in this model. For example, names, addresses, and birthdates of employees are pieces of data that you can work with in a datastore.
 
 When handled through the code, the datastore is an object whose properties are all of the [dataclasses](#dataclass) which have been specifically exposed.
@@ -74,7 +74,7 @@ When handled through the code, the datastore is an object whose properties are a
 
 A datastore references only a single local or remote database.
 
-The datastore object itself cannot be copied as an object:
+El objeto datastore en sí no puede ser copiado como un objeto:
 
 ```4d 
 $mydatastore:=OB Copy(ds) //devuelve null
@@ -96,7 +96,7 @@ The main (default) datastore is always available through the `ds` command, but t
 
 ### Dataclass
 
-Una dataclass es el equivalente de una tabla. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
+Una dataclass es el equivalente de una tabla. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Los atributos relacionales pueden utilizarse en las peticiones como cualquier otro atributo.
 
 All dataclasses in a 4D project are available as a property of the `ds` datastore. For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each exposed table that you want to be exposed as dataclass in the datastore.
 
@@ -118,7 +118,7 @@ Un objeto dataclass puede contener:
 
 The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. Una consulta se hace desde una única dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
 
-The dataclass object itself cannot be copied as an object:
+El objeto dataclass mismo no puede copiarse como un objeto:
 
 ```4d 
 $mydataclass:=OB Copy(ds.Employee) //devuelve null
@@ -142,7 +142,7 @@ Dataclass properties are attribute objects describing the underlying fields or r
  $revenuesAttribute:=ds.Company["revenues"] //alternate way
 ```
 
-This code assigns to `$nameAttribute` and `$revenuesAttribute` references to the name and revenues attributes of the `Company` class. Esta sintaxis NO devuelve los valores mantenidos dentro del atributo, sino que devuelve referencias a los propios atributos. To handle values, you need to go through [Entities](#entity).
+This code assigns to `$nameAttribute` and `$revenuesAttribute` references to the name and revenues attributes of the `Company` class. Esta sintaxis NO devuelve los valores mantenidos dentro del atributo, sino que devuelve referencias a los propios atributos. Para manejar los valores, es necesario pasar por [Entidades](#entity).
 
 All eligible fields in a table are available as attributes of their parent [dataclass](#dataclass). For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each field that you want to be exposed as a dataclass attribute.
 
@@ -161,7 +161,7 @@ For example, consider the following partial database structure and the relation 
 All storage attributes will be automatically available:
 
 *   in the Project dataclass: "ID", "name", and "companyID"
-*   in the Company dataclass: "ID", "name", and "discount"
+*   en la dataclasss Company: "ID", "name" y "discount"
 
 In addition, the following relation attributes will also be automatically available:
 
@@ -177,7 +177,7 @@ Keep in mind that these objects describe attributes, but do not give access to d
 
 #### Atributos calculados
 
-[Computed attributes](ordaClasses.md#computed-attributes) are declared using a `get <attributeName>` function in the [Entity class definition](ordaClasses.md#entity-class). Their value is not stored but evaluated each time they are accessed. They do not belong to the underlying database structure, but are built upon it and can be used as any attribute of the data model.
+[Computed attributes](ordaClasses.md#computed-attributes) are declared using a `get <attributeName>` function in the [Entity class definition](ordaClasses.md#entity-class). Su valor no se guarda, sino que se evalúa cada vez que se accede a ellos. They do not belong to the underlying database structure, but are built upon it and can be used as any attribute of the data model.
 
 
 ### Entity
@@ -186,10 +186,10 @@ Una entidad es el equivalente a un registro. It is actually an object that refer
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
-The entity object itself cannot be copied as an object:
+El objeto entidad en sí no puede ser copiado como un objeto:
 
 ```4d
- $myentity:=OB Copy(ds.Employee.get(1)) //returns null
+ $myentity:=OB Copy(ds.Employee.get(1)) //devuelve null
 ```
 
 Sin embargo, las propiedades de la entidad son enumerables:
@@ -216,13 +216,13 @@ Entity selections can be "sorted" or "unsorted" ([see below](#ordered-or-unorder
 
 > Entity selections can also be "shareable" or "non-shareable", depending on [how they have been created](entities.md#shareable-or-alterable-entity-selections).
 
-The entity selection object itself cannot be copied as an object:
+El objeto selección de entidades en sí no puede ser copiado como un objeto:
 
 ```4d
  $myentitysel:=OB Copy(ds.Employee.all()) //returns null
 ```
 
-The entity selection properties are however enumerable:
+Las propiedades de las selecciones de entidades son sin embargo enumerables:
 
 ```4d
  ARRAY TEXT($prop;0)
@@ -241,7 +241,7 @@ Ordered entity selections are created only when necessary or when specifically r
 *   result of an `orderBy()` on a selection (of any type) or an `orderBy()` on a dataclass
 *   result of the `newSelection()` method with the `dk keep ordered` option
 
-Unordered entity selections are created in the following cases:
+Las selecciones de entidades desordenadas se crean en los siguientes casos:
 
 *   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
 *   result of the `newSelection()` method without option,

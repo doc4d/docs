@@ -105,13 +105,16 @@ En el parámetro *folderConstant*, pase una carpeta 4D interna o sistema, utiliz
 | fk licenses folder         | 1     | Carpeta que contiene los archivos de licencia 4D de la máquina                                      |
 | fk logs folder             | 7     | Filesystem asociado: "/LOGS"                                                                        |
 | fk mobileApps folder       | 10    |                                                                                                     |
-| fk remote database folder  | 3     | 4D database folder created on each 4D remote machine                                                |
+| fk remote database folder  | 3     | Carpeta de la base de datos 4D creada en cada máquina 4D remota                                     |
 | fk resources folder        | 6     | Filesystem asociado: "/RESOURCES"                                                                   |
 | fk system folder           | 100   |                                                                                                     |
-| fk user preferences folder | 0     | 4D folder that stores user preference files within the \<userName> directory.                      |
+| fk user preferences folder | 0     | Carpeta 4D que almacena los archivos de preferencias usuario en el \<userName> directory.          |
 | fk web root folder         | 8     | Current Web root folder of the database: if within the package "/PACKAGE/path", otherwise full path |
 
-If the command is called from a component, pass the optional * parameter to get the path of the host database. Otherwise, if you omit the * parameter, a null object is always returned.
+If the command is called from a component, pass the optional * parameter to get the path of the host database. De lo contrario, si omite el parámetro *, siempre se devuelve un objeto null.
+
+> On Windows, in merged clients, the location of built-in folders is modified if the `ShareLocalResourcesOnWindowsClient` [BuildApp key](../Desktop/building.md#buildapp4dsettings) is used.
+
 
 
 ## 4D.Folder.new()
@@ -230,7 +233,7 @@ The `.createAlias()` function <!-- REF #FolderClass.createAlias().Summary -->cre
 
 Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
-By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
+Por defecto en macOS, la función crea un alias estándar. You can also create a symbolic link by using the *aliasType* parameter. Las siguientes constantes están disponibles:
 
 | Constante          | Valor | Comentario                         |
 | ------------------ | ----- | ---------------------------------- |
@@ -245,7 +248,7 @@ A `4D.File` object with the `isAlias` property set to **true**.
 
 #### Ejemplo
 
-You want to create an alias to an archive folder in your database folder:
+Quiere crear un alias para una carpeta de archivos en su carpeta principal:
 
 ```4d
 $myFolder:=Folder("C:\\Documents\\Archives\\2019\\January";fk platform path)
@@ -405,7 +408,7 @@ The `.moveTo( )` function <!-- REF #FolderClass.moveTo().Summary -->moves or ren
 
 La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
-By default, the folder retains its name when moved. If you want to rename the moved folder, pass the new full name in the *newName* parameter. El nuevo nombre debe cumplir con las reglas de nomenclatura (por ejemplo, no debe contener caracteres como ":", "/", etc.), de lo contrario se devuelve un error.
+Por defecto, la carpeta conserva su nombre cuando se mueve. If you want to rename the moved folder, pass the new full name in the *newName* parameter. El nuevo nombre debe cumplir con las reglas de nomenclatura (por ejemplo, no debe contener caracteres como ":", "/", etc.), de lo contrario se devuelve un error.
 
 **Objeto devuelto**
 

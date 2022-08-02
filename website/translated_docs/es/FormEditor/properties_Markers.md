@@ -6,7 +6,7 @@ title: Marcadores
 
 Estas propiedades permiten especificar la ubicación precisa de los marcadores en la regla vertical de un **formulario tabla**. Los marcadores se utilizan principalmente en los formularios de salida. They control the information that is listed and set header, breaks, detail and footer areas of the form. Any object that placed in these areas is displayed or printed at the appropriate location.
 
-Whenever any form is used for output, either for screen display or printing, the output marker lines take effect and the areas display or print at designated locations. The markers also take effect when a form is used as the List form in a subform area. However, they have no effect when a form is used for input.
+Whenever any form is used for output, either for screen display or printing, the output marker lines take effect and the areas display or print at designated locations. The markers also take effect when a form is used as the List form in a subform area. Sin embargo, no tienen ningún efecto cuando se utiliza un formulario para introducir datos.
 
 Methods that are associated with objects in these areas are executed when the areas are printed or displayed as long as the appropriate events have been activated. For example, a object method placed in the Header area is executed when the `On Header` event takes place.
 
@@ -45,7 +45,7 @@ Puede hacer el área Detalle más pequeña o más grande. Whatever you place in 
 
 ## Pie del formulario
 
-The Form Footer area is displayed on screen under the list of records. It is always printed at the bottom of every page of a report. The Footer area is defined as the area between the Break control line and the Footer control line.
+El área de pie de página del formulario se muestra en pantalla bajo la lista de registros. Siempre se imprime al final de cada página de un informe. The Footer area is defined as the area between the Break control line and the Footer control line.
 Puede hacer que el área del pie de página sea más pequeña o más grande.<p>
 
 You can use the Footer area to print graphics, page numbers, the current date, or any text you want at the bottom of each page of a report. For output forms designed for use on screen, the Footer area typically contains buttons that give the user options such as doing a search or sort, printing records, or putting away the current report. Se aceptan los objetos activos.
@@ -61,13 +61,13 @@ You can use the Footer area to print graphics, page numbers, the current date, o
 
 ## Encabezado del formulario
 
-The form Header area is displayed at the top of each screen and is printed at the top of each page of a report. The Header area is defined as the area above the Header control line.
+The form Header area is displayed at the top of each screen and is printed at the top of each page of a report. El área de encabezado se define como el área por encima de la línea de control del encabezado.
 Puede hacer el área Encabezado más pequeña o más grande. You can use the Header area for column names, for instructions, additional information, or even a graphic such as a company logo or a decorative pattern.<p>
 
 You can also place and use active objects in the Header area of output forms displayed as subforms, in the records display window or using the `DISPLAY SELECTION` and `MODIFY SELECTION` commands. Se pueden insertar los siguientes objetos activos:
 
 - Botones, botones imagen,
-- Combo boxes, drop-down lists,  picture pop-up menus,
+- Combo boxes, listas desplegables, menús emergentes de imágenes,
 - listas jerárquicas, list boxes
 - Botones de radio, casillas de selección, casillas de selección 3D,
 - Progress indicators, rulers, steppers, spinners.
@@ -108,7 +108,7 @@ A Break level 1 occurs after the records grouped by the first sorted field are p
 | B2       | Nivel de ruptura 2 | Segundo campo ordenado          |
 | B3       | Nivel de ruptura 3 | Tercer campo ordenado           |
 
-Additional Header areas are associated with Breaks. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
+Las áreas adicionales del encabezado están asociadas a las interrupciones. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
 
 | Etiqueta | Descripción              | Prints after groups created by: |
 | -------- | ------------------------ | ------------------------------- |

@@ -3,7 +3,7 @@ id: overview
 title: Generalidades
 ---
 
-The 4D [project architecture](Project/architecture) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](Concepts/plug-ins). Components are made of 4D code, while plug-ins can be built using any language.
+The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be built using any language.
 
 
 ## Componentes 4D preinstalados
@@ -13,12 +13,12 @@ The 4D [project architecture](Project/architecture) is modular. You can provide 
 
 | Nombre del componente                                                         | Descripción                                                                                                       | Principales funcionalidades                                                                              |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| 4D Labels                                                                     | Internal component required to build label templates                                                              |                                                                                                          |
+| 4D Labels                                                                     | Componente interno necesario para la creación de plantillas de etiquetas                                          |                                                                                                          |
 | [4D Mobile App Server](https://github.com/4d-go-mobile/4D-Mobile-App-Server)  | Conjunto de clases y funciones utilitarias para autenticar, gestionar sesiones y desarrollar aplicaciones móviles | `.Action`, `.Authentication`, `.PushNotification`, `.WebHandler`, Authentication with email confirmation |
 | [4D NetKit](https://github.com/4d/4D-NetKit)                                  | Conjunto de herramientas para conectarse a las API de terceros                                                    | `OAuth2Provider` class, `New OAuth2 provider`, `OAuth2ProviderObject.getToken()`                         |
 | [4D Progress](https://doc.4d.com/4Dv19/4D/19/4D-Progress.100-5461799.en.html) | Abrir una o varias barras de progreso en la misma ventana                                                         | `Progress New`, `Progress SET ON STOP METHOD`, `Progress SET PROGRESS`, ...                              |
 | [4D SVG](https://doc.4d.com/4Dv19/4D/19/4D-SVG-Component.300-5462064.en.html) | Crear y manipular objetos gráficos svg comunes                                                                    | `SVGTool_Display_viewer`, multiple `SVG_` methods                                                        |
-| [4D ViewPro](ViewPro/getting-started.md)                                      | Funciones de hoja de cálculo en sus formularios                                                                   | See [4D View Pro documentation](ViewPro/getting-started.md)                                              |
+| [4D ViewPro](ViewPro/getting-started.md)                                      | Funciones de hoja de cálculo en sus formularios                                                                   | Ver la [documentación 4D View Pro](ViewPro/getting-started.md)                                           |
 | [4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html)   | Gestione los widgets DatePicker, TimePicker, SearchPicker 4D                                                      | `DatePicker calendar`, `DateEntry area`, `TimeEntry`, `SearchPicker SET HELP TEXT`, ...                  |
 | [Interfaz 4D WritePro](https://github.com/4d/4D-WritePro-Interface)           | Manage [4D Write Pro](https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Write-Pro-Reference.100-5606477.en.html) palettes    | `WP CreatePreview`, `WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`       |
 

@@ -7,7 +7,7 @@ A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accesse
 
 - 4D remote applications using ORDA to access the main datastore with the `ds` command. Note that the 4D remote application can still access the database in classic mode. These accesses are handled by the **4D application server**.
 - Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command. These accesses are handled by the **HTTP REST server**.
-- [4D for iOS or 4D for Android](https://developer.4d.com/go-mobile/) queries for updating mobile applications. These accesses are handled by the **HTTP server**.
+- [4D for iOS or 4D for Android](https://developer.4d.com/go-mobile/) queries for updating mobile applications. Estos accesos son gestionados por el **servidor HTTP**.
 
 
 
@@ -15,7 +15,7 @@ A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accesse
 
 When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
 
-A session in created on the remote datastore to handle the connection. This session is identified using a internal session ID which is associated to the `localID` on the 4D application side. This session automatically manages access to data, entity selections, or entities.
+Se crea una sesión en el datastore remoto para gestionar la conexión. This session is identified using a internal session ID which is associated to the `localID` on the 4D application side. This session automatically manages access to data, entity selections, or entities.
 
 The `localID` is local to the machine that connects to the remote datastore, which means:
 
@@ -23,7 +23,7 @@ The `localID` is local to the machine that connects to the remote datastore, whi
 *   If another process of the same application opens the same remote datastore but with another `localID`, it will create a new session on the remote datastore.
 *   If another machine connects to the same remote datastore with the same `localID`, it will create another session with another cookie.
 
-These principles are illustrated in the following graphics:
+Estos principios se ilustran en los gráficos siguientes:
 
 ![](assets/en/ORDA/sessions.png)
 
@@ -51,7 +51,7 @@ ORDA features related to entity locking and transaction are managed at process l
 *   Locks on entities are removed and transactions are rollbacked:
     *   when the process is killed.
     *   cuando la sesión se cierra en el servidor
-    *   when the session is killed from the server administration window.
+    *   cuando la sesión es terminada desde la ventana de administración del servidor.
 
 ### Cierre de las sesiones
 
@@ -62,7 +62,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 ## Optimización cliente/servidor
 
 4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Incluyen:
-* the **optimization context**
+* el **contexto de optimización**
 * la **caché ORDA**
 
 ### Contexto
@@ -174,9 +174,9 @@ If you want to deliver final applications with the highest level of optimization
 
 ### Caché ORDA
 
-For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds.
+For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). La caché ORDA está organizada por dataclass y vence después de 30 segundos.
 
-The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
+The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Los datos caducados permanecen en la caché hasta que se necesite el espacio.
 
 By default, the ORDA cache is transparently handled by 4D. However, you can control its contents using the following ORDA class functions:
 

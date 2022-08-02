@@ -58,8 +58,6 @@ O resultado é parecido mas o _MethodB_ é avaliado somente se necessário.
     QUERY([People];[People]LastName=$Find)
  Else
     ALERT("Não introduciu um nome.")
- End if
- End if
  End if 
 ```
 

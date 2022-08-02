@@ -9,7 +9,7 @@ This principle is used in particular by the 4D Web server to build [web template
 
 These tags are generally to be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
 
-Es posible mezclar varios tipos de etiquetas. For example, the following HTML structure is entirely feasible:
+Es posible mezclar varios tipos de etiquetas. Por ejemplo, la siguiente estructura HTML es totalmente factible:
 
 ```html
 <HTML>
@@ -56,7 +56,7 @@ Parsing the contents of a *template* source is done in two contexts:
 
 If the `[Mail]Letter_type` text field itself contains a tag, for example `<!--#4DSCRIPT/m_Gender-->`, this tag will be evaluated recursively after the interpretation of the 4DHTML tag.
 
-This powerful principle meets most needs related to text transformation. Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](WebServer/templates.md#prevention-of-malicious-code-insertion).
+Este poderoso principio satisface la mayoría de las necesidades relacionadas con la transformación de textos. Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 
 ### Identificadores con tokens
@@ -70,13 +70,13 @@ To ensure the correct evaluation of expressions processed via tags, regardless o
 
 ## 4DBASE
 
-#### Syntax: `<!--#4DBASE folderPath-->`
+#### Sintaxis: `<!--#4DBASE folderPath-->`
 
 The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!--#4DINCLUDE-->` tag.
 
 When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--#4DBASE -->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
 
-The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). The designated folder must be located inside the Web folder.
+The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). La carpeta designada debe estar ubicada dentro de la carpeta Web.
 
 Pass the "WEBFOLDER" keyword to restore the default path (relative to the page).
 
@@ -132,7 +132,7 @@ In the "head.html" file, the current folder is modified through `<!--#4DBASE -->
 
 ## 4DCODE
 
-#### Syntax: `<!--#4DCODE codeLines-->`
+#### Sintaxis: `<!--#4DCODE codeLines-->`
 
 The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
 
@@ -166,7 +166,7 @@ Aquí están las características de la etiqueta 4DCODE:
 - The `TRACE` command is supported and activates the 4D debugger, thus allowing you to debug your template code.
 - Any error will display the standard error dialog that lets the user stop code execution or enter debugging mode.
 - The text in between `<!--#4DCODE` and `-->` is split into lines accepting any line-ending convention (cr, lf, or crlf).
-- The text is tokenized within the context of the database that called `PROCESS 4D TAGS`. This is important for recognition of project methods for example. The [Available through tags and 4D URLs (4DACTION ...)](WebServer/allowProject.md) method property is not taken into account.
+- The text is tokenized within the context of the database that called `PROCESS 4D TAGS`. Esto es importante para el reconocimiento de los métodos de proyecto, por ejemplo. The [Available through tags and 4D URLs (4DACTION ...)](WebServer/allowProject.md) method property is not taken into account.
 - Even if the text always uses English-US, it is recommended to use the token syntax (:Cxxx) for command and constant names to protect against potential problems due to commands or constants being renamed from one version of 4D to another.
 
 > The fact that 4DCODE tags can call any of the 4D language commands or project methods could be seen as a security issue, especially when the database is available through HTTP. However, since it executes server-side code called from your own template files, the tag itself does not represent a security issue. In this context, as for any Web server, security is mainly handled at the level of remote accesses to server files.
@@ -203,7 +203,7 @@ The number of loops is based on the number of elements of the collection. At eac
 
 #### Ejemplo con una colección de valores escalares
 
-*getNames* returns a collection of strings. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
+*getNames* devuelve una colección de cadenas. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
 
 
 ```html
@@ -315,8 +315,8 @@ The properties of the object are processed according to their creation order. Du
 
 ## 4DEVAL
 
-#### Syntax: `<!--#4DEVAL expression-->`
-#### Alternative syntax: `$4DEVAL(expression)`
+#### Sintaxis: `<!--#4DEVAL expression-->`
+#### Sintaxis alternativa: `$4DEVAL(expression)`
 
 The `4DEVAL` tag allows you to assess a 4D variable or expression. Like the [`4DHTML`](#4dhtml) tag, `4DEVAL` does not escape HTML characters when returning text. However, unlike `4DHTML` or [`4DTEXT`](#4dtext), `4DEVAL` allows you to execute any valid 4D statement, including assignments and expressions that do not return any value.
 
@@ -336,8 +336,8 @@ In case of an error during interpretation, the text inserted will be in the form
 
 ## 4DHTML
 
-#### Syntax: `<!--#4DHTML expression-->`
-#### Alternative syntax: `$4DHTML(expression)`
+#### Sintaxis: `<!--#4DHTML expression-->`
+#### Sintaxis alternativa: `$4DHTML(expression)`
 
 
 The value of the 4D variable `vtSiteName` will be inserted in the HTML page when it is sent. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
@@ -366,7 +366,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
+Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). Puede utilizar una etiqueta <!--#4DELSE--> después del último <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
 
 Los dos códigos siguientes son equivalentes.
 
@@ -437,7 +437,7 @@ This example inserts different pages depending on which user is connected:
 
 This tag is mainly designed to include an HTML page (indicated by the *path* parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). This lets you avoid conflicts related to meta tags present in the headers.
 
-However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. It is up to you to verify the consistency of the meta tags.
+However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
 
 The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or loops (`<!--#4DLOOP-->`). It is very convenient to include banners according to a criteria or randomly. When including, regardless of the file name extension, 4D analyzes the called page and then inserts the contents (modified or not) in the page originating the `4DINCLUDE` call.
 
@@ -447,7 +447,7 @@ In *path*, put the path leading to the document to include. Warning: In the case
 
 > You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Furthermore, 4D verifies that inclusions are not recursive.
+The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
 
 In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
 
@@ -485,7 +485,7 @@ El código siguiente:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  FIRST RECORD([People])
@@ -499,7 +499,7 @@ El código siguiente:
 
 Esta sintaxis hace un bucle para cada elemento del array. The array current item is increased when each code portion is repeated.
 
-> This syntax cannot be used with two dimension arrays. In this case, it is better to combine a method with nested loops.
+> Esta sintaxis no se puede utilizar con arrays de dos dimensiones. En este caso, es mejor combinar un método con bucles anidados.
 
 The following code example:
 
@@ -509,7 +509,7 @@ The following code example:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  For($Elem;1;Size of array(arr_names))
@@ -522,7 +522,7 @@ The following code example:
 
 This syntax makes a loop as long as the method returns `True`. El método toma un tipo de parámetro Long Integer. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
 
-For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.
+For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). Si la autenticación es correcta, se procederá a la etapa de inicialización.
 
 `C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
@@ -534,7 +534,7 @@ The following code example:
 <!--#4DENDLOOP-->
 ```
 
-... could be expressed in 4D language in the following way:
+... podría expresarse en lenguaje 4D de la siguiente manera:
 
 ```4d
  If(AuthenticationWebOK)
@@ -548,7 +548,7 @@ The following code example:
  End if
 ```
 
-The `my_method` method can be as follows:
+El método `my_method` puede ser el siguiente:
 
 ```4d
  C_LONGINT($1)
@@ -649,8 +649,8 @@ As 4D executes methods in their order of appearance, it is absolutely possible t
 
 ## 4DTEXT
 
-#### Syntax: `<!--#4DTEXT expression-->`
-#### Alternative syntax: `$4DTEXT(expression)`
+#### Sintaxis: `<!--#4DTEXT expression-->`
+#### Sintaxis alternativa: `$4DTEXT(expression)`
 
 
 The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D variable or expression returning a value. Por ejemplo, si se escribe (en una página HTML):
@@ -661,7 +661,7 @@ The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D var
 
 Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
 
-También puede insertar expresiones 4D. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). The expression conversion follows the same rules as the variable ones. Moreover, the expression must comply with 4D syntax rules.
+También puede insertar expresiones 4D. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). La conversión de las expresiones sigue las mismas reglas que las de las variables. Además, la expresión debe cumplir con las reglas de sintaxis 4D.
 
 > For security reasons, it is recommended to use this tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
 
@@ -670,7 +670,7 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 - Debe utilizar las variables proceso.
 - Puede mostrar el contenido de un campo imagen. However, it is not possible to display the content of a picture array item.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get: C1224([Rect]Desc;\"color\")-->`.
-- Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. You just need to generate BLOBs in `Text without length` mode.
+- Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. Sólo tiene que generar los BLOBs en modo `Texto sin longitud`.
 
 
 
@@ -721,7 +721,7 @@ Utilizando la sintaxis $, el siguiente código es validado por el analizador:
 
 Note that `$4dtag` and `<--#4dtag -->` are not strictly equivalent: unlike `<--#4dtag -->`, `$4dtag` processing does not interpret 4D tags [recursively](#recursive-processing). Las etiquetas `$` siempre se evalúan una vez y el resultado se considera texto plano.
 
-The reason for this difference is to prevent malicious code injection. As [explained below](#prevention-of-malicious-code-insertion), it is strongly recommended to use `4DTEXT` tags instead of `4DHTML` tags when handling user text to protect against unwanted reinterpretation of tags: with `4DTEXT`, special characters such as "<" are escaped, thus any 4D tags using the `<!--#4dtag expression -->` syntax will lose their particular meaning. However, since `4DTEXT` does not escape the `$` symbol, we decided to break support for recursion in order to prevent malicious injection using the `$4dtag (expression)` syntax.
+La razón de esta diferencia es evitar la inyección de código malicioso. As [explained below](#prevention-of-malicious-code-insertion), it is strongly recommended to use `4DTEXT` tags instead of `4DHTML` tags when handling user text to protect against unwanted reinterpretation of tags: with `4DTEXT`, special characters such as "<" are escaped, thus any 4D tags using the `<!--#4dtag expression -->` syntax will lose their particular meaning. However, since `4DTEXT` does not escape the `$` symbol, we decided to break support for recursion in order to prevent malicious injection using the `$4dtag (expression)` syntax.
 
 The following examples show the result of processing depending on the syntax and tag used:
 

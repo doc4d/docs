@@ -30,7 +30,7 @@ $myEntity.save() //save the entity
 
 ## Entidades y referencias
 
-Una entidad contiene una referencia a un registro 4D. Different entities can reference the same 4D record. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
+Una entidad contiene una referencia a un registro 4D. Diferentes entidades pueden referenciar el mismo registro 4D. Also, since an entity can be stored in a 4D object variable, different variables can contain a reference to the same entity.
 
 Si ejecuta el siguiente código:
 
@@ -63,7 +63,7 @@ Esto es ilustrado por el siguiente gráfico:
 
 ![](assets/en/ORDA/entityRef2.png)
 
-Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
+Sin embargo, hay que tener en cuenta que las entidades se refieren al mismo registro. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
 
 In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. Por ejemplo:
 
@@ -85,7 +85,7 @@ Y el método es:
 ```
 
 You can handle entities like any other object in 4D and pass their references directly as [parameters](Concepts/parameters.md).
-> With the entities, there is no concept of "current record" as in the classic 4D language. You can use as many entities as you need, at the same time. There is also no automatic lock on an entity (see [Entity locking](#entity-locking)). When an entity is loaded, it uses the [lazy loading](glossary.md#lazy-loading) mechanism, which means that only the needed information is loaded. Nevertheless, in client/server, the entity can be automatically loaded directly if necessary.
+> With the entities, there is no concept of "current record" as in the classic 4D language. Puede utilizar tantas entidades como necesite al mismo tiempo. There is also no automatic lock on an entity (see [Entity locking](#entity-locking)). When an entity is loaded, it uses the [lazy loading](glossary.md#lazy-loading) mechanism, which means that only the needed information is loaded. Nevertheless, in client/server, the entity can be automatically loaded directly if necessary.
 
 
 ## Uso de los atributos de entidades
@@ -104,7 +104,7 @@ Por ejemplo, para definir un atributo de almacenamiento:
 
 > Database Blob fields ([scalar blobs](Concepts/dt_blob.md) are automatically converted to and from blob object attributes ([`4D.Blob`](Concepts/dt_blob.md)) when handled through ORDA. When saving a blob object attribute, keep in mind that, unlike blob object size which is only limited by the available memory, Blob field size is limited to 2GB.
 
-Accessing a related attribute depends on the attribute kind. Por ejemplo, con la siguiente estructura:
+El acceso a un atributo relacionado depende del tipo de atributo. Por ejemplo, con la siguiente estructura:
 
 ![](assets/en/ORDA/entityAttributes.png)
 
@@ -119,7 +119,7 @@ Note that both *theClient* and *companyProjects* in the above example are primar
 
 ![](assets/en/ORDA/entityAttributes2.png)
 
-Each employee can be a manager and can have a manager. To get the manager of the manager of an employee, you can simply write:
+Cada empleado puede ser gerente y puede tener un gerente. To get the manager of the manager of an employee, you can simply write:
 
 ```4d
  $myEmp:=ds.Employee.get(50)
@@ -133,7 +133,7 @@ In the ORDA architecture, relation attributes directly contain data related to e
 *   An N->1 type relation attribute (**relatedEntity** kind) contains an entity
 *   A 1->N type relation attribute (**relatedEntities** kind) contains an entity selection
 
-Let's look at the following (simplified) structure:
+Veamos la siguiente estructura (simplificada):
 
 ![](assets/en/ORDA/entityAttributes3.png)
 
@@ -184,7 +184,7 @@ You can create an object of type [entity selection](dsMapping.md#entity-selectio
 *   Using one of the various functions from the [Entity selection class](API/EntitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/EntitySelectionClass.md#or);
 *   Using a relation attribute of type "related entities" (see below).
 
-You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Different entity selections can contain references to the same entities.
+You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Diferentes selecciones de entidades pueden contener las referencias a las mismas entidades.
 
 ### Entity selections compartibles o modificables
 
@@ -230,7 +230,7 @@ A new entity selection is **alterable** in the following cases:
 
 Ejemplo:
 ```4d
-$toModify:=ds.Company.all().copy() //$toModify is alterable
+$toModify:=ds.Company.all().copy() //$toModify es alterable
 ```
 
 
@@ -337,7 +337,7 @@ You often need to manage possible conflicts that might arise when several users 
 
 ORDA le ofrece dos modos de bloqueo de entidad:
 
-- an automatic "optimistic" mode, suitable for most applications,
+- un modo automático "optimista", adecuado para la mayoría de las aplicaciones,
 - a "pessimistic" mode allowing you to lock entities prior to their access.
 
 ### Bloqueo automático optimista
@@ -348,18 +348,18 @@ This automatic mechanism is based on the concept of "optimistic locking" which i
 *   Each entity has an internal locking stamp that is incremented each time it is saved.
 *   When a user or process tries to save an entity using the `entity.save( )` method, 4D compares the stamp value of the entity to be saved with that of the entity found in the data (in the case of a modification):
     *   When the values match, the entity is saved and the internal stamp value is incremented.
-    *   When the values do not match, it means that another user has modified this entity in the meantime. The save is not performed and an error is returned.
+    *   When the values do not match, it means that another user has modified this entity in the meantime. No se guarda y se devuelve un error.
 
-The following diagram illustrates optimistic locking:
+El siguiente diagrama ilustra el bloqueo optimista:
 
 1. Dos procesos cargan la misma entidad.<br><br>![](assets/en/ORDA/optimisticLock1.png)
 
-2. The first process modifies the entity and validates the change. Se llama al método `entity.save( )`. The 4D engine automatically compares the internal stamp value of the modified entity with that of the entity stored in the data. Since they match, the entity is saved and its stamp value is incremented.<br><br>![](assets/en/ORDA/optimisticLock2.png)
+2. El primer proceso modifica la entidad y valida el cambio. Se llama al método `entity.save( )`. The 4D engine automatically compares the internal stamp value of the modified entity with that of the entity stored in the data. Since they match, the entity is saved and its stamp value is incremented.<br><br>![](assets/en/ORDA/optimisticLock2.png)
 
 3. The second process also modifies the loaded entity and validates its changes. Se llama al método `entity.save( )`. Since the stamp value of the modified entity does not match the one of the entity stored in the data, the save is not performed and an error is returned.<br><br>![](assets/en/ORDA/optimisticLock3.png)
 
 
-This can also be illustrated by the following code:
+Esto también puede ilustrarse con el siguiente código:
 
 ```4d
  $person1:=ds.Person.get(1) //Reference to entity
@@ -378,7 +378,7 @@ When this situation occurs, you can, for example, reload the entity from the dis
 
 ### Bloqueo pesimista
 
-You can lock and unlock entities on demand when accessing data. When an entity is getting locked by a process, it is loaded in read/write in this process but it is locked for all other processes. The entity can only be loaded in read-only mode in these processes; its values cannot be edited or saved.
+Puede bloquear y desbloquear las entidades bajo pedido cuando acceda a los datos. When an entity is getting locked by a process, it is loaded in read/write in this process but it is locked for all other processes. The entity can only be loaded in read-only mode in these processes; its values cannot be edited or saved.
 
 This feature is based upon two functions of the `Entity` class:
 
@@ -391,18 +391,18 @@ For more information, please refer to the descriptions for these functions.
 
 
 
-### Concurrent use of 4D classic locks and ORDA pessimistic locks
+### Utilización simultánea de los bloqueos clásicos 4D y de los bloqueos pesimistas ORDA
 
 Using both classic and ORDA commands to lock records is based upon the following principles:
 
 *   A lock set with a classic 4D command on a record prevents ORDA to lock the entity matching the record.
 *   A lock set with ORDA on an entity prevents classic 4D commands to lock the record matching the entity.
 
-These principles are shown in the following diagram:
+Estos principios se muestran en el siguiente diagrama:
 
 ![](assets/en/ORDA/concurrent1.png)
 
 **Transaction locks** also apply to both classic and ORDA commands. In a multiprocess or a multi-user application, a lock set within a transaction on a record by a classic command will result in preventing any other processes to lock entities related to this record (or conversely), until the transaction is validated or canceled.
 
 *   Ejemplo con un bloqueo definido por un comando clásico:<br><br>![](assets/en/ORDA/concurrent2.png)
-*   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)
+*   Ejemplo con un bloqueo definido por una función ORDA:<br><br>![](assets/en/ORDA/concurrent3.png)

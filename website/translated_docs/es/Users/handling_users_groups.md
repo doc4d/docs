@@ -76,7 +76,7 @@ La lista de usuarios muestra todos los usuarios, incluyendo el [Diseñador y el 
 
 3. Introduzca el nombre de usuario. Introduzca el nombre de usuario. Puede renombrar un usuario en cualquier momento utilizando el comando **Renombrar** del menú contextual, o utilizando los atajos Alt+clic (Windows) u Opción+clic (macOS), o haciendo dos veces clic en el nombre que quiera cambiar.
 
-4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. You can use up to 15 alphanumeric characters for a password. El editor de contraseñas es sensible a las mayúsculas y minúsculas.
+4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. Puede utilizar hasta 15 caracteres alfanuméricos para una contraseña. El editor de contraseñas es sensible a las mayúsculas y minúsculas.
 
 > Users can change their password at any time according to the options in the "Security" page of the structure settings, or using the `CHANGE PASSWORD` command.
 
@@ -89,24 +89,24 @@ The membership of users to different groups can also be set by group on the [Gro
 
 To delete a user, select it then click the deletion button or use the **Delete** command of the context menu. ![](assets/en/Users/MinussNew.png)
 
-Deleted user names no longer appear in the Users editor. Note that the IDs for deleted users are reassigned when new user accounts are created.
+Los nombres de usuario borrados ya no aparecen en el editor de usuarios. Note that the IDs for deleted users are reassigned when new user accounts are created.
 
 ### Propiedades de los usuarios
 
 - **User Kind**: The User Kind field contains "Designer", "Administrator", or (for all other users) "User".
 
-- **Método de inicio**: nombre de un método asociado que se ejecutará automáticamente cuando el usuario abra la aplicación (opcional). This method can be used for example to load the user preferences.
+- **Método de inicio**: nombre de un método asociado que se ejecutará automáticamente cuando el usuario abra la aplicación (opcional). Este método puede utilizarse, por ejemplo, para cargar las preferencias usuario.
 
 
 ## Editor de grupos
 
-The editor for groups is located in the Toolbox of 4D.
+El editor de grupos se encuentra en la caja de herramientas de 4D.
 
 ### Configurar grupos
 
 You use the groups editor to set the elements that each group contains (users and/or other groups) and to distribute access to plug-ins.
 
-Keep in mind that once a group has been created, it cannot be deleted. If you want to deactivate a group, you just need to remove any users it contains.
+Tenga en cuenta que una vez que se ha creado un grupo, no se puede eliminar. If you want to deactivate a group, you just need to remove any users it contains.
 
 Para crear un grupo:
 
@@ -118,7 +118,7 @@ Para crear un grupo:
 
 > The Duplicate command can be used to create several groups having the same characteristics quickly.
 
-4D adds a new group to the list, named "New groupX" by default.
+4D añade un nuevo grupo a la lista, llamado por defecto "Nuevo grupoX".
 
 3. Introduzca el nombre del nuevo grupo. El nombre del grupo puede tener hasta 15 caracteres. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
@@ -132,7 +132,7 @@ To place a user or group in a group, you simply need to check the "Member" optio
 
 ![](assets/en/Users/groups.png)
 
-If you check the name of a user, this user is added to the group. If you check the name of a group, all the users of the group are added to the new group. The affiliated user or group will then have the same access privileges as those assigned to the new group.
+Si se marca el nombre de un usuario, éste se añade al grupo. If you check the name of a group, all the users of the group are added to the new group. The affiliated user or group will then have the same access privileges as those assigned to the new group.
 
 Placing groups into other groups lets you create a user hierarchy. The users of a group placed in another group will have the access privileges of both groups. See "[An access hierarchy scheme](#an-access-hierarchy-scheme)" below.
 
@@ -140,7 +140,7 @@ To remove a user or group from another group, you just need to deselect the corr
 
 ### Asignar un grupo a un plug-in o a un servidor
 
-You can assign a group privileges to any plug-ins installed in the project. This includes all the 4D plug-ins and any third-party plug-ins.
+You can assign a group privileges to any plug-ins installed in the project. Esto incluye todos los plug-ins de 4D y los de terceros.
 
 Distributing access to the plug-ins lets you control the use of the licenses you possess for these plug-ins. Any users that do not belong to the access group of a plug-in cannot load this plug-in.
 
@@ -150,14 +150,14 @@ The “Plug-in” area on the Groups page of the tool box lists all the plug-ins
 
 ![](assets/en/Users/plugins.png)
 
-The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. These licenses are considered as plug-in licenses by 4D Server. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
+The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. Estas licencias son consideradas por 4D Server como licencias de plug-in. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
 
 
 ### Un esquema de acceso jerárquico
 
-The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. This section discusses several approaches to such a scheme.
+The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. Esta sección describe varios enfoques de este esquema.
 
-In this example, a user is assigned to one of three groups depending on their level of responsibility. Users assigned to the Accounting group are responsible for data entry. Users assigned to the Finances group are responsible for maintaining the data, including updating records and deleting outdated records. Users assigned to the General Management group are responsible for analyzing the data, including performing searches and printing analytical reports.
+In this example, a user is assigned to one of three groups depending on their level of responsibility. Los usuarios asignados al grupo Contabilidad son responsables de la entrada de datos. Users assigned to the Finances group are responsible for maintaining the data, including updating records and deleting outdated records. Users assigned to the General Management group are responsible for analyzing the data, including performing searches and printing analytical reports.
 
 The groups are then nested so that privileges are correctly distributed to the users of each group.
 

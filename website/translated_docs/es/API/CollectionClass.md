@@ -803,9 +803,9 @@ The `.every()` function <!-- REF #collection.every().Summary -->returns **true**
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1026,9 +1026,9 @@ The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new 
 You designate the callback to be executed to filter collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1108,9 +1108,9 @@ The `.find()` function <!-- REF #collection.find().Summary -->returns the first 
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1133,7 +1133,7 @@ Por defecto, `.find()` busca en toda la colección. Opcionalmente, se puede pasa
 
 #### Ejemplo 1
 
-You want to get the first text element with a length smaller than 5:
+Quiere obtener el primer elemento de texto con una longitud menor que 5:
 
 ```4d
 var $col : Collection
@@ -1198,9 +1198,9 @@ The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns 
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- *methodName*, the name of a project method (text).
+- *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1580,9 +1580,9 @@ The `.map()` function <!-- REF #collection.map().Summary -->creates a new collec
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback is called with the parameter(s) passed in *param* (optional). Recibe un objeto `` en el primer parámetro ($1).
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -1885,7 +1885,7 @@ Esta función devuelve una *copia superficial*, lo que significa que los objetos
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
 In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide *extraParam* parameters to the callback if necessary.
 
@@ -2199,7 +2199,7 @@ The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *f
 You designate the callback to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
 The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
@@ -2211,7 +2211,7 @@ La retrollamada recibe los siguientes parámetros:
 *   en *$2: param*
 *   en *$N...*: *paramN...*
 
-The callback sets the following parameter(s):
+La retrollamada define los siguientes parámetros:
 
 *   *$1.accumulator*: valor que va a ser modificado por la función y que es inicializado por *initValue*.
 *   *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
@@ -2534,9 +2534,9 @@ The `.some()` function <!-- REF #collection.some().Summary -->returns true if at
 You designate the 4D code (callback) to be executed to evaluate collection elements using either:
 
 - *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- o en *methodName*, el nombre de un método proyecto (texto).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. Recibe un objeto `` en el primer parámetro ($1).
 
 
 La retrollamada recibe los siguientes parámetros:
@@ -2623,7 +2623,7 @@ La retrollamada recibe los siguientes parámetros:
     - *$1.value2* (todo tipo): segundo valor del elemento a comparar
 - $2...$N (cualquier tipo): parámetros adicionales
 
-If you used a method, you must set the folllowing parameter:
+Si utilizó un método, debe definir el siguiente parámetro:
 
 - *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise.
 

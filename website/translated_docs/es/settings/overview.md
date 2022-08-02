@@ -14,20 +14,20 @@ The Settings configure how the current project functions. These parameters may b
 
 Puede acceder a la caja de diálogo Parámetros:
 
--   using the **Design > Settings...** menu option
--   by clicking **Settings** on the 4D toolbar
+-   utilizando la opción de menú **Diseño > Parámetros...**
+-   haciendo clic en **Parámetros** en la barra de herramientas 4D
 -   on 4D Server, using the **Edit > Settings...** menu option
 
 When [**User settings** mode is enabled](../Desktop/user-settings.md), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
 
--   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
+-   **User Settings...** gives you access to settings that can be stored externally in a user file. Si se modifican, se utilizan en lugar de los parámetro de estructura.
 -   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
 
 ### Información sobre el bloqueo
 
 Locking can occur in both Project and Client/server modes when:
 
--   The *settings.4DSettings* file is 'Read-only' (Projects only). Modifying a setting will display an alert to unlock it, if possible.
+-   The *settings.4DSettings* file is 'Read-only' (Projects only). Al modificar un parámetro se mostrará una alerta para desbloquearlo, si es posible.
 -   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Cliente/servidor únicamente)
 
 In both cases, the settings can be opened in 'Read-only', but cannot be used until the lock is removed.
@@ -51,4 +51,4 @@ La mayoría de los parámetros se aplican inmediatamente. However, a few of them
 
 To reset the parameters to their default values and remove the bold style indicating that they have been customized, click **Reset to factory settings**.
 
-This button resets all the parameters of the current page. It becomes active when at least one parameter has been modified on the current page.
+Este botón reinicializa todos los parámetros de la página actual. It becomes active when at least one parameter has been modified on the current page.

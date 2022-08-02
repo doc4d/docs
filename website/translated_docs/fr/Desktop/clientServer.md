@@ -12,7 +12,7 @@ title: Client/Server Management
 
 ![](assets/en/getStart/localremote.png)
 
-> Connecting to a remote projet from the **same machine as 4D Server** allows modifying the project files. This [specific feature](#using-4d-and-4d-server-on-the-same-machine) allows to develop a client/server application in the same context as the deployment context.
+> Connecting to a remote project from the **same machine as 4D Server** allows modifying the project files. This [specific feature](#using-4d-and-4d-server-on-the-same-machine) allows to develop a client/server application in the same context as the deployment context.
 
 
 
@@ -46,15 +46,15 @@ Pour vous connecter à un serveur de la liste, double-cliquez sur son nom ou sé
 
 Si le projet publié n'est pas affiché dans la liste **Disponible**, sélectionnez **Personnalisé**. La page Personnalisé vous permet de vous connecter à un serveur publié sur le réseau en utilisant son adresse réseau et en lui attribuant un nom personnalisé.
 
-![](assets/en/getStart/serverConnect2.png)
+![](assets/en/Desktop/serverConnect2.png)
 
 
 - **Nom du projet** : définit le nom local du projet 4D Server. Ce nom sera utilisé dans la page **Récent** pour faire référence au projet.
 - **Adresse réseau** : L'adresse IP de la machine sur laquelle le 4D Server a été lancé. <p>Si deux serveurs sont exécutés simultanément sur la même machine, l'adresse IP doit être suivie de deux points et d'un numéro de port, par exemple : `192.168.92.104:19814`. <p>Par défaut, le port de publication d'un 4D Server est 19813. Ce numéro peut être modifié dans les paramètres du projet.
 
-Une fois que cette page attribue un serveur, cliquez sur le bouton **OK** pour vous connecter au serveur.
+> The **Activate development mode** option opens the remote connection in a special read/write mode and requires to access the project folder from the remote 4D (compatibility option).
 
-> Si le projet est publié avec l'option de chiffrement activée, vous devez ajouter un accent circonflexe (^) avant le nom, sinon la connexion sera refusée. Pour plus d'informations, reportez-vous à la section Chiffrement des connexions client/serveur.
+Une fois que cette page attribue un serveur, cliquez sur le bouton **OK** pour vous connecter au serveur.
 
 Une fois la connexion au serveur établie, le projet distant sera répertorié dans l'onglet **Récent**.
 
@@ -77,6 +77,8 @@ Lorsqu'une version .4dz mise à jour du projet a été produite sur 4D Server, l
 ## Using 4D and 4D Server on the same machine
 
 Lorsque 4D se connecte à un 4D Server sur la même machine, l'application se comporte comme 4D en mode monoposte et l'environnement de développement permet d'éditer les fichiers du projet. This feature allows you to develop a client/server application in the same context as the deployment context.
+
+> When 4D connects to a 4D Server on the same machine, the **development mode** is automatically activated, whatever the [opening option](#opening-a-remote-project) status.
 
 A chaque fois que 4D effectue une action **Enregistrer tout** depuis l'environnement de développement (explicitement depuis le menu **Fichier** ou implicitement en passant en mode application par exemple), 4D Server recharge de manière synchrone les fichiers du projet. 4D attend que 4D Server termine le rechargement des fichiers du projet avant de continuer.
 

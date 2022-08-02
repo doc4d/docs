@@ -44,7 +44,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 //del lado remoto
 ```
-> Esta instrucción también inicia el archivo de historial [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
+> This statement also starts the [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt) log file.
 
 #### Encabezados
 
@@ -348,14 +348,14 @@ Los siguientes campos se registran para cada petición:
 
 ## Utilización de un archivo de configuración de log
 
-You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
+You can use a **log configuration file** to easily manage log recording in a production environment. Este archivo está preconfigurado por el desarrollador. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
 ### Cómo activar el archivo
 
 Hay varias maneras de activar el archivo de configuración de los logs:
 
 - On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. Se activa inmediatamente en el servidor.
-- You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
+- You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. En este caso, el archivo debe llamarse `logConfig.json`. It is enabled at project startup (only on the server in client/server).
 - With a built application, you can copy the `logConfig.json` file in the following folder:
     + Windows: `Users\[userName]\AppData\Roaming\[application]`
     + macOS: `/Users/[userName]/Library/ApplicationSupport/[application]`
