@@ -72,7 +72,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 |Parameter|Type| |Description|
 |---|---|---|---|
-|rangeObj| Text|->|Range object |
+|rangeObj| Object|->|Range object |
 |name|Text|->|Name for the fomula|
 |options|Object|->|Options for the named formula|
 <!-- END REF -->  
@@ -720,6 +720,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
@@ -727,6 +728,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
+|v19 R7|Support of `allowAutoExpandState` option
 |v19 R6|Added
 </details>
 
@@ -766,6 +768,7 @@ In *options*, you can pass an object with additional options for the table. Poss
 
 |Property|Type|Description|Default value
 |---|---|---|---|
+|allowAutoExpand|Boolean|True to expand columns or rows of the table when values are added in empty adjacent cells.| True
 |showFooter|Boolean|Display a footer| False
 |showHeader|Boolean|Display a header| True
 |showResizeHandle|Boolean|For tables that don't have a *source*. Display the resize handle| False
@@ -2297,6 +2300,7 @@ VP SET CELL STYLE($range;$style)
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName|Text|->|4D View Pro area form object name|
+
 |styleName|Text|->|Name of style|
 |sheet|Integer|->|Sheet index (current sheet if omitted)|
 |Result|Object|<-|Style sheet object|
@@ -2394,6 +2398,101 @@ In this case, the current sheet uses two style objects:
 #### See also
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)
+
+
+### VP Get table range
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP Get table range.Syntax -->**VP Get table range** ( *vpAreaName* : Text ; *tableName* : Text {; *onlyData* : Integer {; *sheet* : Integer }} ) : Object<!-- END REF -->  
+
+<!-- REF #_method_.VP Get tables.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|onlyData|Integer|->|`vk table full range` (default) or `vk table data range`|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+|Result  |Object|<-|Range that contains the table|
+<!-- END REF -->  
+
+#### Description
+
+The `VP Get table range` command <!-- REF #_method_.VP Get table range.Summary -->returns the range of *tableName*<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the 4D View Pro area.
+
+In the *onlyData* parameter, you can pass one of the following constants to indicate if you want to get the data only:
+
+|Constant|Value|Description|
+|---|---|---|
+|`vk table full range`|0|Get the cell range for the table area with footer and header (default if omitted)|
+|`vk table data range`|1|Get the cell range for the table data area only|
+
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+
+>Indexing starts at 0.
+
+
+
+#### See also
+
+[VP RESIZE TABLE](#vp-resize-table)
+
+
+
+### VP Get tables
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP Get tables.Syntax -->**VP Get tables** ( *vpAreaName* : Text { ; *sheet* : Integer } ) : Collection<!-- END REF -->  
+
+<!-- REF #_method_.VP Get tables.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+|Result  |Collection|<-|Text collection with all table names|
+<!-- END REF -->  
+
+#### Description
+
+The `VP Get tables` command <!-- REF #_method_.VP Get tables.Summary -->returns a collection of all table names defined in the *sheet*<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the 4D View Pro area.
+
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+
+>Indexing starts at 0.
+
+
+
+#### Example
+
+The following code will return a collection of all the table names in the current sheet:
+
+
+```4d
+$tables:=VP Get tables("ViewProArea")
+//$tables contains for example ["contextTable","emailTable"]
+
+```
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)
+
+
 
 ### VP Get value
 
@@ -2725,6 +2824,115 @@ The results is:
 
 [VP DELETE COLUMNS](#vp-delete-columns)<br/>[VP DELETE ROWS](#vp-delete-rows)<br/>[VP INSERT COLUMNS](#vp-insert-columns)
 
+### VP INSERT TABLE COLUMNS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Syntax -->**VP INSERT TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *insertAfter* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|column|Integer|->|Index in the table of the starting column to insert|
+|count|Text|->|Number of columns to add (must be >0) |
+|insertAfter|Integer|->|`vk table insert before` or `vk table insert after` *column*|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP INSERT TABLE COLUMNS` command <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->inserts one or *count* empty column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->. 
+
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the column(s) must be inserted before or after the *column* index:
+
+|Constant|Value|Description|
+|---|---|---|
+|`vk table insert before`|0|Insert column(s) before the *column* (default if omitted)|
+|`vk table insert after`|1|Insert column(s) after the *column*|
+
+This command inserts some columns in the *tableName* table, NOT in the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved right according to the number of added columns.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To insert two columns in the "dataContext" table before the 3rd row: 
+
+```4d
+VP INSERT TABLE COLUMNS("ViewProArea"; "dataContext"; 3;2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
+
+### VP INSERT TABLE ROWS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP INSERT TABLE ROWS.Syntax -->**VP INSERT TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *insertAfter* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP INSERT TABLE ROWS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|row|Integer|->|Index in the table of the starting row to insert|
+|count|Text|->|Number of rows to add (must be >0) |
+|insertAfter|Integer|->|`vk table insert before` or `vk table insert after` *row*|
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP INSERT TABLE ROWS` command <!-- REF #_method_.VP INSERT TABLE ROWS.Summary -->inserts one or *count* empty row(s) in the specified *tableName* at the specified *row* index<!-- END REF -->. 
+
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the row(s) must be inserted before or after the *row* index:
+
+|Constant|Value|Description|
+|---|---|---|
+|`vk table insert before`|0|Insert row(s) before the *row* (default if omitted)|
+|`vk table insert after`|1|Insert row(s) after the *row*|
+
+This command inserts some rows in the *tableName* table, NOT in the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved down according to the number of added rows.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To insert one row in the "dataContext" table before the 2nd row:
+
+```4d
+VP INSERT TABLE ROWS("ViewProArea"; "dataContext"; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE COLUMNS](#vp-insert-table-columns)<br/>[VP REMOVE TABLE ROWS](#vp-remove-table-rows)
+
+
+
+
 ## M
 
 ### VP MOVE CELLS
@@ -3039,6 +3247,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 >Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
 
+
 #### Example
 
 To refresh all formulas in the workbook:
@@ -3221,7 +3430,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 |v19 R6|Added
 </details>
 
-<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
+<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *vpAreaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
@@ -3264,6 +3473,100 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 
 [VP CREATE TABLE](#vp-create-table)
 
+
+### VP REMOVE TABLE COLUMNS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Syntax -->**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|column|Integer|->|Index in the table of the starting column to remove|
+|count|Text|->|Number of columns to remove (must be >0) |
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE TABLE COLUMNS` command <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Summary -->removes one or *count* column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->. The command removes values and styles.
+
+The command removes columns from the *tableName* table, NOT from the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved letf according to the number of removed columns.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To remove two columns from 3rd column of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE COLUMNS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE COLUMNS](#vp-insert-table-columns)<br/>[VP REMOVE TABLE ROWS](#vp-remove-table-rows)
+
+
+
+### VP REMOVE TABLE ROWS
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Syntax -->**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|tableName|Text|->|Table name|
+|row|Integer|->|Index in the table of the starting row to remove|
+|count|Text|->|Number of rows to remove (must be >0) |
+|sheet   |Integer|->|Sheet index (current sheet if omitted)|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE TABLE ROWS` command <!-- REF #_method_.VP REMOVE TABLE ROWS.Summary -->removes one or *count* row(s) from the specified *tableName* at the specified *row* index<!-- END REF -->. The command removes values and styles.
+
+This command removes rows from the *tableName* table, NOT from the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved up according to the number of removed rows.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Example
+
+To remove two rows from 3rd row of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE ROWS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
+
+
 ### VP RESET SELECTION
 
 <!-- REF #_method_.VP RESET SELECTION.Syntax -->**VP RESET SELECTION** ( *vpAreaName* : Text { ; *sheet* : Integer } ) <!-- END REF -->  
@@ -3300,6 +3603,48 @@ VP RESET SELECTION("myVPArea")
 #### See also
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
+
+
+### VP RESIZE TABLE
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R7|Added
+</details>
+
+<!-- REF #_method_.VP RESIZE TABLE.Syntax -->**VP RESIZE TABLE** ( *rangeObj* : Object; *tableName* : Text )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP RESIZE TABLE.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|rangeObj|Object|->|New range for the table|
+|tableName|Text|->|Name of the table|
+<!-- END REF -->  
+
+#### Description
+
+The `VP RESIZE TABLE` command <!-- REF #_method_.VP RESIZE TABLE.Summary -->changes the *tableName* size with regards to the *rangeObj*<!-- END REF -->.
+
+The following rules apply:
+
+- Headers must remain in the same row and the resulting table range must overlap the original table range.
+- If the row count of the resized table is inferior to the initial row count, values inside cropped rows or columns are kept if they were not bound, otherwise they are removed.
+- If the table expands on cells containing data:
+	- if rows are added, data is deleted,
+	- if columns are added, data are kept and are displayed in new columns.
+
+If *tableName* does not exist, nothing happens.
+
+
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)<br/>[VP Get table range](#vp-get-table-range)
+
+
 
 ### VP RESUME COMPUTING
 
@@ -4505,6 +4850,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 |paneObj |Object|->|Object containing frozen column and row information|
 |sheet|Integer|->|Sheet index (current sheet if omitted)|
 
+
 <!-- END REF -->  
 
 #### Description
@@ -4617,6 +4963,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 #### Example
 
 The following code will print a 4D View Pro area to a PDF document:
+
 
 ```4d
 var $printInfo : Object
