@@ -12,7 +12,7 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
 
-The number sign (#) is the placeholder for an alphanumeric display format. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
+El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
 
 Por ejemplo, considere un número de parte con un formato como "RB-1762-1".
 
@@ -144,7 +144,7 @@ Puede utilizar cualquier otro caracter en el formato. When used alone, or placed
 
     $##0
 
-a dollar sign always appears because it is placed before the placeholders.
+siempre aparece un signo de dólar porque se coloca antes de los marcadores de posición.
 
 If characters are placed between placeholders, they appear only if digits are displayed on both sides. Por ejemplo, si define el formato:
 
@@ -163,7 +163,7 @@ A number display format can have up to three parts allowing you to specify displ
 You do not have to specify all three parts of the format. If you use just one part, 4D uses it for all numbers, placing a minus sign in front of negative numbers.
 
 If you use two parts, 4D uses the first part for positive numbers and zero and the second part for negative numbers. If you use three parts, the first is for positive numbers, the second for negative numbers, and the third for zero.
-> The third part (zero) is not interpreted and does not accept replacement characters. If you enter `###;###;#`, the zero value will be displayed “#”. In other words, what you actually enter is what will be displayed for the zero value.
+> The third part (zero) is not interpreted and does not accept replacement characters. Si introduce `###;###;#`, el valor cero se mostrará "#". In other words, what you actually enter is what will be displayed for the zero value.
 
 Here is an example of a number display format that shows dollar signs and commas, places negative values in parentheses, and does not display zeros:
 
@@ -292,7 +292,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 When you use **Scaled to fit (proportional)**, the picture is reduced proportionally on all sides to fit the area created for the picture. The **Scaled to fit centered (proportional)** option does the same, but centers the picture in the picture area.
 
-If the picture is smaller than the area set in the form, it will not be modified. If the picture is bigger than the area set in the form, it is proportionally reduced. Since it is proportionally reduced, the picture will not appear distorted.
+If the picture is smaller than the area set in the form, it will not be modified. If the picture is bigger than the area set in the form, it is proportionally reduced. Como se reduce proporcionalmente, la imagen no aparecerá distorsionada.
 
 If you have applied the **Scaled to fit centered (proportional)** format, the picture is also centered in the area:
 
@@ -394,9 +394,9 @@ Las columnas booleanas también pueden mostrarse como menús emergentes. In this
 
 #### Gramática JSON
 
-| Nombre      | Tipos de datos | Valores posibles                                                                                                                                                |
-| ----------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| controlType | cadena         | <li>**number columns**: "automatic" (default) or "checkbox"<li>**boolean columns**: "checkbox" (default) or "popup" |
+| Nombre      | Tipos de datos | Valores posibles                                                                                                                                                      |
+| ----------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| controlType | cadena         | <li>**number columns**: "automatic" (default) or "checkbox"<li>**columnas booleanas**: "checkbox" (por defecto) o "popup" |
 
 #### Objetos soportados
 
@@ -497,7 +497,7 @@ This option is available for columns with any type of contents, except pictures 
 *   When the property is enabled (default), if the contents of a list box cell exceed the width of the column, they are truncated and an ellipsis is displayed:
 
     ![](assets/en/FormObjects/property_truncate1.png)
-> La posición de la elipsis depende del sistema operativo. In the above example (Windows), it is added on the right side of the text. En macOS, la elipsis se añade en medio del texto.
+> La posición de la elipsis depende del sistema operativo. En el ejemplo anterior (Windows), se añade a la derecha del texto. En macOS, la elipsis se añade en medio del texto.
 
 *   When the property is disabled, if the contents of a cell exceed the width of the column, they are simply clipped with no ellipsis added:
 
