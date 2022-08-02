@@ -3,11 +3,11 @@ id: number
 title: Number (Real, Longint, Integer)
 ---
 
-Number is a generic term that stands for:
+Número é um termo genérico que significa:
 
-- Real field, variable or expression. The range for the Real data type is ±1.7e±308 (13 significant digits).
-- Long Integer field, variable or expression. The range for the Long Integer data type (4-byte Integer) is -2^31..(2^31)-1.
-- Integer field, array or expression. The range for the Integer data type (2-byte Integer) is -32,768..32,767 (2^15..(2^15)-1).
+- Campo real, variável ou expressão. O intervalo para o tipo de dados Real é de ±1,7e±308 (13 dígitos significativos).
+- Campo Inteiro Longo, variável ou expressão. O intervalo para o tipo de dados Long Integer (4-byte Integer) é -2^31...(2^31)-1.
+- Campo inteiro, array ou expressão. The range for the Integer data type (2-byte Integer) is -32,768..32,767 (2^15..(2^15)-1).
 
 **Note:** Integer field values are automatically converted in Long integers when used in the 4D Language.
 
@@ -38,27 +38,27 @@ Negative numbers are specified with the minus sign (-). Por exemplo:
 
 ## Number operators
 
-| Operação                 | Sintaxe          | Retorna  | Expressão | Value |
-| ------------------------ | ---------------- | -------- | --------- | ----- |
-| Addition                 | Number + Number  | Número   | 2 + 3     | 5     |
-| Subtração                | Número - Número  | Número   | 3 – 2     | 1     |
-| Multiplicação            | Número * Número  | Número   | 5 * 2     | 10    |
-| Division                 | Número / Número  | Número   | 5 / 2     | 2.5   |
-| Divisão inteira          | Número \ Número | Número   | 5 \ 2    | 2     |
-| Módulo                   | Número % Número  | Número   | 5 % 2     | 1     |
-| Exponenciação            | Número ^ Número  | Número   | 2 ^ 3     | 8     |
-| Igual                    | Número = Número  | Booleano | 10 = 10   | True  |
-|                          |                  |          | 10 = 11   | False |
-| Desigualdade             | Número # Número  | Booleano | 10 #11    | True  |
-|                          |                  |          | 10 # 10   | False |
-| Greater than             | Number >= Number | Booleano | 11 > 10   | True  |
-|                          |                  |          | 10 > 11   | False |
-| Menor que                | Number <= Number | Booleano | 10 < 11   | True  |
-|                          |                  |          | 11 < 10   | False |
-| Greater than or equal to | Number >= Number | Booleano | 11 >= 10  | True  |
-|                          |                  |          | 10 >= 11  | False |
-| Less than or equal to    | Number <= Number | Booleano | 10 <= 11  | True  |
-|                          |                  |          | 11 <= 10  | False |
+| Operação             | Sintaxe          | Retorna  | Expressão | Value |
+| -------------------- | ---------------- | -------- | --------- | ----- |
+| Addition             | Number + Number  | Número   | 2 + 3     | 5     |
+| Subtração            | Número - Número  | Número   | 3 – 2     | 1     |
+| Multiplicação        | Número * Número  | Número   | 5 * 2     | 10    |
+| Division             | Número / Número  | Número   | 5 / 2     | 2.5   |
+| Divisão inteira      | Número \ Número | Número   | 5 \ 2    | 2     |
+| Módulo               | Número % Número  | Número   | 5 % 2     | 1     |
+| Exponenciação        | Número ^ Número  | Número   | 2 ^ 3     | 8     |
+| Igual                | Número = Número  | Booleano | 10 = 10   | True  |
+|                      |                  |          | 10 = 11   | False |
+| Desigualdade         | Número # Número  | Booleano | 10 #11    | True  |
+|                      |                  |          | 10 # 10   | False |
+| Maior que            | Number >= Number | Booleano | 11 > 10   | True  |
+|                      |                  |          | 10 > 11   | False |
+| Menor que            | Number <= Number | Booleano | 10 < 11   | True  |
+|                      |                  |          | 11 < 10   | False |
+| Maior ou igual a     | Number >= Number | Booleano | 11 >= 10  | True  |
+|                      |                  |          | 10 >= 11  | False |
+| Menor que ou igual a | Number <= Number | Booleano | 10 <= 11  | True  |
+|                      |                  |          | 11 <= 10  | False |
 
 O operador do módulo % divide o primeiro número pelo segundo número e devolve um número inteiro restante. Aqui estão alguns exemplos:
 
