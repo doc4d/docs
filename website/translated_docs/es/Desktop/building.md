@@ -276,7 +276,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 ![](assets/en/Desktop/allow-mac-clients.png)
 
-#### Compiled structure location
+#### Ubicación de la estructura compilada
 
 Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
@@ -598,7 +598,7 @@ For more information on the notarization concept, please refer to [this page on 
 
     Your icon file must have the same name as the project file and include the *.ico* extension. 4D automatically takes this file into account when building the double-clickable application.
 
-You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) in the buildApp.4DSettings file to designate each icon to use. The following keys are available:
+You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) in the buildApp.4DSettings file to designate each icon to use. Están disponibles las siguientes llaves:
 
 - RuntimeVLIconWinPath
 - RuntimeVLIconMacPath
@@ -644,7 +644,7 @@ Thanks to this architecture, when you provide an update of your application, the
 
 Este mecanismo suele ser adecuado para los despliegues estándar. However, for specific needs, for example if you duplicate your merged applications, you might want to change the way that the data file is linked to the application (described below).
 
-#### Configuring the data linking mode
+#### Configurar el modo de enlace de los datos
 
 With your compiled applications, 4D automatically uses the last data file opened. By default, the path of the data file is stored in the application's user preferences folder and is linked to the **application name**.
 
