@@ -100,7 +100,7 @@ Pour plus d'informations sur les composants, reportez-vous au chapitre [Dévelop
 
 Cet attribut est pris en compte uniquement dans le cadre d’une application 4D en client/serveur. Lorsque cette option est cochée, la méthode du projet est toujours exécutée sur le serveur, quelle que soit la manière dont elle est appelée.
 
-For more information on this option, refer to [Execute on Server attribute](https://doc.4d.com/4Dv19R6/4D/19-R6/Execute-on-Server-attribute.300-5941841.en.html).
+Pour plus d'informations sur cette option, reportez-vous à [Attribut Exécuter sur serveur](https://doc.4d.com/4Dv19R6/4D/19-R6/Execute-on-Server-attribute.300-5941841.en.html).
 
 #### Mode d’exécution
 
@@ -108,7 +108,7 @@ Cette option vous permet de déclarer la méthode éligible à l'exécution en m
 
 Si vous voulez bénéficier de la fonctionnalité du mode préemptif, vous devez déclarer explicitement toutes les méthodes que vous souhaitez démarrer en mode préemptif. Le compilateur vérifiera par la suite que ces méthodes sont effectivement thread-safe.
 
-**Note :** L'exécution en mode préemptif n'est disponible qu'en mode compilé. For more information, refer to the [Preemptive 4D processes](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) section.
+**Note :** L'exécution en mode préemptif n'est disponible qu'en mode compilé. Pour plus d'informations, reportez-vous à la section [Process 4D préemptifs](https://doc.4d.com/4Dv19R6/4D/19-R6/Preemptive-4D-processes.300-5911166.en.html) .
 
 Les options suivantes sont prises en charge :
 
@@ -122,13 +122,13 @@ Si l'éligibilité de la méthode au mode préemptif est confirmée par le compi
 
 Lorsque cette option est sélectionnée, le compilateur de 4D ne vérifiera pas la compatibilité de la méthode avec le mode préemptif ; elle sera automatiquement étiquetée "thread-unsafe" en interne (même dans le cas où elle est théoriquement compatible). Lorsqu'elle sera appelée en exécution, cette méthode "contaminera" toutes les autres méthodes dans le même thread, les forçant à s'exécuter en mode coopératif, même si elles sont elles-mêmes "thread-safe".
 
--   **Indifferent**(default): By checking this option, you declare that you do not want to handle the preemptive property for the method. La propriété "preemptive" de la méthode prend pour valeur "indifferent".
+-   **Indifférent**(par défaut) : en cochant cette option, vous déclarez ne pas vouloir gérer la propriété du mode préemptif pour la méthode. La propriété "preemptive" de la méthode prend pour valeur "indifferent".
 
-Lorsque cette option est sélectionnée, le compilateur de 4D évaluera la compatibilité de la méthode avec le mode préemptif et lui apposera l'étiquette interne "thread-safe" ou "thread-unsafe". Aucune erreur liée à l'exécution en préemptif ne sera toutefois retournée. Si la méthode est évaluée "thread-safe", à l'exécution elle n'empêchera pas l'utilisation du mode préemptif si elle est appelée dans un contexte préemptif. Conversely, if the method is evaluated "thread-unsafe", at runtime it will prevent any preemptive thread execution when called.
+Lorsque cette option est sélectionnée, le compilateur de 4D évaluera la compatibilité de la méthode avec le mode préemptif et lui apposera l'étiquette interne "thread-safe" ou "thread-unsafe". Aucune erreur liée à l'exécution en préemptif ne sera toutefois retournée. Si la méthode est évaluée "thread-safe", à l'exécution elle n'empêchera pas l'utilisation du mode préemptif si elle est appelée dans un contexte préemptif. A l'inverse, si la méthode est évaluée "thread-unsafe", à l'exécution elle empêchera toute utilisation du mode préemptif si elle est appelée.
 
 A noter qu'avec cette option, quel que soit le résultat de l'évaluation de sa compatibilité avec le mode préemptif, la méthode sera toujours exécutée en mode coopératif lorsqu'elle sera appelée directement par 4D en tant que méthode parente (par exemple via la commande [Nouveau process](https://doc.4d.com/4Dv19R5/4D/19-R5/New-process.301-5830903.en.html)). La propriété "thread-safe" interne n'est prise en compte que lorsque la méthode est appelée par d'autres méthodes à l'intérieur de la chaîne d'appel.
 
-***Particular case*:** If the method has also the [**Shared by components and host database**](shared-by-components-and-host-database) property, setting the **Indifferent** option will automatically tag the method as thread-unsafe. Si vous souhaitez qu'une méthode de composant partagé soit thread-safe, vous devez explicitement lui attribuer l'option **Peut être exécutée dans un process préemptif**.
+***Cas particulier* :** Si la méthode possède également la propriété [**Partagée entre composants et projet hôte**](partagee-entre-composants-et-projet-hote) , sélectionner l'option **Indifférent** marquera automatiquement la méthode comme thread-unsafe. Si vous souhaitez qu'une méthode de composant partagé soit thread-safe, vous devez explicitement lui attribuer l'option **Peut être exécutée dans un process préemptif**.
 
 #### Disponibilité
 
@@ -150,7 +150,7 @@ Dans l'Explorateur, les méthodes projet offertes comme Web Service et publiées
 
 ##### Balises HTML et URLs 4D (4DACTION...)
 
-This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special [4DACTION URL](../WebServer/httpRequests.md#4daction) used for calling 4D methods, nor the special [4DSCRIPT, 4DTEXT and 4DHTML tags](../Tags/tags.md).
+Cette option permet de renforcer la sécurité du serveur Web 4D : quand elle n'est pas cochée, la méthode projet ne peut pas être exécutée via une requête HTTP contenant l'URL spécial [4DACTION](../WebServer/httpRequests.md#4daction) utilisé pour appeler des méthodes 4D, ni les balises spéciales [4DSCRIPT, 4DTEXT et 4DHTML](../Tags/tags.md).
 
 Dans l'Explorateur, l'icône ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png) indique une méthode projet bénéficiant de cet attribut.
 
@@ -185,18 +185,18 @@ Pour modifier globalement les attributs des méthodes :
 
 Utilisez le caractère générique @ pour vous aider à définir des groupes de méthodes :
 
-- pour désigner les méthodes dont le nom débute par..., saisissez @ en fin de chaîne. For example: `web@`
-- pour désigner les méthodes dont le nom contient..., saisissez @ en milieu de chaîne. For example: `web@write`
-- pour désigner les méthodes dont le nom se termine par..., saisissez @ en début de chaîne. For example: `@write`
-- To designate all of the methods, just type @ in the area.
+- pour désigner les méthodes dont le nom débute par..., saisissez @ en fin de chaîne. Par exemple : `web@`
+- pour désigner les méthodes dont le nom contient..., saisissez @ en milieu de chaîne. Par exemple : `web@write`
+- pour désigner les méthodes dont le nom se termine par..., saisissez @ en début de chaîne. Par exemple : `@write`
+- Pour désigner toutes les méthodes, il suffit de taper @ dans la zone.
 
 **Notes :**
-- The search does not take upper/lower case into account.
-- You can enter several @ characters in the string, for example `dtro_@web@pro.@`
+- La recherche ne tient pas compte des majuscules et des minuscules.
+- Vous pouvez saisir plusieurs caractères @ dans la chaîne, par exemple `dtro_@web@pro.@`
 
-3.  In the "Attribute to Modify" area, choose an attribute from the drop-down list, then click on the **True** or **False** radio button corresponding to the value to be applied.
+3.  Dans la zone "Attribut à modifier", choisissez un attribut dans la liste déroulante puis cliquez sur le bouton radio **Vrai** ou **Faux** correspondant à la valeur à appliquer.
 
-**Note:** If the "Published in WSDL" attribute is set to True, it will only be applied to project methods already containing the "Offered as a Web Service" attribute.
+**Note :** Si l'attribut "Publié dans WSDL" est défini à Vrai, il ne sera appliqué qu'aux méthodes projet qui contiennent déjà l'attribut "Web Service".
 
-4.  Click on **Apply**. The modification is applied instantly to all the project methods designated by the character string entered.
+4.  Cliquez sur **Appliquer**. La modification est appliquée instantanément à toutes les méthodes projet désignées par la chaîne de caractères saisie.
 
