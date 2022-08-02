@@ -180,7 +180,7 @@ Define el número de columnas del list box.
 
 Un array 4D que controla la visualización de las líneas del list box.
 
-You can set the "hidden", "disabled" and "selectable" interface properties for each row in an array-based list box using this array. It can also be designated using the `LISTBOX SET ARRAY` command.
+You can set the "hidden", "disabled" and "selectable" interface properties for each row in an array-based list box using this array. También puede ser designado utilizando el comando `LISTBOX SET ARRAY`.
 
 The row control array must be of the Longint type and include the same number of rows as the list box. Each element of the *Row Control Array* defines the interface status of its corresponding row in the list box. Three interface properties are available using constants in the "List Box" constant theme:
 

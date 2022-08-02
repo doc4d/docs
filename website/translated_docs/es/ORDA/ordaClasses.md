@@ -332,7 +332,7 @@ However, it could happen that a function is fully executable on the client side 
 local Function <functionName>   
 ```
 
-With this keyword, the function will always be executed on the client side.
+Con esta palabra clave, la función se ejecutará siempre del lado del cliente.
 
 > The `local` keyword can only be used with data model class functions. If used with a [regular user class](Concepts/classes.md) function, it is ignored and an error is returned by the compiler.
 

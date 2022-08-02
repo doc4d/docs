@@ -186,7 +186,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 | `WEB SET OPTION`              | `Web HTTP enabled`                                 |             |
 | Caja de diálogo de parámetros | Configuración/Activar HTTP                         |             |
 
-Indicates whether or not the web server will accept non-secure connections.
+Indica si el servidor web acepta o no conexiones no seguras.
 
 
 ## Activar HTTPS
@@ -514,7 +514,7 @@ Otro ejemplo:
 En este caso, los robots no pueden acceder a todo el sitio.
 
 
-## Root Folder
+## Carpeta raíz
 
 | Puede ajustarse con           | Nombre                                           | Comentarios                                                                                                                           |
 | ----------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
@@ -623,7 +623,7 @@ Estado de validación de la dirección IP para las cookies de sesión. For secur
 
 Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
 
-When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. By removing the process creation stage, web server performance is improved.
+When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. Al eliminar la etapa de creación del proceso, se mejora el rendimiento del servidor web.
 
 In return, you must make sure in this case to systematically initialize the variables used in 4D methods in order to avoid getting incorrect results. Similarly, it is necessary to erase any current selections or records defined during the previous request.
 > * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
