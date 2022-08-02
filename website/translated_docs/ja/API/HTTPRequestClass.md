@@ -317,7 +317,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 <!-- REF #4D.HTTPRequest.terminate().Params -->
 
 | 引数 | タイプ |  | 説明                |
-| -- | --- |::| ----------------- |
+| -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 
 <!-- END REF -->
