@@ -6,7 +6,7 @@ title: Puntos de ruptura y captura de comandos
 ## Generalidades
 
 
-Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
+Los puntos de interrupción y los comandos de captura son técnicas de depuración muy eficaces. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
 
 You set breakpoints on any line of code where you want the execution to be paused. Puede asociar una condición al punto de ruptura.
 

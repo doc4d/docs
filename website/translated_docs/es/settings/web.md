@@ -114,7 +114,7 @@ Límite estrictamente superior de procesos web simultáneos. See [Maximum Concur
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
-Allows you to optimize the operation of the 4D Web server in remote mode. See [Reuse temporary contexts in remote mode)](../WebServer/webServerConfig.md#reuse-temporary-contexts-in-remote-mode).
+Le permite optimizar el funcionamiento del servidor Web de 4D en modo remoto. See [Reuse temporary contexts in remote mode)](../WebServer/webServerConfig.md#reuse-temporary-contexts-in-remote-mode).
 
 #### Utilizar los procesos apropiativos
 
@@ -203,7 +203,7 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 -   **DLF (Combined Log Format)**: When this option is selected, the request log is generated in DLF format. DLF format is similar to CLF format and uses exactly the same structure. It simply adds two additional HTTP fields at the end of each request: Referer and User-agent.
 
-    -   Referer: Contains the URL of the page pointing to the requested document.
+    -   Referer: contiene la URL de la página que apunta al documento solicitado.
     -   User-agent: Contains the name and version of the browser or software of the client at the origin of the request.
 
 > El formato DLF no se puede personalizar.
