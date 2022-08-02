@@ -184,7 +184,7 @@ You can create an object of type [entity selection](dsMapping.md#entity-selectio
 *   Using one of the various functions from the [Entity selection class](API/EntitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/EntitySelectionClass.md#or);
 *   Using a relation attribute of type "related entities" (see below).
 
-You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Different entity selections can contain references to the same entities.
+You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Diferentes selecciones de entidades pueden contener las referencias a las mismas entidades.
 
 ### Entity selections compartibles o modificables
 
