@@ -317,7 +317,7 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 <!-- REF #4D.HTTPRequest.terminate().Params -->
 
 | Parámetros | Tipo |  | Descripción                  |
-| ---------- | ---- |::| ---------------------------- |
+| ---------- | ---- |  | ---------------------------- |
 |            |      |  | No requiere ningún parámetro |
 
 <!-- END REF -->
