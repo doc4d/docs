@@ -218,7 +218,7 @@ La propiedad `.encoding` contiene <!-- REF #4D.HTTPRequest.encoding.Summary -->t
 
 #### Descripción
 
-La propiedad `.errors` contiene <!-- REF #4D.HTTPRequest.errors.Summary -->the collection of all the errors if at least one error has been triggered<!-- END REF -->.
+La propiedad `.errors` contiene <!-- REF #4D.HTTPRequest.errors.Summary -->la colección de todos los errores si se ha producido al menos un error<!-- END REF -->.
 
 Here is the contents of the `.errors` property:
 
