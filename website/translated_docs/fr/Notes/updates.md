@@ -8,8 +8,8 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 ## 4D v19 R7
 
+- Related data and computed/alias attributes can be displayed in the [Data Explorer](Admin/dataExplorer.md#basics).
 - New [FileHandle](API/FileHandleClass.md) class and new [`.open()`](API/FileClass.md#open) function in the `File` class.
-
 
 
 ## 4D v19 R6
