@@ -452,7 +452,7 @@ You can then define specific background colors, font colors and/or font styles b
 
 To determine which rows are selected, you have to check whether they are included in the set indicated in the [Highlight Set](properties_ListBox.md#highlight-set) property of the list box. You can then define the appearance of selected rows using one or more of the relevant [color or style expression property](#using-arrays-and-expressions).
 
-Keep in mind that expressions are automatically re-evaluated each time the:
+Tenga en cuenta que las expresiones se reevalúan automáticamente cada vez que:
 - la selección de list box cambia.
 - list box obtiene o pierde el foco.
 - form window containing the list box becomes, or ceases to be, the frontmost window.
