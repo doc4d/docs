@@ -288,7 +288,7 @@ The `.4darchive` is copied at the following location:
 
 You can check the **Allow automatic update...** option for client applications running on the concurrent platform. Esta opción sólo se activa si:
 
-- the **Build server application** option is checked,
+- la opción **Crear aplicación servidor** está marcada,
 - the **Allow automatic update...** option for client applications running on the current platform is checked.
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. El archivo a seleccionar depende de la plataforma actual del servidor:
@@ -394,7 +394,7 @@ Automatic update 4D Server features ([Current version](#current-version) number,
 
 ### Personalizar nombres de carpeta de caché cliente y/o servidor
 
-Client and server cache folders are used to store shared elements such as resources or components. They are required to manage exchanges between server and remote clients. Client/server applications use default pathnames for both client and server system cache folders.
+Client and server cache folders are used to store shared elements such as resources or components. Son necesarios para gestionar los intercambios entre el servidor y los clientes remotos. Client/server applications use default pathnames for both client and server system cache folders.
 
 In some specific cases, you might need to customize the names of these folders to implement specific architectures (see below). 4D provides you with the `ClientServerSystemFolderName` and `ServerStructureFolderName` keys to be set in the *buildApp* settings file.
 
@@ -502,7 +502,7 @@ This option is displayed under both Windows and macOS, but it is only taken into
 ![](assets/en/Project/certificate.png)
 
 To obtain a developer certificate from Apple, Inc., you can use the commands of the Keychain Access menu or go here: [http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html](http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html).
-> This certificate requires the presence of the Apple codesign utility, which is provided by default and usually located in the “/usr/bin/” folder. If an error occurs, make sure that this utility is present on your disk.
+> This certificate requires the presence of the Apple codesign utility, which is provided by default and usually located in the “/usr/bin/” folder. Si se produce un error, asegúrese de que este utilitario esté presente en su disco.
 
 * **Generate self-signed certificate** - runs the "Certificate Assistant" that allows you to generate a self-signed certificate. If you do not have an Apple developer certificate, you need to provide a self-signed certificate. With this certificate, no alert message is displayed if the application is deployed internally. If the application is deployed externally (i.e. through http or email), at launch macOS displays an alert message that the application's developer is unidentified. El usuario puede "forzar" la apertura de la aplicación. <p>In the "Certificate Assistant", be sure to select the appropriate options: ![](assets/en/Admin/Cert1.png) ![](assets/en/Admin/Cert2.png)
 
