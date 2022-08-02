@@ -56,7 +56,7 @@ Parsing the contents of a *template* source is done in two contexts:
 
 If the `[Mail]Letter_type` text field itself contains a tag, for example `<!--#4DSCRIPT/m_Gender-->`, this tag will be evaluated recursively after the interpretation of the 4DHTML tag.
 
-This powerful principle meets most needs related to text transformation. Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](WebServer/templates.md#prevention-of-malicious-code-insertion).
+Este poderoso principio satisface la mayoría de las necesidades relacionadas con la transformación de textos. Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 
 ### Identificadores con tokens
@@ -670,7 +670,7 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 - Debe utilizar las variables proceso.
 - Puede mostrar el contenido de un campo imagen. However, it is not possible to display the content of a picture array item.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get: C1224([Rect]Desc;\"color\")-->`.
-- Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. You just need to generate BLOBs in `Text without length` mode.
+- Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. Sólo tiene que generar los BLOBs en modo `Texto sin longitud`.
 
 
 

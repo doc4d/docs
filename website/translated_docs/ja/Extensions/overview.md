@@ -3,7 +3,7 @@ id: overview
 title: 概要
 ---
 
-4D [プロジェクトアーキテクチャー](Project/architecture) はモジュール式です。 [**コンポーネント**](Concepts/components.md) や [**プラグイン**](Concepts/plug-ins) をインストールすることで、4Dプロジェクトに追加機能を持たせることができます。 コンポーネントは 4Dコードで構成されていますが、プラグインはどんな言語でも作成できます。
+The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). コンポーネントは 4Dコードで構成されていますが、プラグインはどんな言語でも作成できます。
 
 
 ## 4Dコンポーネントの一覧

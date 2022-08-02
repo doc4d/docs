@@ -16,7 +16,7 @@ title: プラグイン
 
 ## プラグインのインストール
 
-4D環境にプラグインをインストールするには、プラグインファイルを [Projectフォルダーと同じ階層](Project/architecture#plugins) の **Plugins** フォルダーにコピーします。
+You install plug-ins in the 4D environment by copying their files into the **Plugins** folder, at the [same level as the Project folder](../Project/architecture.md#plugins).
 
 プラグインは 4D 起動時にロードされるので、これらをインストールする際には 4Dアプリケーションを終了する必要があります。 プラグインの利用に特別なライセンスが必要な場合、プラグインはロードされますが、ライセンスをインストールするまで使用することはできません。
 

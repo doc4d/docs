@@ -46,7 +46,7 @@ title: サブフォーム
 
 リストサブフォームの空行がダブルクリックされた際に実行されるアクションを指定します。 次のオプションから選択することができます:
 - 何もしない: ダブルクリックを無視します。
-- レコード追加: サブフォーム中に新規レコードを作成し、編集モードにします。 "リスト更新可" オプションが選択されている場合、レコードは直接リスト内に作成されます。 選択されていない場合、レコードはサブフォームに割り当てられた [詳細フォーム](#詳細フォーム) 上に作成されます。
+- レコード追加: サブフォーム中に新規レコードを作成し、編集モードにします。 The record will be created directly in the list if the [Enterable in List](#enterable-in-list) property is enabled. Otherwise, it will be created in page mode, in the [detail form](#detail-form) associated with the subform.
 
 
 #### JSON 文法

@@ -676,12 +676,12 @@ Llamar a esta función desde una aplicación monopuesto de 4D devuelve `Null`.
 
 El objeto devuelto tiene las siguientes propiedades:
 
-| Propiedad  | Tipo       | Descripción                                                               |
-| ---------- | ---------- | ------------------------------------------------------------------------- |
-| maxEntries | Integer    | Número máximo de colecciones "entries".                                   |
-| stamp      | Integer    | Marcador de la caché.                                                     |
-| timeout    | Integer    | Time remaining before the new entries in the cache are marked as expired. |
-| entries    | Collection | Contains an entry object for each entity in the cache.                    |
+| Propiedad  | Tipo       | Descripción                                                                            |
+| ---------- | ---------- | -------------------------------------------------------------------------------------- |
+| maxEntries | Integer    | Número máximo de colecciones "entries".                                                |
+| stamp      | Integer    | Marcador de la caché.                                                                  |
+| timeout    | Integer    | Tiempo restante antes de que las nuevas entradas de la caché se marquen como vencidas. |
+| entries    | Collection | Contains an entry object for each entity in the cache.                                 |
 
 Each entry object in the `entries` collection has the following properties:
 

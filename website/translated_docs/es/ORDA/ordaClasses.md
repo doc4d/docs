@@ -347,7 +347,7 @@ The *getter* function defines the data type of the computed attribute thanks to 
 - Entity (i.e. cs.EmployeeEntity)
 - Entity selection (p.e. cs.EmployeeeSelection)
 
-The *$event* parameter contains the following properties:
+El parámetro *$event* contiene las siguientes propiedades:
 
 | Propiedad     | Tipo    | Descripción                                                                               |
 | ------------- | ------- | ----------------------------------------------------------------------------------------- |
@@ -397,6 +397,7 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 
 ### `Function set <attributeName>`
 
+
 #### Sintaxis
 
 ```4d
@@ -409,7 +410,7 @@ The *setter* function executes whenever a value is assigned to the attribute. Th
 
 The *$value* parameter receives the value assigned to the attribute.
 
-The *$event* parameter contains the following properties:
+El parámetro *$event* contiene las siguientes propiedades:
 
 | Propiedad     | Tipo    | Descripción                              |
 | ------------- | ------- | ---------------------------------------- |
@@ -457,7 +458,7 @@ The `query` function executes whenever a query using the computed attribute is l
 
 > The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
 
-The *$event* parameter contains the following properties:
+El parámetro *$event* contiene las siguientes propiedades:
 
 | Propiedad     | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                       |
 | ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -563,7 +564,7 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 > Calling an `orderBy` function on computed attributes of type Entity class or Entity selection class **is not supported**.
 
-The *$event* parameter contains the following properties:
+El parámetro *$event* contiene las siguientes propiedades:
 
 | Propiedad     | Tipo     | Descripción                                                                                              |
 | ------------- | -------- | -------------------------------------------------------------------------------------------------------- |
@@ -605,6 +606,7 @@ El código condicional es necesario en algunos casos:
 
 ```4d
 Function orderBy age($event : Object)-> $result : Text
+
     If ($event.descending=True)
         $result:="birthday asc" 
     Else 
@@ -636,7 +638,7 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 {exposed} Alias <attributeName> <targetPath>
 ```
 
-*attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties).
+*attributeName* must comply with [standard rules for property names](../Concepts/identifiers.md#object-properties).
 
 *targetPath* is an attribute path containing one or more levels, such as "employee.company.name". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name.
 
@@ -839,7 +841,7 @@ With this keyword, the function will always be executed on the client side.
 
 > The `local` keyword can only be used with data model class functions. If used with a [regular user class](Concepts/classes.md) function, it is ignored and an error is returned by the compiler.
 
-Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Schools entity class:
+Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. Por ejemplo, considere la siguiente función en la entidad Schools:
 
 ```4d
 // Get the youngest students  
