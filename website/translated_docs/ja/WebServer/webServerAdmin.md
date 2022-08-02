@@ -59,8 +59,8 @@ title: 管理
 
 これをおこなうには:
 
--   4D: click on the **Clear Cache** button in the [Web/Options (I) page](../settings/web.md) of the Settings dialog box.
--   4D Server: click on the **Clear Cache** button in the HTTP page of the 4D Server Administration window.
+-   4D: ストラクチャー設定の [Web / オプション (I) ページ](../settings/web.md) の **キャッシュクリア** ボタンをクリックします。
+-   4D Server: 4D Server 管理ウィンドウ の HTTPサーバーページにて、**キャッシュクリア** ボタンをクリックします。
 
 キャッシュは即座にクリアされます。
 > 特殊なURL [/4DCACHECLEAR](#4dcacheclear) を使用することもできます。
