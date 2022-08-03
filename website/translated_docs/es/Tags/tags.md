@@ -443,7 +443,7 @@ The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or lo
 
 An included page with the `<!--#4DINCLUDE -->` comment is loaded in the Web server cache the same way as pages called via a URL or sent with the `WEB SEND FILE` command.
 
-In *path*, put the path leading to the document to include. Warning: In the case of a `4DINCLUDE` call, the path is relative to the document being analyzed, that is, the "parent" document. Use the slash character (/) as a folder separator and the two dots (..) to go up one level (HTML syntax). When you use the `4DINCLUDE` tag with the `PROCESS 4D TAGS` command, the default folder is the project folder.
+En *ruta*, coloque la ruta que va al documento a incluir. Warning: In the case of a `4DINCLUDE` call, the path is relative to the document being analyzed, that is, the "parent" document. Use the slash character (/) as a folder separator and the two dots (..) to go up one level (HTML syntax). When you use the `4DINCLUDE` tag with the `PROCESS 4D TAGS` command, the default folder is the project folder.
 
 > You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
 
@@ -501,7 +501,7 @@ Esta sintaxis hace un bucle para cada elemento del array. The array current item
 
 > Esta sintaxis no se puede utilizar con arrays de dos dimensiones. En este caso, es mejor combinar un método con bucles anidados.
 
-The following code example:
+El siguiente ejemplo de código:
 
 ```html
 <!--#4DLOOP arr_names-->
@@ -526,7 +526,7 @@ For security reasons, within a Web process, the `On Web Authentication` database
 
 `C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
-The following code example:
+El siguiente ejemplo de código:
 
 ```html
 <!--#4DLOOP my_method-->
@@ -668,7 +668,7 @@ También puede insertar expresiones 4D. You can for example directly insert the 
 In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT myvar--> : ## error # error code`.
 
 - Debe utilizar las variables proceso.
-- Puede mostrar el contenido de un campo imagen. However, it is not possible to display the content of a picture array item.
+- Puede mostrar el contenido de un campo imagen. Sin embargo, no es posible mostrar el contenido de un elemento del array de imágenes.
 - It is possible to display the contents of an object field by means of a 4D formula. For example, you can write `<!--#4DTEXT OB Get: C1224([Rect]Desc;\"color\")-->`.
 - Normalmente se trabaja con variables de tipo texto. Sin embargo, también se pueden utilizar las variables BLOB. Sólo tiene que generar los BLOBs en modo `Texto sin longitud`.
 

@@ -49,7 +49,7 @@ A continuación se describen las propiedades:
 * **Breakpoint is disabled**: If you currently do not need a break point, but might need it later, you can temporarily disable it. A disabled break point appears as a dash (-) instead of a bullet (•)|
 
 
-### Breakpoints in remote debugging
+### Puntos de interrupción en la depuración remota
 
 La lista de puntos de interrupción se almacena localmente. In remote debugging mode, if the attached debugger is a remote 4D, the remote break point list replaces temporarily the server break point list during the debugging session.
 

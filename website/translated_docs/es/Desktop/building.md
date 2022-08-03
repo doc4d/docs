@@ -39,10 +39,10 @@ La caja de diálogo del generador de aplicaciones incluye varias páginas a las 
 La generación sólo puede efectuarse una vez compilado el proyecto. Si selecciona este comando sin haber compilado previamente el proyecto, o si el código compilado no se corresponde con el código interpretado, aparece una caja de diálogo de advertencia que indica que el proyecto debe ser (re)compilado.
 
 
-### Parámetros del generador de aplicaciones
+### buildApp.4DSettings
 
 
-Cada parámetro de generación de la aplicación se almacena como una llave XML en el archivo proyecto de la aplicación llamada `"buildApp.4DSettings"`, ubicado en la carpeta `Settings` del proyecto.
+Each build application parameter is stored as an XML key in the application project file named `buildApp.4DSettings` XML file, located in the [`Settings` folder of the project](../Project/architecture.md#settings-1).
 
 Los parámetros por defecto se utilizan la primera vez que se utiliza la caja de diálogo del Generador de aplicaciones. El contenido del archivo proyecto se actualiza, si es necesario, al hacer clic en **Construir** o **Guardar los parámetros**. Puede definir varios archivos de parámetros XML para el mismo proyecto y utilizarlos con el comando [BUILD APPLICATION](https://doc.4d.com/4dv19/help/command/en/page871.html).
 
@@ -84,13 +84,13 @@ Esta pestaña le permite generar un archivo de estructura compilado estándar y/
 
 Genera una aplicación que sólo contiene código compilado.
 
-Esta funcionalidad crea un archivo *.4dz* en una carpeta *Compiled Database/\<project name>*. Por ejemplo, si ha llamado a su aplicación "MyProject", 4D creará:
+Esta funcionalidad crea un archivo *.4dz* en una carpeta *Compiled Database/\<project name>*. For example, if you have named your application "MyProject", 4D will create:
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
 Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. Un archivo .4dz es esencialmente una versión comprimida (empaquetada) de la carpeta del proyecto. El tamaño compacto y optimizado de los archivos .4dz hace que los paquetes de proyectos sean fáciles de desplegar.
 
-> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the *4D XML Keys Backup* manual on [doc.4d.com](https://doc.4d.com)).
+> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html) manual).
 
 
 
@@ -211,7 +211,7 @@ Los elementos deben ser instalados:
 
 On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option.
 
-![](assets/en/Project/buildappCSProj.png)
+![](assets/en/Desktop/client-server-buildapp.png)
 
 ### ¿Qué es una aplicación cliente/servidor?
 
@@ -230,7 +230,7 @@ Also, the client/server application is customized and its handling simplified:
 - Para lanzar la parte del servidor, el usuario simplemente hace doble clic en la aplicación servidor. No es necesario seleccionar el archivo proyecto.
 - Para lanzar la parte cliente, el usuario simplemente hace doble clic en la aplicación cliente, que se conecta directamente a la aplicación servidor. No es necesario elegir un servidor en una caja de diálogo de conexión. Si desea que la aplicación cliente se conecte al servidor utilizando una dirección específica (distinta del nombre del servidor publicado en la subred), debe utilizar la llave XML `IPAddress` en el archivo buildapp.4DSettings. Si la conexión falla, \[se pueden implementar mecanismos alternativos específicos\](#management-of-client-connections). Puede "forzar" la visualización de la caja de diálogo de conexión estándar presionando la tecla **Opción** (macOS) o **Alt** (Windows) mientras inicia la aplicación cliente. Sólo la parte cliente puede conectarse a la parte del servidor correspondiente. Si un usuario intenta conectarse a la parte servidor utilizando una aplicación estándar 4D, se devuelve un mensaje de error y la conexión es imposible.
 - Una aplicación cliente/servidor puede configurarse para que la parte cliente [se actualice automáticamente a través de la red](#copy-of-client-applications-in-the-server-application). Sólo es necesario crear y distribuir una versión inicial de la aplicación cliente, las actualizaciones posteriores se gestionan mediante el mecanismo de actualización automática.
-- También es posible automatizar la actualización de la parte del servidor mediante el uso de una secuencia de comandos del lenguaje ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/en/page1291.html) y [RESTART 4D]((https://doc.4d.com/4dv19/help/command/en/page1292.html)).
+- It is also possible to automate the update of the server part through the use of a sequence of language commands ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/en/page1291.html) and [RESTART 4D](https://doc.4d.com/4dv19/help/command/en/page1292.html).
 
 
 
@@ -244,7 +244,27 @@ Click on the **[...]** button and use the *Browse for folder* dialog box to loca
 
 #### Versión actual
 
-Used to indicate the current version number for the application generated. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. El intervalo de compatibilidad de las aplicaciones del cliente y del servidor se define mediante el uso de [llaves XML](#build-application-settings) específicas).
+Used to indicate the current version number for the application generated. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. The interval of compatibility for client and server applications is set using specific [XML keys](#buildapp4dsettings)).
+
+#### Embed the project Users and Groups in built server application
+
+**Preliminary Note:** The following terms are used in this section:
+
+| Nombre                                 | Definición                                                                                                                                                                 |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Archivo de directorio del proyecto     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
+| Archivo de directorio de la aplicación | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
+| Archivo de directorio de datos         | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
+
+When you check this option, the project directory file is copied to the application directory file at build time.
+
+Cuando ejecute una aplicación de servidor 4D generada:
+* If the server has a data directory file, it is loaded.
+* If the server does not have a data directory file, the application directory file is loaded.
+
+El archivo de directorio de la aplicación es de sólo lectura. Modifications made to users, groups and permissions during server execution are stored in the data directory file. Si ya no existe ningún archivo de directorio de datos, se creará automáticamente. If the application directory file was embedded, it is duplicated as data directory file.
+
+Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
 
 #### Autorizar la conexión de los clientes Silicon Mac
 
@@ -256,7 +276,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 ![](assets/en/Desktop/allow-mac-clients.png)
 
-#### Compiled structure location
+#### Ubicación de la estructura compilada
 
 Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
@@ -342,12 +362,12 @@ In some cases, you may want to prevent client applications from being able to ca
 
 To force the update, simply exclude the current version number of client applications (X-1 and earlier) in the version number range compatible with the server application. En este caso, el mecanismo de actualización no permitirá que las aplicaciones cliente no actualizadas se conecten. En este caso, el mecanismo de actualización no permitirá que las aplicaciones cliente no actualizadas se conecten.
 
-The [current version number](#current_version) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
+The [current version number](#current_version) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#buildapp4dsettings).
 
 
 #### En caso de error
 
-If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. La aplicación va a cerrar ahora.”
+If 4D cannot carry out the update of the client application, the client machine displays the following error message: "The update of the client application failed. La aplicación va a cerrar ahora."
 
 Hay muchas causas posibles para este error. When you get this message, it is advisable to check the following parameters first off:
 
@@ -376,13 +396,13 @@ If you checked the “Allow automatic update of client application” option, an
 
 If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. Estos elementos son los siguientes:
 
-- archivos *cert.pem* y *key.pem* (opcional): etos archivos se utilizan para las conexiones SSL y por los comandos de encriptación de datos,
+- archivos *cert.pem* y *key.pem* (opcional): etos archivos se utilizan para las conexiones TLS y por los comandos de encriptación de datos,
 - Carpeta raíz web por defecto (WebFolder).
 
 Los elementos deben ser instalados:
 *   **en Windows**
-    *   **Server application** - in the *Client Server executable\ \<ApplicationName>Server\Server Database* subfolder.
-    *   **Client application** - in the *Client Server executable\ \<ApplicationName>Client* subfolder.
+    *   **Server application** - in the *Client Server executable\/\<ApplicationName>Server/Server Database* subfolder.
+    *   **Client application** - in the *Client Server executable\/\<ApplicationName>Client* subfolder.
 
 *   **en macOS**
     *   **Server application** - next to the *\<ApplicationName>Server* software package.
@@ -451,29 +471,44 @@ Customizing the server-side cache folder name is useful when you run several ide
 
 ## Página Plugins y componentes
 
-On this tab, you set each [plug-in](Concepts/plug-ins.md) and each [component](Concepts/components.md) that you will use in your stand-alone or client/server application.
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
+
 
 La página lista los elementos cargados por la aplicación 4D actual:
 
-![](assets/en/Project/buildapppluginsProj.png)
+![](assets/en/Desktop/buildappcomps.png)
 
-*    **Active** column - Indicates that the items will be integrated into the application package built. Todos los elementos están marcados por defecto. To exclude a plug-in or a component, deselect the check box next to it.
+*    **Active** column - Indicates that the items will be integrated into the application package built. Todos los elementos están marcados por defecto. To exclude a plug-in, a component, or a module, deselect the check box next to it.
 
+*   **Plugins and components** column - Displays the name of the plug-in/component/module.
 
+*   **ID** column - Displays the element's identification number (if any).
 
-*   **Plugins and components** column - Displays the name of the plug-in/component.
+*   **Type** column - Indicates the type of item: Plug-in, Component, or Module.
 
-*   **ID** column - Displays the plug-in/component's identification number (if any).
-
-*   **Type** column - Indicates the type of item: plug-in or component.
+### Añadiendo plug-ins o componentes
 
 If you want to integrate other plug-ins or components into the executable application, you just need to place them in a **PlugIns** or **Components** folder next to the 4D Volume Desktop application or next to the 4D Server application. The mechanism for copying the contents of the source application folder (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)) can be used to integrate any type of file into the executable application.
 
 If there is a conflict between two different versions of the same plug-in (one loaded by 4D and the other located in the source application folder), priority goes to the plug-in installed in the 4D Volume Desktop/4D Server folder. However, if there are two instances of the same component, the application will not open.
-> The use of plug-ins and/or components in a deployment version requires the necessary license numbers.
+> The use of plug-ins and/or components in a deployment version may require license numbers.
 
 
+### Desmarcar módulos
 
+A module is a built-in code library used by 4D to control specific features. If you know that your built application does not use any of the features covered by a module, you can deselect it in the list to reduce the size of your application files.
+
+> **Warning:** Deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is never called by your application, it is recommended to keep it selected.
+
+Los siguientes módulos opcionales pueden ser deseleccionados:
+
+- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
+- **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
+> If you deselect MeCab for an application in Japanese language used on heterogeneous platforms, make sure to deselect it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise major malfunctions will occur in the application.
+
+- **PHP**: Necessary to use PHP features and commands in 4D (see this [settings paragraph](../settings/php.md)).
+- **SpellChecker**: Used for built-in [spellchecking features](../FormObjects/properties_Entry.md#auto-spellcheck) and commands available for input areas and 4D Write Pro areas.
+- **4D Updater**: Controls the [automatic update](#what-is-a-clientserver-application) of client parts and is used by the `SET UPDATE FOLDER` command for [automated server updates](#automatic-updating-of-server-or-single-user-applications).
 
 
 
@@ -563,7 +598,7 @@ For more information on the notarization concept, please refer to [this page on 
 
     Your icon file must have the same name as the project file and include the *.ico* extension. 4D automatically takes this file into account when building the double-clickable application.
 
-You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) in the buildApp.4DSettings file to designate each icon to use. The following keys are available:
+You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-Keys-BuildApplication.100-4465602.en.html) in the buildApp.4DSettings file to designate each icon to use. Están disponibles las siguientes llaves:
 
 - RuntimeVLIconWinPath
 - RuntimeVLIconMacPath
@@ -577,6 +612,7 @@ You can also set specific [XML keys](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-XML-
 
 
 ## Gestión de archivos de datos
+
 
 ### Apertura del archivo de datos
 
@@ -608,7 +644,7 @@ Thanks to this architecture, when you provide an update of your application, the
 
 Este mecanismo suele ser adecuado para los despliegues estándar. However, for specific needs, for example if you duplicate your merged applications, you might want to change the way that the data file is linked to the application (described below).
 
-#### Configuring the data linking mode
+#### Configurar el modo de enlace de los datos
 
 With your compiled applications, 4D automatically uses the last data file opened. By default, the path of the data file is stored in the application's user preferences folder and is linked to the **application name**.
 
@@ -699,3 +735,30 @@ You can choose whether or not to display the standard server selection dialog bo
 
 - **Display of an error message with access to the server selection dialog box possible**. The user can access the server selection window by clicking on the **Select...** button.   
   `ServerSelectionAllowed`: **True** ![](assets/en/Project/connect2.png) ![](assets/en/Project/connect3.png)
+
+
+## Actualización automática de aplicaciones servidor o monopuesto
+
+In principle, updating server applications or merged single-user applications require user intervention (or programming custom system routines): whenever a new version of the merged application is available, you have to exit the application in production and manually replace the old files with the new ones; then restart the application and select the current data file.
+
+You can automate this procedure to a large extent using the following language commands: [`SET UPDATE FOLDER`](https://doc.4d.com/4dv19/help/command/en/page1291.html), [`RESTART 4D`](https://doc.4d.com/4dv19/help/command/en/page1292.html), and also [`Get last update log path`](https://doc.4d.com/4dv19/help/command/en/page1301.html) for monitoring operations. The idea is to implement a function in your 4D application triggering the automatic update sequence described below. It can be a menu command or a process running in the background and checking at regular intervals for the presence of an archive on a server.
+
+> You also have XML keys to elevate installation privileges so that you can use protected files under Windows (see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html) manual).
+
+
+Here is the scenario for updating a server or merged single-user application:
+
+1. You transfer, for example using an HTTP server, the new version of the server application or the merged single-user application onto the machine in production.
+2. In the application in production, you call the `SET UPDATE FOLDER` command: this command designates the location of the folder where the "pending" update of the current application is found. Optionally, you can copy in this folder the custom elements of the version in production (user files).
+3. In the application in production, call the `RESTART 4D` command: this command automatically triggers execution of a utility program named "updater" that exits the current application, replaces it using the "pending" update if one is specified, and restarts the application with the current data file. La versión anterior ha sido renombrada.
+
+> This sequence is compatible with Windows server applications run as a Service.
+
+
+### Update log
+
+The installation procedure produces a log file detailing the update operations of merged applications (client, server or single-user) on the target machines. This file is useful for analyzing any errors that occur during the installation process.
+
+The update log is named `YYYY-MM-DD_HH-MM-SS_log_X.txt`, for example, `2021-08-25_14-23-00_log_1.txt` for a file created on August 25, 2021 at 14:23.
+
+This file is created in the "Updater" application folder, within the system user folder. You can find out the location of this file at any time using the [`Get last update log path`](https://doc.4d.com/4dv19/help/command/en/page1301.html) command.
