@@ -475,9 +475,9 @@ In that cases, the title of the check box can be entered using this property.
 
 #### Gramática JSON
 
-| Nombre       | Tipos de datos | Valores posibles                   |
-| ------------ | -------------- | ---------------------------------- |
-| controlTitle | cadena         | Any custom label for the check box |
+| Nombre       | Tipos de datos | Valores posibles                                         |
+| ------------ | -------------- | -------------------------------------------------------- |
+| controlTitle | cadena         | Toda etiqueta personalizada para la casilla de selección |
 
 #### Objetos soportados
 
