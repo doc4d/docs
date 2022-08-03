@@ -28,7 +28,7 @@ Puede mostrar u ocultar varios elementos de la interfaz en la página actual del
 When a form is opened in the editor, interface elements are displayed or hidden by default, depending on:
 
 - the **New form default display** options set in the Preferences - unchecked options cannot be displayed by default.
-- the current [form type](properties_FormProperties.md#form-type):
+- el [tipo de formulario](properties_FormProperties.md#form-type) actual:
     - Markers and marker labels are always displayed by default on list forms
     - Papel aparece por defecto en los formularios "a imprimir".
 
@@ -255,7 +255,7 @@ Las herramientas de alineación de la barra de herramientas y del submenú Aline
 
 ![](assets/en/FormEditor/alignmentMenu.png)
 
-Cuando 4D alinea los objetos, deja un objeto seleccionado en su lugar y alinea el resto de los objetos a ese. This object is the “anchor.” Utiliza el objeto que está más lejos en la dirección de la alineación como ancla y alinea los otros objetos a ese objeto. Por ejemplo, si quiere realizar una alineación a la derecha en un conjunto de objetos, el objeto más a la derecha se utilizará como ancla. La figura siguiente muestra objetos sin alineación, "alineados a la izquierda", "alineados horizontalmente por centros" y "alineados a la derecha":
+Cuando 4D alinea los objetos, deja un objeto seleccionado en su lugar y alinea el resto de los objetos a ese. Este objeto es el "ancla." Utiliza el objeto que está más lejos en la dirección de la alineación como ancla y alinea los otros objetos a ese objeto. Por ejemplo, si quiere realizar una alineación a la derecha en un conjunto de objetos, el objeto más a la derecha se utilizará como ancla. La figura siguiente muestra objetos sin alineación, "alineados a la izquierda", "alineados horizontalmente por centros" y "alineados a la derecha":
 
 ![](assets/en/FormEditor/alignmentTools.png)
 
