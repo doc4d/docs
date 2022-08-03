@@ -15,7 +15,7 @@ Indicates whether the Web server will be launched on startup of the 4D applicati
 
 #### Activar HTTP
 
-Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
+Indica si el servidor web aceptará o no conexiones no seguras. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
 
 
 #### Puerto HTTP
@@ -299,6 +299,6 @@ Esta opción especifica un grupo de usuarios 4D que está autorizado a establece
 
 ### Web Studio
 
-#### Enable access to the web studio
+#### Activar el acceso al studio web
 
 Activa el acceso general al studio web. Todavía hay que configurarlo en cada nivel del proyecto.
