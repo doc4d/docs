@@ -201,7 +201,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
 
-En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
+En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. Puede pasar varios rangos de celdas para crear varios espacios al mismo tiempo. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
 
 > * Sólo se muestran los datos de la celda superior izquierda. Data in the other combined cells is hidden until the span is removed.
 > * Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
@@ -639,7 +639,7 @@ En *rangeObj*, pase un rango de celdas a convertir. By default, if this paramete
 Document contents are converted with respect to their viewing attributes, including formats (see note above), visibility of headers, columns and rows. La conversión de los siguientes elementos es soportada:
 
 * Text : style / font / size / alignment / orientation / rotation / format
-* Cell background : color / image
+* Fondo de la celda : color / imagen
 * Bordes de las celdas : grosor / color / estilo
 * Fusión de celdas
 * Imágenes
@@ -806,9 +806,9 @@ Aquí los títulos de las columnas serían `LastName` y `FirstName`.
 
 * Si los datos pasados al comando son una colección de valores escalares, deben contener una colección de subcolecciones:
 
-  * The first-level collection contains subcollections of values. Cada subcolección define una línea. Each subcollection defines a row. El número de valores de la primera subcolección determina cuántas columnas se crean.
+  * La colección de primer nivel contiene subcolecciones de valores. Cada subcolección define una línea. Pasa una colección vacía para saltar una línea. El número de valores de la primera subcolección determina cuántas columnas se crean.
   * Los índices de las subcolecciones se utilizan como títulos de las columnas.
-  * Cada subcolección define los valores de las celdas de la línea. Los valores pueden ser `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` o `Picture`. Un valor `Time` debe ser un objeto a que contenga un atributo de tiempo, como se describe en [VP SET VALUE](#vp-set-value).
+  * Cada subcolección define los valores de las celdas para la línea. Los valores pueden ser `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` o `Picture`. Un valor `Time` debe ser un objeto a que contenga un atributo de tiempo, como se describe en [VP SET VALUE](#vp-set-value).
 
 > Esto sólo funciona cuando se generan columnas automáticamente. No puede utilizar una colección de datos escalares con la opción *tableColumns*.
 
@@ -1658,7 +1658,7 @@ Este código:
 $defaultStyle:=VP Get default style("myDoc")
 ```
 
-will return this information in the *$defaultStyle* object:
+devolverá esta información en el objeto *$defaultStyle*:
 
 ```4d
 {
@@ -1784,7 +1784,7 @@ In *rangeObj*, pass a range whose formulas you want to retrieve. If *rangeObj* d
 La colección devuelta es bidimensional:
 
 * The first-level collection contains subcollections of formulas. Cada subcolección representa una línea.
-* Cada subcolección define los valores de las celdas de la línea. Values are text elements containing the cell formulas.
+* Cada subcolección define los valores de las celdas para la línea. Values are text elements containing the cell formulas.
 
 #### Ejemplo
 
@@ -2216,7 +2216,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *sheet*, pass the index of the sheet whose name will be returned.
 
-If the passed sheet index does not exist, the method returns an empty name.
+Si el índice de hoja pasado no existe, el método devuelve un nombre vacío.
 > La indexación comienza en 0.
 
 #### Ejemplo
@@ -2845,14 +2845,14 @@ The *options* parameter has several properties:
 
 | Propiedad    | Tipo         | Descripción                                                                                                                                                                                            |
 | ------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| copy         | Booleano     | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
-| pasteOptions | Entero largo | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                 |
+| copy         | Booleano     | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (por defecto) para eliminarlos</li><li>*True* to keep them</li> |
+| pasteOptions | Entero largo | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pega los valores y el formato.</td></tr></table></p>                                                                                                                                 |
 
 The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
 #### Ejemplo
 
-To copy the contents, values, formatting and formulas from an origin range:
+Para copiar el contenido, los valores, el formato y las fórmulas de un rango origen:
 
 ```4d
 var $originRange; $targetRange; $options : Object
@@ -4007,7 +4007,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the colu
 
 | Propiedad       | Tipo     | Descripción                                                                  |
 | --------------- | -------- | ---------------------------------------------------------------------------- |
-| ancho           | number   | Column width expressed in pixels                                             |
+| ancho           | number   | Ancho de columna expresado en píxeles                                        |
 | pageBreak       | booleano | True to insert a page break before the first column of the range, else false |
 | visible         | booleano | True si la columna es visible, si no, false                                  |
 | redimensionable | booleano | True si la columna puede redimensionarse, si no, false                       |
@@ -4241,7 +4241,7 @@ To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object wit
 | value     | Integer, Real, Boolean, Text, Date, Null | Valor a poner en el contexto                            |
 | time      | Real                                     | Valor de tiempo (en segundos) para poner en el contexto |
 
-In *options*, you can pass an object that specifies additional options. Possible properties are:
+In *options*, you can pass an object that specifies additional options. Las propiedades posibles son:
 
 | Propiedad           | Tipo   | Descripción                                                                                                                                                                                                                          |
 | ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -4312,7 +4312,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 ![](assets/en/ViewPro/vp-set-data-context-3.png)
 
-#### Example 4 - Date and time syntax
+#### Ejemplo 4 - Sintaxis de fecha y hora
 
 ```4d
 var $data : Collection
@@ -4594,7 +4594,7 @@ In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose
 The *formulasCol* is a two-dimensional collection:
 
 * The first-level collection contains subcollections of formulas. Cada subcolección define una línea.
-* Cada subcolección define los valores de las celdas de la línea. Values must be text elements containing the formulas to assign to the cells.
+* Cada subcolección define los valores de las celdas para la línea. Values must be text elements containing the formulas to assign to the cells.
 
 > If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
@@ -4815,10 +4815,10 @@ El PDF:
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Params -->
 
-| Parámetros  | Tipo   |    | Descripción                      |
-| ----------- | ------ | -- | -------------------------------- |
-| rangeObj    | Objeto | -> | Rango de líneas                  |
-| propertyObj | Objeto | -> | Object containing row properties |
+| Parámetros  | Tipo   |    | Descripción                                       |
+| ----------- | ------ | -- | ------------------------------------------------- |
+| rangeObj    | Objeto | -> | Rango de líneas                                   |
+| propertyObj | Objeto | -> | Objeto que contiene las propiedades de las líneas |
 
 
 <!-- END REF -->
@@ -4985,7 +4985,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 | ---------- | ------- | -- | -------------------------------------------- |
 | vpAreaName | Texto   | -> | Nombre de objeto formulario área 4D View Pro |
 | name       | Texto   | -> | Nuevo nombre para la hoja                    |
-| sheet      | Integer | -> | Index of the sheet to be renamed             |
+| sheet      | Integer | -> | Índice de la hoja a renombrar                |
 
 
 <!-- END REF -->
@@ -5362,8 +5362,8 @@ In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) wh
 
 The *valuesCol* parameter is two-dimensional:
 
-* The first-level collection contains subcollections of values. Cada subcolección define una línea. Each subcollection defines a row.
-* Cada subcolección define los valores de las celdas de la línea. Los valores pueden ser enteros, reales, booleanos, texto, fecha, null u objeto. Si el valor es un objeto, puede tener las siguientes propiedades:
+* La colección de primer nivel contiene subcolecciones de valores. Cada subcolección define una línea. Pasa una colección vacía para saltar una línea.
+* Cada subcolección define los valores de las celdas para la línea. Los valores pueden ser enteros, reales, booleanos, texto, fecha, null u objeto. Si el valor es un objeto, puede tener las siguientes propiedades:
 
  | Propiedad | Tipo                                     | Descripción                        |
  | --------- | ---------------------------------------- | ---------------------------------- |
@@ -5430,7 +5430,7 @@ The following table lists the available workbook options:
 | allowUserDeselect                     | booleano                | Se permite desmarcar celdas específicas de una selección.                                                                                                                                                                                              |
 | allowUserDragDrop                     | booleano                | Se permite arrastrar y soltar los datos del rango                                                                                                                                                                                                      |
 | allowUserDragFill                     | booleano                | Drag fill is allowed                                                                                                                                                                                                                                   |
-| allowUserEditFormula                  | booleano                | Formulas can be entered in cells                                                                                                                                                                                                                       |
+| allowUserEditFormula                  | booleano                | Las fórmulas pueden introducirse en las celdas                                                                                                                                                                                                         |
 | allowUserResize                       | booleano                | Columnas y filas redimensionables                                                                                                                                                                                                                      |
 | allowUserZoom                         | booleano                | Se permite hacer zoom (ctrl + rueda del ratón)                                                                                                                                                                                                         |
 | autoFitType                           | number                  | El contenido se formatea para que se ajuste en las celdas, o en las celdas y los encabezados. Valores disponibles: <table><tr><th>Constante</th><th>Valor</th><th>Descripción</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> El contenido se ajusta automáticamente a las celdas</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> El contenido se autoajusta a las celdas y encabezados</td></tr></table>                                                                                                           |
