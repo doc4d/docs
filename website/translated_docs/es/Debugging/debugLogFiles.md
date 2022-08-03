@@ -364,7 +364,7 @@ Hay varias maneras de activar el archivo de configuración de los logs:
 
 ### Descripción del archivo JSON
 
-The log configuration file is a `.json` file that can contain the following properties:
+El archivo de configuración de log es un archivo `.json` que puede contener las siguientes propiedades:
 
 ```json
 {
