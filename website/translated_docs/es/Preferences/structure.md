@@ -18,7 +18,7 @@ Este grupo de opciones configura la visualización del editor de estructura de 4
 
 ### Calidad gráfica de la estructura
 
-This option varies the level of graphic detail in the Structure editor. Por defecto, la calidad se define como **Alta**. You can select Standard quality in order to give priority to display speed. The effect of this setting is mainly perceptible when using the zoom function (see the "Zoom" paragraph in [Structure editor](https://doc.4d.com/4Dv18R6/4D/18-R6/Structure-editor.300-5217734.en.html)).
+This option varies the level of graphic detail in the Structure editor. Por defecto, la calidad se define como **Alta**. Puede seleccionar la calidad Estándar para dar prioridad a la velocidad de visualización. The effect of this setting is mainly perceptible when using the zoom function (see the "Zoom" paragraph in [Structure editor](https://doc.4d.com/4Dv18R6/4D/18-R6/Structure-editor.300-5217734.en.html)).
 
 ### Cuando una carpeta está atenuada, su contenido es:
 
