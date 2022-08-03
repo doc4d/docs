@@ -500,7 +500,7 @@ Esta sintaxis hace un bucle para cada elemento del array. The array current item
 
 > Esta sintaxis no se puede utilizar con arrays de dos dimensiones. En este caso, es mejor combinar un método con bucles anidados.
 
-The following code example:
+El siguiente ejemplo de código:
 
 ```html
 <!--#4DLOOP arr_names-->
@@ -525,7 +525,7 @@ For security reasons, within a Web process, the `On Web Authentication` database
 
 `C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
-The following code example:
+El siguiente ejemplo de código:
 
 ```html
 <!--#4DLOOP my_method-->

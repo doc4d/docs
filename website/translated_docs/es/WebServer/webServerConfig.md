@@ -612,7 +612,7 @@ The following settings are still supported but rely on deprecated features or te
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
 
-#### Session IP Address Validation
+#### Validación de la dirección IP de la sesión
 
 > This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
 
