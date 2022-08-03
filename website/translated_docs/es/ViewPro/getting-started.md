@@ -40,7 +40,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. La intersección de una línea y de una columna constituye una celda. Las celdas pueden ser seleccionadas y sus contenidos editados.
 
-### Selecting cells, columns and rows
+### Selección de celdas, columnas y líneas
 
 *   To select a cell, simply click on it or use the direction arrows on the keyboard. Su contenido (o fórmula) se muestra dentro de la celda.
 
