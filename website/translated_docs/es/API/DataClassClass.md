@@ -699,7 +699,7 @@ El objeto `data` de cada entrada contiene las siguientes propiedades:
 | __TIMESTAMP            | Cadena       | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
 | dataClassAttributeName | Variant      | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
 
-Data concerning related entities is stored in the cache of the data object.
+Los datos relativos a las entidades relacionadas se almacenan en la caché del objeto de datos.
 
 #### Ejemplo
 
