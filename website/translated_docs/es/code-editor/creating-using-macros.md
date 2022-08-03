@@ -5,7 +5,7 @@ title: Creación y uso de macros
 
 Puede utilizar macrocomandos en sus métodos. El uso de macrocomandos permite ahorrar mucho tiempo durante la entrada de código.
 
-## What is a macro?
+## ¿Qué es una macro?
 
 A macro-command is a section of 4D code that is permanently accessible and that can be inserted anywhere in your methods, whatever the type of database open. Macros can contain all types of 4D text, commands and constants, as well as special tags which are replaced at the time of macro insertion by values derived from the method context. For instance, a macro may contain the tag `<method_name/>;` at the time of macro insertion, this tag will be replaced by the name of the current project method.
 
@@ -149,7 +149,7 @@ By default, all macros are accessible using the autocomplete (aka type-ahead) fu
 
 ### Lista del editor de código
 
-You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Simply double-click on the name of a macro in the list in order to call it. No es posible excluir una macro específica de esta lista.
+You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Basta con hacer doble clic en el nombre de una macro de la lista para llamarla. No es posible excluir una macro específica de esta lista.
 
 ## Compatibility notes
 
