@@ -39,7 +39,7 @@ Para eliminar un método o clase existente, puede:
 > To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
 
 
-## Importing and exporting code
+## Importar y exportar el código
 
 Puede importar y exportar un método o un código de una clase en forma de archivo. These commands are found in the **Method** menu of the Code editor.
 
@@ -185,9 +185,9 @@ Para la configuración por lotes de los atributos del método:
 
 Utilice el carácter comodín @ para ayudar a definir los grupos de métodos:
 
-- To designate methods whose names begin with..., type @ at the end of the string. For example: `web@`
+- To designate methods whose names begin with..., type @ at the end of the string. Por ejemplo: `web@`
 - To designate methods whose names contain..., type @ in the middle of the string. For example: `web@write`
-- To designate methods whose names end with..., type @ at the beginning of the string. For example: `@write`
+- To designate methods whose names end with..., type @ at the beginning of the string. Por ejemplo: `@escribir`
 - To designate all of the methods, just type @ in the area.
 
 **Notas:**

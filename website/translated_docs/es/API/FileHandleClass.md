@@ -193,7 +193,7 @@ Esta propiedad es **de sólo lectura**.
 <!--REF #FileHandleClass.getSize().Params -->
 | Parámetros | Tipo |    | Descripción                   |
 | ---------- | ---- | -- | ----------------------------- |
-| Resultado  | Real | <- | Size of the document in bytes |
+| Resultado  | Real | <- | Tamaño del documento en bytes |
 <!-- END REF -->
 
 #### Descripción
@@ -249,7 +249,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.offset` property returns <!-- REF #FileHandleClass.offset.Summary -->the current offset of the data stream (position inside the document)<!-- END REF -->. The offset value is automatically updated after read and write operations.
+The `.offset` property returns <!-- REF #FileHandleClass.offset.Summary -->the current offset of the data stream (position inside the document)<!-- END REF -->. El valor del desplazamiento se actualiza automáticamente después de las operaciones de lectura y escritura.
 
 Setting the `.offset` will change its current value.
 
@@ -279,7 +279,7 @@ This property is **read/write**.
 | Parámetros | Tipo                 |    | Descripción                |
 | ---------- | -------------------- | -- | -------------------------- |
 | *bytes*    | Real                 | -> | Number of bytes to be read |
-| Resultado  | [4D.Blob](BlobClass) | <- | Bytes read from the file   |
+| Resultado  | [4D.Blob](BlobClass) | <- | Bytes leídos del archivo   |
 <!-- END REF -->
 
 #### Descripción
@@ -347,7 +347,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 | Parámetros | Tipo  |    | Descripción                           |
 | ---------- | ----- | -- | ------------------------------------- |
 | *stopChar* | Texto | -> | Character(s) at which to stop reading |
-| Resultado  | Texto | <- | Text from the file                    |
+| Resultado  | Texto | <- | Texto del archivo                     |
 <!-- END REF -->
 
 #### Descripción
@@ -415,9 +415,9 @@ If the *size* value is less than the current document size, the document content
 **.writeBlob**( *blob* : 4D.Blob ) <!-- END REF -->
 
 <!--REF #FileHandleClass.writeBlob().Params -->
-| Parámetros | Tipo                 |    | Descripción               |
-| ---------- | -------------------- | -- | ------------------------- |
-| *blob*     | [4D.Blob](BlobClass) | -> | Blob to write in the file |
+| Parámetros | Tipo                 |    | Descripción                   |
+| ---------- | -------------------- | -- | ----------------------------- |
+| *blob*     | [4D.Blob](BlobClass) | -> | Blob a escribir en el archivo |
 <!-- END REF -->
 
 #### Descripción

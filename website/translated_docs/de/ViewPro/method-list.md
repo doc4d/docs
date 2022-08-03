@@ -59,7 +59,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 | Parameter | Typ    |    | Beschreibung                  |
 | --------- | ------ | -- | ----------------------------- |
-| rangeObj  | Text   | -> | Range object                  |
+| rangeObj  | Objekt | -> | Range object                  |
 | name      | Text   | -> | Name for the fomula           |
 | options   | Objekt | -> | Options for the named formula |
 <!-- END REF -->  
@@ -699,14 +699,16 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 
 
+
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP CREATE TABLE
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R6  | Added   |
+| Version | Changes                                  |
+| ------- | ---------------------------------------- |
+| v19 R7  | Support of `allowAutoExpandState` option |
+| v19 R6  | Added                                    |
 </details>
 
 <!-- REF #_method_.VP CREATE TABLE.Syntax -->**VP CREATE TABLE** ( *rangeObj* : Object ; *tableName* : Text {; *source* : Text} {; *options* : Object} )
@@ -743,13 +745,14 @@ In *source*, you can pass a property name of a [data context](#vp-set-data-conte
 
 In *options*, you can pass an object with additional options for the table. Possible values are:
 
-| Property              | Typ        | Beschreibung                                                                   | Default value |
-| --------------------- | ---------- | ------------------------------------------------------------------------------ | ------------- |
-| showFooter            | Boolean    | Display a footer                                                               | Falsch        |
-| showHeader            | Boolean    | Display a header                                                               | Wahr          |
-| showResizeHandle      | Boolean    | For tables that don't have a *source*. Display the resize handle               | Falsch        |
-| tableColumns          | Collection | Collection of objects used to create the table's columns (see below)           | Undefiniert   |
-| useFooterDropDownList | Boolean    | Use a dropdown list in footer cells that calculate the total value of a column | Falsch        |
+| Property              | Typ        | Beschreibung                                                                               | Default value |
+| --------------------- | ---------- | ------------------------------------------------------------------------------------------ | ------------- |
+| allowAutoExpand       | Boolean    | True to expand columns or rows of the table when values are added in empty adjacent cells. | Wahr          |
+| showFooter            | Boolean    | Display a footer                                                                           | Falsch        |
+| showHeader            | Boolean    | Display a header                                                                           | Wahr          |
+| showResizeHandle      | Boolean    | For tables that don't have a *source*. Display the resize handle                           | Falsch        |
+| tableColumns          | Collection | Collection of objects used to create the table's columns (see below)                       | Undefiniert   |
+| useFooterDropDownList | Boolean    | Use a dropdown list in footer cells that calculate the total value of a column             | Falsch        |
 
 The *tableColumns* collection determines the structure of the table's columns. Each object in the collection has the following values:
 
@@ -2330,12 +2333,11 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| Parameter  | Typ      |    | Beschreibung                           |
-| ---------- | -------- | -- | -------------------------------------- |
-| vpAreaName | Text     | -> | 4D View Pro area form object name      |
-| styleName  | Text     | -> | Name of style                          |
-| sheet      | Ganzzahl | -> | Sheet index (current sheet if omitted) |
-| Ergebnis   | Objekt   | <- | Style sheet object                     |
+| Parameter  | Typ  |    | Beschreibung                      |
+| ---------- | ---- | -- | --------------------------------- |
+| vpAreaName | Text | -> | 4D View Pro area form object name |
+
+|styleName|Text|->|Name of style| |sheet|Integer|->|Sheet index (current sheet if omitted)| |Result|Object|<-|Style sheet object|
 <!-- END REF -->  
 
 #### Beschreibung
@@ -2430,6 +2432,99 @@ In this case, the current sheet uses two style objects:
 #### See also
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)
+
+
+### VP Get table range
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP Get table range.Syntax -->**VP Get table range** ( *vpAreaName* : Text ; *tableName* : Text {; *onlyData* : Integer {; *sheet* : Integer }} ) : Object<!-- END REF -->  
+
+<!-- REF #_method_.VP Get tables.Params -->
+
+| Parameter  | Typ      |    | Beschreibung                                             |
+| ---------- | -------- | -- | -------------------------------------------------------- |
+| vpAreaName | Text     | -> | 4D View Pro area form object name                        |
+| tableName  | Text     | -> | Table name                                               |
+| onlyData   | Ganzzahl | -> | `vk table full range` (default) or `vk table data range` |
+| sheet      | Ganzzahl | -> | Sheet index (current sheet if omitted)                   |
+| Ergebnis   | Objekt   | <- | Range that contains the table                            |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP Get table range` command <!-- REF #_method_.VP Get table range.Summary -->returns the range of *tableName*<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the 4D View Pro area.
+
+In the *onlyData* parameter, you can pass one of the following constants to indicate if you want to get the data only:
+
+| Constant              | Wert | Beschreibung                                                                      |
+| --------------------- | ---- | --------------------------------------------------------------------------------- |
+| `vk table full range` | 0    | Get the cell range for the table area with footer and header (default if omitted) |
+| `vk table data range` | 1    | Get the cell range for the table data area only                                   |
+
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+> Indexing starts at 0.
+
+
+
+#### See also
+
+[VP RESIZE TABLE](#vp-resize-table)
+
+
+
+### VP Get tables
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP Get tables.Syntax -->**VP Get tables** ( *vpAreaName* : Text { ; *sheet* : Integer } ) : Collection<!-- END REF -->  
+
+<!-- REF #_method_.VP Get tables.Params -->
+
+| Parameter  | Typ        |    | Beschreibung                           |
+| ---------- | ---------- | -- | -------------------------------------- |
+| vpAreaName | Text       | -> | 4D View Pro area form object name      |
+| sheet      | Ganzzahl   | -> | Sheet index (current sheet if omitted) |
+| Ergebnis   | Collection | <- | Text collection with all table names   |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP Get tables` command <!-- REF #_method_.VP Get tables.Summary -->returns a collection of all table names defined in the *sheet*<!-- END REF -->.
+
+In *vpAreaName*, pass the name of the 4D View Pro area.
+
+In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+> Indexing starts at 0.
+
+
+
+#### Beispiel
+
+The following code will return a collection of all the table names in the current sheet:
+
+
+```4d
+$tables:=VP Get tables("ViewProArea")
+//$tables contains for example ["contextTable","emailTable"]
+
+```
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)
+
+
 
 ### VP Get value
 
@@ -2760,6 +2855,115 @@ The results is:
 
 [VP DELETE COLUMNS](#vp-delete-columns)<br/>[VP DELETE ROWS](#vp-delete-rows)<br/>[VP INSERT COLUMNS](#vp-insert-columns)
 
+### VP INSERT TABLE COLUMNS
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Syntax -->**VP INSERT TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *insertAfter* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP INSERT TABLE COLUMNS.Params -->
+
+| Parameter   | Typ      |    | Beschreibung                                                 |
+| ----------- | -------- | -- | ------------------------------------------------------------ |
+| vpAreaName  | Text     | -> | 4D View Pro area form object name                            |
+| tableName   | Text     | -> | Table name                                                   |
+| column      | Ganzzahl | -> | Index in the table of the starting column to insert          |
+| count       | Text     | -> | Number of columns to add (must be >0)                        |
+| insertAfter | Ganzzahl | -> | `vk table insert before` or `vk table insert after` *column* |
+| sheet       | Ganzzahl | -> | Sheet index (current sheet if omitted)                       |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP INSERT TABLE COLUMNS` command <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->inserts one or *count* empty column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->.
+
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the column(s) must be inserted before or after the *column* index:
+
+| Constant                 | Wert | Beschreibung                                              |
+| ------------------------ | ---- | --------------------------------------------------------- |
+| `vk table insert before` | 0    | Insert column(s) before the *column* (default if omitted) |
+| `vk table insert after`  | 1    | Insert column(s) after the *column*                       |
+
+This command inserts some columns in the *tableName* table, NOT in the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved right according to the number of added columns.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Beispiel
+
+To insert two columns in the "dataContext" table before the 3rd row:
+
+```4d
+VP INSERT TABLE COLUMNS("ViewProArea"; "dataContext"; 3;2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
+
+### VP INSERT TABLE ROWS
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP INSERT TABLE ROWS.Syntax -->**VP INSERT TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *insertAfter* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP INSERT TABLE ROWS.Params -->
+
+| Parameter   | Typ      |    | Beschreibung                                              |
+| ----------- | -------- | -- | --------------------------------------------------------- |
+| vpAreaName  | Text     | -> | 4D View Pro area form object name                         |
+| tableName   | Text     | -> | Table name                                                |
+| row         | Ganzzahl | -> | Index in the table of the starting row to insert          |
+| count       | Text     | -> | Number of rows to add (must be >0)                        |
+| insertAfter | Ganzzahl | -> | `vk table insert before` or `vk table insert after` *row* |
+| sheet       | Ganzzahl | -> | Sheet index (current sheet if omitted)                    |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP INSERT TABLE ROWS` command <!-- REF #_method_.VP INSERT TABLE ROWS.Summary -->inserts one or *count* empty row(s) in the specified *tableName* at the specified *row* index<!-- END REF -->.
+
+In the *insertAfter* parameter, you can pass one of the following constants to indicate if the row(s) must be inserted before or after the *row* index:
+
+| Constant                 | Wert | Beschreibung                                        |
+| ------------------------ | ---- | --------------------------------------------------- |
+| `vk table insert before` | 0    | Insert row(s) before the *row* (default if omitted) |
+| `vk table insert after`  | 1    | Insert row(s) after the *row*                       |
+
+This command inserts some rows in the *tableName* table, NOT in the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved down according to the number of added rows.
+
+If the *tableName* table is bound to a collection, the command inserts new, empty element(s) in the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Beispiel
+
+To insert one row in the "dataContext" table before the 2nd row:
+
+```4d
+VP INSERT TABLE ROWS("ViewProArea"; "dataContext"; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE COLUMNS](#vp-insert-table-columns)<br/>[VP REMOVE TABLE ROWS](#vp-remove-table-rows)
+
+
+
+
 ## M
 
 ### VP MOVE CELLS
@@ -3072,6 +3276,7 @@ The `VP RECOMPUTE FORMULAS` command <!-- REF #_method_.VP RECOMPUTE FORMULAS.Sum
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 > Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
 
+
 #### Beispiel
 
 To refresh all formulas in the workbook:
@@ -3253,7 +3458,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 | v19 R6  | Added   |
 </details>
 
-<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *areaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
+<!-- REF #_method_.VP REMOVE TABLE.Syntax -->**VP REMOVE TABLE** ( *vpAreaName* : Object; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
@@ -3296,6 +3501,100 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 
 [VP CREATE TABLE](#vp-create-table)
 
+
+### VP REMOVE TABLE COLUMNS
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Syntax -->**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
+
+| Parameter  | Typ      |    | Beschreibung                                        |
+| ---------- | -------- | -- | --------------------------------------------------- |
+| vpAreaName | Text     | -> | 4D View Pro area form object name                   |
+| tableName  | Text     | -> | Table name                                          |
+| column     | Ganzzahl | -> | Index in the table of the starting column to remove |
+| count      | Text     | -> | Number of columns to remove (must be >0)            |
+| sheet      | Ganzzahl | -> | Sheet index (current sheet if omitted)              |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP REMOVE TABLE COLUMNS` command <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Summary -->removes one or *count* column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->. The command removes values and styles.
+
+The command removes columns from the *tableName* table, NOT from the sheet. The total number of columns of the sheet is not impacted by the command. Data present at the right of the table (if any) are automatically moved letf according to the number of removed columns.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Beispiel
+
+To remove two columns from 3rd column of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE COLUMNS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE COLUMNS](#vp-insert-table-columns)<br/>[VP REMOVE TABLE ROWS](#vp-remove-table-rows)
+
+
+
+### VP REMOVE TABLE ROWS
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Syntax -->**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }}} )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
+
+| Parameter  | Typ      |    | Beschreibung                                     |
+| ---------- | -------- | -- | ------------------------------------------------ |
+| vpAreaName | Text     | -> | 4D View Pro area form object name                |
+| tableName  | Text     | -> | Table name                                       |
+| row        | Ganzzahl | -> | Index in the table of the starting row to remove |
+| count      | Text     | -> | Number of rows to remove (must be >0)            |
+| sheet      | Ganzzahl | -> | Sheet index (current sheet if omitted)           |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP REMOVE TABLE ROWS` command <!-- REF #_method_.VP REMOVE TABLE ROWS.Summary -->removes one or *count* row(s) from the specified *tableName* at the specified *row* index<!-- END REF -->. The command removes values and styles.
+
+This command removes rows from the *tableName* table, NOT from the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved up according to the number of removed rows.
+
+If the *tableName* table is bound to a collection, the command removes element(s) from the collection. If *tableName* does not exist, nothing happens.
+
+
+
+#### Beispiel
+
+To remove two rows from 3rd row of the "dataContext" table:
+
+```4d
+VP REMOVE TABLE ROWS("ViewProArea"; "dataContext"; 3; 2)
+```
+
+#### See also
+
+[VP INSERT TABLE ROWS](#vp-insert-table-rows)<br/>[VP REMOVE TABLE COLUMNS](#vp-remove-table-columns)
+
+
+
+
 ### VP RESET SELECTION
 
 <!-- REF #_method_.VP RESET SELECTION.Syntax -->**VP RESET SELECTION** ( *vpAreaName* : Text { ; *sheet* : Integer } ) <!-- END REF -->  
@@ -3332,6 +3631,48 @@ VP RESET SELECTION("myVPArea")
 #### See also
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
+
+
+### VP RESIZE TABLE
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R7  | Added   |
+</details>
+
+<!-- REF #_method_.VP RESIZE TABLE.Syntax -->**VP RESIZE TABLE** ( *rangeObj* : Object; *tableName* : Text )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP RESIZE TABLE.Params -->
+
+| Parameter | Typ    |    | Beschreibung            |
+| --------- | ------ | -- | ----------------------- |
+| rangeObj  | Objekt | -> | New range for the table |
+| tableName | Text   | -> | Name of the table       |
+<!-- END REF -->  
+
+#### Beschreibung
+
+The `VP RESIZE TABLE` command <!-- REF #_method_.VP RESIZE TABLE.Summary -->changes the *tableName* size with regards to the *rangeObj*<!-- END REF -->.
+
+Es gelten folgende Regeln:
+
+- Headers must remain in the same row and the resulting table range must overlap the original table range.
+- If the row count of the resized table is inferior to the initial row count, values inside cropped rows or columns are kept if they were not bound, otherwise they are removed.
+- If the table expands on cells containing data:
+    - if rows are added, data is deleted,
+    - if columns are added, data are kept and are displayed in new columns.
+
+If *tableName* does not exist, nothing happens.
+
+
+
+#### See also
+
+[VP CREATE TABLE](#vp-create-table)<br/>[VP Get table range](#vp-get-table-range)
+
+
 
 ### VP RESUME COMPUTING
 
@@ -4533,6 +4874,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 | paneObj    | Objekt   | -> | Object containing frozen column and row information |
 | sheet      | Ganzzahl | -> | Sheet index (current sheet if omitted)              |
 
+
 <!-- END REF -->  
 
 #### Beschreibung
@@ -4645,6 +4987,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 #### Beispiel
 
 The following code will print a 4D View Pro area to a PDF document:
+
 
 ```4d
 var $printInfo : Object
@@ -5348,10 +5691,10 @@ The following table lists the available workbook options:
 | newTabVisible                         | Boolean                 | Display a special tab to let users insert new sheets.                                                                                                                                                                                                  |
 | numbersFitMode                        | number                  | Changes display mode when date/number data width is longer than column width. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk numbers fit mode mask</td><td>0</td><td> Replace data content with "###" and shows tip</td></tr><tr><td> vk numbers fit mode overflow </td><td>1</td><td> Display data content as a string. If next cell is empty, overflow the content.</td></tr></table>                                                                                                                              |
 | pasteSkipInvisibleRange               | Boolean                 | Paste or skip pasting data in invisible ranges: <ul><li>False (default): paste data</li><li>True: Skip pasting in invisible ranges</li></ul>See [Grapecity's docs](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) for more information on invisible ranges.                     |
-| referenceStyle                        | number                  | Style for cell and range references in cell formulas. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk reference style A1 </td><td>0</td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td>1</td><td> Use R1C1 style</td></tr></table>                                                                                                                                                      |
-| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                                  |
+| referenceStyle                        | number                  | Style for cell and range references in cell formulas. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk reference style A1 </td><td>0</td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td>1</td><td> Use R1C1 style</td></tr></table>                                                                                                                                                     |
+| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                                 |
 | rowResizeMode                         | number                  | The way rows are resized. Available values are the same as columnResizeMode                                                                                                                                                                            |
-| scrollbarAppearance                   | number                  | Scrollbar appearance. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk scrollbar appearance mobile</td><td>1</td><td> Mobile scrollbar appearance.</td></tr><tr><td> vk scrollbar appearance skin (default)</td><td>0</td><td> Excel-like classic scrollbar appearance.</td></tr></table>                                                                                                                                                                                      |
+| scrollbarAppearance                   | number                  | Scrollbar appearance. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk scrollbar appearance mobile</td><td>1</td><td> Mobile scrollbar appearance.</td></tr><tr><td> vk scrollbar appearance skin (default)</td><td>0</td><td> Excel-like classic scrollbar appearance.</td></tr></table>                                                                                                                                                                                     |
 | scrollbarMaxAlign                     | Boolean                 | The scroll bar aligns with the last row and column of the active sheet.                                                                                                                                                                                |
 | scrollbarShowMax                      | Boolean                 | The displayed scroll bars are based on the entire number of columns and rows in the sheet.                                                                                                                                                             |
 | scrollByPixel                         | Boolean                 | Enable precision scrolling by pixel.                                                                                                                                                                                                                   |
@@ -5361,12 +5704,12 @@ The following table lists the available workbook options:
 | showDragFillSmartTag                  | Boolean                 | Display the drag fill dialog.                                                                                                                                                                                                                          |
 | showDragFillTip                       | Boolean                 | Display the drag-fill tip.                                                                                                                                                                                                                             |
 | showHorizontalScrollbar               | Boolean                 | Display the horizontal scroll bar.                                                                                                                                                                                                                     |
-| showResizeTip                         | number                  | How to display the resize tip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                             |
-| showScrollTip                         | number                  | How to display the scroll tip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                             |
+| showResizeTip                         | number                  | How to display the resize tip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                            |
+| showScrollTip                         | number                  | How to display the scroll tip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                            |
 | showVerticalScrollbar                 | Boolean                 | Display the vertical scroll bar.                                                                                                                                                                                                                       |
 | tabEditable                           | Boolean                 | The sheet tab strip can be edited.                                                                                                                                                                                                                     |
 | tabNavigationVisible                  | Boolean                 | Display the sheet tab navigation.                                                                                                                                                                                                                      |
-| tabStripPosition                      | number                  | Position of the tab strip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                 |
+| tabStripPosition                      | number                  | Position of the tab strip. Available values: <table><tr><th>Constant</th><th>Wert</th><th>Beschreibung</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                |
 | tabStripRatio                         | number                  | Percentage value (0.x) that specifies how much of the horizontal space will be allocated to the tab strip. The rest of the horizontal area (1 - 0.x) will allocated to the horizontal scrollbar.                                                       |
 | tabStripVisible                       | Boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                                      |
@@ -5414,7 +5757,7 @@ The following selectors are available:
 | Selector              | Beschreibung                                                                                                                                                                                                                                                                              | Available with *vPos* | Available with *hPos* |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
 | `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                          | X                     |                       |
-| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                           | X                     | X                     |
+| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                          | X                     | X                     |
 | `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                    |                       | X                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
 | `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
