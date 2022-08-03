@@ -65,7 +65,7 @@ If you check this option, two items are added in the **File > New** menu and the
 
 These items allow you to create binary databases (see [Creating a new database](https://doc.4d.com/4Dv18R6/4D/18-R6/Creating-a-new-database.300-5217610.en.html) section). They are no longer proposed by default because 4D recommends using project-based architecture for new developments.
 
-## When creating a new project
+## Al crear un nuevo proyecto
 
 ### Utilizar archivo historial
 
