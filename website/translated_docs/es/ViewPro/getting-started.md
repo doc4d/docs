@@ -40,7 +40,7 @@ You can [configure the area](configuring.md) using the Property List and 4D View
 
 Las hojas de cálculo se componen de líneas y columnas. A cada línea se le asocia un número. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. La intersección de una línea y de una columna constituye una celda. Las celdas pueden ser seleccionadas y sus contenidos editados.
 
-### Selecting cells, columns and rows
+### Selección de celdas, columnas y líneas
 
 *   To select a cell, simply click on it or use the direction arrows on the keyboard. Su contenido (o fórmula) se muestra dentro de la celda.
 
@@ -142,8 +142,8 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 | Propiedad |                   | Tipo      | Descripción                                                                         | Disponible para                                                |
 | --------- | ----------------- | --------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                                        | always available                                               |
-| ranges    |                   | colección | Colección de rangos                                                                 | always available                                               |
+| area      |                   | texto     | Nombre de objeto formulario área 4D View Pro                                        | siempre disponible                                             |
+| ranges    |                   | colección | Colección de rangos                                                                 | siempre disponible                                             |
 |           | \[ ].name        | texto     | Nombre de rango                                                                     | name                                                           |
 |           | \[ ].sheet       | number    | Índice de la hoja (por defecto, índice de la hoja actual) (el conteo comienza en 0) | celda, celdas, línea, líneas, columna, columnas, todos, nombre |
 |           | \[ ].row         | number    | Índice de la línea (el conteo comienza en 0)                                        | celda, celdas, línea, líneas                                   |
