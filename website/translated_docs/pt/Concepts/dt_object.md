@@ -3,17 +3,17 @@ id: object
 title: Objeto
 ---
 
-Variables, fields or expressions of the Object type can contain various types of data. The structure of "native" 4D objects is based on the classic principle of "property/value" pairs. The syntax of these objects is based on JSON notation:
+Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de dados. A estrutura dos objectos 4D "nativos" baseia-se no princípio clássico dos pares "propriedade/valor". A sintaxe desses objetos é baseada na notação JSON:
 
 - Um nome de uma propriedade é sempre um texto, por exemplo "nome". It must follow [specific rules](identifiers.md#object-properties).
 
-- A property value can be of the following type:
+- Um valor de propriedade pode ser do seguinte tipo:
     - number (Real, Integer, etc.)
     - texto
     - null
     - booleano
-    - pointer (stored as such, evaluated using the `JSON Stringify` command or when copying),
-    - date (date type or ISO date format string)
+    - ponteiro (armazenado como tal, avaliado usando o comando `JSON Stringify` ou quando copiando),
+    - data (tipo de data ou cadeia de formato de data ISO)
     - object(1) (objects can be nested on several levels)
     - imagem(2)
     - collection
@@ -29,8 +29,8 @@ You manage Object type variables, fields or expressions using the [object notati
 Cada valor de propriedade acessado através da notação de objeto é considerado uma expressão. You can use such values wherever 4D expressions are expected:
 
 - in 4D code, either written in the methods (Method editor) or externalized (formulas, 4D tags files processed by `PROCESS 4D TAGS` or the Web Server, export files, 4D Write Pro documents...),
-- in the Expression areas of the Debugger and the Runtime explorer,
-- in the Property list of the Form editor for form objects: Variable or Expression field as well as various selection list box and columns expressions (Data Source, background color, style, or font color).
+- nas áreas de expressão do depurador e do explorador de Runtime,
+- na lista de propriedades do editor de formulários para objectos de formulários: Variável ou Campo de expressão, bem como várias caixas de selecção e expressões de colunas (Fonte de dados, cor de fundo, estilo, ou cor da fonte).
 
 ## Inicialização
 
