@@ -64,9 +64,9 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 <details><summary>Histórico</summary>
 
-| Versión | Modificaciones                                                                                     |
-| ------- | -------------------------------------------------------------------------------------------------- |
-| v18 R5  | Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords. |
+| Versión | Modificaciones                                                                                            |
+| ------- | --------------------------------------------------------------------------------------------------------- |
+| v18 R5  | Data model class functions are not exposed to REST by default. Nuevas palabras clave `exposed` y `local`. |
 </details>
 
 

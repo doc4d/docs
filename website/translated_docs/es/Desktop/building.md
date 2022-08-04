@@ -234,7 +234,7 @@ Check this option to generate the server part of your application during the bui
 
 #### Ubicación de 4D Server
 
-Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
+Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. En macOS, debe seleccionar directamente el paquete 4D Server.
 
 #### Versión actual
 
@@ -270,7 +270,7 @@ The 4D Volume Desktop must correspond to the current platform (which will also b
 
 If you want the client application to connect to the server using a specific address (other than the server name published on the sub-network), you must use the `IPAddress` XML key in the buildapp.4DSettings file. Para más información sobre este archivo, consulte la descripción del comando [`BUILD APPLICATION`](https://doc.4d.com/4dv19/help/command/en/page871.html). También puede implementar mecanismos específicos en caso de fallo de la conexión. También puede implementar mecanismos específicos en caso de fallo de la conexión.
 
-#### Copy of client applications inside the server application
+#### Copia de las aplicaciones clientes en la aplicación servidor
 
 The options of this area set up the mechanism for updating the client part(s) of your client/server applications using the network each time a new version of the application is generated. These options are only enabled when the **Build client application** option is checked.
 
