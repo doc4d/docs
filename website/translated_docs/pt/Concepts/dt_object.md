@@ -3,17 +3,17 @@ id: object
 title: Objeto
 ---
 
-Variables, fields or expressions of the Object type can contain various types of data. The structure of "native" 4D objects is based on the classic principle of "property/value" pairs. The syntax of these objects is based on JSON notation:
+Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de dados. A estrutura dos objectos 4D "nativos" baseia-se no princípio clássico dos pares "propriedade/valor". A sintaxe desses objetos é baseada na notação JSON:
 
 - Um nome de uma propriedade é sempre um texto, por exemplo "nome". It must follow [specific rules](identifiers.md#object-properties).
 
-- A property value can be of the following type:
+- Um valor de propriedade pode ser do seguinte tipo:
     - number (Real, Integer, etc.)
     - texto
     - null
     - booleano
-    - pointer (stored as such, evaluated using the `JSON Stringify` command or when copying),
-    - date (date type or ISO date format string)
+    - ponteiro (armazenado como tal, avaliado usando o comando `JSON Stringify` ou quando copiando),
+    - data (tipo de data ou cadeia de formato de data ISO)
     - object(1) (objects can be nested on several levels)
     - imagem(2)
     - collection
@@ -29,8 +29,8 @@ You manage Object type variables, fields or expressions using the [object notati
 Cada valor de propriedade acessado através da notação de objeto é considerado uma expressão. You can use such values wherever 4D expressions are expected:
 
 - in 4D code, either written in the methods (Method editor) or externalized (formulas, 4D tags files processed by `PROCESS 4D TAGS` or the Web Server, export files, 4D Write Pro documents...),
-- in the Expression areas of the Debugger and the Runtime explorer,
-- in the Property list of the Form editor for form objects: Variable or Expression field as well as various selection list box and columns expressions (Data Source, background color, style, or font color).
+- nas áreas de expressão do depurador e do explorador de Runtime,
+- na lista de propriedades do editor de formulários para objectos de formulários: Variável ou Campo de expressão, bem como várias caixas de selecção e expressões de colunas (Fonte de dados, cor de fundo, estilo, ou cor da fonte).
 
 ## Inicialização
 
@@ -38,23 +38,23 @@ Os objetos devem ter sido inicializados, por exemplo utilizando o comando `New o
 
 Exemplo:
 ```4d
- C_OBJECT($obVar) //creation of an object type 4D variable
- $obVar:=New object //initialization of the object and assignment to the 4D variable
+ C_OBJECT($obVar) //criação de um objeto de tipo 4D variável
+ $obVar:=Novo objeto //initialization do objeto e atribuição à variável 4D
 ```
 
-### Regular or shared object
+### Objeto regular ou compartilhado
 
 Pode criar dois tipos de objetos:
 
-- regular (non-shared) objects, using the `New object` command. These objects can be edited without any specific access control but cannot be shared between processes.
-- shared objects, using the `New shared object` command. These objects can be shared between processes, including preemptive threads. Access to these objects is controlled by `Use... End use` structures. Para saber mais, consulte a seção [Objetos e coleções compartidos](Concepts/shared.md).
+- objetos regulares (não compartilhados), usando o comando `Novo objeto`. Estes objetos podem ser editados sem qualquer controle de acesso específico, mas não podem ser compartilhados entre processos.
+- objectos partilhados, utilizando o comando `New shared object` . Estes objetos podem ser compartidos entre processos, incluidos os threads preemptivos. Access to these objects is controlled by `Use... End use` structures. Para saber mais, consulte a seção [Objetos e coleções compartidos](Concepts/shared.md).
 
 
-## Syntax basics
+## Noções básicas de sintaxe
 
 A notação de objetos pode ser utilizada para acessar aos valores das propriedades de objetos através de uma string de tokens.
 
-### Object properties
+### Propriedades dos objectos
 
 Com a notação de objetos, pode acessar às propriedades dos objetos de duas maneiras:
 
@@ -76,7 +76,7 @@ Exemplos:
 
 ```
 
-Since an object property value can be an object or a collection, object notation accepts a sequence of symbols to access sub-properties, for example:
+Uma vez que um valor de propriedade de objeto pode ser um objeto ou uma coleção, a notação de objeto aceita uma sequência de símbolos para acessar subpropriedades, por exemplo:
 ```4d
  $vAge:=employee.children[2].age
 ```
