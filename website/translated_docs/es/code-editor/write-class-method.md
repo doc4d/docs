@@ -97,7 +97,7 @@ Los siguientes parámetros se almacenan en la plantilla:
 - Ubicación y contenido de cada lista
 - Ancho relativo de cada lista
 
-To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
+To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. Si ya existe una plantilla anterior, se sustituye.
 
 
 ## Break points area
@@ -120,7 +120,7 @@ The status bar located at the bottom right part of the editor window displays th
 
 ![](assets/en/code-editor/status-bar.png)
 
-- **Ln**: Line number
+- **Ln**: número de línea
 - **Col**: Column number, i.e., the level in the hierarchy of programming structures. El primer nivel es 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
 - **Ch**: ubicación del caracter en la línea.
 - ![](assets/en/code-editor/show-hide-list.png): Ocultar/mostrar listas.
@@ -160,7 +160,7 @@ Desde el Explorador, puedes arrastrar y soltar:
 
 When you drag and drop a component, 4D always uses the correct syntax for the component. For example, if you drag the field name "First Name" from the [People] table, it appears in the Code Editor as "[People]First Name." Similarly, if you drag the Form name "Input" from the People table, it appears in the Code Editor as "[People];"Input"."
 
-When you insert a command by dragging it from the **Commands** page of the Explorer, it appears with its syntax (which consists of all of its parameters) in the Code Editor. This feature simply reminds you of the parameters that the command expects. A continuación, puede utilizar una sintaxis que se adapte mejor a su uso.
+When you insert a command by dragging it from the **Commands** page of the Explorer, it appears with its syntax (which consists of all of its parameters) in the Code Editor. Esta funcionalidad simplemente le recuerda los parámetros que espera el comando. A continuación, puede utilizar una sintaxis que se adapte mejor a su uso.
 
 #### Dentro de un método, clase, función o entre dos diferentes
 
@@ -187,7 +187,7 @@ The **Swap Expression** function can be used to reverse the arguments of an expr
 
 `variable1:=variable2`
 
-becomes
+se convierte en
 
 `variable2:=variable1`
 
@@ -197,7 +197,7 @@ This function is extremely useful for reversing a set of assignments used to get
 
 In addition to the standard copy-paste operation, 4D offers two additional functions that let you work with the contents of different clipboards:
 
-* The program stores the last 10 "copy" or "cut" actions that were performed in the Code Editor in memory during the current session. Each of the different contents saved in this way can be reused at any time. To do this, use the **Clipboard History** command of the Code Editor context menu or the "Last Clipboard values" button of the toolbar:
+* The program stores the last 10 "copy" or "cut" actions that were performed in the Code Editor in memory during the current session. Cada uno de los diferentes contenidos guardados de esta manera puede ser reutilizado en cualquier momento. To do this, use the **Clipboard History** command of the Code Editor context menu or the "Last Clipboard values" button of the toolbar:
 
     ![](assets/en/code-editor/last-clipboard-values-2.png)
 
@@ -226,7 +226,7 @@ The change bars change colors to indicate whether or not the modifications were 
 * amarillo: la línea fue modificada y el método aún no ha sido guardado.
 * verde: la línea fue modificada y el método ha sido guardado.
 
-## Using the autocomplete functions
+## Uso de las funciones de autocompletar
 
 El editor de código ofrece funciones de autocompletado. 4D automatically displays suggestions based on the first few characters typed.
 
@@ -256,7 +256,7 @@ You can press the **Esc** key to close the pop-up list or you can continue typin
 
 If the characters typed correspond to different types of objects, the list displays them in their current style. Se pueden mostrar los siguientes tipos de objetos:
 
-* 4D commands
+* Comandos 4D
 * Comandos SQL
 * User methods
 * Table names
@@ -264,7 +264,7 @@ If the characters typed correspond to different types of objects, the list displ
 * Constantes
 * Local, process or interprocess variable, declared in the method
 * Nombres de propiedad objeto
-* Plug-in commands
+* Comandos del Plug-in
 * 4D keywords
 * Palabras clave SQL
 * Macros (mostradas entre < >)
@@ -326,7 +326,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Ctrl]+[Shift]+[flecha izquierda]                   | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
 | [Ctrl]+[flecha derecha]                             | Move the insertion point, word by word, from left to right                                                                             |
 | [Ctrl]+[left arrow]                                 | Move the insertion point, word by word, from right to left                                                                             |
-| [Home]                                              | Place the insertion point at the beginning of the line                                                                                 |
+| [Home]                                              | Colocar el punto de inserción al comienzo de la línea                                                                                  |
 | [End]                                               | Coloca el punto de inserción al final de la línea                                                                                      |
 | [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
 | [Ctrl]+[End]                                        | Coloca el punto de inserción al final del método                                                                                       |
@@ -414,7 +414,7 @@ Both inline and multiline comment blocks begin with /*and end with*/.
 
 - *Inline comments* -  can be anywhere in the code.The length of inline comments is limited to the maximum size of a line (32,000 characters). ![](assets/en/code-editor/inline-comment.png)
 
--   *Multiline comment blocks* - can be collapsed or expanded. Multiline comment blocks can be nested and each block  is expandable/collapsable. The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. No hay límite en el número de líneas. ![](assets/en/code-editor/multiline-comment.png)
+-   *Bloques de comentarios multilínea* - pueden ser contraídoos o expandidos. Multiline comment blocks can be nested and each block  is expandable/collapsable. The comments on the first line of an expandable/collapsable block will remain visible when the block is collapsed. The length of multiline comments is limited to the maximum size of 32,000 characters per line. No hay límite en el número de líneas. ![](assets/en/code-editor/multiline-comment.png)
 
 > No se admiten los comentarios multilínea al final de una línea.-
 

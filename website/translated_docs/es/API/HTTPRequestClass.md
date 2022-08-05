@@ -92,7 +92,7 @@ La función `4D.HTTPRequest.new()` <!-- REF #4D.HTTPRequest.new().Summary -->cre
 
 The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods.
 
-In *url*, pass the URL where you want to send the request. La sintaxis a utilizar es:
+En *url*, pase la URL a la que desea enviar la petición. La sintaxis a utilizar es:
 
 ```
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
@@ -120,7 +120,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | Propiedad            | Tipo                                            | Descripción                                                                                                                                                                                                                                                               | Por defecto  |
 | -------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | body                 | Variant                                         | Body of the request (required in case of `post` or `put` requests). Puede ser un texto, un blob, o un objeto. The content-type is determined from the type of this property unless it is set inside the headers                                                           | indefinido   |
-| certificatesFolder   | [Folder](#FolderClass.md)                       | Sets the active client certificates folder                                                                                                                                                                                                                                | indefinido   |
+| certificatesFolder   | [Folder](#FolderClass.md)                       | Define la carpeta de certificados de cliente activa                                                                                                                                                                                                                       | indefinido   |
 | dataType             | Texto                                           | Tipo de atributo del cuerpo de la respuesta. Valores: "text", "blob", "object", o "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise) | "auto"       |
 | encoding             | Texto                                           | Used only in case of requests with a `body` (`post` or `put` methods). Encoding of the request body content if it's a text, ignored if content-type is set inside the headers                                                                                             | "UTF-8"      |
 | headers              | Objeto                                          | Encabezados de la petición. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                          | Empty object |
@@ -299,11 +299,11 @@ A `response` object is a non-sharable object. Ofrece las siguientes propiedades:
 ## .returnResponseBody
 
 <!-- REF #4D.HTTPRequest.returnResponseBody.Syntax -->
-**returnResponseBody** : Boolean<!-- END REF -->
+**returnResponseBody**: Boolean<!-- END REF -->
 
 #### Descripción
 
-The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True. 
+La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True. 
 
 <!-- END REF -->
 
@@ -316,9 +316,9 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 
 <!-- REF #4D.HTTPRequest.terminate().Params -->
 
-| Parámetros | Tipo |  | Descripción                  |
-| ---------- | ---- |::| ---------------------------- |
-|            |      |  | No requiere ningún parámetro |
+| Parámetros                   | Tipo |  | Descripción |
+| ---------------------------- | ---- |  | ----------- |
+| No requiere ningún parámetro |      |  |             |
 
 <!-- END REF -->
 

@@ -107,7 +107,7 @@ En el parámetro *fileConstant*, pase un archivo 4D interno o sistema, utilizand
 | Build application log file        | 14    | Archivo de historial actual en formato xml del generador de aplicaciones. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                                                                 |
 | Build application settings file   | 20    | Archivo de configuración por defecto del generador de aplicaciones ("buildApp.4DSettings"). Almacenado en la carpeta Settings del proyecto.                                                                                                                                                                                                                                                              |
 | Compacting log file               | 6     | Log file of the most recent compacting done with the Compact data file command or the Maintenance and security center. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                    |
-| Current backup settings file      | 18    | backup.4DSettings file currently used by the application. It can be the backup settings file (default) or a custom user backup settings file defined for the data file                                                                                                                                                                                                                                   |
+| Current backup settings file      | 18    | archivo backup.4DSettings utilizado actualmente por la aplicación. It can be the backup settings file (default) or a custom user backup settings file defined for the data file                                                                                                                                                                                                                          |
 | Debug log file                    | 12    | Log file created by the `SET DATABASE PARAMETER(Debug log recording)` command. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                                                            |
 | Diagnostic log file               | 11    | Log file created by the `SET DATABASE PARAMETER(Diagnostic log recording)` command. Almacenado en la carpeta Logs.                                                                                                                                                                                                                                                                                       |
 | Directory file                    | 16    | directory.json file, containing the description of users and groups (if any) for the project application. It can be located either in the user settings folder (default, global to the project), or in the data settings folder (specific to a data file).                                                                                                                                               |
@@ -507,11 +507,11 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 **.open**( { *mode* : Text } ) : 4D.FileHandle<br>**.open**( { *options* : Object } ) : 4D.FileHandle<!-- END REF -->
 
 <!--REF #FileClass.open().Params -->
-| Parámetros | Tipo                             |    | Descripción                             |
-| ---------- | -------------------------------- | -- | --------------------------------------- |
-| mode       | Texto                            | -> | Opening mode: "read", "write", "append" |
-| options    | Objeto                           | -> | Opening options                         |
-| Resultado  | [4D.FileHandle](FileHandleClass) | <- | New File handle object                  |
+| Parámetros | Tipo                             |    | Descripción                                    |
+| ---------- | -------------------------------- | -- | ---------------------------------------------- |
+| mode       | Texto                            | -> | Modo de apertura: "leer", "escribir", "añadir" |
+| options    | Objeto                           | -> | Opening options                                |
+| Resultado  | [4D.FileHandle](FileHandleClass) | <- | New File handle object                         |
 <!-- END REF -->
 
 #### Descripción
@@ -520,29 +520,29 @@ The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns
 
 If you use the *mode* (text) parameter, pass the opening mode for the file handle:
 
-| *mode*   | Descripción                                                                                                                                                                                                                      |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "read"   | (Default) Creates a file handle to read values from the file. If the file does not exist on disk, an error is returned. You can open as many file handles as you want in "read" mode on the same File object.                    |
-| "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "write" mode on the same File object. |
-| "append" | Creates a file handle to write values to the file (starting at the end of the file content). If the file does not exist on disk, it is created. You can open only one file handle in "append" mode on the same File object.      |
+| *mode*   | Descripción                                                                                                                                                                                                                 |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "read"   | (Default) Creates a file handle to read values from the file. If the file does not exist on disk, an error is returned. You can open as many file handles as you want in "read" mode on the same File object.               |
+| "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "write" mode on the same File object. |
+| "append" | Creates a file handle to write values to the file (starting at the end of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "append" mode on the same File object.      |
 
-> The *mode* value is case sensitive.
+> El valor *mode* distingue entre mayúsculas y minúsculas.
 
 If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
 
-| *options*         | Tipo           | Descripción                                                                                                                   | Por defecto   |
-| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `.mode`           | Texto          | Opening mode (see *mode* above)                                                                                               | "read"        |
-| `.charset`        | Texto          | Charset used when reading from or writing to the file. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"       |
-| `.breakModeRead`  | Text or Number | Modo de procesamiento de los saltos de línea utilizados al leer el archivo (ver más abajo)                                    | "native" or 1 |
-| `.breakModeWrite` | Text or Number | Modo de procesamiento de los saltos de línea utilizados al escribir en el archivo (ver abajo)                                 | "native" or 1 |
+| *options*         | Tipo           | Descripción                                                                                                                               | Por defecto   |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `.mode`           | Texto          | Modo de apertura (ver *modo* arriba)                                                                                                      | "read"        |
+| `.charset`        | Texto          | Conjunto de caracteres utilizado al leer o escribir en el archivo. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"       |
+| `.breakModeRead`  | Text or Number | Modo de procesamiento de los saltos de línea utilizados al leer el archivo (ver más abajo)                                                | "native" or 1 |
+| `.breakModeWrite` | Text or Number | Modo de procesamiento de los saltos de línea utilizados al escribir en el archivo (ver abajo)                                             | "native" or 1 |
 
 The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values (text or number):
 
 | Break mode as text | Break mode as number (constant)   | Descripción                                                                                                                                                    |
 | ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "native"           | 1 (`Document with native format`) | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) under macOS, CRLF (carriage return + line feed) under Windows |
-| "crlf"             | 2 (`Document with CRLF`)          | Los saltos de línea se convierten en CRLF (retorno de carro + salto de línea), el formato predeterminado de Windows                                            |
+| "crlf"             | 2 (`Documento con CRLF`)          | Los saltos de línea se convierten en CRLF (retorno de carro + salto de línea), el formato predeterminado de Windows                                            |
 | "cr"               | 3 (`Document with CR`)            | Los saltos de línea se convierten en CR (retorno de carro), el formato clásico por defecto de Mac OS                                                           |
 | "lf"               | 4 (`Document with LF`)            | Los saltos de línea se convierten en LF (salto de línea), el formato por defecto de Unix y macOS                                                               |
 

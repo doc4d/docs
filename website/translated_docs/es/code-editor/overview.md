@@ -39,7 +39,7 @@ Para eliminar un método o clase existente, puede:
 > To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
 
 
-## Importing and exporting code
+## Importar y exportar el código
 
 Puede importar y exportar un método o un código de una clase en forma de archivo. These commands are found in the **Method** menu of the Code editor.
 
@@ -173,7 +173,7 @@ For more information, refer to [4D SQL engine implementation](https://doc.4d.com
 
 *This option is deprecated because it relies on legacy current record and current selection concepts. It is recommended to use** [ORDA data model class functions](https://developer.4d.com/docs/en/REST/classFunctions.html) for REST access. *
 
-#### Batch setting for method attributes
+#### Ajuste de atributos del método por lotes
 
 Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
 
@@ -185,9 +185,9 @@ Para la configuración por lotes de los atributos del método:
 
 Utilice el carácter comodín @ para ayudar a definir los grupos de métodos:
 
-- To designate methods whose names begin with..., type @ at the end of the string. For example: `web@`
-- To designate methods whose names contain..., type @ in the middle of the string. For example: `web@write`
-- To designate methods whose names end with..., type @ at the beginning of the string. For example: `@write`
+- To designate methods whose names begin with..., type @ at the end of the string. Por ejemplo: `web@`
+- To designate methods whose names contain..., type @ in the middle of the string. Por ejemplo: `web@write`
+- To designate methods whose names end with..., type @ at the beginning of the string. Por ejemplo: `@escribir`
 - To designate all of the methods, just type @ in the area.
 
 **Notas:**
