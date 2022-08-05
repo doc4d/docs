@@ -769,10 +769,10 @@ Par défaut, une évaluation non diacritique est effectuée. Si vous souhaitez q
 ## .every()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -780,37 +780,37 @@ Par défaut, une évaluation non diacritique est effectuée. Si vous souhaitez q
 
 
 <!-- REF #collection.every().Params -->
-| Paramètres | Type        |    | Description                                       |
-| ---------- | ----------- |:--:| ------------------------------------------------- |
-| startFrom  | Integer     | -> | Elément à partir duquel débuter l'évaluation      |
-| formula    | 4D.Function | -> | Objet formule                                     |
-| methodName | Text        | -> | Name of a method                                  |
-| param      | Mixed       | -> | Parameter(s) to pass to *formula* or *methodName* |
-| Résultat   | Booléen     | <- | Vrai si tous les éléments sont évalués à vrai     |
+| Paramètres | Type        |    | Description                                         |
+| ---------- | ----------- |:--:| --------------------------------------------------- |
+| startFrom  | Integer     | -> | Elément à partir duquel débuter l'évaluation        |
+| formula    | 4D.Function | -> | Objet formule                                       |
+| methodName | Text        | -> | Nom de méthode                                      |
+| param      | Mixed       | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
+| Résultat   | Booléen     | <- | Vrai si tous les éléments sont évalués à vrai       |
 
 <!-- END REF -->
 
 
 #### Description
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *formula* object or *methodName* name<!-- END REF -->.
+La fonction `.every()` <!-- REF #collection.every().Summary -->retourne **vrai** si tous les éléments de la collection ont été évalués à vrai par le test implémenté dans l'objet *formula* ou la méthode *methodName* passée en paramètre<!-- END REF -->.
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). La callback peut effectuer n'importe quel test, avec ou sans le(s) paramètre(s) et doit retourner **true** pour chaque élément remplissant le test. Elle reçoit un `objet` en premier paramètre ($1).
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   in *$2*: param
 *   in *$N...*: paramN...
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
-*   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
+*   (obligatoire si vous avez utilisé une méthode) *$1.result* (booléen) : **true** si l'évaluation de la valeur de l'élément est à vrai, **false** sinon.
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
 
 In all cases, at the point when the `.every()` function encounters the first collection element evaluated to **false**, it stops calling the callback and returns **false**.
@@ -991,10 +991,10 @@ En cas d'incohérence, les règles suivantes sont appliquées :
 ## .filter()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -1006,8 +1006,8 @@ En cas d'incohérence, les règles suivantes sont appliquées :
 | Paramètres | Type        |    | Description                                                       |
 | ---------- | ----------- |:--:| ----------------------------------------------------------------- |
 | formula    | 4D.Function | -> | Objet formule                                                     |
-| methodName | Text        | -> | Name of a method                                                  |
-| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*                 |
+| methodName | Text        | -> | Nom de méthode                                                    |
+| param      | any         | -> | Paramètre(s) à passer à *formula* ou à *methodName*               |
 | Résultat   | Collection  | <- | Nouvelle collection contenant les éléments filtrés (shallow copy) |
 
 <!-- END REF -->
@@ -1020,18 +1020,18 @@ The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new 
 
 You designate the callback to be executed to filter collection elements using either:
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection. Elle reçoit un `objet` en premier paramètre ($1).
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   in *$2*: param
 *   in *$N...*: paramN...
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
@@ -1072,10 +1072,10 @@ Vous voulez filtrer les éléments de la collection en fonction de leur type :
 ## .find()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -1084,13 +1084,13 @@ Vous voulez filtrer les éléments de la collection en fonction de leur type :
 
 
 <!-- REF #collection.find().Params -->
-| Paramètres | Type        |    | Description                                        |
-| ---------- | ----------- |:--:| -------------------------------------------------- |
-| startFrom  | Integer     | -> | Elément à partir duquel débuter la recherche       |
-| formula    | 4D.Function | -> | Objet formule                                      |
-| methodName | Text        | -> | Name of a method                                   |
-| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*  |
-| Résultat   | any         | <- | Première valeur trouvée (Undefined si non trouvée) |
+| Paramètres | Type        |    | Description                                         |
+| ---------- | ----------- |:--:| --------------------------------------------------- |
+| startFrom  | Integer     | -> | Elément à partir duquel débuter la recherche        |
+| formula    | 4D.Function | -> | Objet formule                                       |
+| methodName | Text        | -> | Nom de méthode                                      |
+| param      | any         | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
+| Résultat   | any         | <- | Première valeur trouvée (Undefined si non trouvée)  |
 
 <!-- END REF -->
 
@@ -1100,20 +1100,20 @@ Vous voulez filtrer les éléments de la collection en fonction de leur type :
 The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *formula* or *methodName* result, applied on each element, returns **true**<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. Elle reçoit un `objet` en premier paramètre ($1).
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   in *$2*: param
 *   in *$N...*: paramN...
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
@@ -1161,10 +1161,10 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 ## .findIndex()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -1178,8 +1178,8 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 | ---------- | ----------- |:--:| --------------------------------------------------- |
 | startFrom  | Integer     | -> | Elément à partir duquel débuter la recherche        |
 | formula    | 4D.Function | -> | Objet formule                                       |
-| methodName | Text        | -> | Name of a method                                    |
-| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName*   |
+| methodName | Text        | -> | Nom de méthode                                      |
+| param      | any         | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
 | Résultat   | Integer     | <- | Numéro du premier élément trouvé (-1 si non trouvé) |
 
 <!-- END REF -->
@@ -1190,20 +1190,20 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *formula* or *methodName*, applied on each element, returns **true**<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
 - *methodName*, the name of a project method (text).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. Elle reçoit un `objet` en premier paramètre ($1).
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   in *$2*: param
 *   in *$N...*: paramN...
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
 *   (mandatory if you used a method) *$1.result* (Boolean): **true** if the element value matches the search condition, **false** otherwise.
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
@@ -1544,10 +1544,10 @@ La propriété `.length` est initialisée à la création de la collection. Elle
 ## .map()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -1556,12 +1556,12 @@ La propriété `.length` est initialisée à la création de la collection. Elle
 
 
 <!-- REF #collection.map().Params -->
-| Paramètres | Type        |    | Description                                       |
-| ---------- | ----------- |:--:| ------------------------------------------------- |
-| formula    | 4D.Function | -> | Objet formule                                     |
-| methodName | Text        | -> | Name of a method                                  |
-| param      | any         | -> | Parameter(s) to pass to *formula* or *methodName* |
-| Résultat   | Collection  | <- | Collection de valeurs transformées                |
+| Paramètres | Type        |    | Description                                         |
+| ---------- | ----------- |:--:| --------------------------------------------------- |
+| formula    | 4D.Function | -> | Objet formule                                       |
+| methodName | Text        | -> | Nom de méthode                                      |
+| param      | any         | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
+| Résultat   | Collection  | <- | Collection de valeurs transformées                  |
 
 <!-- END REF -->
 
@@ -1572,20 +1572,20 @@ The `.map()` function <!-- REF #collection.map().Summary -->creates a new collec
 > Cette fonction ne modifie pas la collection d'origine.
 
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback can perform any operation, with or without the parameter(s) and must return new transformed value to add to the resulting collection. Elle reçoit un `objet` en premier paramètre ($1).
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   in *$2*: param
 *   in *$N...*: paramN...
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
 *   (mandatory if you used a method) *$1.result* (any type): new transformed value to add to the resulting collection
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
@@ -1847,10 +1847,10 @@ Tri avec un chemin de propriété :
 ## .orderByMethod()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -1862,7 +1862,7 @@ Tri avec un chemin de propriété :
 | Paramètres | Type        |    | Description                                 |
 | ---------- | ----------- |:--:| ------------------------------------------- |
 | formula    | 4D.Function | -> | Objet formule                               |
-| methodName | Text        | -> | Name of a method                            |
+| methodName | Text        | -> | Nom de méthode                              |
 | extraParam | any         | -> | Parameter(s) to pass                        |
 | Résultat   | Collection  | <- | Copie triée de la collection (shallow copy) |
 
@@ -1877,14 +1877,14 @@ Cette fonction retourne une **shallow copy (copie superficielle), ce qui signifi
 > Cette fonction ne modifie pas la collection d'origine.
 
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
 In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide *extraParam* parameters to the callback if necessary.
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 - $1 (object), où :
     - *$1.value* (tout type) : valeur du premier élément à comparer
@@ -2166,10 +2166,10 @@ Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`.
 ## .reduce()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -2181,7 +2181,7 @@ Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`.
 | Paramètres | Type                                            |    | Description                                                                       |
 | ---------- | ----------------------------------------------- |:--:| --------------------------------------------------------------------------------- |
 | formula    | 4D.Function                                     | -> | Objet formule                                                                     |
-| methodName | Text                                            | -> | Name of a method                                                                  |
+| methodName | Text                                            | -> | Nom de méthode                                                                    |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *formula* or *methodName* |
 | param      | expression                                      | -> | Parameter(s) to pass                                                              |
 | Résultat   | Text, Number, Object, Collection, Date, Boolean | <- | Résultat de la valeur de l'accumulateur                                           |
@@ -2195,16 +2195,16 @@ Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`.
 The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *formula* or *methodName* callback against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-You designate the callback to be executed to evaluate collection elements using either:
+Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
 The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
 Vous pouvez passer la valeur pour initialiser l'accumulateur dans *initValue*. S'il est omis, *$1.accumulator* commence par *Undefined*.
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   dans $2 : *param*
@@ -2503,10 +2503,10 @@ La collection retournée contient l'élément spécifié par *startFrom* et tous
 ## .some()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -2519,7 +2519,7 @@ La collection retournée contient l'élément spécifié par *startFrom* et tous
 | ---------- | ----------- |:--:| -------------------------------------------- |
 | startFrom  | Integer     | -> | Elément à partir duquel débuter l'évaluation |
 | formula    | 4D.Function | -> | Objet formule                                |
-| methodName | Text        | -> | Name of a method                             |
+| methodName | Text        | -> | Nom de méthode                               |
 | param      | Mixed       | -> | Parameter(s) to pass                         |
 | Résultat   | Booléen     | <- | Vrai si au moins un élément a réussi le test |
 
@@ -2532,19 +2532,19 @@ The `.some()` function <!-- REF #collection.some().Summary -->returns true if at
 
 You designate the 4D code (callback) to be executed to evaluate collection elements using either:
 
-- *formula* (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or *methodName*, the name of a project method (text).
+- *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
+- *methodName*, le nom d'une méthode projet (texte).
 
-The callback is called with the parameter(s) passed in *param* (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). La callback peut effectuer n'importe quel test, avec ou sans le(s) paramètre(s) et doit retourner **true** pour chaque élément remplissant le test. Elle reçoit un `objet` en premier paramètre ($1).
 
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 *   dans *$1.value* : valeur de l'élément à évaluer
 *   dans $2 : *param*
 *   dans *$N...* : *paramN...*
 
-It can set the following parameter(s):
+Elle peut définir le(s) paramètre(s) suivant(s) :
 
 *   (mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (booléen, optionnel) : **true** pour stopper le rétroappel de méthode. La valeur retournée est la dernière calculée.
@@ -2584,10 +2584,10 @@ You want to know if at least one collection value is >0.
 ## .sort()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R6  | Support of formula |
-| v16 R6  | Ajout              |
+| Version | Modifications                |
+| ------- | ---------------------------- |
+| v19 R6  | Prise en charge des formules |
+| v16 R6  | Ajout                        |
 </details>
 
 
@@ -2599,7 +2599,7 @@ You want to know if at least one collection value is >0.
 | Paramètres | Type        |    | Description                        |
 | ---------- | ----------- |:--:| ---------------------------------- |
 | formula    | 4D.Function | -> | Objet formule                      |
-| methodName | Text        | -> | Name of a method                   |
+| methodName | Text        | -> | Nom de méthode                     |
 | extraParam | any         | -> | Paramètre(s) à passer à la méthode |
 | Résultat   | Collection  | <- | Collection d'origine triée         |
 
@@ -2615,7 +2615,7 @@ Si `.sort()` est appelé sans paramètre, seules les valeurs scalaires (numériq
 
 If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. You can provide additional parameters to the callback if necessary.
 
-The callback receives the following parameters:
+La callback reçoit les paramètres suivants :
 
 - $1 (object), où :
     - *$1.value* (tout type) : valeur du premier élément à comparer
