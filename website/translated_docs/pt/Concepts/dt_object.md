@@ -38,23 +38,23 @@ Os objetos devem ter sido inicializados, por exemplo utilizando o comando `New o
 
 Exemplo:
 ```4d
- C_OBJECT($obVar) //creation of an object type 4D variable
- $obVar:=New object //initialization of the object and assignment to the 4D variable
+ C_OBJECT($obVar) //criação de um objeto de tipo 4D variável
+ $obVar:=Novo objeto //initialization do objeto e atribuição à variável 4D
 ```
 
-### Regular or shared object
+### Objeto regular ou compartilhado
 
 Pode criar dois tipos de objetos:
 
-- regular (non-shared) objects, using the `New object` command. These objects can be edited without any specific access control but cannot be shared between processes.
-- shared objects, using the `New shared object` command. These objects can be shared between processes, including preemptive threads. Access to these objects is controlled by `Use... End use` structures. Para saber mais, consulte a seção [Objetos e coleções compartidos](Concepts/shared.md).
+- objetos regulares (não compartilhados), usando o comando `Novo objeto`. Estes objetos podem ser editados sem qualquer controle de acesso específico, mas não podem ser compartilhados entre processos.
+- objectos partilhados, utilizando o comando `New shared object` . Estes objetos podem ser compartidos entre processos, incluidos os threads preemptivos. Access to these objects is controlled by `Use... End use` structures. Para saber mais, consulte a seção [Objetos e coleções compartidos](Concepts/shared.md).
 
 
-## Syntax basics
+## Noções básicas de sintaxe
 
 A notação de objetos pode ser utilizada para acessar aos valores das propriedades de objetos através de uma string de tokens.
 
-### Object properties
+### Propriedades dos objectos
 
 Com a notação de objetos, pode acessar às propriedades dos objetos de duas maneiras:
 
@@ -76,7 +76,7 @@ Exemplos:
 
 ```
 
-Since an object property value can be an object or a collection, object notation accepts a sequence of symbols to access sub-properties, for example:
+Uma vez que um valor de propriedade de objeto pode ser um objeto ou uma coleção, a notação de objeto aceita uma sequência de símbolos para acessar subpropriedades, por exemplo:
 ```4d
  $vAge:=employee.children[2].age
 ```
