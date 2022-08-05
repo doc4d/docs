@@ -82,23 +82,23 @@ Uma vez que um valor de propriedade de objeto pode ser um objeto ou uma coleçã
 ```
 A notação de objetos está disponível em qualquer elemento da lenguagem que possa conter ou devolver um objeto, ou seja:
 
-- **Objects** themselves (stored in variables, fields, object properties, object arrays, or collection elements). Exemplos:
+- com os **Objetos** mesmos (armazenados em variáveis, campos, propriedades de objetos, arrays de objetos ou elementos de coleções). Exemplos:
 
 ```4d
-     $age:=$myObjVar.employee.age //variable
-     $addr:=[Emp]data_obj.address //field
-     $city:=$addr.city //property of an object
-     $pop:=$aObjCountries{2}.population //object array
-     $val:=$myCollection[3].subvalue //collection element
+     $age:=$myObjVar.employee.age //variável
+     $addr:=[Emp]data_obj.address //campo
+     $city:=$addr.city //propriedade de um objeto
+     $pop:=$aObjCountries{2}.population //array objeto
+     $val:=$myCollection[3].subvalue //elemento coleção
 ```
-- **4D commands** that return objects. Exemplo:
+- **Comandos 4D** que devolvem objectos. Exemplo:
 
 
 ```4d
      $measures:=Get database measures.DB.tables
 ```
 
-- **Project methods** that return objects. Exemplo:
+- **Métodos de Projeto** que retornam objetos. Exemplo:
 
 ```4d
       // MyMethod1
@@ -112,19 +112,19 @@ A notação de objetos está disponível em qualquer elemento da lenguagem que p
 - **Collections** Example:
 
 ```4d
-     myColl.length //size of the collection
+     myColl.length //tamanho da coleção
 ```
 
-### Pointers
+### Ponteiro
 
 **Nota preliminar:** dado que os objetos são passados sempre por referência, geralmente não é preciso usar ponteiros. Ao passar o objeto, internamente 4D utiliza automaticamente um mecanismo similar a um ponteiro, minimizando a necessidade de memória e permitindo modificar o parâmetro e devolver as modificações. Como resultado, não é necessário usar ponteiros. Mas se quiser usar ponteiros, valores de propriedade podem ser acessados com ponteiros.
 
 Usar notação de objeto com ponteiros é parecido com usar notação de objeto diretamente com os objetos, exceto que o símbolo "ponto" deve ser omitido.
 
-- Direct access:
+- Acesso direto
 > pointerOnObject->propertyName
 
-- Access by name:
+- Acesso pelo nome:
 > pointerOnObject->["propertyName"]
 
 Exemplo:
@@ -149,7 +149,7 @@ Quando se usar a notação de objeto, o valore **null** se torna compatível com
 
 Para saber mais, veja a descrição do comando `Null`
 
-### Undefined value
+### Valor não definido
 
 A avaliação de uma propriedade de um objeto pode produzir às vezes um valor indefinido. Normalmente ao tentar ler ou atribuir expressões indefinidas, 4D gera erros. Isso não acontece nos casos abaixo:
 
@@ -159,29 +159,29 @@ A avaliação de uma propriedade de um objeto pode produzir às vezes um valor i
      C_OBJECT($o)
      C_LONGINT($val)
      $val:=10 //$val=10
-     $val:=$o.a //$o.a is undefined (no error), and assigning this value clears the variable
+     $val:=$o. //$o.a é indefinido (sem erro), e atribuir este valor limpa a variável
       //$val=0
 ```
 
-- Reading the **length** property of an undefined collection produces 0:
+- Lendo a propriedade de **comprimento** de uma coleção indefinida produz 0:
 
 ```4d
-     C_COLLECTION($c) //variable created but no collection is defined
+     C_COLLECTION($c) //variable criada, mas nenhuma coleção é definida
      $size:=$c.length //$size = 0
 ```
 
-- An undefined value passed as parameter to a project method is automatically converted to 0 or "" according to the declared parameter type.
+- Um valor indefinido passado como parâmetro para um método de projecto é automaticamente convertido em 0 ou "" de acordo com o tipo de parâmetro declarado.
 
 ```4d
      C_OBJECT($o)
-     mymethod($o.a) //pass an undefined parameter
+     meumétodo($o. ) //passa um parâmetro indefinido
 
-      //In mymethod method
-     C_TEXT($1) //parameter type is text
-      // $1 contains ""
+      //In mymethod
+     C_TEXT($1) //parameter type é texto
+      // $1 contém ""
 ```
 
-- A condition expression is automatically converted to false when evaluating to undefined with the If and Case of keywords:
+- Uma expressão de condição é automaticamente convertida em falsa quando se avalia para indefinida com as palavras-chave If e Case:
 
 ```4d
      C_OBJECT($o)
@@ -192,15 +192,15 @@ A avaliação de uma propriedade de um objeto pode produzir às vezes um valor i
      End case
 ```
 
-- Assigning an undefined value to an existing object property reinitializes or clears its value, depending on its type:
- - Object, collection, pointer: Null
- - Picture: Empty picture
- - Boolean: False
+- A atribuição de um valor indefinido a um objecto existente reinicia ou limpa o seu valor, dependendo do seu tipo:
+ - Objecto, colecção, ponteiro: Null
+ - Imagem: Imagem vazia
+ - Booleano: Falso
  - String: ""
  - Número: 0
- - Date: !00-00-00! if "Use date type instead of ISO date format in objects" setting is enabled, otherwise ""
- - Time: 0 (number of ms)
- - Undefined, Null: no change
+ - Data: !00-00-00-00! se a configuração "Usar tipo de data em vez de formato de data ISO nos objetos" estiver habilitada, caso contrário ""
+ - Hora: 0 (número de ms)
+ - Indefinido, Null: sem mudança
 
 ```4d
      C_OBJECT($o)
@@ -208,13 +208,13 @@ A avaliação de uma propriedade de um objeto pode produzir às vezes um valor i
      $o.a:=$o.b //$o.a=0
 ```
 
-- Assigning an undefined value to a non existing object property does nothing.
+- Atribuir um valor indefinido a uma propriedade objecto não existente não faz nada.
 
 Quando expressões de um certo tipo são esperadas em seu código 4D, pode garantir que tenha o tipo correto mesmo quando são avaliadas como indefinidas, cercando-as com o comando de transformação 4D apropriado: `String`, `Num`, `Date`, `Time`, `Bool`. Estes comandos devolvem um valor vazio de tipo especificado quando a expressão é avaliada como indefinida. Por exemplo:
 
 ```4d
- $myString:=Lowercase(String($o.a.b)) //make sure you get a string value even if undefined
-  //to avoid errors in the code
+ $myString:=Caixa minúscula(String($o.a.b))) // certifique-se de obter um valor de string mesmo que não esteja definido
+  // para evitar erros no código
 ```
 
 
