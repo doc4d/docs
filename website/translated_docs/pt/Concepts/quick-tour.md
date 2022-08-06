@@ -314,7 +314,7 @@ $myVar:="Hello" //assign "Hello" to myVar
 In general, expressions that use an operator are non-assignable. For example, `[Person]FirstName+" "+[Person]LastName` is not assignable.
 
 
-## Pointers
+## Ponteiro
 
 The 4D language provides an advanced implementation of pointers, that allow writing powerful and modular code. You can use pointers to reference tables, fields, variables, arrays, and array elements.
 
