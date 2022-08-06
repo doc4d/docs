@@ -3,11 +3,11 @@ id: etiquetas
 title: Etiquetas de transformación
 ---
 
-4D provides a set of transformation tags which allow you to insert references to 4D variables or expressions, or to perform different types of processing within a source text, referred to as a "template". These tags are interpreted when the source text is executed and generate an output text.
+4D ofrece un conjunto de etiquetas de transformación que le permiten insertar referencias a las variables o a las expresiones 4D, o efectuar diferentes tipos de procesamiento en un texto fuente, llamado "plantilla". Estas etiquetas se interpretan cuando se ejecuta el texto fuentes y generan un texto de salida.
 
-This principle is used in particular by the 4D Web server to build [web template pages](WebServer/templates.md).
+Este principio es utilizado en particular por el servidor web 4D para crear [las páginas de plantillas web](WebServer/templates.md).
 
-These tags are generally to be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
+Estas etiquetas deben insertarse generalmente como comentarios de tipo HTML (`<!--#Tag Contents-->`) pero [una sintaxis alternativa conforme a la norma xml](#alternative-syntax-for-4dtext-4dhtml-4deval) está disponible para algunas de ellas.
 
 Es posible mezclar varios tipos de etiquetas. Por ejemplo, la siguiente estructura HTML es totalmente factible:
 
@@ -39,16 +39,16 @@ Es posible mezclar varios tipos de etiquetas. Por ejemplo, la siguiente estructu
 
 ### Parsing
 
-Parsing the contents of a *template* source is done in two contexts:
+El análisis del contenido de una fuente *template* se hace en dos contextos:
 
-- Using the `PROCESS 4D TAGS` command; this command accepts a *template* as input, as well as optional parameters and returns a text resulting from the processing.
+- Utilizando el comando `PROCESS 4D TAGS`; este comando acepta un *plantilla* como entrada, así como los parámetros opcionales y devuelve un texto resultante del procesamiento.
 
 - Using 4D's integrated HTTP server: [template pages](WebServer/templates.md) sent by means of the `WEB SEND FILE` (.htm, .html, .shtm, .shtml), `WEB SEND BLOB` (text/html type BLOB), `WEB SEND TEXT` commands, or called using URLs. In this last case, for reasons of optimization, pages that are suffixed with “.htm” and “.html” are NOT parsed. In order to parse HTML pages in this case, you must add the suffix “.shtm” or “.shtml” (for example, http://www.server.com/dir/page.shtm).
 
 
 ### Tratamiento recursivo
 
-4D tags are interpreted recursively: 4D always attempts to reinterpret the result of a transformation and, if a new transformation has taken place, an additional interpretation is performed, and so on until the product obtained no longer requires any further transformation. Por ejemplo, dada la siguiente instrucción:
+Las etiquetas 4D se interpretan de manera recursiva: 4D siempre intenta reinterpretar el resultado de una transformación y, si se ha producido una nueva transformación, se realiza una interpretación adicional, y así sucesivamente hasta que el producto obtenido ya no requiera ninguna otra transformación. Por ejemplo, dada la siguiente instrucción:
 
 ```html
 <!--#4DHTML [Mail]Letter_type-->
@@ -120,7 +120,7 @@ In the "head.html" file, the current folder is modified through `<!--#4DBASE -->
 
 ```html
 /* Head.htm */
-/* the working directory here is relative to the included file (FR/ or US/) */
+/* el directorio de trabajo aquí es relativo al archivo incluido (FR/ o US/) */
 <!--#4DBASE Styles/-->
 <!--#4DINCLUDE main.css-->
 <!--#4DINCLUDE product.css-->
@@ -174,7 +174,7 @@ Aquí están las características de la etiqueta 4DCODE:
 
 ## 4DEACH y 4DENDEACH
 
-#### Syntax: `<!--#4DEACH variable in expression-->` `<!--#4DENDEACH-->`
+#### Sintaxis: `<!--#4DEACH variable en la expresión-->` `<!--#4DENDEACH-->`
 
 The `<!--#4DEACH-->` comment allows iterating a specified item over all values of the *expression*. The item is set to a *variable* whose type depends on the *expression* type.
 
@@ -356,7 +356,7 @@ In case of an interpretation error, the inserted text will be `<!--#4DHTML myvar
 
 ## 4DIF, 4DELSE, 4DELSEIF y 4DENDIF
 
-#### Syntax: `<!--#4DIF expression-->` {`<!--#4DELSEIF expression2-->...<!--#4DELSEIF expressionN-->`} {`<!--#4DELSE-->`} `<!--#4DENDIF-->`
+#### Sintaxis: `<!--#4DIF expression-->` {`<!--#4DELSEIF expression2-->...<!--#4DELSEIF expressionN-->`} {`<!--#4DELSE-->`} `<!--#4DENDIF-->`
 
 Used with the `<!--#4DELSEIF-->` (optional), `<!--#4DELSE-->` (optional) and `<!--#4DENDIF-->` comments, the `<!--#4DIF expression-->` comment offers the possibility to execute portions of code conditionally.
 
@@ -463,7 +463,7 @@ Ejemplos:
 
 ## 4DLOOP y 4DENDLOOP
 
-#### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
+#### Sintaxis: `<!--#4DLOOP condición-->` `<!--#4DENDLOOP-->`
 
 This comment allows repetition of a portion of code as long as the condition is fulfilled. The portion is delimited by `<!--#4DLOOP-->` and `<!--#4DENDLOOP-->`.
 
@@ -497,7 +497,7 @@ El código siguiente:
 
 ### `<!--#4DLOOP array-->`
 
-Esta sintaxis hace un bucle para cada elemento del array. The array current item is increased when each code portion is repeated.
+Esta sintaxis hace un bucle para cada elemento del array. El elemento actual del array se incrementa cuando se repite cada porción de código.
 
 > Esta sintaxis no se puede utilizar con arrays de dos dimensiones. En este caso, es mejor combinar un método con bucles anidados.
 
@@ -553,7 +553,7 @@ El método `my_method` puede ser el siguiente:
 ```4d
  C_LONGINT($1)
  C_BOOLEAN($0)
- If($1=0) `Initialisation
+ If($1=0) `Inicialización
     $0:=True
  Else
     If($1<50)
@@ -679,13 +679,13 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 
 ## Sintaxis alternativa para 4DTEXT, 4DHTML, 4DEVAL
 
-Several existing 4D transformation tags can be expressed using a $-based syntax:
+Varias etiquetas de transformación 4D existentes pueden expresarse utilizando una sintaxis basada en el símbolo $:
 
 #### $4dtag (expression)
 puede utilizarse en lugar de
 #### `<!--#4dtag expression-->`
 
-This alternative syntax is available only for tags used to return processed values:
+Esta sintaxis alternativa sólo está disponible para las etiquetas utilizadas para devolver los valores procesados:
 
 - [4DTEXT](#4dtext)
 - [4DHTML](#4dhtml)
@@ -726,25 +726,25 @@ La razón de esta diferencia es evitar la inyección de código malicioso. As [e
 The following examples show the result of processing depending on the syntax and tag used:
 
 ```4d
-  // example 1
- myName:="<!--#4DHTML QUIT 4D-->" //malicious injection
- input:="My name is: <!--#4DHTML myName-->"
+  // ejemplo 1
+ myName:="<!--#4DHTML QUIT 4D-->" //inyección maliciosa
+ input:="Mi nombre es: <!--#4DHTML myName-->"
  PROCESS 4D TAGS(input;output)
-  //4D will quit!
+  //¡4D saldrá!
 ```
 ```4d
-  // example 2
- myName:="<!--#4DHTML QUIT 4D-->" //malicious injection
- input:="My name is: <!--#4DTEXT myName-->"
+  // ejemplo 2
+ myName:="<!--#4DHTML QUIT 4D-->" //inyección maliciosa
+ input:="Mi nombre es: <!--#4DTEXT myName-->"
  PROCESS 4D TAGS(input;output)
-  //output is "My name is: <!--#4DHTML QUIT 4D-->"
+  //output es "Mi nombre es: <!--#4DHTML QUIT 4D-->"
 ```
 ```4d
-  // example 3
- myName:="$4DEVAL(QUIT 4D)" //malicious injection
- input:="My name is: <!--#4DTEXT myName-->"
+  // ejemplo 3
+ myName:="$4DEVAL(QUIT 4D)" //inyección maliciosa
+ input:="Mi nombre es: <!--#4DTEXT myName-->"
  PROCESS 4D TAGS(input;output)
-  //output is "My name is: $4DEVAL(QUIT 4D)"
+  //la salida "Mi nombre es: $4DEVAL(QUIT 4D)"
 ```
 
 Note that the `$4dtag` syntax supports matching pairs of enclosed quotes or parenthesis. For example, suppose that you need to evaluate the following complex (unrealistic) string:
