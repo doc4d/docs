@@ -3,43 +3,43 @@ id: imagem
 title: Imagem
 ---
 
-A Picture field, variable or expression can be any Windows or Macintosh picture. In general, this includes any picture that can be put on the pasteboard or read from the disk using 4D commands such as `READ PICTURE FILE`.
+Um campo, variável ou expressão pode ser qualquer imagem de Windows ou Macintoh. Em geral, isto inclui qualquer imagem que possa ser colocada na pasta ou lida a partir do disco utilizando comandos 4D, tais como `LEIA O ARQUIVO DE IMAGENS`.
 
-4D uses native APIs to encode (write) and decode (read) picture fields and variables under both Windows and macOS. These implementations provide access to numerous native formats, including the RAW format, currently used by digital cameras.
+4D usa APIs nativas para codificar (escrever) e decodificar (ler) campos de imagens e variáveis sob Windows e macOS. Essas implementações oferecem acesso a inúmeros formatos nativos, incluindo o formato RAW atualmente utilizado por câmeras digitais.
 
-*   on Windows, 4D uses WIC (Windows Imaging Component).
-*   on macOS, 4D uses ImageIO.
+*   no Windows, 4D usa o WIC (Componente de Imagens Windows).
+*   no macOS, 4D usa ImageIO.
 
-WIC and ImageIO permit the use of metadata in pictures. Two commands, `SET PICTURE METADATA` and `GET PICTURE METADATA`, let you benefit from metadata in your developments.
+WIC e ImageIO permitem o uso de metadados nas fotos. Dois comandos, `SET PICTURA METADATA` e `GET PICTURE METADATA`, permitem que você se beneficie com metadados em seus desenvolvimentos.
 
-## Picture Codec IDs
+## IDs de códigos de imagem
 
-4D supports natively a wide set of [picture formats](FormEditor/pictures.md#native-formats-supported), such as .jpeg, .png, or .svg.
+4D suporta nativamente um amplo conjunto de formatos de imagem [](FormEditor/pictures.md#native-formats-supported), tais como .jpeg, .png, ou .svg.
 
-Picture formats recognized by 4D are returned by the `PICTURE CODEC LIST` command as picture Codec IDs.  They can be returned in the following forms:
+Os formatos de imagens reconhecidos por 4D são retornados pelo comando `PICTURE CODEC LIST` como picture Codec IDs.  Eles podem ser devolvidos nos seguintes formulários:
 
-*   As an extension (for example “.gif”)
-*   As a MIME type (for example “image/jpeg”)
+*   Como uma extensão (por exemplo ".gif")
+*   Como um tipo MIME (por exemplo, “image/jpeg”)
 
-The form returned for each format will depend on the way the Codec is recorded at the operating system level. Note that the list of available codecs for reading and writing can be different since encoding codecs may require specific licenses.
+O formulário retornado para cada formato dependerá da forma como o Codec é gravado no nível do sistema operacional. Note que a lista de codecs disponíveis para leitura e escrita pode ser diferente desde que a codificação de codecs pode exigir licenças específicas.
 
-Most of the [4D picture management commands](https://doc.4d.com/4Dv18/4D/18/Pictures.201-4504337.en.html) can receive a Codec ID as a parameter. It is therefore imperative to use the system ID returned by the `PICTURE CODEC LIST` command. Picture formats recognized by 4D are returned by the `PICTURE CODEC LIST` command.
+A maioria dos [comandos de gerenciamento de imagens 4D](https://doc.4d.com/4Dv18/4D/18/Pictures.201-4504337.en.html) pode receber um Codec ID como parâmetro. É imperativo, portanto, usar a ID do sistema retornada pelo comando `PICTURE CODEC LIST`. Os formatos de imagem reconhecidos por 4D são devolvidos pelo comando `PICTURE CODEC LIST` .
 
 
 
-## Picture operators
+## Operadores Bitwise
 
-| Operação                  | Sintaxe                | Retorna | Ação                                                                                                                                                               |
-| ------------------------- | ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Horizontal concatenation  | Pict1 + Pict2          | Imagem  | Add Pict2 to the right of Pict1                                                                                                                                    |
-| Vertical concatenation    | Pict1 / Pict2          | Imagem  | Add Pict2 to the bottom of Pict1                                                                                                                                   |
-| Exclusive superimposition | Pict1 & Pict2          | Imagem  | Superimposes Pict2 on top of Pict1 (Pict2 in foreground). Produces the same result as `COMBINE PICTURES(pict3;pict1;Superimposition;pict2)`                        |
-| Inclusive superimposition | Pict1 &#124; Pict2     | Imagem  | Superimposes Pict2 on Pict1 and returns resulting mask if both pictures are the same size. Produces the same result as `$equal:=Equal pictures(Pict1;Pict2;Pict3)` |
-| Horizontal move           | Picture + Number       | Imagem  | Move Picture horizontally Number pixels                                                                                                                            |
-| Vertical move             | Picture / Number       | Imagem  | Move Picture vertically Number pixels                                                                                                                              |
-| Resizing                  | Picture * Number       | Imagem  | Resize Picture by Number ratio                                                                                                                                     |
-| Horizontal scaling        | Picture *+ Number      | Imagem  | Resize Picture horizontally by Number ratio                                                                                                                        |
-| Vertical scaling          | Picture *&#124; Number | Imagem  | Resize Picture vertically by Number ratio                                                                                                                          |
+| Operação                | Sintaxe                | Retorna | Ação                                                                                                                                                                       |
+| ----------------------- | ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Concatenação horizontal | Foto1 + Foto2          | Imagem  | Adicionar Pict2 à direita da Pict1                                                                                                                                         |
+| Concatenação vertical   | Pict1 / Pict2          | Imagem  | Acrescentar Pict2 ao fundo de Pict1                                                                                                                                        |
+| Sobreposição exclusiva  | Pict1 & Pict2          | Imagem  | Sobrepõe Pict2 no topo de Pict1 (Pict2 em primeiro plano). Produz o mesmo resultado que `COMBINE PICTURES(pict3;pict1;Superimposition;pict2)`                              |
+| Sobreposição inclusiva  | Pict1 &#124; Pict2     | Imagem  | Sobrepõe Pict2 em Pict1 e devolve a máscara resultante se ambas as imagens tiverem o mesmo tamanho. Produz o mesmo resultado que `$equal:=Fotos iguais(Pict1;Pict2;Pict3)` |
+| Movimento horizontal    | Imagem + Número        | Imagem  | Mover imagem horizontalmente número pixels                                                                                                                                 |
+| Movimento vertical      | Imagem / Número        | Imagem  | Mover imagem em pixels do número vertical                                                                                                                                  |
+| Redimensionamento       | Imagem * Número        | Imagem  | Redimensionar imagem por proporção número                                                                                                                                  |
+| Horizontal scaling      | Picture *+ Number      | Imagem  | Resize Picture horizontally by Number ratio                                                                                                                                |
+| Vertical scaling        | Picture *&#124; Number | Imagem  | Resize Picture vertically by Number ratio                                                                                                                                  |
 
 **Notas:**
 
@@ -51,40 +51,40 @@ Most of the [4D picture management commands](https://doc.4d.com/4Dv18/4D/18/Pict
 
 ### Exemplos
 
-Horizontal concatenation
+Concatenação horizontal
 ```4d
  circle+rectangle //Place the rectangle to the right of the circle
  rectangle+circle //Place the circle to the right of the rectangle
 ```
 ![](assets/en/Concepts/concatHor.en.png) ![](assets/en/Concepts/concatHor2.en.png)
 
-Vertical concatenation
+Concatenação vertical
 ```4d
  circle/rectangle //Place the rectangle under the circle
  rectangle/circle //Place the circle under the rectangle
 ```
 ![](assets/en/Concepts/concatVer.en.png) ![](assets/en/Concepts/concatVer2.en.png)
 
-Exclusive superimposition
+Sobreposição exclusiva
 ```4d
 Pict3:=Pict1 & Pict2 // Superimposes Pict2 on top of  Pict1
 ```
 ![](assets/en/Concepts/superimpoExc.fr.png)
 
-Inclusive superimposition
+Sobreposição inclusiva
 ```4d
 Pict3:=Pict1|Pict2 // Recovers resulting mask from superimposing two pictures of the same size
 ```
 ![](assets/en/Concepts/superimpoInc.fr.png)
 
-Horizontal move
+Movimento horizontal
 ```4d
 rectangle+50 //Move the rectangle 50 pixels to the right
 rectangle-50 //Move the rectangle 50 pixels to the left
 ```
 ![](assets/en/Concepts/hormove.en.png)
 
-Vertical move
+Movimento vertical
 
 ```4d
 rectangle/50 //Move the rectangle down by 50 pixels
