@@ -42,7 +42,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 - [**Operadores de horas**](dt_time.md#time-operators)
 - [**Operadores de números**](dt_number.md#number-operators)
 - [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
-- [**Picture operators**](dt_picture.md#picture-operators)
+- [**Operadores Bitwise**](dt_picture.md#picture-operators)
 - [**Pointer operators**](dt_pointer.md#pointer-operators)
 - [**String operators**](dt_string.md#string-operators)
 
