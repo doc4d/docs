@@ -225,32 +225,32 @@ Usar notação de objeto simplifica o código 4D no manejo dos mesmos. Entretant
 - Escrita e leitura das propriedades de objetos (este exemplo compara a notação de objetos e anotação de comandos):
 
 ```4d
-  // Using the object notation
- C_OBJECT($myObj) //declares a 4D variable object
- $myObj:=New object //creates an object and assigns to the variable
+  // Usando a notação de objecto
+ C_OBJECT($myObj) //declara um objecto variável 4D
+ $myObj:=Novo objecto //cria um objecto e atribui à variável
  $myObj.age:=56
  $age:=$myObj.age //56
 
-  // Using the command notation
- C_OBJECT($myObj2) //declares a 4D variable object
- OB SET($myObj2;"age";42) //creates an object and adds the age property
- $age:=OB Get($myObj2;"age") //42
+  // Usando a notação de comando
+ C_OBJECT($myObj2) //declara um objecto variável 4D
+ OB SET($myObj2; "age";42) //cria um objecto e acrescenta a propriedade age
+ $age:=OB Get($myObj2; "age") //42
 
-  // Of course, both notations can be mixed
+  // Claro, ambas as notações podem ser misturadas
  C_OBJECT($myObj3)
- OB SET($myObj3;"age";10)
- $age:=$myObj3.age //10
+ OB SET($myObj3; "age";10)
+ $age:=$myObj3.idade //10
 ```
 
 - Criar uma propriedade e atribuir valores, incluindo objetos:
 
 ```4d
  C_OBJECT($Emp)
- $Emp:=New object
- $Emp.city:="London" //creates the city property and sets its value to "London"
- $Emp.city:="Paris" //modifies the city property
- $Emp.phone:=New object("office";"123456789";"home";"0011223344")
-  //creates the phone property and sets its value to an object
+ $Emp:=Novo objecto
+ $Emp.city:="London" //cria a propriedade da cidade e define o seu valor para "London"
+ $Emp.city:="Paris" //modifica a propriedade da cidade
+ $Emp.phone:=Novo objecto("office"; "123456789"; "home"; "0011223344")
+  //cria a propriedade do telefone e define o seu valor para um objecto
 ```
 
 - Obter um valor em um subobjeto é bem simples usando a notação de objeto:
@@ -262,12 +262,12 @@ Usar notação de objeto simplifica o código 4D no manejo dos mesmos. Entretant
 - É possível acessar as propriedades como strings usando o operador []
 
 ```4d
- $Emp["city"]:="Berlin" //modifies the city property
-  //this can be useful for creating properties through variables
+ $Emp["city"]:="Berlim" //modifica a propriedade da cidade
+  //isto pode ser útil para criar propriedades através de variáveis
  C_TEXT($addr)
- $addr:="address"
+ $addr:="endereço"
  For($i;1;4)
-    $Emp[$addr+String($i)]:=""
- End for
-  // creates 4 empty properties "address1...address4" in the $Emp object
+    $Emp[$addr+String($i)]:=""".
+ Fim para
+  // cria 4 propriedades vazias "address1...address4" no objecto $Emp
 ```
