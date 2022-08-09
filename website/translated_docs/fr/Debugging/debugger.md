@@ -76,14 +76,14 @@ La méthode s’arrête et vous retournez là où vous étiez avant son exécuti
 #### Bouton 'Exécuter et sortir'
 
 
-La méthode s’arrête comme lorsque vous cliquez sur Stopper exécution. The method that is executing when you click the **Abort and Edit** button opens in the Method Editor.
+La méthode s’arrête comme lorsque vous cliquez sur Stopper exécution. La méthode qui s'exécute lorsque vous cliquez sur le bouton **Abandonner et modifier** s'ouvre dans l'éditeur de méthode.
 > **Conseil** : Utilisez ce bouton lorsque vous connaissez les modifications à apporter à votre code, et le moment où elles doivent être effectuées pour pouvoir poursuivre le test de vos méthodes. Une fois vos modifications effectuées, ré-exécutez la méthode.
 
 #### Modifier
 
-La méthode s’arrête comme lorsque vous cliquez sur Stopper exécution. The method that is executing at the time you click the Edit button opens in the Method Editor.
+La méthode s’arrête comme lorsque vous cliquez sur Stopper exécution. La méthode qui s'exécute au moment où vous cliquez sur le bouton Édition s'ouvre dans l'éditeur de méthode.
 
-If you use this button to modify a method, the modifications are only effective the next time it executes.
+Si vous utilisez ce bouton pour modifier une méthode, les modifications ne seront effectives que la prochaine fois qu'elle sera exécutée.
 
 > **Tip:** Use this button when you know which changes are required in your code and when they don't interfere with the rest of the code to be executed or traced.
 
@@ -326,26 +326,26 @@ For more information on the Formula Editor, see the <a href="https://doc.4d.com/
 
 ## Source Code Pane
 
-The Source Code Pane shows the source code of the method or function currently being traced.
+Ce panneau affiche le code source de la méthode ou de la fonction en cours de traçage.
 
-This area also allows you to add or remove [**break points**](breakpoints.md).
+Cette zone vous permet également d'ajouter ou de supprimer les [**points de rupture**](breakpoints.md).
 
 ### Tool tip
 
-Hover your pointer over any expression to display a tool tip that indicates:
+Passez votre pointeur sur une expression pour afficher une info-bulle qui indique :
 
 * the declared type of the expression
 * the current value of the expression
 
 ![source-code-pane](assets/en/Debugging/sourceCodePane.png)
 
-This also works with selections:
+Cela fonctionne également avec les sélections :
 
 ![source-code-pane-tip](assets/en/Debugging/sourcePaneTip.png)
 
 ### Adding expressions to the Custom Watch Pane
 
-You can copy any selected expression from the Source Code Pane to the [Custom Watch Pane](#custom-watch-pane).
+Vous pouvez copier n'importe quelle expression sélectionnée de la palette de code source dans le [Custom Watch Pane](#custom-watch-pane).
 
 1. In the Source code pane, select the expression to evaluate
 2. Do one of the following:
@@ -355,15 +355,15 @@ You can copy any selected expression from the Source Code Pane to the [Custom Wa
 
 ### Program Counter
 
-The yellow arrow in the left margin of the Source Code pane is called the program counter. It marks the next line to be executed.
+La flèche jaune située dans la marge gauche du Code Source s'appelle le compteur de programme. Elle marque la prochaine ligne à exécuter.
 
-By default, the program counter line (also called the running line) is highlighted in the debugger. You can customize the highlight color in the [Methods page of the Preferences](Preferences/methods.md).
+Par défaut, la ligne du compteur de programme (également appelée ligne d'exécution) est mise en évidence dans le débogueur. Vous pouvez personnaliser la couleur de surbrillance dans la [page Méthodes des Préférences](Preferences/methods.md).
 
 #### Moving the program counter
 
-For debugging purposes, you can move the program counter for the method at the top of the call chain (the method currently executing). To do so, click and drag the yellow arrow to another line.
+À des fins de débogage, vous pouvez déplacer le compteur de programme de la méthode située au sommet de la chaîne d'appels (la méthode en cours d'exécution). Pour ce faire, cliquez et faites glisser la flèche jaune vers une autre ligne.
 
-This only tells the debugger to pursue tracing or executing from a different point. It does not execute lines or cancel their execution. All current settings, fields, variables, etc. are not impacted.
+Cela indique seulement au débogueur de poursuivre le traçage ou l'exécution à partir d'un point différent. Il n'exécute pas les lignes et n'annule pas leur exécution. Tous les paramètres, champs, variables, etc. courants ne sont pas affectés.
 
 Par exemple :
 
@@ -377,7 +377,7 @@ Par exemple :
   // ...
 ```
 
-Say the program counter is set to the line `If (This condition)`. When you click the **Step over** button, the program counter moves directly to the `DO_SOMETHING_ELSE` line. To examine the results of the `DO_SOMETHING` line, you can move the program counter to that line and execute it.
+Considérons que le compteur de programme est défini sur la ligne `Si (condition This)`. Lorsque vous cliquez sur le bouton **Step over** , le compteur du programme passe directement à la ligne `DO_SOMETHING_ELSE` . Pour examiner les résultats de la ligne `DO_SOMETHING` , vous pouvez déplacer le compteur de programme sur cette ligne et l'exécuter.
 
 ### Menu contexuel de la fenêtre d'évaluation des méthodes
 
@@ -401,12 +401,12 @@ Le menu contextuel de la Fenêtre d'évaluation des méthodes donne accès à pl
 
 ### Find Next/Previous
 
-Specific shortcuts allow you to find strings identical to the one selected:
+Des raccourcis spécifiques permettent de trouver des chaînes de caractères identiques à celle qui est sélectionnée :
 
 * To search for the next identical strings, press **Ctrl+E** (Windows) or **Cmd+E** (macOS)
 * To search for the previous identical strings, press **Ctrl+Shift+E** (Windows) or **Cmd+Shift+E** (macOS)
 
-The search is carried out only if you select at least one character in the Source code pane.
+La recherche s'effectue uniquement si vous sélectionnez au moins un caractère dans le volet Code source.
 
 ## Raccourcis
 
