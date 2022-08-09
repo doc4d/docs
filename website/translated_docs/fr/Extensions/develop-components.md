@@ -77,7 +77,7 @@ En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelable
 
 ![](assets/en/Concepts/shared-methods.png)
 
-Shared project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). Ces méthodes constituent les **points d’entrée** du composant.
+Les méthodes projet partagées peuvent être appelées dans le code du projet hôte (mais elles ne peuvent pas être modifiées dans l’éditeur de méthodes du projet hôte). Ces méthodes constituent les **points d’entrée** du composant.
 
 A l’inverse, pour des raisons de sécurité, par défaut un composant ne peut pas exécuter de méthode projet appartenant au projet hôte. Dans certains cas, vous pourrez avoir besoin d’autoriser un composant à accéder à des méthodes projet de votre projet hôte. In certain cases, you may need to allow a component to access the project methods of your host project.
 
@@ -103,7 +103,7 @@ component_method("host_method_name")
 
 ## Partage des classes et des fonctions
 
-By default, component classes and functions cannot be called from the 4D method editor of the host project. By default, component classes and functions cannot be called from the 4D Code Editor of the host project. Additionally, you can control how component classes and functions are suggested in the host method editor.
+Par défaut, les classes et fonctions des composants ne peuvent pas être appelées à partir de l'éditeur de méthodes 4D du projet hôte. By default, component classes and functions cannot be called from the 4D Code Editor of the host project. Vous pouvez également contrôler la manière dont les classes de composants et les fonctions sont suggérées dans l'éditeur de méthode hôte.
 
 ### Déclaration du namespace
 
