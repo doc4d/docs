@@ -402,7 +402,7 @@ Código similar utilizando la etiqueta `4DELSEIF`:
 <!--#4DENDIF-->
 ```
 
-This example of code inserted in a static HTML page displays a different label according the `vname#""` expression result:
+Este ejemplo de código insertado en una página HTML estática muestra una etiqueta diferente según el resultado de la expresión `vname#"`:
 
 ```html
 <BODY>
@@ -416,7 +416,7 @@ No name has been found.
 </BODY>
 ```
 
-This example inserts different pages depending on which user is connected:
+Este ejemplo inserta diferentes páginas dependiendo del usuario que esté conectado:
 
 ```html
 <!--#4DIF LoggedIn=False-->
@@ -435,21 +435,21 @@ This example inserts different pages depending on which user is connected:
 
 #### Sintaxis: `<!--#4DINCLUDE path-->`
 
-This tag is mainly designed to include an HTML page (indicated by the *path* parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). This lets you avoid conflicts related to meta tags present in the headers.
+Esta etiqueta está diseñada principalmente para incluir una página HTML (indicada por el parámetro *path*) en otra página HTML. Por defecto, sólo se incluye el cuerpo de la página HTML especificada, es decir, el contenido que se encuentra dentro de las etiquetas `<body>` y `</body>` (las etiquetas en sí no se incluyen). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
 
-However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
+Sin embargo, si la página HTML especificada no contiene etiquetas `<body>``</body>`, se incluye toda la página. Depende de usted verificar la consistencia de las meta-etiquetas.
 
-The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or loops (`<!--#4DLOOP-->`). It is very convenient to include banners according to a criteria or randomly. When including, regardless of the file name extension, 4D analyzes the called page and then inserts the contents (modified or not) in the page originating the `4DINCLUDE` call.
+El comentario `<!--#4DINCLUDE -->` es muy útil para las pruebas (`<!--#4DIF-->`) o los bucles (`<!--#4DLOOP-->`). Es muy conveniente incluir banners de acuerdo a un criterio o de forma aleatoria. Al incluir, independientemente de la extensión del nombre del archivo, 4D analiza la página llamada y luego inserta el contenido (modificado o no) en la página que origina la llamada `4DINCLUDE`.
 
-An included page with the `<!--#4DINCLUDE -->` comment is loaded in the Web server cache the same way as pages called via a URL or sent with the `WEB SEND FILE` command.
+Una página incluida con el comentario `<!--#4DINCLUDE -->` se carga en la caché del servidor web del mismo modo que las páginas llamadas a través de una URL o enviadas con el comando `WEB SEND FILE`.
 
-En *ruta*, coloque la ruta que va al documento a incluir. Warning: In the case of a `4DINCLUDE` call, the path is relative to the document being analyzed, that is, the "parent" document. Use the slash character (/) as a folder separator and the two dots (..) to go up one level (HTML syntax). When you use the `4DINCLUDE` tag with the `PROCESS 4D TAGS` command, the default folder is the project folder.
+En *path*, coloque la ruta que va al documento a incluir. Atención: en el caso de una llamada a `4DINCLUDE`, la ruta es relativa al documento analizado, es decir, al documento "padre". Utilice el carácter de barra (/) como separador de carpetas y los dos puntos (..) para subir un nivel (sintaxis HTML). Cuando se utiliza la etiqueta `4DINCLUDE` con el comando `PROCESS 4D TAGS`, la carpeta por defecto es la del proyecto.
 
-> You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
+> Puede modificar la carpeta por defecto utilizada por la etiqueta `4DINCLUDE` en la página actual, utilizando la etiqueta `<!--#4DBASE -->` (ver abajo).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
+El número de `<!--#4DINCLUDE path-->` dentro de una página es ilimitado. Sin embargo, las llamadas a `<!--#4DINCLUDE path-->` sólo pueden hacerse a un nivel. Esto significa que, por ejemplo, no se puede insertar `<!--#4DINCLUDE mydoc3.html-->` en el cuerpo de la página *mydoc2.html*, que es llamado por `<!--#4DINCLUDE mydoc2-->` insertado en *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
 
-In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
+En caso de error, el texto insertado es "`<!--#4DINCLUDE path-->` :El documento no puede abrirse".
 
 Ejemplos:
 
@@ -463,11 +463,11 @@ Ejemplos:
 
 ## 4DLOOP y 4DENDLOOP
 
-#### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
+#### Sintaxis: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
 
-This comment allows repetition of a portion of code as long as the condition is fulfilled. The portion is delimited by `<!--#4DLOOP-->` and `<!--#4DENDLOOP-->`.
+Este comentario permite la repetición de una porción de código siempre que se cumpla la condición. La parte está delimitada por `<!--#4DLOOP-->` y `<!--#4DENDLOOP-->`.
 
-The `<!--#4DLOOP condition-->` ... `<!--#4DENDLOOP-->` blocks can be nested. Like in 4D, each `<!--#4DLOOP condition-->` must match a `<!--#4DENDLOOP-->`.
+Los bloques `<!--#4DLOOP condition-->` ... `<!--#4DENDLOOP-->` pueden ser anidados. Como en 4D, cada `<!--#4DLOOP condition -->` debe coincidir con un `<!--#4DENDLOOP-->`.
 
 Hay cinco tipos de condiciones:
 
