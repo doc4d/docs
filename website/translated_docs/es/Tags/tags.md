@@ -402,7 +402,7 @@ Código similar utilizando la etiqueta `4DELSEIF`:
 <!--#4DENDIF-->
 ```
 
-This example of code inserted in a static HTML page displays a different label according the `vname#""` expression result:
+Este ejemplo de código insertado en una página HTML estática muestra una etiqueta diferente según el resultado de la expresión `vname#"`:
 
 ```html
 <BODY>
@@ -416,7 +416,7 @@ No name has been found.
 </BODY>
 ```
 
-This example inserts different pages depending on which user is connected:
+Este ejemplo inserta diferentes páginas dependiendo del usuario que esté conectado:
 
 ```html
 <!--#4DIF LoggedIn=False-->
@@ -435,21 +435,21 @@ This example inserts different pages depending on which user is connected:
 
 #### Sintaxis: `<!--#4DINCLUDE path-->`
 
-This tag is mainly designed to include an HTML page (indicated by the *path* parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). This lets you avoid conflicts related to meta tags present in the headers.
+Esta etiqueta está diseñada principalmente para incluir una página HTML (indicada por el parámetro *path*) en otra página HTML. Por defecto, sólo se incluye el cuerpo de la página HTML especificada, es decir, el contenido que se encuentra dentro de las etiquetas `<body>` y `</body>` (las etiquetas en sí no se incluyen). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
 
-However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
+Sin embargo, si la página HTML especificada no contiene etiquetas `<body>``</body>`, se incluye toda la página. Depende de usted verificar la consistencia de las meta-etiquetas.
 
-The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or loops (`<!--#4DLOOP-->`). It is very convenient to include banners according to a criteria or randomly. When including, regardless of the file name extension, 4D analyzes the called page and then inserts the contents (modified or not) in the page originating the `4DINCLUDE` call.
+El comentario `<!--#4DINCLUDE -->` es muy útil para las pruebas (`<!--#4DIF-->`) o los bucles (`<!--#4DLOOP-->`). Es muy conveniente incluir banners de acuerdo a un criterio o de forma aleatoria. Al incluir, independientemente de la extensión del nombre del archivo, 4D analiza la página llamada y luego inserta el contenido (modificado o no) en la página que origina la llamada `4DINCLUDE`.
 
-An included page with the `<!--#4DINCLUDE -->` comment is loaded in the Web server cache the same way as pages called via a URL or sent with the `WEB SEND FILE` command.
+Una página incluida con el comentario `<!--#4DINCLUDE -->` se carga en la caché del servidor web del mismo modo que las páginas llamadas a través de una URL o enviadas con el comando `WEB SEND FILE`.
 
-En *ruta*, coloque la ruta que va al documento a incluir. Warning: In the case of a `4DINCLUDE` call, the path is relative to the document being analyzed, that is, the "parent" document. Use the slash character (/) as a folder separator and the two dots (..) to go up one level (HTML syntax). When you use the `4DINCLUDE` tag with the `PROCESS 4D TAGS` command, the default folder is the project folder.
+En *path*, coloque la ruta que va al documento a incluir. Atención: en el caso de una llamada a `4DINCLUDE`, la ruta es relativa al documento analizado, es decir, al documento "padre". Utilice el carácter de barra (/) como separador de carpetas y los dos puntos (..) para subir un nivel (sintaxis HTML). Cuando se utiliza la etiqueta `4DINCLUDE` con el comando `PROCESS 4D TAGS`, la carpeta por defecto es la del proyecto.
 
-> You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
+> Puede modificar la carpeta por defecto utilizada por la etiqueta `4DINCLUDE` en la página actual, utilizando la etiqueta `<!--#4DBASE -->` (ver abajo).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the *mydoc2.html* body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
+El número de `<!--#4DINCLUDE path-->` dentro de una página es ilimitado. Sin embargo, las llamadas a `<!--#4DINCLUDE path-->` sólo pueden hacerse a un nivel. Esto significa que, por ejemplo, no se puede insertar `<!--#4DINCLUDE mydoc3.html-->` en el cuerpo de la página *mydoc2.html*, que es llamado por `<!--#4DINCLUDE mydoc2-->` insertado en *mydoc1.html*. Además, 4D verifica que las inclusiones no son recursivas.
 
-In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
+En caso de error, el texto insertado es "`<!--#4DINCLUDE path-->` :El documento no puede abrirse".
 
 Ejemplos:
 
@@ -463,19 +463,19 @@ Ejemplos:
 
 ## 4DLOOP y 4DENDLOOP
 
-#### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
+#### Sintaxis: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
 
-This comment allows repetition of a portion of code as long as the condition is fulfilled. The portion is delimited by `<!--#4DLOOP-->` and `<!--#4DENDLOOP-->`.
+Este comentario permite la repetición de una porción de código siempre que se cumpla la condición. La parte está delimitada por `<!--#4DLOOP-->` y `<!--#4DENDLOOP-->`.
 
-The `<!--#4DLOOP condition-->` ... `<!--#4DENDLOOP-->` blocks can be nested. Like in 4D, each `<!--#4DLOOP condition-->` must match a `<!--#4DENDLOOP-->`.
+Los bloques `<!--#4DLOOP condition-->` ... `<!--#4DENDLOOP-->` pueden ser anidados. Como en 4D, cada `<!--#4DLOOP condition -->` debe coincidir con un `<!--#4DENDLOOP-->`.
 
 Hay cinco tipos de condiciones:
 
 ### `<!--#4DLOOP [table]-->`
 
-This syntax makes a loop for each record from the table current selection in the current process. The code portion located between the two comments is repeated for each current selection record.
+Esta sintaxis hace un bucle para cada registro de la tabla selección actual en el proceso actual. La parte de código situada entre los dos comentarios se repite para cada registro de selección actual.
 
-> When the `4DLOOP` tag is used with a table, records are loaded in "Read only" mode.
+> Cuando se utiliza la etiqueta `4DLOOP` con una tabla, los registros se cargan en modo "Sólo lectura".
 
 El código siguiente:
 
@@ -497,7 +497,7 @@ El código siguiente:
 
 ### `<!--#4DLOOP array-->`
 
-Esta sintaxis hace un bucle para cada elemento del array. The array current item is increased when each code portion is repeated.
+Esta sintaxis hace un bucle para cada elemento del array. El elemento actual del array se incrementa cuando se repite cada porción de código.
 
 > Esta sintaxis no se puede utilizar con arrays de dos dimensiones. En este caso, es mejor combinar un método con bucles anidados.
 
@@ -520,9 +520,9 @@ El siguiente ejemplo de código:
 
 ### `<!--#4DLOOP method-->`
 
-This syntax makes a loop as long as the method returns `True`. El método toma un tipo de parámetro Long Integer. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
+Esta sintaxis hace un bucle siempre que el método devuelva `True`. El método toma un tipo de parámetro Long Integer. Primero se llama con el valor 0 para permitir una etapa de inicialización (si es necesario); luego se llama con los valores 1, luego 2, luego 3 y así sucesivamente, siempre que devuelva `True`.
 
-For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). Si la autenticación es correcta, se procederá a la etapa de inicialización.
+Por razones de seguridad, dentro de un proceso web, el método base de datos `On Web Authentication` puede ser llamado una vez justo antes de la etapa de inicialización (ejecución del método con 0 como parámetro). Si la autenticación es correcta, se procederá a la etapa de inicialización.
 
 `C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
@@ -553,7 +553,7 @@ El método `my_method` puede ser el siguiente:
 ```4d
  C_LONGINT($1)
  C_BOOLEAN($0)
- If($1=0) `Initialisation
+ If($1=0) `Inicialización
     $0:=True
  Else
     If($1<50)
@@ -568,7 +568,7 @@ El método `my_method` puede ser el siguiente:
 
 ### `<!--#4DLOOP expression-->`
 
-With this syntax, the `4DLOOP` tag makes a loop as long as the *expression* returns `True`. The expression can be any valid Boolean expression and must contain a variable part to be evaluated in each loop to avoid infinite loops.
+Con esta sintaxis, la etiqueta`4DLOOP` realiza un bucle siempre que la *expression* devuelva `True`. La expresión puede ser cualquier expresión booleana válida y debe contener una parte variable a evaluar en cada bucle para evitar bucles infinitos.
 
 Por ejemplo, el siguiente código:
 
@@ -591,9 +591,9 @@ Por ejemplo, el siguiente código:
 
 ### `<!--#4DLOOP pointerArray-->`
 
-In this case, the `4DLOOP` tag works like it does with an array: it makes a loop for each element of the array referenced by the pointer. The current array element is increased each time the portion of code is repeated.
+En este caso, la etiqueta `4DLOOP` funciona como lo hace con un array: hace un bucle por cada elemento del array referenciado por el puntero. El elemento actual del array se incrementa cada vez que se repite la porción de código.
 
-This syntax is useful when you pass an array pointer as a parameter to the `PROCESS 4D TAGS` command.
+Esta sintaxis es útil cuando se pasa un puntero de array como parámetro al comando `PROCESS 4D TAGS`.
 
 Ejemplo:
 
@@ -609,25 +609,25 @@ Ejemplo:
   // $output = "elements = hello world "
 ```
 
-In case of an interpretation error, the text "`<!--#4DLOOP expression-->`: description" is inserted instead of the contents located between `<!--#4DLOOP -->` and `<!--#4DENDLOOP-->`.
+En caso de error de interpretación, se inserta el texto "`<!--#4DLOOP expression-->`: descripción" en lugar del contenido situado entre `<!--#4DLOOP -->` y `<!--#4DENDLOOP-->`.
 
 Se pueden mostrar los siguientes mensajes:
 
 - Tipo de expresión inesperado (error estándar);
 - Nombre de tabla incorrecto (error en el nombre de la tabla);
-- An array was expected (the variable is not an array or is a two dimension array);
+- Se esperaba un array (la variable no es un array o es un array de dos dimensiones);
 - El método no existe;
 - Error de sintaxis (cuando el método se está ejecutando);
-- Access error (you do not have the appropriate access privileges to access the table or the method).
-- 4DENDLOOP expected (the `<!--#4DENDLOOP-->` number does not match the `<!--#4DLOOP -->`).
+- Error de acceso (no tiene los privilegios de acceso adecuados para acceder a la tabla o al método).
+- 4DENDLOOP esperado (el número `<!--#4DENDLOOP-->` no coincide con el `<!--#4DLOOP -->`).
 
 ## 4DSCRIPT/
 
-#### Syntax: `<!--#4DSCRIPT/MethodName/MyParam-->`
+#### Sintaxis: `<!--#4DSCRIPT/MethodName/MyParam-->`
 
-The `4DSCRIPT` tag allows you to execute 4D methods when processing the template. The presence of the `<!--#4DSCRIPT/MyMethod/MyParam-->` tag as an HTML comment launches the execution of the `MyMethod` method with the `Param` parameter as a string in `$1`.
+La etiqueta `4DSCRIPT` permite ejecutar métodos 4D al procesar la plantilla. La presencia de la etiqueta `<!--#4DSCRIPT/MyMethod/MyParam-->` como comentario HTML lanza la ejecución del método `MyMethod` con el parámetro `Param` como cadena en `$1`.
 
-> If the tag is called in the context of a Web process, when the page is loaded, 4D calls the `On Web Authentication` database method (if it exists). Si devuelve True, 4D ejecuta el método.
+> Si la etiqueta se llama en el contexto de un proceso web, cuando se carga la página, 4D llama al método base de datos `On Web Authentication` (si existe). Si devuelve True, 4D ejecuta el método.
 
 El método debe devolver el texto en `$0`. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the `4DHTML` tag).
 
