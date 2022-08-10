@@ -108,7 +108,7 @@ Locked columns and static columns are two separate and independent functionaliti
 
 Estas propiedades interactúan de la siguiente manera:
 
-*   If you set columns that are only static, they cannot be moved.
+*   Si define columnas que sólo son estáticas, no se pueden mover.
 
 *   If you set columns that are locked but not static, you can still change their position freely within the locked area. Sin embargo, una columna bloqueada no puede moverse fuera de esta área bloqueada.
 
