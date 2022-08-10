@@ -502,7 +502,7 @@ A module is a built-in code library used by 4D to control specific features. If 
 
 Los siguientes módulos opcionales pueden ser deseleccionados:
 
-- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
+- **CEF**: Librería integrada Chromium. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
 - **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
 > If you deselect MeCab for an application in Japanese language used on heterogeneous platforms, make sure to deselect it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise major malfunctions will occur in the application.
 
@@ -705,7 +705,7 @@ The connection procedure for merged client applications supports cases where the
     - If the user clicks on the **Quit** button, the client application quits.
 4. If the connection is successful, the client application saves this connection information in the application's user preferences folder for future use.
 
-The whole procedure is described in the following diagram:
+Todo el procedimiento se describe en el siguiente diagrama:
 
 ![](assets/en/Desktop/client-connect.png)
 
