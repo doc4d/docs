@@ -92,7 +92,7 @@ When you make a project method invisible, it is still available to database prog
 
 ##### Compartido por los componentes y la base local
 
-This attribute is used within the framework of components. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases.
+Este atributo se utiliza en el marco de los componentes. When it is checked, it indicates that the method will be available to components when the application is used as the host database. On the other hand, when the application is used as a component, the method will be available to the host databases.
 
 For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
 
@@ -154,7 +154,7 @@ This option is used to reinforce 4D Web server security: when it is not checked,
 
 In the Explorer, project methods with this attribute are given a specific icon ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png).
 
-For security reasons, this option is unchecked by default. Each method that can be executed using the special Web URL or tags must be indicated individually.
+Por razones de seguridad, esta opción está desmarcada por defecto. Each method that can be executed using the special Web URL or tags must be indicated individually.
 
 ##### SQL
 
@@ -188,7 +188,7 @@ Utilice el carácter comodín @ para ayudar a definir los grupos de métodos:
 - To designate methods whose names begin with..., type @ at the end of the string. Por ejemplo: `web@`
 - To designate methods whose names contain..., type @ in the middle of the string. Por ejemplo: `web@write`
 - To designate methods whose names end with..., type @ at the beginning of the string. Por ejemplo: `@escribir`
-- To designate all of the methods, just type @ in the area.
+- Para designar todos los métodos, basta con escribir @ en el área.
 
 **Notas:**
 - La búsqueda no tiene en cuenta las mayúsculas/minúsculas.
