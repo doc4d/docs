@@ -130,7 +130,7 @@ Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](.
 | ----- | ------------------------------ | ---------------------------------------------------------------------------------------- |
 | 0     | wdl disable                    | Los debug logs Web HTTP son desactivados                                                 |
 | 1     | wdl enable without body        | Web HTTP debug log is enabled without body parts (body size is provided in this case)    |
-| 3     | wdl enable with response body  | Web HTTP debug log is enabled with body part in response only                            |
+| 3     | wdl enable with response body  | Los debug logs Web HTTP son activados con la partes del cuerpo únicamente                |
 | 5     | wdl enable with request body   | Los debug logs Web HTTP son activados con la partes del cuerpo en la petición únicamente |
 | 7     | wdl enable with all body parts | Web HTTP debug log is enabled with body parts in response and request                    |
 
@@ -358,11 +358,11 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 ## Sesiones Keep
 
-| Puede ajustarse con           | Nombre                                                                                                                   | Comentarios                       |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
-| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                       |                                   |
-| `WEB SET OPTION`              | `Web keep session`                                                                                                       |                                   |
-| Caja de diálogo de parámetros | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | sólo en los proyectos convertidos |
+| Puede ajustarse con           | Nombre                                                                                                                        | Comentarios                       |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                            |                                   |
+| `WEB SET OPTION`              | `Web keep session`                                                                                                            |                                   |
+| Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones Legacy (sesiones de proceso único)](../settings/web.md#legacy-sessions-single-process-sessions) | sólo en los proyectos convertidos |
 
 Legacy session management enabling status for the 4D web server (deprecated).
 
@@ -486,7 +486,7 @@ True if PFS is available on the web server (see [TLS](Admin/tls.md#perfect-forwa
 
 > This option is only available when **No sessions** option is checked.
 
-Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
+Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Una vez atendida la petición, este proceso se cierra.
 
 When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. Al eliminar la etapa de creación del proceso, se mejora el rendimiento del servidor web.
 
@@ -662,7 +662,7 @@ The **Use Keep-Alive Connections** option enables or disables keep-alive TCP con
 
 The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
 
-En algunos casos, se pueden invocar otras funciones internas optimizadas. Keep-alive connections are useful mainly for static pages.
+En algunos casos, se pueden invocar otras funciones internas optimizadas. Las conexiones persistentes son útiles principalmente para las páginas estáticas.
 
 Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 
