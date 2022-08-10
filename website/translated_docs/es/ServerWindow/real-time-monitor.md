@@ -22,7 +22,7 @@ La siguiente información se ofrece para cada línea:
     + **Sub-operations** (if any): Dependent operations of the selected operation (e.g. deleting related records before a parent record).
     + **Process Details**: Additional information concerning the table, field, process or client, depending on the type of operation
 
-> Real-time monitoring page uses the [`GET ACTIVITY SNAPSHOT`](https://doc.4d.com/4dv19/help/command/en/page1277.html) command internally. More information can be found in this command description.
+> Real-time monitoring page uses the [`GET ACTIVITY SNAPSHOT`](https://doc.4d.com/4dv19/help/command/en/page1277.html) command internally. Puede encontrar más información en la descripción de este comando.
 
 La página está activa y se actualiza permanentemente en cuanto se muestra. It should be noted that its operation can significantly slow the execution of the application. It is possible to suspend the updating of this page in one of the following ways:
 
