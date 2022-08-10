@@ -72,7 +72,7 @@ When handled through the code, the datastore is an object whose properties are a
 - the local datastore, based on the current 4D database, returned by the `ds` command (the main datastore).
 - one or more remote datastore(s) exposed as REST resources in remote 4D databases, returned by the `Open datastore` command.
 
-A datastore references only a single local or remote database.
+Un datastore hace referencia sólo a una base de datos local o remota.
 
 El objeto datastore en sí no puede ser copiado como un objeto:
 
@@ -100,7 +100,7 @@ Una dataclass es el equivalente de una tabla. It is used as an object model and 
 
 All dataclasses in a 4D project are available as a property of the `ds` datastore. For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each exposed table that you want to be exposed as dataclass in the datastore.
 
-For example, consider the following table in the 4D structure:
+Por ejemplo, considere la siguiente tabla en la estructura 4D:
 
 ![](assets/en/ORDA/companyTable.png)
 
