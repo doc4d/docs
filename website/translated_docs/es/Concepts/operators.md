@@ -67,7 +67,7 @@ $a+=2 // $a=3
 ```
 
 
-The following compound assignment operators are supported:
+Se admiten los siguientes operadores de asignación compuestos:
 
 | Operador       | Sintaxis           | Asigna | Ejemplo                                                                        |
 | -------------- | ------------------ | ------ | ------------------------------------------------------------------------------ |
