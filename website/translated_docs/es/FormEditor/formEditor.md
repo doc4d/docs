@@ -432,7 +432,7 @@ Once a CSS preview mode is selected, objects are automatically displayed with th
 
 ### Soporte CSS en la Lista de Propiedades
 
-In CSS Preview mode, if the value of an attribute has been defined in a style sheet, the attribute's name will appear with a CSS icon displayed next to it in the Property List. For example, the attribute values defined in this style sheet:
+In CSS Preview mode, if the value of an attribute has been defined in a style sheet, the attribute's name will appear with a CSS icon displayed next to it in the Property List. Por ejemplo, los valores de los atributos definidos en esta hoja de estilo:
 
 ```4d
 .myButton {
