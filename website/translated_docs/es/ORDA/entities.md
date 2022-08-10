@@ -26,7 +26,7 @@ $myEntity.name:="Dupont" //assign 'Dupont' to the 'name' attribute
 $myEntity.firstname:="John" //assign 'John' to the 'firstname' attribute
 $myEntity.save() //save the entity
 ```
-> An entity is defined only in the process where it was created. You cannot, for example, store a reference to an entity in an interprocess variable and use it in another process.
+> Una entidad se define sólo en el proceso en el que fue creada. You cannot, for example, store a reference to an entity in an interprocess variable and use it in another process.
 
 ## Entidades y referencias
 
