@@ -80,7 +80,7 @@ Una vez a la semana, el archivo se envía automáticamente por la red a 4D. A co
 > Si el archivo no ha podido ser enviado por alguna razón, no obstante se elimina y no se muestra ningún mensaje de error del lado de 4D Server.
 
 
-## Disabling data collection in client/server built applications
+## Desactivar la recopilación de datos en las aplicaciones cliente/servidor integradas
 
 You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page).
 
