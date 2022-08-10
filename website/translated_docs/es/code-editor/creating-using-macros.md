@@ -11,7 +11,7 @@ A macro-command is a section of 4D code that is permanently accessible and that 
 
 Las macros se almacenan en uno o varios archivos en formato XML (texto). They can be placed in a Code Editor list; they can also be called using the context menu of the editor or using the autocomplete function.
 
-Las macros 4D están escritas en formato XML. You can use the 4D default macro file as is or modify it.
+Las macros 4D están escritas en formato XML. Puede utilizar el archivo de macros por defecto de 4D tal como está o modificarlo.
 
 ## Ubicación de las macros
 
@@ -21,7 +21,7 @@ La carpeta "Macros v2" puede ser ubicada:
 
 - En la carpeta 4D activa de la máquina. Las macros son compartidas para todas las bases. **Note:** The location of the active 4D folder varies according to the operating system used. For more information, refer to the description of the [Get 4D folder](https://doc.4d.com/4Dv19R4/4D/19-R4/Get-4D-folder.301-5739515.en.html) command in the 4D *Language Reference* manual.
 - Junto al archivo de estructura de la base. Las macros sólo se cargan para esta estructura.
-- For components: in the **Components** folder of the database. Macros are then only loaded if the component is installed.
+- For components: in the **Components** folder of the database. Las macros sólo se cargan si el componente está instalado.
 
 These three locations can be used simultaneously: it is possible to install a "Macros v2" folder in each location. The macros will be loaded in the following order: 4D folder, structure file, component 1... component X.
 
@@ -36,7 +36,7 @@ You can modify this file or the contents of the folder subsequently as desired (
 
 You can add customized macros in the "Macros.xml" file using a standard text editor or by programming. You can also add XML files of customized macros in this folder.
 
-In local mode, the macros file can be open while using 4D. La lista de macros disponibles se actualiza en cada evento de activación de 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
+En modo local, el archivo de macros puede abrirse mientras se utiliza 4D. La lista de macros disponibles se actualiza en cada evento de activación de 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
 
 No se muestran macros vacías o erróneas.
 
@@ -78,8 +78,8 @@ Aquí está la lista de etiquetas y su modo de uso:
 |                                  | "on_save" and "on_close" can be used jointly --- in other words, both of these events are generated when a modified method is closed. On the other hand, "on_create" and "on_load" are never generated in a consecutive manner. This attribute can be used, for example, to preformat methods when they are created (comments in header area) or to record information such as the date and time when they are closed.                                                                               |
 |                                  | - version: Used to activate the new mode of supporting text selections for the macro (see the "About the `<method>` Tag" section below). Para activar este nuevo modo, pase el valor "2". If you omit this attribute or pass version="1", the former mode is kept.                                                                                                                                                                                                                                 |
 |                                  | - in_toolbar: Boolean indicating if the macro must be present in the menu of the Macro button of the toolbar. Valores= "true" (por defecto) o "false".                                                                                                                                                                                                                                                                                                                                                   |
-| `<selection/>`             | Tag replaced by the selected text when the macro is inserted. La selección puede estar vacía.                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `<text> </text>`     | Start and end of code that must be inserted in the method. A carriage return will be added before and after the code.                                                                                                                                                                                                                                                                                                                                                                                    |
+| `<selection/>`             | Etiqueta reemplazada por el texto seleccionado cuando la macro se inserta. La selección puede estar vacía.                                                                                                                                                                                                                                                                                                                                                                                               |
+| `<text> </text>`     | Inicio y fin del código que debe insertarse en el método. Se añadirá un retorno de carro antes y después del código.                                                                                                                                                                                                                                                                                                                                                                                     |
 | `<method> </method>` | Start and end of the name of the project method and its (optional) parameter. El método se ejecuta cuando se llama a la macro. Puede pasar un parámetro de la forma ("param1;param2;..."). This parameter will be received in the method using the variables $1, $2, etc. For additional information about this tag, refer to the "About the `<method>` Tag" section below.                                                                                                                        |
 | `<caret/>`                 | Location of the insertion point in the code after the macro has been inserted.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `<user_4D/>`               | Etiqueta reemplazada por el nombre del usuario 4D actual.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -123,7 +123,7 @@ The `<method>` tag allows you to generate and use macro-commands that execute 4D
 
 `<method>MyMethod("<method_name/>")</method>`
 
-The code of a called method is executed in a new process. Este proceso se cierra una vez se ejecuta el método.
+El código de un método llamado se ejecuta en un nuevo proceso. Este proceso se cierra una vez se ejecuta el método.
 
 > **Note:** The structure process remains frozen until the called method execution is completed. You must make sure that the execution is quick and that there is no risk of it blocking the application. If this occurs, use the **Ctrl+F8** (Windows) or **Command+F8** (Mac OS) command to "kill" the process.
 
@@ -161,7 +161,7 @@ It is recommended to manage text selections using the [GET MACRO PARAMETER](htt
 
 `<macro name="MyMacro" version="2">`<br/> `--- Text of the macro ---`<br/> `</macro>`
 
-If you do not pass this attribute, the previous mode is kept.
+Si no se pasa este atributo, el modo anterior se mantiene.
 
 ### Incompatibilidades relacionadas con el estándar XML
 
