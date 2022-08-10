@@ -520,11 +520,11 @@ The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns
 
 If you use the *mode* (text) parameter, pass the opening mode for the file handle:
 
-| *mode*   | Descripción                                                                                                                                                                                                                 |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "read"   | (Default) Creates a file handle to read values from the file. If the file does not exist on disk, an error is returned. You can open as many file handles as you want in "read" mode on the same File object.               |
-| "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "write" mode on the same File object. |
-| "append" | Creates a file handle to write values to the file (starting at the end of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "append" mode on the same File object.      |
+| *mode*   | Descripción                                                                                                                                                                                                                     |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "read"   | (Por defecto) Crea un manejador de archivos para leer los valores del archivo. Si el archivo no existe en el disco, se devuelve un error. You can open as many file handles as you want in "read" mode on the same File object. |
+| "write"  | Creates a file handle to write values to the file (starting at the beginning of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "write" mode on the same File object.     |
+| "append" | Creates a file handle to write values to the file (starting at the end of the file content). Si el archivo no existe en el disco, se crea. You can open only one file handle in "append" mode on the same File object.          |
 
 > El valor *mode* distingue entre mayúsculas y minúsculas.
 
@@ -537,7 +537,7 @@ If you use the *options* (object) parameter, you can pass more options for the f
 | `.breakModeRead`  | Text or Number | Modo de procesamiento de los saltos de línea utilizados al leer el archivo (ver más abajo)                                                | "native" or 1 |
 | `.breakModeWrite` | Text or Number | Modo de procesamiento de los saltos de línea utilizados al escribir en el archivo (ver abajo)                                             | "native" or 1 |
 
-The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. You can use one of the following values (text or number):
+The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. Puede utilizar uno de los siguientes valores (texto o número):
 
 | Break mode as text | Break mode as number (constant)   | Descripción                                                                                                                                                    |
 | ------------------ | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
