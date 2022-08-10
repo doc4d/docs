@@ -82,7 +82,7 @@ You can display the following lists of items in the lists area of the Code Edito
 - **Listas**: nombres de listas.
 - **All plug-in commands**: Commands for all the plug-ins installed in the database (if any), classified by theme in the form of a hierarchical list.
 - **SQL Keywords**: set of keywords recognized by the 4D SQL syntax parser. This list includes commands (e.g. SELECT), clauses (e.g. WHERE) as well as functions (ABS).
-- **SQL Functions**: 4D SQL functions.
+- **Funciones SQL**: Funciones SQL 4D.
 
 **Note:** Except for the Macros element, all the lists are in alphabetical order.
 
@@ -97,7 +97,7 @@ Los siguientes parámetros se almacenan en la plantilla:
 - Ubicación y contenido de cada lista
 - Ancho relativo de cada lista
 
-To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. Si ya existe una plantilla anterior, se sustituye.
+To save a Code Editor window as a template, choose **Method** > **Save As Template**. La plantilla se guarda inmediatamente (no aparece ningún diálogo). It is stored in the **Preferences** of the 4D application. Si ya existe una plantilla anterior, se sustituye.
 
 
 ## Break points area
@@ -133,7 +133,7 @@ The status bar located at the bottom right part of the editor window displays th
 
 The Code Editor uses display conventions (style, color) for the syntax elements. You can [customize these conventions](#customizing-the-editing-area). As you type, when you validate your entry, 4D evaluates the text of the line and applies the appropriate display format. 4D also indents each line to its proper level in relation to the preceding line when you use programming structures (If, End if...).
 
-You can use the arrow keys to move from line to line quickly. Using the arrow keys to move across several lines is quicker than clicking because the editor delays evaluating the line for errors.
+Puede utilizar las teclas de flecha para moverse rápidamente de línea a línea. Using the arrow keys to move across several lines is quicker than clicking because the editor delays evaluating the line for errors.
 
 Under Windows, the code editor includes an Input Code Editor (IME) to facilitate code editing on Japanese or Chinese systems.
 
@@ -168,7 +168,7 @@ In the Code Editor, the drag-and-drop mechanism is activated as soon as a portio
 
 ### Entrada en varias líneas
 
-You can write a single statement on several lines by terminating each line of the statement with a backslash `\` character. 4D considerará todas las líneas a la vez. For example, both the following statements are equivalent:
+You can write a single statement on several lines by terminating each line of the statement with a backslash `\` character. 4D considerará todas las líneas a la vez. Por ejemplo, ambas sentencias son equivalentes:
 
 ![](assets/en/code-editor/entry-several-lines.png)
 
@@ -201,7 +201,7 @@ In addition to the standard copy-paste operation, 4D offers two additional funct
 
     ![](assets/en/code-editor/last-clipboard-values-2.png)
 
-    The first few words of the copied or cut items are displayed. Seleccione un elemento para insertarlo en la ubicación actual del cursor.
+    Se muestran las primeras palabras de los elementos copiados o cortados. Seleccione un elemento para insertarlo en la ubicación actual del cursor.
 
 * Nine additional numbered clipboards are available and can be employed directly using the buttons of the Code Editor toolbar or using keyboard shortcuts:
 
@@ -288,7 +288,7 @@ Once created, property names are stored in an internal global list and are avail
 
 The list of suggestions is dynamically updated while you edit code. When switching between windows, new/edited property names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
 
-When the database is restarted, the list is reinitialized.
+Cuando se reinicia la base de datos, la lista se reinicia.
 
 > You can disable the automatic display of object properties in **Preferences** > **Methods** > **suggestions**.
 
@@ -324,8 +324,8 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 | [Shift]+[flecha arriba]                             | Create and enlarge a selection, line by line, from the bottom to the top                                                               |
 | [Ctrl]+[Shift]+[flecha derecha]                     | Crear y ampliar la selección, palabra por palabra, desde la derecha                                                                    |
 | [Ctrl]+[Shift]+[flecha izquierda]                   | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                  |
-| [Ctrl]+[flecha derecha]                             | Move the insertion point, word by word, from left to right                                                                             |
-| [Ctrl]+[left arrow]                                 | Move the insertion point, word by word, from right to left                                                                             |
+| [Ctrl]+[flecha derecha]                             | Mover el punto de inserción, palabra por palabra, de izquierda a derecha                                                               |
+| [Ctrl]+[left arrow]                                 | Mover el punto de inserción, palabra por palabra, de derecha a izquierda                                                               |
 | [Home]                                              | Colocar el punto de inserción al comienzo de la línea                                                                                  |
 | [End]                                               | Coloca el punto de inserción al final de la línea                                                                                      |
 | [Ctrl]+[Home]                                       | Place the insertion point at the beginning of the method                                                                               |
@@ -345,7 +345,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 ![](assets/en/code-editor/incorrect-expression-message.png)
 
-When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method, class or function is marked as having improper syntax, check and fix the entry. If the line becomes correct, 4D removes the error symbol. Al guardar o cerrar la ventana, se valida todo el método. You can also force validation by pressing the **Enter** key.
+When entering code, you can immediately check the syntax of the current line (without advancing to the next line) by pressing the **Enter** key on the numeric keypad. 4D evaluates the line, formats it, marks any errors, and places the insertion point at the end of the line. When a line of a method, class or function is marked as having improper syntax, check and fix the entry. Si la línea es correcta, 4D elimina el símbolo de error. Al guardar o cerrar la ventana, se valida todo el método. You can also force validation by pressing the **Enter** key.
 
 When the method, class or function is validated, 4D checks for:
 
