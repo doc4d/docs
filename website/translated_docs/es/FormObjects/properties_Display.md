@@ -127,7 +127,7 @@ If the user enters a negative number, the leftmost character is displayed as a m
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
-Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. Si el usuario introduce 26, el campo muestra 26.
+Suppose you use the format ##0 to display three digits. Si el usuario no introduce nada en el campo, el campo muestra 0. Si el usuario introduce 26, el campo muestra 26.
 
 
 ### Caracteres separadores
@@ -247,9 +247,9 @@ The following table shows how different formats affect the display of numbers. T
 
 #### Gramática JSON
 
-| Nombre       | Tipos de datos | Valores posibles                                               |
-| ------------ | -------------- | -------------------------------------------------------------- |
-| numberFormat | cadena         | Numbers (including a decimal point or minus sign if necessary) |
+| Nombre       | Tipos de datos | Valores posibles                                                       |
+| ------------ | -------------- | ---------------------------------------------------------------------- |
+| numberFormat | cadena         | Números (incluyendo un punto decimal o un signo menos si es necesario) |
 
 #### Objetos soportados
 
@@ -443,7 +443,7 @@ Permite que un objeto casilla de selección acepte un tercer estado. La variable
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. Si se elige, se muestran los siguientes valores:
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
-*   2 (or any value >0) = semi-checked box (third state). Para la entrada de datos, este estado devuelve el valor 2.
+*   2 (o cualquier valor >0) = caja semi-marcada (tercer estado). Para la entrada de datos, este estado devuelve el valor 2.
 *   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
@@ -510,7 +510,7 @@ The Truncate with ellipsis option is enabled by default and can be specified wit
 
 The Truncate with ellipsis property can be applied to Boolean type columns; however, the result differs depending on the [cell format](#display-type):
 - For Pop-up type Boolean formats, labels are truncated with an ellipsis,
-- For Check box type Boolean formats, labels are always clipped.
+- Para los formatos booleanos de tipo casilla de verificación, las etiquetas siempre se recortan.
 
 #### Gramática JSON
 
@@ -533,7 +533,7 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 This property allows hiding the object in the Application environment.
 
-You can handle the Visibility property for most form objects. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
+Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
 
 #### Visibilidad automática en los formularios lista
 
@@ -604,7 +604,7 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 `Gramática JSON: "automatic"`
 
 - In single-line areas, words located at the end of lines are truncated and there are no line returns.
-- In multiline areas, 4D carries out automatic line returns.
+- En áreas multilíneas, 4D realiza retornos de línea automáticos.
 
 ![](assets/en/FormObjects/wordwrap1.png)
 
