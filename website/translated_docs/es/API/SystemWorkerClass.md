@@ -174,7 +174,7 @@ $sys.postMessage("This is a postMessage")
 $sys.closeInput()
 ```
 
-5. To allow the user to open an external document on Windows:
+5. Para permitir al usuario abrir un documento externo en Windows:
 
 ```4d
 $docname:=Select document("";"*.*";"Elija el archivo a abrir";0)
