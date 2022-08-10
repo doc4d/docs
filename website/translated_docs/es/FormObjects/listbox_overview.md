@@ -111,7 +111,7 @@ When the data source is an entity selection, any modifications made on the list 
 When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the *Collections* theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por ejemplo:
 
 ```4d
-myCol:=myCol.push("new value") //display new value in list box
+myCol:=myCol.push("new value") //mostrar el nuevo valor en el list box
 ```
 
 
