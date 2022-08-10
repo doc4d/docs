@@ -146,13 +146,13 @@ Enables automatic insertion of () and closing braces while typing code. Esta opc
 
 #### Correspondencia \[]\(){}
 
-Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. Las siguientes opciones están disponibles:
+Define la señalización gráfica de las llaves correspondientes en el código. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. Las siguientes opciones están disponibles:
 
 - **Ninguno**: sin señales
 - **Rectangle** (default): Braces surrounded by a black line  
   ![](assets/en/Preferences/optionsRectangle.png)
 - **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
-- **Bold**: Braces displayed in bold.
+- **Negrita**: las llaves aparecen en negrita.
 
 #### Resaltado de las variables y campos
 
