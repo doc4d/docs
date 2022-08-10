@@ -1899,7 +1899,7 @@ La retrollamada recibe los siguientes parámetros:
     - *$1.value2* (todo tipo): segundo valor del elemento a comparar
     - $2...$N (cualquier tipo): parámetros adicionales
 
-If you used a method, it must set the following parameter:
+Si utilizó un método, debe definir el siguiente parámetro:
 
 - *$1.result* (boolean): **true** si *$1.value < $1.value2*, **false** de lo contrario
 
@@ -2564,7 +2564,7 @@ Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar 
 
 #### Ejemplo
 
-You want to know if at least one collection value is >0.
+Quiere saber si al menos un valor de la colección es >0.
 
 ```4d
  var $c : Collection
