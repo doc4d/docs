@@ -38,7 +38,7 @@ If key values are not defined in a custom theme, they default to the values from
 
 Definir un tema significa:
 
-- setting a global font and font size for the whole code editor,
+- definir una fuente y un tamaño de fuente para todo el editor de código,
 - assigning specific styles and colors to each 4D language element (fields, tables, variables, parameters, SQL, etc.), SQL language element (keywords, functions, etc.), and color backgrounds.
 
 Combining different colors and styles is particularly useful for code maintenance purposes.
