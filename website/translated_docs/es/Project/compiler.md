@@ -203,7 +203,7 @@ Estas dos listas contienen cuatro columnas:
     - If the variable was found in an object method, the object method’s name is given, preceded by the form name, table name, and by (OM).
     - If the variable is an object in a form and does not appear in any project, form, object method, or trigger, the name of the form in which it appears is given, preceded by (F). At the end of each list, you can find the sizes of the process and interprocess variables in bytes.
 
-> When compiling, the compiler cannot determine in which process a given process variable is used. A process variable can have a different value in each process. Consequently, all process variables are systematically duplicated as each new process is launched: it is thus advisable to watch out for the amount of memory that they will take up. Also, keep in mind that the space for process variables is not related to the stack size for the process.
+> When compiling, the compiler cannot determine in which process a given process variable is used. Una variable proceso puede tener un valor diferente en cada proceso. Consequently, all process variables are systematically duplicated as each new process is launched: it is thus advisable to watch out for the amount of memory that they will take up. Also, keep in mind that the space for process variables is not related to the stack size for the process.
 
 #### Lista de las variables locales
 
