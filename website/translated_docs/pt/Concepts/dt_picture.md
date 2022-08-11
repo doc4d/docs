@@ -38,82 +38,82 @@ A maioria dos [comandos de gerenciamento de imagens 4D](https://doc.4d.com/4Dv18
 | Movimento horizontal    | Imagem + Número        | Imagem  | Mover imagem horizontalmente número pixels                                                                                                                                 |
 | Movimento vertical      | Imagem / Número        | Imagem  | Mover imagem em pixels do número vertical                                                                                                                                  |
 | Redimensionamento       | Imagem * Número        | Imagem  | Redimensionar imagem por proporção número                                                                                                                                  |
-| Horizontal scaling      | Picture *+ Number      | Imagem  | Resize Picture horizontally by Number ratio                                                                                                                                |
-| Vertical scaling        | Picture *&#124; Number | Imagem  | Resize Picture vertically by Number ratio                                                                                                                                  |
+| Escala horizontal       | Imagem *+ Número       | Imagem  | Redimensionar imagem horizontalmente por relação numérica                                                                                                                  |
+| Escala vertical         | Picture *&#124; Number | Imagem  | Redimensionar imagem por proporção número                                                                                                                                  |
 
 **Notas:**
 
-- In order to use the | operator, Pict1 and Pict2 must have exactly the same dimension. If both pictures are a different size, the operation Pict1 | Pict2 produces a blank picture.
-- The `COMBINE PICTURES` command can be used to superimpose pictures while keeping the characteristics of each source picture in the resulting picture.
-- Additional operations can be performed on pictures using the `TRANSFORM PICTURE` command.
-- There is no comparison operators on pictures, however 4D proposes the `Equal picture` command to compare two pictures.
+- Para utilizar o | operador, Pict1 e Pict2 devem ter exactamente a mesma dimensão. Se ambas as imagens tiverem um tamanho diferente, a operação Pict1 | Pict2 produz uma imagem em branco.
+- O comando `COMBINE PICTURES` pode ser utilizado para sobrepor imagens mantendo as características de cada imagem de origem na imagem resultante.
+- Operações adicionais podem ser realizadas em imagens usando o comando `TRANSFORM PICTURE` .
+- Não há operadores de comparação em imagens, no entanto 4D propõe o comando `Equal picture` para comparar duas imagens.
 
 
 ### Exemplos
 
 Concatenação horizontal
 ```4d
- circle+rectangle //Place the rectangle to the right of the circle
- rectangle+circle //Place the circle to the right of the rectangle
+ círculo+rectângulo //Coloca o retângulo à direita do círculo
+ rectângulo+círculo //Coloca o círculo à direita do retângulo
 ```
 ![](assets/en/Concepts/concatHor.en.png) ![](assets/en/Concepts/concatHor2.en.png)
 
 Concatenação vertical
 ```4d
- circle/rectangle //Place the rectangle under the circle
- rectangle/circle //Place the circle under the rectangle
+ círculo/retângulo //Coloca o retângulo abaixo do círculo
+ retângulo/círculo //Coloca o círculo abaixo do retângulo
 ```
 ![](assets/en/Concepts/concatVer.en.png) ![](assets/en/Concepts/concatVer2.en.png)
 
 Sobreposição exclusiva
 ```4d
-Pict3:=Pict1 & Pict2 // Superimposes Pict2 on top of  Pict1
+Pict3:=Pict1 & Pict2 // Superimpõe Pict2 no topo da Pict1
 ```
 ![](assets/en/Concepts/superimpoExc.fr.png)
 
 Sobreposição inclusiva
 ```4d
-Pict3:=Pict1|Pict2 // Recovers resulting mask from superimposing two pictures of the same size
+Pict3:=Pict1|Pict2 // Recupera a máscara resultante da sobreposição de duas imagens do mesmo tamanho
 ```
 ![](assets/en/Concepts/superimpoInc.fr.png)
 
 Movimento horizontal
 ```4d
-rectangle+50 //Move the rectangle 50 pixels to the right
-rectangle-50 //Move the rectangle 50 pixels to the left
+retângulo+50 //Mova o retângulo 50 pixels para a direita
+retângulo-50 //Mova o retângulo 50 pixels para a esquerda
 ```
 ![](assets/en/Concepts/hormove.en.png)
 
 Movimento vertical
 
 ```4d
-rectangle/50 //Move the rectangle down by 50 pixels
-rectangle/-20 //Move the rectangle up by 20 pixels
+retângulo/50 //Mova o retângulo para baixo em 50 pixels
+retângulo/-20 //Mova o retângulo para cima em 20 pixels
 ```
 ![](assets/en/Concepts/vertmove.en.png)![](assets/en/Concepts/vertmove2.en.png)
 
-Resize
+Redimensionar
 
 ```4d
-rectangle*1.5 //The rectangle becomes 50% bigger
-rectangle*0.5 //The rectangle becomes 50% smaller
+retângulo*1,5 ///O retângulo fica 50% maior
+retângulo*0,5 ///O retângulo fica 50% menor
 ```
 ![](assets/en/Concepts/resize.en.png)![](assets/en/Concepts/resisze2.en.png)
 
-Horizontal scaling
+Escala horizontal
 
 ```4d
-circle*+3 //The circle becomes 3 times wider
-circle*+0.25 //The circle's width becomes a quarter of what it was
+círculo*+3 ///O círculo se torna 3 vezes maior
+círculo*+0.25 ///A largura do círculo se torna um quarto da que era
 ```
 
 ![](assets/en/Concepts/Horscaling.en.png)![](assets/en/Concepts/Horscaling2.en.png)
 
-Vertical scaling
+Escala vertical
 
 ```4d
-circle*|2 //The circle becomes twice as tall
-circle*|0.25 //The circle's height becomes a quarter of what it was
+círculo*|2 //O círculo torna-se duas vezes mais alto
+círculo*|0.25 //A altura do círculo torna-se um quarto do que era
 ```
 
 ![](assets/en/Concepts/vertscaling.en.png)![](assets/en/Concepts/veticalscaling2.en.png)
