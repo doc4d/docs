@@ -1786,7 +1786,7 @@ In *rangeObj*, pass a range whose formulas you want to retrieve. If *rangeObj* d
 
 La colección devuelta es bidimensional:
 
-* The first-level collection contains subcollections of formulas. Cada subcolección representa una línea.
+* La colección de primer nivel contiene subcolecciones de fórmulas. Cada subcolección representa una línea.
 * Cada subcolección define los valores de las celdas para la línea. Los valores son elementos textuales que contienen las fórmulas de las celdas.
 
 #### Ejemplo
@@ -2299,7 +2299,7 @@ The `VP Get show print lines` command<!-- REF #_method_.VP Get show print lines.
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-In *sheet*, pass the index of the target sheet. If *sheet* is omitted, the command applies to the current sheet.
+En *sheet*, pase el índice de la hoja objetivo. If *sheet* is omitted, the command applies to the current sheet.
 
 > La indexación comienza en 0.
 
@@ -2501,7 +2501,7 @@ In the *onlyData* parameter, you can pass one of the following constants to indi
 | `vk table full range` | 0     | Get the cell range for the table area with footer and header (default if omitted) |
 | `vk table data range` | 1     | Obtener el rango de celdas sólo para el área de datos de la tabla                 |
 
-In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+En *sheet*, pase el índice de la hoja objetivo. If no index is specified, the command applies to the current sheet.
 > La indexación comienza en 0.
 
 
@@ -2539,7 +2539,7 @@ The `VP Get tables` command <!-- REF #_method_.VP Get tables.Summary -->returns 
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+En *sheet*, pase el índice de la hoja objetivo. If no index is specified, the command applies to the current sheet.
 > La indexación comienza en 0.
 
 
@@ -4947,7 +4947,7 @@ In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose
 
 The *formulasCol* is a two-dimensional collection:
 
-* The first-level collection contains subcollections of formulas. Cada subcolección define una línea.
+* La colección de primer nivel contiene subcolecciones de fórmulas. Cada subcolección define una línea.
 * Cada subcolección define los valores de las celdas para la línea. Values must be text elements containing the formulas to assign to the cells.
 
 > If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
@@ -5524,7 +5524,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *visible*, pass `True` to display the print lines, and `False` to hide them. `True` se pasa por defecto.
 
-In *sheet*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+En *sheet*, pase el índice de la hoja objetivo. If no index is specified, the command applies to the current sheet.
 
 > La indexación comienza en 0.
 
