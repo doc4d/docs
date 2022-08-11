@@ -24,7 +24,7 @@ Hay varias formas de conseguir que el depurador se muestre:
 
 When called, the debugger window provides the name of the method or class function you're currently tracing, and the action causing the initial appearance of the Debugger window. Por ejemplo, en la ventana del depurador arriba:
 
-* *Clients_BuildLogo* is the method being traced
+* *Clients_BuildLogo* es el método en que se hace seguimiento
 * The debugger window appeared because it detected a call to the `C_PICTURE` command and this command was one of the commands to be caught
 
 
@@ -402,7 +402,7 @@ The contextual menu of the Source Code Pane provides access to several functions
   * *Tables:* Displays table properties in the inspector of the Structure window
   * *Formularios:* muestra el formulario en el editor de formularios
   * *Variables* (local, process, interprocess or $n parameter): displays the line in the current method or among the compiler methods where the variable is declared
-* **Search References** (also available in Code Editor): Searches all project objects (methods and forms) in which the current element of the method is referenced. The current element is the one selected or the one where the cursor is located. Este puede ser el nombre de un campo, variable, comando, cadena, etc. Search results are displayed in a new standard results window.
+* **Search References** (also available in Code Editor): Searches all project objects (methods and forms) in which the current element of the method is referenced. The current element is the one selected or the one where the cursor is located. Este puede ser el nombre de un campo, variable, comando, cadena, etc. Los resultados de la búsqueda se muestran en una nueva ventana de resultados estándar.
 * **Copy**: Standard copy of the selected expression to the pasteboard.
 * **Copy to Expression Pane**: Copy the selected expression to the Custom Watch Pane.
 * **Run to Cursor**:Executes statements found between the program counter and the selected line of the method (where the cursor is found).
