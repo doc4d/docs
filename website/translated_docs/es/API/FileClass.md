@@ -242,7 +242,7 @@ A `4D.File` object with the `isAlias` property set to **true**.
 
 #### Ejemplo
 
-You want to create an alias to a file in your database folder:
+Quiere crear un alias para un archivo en su carpeta principal:
 
 ```4d
  $myFile:=Folder(fk documents folder).file("Archives/ReadMe.txt")
@@ -653,7 +653,7 @@ The function must be used with an existing .exe, .dll or .plist file. The functi
 
 > Writing a .exe or .dll file information is only possible on Windows.
 
-Each valid property set in the *info* object parameter is written in the version resource of the .exe or .dll file. Available properties are (any other property will be ignored):
+Each valid property set in the *info* object parameter is written in the version resource of the .exe or .dll file. Las propiedades disponibles son (toda otra propiedad será ignorada):
 
 | Propiedad        | Tipo  |
 | ---------------- | ----- |
@@ -775,7 +775,7 @@ The `.setText()` function <!-- REF #FileClass.setText().Summary -->writes *text*
 
 If the file referenced in the `File` object does not exist on the disk, it is created by the function. When the file already exists on the disk, its prior contents are erased, except if it is already open, in which case, its contents are locked and an error is generated.
 
-In *text*, pass the text to write to the file. It can be a literal ("my text"), or a 4D text field or variable.
+En *text*, pase el texto a escribir en el archivo. It can be a literal ("my text"), or a 4D text field or variable.
 
 Optionally, you can designate the character set to be used for writing the contents. Puede pasar:
 
