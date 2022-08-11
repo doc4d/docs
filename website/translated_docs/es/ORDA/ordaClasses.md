@@ -250,7 +250,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 - Since they are used to define automatic DataClass class names in the **cs** [class store](Concepts/classes.md#class-stores), 4D tables must be named in order to avoid any conflict in the **cs** namespace. En particular:
     - Do not give the same name to a 4D table and to a [user class name](Concepts/classes.md#class-names). If such a case occurs, the constructor of the user class becomes unusable (a warning is returned by the compiler).
-    - Do not use a reserved name for a 4D table (e.g., "DataClass").
+    - No utilice un nombre reservado para una tabla 4D (por ejemplo, "DataClass").
 
 - When defining a class, make sure the [`Class extends`](Concepts/classes.md#class-extends-classnameclass) statement exactly matches the parent class name (remember that they're case sensitive). For example, `Class extends EntitySelection` for an entity selection class.
 
