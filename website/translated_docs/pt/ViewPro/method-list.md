@@ -960,7 +960,7 @@ Once the export operation is finished, `VP EXPORT DOCUMENT` automatically trigge
 
 When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. The callback method will receive the following values in local variables:
 
-| Variable |               | Type     | Descrição                                              |
+| Variável |               | Type     | Descrição                                              |
 | -------- | ------------- | -------- | ------------------------------------------------------ |
 | $1       |               | texto    | The name of the 4D View Pro object                     |
 | $2       |               | texto    | The filepath of the exported 4D View Pro object        |
