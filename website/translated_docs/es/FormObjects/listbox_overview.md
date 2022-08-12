@@ -610,14 +610,14 @@ There are several different ways to set background colors, font colors and font 
 
 Priority and inheritance principles are observed when the same property is set at more than one level.
 
-| Nivel de prioridad | Ubicación del parámetro                                              |
-| ------------------ | -------------------------------------------------------------------- |
-| alta prioridad     | Celda (si texto multiestilo)                                         |
-|                    | Arrays de columnas/métodos                                           |
-|                    | Arrays/métodos de Listbox                                            |
-|                    | Propiedades de la columna                                            |
-|                    | Propiedades de list box                                              |
-| baja prioridad     | Meta Info expression (for collection or entity selection list boxes) |
+| Nivel de prioridad | Ubicación del parámetro                                                                  |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| alta prioridad     | Celda (si texto multiestilo)                                                             |
+|                    | Arrays de columnas/métodos                                                               |
+|                    | Arrays/métodos de Listbox                                                                |
+|                    | Propiedades de la columna                                                                |
+|                    | Propiedades de list box                                                                  |
+| baja prioridad     | Expresiones de metainformación (para colecciones o list boxes de selección de entidades) |
 
 For example, if you set a font style in the list box properties and another using a style array for the column, the latter one will be taken into account.
 
@@ -902,7 +902,7 @@ ARRAY OBJECT(obColumn;0) //column array
 ```
 
 ![](assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
-> Display format and entry filters cannot be set for an object column. Dependen automáticamente del tipo de valor.
+> El formato de visualización y los filtros de entrada no pueden definirse para una columna de objetos. Dependen automáticamente del tipo de valor.
 
 #### valueType y visualización de datos
 
