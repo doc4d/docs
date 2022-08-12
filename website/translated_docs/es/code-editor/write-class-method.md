@@ -286,7 +286,7 @@ Once created, property names are stored in an internal global list and are avail
 
 ![](assets/en/code-editor/autocomplete-object-attributes-2.png)
 
-The list of suggestions is dynamically updated while you edit code. When switching between windows, new/edited property names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
+La lista de sugerencias se actualiza dinámicamente mientras se edita el código. When switching between windows, new/edited property names are always added to the global list. The list is also updated when you preview a method, class or function in the Explorer.
 
 Cuando se reinicia la base de datos, la lista se reinicia.
 
@@ -359,7 +359,7 @@ When the method, class or function is validated, 4D checks for:
 
 The Code Editor can only check for obvious syntax errors (misspellings and the like). No verifica errores que sólo ocurren durante la ejecución. Los errores de ejecución son detectados por 4D cuando se ejecuta el código.
 
-4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
+4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. El compilador también ofrece una ayuda indispensable para detectar errores. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
 
 ## Utilizando consejos de ayuda y barra de estado
 
@@ -492,7 +492,7 @@ These commands are found in the **Method** menu as well as the context menu of t
 
 ### Utilizando marcadores
 
-4D lets you associate bookmarks with certain lines in your methods. You can then browse quickly within the code by passing from one bookmark to another using specific commands.
+4D le permite asociar marcadores con ciertas líneas en sus métodos. You can then browse quickly within the code by passing from one bookmark to another using specific commands.
 
 ![](https://doc.4d.com/4Dv19R4/picture/443304/pict443304.en.png)
 
