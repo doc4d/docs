@@ -56,6 +56,6 @@ This area indicates the **Total cache memory** (parameter set in the settings) a
 
 ### Conexiones aplicación servidor
 
-- **Maximum**: maximum number of simultaneous client connections allowed for the application server. This value depends on the license installed on the server machine.
+- **Maximum**: maximum number of simultaneous client connections allowed for the application server. Este valor depende de la licencia instalada en el equipo servidor.
 - **Used**: actual number of connections currently being used.
 
