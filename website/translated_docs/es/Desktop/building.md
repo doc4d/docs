@@ -351,7 +351,7 @@ It works as follows: when a new version of the client/server application is buil
 
 To trigger client application update notifications, simply replace the old version of the server application with the new one and then execute it. El resto del proceso es automático.
 
-On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. The user can either update their version or cancel the dialog box.
+On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. El usuario puede actualizar su versión o cancelar la caja de diálogo.
 
 *   If the user clicks **OK**, the new version is downloaded to the client machine over the network. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor.
 *   If the user clicks **Cancel**, the update is cancelled; if the old version of the client application is not in the range of versions accepted by the server (please refer to the following paragraph), the application is closed and connection is impossible. En caso contrario (por defecto), se establece la conexión.
@@ -693,7 +693,7 @@ The management of connections by client applications covers the mechanisms by wh
 
 ### Escenario de conexión
 
-The connection procedure for merged client applications supports cases where the dedicated server is not available. The startup scenario for a 4D client application is the following:
+The connection procedure for merged client applications supports cases where the dedicated server is not available. El escenario de inicio de una aplicación cliente 4D es el siguiente:
 
 1.  If valid connection information is stored in the "EnginedServer.4DLink" file within the client application, the client application connects to the specified server address.  
    OR  
