@@ -105,7 +105,7 @@ Para añadir un punto de interrupción en el comando:
 
 To enable or disable a caught command, click on the bullet (•) in front of the command label. La bala es transparente cuando el comando está desactivado.
 
-> Disabling a caught command has almost the same effect as deleting it. During execution, the debugger spends almost no time on the entry. The advantage of disabling an entry is that you do not have to recreate it when you need it again.
+> Disabling a caught command has almost the same effect as deleting it. Durante la ejecución, el depurador no pasa casi nada de tiempo en la entrada. The advantage of disabling an entry is that you do not have to recreate it when you need it again.
 
 Para eliminar un punto de interrupción en el comando:
 
