@@ -11,7 +11,7 @@ Una fórmula de hoja de cálculo es una expresión que calcula el valor de una c
 
 Para introducir una fórmula en un área 4D View Pro:
 
-1.  Select the cell into which you will enter the formula or function.
+1.  Seleccione la celda en la que introducirá la fórmula o función.
 2.  Introduzca = (el signo igual).
 3.  Escriba la fórmula y presione la tecla **Intro**.
 
@@ -220,7 +220,7 @@ Parameters can be passed to 4D functions that call project methods using the fol
 
 These parameters are received in *methodName* in $1, $2...$N.
 
-Note that the ( ) are mandatory, even if no parameters are passed:
+Tenga en cuenta que los ( ) son obligatorios, incluso si no se pasan parámetros:
 
 ```
 =METHODWITHOUTNAME()
@@ -335,7 +335,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
     SET FIELD TITLES([Employee];$fieldTitles;$fieldNum;*)
     ```
 
-3.  Edit the content of a cell in the 4D View Pro area and enter "=e":
+3.  Edite el contenido de una celda en el área 4D View Pro e introduzca "=e":
 
 ![](assets/en/ViewPro/vpFieldMeth2.PNG)
 
