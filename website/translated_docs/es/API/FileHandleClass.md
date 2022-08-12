@@ -381,7 +381,7 @@ If the *stopChar* parameter is passed and not found, `.readText()` returns an em
 </details>
 
 <!--REF #FileHandleClass.setSize().Syntax -->
-**.setSize**( *size* : Real )<!-- END REF -->
+**.setSize**( *size*: Real)<!-- END REF -->
 
 <!--REF #FileHandleClass.setSize().Params -->
 | Parámetros | Tipo |    | Descripción                       |
