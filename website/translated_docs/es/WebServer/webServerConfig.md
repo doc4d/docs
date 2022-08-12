@@ -566,7 +566,7 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 | `WEB SET OPTION`              | `Sesión escalable web`                                                                                                         |             |
 | Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones escalables (sesiones multiproceso)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
-Scalable session management enabling status for the 4D web server. Web server sessions are detailed in the [User sessions](sessions.md) page.
+Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Web server sessions are detailed in the [User sessions](sessions.md) page.
 
 
 
