@@ -91,7 +91,7 @@ Esa carpeta está dividida en dos subcarpetas:
 - the **Local** folder contains the `.4DLink` files that can be used to open local projects
 - the **Remote** folder contains the `.4DLink` files of recent remote projects
 
-`.4DLink` files can also be created with an XML editor.
+Los archivos `.4DLink` también pueden crearse con un editor XML.
 
 4D provides a DTD describing the XML keys that can be used to build a `.4DLink` file. This DTD is named database_link.dtd and is found in the \Resources\DTD\ subfolder of the 4D application.
 
