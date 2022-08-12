@@ -252,7 +252,7 @@ Un archivo de error puede contener tres tipos de mensajes:
 
 - **Errors linked to a specific line**: these errors are displayed in context — the line in which they were found — with an explanation. The compiler reports this type of error when it encounters an expression in which it sees an inconsistency related to data type or syntax. In the compiler window, double–click on each error detected in order to open the method concerned directly in the 4D Method editor, with the line containing the error highlighted.
 
-- **General errors**: These are errors that make it impossible to compile the project. There are two cases in which the compiler reports a general error:
+- **General errors**: These are errors that make it impossible to compile the project. Hay dos casos en los que el compilador informa de un error general:
     - No se ha podido determinar el tipo de datos de una variable proceso.
     - Dos tipos diferentes de objetos tienen el mismo nombre. General errors are so named because they cannot be linked to any specific method. In the first case, the compiler could not perform a specified typing anywhere in the project. In the second, it was unable to decide whether to associate a given name with one object rather than with another.
 
