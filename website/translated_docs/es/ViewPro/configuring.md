@@ -264,16 +264,16 @@ In addition to the special characters and codes described in the previous sectio
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
-| Propiedad         | Tipo         | Descripción                                                                                                                     |
-| ----------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                            |
-| columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                                           |
-| repeatColumnEnd   | entero largo | La última columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)               |
-| repeatColumnStart | entero largo | La primera columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)              |
-| repeatRowEnd      | entero largo | La última línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas) |
-| repeatRowStart    | entero largo | The first row of a range of rows to print at the top of each page. Valor por defecto = -1 (todas las líneas)                    |
-| rowEnd            | entero largo | The last column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                             |
-| rowStart          | entero largo | The first column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                            |
+| Propiedad         | Tipo         | Descripción                                                                                                                      |
+| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                             |
+| columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                                            |
+| repeatColumnEnd   | entero largo | La última columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)                |
+| repeatColumnStart | entero largo | La primera columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)               |
+| repeatRowEnd      | entero largo | La última línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas)  |
+| repeatRowStart    | entero largo | La primera línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas) |
+| rowEnd            | entero largo | The last column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                              |
+| rowStart          | entero largo | The first column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                             |
 
 ### Encabezados / Pies de página
 
