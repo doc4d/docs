@@ -203,7 +203,7 @@ The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of c
 
 En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. Puede pasar varios rangos de celdas para crear varios espacios al mismo tiempo. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
 
-> * Sólo se muestran los datos de la celda superior izquierda. Data in the other combined cells is hidden until the span is removed.
+> * Sólo se muestran los datos de la celda superior izquierda. Los datos de las otras celdas combinadas se ocultan hasta que se elimina la fusión.
 > * Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
 
 #### Ejemplo
@@ -2543,7 +2543,7 @@ The collection returned by `VP Get values` contains a two-dimensional collection
  | value     | Fecha | Valor de la celda (excepto - time)                           |
  | time      | Real  | Valor hora (en segundos) si el valor es del tipo de fecha js |
 
-Dates or times are treated as a datetime and completed as follows:
+Las fechas o las horas son consideradas como un datetime y se completan de la siguiente manera:
 
 * time value - the date portion is completed as December 30, 1899
 * date value - the time portion is completed as midnight (00:00:00:000)
@@ -3213,7 +3213,7 @@ The `VP REMOVE SHEET` command<!-- REF #_method_.VP REMOVE SHEET. Summary -->remo
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
-In *index*, pass the index of the sheet to remove. If the passed *index* does not exist, the command does nothing.
+En *index*, pase el índice de la hoja a eliminar. If the passed *index* does not exist, the command does nothing.
 > La indexación comienza en 0.
 
 #### Ejemplo
@@ -4248,13 +4248,13 @@ In *options*, you can pass an object that specifies additional options. Las prop
 | reset               | Objeto | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                                        |
 | autoGenerateColumns | Objeto | Sólo se utiliza cuando los datos son una colección. True (default) to specify that columns must be generated automatically when the data context is bound. En este caso, se aplican las siguientes reglas: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). La primera subcolección determina cuántas columnas se crean.</li></ul> |
 
-In *sheet*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
+In *sheet*, pass the index of the sheet that will receive the data context. Si no se pasa ningún índice, el contexto se aplica a la hoja actual.
 
 If you export your document to an object using [VP Export to object](#vp-export-to-object), or to a 4DVP document using [VP EXPORT DOCUMENT](#vp-export-document), the `includeBindingSource` option lets you copy the contents of the current contexts as cell values in the exported object or document. Para más detalles, consulte la descripción de esos métodos.
 
 #### Ejemplo
 
-Pass an object and bind the context data to cells in the first row:
+Pasa un objeto y vincula los datos del contexto a las celdas en la primera línea:
 
 ```4d
 var $data : Object
@@ -4457,7 +4457,7 @@ The `VP SET DEFAULT STYLE` command<!-- REF #_method_.VP SET DEFAULT STYLE. Summa
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
+The *styleObj* lets you pass an object containing style settings. Puede utilizar una hoja de estilo existente o puede crear un nuevo estilo. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. Si se omite, se utiliza por defecto la hoja de cálculo actual. You can explicitly select the current spreadsheet with the following constant:
 
@@ -4591,7 +4591,7 @@ The `VP SET FORMULAS` command<!-- REF #_method_.VP SET FORMULAS. Summary -->assi
 
 In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. If *rangeObj* includes multiple ranges, only the first range is used.
 
-The *formulasCol* is a two-dimensional collection:
+El parámetro *formulasCol* es una colección bidimensional:
 
 * La colección de primer nivel contiene subcolecciones de fórmulas. Cada subcolección define una línea.
 * Cada subcolección define los valores de las celdas para la línea. Values must be text elements containing the formulas to assign to the cells.
@@ -4763,7 +4763,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 #### Ejemplo
 
-The following code will print a 4D View Pro area to a PDF document:
+El siguiente código imprimirá un área 4D View Pro en un documento PDF:
 
 ```4d
 var $printInfo : Object
@@ -5169,7 +5169,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 
 In *visible*, pass `True` to display the print lines, and `False` to hide them. `True` se pasa por defecto.
 
-En *sheet*, pase el índice de la hoja objetivo. If no index is specified, the command applies to the current sheet.
+En *sheet*, pase el índice de la hoja objetivo. Si no se especifica ningún índice, el comando se aplica a la hoja actual.
 
 > La indexación comienza en 0.
 
