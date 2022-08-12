@@ -33,14 +33,14 @@ This button toggles and can be used to control the activation of the 4D Server H
 This area provides specific information about the Web server of 4D Server.
 
 - **Web requests**: Accepted or Rejected. Esta información indica si el servidor web está activado. Since the Web server is directly linked to the HTTP server, Web requests are accepted when the HTTP server is started and rejected when it is stopped.
-- **Maximum connections**: Maximum number of Web connections allowed. This value depends on the license installed on the server machine.
+- **Maximum connections**: Maximum number of Web connections allowed. Este valor depende de la licencia instalada en el equipo servidor.
 
 ## Información SOAP
 
 This area provides specific information about the SOAP server of 4D Server and includes a control button.
 
 - **SOAP requests**: Accepted or Rejected. Esta información indica si el servidor SOAP está activado. In order for SOAP requests to be accepted, the HTTP server must be started and the SOAP server must explicitly accept the requests (see the Accept/Reject button).
-- **Maximum connections**: Maximum number of SOAP connections allowed. This value depends on the license installed on the server machine.
+- **Maximum connections**: Maximum number of SOAP connections allowed. Este valor depende de la licencia instalada en el equipo servidor.
 - **Accept/Reject SOAP requests** button: This button toggles and can be used to control the activation of the 4D Server SOAP server. This button modifies the value of the **Allow Web Services Requests** option on the "Web Services" page of the Settings (and vice versa). You can also use the [`SOAP REJECT NEW REQUESTS`](https://doc.4d.com/4dv19/help/command/en/page1636.html) command to refuse new SOAP requests, however this does not modify the value of the **Allow Web Services Requests** option.
 
 If you click on the **Accept SOAP requests** button and the HTTP server is stopped, 4D automatically starts it.
