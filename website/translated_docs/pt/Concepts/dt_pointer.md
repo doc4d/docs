@@ -36,14 +36,14 @@ $MyVar é agora uma variável que contém a string "Olá". Agora podemos criar u
 C_POINTER($MyPointer)  
 $MyPointer:=->$MyVar
 ```
-O símbolo -> significa "fazer um ponteiro para". Este símbolo é formado por um traço seguido por um sinal "maior que". In this case, it gets the pointer that references or “points to” $MyVar. This pointer is assigned to MyPointer with the assignment operator.
+O símbolo -> significa "fazer um ponteiro para". Este símbolo é formado por um traço seguido por um sinal "maior que". Neste caso, ele recebe o ponteiro que faz referência ou "aponta para" $MyVar. Este ponteiro é atribuído ao MyPointer com o operador de atribuição.
 
-$MyPointer is now a variable that contains a pointer to $MyVar. $MyPointer does not contain “Hello”, which is the value in $MyVar, but you can use $MyPointer to get this value. The following expression returns the value in $MyVar:
+$MyPointer é agora uma variável que contém um ponteiro para $MyVar. $MyPointer não contém "Olá", que é o valor em $MyVar, mas pode usar $MyPointer para obter este valor. A seguinte expressão devolve o valor em $MyVar:
 ```4d
 $MyPointer->
 ```
 
-In this case, it returns the string “Hello”. The -> symbol, when it follows a pointer, references the object pointed to. This is called dereferencing.
+Nesse caso, ela retorna a seqüência de caracteres "Olá". O símbolo -> , quando segue um ponteiro, faz referência ao objecto apontado. This is called dereferencing.
 
 It is important to understand that you can use a pointer followed by the -> symbol anywhere that you could have used the object that the pointer points to. This means that you could use the expression $MyPointer-> anywhere that you could use the original $MyVar variable. For example, the following line displays an alert box with the word Hello in it:
 ```4d
