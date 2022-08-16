@@ -213,7 +213,7 @@ The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of c
 
 En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. Puede pasar varios rangos de celdas para crear varios espacios al mismo tiempo. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
 
-> - Sólo se muestran los datos de la celda superior izquierda. Data in the other combined cells is hidden until the span is removed.
+> - Sólo se muestran los datos de la celda superior izquierda. Los datos de las otras celdas combinadas se ocultan hasta que se elimina la fusión.
 > - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
 
 #### Ejemplo
