@@ -60,7 +60,7 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 
 ## Formato Fecha
 
-Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
 La siguiente tabla muestra las opciones disponibles:
@@ -265,7 +265,7 @@ The following table shows how different formats affect the display of numbers. T
 
 Los formatos Imagen controlan la apariencia de las imágenes cuando se muestran o se imprimen. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
 
-The truncation and scaling options do not affect the picture itself. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
+Las opciones de truncamiento y escalado no afectan a la imagen en sí. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
 
 ### A escala para ajustarse
 
@@ -326,7 +326,7 @@ If the field is reduced to a size smaller than that of the original picture, the
 ---
 ## Formato Hora
 
-Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
+Los formatos de hora controlan la forma en que aparecen las horas cuando se muestran o imprimen. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for times must only be selected among the 4D built-in formats.
 
 La siguiente tabla muestra los formatos de visualización de los campos de hora y da ejemplos:
@@ -342,8 +342,8 @@ La siguiente tabla muestra los formatos de visualización de los campos de hora 
 | Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                                     | 270 Minutos 25 Segundos        |
 | ISO Date Time                | iso8601         | Corresponde al estándar XML para representar datos relacionados con la hora. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
 | System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                           | 04:30:25                       |
-| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: this format is the same as the System time short format                | 4•30•25 AM                     |
-| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format              | 4:30:25 AM HNEC                |
+| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: este formato es el mismo que el formato corto de la hora del sistema   | 4•30•25 AM                     |
+| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: este formato es el mismo que el formato corto de la hora del sistema | 4:30:25 AM HNEC                |
 
 #### Gramática JSON
 
