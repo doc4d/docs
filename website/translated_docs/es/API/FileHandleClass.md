@@ -198,7 +198,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La función `.getSize()` <!-- REF #FileHandleClass.getSize().Summary -->returns the current size of the document, expressed in bytes<!-- END REF -->.
+La función `.getSize()` <!-- REF #FileHandleClass.getSize().Summary -->devuelve el tamaño actual del documento, expresado en bytes<!-- END REF -->.
 
 > This function returns the same value as the ([.size](FileClass#size)) property of the `File` class.
 
@@ -251,7 +251,7 @@ Esta propiedad es **de sólo lectura**.
 
 La propiedad `.offset` devuelve <!-- REF #FileHandleClass.offset.Summary -->the current offset of the data stream (position inside the document)<!-- END REF -->. El valor del desplazamiento se actualiza automáticamente después de las operaciones de lectura y escritura.
 
-Setting the `.offset` will change its current value.
+Definir el `.offset` cambiará su valor actual.
 
 - If the passed value is negative, the `.offset` is set to the start of the file (zero).
 - If the passed value is higher than the size of the file,  the `.offset` is set to the end of the file (size of file).
@@ -354,7 +354,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 
 La función `.readText()` <!-- REF #FileHandleClass.readText().Summary -->returns text from the file, starting from the current position until the first *stopChar* string is encountered (if passed) or the end of file is reached<!-- END REF -->.
 
-This function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeRead`](#breakmoderead) property.
+Esta función reemplaza todos los delimitadores originales de final de línea. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeRead`](#breakmoderead) property.
 
 The *stopChar* character string is not included in the returned text. If you omit the *stopChar* parameter, the whole document text is returned.
 
@@ -454,7 +454,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 
 #### Descripción
 
-La función `.writeLine()` <!-- REF #FileHandleClass.writeLine().Summary -->writes *lineOfText* content at the current position and inserts an end-of-line delimiter<!-- END REF --> (unlike the [.writeText()](#writetext) function). By default, a native end-of-line delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.
+La función `.writeLine()` <!-- REF #FileHandleClass.writeLine().Summary -->writes *lineOfText* content at the current position and inserts an end-of-line delimiter<!-- END REF --> (a diferencia de la función [.writeText()](#writetext)). By default, a native end-of-line delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.
 
 When this function is executed, the current position ([.offset](#offset)) is updated after the end-of-line delimiter.
 
@@ -485,7 +485,7 @@ When this function is executed, the current position ([.offset](#offset)) is upd
 
 #### Descripción
 
-La función `.writeText()` <!-- REF #FileHandleClass.writeText().Summary -->writes *textToWrite* content at the current position and does not insert a final end-of-line delimiter<!-- END REF --> (unlike the [.writeLine()](#writeline) function). This function replaces all original end-of-line delimiters. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.
+La función `.writeText()` <!-- REF #FileHandleClass.writeText().Summary -->writes *textToWrite* content at the current position and does not insert a final end-of-line delimiter<!-- END REF --> (a diferencia de la función [.writeLine()](#writeline)). Esta función reemplaza todos los delimitadores originales de final de línea. By default, the native delimiter is used, but you can define another delimiter when [opening the file handle](FileClass.md#open) by setting the [`.breakModeWrite`](#breakmodewrite) property.
 
 When this function is executed, the current position ([.offset](#offset)) is updated after the next end-of-line delimiter.
 
