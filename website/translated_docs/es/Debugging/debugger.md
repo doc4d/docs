@@ -283,7 +283,7 @@ You can also use the [Get call chain](https://doc.4d.com/4dv19/help/command/en/p
 
 ## Panel de vigilancia personalizado
 
-The Custom Watch Pane is useful for evaluating expressions. It is similar to the [Watch Pane](#watch-pane), except here you decide which expressions are displayed. Todo tipo de expresión puede ser evaluada:
+El panel de control personalizado es útil para evaluar expresiones. It is similar to the [Watch Pane](#watch-pane), except here you decide which expressions are displayed. Todo tipo de expresión puede ser evaluada:
 
 * campo
 * variable
@@ -423,7 +423,7 @@ The search is carried out only if you select at least one character in the Sourc
 
 Esta sección lista todos los atajos disponibles en la ventana del depurador.
 
-> The tool bar also has [shortcuts](#tool-bar-buttons).
+> La barra de herramientas también tiene [accesos directos](#tool-bar-buttons).
 
 #### Ventana de evaluación & Subventana de evaluación personalizada
 
