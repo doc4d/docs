@@ -1899,7 +1899,7 @@ La retrollamada recibe los siguientes parámetros:
     - *$1.value2* (todo tipo): segundo valor del elemento a comparar
     - $2...$N (cualquier tipo): parámetros adicionales
 
-If you used a method, it must set the following parameter:
+Si utilizó un método, debe definir el siguiente parámetro:
 
 - *$1.result* (boolean): **true** si *$1.value < $1.value2*, **false** de lo contrario
 
@@ -2564,7 +2564,7 @@ Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar 
 
 #### Ejemplo
 
-You want to know if at least one collection value is >0.
+Quiere saber si al menos un valor de la colección es >0.
 
 ```4d
  var $c : Collection
@@ -2617,7 +2617,7 @@ The `.sort()` function <!-- REF #collection.sort().Summary -->sorts the elements
 
 Si se llama a `.sort()` sin parámetros, sólo se ordenan los valores escalares (número, texto, fecha, booleanos). Los elementos se ordenan por defecto de forma ascendente, según su tipo.
 
-If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. You can provide additional parameters to the callback if necessary.
+If you want to sort the collection elements in some other order or sort any type of element, you must supply in *formula* ([Formula object](FunctionClass.md)) or *methodName* (Text) a comparison callback that compares two values and returns **true** if the first value is lower than the second value. Puede ofrecer parámetros adicionales a la retrollamada si es necesario.
 
 La retrollamada recibe los siguientes parámetros:
 

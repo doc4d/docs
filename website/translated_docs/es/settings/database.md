@@ -69,7 +69,7 @@ Se ofrecen tres opciones de ubicación:
 
 On Japanese systems, 4D supports the *MeCab* library, with a indexing algorithm for keywords that is particularly suited for the Japanese language.
 
-This algorithm is used by default in Japanese versions of 4D. If needed, you can disable the use of the *MeCab* algorithm and use the conventional *ICU* library.
+Este algoritmo se utiliza por defecto en las versiones japonesas de 4D. If needed, you can disable the use of the *MeCab* algorithm and use the conventional *ICU* library.
 
 To disable *MeCab*, just check the **Consider only non-alphanumeric chars for keywords** option:
 

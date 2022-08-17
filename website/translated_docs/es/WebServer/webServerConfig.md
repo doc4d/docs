@@ -486,7 +486,7 @@ Verdadero si PFS está disponible en el servidor web (ver la sección [TLS](Admi
 
 > Esta opción sólo está disponible cuando la opción **Sin sesiones** está marcada.
 
-Permite optimizar el funcionamiento del Servidor Web 4D en modo remoto reutilizando los procesos web creados para procesar peticiones web anteriores. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
+Permite optimizar el funcionamiento del Servidor Web 4D en modo remoto reutilizando los procesos web creados para procesar peticiones web anteriores. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Una vez atendida la petición, este proceso se cierra.
 
 When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. Al eliminar la etapa de creación del proceso, se mejora el rendimiento del servidor web.
 

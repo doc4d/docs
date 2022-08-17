@@ -167,7 +167,7 @@ You can build automatically a drop-down list using a [standard action](propertie
     - a styled text area ([4D Write Pro area](writeProArea_overview.md) or [input](input_overview.md) with [multistyle](properties_Text.md#multi-style) property) is present in the form as the standard action target.
     - the [focusable](properties_Entry.md#focusable) property is not set to the drop-down list. At runtime the drop-down list will display an automatic list of values, e.g. background colors. You can override this automatic list by assigning in addition a choice list in which each item has been assigned a custom standard action.
 
-> This feature cannot be used with a hierarchical drop-down list.
+> Esta funcionalidad no puede utilizarse con una lista desplegable jerárquica.
 
 ## Propiedades soportadas
 
