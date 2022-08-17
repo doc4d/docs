@@ -45,7 +45,7 @@ $col:=New collection //$col is initialized with an empty collection
 
 ## Operadores básicos
 
-Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
+Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. Se describen con los tipos de datos, en las siguientes secciones:
 
 - [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
 - [**Operadores de fechas**](dt_date.md#date-operators)
@@ -59,7 +59,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 
 ## Operadores de asignación compuestos
 
-4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
+4D provides **compound assignment operators** that combine assignment with another operation. Un ejemplo es el operador de asignación adicional (`+=`):
 
 ```4d
 $a:=1 
@@ -67,7 +67,7 @@ $a+=2 // $a=3
 ```
 
 
-The following compound assignment operators are supported:
+Se admiten los siguientes operadores de asignación compuestos:
 
 | Operador       | Sintaxis           | Asigna | Ejemplo                                                                        |
 | -------------- | ------------------ | ------ | ------------------------------------------------------------------------------ |

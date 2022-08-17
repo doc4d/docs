@@ -3,7 +3,7 @@ id: SystemWorkerClass
 title: SystemWorker
 ---
 
-System workers allow the 4D code to call any external process (a shell command, PHP, etc.) on the same machine. Los trabajadores del sistema se llaman de forma asíncrona. By using callbacks, 4D makes it possible to communicate both ways.
+System workers allow the 4D code to call any external process (a shell command, PHP, etc.) on the same machine. Los trabajadores del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
 
 The `SystemWorker` class is available from the `4D` class store.
 
@@ -63,11 +63,11 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 <!-- REF #4D.SystemWorker.new().Syntax -->**4D.SystemWorker.new** ( *commandLine* : Text { ; options : Object } ) : 4D.SystemWorker<!-- END REF -->
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parámetros  | Tipo            |    | Descripción                                                   |
-| ----------- | --------------- |:--:| ------------------------------------------------------------- |
-| commandLine | Texto           | -> | Línea de comando a ejecutar                                   |
-| options     | Objeto          | -> | Parámetros worker                                             |
-| result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
+| Parámetros  | Tipo            |    | Descripción                                                          |
+| ----------- | --------------- |:--:| -------------------------------------------------------------------- |
+| commandLine | Texto           | -> | Línea de comando a ejecutar                                          |
+| options     | Objeto          | -> | Parámetros worker                                                    |
+| result      | 4D.SystemWorker | <- | Nuevo System worker asíncrono o null si el proceso no se ha iniciado |  
 <!-- END REF -->
 
 
@@ -91,7 +91,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 | Propiedad        | Tipo     | Por defecto | Descripción                                                                                                                                                                                                                                                                                                                   |
 | ---------------- | -------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onResponse       | Formula  | indefinido  | Retrollamada para los mensajes del system worker. This callback is called once the complete response is received. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                              |
-| onData           | Formula  | indefinido  | Retrollamada para los datos del system worker. This callback is called each time the system worker receives data. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                              |
+| onData           | Formula  | indefinido  | Retrollamada para los datos del system worker. Esta retrollamada se llama cada vez que el system worker recibe los datos. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                      |
 | onDataError      | Formula  | indefinido  | Callback for the external process errors (*stderr* of the external process). Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                                   |
 | onError          | Formula  | indefinido  | Callback for execution errors, returned by the system worker in case of unusual runtime conditions (system errors). Recibe dos objetos como parámetros (ver abajo)</li>                                                                                                                                                       |
 | onTerminate      | Formula  | indefinido  | Retrollamada cuando el proceso externo se termina. Recibe dos objetos como parámetros (ver abajo)                                                                                                                                                                                                                             |
@@ -114,7 +114,7 @@ Esta es la secuencia de llamadas de retorno:
 
 1. `onData` and `onDataError` are executed one or several times
 2. if called, `onError` is executed once (stops the system worker processing)
-3. if no error occured, `onResponse` is executed once
+3. si no se ha producido ningún error, `onResponse` se ejecuta una vez
 4. `onTerminate` se ejecuta siempre
 
 
@@ -161,7 +161,7 @@ $sw:=4D.SystemWorker.new($mydoc)
 ```
 
 
-4. To launch a command with the current directory and post a message:
+4. Para lanzar un comando con el directorio actual y publicar un mensaje:
 
 ```4d
 var $param : Object
@@ -174,7 +174,7 @@ $sys.postMessage("This is a postMessage")
 $sys.closeInput()
 ```
 
-5. To allow the user to open an external document on Windows:
+5. Para permitir al usuario abrir un documento externo en Windows:
 
 ```4d
 $docname:=Select document("";"*.*";"Elija el archivo a abrir";0)
@@ -188,7 +188,7 @@ End if
 
 #### Ejemplos en macOS
 
-1. Edit a text file (`cat` is the macOS command used to edit files). In this example, the full access path of the command is passed:
+1. Edit a text file (`cat` is the macOS command used to edit files). En este ejemplo, se pasa la ruta de acceso completa del comando:
 
 ```4d
 

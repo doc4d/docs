@@ -12,7 +12,7 @@ Las siguientes ubicaciones pueden utilizarse para las imágenes estáticas:
 
 - en la carpeta **Resources** del proyecto. Appropriate when you want to share static pictures between several forms in the project. En este caso, el nombre de la ruta es "/RESOURCES/\<picture path\>".
 - en una carpeta de imágenes (por ejemplo, llamada **Images**) dentro de la carpeta del formulario. Apropiado cuando las imágenes estáticas se utilizan sólo en el formulario y/o se quiere poder mover o duplicar todo el formulario dentro del proyecto o de diferentes proyectos. En este caso, el nombre de la ruta es ""\<picture path\>" y se resuelve desde la raíz de la carpeta del formulario.
-- en una variable imagen 4D. The picture must be loaded in memory when the form is executed. En este caso, el nombre de la ruta es "var:\<variableName\>".
+- en una variable imagen 4D. La imagen debe cargarse en la memoria cuando se ejecuta el formulario. En este caso, el nombre de la ruta es "var:\<variableName\>".
 
 
 #### Gramática JSON

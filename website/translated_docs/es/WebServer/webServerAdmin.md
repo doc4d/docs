@@ -167,7 +167,7 @@ The [web log recording file](webServerConfig.md#log-recording) can be enabled us
 
 Each line of the file represents a request, such as: *host rfc931 user \[DD/MMM/YYYY:HH:MM:SS] "request" state length* Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
 
-DLF (Combined Log Format) format is similar to CLF (Common Log Format) format and uses exactly the same structure. It simply adds two additional HTTP fields at the end of each request: Referer and User-agent. Here is the description of CLF/DLF formats (not customizable):
+DLF (Combined Log Format) format is similar to CLF (Common Log Format) format and uses exactly the same structure. It simply adds two additional HTTP fields at the end of each request: Referer and User-agent. Esta es la descripción de los formatos CLF/DLF (no personalizables):
 
 | Nombre del campo     | Descripción                                                                                                                                                               |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -189,7 +189,7 @@ The WLF (WebStar Log Format) was developed specifically for the 4D WebSTAR serve
 
 ##### Configurar los campos
 
-When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. You will need to select each field to be included in the log. Para ello, marque los campos deseados.
+When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. Deberá seleccionar cada campo para incluirlo en el registro. Para ello, marque los campos deseados.
 > No puede seleccionar el mismo campo dos veces.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:

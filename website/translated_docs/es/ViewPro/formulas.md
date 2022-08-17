@@ -11,7 +11,7 @@ Una fórmula de hoja de cálculo es una expresión que calcula el valor de una c
 
 Para introducir una fórmula en un área 4D View Pro:
 
-1.  Select the cell into which you will enter the formula or function.
+1.  Seleccione la celda en la que introducirá la fórmula o función.
 2.  Introduzca = (el signo igual).
 3.  Escriba la fórmula y presione la tecla **Intro**.
 
@@ -110,7 +110,7 @@ You can mix absolute and relative references by inserting a dollar sign in front
 
 A convenient, fast and accurate way to specify an absolute reference is to name the cell and use that name in place of the cell address. Una referencia a una celda nombrada es siempre absoluta. You can create or modify named cells or named cell ranges using the [`VP ADD RANGE NAME`](method-list.md#vp-add-range-name) method.
 
-The following table shows the effect of the different notations:
+La siguiente tabla muestra el efecto de las diferentes notaciones:
 
 | Ejemplo            | Tipo de referencia | Descripción                                                                                                                                        |
 | ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -220,7 +220,7 @@ Parameters can be passed to 4D functions that call project methods using the fol
 
 These parameters are received in *methodName* in $1, $2...$N.
 
-Note that the ( ) are mandatory, even if no parameters are passed:
+Tenga en cuenta que los ( ) son obligatorios, incluso si no se pasan parámetros:
 
 ```
 =METHODWITHOUTNAME()
@@ -319,7 +319,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
 ![](assets/en/ViewPro/vpFieldMeth1.PNG)
 
 
-2.  Execute the following code to initialize a virtual structure:
+2.  Ejecuta el siguiente código para inicializar una estructura virtual:
 
     ```4d
     ARRAY TEXT($tableTitles;1)
@@ -335,7 +335,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
     SET FIELD TITLES([Employee];$fieldTitles;$fieldNum;*)
     ```
 
-3.  Edit the content of a cell in the 4D View Pro area and enter "=e":
+3.  Edite el contenido de una celda en el área 4D View Pro e introduzca "=e":
 
 ![](assets/en/ViewPro/vpFieldMeth2.PNG)
 
@@ -358,7 +358,7 @@ You can call directly 4D project methods from within your 4D View Pro formulas. 
 
 #### Requisitos
 
-To be called in a 4D View Pro formula, a project method must be:
+Para ser llamado en una fórmula 4D View Pro, un método proyecto debe ser:
 
 *   **Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method.
 *   **Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
