@@ -230,7 +230,7 @@ Entity classes allow you to define **computed attributes** using specific keywor
 - `Función get` *attributeName*
 - `Función set` *attributeName*
 - `Function query` *attributeName*
-- `Function orderBy` *attributeName*
+- `Función orderBy` *attributeName*
 
 For information, please refer to the [Computed attributes](#computed-attributes-1) section.
 
@@ -932,11 +932,11 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 
 > Por defecto, las clases ORDA vacías no se muestran en el Explorador. To show them you need to select **Show all data classes** from the Explorer's options menu: ![](assets/en/ORDA/showClass.png)
 
-ORDA user classes have a different icon from regular classes. Las clases vacías se atenúan:
+Las clases de usuarios ORDA tienen un icono diferente de las otras clases. Las clases vacías se atenúan:
 
 ![](assets/en/ORDA/classORDA2.png)
 
-To create an ORDA class file, you just need to double-click on the corresponding predefined class in the Explorer. 4D creates the class file and add the `extends` code. Por ejemplo, para una clase Entity:
+To create an ORDA class file, you just need to double-click on the corresponding predefined class in the Explorer. 4D crea el archivo de clase y añade el código `extends`. Por ejemplo, para una clase Entity:
 
 ```
 Class extends Entity
