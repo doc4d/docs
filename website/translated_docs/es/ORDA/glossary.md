@@ -86,7 +86,7 @@ A deep copy duplicates an object and all the references it contains. After a dee
 
 ## Entity
 
-An entity is an object that corresponds to a dataclass model. Una entidad contiene los mismos atributos que la dataclass.
+Una entidad es un objeto que corresponde a un modelo de dataclass. Una entidad contiene los mismos atributos que la dataclass.
 
 An entity can be seen as an instance of the dataclass, like a record of the table matching the dataclass in its associated datastore. Sin embargo, una entidad también contiene los datos relacionados. The purpose of the entity is to manage data (create, update, delete).
 
@@ -94,7 +94,7 @@ Para más información, consulte Entidades.
 
 ## Entity selection
 
-Una selección de entidades es un objeto. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
+Una selección de entidades es un objeto. Cuando se consulta el datastore, se devuelve una selección de entidades. An entity selection is a set of references to entities related to the same dataclass.
 
 Una selección de entidades contiene:
 
@@ -120,7 +120,7 @@ The Datastore object matching the opened 4D database (standalone or client/serve
 
 ## Método
 
-ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. Estos métodos también se llaman funciones miembros (member functions). Estos métodos se utilizan llamándolos sobre una instancia del objeto.
+ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. Proporcionan los métodos específicos para interactuar directamente con ellos. Estos métodos también se llaman funciones miembros (member functions). Estos métodos se utilizan llamándolos sobre una instancia del objeto.
 
 For example, the `query()` method is a dataclass member function. Si ha almacenado un objeto dataclass en la variable `$myClass`, puede escribir:
 
