@@ -244,7 +244,7 @@ Ordered entity selections are created only when necessary or when specifically r
 Las selecciones de entidades desordenadas se crean en los siguientes casos:
 
 *   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
-*   result of the `newSelection()` method without option,
+*   resultado del método `newSelection()` sin opción,
 *   result of any of the comparison methods, whatever the input selection types: `or()`, `and()`, `minus()`.
 > > > > > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 
