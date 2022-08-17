@@ -34,7 +34,7 @@ You can modify this file or the contents of the folder subsequently as desired (
 
 ## Adding customized macros
 
-You can add customized macros in the "Macros.xml" file using a standard text editor or by programming. You can also add XML files of customized macros in this folder.
+You can add customized macros in the "Macros.xml" file using a standard text editor or by programming. También puede añadir archivos XML de macros personalizados en esta carpeta.
 
 En modo local, el archivo de macros puede abrirse mientras se utiliza 4D. La lista de macros disponibles se actualiza en cada evento de activación de 4D. For instance, it is possible to bring the text editor to the foreground, modify the macro file, then return to the method: the new macro is then available in the Code Editor.
 
@@ -42,7 +42,7 @@ No se muestran macros vacías o erróneas.
 
 ### Comprobación de la sintaxis de las macros personalizadas
 
-The macro-command files of 4D must be in conformity with the XML standard. This means more particularly that XML declaration `<?xml version="1.0" ...?>` and document declaration `<!DOCTYPE macros SYSTEM "http://www.4d.com/dtd/2007/macros.dtd">` statements are mandatory at the beginning of a macro file in order for it to be loaded. Se soportan los diferentes tipos de codificación XML. However, it is recommended to use encoding that is Mac/PC (UTF-8) compatible. 4D provides a DTD that can be used to validate the macro files. Este archivo se encuentra en la siguiente ubicación:
+The macro-command files of 4D must be in conformity with the XML standard. This means more particularly that XML declaration `<?xml version="1.0" ...?>` and document declaration `<!DOCTYPE macros SYSTEM "http://www.4d.com/dtd/2007/macros.dtd">` statements are mandatory at the beginning of a macro file in order for it to be loaded. Se soportan los diferentes tipos de codificación XML. However, it is recommended to use encoding that is Mac/PC (UTF-8) compatible. 4D ofrece un DTD que puede utilizarse para validar los archivos de macros. Este archivo se encuentra en la siguiente ubicación:
 
 - Windows: \Resources\DTD\macros.dtd
 - Mac OS: :Contents:Resources:DTD:macros.dtd
