@@ -241,7 +241,7 @@ The length of the error file depends on the number of errors and warnings issued
 
 La estructura del archivo de errores es la siguiente:
 
-- At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D. In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. These errors and warnings are listed using the following format:
+- At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D. In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. Estos errores y advertencias se listan utilizando el siguiente formato:
     - el número de línea en el método (0 indica errores generales)
     - warning attribute indicating whether the detected anomaly is a warning (warning="true") or an error (warning="false")
     - diagnóstico que describe el error
