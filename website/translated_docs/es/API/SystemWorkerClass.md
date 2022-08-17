@@ -63,11 +63,11 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 <!-- REF #4D.SystemWorker.new().Syntax -->**4D.SystemWorker.new** ( *commandLine* : Text { ; options : Object } ) : 4D.SystemWorker<!-- END REF -->
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parámetros  | Tipo            |    | Descripción                                                   |
-| ----------- | --------------- |:--:| ------------------------------------------------------------- |
-| commandLine | Texto           | -> | Línea de comando a ejecutar                                   |
-| options     | Objeto          | -> | Parámetros worker                                             |
-| result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
+| Parámetros  | Tipo            |    | Descripción                                                          |
+| ----------- | --------------- |:--:| -------------------------------------------------------------------- |
+| commandLine | Texto           | -> | Línea de comando a ejecutar                                          |
+| options     | Objeto          | -> | Parámetros worker                                                    |
+| result      | 4D.SystemWorker | <- | Nuevo System worker asíncrono o null si el proceso no se ha iniciado |  
 <!-- END REF -->
 
 
@@ -114,7 +114,7 @@ Esta es la secuencia de llamadas de retorno:
 
 1. `onData` and `onDataError` are executed one or several times
 2. if called, `onError` is executed once (stops the system worker processing)
-3. if no error occured, `onResponse` is executed once
+3. si no se ha producido ningún error, `onResponse` se ejecuta una vez
 4. `onTerminate` se ejecuta siempre
 
 
@@ -188,7 +188,7 @@ End if
 
 #### Ejemplos en macOS
 
-1. Edit a text file (`cat` is the macOS command used to edit files). In this example, the full access path of the command is passed:
+1. Edit a text file (`cat` is the macOS command used to edit files). En este ejemplo, se pasa la ruta de acceso completa del comando:
 
 ```4d
 
