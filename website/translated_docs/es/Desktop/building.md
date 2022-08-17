@@ -277,7 +277,7 @@ The options of this area set up the mechanism for updating the client part(s) of
 - **Allow automatic update of Windows client application** - Check this option to build a `.4darchive` file that can be sent to your client applications on the Windows platform in case of update.
 - **Allow automatic update of Macintosh client application** - Check this option to build a `.4darchive` file that can be sent to your client applications on the Macintosh platform in case of update.
 
-The `.4darchive` is copied at the following location:
+El archivo `.4darchive` se copia en la siguiente ubicación:
 
 ```
 <ApplicationName>_Build/Client Server executable/Upgrade4DClient/
@@ -657,7 +657,7 @@ This mechanism addresses the case where the primary targeted server is temporary
 
 
 
-### Availability of the server selection dialog box in case of error
+### Disponibilidad de la caja de diálogo de selección del servidor en caso de error
 
 You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](https://doc.4d.com/4Dv17R6/4D/17-R6/ServerSelectionAllowed.300-4465714.en.html) XML key on the machine where the application was built:
 
