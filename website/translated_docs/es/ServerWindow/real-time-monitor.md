@@ -38,7 +38,7 @@ The RTM page can display additional information, if necessary, for each listed o
 
 To access the advanced mode for an operation, press **Shift** and select the desired operation. All available information is then displayed in the "Process Details" area without any filtering (as returned by the `GET ACTIVITY SNAPSHOT` command). La información disponible depende de la operación seleccionada.
 
-Here is an example of information displayed in standard mode:
+Este es un ejemplo de la información que se muestra en el modo estándar:
 
 ![](assets/en/Admin/server-admin-monitor-adv1.png)
 
