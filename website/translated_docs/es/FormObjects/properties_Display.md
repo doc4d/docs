@@ -10,7 +10,7 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
-You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
+Puede elegir un formato de esta lista o utilizar cualquier formato personalizado. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
 
 El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
 
@@ -60,7 +60,7 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 
 ## Formato Fecha
 
-Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
 La siguiente tabla muestra las opciones disponibles:
@@ -127,7 +127,7 @@ If the user enters a negative number, the leftmost character is displayed as a m
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
-Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. Si el usuario introduce 26, el campo muestra 26.
+Suppose you use the format ##0 to display three digits. Si el usuario no introduce nada en el campo, el campo muestra 0. Si el usuario introduce 26, el campo muestra 26.
 
 
 ### Caracteres separadores
@@ -247,9 +247,9 @@ The following table shows how different formats affect the display of numbers. T
 
 #### Gramática JSON
 
-| Nombre       | Tipos de datos | Valores posibles                                               |
-| ------------ | -------------- | -------------------------------------------------------------- |
-| numberFormat | cadena         | Numbers (including a decimal point or minus sign if necessary) |
+| Nombre       | Tipos de datos | Valores posibles                                                       |
+| ------------ | -------------- | ---------------------------------------------------------------------- |
+| numberFormat | cadena         | Números (incluyendo un punto decimal o un signo menos si es necesario) |
 
 #### Objetos soportados
 
@@ -265,7 +265,7 @@ The following table shows how different formats affect the display of numbers. T
 
 Los formatos Imagen controlan la apariencia de las imágenes cuando se muestran o se imprimen. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
 
-The truncation and scaling options do not affect the picture itself. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
+Las opciones de truncamiento y escalado no afectan a la imagen en sí. El contenido de un campo Imagen siempre se guarda. Only the display on the particular form is affected by the picture display format.
 
 ### A escala para ajustarse
 
@@ -326,7 +326,7 @@ If the field is reduced to a size smaller than that of the original picture, the
 ---
 ## Formato Hora
 
-Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
+Los formatos de hora controlan la forma en que aparecen las horas cuando se muestran o imprimen. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for times must only be selected among the 4D built-in formats.
 
 La siguiente tabla muestra los formatos de visualización de los campos de hora y da ejemplos:
@@ -342,8 +342,8 @@ La siguiente tabla muestra los formatos de visualización de los campos de hora 
 | Min Sec                      | MM_SS           | Hora expresada como duración a partir de las 00:00:00                                                                                                     | 270 Minutos 25 Segundos        |
 | ISO Date Time                | iso8601         | Corresponde al estándar XML para representar datos relacionados con la hora. It is mainly intended to be used when importing/exporting data in XML format | 0000-00-00T04:30:25            |
 | System time short            | - (por defecto) | Formato de hora estándar definido en el sistema                                                                                                           | 04:30:25                       |
-| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: this format is the same as the System time short format                | 4•30•25 AM                     |
-| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: this format is the same as the System time short format              | 4:30:25 AM HNEC                |
+| System time long abbreviated | systemMedium    | sólo macOS: formato de tiempo abreviado definido en el sistema. <br>Windows: este formato es el mismo que el formato corto de la hora del sistema   | 4•30•25 AM                     |
+| System time long             | systemLong      | macOS únicamente: formato de tiempo largo definido en el sistema. <br>Windows: este formato es el mismo que el formato corto de la hora del sistema | 4:30:25 AM HNEC                |
 
 #### Gramática JSON
 
@@ -443,7 +443,7 @@ Permite que un objeto casilla de selección acepte un tercer estado. La variable
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. Si se elige, se muestran los siguientes valores:
 *   0 = casilla no seleccionada,
 *   1 = casilla seleccionada,
-*   2 (or any value >0) = semi-checked box (third state). Para la entrada de datos, este estado devuelve el valor 2.
+*   2 (o cualquier valor >0) = caja semi-marcada (tercer estado). Para la entrada de datos, este estado devuelve el valor 2.
 *   -1 = casilla de verificación invisible,
 *   -2 = unchecked box, not enterable,
 *   -3 = checked box, not enterable,
@@ -510,7 +510,7 @@ The Truncate with ellipsis option is enabled by default and can be specified wit
 
 The Truncate with ellipsis property can be applied to Boolean type columns; however, the result differs depending on the [cell format](#display-type):
 - For Pop-up type Boolean formats, labels are truncated with an ellipsis,
-- For Check box type Boolean formats, labels are always clipped.
+- Para los formatos booleanos de tipo casilla de verificación, las etiquetas siempre se recortan.
 
 #### Gramática JSON
 
@@ -533,7 +533,7 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 This property allows hiding the object in the Application environment.
 
-You can handle the Visibility property for most form objects. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The developer can then program their display using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv18/help/command/en/page603.html) command when needed.
+Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The developer can then program their display using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv18/help/command/en/page603.html) command when needed.
 
 #### Visibilidad automática en los formularios lista
 
@@ -604,7 +604,7 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 `Gramática JSON: "automatic"`
 
 - In single-line areas, words located at the end of lines are truncated and there are no line returns.
-- In multiline areas, 4D carries out automatic line returns.
+- En áreas multilíneas, 4D realiza retornos de línea automáticos.
 
 ![](assets/en/FormObjects/wordwrap1.png)
 
