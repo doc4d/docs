@@ -10,7 +10,7 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 ![](assets/en/FormObjects/property_alphaFormat.png)
 
-You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
+Puede elegir un formato de esta lista o utilizar cualquier formato personalizado. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
 
 El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
 
