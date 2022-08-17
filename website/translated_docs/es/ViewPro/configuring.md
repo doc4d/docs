@@ -109,7 +109,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 | ----------------- | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | isProtected       |                          | booleano | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                                |
 | protectionOptions |                          | objeto   | A value that indicates the elements that you want users to be able to change. Si null : el parámetro protectionOptions se reinicia. |
-|                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True por defecto.                                                     |
+|                   | allowSelectLockedCells   | booleano | Especifica si el usuario puede seleccionar celdas bloqueadas, opcional. True por defecto.                                           |
 |                   | allowSelectUnlockedCells | booleano | Indica si el usuario puede seleccionar las celdas no bloqueadas, opcional. True por defecto.                                        |
 |                   | allowSort                | booleano | Especifica si el usuario puede ordenar rangos, opcional. Falso por defecto.                                                         |
 |                   | allowFilter              | booleano | Especifica si el usuario puede filtrar rangos, opcional. Falso por defecto.                                                         |
@@ -482,7 +482,7 @@ Ejemplo:
 | hAlign      | entero largo | Define la alineación horizontal del contenido de la celda.                                                                        | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
 | locked      | booleano     | Especifica el estado de protección de la celda. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = bloqueado, False = desbloqueado.                                                                              |
 | shrinkToFit | booleano     | Especifica si el contenido de la celda debe ser reducido.                                                                         | True = contenido reducido, False = sin reducción.                                                                    |
-| tabStop     | booleano     | Specifies if the focus to the cell can be set using the Tab key.                                                                  | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
+| tabStop     | booleano     | Especifica si el foco de la celda se puede ajustar utilizando la tecla Tab.                                                       | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
 | vAlign      | entero largo | Especifica la alineación vertical del contenido de la celda.                                                                      | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
 
