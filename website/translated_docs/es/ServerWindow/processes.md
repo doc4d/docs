@@ -48,7 +48,7 @@ The activity of the process is the percentage of time that 4D Server has devoted
 
 ## Tipo del proceso
 
-Cada proceso se identifica con un icono y un tipo. The color and form of the icon indicates the type of process:
+Cada proceso se identifica con un icono y un tipo. El color y la forma del icono indican el tipo de proceso:
 
 | icon                                    | type                                                                                                                                                               |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -60,7 +60,7 @@ Cada proceso se identifica con un icono y un tipo. The color and form of the ico
 | ![](assets/en/Admin/server-icon-6.png)  | Proceso cliente 4D protegido (proceso de desarrollo de un 4D conectado)                                                                                            |
 | ![](assets/en/Admin/server-icon-7.png)  | Proceso cliente 4D principal (proceso principal de un 4D conectado). Collaborative process, equivalent on the server of the process created on the client machine) |
 | ![](assets/en/Admin/server-icon-8.png)  | Proceso cliente 4D principal (proceso paralelo a un proceso cliente 4D. Preemptive process responsible for controlling the corresponding main 4D client process)   |
-| ![](assets/en/Admin/server-icon-9.png)  | Spare process (former or future "4D client database process")                                                                                                      |
+| ![](assets/en/Admin/server-icon-9.png)  | Proceso de reserva (antiguo o futuro "¨Proceso cliente 4D base de datos")                                                                                          |
 | ![](assets/en/Admin/server-icon-10.png) | Worker servidor SQL                                                                                                                                                |
 | ![](assets/en/Admin/server-icon-11.png) | Proceso worker servidor HTTP                                                                                                                                       |
 | ![](assets/en/Admin/server-icon-12.png) | Proceso 4D client (proceso que se ejecuta en el 4D conectado)                                                                                                      |
