@@ -110,7 +110,7 @@ You can mix absolute and relative references by inserting a dollar sign in front
 
 A convenient, fast and accurate way to specify an absolute reference is to name the cell and use that name in place of the cell address. Una referencia a una celda nombrada es siempre absoluta. You can create or modify named cells or named cell ranges using the [`VP ADD RANGE NAME`](method-list.md#vp-add-range-name) method.
 
-The following table shows the effect of the different notations:
+La siguiente tabla muestra el efecto de las diferentes notaciones:
 
 | Ejemplo            | Tipo de referencia | Descripción                                                                                                                                        |
 | ------------------ | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -319,7 +319,7 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
 ![](assets/en/ViewPro/vpFieldMeth1.PNG)
 
 
-2.  Execute the following code to initialize a virtual structure:
+2.  Ejecuta el siguiente código para inicializar una estructura virtual:
 
     ```4d
     ARRAY TEXT($tableTitles;1)
@@ -358,7 +358,7 @@ You can call directly 4D project methods from within your 4D View Pro formulas. 
 
 #### Requisitos
 
-To be called in a 4D View Pro formula, a project method must be:
+Para ser llamado en una fórmula 4D View Pro, un método proyecto debe ser:
 
 *   **Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method.
 *   **Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
