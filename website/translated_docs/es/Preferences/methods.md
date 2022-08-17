@@ -49,7 +49,7 @@ The **font** and **font size** menus allows you to select the font name and size
 
 ### Lenguaje 4D y lenguaje SQL
 
-You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
+You can set different font styles and colors (font color or background color) for each type of language element. Puede seleccionar los elementos que desea personalizar en la lista de categorías.
 
 
 ### Otros estilos
