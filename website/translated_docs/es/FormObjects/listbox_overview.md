@@ -112,7 +112,7 @@ When the data source is an entity selection, any modifications made on the list 
 When the data source is a collection, any modifications made in the list box values are reflected in the collection. When the data source is a collection, any modifications made in the list box values are reflected in the collection. Por ejemplo:
 
 ```4d
-myCol:=myCol.push("new value") //display new value in list box
+myCol:=myCol.push("new value") //mostrar el nuevo valor en el list box
 ```
 
 
@@ -366,7 +366,7 @@ Let’s consider the example of a list box containing two arrays, one date and o
 
 ![](assets/en/FormObjects/listbox_entry.png)
 
-Here is the method of the *arrText* column:
+Aquí está el método de la columna *arrText*:
 
 ```4d
  Case of
@@ -439,7 +439,7 @@ La gestión de selecciones es diferente dependiendo de si el list box se basa en
 
 ### Personalizar la apariencia de las líneas seleccionadas
 
-When the [Hide selection highlight](properties_Appearance.md#hide-selection-highlight) option is selected, you need to make list box selections visible using available interface options. Since selections are still fully managed by 4D, this means:
+When the [Hide selection highlight](properties_Appearance.md#hide-selection-highlight) option is selected, you need to make list box selections visible using available interface options. Dado que las selecciones siguen siendo gestionadas en su totalidad por 4D, esto significa:
 
 - For array type list boxes, you must parse the Boolean array variable associated with the list box to determine which rows are selected or not.
 - For selection type list boxes, you have to check whether the current record (row) belongs to the set specified in the [Highlight Set](properties_ListBox.md#highlight-set) property of the list box.
@@ -608,14 +608,14 @@ There are several different ways to set background colors, font colors and font 
 
 Priority and inheritance principles are observed when the same property is set at more than one level.
 
-| Nivel de prioridad | Ubicación del parámetro                                              |
-| ------------------ | -------------------------------------------------------------------- |
-| alta prioridad     | Celda (si texto multiestilo)                                         |
-|                    | Arrays de columnas/métodos                                           |
-|                    | Arrays/métodos de Listbox                                            |
-|                    | Propiedades de la columna                                            |
-|                    | Propiedades de list box                                              |
-| baja prioridad     | Meta Info expression (for collection or entity selection list boxes) |
+| Nivel de prioridad | Ubicación del parámetro                                                                  |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| alta prioridad     | Celda (si texto multiestilo)                                                             |
+|                    | Arrays de columnas/métodos                                                               |
+|                    | Arrays/métodos de Listbox                                                                |
+|                    | Propiedades de la columna                                                                |
+|                    | Propiedades de list box                                                                  |
+| baja prioridad     | Expresiones de metainformación (para colecciones o list boxes de selección de entidades) |
 
 For example, if you set a font style in the list box properties and another using a style array for the column, the latter one will be taken into account.
 
@@ -900,14 +900,14 @@ ARRAY OBJECT(obColumn;0) //column array
 ```
 
 ![](assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
-> Display format and entry filters cannot be set for an object column. Dependen automáticamente del tipo de valor.
+> El formato de visualización y los filtros de entrada no pueden definirse para una columna de objetos. Dependen automáticamente del tipo de valor.
 
 #### valueType y visualización de datos
 
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Los valores valueType soportados son:
 
 *   "text": para un valor de texto
-*   "real": for a numeric value that can include separators like a \<space>, <.>, o <,>
+*   "real": para un valor numérico que puede incluir separadores como una barra oblicua \<space>, <.>, o <,>
 *   "integer": para un valor entero
 *   "boolean": para un valor True/False
 *   "color": para definir un color de fondo
@@ -929,7 +929,7 @@ You set the cell display and options using specific attributes in each object (s
 
 #### Formatos de visualización y filtros de entrada
 
-You cannot set display formats or entry filters for columns of object-type list boxes. They are automatically defined according to the value type. Estos están listados en la siguiente tabla:
+You cannot set display formats or entry filters for columns of object-type list boxes. Se definen automáticamente en función del tipo de valor. Estos están listados en la siguiente tabla:
 
 | Tipo de valor | Formato por defecto                                                               | Control de entrada    |
 | ------------- | --------------------------------------------------------------------------------- | --------------------- |

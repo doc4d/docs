@@ -235,7 +235,7 @@ Function square($x : Integer)
 > Internally, `return x` executes `$0:=x` or (if declared) `myReturnValue:=x`, and returns to the caller. If `return` is used without an expression, the function or method returns a null value of the declared return type (if any), otherwise *undefined*.
 
 
-The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. Por ejemplo:
+The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). Sin embargo, hay que tener en cuenta que termina inmediatamente la ejecución del código. Por ejemplo:
 
 
 ```4d

@@ -81,7 +81,7 @@ The 4D View Pro sheet options object allows you to control various options of yo
 
 | Propiedad            |                        | Tipo         | Descripción                                                                                                                                                                                                                                                                                                  |
 | -------------------- | ---------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| allowCellOverflow    |                        | booleano     | Specifies whether data can overflow into adjacent empty cells.                                                                                                                                                                                                                                               |
+| allowCellOverflow    |                        | booleano     | Especifica si los datos pueden desbordarse hacia las celdas vacías adyacentes.                                                                                                                                                                                                                               |
 | sheetTabColor        |                        | cadena       | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                       |
 | frozenlineColor      |                        | cadena       | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                     |
 | clipBoardOptions     |                        | entero largo | La opción portapapeles. Valores disponibles: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
@@ -109,7 +109,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 | ----------------- | ------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | isProtected       |                          | booleano | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                                |
 | protectionOptions |                          | objeto   | A value that indicates the elements that you want users to be able to change. Si null : el parámetro protectionOptions se reinicia. |
-|                   | allowSelectLockedCells   | booleano | Specifies whether the user can select locked cells, optional. True por defecto.                                                     |
+|                   | allowSelectLockedCells   | booleano | Especifica si el usuario puede seleccionar celdas bloqueadas, opcional. True por defecto.                                           |
 |                   | allowSelectUnlockedCells | booleano | Indica si el usuario puede seleccionar las celdas no bloqueadas, opcional. True por defecto.                                        |
 |                   | allowSort                | booleano | Especifica si el usuario puede ordenar rangos, opcional. Falso por defecto.                                                         |
 |                   | allowFilter              | booleano | Especifica si el usuario puede filtrar rangos, opcional. Falso por defecto.                                                         |
@@ -179,10 +179,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 | `vk pattern full date time`               | "_fullDateTimePattern_"              | Formato ISO 8601 para la fecha y la hora completas en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy HH:mm:ss"                                            |
 | `vk pattern long date`                    | "_longDatePattern_"                  | Formato ISO 8601 para la fecha completa en la localización actual.<p><p>Patrón por defecto USA: "dddd, dd MMMM yyyy"                                                                |
 | `vk pattern long time`                    | "_longTimePattern_"                  | Formato ISO 8601 para la hora en la localización actual.<p><p>Patrón por defecto USA: "HH:mm:ss"                                                                                    |
-| `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                                 |
+| `vk pattern month day`                    | "_monthDayPattern_"                  | Formato ISO 8601 para el mes y el día en la localización actual.<p><p>USA default pattern: "MMMM dd"                                                                               |
 | `vk pattern short date`                   | "_shortDatePattern_"                 | Formato abreviado ISO 8601 para la fecha en la localización actual.<p><p>Patrón por defecto USA: "MM/dd/yyyy"                                                                     |
 | `vk pattern short time`                   | "_shortTimePattern_"                 | Formato abreviado ISO 8601 para la hora en la localización actual.<p><p>Patrón por defecto USA: "HH:mm"                                                                           |
-| `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"                  |
+| `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | ISO 8601 format for the date and time in current localization which can be sorted.<p><p>Patrón por defecto USA: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"               |
 | `vk pattern universal sortable date time` | "_universalSortableDateTimePattern_" | ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>Patrón por defecto de USA: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'" |
 | `vk pattern year month`                   | "_yearMonthPattern_"                 | Formato ISO 8601 para el mes y el año en la localización actual.<p><p>Patrón por defecto USA: "yyyy MMMM"                                                                         |
 
@@ -264,16 +264,16 @@ In addition to the special characters and codes described in the previous sectio
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
-| Propiedad         | Tipo         | Descripción                                                                                                                     |
-| ----------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                            |
-| columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                                           |
-| repeatColumnEnd   | entero largo | La última columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)               |
-| repeatColumnStart | entero largo | La primera columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)              |
-| repeatRowEnd      | entero largo | La última línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas) |
-| repeatRowStart    | entero largo | The first row of a range of rows to print at the top of each page. Valor por defecto = -1 (todas las líneas)                    |
-| rowEnd            | entero largo | The last column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                             |
-| rowStart          | entero largo | The first column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                            |
+| Propiedad         | Tipo         | Descripción                                                                                                                      |
+| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| columnEnd         | entero largo | The last row to print in a cell range. Default value = -1 (all rows)                                                             |
+| columnStart       | entero largo | The first row to print in a cell range. Default value = -1 (all rows)                                                            |
+| repeatColumnEnd   | entero largo | La última columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)                |
+| repeatColumnStart | entero largo | La primera columna de un rango de columnas a imprimir a la izquierda de cada página. Default value = -1 (all rows)               |
+| repeatRowEnd      | entero largo | La última línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas)  |
+| repeatRowStart    | entero largo | La primera línea de un rango de líneas a imprimir en la parte superior de cada página. Valor por defecto = -1 (todas las líneas) |
+| rowEnd            | entero largo | The last column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                              |
+| rowStart          | entero largo | The first column to print in a cell range. Valor por defecto = -1 (todas las líneas)                                             |
 
 ### Encabezados / Pies de página
 
@@ -482,7 +482,7 @@ Ejemplo:
 | hAlign      | entero largo | Define la alineación horizontal del contenido de la celda.                                                                        | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
 | locked      | booleano     | Especifica el estado de protección de la celda. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = bloqueado, False = desbloqueado.                                                                              |
 | shrinkToFit | booleano     | Especifica si el contenido de la celda debe ser reducido.                                                                         | True = contenido reducido, False = sin reducción.                                                                    |
-| tabStop     | booleano     | Specifies if the focus to the cell can be set using the Tab key.                                                                  | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
+| tabStop     | booleano     | Especifica si el foco de la celda se puede ajustar utilizando la tecla Tab.                                                       | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
 | vAlign      | entero largo | Especifica la alineación vertical del contenido de la celda.                                                                      | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
 

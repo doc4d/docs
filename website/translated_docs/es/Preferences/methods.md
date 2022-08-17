@@ -38,7 +38,7 @@ If key values are not defined in a custom theme, they default to the values from
 
 Definir un tema significa:
 
-- setting a global font and font size for the whole code editor,
+- definir una fuente y un tamaño de fuente para todo el editor de código,
 - assigning specific styles and colors to each 4D language element (fields, tables, variables, parameters, SQL, etc.), SQL language element (keywords, functions, etc.), and color backgrounds.
 
 Combining different colors and styles is particularly useful for code maintenance purposes.
@@ -49,7 +49,7 @@ The **font** and **font size** menus allows you to select the font name and size
 
 ### Lenguaje 4D y lenguaje SQL
 
-You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
+You can set different font styles and colors (font color or background color) for each type of language element. Puede seleccionar los elementos que desea personalizar en la lista de categorías.
 
 
 ### Otros estilos
@@ -154,13 +154,13 @@ Enables automatic insertion of () and closing braces while typing code. Esta opc
 
 #### Correspondencia \[]\(){}
 
-Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. Las siguientes opciones están disponibles:
+Define la señalización gráfica de las llaves correspondientes en el código. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. Las siguientes opciones están disponibles:
 
 - **Ninguno**: sin señales
 - **Rectangle** (default): Braces surrounded by a black line  
   ![](assets/en/Preferences/optionsRectangle.png)
 - **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
-- **Bold**: Braces displayed in bold.
+- **Negrita**: las llaves aparecen en negrita.
 
 #### Resaltado de las variables y campos
 

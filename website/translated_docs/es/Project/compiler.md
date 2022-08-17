@@ -203,7 +203,7 @@ Estas dos listas contienen cuatro columnas:
     - If the variable was found in an object method, the object method’s name is given, preceded by the form name, table name, and by (OM).
     - If the variable is an object in a form and does not appear in any project, form, object method, or trigger, the name of the form in which it appears is given, preceded by (F). At the end of each list, you can find the sizes of the process and interprocess variables in bytes.
 
-> When compiling, the compiler cannot determine in which process a given process variable is used. A process variable can have a different value in each process. Consequently, all process variables are systematically duplicated as each new process is launched: it is thus advisable to watch out for the amount of memory that they will take up. Also, keep in mind that the space for process variables is not related to the stack size for the process.
+> When compiling, the compiler cannot determine in which process a given process variable is used. Una variable proceso puede tener un valor diferente en cada proceso. Consequently, all process variables are systematically duplicated as each new process is launched: it is thus advisable to watch out for the amount of memory that they will take up. Also, keep in mind that the space for process variables is not related to the stack size for the process.
 
 #### Lista de las variables locales
 
@@ -242,7 +242,7 @@ The length of the error file depends on the number of errors and warnings issued
 La estructura del archivo de errores es la siguiente:
 
 - At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D.
-- In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. These errors and warnings are listed using the following format:
+- In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. Estos errores y advertencias se listan utilizando el siguiente formato:
     - el número de línea en el método (0 indica errores generales)
     - warning attribute indicating whether the detected anomaly is a warning (warning="true") or an error (warning="false")
     - diagnóstico que describe el error
@@ -253,7 +253,7 @@ Un archivo de error puede contener tres tipos de mensajes:
 
 - **Errors linked to a specific line**: these errors are displayed in context — the line in which they were found — with an explanation. The compiler reports this type of error when it encounters an expression in which it sees an inconsistency related to data type or syntax. In the compiler window, double–click on each error detected in order to open the method concerned directly in the 4D Method editor, with the line containing the error highlighted.
 
-- **General errors**: These are errors that make it impossible to compile the project. There are two cases in which the compiler reports a general error:
+- **General errors**: These are errors that make it impossible to compile the project. Hay dos casos en los que el compilador informa de un error general:
     - No se ha podido determinar el tipo de datos de una variable proceso.
     - Dos tipos diferentes de objetos tienen el mismo nombre.
 

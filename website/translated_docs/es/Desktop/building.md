@@ -317,7 +317,7 @@ The options of this area set up the mechanism for updating the client part(s) of
 - **Allow automatic update of Windows client application** - Check this option to build a `.4darchive` file that can be sent to your client applications on the Windows platform in case of update.
 - **Allow automatic update of Macintosh client application** - Check this option to build a `.4darchive` file that can be sent to your client applications on the Macintosh platform in case of update.
 
-The `.4darchive` is copied at the following location:
+El archivo `.4darchive` se copia en la siguiente ubicación:
 
 ```
 <ApplicationName>_Build/Client Server executable/Upgrade4DClient/
@@ -351,7 +351,7 @@ It works as follows: when a new version of the client/server application is buil
 
 To trigger client application update notifications, simply replace the old version of the server application with the new one and then execute it. El resto del proceso es automático.
 
-On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. The user can either update their version or cancel the dialog box.
+On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. El usuario puede actualizar su versión o cancelar la caja de diálogo.
 
 *   If the user clicks **OK**, the new version is downloaded to the client machine over the network. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor. Una vez finalizada la descarga, se cierra la aplicación cliente antigua y se lanza la nueva versión, que se conecta al servidor.
 *   If the user clicks **Cancel**, the update is cancelled; if the old version of the client application is not in the range of versions accepted by the server (please refer to the following paragraph), the application is closed and connection is impossible. En caso contrario (por defecto), se establece la conexión.
@@ -502,7 +502,7 @@ A module is a built-in code library used by 4D to control specific features. If 
 
 Los siguientes módulos opcionales pueden ser deseleccionados:
 
-- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
+- **CEF**: Librería integrada Chromium. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
 - **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
 > If you deselect MeCab for an application in Japanese language used on heterogeneous platforms, make sure to deselect it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise major malfunctions will occur in the application.
 
@@ -693,7 +693,7 @@ The management of connections by client applications covers the mechanisms by wh
 
 ### Escenario de conexión
 
-The connection procedure for merged client applications supports cases where the dedicated server is not available. The startup scenario for a 4D client application is the following:
+The connection procedure for merged client applications supports cases where the dedicated server is not available. El escenario de inicio de una aplicación cliente 4D es el siguiente:
 
 1.  If valid connection information is stored in the "EnginedServer.4DLink" file within the client application, the client application connects to the specified server address.  
    OR  
@@ -705,7 +705,7 @@ The connection procedure for merged client applications supports cases where the
     - If the user clicks on the **Quit** button, the client application quits.
 4. If the connection is successful, the client application saves this connection information in the application's user preferences folder for future use.
 
-The whole procedure is described in the following diagram:
+Todo el procedimiento se describe en el siguiente diagrama:
 
 ![](assets/en/Desktop/client-connect.png)
 
@@ -726,7 +726,7 @@ This mechanism addresses the case where the primary targeted server is temporary
 
 
 
-### Availability of the server selection dialog box in case of error
+### Disponibilidad de la caja de diálogo de selección del servidor en caso de error
 
 You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](https://doc.4d.com/4Dv17R6/4D/17-R6/ServerSelectionAllowed.300-4465714.en.html) XML key on the machine where the application was built:
 
