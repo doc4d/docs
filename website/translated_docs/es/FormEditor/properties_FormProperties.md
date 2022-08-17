@@ -56,7 +56,7 @@ The form name is defined by the name of the folder that contains the form.4Dform
 
 The form type, *i.e.* its destination, defines the features that will be available to the form. For example, [markers](properties_Markers.md) can only be set for list (output) table forms.
 
-Each table in a database generally has at least two table forms. One for listing records on-screen and the other for displaying one record at a time (used for data entry and modifications):
+Cada tabla de una base de datos suele tener al menos dos formas de tabla. One for listing records on-screen and the other for displaying one record at a time (used for data entry and modifications):
 
 - Output form - the *output form* or *list form* displays a list of records, with a single line per record. The results of queries are shown in an output form and users can double-click a line to display the input form for that record. ![](assets/en/FormObjects/formOutput.png)
 

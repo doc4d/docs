@@ -72,7 +72,7 @@ When handled through the code, the datastore is an object whose properties are a
 - the local datastore, based on the current 4D database, returned by the `ds` command (the main datastore).
 - one or more remote datastore(s) exposed as REST resources in remote 4D databases, returned by the `Open datastore` command.
 
-A datastore references only a single local or remote database.
+Un datastore hace referencia sólo a una base de datos local o remota.
 
 El objeto datastore en sí no puede ser copiado como un objeto:
 
@@ -100,7 +100,7 @@ Una dataclass es el equivalente de una tabla. It is used as an object model and 
 
 All dataclasses in a 4D project are available as a property of the `ds` datastore. For remote datastores accessed through `Open datastore` or [REST requests](REST/gettingStarted.md), the **Expose as REST resource** option must be selected at the 4D structure level for each exposed table that you want to be exposed as dataclass in the datastore.
 
-For example, consider the following table in the 4D structure:
+Por ejemplo, considere la siguiente tabla en la estructura 4D:
 
 ![](assets/en/ORDA/companyTable.png)
 
@@ -177,7 +177,7 @@ Keep in mind that these objects describe attributes, but do not give access to d
 
 ### Entity
 
-Una entidad es el equivalente a un registro. It is actually an object that references a record in the database. It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
+Una entidad es el equivalente a un registro. En realidad es un objeto que hace referencia a un registro de la base de datos. It can be seen as an instance of a [dataclass](#dataclass), like a record of the table matching the dataclass. However, an entity also contains data correlated to the database related to the datastore.
 
 The purpose of the entity is to manage data (create, update, delete). When an entity reference is obtained by means of an entity selection, it also retains information about the entity selection which allows iteration through the selection.
 
@@ -239,7 +239,7 @@ Ordered entity selections are created only when necessary or when specifically r
 Las selecciones de entidades desordenadas se crean en los siguientes casos:
 
 *   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
-*   result of the `newSelection()` method without option,
+*   resultado del método `newSelection()` sin opción,
 *   result of any of the comparison methods, whatever the input selection types: `or()`, `and()`, `minus()`.
 > > > > > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 

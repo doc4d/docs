@@ -271,7 +271,7 @@ Número de puerto IP (TCP) de escucha para HTTP. By default, 4D publishes a web 
 From a web browser, you need to include the non-default HTTP port number into the address you enter for connecting to the web application. The address must have a suffix consisting of a colon followed by the port number. For example, if you are using the HTTP port number 8080, you will specify "123.4.567.89:8080".
 > **Atención**: si utiliza números de puerto TCP distintos a los predeterminados (80 para HTTP estándar y 443 para HTTPS), tenga cuidado de no utilizar números de puerto que sean predeterminados para otros servicios que pueda querer utilizar simultáneamente. Por ejemplo, si también tiene previsto utilizar el protocolo FTP en su equipo servidor web, no utilice los puertos TCP 20 y 21, que son los puertos por defecto para ese protocolo. Los números de puertos inferiores a 256 están reservados para servicios conocidos y los números de puertos de 256 a 1024 están reservados para servicios específicos originados en las plataformas UNIX. Para obtener la máxima seguridad, especifique un número de puerto más allá de estos intervalos (por ejemplo, en los 2000 o 3000).
 
-If you specify 0, 4D will use the default HTTP port number 80.
+Si especifica 0, 4D utilizará el número de puerto HTTP 80 por defecto.
 
 
 ## HTTP Trace
@@ -621,7 +621,7 @@ Estado de validación de la dirección IP para las cookies de sesión. For secur
 
 #### Reutilizar los contextos temporales (en modo remoto)
 
-Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
+Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Una vez atendida la petición, este proceso se cierra.
 
 When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. Al eliminar la etapa de creación del proceso, se mejora el rendimiento del servidor web.
 
@@ -645,7 +645,7 @@ The **Use Keep-Alive Connections** option enables or disables keep-alive TCP con
 
 The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
 
-En algunos casos, se pueden invocar otras funciones internas optimizadas. Keep-alive connections are useful mainly for static pages.
+En algunos casos, se pueden invocar otras funciones internas optimizadas. Las conexiones persistentes son útiles principalmente para las páginas estáticas.
 
 Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 

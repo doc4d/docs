@@ -192,9 +192,9 @@ Debe introducir una lista de valores. In the Form editor, a specific dialog box 
 
 #### Gramática JSON
 
-| Nombre | Tipos de datos | Valores posibles                                                 |
-| ------ | -------------- | ---------------------------------------------------------------- |
-| values | colección      | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| Nombre | Tipos de datos | Valores posibles                                                                |
+| ------ | -------------- | ------------------------------------------------------------------------------- |
+| values | colección      | Una colección de valores por defecto (cadenas), por ejemplo: "a", "b", "c", "d" |
 
 #### Objetos soportados
 
