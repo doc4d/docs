@@ -26,11 +26,11 @@ title: 印刷
 
 | 名称          | データタイプ | とりうる値                                                              |
 | ----------- | ------ | ------------------------------------------------------------------ |
-| pageFormat  | オブジェクト | 利用可能なプロパティ: paperName, paperWidth, paperHeight, orientation, scale |
-| paperName   | 文字列    | "A4", "レター"...                                                     |
-| paperWidth  | 文字列    | paperName という名前の用紙が見つからなかった場合に使用されます。 単位の明記が必要です: pt, in, mm, cm。  |
-| paperHeight | 文字列    | paperName という名前の用紙が見つからなかった場合に使用されます。 単位の明記が必要です: pt, in, mm, cm。  |
-| orientation | 文字列    | "landscape" (デフォルトは "portrait")                                    |
+| pageFormat  | object | 利用可能なプロパティ: paperName, paperWidth, paperHeight, orientation, scale |
+| paperName   | string | "A4", "レター"...                                                     |
+| paperWidth  | string | paperName という名前の用紙が見つからなかった場合に使用されます。 単位の明記が必要です: pt, in, mm, cm。  |
+| paperHeight | string | paperName という名前の用紙が見つからなかった場合に使用されます。 単位の明記が必要です: pt, in, mm, cm。  |
+| orientation | string | "landscape" (デフォルトは "portrait")                                    |
 | スケール        | 数値     | 最小値: 0                                                             |
 
 
