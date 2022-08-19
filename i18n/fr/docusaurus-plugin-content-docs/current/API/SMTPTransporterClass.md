@@ -238,7 +238,7 @@ La fonction retourne un objet décrivant le statut SMTP de l"opération. Cet obj
 
 | Propriété  | Type    | Description                                                                                  |
 | ---------- | ------- | -------------------------------------------------------------------------------------------- |
-| success    | booléen | Vrai si l'envoi a été effectué avec succès, sinon Faux                                       |
+| success    | boolean | Vrai si l'envoi a été effectué avec succès, sinon Faux                                       |
 | status     | number  | Code du statut retourné par le serveur SMTP (0 si problème non lié au traitement de l'email) |
 | statusText | text    | Message de statut retourné par le serveur SMTP                                               |
 
