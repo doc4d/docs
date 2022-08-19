@@ -86,7 +86,7 @@ Lorsque cette option est activée, la méthode objet est exécutée avec l'évé
 
 | Le nom              | Type de données | Valeurs possibles |
 | ------------------- | --------------- | ----------------- |
-| continuousExecution | booléen         | true, false       |
+| continuousExecution | boolean         | true, false       |
 
 
 
@@ -158,7 +158,7 @@ Autorise le déplacement des lignes pendant l'exécution. Cette option est séle
 
 | Le nom      | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
-| movableRows | booléen         | true, false       |
+| movableRows | boolean         | true, false       |
 
 
 
@@ -220,7 +220,7 @@ Dans d'autres cas (list box basées sur des sélections nommées, colonnes assoc
 
 | Le nom   | Type de données | Valeurs possibles |
 | -------- | --------------- | ----------------- |
-| sortable | booléen         | true, false       |
+| sortable | boolean         | true, false       |
 
 
 
@@ -253,7 +253,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `OBJE
 
 | Le nom | Type de données | Valeurs possibles                                                                                                |
 | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------- |
-| action | Chaîne          | Le nom d'une [action standard valide](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
+| action | string          | Le nom d'une [action standard valide](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
 
 
 
