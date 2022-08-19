@@ -38,7 +38,7 @@ The specified form is displayed:
 
 | Le nom     | Type de données | Valeurs possibles                                                           |
 | ---------- | --------------- | --------------------------------------------------------------------------- |
-| detailForm | Chaîne          | <li>Name (string) of table or project form</li><li>POSIX path (string) to a .json file describing the form</li><li>Object describing the form</li> |
+| detailForm | string          | <li>Name (string) of table or project form</li><li>POSIX path (string) to a .json file describing the form</li><li>Object describing the form</li> |
 
 #### Objets pris en charge
 
@@ -65,7 +65,7 @@ For the last two actions, the On `Open Detail` form event is also generated. The
 
 | Le nom                 | Type de données | Valeurs possibles                   |
 | ---------------------- | --------------- | ----------------------------------- |
-| doubleClickInRowAction | Chaîne          | "editSubrecord", "displaySubrecord" |
+| doubleClickInRowAction | string          | "editSubrecord", "displaySubrecord" |
 
 #### Objets pris en charge
 
@@ -87,7 +87,7 @@ This property is used to specify the set to be used to manage highlighted record
 
 | Le nom       | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
-| highlightSet | Chaîne          | Name of the set   |
+| highlightSet | string          | Name of the set   |
 
 #### Objets pris en charge
 
@@ -209,7 +209,7 @@ Note that setting properties for an element overrides any other values for this 
 
 | Le nom           | Type de données | Valeurs possibles      |
 | ---------------- | --------------- | ---------------------- |
-| rowControlSource | Chaîne          | Row control array name |
+| rowControlSource | string          | Row control array name |
 
 #### Objets pris en charge
 
@@ -230,7 +230,7 @@ Designates the option for allowing users to select rows:
 
 | Le nom        | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
-| selectionMode | Chaîne          | "multiple", "single", "none" |
+| selectionMode | string          | "multiple", "single", "none" |
 
 #### Objets pris en charge
 
