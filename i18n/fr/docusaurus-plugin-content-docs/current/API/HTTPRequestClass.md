@@ -400,7 +400,7 @@ The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of 
 <!-- REF #4D.HTTPRequest.wait().Params -->
 | Paramètres | Type           |    | Description                                      |
 | ---------- | -------------- |:--:| ------------------------------------------------ |
-| heure      | Real           | -> | Maximum time in seconds to wait for the response |
+| time       | Real           | -> | Maximum time in seconds to wait for the response |
 | Result     | 4D.HTTPRequest | <- | HTTPRequest object|<!-- END REF -->
 
 
