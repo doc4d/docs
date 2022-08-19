@@ -18,7 +18,7 @@ Webエリアで実行される JavaScripe コードから 4Dメソッドを呼�
 
 | 名称                   | データタイプ | とりうる値                 |
 | -------------------- | ------ | --------------------- |
-| methodsAccessibility | 文字列    | "none" (デフォルト), "all" |
+| methodsAccessibility | string | "none" (デフォルト), "all" |
 
 #### 対象オブジェクト
 
@@ -36,7 +36,7 @@ Webエリアで実行される JavaScripe コードから 4Dメソッドを呼�
 
 | 名称             | データタイプ | とりうる値      |
 | -------------- | ------ | ---------- |
-| progressSource | 文字列    | 倍長整数型変数の名前 |
+| progressSource | string | 倍長整数型変数の名前 |
 
 #### 対象オブジェクト
 
@@ -67,7 +67,7 @@ URL変数は [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-450484
 
 | 名称        | データタイプ | とりうる値 |
 | --------- | ------ | ----- |
-| urlSource | 文字列    | URL   |
+| urlSource | string | URL   |
 
 #### 対象オブジェクト
 
@@ -98,7 +98,7 @@ CEFエンジンには以下のような制約があります:
 
 | 名称        | データタイプ | とりうる値                |
 | --------- | ------ | -------------------- |
-| webEngine | 文字列    | "embedded", "system" |
+| webEngine | string | "embedded", "system" |
 
 #### 対象オブジェクト
 
