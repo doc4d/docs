@@ -25,7 +25,7 @@ Les options d'impression sont les suivantes :
 
 |   Le nom   | Type de données | Valeurs possibles                                                 |
 |:----------:|:---------------:| ----------------------------------------------------------------- |
-| printFrame |     Chaîne      | "fixed", "variable", (sous-formulaire uniquement) "fixedMultiple" |
+| printFrame |     string      | "fixed", "variable", (sous-formulaire uniquement) "fixedMultiple" |
 
 #### Objets pris en charge
 
