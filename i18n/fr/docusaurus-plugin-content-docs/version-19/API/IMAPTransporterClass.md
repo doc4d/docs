@@ -848,9 +848,9 @@ Chaque objet de la collection retournée contient les propriétés suivantes :
 | Propriété        | Type    | Description                                                                                                                                    |
 | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | \[].name        | text    | Nom de la boîte de réception                                                                                                                   |
-| \[].selectable  | booléen | Indique si les droits d'accès permettent ou non à la boite de réception d'être sélectionnée : <ul><li>vrai - la boite de réception peut être sélectionnée</li><li>faux - la boite de réception ne peut pas être sélectionnée</li></ul>                        |
-| \[].inferior    | booléen | Indique si les droits d'accès permettent ou non la création d'une hiérarchie inférieure dans la boite de réception : <ul><li>vrai - un niveau inférieur peut être créé</li><li>faux - un niveau inférieur ne peut pas être créé</li></ul> |
-| \[].interesting | booléen | Indique si la boite de réception a été marquée comme "intéressante" par le serveur : <ul><li>vrai - la boite de réception a été marquée comme "intéressante" par le serveur. Par exemple, elle peut contenir de nouveaux messages.</li><li>faux - la boite de réception n'a pas été marquée comme "intéressante" par le serveur.</li></ul>                                 |
+| \[].selectable  | boolean | Indique si les droits d'accès permettent ou non à la boite de réception d'être sélectionnée : <ul><li>vrai - la boite de réception peut être sélectionnée</li><li>faux - la boite de réception ne peut pas être sélectionnée</li></ul>                        |
+| \[].inferior    | boolean | Indique si les droits d'accès permettent ou non la création d'une hiérarchie inférieure dans la boite de réception : <ul><li>vrai - un niveau inférieur peut être créé</li><li>faux - un niveau inférieur ne peut pas être créé</li></ul> |
+| \[].interesting | boolean | Indique si la boite de réception a été marquée comme "intéressante" par le serveur : <ul><li>vrai - la boite de réception a été marquée comme "intéressante" par le serveur. Par exemple, elle peut contenir de nouveaux messages.</li><li>faux - la boite de réception n'a pas été marquée comme "intéressante" par le serveur.</li></ul>                                 |
 
 Si le compte ne contient pas de boites de réception, une collection vide est retournée.
 > * Si aucune connexion n'est ouverte, `.getBoxList()` ouvrira une connexion.
@@ -967,8 +967,8 @@ Le paramètre facultatif *options* vous permet de passer un objet définissant d
 
 | Propriété  | Type    | Description                                                                                                                                              |
 | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | booléen | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message n'est pas marqué comme "seen". Valeur par défaut : Vrai |
-| withBody   | booléen | Passez Vrai pour retourner le corps du message. Si Faux, seul l'en-tête du message est retourné. Valeur par défaut : Vrai                                |
+| updateSeen | boolean | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message n'est pas marqué comme "seen". Valeur par défaut : Vrai |
+| withBody   | boolean | Passez Vrai pour retourner le corps du message. Si Faux, seul l'en-tête du message est retourné. Valeur par défaut : Vrai                                |
 > * La fonction génère une erreur et retourne **Null** si *msgID* désigne un message non existant,
 > * Si aucune boite de réception n'est sélectionnée avec la fonction [`.selectBox()`](#selectbox), une erreur est générée,
 > * Si aucune connexion n'est ouverte, `.getMail()` ouvrira une connexion avec la dernière boite de réception spécifiée par [`.selectBox()`](#selectbox).
