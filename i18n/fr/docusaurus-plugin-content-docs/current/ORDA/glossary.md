@@ -135,10 +135,10 @@ Dans cette documentation, le type de données "Mixte" est utilisé pour désigne
 *   number
 *   text
 *   Null
-*   booléen
+*   boolean
 *   date
-*   Objet
-*   collectionMMM
+*   object
+*   collection
 *   image(\*)
 
 *(\*) le type Image n'est pas supporté par des méthodes statistiques telles que dans* `entitySelection.max()`.
