@@ -1,5 +1,5 @@
 ---
-id: glossaire
+id: glossary
 title: Glossaire
 ---
 
