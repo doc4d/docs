@@ -1,5 +1,5 @@
 ---
-id: 時間
+id: time
 title: 時間
 ---
 
