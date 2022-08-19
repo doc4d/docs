@@ -124,7 +124,7 @@ Designates if the size of the column can be modified by the user.
 
 | Nome      | Tipo de dados | Possible Values |
 |:--------- |:-------------:|:---------------:|
-| resizable |   booleano    | "true", "false" |
+| resizable |    boolean    | "true", "false" |
 
 #### Objects Supported
 
