@@ -11,7 +11,7 @@ Les images sont affichées en boucle continue. Lorsque l'utilisateur atteint la 
 
 | Le nom               | Type de données | Valeurs possibles |
 | -------------------- | --------------- | ----------------- |
-| loopBackToFirstFrame | booléen         | true, false       |
+| loopBackToFirstFrame | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -27,7 +27,7 @@ Affiche la première image en permanence, sauf lorsque l'utilisateur clique sur 
 
 | Le nom                 | Type de données | Valeurs possibles |
 | ---------------------- | --------------- | ----------------- |
-| switchBackWhenReleased | booléen         | true, false       |
+| switchBackWhenReleased | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -43,7 +43,7 @@ Permet à l'utilisateur de maintenir le bouton de la souris enfoncé pour affich
 
 | Le nom             | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
-| switchContinuously | booléen         | true, false       |
+| switchContinuously | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -75,7 +75,7 @@ Modifie le contenu du bouton image lorsque le curseur de la souris passe dessus.
 
 | Le nom             | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
-| switchWhenRollover | booléen         | true, false       |
+| switchWhenRollover | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -91,7 +91,7 @@ Permet de définir la dernière vignette comme étant celle à afficher lorsque 
 
 | Le nom                 | Type de données | Valeurs possibles |
 |:---------------------- | --------------- | ----------------- |
-| useLastFrameAsDisabled | booléen         | true, false       |
+| useLastFrameAsDisabled | boolean         | true, false       |
 
 #### Objets pris en charge
 
