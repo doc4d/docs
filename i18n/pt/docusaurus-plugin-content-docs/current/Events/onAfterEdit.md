@@ -53,12 +53,12 @@ Depending on the `action` property value, the [event object](overview.md#event-o
 
 #### action = DragDropBlock
 
-| Propriedade | Tipo     | Descrção                                            |
-| ----------- | -------- | --------------------------------------------------- |
-| fromRange   | object   | Range of source cell range (being dragged)          |
-| toRange     | object   | Range of the destination cell range (drop location) |
-| copy        | booleano | Specifies if the source range is copied or not      |
-| insert      | booleano | Specifies if the source range is inserted or not    |
+| Propriedade | Tipo    | Descrção                                            |
+| ----------- | ------- | --------------------------------------------------- |
+| fromRange   | object  | Range of source cell range (being dragged)          |
+| toRange     | object  | Range of the destination cell range (drop location) |
+| copy        | boolean | Specifies if the source range is copied or not      |
+| insert      | boolean | Specifies if the source range is inserted or not    |
 
 #### action = DragFillBlock
 
