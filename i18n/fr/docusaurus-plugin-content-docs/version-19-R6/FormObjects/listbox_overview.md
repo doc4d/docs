@@ -236,7 +236,7 @@ Les événements formulaire sur les list box ou colonnes de list box peuvent ret
 | footerName       | text        | Name of the footer                                                    |
 | headerName       | text        | Name of the header                                                    |
 | horizontalScroll | entier long | Positive if scroll is towards the right, negative if towards the left |
-| isRowSelected    | booléen     | True if row is selected, else False                                   |
+| isRowSelected    | boolean     | True if row is selected, else False                                   |
 | newPosition      | entier long | New position of the column or row                                     |
 | newSize          | entier long | New size (in pixels) of the column or row                             |
 | oldPosition      | entier long | Previous position of the column or row                                |
@@ -871,7 +871,7 @@ When a list box column is associated with an object array, the way a cell is dis
 | text      | text input                                     | drop-down menu (required list) or combo box (choice list)                                      |
 | réel      | controlled text input (numbers and separators) | drop-down menu (required list) or combo box (choice list)                                      |
 | entier    | controlled text input (numbers only)           | drop-down menu (required list) or combo box (choice list) or three-states check box            |
-| booléen   | check box                                      | drop-down menu (required list)                                                                 |
+| boolean   | check box                                      | drop-down menu (required list)                                                                 |
 | color     | couleur de fond                                | text                                                                                           |
 | evénement | button with label                              |                                                                                                |
 |           |                                                | All widgets can have an additional unit toggle button or ellipsis button attached to the cell. |
@@ -899,7 +899,7 @@ Chaque élément du tableau d'objets est un objet qui peut contenir un ou plusie
 
 The only mandatory attribute is "valueType" and its supported values are "text", "real", "integer", "boolean", "color", and "event". The following table lists all the attributes supported in list box object arrays, depending on the "valueType" value (any other attributes are ignored). Display formats are detailed and examples are provided below.
 
-|                       | valueType                               | text | réel | entier | booléen | color | evénement |
+|                       | valueType                               | text | réel | entier | boolean | color | evénement |
 | --------------------- | --------------------------------------- | ---- | ---- | ------ | ------- | ----- | --------- |
 | *Attributs*           | *Description*                           |      |      |        |         |       |           |
 | value                 | cell value (input or output)            | x    | x    | x      |         |       |           |
