@@ -178,7 +178,7 @@ Pode passar qualquer número de valores dos tipos compatíveis abaixo:
 
 * número (real, longint....). Valores numéricos são sempre armazenados como reais.
 * text
-* booleano
+* boolean
 * data
 * hora (armazenada como número de milissegundos - real)
 * null
