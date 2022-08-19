@@ -40,14 +40,14 @@ En fonction de la valeur de la propriété `action`, l'[objet event](overview.md
 
 | Propriété   | Type    | Description                              |
 | ----------- | ------- | ---------------------------------------- |
-| range       | Objet   | Plage de cellule                         |
+| range       | object  | Plage de cellule                         |
 | editingText | variant | La valeur provenant de l'éditeur courant |
 
 #### action = valueChanged
 
 | Propriété | Type    | Description                                |
 | --------- | ------- | ------------------------------------------ |
-| range     | Objet   | Plage de cellule                           |
+| range     | object  | Plage de cellule                           |
 | oldValue  | variant | Valeur de la cellule avant la modification |
 | newValue  | variant | Valeur de la cellule après la modification |
 
@@ -55,32 +55,32 @@ En fonction de la valeur de la propriété `action`, l'[objet event](overview.md
 
 | Propriété | Type    | Description                                       |
 | --------- | ------- | ------------------------------------------------- |
-| fromRange | Objet   | Plage de cellule source (qui est glissée)         |
-| toRange   | Objet   | Plage de cellule de destination (qui est déposée) |
-| copy      | booléen | Indique si la plage source est copiée ou non      |
-| insert    | booléen | Indique si la plage source est insérée ou non     |
+| fromRange | object  | Plage de cellule source (qui est glissée)         |
+| toRange   | object  | Plage de cellule de destination (qui est déposée) |
+| copy      | boolean | Indique si la plage source est copiée ou non      |
+| insert    | boolean | Indique si la plage source est insérée ou non     |
 
 #### action = DragFillBlock
 
-| Propriété | Type  | Description                        |
-| --------- | ----- | ---------------------------------- |
-| fillRange | Objet | Plage utilisée pour le remplissage |
+| Propriété | Type   | Description                        |
+| --------- | ------ | ---------------------------------- |
+| fillRange | object | Plage utilisée pour le remplissage |
  autoFillType|longint|Valeur utilisée pour le remplissage.<li>0 : les cellules contiennent toutes les données (valeurs, formatage et formules)</li><li>1 : les cellules contiennent des données automatiquement séquentielles</li><li>2 : les cellules contiennent uniquement le formatage</li><li>3 : les cellules contiennent des valeurs mais pas de formatage</li><li>4 : les valeurs des cellules sont supprimées</li><li>5: Cells are filled automatically</li>| |fillDirection|longint|Direction of the fill.<li>0 : les cellules à gauche sont remplies</li><li>1 : les cellules à droite sont remplies</li><li>2 : Les cellules ci-dessus sont remplies</li><li>3 : Les cellules ci-dessous sont remplies</li>|
 
 #### action = formulaChanged
 
-| Propriété | Type  | Description       |
-| --------- | ----- | ----------------- |
-| range     | Objet | Plage de cellule  |
-| formula   | text  | La formule saisie |
+| Propriété | Type   | Description       |
+| --------- | ------ | ----------------- |
+| range     | object | Plage de cellule  |
+| formula   | text   | La formule saisie |
 
 #### action = clipboardPasted
 
 | Propriété   | Type        | Description                                                                                                                                                                                                       |
 | ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| range       | Objet       | Plage de cellule                                                                                                                                                                                                  |
+| range       | object      | Plage de cellule                                                                                                                                                                                                  |
 | pasteOption | entier long | Indique ce qui est collé à partir du presse-papiers :<li>0 : tout est collé (valeurs, mise en forme et formules)</li><li>1 : seules les valeurs sont collées</li><li>2 : seul le formatage est collé</li><li>3 : seules les formules sont collées</li><li>4 : les valeurs et la mise en forme sont collées (pas les formules)</li><li>5 : Les formules et la mise en forme sont collées (pas les valeurs)</li> |
-| pasteData   | Objet       | Les données du presse-papiers à coller<li>"text" (texte) : le texte du presse-papiers</li><li>"html" (texte) : le code HTML du presse-papiers</li>                                                                                                                        |
+| pasteData   | object      | Les données du presse-papiers à coller<li>"text" (texte) : le texte du presse-papiers</li><li>"html" (texte) : le code HTML du presse-papiers</li>                                                                                                                        |
 
 #### Exemple
 
