@@ -3,18 +3,18 @@ id: onWindowOpeningDenied
 title: On Window Opening Denied
 ---
 
-| Code | Can be called by                               | Definition                       |
+| Code | Can be called by                               | Definição                        |
 | ---- | ---------------------------------------------- | -------------------------------- |
-| 53   | [Web Area](../FormObjects/webArea_overview.md) | A pop-up window has been blocked |
+| 53   | [Área Web](../FormObjects/webArea_overview.md) | A pop-up window has been blocked |
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 
-| Version | Changes           |
-| ------- | ----------------- |
-| v19 R5  | Triggered on drop |
+| Versão | Mudanças          |
+| ------ | ----------------- |
+| v19 R5 | Triggered on drop |
 </details>
 
-## Description
+## Descrção
 
 This event is generated when the opening of a pop-up window is blocked by the Web area. 4D Web areas do not allow the opening of pop-up windows.
 
@@ -31,6 +31,6 @@ If (FORM Event.code=On Window Opening Denied)
 End if 
 ```
 
-### See also
+### Veja também
 
 [`On Open External Link`](onOpenExternalLink.md)
