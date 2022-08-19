@@ -1,5 +1,5 @@
 ---
-id: catalogue
+id: catalog
 title: "$catalog"
 ---
 
