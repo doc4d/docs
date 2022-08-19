@@ -74,7 +74,7 @@ When this option is enabled, the object method is executed with the `On Data Cha
 
 | Nome                | Tipo de dados | Possible Values |
 | ------------------- | ------------- | --------------- |
-| continuousExecution | booleano      | true, false     |
+| continuousExecution | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -127,7 +127,7 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 | Nome        | Tipo de dados | Possible Values |
 | ----------- | ------------- | --------------- |
-| movableRows | booleano      | true, false     |
+| movableRows | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -170,7 +170,7 @@ In other cases (list boxes based on named selections, columns associated with ex
 
 | Nome     | Tipo de dados | Possible Values |
 | -------- | ------------- | --------------- |
-| sortable | booleano      | true, false     |
+| sortable | boolean       | true, false     |
 
 #### Objects Supported
 [List Box](listbox_overview.md)
