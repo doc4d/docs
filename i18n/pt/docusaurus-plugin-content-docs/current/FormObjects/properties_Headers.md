@@ -11,7 +11,7 @@ This property is used to display or hide [list box column headers](listbox_overv
 
 | Nome        | Tipo de dados | Possible Values |
 | ----------- | ------------- | --------------- |
-| showHeaders | booleano      | true, false     |
+| showHeaders | boolean       | true, false     |
 
 #### Objects Supported
 
