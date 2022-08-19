@@ -12,9 +12,9 @@ title: 入力
 
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値       |
-| ---------- | ------ | ----------- |
-| spellcheck | ブール    | true, false |
+| 名称         | データタイプ  | とりうる値       |
+| ---------- | ------- | ----------- |
+| spellcheck | boolean | true, false |
 
 #### 対象オブジェクト
 
@@ -40,7 +40,7 @@ title: 入力
 
 | 名称          | データタイプ | とりうる値                           |
 | ----------- | ------ | ------------------------------- |
-| contextMenu | 文字列    | "automatic" (省略時のデフォルト), "none" |
+| contextMenu | string | "automatic" (省略時のデフォルト), "none" |
 
 #### 対象オブジェクト
 
@@ -58,9 +58,9 @@ title: 入力
 
 #### JSON 文法
 
-| 名称        | データタイプ | とりうる値       |
-| --------- | ------ | ----------- |
-| enterable | ブール    | true, false |
+| 名称        | データタイプ  | とりうる値       |
+| --------- | ------- | ----------- |
+| enterable | boolean | true, false |
 
 #### 対象オブジェクト
 
@@ -116,7 +116,7 @@ title: 入力
 
 | 名称          | データタイプ | とりうる値                                                                    |
 | ----------- | ------ | ------------------------------------------------------------------------ |
-| entryFilter | 文字列    | Entry filter code or Entry filter name (filter names start with &#124; ) |
+| entryFilter | string | Entry filter code or Entry filter name (filter names start with &#124; ) |
 
 #### 対象オブジェクト
 
@@ -146,9 +146,9 @@ title: 入力
 
 #### JSON 文法
 
-| 名称        | データタイプ | とりうる値       |
-| --------- | ------ | ----------- |
-| focusable | ブール    | true, false |
+| 名称        | データタイプ  | とりうる値       |
+| --------- | ------- | ----------- |
+| focusable | boolean | true, false |
 
 
 
@@ -271,7 +271,7 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 | 名称          | データタイプ | とりうる値                            |
 | ----------- | ------ | -------------------------------- |
-| placeholder | 文字列    | オブジェクトに値が格納されていない場合に表示する半透明のテキスト |
+| placeholder | string | オブジェクトに値が格納されていない場合に表示する半透明のテキスト |
 
 
 
@@ -300,9 +300,9 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### JSON 文法
 
-| 名称            | データタイプ | とりうる値       |
-| ------------- | ------ | ----------- |
-| showSelection | ブール    | true, false |
+| 名称            | データタイプ  | とりうる値       |
+| ------------- | ------- | ----------- |
+| showSelection | boolean | true, false |
 
 
 
@@ -334,15 +334,15 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### JSON 文法
 
-| 名称              | データタイプ | とりうる値                                      |
-| --------------- | ------ | ------------------------------------------ |
-| shortcutAccel   | ブール    | true, false (Windows: Ctrl/macOS: Command) |
-| shortcutAlt     | ブール    | true, false                                |
-| shortcutCommand | ブール    | true, false                                |
-| shortcutControl | ブール    | true, false (macOS: Control)               |
-| shortcutShift   | ブール    | true, false                                |
-|                 |        |                                            |
-| shortcutKey     | 文字列    | <ul><li>任意の文字キー: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li></ul>                  |
+| 名称              | データタイプ  | とりうる値                                      |
+| --------------- | ------- | ------------------------------------------ |
+| shortcutAccel   | boolean | true, false (Windows: Ctrl/macOS: Command) |
+| shortcutAlt     | boolean | true, false                                |
+| shortcutCommand | boolean | true, false                                |
+| shortcutControl | boolean | true, false (macOS: Control)               |
+| shortcutShift   | boolean | true, false                                |
+|                 |         |                                            |
+| shortcutKey     | string  | <ul><li>任意の文字キー: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li></ul>                  |
 
 
 
@@ -369,9 +369,9 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### JSON 文法
 
-| 名称              | データタイプ | とりうる値       |
-| --------------- | ------ | ----------- |
-| singleClickEdit | ブール    | true, false |
+| 名称              | データタイプ  | とりうる値       |
+| --------------- | ------- | ----------- |
+| singleClickEdit | boolean | true, false |
 
 
 
