@@ -195,7 +195,7 @@ You can pass any number of values of the following supported types:
 
 *   number (real, longint...). Number values are always stored as reals.
 *   Text
-*   Boolean
+*   boolean
 *   date
 *   time (stored as number of milliseconds - real)
 *   Null
@@ -1025,7 +1025,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | wert      | number, Text, Collection, Object, Date, Boolean | -> | Filling value                                                     |
 | startFrom | Ganzzahl                                        | -> | Start index (included)                                            |
 | end       | Ganzzahl                                        | -> | End index (not included)                                          |
-| Ergebnis  | Collection                                      | <- | Original collection with filled values|<!-- END REF -->
+| Ergebnis  | collection                                      | <- | Original collection with filled values|<!-- END REF -->
 
 
 |
