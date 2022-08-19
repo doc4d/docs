@@ -300,7 +300,7 @@ Si votre projet est conçu de façon à être exécuté en client/serveur, assur
 ## Champs calculés
 
 
-### Overview
+### Vue d’ensemble
 
 Un champ calculé est un attribut de dataclass avec un type de données qui masque un calcul. [Les classes 4D standard](Concepts/classes.md) implémentent le concept de propriétés calculées avec des [fonctions d'accès](Concepts/classes.md#function-get-and-function-set) telles que `get` (*getter*) et `set` (*setter*). Les attributs de dataclass ORDA bénéficient de cette fonctionnalité et l'étendent avec deux fonctions supplémentaires : `query` et `orderBy`.
 
@@ -645,7 +645,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 ## Attributs de type alias
 
-### Overview
+### Vue d’ensemble
 
 An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass.
 
