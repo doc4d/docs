@@ -26,7 +26,7 @@ Cet événement est généré lorsque l'utilisateur double-clique n'importe où 
 | Description | text        | "On Double Clicked"              |
 | objectName  | text        | Nom de la zone 4D View Pro       |
 | sheetName   | text        | Nom de la feuille de l'événement |
-| range       | Objet       | Plage de cellule                 |
+| range       | object      | Plage de cellule                 |
 
 #### Exemple
 
