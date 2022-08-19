@@ -354,13 +354,13 @@ The `.drop()` function <!-- REF #EntityClass.drop().Summary -->deletes the data 
 
 | プロパティ         |                     | タイプ                 | 詳細                                                                       |
 | ------------- | ------------------- | ------------------- | ------------------------------------------------------------------------ |
-| success       |                     | ブール                 | ドロップが成功した場合には true、それ以外は false                                           |
+| success       |                     | boolean             | ドロップが成功した場合には true、それ以外は false                                           |
 |               |                     |                     | ***エラーの場合にのみ利用可能:***                                                     |
 | status(*)     |                     | 数値                  | エラーコード、以下参照                                                              |
 | statusText(*) |                     | テキスト                | エラーの詳細、以下参照                                                              |
 |               |                     |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
 | lockKindText  |                     | テキスト                | "Locked by record"                                                       |
-| lockInfo      |                     | オブジェクト              | ロック元についての情報                                                              |
+| lockInfo      |                     | object              | ロック元についての情報                                                              |
 |               | task_id             | 数値                  | プロセスID                                                                   |
 |               | user_name           | テキスト                | マシン上でのセッションユーザー名                                                         |
 |               | user4d_alias        | テキスト                | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
@@ -900,15 +900,15 @@ The `.lock()` function <!-- REF #EntityClass.lock().Summary -->puts a pessimisti
 
 | プロパティ            |                     | タイプ                 | 詳細                                                                       |
 | ---------------- | ------------------- | ------------------- | ------------------------------------------------------------------------ |
-| success          |                     | ブール                 | ロックに成功した場合 (あるいはエンティティがすでにカレントプロセスでロックされていた場合) には true、それ以外は false       |
+| success          |                     | boolean             | ロックに成功した場合 (あるいはエンティティがすでにカレントプロセスでロックされていた場合) には true、それ以外は false       |
 |                  |                     |                     | ***`dk reload if stamp changed` オプションが使用されていた場合にのみ利用可能:***               |
-| **wasReloaded**  |                     | ブール                 | エンティティがリロードされ、かつリロードに成功した場合には true、それ以外は false                           |
+| **wasReloaded**  |                     | boolean             | エンティティがリロードされ、かつリロードに成功した場合には true、それ以外は false                           |
 |                  |                     |                     | ***エラーの場合にのみ利用可能:***                                                     |
 | status(\*)     |                     | 数値                  | エラーコード、以下参照                                                              |
 | statusText(\*) |                     | テキスト                | エラーの詳細、以下参照                                                              |
 |                  |                     |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
 | lockKindText     |                     | テキスト                | "Locked by record"                                                       |
-| lockInfo         |                     | オブジェクト              | ロック元についての情報                                                              |
+| lockInfo         |                     | object              | ロック元についての情報                                                              |
 |                  | task_id             | 数値                  | プロセスID                                                                   |
 |                  | user_name           | テキスト                | マシン上でのセッションユーザー名                                                         |
 |                  | user4d_alias        | テキスト                | 4D ユーザーの名前またはエイリアス                                                       |
@@ -1082,11 +1082,11 @@ The `.reload()` function <!-- REF #EntityClass.reload().Summary -->reloads the c
 
 `.reload( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ            | タイプ  | 詳細                                                                                              |
-| ---------------- | ---- | ----------------------------------------------------------------------------------------------- |
-| success          | ブール  | True if the reload action is successful, False otherwise.***Available only in case of error***: |
-| status(\*)     | 数値   | エラーコード、以下参照                                                                                     |
-| statusText(\*) | テキスト | エラーの詳細、以下参照                                                                                     |
+| プロパティ            | タイプ     | 詳細                                                                                              |
+| ---------------- | ------- | ----------------------------------------------------------------------------------------------- |
+| success          | boolean | True if the reload action is successful, False otherwise.***Available only in case of error***: |
+| status(\*)     | 数値      | エラーコード、以下参照                                                                                     |
+| statusText(\*) | テキスト    | エラーの詳細、以下参照                                                                                     |
 
 (\*) エラー時には *Result* オブジェクトの *status* あるいは *statusText* プロパティに以下のいずれかの値が返されます:
 
@@ -1158,15 +1158,15 @@ The `.save()` function <!-- REF #EntityClass.save().Summary -->saves the changes
 
 | プロパティ        |                    | タイプ                 | 詳細                                                                       |
 | ------------ | ------------------ | ------------------- | ------------------------------------------------------------------------ |
-| success      |                    | ブール                 | 保存に成功した場合には true、それ以外は false                                             |
+| success      |                    | boolean             | 保存に成功した場合には true、それ以外は false                                             |
 |              |                    |                     | ***`dk auto merge` オプションが使用されていた場合にのみ利用可能***:                            |
-| autoMerged   |                    | ブール                 | 自動マージが実行された場合には true、それ以外は false                                         |
+| autoMerged   |                    | boolean             | 自動マージが実行された場合には true、それ以外は false                                         |
 |              |                    |                     | ***エラーの場合にのみ利用可能***:                                                     |
 | status       |                    | 数値                  | エラーコード、[以下参照](#status-と-statustext)                                      |
 | statusText   |                    | テキスト                | エラーの詳細、[以下参照](#status-と-statustext)                                      |
 |              |                    |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能***:                                         |
 | lockKindText |                    | テキスト                | "Locked by record"                                                       |
-| lockInfo     |                    | オブジェクト              | ロック元についての情報                                                              |
+| lockInfo     |                    | object              | ロック元についての情報                                                              |
 |              | task_id            | 数値                  | プロセスID                                                                   |
 |              | user_name          | テキスト                | マシン上でのセッションユーザー名                                                         |
 |              | user4d_alias       | テキスト                | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
