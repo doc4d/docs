@@ -25,9 +25,9 @@ title: スケール
 
 #### JSON 文法
 
-|       名称        | データタイプ | とりうる値           |
-|:---------------:|:------:| --------------- |
-| showGraduations |  ブール   | "true", "false" |
+|       名称        | データタイプ  | とりうる値           |
+|:---------------:|:-------:| --------------- |
+| showGraduations | boolean | "true", "false" |
 
 #### 対象オブジェクト
 
@@ -63,7 +63,7 @@ title: スケール
 
 |       名称        | データタイプ | とりうる値                                    |
 |:---------------:|:------:| ---------------------------------------- |
-| labelsPlacement |  文字列   | "none", "top", "bottom", "left", "right" |
+| labelsPlacement | string | "none", "top", "bottom", "left", "right" |
 
 #### 対象オブジェクト
 
