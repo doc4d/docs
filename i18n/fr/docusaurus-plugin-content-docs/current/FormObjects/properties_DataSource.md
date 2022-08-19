@@ -24,7 +24,7 @@ Par exemple, pour une liste de choix contenant "France, Allemagne, Italie" assoc
 
 | Le nom             | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
-| automaticInsertion | booléen         | true, false       |
+| automaticInsertion | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -78,7 +78,7 @@ Indique une variable ou une expression qui se verra attribuer l'élément/l'enti
 
 | Le nom            | Type de données | Valeurs possibles  |
 | ----------------- | --------------- | ------------------ |
-| currentItemSource | Chaîne          | Expression d'objet |
+| currentItemSource | string          | Expression d'objet |
 
 #### Objets pris en charge
 
@@ -101,7 +101,7 @@ Indique une variable ou une expression qui se verra attribuer un entier long ind
 
 | Le nom                    | Type de données | Valeurs possibles    |
 | ------------------------- | --------------- | -------------------- |
-| currentItemPositionSource | Chaîne          | Expression numérique |
+| currentItemPositionSource | string          | Expression numérique |
 
 #### Objets pris en charge
 
@@ -122,7 +122,7 @@ See also [**Expression Type**](properties_Object.md#expression-type) section.
 
 | Le nom             | Type de données | Valeurs possibles                                  |
 | ------------------ | --------------- | -------------------------------------------------- |
-| dataSourceTypeHint | Chaîne          | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
+| dataSourceTypeHint | string          | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
 
 #### Objets pris en charge
 
@@ -153,7 +153,7 @@ Using the **Selected item reference** option requires compliance with the follow
 
 | Le nom | Type de données | Valeurs possibles    |
 | ------ | --------------- | -------------------- |
-| saveAs | Chaîne          | "value", "reference" |
+| saveAs | string          | "value", "reference" |
 
 > Setting only `"dataSourceTypeHint" : "integer"` with a `"type": "dropdown"` form object will declare a hierarchical drop-down list.
 
@@ -179,7 +179,7 @@ Vous devez saisir une liste de valeurs. In the Form editor, a specific dialog bo
 
 | Le nom | Type de données | Valeurs possibles                                                |
 | ------ | --------------- | ---------------------------------------------------------------- |
-| values | collectionMMM   | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| values | collection      | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
 #### Objets pris en charge
 
@@ -222,7 +222,7 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 
 | Le nom     | Type de données | Valeurs possibles                                                       |
 | ---------- | --------------- | ----------------------------------------------------------------------- |
-| dataSource | Chaîne          | A 4D variable, field name, or an arbitrary complex language expression. |
+| dataSource | string          | A 4D variable, field name, or an arbitrary complex language expression. |
 
 #### Objets pris en charge
 
@@ -273,7 +273,7 @@ Using this property requires compliance with the following principles:
 
 | Le nom | Type de données | Valeurs possibles    |
 | ------ | --------------- | -------------------- |
-| saveAs | Chaîne          | "value", "reference" |
+| saveAs | string          | "value", "reference" |
 
 #### Objets pris en charge
 
@@ -295,7 +295,7 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 | Le nom              | Type de données | Valeurs possibles     |
 | ------------------- | --------------- | --------------------- |
-| selectedItemsSource | Chaîne          | Collection expression |
+| selectedItemsSource | string          | Collection expression |
 
 #### Objets pris en charge
 
@@ -315,7 +315,7 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 | Le nom         | Type de données | Valeurs possibles   |
 | -------------- | --------------- | ------------------- |
-| namedSelection | Chaîne          | Nom de la sélection |
+| namedSelection | string          | Nom de la sélection |
 
 #### Objets pris en charge
 
