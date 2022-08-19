@@ -1,5 +1,5 @@
 ---
-id: filtre
+id: filter
 title: '$filter'
 ---
 
