@@ -13,7 +13,7 @@ When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4
 
 | Property             | Datentyp | Possible Values       |
 | -------------------- | -------- | --------------------- |
-| allowFontColorPicker | Boolean  | false (default), true |
+| allowFontColorPicker | boolean  | false (default), true |
 
 #### Objects Supported
 
@@ -284,8 +284,8 @@ Specifies an expression or a variable which will be evaluated for each row displ
 | fontStyle                   | string  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                      |
 | fontWeight                  | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                        |
 | textDecoration              | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                   |
-| unselectable                | Boolean | Designates the corresponding row as not being selectable (*i.e.*, highlighting is not possible). Enterable areas are no longer enterable if this option is enabled unless the "Single-Click Edit" option is also enabled. Controls such as checkboxes and lists remain functional. This setting is ignored if the list box selection mode is "None". This setting is ignored if the list box selection mode is "None". |
-| disabled                    | Boolean | Disables the corresponding row. Enterable areas are no longer enterable if this option is enabled. Text and controls (checkboxes, lists, etc.) appear dimmed or grayed out. This setting is ignored if the list box selection mode is "None".                                                                                                                                                                          |
+| unselectable                | boolean | Designates the corresponding row as not being selectable (*i.e.*, highlighting is not possible). Enterable areas are no longer enterable if this option is enabled unless the "Single-Click Edit" option is also enabled. Controls such as checkboxes and lists remain functional. This setting is ignored if the list box selection mode is "None". This setting is ignored if the list box selection mode is "None". |
+| disabled                    | boolean | Disables the corresponding row. Enterable areas are no longer enterable if this option is enabled. Text and controls (checkboxes, lists, etc.) appear dimmed or grayed out. This setting is ignored if the list box selection mode is "None".                                                                                                                                                                          |
 | `cell.\<columnName>` | object  | Allows applying the property to a single column. Pass in `\<columnName>` the object name of the list box column. **Note**: "unselectable" and "disabled" properties can only be defined at row level. They are ignored if passed in the "cell" object                                                                                                                                                           |
 
 > Style settings made with this property are ignored if other style settings are already defined through expressions (*i.e.*, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](#background-color-expression)).
@@ -362,7 +362,7 @@ By default, this option is not enabled.
 
 | Name       | Datentyp | Possible Values |
 | ---------- | -------- | --------------- |
-| styledText | Boolean  | true, false     |
+| styledText | boolean  | true, false     |
 
 #### Objects Supported
 
@@ -459,7 +459,7 @@ When the property is enabled, the area stores all the formatting information. Th
 
 | Name              | Datentyp | Possible Values        |
 | ----------------- | -------- | ---------------------- |
-| storeDefaultStyle | Boolean  | true, false (default). |
+| storeDefaultStyle | boolean  | true, false (default). |
 
 #### Objects Supported
 
