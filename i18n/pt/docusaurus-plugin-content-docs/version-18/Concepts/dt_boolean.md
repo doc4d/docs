@@ -1,5 +1,5 @@
 ---
-id: booleano
+id: boolean
 title: Booleano
 ---
 
