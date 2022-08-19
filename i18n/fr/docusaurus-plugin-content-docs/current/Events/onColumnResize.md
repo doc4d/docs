@@ -26,8 +26,8 @@ Cet événement est généré lorsque la largeur d'une colonne est modifiée par
 | Description | text        | "On Column Resize"                                                                         |
 | objectName  | text        | Nom de la zone 4D View Pro                                                                 |
 | sheetName   | text        | Nom de la feuille de l'événement                                                           |
-| range       | Objet       | Plage de cellules des colonnes dont les largeurs ont changé                                |
-| header      | booléen     | "True" si la colonne d'en-tête de ligne (première colonne) est redimensionnée, sinon false |
+| range       | object      | Plage de cellules des colonnes dont les largeurs ont changé                                |
+| header      | boolean     | "True" si la colonne d'en-tête de ligne (première colonne) est redimensionnée, sinon false |
 
 #### Exemple
 
