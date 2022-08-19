@@ -12,7 +12,7 @@ Lorsque cette propriété est activée, les commandes [OPEN FONT PICKER](https:/
 
 | Propriété            | Type de données | Valeurs possibles        |
 | -------------------- | --------------- | ------------------------ |
-| allowFontColorPicker | booléen         | false (par défaut), true |
+| allowFontColorPicker | boolean         | false (par défaut), true |
 
 #### Objets pris en charge
 
@@ -50,7 +50,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 | Le nom    | Type de données | Valeurs possibles  |
 | --------- | --------------- | ------------------ |
-| fontStyle | Chaîne          | "normal", "italic" |
+| fontStyle | string          | "normal", "italic" |
 
 #### Objets pris en charge
 
@@ -66,7 +66,7 @@ Une ligne est placée sous le texte.
 
 | Le nom         | Type de données | Valeurs possibles     |
 | -------------- | --------------- | --------------------- |
-| textDecoration | Chaîne          | "normal", "underline" |
+| textDecoration | string          | "normal", "underline" |
 
 #### Objets pris en charge
 
@@ -102,7 +102,7 @@ Trois thèmes de polices sont disponibles :
 
 | Le nom    | Type de données | Valeurs possibles              |
 | --------- | --------------- | ------------------------------ |
-| fontTheme | Chaîne          | "normal", "main", "additional" |
+| fontTheme | string          | "normal", "main", "additional" |
 
 #### Objets pris en charge
 
@@ -121,7 +121,7 @@ Vous pouvez la définir à l'aide de la commande [**OBJECT SET FONT**](https://d
 
 | Le nom     | Type de données | Valeurs possibles               |
 | ---------- | --------------- | ------------------------------- |
-| fontFamily | Chaîne          | Nom d'une famille de police CSS |
+| fontFamily | string          | Nom d'une famille de police CSS |
 > 4D recommande d'utiliser uniquement les polices de [sécurité Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 #### Objets pris en charge
@@ -164,7 +164,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 | Le nom | Type de données | Valeurs possibles                          |
 | ------ | --------------- | ------------------------------------------ |
-| stroke | Chaîne          | une valeur css; "transparent"; "automatic" |
+| stroke | string          | une valeur css; "transparent"; "automatic" |
 
 #### Objets pris en charge
 
@@ -194,7 +194,7 @@ Foreground color;Dark shadow color)
 
 | Le nom          | Type de données | Valeurs possibles         |
 | --------------- | --------------- | ------------------------- |
-| rowStrokeSource | Chaîne          | Expression couleur police |
+| rowStrokeSource | string          | Expression couleur police |
 
 #### Objets pris en charge
 
@@ -223,7 +223,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 
 | Le nom         | Type de données | Valeurs possibles                                        |
 | -------------- | --------------- | -------------------------------------------------------- |
-| rowStyleSource | Chaîne          | Expression de style à évaluer pour chaque ligne/cellule. |
+| rowStyleSource | string          | Expression de style à évaluer pour chaque ligne/cellule. |
 
 #### Objets pris en charge
 
@@ -239,7 +239,7 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 | Le nom    | Type de données | Valeurs possibles                                 |
 | --------- | --------------- | ------------------------------------------------- |
-| textAlign | Chaîne          | "automatic", "right", "center", "justify", "left" |
+| textAlign | string          | "automatic", "right", "center", "justify", "left" |
 
 #### Objets pris en charge
 
@@ -262,7 +262,7 @@ Cette propriété peut également être gérée par les commandes [OBJECT Get ve
 
 | Le nom        | Type de données | Valeurs possibles                      |
 | ------------- | --------------- | -------------------------------------- |
-| verticalAlign | Chaîne          | "automatic", "top", "middle", "bottom" |
+| verticalAlign | string          | "automatic", "top", "middle", "bottom" |
 
 #### Objets pris en charge
 
@@ -278,14 +278,14 @@ Indique une expression ou une variable qui sera évaluée pour chaque ligne affi
 
 | Nom de propriété            | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| stroke                      | Chaîne  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                 |
-| border-style                | Chaîne  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                      |
-| fontStyle                   | Chaîne  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| fontWeight                  | Chaîne  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| textDecoration              | Chaîne  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| unselectable                | booléen | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. This setting is ignored if the list box selection mode is "None". Valeurs par défaut : False. |
-| désactivé                   | booléen | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Le texte et les contrôles (cases à cocher, listes, etc.) sont grisés. Valeurs par défaut : False.                                                                                                                                                                                                                                   |
-| cell.`\<columnName>` | Objet   | Permet d'appliquer la propriété à une seule colonne. Pass in `\<columnName>` the object name of the list box column. **Note** : les propriétés "unselectable" et "disabled" ne peuvent être définies qu'au niveau de la ligne. Elles sont ignorées si elles sont passées dans l'objet "cell"                                                                                                                                                  |
+| stroke                      | string  | Couleur de la police. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                 |
+| border-style                | string  | Couleur de fond. Toute couleur CSS (ex : "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                                                                                                                      |
+| fontStyle                   | string  | "normal","italic"                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| fontWeight                  | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| textDecoration              | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| unselectable                | boolean | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. This setting is ignored if the list box selection mode is "None". Valeurs par défaut : False. |
+| désactivé                   | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Le texte et les contrôles (cases à cocher, listes, etc.) sont grisés. Valeurs par défaut : False.                                                                                                                                                                                                                                   |
+| cell.`\<columnName>` | object  | Permet d'appliquer la propriété à une seule colonne. Pass in `\<columnName>` the object name of the list box column. **Note** : les propriétés "unselectable" et "disabled" ne peuvent être définies qu'au niveau de la ligne. Elles sont ignorées si elles sont passées dans l'objet "cell"                                                                                                                                                  |
 
 > Les paramètres de style définis avec cette propriété sont ignorés si d'autres paramètres de style sont déjà définis via des expressions (par exemple, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](#background-color-expression)).
 
@@ -333,7 +333,7 @@ La méthode *Color* contiendrait alors :
 
 | Le nom     | Type de données | Valeurs possibles                                          |
 | ---------- | --------------- | ---------------------------------------------------------- |
-| metaSource | Chaîne          | Expression de l'objet à évaluer pour chaque ligne/cellule. |
+| metaSource | string          | Expression de l'objet à évaluer pour chaque ligne/cellule. |
 
 #### Objets pris en charge
 
@@ -351,7 +351,7 @@ Par défaut, cette option n'est pas activée.
 
 | Le nom     | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
-| styledText | booléen         | true, false       |
+| styledText | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -396,7 +396,7 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 | Le nom          | Type de données | Valeurs possibles            |
 | --------------- | --------------- | ---------------------------- |
-| rowStrokeSource | Chaîne          | Nom d'un tableau entier long |
+| rowStrokeSource | string          | Nom d'un tableau entier long |
 
 #### Objets pris en charge
 
@@ -416,7 +416,7 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 | Le nom         | Type de données | Valeurs possibles             |
 | -------------- | --------------- | ----------------------------- |
-| rowStyleSource | Chaîne          | Nom d'un tableau entier long. |
+| rowStyleSource | string          | Nom d'un tableau entier long. |
 
 #### Objets pris en charge
 
@@ -448,7 +448,7 @@ Lorsque la propriété est activée, la zone stocke toutes les informations de m
 
 | Le nom            | Type de données | Valeurs possibles         |
 | ----------------- | --------------- | ------------------------- |
-| storeDefaultStyle | booléen         | true, false (par défaut). |
+| storeDefaultStyle | boolean         | true, false (par défaut). |
 
 #### Objets pris en charge
 
