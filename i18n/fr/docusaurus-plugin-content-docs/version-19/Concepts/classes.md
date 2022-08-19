@@ -103,9 +103,9 @@ Les classes disponibles sont accessibles depuis leurs class stores. Deux class s
 
 #### cs -> classStore
 
-| Paramètres | Type  |    | Description                                                         |
-| ---------- | ----- | -- | ------------------------------------------------------------------- |
-| classStore | Objet | <- | Class store utilisateur utilisateurs pour le projet ou le composant |
+| Paramètres | Type   |    | Description                                                         |
+| ---------- | ------ | -- | ------------------------------------------------------------------- |
+| classStore | object | <- | Class store utilisateur utilisateurs pour le projet ou le composant |
 
 La commande `cs` retourne le class store utilisateur pour le projet ou le composant courant. La commande `cs` retourne le class store utilisateur pour le projet ou le composant courant. Par défaut, seules les [classes ORDA](ORDA/ordaClasses.md) du projet sont disponibles.
 
@@ -121,9 +121,9 @@ $instance:=cs.myClass.new()
 
 #### 4D -> classStore
 
-| Paramètres | Type  |    | Description    |
-| ---------- | ----- | -- | -------------- |
-| classStore | Objet | <- | Class store 4D |
+| Paramètres | Type   |    | Description    |
+| ---------- | ------ | -- | -------------- |
+| classStore | object | <- | Class store 4D |
 
 La commande `4D` retourne le class store des classes 4D intégrées disponibles. Elle donne accès à des API spécifiques telles que [CryptoKey](API/CryptoKeyClass.md).
 
@@ -352,10 +352,10 @@ Class constructor ($side : Integer)
 Super {( param{;...;paramN} )} {-> Object} 
 ```
 
-| Paramètres | Type  |    | Description                                                |
-| ---------- | ----- | -- | ---------------------------------------------------------- |
-| param      | mixte | -> | Paramètre(s) à passer au constructeur de la classe parente |
-| Result     | Objet | <- | Parent de l'objet                                          |
+| Paramètres | Type   |    | Description                                                |
+| ---------- | ------ | -- | ---------------------------------------------------------- |
+| param      | mixte  | -> | Paramètre(s) à passer au constructeur de la classe parente |
+| Result     | object | <- | Parent de l'objet                                          |
 
 Le mot-clé `Super` permet d'appeler la `superclass`, i.e.
 
@@ -462,9 +462,9 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Paramètres | Type  |    | Description   |
-| ---------- | ----- | -- | ------------- |
-| Result     | Objet | <- | Objet courant |
+| Paramètres | Type   |    | Description   |
+| ---------- | ------ | -- | ------------- |
+| Result     | object | <- | Objet courant |
 
 Le mot-clé `This` retourne une référence vers l'objet en cours de traitement. Dans 4D, il peut être utilisé dans [différents contextes](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
