@@ -25,7 +25,7 @@ For example, given a choice list containing "France, Germany, Italy" that is ass
 
 | Name               | Datentyp | Possible Values |
 | ------------------ | -------- | --------------- |
-| automaticInsertion | Boolean  | true, false     |
+| automaticInsertion | boolean  | true, false     |
 
 #### Objects Supported
 
@@ -180,7 +180,7 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 | Name   | Datentyp   | Possible Values                                                  |
 | ------ | ---------- | ---------------------------------------------------------------- |
-| values | Collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| values | collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
 #### Objects Supported
 
