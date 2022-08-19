@@ -13,7 +13,7 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 | Nome       | Tipo de dados | Possible Values |
 | ---------- | ------------- | --------------- |
-| spellcheck | booleano      | true, false     |
+| spellcheck | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -59,7 +59,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 | Nome      | Tipo de dados | Possible Values |
 | --------- | ------------- | --------------- |
-| enterable | booleano      | true, false     |
+| enterable | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -139,7 +139,7 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 | Nome    | Tipo de dados | Possible Values |
 | ------- | ------------- | --------------- |
-| focável | booleano      | true, false     |
+| focável | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -245,7 +245,7 @@ This property keeps the selection visible within the object after it has lost th
 
 | Nome          | Tipo de dados | Possible Values |
 | ------------- | ------------- | --------------- |
-| showSelection | booleano      | true, false     |
+| showSelection | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -268,11 +268,11 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 | Nome            | Tipo de dados | Possible Values                                    |
 | --------------- | ------------- | -------------------------------------------------- |
-| shortcutAccel   | booleano      | true, false (Ctrl Windows/Command macOS)           |
-| shortcutAlt     | booleano      | true, false                                        |
-| shortcutCommand | booleano      | true, false                                        |
-| shortcutControl | booleano      | true, false (macOS Control)                        |
-| shortcutShift   | booleano      | true, false                                        |
+| shortcutAccel   | boolean       | true, false (Ctrl Windows/Command macOS)           |
+| shortcutAlt     | boolean       | true, false                                        |
+| shortcutCommand | boolean       | true, false                                        |
+| shortcutControl | boolean       | true, false (macOS Control)                        |
+| shortcutShift   | boolean       | true, false                                        |
 |                 |               |                                                    |
 | shortcutKey     | string        | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
@@ -294,7 +294,7 @@ When this option is not enabled, users must first select the cell row and then c
 
 | Nome            | Tipo de dados | Possible Values |
 | --------------- | ------------- | --------------- |
-| singleClickEdit | booleano      | true, false     |
+| singleClickEdit | boolean       | true, false     |
 
 #### Objects Supported
 
