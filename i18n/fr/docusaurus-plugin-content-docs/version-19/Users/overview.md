@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Vue d’ensemble
 ---
 
 Si plusieurs personnes utilisent une application, ce qui est souvent le cas dans une architecture client-serveur ou d'interfaces Web, vous devez contrôler ses accès ou proposer différentes fonctionnalités selon les utilisateurs connectés. Il peut être également essentiel de protéger des données importantes. You can provide this security by assigning passwords to users and creating access groups that have different levels of access to information in the application or to application operations.
