@@ -41,7 +41,7 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
 
 | Le nom     | Type de données | Valeurs possibles                                                                    |
 | ---------- | --------------- | ------------------------------------------------------------------------------------ |
-| textFormat | Chaîne          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
+| textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
 
 #### Objets pris en charge
 
@@ -79,7 +79,7 @@ The table below shows choices available:
 
 | Le nom     | Type de données | Valeurs possibles                                                                                                                                                                     |
 | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | Chaîne          | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (peut être combiné avec les autres valeurs possibles) |
+| dateFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (peut être combiné avec les autres valeurs possibles) |
 
 #### Objets pris en charge
 
@@ -236,7 +236,7 @@ The following table shows how different formats affect the display of numbers. T
 
 | Le nom       | Type de données | Valeurs possibles                                              |
 | ------------ | --------------- | -------------------------------------------------------------- |
-| numberFormat | Chaîne          | Numbers (including a decimal point or minus sign if necessary) |
+| numberFormat | string          | Numbers (including a decimal point or minus sign if necessary) |
 
 #### Objets pris en charge
 
@@ -295,7 +295,7 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 | Le nom        | Type de données | Valeurs possibles                                                                                     |
 | ------------- | --------------- | ----------------------------------------------------------------------------------------------------- |
-| pictureFormat | Chaîne          | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
+| pictureFormat | string          | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
 
 #### Objets pris en charge
 
@@ -328,7 +328,7 @@ The table below shows the Time field display formats and gives examples:
 
 | Le nom     | Type de données | Valeurs possibles                                                                                                                                                                                        |
 | ---------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| timeFormat | Chaîne          | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (can be combined with the other possible values) |
+| timeFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (can be combined with the other possible values) |
 
 #### Objets pris en charge
 
@@ -352,7 +352,7 @@ When a [boolean expression](properties_Object.md#expression-type) is displayed a
 
 | Le nom        | Type de données | Valeurs possibles                                                        |
 | ------------- | --------------- | ------------------------------------------------------------------------ |
-| booleanFormat | Chaîne          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
+| booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
 
 #### Objets pris en charge
 
@@ -372,7 +372,7 @@ Boolean columns can also be displayed as pop-up menus. In this case, the [Text w
 
 | Le nom      | Type de données | Valeurs possibles                                  |
 | ----------- | --------------- | -------------------------------------------------- |
-| controlType | Chaîne          | <li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li> |
+| controlType | string          | <li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li> |
 
 #### Objets pris en charge
 
@@ -390,7 +390,7 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 | Le nom    | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
-| affichage | booléen         | true, false       |
+| affichage | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -420,7 +420,7 @@ In this case as well, the [Title](#title) property is also available so that the
 
 | Le nom     | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
-| threeState | booléen         | true, false       |
+| threeState | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -441,7 +441,7 @@ In that cases, the title of the check box can be entered using this property.
 
 | Le nom       | Type de données | Valeurs possibles                  |
 | ------------ | --------------- | ---------------------------------- |
-| controlTitle | Chaîne          | Any custom label for the check box |
+| controlTitle | string          | Any custom label for the check box |
 
 #### Objets pris en charge
 
@@ -477,7 +477,7 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 | Le nom       | Type de données | Valeurs possibles      |
 | ------------ | --------------- | ---------------------- |
-| truncateMode | Chaîne          | "withEllipsis", "none" |
+| truncateMode | string          | "withEllipsis", "none" |
 
 #### Objets pris en charge
 
@@ -508,7 +508,7 @@ This property is only used when drawing objects located in the body of a list fo
 
 | Le nom     | Type de données | Valeurs possibles                                                                       |
 | ---------- | --------------- | --------------------------------------------------------------------------------------- |
-| visibility | Chaîne          | "visible", "hidden", "selectedRows" (list form only), "unselectedRows" (list form only) |
+| visibility | string          | "visible", "hidden", "selectedRows" (list form only), "unselectedRows" (list form only) |
 
 #### Objets pris en charge
 
@@ -563,7 +563,7 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 | Le nom   | Type de données | Valeurs possibles                                         |
 | -------- | --------------- | --------------------------------------------------------- |
-| wordwrap | Chaîne          | "automatic" (à l'exception de list box), "normal", "none" |
+| wordwrap | string          | "automatic" (à l'exception de list box), "normal", "none" |
 
 #### Objets pris en charge
 
