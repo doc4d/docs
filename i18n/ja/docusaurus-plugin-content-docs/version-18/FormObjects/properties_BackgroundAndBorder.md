@@ -12,7 +12,7 @@ title: 背景色と境界線
 
 | 名称            | データタイプ | とりうる値                                |
 | ------------- | ------ | ------------------------------------ |
-| alternateFill | 文字列    | 任意の css値; "transparent"; "automatic" |
+| alternateFill | string | 任意の css値; "transparent"; "automatic" |
 
 #### 対象オブジェクト
 
@@ -30,7 +30,7 @@ title: 背景色と境界線
 
 | 名称   | データタイプ | とりうる値                                |
 | ---- | ------ | ------------------------------------ |
-| fill | 文字列    | 任意の css値; "transparent"; "automatic" |
+| fill | string | 任意の css値; "transparent"; "automatic" |
 
 #### 対象オブジェクト
 
@@ -55,7 +55,7 @@ title: 背景色と境界線
 
 | 名称            | データタイプ | とりうる値       |
 | ------------- | ------ | ----------- |
-| rowFillSource | 文字列    | RGBカラー値を返す式 |
+| rowFillSource | string | RGBカラー値を返す式 |
 
 #### 対象オブジェクト
 
@@ -107,9 +107,9 @@ title: 背景色と境界線
 
 #### JSON 文法
 
-| 名称                 | データタイプ | とりうる値       |
-| ------------------ | ------ | ----------- |
-| hideExtraBlankRows | ブール    | true, false |
+| 名称                 | データタイプ  | とりうる値       |
+| ------------------ | ------- | ----------- |
+| hideExtraBlankRows | boolean | true, false |
 
 #### 対象オブジェクト
 
@@ -135,7 +135,7 @@ OBJECT SET RGB COLORS** コマンドによって設定することができま�
 
 | 名称     | データタイプ | とりうる値                                |
 | ------ | ------ | ------------------------------------ |
-| stroke | 文字列    | 任意の css値; "transparent"; "automatic" |
+| stroke | string | 任意の css値; "transparent"; "automatic" |
 
 
 
@@ -221,7 +221,7 @@ OBJECT SET RGB COLORS** コマンドによって設定することができま�
 
 | 名称            | データタイプ | とりうる値      |
 | ------------- | ------ | ---------- |
-| rowFillSource | 文字列    | 倍長整数型配列の名前 |
+| rowFillSource | string | 倍長整数型配列の名前 |
 
 
 
