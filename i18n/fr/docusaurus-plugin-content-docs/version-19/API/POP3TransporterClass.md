@@ -45,7 +45,7 @@ Les objets Transporter POP3 sont instanciés avec la commande [POP3 New transpor
 <!-- REF POP3TransporterClass.POP3 New transporter.Params -->
 | Paramètres | Type               |    | Description                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server     | Objet              | -> | Informations sur le serveur IMAP                                               |
+| server     | object             | -> | Informations sur le serveur IMAP                                               |
 | Result     | 4D.POP3Transporter | <- | [POP3 transporter object](#pop3-transporter-object)|<!-- END REF -->
 
 |
