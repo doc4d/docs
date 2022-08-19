@@ -129,7 +129,7 @@ A chave deveser do estilo RSA, o algoritmo é RSA-OAEP (ver [RFC 3447](https://t
 
 | Propriedade | Tipo       | Descrção                                                                 |
 | ----------- | ---------- | ------------------------------------------------------------------------ |
-| success     | booleano   | True se a mensagem tiver sido decifrada com êxito                        |
+| success     | boolean    | True se a mensagem tiver sido decifrada com êxito                        |
 | result      | text       | Mensagem decifrado e decodificado utilizando `options.encodingDecrypted` |
 | errors      | collection | Se `success` for `false`, pode conter uma coleção de erros               |
 
@@ -269,12 +269,12 @@ The `.sign()` function <!-- REF #CryptoKey.sign().Summary -->signs the utf8 repr
 
 #### *options*
 
-| Propriedade       | Tipo     | Descrção                                                                                                                                                                                          |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | text     | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
-| encodingEncrypted | text     | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                            |
-| pss               | booleano | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao produzir um JWT para o algoritmo PS@                                                     |
-| encoding          | text     | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                            |
+| Propriedade       | Tipo    | Descrção                                                                                                                                                                                          |
+| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | text    | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
+| encodingEncrypted | text    | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                            |
+| pss               | boolean | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao produzir um JWT para o algoritmo PS@                                                     |
+| encoding          | text    | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                            |
 
 #### *Resultados*
 
@@ -344,11 +344,11 @@ The `.verify()` function <!-- REF #CryptoKey.verify().Summary -->verifies the ba
 
 #### *options*
 
-| Propriedade | Tipo     | Descrção                                                                                                                                                                                          |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash        | text     | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
-| pss         | booleano | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao verficar um JWT para o algoritmo PS@                                                     |
-| encoding    | text     | Codificação utilizada para converter o parâmetro `mensagem` na representação binaria a decifrar. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                        |
+| Propriedade | Tipo    | Descrção                                                                                                                                                                                          |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash        | text    | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
+| pss         | boolean | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao verficar um JWT para o algoritmo PS@                                                     |
+| encoding    | text    | Codificação utilizada para converter o parâmetro `mensagem` na representação binaria a decifrar. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                        |
 
 #### *Resultados*
 
@@ -358,5 +358,5 @@ A função devolve um objeto "status" com a propriedade `success`estabelecida pa
 
 | Propriedade | Tipo       | Descrção                                                                              |
 | ----------- | ---------- | ------------------------------------------------------------------------------------- |
-| success     | booleano   | True se a assinatura corresponder com a mensagem                                      |
+| success     | boolean    | True se a assinatura corresponder com a mensagem                                      |
 | errors      | collection | Se `success` for `false`, pode conter uma coleção de erros|<!-- END REF --> |
