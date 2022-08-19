@@ -3,7 +3,7 @@ id: breakpoints
 title: Points d'arrêt et points d'arrêt sur commande
 ---
 
-## Overview
+## Vue d’ensemble
 
 Les points d'arrêt et les points d'arrêts sur commande sont des techniques de débogage très efficaces. Elles ont toutes deux le même effet : elles interrompent l'exécution du code (et affichent la fenêtre du débogueur si elle n'est pas déjà affichée) à une étape souhaitée.
 
