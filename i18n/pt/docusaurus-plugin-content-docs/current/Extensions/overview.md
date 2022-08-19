@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Visão Geral
 ---
 
 The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be built using any language.
@@ -11,7 +11,7 @@ The 4D [project architecture](../Project/architecture.md) is modular. You can pr
 4D includes by default a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page.
 
 
-| Component Name                                                                | Description                                                                                                    | Main Features                                                                                            |
+| Component Name                                                                | Descrção                                                                                                       | Main Features                                                                                            |
 | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | 4D Labels                                                                     | Internal component required to build label templates                                                           |                                                                                                          |
 | [4D Mobile App Server](https://github.com/4d-go-mobile/4D-Mobile-App-Server)  | Set of utility classes and functions to authenticate, manage sessions, and develop mobile applications         | `.Action`, `.Authentication`, `.PushNotification`, `.WebHandler`, Authentication with email confirmation |
