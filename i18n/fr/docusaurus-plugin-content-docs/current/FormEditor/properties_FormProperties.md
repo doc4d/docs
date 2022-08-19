@@ -18,7 +18,7 @@ This property defines the color scheme for the form. This property defines the c
 
 | Le nom      | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
-| colorScheme | Chaîne          | "dark", "light"   |
+| colorScheme | string          | "dark", "light"   |
 
 ---
 
@@ -36,7 +36,7 @@ Pour plus d'informations, veuillez consulter le thème [Pages formulaire](forms.
 
 | Le nom | Type de données | Valeurs possibles                                                                |
 | ------ | --------------- | -------------------------------------------------------------------------------- |
-| pages  | collectionMMM   | Collection de pages (chaque page est un objet, la page 0 est le premier élément) |
+| pages  | collection      | Collection de pages (chaque page est un objet, la page 0 est le premier élément) |
 
 ---
 
@@ -79,7 +79,7 @@ Supported types depend on the form category:
 
 | Le nom      | Type de données | Valeurs possibles                                            |
 | ----------- | --------------- | ------------------------------------------------------------ |
-| destination | Chaîne          | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
+| destination | string          | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
 ---
 
@@ -96,7 +96,7 @@ To remove inheritance, select `\&#060;None&#062;` in the Property List (or " " i
 
 | Le nom        | Type de données | Valeurs possibles                                                                                                  |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| inheritedForm | Chaîne          | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
+| inheritedForm | string          | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
 ---
 
@@ -130,7 +130,7 @@ Seuls les projets formulaire peuvent être indiqués comme étant des sous-formu
 
 | Le nom | Type de données | Valeurs possibles |
 | ------ | --------------- | ----------------- |
-| shared | booléen         | true, false       |
+| shared | boolean         | true, false       |
 
 
 ---
@@ -149,7 +149,7 @@ Lorsque cette option est cochée, l’option [Mémoriser valeur](FormObjects/pro
 
 | Le nom           | Type de données | Valeurs possibles |
 | ---------------- | --------------- | ----------------- |
-| memorizeGeometry | booléen         | true, false       |
+| memorizeGeometry | boolean         | true, false       |
 
 #### Voir également
 [**Mémoriser valeur**](FormObjects/properties_Object.md#save-value)
@@ -173,6 +173,6 @@ Vous pouvez utiliser des références dynamiques pour définir les noms de fenê
 
 | Le nom      | Type de données | Valeurs possibles                                             |
 | ----------- | --------------- | ------------------------------------------------------------- |
-| windowTitle | Chaîne          | Le nom de la fenêtre sous forme de texte brut ou de référence |
+| windowTitle | string          | Le nom de la fenêtre sous forme de texte brut ou de référence |
 
 
