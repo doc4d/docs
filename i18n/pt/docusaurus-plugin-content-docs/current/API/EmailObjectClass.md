@@ -160,10 +160,10 @@ The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Su
 
 O objeto `.bodyValues` contém as seguintes propriedades:
 
-| Propriedade                | Tipo     | Value                                                                                                                                                                               |
-| -------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | text     | Valor da parte do corpo                                                                                                                                                             |
-| *partID*.isEncodingProblem | booleano | Verdadeiro se seções malformadas forem encontradas durante a decodificação do conjunto de charset, ou charset desconhecido, ou codificação de conteúdo desconhecido. Padrão é falso |
+| Propriedade                | Tipo    | Value                                                                                                                                                                               |
+| -------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *partID*.value             | text    | Valor da parte do corpo                                                                                                                                                             |
+| *partID*.isEncodingProblem | boolean | Verdadeiro se seções malformadas forem encontradas durante a decodificação do conjunto de charset, ou charset desconhecido, ou codificação de conteúdo desconhecido. Padrão é falso |
 
 ## .cc
 
@@ -271,9 +271,9 @@ The `.keywords` property contains a <!-- REF #EmailObjectClass.keywords.Summary 
 
 Esta propriedade é o cabeçalho das "palavras-chave" (veja [RFC#4021](https://tools.ietf.org/html/rfc4021)).
 
-| Propriedade    | Tipo     | Value                                               |
-| -------------- | -------- | --------------------------------------------------- |
-| .\<keyword\> | booleano | Palavra-chave a definir (valor deve ser verdadeiro) |
+| Propriedade    | Tipo    | Value                                               |
+| -------------- | ------- | --------------------------------------------------- |
+| .\<keyword\> | boolean | Palavra-chave a definir (valor deve ser verdadeiro) |
 
 Palavra-chave reservada.
 - $draft - Indica que uma mensagem é um rascunho
