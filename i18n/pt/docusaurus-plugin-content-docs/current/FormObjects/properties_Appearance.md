@@ -40,7 +40,7 @@ During execution, a field or any enterable area is outlined by a selection recta
 
 | Nome          | Tipo de dados | Possible Values |
 | ------------- | ------------- | --------------- |
-| hideFocusRing | booleano      | true, false     |
+| hideFocusRing | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -62,7 +62,7 @@ By default, this option is not enabled.
 
 | Nome                | Tipo de dados | Possible Values |
 | ------------------- | ------------- | --------------- |
-| hideSystemHighlight | booleano      | true, false     |
+| hideSystemHighlight | boolean       | true, false     |
 
 #### Objects Supported
 
