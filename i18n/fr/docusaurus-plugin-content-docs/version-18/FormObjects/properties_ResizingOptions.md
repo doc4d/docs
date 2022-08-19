@@ -34,7 +34,7 @@ If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https:/
 
 | Le nom       | Type de données | Valeurs possibles       |
 | ------------ | --------------- | ----------------------- |
-| resizingMode | Chaîne          | "rightToLeft", "legacy" |
+| resizingMode | string          | "rightToLeft", "legacy" |
 
 #### Objets pris en charge
 
@@ -59,7 +59,7 @@ Trois options sont disponibles :
 
 | Le nom  | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
-| sizingX | Chaîne          | "grow", "move", "fixed" |
+| sizingX | string          | "grow", "move", "fixed" |
 
 #### Objets pris en charge
 
@@ -84,7 +84,7 @@ Trois options sont disponibles :
 
 | Le nom  | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
-| sizingY | Chaîne          | "grow", "move", "fixed" |
+| sizingY | string          | "grow", "move", "fixed" |
 
 #### Objets pris en charge
 
@@ -108,7 +108,7 @@ Lorsque cette propriété n'est pas appliquée au splitter, le résultat est le 
 
 | Le nom       | Type de données |          Valeurs possibles           |
 |:------------ |:---------------:|:------------------------------------:|
-| splitterMode |     Chaîne      | "move" (pusher), "resize" (standard) |
+| splitterMode |     string      | "move" (pusher), "resize" (standard) |
 
 #### Objets pris en charge
 
@@ -124,7 +124,7 @@ Indique si la taille de la colonne peut être modifiée par l'utilisateur.
 
 | Le nom    | Type de données | Valeurs possibles |
 |:--------- |:---------------:|:-----------------:|
-| resizable |     booléen     |  "true", "false"  |
+| resizable |     boolean     |  "true", "false"  |
 
 #### Objets pris en charge
 
