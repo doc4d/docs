@@ -12,7 +12,7 @@ Permet de définir une couleur d'arrière-plan différente pour les lignes / col
 
 | Le nom        | Type de données | Valeurs possibles                          |
 | ------------- | --------------- | ------------------------------------------ |
-| alternateFill | Chaîne          | une valeur css; "transparent"; "automatic" |
+| alternateFill | string          | une valeur css; "transparent"; "automatic" |
 
 #### Objets pris en charge
 
@@ -30,7 +30,7 @@ Dans le cas d'une list box, par défaut *Automatique* est sélectionné : la col
 
 | Le nom       | Type de données | Valeurs possibles                          |
 | ------------ | --------------- | ------------------------------------------ |
-| border-style | Chaîne          | une valeur css; "transparent"; "automatic" |
+| border-style | string          | une valeur css; "transparent"; "automatic" |
 
 #### Objets pris en charge
 
@@ -55,7 +55,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 
 | Le nom        | Type de données | Valeurs possibles                                   |
 | ------------- | --------------- | --------------------------------------------------- |
-| rowFillSource | Chaîne          | Une expression retournant une valeur de couleur RGB |
+| rowFillSource | string          | Une expression retournant une valeur de couleur RGB |
 
 #### Objets pris en charge
 
@@ -109,7 +109,7 @@ Vous pouvez supprimer ces lignes vides en sélectionnant cette option. Le bas de
 
 | Le nom             | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
-| hideExtraBlankRows | booléen         | true, false       |
+| hideExtraBlankRows | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -131,7 +131,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 | Le nom | Type de données | Valeurs possibles                          |
 | ------ | --------------- | ------------------------------------------ |
-| stroke | Chaîne          | une valeur css; "transparent"; "automatic" |
+| stroke | string          | une valeur css; "transparent"; "automatic" |
 
 > Cette propriété est également disponible pour les objets à base de texte, auquel cas elle désigne à la fois la couleur de la police et les lignes de l'objet, voir [Couleur de la police](properties_Text.md#font-color).
 
@@ -191,7 +191,7 @@ Vous pouvez obtenir le même résultat en utilisant les commandes `LISTBOX SET R
 
 | Le nom        | Type de données | Valeurs possibles             |
 | ------------- | --------------- | ----------------------------- |
-| rowFillSource | Chaîne          | Nom d'un tableau entier long. |
+| rowFillSource | string          | Nom d'un tableau entier long. |
 
 #### Objets pris en charge
 
