@@ -126,11 +126,11 @@ La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](http
 
 La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
-| Propriété | Type          | Description                                                                 |
-| --------- | ------------- | --------------------------------------------------------------------------- |
-| success   | booléen       | True si le message a été déchiffré avec succès                              |
-| result    | text          | Message déchiffré et décodé à l'aide de `options.encodingDecrypted`         |
-| errors    | collectionMMM | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs |
+| Propriété | Type       | Description                                                                 |
+| --------- | ---------- | --------------------------------------------------------------------------- |
+| success   | boolean    | True si le message a été déchiffré avec succès                              |
+| result    | text       | Message déchiffré et décodé à l'aide de `options.encodingDecrypted`         |
+| errors    | collection | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs |
 
 La fonction renvoie un objet "status" avec la propriété `success` définie sur `true` si le *message* a pu être déchiffré avec succès.
 
@@ -271,7 +271,7 @@ The `.sign()` function <!-- REF #CryptoKey.sign().Summary -->signs the utf8 repr
 | ----------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | text    | Algorithme de hachage à utiliser. Par exemple : "SHA256", "SHA384" ou "SHA512". Lorsqu'elle est utilisée pour produire un JWT, la taille du hachage doit correspondre à la taille de l'algorithme PS@, ES@, RS@ ou PS@ |
 | encodingEncrypted | text    | Chiffrement utilisé pour convertir le message chiffré binaire en chaîne de résultat. Peut être "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                             |
-| pss               | booléen | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la production d'un JWT pour l'algorithme PS@                                                            |
+| pss               | boolean | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la production d'un JWT pour l'algorithme PS@                                                            |
 | encoding          | text    | Représentation à utiliser pour la signature. Valeurs possibles : "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                                                           |
 
 #### *Result*
@@ -345,7 +345,7 @@ La fonction `.verify()` <!-- REF #CryptoKey.verify().Summary -->vérifie la sign
 | Propriété | Type    | Description                                                                                                                                                                                                            |
 | --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash      | text    | Algorithme de hachage à utiliser. Par exemple : "SHA256", "SHA384" ou "SHA512". Lorsqu'elle est utilisée pour produire un JWT, la taille du hachage doit correspondre à la taille de l'algorithme PS@, ES@, RS@ ou PS@ |
-| pss       | booléen | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la vérification d'un JWT pour l'algorithme PS@                                                          |
+| pss       | boolean | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la vérification d'un JWT pour l'algorithme PS@                                                          |
 | encoding  | text    | Représentation de la signature fournie. Valeurs possibles : "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                                                                |
 
 #### *Result*
@@ -354,7 +354,7 @@ La fonction `.verify()` <!-- REF #CryptoKey.verify().Summary -->vérifie la sign
 
 La fonction retourne un objet status avec la propriété `success` définie sur `true` si le `message` a pu être déchiffré avec succès (c'est-à-dire si la signature est correspondante).
 
-| Propriété | Type          | Description                                                                                            |
-| --------- | ------------- | ------------------------------------------------------------------------------------------------------ |
-| success   | booléen       | True si la signature correspond au message                                                             |
-| errors    | collectionMMM | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs|<!-- END REF --> |
+| Propriété | Type       | Description                                                                                            |
+| --------- | ---------- | ------------------------------------------------------------------------------------------------------ |
+| success   | boolean    | True si la signature correspond au message                                                             |
+| errors    | collection | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs|<!-- END REF --> |
