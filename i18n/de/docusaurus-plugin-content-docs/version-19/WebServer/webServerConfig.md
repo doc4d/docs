@@ -171,7 +171,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 
 | Can be set with     | Name                                               | Kommentare |
 | ------------------- | -------------------------------------------------- | ---------- |
-| webServer object    | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | Boolean    |
+| webServer object    | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean    |
 | `WEB SET OPTION`    | `Web HTTP enabled`                                 |            |
 | Settings dialog box | Configuration page/Enable HTTP                     |            |
 
@@ -181,7 +181,7 @@ Indicates whether or not the web server will accept non-secure connections.
 
 | Can be set with     | Name                                                 | Kommentare |
 | ------------------- | ---------------------------------------------------- | ---------- |
-| webServer object    | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | Boolean    |
+| webServer object    | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean    |
 | `WEB SET OPTION`    | `Web HTTPS enabled`                                  |            |
 | Settings dialog box | Configuration page/Enable HTTPS                      |            |
 
