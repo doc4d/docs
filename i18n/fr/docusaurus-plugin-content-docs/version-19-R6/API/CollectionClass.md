@@ -178,7 +178,7 @@ Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge 
 
 * nombre (réel, entier...). Les valeurs numériques sont toujours stockées sous forme de réels.
 * text
-* booléen
+* boolean
 * date
 * heure (stockée en nombre de milliseconds - réel)
 * Null
@@ -916,7 +916,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | value      | Number, Text, Object, Collection, Date, Boolean | -> | Valeur de remplissage                                             |
 | startFrom  | Integer                                         | -> | Numéro de l'élément de départ (inclus)                            |
 | end        | Integer                                         | -> | Position de fin (non incluse)                                     |
-| Result     | collectionMMM                                   | <- | Original collection with filled values|<!-- END REF --> |
+| Result     | collection                                      | <- | Original collection with filled values|<!-- END REF --> |
 
 #### Description
 
