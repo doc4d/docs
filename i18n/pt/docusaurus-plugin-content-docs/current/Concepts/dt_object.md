@@ -11,7 +11,7 @@ Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de 
     - number (Real, Integer, etc.)
     - text
     - null
-    - booleano
+    - boolean
     - ponteiro (armazenado como tal, avaliado usando o comando `JSON Stringify` ou quando copiando),
     - data (tipo de data ou cadeia de formato de data ISO)
     - object(1) (objects can be nested on several levels)
