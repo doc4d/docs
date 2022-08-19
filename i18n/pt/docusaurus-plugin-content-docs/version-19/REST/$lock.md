@@ -46,15 +46,15 @@ A `?$lock` request returns a JSON object with `"result"=true` if the lock operat
 
 The returned "__STATUS" object has the following properties:
 
-| Propriedade  |  | Tipo     | Descrção                                                                                                                                        |
-| ------------ |  | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-|              |  |          | ***Available only in case of success:***                                                                                                        |
-| success      |  | booleano | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case). |
-|              |  |          | ***Disponível apenas em caso de erro:***                                                                                                        |
-| status       |  | number   | Código de erro, ver abaixo                                                                                                                      |
-| statusText   |  | text     | Descrição do erro, ver abaixo                                                                                                                   |
-| lockKind     |  | number   | Código de bloqueio                                                                                                                              |
-| lockKindText |  | text     | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                   |
+| Propriedade  |  | Tipo    | Descrção                                                                                                                                        |
+| ------------ |  | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+|              |  |         | ***Available only in case of success:***                                                                                                        |
+| success      |  | boolean | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case). |
+|              |  |         | ***Disponível apenas em caso de erro:***                                                                                                        |
+| status       |  | number  | Código de erro, ver abaixo                                                                                                                      |
+| statusText   |  | text    | Descrição do erro, ver abaixo                                                                                                                   |
+| lockKind     |  | number  | Código de bloqueio                                                                                                                              |
+| lockKindText |  | text    | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                   |
 
 
 The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
