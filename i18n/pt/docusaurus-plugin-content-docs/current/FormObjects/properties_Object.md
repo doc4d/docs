@@ -63,7 +63,7 @@ Here is the list of objects whose value can be saved:
 
 | Nome          | Tipo de dados | Possible Values |
 | ------------- | ------------- | --------------- |
-| memorizeValue | booleano      | true, false     |
+| memorizeValue | boolean       | true, false     |
 
 #### Objects Supported
 
