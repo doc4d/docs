@@ -11,12 +11,12 @@ Variablen, Felder oder Ausdrücke vom Typ Objekt können verschiedene Datentypen
     - numerisch (Zahl, Ganzzahl, etc.)
     - Text
     - Null
-    - Boolean
+    - boolean
     - Zeiger (als solcher gespeichert, wird beim Verwenden der Funktion `JSON Stringify` oder beim Kopieren bewertet)
     - Datum (Datumstyp oder ISO Datumsformat)
     - Objekt(1) (Objekte können in mehrere Stufen verschachtelt sein)
     - Bild(2)
-    - Collection
+    - collection
 
 (1) ORDA Objekte wie [Entities](ORDA/dsMapping.md#entity) oder [Entity Selections](ORDA/dsMapping.md#entity-selection) lassen sich nicht in **Feldern vom Typ Objekt** speichern; sie werden jedoch voll in **Objektvariablen** im Speicher unterstützt.
 
