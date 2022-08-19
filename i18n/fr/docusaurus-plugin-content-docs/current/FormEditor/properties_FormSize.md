@@ -34,7 +34,7 @@ Les options de taille dépendent de la valeur de l'option **Taille basée sur**.
 
 | Le nom         | Type de données | Valeurs possibles                                              |
 | -------------- | --------------- | -------------------------------------------------------------- |
-| formSizeAnchor | Chaîne          | Nom de l'objet à utiliser pour définir la taille du formulaire |
+| formSizeAnchor | string          | Nom de l'objet à utiliser pour définir la taille du formulaire |
 
 
 
