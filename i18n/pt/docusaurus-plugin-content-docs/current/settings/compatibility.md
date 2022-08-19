@@ -1,5 +1,5 @@
 ---
-id: compatibility
+id: compatibidade
 title: Compatibility page
 ---
 
