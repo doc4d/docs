@@ -16,7 +16,7 @@ Si cette option n'est pas cochée, la largeur de la fenêtre du formulaire peut 
 
 | Le nom        | Type de données | Valeurs possibles   |
 | ------------- | --------------- | ------------------- |
-| windowSizingY | Chaîne          | "fixed", "variable" |
+| windowSizingY | string          | "fixed", "variable" |
 
 
 ---
@@ -33,7 +33,7 @@ Si cette option n'est pas cochée, la largeur de la fenêtre du formulaire peut 
 
 | Le nom        | Type de données | Valeurs possibles   |
 | ------------- | --------------- | ------------------- |
-| windowSizingX | Chaîne          | "fixed", "variable" |
+| windowSizingX | string          | "fixed", "variable" |
 
 ---
 
