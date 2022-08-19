@@ -14,7 +14,7 @@ Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'
 
 | Le nom                  | Type de données | Valeurs possibles                                                                                        |
 | ----------------------- | --------------- | -------------------------------------------------------------------------------------------------------- |
-| customBackgroundPicture | Chaîne          | Chemin relatif en syntaxe POSIX. Doit être utilisé avec l'option "Personnalisé" de la propriété "Style". |
+| customBackgroundPicture | string          | Chemin relatif en syntaxe POSIX. Doit être utilisé avec l'option "Personnalisé" de la propriété "Style". |
 
 #### Objets pris en charge
 
@@ -70,7 +70,7 @@ Désigne l'emplacement d'une icône par rapport à l'objet formulaire.
 
 | Le nom        | Type de données | Valeurs possibles           |
 | ------------- | --------------- | --------------------------- |
-| iconPlacement | Chaîne          | "aucun", "gauche", "droite" |
+| iconPlacement | string          | "aucun", "gauche", "droite" |
 
 #### Objets pris en charge
 
@@ -161,7 +161,7 @@ Voici le résultat des différentes options de cette propriété :
 
 | Le nom        | Type de données | Valeurs possibles                          |
 | ------------- | --------------- | ------------------------------------------ |
-| textPlacement | Chaîne          | "left", "top", "right", "bottom", "center" |
+| textPlacement | string          | "left", "top", "right", "bottom", "center" |
 
 #### Objets pris en charge
 
@@ -220,7 +220,7 @@ Il est important de noter que la propriété “Avec pop up menu” gère unique
 
 | Le nom         | Type de données | Valeurs possibles         |
 |:-------------- | --------------- | ------------------------- |
-| popupPlacement | Chaîne          | <ul><li>"none"</li><li>"linked"</li><li>"separated"</li></ul> |
+| popupPlacement | string          | <ul><li>"none"</li><li>"linked"</li><li>"separated"</li></ul> |
 
 #### Objets pris en charge
 
