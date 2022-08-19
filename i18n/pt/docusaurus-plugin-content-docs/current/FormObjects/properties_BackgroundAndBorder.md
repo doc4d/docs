@@ -109,7 +109,7 @@ You can remove these empty rows by selecting this option. The bottom of the list
 
 | Nome               | Tipo de dados | Possible Values |
 | ------------------ | ------------- | --------------- |
-| hideExtraBlankRows | booleano      | true, false     |
+| hideExtraBlankRows | boolean       | true, false     |
 
 #### Objects Supported
 
