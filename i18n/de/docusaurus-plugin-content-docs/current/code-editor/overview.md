@@ -22,7 +22,7 @@ You can create [several types of methods](../Concepts/methods.md):
 
 ## Creating classes
 
-A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. The name of the file is the class name.
+A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. Der Name der Datei ist der Klassenname.
 
 You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
 
@@ -162,7 +162,7 @@ When it is checked, this option allows the project method to be executed by the 
 
 This property applies to all internal and external SQL queries --- executed via the ODBC driver, SQL code inserted between the [Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.en.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.en.html)  tags or the [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.en.html) command.
 
-**Notes:**
+**Hinweise:**
 
 -   Even if a method has the "SQL" attribute, access rights set at the level of the database settings and method properties are taken into account for the execution of the method.
 -   The ODBC **SQLProcedure** function only returns project methods with the "SQL" attribute.
@@ -190,7 +190,7 @@ Use the wildcard character @ to help define groups of methods:
 - To designate methods whose names end with..., type @ at the beginning of the string. For example: `@write`
 - To designate all of the methods, just type @ in the area.
 
-**Notes:**
+**Hinweise:**
 - The search does not take upper/lower case into account.
 - You can enter several @ characters in the string, for example `dtro_@web@pro.@`
 
