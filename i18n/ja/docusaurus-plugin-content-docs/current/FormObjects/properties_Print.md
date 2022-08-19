@@ -25,7 +25,7 @@ title: 印刷
 
 |     名称     | データタイプ | とりうる値                                           |
 |:----------:|:------:| ----------------------------------------------- |
-| printFrame |  文字列   | "fixed", "variable", (サブフォームのみ) "fixedMultiple" |
+| printFrame | string | "fixed", "variable", (サブフォームのみ) "fixedMultiple" |
 
 #### 対象オブジェクト
 
