@@ -5,7 +5,7 @@ title: Users and sessions
 
 REST requests can benefit from [web user sessions](WebServer/sessions.md), providing extra features such as multiple requests handling, data sharing between the web client processes, and user privileges.
 
-As a first step to open a REST session on the 4D server, the user sending the request must be authenticated.
+Como primeiro passo para abrir uma sessão REST no servidor 4D, o usuário que envia a solicitude deve estar autenticado.
 
 ## Authenticating users
 
@@ -17,7 +17,7 @@ When [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions) (r
 
 If the `On REST Authentication` database method has not been defined, a `guest` session is opened.
 
-## Example
+## Exemplo
 
 In this example, the user enters their email and password in an html page that requests [`$directory/login`]($directory.md#directorylogin) in a POST (it is recommended to use an HTTPS connection to send the html page). The `On REST Authentication` database method is called to validate the credentials and to set the session.
 
@@ -95,17 +95,12 @@ End if
 The `fillSession` project method initializes the user session, for example:
 
 ```4d
-#DECLARE($sales : cs.SalesPersonsEntity)
+#DECLARE($sales : cs. SalesPersonsEntity)
 var $info : Object
 
 $info:=New object()
-$info.userName:=$sales.firstname+" "+$sales.lastname
-
-Session.setPrivileges($info)
-
-Use (Session.storage)
+$info.userName:=$sales.firstname+" "+$sales.lastname Session.setPrivileges($info) Use (Session.storage)
     If (Session.storage.myTop3=Null)
         Session.storage.myTop3:=$sales.customers.orderBy("totalPurchase desc").slice(0; 3)
-    End if 
-End use
+    End if End use
 ```
