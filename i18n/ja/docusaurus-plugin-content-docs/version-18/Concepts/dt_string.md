@@ -1,5 +1,5 @@
 ---
-id: 文字列
+id: string
 title: String
 ---
 
