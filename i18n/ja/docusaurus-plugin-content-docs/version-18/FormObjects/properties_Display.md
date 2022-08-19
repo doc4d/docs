@@ -41,7 +41,7 @@ title: 表示
 
 | 名称         | データタイプ | とりうる値                                                                            |
 | ---------- | ------ | -------------------------------------------------------------------------------- |
-| textFormat | 文字列    | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", カスタムフォーマット |
+| textFormat | string | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", カスタムフォーマット |
 
 #### 対象オブジェクト
 
@@ -79,7 +79,7 @@ title: 表示
 
 | 名称         | データタイプ | とりうる値                                                                                                                                               |
 | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | 文字列    | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (他の値と組み合わせることができます) |
+| dateFormat | string | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (他の値と組み合わせることができます) |
 
 #### 対象オブジェクト
 
@@ -236,7 +236,7 @@ title: 表示
 
 | 名称           | データタイプ | とりうる値                      |
 | ------------ | ------ | -------------------------- |
-| numberFormat | 文字列    | 数値 (必要に応じて小数点およびマイナス記号を含む) |
+| numberFormat | string | 数値 (必要に応じて小数点およびマイナス記号を含む) |
 
 #### 対象オブジェクト
 
@@ -295,7 +295,7 @@ title: 表示
 
 | 名称            | データタイプ | とりうる値                                                                                                 |
 | ------------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| pictureFormat | 文字列    | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
+| pictureFormat | string | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
 
 #### 対象オブジェクト
 
@@ -328,7 +328,7 @@ title: 表示
 
 | 名称         | データタイプ | とりうる値                                                                                                                                                                       |
 | ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| timeFormat | 文字列    | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (他の値と組み合わせることができます) |
+| timeFormat | string | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (他の値と組み合わせることができます) |
 
 #### 対象オブジェクト
 
@@ -352,7 +352,7 @@ title: 表示
 
 | 名称            | データタイプ | とりうる値                                                       |
 | ------------- | ------ | ----------------------------------------------------------- |
-| booleanFormat | 文字列    | "\<*テキスト (true時)*\>;\<*テキスト (false時)*\>", 例: "済み;未処理" / |
+| booleanFormat | string | "\<*テキスト (true時)*\>;\<*テキスト (false時)*\>", 例: "済み;未処理" / |
 
 #### 対象オブジェクト
 
@@ -372,7 +372,7 @@ title: 表示
 
 | 名称          | データタイプ | とりうる値                                                                                                                  |
 | ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| controlType | 文字列    | **number columns**: "automatic" (default) or "checkbox"<br/>**boolean columns**: "checkbox" (default) or "popup" |
+| controlType | string | **number columns**: "automatic" (default) or "checkbox"<br/>**boolean columns**: "checkbox" (default) or "popup" |
 
 #### 対象オブジェクト
 
@@ -388,9 +388,9 @@ title: 表示
 
 #### JSON 文法
 
-| 名称      | データタイプ | とりうる値       |
-| ------- | ------ | ----------- |
-| display | ブール    | true, false |
+| 名称      | データタイプ  | とりうる値       |
+| ------- | ------- | ----------- |
+| display | boolean | true, false |
 
 #### 対象オブジェクト
 
@@ -418,9 +418,9 @@ title: 表示
 
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値       |
-| ---------- | ------ | ----------- |
-| threeState | ブール    | true, false |
+| 名称         | データタイプ  | とりうる値       |
+| ---------- | ------- | ----------- |
+| threeState | boolean | true, false |
 
 #### 対象オブジェクト
 
@@ -441,7 +441,7 @@ title: 表示
 
 | 名称           | データタイプ | とりうる値         |
 | ------------ | ------ | ------------- |
-| controlTitle | 文字列    | タイトル用のあらゆる文字列 |
+| controlTitle | string | タイトル用のあらゆる文字列 |
 
 #### 対象オブジェクト
 
@@ -477,7 +477,7 @@ title: 表示
 
 | 名称           | データタイプ | とりうる値                  |
 | ------------ | ------ | ---------------------- |
-| truncateMode | 文字列    | "withEllipsis", "none" |
+| truncateMode | string | "withEllipsis", "none" |
 
 #### 対象オブジェクト
 
@@ -508,7 +508,7 @@ In the context of list forms, the Visibility property supports two specific valu
 
 | 名称         | データタイプ | とりうる値                                                                         |
 | ---------- | ------ | ----------------------------------------------------------------------------- |
-| visibility | 文字列    | "visible", "hidden", "selectedRows" (リストフォームのみ), "unselectedRows" (リストフォームのみ) |
+| visibility | string | "visible", "hidden", "selectedRows" (リストフォームのみ), "unselectedRows" (リストフォームのみ) |
 
 #### 対象オブジェクト
 
@@ -563,7 +563,7 @@ In the context of list forms, the Visibility property supports two specific valu
 
 | 名称       | データタイプ | とりうる値                                      |
 | -------- | ------ | ------------------------------------------ |
-| wordwrap | 文字列    | "automatic" (リストボックスを除く), "normal", "none" |
+| wordwrap | string | "automatic" (リストボックスを除く), "normal", "none" |
 
 #### 対象オブジェクト
 
