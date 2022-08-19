@@ -18,7 +18,7 @@ title: フォームプロパティ
 
 | 名称          | データタイプ | とりうる値           |
 | ----------- | ------ | --------------- |
-| colorScheme | 文字列    | "dark", "light" |
+| colorScheme | string | "dark", "light" |
 
 ---
 
@@ -34,9 +34,9 @@ title: フォームプロパティ
 
 #### JSON 文法
 
-| 名称    | データタイプ       | とりうる値                                   |
-| ----- | ------------ | --------------------------------------- |
-| pages | collection-1 | ページのコレクション (各ページはオブジェクトで、ページ0 は最初の要素です) |
+| 名称    | データタイプ     | とりうる値                                   |
+| ----- | ---------- | --------------------------------------- |
+| pages | collection | ページのコレクション (各ページはオブジェクトで、ページ0 は最初の要素です) |
 
 ---
 
@@ -79,7 +79,7 @@ title: フォームプロパティ
 
 | 名称          | データタイプ | とりうる値                                                        |
 | ----------- | ------ | ------------------------------------------------------------ |
-| destination | 文字列    | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
+| destination | string | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
 ---
 
@@ -96,7 +96,7 @@ To remove inheritance, select `\&#060;None&#062;` in the Property List (or " " i
 
 | 名称            | データタイプ | とりうる値                                                                    |
 | ------------- | ------ | ------------------------------------------------------------------------ |
-| inheritedForm | 文字列    | テーブルまたはプロジェクトフォームの名前, フォームを定義する .json ファイルへの POSIXパス, またはフォームを定義するオブジェクト |
+| inheritedForm | string | テーブルまたはプロジェクトフォームの名前, フォームを定義する .json ファイルへの POSIXパス, またはフォームを定義するオブジェクト |
 
 ---
 
@@ -128,9 +128,9 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 #### JSON 文法
 
-| 名称     | データタイプ | とりうる値       |
-| ------ | ------ | ----------- |
-| shared | ブール    | true, false |
+| 名称     | データタイプ  | とりうる値       |
+| ------ | ------- | ----------- |
+| shared | boolean | true, false |
 
 
 ---
@@ -147,9 +147,9 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 #### JSON 文法
 
-| 名称               | データタイプ | とりうる値       |
-| ---------------- | ------ | ----------- |
-| memorizeGeometry | ブール    | true, false |
+| 名称               | データタイプ  | とりうる値       |
+| ---------------- | ------- | ----------- |
+| memorizeGeometry | boolean | true, false |
 
 #### 参照
 [**値を記憶**](FormObjects/properties_Object.md#save-value)
@@ -173,6 +173,6 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 | 名称          | データタイプ | とりうる値               |
 | ----------- | ------ | ------------------- |
-| windowTitle | 文字列    | テキストまたは参照としてのウィンドウ名 |
+| windowTitle | string | テキストまたは参照としてのウィンドウ名 |
 
 
