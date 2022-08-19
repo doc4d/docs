@@ -354,13 +354,13 @@ L'objet retourné par `.drop( )` contient les propriétés suivantes :
 
 | Propriété     |                     | Type                  | Description                                                                                                    |
 | ------------- | ------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| success       |                     | booléen               | vrai si l'action de suppression a été effectuée avec succès, sinon Faux.                                       |
+| success       |                     | boolean               | vrai si l'action de suppression a été effectuée avec succès, sinon Faux.                                       |
 |               |                     |                       | ***Disponible uniquement en cas d'erreur :***                                                                  |
 | status(*)     |                     | number                | Code d'erreur, voir ci-dessous                                                                                 |
 | statusText(*) |                     | text                  | Description de l'erreur, voir ci-dessous                                                                       |
 |               |                     |                       | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                       |
 | LockKindText  |                     | text                  | "Locked by record"                                                                                             |
-| lockInfo      |                     | Objet                 | Information sur l'origine du verrouillage                                                                      |
+| lockInfo      |                     | object                | Information sur l'origine du verrouillage                                                                      |
 |               | task_id             | number                | Id du process                                                                                                  |
 |               | user_name           | text                  | Nom d'utilisateur de la session sur la machine                                                                 |
 |               | user4d_alias        | text                  | Alias utilisateur si défini avec `SET USER ALIAS`, sinon le nom d'utilisateur dans le répertoire de la base 4D |
@@ -960,15 +960,15 @@ L'objet retourné par `.lock( )` contient les propriétés suivantes :
 
 | Propriété        |                     | Type                  | Description                                                                                                                                                                |
 | ---------------- | ------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | booléen               | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux.                                    |
+| success          |                     | boolean               | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux.                                    |
 |                  |                     |                       | ***Disponible uniquement si l'option `dk reload if stamp changed` est utilisée :***                                                                                        |
-| **wasReloaded**  |                     | booléen               | vrai si l'entité a été correctement rechargée, sinon faux.                                                                                                                 |
+| **wasReloaded**  |                     | boolean               | vrai si l'entité a été correctement rechargée, sinon faux.                                                                                                                 |
 |                  |                     |                       | ***Disponible uniquement en cas d'erreur :***                                                                                                                              |
 | status(\*)     |                     | number                | Code d'erreur, voir ci-dessous                                                                                                                                             |
 | statusText(\*) |                     | text                  | Description de l'erreur, voir ci-dessous                                                                                                                                   |
 |                  |                     |                       | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                                                                                   |
 | lockKindText     |                     | text                  | "Locked by record" si verrouillage par un process 4D, "Locked by session" si verrouillage par une session REST                                                             |
-| lockInfo         |                     | Objet                 | Information sur l'origine du verrouillage. Les propriétés retournées dépendent de l'origine du verrouillage (process 4D ou session REST).                                  |
+| lockInfo         |                     | object                | Information sur l'origine du verrouillage. Les propriétés retournées dépendent de l'origine du verrouillage (process 4D ou session REST).                                  |
 |                  |                     |                       | ***Disponible uniquement pour un verrouillage par process 4D:***                                                                                                           |
 |                  | task_id             | number                | ID du process                                                                                                                                                              |
 |                  | user_name           | text                  | Nom d'utilisateur de la session sur la machine                                                                                                                             |
@@ -1149,7 +1149,7 @@ L'objet retourné par `.reload( )` contient les propriétés suivantes :
 
 | Propriété        | Type    | Description                                                                                                   |
 | ---------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
-| success          | booléen | Vrai si le rechargement a été effectué avec succès, sinon Faux. ***Disponible uniquement en cas d'erreur*** : |
+| success          | boolean | Vrai si le rechargement a été effectué avec succès, sinon Faux. ***Disponible uniquement en cas d'erreur*** : |
 | status(\*)     | number  | Code d'erreur, voir ci-dessous                                                                                |
 | statusText(\*) | text    | Description de l'erreur, voir ci-dessous                                                                      |
 
@@ -1223,15 +1223,15 @@ L'objet retourné par `.save()` contient les propriétés suivantes :
 
 | Propriété    |                    | Type                  | Description                                                                                                    |
 | ------------ | ------------------ | --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| success      |                    | booléen               | Vrai si la sauvegarde a été effectuée avec succès, sinon faux.                                                 |
+| success      |                    | boolean               | Vrai si la sauvegarde a été effectuée avec succès, sinon faux.                                                 |
 |              |                    |                       | ***Disponible uniquement si l'option `dk auto merge` a été utilisée*** :                                       |
-| autoMerged   |                    | booléen               | Vrai si un "auto merge" a été effectué, sinon faux.                                                            |
+| autoMerged   |                    | boolean               | Vrai si un "auto merge" a été effectué, sinon faux.                                                            |
 |              |                    |                       | ***Disponible uniquement en cas d'erreur*** :                                                                  |
 | status       |                    | number                | Code d'erreur, [voir ci-dessous](#status-and-statustext)                                                       |
 | statusText   |                    | text                  | Description de l'erreur, [voir ci-dessous](#status-and-statustext)                                             |
 |              |                    |                       | ***Disponible uniquement en cas d'erreur en verrouillage pessimiste*** :                                       |
 | lockKindText |                    | text                  | "Locked by record"                                                                                             |
-| lockInfo     |                    | Objet                 | Information sur l'origine du verrouillage                                                                      |
+| lockInfo     |                    | object                | Information sur l'origine du verrouillage                                                                      |
 |              | task_id            | number                | Id du process                                                                                                  |
 |              | user_name          | text                  | Nom d'utilisateur de la session sur la machine                                                                 |
 |              | user4d_alias       | text                  | Alias utilisateur si défini avec `SET USER ALIAS`, sinon le nom d'utilisateur dans le répertoire de la base 4D |
