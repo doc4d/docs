@@ -15,7 +15,7 @@ title: オブジェクト
 
 | 名称   | データタイプ | とりうる値                                                                                                                                                                                                                                                                                                    |
 | ---- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type | 文字列    | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
+| type | string | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
 
 #### 対象オブジェクト
 
@@ -36,7 +36,7 @@ title: オブジェクト
 
 | 名称   | データタイプ | とりうる値                           |
 | ---- | ------ | ------------------------------- |
-| name | 文字列    | 既存オブジェクトによって使用されていない、命名規則に沿った名称 |
+| name | string | 既存オブジェクトによって使用されていない、命名規則に沿った名称 |
 
 #### 対象オブジェクト
 
@@ -123,7 +123,7 @@ title: オブジェクト
 
 | 名称                 | データタイプ | とりうる値                     |
 | ------------------ | ------ | ------------------------- |
-| dataSourceTypeHint | 文字列    | <ul><li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date" (*array/selection list box only*) "integer", "time", "object"</li></ul> |
+| dataSourceTypeHint | string | <ul><li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date" (*array/selection list box only*) "integer", "time", "object"</li></ul> |
 
 #### 対象オブジェクト
 
@@ -139,7 +139,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称           | データタイプ | とりうる値                       |
 | ------------ | ------ | --------------------------- |
-| クラスの新規オブジェクト | 文字列    | (複数の場合は半角スペース区切りの) クラス名の文字列 |
+| クラスの新規オブジェクト | string | (複数の場合は半角スペース区切りの) クラス名の文字列 |
 
 #### 対象オブジェクト
 
@@ -164,7 +164,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称         | データタイプ | とりうる値                      |
 | ---------- | ------ | -------------------------- |
-| dataSource | 文字列    | コレクションあるいはエンティティセレクションを返す式 |
+| dataSource | string | コレクションあるいはエンティティセレクションを返す式 |
 
 #### 対象オブジェクト
 
@@ -187,7 +187,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称          | データタイプ | とりうる値                                                       |
 | ----------- | ------ | ----------------------------------------------------------- |
-| listboxType | 文字列    | "array", "currentSelection", "namedSelection", "collection" |
+| listboxType | string | "array", "currentSelection", "namedSelection", "collection" |
 
 #### 対象オブジェクト
 
@@ -203,7 +203,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称             | データタイプ | とりうる値                                                         |
 | -------------- | ------ | ------------------------------------------------------------- |
-| pluginAreaKind | 文字列    | プラグインが提供する外部エリアの、% 文字で始まる名称 (プロパティリストの候補表示では、この % 文字は表示されません) |
+| pluginAreaKind | string | プラグインが提供する外部エリアの、% 文字で始まる名称 (プロパティリストの候補表示では、この % 文字は表示されません) |
 
 #### 対象オブジェクト
 
@@ -219,7 +219,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称         | データタイプ | とりうる値    |
 | ---------- | ------ | -------- |
-| radioGroup | 文字列    | ラジオグループ名 |
+| radioGroup | string | ラジオグループ名 |
 
 #### 対象オブジェクト
 
@@ -245,7 +245,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称   | データタイプ | とりうる値     |
 | ---- | ------ | --------- |
-| テキスト | 文字列    | なんらかのテキスト |
+| テキスト | string | なんらかのテキスト |
 
 #### 対象オブジェクト
 
@@ -286,7 +286,7 @@ css ファイルにてクラスセレクターとして使用される、(複数
 
 | 名称                  | データタイプ | とりうる値                                                                                                 |
 | ------------------- | ------ | ----------------------------------------------------------------------------------------------------- |
-| variableCalculation | 文字列    | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
+| variableCalculation | string | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
 
 #### 対象オブジェクト
 
