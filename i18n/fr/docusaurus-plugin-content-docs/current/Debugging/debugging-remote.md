@@ -3,7 +3,7 @@ id: debugging-remote
 title: Débogage depuis des machines distantes
 ---
 
-## Overview
+## Vue d’ensemble
 
 Lorsqu'une base de données 4D est exécutée sur 4D Server en mode interprété, vous pouvez déboguer le code 4D exécuté sur le serveur à partir d'un client 4D distant connecté au projet. Il suffit d'associer le débogueur à une machine distante spécifique, et l'exécution du code peut être surveillée dans le débogueur directement sur la machine distante.
 
