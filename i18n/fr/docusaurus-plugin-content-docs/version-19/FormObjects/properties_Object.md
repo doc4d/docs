@@ -15,7 +15,7 @@ This property designates the type of the [active or inactive form object](formOb
 
 | Le nom | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                        |
 | ------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type   | Chaîne          | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
+| type   | string          | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
 
 #### Objets pris en charge
 
@@ -36,7 +36,7 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 | Le nom | Type de données | Valeurs possibles                                                    |
 | ------ | --------------- | -------------------------------------------------------------------- |
-| nom    | Chaîne          | Any allowed name which does not belong to an already existing object |
+| nom    | string          | Any allowed name which does not belong to an already existing object |
 
 #### Objets pris en charge
 
@@ -63,7 +63,7 @@ Here is the list of objects whose value can be saved:
 
 | Le nom        | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
-| memorizeValue | booléen         | true, false       |
+| memorizeValue | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -150,7 +150,7 @@ However, this property has a typing function in the following specific cases:
 
 | Le nom             | Type de données | Valeurs possibles                                  |
 | ------------------ | --------------- | -------------------------------------------------- |
-| dataSourceTypeHint | Chaîne          | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li> |
+| dataSourceTypeHint | string          | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li> |
 
 #### Objets pris en charge
 
@@ -166,7 +166,7 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 | Le nom | Type de données | Valeurs possibles                                         |
 | ------ | --------------- | --------------------------------------------------------- |
-| classe | Chaîne          | One string with CSS name(s) separated by space characters |
+| classe | string          | One string with CSS name(s) separated by space characters |
 
 #### Objets pris en charge
 
@@ -190,7 +190,7 @@ The collection or the entity selection must be available to the form when it is 
 
 | Le nom     | Type de données | Valeurs possibles                                            |
 | ---------- | --------------- | ------------------------------------------------------------ |
-| dataSource | Chaîne          | Expression that returns a collection or an entity selection. |
+| dataSource | string          | Expression that returns a collection or an entity selection. |
 
 #### Objets pris en charge
 
@@ -213,7 +213,7 @@ Specify the type of list box.
 
 | Le nom      | Type de données | Valeurs possibles                                           |
 | ----------- | --------------- | ----------------------------------------------------------- |
-| listboxType | Chaîne          | "array", "currentSelection", "namedSelection", "collection" |
+| listboxType | string          | "array", "currentSelection", "namedSelection", "collection" |
 
 #### Objets pris en charge
 
@@ -229,7 +229,7 @@ Name of the [plug-in external area](pluginArea_overview.md) associated to the ob
 
 | Le nom         | Type de données | Valeurs possibles                                             |
 | -------------- | --------------- | ------------------------------------------------------------- |
-| pluginAreaKind | Chaîne          | Name of the plug-in external area (starts with a % character) |
+| pluginAreaKind | string          | Name of the plug-in external area (starts with a % character) |
 
 #### Objets pris en charge
 
@@ -245,7 +245,7 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 | Le nom     | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
-| radioGroup | Chaîne          | Radio group name  |
+| radioGroup | string          | Radio group name  |
 
 #### Objets pris en charge
 
@@ -271,7 +271,7 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 | Le nom | Type de données | Valeurs possibles |
 | ------ | --------------- | ----------------- |
-| text   | Chaîne          | any text          |
+| text   | string          | any text          |
 
 #### Objets pris en charge
 
@@ -323,7 +323,7 @@ When **Custom** ("none" in JSON) is set, no automatic calculations are performed
 
 | Le nom              | Type de données | Valeurs possibles                                                                                     |
 | ------------------- | --------------- | ----------------------------------------------------------------------------------------------------- |
-| variableCalculation | Chaîne          | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
+| variableCalculation | string          | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
 
 #### Objets pris en charge
 
