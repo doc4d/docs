@@ -12,7 +12,7 @@ Indique si l’utilisateur peut supprimer des sous-enregistrements dans un sous-
 
 | Le nom          | Type de données | Valeurs possibles               |
 | --------------- | --------------- | ------------------------------- |
-| deletableInList | booléen         | true, false (par défaut : true) |
+| deletableInList | boolean         | true, false (par défaut : true) |
 
 #### Objets pris en charge
 
@@ -35,7 +35,7 @@ Cette option permet de désigner un formulaire détaillé à utiliser dans un so
 
 | Le nom     | Type de données | Valeurs possibles                                                                                                                   |
 | ---------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| detailForm | Chaîne          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
+| detailForm | string          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
 #### Objets pris en charge
 
@@ -53,7 +53,7 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 
 | Le nom                       | Type de données | Valeurs possibles                  |
 | ---------------------------- | --------------- | ---------------------------------- |
-| doubleClickInEmptyAreaAction | Chaîne          | "addSubrecord" ou "" to do nothing |
+| doubleClickInEmptyAreaAction | string          | "addSubrecord" ou "" to do nothing |
 
 #### Objets pris en charge
 
@@ -81,7 +81,7 @@ For the last two actions, the On `Open Detail` form event is also generated. The
 
 | Le nom                 | Type de données | Valeurs possibles                   |
 | ---------------------- | --------------- | ----------------------------------- |
-| doubleClickInRowAction | Chaîne          | "editSubrecord", "displaySubrecord" |
+| doubleClickInRowAction | string          | "editSubrecord", "displaySubrecord" |
 
 #### Objets pris en charge
 
@@ -103,7 +103,7 @@ Lorsque cette propriété est activée pour un sous-formulaire de liste, l'utili
 
 | Le nom          | Type de données | Valeurs possibles |
 | --------------- | --------------- | ----------------- |
-| enterableInList | booléen         | true, false       |
+| enterableInList | boolean         | true, false       |
 
 
 #### Objets pris en charge
@@ -122,7 +122,7 @@ Les sous-formulaires de liste peuvent être utilisés pour la saisie de données
 
 | Le nom   | Type de données | Valeurs possibles                                                                                                                   |
 | -------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| listForm | Chaîne          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
+| listForm | string          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
 #### Objets pris en charge
 
@@ -139,7 +139,7 @@ Spécifie la table à laquelle appartient le sous-formulaire Liste (le cas éch�
 
 | Le nom | Type de données | Valeurs possibles                                     |
 | ------ | --------------- | ----------------------------------------------------- |
-| table  | Chaîne          | Nom de la table 4D, ou "" s'il n'existe aucune table. |
+| table  | string          | Nom de la table 4D, ou "" s'il n'existe aucune table. |
 
 #### Objets pris en charge
 
@@ -162,7 +162,7 @@ Designates the option for allowing users to select rows:
 
 | Le nom        | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
-| selectionMode | Chaîne          | "multiple", "single", "none" |
+| selectionMode | string          | "multiple", "single", "none" |
 
 #### Objets pris en charge
 
