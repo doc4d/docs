@@ -27,7 +27,7 @@ Displays/Hides the graduations next to the labels.
 
 |      Nome       | Tipo de dados | Possible Values |
 |:---------------:|:-------------:| --------------- |
-| showGraduations |   booleano    | "true", "false" |
+| showGraduations |    boolean    | "true", "false" |
 
 #### Objects Supported
 
