@@ -1,5 +1,5 @@
 ---
-id: répertoire de l'utilisateur
+id: directory
 title: "$directory"
 ---
 
