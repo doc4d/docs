@@ -14,7 +14,7 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 | Le nom     | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
-| spellcheck | booléen         | true, false       |
+| spellcheck | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -40,7 +40,7 @@ For a [Web Area](webArea_overview.md), the contents of the menu depend of the re
 
 | Le nom      | Type de données | Valeurs possibles                     |
 | ----------- | --------------- | ------------------------------------- |
-| contextMenu | Chaîne          | "automatic" (used if missing), "none" |
+| contextMenu | string          | "automatic" (used if missing), "none" |
 
 #### Objets pris en charge
 
@@ -60,7 +60,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 | Le nom      | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
-| saisissable | booléen         | true, false       |
+| saisissable | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -116,7 +116,7 @@ Ce tableau décrit les filtres de saisie du menu de sélection :
 
 | Le nom      | Type de données | Valeurs possibles                                                        |
 | ----------- | --------------- | ------------------------------------------------------------------------ |
-| entryFilter | Chaîne          | Entry filter code or Entry filter name (filter names start with &#124; ) |
+| entryFilter | string          | Entry filter code or Entry filter name (filter names start with &#124; ) |
 
 #### Objets pris en charge
 
@@ -140,7 +140,7 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 | Le nom    | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
-| focusable | booléen         | true, false       |
+| focusable | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -226,7 +226,7 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 | Le nom      | Type de données | Valeurs possibles                                                  |
 | ----------- | --------------- | ------------------------------------------------------------------ |
-| placeholder | Chaîne          | Texte à afficher (grisé) lorsque l'objet ne contient aucune valeur |
+| placeholder | string          | Texte à afficher (grisé) lorsque l'objet ne contient aucune valeur |
 
 #### Objets pris en charge
 
@@ -246,7 +246,7 @@ This property keeps the selection visible within the object after it has lost th
 
 | Le nom        | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
-| showSelection | booléen         | true, false       |
+| showSelection | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -269,13 +269,13 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 | Le nom          | Type de données | Valeurs possibles                        |
 | --------------- | --------------- | ---------------------------------------- |
-| shortcutAccel   | booléen         | true, false (Ctrl Windows/Command macOS) |
-| shortcutAlt     | booléen         | true, false                              |
-| shortcutCommand | booléen         | true, false                              |
-| shortcutControl | booléen         | true, false (macOS Control)              |
-| shortcutShift   | booléen         | true, false                              |
+| shortcutAccel   | boolean         | true, false (Ctrl Windows/Command macOS) |
+| shortcutAlt     | boolean         | true, false                              |
+| shortcutCommand | boolean         | true, false                              |
+| shortcutControl | boolean         | true, false (macOS Control)              |
+| shortcutShift   | boolean         | true, false                              |
 |                 |                 |                                          |
-| shortcutKey     | Chaîne          | <ul><li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li></ul>                |
+| shortcutKey     | string          | <ul><li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li></ul>                |
 
 #### Objets pris en charge
 
@@ -295,7 +295,7 @@ When this option is not enabled, users must first select the cell row and then c
 
 | Le nom          | Type de données | Valeurs possibles |
 | --------------- | --------------- | ----------------- |
-| singleClickEdit | booléen         | true, false       |
+| singleClickEdit | boolean         | true, false       |
 
 #### Objets pris en charge
 
