@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Vue d’ensemble
 ---
 
 Si différentes personnes utilisent votre base de données, vous pouvez souhaiter contrôler ses accès ou proposer différentes fonctionnalités ou interfaces aux utilisateurs connectés. Il peut être également essentiel de protéger des données importantes. Vous pouvez fournir cette protection en affectant des mots de passe aux utilisateurs et en créant des groupes qui possèdent des niveaux d’accès correspondant à des degrés de confidentialité différents.
