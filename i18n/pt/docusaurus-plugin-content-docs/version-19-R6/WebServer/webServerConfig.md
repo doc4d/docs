@@ -173,7 +173,7 @@ Para obter mais informações sobre o CORS, consulte a [página de compartilhame
 
 | Can be set with                    | Nome                                                             | Comentários |
 | ---------------------------------- | ---------------------------------------------------------------- | ----------- |
-| webServer object                   | [`HTTPEnabled`](API/WebServerClass.md#httpenabled)               | booleano    |
+| webServer object                   | [`HTTPEnabled`](API/WebServerClass.md#httpenabled)               | boolean     |
 | `WEB SET OPTION`                   | `Web HTTP enabled`                                               |             |
 | Caixa de diálogos de configurações | [Configuration page/Enable HTTP](../settings/web.md#enable-http) |             |
 
@@ -183,7 +183,7 @@ Indicates whether or not the web server will accept non-secure connections.
 
 | Can be set with                    | Nome                                                 | Comentários |
 | ---------------------------------- | ---------------------------------------------------- | ----------- |
-| webServer object                   | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | booleano    |
+| webServer object                   | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean     |
 | `WEB SET OPTION`                   | `Web HTTPS enabled`                                  |             |
 | Caixa de diálogos de configurações | Configuration page/Enable HTTPS                      |             |
 
