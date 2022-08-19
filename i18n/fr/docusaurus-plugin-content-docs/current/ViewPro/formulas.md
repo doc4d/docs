@@ -246,7 +246,7 @@ Les méthodes projet 4D peuvent également retourner des valeurs dans la formule
     | Propriété | Type | Description       |
     | --------- | ---- | ----------------- |
     | value     | Date | Valeur date       |
-    | heure     | Real | Heure en secondes |
+    | time      | Real | Heure en secondes |
 
 Si la méthode 4D ne retourne rien, une chaîne vide est automatiquement retournée.
 
