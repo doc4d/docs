@@ -22,8 +22,8 @@ title: On Selection Change
 | description   | テキスト    | "On Selection Change" |
 | objectName    | テキスト    | 4D View Pro エリア名      |
 | sheetName     | テキスト    | イベントが発生したシート名         |
-| oldSelections | オブジェクト  | 変更前のセルレンジ             |
-| newSelections | オブジェクト  | 変更後のセルレンジ             |
+| oldSelections | object  | 変更前のセルレンジ             |
+| newSelections | object  | 変更後のセルレンジ             |
 
 #### 例題
 
