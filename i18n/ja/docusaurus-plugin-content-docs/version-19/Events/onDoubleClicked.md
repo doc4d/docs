@@ -26,7 +26,7 @@ title: On Double Clicked
 | description | テキスト    | "On Double Clicked" |
 | objectName  | テキスト    | 4D View Pro エリア名    |
 | sheetName   | テキスト    | イベントが発生したシート名       |
-| range       | オブジェクト  | セルのレンジ              |
+| range       | object  | セルのレンジ              |
 
 #### 例題
 
