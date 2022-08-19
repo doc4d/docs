@@ -133,7 +133,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 | Property |                   | Typ        | Beschreibung                                                        | Available for                                      |
 | -------- | ----------------- | ---------- | ------------------------------------------------------------------- | -------------------------------------------------- |
 | area     |                   | Text       | 4D View Pro area form object name                                   | always available                                   |
-| ranges   |                   | Collection | Collection of range(s)                                              | always available                                   |
+| ranges   |                   | collection | Collection of range(s)                                              | always available                                   |
 |          | \[ ].name        | Text       | Range name                                                          | name                                               |
 |          | \[ ].sheet       | Zahl       | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
 |          | \[ ].row         | Zahl       | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
