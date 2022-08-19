@@ -961,18 +961,18 @@ The `VP EXPORT DOCUMENT` command <!-- REF #_method_.VP EXPORT DOCUMENT.Summary -
 
 任意の *paramObj* 引数を渡すと、書き出される 4D View Pro オブジェクトの複数のプロパティに加えて、書き出しが完了した際に呼び出されるコールバックメソッド名を定義することができます。
 
-| プロパティ                      | タイプ    | 詳細                                                                                                                                                                                                                                                                                                                                                              |
-| -------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| format                     | テキスト   | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
-| password                   | テキスト   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                        |
-| フォーミュラ                     | オブジェクト | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                         |
-| valuesOnly                 | ブール    | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                               |
-| includeFormatInfo          | ブール    | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                           |
-| includeBindingSource       | ブール    | 4DVP のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                                            |
-| sheet                      | 数値     | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                    |
-| pdfOptions                 | オブジェクト | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>詳細</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
-| csvOptions                 | オブジェクト | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>詳細</th></tr><tr><td>range</td><td>オブジェクト</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
-| `\<customProperty>` | any    | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                             |
+| プロパティ                      | タイプ     | 詳細                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| format                     | テキスト    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
+| password                   | テキスト    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                        |
+| フォーミュラ                     | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                         |
+| valuesOnly                 | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                               |
+| includeFormatInfo          | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                           |
+| includeBindingSource       | ブール     | 4DVP のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                                            |
+| sheet                      | 数値      | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                    |
+| pdfOptions                 | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>詳細</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
+| csvOptions                 | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>詳細</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
+| `\<customProperty>` | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                             |
 
 **Excel 形式についての注意**:
 
@@ -995,15 +995,15 @@ The `VP EXPORT DOCUMENT` command <!-- REF #_method_.VP EXPORT DOCUMENT.Summary -
 
 `VP EXPORT DOCUMENT` コマンドに任意の *paramObj* 引数を渡す場合、[`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
-| 変数 |               | タイプ    | 詳細                                    |
-| -- | ------------- | ------ | ------------------------------------- |
-| $1 |               | テキスト   | 4D View Pro オブジェクト名                   |
-| $2 |               | テキスト   | 書き出された 4D View Pro オブジェクトのファイルパス      |
-| $3 |               | オブジェクト | コマンドの *paramObj* 引数への参照               |
-| $4 |               | オブジェクト | メソッドから返されるステータスメッセージを格納したオブジェクト       |
-|    | .success      | ブール    | 書き出しに成功した場合は true 、それ以外の場合は false     |
-|    | .errorCode    | 整数     | エラーコード。 4D あるいは JavaScript から返されます。   |
-|    | .errorMessage | テキスト   | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
+| 変数 |               | タイプ     | 詳細                                    |
+| -- | ------------- | ------- | ------------------------------------- |
+| $1 |               | テキスト    | 4D View Pro オブジェクト名                   |
+| $2 |               | テキスト    | 書き出された 4D View Pro オブジェクトのファイルパス      |
+| $3 |               | object  | コマンドの *paramObj* 引数への参照               |
+| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト       |
+|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false     |
+|    | .errorCode    | 整数      | エラーコード。 4D あるいは JavaScript から返されます。   |
+|    | .errorMessage | テキスト    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
 
 #### 例題 1
 
@@ -2475,7 +2475,7 @@ The `VP Get value` command <!-- REF #_method_.VP Get value.Summary -->retrieves 
 | プロパティ | タイプ                                | 詳細                           |
 | ----- | ---------------------------------- | ---------------------------- |
 | value | Integer, Real, Boolean, Text, Date | *rangeObj* レンジの値 (ただし時間型を除く) |
-| 時間    | 実数                                 | 値が js 日付型の場合、時間値 (秒単位)       |
+| time  | 実数                                 | 値が js 日付型の場合、時間値 (秒単位)       |
 
 返されるオブジェクトに日付または時間が含まれている場合、これは "日付時間"として扱われ、以下のように補完されます:
 
@@ -2526,7 +2526,7 @@ The `VP Get values` command <!-- REF #_method_.VP Get values.Summary --> retriev
  | プロパティ | タイプ | 詳細                     |
  | ----- | --- | ---------------------- |
  | value | 日付  | セルの値 (時間部分を除く)         |
- | 時間    | 実数  | 値が js 日付型の場合、時間値 (秒単位) |
+ | time  | 実数  | 値が js 日付型の場合、時間値 (秒単位) |
 
 日付または時間は 日付時間 (datetime) として扱われ、以下のように補完されます:
 
@@ -2625,10 +2625,10 @@ The `VP IMPORT DOCUMENT` command <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -
 
 | 引数         |                 | タイプ    | 詳細                                                                                                                                                                             |
 | ---------- | --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| フォーミュラ     |                 | オブジェクト | 書き出し終了時に実行させるコールバックメソッド名。 メソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) コマンドと組み合わせて使用する必要があります。 [コールバックメソッドの渡し方](#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。 |
+| フォーミュラ     |                 | object | 書き出し終了時に実行させるコールバックメソッド名。 メソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) コマンドと組み合わせて使用する必要があります。 [コールバックメソッドの渡し方](#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。 |
 | password   |                 | テキスト   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                                                     |
-| csvOptions |                 | オブジェクト | CSV読み込みのオプション                                                                                                                                                                  |
-|            | range           | オブジェクト | 書き出されるデータの、最初のセルを格納しているセルレンジ。 指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                           |
+| csvOptions |                 | object | CSV読み込みのオプション                                                                                                                                                                  |
+|            | range           | object | 書き出されるデータの、最初のセルを格納しているセルレンジ。 指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                           |
 |            | rowDelimiter    | テキスト   | 行の区切り文字。 渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                                   |
 |            | columnDelimiter | テキスト   | カラムの区切り文字。 デフォルト: ","                                                                                                                                                          |
 
@@ -3511,16 +3511,16 @@ The `VP Run offscreen area` command <!-- REF #_method_.VP Run offscreen area.Sum
 | -------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | area                       | テキスト            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | onEvent                    | object (フォーミュラ) | オフスクリーンエリアの準備ができたときに実行されるコールバックメソッド。 以下のいずれかを渡すことができます:<li>クラスの `onEvent` 関数</li><li>`Formula` オブジェクト</li>デフォルトでは、コールバックメソッドは、[`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), または [`On Timer`](Events/onTimer.md) イベントで呼び出されます。 コールバックメソッドを使用して [4D View Pro フォームオブジェクト変数](configuring.md#4d-view-pro-フォームオブジェクト変数) にアクセスすることができます。 |
-| autoQuit                   | ブール             | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                             |
+| autoQuit                   | boolean         | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                             |
 | timeout                    | 数値              | イベントが何も生成されない場合にエリアが自動的に閉まるまでの最大時間 (秒単位)。 0 に設定した場合、エリアは自動的には閉まりません。 デフォルト値: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | result                     | 混合              | 処理の結果 (あれば)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `\<customProperty>` | 混合              | *onEvent* コールバックメソッドで利用可能なカスタムの属性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 以下のプロパティは、必要に応じてコマンドによって自動的に追加されます:
 
-| プロパティ          | タイプ | 詳細                           |
-| -------------- | --- | ---------------------------- |
-| timeoutReached | ブール | タイムアウトを超えた場合に true の値で追加されます |
+| プロパティ          | タイプ     | 詳細                           |
+| -------------- | ------- | ---------------------------- |
+| timeoutReached | boolean | タイムアウトを超えた場合に true の値で追加されます |
 
 > オフスクリーンエリアは、`VP Run offscreen area` コマンドの実行中にしか利用できません。 実行が終わるとエリアは自動的に消去されます。
 
@@ -3842,17 +3842,17 @@ The `VP SET BORDER` command <!-- REF #_method_.VP SET BORDER.Summary -->applies 
 
 *borderStyleObj* の境界線スタイルの位置 (どこに境界線を引くか) は *borderPosObj* 引数で定義します:
 
-| プロパティ           | タイプ | 詳細                        |
-| --------------- | --- | ------------------------- |
-| all             | ブール | 境界線スタイルはすべての境界に適用されます。    |
-| left            | ブール | 境界線スタイルは左の境界に適用されます。      |
-| top             | ブール | 境界線スタイルは上の境界に適用されます。      |
-| right           | ブール | 境界線スタイルは右の境界に適用されます。      |
-| bottom          | ブール | 境界線スタイルは下の境界に適用されます。      |
-| outline         | ブール | 境界線スタイルは外側の境界にのみ適用されます。   |
-| inside          | ブール | 境界線スタイルは内側の境界にのみ適用されます。   |
-| innerHorizontal | ブール | 境界線スタイルは内側の横の境界にのみ適用されます。 |
-| innerVertical   | ブール | 境界線スタイルは内側の縦の境界にのみ適用されます。 |
+| プロパティ           | タイプ     | 詳細                        |
+| --------------- | ------- | ------------------------- |
+| all             | boolean | 境界線スタイルはすべての境界に適用されます。    |
+| left            | boolean | 境界線スタイルは左の境界に適用されます。      |
+| top             | boolean | 境界線スタイルは上の境界に適用されます。      |
+| right           | boolean | 境界線スタイルは右の境界に適用されます。      |
+| bottom          | boolean | 境界線スタイルは下の境界に適用されます。      |
+| outline         | boolean | 境界線スタイルは外側の境界にのみ適用されます。   |
+| inside          | boolean | 境界線スタイルは内側の境界にのみ適用されます。   |
+| innerHorizontal | boolean | 境界線スタイルは内側の横の境界にのみ適用されます。 |
+| innerVertical   | boolean | 境界線スタイルは内側の縦の境界にのみ適用されます。 |
 
 #### 例題 1
 
@@ -3962,13 +3962,13 @@ The `VP SET COLUMN ATTRIBUTES` command <!-- REF #_method_.VP SET COLUMN ATTRIBUT
 
 *propertyObj* 引数は、*rangeObj* 引数のレンジ内のカラムに対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ  | 詳細                                          |
-| --------- | ---- | ------------------------------------------- |
-| width     | 数値   | カラムの幅 (ピクセル単位)                              |
-| pageBreak | ブール  | レンジ内の先頭カラムの前に改ページを挿入する場合には true、それ以外は false |
-| visible   | ブール  | カラムが表示状態であれば true、それ以外は false               |
-| resizable | ブール  | カラムがリサイズ可能であれば true、それ以外は false             |
-| header    | テキスト | カラムヘッダーのテキスト                                |
+| プロパティ     | タイプ     | 詳細                                          |
+| --------- | ------- | ------------------------------------------- |
+| width     | 数値      | カラムの幅 (ピクセル単位)                              |
+| pageBreak | boolean | レンジ内の先頭カラムの前に改ページを挿入する場合には true、それ以外は false |
+| visible   | boolean | カラムが表示状態であれば true、それ以外は false               |
+| resizable | boolean | カラムがリサイズ可能であれば true、それ以外は false             |
+| header    | テキスト    | カラムヘッダーのテキスト                                |
 
 #### 例題
 
@@ -4193,7 +4193,7 @@ The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary
 | プロパティ | タイプ                                      | 詳細                   |
 | ----- | ---------------------------------------- | -------------------- |
 | value | Integer, Real, Boolean, Text, Date, Null | コンテキストに設定する値         |
-| 時間    | 実数                                       | コンテキストに設定する時間値 (秒単位) |
+| time  | 実数                                       | コンテキストに設定する時間値 (秒単位) |
 
 *options* には、追加のオプションを格納したオブジェクトを渡せます。 利用可能なプロパティは次のとおりです:
 
@@ -4775,13 +4775,13 @@ The `VP SET ROW ATTRIBUTES` command <!-- REF #_method_.VP SET ROW ATTRIBUTES.Sum
 
 *propertyObj* 引数は、*rangeObj* 引数のレンジ内の行に対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ  | 詳細                                        |
-| --------- | ---- | ----------------------------------------- |
-| height    | 数値   | 行の高さ (ピクセル単位)                             |
-| pageBreak | ブール  | レンジ内の先頭行の前に改ページを挿入する場合には true、それ以外は false |
-| visible   | ブール  | 行が表示状態であれば true、それ以外は false               |
-| resizable | ブール  | 行がリサイズ可能であれば true、それ以外は false             |
-| header    | テキスト | 行ヘッダーのテキスト                                |
+| プロパティ     | タイプ     | 詳細                                        |
+| --------- | ------- | ----------------------------------------- |
+| height    | 数値      | 行の高さ (ピクセル単位)                             |
+| pageBreak | boolean | レンジ内の先頭行の前に改ページを挿入する場合には true、それ以外は false |
+| visible   | boolean | 行が表示状態であれば true、それ以外は false               |
+| resizable | boolean | 行がリサイズ可能であれば true、それ以外は false             |
+| header    | テキスト    | 行ヘッダーのテキスト                                |
 
 #### 例題
 
@@ -5231,7 +5231,7 @@ The `VP SET VALUE` command <!-- REF #_method_.VP SET VALUE.Summary -->assigns a 
 | プロパティ  | タイプ                                      | 詳細                                                                                                     |
 | ------ | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
 | value  | Integer, Real, Boolean, Text, Date, Null | *rangeObj* のレンジに対して割り当てる値 (時間型を除く)。 セルの中身を消去するためには Null を渡します。                                         |
-| 時間     | 実数                                       | *rangeObj* のレンジに対して割り当てる時間 (秒単位)                                                                       |
+| time   | 実数                                       | *rangeObj* のレンジに対して割り当てる時間 (秒単位)                                                                       |
 | format | テキスト                                     | 値や日時に対するパターン 値や日時に対するパターン パターンおよびフォーマット文字に関しての情報については、[セルフォーマット](configuring.md#セルフォーマット) の章を参照してください。 |
 
 #### 例題
@@ -5297,7 +5297,7 @@ The `VP SET VALUES` command <!-- REF #_method_.VP SET VALUES.Summary -->assigns 
  | プロパティ | タイプ                                      | 詳細             |
  | ----- | ---------------------------------------- | -------------- |
  | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く) |
- | 時間    | 実数                                       | 時間値 (秒単位)      |
+ | time  | 実数                                       | 時間値 (秒単位)      |
 
 #### 例題
 
@@ -5348,64 +5348,64 @@ sets the workbook options in *vpAreaName*<!-- END REF -->.
 
 | プロパティ                                 | タイプ                     | 詳細                                                                                                                                                                                         |
 | ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| allowUserDragMerge                    | ブール                     | ドラッグ＆マージオプションを許可します (複数セルを選択し、選択をドラッグしてセルを結合します)                                                                                                                                           |
-| allowAutoCreateHyperlink              | ブール                     | スプレッドシート内でハイパーリンクの自動作成を有効にします。                                                                                                                                                             |
-| allowContextMenu                      | ブール                     | ビルトインのコンテキストメニューの使用を許可します。                                                                                                                                                                 |
-| allowCopyPasteExcelStyle              | ブール                     | スプレッドシートのスタイルを Excel にコピー＆ペーストすることを許可します (逆も可)。                                                                                                                                            |
-| allowDynamicArray                     | ブール                     | ワークシート内で動的配列を有効にします。                                                                                                                                                                       |
-| allowExtendPasteRange                 | ブール                     | 貼り付けデータが貼り付け先の範囲に収まりきらない場合に、貼り付け先の範囲を拡張します。                                                                                                                                                |
-| allowSheetReorder                     | ブール                     | シートの順序変更を許可します。                                                                                                                                                                            |
-| allowUndo                             | ブール                     | 編集を元に戻す操作を許可します。                                                                                                                                                                           |
-| allowUserDeselect                     | ブール                     | 選択範囲から特定のセルを除外することを許可します。                                                                                                                                                                  |
-| allowUserDragDrop                     | ブール                     | レンジデータのドラッグ＆ドロップを許可します。                                                                                                                                                                    |
-| allowUserDragFill                     | ブール                     | ドラッグ＆フィルを許可します。                                                                                                                                                                            |
-| allowUserEditFormula                  | ブール                     | セルへのフォーミュラの入力を許可します。                                                                                                                                                                       |
-| allowUserResize                       | ブール                     | カラムと行のリサイズを許可します。                                                                                                                                                                          |
-| allowUserZoom                         | ブール                     | ズームを許可します (Ctrl + マウスホイール)。                                                                                                                                                                |
+| allowUserDragMerge                    | boolean                 | ドラッグ＆マージオプションを許可します (複数セルを選択し、選択をドラッグしてセルを結合します)                                                                                                                                           |
+| allowAutoCreateHyperlink              | boolean                 | スプレッドシート内でハイパーリンクの自動作成を有効にします。                                                                                                                                                             |
+| allowContextMenu                      | boolean                 | ビルトインのコンテキストメニューの使用を許可します。                                                                                                                                                                 |
+| allowCopyPasteExcelStyle              | boolean                 | スプレッドシートのスタイルを Excel にコピー＆ペーストすることを許可します (逆も可)。                                                                                                                                            |
+| allowDynamicArray                     | boolean                 | ワークシート内で動的配列を有効にします。                                                                                                                                                                       |
+| allowExtendPasteRange                 | boolean                 | 貼り付けデータが貼り付け先の範囲に収まりきらない場合に、貼り付け先の範囲を拡張します。                                                                                                                                                |
+| allowSheetReorder                     | boolean                 | シートの順序変更を許可します。                                                                                                                                                                            |
+| allowUndo                             | boolean                 | 編集を元に戻す操作を許可します。                                                                                                                                                                           |
+| allowUserDeselect                     | boolean                 | 選択範囲から特定のセルを除外することを許可します。                                                                                                                                                                  |
+| allowUserDragDrop                     | boolean                 | レンジデータのドラッグ＆ドロップを許可します。                                                                                                                                                                    |
+| allowUserDragFill                     | boolean                 | ドラッグ＆フィルを許可します。                                                                                                                                                                            |
+| allowUserEditFormula                  | boolean                 | セルへのフォーミュラの入力を許可します。                                                                                                                                                                       |
+| allowUserResize                       | boolean                 | カラムと行のリサイズを許可します。                                                                                                                                                                          |
+| allowUserZoom                         | boolean                 | ズームを許可します (Ctrl + マウスホイール)。                                                                                                                                                                |
 | autoFitType                           | 数値                      | セル内やヘッダー内に収まるよう、内容をフォーマットします。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> 内容をセル内に収めます。</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> 内容をセル内・ヘッダー内に収めます。</td></tr></table>                                                                                                                            |
-| backColor                             | 文字列                     | エリアの背景色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")。 backgroundImage を設定している場合、背景色は非表示になります。                                                                                   |
+| backColor                             | string                  | エリアの背景色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")。 backgroundImage を設定している場合、背景色は非表示になります。                                                                                   |
 | backgroundImage                       | string / picture / file | エリアの背景画像。                                                                                                                                                                                  |
 | backgroundImageLayout                 | 数値                      | 背景画像のレイアウト。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk image layout center </td><td>1</td><td> エリアの中央に表示。</td></tr><tr><td> vk image layout none </td><td>3</td><td> エリアの左上に元のサイズで表示。</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> エリアを埋めるように拡大表示。</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> アスペクト比を維持して表示。</td></tr></table>                                                                                                                                              |
-| calcOnDemand                          | ブール                     | 要求されたときのみフォーミュラを計算します。                                                                                                                                                                     |
+| calcOnDemand                          | boolean                 | 要求されたときのみフォーミュラを計算します。                                                                                                                                                                     |
 | columnResizeMode                      | 数値                      | カラムのリサイズモード。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> 通常のリサイズモード (残りのカラムに影響します)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> split モード (残りのカラムに影響しません)</td></tr></table>                                                                                                                                             |
 | copyPasteHeaderOptions                | 数値                      | データのコピー/ペースト時に含めるヘッダーについて指定します。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> データのコピー時: 選択ヘッダーを含めます。</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> データのコピー時: 選択されたカラムヘッダーを含めます。</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> データのコピー時: ヘッダーを含めません。データのペースト時: ヘッダーを上書きしません。</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>  データのコピー時: 選択された行ヘッダーを含めます。</td></tr></table>                                                                                                                          |
-| customList                            | collection-1            | ドラッグ＆フィルをカスタマイズするためのリストです。フィルの際には、このリストに合致する値が入力されます。 各コレクション要素は、文字列のコレクションです。 [GrapeCity の Webサイト](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b) 参照。           |
-| cutCopyIndicatorBorderColor           | 文字列                     | ユーザーが選択をカットまたはコピーしたときの領域の境界色。                                                                                                                                                              |
-| cutCopyIndicatorVisible               | ブール                     | コピーまたはカットされた際の領域を表示します。                                                                                                                                                                    |
+| customList                            | collection              | ドラッグ＆フィルをカスタマイズするためのリストです。フィルの際には、このリストに合致する値が入力されます。 各コレクション要素は、文字列のコレクションです。 [GrapeCity の Webサイト](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b) 参照。           |
+| cutCopyIndicatorBorderColor           | string                  | ユーザーが選択をカットまたはコピーしたときの領域の境界色。                                                                                                                                                              |
+| cutCopyIndicatorVisible               | boolean                 | コピーまたはカットされた際の領域を表示します。                                                                                                                                                                    |
 | defaultDragFillType                   | 数値                      | デフォルトのドラッグ＆フィルタイプ。 使用可能な値 : <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> 自動でセルをフィルします。 </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> セルの値をクリアします。</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> 値・フォーマット・フォーミュラを含むすべてのデータオブジェクトでセルをフィルします。</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> フォーマットのみでセルをフィルします。</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> 連続データでフィルします。 </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> 値のみでセルをフィルします (フォーマットは除外)。 </td></tr></table>                                                                                                                                      |
-| enableAccessibility                   | ブール                     | スプレッドシートにおけるアクセシビリティのサポートを有効にします。                                                                                                                                                          |
-| enableFormulaTextbox                  | ブール                     | フォーミュラテキストボックスを有効化します。                                                                                                                                                                     |
-| grayAreaBackColor                     | 文字列                     | グレー領域の背景色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")。                                                                                                                         |
-| highlightInvalidData                  | ブール                     | 無効なデータをハイライト表示します。                                                                                                                                                                         |
-| iterativeCalculation                  | ブール                     | 反復計算を有効にします。 [Grapecity の Webサイト](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html) 参照。                                                                       |
+| enableAccessibility                   | boolean                 | スプレッドシートにおけるアクセシビリティのサポートを有効にします。                                                                                                                                                          |
+| enableFormulaTextbox                  | boolean                 | フォーミュラテキストボックスを有効化します。                                                                                                                                                                     |
+| grayAreaBackColor                     | string                  | グレー領域の背景色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")。                                                                                                                         |
+| highlightInvalidData                  | boolean                 | 無効なデータをハイライト表示します。                                                                                                                                                                         |
+| iterativeCalculation                  | boolean                 | 反復計算を有効にします。 [Grapecity の Webサイト](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html) 参照。                                                                       |
 | iterativeCalculationMaximumChange     | numeric                 | 2つの計算値の最大差。                                                                                                                                                                                |
 | iterativeCalculationMaximumIterations | numeric                 | フォーミュラが反復計算される最大回数。                                                                                                                                                                        |
-| newTabVisible                         | ブール                     | 新規シートを挿入するための特別なタブを表示します。                                                                                                                                                                  |
+| newTabVisible                         | boolean                 | 新規シートを挿入するための特別なタブを表示します。                                                                                                                                                                  |
 | numbersFitMode                        | 数値                      | 日付/数値データがカラム幅を超える場合の表示モード。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk numbers fit mode mask</td><td>0</td><td> データの中身を "###" で置き換え、Tipを表示します。</td></tr><tr><td> vk numbers fit mode overflow </td><td>1</td><td> データの中身を文字列として表示します。 隣のセルが空であれば、はみ出して表示します。</td></tr></table>                                                                                                                               |
-| pasteSkipInvisibleRange               | ブール                     | 非表示のレンジへの貼り付けについて指定します。 <ul><li>False (デフォルト): データを貼り付けます。</li><li>True: 非表示のレンジはスキップします。</li></ul>非表示のレンジについての詳細は [Grapecity' のドキュメント](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) を参照ください。    |
+| pasteSkipInvisibleRange               | boolean                 | 非表示のレンジへの貼り付けについて指定します。 <ul><li>False (デフォルト): データを貼り付けます。</li><li>True: 非表示のレンジはスキップします。</li></ul>非表示のレンジについての詳細は [Grapecity' のドキュメント](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) を参照ください。    |
 | referenceStyle                        | 数値                      | セルフォーミュラにおける、セルやレンジ参照のスタイル。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk reference style A1 </td><td>0</td><td> A1 スタイルを使用します。</td></tr><tr><td> vk reference style R1C1 </td><td>1</td><td> R1C1 スタイルを使用します。</td></tr></table>                                                                                                                              |
 | resizeZeroIndicator                   | 数値                      | 行やカラムのサイズが 0 に変更されたときの描画ポリシー。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> 行やカラムのサイズが 0 に変更されたときに、現在の描画ポリシーを使用します。</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> 行やカラムのサイズが 0 に変更されたときに、2本の短い線を描画します。</td></tr></table>                                                                                                                            |
 | rowResizeMode                         | 数値                      | 行のリサイズモード。 使用可能な値は columnResizeMode と同じです。                                                                                                                                                 |
 | scrollbarAppearance                   | 数値                      | スクロールバーの見た目。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk scrollbar appearance mobile</td><td>1</td><td> モバイル風のスクロールバー。</td></tr><tr><td> vk scrollbar appearance skin (デフォルト)</td><td>0</td><td> Excel風のクラシックなスクロールバー。</td></tr></table>                                                                                                                                             |
-| scrollbarMaxAlign                     | ブール                     | スクロールバーをアクティブシートの最後の行およびカラムに揃えます。                                                                                                                                                          |
-| scrollbarShowMax                      | ブール                     | シートのカラムと行の総数に基づいてスクロールバーを表示します。                                                                                                                                                            |
-| scrollByPixel                         | ブール                     | ピクセル単位のスクロールを有効にします。                                                                                                                                                                       |
-| scrollIgnoreHidden                    | ブール                     | スクロールバーは非表示の行やカラムを無視します。                                                                                                                                                                   |
+| scrollbarMaxAlign                     | boolean                 | スクロールバーをアクティブシートの最後の行およびカラムに揃えます。                                                                                                                                                          |
+| scrollbarShowMax                      | boolean                 | シートのカラムと行の総数に基づいてスクロールバーを表示します。                                                                                                                                                            |
+| scrollByPixel                         | boolean                 | ピクセル単位のスクロールを有効にします。                                                                                                                                                                       |
+| scrollIgnoreHidden                    | boolean                 | スクロールバーは非表示の行やカラムを無視します。                                                                                                                                                                   |
 | scrollPixel                           | 整数                      | scrollByPixel が true の場合、スクロール毎のピクセル数を指定します。 最終的にスクロールするピクセル数は `scrolling delta (スクロールの相対変化値) * scrollPixel` によって算出されます。 例: scrolling delta が 3、scrollPixel が 5 の場合、最終的なスクロールピクセル数は 15 です。 |
-| showDragDropTip                       | ブール                     | ドラッグ＆ドロップの Tip を表示します。                                                                                                                                                                     |
-| showDragFillSmartTag                  | ブール                     | ドラッグ＆フィルダイアログを表示します。                                                                                                                                                                       |
-| showDragFillTip                       | ブール                     | ドラッグ＆フィルの Tip を表示します。                                                                                                                                                                      |
-| showHorizontalScrollbar               | ブール                     | 横スクロールバーを表示します。                                                                                                                                                                            |
+| showDragDropTip                       | boolean                 | ドラッグ＆ドロップの Tip を表示します。                                                                                                                                                                     |
+| showDragFillSmartTag                  | boolean                 | ドラッグ＆フィルダイアログを表示します。                                                                                                                                                                       |
+| showDragFillTip                       | boolean                 | ドラッグ＆フィルの Tip を表示します。                                                                                                                                                                      |
+| showHorizontalScrollbar               | boolean                 | 横スクロールバーを表示します。                                                                                                                                                                            |
 | showResizeTip                         | 数値                      | リサイズ Tip の表示を指定します。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> 縦と横のリサイズ Tip が表示されます。</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> 横のリサイズ Tip のみ表示されます。</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> リサイズ Tip は表示されません。</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> 縦のリサイズ Tip のみ表示されます。</td></tr></table>                                                                                                                                      |
 | showScrollTip                         | 数値                      | スクロール Tip の表示を指定します。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> 縦と横のスクロール Tip が表示されます。</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> 横のスクロール Tip のみ表示されます。</td></tr><tr><td> vk show scroll tip none </td><td> スクロール Tip は表示されません。</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> 縦のスクロール Tip のみ表示されます。</td></tr></table>                                                                                                                                     |
-| showVerticalScrollbar                 | ブール                     | 縦スクロールバーを表示します。                                                                                                                                                                            |
-| tabEditable                           | ブール                     | タブストリップの編集を有効にします。                                                                                                                                                                         |
-| tabNavigationVisible                  | ブール                     | タブナビゲーションを表示します。                                                                                                                                                                           |
+| showVerticalScrollbar                 | boolean                 | 縦スクロールバーを表示します。                                                                                                                                                                            |
+| tabEditable                           | boolean                 | タブストリップの編集を有効にします。                                                                                                                                                                         |
+| tabNavigationVisible                  | boolean                 | タブナビゲーションを表示します。                                                                                                                                                                           |
 | tabStripPosition                      | 数値                      | タブストリップの位置を指定します。 使用可能な値: <table><tr><th>定数</th><th>Value</th><th>詳細</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> タブストリップはワークブックの下側に位置します。</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> タブストリップはワークブックの左側に位置します。</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> タブストリップはワークブックの右側に位置します。</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> タブストリップはワークブックの上側に位置します。</td></tr></table>                                                                                                                                        |
 | tabStripRatio                         | 数値                      | スプレッドシートエリアの幅において、タブストリップが占める割合を指定します (0.x)。 残るスペース (1 - 0.x) には横スクロールバーが表示されます。                                                                                                           |
-| tabStripVisible                       | ブール                     | タブストリップを表示します。                                                                                                                                                                             |
+| tabStripVisible                       | boolean                 | タブストリップを表示します。                                                                                                                                                                             |
 | tabStripWidth                         | 数値                      | タブストリップの位置が左側/右側の場合に、その幅を指定します。 デフォルト値は最小値の 80 です。                                                                                                                                         |
-| useTouchLayout                        | ブール                     | Spreadコンポーネントを提示するのにタッチレイアウトを使用するかどうかを指定します。                                                                                                                                               |
+| useTouchLayout                        | boolean                 | Spreadコンポーネントを提示するのにタッチレイアウトを使用するかどうかを指定します。                                                                                                                                               |
 
 #### 例題
 
