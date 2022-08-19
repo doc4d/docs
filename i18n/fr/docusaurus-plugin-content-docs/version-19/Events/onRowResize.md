@@ -18,8 +18,8 @@ Cet événement est généré lorsque la hauteur d'une ligne est modifiée par u
 | Description | text        | "On Row Resize"                                                                             |
 | objectName  | text        | Nom de la zone 4D View Pro                                                                  |
 | sheetName   | text        | Nom de la feuille de l'événement                                                            |
-| range       | Objet       | Plage de cellules des lignes dont les hauteurs ont changé                                   |
-| header      | booléen     | "True" si la ligne de la colonne d'en-tête (première ligne) est redimensionnée, sinon false |
+| range       | object      | Plage de cellules des lignes dont les hauteurs ont changé                                   |
+| header      | boolean     | "True" si la ligne de la colonne d'en-tête (première ligne) est redimensionnée, sinon false |
 
 #### Exemple
 
