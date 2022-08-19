@@ -1,5 +1,5 @@
 ---
-id: heure
+id: time
 title: Heure
 ---
 
