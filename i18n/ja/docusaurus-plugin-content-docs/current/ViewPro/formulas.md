@@ -246,7 +246,7 @@ $o.DRIVERS_LICENCE.parameters.push(New object("name"; "ID"; "type"; Is longint))
     | プロパティ | タイプ | 詳細       |
     | ----- | --- | -------- |
     | value | 日付  | 日付値      |
-    | 時間    | 実数  | 数値 (秒単位) |
+    | time  | 実数  | 数値 (秒単位) |
 
 4Dメソッドが何も返さない場合は、自動的に空の文字列が返されます。
 
