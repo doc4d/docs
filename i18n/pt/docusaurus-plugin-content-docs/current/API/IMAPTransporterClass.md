@@ -850,12 +850,12 @@ In the optional `parameters` parameter, pass an object containing values to filt
 
 Each object of the returned collection contains the following properties:
 
-| Propriedade      | Tipo     | Descrção                                                                                                             |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | text     | Name of the mailbox                                                                                                  |
-| \[].selectable  | booleano | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | booleano | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | booleano | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| Propriedade      | Tipo    | Descrção                                                                                                             |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| \[].name        | text    | Name of the mailbox                                                                                                  |
+| \[].selectable  | boolean | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
+| \[].inferior    | boolean | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
+| \[].interesting | boolean | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
 
 If the account does not contain any mailboxes, an empty collection is returned.
 > * If there is no open connection, `.getBoxList()` will open a connection.
@@ -970,10 +970,10 @@ In the first parameter, you can pass either:
 
 The optional *options* parameter allows you pass an object defining additional instructions for handling the message. As seguintes propriedades estão disponíveis:
 
-| Propriedade | Tipo     | Descrção                                                                                                                    |
-| ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen  | booleano | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
-| withBody    | booleano | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
+| Propriedade | Tipo    | Descrção                                                                                                                    |
+| ----------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen  | boolean | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
+| withBody    | boolean | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
 > * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
 > * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
