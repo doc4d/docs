@@ -1,5 +1,5 @@
 ---
-id: Chaîne
+id: string
 title: String
 ---
 
