@@ -19,7 +19,7 @@ This event is generated when the height of a row is modified by a user in a 4D V
 | objectName  | text          | 4D View Pro area name                                            |
 | sheetName   | text          | Name of the sheet of the event                                   |
 | range       | object        | Cell range of the rows whose heights have changed                |
-| header      | booleano      | True if the column header row (first row) is resized, else false |
+| header      | boolean       | True if the column header row (first row) is resized, else false |
 
 #### Exemplo
 
