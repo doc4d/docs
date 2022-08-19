@@ -30,7 +30,7 @@ Cet événement est généré lorsque l'utilisateur clique sur un en-tête de co
 | Description | text        | "On Header Click"                                                                                                                            |
 | objectName  | text        | Nom de la zone 4D View Pro                                                                                                                   |
 | sheetName   | text        | Nom de la feuille de l'événement                                                                                                             |
-| range       | Objet       | Plage de cellule                                                                                                                             |
+| range       | object      | Plage de cellule                                                                                                                             |
 | sheetArea   | entier long | L'emplacement de la feuille où l'événement a eu lieu :<br/><li>0 : la zone de croisement entre le numéro de colonne/les en-têtes de lettre (en haut à gauche de la feuille)</li><li>1 : les en-têtes de colonne (zone indiquant les numéros/lettres de colonnes)</li><li>2 : les en-têtes de ligne (zone indiquant les numéros de ligne)</li> |
 
 #### Exemple
