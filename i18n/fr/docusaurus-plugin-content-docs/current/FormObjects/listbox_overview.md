@@ -10,7 +10,7 @@ Les list box sont des objets actifs complexes permettant d’afficher et de sais
 
 Une list box contient une ou plusieurs colonnes dont le contenu est automatiquement synchronisé. Le nombre de colonnes est en principe illimité (il dépend des ressources de la machine).
 
-## Overview
+## Vue d’ensemble
 
 ### Principes d'utilisation basiques
 
