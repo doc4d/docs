@@ -16,7 +16,7 @@ title: ウィンドウサイズ
 
 | 名称            | データタイプ | とりうる値               |
 | ------------- | ------ | ------------------- |
-| windowSizingY | 文字列    | "fixed", "variable" |
+| windowSizingY | string | "fixed", "variable" |
 
 
 ---
@@ -33,7 +33,7 @@ title: ウィンドウサイズ
 
 | 名称            | データタイプ | とりうる値               |
 | ------------- | ------ | ------------------- |
-| windowSizingX | 文字列    | "fixed", "variable" |
+| windowSizingX | string | "fixed", "variable" |
 
 ---
 
