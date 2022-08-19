@@ -1,5 +1,5 @@
 ---
-id: authentification
+id: authentication
 title: Authentification
 ---
 
@@ -13,7 +13,7 @@ Le serveur web 4D propose trois modes d'authentification que vous pouvez sélect
 
 > Il est recommandé d'utiliser une authentification **personnalisée**.
 
-### Overview
+### Vue d’ensemble
 
 Le schéma suivant résume le système d'accès au serveur web 4D :
 
