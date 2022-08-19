@@ -61,7 +61,7 @@ title: Picture
 
 | 名称            | データタイプ | とりうる値                                                    |
 | ------------- | ------ | -------------------------------------------------------- |
-| pictureFormat | 文字列    | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| pictureFormat | string | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
 #### 対象オブジェクト
 
