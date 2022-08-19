@@ -45,7 +45,7 @@ POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transpor
 <!-- REF POP3TransporterClass.POP3 New transporter.Params -->
 | 引数     | タイプ                |    | 詳細                                                                             |
 | ------ | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server | オブジェクト             | -> | メールサーバー情報                                                                      |
+| server | object             | -> | メールサーバー情報                                                                      |
 | Result | 4D.POP3Transporter | <- | [POP3 transporter object](#pop3-transporter-object)|<!-- END REF -->
 
 |
