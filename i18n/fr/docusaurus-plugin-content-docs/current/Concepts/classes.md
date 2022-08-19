@@ -4,7 +4,7 @@ title: Classes
 ---
 
 
-## Overview
+## Vue d’ensemble
 
 Le langage 4D prend en charge le concept de **classes**. Dans un langage de programmation, l'utilisation d'une classe vous permet de définir le comportement d'un objet avec des propriétés et des fonctions associées.
 
