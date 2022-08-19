@@ -30,7 +30,7 @@ Lorsque cette propriété est activée, la hauteur de chaque ligne est automatiq
 
 | Le nom        | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
-| rowHeightAuto | booléen         | true, false       |
+| rowHeightAuto | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -202,7 +202,7 @@ Définit la hauteur des lignes de list box (hors en-têtes et pieds de page). Pa
 
 | Le nom    | Type de données | Valeurs possibles                                 |
 | --------- | --------------- | ------------------------------------------------- |
-| rowHeight | Chaîne          | valeur css dans l'unité "em" ou "px" (par défaut) |
+| rowHeight | string          | valeur css dans l'unité "em" ou "px" (par défaut) |
 
 #### Objets pris en charge
 
@@ -237,7 +237,7 @@ En supposant que l'unité des lignes soit «lignes», alors la cinquième ligne 
 
 | Le nom          | Type de données | Valeurs possibles              |
 | --------------- | --------------- | ------------------------------ |
-| rowHeightSource | Chaîne          | Nom d'une variable tableau 4D. |
+| rowHeightSource | string          | Nom d'une variable tableau 4D. |
 
 #### Objets pris en charge
 
