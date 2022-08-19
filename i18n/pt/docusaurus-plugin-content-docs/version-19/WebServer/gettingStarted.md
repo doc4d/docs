@@ -1,6 +1,6 @@
 ---
 id: gettingStarted
-title: Getting Started
+title: Começando
 ---
 
 This "Getting started" section is geared at first-time users who want an overall overview on how to go from zero to a 4D website that handles data from the database. Let's start!
@@ -197,9 +197,9 @@ The most simple and secured way to log a user on the 4D web server is based upon
 2. Write and execute the following code to create a user:
 
 ```4d
-var $webUser : cs.WebUsersEntity
+var $webUser : cs. WebUsersEntity
 
-$webUser:=ds.WebUsers.new()
+$webUser:=ds. WebUsers.new()
 $webUser.firstName:="John"
 $webUser.lastName:="Doe"
 // the password would be entered by the user
@@ -246,9 +246,9 @@ If ($user#Null) //a user was found
         WEB SEND TEXT("Welcome "+Session.userName)
     Else 
         WEB SEND TEXT("Wrong user name or password.")
-    End if 
-Else 
+    Else 
     WEB SEND TEXT("Wrong user name or password.")
+End if
 End if 
 ```
 
