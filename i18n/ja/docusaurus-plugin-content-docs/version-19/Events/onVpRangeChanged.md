@@ -19,7 +19,7 @@ FORM Event によって返されるオブジェクトには以下のプロパテ
 | code         | longint | On VP Range Changed                                                                                                                                                                            |
 | description  | テキスト    | "On VP Range Changed"                                                                                                                                                                          |
 | sheetName    | テキスト    | イベントが発生したシート名                                                                                                                                                                                  |
-| range        | オブジェクト  | 変化したセルレンジ                                                                                                                                                                                      |
-| changedCells | オブジェクト  | 変化したセルのみを格納したレンジ。 レンジが組み合わされたものである可能性もあります。                                                                                                                                                    |
+| range        | object  | 変化したセルレンジ                                                                                                                                                                                      |
+| changedCells | object  | 変化したセルのみを格納したレンジ。 レンジが組み合わされたものである可能性もあります。                                                                                                                                                    |
 | action       | テキスト    | イベント生成した操作のタイプ:<li>"clear" - レンジの値をクリア操作</li><li>"dragDrop" - ドラッグドロップ操作</li><li>"dragFill" - ドラッグによるフィル操作</li><li>"evaluateFormula" - 特定のセルレンジにフォーミュラを設定した</li><li>"paste" - ペースト操作</li><li>"setArrayFormula" - 特定のセルレンジにフォーミュラを設定した</li><li>"sort" - セルのレンジを並べ替えた</li> |
 > [On After Edit](onAfterEdit.md) も参照ください。 
