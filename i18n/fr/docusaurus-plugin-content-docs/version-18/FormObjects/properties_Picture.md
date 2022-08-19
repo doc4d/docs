@@ -60,7 +60,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 | Le nom        | Type de données | Valeurs possibles                                        |
 | ------------- | --------------- | -------------------------------------------------------- |
-| pictureFormat | Chaîne          | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| pictureFormat | string          | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
 #### Objets pris en charge
 
