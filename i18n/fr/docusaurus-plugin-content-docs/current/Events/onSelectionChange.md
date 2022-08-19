@@ -22,8 +22,8 @@ La sélection courante de lignes ou de colonnes est modifiée. Dans ce contexte,
 | Description   | text        | "On Selection Change"              |
 | objectName    | text        | Nom de la zone 4D View Pro         |
 | sheetName     | text        | Nom de la feuille de l'événement   |
-| oldSelections | Objet       | Plage de cellules avant changement |
-| newSelections | Objet       | Plage de cellules après changement |
+| oldSelections | object      | Plage de cellules avant changement |
+| newSelections | object      | Plage de cellules après changement |
 
 #### Exemple
 
