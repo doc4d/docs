@@ -393,10 +393,10 @@ The function sends a request to the mail server and returns an object describing
 
 | Property   |                          | Typ        | Beschreibung                                                                                                 |
 | ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------ |
-| success    |                          | Boolean    | True if the check is successful, False otherwise                                                             |
+| success    |                          | boolean    | True if the check is successful, False otherwise                                                             |
 | status     |                          | Zahl       | (SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing) |
 | statusText |                          | Text       | Status message returned by the mail server, or last error returned in the 4D error stack                     |
-| errors     |                          | Collection | 4D error stack (not returned if a mail server response is received)                                          |
+| errors     |                          | collection | 4D error stack (not returned if a mail server response is received)                                          |
 |            | \[ ].errCode            | Zahl       | 4D error code                                                                                                |
 |            | \[ ].message            | Text       | Description of the 4D error                                                                                  |
 |            | \[ ].componentSignature | Text       | Signature of the internal component which returned the error                                                 |
