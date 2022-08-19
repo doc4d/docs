@@ -1,5 +1,5 @@
 ---
-id: Objet
+id: object
 title: Objets
 ---
 
@@ -16,7 +16,7 @@ Les variables, champs ou expressions de type objet peuvent contenir des données
     - Date (type date ou chaîne au format date ISO)
     - Objet (les objets peuvent être imbriqués sur plusieurs niveaux)
     - Image(*)
-    - collectionMMM
+    - collection
 
 (*)Lorsqu'elles sont exposées sous forme de texte dans le débogueur ou exportées en JSON, les propriétés d'objet de type image indiquent "[objet Image]".
 
