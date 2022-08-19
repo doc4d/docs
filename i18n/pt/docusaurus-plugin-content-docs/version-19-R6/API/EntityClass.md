@@ -355,7 +355,7 @@ O objecto devolvido por `.drop( )` contém as seguintes propriedades:
 
 | Propriedade   |                           | Tipo                   | Descrção                                                                                                                |
 | ------------- | ------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success       |                           | booleano               | verdadeiro se a ação de queda for bem-sucedida, falso caso contrário.                                                   |
+| success       |                           | boolean                | verdadeiro se a ação de queda for bem-sucedida, falso caso contrário.                                                   |
 |               |                           |                        | ***Disponível apenas em caso de erro:***                                                                                |
 | status(*)     |                           | number                 | Código de erro, ver abaixo                                                                                              |
 | statusText(*) |                           | text                   | Descrição do erro, ver abaixo                                                                                           |
@@ -964,9 +964,9 @@ O objeto retornado por `.lock( )` contém as seguintes propriedades:
 
 | Propriedade      |                           | Tipo                   | Descrção                                                                                                                                                    |
 | ---------------- | ------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                           | booleano               | true se a ação de bloqueio for bem sucedida (ou se a entidade já estiver bloqueada no processo atual), falso caso contrário.                                |
+| success          |                           | boolean                | true se a ação de bloqueio for bem sucedida (ou se a entidade já estiver bloqueada no processo atual), falso caso contrário.                                |
 |                  |                           |                        | ***Disponível apenas se a opção`dk reload if stamp changed` for usada:***                                                                                   |
-| **wasReloaded**  |                           | booleano               | verdadeiro se a entidade foi recarregada com sucesso, falso caso contrário.                                                                                 |
+| **wasReloaded**  |                           | boolean                | verdadeiro se a entidade foi recarregada com sucesso, falso caso contrário.                                                                                 |
 |                  |                           |                        | ***Disponível apenas em caso de erro:***                                                                                                                    |
 | status(\*)     |                           | number                 | Código de erro, ver abaixo                                                                                                                                  |
 | statusText(\*) |                           | text                   | Descrição do erro, ver abaixo                                                                                                                               |
@@ -1151,11 +1151,11 @@ The `.reload()` function <!-- REF #EntityClass.reload().Summary -->reloads the c
 
 O objeto retornado por `.reload( )` contém as seguintes propriedades:
 
-| Propriedade      | Tipo     | Descrção                                                                                                         |
-| ---------------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
-| success          | booleano | Verdadeiro se a ação de recarga for bem-sucedida, Falso caso contrário. ***Disponível apenas em caso de erro***: |
-| status(\*)     | number   | Código de erro, ver abaixo                                                                                       |
-| statusText(\*) | text     | Descrição do erro, ver abaixo                                                                                    |
+| Propriedade      | Tipo    | Descrção                                                                                                         |
+| ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
+| success          | boolean | Verdadeiro se a ação de recarga for bem-sucedida, Falso caso contrário. ***Disponível apenas em caso de erro***: |
+| status(\*)     | number  | Código de erro, ver abaixo                                                                                       |
+| statusText(\*) | text    | Descrição do erro, ver abaixo                                                                                    |
 
 (\*) Os seguintes valores podem ser devolvidos nas propriedades *status* e *statusText* do objecto *Result* em caso de erro:
 
@@ -1227,9 +1227,9 @@ The object returned by `.save()` contains the following properties:
 
 | Propriedade  |                    | Tipo                   | Descrção                                                                                                                |
 | ------------ | ------------------ | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | booleano               | True if the save action is successful, False otherwise.                                                                 |
+| success      |                    | boolean                | True if the save action is successful, False otherwise.                                                                 |
 |              |                    |                        | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | booleano               | True if an auto merge was done, False otherwise.                                                                        |
+| autoMerged   |                    | boolean                | True if an auto merge was done, False otherwise.                                                                        |
 |              |                    |                        | ***Disponível apenas em caso de erro***:                                                                                |
 | status       |                    | number                 | Error code, [see below](#status-and-statustext)                                                                         |
 | statusText   |                    | text                   | Description of the error, [see below](#status-and-statustext)                                                           |
