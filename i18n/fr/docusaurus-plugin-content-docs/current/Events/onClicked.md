@@ -40,7 +40,7 @@ Cet événement est généré lorsque l'utilisateur clique n'importe où dans un
 | Description | text        | "On Clicked"                     |
 | objectName  | text        | Nom de la zone 4D View Pro       |
 | sheetName   | text        | Nom de la feuille de l'événement |
-| range       | Objet       | Plage de cellule                 |
+| range       | object      | Plage de cellule                 |
 
 #### Exemple
 
