@@ -354,7 +354,7 @@ The object returned by `.drop( )` contains the following properties:
 
 | Property      |                     | Typ                   | Beschreibung                                                                                                          |
 | ------------- | ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| success       |                     | Boolean               | true if the drop action is successful, false otherwise.                                                               |
+| success       |                     | boolean               | true if the drop action is successful, false otherwise.                                                               |
 |               |                     |                       | ***Available only in case of error:***                                                                                |
 | status(*)     |                     | Zahl                  | Error code, see below                                                                                                 |
 | statusText(*) |                     | Text                  | Description of the error, see below                                                                                   |
@@ -961,9 +961,9 @@ The object returned by `.lock( )` contains the following properties:
 
 | Property         |                     | Typ                   | Beschreibung                                                                                                                                                |
 | ---------------- | ------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | Boolean               | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise.                                         |
+| success          |                     | boolean               | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise.                                         |
 |                  |                     |                       | ***Available only if `dk reload if stamp changed` option is used:***                                                                                        |
-| **wasReloaded**  |                     | Boolean               | true if the entity was reloaded with success, false otherwise.                                                                                              |
+| **wasReloaded**  |                     | boolean               | true if the entity was reloaded with success, false otherwise.                                                                                              |
 |                  |                     |                       | ***Available only in case of error:***                                                                                                                      |
 | status(\*)     |                     | Zahl                  | Error code, see below                                                                                                                                       |
 | statusText(\*) |                     | Text                  | Description of the error, see below                                                                                                                         |
@@ -1150,7 +1150,7 @@ The object returned by `.reload( )` contains the following properties:
 
 | Property         | Typ     | Beschreibung                                                                                    |
 | ---------------- | ------- | ----------------------------------------------------------------------------------------------- |
-| success          | Boolean | True if the reload action is successful, False otherwise.***Available only in case of error***: |
+| success          | boolean | True if the reload action is successful, False otherwise.***Available only in case of error***: |
 | status(\*)     | Zahl    | Error code, see below                                                                           |
 | statusText(\*) | Text    | Description of the error, see below                                                             |
 
@@ -1224,9 +1224,9 @@ The object returned by `.save()` contains the following properties:
 
 | Property     |                    | Typ                   | Beschreibung                                                                                                            |
 | ------------ | ------------------ | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | Boolean               | True if the save action is successful, False otherwise.                                                                 |
+| success      |                    | boolean               | True if the save action is successful, False otherwise.                                                                 |
 |              |                    |                       | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | Boolean               | True if an auto merge was done, False otherwise.                                                                        |
+| autoMerged   |                    | boolean               | True if an auto merge was done, False otherwise.                                                                        |
 |              |                    |                       | ***Available only in case of error***:                                                                                  |
 | status       |                    | Zahl                  | Error code, [see below](#status-and-statustext)                                                                         |
 | statusText   |                    | Text                  | Description of the error, [see below](#status-and-statustext)                                                           |
