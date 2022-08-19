@@ -16,7 +16,7 @@ Dans la collection d'étapes, il existe un objet avec les propriétés suivantes
 | Propriété     | Type        | Description                                                                       |
 | ------------- | ----------- | --------------------------------------------------------------------------------- |
 | Description   | String      | Requête exécutée ou "AND" lorsqu'il existe plusieurs étapes                       |
-| heure         | Number      | Nombre de millisecondes nécessaires pour exécuter la requête                      |
+| time          | Number      | Nombre de millisecondes nécessaires pour exécuter la requête                      |
 | recordsfounds | Number      | Nombre d'enregistrements trouvés                                                  |
 | steps         | Collections | Une collection avec un objet définissant l'étape suivante du chemin de la requête |
 
