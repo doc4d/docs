@@ -391,14 +391,14 @@ The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summar
 
 La fonction envoie une requête au serveur de mail et retourne un objet décrivant le statut. Cet objet peut avoir les propriétés suivantes :
 
-| Propriété  |                          | Type          | Description                                                                                                                 |
-| ---------- | ------------------------ | ------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| success    |                          | booléen       | Vrai si la vérification a été effectuée avec succès, sinon Faux                                                             |
-| status     |                          | number        | (SMTP uniquement) Code du statut retourné par le serveur de messagerie (0 en cas de problème non lié au traitement du mail) |
-| statusText |                          | text          | Message du statut retourné par le serveur de messagerie, ou dernière erreur retournée dans la pile d'erreurs 4D             |
-| errors     |                          | collectionMMM | Pile d'erreurs 4D (non retournée si une réponse du serveur de messagerie est reçue)                                         |
-|            | \[ ].errCode            | number        | Code d'erreur 4D                                                                                                            |
-|            | \[ ].message            | text          | Description de l'erreur 4D                                                                                                  |
-|            | \[ ].componentSignature | text          | Signature du composant interne qui a retourné l'erreur                                                                      |
+| Propriété  |                          | Type       | Description                                                                                                                 |
+| ---------- | ------------------------ | ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| success    |                          | boolean    | Vrai si la vérification a été effectuée avec succès, sinon Faux                                                             |
+| status     |                          | number     | (SMTP uniquement) Code du statut retourné par le serveur de messagerie (0 en cas de problème non lié au traitement du mail) |
+| statusText |                          | text       | Message du statut retourné par le serveur de messagerie, ou dernière erreur retournée dans la pile d'erreurs 4D             |
+| errors     |                          | collection | Pile d'erreurs 4D (non retournée si une réponse du serveur de messagerie est reçue)                                         |
+|            | \[ ].errCode            | number     | Code d'erreur 4D                                                                                                            |
+|            | \[ ].message            | text       | Description de l'erreur 4D                                                                                                  |
+|            | \[ ].componentSignature | text       | Signature du composant interne qui a retourné l'erreur                                                                      |
 
 <!-- END REF -->
