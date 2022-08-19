@@ -11,7 +11,7 @@ Cette propriété est utilisée pour afficher ou masquer [les en-têtes de colon
 
 | Le nom      | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
-| showHeaders | booléen         | true, false       |
+| showHeaders | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -52,7 +52,7 @@ A noter que la conversion en va-et-vient peut conduire à un résultat final dif
 
 | Le nom       | Type de données | Valeurs possibles                   |
 | ------------ | --------------- | ----------------------------------- |
-| headerHeight | Chaîne          | décimales positives +px &#124; em ) |
+| headerHeight | string          | décimales positives +px &#124; em ) |
 
 #### Objets pris en charge
 
