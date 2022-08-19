@@ -111,9 +111,9 @@ JSONファイルの説明です:
 
 | 属性     |                     |                          | タイプ    | 詳細                         |
 | ------ | ------------------- | ------------------------ | ------ | -------------------------- |
-| macros |                     |                          | オブジェクト | 定義されたマクロのリスト               |
-|        | `<macroName>` |                          | オブジェクト | マクロ定義                      |
-|        |                     | クラスの新規オブジェクト             | 文字列    | マクロクラス名                    |
+| macros |                     |                          | object | 定義されたマクロのリスト               |
+|        | `<macroName>` |                          | object | マクロ定義                      |
+|        |                     | クラスの新規オブジェクト             | string | マクロクラス名                    |
 |        |                     | `<customProperty>` | any    | (任意) コンストラクターによって取得するカスタム値 |
 
 カスタムプロパティはマクロの [constructor](#class-constructor) 関数に受け渡されます。
@@ -223,7 +223,7 @@ Class constructor($macro : Object)
 | $editor.editor.currentPage       | Result | 現在のページ (フォームオブジェクトおよび入力順序を格納)    |
 | $editor.editor.currentSelection  | コレクション | 選択されているオブジェクトの名称のコレクション          |
 | $editor.editor.formProperties    | Result | カレントフォームのプロパティ                   |
-| $editor.editor.target            | 文字列    | マクロ呼び出し時にマウスカーソルが置かれているオブジェクトの名称 |
+| $editor.editor.target            | string | マクロ呼び出し時にマウスカーソルが置かれているオブジェクトの名称 |
 
 マクロによる変更をフォームに反映させたい場合に、`$result` オブジェクトに渡せるプロパティの一覧です。 いずれのプロパティも任意です:
 
