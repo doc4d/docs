@@ -3,7 +3,7 @@ id: stylesheets
 title: Feuilles de style (style sheets)
 ---
 
-## Overview
+## Vue d’ensemble
 
 Une feuille de style regroupe une combinaison d’attributs d'objets formulaire —  allant des attributs de texte à quasiment tous les attributs d'objet disponibles.
 
