@@ -178,7 +178,7 @@ The `New shared collection` command <!-- REF #_command_.New shared collection.Su
 
 * 数値 (実数、倍長整数...)。 数値は常に実数として保存されます。
 * テキスト
-* ブール
+* boolean
 * 日付
 * 時間 (ミリ秒の数 (実数) として保存されます)。
 * null
@@ -916,7 +916,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | value     | number, Text, Collection, Object, Date, Boolean | -> | 代入する値                                                             |
 | startFrom | 整数                                              | -> | 開始インデックス (含まれる)                                                   |
 | end       | 整数                                              | -> | 終了インデックス (含まれない)                                                  |
-| Result    | collection-1                                    | <- | Original collection with filled values|<!-- END REF --> |
+| Result    | collection                                      | <- | Original collection with filled values|<!-- END REF --> |
 
 #### 詳細
 
