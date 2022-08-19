@@ -238,7 +238,7 @@ The function returns an object describing the SMTP status of the operation. This
 
 | Property   | Typ     | Beschreibung                                                                                     |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------ |
-| success    | Boolean | True if the send is successful, False otherwise                                                  |
+| success    | boolean | True if the send is successful, False otherwise                                                  |
 | status     | Zahl    | Status code returned by the SMTP server (0 in case of an issue unrelated to the mail processing) |
 | statusText | Text    | Status message returned by the SMTP server                                                       |
 
