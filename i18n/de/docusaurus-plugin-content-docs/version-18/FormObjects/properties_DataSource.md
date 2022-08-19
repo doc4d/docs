@@ -25,7 +25,7 @@ When the **automatic insertion** option is not selected (default), the value ent
 
 | Name               | Datentyp | Possible Values |
 | ------------------ | -------- | --------------- |
-| automaticInsertion | Boolean  | true, false     |
+| automaticInsertion | boolean  | true, false     |
 
 #### Objects Supported
 
@@ -134,7 +134,7 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 | Name   | Datentyp   | Possible Values                                                  |
 | ------ | ---------- | ---------------------------------------------------------------- |
-| values | Collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| values | collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
 #### Objects Supported
 
