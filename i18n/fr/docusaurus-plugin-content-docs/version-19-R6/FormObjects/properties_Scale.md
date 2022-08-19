@@ -27,7 +27,7 @@ Affiche/masque les graduations à côté des étiquettes.
 
 |     Le nom      | Type de données | Valeurs possibles |
 |:---------------:|:---------------:| ----------------- |
-| showGraduations |     booléen     | "true", "false"   |
+| showGraduations |     boolean     | "true", "false"   |
 
 #### Objets pris en charge
 
@@ -63,7 +63,7 @@ Indique l'emplacement du texte d'un objet.
 
 |     Le nom      | Type de données | Valeurs possibles                        |
 |:---------------:|:---------------:| ---------------------------------------- |
-| labelsPlacement |     Chaîne      | "none", "top", "bottom", "left", "right" |
+| labelsPlacement |     string      | "none", "top", "bottom", "left", "right" |
 
 #### Objets pris en charge
 
