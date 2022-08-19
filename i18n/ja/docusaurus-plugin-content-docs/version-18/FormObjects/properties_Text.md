@@ -10,9 +10,9 @@ title: テキスト
 
 #### JSON 文法
 
-| プロパティ                | データタイプ | とりうる値               |
-| -------------------- | ------ | ------------------- |
-| allowFontColorPicker | ブール    | false (デフォルト), true |
+| プロパティ                | データタイプ  | とりうる値               |
+| -------------------- | ------- | ------------------- |
+| allowFontColorPicker | boolean | false (デフォルト), true |
 
 #### 対象オブジェクト
 
@@ -50,7 +50,7 @@ title: テキスト
 
 | 名称        | データタイプ | とりうる値              |
 | --------- | ------ | ------------------ |
-| fontStyle | 文字列    | "normal", "italic" |
+| fontStyle | string | "normal", "italic" |
 
 #### 対象オブジェクト
 
@@ -66,7 +66,7 @@ title: テキスト
 
 | 名称             | データタイプ | とりうる値                 |
 | -------------- | ------ | --------------------- |
-| textDecoration | 文字列    | "normal", "underline" |
+| textDecoration | string | "normal", "underline" |
 
 #### 対象オブジェクト
 
@@ -102,7 +102,7 @@ title: テキスト
 
 | 名称        | データタイプ | とりうる値                          |
 | --------- | ------ | ------------------------------ |
-| fontTheme | 文字列    | "normal", "main", "additional" |
+| fontTheme | string | "normal", "main", "additional" |
 
 #### 対象オブジェクト
 
@@ -121,7 +121,7 @@ title: テキスト
 
 | 名称         | データタイプ | とりうる値          |
 | ---------- | ------ | -------------- |
-| fontFamily | 文字列    | CSS フォントファミリー名 |
+| fontFamily | string | CSS フォントファミリー名 |
 > 4D では [Webセーフ](https://www.w3schools.com/cssref/css_websafe_fonts.asp) フォントだけを使うことを推奨しています。
 
 #### 対象オブジェクト
@@ -170,7 +170,7 @@ OBJECT SET RGB COLORS** コマンドによって設定することができま�
 
 | 名称     | データタイプ | とりうる値                                |
 | ------ | ------ | ------------------------------------ |
-| stroke | 文字列    | 任意の css値; "transparent"; "automatic" |
+| stroke | string | 任意の css値; "transparent"; "automatic" |
 
 
 
@@ -214,7 +214,7 @@ Foreground color;Dark shadow color)
 
 | 名称              | データタイプ | とりうる値    |
 | --------------- | ------ | -------- |
-| rowStrokeSource | 文字列    | フォントカラー式 |
+| rowStrokeSource | string | フォントカラー式 |
 
 
 
@@ -257,7 +257,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 | 名称             | データタイプ | とりうる値                   |
 | -------------- | ------ | ----------------------- |
-| rowStyleSource | 文字列    | 表示される行/セルごとに評価されるスタイル式。 |
+| rowStyleSource | string | 表示される行/セルごとに評価されるスタイル式。 |
 
 
 
@@ -282,7 +282,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 | 名称        | データタイプ | とりうる値                                             |
 | --------- | ------ | ------------------------------------------------- |
-| textAlign | 文字列    | "automatic", "right", "center", "justify", "left" |
+| textAlign | string | "automatic", "right", "center", "justify", "left" |
 
 
 
@@ -314,7 +314,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 | 名称            | データタイプ | とりうる値                                  |
 | ------------- | ------ | -------------------------------------- |
-| verticalAlign | 文字列    | "automatic", "top", "middle", "bottom" |
+| verticalAlign | string | "automatic", "top", "middle", "bottom" |
 
 
 
@@ -335,16 +335,16 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 表示される行ごとに評価される式あるいは変数を指定します。 行テキスト属性全体を定義することができます。 **オブジェクト変数**、あるいは **オブジェクトを返す式** を指定する必要があります。 以下のオブジェクトプロパティがサポートされています:
 
-| プロパティ名                      | タイプ    | 詳細                                                                                                                                                                                                                   |
-| --------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| stroke                      | 文字列    | フォントカラー。 任意の CSSカラー (例: "#FF00FF"), "automatic", "transparent"                                                                                                                                                       |
-| fill                        | 文字列    | 背景色。 任意の CSSカラー (例: "#F00FFF"), "automatic", "transparent"                                                                                                                                                           |
-| fontStyle                   | 文字列    | "normal","italic"                                                                                                                                                                                                    |
-| fontWeight                  | 文字列    | "normal","bold"                                                                                                                                                                                                      |
-| textDecoration              | 文字列    | "normal","underline"                                                                                                                                                                                                 |
-| unselectable                | ブール    | 対応する行が選択不可 (つまりハイライトすることができない状態) であることを指定します。 このオプションが有効化されている場合、入力可能エリアは入力可能ではなくなります (ただし "シングルクリック編集" オプションが有効化されている場合を除く)。 チェックボックスやリストといったコントロール類は引き続き稼働します。 この設定はリストボックスの選択モードが "なし" の場合には無視されます。 デフォルト値: false |
-| disabled                    | ブール    | 対応する行を無効化します。 このオプションが有効化されると、入力可能エリアは入力可能ではなくなります。 テキストや、(チェックボックス、リストなどの) コントロール類は暗くなっているかグレーアウトされます。 デフォルト値: false                                                                                                |
-| cell.`\<columnName>` | オブジェクト | プロパティを単一のカラムに適用するときに使用します。 Pass in `\<columnName>` the object name of the list box column. **注**: "unselectable" および "disabled" プロパティは行レベルでのみ定義可能です。 "セル" オブジェクトに指定した場合、これらは無視されます。                           |
+| プロパティ名                      | タイプ     | 詳細                                                                                                                                                                                                                   |
+| --------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| stroke                      | string  | フォントカラー。 任意の CSSカラー (例: "#FF00FF"), "automatic", "transparent"                                                                                                                                                       |
+| fill                        | string  | 背景色。 任意の CSSカラー (例: "#F00FFF"), "automatic", "transparent"                                                                                                                                                           |
+| fontStyle                   | string  | "normal","italic"                                                                                                                                                                                                    |
+| fontWeight                  | string  | "normal","bold"                                                                                                                                                                                                      |
+| textDecoration              | string  | "normal","underline"                                                                                                                                                                                                 |
+| unselectable                | boolean | 対応する行が選択不可 (つまりハイライトすることができない状態) であることを指定します。 このオプションが有効化されている場合、入力可能エリアは入力可能ではなくなります (ただし "シングルクリック編集" オプションが有効化されている場合を除く)。 チェックボックスやリストといったコントロール類は引き続き稼働します。 この設定はリストボックスの選択モードが "なし" の場合には無視されます。 デフォルト値: false |
+| disabled                    | boolean | 対応する行を無効化します。 このオプションが有効化されると、入力可能エリアは入力可能ではなくなります。 テキストや、(チェックボックス、リストなどの) コントロール類は暗くなっているかグレーアウトされます。 デフォルト値: false                                                                                                |
+| cell.`\<columnName>` | object  | プロパティを単一のカラムに適用するときに使用します。 Pass in `\<columnName>` the object name of the list box column. **注**: "unselectable" および "disabled" プロパティは行レベルでのみ定義可能です。 "セル" オブジェクトに指定した場合、これらは無視されます。                           |
 
 
 
@@ -408,7 +408,7 @@ End case
 
 | 名称         | データタイプ | とりうる値                     |
 | ---------- | ------ | ------------------------- |
-| metaSource | 文字列    | 表示される行/セルごとに評価されるオブジェクト式。 |
+| metaSource | string | 表示される行/セルごとに評価されるオブジェクト式。 |
 
 
 
@@ -433,9 +433,9 @@ End case
 
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値       |
-| ---------- | ------ | ----------- |
-| styledText | ブール    | true, false |
+| 名称         | データタイプ  | とりうる値       |
+| ---------- | ------- | ----------- |
+| styledText | boolean | true, false |
 
 
 
@@ -499,7 +499,7 @@ End case
 
 | 名称              | データタイプ | とりうる値      |
 | --------------- | ------ | ---------- |
-| rowStrokeSource | 文字列    | 倍長整数型配列の名前 |
+| rowStrokeSource | string | 倍長整数型配列の名前 |
 
 
 
@@ -528,7 +528,7 @@ End case
 
 | 名称             | データタイプ | とりうる値      |
 | -------------- | ------ | ---------- |
-| rowStyleSource | 文字列    | 倍長整数型配列の名前 |
+| rowStyleSource | string | 倍長整数型配列の名前 |
 
 
 
@@ -573,9 +573,9 @@ What a <SPAN STYLE="font-size:13.5pt">beautiful</SPAN> day!
 
 #### JSON 文法
 
-| 名称                | データタイプ | とりうる値               |
-| ----------------- | ------ | ------------------- |
-| storeDefaultStyle | ブール    | true, false (デフォルト) |
+| 名称                | データタイプ  | とりうる値               |
+| ----------------- | ------- | ------------------- |
+| storeDefaultStyle | boolean | true, false (デフォルト) |
 
 
 
