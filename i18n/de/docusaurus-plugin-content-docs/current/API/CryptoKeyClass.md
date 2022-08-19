@@ -130,9 +130,9 @@ The function returns a status object with `success` property set to `true` if th
 
 | Property | Typ        | Beschreibung                                                        |
 | -------- | ---------- | ------------------------------------------------------------------- |
-| success  | Boolean    | True if the message has been successfully decrypted                 |
+| success  | boolean    | True if the message has been successfully decrypted                 |
 | ergebnis | Text       | Message decrypted and decoded using the `options.encodingDecrypted` |
-| errors   | Collection | If `success` is `false`, may contain a collection of errors         |
+| errors   | collection | If `success` is `false`, may contain a collection of errors         |
 
 In case the *message* couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
 
@@ -278,7 +278,7 @@ The `CryptoKey` must contain a valid **private** key.
 | ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | Text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
 | encodingEncrypted | Text    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                                  |
-| pss               | Boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                   |
+| pss               | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                   |
 | encoding          | Text    | ERepresentation to be used for result signature. Possible values: "Base64" or "Base64URL". Default is "Base64".                                                      |
 
 #### *Ergebnis*
@@ -351,7 +351,7 @@ The `CryptoKey` must contain a valid **public** key.
 | Property | Typ     | Beschreibung                                                                                                                                                         |
 | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash     | Text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
-| pss      | Boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                   |
+| pss      | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                   |
 | encoding | Text    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                                                              |
 
 #### *Ergebnis*
@@ -362,6 +362,6 @@ In case the signature couldn't be verified because it was not signed with the sa
 
 | Property | Typ        | Beschreibung                                                                           |
 | -------- | ---------- | -------------------------------------------------------------------------------------- |
-| success  | Boolean    | True if the signature matches the message                                              |
-| errors   | Collection | If `success` is `false`, may contain a collection of errors|<!-- END REF -->
+| success  | boolean    | True if the signature matches the message                                              |
+| errors   | collection | If `success` is `false`, may contain a collection of errors|<!-- END REF -->
 |
