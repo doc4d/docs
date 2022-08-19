@@ -40,7 +40,7 @@ A l'exécution, un champ ou toute zone saisissable est délimité par un rectang
 
 | Le nom        | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
-| hideFocusRing | booléen         | true, false       |
+| hideFocusRing | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -62,7 +62,7 @@ Par défaut, cette option n'est pas activée.
 
 | Le nom              | Type de données | Valeurs possibles |
 | ------------------- | --------------- | ----------------- |
-| hideSystemHighlight | booléen         | true, false       |
+| hideSystemHighlight | boolean         | true, false       |
 
 #### Objets pris en charge
 
