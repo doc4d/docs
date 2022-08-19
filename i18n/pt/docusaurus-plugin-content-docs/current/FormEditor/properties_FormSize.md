@@ -1,6 +1,6 @@
 ---
 id: formSize
-title: Form Size
+title: Tamanho formulário
 ---
 
  
@@ -27,21 +27,21 @@ Size options depend on the value of the **Size based on** option.
 
 #### JSON Grammar
 
-| Name           | Data Type | Possible Values                                       |
-| -------------- | --------- | ----------------------------------------------------- |
-| formSizeAnchor | string    | Name of object to use to defined the size of the form |
+| Nome           | Tipo de dados | Possible Values                                       |
+| -------------- | ------------- | ----------------------------------------------------- |
+| formSizeAnchor | string        | Name of object to use to defined the size of the form |
 
 ---
-## Height
+## Alto
 
 Height of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
 
 
 #### JSON Grammar
 
-| Name   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| height | number    | integer value   |
+| Nome   | Tipo de dados | Possible Values |
+| ------ | ------------- | --------------- |
+| height | number        | integer value   |
 
 
 ---
@@ -54,9 +54,9 @@ This value also determines the right-hand margins of forms used in the Label edi
 
 #### JSON Grammar
 
-| Name        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| rightMargin | number    | integer value   |
+| Nome        | Tipo de dados | Possible Values |
+| ----------- | ------------- | --------------- |
+| rightMargin | number        | integer value   |
 
 
 ---
@@ -69,19 +69,19 @@ This value also determines the top margins of forms used in the Label editor.
 
 #### JSON Grammar
 
-| Name         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| bottomMargin | number    | integer value   |
+| Nome         | Tipo de dados | Possible Values |
+| ------------ | ------------- | --------------- |
+| bottomMargin | number        | integer value   |
 
 
 ---
-## Width
+## Largura
 
 Width of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
 
 
 #### JSON Grammar
 
-| Name  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| width | number    | integer value   |
+| Nome  | Tipo de dados | Possible Values |
+| ----- | ------------- | --------------- |
+| width | number        | integer value   |
