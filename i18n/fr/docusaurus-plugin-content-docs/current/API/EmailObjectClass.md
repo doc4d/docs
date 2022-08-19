@@ -163,7 +163,7 @@ L'objet `.bodyValues` contient les propriété suivantes :
 | Propriété                  | Type    | Value                                                                                                                                                                      |
 | -------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | *partID*.value             | text    | Valeur de la partie body                                                                                                                                                   |
-| *partID*.isEncodingProblem | booléen | Vrai si des sections malformées sont identifiées durant le décodage du charset, si le charset est inconnu, ou si le content transfer-encoding est inconnu. Faux par défaut |
+| *partID*.isEncodingProblem | boolean | Vrai si des sections malformées sont identifiées durant le décodage du charset, si le charset est inconnu, ou si le content transfer-encoding est inconnu. Faux par défaut |
 
 ## .cc
 
@@ -273,7 +273,7 @@ Cette propriété est l'en-tête "keywords" (voir la [RFC#4021](https://tools.ie
 
 | Propriété      | Type    | Value                                                         |
 | -------------- | ------- | ------------------------------------------------------------- |
-| .\<keyword\> | booléen | Mot-clé à définir à définir (la valeur doit être mise à vrai) |
+| .\<keyword\> | boolean | Mot-clé à définir à définir (la valeur doit être mise à vrai) |
 
 Mots-clés réservés :
 - $draft - Indique qu'un message est un brouillon
