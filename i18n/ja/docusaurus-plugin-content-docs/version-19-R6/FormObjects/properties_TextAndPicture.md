@@ -14,7 +14,7 @@ title: テキスト、ピクチャー
 
 | 名称                      | データタイプ | とりうる値                                                       |
 | ----------------------- | ------ | ----------------------------------------------------------- |
-| customBackgroundPicture | 文字列    | POSIX シンタックスの相対パス。 style プロパティの "custom" オプションと併用する必要があります。 |
+| customBackgroundPicture | string | POSIX シンタックスの相対パス。 style プロパティの "custom" オプションと併用する必要があります。 |
 
 #### 対象オブジェクト
 
@@ -70,7 +70,7 @@ title: テキスト、ピクチャー
 
 | 名称            | データタイプ | とりうる値                   |
 | ------------- | ------ | ----------------------- |
-| iconPlacement | 文字列    | "none", "left", "right" |
+| iconPlacement | string | "none", "left", "right" |
 
 #### 対象オブジェクト
 
@@ -161,7 +161,7 @@ title: テキスト、ピクチャー
 
 | 名称            | データタイプ | とりうる値                                      |
 | ------------- | ------ | ------------------------------------------ |
-| textPlacement | 文字列    | "left", "top", "right", "bottom", "center" |
+| textPlacement | string | "left", "top", "right", "bottom", "center" |
 
 #### 対象オブジェクト
 
@@ -219,7 +219,7 @@ title: テキスト、ピクチャー
 
 | 名称             | データタイプ | とりうる値                                                                       |
 |:-------------- | ------ | --------------------------------------------------------------------------- |
-| popupPlacement | 文字列    | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
+| popupPlacement | string | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
 
 #### 対象オブジェクト
 
