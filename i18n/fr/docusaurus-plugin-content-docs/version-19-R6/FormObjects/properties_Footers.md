@@ -11,7 +11,7 @@ Cette propriété est utilisée pour afficher ou masquer [les pieds de de colonn
 
 | Le nom      | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
-| showFooters | booléen         | true, false       |
+| showFooters | boolean         | true, false       |
 
 #### Objets pris en charge
 
@@ -52,7 +52,7 @@ A noter que la conversion en va-et-vient peut conduire à un résultat final dif
 
 | Le nom       | Type de données | Valeurs possibles                 |
 | ------------ | --------------- | --------------------------------- |
-| footerHeight | Chaîne          | décimales positives +px &#124; em |
+| footerHeight | string          | décimales positives +px &#124; em |
 
 #### Objets pris en charge
 
