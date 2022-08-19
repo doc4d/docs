@@ -28,7 +28,7 @@ When this property is enabled, the height of every row is automatically calculat
 
 | Nome          | Tipo de dados | Possible Values |
 | ------------- | ------------- | --------------- |
-| rowHeightAuto | booleano      | true, false     |
+| rowHeightAuto | boolean       | true, false     |
 
 #### Objects Supported
 
