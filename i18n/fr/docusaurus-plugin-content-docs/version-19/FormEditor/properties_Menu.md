@@ -19,5 +19,5 @@ La barre de menus du formulaire fonctionnera pour les formulaires d'entrée et d
 
 | Le nom  | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
-| menuBar | Chaîne          | Nom d'une barre de menu |
+| menuBar | string          | Nom d'une barre de menu |
 
