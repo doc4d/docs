@@ -400,7 +400,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 <!-- REF #4D.HTTPRequest.wait().Params -->
 | 引数     | タイプ            |    | 詳細                                            |
 | ------ | -------------- |:--:| --------------------------------------------- |
-| 時間     | 実数             | -> | レスポンスを待機する最長時間 (秒)                            |
+| time   | 実数             | -> | レスポンスを待機する最長時間 (秒)                            |
 | Result | 4D.HTTPRequest | <- | HTTPRequest オブジェクト|<!-- END REF -->
 
 
