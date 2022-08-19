@@ -11,7 +11,7 @@ This property is used to display or hide [list box column footers](listbox_overv
 
 | Nome        | Tipo de dados | Possible Values |
 | ----------- | ------------- | --------------- |
-| showFooters | booleano      | true, false     |
+| showFooters | boolean       | true, false     |
 
 #### Objects Supported
 
