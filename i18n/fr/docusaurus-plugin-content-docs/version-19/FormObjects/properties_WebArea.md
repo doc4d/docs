@@ -18,7 +18,7 @@ Lorsque cette propriété est cochée, un objet JavaScript spécial `$4d` est in
 
 | Le nom               | Type de données | Valeurs possibles          |
 | -------------------- | --------------- | -------------------------- |
-| methodsAccessibility | Chaîne          | "none" (par défaut), "all" |
+| methodsAccessibility | string          | "none" (par défaut), "all" |
 
 #### Objets pris en charge
 
@@ -34,7 +34,7 @@ La variable "Progression" est de type Entier long. Elle contient une valeur entr
 
 | Le nom         | Type de données | Valeurs possibles              |
 | -------------- | --------------- | ------------------------------ |
-| progressSource | Chaîne          | Nom d'une variable Entier long |
+| progressSource | string          | Nom d'une variable Entier long |
 
 #### Objets pris en charge
 
@@ -65,7 +65,7 @@ La variable URL produit les mêmes effets que la commande [WA OUVRIR URL](https:
 
 | Le nom    | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
-| urlSource | Chaîne          | Une URL.          |
+| urlSource | string          | Une URL.          |
 
 #### Objets pris en charge
 
@@ -93,7 +93,7 @@ A noter que le moteur Blink est soumis aux restrictions suivantes :
 
 | Le nom    | Type de données | Valeurs possibles    |
 | --------- | --------------- | -------------------- |
-| webEngine | Chaîne          | "embedded", "system" |
+| webEngine | string          | "embedded", "system" |
 
 #### Objets pris en charge
 
