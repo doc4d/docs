@@ -123,10 +123,10 @@ In this documentation, "Mixed" data type is used to designate the various type o
 * Zahl
 * Text
 * Null
-* Boolean
+* boolean
 * date
 * object
-* Collection
+* collection
 * Bild (\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
