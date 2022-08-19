@@ -25,7 +25,7 @@ When the **automatic insertion** option is not selected (default), the value ent
 
 | Nome               | Tipo de dados | Possible Values |
 | ------------------ | ------------- | --------------- |
-| automaticInsertion | booleano      | true, false     |
+| automaticInsertion | boolean       | true, false     |
 
 #### Objects Supported
 
