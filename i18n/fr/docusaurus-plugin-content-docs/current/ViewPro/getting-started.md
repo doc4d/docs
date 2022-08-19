@@ -140,16 +140,16 @@ Les objets plage 4D View Pro sont composés de plusieurs propriétés :
 *   area - Le nom de la zone 4D View Pro
 *   ranges - Une collection d'objet(s) plage. Les propriétés disponibles dans chaque objet de gamme dépendent du type d'objet plage. Par exemple, un objet plage de type colonne comprendra uniquement les propriétés *.column* et *.sheet*.
 
-| Propriété |                   | Type          | Description                                                                                | Disponible pour                                                |
-| --------- | ----------------- | ------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
-| area      |                   | text          | Nom d'objet formulaire zone 4D View Pro                                                    | toujours disponible                                            |
-| ranges    |                   | collectionMMM | Collection de plage(s)                                                                     | toujours disponible                                            |
-|           | \[ ].name        | text          | Nom de plage                                                                               | nom                                                            |
-|           | \[ ].sheet       | number        | Indice de la feuille (par défaut, indice de la feuille courante) (le comptage démarre à 0) | cellule, cellules, ligne, lignes, colonne, colonnes, tout, nom |
-|           | \[ ].row         | number        | Indice de la ligne (le comptage démarre à 0)                                               | cellule, cellules, ligne, lignes                               |
-|           | \[ ].rowCount    | number        | Row count                                                                                  | cellule, lignes                                                |
-|           | \[ ].column      | number        | Indice de la colonne (le comptage démarre à 0)                                             | cellule, cellules, colonne, colonnes                           |
-|           | \[ ].columnCount | number        | Column count                                                                               | cellules, colonnes                                             |
+| Propriété |                   | Type       | Description                                                                                | Disponible pour                                                |
+| --------- | ----------------- | ---------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| area      |                   | text       | Nom d'objet formulaire zone 4D View Pro                                                    | toujours disponible                                            |
+| ranges    |                   | collection | Collection de plage(s)                                                                     | toujours disponible                                            |
+|           | \[ ].name        | text       | Nom de plage                                                                               | nom                                                            |
+|           | \[ ].sheet       | number     | Indice de la feuille (par défaut, indice de la feuille courante) (le comptage démarre à 0) | cellule, cellules, ligne, lignes, colonne, colonnes, tout, nom |
+|           | \[ ].row         | number     | Indice de la ligne (le comptage démarre à 0)                                               | cellule, cellules, ligne, lignes                               |
+|           | \[ ].rowCount    | number     | Row count                                                                                  | cellule, lignes                                                |
+|           | \[ ].column      | number     | Indice de la colonne (le comptage démarre à 0)                                             | cellule, cellules, colonne, colonnes                           |
+|           | \[ ].columnCount | number     | Column count                                                                               | cellules, colonnes                                             |
 
 
 
