@@ -173,7 +173,7 @@ Pour plus d'informations sur CORS, veuillez consulter la [page de partage de res
 
 | Peut être configuré via  | Le nom                                                         | Commentaires |
 | ------------------------ | -------------------------------------------------------------- | ------------ |
-| objet webServer          | [`HTTPEnabled`](API/WebServerClass.md#httpenabled)             | booléen      |
+| objet webServer          | [`HTTPEnabled`](API/WebServerClass.md#httpenabled)             | boolean      |
 | `WEB SET OPTION`         | `Web HTTP enabled`                                             |              |
 | Fenêtre de configuration | [Configuration > Activer HTTP](../settings/web.md#enable-http) |              |
 
@@ -183,7 +183,7 @@ Indique si le web server accepte des connexions non sécurisées.
 
 | Peut être configuré via  | Le nom                                               | Commentaires |
 | ------------------------ | ---------------------------------------------------- | ------------ |
-| objet webServer          | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | booléen      |
+| objet webServer          | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean      |
 | `WEB SET OPTION`         | `Web HTTPS enabled`                                  |              |
 | Fenêtre de configuration | Configuration > Activer HTTPS                        |              |
 
