@@ -49,7 +49,7 @@ L'objet "__STATUS" retourné possède les propriétés suivantes :
 | Propriété    |  | Type    | Description                                                                                                                                           |
 | ------------ |  | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 |              |  |         | ***Disponible uniquement en cas de succès:***                                                                                                         |
-| success      |  | booléen | vrai si l'action de verrouillage a été réussie (ou si l'entité est déjà verrouillée dans la session courante), sinon faux (non retourné dans ce cas). |
+| success      |  | boolean | vrai si l'action de verrouillage a été réussie (ou si l'entité est déjà verrouillée dans la session courante), sinon faux (non retourné dans ce cas). |
 |              |  |         | ***Disponible uniquement en cas d'erreur :***                                                                                                         |
 | status       |  | number  | Code d'erreur, voir ci-dessous                                                                                                                        |
 | statusText   |  | text    | Description de l'erreur, voir ci-dessous                                                                                                              |
