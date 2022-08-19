@@ -8,16 +8,16 @@ Variant est un type de variable qui permet d'encapsuler des données de type val
 Une variable de type variant peut contenir une valeur des types de données suivants :
 
 - BLOB
-- booléen
-- collectionMMM
+- boolean
+- collection
 - date
 - entier long
-- Objet
+- object
 - picture
 - pointer
 - réel
 - text
-- heure
+- time
 - Null
 - undefined
 
