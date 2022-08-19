@@ -12,8 +12,8 @@ La valeur par défaut ne peut être utilisée que si le [type de source de donn�
 - text/string
 - number/integer
 - date
-- heure
-- booléen
+- time
+- boolean
 
 4D provides stamps for generating default values for the date, time, and sequence number. The date and time are taken from the system date and time. 4D automatically generates any sequence numbers needed. The table below shows the stamp to use to generate default values automatically:
 
