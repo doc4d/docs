@@ -9,7 +9,7 @@ Tous les serveurs 4D peuvent communiquer en mode sécurisé via le protocole TLS
 - le serveur d'application (application de bureau client-serveur)
 - le serveur SQL
 
-## Overview
+## Vue d’ensemble
 
 Le protocole TLS (successeur du SSL) a pour but de sécuriser les informations de données entre deux applications—principalement entre un serveur web et un navigateur. Ce protocole est largement répandu et compatible avec la plupart des navigateurs web.
 
