@@ -1,6 +1,6 @@
 ---
 id: propertiesAction
-title: Action
+title: Aktion
 ---
 
 
@@ -21,9 +21,9 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 
 #### JSON Grammar
 
-| Name     | Data Type | Possible Values                                              |
-| -------- | --------- | ------------------------------------------------------------ |
-| dragging | text      | "none" (default), "custom", "automatic" (excluding list box) |
+| Name     | Datentyp | Possible Values                                              |
+| -------- | -------- | ------------------------------------------------------------ |
+| dragging | Text     | "none" (default), "custom", "automatic" (excluding list box) |
 
 #### Objects Supported
 
@@ -48,9 +48,9 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 
 #### JSON Grammar
 
-| Name     | Data Type | Possible Values                                              |
-| -------- | --------- | ------------------------------------------------------------ |
-| dropping | text      | "none" (default), "custom", "automatic" (excluding list box) |
+| Name     | Datentyp | Possible Values                                              |
+| -------- | -------- | ------------------------------------------------------------ |
+| dropping | Text     | "none" (default), "custom", "automatic" (excluding list box) |
 
 #### Objects Supported
 
@@ -68,9 +68,9 @@ When this option is enabled, the object method is executed with the `On Data Cha
 
 #### JSON Grammar
 
-| Name                | Data Type | Possible Values |
-| ------------------- | --------- | --------------- |
-| continuousExecution | boolean   | true, false     |
+| Name                | Datentyp | Possible Values |
+| ------------------- | -------- | --------------- |
+| continuousExecution | Boolean  | true, false     |
 
 #### Objects Supported
 
@@ -96,9 +96,9 @@ Several types of method references are supported:
 
 #### JSON Grammar
 
-| Name   | Data Type | Possible Values                                                    |
-| ------ | --------- | ------------------------------------------------------------------ |
-| method | text      | Object method standard or custom file path, or project method name |
+| Name   | Datentyp | Possible Values                                                    |
+| ------ | -------- | ------------------------------------------------------------------ |
+| method | Text     | Object method standard or custom file path, or project method name |
 
 #### Objects Supported
 
@@ -114,9 +114,9 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 #### JSON Grammar
 
-| Name        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| movableRows | boolean   | true, false     |
+| Name        | Datentyp | Possible Values |
+| ----------- | -------- | --------------- |
+| movableRows | Boolean  | true, false     |
 
 #### Objects Supported
 
@@ -130,9 +130,9 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 #### JSON Grammar
 
-| Name          | Data Type | Possible Values              |
-| ------------- | --------- | ---------------------------- |
-| selectionMode | text      | "multiple", "single", "none" |
+| Name          | Datentyp | Possible Values              |
+| ------------- | -------- | ---------------------------- |
+| selectionMode | Text     | "multiple", "single", "none" |
 
 #### Objects Supported
 
@@ -153,9 +153,9 @@ In other cases (list boxes based on named selections, columns associated with ex
 
 #### JSON Grammar
 
-| Name     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| sortable | boolean   | true, false     |
+| Name     | Datentyp | Possible Values |
+| -------- | -------- | --------------- |
+| sortable | Boolean  | true, false     |
 
 #### Objects Supported
 
@@ -173,9 +173,9 @@ You can also set this property using the `OBJECT SET ACTION` command.
 
 #### JSON Grammar
 
-| Name   | Data Type | Possible Values                                                                                                  |
-| ------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
-| action | string    | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
+| Name   | Datentyp | Possible Values                                                                                                  |
+| ------ | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| aktion | string   | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
 
 #### Objects Supported
 
