@@ -30,7 +30,7 @@ title: On Header Click
 | description | テキスト    | "On Header Click"                                                                                      |
 | objectName  | テキスト    | 4D View Pro エリア名                                                                                       |
 | sheetName   | テキスト    | イベントが発生したシート名                                                                                          |
-| range       | オブジェクト  | セルのレンジ                                                                                                 |
+| range       | object  | セルのレンジ                                                                                                 |
 | sheetArea   | longint | イベントが発生したシートの場所:<br/><li>0: カラム文字ヘッダー / 行番号のヘッダーの間の交差領域 (シートの左上)</li><li>1：カラムヘッダー (カラム文字を示す領域)</li><li>2：行ヘッダー (行番号を示す領域)</li> |
 
 #### 例題
