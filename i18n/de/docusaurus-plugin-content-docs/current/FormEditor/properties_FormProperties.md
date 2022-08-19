@@ -36,7 +36,7 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 
 | Name  | Datentyp   | Possible Values                                                          |
 | ----- | ---------- | ------------------------------------------------------------------------ |
-| pages | Collection | Collection of pages (each page is an object, page 0 is the first element |
+| pages | collection | Collection of pages (each page is an object, page 0 is the first element |
 
 ---
 
@@ -130,7 +130,7 @@ Only project forms can be specified as published subforms.
 
 | Name   | Datentyp | Possible Values |
 | ------ | -------- | --------------- |
-| shared | Boolean  | true, false     |
+| shared | boolean  | true, false     |
 
 
 ---
@@ -149,7 +149,7 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 
 | Name             | Datentyp | Possible Values |
 | ---------------- | -------- | --------------- |
-| memorizeGeometry | Boolean  | true, false     |
+| memorizeGeometry | boolean  | true, false     |
 
 #### See also
 [**Save Value**](FormObjects/properties_Object.md#save-value)
