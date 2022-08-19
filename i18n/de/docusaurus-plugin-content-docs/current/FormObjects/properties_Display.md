@@ -390,7 +390,7 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 | Name    | Datentyp | Possible Values |
 | ------- | -------- | --------------- |
-| display | Boolean  | true, false     |
+| display | boolean  | true, false     |
 
 #### Objects Supported
 
@@ -420,7 +420,7 @@ In this case as well, the [Title](#title) property is also available so that the
 
 | Name       | Datentyp | Possible Values |
 | ---------- | -------- | --------------- |
-| threeState | Boolean  | true, false     |
+| threeState | boolean  | true, false     |
 
 #### Objects Supported
 
