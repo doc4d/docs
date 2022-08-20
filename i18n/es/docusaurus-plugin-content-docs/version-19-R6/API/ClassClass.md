@@ -31,7 +31,7 @@ Cuando una clase usuario es [definida](Concepts/classes.md#class-definition) en 
 
 #### Descripción
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Los nombres de clases son sensibles a las mayúsculas y minúsculas.
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
