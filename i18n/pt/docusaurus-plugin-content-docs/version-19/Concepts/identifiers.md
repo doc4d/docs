@@ -81,12 +81,9 @@ DELETE DUPLICATED VALUES APPLY TO SELECTION([Employees];INCREASE SALARIES)
 Exemplos:
 
 ```4d
- //This command expects a method (function) or formula
-QUERY BY FORMULA([aTable];Special query)
- //This command expects a method (procedure) or statement
-APPLY TO SELECTION([Employees];INCREASE SALARIES)
- //But this command expects a method name
-ON EVENT CALL("HANDLE EVENTS")
+ //This command expects a method (function) or formula QUERY BY FORMULA([aTable];Special query)
+ //This command expects a method (procedure) or statement APPLY TO SELECTION([Employees];INCREASE SALARIES)
+ //But this command expects a method name ON EVENT CALL("HANDLE EVENTS")
 ```
 
 ## Tables and Fields
@@ -147,14 +144,11 @@ Exemplos:
 ```4d
 DIALOG([Storage];"Note box"+String($vlStage))
 OBJECT SET FONT(*;"Binfo";"Times")
-USE NAMED SELECTION([Customers];"Closed")//Process Named Selection
-USE NAMED SELECTION([Customers];"<>ByZipcode") //Interprocess Named Selection
+USE NAMED SELECTION([Customers];"Closed")//Process Named Selection USE NAMED SELECTION([Customers];"<>ByZipcode") //Interprocess Named Selection
  //Starting the global process "Add Customers"
 $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
  //Starting the local process "$Follow Mouse Moves"
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
-CREATE SET([Customers];"Customer Orders")//Process set
-USE SET("<>Deleted Records") //Interprocess set
-If(Records in set("$Selection"+String($i))>0) //Client set
+CREATE SET([Customers];"Customer Orders")//Process set USE SET("<>Deleted Records") //Interprocess set If(Records in set("$Selection"+String($i))>0) //Client set
 
 ```
