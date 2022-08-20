@@ -83,7 +83,7 @@ If we want to know if the two entity sets intersect, we can write the following:
 
  `GET  /rest/Employee/$entityset/9718A30BF61343C796345F3BE5B01CE7?$logicOperator=intersect&$otherCollection=C05A0D887C664D4DA1B38366DD21629B`
 
-If there is an intersection, this query returns true. Otherwise, it returns false.
+If there is an intersection, this query returns true. .
 
 In the following example we create a new entity set that combines all the entities in both entity sets:
 
