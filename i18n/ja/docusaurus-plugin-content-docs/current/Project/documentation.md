@@ -153,8 +153,8 @@ _イタリック_
 - 4D コードハイライトが付くコードブロックタグ (\```4d ... ```)
 
     \``` 4d  
-  C_TEXT($txt)  
-  $txt:="Hello world!"  
+C_TEXT($txt)  
+$txt:="Hello world!"  
   \` ``
 
 
@@ -227,6 +227,6 @@ C_LONGINT($size)
 $logo:=GetLogo(5)
 ```
 
-- エクスプローラーの表示: ![](../assets/en/Project/explorer_Doc.png)
+- Explorer view: ![](../assets/en/Project/explorer_Doc.png)
 
-- コードエディターの表示: ![](../assets/en/Project/comments-explo5.png)
+- Code editor view: ![](../assets/en/Project/comments-explo5.png)
