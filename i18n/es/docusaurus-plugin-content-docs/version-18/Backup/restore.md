@@ -19,11 +19,11 @@ title: Restaurar
 
 Puede restaurar manualmente el contenido de un archivo generado por el módulo de copia de seguridad. Una restauración manual puede ser necesaria, por ejemplo, para restaurar todo el contenido de un archivo (archivos de proyecto y archivos adjuntos), o para realizar búsquedas entre los archivos. La restauración manual también puede realizarse junto con la integración del archivo de registro actual.
 
-La restauración manual de las copias de seguridad puede realizarse a través de la caja de diálogo estándar de apertura de documento, o a través de la página [Restitución](MSC/restore) del CSM. La restitución a través del CSM ofrece más opciones y permite previsualizar el contenido del archivo. Por otro lado, sólo se pueden restaurar los archivos asociados a la base abierta.
+La restauración manual de las copias de seguridad puede realizarse a través de la caja de diálogo estándar de apertura de documento, o a través de la página [Restitución](MSC/restore) del CSM. La restitución a través del CSM ofrece más opciones y permite previsualizar el contenido del archivo. Restoring via the MSC provides more options and allows the archive contents to be previewed.
 
 Para restaurar una base manualmente a través de una caja de diálogo estándar:
 
-1. Elija **Restituir...** en el menú de la aplicación 4D **Archivo**. No es obligatorio que una base de datos esté abierta. O ejecute el comando `RESTORE` desde un método 4D. Aparece una caja de diálogo estándar de apertura de archivos.
+1. Elija **Restituir...** en el menú de la aplicación 4D **Archivo**. No es obligatorio que una base de datos esté abierta. OR Execute the `RESTORE` command from a 4D method. Aparece una caja de diálogo estándar de apertura de archivos.
 2. Seleccione un archivo de copia de seguridad (.4bk) o un archivo de copia de seguridad del historial (.4bl) que desee restaurar y haga clic en **Abrir**. Aparece una caja de diálogo que permite especificar la ubicación donde se restaurarán los archivos. Por defecto, 4D restaura los archivos en una carpeta llamada *Nomarchivo* (sin extensión) situada junto al archivo. Puede mostrar la ruta de acceso:
 
 ![](../assets/en/Backup/backup07.png)
