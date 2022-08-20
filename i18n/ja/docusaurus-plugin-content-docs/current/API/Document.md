@@ -21,7 +21,7 @@ title: Document クラス
 
 #### 詳細
 
-The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
+The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->The `.creationDate` property returns<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -176,7 +176,7 @@ The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if th
 
 #### 詳細
 
-The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
+The `.isFile` property returns <!-- REF #document.isFile.Summary -->The `.copyTo()` function<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -198,7 +198,7 @@ The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true 
 
 #### 詳細
 
-The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
+The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always true for a file<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -252,7 +252,7 @@ The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true
 
 #### 詳細
 
-The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
+The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->The `.modificationDate` property returns<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -274,7 +274,7 @@ The `.modificationDate` property returns <!-- REF #document.modificationDate.Sum
 
 ##### 詳細
 
-The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->The `.modificationTime` property returns<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
 このプロパティは **読み取り専用** です。
 
@@ -345,7 +345,7 @@ The `.original` property returns <!-- REF #document.original.Summary -->the targ
 
 #### 詳細
 
-The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
+The `.parent` property returns <!-- REF #document.parent.Summary -->The `.parent` property returns<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
@@ -367,7 +367,7 @@ The `.parent` property returns <!-- REF #document.parent.Summary -->the parent f
 
 #### 詳細
 
-The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
+The `.path` property returns <!-- REF #document.path.Summary -->The `.path` property returns<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
@@ -389,7 +389,7 @@ The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path o
 
 #### 詳細
 
-The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -443,7 +443,7 @@ The `.size` property returns <!-- REF #document.size.Summary -->the size of the 
 
 #### 詳細
 
-The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified *destinationFolder* <!-- END REF -->.
+The `.copyTo()` function <!-- REF #document.copyTo().Summary -->The `.isFolder` property returns <!-- END REF -->.
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
@@ -495,7 +495,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### 詳細
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. .
 
 **戻り値**
 
