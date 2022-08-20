@@ -16,9 +16,9 @@ MSCウィンドウを開く方法は幾つかあります。 アクセスの方�
 
 次の 2つの場所から、MSC をメインテナンスモードで開くことができます:
 
-- **標準の開くダイアログボックス**<br /> 標準のデータベースを開くダイアログボックスには **開く** ボタンに関連付けられているメニューに **Maintenance & Security Center** オプションが含まれます: ![](../assets/en/MSC/MSC_standardOpen.png)
-- **ヘルプ＞メンテナンス＆セキュリティセンター (MSC)** メニュー、または、ツールバーの **MSC** ボタンの使用 (データベースが開かれていない状態で)  
-  ![](../assets/en/MSC/mscicon.png) この機能を呼び出すと、標準のファイルを開くダイアログボックスが表示され、検査するデータベースを指定できます。 データベースは開かれません。
+- **From the standard database opening dialog box** The standard Open database dialog includes the **Maintenance Security Center** option from the menu associated with the **Open** button: ![](../assets/en/MSC/MSC_standardOpen.png)
+- **Help/Maintenance Security Center** menu or **MSC** button in the tool bar (database not open)  
+  ![](../assets/en/MSC/mscicon.png) When you call this function, a standard Open file dialog appears so that you can indicate the database to be examined. データベースは開かれません。
 
 ## 標準モードでの表示
 
