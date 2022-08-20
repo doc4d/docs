@@ -83,7 +83,7 @@ title: "$entityset"
 
  `GET  /rest/Employee/$entityset/9718A30BF61343C796345F3BE5B01CE7?$logicOperator=intersect&$otherCollection=C05A0D887C664D4DA1B38366DD21629B`
 
-共通のエンティティが存在する場合、このクエリは true を返します。 それ以外の場合は false を返します。
+共通のエンティティが存在する場合、このクエリは true を返します。 .
 
 次の例では、2つのエンティティセットのいずれかあるいは両方に含まれているエンティティすべてを格納した新しいエンティティセットを作成します:
 
