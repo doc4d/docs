@@ -9,7 +9,7 @@ Die Fehlerverwaltung erfüllt zwei Hauptanforderungen:
 
 - potenzielle Fehler und Bugs in Ihrem Code während der Entwicklungsphase herausfinden und beheben,
 - Unerwartete Fehler in Anwendungen im Einsatz abfangen und beseitigen; insbesondere können Sie Fehlermeldungen des Systems (Festplatte voll, fehlende Datei usw.) durch Ihre eigene Oberfläche ersetzen.
-> Es wird dringend empfohlen, auf 4D Server eine Fehlerverwaltungsmethode für den gesamten auf dem Server laufenden Code zu installieren. Denn solch eine Methode kann vermeiden, dass unerwartete Dialogfenster auf dem Serverrechner erscheinen, und außerdem Fehler in einer speziellen Datei für weitere Analysen protokollieren.
+> > It is highly recommended to install an error-handling method on 4D Server, for all code running on the server. Denn solch eine Methode kann vermeiden, dass unerwartete Dialogfenster auf dem Serverrechner erscheinen, und außerdem Fehler in einer speziellen Datei für weitere Analysen protokollieren.
 
 
 ## Fehler oder Status
@@ -97,6 +97,8 @@ ON ERR CALL("emptyMethod") //emptyMethod exists but is empty
 $doc:=Open document( "myFile.txt")
 If (Error=-43)
     ALERT("File not found.")
+End if
+ON ERR CALL("")
 End if
 ON ERR CALL("")
 ```
