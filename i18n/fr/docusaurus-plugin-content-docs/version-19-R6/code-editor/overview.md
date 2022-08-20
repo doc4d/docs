@@ -184,8 +184,8 @@ Pour modifier globalement les attributs des méthodes :
    -   pour désigner les méthodes dont le nom débute par..., saisissez @ en fin de chaîne. Par exemple : web@
     -   pour désigner les méthodes dont le nom contient..., saisissez @ en milieu de chaîne. Par exemple : web@write
     -   pour désigner les méthodes dont le nom se termine par..., saisissez @ en début de chaîne. Par exemple : @write
-    -   Pour désigner toutes les méthodes, il suffit de saisir @ dans la zone.\
-      **Notes :**
+    -   To designate all of the methods, just type @ in the area.\
+      **Notes:**
         -   La recherche ne tient pas compte des majuscules et des minuscules.
         -   You can enter several @ characters in the string, for example dtro_@web@pro.@
 3.  Dans la zone "Attribut à modifier", choisissez un attribut dans la liste déroulante puis cliquez sur le bouton radio **Vrai** ou **Faux** correspondant à la valeur à appliquer. **Note :** Si l'attribut "Publié dans WSDL" est défini à Vrai, il ne sera appliqué qu'aux méthodes projet qui contiennent déjà l'attribut "Web Service".
