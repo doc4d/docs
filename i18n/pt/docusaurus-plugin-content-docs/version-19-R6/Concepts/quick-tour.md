@@ -21,9 +21,9 @@ Ou poderia anexar esse código a um botão em um formulário e executar o formul
 Dados podem ser colocado ou copiados de ou em variáveis, campos, elementos arrays... Colocar dados em uma variável é chamado atribuiindo os dados a uma variável e é feito com o operador de atribuição (:=). O operador de atribuição também é usado para atribuir dados para elementos campos ou arrays.
 
 ```4d
-$MyNumber:=3 //atribui 3 a variável MyNumber  
-[Products]Size:=$MyNumber //atribui variável MyNumber ao campo [Products]Size
-arrDays{2}:="Tuesday" //atribui a string"Tuesday" ao segundo elemento arrDays MyVar:=Length("Acme") //atribui o resultado da função (4) a MyVar
+$MyNumber:=3 //assigns 3 to MyNumber variable  
+[Products]Size:=$MyNumber //assigns MyNumber variable to [Products]Size field
+arrDays{2}:="Tuesday" //assigns "Tuesday" string to the 2nd arrDays element MyVar:=Length("Acme") //assigns the result of the function (4) to MyVar
 $myDate:=!2018/01/21! //atribui uma data literal
 $myHour:=?08:12:55? //atribui uma hora literal
 ```
@@ -112,19 +112,23 @@ Por exemplo, a linha abaixo é uma declaração que mostará uma caixa de diálo
 CONFIRM("Quer realmente fechar esta conta?"; "Sím"; "Não")
 ```
 
-Um método também contém testes e loops que controlam o fluxo da execução. Os métodos 4D são compatíveis com estruturas `If... End if` e `Case of... End case`, assim como os loops: `While... End while`, `Repeat... Until`, `For... End for`, e `For each... End for each`:
+Um método também contém testes e loops que controlam o fluxo da execução. 4D methods support `If... End if` and `Case of... End case` branching structures as well as looping structures: `While... End while`, `Repeat... Until`, `For... End for`, and `For each... End for each`:
 
 O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
-For($vlChar;1;Length(vtSomeText))
- //Do something with the character if it is a TAB
- If(Character code(vtSomeText[[$vlChar]])=Tab)
-  //...
+For ($vCounter;1;100)
+/*
+comments  
+ /*
+ other comments
+ */
+*/
+...
  End for
 ```
 
-Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Além disso, pode direcionar múltiplos parâmetros consecutivos com a sintaxe ${n} onde n, expressão numérica, é o número do parâmetro. Um método pode devolver um único valor no parâmetro $0. Quando chamar um método, apenas digite seu nome:
+Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. A method can return a single value in the $0 parameter. Um método pode devolver um único valor no parâmetro $0. Quando chamar um método, apenas digite seu nome:
 
 ```4d
 $f:=New object
@@ -173,9 +177,11 @@ $vAge:=employee.children[2].age
 Note that if the object property value is an object that encapsulates a method (a formula), you need to add parenthesis () to the property name to execute the method:
 
 ```
-$f:=New object
-$f.message:=New formula(ALERT("Hello world!"))
-$f.message() //exibe "Hello world!"
+$o:=cs.myClass.new()
+$o.who:="World"
+$message:=$o.myClass.hello()  
+//$message:
+"Hello World"
 ```
 
 To access a collection element, you have to pass the element number embedded in square brackets:
@@ -231,7 +237,7 @@ A class can extend another class by using `Class extends <ClassName>`. Superclas
 
 ## Operadores
 
-When you use the language, it is rare that you will simply want a piece of data. It is more likely that you will want to do something to or with that data. You perform such calculations with operators. Operators, in general, take two pieces of data and perform an operation on them that results in a new piece of data. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3. This table shows some familiar numeric operators:
+When you use the language, it is rare that you will simply want a piece of data. It is more likely that you will want to do something to or with that data. You perform such calculations with operators. Operators, in general, take two pieces of data and perform an operation on them that results in a new piece of data. You are already familiar with many operators. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3.
 
 | Operator | Operação      | Exemplo            |
 | -------- | ------------- | ------------------ |
