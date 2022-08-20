@@ -43,7 +43,7 @@ Eine Benutzerklasse in 4D wird über eine spezifische Datei Methode (.4dm) defin
 Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
 - Der [Klassenname](identifiers.md#classes) muss mit den [Schreibregeln für Eigenschaftsnamen](identifiers.md#objekteigenschaften) konform sein.
-- Es wird zwischen Groß- und Kleinschreibung unterschieden.
+- .
 - Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle in derselben Anwendung unterschiedliche Namen verwenden.
 
 Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Datei anlegen:
@@ -395,6 +395,12 @@ Class constructor($width : Integer; $height : Integer)
 
 Function sayName()
  ALERT("Hi, I am a "+This.name+".")
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+
+ $0:=(This.height)*(This.width)
 
 // Function definition
 Function getArea()
