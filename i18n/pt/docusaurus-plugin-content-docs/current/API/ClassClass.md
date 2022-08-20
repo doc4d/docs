@@ -36,7 +36,7 @@ Quando uma classe de usuário for [definida](Concepts/classes.md#class-definitio
 
 #### Descrção
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Nomes de classe diferenciam minúsculas de maiúsculas.
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D. Class` object<!-- END REF -->. Nomes de classe diferenciam minúsculas de maiúsculas.
 
 Essa propriedade é**apenas leitura**.
 
@@ -127,7 +127,7 @@ $person:=cs. Person.new("John";"Doe";40)
 
 #### Descrção
 
-The `.superclass` property <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. Uma superclasse pode ser um `4D. Class` objeto ou um objeto `cs.className`. Se a classe não tiver uma classe pai, a propriedade retorna **null**.
+The `.superclass` property <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D. Class` object, or a `cs.className` object. Se a classe não tiver uma classe pai, a propriedade retorna **null**.
 
 Uma superclasse de uma classe de usuário é declarada em uma classe usando a palavra chave [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname).
 
