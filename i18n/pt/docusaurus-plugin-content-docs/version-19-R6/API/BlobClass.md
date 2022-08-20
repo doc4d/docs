@@ -29,16 +29,16 @@ The Blob class lets you create and manipulate [blob objects](../Concepts/dt_blob
 
 <!-- REF #4D.Blob.new().Params -->
 
-| Parameter  | Tipo             |    | Descrção                                 |
-| ---------- | ---------------- |:--:| ---------------------------------------- |
-| blob       | Blob or 4D. Blob | -> | Blob to copy                             |
-| Resultados | 4D. Blob         | <- | New 4D.Blob  |<!-- END REF -->
+| Parameter  | Tipo             |    | Descrção                                  |
+| ---------- | ---------------- |:--:| ----------------------------------------- |
+| blob       | Blob or 4D. Blob | -> | Blob to copy                              |
+| Resultados | 4D. Blob         | <- | New 4D. Blob  |<!-- END REF -->
 
 |
 
 #### Descrção
 
-`4D.Blob.new` <!-- REF #4D.Blob.new().Summary -->creates a new `4D.Blob` object optionally encapsulating a copy of the data from another blob (scalar blob or `4D.Blob`)<!-- END REF -->.
+`4D. Blob.new` <!-- REF #4D.Blob.new().Summary -->creates a new `4D. Blob` object optionally encapsulating a copy of the data from another blob (scalar blob or `4D. Blob`)<!-- END REF -->.
 
 If the `blob` parameter is omitted, the method returns an empty 4D. Blob.
 
@@ -50,7 +50,7 @@ If the `blob` parameter is omitted, the method returns an empty 4D. Blob.
 
 #### Descrção
 
-The `.size` property <!-- REF #Blob.size.Summary -->returns the size of a `4D.Blob`, expressed in bytes.<!-- END REF -->
+New `4D. <!-- REF #Blob.size.Summary -->Blob`|<!-- END REF -->
 
 ## .slice()
 
@@ -77,7 +77,7 @@ The `.size` property <!-- REF #Blob.size.Summary -->returns the size of a `4D.Bl
 
 #### Descrção
 
-`.slice()` <!-- REF #Blob.slice().Summary --> creates and returns a `4D.Blob` that references data from a subset of the blob on which it's called. The original blob is not altered.<!-- END REF -->
+`.slice()` <!-- REF #Blob.slice().Summary --> creates and returns a `4D. Blob` that references data from a subset of the blob on which it's called. The original blob is not altered.<!-- END REF -->
 
 The `start` parameter is an index into the blob indicating the first byte to include in the new `4D. Blob`. If you specify a negative value, 4D treats it as an offset from the end of the blob toward the beginning. For example, -10 would be the 10th from last byte in the blob. The default value is 0. If you specify a value for start that is larger than the size of the source blob, the returned `4D. Blob`'s size is 0, and it contains no data.
 
