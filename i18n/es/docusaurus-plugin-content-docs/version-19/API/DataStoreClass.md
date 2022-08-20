@@ -61,7 +61,7 @@ Si no se encuentra ningún almacén de datos *localID*, el comando devuelve **Nu
 
 El uso de `ds` requiere que la base de datos de destino sea compatible con ORDA, como se especifica en la sección **Requisitos previos de ORDA**. Se aplican las siguientes reglas:
 
-* Un datastore sólo hace referencia a las tablas con una sola llave primaria. Un datastore sólo hace referencia a las tablas con una sola llave primaria.
+* Un datastore sólo hace referencia a las tablas con una sola llave primaria. A datastore only references tables with a single primary key.
 * Los atributos de tipo BLOB no se gestionan en el almacén de datos.
 
 #### Ejemplo 1
@@ -331,7 +331,7 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //la base está encriptada
+ If($status.isEncrypted) //the database is encrypted
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -374,7 +374,7 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 
 #### Descripción
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Esta función es útil para configurar el código genérico.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
@@ -444,7 +444,7 @@ En un almacén de datos remoto:
 
 #### Descripción
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. El registro de peticiones de ORDA debe haberse habilitado previamente mediante la función [`.startRequestLog()`](#startrequestlog).
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Esta función debe ser llamada en un 4D remoto, de lo contrario devuelve una colección vacía. Está diseñado para fines de depuración en configuraciones cliente/servidor.
 
