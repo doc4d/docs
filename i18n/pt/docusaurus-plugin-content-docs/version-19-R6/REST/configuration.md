@@ -83,6 +83,6 @@ Para eliminar a exposição REST de um campo:
 
 1. Exibar o inspetor de Campo no editor de Estruturas e selecione o campo a modificar.
 
-2. Desmarque a opção **Expor como recurso REST** para o campo. ![alt-text](../assets/en/REST/field.png) Repita esta operação para cada campo cuja exposição deva modificar-se.
+2. Desmarque a opção **Expor como recurso REST** para o campo. ![alt-text](../assets/en/REST/field.png) Repeat this for each field whose exposure needs to be modified.
 
 > Para que um campo seja accessível a través de REST, a tabela pai também deve ser. Se a tabela pai não estiver exposta, nenhum dos campos estará, independente de seu estado.
