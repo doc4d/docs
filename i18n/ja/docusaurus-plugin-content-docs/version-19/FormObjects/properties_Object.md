@@ -184,7 +184,7 @@ title: オブジェクト
 
 - if you used a collection of objects, you can call `This` in the datasource expression to access each property value, for example `This.\&#060;propertyPath&#062;`.
 - if you used an entity selection, you can call `This` in the datasource expression to access each attribute value, for example  `This.\&#060;attributePath&#062;`.
-> If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling `This.value` in the datasource expression. ただし、この場合は値を編集したり、"カレントの項目" オブジェクトにアクセスすることはできません (以下参照)。<br /> 注: エンティティセレクションについての詳細については、[ORDA](https://doc.4d.com/4Dv18/4D/18/ORDA.200-4575453.ja.html) の章を参照してください。
+> If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling `This.value` in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the [ORDA](https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html) chapter.
 
 #### JSON 文法
 
