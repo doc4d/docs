@@ -201,7 +201,7 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 - また、9つの番号付きクリップボードが用意されており、コードエディターツールバーのボタンあるいはキーボードショートカットで使用します:
 
 ![](../assets/en/code-editor/clipboards-2.png)
-[環境設定オプション](Preferences/methods.md#options-1) を使用すると番号付きのクリップボードを非表示にすることができます。
+|Platform|Copy selected text to a clipboard|Paste contents of a clipboard at cursor location| |--|--|--| | **Windows** | Shift or Alt+click on clipboard icon | Ctrl+click on clipboard icon | |  |  | Ctrl+clipboard number | | **macOS** | Shift or Alt+click on clipboard icon | Cmd+click on clipboard icon | |  | Cmd+Shift+clipboard number | Cmd+clipboard number |
 
 [環境設定オプション](Preferences/methods.md#options-1) を使用すると番号付きのクリップボードを非表示にすることができます。
 
@@ -228,11 +228,11 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ![](../assets/en/code-editor/autocomplete-1.png)
 
-入力した文字に対応する候補が一つに絞り込まれた時、提案される値はグレーアウトされた状態で表示されます (この状態で **Tab** キーを押すと挿入されます): ![](../assets/en/code-editor/autocomplete-2.png) ---> ![](../assets/en/code-editor/autocomplete-3.png)
+When the characters you enter correspond to a single possibility, this suggested value appears greyed out (and is inserted if you hit the **Tab** key): ![](../assets/en/code-editor/autocomplete-2.png) ---> ![](../assets/en/code-editor/autocomplete-3.png)
 
-> **環境設定** の **メソッド** ページで、**() と閉じる } ) ] " を自動で挿入** オプションをチェックしている場合、4D はひとつ以上の必須の引数を持つ4D コマンド、キーワード、プロジェクトメソッドの後ろに (提案、あるいは補完を受け入れたあとに) 自動的に **()** を追加します: ![](../assets/en/code-editor/insert-and-closing-1.png) -> ![](../assets/en/code-editor/insert-and-closing-2.png)
+> If you checked the **Insert () and closing } ) ] "** option in the **Methods** page of the **Preferences**, 4D will also automatically add **()** after a 4D command, keyword or project method that requires one or more mandatory arguments (after accepting a suggestion or completion): ![](../assets/en/code-editor/insert-and-closing-1.png) -> ![](../assets/en/code-editor/insert-and-closing-2.png)
 
-自動補完機能は、コード構造 (フロー制御。例: If..End if, For each...End for each) などにも使用できます: 構造の最初の部分を入力し始めると、コードエディターは自動的に終わりの部分を提示します: ![](../assets/en/code-editor/autocomplete-code-structures.png)
+Autocompletion also works with code structures (e.g. If..End if, For each...End for each): when you enter the first part of the structure, the Code Editor will automatically suggest the closing part:![](../assets/en/code-editor/autocomplete-code-structures.png)
 
 複数の候補がある場合、**Tab** キーを押すと 4D はそのポップアップリストを表示します:
 
@@ -359,14 +359,14 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 - **エラー**: ブレークポイントエリアにエラーアイコンが表示されているとき、マウスをアイコンに重ねるとエラーの内容が表示されます ([シンタックスエラーのチェックと訂正](#シンタックスエラーのチェックと訂正) 参照)。
 
-- **4Dコマンドの説明**: 4Dコマンド名や変数にカーソルを置くと、ステータスバーにコマンドのシンタックスが表示されます。 引数を入力または選択すると、このエリアで現在の引数が **太字**で表示されます: ![](../assets/en/code-editor/status-bar-bold.png) 4Dコマンド上にマウスを重ねると、コマンドシンタックスと簡単な説明がヘルプTip に表示されます。 ![](../assets/en/code-editor/status-bar-description.png)
+- **4Dコマンドの説明**: 4Dコマンド名や変数にカーソルを置くと、ステータスバーにコマンドのシンタックスが表示されます。 If you write or select a parameter, the area shows the current parameter in **bold**: ![](../assets/en/code-editor/status-bar-bold.png) When you move the mouse over a 4D command, a help tip provides the command syntax along with a brief description of how it works. ![](../assets/en/code-editor/status-bar-description.png)
 
 - **変数型と詳細**: 変数にマウスを重ねると、その変数の型と (メソッド内で明示的に宣言されている場合)、付随したコメントが (あれば) ヘルプTip に表示されます。 ![](../assets/en/code-editor/variable-type.png)
 
 - **プロジェクトメソッド**: プロジェクトメソッドまたはクラス関数にマウスを重ねると、以下の内容がヘルプTip に表示されます:
 
   - エクスプローラーで設定されたコメント、
-  - または、メソッドまたはクラス関数の先頭コメント (// で始まる行、あるいは /*...*/ コメントブロック)。 メソッドの先頭に、そのメソッドや引数の説明をコメント形式で記述するのは一般的な方法です。 エクスプローラーコメントを削除すれば、こちらの内容をヘルプTip に表示できます。 メソッドの先頭コメント: ![](../assets/en/code-editor/comments-method.png) 別のメソッドからこのメソッドを呼び出したときのヘルプTip: ![](../assets/en/code-editor/help-tip.png)
+  - または、メソッドまたはクラス関数の先頭コメント (// で始まる行、あるいは /*...*/ コメントブロック)。 メソッドの先頭に、そのメソッドや引数の説明をコメント形式で記述するのは一般的な方法です。 エクスプローラーコメントを削除すれば、こちらの内容をヘルプTip に表示できます。 Comments at the beginning of a method: ![](../assets/en/code-editor/comments-method.png) Help tip in another method: ![](../assets/en/code-editor/help-tip.png)
 
 - また、 **専用のドキュメントファイル** を `<MethodName>.md` という名前で `<package>/documentation` フォルダーに作成することも可能です。 [コードエディターでドキュメンテーションを表示する](../Project/documentation.md#コードエディターでドキュメンテーションを表示する) を参照ください。
 
@@ -448,9 +448,9 @@ Windows では、日本語や中国語を入力するために IME (Input Method
 
 ループや条件文の中にあるコードを折りたたんだり展開したりして、メソッドの可読性を高めることができます:
 
-- 展開されたコード:  ![](../assets/en/code-editor/expanded-code.png)
+- Expanded code: ![](../assets/en/code-editor/expanded-code.png)
 
-- 折りたたまれたコード: ![](../assets/en/code-editor/collapsed-code.png)
+- Collapsed code: ![](../assets/en/code-editor/collapsed-code.png)
 
 展開ボタン [...] の上にマウスを重ねるとヘルプTip が表示され、非表示になっているコードの先頭部分を見ることができます。
 
