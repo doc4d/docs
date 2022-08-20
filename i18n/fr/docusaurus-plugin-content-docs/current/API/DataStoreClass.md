@@ -368,7 +368,7 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
 
  $status:=ds.encryptionStatus()
 
- If($status.isEncrypted) //la base est chiffrée
+ If($status.isEncrypted) //the database is encrypted
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -377,6 +377,9 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
        End if
     End for each
     ALERT(String($vcount)+" encrypted table(s) in this datastore.")
+ Else
+    ALERT("This database is not encrypted.")
+ End if
  Else
     ALERT("This database is not encrypted.")
  End if
@@ -485,7 +488,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
 
 **Objet retourné**
 
@@ -607,7 +610,7 @@ Voir l'exemple de la section [.setRemoteContextInfo()](#example-1-3).
 
 #### Description
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. L'enregistrement des requêtes ORDA doit avoir été préalablement activé à l'aide de la fonction [`.startRequestLog()`](#startrequestlog).
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Cette fonction doit être appelée sur un client 4D distant, sinon elle retourne une collection vide. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
