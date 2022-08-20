@@ -264,7 +264,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 
 #### 詳細
 
-`.method` プロパティは、 <!-- REF #4D.HTTPRequest.method.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `method` を格納します。<!-- END REF -->. (省略された場合は "GET")
+`.method` プロパティは、 <!-- REF #4D.HTTPRequest.method.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `method` を格納します。<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -316,7 +316,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 
 #### 詳細
 
-`.returnResponseBody` プロパティは、 <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `returnResponseBody` を格納します<!-- END REF -->. (省略された場合は true)。
+`.returnResponseBody` プロパティは、 <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `returnResponseBody` を格納します<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -341,7 +341,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 
 > この関数はスレッドセーフです。
 
-`.terminate()` 関数は、 <!-- REF #4D.HTTPRequest.terminate().Summary -->HTTPリクエストを中止します。<!-- END REF -->. また、`onTerminate` イベントをトリガーします。
+`.terminate()` 関数は、 <!-- REF #4D.HTTPRequest.terminate().Summary -->HTTPリクエストを中止します。<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -369,7 +369,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 
 #### 詳細
 
-`.timeout` プロパティは、 <!-- REF #4D.HTTPRequest.timeout.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `timeout` を格納します<!-- END REF -->. (省略された場合は未定義)。
+`.timeout` プロパティは、 <!-- REF #4D.HTTPRequest.timeout.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `timeout` を格納します<!-- END REF -->. .
 
 <!-- END REF -->
 
