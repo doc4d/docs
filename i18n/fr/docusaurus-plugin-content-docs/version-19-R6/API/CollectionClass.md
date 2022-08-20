@@ -183,7 +183,7 @@ Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge 
 * heure (stockée en nombre de milliseconds - réel)
 * Null
 * shared object(*)
-* shared collection(*) > Contrairement aux collections standard (non partagées), les collections partagées ne prennent pas en charge les images, les pointeurs et les objets ou collections non partagés.
+* shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > Cette fonction modifie la collection d'origine.
 
 (*)When a shared object or collection is added to a shared collection, they share the same*locking identifier*. Pour plus d'informations sur ce point, reportez-vous au manuel **Concepts du langage 4D**.
@@ -319,7 +319,7 @@ $vSize:=$col.length //$vSize=0
 
 #### Description
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. A la différence de la fonction `.insert()`, `.combine()` ajoute chaque valeur de *col2* dans la collection d'origine, et non en tant qu'élément unique de collection.
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
 > Cette fonction modifie la collection d'origine.
 
 Par défaut, les éléments de *col2* sont ajoutés à la fin de la collection d'origine. Vous pouvez passer dans *index* le numéro de l'élément après lequel vous souhaitez que les éléments de *col2* soient insérés dans la collection.
@@ -982,7 +982,7 @@ Vous désignez le code de rétroappel (callback) à exécuter pour filtrer les �
 * *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
 * *methodName*, le nom d'une méthode projet (texte).
 
-La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). La callback peut effectuer n'importe quel test, avec ou sans le(s) paramètre(s) et doit retourner **true** pour chaque élément remplissant la condition et donc, devant être ajouté à la nouvelle collection. Elle reçoit un `objet` en premier paramètre ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback is called with the parameter(s) passed in *param* (optional). Elle reçoit un `objet` en premier paramètre ($1).
 
 La callback reçoit les paramètres suivants :
 
@@ -1062,7 +1062,7 @@ Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les 
 * *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
 * *methodName*, le nom d'une méthode projet (texte).
 
-La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). La callback peut effectuer n'importe quel test, avec ou sans le(s) paramètre(s) et doit retourner **true** pour le premier élément remplissant le test. Elle reçoit un `objet` en premier paramètre ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback is called with the parameter(s) passed in *param* (optional). Elle reçoit un `objet` en premier paramètre ($1).
 
 La callback reçoit les paramètres suivants :
 
@@ -1148,7 +1148,7 @@ Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les 
 * *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
 * *methodName*, le nom d'une méthode projet (texte).
 
-La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). La callback peut effectuer n'importe quel test, avec ou sans le(s) paramètre(s) et doit retourner **true** pour le premier élément remplissant le test. Elle reçoit un `objet` en premier paramètre ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback is called with the parameter(s) passed in *param* (optional). Elle reçoit un `objet` en premier paramètre ($1).
 
 La callback reçoit les paramètres suivants :
 
@@ -1518,7 +1518,7 @@ Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les 
 * *formula* (syntaxe recommandée), un [objet formule](FunctionClass.md) qui peut encapsuler toute expression exécutable, y compris des fonctions et des méthodes projet ;
 * *methodName*, le nom d'une méthode projet (texte).
 
-La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). Le callback peut effectuer n'importe quelle opération, avec ou sans le(s) paramètre(s) et doit retourner une nouvelle valeur transformée à ajouter à la collection résultante. Elle reçoit un `objet` en premier paramètre ($1).
+La callback est appelée avec le(s) paramètre(s) passés dans *param* (facultatif). The callback is called with the parameter(s) passed in *param* (optional). Elle reçoit un `objet` en premier paramètre ($1).
 
 La callback reçoit les paramètres suivants :
 
@@ -2044,10 +2044,6 @@ Cet exemple retourne les personnes dont le nom contient "in" :
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
- $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
-
- $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
- $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 Cet exemple retourne des personnes dont le nom ne commence pas par une chaîne d'une variable (saisie par l'utilisateur, par exemple) :
@@ -2076,7 +2072,7 @@ Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`.
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si la date du jour est 01/10/2018 si la date du jour est 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 si la date du jour est 01/10/2018
 ```
 
 #### Exemple 3
@@ -2199,7 +2195,7 @@ The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or
 > Cette fonction modifie la collection d'origine.
 
 La fonction `.remove()` <!-- REF #collection.remove().Summary -->supprime un ou plusieurs élément(s) de la position d'*index* spécifiée dans la collection et retourne la collection modifiée<!-- END REF -->.
-> Cette fonction ne modifie pas la collection d'origine. Si *startFrom* < 0, la fin de la collection est considérée comme point de départ du calcul de la position (*startFrom:=startFrom+length*).
+> Cette fonction ne modifie pas la collection d'origine. If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 * Si *index* < 0, il est recalculé comme *index:=index+lenth* (il est considéré comme le décalage par rapport à la fin de la collection).
 * Si la valeur recalculée est négative, *index* prend la valeur 0.
