@@ -165,7 +165,7 @@ Webサイト管理用の URL を使用して、サーバー上に公開してい
 
 #### CLF/DLF
 
-それぞれのリクエストが行単位でファイル内に表示されます: *host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length*。 各フィールドはスペースによって区切られ、各行は CR/LF シーケンス (character 13、character 10) で終ります。
+Each line of the file represents a request, such as: *host rfc931 user \[DD/MMM/YYYY:HH:MM:SS] "request" state length* Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
 
 DLF (Combined Log Format) フォーマットは CLF (Common Log Format) フォーマットと類似していて、まったく同じ構造を使用します。 さらに、各リクエストの最後に2つのHTTPフィールド、Referer と User-agent を追加します。 CLF/DLF フォーマット (カスタマイズ不可) についての説明です:
 
@@ -244,8 +244,8 @@ logweb.txt の自動バックアップパラメーターは、ストラクチャ
 
 *   **X 日ごと**: 1日単位でバックアップをプログラムする際、このオプションを使用します。 バックアップを毎日実行するには、1を入力します。 このオプションをチェックすると、バックアップの開始時間を指定しなければなりません。
 
-*   **X 週ごと**: 1週間単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 このオプションをチェックすると、バックアップを開始する曜日と時間を指定しなければなりません。 複数の曜日を選択することもできます。
+*   **X 週ごと**: 1週間単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
 
-*   **X 月ごと**: 1ヶ月単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎月バックアップをおこなうには 1 と設定します。 たとえば、毎月バックアップをおこなうには 1 と設定します。
+*   **X 月ごと**: 1ヶ月単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎月バックアップをおこなうには 1 と設定します。 Enter 1 if you want to perform a monthly backup.
 
 *   **X MB** (サイズ指定): カレントのリクエストログのファイルサイズに基づいてバックアップをプログラムする際、このオプションを使用します。 ファイルが指定サイズに達すると、バックアップが自動的に起動します。 サイズ制限は 1、10、100 または 1000MB ごとに設定可能です。
