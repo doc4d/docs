@@ -236,7 +236,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. Sinon, elle retourne false.
+The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. .
 
 Sous Windows, `.isPackage` retourne toujours **false**.
 
@@ -359,7 +359,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
+The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. .
 
 Si le dossier n'a pas de parent (racine), la valeur nulle est retournée.
 
@@ -385,7 +385,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
+The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. .
 
 Cette propriété est en **lecture seule**.
 
@@ -563,7 +563,7 @@ Vous souhaitez savoir s'il y a des fichiers invisibles dans le dossier de la bas
  $all:=Folder(fk database folder).files()
  $noInvisible:=Folder(fk database folder).files(fk ignore invisible)
  If($all.length#$noInvisible.length)
-    ALERT("Il y a des fichiers invisibles dans le dossier de la base.")
+    ALERT("Database folder contains hidden files.")
  End if
  End if
 ```
