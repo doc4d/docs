@@ -64,7 +64,7 @@ La propriété JSON `startPoint` définit à partir de quelle coordonnée la lig
         "strokeDashArray": "6 2" //pointillé
         }
 ```
-Résultat : ![](../assets/en/FormObjects/shape_line1.png)
+Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 
 ```
@@ -78,7 +78,7 @@ Résultat : ![](../assets/en/FormObjects/shape_line1.png)
         "strokeDashArray": "6 2" //pointillé
         }
 ```
-Résultat : ![](../assets/en/FormObjects/shape_line2.png)
+Result: ![](../assets/en/FormObjects/shape_line2.png)
 
 
 
