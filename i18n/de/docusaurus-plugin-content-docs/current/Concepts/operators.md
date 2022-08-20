@@ -270,10 +270,6 @@ $beverage:=($age>=21) ? "Beer" : "Juice"
 
 ALERT($beverage) // "Beer" "Beer" : "Juice"
 
-ALERT($beverage) // "Beer" "Beer" : "Juice"
-
-ALERT($beverage) // "Beer" "Beer" : "Juice"
-
 ALERT($beverage) // "Beer"
 ```
 
