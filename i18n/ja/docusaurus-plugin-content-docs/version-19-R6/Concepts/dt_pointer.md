@@ -194,11 +194,11 @@ takeTwo(->[myTable]myField;->$MyVar)
 
 各行について見ていきましょう:
 
-- $MyVar:="Hello" --> この行は、変数 $MyVar に "Hello" という文字列を代入しています。
-- $PointerOne:=->$MyVar --> 変数 $PointerOne に、変数 $MyVar へのポインターを代入します。
-- $PointerTwo:=->$PointerOne --> 新たな変数 $PointerTwo に、$MyVar を参照する $PointerOne へのポインターを代入します。
-- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> は $PointerOne を示し、$PointerOne は $MyVarを示します。 つまり、($PointerTwo->)-> は、$MyVar を示しています。 結果として、文字列 "Goodbye" が $MyVar に代入されます。
-- ALERT (($PointerTwo->)->) --> 先の説明と同様に $PointerTwo-> は $PointerOne を示し、$PointerOne は $MyVarを示しています。 つまり、($PointerTwo->)-> は、$MyVar を示しています。 結果としてアラートボックスには $MyVar の内容が表示されます。
+- $MyVar:="Hello" --> This line puts the string "Hello" into the variable $MyVar.
+- $PointerOne:=->$MyVar --> $PointerOne now contains a pointer to $MyVar.
+- $PointerTwo:=->$PointerOne --> $PointerTwo (a new variable) contains a pointer to $PointerOne, which in turn points to $MyVar.
+- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. つまり、($PointerTwo->)-> は、$MyVar を示しています。 結果として、文字列 "Goodbye" が $MyVar に代入されます。
+- ALERT (($PointerTwo->)->) --> Same thing: $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. つまり、($PointerTwo->)-> は、$MyVar を示しています。 Therefore ($PointerTwo->)-> references the contents of $MyVar.
 
 以下の例では、$MyVar に "Hello" が代入されます:
 ```4d
