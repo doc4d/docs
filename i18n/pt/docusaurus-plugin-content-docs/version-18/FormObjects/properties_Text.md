@@ -295,9 +295,9 @@ Specifies an expression or a variable which will be evaluated for each row displ
 No método de projeto *Color*, entre o código abaixo:
 
 ```4d
-//Método Cor
-//Define a cor da fonte para certas linhas e a cor de fundo para uma coluna específica : C_OBJECT($0)
-Form.meta:=New object If(This.ID>5) //ID é um atributo de objetos/entidades de uma coleção
+//Color method
+//Sets font color for certain rows and the background color for a specific column: C_OBJECT($0)
+Form.meta:=New object If(This.ID>5) //ID is an attribute of collection objects/entities
   Form.meta.stroke:="purple"
   Form.meta.cell:=New object("Column2";New object("fill";"black"))
 Else
