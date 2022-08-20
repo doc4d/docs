@@ -29,11 +29,8 @@ The HTML login page:
 <html><body bgcolor="#ffffff">
 
 <div id="demo">
- <FORM name="myForm">
-Email: <INPUT TYPE=TEXT NAME=userId VALUE=""><br/>
-Password: <INPUT TYPE=TEXT NAME=password VALUE=""><br/>
-<button type="button" onclick="onClick()">
-Login
+ <FORM name="myForm"> Email: <INPUT TYPE=TEXT NAME=userId VALUE=""><br/> Password: <INPUT TYPE=TEXT NAME=password VALUE=""><br/>
+<button type="button" onclick="onClick()"> Login
 </button>
 <div id="authenticationFailed" style="visibility:hidden;">Authentication failed</div>
 </FORM>
@@ -74,20 +71,18 @@ When the login page is sent to the server, the `On REST Authentication` database
  //On REST Authentication
 
 #DECLARE($userId : Text; $password : Text) -> $Accepted : Boolean
-var $sales : cs.SalesPersonsEntity
+var $sales : cs. SalesPersonsEntity
 
 $Accepted:=False
 
- //A '/rest' URL has been called with headers username-4D and password-4D
-If ($userId#"")
-    $sales:=ds.SalesPersons.query("email = :1"; $userId).first()
+ //A '/rest' URL has been called with headers username-4D and password-4D If ($userId#"")
+    $sales:=ds. SalesPersons.query("email = :1"; $userId).first()
     If ($sales#Null)
         If (Verify password hash($password; $sales.password))
             fillSession($sales)
             $Accepted:=True
         End if 
-    End if 
-End if 
+    End if End if 
 ```
 
 > As soon as it has been called and returned `True`, the `On REST Authentication` database method is no longer called in the session.
