@@ -52,7 +52,7 @@ Hay varios tipos de list box, con sus propios comportamientos y propiedades espe
 * **Arrays**: cada columna está ligada a un array 4D. Los list boxes basados en arrays pueden mostrarse como [cajas de lista jerárquicas](listbox_overview.md#hierarchical-list-boxes).
 * **Selección** (**Selección actual** o **Selección con nombre**): cada columna está vinculada a una expresión (por ejemplo, un campo) que se evalúa para cada registro de la selección.
 * **Collection or Entity selection**: each column is bound to an expression which is evaluated for every element of the collection or every entity of the entity selection.
-> > > > > It is not possible to combine different list box types in the same list box object. La fuente de datos se define cuando se crea el list box. Entonces ya no es posible modificarlo por programación.
+> > It is not possible to combine different list box types in the same list box object. La fuente de datos se define cuando se crea el list box. Entonces ya no es posible modificarlo por programación.
 
 ### Gestión de list boxes
 
@@ -98,7 +98,7 @@ Each element of the collection or each entity is available as an object that can
 
 When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.
 
-When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the *Collections* theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por ejemplo:
+When the data source is a collection, any modifications made in the list box values are reflected in the collection. When the data source is a collection, any modifications made in the list box values are reflected in the collection. Por ejemplo:
 
 ```4d
 myCol:=myCol.push("new value") //mostrar el nuevo valor en el list box
@@ -575,7 +575,7 @@ Si este list box se muestra en forma jerárquica (los tres primeros arrays está
 
 Los arrays no se ordenan antes de construir la jerarquía. Si, por ejemplo, un array contiene los datos AAABBAACC, la jerarquía obtenida será:
 
-    > A B A C
+    > &gt; A B A C
 
 Para desplegar o contraer un "nodo" jerárquico, basta con hacer clic en él. If you **Alt+click** (Windows) or **Option+click** (macOS) on the node, all its sub-elements will be expanded or collapsed as well. Estas operaciones también pueden realizarse por programación utilizando los comandos `LISTBOX EXPAND` y `LISTBOX COLLAPSE`.
 
@@ -709,10 +709,7 @@ the value type (mandatory): text, color, event, etc. the value itself (optional)
 ARRAY OBJECT(obColumn;0) //column array
  C_OBJECT($ob) //first element
  OB SET($ob;"valueType";"text") //defines the value type (mandatory)
- OB SET($ob;"value";"Hello World!") //define el valor
- APPEND TO ARRAY(obColumn;$ob) //define el valor
- APPEND TO ARRAY(obColumn;$ob) //define el valor
- APPEND TO ARRAY(obColumn;$ob) //define el valor
+ OB SET($ob;"value";"Hello World!") //defines the value
  APPEND TO ARRAY(obColumn;$ob) //define el valor
  APPEND TO ARRAY(obColumn;$ob)  
 ```
@@ -812,35 +809,11 @@ Los valores de las celdas se almacenan en el atributo "valor". Este atributo se 
  APPEND TO ARRAY(obColumn;$ob1)
  APPEND TO ARRAY(obColumn;$ob2)
  APPEND TO ARRAY(obColumn;$ob3)
- ARRAY OBJECT(obColumn;0) //array columna 
- C_OBJECT($ob1)
- $entry:="Hello world!"
- ARRAY OBJECT(obColumn;0) //array columna 
- C_OBJECT($ob1)
- $entry:="Hello world!"
- ARRAY OBJECT(obColumn;0) //array columna 
+ ARRAY OBJECT(obColumn;0) //column array
  C_OBJECT($ob1)
  $entry:="Hello world!"
  OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // si el usuario introduce un nuevo valor, $entry contendrá el valor editado
- C_OBJECT($ob2)
- OB SET($ob2;"valueType";"real")
- OB SET($ob2;"value";2/3)
- C_OBJECT($ob3)
- OB SET($ob3;"valueType";"boolean")
- OB SET($ob3;"value";True)
-
- APPEND TO ARRAY(obColumn;$ob1)
- APPEND TO ARRAY(obColumn;$ob2)
- APPEND TO ARRAY(obColumn;$ob3)
- ARRAY OBJECT(obColumn;0) //array columna 
- C_OBJECT($ob1)
- $entry:="Hello world!"
- ARRAY OBJECT(obColumn;0) //array columna 
- C_OBJECT($ob1)
- $entry:="Hello world!"
- OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // si el usuario introduce un nuevo valor, $entry contendrá el valor editado
+ OB SET($ob1;"value";$entry) // if the user enters a new value, $entry will contain the edited value
  C_OBJECT($ob2)
  OB SET($ob2;"valueType";"real")
  OB SET($ob2;"value";2/3)
