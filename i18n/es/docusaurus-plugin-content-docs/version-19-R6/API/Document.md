@@ -21,7 +21,7 @@ title: Document Class
 
 #### Descripción
 
-The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
+The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->The `.creationDate` property returns<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 <!-- END REF -->
@@ -175,7 +175,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
+The `.isFile` property returns <!-- REF #document.isFile.Summary -->The `.copyTo()` function<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
@@ -197,7 +197,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
+The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always true for a file<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
@@ -252,7 +252,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
+The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->The `.modificationDate` property returns<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
@@ -274,7 +274,7 @@ Esta propiedad es **de sólo lectura**.
 
 ##### Descripción
 
-The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->The `.modificationTime` property returns<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
 Esta propiedad es **de sólo lectura**.
 
@@ -345,7 +345,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. Si la ruta representa una filesystem (por ejemplo, "/DATA/"), se devuelve el filesystem.
+The `.parent` property returns <!-- REF #document.parent.Summary -->The `.parent` property returns<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
@@ -367,7 +367,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. Si la ruta representa un filesystem (por ejemplo, "/DATA/"), se devuelve el filesystem.
+The `.path` property returns <!-- REF #document.path.Summary -->The `.path` property returns<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
@@ -389,7 +389,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
@@ -442,7 +442,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified *destinationFolder* <!-- END REF -->.
+The `.copyTo()` function <!-- REF #document.copyTo().Summary -->The `.isFolder` property returns <!-- END REF -->.
 
 La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
@@ -494,7 +494,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### Descripción
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. .
 
 **Valor devuelto**
 
