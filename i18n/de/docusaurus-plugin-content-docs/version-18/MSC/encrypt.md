@@ -19,10 +19,10 @@ Bei jeder Operation Verschlüsselung/Entschlüsselung wird ein neuer Ordner ange
 Beim ersten Verschlüsseln Ihrer Daten über das MSC sind folgende Schritte erforderlich:
 
 1. Markieren Sie im Struktureditor über das Inspektorfenster für jede Tabelle, die verschlüsselbar sein soll, die Eigenschaft **Verschlüsselbar**. Weitere Informationen dazu finden Sie im Abschnitt "Tabelleneigenschaften".
-2. Öffnen Sie die Seite Verschlüsseln des MSC. Haben Sie für keine Tabelle die Eigenschaft **Verschlüsselbar** gewählt, erscheint auf der Seite folgende Meldung: ![](../assets/en/MSC/MSC_encrypt1.png) Andernfalls erscheint diese Meldung: ![](../assets/en/MSC/MSC_encrypt2.png) Das bedeutet, dass der Status **Verschlüsselbar** für mindestens eine Tabelle geändert wurde und die Datendatei noch nicht verschlüsselt ist. **Note:**The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).
-3. Klicken Sie auf die Schaltfläche Verschlüsseln.  
+2. Öffnen Sie die Seite Verschlüsseln des MSC. If you open the page without setting any tables as **Encryptable**, the following message is displayed in the page: ![](../assets/en/MSC/MSC_encrypt1.png) Otherwise, the following message is displayed: ![](../assets/en/MSC/MSC_encrypt2.png) This means that the **Encryptable** status for at least one table has been modified and the data file still has not been encrypted. **Note:**The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).
+3. Click on the Encrypt picture button.  
    ![](../assets/en/MSC/MSC_encrypt3.png)  
-   Sie erhalten ein Dialogfenster zum Eingeben einer Passphrase für Ihre Datendatei: ![](../assets/en/MSC/MSC_encrypt4.png) Die Passphrase dient zum Generieren des Verschlüsselungscode für die Daten. Eine Passphrase ist eine sicherere Version als ein Kennwort, da sie eine größere Anzahl Zeichen enthalten kann. Sie können beispielsweise einen kompletten Satz eingeben, wie "Wir kommen alle nach Massenhausen" oder "Meine 1. große Passphrase!!" Der Indikator für die Sicherheitsstufe zeigt an, wie hoch die eingegebene Passphrase bewertet wird: ![](../assets/en/MSC/MSC_encrypt5.png) (komplett grün ist die höchste Stufe)
+   You will be prompted to enter a passphrase for your data file: ![](../assets/en/MSC/MSC_encrypt4.png) The passphrase is used to generate the data encryption key. Eine Passphrase ist eine sicherere Version als ein Kennwort, da sie eine größere Anzahl Zeichen enthalten kann. Sie können beispielsweise einen kompletten Satz eingeben, wie "Wir kommen alle nach Massenhausen" oder "Meine 1. große Passphrase!!" The security level indicator can help you evaluate the strength of your passphrase: ![](../assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level)
 4. Geben Sie zum Bestätigen Ihre gesicherte Passphrase ein.
 
 Dann wird der Prozess zum Verschlüsseln gestartet. Wurde das MSC im Standardmodus geöffnet, wird die Anwendung geschlossen und erneut im Wartungsmodus geöffnet.
@@ -35,7 +35,7 @@ War der Prozess zum Verschlüsseln erfolgreich, zeigt die Seite Verschlüsseln S
 
 ## Wartungsoperationen beim Verschlüsseln
 
-Beim Verschlüsseln einer Anwendung (siehe oben) bietet die Seite Verschlüsseln verschiedene Möglichkeiten für standardmäßige Operationen. ![](../assets/en/MSC/MSC_encrypt6.png)
+When a database is encrypted (see above), the Encrypt page provides several encryption maintenance operations, corresponding to standard scenarios. ![](../assets/en/MSC/MSC_encrypt6.png)
 
 ### Den aktuellen Verschlüsselungscode für Daten liefern
 
@@ -60,7 +60,7 @@ Diese Operation ist hilfreich, wenn der Status **Verschlüsselbar** für eine od
 1. Markieren Sie die Option **Daten mit dem aktuellen Schlüssel wieder verschlüsseln**.
 2. Geben Sie den aktuellen Verschlüsselungscode für Daten ein.
 
-Die Datendatei wird erneut ordnungsgemäß mit dem aktuellen Schlüssel verschlüsselt und es erscheint eine Meldung als Bestätigung: ![](../assets/en/MSC/MSC_encrypt8.png)
+The data file is properly re-encrypted with the current key and a confirmation message is displayed: ![](../assets/en/MSC/MSC_encrypt8.png)
 
 ### Passphrase verändern und Daten erneut verschlüsseln
 
@@ -68,7 +68,7 @@ Diese Operation bietet sich an, wenn Sie Ihren aktuellen Verschlüsselungscode f
 
 1. Wählen Sie die Option **Ändern Sie Ihre Passphrase und verschlüsseln Sie die Daten erneut**.
 2. Geben Sie den aktuellen Verschlüsselungscode für Daten ein.
-3. Geben Sie die neue Passphrase ein. Für zusätzliche Sicherheit werden Sie aufgefordert, diese ein zweites Mal einzugeben: ![](../assets/en/MSC/MSC_encrypt9.png) Die Datendatei wird mit dem neuen Schlüssel verschlüsselt und es erscheint eine Meldung als Bestätigung. ![](../assets/en/MSC/MSC_encrypt8.png)
+3. Enter the new passphrase (for added security, you are prompted to enter it twice): ![](../assets/en/MSC/MSC_encrypt9.png) The data file is encrypted with the new key and the confirmation message is displayed. ![](../assets/en/MSC/MSC_encrypt8.png)
 
 ### Alle Daten entschlüsseln
 
@@ -77,7 +77,7 @@ Diese Operation entfernt jede Verschlüsselung aus der Datendatei. Sollen Ihre D
 1. Klicken Sie auf die Option **Alle Daten entschlüsseln**.
 2. Geben Sie den aktuellen Verschlüsselungscode für Daten ein (siehe oben unter "Den aktuellen Verschlüsselungscode für Daten liefern").
 
-Die Datendatei wird komplett entschlüsselt und es erscheint eine Meldung als Bestätigung: ![](../assets/en/MSC/MSC_encrypt10.png)
+The data file is fully decrypted and a confirmation message is displayed: ![](../assets/en/MSC/MSC_encrypt10.png)
 > Ist die Datendatei entschlüsselt, passt der Verschlüsselungsstatus der Tabellen nicht mehr zur Eigenschaft Verschlüsselbar. Um den passenden Status wiederherzustellen, müssen Sie alle Eigenschaften **Verschlüsselbar** auf der Strukturebene der Anwendungen abwählen.
 
 ## Verschlüsselungscode sichern
