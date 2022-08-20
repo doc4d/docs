@@ -21,7 +21,7 @@ title: フォームエディター
 - **マーカー**: フォームのエリアを識別する出力コントロールラインとマーカー。 この要素は、[リストフォーム](properties_FormProperties.md#フォームタイプ) タイプのフォームでのみデフォルトで表示できます。
 - **マーカーラベル**: マーカーラベル。 これは出力コントロールラインが表示されている場合のみ有効です。 この要素は、[リストフォーム](properties_FormProperties.md#フォームタイプ) タイプのフォームでのみデフォルトで表示できます。
 - **境界**: フォームの境界。 このオプションが選択されていると、アプリケーションモードで表示されるとおりに、フォームがフォームエディターに表示されます。 これによりアプリケーションモードに移動しなくてもフォームを調整しやすくなります。
-> [**サイズを決めるもの**](properties_FormSize.md#サイズを決めるもの), [**水平 マージン**](properties_FormSize.md#水平マージン) そして [**垂直 マージン**](properties_FormSize.md#垂直マージン) フォームプロパティ設定はフォーム境界に影響します。 これらの設定を使用すると、フォーム上のオブジェクトに基づいて境界を設定できます。 フォームの境界を決定する位置にオブジェクトを配置したり、サイズを変更したりすると、境界も変更されます。
+> > The [**Size Based on**](properties_FormSize.md#size-based-on), [**Hor. マージン**](properties_FormSize.md#hor-margin) そして [**垂直 マージン**](properties_FormSize.md#垂直マージン) フォームプロパティ設定はフォーム境界に影響します。 これらの設定を使用すると、フォーム上のオブジェクトに基づいて境界を設定できます。 フォームの境界を決定する位置にオブジェクトを配置したり、サイズを変更したりすると、境界も変更されます。
 
 #### デフォルト表示
 
@@ -150,7 +150,7 @@ title: フォームエディター
 
 1. プロパティリストの一番上にあるオブジェクトリストドロップダウンリストからオブジェクト名を選択します。<p>この方法では、他のオブジェクトの下に隠れているオブジェクトや、カレントウィンドウの表示領域外に置かれているオブジェクトを選択することができます。</p>
 オブジェクトの選択を解除するには、オブジェクト境界の外側をクリックするか、またはオブジェクト上で **Shift+クリック** します。 > "デザインモードを検索" の結果ウィンドウでオブジェクトをダブルクリックして選択することもできます。
-> "デザインモードを検索" の結果ウィンドウでオブジェクトをダブルクリックして選択することもできます。
+> > It is also possible to select objects by double-clicking them in the result window of ""Find in design" operation.
 
 ### 複数オブジェクトの選択
 
@@ -311,7 +311,7 @@ title: フォームエディター
 
 3. "左/右整列" や "上/下整列" エリアで、標準の均等配置アイコンをクリックします: ![](../assets/en/FormEditor/horizontalDistribution.png)<p>(標準の横均等揃えアイコン)</p><p>見本エリアには、選択結果が表示されます。</p>
 
-4. 標準の均等配置を実行するには、**プレビュー** または *適用* をクリックします。<p>この場合、4D は標準の均等配置を実行し、オブジェクトは等間隔で配置されます。</p>または:<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). このオプションはスイッチのように機能します。 均等配置チェックボックスが選択されていると、このオプションの下にあるアイコンは異なる動作をおこないます:</p>
+4. 標準の均等配置を実行するには、**プレビュー** または *適用* をクリックします。<p>この場合、4D は標準の均等配置を実行し、オブジェクトは等間隔で配置されます。</p>For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). このオプションはスイッチのように機能します。 均等配置チェックボックスが選択されていると、このオプションの下にあるアイコンは異なる動作をおこないます:</p>
 
 - 左/右整列の場合、各アイコンは次の均等配置に対応します: 選択オブジェクトの左辺、中央 (横)、右辺で均等に揃えます。
 - 上/下整列の場合、各アイコンは次の均等配置に対応します: 選択オブジェクトの上辺、中央 (縦)、下辺で均等に揃えます。
