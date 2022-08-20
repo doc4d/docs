@@ -70,7 +70,7 @@ Webページキャッシュを有効化します。 [キャッシュ](../WebServ
 
 #### キャッシュクリア
 
-いつでもページやイメージをキャッシュからクリアできます (たとえば、スタティックページを更新し、キャッシュにそれをリロードさせたい場合)。 これをおこなうには、**キャッシュクリア** ボタンをクリックします。 キャッシュは即座にクリアされます。
+いつでもページやイメージをキャッシュからクリアできます (たとえば、スタティックページを更新し、キャッシュにそれをリロードさせたい場合)。 At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). キャッシュは即座にクリアされます。
 
 > 特殊なURL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear) を使用することもできます。
 
@@ -137,7 +137,7 @@ Webプロセスの最大同時接続数の厳格な上限です。 [最大同時
 
 Webサーバーに対して適用する認証システムを設定します。 3つのオプションから選択できます:
 
-カスタムの認証 (デフォルト)<br/> BASIC認証のパスワード<br/> DIGEST認証のパスワード
+Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol
 
 **カスタムの認証** を使用することが推奨されています。 *Web 開発* ドキュメンテーションの[**認証**](../WebServer/authentication.md) の章を参照ください。
 
@@ -184,9 +184,9 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 
 -   **ログファイルなし**: このオプションが選択されると、4D はリクエストのログファイルを作成しません。
 
--   **CLF (Common Log Format)**: このオプションが選択されると、リクエストのログが CLFフォーマットで作成されます。 CLFフォーマットでは、それぞれのリクエストが行単位でファイル内に表示されます: \
+-   **CLF (Common Log Format)**: このオプションが選択されると、リクエストのログが CLFフォーマットで作成されます。 With the CLF format, each line of the file represents a request, such as:\
   host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length\
-  各フィールドはスペースによって区切られ、各行は CR/LF シーケンス (character 13、character 10) で終わります。
+  Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
 
     -   host: クライアントの IPアドレス (例: 192.100.100.10)
     -   rfc931: 4Dによって作成されない情報。 常に - (マイナス記号) です。
@@ -199,7 +199,7 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 -   state: サーバーの返答。
 -   length: 返されたデータ (HTTPヘッダー以外) のサイズまたは 0。
 
-> **注:** パフォーマンス上の理由により、操作はメモリのバッファーに 1Kbのパケットで保存されてから、ディスクに書き込まれます。 5秒間リクエストが発生しなくても、操作はディスクに書き込まれます。 state として取り得る値は以下の通り:<br/> 200: OK<br/> 204: No contents<br/> 302: Redirection<br/> 304: Not modified<br/> 400: Incorrect request<br/> 401: Authentication required<br/> 404: Not found<br/> 500: Internal error<br/> CLFフォーマットはカスタマイズされません。
+> **注:** パフォーマンス上の理由により、操作はメモリのバッファーに 1Kbのパケットで保存されてから、ディスクに書き込まれます。 5秒間リクエストが発生しなくても、操作はディスクに書き込まれます。 The possible values of state are as follows: 200: OK 204: No contents 302: Redirection 304: Not modified 400: Incorrect request 401: Authentication required 404: Not found 500: Internal error The CLF format cannot be customized.
 
 -   **DLF (Combined Log Format)**: このオプションが選択されると、リクエストログが DLFフォーマットで作成されます。 DLFフォーマットは CLFフォーマットと類似していて、まったく同じ構造を使用します。 さらに、各リクエストの最後に2つのHTTPフィールド、Referer と User-agent を追加します。
 
@@ -212,7 +212,7 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 
 -   **WLF (WebStar Log Format)**: このオプションが選択されると、リクエストログが WLFフォーマットで作成されます。 WLFフォーマットは 4D WebSTAR サーバー用として特別に開発されました。 いくつかの追加フィールドを持つ以外、EFLフォーマットと似ています。 EFLフォーマットと同様、 カスタマイズされます。
 
-**フィールドの設定**<br/> ELF (Extended Log Format) または WLF (WebStar Log Format) を選択すると、選択されたフォーマットに対して利用可能なフィールドが表示されます。 ログに含む各フィールドを選択する必要があります。 ログに含む各フィールドを選択する必要があります。
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. ログに含む各フィールドを選択する必要があります。 You will need to select each field to be included in the log.
 
 **注**: 同じフィールドを 2度選択することはできません。
 
@@ -254,8 +254,8 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 
     -   **開始時刻**: 最初のバックアップ開始時間の設定に使用します。
 -   **X 日ごと**: 1日単位でバックアップをプログラムする際、このオプションを使用します。 バックアップを毎日実行するには、1を入力します。 このオプションをチェックすると、バックアップの開始時間を指定しなければなりません。
--   **X 週ごと**: 1週間単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 このオプションをチェックすると、バックアップを開始する曜日と時間を指定しなければなりません。 複数の曜日を選択することもできます。
--   **X 月ごと**: 1ヶ月単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎月バックアップをおこなうには 1 と設定します。 たとえば、毎月バックアップをおこなうには 1 と設定します。
+-   **X 週ごと**: 1週間単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎週バックアップをおこなうには 1 と設定します。 Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
+-   **X 月ごと**: 1ヶ月単位でバックアップをプログラムする際、このオプションを使用します。 たとえば、毎月バックアップをおこなうには 1 と設定します。 Enter 1 if you want to perform a monthly backup.
 -   **X MB** (サイズ指定): カレントのリクエストログのファイルサイズに基づいてバックアップをプログラムする際、このオプションを使用します。 ファイルが指定サイズに達すると、バックアップが自動的に起動します。 サイズ制限は 1、10、100 または 1000MB ごとに設定可能です。
 
 > スケジュールされたバックアップの場合で、バックアップが開始する予定となっているときに Webサーバーが起動していないと、次回の起動において 4D はバックアップが失敗したと見なし、データベース設定で示されている適切な設定を適用します。
