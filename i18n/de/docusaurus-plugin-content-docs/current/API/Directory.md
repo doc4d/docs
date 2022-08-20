@@ -236,7 +236,7 @@ This property is **read-only**.
 
 #### Beschreibung
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. Otherwise, it returns false.
+The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. .
 
 On Windows, `.isPackage` always returns **false**.
 
@@ -359,7 +359,7 @@ This property is **read-only**.
 
 #### Beschreibung
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. .
 
 If the folder does not have a parent (root), the null value is returned.
 
@@ -385,7 +385,7 @@ This property is **read-only**.
 
 #### Beschreibung
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. .
 
 This property is **read-only**.
 
