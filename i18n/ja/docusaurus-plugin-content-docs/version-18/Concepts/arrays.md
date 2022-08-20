@@ -29,7 +29,7 @@ ARRAY INTEGER(aiAnArray;0)
 
 ## 配列要素への値の代入
 
-配列中の要素は中カッコ ({…}) を使用して参照します。 中カッコの中には数字を入れて特定の要素を指定します。この数字を要素番号といいます。 次のコードは、5つの名前を atNames という配列に入れ、それらを警告ウィンドウに表示します:
+You reference the elements in an array by using curly braces ({… }). 中カッコの中には数字を入れて特定の要素を指定します。この数字を要素番号といいます。 次のコードは、5つの名前を atNames という配列に入れ、それらを警告ウィンドウに表示します:
 
 ```4d
  ARRAY TEXT(atNames;5)
