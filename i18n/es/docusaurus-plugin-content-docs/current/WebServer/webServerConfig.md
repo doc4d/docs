@@ -339,13 +339,13 @@ Valores posibles: cadena de direcciones IP. Los formatos IPv6 (por ejemplo "2001
 
 #### Acerca de la compatibilidad con IPv6
 
-*   **No hay aviso cuando el puerto TCP está ocupado**<br/> Cuando el servidor está configurado para responder en las direcciones IP "Todas", si el puerto TCP está siendo utilizado por otra aplicación, esto no se indica cuando se inicia el servidor. De hecho, el servidor 4D no detecta ningún error en este caso porque el puerto permanece libre en la dirección IPv6. Sin embargo, no es posible acceder a ella utilizando la dirección IPv4 de la máquina, ni mediante la dirección local 127.0.0.1.
+*   **No warning when TCP port is occupied**<br/> When the server is set to respond on "Any" IP addresses, if the TCP port is being used by another application, this is not indicated when the server is started. De hecho, el servidor 4D no detecta ningún error en este caso porque el puerto permanece libre en la dirección IPv6. Sin embargo, no es posible acceder a ella utilizando la dirección IPv4 de la máquina, ni mediante la dirección local 127.0.0.1.
 
 Si su servidor 4D no parece responder en el puerto definido, puede probar la dirección [::1] en la máquina del servidor (equivalente a 127.0.0.1 para IPv6, añada [:portNum] para probar otro número de puerto). Si 4D responde, es probable que otra aplicación esté utilizando el puerto en IPv4.
 
-*   **Direcciones IPv6 mapeadas en IPv4**<br/> Para estandarizar el procesamiento, 4D ofrece una representación híbrida estándar de las direcciones IPv4 en IPv6. Estas direcciones se escriben con un prefijo de 96 bits en formato IPv6, seguido de 32 bits escritos en la notación decimal punto de IPv4. Por ejemplo, ::ffff:192.168.2.34 representa la dirección IPv4 192.168.2.34.
+*   **IPv4-mapped IPv6 addresses**<br/> To standardize processing, 4D provides a standard hybrid representation of IPv4 addresses in IPv6. Estas direcciones se escriben con un prefijo de 96 bits en formato IPv6, seguido de 32 bits escritos en la notación decimal punto de IPv4. Por ejemplo, ::ffff:192.168.2.34 representa la dirección IPv4 192.168.2.34.
 
-*   **Indicación de los números de puerto**<br/> Dado que la notación IPv6 utiliza dos puntos (:), la adición de números de puerto puede dar lugar a cierta confusión, por ejemplo:
+*   **Indication of port numbers**<br/> Since IPv6 notation uses colons (:), adding port numbers may lead to some confusion, for example:
 
 ```code4d
     2001:0DB8::85a3:0:ac1f:8001 // dirección IPv6
@@ -416,7 +416,7 @@ Por defecto, el valor es 100. Puede definir el número entre 10 y 32000.
 
 Tamaño máximo (en bytes) de las peticiones HTTP entrantes (POST) que el servidor web está autorizado a procesar. Por defecto, el valor es de 2 000 000, es decir, algo menos de 2 MB. Pasar el valor máximo (2 147 483 648) significa que, en la práctica, no se define ningún límite.
 
-Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes. Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes.
+Este límite se utiliza para evitar la saturación del servidor web debido a peticiones entrantes demasiado grandes. This limit is used to avoid web server saturation due to incoming requests that are too large.
 
 Valores posibles: 500 000 a 2 147 483 648.
 
