@@ -251,11 +251,11 @@ Pour cet exemple, nous supposons que les valeurs des champs sont uniques (il n'e
 2. Vous pouvez également procéder ainsi :
 
 ```4d
- $vsNom:=Request("Saisissez le nom :";"Pierre")
-  If(OK=1)
-    QUERY([Amis et parents];[Amis et parents]Nom=$vsNom)
-    If(Records in selection([Amis et parents])>0)
-       ALERT("Un de mes amis, "+Généalogie de($vsNom)+", fait cela pour gagner sa vie !")
+ $vsName:=Request("Enter the name:";"John")
+ If(OK=1)
+    QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
+    If(Records in selection([Friends and Relatives])>0)
+       ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
     End if
  End if
     End if
