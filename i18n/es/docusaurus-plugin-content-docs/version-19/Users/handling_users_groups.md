@@ -53,7 +53,7 @@ Para añadir un usuario desde la caja de herramientas :
 
 La lista de usuarios muestra todos los usuarios, incluyendo el [Diseñador y el Administrador](#designer-and-administrator).
 
-2. Haga clic en el botón ![](../assets/en/Users/PlussNew.png) situado debajo de la lista de usuarios. O Haga clic derecho en la lista de usuarios y seleccione **Añadir** o **Duplicar** en el menú contextual.
+2. Haga clic en el botón ![](../assets/en/Users/PlussNew.png) situado debajo de la lista de usuarios. OR Right-click in the list of users and choose **Add** or **Duplicate** in the context menu.
 
 > El comando **Duplicar** se puede utilizar para crear varios usuarios que tengan las mismas características rápidamente.
 
