@@ -194,11 +194,11 @@ Muestra un cuadro de alerta con la palabra "Goodbye".
 
 A continuación se explica cada línea del ejemplo:
 
-- $MyVar:="Hello" --> Esta línea pone la cadena "Hello" en la variable $MyVar.
-- $PointerOne:=->$MyVar --> $PointerOne ahora contiene un puntero a $MyVar.
-- $PointerTwo:=->$PointerOne --> $PointerTwo (una nueva variable) contiene un puntero a $PointerOne, que a su vez apunta a $MyVar.
-- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> referencia el contenido de $PointerOne, que a su vez referencia $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. Así que en este caso, a $MyVar se le asigna "Goodbye".
-- ALERT (($PointerTwo->)->) --> Lo mismo que: $PointerTwo-> referencia el contenido de $PointerOne, que a su vez referencia $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar.
+- $MyVar:="Hello" --> This line puts the string "Hello" into the variable $MyVar.
+- $PointerOne:=->$MyVar --> $PointerOne now contains a pointer to $MyVar.
+- $PointerTwo:=->$PointerOne --> $PointerTwo (a new variable) contains a pointer to $PointerOne, which in turn points to $MyVar.
+- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. Así que en este caso, a $MyVar se le asigna "Goodbye".
+- ALERT (($PointerTwo->)->) --> Same thing: $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. Therefore ($PointerTwo->)-> references the contents of $MyVar.
 
 La siguiente línea pone "Hello" en $MyVar:
 ```4d
