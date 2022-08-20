@@ -168,8 +168,7 @@ En caso contrario, si los símbolos de referencia de caracteres aparecen dentro 
     End if
  End if
 
-  //Utilizando la sintaxis de los caracteres de indice, se escribiría de forma más sencilla:
- If(vtText#"")
+  //Using the character reference syntax, you would write in a simpler manner: If(vtText#"")
     If(Character code(vtText[[Length(vtText)]])=At sign)
   // ...
     End if
@@ -186,8 +185,7 @@ Al utilizar los símbolos de indice de cadena, debe dirigirse a los caracteres e
 
 ```
 //Muy malo y desagradable, ¡Boo!
- //Muy malo y desagradable, ¡Boo!
- //Muy malo y desagradable, ¡Boo!
+ //Very bad and nasty thing to do, boo!
  vsAnyText:=""
  vsAnyText[[1]]:="A"
 ```
