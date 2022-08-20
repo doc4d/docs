@@ -50,12 +50,13 @@ Le résultat est équivalent et _MethodB_ n'est évaluée que si nécessaire.
 ### Exemple
 
 ```4d
-  // Demander à l'utilisateur de saisir un nom
+  // Ask the user to enter a name
  $Find:=Request(Type a name)
  If(OK=1)
     QUERY([People];[People]LastName=$Find)
  Else
     ALERT("You did not enter a name.")
+ End if
  End if 
 ```
 
@@ -129,8 +130,10 @@ Cet exemple teste une variable numérique et affiche une boîte de dialogue d’
 
 ```4d
  Case of
-    :(vResult=1) //Tester si le chiffre est 1
-       ALERT("One.") Case of
+    :((vResult=1) & (vCondition#2)) //this case will be detected first
+       ... //statement(s)
+    :(vResult=1)
+       ... Case of
     :(vResult=1) //Tester si le chiffre est 1
        ALERT("One.") //Si le chiffre est 1, afficher une alerte
     :(vResult=2) //Tester si le chiffre est 2
@@ -145,6 +148,7 @@ Cet exemple teste une variable numérique et affiche une boîte de dialogue d’
        ALERT("Three.") //Si le chiffre est 3, afficher une alerte
     Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
        ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
@@ -208,13 +212,13 @@ Par conséquent, lorsque vous testez dans la même méthode des cas simples et d
 
 ```4d
  Case of
-    :(vResult=1) //Tester si le chiffre est 1
-       ALERT("One.") //Si le chiffre est 1, afficher une alerte
-    :(vResult=2) //Tester si le chiffre est 2
-       ALERT("Two.") //Si le chiffre est 2, afficher une alerte
-    :(vResult=3) //Tester si le chiffre est 3
-       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
-    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+    :(vResult=1) //Test if the number is 1
+       ALERT("One.") //If it is 1, display an alert
+    :(vResult=2) //Test if the number is 2
+       ALERT("Two.") //If it is 2, display an alert
+    :(vResult=3) //Test if the number is 3
+       ALERT("Three.") //If it is 3, display an alert
+    Else //If it is not 1, 2, or 3, display an alert
        ALERT("It was not one, two, or three.")
  End case
 ```
@@ -222,16 +226,16 @@ Par conséquent, lorsque vous testez dans la même méthode des cas simples et d
 ... les instructions associées au cas complexe ne seront jamais exécutées. En effet, pour que ce cas soit TRUE, ses deux conditions booléennes doivent l’être. Or, la première condition est celle du cas simple situé précédemment. Lorsqu'elle est TRUE, le cas simple est exécuté et 4D sort de la structure conditionnelle, sans évaluer le cas complexe. Pour que ce type de méthode fonctionne, vous devez écrire :
 
 ```4d
- If(vResult=1) //Tester si le chiffre est 1
-    ALERT("One.") //Si le chiffre est 1, afficher une alerte
+ If(vResult=1) //Test if the number is 1
+    ALERT("One.") //If it is 1, display an alert
  Else
-    If(vResult=2) //Tester si le chiffre est 2
-       ALERT("Two.") //Si le chiffre est 2, afficher une alerte
+    If(vResult=2) //Test if the number is 2
+       ALERT("Two.") //If it is 2, display an alert
     Else
-    If(vResult=3) //Tester si le chiffre est 3
-       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
-    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
-       ALERT("It was not one, two, or three.")
+       If(vResult=3) //Test if the number is 3
+          ALERT("Three.") //If it is 3, display an alert
+       Else //If it is not 1, 2, or 3, display an alert
+          ALERT("It was not one, two, or three.")
        End if
     End if
  End if
