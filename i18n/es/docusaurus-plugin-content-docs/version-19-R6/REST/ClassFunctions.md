@@ -55,7 +55,7 @@ Ver [este ejemplo](#request-receiving-an-entity-as-parameter) y [este ejemplo](#
 
 ### Parámetro de valor escalar
 
-El(los) parámetros deben estar simplemente incluirse en una colección definida en el cuerpo. Por ejemplo, con una función de dataclass `getCities()` que recibe parámetros de tipo texto: `/rest/City/getCities`
+El(los) parámetros deben estar simplemente incluirse en una colección definida en el cuerpo. For example, with a  dataclass function `getCities()` receiving text parameters: `/rest/City/getCities`
 
 **Parámetros en el cuerpo:** ["Aguada","Paris"]
 
