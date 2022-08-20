@@ -26,15 +26,13 @@ Each blob type has its advantages. Use the following table to determine which on
 | Performance when accessing bytes     |  +   |    -     |
 | Maximum size                         | 2GB  |  Memory  |
 
-Blob</code> to any 4D command that takes a blob as a parameter: You can pass a scalar blob or a `4D.</p>
+Blob</code> to any 4D command that takes a blob as a parameter: When working with methods, using blob objects (`4D. Blob`) is more efficient, as they are passed by reference.
 
-<blockquote spaces-before="0">
-  <p spaces-before="0">By default, 4D sets the maximum size of scalar blobs to 2GB, but this size limit may be lower depending on your OS and how much space is available.</p>
-</blockquote>
+> By default, 4D sets the maximum size of scalar blobs to 2GB, but this size limit may be lower depending on your OS and how much space is available.
 
-<p spaces-before="0">You cannot use operators on blobs.</p>
+You cannot use operators on blobs.
 
-<h2 spaces-before="0">Checking if a variable holds a scalar blob or a <code>4D. Blob`</h2>
+## Checking if a variable holds a scalar blob or a `4D. Blob`
 
 Use the [Value type](https://doc.4d.com/4dv19R/help/command/en/page1509.html) command to determine if a value is of type Blob or Object. To check that an object is a blob object (`4D. Blob`), use [OB instance of](https://doc.4d.com/4dv19R/help/command/en/page1731.html):
 
@@ -53,7 +51,7 @@ Scalar blobs and blob objects can be passed as parameters to 4D commands or plug
 
 ### Passing blobs and blob objects to 4D commands
 
-\*Unlike the 4D commands designed to take a scalar blob as a parameter, passing a scalar blob to a method duplicates it in memory. When working with methods, using blob objects (`4D. Blob`) is more efficient, as they are passed by reference.
+You can pass a scalar blob or a `4D. Blob` to any 4D command that takes a blob as a parameter:
 
 ```4d
 var $myBlob: 4D. Blob CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $myBlob)
