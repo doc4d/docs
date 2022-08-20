@@ -22,28 +22,21 @@ Les options de taille dépendent de la valeur de l'option **Taille basée sur**.
 
 
 
-> Pour les formulaires de sortie, seul les champs Marge [**hor. **](#hor-margin) ou [**Largeur**](width) sont disponibles.
-
-
-
-#### Grammaire JSON
-
+> Pour les formulaires de sortie, seul les champs Marge **hor. For output forms, only the **Hor.</p> </blockquote> 
+> 
+> #### Grammaire JSON
+> 
+> 
 | Le nom         | Type de données | Valeurs possibles                                              |
 | -------------- | --------------- | -------------------------------------------------------------- |
 | formSizeAnchor | string          | Nom de l'objet à utiliser pour définir la taille du formulaire |
 
 
-
-
 ---
-
-
 
 ## Hauteur
 
 Hauteur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-on) est définie sur **Fixer taille**.  
-
-
 
 #### Grammaire JSON
 
@@ -52,19 +45,13 @@ Hauteur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-
 | height | number          | valeur entier long |
 
 
-
-
 ---
-
-
 
 ## Marge hor.
 
 Value to add (in pixels) to the right margin of the form when the [form size](#size-based-on) is **Automatic size** or `\&#060;object name&#062;`
 
 Cette valeur détermine également les marges droites des formulaires utilisés dans l'éditeur d'étiquettes.
-
-
 
 #### Grammaire JSON
 
@@ -73,19 +60,13 @@ Cette valeur détermine également les marges droites des formulaires utilisés 
 | rightMargin | number          | valeur entier long |
 
 
-
-
 ---
-
-
 
 ## Marge hor.
 
 Value to add (in pixels) to the bottom margin of the form when the [form size](#size-based-on) is **Automatic size** or `\&#060;object name&#062;`.
 
 Cette valeur détermine également les marges supérieures des formulaires utilisés dans l'éditeur d'étiquettes.
-
-
 
 #### Grammaire JSON
 
@@ -94,17 +75,11 @@ Cette valeur détermine également les marges supérieures des formulaires utili
 | bottomMargin | number          | valeur entier long |
 
 
-
-
 ---
-
-
 
 ## Largeur
 
 Largeur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-on) est définie sur **Fixer taille**.  
-
-
 
 #### Grammaire JSON
 
