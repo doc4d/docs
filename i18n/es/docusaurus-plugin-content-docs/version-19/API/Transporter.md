@@ -330,7 +330,7 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 
 #### Descripción
 
-The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. Por defecto, si la propiedad `.sendTimeOut` no se ha definido en el objeto `server`, se utiliza el valor 100.
+The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. .
 
 <!-- END REF -->
 
