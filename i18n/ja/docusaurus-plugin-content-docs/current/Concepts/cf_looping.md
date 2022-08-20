@@ -329,8 +329,8 @@ End for
 
 各ループの繰り返しにおいて、_Current_Item_ 変数には、合致するコレクションの要素が自動的に代入されます。 このとき、以下の点に注意する必要があります:
 
-- _Current_Item_ 変数がオブジェクト型あるいはコレクション型であった場合 (つまり _Expression_ がオブジェクトのコレクション、あるいはコレクションのコレクションであった場合)、この変数を変更すると自動的にコレクションの対応する要素も変更されます (オブジェクトとコレクションは同じ参照を共有しているからです)。 変数がスカラー型である場合、変数のみが変更されます。
-- _Current_Item_ 変数は、コレクション要素の型と合致している必要があります。 コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。
+- The _Current_Item_ variable must be of the same type as the collection elements. If any collection item is not of the same type as the variable, an error is generated and the loop stops.
+- If the _Current_Item_ variable is of the object type or collection type (i.e. コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。
 - コレクションが **Null** 値の要素を格納していたとき、_Current_Item_ 変数の型が **Null** 値をサポートしない型 (倍長整数変数など) であった場合にはエラーが生成されます。
 
 #### 例題
