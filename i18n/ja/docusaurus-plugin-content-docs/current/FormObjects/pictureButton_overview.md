@@ -56,7 +56,7 @@ title: ピクチャーボタン
 - [マウス押下中は自動更新](properties_Animation.md#switch-continuously-on-clicks)
 - [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
 - [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-> ピクチャーボタンに [関連付けた変数](properties_Object.md#変数あるいは式) は、ピクチャーのサムネールテーブルで現在表示されているピクチャーのインデックス番号を返します。 このテーブル内のピクチャー番号は 0 から始まります。
+> [Use Last frame as disabled](properties_Animation.md#use-last-frame-as-disabled) > The [associated variable](properties_Object.md#variable-or-expression) of the picture button returns the index number, in the thumbnail table, of the current picture displayed. このテーブル内のピクチャー番号は 0 から始まります。
 
 ## プロパティ一覧
 
