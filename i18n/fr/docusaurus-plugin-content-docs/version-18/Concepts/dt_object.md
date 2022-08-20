@@ -55,14 +55,14 @@ La notation objet est utilisée pour accéder aux valeurs de propriétés d'obje
 
 Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :
 
-- à l'aide du symbole "point" : > objet.NomPropriété
+- using a "dot" symbol: > object.propertyName
 
 Voici un exemple :
 ```4d
      employee.name:="Smith"
 ```
 
-- à l'aide d'une chaîne entre crochets : > objet["NomPropriété"]
+- using a string within square brackets: > object["propertyName"]
 
 Exemple :
 ```4d
@@ -105,7 +105,7 @@ La notation objet est utilisable avec tout élément de langage qui contient ou 
      $result:=MyMethod1.a //10
 ```
 
-- **Collections** Exemple :
+- **Collections** Example:
 
 ```4d
      myColl.length //taille de la collection
