@@ -2103,14 +2103,17 @@ Retorna:
 Example with slicing and filtering on properties:
 
 ```4d
-EmployeeSelection
- $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop() // $notDropped for uma entity selection que contém todas as entidades não suprimidas
- If($notDropped.length=0) //A ação de eliminação for exitosa, todas as entidades foram eliminadas
-    ALERT("You have dropped "+String($employees.length)+" employees") //A seleção de entidades eliminada permanece na memoria
- Else
-    ALERT("Problem during drop, try later")
- End if var $employees; $notDropped : cs.
+var $employeesCollection; $filter : Collection
+var $employees : cs. EmployeeSelection
+
+$employeesCollection:=New collection
+$filter:=New collection
+
+$filter.push("firstName")
+$filter.push("lastName")
+
+$employees:=ds. Employee.all()
+$employeesCollection:=$employees.toCollection($filter;0;0;2)
 ```
 
 Retorna:
