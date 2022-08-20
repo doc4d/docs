@@ -456,7 +456,7 @@ Cette fonction prend en charge trois syntaxes :
 
 La fonction `query` s'exécute à chaque fois qu'une requête utilisant le champ calculé est lancée. Il est utile de personnaliser et d'optimiser les requêtes en s'appuyant sur les attributs indexés. Lorsque la fonction `query` n'est pas implémentée pour un champ calculé, la recherche est toujours séquentielle (basée sur l'évaluation de toutes les valeurs à l'aide de la fonction `get <AttributeName>`).
 
-> Les fonctionnalités suivantes ne sont pas prises en charge : - l'appel d'une fonction `query` sur des champs calculés de type Entity ou Entity selection, - l'utilisation du mot clé `order by` dans la chaîne de requête résultante.
+> The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
 
 Les propriétés du paramètre *$event* sont les suivantes :
 
