@@ -268,7 +268,7 @@ Los archivos de historial pueden producirse en dos versiones:
    Esta ruta al historial es devuelta por el comando `Get 4D file`.
 
 * una versión extendida:
-  * adjunto(s) incluido(s) no hay reciclaje automático
+  * attachment(s) included no automatic recycling
   * nombre personalizado
   * reservado con fines específicos
 
