@@ -246,7 +246,7 @@ title: "$catalog"
 | type        | String | 属性タイプ (bool, blob, byte, date, duration, image, long, long64, number, string, uuid, word)、または、N->1 リレーション属性の場合はリレーション先のデータクラス |
 | identifying | ブール    | 属性がプライマリーキーの場合、プロパティは true を返します。 それ以外の場合には、このプロパティは表示されません。                                                                  |
 | path        | String | relatedEntity または relatedEntities 属性のリレーションパス                                                                                 |
- foreignKey|String   |relatedEntity 属性の場合、リレート先の属性名| inverseName |String |relatedEntity または relatedEntities 属性の逆方向リレーション名| 
+ foreignKey|String   |For a relatedEntity attribute, name of the related attribute.| inverseName |String |Name of the opposite relation for a relatedEntity or relateEntities attribute.| 
 
 
 
