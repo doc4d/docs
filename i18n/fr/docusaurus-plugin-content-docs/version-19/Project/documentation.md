@@ -210,6 +210,6 @@ C_LONGINT($size)
 $logo:=GetLogo(5)
 ```
 
-- Vue de l'Explorateur : ![](../assets/en/Project/explorer_Doc.png)
+- Explorer view: ![](../assets/en/Project/explorer_Doc.png)
 
-- Vue de l’Éditeur de code : ![](../assets/en/Project/comments-explo5.png)
+- Code editor view: ![](../assets/en/Project/comments-explo5.png)
