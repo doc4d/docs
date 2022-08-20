@@ -114,7 +114,7 @@ Este archivo texto también puede contener llaves de configuración, en particul
 | ------------- | ------------------------------------------------------------------------------------------------------ | ------- |
 | table_*n*.4dm | Métodos trigger definidos en el proyecto. Un archivo de activación por tabla (n es el número de tabla) | text    |
 
-**Nota:** La extensión de archivo .4dm es un formato de archivo texto, que contiene el código de un método 4D. Es compatible con las herramientas de control de versión.
+**Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. Es compatible con las herramientas de control de versión.
 
 
 ### `Trash`
@@ -221,7 +221,7 @@ Esta carpeta contiene archivos que memorizan las configuraciones del usuario, po
 
 Esta carpeta contiene los componentes que deben estar disponibles en el proyecto aplicación. Debe almacenarse en el mismo nivel que la carpeta Project.
 
-> Una aplicación proyecto puede ser utilizada por sí misma como un componente: - para el desarrollo: inserte un alias del archivo .4dproject en la carpeta Components del proyecto local. - para el despliegue: [cree el componente](Desktop/building.md#build-component) y coloque el archivo .4dz resultante en una carpeta .4dbase en la carpeta Components de la aplicación local.
+> An application project can be used itself as a component: - for development: put an alias of the .4dproject file in the Components folder of the host project. - para el despliegue: [cree el componente](Desktop/building.md#build-component) y coloque el archivo .4dz resultante en una carpeta .4dbase en la carpeta Components de la aplicación local.
 
 
 ## `Plugins`
