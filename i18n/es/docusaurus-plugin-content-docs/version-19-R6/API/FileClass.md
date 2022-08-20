@@ -286,7 +286,7 @@ Desea eliminar un archivo específico en la carpeta de la base de datos:
  $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
     $tempo.delete()
-    ALERT("Archivo de preferencias del usuario borrado.")
+    ALERT("User preference file deleted.")
  End if
  End if
 ```
@@ -598,7 +598,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### Descripción
 
-The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
+The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. .
 
 #### Ejemplo
 
