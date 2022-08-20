@@ -11,7 +11,7 @@ Las siguientes reglas se aplican a todas las estructuras de 4D.
 
 - Un nombre debe comenzar por un carácter alfabético, un guión bajo o un dólar ("$") (tenga en cuenta que un signo de dólar puede denotar un elemento local, ver).
 - A partir de ahí, el nombre puede incluir caracteres alfabéticos, numéricos, el carácter espacio y el carácter de subrayado ("_").
-- Puntos (".") Puntos (".") Puntos (".") Puntos (".") Puntos (".") Puntos (".") y corchetes ("[ ]") no están permitidos en los nombres de tablas, campos, métodos o variables.
+- Puntos (".") Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - No se permiten comas, barras inclinadas, comillas ni dos puntos.
 - Los caracteres reservados para su uso como operadores, como * y +, no están permitidos.
 - No utilice nombres reservados, es decir, nombres de comandos 4D (`Date`, `Time`, etc.), palabras clave (If, For, etc.) y constantes.
@@ -20,7 +20,7 @@ Las siguientes reglas se aplican a todas las estructuras de 4D.
 ### Reglas adicionales para las propiedades de los objetos y los nombres ORDA
 
 - Los caracteres de espacio no están permitidos.
-- Puntos (".") Puntos (".") Puntos (".") Puntos (".") Puntos (".") Puntos (".") y los corchetes ("[ ]") no están permitidos.
+- Puntos (".") Periods (".") and brackets ("[ ]") are not allowed.
 - Los nombres son sensibles a las mayúsculas y minúsculas.
 
 ### Reglas adicionales para SQL
@@ -163,7 +163,7 @@ $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 
 ### Elementos de arrays de dos dimensiones
 
-La referencia a un elemento de un array de dos dimensiones se realiza utilizando las llaves ({…}) dos veces. dos veces. El elemento al que se hace referencia se denota mediante dos expresiones numéricas en dos pares de llaves.
+You reference an element of a two-dimensional array by using the curly braces ({…}) twice. dos veces. El elemento al que se hace referencia se denota mediante dos expresiones numéricas en dos pares de llaves.
 
 Ejemplos:
 
@@ -186,7 +186,7 @@ $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
 
 ## Atributos de objetos
 
-Cuando la notación objeto está activada, se designa un atributo de objeto (también llamado propiedad de objeto) colocando un punto (".") entre el nombre del objeto (o del atributo) y el nombre del atributo. entre el nombre del objeto (o del atributo) y el nombre del atributo. Un nombre de atributo puede contener hasta 255 caracteres y es sensible a las mayúsculas y minúsculas.
+When object notation is enabled, you designate an object attribute (also called object property) by placing a point (".") between the name of the object (or attribute) and the name of the attribute. entre el nombre del objeto (o del atributo) y el nombre del atributo. Un nombre de atributo puede contener hasta 255 caracteres y es sensible a las mayúsculas y minúsculas.
 
 Ejemplos:
 
@@ -250,7 +250,7 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Los métodos proyecto pueden aceptar parámetros (argumentos). Los parámetros se pasan al método entre paréntesis, a continuación del nombre del método. Cada parámetro está separado del siguiente por un punto y coma (;). Los parámetros están disponibles dentro del método llamado como variables locales numeradas secuencialmente: $1, $2,..., $n. Además, se pueden direccionar múltiples parámetros consecutivos (y últimos) con la sintaxis ${n} donde n, expresión numérica, es el número del parámetro.
+Los métodos proyecto pueden aceptar parámetros (argumentos). Los parámetros se pasan al método entre paréntesis, a continuación del nombre del método. Cada parámetro está separado del siguiente por un punto y coma (;). Los parámetros están disponibles dentro del método llamado como variables locales numeradas secuencialmente: $1, $2,..., $n. The parameters are passed to the method in parentheses, following the name of the method.
 
 Dentro de una función, la variable local $0 contiene el valor a devolver.
 
