@@ -8,7 +8,7 @@ Uma estrutura de ramificação permite que os métodos testem uma condição e t
 
 ## If... Else... End if
 
-A sintaxe formal da estrutura condicional `If... Else... End if` é:
+The formal syntax of the `If... Else... End if` control flow structure is:
 
 ```4d
  If(Boolean_Expression)
@@ -25,7 +25,7 @@ Note que a parte `Else` é opcional; pode escrever:
  End if
 ```
 
-A estrutura  `If... Else... End if` permite a seu método escolher entre duas ações, dependendo de se um teste (uma expressão Booleana) for TRUE ou FALSE. Quando a expressão Booleana for TRUE, são executadas as declarações que seguem imediatamente ao teste. Se a expressão Booleana for FALSE, são executadas as declarações que seguem a linha Else. A declaração `Else` é opcional; se omitir Else, a execução continua com a primeira instrução (se houver) que seguir `End if`.
+The `If... Else... End if` structure lets your method choose between two actions, depending on whether a test (a Boolean expression) is TRUE or FALSE. Quando a expressão Booleana for TRUE, são executadas as declarações que seguem imediatamente ao teste. Se a expressão Booleana for FALSE, são executadas as declarações que seguem a linha Else. A declaração `Else` é opcional; se omitir Else, a execução continua com a primeira instrução (se houver) que seguir `End if`.
 
 Note que a expressão booleana é sempre avaliada completamente. Considere particularmente o teste abaixo:
 
@@ -50,12 +50,12 @@ O resultado é parecido mas o _MethodB_ é avaliado somente se necessário.
 ### Exemplo
 
 ```4d
-  // Pedir ao usuário que introduza um nome
+  // Ask the user to enter a name
  $Find:=Request(Type a name)
- Si(OK=1)
+ If(OK=1)
     QUERY([People];[People]LastName=$Find)
  Else
-    ALERT("Não introduciu um nome.")
+    ALERT("You did not enter a name.")
  End if
  End if 
 ```
@@ -79,7 +79,7 @@ ou :
 
 ## Case of... Else... End case
 
-A sintaxe da estrutura condicional  `Case of... Else... End case` é:
+The formal syntax of the `Case of... Else... End case` control flow structure is:
 ```4d
  Case of
     :(Boolean_Expression)
@@ -112,7 +112,7 @@ Note que a parte `Else` é opcional; pode escrever:
        statement(s)
  End case
 ```
-Da mesma forma que a estrutura `If... End if`, a estrutura `Case of... End case` também deixa seu método escolher entre ações alternativas. Diferente da estrutura `If... End` a estrutura  `Case of... End case` pode testar um número razoavelmente ilimitado de expressões Booleanas e realizar ações dependendo de qual delas for TRUE.
+As with the `If... End if` structure, the `Case of... End case` structure also lets your method choose between alternative actions. Unlike the `If... End` if structure, the `Case of... End case` structure can test a reasonable unlimited number of Boolean expressions and take action depending on which one is TRUE.
 
 Cada expressão booleana é precedida de dois pontos (`:`). A combinação dos dois pontos e da expressão booleana é chamada de um caso. Por exemplo, a linha abaixo é um caso:
 
@@ -130,25 +130,21 @@ Esse exemplo testa uma variável numérica e exibe uma caixa de alerta com uma a
 
 ```4d
  Case of
-    :(vResult=1) //Testa se o número é 1
-       ALERT("One.") //Se for 1, mostrar um alerta
+    :((vResult=1) & (vCondition#2)) //this case will be detected first
+       ... //statement(s)
+    :(vResult=1)
+       ... //Se for 1, mostrar um alerta
     :(vResult=2) //Testar se o número é 2
        ALERT("Two.") //Se for 2, exibe um alerta
     :(vResult=3) //Testa se o número é 3
        ALERT("Three.") //Se for 3, exibe um alerta
     Else //Se não for 1, 2, ou 3, exibe um alerta
        ALERT("It was not one, two, or three.")
- End case //Se for 1, mostrar um alerta
-    :(vResult=2) //Testar se o número é 2
-       ALERT("Two.") //Se for 2, exibe um alerta
-    :(vResult=3) //Testa se o número é 3
-       ALERT("Three.") //Se for 3, exibe um alerta
-    Else //Se não for 1, 2, ou 3, exibe um alerta
-       ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
-Por comparação, aqui está a versão `If... Else... End if` do mesmo método:
+For comparison, here is the `If... Else... End if` version of the same method:
 
 ```4d
  If(vResult=1) //Teste se o número é 1
@@ -175,19 +171,19 @@ Por comparação, aqui está a versão `If... Else... End if` do mesmo método:
  End if
 ```
 
-Lembre que com uma estrutura `Case of... Else... End case`, só é executado o primeiro caso TRUE. Mesmo se dois ou mais casos forem TRUE, só as instruções que seguirem o primeiro caso TRUE serão executadas.
+Remember that with a `Case of... Else... End case` structure, only the first TRUE case is executed. Mesmo se dois ou mais casos forem TRUE, só as instruções que seguirem o primeiro caso TRUE serão executadas.
 
 Dessa maneira, quando quiser implementar testes hierárquicos, deve garantir que as declarações de condição que estejam mais abaixo no esquema hierárquico apareçam primeiro na sequência de testes. Por exemplo, o teste para a presença da condition1 cobre o teste para a preença de condition1&condition2 e portanto deveria estar localizada por último na sequência de testes. Por exemplo, o código abaixo nunca terá sua última condição detectada:
 
 ```4d
  Case of
-    :(vResult=1) //Testa se o número é 1
-       ALERT("One.") //Se for 1, mostrar um alerta
-    :(vResult=2) //Testar se o número é 2
-       ALERT("Two.") //Se for 2, exibe um alerta
-    :(vResult=3) //Testa se o número é 3
-       ALERT("Three.") //Se for 3, exibe um alerta
-    Else //Se não for 1, 2, ou 3, exibe um alerta
+    :(vResult=1) //Test if the number is 1
+       ALERT("One.") //If it is 1, display an alert
+    :(vResult=2) //Test if the number is 2
+       ALERT("Two.") //If it is 2, display an alert
+    :(vResult=3) //Test if the number is 3
+       ALERT("Three.") //If it is 3, display an alert
+    Else //If it is not 1, 2, or 3, display an alert
        ALERT("It was not one, two, or three.")
  End case
 ```
@@ -195,15 +191,15 @@ Dessa maneira, quando quiser implementar testes hierárquicos, deve garantir que
 No código anterior, a presença da segunda condição não é detectada, já que o teste "vResult=1" ramifica o código antes de qualquer outro teste. Para que o código funcione corretamente, pode escrevê-lo assim:
 
 ```4d
- If(vResult=1) //Teste se o número é 1
+ If(vResult=1) //Test if the number is 1
     ALERT("One.") //If it is 1, display an alert
  Else
-    If(vResult=2) //Teste se o número é  2
-       ALERT("Two.") //Se for 2, exibe um alerta
+    If(vResult=2) //Test if the number is 2
+       ALERT("Two.") //If it is 2, display an alert
     Else
-       If(vResult=3) //Teste se o número é 3
-          ALERT("Three.") //Se for 3, exibe um alerta
-       Else //Se não for 1, 2, ou 3,  exibe um alerta
+       If(vResult=3) //Test if the number is 3
+          ALERT("Three.") //If it is 3, display an alert
+       Else //If it is not 1, 2, or 3, display an alert
           ALERT("It was not one, two, or three.")
        End if
     End if
