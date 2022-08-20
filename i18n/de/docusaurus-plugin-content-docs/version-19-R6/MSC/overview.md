@@ -17,7 +17,7 @@ Im Wartungsmodus erscheint nur das MSC-Fenster, d. h. das Projekt wird nicht vom
 
 Es gibt zwei Stellen, das MSC im Wartungsmodus zu öffnen:
 
-- **Über den Standard-Öffnen Dialog** Der Standarddialog zum Öffnen des Projekts enthält in der rechten unteren Ecke die Schaltfläche **Öffnen** mit einem PopUp-Menü, in dem Sie die Option **Maintenance Security Center** anklicken können: ![](../assets/en/MSC/MSC_standardOpen.png)
+- **From the standard project opening dialog box** The standard Open dialog includes the **Maintenance Security Center** option from the menu associated with the **Open** button: ![](../assets/en/MSC/MSC_standardOpen.png)
 - Über das Menü **Hilfe/Maintenance Security Center** oder die Schaltfläche **MSC** in der Toolbar (Projekt ist nicht geöffnet)  
   ![](../assets/en/MSC/mscicon.png)   
   Auf dem Bildschirm erscheint der Standard-Öffnen Dialog, in dem Sie das *4DProjekt* oder die *.4dz* Datei zum Prüfen auswählen können. Dabei öffnet 4D nicht das Projekt selbst.
