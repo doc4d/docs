@@ -56,14 +56,14 @@ title: オブジェクト
 
 オブジェクト記法では、オブジェクトプロパティは二通りの方法でアクセスすることができます:
 
-- "ドット"記号を使用する方法: > object.propertyName
+- using a "dot" symbol: > object.propertyName
 
 例:
 ```4d
      employee.name:="Smith"
 ```
 
-- 大カッコ内の文字列を使用する方法: > object["propertyName"]
+- using a string within square brackets: > object["propertyName"]
 
 例:
 ```4d
@@ -106,7 +106,7 @@ title: オブジェクト
      $result:=MyMethod1.a //10
 ```
 
-- **コレクション** 例:
+- **Collections** Example:
 
 ```4d
      myColl.length // コレクションの長さ
