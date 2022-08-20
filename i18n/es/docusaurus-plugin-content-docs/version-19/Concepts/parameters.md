@@ -32,10 +32,8 @@ Los mismos principios se aplican cuando los métodos se ejecutan a través de co
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
-//pase la fecha !05/05/20! como parámetro de SetCalendarDate  
-//en el contexto de un subformulario  
-//pase la fecha !05/05/20! como parámetro de SetCalendarDate  
-//en el contexto de un subformulario  
+//pass the !05/05/20! date as parameter to the SetCalendarDate  
+//in the context of a subform  
 //pase la fecha !05/05/20! como parámetro de SetCalendarDate  
 //en el contexto de un subformulario
 ```
@@ -253,7 +251,7 @@ End for
 Este método se puede llamar:
 
 ```4d
-foo("hello";"world";!01/01/2021!;42;?12:00:00?) //se pasan parámetros adicionales //se pasan parámetros adicionales
+foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //se pasan parámetros adicionales
 ```
 
 > La indirección de parámetros se gestiona mejor si se respeta la siguiente convención: si sólo algunos de los parámetros se dirigen por indirección, deben pasarse después de los demás.
