@@ -65,7 +65,7 @@ En función del valor de la propiedad `action`, el [objeto evento](overview.md#e
 | Propiedad | Type   | Descripción                    |
 | --------- | ------ | ------------------------------ |
 | fillRange | object | Gama utilizada para el relleno |
- autoFillType|longint|Valor utilizado para el relleno.<li>0: las celdas se llenan con todos los datos (valores, formato y fórmulas)</li><li>1: las celdas se llenan con datos automáticamente secuenciales</li><li>2: Las celdas se llenan sólo con el formato</li><li>3: Las celdas se llenan de valores pero sin formato</li><li>4: Se eliminan los valores de las celdas</li><li>5: Las celdas se llenan automáticamente</li>| |fillDirection|longint|Dirección del relleno.<li>0: Se llenan las celdas de la izquierda</li><li>1: Se llenan las celdas a la derecha</li><li>2: Las celdas de arriba se llenan</li><li>3: Las celdas de abajo se llenan</li>|
+ autoFillType|longint|Valor utilizado para el relleno.<li>0: las celdas se llenan con todos los datos (valores, formato y fórmulas)</li><li>1: las celdas se llenan con datos automáticamente secuenciales</li><li>2: Las celdas se llenan sólo con el formato</li><li>3: Las celdas se llenan de valores pero sin formato</li><li>4: Se eliminan los valores de las celdas</li><li>5: Las celdas se llenan automáticamente</li>| |fillDirection|longint|Direction of the fill.<li>0: Se llenan las celdas de la izquierda</li><li>1: Se llenan las celdas a la derecha</li><li>2: Las celdas de arriba se llenan</li><li>3: Las celdas de abajo se llenan</li>|
 
 #### action = formulaChanged
 
@@ -92,6 +92,8 @@ Aquí hay un ejemplo de manejo de un evento `On After Edit`:
        ALERT("WARNING: You are currently changing the value\  
        from "+String(FORM Event.oldValue)+\  
        " to "+String(FORM Event.newValue)+"!")
+    End if
+ End if
     End if
  End if
 ```
