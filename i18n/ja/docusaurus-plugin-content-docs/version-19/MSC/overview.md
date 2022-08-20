@@ -16,7 +16,7 @@ MSCウィンドウを開く方法は幾つかあります。 アクセスの方�
 
 次の 2つの場所から、MSC をメインテナンスモードで開くことができます:
 
-- **標準の開くダイアログボックス**<br /> 標準のプロジェクトを開くダイアログボックスには **開く** ボタンに関連付けられているメニューに **Maintenance & Security Center** オプションが含まれます: ![](../assets/en/MSC/MSC_standardOpen.png)
+- **From the standard project opening dialog box** The standard Open dialog includes the **Maintenance Security Center** option from the menu associated with the **Open** button: ![](../assets/en/MSC/MSC_standardOpen.png)
 - **Help/Maintenance Security Center** menu or **MSC** button in the tool bar (project not open)  
   ![](../assets/en/MSC/mscicon.png) When you call this function, a standard Open file dialog appears so that you can select the *.4DProject* or *.4dz* file of the to be examined. プロジェクトは開かれません。
 
