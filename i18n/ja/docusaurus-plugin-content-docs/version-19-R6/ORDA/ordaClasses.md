@@ -455,7 +455,7 @@ Function query <attributeName>($event : Object) -> $result : Object
 
 `query` 関数は、計算属性を使用するクエリが開始されるたびに実行されます。 インデックス付きの属性を利用することで、クエリをカスタマイズしたり最適化したりすることができます。 計算属性に対して `query` 関数が実装されていない場合、検索は常にシーケンシャルにおこなわれます (`get <AttributeName>` 関数によるすべての値の評価に基づきます)。
 
-> 以下の機能はサポートされていません:<br /> - エンティティ、またはエンティティセレクション型の計算属性に対する `query` 関数の呼び出し<br /> - 結果のクエリ文字列における `order by` キーワードの使用
+> The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
