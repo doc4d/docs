@@ -315,7 +315,7 @@ $0:=New object("updates";$vCount)
 
 `POST  /rest/Employee/updateSalary/?$filter="salary<1500"`
 
-Datos POST (en el cuerpo de la petición): [1.5]
+POST data (in the request body): [1.5]
 
 Resultado:
 
