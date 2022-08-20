@@ -49,8 +49,8 @@ Pode colocar a pasta PlugIns em dois lugares diferentes:
 
 - At the level of the 4D executable application, i.e.:
   - Under Windows: next to the .exe file
-  - Em macOS: no primeiro nível da pasta Contents dentro do pacote da aplicação.   
-    Neste caso, os plug-ins estão disponíveis em todos os bancos de dados abertos por essa aplicação.
+  - Under macOS: at the first level of the Contents folder inside the application package.   
+    In this case, plug-ins are available in every database opened by this application.
 - No mesmo nível que o arquivo de estrutura do banco de dados. Nesse caso, plug-ins só estão disponíveis no banco de dados em particular.
 
 The choice of location depends on how you want to use the plug-in.
