@@ -24,7 +24,7 @@ La restitution manuelle des sauvegardes peut être réalisée soit via une boît
 
 Pour restituer manuellement une application via une boîte de dialogue standard :
 
-1. Lancez l’application 4D et choisissez la commande **Restituer...** dans le menu **Fichier**. Il n'est pas obligatoire qu'un projet d'application soit ouvert. OU BIEN Exécutez la commande `RESTORE` depuis une méthode de 4D. Une boîte de dialogue standard d’ouverture de fichiers apparaît.
+1. Lancez l’application 4D et choisissez la commande **Restituer...** dans le menu **Fichier**. Il n'est pas obligatoire qu'un projet d'application soit ouvert. OR Execute the `RESTORE` command from a 4D method. Une boîte de dialogue standard d’ouverture de fichiers apparaît.
 2. Désignez le fichier de sauvegarde (.4bk) ou le fichier de sauvegarde de l’historique (.4bl) à restituer et cliquez sur **Ouvrir**. Un boîte de dialogue apparaît, vous permettant de désigner l’emplacement auquel vous souhaitez que les fichiers soient restitués . Par défaut, 4D restitue les fichiers dans un dossier nommé *“Nomarchive”* (sans extension) placé à côté de l’archive. Vous pouvez afficher le chemin :
 
 ![](../assets/en/Backup/backup07.png)
