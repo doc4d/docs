@@ -35,7 +35,7 @@ If the encryption process is successful, the Encrypt page displays Encryption ma
 
 ## Encryption maintenance operations
 
-Quando um banco de dados for criptografado (ver abaixo), a página de Criptografia oferece operações de manutenção de criptografia, correspondentes aos cenários padrão. ![](../assets/en/MSC/MSC_encrypt6.png)
+When a database is encrypted (see above), the Encrypt page provides several encryption maintenance operations, corresponding to standard scenarios. ![](../assets/en/MSC/MSC_encrypt6.png)
 
 ### Providing the current data encryption key
 
