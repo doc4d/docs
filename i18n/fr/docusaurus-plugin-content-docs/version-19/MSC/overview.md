@@ -16,7 +16,7 @@ En mode maintenance, seule la fenêtre du CSM est affichée (le projet n’est p
 
 Vous pouvez ouvrir le CSM en mode maintenance depuis deux emplacements :
 
-- **Boîte de dialogue standard d’ouverture** La boîte de dialogue standard d’ouverture de projet comporte l’option **Centre de sécurité de maintenance** sous forme de menu associé au bouton **Ouvrir** : ![](../assets/en/MSC/MSC_standardOpen.png)
+- **From the standard project opening dialog box** The standard Open dialog includes the **Maintenance Security Center** option from the menu associated with the **Open** button: ![](../assets/en/MSC/MSC_standardOpen.png)
 - **Help/Maintenance Security Center** menu or **MSC** button in the tool bar (project not open)  
   ![](../assets/en/MSC/mscicon.png) When you call this function, a standard Open file dialog appears so that you can select the *.4DProject* or *.4dz* file of the to be examined. Le projet ne sera pas ouvert par 4D.
 
