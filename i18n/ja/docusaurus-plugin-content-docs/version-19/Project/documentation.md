@@ -216,6 +216,6 @@ C_LONGINT($size)
 $logo:=GetLogo(5)
 ```
 
-- エクスプローラーの表示: ![](../assets/en/Project/explorer_Doc.png)
+- Explorer view: ![](../assets/en/Project/explorer_Doc.png)
 
-- コードエディターの表示: ![](../assets/en/Project/comments-explo5.png)
+- Code editor view: ![](../assets/en/Project/comments-explo5.png)
