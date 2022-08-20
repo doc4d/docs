@@ -143,7 +143,7 @@ Le [fichier d'enregistrements d'historique Web](webServerConfig.md#log-recording
 
 #### CLF/DLF
 
-Chaque ligne du fichier représente une requête, comme : *host rfc931 user \[DD/MMM/YYYY:HH:MM:SS] "request" state length* Chaque champ est séparé par un espace et chaque ligne se termine par la séquence CR/LF (caractère 13, caractère 10).
+Each line of the file represents a request, such as: *host rfc931 user \[DD/MMM/YYYY:HH:MM:SS] "request" state length* Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
 
 Le format DLF (Distilled Log Format) est similaire au format CLF (Common Log format) et utilise exactement la même structure. Il ajoute simplement deux champs HTTP supplémentaires à la fin de chaque requête : Referer et User-agent. Voici la description des formats CLF/DLF (non personnalisables) :
 
@@ -204,7 +204,7 @@ Comme la taille d'un *logweb.txt* fichier évoluer considérablement, il est pos
 
 Lorsque la sauvegarde du fichier d'historique web est déclenchée, le fichier d'historique est archivé dans un dossier nommé "Archives Logweb", qui est créé au même niveau que le fichier *logweb.txt*.
 
-Le fichier archivé est renommé sur le modèle suivant : "DYYYY_MM_DD_Thh_mm_ss.txt". Par exemple, pour un dossier archivé le 4 septembre 2020 à 15 h 50 et 7 secondes : “D2020_09_04_T15_50_07.txt.” et 7 secondes : “D2020_09_04_T15_50_07.txt.” et 7 secondes : “D2020_09_04_T15_50_07.txt.”
+Le fichier archivé est renommé sur le modèle suivant : "DYYYY_MM_DD_Thh_mm_ss.txt". The archived file is renamed based on the following example: “DYYYY_MM_DD_Thh_mm_ss.txt.” For instance, for a file archived on September 4, 2020 at 3:50 p.m. et 7 secondes : “D2020_09_04_T15_50_07.txt.”
 
 #### Paramètres de backup
 
@@ -221,8 +221,8 @@ Vous devez d'abord choisir la fréquence (jours, semaines, etc.) ou le critère 
 
 * **Tous les N jour(s) à N** : permet de programmer des backups sur une base journalière. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Lorsque vous cochez cette option, vous devez indiquer l’heure à laquelle la sauvegarde doit être déclenchée.
 
-* **Tous les N jour(s) à N** : permet de programmer des backups sur une base hebdomadaire. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Lorsque vous cochez cette option, vous devez indiquer le ou les jours de la semaine et l’heure à laquelle chaque sauvegarde doit être déclenchée. Vous pouvez cocher un ou plusieurs jour(s) de la semaine. Par exemple, vous pouvez utiliser cette option pour définir deux sauvegardes hebdomadaires : une le mercredi et une le vendredi.
+* **Tous les N jour(s) à N** : permet de programmer des backups sur une base hebdomadaire. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
 
-* **Tous les N mois, Ne jour à N** : permet de programmer des sauvegardes sur une base mensuelle. Saisissez 1 si vous souhaitez une sauvegarde mensuelle. Lorsque vous cochez cette option, vous devez indiquer le jour de chaque mois auquel la sauvegarde doit être déclenchée, ainsi que l’heure de déclenchement.
+* **Tous les N mois, Ne jour à N** : permet de programmer des sauvegardes sur une base mensuelle. Saisissez 1 si vous souhaitez une sauvegarde mensuelle. Enter 1 if you want to perform a monthly backup.
 
 * **Tous les N Mo** : Cette option est utilisée pour programmer les sauvegardes en fonction de la taille du fichier journal courant. Un backup se déclenche automatiquement quand le fichier atteint la taille spécifiée. La taille limite du fichier peut être fixée à 1, 10, 100 ou 1000 Mo.
