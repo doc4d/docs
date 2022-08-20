@@ -185,7 +185,7 @@ Puede pasar cualquier número de valores de los siguientes tipos soportados:
 * time (almacenado como número de milisegundos - real)
 * null
 * shared object(*)
-* collection compartida(*) > A diferencia de las colecciones estándar (no compartidas), las colecciones compartidas no soportan imágenes, punteros y objetos o colecciones no compartidas.
+* shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > Esta función modifica la colección original.
 
 (*)When a shared object or collection is added to a shared collection, they share the same*locking identifier*. Para obtener más información sobre este punto, consulte la guía del **Desarrollador 4D**.
@@ -321,7 +321,7 @@ $vSize:=$col.length //$vSize=0
 
 #### Descripción
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. A diferencia de la función `.insert()`, `.combine()` añade cada valor de *col2* en la colección original, y no como un solo elemento de la colección.
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
 > Esta función modifica la colección original.
 
 Por defecto, los elementos *col2* se añaden al final de la colección original. Puede pasar en *index* la posición en la que quiere que se inserten los elementos *col2* en la colección.
@@ -497,11 +497,11 @@ Este ejemplo ilustra el uso de la opción `ck resolve pointers`:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
- ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //displays "Hello World!"
 
  $what:="You!"
  $col3:=$col2.copy(ck resolve pointers)
- ALERT($col3[0].alpha+" "+$col3[1].what) //muestra "Hello You!"
+ ALERT($col3[0].alpha+" "+$col3[1].what) //displays "Hello You!"
  ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
 
  $what:="You!"
@@ -766,7 +766,7 @@ Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluaci
 
 #### Descripción
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *methodName* method<!-- END REF -->.
+The `.every()` function <!-- REF #collection.every().Summary -->The `.every()` function<!-- END REF -->.
 
 En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. Este método recibe un `Object`en el primer parámetro ($1) y debe definir *$1.result* como true para cada elemento que cumpla la prueba.
 
@@ -981,10 +981,10 @@ En caso de incoherencia, se aplican las siguientes reglas:
 
 #### Descripción
 
-The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which *methodName* method result is **true**<!-- END REF -->. Esta función devuelve una ***copia superficial***, lo que significa que los objetos o colecciones de ambas colecciones comparten la misma referencia. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
+The `.filter()` function <!-- REF #collection.filter().Summary -->The `.filter()` function<!-- END REF -->. Esta función devuelve una ***copia superficial***, lo que significa que los objetos o colecciones de ambas colecciones comparten la misma referencia. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
 > Esta función no modifica la colección original.
 
-En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional).
+En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recibe los siguientes parámetros:
 
@@ -1073,10 +1073,10 @@ El código de ***TypeLookUp*** es:
 
 #### Descripción
 
-The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
+The `.find()` function <!-- REF #collection.find().Summary -->The `.indexOf()` function<!-- END REF -->.
 > Esta función no modifica la colección original.
 
-En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional).
+En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recibe los siguientes parámetros:
 
@@ -1168,10 +1168,10 @@ El código para ***FindCity*** es:
 
 #### Descripción
 
-The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
+The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->The `.findIndex()` function<!-- END REF -->.
 > Esta función no modifica la colección original.
 
-En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros.
+En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s).
 
 *methodName* recibe los siguientes parámetros:
 
@@ -1541,7 +1541,7 @@ La propiedad `.length` se inicializa cuando se crea la colección. Añadir o eli
 The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the *methodName* method on each element of the original collection<!-- END REF -->. Opcionalmente, puede pasar parámetros a *methodName* utilizando el(los) parámetro(s) *param*. `.map()` siempre devuelve una colección con el mismo tamaño que la colección original.
 > Esta función no modifica la colección original.
 
-En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional).
+En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recibe los siguientes parámetros:
 
@@ -1832,7 +1832,7 @@ Ordenar con una ruta de propiedad:
 
 #### Descripción
 
-The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *methodName* method<!-- END REF -->.
+The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->The `.orderByMethod()` function<!-- END REF -->.
 
 Esta función devuelve una *copia superficial*, lo que significa que los objetos o colecciones de ambas colecciones comparten la misma referencia. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
 > Esta función no modifica la colección original.
@@ -2073,6 +2073,10 @@ Para obtener información detallada sobre cómo construir una consulta utilizand
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 Este ejemplo devuelve las personas cuyo nombre contiene "in":
@@ -2101,7 +2105,7 @@ Este ejemplo devuelve las personas contratadas hace más de 90 días:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018 si hoy es 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 si hoy es 01/10/2018
 ```
 
 #### Ejemplo 3
@@ -2137,7 +2141,7 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 
 #### Descripción
 
-The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *methodName* callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
+The `.reduce()` function <!-- REF #collection.reduce().Summary -->The `.reduce()` function<!-- END REF -->.
 > Esta función no modifica la colección original.
 
 En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en param (opcional). *methodName* toma cada elemento de la colección y realiza todas las operaciones deseadas para acumular el resultado en *$1.accumulator*, que se devuelve en *$1.value*.
@@ -2226,7 +2230,7 @@ The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
-> Esta función no modifica la colección original. Si *startFrom* < 0, se considera el desplazamiento desde el final de la colección (*startFrom:=startFrom+length*).
+> Esta función no modifica la colección original. If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 * Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
 * Si el valor calculado < 0, *index* toma el valor 0.
@@ -2460,7 +2464,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 
 The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test<!-- END REF --> implemented in the provided *methodName* method.
 
-En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional).
+En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en *param* (opcional). *methodName* puede realizar cualquier prueba, con o sin los parámetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recibe los siguientes parámetros:
 
