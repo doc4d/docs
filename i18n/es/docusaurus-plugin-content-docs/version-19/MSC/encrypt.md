@@ -21,10 +21,10 @@ Se crea una nueva carpeta cada vez que se realiza una operación de cifrado/desc
 Para cifrar los datos por primera vez con el CSM es necesario seguir los siguientes pasos:
 
 1. En el editor de estructuras, marque el atributo **Encriptable** de cada tabla cuyos datos desee encriptar. Ver la sección "Propiedades de las tablas".
-2. Abra la página de encriptación del CSM. Si se abre la página sin configurar las tablas como **Encriptables**, se muestra el siguiente mensaje en la página: ![](../assets/en/MSC/MSC_encrypt1.png) En caso contrario, se muestra el siguiente mensaje: ![](../assets/en/MSC/MSC_encrypt2.png) Esto significa que el estado **Encriptable** de al menos una tabla ha sido modificado y el archivo de datos aún no ha sido encriptado. **Note:**The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).
+2. Abra la página de encriptación del CSM. If you open the page without setting any tables as **Encryptable**, the following message is displayed in the page: ![](../assets/en/MSC/MSC_encrypt1.png) Otherwise, the following message is displayed: ![](../assets/en/MSC/MSC_encrypt2.png) This means that the **Encryptable** status for at least one table has been modified and the data file still has not been encrypted. **Note:**The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).
 3. Click on the Encrypt picture button.  
    ![](../assets/en/MSC/MSC_encrypt3.png)  
-   You will be prompted to enter a passphrase for your data file: ![](../assets/en/MSC/MSC_encrypt4.png) The passphrase is used to generate the data encryption key. Una frase secreta es una versión más segura de una contraseña y puede contener un gran número de caracteres. For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" The security level indicator can help you evaluate the strength of your passphrase: ![](assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level) The security level indicator can help you evaluate the strength of your passphrase: ![](../assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level)
+   You will be prompted to enter a passphrase for your data file: ![](../assets/en/MSC/MSC_encrypt4.png) The passphrase is used to generate the data encryption key. Una frase secreta es una versión más segura de una contraseña y puede contener un gran número de caracteres. For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" The security level indicator can help you evaluate the strength of your passphrase: ![](assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level) For example, you could enter a passphrases such as "We all came out to Montreux" or "My 1st Great Passphrase!!" The security level indicator can help you evaluate the strength of your passphrase: ![](../assets/en/MSC/MSC_encrypt5.png) (deep green is the highest level)
 4. Introduzca para confirmar su frase secreta segura.
 
 A continuación, se inicia el proceso de encriptación. Si el CSM se abrió en modo estándar, la aplicación se reabre en modo mantenimiento.
@@ -62,7 +62,7 @@ Esta operación es útil cuando se ha modificado el atributo **Encriptable** de 
 1. Haga clic en **Recibir los datos con la llave de cifrado actual**.
 2. Introduzca la llave de encriptación de datos actual.
 
-El archivo de datos se vuelve a cifrar correctamente con la llave actual y se muestra un mensaje de confirmación: ![](../assets/en/MSC/MSC_encrypt8.png)
+The data file is properly re-encrypted with the current key and a confirmation message is displayed: ![](../assets/en/MSC/MSC_encrypt8.png)
 
 ### Cambiar la frase secreta y volver a encriptar los datos
 
@@ -79,7 +79,7 @@ Esta operación elimina toda la codificación del archivo de datos. Si ya no des
 1. Haga clic en **Desencriptar todos los datos**.
 2. Introduzca la llave de encriptación de datos actual ( ver Suministrar la llave de encriptación de datos actual).
 
-El archivo de datos se descifra completamente y se muestra un mensaje de confirmación: ![](../assets/en/MSC/MSC_encrypt10.png)
+The data file is fully decrypted and a confirmation message is displayed: ![](../assets/en/MSC/MSC_encrypt10.png)
 > Una vez descifrado el archivo de datos, el estado de cifrado de las tablas no coincide con sus atributos Encriptables. Para restablecer un estado coincidente, debe anular la selección de todos los atributos **Encriptable** al nivel de la estructura de la base.
 
 ## Guardar la llave de encriptación
