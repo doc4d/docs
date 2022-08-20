@@ -13,7 +13,7 @@ Por último, 4D dispone de funciones que analizan el contenido del archivo de hi
 
 El archivo de historial generado por 4D contiene una descripción de todas las operaciones realizadas en los datos de las tablas registradas en el diario de la base, que se registran de forma secuencial. Por defecto, todas las tablas se registran en el diario, es decir, se incluyen en el archivo de historial, pero puede anular la selección de tablas individuales mediante la propiedad **Incluir en el archivo de historial**.
 
-Así, cada operación realizada por un usuario provoca dos acciones simultáneas: la primera en la base de datos (la instrucción se ejecuta normalmente) y la segunda en el archivo de registro (se registra la descripción de la operación). El archivo de historial se crea de forma independiente, sin perturbar ni ralentizar el trabajo del usuario. El archivo de historial se crea de forma independiente, sin perturbar ni ralentizar el trabajo del usuario. El archivo de historial registra los siguientes tipos de acciones:
+Así, cada operación realizada por un usuario provoca dos acciones simultáneas: la primera en la base de datos (la instrucción se ejecuta normalmente) y la segunda en el archivo de registro (se registra la descripción de la operación). El archivo de historial se crea de forma independiente, sin perturbar ni ralentizar el trabajo del usuario. The log file is created independently without disturbing or slowing down the work of the user. El archivo de historial registra los siguientes tipos de acciones:
 
 - Apertura y cierre del archivo de datos,
 - Apertura y cierre del proceso (contextos),
@@ -56,7 +56,7 @@ Para poder crear un archivo de historial directamente, la base de datos debe est
 - El archivo de datos está en blanco,
 - Acaba de realizar una copia de seguridad de la base y aún no se han realizado cambios en los datos.
 
-En todos los demás casos, al validar el cuadro de diálogo de las Propiedades de la base, aparecerá un cuadro de diálogo de alerta para informarle que es necesario realizar una copia de seguridad. Si hace clic en **Aceptar**, la copia de seguridad comienza inmediatamente, y luego se activa el archivo de historial. Si hace clic en **Cancelar**, la solicitud se guarda pero la creación del archivo de historial se pospone y en realidad sólo se creará después de la siguiente copia de seguridad de la base de datos. Esta precaución es indispensable porque, para restaurar una base de datos después de algún incidente, necesitará una copia de la base en la que se integrarán las operaciones registradas en el archivo de historial.
+En todos los demás casos, al validar el cuadro de diálogo de las Propiedades de la base, aparecerá un cuadro de diálogo de alerta para informarle que es necesario realizar una copia de seguridad. Si hace clic en **Aceptar**, la copia de seguridad comienza inmediatamente, y luego se activa el archivo de historial. If you click **OK**, the backup begins immediately, then the log file is activated. If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the database.
 
 Sin tener que hacer nada más, todas las operaciones realizadas sobre los datos se registran en este archivo y se utilizarán en el futuro cuando se abra la base.
 
