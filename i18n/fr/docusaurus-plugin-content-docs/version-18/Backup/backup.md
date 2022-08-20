@@ -17,7 +17,7 @@ Une sauvegarde peut être déclenchée de trois manières :
 
 ### Sauvegarde manuelle
 
-1. Choisissez la commande **Sauvegarde...** dans le menu **Fichier** de 4D. La fenêtre de sauvegarde s’affiche : ![](../assets/en/Backup/backup01.png) Vous pouvez visualiser l'emplacement du dossier de sauvegarde à l'aide du pop up menu associé à la zone "Destination de la sauvegarde". Cet emplacement est défini dans la Page **Sauvegarde/Configuration** des Propriétés de la base.
+1. Choisissez la commande **Sauvegarde...** dans le menu **Fichier** de 4D. The backup window appears: ![](../assets/en/Backup/backup01.png) You can see the location of the backup folder using the pop-up menu next to the "Backup destination" area. Cet emplacement est défini dans la Page **Sauvegarde/Configuration** des Propriétés de la base.
 
 - Vous pouvez également sélectionner [Centre de sécurité et de maintenance](MSC/overview.md) de 4D et afficher la [Page Sauvegarde](MSC/backup.md).
 
@@ -66,7 +66,7 @@ Dans tous les cas, le statut de la dernière sauvegarde (succès ou échec) est 
 
 - **Interruption par l’utilisateur** : le bouton **Arrêter** de la boîte de dialogue de progression de la sauvegarde permet aux utilisateurs d’interrompre la sauvegarde à tout instant. Dans ce cas, la copie des éléments est stoppée et l'erreur 1406 est générée. Vous pouvez intercepter cette erreur dans la Méthode base `On Backup Shutdown`.
 - **Fichier joint introuvable** : lorsqu’un fichier joint est introuvable, 4D effectue une sauvegarde partielle (sauvegarde des fichiers de la base et des fichiers joints accessibles) et retourne une erreur.
-- **Sauvegarde impossible** (disque plein ou protégé en écriture, disque manquant, panne du disque, transaction non terminée, base non lancée au moment d’une sauvegarde automatique périodique, etc.) : s’il s’agit du premier échec, 4D effectuera ultérieurement une seconde tentative. Le délai d’attente entre les deux tentatives est défini dans la Page **Sauvegarde/Sauvegarde& et Restitution** des Propriétés de la base. Si la seconde tentative échoue également, une boîte de dialogue d’alerte système est affichée et une erreur est générée. Vous pouvez intercepter cette erreur dans la Méthode base `On Backup Shutdown`.
+- **Backup impossible** (disk is full or write-protected, missing disk, disk failure, incomplete transaction, database not launched at time of scheduled automatic backup, etc.): If this is a first-time error, 4D will then make a second attempt to perform the backup. Le délai d’attente entre les deux tentatives est défini dans la Page **Sauvegarde/Sauvegarde& et Restitution** des Propriétés de la base. Si la seconde tentative échoue également, une boîte de dialogue d’alerte système est affichée et une erreur est générée. Vous pouvez intercepter cette erreur dans la Méthode base `On Backup Shutdown`.
 
 ## Journal de sauvegarde (Backup Journal)
 
