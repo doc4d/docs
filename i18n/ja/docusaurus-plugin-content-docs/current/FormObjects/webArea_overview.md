@@ -56,7 +56,7 @@ $4d.4DMethodName(param1,paramN,function(result){})
 
 - `result`: "$0" 式に返される、4Dメソッド実行の戻り値です。 戻り値は JavaScript でサポートされている型 (文字列、数値、配列、オブジェクト) のいずれかになります。 `C_OBJECT` コマンドを使用して、オブジェクトを返すことができます。
 
-> デフォルトとして、4Dは UTF-8 文字コードで動作しています。 (アクセントが付いた文字などの) 拡張文字を含むテキストを返す場合には、Webエリアで表示されるページの文字コードが UTF-8 に宣言されていることを確認してください。文字コードが UTF-8 でない場合、文字が正しく表示されない可能性があります。 この場合、以下の 1行を HTMLページに追加して文字コードを宣言してください:<br /> `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
+> デフォルトとして、4Dは UTF-8 文字コードで動作しています。 (アクセントが付いた文字などの) 拡張文字を含むテキストを返す場合には、Webエリアで表示されるページの文字コードが UTF-8 に宣言されていることを確認してください。文字コードが UTF-8 でない場合、文字が正しく表示されない可能性があります。 In this case, add the following line in the HTML page to declare the encoding: `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
 
 #### 例題 1
 
@@ -185,9 +185,9 @@ macOS 上の Webエリアで、プログラムにより処理される URL は�
 
 Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コマンドを実行するか、 Webエリアのコンテキストメニューを使用します。
 
-- **`WA OPEN WEB INSPECTOR` コマンドの実行**<br/> このコマンドはスクリーン上 (フォームオブジェクト) の、またはオフスクリーンの Webエリアに対して直接使用することができます。
+- **Execute the `WA OPEN WEB INSPECTOR` command**<br/> This command can be used directly with onscreen (form object) and offscreen web areas.
 
-- **Webエリアコンテキストメニューの使用**<br/> この機能はオンスクリーンの Webエリアでのみ使用することができ、以下の条件を満たしている必要があります:
+- **Use the web area context menu**<br/> This feature can only be used with onscreen web areas and requires that the following conditions are met:
     - エリアに対して [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) が有効化されている。
     - インスペクターの使用が、以下の宣言を用いて明示的に有効化されている:
     ```4d
