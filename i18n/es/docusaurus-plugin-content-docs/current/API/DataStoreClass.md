@@ -380,6 +380,9 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
  Else
     ALERT("This database is not encrypted.")
  End if
+ Else
+    ALERT("This database is not encrypted.")
+ End if
 ```
 
 <!-- END REF -->
@@ -451,7 +454,7 @@ End for each
 
 // Get all remote contexts (in this case, contextA and contextB)
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
+//$info = [{name:"contextB"; dataclass: "Address"; main:"zipCode"},
 {name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
 ```
 
@@ -485,7 +488,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### Descripción
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Esta función es útil para configurar el código genérico.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
@@ -607,7 +610,7 @@ Ver el ejemplo de la sección [.setRemoteContextInfo()](#example-1-3).
 
 #### Descripción
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. El registro de peticiones de ORDA debe haberse habilitado previamente mediante la función [`.startRequestLog()`](#startrequestlog).
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Esta función debe ser llamada en un 4D remoto, de lo contrario devuelve una colección vacía. Está diseñado para fines de depuración en configuraciones cliente/servidor.
 
@@ -931,8 +934,7 @@ Case of
         // Form.persons is displayed in a list box
 End case
 
-// When you get the attributes in the context of the current item:
-Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
+// When you get the attributes in the context of the current item: Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children"
 ```
 
