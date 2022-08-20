@@ -55,7 +55,7 @@ title: リストボックス
 * **何もしない** (デフォルト): 行をダブルクリックしても自動アクションは発動しません。
 * **レコード編集**: 行をダブルクリックすると、リストボックスに設定された [詳細フォーム](#詳細フォーム名) に当該レコードが表示されます レコードは読み書き可能モードで開かれるので、編集が可能です。
 * **レコード表示**: レコード編集と同様の挙動をしますが、レコードは読み取り専用モードで開かれるため、編集はできません。
-> 空の行へのダブルクリックは無視されます。
+> > Double-clicking an empty row is ignored in list boxes.
 
 選択されているアクションに関わらず、`On Double Clicked` フォームイベントが生成されます。
 
@@ -101,7 +101,7 @@ title: リストボックス
 
 * スクロールしない列は常にリストボックスの左側に表示され、横スクロールされません。
 * ドラッグしない列は、リストボックス中でドラッグ＆ドロップによる列の移動ができません。
-> これらのプロパティはプログラミングによって設定することも可能です。詳細は [4Dランゲージリファレンス](https://doc.4d.com/4Dv18/4D/18/4D-Language-Reference.100-4504285.ja.html) マニュアルの [リストボックス](https://doc.4d.com/4Dv18/4D/18/List-Box.201-4504332.ja.html) を参照ください。
+> > You can set static and locked columns by programming, refer to [List Box](https://doc.4d.com/4Dv17R6/4D/17-R6/List-Box.201-4310263.en.html) in the [4D Language Reference](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Language-Reference.100-4310216.en.html) manual.
 
 これらのプロパティは以下のように相互作用します:
 
