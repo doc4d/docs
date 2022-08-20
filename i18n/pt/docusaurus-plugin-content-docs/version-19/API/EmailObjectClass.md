@@ -110,7 +110,7 @@ As propriedades [`textBody`](#textbody) e [`htmlBody`](#htmlbody) são usadas ap
 
 #### Descrção
 
-The `.attachments` property contains a <!-- REF #EmailObjectClass.attachments.Summary -->collection of `4D.MailAttachment` object(s)<!-- END REF -->.
+The `.sender` property contains the <!-- REF #EmailObjectClass.attachments.Summary -->email source [addresse(s)](#email-addresses) of the email<!-- END REF -->.
 
 Objetos de anexo são definidos através do comando [`MAIL New attachment`](MailAttachmentClass.md#mail-new-attachment). Objetos de anexos têm propriedades e funções específicas [](MailAttachmentClass.md).
 
@@ -132,7 +132,7 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind
 
 #### Descrção
 
-The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStructure.Summary -->*EmailBodyPart* object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+The `.attachments` property contains a <!-- REF #EmailObjectClass.bodyStructure.Summary -->collection of `4D.<!-- END REF -->. MailAttachment` object(s)
 
 O objeto `.bodyStructure` contém as seguintes propriedades:
 
@@ -156,7 +156,7 @@ O objeto `.bodyStructure` contém as seguintes propriedades:
 
 #### Descrção
 
-The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. MailAttachment</code> object(s)
 
 O objeto `.bodyValues` contém as seguintes propriedades:
 
@@ -233,7 +233,7 @@ Cada objeto da coleção de cabeçalhos pode conter as propriedades abaixo:
 
 #### Descrção
 
-The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. MailAttachment</code> object(s)
 
 ## .id
 
@@ -354,7 +354,7 @@ The `.sendAt` property contains the <!-- REF #EmailObjectClass.sendAt.Summary --
 
 #### Descrção
 
-The `.sender` property contains the <!-- REF #EmailObjectClass.sender.Summary -->email source [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+The `.to` property contains the <!-- REF #EmailObjectClass.sender.Summary -->primary recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
 
 Cada email que você enviar possui tanto o **remetente** quanto **[dos](#from)** endereços:
 
@@ -393,7 +393,7 @@ The `.subject` property contains the <!-- REF #EmailObjectClass.subject.Summary 
 
 #### Descrção
 
-The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. MailAttachment</code> object(s)
 
 ## .to
 
@@ -403,7 +403,7 @@ The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summar
 
 #### Descrção
 
-The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+The `MAIL Convert from MIME` command <!-- REF #EmailObjectClass.to.Summary -->converts a MIME document into a valid email object<!-- END REF -->.
 
 ## MAIL Convert from MIME
 
