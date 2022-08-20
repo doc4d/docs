@@ -32,6 +32,7 @@ Dasselbe Prinzip gilt, wenn Methoden durch bestimmte Befehle ausgeführt werden,
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
+//pass the !05/05/20!  
 //pass the !05/05/20! date as parameter to the SetCalendarDate  
 //in the context of a subform
 ```
@@ -349,6 +350,11 @@ C_TEXT($1;$2;$3;$4;$5;$6)
     End if
     ...
  End if
+    If($DataType=Is picture)
+       $0:=-1
+    End if
+    ...
+ End if
 ```
 
 ## Wrong parameter type
@@ -532,7 +538,7 @@ Hier ist der Parameter nicht das Feld, sondern ein Zeiger auf das Feld. Deshalb 
  ALERT($0)
 ```
 
-Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine Funktion verwenden" genannt. Weitere Informationen dazu finden Sie im Abschnitt [Rückgabewerte](#rückgabewert).
+This second technique of returning a value by a subroutine is called “using a function.” This is described in the [Returning values](#returning-values) paragraph. Weitere Informationen dazu finden Sie im Abschnitt [Rückgabewerte](#rückgabewert).
 
 
 ### Sonderfälle: Objekte und Collections
