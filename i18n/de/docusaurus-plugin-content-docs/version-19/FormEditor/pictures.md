@@ -7,9 +7,9 @@ title: Bilder
 
 ## Native Unterstützung von Formaten
 
-4D enthält die native Verwaltung von Bildformaten, d. h. die Bilder werden in ihrem Originalformat angezeigt und gespeichert, ohne jegliche Interpretation durch 4D. Die spezifischen Merkmale der verschiedenen Formate, wie Schatten, transparente Bereiche, o. ä. werden beim Kopieren und Einsetzen beibehalten und ohne Veränderung angezeigt. Die native Verwaltung gilt für alle in 4D Formularen gespeicherten Bilder: [statische Bilder](FormObjects/staticPicture.md), die in den Designmodus übertragen wurden, Bilder, die im Anwendungsmodus in [Eingabeobjekte](FormObjects/input_overview.md) eingefügt wurden, etc.
+4D enthält die native Verwaltung von Bildformaten, This means that pictures will be displayed and stored in their original format, without any interpretation in 4D. The specific features of the different formats (shading, transparent areas, etc.) will be retained when they are copied and pasted, and will be displayed without alteration. Die spezifischen Merkmale der verschiedenen Formate, wie Schatten, transparente Bereiche, o. ä. werden beim Kopieren und Einsetzen beibehalten und ohne Veränderung angezeigt. Die native Verwaltung gilt für alle in 4D Formularen gespeicherten Bilder: [statische Bilder](FormObjects/staticPicture.md), die in den Designmodus übertragen wurden, Bilder, die im Anwendungsmodus in [Eingabeobjekte](FormObjects/input_overview.md) eingefügt wurden, etc.
 
-Die gängigsten Bildformate werden auf beiden Plattformen unterstützt: .jpeg, .gif, .png, .tiff, .bmp, etc. Auf macOS ist auch das Format .pdf zum Codieren und Decodieren verfügbar.
+The most common picture formats are supported of both platforms: .jpeg, .gif, .png, .tiff, .bmp, etc. On macOS, the .pdf format is also available for encoding and decoding. Auf macOS ist auch das Format .pdf zum Codieren und Decodieren verfügbar.
 
 > Die unterstützten Formate variieren unter Windows und auf macOS je nach Betriebssystem und den eigenen Codecs, die auf den Rechnern installiert sind. Um herauszufinden, welche Codecs verfügbar sind, müssen Sie den Befehl `PICTURE CODEC LIST` verwenden (siehe auch unter [Bild Codec Kennung](Concepts/dt_picture.md)).
 
@@ -49,7 +49,7 @@ Hochauflösende Bilder mit der @nx-Konvention lassen sich in folgenden Objekten 
 * [List box headers](FormObjects/listbox_overview.md#list-box-headers)
 * [Menu icons](Menus/properties.md#item-icon)
 
-4D priorisiert automatisch die Bilder mit der höchsten Auflösung. <br/><br/> **Beispiel**: Wenn Sie zwei Bildschirme verwenden (ein hochauflösendes Display, ein Standard-Display) und Sie ein Formular von einem Bildschirm auf den anderen verschieben, rendert 4D automatisch die höchstmögliche Auflösung des Bildes. Selbst wenn ein Befehl oder eine Eigenschaft *circle.png* angibt, wird *circle@3x.png* verwendet (wenn es existiert).
+4D priorisiert automatisch die Bilder mit der höchsten Auflösung. 4D automatically prioritizes pictures with the highest resolution. Selbst wenn ein Befehl oder eine Eigenschaft *circle.png* angibt, wird *circle@3x.png* verwendet (wenn es existiert).
 > Beachten Sie, dass die Priorisierung der Auflösung nur für die Anzeige von Bildern auf dem Bildschirm erfolgt, beim Drucken wird keine automatische Priorisierung vorgenommen.
 
 ### DPI (macOS and Windows)
