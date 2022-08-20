@@ -11,7 +11,7 @@ As regras abaixo são aplicadas à todas as estruturas de 4D.
 
 - Um nome deve começar por um caractere alfabético, um subscrito ou um sinal de dólar ("$") (lembre que um sinal de dólar pode denotar um elemento local, ver abaixo).
 - Depois disso, o nome pode incluir caracteres alfabéticos, numéricos, o caractere espaço e o caractere de sublinhado/traço baixo ("_") .
-- Pontos (".") Pontos (".") Pontos (".") e colchetes ("[ ]") não estão permitidos nos nomes de tabelas, campos, métodos ou variáveis.
+- Pontos (".") Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Não são permitidos vírgulas, barras inclinadas, aspas nem dois pontos.
 - Os caracteres reservados para seu uso como oepradores como * e + não estão permitidos.
 - Não use nomes reservados, ou seja, nomes de comando 4D (`Date`, `Time`, etc), palavras chaves (If, For, etc.), e constantes.
@@ -20,7 +20,7 @@ As regras abaixo são aplicadas à todas as estruturas de 4D.
 ### Regras adicionais para as propriedades dos objetos e os nomes ORDA
 
 - Os caracteres de espaço não estão permitidos.
-- Pontos (".") Pontos (".") Pontos (".") e os colchetes ("[ ]") não estão permitidos.
+- Pontos (".") Periods (".") and brackets ("[ ]") are not allowed.
 - Os nomes são sensíveis às maiúsculas e minúsculas.
 
 ### Regras adicionais para SQL
@@ -145,48 +145,42 @@ A referência a um elemento de um array local, processo ou interprocesso se real
 Exemplos:
 
 ```4d  
- //Addressing an element of an interprocess array
-If(<>asKeywords{1}="Stop")
+ //Addressing an element of an interprocess array If(<>asKeywords{1}="Stop")
 <>atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=<>aiBigArray{Size of array(<>aiBigArray)}
 
- //Addressing an element of a process array
-If(asKeywords{1}="Stop")
+ //Addressing an element of a process array If(asKeywords{1}="Stop")
 atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{Size of array(aiBigArray)}
 
- //Addressing an element of a local array
-If($asKeywords{1}="Stop")
+ //Addressing an element of a local array If($asKeywords{1}="Stop")
 $atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 ```
 
 ### Elementos de arrays de duas dimensões
 
-A referência a um elemento de um array de duas dimensões se realiza utilizando as chaves ({…}) duas vezes. duas vezes. O elemento ao que se faz referência se denota através de duas expressões numéricas em dois conjuntos de pares de chaves
+You reference an element of a two-dimensional array by using the curly braces ({…}) twice. duas vezes. O elemento ao que se faz referência se denota através de duas expressões numéricas em dois conjuntos de pares de chaves
 
 Exemplos:
 
 ```4d
- //Addressing an element of a two-dimensional interprocess array
-If(<>asKeywords{$vlNextRow}{1}="Stop")
+ //Addressing an element of a two-dimensional interprocess array If(<>asKeywords{$vlNextRow}{1}="Stop")
 <>atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=<>aiBigArray{$vlSet}{Size of array(<>aiBigArray{$vlSet})}
 
- //Addressing an element of a two-dimensional process array
-If(asKeywords{$vlNextRow}{1}="Stop")
+ //Addressing an element of a two-dimensional process array If(asKeywords{$vlNextRow}{1}="Stop")
 atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{$vlSet}{Size of array(aiBigArray{$vlSet})}
 
- //Addressing an element of a two-dimensional local array
-If($asKeywords{$vlNextRow}{1}="Stop")
+ //Addressing an element of a two-dimensional local array If($asKeywords{$vlNextRow}{1}="Stop")
 $atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
 ```
 
 ## Atributos de objetos
 
-Quando a notação objeto estiver ativada, é designado um atributo de objeto (também chamado propriedade de objeto) colocando um ponto (".") entre o nome do objeto (ou do atributo) e o nome do atributo. entre o nome do objeto (ou do atributo) e o nome do atributo. Um nome de atributo pode conter até 255 caracteres e diferencia entre  maiúsculas e minúsculas.
+When object notation is enabled, you designate an object attribute (also called object property) by placing a point (".") between the name of the object (or attribute) and the name of the attribute. entre o nome do objeto (ou do atributo) e o nome do atributo. Um nome de atributo pode conter até 255 caracteres e diferencia entre  maiúsculas e minúsculas.
 
 Exemplos:
 
@@ -241,23 +235,19 @@ DELETE DUPLICATED VALUES APPLY TO SELECTION([Employees];INCREASE SALARIES)
 Exemplos:
 
 ```4d
- //This command expects a method (function) or formula
-QUERY BY FORMULA([aTable];Special query)
- //This command expects a method (procedure) or statement
-APPLY TO SELECTION([Employees];INCREASE SALARIES)
- //But this command expects a method name
-ON EVENT CALL("HANDLE EVENTS")
+ //This command expects a method (function) or formula QUERY BY FORMULA([aTable];Special query)
+ //This command expects a method (procedure) or statement APPLY TO SELECTION([Employees];INCREASE SALARIES)
+ //But this command expects a method name ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Os métodos projeto podem aceitar parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Além disso, pode direcionar múltiplos parâmetros consecutivos com a sintaxe ${n} onde n, expressão numérica, é o número do parâmetro. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Além disso, pode direcionar múltiplos parâmetros consecutivos com a sintaxe ${n} onde n, expressão numérica, é o número do parâmetro.
+Os métodos projeto podem aceitar parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. A method can return a single value in the $0 parameter. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. In addition, multiple consecutive (and last) parameters can be addressed with the syntax ${n}where n, numeric expression, is the number of the parameter.
 
 Dentro de uma função, a variável local $0 contém o valor a devolver.
 
 Exemplos:
 
 ```4d
- //Within DROP SPACES $1 is a pointer to the field [People]Name
-DROP SPACES(->[People]Name)
+ //Within DROP SPACES $1 is a pointer to the field [People]Name DROP SPACES(->[People]Name)
 
  //Within Calc creator:
  //- $1 is numeric and equal to 1
@@ -314,16 +304,13 @@ O nome de um conjunto cliente deve ser precedido do sinal de dólar ($). Um nome
 Exemplos:
 
 ```4d
- //Interprocess sets
-USE SET("<>Deleted Records")
+ //Interprocess sets USE SET("<>Deleted Records")
 CREATE SET([Customers];"<>Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Process sets
-USE SET("Deleted Records")
+ //Process sets USE SET("Deleted Records")
 CREATE SET([Customers];"Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Client sets
-USE SET("$Deleted Records")
+ //Client sets USE SET("$Deleted Records")
 CREATE SET([Customers];"$Customer Orders")
 If(Records in set("$Selection"+String($i))>0)
 ```
@@ -348,10 +335,8 @@ You denote a process named selection by using a string expression that represent
 Exemplos:
 
 ```4d
- //Interprocess Named Selection
-USE NAMED SELECTION([Customers];"<>ByZipcode")
- //Process Named Selection
-USE NAMED SELECTION([Customers];"<>ByZipcode")
+ //Interprocess Named Selection USE NAMED SELECTION([Customers];"<>ByZipcode")
+ //Process Named Selection USE NAMED SELECTION([Customers];"<>ByZipcode")
 ```
 
 ## Processos
