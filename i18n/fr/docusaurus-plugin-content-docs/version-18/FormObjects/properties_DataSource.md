@@ -46,7 +46,7 @@ Associe une liste de choix à un objet. Il peut s'agir d'un nom de liste de choi
 
 #### Objets pris en charge
 
-[Liste déroulante](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Liste hiérarchique](list_overview.md#overview) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
