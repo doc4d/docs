@@ -53,7 +53,7 @@ title: リストボックス
 * **配列**: 各列に 4D 配列を割り当てます。 配列タイプのリストボックスは [階層リストボックス](listbox_overview.md#階層リストボックス) として表示することができます。
 * **セレクション** (**カレントセレクション** または **命名セレクション**): 各列に式 (たとえばフィールド) を割り当てます。それぞれの行はセレクションのレコードを基に評価されます。
 * **コレクションまたはエンティティセレクション**: 各列に式を割り当てます。各行の中身はコレクションの要素ごと、あるいはエンティティセレクションのエンティティごとに評価されます。
-> 1つのリストボックス内に複数のデータソースタイプを組み合わせて指定することはできません。 データソースは、リストボックス作成時に定義され、 プログラムによって後から変更することはできません。
+> > It is not possible to combine different list box types in the same list box object. データソースは、リストボックス作成時に定義され、 プログラムによって後から変更することはできません。
 
 ### リストボックスの管理
 
@@ -437,7 +437,7 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 * `On Getting Focus` (リストボックスプロパティ)
 * `On Losing Focus` (リストボックスプロパティ)
 * `On Activate` (フォームプロパティ)
-* `On Deactivate` (フォームプロパティ)
+* `On Deactivate` (form property) ...depending on whether and how you want to visually represent changes of focus in selections.
 
 ##### 例題
 
@@ -550,7 +550,7 @@ End if
 * 変数が 0 のとき、列は並べ替えられておらず、矢印は表示されていません。  
   ![](../assets/en/FormObjects/sorticon0.png)
 
-* 変数が 1 のとき、列は昇順で並べ替えられており、並べ替え矢印が表示されています。 ![](../assets/en/FormObjects/sorticon1.png)
+* If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon1.png)
 
 * If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon2.png)
 
@@ -616,9 +616,9 @@ End if
 | ------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | 背景色     | [行背景色配列](properties_BackgroundAndBorder.md#row-background-color-array) | [背景色式](properties_BackgroundAndBorder.md#background-color-expression) | [背景色式"](properties_BackgroundAndBorder.md#背景色式) または [メタ情報式](properties_Text.md#メタ情報式) |
 | フォントカラー | [行フォントカラー配列](properties_Text.md#row-font-color-array)                  | [フォントカラー式](properties_Text.md#font-color-expression)                  | [フォントカラー式](properties_Text.md#フォントカラー式) または [メタ情報式](properties_Text.md#メタ情報式)         |
- フォントスタイル|
 
-[行スタイル配列](properties_Text.md#行スタイル配列)|[スタイル式](properties_Text.md#スタイル式)|[スタイル式](properties_Text.md#スタイル式) または [メタ情報式](properties_Text.md#メタ情報式)| 表示|[行コントロール配列](properties_ListBox.md#行コントロール配列)|-|-|
+
+[Row Style Array](properties_Text.md#row-style-array)|[Style Expression](properties_Text.md#style-expression)|[Style Expression](properties_Text.md#style-expression) or [Meta info expression](properties_Text.md#meta-info-expression)| Display|[Row Control Array](properties_ListBox.md#row-control-array)|-|-|
 
 ## リストボックスの印刷
 
@@ -706,7 +706,7 @@ Variable 1 は常に、リストボックスの先頭列の変数名に対応し
 
 階層を正しく構築するためには、事前に配列をソートしなければなりません。 たとえば、配列中にデータが AAABBAACC の順で含まれていると、階層は以下のようになります:
 
-    > A B A C
+    > &gt; A B A C
 
 階層 "ノード" を展開したり折りたたんだりするには、ノード上をクリックします。 ノード上を **Alt+クリック** (Windows) または **Option+クリック** (macOS) すると、すべてのサブ要素が同時に展開されたり折りたたまれたりします。 これらの動作は `LISTBOX EXPAND` および `LISTBOX COLLAPSE` コマンドを使用することでプログラミングでも実行可能です。
 
@@ -759,7 +759,7 @@ Variable 1 は常に、リストボックスの先頭列の変数名に対応し
  ->MyListbox{3}:=True
 ```
 
-非階層表示: ![](../assets/en/FormObjects/hierarch7.png) 階層表示: ![](../assets/en/FormObjects/hierarch8.png)
+Non-hierarchical representation: ![](../assets/en/FormObjects/hierarch7.png) Hierarchical representation: ![](../assets/en/FormObjects/hierarch8.png)
 
 > 親が折りたたまれているために行が非表示になっていると、それらは選択から除外されます。 (直接あるいはスクロールによって) 表示されている行のみを選択できます。 言い換えれば、行を選択かつ隠された状態にすることはできません。
 
@@ -833,7 +833,7 @@ Result:
 
 しかしながら、データソーステーマは、オブジェクト型のリストボックスカラムに対しては選択できません。 実際、カラムの各セルの中身は、それに対応するオブジェクト配列の要素の属性に基づいています。 配列の各オブジェクト要素には、以下を定義できます:
 
-値の型 (必須): テキスト、カラー、イベント、他 値そのもの (任意): 入力/出力に使用 セルの内容表示 (任意): ボタン、リスト、他 追加の設定 (任意): 値の型によります これらのプロパティを定義するには、適切な属性をオブジェクト内に設定する必要があります (使用可能な属性は以下に一覧としてまとめてあります)。 たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に "Hello World!" 書き込むことができます:
+the value type (mandatory): text, color, event, etc. the value itself (optional): used for input/output. the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に "Hello World!" 書き込むことができます:
 
 ```4d  
 ARRAY OBJECT(obColumn;0) // カラム配列
@@ -851,7 +851,7 @@ ARRAY OBJECT(obColumn;0) // カラム配列
 リストボックスカラムにオブジェクト配列が割り当てられているとき、セルの表示・入力・編集の方法は、配列の要素の valueType 属性に基づきます。 次の valueType の値がサポートされています:
 
 * "text": テキスト値
-* "real": for a numeric value that can include separators like a `\&#060;space&#062;`, <.>, or <,>
+* "real": for a numeric value that can include separators like a `\&#060;space&#062;`, <.>, or
 * "integer": 整数値
 * "boolean": true/false 値
 * "color": 背景色を定義
