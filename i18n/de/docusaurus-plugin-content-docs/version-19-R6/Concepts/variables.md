@@ -162,7 +162,7 @@ Sie können drei Variablentypen erstellen: **lokal**, **Prozess** und **Interpro
 
 ### Lokale Variable
 
-Wie schon der Name sagt, gilt sie lokal für eine Methode, d. h. sie ist nur in der Methode verfügbar, wo sie erstellt wurde. Außerhalb dieser Methode ist sie nicht zugänglich. Lokal zu einer Methode bedeutet formell "lokal in Reichweite". Lokale Variablen dienen zur Eingrenzung, so dass die Variable nur innerhalb der Methode funktioniert.
+Wie schon der Name sagt, gilt sie lokal für eine Methode, d. h. sie ist nur in der Methode verfügbar, wo sie erstellt wurde. Außerhalb dieser Methode ist sie nicht zugänglich. Lokal zu einer Methode bedeutet formell "lokal in Reichweite". Being local to a method is formally referred to as being “local in scope.” Local variables are used to restrict a variable so that it works only within the method.
 
 Sie verwenden eine lokale Variable, um:
 
@@ -193,7 +193,7 @@ Eine Prozessvariable ist nur innerhalb eines Prozesses verfügbar. Sie ist in de
 
 Der Name der Prozessvariable hat kein vorangestelltes Zeichen. Der Name der Prozessvariablen kann max. 31 Zeichen lang sein.
 
-Im interpretierten Modus werden Variablen dynamisch verwaltet; sie werden erstellt und “on the fly” aus dem Speicher entfernt. Im kompilierten Modus nutzen alle Prozesse, die Sie anlegen (Benutzerprozesse) dieselbe Definition der Prozessvariablen, aber jeder Prozess hat für jede Variable eine andere Instanz. So ist die Variable myVar eine Variable im Prozess P_1 und eine andere im Prozess P_2.
+Im interpretierten Modus werden Variablen dynamisch verwaltet; sie werden erstellt und “on the fly” aus dem Speicher entfernt. In interpreted mode, variables are maintained dynamically; they are created and erased from memory “on the fly.” In compiled mode, all processes you create (user processes) share the same definition of process variables, but each process has a different instance for each variable. So ist die Variable myVar eine Variable im Prozess P_1 und eine andere im Prozess P_2.
 
 Ein Prozess kann über die Befehle `GET PROCESS VARIABLE` und `SET PROCESS VARIABLE` Prozessvariablen aus einem anderen Prozess "erspähen und anstoßen". Es ist eine gute Programmierpraxis, diese Befehle nur für die Situation anzuwenden, für die sie in 4D hinzugefügt wurden:
 
