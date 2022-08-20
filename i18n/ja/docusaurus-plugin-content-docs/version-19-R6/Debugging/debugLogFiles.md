@@ -267,7 +267,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
    このログのパスは `Get 4D file` コマンドによって返されます。
 
 * 拡張バージョン:
-  * 添付ファイルも含まれます。 自動ファイルリサイクルは使用されません。
+  * attachment(s) included no automatic recycling
   * カスタムの名前を使用できます。
   * 特定の目的のために用意されています。
 
