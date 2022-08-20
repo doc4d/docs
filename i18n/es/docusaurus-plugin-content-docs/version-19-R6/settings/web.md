@@ -70,7 +70,7 @@ Define el tamaño de la caché. Ver [Caché](../WebServer/webServerConfig.md#cac
 
 #### Vaciar la caché
 
-En cualquier momento, puede vacíar la caché de las páginas y de las imágenes que contiene (si, por ejemplo, ha modificado una página estática y quiere volver a cargarla en la caché). En cualquier momento, puede vacíar la caché de las páginas y de las imágenes que contiene (si, por ejemplo, ha modificado una página estática y quiere volver a cargarla en la caché). La caché se borra inmediatamente.
+En cualquier momento, puede vacíar la caché de las páginas y de las imágenes que contiene (si, por ejemplo, ha modificado una página estática y quiere volver a cargarla en la caché). At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). La caché se borra inmediatamente.
 
 > También puede utilizar la URL especial [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
 
@@ -199,7 +199,7 @@ El menú de formato de registro ofrece las siguientes opciones:
 -   estado: respuesta dada por el servidor.
 -   longitud: tamaño de los datos devueltos (excepto el encabezado HTTP) o 0.
 
-> **Nota:** por razones de rendimiento, las operaciones se guardan en una memoria búfer por paquetes de 1Kb antes de ser escritas en el disco. Las operaciones también se escriben en disco si no se ha enviado ninguna petición cada 5 segundos. Los valores posibles del estado son los siguientes: 200: OK 204: Sin contenido 302: Redirección 304: No modificado 400: Petición incorrecta 401: Autenticación requerida 404: No encontrada 500: Error interno El formato CLF no puede ser personalizado.
+> **Nota:** por razones de rendimiento, las operaciones se guardan en una memoria búfer por paquetes de 1Kb antes de ser escritas en el disco. Las operaciones también se escriben en disco si no se ha enviado ninguna petición cada 5 segundos. The possible values of state are as follows: 200: OK 204: No contents 302: Redirection 304: Not modified 400: Incorrect request 401: Authentication required 404: Not found 500: Internal error The CLF format cannot be customized.
 
 -   **DLF (Combined Log Format)**: cuando se selecciona esta opción, el historial de peticiones se genera en formato DLF. El formato DLF es similar al formato CLF y utiliza exactamente la misma estructura. Simplemente añade dos campos HTTP adicionales al final de cada petición: Referer y User-agent.
 
@@ -212,7 +212,7 @@ El menú de formato de registro ofrece las siguientes opciones:
 
 -   **WLF (WebStar Log Format)**: cuando se selecciona esta opción, el historial de peticiones se genera en formato WLF. El formato WLF se desarrolló específicamente para el servidor 4D WebSTAR. Es similar al formato ELF, con sólo unos pocos campos adicionales. Al igual que el formato ELF, se puede personalizar.
 
-**Configurar los campos** Cuando selecciona el formato ELF (Extended Log Format) o WLF (WebStar Log Format), el área "Weg Log Token Selection" muestra los campos disponibles para el formato elegido. Deberá seleccionar cada campo para incluirlo en el registro. Deberá seleccionar cada campo para incluirlo en el registro.
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. Deberá seleccionar cada campo para incluirlo en el registro. You will need to select each field to be included in the log.
 
 **Nota**: no puede seleccionar el mismo campo dos veces.
 
@@ -254,8 +254,8 @@ Configure los parámetros de copia de seguridad automática para el registro de 
 
     -   **a partir de**: permite definir la hora de activación de la primera copia de seguridad.
 -   **Cada X día(s) a las X**: esta opción se utiliza para programar las copias de seguridad con una base diaria. Introduzca 1 si desea realizar una copia de seguridad diaria. Cuando esta opción está marcada, debe indicar la hora a la que debe comenzar la copia de seguridad.
--   **Cada X semana(s), día a las X**: esta opción se utiliza para programar las copias de seguridad con una base semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. Cuando esta opción está marcada, debe indicar el día(s) de la semana y la hora que debe comenzar cada copia de seguridad. Si lo desea, puede seleccionar varios días de la semana. Por ejemplo, puede utilizar esta opción para definir dos copias de seguridad semanales: una el miércoles y una el viernes.
--   **Cada X mes(es), el día X a las X**: esta opción se utiliza para programar las copias de seguridad con una base mensual. Introduzca 1 si desea realizar una copia de seguridad mensual. Cuando esta opción está marcada, debe indicar el día de cada mes y la hora a la cual debe comenzar la copia de seguridad.
+-   **Cada X semana(s), día a las X**: esta opción se utiliza para programar las copias de seguridad con una base semanal. Introduzca 1 si desea realizar una copia de seguridad semanal. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
+-   **Cada X mes(es), el día X a las X**: esta opción se utiliza para programar las copias de seguridad con una base mensual. Introduzca 1 si desea realizar una copia de seguridad mensual. Enter 1 if you want to perform a monthly backup.
 -   **Todos los X MB**: esta opción se utiliza para programar las copias de seguridad en función del tamaño del archivo de registro actual. Una copia de seguridad se activa automáticamente cuando el archivo alcanza el tamaño especificado. Puedes definir un límite de tamaño de 1, 10, 100 o 1000 MB.
 
 > En el caso de las copias de seguridad programadas, si el servidor web no fue lanzado cuando se programó la copia de seguridad, en el siguiente lanzamiento 4D considera que la copia de seguridad ha fallado y aplica los parámetros adecuados, definidos en las Propiedades de la base.
