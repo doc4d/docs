@@ -16,9 +16,9 @@ Em modo manutenção, só se mostra a janela de CSM (o banco de dados não é ab
 
 You can open the MSC in maintenance mode from two locations:
 
-- **A caixa de diálogo padrão de abertura**. A caixa de diálogo padrão de abertura de bancos de dados inclui a opção **Centro de segurança de manutenção** do menu associado ao botão **Abrir**: ![](../assets/en/MSC/MSC_standardOpen.png)
-- Menu **Ajuda/Centro de segurança e de manutenção** ou botão **CSM** na barra de ferramentas (banco de dados não aberto)  
-  ![](../assets/en/MSC/mscicon.png) Quando se chama a esta função, aparece um diálogo padrão de abertura de arquivos para poder indicar o banco a examinar. O banco de dados não será aberto por 4D.
+- **From the standard database opening dialog box** The standard Open database dialog includes the **Maintenance Security Center** option from the menu associated with the **Open** button: ![](../assets/en/MSC/MSC_standardOpen.png)
+- **Help/Maintenance Security Center** menu or **MSC** button in the tool bar (database not open)  
+  ![](../assets/en/MSC/mscicon.png) When you call this function, a standard Open file dialog appears so that you can indicate the database to be examined. O banco de dados não será aberto por 4D.
 
 ## Display in standard mode
 
