@@ -19,11 +19,11 @@ title: Restitution
 
 Vous pouvez restituer manuellement le contenu d’une archive générée par le module de sauvegarde. Une restitution manuelle peut être nécessaire par exemple pour restituer la totalité du contenu d’une archive (fichiers de structure et/ou fichiers joints inclus) ou à des fins de recherche sur des archives. La restitution manuelle peut éventuellement s’accompagner de l’intégration de l’historique courant.
 
-La restitution manuelle des sauvegardes peut être réalisée soit via une boîte de dialogue standard d’ouverture de document, soit via la page [“Restitution”](MSC/restore) du Centre de sécurité et de maintenance (CSM). La restitution via une boîte de dialogue standard permet de restituer n’importe quelle archive. En revanche, seules les archives associées à la base ouverte peuvent être restituées.
+La restitution manuelle des sauvegardes peut être réalisée soit via une boîte de dialogue standard d’ouverture de document, soit via la page [“Restitution”](MSC/restore) du Centre de sécurité et de maintenance (CSM). La restitution via une boîte de dialogue standard permet de restituer n’importe quelle archive. Restoring via the MSC provides more options and allows the archive contents to be previewed.
 
 Pour restituer manuellement une sauvegarde via une boîte de dialogue standard :
 
-1. Lancez l’application 4D et choisissez la commande **Restituer...** dans le menu **Fichier**. Il n’est pas obligatoire qu’une base de données soit ouverte. OU BIEN Exécutez la commande `RESTORE` depuis une méthode 4D. Une boîte de dialogue standard d’ouverture de fichiers apparaît.
+1. Lancez l’application 4D et choisissez la commande **Restituer...** dans le menu **Fichier**. Il n’est pas obligatoire qu’une base de données soit ouverte. OR Execute the `RESTORE` command from a 4D method. Une boîte de dialogue standard d’ouverture de fichiers apparaît.
 2. Désignez le fichier de sauvegarde (.4bk) ou le fichier de sauvegarde de l’historique (.4bl) à restituer et cliquez sur **Ouvrir**. Un boîte de dialogue apparaît, vous permettant de désigner l’emplacement auquel vous souhaitez que les fichiers soient restitués . Par défaut, 4D restitue les fichiers dans un dossier nommé *“Nomarchive”* (sans extension) placé à côté de l’archive. Vous pouvez afficher le chemin :
 
 ![](../assets/en/Backup/backup07.png)
