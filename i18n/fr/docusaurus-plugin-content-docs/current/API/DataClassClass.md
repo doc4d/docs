@@ -242,7 +242,7 @@ Pour chaque objet de *objectCol* :
   * Si la clé primaire est fournie (telle quelle) et existe, une erreur est générée
   * Si la clé primaire est fournie (telle quelle) et n'existe pas, l'entité est créée
   * Si la clé primaire n'est pas fournie, l'entité est créée et la clé primaire est assignée selon les règles en vigueur de la base de données.
-> Les objets imbriqués décrivant les entités relatives doivent contenir une propriété "\_\_KEY" (contenant la valeur de la clé primaire de l'entité relative) ou la clé primaire de l'entité relative elle-même. L'utilisation de la propriété \_\_KEY permet de ne pas dépendre du nom de l'attribut clé primaire.
+> The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. The use of a \_\_KEY property allows independence from the primary key attribute name.
 
 **Related entities**
 
@@ -879,7 +879,7 @@ où :
 
   * **Text** : la chaine de formule doit être précédée de la déclaration `eval()`, afin que l'analyseur de requêtes évalue l'expression correctement. Par exemple : *"eval(length(This.lastname) >=30)"*
   * **Object**: l'[objet formule](FunctionClass.md) est passé en tant que **placeholder** (voir ci-dessous). La formule doit avoir été créée à l'aide des commandes [`Formula`](FunctionClass.md#formula) ou [`Formula from string`](FunctionClass.md#formula-from-string).
-> * N'oubliez pas que les formules de 4D prennent uniquement en charge les symboles `&` et `|` comme opérateurs logiques.
+> * > * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
 > * Si la formule n'est pas le seul critère de recherche, le système d'optimisation des requêtes pourra prioriser le traitement d'autres critères (ex : attributs indexés) et ainsi, la formule sera évaluée uniquement pour un sous-ensemble d'entités.
 
  Les formules contenues dans les requêtes peuvent recevoir des paramètres via $1. Ce point est détaillé dans le paragraphe **Paramètre formula** ci-dessous.
@@ -941,12 +941,12 @@ Vous pouvez utiliser des parenthèses dans la recherche afin de prioriser les ca
 
 Il existe deux types de placeholders : les **placeholders indexés** et les **placeholders nommés** :
 
-|            | Placeholders indexés                                                                                                                                             | Placeholders nommés                                                                                                                                                                        |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Définition | Vous pouvez combiner tous les types d'arguments dans *queryString*. Une *queryString* peut contenir, pour les paramètres *attributePath*, *formula* et *value* : | Les paramètres sont insérés sous la forme `:paramName` (par exemple :myparam) et leurs valeurs sont fournies dans les objets attributes et/ou parameters dans le paramètre *querySettings* |
-| Exemple    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                      | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)`                                           |
+|            | Placeholders indexés                                                                                                                 | Placeholders nommés                                                                                                                                                                        |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Définition | You can mix all argument kinds in *queryString*. A *queryString* can contain, for *attributePath*, *formula* and *value* parameters: | Les paramètres sont insérés sous la forme `:paramName` (par exemple :myparam) et leurs valeurs sont fournies dans les objets attributes et/ou parameters dans le paramètre *querySettings* |
+| Exemple    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                          | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)`                                           |
 
-Vous pouvez combiner tous les types d'arguments dans *queryString*. Une *queryString* peut contenir, pour les paramètres *attributePath*, *formula* et *value* :
+Vous pouvez combiner tous les types d'arguments dans *queryString*. in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). You can use up to 128 *value* parameters
 
 * des valeurs directes (pas de placeholders)
 * des placeholders indexés et/ou nommés.
