@@ -27,8 +27,8 @@ Se aplican las siguientes reglas para todas las conversiones:
     *   Tablas con llaves primarias compuestas.
 *   BLOB fields are automatically available as attributes of the [Blob object](Concepts/dt_blob.md#blob-types) type.
 
-> El mapeo ORDA no tiene en cuenta:  
-> - la opción "Invisible" para tablas o campos, - la estructura virtual definida mediante `SET TABLE TITLES` o `SET FIELD TITLES`, - la propiedad "Manual" o "Automática" de las relaciones.
+> ORDA mapping does not take into account:  
+> - the "Invisible" option for tables or fields, - the virtual structure defined through `SET TABLE TITLES` or `SET FIELD TITLES`, - the "Manual" or "Automatic" property of relations.
 
 
 ### Normas de control de acceso remoto
@@ -246,7 +246,7 @@ Las selecciones de entidades desordenadas se crean en los siguientes casos:
 *   result of a standard `query()` on a selection (of any type) or a `query()` on a dataclass,
 *   resultado del método `newSelection()` sin opción,
 *   result of any of the comparison methods, whatever the input selection types: `or()`, `and()`, `minus()`.
-> > > > > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
+> > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 
 > * > > * > > * > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > * selecciones de entidades basadas en datastores remotos.
