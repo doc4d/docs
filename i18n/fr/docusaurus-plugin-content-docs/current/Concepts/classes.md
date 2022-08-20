@@ -46,7 +46,7 @@ Une classe utilisateur dans 4D est définie par un fichier de méthode spécifiq
 Lorsque vous nommez des classes, gardez à l'esprit les règles suivantes :
 
 - Un [nom de classe](identifiers.md#classes) doit être conforme aux [règles de nommage des propriétés](identifiers.md#object-properties).
-- Les noms de classe sont sensibles à la casse.
+- .
 - Il n'est pas recommandé de donner le même nom à une classe et à une table de base de données, afin d'éviter tout conflit.
 
 Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez créer le fichier suivant :
@@ -490,6 +490,12 @@ Class constructor($width : Integer; $height : Integer)
 
 Function sayName()
  ALERT("Hi, I am a "+This.name+".")
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+
+ $0:=(This.height)*(This.width)
 
 // Function definition
 Function getArea()
