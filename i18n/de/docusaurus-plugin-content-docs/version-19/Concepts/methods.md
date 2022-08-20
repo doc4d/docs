@@ -18,7 +18,7 @@ In der 4D Programmiersprache gibt es verschiedene Kategorien von Methoden. Die K
 | **Objekt (Widget) Methode**                      | Automatisch, wenn ein Ereignis das Objekt betrifft, dem die Methode zugeordnet ist                                          | Nein                 | Eigenschaft eines Formularobjekts (auch Widget genannt)                                                                                                                                                          |
 | **Formularmethode**                              | Automatisch, wenn ein Ereignis das Formular betrifft, dem die Methode zugeordnet ist                                        | Nein                 | Eigenschaft eines Formulars. Sie können eine Formularmethode zum Verwalten von Daten und Objekten verwenden. Für diese Zwecke ist es jedoch generell einfacher und effizienter, eine Objektmethode zu verwenden. |
 | **Trigger** (auch bekannt als *Tabellenmethode*) | Automatisch, jedes Mal wenn Sie die Datensätze einer Tabelle bearbeiten (Hinzufügen, Löschen, Ändern)                       | Nein                 | Eigenschaft einer Tabelle. Trigger sind Methoden, die “illegale” Operationen mit Datensätzen in Ihrer Datenbank verhindern.                                                                                      |
-| **Datenbankmethoden**                            | Automatisch, wenn ein Ereignis in der Arbeitssitzung eintritt                                                               | Ja (vordefiniert)    | Es gibt 16 Datenbankmethoden in 4D. Siehe Abschnitt zu Datenbankmethoden                                                                                                                                         |
+| **Datenbankmethoden**                            | Automatisch, wenn ein Ereignis in der Arbeitssitzung eintritt                                                               | Ja (vordefiniert)    | There are 16 database methods in 4D. See Database methods section Siehe Abschnitt zu Datenbankmethoden                                                                                                           |
 
 
 > Die 4D Programmiersprache unterstützt auch **Class functions**, die im Kontext der Instanz eines Objekts aufgerufen werden. Class Functions können integriert sein (*z.B.* `collection.orderBy()` oder `entity.save()`) oder vom 4D Entwickler [erstellt worden sein](classes.md#class-function).
@@ -216,6 +216,8 @@ Für dieses Beispiel nehmen wir an, dass die Werte der Datenfelder einmalig sind
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
        ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
+    End if
+ End if
     End if
  End if
 ```
