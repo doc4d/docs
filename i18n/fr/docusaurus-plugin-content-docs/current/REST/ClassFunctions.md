@@ -63,7 +63,7 @@ Voir [cet exemple](#request-receiving-an-entity-as-parameter) et [cet exemple](#
 
 ### Paramètre de valeur scalaire
 
-Le(s) paramètre(s) doivent simplement être incluse dans une collection définie dans le corps. Par exemple, avec une fonction de dataclass `getCities()` qui reçoit des paramètres de type texte : `/rest/City/getCities`
+Le(s) paramètre(s) doivent simplement être incluse dans une collection définie dans le corps. For example, with a  dataclass function `getCities()` receiving text parameters: `/rest/City/getCities`
 
 **Parmaètres dans le corps :** ["Aguada","Paris"]
 
