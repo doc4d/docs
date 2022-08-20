@@ -190,7 +190,7 @@ La collection ne doit contenir que des **éléments de même type**, sinon une e
 
 Le nombre de boucles est basé sur le nombre d'éléments de la collection. À chaque itération, la variable de l'élément correspond automatiquement à l'élément correspondant de la collection. Vous devez tenir compte des points suivants :
 
-- If the *item* variable is of the object type or collection type (i.e. Si un seul élément de la collection n'est pas du même type que la variable, une erreur est générée et la boucle s'arrête.
+- The *item* variable gets the same type as the first collection element. If any collection item is not of the same type as the variable, an error is generated and the loop stops.
 - If the *item* variable is of the object type or collection type (i.e. Si un seul élément de la collection n'est pas du même type que la variable, une erreur est générée et la boucle s'arrête.
 - Si la collection contient des éléments de valeur Null, une erreur sera générée si le type de la variable ne prend pas en charge la valeur *Null* (comme par exemple les variables entier long).
 
@@ -327,7 +327,7 @@ In case of an error during interpretation, the text inserted will be in the form
 
 #### Alternative syntax: `$4DHTML(expression)`
 
-La valeur de la variable 4D `vtSiteName` sera insérée dans la page HTML lors de son envoi. Cette valeur est insérée comme du texte simple, les caractères HTML spéciaux tels que ">" sont automatiquement échappés.
+The value of the 4D variable `vtSiteName` will be inserted in the HTML page when it is sent. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
 
 For example, here are the processing results of the 4D text variable myvar with the available tags:
 
@@ -352,7 +352,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
+Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. . <!--#4DELSE--> If all the conditions are false, the statements following the
 
 The two following codes are equivalent.
 
@@ -640,7 +640,7 @@ La balise `<!--#4DTEXT expression-->` vous permet d'insérer une référence à 
 Welcome to <!--#4DTEXT vtSiteName-->!</P>
 ```
 
-La valeur de la variable 4D `vtSiteName` sera insérée dans la page HTML lors de son envoi. Cette valeur est insérée comme du texte simple, les caractères HTML spéciaux tels que ">" sont automatiquement échappés.
+Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. Cette valeur est insérée comme du texte simple, les caractères HTML spéciaux tels que ">" sont automatiquement échappés.
 
 Vous pouvez également insérer des expressions 4D. Par exemple, vous pouvez insérer directement le contenu d'un champ (`<!--#4DTEXT [tableName]fieldName-->`), un élément de tableau (`<!--#4DTEXT tabarr{1}-->`) ou une méthode retournant une valeur (`<!--#4DTEXT mymethod-->`). La conversion des expressions suit les mêmes règles que celles des variables. De plus, l'expression doit respecter les règles de syntaxe 4D.
 
