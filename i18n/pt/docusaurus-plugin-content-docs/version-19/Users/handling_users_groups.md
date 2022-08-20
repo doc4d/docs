@@ -53,7 +53,7 @@ Para adicionar um usuário da Barra de Ferramentas:
 
 A lista de usuários exibe todos os usuários, incluindo o[Designer and the Administrator](#designer-and-administrator).
 
-2. Clique no botão ![](../assets/en/Users/PlussNew.png) que está abaixo da lista de usuários. OU Dê um clique direito na lista de usuários e escolha **Add** ou **Duplicate** no menu contextual.
+2. Clique no botão ![](../assets/en/Users/PlussNew.png) que está abaixo da lista de usuários. OR Right-click in the list of users and choose **Add** or **Duplicate** in the context menu.
 
 > O comando **Duplicate** pode ser usado para criar rapidamente vários usuários com as mesmas características.
 
@@ -95,15 +95,15 @@ Para criar um gurpo:
 
 1. Selecione **Tool Box > Grupos** no menu **Design** ou clique no botão **Tool Box** da barra 4D e depois no botão **Grupos**. 4D exibe a janela de editor de grupos. The list of groups displays all the groups of the application project.
 
-2. Clique no botão ![](../assets/en/Users/PlussNew.png) abaixo da lista de grupos.  
+2. Click on the ![](../assets/en/Users/PlussNew.png) button located below the list of groups.  
    OR  
-   Dê um clique direito na lista de grupos e escolha os comandos **Add** or **Duplicate** no menu contextual.
+   Right-click in the list of groups and choose the **Add** or **Duplicate** command in the context menu.
 
 > O comando Dupplicate/Duplicar pode ser usado para criar vários grupos tendo as mesmas características.
 
 4D adiciona um novo grupo para a lista, chamado "Novo grupoX".
 
-3. Digite o nome do novo grupo. O nome de grupo pode ter até 15 caracteres. Pode renomear um grupo a qualquer momento usando o comando **Rename** ou o menu contextual, ou usando os atalhos Alt+clique (Windows) ou Opção+clique (macOS), ou clicando duas vezes no nome que quer mudar.
+3. Digite o nome do novo grupo. O nome de grupo pode ter até 15 caracteres. The group name can be up to 15 characters long. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
 ### Colocar usuários ou grupos dentro de grupos
 
