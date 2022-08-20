@@ -12,7 +12,7 @@ Controle si el usuario puede arrastrar el objeto y cómo. Por defecto, no se per
 
 Hay dos modos de arrastrar disponibles:
 
-- **Personalizado**: en este modo, toda operación de arrastrar realizada en el objeto dispara el evento formulario `On Begin Drag` en el contexto del objeto. You then manage the drag action using a method. In custom mode, basically the whole drag-and-drop operation is handled by the programmer. Este modo le permite implementar cualquier interfaz basada en la función de arrastrar y soltar, incluidas las interfaces que no necesariamente transportan datos, sino que pueden realizar cualquier acción como abrir archivos o activar un cálculo. Este modo se basa en una combinación de propiedades, eventos y comandos específicos del tema `Portapapeles`.
+- **Personalizado**: en este modo, toda operación de arrastrar realizada en el objeto dispara el evento formulario `On Begin Drag` en el contexto del objeto. **Custom**: In this mode, any drag operation performed on the object triggers the `On Begin Drag` form event in the context of the object. You then manage the drag action using a method. Este modo le permite implementar cualquier interfaz basada en la función de arrastrar y soltar, incluidas las interfaces que no necesariamente transportan datos, sino que pueden realizar cualquier acción como abrir archivos o activar un cálculo. Este modo se basa en una combinación de propiedades, eventos y comandos específicos del tema `Portapapeles`.
 - **Automático**: en este modo, 4D **copia** el texto o las imágenes directamente desde el objeto formulario. Puede utilizarse en la misma área 4D, entre dos áreas 4D o entre 4D y otra aplicación. For example, automatic drag (and drop) lets you copy a value between two fields without using programming:  
   ![](../assets/en/FormObjects/property_automaticDragDrop.png)  
   ![](../assets/en/FormObjects/property_automaticDragDrop2.png) In this mode, the `On Begin Drag` form event is NOT generated. Si quiere "forzar" el uso del arrastre personalizado mientras está activado el arrastre automático, mantenga presionada la tecla **Alt** (Windows) o **Opción** (macOS) durante la acción. Esta opción no está disponible para las imágenes.
@@ -41,7 +41,7 @@ Controla si el objeto puede ser el destino de una operación de arrastrar y solt
 
 Hay dos modos de soltar disponibles:
 
-- **Personalizado**: en este modo, cualquier operación de soltar realizada en el objeto activa los eventos formulario `On Drag Over` y `On Drop` en el contexto del objeto. You then manage the drop action using a method. In custom mode, basically the whole drag-and-drop operation is handled by the programmer. Este modo le permite implementar cualquier interfaz basada en la función de arrastrar y soltar, incluidas las interfaces que no necesariamente transportan datos, sino que pueden realizar cualquier acción como abrir archivos o activar un cálculo. Este modo se basa en una combinación de propiedades, eventos y comandos específicos del tema `Portapapeles`.
+- **Personalizado**: en este modo, cualquier operación de soltar realizada en el objeto activa los eventos formulario `On Drag Over` y `On Drop` en el contexto del objeto. **Custom**: In this mode, any drop operation performed on the object triggers the `On Drag Over` and `On Drop` form events in the context of the object. You then manage the drag action using a method. Este modo le permite implementar cualquier interfaz basada en la función de arrastrar y soltar, incluidas las interfaces que no necesariamente transportan datos, sino que pueden realizar cualquier acción como abrir archivos o activar un cálculo. Este modo se basa en una combinación de propiedades, eventos y comandos específicos del tema `Portapapeles`.
 - **Automático**: en este modo, 4D gestiona automáticamente, si es posible, la inserción de los datos arrastrados de tipo texto o imagen que se sueltan sobre el objeto (los datos se pegan en el objeto). Los eventos `On Drag Over` y `On Drop` NO se generan. Por otra parte, se generan los eventos `On After Edit` (durante el soltar) y `On Data Change` (cuando el objeto pierde el foco).
 
 Para más información, consulte [Arrastrar y soltar](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) en el manual *Lenguaje 4D*.
@@ -88,11 +88,11 @@ Se soportan varios tipos de referencias de métodos:
   `ObjectMethods/objectName.4dm`  
   ... donde `objectName` es el [nombre del objeto](propiedades_Objeto.md#nombredelobjeto). Este tipo de referencia indica que el archivo del método se encuentra en la ubicación por defecto ("sources/forms/*formName*/ObjectMethods/"). En este caso, 4D maneja automáticamente el método objeto cuando se ejecutan operaciones en el objeto formulario (renombrar, duplicar, copiar/pegar...)
 
-- un nombre de método proyecto: nombre de un método proyecto existente sin extensión de archivo, es decir: `myMethod` En este caso, 4D no soporta automáticamente las operaciones objeto.
+- a project method name: name of an existing project method without file extension, i.e.: `myMethod` In this case, 4D does not provide automatic support for object operations.
 
-- una ruta de acceso al archivo del método personalizado que incluya la extensión .4dm, por ejemplo:  
-  `../../CustomMethods/myMethod.4dm` También puede utilizar un sistema de archivos:  
-  `/RESOURCES/Buttons/bOK.4dm` En este caso, 4D no ofrece soporte automático para las operaciones con objetos.
+- a custom method file path including the .4dm extension, e.g.:  
+  `../../CustomMethods/myMethod.4dm` You can also use a filesystem:  
+  `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
 #### Gramática JSON
 
