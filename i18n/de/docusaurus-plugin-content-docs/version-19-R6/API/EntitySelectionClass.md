@@ -398,7 +398,7 @@ We want to have a selection of employees named "Jones" who live in New York:
 
 #### Beschreibung
 
-The `.average()` function <!-- REF #EntitySelectionClass.average().Summary -->returns the arithmetic mean (average) of all the non-null values of *attributePath* in the entity selection<!-- END REF -->.
+The `.average()` function <!-- REF #EntitySelectionClass.average().Summary -->The `.average()` function<!-- END REF -->.
 
 Pass in the *attributePath* parameter the attribute path to evaluate.
 
@@ -499,7 +499,7 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 
 #### Beschreibung
 
-The `.count()` function <!-- REF #EntitySelectionClass.count().Summary -->returns the number of entities in the entity selection with a non-null value in *attributePath*<!-- END REF -->.
+The `.count()` function <!-- REF #EntitySelectionClass.count().Summary -->The `.count()` function<!-- END REF -->.
 > Only scalar values are taken into account. Object or collection type values are considered as null values.
 
 An error is returned if:
@@ -546,7 +546,7 @@ We want to find out the total number of employees for a company without counting
 
 #### Beschreibung
 
-The `.copy()` function <!-- REF #EntitySelectionClass.copy().Summary -->returns a copy of the original entity selection<!-- END REF -->.
+The `.copy()` function <!-- REF #EntitySelectionClass.copy().Summary -->The `.copy()` function<!-- END REF -->.
 
 > This function does not modify the original entity selection.
 
@@ -612,7 +612,7 @@ Then this entity selection is updated with products and you want to share the pr
 
 #### Beschreibung
 
-The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->returns a collection containing only distinct (different) values from the *attributePath* in the entity selection<!-- END REF -->.
+The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->The `.distinct()` function<!-- END REF -->.
 
 The returned collection is automatically sorted. **Null** values are not returned.
 
@@ -736,7 +736,7 @@ Example with the `dk stop dropping on first error` option:
 
 #### Beschreibung
 
-The `.extract()` function <!-- REF #EntitySelectionClass.extract().Summary -->returns a collection containing *attributePath* values extracted from the entity selection<!-- END REF -->.
+The `.extract()` function <!-- REF #EntitySelectionClass.extract().Summary -->The `.extract()` function<!-- END REF -->.
 
 *attributePath* can refer to:
 
@@ -890,7 +890,7 @@ There is, however, a difference between both statements when the selection is em
 
 #### Beschreibung
 
-The `.getDataClass()` function <!-- REF #EntitySelectionClass.getDataClass().Summary -->returns the dataclass of the entity selection<!-- END REF -->.
+The `.getDataClass()` function <!-- REF #EntitySelectionClass.getDataClass().Summary -->The `.getDataClass()` function<!-- END REF -->.
 
 This function is mainly useful in the context of generic code.
 
@@ -1341,11 +1341,11 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 
 The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the entity selection with the *entity* or *entitySelection* parameter using the logical (not exclusive) OR operator<!-- END REF -->; it returns a new, unordered entity selection that contains all the entities from the entity selection and the parameter.
 
-* If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
+* If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. A new entity selection that contains only the entities that are referenced in both selections is returned.
 * If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
 > > You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
-If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
+The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
 
 If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
 
@@ -1400,7 +1400,7 @@ If the original entity selection and the parameter are not related to the same d
 
 #### Beschreibung
 
-The `.orderBy()` function <!-- REF #EntitySelectionClass.orderBy().Summary -->returns a new ordered entity selection containing all entities of the entity selection in the order specified by *pathString* or *pathObjects* criteria<!-- END REF -->.
+The `.orderBy()` function <!-- REF #EntitySelectionClass.orderBy().Summary -->The `.orderBy()` function<!-- END REF -->.
 > * This method does not modify the original entity selection.
 * For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
 
@@ -1600,7 +1600,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 
 #### Beschreibung
 
-The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection<!-- END REF -->, and returns a new object of type `EntitySelection` containing all the entities that are found. Lazy loading is applied.
+The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->The `.query()` function<!-- END REF -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection Lazy loading is applied.
 > This function does not modify the original entity selection.
 
 If no matching entities are found, an empty `EntitySelection` is returned.
@@ -1845,7 +1845,7 @@ $result2:=$invoices.selected($creditSel)
 The `.slice()` function <!-- REF #EntitySelectionClass.slice().Summary -->returns a portion of an entity selection into a new entity selection<!-- END REF -->, selected from the *startFrom* index to the *end* index (*end* is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).
 > This function does not modify the original entity selection.
 
-The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
+If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the entity selection). If the calculated value < 0, *startFrom* is set to 0.
 
 * If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the entity selection). If the calculated value < 0, *startFrom* is set to 0.
 * If *startFrom >= length*, the function returns an empty entity selection.
@@ -1901,7 +1901,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 
 #### Beschreibung
 
-The `.sum()` function <!-- REF #EntitySelectionClass.sum().Summary -->returns the sum for all *attributePath* values in the entity selection<!-- END REF -->.
+The `.sum()` function <!-- REF #EntitySelectionClass.sum().Summary -->The `.sum()` function<!-- END REF -->.
 
 `.sum()` returns 0 if the entity selection is empty.
 
