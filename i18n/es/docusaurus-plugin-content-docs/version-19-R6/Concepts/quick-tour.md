@@ -21,15 +21,12 @@ O bien, podría adjuntar este código a un botón de formulario y ejecutarlo, en
 Los datos pueden introducirse y copiarse en variables, campos, elementos de arrays... Poner datos en una variable se llama asignar los datos a la variable y se hace con el operador de asignación (:=). El operador de asignación también se utiliza para asignar datos a campos o elementos de arrays.
 
 ```4d
-$MyNumber:=3 //asigna 3 a la variable MyNumber 
-[Products]Size:=$MyNumber //asigna la variable MyNumber al campo [Products]Size
-arrDays{2}:="Tuesday" //asigna la cadena "Tuesday" al segundo elemento de arrDays
-MyVar:=Length("Acme") //asigna el resultado de la función (4) a MyVar
-$myDate:=!2018/01/21! //asigna una fecha literal
-$myHour:=?08:12:55? //asigna una hora literal //asigna una fecha literal
-$myHour:=?08:12:55? //asigna una hora literal //asigna una fecha literal
-$myHour:=?08:12:55? //asigna una hora literal //asigna una fecha literal
-$myHour:=?08:12:55? //asigna una hora literal //asigna una fecha literal
+$MyNumber:=3 //assigns 3 to MyNumber variable  
+[Products]Size:=$MyNumber //assigns MyNumber variable to [Products]Size field
+arrDays{2}:="Tuesday" //assigns "Tuesday" string to the 2nd arrDays element
+MyVar:=Length("Acme") //assigns the result of the function (4) to MyVar
+$myDate:=!2018/01/21! //assigns a date literal
+$myHour:=?08:12:55? //assigns a time literal //asigna una fecha literal
 $myHour:=?08:12:55? //asigna una hora literal
 ```
 
@@ -117,7 +114,7 @@ Por ejemplo, la siguiente línea es una sentencia que mostrará una caja de diá
 CONFIRM("¿Realmente quiere cerrar esta cuenta?"; "Sí"; "No")
 ```
 
-Un método también contiene pruebas y bucles que controlan el flujo de ejecución. Los métodos 4D soportan las estructuras `If...Else...End if` y `Case of... Else...End case`, así como los bucles: `While...End while`, `Repeat...Until`, `For...End for`, y `For each... End for each`:
+Un método también contiene pruebas y bucles que controlan el flujo de ejecución. 4D methods support `If...Else...End if` and `Case of... Else...End case` branching structures as well as looping structures: `While...End while`, `Repeat...Until`, `For...End for`, and `For each... End for each`:
 
 El siguiente ejemplo recorre todos los caracteres del texto vtSomeText:
 
@@ -254,7 +251,7 @@ This.name:="Square"
 
 ## Operadores
 
-Cuando se utiliza el lenguaje, es raro que se quiera simplemente un dato. Es más probable que quiera hacer algo con esos datos. Estos cálculos se realizan con operadores. Los operadores, en general, toman dos datos y realizan una operación sobre ellos que da como resultado un nuevo dato. Usted ya conoce a la mayoría de los operadores. Por ejemplo, 1 + 2 utiliza el operador de adición (o signo más) para sumar dos números, y el resultado es 3. Esta tabla muestra algunos operadores numéricos comunes:
+Cuando se utiliza el lenguaje, es raro que se quiera simplemente un dato. Es más probable que quiera hacer algo con esos datos. Estos cálculos se realizan con operadores. Los operadores, en general, toman dos datos y realizan una operación sobre ellos que da como resultado un nuevo dato. Usted ya conoce a la mayoría de los operadores. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3.
 
 | Operador | Operación      | Ejemplo   |
 | -------- | -------------- | --------- |
@@ -267,11 +264,11 @@ Los operadores numéricos son sólo un tipo de operador disponible. 4D soporta m
 
 Los mismos símbolos se utilizan a menudo para diferentes operaciones, dependiendo del tipo de datos. Por ejemplo, el signo más (+) realiza diferentes operaciones con diferentes datos:
 
-| Tipos de datos | Operación        | Ejemplo                                                                                                                                                                    |
-| -------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Number         | Adición          | 1 + 2 suma los números y da como resultado 3                                                                                                                               |
-| String         | Concatenación    | "Hola" + "a todos" concatena (une) las cadenas y da como resultado "Hola a todos"                                                                                          |
-| Fecha y Número | Adición de fecha | !1989-01-01! !1989-01-01! !1989-01-01! !1989-01-01! !1989-01-01! + 20 añade 20 días a la fecha del 1 de enero de 1989 y da como resultado la fecha del 21 de enero de 1989 |
+| Tipos de datos | Operación        | Ejemplo                                                                                                           |
+| -------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Number         | Adición          | 1 + 2 suma los números y da como resultado 3                                                                      |
+| String         | Concatenación    | "Hola" + "a todos" concatena (une) las cadenas y da como resultado "Hola a todos"                                 |
+| Fecha y Número | Adición de fecha | !1989-01-01! !1989-01-01! + 20 adds 20 days to the date January 1, 1989, and results in the date January 21, 1989 |
 
 ## Expresiones
 
@@ -321,10 +318,10 @@ Se hace referencia a una expresión por el tipo de datos que devuelve. Hay vario
 Una expresión puede ser simplemente una constante literal, como el número 4 o la cadena "Hello", o una variable como `$myButton`. También puede utilizar los operadores. Por ejemplo, 4 + 2 es una expresión que utiliza el operador de adición para sumar dos números y devolver el resultado 6. En todos los casos, estas expresiones son **no asignables**, lo que significa que no se les puede asignar un valor. En 4D, las expresiones pueden ser **asignables**. Una expresión es asignable cuando puede utilizarse a la izquierda del operador de asignación. Por ejemplo:
 
 ```4d  
-//La variable $myVar es asignable, puede escribir:  
-$myVar:="Hola" //asignar "Hola" a myVar
-//Form.pageNumber es asignable, puede escribir: Form.pageNumber:=10 //asignar 10 a Form.pageNumber
-//Form.pageTotal-Form.pageNumber no es asignable: Form.pageTotal- Form.pageNumber:=10 //error, no asignable
+//$myVar variable is assignable, you can write:  
+$myVar:="Hello" //assign "Hello" to myVar
+//Form.pageNumber is assignable, you can write: Form.pageNumber:=10 //assign 10 to Form.pageNumber
+//Form.pageTotal-Form.pageNumber is not assignable: Form.pageTotal- Form.pageNumber:=10 //error, non-assignable
 ```
 
 En general, las expresiones que utilizan un operador no son asignables. Por ejemplo, `[Person]FirstName+" "+[Person]LastName` no es asignable.
