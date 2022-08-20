@@ -96,8 +96,6 @@ Voici un exemple qui gère l'événement `On After Edit` :
  End if
     End if
  End if
-    End if
- End if
 ```
 
 L'exemple ci-dessus pourrait générer un objet événement tel que celui-ci :
