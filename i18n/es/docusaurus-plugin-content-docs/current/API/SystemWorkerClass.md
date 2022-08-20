@@ -335,7 +335,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descripción
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Valores posibles: "text" o "blob".
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
@@ -349,7 +349,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. Esta propiedad sólo está disponible si el [`dataType`](#datatype) es "text".
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. .
 
 Esta propiedad es **de sólo lectura**.
 
@@ -486,7 +486,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 #### Descripción
 
-La función `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->forces the `SystemWorker` to terminate its execution<!-- END REF -->.
+La función `.terminate()` <!-- REF #SystemWorkerClass.terminate().Summary -->The `.terminate()` function<!-- END REF -->.
 
 Esta función envía la instrucción de terminar y devolver el control al script en ejecución.
 
