@@ -13,9 +13,9 @@ Deux modes de glisser-déposer sont proposés dans 4D :
 
 - Un mode **personnalisé**, dans lequel le glisser déclenche l'événement formulaire `Sur début glisser` dans le contexte de l'objet. Vous gérez ensuite le glisser à l'aide d'une méthode.   
   En mode personnalisé, le glisser-déposer est géré par le programmeur. Ce mode vous permet de mettre en place des interfaces basées sur le glisser-déposer, y compris des interfaces qui ne déplacent pas nécessairement des données mais qui peuvent effectuer tout type d'action, telle que l'ouverture de fichiers ou le lancement d'un calcul. Ce mode est basé sur un ensemble de propriétés, d'événements et de commandes spécifiques à partir du thème `Conteneur de données`.
-- Un mode **automatique**, dans lequel 4D **copie** du texte ou des images directement à partir de l'objet formulaire. Il peut alors être utilisé dans la même zone 4D, entre deux zones 4D, ou entre 4D et une autre application. Par exemple, le glisser-déposer automatique vous permet de copier une valeur entre deux champs, sans programmation :  
+- Un mode **automatique**, dans lequel 4D **copie** du texte ou des images directement à partir de l'objet formulaire. Il peut alors être utilisé dans la même zone 4D, entre deux zones 4D, ou entre 4D et une autre application. For example, automatic drag (and drop) lets you copy a value between two fields without using programming:  
   ![](../assets/en/FormObjects/property_automaticDragDrop.png)  
-  ![](../assets/en/FormObjects/property_automaticDragDrop2.png) Dans ce mode, l'événement de formulaire `Sur début glisser` n'est PAS généré. Si vous souhaitez "forcer" l'utilisation du glissement personnalisé alors que le glissement automatique est activé, maintenez la touche **Alt** (Windows) ou **Option** (macOS) enfoncée pendant l'action. Cette option n'est pas disponible pour les images.
+  ![](../assets/en/FormObjects/property_automaticDragDrop2.png) In this mode, the `On Begin Drag` form event is NOT generated. Si vous souhaitez "forcer" l'utilisation du glissement personnalisé alors que le glissement automatique est activé, maintenez la touche **Alt** (Windows) ou **Option** (macOS) enfoncée pendant l'action. Cette option n'est pas disponible pour les images.
 
 Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) dans le manuel *Langage 4D*.
 
@@ -115,11 +115,11 @@ Plusieurs types de références de méthode sont pris en charge :
   `ObjectMethods/objectName.4dm`  
   ... où `objectName` est le [nom de l'objet](properties_Object.md#object-name). Ce type de référence indique que le fichier de méthode se trouve à l'emplacement par défaut ("sources/forms/*formName*/ObjectMethods/"). Dans ce cas, 4D gère automatiquement la méthode objet lorsque des opérations sont exécutées sur l'objet formulaire (renommage, duplication, copier/coller, etc.)
 
-- un nom de méthode projet : nom d'une méthode projet existante sans extension de fichier, c'est-à-dire : `maMéthode` Dans ce cas, 4D ne prend pas en charge automatiquement les opérations objet.
+- a project method name: name of an existing project method without file extension, i.e.: `myMethod` In this case, 4D does not provide automatic support for object operations.
 
-- un chemin d'accès du fichier de méthode personnalisé comprenant l'extension .4dm, par exemple :  
-  `../../CustomMethods/myMethod.4dm` Vous pouvez également utiliser un filesystem :  
-  `/RESOURCES/Buttons/bOK.4dm` Dans ce cas, 4D ne prend pas en charge automatiquement les opérations sur les objets.
+- a custom method file path including the .4dm extension, e.g.:  
+  `../../CustomMethods/myMethod.4dm` You can also use a filesystem:  
+  `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
 
 
