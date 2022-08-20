@@ -40,7 +40,7 @@ Case of
     : ($1="/hello")
         WEB SEND TEXT("Hello World!")
     Else 
-        // Error 404 por ejemplo
+        // Error 404 for example
 End case
     Else 
         // Error 404 por ejemplo
@@ -234,26 +234,26 @@ var $user; $info : Object
 ARRAY TEXT($anames; 0)
 ARRAY TEXT($avalues; 0)
 
-// obtener los valores enviados en el encabezado de la petición
+// get values sent in the header of the request
 WEB GET VARIABLES($anames; $avalues)
 
-// busca los campos de inicio de sesión del encabezado
+// look for header login fields
 $indexUserId:=Find in array($anames; "userId")
 $userId:=$avalues{$indexUserId}
 $indexPassword:=Find in array($anames; "password")
 $password:=$avalues{$indexPassword}
 
-//buscar un usuario con el nombre introducido en la tabla de usuarios
+//look for a user with the entered name in the users table
 $user:=ds.WebUsers.query("userId = :1"; $userId).first()
 
-If ($user#Null) //se encontró un usuario
-        //comprobar la contraseña
+If ($user#Null) //a user was found
+        //check the password
     If (Verify password hash($password; $user.password))
-            //contraseña ok, llenar la sesión
+            //password ok, fill the session
         $info:=New object()
         $info.userName:=$user.firstName+" "+$user.lastName
         Session.setPrivileges($info)
-            //Puede utilizar la sesión de usuario para almacenar cualquier información
+            //You can use the user session to store any information
         WEB SEND TEXT("Welcome "+Session.userName)
     Else 
         WEB SEND TEXT("Wrong user name or password.")
