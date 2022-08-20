@@ -7,7 +7,7 @@ Eine Variable oder ein Ausdruck vom Typ Zeiger verweist auf eine andere Variable
 
 Mit Hilfe der Zeiger können Sie Ihre Methoden strukturunabhängig schreiben und dadurch Ihre Programme übertragbarer gestalten. Sie können mit der Programmiersprache auf verschiedene Objekte, wie Tabellen, Datenfelder, Variablen, Objekte und Arrays, einfach über ihre Namen zugreifen. Jedoch ist es oft hilfreich, auf diese Elemente zuzugreifen, ohne ihre Namen zu kennen. Das können Sie mit Zeigern tun.
 
-Das Konzept hinter Zeigern begegnet Ihnen auch im täglichen Leben. Oft verweisen Sie auf etwas, ohne die Identität exakt zu kennen. Sie sagen normalerweise zu einem Freund: "Lass uns eine Fahrt in Deinem Auto machen", anstatt "Lass uns eine Fahrt in dem Auto mit dem Kennzeichen M-AX-1234 machen". In diesem Fall verweisen Sie auf das Auto mit dem Kennzeichen M-AX-1234 über den Begriff "Dein Auto". Die Umschreibung "Auto mit dem Kennzeichen M-AX-1234" ist wie der Name eines Objekts und der Begriff "Dein Auto" ist wie ein Zeiger, der auf das Objekt verweist.
+Das Konzept hinter Zeigern begegnet Ihnen auch im täglichen Leben. Oft verweisen Sie auf etwas, ohne die Identität exakt zu kennen. Sie sagen normalerweise zu einem Freund: "Lass uns eine Fahrt in Deinem Auto machen", anstatt "Lass uns eine Fahrt in dem Auto mit dem Kennzeichen M-AX-1234 machen". In diesem Fall verweisen Sie auf das Auto mit dem Kennzeichen M-AX-1234 über den Begriff "Dein Auto". For example, you might say to a friend, “Let’s go for a ride in your car” instead of “Let’s go for a ride in the car with license plate 123ABD.” In this case, you are referencing the car with license plate 123ABD by using the phrase “your car.” The phrase “car with license plate 123ABD” is like the name of an object, and using the phrase “your car” is like using a pointer to reference the object.
 
 Die Möglichkeit, auf etwas zu verweisen, ohne die Identität exakt zu kennen, hat einige Vorteile. Ihr Freund kann ein neues Auto haben, und die Aussage "mit Deinem Auto" passt weiterhin, denn es bleibt ein Auto und gehört Ihrem Freund. Zeiger arbeiten auf dieselbe Weise. Ein Zeiger kann beispielsweise einmal auf ein numerisches Datenfeld mit Namen Alter verweisen und später auf eine numerische Variable, umbenannt in Rentenalter. In beiden Fällen zeigt der Zeiger auf numerische Daten, die sich in einer Berechnung verwenden lassen.
 
@@ -30,13 +30,13 @@ Wir erläutern die Verwendung von Zeigern an einem Beispiel. Dieses Beispiel zei
 ```4d
 $MyVar:="Hello"
 ```
-$MyVar ist jetzt eine Variable mit dem String "Hello". Nun können wir einen Zeiger auf $MyVar erstellen:
+$MyVar is now a variable containing the string “Hello.” We can now create a pointer to $MyVar: Nun können wir einen Zeiger auf $MyVar erstellen:
 
 ```4d
 C_POINTER($MyPointer)  
 $MyPointer:=->$MyVar
 ```
-Das Symbol -> bedeutet "setze Zeiger auf". Es ist die Kombination aus einem Bindestrich und dem Zeichen “größer als”. In diesem Fall verweist bzw. zeigt der Zeiger auf $MyVar. Dieser Zeiger wird mit dem Zuordnungsoperator dem Zeiger MyPointer zugewiesen.
+Das Symbol -> bedeutet "setze Zeiger auf". Es ist die Kombination aus einem Bindestrich und dem Zeichen “größer als”. The -> symbol means “get a pointer to.” This symbol is formed by a dash followed by a “greater than” sign. In this case, it gets the pointer that references or “points to” $MyVar. Dieser Zeiger wird mit dem Zuordnungsoperator dem Zeiger MyPointer zugewiesen.
 
 $MyPointer ist nun eine Variable mit einem Zeiger auf $MyVar. $MyPointer enthält nicht “Hello”, den Wert von $MyVar, vielmehr erhalten Sie diesen Wert über $MyPointer. Folgender Ausdruck gibt den Wert in $MyVar zurück:
 ```4d
@@ -194,11 +194,11 @@ Es zeigt eine Meldung mit dem Inhalt “Goodbye”.
 
 Im folgenden werden die einzelnen Zeilen erläutert:
 
-- $MyVar:="Hello" --> Diese Zeile setzt die Zeichenkette "Hello" in die Variable $MyVar.
-- $PointerOne:=->$MyVar --> $PointerOne enthält nun den Zeiger auf $MyVar.
-- $PointerTwo:=->$PointerOne --> $PointerTwo (eine neue Variable) enthält einen Zeiger auf $PointerOne, der auf $MyVar zeigt.
-- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> verweist auf den Inhalt von $PointerOne, der wiederum auf $MyVar verweist. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Beispiel ist also der Variablen $MyVar "Goodbye" zugewiesen.
-- ALERT (($PointerTwo->)->) --> Hier gilt das gleiche: $PointerTwo-> verweist auf den Inhalt von $PointerOne, der wiederum auf  $MyVar verweist. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Fall zeigt die Meldung den Inhalt von $MyVar an.
+- $MyVar:="Hello" --> This line puts the string "Hello" into the variable $MyVar.
+- $PointerOne:=->$MyVar --> $PointerOne now contains a pointer to $MyVar.
+- $PointerTwo:=->$PointerOne --> $PointerTwo (a new variable) contains a pointer to $PointerOne, which in turn points to $MyVar.
+- ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. In diesem Beispiel ist also der Variablen $MyVar "Goodbye" zugewiesen.
+- ALERT (($PointerTwo->)->) --> Same thing: $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Deshalb verweist ($PointerTwo->)-> auf den Inhalt von $MyVar. Therefore ($PointerTwo->)-> references the contents of $MyVar.
 
 Die folgende Zeile setzt "Hello" in $MyVar:
 ```4d
