@@ -11,7 +11,7 @@ Die folgenden Regeln gelten für alle 4D Frameworks.
 
 - Ein Name muss mit einem Buchstaben, einem Unterstrich oder einem Dollarzeichen ("$") beginnen (Beachten Sie, dass das Dollarzeichen ein Element auf lokaler Ebene kennzeichnen kann, siehe unten.).
 - Der Name kann Buchstaben, Zahlen, Leerzeichen und den Unterstrich ("_") enthalten.
-- Punkte (".") Punkte (".") und Klammern ("[ ]") sind in Tabellen-, Feld-, Methoden- oder Variablennamen nicht erlaubt.
+- Punkte (".") Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Kommas, Schrägstriche, Anführungszeichen und Doppelpunkte sind nicht erlaubt.
 - Zeichen, die für Operatoren reserviert sind, wie z.B. * und +, sind nicht erlaubt.
 - Verwenden Sie keine reservierten Namen, d.h. 4D Befehlsnamen (`Date`, `Time`, usw.), Schlüsselwörter (If, For, usw.) und Konstanten.
@@ -20,7 +20,7 @@ Die folgenden Regeln gelten für alle 4D Frameworks.
 ### Zusätzliche Regeln für Namen von Objekteigenschaften und ORDA
 
 - Leerzeichen sind nicht erlaubt.
-- Punkte (".") Klammern ("[ ]") sind nicht erlaubt.
+- Punkte (".") Periods (".") and brackets ("[ ]") are not allowed.
 - Wichtig: Groß- und Kleinschreibung wird unterschieden.
 
 ### Zusätzliche Regeln für SQL
@@ -163,7 +163,7 @@ $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 
 ### Elemente von zweidimensionalen Arrays
 
-Sie verweisen auf ein Element eines zweidimensionalen Array mit doppelt geschweiften Klammern ({…}).   Das angesprochene Element besteht aus zwei numerischen Ausdrücken in zwei Sätzen geschweifter Klammern.
+You reference an element of a two-dimensional array by using the curly braces ({…}) twice.   Das angesprochene Element besteht aus zwei numerischen Ausdrücken in zwei Sätzen geschweifter Klammern.
 
 Beispiele:
 
@@ -186,7 +186,7 @@ $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
 
 ## Objektattribute
 
-Ist Objektnotation aktiviert, definieren Sie ein Objektattribut (auch Objekteigenschaft genannt) durch Setzen eines Punktes (".") zwischen dem Namen des Objekts (oder Attributs) und dem Namen des Attributs. Ein Attributsname kann bis zu 255 Zeichen lang sein und unterscheidet zwischen Groß- und Kleinschreibung.
+When object notation is enabled, you designate an object attribute (also called object property) by placing a point (".") between the name of the object (or attribute) and the name of the attribute. zwischen dem Namen des Objekts (oder Attributs) und dem Namen des Attributs. Ein Attributsname kann bis zu 255 Zeichen lang sein und unterscheidet zwischen Groß- und Kleinschreibung.
 
 Beispiele:
 
@@ -250,7 +250,7 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Projektmethoden können Parameter (Argumente) akzeptieren. Parameter stehen in Klammern nach dem Methodennamen. Sie sind durch Strichpunkt (;) voneinander getrennt. Die Parameter sind innerhalb der aufgerufenen Methode als durchnumerierte lokale Variablen verfügbar: $1, $2,…, $n. Mehrere aufeinanderfolgende (und letzte) Parameter können Sie mit der Syntax ${n} ansprechen, wobei n die Nummer des Parameters ist.
+Projektmethoden können Parameter (Argumente) akzeptieren. Parameter stehen in Klammern nach dem Methodennamen. Sie sind durch Strichpunkt (;) voneinander getrennt. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. A method can return a single value in the $0 parameter. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. In addition, multiple consecutive (and last) parameters can be addressed with the syntax ${n}where n, numeric expression, is the number of the parameter.
 
 Innerhalb einer Funktion enthält die lokale Variable $0 den zurückzugebenden Wert.
 
@@ -368,7 +368,7 @@ Einen globalen Prozess kennzeichnen Sie durch einen String Ausdruck, der seinen 
 
 ### Lokale Prozesse
 
-Der Name eines lokalen Prozesses beginnt mit dem Dollarzeichen $. Der Name des Prozesses kann ohne das Dollarzeichen bis zu 255 Zeichen lang sein.
+Der Name eines lokalen Prozesses beginnt mit dem Dollarzeichen $. You denote a local process if the name of the process is preceded by a dollar ($) sign. The process name can contain up to 255 characters, not including the dollar sign.
 
 Beispiele:
 
