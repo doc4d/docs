@@ -13,12 +13,12 @@ title: プロジェクトの開発
 
 ## プロジェクトファイルアクセス
 
-4D Developer でプロジェクトを開発するにあたって、ストラクチャー要素やメソッド、フォームの作成・変更・保存には 4D のビルトインエディターを利用することができます。 このエディターの作業対象はディスク上のファイルなため、同じファイルが同時に編集されていたり削除されていたりといった場合には競合が発生します。 たとえば、一つのメソッドをメソッドエディターで編集しつつ、標準のテキストエディターでも開いて変更した場合に競合が起こりえます。
+4D Developer でプロジェクトを開発するにあたって、ストラクチャー要素やメソッド、フォームの作成・変更・保存には 4D のビルトインエディターを利用することができます。 このエディターの作業対象はディスク上のファイルなため、同じファイルが同時に編集されていたり削除されていたりといった場合には競合が発生します。 Since the editors use files on the disk, potential conflicts could happen if the same file is modified or even deleted from different locations.
 
 4D Developer のフレームワークには同時アクセスを制御するためのファイルアクセスマネージャーが含まれています:
 
 - if an open file which is read-only at the OS level, a locked icon is displayed in the editor: ![](../assets/en/Project/lockicon.png)
-- 開かれているファイルが複数のアクセスによって同時編集を受けている場合、4D は保存時に警告ダイアログを表示します: ![](../assets/en/Project/projectReload.png)
+- if an open file is edited concurrently from different locations, 4D displays an alert dialog box when trying to save the changes:![](../assets/en/Project/projectReload.png)
   - **はい**: 編集内容を破棄してリロードします
   - **いいえ**: 編集内容で上書き保存します
   - **キャンセル**: 保存しません
