@@ -70,7 +70,7 @@ Définit la taille du cache. Voir [Cache](../WebServer/webServerConfig.md#cache)
 
 #### Vider le cache
 
-À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). Le cache est alors immédiatement effacé.
+À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). Le cache est alors immédiatement effacé.
 
 > Vous pouvez également utiliser l'URL spécifique [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
 
@@ -137,7 +137,7 @@ Permet de définir le délai maximum avant fermeture (timeout) des process Web i
 
 Définit le système d'authentification que vous souhaitez utiliser pour le serveur Web. Trois options sont proposées :
 
-Personnalisé (défaut) Mots de passe protocole BASIC Mots de passe protocole DIGEST
+Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol
 
 Il est recommandé d'utiliser l'authentification **personnalisée**. Voir le chapitre [**Authentification**](../WebServer/authentication.md) dans la section *Développement Web*.
 
@@ -184,9 +184,9 @@ Le menu de format du journal propose les options suivantes :
 
 -   **Pas de journal** : Lorsque cette option est sélectionnée, 4D ne génère pas d’historique des requêtes.
 
--   **CLF (Common Log Format)** : Lorsque cette option est sélectionnée, l’historique des requêtes est généré au format CLF. Avec le format CLF, chaque ligne du fichier représente une requête, comme : \
+-   **CLF (Common Log Format)** : Lorsque cette option est sélectionnée, l’historique des requêtes est généré au format CLF. With the CLF format, each line of the file represents a request, such as:\
   host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length\
-  Chaque champ est séparé par un espace et chaque ligne se termine par la séquence CR/LF (caractère 13, caractère 10).
+  Each field is separated by a space and each line ends by the CR/LF sequence (character 13, character 10).
 
     -   hôte : adresse IP du client (ex. 192.100.100.10)
     -   rfc931 : information non gérée par 4D, c’est toujours - (signe moins)
@@ -199,7 +199,7 @@ Le menu de format du journal propose les options suivantes :
 -   statut : réponse donnée par le serveur.
 -   longueur : taille des données renvoyées (hors en-tête HTTP) ou 0.
 
-> **Note :** Pour des raisons de performances, les opération sont stockées dans une mémoire tampon par paquets de 1 Ko avant d'être écrites sur disque. Les opérations sont également écrites sur disque si aucune requête n'a été envoyée au bout de 5 secondes. Les valeurs possibles de statut sont : 200: OK 204: Pas de contenu 302: Redirection 304: Non modifiée 400: Mauvaise requête 401: Authentification requise 404: Non trouvé 500: Erreur interne Le format CLF ne peut pas être personnalisé.
+> **Note :** Pour des raisons de performances, les opération sont stockées dans une mémoire tampon par paquets de 1 Ko avant d'être écrites sur disque. Les opérations sont également écrites sur disque si aucune requête n'a été envoyée au bout de 5 secondes. The possible values of state are as follows: 200: OK 204: No contents 302: Redirection 304: Not modified 400: Incorrect request 401: Authentication required 404: Not found 500: Internal error The CLF format cannot be customized.
 
 -   **DLF (Combined Log Format)** : Lorsque cette option est sélectionnée, l’historique des requêtes est généré au format DLF. Le format DLF est semblable au format CLF dont il reprend exactement la structure. Il ajoute simplement deux champs HTTP supplémentaires à la fin de chaque requête : Referer et User-agent.
 
@@ -212,7 +212,7 @@ Le menu de format du journal propose les options suivantes :
 
 -   **WLF (WebStar Log Format)** : Lorsque cette option est sélectionnée, l’historique des requêtes est généré au format WLF. Le format WLF a été développé spécifiquement pour le serveur 4D WebSTAR. Il est semblable au format ELF, il dispose simplement de champs supplémentaires. Comme le format ELF, il est personnalisable.
 
-**Configurer les champs** Lorsque vous choisissez le format ELF (Extended Log Format) ou WLF (WebStar Log Format), la zone “Formatage du journal” affiche les champs disponibles pour le format. Vous devrez sélectionner chaque champ à inclure dans le journal. Pour cela, utilisez les flèches de commande ou procédez par glisser-déposer.
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. Vous devrez sélectionner chaque champ à inclure dans le journal. You will need to select each field to be included in the log.
 
 **Note** : Il n’est pas possible de sélectionner deux fois le même champ.
 
@@ -254,8 +254,8 @@ Paramètres d’archivage automatique du journal des requêtes. Vous devez d'abo
 
     -   **à partir de**: Permet de définir l'heure du déclenchement du premier backup.
 -   **Tous les N jour(s) à N** : permet de programmer des backups sur une base journalière. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Lorsque vous cochez cette option, vous devez indiquer l’heure à laquelle la sauvegarde doit être déclenchée.
--   **Tous les N jour(s) à N** : permet de programmer des backups sur une base hebdomadaire. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Lorsque vous cochez cette option, vous devez indiquer le ou les jours de la semaine et l’heure à laquelle chaque sauvegarde doit être déclenchée. Vous pouvez cocher un ou plusieurs jour(s) de la semaine. Par exemple, vous pouvez utiliser cette option pour définir deux sauvegardes hebdomadaires : une le mercredi et une le vendredi.
--   **Tous les N mois, Ne jour à N** : permet de programmer des sauvegardes sur une base mensuelle. Saisissez 1 si vous souhaitez une sauvegarde mensuelle. Lorsque vous cochez cette option, vous devez indiquer le jour de chaque mois auquel la sauvegarde doit être déclenchée, ainsi que l’heure de déclenchement.
+-   **Tous les N jour(s) à N** : permet de programmer des backups sur une base hebdomadaire. Saisissez 1 si vous souhaitez une sauvegarde hebdomadaire. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
+-   **Tous les N mois, Ne jour à N** : permet de programmer des sauvegardes sur une base mensuelle. Saisissez 1 si vous souhaitez une sauvegarde mensuelle. Enter 1 if you want to perform a monthly backup.
 -   **Tous les N Mo** : Cette option est utilisée pour programmer les sauvegardes en fonction de la taille du fichier journal courant. Un backup se déclenche automatiquement quand le fichier atteint la taille spécifiée. La taille limite du fichier peut être fixée à 1, 10, 100 ou 1000 Mo.
 
 > En cas de sauvegarde périodique, si le serveur Web n’était pas lancé au moment théorique de la sauvegarde, 4D considère au lancement suivant que la sauvegarde a échoué et applique les paramétrages adéquats, définis dans les Propriétés.
