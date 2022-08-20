@@ -88,18 +88,18 @@ El parámetro `end` es un índice en el blob que indica el primer byte que no se
 ```4d
 var $myBlob : 4D.Blob
 
-// Almacenar texto en un 4D.Blob
+// Store text in a 4D.Blob
 CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $myBlob)
 $is4DBlob:=OB Instance of($myBlob; 4D.Blob);   //True
 
 $myString:=Convert to text($myBlob; "UTF-8")
-// $myString contiene "Hello, World!"
+// $myString contains "Hello, World!"
 
-// Crear un nuevo 4D.Blob a partir de $myBlob
+// Create a new 4D.Blob from $myBlob
 $myNewBlob:=$myBlob.slice(0; 5)
 
 $myString:=Convert to text($myNewBlob; "UTF-8")
-// $myString contiene "Hello"
+// $myString contains "Hello"
 
 // Crear un nuevo 4D.Blob a partir de $myBlob
 $myNewBlob:=$myBlob.slice(0; 5)
