@@ -174,7 +174,7 @@ Pode criar uma nova coleção e adicionar um novo elemento:
 
 The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
 
-Adicionar um elemento para essa coleção deve ser rodeada pela estrutura [`Use... End`](Concepts/shared.md#useend-use), senão um erro é gerado. Ler um elemento sem a estrutura é entretanto possível.
+Adding an element to this collection must be surrounded by the [`Use... End`](Concepts/shared.md#useend-use) use structure, otherwise an error is generated. Ler um elemento sem a estrutura é entretanto possível.
 > Para saber mais sobre coleções partilhadas, veja a página [Shared objects and collections](Concepts/shared.md).
 
 Se não quiser passar parâmetros, `New shared collection` cria uma coleção vazia partilhada e retorna sua referência.
@@ -340,7 +340,7 @@ $vSize:=$col.length //$vSize=0
 
 #### Descrção
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. Summary -->retorna uma nova coleção contendo os elementos da coleção original com todos os elementos do parâmetro *value* adicionado ao final<!-- END REF -->.
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
 > Essa função modifica a coleção original.
 
 Como padrão, elementos *col2* são adicionados ao final da collection original. Pode passar em *index* a posição onde quiser que os elmentos *col2* sejam inseridos na coleção.
@@ -782,7 +782,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 
 <!-- REF #collection.every().Syntax -->
 
-**.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br/>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
+**.every**( { *startFrom* : Integer ; } *formula* : 4D. Function { ;*...param* : any } ) : Boolean<br/>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
 
 
 <!-- REF #collection.every().Params -->
@@ -1006,7 +1006,7 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 
 <!-- REF #collection.filter().Syntax -->
 
-**.filter**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br/>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
+**.filter**( *formula* : 4D. Function { ; *...param* : any } ) : Collection<br/>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
 
 
 
@@ -1088,7 +1088,7 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 
 <!-- REF #collection.find().Syntax -->
 
-**.find**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : any<br/>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
+**.find**( { *startFrom* : Integer ; }  *formula* : 4D. Function { ; *...param* : any } ) : any<br/>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
 
 
 
@@ -1439,7 +1439,7 @@ Qualquer tipo de elemento aceito por uma coleção pode ser inserido, mesmo outr
 
 #### Descrção
 
-The `.join()` function <!-- REF #collection.join().Summary -->converts all elements of the collection to strings and concatenates them using the specified *delimiter* string as separator<!-- END REF -->.The function returns the resulting string.
+The `.unshift()` function <!-- REF #collection.join().Summary -->inserts the given *value*(s) at the beginning of the collection<!-- END REF -->and returns the modified collection.
 > Essa função não modifica a coleção original.
 
 Como padrão, elementos null ou vazios da coleção são retornados na string resultante. Passe a constante `ck ignore null or empty` na opção *option* parâmetro se quiser removê-las da string resultado.
