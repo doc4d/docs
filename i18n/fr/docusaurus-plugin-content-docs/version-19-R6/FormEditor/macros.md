@@ -67,7 +67,7 @@ Function onInvoke($editor : Object)->$result : Object
         "currentPage"; $editor.editor.currentPage)
 ```
 
-Vous pouvez alors appeler la macro : ![](../assets/en/FormEditor/macroex1.png) ![](../assets/en/FormEditor/macroex2.png)
+You can then call the macro: ![](../assets/en/FormEditor/macroex1.png) ![](../assets/en/FormEditor/macroex2.png)
 
 
 ## Appeler des macros dans l'éditeur de formulaires
@@ -280,7 +280,7 @@ Function onInvoke($editor : Object)->$result : Object
     var $name : Text
 
     If ($editor.editor.currentSelection.length>0)       
-        // Définir le contour en rouge et le style en italique pour chaque objet sélectionné
+        // Set stroke to red and style to italic for each selected object
         For each ($name; $editor.editor.currentSelection)
             $editor.editor.currentPage.objects[$name].stroke:="red"
             $editor.editor.currentPage.objects[$name].fontStyle:="italic"
@@ -291,7 +291,7 @@ Function onInvoke($editor : Object)->$result : Object
         ALERT("Please select a form object.")
     End if 
 
-    // Notifier la modification à 4D
+    // Notify to 4D the modification
     $result:=New object("currentPage"; $editor.editor.currentPage)
     End if 
 
