@@ -97,15 +97,10 @@ Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 #### Exemplo
 
 ```4D
-// cs.Company class
-
-
-Class extends DataClass
+// cs. Company class Class extends DataClass
 
 // Returns companies whose revenue is over the average
-// Returns an entity selection related to the Company DataClass
-
-Function GetBestOnes()
+// Returns an entity selection related to the Company DataClass Function GetBestOnes()
  $sel:=This.query("revenues >= :1";This.all().average("revenues"));
  $0:=$sel
 ```
@@ -113,8 +108,8 @@ Function GetBestOnes()
 Then you can get an entity selection of the "best" companies by executing:
 
 ```4d
- var $best : cs.CompanySelection
- $best:=ds.Company.GetBestOnes()
+ var $best : cs. CompanySelection
+ $best:=ds. Company. GetBestOnes()
 ```
 
 #### Example with a remote datastore
@@ -126,17 +121,13 @@ The following *City* catalog is exposed in a remote datastore (partial view):
 The `City Class` provides an API:
 
 ```4d  
-// cs.City class
-
-Class extends DataClass
-
-Function getCityName()
+// cs. City class Class extends DataClass Function getCityName()
  var $1; $zipcode : Integer
- var $zip : 4D.Entity
+ var $zip : 4D. Entity
  var $0 : Text
 
  $zipcode:=$1
- $zip:=ds.ZipCode.get($zipcode)
+ $zip:=ds. ZipCode.get($zipcode)
  $0:="" 
 
  If ($zip#Null)
@@ -168,14 +159,9 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 #### Exemplo
 
 ```4d
-// cs.EmployeeSelection class
+// cs. EmployeeSelection class Class extends EntitySelection
 
-
-Class extends EntitySelection
-
-//Extract the employees with a salary greater than the average from this entity selection 
-
-Function withSalaryGreaterThanAverage
+//Extract the employees with a salary greater than the average from this entity selection Function withSalaryGreaterThanAverage
  C_OBJECT($0)
  $0:=This.query("salary > :1";This.average("salary")).orderBy("salary")
 
@@ -210,9 +196,7 @@ Then you can call this code:
 var $cityManager; $city : Object
 
 $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManager")
-$city:=$cityManager.City.getCity("Caguas")
-
-If ($city.isBigCity())
+$city:=$cityManager. City.getCity("Caguas") If ($city.isBigCity())
  ALERT($city.name + " is a big city")
 End if
 ```
