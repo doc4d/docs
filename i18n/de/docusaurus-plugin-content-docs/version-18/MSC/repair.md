@@ -14,15 +14,15 @@ Auf dieser Seite wählen Sie Optionen zum Reparieren der Datendatei bei Beschäd
 
 ### Datendatei reparieren
 
-Pfadname der aktuellen Datendatei. Über die Schaltfläche ** [...]** können Sie eine andere Datendatei auswählen. Klicken Sie auf diese Schaltfläche, erscheint ein Standard-Öffnen Dialog, um die gewünschte Datendatei zum Reparieren auszuwählen. Bei der [Standard Reparatur](#standard-reparatur) müssen Sie eine Datendatei wählen, die mit der geöffneten Projektdatei kompatibel ist. Bei [Reparieren nach Datensatzheader](#wiederherstellen-nach-datensatzheader) können Sie jede Datendatei wählen. Bestätigen Sie dieses Dialogfenster, erscheint der Pfadname der Datei zum Reparieren im Fenster.
+Pfadname der aktuellen Datendatei. Über die Schaltfläche ** [...]** können Sie eine andere Datendatei auswählen. Klicken Sie auf diese Schaltfläche, erscheint ein Standard-Öffnen Dialog, um die gewünschte Datendatei zum Reparieren auszuwählen. Pathname of the current data file. Bei [Reparieren nach Datensatzheader](#wiederherstellen-nach-datensatzheader) können Sie jede Datendatei wählen. Bestätigen Sie dieses Dialogfenster, erscheint der Pfadname der Datei zum Reparieren im Fenster.
 
 ### Ordner Backup der Originaldateien
 
-Standardmäßig wird die Originaldatei vor dem Reparieren dupliziert  und im Unterordner “Replaced files (repairing)” im Datenbank-Ordner abgelegt. Über die zweite Schaltfläche **[...]** können Sie vor dem Reparieren einen anderen Ort zum Speichern der Originaldateien angeben. Diese Möglichkeit ist insbesondere beim Reparieren umfangreicher Dateien auf verschiedenen Festplatten hilfreich.
+Standardmäßig wird die Originaldatei vor dem Reparieren dupliziert  By default, the original data file will be duplicated before the repair operation. Über die zweite Schaltfläche **[...]** können Sie vor dem Reparieren einen anderen Ort zum Speichern der Originaldateien angeben. Diese Möglichkeit ist insbesondere beim Reparieren umfangreicher Dateien auf verschiedenen Festplatten hilfreich.
 
 ### Reparierte Dateien
 
-4D erstellt eine neue leere Datendatei an der Stelle der Originaldatei. Die Originaldatei wird in den Ordner mit Namen "\Ersetzte Dateien (Reparatur) Datum Zeit" geschoben. Seine Position wird im Bereich "Backup der Original Dateien" definiert. Standardmäßig ist der Ordner der Datenbank angegeben. Die leere Datei wird mit den wiederhergestellten Daten gefüllt.
+4D erstellt eine neue leere Datendatei an der Stelle der Originaldatei. 4D creates a new blank data file at the location of the original file. Die leere Datei wird mit den wiederhergestellten Daten gefüllt.
 
 ## Standard Reparatur
 
