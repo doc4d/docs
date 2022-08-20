@@ -47,7 +47,7 @@ title: データソース
 
 #### 対象オブジェクト
 
-[ドロップダウンリスト](dropdownList_Overview.md) - [コンボボックス](comboBox_overview.md) - [階層リスト](list_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
@@ -189,13 +189,13 @@ title: データソース
 
 ## Expression
 
-[セレクション型](listbox_overview.md#セレクションリストボックス) および [コレクション/エンティティセレクション型](listbox_overview.md#コレクションまたはエンティティセレクションリストボックス) リストボックスのプロパティです。 **[変数あるいは式](properties_Object.md#変数あるいは式)** の章も参照ください。
+This description is specific to [selection](listbox_overview.md#selection-list-boxes) and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns. **[変数あるいは式](properties_Object.md#変数あるいは式)** の章も参照ください。
 
 列に割り当てる 4D式です。 以下のものを指定できます:
 
 - **単純な変数** (この場合、コンパイル用に明示的に型宣言されている必要があります)。 BLOB と配列型以外のどんな型の変数も使用することができます。 変数の値は通常 `On Display Detail` イベントで計算されます。
 
-- 標準の [Table]Field シンタックスを使用した **フィールド** ([セレクション型リストボックス](listbox_overview.md#セレクションリストボックス) のみ) 例: `[Employees]LastName`。 以下の型のフィールドを使用できます:
+- A **field** using the standard [Table]Field syntax ([selection type list box](listbox_overview.md#selection-list-boxes) only), for example: `[Employees]LastName`. 以下の型のフィールドを使用できます:
   - String
   - 数値
   - 日付
