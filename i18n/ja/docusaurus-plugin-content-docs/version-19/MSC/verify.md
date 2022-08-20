@@ -14,7 +14,7 @@ sidebar_label: 検査ページ
 - **レコードとインデックスを検査**: 全体のデータ検査処理を開始します。
 - **レコードのみを検査**: レコードのみの検査処理を開始します (インデックスは検査されません)。
 - **インデックスのみを検査**: インデックスのみの検査処理を開始します (レコードは検査されません)。
-> レコードとインデックスの検査は、テーブルごとに検査する詳細モードでおこなうこともできます(後述の ”詳細” の章を参照してください)。
+> > Verification of records and indexes can also be carried out in detail mode, table by table (see the Details section below).
 
 ## ログファイルを開く
 
