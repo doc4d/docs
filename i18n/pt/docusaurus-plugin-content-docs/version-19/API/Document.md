@@ -21,7 +21,7 @@ title: Document Class
 
 #### Descrção
 
-The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
+The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->The `.creationDate` property returns<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -173,7 +173,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
+The `.isFile` property returns <!-- REF #document.isFile.Summary -->The `.copyTo()` function<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -195,7 +195,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
+The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always true for a file<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -249,7 +249,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
+The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->The `.modificationDate` property returns<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -271,7 +271,7 @@ Essa propriedade é**apenas leitura**.
 
 ##### Descrção
 
-The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->The `.modificationTime` property returns<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
 Essa propriedade é**apenas leitura**.
 
@@ -338,15 +338,17 @@ Essa propriedade é**apenas leitura**.
 
 <!-- REF #document.parent.Syntax -->
 
-Essa propriedade é**apenas leitura**.<!-- END REF -->
+**.parent** : 4D. Folder<!-- END REF -->
 
 #### Descrção
 
-The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. A função `.folder()`<!-- REF #directory.folder().</p>
+The `.parent` property returns <!-- REF #document.parent.Summary -->The `.parent` property returns<!-- END REF -->. .
 
 Essa propriedade é**apenas leitura**.
 
-<!-- END REF --><!-- REF document.path.Desc -->
+<!-- END REF -->
+
+<!-- REF document.path.Desc -->
 ## .path
 
 <details><summary>Histórico</summary>
@@ -362,7 +364,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. Se a rota representa uma rota de arquivo (por exemplo, "/DATA/"), se devolve a rota de arquivo.
+The `.path` property returns <!-- REF #document.path.Summary -->The `.path` property returns<!-- END REF -->. .
 
 Essa propriedade é**apenas leitura**.
 
@@ -384,7 +386,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -438,7 +440,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified *destinationFolder* <!-- END REF -->.
+The `.copyTo()` function <!-- REF #document.copyTo().Summary -->The `.isFolder` property returns <!-- END REF -->.
 
 A *destinationFolder* deve existir em disco, senão um erro é gerado.
 
@@ -489,7 +491,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### Descrção
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `BLOB` containing the entire content of a file<!-- END REF -->. Para informações sobre BLOBs, consultar a secção [BLOB](Concepts/dt_blob.md) .
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->The `.getContent()` function<!-- END REF -->. Para informações sobre BLOBs, consultar a secção [BLOB](Concepts/dt_blob.md) .
 
 **Valor retornado**
 
