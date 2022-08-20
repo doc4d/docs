@@ -21,7 +21,7 @@ title: フォームエディター
 - **マーカー**: フォームのエリアを識別する出力コントロールラインとマーカー。 この要素は、[リストフォーム](properties_FormProperties.md#フォームタイプ) タイプのフォームでのみデフォルトで表示できます。
 - **マーカーラベル**: マーカーラベル。 これは出力コントロールラインが表示されている場合のみ有効です。 この要素は、[リストフォーム](properties_FormProperties.md#フォームタイプ) タイプのフォームでのみデフォルトで表示できます。
 - **境界**: フォームの境界。 このオプションが選択されていると、アプリケーションモードで表示されるとおりに、フォームがフォームエディターに表示されます。 これによりアプリケーションモードに移動しなくてもフォームを調整しやすくなります。
-> [**サイズを決めるもの**](properties_FormSize.md#サイズを決めるもの), [**水平 マージン**](properties_FormSize.md#水平マージン) そして [**垂直 マージン**](properties_FormSize.md#垂直マージン) フォームプロパティ設定はフォーム境界に影響します。 これらの設定を使用すると、フォーム上のオブジェクトに基づいて境界を設定できます。 フォームの境界を決定する位置にオブジェクトを配置したり、サイズを変更したりすると、境界も変更されます。
+> > The [**Size Based on**](properties_FormSize.md#size-based-on), [**Hor. マージン**](properties_FormSize.md#hor-margin) そして [**垂直 マージン**](properties_FormSize.md#垂直マージン) フォームプロパティ設定はフォーム境界に影響します。 これらの設定を使用すると、フォーム上のオブジェクトに基づいて境界を設定できます。 フォームの境界を決定する位置にオブジェクトを配置したり、サイズを変更したりすると、境界も変更されます。
 
 #### デフォルト表示
 
@@ -147,7 +147,7 @@ title: フォームエディター
 プロパティリストを使用してオブジェクトを選択するには:
 
 1. Choose the object’s name from the Object List drop-down list located at the top of the Property List.Using these two methods, you can select an object that is hidden by other objects or located outside the visible area of the current window. オブジェクトの選択を解除するには、オブジェクト境界の外側をクリックするか、またはオブジェクト上で **Shift+クリック** します。 > "デザインモードを検索" の結果ウィンドウでオブジェクトをダブルクリックして選択することもできます。
-> "デザインモードを検索" の結果ウィンドウでオブジェクトをダブルクリックして選択することもできます。
+> > It is also possible to select objects by double-clicking them in the result window of ""Find in design" operation.
 
 ### 複数オブジェクトの選択
 
