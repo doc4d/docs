@@ -25,7 +25,7 @@ title: テキスト
 選択テキストの線を太くし、濃く見えるようにします。
 
 このプロパティは [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-FONT-STYLE.301-4505468.ja.html) コマンドによって設定することができます。
-> これは通常のテキストです。<br/> **これは太字のテキストです。**
+> This is normal text.<br/> **This is bold text.**
 
 #### JSON 文法
 
@@ -333,16 +333,16 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 表示される行ごとに評価される式あるいは変数を指定します。 行テキスト属性全体を定義することができます。 **オブジェクト変数**、あるいは **オブジェクトを返す式** を指定する必要があります。 以下のオブジェクトプロパティがサポートされています:
 
-| プロパティ名                      | タイプ     | 詳細                                                                                                                                                                                                                   |
-| --------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| stroke                      | string  | フォントカラー。 任意の CSSカラー (例: "#FF00FF"), "automatic", "transparent"                                                                                                                                                       |
-| fill                        | string  | 背景色。 任意の CSSカラー (例: "#F00FFF"), "automatic", "transparent"                                                                                                                                                           |
-| fontStyle                   | string  | "normal","italic"                                                                                                                                                                                                    |
-| fontWeight                  | string  | "normal","bold"                                                                                                                                                                                                      |
-| textDecoration              | string  | "normal","underline"                                                                                                                                                                                                 |
-| unselectable                | boolean | 対応する行が選択不可 (つまりハイライトすることができない状態) であることを指定します。 このオプションが有効化されている場合、入力可能エリアは入力可能ではなくなります (ただし "シングルクリック編集" オプションが有効化されている場合を除く)。 チェックボックスやリストといったコントロール類は引き続き稼働します。 この設定はリストボックスの選択モードが "なし" の場合には無視されます。 デフォルト値: false |
-| disabled                    | boolean | 対応する行を無効化します。 このオプションが有効化されると、入力可能エリアは入力可能ではなくなります。 テキストや、(チェックボックス、リストなどの) コントロール類は暗くなっているかグレーアウトされます。 デフォルト値: false                                                                                                |
-| `cell.\<columnName>` | object  | プロパティを単一のカラムに適用するときに使用します。 Pass in `\<columnName>` the object name of the list box column. **注**: "unselectable" および "disabled" プロパティは行レベルでのみ定義可能です。 "セル" オブジェクトに指定した場合、これらは無視されます。                           |
+| プロパティ名                      | タイプ     | 詳細                                                                                                                                                                                                                                                                       |
+| --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| stroke                      | string  | フォントカラー。 任意の CSSカラー (例: "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                           |
+| fill                        | string  | 背景色。 任意の CSSカラー (例: "#F00FFF"), "automatic", "transparent"                                                                                                                                                                                                               |
+| fontStyle                   | string  | "normal","italic"                                                                                                                                                                                                                                                        |
+| fontWeight                  | string  | "normal","bold"                                                                                                                                                                                                                                                          |
+| textDecoration              | string  | "normal","underline"                                                                                                                                                                                                                                                     |
+| unselectable                | boolean | 対応する行が選択不可 (つまりハイライトすることができない状態) であることを指定します。 このオプションが有効化されている場合、入力可能エリアは入力可能ではなくなります (ただし "シングルクリック編集" オプションが有効化されている場合を除く)。 チェックボックスやリストといったコントロール類は引き続き稼働します。 この設定はリストボックスの選択モードが "なし" の場合には無視されます。 This setting is ignored if the list box selection mode is "None". |
+| disabled                    | boolean | 対応する行を無効化します。 このオプションが有効化されると、入力可能エリアは入力可能ではなくなります。 テキストや、(チェックボックス、リストなどの) コントロール類は暗くなっているかグレーアウトされます。 This setting is ignored if the list box selection mode is "None".                                                                                                |
+| `cell.\<columnName>` | object  | プロパティを単一のカラムに適用するときに使用します。 Pass in `\<columnName>` the object name of the list box column. **注**: "unselectable" および "disabled" プロパティは行レベルでのみ定義可能です。 "セル" オブジェクトに指定した場合、これらは無視されます。                                                                               |
 
 
 
