@@ -214,7 +214,7 @@ Cette propriété est en **lecture-écriture**.
 
 #### Description
 
-The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. Lorsque le signal est créé, `.signaled` est **False**. Elle devient **True** lorsque la fonction `.trigger( )` est appelée sur l'objet.
+The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. . When the signal is created, `.signaled` is **False**.
 
 Cette propriété est en **lecture seule**.
 
@@ -288,7 +288,7 @@ The `.wait( )` function <!-- REF #SignalClass.wait().Summary -->makes the curren
 Pour prévenir tout code bloquant, vous pouvez passez un temps d'attente maximum en secondes dans le paramètre *timeout* (les décimales sont acceptées).
 > **Attention** : L'appel de `.wait( )` sans *timeout* dans le process principal de 4D n'est pas recommandé car il pourrait geler l'ensemble de l'application 4D.
 
-Si le signal est déjà dans l'état signaled (i.e., la propriété `signaled` est déjà **true**), la fonction retourne immédiatement, sans attendre.
+|
 
 La fonction retourne la valeur de la propriété `.signaled`. Evaluer cette valeur permet de savoir si la fonction a retourné à cause de l'appel de `.trigger( )` (`.signaled` est **true**) ou si le *timeout* a expiré (`.signaled` est **false**).
 > L'état d'un process qui attend un signal est `En attente d'un marqueur interne`.
