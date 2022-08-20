@@ -18,25 +18,30 @@ Las opciones de tamaño dependen del valor de la opción **Tamaño basado en**.
 
 * `\&#060;object name&#062;`: The size of the form will be based on the position of the selected form object. Por ejemplo, si elige un objeto situado en la parte inferior derecha del área a mostrar, el tamaño del formulario consistirá en un rectángulo cuya esquina superior izquierda será el origen del formulario y la esquina inferior derecha corresponderá a la del objeto seleccionado, más los valores de los márgenes.</ul>
 
-> Para los formularios de salida, sólo se pueden utilizar los campos Margen [**hor. **](#hor-margin) o [**Largo**](width) son disponibles.
+> Para los formularios de salida, sólo se pueden utilizar los campos Margen
 
-#### Gramática JSON
-
+**hor. For output forms, only the **Hor.</p> </blockquote> 
+> 
+> #### Gramática JSON
+> 
+> 
 | Nombre         | Tipos de datos | Valores posibles                                                   |
 | -------------- | -------------- | ------------------------------------------------------------------ |
 | formSizeAnchor | string         | Nombre del objeto a utilizar para definir el tamaño del formulario |
+
 
 ---
 
 ## Altura
 
-**los campos **Margen [hor.](#hor-margin) y Margen [**ver.** Margin</strong>](#vert-margin) fields.
+**los campos **Margen [hor.](#hor-margin) y Margen [**ver.** Margin</strong>](#vert-margin) fields.  
 
 #### Gramática JSON
 
 | Nombre | Tipos de datos | Valores posibles   |
 | ------ | -------------- | ------------------ |
 | height | number         | valor entero largo |
+
 
 ---
 
@@ -52,6 +57,7 @@ Value to add (in pixels) to the right margin of the form when the [form size](#s
 | ----------- | -------------- | ------------------ |
 | rightMargin | number         | valor entero largo |
 
+
 ---
 
 ## Margen hor.
@@ -66,11 +72,12 @@ Altura del formulario (en píxeles) cuando el [ tamaño del formulario ](#size-b
 | ------------ | -------------- | ------------------ |
 | bottomMargin | number         | valor entero largo |
 
+
 ---
 
 ## Ancho
 
-Valor a añadir (en píxeles) al margen derecho del formulario cuando el [tamaño del formulario](#size-based-on) está definido en **Tamaño automático** o **\<object name>**
+Valor a añadir (en píxeles) al margen derecho del formulario cuando el [tamaño del formulario](#size-based-on) está definido en **Tamaño automático** o **\<object name>**  
 
 #### Gramática JSON
 
