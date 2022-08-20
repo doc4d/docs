@@ -64,7 +64,7 @@ La propiedad JSON `startPoint` define a partir de qué coordenada dibujar la lí
         "strokeDashArray": "6 2" //punteado
         }
 ```
-Resultado: ![](../assets/en/FormObjects/shape_line1.png)
+Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 
 ```
@@ -78,7 +78,7 @@ Resultado: ![](../assets/en/FormObjects/shape_line1.png)
         "strokeDashArray": "6 2" //dashed
         }
 ```
-Resultado: ![](../assets/en/FormObjects/shape_line2.png)
+Result: ![](../assets/en/FormObjects/shape_line2.png)
 
 
 
