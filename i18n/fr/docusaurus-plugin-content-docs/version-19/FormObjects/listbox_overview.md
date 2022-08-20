@@ -53,7 +53,7 @@ Il existe différents types de list box avec leurs propres comportements et prop
 * **Arrays**: each column is bound to a 4D array. Array-based list boxes can be displayed as [hierarchical list boxes](listbox_overview.md#hierarchical-list-boxes).
 * **Selection** (**Current selection** or **Named selection**): each column is bound to an expression (e.g. a field) which is evaluated for every record of the selection.
 * **Collection or Entity selection**: each column is bound to an expression which is evaluated for every element of the collection or every entity of the entity selection.
-> > > > > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
+> > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
 
 ### Managing list boxes
 
@@ -550,7 +550,7 @@ The value of the [column header variable](properties_Object.md#variable-or-expre
 * Si la variable est définie sur 0, la colonne n'est pas triée et la flèche de tri n'est pas affichée.  
   ![](../assets/en/FormObjects/sorticon0.png)
 
-* Si la variable est définie sur 1, la colonne est triée par ordre croissant et la flèche de tri s'affiche. ![](../assets/en/FormObjects/sorticon1.png)
+* If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon1.png)
 
 * If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon2.png)
 
@@ -706,7 +706,7 @@ Si cette list box est affichée sous forme hiérarchique (les trois premiers tab
 
 Les tableaux ne sont pas triés avant la construction de la hiérarchie. Si par exemple un tableau contient les données AAABBAACC, la hiérarchie obtenue sera :
 
-    > A B A C
+    > &gt; A B A C
 
 Pour déployer ou contracter un "nœud" hiérarchique, cliquez dessus. Si vous effectuez **Alt+clic** (Windows) ou **Option+clic** (macOS) sur le nœud, tous ses sous-éléments seront déployés ou contractés. Ces opérations peuvent également être effectuées par programmation à l'aide des commandes `LISTBOX EXPAND` et `LISTBOX COLLAPSE`.
 
@@ -860,7 +860,7 @@ ARRAY OBJECT(obColumn;0) //column array
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
 
 * "text": for a text value
-* "real": for a numeric value that can include separators like a `\&#060;space&#062;`, <.>, or <,>
+* "real": for a numeric value that can include separators like a `\&#060;space&#062;`, <.>, or
 * "integer": for an integer value
 * "boolean": for a True/False value
 * "color": to define a background color
@@ -1123,9 +1123,11 @@ Voici un exemple :
 ```4d
 C_OBJECT($ob1)
 $entry:="Hello world!"
-OB SET($ob;"valueType";"text")
-OB SET($ob;"alternateButton";True)
-OB SET($ob;"value";$entry)
+ARRAY OBJECT(obColumn;0) //column array
+ C_OBJECT($ob) //first element
+ OB SET($ob;"valueType";"text") //defines the value type (mandatory)
+ OB SET($ob;"value";"Hello World!") //defines the value
+ APPEND TO ARRAY(obColumn;$ob)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
