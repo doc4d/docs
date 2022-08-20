@@ -15,12 +15,9 @@ Once a user class is defined, you can **instantiate** objects of this class anyw
 For example, you could create a `Person` class with the following definition:
 
 ```4d  
-//Class: Person.4dm
-Class constructor($firstname : Text; $lastname : Text)
+//Class: Person.4dm Class constructor($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
- This.lastName:=$lastname
-
-Function sayHello()->$welcome : Text
+ This.lastName:=$lastname Function sayHello()->$welcome : Text
  $welcome:="Hello "+This.firstName+" "+This.lastName
 ```
 
@@ -187,9 +184,7 @@ Within a class function, the `This` command is used as the object instance. Por 
 ```4d  
 Function setFullname($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
- This.lastName:=$lastname
-
-Function getFullname()->$fullname : Text
+ This.lastName:=$lastname Function getFullname()->$fullname : Text
  $fullname:=This.firstName+" "+Uppercase(This.lastName)
 ```
 
@@ -242,14 +237,12 @@ Function add($x : Integer)
 #### Exemplo
 
 ```4d
-// Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+// Class: Rectangle Class constructor($width : Integer; $height : Integer)
  This.name:="Rectangle"
  This.height:=$height
  This.width:=$width
 
-// Function definition
-Function getArea()->$result : Integer
+// Function definition Function getArea()->$result : Integer
  $result:=(This.height)*(This.width)
 ```
 
@@ -283,8 +276,7 @@ For a class constructor function, the `Current method name` command returns:  `<
 
 ```4d
 // Class: MyClass
-// Class constructor of MyClass
-Class Constructor ($name : Text)
+// Class constructor of MyClass Class Constructor ($name : Text)
  This.name:=$name
 ```
 
@@ -324,11 +316,7 @@ This example creates a class called `Square` from a class called `Polygon`.
 ```4d
 //Class: Square
 
-//path: Classes/Square.4dm 
-
-Class extends Polygon
-
-Class constructor ($side : Integer)
+//path: Classes/Square.4dm Class extends Polygon Class constructor ($side : Integer)
 
  // It calls the parent class's constructor with lengths
  // provided for the Polygon's width and height
@@ -382,37 +370,28 @@ Super.doSomething(42) //calls "doSomething" function
 This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
 
 ```4d
-// Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+// Class: Rectangle Class constructor($width : Integer; $height : Integer)
  This.name:="Rectangle"
  This.height:=$height
- This.width:=$width
-
-
-Function sayName()
+ This.width:=$width Function sayName()
  ALERT("Hi, I am a "+This.name+".")
 
 // Function definition
+
 Function getArea()
  var $0 : Integer
  $0:=(This.height)*(This.width)
 ```
 
 ```4d
-//Class: Square
-
-Class extends Rectangle
-
-Class constructor ($side : Integer)
+//Class: Square Class extends Rectangle Class constructor ($side : Integer)
 
  // It calls the parent class's constructor with lengths
  // provided for the Rectangle's width and height
  Super($side;$side)
  // In derived classes, Super must be called before you
  // can use 'This'
- This.name:="Square"
-
-Function getArea()
+ This.name:="Square" Function getArea()
  C_LONGINT($0)
  $0:=This.height*This.width
 ```
@@ -422,9 +401,7 @@ Function getArea()
 This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
 
 ```4d
-//Class: Rectangle
-
-Function nbSides()
+//Class: Rectangle Function nbSides()
  var $0 : Text
  $0:="I have 4 sides"
 ```
@@ -432,11 +409,7 @@ Function nbSides()
 You also created the `Square` class with a function calling the superclass function:
 
 ```4d
-//Class: Square
-
-Class extends Rectangle
-
-Function description()
+//Class: Square Class extends Rectangle Function description()
  var $0 : Text
  $0:=Super.nbSides()+" which are all equal"
 ```
@@ -476,9 +449,7 @@ $val:=$o.f() //42
 When a [class constructor](#class-constructor) function is used (with the [`new()`](API/ClassClass.md#new) function), its `This` is bound to the new object being constructed.
 
 ```4d
-//Class: ob
-
-Class Constructor  
+//Class: ob Class Constructor  
 
  // Create properties on This as
  // desired by assigning to them
@@ -496,9 +467,7 @@ $val:=$o.a //42
 In any cases, `This` refers to the object the method was called on, as if the method were on the object.
 
 ```4d
-//Class: ob
-
-Function f()
+//Class: ob Function f()
  $0:=This.a+This.b
 ```
 
