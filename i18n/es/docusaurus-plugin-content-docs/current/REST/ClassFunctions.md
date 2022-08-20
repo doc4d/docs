@@ -63,7 +63,7 @@ Ver [este ejemplo](#request-receiving-an-entity-as-parameter) y [este ejemplo](#
 
 ### Parámetro de valor escalar
 
-El(los) parámetros deben estar simplemente incluirse en una colección definida en el cuerpo. Por ejemplo, con una función de dataclass `getCities()` que recibe parámetros de tipo texto: `/rest/City/getCities`
+El(los) parámetros deben estar simplemente incluirse en una colección definida en el cuerpo. For example, with a  dataclass function `getCities()` receiving text parameters: `/rest/City/getCities`
 
 **Parámetros en el cuerpo:** ["Aguada","Paris"]
 
@@ -471,7 +471,7 @@ exposed Function putToSchool()
     $0:=$status
 ```
 
-Se ejecuta esta petición, llamada en una entidad Students: **POST** `http://127.0.0.1:8044/rest/Students(1)/putToSchool` Cuerpo de la petición:
+You run this request, called on a Students entity : **POST** `http://127.0.0.1:8044/rest/Students(1)/putToSchool` Body of the request:
 ```
 [{
 "__DATACLASS":"Schools",
