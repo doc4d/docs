@@ -47,7 +47,7 @@ Auch wenn es normalerweise nicht empfehlenswert ist, können Sie Variablen einfa
 MyOtherDate:=Current date+30
 ```
 
-Die Code-Zeile bedeutet "MyOtherDate erhält das aktuelle Datum plus 30 Tage." Diese Zeile erstellt die Variable, weist ihr den Datentyp (temporär) und einen Inhalt zu. Eine per Zuweisung erstellte Variable wird als typlos interpretiert, d. h. sie kann mit anderen Typen in anderen Zeilen zugewiesen werden und ändert dann den Typ dynamisch. Eine mit `C_XXX` typisierte Variable kann ihren Typ nicht ändern. Im kompilierten Modus lässt sich der Typ nie verändern, unabhängig wie die Variable erstellt wurde.
+The line of code reads “MyOtherDate gets the current date plus 30 days.” This line declares the variable, assigns it with both the (temporary) date type and a content. Diese Zeile erstellt die Variable, weist ihr den Datentyp (temporär) und einen Inhalt zu. Eine per Zuweisung erstellte Variable wird als typlos interpretiert, d. h. sie kann mit anderen Typen in anderen Zeilen zugewiesen werden und ändert dann den Typ dynamisch. Eine mit `C_XXX` typisierte Variable kann ihren Typ nicht ändern. Im kompilierten Modus lässt sich der Typ nie verändern, unabhängig wie die Variable erstellt wurde.
 
 ## Befehle
 
@@ -117,7 +117,7 @@ For($vlChar;1;Length(vtSomeText))
 End for
 ```
 
-Eine Projektmethode kann eine andere Projektmethode mit oder ohne Parameter (Argumente) aufrufen. Parameter stehen in Klammern nach dem Methodennamen. Sie sind durch Strichpunkt (;) voneinander getrennt. Die Parameter sind innerhalb der aufgerufenen Methode als durchnumerierte lokale Variablen verfügbar: $1, $2,…, $n. Eine Methode kann einen einzelnen Wert im Parameter $0 zurückgeben. Wenn Sie eine Methode aufrufen, geben Sie einfach ihren Namen ein:
+Eine Projektmethode kann eine andere Projektmethode mit oder ohne Parameter (Argumente) aufrufen. Parameter stehen in Klammern nach dem Methodennamen. Sie sind durch Strichpunkt (;) voneinander getrennt. The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. A method can return a single value in the $0 parameter. Eine Methode kann einen einzelnen Wert im Parameter $0 zurückgeben. Wenn Sie eine Methode aufrufen, geben Sie einfach ihren Namen ein:
 
 ```4d
 $myText:="hello"
@@ -172,6 +172,7 @@ Sie müssen folgendes beachten: Ist der Wert der Objekteigenschaft ein Objekt mi
 $f:=New object
 $f.message:=New formula(ALERT("Hello world!"))
 $f.message() //displays "Hello world!"
+$f.message() //displays "Hello world!"
 ```
 
 Um auf ein Element der Collection zuzugreifen, müssen Sie die Elementnummer in eckigen Klammern übergeben:
@@ -184,7 +185,7 @@ myColl[3]  //access to 4th element of the collection
 
 ## Operatoren
 
-In der Programmiersprache kommt es selten vor, dass Sie nur einen Datenteil wollen. Es ist eher so, dass Sie etwas für oder mit diesen Daten durchführen wollen. Dafür verwenden Sie Operatoren. Operatoren führen in der Regel mit 2 Teilen von Daten eine Operation aus, die ein neues Datenteil ergeben. Sie kennen bereits viele Operatoren. Zum Beispiel verwendet 1 + 2 den Operator für Addition (oder Pluszeichen), um zwei Zahlen zusammenzählen. Das Ergebnis ist 3. Diese Übersicht zeigt die gängigen numerischen Operatoren:
+In der Programmiersprache kommt es selten vor, dass Sie nur einen Datenteil wollen. Es ist eher so, dass Sie etwas für oder mit diesen Daten durchführen wollen. Dafür verwenden Sie Operatoren. Operatoren führen in der Regel mit 2 Teilen von Daten eine Operation aus, die ein neues Datenteil ergeben. Sie kennen bereits viele Operatoren. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3.
 
 | Operator | Operation      | Beispiel       |
 | -------- | -------------- | -------------- |
@@ -209,7 +210,7 @@ Ausdrücke werden gesetzt und geben einen Wert zurück. Tatsächlich verwenden S
 
 Ausdrücke setzen sich aus fast allen anderen Teilen der Programmiersprache zusammen: Befehle, Operatoren, Variablen, Felder, Objekteigenschaften und Elemente von Collections. Mit Ausdrücken erstellen Sie Anweisungen (Code-Zeilen), die sie dann zum Erstellen von Methoden verwenden. Die Programmiersprache verwendet Ausdrücke überall, wo sie einen Teil von Daten braucht.
 
-Ausdrücke stehen selten “allein”. An folgenden Stellen in 4D kann ein Ausdruck für sich allein verwendet werden. Das gilt für:
+Ausdrücke stehen selten “allein”. Expressions rarely “stand alone.” There are several places in 4D where an expression can be used by itself. Das gilt für:
 
 - Formulareditor (Formel anwenden, Suche mit Formel, Sortiere nach Formel)
 - Befehl `EXECUTE FORMULA`
@@ -307,6 +308,7 @@ Umklammern Sie Inhalt mit den Zeichen `/*` ... `*/`, um eingebundene Kommentare 
 For /* inline comment */ ($vCounter;1;100)
  ...
 End for
+End for
 ```
 
 - **Mehrzeilige Kommentarblöcke** können eine unbegrenzte Anzahl Zeilen haben. Sie können verschachtelt sein und jeder Unterblock lässt sich auch auf- oder zuklappen. Beispiel:
@@ -320,5 +322,6 @@ comments
  */
 */
 ...
+End for
 End for
 ```
