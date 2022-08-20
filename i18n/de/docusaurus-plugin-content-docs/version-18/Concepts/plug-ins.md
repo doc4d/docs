@@ -57,4 +57,4 @@ Ihre Wahl richtet sich danach, wie Sie das Plug-In einsetzen wollen.
 
 Liegt dasselbe Plug-In an beiden Stellen, lädt 4D nur das Plug-In, welches neben der Struktur liegt. Existieren in einer Anwendung mit einkompilierter 4D Volume Desktop mehrere Instanzen desselben Plug-In, lässt sich die Anwendung nicht öffnen.
 
-4D lädt die Plug-Ins beim Starten des Programms. Beenden Sie deshalb 4D, bevor Sie diese installieren. Öffnen Sie dann Ihre Anwendung mit 4D. Erfordert ein Plug-In eine spezifische Benutzerlizenz, wird es geladen, jedoch nicht aktiviert.
+4D lädt die Plug-Ins beim Starten des Programms. Beenden Sie deshalb 4D, bevor Sie diese installieren. Öffnen Sie dann Ihre Anwendung mit 4D. Then open your database with 4D. If any plug-in requires a specific license for use, it will be loaded but not available for use.
