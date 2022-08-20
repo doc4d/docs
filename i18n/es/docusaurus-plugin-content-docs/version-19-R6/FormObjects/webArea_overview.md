@@ -56,7 +56,7 @@ $4d.4DMethodName(param1,paramN,function(result){})
 
 - `result`: resultado de la ejecución del método 4D, devuelto en la expresión "$0". Este resultado puede ser de cualquier tipo soportado por JavaScript (cadena, número, array, objeto). Puede utilizar el comando `C_OBJECT` para devolver los objetos.
 
-> Por defecto, 4D trabaja en UTF-8. Cuando devuelva un texto que contenga caracteres extendidos, por ejemplo, caracteres con acentos, asegúrese de que la codificación de la página mostrada en el área web esté declarada como UTF-8, ya que de lo contrario los caracteres podrían representarse incorrectamente. En este caso, añada la siguiente línea en la página HTML para declarar la codificación: `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
+> Por defecto, 4D trabaja en UTF-8. Cuando devuelva un texto que contenga caracteres extendidos, por ejemplo, caracteres con acentos, asegúrese de que la codificación de la página mostrada en el área web esté declarada como UTF-8, ya que de lo contrario los caracteres podrían representarse incorrectamente. In this case, add the following line in the HTML page to declare the encoding: `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
 
 #### Ejemplo 1
 
@@ -185,7 +185,7 @@ Puede visualizar y utilizar un inspector web dentro de las áreas web de sus for
 
 Para mostrar el inspector Web, puede ejecutar el comando `WA OPEN WEB INSPECTOR` o utilizar el menú contextual del área web.
 
-- **Ejecute el comando `WA OPEN WEB INSPECTOR` **<br/> Este comando se puede utilizar directamente con áreas web en pantalla (objeto formulario) y fuera de ella.
+- **Execute the `WA OPEN WEB INSPECTOR` command**<br/> This command can be used directly with onscreen (form object) and offscreen web areas.
 
 - **Use the web area context menu**<br/> This feature can only be used with onscreen web areas and requires that the following conditions are met:
     - el [menú contextual](properties_Entry.md#context-menu) del área web está activado
