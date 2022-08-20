@@ -43,7 +43,7 @@ Para más información sobre cómo consultar los datos en 4D, consulte la [dataC
 > Por ejemplo, se puede escribir lo siguiente al pasar un valor con una comilla cuando se utiliza la propiedad *params*:  
 > `http://127.0.0.1:8081/rest/Person/?$filter="lastName=:1"&$params='["O\u0027Reilly"]'`
 > 
-> Si pasa el valor directamente, puede escribir lo siguiente: `http://127.0.0.1:8081/rest/Person/?$filter="lastName=O'Reilly"`
+> If you pass the value directly, you can write the following: `http://127.0.0.1:8081/rest/Person/?$filter="lastName=O'Reilly"`
 
 ## Atributo
 
