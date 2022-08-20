@@ -130,7 +130,7 @@ The `.fieldNumber` property <!-- REF DataClassAttributeClass.fieldNumber.Summary
 
 #### 詳細
 
-The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. これは属性の種類 (kind) によります ([`.kind`](#kind) 参照)。
+The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. .
 
 **とりうる値:**
 
@@ -303,7 +303,7 @@ The `.mandatory` property <!-- REF DataClassAttributeClass.mandatory.Summary -->
 
 #### 詳細
 
-The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns the name of the `dataClassAttribute` object as string<!-- END REF -->.
+The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->The `.name` property<!-- END REF -->.
 
 #### 例題
 
