@@ -9,9 +9,9 @@ title: On Before Keystroke
 
 <details><summary>Histórico</summary>
 
-| Versión | Modificaciones                                                                          |
-| ------- | --------------------------------------------------------------------------------------- |
-| v18 R5  | - Support in non-enterable list boxes - The event is now triggered after IME validation |
+| Versión | Modificaciones                                                                                |
+| ------- | --------------------------------------------------------------------------------------------- |
+| v18 R5  | - Soporte en list boxes no editables - El evento se activa ahora después de la validación IME |
 
 </details>
 
@@ -35,7 +35,7 @@ El evento `On Before Keystroke` puede generarse en objetos no introducibles, por
 Cuando una entrada requiere una secuencia de presiones de teclas, los eventos `On Before Keystroke` y [`On After Keystroke`](onAfterKeystroke.md) se generan sólo cuando el usuario valida completamente la entrada. El comando `Keystroke` devuelve el carácter validado. Este caso se da principalmente:
 
 - cuando se utilizan las teclas "muertas" como ^ o ~: los eventos se generan sólo cuando se introduce el carácter extendido eventualmente (por ejemplo, "ê" o ñ),
-- when an IME (Input Code Editor) displays an intermediary dialog box where the user can enter a combination of characters: events are generated only when the IME dialog is validated.
+- cuando un IME (Input Code Editor) muestra una caja de diálogo intermedia en la que el usuario puede introducir una combinación de caracteres: los eventos se generan sólo cuando el diálogo IME se valida.
 
 ### Ver también
 
