@@ -124,7 +124,7 @@ End if
 
 #### Descripción
 
-The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. Es idéntico al comando [`IMAP New transporter`](#imap-new-transporter) (acceso directo).
+The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. .
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -358,7 +358,7 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 
 #### Descripción
 
-The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
+The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->The `.getMails()` function<!-- END REF -->.
 
 Puede pasar:
 
@@ -490,23 +490,23 @@ var $server,$boxInfo,$result : Object
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Obligatorio
+ $server.host:="imap.gmail.com" //Mandatory
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
-  //crear transportador
+  //create transporter
  $transporter:=IMAP New transporter($server)
 
-  //seleccionar buzón
+  //select mailbox
  $boxInfo:=$transporter.selectBox("INBOX")
 
   If($boxInfo.mailCount>0)
-        // recuperar los encabezados de los últimos 20 mensajes sin marcarlos como leídos
+  // retrieve the headers of the last 20 messages without marking them as read
     $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
-        New object("withBody";False;"updateSeen";False))
+     New object("withBody";False;"updateSeen";False))
     For each($mail;$result.list)
-        // ...
+    // ...
 End for each
  End if
 ```
@@ -539,7 +539,7 @@ End for each
 
 #### Descripción
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
+The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
 
 Puede pasar:
 
@@ -681,6 +681,10 @@ $status:=$transporter.deleteBox($name)
 
 If ($status.success)
  ALERT("Mailbox deletion successful!")
+ Else
+ ALERT("Error: "+$status.statusText)
+ End if
+End if
  Else
  ALERT("Error: "+$status.statusText)
  End if
@@ -1037,7 +1041,7 @@ Quiere obtener el mensaje con ID = 1:
 
 #### Descripción
 
-The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
+The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
 
 **Primera sintaxis:**
 
@@ -1063,10 +1067,10 @@ El parámetro opcional *options* permite definir las partes de los mensajes a de
 
 **Opciones**
 
-| Propiedad  | Type    | Descripción                                                                                                                                         |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | Boolean | Si True, los mensajes especificados se marcan como "vistos" en el buzón. Si False, los mensajes no se marcan como "vistos". Valor por defecto: True |
-| withBody   | Boolean | Pase True para devolver el cuerpo de los mensajes específicos. Si False, sólo se devuelve los encabezados de los mensajes. Valor por defecto: True  |
+| Propiedad  | Type    | Descripción                                                                                                                                                                   |
+| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | Boolean | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). Valor por defecto: True |
+| withBody   | Boolean | Pase True para devolver el cuerpo de los mensajes específicos. Si False, sólo se devuelve los encabezados de los mensajes. Valor por defecto: True                            |
 > * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error.
 > * Si no hay ninguna conexión abierta, `.getMails()` abrirá una conexión con el último buzón especificado por [`.selectBox()`](#selectbox).
 
@@ -1138,7 +1142,7 @@ Quiere recuperar los 20 correos electrónicos más recientes sin cambiar el esta
 
 #### Descripción
 
-The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
+The `.copy()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
 
 En el primer parámetro, puede pasar:
 
@@ -1148,7 +1152,7 @@ En el primer parámetro, puede pasar:
 El parámetro opcional *updateSeen* permite indicar si el mensaje está marcado como "visto" en el buzón. Puede pasar:
 
 * **True** - para marcar el mensaje como "visto" (indicando que el mensaje ha sido leído)
-* **False** - para dejar intacto el estado "visto" del mensaje > * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente, > * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error, > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
+* **False** - to leave the message's "seen" status untouched > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message, > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated, > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
 > * La función genera un error y devuelve **Null** si *name* designa un buzón inexistente.
 > * Si no hay ninguna conexión abierta, `.selectBox()` abrirá una conexión.
 > * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
@@ -1379,7 +1383,7 @@ La función devuelve una colección de cadenas (IDs únicos).
 
 #### Descripción
 
-The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
+The `.delete()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
 
 En el parámetro `msgIDs`, puede pasar:
 
@@ -1491,27 +1495,29 @@ La función devuelve un objeto que describe el estado IMAP:
 Para cambiar el nombre de su buzón de "Invoices" a "Bills":
 
 ```4d
-var $server,$boxInfo,$result : Object
- var $transporter : 4D.IMAPTransporter
+var $pw : text
+var $options; $transporter; $status : object
 
- $server:=New object
- $server.host:="imap.gmail.com" //Obligatorio
- $server.port:=993
- $server.user:="4d@gmail.com"
- $server.password:="XXXXXXXX"
+$options:=New object
 
-  //crear transportador
- $transporter:=IMAP New transporter($server)
+$pw:=Request("Please enter your password:")
 
-  //seleccionar buzón
- $boxInfo:=$transporter.selectBox("INBOX")
+If(OK=1) $options.host:="imap.gmail.com"
 
-  If($boxInfo.mailCount>0)
-        // recuperar los encabezados de los últimos 20 mensajes sin marcarlos como leídos
-    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
-        New object("withBody";False;"updateSeen";False))
-    For each($mail;$result.list)
-        // ...
+$options.user:="test@gmail.com"
+$options.password:=$pw
+
+$transporter:=IMAP New transporter($options)
+
+// rename mailbox
+$status:=$transporter.renameBox("Invoices"; "Bills")
+
+If ($status.success)
+   ALERT("Mailbox renaming successful!")
+   Else
+   ALERT("Error: "+$status.statusText)
+ End if
+End if
    Else
    ALERT("Error: "+$status.statusText)
  End if
@@ -1549,7 +1555,7 @@ End if
 
 > Las coincidencias no suelen diferenciar entre mayúsculas y minúsculas
 
-The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. El parámetro *searchCriteria* contiene una o varias palabras clave de búsqueda.
+The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. .
 
 *searchCriteria* es un parámetro texto que enumera una o varias llaves de búsqueda (ver [llaves-de-búsqueda-autorizadas](#authorized-search-keys) más abajo) asociadas o no a valores a buscar. Una llave de búsqueda puede ser uno o varios elementos. Por ejemplo:
 
@@ -1610,15 +1616,15 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 Las claves de búsqueda pueden solicitar el valor a buscar:
 
-* **Valores de tipo fecha**: los valores de tipo fecha se colocan en cadenas con el siguiente formato: *date-day+"-"+date-month+"-"+date-year* donde date-day indica la fecha del día del mes (2 caracteres como máximo), date-month indica el mes (Jan/Feb/Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Dec) y date-year indica el año (4 dígitos). Ejemplo: `searchCriteria = SENTBEFORE 1-Feb-2020` (una fecha no suele necesitar comillas, ya que no contiene caracteres especiales)
+* **Search-keys with a field-name value**: the field-name is the name of a header field. Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
 
-* **Valores de tipo cadena**: la cadena puede contener cualquier caracter y debe ir entre comillas. Si la cadena no contiene ningún caracter especial, como el espacio, por ejemplo, no es necesario colocarla entre comillas. Al colocar entre comillas estas cadenas se garantiza que su valor se interpretará correctamente. Ejemplo: `criterios de búsqueda = FROM "SMITH"` Para todas las llaves de búsqueda que utilizan cadenas, un mensaje coincide con la llave si la cadena es una subcadena del campo. Las coincidencias no diferencian entre mayúsculas y minúsculas.
+* **Valores de tipo cadena**: la cadena puede contener cualquier caracter y debe ir entre comillas. Si la cadena no contiene ningún caracter especial, como el espacio, por ejemplo, no es necesario colocarla entre comillas. Al colocar entre comillas estas cadenas se garantiza que su valor se interpretará correctamente. Example: `searchCriteria = FROM "SMITH"` For all search keys that use strings, a message matches the key if the string is a substring of the field. Las coincidencias no diferencian entre mayúsculas y minúsculas.
 
-* **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
+* **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = KEYWORD \Flagged \Draft`
 
 * **Marcadores**: los valores de tipo marcador (flags) aceptan una o varias palabras claves (incluyendo marcadores estándar) separados por espacios. Ejemplo: `searchCriteria = KEYWORD \Flagged \Draft`
 
-* **Conjunto de mensajes**: identifica un conjunto de mensajes. En el caso de los números de secuencia de los mensajes, se trata de números consecutivos desde el 1 hasta el número total de mensajes en el buzón. Los números son separados por coma; un dos puntos (:) delimita entre dos números inclusive. Ejemplos: `2,4:7,9,12:*` es `2,4,5,6,7,9,12,13,14,15` para un buzón con 15 mensajes. `searchCriteria = 1:5 ANSWERED` busca en la selección de mensajes 1 a 5, los mensajes que tienen el marcador \Answered. `searchCriteria= 2,4 ANSWERED` busca en la selección de mensajes (números de mensaje 2 y 4) los mensajes que tienen el marcador \Answered.
+* **Conjunto de mensajes**: identifica un conjunto de mensajes. En el caso de los números de secuencia de los mensajes, se trata de números consecutivos desde el 1 hasta el número total de mensajes en el buzón. Los números son separados por coma; un dos puntos (:) delimita entre dos números inclusive. Examples: `2,4:7,9,12:*` is `2,4,5,6,7,9,12,13,14,15` for a mailbox with 15 messages. `searchCriteria = 1:5 ANSWERED` busca en la selección de mensajes 1 a 5, los mensajes que tienen el marcador \Answered. `searchCriteria= 2,4 ANSWERED` busca en la selección de mensajes (números de mensaje 2 y 4) los mensajes que tienen el marcador \Answered.
 
 #### Teclas de búsqueda disponibles
 
@@ -1635,28 +1641,28 @@ Las claves de búsqueda pueden solicitar el valor a buscar:
 **OLD**: mensajes que no tienen el marcador \Recent.  
 **SEEN**: mensajes que tienen el marcador \Seen.  
 **UNSEEN**: Mensajes que no tienen el marcador \Seen.  
-**NEW**: mensajes que tienen el marcador \Recent pero no el marcador \Seen. Esto es equivalente a "(RECENT UNSEEN)".  
-***KEYWORD ***flag******: mensajes con el conjunto de palabras clave especificado.  
-***UNKEYWORD ***flag******: mensajes que no tienen la palabra clave especificada.  
-***BEFORE ***date******: mensajes cuya fecha interna es anterior a la fecha especificada.  
-***ON ***date******: mensajes cuya fecha interna está dentro de la fecha especificada.  
-***SINCE ***date******: mensajes cuya fecha interna está dentro o es posterior a la fecha especificada.  
-***SENTBEFORE ***date******: mensajes cuyo encabezado Date es anterior a la fecha especificada.  
-***SENTON ***date******: mensajes cuyo encabezado Date está dentro de la fecha especificada.  
-***SENTSINCE ***date******: mensajes cuyo encabezado Date está dentro o es posterior a la fecha especificada.  
-***TO ***string******: mensajes que contienen la cadena especificada en el encabezado TO.  
-***FROM ***string******: mensajes que contienen la cadena especificada en el encabezado FROM.  
-***CC ***string******: mensajes que contienen la cadena especificada en en el encabezado CC.  
-***BCC ***string******: mensajes que contienen la cadena especificada en en el encabezado BCC.  
-***SUBJECT ***string******: mensajes que contienen la cadena especificada en en el encabezado Asunto.  
-***BODY ***string******: mensajes que contienen la cadena especificada en el cuerpo del mensaje.  
-***TEXT ***string******: mensajes que contienen la cadena especificada en el encabezado o en el cuerpo del mensaje.  
-***HEADER *field-name* ***string******: mensajes que tienen un encabezado con el field-name especificado y que contienen la cadena especificada en el field-body.  
-***UID ***message-UID******: mensajes con identificadores únicos correspondientes al conjunto de identificadores únicos especificado.  
-***LARGER ***n******: mensajes con un tamaño superior al número de bytes especificado.  
-***SMALLER ***n******: mensajes con un tamaño inferior al número de bytes especificado.  
-***NOT ***search-key******: mensajes que no coinciden con al criterio de búsqueda especificado.  
-***OR *search-key1* ***search-key2******: mensajes que coinciden con cualquiera de las dos criterios de búsqueda.  
+**NEW**: mensajes que tienen el marcador \Recent pero no el marcador \Seen. This is functionally equivalent to “(RECENT UNSEEN)”.  
+***KEYWORD ***flag******: Messages with the specified keyword set.  
+***UNKEYWORD ***flag******: Messages that do not have the specified keyword set.  
+***BEFORE ***date******: Messages whose internal date is earlier than the specified date.  
+***ON ***date******: Messages whose internal date is within the specified date.  
+***SINCE ***date******: Messages whose internal date is within or later than the specified date.  
+***SENTBEFORE ***date******: Messages whose Date header is earlier than the specified date.  
+***SENTON ***date******: Messages whose Date header is within the specified date.  
+***SENTSINCE ***date******: Messages whose Date header is within or later than the specified date.  
+***TO ***string******: Messages that contain the specified string in the TO header.  
+***FROM ***string******: Messages that contain the specified string in the FROM header.  
+***CC ***string******: Messages that contain the specified string in the CC header.  
+***BCC ***string******: Messages that contain the specified string in the BCC header.  
+***SUBJECT ***string******: Messages that contain the specified string in the Subject header.  
+***BODY ***string******: Messages that contain the specified string in the message body.  
+***TEXT ***string******: Messages that contain the specified string in the header or in the message body.  
+***HEADER *field-name* ***string******: Messages that have a header with the specified field-name and that contain the specified string in the field-body.  
+***UID ***message-UID******: Messages with unique identifiers corresponding to the specified unique identifier set.  
+***LARGER ***n******: Messages with a size larger than the specified number of bytes.  
+***SMALLER ***n******: Messages with a size smaller than the specified number of bytes.  
+***NOT ***search-key******: Messages that do not match the specified search key.  
+***OR *search-key1* ***search-key2******: Messages that match either search key.  
 
 <!-- END REF -->
 
@@ -1693,10 +1699,10 @@ En el parámetro *name*, pase el nombre del buzón a acceder. El nombre represen
 
 El parámetro opcional *state* define el tipo de acceso al buzón. Los valores posibles son:
 
-| Constante             | Value | Comentario                                                                                                                                                                                            |
-| --------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IMAP read only state  | 1     | Se accede al buzón seleccionado con privilegios de sólo lectura. Los mensajes con la bandera "reciente" (que indica que son nuevos) no se modifican.                                                  |
-| IMAP read write state | 0     | Se accede al buzón seleccionado con privilegios de lectura y escritura. Los mensajes se consideran "vistos" y pierden la bandera "reciente" (que indica que son mensajes nuevos). (Valor por defecto) |
+| Constante             | Value | Comentario                                                                                                                                                                                       |
+| --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| IMAP read only state  | 1     | Se accede al buzón seleccionado con privilegios de sólo lectura. Los mensajes con la bandera "reciente" (que indica que son nuevos) no se modifican.                                             |
+| IMAP read write state | 0     | Se accede al buzón seleccionado con privilegios de lectura y escritura. Los mensajes se consideran "vistos" y pierden la bandera "reciente" (que indica que son mensajes nuevos). Default value: |
 > * La función genera un error y devuelve **Null** si *name* designa un buzón inexistente.
 > * Si no hay ninguna conexión abierta, `.selectBox()` abrirá una conexión.
 > * Si la conexión no se ha utilizado desde el retraso de conexión designado (ver `IMAP New transporter`), se llama automáticamente a la función [`.checkConnection()`](#checkconnection).
@@ -1752,7 +1758,7 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
 #### Descripción
 
-The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. De este modo, puede optar por acotar una gran lista de buzones disponibles suscribiéndose a los que habitualmente consulta.
+The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. .
 
 En el parámetro `name`, pase el nombre del buzón a añadir (suscribir) a sus buzones "suscritos".
 
