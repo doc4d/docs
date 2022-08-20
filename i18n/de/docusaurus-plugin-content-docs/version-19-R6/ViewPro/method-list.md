@@ -248,7 +248,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 #### Beschreibung
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and index already exists in the document, this command will overwrite it with the new values.
+The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. .
 
 > Style sheets created by this command are saved with the document.
 
@@ -642,7 +642,7 @@ Document contents are converted with respect to their viewing attributes, includ
 * Row height
 * Column width
 * Hidden columns / rows.
-> > > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
+> > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### Function result
 
@@ -868,7 +868,7 @@ In *rangeObj*, pass an object containing a range of columns to remove. If the pa
 
 * both columns and rows, only the columns are removed.
 * only rows, the command does nothing.
-> > > > Columns are deleted from right to left.
+> > Columns are deleted from right to left.
 
 #### Beispiel
 
@@ -907,7 +907,7 @@ In *rangeObj*, pass an object containing a range of rows  to remove. If the pass
 
 * both columns and rows, only the rows  are removed.
 * only columns, the command does nothing.
-> > > > Rows are deleted from bottom to top.
+> > Rows are deleted from bottom to top.
 
 #### Beispiel
 
@@ -1268,7 +1268,7 @@ You want to trace the execution of the commands and empty the command buffer:
 
 #### Beschreibung
 
-The `VP Font to object` utility command <!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. This object can then be used to set or get font property settings via object notation.
+The `VP Font to object` utility command <!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. .
 
 In the *font* parameter, pass a font shorthand string to specify the different properties of a font (e.g., "12 pt Arial"). You can learn more about font shorthand strings [in this page](https://www.w3schools.com/cssref/pr_font_font.asp) for example.
 
@@ -1633,7 +1633,7 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 #### Beschreibung
 
-The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method. For more information about style properties, see [Style Objects & Style Sheets](configuring.md#style-objects--style-sheets).
+The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. . The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method.
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -1777,7 +1777,7 @@ In *rangeObj*, pass a range whose formulas you want to retrieve. If *rangeObj* d
 The returned collection is two-dimensional:
 
 * The first-level collection contains subcollections of formulas. Each subcollection reprensents a row.
-* Each subcollection defines cell values for the row. Values are text elements containing the cell formulas.
+* Each subcollection defines cell values for the row. The first-level collection contains subcollections of formulas.
 
 #### Beispiel
 
@@ -1944,37 +1944,6 @@ firstPageNumber:1,
 fitPagesTall:1,
 fitPagesWide:1,
 footerCenter:"&BS.H.I.E.L.D. &A Sales Per Region",
-footerCenterImage:,
-footerLeft:,
-footerLeftImage:,
-footerRight:"page &P of &N",
-footerRightImage:,
-headerCenter:,
-headerCenterImage:,
-headerLeft:"&G",
-headerLeftImage:logo.png,
-headerRight:,
-headerRightImage:,
-margin:{top:75,bottom:75,left:70,right:70,header:30,footer:30},
-orientation:2,
-pageOrder:0,
-pageRange:,
-paperSize:{width:850,height:1100,kind:1},
-qualityFactor:2,
-repeatColumnEnd:-1,
-repeatColumnStart:-1,
-repeatRowEnd:-1,
-repeatRowStart:-1,
-rowEnd:24,
-rowStart:0,
-showBorder:false,
-showColumnHeader:0,
-showGridLine:false,
-showRowHeader:0,
-useMax:true,
-watermark:[],
-zoomFactor:1
-} &A Sales Per Region",
 footerCenterImage:,
 footerLeft:,
 footerLeftImage:,
@@ -2731,7 +2700,7 @@ $params.range:=VP Cells("ViewProArea";0;0;2;5)
 VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOptions";$params))
 ```
 
-Here's the result: ![example-import-csv](../assets/en/ViewPro/vp-import-document-csv-result.png)
+|![example-import-csv](../assets/en/ViewPro/vp-import-document-csv-result.png)
 
 #### See also
 
@@ -3488,7 +3457,7 @@ The `VP Row` command <!-- REF #_method_.VP Row.Summary -->returns a new range ob
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-The *column* parameter defines the first column of the column range. Pass the row index (counting begins at 0) in this parameter. Pass the column index (counting begins at 0)  in this parameter.
+The *column* parameter defines the first column of the column range. Pass the row index (counting begins at 0) in this parameter. Pass the row index (counting begins at 0) in this parameter.
 
 In the *row* parameter, you can define the row(s) of the cell range's position. *rowCount* must be greater than 0. Pass the row index (counting begins at 0) in this parameter.
 
@@ -4150,7 +4119,7 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 #### Beschreibung
 
-The `VP SET CUSTOM FUNCTIONS` command <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. Because custom functions are not stored in the document,`VP SET CUSTOM FUNCTIONS` must be executed in the `On Load` form event.
+The `VP SET CUSTOM FUNCTIONS` command <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. .
 
 The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when the first letter of their name is entered. See the [Formulas and Functions](formulas.md) page.
 
@@ -4512,7 +4481,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 The `VP SET FIELD` command <!-- REF #_method_.VP SET FIELD.Summary -->assigns a 4D database virtual field to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify.
+In *rangeObj*, pass a range of the cell(s) whose value you want to specify. In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
 
 The *field* parameter specifies a 4D database [virtual field](formulas.md#referencing-fields-using-the-virtual-structure) to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
 
@@ -4661,7 +4630,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 
 #### Beschreibung
 
-The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary -->sets the frozen status of the columns and rows in the *paneObj* so they are always displayed in the *vpAreaName*<!-- END REF -->. Frozen columns and rows are fixed in place and do not move when the rest of the document is scrolled. A solid line is displayed to indicate that columns and rows are frozen. The location of the line depends on where the frozen column or row is on the sheet:
+The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary -->sets the frozen status of the columns and rows in the *paneObj* so they are always displayed in the *vpAreaName*<!-- END REF -->. . Frozen columns and rows are fixed in place and do not move when the rest of the document is scrolled. A solid line is displayed to indicate that columns and rows are frozen.
 
 * **Columns on the left or right**: For columns on the left of the sheet, the line is displayed on the right side of the last frozen column. For columns on the right side of the sheet, the line is displayed on the left side of the first frozen column.
 * **Rows on the top or bottom**: For rows at the top of the sheet, the line is displayed below the last frozen row. For rows at the bottom of the sheet, the line is displayed above the first frozen row.
@@ -5346,8 +5315,6 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";2))
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_($* #,##0.00_)"))
 
 //Set the cell value as Hello World!
-VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";"Hello World!"))
-
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";"Hello World!"))
 
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";"Hello World!"))
