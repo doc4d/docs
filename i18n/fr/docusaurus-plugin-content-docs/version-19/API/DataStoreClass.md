@@ -61,7 +61,7 @@ Si aucun datastore nommé *localID* n'est trouvé, la commande renvoie **Null**.
 
 L'utilisation de `ds` nécessite que la base de données cible soit conforme à ORDA. Les règles suivantes s'appliquent :
 
-* Un datastore ne référence que les tables avec une seule clé primaire. Un datastore ne référence que les tables avec une seule clé primaire.
+* Un datastore ne référence que les tables avec une seule clé primaire. A datastore only references tables with a single primary key.
 * Les attributs de type BLOB ne sont pas gérés via le datastore.
 
 #### Exemple 1
@@ -339,7 +339,7 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
           $vcount:=$vcount+1
        End if
     End for each
-    ALERT(String($vcount)+" table(s) chiffrée(s) dans ce datastore.")
+    ALERT(String($vcount)+" encrypted table(s) in this datastore.")
  Else
     ALERT("This database is not encrypted.")
  End if
@@ -374,7 +374,7 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
 
 **Objet retourné**
 
@@ -444,7 +444,7 @@ Sur un datastore distant :
 
 #### Description
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. L'enregistrement des requêtes ORDA doit avoir été préalablement activé à l'aide de la fonction [`.startRequestLog()`](#startrequestlog).
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Cette fonction doit être appelée sur un client 4D distant, sinon elle retourne une collection vide. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
