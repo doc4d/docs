@@ -163,7 +163,7 @@ $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 
 ### 二次元配列の要素
 
-中カッコ ("{ }") を2回使用して、2次元配列の要素を参照します 。 参照される要素は2組の中カッコ内の2つの数式で表されます。
+You reference an element of a two-dimensional array by using the curly braces ({… }) twice. 参照される要素は2組の中カッコ内の2つの数式で表されます。
 
 例:
 
@@ -250,7 +250,7 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
-プロジェクトメソッドには引数を渡すことができます。 メソッドに引数を渡す場合は、メソッド名の後の括弧 () に引数を入れ、 セミコロン (;) で区切ります。 引数は受け取り側のメソッドにて、受け取り順に番号が付けられたローカル変数 ($1, $2, ...$n) に格納されます。 さらに、複数の連続する引数は、${n}というシンタックスを用いて使用できます。nは数値で引数の番号を示します。
+プロジェクトメソッドには引数を渡すことができます。 メソッドに引数を渡す場合は、メソッド名の後の括弧 () に引数を入れ、 セミコロン (;) で区切ります。 The parameters are available within the called method as consecutively numbered local variables: $1, $2,… , $n. さらに、複数の連続する引数は、${n}というシンタックスを用いて使用できます。nは数値で引数の番号を示します。
 
 関数の戻り値は、ローカル変数 $0 に代入することで指定します。
 
