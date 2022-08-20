@@ -56,4 +56,4 @@ Le choix de l’emplacement dépend de votre mode d’utilisation du plug-in ou 
 
 Si un même plug-in ou un même composant est placé aux deux endroits, 4D charge uniquement celui situé à côté de la structure. Dans le cas d’une application compilée et fusionnée avec 4D Volume Desktop, la présence de plusieurs instances d’un même plug-in ou d'un même composant empêchera l’ouverture de l’application.
 
-Les plug-ins et les composants sont chargés par 4D lors du lancement de l’application. Vous devez donc quitter votre application 4D avant d’effectuer vos copies de fichiers ou dossiers. Ouvrez ensuite votre projet avec 4D. Si l’utilisation d'un plug-in nécessite une licence spécifique, le plug-in est chargé mais n’est pas actif.
+Les plug-ins et les composants sont chargés par 4D lors du lancement de l’application. Vous devez donc quitter votre application 4D avant d’effectuer vos copies de fichiers ou dossiers. Plug-ins are loaded by 4D when the application is launched so you will need to quit your 4D application before installing them. Si l’utilisation d'un plug-in nécessite une licence spécifique, le plug-in est chargé mais n’est pas actif.
