@@ -58,7 +58,7 @@ Un double-clic sur une cellule permet de passer en mode saisie dans la cellule c
 
 ![](../assets/en/ViewPro/vpInput.PNG)
 
-Les données peuvent être saisies directement lorsqu'une cellule est déjà sélectionnée, même si le curseur d'insertion n'est pas visible. La saisie remplace alors le contenu de la cellule.
+Les données peuvent être saisies directement lorsqu'une cellule est déjà sélectionnée, même si le curseur d'insertion n'est pas visible. The input then replaces the content of the cell.
 
 La touche **Tab** valide la saisie de la cellule et sélectionne la cellule à sa droite. La combinaison des touches **Shift + Tab** valide la saisie de la cellule et sélectionne la cellule située à sa gauche.
 
