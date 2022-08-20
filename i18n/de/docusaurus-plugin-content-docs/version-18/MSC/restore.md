@@ -19,7 +19,7 @@ Wählen Sie hier ein Backup aus, erscheinen im rechten Teil des Fensters Informa
 - **Pfad**: Vollständiger Pfadname der gewählten Backup-Datei. Mit der Schaltfläche Anzeigen öffnen Sie die Backup-Datei in einem Systemfenster.
 - **Datum und Zeit**: Datum und Uhrzeit des Backup.
 - **Inhalt**: Inhalt der Backup-Datei. Neben jedem Eintrag in der Liste gibt es ein Ankreuzfeld, über das Sie angeben, ob er wiederhergestellt werden soll. Sie können auch die Schaltflächen** Alles aktivieren** oder **Nichts aktivieren** verwenden, um die Liste der Einträge zusammenzustellen, die Sie wiederherstellen wollen.
-- **Zielordner für wiederherstellte Dateien auswählen**: Ordner, in dem die wiederhergestellten Dateien abgelegt werden. 4D legt die wiederhergestellten Dateien standardmäßig in einem Ordner mit Namen "Archivname" (ohne Endung) ab, der neben der Strukturdatei der Datenbank liegt. Wollen Sie das Ziel ändern, klicken Sie unter dem Bereich auf die Schaltfläche **[...]** und geben einen anderen Ordner an.
+- **Zielordner für wiederherstellte Dateien auswählen**: Ordner, in dem die wiederhergestellten Dateien abgelegt werden. **Destination folder of the restored files**: Folder where the restored files will be placed. Wollen Sie das Ziel ändern, klicken Sie unter dem Bereich auf die Schaltfläche **[...]** und geben einen anderen Ordner an.
 
 Die Schaltfläche **Wiederherstellen** startet die manuelle Wiederherstellung der gewählten Elemente.
 
