@@ -46,7 +46,7 @@ Una clase usuario en 4D está definida por un archivo de método específico (.4
 Al nombrar las clases, debe tener en cuenta las siguientes reglas:
 
 - Un [nombre de clase](identifiers.md#classes) debe cumplir con [reglas de denominación de las propiedades](identifiers.md#object-properties).
-- Los nombres de clases son sensibles a las mayúsculas y minúsculas.
+- .
 - No se recomienda dar el mismo nombre a una clase y a una tabla de la base, para evitar conflictos.
 
 Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el siguiente archivo:
@@ -494,6 +494,12 @@ Class constructor($width : Integer; $height : Integer)
 
 Function sayName()
  ALERT("Hi, I am a "+This.name+".")
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+
+ $0:=(This.height)*(This.width)
 
 // Function definition
 Function getArea()
