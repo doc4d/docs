@@ -180,7 +180,7 @@ Você pode escrever:
 
 ```4d  
 // Class "AlignOnTarget" Class constructor($macro : Object)
-    This.myParameter:=$macro.myParam //esquerda
+    This.myParameter:=$macro.myParam //left
     ...
 ```
 
@@ -273,6 +273,10 @@ Function onInvoke($editor : Object)->$result : Object
 
  Else 
   ALERT("Please select a form object.")
+ End if 
+
+ // Notify to 4D the modification
+ $result:=New object("currentPage"; $editor.editor.currentPage)
  End if 
 
  // Notify to 4D the modification
