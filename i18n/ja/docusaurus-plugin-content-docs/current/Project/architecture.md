@@ -114,7 +114,7 @@ title: プロジェクトのアーキテクチャー
 | ------------- | ----------------------------------------------------- | ------ |
 | table_*n*.4dm | プロジェクト内で定義されているトリガーメソッド  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | テキスト   |
 
-**注:** 拡張子 .4dm のファイルは、4D メソッドのコードをテキスト形式で格納しており、 ソース管理ツールに対応しています。
+**Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. ソース管理ツールに対応しています。
 
 
 ### `Trash`
@@ -221,7 +221,7 @@ Settings フォルダーには、アプリケーションの管理に使用さ�
 
 アプリケーションプロジェクトが利用するコンポーネントを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
 
-> アプリケーションプロジェクトはコンポーネントとして利用することができます:<br /> - 開発においては、ホストプロジェクトの Components フォルダーに .4dproject ファイルのエイリアスを置きます。 - 運用時においては、[コンポーネントをビルド](Desktop/building.md#コンポーネントをビルド) し、生成された .4dz ファイルを .4dbase フォルダーに格納し、それをホストアプリケーションの Components フォルダーに置きます。
+> An application project can be used itself as a component: - for development: put an alias of the .4dproject file in the Components folder of the host project. - 運用時においては、[コンポーネントをビルド](Desktop/building.md#コンポーネントをビルド) し、生成された .4dz ファイルを .4dbase フォルダーに格納し、それをホストアプリケーションの Components フォルダーに置きます。
 
 
 ## `プラグイン`
