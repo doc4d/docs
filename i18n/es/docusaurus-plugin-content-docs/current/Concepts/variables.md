@@ -47,7 +47,7 @@ var $myFile : 4D.File  //una variable objeto clase archivo
 var $myVar //una variable variant
 ```
 
-`varName` is the variable name, it must comply with the [4D rules](Concepts/identifiers.md) about identifiers. This syntax only supports [local and process variables](#local-process-and-interprocess-variables) declarations, thus excluding [interprocess variables](#interprocess-variables) and [arrays](Concepts/arrays.md).
+`varName` es el nombre de la variable, debe cumplir con las [reglas de 4D](Concepts/identifiers.md) sobre los identificadores. Esta sintaxis sólo soporta declaraciones de [variables locales y proceso](#local-process-and-interprocess-variables), por lo que se excluyen [variables interproceso](#interprocess-variables) y [arrays](Concepts/arrays.md).
 
 `varType` puede ser:
 
@@ -209,6 +209,6 @@ Las variables interproceso están disponibles en todo el proyecto y son comparti
 
 > No se recomienda el uso de variables interproceso, ya que no están disponibles para los procesos apropiativos y tienden a hacer que el código sea menos mantenible.
 
-The name of an interprocess variable always begins with the symbols `<>` — a “less than” sign followed by a “greater than” sign— followed by 31 characters.
+El nombre de una variable interproceso siempre comienza con los símbolos `<>` — un signo "menor que" seguido de un signo "mayor que"- seguido de 31 caracteres.
 
 En modo cliente/servidor, cada máquina (cliente y servidor) comparten la misma definición de las variables interproceso, pero cada máquina tiene una instancia diferente para cada variable.
