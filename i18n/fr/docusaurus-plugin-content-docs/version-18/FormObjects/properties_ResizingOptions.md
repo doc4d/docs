@@ -96,7 +96,7 @@ Trois options sont disponibles :
 
 Lorsqu'un objet splitter a cette propriété, les autres objets à sa droite (splitter vertical) ou en dessous (splitter horizontal) sont poussés en même temps que le splitter, sans arrêt.
 
-Voici le résultat du déplacement d'un splitter «pousseur» : ![](../assets/en/FormObjects/splitter_pusher1.png)
+Here is the result of a “pusher” splitter being moved: ![](../assets/en/FormObjects/splitter_pusher1.png)
 
 ![](../assets/en/FormObjects/splitter_pusher3.png)
 
