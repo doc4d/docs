@@ -111,7 +111,7 @@ The function returns a [**POP3 transporter object**](#pop3-transporter-object). 
 
 #### Beschreibung
 
-The `4D.POP3Transporter.new()` function <!-- REF #4D.POP3Transporter.new().Summary -->creates and returns a new object of the `4D.POP3Transporter` type<!-- END REF -->. It is identical to the [`POP3 New transporter`](#pop3-new-transporter) command (shortcut).
+The `4D.POP3Transporter.new()` function <!-- REF #4D.POP3Transporter.new().Summary -->creates and returns a new object of the `4D.POP3Transporter` type<!-- END REF -->. .
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -220,7 +220,7 @@ Executing this method does not actually remove any email. The flagged email will
 
 ##### Beschreibung
 
-The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary -->The `.getBoxInfo()` function<!-- END REF -->. This function allows you to retrieve information about the mailbox.
 
 The `boxInfo` object returned contains the following properties:
 
@@ -271,7 +271,7 @@ The `boxInfo` object returned contains the following properties:
 
 ##### Beschreibung
 
-The `.getMail()` function <!-- REF #POP3TransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. This function allows you to locally handle the email contents.
+The `.getMail()` function <!-- REF #POP3TransporterClass.getMail().Summary -->The `.getMail()` function<!-- END REF -->. This function allows you to locally handle the email contents.
 
 Pass in *msgNumber* the number of the message to retrieve. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) function.
 
@@ -457,7 +457,7 @@ You want to know the total number and size of emails in the mailbox:
 
 ##### Beschreibung
 
-The `.getMIMEAsBlob()` function <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* in the mailbox designated by the [`POP3_transporter`](#pop3-transporter-object)<!-- END REF -->.
+The `.copy()` function <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->The `.getMIMEAsBlob()` function<!-- END REF -->.
 
 In *msgNumber*, pass the number of the message to retrieve. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
 
