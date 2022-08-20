@@ -39,16 +39,8 @@ Los mismos principios se aplican cuando los métodos se ejecutan a través de co
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)  
-//pase la fecha !05/05/10! como parámetro del SetCalendarDate  
-// en el contexto de un subformulario  
-//pase la fecha !05/05/10! como parámetro del SetCalendarDate  
-// en el contexto de un subformulario  
-//pase la fecha !05/05/10! como parámetro del SetCalendarDate  
-// en el contexto de un subformulario  
-//pase la fecha !05/05/10! como parámetro del SetCalendarDate  
-// en el contexto de un subformulario  
-//pase la fecha !05/05/10! como parámetro del SetCalendarDate  
-// en el contexto de un subformulario  
+//pass the !05/05/10! date as parameter to the SetCalendarDate  
+// in the context of a subform  
 //pase la fecha !05/05/10! como parámetro del SetCalendarDate  
 // en el contexto de un subformulario
 ```
@@ -94,7 +86,7 @@ NewPhrase:=Uppercase4("This is good.")
 
 En este ejemplo, la variable *NewPhrase* recibe “THIS is good.”
 
-El resultado de la función, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. Por ejemplo, en el ejemplo anterior `DO SOMETHING`, a `$0` se le asignó primero el valor de `$1`, y luego se usó como parámetro del comando `ALERT`. Dentro de la subrutina, puede utilizar `$0` de la misma manera que utilizaría cualquier otra variable local. Es 4D quien devuelve el valor de `$0` (tal y como está cuando la subrutina termina) al método llamado.
+El resultado de la función, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. It can be used as such within the subroutine. Dentro de la subrutina, puede utilizar `$0` de la misma manera que utilizaría cualquier otra variable local. Es 4D quien devuelve el valor de `$0` (tal y como está cuando la subrutina termina) al método llamado.
 
 
 ## Declaración de parámetros
@@ -152,16 +144,16 @@ Ver la página [Modos interpretado y compilado](Concepts/interpreted.md) para m�
 
 La declaración de parámetros también es obligatoria en los siguientes contextos (estos contextos no soportan la declaración en un método "Compiler"):
 
-- Métodos base Por ejemplo, el método base `On Web Connection` recibe seis parámetros, de $1 a $6, del tipo Texto. Al principio del método base, debe escribir (incluso si no se utilizan todos los parámetros):
+- Database methods For example, the `On Web Connection Database Method` receives six parameters, $1 to $6, of the data type Text. Al principio del método base, debe escribir (incluso si no se utilizan todos los parámetros):
 
 ```4d
 // On Web Connection
 C_TEXT($1;$2;$3;$4;$5;$6)
 ```
 
-- Triggers El parámetro $0 (Entero largo), que es el resultado de un trigger, será digitado por el compilador si el parámetro no ha sido declarado explícitamente. Sin embargo, si quiere declararlo, debe hacerlo en el propio trigger.
+- Triggers The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Sin embargo, si quiere declararlo, debe hacerlo en el propio trigger.
 
-- Objetos formulario que aceptan el evento formulario `On Drag Over` El parámetro $0 (Entero largo), que es el resultado del evento formulario `On Drag Over`, será digitado por el compilador si el parámetro no ha sido declarado explícitamente. Sin embargo, si quiere declararlo, debe hacerlo en el propio método proyecto. **Nota:** el compilador no inicializa el parámetro $0. Por lo tanto, tan pronto como utilice el evento formulario `On Drag Over`, debe inicializar $0. Por ejemplo:
+- Form objects that accept the `On Drag Over` form event The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. Sin embargo, si quiere declararlo, debe hacerlo en el propio método proyecto. **Nota:** el compilador no inicializa el parámetro $0. Por lo tanto, tan pronto como utilice el evento formulario `On Drag Over`, debe inicializar $0. Por ejemplo:
 ```4d
  C_LONGINT($0)
  If(Form event=On Drag Over)
@@ -410,6 +402,6 @@ Al igual que con otras variables locales, no es obligatorio declarar los paráme
  C_LONGINT(${4})
 ```
 
-Este comando significa que a partir del cuarto parámetro (incluido), el método puede recibir un número variable de parámetros de tipo entero largo. $1, $2 y $3 pueden ser de cualquier tipo de datos. Sin embargo, si se utiliza $2 por indirección, el tipo de datos utilizado será el tipo genérico. Así, será del tipo de datos Entero largo, aunque para usted fuera, por ejemplo, del tipo de datos Real.
+Este comando significa que a partir del cuarto parámetro (incluido), el método puede recibir un número variable de parámetros de tipo entero largo. $1, $2 y $3 pueden ser de cualquier tipo de datos. Sin embargo, si se utiliza $2 por indirección, el tipo de datos utilizado será el tipo genérico. $1, $2 and $3 can be of any data type.
 
 **Nota:** el número en la declaración tiene que ser una constante y no una variable.
