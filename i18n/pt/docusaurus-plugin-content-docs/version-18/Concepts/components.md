@@ -72,7 +72,7 @@ Quando usar ponteiros para que os componentes se comuniquem com o banco de dados
 
 - O comando `Get pointer` não devolverá um ponteiro a uma variável do banco de dados local se for chamada desde um componente e vice versa.
 
-- A arquitetura de componentes permite a coexistência, dentro do mesmo banco de dados interpretado, de componentes interpretados e compilados (por outro lado, em um banco de dados compilado só podem ser usados  componentes compilados). Para utilizar apontadores neste caso, deve respeitar o seguinte princípio: o intérprete pode desconectar um ponteiro construído em modo compilado; no entanto, em modo compilado, não pode deconectar um ponteiro construído em modo interpretado. Ilustremos este principio com o exemplo abaixo: dados dois componentes, C (compilado) e I (interpretado), instalados no mesmo banco de dados local.
+- A arquitetura de componentes permite a coexistência, dentro do mesmo banco de dados interpretado, de componentes interpretados e compilados (por outro lado, em um banco de dados compilado só podem ser usados  componentes compilados). Para utilizar apontadores neste caso, deve respeitar o seguinte princípio: o intérprete pode desconectar um ponteiro construído em modo compilado; no entanto, em modo compilado, não pode deconectar um ponteiro construído em modo interpretado. In order to use pointers in this case, you must respect the following principle: the interpreter can unpoint a pointer built in compiled mode; however, in compiled mode, you cannot unpoint a pointer built in interpreted mode.
 - Se o componente C definir a variável `myCvar` , o componente I pode acessar ao valor desta variável utilizando o ponteiro `->myCvar`.
 - Se o componente I definir a variável `myIvar` , o componente C não pode acessar essa variável usando o ponteiro `->myIvar`. Esta sintaxe causa um erro de execução.
 
@@ -103,7 +103,7 @@ methCreateRec(->[PEOPLE];->[PEOPLE]Name;"Julie Andrews")
 Dentro do componente, o código do método `methCreateRec`:
 
 ```4d
-C_POINTER($2) //Indicador em um campo do banco local C_TEXT($3) // Valor a inserir
+C_POINTER($1) //Pointer on a table in host database C_POINTER($2) //Pointer on a field in host database C_TEXT($3) // Value to insert
 
 $tablepointer:=$1
 $fieldpointer:=$2 CREATE RECORD($tablepointer->)
@@ -156,7 +156,7 @@ Um [método de gestião de erros](Concepts/error-handling.md) instalado pelo com
 
 ## Uso de formulários
 
-- Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente. Qualquer formulário projeto presente no banco de dados matriz pode usado pelo componente.
+- Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente. Only “project forms” (forms that are not associated with any specific table) can be used in a component.
 - Um componente pode chamar formulários tabelas do banco de dados local. Note que nesse caso é necessário usar ponteiros ao invés de nomes de tabelas entre colchetes [] para especificar os formulários no código do componente.
 
 **Nota:** se um componente utilizar o comando `ADD RECORD`, se mostrará o formulário de entrada atual do banco de dados local, no contexto do banco local. Por isso se o formulário incluir variáveis, o componente não terá acesso ao formulário.
@@ -165,7 +165,7 @@ Um [método de gestião de erros](Concepts/error-handling.md) instalado pelo com
 
 ## Uso de tabelas e campos
 
-Um componente não pode usar as tabelas e campos definidos na estrutura 4D do banco de dados matriz. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Pode criar e gerenciar bancos de dados externos usando SQL. Um banco de dados externo é um banco 4D que é independente do banco 4D principal, mas que pode trabalhar com o banco principal. Usar um banco externo significa designar temporariamente esse banco de dados como o banco atual, em outras palavras, o banco alvo para as pesquisas SQL executadas por 4D. Pode criar bancos externos usando o comando SQL `CREATE DATABASE`.
+Um componente não pode usar as tabelas e campos definidos na estrutura 4D do banco de dados matriz. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Pode criar e gerenciar bancos de dados externos usando SQL. However, you can create and use external databases, and then use their tables and fields according to your needs. Usar um banco externo significa designar temporariamente esse banco de dados como o banco atual, em outras palavras, o banco alvo para as pesquisas SQL executadas por 4D. Pode criar bancos externos usando o comando SQL `CREATE DATABASE`.
 
 ### Exemplo
 
