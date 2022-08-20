@@ -11,7 +11,7 @@ Les règles suivantes s'appliquent à toutes les structures de 4D.
 
 - Un nom doit commencer par un caractère alphabétique, un tiret bas ou un dollar ("$") (à noter que le symbole dollar peut désigner un élément local, voir ci-dessous).
 - Le nom peut ensuite contenir des caractères alphabétiques, des caractères numériques, des espaces et des tirets bas (_).
-- Les points (".") Les points (".") et les crochets ("[ ]") sont interdits dans les noms de tables, champs, méthodes ou variables.
+- Les points (".") Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Les virgules, barres de fraction, guillemets et deux points (:) sont interdits.
 - Les caractères réservés car utilisés comme opérateurs, comme l’astérisque (*) ou le +, sont interdits.
 - Les noms réservés, c'est-à-dire les noms de commandes 4D (`Date`, `Time`, etc), les mots-clés (If, For, etc.) et les constantes.
@@ -20,7 +20,7 @@ Les règles suivantes s'appliquent à toutes les structures de 4D.
 ### Règles supplémentaires pour les propriétés d'objet et les noms ORDA
 
 - Les espaces sont interdits.
-- Les points (".") Les points (".") et les crochets ("[ ]") sont interdits.
+- Les points (".") Periods (".") and brackets ("[ ]") are not allowed.
 - Les noms sont sensibles à la casse.
 
 ### Règles supplémentaires pour SQL
@@ -163,7 +163,7 @@ $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 
 ### Eléments de tableaux à deux dimensions
 
-Vous désignez un élément d’un tableau à deux dimensions à l’aide d'une double paire d’accolades ({…})   Vous désignez un élément d’un tableau à deux dimensions à l’aide d'une double paire d’accolades ({…})   L’élément référencé (l’indice) est indiqué par deux expressions numériques dans deux paires d’accolades.
+You reference an element of a two-dimensional array by using the curly braces ({…}) twice.   Vous désignez un élément d’un tableau à deux dimensions à l’aide d'une double paire d’accolades ({…})   L’élément référencé (l’indice) est indiqué par deux expressions numériques dans deux paires d’accolades.
 
 Exemple :
 
@@ -186,7 +186,7 @@ $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
 
 ## Propriétés (attributs) d'objets
 
-Lorsque la notation objet est activée, vous désignez un attribut d'objet (également appelé propriété d'objet) en plaçant un point (".") entre le nom de l'objet (ou de l'attribut) et le nom de l'attribut. Un nom d'attribut peut contenir jusqu'à 255 caractères et est sensible à la casse.
+When object notation is enabled, you designate an object attribute (also called object property) by placing a point (".") between the name of the object (or attribute) and the name of the attribute. entre le nom de l'objet (ou de l'attribut) et le nom de l'attribut. Un nom d'attribut peut contenir jusqu'à 255 caractères et est sensible à la casse.
 
 Exemple :
 
@@ -250,7 +250,7 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Les méthodes peuvent accepter des paramètres (ou arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Les paramètres sont passés à la méthode appelée en tant que variables locales numérotées séquentiellement : $1, $2,…, $n. De plus, plusieurs paramètres consécutifs (s'ils sont les derniers) peuvent être adressés à l'aide de la syntaxe ${n}où n, expression numérique, est le numéro du paramètre.
+Les méthodes peuvent accepter des paramètres (ou arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Les paramètres sont passés à la méthode appelée en tant que variables locales numérotées séquentiellement : $1, $2,…, $n. The parameters are passed to the method in parentheses, following the name of the method.
 
 A l’intérieur d'une fonction, la variable locale $0 contient la valeur à retourner.
 
