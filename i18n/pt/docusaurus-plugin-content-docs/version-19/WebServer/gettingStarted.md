@@ -40,7 +40,7 @@ Case of
   WEB SEND TEXT("Hello World!")
  Else 
   // Error 404 for example
-End case 
+ End case 
 ```
 
 The [`On Web Connection`](httpRequests.md#on-web-connection) database method is called for incoming requests and receives the target URL in the `$1` parameter. This very simple code only sends the text to the browser.
@@ -219,12 +219,10 @@ $webUser.save()
 ```4d
 var $indexUserId; $indexPassword : Integer
 var $userId; $password : Text
-var $user; $info : Object
-ARRAY TEXT($anames; 0)
+var $user; $info : Object ARRAY TEXT($anames; 0)
 ARRAY TEXT($avalues; 0)
 
-// get values sent in the header of the request
-WEB GET VARIABLES($anames; $avalues)
+// get values sent in the header of the request WEB GET VARIABLES($anames; $avalues)
 
 // look for header login fields
 $indexUserId:=Find in array($anames; "userId")
@@ -233,9 +231,7 @@ $indexPassword:=Find in array($anames; "password")
 $password:=$avalues{$indexPassword}
 
 //look for a user with the entered name in the users table
-$user:=ds.WebUsers.query("userId = :1"; $userId).first()
-
-If ($user#Null) //a user was found
+$user:=ds. WebUsers.query("userId = :1"; $userId).first() If ($user#Null) //a user was found
   //check the password
     If (Verify password hash($password; $user.password))
       //password ok, fill the session
@@ -246,6 +242,7 @@ If ($user#Null) //a user was found
         WEB SEND TEXT("Welcome "+Session.userName)
     Else 
         WEB SEND TEXT("Wrong user name or password.")
+    End if
     Else 
     WEB SEND TEXT("Wrong user name or password.")
 End if
