@@ -236,7 +236,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. senão devolve false
+The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. .
 
 Em Windows, `.isPackage` sempre devolve **false**.
 
@@ -330,7 +330,7 @@ Essa propriedade é**apenas leitura**.
 
 <!-- REF #directory.original.Syntax -->
 
-Essa propriedade é**apenas leitura**.<!-- END REF -->
+**.original** : 4D. Folder<!-- END REF -->
 
 #### Descrção
 
@@ -355,17 +355,19 @@ Essa propriedade é**apenas leitura**.
 
 <!-- REF #directory.parent.Syntax -->
 
-Essa propriedade é**apenas leitura**.<!-- END REF -->
+**.parent** : 4D. Folder<!-- END REF -->
 
 #### Descrção
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. A função `.folder()`<!-- REF #directory.folder().</p>
+The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. .
 
 Se a pasta não existir no disco, se devolve um icone vazio como padrão.
 
 Essa propriedade é**apenas leitura**.
 
-<!-- END REF -->---
+<!-- END REF -->
+
+---
 
 <!-- REF directory.path.Desc -->
 ## .path
@@ -383,7 +385,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. Se a rota representa uma rota de arquivo (por exemplo, "/DATA/"), se devolve a rota de arquivo.
+The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. .
 
 Essa propriedade é**apenas leitura**.
 
