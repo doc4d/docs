@@ -36,7 +36,7 @@ Si se encuentra en una situación de este tipo, en la que un método se ejecuta 
 ### Ejemplo
 
 ```4d
- CONFIRM("¿Añadir un nuevo registro?") CONFIRM("¿Añadir un nuevo registro?") //¿El usuario quiere añadir un registro? //¿El usuario quiere añadir un registro?
+ CONFIRM("¿Añadir un nuevo registro?") CONFIRM("Add a new record?") //The user wants to add a record?
  While(OK=1) //Bucle mientras el usuario quiera
     ADD RECORD([aTable]) /Añadir un nuevo registro
  End while //El bucle siempre termina con End while
@@ -231,7 +231,7 @@ Aquí está el bucle equivalente `Repeat...Until`:
 ```
 **Consejo:** el bucle `For...End for` suele ser más rápido que los bucles `While...End while` y `Repeat...Until`, porque 4D comprueba la condición internamente en cada ciclo del bucle e incrementa el contador. Por lo tanto, utilice el bucle `For...End for` siempre que sea posible.
 
-### Optimizar la ejecución de los bucles For... End for
+### Optimizing the execution of the For... End for loops
 
 Puede utilizar variables reales y enteras, así como contadores interproceso, de proceso y de variables locales. Para bucles repetitivos largos, especialmente en modo compilado, utilice variables locales de tipo Entero largo.
 
@@ -244,7 +244,7 @@ Puede utilizar variables reales y enteras, así como contadores interproceso, de
  End for
 ```
 
-### Estructuras For... End anidadas
+### Nested For... End for looping structures
 
 Puede anidar tantas estructuras de control como necesite (razonablemente). Esto incluye la anidación de bucles `For...End for`. Para evitar errores, asegúrese de utilizar diferentes variables de contador para cada estructura de bucle.
 
@@ -287,7 +287,7 @@ He aquí dos ejemplos:
 
 ## For each... End for each
 
-La sintaxis de la estructura condicional `For each... End for each` es:
+The formal syntax of the `For each... End for each` control flow structure is:
 
 ```4d
  For each(Current_Item;Expression{;begin{;end}}){Until|While}(Boolean_Expression)}
@@ -297,13 +297,13 @@ La sintaxis de la estructura condicional `For each... End for each` es:
  End for each
 ```
 
-La estructura `For each... End for each` ejecuta un *Current_item* especificado sobre todos los valores de *Expression*. El tipo *Current_item* depende del tipo *Expression*. El bucle `For each... End for each` puede iterar a través de tres tipos de *Expression*:
+End for each</code> structure iterates a specified *Current_item* over all values of the *Expression*. El tipo *Current_item* depende del tipo *Expression*. End for each</code> loop can iterate through three *Expression* types:
 
 - colecciones: bucle en cada elemento de la colección,
 - selecciones de entidades: bucle en cada entidad,
 - objetos: bucle en cada propiedad del objeto.
 
-La siguiente tabla compara los tres tipos de `For each... End for each`:
+The following table compares the three types of `For each... End for each`:
 
 |                                   | Bucle en las colecciones                                  | Bucle en las selecciones de entidades | Bucle en los objetos             |
 | --------------------------------- | --------------------------------------------------------- | ------------------------------------- | -------------------------------- |
@@ -315,7 +315,7 @@ La siguiente tabla compara los tres tipos de `For each... End for each`:
 - El número de bucles se evalúa al inicio y no cambiará durante el proceso. La adición o eliminación de elementos durante el bucle no suele ser recomendable, ya que puede resultar en redundancia o perdidas de iteraciones.
 - Por defecto, la(s) _instrucciones_ adjuntas se ejecutan para cada valor de *Expresión*. Sin embargo, es posible salir del bucle comprobando una condición al principio del bucle ( `While`) o al final del bucle (`Until`).
 - Los parámetros opcionales *begin* y *end* pueden utilizarse con colecciones y selecciones de entidades para definir los límites del bucle.
-- El bucle `For each... End for each` puede utilizarse en una **colección compartida** o en un **objeto compartido**. Si su código necesita modificar uno o más elementos de la colección o de las propiedades del objeto, debe utilizar las palabras clave `Use...End use`. Dependiendo de sus necesidades, puede llamar a las palabras clave `Use...End use`:
+- The `For each... End for each` loop can be used on a **shared collection** or a **shared object**. Si su código necesita modificar uno o más elementos de la colección o de las propiedades del objeto, debe utilizar las palabras clave `Use...End use`. Dependiendo de sus necesidades, puede llamar a las palabras clave `Use...End use`:
     - antes de entrar en el bucle, si los elementos deben modificarse juntos por razones de integridad, o
     - dentro del bucle cuando sólo hay que modificar algunos elementos/propiedades y no es necesario gestionar la integridad.
 
@@ -323,7 +323,7 @@ Las instrucciones `break` y `continue` se [describen a continuación](#break-and
 
 ### Bucle en las colecciones
 
-Cuando `For each...End for each` se utiliza con una _Expression_ del tipo _Collection_, el parámetro _Current_Item_ es una variable del mismo tipo que los elementos de la colección. Si algún elemento de la colección no es del mismo tipo que la variable, se genera un error y el bucle se detiene.
+When `For each... End for each` is used with an _Expression_ of the _Collection_ type, the _Current_Item_ parameter is a variable of the same type as the collection elements. Si algún elemento de la colección no es del mismo tipo que la variable, se genera un error y el bucle se detiene.
 
 La colección debe contener sólo elementos del mismo tipo, de lo contrario se devolverá un error en cuanto a la variable _Current_Item_ se le asigne el primer tipo de valor diferente.
 
@@ -360,7 +360,7 @@ Usted quiere calcular algunas estadísticas para una colección de números:
 
 ### Bucle en las selecciones de entidades
 
-Cuando `For each... End for each` se utiliza con una _Expression_ del tipo _Collection_, el parámetro _Current_Item_ es una variable del mismo tipo que los elementos de la colección.
+When `For each... End for each` is used with an _Expression_ of the _Entity selection_ type, the _Current_Item_ parameter is the entity that is currently processed.
 
 El número de bucles se basa en el número de entidades de la selección de entidades. En cada iteración del bucle, el parámetro *Current_Item* se llena automáticamente con la entidad de la selección de entidades que se procesa actualmente.
 
@@ -382,7 +382,7 @@ Quiere aumentar el salario de todos los empleados británicos en una selección 
 
 ### Bucles en las propiedades de objetos
 
-Cuando se utiliza `For each... End for each` con una *Expression* de tipo Object, el parámetro *Current_Item* es una variable texto que se llena automáticamente con el nombre de la propiedad actualmente procesada.
+When `For each... End for each` is used with an *Expression* of the Object type, the *Current_Item* parameter is a text variable automatically filled with the name of the currently processed property.
 
 Las propiedades del objeto se procesan de acuerdo con su orden de creación. Durante el bucle, se pueden añadir o eliminar propiedades en el objeto, sin modificar el número de bucles que quedarán en función del número original de propiedades del objeto.
 
@@ -449,7 +449,7 @@ Por ejemplo:
 
 ### Condiciones Until y While
 
-Puede controlar la ejecución de `For each... End for each` añadiendo una condición `Until` o una condición `While` al bucle. Cuando una instrucción `Until(condición)` está asociada al bucle, la iteración se detendrá tan pronto como la condición se evalúe como `True`, mientras que cuando se trata de una instrucción `While(condición)`, la iteración se detendrá cuando la condición se evalúe por primera vez como `False`.
+You can control the `For each... End for each` execution by adding an `Until` or a `While` condition to the loop. Cuando una instrucción `Until(condición)` está asociada al bucle, la iteración se detendrá tan pronto como la condición se evalúe como `True`, mientras que cuando se trata de una instrucción `While(condición)`, la iteración se detendrá cuando la condición se evalúe por primera vez como `False`.
 
 Puede pasar cualquiera de las dos palabras clave en función de sus necesidades:
 
