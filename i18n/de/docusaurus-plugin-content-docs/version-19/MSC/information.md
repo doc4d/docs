@@ -12,10 +12,10 @@ Der obere Bereich gibt Name, Version und Speicherort des Programms und des aktiv
 
 Der mittlere Bereich gibt Name und Speicherort der Projektdatei und der Datendatei sowie des Logbuchs (wenn vorhanden) an. Der untere Bereich zeigt den Namen des 4D Lizenzinhabers, die Art der Lizenz, und den Namen des aktuellen 4D Benutzers.
 
-- **Pfadnamen anzeigen und auswählen**: Auf der Seite **Programm** erscheinen die Pfadnamen in PopUp-Menüs mit der Ordnerfolge, so wie sie auf der Festplatte angeordnet ist:  
-  ![](../assets/en/MSC/MSC_popup.png) Wählen Sie einen Eintrag (Festplatte oder Ordner), erscheint er in einem neuen Systemfenster. Der Eintrag **Pfad kopieren** kopiert den vollständigen Pfadnamen als Text mit den Trennern der aktuellen Plattform in die Zwischenablage.
+- **Display and selection of pathnames**: On the **Program** tab, pathnames are displayed in pop-up menus containing the folder sequence as found on the disk:  
+  ![](../assets/en/MSC/MSC_popup.png) If you select a menu item (disk or folder), it is displayed in a new system window. Der Eintrag **Pfad kopieren** kopiert den vollständigen Pfadnamen als Text mit den Trennern der aktuellen Plattform in die Zwischenablage.
 
-- **"Licenses" Ordner** Diese Schaltfläche zeigt den Inhalt des aktiven Ordners "Licenses" in einem neuen Systemfenster an. Alle Lizenzdateien, die in Ihrer 4D Umgebung installiert sind, sind in diesem Ordner auf Ihrer Festplatte zusammengefasst. Beim Öffnen über einen Web Browser erscheinen die Informationen über die enthaltenen Lizenzen und ihre Merkmale. Der Speicherort des Ordners Licenses kann je nach Version Ihres Betriebssystems variieren. Weitere Informationen dazu finden Sie unter dem Befehl `Get 4D folder`. ***Hinweis:** Sie können auf diesen Ordner auch zugreifen, wenn Sie im Menü Hilfe > Lizenz aktualisieren aufrufen.*
+- **"Licenses" Folder** The **"Licenses" Folder** button displays the contents of the active Licenses folder in a new system window. Alle Lizenzdateien, die in Ihrer 4D Umgebung installiert sind, sind in diesem Ordner auf Ihrer Festplatte zusammengefasst. Beim Öffnen über einen Web Browser erscheinen die Informationen über die enthaltenen Lizenzen und ihre Merkmale. Der Speicherort des Ordners Licenses kann je nach Version Ihres Betriebssystems variieren. Weitere Informationen dazu finden Sie unter dem Befehl `Get 4D folder`. ***Hinweis:** Sie können auf diesen Ordner auch zugreifen, wenn Sie im Menü Hilfe > Lizenz aktualisieren aufrufen.*
 
 ## Tabellen
 
