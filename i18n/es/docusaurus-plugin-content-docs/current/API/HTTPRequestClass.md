@@ -264,7 +264,7 @@ La propiedad `.headers` contiene <!-- REF #4D.HTTPRequest.headers.Summary -->the
 
 #### Descripción
 
-La propiedad `.errors` contiene <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. Si fue omitido, contiene "GET".
+La propiedad `.errors` contiene <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -316,7 +316,7 @@ A `response` object is a non-sharable object. Ofrece las siguientes propiedades:
 
 #### Descripción
 
-La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True.
+La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -341,7 +341,7 @@ La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnRespo
 
 > Esta función es hilo seguro.
 
-La función `.terminate()` <!-- REF #4D.HTTPRequest.terminate().Summary -->aborta la petición HTTP<!-- END REF -->. Activa el evento `onTerminate`.
+La función `.terminate()` <!-- REF #4D.HTTPRequest.terminate().Summary -->aborta la petición HTTP<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -369,7 +369,7 @@ La propiedad `.terminated` contiene <!-- REF #4D.HTTPRequest.terminated.Summary 
 
 #### Descripción
 
-La propiedad `.timeout` contiene <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. Si se omite, contiene Undefined.
+La propiedad `.timeout` contiene <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
