@@ -13,7 +13,7 @@ El lenguaje 4D es compatible con los operadores que ya conoce de otros lenguajes
 El lenguaje 4D soporta los operadores **binarios** y **ternarios**:
 
 - los operadores binarios operan en dos objetivos (como `2 + 3`) y aparecen entre sus dos objetivos.
-- los operadores ternarios operan en tres objetivos. Como el C, 4D solo tiene un operador ternario, el [operador condicional ternario](#ternary-operator) (`a ? b : c`).
+- los operadores ternarios operan en tres objetivos. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`). b : c</code>).
 
 Los valores que los operadores afectan son los operandos. En la expresión `1 + 2`, el símbolo + es un operador binario y sus dos operandos son los valores 1 y 2.
 
@@ -132,66 +132,6 @@ $t2:="Hello"
 $t2*=2 // $t2="HelloHello"
 $d+=10 //$d=!2000-11-20!
 
-// Subtraction
-$x1:=10
-$x1-=5 //$x1=5
-
-$d1:=!2000-11-10!
-$d1-=10 // $d1=!2000-10-31!
-
-// Division
-$x3:=10
-$x3/=2 // $x3=5
-
-
-// Multiplication
-$x2:=10
-$x2*=5 // $x2=10
-
-$t2:="Hello" 
-$t2*=2 // $t2="HelloHello"
-$d+=10 //$d=!2000-11-20!
-
-// Resta
-$x1:=10
-$x1-=5 //$x1=5
-
-$d1:=!2000-11-10!
-$d1-=10 // $d1=!2000-10-31!
-
-// Division
-$x3:=10
-$x3/=2 // $x3=5
-
-
-// Multiplication
-$x2:=10
-$x2*=5 // $x2=10
-
-$t2:="Hello" 
-$t2*=2 // $t2="HelloHello"
-$d+=10 //$d=!2000-11-20!
-
-// Resta
-$x1:=10
-$x1-=5 //$x1=5
-
-$d1:=!2000-11-10!
-$d1-=10 // $d1=!2000-10-31!
-
-// Division
-$x3:=10
-$x3/=2 // $x3=5
-
-
-// Multiplication
-$x2:=10
-$x2*=5 // $x2=10
-
-$t2:="Hello" 
-$t2*=2 // $t2="HelloHello"
-$d+=10 //$d=!2000-11-20!
-
 // Resta
 $x1:=10
 $x1-=5 //$x1=5
@@ -248,9 +188,6 @@ $v:= "Hello" && "World" //"World"
 $v:=False && 0 // False
 $v:=0 && False // False
 $v:=5 && !00-00-00! // 00/00/00
-$v := 5 && 10 && "hello" //"hello" // 00/00/00
-$v := 5 && 10 && "hello" //"hello" // 00/00/00
-$v := 5 && 10 && "hello" //"hello" // 00/00/00
 $v := 5 && 10 && "hello" //"hello" // 00/00/00
 $v := 5 && 10 && "hello" //"hello"
 ```
@@ -361,12 +298,6 @@ var $beverage : Text
 
 $age:=26
 $beverage:=($age>=21) ? "Beer" : "Juice"
-
-ALERT($beverage) // "Beer" "Beer" : "Juice"
-
-ALERT($beverage) // "Beer" "Beer" : "Juice"
-
-ALERT($beverage) // "Beer" "Beer" : "Juice"
 
 ALERT($beverage) // "Beer" "Beer" : "Juice"
 
