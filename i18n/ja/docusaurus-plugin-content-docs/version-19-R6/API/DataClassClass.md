@@ -242,7 +242,7 @@ The `.fromCollection()` function <!-- REF #DataClassClass.fromCollection().Summa
   * そのまま指定したプライマリーキーが実在する場合、エラーが返されます。
   * そのまま指定したプライマリーキーが実在しない場合、エンティティは作成されます。
   * プライマリーキーを指定していない場合、エンティティは作成され、標準のデータベースのルールに基づいてプライマリーキー値が割り当てられます。
-> 値を格納している"\_\_KEY" プロパティは、"\_\_NEW" プロパティが **false** に設定 (あるいは省略) されていて、かつ対応するエンティティが存在する場合のみ、考慮されます。 それ以外の場合には、"\_\_KEY" プロパティ値は無視されるため、プライマリーキーの値はそのまま渡さなければなりません。
+> The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. The use of a \_\_KEY property allows independence from the primary key attribute name.
 
 **リレートエンティティ**
 
@@ -879,7 +879,7 @@ attributePath|formula comparator value
 
   * **テキスト**: フォーミュラ文字列の前に `eval( )` ステートメントが必要です。これにより、クエリが式を正しく解釈します。 例: *"eval(length(This.lastname) >=30)"*
   * **オブジェクト**: [フォーミュラオブジェクト](FunctionClass.md) は **プレースホルダー** (後述参照) を使って受け渡します。 このフォーミュラは、[`Formula`](FunctionClass.md#formula) または [`Formula from string`](FunctionClass.md#formula-from-string) コマンドによって作成されたものでなくてはなりません。
-> * 4Dフォーミュラは、`&` および `|` 記号のみを論理演算子としてサポートすることに留意が必要です。
+> * > * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
 > * フォーミュラ以外にも検索条件がある場合、クエリエンジンの最適化によってほかの検索条件 (たとえばインデックス属性) の処理が優先される場合があり、その場合はエンティティのサブセットのみがフォーミュラの評価対象となります。
 
  クエリに使用するフォーミュラは $1 に引数を受け取ることができます。 詳細については後述の **フォーミュラ引数** を参照ください。
@@ -917,7 +917,7 @@ attributePath|formula comparator value
  | または | &#124;,&#124;&#124;, or |
 
 * **order by attributePath**: クエリに "order by attributePath" ステートメントを追加することで、結果をソートすることができます。 カンマで区切ることで、複数の order by ステートメントを使用することもできます (例: order by *attributePath1* desc, *attributePath2* asc)。 デフォルトの並び順は昇順です。 並び順を指定するには、降順の場合は 'desc'、昇順の場合は 'asc' を追加します。
-> このステートメントを使用した場合、順序ありエンティティセレクションが返されます (詳細については [エンティティセレクションの順列あり/順列なし](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を参照ください)。
+> > If you use this statement, the returned entity selection is ordered (for more information, please refer to [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
 
 **引用符を使用する**
 
@@ -942,12 +942,12 @@ attributePath|formula comparator value
 
 プレースホルダーには二つの種類があります。**インデックスプレースホルダー** および **命名プレースホルダー** です:
 
-|    | インデックスプレースホルダー                                                                                                  | 命名プレースホルダー                                                                                                                                       |
-| -- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 定義 | *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*attributePath* と *formula* と *値* に以下のものを含めることができます: | `:paramName` (例: myparam など) という形でパラメーターが挿入され、その値は *querySettings* 引数の attributes または parameters オブジェクトで提供されます。                                  |
-| 例題 | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                     | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)` |
+|    | インデックスプレースホルダー                                                                                                                       | 命名プレースホルダー                                                                                                                                       |
+| -- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 定義 | You can mix all argument kinds in *queryString*. A *queryString* can contain, for *attributePath*, *formula* and *value* parameters: | `:paramName` (例: myparam など) という形でパラメーターが挿入され、その値は *querySettings* 引数の attributes または parameters オブジェクトで提供されます。                                  |
+| 例題 | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                          | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)` |
 
-*queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*attributePath* と *formula* と *値* に以下のものを含めることができます:
+*queryString* には、すべての種類の引数を混ぜて渡すことができます。 in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). You can use up to 128 *value* parameters
 
 * 定数値 (プレースホルダーを使用しない)
 * インデックスプレースホルダーや命名プレースホルダー
