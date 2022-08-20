@@ -198,7 +198,7 @@ Une entity selection **partageable** a les caractéristiques suivantes :
 - elle peut être stockée dans plusieurs objets partagés ou collections partagées, ou dans un objet partagé ou une collection partagée qui appartient déjà à un groupe (elle n'a pas de *locking identifier*) ;
 - elle ne permet pas d'ajouter de nouvelles entités. Essayer d'ajouter une entité à une entity selection partageable génèrera une erreur (1637 - Cette entity selection ne peut pas être modifiée). Pour ajouter une entité à une entity selection partageable, vous devez d'abord la transformer en une entity selection non partageable à l'aide de la fonction [`.copy()`](API/EntitySelectionClass.md#copy), avant d'appeler [`.add()`](API/EntitySelectionClass.md#add).
 
-> La plupart des fonctions d'entity selection (telles que [`.slice()`](API/EntitySelectionClass.md#slice), [`.and()`](API/EntitySelectionClass.md#and)...) prennent en charge les entity selection partageables car elles n'ont pas besoin de modifier l'entity selection d'origine (elles en retournent une nouvelle).
+> the new entity selection results from one of the various ORDA class functions applied to an existing entity selection ([.query()](API/EntitySelectionClass.md#query), [.slice()](API/EntitySelectionClass.md#slice), etc.) .
 
 Une entity selection **modifiable** a les caractéristiques suivantes :
 
@@ -327,7 +327,7 @@ Outre la variété de méthodes de recherche, vous pouvez également utiliser de
   //All invoices with at least one line item related to a part in $myParts
 ```
 
-La dernière ligne renverra, dans $myInvoices, une sélection d'entité de toutes les factures qui ont au moins un poste de facture lié à une partie de la sélection d'entités myParts. Lorsqu'un attribut de relation est utilisé comme propriété d'une entity selection, le résultat est toujours une autre entity selection, même si une seule entité est retournée. Lorsqu'un attribut de relation est utilisé comme propriété d'une sélection d'entité et qu'aucune entité n'est retournée, le résultat est une sélection d'entité vide et non nulle.
+La dernière ligne renverra, dans $myInvoices, une sélection d'entité de toutes les factures qui ont au moins un poste de facture lié à une partie de la sélection d'entités myParts. Lorsqu'un attribut de relation est utilisé comme propriété d'une entity selection, le résultat est toujours une autre entity selection, même si une seule entité est retournée. When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned.
 
 
 ## Verrouillage d'une entité
