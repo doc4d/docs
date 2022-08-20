@@ -20,11 +20,11 @@ Die Flexibilität und Leistungsfähigkeit der 4D Programmiersprache macht sie zu
 
 Die Sprache von 4D unterscheidet sich kaum von der gesprochenen Sprache im Alltag. Es ist eine Form der Kommunikation, um Ideen auszudrücken, zu informieren und zu instruieren. Wie die gesprochene Sprache hat 4D ein eigenes Vokabular, eine eigene Grammatik und Syntax; damit definieren Sie, wie 4D Ihre Datenbank und Ihre Daten verwalten soll.
 
-Sie müssen nicht die komplette Sprache kennen, um effektiv mit 4D zu arbeiten. Zum Sprechen müssen Sie auch nicht die gesamte englische Sprache beherrschen; Sie können ein kleines Vokabular haben und trotzdem ziemlich eloquent sein. Die 4D Sprache ist ganz ähnlich — Sie müssen nur einen kleinen Teil der Sprache kennen, um produktiv zu werden, und können den Rest bei Bedarf dazulernen.
+You do not need to know everything in the language in order to work effectively with 4D. In order to speak, you do not need to know the entire English language; in fact, you can have a small vocabulary and still be quite eloquent. Zum Sprechen müssen Sie auch nicht die gesamte englische Sprache beherrschen; Sie können ein kleines Vokabular haben und trotzdem ziemlich eloquent sein. Die 4D Sprache ist ganz ähnlich — Sie müssen nur einen kleinen Teil der Sprache kennen, um produktiv zu werden, und können den Rest bei Bedarf dazulernen.
 
 ## Warum eine Sprache verwenden?
 
-Auf den ersten Blick mag es scheinen, dass es wenig Bedarf für eine Programmiersprache in 4D gibt. Die Designumgebung bietet flexible Tools, mit denen sich ohne Programmierung unzählige Vorgänge in der Datenverwaltung ausführen lassen. Grundlegende Operationen wie Daten eingeben, Berichte erstellen, Suchen und Sortieren lassen sich mühelos durchführen. Außerdem gibt es viele weitere Funktionalitäten, wie Bestätigen der Daten, Unterstützung bei der Dateneingabe, Generieren von Diagrammen und Etiketten.
+Auf den ersten Blick mag es scheinen, dass es wenig Bedarf für eine Programmiersprache in 4D gibt. At first it may seem that there is little need for a programming language in 4D. In the Design environment, 4D provides flexible tools that require no programming to perform a wide variety of data management tasks. Grundlegende Operationen wie Daten eingeben, Berichte erstellen, Suchen und Sortieren lassen sich mühelos durchführen. Außerdem gibt es viele weitere Funktionalitäten, wie Bestätigen der Daten, Unterstützung bei der Dateneingabe, Generieren von Diagrammen und Etiketten.
 
 Wozu brauchen wir also eine 4D Sprache? Hier sind einige Anwendungsbereiche:
 
