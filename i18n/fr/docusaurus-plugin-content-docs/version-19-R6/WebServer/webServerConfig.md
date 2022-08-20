@@ -316,11 +316,11 @@ Valeurs possibles: Chaîne de caractères représentant l'adresse IP. Les format
 
 #### À propos du support de l'IPv6
 
-- **Aucun avertissement lorsque le port TCP est occupé.**<br/> Lorsque le serveur est configuré pour répondre sur les adresses IP "Any", si le port TCP est utilisé par une autre application, cela n'est pas indiqué au démarrage du serveur. En fait, le serveur 4D ne détecte pas d'erreur dans ce cas car le port reste libre sur l'adresse IPv6. Cependant, il n'est pas possible d'y accéder en utilisant l'adresse IPv4 de la machine, ni au moyen de l'adresse locale : 127.0.0.1. Si votre serveur 4D ne semble pas répondre sur le port défini, vous pouvez tester l'adresse [::1] sur la machine serveur (équivalent à 127.0.0.1 pour IPv6, ajoutez [:portNum] pour tester un autre numéro de port). Si 4D répond, il est probable qu'une autre application utilise le port en IPv4.
+- **No warning when TCP port is occupied**<br/> When the server is set to respond on "Any" IP addresses, if the TCP port is being used by another application, this is not indicated when the server is started. En fait, le serveur 4D ne détecte pas d'erreur dans ce cas car le port reste libre sur l'adresse IPv6. Cependant, il n'est pas possible d'y accéder en utilisant l'adresse IPv4 de la machine, ni au moyen de l'adresse locale : 127.0.0.1. Si votre serveur 4D ne semble pas répondre sur le port défini, vous pouvez tester l'adresse [::1] sur la machine serveur (équivalent à 127.0.0.1 pour IPv6, ajoutez [:portNum] pour tester un autre numéro de port). Si 4D répond, il est probable qu'une autre application utilise le port en IPv4.
 
-- **Adresses IPv4 mappées en IPv6**<br/>. Pour normaliser le traitement, 4D fournit une représentation hybride standard des adresses IPv4 en IPv6. Ces adresses sont écrites avec un préfixe de 96 bits au format IPv6, suivi de 32 bits écrits dans la notation décimale à point d'IPv4. Par exemple, ::ffff:192.168.2.34 représente l'adresse IPv4 192.168.2.34.
+- **IPv4-mapped IPv6 addresses**<br/> To standardize processing, 4D provides a standard hybrid representation of IPv4 addresses in IPv6. Ces adresses sont écrites avec un préfixe de 96 bits au format IPv6, suivi de 32 bits écrits dans la notation décimale à point d'IPv4. Par exemple, ::ffff:192.168.2.34 représente l'adresse IPv4 192.168.2.34.
 
-- **Indication des numéros de port**<br/>. Comme la notation IPv6 utilise les deux-points (:), l'ajout de numéros de port peut entraîner une certaine confusion, par exemple :
+- **Indication of port numbers**<br/> Since IPv6 notation uses colons (:), adding port numbers may lead to some confusion, for example:
 
 ```code4d
  2001:0DB8::85a3:0:ac1f:8001 // IPv6 address
@@ -388,7 +388,7 @@ La valeur par défaut est 100. Vous pouvez la fixer entre 10 et 32000.
 
 Taille maximale (en octets) des requêtes HTTP entrantes (POST) que le serveur Web est autorisé à traiter. Par défaut, la valeur est de 2 000 000, c'est-à-dire un peu moins de 2 Mo. Le dépassement de la valeur maximale (2 147 483 648) indique, en pratique, qu'aucune limite n'est fixée.
 
-Cette limite est utilisée pour éviter la saturation du serveur Web en raison de requêtes entrantes trop volumineuses. Cette limite est utilisée pour éviter la saturation du serveur Web en raison de requêtes entrantes trop volumineuses.
+Cette limite est utilisée pour éviter la saturation du serveur Web en raison de requêtes entrantes trop volumineuses. This limit is used to avoid web server saturation due to incoming requests that are too large.
 
 Valeurs possibles: 500 000 - 2147483648.
 
@@ -515,7 +515,7 @@ Vous pouvez désigner un autre dossier HTML racine comme page d'accueil par déf
 
 - Le chemin est relatif au [dossier du projet](Project/architecture.md#project-folder) (4D local et 4D Server) ou au dossier contenant l'application 4D ou le package logiciel (4D en mode distant).
 - Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
-- Pour "remonter" d'un niveau dans la hiérarchie des dossiers, saisissez ".." (deux points) avant le nom de dossier
+- To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name (deux points) avant le nom de dossier
 - Le chemin ne doit pas commencer par un slash (sauf si vous souhaitez que le dossier racine HTML soit le dossier distant du projet ou de 4D, mais pour interdire l'accès aux dossiers ci-dessus, auquel cas vous pouvez passer "/" comme dossier racine).
 
 Par exemple, si vous voulez que le dossier racine HTML soit le sous-dossier "Web" du dossier "MyWebApp", entrez "MyWebApp/Web".
