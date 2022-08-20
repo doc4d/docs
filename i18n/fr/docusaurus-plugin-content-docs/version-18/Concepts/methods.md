@@ -13,7 +13,7 @@ Une méthode est un morceau de code qui exécute une ou plusieurs actions. Dans 
 
     Les méthodes intégrées sont détaillées dans le manuel *4D Langage* ou dans les manuels consacrés aux plug-ins et aux composants.
 
-- Les **méthodes projets**, dans lesquelles vous pouvez écrire votre propre code pour exécuter des actions personnalisées. Une fois que votre méthode projet est créée, elle devient partie intégrante du langage de la base dans laquelle elle a été créée. Une méthode projet est composée de plusieurs lignes d’instructions. Une ligne d’instructions effectue une action. Une ligne d’instructions effectue une action. Cette ligne d’instruction peut être simple ou complexe. Cette ligne peut être aussi longue que vous voulez (elle peut comporter jusqu’à 32 000 caractères, ce qui est normalement suffisant pour la plupart des instructions). La taille maximale d’une méthode est limitée à 2 Go de texte ou 32 000 lignes d’instructions.
+- Les **méthodes projets**, dans lesquelles vous pouvez écrire votre propre code pour exécuter des actions personnalisées. Une fois que votre méthode projet est créée, elle devient partie intégrante du langage de la base dans laquelle elle a été créée. Une méthode projet est composée de plusieurs lignes d’instructions. Une ligne d’instructions effectue une action. Une ligne d’instructions effectue une action. Cette ligne d’instruction peut être simple ou complexe. Cette ligne peut être aussi longue que vous voulez (elle peut comporter jusqu’à 32 000 caractères, ce qui est normalement suffisant pour la plupart des instructions). A statement performs an action, and may be simple or complex.
 
 **Note :** 4D fournit également des méthodes spécifiques exécutées automatiquement en fonction de la base ou des événements formulaires. Voir [Méthodes spécialisées](#specialized-methods).
 
@@ -51,7 +51,7 @@ Imaginons par exemple que vous travaillez avec une base de clients. A mesure que
  MODIFY RECORD([Clients])
 ```
 
-Si vous n’utilisez pas de sous-routines, vous devrez écrire ce code à chaque fois que vous voudrez modifier l’enregistrement d’un client. Si cette opération peut être réalisée dans dix endroits différents de votre base, vous devrez la réécrire dix fois. Grâce aux sous-routines, vous ne l’écrirez qu’une seule fois en tout. C’est le premier avantage des sous-routines : réduire la quantité de code à écrire.
+Si vous n’utilisez pas de sous-routines, vous devrez écrire ce code à chaque fois que vous voudrez modifier l’enregistrement d’un client. If you do not use subroutines, you will have to write the code each time you want to modify a customer’s record. Grâce aux sous-routines, vous ne l’écrirez qu’une seule fois en tout. C’est le premier avantage des sous-routines : réduire la quantité de code à écrire.
 
 Si le code ci-dessus était une méthode projet appelée `MODIFIER CLIENT`, vous l’exécuteriez simplement en inscrivant son nom dans une autre méthode. Par exemple, pour modifier l’enregistrement d’un client puis l’imprimer, vous n’auriez qu’à écrire :
 
@@ -60,7 +60,7 @@ Si le code ci-dessus était une méthode projet appelée `MODIFIER CLIENT`, vous
  PRINT SELECTION([Clients])
 ```
 
-Cette possibilité simplifie énormément vos méthodes. Dans l’exemple ci-dessus, il n’est pas nécessaire de savoir comment fonctionne la méthode `MODIFIER CLIENT`, mais uniquement ce qu’elle fait. C’est le deuxième avantage que vous pouvez tirer de l’utilisation de sous-routines : la clarification de votre code. Ainsi, ces méthodes deviennent en quelque sorte des extensions du langage de 4D.
+Cette possibilité simplifie énormément vos méthodes. This capability simplifies your methods dramatically. C’est le deuxième avantage que vous pouvez tirer de l’utilisation de sous-routines : la clarification de votre code. Ainsi, ces méthodes deviennent en quelque sorte des extensions du langage de 4D.
 
 Si vous devez modifier votre mode de recherche des clients, comme dans notre exemple, il vous suffit de modifier une seule méthode, et non dix. C’est un autre avantage des sous-routines : faciliter les modifications de votre code.
 
@@ -197,11 +197,11 @@ Pour cet exemple, nous supposons que les valeurs des champs sont uniques (il n'e
 2. Vous pouvez également procéder ainsi :
 
 ```4d
- $vsNom:=Request("Saisissez le nom :";"Pierre")
-  If(OK=1)
-    QUERY([Amis et parents];[Amis et parents]Nom=$vsNom)
-    If(Records in selection([Amis et parents])>0)
-       ALERT("Un de mes amis, "+Généalogie de($vsNom)+", fait cela pour gagner sa vie !")
+ $vsName:=Request("Enter the name:";"John")
+ If(OK=1)
+    QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
+    If(Records in selection([Friends and Relatives])>0)
+       ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
     End if
  End if
     End if
