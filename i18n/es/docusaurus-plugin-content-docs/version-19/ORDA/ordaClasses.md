@@ -341,19 +341,43 @@ Given an entity with a *birthDate* attribute, we want to define an `age()` funct
 En la classe *StudentsEntity*:
 
 ```4d
-Class extends Entity
+Function query age($event : Object)->$result : Object
 
-local Function age() -> $age: Variant
+    var $operator : Text
+    var $age : Integer
+    var $_ages : Collection
 
-If (This.birthDate#!00-00-00!)
-    $age:=Year of(Current date)-Year of(This.birthDate)
-Else 
-    $age:=Null
-End if
-    $age:=Year of(Current date)-Year of(This.birthDate)
-Else 
-    $age:=Null
-End if
+    $operator:=$event.operator
+
+    $age:=Num($event.value)  // integer
+    $d1:=Add to date(Current date; -$age-1; 0; 0)
+    $d2:=Add to date($d1; 1; 0; 0)
+    $parameters:=New collection($d1; $d2)
+
+    Case of 
+
+        : ($operator="==")
+            $query:="birthday > :1 and birthday <= :2"  // after d1 and before or egal d2
+
+        : ($operator="===") 
+
+            $query:="birthday = :2"  // d2 = second calculated date (= birthday date)
+
+        : ($operator=">=")
+            $query:="birthday <= :2"
+
+            //...
+    other operators           
+
+
+    End case 
+
+
+    If (Undefined($event.result))
+        $result:=New object
+        $result.query:=$query
+        $result.parameters:=$parameters
+    End if
 ```
 
 #### Verificación de los atributos
