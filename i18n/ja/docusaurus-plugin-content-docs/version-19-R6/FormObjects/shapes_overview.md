@@ -64,7 +64,7 @@ title: 図形
         "strokeDashArray": "6 2" // 破線
         }
 ```
-結果: ![](../assets/en/FormObjects/shape_line1.png)
+Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 
 ```
@@ -78,7 +78,7 @@ title: 図形
         "strokeDashArray": "6 2" // 破線
         }
 ```
-結果: ![](../assets/en/FormObjects/shape_line2.png)
+Result: ![](../assets/en/FormObjects/shape_line2.png)
 
 
 
