@@ -156,7 +156,7 @@ If the element accepts several attributes, you can group them in the same line o
 
 選択されたテキストは [GET MACRO PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page997.html) と [SET MACRO PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page998.html) コマンドを使用して管理することが推奨されます。 これらのコマンドを使用すると、ホストプロジェクトとコンポーネント間でテキストを相互に交換することができ、マクロの管理専用のコンポーネントを作成することができます。 マクロでこのモードを有効にするには、macro 要素内で version 属性に値 2 を指定しなければなりません。 この場合、4D は旧式の _textSel, _textReplace 等の定義済み変数を管理しなくなり、[GET MACRO PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page997.html) と [SET MACRO PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page998.html) が利用可能になります。 属性は以下のように定義します:
 
-`<macro name="MyMacro" version="2">`<br/> `--- マクロテキスト ---`<br/> `</macro>`
+`<macro name="MyMacro" version="2">`<br/> `--- Text of the macro ---`<br/> `</macro>`
 
 この属性を指定しない場合、以前のモードが保持されます。
 
