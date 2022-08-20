@@ -175,11 +175,8 @@ Se quiser comprovar se o privilégio "WebAdmin" está associado à sessão:
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
- //Access is granted, do nothing
-Else
- //Display an authentication page
-
-End if
+ //Access is granted, do nothing Else
+ //Display an authentication page End if
 ```
 
 
@@ -217,11 +214,9 @@ Essa propriedade é**apenas escrita**.
 ```4d
 If (Session.isGuest())
   // A Guest session will close after 60 minutes of inactivity
- Session.idleTimeout:=60
-Else
+ Session.idleTimeout:=60 Else
   // Other sessions will close after 120 minutes of inactivity
- Session.idleTimeout:=120
-End if
+ Session.idleTimeout:=120 End if
 
 ```
 
@@ -259,8 +254,7 @@ No método base `On Web Connection`:
 
 ```4d
 If (Session.isGuest())
- //Do something for Guest user
-End if
+ //Do something for Guest user End if
 ```
 
 
