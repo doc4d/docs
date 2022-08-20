@@ -17,7 +17,7 @@ Uma cópia de segurança pode ser iniciada de três maneiras:
 
 ### Cópia de segurança manual
 
-1. Select the **Backup...** command in the 4D **File** menu. The backup window appears: ![](../assets/en/Backup/backup01.png) You can see the location of the backup folder using the pop-up menu next to the "Backup destination" area. Também se registra no banco de dados **Backup journal.txt**.
+1. Seleccione o comando **Backup...** no menu 4D **File** . The backup window appears: ![](../assets/en/Backup/backup01.png) You can see the location of the backup folder using the pop-up menu next to the "Backup destination" area. Também se registra no banco de dados **Backup journal.txt**.
 
 - Também pode abrir o [Centro de manutenção e segurança](MSC/overview.md) de 4D e mostrar a [página de cópias de segurança](MSC/backup.md).
 
@@ -66,7 +66,7 @@ Em todos os casos,  lembre que o estado da última copia de segurança (correta 
 
 - **Interrupção de Usuário**: The **Botão Parar** na caixa de diálogo de progresso permite aos usuários interromper o processo de cópia de segurança a qualquer momento. Nesse caso, a cópia de elementos para e é gerado o erro 1406. Pode interceptar esse erro no método database `On Backup Shutdown`.
 - **Arquivo anexo não encontrado**: quando não encontrar um arquivo adjunto, 4D realiza uma cópia de segurança parcial (cópia de segurança dos arquivos do banco de dados e dos arquivos adjuntos acessíveis) e devolve um erro.
-- **Backup impossível** (disco está cheio ou é protegido contra escrita, disco não encontrado, falha de disco, transação incompleta, banco de dados não lançado no momento do backup automático programado, etc): se essa é a primeira vez do erro, 4D vai fazer uma segunda tentativa de realizar o backup A espera entre duas tentativas é definida na página **Backup/Backup & Restore** nas Propriedades do banco de dados. A espera entre duas tentativas é definida na página **Backup/Backup & Restore** nas Propriedades do banco de dados. Se a segunda tentativa falhar, um diálogo de alerta de sistema é exibido e um erro é gerado. Pode interceptar esse erro no método database `On Backup Shutdown`.
+- **Backup impossible** (disk is full or write-protected, missing disk, disk failure, incomplete transaction, database not launched at time of scheduled automatic backup, etc.): If this is a first-time error, 4D will then make a second attempt to perform the backup. A espera entre duas tentativas é definida na página **Backup/Backup & Restore** nas Propriedades do banco de dados. Se a segunda tentativa falhar, um diálogo de alerta de sistema é exibido e um erro é gerado. Pode interceptar esse erro no método database `On Backup Shutdown`.
 
 ## Histórico de cópias de segurança (Backup Journal)
 
