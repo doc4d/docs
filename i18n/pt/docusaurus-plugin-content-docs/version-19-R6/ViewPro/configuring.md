@@ -374,7 +374,7 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 
 | Propriedade      | Tipo          | Descrção                                                                                                                                                                         |
 | ---------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | boolean       | Prints the outline border.Default value = "true"                                                                                                                                 |
+| showBorder       | boolean       | Prints the outline border. Default value = "true"                                                                                                                                |
 | showColumnHeader | inteiro longo | Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
 | showGridLine     | boolean       | Prints the gridlines. Default value = "false"                                                                                                                                    |
 | showRowHeader    | inteiro longo | Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
