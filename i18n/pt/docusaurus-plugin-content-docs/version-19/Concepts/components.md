@@ -67,7 +67,7 @@ Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente 
 
 All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed by the component.
 
-On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). Estes métodos formam os **pontos de entrada** no componente.
+On the other hand, by default these project methods will not be visible, and they can't be called in the host project. On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. Estes métodos formam os **pontos de entrada** no componente.
 
 Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the **Shared by components and host project** box).
 
@@ -277,7 +277,7 @@ A component can execute 4D code automatically when opening or closing the host d
 
 Executing initialization or closing code is done by means of the `On Host Database Event` database method.
 
-> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. To do this, you must check the **Execute "On Host Database Event" method of the components** option on the Security page the Settings.
+> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it.
 
 ## Proteção dos componentes: compilação
 
