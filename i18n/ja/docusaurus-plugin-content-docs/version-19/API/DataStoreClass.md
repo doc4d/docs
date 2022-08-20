@@ -61,7 +61,7 @@ The `ds` command <!-- REF #_command_.ds.Summary -->returns a reference to the da
 
 `ds` を使用するには、データベースが **ORDAの必須要件** の章で説明されているように ORDA に準拠している必要があります。 以下のルールが適用されます:
 
-* データストアは単一のプライマリーキーを持つテーブルのみを参照します。 データストアは単一のプライマリーキーを持つテーブルのみを参照します。
+* データストアは単一のプライマリーキーを持つテーブルのみを参照します。 A datastore only references tables with a single primary key.
 * BLOB型属性はデータストアで管理されません。
 
 #### 例題 1
@@ -371,7 +371,7 @@ The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().S
 
 #### 詳細
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
@@ -441,7 +441,7 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 
 #### 詳細
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
