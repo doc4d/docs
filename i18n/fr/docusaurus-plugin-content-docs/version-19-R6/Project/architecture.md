@@ -110,7 +110,7 @@ Ce fichier texte peut également contenir des clés de configuration, notamment 
 | ------------- | ------------------------------------------------------------------------------------------------------ | --------- |
 | table_*n*.4dm | Méthodes trigger définies dans le projet. Un fichier de trigger par table (n étant le numéro de table) | text      |
 
-**Note :** L'extension de fichier .4dm est un format de fichier texte contenant le code d'une méthode 4D. Il est compatible avec les outils de contrôle de version.
+**Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. Il est compatible avec les outils de contrôle de version.
 
 ### `Trash`
 
