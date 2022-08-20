@@ -72,7 +72,7 @@ $myMacWorker:= 4D. SystemWorker.new("chmod +x /folder/myfile.sh")
 
 #### Descrção
 
-The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->creates and returns a `4D.SystemWorker` object that will execute the *commandLine* you passed as parameter to launch an external process<!-- END REF -->.
+The `.commandLine` property <!-- REF #4D.SystemWorker.new().Summary -->contains the command line passed as parameter to the [`new()`](#4d-systemworker-new) function<!-- END REF -->.
 
 The returned system worker object can be used to post messages to the worker and get the worker output.
 
@@ -135,16 +135,16 @@ $sw:=4D. SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.t
 2. Run npm install in the console:
 
 ```4d
-var $folder : 4D.Folder
+var $folder : 4D. Folder
 var $options : Object
-var $worker : 4D.SystemWorker
+var $worker : 4D. SystemWorker
 
 $folder:=Folder(fk database folder)
 $options:=New object
 $options.currentDirectory:=$folder
 $options.hideWindow:=False
 
-$worker:=4D.SystemWorker.new("cmd /c npm install";$options)
+$worker:=4D. SystemWorker.new("cmd /c npm install";$options)
 
 ```
 
@@ -174,8 +174,8 @@ $sys.closeInput()
 ```4d
 $docname:=Select document("";"*.*";"Choose the file to open";0)
 If(OK=1)
- var $sw : 4D.SystemWorker
- $sw:=4D.SystemWorker.new("cmd.exe /C start \"\" \""+$docname+"\"")
+ var $sw : 4D. SystemWorker
+ $sw:=4D. SystemWorker.new("cmd.exe /C start \"\" \""+$docname+"\"")
 End if
 ```
 
@@ -216,35 +216,23 @@ $error:=$systemworker.errors
 
 ```4d
 
-var $systemworker : 4D.SystemWorker
-$systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ";cs.Params.new())
+var $systemworker : 4D. SystemWorker
+$systemworker:=4D. SystemWorker.new("/bin/ls -l /Users ";cs. Params.new())
 
 
-// "Params" class
-
-Class constructor
+// "Params" class Class constructor
  This.dataType:="text"
     This.data:=""
-    This.dataError:=""
-
-Function onResponse($systemWorker : Object)
-     This._createFile("onResponse"; $systemWorker.response)
-
-Function onData($systemWorker : Object; $info : Object)
+    This.dataError:="" Function onResponse($systemWorker : Object)
+     This._createFile("onResponse"; $systemWorker.response) Function onData($systemWorker : Object; $info : Object)
      This.data+=$info.data
-     This._createFile("onData";this.data)
-
-Function onDataError($systemWorker : Object; $info : Object)
+     This._createFile("onData";this.data) Function onDataError($systemWorker : Object; $info : Object)
      This.dataError+=$info.data
-     This._createFile("onDataError";this.dataError)
-
-Function onTerminate($systemWorker : Object)
+     This._createFile("onDataError";this.dataError) Function onTerminate($systemWorker : Object)
      var $textBody : Text
      $textBody:="Response: "+$systemWorker.response
      $textBody+="ResponseError: "+$systemWorker.responseError
-     This._createFile("onTerminate"; $textBody)
-
-Function _createFile($title : Text; $textBody : Text)
+     This._createFile("onTerminate"; $textBody) Function _createFile($title : Text; $textBody : Text)
      TEXT TO DOCUMENT(Get 4D folder(Current resources folder)+$title+".txt"; $textBody)
 
 ```
@@ -312,7 +300,7 @@ $output:=$worker.response
 
 #### Descrção
 
-The `.commandLine` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the command line passed as parameter to the [`new()`](#4d-systemworker-new) function<!-- END REF -->.
+The `.currentDirectory` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the working directory in which the external process is executed<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -326,7 +314,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Summary -->contains the working directory in which the external process is executed<!-- END REF -->.
+The `.pid` property <!-- REF #SystemWorkerClass.currentDirectory.Summary -->contains the process unique identifier of the external process at the system level<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -338,7 +326,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descrção
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Possible values : "text" or "blob".
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. .
 
 Essa propriedade é**apenas leitura**.
 
@@ -352,7 +340,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. This property is only available if the [`dataType`](#datatype) is "text".
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. .
 
 Essa propriedade é**apenas leitura**.
 
@@ -416,7 +404,7 @@ Essa propriedade é**apenas escrita**.
 
 #### Descrção
 
-The `.pid` property <!-- REF #SystemWorkerClass.pid.Summary -->contains the process unique identifier of the external process at the system level<!-- END REF -->.
+The `.terminated` property <!-- REF #SystemWorkerClass.pid.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -487,7 +475,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 #### Descrção
 
-The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->forces the `SystemWorker` to terminate its execution<!-- END REF -->.
+The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->The `.terminate()` function<!-- END REF -->.
 
 This function sends the instruction to terminate and give control back to the executing script.
 
@@ -501,7 +489,7 @@ This function sends the instruction to terminate and give control back to the ex
 
 #### Descrção
 
-The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
+The `.timeout` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
@@ -515,7 +503,7 @@ Essa propriedade é**apenas leitura**.
 
 #### Descrção
 
-The `.timeout` property <!-- REF #SystemWorkerClass.timeout.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
+The `.wait()` function <!-- REF #SystemWorkerClass.timeout.Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
