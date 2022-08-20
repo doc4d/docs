@@ -485,7 +485,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### 詳細
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
@@ -607,7 +607,7 @@ The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContext
 
 #### 詳細
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
