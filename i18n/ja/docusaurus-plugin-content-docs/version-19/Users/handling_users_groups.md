@@ -53,7 +53,7 @@ title: 4Dユーザー＆グループの管理
 
 ユーザーリストには、[デザイナーと管理者](#デザイナーと管理者) を含むすべてのユーザーが表示されます:
 
-2. ユーザーリストの下にある追加ボタン ![](../assets/en/Users/PlussNew.png) をクリックします。 または<br /> ユーザーリスト上で右クリックし、コンテキストメニューから **追加** または **複製** を選択する。
+2. ユーザーリストの下にある追加ボタン ![](../assets/en/Users/PlussNew.png) をクリックします。 OR Right-click in the list of users and choose **Add** or **Duplicate** in the context menu.
 
 > **複製** コマンドを使用すると、同じ特性を持つ複数のユーザーを素早く作成することができます。
 
@@ -141,11 +141,11 @@ title: 4Dユーザー＆グループの管理
 
 割り当て完了後は、各グループのユーザーに権限が正しく配分されるようにグループをネストします。
 
-- General Managementグループには "高レベル" のユーザーだけが含まれます。 ![](../assets/en/Users/schema1.png)
+- The General Management group contains only “high-level” users. ![](../assets/en/Users/schema1.png)
 
-- Financesグループには、データ管理ユーザーと General Managementグループが含まれます。したがって、General Managementグループのユーザーは Financesグループの権限も保持します。 ![](../assets/en/Users/schema2.png)
+- The Finances group contains data maintenance users as well as General Management users, thus the users in General Management have the privileges of the Finances group as well. ![](../assets/en/Users/schema2.png)
 
-- Accountingグループには、データ入力をおこなうユーザーと Financesグループが含まれます。したがって、Financesグループのユーザーと General Managementグループのユーザーは Accountingグループの権限も利用できます。 ![](../assets/en/Users/schema3.png)
+- The Accounting group contains data entry users as well as Finances group users, so the users who belong to the Finances group and the General Management group enjoy the privileges of the Accounting group as well. ![](../assets/en/Users/schema3.png)
 
 所属ユーザーの責務に基づいて、各グループに割り当てるアクセス権を決定します。
 
