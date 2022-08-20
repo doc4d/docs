@@ -124,7 +124,7 @@ End if
 
 #### Beschreibung
 
-The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. It is identical to the [`IMAP New transporter`](#imap-new-transporter) command (shortcut).
+The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. .
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -358,7 +358,7 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 
 #### Beschreibung
 
-The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
+The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->The `.getMails()` function<!-- END REF -->.
 
 You can pass:
 
@@ -541,7 +541,7 @@ End if
 
 #### Beschreibung
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
+The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
 
 You can pass:
 
@@ -683,6 +683,10 @@ $status:=$transporter.deleteBox($name)
 
 If ($status.success)
  ALERT("Mailbox deletion successful!")
+ Else
+ ALERT("Error: "+$status.statusText)
+ End if
+End if
  Else
  ALERT("Error: "+$status.statusText)
  End if
@@ -1039,7 +1043,7 @@ You want to get the message with ID = 1:
 
 #### Beschreibung
 
-The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
+The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
 
 **First Syntax:**
 
@@ -1109,6 +1113,8 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
     // ...
     End for each
  End if
+    End for each
+ End if
 ```
 
 <!-- END REF -->
@@ -1140,7 +1146,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 #### Beschreibung
 
-The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
+The `.copy()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
 
 In the first parameter, you can pass either:
 
@@ -1381,7 +1387,7 @@ The function returns a collection of strings (unique IDs).
 
 #### Beschreibung
 
-The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
+The `.delete()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
 
 In the `msgIDs` parameter, you can pass either:
 
@@ -1501,6 +1507,7 @@ $options:=New object
 $pw:=Request("Please enter your password:")
 
 If(OK=1) $options.host:="imap.gmail.com"
+
 $options.user:="test@gmail.com"
 $options.password:=$pw
 
@@ -1552,7 +1559,7 @@ End if
 
 > This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
-The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. *searchCriteria* consists of one or more search keys.
+The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. .
 
 *searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. Beispiel:
 
@@ -1755,7 +1762,7 @@ The `boxInfo` object returned contains the following properties:
 
 #### Beschreibung
 
-The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. As such, you can choose to narrow down a large list of available mailboxes by subscribing to those you usually want to see.
+The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. .
 
 In the `name` parameter, pass the name of the mailbox to add (subscribe) to your "subscribed" mailboxes.
 
