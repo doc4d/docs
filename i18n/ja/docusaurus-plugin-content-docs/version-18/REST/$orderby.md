@@ -8,7 +8,7 @@ title: "$orderby"
 
 ## 詳細
 
-`$orderby` は RESTリクエストによって返されるエンティティを並べ替えます。 並べ替えの基準とする各属性について、並べ替え順を指定します。`ASC` ( `asc`) が昇順、`DESC` (`desc`) が降順です。 デフォルトでは、データは昇順に並べ替えられます。 複数の属性を指定するには、カンマ区切りにします *例*: `$orderby="lastName desc, firstName asc"`。
+`$orderby` は RESTリクエストによって返されるエンティティを並べ替えます。 並べ替えの基準とする各属性について、並べ替え順を指定します。`ASC` ( `asc`) が昇順、`DESC` (`desc`) が降順です。 デフォルトでは、データは昇順に並べ替えられます。 By default, the data is sorted in ascending order.
 
 
 ## 例題
