@@ -56,7 +56,7 @@ Hay otros modos disponibles:
 - [Desplazamiento continuo en clics](properties_Animation.md#switch-continuously-on-clicks)
 - [Use Last Frame as Disabled](properties_Animation.md#use-last-frame-as-disabled)
 - [Utilizar el Último cuadro como Desactivado](properties_Animation.md#use-last-frame-as-disabled)
-> [Utilizar el Último cuadro como Desactivado](properties_Animation.md#use-last-frame-as-disabled) > [Utilizar el último cuadro como desactivado](properties_Animation.md#use-last-frame-as-disabled) > [Utilizar el último cuadro como desactivado](properties_Animation.md#use-last-frame-as-disabled) > [Utilizar el último cuadro como desactivado](properties_Animation.md#use-last-frame-as-disabled) > La [variable asociada](properties_Object.md#variable-or-expression) al botón imagen devuelve el número de índice, en la tabla de miniaturas, de la imagen actual mostrada. La numeración de las imágenes en la tabla empieza por 0.
+> [Use Last frame as disabled](properties_Animation.md#use-last-frame-as-disabled) > The [associated variable](properties_Object.md#variable-or-expression) of the picture button returns the index number, in the thumbnail table, of the current picture displayed. La numeración de las imágenes en la tabla empieza por 0.
 
 ## Propiedades soportadas
 
