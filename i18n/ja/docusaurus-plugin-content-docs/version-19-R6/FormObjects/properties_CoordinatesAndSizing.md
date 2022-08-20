@@ -21,7 +21,7 @@ title: 座標とサイズ
 * 行の高さを計算する際には、以下のものは考慮されません:
   * 非表示のカラムの中身
   * プロパティリスト内、あるいはプログラミングによって設定された [行の高さ](#行の高さ) および [行高さ配列](#行高さ配列) プロパティ (あった場合)
-> 自動行高オプションを有効化すると、ランタイムにおいて追加の計算が必要となるため、とくにリストボックスが大量の行数を持つ場合に、スクロール時のスムーズさに影響が出る可能性があります。
+> > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
 
 #### JSON 文法
 
