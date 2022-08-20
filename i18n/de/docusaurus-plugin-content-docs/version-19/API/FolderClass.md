@@ -156,7 +156,7 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 
 #### Beschreibung
 
-The `.create()` function <!-- REF #FolderClass.create().Summary -->creates a folder on disk according to the properties of the `Folder` object<!-- END REF -->.
+The `.create()` function <!-- REF #FolderClass.create().Summary -->The `.create()` function<!-- END REF -->.
 
 If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.
 
@@ -182,6 +182,9 @@ Creation of the "/Archives2019/January/" folder in the database folder:
 $newFolder:=Folder("/PACKAGE/Archives2019/January")
 If($newFolder.create())
  ALERT("The "+$newFolder.name+" folder was created.")
+Else
+ ALERT("Impossible to create a "+$newFolder.name+" folder.")
+End if
 Else
  ALERT("Impossible to create a "+$newFolder.name+" folder.")
 End if
@@ -269,7 +272,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 #### Beschreibung
 
-The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the folder<!-- END REF -->.
+The `.delete()` function <!-- REF #FolderClass.delete().Summary -->The `.delete()` function<!-- END REF -->.
 
 By default, for security reasons, if you omit the option parameter, `.delete( )` only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:
 
@@ -402,7 +405,7 @@ You want to move and rename a folder:
 
 #### Beschreibung
 
-The `.rename()` function <!-- REF #FolderClass.rename().Summary -->renames the folder with the name you passed in *newName* and returns the renamed `Folder` object<!-- END REF -->.
+The `.rename()` function <!-- REF #FolderClass.rename().Summary -->The `.rename()` function<!-- END REF -->.
 
 The *newName* parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.
 
