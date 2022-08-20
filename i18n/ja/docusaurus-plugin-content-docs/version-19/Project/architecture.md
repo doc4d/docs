@@ -49,18 +49,18 @@ title: プロジェクトのアーキテクチャー
 
 ### Sources フォルダー
 
-| 内容                      | 詳細                                                                                                                                                                                                                                                                                                                      | フォーマット |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| catalog.4DCatalog       | テーブルおよびフィールド定義                                                                                                                                                                                                                                                                                                          | XML    |
-| folders.json            | 　エクスプローラーフォルダー定義                                                                                                                                                                                                                                                                                                        | JSON   |
-| menus.json              | メニュー定義                                                                                                                                                                                                                                                                                                                  | JSON   |
-| settings.4DSettings     | *ストラクチャー*データベース設定。 They are not taken into account if *[user settings](#settings-folder-1)* or *[user settings for data](#settings-folder)* are defined.**Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). 運用時にカスタム設定を定義するには、*ユーザー設定* または *データファイル用のユーザー設定* を使う必要があります。 | XML    |
-| tips.json               | 定義されたヘルプTips                                                                                                                                                                                                                                                                                                            | JSON   |
-| lists.json              | 定義されたリスト                                                                                                                                                                                                                                                                                                                | JSON   |
-| filters.json            | 定義されたフィルター                                                                                                                                                                                                                                                                                                              | JSON   |
-| styleSheets.css         | CSS スタイルシート                                                                                                                                                                                                                                                                                                             | CSS    |
-| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                    | CSS    |
-| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                | CSS    |
+| 内容                      | 詳細                                                                                                             | フォーマット |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- | ------ |
+| catalog.4DCatalog       | テーブルおよびフィールド定義                                                                                                 | XML    |
+| folders.json            | 　エクスプローラーフォルダー定義                                                                                               | JSON   |
+| menus.json              | メニュー定義                                                                                                         | JSON   |
+| settings.4DSettings     | *ストラクチャー*データベース設定。 *Structure* database settings. 運用時にカスタム設定を定義するには、*ユーザー設定* または *データファイル用のユーザー設定* を使う必要があります。 | XML    |
+| tips.json               | 定義されたヘルプTips                                                                                                   | JSON   |
+| lists.json              | 定義されたリスト                                                                                                       | JSON   |
+| filters.json            | 定義されたフィルター                                                                                                     | JSON   |
+| styleSheets.css         | CSS スタイルシート                                                                                                    | CSS    |
+| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                           | CSS    |
+| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                       | CSS    |
 
 #### DatabaseMethods フォルダー
 
@@ -108,7 +108,7 @@ title: プロジェクトのアーキテクチャー
 | ------------- | ----------------------------------------------------- | ------ |
 | table_*n*.4dm | プロジェクト内で定義されているトリガーメソッド  ( 1つのテーブルにつき1ファイル；n: テーブル番号) | テキスト   |
 
-**注:** 拡張子 .4dm のファイルは、4D メソッドのコードをテキスト形式で格納しており、 ソース管理ツールに対応しています。
+**Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. ソース管理ツールに対応しています。
 
 ### Trash フォルダー
 
