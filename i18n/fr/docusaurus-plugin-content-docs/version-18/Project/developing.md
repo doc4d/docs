@@ -13,12 +13,12 @@ Le développement multi-utilisateur est géré via des outils de contrôle de ve
 
 ## Accès au fichier de projet
 
-Lorsque vous travaillez sur un projet dans 4D Developer, vous pouvez utiliser les éditeurs intégrés de 4D pour créer, modifier ou sauvegarder des éléments de la structure, des méthodes, des formulaires, etc. Les éditeurs utilisant des fichiers sur le disque, d'éventuels conflits peuvent se produire si le même fichier est modifié voire supprimé de différents endroits. Par exemple, si la même méthode est modifiée dans une fenêtre d'éditeur de méthode *et* dans un éditeur de texte, la sauvegarde des deux modifications entraînera un conflit.
+Lorsque vous travaillez sur un projet dans 4D Developer, vous pouvez utiliser les éditeurs intégrés de 4D pour créer, modifier ou sauvegarder des éléments de la structure, des méthodes, des formulaires, etc. Les éditeurs utilisant des fichiers sur le disque, d'éventuels conflits peuvent se produire si le même fichier est modifié voire supprimé de différents endroits. Since the editors use files on the disk, potential conflicts could happen if the same file is modified or even deleted from different locations.
 
 4D Developer comprend un gestionnaire d’accès aux fichiers permettant de contrôler les accès simultanés :
 
 - if an open file which is read-only at the OS level, a locked icon is displayed in the editor: ![](../assets/en/Project/lockicon.png)
-- si un fichier ouvert est édité simultanément à partir de différents emplacements, 4D affiche une boîte de dialogue d'alerte lorsque vous tenterez d'enregistrer des modifications : ![](../assets/en/Project/projectReload.png)
+- if an open file is edited concurrently from different locations, 4D displays an alert dialog box when trying to save the changes:![](../assets/en/Project/projectReload.png)
   - **Oui** : ignore les modifications de l'éditeur et recharge
   - **Non** : enregistre les modifications et écrase l'autre version
   - **Annuler** : ne pas enregistrer
