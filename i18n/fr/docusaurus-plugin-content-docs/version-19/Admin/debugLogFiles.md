@@ -254,7 +254,7 @@ Les fichiers d'historique peuvent être générés en deux versions :
    Ce chemin d'accès au journal est retourné par la commande `Get 4D file`.
 
 * une version étendue :
-  * pièce(s) jointe(s) inclue(s)
+  * attachment(s) included no automatic recycling
   * nom personnalisé
   * conçue à des fins spécifiques
 
