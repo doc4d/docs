@@ -191,7 +191,7 @@ Você pode escrever:
 
 ```4d  
 // Class "AlignOnTarget" Class constructor($macro : Object)
-    This.myParameter:=$macro.myParam //esquerda
+    This.myParameter:=$macro.myParam //left
     ...
 ```
 
