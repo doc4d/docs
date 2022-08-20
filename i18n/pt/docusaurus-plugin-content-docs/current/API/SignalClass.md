@@ -48,17 +48,17 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  var $form : Object
  $form:=New object("value";0)
 
-  // Abrir o formulário
+  // Open the form
  $win:=Open form window("Information";Movable form dialog box)
  DIALOG("Information";$form)
  CLOSE WINDOW($win)
 
-  // Adiciona um novo atributo para seu objeto partilhado $signal para passar seu resultado aos outros processos:
+  // Add a new attribute to your $signal shared object to pass your result to the other process:
  Use($signal)
     $signal.result:=$form.value
  End use
 
-  // Ativa o sinal para o processo de espera
+  // Trigger the signal to the waiting process
  $signal.trigger()
 ```
 
@@ -73,10 +73,10 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
   // call main process and execute OpenForm method
  CALL WORKER(1;"OpenForm";$signal)
   // do another calculation
- ... // Esperando pelo final do processo
+ ... // Waiting for the end of the process
  $signaled:=$signal.wait()
 
-  // Processando o resultado
+  // Processing of the results
  $calc:=$signal.result+...
 ```
 
@@ -121,7 +121,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 
 #### Descrção
 
-The `New signal` command <!-- REF #_command_.New signal.Summary -->creates a `4D.Signal` object<!-- END REF -->.
+The `.description` property <!-- REF #_command_.New signal.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
 
 Um sinal é um objeto partilhado que pode ser passado como parâmetro de um worker ou processo para outro worker ou processo, de forma que:
 
@@ -130,12 +130,12 @@ Um sinal é um objeto partilhado que pode ser passado como parâmetro de um work
 
 Opcionalmente, no parâmetro *description* pode passar um texto personalizado descrevendo o sinal. Esse texto pode também ser definido depois da criação do sinal.
 
-Já que o objeto sinal é um objeto partilhado, pode também ser usado para manter propriedades usuário, incluindo a propriedade [`.description`](#description) por chamar a estrutura `Use... End use`.
+Since the signal object is a shared object, it can also be used to maintain user properties, including the [`.description`](#description) property, by calling the `Use... End use` structure.
 
 
 **Valor retornado**
 
-Um novo objeto [`4D. Signal`](#signal-object).
+A new [`4D. Signal` object](#signal-object).
 
 #### Exemplo
 
@@ -188,9 +188,9 @@ O método ***doSomething*** poderia ser algo como:
 
 #### Descrção
 
-The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
+The `.wait( )` function <!-- REF #SignalClass.description.Summary -->makes the current process wait until the `.signaled` property of the signal object to become **true** or the optional *timeout* to expire<!-- END REF -->.
 
-`.description` pode ser definida ao criar o objeto signal ou a qualquer momento. Note que, dado que o objeto `Signal` é um objeto compartido, qualquer acesso em modo de escritura a propriedade `.description` deve estar rodeado por uma estrutura `Use... End use`.
+`.description` pode ser definida ao criar o objeto signal ou a qualquer momento. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use... End use` structure.
 
 Essa propriedade é**apenas escrita**.
 
@@ -215,7 +215,7 @@ Essa propriedade é**apenas escrita**.
 
 #### Descrção
 
-The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. Quando se cria um sinal, `.signaled` é **False**. Se converte em **True** quando se chama ao objeto `.trigger( )`.
+The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. . When the signal is created, `.signaled` is **False**.
 
 Essa propriedade é**apenas leitura**.
 
