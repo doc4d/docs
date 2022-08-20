@@ -142,7 +142,7 @@ A diferencia de otras comparaciones de cadenas, la búsqueda por palabras clave 
 ```
 > **Notas:**
 > 
-> - 4D uses the ICU library for comparing strings (using `<>=#` operators) and detecting keywords. For more information about the rules implemented, please refer to the following address: <http://www.unicode.org/reports/tr29/#Word_Boundaries>.
+> - 4D utiliza la librería ICU para comparar cadenas (utilizando los operadores `<>=#`) y detectar palabras claves. Para más información sobre las normas aplicadas, consulte la siguiente dirección: <http://www.unicode.org/reports/tr29/#Word_Boundaries>.
 > - En la versión japonesa, en lugar de ICU, 4D utiliza por defecto Mecab para detectar las palabras claves.
 
 ## Símbolos de indice de cadena
@@ -168,8 +168,7 @@ En caso contrario, si los símbolos de referencia de caracteres aparecen dentro 
     End if
  End if
 
-  //Utilizando la sintaxis de los caracteres de indice, se escribiría de forma más sencilla:
- If(vtText#"")
+  //Using the character reference syntax, you would write in a simpler manner: If(vtText#"")
     If(Character code(vtText[[Length(vtText)]])=At sign)
   // ...
     End if
@@ -186,8 +185,7 @@ Al utilizar los símbolos de indice de cadena, debe dirigirse a los caracteres e
 
 ```
 //Muy malo y desagradable, ¡Boo!
- //Muy malo y desagradable, ¡Boo!
- //Muy malo y desagradable, ¡Boo!
+ //Very bad and nasty thing to do, boo!
  vsAnyText:=""
  vsAnyText[[1]]:="A"
 ```
