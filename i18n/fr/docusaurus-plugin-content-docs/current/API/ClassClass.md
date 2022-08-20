@@ -36,7 +36,7 @@ Lorsqu'une classe utilisateur est [définie](Concepts/classes.md#class-definitio
 
 #### Description
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Les noms de classe sont sensibles à la casse.
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. .
 
 Cette propriété est en **lecture seule**.
 
