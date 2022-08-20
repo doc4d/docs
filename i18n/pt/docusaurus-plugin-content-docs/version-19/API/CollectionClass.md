@@ -162,7 +162,7 @@ Pode criar uma nova coleção e adicionar um novo elemento:
 
 The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
 
-Adicionar um elemento para essa coleção deve ser rodeada pela estrutura [`Use... End`](Concepts/shared.md#useend-use), senão um erro é gerado. Ler um elemento sem a estrutura é entretanto possível.
+Adding an element to this collection must be surrounded by the [`Use... End`](Concepts/shared.md#useend-use) use structure, otherwise an error is generated. Ler um elemento sem a estrutura é entretanto possível.
 > Para saber mais sobre coleções partilhadas, veja a página [Shared objects and collections](Concepts/shared.md).
 
 Se não quiser passar parâmetros, `New shared collection` cria uma coleção vazia partilhada e retorna sua referência.
@@ -319,7 +319,7 @@ $vSize:=$col.length //$vSize=0
 
 #### Descrção
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. Summary -->retorna uma nova coleção contendo os elementos da coleção original com todos os elementos do parâmetro *value* adicionado ao final<!-- END REF -->.
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
 > Essa função modifica a coleção original.
 
 Como padrão, elementos *col2* são adicionados ao final da collection original. Pode passar em *index* a posição onde quiser que os elmentos *col2* sejam inseridos na coleção.
@@ -754,7 +754,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 
 #### Descrção
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *methodName* method<!-- END REF -->.
+The `.every()` function <!-- REF #collection.every().Summary -->The `.every()` function<!-- END REF -->.
 
 Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. Este método recebe um `Object` como primeiro parâmetro ($1) e deve estabelecer *$1.result* para **true** para o primeiro elemento que cumprir a condição.
 
@@ -967,10 +967,10 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 
 #### Descrção
 
-The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which *methodName* method result is **true**<!-- END REF -->. Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+The `.filter()` function <!-- REF #collection.filter().Summary -->The `.filter()` function<!-- END REF -->. Summary --> devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa <!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > Essa função não modifica a coleção original.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional).
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recebe os parâmetros abaixo:
 
@@ -1059,10 +1059,10 @@ O código para ***TypeLookUp*** é:
 
 #### Descrção
 
-The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
+The `.find()` function <!-- REF #collection.find().Summary -->The `.indexOf()` function<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. Esse método recebe um `Objeto` no primeiro parâmetro ($1) e deve estabelecer *$1.result* como **true** para o primeiro elemento que preenche a condição.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recebe os parâmetros abaixo:
 
@@ -1154,10 +1154,10 @@ O código para ***TypeLookUp*** é:
 
 #### Descrção
 
-The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
+The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->The `.findIndex()` function<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). Esse método recebe um `Objeto` no primeiro parâmetro ($1) e deve estabelecer *$1.result* como **true** para o primeiro elemento que preenche a condição.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s).
 
 *methodName* recebe os parâmetros abaixo:
 
@@ -1390,7 +1390,7 @@ Qualquer tipo de elemento aceito por uma coleção pode ser inserido, mesmo outr
 
 #### Descrção
 
-The `.join()` function <!-- REF #collection.join().Summary -->converts all elements of the collection to strings and concatenates them using the specified *delimiter* string as separator<!-- END REF -->.The function returns the resulting string.
+The `.unshift()` function <!-- REF #collection.join().Summary -->inserts the given *value*(s) at the beginning of the collection<!-- END REF -->and returns the modified collection.
 > Essa função não modifica a coleção original.
 
 Como padrão, elementos null ou vazios da coleção são retornados na string resultante. Passe a constante `ck ignore null or empty` na opção *option* parâmetro se quiser removê-las da string resultado.
@@ -1528,7 +1528,7 @@ A propriedade `.length` é iniciada quando a coleção for criada. Adicionar ou 
 The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the *methodName* method on each element of the original collection<!-- END REF -->. Opcionalmente pode passar parâmetros a*methodName* usando os parâmetros *param*. `.map()` sempre retorna uma coleção com o mesmo tamanho que a coleção original.
 > Essa função não modifica a coleção original.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional).
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recebe os parâmetros abaixo:
 
@@ -1819,7 +1819,7 @@ Ordenar com uma rota de propriedade:
 
 #### Descrção
 
-The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *methodName* method<!-- END REF -->.
+The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->The `.orderByMethod()` function<!-- END REF -->.
 
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > Essa função não modifica a coleção original.
@@ -2123,7 +2123,7 @@ Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 
 #### Descrção
 
-The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the *methodName* callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
+The `.reduce()` function <!-- REF #collection.reduce().Summary -->The `.reduce()` function<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
 Em *methodName*, passe o nome do método para usar para avaliar elementos de coleção, junto com os parâmetros em param (opcional). *methodName* toma cada elemento da coleção e realiza todas as operações desejadas para acumular o resultado em *$1.accumulator*, que se devolve em *$1.value*.
@@ -2451,7 +2451,7 @@ The returned collection contains the element specified by *startFrom* and all su
 
 The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test<!-- END REF --> implemented in the provided *methodName* method.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional).
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 *methodName* recebe os parâmetros abaixo:
 
