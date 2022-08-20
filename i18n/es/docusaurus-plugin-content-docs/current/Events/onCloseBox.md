@@ -24,6 +24,7 @@ Este ejemplo muestra cómo responder a un evento de cierre de ventana con un for
     :(Form event code=On Close Box)
        If(Modified record($vpFormTable->))
           CONFIRM("Este registro ha sido modificado. Save Changes?")
+          Save Changes?")
           If(OK=1)
              ACCEPT
           Else
@@ -33,5 +34,6 @@ Este ejemplo muestra cómo responder a un evento de cierre de ventana con un for
           CANCEL
        End if
   //...
+ //statement(s)
  End case
 ```
