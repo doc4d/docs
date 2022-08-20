@@ -133,12 +133,10 @@ You can then run this request:
 The Dataclass class `City` provides an API that returns a city entity from a name passed in parameter:
 
 ```
-// City class
-
-Class extends DataClass
+// City class Class extends DataClass
 
 exposed Function getCity()
- var $0 : cs.CityEntity
+ var $0 : cs. CityEntity
  var $1,$nameParam : text
  $nameParam:=$1
  $0:=This.query("name = :1";$nameParam).first()
@@ -229,9 +227,7 @@ You can then run this request:
 The `StudentsSelection` class has a `getAgeAverage` function:
 
 ```  
-// StudentsSelection Class
-
-Class extends EntitySelection
+// StudentsSelection Class Class extends EntitySelection
 
 exposed Function getAgeAverage
  C_LONGINT($sum;$0)
@@ -261,10 +257,7 @@ Once you have created an entityset, you can run this request:
 The `StudentsSelection` class has a `getLastSummary` function:
 
 ```  
-// StudentsSelection Class
-
-
-Class extends EntitySelection
+// StudentsSelection Class Class extends EntitySelection
 
 exposed Function getLastSummary
  C_TEXT($0)
@@ -291,9 +284,7 @@ You can then run this request:
 The Dataclass class `Students` has the function `pushData()` receiving an entity containing data from the client. The `checkData()` method runs some controls. If they are OK, the entity is saved and returned.
 
 ```
-// Students Class
-
-Class extends DataClass
+// Students Class Class extends DataClass
 
 exposed Function pushData
  var $1, $entity, $status, $0 : Object
@@ -432,9 +423,7 @@ Body of the request:
 In this example, we associate an existing school to a Students entity. The `StudentsEntity` class has an API:
 
 ```
-// StudentsEntity class
-
-Class extends Entity
+// StudentsEntity class Class extends Entity
 
 exposed Function putToSchool()
  var $1, $school , $0, $status : Object
