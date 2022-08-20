@@ -224,7 +224,7 @@ Voici les propriétés de chaque attribut exposé qui sont retournées :
 | type        | String  | Type d'attribut de chaîne (booléen, blob, octet, date, durée, image, long, long64, numérique, chaîne, uuid ou mot) ou la dataclasse pour un attribut de relation N-> 1. |
 | identifying | Boolean | Cette propriété retourne True si l'attribut est la clé primaire. Sinon, cette propriété n'apparaîtra pas.                                                               |
 | path        | String  | Nom du lien d'un attribut relatedEntity ou relateEntities.                                                                                                              |
- foreignKey|Chaine|Pour un attribut relatedEntity, nom de l'attribut associé.| inverseName |Chaine|Nom du lien opposé pour un attribut relatedEntity ou relateEntities.|
+ foreignKey|String   |For a relatedEntity attribute, name of the related attribute.| inverseName |String |Name of the opposite relation for a relatedEntity or relateEntities attribute.|
 
 ### Méthode(s)
 
