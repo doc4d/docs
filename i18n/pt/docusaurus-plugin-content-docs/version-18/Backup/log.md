@@ -13,7 +13,7 @@ Por último, 4D possui funções que analisam os conteúdos do arquivo de histó
 
 O arquivo de histórico gerado por 4D contém uma descrição de todas as operações realizadas nos dados das tbelas registradas no diário do banco de dados, as quais são registradas de forma sequencial. Como padrão, todas as tabelas são registradas, ou seja, incluidas no arquivo de histórico, mas pode desmarcar as tabelas individuais usando a propriedade de tabela **Incluir no arquivo de histórico**.
 
-Dessa forma, cada operação realizada por um usuário causa duas ações simultâneas: a primeira no banco de dados (instrução é realizada normalmente) e a segunda ação no arquivo de histórico (a descrição da ação é registrada). O arquivo de historial se cria de forma independente, sem perturbar nem ralentar o trabalho do usuário. O arquivo de historial se cria de forma independente, sem perturbar nem ralentar o trabalho do usuário. O arquivo de historial registra os seguintes tipos de ações:
+Dessa forma, cada operação realizada por um usuário causa duas ações simultâneas: a primeira no banco de dados (instrução é realizada normalmente) e a segunda ação no arquivo de histórico (a descrição da ação é registrada). O arquivo de historial se cria de forma independente, sem perturbar nem ralentar o trabalho do usuário. The log file is created independently without disturbing or slowing down the work of the user. O arquivo de historial registra os seguintes tipos de ações:
 
 - Abertura e fechamento de arquivos de dados,
 - Abertura e fechamento de processos (contextos),
@@ -56,7 +56,7 @@ Para poder criar um arquivo de histórico diretamente, o banco de dados deve est
 - O arquivo de dados está em branco,
 - Acaba de realizar uma cópia de segurança do banco de dados e ainda não foram realizadas mudanças nos dados.
 
-Em todos os outros casos, quando validar a caixa de diálogo Propriedades de Banco de Dados, um diálogo de alerta informará que é necessário fazer um backup. Se clicar em **Aceitar**, a cópia de segurança começa imediatamente, e depois se ativa o arquivo de histórico. Si clicar em **Cancelar**, a solicitação é salva mas a criação do arquivo de histórico é adiada e só criará depois da próxima cópia de segurança do banco de dados. Essa precaução é indispensável porque, para restaurar o banco de dados depois de um incidente, é preciso uma cópia do banco de dados na qual se integrarão às operações registradas no arquivo de histórico.
+Em todos os outros casos, quando validar a caixa de diálogo Propriedades de Banco de Dados, um diálogo de alerta informará que é necessário fazer um backup. Se clicar em **Aceitar**, a cópia de segurança começa imediatamente, e depois se ativa o arquivo de histórico. If you click **OK**, the backup begins immediately, then the log file is activated. If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the database.
 
 Sem ter que fazer nada a mais, todas as operações realizadas sobre os dados são registradas nesse arquivo, e são usadas no futuro quando abrir o banco de dados.
 
