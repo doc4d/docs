@@ -27,7 +27,7 @@ La ventana tiene las siguientes características principales:
 - Puede filtrar el contenido de la ventana utilizando el menú **Categorías**: ![](../assets/en/FormEditor/library3.png)
 - Para utilizar un objeto de la librería en su formulario, puede:
     - hacer clic derecho en un objeto y seleccionar **Copiar** en el menú contextual
-    - o arrastrar y soltar el objeto desde la librería El objeto se añade al formulario.
+    - or drag and drop the object from the library The object is then added to the form.
 
 Esta librería es de sólo lectura. Si desea editar objetos por defecto o crear su propia librería de objetos preconfigurados o formularios proyecto, deberá crear una librería de objetos personalizada (ver abajo).
 
@@ -36,7 +36,7 @@ Todos los objetos propuestos en la librería de objetos estándar se describen e
 
 ## Crear y utilizar librerías de objetos personalizadas
 
-Puede crear y utilizar librerías de objetos personalizadas en 4D. Una librería de objetos personalizada es un proyecto 4D donde puede almacenar sus objetos favoritos (botones, textos, imágenes, etc.) A continuación, puede reutilizar estos objetos en diferentes formularios y proyectos. A continuación, puede reutilizar estos objetos en diferentes formularios y proyectos.
+Puede crear y utilizar librerías de objetos personalizadas en 4D. A custom object library is a 4D project where you can store your favorite objects (buttons, texts, pictures, etc.) You can then reuse these objects in different forms and different projects. A continuación, puede reutilizar estos objetos en diferentes formularios y proyectos.
 
 Los objetos se almacenan con todas sus propiedades, incluidos sus métodos. Las librerías se arman y utilizan mediante simples operaciones de arrastrar y soltar o copiar y pegar.
 
