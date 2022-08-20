@@ -24,7 +24,7 @@ Cada evento es devuelto como un objeto por el comando `FORM Event`. Por defecto,
 | Propiedad | Type | Descripción |
 | --------- | ---- | ----------- |
 |           |      |             |
- objectName|text|Nombre del objeto que desencadena el evento - No se incluye si el evento es desencadenado por el formulario| |code|longint|Valor numérico del evento formulario. También es devuelto por el comando
+ objectName|text|Name of the object triggering the event - Not included if the event is triggered by the form| |code|longint|Numeric value of the form event. Also returned by the
 
 Se devuelven propiedades adicionales cuando el evento se produce en objetos específicos. En particular:
 
