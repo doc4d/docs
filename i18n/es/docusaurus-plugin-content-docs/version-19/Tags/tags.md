@@ -58,7 +58,7 @@ Este poderoso principio satisface la mayoría de las necesidades relacionadas co
 
 ### Identificadores con tokens
 
-Para asegurar la correcta evaluación de las expresiones procesadas a través de las etiquetas, independientemente del lenguaje o de la versión de 4D, se recomienda utilizar la sintaxis tokenizada para los elementos cuyo nombre puede variar a lo largo de las versiones (comandos, tablas, campos, constantes). Por ejemplo, para insertar el comando `Current time`, introduzca `Current time:C178`.
+Para asegurar la correcta evaluación de las expresiones procesadas a través de las etiquetas, independientemente del lenguaje o de la versión de 4D, se recomienda utilizar la sintaxis tokenizada para los elementos cuyo nombre puede variar a lo largo de las versiones (comandos, tablas, campos, constantes). For example, to insert the `Current time` command, enter `Current time: C178`.
 
 ### Utilizando el "." como separador decimal
 
@@ -336,7 +336,7 @@ Por ejemplo, aquí están los resultados del procesamiento de la variable de tex
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&lt;B&gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`         |
 
-En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar--> : ## error # código del error`.
+En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar-->: ## error # código del error`.
 
 > Por razones de seguridad se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
@@ -350,9 +350,9 @@ El parámetro *expresión* puede contener toda expresión 4D válida que devuelv
 
 In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. Likewise, if there are not as many `<!--#4DENDIF-->` as `<!--#4DIF -->`, the text "`<!--#4DIF expression-->`: 4DENDIF expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`.
 
-En caso de un error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: Se esperaba una expresión booleana" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. Del mismo modo, si no hay tantos `<!--#4DENDIF-->` como `<! -#4DIF -->`, el texto "`<! -#4DIF expression-->`: 4DENDIF esperado" se inserta en lugar del contenido localizado entre `<! -#4DIF -->` y `<!--#4DENDIF-->`.
+En caso de un error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: Se esperaba una expresión booleana" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last <!--#4DELSEIF-->. If all the conditions are false, the statements following the <!--#4DELSE--> are executed.
+Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last<!--#4DELSEIF-->. .<!--#4DELSE-->If all the conditions are false, the statements following the
 
 Los dos códigos siguientes son equivalentes.
 
@@ -614,7 +614,7 @@ La etiqueta `4DSCRIPT` permite ejecutar métodos 4D al procesar la plantilla. La
 
 El método debe devolver el texto en `$0`. Si la cadena comienza con el carácter de código 1, se considera HTML (el mismo principio es válido para la etiqueta `4DHTML`).
 
-Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es <!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
+Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es<!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
 
 El método `MYMETH` es el siguiente:
 
