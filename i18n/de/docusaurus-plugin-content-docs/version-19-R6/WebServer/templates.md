@@ -38,6 +38,8 @@ It is possible to mix tags. For example, the following HTML code is allowed:
 ```html
 <HTML>
 ...
+<HTML>
+...
 <BODY>
 <!--#4DSCRIPT/PRE_PROCESS-->   (Method call)
 <!--#4DIF (myvar=1)-->   (If condition)
