@@ -43,7 +43,7 @@ La [variable](properties_Object.md#variable-or-expression) liée au sous-formula
 
 ![](../assets/en/FormObjects/subforms1.png)
 
-Les deux objets (variable heure et conteneur du sous-formulaire) *ont le même nom de variable*. Dans ce cas, à l’ouverture du formulaire parent, les deux valeurs sont automatiquement synchronisées par 4D. Si la valeur de la variable est définie à plusieurs emplacements, la valeur utilisée sera celle qui aura été chargée en dernier lieu. L’ordre de chargement suivant est appliqué : 1-Méthodes objet du sous-formulaire 2-Méthode formulaire du sous-formulaire 3-Méthodes objet du formulaire parent 4-Méthode formulaire du formulaire parent
+Les deux objets (variable heure et conteneur du sous-formulaire) *ont le même nom de variable*. Dans ce cas, à l’ouverture du formulaire parent, les deux valeurs sont automatiquement synchronisées par 4D. Si la valeur de la variable est définie à plusieurs emplacements, la valeur utilisée sera celle qui aura été chargée en dernier lieu. It applies the following loading order: 1-Object methods of subform 2-Form method of subform 3-Object methods of parent form 4-Form method of parent form
 
 A l’exécution du formulaire parent, la synchronisation des variables doit être effectuée par le développeur à l’aide des événements formulaires adéquats. Deux types d’interactions peuvent se produire : du formulaire vers le sous-formulaire et inversement.
 
