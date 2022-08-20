@@ -46,7 +46,7 @@ Pour plus d'informations sur la façon de rechercher des données dans 4D, repor
 > Par exemple, vous pouvez écrire ce qui suit lors du passage d'une valeur avec un guillemet lors de l'utilisation de la propriété *params* :  
 > `http://127.0.0.1:8081/rest/Person/?$filter="lastName=:1"&$params='["O\u0027Reilly"]'`
 > 
-> Si vous passez la valeur directement, vous pouvez écrire ce qui suit :   `http://127.0.0.1:8081/rest/Person/?$filter="lastName=O'Reilly"`
+> If you pass the value directly, you can write the following: `http://127.0.0.1:8081/rest/Person/?$filter="lastName=O'Reilly"`
 
 ## Attribut
 
