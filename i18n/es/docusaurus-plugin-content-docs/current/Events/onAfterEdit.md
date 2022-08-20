@@ -20,7 +20,7 @@ Cuando se utiliza, este evento se genera después de cada cambio realizado en el
 - Toda entrada de teclado realizada por el usuario; en este caso, el evento `On After Edit` se genera después de los eventos [`On Before Keystroke`](onBeforeKeystroke.md) y [`On After Keystroke`](onAfterKeystroke.md), si se utilizan.
 - Cualquier modificación realizada mediante un comando del lenguaje que simule una acción del usuario (es decir, `POST KEY`).
 
-Within the `On After Edit` event, text data being entered is returned by the [`Get edited text`](https://doc.4d.com/4dv19/help/command/en/page655.html) command.
+En el evento `On After Edit`, los datos de texto introducidos son devueltos por el comando [`Get edited text`](https://doc.4d.com/4dv19/help/command/en/page655.html).
 
 ### 4D View Pro
 
@@ -65,7 +65,7 @@ En función del valor de la propiedad `action`, el [objeto evento](overview.md#e
 | Propiedad | Type   | Descripción                    |
 | --------- | ------ | ------------------------------ |
 | fillRange | object | Gama utilizada para el relleno |
- autoFillType|longint|Valor utilizado para el relleno.<li>0: las celdas se llenan con todos los datos (valores, formato y fórmulas)</li><li>1: las celdas se llenan con datos automáticamente secuenciales</li><li>2: Las celdas se llenan sólo con el formato</li><li>3: Las celdas se llenan de valores pero sin formato</li><li>4: Se eliminan los valores de las celdas</li><li>5: Cells are filled automatically</li>| |fillDirection|longint|Direction of the fill.<li>0: Se llenan las celdas de la izquierda</li><li>1: Se llenan las celdas a la derecha</li><li>2: Las celdas de arriba se llenan</li><li>3: Las celdas de abajo se llenan</li>|
+ autoFillType|longint|Valor utilizado para el relleno.<li>0: las celdas se llenan con todos los datos (valores, formato y fórmulas)</li><li>1: las celdas se llenan con datos automáticamente secuenciales</li><li>2: Las celdas se llenan sólo con el formato</li><li>3: Las celdas se llenan de valores pero sin formato</li><li>4: Se eliminan los valores de las celdas</li><li>5: Las celdas se llenan automáticamente</li>| |fillDirection|longint|Direction of the fill.<li>0: Se llenan las celdas de la izquierda</li><li>1: Se llenan las celdas a la derecha</li><li>2: Las celdas de arriba se llenan</li><li>3: Las celdas de abajo se llenan</li>|
 
 #### action = formulaChanged
 
@@ -92,6 +92,8 @@ Aquí hay un ejemplo de manejo de un evento `On After Edit`:
        ALERT("WARNING: You are currently changing the value\  
        from "+String(FORM Event.oldValue)+\  
        " to "+String(FORM Event.newValue)+"!")
+    End if
+ End if
     End if
  End if
 ```
