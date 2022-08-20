@@ -13,7 +13,7 @@ title: Hora
 
 Uma constante hora está rodeada por sinais de interrogação (?....?).
 
-Uma constante hora se ordena hora:minuto:segundo, com dois pontos (:) para separar cada parte. As horas são especificadas no formato de 24 horas.
+A time literal constant is ordered hour:minute:second, with a colon (:) setting off each part. Times are specified in 24-hour format. As horas são especificadas no formato de 24 horas.
 
 Aqui são exemplos de constantes de tipo hora:
 
@@ -80,8 +80,8 @@ O operador Modulo pode ser usado, mais concretamente, para somar tempos que cons
 
 ```4d
 $t1:=?23:00:00? // São 23:00 p.m.
-  // São 23:00 p.m.
-  // Queremos adicionar 2 horas e meia
+  // It is 23:00 p.m.
+  // We want to add 2 and a half hours
 $t2:=$t1 +?02:30:00? // Com uma simples adição, $t2 é?25:30:00?
-$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 é ?01:30:00? e é 1:30 a.m. a manhã seguinte a manhã seguinte a manhã seguinte
+$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 é ?01:30:00? and it is 1:30 a.m. the next morning a manhã seguinte
 ```
