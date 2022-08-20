@@ -29,7 +29,7 @@ Funktionsnamen müssen mit den [Schreibregeln für Eigenschaftsnamen](#objekteig
 
 Der Name einer Objekteigenschaft (auch Objekt*attribut* genannt) kann bis zu 255 Zeichen enthalten.
 
-Objekteigenschaften können auf skalare Werte, ORDA Elemente, Class Functions, andere Objekte, etc. verweisen. Mit der **Punkt-Notation** müssen sie, egal welcher Art sie sind, folgende [Namensregeln](dt_object.md#objekteigenschaften) einhalten:
+Objekteigenschaften können auf skalare Werte, ORDA Elemente, Class Functions, andere Objekte, etc. verweisen. Object properties can reference scalar values, ORDA elements, class functions, other objects, etc. Whatever their nature, object property names must follow the following rules **if you want to use the [dot notation](dt_object.md#object-properties)**:
 
 - Ein Eigenschaftsname muss mit einem Buchstaben, Unterstrich oder Dollarzeichen "$" beginnen.
 - Folglich kann der Name einen beliebigen Buchstaben, eine Ziffer, das Unterstrichzeichen ("_") oder das Dollarzeichen ("$") enthalten.
