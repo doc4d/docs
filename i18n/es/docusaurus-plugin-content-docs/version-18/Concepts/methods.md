@@ -13,7 +13,7 @@ Un método es básicamente un trozo de código que ejecuta una o varias acciones
 
     Los métodos integrados se detallan en el manual *Lenguaje 4D* o en los manuales dedicados a los plug-ins o componentes.
 
-- Los **métodos proyecto**, donde puede escribir su propio código para ejecutar toda acción personalizada. Una vez creado un método proyecto, pasa a formar parte del lenguaje de la base en la que se crea. Un método proyecto se compone de varias líneas de instrucciones, cada una de las cuales consta de una línea en el método. Una línea de instrucción realiza una acción, y puede ser simple o compleja. Aunque una instrucción es siempre una línea, esa línea puede ser tan larga como sea necesario (hasta 32.000 caracteres, lo que probablemente sea suficiente para la mayoría de las tareas). Una línea de instrucción realiza una acción, y puede ser simple o compleja.
+- Los **métodos proyecto**, donde puede escribir su propio código para ejecutar toda acción personalizada. Una vez creado un método proyecto, pasa a formar parte del lenguaje de la base en la que se crea. Un método proyecto se compone de varias líneas de instrucciones, cada una de las cuales consta de una línea en el método. Una línea de instrucción realiza una acción, y puede ser simple o compleja. Aunque una instrucción es siempre una línea, esa línea puede ser tan larga como sea necesario (hasta 32.000 caracteres, lo que probablemente sea suficiente para la mayoría de las tareas). A statement performs an action, and may be simple or complex.
 
 **Nota:** 4D también ofrece métodos específicos que se ejecutan automáticamente en función de los eventos de la base o de los eventos formulario. Ver [Métodos especializados](#specialized-methods).
 
@@ -51,7 +51,7 @@ Por ejemplo, supongamos que tiene una base de clientes. Al personalizar la base,
  MODIFY RECORD([Customers])
 ```
 
-Si no utiliza subrutinas, tendrá que escribir el código cada vez que quiera modificar el registro de un cliente. Si no utiliza subrutinas, tendrá que escribir el código cada vez que quiera modificar el registro de un cliente. Si utiliza subrutinas, sólo tendrá que escribirlas una vez. Esta es la primera ventaja de las subrutinas: reducir la cantidad de código.
+Si no utiliza subrutinas, tendrá que escribir el código cada vez que quiera modificar el registro de un cliente. If you do not use subroutines, you will have to write the code each time you want to modify a customer’s record. Si utiliza subrutinas, sólo tendrá que escribirlas una vez. Esta es la primera ventaja de las subrutinas: reducir la cantidad de código.
 
 Si el código descrito anteriormente fuera un método llamado `MODIFICAR CLIENTE`, se ejecutaría simplemente utilizando el nombre del método en otro método. Por ejemplo, para modificar el registro de un cliente y luego imprimir el registro, se escribiría este método:
 
@@ -60,7 +60,7 @@ Si el código descrito anteriormente fuera un método llamado `MODIFICAR CLIENTE
  PRINT SELECTION([Customers])
 ```
 
-Esta posibilidad simplifica enormemente sus métodos. En el ejemplo, no es necesario saber cómo funciona el método `MODIFICAR CLIENTE`, sólo lo que hace. Esta es la segunda razón para utilizar subrutinas: clarificar sus métodos. De este modo, sus métodos se convierten en extensiones del lenguaje 4D.
+Esta posibilidad simplifica enormemente sus métodos. This capability simplifies your methods dramatically. Esta es la segunda razón para utilizar subrutinas: clarificar sus métodos. De este modo, sus métodos se convierten en extensiones del lenguaje 4D.
 
 Si necesita cambiar su método de búsqueda de clientes en esta base de ejemplo, tendrá que cambiar sólo un método, no diez. Esta es la siguiente razón para utilizar subrutinas: facilitar los cambios en sus métodos.
 
@@ -175,29 +175,20 @@ Para este ejemplo, suponemos que los valores de los campos son únicos (no hay d
 1. Puede proceder de esta manera:
 
 ```4d
- $vsName:=Request("Introduzca el nombre:";"John")
+ $vsName:=Request("Enter the name:";"John")
  If(OK=1)
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
-       $vtTheWholeStory:="Un amigo mío, "+$vsName
+       $vtTheWholeStory:="A friend of mine, "+$vsName
        Repeat
           QUERY([Friends and Relatives];[Friends and Relatives]ChildrensName=$vsName)
           $vlQueryResult:=Records in selection([Friends and Relatives])
           If($vlQueryResult>0)
-             $vtTheWholeStory:=$vtTheWholeStory+" que es hijo de "+[Friends and Relatives]Name
+             $vtTheWholeStory:=$vtTheWholeStory+" who is the child of "+[Friends and Relatives]Name
              $vsName:=[Friends and Relatives]Name
           End if
        Until($vlQueryResult=0)
-       $vtTheWholeStory:=$vtTheWholeStory+", ¡se gana la vida con esto!"
-       ALERT($vtTheWholeStory)
-    End if
- End if
-       ALERT($vtTheWholeStory)
-    End if
- End if
-       ALERT($vtTheWholeStory)
-    End if
- End if
+       $vtTheWholeStory:=$vtTheWholeStory+", does this for a living!"
        ALERT($vtTheWholeStory)
     End if
  End if
@@ -213,13 +204,7 @@ Para este ejemplo, suponemos que los valores de los campos son únicos (no hay d
  If(OK=1)
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
-       ALERT("Un amigo, "+Genealogy of($vsName)+", hace esto para vivir")
-    End if
- End if
-    End if
- End if
-    End if
- End if
+       ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
     End if
  End if
     End if
