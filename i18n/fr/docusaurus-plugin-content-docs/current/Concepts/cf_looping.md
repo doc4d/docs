@@ -36,7 +36,7 @@ Si vous vous retrouvez dans une telle situation (où une méthode s'exécute de 
 ### Exemple
 
 ```4d
- CONFIRM("Add a new record?") //L'utilisateur souhaite-t-il ajouter un enregistrement ? //L'utilisateur souhaite-t-il ajouter un enregistrement ?
+ CONFIRM("Add a new record?") //L'utilisateur souhaite-t-il ajouter un enregistrement ? CONFIRM("Add a new record?") //The user wants to add a record?
  While(OK=1) // Tant que l'utilisateur accepte
     ADD RECORD([aTable]) // Ajouter un nouvel enregistrement
 End while // Une boucle While se termine toujours par End while
@@ -329,8 +329,8 @@ La collection doit contenir uniquement des éléments du même type. Dans le cas
 
 A chaque itération de la boucle, la variable _Elément_courant_ reçoit automatiquement l'élément correspondant de la collection. Vous devez tenir compte des points suivants :
 
-- La variable _Elément_courant_ doit être du même type que les éléments de la collection. Si un seul élément de la collection n'est pas du même type que la variable, une erreur est générée et la boucle s'arrête.
-- Si la variable _Elément_courant_ est de type objet ou collection (i.e. Si un seul élément de la collection n'est pas du même type que la variable, une erreur est générée et la boucle s'arrête.
+- The _Current_Item_ variable must be of the same type as the collection elements. If any collection item is not of the same type as the variable, an error is generated and the loop stops.
+- If the _Current_Item_ variable is of the object type or collection type (i.e. Si un seul élément de la collection n'est pas du même type que la variable, une erreur est générée et la boucle s'arrête.
 - Si la collection contient des éléments de valeur **Null**, une erreur sera générée si le type de la variable _Elément_courant_ ne prend pas en charge la valeur **Null** (comme par exemple les variables entier long).
 
 #### Exemple
