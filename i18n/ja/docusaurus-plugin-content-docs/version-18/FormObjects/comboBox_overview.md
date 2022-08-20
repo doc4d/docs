@@ -19,7 +19,7 @@ title: コンボボックス
 
 - [自動挿入](properties_DataSource.md#自動挿入): このオプションがチェックされていると、オブジェクトに関連付けられた選択リストにない値をユーザーが入力した場合に、その値が自動的にメモリー内のリストに追加されます。
 - [除外リスト](properties_RangeOfValues.md#除外リスト) (除外される値のリスト): 除外される値のリストを関連付けることができます。 ユーザーがこのリストに含まれる値を入力したとき、その入力は自動的に却下され、エラーメッセージが表示されます。
-> [指定リスト](properties_RangeOfValues.md#指定リスト) はコンボボックスには割り当てることはできません。 ユーザーインターフェースにおいて、オブジェクト内にいくつかの指定された値を表示したいときには、[ポップアップメニュータイプ](dropdownList_Overview.md#概要) のオブジェクトを使用して下さい。
+> > Associating a [list of required values](properties_RangeOfValues.md#required-list) is not available for combo boxes. ユーザーインターフェースにおいて、オブジェクト内にいくつかの指定された値を表示したいときには、[ポップアップメニュータイプ](dropdownList_Overview.md#概要) のオブジェクトを使用して下さい。
 
 ## プロパティ一覧
 
