@@ -316,7 +316,7 @@ utf8 形式の *message* 文字列。
 <!-- REF #CryptoKey.size.Syntax -->
 **.size** : Integer<!-- END REF -->
 
-Defined only for RSA keys: <!-- REF #CryptoKey.size.Summary -->the size of the key in bits<!-- END REF -->. 通常は 2048 (デフォルト)
+Defined only for RSA keys: <!-- REF #CryptoKey.size.Summary -->the size of the key in bits<!-- END REF -->. .
 
 <!-- REF CryptoKey.type -->
 ## .type
