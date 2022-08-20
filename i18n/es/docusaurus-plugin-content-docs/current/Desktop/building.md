@@ -129,7 +129,7 @@ Es posible automatizar la actualización de las aplicaciones monopuesto fusionad
 
 Para crear una aplicación autónoma, primero debe designar la carpeta que contiene el archivo 4D Volume Desktop:
 
-* *Windows* - la carpeta contiene los archivos 4D Volume Desktop.4DE, 4D Volume Desktop. RSR, así como varios archivos y carpetas necesarios para su funcionamiento. Estos elementos deben colocarse al mismo nivel que la carpeta seleccionada.
+* *Windows* - the folder contains the 4D Volume Desktop.4DE, 4D Volume Desktop. RSR, as well as various files and folders required for its operation. Estos elementos deben colocarse al mismo nivel que la carpeta seleccionada.
 * *macOS* - 4D Volume Desktop se entrega en forma de un paquete de software estructurado que contiene varios archivos y carpetas genéricos.
 
 Para seleccionar la carpeta 4D Volume Desktop, haga clic en el botón **[...]**. Aparece una caja de diálogo que le permite designar la carpeta de 4D Volume Desktop (Windows) o el paquete (macOS).
@@ -174,7 +174,7 @@ Cuando se construye una aplicación independiente, 4D copia el contenido de la c
 * Instalar una versión de 4D Volume Desktop correspondiente a un lenguaje específico;
 * Añadir una carpeta *PlugIns* personalizada;
 * Personalizar el contenido de la carpeta *Resources*.
-> En macOS, 4D Volume Desktop se ofrece en forma de paquete de software. Puede visualizar su contenido (**Control+clic** en el icono) para poder modificarlo.
+> The macOS packages built contain the same items as the Windows subfolders. You can display their contents (**Control+click** on the icon) in order to be able to modify them.
 
 #### Ubicación de los archivos web
 
@@ -360,7 +360,7 @@ The contents of these folders vary depending on the current platform:
 * *Windows* - Each folder contains the application executable file, named `\&#060;ApplicationName&#062;Client.exe` for the client part and `\&#060;ApplicationName&#062;Server.exe` for the server part as well as the corresponding .rsr files. The folders also contain various files and folders necessary for the applications to work and customized items that may be in the original 4D Volume Desktop and 4D Server folders.
 * *macOS* - Each folder contains only the application package, named `\&#060;ApplicationName&#062; Client` for the client part and `\&#060;ApplicationName&#062; Server` for the server part. Cada paquete contiene todos los elementos necesarios para que la aplicación funcione. En macOS, un paquete se lanza haciendo doble clic en él.
 
- > The macOS packages built contain the same items as the Windows subfolders. Para modificarlo, primero hay que mostrar su contenido (**Control+clic** en el icono).
+ > The macOS packages built contain the same items as the Windows subfolders. In order to modify it, you must first display its contents (**Control+click** on the icon).
 
 If you checked the “Allow automatic update of client application” option, an additional subfolder called *Upgrade4DClient* is added in the `\&#060;ApplicationName&#062;Server` folder/package. Esta subcarpeta contiene la aplicación cliente en formato macOS y/o Windows como archivo comprimido. Esta subcarpeta contiene la aplicación cliente en formato macOS y/o Windows como archivo comprimido.
 
