@@ -11,7 +11,7 @@ title: フォームプロパティ
 このプロパティは、フォームのカラースキームを定義します。 このプロパティは、フォームのカラースキームを定義します。 これは、フォームに対して以下の 2つのオプションのいずれかに変更することができます:
 
 *   dark - 暗い背景に明るいテキスト
-*   light - 明るい背景に暗いテキスト > 定義されたカラースキームを CSS で上書きすることはできません。
+*   light - dark text on a light background > A defined color scheme can not be overridden by a CSS.
 > ウィンドウタイトルの最大文字数は 31 です。
 
 #### JSON 文法
@@ -141,7 +141,7 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 *   カレントページ
 *   それぞれのフォームオブジェクトの配置・大きさ・表示状態 (リストボックス列のサイズと表示状態も含む)。
-> それぞれのフォームオブジェクトの配置・大きさ・表示状態 (リストボックス列のサイズと表示状態も含む)。 > このオプションは、 `OBJECT DUPLICATE` コマンドを使用して作成されたオブジェクトに対しては無効です。 このコマンドを使用したときに使用環境を復元させるには、デベロッパーがオブジェクトの作成・定義・配置の手順を再現しなければなりません。
+> > This option does not take into account objects generated using the `OBJECT DUPLICATE` command. このコマンドを使用したときに使用環境を復元させるには、デベロッパーがオブジェクトの作成・定義・配置の手順を再現しなければなりません。
 
 このオプションが選択されているとき、一部のオブジェクトに置いては [値を記憶](FormObjects/properties_Object.md#値を記憶) のオプションが選択可能になります。
 
