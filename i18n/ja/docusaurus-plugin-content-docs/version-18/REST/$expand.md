@@ -4,7 +4,7 @@ title: "$expand"
 ---
 
 
-画像属性に保存されているピクチャーを展開します (*例*: `Employee(1)/photo?$imageformat=best&$expand=photo`)<br/> または<br/> 保存するために BLOB属性を展開します。
+Expands an image stored in an Image attribute (*e.g.*, `Employee(1)/photo?$imageformat=best&$expand=photo`)<br/> or<br/> Expands an BLOB attribute to save it.
 
 > **互換性に関する注記**: 互換性のため、$expand はリレーション属性を展開するのに使用できます (*例*: `Company(1)?$expand=staff` または `Employee/?$filter="firstName BEGIN a"&$expand=employer`)。 しかしながら、これらの場合には [`$attributes`]($attributes.md) を使用するのが推奨されます。
 
