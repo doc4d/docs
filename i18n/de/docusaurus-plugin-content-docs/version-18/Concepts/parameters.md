@@ -39,6 +39,7 @@ Dasselbe Prinzip gilt, wenn Methoden durch bestimmte Befehle ausgeführt werden,
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)  
+//pass the !05/05/10!  
 //pass the !05/05/10! date as parameter to the SetCalendarDate  
 // in the context of a subform
 ```
@@ -84,7 +85,7 @@ NewPhrase:=Uppercase4("This is good.")
 
 Die Variable *$NewPhrase* erhält “THIS is good.”
 
-Das Funktionsergebnis `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. So wird im vorigen Beispiel `DO SOMETHING` `$0` zuerst der Wert von `$1` zugewiesen, dann als Parameter für den Befehl `ALERT` verwendet. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von `$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
+Das Funktionsergebnis `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. It can be used as such within the subroutine. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von `$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
 
 
 ## Parameter deklarieren
@@ -142,16 +143,16 @@ Weitere Informationen dazu finden Sie auf der Seite [Interpretierter und kompili
 
 Deklarieren der Parameter ist auch in folgenden Kontexten zwingend (sie unterstützen nicht die Deklaration in einer "Compiler" Methode):
 
-- Datenbankmethoden - Zum Beispiel erhält die `Datenbankmethode On Web Connection` sechs Parameter, $1 bis $6, vom Datentyp Text. Zu Beginn der Datenbankmethode müssen Sie schreiben (selbst wenn keiner der Parameter genutzt wird):
+- Database methods For example, the `On Web Connection Database Method` receives six parameters, $1 to $6, of the data type Text. Zu Beginn der Datenbankmethode müssen Sie schreiben (selbst wenn keiner der Parameter genutzt wird):
 
 ```4d
 // On Web Connection
 C_TEXT($1;$2;$3;$4;$5;$6)
 ```
 
-- Trigger - Der Parameter $0 (Lange Ganzzahl), der das Ergebnis eines Trigger ist, wird vom Compiler typisiert, wenn der Parameter nicht explizit deklariert wurde. Wollen Sie ihn jedoch deklarieren, müssen Sie das direkt im Trigger tun.
+- Triggers The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Wollen Sie ihn jedoch deklarieren, müssen Sie das direkt im Trigger tun.
 
-- Formularobjekte mit dem Formularereignis `On Drag Over` - Der Parameter $0 (Lange Ganzzahl), der das Ergebnis des Formularereignisses `On Drag Over` ist, wird vom Compiler typisiert, wenn der Parameter nicht explizit deklariert wurde. Wollen Sie ihn jedoch deklarieren, müssen Sie das direkt in der Objektmethode tun. **Hinweis:** Der Compiler initialisiert nicht den Parameter $0, d. h. sobald Sie das Formularereignis`On Drag Over` verwenden, müssen Sie $0 initialisieren. Beispiel:
+- Form objects that accept the `On Drag Over` form event The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. Wollen Sie ihn jedoch deklarieren, müssen Sie das direkt in der Objektmethode tun. **Hinweis:** Der Compiler initialisiert nicht den Parameter $0, d. h. sobald Sie das Formularereignis`On Drag Over` verwenden, müssen Sie $0 initialisieren. Beispiel:
 ```4d
  C_LONGINT($0)
  If(Form event=On Drag Over)
@@ -162,11 +163,16 @@ C_TEXT($1;$2;$3;$4;$5;$6)
     End if
     ...
  End if
+    If($DataType=Is picture)
+       $0:=-1
+    End if
+    ...
+ End if
 ```
 
 ## Werte oder Referenzen
 
-Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Da ein Parameterwert nur lokal gültig ist, wird bei einer Änderung in der Unterroutine nicht der Wert in der aufrufenden Methode geändert. Beispiel:
+Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. The local variables/parameters are not the actual fields, variables, or expressions passed by the calling method; they only contain the values that have been passed. Beispiel:
 
 ```4d
     //Here is some code from the method MY_METHOD
@@ -208,7 +214,7 @@ Hier ist der Parameter nicht das Feld, sondern ein Zeiger auf das Feld. Deshalb 
  ALERT($0)
 ```
 
-Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine Funktion verwenden" genannt. Weitere Informationen dazu finden Sie im Abschnitt [Funktionen](#functions).
+This second technique of returning a value by a subroutine is called “using a function.” This is described in the [Returning values](#returning-values) paragraph. Weitere Informationen dazu finden Sie im Abschnitt [Funktionen](#functions).
 
 
 ### Sonderfälle: Objekte und Collections
@@ -400,6 +406,6 @@ Analog zu anderen lokalen Variablen müssen auch generische Parameter nicht zwin
  C_LONGINT(${4})
 ```
 
-Dieser Befehl bedeutet, dass die Methode ab dem 4. Parameter (eingeschlossen) eine variable Anzahl an Parametern vom Typ Lange Ganzzahl empfangen kann. $1, $2 und $3 können einen beliebigen Datentyp haben. Nutzen Sie jedoch $2 per Indirektion, wird als Datentyp der generische Typ verwendet. Es wird also der Datentyp Lange Ganzzahl sein, auch wenn es für Sie z. B. der Datentyp Zahl war.
+Dieser Befehl bedeutet, dass die Methode ab dem 4. Parameter (eingeschlossen) eine variable Anzahl an Parametern vom Typ Lange Ganzzahl empfangen kann. $1, $2 und $3 können einen beliebigen Datentyp haben. Nutzen Sie jedoch $2 per Indirektion, wird als Datentyp der generische Typ verwendet. $1, $2 and $3 can be of any data type.
 
 **Hinweis:** Die Zahl in der Deklaration muss eine feste Größe und keine Variable sein.
