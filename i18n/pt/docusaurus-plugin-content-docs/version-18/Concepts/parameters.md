@@ -39,7 +39,7 @@ Os mesmos princípios são usados quando métodos forem executados através de c
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)  
-//passe a data !05/05/10!  
+//pass the !05/05/10!  
 //passe a data !05/05/10! como parâmetro del SetCalendarDate  
 // no contexto de um subformulário
 ```
@@ -85,7 +85,7 @@ NewPhrase:=Uppercase4("This is good.")
 
 Neste exemplo, a variável *NewPhrase* recebe “THIS is good.”
 
-O resultado da função, `$0`, é uma variável local dentro da subrotina. Pode ser usado como tal dentro da subrotina. Por exemplo, no exemplo anterior `DO SOMETHING`,  `$0` atribuiu o primeiro o valor de `$1`, e depois se usou como parâmetro do comando `ALERT`. Dentro de la subrotina, pode utilizar `$0` da mesma maneira que utilizaria qualquer outra variável local. É 4D quem devolve o valor de `$0` (como estiver quando a subrotina terminar) ao método chamado.
+O resultado da função, `$0`, é uma variável local dentro da subrotina. Pode ser usado como tal dentro da subrotina. It can be used as such within the subroutine. Dentro de la subrotina, pode utilizar `$0` da mesma maneira que utilizaria qualquer outra variável local. É 4D quem devolve o valor de `$0` (como estiver quando a subrotina terminar) ao método chamado.
 
 
 ## Declaração de parâmetros
@@ -142,15 +142,15 @@ Ver a página [Modos interpretado e compilado](Concepts/interpreted.md) para mai
 
 A declaração de parâmetros também é obrigatóiria nos contextos abaixo (esses contextos não são compatíveis com declarações em um método "Compiler"):
 
-- Métodos de banco de dados Por exemplo, o método banco `On Web Connection` recebe seis parâmetros, de $1 a $6, del tipo Texto. No começo do método database, tem que escrever (mesmo se todos os parâmetros não forem usados):
+- Database methods For example, the `On Web Connection Database Method` receives six parameters, $1 to $6, of the data type Text. No começo do método database, tem que escrever (mesmo se todos os parâmetros não forem usados):
 
 ```4d
 // On Web Connection C_TEXT($1;$2;$3;$4;$5;$6)
 ```
 
-- Triggers O parâmetro $0 (Inteiro longo), que é o resultado de um trigger, será digitado pelo compilador se o parâmetro não tiver sido declarado explicitamente. Entretanto, se quiser declará-lo, deve fazer isso no próprio trigger.
+- Triggers The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. Entretanto, se quiser declará-lo, deve fazer isso no próprio trigger.
 
-- Objetos formulário que aceitam o evento formulário `On Drag Over` O parâmetro $0 (Inteiro longo), que é o resultado do evento formulário `On Drag Over`, será digitado pelo compilador se o parâmetro não tiver sido declarado explícita mente. Entretanto, se quiser fazer a declaração, deve fazer isso no método objeto. **Nota:** o compilador não inicializa o parâmetro $0. Portanto, logo que utilizar o evento formulário `On Drag Over`, deve inicializar $0. Por exemplo:
+- Form objects that accept the `On Drag Over` form event The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. Entretanto, se quiser fazer a declaração, deve fazer isso no método objeto. **Nota:** o compilador não inicializa o parâmetro $0. Portanto, logo que utilizar o evento formulário `On Drag Over`, deve inicializar $0. Por exemplo:
 ```4d
  C_LONGINT($0)
  If(Form event=On Drag Over)
@@ -165,12 +165,12 @@ A declaração de parâmetros também é obrigatóiria nos contextos abaixo (ess
 
 ## Valores ou referências
 
-Quando passar um parâmetro, 4D sempre avalia a expressão do parâmetro no contexto do método que chama e define o **valor resultante** nas variáveis locais $1, $2... da subrotina (ver [Utilização dos parâmetros](#using-parameters)). As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. Como seu alcance é local, se o valor de um parâmetro for modificado na subrotina, não muda o valor no método chamada. Por exemplo:
+Quando passar um parâmetro, 4D sempre avalia a expressão do parâmetro no contexto do método que chama e define o **valor resultante** nas variáveis locais $1, $2... da subrotina (ver [Utilização dos parâmetros](#using-parameters)). As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. The local variables/parameters are not the actual fields, variables, or expressions passed by the calling method; they only contain the values that have been passed. Por exemplo:
 
 ```4d
-    //Esta é uma parte do código do método MY_METHOD DO_SOMETHING([People]Name) //Suponha que o valor [People]Name seja "williams" ALERT([People]Name)
+    //Here is some code from the method MY_METHOD DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams" ALERT([People]Name)
 
-    //Este é o código do método DO_SOMETHING
+    //Here is the code of the method DO_SOMETHING
  $1:=Uppercase($1)
  ALERT($1)
 ```
@@ -227,10 +227,10 @@ Por exemplo, considere o método `CreatePerson` que cria um objeto e o envia com
 O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
 
 ```4d
-  //Mudar Age
+  //ChangeAge
  C_OBJECT($1)
- $1.Age:=$1.Age+10
- ALERT(String($1.Age))
+ $1. Age:=$1. Age+10
+ ALERT(String($1.
 ```
 
 Quando executar o método `CreatePerson`, as duas caixas de alerta dirão "50" já que a mesma referência de objeto é manejada por ambos métodos.
@@ -277,7 +277,7 @@ No método `ChangeAge` anterior, as propriedades Age e Name são obrigatórias e
 ```
 Ambos parâmetros são opcionais: se não forem preenchidos, o resultado será "é 10 anos de idade", mas nenhum erro será gerado.
 
-Finalmente, com parâmetros com nome, a manutenção ou a reprodução das aplicações é muito simples e seguro. Imagine que depois perceba de que adicionar 10 anos não funciona sempre. Precisa de outro parâmetro para definir quantos anos tem que adicionar. Escreva:
+Finalmente, com parâmetros com nome, a manutenção ou a reprodução das aplicações é muito simples e seguro. Imagine que depois perceba de que adicionar 10 anos não funciona sempre. You need another parameter to set how many years to add. You write: Escreva:
 
 ```4d
 $person:=New object("Name";"Smith";"Age";40;"toAdd";10)
@@ -297,7 +297,7 @@ Com variáveis com nome, qualquer parâmetro pode ser opcional. No exemplo acima
 
 No manual *Linguagem de 4D*, os caracteres { } (chaves) indicam parâmetros opcionais. Por exemplo, `ALERT (message{; okButtonTitle})` significa que o parâmetro *okButtonTitle* pode omitir o chamado ao comando. Pode fazer a chamada de duas maneiras:
 ```4d
-ALERT("Are you sure?";"Yes I am") //2 parâmetros ALERT("Time is over") //1 parâmetro
+ALERT("Are you sure?";"Yes I am") //2 parameters ALERT("Time is over") //1 parameter
 ```
 
 Os métodos projeto 4D também aceitam esses parâmetros opcionais, começando pela direita. O problema com os parâmetros opcionais é como manejar o caso em que alguns deles estejam faltando no método chamado, nunca deveria produzir um erro. Uma boa prática é atribuir valores padrão aos parâmetros não utilizados.
@@ -328,13 +328,13 @@ O exemplo abaixo mostra uma mensagem de texto e pode inserir o texto em um docum
 Depois de adicionar este método projeto a sua aplicação, pode escrever:
 
 ```4d  
-APPEND TEXT(vtSomeText) //Só mostrará a mensagem APPEND TEXT(vtSomeText;$path) //Mostra a mensagem e o anexo ao documento em $path APPEND TEXT(vtSomeText;"";$wpArea) //Mostra a mensagem e escreve em $wpArea
+APPEND TEXT(vtSomeText) //Will only display the  message APPEND TEXT(vtSomeText;$path) //Displays text message and appends it to document at $path APPEND TEXT(vtSomeText;"";$wpArea) //Displays text message and writes it to $wpArea
 ```
 
 
 ## Indireção dos parâmetros
 
-Os métodos projeto 4D aceitam um número variável de parametros do mesmo tipo, começando pela direita. Este princípio se chama **la indireção de parâmetros**. Ao utilizar o comando `Count parameters` pode endereçar esses parâmetros com um loop `For... End for` e a sintaxe de indireção de parâmetros.
+Os métodos projeto 4D aceitam um número variável de parametros do mesmo tipo, começando pela direita. Este princípio se chama **la indireção de parâmetros**. Using the `Count parameters` command you can then address those parameters with a `For... End for` loop and the parameter indirection syntax.
 
 No exemplo abaixo, o método projeto `SEND PACKETS` aceita um parâmetro de tempo seguido de um número variável de parâmetros de texto:
 
@@ -390,6 +390,6 @@ Da mesma forma que com outras variáveis locais, não é obrigatório declarar o
  C_LONGINT(${4})
 ```
 
-Esse comando significa que a partir do quarto parâmetro (incluído), o método pode receber um número variável de parâmetros de tipo longint. $1, $2 e $3 podem ser de qualquer tipo de dados. Entretanto, se usar $2 por indireção, o tipo de dados usados será do tipo genérico. Assim, será do tipo de dados LongInt, mesmo se para você fosse, por exemplo, do tipo de dados Real.
+Esse comando significa que a partir do quarto parâmetro (incluído), o método pode receber um número variável de parâmetros de tipo longint. $1, $2 e $3 podem ser de qualquer tipo de dados. Entretanto, se usar $2 por indireção, o tipo de dados usados será do tipo genérico. $1, $2 and $3 can be of any data type.
 
 **Nota:** O número na declaração tem que ser uma constante e não uma variável.
