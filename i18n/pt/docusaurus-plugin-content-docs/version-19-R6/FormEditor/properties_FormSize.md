@@ -18,25 +18,30 @@ Size options depend on the value of the **Size based on** option.
 
 * `\&#060;object name&#062;`: The size of the form will be based on the position of the selected form object. For example, if you choose an object that is placed in the bottom-right part of the area to be displayed, the form size will consist of a rectangle whose upper left corner will be the origin of the form and the lower right corner will correspond to that of the selected object, plus any margin values.
 
-> For output forms, only the [**Hor. margin**](#hor-margin) or [**Width**](width) fields are available.
+> For output forms, only the
 
-#### JSON Grammar
-
+**Hor. For output forms, only the **Hor.</p> </blockquote> 
+> 
+> #### JSON Grammar
+> 
+> 
 | Nome           | Tipo de dados | Possible Values                                       |
 | -------------- | ------------- | ----------------------------------------------------- |
 | formSizeAnchor | string        | Name of object to use to defined the size of the form |
+
 
 ---
 
 ## Alto
 
-Height of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
+Height of the form (in pixels) when the [form size](#size-based-on) is **Set size**.  
 
 #### JSON Grammar
 
 | Nome   | Tipo de dados | Possible Values |
 | ------ | ------------- | --------------- |
 | height | number        | integer value   |
+
 
 ---
 
@@ -52,6 +57,7 @@ This value also determines the right-hand margins of forms used in the Label edi
 | ----------- | ------------- | --------------- |
 | rightMargin | number        | integer value   |
 
+
 ---
 
 ## Vert. Margin
@@ -66,11 +72,12 @@ This value also determines the top margins of forms used in the Label editor.
 | ------------ | ------------- | --------------- |
 | bottomMargin | number        | integer value   |
 
+
 ---
 
 ## Largura
 
-Width of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
+Width of the form (in pixels) when the [form size](#size-based-on) is **Set size**.  
 
 #### JSON Grammar
 
