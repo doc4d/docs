@@ -62,7 +62,7 @@ title: 図形
   }
 ```
 
-結果: ![](../assets/en/FormObjects/shape_line1.png)
+Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 ```
  "myLine": {
@@ -76,7 +76,7 @@ title: 図形
   }
 ```
 
-結果: ![](../assets/en/FormObjects/shape_line2.png)
+Result: ![](../assets/en/FormObjects/shape_line2.png)
 
 #### プロパティ一覧
 
