@@ -248,7 +248,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### 詳細
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
+The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. .
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
@@ -642,7 +642,7 @@ The `VP Convert to picture` command <!-- REF #_method_.VP Convert to picture.Sum
 * 行高さ
 * カラム幅
 * 非表示のカラム / 行 > 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
-> 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
+> > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### ファンクションの戻り値
 
@@ -868,7 +868,7 @@ The `VP DELETE COLUMNS` command <!-- REF #_method_.VP DELETE COLUMNS.Summary -->
 
 * レンジにカラムと行の両方が含まれる場合、カラムのみが削除されます。
 * レンジに行しか含まれていない場合、コマンドは何もしません。 > カラムは右から左に向かって削除されます。
-> インデックスは 0 起点です。
+> > Columns are deleted from right to left.
 
 #### 例題
 
@@ -907,7 +907,7 @@ The `VP DELETE ROWS` command <!-- REF #_method_.VP DELETE ROWS.Summary -->remove
 
 * レンジにカラムと行の両方が含まれる場合、行のみが削除されます。
 * レンジにカラムしか含まれていない場合、コマンドは何もしません。 > 行は下から上に向かって削除されます。
-> インデックスは 0 起点です。
+> > Rows are deleted from bottom to top.
 
 #### 例題
 
@@ -1268,7 +1268,7 @@ The `VP FLUSH COMMANDS` command <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->
 
 #### 詳細
 
-The `VP Font to object` utility command <!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. このオブジェクトはその後、オブジェクト記法を通してフォントプロパティ設定を取得・設定するのに使用することができます。
+The `VP Font to object` utility command <!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. .
 
 *font* には、フォントのショートハンド文字列を渡してフォントのプロパティを指定します (例: "12 pt Arial")。 フォントのショートハンド文字列についての詳細は、[こちら](https://www.w3schools.com/cssref/pr_font_font.asp) を参照ください。
 
@@ -1633,7 +1633,7 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 #### 詳細
 
-The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. 返されるオブジェクトには、ドキュメントの基本的なレンダリングプロパティに加え、[VP SET DEFAULT STYLE](#vp-set-default-style) コマンドによって事前に設定されたデフォルトのスタイル設定 (あれば) が格納されます。 スタイルプロパティの詳細な情報については、[スタイルオブジェクトとスタイルシート](configuring.md#スタイルオブジェクトとスタイルシート) を参照ください。
+The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. . The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1777,7 +1777,7 @@ The `VP Get formulas` command <!-- REF #_method_.VP Get formulas.Summary -->retr
 返されるコレクションは 2次元構造になっています:
 
 * 第1レベルのコレクションは、フォーミュラのサブコレクションを格納しています。 それぞれのサブコレクションは行をあらわします。
-* それぞれのサブコレクションは行におけるセルの値を定義します。 値は、セルのフォーミュラを格納しているテキスト要素です。
+* それぞれのサブコレクションは行におけるセルの値を定義します。 The first-level collection contains subcollections of formulas.
 
 #### 例題
 
@@ -2669,7 +2669,7 @@ $params.range:=VP Cells("ViewProArea";0;0;2;5)
 VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOptions";$params))
 ```
 
-このようになります: ![example-import-csv](../assets/en/ViewPro/vp-import-document-csv-result.png)
+|![example-import-csv](../assets/en/ViewPro/vp-import-document-csv-result.png)
 
 #### 参照
 
@@ -3426,7 +3426,7 @@ The `VP Row` command <!-- REF #_method_.VP Row.Summary -->returns a new range ob
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-任意の *columnCount* には、レンジに含まれるカラム数を指定することができます。 この引数として行のインデックス (0 起点) を渡します。 *columnCount* 引数は 0 より大きい値でなくてはなりません。
+任意の *columnCount* には、レンジに含まれるカラム数を指定することができます。 この引数として行のインデックス (0 起点) を渡します。 Pass the row index (counting begins at 0) in this parameter.
 
 レンジが複数行にわたる場合には、任意の *rowCount* 引数も併せて使用します。 *rowCount* 引数は 0 より大きい値でなくてはなりません。 省略時、デフォルトで値は 1 に設定されます。
 
@@ -4088,7 +4088,7 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 #### 詳細
 
-The `VP SET CUSTOM FUNCTIONS` command <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. カスタムのファンクションはドキュメント内に保存されていないので、`VP SET CUSTOM FUNCTIONS` は `On Load` フォームイベント内で呼び出される必要があります。
+The `VP SET CUSTOM FUNCTIONS` command <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. .
 
 `VP SET CUSTOM FUNCTIONS` で指定されたフォーミュラは、最初の文字が入力されるとポップアップメニューに表示されます。 詳細については [式と関数](formulas.md) を参照ください。
 
@@ -4450,7 +4450,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 The `VP SET FIELD` command <!-- REF #_method_.VP SET FIELD.Summary -->assigns a 4D database virtual field to a designated cell range<!-- END REF -->.
 
-*rangeObj* には、値を割り当てたいセルのレンジを渡します。 *rangeObj* には、値を割り当てたいセルのレンジ ([`VP Cell`](#vp-cell) で作成されたレンジ) を渡します。
+*rangeObj* には、値を割り当てたいセルのレンジを渡します。 In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
 
 *field* 引数は、*rangeObj* のレンジに対して割り当てられる 4Dデータベースの [仮想フィールド](formulas.md#仮想ストラクチャーを使ったフィールド参照) を指定します。 フォーミュラバーには、*field* の仮想ストラクチャー名が表示されます。 *rangeObj* に含まれるセルに既存のコンテンツがあった場合、そのコンテンツは *field* で上書きされます。
 
@@ -4485,7 +4485,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 The `VP SET FORMULA` command <!-- REF #_method_.VP SET FORMULA.Summary -->assigns a specified formula or 4D method to a designated cell range<!-- END REF -->.
 
-*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* には、値を割り当てたいセルのレンジを渡します。
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify.
 
 *formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。
 
@@ -4599,7 +4599,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // セルに割り当て�
 
 #### 詳細
 
-The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary -->sets the frozen status of the columns and rows in the *paneObj* so they are always displayed in the *vpAreaName*<!-- END REF -->. 固定化されたカラムと行は固定された位置に表示され続け、ドキュメントの他の部分がスクロールされても移動しません。 そのカラムと行が固定化されていることを示すために、太い実線が表示されます。 実線の位置は、固定化されたカラムまたは行がシートのどこにあるかによって変わります:
+The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary -->sets the frozen status of the columns and rows in the *paneObj* so they are always displayed in the *vpAreaName*<!-- END REF -->. . Frozen columns and rows are fixed in place and do not move when the rest of the document is scrolled. A solid line is displayed to indicate that columns and rows are frozen.
 
 * **左または右にあるカラム**: シートの左側にあるカラムについては、実線は最後に固定化されたカラム (最も右のカラム) の右側に表示されます。 シートの右側に表示されているカラムについては、実線は最初に固定化されたカラム (最も左のカラム) の左側に表示されます。
 * **上または下にある行**: シートの上部にある行については、実線は最後に固定化された行 (最も下の行) の下側に表示されます。 シートの下部に表示されている行については、実線は最初に固定化された行 (最も上の行) の上側に表示されます。
