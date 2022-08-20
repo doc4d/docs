@@ -240,11 +240,11 @@ A new entity selection **inherits** from the original entity selection nature in
 Exemplos:
 
 ```4d
-$highSal:=ds.Employee.query("salary >= :1"; 1000000)   
+$highSal:=ds. Employee.query("salary >= :1"; 1000000)   
  //$highSal is shareable because of the query on dataClass
 $comp:=$highSal.employer //$comp is shareable because $highSal is shareable
 
-$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy() 
+$lowSal:=ds. Employee.query("salary <= :1"; 10000).copy() 
  //$lowSal is alterable because of the copy()
 $comp2:=$lowSal.employer //$comp2 is alterable because $lowSal is alterable
 ```
@@ -319,7 +319,7 @@ In addition to the variety of ways you can query, you can also use relation attr
   //All invoices with at least one line item related to a part in $myParts
 ```
 
-The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. Quando se utiliza um atributo de relação como propriedade de uma seleção de entidades, o resultado é sempre outra seleção de entidades, mesmo que só se devolva uma entidade. When a relation attribute is used as a property of an entity selection and no entities are returned, the result is an empty entity selection, not null.
+The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. Quando se utiliza um atributo de relação como propriedade de uma seleção de entidades, o resultado é sempre outra seleção de entidades, mesmo que só se devolva uma entidade. When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned.
 
 ## Entity Locking
 
