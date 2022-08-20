@@ -195,7 +195,7 @@ The `New shared collection` command <!-- REF #_command_.New shared collection.Su
 *   時間 (ミリ秒の数 (実数) として保存されます)。
 *   null
 *   共有オブジェクト(*)
-*   共有コレクション(*)
+*   shared collection(*) > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 > 標準のコレクション (非共有コレクション) とは異なり、共有コレクションはピクチャーやポインター、共有でないオブジェクトおよびコレクションはサポートしていません。
 
 *(*) 共有オブジェクトおよびコレクションが共有コレクションに追加された場合、それらは同じロック識別子を共有します*。 この点についてのより詳細は、**4Dランゲージリファレンス** の [ロック識別子](https://doc.4d.com/4Dv18/4D/18.4/Shared-objects-and-shared-collections.300-5233766.ja.html#3648963) の章を参照してください。
@@ -340,7 +340,7 @@ $vSize:=$col.length //$vSize=0
 
 #### 詳細
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. `.insert()` 関数とは異なり、`.combine()` は *col2* の各要素を元のコレクション追加します (*col2* 自体を単一のコレクション要素としては挿入しません)。
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
 > このコマンドは、元のコレクションを変更します。
 
 デフォルトでは、*col2* の要素は元のコレクションの最後に追加されます。 *index* に引数を渡すことで、*col2* の要素を挿入する位置を指定することができます。
@@ -1036,7 +1036,7 @@ The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - または *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -1119,7 +1119,7 @@ The `.find()` function <!-- REF #collection.find().Summary -->returns the first 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - または *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -1209,7 +1209,7 @@ The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -1600,7 +1600,7 @@ The `.map()` function <!-- REF #collection.map().Summary -->creates a new collec
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - または *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックには、*param* (任意) に指定した引数が渡されます。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -2303,7 +2303,7 @@ The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or
 > このコマンドは、元のコレクションを変更します。
 
 *index* パラメーターには、削除するコレクション要素の位置を渡します。
-> **警告**: コレクション要素は 0 起点である点に注意してください。 指定した *index* がコレクションの length より大きい場合、実際の開始インデックスはコレクションの length に設定されます。
+> **警告**: コレクション要素は 0 起点である点に注意してください。 If *startFrom* < 0, it is considered as the offset from the end of the collection (*startFrom:=startFrom+length*).
 
 *   *index* < 0 の場合、*index:=index+length* として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
 *   計算結果も負の値である場合、*index* は 0 に設定されます。
