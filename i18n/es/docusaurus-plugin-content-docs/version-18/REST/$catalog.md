@@ -224,7 +224,7 @@ Aquí están las propiedades de cada atributo expuesto que se devuelven:
 | type        | String  | Tipo de atributo (booleano, blob, byte, fecha, duración, imagen, long, long64, número, cadena, uuid o palabra) o la clase de datos para un atributo de relación N->1. |
 | identifying | Boolean | Esta propiedad devuelve True si el atributo es la llave primaria. En caso contrario, esta propiedad no aparece.                                                       |
 | path        | String  | Nombre de la relación de un atributo relatedEntity o relateEntities.                                                                                                  |
- foreignKey|Cadena|Para un atributo relatedEntity, nombre del atributo relacionado.| inverseName|Cadena |Nombre de la relación opuesta para un atributo relatedEntity o relateEntities.|
+ foreignKey|String   |For a relatedEntity attribute, name of the related attribute.| inverseName |String |Name of the opposite relation for a relatedEntity or relateEntities attribute.|
 
 ### Método(s)
 
