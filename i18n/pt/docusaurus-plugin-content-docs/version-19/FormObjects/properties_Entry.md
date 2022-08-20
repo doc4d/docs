@@ -279,7 +279,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 #### Objects Supported
 
-[Botão](button_overview.md) - [Caixa de seleção](checkbox_overview.md) - [Botão imagem,](pictureButton_overview.md) - [Botão radio](radio_overview.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
