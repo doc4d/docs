@@ -43,7 +43,7 @@ La [variable](properties_Object.md#variable-or-expression) vinculada a un subfor
 
 ![](../assets/en/FormObjects/subforms1.png)
 
-Ambos objetos (variable de tiempo y contenedor de subformulario) *tienen el mismo nombre de variable*. En este caso, al abrir el formulario padre, 4D sincroniza ambos valores automáticamente. Si el valor de la variable se define en varias ubicaciones, 4D utiliza el valor que se cargó en último lugar. Aplica el siguiente orden de carga: 1-Métodos objeto del subformulario 2-Método formulario del subformulario 3-Métodos objeto del formulario padre 4-Método formulario padre del formulario padre
+Ambos objetos (variable de tiempo y contenedor de subformulario) *tienen el mismo nombre de variable*. En este caso, al abrir el formulario padre, 4D sincroniza ambos valores automáticamente. Si el valor de la variable se define en varias ubicaciones, 4D utiliza el valor que se cargó en último lugar. It applies the following loading order: 1-Object methods of subform 2-Form method of subform 3-Object methods of parent form 4-Form method of parent form
 
 Cuando se ejecuta el formulario principal, el desarrollador debe tener cuidado de sincronizar las variables utilizando los eventos formularios apropiados. Pueden darse dos tipos de interacciones: de formulario a subformulario y viceversa.
 
