@@ -335,7 +335,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Description
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Possible values : "text" or "blob".
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. .
 
 Cette propriété est en **lecture seule**.
 
@@ -349,7 +349,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. Cette propriété est uniquement disponible si le [`dataType`](#datatype) est "text".
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. .
 
 Cette propriété est en **lecture seule**.
 
@@ -451,7 +451,7 @@ Vous pouvez utiliser la propriété `.dataType` de l'objet [options](#options-ob
 
 #### Description
 
-The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
+The `.responseError` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all the errors returned, once the request is terminated<!-- END REF -->.
 
 Le type du message est défini selon l'attribut [`dataType`](#datatype) .
 
@@ -467,7 +467,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains the concatenation of all the errors returned, once the request is terminated<!-- END REF -->.
+The `.terminated` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -486,7 +486,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 #### Description
 
-The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->forces the `SystemWorker` to terminate its execution<!-- END REF -->.
+The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->The `.terminate()` function<!-- END REF -->.
 
 Cette fonction envoie l'instruction de terminer et de redonner le contrôle au script en cours d'exécution.
 
@@ -500,7 +500,7 @@ Cette fonction envoie l'instruction de terminer et de redonner le contrôle au s
 
 #### Description
 
-The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
+The `.timeout` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
@@ -514,7 +514,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.timeout` property <!-- REF #SystemWorkerClass.timeout.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
+The `.wait()` function <!-- REF #SystemWorkerClass.timeout.Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
 
