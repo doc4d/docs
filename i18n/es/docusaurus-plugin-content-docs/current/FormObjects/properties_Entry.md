@@ -99,7 +99,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | &@                                     | Permitir sólo caracteres alfanuméricos. No hay caracteres especiales.                                                                                                    |
 | ~a##                                   | Abreviatura del nombre del estado (por ej., CA). Permite la entrada de dos letras, pero las convierte en mayúsculas.                                                     |
 | !0&9##/##/##                           | Formato de entrada de fechas estándar. Mostrar ceros en los espacios de entrada. Permitir cualquier número.                                                              |
-| !0&9 Día: ## Mes: ## Año: ##           | Formato de entrada de hora. Mostrar ceros en los espacios de entrada. Permitir cualquier número. Limitado a horas y minutos.                                             |
+| !0&9 Día: ## Mes: ## Año: ##           | Time entry format. Mostrar ceros en los espacios de entrada. Permitir cualquier número. Limited to hours and minutes.                                                    |
 | !0&9##:##                              | Formato de entrada de hora. Limitado a horas y minutos. Mostrar ceros en los espacios de entrada. Permitir cuatro números, separados por dos puntos.                     |
 | !0&9## Horas ## Minutos ## Segundos    | Formato de entrada de hora. Mostrar ceros en los espacios de entrada. Permitir dos números antes de cada palabra.                                                        |
 | !0&9Horas: ## Minutas: ## Segundos: ## | Formato de entrada de hora. Mostrar ceros en los espacios de entrada. Permitir dos números después de cada palabra.                                                      |
@@ -278,7 +278,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de selección](checkbox_overview.md) - [Botón imagen](pictureButton_overview.md) - [Botón radio](radio_overview.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
