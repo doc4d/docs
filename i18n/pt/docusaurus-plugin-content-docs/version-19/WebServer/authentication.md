@@ -177,10 +177,10 @@ Example of the `On Web Authentication` database method in [DIGEST mode](#digest-
  #DECLARE ($url : Text; $header : Text; $ipB : Text; $ipS : Text; \
   $user : Text; $pw : Text) -> $valid : Boolean
 
- var $found : cs.WebUserSelection
+ var $found : cs. WebUserSelection
  $valid:=False
 
- $found:=ds.WebUser.query("User === :1";$user)
+ $found:=ds. WebUser.query("User === :1";$user)
  If($found.length=1) // User is found
   $valid:=WEB Validate digest($user;[WebUser]password)
  Else
