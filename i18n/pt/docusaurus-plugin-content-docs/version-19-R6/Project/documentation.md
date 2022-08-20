@@ -145,8 +145,7 @@ _italic_
 
 - The code block tag (\```4d ... ```) is supported with 4D code highlight:
 
- \``` 4d  
-C_TEXT($txt)  
+ \``` 4d C_TEXT($txt)  
 $txt:="Hello world!"  
 \` ``
 
