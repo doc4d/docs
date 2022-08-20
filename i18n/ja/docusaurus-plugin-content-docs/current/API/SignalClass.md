@@ -210,7 +210,7 @@ The `.description` property <!-- REF #SignalClass.description.Summary -->contain
 
 #### 詳細
 
-The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. Signal オブジェクトが作成された時点では、`.signaled` は **false** です。 Signal オブジェクトに対して `.trigger()` が呼び出された時に **true** となります。
+The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. . When the signal is created, `.signaled` is **False**.
 
 このプロパティは **読み取り専用** です。
 
@@ -284,7 +284,7 @@ The `.wait( )` function <!-- REF #SignalClass.wait().Summary -->makes the curren
 コード実行のブロックを防ぐため、*timeout* 引数を使用して最長待機時間を秒単位で指定することもできます(小数を使用できます)。
 > **警告**: *timeout* 引数を渡さずに `.wait()` を 4D のメインプロセスで呼び出すことは推奨されていません。 最悪の場合 4Dアプリケーション全体がフリーズしてしまう恐れがあります。
 
-Signal がすでにシグナルされている (つまり `signaled` プロパティが **true** になっている) 状態であった場合、この関数は即座に戻り値を返します。
+|
 
 この関数は `.signaled` プロパティの値を返します。 この値を評価することで、待機が終了したのは `.trigger()` が呼び出されたためか (`.signaled` プロパティは **true**)、それともタイムアウト時間が経過したためか (`.signaled` プロパティは **false**) を知ることができます。
 > Signal オブジェクトを待機しているプロセスの状態は `Waiting for internal flag` です。
