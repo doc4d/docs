@@ -58,14 +58,14 @@ Mit Objektnotation können Sie auf Werte von Objekteigenschaften über eine Kett
 
 Objektnotation bietet zwei Wege, um auf Objekteigenschaften zuzugreifen:
 
-- Über das Zeichen "Punkt": > object.propertyName
+- using a "dot" symbol: > object.propertyName
 
 Beispiel:
 ```4d
      employee.name:="Smith"
 ```
 
-- Über eine Zeichenkette in eckigen Klammern: > object["propertyName"]
+- using a string within square brackets: > object["propertyName"]
 
 Beispiele:
 ```4d
@@ -109,7 +109,7 @@ Objektnotation ist in allen Elementen der Programmiersprache verfügbar, die ein
      $result:=MyMethod1.a //10
 ```
 
-- **Collections** Beispiel:
+- **Collections** Example:
 
 ```4d
      myColl.length //size of the collection
