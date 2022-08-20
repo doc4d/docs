@@ -101,7 +101,7 @@ Esta propiedad no se devuelve si `.kind` = "relatedEntity" o "relatedEntities".
 
 #### Descripción
 
-The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. Depende del tipo de atributo (ver [`.kind`](#kind)).
+The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. .
 
 **Valores posibles:**
 
@@ -265,7 +265,7 @@ Esta propiedad no se devuelve si [`.kind`](#kind) = "relatedEntity" o "relatedEn
 
 #### Descripción
 
-The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns the name of the `dataClassAttribute` object as string<!-- END REF -->.
+The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->The `.name` property<!-- END REF -->.
 
 #### Ejemplo
 
