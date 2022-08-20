@@ -9,7 +9,7 @@ Manejo de erros responde à duas necessidades principais:
 
 - descobrir e consertar erros potenciais e bugs no código durante a fase de desenvolvimento,
 - detectar e recuperar de erros inesperados nas aplicações implementadas; em particular pode substituir diálogos de erros de sistemas (disco cheio, arquivo faltando, etc) com sua própria interface.
-> > É recomendado instalar um método de gerenciamento de erros em 4D Server, para todos os códigos rodando no servidor. Esse método evitaria a aparição de caixas de diálogo inesperadas no servidor e poderia registrar os erros em um arquivo especifico para sua análise posterior.
+> > It is highly recommended to install an error-handling method on 4D Server, for all code running on the server. Esse método evitaria a aparição de caixas de diálogo inesperadas no servidor e poderia registrar os erros em um arquivo especifico para sua análise posterior.
 
 ## Instalação de um método de gestão de erros
 
@@ -82,7 +82,7 @@ Aqui está um sistema de gestão de erros simples:
 Se quiser que a caixa de diálogo fique escondida, pode instalar um método de gestão de erros vazio. A variável sistema `Error` pode ser provada em qualquer método, ou seja, fora do método de gestão de erros:
 
 ```4d
-ON ERR CALL("emptyMethod") //emptyMethod existe mas está vazio
+ON ERR CALL("emptyMethod") //emptyMethod exists but is empty
 $doc:=Open document( "myFile.txt")
 If (Error=-43)
     ALERT("File not found.")
