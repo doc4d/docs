@@ -79,7 +79,7 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->.
 
-*option*が省略された場合のデフォルトでは、このコマンドはデータベースの Webサーバー (デフォルトWebサーバー) への参照を返します。 取得する Webサーバーを指定するには、*option* に以下の定数のいずれか一つを渡してください:
+The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
 
 | 定数                             | Value | 説明                                 |
 | ------------------------------ | ----- | ---------------------------------- |
