@@ -241,13 +241,15 @@ $name:=$person.maidenName || $person.name
 
 ## 三項演算子
 
-三項演算子を使うと、条件式を 1行で書くことができます。 たとえば、[If...Else](./cf_branching.md#ifelseend-if) 文を完全に置き換えることができます。
+三項演算子を使うと、条件式を 1行で書くことができます。 For example, it can replace a full sequence ofIf…</p> 
 
-三項演算子は 3つのオペランドを次の順序で受け取ります:
+三項演算子は 3つのオペランドを次の順序で受け取ります: 
 
 * 条件とクエスチョンマーク (?)
 * 条件が [truthy](#truthy-と-falsy) である場合に実行される式、その後にコロン (:)
 * 条件が [falsy](#truthy-と-falsy) の場合に実行される式
+
+
 
 ### シンタックス
 
@@ -255,11 +257,19 @@ $name:=$person.maidenName || $person.name
 
 `条件 ? truthy時の式 : falsy時の式`
 
+
+
 > [トークンシンタックス](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.ja.html) にはコロンが使われているため、競合を避けるには、コロン `:` の後にスペースを入れる、または、トークンは括弧でくくることが推奨されます。
+
+
 
 ### 例題
 
+
+
 #### 単純な例
+
+
 
 ```4d
 var $age : Integer
@@ -271,9 +281,14 @@ $beverage:=($age>=20) ? "ビール" : "ジュース"
 ALERT($beverage) // "ビール"
 ```
 
+
+
+
 #### テーブルのデータを扱う例
 
 この例では、人のフルネームを変数に格納し、ファーストネームやラストネームが指定されていないケースに対応します:
+
+
 
 ```4d
 var $fullname : Text
@@ -282,9 +297,14 @@ var $fullname : Text
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
+
+
+
 ## Truthy と Falsy
 
-各値はデータ型のほかに、固有のブール値を持ちます。 このブール値は **truthy** (真的) または **falsy** (偽的) です。
+各値はデータ型のほかに、固有のブール値を持ちます。 このブール値は **truthy** (真的) または **falsy** (偽的) です。 
+
+
 
 > **truthy** および **falsy** の値は[短絡演算子](#短絡演算子) および [三項演算子](#三項演算子) の場合にのみ評価されます。
 
@@ -306,17 +326,22 @@ $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$per
 
 * 0 - 数値のゼロ (整数かどうかを問わず)
 
-4Dでは、**truthy** と **falsy** の評価は値の **使用性** を反映します。 つまり、truthy な値は存在し、エラーや予期せぬ結果を発生させずにコードによって処理できることを意味します。 その目的は、オブジェクトやコレクションにおける *undefined* や *null* 値を扱うための便利な方法を提供し、実行時エラーを回避するのに必要な [If...Else](./cf_branching.md#ifelseend-if) 文の数を少なくすることにあります。
+4Dでは、**truthy** と **falsy** の評価は値の **使用性** を反映します。 つまり、truthy な値は存在し、エラーや予期せぬ結果を発生させずにコードによって処理できることを意味します。 The rationale behind this is to provide a convenient way to handle *undefined* and *null* values in objects and collections, so that a reduced number of [If… Else](./cf_branching.md#ifelseend-if) statements are necessary to avoid runtime errors.
 
 たとえば、[OR 短絡演算子](#or-短絡演算子-) を使用すると:
+
+
 
 ```4d
 $value:=$object.value || $defaultValue
 ```
 
+
 *$object* が `value` プロパティを含まない場合、または同プロパティが *null* の場合に、デフォルト値が代入されます。 つまり、この演算子は特定の値ではなく、その値の存在や使用性をチェックするのです。 なお、数値の 0 は存在しており使用可能であるため、特別に扱われることはなく、**truthy** です。
 
 コレクション、オブジェクト、文字列を表す値については、"空" の値は**falsy** とみなされます。 これは、空の値に遭遇したときに、デフォルト値を割り当てたい場合に便利です。
+
+
 
 ```4d
 $phone:=$emp.phone || "n/a"
