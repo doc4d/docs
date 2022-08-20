@@ -25,7 +25,6 @@ Cet exemple illustre comment vous pouvez répondre à un événement de fermetur
        If(Modified record($vpFormTable->))
           CONFIRM("This record has been modified. Save Changes?")
           Save Changes?")
-          Save Changes?")
           If(OK=1)
              ACCEPT
           Else
@@ -35,5 +34,6 @@ Cet exemple illustre comment vous pouvez répondre à un événement de fermetur
           CANCEL
        End if
   //...
+ //statement(s)
  End case
 ```
