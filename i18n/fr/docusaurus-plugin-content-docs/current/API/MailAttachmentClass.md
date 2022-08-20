@@ -222,7 +222,7 @@ The `.cid` property contains <!-- REF #MailAttachmentClass.cid.Summary --> the I
 
 #### Description
 
-The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. Deux valeurs sont disponibles :
+The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. .
 
 *   "inline" : la pièce jointe est rendue dans le contenu du message, à l'emplacement "cid". Le rendu dépend du client de messagerie.
 *   "attachment" : la pièce jointe est fournie sous forme de lien dans le message.
@@ -286,7 +286,7 @@ The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the 
 
 #### Description
 
-The `.platformPath` property returns <!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->.
+The `.platformPath` property returns <!-- REF #MailAttachmentClass.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->.
 
 
 ## .type
