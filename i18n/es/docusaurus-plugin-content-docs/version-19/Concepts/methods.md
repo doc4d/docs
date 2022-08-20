@@ -189,29 +189,20 @@ Para este ejemplo, suponemos que los valores de los campos son únicos (no hay d
 1. Puede proceder de esta manera:
 
 ```4d
- $vsName:=Request("Introduzca el nombre:";"John")
+ $vsName:=Request("Enter the name:";"John")
  If(OK=1)
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
-       $vtTheWholeStory:="Un amigo mío, "+$vsName
+       $vtTheWholeStory:="A friend of mine, "+$vsName
        Repeat
           QUERY([Friends and Relatives];[Friends and Relatives]ChildrensName=$vsName)
           $vlQueryResult:=Records in selection([Friends and Relatives])
           If($vlQueryResult>0)
-             $vtTheWholeStory:=$vtTheWholeStory+" que es hijo de "+[Friends and Relatives]Name
+             $vtTheWholeStory:=$vtTheWholeStory+" who is the child of "+[Friends and Relatives]Name
              $vsName:=[Friends and Relatives]Name
           End if
        Until($vlQueryResult=0)
-       $vtTheWholeStory:=$vtTheWholeStory+", ¡se gana la vida con esto!"
-       ALERT($vtTheWholeStory)
-    End if
- End if
-       ALERT($vtTheWholeStory)
-    End if
- End if
-       ALERT($vtTheWholeStory)
-    End if
- End if
+       $vtTheWholeStory:=$vtTheWholeStory+", does this for a living!"
        ALERT($vtTheWholeStory)
     End if
  End if
@@ -227,13 +218,7 @@ Para este ejemplo, suponemos que los valores de los campos son únicos (no hay d
  If(OK=1)
     QUERY([Friends and Relatives];[Friends and Relatives]Name=$vsName)
     If(Records in selection([Friends and Relatives])>0)
-       ALERT("Un amigo, "+Genealogy of($vsName)+", hace esto para vivir")
-    End if
- End if
-    End if
- End if
-    End if
- End if
+       ALERT("A friend of mine, "+Genealogy of($vsName)+", does this for a living!")
     End if
  End if
     End if
