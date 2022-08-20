@@ -26,7 +26,7 @@ In solch einer Situation, also bei einer unkontrolliert ablaufenden Methode kön
 ### Beispiel
 
 ```4d
- CONFIRM("Add a new record?") //The user wants to add a record?
+ CONFIRM("Add a new record?") CONFIRM("Add a new record?") //The user wants to add a record?
  While(OK=1) //Loop as long as the user wants to
     ADD RECORD([aTable]) //Add a new record
  End while //The loop always ends with End while
