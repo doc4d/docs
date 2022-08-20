@@ -302,7 +302,7 @@ The utf8 representation of the *message* string.
 <!-- REF #CryptoKey.size.Syntax -->
 **.size** : Integer<!-- END REF -->
 
-Defined only for RSA keys: <!-- REF #CryptoKey.size.Summary -->the size of the key in bits<!-- END REF -->. Typically 2048 (default).
+Defined only for RSA keys: <!-- REF #CryptoKey.size.Summary -->the size of the key in bits<!-- END REF -->. .
 
 <!-- REF CryptoKey.type -->
 ## .typ
