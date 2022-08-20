@@ -25,7 +25,7 @@ O administrador pode:
 O Administrador não pode:
 
 - editar o usuário Designer
-- como padrão, acessar as partes protegidas do banco de dados. O Administrador não pode acessar o modo Design se for restringido. O Administrador não pode acessar o modo Design se for restringido. O administrador é inscrito em todo novo grupo, mas é possível remover o nome do Administrador de qualquer grupo.
+- como padrão, acessar as partes protegidas do banco de dados. O Administrador não pode acessar o modo Design se for restringido. In particular, the Administrator cannot access to the Design mode if it is restricted. O administrador é inscrito em todo novo grupo, mas é possível remover o nome do Administrador de qualquer grupo.
 
 Tanto o Designer quanto o Administrador estão disponíveis como padrão em todos os bancos de dados. No diálogo de [gestão de usuários](#users-and-groups-editor), os ícones de Designer e Administrator são exibidos em verde e vermelho, respectivamentes:
 
@@ -52,13 +52,13 @@ Para adicionar um usuário da Barra de Ferramentas:
 
 A lista de usuários exibe todos os usuários, incluindo o[Designer and the Administrator](#designer-and-administrator).
 
-2. Clique no botão ![](../assets/en/Users/PlussNew.png) que está abaixo da lista de usuários. OU Dê um clique direito na lista de usuários e escolha **Add** ou **Duplicate** no menu contextual.
+2. Clique no botão ![](../assets/en/Users/PlussNew.png) que está abaixo da lista de usuários. OR Right-click in the list of users and choose **Add** or **Duplicate** in the context menu.
 
 > O comando **Duplicate** pode ser usado para criar rapidamente vários usuários com as mesmas características.
 
 4D adiciona um novo usuário para a lista, chamado "Novo usuárioX" como padrão.
 
-3. Digite o nome de usuário. O nome será usado pelo usuário para abrir o banco de dados. Pode renomear um usuário a qualquer momento usando o comando **Rename** do menu contextual ou usando os atalhos Alt+clique (Windows) ou Opção+clique (macOS), ou ainda clicando duas vezes no nome que quiser mudar.
+3. Digite o nome de usuário. Enter the user name. Pode renomear um usuário a qualquer momento usando o comando **Rename** do menu contextual ou usando os atalhos Alt+clique (Windows) ou Opção+clique (macOS), ou ainda clicando duas vezes no nome que quiser mudar.
 
 4. Para digitar uma senha para o usuário, clique o botão **Edit...** na área de propriedades de usuário e digite a senha daus vezes na caixa de diálogo. Pode usar até 15 caracteres alfanuméricos para a senha. O editor de senhas é sensível a maiúsculas ou minúsculas.
 
@@ -94,15 +94,15 @@ Para criar um gurpo:
 
 1. Selecione **Tool Box > Grupos** no menu **Design** ou clique no botão **Tool Box** da barra 4D e depois no botão **Grupos**. 4D exibe a janela de editor de grupos. A lista de grupos exibe todos os grupos do banco de dados.
 
-2. Clique no botão ![](../assets/en/Users/PlussNew.png) abaixo da lista de grupos.  
+2. Click on the ![](../assets/en/Users/PlussNew.png) button located below the list of groups.  
    OR  
-   Dê um clique direito na lista de grupos e escolha os comandos **Add** or **Duplicate** no menu contextual.
+   Right-click in the list of groups and choose the **Add** or **Duplicate** command in the context menu.
 
 > O comando Dupplicate/Duplicar pode ser usado para criar vários grupos tendo as mesmas características.
 
 4D adiciona um novo grupo para a lista, chamado "Novo grupoX".
 
-3. Digite o nome do novo grupo. O nome de grupo pode ter até 15 caracteres. Pode renomear um grupo a qualquer momento usando o comando **Rename** ou o menu contextual, ou usando os atalhos Alt+clique (Windows) ou Opção+clique (macOS), ou clicando duas vezes no nome que quer mudar.
+3. Digite o nome do novo grupo. O nome de grupo pode ter até 15 caracteres. The group name can be up to 15 characters long. You can rename a group at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
 ### Colocar usuários ou grupos dentro de grupos
 
