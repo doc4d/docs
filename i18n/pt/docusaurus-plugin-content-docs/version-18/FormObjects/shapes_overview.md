@@ -62,7 +62,7 @@ The `startPoint` JSON property defines from which coordinate to draw the line (s
   }
 ```
 
-Resultado: ![](../assets/en/FormObjects/shape_line1.png)
+Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 ```
  "myLine": {
@@ -76,7 +76,7 @@ Resultado: ![](../assets/en/FormObjects/shape_line1.png)
   }
 ```
 
-Resultado: ![](../assets/en/FormObjects/shape_line2.png)
+Result: ![](../assets/en/FormObjects/shape_line2.png)
 
 #### Propriedades compatíveis
 
