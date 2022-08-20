@@ -52,7 +52,7 @@ Il existe différents types de list box avec leurs propres comportements et prop
 * **Arrays**: each column is bound to a 4D array. Array-based list boxes can be displayed as [hierarchical list boxes](listbox_overview.md#hierarchical-list-boxes).
 * **Selection** (**Current selection** or **Named selection**): each column is bound to an expression (e.g. a field) which is evaluated for every record of the selection.
 * **Collection or Entity selection**: each column is bound to an expression which is evaluated for every element of the collection or every entity of the entity selection.
-> > > > > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
+> > It is not possible to combine different list box types in the same list box object. The data source is set when the list box is created. It is then no longer possible to modify it by programming.
 
 ### Managing list boxes
 
@@ -98,7 +98,7 @@ Each element of the collection or each entity is available as an object that can
 
 When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.
 
-When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the *Collections* theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed.
+When the data source is a collection, any modifications made in the list box values are reflected in the collection. When the data source is a collection, any modifications made in the list box values are reflected in the collection.
 
 ```4d
 myCol:=myCol.push("new value") //display new value in list box
@@ -575,7 +575,7 @@ Si cette list box est affichée sous forme hiérarchique (les trois premiers tab
 
 Les tableaux ne sont pas triés avant la construction de la hiérarchie. Si par exemple un tableau contient les données AAABBAACC, la hiérarchie obtenue sera :
 
-    > A B A C
+    > &gt; A B A C
 
 Pour déployer ou contracter un "nœud" hiérarchique, cliquez dessus. Si vous effectuez **Alt+clic** (Windows) ou **Option+clic** (macOS) sur le nœud, tous ses sous-éléments seront déployés ou contractés. Ces opérations peuvent également être effectuées par programmation à l'aide des commandes `LISTBOX EXPAND` et `LISTBOX COLLAPSE`.
 
@@ -992,9 +992,11 @@ Voici un exemple :
 ```4d
 C_OBJECT($ob1)
 $entry:="Hello world!"
-OB SET($ob;"valueType";"text")
-OB SET($ob;"alternateButton";True)
-OB SET($ob;"value";$entry)
+ARRAY OBJECT(obColumn;0) //column array
+ C_OBJECT($ob) //first element
+ OB SET($ob;"valueType";"text") //defines the value type (mandatory)
+ OB SET($ob;"value";"Hello World!") //defines the value
+ APPEND TO ARRAY(obColumn;$ob)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
