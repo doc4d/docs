@@ -16,11 +16,11 @@ Se soportan varios tipos de referencias de métodos:
   `method.4dm`  
   Este tipo de referencia indica que el archivo de método se encuentra en la ubicación por defecto ("sources/{TableForms/*numTable*} | {Forms}/*formName*/"). En este caso, 4D maneja automáticamente el método formulario cuando se ejecutan operaciones en el formulario (renombrar, duplicar, copiar/pegar...)
 
-- un nombre de método proyecto: nombre de un método proyecto existente sin extensión de archivo, es decir: `myMethod` En este caso, 4D no soporta automáticamente las operaciones de formulario.
+- a project method name: name of an existing project method without file extension, i.e.: `myMethod` In this case, 4D does not provide automatic support for form operations.
 
-- una ruta de acceso al archivo del método personalizado que incluya la extensión .4dm, por ejemplo:  
-  `MyMethods/myFormMethod.4dm` También puede utilizar un sistema de archivos:  
-  `/RESOURCES/Forms/FormMethod.4dm` En este caso, 4D no ofrece soporte automático para las operaciones con objetos.
+- a custom method file path including the .4dm extension, e.g.:  
+  `MyMethods/myFormMethod.4dm` You can also use a filesystem:  
+  `/RESOURCES/Forms/FormMethod.4dm` In this case, 4D does not provide automatic support for object operations.
 
 
 #### Gramática JSON
