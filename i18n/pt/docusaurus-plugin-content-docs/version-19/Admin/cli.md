@@ -45,7 +45,7 @@ Sintaxe:
 | `--webadmin-store-settings`                                                                                                                                                                   |                                                    | Armazena a chave de acesso e inicia automaticamente os parâmetros nas configurações de arquivo utilizadas (ou seja, o arquivo padrão [`WebAdmin.4DSettings`](webAdmin.md#webadmin-settings) ou um arquivo personalizado designado pelo parâmetro `--webadmin-settings-path`). Use o argumento `--webadmin-store-settings` para salvar essas configurações se necessário                                                                                                                                                                                                                                                         |
 
 
-[histórico de diagnóstico](debugLogFiles.md#4ddiagnosticlogtxt) (alerta de licença, diálogo de vonersão, seleção de banco de dados, seleção de arquivo de dados). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
+[Diagnostic log file](debugLogFiles.md#4ddiagnosticlogtxt) (licence alert, conversion dialog, database selection, data file selection). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
 
 ### Exemplos
 
