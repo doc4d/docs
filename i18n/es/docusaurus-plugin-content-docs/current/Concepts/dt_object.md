@@ -28,7 +28,7 @@ Las variables, campos o expresiones de tipo Objeto se gestionan utilizando la [n
 
 Cada valor de propiedad al que se accede a través de la notación de objeto se considera una expresión. Puede utilizar estos valores siempre que se esperen expresiones 4D:
 
-- in 4D code, either written in the methods (Code Editor) or externalized (formulas, 4D tags files processed by `PROCESS 4D TAGS` or the Web Server, export files, 4D Write Pro documents...),
+- en código 4D, ya sea escrito en los métodos (editor de código) o externalizado (fórmulas, archivos de etiquetas procesados por `PROCESS 4D TAGS` o el servidor web, archivos de exportación, documentos 4D Write Pro...),
 - en las áreas de expresiones del depurador y del explorador de ejecución,
 - en la lista de propiedades del editor de formularios para los objetos formulario: campo Variable o Expresión, así como diversas expresiones de list box y columnas (fuente de datos, color de fondo, estilo o color de fuente).
 
@@ -58,14 +58,14 @@ La notación de objetos puede utilizarse para acceder a los valores de las propi
 
 Con la notación de objetos, se puede acceder a las propiedades de los objetos de dos maneras:
 
-- utilizando un símbolo "punto": > object.propertyName
+- using a "dot" symbol: > object.propertyName
 
 Ejemplo:
 ```4d
      employee.name:="Smith"
 ```
 
-- utilizando una cadena entre corchetes: > object["propertyName"]
+- using a string within square brackets: > object["propertyName"]
 
 Ejemplos:
 ```4d
@@ -109,7 +109,7 @@ La notación de objetos está disponible en cualquier elemento del lenguaje que 
      $result:=MyMethod1.a //10
 ```
 
-- **Collections** Ejemplo:
+- **Collections** Example:
 
 ```4d
      myColl.length //tamaño de la colección
@@ -198,7 +198,7 @@ La evaluación de una propiedad de un objeto puede producir a veces un valor ind
  - Booleano: False
  - Cadena: ""
  - Número: 0
- - Fecha: !00-00-00! si la opción "Utilizar el tipo fecha en lugar del formato fecha ISO en los objetos" está activada, de lo contrario ""
+ - Fecha: !00-00-00! Date: !00-00-00! if "Use date type instead of ISO date format in objects" setting is enabled, otherwise ""
  - Hora: 0 (número de ms)
  - Indefinido, Null: sin cambios
 
