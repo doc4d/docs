@@ -25,7 +25,7 @@ Cuando esta propiedad está activa, los comandos [OPEN FONT PICKER](https://doc.
 Ajusta el texto seleccionado para que aparezca más oscuro y pesado.
 
 Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT-STYLE.301-4128244.en.html).
-> Esto es un texto normal.<br/> **Este es un texto en negrita.**
+> This is normal text.<br/> **This is bold text.**
 
 #### Gramática JSON
 
