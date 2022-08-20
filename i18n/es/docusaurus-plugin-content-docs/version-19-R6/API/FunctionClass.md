@@ -69,9 +69,17 @@ Para mayor comodidad, cuando la fórmula se compone de un único método proyect
  var $f : 4D.Function
 
  $f:=Formula(myMethod)
-  //Writing Formula(myMethod($1;$2)) no es necesario
- $text:=$f.call(Null;"Hello";"World") //devuelve "Hello World"
- $text:=$f.call() //devuelve "How are you?"
+  //Writing Formula(myMethod($1;$2)) is not necessary
+ $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
+ $text:=$f.call() //returns "How are you?"
+
+  //myMethod
+ #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
+ If(Count parameters=2)
+    $return:=$param1+" "+$param2
+ Else
+    $return:="How are you?"
+ End if
 
   //myMethod
  #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
@@ -125,7 +133,7 @@ Un objeto `4D.Function` contiene un trozo de código que puede ser ejecutado des
 
 #### Descripción
 
-The `Formula` command <!-- REF #_command_.Formula.Summary -->creates a `4D Function` object based upon the *formulaExp* expression<!-- END REF -->. *formulaExp* puede ser tan simple como un valor único o complejo, como un método proyecto con parámetros.
+The `Formula` command <!-- REF #_command_.Formula.Summary -->creates a `4D Function` object based upon the *formulaExp* expression<!-- END REF -->. .
 
 Tener una fórmula como objeto permite pasarla como parámetro (atributo calculado) a los comandos o a los métodos o ejecutarla desde varios componentes sin necesidad de declararla como "compartida por los componentes y la base de datos local". Cuando se llama, el objeto fórmula se evalúa en el contexto de la base de datos o del componente que lo creó.
 
@@ -256,7 +264,7 @@ Llamar a una fórmula utilizando la notación de objetos:
 
 #### Descripción
 
-The `Formula from string` command <!-- REF #_command_.Formula from string.Summary -->creates a 4D.Function object based upon the *formulaString*<!-- END REF -->.  *formulaString* puede ser tan simple como un valor único o complejo, como un método proyecto con parámetros.
+The `Formula from string` command <!-- REF #_command_.Formula from string.Summary -->creates a 4D.Function object based upon the *formulaString*<!-- END REF -->.  .
 
 Este comando es similar a [`Formula`](#formula), excepto que maneja una fórmula basada en texto. En la mayoría de los casos, se recomienda utilizar el comando `Formula`. `Formula from string` sólo debe utilizarse cuando la fórmula original fue expresada como texto (por ejemplo, almacenada externamente en un archivo JSON). En este contexto, el uso de la sintaxis con tokens es muy aconsejable.
 > Dado que no se puede acceder al contenido de las variables locales por su nombre en el modo compilado, no se pueden utilizar en *formulaString*. Un intento de acceder a una variable local con `Formula from string` dará lugar a un error (-10737).
@@ -307,7 +315,7 @@ El siguiente código creará un diálogo que acepta una fórmula en formato text
 
 #### Descripción
 
-The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. El objeto fórmula puede ser creado con los comandos `Formula` o `Formula from string`.
+The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. .
 
 En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` dentro de la fórmula.
 
@@ -376,7 +384,7 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 #### Descripción
 
-The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. El objeto fórmula puede ser creado con los comandos `Formula` o `Formula from string`.
+The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. .
 
 En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` dentro de la fórmula.
 
