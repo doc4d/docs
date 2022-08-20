@@ -11,7 +11,7 @@ title: Propiedades de los formularios
 Esta propiedad define el esquema de colores para el formulario. This property defines the color scheme for the form. Esto se puede cambiar para el formulario a una de las dos opciones siguientes:
 
 *   dark -- texto claro sobre fondo oscuro
-*   light - texto oscuro en un fondo claro > A defined color scheme can not be overridden by a CSS.
+*   light - dark text on a light background > A defined color scheme can not be overridden by a CSS.
 > El número de caracteres para el título de una ventana está limitado a 31.
 
 #### Gramática JSON
@@ -141,7 +141,7 @@ Cuando se utiliza esta opción, si la ventana se abre utilizando el comando `Ope
 
 *   la página actual,
 *   la posición, el tamaño y la visibilidad de cada objeto del formulario (incluyendo el tamaño y la visibilidad de las columnas de list box).
-> > Esta opción no tiene en cuenta los objetos generados con el comando `OBJECT DUPLICATE`. Para que un usuario pueda recuperar su entorno al utilizar este comando, el desarrollador debe repetir la secuencia de creación, definición y posicionamiento de los objetos.
+> > This option does not take into account objects generated using the `OBJECT DUPLICATE` command. Para que un usuario pueda recuperar su entorno al utilizar este comando, el desarrollador debe repetir la secuencia de creación, definición y posicionamiento de los objetos.
 
 Cuando se selecciona esta opción, la opción [Guardar valor](FormObjects/properties_Object.md#save-value) está disponible para ciertos objetos.
 
