@@ -31,7 +31,7 @@ title: Class
 
 #### 詳細
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. クラス名の大文字・小文字は区別されます。
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
