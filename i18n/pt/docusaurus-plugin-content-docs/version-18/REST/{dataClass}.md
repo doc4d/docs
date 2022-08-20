@@ -297,24 +297,21 @@ Chamada de um método `updateSalary`:
 - com o alcance de **Current selection**
 
 ```4d
- //updateSalary  
-C_REAL($1;$vCount)
+ //updateSalary C_REAL($1;$vCount)
 READ WRITE([Employee])
-$vCount:=0
-FIRST RECORD([Employee])
+$vCount:=0 FIRST RECORD([Employee])
 While (Not(End selection([Employee]))  
  [Employee]salary:=[Employee]salary * $1
     SAVE RECORD([Employee])
     $vCount:=$vCount+1
     NEXT RECORD([Employee])
-End while 
-UNLOAD RECORD([Employee])
+End while UNLOAD RECORD([Employee])
 $0:=New object("updates";$vCount)
 ```
 
 `POST  /rest/Employee/updateSalary/?$filter="salary<1500"`
 
-Datos POST (no corpo da petição): [1.5]
+POST data (in the request body): [1.5]
 
 Resultados:
 
