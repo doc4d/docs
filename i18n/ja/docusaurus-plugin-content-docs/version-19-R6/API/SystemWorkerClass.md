@@ -349,7 +349,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### 詳細
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. とりうる値: "text" または "blob"。
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
@@ -363,7 +363,7 @@ The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contain
 
 #### 詳細
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. このプロパティは [`dataType`](#datatype) が "text" のときにのみ利用できます。
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
@@ -465,7 +465,7 @@ The `.postMessage()` function <!-- REF #SystemWorkerClass.postMessage().Summary 
 
 #### 詳細
 
-The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
+The `.responseError` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all the errors returned, once the request is terminated<!-- END REF -->.
 
 メッセージのデータ型は [`dataType`](#datatype) 属性によって定義されています。
 
@@ -481,7 +481,7 @@ The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contain
 
 #### 詳細
 
-The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains the concatenation of all the errors returned, once the request is terminated<!-- END REF -->.
+The `.terminated` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -500,7 +500,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 #### 詳細
 
-`.terminate()` 関数は、 <!-- REF #SystemWorkerClass.terminate().Summary -->forces the `SystemWorker` to terminate its execution<!-- END REF -->.
+`.terminate()` 関数は、 <!-- REF #SystemWorkerClass.terminate().Summary -->The `.terminate()` function<!-- END REF -->.
 
 この関数は、システムワーカーを終了して実行中のスクリプトに制御を戻す命令を送ります。
 
@@ -514,7 +514,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 #### 詳細
 
-The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
+The `.timeout` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -528,7 +528,7 @@ The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->con
 
 #### 詳細
 
-The `.timeout` property <!-- REF #SystemWorkerClass.timeout.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
+The `.wait()` function <!-- REF #SystemWorkerClass.timeout.Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
