@@ -32,7 +32,7 @@ Pour chaque sélection d'entités stocké dans le cache de 4D Server, les inform
 
 Pour plus d'informations sur la création d'une sélection d'entités, reportez-vous à `$method=entityset`. Si vous souhaitez supprimer la sélection d'entités du cache de 4D Server, utilisez `$method=release`.
 > 4D crée également ses propres sélections d'entités à des fins d'optimisation, de sorte que ceux que vous créez avec `$method=entityset` ne soient pas les seuls à être retournés.
-> Les informations de l'indicateur de progression répertoriées après les sélections d'entités sont utilisées en interne par 4D.
+> **IMPORTANT** If your project is in **Controlled Admin Access Mode**, you must first log into the project as a user in the Admin group.
 
 ### sessionInfo
 
