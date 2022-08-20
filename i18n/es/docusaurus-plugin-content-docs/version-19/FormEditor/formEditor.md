@@ -61,8 +61,8 @@ Puede mostrar u ocultar varios elementos de la interfaz en la página actual del
 | ![](../assets/en/FormEditor/zOrder.png)          | [Orden de entrada](#data-entry-order)                                                                    | Pasa al modo "Orden de entrada", donde es posible ver y cambiar el orden de entrada actual del formulario. Tenga en cuenta que las marcas permiten ver el orden de entrada actual, sin dejar de trabajar en el formulario.                                                                                                                                                |
 | ![](../assets/en/FormEditor/moving.png)          | [Desplazamiento](#moving-objects)                                                                        | Pasa al modo " Desplazamiento ", en el que es posible llegar rápidamente a cualquier parte del formulario utilizando la función de arrastrar y soltar en la ventana. El cursor toma la forma de una mano. Este modo de navegación es especialmente útil cuando se hace zoom en el formulario.                                                                             |
 | ![](../assets/en/FormEditor/zoom.png)            | [Zoom](#zoom)                                                                                            | Permite modificar la escala de visualización del formulario (100% por defecto). Puede pasar al modo "Zoom" haciendo clic en la lupa o pulsando directamente en la barra correspondiente a la escala deseada. Esta función se detalla en la sección anterior.                                                                                                              |
-| ![](../assets/en/FormEditor/alignment.png)       | [Alignement](#aligning-objects)                                                                          | Este botón está asociado a un menú que permite alinear los objetos en el formulario. It is enabled (or not) depending on the objects selected.Available only with CSS Preview None                                                                                                                                                                                        |
-| ![](../assets/en/FormEditor/distribution.png)    | [Distribución](#distributing-objects)                                                                    | Este botón está asociado a un menú que permite repartir los objetos en el formulario. It is enabled (or not) depending on the objects selected.Available only with CSS Preview None                                                                                                                                                                                       |
+| ![](../assets/en/FormEditor/alignment.png)       | [Alignement](#aligning-objects)                                                                          | Este botón está asociado a un menú que permite alinear los objetos en el formulario. It is enabled (or not) depending on the objects selected. Available only with CSS Preview None                                                                                                                                                                                       |
+| ![](../assets/en/FormEditor/distribution.png)    | [Distribución](#distributing-objects)                                                                    | Este botón está asociado a un menú que permite repartir los objetos en el formulario. It is enabled (or not) depending on the objects selected. Available only with CSS Preview None                                                                                                                                                                                      |
 | ![](../assets/en/FormEditor/level.png)           | [Nivel](#layering-objects)                                                                               | Este botón está asociado a un menú que permite cambiar el nivel de los objetos en el formulario. Se activa (o no) en función de los objetos seleccionados.                                                                                                                                                                                                                |
 | ![](../assets/en/FormEditor/group.png)           | [Agrupar/desagrupar](#grouping-objects)                                                                  | Este botón está asociado a un menú que permite agrupar y desagrupar la selección de objetos del formulario. Se activa (o no) en función de los objetos seleccionados.                                                                                                                                                                                                     |
 | ![](../assets/en/FormEditor/displyAndPage.png)   | [Visualización y gestión de páginas](forms.html#form-pages)                                              | Esta área permite pasar de una página de formulario a otra y añadir páginas. Para navegar entre las páginas del formulario, haga clic en los botones de flecha o en el área central y elija la página que desea visualizar en el menú que aparece. Si pulsa el botón flecha derecha mientras se muestra la última página del formulario, 4D le permite añadir una página. |
@@ -151,9 +151,9 @@ Para seleccionar un objeto utilizando la barra de herramientas:
 
 Para seleccionar un objeto utilizando la Lista de propiedades:
 
-1. Choose the object’s name from the Object List drop-down list located at the top of the Property List.Using these two methods, you can select an object that is hidden by other objects or located outside the visible area of the current window. Para deseleccionar un objeto, haga clic fuera del límite del objeto o **Mayúsculas+clic** en el objeto.
+1. Choose the object’s name from the Object List drop-down list located at the top of the Property List. Using these two methods, you can select an object that is hidden by other objects or located outside the visible area of the current window. Para deseleccionar un objeto, haga clic fuera del límite del objeto o **Mayúsculas+clic** en el objeto.
 
-> > También es posible seleccionar objetos haciendo doble clic en la ventana de resultados de la operación "Buscar en diseño".
+> > It is also possible to select objects by double-clicking them in the result window of ""Find in design" operation.
 
 ### Selección de múltiples objetos
 
@@ -191,9 +191,9 @@ La caja de diálogo "Duplicar muchos" aparece cuando se selecciona uno o más ob
 
 ![](../assets/en/FormEditor/duplcateMany.png)
 
-- In the upper area, enter the number of columns and lines (rows) of objects you want to get.For example, if you want three columns and two lines of objects, enter 3 in the Column(s) area and 2 in the Line(s) area. Si desea tres nuevas copias horizontales de un objeto, introduzca 4 en el área Columna(s) y deje el valor por defecto, 1, en el área Línea(s).
+- In the upper area, enter the number of columns and lines (rows) of objects you want to get. For example, if you want three columns and two lines of objects, enter 3 in the Column(s) area and 2 in the Line(s) area. Si desea tres nuevas copias horizontales de un objeto, introduzca 4 en el área Columna(s) y deje el valor por defecto, 1, en el área Línea(s).
 
-- For lines and columns, define the offset that you wish to leave between each copy.The value must be expressed in points. It will be applied to each copy, or copies, in relation to the original object.For example, if you want to leave a vertical offset of 20 points between each object and the height of the source object is 50 points, enter 70 in the column’s “Offset” area.
+- For lines and columns, define the offset that you wish to leave between each copy.The value must be expressed in points. It will be applied to each copy, or copies, in relation to the original object. For example, if you want to leave a vertical offset of 20 points between each object and the height of the source object is 50 points, enter 70 in the column’s “Offset” area.
 
 - Si desea crear una matriz de variables, seleccione la opción **Numerar las variables** y seleccione la dirección en la que se van a numerar las variables, ya sea por línea(s) o por columna(s). Esta opción sólo se activa cuando el objeto seleccionado es una variable. Para más información sobre esta opción, consulte **Duplicar en una matriz** en el *Manual de diseño*.
 
@@ -234,12 +234,12 @@ La agrupación sólo afecta a los objetos en el editor de formularios. Cuando se
 Para agrupar los objetos:
 
 1. Seleccione los objetos que desea agrupar.
-2. Choose **Group** from the Object menu.OR Click the Group button  in the toolbar of the Form editor:![](../assets/en/FormEditor/group.png) 4D marks the boundary of the newly grouped objects with handles. No hay marcas que delimiten ninguno de los objetos individuales del grupo. Ahora, al modificar el objeto agrupado, se modifican todos los objetos que componen el grupo.
+2. Choose **Group** from the Object menu. OR Click the Group button  in the toolbar of the Form editor:![](../assets/en/FormEditor/group.png) 4D marks the boundary of the newly grouped objects with handles. No hay marcas que delimiten ninguno de los objetos individuales del grupo. Ahora, al modificar el objeto agrupado, se modifican todos los objetos que componen el grupo.
 
 Para desagrupar un grupo de objetos:
 
 1. Seleccione el grupo de objetos que desea desagrupar.
-2. Choose **Ungroup** from the **Object** menu.ORClick the **Ungroup** button (variant of the **Group** button) in the toolbar of the Form editor.If **Ungroup** is dimmed, this means that the selected object is already separated into its simplest form.4D marks the boundaries of the individual objects with handles.
+2. Choose **Ungroup** from the **Object** menu. ORClick the **Ungroup** button (variant of the **Group** button) in the toolbar of the Form editor.If **Ungroup** is dimmed, this means that the selected object is already separated into its simplest form.4D marks the boundaries of the individual objects with handles.
 
 ### Alinear objetos
 
@@ -268,7 +268,7 @@ Para mostrar esta caja de diálogo, seleccione los objetos que desee alinear y, 
 
 - In the “Left/Right Alignment” and/or “Top/Bottom Alignment” areas, click the icon that corresponds to the alignment you want to perform.The example area displays the results of your selection.
 
-- To perform an alignment that uses the standard anchor scheme, click **Preview** or **Apply**.In this case 4D uses the object that is the furthest in the alignment’s direction as the anchor and aligns the other objects to that object. For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.OR:To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. En este caso, la posición del objeto de referencia no se alterará.
+- To perform an alignment that uses the standard anchor scheme, click **Preview** or **Apply**.In this case 4D uses the object that is the furthest in the alignment’s direction as the anchor and aligns the other objects to that object. For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor. OR:To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. En este caso, la posición del objeto de referencia no se alterará.
 
 Puede previsualizar los resultados de la alineación haciendo clic en el botón **Previsualización**. Los objetos se alinean entonces en el editor de formularios, pero como la caja de diálogo permanece en el primer plano, aún puede cancelar o aplicar la alineación.
 
@@ -315,7 +315,7 @@ Para distribuir objetos utilizando la caja de diálogo Alinear y Distribuir:
 
 3. In the Left/Right Alignment and/or Top/Bottom Alignment areas, click the standard distribution icon: ![](../assets/en/FormEditor/horizontalDistribution.png)(Standard horizontal distribution icon)The example area displays the results of your selection.
 
-4. To perform a distribution that uses the standard scheme, click **Preview** or *Apply*.In this case 4D will perform a standard distribution, so that the objects are set out with an equal amount of space between them.OR:To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). Esta opción actúa como un interruptor. Si la casilla de selección Distribuir está seleccionada, los iconos situados debajo de ella realizan una función diferente:
+4. To perform a distribution that uses the standard scheme, click **Preview** or *Apply*.In this case 4D will perform a standard distribution, so that the objects are set out with an equal amount of space between them. OR:To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). Esta opción actúa como un interruptor. Si la casilla de selección Distribuir está seleccionada, los iconos situados debajo de ella realizan una función diferente:
 
 - Horizontalmente, los iconos corresponden a las siguientes distribuciones: uniformemente con respecto a los lados izquierdo, central (hor.) y derecho de los objetos seleccionados.
 - Verticalmente, los iconos corresponden a las siguientes distribuciones: uniformemente con respecto a los bordes superiores, centros (vert.) y bordes inferiores de los objetos seleccionados.
@@ -370,7 +370,7 @@ Este párrafo describe la visualización y la modificación del orden de entrada
 
 Para ver o cambiar el orden de entrada:
 
-1. Choose **Entry Order** from the **Form** menu or click on the Entry Order button in the toolbar of the window:![](../assets/en/FormEditor/zOrder.png)The pointer turns into an entry order pointer and 4D draws a line in the form showing the order in which it selects objects during data entry.Viewing and changing the data entry order are the only actions you can perform until you click any tool in the Tools palette.
+1. Choose **Entry Order** from the **Form** menu or click on the Entry Order button in the toolbar of the window:![](../assets/en/FormEditor/zOrder.png)The pointer turns into an entry order pointer and 4D draws a line in the form showing the order in which it selects objects during data entry. Viewing and changing the data entry order are the only actions you can perform until you click any tool in the Tools palette.
 
 2. To change the data entry order, position the pointer on an object in the form and, while holding down the mouse button, drag the pointer to the object you want next in the data entry order.![](../assets/en/FormEditor/entryOrder3.png)4D will adjust the entry order accordingly.
 
