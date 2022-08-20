@@ -122,7 +122,7 @@ Usar a datastore principal do banco de dados 4D:
 
 #### Descrção
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `cs.DataStore` object associated with the *localID* local alias.
+*localID* is a local alias for the session opened on remote datastore. <!-- REF #_command_.Open datastore.Summary -->If *localID* already exists on the application, it is used.<!-- END REF --> Otherwise, a new *localID* session is created when the datastore object is used.
 
 O banco de dados *connectionInfo* 4D deve estar disponível como armazém de dados remoto, ou seja:
 
@@ -132,7 +132,7 @@ O banco de dados *connectionInfo* 4D deve estar disponível como armazém de dad
 
 Se não se encontrar nenhum banco de dados coincidente, `Open datastore` devolve **Null**.
 
-*localID* é um alias local para a sessão aberta no armazém de dados remoto. Se *localID* já existir na aplicação, se utiliza. Em caso contrário, se cria uma nova sessão *localID* quando se utiliza o objeto datastore.
+DataStore</code> object associated with the *localID* local alias. Se *localID* já existir na aplicação, se utiliza. Em caso contrário, se cria uma nova sessão *localID* quando se utiliza o objeto datastore.
 
 Objects available in the `cs. Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
@@ -179,11 +179,11 @@ Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
 
 ```4d
  var $connectTo : Object
- var $remoteDS : cs.DataStore
+ var $remoteDS : cs. DataStore
  $connectTo:=New object("type";"4D Server";"hostname";\"192.168.18.11:4443";\  
   "user";"marie";"password";$pwd;"idleTimeout";70;"tls";True)
  $remoteDS:=Open datastore($connectTo;"students")
- ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
+ ALERT("This remote datastore contains "+String($remoteDS. Students.all().length)+" students")
 ```
 
 #### Exemplo 3
@@ -229,10 +229,10 @@ Um [Datastore](ORDA/dsMapping.md#datastore) é o objeto de interface subministra
 ```4d
  var $emp : cs. Employee
  var $sel : cs. EmployeeSelection
- $emp:=ds. Employee //$emp contiene la dataclass Employee 
- $sel:=$emp.all() //obtém uma seleção de entidades de todos os empregados
+ $emp:=ds. Employee //$emp contains the Employee dataclass
+ $sel:=$emp.all() //gets an entity selection of all employees
 
-  //também pode escrever diretamente:
+  //you could also write directly:
  $sel:=ds. Employee.all()
 ```
 
@@ -364,7 +364,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //o banco de dados está encriptado
+ If($status.isEncrypted) //the database is encrypted
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -420,11 +420,11 @@ Each object in the returned collection has the properties listed in the [`.getRe
 The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
 
 ```4d
-var $ds : 4D.DataStoreImplementation
-var $persons : cs.PersonsSelection
-var $addresses : cs.AddressSelection
-var $p : cs.PersonsEntity
-var $a : cs.AddressEntity
+var $ds : 4D. DataStoreImplementation
+var $persons : cs. PersonsSelection
+var $addresses : cs. AddressSelection
+var $p : cs. PersonsEntity
+var $a : cs. AddressEntity
 var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
@@ -434,19 +434,15 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 // Set context A
 $contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:=""
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / "
-End for each
+$persons:=$ds. Persons.all($contextA)
+$text:="" For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " End for each
 
 // Set context B
 $contextB:=New object("context"; "contextB")
-$addresses:=$ds.Address.all($contextB)
-$text:=""
-For each ($a; $addresses)
-    $text:=$a.zipCode
-End for each
+$addresses:=$ds. Address.all($contextB)
+$text:="" For each ($a; $addresses)
+    $text:=$a.zipCode End for each
 
 // Get all remote contexts (in this case, contextA and contextB)
 $info:=$ds.getAllRemoteContexts()
@@ -483,7 +479,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### Descrção
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Objeto devolvido**
 
@@ -604,7 +600,7 @@ See the example from the [.setRemoteContextInfo()](#example-1-3) section.
 
 #### Descrção
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. Summary -->inicia o registro das petições ORDA do lado do cliente<!-- END REF -->.
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Esta função deve ser chamada em um 4D remoto, do contrário devolve uma coleção vazia. Foi criado para depuração em configurações de cliente/servidor.
 
@@ -863,9 +859,9 @@ You can pass a *pageLength* for a relation attribute which is an entity selectio
 #### Exemplo 1
 
 ```4d
-var $ds : 4D.DataStoreImplementation
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
+var $ds : 4D. DataStoreImplementation
+var $persons : cs. PersonsSelection
+var $p : cs. PersonsEntity
 var $contextA : Object
 var $info : Object
 var $text : Text
@@ -875,14 +871,12 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 // Set context info
 $contextA:=New object("context"; "contextA")
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
+$ds.setRemoteContextInfo("contextA"; $ds. Persons; "firstname, lastname")
 
 // Send requests to the server using a loop
-$persons:=$ds.Persons.all($contextA)
-$text:=""
-For each ($p; $persons)
-    $text:=$p.firstname + " " + $p.lastname
-End for each
+$persons:=$ds. Persons.all($contextA)
+$text:="" For each ($p; $persons)
+    $text:=$p.firstname + " " + $p.lastname End for each
 
 // Check contents of the context
 $info:=$ds.getRemoteContextInfo("contextA")
@@ -909,23 +903,20 @@ persons.lastname, persons.firstname"; "main"; 30)
 #### Example 3 - Listbox
 
 ```4d
-// When the form loads
-Case of
+// When the form loads Case of
     : (Form event code=On Load)
 
         Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
        // Set the attributes of the page context
-        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
+        Form.ds.setRemoteContextInfo("LB"; Form.ds. Persons; "age, gender,\
         children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
-        Form.persons:=Form.ds.Persons.all(Form.settings)
-        // Form.persons is displayed in a list box
-End case
+        Form.persons:=Form.ds. Persons.all(Form.settings)
+        // Form.persons is displayed in a list box End case
 
-// When you get the attributes in the context of the current item:
-Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
+// When you get the attributes in the context of the current item: Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children"
 ```
 
@@ -946,7 +937,7 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 <!-- REF #DataStoreClass.startRequestLog().Syntax -->
 
-**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D.File )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
+**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D. File )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
@@ -980,10 +971,11 @@ Se quiser registras as petições dos clientes ORDA em um arquivo e usar o núme
  var $file : 4D. File
  var $e : cs. PersonsEntity
 
- $file:=File("/LOGS/ORDARequests.txt") //pasta logs 
+ $file:=File("/LOGS/ORDARequests.txt") //logs folder
 
- SET DATABASE PARAMETER(Client Log Recording;1) //ativar o número de sequencia logs global ds.startRequestLog($file)
- $e:=ds. Persons.get(30001) //envia uma petição
+ SET DATABASE PARAMETER(Client Log Recording;1) //to trigger the global log sequence number
+ ds.startRequestLog($file)
+ $e:=ds. Persons.get(30001) //send a request
  ds.stopRequestLog()
  SET DATABASE PARAMETER(Client Log Recording;0)
 ```
