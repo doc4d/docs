@@ -15,7 +15,7 @@ Um valor de Hora pode ser tratado como um número. O número retornado de uma Ho
 
 Uma constante hora está rodeada por sinais de interrogação (?....?).
 
-Uma constante hora se ordena hora:minuto:segundo, com dois pontos (:) para separar cada parte. As horas são especificadas no formato de 24 horas.
+A time literal constant is ordered hour:minute:second, with a colon (:) setting off each part. Times are specified in 24-hour format. As horas são especificadas no formato de 24 horas.
 
 Aqui são exemplos de constantes de tipo hora:
 
