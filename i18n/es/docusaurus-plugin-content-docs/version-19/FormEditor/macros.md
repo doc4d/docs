@@ -67,7 +67,7 @@ Function onInvoke($editor : Object)->$result : Object
   "currentPage"; $editor.editor.currentPage)
 ```
 
-A continuación, puede llamar a la macro: ![](../assets/en/FormEditor/macroex1.png) ![](../assets/en/FormEditor/macroex2.png)
+You can then call the macro: ![](../assets/en/FormEditor/macroex1.png) ![](../assets/en/FormEditor/macroex2.png)
 
 ## Llamar a las macros en el editor de formularios
 
@@ -274,6 +274,10 @@ Function onInvoke($editor : Object)->$result : Object
 
  Else 
   ALERT("Please select a form object.")
+ End if 
+
+ // Notify to 4D the modification
+ $result:=New object("currentPage"; $editor.editor.currentPage)
  End if 
 
  // Notify to 4D the modification
