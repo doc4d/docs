@@ -155,7 +155,7 @@ Para seleccionar un objeto utilizando la Lista de propiedades:
 
 1. Seleccione el nombre del objeto en la lista desplegable de objetos situada en la parte superior de la lista de propiedades. Con estos dos métodos, puede seleccionar un objeto que esté oculto por otros objetos o que se encuentre fuera del área visible de la ventana actual. Para deseleccionar un objeto, haga clic fuera del límite del objeto o **Mayúsculas+clic** en el objeto.
 
-> > También es posible seleccionar objetos haciendo doble clic en la ventana de resultados de la operación "Buscar en diseño".
+> > It is also possible to select objects by double-clicking them in the result window of ""Find in design" operation.
 
 ### Selección de múltiples objetos
 
@@ -195,7 +195,7 @@ La caja de diálogo "Duplicar muchos" aparece cuando se selecciona uno o más ob
 
 - En el área superior, introduzca el número de columnas y líneas de objetos que desea obtener. Por ejemplo, si desea tres columnas y dos líneas de objetos, introduzca 3 en el área Columna(s) y 2 en el área Línea(s). Si desea tres nuevas copias horizontales de un objeto, introduzca 4 en el área Columna(s) y deje el valor por defecto, 1, en el área Línea(s).
 
-- Para las líneas y columnas, defina el desplazamiento que desea aplicar a cada copia. El valor debe expresarse en puntos. It will be applied to each copy, or copies, in relation to the original object.For example, if you want to leave a vertical offset of 20 points between each object and the height of the source object is 50 points, enter 70 in the column’s “Offset” area.
+- Para las líneas y columnas, defina el desplazamiento que desea aplicar a cada copia. El valor debe expresarse en puntos. It will be applied to each copy, or copies, in relation to the original object. For example, if you want to leave a vertical offset of 20 points between each object and the height of the source object is 50 points, enter 70 in the column’s “Offset” area.
 
 - Si desea crear una matriz de variables, seleccione la opción **Numerar las variables** y seleccione la dirección en la que se van a numerar las variables, ya sea por línea(s) o por columna(s). Esta opción sólo se activa cuando el objeto seleccionado es una variable. Para más información sobre esta opción, consulte **Duplicar en una matriz** en el *Manual de diseño*.
 
@@ -271,7 +271,7 @@ Para mostrar esta caja de diálogo, seleccione los objetos que desee alinear y, 
 
 - En las áreas "Alineación izquierda/derecha" y/o "Alineación superior/inferior", haga clic en el icono que corresponde a la alineación que desea realizar.<p>El área de ejemplo muestra los resultados de su selección.</p>
 
-- Para realizar una alineación que utilice el esquema de anclaje estándar, haga clic en **Ver** o **Aplicar**. En este caso, 4D utiliza el objeto que está más lejos en la dirección de la alineación como ancla y alinea los otros objetos a ese objeto. Por ejemplo, si quiere realizar una alineación a la derecha en un conjunto de objetos, el objeto más a la derecha se utilizará como ancla. O:<p>To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. En este caso, la posición del objeto de referencia no se alterará.</p>
+- Para realizar una alineación que utilice el esquema de anclaje estándar, haga clic en **Ver** o **Aplicar**. En este caso, 4D utiliza el objeto que está más lejos en la dirección de la alineación como ancla y alinea los otros objetos a ese objeto. Por ejemplo, si quiere realizar una alineación a la derecha en un conjunto de objetos, el objeto más a la derecha se utilizará como ancla. For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.<p>To align objects to a specific object, select the **Align on** option and select the object to which you want the other objects to be aligned from the object list. En este caso, la posición del objeto de referencia no se alterará.</p>
 
 Puede previsualizar los resultados de la alineación haciendo clic en el botón **Previsualización**. Los objetos se alinean entonces en el editor de formularios, pero como la caja de diálogo permanece en el primer plano, aún puede cancelar o aplicar la alineación.
 
@@ -318,7 +318,7 @@ Para distribuir objetos utilizando la caja de diálogo Alinear y Distribuir:
 
 3. En las áreas Alineación izquierda/derecha y/o Alineación superior/inferior, haga clic en el icono de distribución estándar: ![](../assets/en/FormEditor/horizontalDistribution.png) <p>(Icono de distribución horizontal estándar)</p>El área de ejemplo muestra los resultados de su selección.
 
-4. Para efectuar una repartición estándar que utilice el esquema estándar, haga clic en **Previsualización** o *Aplicar*.<p>En este caso, 4D realizará una distribución estándar, de modo que los objetos se dispongan con la misma cantidad de espacio entre ellos.</p>O:<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). Esta opción actúa como un interruptor. Si la casilla de selección Distribuir está seleccionada, los iconos situados debajo de ella realizan una función diferente:</p>
+4. Para efectuar una repartición estándar que utilice el esquema estándar, haga clic en **Previsualización** o *Aplicar*.<p>En este caso, 4D realizará una distribución estándar, de modo que los objetos se dispongan con la misma cantidad de espacio entre ellos.</p>For instance, if you want to perform a right alignment on a set of objects, the rightmost object will be used as the anchor.<p>To execute a specific distribution, select the **Distribute** option (for example if you want to distribute the objects based on the distance to their right side). Esta opción actúa como un interruptor. Si la casilla de selección Distribuir está seleccionada, los iconos situados debajo de ella realizan una función diferente:</p>
 
 - Horizontalmente, los iconos corresponden a las siguientes distribuciones: uniformemente con respecto a los lados izquierdo, central (hor.) y derecho de los objetos seleccionados.
 - Verticalmente, los iconos corresponden a las siguientes distribuciones: uniformemente con respecto a los bordes superiores, centros (vert.) y bordes inferiores de los objetos seleccionados.
