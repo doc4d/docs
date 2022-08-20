@@ -127,9 +127,8 @@ En el siguiente ejemplo, un puntero a cada campo de cada tabla de la base se alm
 Siempre que se haya inicializado este array de dos dimensiones, se pueden obtener los punteros a los campos de una tabla concreta de la siguiente manera:
 
 ```4d
-  // Obtener los punteros a los campos para la tabla que se muestra actualmente en la pantalla:
- COPY ARRAY(◊apFields{Table(Current form table)};$apTheFieldsIamWorkingOn)
-  // Inicializar los campos booleanos y de fecha
+  // Get the pointers to the fields for the table currently displayed at the screen: COPY ARRAY(◊apFields{Table(Current form table)};$apTheFieldsIamWorkingOn)
+  // Initialize Boolean and Date fields
  For($vlElem;1;Size of array($apTheFieldsIamWorkingOn))
     Case of
        :(Type($apTheFieldsIamWorkingOn{$vlElem}->)=Is date)
