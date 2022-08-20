@@ -8,7 +8,7 @@ Trie les données retournées par l'attribut et l'ordre de tri définis (par exe
 
 ## Description
 
-`$orderby` ordonne les entités retournées par la requête REST. Pour chaque attribut, définissez l'ordre sur `ASC` (ou `asc`) pour l'ordre croissant et sur `DESC` (`desc`) pour l'ordre décroissant. Par défaut, les données sont triées par ordre croissant. Par défaut, les données sont triées par ordre croissant.
+`$orderby` ordonne les entités retournées par la requête REST. Pour chaque attribut, définissez l'ordre sur `ASC` (ou `asc`) pour l'ordre croissant et sur `DESC` (`desc`) pour l'ordre décroissant. Par défaut, les données sont triées par ordre croissant. By default, the data is sorted in ascending order.
 
 
 ## Exemple
