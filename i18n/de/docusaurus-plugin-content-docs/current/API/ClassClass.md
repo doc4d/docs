@@ -36,7 +36,7 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 #### Beschreibung
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Es wird zwischen Groß- und Kleinschreibung unterschieden.
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. .
 
 This property is **read-only**.
 
