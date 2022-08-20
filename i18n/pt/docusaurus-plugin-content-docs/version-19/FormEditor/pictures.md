@@ -9,7 +9,7 @@ title: Imagens
 
 4D integra a gestão nativa dos formatos de imagem. Isso significa que imagens serão mostradas e armazenadas em seu formato original, sem qualquer interpretação em 4D. As funcionalidades específicas dos formatos diferentes (sombreado, áreas transparentes, etc) serão retidas quando forem copiadas e coladas, e serão exibidas sem alteração. Essa compatibilidade nativa é válida para todas as imagens armazenadas nos formulários de 4D: [imagens estáticas](FormObjects/staticPicture.md) coladas no modo Desenho, imagens coladas em [objetos de entrada](FormObjects/input_overview.md) em execução, etc.
 
-Os formatos de imagem mais comuns são compatíveis com ambas as plataforma: .jpeg, .gif, .png, .tiff, .bmp, etc. Em macOS, o formato pdf também está disponível para codificar e decodificar. Em macOS, o formato pdf também está disponível para codificar e decodificar.
+The most common picture formats are supported of both platforms: .jpeg, .gif, .png, .tiff, .bmp, etc. On macOS, the .pdf format is also available for encoding and decoding. Em macOS, o formato pdf também está disponível para codificar e decodificar.
 
 > The full list of supported formats varies according to the operating system and the custom codecs that are installed on the machines. To find out which codecs are available, you must use the `PICTURE CODEC LIST` command (see also the [picture data type](Concepts/dt_picture.md) description).
 
@@ -49,7 +49,7 @@ High resolution pictures with the @nx convention can be used in the following ob
 * [Cabeçalhos de list box](FormObjects/listbox_overview.md#list-box-headers)
 * [Menu icons](Menus/properties.md#item-icon)
 
-4D automatically prioritizes pictures with the highest resolution. <br/><br/> **Example**: When using two screens (one high resolution display, one standard display) and you move a form from one screen to another, 4D  automatically renders the highest possible resolution of the picture. Even if a command or property specifies *circle.png*, *circle@3x.png* will be used (if it exists).
+4D automatically prioritizes pictures with the highest resolution. 4D automatically prioritizes pictures with the highest resolution. Even if a command or property specifies *circle.png*, *circle@3x.png* will be used (if it exists).
 > Note that resolution prioritization occurs only for displaying pictures onscreen, there is no automatic prioritization made when printing.
 
 ### DPI (macOS and Windows)
