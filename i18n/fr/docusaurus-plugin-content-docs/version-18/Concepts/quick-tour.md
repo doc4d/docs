@@ -47,7 +47,7 @@ Même si cela est généralement déconseillé, vous pouvez créer des variables
 MyOtherDate:=Current date+30
 ```
 
-La ligne de code indique "MyOtherDate obtient la date actuelle plus 30 jours." Cette ligne crée la variable, lui attribue à la fois le type de date (temporaire) et un contenu. Une variable créée par affectation est interprétée comme étant non typée, c'est-à-dire qu'elle peut être affectée à d'autres types dans d'autres lignes, puis modifie le type de manière dynamique. Une variable typée avec `C_XXX` ne peut pas changer le type. En mode compilé, le type ne peut jamais être modifié, quelle que soit la manière dont la variable a été créée.
+The line of code reads “MyOtherDate gets the current date plus 30 days.” This line declares the variable, assigns it with both the (temporary) date type and a content. Cette ligne crée la variable, lui attribue à la fois le type de date (temporaire) et un contenu. Une variable créée par affectation est interprétée comme étant non typée, c'est-à-dire qu'elle peut être affectée à d'autres types dans d'autres lignes, puis modifie le type de manière dynamique. Une variable typée avec `C_XXX` ne peut pas changer le type. En mode compilé, le type ne peut jamais être modifié, quelle que soit la manière dont la variable a été créée.
 
 ## Commandes
 
@@ -171,7 +171,7 @@ A noter que si la valeur de la propriété de l'objet est un objet qui encapsule
 ```
 $f:=New object
 $f.message:=New formula(ALERT("Hello world!"))
-$f.message() //affiche "Hello world!"
+$f.message() //displays "Hello world!"
 $f.message() //affiche "Hello world!"
 ```
 
@@ -185,7 +185,7 @@ myColl[3]  //accède au 4ème élément de la collection
 
 ## Opérateurs
 
-Lorsque vous programmez avec 4D, il est rare que vous ayez simplement besoin de données “brutes”. Le plus souvent, il sera nécessaire de traiter ces données d'une manière ou d'une autre. Vous effectuez ces calculs avec des opérateurs. Les opérateurs, en général, prennent deux valeurs et effectuent avec elles une opération dont le résultat est une troisième valeur. Vous connaissez déjà la plupart des opérateurs. Par exemple, 1 + 2 utilise l’opérateur d’addition (ou signe plus) pour faire la somme de deux nombres, et le résultat est 3. Le tableau ci-dessous présente quelques opérateurs courants :
+Lorsque vous programmez avec 4D, il est rare que vous ayez simplement besoin de données “brutes”. Le plus souvent, il sera nécessaire de traiter ces données d'une manière ou d'une autre. Vous effectuez ces calculs avec des opérateurs. Les opérateurs, en général, prennent deux valeurs et effectuent avec elles une opération dont le résultat est une troisième valeur. Vous connaissez déjà la plupart des opérateurs. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3.
 
 | Opérateur | Opération      | Exemple   |
 | --------- | -------------- | --------- |
@@ -210,7 +210,7 @@ Pour parler simplement, les expressions retournent une valeur. En fait, lorsque 
 
 Les expressions peuvent être constituées de presque tous les éléments du langage : commandes, opérateurs, variables, champs, propriétés d'objets et éléments de collection. Vous utilisez des expressions pour écrire des lignes de code, qui sont à leur tour utilisées pour construire des méthodes. Des expressions sont employées à chaque fois que le langage 4D a besoin de connaître la valeur d’une donnée.
 
-Les expressions sont rarement «autonomes». Il existe plusieurs endroits dans 4D où une expression peut être utilisée seule. Cela inclut :
+Les expressions sont rarement «autonomes». Expressions rarely “stand alone.” There are several places in 4D where an expression can be used by itself. Cela inclut :
 
 - Editeur de formule (apply formula, query with formula, order by formula)
 - La commande `EXECUTE FORMULA`
