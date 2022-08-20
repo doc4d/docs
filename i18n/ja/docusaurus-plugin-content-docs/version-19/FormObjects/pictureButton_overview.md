@@ -17,7 +17,7 @@ title: ピクチャーボタン
   | ロールオーバー効果     | switchWhenRollover     | true  |
   | 無効時に最終フレームを使用 | useLastFrameAsDisabled | true  |
 
-* 複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 With [Picture Pop-up Menus](picturePopupMenu_overview.md), all choices are displayed simultaneously (as the items in the pop-up menu), while the picture button displays the choices consecutively (as the user clicks the button). Here is an example of a picture button. たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:
+* 複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:
 
 ![](../assets/en/FormObjects/button_pictureButton.png)
 
@@ -53,7 +53,7 @@ title: ピクチャーボタン
 * [マウス押下中は自動更新](properties_Animation.md#switch-continuously-on-clicks)
 * [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
 * [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-> ピクチャーボタンに [関連付けた変数](properties_Object.md#変数あるいは式) は、ピクチャーのサムネールテーブルで現在表示されているピクチャーのインデックス番号を返します。 このテーブル内のピクチャー番号は 0 から始まります。
+> [Use Last frame as disabled](properties_Animation.md#use-last-frame-as-disabled) > The [associated variable](properties_Object.md#variable-or-expression) of the picture button returns the index number, in the thumbnail table, of the current picture displayed. このテーブル内のピクチャー番号は 0 から始まります。
 
 ## プロパティ一覧
 
