@@ -243,7 +243,7 @@ SAVE RECORD($tablepointer->)
 
 ## Tabellen und Felder verwenden
 
-Eine Komponente kann keine Tabellen und Felder verwenden, die in der 4D Struktur des Matrix Projekts definiert wurden. Sie können jedoch externe Datenbanken erstellen und dann gemäß Ihren Anforderungen deren Tabellen und Felder verwenden. Sie können externe Datenbanken mit SQL erstellen und verwalten. Eine externe Datenbank ist vom 4D Hauptprojekt unabhängig, Sie können aber vom 4D Hauptprojekt aus damit arbeiten. Der Einsatz einer externen Datenbank bedeutet, dass sie temporär die aktuelle Datenbank ist, d. h. die Zieldatenbank für die von 4D ausgeführten SQL Anfragen. Sie erstellen externe Datenbanken mit dem SQL Befehl `CREATE DATABASE`.
+Eine Komponente kann keine Tabellen und Felder verwenden, die in der 4D Struktur des Matrix Projekts definiert wurden. Sie können jedoch externe Datenbanken erstellen und dann gemäß Ihren Anforderungen deren Tabellen und Felder verwenden. Sie können externe Datenbanken mit SQL erstellen und verwalten. Eine externe Datenbank ist vom 4D Hauptprojekt unabhängig, Sie können aber vom 4D Hauptprojekt aus damit arbeiten. Using an external database means temporarily designating this database as the current database, in other words, as the target database for the SQL queries executed by 4D. You create external databases using the SQL `CREATE DATABASE` command. Sie erstellen externe Datenbanken mit dem SQL Befehl `CREATE DATABASE`.
 
 ### Beispiel
 
@@ -340,7 +340,7 @@ Components can use resources located in the Resources folder of the component.
 
 Automatische Mechanismen greifen: Die Komponente lädt automatisch die XLIFF Dateien, die in ihrem Ordner Resources gefunden werden.
 
-In einem Host Projekt mit einer oder mehreren Komponenten haben jede Komponente sowie die Host Projekte ihren eigenen "Ressourcen String.” Ressourcen sind auf die verschiedenen Projekte verteilt: Sie können nicht von Komponente B oder dem Host Projekt aus auf die Ressourcen von Komponente A zugreifen.
+In einem Host Projekt mit einer oder mehreren Komponenten haben jede Komponente sowie die Host Projekte ihren eigenen "Ressourcen String.” In a host project containing one or more components, each component as well as the host projects has its own “resources string.” Resources are partitioned between the different projects: it is not possible to access the resources of component A from component B or the host project.
 
 
 ## Executing initialization code
