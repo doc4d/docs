@@ -132,7 +132,7 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind
 
 #### Descripción
 
-The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStructure.Summary -->*EmailBodyPart* object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. Ver la sección [Gestión del cuerpo](#handling-body-part).
+The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStructure.Summary -->*EmailBodyPart* object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. .
 
 El objeto `.bodyStructure` contiene las siguientes propiedades:
 
@@ -156,7 +156,7 @@ El objeto `.bodyStructure` contiene las siguientes propiedades:
 
 #### Descripción
 
-The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. Ver la sección [Gestión del cuerpo](#handling-body-part).
+The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. .
 
 El objeto `.bodyValues` contiene las siguientes propiedades:
 
@@ -233,7 +233,7 @@ Cada objeto de la colección de encabezados puede contener las siguientes propie
 
 #### Descripción
 
-The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. Ver la sección [Gestión del cuerpo](#handling-body-part).
+The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. .
 
 ## .id
 
@@ -393,7 +393,7 @@ The `.subject` property contains the <!-- REF #EmailObjectClass.subject.Summary 
 
 #### Descripción
 
-The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. Ver la sección [Gestión del cuerpo](#handling-body-part).
+The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. .
 
 ## .to
 
@@ -541,26 +541,27 @@ $mail:=New object
 // Creación de un correo
 $mail.from:="tsales@massmarket.com"
 $mail.subject:="Terrific Sale! This week only!"
-This week only!"
 $mail.textBody:="Text format email"
 $mail.htmlBody:="<html><body>HTML format email</body></html>"
 $mail.to:=New collection
 $mail.to.push(New object ("email";"noreply@4d.com"))
 $mail.to.push(New object ("email";"test@4d.com"))
 
-// transforma el objeto mail en MIME
+// transform the mail object in MIME
 $mime:=MAIL Convert to MIME($mail)
 
-// Contenidos de $mime:
+// Contents of $mime:
 // MIME-Version: 1.0
-// Date: Thu, 11 Oct 2018 15:42:25 GMT
+// Date:
+Thu, 11 Oct 2018 15:42:25 GMT
 // Message-ID: <7CA5D25B2B5E0047A36F2E8CB30362E2>
 // Sender: tsales@massmarket.com
 // From: tsales@massmarket.com
 // To: noreply@4d.com
 // To: test@4d.com
 // Content-Type: multipart/alternative; boundary="E0AE5773D5E95245BBBD80DD0687E218"
-// Subject: This week only!
+// Subject: Terrific Sale!
+This week only!
 //
 // --E0AE5773D5E95245BBBD80DD0687E218
 // Content-Type: text/plain; charset="UTF-8"
