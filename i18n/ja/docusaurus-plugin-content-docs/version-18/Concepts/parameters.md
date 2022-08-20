@@ -85,7 +85,7 @@ NewPhrase:=Uppercase4("This is good.")
 
 変数 *NewPhrase* には“THIS is good.” が格納されます。
 
-戻り値 `$0` はサブルーチン内のローカル変数です。 したがって、サブルーチン内で通常のローカル変数のように使用できます。 たとえば、前述の `DO SOMETHING` メソッドの例において、`$0` は最初に大文字に変換した `$1` の値を割り当てられ、その後 `ALERT` コマンドの引数として使われました。 このように、サブルーチン内の他のローカル変数と同じように `$0` を使うことができます。 サブルーチン終了時に、その時点での `$0` の値を呼び出し元のメソッドに戻すのは 4Dがおこないます。
+戻り値 `$0` はサブルーチン内のローカル変数です。 したがって、サブルーチン内で通常のローカル変数のように使用できます。 It can be used as such within the subroutine. このように、サブルーチン内の他のローカル変数と同じように `$0` を使うことができます。 サブルーチン終了時に、その時点での `$0` の値を呼び出し元のメソッドに戻すのは 4Dがおこないます。
 
 
 ## パラメーターの宣言
@@ -143,16 +143,16 @@ C_OBJECT($3)
 
 パラメーターの宣言は次のコンテキストにおいても必須となります (これらのコンテキストは "Compiler" メソッドによる一括宣言をサポートしません)。
 
-- データベースメソッド たとえば、`On Web Connection データベースメソッド` は 6つのテキスト型の引数 $1 〜 $6 を受け取ります。 たとえすべての引数を使用しない場合でも、データベースメソッドの先頭で次のように宣言しなくてはなりません:
+- Database methods For example, the `On Web Connection Database Method` receives six parameters, $1 to $6, of the data type Text. たとえすべての引数を使用しない場合でも、データベースメソッドの先頭で次のように宣言しなくてはなりません:
 
 ```4d
 // On Web Connection
 C_TEXT($1;$2;$3;$4;$5;$6)
 ```
 
-- トリガー トリガーの結果である $0 パラメーター (倍長整数) は、明確に定義されていなければコンパイラーによって型指定されます。 定義する場合は、トリガーの中でおこなう必要があります。
+- Triggers The $0 parameter (Longint), which is the result of a trigger, will be typed by the compiler if the parameter has not been explicitly declared. 定義する場合は、トリガーの中でおこなう必要があります。
 
-- `On Drag Over` フォームイベントを受け入れるオブジェクト `On Drag Over` フォームイベントの結果である $0 パラメーター (倍長整数) は、明確に定義されていなければコンパイラーが型を決定します。 定義する場合は、オブジェクトメソッドの中でおこなう必要があります。 **注:** コンパイラーは $0 を初期化しません。 したがって、`On Drag Over` フォームイベントを使用したら、直ちに $0 を初期化しなければなりません。 例:
+- Form objects that accept the `On Drag Over` form event The $0 parameter (Longint), which is the result of the `On Drag Over` form event, is typed by the compiler if the parameter has not been explicitly declared. 定義する場合は、オブジェクトメソッドの中でおこなう必要があります。 **注:** コンパイラーは $0 を初期化しません。 したがって、`On Drag Over` フォームイベントを使用したら、直ちに $0 を初期化しなければなりません。 例:
 ```4d
  C_LONGINT($0)
  If(Form event=On Drag Over)
@@ -401,6 +401,6 @@ APPEND TEXT(vtSomeText;"";$wpArea) // メッセージを表示して、 $wpArea 
  C_LONGINT(${4})
 ```
 
-このコマンドは、4番目以降に間接参照されるすべての引数のデータ型が倍長整数であることを意味します。 $1、$2、$3には、いかなるデータ型も使用できますが、 $2を間接参照した場合には、間接参照の型宣言の影響を受けます。 このため、たとえば $2 が実数であっても、間接参照されれば倍長整数と見なされます。
+このコマンドは、4番目以降に間接参照されるすべての引数のデータ型が倍長整数であることを意味します。 $1、$2、$3には、いかなるデータ型も使用できますが、 $2を間接参照した場合には、間接参照の型宣言の影響を受けます。 $1, $2 and $3 can be of any data type.
 
 **注:** 宣言に使用する数値は変数ではなく、定数でなくてはなりません。
