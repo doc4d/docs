@@ -56,17 +56,17 @@ Any dataclass attribute is available as a property of an entity, which <!-- REF 
 O tipo de valor do atributo depende do tipo do atributo [atributo](DataClassAttributeClass.md#kind) (relação ou armazenamento):
 
 * If *attributeName* kind is **storage**: `.attributeName` returns a value of the same type as *attributeName*.
-* Se o tipo *attributeName*  for **relatedEntity**: `.attributeName` retorna a entidade relacionada. Valores da entidade relacionada estão diretamente disponíveis através de propriedades em cascata, por exemplo "myEntity.employer.employees\[0].lastname".
-* Se o tipo *attributeName* for **relatedEntities**: `.attributeName` retorna uma nova seleção de entidade relacionada a entidades. Se eliminam os duplicados (se devolve uma seleção de entidades desordenada).
+* If *attributeName* kind is **relatedEntity**: `.attributeName` returns the related entity. Valores da entidade relacionada estão diretamente disponíveis através de propriedades em cascata, por exemplo "myEntity.employer.employees\[0].lastname".
+* If *attributeName* kind is **relatedEntities**: `.attributeName` returns a new entity selection of related entities. Se eliminam os duplicados (se devolve uma seleção de entidades desordenada).
 
 #### Exemplo
 
 ```4d
- var $myEntity : cs.EmployeeEntity
- $myEntity:=ds.Employee.new() //Criar uma nova entidade
- $myEntity.name:="Dupont" // atribuir 'Dupont' ao atributo 'name'
- $myEntity.firstname:="John" //atribuir 'John' ao atributo 'firstname'
- $myEntity.save() //salvar a entidade
+ var $myEntity : cs. EmployeeEntity
+ $myEntity:=ds. Employee.new() //Create a new entity
+ $myEntity.name:="Dupont" // assign 'Dupont' to the 'name' attribute
+ $myEntity.firstname:="John" //assign 'John' to the 'firstname' attribute
+ $myEntity.save() //save the entity
 ```
 
 
@@ -85,7 +85,7 @@ O tipo de valor do atributo depende do tipo do atributo [atributo](DataClassAttr
 
 <!-- REF #EntityClass.clone().Syntax -->
 
-**.clone()** : 4D.Entity<!-- END REF -->
+**.clone()** : 4D. Entity<!-- END REF -->
 
 
 <!-- REF #EntityClass.clone().Params -->
@@ -104,11 +104,11 @@ Esta função só pode ser usada com entidades já salvas no banco de dados. Ele
 #### Exemplo
 
 ```4d
- var $emp; $empCloned : cs.EmployeeEntity
- $emp:=ds.Employee.get(672)
+ var $emp; $empCloned : cs. EmployeeEntity
+ $emp:=ds. Employee.get(672)
  $empCloned:=$emp.clone()
 
- $emp.lastName:="Smith" //as atualizações realizadas em $emp não são realizadas em $empCloned
+ $emp.lastName:="Smith" //Updates done on $emp are not done on $empCloned
 
 ```
 
@@ -583,8 +583,8 @@ O seguinte código genérico duplica qualquer entidade:
   //duplicate_entity method
   //duplicate_entity($entity)
 
- #DECLARE($entity : 4D.Entity)  
- var $entityNew : 4D.Entity
+ #DECLARE($entity : 4D. Entity)  
+ var $entityNew : 4D. Entity
  var $status : Object
 
  $entityNew:=$entity.getDataClass().new() //create a new entity in the parent dataclass
@@ -671,15 +671,15 @@ Se a entidade não pertence à seleção de uma entidade, a função retorna Nul
 #### Exemplo
 
 ```4d
- var $emp : cs.ColaboradoreEntity
- var $employees; $employees2 : cs.FuncionárioSeleção
- $emp:=ds.Empregado. et(672) // Esta entidade não pertence a nenhuma entidade selecionada
- $employees:=$emp. etSelection() // $employees é Nulo
+ var $emp : cs. EmployeeEntity
+ var $employees; $employees2 : cs. EmployeeSelection
+ $emp:=ds. Employee.get(672) // This entity does not belong to any entity selection
+ $employees:=$emp.getSelection() // $employees is Null
 
- $employees2:=ds. Colaborador. uery("Sobrenome=:1"; Punir") ///Esta seleção de entidade contém 6 entidades
- $emp:=$employees2[0]  // Esta entidade pertence à uma seleção de entidade
+ $employees2:=ds. Employee.query("lastName=:1";"Smith") //This entity selection contains 6 entities
+ $emp:=$employees2[0]  // This entity belongs to an entity selection
 
- ALERT("A seleção da entidade contém "+String($emp. entidades etSelection().length)+"")
+ ALERT("The entity selection contains "+String($emp.getSelection().length)+" entities")
 ```
 
 
@@ -768,14 +768,14 @@ O valor resultante é incluído entre 0 e o comprimento da selecção da entidad
 #### Exemplo
 
 ```4d
- var $employees : cs.EmployeeSelection
- var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") //Esta entity selection contiene 3 entidades
- $employee:=$employees[1] //Esta entidade pertence a uma entity selection
- ALERT("O índice da entidade em sua própria seleção de entidade é "+String($employee.indexOf())) //1
+ var $employees : cs. EmployeeSelection
+ var $employee : cs. EmployeeEntity
+ $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
+ $employee:=$employees[1] //This entity belongs to an entity selection
+ ALERT("The index of the entity in its own entity selection is "+String($employee.indexOf())) //1
 
- $employee:=ds.Employee.get(725) //Esta entidade não pertence a uma seleção de entidades
- ALERT("O índice da entidade é "+String($employee.indexOf())) // -1
+ $employee:=ds. Employee.get(725) //This entity does not belong to an entity selection
+ ALERT("The index of the entity is "+String($employee.indexOf())) // -1
 ```
 
 
@@ -804,7 +804,7 @@ O valor resultante é incluído entre 0 e o comprimento da selecção da entidad
 
 #### Descrção
 
-The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore<!-- END REF -->. senão devolve false
+The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore<!-- END REF -->. .
 
 #### Exemplo
 
@@ -851,11 +851,11 @@ Se a entidade não pertence a nenhuma seleção de entidade existente (ex: [.get
 #### Exemplo
 
 ```4d
- var $employees : cs.ColaboradoreSelection
- var $employee; $lastEmployee : cs.ColaboradoreEntity
- $employees:=ds.Empregado. uery("Sobrenome = :1";"H@") //Esta seleção da entidade contém 3 entidades
+ var $employees : cs. EmployeeSelection
+ var $employee; $lastEmployee : cs. EmployeeEntity
+ $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
  $employee:=$employees[0]
- $lastEmployee:=$employee. ast() //$lastEmployee é a última entidade da seleção de $employees entidade
+ $lastEmployee:=$employee.last() //$lastEmployee is the last entity of the $employees entity selection
 ```
 
 
@@ -985,7 +985,7 @@ Exemplo com `dk reload se o selo mudou a opção`:
 
 <!-- REF #EntityClass.next().Syntax -->
 
-**.next()** : 4D. Entity<!-- END REF -->
+|<!-- END REF -->
 
 
 <!-- REF #EntityClass.next().Params -->
@@ -1006,9 +1006,9 @@ Se não houver entidade seguinte válida na selecção da entidade (ou seja, se 
 ```4d
  var $employees : cs. EmployeeSelection
  var $employee; $nextEmployee : cs. EmployeeEntity
- $employees:=ds. Employee.query("lastName = :1";"H@") //Esta seleção de entidade contém três entidades
+ $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
  $employee:=$employees[0]
- $nextEmployee:=$employee.next() //$nextEmployee é a segunda entidade da seleção de entidades $employees
+ $nextEmployee:=$employee.next() //$nextEmployee is the second entity of the $employees entity selection
 
 ```
 
@@ -1049,9 +1049,9 @@ Se não houver nenhuma entidade anterior válida na seleção da entidade (ou se
 ```4d
  var $employees : cs. EmployeeSelection
  var $employee; $previousEmployee : cs. EmployeeEntity
- $employees:=ds. Employee.query("lastName = :1";"H@") //Esta seleção de entidades contém 3 entidades
+ $employees:=ds. Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
  $employee:=$employees[1]
- $previousEmployee:=$employee.previous() //$previousEmployee é a primeira entidade da seleção de entidades $employees
+ $previousEmployee:=$employee.previous() //$previousEmployee is the first entity of the $employees entity selection
 ```
 
 
@@ -1096,7 +1096,7 @@ O objeto retornado por `.reload( )` contém as seguintes propriedades:
 
 | Constante                                 | Value | Comentário                                                                                                                                                                                                        |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). a entidade foi eliminada e substituída por outra com outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>***statusText associado***: "a entidade já não existe" |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>***statusText associado***: "a entidade já não existe" |
 | `dk status serious error`                 | 4     | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc.<br/>***Texto status associado***: "Outro erro"                                           |
 
 #### Exemplo
@@ -1190,7 +1190,7 @@ The following values can be returned in the `status` and `statusText` properties
 | Constante                                 | Value | Comentário                                                                                                                                                                                                                                                        |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.**Associated statusText**: "Auto merge failed"                                                                                                              |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). a entidade foi eliminada e substituída por outra com outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>**Associated statusText**: "Entity doesnot exist anymore"                                              |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>**Associated statusText**: "Entity doesnot exist anymore"                                              |
 | `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.**Associated statusText**: "Already locked"                                                                                                                                                                            |
 | `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.**Associated statusText**: "Other error"                                                                                                                               |
 | `dk status stamp has changed`             | 2     | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).<br/><li>com `.save( )`: erro apenas se a opção `dk auto merge' não for utilizada</li><li>com `.drop( )`: erro apenas se a opção `dk force drop if stamp changed' não for utilizada</li><li>com `.lock( )`: erro apenas se a opção `dk reload if stamp changed` não for usada</li><br/>**Associated statusText**: "Stamp has changed" |
