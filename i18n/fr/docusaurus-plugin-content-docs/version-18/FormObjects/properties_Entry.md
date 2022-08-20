@@ -100,7 +100,7 @@ Ce tableau décrit les filtres de saisie du menu de sélection :
 | &@                              | Ne permet que la saisie de caractères alphanumériques. Pas de caractères spéciaux.                                                                          |
 | ~a##                            | State name abbreviation (e.g., CA). Permet la saisie de deux lettres, mais les transforme en caractères majuscules.                                         |
 | !0&9##/##/##                    | Filtre standard de saisie des dates. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre.                                        |
-| !0&9 Day: ## Month: ## Year: ## | Filtre personnalisé de saisie de date. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre. Limited to hours and minutes.        |
+| !0&9 Day: ## Month: ## Year: ## | Time entry format. Affiche des zéros aux emplacements de saisie. Permet la saisie de tout chiffre. Limited to hours and minutes.                            |
 | !0&9##:##                       | Filtre de saisie d’heure. Limited to hours and minutes. Affiche des zéros aux emplacements de saisie. Affiche des zéros aux emplacements de saisie.         |
 | !0&9## Hrs ## Mins ## Secs      | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Allow any two numbers before each word.                                             |
 | !0&9Hrs: ## Mins: ## Secs: ##   | Filtre de saisie d’heure. Affiche des zéros aux emplacements de saisie. Allow any two numbers after each word.                                              |
@@ -279,7 +279,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 #### Objets pris en charge
 
-[Bouton](button_overview.md) - [Case à cocher](checkbox_overview.md) - [Bouton image](pictureButton_overview.md) - [Bouton radio](radio_overview.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
