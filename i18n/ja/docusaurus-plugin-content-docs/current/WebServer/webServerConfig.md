@@ -339,13 +339,13 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 
 #### IPv6 のサポートについて
 
-*   **TCPポートが使用済みでも警告は出ません**<br/> サーバーが応答する IPアドレスが "任意" に設定されていた場合、TCPポートが他のアプリケーションで使用されていても、それはサーバー起動時に指摘されません。 IPv6 アドレスのポートが空いているため、この場合 4D Server はどのようなエラーも検知しません。 しかしながら、マシンの IPv4アドレスを使用、またはローカルアドレス 127.0.0.1 を使用してアクセスすることは不可能です。
+*   **No warning when TCP port is occupied**<br/> When the server is set to respond on "Any" IP addresses, if the TCP port is being used by another application, this is not indicated when the server is started. IPv6 アドレスのポートが空いているため、この場合 4D Server はどのようなエラーも検知しません。 しかしながら、マシンの IPv4アドレスを使用、またはローカルアドレス 127.0.0.1 を使用してアクセスすることは不可能です。
 
 定義されたポートで 4D Server が反応していないようであれば、サーバーマシンで [::1] のアドレスを試してみてください (IPv6 における 127.0.0.1 と同義です。 他のポート番号をテストするには [:portNum] を追加してください)。 4D が応答するようであれば、IPv4 のポートを他のアプリケーションが使用している可能性が高いです。
 
-*   **IPv4-マップされた IPv6アドレス**<br/> プロセスを標準化するために、4D では IPv4アドレスの標準ハイブリッド表示を IPv6 で提供しています。 これらのアドレスは IPv6フォーマットにおいて 96ビットの接頭辞付きで書かれ、その後に IPv4ドット区切り表記で書かれた 32ビットが続きます。 たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4アドレスを表します。
+*   **IPv4-mapped IPv6 addresses**<br/> To standardize processing, 4D provides a standard hybrid representation of IPv4 addresses in IPv6. これらのアドレスは IPv6フォーマットにおいて 96ビットの接頭辞付きで書かれ、その後に IPv4ドット区切り表記で書かれた 32ビットが続きます。 たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4アドレスを表します。
 
-*   **ポート番号の表記**<br/> IPv6 記法はコロン (:) を使用するので、ポート番号を追加するときには混乱を招く恐れがあることに注意が必要です。 たとえば:
+*   **Indication of port numbers**<br/> Since IPv6 notation uses colons (:), adding port numbers may lead to some confusion, for example:
 
 ```code4d
     2001:0DB8::85a3:0:ac1f:8001 // IPv6アドレス
@@ -416,7 +416,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 
 Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サイズ (バイト単位)。 デフォルト値は 2,000,000 (2MBより、すこし少ない値) です。 最大値 (2,147,483,648) に設定した場合、実際には制限無しということになります。
 
-制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。
+制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 This limit is used to avoid web server saturation due to incoming requests that are too large.
 
 とりうる値: 500,000 - 2,147,483,648。
 
