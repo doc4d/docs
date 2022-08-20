@@ -24,9 +24,7 @@ End if
 | プロパティ | タイプ | 詳細 |
 | ----- | --- | -- |
 |       |     |    |
-
-
-`Form event code` によっても返されます。 | |description|text|フォームイベント名 (例: "On After Edit")|
+ objectName|text|Name of the object triggering the event - Not included if the event is triggered by the form| |code|longint|Numeric value of the form event. Also returned by the
 
 イベントが発生したオブジェクトによっては追加のプロパティが含まれていることがあります。 特に:
 
