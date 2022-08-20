@@ -230,7 +230,7 @@ The `.isFolder` property returns <!-- REF #directory.isFolder.Summary -->always 
 
 #### 詳細
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. それ以外の場合は false を返します。
+The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. .
 
 Windows 上においては、`.isPackage` は常に **false** を返します。
 
@@ -353,7 +353,7 @@ The `.original` property returns <!-- REF #directory.original.Summary -->the sam
 
 #### 詳細
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
+The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. .
 
 親フォルダーが存在しない場合 (root) は、このプロパティは null値を返します。
 
@@ -379,7 +379,7 @@ The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent 
 
 #### 詳細
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
+The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. .
 
 このプロパティは **読み取り専用** です。
 
