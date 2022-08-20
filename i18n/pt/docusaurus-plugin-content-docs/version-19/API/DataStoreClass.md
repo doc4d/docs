@@ -60,7 +60,7 @@ Se não encontrar nenhum armazém de dados *localID*, o comando devolve **Null**
 
 O uso de `ds` requer que o banco de dados de destino seja compatível com ORDA, como se especifica na seção **Requisitos prévios de ORDA**. são válidas as regras abaixo:
 
-* Uma datastore só referencia as tabelas com uma única chave primária. Uma datastore só referencia as tabelas com uma única chave primária.
+* Uma datastore só referencia as tabelas com uma única chave primária. A datastore only references tables with a single primary key.
 * Atributos do tipo BLOB não são gerenciados na datastore.
 
 #### Exemplo 1
@@ -121,7 +121,7 @@ Usar a datastore principal do banco de dados 4D:
 
 #### Descrção
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `cs.DataStore` object associated with the *localID* local alias.
+*localID* is a local alias for the session opened on remote datastore. <!-- REF #_command_.Open datastore.Summary -->If *localID* already exists on the application, it is used.<!-- END REF --> Otherwise, a new *localID* session is created when the datastore object is used.
 
 O banco de dados *connectionInfo* 4D deve estar disponível como armazém de dados remoto, ou seja:
 
@@ -131,7 +131,7 @@ O banco de dados *connectionInfo* 4D deve estar disponível como armazém de dad
 
 Se não se encontrar nenhum banco de dados coincidente, `Open datastore` devolve **Null**.
 
-*localID* é um alias local para a sessão aberta no armazém de dados remoto. Se *localID* já existir na aplicação, se utiliza. Em caso contrário, se cria uma nova sessão *localID* quando se utiliza o objeto datastore.
+DataStore</code> object associated with the *localID* local alias. Se *localID* já existir na aplicação, se utiliza. Em caso contrário, se cria uma nova sessão *localID* quando se utiliza o objeto datastore.
 
 Quando abrir a sessão, as sentenças abaixo são equivalentes e devolvem uma referência sobre o mesmo objeto datastore:
 
@@ -176,11 +176,11 @@ Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
 
 ```4d
  var $connectTo : Object
- var $remoteDS : cs.DataStore
+ var $remoteDS : cs. DataStore
  $connectTo:=New object("type";"4D Server";"hostname";\"192.168.18.11:4443";\  
   "user";"marie";"password";$pwd;"idleTimeout";70;"tls";True)
  $remoteDS:=Open datastore($connectTo;"students")
- ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
+ ALERT("This remote datastore contains "+String($remoteDS. Students.all().length)+" students")
 ```
 
 #### Exemplo 3
@@ -226,10 +226,10 @@ Um [Datastore](ORDA/dsMapping.md#datastore) é o objeto de interface subministra
 ```4d
  var $emp : cs. Employee
  var $sel : cs. EmployeeSelection
- $emp:=ds. Employee //$emp contiene la dataclass Employee 
- $sel:=$emp.all() //obtém uma seleção de entidades de todos os empregados
+ $emp:=ds. Employee //$emp contains the Employee dataclass
+ $sel:=$emp.all() //gets an entity selection of all employees
 
-  //também pode escrever diretamente:
+  //you could also write directly:
  $sel:=ds. Employee.all()
 ```
 
@@ -328,7 +328,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //o banco de dados está encriptado
+ If($status.isEncrypted) //the database is encrypted
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -371,7 +371,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
 #### Descrção
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->The `.getInfo()` function<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Objeto devolvido**
 
@@ -441,7 +441,7 @@ Em um armazém de dados remoto:
 
 #### Descrção
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. Summary -->inicia o registro das petições ORDA do lado do cliente<!-- END REF -->.
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. .
 
 Esta função deve ser chamada em um 4D remoto, do contrário devolve uma coleção vazia. Foi criado para depuração em configurações de cliente/servidor.
 
@@ -653,7 +653,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 <!-- REF #DataStoreClass.startRequestLog().Syntax -->
 
-**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D.File )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
+**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D. File )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
@@ -687,10 +687,11 @@ Se quiser registras as petições dos clientes ORDA em um arquivo e usar o núme
  var $file : 4D. File
  var $e : cs. PersonsEntity
 
- $file:=File("/LOGS/ORDARequests.txt") //pasta logs 
+ $file:=File("/LOGS/ORDARequests.txt") //logs folder
 
- SET DATABASE PARAMETER(Client Log Recording;1) //ativar o número de sequencia logs global ds.startRequestLog($file)
- $e:=ds. Persons.get(30001) //envia uma petição
+ SET DATABASE PARAMETER(Client Log Recording;1) //to trigger the global log sequence number
+ ds.startRequestLog($file)
+ $e:=ds. Persons.get(30001) //send a request
  ds.stopRequestLog()
  SET DATABASE PARAMETER(Client Log Recording;0)
 ```
