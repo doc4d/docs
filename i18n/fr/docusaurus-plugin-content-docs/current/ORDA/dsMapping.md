@@ -167,7 +167,7 @@ En outre, les attributs relationnels suivant seront également disponibles autom
 
 *   dans la dataclass Project : l'attribut **theClient**, du type "relatedEntity" ; il y a au plus une compagnie pour chaque projet (le client)
 *   dans la dataclass Company : l'attribut **companyProjects**, du type "relatedEntities" ; pour chaque compagnie, il existe un certain nombre de projets reliés.
-> Les entity selections peuvent également être "partageables" ou "non partageables", selon [la façon dont elles ont été créées](entities.md#shareable-or-alterable-entity-selections).
+> > The Manual or Automatic property of a database relation has no effect in ORDA.
 
 Tous les attributs de la dataclass sont exposés en tant que propriétés de la dataclass :
 
@@ -246,7 +246,7 @@ Les sélections d'entités non-triées sont créées dans les cas suivants :
 *   résultat d'un `query()` standard sur une sélection (de n'importe quel type) ou un `query()` sur une dataclass,
 *   résultat de la méthode `newSelection()` sans option,
 *   résultat de l'une des méthodes de comparaison, quel que soit le type de sélection saisi : `or()`, `and()`, `minus()`.
-> Les sélections d'entités suivantes sont toujours **triées** :
+> > The following entity selections are always **ordered**: > > * entity selections returned by 4D Server to a remote client > * entity selections built upon remote datastores.
 > 
 > * sélections d'entités retournées par 4D Server vers un client distant
 > * sélections d'entités fondées sur des datastores distants.
