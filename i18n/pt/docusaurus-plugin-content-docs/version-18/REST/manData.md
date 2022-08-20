@@ -69,7 +69,7 @@ Pode chamar métodos de projeto 4D que são [expostos como serviços REST](%7Bda
 O exemplo abaixo é um método de classe de dados que recebe parâmetros e retorna um objeto:
 
 ```4d
-// método 4D findPerson C_TEXT($1;$firstname;$2;$lastname)
+// 4D findPerson method C_TEXT($1;$firstname;$2;$lastname)
 $firstname:=$1
 $lastname:=$2
 
