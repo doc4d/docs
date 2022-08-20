@@ -86,13 +86,13 @@ Utilisez les paramètres de cet onglet pour configurer la mémoire cache de la b
 -   **Calcul du cache adaptatif** : Lorsque cette option est cochée, la gestion de la mémoire cache est assurée dynamiquement par le système — dans des limites que vous définissez. Ce principe permet de configurer une mémoire cache performante, adaptée à la plupart des configurations. La taille du cache est alors calculée dynamiquement en fonction des paramétrages définis. Les valeurs proposées par défaut correspondent à une utilisation standard de 4D.
 
     -   **Mémoire à réserver pour le système et les autres applications**: partie de la mémoire RAM à réserver au Système et aux autres applications. Cette valeur peut être augmentée à des fins d’optimisation lorsque d’autres applications consommatrices de mémoire tournent sur le même poste que 4D.
-    -   **Mémoire disponible utilisée pour le cache** : pourcentage de la mémoire restante alloué par défaut au cache.\
-      Pour obtenir la taille allouée par défaut au cache, il suffit donc d’effectuer le calcul suivant : (Mémoire physique - Mémoire physique à réserver) x Pourcentage de la mémoire utilisé pour le cache. Dans le mode adaptatif, la taille de mémoire cache varie dynamiquement en fonction des besoins de l’application et du système. Vous pouvez fixer les bornes de ces variations à l’aide des deux options suivantes :
+    -   **Percentage of available memory used for cache**: Percentage of the remaining memory allocated to the cache by default.\
+      To obtain the size allocated by default to the cache, simply perform the following calculation: (Physical memory -- Physical memory to be reserved) X Percentage of the memory used for the cache. Dans le mode adaptatif, la taille de mémoire cache varie dynamiquement en fonction des besoins de l’application et du système. Vous pouvez fixer les bornes de ces variations à l’aide des deux options suivantes :
     -   **Taille minimale** : Quantité minimale de mémoire devant être réservée pour le cache. Cette valeur ne peut être inférieure à 100 Mo.
     -   **Taille maximale** : Quantité maximale de mémoire pouvant être utilisée par le cache. Cette valeur est virtuellement illimitée.\  
       La définition de bornes est utile dans le cadre des bases diffusées sur des machines dont vous ne connaissez pas a priori la configuration mémoire. Dans ce cas, les bornes vous permettent de garantir des performances minimales dans tous les cas. Le schéma suivant illustre ce fonctionnement :
 
-    Exemple de calcul de la mémoire cache : *Mémoire physique à réserver = 256 Mo Pourcentage de la mémoire disponible utilisé pour le cache = 50 % Taille maximale = 1 Go Taille minimale = 128 Mo*
+    Example for calculating cache memory: *Physical memory to reserve = 256 MB Percentage of the available memory used for the cache = 50% Maximum size = 1 GB Minimum size = 128 MB*
 
     ![](../assets/en/settings/memory-maximum-size.png)
 
