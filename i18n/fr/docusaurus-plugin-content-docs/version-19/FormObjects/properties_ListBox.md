@@ -11,7 +11,7 @@ Collection de colonnes de la list box.
 
 #### Grammaire JSON
 
-| Le nom   | Type de données             | Valeurs possibles                                |
+| Nom      | Type de données             | Valeurs possibles                                |
 | -------- | --------------------------- | ------------------------------------------------ |
 | colonnes | collection d'objets colonne | Contient les propriétés des colonnes de list box |
 
@@ -36,7 +36,7 @@ The specified form is displayed:
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                           |
+| Nom        | Type de données | Valeurs possibles                                                           |
 | ---------- | --------------- | --------------------------------------------------------------------------- |
 | detailForm | string          | <li>Name (string) of table or project form</li><li>POSIX path (string) to a .json file describing the form</li><li>Object describing the form</li> |
 
@@ -63,7 +63,7 @@ For the last two actions, the On `Open Detail` form event is also generated. The
 
 #### Grammaire JSON
 
-| Le nom                 | Type de données | Valeurs possibles                   |
+| Nom                    | Type de données | Valeurs possibles                   |
 | ---------------------- | --------------- | ----------------------------------- |
 | doubleClickInRowAction | string          | "editSubrecord", "displaySubrecord" |
 
@@ -85,7 +85,7 @@ This property is used to specify the set to be used to manage highlighted record
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles |
+| Nom          | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
 | highlightSet | string          | Name of the set   |
 
@@ -123,7 +123,7 @@ Number of columns that must stay permanently displayed in the left part of the l
 
 #### Grammaire JSON
 
-| Le nom            | Type de données | Valeurs possibles |
+| Nom               | Type de données | Valeurs possibles |
 | ----------------- | --------------- | ----------------- |
 | lockedColumnCount | entier          | minimum : 0       |
 
@@ -137,7 +137,7 @@ Number of columns that cannot be moved during execution.
 
 #### Grammaire JSON
 
-| Le nom            | Type de données | Valeurs possibles |
+| Nom               | Type de données | Valeurs possibles |
 | ----------------- | --------------- | ----------------- |
 | staticColumnCount | entier          | minimum : 0       |
 
@@ -154,7 +154,7 @@ Sets the number of columns of the list box.
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | columnCount | entier          | minimum: 1        |
 
@@ -207,7 +207,7 @@ Note that setting properties for an element overrides any other values for this 
 
 #### Grammaire JSON
 
-| Le nom           | Type de données | Valeurs possibles      |
+| Nom              | Type de données | Valeurs possibles      |
 | ---------------- | --------------- | ---------------------- |
 | rowControlSource | string          | Row control array name |
 
@@ -228,7 +228,7 @@ Designates the option for allowing users to select rows:
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles            |
+| Nom           | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
 | selectionMode | string          | "multiple", "single", "none" |
 
