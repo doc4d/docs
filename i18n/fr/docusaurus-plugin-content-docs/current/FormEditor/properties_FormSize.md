@@ -32,7 +32,7 @@ Les options de taille dépendent de la valeur de l'option **Taille basée sur**.
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles                                              |
+| Nom            | Type de données | Valeurs possibles                                              |
 | -------------- | --------------- | -------------------------------------------------------------- |
 | formSizeAnchor | string          | Nom de l'objet à utiliser pour définir la taille du formulaire |
 
@@ -51,7 +51,7 @@ Hauteur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles  |
+| Nom    | Type de données | Valeurs possibles  |
 | ------ | --------------- | ------------------ |
 | height | number          | valeur entier long |
 
@@ -72,7 +72,7 @@ Cette valeur détermine également les marges droites des formulaires utilisés 
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles  |
+| Nom         | Type de données | Valeurs possibles  |
 | ----------- | --------------- | ------------------ |
 | rightMargin | number          | valeur entier long |
 
@@ -94,7 +94,7 @@ Cette valeur détermine également les marges supérieures des formulaires utili
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles  |
+| Nom          | Type de données | Valeurs possibles  |
 | ------------ | --------------- | ------------------ |
 | bottomMargin | number          | valeur entier long |
 
@@ -114,6 +114,6 @@ Largeur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles  |
-| ------ | --------------- | ------------------ |
-| width  | number          | valeur entier long |
+| Nom   | Type de données | Valeurs possibles  |
+| ----- | --------------- | ------------------ |
+| width | number          | valeur entier long |
