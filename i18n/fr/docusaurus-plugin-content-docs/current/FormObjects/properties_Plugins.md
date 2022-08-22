@@ -11,7 +11,7 @@ Si des options avancées sont fournies par l'auteur du plug-in, un bouton **Prop
 
 #### Grammaire JSON
 
-| Le nom           | Type de données | Valeurs possibles                                                                                                                                                                 |
+| Nom              | Type de données | Valeurs possibles                                                                                                                                                                 |
 | ---------------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | customProperties | text            | Propriétés spécifiques du plug-in, passées au plug-in sous forme de chaîne JSON s'il s'agit d'un objet ou sous forme de tampon binaire s'il s'agit d'une chaîne encodée en base64 |
 
