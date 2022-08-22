@@ -9,7 +9,7 @@ Active la variante «barber shop» pour le thermomètre.
 
 #### Grammaire JSON
 
-|     Le nom      | Type de données | Valeurs possibles                                           |
+|       Nom       | Type de données | Valeurs possibles                                           |
 |:---------------:|:---------------:| ----------------------------------------------------------- |
 | [max](#maximum) |     number      | NOT passed = enabled; passed = disabled (basic thermometer) |
 
@@ -25,7 +25,7 @@ Affiche/masque les graduations à côté des étiquettes.
 
 #### Grammaire JSON
 
-|     Le nom      | Type de données | Valeurs possibles |
+|       Nom       | Type de données | Valeurs possibles |
 |:---------------:|:---------------:| ----------------- |
 | showGraduations |     boolean     | "true", "false"   |
 
@@ -41,7 +41,7 @@ Mesure de l'affichage de l'échelle.
 
 #### Grammaire JSON
 
-|     Le nom     | Type de données | Valeurs possibles |
+|      Nom       | Type de données | Valeurs possibles |
 |:--------------:|:---------------:| ----------------- |
 | graduationStep |     entier      | minimum : 0       |
 
@@ -61,7 +61,7 @@ Indique l'emplacement du texte d'un objet.
 
 #### Grammaire JSON
 
-|     Le nom      | Type de données | Valeurs possibles                        |
+|       Nom       | Type de données | Valeurs possibles                        |
 |:---------------:|:---------------:| ---------------------------------------- |
 | labelsPlacement |     string      | "none", "top", "bottom", "left", "right" |
 
@@ -80,9 +80,9 @@ Valeur maximale d'un indicateur.
 
 #### Grammaire JSON
 
-| Le nom |  Type de données   | Valeurs possibles                                 |
-|:------:|:------------------:| ------------------------------------------------- |
-|  max   | chaîne / numérique | minimum: 0 (pour les types de données numériques) |
+| Nom |  Type de données   | Valeurs possibles                                 |
+|:---:|:------------------:| ------------------------------------------------- |
+| max | chaîne / numérique | minimum: 0 (pour les types de données numériques) |
 
 #### Objets pris en charge
 
@@ -96,9 +96,9 @@ Valeur minimale d'un indicateur. Pour les steppers numériques, cette propriét�
 
 #### Grammaire JSON
 
-| Le nom |  Type de données   | Valeurs possibles                                 |
-|:------:|:------------------:| ------------------------------------------------- |
-|  min   | chaîne / numérique | minimum: 0 (pour les types de données numériques) |
+| Nom |  Type de données   | Valeurs possibles                                 |
+|:---:|:------------------:| ------------------------------------------------- |
+| min | chaîne / numérique | minimum: 0 (pour les types de données numériques) |
 
 #### Objets pris en charge
 
@@ -112,9 +112,9 @@ Intervalle minimum accepté entre les valeurs pendant l'utilisation. Pour les st
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-|:------:|:---------------:| ----------------- |
-|  step  |     entier      | minimum: 1        |
+| Nom  | Type de données | Valeurs possibles |
+|:----:|:---------------:| ----------------- |
+| step |     entier      | minimum: 1        |
 
 #### Objets pris en charge
 
