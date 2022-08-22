@@ -12,7 +12,7 @@ Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'
 
 #### Grammaire JSON
 
-| Le nom                  | Type de données | Valeurs possibles                                                                                        |
+| Nom                     | Type de données | Valeurs possibles                                                                                        |
 | ----------------------- | --------------- | -------------------------------------------------------------------------------------------------------- |
 | customBackgroundPicture | string          | Chemin relatif en syntaxe POSIX. Doit être utilisé avec l'option "Personnalisé" de la propriété "Style". |
 
@@ -28,9 +28,9 @@ Aspect général du bouton. Le style du bouton joue également un rôle dans la 
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                                                                                                  |
-|:------:|:---------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| style  |      text       | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
+|  Nom  | Type de données | Valeurs possibles                                                                                                                                                  |
+|:-----:|:---------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| style |      text       | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
 
 #### Objets pris en charge
 
@@ -52,7 +52,7 @@ Ce paramètre est utile, par exemple, lorsque l'image de fond contient des bordu
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                   |
+| Nom           | Type de données | Valeurs possibles                                   |
 | ------------- | --------------- | --------------------------------------------------- |
 | customBorderX | number          | A utiliser avec le style "personnalisé". Minimum: 0 |
 
@@ -68,7 +68,7 @@ Désigne l'emplacement d'une icône par rapport à l'objet formulaire.
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles           |
+| Nom           | Type de données | Valeurs possibles           |
 | ------------- | --------------- | --------------------------- |
 | iconPlacement | string          | "aucun", "gauche", "droite" |
 
@@ -86,7 +86,7 @@ Le titre du bouton sera décalé vers la droite et vers le bas pour le nombre de
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles |
+| Nom          | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
 | customOffset | number          | minimum : 0       |
 
@@ -113,7 +113,7 @@ Les états suivants sont représentés :
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | iconFrames | number          | minimum: 1        |
 
@@ -133,9 +133,9 @@ Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                              |
-| ------ | --------------- | ---------------------------------------------- |
-| icône  | picture         | Chemin relatif ou filesystem en syntaxe POSIX. |
+| Nom   | Type de données | Valeurs possibles                              |
+| ----- | --------------- | ---------------------------------------------- |
+| icône | picture         | Chemin relatif ou filesystem en syntaxe POSIX. |
 
 #### Objets pris en charge
 
@@ -159,7 +159,7 @@ Voici le résultat des différentes options de cette propriété :
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                          |
+| Nom           | Type de données | Valeurs possibles                          |
 | ------------- | --------------- | ------------------------------------------ |
 | textPlacement | string          | "left", "top", "right", "bottom", "center" |
 
@@ -179,7 +179,7 @@ Ce paramètre est utile, par exemple, lorsque l'image de fond contient des bordu
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                   |
+| Nom           | Type de données | Valeurs possibles                                   |
 | ------------- | --------------- | --------------------------------------------------- |
 | customBorderY | number          | A utiliser avec le style "personnalisé". Minimum: 0 |
 
@@ -217,7 +217,7 @@ Il est important de noter que la propriété “Avec pop up menu” gère unique
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles                                                           |
+| Nom            | Type de données | Valeurs possibles                                                           |
 |:-------------- | --------------- | --------------------------------------------------------------------------- |
 | popupPlacement | string          | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
 
