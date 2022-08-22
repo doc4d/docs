@@ -15,7 +15,7 @@ Deux emplacements principaux peuvent être utilisés pour le chemin d'image stat
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles                             |
+|   Nom   | Type de données | Valeurs possibles                             |
 |:-------:|:---------------:| --------------------------------------------- |
 | picture |      text       | Chemin relatif ou filesystem en syntaxe POSIX |
 
@@ -58,7 +58,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                        |
+| Nom           | Type de données | Valeurs possibles                                        |
 | ------------- | --------------- | -------------------------------------------------------- |
 | pictureFormat | string          | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
