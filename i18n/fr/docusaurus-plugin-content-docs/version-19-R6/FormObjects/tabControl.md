@@ -51,13 +51,13 @@ Pour fournir les étiquettes d'un onglet, vous pouvez utiliser :
 
 ### Utilisation d'un objet
 
-Vous pouvez affecter un [objet](Concepts/dt_object.md) encapsulant une [collection](Concepts/dt_collection) comme [source de données](properties_Object.md#variable-or-expression) de l'onglet. The object must contain the following properties:
+Vous pouvez affecter un [objet](Concepts/dt_object.md) encapsulant une [collection](Concepts/dt_collection) comme [source de données](properties_Object.md#variable-or-expression) de l'onglet. Cet objet doit avoir les propriétés suivantes :
 
-| Propriété      | Type        | Description                                                                                                                                                    |
-| -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `values`       | Collections | Mandatory - Collection of scalar values. Seules les valeurs de type chaîne sont prises en charge. Si elle est invalide, vide ou non définie, l'onglet est vide |
-| `index`        | number      | Indice de la page de l'onglet en cours (valeur comprise entre 0 et `collection.length-1`)                                                                      |
-| `currentValue` | Text        | Valeur courante sélectionnée                                                                                                                                   |
+| Propriété      | Type        | Description                                                                                                                                                          |
+| -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `values`       | Collections | Obligatoire - Collection de valeurs scalaires. Seules les valeurs de type chaîne sont prises en charge. Si elle est invalide, vide ou non définie, l'onglet est vide |
+| `index`        | number      | Indice de la page de l'onglet en cours (valeur comprise entre 0 et `collection.length-1`)                                                                            |
+| `currentValue` | Text        | Valeur courante sélectionnée                                                                                                                                         |
 
 Le code d'initialisation doit être exécuté avant que le formulaire ne soit présenté à l'utilisateur.
 
@@ -114,13 +114,9 @@ Vous pouvez, par exemple, écrire le code suivant :
 
 ### Action Goto Page
 
-Lorsque vous associez l’[](properties_Action.md#standard-action)action standard
+Lorsque vous associez l’[action standard](properties_Action.md#standard-action) `gotoPage` à un objet de type Onglet, 4D affiche automatiquement la page du formulaire correspondant au numéro de l’onglet sélectionné.
 
- `gotoPage` à un objet de type Onglet, 4D affiche automatiquement la page du formulaire correspondant au numéro de l’onglet sélectionné. </p> 
-
-Par exemple, si l’utilisateur clique sur le 3e onglet, 4D affichera la page 3 du formulaire courant (si elle existe). 
-
-
+Par exemple, si l’utilisateur clique sur le 3e onglet, 4D affichera la page 3 du formulaire courant (si elle existe).
 
 
 
