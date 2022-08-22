@@ -14,7 +14,7 @@ De plus, les zones de saisie peuvent être [saisissables ou non saisissables](pr
 
 Vous pouvez gérer les données avec des [méthodes](Concepts/methods.md) objet ou formulaire.
 
-### JSON Example
+### Exemple JSON
 
 ```4d
  "myText": {
