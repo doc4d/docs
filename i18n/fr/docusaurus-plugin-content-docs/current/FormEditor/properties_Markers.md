@@ -22,7 +22,7 @@ You can make Break areas smaller or larger. You can use a Break area to display 
 
 #### Grammaire JSON
 
-| Le nom      | Type de données                   | Valeurs possibles                                                                                   |
+| Nom         | Type de données                   | Valeurs possibles                                                                                   |
 | ----------- | --------------------------------- | --------------------------------------------------------------------------------------------------- |
 | markerBreak | integer &#x7c; integer collection | Break marker position or collection of break marker positions in pixels.<br/>Minimum value: 0 |
 
@@ -36,7 +36,7 @@ You can make the Detail area smaller or larger. Whatever you place in the Detail
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                          |
+| Nom        | Type de données | Valeurs possibles                          |
 | ---------- | --------------- | ------------------------------------------ |
 | markerBody | entier          | Position du marqueur de détail. Minimum: 0 |
 
@@ -52,7 +52,7 @@ You can use the Footer area to print graphics, page numbers, the current date, o
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles |
+| Nom          | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
 | markerFooter | entier          | minimum : 0       |
 
@@ -78,7 +78,7 @@ The form can contains [additional header areas](#additional-areas) to be associa
 
 #### Grammaire JSON
 
-| Le nom       | Type de données                   | Valeurs possibles                                                                                     |
+| Nom          | Type de données                   | Valeurs possibles                                                                                     |
 | ------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | markerHeader | integer &#x7c; integer collection | Header marker position or collection of header marker positions in pixels.<br/>Minimum value: 0 |
 
