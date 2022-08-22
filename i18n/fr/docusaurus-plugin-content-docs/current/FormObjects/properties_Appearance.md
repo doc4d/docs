@@ -21,9 +21,9 @@ Sous Windows, le concept de "choix recommandé" n'est pas pris en charge: seul l
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  defaultButton|booléen|true, false |
 
 #### Objets pris en charge
@@ -38,7 +38,7 @@ A l'exécution, un champ ou toute zone saisissable est délimité par un rectang
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles |
+| Nom           | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
 | hideFocusRing | boolean         | true, false       |
 
@@ -60,7 +60,7 @@ Par défaut, cette option n'est pas activée.
 
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles |
+| Nom                 | Type de données | Valeurs possibles |
 | ------------------- | --------------- | ----------------- |
 | hideSystemHighlight | boolean         | true, false       |
 
@@ -86,7 +86,7 @@ Valeurs disponibles :
 
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles                |
+| Nom                 | Type de données | Valeurs possibles                |
 | ------------------- | --------------- | -------------------------------- |
 | scrollbarHorizontal | text            | "visible", "hidden", "automatic" |
 
@@ -106,9 +106,9 @@ Définit la résolution d'écran pour le contenu de la zone 4D Write Pro. Par d�
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  dpi|number|0=automatic, 72, 96 |
 
 #### Objets pris en charge
@@ -123,9 +123,9 @@ Affiche/masque les images d'arrière-plan et la couleur d'arrière-plan.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showBackground|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -140,9 +140,9 @@ Affiche/masque les pieds de page lorsque le [mode d'affichage de la page](#view-
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showFooters|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -159,9 +159,9 @@ Lorsqu'elle est activée, la barre de formule est visible sous l'interface de la
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  withFormulaBar|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -176,9 +176,9 @@ Affiche/masque les en-têtes de la page lorsque le [mode d'affichage de la page]
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showHeaders|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -193,9 +193,9 @@ Affiche/masque les caractères visibles
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showHiddenChars|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -210,9 +210,9 @@ Affiche/masque la règle horizontale lorsque la vue du document est en mode [Pag
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showHorizontalRuler|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -227,9 +227,9 @@ Active/désactive la vue HTML WYSIWYG, dans laquelle tous les attributs avancés
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showHTMLWysiwyg|booléen|true, false (par défaut)|
 
 #### Objets pris en charge
@@ -244,9 +244,9 @@ Affiche/masque le cadre de la page lorsque le [mode d'affichage de la page](#vie
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showPageFrames|booléen|true, false|
 
 #### Objets pris en charge
@@ -271,9 +271,9 @@ Lorsque la propriété Afficher les références est activée, la référence s'
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showReferences|booléen|true, false (par défaut)|
 
 #### Objets pris en charge
@@ -288,9 +288,9 @@ Affiche/masque la règle verticale lorsque la vue du document est en mode [Page]
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  showVerticalRuler|booléen|true (par défaut), false|
 
 #### Objets pris en charge
@@ -307,9 +307,9 @@ Lorsque des onglets sont affichés avec une direction personnalisée sous Window
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  labelsPlacement|booléen|"top", "bottom" |
 
 #### Objets pris en charge
@@ -324,9 +324,9 @@ Vous pouvez ajouter une interface aux zones 4D View Pro pour permettre aux utili
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  userInterface|texte|"none" (par défaut), "ribbon", "toolbar" |
 
 #### Objets pris en charge
@@ -357,7 +357,7 @@ Valeurs disponibles :
 
 #### Grammaire JSON
 
-| Le nom            | Type de données | Valeurs possibles                |
+| Nom               | Type de données | Valeurs possibles                |
 | ----------------- | --------------- | -------------------------------- |
 | scrollbarVertical | text            | "visible", "hidden", "automatic" |
 
@@ -383,9 +383,9 @@ Définit le mode d'affichage du document 4D Write Pro dans la zone de formulaire
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  layoutMode|texte|"page", "draft", "embedded"|
 
 #### Objets pris en charge
@@ -400,9 +400,9 @@ Définit le pourcentage de zoom pour l'affichage du contenu de la zone 4D Write 
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-|        |                 |                   |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+|     |                 |                   |
  zoom|numérique|minimum = 0 |
 
 #### Objets pris en charge
