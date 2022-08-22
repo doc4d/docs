@@ -16,7 +16,7 @@ This property defines the color scheme for the form. This property defines the c
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | colorScheme | string          | "dark", "light"   |
 
@@ -33,9 +33,9 @@ Pour plus d'informations, veuillez consulter le thème [Pages formulaire](forms.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                |
-| ------ | --------------- | -------------------------------------------------------------------------------- |
-| pages  | collection      | Collection de pages (chaque page est un objet, la page 0 est le premier élément) |
+| Nom   | Type de données | Valeurs possibles                                                                |
+| ----- | --------------- | -------------------------------------------------------------------------------- |
+| pages | collection      | Collection de pages (chaque page est un objet, la page 0 est le premier élément) |
 
 ---
 
@@ -71,7 +71,7 @@ Supported types depend on the form category:
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                            |
+| Nom         | Type de données | Valeurs possibles                                            |
 | ----------- | --------------- | ------------------------------------------------------------ |
 | destination | string          | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
@@ -87,7 +87,7 @@ To remove inheritance, select `\&#060;None&#062;` in the Property List (or " " i
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                                                                                  |
+| Nom           | Type de données | Valeurs possibles                                                                                                  |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
 | inheritedForm | string          | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
@@ -101,7 +101,7 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 #### Grammaire JSON
 
-| Le nom             | Type de données  | Valeurs possibles          |
+| Nom                | Type de données  | Valeurs possibles          |
 | ------------------ | ---------------- | -------------------------- |
 | inheritedFormTable | string or number | table name or table number |
 
@@ -115,7 +115,7 @@ Seuls les projets formulaire peuvent être indiqués comme étant des sous-formu
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
+| Nom    | Type de données | Valeurs possibles |
 | ------ | --------------- | ----------------- |
 | shared | boolean         | true, false       |
 
@@ -133,7 +133,7 @@ Lorsque cette option est cochée, l’option [Mémoriser valeur](FormObjects/pro
 
 #### Grammaire JSON
 
-| Le nom           | Type de données | Valeurs possibles |
+| Nom              | Type de données | Valeurs possibles |
 | ---------------- | --------------- | ----------------- |
 | memorizeGeometry | boolean         | true, false       |
 
@@ -157,6 +157,6 @@ Vous pouvez utiliser des références dynamiques pour définir les noms de fenê
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                             |
+| Nom         | Type de données | Valeurs possibles                                             |
 | ----------- | --------------- | ------------------------------------------------------------- |
 | windowTitle | string          | Le nom de la fenêtre sous forme de texte brut ou de référence |
