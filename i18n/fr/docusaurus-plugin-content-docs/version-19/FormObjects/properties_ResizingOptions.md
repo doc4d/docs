@@ -32,7 +32,7 @@ If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https:/
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles       |
+| Nom          | Type de données | Valeurs possibles       |
 | ------------ | --------------- | ----------------------- |
 | resizingMode | string          | "rightToLeft", "legacy" |
 
@@ -57,7 +57,7 @@ Trois options sont disponibles :
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles       |
+| Nom     | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
 | sizingX | string          | "grow", "move", "fixed" |
 
@@ -82,7 +82,7 @@ Trois options sont disponibles :
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles       |
+| Nom     | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
 | sizingY | string          | "grow", "move", "fixed" |
 
@@ -106,7 +106,7 @@ Lorsque cette propriété n'est pas appliquée au splitter, le résultat est le 
 
 #### Grammaire JSON
 
-| Le nom       | Type de données |          Valeurs possibles           |
+| Nom          | Type de données |          Valeurs possibles           |
 |:------------ |:---------------:|:------------------------------------:|
 | splitterMode |     string      | "move" (pusher), "resize" (standard) |
 
@@ -122,7 +122,7 @@ Indique si la taille de la colonne peut être modifiée par l'utilisateur.
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles |
+| Nom       | Type de données | Valeurs possibles |
 |:--------- |:---------------:|:-----------------:|
 | resizable |     boolean     |  "true", "false"  |
 
