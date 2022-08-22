@@ -9,7 +9,7 @@ Définit la couleur des lignes horizontales dans une list box (gris par défaut)
 
 #### Grammaire JSON
 
-| Le nom               | Type de données | Valeurs possibles                          |
+| Nom                  | Type de données | Valeurs possibles                          |
 | -------------------- | --------------- | ------------------------------------------ |
 | horizontalLineStroke | color           | une valeur css; "transparent"; "automatic" |
 
@@ -25,7 +25,7 @@ Définit la couleur des lignes verticales d'une list box (gris par défaut).
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles                          |
+| Nom                | Type de données | Valeurs possibles                          |
 | ------------------ | --------------- | ------------------------------------------ |
 | verticalLineStroke | color           | une valeur css; "transparent"; "automatic" |
 
