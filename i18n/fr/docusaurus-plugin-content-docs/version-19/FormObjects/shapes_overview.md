@@ -19,7 +19,7 @@ Les rectangles sont créés à l'aide de plusieurs propriétés (couleur, épais
 
 ![](../assets/en/FormObjects/shapes_rectangle2.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myRectangle": {
@@ -88,7 +88,7 @@ Un ovale statique est un objet décoratif contenu dans les formulaires. Les obje
 
 ![](../assets/en/FormObjects/shape_oval.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myOval": {
