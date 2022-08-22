@@ -29,7 +29,7 @@ You can use a sequence number to create a unique number for each record in the t
 
 #### Grammaire JSON
 
-| Le nom       | Type de données                     | Valeurs possibles                          |
+| Nom          | Type de données                     | Valeurs possibles                          |
 | ------------ | ----------------------------------- | ------------------------------------------ |
 | defaultValue | string, number, date, time, boolean | Any value and/or a stamp: "#D", "#H", "#N" |
 
@@ -46,7 +46,7 @@ Allows setting a list whose values cannot be entered in the object. Si une valeu
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles               |
+| Nom          | Type de données | Valeurs possibles               |
 | ------------ | --------------- | ------------------------------- |
 | excludedList | liste           | Une liste de valeurs à exclure. |
 
@@ -65,7 +65,7 @@ La création d'une liste obligatoire n'affiche pas automatiquement la liste lors
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles                  |
+| Nom          | Type de données | Valeurs possibles                  |
 | ------------ | --------------- | ---------------------------------- |
 | requiredList | liste           | Une liste de valeurs obligatoires. |
 
