@@ -21,7 +21,7 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                          |
+| Nom      | Type de données | Valeurs possibles                                          |
 | -------- | --------------- | ---------------------------------------------------------- |
 | dragging | text            | "none" (par défaut), "custom", "automatic" (hors list box) |
 
@@ -48,7 +48,7 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                          |
+| Nom      | Type de données | Valeurs possibles                                          |
 | -------- | --------------- | ---------------------------------------------------------- |
 | dropping | text            | "none" (par défaut), "custom", "automatic" (hors list box) |
 
@@ -56,44 +56,27 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 [Zones 4D Write Pro](writeProArea_overview.md) - [Bouton](button_overview.md) - [Zone de saisie](input_overview.md) - [Liste hiérarchique](list_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Zone de plug-in](pluginArea_overview.md#overview)
 
-</p> 
-
-
-
 #### Voir également
 
 [Glissable](#draggable)
 
-
-
 ---
-
-
 
 ## Exécuter méthode objet
 
 Lorsque cette option est activée, la méthode objet est exécutée avec l'événement `Sur données modifiées` *au même moment* où l'utilisateur change la valeur de l'indicateur. Lorsque l'option est désactivée, la méthode est exécutée *après* la modification.
 
-
-
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles |
+| Nom                 | Type de données | Valeurs possibles |
 | ------------------- | --------------- | ----------------- |
 | continuousExecution | boolean         | true, false       |
-
-
-
 
 #### Objets pris en charge
 
 [Indicateur de progression](progressIndicator.md) - [Règle](ruler.md) - [Stepper](stepper.md)
 
-
-
 ---
-
-
 
 ## Méthode
 
@@ -111,26 +94,17 @@ Plusieurs types de références de méthode sont pris en charge :
   `../../CustomMethods/myMethod.4dm` You can also use a filesystem:  
   `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
-
-
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                          |
+| Nom    | Type de données | Valeurs possibles                                                                          |
 | ------ | --------------- | ------------------------------------------------------------------------------------------ |
 | method | text            | Chemin de fichier standard ou personnalisé de la méthode objet ou nom de la méthode projet |
-
-
-
 
 #### Objets pris en charge
 
 [Zone 4D View Pro](viewProArea_overview.md) - [Zone 4D Write Pro](writeProArea_overview.md) - [Bouton](button_overview.md) - [Grille de boutons](buttonGrid_overview.md) - [Case à cocher](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Liste déroulante](dropdownList_Overview.md) - [Liste hiérarchique](list_overview.md#overview) - [Zone de saisie](input_overview.md) - [List Box](listbox_overview.md#overview) - [Colonne List Box](listbox_overview.md#list-box-columns) - [Bouton image](pictureButton_overview.md) - [Pop up menu image](picturePopupMenu_overview.md) - [Zone de plug-in](pluginArea_overview.md#overview) - [Indicateur de progression](progressIndicator.md) - [Bouton radio](radio_overview.md) - [Règle](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Stepper](stepper.md) - [Sous-formulaire](subform_overview.md) - [Onglet](tabControl.md) - [Zone Web](webArea_overview.md#overview)
 
-
-
 ---
-
-
 
 ## Lignes déplaçables
 
@@ -138,83 +112,55 @@ Plusieurs types de références de méthode sont pris en charge :
 
 Autorise le déplacement des lignes pendant l'exécution. Cette option est sélectionnée par défaut. Il n'est pas disponible pour les [list box de type sélection](listbox_overview.md#selection-list-boxes) ni pour les [list box en mode hiérarchique](properties_Hierarchy.md#hierarchical-list-box).
 
-
-
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | movableRows | boolean         | true, false       |
-
-
-
 
 #### Objets pris en charge
 
 [List Box](listbox_overview.md#overview)
 
-
-
 ---
-
-
 
 ## Multi-sélectionnable
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
-
-
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles            |
+| Nom           | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
 | selectionMode | text            | "multiple", "single", "none" |
-
-
-
 
 #### Objets pris en charge
 
 [Liste hiérarchique](list_overview.md)
 
-
-
 ---
-
-
 
 ## Triable
 
 Permet de trier les données de colonne en cliquant sur un en-tête de [Listbox](listbox_overview.md). Cette option est sélectionnée par défaut. Les tableaux de types d'image (colonnes) ne peuvent pas être triés à l'aide de cette fonction.
 
 Dans les list box basées sur une sélection d'enregistrements, la fonction de tri standard est disponible uniquement :
-
 - Lorsque la source de données est *Sélection courante*,
 - Avec des colonnes associées à des champs (de type Alpha, Numérique, Date, Heure ou Booléen).
 
 Dans d'autres cas (list box basées sur des sélections nommées, colonnes associées à des expressions), la fonction de tri standard n'est pas disponible. Un tri de list box standard modifie l'ordre de la sélection courante dans la base de données. Cependant, les enregistrements en surbrillance et l'enregistrement courant ne sont pas modifiés. Un tri standard synchronise toutes les colonnes de la list box, y compris les colonnes calculées.
 
-
-
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles |
+| Nom      | Type de données | Valeurs possibles |
 | -------- | --------------- | ----------------- |
 | sortable | boolean         | true, false       |
-
-
-
 
 #### Objets pris en charge
 
 [List Box](listbox_overview.md)
 
-
-
 ---
-
-
 
 ## Action standard
 
@@ -224,16 +170,11 @@ Vous pouvez associer à la fois une action standard et la méthode projet d'un o
 
 Vous pouvez également définir cette propriété à l'aide de la commande `OBJECT SET ACTION`.
 
-
-
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                                                |
+| Nom    | Type de données | Valeurs possibles                                                                                                |
 | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------- |
 | action | string          | Le nom d'une [action standard valide](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
-
-
-
 
 #### Objets pris en charge
 
