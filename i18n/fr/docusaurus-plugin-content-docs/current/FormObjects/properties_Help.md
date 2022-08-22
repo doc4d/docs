@@ -20,7 +20,7 @@ Vous pouvez soit :
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles                                            |
+|   Nom   | Type de données | Valeurs possibles                                            |
 |:-------:|:---------------:| ------------------------------------------------------------ |
 | tooltip |      text       | informations supplémentaires destinées à aider l'utilisateur |
 
