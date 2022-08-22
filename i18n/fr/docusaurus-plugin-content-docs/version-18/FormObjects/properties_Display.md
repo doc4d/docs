@@ -39,7 +39,7 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                                    |
+| Nom        | Type de données | Valeurs possibles                                                                    |
 | ---------- | --------------- | ------------------------------------------------------------------------------------ |
 | textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
 
@@ -77,7 +77,7 @@ The table below shows choices available:
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                                                                                                                                     |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                     |
 | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | dateFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (peut être combiné avec les autres valeurs possibles) |
 
@@ -234,7 +234,7 @@ The following table shows how different formats affect the display of numbers. T
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles                                              |
+| Nom          | Type de données | Valeurs possibles                                              |
 | ------------ | --------------- | -------------------------------------------------------------- |
 | numberFormat | string          | Numbers (including a decimal point or minus sign if necessary) |
 
@@ -293,7 +293,7 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                                                                     |
+| Nom           | Type de données | Valeurs possibles                                                                                     |
 | ------------- | --------------- | ----------------------------------------------------------------------------------------------------- |
 | pictureFormat | string          | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
 
@@ -326,7 +326,7 @@ The table below shows the Time field display formats and gives examples:
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                                                                                                                                                        |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                        |
 | ---------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | timeFormat | string          | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (can be combined with the other possible values) |
 
@@ -350,7 +350,7 @@ When a [boolean expression](properties_Object.md#expression-type) is displayed a
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                                        |
+| Nom           | Type de données | Valeurs possibles                                                        |
 | ------------- | --------------- | ------------------------------------------------------------------------ |
 | booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
 
@@ -370,7 +370,7 @@ Boolean columns can also be displayed as pop-up menus. In this case, the [Text w
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                                                                                      |
+| Nom         | Type de données | Valeurs possibles                                                                                                      |
 | ----------- | --------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | controlType | string          | **number columns**: "automatic" (default) or "checkbox"<br/>**boolean columns**: "checkbox" (default) or "popup" |
 
@@ -388,7 +388,7 @@ In particular, this property allows implementing "invisible" buttons.  Non-rende
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles |
+| Nom       | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
 | affichage | boolean         | true, false       |
 
@@ -418,7 +418,7 @@ In this case as well, the [Title](#title) property is also available so that the
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | threeState | boolean         | true, false       |
 
@@ -439,7 +439,7 @@ In that cases, the title of the check box can be entered using this property.
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles                  |
+| Nom          | Type de données | Valeurs possibles                  |
 | ------------ | --------------- | ---------------------------------- |
 | controlTitle | string          | Any custom label for the check box |
 
@@ -475,7 +475,7 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles      |
+| Nom          | Type de données | Valeurs possibles      |
 | ------------ | --------------- | ---------------------- |
 | truncateMode | string          | "withEllipsis", "none" |
 
@@ -506,7 +506,7 @@ This property is only used when drawing objects located in the body of a list fo
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                                       |
+| Nom        | Type de données | Valeurs possibles                                                                       |
 | ---------- | --------------- | --------------------------------------------------------------------------------------- |
 | visibility | string          | "visible", "hidden", "selectedRows" (list form only), "unselectedRows" (list form only) |
 
@@ -561,7 +561,7 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                         |
+| Nom      | Type de données | Valeurs possibles                                         |
 | -------- | --------------- | --------------------------------------------------------- |
 | wordwrap | string          | "automatic" (à l'exception de list box), "normal", "none" |
 
