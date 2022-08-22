@@ -37,7 +37,7 @@ Le style de bouton Classique est un bouton système standard (c'est-à-dire un r
 
 Par défaut, le style Classique a un fond gris clair avec un libellé au centre. Lorsque le curseur survole le style de bouton Classique, la bordure et la l'arrière-plan changent de couleur. En plus de lancer l'exécution de code, le style de bouton Classique imite un bouton mécanique en changeant rapidement la couleur d'arrière-plan lorsque vous cliquez dessus.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
 
@@ -64,7 +64,7 @@ Le style de bouton A plat est un bouton système standard (c'est-à-dire un rect
 
 Par défaut, le style A plat a un arrière-plan avec un libellé au centre, des bords arrondis et un design minimaliste. Le style graphique du bouton A plat est particulièrement utile pour les formulaires à imprimer.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
 
@@ -95,7 +95,7 @@ Par défaut, le style bouton Barre d'outils a un fond transparent avec un libell
 
 - *Sous macOS* - le contour du bouton n’apparaît jamais. Lorsqu’il dispose de la propriété “Avec pop up menu”, un triangle est affiché à droite et en bas du bouton.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -123,7 +123,7 @@ Par défaut, le style Bevel a un fond gris clair avec un libellé au centre. En 
 
 - *Sous macOS* - le contour du bouton n’apparaît jamais. Lorsqu’il dispose de la propriété “Avec pop up menu”, un triangle est affiché à droite et en bas du bouton.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -151,7 +151,7 @@ Par défaut, le style Bevel arrondi a un fond gris clair avec un libellé au cen
 
 - *Sous macOS* - les coins du bouton sont arrondis. Lorsqu’il dispose de la propriété “Avec pop up menu”, un triangle est affiché à droite et en bas du bouton.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -179,7 +179,7 @@ Par défaut, le style OS Gradient a un fond gris clair avec un libellé au centr
 
 - *Sous macOs* - le bouton s'affiche comme un bouton à deux tons. Lorsqu’il dispose de la propriété “Avec pop up menu”, un triangle est affiché à droite et en bas du bouton.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -207,7 +207,7 @@ Par défaut, le style OS X Textured apparaît comme :
 
 - *Sous macOS* - un bouton système standard affichant un changement de couleur du gris clair au gris foncé. Sa hauteur est prédéfinie : il n'est pas possible de l'agrandir ou de la réduire.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -235,7 +235,7 @@ Les couleurs (surbrillance et arrière-plan) d'un bouton au style Office XP sont
 
 - *Sous macOS* - son arrière-plan est toujours affiché.
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -257,7 +257,7 @@ Le style du bouton Aide peut être utilisé pour afficher un bouton d'aide syst�
 
 ![](../assets/en/FormObjects/button_help.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myButton": {
@@ -282,7 +282,7 @@ Le style de bouton Rond apparaît comme un bouton système circulaire. Ce style 
 
 Sous Windows, il est identique au style «Aucun» (le cercle en arrière-plan n'est pas pris en compte).
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myButton": {
@@ -303,7 +303,7 @@ Le style de bouton Personnalisé accepte une image d'arrière-plan personnalisé
 
 ![](../assets/en/FormObjects/button_custom.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```code
  "myButton": {
