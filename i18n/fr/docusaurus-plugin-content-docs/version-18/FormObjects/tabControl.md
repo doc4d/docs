@@ -25,7 +25,7 @@ Si l’onglet est assez large, il affiche les intitulés et les icônes. S’il 
 
 Sous macOS, les onglets peuvent être orientés, en plus de la position standard (en haut), à droite, à gauche ou en bas.
 
-### JSON Example
+### Exemple JSON
 
 ```4d
  "myTab": {
@@ -80,13 +80,9 @@ Vous pouvez, par exemple, écrire le code suivant :
 
 ### Action Goto Page
 
-Lorsque vous associez l’[](properties_Action.md#standard-action)action standard
-
- `gotoPage` à un objet de type Onglet, 4D affiche automatiquement la page du formulaire correspondant au numéro de l’onglet sélectionné.</p> 
+Lorsque vous associez l’[action standard](properties_Action.md#standard-action) `gotoPage` à un objet de type Onglet, 4D affiche automatiquement la page du formulaire correspondant au numéro de l’onglet sélectionné.
 
 Par exemple, si l’utilisateur clique sur le 3e onglet, 4D affichera la page 3 du formulaire courant (si elle existe).
-
-
 
 ## Propriétés prises en charge
 
