@@ -32,7 +32,7 @@ Un método proyecto puede tener uno de los siguientes papeles, dependiendo de c�
 - Método de gestión de proceso
 - Métodos de gestión de eventos o errores
 
-You can also execute your project methods manually, for testing purpose for example.
+También puede ejecutar los métodos de su proyecto manualmente, por ejemplo, para realizar pruebas.
 
 ### Subrutinas
 
@@ -171,44 +171,44 @@ Un **método de gestión de errores** es un método proyecto basado en interrupc
 
 ### Execution mode
 
-Project methods written in your application are usually called automatically during the use of the application via menu commands, buttons, other methods, and so on. As for database methods, they are executed in relation to specific events that occur in the application.
+Los métodos proyecto escritos en su aplicación suelen ser llamados automáticamente durante el uso de la aplicación a través de comandos de menú, botones, otros métodos, etc. En cuanto a los métodos base, se ejecutan en relación con eventos específicos que ocurren en la aplicación.
 
-However, for testing and debugging purposes, 4D lets you manually execute project methods and certain database methods in Design mode. In this case, it is possible to run the method in a new process and/or directly in Debug mode, in order to check its execution step by step.
+Sin embargo, para propósitos de prueba y depuración, 4D le permite ejecutar manualmente los métodos proyecto y ciertos métodos de la base de datos en el modo Diseño. En este caso, es posible ejecutar el método en un nuevo proceso y/o directamente en modo Depuración, para comprobar su ejecución paso a paso.
 
-The following execution modes are available:
+Están disponibles los siguientes modos de ejecución:
 
 - El método A puede llamar al método B que puede llamar a A, por lo que A volverá a llamar a B y así sucesivamente.
 - Un método puede llamarse a sí mismo.
 
 #### Desde el Editor de código
 
-Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired.
+Each [**Code Editor**](../code-editor/overview.md) window has a button that can be used to run the current method. Mediante el menú asociado a este botón, se puede elegir el tipo de ejecución deseado.
 
-This button is only active for project methods and for the following database methods:
+Este botón sólo está activo para los métodos proyecto y para los siguientes métodos base de datos:
 
 - On Startup
 - On Exit
 - On Server Startup
 - On Server Shutdown
 
-From the [Code Editor](../code-editor/overview.md) window,
+Para más información, consulte [Barra de herramientas](../code-editor/write-class-method.md#toolbar).
 
 #### De la caja de diálogo Ejecutar método
 
 En 4D, algunos usos típicos de la recursividad son:
 
-This dialog box lists all the project methods of the database, including shared project methods of components. On the other hand, project methods that have been declared invisible will not appear.
+Esta caja de diálogo lista todos los métodos proyecto de la base de datos, incluyendo los métodos proyecto compartidos de los componentes. Por otra parte, los métodos proyecto que han sido declarados invisibles no aparecerán.
 
-To execute a project method, simply select its name in the list and click on **Execute**. To run a method step by step in Debug mode, click on **Debug**. For more information about the 4D debugger, refer to the [Debugging](../Debugging/basics.md) section.
+Para ejecutar un método proyecto, basta con seleccionar su nombre en la lista y hacer clic en **Ejecutar**. Para ejecutar un método paso a paso en modo Depuración, haga clic en **Depuración**. Para más información sobre el depurador de 4D, consulte la sección [Depuración](../Debugging/basics.md).
 
-If you check the **New Process** check box, the method you selected executes in another process. If the method is performing a time-consuming task such as printing a large set of records, you can continue to work with your database, adding records to a table, creating a graph to display data, and so on. For more information about processes, refer to [Processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) the 4D *Language Reference* manual.
+Si marca la casilla **Nuevo proceso**, el método seleccionado se ejecuta en otro proceso. Si el método está realizando una tarea que requiere mucho tiempo, como la impresión de un gran conjunto de registros, puede seguir trabajando con su base de datos, añadiendo registros a una tabla, creando un gráfico para mostrar los datos, etc. Para más información sobre los procesos, consulte [Procesos](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) en el manual *Lenguaje* 4D.
 
-To modify the properties of a project method:
+**Notas Servidor 4D**:
 
-- If you want the method to be executed on the server machine rather than on the client machine, select the **On 4D Server** option in the To be executed menu. In this case, a new process, call the *stored procedure*, is created on the server machine in order to execute the method. This option can be used to reduce network traffic and optimize the functioning of 4D Server, in particular for methods that call data stored on the disk. All types of methods can be executed on the server machine or on another client machine, except for those that modify the user interface. En este caso, los procedimientos almacenados son ineficaces.
-- También puede optar por ejecutar el método en otra estación de trabajo cliente. Other client workstations will not appear in the menu, unless they have been previously "registered" (for more information, refer to the description of the [REGISTER CLIENT](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.en.html).
+- Si desea que el método se ejecute en el equipo servidor y no en el equipo cliente, seleccione la opción **En 4D Server** en el menú A ejecutar. En este caso, se crea un nuevo proceso, llamado *procedimiento almacenado*, en la máquina servidor para ejecutar el método. Esta opción puede utilizarse para reducir el tráfico de red y optimizar el funcionamiento de 4D Server, en particular para los métodos que llaman a los datos almacenados en el disco. Todos los tipos de métodos pueden ejecutarse en la máquina servidor o en otra máquina cliente, excepto los que modifican la interfaz de usuario. En este caso, los procedimientos almacenados son ineficaces.
+- También puede optar por ejecutar el método en otra estación de trabajo cliente. Otras estaciones de trabajo cliente no aparecerán en el menú, a menos que hayan sido previamente "registradas" (para más información, consulte la descripción de la opción [REGISTRAR CLIENTE](https://doc.4d.com/4Dv19R5/4D/19-R5/REGISTER-CLIENT.301-5830908.en.html).
 
-By default, the **locally** option is selected. Con la versión 4D monousuario, esta es la única opción disponible.
+Por defecto, está seleccionada la opción **localmente**. Con la versión 4D monousuario, esta es la única opción disponible.
 
 ## Métodos proyecto recursivos
 
