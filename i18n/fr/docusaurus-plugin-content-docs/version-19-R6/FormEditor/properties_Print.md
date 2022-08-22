@@ -24,7 +24,7 @@ You can modify the following print settings:
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                                                    |
+| Nom         | Type de données | Valeurs possibles                                                                    |
 | ----------- | --------------- | ------------------------------------------------------------------------------------ |
 | pageFormat  | object          | Available print properties: paperName, paperWidth, paperHeight, orientation, scale   |
 | paperName   | string          | "A4", "US Letter"...                                                                 |
