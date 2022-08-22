@@ -11,7 +11,7 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | spellcheck | boolean         | true, false       |
 
@@ -37,7 +37,7 @@ For a [Web Area](webArea_overview.md), the contents of the menu depend of the re
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                     |
+| Nom         | Type de données | Valeurs possibles                     |
 | ----------- | --------------- | ------------------------------------- |
 | contextMenu | string          | "automatic" (used if missing), "none" |
 
@@ -57,7 +57,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | saisissable | boolean         | true, false       |
 
@@ -113,7 +113,7 @@ Ce tableau décrit les filtres de saisie du menu de sélection :
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                    |
+| Nom         | Type de données | Valeurs possibles                                    |
 | ----------- | --------------- | ---------------------------------------------------- |
 | entryFilter | string          | <li>Entry filter code</li> ou <li>Entry filter name (filter names start with &#124; )</li> |
 
@@ -137,7 +137,7 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles |
+| Nom       | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
 | focusable | boolean         | true, false       |
 
@@ -157,7 +157,7 @@ By default, the object uses the current keyboard layout.
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles                                                           |
+| Nom             | Type de données | Valeurs possibles                                                           |
 | --------------- | --------------- | --------------------------------------------------------------------------- |
 | keyboardDialect | text            | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
 
@@ -189,7 +189,7 @@ Lorsque cette valeur est sélectionnée, la propriété est gérée par l'option
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles                                   |
+| Nom       | Type de données | Valeurs possibles                                   |
 | --------- | --------------- | --------------------------------------------------- |
 | multiline | text            | "yes", "no", "automatic" (par défaut si non défini) |
 
@@ -223,7 +223,7 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                                  |
+| Nom         | Type de données | Valeurs possibles                                                  |
 | ----------- | --------------- | ------------------------------------------------------------------ |
 | placeholder | string          | Texte à afficher (grisé) lorsque l'objet ne contient aucune valeur |
 
@@ -243,7 +243,7 @@ This property keeps the selection visible within the object after it has lost th
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles |
+| Nom           | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
 | showSelection | boolean         | true, false       |
 
@@ -266,7 +266,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles                                  |
+| Nom             | Type de données | Valeurs possibles                                  |
 | --------------- | --------------- | -------------------------------------------------- |
 | shortcutAccel   | boolean         | true, false (Ctrl Windows/Command macOS)           |
 | shortcutAlt     | boolean         | true, false                                        |
@@ -292,7 +292,7 @@ When this option is not enabled, users must first select the cell row and then c
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles |
+| Nom             | Type de données | Valeurs possibles |
 | --------------- | --------------- | ----------------- |
 | singleClickEdit | boolean         | true, false       |
 
