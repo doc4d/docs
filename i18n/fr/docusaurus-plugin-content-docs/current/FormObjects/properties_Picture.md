@@ -15,7 +15,7 @@ Les emplacements suivants peuvent être utilisés pour le chemin d'images statiq
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles                                                                                                         |
+|   Nom   | Type de données | Valeurs possibles                                                                                                         |
 |:-------:|:---------------:| ------------------------------------------------------------------------------------------------------------------------- |
 | picture |      text       | Chemin relatif ou chemin du système de fichiers dans la syntaxe POSIX, ou "var:\<variableName\>" pour la variable image |
 
@@ -58,7 +58,7 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                        |
+| Nom           | Type de données | Valeurs possibles                                        |
 | ------------- | --------------- | -------------------------------------------------------- |
 | pictureFormat | string          | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
