@@ -68,7 +68,7 @@ Pour afficher la boîte de dialogue **Propriétés de la méthode** pour une mé
 
 > Une fonction de paramétrage global vous permet de modifier une propriété pour tout ou partie des méthodes projet en une seule opération (voir [Modifier attributs globalement](#modifier-attributs-globalement)).
 
-#### Le nom
+#### Nom
 
 Vous pouvez changer le nom d'une méthode projet dans la zone **Nom** de la fenêtre **Propriétés de la méthode** ou dans l'Explorateur.
 
