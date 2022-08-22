@@ -14,7 +14,7 @@ Si cette option n'est pas cochée, la largeur de la fenêtre du formulaire peut 
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles   |
+| Nom           | Type de données | Valeurs possibles   |
 | ------------- | --------------- | ------------------- |
 | windowSizingY | string          | "fixed", "variable" |
 
@@ -31,7 +31,7 @@ Si cette option n'est pas cochée, la largeur de la fenêtre du formulaire peut 
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles   |
+| Nom           | Type de données | Valeurs possibles   |
 | ------------- | --------------- | ------------------- |
 | windowSizingX | string          | "fixed", "variable" |
 
@@ -45,7 +45,7 @@ Hauteur maximale et minimale (en pixels) d'une fenêtre de formulaire redimensio
 
 ##### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles  |
+| Nom             | Type de données | Valeurs possibles  |
 | --------------- | --------------- | ------------------ |
 | windowMinHeight | number          | valeur entier long |
 | windowMaxHeight | number          | valeur entier long |
@@ -58,7 +58,7 @@ Largeur maximale et minimale (en pixels) d'une fenêtre de formulaire redimensio
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles  |
+| Nom            | Type de données | Valeurs possibles  |
 | -------------- | --------------- | ------------------ |
 | windowMinWidth | number          | valeur entier long |
 | windowMaxWidth | number          | valeur entier long |
