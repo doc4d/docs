@@ -23,7 +23,7 @@ Lorsque l'option d'**insertion automatique** n'est pas sélectionnée (par défa
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles |
+| Nom                | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
 | automaticInsertion | boolean         | true, false       |
 
@@ -39,7 +39,7 @@ Associe une liste de choix à un objet. Il peut s'agir d'un nom de liste de choi
 
 #### Grammaire JSON
 
-| Le nom     | Type de données   | Valeurs possibles                                                |
+| Nom        | Type de données   | Valeurs possibles                                                |
 | ---------- | ----------------- | ---------------------------------------------------------------- |
 | choiceList | liste, collection | Une liste de valeurs possibles                                   |
 | liste      | liste, collection | Une liste de valeurs possibles (listes hiérarchiques uniquement) |
@@ -56,7 +56,7 @@ Liste de valeurs statiques à utiliser comme étiquettes pour l'objet onglet.
 
 #### Grammaire JSON
 
-| Le nom | Type de données   | Valeurs possibles                           |
+| Nom    | Type de données   | Valeurs possibles                           |
 | ------ | ----------------- | ------------------------------------------- |
 | labels | liste, collection | Une liste de valeurs à saisir dans l'onglet |
 
@@ -75,7 +75,7 @@ Indique une variable ou une expression qui se verra attribuer l'élément/l'enti
 
 #### Grammaire JSON
 
-| Le nom            | Type de données | Valeurs possibles  |
+| Nom               | Type de données | Valeurs possibles  |
 | ----------------- | --------------- | ------------------ |
 | currentItemSource | string          | Expression d'objet |
 
@@ -98,7 +98,7 @@ Indique une variable ou une expression qui se verra attribuer un entier long ind
 
 #### Grammaire JSON
 
-| Le nom                    | Type de données | Valeurs possibles    |
+| Nom                       | Type de données | Valeurs possibles    |
 | ------------------------- | --------------- | -------------------- |
 | currentItemPositionSource | string          | Expression numérique |
 
@@ -132,7 +132,7 @@ Vous devez saisir une liste de valeurs. In the Form editor, a specific dialog bo
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                |
+| Nom    | Type de données | Valeurs possibles                                                |
 | ------ | --------------- | ---------------------------------------------------------------- |
 | values | collection      | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
@@ -175,7 +175,7 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                       |
+| Nom        | Type de données | Valeurs possibles                                                       |
 | ---------- | --------------- | ----------------------------------------------------------------------- |
 | dataSource | string          | A 4D variable, field name, or an arbitrary complex language expression. |
 
@@ -195,9 +195,9 @@ All database tables can be used, regardless of whether the form is related to a 
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles  |
-| ------ | --------------- | ------------------ |
-| table  | number          | Numéro de la table |
+| Nom   | Type de données | Valeurs possibles  |
+| ----- | --------------- | ------------------ |
+| table | number          | Numéro de la table |
 
 #### Objets pris en charge
 
@@ -227,7 +227,7 @@ Using this property requires compliance with the following principles:
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles    |
+| Nom    | Type de données | Valeurs possibles    |
 | ------ | --------------- | -------------------- |
 | saveAs | string          | "value", "reference" |
 
@@ -249,7 +249,7 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles     |
+| Nom                 | Type de données | Valeurs possibles     |
 | ------------------- | --------------- | --------------------- |
 | selectedItemsSource | string          | Collection expression |
 
@@ -269,7 +269,7 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles   |
+| Nom            | Type de données | Valeurs possibles   |
 | -------------- | --------------- | ------------------- |
 | namedSelection | string          | Nom de la sélection |
 
