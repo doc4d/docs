@@ -100,7 +100,7 @@ Après vous être identifié, vous pouvez cliquer sur le lien **Liste de mes lic
 
 Vous pouvez ensuite gérer vos licences en les affectant à des projets.
 
-Sélectionnez la licence que vous souhaitez dans la liste, puis cliquez sur **Lier à un projet:</p>
+Sélectionnez la licence que vous souhaitez dans la liste, puis cliquez sur **Lier à un projet >** :
 
 ![](../assets/en/getStart/licens3.png)
 
