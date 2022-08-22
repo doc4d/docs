@@ -16,7 +16,7 @@ title: On After Keystroke
 
 ## Description
 
-> L'événement `On After Keystroke` peut généralement être remplacé par l'événement On After Edit</code> (voir ci-dessous).
+> L'événement `On After Keystroke` peut généralement être remplacé par l'événement [`On After Edit`](onAfterEdit.md) (voir ci-dessous).
 
 Après avoir sélectionné les propriétés d'événement [`On Before Keystroke`](onBeforeKeystroke.md) et `On After Keystroke` pour un objet, vous pouvez détecter et gérer les frappes au sein de l'objet, en utilisant la commande `FORM event` qui renverra `On Before Keystroke` puis `On After Keystroke` (pour plus d'informations, veuillez reportez-vous à la description de la commande `Get edited text`).
 
@@ -32,7 +32,7 @@ L'événement `On After Keystroke` n'est pas généré :
 Lorsqu'une entrée nécessite une séquence de frappes clavier, les événements [`On Before Keystroke`](onBeforeKeystroke.md) et [`On After Keystroke event`] sont générés uniquement lorsque l'entrée est entièrement validée par l'utilisateur. La commande `Keystroke` retourne le caractère validé. Ce cas se produit principalement :
 
 - lors de l'utilisation de touches "mortes" telles que ^ ou ~: les événements ne sont générés que lorsque le caractère étendu est éventuellement saisi (par exemple "ê" ou ñ),
-- when an IME (Input Code Editor) displays an intermediary dialog box where the user can enter a combination of characters: events are generated only when the IME dialog is validated.
+- lorsqu'un IME (Input method editor) affiche une boîte de dialogue intermédiaire où l'utilisateur peut saisir une combinaison de caractères : les événements sont générés uniquement lorsque la boîte de dialogue IME est validée.
 
 ### Voir également
 
