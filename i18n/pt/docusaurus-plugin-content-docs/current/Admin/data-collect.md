@@ -23,7 +23,7 @@ Data is collected during the following events:
 
 ### Collected at 4D Server startup
 
-| Data          | Example                                                                                              | Notes                                                        |
+| Dados         | Exemplo                                                                                              | Notas                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Name, type, and speed of the processor                       |
 | numberOfCores | 4                                                                                                    | Total number of cores                                        |
@@ -32,19 +32,19 @@ Data is collected during the following events:
 | headless      | false                                                                                                | True if the application is running in headless mode          |
 | version       | 1960                                                                                                 | Version number of the 4D application                         |
 | buildNumber   | 123456                                                                                               | Build number of the 4D application                           |
-| license       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Commercial name and description of product licenses          |
+| licença       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Commercial name and description of product licenses          |
 
 
 ### Collected per database at opening
 
-| Data                    | Example                                                 | Notes                                                                                 |
+| Dados                   | Exemplo                                                 | Notas                                                                                 |
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | id                      | hashed string                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
 | dataFileSize            | 419430400                                               | Data file size in bytes                                                               |
 | indexesSize             | 419430400                                               | Index size in bytes                                                                   |
 | cacheSize               | 419430400                                               | Cache size in bytes                                                                   |
 | usingLegacyNetworkLayer | fasle                                                   | True if legacy network layer used for the application server                          |
-| isEncrypted             | true                                                    | True if the data file is encrypted                                                    |
+| isEncrypted             | true                                                    | True se o arquivo de dados estiver criptografado                                      |
 | isCompiled              | true                                                    | True if the application is compiled                                                   |
 | isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                              |
 | isProjectMode           | true                                                    | True if the application is a project                                                  |
@@ -53,14 +53,14 @@ Data is collected during the following events:
 
 ### Collected per database at closure
 
-| Data   | Example | Notes                                                        |
-| ------ | ------- | ------------------------------------------------------------ |
-| uptime | 123456  | Time elapsed (in seconds) since local 4D database was opened |
+| Dados                  | Exemplo | Notas                                                        |
+| ---------------------- | ------- | ------------------------------------------------------------ |
+| tempo de funcionamento | 123456  | Time elapsed (in seconds) since local 4D database was opened |
 
 
 ### Collected per database at web server startup
 
-| Data      | Example          | Notes       |
+| Dados     | Exemplo          | Notas       |
 | --------- | ---------------- | ----------- |
 | webServer | {"started":true} | Always true |
 
