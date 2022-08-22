@@ -16,7 +16,7 @@ title: On After Keystroke
 
 ## Description
 
-> L'événement `On After Keystroke` peut généralement être remplacé par l'événement On After Edit</code> (voir ci-dessous).
+> L'événement `On After Keystroke` peut généralement être remplacé par l'événement [`On After Edit`](onAfterEdit.md) (voir ci-dessous).
 
 Après avoir sélectionné les propriétés d'événement [`On Before Keystroke`](onBeforeKeystroke.md) et `On After Keystroke` pour un objet, vous pouvez détecter et gérer les frappes au sein de l'objet, en utilisant la commande `FORM event` qui renverra `On Before Keystroke` puis `On After Keystroke` (pour plus d'informations, veuillez reportez-vous à la description de la commande `Get edited text`).
 
