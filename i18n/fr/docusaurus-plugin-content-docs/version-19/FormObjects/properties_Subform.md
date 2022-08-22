@@ -10,7 +10,7 @@ Indique si l’utilisateur peut supprimer des sous-enregistrements dans un sous-
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles               |
+| Nom             | Type de données | Valeurs possibles               |
 | --------------- | --------------- | ------------------------------- |
 | deletableInList | boolean         | true, false (par défaut : true) |
 
@@ -33,7 +33,7 @@ Cette option permet de désigner un formulaire détaillé à utiliser dans un so
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                                                                                                   |
+| Nom        | Type de données | Valeurs possibles                                                                                                                   |
 | ---------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | detailForm | string          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
@@ -51,7 +51,7 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 
 #### Grammaire JSON
 
-| Le nom                       | Type de données | Valeurs possibles                  |
+| Nom                          | Type de données | Valeurs possibles                  |
 | ---------------------------- | --------------- | ---------------------------------- |
 | doubleClickInEmptyAreaAction | string          | "addSubrecord" ou "" to do nothing |
 
@@ -79,7 +79,7 @@ For the last two actions, the On `Open Detail` form event is also generated. The
 
 #### Grammaire JSON
 
-| Le nom                 | Type de données | Valeurs possibles                   |
+| Nom                    | Type de données | Valeurs possibles                   |
 | ---------------------- | --------------- | ----------------------------------- |
 | doubleClickInRowAction | string          | "editSubrecord", "displaySubrecord" |
 
@@ -101,7 +101,7 @@ Lorsque cette propriété est activée pour un sous-formulaire de liste, l'utili
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles |
+| Nom             | Type de données | Valeurs possibles |
 | --------------- | --------------- | ----------------- |
 | enterableInList | boolean         | true, false       |
 
@@ -120,7 +120,7 @@ Les sous-formulaires de liste peuvent être utilisés pour la saisie de données
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                                                                                                   |
+| Nom      | Type de données | Valeurs possibles                                                                                                                   |
 | -------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | listForm | string          | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
@@ -137,9 +137,9 @@ Spécifie la table à laquelle appartient le sous-formulaire Liste (le cas éch�
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                     |
-| ------ | --------------- | ----------------------------------------------------- |
-| table  | string          | Nom de la table 4D, ou "" s'il n'existe aucune table. |
+| Nom   | Type de données | Valeurs possibles                                     |
+| ----- | --------------- | ----------------------------------------------------- |
+| table | string          | Nom de la table 4D, ou "" s'il n'existe aucune table. |
 
 #### Objets pris en charge
 
@@ -160,7 +160,7 @@ Designates the option for allowing users to select rows:
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles            |
+| Nom           | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
 | selectionMode | string          | "multiple", "single", "none" |
 
