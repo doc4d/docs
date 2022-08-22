@@ -17,7 +17,7 @@ La barre de menus du formulaire fonctionnera pour les formulaires d'entrée et d
 
 #### Grammaire JSON
 
-| Le nom  | Type de données | Valeurs possibles       |
+| Nom     | Type de données | Valeurs possibles       |
 | ------- | --------------- | ----------------------- |
 | menuBar | string          | Nom d'une barre de menu |
 
