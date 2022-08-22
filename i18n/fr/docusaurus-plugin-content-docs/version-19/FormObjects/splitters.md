@@ -20,7 +20,7 @@ Les caractéristiques générales des séparateurs sont les suivantes :
 
 Une fois inséré, un séparateur se présente sous la forme d’un trait. Vous pouvez modifier son [style de bordure](properties_BackgroundAndBorder.md#border-line-style-dotted-line-type) afin d’obtenir un trait plus ou moins épais, ou [modifier sa couleur](properties_BackgroundAndBorder.md##font-color-line-color).
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
 "mySplitter": {
