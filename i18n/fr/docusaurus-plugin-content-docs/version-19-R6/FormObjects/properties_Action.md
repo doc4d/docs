@@ -21,7 +21,7 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                          |
+| Nom      | Type de données | Valeurs possibles                                          |
 | -------- | --------------- | ---------------------------------------------------------- |
 | dragging | text            | "none" (par défaut), "custom", "automatic" (hors list box) |
 
@@ -53,7 +53,7 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                          |
+| Nom      | Type de données | Valeurs possibles                                          |
 | -------- | --------------- | ---------------------------------------------------------- |
 | dropping | text            | "none" (par défaut), "custom", "automatic" (hors list box) |
 
@@ -61,35 +61,20 @@ Pour plus d'informations, reportez-vous à [Glisser-déposer](https://doc.4d.com
 
 [Zones 4D Write Pro](writeProArea_overview.md) - [Bouton](button_overview.md) - [Zone de saisie](input_overview.md) - [Liste hiérarchique](list_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Zone de plug-in](pluginArea_overview.md#overview)
 
- </p> 
-
-
-
 
 #### Voir également
-
 [Glissable](#draggable)
 
 
-
-
 ---
-
-
 ## Exécuter méthode objet
-
 Lorsque cette option est activée, la méthode objet est exécutée avec l'événement `Sur données modifiées` *au même moment* où l'utilisateur change la valeur de l'indicateur. Lorsque l'option est désactivée, la méthode est exécutée *après* la modification.
-
-
 
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles |
+| Nom                 | Type de données | Valeurs possibles |
 | ------------------- | --------------- | ----------------- |
 | continuousExecution | boolean         | true, false       |
-
-
-
 
 #### Objets pris en charge
 
@@ -100,11 +85,7 @@ Lorsque cette option est activée, la méthode objet est exécutée avec l'évé
 
 
 
-
-
 ---
-
-
 ## Méthode
 
 Référence d'une méthode attachée à l'objet. Les méthodes d'objet "gèrent" généralement l'objet pendant que le formulaire est affiché ou imprimé. Vous n'appelez pas de méthode objet - 4D l'appelle automatiquement lorsqu'un événement implique l'objet auquel la méthode objet est rattachée.
@@ -122,16 +103,11 @@ Plusieurs types de références de méthode sont pris en charge :
   `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
 
-
-
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                          |
+| Nom    | Type de données | Valeurs possibles                                                                          |
 | ------ | --------------- | ------------------------------------------------------------------------------------------ |
 | method | text            | Chemin de fichier standard ou personnalisé de la méthode objet ou nom de la méthode projet |
-
-
-
 
 
 #### Objets pris en charge
@@ -141,27 +117,17 @@ Plusieurs types de références de méthode sont pris en charge :
 
 
 
-
-
 ---
-
-
 ## Lignes déplaçables
-
 `List box de type tableau`
 
-Autorise le déplacement des lignes pendant l'exécution. Cette option est sélectionnée par défaut. Il n'est pas disponible pour les [list box de type sélection](listbox_overview.md#selection-list-boxes) ni pour les [list box en mode hiérarchique](properties_Hierarchy.md#hierarchical-list-box). 
-
-
+Autorise le déplacement des lignes pendant l'exécution. Cette option est sélectionnée par défaut. Il n'est pas disponible pour les [list box de type sélection](listbox_overview.md#selection-list-boxes) ni pour les [list box en mode hiérarchique](properties_Hierarchy.md#hierarchical-list-box).
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | movableRows | boolean         | true, false       |
-
-
-
 
 #### Objets pris en charge
 
@@ -171,25 +137,16 @@ Autorise le déplacement des lignes pendant l'exécution. Cette option est séle
 
 
 
-
-
 ---
-
-
 ## Multi-sélectionnable
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
-
-
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles            |
+| Nom           | Type de données | Valeurs possibles            |
 | ------------- | --------------- | ---------------------------- |
 | selectionMode | text            | "multiple", "single", "none" |
-
-
-
 
 #### Objets pris en charge
 
@@ -198,35 +155,24 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 
 
-
-
 ---
-
-
 ## Triable
 
 Permet de trier les données de colonne en cliquant sur un en-tête de [Listbox](listbox_overview.md). Cette option est sélectionnée par défaut. Les tableaux de types d'image (colonnes) ne peuvent pas être triés à l'aide de cette fonction.
 
 Dans les list box basées sur une sélection d'enregistrements, la fonction de tri standard est disponible uniquement :
-
 *   Lorsque la source de données est *Sélection courante*,
 *   Avec des colonnes associées à des champs (de type Alpha, Numérique, Date, Heure ou Booléen).
 
 Dans d'autres cas (list box basées sur des sélections nommées, colonnes associées à des expressions), la fonction de tri standard n'est pas disponible. Un tri de list box standard modifie l'ordre de la sélection courante dans la base de données. Cependant, les enregistrements en surbrillance et l'enregistrement courant ne sont pas modifiés. Un tri standard synchronise toutes les colonnes de la list box, y compris les colonnes calculées.
 
-
-
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles |
+| Nom      | Type de données | Valeurs possibles |
 | -------- | --------------- | ----------------- |
 | sortable | boolean         | true, false       |
 
-
-
-
 #### Objets pris en charge
-
 [List Box](listbox_overview.md)
 
 
@@ -234,29 +180,19 @@ Dans d'autres cas (list box basées sur des sélections nommées, colonnes assoc
 
 
 
-
-
 ---
-
-
 ## Action standard
-
 Activités typiques à réaliser par les objets actifs (par exemple, permettre à l'utilisateur d'accepter, d'annuler ou de supprimer des enregistrements, de se déplacer entre les enregistrements ou de page en page dans un formulaire multi-pages, etc.) ont été prédéfinies par 4D comme actions standard. Elles sont décrites en détail dans la section [Actions standard](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html) du *manuel de développement*.
 
-Vous pouvez associer à la fois une action standard et la méthode projet d'un objet. Dans ce cas, l'action standard est généralement exécutée après la méthode et 4D utilise cette action pour activer/désactiver l'objet en fonction du contexte courant. Lorsqu’un objet est désactivé, la méthode projet associée ne peut être exécutée. 
+Vous pouvez associer à la fois une action standard et la méthode projet d'un objet. Dans ce cas, l'action standard est généralement exécutée après la méthode et 4D utilise cette action pour activer/désactiver l'objet en fonction du contexte courant. Lorsqu’un objet est désactivé, la méthode projet associée ne peut être exécutée.
 
 Vous pouvez également définir cette propriété à l'aide de la commande `OBJECT SET ACTION`.
 
-
-
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                                                |
+| Nom    | Type de données | Valeurs possibles                                                                                                |
 | ------ | --------------- | ---------------------------------------------------------------------------------------------------------------- |
 | action | string          | Le nom d'une [action standard valide](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
-
-
-
 
 #### Objets pris en charge
 
