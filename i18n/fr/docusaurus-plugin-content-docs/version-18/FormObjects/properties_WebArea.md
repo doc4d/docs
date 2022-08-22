@@ -16,7 +16,7 @@ Lorsque cette propriété est cochée, un objet JavaScript spécial `$4d` est in
 
 #### Grammaire JSON
 
-| Le nom               | Type de données | Valeurs possibles          |
+| Nom                  | Type de données | Valeurs possibles          |
 | -------------------- | --------------- | -------------------------- |
 | methodsAccessibility | string          | "none" (par défaut), "all" |
 
@@ -32,7 +32,7 @@ La variable "Progression" est de type Entier long. Elle contient une valeur entr
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles              |
+| Nom            | Type de données | Valeurs possibles              |
 | -------------- | --------------- | ------------------------------ |
 | progressSource | string          | Nom d'une variable Entier long |
 
@@ -63,7 +63,7 @@ La variable URL produit les mêmes effets que la commande [WA OUVRIR URL](https:
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles |
+| Nom       | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
 | urlSource | string          | Une URL.          |
 
@@ -94,7 +94,7 @@ A noter que le moteur Blink est soumis aux restrictions suivantes :
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles    |
+| Nom       | Type de données | Valeurs possibles    |
 | --------- | --------------- | -------------------- |
 | webEngine | string          | "embedded", "system" |
 
