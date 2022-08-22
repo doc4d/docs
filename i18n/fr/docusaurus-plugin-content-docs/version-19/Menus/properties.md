@@ -12,7 +12,7 @@ La propriété **Title** contient le libellé d'un menu ou d'une ligne de menu, 
 Dans l'éditeur de menus, vous pouvez saisir directement le libellé "en dur". Vous pouvez également saisir une référence pour une variable ou un élément XLIFF, ce qui facilitera la mise à jour et la traduction des applications. Vous pouvez utiliser types de références suivants :
 
 - Une référence à une ressource XLIFF, du type :xliff:MonLibellé. Pour plus d’informations sur les références XLIFF, reportez-vous à la section *Annexe B : Architecture XLIFF* du *Mode Développement 4D*.
-- An interprocess variable name followed by a number, for example: `:<>vlang,3`. Il suffit de changer le contenu de cette variable pour modifier le libellé du menu lors de son affichage. Dans ce cas, le libellé fera appel à une ressource XLIFF. The value contained in the `<>vlang` variable corresponds to the *id* attribute of the *group* element. La seconde valeur (3 dans cet exemple) désigne l’attribut *id* de l’élément *trans-unit*.
+- Un nom de variable interprocess suivi d’un chiffre, par exemple :`:<>vlang,3`. Il suffit de changer le contenu de cette variable pour modifier le libellé du menu lors de son affichage. Dans ce cas, le libellé fera appel à une ressource XLIFF. La valeur contenue dans la variable `<>vlang` correspond à l’attribut *id* de l’élément *group*. La seconde valeur (3 dans cet exemple) désigne l’attribut *id* de l’élément *trans-unit*.
 
 En utilisant le langage 4D, vous définissez la propriété Title à l'aide du paramètre *itemText* des commandes `APPEND MENU ITEM`, `INSERT MENU ITEM`, et `SET MENU ITEM`.
 
@@ -154,18 +154,18 @@ Les coches sont généralement utilisées pour des menus à action permanente et
 4D vous permet de personnaliser les menus en appliquant différents styles de caractères aux commandes de menus. Vous pouvez personnaliser vos menus avec les styles Gras, Italique ou Souligné, ou à l'aide de la commande `SET MENU ITEM STYLE`.
 
 En règle générale, les styles de police doivent être appliqués à vos menus avec parcimonie, afin d’éviter de conférer une apparence confuse à votre application.
-> Vous pouvez également appliquer un style en saisissant des caractères spéciaux dans le titre du menu (voir  ci-dessus).</p> </blockquote> 
-> 
-> ### Icône ligne
-> 
-> Vous pouvez associer une icône à une ligne de menu. Elle sera affichée directement dans le menu, à côté de la ligne :
-> 
-> ![](../assets/en/Menus/iconMenu.png)
-> 
-> Pour définir l’icône dans l'éditeur de menu, choisissez l'option **Ouvrir** pour ouvrir un fichier image à partir du disque. Lorsque vous sélectionnez un fichier image qui n'est pas stocké dans le dossier Resources du projet, il est automatiquement copié dans ce dossier. Une fois définie, l’icône de ligne apparaît dans la zone d’aperçu :
-> 
-> ![](../assets/en/Menus/iconpreview.png)
-> 
-> Pour supprimer l’icône de ligne, choisissez l’option **Pas d’icône** dans le menu de la zone “Icône ligne”.
-> 
-> Pour définir ds icônes de ligne à l'aide du langage 4D, appelez la commande `SET MENU ITEM ICON`.
+> Vous pouvez également appliquer un style en saisissant des caractères spéciaux dans le titre du menu (voir [Caractères de contrôle](properties.md#using-control-characters) ci-dessus).
+
+### Icône ligne
+
+Vous pouvez associer une icône à une ligne de menu. Elle sera affichée directement dans le menu, à côté de la ligne :
+
+![](../assets/en/Menus/iconMenu.png)
+
+Pour définir l’icône dans l'éditeur de menu, choisissez l'option **Ouvrir** pour ouvrir un fichier image à partir du disque. Lorsque vous sélectionnez un fichier image qui n'est pas stocké dans le dossier Resources du projet, il est automatiquement copié dans ce dossier. Une fois définie, l’icône de ligne apparaît dans la zone d’aperçu :
+
+![](../assets/en/Menus/iconpreview.png)
+
+Pour supprimer l’icône de ligne, choisissez l’option **Pas d’icône** dans le menu de la zone “Icône ligne”.
+
+Pour définir ds icônes de ligne à l'aide du langage 4D, appelez la commande `SET MENU ITEM ICON`.
