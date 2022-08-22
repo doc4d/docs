@@ -10,7 +10,7 @@ Permet de définir une couleur d'arrière-plan différente pour les lignes / col
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                                        |
+| Nom           | Type de données | Valeurs possibles                                                        |
 | ------------- | --------------- | ------------------------------------------------------------------------ |
 | alternateFill | string          | toutes les valeurs css; "transparent"; "automatic"; "automaticAlternate" |
 
@@ -28,7 +28,7 @@ Dans le cas d'une list box, par défaut *Automatique* est sélectionné : la col
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles                          |
+| Nom          | Type de données | Valeurs possibles                          |
 | ------------ | --------------- | ------------------------------------------ |
 | border-style | string          | une valeur css; "transparent"; "automatic" |
 
@@ -53,7 +53,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                                   |
+| Nom           | Type de données | Valeurs possibles                                   |
 | ------------- | --------------- | --------------------------------------------------- |
 | rowFillSource | string          | Une expression retournant une valeur de couleur RGB |
 
@@ -69,7 +69,7 @@ Permet de définir un style standard pour la bordure de l'objet.
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                                 |
+| Nom         | Type de données | Valeurs possibles                                                 |
 | ----------- | --------------- | ----------------------------------------------------------------- |
 | borderStyle | text            | "system", "none", "solid", "dotted", "raised", "sunken", "double" |
 
@@ -85,7 +85,7 @@ Décrit le type de ligne en pointillé comme une séquence de points noirs et bl
 
 #### Grammaire JSON
 
-| Le nom          | Type de données        | Valeurs possibles                                                                               |
+| Nom             | Type de données        | Valeurs possibles                                                                               |
 | --------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | strokeDashArray | number array or string | Ex : Ex : Ex : Ex : Ex : "6 1" ou \[6,1\] pour une séquence de points noirs et un point blanc |
 
@@ -107,7 +107,7 @@ Vous pouvez supprimer ces lignes vides en sélectionnant cette option. Le bas de
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles |
+| Nom                | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
 | hideExtraBlankRows | boolean         | true, false       |
 
@@ -129,7 +129,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                          |
+| Nom    | Type de données | Valeurs possibles                          |
 | ------ | --------------- | ------------------------------------------ |
 | stroke | string          | une valeur css; "transparent"; "automatic" |
 
@@ -147,7 +147,7 @@ Désigne l'épaisseur d'une ligne.
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                                                       |
+| Nom         | Type de données | Valeurs possibles                                                                       |
 | ----------- | --------------- | --------------------------------------------------------------------------------------- |
 | strokeWidth | number          | 0 pour la plus petite largeur dans un formulaire imprimé, ou toute valeur d'entier < 20 |
 
@@ -189,7 +189,7 @@ Vous pouvez obtenir le même résultat en utilisant les commandes `LISTBOX SET R
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles             |
+| Nom           | Type de données | Valeurs possibles             |
 | ------------- | --------------- | ----------------------------- |
 | rowFillSource | string          | Nom d'un tableau entier long. |
 
@@ -205,7 +205,7 @@ Définit l'arrière-plan de la list box sur "Transparent". Lorsqu'elle est défi
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles |
+| Nom          | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
 | border-style | text            | "transparent"     |
 
