@@ -86,7 +86,7 @@ Le style Classique du bouton case à cocher correspond à un système de case à
 
 ![](../assets/en/FormObjects/checkbox_regular.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -108,7 +108,7 @@ Le style plat du bouton case à cocher a un design minimaliste. Le graphisme du 
 
 ![](../assets/en/FormObjects/checkbox_flat.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -133,7 +133,7 @@ Exemples avec les états coché / non coché / surligné :
 
 ![](../assets/en/FormObjects/checkbox_toolbar.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -159,7 +159,7 @@ Exemples avec les états coché / non coché / surligné :
 
 ![](../assets/en/FormObjects/checkbox_bevel.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -187,7 +187,7 @@ Exemple sous macOS :
 
 > Sous Windows, le style de bouton Bevel arrondi est identique au style de bouton [Bevel](#bevel).
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myCheckBox": {
@@ -205,15 +205,15 @@ Exemple sous macOS :
 
 ### OS X Gradient
 
-Le style du bouton OS X Gradient est presque identique au style du bouton [Bevel](#bevel). As with the Bevel button style, the OS X Gradient button style combines the appearance of the [Regular](#regular) button style with the [Toolbar Button](#toolbar-button) button style's behavior.
+Le style du bouton OS X Gradient est presque identique au style du bouton [Bevel](#bevel). Comme pour le style Bevel, le style OS X Gradient combine l'apparence du style [Classique](#regular) et du style [Barre outils](#toolbar-button).
 
-The OS X Gradient button style has a light gray background with a title and may be displayed as a two-tone system button on macOS. Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states).
+Le style Gradient OS X a un arrière-plan gris clair et un titre et s'affiche sous la forme d'un bouton système bicolore sur macOS. Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states).
 
   ![](../assets/en/FormObjects/checkbox_osxgradient_mac.png)
 
-> On Windows, this check box button style is identical to the [Bevel](#bevel) button style.
+> Sous Windows, ce style est identique au style [Bevel](#bevel).
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -243,7 +243,7 @@ By default, the OS X Textured button style appears as:
 
   ![](../assets/en/FormObjects/checkbox_osxtextured_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -271,7 +271,7 @@ The colors (highlight and background) of a check box with the Office XP button s
 
   ![](../assets/en/FormObjects/checkbox_officexp_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -300,7 +300,7 @@ This check box button style can be used to add a standard collapse/expand icon. 
 
   ![](../assets/en/FormObjects/checkbox_collapse_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -326,7 +326,7 @@ In macOS and Windows, a check box with the "Disclosure" button style appears as 
 
  ![](../assets/en/FormObjects/checkbox_disclosure_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -350,7 +350,7 @@ The Custom button style accepts a personalized background picture and allows man
 
 Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states), qui peut être utilisée conjointement avec une </a>image d'arrière-plan</a> [à 4 états](properties_TextAndPicture.md#number-of-states).
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckbox": {
