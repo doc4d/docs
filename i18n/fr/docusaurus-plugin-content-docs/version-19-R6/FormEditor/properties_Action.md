@@ -25,7 +25,7 @@ Plusieurs types de références de méthode sont pris en charge :
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                    |
+| Nom    | Type de données | Valeurs possibles                                                                    |
 | ------ | --------------- | ------------------------------------------------------------------------------------ |
 | method | text            | Chemin standard ou personnalisé de la méthode formulaire ou nom de la méthode projet |
 
