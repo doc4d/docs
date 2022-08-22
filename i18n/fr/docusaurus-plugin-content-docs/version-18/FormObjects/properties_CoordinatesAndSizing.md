@@ -28,7 +28,7 @@ Lorsque cette propriété est activée, la hauteur de chaque ligne est automatiq
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles |
+| Nom           | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
 | rowHeightAuto | boolean         | true, false       |
 
@@ -44,7 +44,7 @@ Coordonnées inférieures de l'objet dans le formulaire.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
+| Nom    | Type de données | Valeurs possibles |
 | ------ | --------------- | ----------------- |
 | bottom | number          | minimum : 0       |
 
@@ -60,9 +60,9 @@ Coordonnées de gauche de l'objet dans le formulaire.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-| left   | number          | minimum : 0       |
+| Nom  | Type de données | Valeurs possibles |
+| ---- | --------------- | ----------------- |
+| left | number          | minimum : 0       |
 
 #### Objets pris en charge
 
@@ -76,9 +76,9 @@ Coordonnées de droite de l'objet dans le formulaire.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-| right  | number          | minimum : 0       |
+| Nom   | Type de données | Valeurs possibles |
+| ----- | --------------- | ----------------- |
+| right | number          | minimum : 0       |
 
 #### Objets pris en charge
 
@@ -92,9 +92,9 @@ Coordonnées supérieures de l'objet dans le formulaire.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-| top    | number          | minimum : 0       |
+| Nom | Type de données | Valeurs possibles |
+| --- | --------------- | ----------------- |
+| top | number          | minimum : 0       |
 
 #### Objets pris en charge
 
@@ -114,7 +114,7 @@ Vous pouvez également définir cette propriété à l'aide des commandes [OBJEC
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles |
+| Nom          | Type de données | Valeurs possibles |
 | ------------ | --------------- | ----------------- |
 | borderRadius | entier          | minimum : 0       |
 
@@ -131,7 +131,7 @@ Cette propriété désigne la taille verticale d'un objet.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
+| Nom    | Type de données | Valeurs possibles |
 | ------ | --------------- | ----------------- |
 | height | number          | minimum : 0       |
 
@@ -150,9 +150,9 @@ Cette propriété désigne la taille horizontale d'un objet.
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-| width  | number          | minimum : 0       |
+| Nom   | Type de données | Valeurs possibles |
+| ----- | --------------- | ----------------- |
+| width | number          | minimum : 0       |
 
 #### Objets pris en charge
 
@@ -167,7 +167,7 @@ La largeur maximale de la colonne (en pixels). La largeur de la colonne ne peut 
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles |
+| Nom      | Type de données | Valeurs possibles |
 | -------- | --------------- | ----------------- |
 | maxWidth | number          | minimum : 0       |
 
@@ -184,7 +184,7 @@ La largeur minimale de la colonne (en pixels). La largeur de la colonne ne peut 
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles |
+| Nom      | Type de données | Valeurs possibles |
 | -------- | --------------- | ----------------- |
 | minWidth | number          | minimum : 0       |
 
@@ -200,7 +200,7 @@ Définit la hauteur des lignes de list box (hors en-têtes et pieds de page). Pa
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles                                 |
+| Nom       | Type de données | Valeurs possibles                                 |
 | --------- | --------------- | ------------------------------------------------- |
 | rowHeight | string          | valeur css dans l'unité "em" ou "px" (par défaut) |
 
@@ -235,7 +235,7 @@ En supposant que l'unité des lignes soit «lignes», alors la cinquième ligne 
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles              |
+| Nom             | Type de données | Valeurs possibles              |
 | --------------- | --------------- | ------------------------------ |
 | rowHeightSource | string          | Nom d'une variable tableau 4D. |
 
