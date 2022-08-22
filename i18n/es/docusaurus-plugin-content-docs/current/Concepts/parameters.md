@@ -222,19 +222,19 @@ Las expresiones de tablas o arrays sólo pueden pasarse [como referencia utiliza
 | v19 R4  | Añadidos       |
 </details>
 
-The `return` statement ends function or method execution and can be used to return an expression to the caller.
+La instrucción `return` finaliza la ejecución de una función o de un método y puede utilizarse para devolver una expresión a quien la llama.
 
-For example, the following function returns the square of its argument, $x, where $x is a number.
+Por ejemplo, la siguiente función devuelve el cuadrado de su argumento, $x, donde $x es un número.
 
 ```4d
 Function square($x : Integer) 
    return $x * $x
 ```
 
-> Internally, `return x` executes `$0:=x` or (if declared) `myReturnValue:=x`, and returns to the caller. If `return` is used without an expression, the function or method returns a null value of the declared return type (if any), otherwise *undefined*.
+> Internamente, `return x` ejecuta `$0:=x` o (si se declara) `myReturnValue:=x`, y devuelve al llamante. Si `return` se utiliza sin una expresión, la función o el método devuelve un valor nulo del tipo de retorno declarado (si lo hay), de lo contrario *undefined*.
 
 
-The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). Sin embargo, hay que tener en cuenta que termina inmediatamente la ejecución del código. Por ejemplo:
+La instrucción `return` puede utilizarse junto con la sintaxis estándar para los [valores devueltos](#valor-devuelto) (el valor devuelto debe ser del tipo declarado). Sin embargo, hay que tener en cuenta que termina inmediatamente la ejecución del código. Por ejemplo:
 
 
 ```4d
