@@ -233,7 +233,7 @@ Utilisée pour indiquer le numéro de version courante de l'application génér�
 
 **Note préliminaire :** Les termes suivants sont utilisés dans cette section :
 
-| Le nom                                 | Définition                                                                                                                                                           |
+| Nom                                    | Définition                                                                                                                                                           |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Fichier de répertoire du projet        | fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file) situé dans le [dossier Settings](../Project/architecture.md#settings-1) du projet     |
 | Fichier de répertoire de l'application | fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file) situé dans le [dossier Settings](../Project/architecture.md#settings-1) du serveur 4D |
