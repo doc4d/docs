@@ -15,7 +15,7 @@ Voir [List box hiérarchiques](listbox_overview.md#hierarchical-list-boxes)
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                        |
+| Nom        | Type de données | Valeurs possibles                                        |
 | ---------- | --------------- | -------------------------------------------------------- |
 | datasource | tableau chaîne  | Collection de noms de tableaux définissant la hiérarchie |
 
