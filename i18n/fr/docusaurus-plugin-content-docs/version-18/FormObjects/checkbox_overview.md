@@ -88,7 +88,7 @@ Le style Classique de case à cocher correspond à un système de case à cocher
 
 ![](../assets/en/FormObjects/checkbox_regular.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -110,7 +110,7 @@ Le style A plat a un design minimaliste. Le graphisme du style A plat est partic
 
 ![](../assets/en/FormObjects/checkbox_flat.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -135,7 +135,7 @@ Exemples avec les états coché / non coché / surligné :
 
 ![](../assets/en/FormObjects/checkbox_toolbar.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -161,7 +161,7 @@ Exemples avec les états coché / non coché / surligné :
 
 ![](../assets/en/FormObjects/checkbox_bevel.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -189,7 +189,7 @@ Exemple sous macOS :
 
 > Sous Windows, le style Bevel arrondi est identique au style [Bevel](#bevel).
 
-#### JSON Example
+#### Exemple JSON
 
 ```4d
  "myCheckBox": {
@@ -215,7 +215,7 @@ Le style Gradient OS X a un arrière-plan gris clair et un titre et s'affiche so
 
 > Sous Windows, ce style est identique au style [Bevel](#bevel).
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -245,7 +245,7 @@ Par défaut, le style OS X Textured apparaît comme :
 
   ![](../assets/en/FormObjects/checkbox_osxtextured_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -273,7 +273,7 @@ Les couleurs (surbrillance et arrière-plan) d'un bouton au style Office XP sont
 
   ![](../assets/en/FormObjects/checkbox_officexp_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -302,7 +302,7 @@ Ce style de case à cocher peut être utilisé pour ajouter une icône standard 
 
   ![](../assets/en/FormObjects/checkbox_collapse_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -328,7 +328,7 @@ Sous macOS et Windows, une case à cocher avec le style "Disclosure" apparaît c
 
  ![](../assets/en/FormObjects/checkbox_disclosure_mac.png)
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckBox": {
@@ -352,7 +352,7 @@ Le style de case à cocher personnalisé accepte une image d'arrière-plan perso
 
 Il est généralement associé à une [image à 4 états](properties_TextAndPicture.md#number-of-states), qui peut être utilisée conjointement avec une </a>image d'arrière-plan</a> [à 4 états](properties_TextAndPicture.md#number-of-states).
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "myCheckbox": {
