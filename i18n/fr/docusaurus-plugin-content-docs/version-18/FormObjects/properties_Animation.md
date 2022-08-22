@@ -9,7 +9,7 @@ Les images sont affichées en boucle continue. Lorsque l'utilisateur atteint la 
 
 #### Grammaire JSON
 
-| Le nom               | Type de données | Valeurs possibles |
+| Nom                  | Type de données | Valeurs possibles |
 | -------------------- | --------------- | ----------------- |
 | loopBackToFirstFrame | boolean         | true, false       |
 
@@ -25,7 +25,7 @@ Affiche la première image en permanence, sauf lorsque l'utilisateur clique sur 
 
 #### Grammaire JSON
 
-| Le nom                 | Type de données | Valeurs possibles |
+| Nom                    | Type de données | Valeurs possibles |
 | ---------------------- | --------------- | ----------------- |
 | switchBackWhenReleased | boolean         | true, false       |
 
@@ -41,7 +41,7 @@ Permet à l'utilisateur de maintenir le bouton de la souris enfoncé pour affich
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles |
+| Nom                | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
 | switchContinuously | boolean         | true, false       |
 
@@ -57,7 +57,7 @@ Permet de parcourir le contenu du bouton d'image à la vitesse spécifiée (en g
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | frameDelay | entier          | minimum : 0       |
 
@@ -73,7 +73,7 @@ Modifie le contenu du bouton image lorsque le curseur de la souris passe dessus.
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles |
+| Nom                | Type de données | Valeurs possibles |
 | ------------------ | --------------- | ----------------- |
 | switchWhenRollover | boolean         | true, false       |
 
@@ -89,7 +89,7 @@ Permet de définir la dernière vignette comme étant celle à afficher lorsque 
 
 #### Grammaire JSON
 
-| Le nom                 | Type de données | Valeurs possibles |
+| Nom                    | Type de données | Valeurs possibles |
 |:---------------------- | --------------- | ----------------- |
 | useLastFrameAsDisabled | boolean         | true, false       |
 
