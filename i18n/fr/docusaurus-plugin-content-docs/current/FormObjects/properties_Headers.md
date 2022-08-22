@@ -9,7 +9,7 @@ Cette propriété est utilisée pour afficher ou masquer [les en-têtes de colon
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles |
+| Nom         | Type de données | Valeurs possibles |
 | ----------- | --------------- | ----------------- |
 | showHeaders | boolean         | true, false       |
 
@@ -37,7 +37,7 @@ A noter que la conversion en va-et-vient peut conduire à un résultat final dif
 
 *(font Arial 18)*: 52 pixels -> 2 lines -> 40 pixels *(font Arial 12)*: 3 pixels -> 0.4 line rounded up to 1 line -> 19 pixels
 
-#### JSON Example
+#### Exemple JSON
 
 ```
  "List Box": {
@@ -50,7 +50,7 @@ A noter que la conversion en va-et-vient peut conduire à un résultat final dif
 
 #### Grammaire JSON
 
-| Le nom       | Type de données | Valeurs possibles                   |
+| Nom          | Type de données | Valeurs possibles                   |
 | ------------ | --------------- | ----------------------------------- |
 | headerHeight | string          | décimales positives +px &#124; em ) |
 
