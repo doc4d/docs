@@ -49,7 +49,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles  |
+| Nom       | Type de données | Valeurs possibles  |
 | --------- | --------------- | ------------------ |
 | fontStyle | string          | "normal", "italic" |
 
@@ -65,7 +65,7 @@ Une ligne est placée sous le texte.
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles     |
+| Nom            | Type de données | Valeurs possibles     |
 | -------------- | --------------- | --------------------- |
 | textDecoration | string          | "normal", "underline" |
 
@@ -101,7 +101,7 @@ Trois thèmes de polices sont disponibles :
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles              |
+| Nom       | Type de données | Valeurs possibles              |
 | --------- | --------------- | ------------------------------ |
 | fontTheme | string          | "normal", "main", "additional" |
 
@@ -120,7 +120,7 @@ Vous pouvez la définir à l'aide de la commande [**OBJECT SET FONT**](https://d
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles               |
+| Nom        | Type de données | Valeurs possibles               |
 | ---------- | --------------- | ------------------------------- |
 | fontFamily | string          | Nom d'une famille de police CSS |
 > 4D recommande d'utiliser uniquement les polices de [sécurité Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
@@ -137,7 +137,7 @@ Permet de définir en points la taille de police de l'objet.
 
 #### Grammaire JSON
 
-| Le nom   | Type de données | Valeurs possibles                                  |
+| Nom      | Type de données | Valeurs possibles                                  |
 | -------- | --------------- | -------------------------------------------------- |
 | fontSize | entier          | Taille de la police en points. Valeur minimale : 0 |
 
@@ -163,7 +163,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                          |
+| Nom    | Type de données | Valeurs possibles                          |
 | ------ | --------------- | ------------------------------------------ |
 | stroke | string          | une valeur css; "transparent"; "automatic" |
 
@@ -193,7 +193,7 @@ Foreground color;Dark shadow color)
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles         |
+| Nom             | Type de données | Valeurs possibles         |
 | --------------- | --------------- | ------------------------- |
 | rowStrokeSource | string          | Expression couleur police |
 
@@ -222,7 +222,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles                                        |
+| Nom            | Type de données | Valeurs possibles                                        |
 | -------------- | --------------- | -------------------------------------------------------- |
 | rowStyleSource | string          | Expression de style à évaluer pour chaque ligne/cellule. |
 
@@ -238,7 +238,7 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles                                 |
+| Nom       | Type de données | Valeurs possibles                                 |
 | --------- | --------------- | ------------------------------------------------- |
 | textAlign | string          | "automatic", "right", "center", "justify", "left" |
 
@@ -261,7 +261,7 @@ Cette propriété peut également être gérée par les commandes [OBJECT Get ve
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles                      |
+| Nom           | Type de données | Valeurs possibles                      |
 | ------------- | --------------- | -------------------------------------- |
 | verticalAlign | string          | "automatic", "top", "middle", "bottom" |
 
@@ -332,7 +332,7 @@ La méthode *Color* contiendrait alors :
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                          |
+| Nom        | Type de données | Valeurs possibles                                          |
 | ---------- | --------------- | ---------------------------------------------------------- |
 | metaSource | string          | Expression de l'objet à évaluer pour chaque ligne/cellule. |
 
@@ -350,7 +350,7 @@ Par défaut, cette option n'est pas activée.
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | styledText | boolean         | true, false       |
 
@@ -375,7 +375,7 @@ En plus des [zones de texte statiques](text.md), les objets de texte des [zones 
 
 #### Grammaire JSON
 
-| Le nom    | Type de données | Valeurs possibles |
+| Nom       | Type de données | Valeurs possibles |
 | --------- | --------------- | ----------------- |
 | textAngle | number          | 0, 90, 180, 270   |
 
@@ -395,7 +395,7 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 #### Grammaire JSON
 
-| Le nom          | Type de données | Valeurs possibles            |
+| Nom             | Type de données | Valeurs possibles            |
 | --------------- | --------------- | ---------------------------- |
 | rowStrokeSource | string          | Nom d'un tableau entier long |
 
@@ -415,7 +415,7 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles             |
+| Nom            | Type de données | Valeurs possibles             |
 | -------------- | --------------- | ----------------------------- |
 | rowStyleSource | string          | Nom d'un tableau entier long. |
 
@@ -447,7 +447,7 @@ Lorsque la propriété est activée, la zone stocke toutes les informations de m
 
 #### Grammaire JSON
 
-| Le nom            | Type de données | Valeurs possibles         |
+| Nom               | Type de données | Valeurs possibles         |
 | ----------------- | --------------- | ------------------------- |
 | storeDefaultStyle | boolean         | true, false (par défaut). |
 
