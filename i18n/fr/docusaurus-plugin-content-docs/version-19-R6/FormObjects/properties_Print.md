@@ -23,7 +23,7 @@ Les options d'impression sont les suivantes :
 
 #### Grammaire JSON
 
-|   Le nom   | Type de données | Valeurs possibles                                                 |
+|    Nom     | Type de données | Valeurs possibles                                                 |
 |:----------:|:---------------:| ----------------------------------------------------------------- |
 | printFrame |     string      | "fixed", "variable", (sous-formulaire uniquement) "fixedMultiple" |
 
