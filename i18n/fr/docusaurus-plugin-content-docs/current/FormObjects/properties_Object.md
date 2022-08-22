@@ -13,9 +13,9 @@ This property designates the type of the [active or inactive form object](formOb
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                        |
-| ------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type   | string          | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
+| Nom  | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                        |
+| ---- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type | string          | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
 
 #### Objets pris en charge
 
@@ -34,9 +34,9 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                                    |
-| ------ | --------------- | -------------------------------------------------------------------- |
-| nom    | string          | Any allowed name which does not belong to an already existing object |
+| Nom | Type de données | Valeurs possibles                                                    |
+| --- | --------------- | -------------------------------------------------------------------- |
+| nom | string          | Any allowed name which does not belong to an already existing object |
 
 #### Objets pris en charge
 
@@ -61,7 +61,7 @@ Here is the list of objects whose value can be saved:
 
 #### Grammaire JSON
 
-| Le nom        | Type de données | Valeurs possibles |
+| Nom           | Type de données | Valeurs possibles |
 | ------------- | --------------- | ----------------- |
 | memorizeValue | boolean         | true, false       |
 
@@ -84,7 +84,7 @@ Variables or expressions can be enterable or non-enterable and can receive data 
 
 #### Grammaire JSON
 
-| Le nom     | Type de données         | Valeurs possibles                                                           |
+| Nom        | Type de données         | Valeurs possibles                                                           |
 | ---------- | ----------------------- | --------------------------------------------------------------------------- |
 | dataSource | string, or string array | <li>Variable, nom de champ, ou toute expression 4D.</li><li>Empty string for [dynamic variables](#dynamic-variables).</li><li>String array (collection of array names) for a [hierarchical listbox](listbox_overview.md#hierarchical-list-boxes) column]</li> |
 
@@ -148,7 +148,7 @@ However, this property has a typing function in the following specific cases:
 
 #### Grammaire JSON
 
-| Le nom             | Type de données | Valeurs possibles                                  |
+| Nom                | Type de données | Valeurs possibles                                  |
 | ------------------ | --------------- | -------------------------------------------------- |
 | dataSourceTypeHint | string          | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li> |
 
@@ -164,7 +164,7 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles                                         |
+| Nom    | Type de données | Valeurs possibles                                         |
 | ------ | --------------- | --------------------------------------------------------- |
 | classe | string          | One string with CSS name(s) separated by space characters |
 
@@ -188,7 +188,7 @@ The collection or the entity selection must be available to the form when it is 
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles                                            |
+| Nom        | Type de données | Valeurs possibles                                            |
 | ---------- | --------------- | ------------------------------------------------------------ |
 | dataSource | string          | Expression that returns a collection or an entity selection. |
 
@@ -211,7 +211,7 @@ Specify the type of list box.
 
 #### Grammaire JSON
 
-| Le nom      | Type de données | Valeurs possibles                                           |
+| Nom         | Type de données | Valeurs possibles                                           |
 | ----------- | --------------- | ----------------------------------------------------------- |
 | listboxType | string          | "array", "currentSelection", "namedSelection", "collection" |
 
@@ -227,7 +227,7 @@ Name of the [plug-in external area](pluginArea_overview.md) associated to the ob
 
 #### Grammaire JSON
 
-| Le nom         | Type de données | Valeurs possibles                                             |
+| Nom            | Type de données | Valeurs possibles                                             |
 | -------------- | --------------- | ------------------------------------------------------------- |
 | pluginAreaKind | string          | Name of the plug-in external area (starts with a % character) |
 
@@ -243,7 +243,7 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 #### Grammaire JSON
 
-| Le nom     | Type de données | Valeurs possibles |
+| Nom        | Type de données | Valeurs possibles |
 | ---------- | --------------- | ----------------- |
 | radioGroup | string          | Radio group name  |
 
@@ -269,9 +269,9 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 #### Grammaire JSON
 
-| Le nom | Type de données | Valeurs possibles |
-| ------ | --------------- | ----------------- |
-| text   | string          | any text          |
+| Nom  | Type de données | Valeurs possibles |
+| ---- | --------------- | ----------------- |
+| text | string          | any text          |
 
 #### Objets pris en charge
 
@@ -321,7 +321,7 @@ When **Custom** ("none" in JSON) is set, no automatic calculations are performed
 
 #### Grammaire JSON
 
-| Le nom              | Type de données | Valeurs possibles                                                                                     |
+| Nom                 | Type de données | Valeurs possibles                                                                                     |
 | ------------------- | --------------- | ----------------------------------------------------------------------------------------------------- |
 | variableCalculation | string          | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
 
