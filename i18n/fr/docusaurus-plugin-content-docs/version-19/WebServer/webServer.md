@@ -36,7 +36,7 @@ La sécurité des données est présente à tous les stades d'implémentation du
 
 ## Sessions Utilisateur
 
-protocole TLS (HTTPS)</strong>,
+Le serveur Web 4D inclut des fonctionnalités automatiques complètes pour une gestion facilitée des [sessions web](sessions.md) (sessions utilisateur) basée sur les cookies.
 
 ## Point d'accès pour requêtes REST
 
