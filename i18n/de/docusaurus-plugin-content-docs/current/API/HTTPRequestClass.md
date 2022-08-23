@@ -11,7 +11,6 @@ title: HTTPRequest
 
 </details>
 
-
 The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httprequest-object) that can be used to configure and send requests to an HTTP server, as well as to process the HTTP server responses.
 
 The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
@@ -55,23 +54,21 @@ An HTTPRequest object is a non-sharable object.
 
 HTTPRequest objects provide the following properties and functions:
 
-|                                                                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #4D.HTTPRequest.dataType.Syntax -->](#dataType)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.dataType.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.encoding.Syntax -->](#encoding)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.encoding.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.errors.Syntax -->](#errors)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.errors.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.headers.Syntax -->](#headers)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.headers.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.method.Syntax -->](#method)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.method.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.protocol.Syntax -->](#protocol)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.protocol.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.response.Syntax -->](#response)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.response.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.returnResponseBody.Syntax -->](#returnResponseBody)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.returnResponseBody.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.terminate().Syntax -->](#terminate)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.terminate().Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.terminated.Syntax -->](#terminated)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.terminated.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.timeout.Syntax -->](#timeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.timeout.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.url.Syntax -->](#url)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.url.Summary -->|
-| [<!-- INCLUDE #4D.HTTPRequest.wait().Syntax -->](#wait)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.HTTPRequest.wait().Summary -->|
-
-
+|                                                                                                                                                                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #HTTPRequestClass.dataType.Syntax -->](#dataType)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.dataType.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.encoding.Syntax -->](#encoding)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.encoding.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.errors.Syntax -->](#errors)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.errors.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.headers.Syntax -->](#headers)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.headers.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.method.Syntax -->](#method)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.method.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.protocol.Syntax -->](#protocol)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.protocol.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.response.Syntax -->](#response)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.response.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.returnResponseBody.Syntax -->](#returnResponseBody)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.returnResponseBody.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.terminate().Syntax -->](#terminate)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.terminate().Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.terminated.Syntax -->](#terminated)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.terminated.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.timeout.Syntax -->](#timeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.timeout.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.url.Syntax -->](#url)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.url.Summary -->|
+| [<!-- INCLUDE #HTTPRequestClass.wait().Syntax -->](#wait)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #HTTPRequestClass.wait().Summary -->|
 
 <!-- REF #4D.HTTPRequest.new().Desc -->
 ## 4D.HTTPRequest.new()
@@ -87,9 +84,7 @@ HTTPRequest objects provide the following properties and functions:
 | options   | Objekt         | -> | Request configuration properties                  |
 | Ergebnis  | 4D.HTTPRequest | <- | New HTTPRequest object|<!-- END REF -->
 
-
 |
-
 
 #### Beschreibung
 
@@ -103,6 +98,7 @@ In *url*, pass the URL where you want to send the request. The syntax to use is:
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 {https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
+
 If you omit the protocol part (`http://` or `https://`), a https request is sent.
 
 For example, you can pass the following strings:
@@ -151,7 +147,6 @@ All callback functions receive two object parameters:
 | $param1   | [`HTTPRequest` object](#httprequest-object) |
 | $param2   | [`Event` object](#event-object)             |
 
-
 Here is the sequence of callback calls:
 
 1. `onHeaders` is always called once
@@ -159,8 +154,6 @@ Here is the sequence of callback calls:
 3. If no error occured, `onResponse` is always called once
 4. If an error occurs, `onError` is executed once (and terminates the request)
 5. `onTerminate` is always executed once
-
-
 
 #### event object
 
@@ -170,9 +163,6 @@ An `event` object is returned when a [callback function](#callback-functions) is
 | -------- | ---- | ------------------------------------------------------------------------------------- |
 | .data    | blob | Received data. It is always *undefined* except in the `onData` callback               |
 | .typ     | Text | Type of event. Possible values: "response", "error", "headers", "data", or "terminate |
-
-
-
 
 #### authentication object
 
@@ -184,49 +174,44 @@ An authentication object handles the `options.serverAuthentication` or `options.
 | password | Text | Password used for authentication                         | Undefiniert |
 | method   | Text | Method used for authentication:"basic", "digest", "auto" | "auto"      |
 
-
 <!-- END REF -->
 
-
-
-
-<!-- REF #4D.HTTPRequest.dataType.Desc -->
+<!-- REF #HTTPRequestClass.dataType.Desc -->
 ## .dataType
 
-
-<!-- REF #4D.HTTPRequest.dataType.Syntax -->
+<!-- REF #HTTPRequestClass.dataType.Syntax -->
 
 **dataType** : Text<!-- END REF -->
 
 #### Beschreibung
 
-The `.dataType` property contains <!-- REF #4D.HTTPRequest.dataType.Summary -->the `dataType` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "auto" if it was omitted<!-- END REF -->.
+The `.dataType` property contains <!-- REF #HTTPRequestClass.dataType.Summary -->the `dataType` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "auto" if it was omitted<!-- END REF -->.
 
 <!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.encoding.Desc -->
+<!-- REF #HTTPRequestClass.encoding.Desc -->
 ## .encoding
 
-<!-- REF #4D.HTTPRequest.encoding.Syntax -->
+<!-- REF #HTTPRequestClass.encoding.Syntax -->
 
 **encoding** : Text<!-- END REF -->
 
 #### Beschreibung
 
-The `.encoding` property contains <!-- REF #4D.HTTPRequest.encoding.Summary -->the `encoding` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "UTF-8" if it was omitted<!-- END REF -->.
+The `.encoding` property contains <!-- REF #HTTPRequestClass.encoding.Summary -->the `encoding` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "UTF-8" if it was omitted<!-- END REF -->.
 
 <!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.errors.Desc -->
+<!-- REF #HTTPRequestClass.errors.Desc -->
 ## .errors
 
-<!-- REF #4D.HTTPRequest.errors.Syntax -->
+<!-- REF #HTTPRequestClass.errors.Syntax -->
 
 **errors** : Collection<!-- END REF -->
 
 #### Beschreibung
 
-The `.errors` property contains <!-- REF #4D.HTTPRequest.errors.Summary -->the collection of all the errors if at least one error has been triggered<!-- END REF -->.
+The `.errors` property contains <!-- REF #HTTPRequestClass.errors.Summary -->the collection of all the errors if at least one error has been triggered<!-- END REF -->.
 
 Here is the contents of the `.errors` property:
 
@@ -239,59 +224,55 @@ Here is the contents of the `.errors` property:
 
 <!-- END REF -->
 
-
-
-<!-- REF #4D.HTTPRequest.headers.Desc -->
+<!-- REF #HTTPRequestClass.headers.Desc -->
 ## .headers
 
-<!-- REF #4D.HTTPRequest.headers.Syntax -->
+<!-- REF #HTTPRequestClass.headers.Syntax -->
 
 **headers** : Object<!-- END REF -->
 
 #### Beschreibung
 
-The `.headers` property contains <!-- REF #4D.HTTPRequest.headers.Summary -->the `headers` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains an empty object.
+The `.headers` property contains <!-- REF #HTTPRequestClass.headers.Summary -->the `headers` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains an empty object.
 
 <!-- END REF -->
 
-
-<!-- REF #4D.HTTPRequest.method.Desc -->
+<!-- REF #HTTPRequestClass.method.Desc -->
 ## .method
 
-<!-- REF #4D.HTTPRequest.method.Syntax -->
+<!-- REF #HTTPRequestClass.method.Syntax -->
 
 **method** : Text<!-- END REF -->
 
 #### Beschreibung
 
-The `.method` property contains <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
+The `.method` property contains <!-- REF #HTTPRequestClass.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.protocol.Desc -->
+<!-- REF #HTTPRequestClass.protocol.Desc -->
 ## .protocol
 
-<!-- REF #4D.HTTPRequest.protocol.Syntax -->
+<!-- REF #HTTPRequestClass.protocol.Syntax -->
 
 **protocol** : Text<!-- END REF -->
 
 #### Beschreibung
 
-The `.protocol` property contains <!-- REF #4D.HTTPRequest.protocol.Summary -->the `protocol` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted or if "auto" was used, contains the version of the protocol used.
+The `.protocol` property contains <!-- REF #HTTPRequestClass.protocol.Summary -->the `protocol` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted or if "auto" was used, contains the version of the protocol used.
 
 <!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.response.Desc -->
+<!-- REF #HTTPRequestClass.response.Desc -->
 ## .response
 
-
-<!-- REF #4D.HTTPRequest.response.Syntax -->
+<!-- REF #HTTPRequestClass.response.Syntax -->
 
 **response** : Object<!-- END REF -->
 
 #### Beschreibung
 
-The `.response` property contains <!-- REF #4D.HTTPRequest.response.Summary -->the response to the request if it has received at least the status code, undefined otherwise<!-- END REF -->.
+The `.response` property contains <!-- REF #HTTPRequestClass.response.Summary -->the response to the request if it has received at least the status code, undefined otherwise<!-- END REF -->.
 
 A `response` object is a non-sharable object. It provides the following properties:
 
@@ -302,116 +283,102 @@ A `response` object is a non-sharable object. It provides the following properti
 | .status     | Zahl    | Status code of the response                                                                                                                                             |
 | .statusText | Text    | Message explaining the status code                                                                                                                                      |
 
-
-
 <!-- END REF -->
 
-
-<!-- REF #4D.HTTPRequest.returnResponseBody.Desc -->
+<!-- REF #HTTPRequestClass.returnResponseBody.Desc -->
 ## .returnResponseBody
 
-<!-- REF #4D.HTTPRequest.returnResponseBody.Syntax -->
+<!-- REF #HTTPRequestClass.returnResponseBody.Syntax -->
 
 **returnResponseBody** : Boolean<!-- END REF -->
 
 #### Beschreibung
 
-The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
+The `.returnResponseBody` property contains <!-- REF #HTTPRequestClass.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
-
-<!-- REF #4D.HTTPRequest.terminate().Desc -->
+<!-- REF #HTTPRequestClass.terminate().Desc -->
 ## .terminate()
 
-<!-- REF #4D.HTTPRequest.terminate().Syntax -->
+<!-- REF #HTTPRequestClass.terminate().Syntax -->
 
 **.terminate()**<!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.terminate().Params -->
+<!-- REF #HTTPRequestClass.terminate().Params -->
+| Parameter | Typ |  | Beschreibung                                               |
+| --------- | --- |::| ---------------------------------------------------------- |
+|           |     |  | Does not require any parameters|<!-- END REF -->
 
-| Parameter                       | Typ |  | Beschreibung |
-| ------------------------------- | --- |  | ------------ |
-| Does not require any parameters |     |  |              |
-
-<!-- END REF -->
-
+|
 
 #### Beschreibung
 
 > This function is thread-safe.
 
-The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. .
+The `.terminate()` function <!-- REF #HTTPRequestClass.terminate().Summary -->aborts the HTTP request<!-- END REF -->. .
 
 <!-- END REF -->
 
-
-<!-- REF #4D.HTTPRequest.terminated.Desc -->
+<!-- REF #HTTPRequestClass.terminated.Desc -->
 ## .terminated
 
-<!-- REF #4D.HTTPRequest.terminated.Syntax -->
+<!-- REF #HTTPRequestClass.terminated.Syntax -->
 
 **terminated** : Boolean<!-- END REF -->
 
 #### Beschreibung
 
-The `.terminated` property contains <!-- REF #4D.HTTPRequest.terminated.Summary -->True if the request is terminated (after the call to `onTerminate`), false otherwise<!-- END REF -->.
+The `.terminated` property contains <!-- REF #HTTPRequestClass.terminated.Summary -->True if the request is terminated (after the call to `onTerminate`), false otherwise<!-- END REF -->.
 
 <!-- END REF -->
 
-
-<!-- REF #4D.HTTPRequest.timeout.Desc -->
+<!-- REF #HTTPRequestClass.timeout.Desc -->
 ## .timeout
 
-<!-- REF #4D.HTTPRequest.timeout.Syntax -->
+<!-- REF #HTTPRequestClass.timeout.Syntax -->
 
 **timeout** : Real<!-- END REF -->
 
 #### Beschreibung
 
-The `.timeout` property contains <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
+The `.timeout` property contains <!-- REF #HTTPRequestClass.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
-
-
-<!-- REF #4D.HTTPRequest.url.Desc -->
+<!-- REF #HTTPRequestClass.url.Desc -->
 ## .url
 
-<!-- REF #4D.HTTPRequest.url.Syntax -->
+<!-- REF #HTTPRequestClass.url.Syntax -->
 
 **url** : Text<!-- END REF -->
 
 #### Beschreibung
 
-The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of the HTTP request<!-- END REF -->.
+The `.url` property contains <!-- REF #HTTPRequestClass.url.Summary -->the URL of the HTTP request<!-- END REF -->.
 
 <!-- END REF -->
 
-
-
-<!-- REF #4D.HTTPRequest.wait().Desc -->
+<!-- REF #HTTPRequestClass.wait().Desc -->
 ## .wait()
 
-<!-- REF #4D.HTTPRequest.wait().Syntax -->
+<!-- REF #HTTPRequestClass.wait().Syntax -->
 
-**.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
+**.wait**( { *time* : Real } ) : HTTPRequestClass<!-- END REF -->
 
-<!-- REF #4D.HTTPRequest.wait().Params -->
+<!-- REF #HTTPRequestClass.wait().Params -->
 | Parameter | Typ            |    | Beschreibung                                     |
 | --------- | -------------- |:--:| ------------------------------------------------ |
 | time      | Zahl           | -> | Maximum time in seconds to wait for the response |
 | Ergebnis  | 4D.HTTPRequest | <- | HTTPRequest object|<!-- END REF -->
 
-
 |
-
 
 #### Beschreibung
 
 > This function is thread-safe.
 
-The `4D.HTTPRequest.wait()` function <!-- REF #4D.HTTPRequest.wait().Summary -->waits for the response from the server<!-- END REF -->.
+The `wait()` function <!-- REF #HTTPRequestClass.wait().Summary -->waits for the response from the server<!-- END REF -->.
 
 If a *time* parameter is passed, the function will wait at most the defined number of seconds.
 
