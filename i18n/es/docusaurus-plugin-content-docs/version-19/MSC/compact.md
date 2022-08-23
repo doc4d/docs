@@ -13,7 +13,7 @@ La compactación de archivos responde a dos tipos de necesidades:
 - **Reducción del tamaño y optimización de los archivos**: los archivos pueden contener espacios no utilizados ("huecos"). De hecho, cuando se eliminan los registros, el espacio que ocupaban anteriormente en el archivo queda vacío. 4D reutiliza estos espacios vacíos siempre que es posible, pero como el tamaño de los datos es variable, las sucesivas eliminaciones o modificaciones generarán inevitablemente espacio inutilizable para el programa. Lo mismo ocurre cuando se acaba de borrar una gran cantidad de datos: los espacios vacíos quedan sin asignar en el archivo. La relación entre el tamaño del archivo de datos y el espacio realmente utilizado para los datos es la tasa de ocupación de los datos. Una tasa demasiado baja puede provocar, además de un desperdicio de espacio, el deterioro del rendimiento de la base. La compactación puede utilizarse para reorganizar y optimizar el almacenamiento de los datos con el fin de eliminar los "huecos". El área "Información" resume los datos relativos a la fragmentación de los archivos y sugiere las operaciones a realizar. La pestaña [Datos](information.md#data) de la página "Información" del CSM indica la fragmentación del archivo de datos actual.
 
 - **Actualización completa de los datos** aplicando el formato actual definido en el archivo de estructura. Esto es útil cuando los datos de una misma tabla se almacenan en diferentes formatos, por ejemplo, después de un cambio en la estructura de la base.
-> La compactación sólo está disponible en el modo mantenimiento. If you attempt to carry out this operation in standard mode, a warning dialog box will inform you that the application will be closed and restarted in maintenance mode. You can compact a data file that is not opened by the application (see [Compact records and indexes](#compact-records-and-indexes) below).
+> La compactación sólo está disponible en el modo mantenimiento. Si intenta realizar esta operación en modo estándar, una caja de diálogo de advertencia le informará que la aplicación se cerrará y se reiniciará en modo mantenimiento. Puede compactar un archivo de datos que no esté abierto por la aplicación (ver [Compactar los registros y los índices](#compact-records-and-indexes) abajo).
 
 ## Compactación estándar
 
@@ -24,16 +24,16 @@ Para iniciar directamente la compactación del archivo de datos, haga clic en el
 
 Esta operación compacta el archivo principal y los archivos de índice. 4D copia los archivos originales y los coloca en una carpeta llamada **Archivos Reemplazados (Compactando)**, que se crea junto al archivo original. Si ha realizado varias operaciones de compactación, se crea una nueva carpeta cada vez. Se llamará "Archivos reemplazados (compactando)_1", "Archivos reemplazados (compactando)_2", y así sucesivamente. Puede modificar la carpeta donde se guardan los archivos originales utilizando el modo avanzado.
 
-Una vez finalizada la operación, los archivos compactados sustituyen automáticamente a los originales. The application is immediately operational without any further manipulation.
+Una vez finalizada la operación, los archivos compactados sustituyen automáticamente a los originales. La aplicación es inmediatamente operacional sin ninguna otra manipulación.
 > Cuando la base está encriptada, la compactación incluye pasos de encriptación y desencriptación y, por tanto, requiere la llave de encriptación de datos actual. Si no se ha suministrado una llave de datos válida, aparecerá una caja de diálogo solicitando la frase secreta o la llave de datos.
 
 **Atención:** cada operación de compactación implica la duplicación del archivo original, lo que aumenta el tamaño de la carpeta de la aplicación. Es importante tener esto en cuenta (especialmente en macOS, donde las aplicaciones 4D aparecen como paquetes) para que el tamaño de la aplicación no aumente excesivamente. Eliminar manualmente las copias del archivo original dentro del paquete puede ser útil para mantener el tamaño del paquete.
 
 ## Abrir archivo de historial
 
-After compacting is completed, 4D generates a log file in the Logs folder of the project. Este archivo permite ver todas las operaciones realizadas. It is created in XML format and named:  *ApplicationName**_Compact_Log_yyyy-mm-dd hh-mm-ss.xml*" where:
+Una vez finalizada la compactación, 4D genera un archivo de historial en la carpeta Logs del proyecto. Este archivo permite ver todas las operaciones realizadas. Se crea en formato XML y se llama:  *ApplicationName**_Compact_Log_yyyy-mm-dd hh-mm-ss.xml*" donde:
 
-- *ApplicationName* is the name of the project file without any extension, for example "Invoices",
+- *ApplicationName* es el nombre del archivo del proyecto sin ninguna extensión, por ejemplo "Facturas",
 - *yyyy-mm-dd hh-mm-ss* es la marca de tiempo del archivo, basada en la hora del sistema local cuando se inició la operación de mantenimiento, por ejemplo "2019-02-11 15-20-45".
 
 Al presionar el botón **Abrir archivo de historial**, 4D muestra el archivo de historial más reciente en el navegador por defecto de la máquina.
@@ -67,5 +67,5 @@ Esta opción reconstruye completamente la tabla de direcciones para los registro
 
 Tenga en cuenta que esta opción ralentiza sustancialmente la compactación e invalida cualquier conjunto guardado mediante el comando `SAVE SET`. Además, recomendamos especialmente que se borren los conjuntos guardados en este caso, ya que su uso puede dar lugar a selecciones de datos incorrectas.
 > - La compactación tiene en cuenta los registros de las tablas que se han puesto en la Papelera. Si hay un gran número de registros en la Papelera, esto puede ser un factor adicional que puede ralentizar la operación.
-> - El uso de esta opción hace que la tabla de direcciones, y por tanto la base de datos, sea incompatible con el archivo de diario actual (si existe). It will be saved automatically and a new journal file will have to be created the next time the application is launched.
+> - El uso de esta opción hace que la tabla de direcciones, y por tanto la base de datos, sea incompatible con el archivo de diario actual (si existe). Se guardará automáticamente y habrá que crear un nuevo archivo de historial la próxima vez que se inicie la aplicación.
 > - Puede decidir si la tabla de direcciones necesita ser compactada comparando el número total de registros y el tamaño de la tabla de direcciones en la página [Información](information.md) del CSM.
