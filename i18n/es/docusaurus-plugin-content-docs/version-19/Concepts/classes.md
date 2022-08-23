@@ -90,7 +90,7 @@ En las diferentes ventanas 4D (editor de código, compilador, depurador, explora
   - una función de clase es un bloque de código
   - **Ir a la definición** en un objeto miembro busca las declaraciones de función de clase; por ejemplo, "$o.f()" encontrará "Function f".
   - **Buscar referencias** en la declaración de función de clase busca la función utilizada como miembro de objeto; por ejemplo, "Function f" encontrará "$o.f()".
-- In the Runtime explorer and Debugger, class functions are displayed with the `\&#060;ClassName&#062;` constructor or `\&#060;ClassName&#062;.\&#060;FunctionName&#062;` format.
+- En el explorador de ejecución y en el depurador, las funciones clase se muestran con el constructor `\&#060;ClassName&#062;` o formato `\&#060;ClassName&#062;.\&#060;FunctionName&#062;`.
 
 ## Class stores
 
@@ -202,10 +202,10 @@ En el código de la aplicación, las funciones de clases se llaman como los mét
   - [`apply()`](API/FunctionClass.md#apply)
   - [`call()`](API/FunctionClass.md#call)
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:
+> **Advertencia hilo seguro:** si una función clase no es hilo seguro y es llamada por un método con el atributo "Puede ser ejecutado en proceso apropiativo":
 > 
-> - the compiler does not generate any error (which is different compared to regular methods),
-> - an error is thrown by 4D only at runtime.
+> - el compilador no genera ningún error (lo que es diferente en comparación con los métodos regulares),
+> - un error es lanzado por 4D sólo en tiempo de ejecución.
 
 #### Parámetros
 
@@ -412,12 +412,12 @@ Class extends Rectangle
 
 Class constructor ($side : Integer)
 
- // It calls the parent class's constructor with lengths
- // provided for the Rectangle's width and height
+ // Llama al class constructor de la clase padre con longitudes
+ // proporcionadas para el ancho y alto del rectángulo
  Super($side;$side)
- // In derived classes, Super must be called before you
- // can use 'This'
- This.name:="Square"
+ // En las clases derivadas, Super debe ser llamado antes de que 
+ // pueda utilizar 'This'
+ This. ame:="Square"
 
 Function getArea()
  C_LONGINT($0)
@@ -487,9 +487,9 @@ Cuando se utiliza una función [class constructor](#class-constructor) (con la f
 
 Class Constructor  
 
- // Create properties on This as
- // desired by assigning to them
- This.a:=42 
+    // Crear las propiedades en This 
+    // asignándolas
+    This.a:=42 
 ```
 
 ```4d
