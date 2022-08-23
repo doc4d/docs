@@ -33,7 +33,7 @@ Utilice esta opción de reparación de bajo nivel sólo cuando el archivo de dat
 
 Los registros 4D varían en tamaño, por lo que es necesario mantener la ubicación donde se almacenan en el disco en una tabla específica, llamada tabla de direcciones, para poder encontrarlos de nuevo. Por lo tanto, el programa accede a la dirección del registro por medio de un índice y de la tabla de direcciones. Si sólo están dañados los registros o los índices, la opción de reparación estándar suele ser suficiente para resolver el problema. Sin embargo, cuando la propia tabla de direcciones se ve afectada, requiere una recuperación más sofisticada, ya que será necesario reconstituirla. Para ello, el CSM utiliza el marcador situado en el encabezado de cada registro. Los marcadores se comparan con un resumen del registro, que incluye la mayor parte de su información, y a partir del cual es posible reconstruir la tabla de direcciones.
 
-> If you have deselected the **Records definitively deleted** option in the properties of a table in the structure, performing a recovery by header markers may cause records that were previously deleted to reappear. 
+> Si ha desmarcado la opción **Registros eliminados definitivamente** en las propiedades de una tabla en la estructura, la reparación por marcadores de encabezados puede hacer que vuelvan a aparecer los registros que se eliminaron anteriormente. 
 > 
 > La recuperación por encabezados no tiene en cuenta las restricciones de integridad. Más concretamente, tras esta operación puede obtener valores duplicados con campos únicos o valores NULL con campos declarados **Nunca Null**.
 
@@ -63,7 +63,7 @@ A continuación, seleccione la tabla que desea asignar al grupo en la tabla "Tab
 
 ## Abrir archivo de historial
 
-After repair is completed, 4D generates a log file in the Logs folder of the project. Este archivo permite ver todas las operaciones realizadas. It is created in XML format and named: *ApplicationName**_Repair_Log_yyyy-mm-dd hh-mm-ss.xml*" where:
+Una vez finalizada la reparación, 4D genera un archivo de registro en la carpeta Logs del proyecto. Este archivo permite ver todas las operaciones realizadas. Se crea en formato XML y se llama: *ApplicationName**_Repair_Log_yyyy-mm-dd hh-mm-ss.xml*" donde:
 
 - *ApplicationName* is the name of the project file without any extension, for example "Invoices",
 - *yyyy-mm-dd hh-mm-ss* es la marca de tiempo del archivo, basada en la hora del sistema local cuando se inició la operación de mantenimiento, por ejemplo "2019-02-11 15-20-45".
