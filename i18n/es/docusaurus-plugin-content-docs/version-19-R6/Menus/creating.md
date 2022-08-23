@@ -31,7 +31,7 @@ Puede modificar esta barra de menú como desee o crear otras adicionales.
 
 ### Utilizando el editor de menús
 
-1. Select the item you want to create and click the add ![](../assets/en/Menus/PlussNew.png) button below the menu bar area. OR Choose **Create a new menu bar** or **Create a new menu** from the context menu of the list or the options menu below the list. Si ha creado una barra de menús, aparece una nueva barra en la lista que contiene los menús por defecto (Archivo y Edición).
+1. Seleccione el elemento que desea crear y haga clic en el botón añadir ![](../assets/en/Menus/PlussNew.png)debajo de la zona de la barra de menús. O Elija **Crear una nueva barra de menús** o **Crear un nuevo menú** en el menú contextual de la lista o en el menú de opciones situado debajo de la lista. Si ha creado una barra de menús, aparece una nueva barra en la lista que contiene los menús por defecto (Archivo y Edición).
 2. (opcional) Haga doble clic en el nombre de la barra de menú/menú para pasar al modo de edición e introducir un nombre personalizado. OR Enter the custom name in the "Title" area. Los nombres de las barras de menú deben ser únicos. Pueden contener hasta 31 caracteres. Puede introducir el nombre como "hard coded" o introducir una referencia (ver [información sobre la propiedad Title](properties.md#title)).
 
 ### Utilizando el lenguaje 4D
@@ -64,7 +64,7 @@ Puede eliminar una barra de menús, un menú o un elemento de menú en el editor
 
 Para eliminar una barra de menús, un menú o un elemento de menú:
 
-- Select the item to be deleted and click on the delete ![](../assets/en/Menus/MinussNew.png) button located beneath the list.
+- Seleccione el elemento a eliminar y haga clic en el botón de eliminación ![](../assets/en/Menus/MinussNew.png) situado debajo de la lista.
 - o bien, utilice el comando apropiado **Eliminar...** del menú contextual o del menú de opciones del editor.
 
 > No es posible eliminar Menu Bar #1.
