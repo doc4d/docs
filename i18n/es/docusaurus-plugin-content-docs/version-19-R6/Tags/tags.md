@@ -42,7 +42,7 @@ El análisis del contenido de una fuente de *plantilla* se hace en dos contextos
 
 - Utilizando el comando `PROCESS 4D TAGS`; este comando acepta una *plantilla* como entrada, así como los parámetros opcionales y devuelve un texto resultante del procesamiento.
 
-- Utilizando el servidor HTTP integrado de 4D: [páginas de plantillas](WebServer/templates.md) enviadas mediante los comandos `WEB SEND FILE` (.htm, .html, .shtm, .shtml), `WEB SEND BLOB` (text/html tipo BLOB), `WEB SEND TEXT` , o llamadas utilizando URLs. En este último caso, por razones de optimización, las páginas con sufijo ".htm" y ".html" NO se analizan. In order to parse HTML pages in this case, you must add the suffix “.shtm” or “.shtml” (for example, <http://www.server.com/dir/page.shtm>).
+- Utilizando el servidor HTTP integrado de 4D: [páginas de plantillas](WebServer/templates.md) enviadas mediante los comandos `WEB SEND FILE` (.htm, .html, .shtm, .shtml), `WEB SEND BLOB` (text/html tipo BLOB), `WEB SEND TEXT` , o llamadas utilizando URLs. En este último caso, por razones de optimización, las páginas con sufijo ".htm" y ".html" NO se analizan. Para analizar las páginas HTML en este caso, debe añadir el sufijo ".shtm" o ".shtml" (por ejemplo, <http://www.server.com/dir/page.shtm>).
 
 ### Tratamiento recursivo
 
@@ -70,21 +70,20 @@ Para asegurar la correcta evaluación de las expresiones procesadas a través de
 
 La etiqueta `<!--#4DBASE -->` designa el directorio de trabajo a utilizar para la etiqueta `<!--#4DINCLUDE-->`.
 
-When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--........-->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
+Cuando se llama en una página web, la etiqueta `<!--#4DBASE -->` modifica todas las llamadas `<!--#4DINCLUDE-->` posteriores a esta página, hasta la siguiente `<!--........-->, si la hay. Si la <!--#4DBASE -->carpeta se modifica desde un archivo incluido, recupera su valor original en el archivo padre.</p>
 
-El parámetro *folderPath* debe contener un nombre de ruta relativo a la página actual y debe terminar con una barra (/). La carpeta designada debe estar ubicada dentro de la carpeta Web.
+<p spaces-before="0">El parámetro <em x-id="3">folderPath</em> debe contener un nombre de ruta relativo a la página actual y debe terminar con una barra (/). La carpeta designada debe estar ubicada dentro de la carpeta Web.</p>
 
-Pase la palabra clave "WEBFOLDER" para restablecer la ruta por defecto (relativa a la página).
+<p spaces-before="0">Pase la palabra clave "WEBFOLDER" para restablecer la ruta por defecto (relativa a la página).</p>
 
-El siguiente código, que debe especificar una ruta relativa para cada llamada:
+<p spaces-before="0">El siguiente código, que debe especificar una ruta relativa para cada llamada:</p>
 
-```html
-<!--#4DINCLUDE subpage.html--> 
+<pre><code class="html"><!--#4DINCLUDE subpage.html--> 
 <!--#4DINCLUDE folder/subpage1.html-->
 <!--#4DINCLUDE folder/subpage2.html-->
 <!--#4DINCLUDE folder/subpage3.html-->
 <!--#4DINCLUDE ../folder/subpage.html-->
-```
+`</pre>
 
 ... es equivalente a:
 
@@ -336,7 +335,7 @@ Por ejemplo, aquí están los resultados del procesamiento de la variable de tex
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&lt;B&gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`         |
 
-En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar-->: ## error # código del error`.
+En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar--> : ## error # código del error`.
 
 > Por razones de seguridad se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
@@ -352,7 +351,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 En caso de un error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: Se esperaba una expresión booleana" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). You can use a <!--#4DELSE--> tag after the last<!--#4DELSEIF-->. .<!--#4DELSE-->If all the conditions are false, the statements following the
+Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). Puede utilizar una <!--#4DELSE--> pestaña luego del último <!--#4DELSEIF-->. Si todas las condiciones son falsas, las siguientes instrucciones <!--#4DELSE--> se ejecutan.
 
 Los dos códigos siguientes son equivalentes.
 
@@ -614,7 +613,7 @@ La etiqueta `4DSCRIPT` permite ejecutar métodos 4D al procesar la plantilla. La
 
 El método debe devolver el texto en `$0`. Si la cadena comienza con el carácter de código 1, se considera HTML (el mismo principio es válido para la etiqueta `4DHTML`).
 
-Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es<!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
+Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es <!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
 
 El método `MYMETH` es el siguiente:
 
