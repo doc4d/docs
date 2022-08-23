@@ -3,11 +3,11 @@ id: HTTPRequestClass
 title: HTTPRequest
 ---
 
-<details><summary>History</summary>
+<details><summary>Historique</summary>
 
-| Version | Changes     |
-| ------- | ----------- |
-| v19 R6  | Class added |
+| Version | Modifications |
+| ------- | ------------- |
+| v19 R6  | Class added   |
 
 </details>
 
@@ -15,7 +15,7 @@ The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httpreques
 
 The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
 
-### Example
+### Exemple
 
 Create a `MyHttpRequestOptions` class for the request options:
 
@@ -78,11 +78,11 @@ HTTPRequest objects provide the following properties and functions:
 **4D.HTTPRequest.new**( *url* : Text { ; *options* : Object } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| Parameter | Type           |    | Description                                       |
-| --------- | -------------- |:--:| ------------------------------------------------- |
-| url       | Text           | -> | URL to which to send the request                  |
-| options   | Object         | -> | Request configuration properties                  |
-| Result    | 4D.HTTPRequest | <- | New HTTPRequest object|<!-- END REF -->
+| Paramètres | Type           |    | Description                                       |
+| ---------- | -------------- |:--:| ------------------------------------------------- |
+| url        | Text           | -> | URL to which to send the request                  |
+| options    | Object         | -> | Request configuration properties                  |
+| Result     | 4D.HTTPRequest | <- | New HTTPRequest object|<!-- END REF -->
 
 |
 
@@ -116,9 +116,9 @@ For example, you can pass the following strings:
 
 #### `options` parameter
 
-In the *options* parameter, pass an object that can contain the following properties:
+Dans le paramètre *options* , passez un objet qui peut contenir les propriétés suivantes :
 
-| Property             | Type                                            | Description                                                                                                                                                                                                                                                       | Default      |
+| Propriété            | Type                                            | Description                                                                                                                                                                                                                                                       | Par défaut   |
 | -------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
 | body                 | Variant                                         | Body of the request (required in case of `post` or `put` requests). Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers                                                        | undefined    |
 | certificatesFolder   | [Folder](FolderClass.md)                        | Sets the active client certificates folder                                                                                                                                                                                                                        | undefined    |
@@ -127,27 +127,27 @@ In the *options* parameter, pass an object that can contain the following proper
 | headers              | Object                                          | Headers of the request. Syntax: `headers.key=value` (*value* can be a Collection if the same key must appear multiple times)                                                                                                                                      | Empty object |
 | method               | Text                                            | "POST", "GET", or other method                                                                                                                                                                                                                                    | "GET"        |
 | minTLSVersion        | Text                                            | Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                               | "`TLSv1_2`"  |
-| onData               | [Function](FunctionClass.md)                    | Callback when data from the body is received. It receives two objects as parameters (see below)                                                                                                                                                                   | undefined    |
-| onError              | [Function](FunctionClass.md)                    | Callback when an error occurs. It receives two objects as parameters (see below)                                                                                                                                                                                  | undefined    |
-| onHeaders            | [Function](FunctionClass.md)                    | Callback when the headers are received. It receives two objects as parameters (see below)                                                                                                                                                                         | undefined    |
-| onResponse           | [Function](FunctionClass.md)                    | Callback when a response is received. It receives two objects as parameters (see below)                                                                                                                                                                           | undefined    |
-| onTerminate          | [Function](FunctionClass.md)                    | Callback when the request is over. It receives two objects as parameters (see below)                                                                                                                                                                              | undefined    |
+| onData               | [Function](FunctionClass.md)                    | Callback when data from the body is received. Il reçoit deux objets en paramètres (voir ci-dessous)                                                                                                                                                               | undefined    |
+| onError              | [Function](FunctionClass.md)                    | Callback when an error occurs. Il reçoit deux objets en paramètres (voir ci-dessous)                                                                                                                                                                              | undefined    |
+| onHeaders            | [Function](FunctionClass.md)                    | Callback when the headers are received. Il reçoit deux objets en paramètres (voir ci-dessous)                                                                                                                                                                     | undefined    |
+| onResponse           | [Function](FunctionClass.md)                    | Callback when a response is received. Il reçoit deux objets en paramètres (voir ci-dessous)                                                                                                                                                                       | undefined    |
+| onTerminate          | [Function](FunctionClass.md)                    | Callback when the request is over. Il reçoit deux objets en paramètres (voir ci-dessous)                                                                                                                                                                          | undefined    |
 | protocol             | Text                                            | "auto" or "HTTP1". "auto" means HTTP1 in the current implementation                                                                                                                                                                                               | "auto"       |
 | proxyAuthentication  | [authentication object](#authentication-object) | Object handling proxy authentication                                                                                                                                                                                                                              | undefined    |
 | serverAuthentication | [authentication object](#authentication-object) | Object handling server authentication                                                                                                                                                                                                                             | undefined    |
-| returnResponseBody   | Boolean                                         | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                            | True         |
-| timeout              | Real                                            | Timeout in seconds. Undefined = no timeout                                                                                                                                                                                                                        | Undefined    |
+| returnResponseBody   | Boolean                                         | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                            | Vrai         |
+| timeout              | Real                                            | Timeout en secondes. Undefined = no timeout                                                                                                                                                                                                                       | Indéfini     |
 
 #### Callback functions
 
-All callback functions receive two object parameters:
+Toutes les fonctions de callback reçoivent deux paramètres objet:
 
-| Parameter | Type                                        |
-| --------- | ------------------------------------------- |
-| $param1   | [`HTTPRequest` object](#httprequest-object) |
-| $param2   | [`Event` object](#event-object)             |
+| Paramètres | Type                                        |
+| ---------- | ------------------------------------------- |
+| $param1    | [`HTTPRequest` object](#httprequest-object) |
+| $param2    | [`Event` object](#event-object)             |
 
-Here is the sequence of callback calls:
+Voici la séquence des appels de callbacks :
 
 1. `onHeaders` is always called once
 2. `onData` is called zero or several times (not called if the request does not have a body)
@@ -155,24 +155,24 @@ Here is the sequence of callback calls:
 4. If an error occurs, `onError` is executed once (and terminates the request)
 5. `onTerminate` is always executed once
 
-#### event object
+#### objet événement
 
 An `event` object is returned when a [callback function](#callback-functions) is called. It contains the following properties:
 
-| Property | Type | Description                                                                           |
-| -------- | ---- | ------------------------------------------------------------------------------------- |
-| .data    | blob | Received data. It is always *undefined* except in the `onData` callback               |
-| .type    | text | Type of event. Possible values: "response", "error", "headers", "data", or "terminate |
+| Propriété | Type | Description                                                                           |
+| --------- | ---- | ------------------------------------------------------------------------------------- |
+| .données  | blob | Received data. It is always *undefined* except in the `onData` callback               |
+| .type     | text | Type of event. Possible values: "response", "error", "headers", "data", or "terminate |
 
 #### authentication object
 
 An authentication object handles the `options.serverAuthentication` or `options.proxyAuthentication` property. It can contain the following properties:
 
-| Property | Type | Description                                              | Default   |
-| -------- | ---- | -------------------------------------------------------- | --------- |
-| name     | Text | Name used for authentication                             | undefined |
-| password | Text | Password used for authentication                         | undefined |
-| method   | Text | Method used for authentication:"basic", "digest", "auto" | "auto"    |
+| Propriété | Type | Description                                              | Par défaut |
+| --------- | ---- | -------------------------------------------------------- | ---------- |
+| nom       | Text | Name used for authentication                             | undefined  |
+| password  | Text | Password used for authentication                         | undefined  |
+| method    | Text | Method used for authentication:"basic", "digest", "auto" | "auto"     |
 
 <!-- END REF -->
 
@@ -215,12 +215,12 @@ The `.errors` property contains <!-- REF #4D.HTTPRequest.errors.Summary -->the c
 
 Here is the contents of the `.errors` property:
 
-| Property |                       | Type       | Description                                                  |
-| -------- | --------------------- | ---------- | ------------------------------------------------------------ |
-| errors   |                       | Collection | 4D error stack in case of error                              |
-|          | [].errCode            | Number     | 4D error code                                                |
-|          | [].message            | Text       | Description of the 4D error                                  |
-|          | [].componentSignature | Text       | Signature of the internal component which returned the error |
+| Propriété |                       | Type        | Description                                            |
+| --------- | --------------------- | ----------- | ------------------------------------------------------ |
+| errors    |                       | Collections | 4D error stack in case of error                        |
+|           | [].errCode            | Number      | Code d'erreur 4D                                       |
+|           | [].message            | Text        | Description de l'erreur 4D                             |
+|           | [].componentSignature | Text        | Signature du composant interne qui a retourné l'erreur |
 
 <!-- END REF -->
 
@@ -238,7 +238,7 @@ The `.headers` property contains <!-- REF #4D.HTTPRequest.headers.Summary -->the
 <!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.method.Desc -->
-## .method
+## .méthode
 
 <!-- REF #4D.HTTPRequest.method.Syntax -->
 
@@ -246,7 +246,7 @@ The `.headers` property contains <!-- REF #4D.HTTPRequest.headers.Summary -->the
 
 #### Description
 
-The `.method` property contains <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains "GET".
+The `.method` property contains <!-- REF #4D.HTTPRequest.method.Summary -->the `method` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -276,11 +276,11 @@ The `.response` property contains <!-- REF #4D.HTTPRequest.response.Summary -->t
 
 A `response` object is a non-sharable object. It provides the following properties:
 
-| Property    | Type    | Description                                                                                                                                                             |
+| Propriété   | Type    | Description                                                                                                                                                             |
 | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | .body       | Variant | Body of the response. The type of the message is defined according to the [`dataType`](#datatype) property. Undefined if the body has not been received yet             |
 | .headers    | Object  | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Undefined if the headers have not been received yet. |
-| .status     | Number  | Status code of the response                                                                                                                                             |
+| .statut     | Number  | Status code of the response                                                                                                                                             |
 | .statusText | Text    | Message explaining the status code                                                                                                                                      |
 
 <!-- END REF -->
@@ -294,7 +294,7 @@ A `response` object is a non-sharable object. It provides the following properti
 
 #### Description
 
-The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True.
+The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -306,9 +306,9 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 **.terminate()**<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.terminate().Params -->
-| Parameter | Type |  | Description                                                |
-| --------- | ---- |::| ---------------------------------------------------------- |
-|           |      |  | Does not require any parameters|<!-- END REF -->
+| Paramètres | Type |  | Description                                                |
+| ---------- | ---- |::| ---------------------------------------------------------- |
+|            |      |  | Does not require any parameters|<!-- END REF -->
 
 |
 
@@ -316,7 +316,7 @@ The `.returnResponseBody` property contains <!-- REF #4D.HTTPRequest.returnRespo
 
 > This function is thread-safe.
 
-The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. It triggers the `onTerminate` event.
+The `.terminate()` function <!-- REF #4D.HTTPRequest.terminate().Summary -->aborts the HTTP request<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -342,7 +342,7 @@ The `.terminated` property contains <!-- REF #4D.HTTPRequest.terminated.Summary 
 
 #### Description
 
-The `.timeout` property contains <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains Undefined.
+The `.timeout` property contains <!-- REF #4D.HTTPRequest.timeout.Summary -->the `timeout` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. .
 
 <!-- END REF -->
 
@@ -367,10 +367,10 @@ The `.url` property contains <!-- REF #4D.HTTPRequest.url.Summary -->the URL of 
 **.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #4D.HTTPRequest.wait().Params -->
-| Parameter | Type           |    | Description                                      |
-| --------- | -------------- |:--:| ------------------------------------------------ |
-| time      | Real           | -> | Maximum time in seconds to wait for the response |
-| Result    | 4D.HTTPRequest | <- | HTTPRequest object|<!-- END REF -->
+| Paramètres | Type           |    | Description                                      |
+| ---------- | -------------- |:--:| ------------------------------------------------ |
+| time       | Real           | -> | Maximum time in seconds to wait for the response |
+| Result     | 4D.HTTPRequest | <- | HTTPRequest object|<!-- END REF -->
 
 |
 
