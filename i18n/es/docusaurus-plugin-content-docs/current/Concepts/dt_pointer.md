@@ -1,5 +1,5 @@
 ---
-id: puntero
+id: pointer
 title: Puntero
 ---
 
