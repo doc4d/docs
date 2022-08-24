@@ -1,5 +1,5 @@
 ---
-id: imagen
+id: picture
 title: Picture
 ---
 
