@@ -1,6 +1,6 @@
 ---
-id: etiquetas
-slug: etiquetas
+id: tags
+slug: tags
 title: Etiquetas de transformación
 ---
 
