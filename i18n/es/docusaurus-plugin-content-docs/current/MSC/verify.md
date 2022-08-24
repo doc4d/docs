@@ -21,9 +21,9 @@ La página contiene botones de acción que dan acceso directo a las funciones de
 
 ## Abrir archivo de historial
 
-Regardless of the verification requested, 4D generates a log file in the `Logs` folder of the application. Este archivo lista todas las verificaciones realizadas e indica los errores encontrados, cuando sea el caso (se muestra [OK] cuando la verificación es correcta). It is created in XML format and is named: *ApplicationName*_Verify_Log_*yyyy-mm-dd hh-mm-ss*.xml where:
+Independientemente de la verificación solicitada, 4D genera un archivo de historial en la carpeta `Logs` de la aplicación. Este archivo lista todas las verificaciones realizadas e indica los errores encontrados, cuando sea el caso (se muestra [OK] cuando la verificación es correcta). Se crea en formato XML y se denomina: *NombreAplicacion*_Verify_Log_*yyyy-mm-dd hh-mm-ss*.xml donde:
 
-- *ApplicationName* is the name of the project file without any extension, for example "Invoices",
+- *ApplicationName* es el nombre del archivo del proyecto sin ninguna extensión, por ejemplo "Facturas",
 - *yyyy-mm-dd hh-mm-ss* es la marca de tiempo del archivo, basada en la hora del sistema local cuando se inició la operación de mantenimiento, por ejemplo "2019-02-11 15-20-45".
 
 Al presionar el botón **Abrir archivo de historial**, 4D muestra el archivo de historial más reciente en el navegador por defecto de la máquina.
