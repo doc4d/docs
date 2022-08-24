@@ -40,7 +40,7 @@ Por ejemplo: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` don
 Para más información sobre cómo consultar los datos en 4D, consulte la [dataClass.query()](https://doc.4d.com/4Dv18/4D/18/dataClassquery.305-4505887.en.html) documentación.
 > Al insertar comillas (') o comillas dobles ("), debe escaparlas utilizando su código de caracteres:
 > 
-> <li>Quotes ('): \u0027</li>
+> <li>Comillas ('): \u0027</li>
   <li>Comillas dobles ("): \u0022</li>
 > 
 > Por ejemplo, se puede escribir lo siguiente al pasar un valor con una comilla cuando se utiliza la propiedad *params*:  
