@@ -1,5 +1,5 @@
 ---
-id: regla
+id: ruler
 title: Regla
 ---
 
