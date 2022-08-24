@@ -13,8 +13,8 @@ Una variable de tipo variant puede contener un valor de los tipos de datos sigui
 - date
 - entero largo
 - object
-- imagen
-- puntero
+- picture
+- pointer
 - real
 - text
 - time
