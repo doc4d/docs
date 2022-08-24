@@ -728,7 +728,7 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 | Parámetros | Type   |    | Descripción                                     |
 | ---------- | ------ | -- | ----------------------------------------------- |
-| parámetros | Object | -> | Parámetros del servidor web a definir al inicio |
+| settings   | Object | -> | Parámetros del servidor web a definir al inicio |
 | Result     | Object | <- | Estado del inicio del servidor web              |
 
 
