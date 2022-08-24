@@ -107,7 +107,7 @@ Considerando las propiedades de tabla siguientes:
 <!-- REF #DataClassClass.all().Params -->
 | Parámetros | Type               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| parámetros | Object             | -> | Opciones de construcción: context                                              |
+| settings   | Object             | -> | Opciones de construcción: context                                              |
 | Result     | 4D.EntitySelection | <- | References on all entities related to the Dataclass|<!-- END REF -->
 
 |
@@ -122,7 +122,7 @@ Si no se encuentra la entidad correspondiente, se devuelve una selección de ent
 
 Se aplica carga diferida.
 
-**parámetros**
+**settings**
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
@@ -159,7 +159,7 @@ En el parámetro opcional *settings* se puede pasar un objeto que contenga opcio
 | Parámetros | Type               |    | Descripción                                                            |
 | ---------- | ------------------ |:--:| ---------------------------------------------------------------------- |
 | objectCol  | Collection         | -> | Colección de objetos a mapear con entidades                            |
-| parámetros | Object             | -> | Opciones de construcción: context                                      |
+| settings   | Object             | -> | Opciones de construcción: context                                      |
 | Result     | 4D.EntitySelection | <- | Entity selection filled from the collection|<!-- END REF -->
 
 |
@@ -197,7 +197,7 @@ Los objetos anidados que presentan entidades relacionadas deben contener una pro
 
 Si se da un atributo \_\_STAMP, se realiza una comprobación con el sello en el almacén de datos y se puede devolver un error ("El sello dado no coincide con el actual para el registro# XX de la tabla XXXX"). Para más información, consulte [Entity locking](ORDA/entities.md#entity-locking).
 
-**parámetros**
+**settings**
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
@@ -356,7 +356,7 @@ En este ejemplo, la primera entidad se creará y guardará pero la segunda falla
 | Parámetros | Type            |    | Descripción                                                           |
 | ---------- | --------------- |:--:| --------------------------------------------------------------------- |
 | primaryKey | Integer OR Text | -> | Valor de la llave primaria de la entidad a recuperar                  |
-| parámetros | Object          | -> | Opciones de construcción: context                                     |
+| settings   | Object          | -> | Opciones de construcción: context                                     |
 | Result     | 4D.Entity       | <- | Entity matching the designated primary key|<!-- END REF -->
 
 |
@@ -371,7 +371,7 @@ Si no se encuentra ninguna entidad con*primaryKey*, se devuelve una entidad **Nu
 
 Se aplica la carga diferida, lo que significa que los datos relacionados se cargan desde el disco sólo cuando son necesarios.
 
-**parámetros**
+**settings**
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
