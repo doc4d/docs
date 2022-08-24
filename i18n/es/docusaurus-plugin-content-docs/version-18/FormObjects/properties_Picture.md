@@ -15,9 +15,9 @@ Se pueden utilizar dos ubicaciones principales para la trayectoria de la imagen 
 
 #### Gramática JSON
 
-| Nombre | Tipos de datos | Valores posibles                             |
-|:------:|:--------------:| -------------------------------------------- |
-| imagen |      text      | Ruta relativa o filesystem en sintaxis POSIX |
+| Nombre  | Tipos de datos | Valores posibles                             |
+|:-------:|:--------------:| -------------------------------------------- |
+| picture |      text      | Ruta relativa o filesystem en sintaxis POSIX |
 
 #### Objetos soportados
 
