@@ -135,7 +135,7 @@ El nombre de la ruta a introducir es similar al de [ la propiedad Ruta de acceso
 
 | Nombre | Tipos de datos | Valores posibles                              |
 | ------ | -------------- | --------------------------------------------- |
-| icon   | imagen         | Ruta relativa o filesystem en sintaxis POSIX. |
+| icon   | picture        | Ruta relativa o filesystem en sintaxis POSIX. |
 
 #### Objetos soportados
 
