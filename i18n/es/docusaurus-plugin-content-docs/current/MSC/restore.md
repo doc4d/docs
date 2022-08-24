@@ -1,5 +1,5 @@
 ---
-id: restaurar
+id: restore
 title: Página Restauración
 sidebar_label: Página Restauración
 ---
