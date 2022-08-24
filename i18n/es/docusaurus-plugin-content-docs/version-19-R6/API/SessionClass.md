@@ -286,7 +286,7 @@ End if
 | ---------- | ---------- |:--:| -------------------------------------------------------------------------------------- |
 | privilege  | Text       | -> | Nombre del privilegio                                                                  |
 | privileges | Collection | -> | Colección de nombres de privilegios                                                    |
-| parámetros | Object     | -> | Objeto con una propiedad "privilegios" (cadena o colección)|<!-- END REF -->
+| settings   | Object     | -> | Objeto con una propiedad "privilegios" (cadena o colección)|<!-- END REF -->
 
 |
 
