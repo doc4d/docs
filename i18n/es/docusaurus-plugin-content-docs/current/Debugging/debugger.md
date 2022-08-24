@@ -275,7 +275,7 @@ El panel de control personalizado es útil para evaluar expresiones. It is simil
 
 * campo
 * variable
-* puntero
+* pointer
 * cálculo
 * Comando 4D
 * method
