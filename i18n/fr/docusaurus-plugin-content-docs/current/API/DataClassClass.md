@@ -995,13 +995,13 @@ Vous n'obtiendrez pas le résultat souhaité car la valeur null sera évaluée p
 
 **Relier arguments de recherche et attributs de collection**
 
-:::info
+|
 
 This feature is only available in queries on dataclasses and [entity selections](EntitySelectionClass.md#query). It cannot be used in queries on [collections](CollectionClass.md#query).
 
 :::
 
-When searching within dataclass object attributes containing collections using multiple query arguments joined by the AND operator, you may want to make sure that only entities containing elements that match all arguments are returned, and not entities where arguments can be found in different elements. Pour ce faire, vous devez relier les arguments de requête aux éléments de collection, de sorte que seuls les éléments uniques contenant des arguments reliés soient retournés.
+To do this, you need to link query arguments to collection elements, so that only single elements containing linked arguments are found. When searching in collections within object attributes using multiple query arguments joined by the AND operator, you may want to make sure that only entities containing elements that match all arguments are returned, and not entities where arguments can be found in different elements.
 
 Par exemple, avec les deux entités suivantes :
 
