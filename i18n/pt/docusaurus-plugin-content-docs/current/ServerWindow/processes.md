@@ -1,5 +1,5 @@
 ---
-id: processos
+id: processes
 title: Processes Page
 ---
 
