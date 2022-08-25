@@ -378,7 +378,7 @@ El estilo del botón Personalizado acepta una imagen de fondo personalizada y pe
 - [Desplazamiento icono](properties_TextAndPicture.md#icon-offset)
 - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) and [Margen vertical](properties_TextAndPicture.md#verticalMargin)
 
-Suele estar asociado a una [imagen de 4 estados](properties_TextAndPicture.md#number-of-states), que puede utilizarse junto con una </a>imagen de fondo</a> [de 4 estados](properties_TextAndPicture.md#number-of-states).
+Suele estar asociado a una [imagen de 4 estados](properties_TextAndPicture.md#number-of-states), que puede utilizarse junto con una [imagen de fondo](properties_TextAndPicture.md#backgroundPathname) [de 4 estados](properties_TextAndPicture.md#number-of-states).
 
 #### Ejemplo JSON:
 
