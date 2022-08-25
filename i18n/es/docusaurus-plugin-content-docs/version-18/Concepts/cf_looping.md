@@ -272,7 +272,7 @@ La sintaxis de la estructura condicional `For each... End for each` es:
  End for each
 ```
 
-`End for each` structure iterates a specified *Current_item* over all values of the *Expression*. El tipo *Current_item* depende del tipo *Expression*. End for each</code> loop can iterate through three *Expression* types:
+`End for each` structure iterates a specified *Current_item* over all values of the *Expression*. El tipo *Current_item* depende del tipo *Expression*. El bucle `For each... End for each` puede iterar a través de tres tipos de *Expression*:
 
 - colecciones: bucle en cada elemento de la colección,
 - selecciones de entidades: bucle en cada entidad,
