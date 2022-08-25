@@ -57,7 +57,7 @@ As seleções de entidades podem ser criadas a partir de seleções existentes u
 | Parameter  | Tipo                |    | Descrção                                                                                                          |
 | ---------- | ------------------- |:--:| ----------------------------------------------------------------------------------------------------------------- |
 | dsTable    | Tabela              | -> | Tabela do banco de dados 4D cuja seleção atual se utilizará para construir a seleção de entidades                 |
-| parâmetros | Objeto              | -> | Build option: context                                                                                             |
+| settings   | Objeto              | -> | Build option: context                                                                                             |
 | Resultados | 4D. EntitySelection | <- | Seleção de entidades que coincidem com a classe de dados relacionada com a tabela dada|<!-- END REF --> |
 
 
@@ -1515,7 +1515,7 @@ You can add as many objects in the criteria collection as necessary.
 | formulaString | Text                | -> | Formula string                                          |
 | formulaObj    | Objeto              | -> | Formula object                                          |
 | sortOrder     | Integer             | -> | `dk ascending` (default) or `dk descending`             |
-| parâmetros    | Objeto              | -> | Parameter(s) for the formula                            |
+| settings      | Objeto              | -> | Parameter(s) for the formula                            |
 | Resultados    | 4D. EntitySelection | <- | New ordered entity selection|<!-- END REF --> |
 
 #### Descrção
