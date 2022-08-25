@@ -70,20 +70,21 @@ Para asegurar la correcta evaluación de las expresiones procesadas a través de
 
 La etiqueta `<!--#4DBASE -->` designa el directorio de trabajo a utilizar para la etiqueta `<!--#4DINCLUDE-->`.
 
-Cuando se llama en una página web, la etiqueta `<!--#4DBASE -->` modifica todas las llamadas `<!--#4DINCLUDE-->` posteriores a esta página, hasta la siguiente `<!--........-->, si la hay. Si la <!--#4DBASE -->carpeta se modifica desde un archivo incluido, recupera su valor original en el archivo padre.</p>
+When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--........-->`, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
 
-<p spaces-before="0">El parámetro <em x-id="3">folderPath</em> debe contener un nombre de ruta relativo a la página actual y debe terminar con una barra (/). La carpeta designada debe estar ubicada dentro de la carpeta Web.</p>
+The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (`/`). La carpeta designada debe estar ubicada dentro de la carpeta Web.
 
-<p spaces-before="0">Pase la palabra clave "WEBFOLDER" para restablecer la ruta por defecto (relativa a la página).</p>
+Pase la palabra clave "WEBFOLDER" para restablecer la ruta por defecto (relativa a la página).
 
-<p spaces-before="0">El siguiente código, que debe especificar una ruta relativa para cada llamada:</p>
+El siguiente código, que debe especificar una ruta relativa para cada llamada:
 
-<pre><code class="html"><!--#4DINCLUDE subpage.html--> 
+```html
+<!--#4DINCLUDE subpage.html--> 
 <!--#4DINCLUDE folder/subpage1.html-->
 <!--#4DINCLUDE folder/subpage2.html-->
 <!--#4DINCLUDE folder/subpage3.html-->
 <!--#4DINCLUDE ../folder/subpage.html-->
-`</pre>
+```
 
 ... es equivalente a:
 
@@ -335,7 +336,7 @@ Por ejemplo, aquí están los resultados del procesamiento de la variable de tex
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&lt;B&gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`         |
 
-En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar--> : ## error # código del error`.
+En caso de error de interpretación, el texto insertado será `><!--#4DHTML myvar-->: ## error # código del error`.
 
 > Por razones de seguridad se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
@@ -351,7 +352,7 @@ In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boole
 
 En caso de un error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: Se esperaba una expresión booleana" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). Puede utilizar una <!--#4DELSE--> pestaña luego del último <!--#4DELSEIF-->. Si todas las condiciones son falsas, las siguientes instrucciones <!--#4DELSE--> se ejecutan.
+Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si ninguna condición es true, no se ejecuta ninguna sentencia (si no hay un final `<!--#4DELSE-->`). Puede utilizar una <!--#4DELSE--> pestaña luego del último<!--#4DELSEIF-->. Si todas las condiciones son falsas, las siguientes instrucciones<!--#4DELSE-->se ejecutan.
 
 Los dos códigos siguientes son equivalentes.
 
@@ -566,6 +567,7 @@ Por ejemplo, el siguiente código:
 
 ```
 0
+
 1
 2
 3
@@ -613,7 +615,7 @@ La etiqueta `4DSCRIPT` permite ejecutar métodos 4D al procesar la plantilla. La
 
 El método debe devolver el texto en `$0`. Si la cadena comienza con el carácter de código 1, se considera HTML (el mismo principio es válido para la etiqueta `4DHTML`).
 
-Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es <!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
+Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es<!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
 
 El método `MYMETH` es el siguiente:
 
