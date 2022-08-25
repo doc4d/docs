@@ -189,7 +189,7 @@ The `New shared collection` command <!-- REF #_command_.New shared collection.Su
 以下のサポートされる型であれば、いくつでも値を渡すことができます:
 
 *   数値 (実数、倍長整数...)。 数値は常に実数として保存されます。
-*   テキスト
+*   text
 *   boolean
 *   date
 *   時間 (ミリ秒の数 (実数) として保存されます)。
