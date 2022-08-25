@@ -15,9 +15,9 @@ The following locations can be used for static pictures:
 
 #### JSON Grammar
 
-|  Nome  | Tipo de dados | Possible Values                                                                               |
-|:------:|:-------------:| --------------------------------------------------------------------------------------------- |
-| imagem |     text      | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
+|  Nome   | Tipo de dados | Possible Values                                                                               |
+|:-------:|:-------------:| --------------------------------------------------------------------------------------------- |
+| picture |     text      | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
 
 #### Objects Supported
 
