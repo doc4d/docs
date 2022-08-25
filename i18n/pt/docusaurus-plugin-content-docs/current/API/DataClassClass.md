@@ -111,7 +111,7 @@ Considerando as propriedades de tabela abaixo:
 <!-- REF #DataClassClass.all().Params -->
 | Parameter  | Tipo                |    | Descrção                                                                       |
 | ---------- | ------------------- |:--:| ------------------------------------------------------------------------------ |
-| parâmetros | Objeto              | -> | Build option: context                                                          |
+| settings   | Objeto              | -> | Build option: context                                                          |
 | Resultados | 4D. EntitySelection | <- | References on all entities related to the Dataclass|<!-- END REF -->
 
 |
@@ -126,7 +126,7 @@ Se nenhuma entidade correspondente for encontrada, uma seleção de entidade vaz
 
 Se aplica carregamento diferido/lazy loading.
 
-**parâmetros**
+**settings**
 
 No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. As propriedades abaixo são compatíveis:
 
@@ -215,7 +215,7 @@ $ds. Persons.clearRemoteCache()
 | Parameter  | Tipo                |    | Descrção                                                               |
 | ---------- | ------------------- |:--:| ---------------------------------------------------------------------- |
 | objectCol  | Collection          | -> | Coleção de objetos a mapear com entidades                              |
-| parâmetros | Objeto              | -> | Build option: context                                                  |
+| settings   | Objeto              | -> | Build option: context                                                  |
 | Resultados | 4D. EntitySelection | <- | Entity selection filled from the collection|<!-- END REF -->
 
 |
@@ -253,7 +253,7 @@ Os objetos aninhados que apresentam entidades relacionadas devem conter uma prop
 
 Se um atributo \_\_STAMP for dado, se realiza uma comprovação com o selo no armazén de dados e se pode devolver um erro ("O selo dado não coincide com o atual para o registro# XX da tabela XXXX"). Para saber mais, consulte [Entity locking](ORDA/entities.md#entity-locking).
 
-**parâmetros**
+**settings**
 
 No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. As propriedades abaixo são compatíveis:
 
@@ -414,7 +414,7 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
 | Parameter  | Tipo            |    | Descrção                                                              |
 | ---------- | --------------- |:--:| --------------------------------------------------------------------- |
 | primaryKey | Integer OR Text | -> | Valor da chave primária da entidade a recuperar                       |
-| parâmetros | Objeto          | -> | Build option: context                                                 |
+| settings   | Objeto          | -> | Build option: context                                                 |
 | Resultados | 4D. Entity      | <- | Entity matching the designated primary key|<!-- END REF -->
 
 |
@@ -429,7 +429,7 @@ Se nenhuma entidade for encontrada com  *primaryKey*, uma entidade**Null** é re
 
 É aplicado o lazy loading/carregamento diferido, ou seja os dados relacionados são carregados do disco só quando pedidos.
 
-**parâmetros**
+**settings**
 
 No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. As propriedades abaixo são compatíveis:
 
@@ -1445,9 +1445,9 @@ Queremos desautorizar as fórmulas, por exemplo, quando el usuario introduz sua 
 **.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| Parameter  | Tipo   |    | Descrção                                                                                                      |
-| ---------- | ------ | -- | ------------------------------------------------------------------------------------------------------------- |
-| parâmetros | Objeto | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass.|<!-- END REF -->
+| Parameter | Tipo   |    | Descrção                                                                                                      |
+| --------- | ------ | -- | ------------------------------------------------------------------------------------------------------------- |
+| settings  | Objeto | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass.|<!-- END REF -->
 
 |
 
