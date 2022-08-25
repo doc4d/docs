@@ -1,5 +1,5 @@
 ---
-id: identificadores
+id: identifiers
 title: Identificadores
 ---
 
