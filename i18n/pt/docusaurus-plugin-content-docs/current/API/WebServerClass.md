@@ -726,7 +726,7 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 | Parameter  | Tipo   |    | Descrção                              |
 | ---------- | ------ | -- | ------------------------------------- |
-| parâmetros | Objeto | -> | Web server settings to set at startup |
+| settings   | Objeto | -> | Web server settings to set at startup |
 | Resultados | Objeto | <- | Status of the web server startup      |
 
 <!-- END REF -->
