@@ -162,7 +162,7 @@ The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Su
 
 | プロパティ                      | タイプ     | Value                                                                                                     |
 | -------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | テキスト    | 本文パートの値                                                                                                   |
+| *partID*.value             | text    | 本文パートの値                                                                                                   |
 | *partID*.isEncodingProblem | boolean | 文字セットをデコーディング中に、不正なフォーマットのセクション、未知の文字セット、あるいは未知の content-transfer-encoding が見つかった場合には true。 デフォルトは false。 |
 
 ## .cc
@@ -222,8 +222,8 @@ The `.headers` property contains a <!-- REF #EmailObjectClass.headers.Summary --
 
 | プロパティ    | タイプ  | Value                                                                                                                   |
 | -------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
-| [].name  | テキスト | (必須) [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド名。 null または未定義の場合には、ヘッダーフィールドは MIME ヘッダーに追加されません。 |
-| [].value | テキスト | [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド値。                                                     |
+| [].name  | text | (必須) [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド名。 null または未定義の場合には、ヘッダーフィールドは MIME ヘッダーに追加されません。 |
+| [].value | text | [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド値。                                                     |
 
 ## .htmlBody
 
