@@ -54,14 +54,14 @@ ASSERT($status.success)
 
 
 <!-- REF #4D.CryptoKey.new().Params -->
-| Parameter  | Tipo          |    | Descrção                                                                     |
-| ---------- | ------------- | -- | ---------------------------------------------------------------------------- |
-| parâmetros | Objeto        | -> | Parâmetros para gerar ou carregar um par de chaves                           |
-| result     | 4D. CryptoKey | <- | Objeto que contém um par de chaves de criptografia<!-- END REF --> |
+| Parameter | Tipo          |    | Descrção                                                                     |
+| --------- | ------------- | -- | ---------------------------------------------------------------------------- |
+| settings  | Objeto        | -> | Parâmetros para gerar ou carregar um par de chaves                           |
+| result    | 4D. CryptoKey | <- | Objeto que contém um par de chaves de criptografia<!-- END REF --> |
 
 The `4D. CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D. CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. Permite gerar uma nova chave RSA o ECDSA, ou carregar um par de chaves existente desde uma definição PEM.
 
-#### *parâmetros*
+#### *settings*
 
 | Propriedade     | Tipo    | Descrção                                         |
 | --------------- | ------- | ------------------------------------------------ |
