@@ -1,5 +1,5 @@
 ---
-id: restaurar
+id: restore
 title: Restaurar
 ---
 
