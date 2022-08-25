@@ -153,9 +153,9 @@ _italic_
 - La etiqueta de bloque de código (\``4d ... ``) es compatible con el resaltado del código 4D:
 
     \``` 4d  
-C_TEXT($txt)  
-$txt:="Hello world!"  
-\` `` \`</code>
+  C_TEXT($txt)  
+  $txt:="Hello world!"  
+  \` ``
 
 
 - La etiqueta de la tabla es soportada:
