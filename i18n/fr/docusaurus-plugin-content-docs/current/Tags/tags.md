@@ -70,9 +70,9 @@ Pour garantir l'évaluation correcte des expressions traitées via les balises, 
 
 La balise `<!--#4DBASE -->` désigne le répertoire de travail à utiliser par la balise `<!--#4DINCLUDE-->`.
 
-When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--........-->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
+When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--........-->`, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
 
-Le paramètre *folderPath* doit contenir un nom de chemin relatif à la page actuelle et il doit se terminer par une barre oblique (/). Le dossier désigné doit être situé à l'intérieur du dossier Web.
+The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (`/`). Le dossier désigné doit être situé à l'intérieur du dossier Web.
 
 Passez le mot-clé "WEBFOLDER" pour rétablir le chemin par défaut (relatif à la page).
 
@@ -567,6 +567,7 @@ For example, the following code:
 
 ```
 0
+
 1
 2
 3
