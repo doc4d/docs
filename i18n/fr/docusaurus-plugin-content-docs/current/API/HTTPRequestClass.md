@@ -364,7 +364,7 @@ The `.url` property contains <!-- REF #HTTPRequestClass.url.Summary -->the URL o
 
 <!-- REF #HTTPRequestClass.wait().Syntax -->
 
-**.wait**( { *time* : Real } ) : HTTPRequestClass<!-- END REF -->
+**.wait**( { *time* : Real } ) : 4D.HTTPRequest<!-- END REF -->
 
 <!-- REF #HTTPRequestClass.wait().Params -->
 | Paramètres | Type           |    | Description                                      |
@@ -378,7 +378,7 @@ The `.url` property contains <!-- REF #HTTPRequestClass.url.Summary -->the URL o
 
 > This function is thread-safe.
 
-The `wait()` function <!-- REF #HTTPRequestClass.wait().Summary -->waits for the response from the server<!-- END REF -->.
+The `4D.HTTPRequest.wait()` function <!-- REF #HTTPRequestClass.wait().Summary -->waits for the response from the server<!-- END REF -->.
 
 If a *time* parameter is passed, the function will wait at most the defined number of seconds.
 
