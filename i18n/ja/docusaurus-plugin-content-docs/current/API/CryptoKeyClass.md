@@ -66,10 +66,10 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 
 | プロパティ           | タイプ  | 詳細                            |
 | --------------- | ---- | ----------------------------- |
-| [curve](#curve) | テキスト | ECDSA 曲線名                     |
-| [pem](#pem)     | テキスト | ロードする PEM 形式の暗号化キー            |
+| [curve](#curve) | text | ECDSA 曲線名                     |
+| [pem](#pem)     | text | ロードする PEM 形式の暗号化キー            |
 | [size](#size)   | 整数   | RSA キーのサイズ (ビット単位)            |
-| [type](#type)   | テキスト | キーのタイプ: "RSA", "ECDSA", "PEM" |
+| [type](#type)   | text | キーのタイプ: "RSA", "ECDSA", "PEM" |
 
 #### *CryptoKey*
 
@@ -120,9 +120,9 @@ The `.decrypt()` function <!-- REF #CryptoKey.decrypt().Summary -->decrypts the 
 
 | プロパティ             | タイプ  | 詳細                                                                                         |
 | ----------------- | ---- | ------------------------------------------------------------------------------------------ |
-| hash              | テキスト | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。                                       |
-| encodingEncrypted | テキスト | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"   |
-| encodingDecrypted | テキスト | バイナリの復号メッセージを文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
+| hash              | text | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。                                       |
+| encodingEncrypted | text | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"   |
+| encodingDecrypted | text | バイナリの復号メッセージを文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
 
 #### *Result*
 
@@ -131,7 +131,7 @@ The `.decrypt()` function <!-- REF #CryptoKey.decrypt().Summary -->decrypts the 
 | プロパティ   | タイプ        | 詳細                                                |
 | ------- | ---------- | ------------------------------------------------- |
 | success | boolean    | メッセージの復号に成功した場合は true                             |
-| result  | テキスト       | options.encodingDecrypted を使って復号およびデコードされたメッセージ   |
+| result  | text       | options.encodingDecrypted を使って復号およびデコードされたメッセージ   |
 | errors  | collection | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。 |
 
 キーまたはアルゴリズムが合致しないなどの理由で *message* の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
@@ -166,9 +166,9 @@ The `.encrypt()` function <!-- REF #CryptoKey.encrypt().Summary -->encrypts the 
 
 | プロパティ             | タイプ  | 詳細                                                                                                |
 | ----------------- | ---- | ------------------------------------------------------------------------------------------------- |
-| hash              | テキスト | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。                                              |
-| encodingEncrypted | テキスト | バイナリの暗号化メッセージを文字列に変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"               |
-| encodingDecrypted | テキスト | 暗号化するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
+| hash              | text | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。                                              |
+| encodingEncrypted | text | バイナリの暗号化メッセージを文字列に変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"               |
+| encodingDecrypted | text | 暗号化するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
 
 #### *Result*
 
@@ -276,10 +276,10 @@ The `.sign()` function <!-- REF #CryptoKey.sign().Summary -->signs the utf8 repr
 
 | プロパティ             | タイプ     | 詳細                                                                                                                           |
 | ----------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| hash              | テキスト    | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
-| encodingEncrypted | テキスト    | バイナリの暗号化メッセージを文字列に変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                          |
+| hash              | text    | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
+| encodingEncrypted | text    | バイナリの暗号化メッセージを文字列に変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                          |
 | pss               | boolean | 確率的署名スキーム (PSS) を使用する。 RSA キーでない場合は無視されます。 PS＠ アルゴリズム用の JWT を生成する場合は `true` を渡します。                                           |
-| encoding          | テキスト    | 戻り値の署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                             |
+| encoding          | text    | 戻り値の署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                             |
 
 #### *Result*
 
@@ -350,9 +350,9 @@ The `.verify()` function <!-- REF #CryptoKey.verify().Summary -->verifies the ba
 
 | プロパティ    | タイプ     | 詳細                                                                                                                           |
 | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| hash     | テキスト    | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
+| hash     | text    | 使用する Digest アルゴリズム。 例: "SHA256", "SHA384", "SHA512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
 | pss      | boolean | 確率的署名スキーム (PSS) を使用する。 RSA キーでない場合は無視されます。 PS＠ アルゴリズム用の JWT を生成する場合は `true` を渡します。                                           |
-| encoding | テキスト    | 署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                                 |
+| encoding | text    | 署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                                 |
 
 #### *Result*
 
