@@ -793,7 +793,7 @@ The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary
 
 | プロパティ      | タイプ    | 詳細                                         |
 | ---------- | ------ | ------------------------------------------ |
-| name       | テキスト   | メールボックスの名称                                 |
+| name       | text   | メールボックスの名称                                 |
 | mailCount  | number | メールボックス内のメッセージの数                           |
 | mailRecent | number | (新しいメッセージであることを表す) "recent" フラグがついたメッセージの数 |
 
@@ -849,7 +849,7 @@ The `.getBoxList()` function <!-- REF #IMAPTransporterClass.getBoxList().Summary
 
 | プロパティ            | タイプ     | 詳細                                                                          |
 | ---------------- | ------- | --------------------------------------------------------------------------- |
-| \[].name        | テキスト    | メールボックスの名称                                                                  |
+| \[].name        | text    | メールボックスの名称                                                                  |
 | \[].selectable  | boolean | アクセス権でメールボックスを選択できるかどうかを表します: <ul><li>true - メールボックスは選択可能</li><li>false - メールボックスは選択不可能</li></ul>                     |
 | \[].inferior    | boolean | アクセス権でメールボックス内に下の階層レベルを作成できるかどうかを表します: <ul><li>true - 下の階層レベルは作成可能</li><li>false - 下の階層レベルは作成不可能</li></ul>            |
 | \[].interesting | boolean | サーバーがメールボックスに “interesting” のマーク付けをしているかどうかを表します: <ul><li>true - メールボックスはサーバーから "interesting" のマーク付けをされています。 たとえば、メールボックスには新着メッセージが入っている場合が考えられます。</li><li>false - メールボックスはサーバーから "interesting" のマーク付けをされていません。</li></ul> |
