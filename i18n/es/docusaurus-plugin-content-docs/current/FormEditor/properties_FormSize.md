@@ -12,7 +12,7 @@ Las opciones de tamaño dependen del valor de la opción **Tamaño basado en**.
 ## Tamaño basado en
 
 
-*   **Automatic Size**: The size of the form will be that necessary to display all the objects, to which will be added the margin values (in pixels) entered in the [**Hor. Margin**](#hor-margin) and [**Vert. Margin**](#vert-margin) fields.
+*   **Automatic Size**: The size of the form will be that necessary to display all the objects, to which will be added the margin values (in pixels) entered in the [**Hor Margin**](#hor-margin) and [**Vert Margin**](#vert-margin) fields.
 
     Puede elegir esta opción cuando desee utilizar objetos activos situados en un área fuera de la pantalla (*es decir*, fuera del rectángulo delimitador de la ventana) con una ventana de tamaño automático. Gracias a esta opción, la presencia de estos objetos no modificará el tamaño de la ventana.
 
@@ -50,7 +50,7 @@ Las opciones de tamaño dependen del valor de la opción **Tamaño basado en**.
 Value to add (in pixels) to the right margin of the form when the [form size](#size-based-on) is **Automatic size** or `\&#060;object name&#062;`
 
 
-**los campos **Margen [hor.](#hor-margin) y Margen [**ver.** Margin</strong>](#vert-margin) fields.
+This value also determines the right-hand margins of forms used in the Label editor.
 
 #### Gramática JSON
 
@@ -65,7 +65,7 @@ Value to add (in pixels) to the right margin of the form when the [form size](#s
 
 Value to add (in pixels) to the bottom margin of the form when the [form size](#size-based-on) is **Automatic size** or `\&#060;object name&#062;`.
 
-Altura del formulario (en píxeles) cuando el [ tamaño del formulario ](#size-based-on) está definido en **Fijar tamaño **.
+This value also determines the top margins of forms used in the Label editor.
 
 #### Gramática JSON
 
