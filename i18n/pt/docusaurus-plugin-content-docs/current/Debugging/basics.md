@@ -1,5 +1,5 @@
 ---
-id: básicos
+id: basics
 title: Básicos
 ---
 
