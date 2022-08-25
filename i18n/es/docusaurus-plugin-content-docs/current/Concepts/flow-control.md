@@ -11,7 +11,7 @@ Regardless of the simplicity or complexity of a method or function, you will alw
     - `While...End while`
     - `Repeat...Until`
     - `For...End for`
-    - End for each</code><br/> The loops are controlled in two ways: either they loop until a condition is met, or they loop a specified number of times. Cada estructura de bucle puede utilizarse de cualquier manera, pero los bucles `While` y los bucles `Repeat` son más apropiados para repetir hasta que se cumpla una condición, y los bucles `For` son más apropiados para hacer un bucle un número determinado de veces. End for each</code> allows mixing both ways and is designed to loop within objects and collections.
+    - `For each...End for each`<br/> Los bucles se controlan de dos maneras: o bien hacen un bucle hasta que se cumpla una condición, o bien hacen un bucle un número determinado de veces. Cada estructura de bucle puede utilizarse de cualquier manera, pero los bucles `While` y los bucles `Repeat` son más apropiados para repetir hasta que se cumpla una condición, y los bucles `For` son más apropiados para hacer un bucle un número determinado de veces. `For each...End for each` permite la mezcla en ambos sentidos y está diseñado para realizar bucles dentro de objetos y colecciones.
 
 **Nota:** 4D permite anidar estructuras de programación hasta una "profundidad" de 512 niveles.
 
