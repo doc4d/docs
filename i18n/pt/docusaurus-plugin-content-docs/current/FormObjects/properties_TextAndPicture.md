@@ -135,7 +135,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 
 | Nome | Tipo de dados | Possible Values                              |
 | ---- | ------------- | -------------------------------------------- |
-| icon | imagem        | Relative or filesystem path in POSIX syntax. |
+| icon | picture       | Relative or filesystem path in POSIX syntax. |
 
 #### Objects Supported
 
