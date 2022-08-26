@@ -50,13 +50,13 @@ title: ピクチャーボタン
 - デフォルト ([アニメーションオプション](properties_Animation.md) 未選択) の場合、ユーザーがクリックすると、系列中の次のピクチャーを表示します。**Shift** キーを押しながらクリックすると、系列中の前のピクチャーを表示します。 系列中の最後のピクチャーに到達すると、もう一度クリックしてもピクチャーは変わりません。 つまりこの設定では、系列中の最初のピクチャーへ一巡して戻ることはありません。
 
 次のモードを選択することができます:
-- [先頭フレームに戻る](properties_Animation.md#loopBackToFirstFrame)
-- [マウスアップで戻る](properties_Animation.md#switch-back-when-released)
-- [ロールオーバー効果](properties_Animation.md#switch-when-roll-over)
-- [マウス押下中は自動更新](properties_Animation.md#switch-continuously-on-clicks)
-- [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-- [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-> [Use Last frame as disabled](properties_Animation.md#use-last-frame-as-disabled) > The [associated variable](properties_Object.md#variable-or-expression) of the picture button returns the index number, in the thumbnail table, of the current picture displayed. このテーブル内のピクチャー番号は 0 から始まります。
+- [先頭フレームに戻る](properties_Animation.md#先頭フレームに戻る)
+- [マウスアップで戻る](properties_Animation.md#マウスアップで戻る)
+- [ロールオーバー効果](properties_Animation.md#ロールオーバー効果)
+- [マウス押下中は自動更新](properties_Animation.md#マウス押下中は自動更新)
+- [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用)
+- [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用)
+> ピクチャーボタンに [関連付けた変数](properties_Object.md#変数あるいは式) は、ピクチャーのサムネールテーブルで現在表示されているピクチャーのインデックス番号を返します。  このテーブル内のピクチャー番号は 0 から始まります。
 
 ## プロパティ一覧
 
