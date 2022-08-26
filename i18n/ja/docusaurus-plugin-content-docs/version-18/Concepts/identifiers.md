@@ -56,9 +56,9 @@ QUERY([Clients];[Clients]Name="Smith")
 
 ## インタープロセス変数
 
-You designate an interprocess variable by preceding the name of the variable with the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
+名前の先頭にインタープロセス記号 (`<>`) を付けることによって、インタープロセス変数を表します。
 
-The name of an interprocess variable can be up to 31 characters, not including the `<>` symbols.
+インタープロセス変数名は、`<>` 記号を除いて最大31文字以内で指定することができます。
 
 例:
 
@@ -70,7 +70,7 @@ If(<>vtName#"")
 
 ## プロセス変数
 
-You designate a process variable by using its name (which cannot start with the `<>` symbols nor the dollar sign $). プロセス変数の名前は、最大31文字までの長さで指定できます。
+(`<>` 記号や $ 記号から始まらない) 名前を使用して、プロセス変数を表します。 プロセス変数の名前は、最大31文字までの長さで指定できます。
 
 例:
 
@@ -102,9 +102,9 @@ $vsMyString:="Hello there"
 
 ### インタープロセス配列
 
-The name of an interprocess array is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
+インタープロセス配列の名前は、先頭にインタープロセス記号 (`<>`) が付きます。
 
-An interprocess array name can contain up to 31 characters, not including the `<>` symbols.
+インタープロセス配列名は、インタープロセス記号 (`<>`) を除いて31文字以内で指定します。
 
 例:
 
@@ -116,7 +116,7 @@ ARRAY INTEGER(<>aiBigArray;10000)
 
 ### プロセス配列
 
-You designate a process array by using its name (which cannot start with the `<>` symbols nor the dollar sign $). プロセス配列名は31文字以内で指定します。
+(`<>` 記号や $ 記号から始まらない) 名前を使用して、プロセス配列を表します。 プロセス配列名は31文字以内で指定します。
 
 例:
 
@@ -145,17 +145,17 @@ ARRAY INTEGER($aiBigArray;10000)
 例:
 
 ```4d  
- //Addressing an element of an interprocess array
+ // インタープロセス配列の要素を指定します
 If(<>asKeywords{1}="Stop")
 <>atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=<>aiBigArray{Size of array(<>aiBigArray)}
 
- //Addressing an element of a process array
+ // プロセス配列の要素を指定します
 If(asKeywords{1}="Stop")
 atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{Size of array(aiBigArray)}
 
- //Addressing an element of a local array
+ // ローカル配列の要素を指定します
 If($asKeywords{1}="Stop")
 $atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
@@ -168,17 +168,17 @@ You reference an element of a two-dimensional array by using the curly braces ({
 例:
 
 ```4d
- //Addressing an element of a two-dimensional interprocess array
+ // 2次元インタープロセス配列の要素を指定します
 If(<>asKeywords{$vlNextRow}{1}="Stop")
 <>atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=<>aiBigArray{$vlSet}{Size of array(<>aiBigArray{$vlSet})}
 
- //Addressing an element of a two-dimensional process array
+ // 2次元プロセス配列の要素を指定します
 If(asKeywords{$vlNextRow}{1}="Stop")
 atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{$vlSet}{Size of array(aiBigArray{$vlSet})}
 
- //Addressing an element of a two-dimensional local array
+ // 2次元ローカル配列の要素を指定します
 If($asKeywords{$vlNextRow}{1}="Stop")
 $atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
@@ -242,36 +242,36 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 例:
 
 ```4d
- //This command expects a method (function) or formula
+ // このコマンドはメソッド (関数) またはフォーミュラを受け取ります
 QUERY BY FORMULA([aTable];Special query)
- //This command expects a method (procedure) or statement
+ // このコマンドはメソッド (プロシージャ) またはステートメントを受け取ります
 APPLY TO SELECTION([Employees];INCREASE SALARIES)
- //But this command expects a method name
+ // このコマンドはメソッド名を文字列で受け取ります
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
-プロジェクトメソッドには引数を渡すことができます。 メソッドに引数を渡す場合は、メソッド名の後の括弧 () に引数を入れ、 セミコロン (;) で区切ります。 The parameters are available within the called method as consecutively numbered local variables: $1, $2,… , $n. さらに、複数の連続する引数は、${n}というシンタックスを用いて使用できます。nは数値で引数の番号を示します。
+プロジェクトメソッドには引数を渡すことができます。 メソッドに引数を渡す場合は、メソッド名の後の括弧 () に引数を入れ、 セミコロン (;) で区切ります。 引数は受け取り側のメソッドにて、受け取り順に番号を振られたローカル変数 ($1, $2, ...$n) に格納されます。 さらに、複数の連続する引数は、${n}というシンタックスを用いて使用できます。nは数値で引数の番号を示します。
 
 関数の戻り値は、ローカル変数 $0 に代入することで指定します。
 
 例:
 
 ```4d
- //Within DROP SPACES $1 is a pointer to the field [People]Name
+ // DROP SPACES メソッド内で、$1 はフィールド [People]Name へのポインターです
 DROP SPACES(->[People]Name)
 
- //Within Calc creator:
- //- $1 is numeric and equal to 1
- //- $2 is numeric and equal to 5
- //- $3 is text or string and equal to "Nice"
- //- The result value is assigned to $0
+ // Calc creator メソッド内で、
+ //- $1 は数値の 1
+ //- $2 は数値の 5
+ //- $3 テキストまたは文字列の "Nice"
+ //- 戻り値は $0 に代入されます
 $vsResult:=Calc creator(1;5;"Nice")
 
- //Within Dump:
- //- The three parameters are text or string
- //- They can be addressed as $1, $2 or $3
- //- They can also be addressed as, for instance, ${$vlParam} where $vlParam is 1, 2 or 3
- //- The result value is assigned to $0
+ // Dump メソッド内で、
+ //- 3つの引数はテキストまたは文字列です
+ //- これらの引数は $1, $2, $3 で参照できます
+ //- また、これらの引数を ${$vlParam} で間接的に参照することもできます ($vlParamは1, 2, 3)
+ //- 戻り値は $0 に代入されます
 vtClone:=Dump("is";"the";"it")
 ```
 
@@ -298,13 +298,13 @@ $error:=SMTP_From($smtp_id;"henry@gmail.com")
 
 ### インタープロセスセット
 
-A set is an interprocess set if the name of the set is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
+インタープロセスセットの名前は、先頭にインタープロセス記号 (`<>`) が付きます。
 
-An interprocess set name can contain up to 255 characters, not including the `<>` symbols.
+インタープロセスセット名は、インタープロセス記号 (`<>`) を除いて255文字以内で指定します。
 
 ### プロセスセット
 
-You denote a process set by using a string expression that represents its name (which cannot start with the `<>` symbols or the dollar sign $). プロセスセット名は、255文字以内で指定します。
+セットの名前を表す文字列を使用してプロセスセットを表します (`<>` 記号も $ 記号も名前の先頭につきません) 。 プロセスセット名は、255文字以内で指定します。
 
 ### クライアントセット
 
@@ -315,15 +315,15 @@ You denote a process set by using a string expression that represents its name (
 例:
 
 ```4d
- //Interprocess sets
+ // インタープロセスセット
 USE SET("<>Deleted Records")
 CREATE SET([Customers];"<>Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Process sets
+ // プロセスセット
 USE SET("Deleted Records")
 CREATE SET([Customers];"Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Client sets
+ // クライアントセット
 USE SET("$Deleted Records")
 CREATE SET([Customers];"$Customer Orders")
 If(Records in set("$Selection"+String($i))>0)
@@ -338,20 +338,20 @@ If(Records in set("$Selection"+String($i))>0)
 
 ### インタ－プロセス命名セレクション
 
-A named selection is an interprocess named selection if its name is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
+インタープロセス命名セレクションの名前は、先頭にインタープロセス記号 (`<>`) が付きます。
 
-An interprocess named selection name can contain up to 255 characters, not including the `<>` symbols.
+インタープロセス命名セレクション名は、インタープロセス記号 (`<>`) を除いて255文字以内で指定します。
 
 ### プロセス命名セレクション
 
-You denote a process named selection by using a string expression that represents its name (which cannot start with the `<>` symbols nor the dollar sign $). インタープロセスセット名は255文字以内で指定します。
+プロセス命名セレクションの名前を表す文字列式を使用してプロセスセットを表します (`<>` 記号も $ 記号も名前の先頭につきません) 。 インタープロセスセット名は255文字以内で指定します。
 
 例:
 
 ```4d
- //Interprocess Named Selection
+ // インタープロセス命名セレクション
 USE NAMED SELECTION([Customers];"<>ByZipcode")
- //Process Named Selection
+ // プロセス命名セレクション
 USE NAMED SELECTION([Customers];"<>ByZipcode")
 ```
 
@@ -373,9 +373,9 @@ $記号以外から始まる文字列を使用してグローバルプロセス�
 例:
 
 ```4d
- //Starting the global process "Add Customers"
+ // グローバルプロセス "Add Customers" を開始します
 $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
- //Starting the local process "$Follow Mouse Moves"
+ // ローカルプロセス "$Follow Mouse Moves" を開始します
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
 ```
 
