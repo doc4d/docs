@@ -53,7 +53,7 @@ title: リストボックス
 * **配列**: 各列に 4D 配列を割り当てます。 配列タイプのリストボックスは [階層リストボックス](listbox_overview.md#階層リストボックス) として表示することができます。
 * **セレクション** (**カレントセレクション** または **命名セレクション**): 各列に式 (たとえばフィールド) を割り当てます。それぞれの行はセレクションのレコードを基に評価されます。
 * **コレクションまたはエンティティセレクション**: 各列に式を割り当てます。各行の中身はコレクションの要素ごと、あるいはエンティティセレクションのエンティティごとに評価されます。
-> > It is not possible to combine different list box types in the same list box object. データソースは、リストボックス作成時に定義され、 プログラムによって後から変更することはできません。
+> 1つのリストボックス内に、複数のデータソースタイプを組み合わせて指定することはできません。 データソースは、リストボックス作成時に定義され、 プログラムによって後から変更することはできません。
 
 ### リストボックスの管理
 
@@ -109,80 +109,80 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 
 提供されるプロパティはリストボックスのタイプに依存します。
 
-| プロパティ                                                                        | 配列リストボックス | セレクションリストボックス | コレクションまたはエンティティセレクションリストボックス |
-| ---------------------------------------------------------------------------- | --------- | ------------- | ---------------------------- |
-| [交互に使用する背景色](properties_BackgroundAndBorder.md#alternate-background-color)   | X         | X             | X                            |
-| [背景色](properties_BackgroundAndBorder.md#background-color)                    | X         | X             | X                            |
-| [太字](properties_Text.md#bold)                                                | X         | X             | X                            |
-| [背景色式](properties_BackgroundAndBorder.md#background-color-expression)        |           | X             | X                            |
-| [境界線スタイル](properties_BackgroundAndBorder.md#border-line-style)               | X         | X             | X                            |
-| [下](properties_CoordinatesAndSizing.md#bottom)                               | X         | X             | X                            |
-| [Class](properties_Object.md#css-class)                                      | X         | X             | X                            |
-| [コレクションまたはエンティティセレクション](properties_Object.md#collection-or-entity-selection) |           | X             | X                            |
-| [カラム自動リサイズ](properties_ResizingOptions.md#column-auto-resizing)              | X         | X             | X                            |
-| [カレントの項目](properties_DataSource.md#current-item)                             |           |               | X                            |
-| [カレントの項目の位置](properties_DataSource.md#current-item-position)                 |           |               | X                            |
-| [データソース](properties_Object.md#data-source)                                   | X         | X             | X                            |
-| [詳細フォーム名](properties_ListBox.md#detail-form-name)                            |           | X             |                              |
-| [ヘッダーを表示](properties_Headers.md#display-headers)                             | X         | X             | X                            |
-| [フッターを表示](properties_Footers.md#display-footers)                             | X         | X             | X                            |
-| [行をダブルクリック](properties_ListBox.md#double-click-on-row)                       |           | X             |                              |
-| [ドラッグ有効](properties_Action.md#droppable)                                     | X         | X             | X                            |
-| [ドロップ有効](properties_Action.md#droppable)                                     | X         | X             | X                            |
-| [フォーカス可](properties_Entry.md#focusable)                                      | X         | X             | X                            |
-| [フォント](properties_Text.md#font)                                              | X         | X             | X                            |
-| [フォントカラー](properties_Text.md#font_color)                                     | X         | X             | X                            |
-| [フォントカラー式](properties_Text.md#font-color-expression)                         |           | X             | X                            |
-| [フォントサイズ](properties_Text.md#font-size)                                      | X         | X             | X                            |
-| [高さ (リストボックス)](properties_CoordinatesAndSizing.md#height)                    | X         | X             | X                            |
-| [高さ (ヘッダー)](properties_Headers.md#height)                                    | X         | X             | X                            |
-| [高さ (フッター)](properties_Footers.md#height)                                    | X         | X             | X                            |
-| [追加の空白の行を非表示](properties_BackgroundAndBorder.md#hide-extra-blank-rows)       | X         | X             | X                            |
-| [フォーカスの四角を隠す](properties_Appearance.md#hide-focus-rectangle)                 | X         | X             | X                            |
-| [セレクションハイライトを非表示](properties_Appearance.md#hide-selection-highlight)         | X         | X             | X                            |
-| [階層リストボックス](properties_Object.md#hierarchical-list-box)                      | X         |               |                              |
-| [ハイライトセット](properties_ListBox.md#highlight-set)                              |           | X             |                              |
-| [横揃え](properties_Text.md#horizontal-alignment)                               | X         | X             | X                            |
-| [横線カラー](properties_Gridlines.md#horizontal-line-color)                       | X         | X             | X                            |
-| [横方向パディング](properties_CoordinatesAndSizing.md#horizontal-padding)            | X         | X             | X                            |
-| [横スクロールバー](properties_Appearance.md#horizontal-scroll-bar)                   | X         | X             | X                            |
-| [横方向サイズ変更](properties_ResizingOptions.md#horizontal-sizing)                  | X         | X             | X                            |
-| [イタリック](properties_Text.md#italic)                                           | X         | X             | X                            |
-| [左](properties_CoordinatesAndSizing.md#left)                                 | X         | X             | X                            |
-| [マスターテーブル](properties_DataSource.md#table)                                   |           | X             |                              |
-| [メタ情報式](properties_Text.md#meta-info-expression)                             |           |               | X                            |
-| [メソッド](properties_Action.md#method)                                          | X         | X             | X                            |
-| [行の移動可](properties_Action.md#movable-rows)                                   | X         |               |                              |
-| [命名セレクション](properties_DataSource.md#selectionName)                           |           | X             |                              |
-| [列数](properties_ListBox.md#number-of-columns)                                | X         | X             | X                            |
-| [スクロールしない列数](properties_ListBox.md#number-of-locked-columns)                 | X         | X             | X                            |
-| [ドラッグしない列数](properties_ListBox.md#number-of-static-columns)                  | X         | X             | X                            |
-| [オブジェクト名](properties_Object.md#object-name)                                  | X         | X             | X                            |
-| [右](properties_CoordinatesAndSizing.md#right)                                | X         | X             | X                            |
-| [行背景色配列](properties_BackgroundAndBorder.md#row-background-color-array)       | X         |               |                              |
-| [行コントロール配列](properties_ListBox.md#row-control-array)                         | X         |               |                              |
-| [行フォントカラー配列](properties_Text.md#row-font-color-array)                        | X         |               |                              |
-| [行の高さ](properties_CoordinatesAndSizing.md#row-height)                        | X         |               |                              |
-| [行高さ配列](properties_CoordinatesAndSizing.md#row-height-array)                 | X         |               |                              |
-| [行スタイル配列](properties_Text.md#row-style-array)                                | X         |               |                              |
-| [選択された項目](properties_DataSource.md#selected-items)                           |           |               | X                            |
-| [選択モード](properties_ListBox.md#selection-mode)                                | X         | X             | X                            |
-| [シングルクリック編集](properties_Entry.md#single-click-edit)                          | X         | X             | X                            |
-| [ソート可](properties_Action.md#sortable)                                        | X         | X             | X                            |
-| [標準アクション](properties_Action.md#standard-action)                              | X         |               |                              |
-| [スタイル式](properties_Text.md#style-expression)                                 |           | X             | X                            |
-| [上](properties_CoordinatesAndSizing.md#top)                                  | X         | X             | X                            |
-| [透過](properties_BackgroundAndBorder.md#transparent)                          | X         | X             | X                            |
-| [タイプ](properties_Object.md#type)                                             | X         | X             | X                            |
-| [下線](properties_Text.md#underline)                                           | X         | X             | X                            |
-| [変数あるいは式](properties_Object.md#variable-or-expression)                       | X         | X             |                              |
-| [縦揃え](properties_Text.md#vertical-alignment)                                 | X         | X             | X                            |
-| [縦線カラー](properties_Gridlines.md#vertical-line-color)                         | X         | X             | X                            |
-| [縦方向パディング](properties_CoordinatesAndSizing.md#vertical-padding)              | X         | X             | X                            |
-| [縦スクロールバー](properties_Appearance.md#vertical-scroll-bar)                     | X         | X             | X                            |
-| [縦方向サイズ変更](properties_ResizingOptions.md#vertical-sizing)                    | X         | X             | X                            |
-| [表示状態](properties_Display.md#visibility)                                     | X         | X             | X                            |
-| [幅](properties_CoordinatesAndSizing.md#width)                                | X         | X             | X                            |
+| プロパティ                                                               | 配列リストボックス | セレクションリストボックス | コレクションまたはエンティティセレクションリストボックス |
+| ------------------------------------------------------------------- | --------- | ------------- | ---------------------------- |
+| [交互に使用する背景色](properties_BackgroundAndBorder.md#交互に使用する背景色)          | X         | X             | X                            |
+| [背景色](properties_BackgroundAndBorder.md#背景色-塗りカラー)                  | X         | X             | X                            |
+| [太字](properties_Text.md#太字)                                         | X         | X             | X                            |
+| [背景色式](properties_BackgroundAndBorder.md#背景色式)                      |           | X             | X                            |
+| [境界線スタイル](properties_BackgroundAndBorder.md#境界線スタイル)                | X         | X             | X                            |
+| [下](properties_CoordinatesAndSizing.md#下)                           | X         | X             | X                            |
+| [Class](properties_Object.md#cssクラス)                                | X         | X             | X                            |
+| [コレクションまたはエンティティセレクション](properties_Object.md#コレクションまたはエンティティセレクション) |           | X             | X                            |
+| [カラム自動リサイズ](properties_ResizingOptions.md#カラム自動リサイズ)                | X         | X             | X                            |
+| [カレントの項目](properties_DataSource.md#カレントの項目)                         |           |               | X                            |
+| [カレントの項目の位置](properties_DataSource.md#カレントの項目の位置)                   |           |               | X                            |
+| [データソース](properties_Object.md#データソース)                               | X         | X             | X                            |
+| [詳細フォーム名](properties_ListBox.md#詳細フォーム名)                            |           | X             |                              |
+| [ヘッダーを表示](properties_Headers.md#ヘッダーを表示)                            | X         | X             | X                            |
+| [フッターを表示](properties_Footers.md#フッターを表示)                            | X         | X             | X                            |
+| [行をダブルクリック](properties_ListBox.md#行をダブルクリック)                        |           | X             |                              |
+| [ドラッグ有効](properties_Action.md#ドロップ有効)                               | X         | X             | X                            |
+| [ドロップ有効](properties_Action.md#ドロップ有効)                               | X         | X             | X                            |
+| [フォーカス可](properties_Entry.md#フォーカス可)                                | X         | X             | X                            |
+| [フォント](properties_Text.md#フォント)                                     | X         | X             | X                            |
+| [フォントカラー](properties_Text.md#フォントカラー)                               | X         | X             | X                            |
+| [フォントカラー式](properties_Text.md#フォントカラー式)                             |           | X             | X                            |
+| [フォントサイズ](properties_Text.md#フォントサイズ)                               | X         | X             | X                            |
+| [高さ (リストボックス)](properties_CoordinatesAndSizing.md#高さ)               | X         | X             | X                            |
+| [高さ (ヘッダー)](properties_Headers.md#高さ)                               | X         | X             | X                            |
+| [高さ (フッター)](properties_Footers.md#高さ)                               | X         | X             | X                            |
+| [追加の空白の行を非表示](properties_BackgroundAndBorder.md#追加の空白の行を非表示)        | X         | X             | X                            |
+| [フォーカスの四角を隠す](properties_Appearance.md#フォーカスの四角を隠す)                 | X         | X             | X                            |
+| [セレクションハイライトを非表示](properties_Appearance.md#セレクションハイライトを非表示)         | X         | X             | X                            |
+| [階層リストボックス](properties_Object.md#階層リストボックス)                         | X         |               |                              |
+| [ハイライトセット](properties_ListBox.md#ハイライトセット)                          |           | X             |                              |
+| [横揃え](properties_Text.md#横揃え)                                       | X         | X             | X                            |
+| [横線カラー](properties_Gridlines.md#横線カラー)                              | X         | X             | X                            |
+| [横方向パディング](properties_CoordinatesAndSizing.md#横方向パディング)             | X         | X             | X                            |
+| [横スクロールバー](properties_Appearance.md#縦スクロールバー)                       | X         | X             | X                            |
+| [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更)                  | X         | X             | X                            |
+| [イタリック](properties_Text.md#イタリック)                                   | X         | X             | X                            |
+| [左](properties_CoordinatesAndSizing.md#左)                           | X         | X             | X                            |
+| [マスターテーブル](properties_DataSource.md#マスターテーブル)                       |           | X             |                              |
+| [メタ情報式](properties_Text.md#メタ情報式)                                   |           |               | X                            |
+| [メソッド](properties_Action.md#メソッド)                                   | X         | X             | X                            |
+| [行の移動可](properties_Action.md#行の移動可)                                 | X         |               |                              |
+| [命名セレクション](properties_DataSource.md#命名セレクション)                       |           | X             |                              |
+| [列数](properties_ListBox.md#列数)                                      | X         | X             | X                            |
+| [スクロールしない列数](properties_ListBox.md#スクロールしない列数)                      | X         | X             | X                            |
+| [ドラッグしない列数](properties_ListBox.md#ドラッグしない列数)                        | X         | X             | X                            |
+| [オブジェクト名](properties_Object.md#オブジェクト名)                             | X         | X             | X                            |
+| [右](properties_CoordinatesAndSizing.md#右)                           | X         | X             | X                            |
+| [行背景色配列](properties_BackgroundAndBorder.md#行背景色配列)                  | X         |               |                              |
+| [行コントロール配列](properties_ListBox.md#行コントロール配列)                        | X         |               |                              |
+| [行フォントカラー配列](properties_Text.md#行フォントカラー式)                          | X         |               |                              |
+| [行の高さ](properties_CoordinatesAndSizing.md#行の高さ)                     | X         |               |                              |
+| [行高さ配列](properties_CoordinatesAndSizing.md#行高さ配列)                   | X         |               |                              |
+| [行スタイル配列](properties_Text.md#行スタイル配列)                               | X         |               |                              |
+| [選択された項目](properties_DataSource.md#選択された項目)                         |           |               | X                            |
+| [選択モード](properties_ListBox.md#選択モード)                                | X         | X             | X                            |
+| [シングルクリック編集](properties_Entry.md#シングルクリック編集)                        | X         | X             | X                            |
+| [ソート可](properties_Action.md#ソート可)                                   | X         | X             | X                            |
+| [標準アクション](properties_Action.md#標準アクション)                             | X         |               |                              |
+| [スタイル式](properties_Text.md#スタイル式)                                   |           | X             | X                            |
+| [上](properties_CoordinatesAndSizing.md#上)                           | X         | X             | X                            |
+| [透過](properties_BackgroundAndBorder.md#透過)                          | X         | X             | X                            |
+| [タイプ](properties_Object.md#タイプ)                                     | X         | X             | X                            |
+| [下線](properties_Text.md#下線)                                         | X         | X             | X                            |
+| [変数あるいは式](properties_Object.md#変数あるいは式)                             | X         | X             |                              |
+| [縦揃え](properties_Text.md#縦揃え)                                       | X         | X             | X                            |
+| [縦線カラー](properties_Gridlines.md#縦線カラー)                              | X         | X             | X                            |
+| [縦方向パディング](properties_CoordinatesAndSizing.md#縦方向パディング)             | X         | X             | X                            |
+| [縦スクロールバー](properties_Appearance.md#縦スクロールバー)                       | X         | X             | X                            |
+| [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更)                  | X         | X             | X                            |
+| [表示状態](properties_Display.md#表示状態)                                  | X         | X             | X                            |
+| [幅](properties_CoordinatesAndSizing.md#幅)                           | X         | X             | X                            |
 
 > リストボックスの列、ヘッダーおよびフッターにもそれぞれ固有のプロパティがあります。
 
@@ -436,7 +436,7 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 * `On Getting Focus` (リストボックスプロパティ)
 * `On Losing Focus` (リストボックスプロパティ)
 * `On Activate` (フォームプロパティ)
-* `On Deactivate` (form property) ...depending on whether and how you want to visually represent changes of focus in selections.
+* `On Deactivate` (フォームプロパティ) ...いずれを利用するかは、選択のフォーカス変化を視覚的に表現するかどうか、またどのように表現するかによって異なります。
 
 ##### 例題
 
@@ -549,7 +549,7 @@ End if
 * 変数が 0 のとき、列は並べ替えられておらず、矢印は表示されていません。  
   ![](../assets/en/FormObjects/sorticon0.png)
 
-* If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon1.png)
+* 変数が 1 のとき、列は昇順に並べ替えられており、並べ替え矢印が表示されています。 ![](../assets/en/FormObjects/sorticon1.png)
 
 * If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed. ![](../assets/en/FormObjects/sorticon2.png)
 
@@ -611,13 +611,13 @@ End if
 
 リストボックスのタイプに応じて、行のカラーやスタイル、表示について使用できるプロパティが異なります:
 
-| プロパティ   | 配列リストボックス                                                              | セレクションリストボックス                                                         | コレクションまたはエンティティセレクションリストボックス                                                          |
-| ------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| 背景色     | [行背景色配列](properties_BackgroundAndBorder.md#row-background-color-array) | [背景色式](properties_BackgroundAndBorder.md#background-color-expression) | [背景色式"](properties_BackgroundAndBorder.md#背景色式) または [メタ情報式](properties_Text.md#メタ情報式) |
-| フォントカラー | [行フォントカラー配列](properties_Text.md#row-font-color-array)                  | [フォントカラー式](properties_Text.md#font-color-expression)                  | [フォントカラー式](properties_Text.md#フォントカラー式) または [メタ情報式](properties_Text.md#メタ情報式)         |
+| プロパティ   | 配列リストボックス                                          | セレクションリストボックス                                  | コレクションまたはエンティティセレクションリストボックス                                                          |
+| ------- | -------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------- |
+| 背景色     | [行背景色配列](properties_BackgroundAndBorder.md#行背景色配列) | [背景色式](properties_BackgroundAndBorder.md#背景色式) | [背景色式"](properties_BackgroundAndBorder.md#背景色式) または [メタ情報式](properties_Text.md#メタ情報式) |
+| フォントカラー | [行フォントカラー配列](properties_Text.md#行フォントカラー式)         | [フォントカラー式](properties_Text.md#フォントカラー式)        | [フォントカラー式](properties_Text.md#フォントカラー式) または [メタ情報式](properties_Text.md#メタ情報式)         |
+ フォントスタイル|
 
-
-[Row Style Array](properties_Text.md#row-style-array)|[Style Expression](properties_Text.md#style-expression)|[Style Expression](properties_Text.md#style-expression) or [Meta info expression](properties_Text.md#meta-info-expression)| Display|[Row Control Array](properties_ListBox.md#row-control-array)|-|-|
+[行スタイル配列](properties_Text.md#行スタイル配列)|[スタイル式](properties_Text.md#スタイル式)|[スタイル式](properties_Text.md#スタイル式) または [メタ情報式](properties_Text.md#メタ情報式)|表示|[行コントロール配列](properties_ListBox.md#行コントロール配列)|-|-|
 
 ## リストボックスの印刷
 
@@ -758,7 +758,7 @@ Variable 1 は常に、リストボックスの先頭列の変数名に対応し
  ->MyListbox{3}:=True
 ```
 
-Non-hierarchical representation: ![](../assets/en/FormObjects/hierarch7.png) Hierarchical representation: ![](../assets/en/FormObjects/hierarch8.png)
+非階層表示: ![](../assets/en/FormObjects/hierarch7.png) 階層表示: ![](../assets/en/FormObjects/hierarch8.png)
 
 > 親が折りたたまれているために行が非表示になっていると、それらは選択から除外されます。 (直接あるいはスクロールによって) 表示されている行のみを選択できます。 言い換えれば、行を選択かつ隠された状態にすることはできません。
 
@@ -794,7 +794,7 @@ Non-hierarchical representation: ![](../assets/en/FormObjects/hierarch7.png) Hie
 ```
 > このコンテキストでは、配列に割り当てられたオブジェクトがないため、オブジェクトプロパティコマンドで動作するのは、配列変数を使用したシンタックスのみです。
 
-Result:
+結果:
 
 ![](../assets/en/FormObjects/hierarch14.png)
 
@@ -831,7 +831,7 @@ Result:
 
 しかしながら、データソーステーマは、オブジェクト型のリストボックスカラムに対しては選択できません。 実際、カラムの各セルの中身は、それに対応するオブジェクト配列の要素の属性に基づいています。 配列の各オブジェクト要素には、以下を定義できます:
 
-the value type (mandatory): text, color, event, etc. the value itself (optional): used for input/output. the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に "Hello World!" 書き込むことができます:
+値の型 (必須): テキスト、カラー、イベント、他<br /> 値そのもの (任意): 入力/出力に使用<br /> セルの内容表示 (任意): ボタン、リスト、他<br /> 追加の設定 (任意): 値の型によります<br /> これらのプロパティを定義するには、適切な属性をオブジェクト内に設定する必要があります (使用可能な属性は以下に一覧としてまとめてあります)。 たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に "Hello World!" 書き込むことができます:
 
 ```4d  
 ARRAY OBJECT(obColumn;0) // カラム配列
@@ -849,7 +849,7 @@ ARRAY OBJECT(obColumn;0) // カラム配列
 リストボックスカラムにオブジェクト配列が割り当てられているとき、セルの表示・入力・編集の方法は、配列の要素の valueType 属性に基づきます。 次の valueType の値がサポートされています:
 
 * "text": テキスト値
-* "real": for a numeric value that can include separators like a `\&#060;space&#062;`, `&#060;.&#062;`, or `&#060;,&#062;`
+* "real": セパレーターを含む数値。セパレーターの例: `<space>`, `<.>`, `<,>`
 * "integer": 整数値
 * "boolean": true/false 値
 * "color": 背景色を定義
