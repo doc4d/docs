@@ -431,7 +431,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 | ------------ | ------ |:--:| ------------------------------------------------------------------------- |
 | option       | 整数     | -> | `ck resolve pointers`: コピー前にポインターを解決する<br/>`ck shared`: 共有コレクションを返す |
 | groupWithCol | コレクション | -> | 結果のコレクションとグループする共有コレクション                                                  |
-| groupWithObj | Result | -> | 結果のコレクションとグループする共有オブジェクト                                                  |
+| groupWithObj | Object | -> | 結果のコレクションとグループする共有オブジェクト                                                  |
 | Result       | コレクション | <- | 元のコレクションのディープ・コピー|<!-- END REF -->                              |
 
 
@@ -2097,7 +2097,7 @@ The `.push()` function <!-- REF #collection.push().Summary -->appends one or mor
 | ------------- | ------ |:--:| ---------------------------------------------------- |
 | queryString   | テキスト   | -> | 検索条件                                                 |
 | value         | 複合     | -> | プレースホルダー使用時: 比較する値                                   |
-| querySettings | Result | -> | クエリオプション: parameters, attributes 他                   |
+| querySettings | Object | -> | クエリオプション: parameters, attributes 他                   |
 | Result        | コレクション | <- | queryString に合致するコレクション要素|<!-- END REF --> |
 
 
