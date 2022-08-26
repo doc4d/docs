@@ -82,11 +82,11 @@ APPLY TO SELECTION([Employees];INCREASE SALARIES)
 例:
 
 ```4d
- //This command expects a method (function) or formula
+ // このコマンドはメソッド (関数) またはフォーミュラを受け取ります
 QUERY BY FORMULA([aTable];Special query)
- //This command expects a method (procedure) or statement
+ // このコマンドはメソッド (プロシージャ) またはステートメントを受け取ります
 APPLY TO SELECTION([Employees];INCREASE SALARIES)
- //But this command expects a method name
+ // このコマンドはメソッド名を文字列で受け取ります
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
