@@ -7,7 +7,7 @@ title: ピクチャーボタン
 
 ピクチャーボタンは、次の 2つの方法で使用します:
 
-* フォーム上のコマンドボタンとして。 In this case, the picture button generally includes four different states: enabled, disabled, clicked and rolled over. For example, a table of thumbnails that has one row of four columns, each thumbnail corresponds to the Default, Clicked, Roll over, and Disabled states.
+* フォーム上のコマンドボタンとして。 この場合、ピクチャーボタンには通常 4種類の状態があります (有効、無効、クリック、ロールオーバー)。 たとえば、1行 4列からなるサムネールテーブルの場合、各サムネールはデフォルト、クリック、ロールオーバー、無効という状態に対応しています。
 
   | プロパティ         | JSON 名                 | Value |
   | ------------- | ---------------------- | ----- |
@@ -17,7 +17,7 @@ title: ピクチャーボタン
   | ロールオーバー効果     | switchWhenRollover     | true  |
   | 無効時に最終フレームを使用 | useLastFrameAsDisabled | true  |
 
-* 複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:
+* 複数の選択項目の中からユーザーに選ばせるためのピクチャーボタンとして。 この場合、ピクチャーボタンをポップアップピクチャーメニューの代わりに使用することができます。 [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) ではすべての選択肢が (ポップアップメニューの項目として) 同時に表示されます。他方ピクチャーボタンは、選択候補を連続的に表示します (ボタンをクリックする度に変わります)。 次に示すのは、ピクチャーボタンの例です。 たとえば、カスタムアプリケーションのユーザーに、アプリケーションのインタフェース言語を選ばせたいものとします。 そこで下図のように、選択候補をピクチャーボタンとしてカスタムプロパティダイアログボックスに組み込みます:
 
 ![](../assets/en/FormObjects/button_pictureButton.png)
 
@@ -47,13 +47,13 @@ title: ピクチャーボタン
 
 次のモードを選択することができます:
 
-* [先頭フレームに戻る](properties_Animation.md#loopBackToFirstFrame)
-* [マウスアップで戻る](properties_Animation.md#switch-back-when-released)
-* [ロールオーバー効果](properties_Animation.md#switch-when-roll-over)
-* [マウス押下中は自動更新](properties_Animation.md#switch-continuously-on-clicks)
-* [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-* [無効時に最終フレームを使用](properties_Animation.md#use-last-frame-as-disabled)
-> [Use Last frame as disabled](properties_Animation.md#use-last-frame-as-disabled) > The [associated variable](properties_Object.md#variable-or-expression) of the picture button returns the index number, in the thumbnail table, of the current picture displayed. このテーブル内のピクチャー番号は 0 から始まります。
+* [先頭フレームに戻る](properties_Animation.md#先頭フレームに戻る)
+* [マウスアップで戻る](properties_Animation.md#マウスアップで戻る)
+* [ロールオーバー効果](properties_Animation.md#ロールオーバー効果)
+* [マウス押下中は自動更新](properties_Animation.md#マウス押下中は自動更新)
+* [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用)
+* [無効時に最終フレームを使用](properties_Animation.md#無効時に最終フレームを使用)
+> ピクチャーボタンに [関連付けた変数](properties_Object.md#変数あるいは式) は、ピクチャーのサムネールテーブルで現在表示されているピクチャーのインデックス番号を返します。  このテーブル内のピクチャー番号は 0 から始まります。
 
 ## プロパティ一覧
 
