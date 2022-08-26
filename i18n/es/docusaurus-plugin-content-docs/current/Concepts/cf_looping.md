@@ -323,7 +323,7 @@ Las instrucciones `break` y `continue` se [describen a continuación](#break-and
 
 ### Bucle en las colecciones
 
-When `For each... End for each` is used with an _Expression_ of the _Collection_ type, the _Current_Item_ parameter is a variable of the same type as the collection elements. Si algún elemento de la colección no es del mismo tipo que la variable, se genera un error y el bucle se detiene.
+Cuando `For each...End for each` se utiliza con una _Expression_ del tipo _Collection_, el parámetro _Current_Item_ es una variable del mismo tipo que los elementos de la colección. El número de bucles se basa en el número de elementos de la colección.
 
 La colección debe contener sólo elementos del mismo tipo, de lo contrario se devolverá un error en cuanto a la variable _Current_Item_ se le asigne el primer tipo de valor diferente.
 
@@ -382,7 +382,7 @@ Quiere aumentar el salario de todos los empleados británicos en una selección 
 
 ### Bucles en las propiedades de objetos
 
-When `For each... End for each` is used with an *Expression* of the Object type, the *Current_Item* parameter is a text variable automatically filled with the name of the currently processed property.
+Cuando se utiliza `For each... End for each` con una *Expression* de tipo Object, el parámetro *Current_Item* es una variable texto que se llena automáticamente con el nombre de la propiedad actualmente procesada.
 
 Las propiedades del objeto se procesan de acuerdo con su orden de creación. Durante el bucle, se pueden añadir o eliminar propiedades en el objeto, sin modificar el número de bucles que quedarán en función del número original de propiedades del objeto.
 
