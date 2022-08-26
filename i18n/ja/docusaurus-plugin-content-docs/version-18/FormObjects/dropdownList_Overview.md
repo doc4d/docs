@@ -17,7 +17,7 @@ macOS においては、ドロップダウンリストは "ポップアップメ
 
 値のリストを配列にロードすることで、ドロップダウンリストが初期化されます。 これは複数の方法でおこなうことができます:
 
-* Enter a list of default values in the object properties by selecting `"\&#060;Static List&#062;"` in the [Data Source](properties_DataSource.md) theme of the Property List. これらのデフォルト値は、配列へと自動的にロードされます。 オブジェクトに関連付けた変数名を使用して、この配列を参照することができます。
+* プロパティリストの [データソース](properties_DataSource.md) テーマにおいて、選択リストの項目で "&lt;Static List&gt;" を選び、デフォルト値のリストを入力します。 これらのデフォルト値は、配列へと自動的にロードされます。 オブジェクトに関連付けた変数名を使用して、この配列を参照することができます。
 
 * オブジェクトが表示される前に、値を配列要素に代入するコードを実行します。 例:
 
