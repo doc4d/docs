@@ -36,25 +36,25 @@ title: String
 
 ## 文字列演算子
 
-| 処理       | シンタックス      | 戻り値    | Expression              | Value    |
-| -------- | ----------- | ------ | ----------------------- | -------- |
-| 連結 (結合)  | 文字列 + 文字列   | String | "abc" + "def"           | "abcdef" |
-| 繰り返し     | 文字列 * 数値    | String | "ab" * 3                | "ababab" |
-| 等しい      | 文字列 = 文字列   | ブール    | "abc" = "abc"           | true     |
-|          |             |        | "abc" = "abd"           | False    |
-| 異なる      | 文字列 # 文字列   | ブール    | "abc" # "abd"           | true     |
-|          |             |        | "abc" # "abc"           | False    |
-| 大きい      | 文字列 > 文字列   | ブール    | "abd" > "abc"           | true     |
-|          |             |        | "abc" > "abc"           | False    |
-| 小さい      | 文字列 < 文字列   | ブール    | "abc" < "abd"           | true     |
-|          |             |        | "abc" < "abc"           | False    |
-| 以上       | 文字列 >= 文字列  | ブール    | "abd" >= "abc"          | true     |
-|          |             |        | "abc" >= "abd"          | False    |
-| 以下       | 文字列 <= 文字列  | ブール    | "abc" <= "abd"          | true     |
-|          |             |        | "abd" <= "abc"          | False    |
-| キーワードを含む | 文字列 % 文字列   | ブール    | "Alpha Bravo" % "Bravo" | true     |
-|          |             |        | "Alpha Bravo" % "ravo"  | False    |
-|          | ピクチャー % 文字列 | ブール    | Picture_expr % "Mer"    | true (*) |
+| 処理       | シンタックス           | 戻り値     | Expression              | Value    |
+| -------- | ---------------- | ------- | ----------------------- | -------- |
+| 連結 (結合)  | String + String  | String  | "abc" + "def"           | "abcdef" |
+| 繰り返し     | String * Number  | String  | "ab" * 3                | "ababab" |
+| 等しい      | String = String  | Boolean | "abc" = "abc"           | true     |
+|          |                  |         | "abc" = "abd"           | False    |
+| 異なる      | String # String  | Boolean | "abc" # "abd"           | true     |
+|          |                  |         | "abc" # "abc"           | False    |
+| 大きい      | String > String  | Boolean | "abd" > "abc"           | true     |
+|          |                  |         | "abc" > "abc"           | False    |
+| 小さい      | String < String  | Boolean | "abc" < "abd"           | true     |
+|          |                  |         | "abc" < "abc"           | False    |
+| 以上       | String >= String | Boolean | "abd" >= "abc"          | true     |
+|          |                  |         | "abc" >= "abd"          | False    |
+| 以下       | String <= String | Boolean | "abc" <= "abd"          | true     |
+|          |                  |         | "abd" <= "abc"          | False    |
+| キーワードを含む | String % String  | Boolean | "Alpha Bravo" % "Bravo" | true     |
+|          |                  |         | "Alpha Bravo" % "ravo"  | False    |
+|          | Picture % String | Boolean | Picture_expr % "Mer"    | true (*) |
 
 (*) キーワード "Mer" がピクチャー式 (フィールドまたは変数) に格納されたピクチャーの IPTC/Keywords メタデータに含まれている場合。
 
@@ -143,8 +143,8 @@ Character code("A")=Character code("a")
 ```
 > **注:**
 > 
-> - 4D uses the ICU library for comparing strings (using `<>=#` operators) and detecting keywords. For more information about the rules implemented, please refer to the following address: <http://www.unicode.org/reports/tr29/#Word_Boundaries>.
-> - In the Japanese version, instead of ICU, 4D uses Mecab by default for detecting keywords.
+> - 4Dは、`<>=#` 演算子を使った文字列比較や、キーワードの検出に ICUライブラリを使用しています。 実装されているルールの詳細に関しては、以下のアドレスを参照ください: [http://www.unicode.org/unicode/reports/tr29/#Word_Boundaries](http://www.unicode.org/reports/tr29/#Word_Boundaries)
+> - <br />- 日本語版の 4Dでは、ICU の代わりにデフォルトで Mecab が使用されています。詳細な情報に関しては、 [Mecab のサポート(日本語版)](https://doc.4d.com/4Dv18/4D/18/DatabaseData-storage-page.300-4575463.ja.html#1334024) を参照ください。
 
 ## 文字参照記号
 
