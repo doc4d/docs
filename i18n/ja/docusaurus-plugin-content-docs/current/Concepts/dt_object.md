@@ -1,6 +1,6 @@
 ---
 id: object
-title: Result
+title: Object
 ---
 
 オブジェクト型の変数・フィールド・式にはさまざまなデータを格納することができます。 4D のネイティブなオブジェクトの構造は、よくある「プロパティ/値」(または「属性/値」) というペア (連想配列) に基づいています。 これらオブジェクトの記法は JSON をもとにしていますが、完全に同じというわけではありません。
@@ -9,14 +9,14 @@ title: Result
 
 - プロパティ値は以下のどれかの型で表現されます:
     - 数値 (実数、整数、等)
-    - text
+    - テキスト
     - null
-    - boolean
+    - ブール
     - ポインター (`JSON Stringify` コマンドの使用、またはコピーの際に評価されます)
     - 日付 (日付型あるいは ISO日付フォーマット文字列)
     - オブジェクト(1) (オブジェクトは入れ子にすることができます)
     - ピクチャー(2)
-    - collection
+    - コレクション
 
 (1) [エンティティ](ORDA/dsMapping.md#エンティティ) や [エンティティセレクション](ORDA/dsMapping.md#エンティティセレクション) などの ORDAオブジェクトは **オブジェクトフィールド** には保存することができませんが、メモリ内の **オブジェクト変数** に保存することは可能です。
 
@@ -58,14 +58,14 @@ title: Result
 
 オブジェクト記法では、オブジェクトプロパティは二通りの方法でアクセスすることができます:
 
-- using a "dot" symbol: > object.propertyName
+- "ドット" 記号を使用する方法: > object.propertyName
 
 例:
 ```4d
      employee.name:="Smith"
 ```
 
-- using a string within square brackets: > object["propertyName"]
+- 大カッコと文字列を使用する方法: > object["propertyName"]
 
 例:
 ```4d
@@ -109,7 +109,7 @@ title: Result
      $result:=MyMethod1.a //10
 ```
 
-- **Collections** Example:
+- **コレクション** 例:
 
 ```4d
      myColl.length // コレクションの長さ
