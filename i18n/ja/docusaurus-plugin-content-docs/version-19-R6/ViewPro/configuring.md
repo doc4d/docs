@@ -487,8 +487,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | version      | Longint   | 内部コンポーネントのバージョン       |
 | dateCreation | Timestamp | 作成日                   |
 | dateModified | Timestamp | 最終更新日                 |
-| meta         | Result    | 4Dデベロッパー専用の任意コンテンツ    |
-| spreadJS     | Result    | 4D View Pro コンポーネント専用 |
+| meta         | Object    | 4Dデベロッパー専用の任意コンテンツ    |
+| spreadJS     | Object    | 4D View Pro コンポーネント専用 |
 
 ## 4D View Pro フォームオブジェクト変数
 
@@ -500,9 +500,9 @@ The 4D View Pro フォームオブジェクト変数は、4D View Pro フォー�
 | プロパティ                  | 値の型    | 詳細                                                                                                                                                                                               |
 | ---------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ViewPro.area           | テキスト   | 4D View Pro エリア名                                                                                                                                                                                 |
-| ViewPro.callbacks      | Result | インポートやエクスポートなど、コールバックを必要とするコマンドが使用するための一時的な情報を保存します。                                                                                                                                             |
+| ViewPro.callbacks      | Object | インポートやエクスポートなど、コールバックを必要とするコマンドが使用するための一時的な情報を保存します。                                                                                                                                             |
 | ViewPro.commandBuffers | コレクション | メソッドによって呼び出されるコマンドを順番に保存し、メソッド終了時、あるいはコマンドが値を返した時、あるいは [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) が呼び出された時に、それらのコマンドを (個別にではなく) バッチとして実行します。 この機構によって、送信されるリクエスト数が抑えられ、パフォーマンスが向上します。 |
-| ViewPro.events         | Result | [イベント](Events/overview.md) リスト。                                                                                                                                                                  |
+| ViewPro.events         | Object | [イベント](Events/overview.md) リスト。                                                                                                                                                                  |
 | ViewPro.formulaBar     | ブール    | フォーミュラバーが表示されているかどうかを示します。 "toolbar" インターフェースにおいてのみ利用可能です。                                                                                                                                       |
 | ViewPro.inited         | ブール    | 4D View Pro エリアが初期化されたかどうかを示します([On VP Ready](Events/onVpReady.md) 参照)。                                                                                                                          |
 | ViewPro.interface      | テキスト   | ユーザーインターフェースのタイプを指定します: "ribbon"、"toolbar"、"none"。                                                                                                                                               |
