@@ -336,8 +336,8 @@ icon: url("edit.png"); /* フォームファイルを基準とした相対パス
 
 > ファイルパスは相対パスと絶対パスが使えます。
 > 
-> * Relative paths are resolved relative to the JSON form description file.
-> * For security reasons, only filesystem paths are accepted for absolute paths. (*例*: "/RESOURCES", "/DATA")
+> * 相対パスの基準は JSON フォームファイルです。
+> * セキュリティのため、絶対パスとして使用できるのはファイルシステムパスに限られます。 (*例*: "/RESOURCES", "/DATA")
 
 ## 参照
 
