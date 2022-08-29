@@ -127,4 +127,4 @@ Here is the result of a “pusher” splitter being moved: ![](../assets/en/Form
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
