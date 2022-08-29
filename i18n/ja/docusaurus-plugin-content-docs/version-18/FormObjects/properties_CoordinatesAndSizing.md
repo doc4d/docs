@@ -24,7 +24,7 @@ title: 座標とサイズ
 * 行の高さを計算する際には、以下のものは考慮されません:
   * 非表示のカラムの中身
   * プロパティリスト内、あるいはプログラミングによって設定された [行の高さ](#行の高さ) および [行高さ配列](#行高さ配列) プロパティ (あった場合)
-> > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
+> 自動行高オプションを有効化すると、ランタイムにおいて追加の計算が必要となるため、リストボックスが大量の行数を持つ場合には、スクロール時のスムーズさに影響が出る可能性があります。
 
 #### JSON 文法
 
@@ -34,7 +34,7 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
 
 ---
 
@@ -120,7 +120,7 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[四角](shapes_overview.md#rectangle)
+[四角](shapes_overview.md#四角)
 
 ---
 
@@ -173,7 +173,7 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
 
 ---
 
@@ -190,7 +190,7 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
 
 ---
 
@@ -206,11 +206,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 #### 参照
 
-[行高さ配列](#row-height-array)
+[行高さ配列](#行高さ配列)
 
 ---
 
@@ -241,8 +241,8 @@ RowHeights{5}:=3
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 #### 参照
 
-[行の高さ](#row-height)
+[行の高さ](#行の高さ)
