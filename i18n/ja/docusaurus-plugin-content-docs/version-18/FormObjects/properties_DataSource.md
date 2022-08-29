@@ -81,7 +81,7 @@ title: データソース
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 ---
 
@@ -114,7 +114,7 @@ title: データソース
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
 
 ---
 
@@ -138,11 +138,11 @@ title: データソース
 
 #### 対象オブジェクト
 
-[リストボックス列 (配列型のみ)](listbox_overview.md#list-box-columns)
+[リストボックス列 (配列型のみ)](listbox_overview.md#リストボックス列)
 
 ---
 
-## Expression
+## 式
 
 This description is specific to [selection](listbox_overview.md#selection-list-boxes) and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns. **[変数あるいは式](properties_Object.md#変数あるいは式)** の章も参照ください。
 
@@ -181,7 +181,7 @@ This description is specific to [selection](listbox_overview.md#selection-list-b
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
 
 ---
 
@@ -201,7 +201,7 @@ This description is specific to [selection](listbox_overview.md#selection-list-b
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 ---
 
@@ -255,7 +255,7 @@ This description is specific to [selection](listbox_overview.md#selection-list-b
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 ---
 
@@ -275,4 +275,4 @@ This description is specific to [selection](listbox_overview.md#selection-list-b
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
