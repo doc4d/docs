@@ -1,66 +1,66 @@
 ---
 id: data-collect
-title: About Data Collection
+title: Sobre a coleção de dados
 ---
 
-To help us make our products always better, we automatically collect data regarding usage statistics on running 4D Server applications. Collected data is completely anonymous and data is transferred with no impact on the user experience.
+Para ajudar a tornar os produtos melhores, automaticamente coletamos dados referentes a estatísticas de usuário nas aplicações 4D Server Dados completados são anônimos e dados são transferidos sem ter impacto na experiência de usuário.
 
-This page explains:
+Esta página explica:
 
-- what information is collected
-- where information is stored and when it is sent to 4D
-- how to disable automatic data collection in client/server built applications.
+- que informação é coletada
+- onde a informação é armazenada e quando é enviada a 4D
+- como desativar a coleção de dados automática em aplicações cliente/servidor
 
 
-## Collected information
+## Informação coletada
 
-Data is collected during the following events:
+Dados são coletados durante os eventos abaixo:
 
 - 4D Server startup,
-- database opening,
-- database closure,
-- web server startup.
+- abertura de banco de dados,
+- fechamento de banco de dados,
+- início do 4D Servidor.
 
-### Collected at 4D Server startup
+### Dados coletados no início do 4D Server
 
-| Data          | Example                                                                                              | Notes                                                        |
-| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Name, type, and speed of the processor                       |
-| numberOfCores | 4                                                                                                    | Total number of cores                                        |
-| memory        | 419430400                                                                                            | Volume of memory storage (in bytes) available on the machine |
-| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Operating system version and build number                    |
-| headless      | false                                                                                                | True if the application is running in headless mode          |
-| version       | 1960                                                                                                 | Version number of the 4D application                         |
-| buildNumber   | 123456                                                                                               | Build number of the 4D application                           |
-| license       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Commercial name and description of product licenses          |
+| Dados         | Exemplo                                                                                              | Notas                                                               |
+| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nome, tipo, e velocidade do processador                             |
+| numberOfCores | 4                                                                                                    | Número total de núcleos                                             |
+| memory        | 419430400                                                                                            | Volume de armazenamento de memória (em bytes) disponível na máquina |
+| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versão do sistema operativo e número de construção                  |
+| headless      | false                                                                                                | Verdadeiro se a aplicação estiver a correr em modo sem cabeça       |
+| version       | 1960                                                                                                 | Número da versão da aplicação 4D                                    |
+| buildNumber   | 123456                                                                                               | Número da versão da aplicação 4D                                    |
+| licença       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Nome comercial e descrição das licenças do produto                  |
 
 
-### Collected per database at opening
+### Recolhido por base de dados na abertura
 
-| Data                    | Example                                                 | Notes                                                                                 |
-| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| id                      | hashed string                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
-| dataFileSize            | 419430400                                               | Data file size in bytes                                                               |
-| indexesSize             | 419430400                                               | Index size in bytes                                                                   |
-| cacheSize               | 419430400                                               | Cache size in bytes                                                                   |
-| usingLegacyNetworkLayer | fasle                                                   | True if legacy network layer used for the application server                          |
-| isEncrypted             | true                                                    | True if the data file is encrypted                                                    |
-| isCompiled              | true                                                    | True if the application is compiled                                                   |
-| isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                              |
-| isProjectMode           | true                                                    | True if the application is a project                                                  |
-| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Information on mobile sessions                                                        |
+| Dados                   | Exemplo                                                 | Notas                                                                                             |
+| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| id                      | string hashed                                           | Identificação única associada à base de dados (*Polinômio Rolling hash do nome da base de dados*) |
+| dataFileSize            | 419430400                                               | Tamanho do arquivo de dados em bytes                                                              |
+| indexesSize             | 419430400                                               | Index size in bytes                                                                               |
+| cacheSize               | 419430400                                               | Cache size in bytes                                                                               |
+| usingLegacyNetworkLayer | fasle                                                   | True if legacy network layer used for the application server                                      |
+| isEncrypted             | true                                                    | True se o arquivo de dados estiver criptografado                                                  |
+| isCompiled              | true                                                    | True if the application is compiled                                                               |
+| isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                                          |
+| isProjectMode           | true                                                    | True if the application is a project                                                              |
+| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Information on mobile sessions                                                                    |
 
 
 ### Collected per database at closure
 
-| Data   | Example | Notes                                                        |
-| ------ | ------- | ------------------------------------------------------------ |
-| uptime | 123456  | Time elapsed (in seconds) since local 4D database was opened |
+| Dados                  | Exemplo | Notas                                                        |
+| ---------------------- | ------- | ------------------------------------------------------------ |
+| tempo de funcionamento | 123456  | Time elapsed (in seconds) since local 4D database was opened |
 
 
 ### Collected per database at web server startup
 
-| Data      | Example          | Notes       |
+| Dados     | Exemplo          | Notas       |
 | --------- | ---------------- | ----------- |
 | webServer | {"started":true} | Always true |
 
