@@ -113,7 +113,7 @@ title: 背景色と境界線
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 ---
 
@@ -211,7 +211,7 @@ title: 背景色と境界線
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 #### 参照
 
