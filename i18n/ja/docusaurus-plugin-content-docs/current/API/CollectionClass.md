@@ -100,7 +100,7 @@ The `New collection` command <!-- REF #_command_.New collection.Summary --> crea
  myCol[10]:="My new element"
 ```
 
-コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、コレクションは自動的にリサイズされ、合い間の要素にはすべて null 値が割り当てられらます。
+コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、コレクションは自動的にリサイズされ、合い間の要素にはすべて **null** 値が割り当てられらます。
 
 サポートされている型 (数値、テキスト、日付、ピクチャー、ポインター、オブジェクト、コレクション等) であれば、個数に制限なく値を渡すことができます。 配列とは異なり、コレクションでは異なる型のデータを混ぜることができます。
 
@@ -184,7 +184,7 @@ The `New shared collection` command <!-- REF #_command_.New shared collection.Su
 
 任意で、一つ以上の *value* 引数を渡すことで、あらかじめ値の入った新しい共有コレクションを作成することができます。 または、あとからオブジェクト記法による代入で要素を一つずつ追加・編集していくことができます (例題参照)。
 
-共有コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、共有コレクションは自動的にリサイズされ、合い間の要素にはすべて null 値が割り当てられらます。
+共有コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、共有コレクションは自動的にリサイズされ、合い間の要素にはすべて **null** 値が割り当てられらます。
 
 以下のサポートされる型であれば、いくつでも値を渡すことができます:
 
@@ -340,7 +340,7 @@ $vSize:=$col.length //$vSize=0
 
 #### 詳細
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. .
+The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. `.insert()` 関数とは異なり、`.combine()` は *col2* の各要素を元のコレクション追加します (*col2* 自体が単一のコレクション要素としては挿入されるわけではありません)。
 > このコマンドは、元のコレクションを変更します。
 
 デフォルトでは、*col2* の要素は元のコレクションの最後に追加されます。 *index* に引数を渡すことで、*col2* の要素を挿入する位置を指定することができます。
@@ -1036,7 +1036,7 @@ The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - または *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、テストを満たす各要素に対して **true** を返さなくてはなりません。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -1119,7 +1119,7 @@ The `.find()` function <!-- REF #collection.find().Summary -->returns the first 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - または *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、条件を満たす最初の要素に対して **true** を返さなくてはなりません。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
@@ -1209,7 +1209,7 @@ The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns 
 - *formula* (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 - *methodName*、プロジェクトメソッドの名前 (テキスト)。
 
-コールバックには、*param* (任意) に指定した引数が渡されます。 The callback is called with the parameter(s) passed in *param* (optional). コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
+コールバックには、*param* (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、条件を満たす最初の要素に対して **true** を返さなくてはなりません。 コールバックは最初のパラメータ ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
