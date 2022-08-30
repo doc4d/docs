@@ -29,7 +29,7 @@ title: スプリッター
  "top": 160,   
  "width": 100,  
  "height": 20,  
- "splitterMode": "move"  //pusher
+ "splitterMode": "move"  // プッシャー
  }
 ```
 
