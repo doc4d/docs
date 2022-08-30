@@ -30,11 +30,11 @@ macOSの場合、タブコントロールを標準位置 (上) だけでなく�
 ```4d
  "myTab": {
   "type": "tab",
-   "left": 60, 
+  "left": 60, 
   "top": 160,  
-  "width": 100, 
-  "height": 20, 
-  "labelsPlacement": "bottom" //define the direction
+  "width": 100,   
+  "height": 20,   
+  "labelsPlacement": "bottom" // タブコントロールの位置
  }
 ```
 
