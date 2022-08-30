@@ -11,16 +11,16 @@ title: テキスト
 
 ```4d
  "myText": {
-                "type": "text",
-                "text": "Hello World!",
-                "textAlign": "center",
-                "left": 60,   
-                "top": 160, 
-                "width": 100,
-                "height": 20,
-                "stroke": "#ff0000"  //text color   
-                "fontWeight": "bold"
-                }
+             "type": "text",
+             "text": "Hello World!",
+             "textAlign": "center",
+             "left": 60,         
+             "top": 160, 
+             "width": 100,
+             "height": 20,
+             "stroke": "#ff0000"     // テキストカラー   
+             "fontWeight": "bold"
+              }
 ```
 
 ## 回転
