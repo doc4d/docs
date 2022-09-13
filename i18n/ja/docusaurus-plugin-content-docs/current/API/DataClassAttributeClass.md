@@ -131,7 +131,7 @@ title: DataClassAttribute
 | storage                 | 4Dフィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/ja/page1509.html) コマンド参照 |
 | relatedEntity           | 38 (`Is object`)                                                                            |
 | relatedEntities         | 42 (`Is collection`)                                                                        |
-| calculated              | <li>スカラー: 4Dフィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/ja/page1509.html) コマンド参照</li><li>エンティティ: 38 (`Is object`)</li><li>エンティティセレクション: 42 (`Is collection`)</li>                 |
+| calculated              | <li>スカラー: 4Dフィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/ja/page1509.html) コマンド参照</li><li>エンティティ: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection`)</li>                 |
 | alias                   | <li>スカラー: 4Dフィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/ja/page1509.html) コマンド参照</li><li>エンティティ: 38 (`Is object`)</li><li>エンティティセレクション: 42 (`Is collection`)</li>                 |
 
 <!-- END REF -->
