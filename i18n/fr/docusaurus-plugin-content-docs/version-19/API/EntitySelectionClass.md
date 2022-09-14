@@ -414,7 +414,7 @@ Nous voulons obtenir la liste des employés dont le salaire est supérieur au sa
 
 #### Description
 
-The `.contains()` function <!-- REF #EntitySelectionClass.contains().Summary -->returns true if entity reference belongs to the entity selection<!-- END REF -->, and false otherwise.
+The `.contains()` function <!-- REF #EntitySelectionClass.contains().Summary -->returns true if entity reference belongs to the entity selection<!-- END REF -->, et faux sinon.
 
 Dans *entity*, spécifiez l'entité à rechercher dans l'entity selection. Si l'entité est Null, la fonction retournera faux.
 
@@ -639,7 +639,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 #### Description
 
-The `.drop()` function <!-- REF #EntitySelectionClass.drop().Summary -->removes the entities belonging to the entity selection from the table related to its dataclass within the datastore<!-- END REF -->. L'entity selection reste en mémoire.
+La fonction `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->removes the entities belonging to the entity selection from the table related to its dataclass within the datastore<!-- END REF -->. L'entity selection reste en mémoire.
 > La suppression d'entités est permanente et ne peut pas être annulée. Il est recommandé d'appeler cette action dans une transaction afin d'avoir une possibilité de récupération.
 
 Si une entité verrouillée est rencontrée lors de l'exécution de `.drop()`, elle n'est pas supprimée. Par défaut, la fonction traite toutes les entités de l'entity selection et renvoie des entités non supprimables dans l'entity selection. Si vous souhaitez que la fonction arrête l'exécution au niveau de la première entité non supprimable rencontrée, passez la constante `dk stop dropping on first error` dans le paramètre *mode*.
@@ -799,7 +799,7 @@ Considérons les tables et relations suivantes :
 
 #### Description
 
-The `.first()` function <!-- REF #EntitySelectionClass.first().Summary -->returns a reference to the entity in the first position of the entity selection<!-- END REF -->.
+La fonction `.first()` <!-- REF #EntitySelectionClass.first().Summary -->returns a reference to the entity in the first position of the entity selection<!-- END REF -->.
 
 Le résultat de cette fonction est similaire à :
 
@@ -855,7 +855,7 @@ Il existe cependant une différence entre les deux instructions lorsque la séle
 
 #### Description
 
-The `.getDataClass()` function <!-- REF #EntitySelectionClass.getDataClass().Summary -->The `.getDataClass()` function<!-- END REF -->.
+La fonction `.getDataClass()` <!-- REF #EntitySelectionClass.getDataClass().Summary -->The `.getDataClass()` function<!-- END REF -->.
 
 Cette fonction est utile principalement dans le contexte de code générique.
 
@@ -999,7 +999,7 @@ Pour plus d'informations, voir [Entity selections triées vs Entity selections n
 
 #### Description
 
-The `.last()` function <!-- REF #EntitySelectionClass.last().Summary -->returns a reference to the entity in last position of the entity selection<!-- END REF -->.
+La fonction `.last()` <!-- REF #EntitySelectionClass.last().Summary -->returns a reference to the entity in last position of the entity selection<!-- END REF -->.
 
 Le résultat de cette fonction est similaire à :
 
