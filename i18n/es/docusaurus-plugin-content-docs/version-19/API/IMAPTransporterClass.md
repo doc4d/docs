@@ -67,7 +67,7 @@ Los objetos IMAP Transporter se instancian con el comando [IMAP New transporter]
 
 #### Descripción
 
-The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summary -->configures a new IMAP connection<!-- END REF --> according to the *server* parameter and returns a new *transporter* object. El objeto transportador devuelto se utilizará normalmente para recibir correos electrónicos.
+El comando `IMAP New transporter` <!-- REF #_command_.IMAP New transporter.Summary -->configura una nueva conexión IMAP<!-- END REF --> según el parámetro *server* y devuelve un nuevo objeto *transporter*. El objeto transportador devuelto se utilizará normalmente para recibir correos electrónicos.
 
 En el parámetro *server*, pase un objeto que contenga las siguientes propiedades:
 
@@ -124,7 +124,7 @@ End if
 
 #### Descripción
 
-The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. .
+La función `4D.IMAPTransporter.new()` <!-- REF #4D.IMAPTransporter.new().Summary -->crea y devuelve un nuevo objeto del tipo `4D.IMAPTransporter`<!-- END REF -->. .
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -153,7 +153,7 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 
 #### Descripción
 
-The `.addFlags()` function <!-- REF #IMAPTransporterClass.addFlags().Summary -->adds flags to the `msgIDs` for the specified `keywords`<!-- END REF -->.
+La función `.addFlags()` <!-- REF #IMAPTransporterClass.addFlags().Summary -->añade banderas a los `msgIDs` para las `palabras claves` especificadas<!-- END REF -->.
 
 En el parámetro `msgIDs`, puede pasar:
 
@@ -241,7 +241,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 #### Descripción
 
-The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
+La función `.append()` <!-- REF #IMAPTransporterClass.append().Summary -->añade un `mailObj` al `destinationBox`<!-- END REF -->.
 
 En el parámetro `mailObj`, pase un objeto Email. En el parámetro `mailObj`, pase un objeto Email. La función `.append()` soporta los marcadores de palabras clave en el atributo `keywords` de los objetos email.
 
@@ -320,7 +320,7 @@ $status:=$imap.append($msg; "Drafts")
 
 #### Descripción
 
-The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  Si se supera este tiempo entre dos llamadas al método, se comprobará la conexión con el servidor. Por defecto, si la propiedad no se ha definido en el objeto *server<*, el valor es de 300.
+La propiedad `.checkConnectionDelay` contiene <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->el tiempo máximo (en segundos) permitido antes de comprobar la conexión con el servidor<!-- END REF -->.  Si se supera este tiempo entre dos llamadas al método, se comprobará la conexión con el servidor. Por defecto, si la propiedad no se ha definido en el objeto *server<*, el valor es de 300.
 > **Atención**: asegúrese de que el tiempo de espera definido sea menor que el tiempo de espera del servidor, de lo contrario el tiempo de espera del cliente será inútil.
 
 <!-- END REF -->
@@ -532,7 +532,7 @@ End for each
 
 #### Descripción
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
+La función `.delete()` <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
 
 Puede pasar:
 
