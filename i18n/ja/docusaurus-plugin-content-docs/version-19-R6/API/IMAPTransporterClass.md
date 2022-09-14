@@ -186,7 +186,7 @@ The `.addFlags()` function <!-- REF #IMAPTransporterClass.addFlags().Summary -->
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -272,7 +272,7 @@ The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appe
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -371,7 +371,7 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -470,7 +470,7 @@ The `.createBox()` function <!-- REF #IMAPTransporterClass.createBox().Summary -
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -529,7 +529,7 @@ End if
 
 #### 説明
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->。
+`.delete()` 関数は、 <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->。
 
 以下のものを渡すことができます:
 
@@ -547,7 +547,7 @@ The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The 
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -642,7 +642,7 @@ The `.deleteBox()` function <!-- REF #IMAPTransporterClass.deleteBox().Summary -
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -712,7 +712,7 @@ The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->re
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -1215,7 +1215,7 @@ The `.move()` function <!-- REF #IMAPTransporterClass.move().Summary -->moves th
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -1391,7 +1391,7 @@ false値は無視されます。
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -1460,7 +1460,7 @@ The `.renameBox()` function <!-- REF #IMAPTransporterClass.renameBox().Summary -
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -1738,7 +1738,7 @@ The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
@@ -1810,7 +1810,7 @@ The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summa
 | success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
 | statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
 | errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値         | 4Dエラーコード                                           |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
 |            | \[].message            | Text       | 4Dエラーの詳細                                           |
 |            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
