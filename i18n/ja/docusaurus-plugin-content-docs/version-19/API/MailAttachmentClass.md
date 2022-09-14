@@ -34,11 +34,11 @@ Attachment オブジェクトは、次の読み取り専用プロパティや、
 | cid         | Text              | -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列)       |
 | type        | Text              | -> | content-type ヘッダーの値                                    |
 | disposition | Text              | -> | content-disposition ヘッダーの値: "inline" あるいは "attachment" |
-| 戻り値         | 4D.MailAttachment | <- | Attachment object|<!-- END REF -->           |
+| 戻り値         | 4D.MailAttachment | <- | Attachment オブジェクト|<!-- END REF -->           |
 
 #### 説明
 
-The `MAIL New attachment` command <!-- REF #_command_.MAIL_New_attachment.Summary -->allows you to create an attachment object that you can add to an [Email object](EmailObjectClass.md#email-object)<!-- END REF -->。
+`MAIL New attachment` コマンドは、 <!-- REF #_command_.MAIL_New_attachment.Summary -->[Email オブジェクト](EmailObjectClass.md#email-オブジェクト) に追加できる添付オブジェクトを作成します<!-- END REF -->。
 
 添付を定義するには、パスまたは Blob を引数として渡します。
 
@@ -51,7 +51,7 @@ The `MAIL New attachment` command <!-- REF #_command_.MAIL_New_attachment.Summar
 - ファイルパスを渡していれば、そのファイル名と拡張子が使用されます。
 - BLOB を渡していれば、拡張子がないランダムな名前が自動的に生成されます。
 
-任意の *cid* 引数を使用すると、添付ファイルの内部ID を渡すことができます。 この ID は `Content-Id` ヘッダーの値で、HTMLメッセージにおいてのみ使用されます。 The cid associates the attachment with a reference defined in the message body using an HTML tag such as `\&#060;img src="cid:ID"&#062;`. これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 *cid* を使用したくない場合、空の文字列を引数として渡します。
+任意の *cid* 引数を使用すると、添付ファイルの内部ID を渡すことができます。 この ID は `Content-Id` ヘッダーの値で、HTMLメッセージにおいてのみ使用されます。 cid を使い、`\<img src="cid:ID">` のような HTMLタグによってメッセージ本文で定義された参照と添付ファイルが紐づけられます。 これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 *cid* を使用したくない場合、空の文字列を引数として渡します。
 
 任意の *type* 引数を渡すと、添付ファイルの `content-type` を明示的に設定することができます。 たとえば、MIMEタイプを定義する文字列 ("video/mpeg"など) を渡すことができます。 この content-type の値は拡張子とは関係なく添付ファイルに対して設定されます。 MIMEタイプについての詳細は、[Wikipedia 上のMIME に関するページ](https://ja.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions) を参照ください。
 
@@ -168,11 +168,11 @@ $transporter.send($email)
 | cid         | Text              | -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列)       |
 | type        | Text              | -> | content-type ヘッダーの値                                    |
 | disposition | Text              | -> | content-disposition ヘッダーの値: "inline" あるいは "attachment" |
-| 戻り値         | 4D.MailAttachment | <- | Attachment object|<!-- END REF -->           |
+| 戻り値         | 4D.MailAttachment | <- | Attachment オブジェクト|<!-- END REF -->           |
 
 #### 説明
 
-The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary -->creates and returns a new object of the `4D.MailAttachment` type<!-- END REF -->。 `4D.MailAttachment.new()` 関数は、 <!-- REF #4D.MailAttachment.new().Summary -->`4D.MailAttachment` 型の新規オブジェクト作成して返します<!-- END REF -->。
+`4D.MailAttachment.new()` 関数は、 <!-- REF #4D.MailAttachment.new().Summary -->`4D.MailAttachment` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 `4D.MailAttachment.new()` 関数は、 <!-- REF #4D.MailAttachment.new().Summary -->`4D.MailAttachment` 型の新規オブジェクト作成して返します<!-- END REF -->。
 
 ## .cid
 
@@ -181,7 +181,7 @@ The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary
 
 #### 説明
 
-The `.cid` property contains <!-- REF #MailAttachmentClass.cid.Summary --> the ID of the attachment<!-- END REF -->。 このプロパティは HTMLメッセージでのみ使用されます。 このプロパティがない場合、ファイルは単なる添付 (リンク) として管理されます。
+`.cid` プロパティは、 <!-- REF #MailAttachmentClass.cid.Summary --> 添付ファイルの ID を格納します<!-- END REF -->。 このプロパティは HTMLメッセージでのみ使用されます。 このプロパティがない場合、ファイルは単なる添付 (リンク) として管理されます。
 
 ## .disposition
 
@@ -190,7 +190,7 @@ The `.cid` property contains <!-- REF #MailAttachmentClass.cid.Summary --> the I
 
 #### 説明
 
-The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->。 .
+`.disposition` プロパティは、 <!-- REF #MailAttachmentClass.disposition.Summary -->`Content-Disposition` ヘッダーの値を格納します<!-- END REF -->。 二つの値が利用可能です:
 
 - "inline": 添付ファイルはメッセージコンテンツ内に、"cid"の場所にレンダリングされます。 レンダリングの結果はメールクライアントによって異なります。
 - "attachment": 添付ファイルはメッセージ内でリンクとして提供されます。
@@ -203,9 +203,9 @@ The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.S
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->
-| 引数  | タイプ  |    | 説明                                                   |
-| --- | ---- |:--:| ---------------------------------------------------- |
-| 戻り値 | Blob | <- | Content of the attachment|<!-- END REF --> |
+| 引数  | タイプ  |    | 説明                               |
+| --- | ---- |:--:| -------------------------------- |
+| 戻り値 | Blob | <- | 添付の中身|<!-- END REF --> |
 
 #### 説明
 
@@ -218,7 +218,7 @@ The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.S
 
 #### 説明
 
-The `.name` property contains <!-- REF #MailAttachmentClass.name.Summary -->the name and extension of the attachment<!-- END REF -->。  [`MAIL New attachment`](#mail-new-attachment) コマンドで別の名称を指定しなかった場合のデフォルトは、ファイルの名称です。
+`.name` プロパティは、 <!-- REF #MailAttachmentClass.name.Summary -->添付ファイルの名前と拡張子を格納します<!-- END REF -->。  [`MAIL New attachment`](#mail-new-attachment) コマンドで別の名称を指定しなかった場合のデフォルトは、ファイルの名称です。
 
 ## .path
 
@@ -227,7 +227,7 @@ The `.name` property contains <!-- REF #MailAttachmentClass.name.Summary -->the 
 
 #### 説明
 
-The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the POSIX path of the attachment file, if it exists<!-- END REF -->。
+`.path` プロパティは、 <!-- REF #MailAttachmentClass.path.Summary -->添付ファイルの POSIX パス (存在すれば) を格納します<!-- END REF -->。
 
 ## .platformPath
 
@@ -243,7 +243,7 @@ The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the 
 
 #### 説明
 
-`.platformPath` プロパティは、 <!-- REF #MailAttachmentClass.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->。
+`.platformPath` プロパティは、 <!-- REF #MailAttachmentClass.platformPath.Summary -->カレントプラットフォームのシンタックスで表現された添付ファイルのパスを返します<!-- END REF -->。
 
 ## .type
 
@@ -252,4 +252,4 @@ The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the 
 
 #### 説明
 
-The `.type` property contains <!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->。 [`MAIL New attachment`](#mail-new-attachment) コマンドにて、このタイプが明示的に渡されていない場合、`content-type` はファイルの拡張子に基づきます。
+`.type` プロパティは、 <!-- REF #MailAttachmentClass.type.Summary -->添付ファイルの `content-type` を格納します<!-- END REF -->。 [`MAIL New attachment`](#mail-new-attachment) コマンドにて、このタイプが明示的に渡されていない場合、`content-type` はファイルの拡張子に基づきます。
