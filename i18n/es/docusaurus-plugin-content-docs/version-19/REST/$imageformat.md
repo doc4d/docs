@@ -9,7 +9,7 @@ Define qué formato de imagen utilizar para recuperar imágenes (por ejemplo, `$
 
 Definir el formato a utilizar para mostrar las imágenes. Por defecto, se elegirá el mejor formato para la imagen. No obstante, puede seleccionar uno de los siguientes formatos:
 
-| Type | Descripción                              |
+| Tipo | Descripción                              |
 | ---- | ---------------------------------------- |
 | GIF  | Formato GIF                              |
 | PNG  | Formato PNG                              |
