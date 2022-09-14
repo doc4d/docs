@@ -8,15 +8,15 @@ title: Variant
 バリアント型の変数は以下のデータタイプの値を格納することができます:
 
 - BLOB
-- boolean
+- ブール
 - collection
-- date
+- 日付
 - longint
 - object
 - picture
 - pointer
 - real
-- text
+- テキスト
 - time
 - null
 - undefined
