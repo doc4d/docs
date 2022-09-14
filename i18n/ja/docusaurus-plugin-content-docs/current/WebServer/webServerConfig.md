@@ -64,7 +64,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
-| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | テキスト |
+| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
 
 セキュアプロトコルに使用される暗号リストです。 Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
@@ -126,20 +126,20 @@ CORS を介したサーバーへのデータリクエスト送信が許可され
 
 Webサーバーの HTTPリクエストログファイル (アプリケーションの "Logs" フォルダーに格納されている [*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt) (nn はファイル番号)) の状態を指定します。 このログファイルは、Webサーバーに関連する問題をデバッグするのに便利です。 ログには、各リクエスト・レスポンスが rawモードで記録されます。 ヘッダーを含むリクエスト全体が記録され、オプションでボディ部分も記録することができます。
 
-| Value | 定数                             | 詳細                                        |
-| ----- | ------------------------------ | ----------------------------------------- |
-| 0     | wdl disable                    | Web HTTP debug log は無効化されています             |
-| 1     | wdl enable without body        | Web HTTP debug log 有効、リクエスト本文なし (本文サイズあり) |
-| 3     | wdl enable with response body  | Web HTTP debug log 有効、レスポンスの本文のみ          |
-| 5     | wdl enable with request body   | Web HTTP debug log 有効、リクエストの本文のみ          |
-| 7     | wdl enable with all body parts | Web HTTP debug log 有効、リクエストおよびレスポンスの本文あり  |
+| 値 | 定数                             | 説明                                        |
+| - | ------------------------------ | ----------------------------------------- |
+| 0 | wdl disable                    | Web HTTP debug log は無効化されています             |
+| 1 | wdl enable without body        | Web HTTP debug log 有効、リクエスト本文なし (本文サイズあり) |
+| 3 | wdl enable with response body  | Web HTTP debug log 有効、レスポンスの本文のみ          |
+| 5 | wdl enable with request body   | Web HTTP debug log 有効、リクエストの本文のみ          |
+| 7 | wdl enable with all body parts | Web HTTP debug log 有効、リクエストおよびレスポンスの本文あり  |
 
 
 ## デフォルトホームページ
 
 | 設定できる場所             | 名称                                                          | コメント              |
 | ------------------- | ----------------------------------------------------------- | ----------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage)  | テキスト              |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage)  | Text              |
 | `WEB SET HOME PAGE` |                                                             | Webプロセス毎に異なる設定が可能 |
 | 設定ダイアログボックス         | [設定ページ / デフォルトホームページ](../settings/web.md#default-home-page) |                   |
 
@@ -178,22 +178,22 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 ## HTTPを有効化
 
-| 設定できる場所          | 名称                                                 | コメント    |
-| ---------------- | -------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTP enabled`                                 |         |
-| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#enable-http) |         |
+| 設定できる場所          | 名称                                                 | コメント |
+| ---------------- | -------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTP enabled`                                 |      |
+| 設定ダイアログボックス      | [設定ページ / HTTPを有効化](../settings/web.md#enable-http) |      |
 
 安全でない接続を Webサーバーが受け入れるかどうかを示します。
 
 
 ## HTTPSを有効にする
 
-| 設定できる場所          | 名称                                                   | コメント    |
-| ---------------- | ---------------------------------------------------- | ------- |
-| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean |
-| `WEB SET OPTION` | `Web HTTPS enabled`                                  |         |
-| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |         |
+| 設定できる場所          | 名称                                                   | コメント |
+| ---------------- | ---------------------------------------------------- | ---- |
+| webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | ブール  |
+| `WEB SET OPTION` | `Web HTTPS enabled`                                  |      |
+| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |      |
 
 Webサーバーがセキュアな接続を受け入れるか受け入れないかを指定します。 このオプションは [TLSプロトコル](Admin/tls.md) で説明しています。
 
@@ -383,13 +383,13 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 
 このファイルのフォーマットを指定することができます。 使用可能な値:
 
-| Value | フォーマット     | 詳細                                                                                                                                                            |
-| ----- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0     | ログファイルなし   | デフォルト                                                                                                                                                         |
-| 1     | CLF形式で記録する | Common Log Format - それぞれのリクエストが行単位でファイル内に表示されます: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - 各フィールドはスペースによって区切られ、各行は CR/LF シーケンスで終ります。 |
-| 2     | DLF形式で記録する | Combined Log Format - CLFフォーマットを使いながら、各リクエストの最後に 2つのHTTPフィールド、Refererと User-agent を追加します。                                                                     |
-| 3     | ELF形式で記録する | Extended Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                 |
-| 4     | WLF形式で記録する | WebStar Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                  |
+| 値 | フォーマット     | 説明                                                                                                                                                            |
+| - | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0 | ログファイルなし   | デフォルト                                                                                                                                                         |
+| 1 | CLF形式で記録する | Common Log Format - それぞれのリクエストが行単位でファイル内に表示されます: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - 各フィールドはスペースによって区切られ、各行は CR/LF シーケンスで終ります。 |
+| 2 | DLF形式で記録する | Combined Log Format - CLFフォーマットを使いながら、各リクエストの最後に 2つのHTTPフィールド、Refererと User-agent を追加します。                                                                     |
+| 3 | ELF形式で記録する | Extended Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                 |
+| 4 | WLF形式で記録する | WebStar Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                  |
 
 > フォーマット3、4はカスタムフォーマットで、あらかじめ [設定ダイアログボックス](../settings/web.md#ログフォーマット) にて内容を指定しておく必要があります。 このページでフィールドを選択せずにこれらのフォーマットを使用した場合、ログファイルは生成されません。
 
