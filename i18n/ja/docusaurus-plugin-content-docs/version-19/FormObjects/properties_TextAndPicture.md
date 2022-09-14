@@ -30,7 +30,7 @@ title: テキスト、ピクチャー
 
 |  名称   | データタイプ | とりうる値                                                                                                                                                              |
 |:-----:|:------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| style |  text  | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
+| style |  テキスト  | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
 
 #### 対象オブジェクト
 
@@ -149,7 +149,7 @@ title: テキスト、ピクチャー
 
 このプロパティの各種オプションの結果を次に示します:
 
-| オプション     | 詳細                                                        | 例題                                                                |
+| オプション     | 説明                                                        | 例題                                                                |
 | --------- | --------------------------------------------------------- | ----------------------------------------------------------------- |
 | **左**     | テキストはアイコンの左に置かれます。 ボタンの内容は右揃えされます。                        | ![](../assets/en/FormObjects/property_titlePosition_left.en.png)  |
 | **上**     | テキストはアイコンの上に置かれます。 ボタンの内容は中央揃えされます。                       | ![](../assets/en/FormObjects/property_titlePosition_top.png)      |
