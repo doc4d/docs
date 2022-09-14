@@ -406,7 +406,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.copyTo()` function <!-- REF #directory.copyTo().Summary -->copies the `Folder` object into the specified *destinationFolder*<!-- END REF -->.
+La función `.copyTo()` <!-- REF #directory.copyTo().Summary -->copia el objeto `Folder` en el objeto *destinationFolder* especificado<!-- END REF -->.
 
 La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
@@ -459,7 +459,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 #### Descripción
 
-The `.file()` function creates <!-- REF #directory.file().Summary -->a `File` object inside the `Folder` object and returns its reference<!-- END REF -->.
+La función `.file()` crea <!-- REF #directory.file().Summary -->un objeto `File` dentro del objeto `Folder` y devuelve su referencia<!-- END REF -->.
 
 En *path*, pase una ruta relativa POSIX para designar el archivo a devolver. La ruta se evaluará a partir de la carpeta padre como raíz.
 
@@ -501,7 +501,7 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 #### Descripción
 
-The `.files()` function returns <!-- REF #directory.files().Summary -->a collection of `File` objects contained in the folder<!-- END REF -->.
+La función `.files()` devuelve <!-- REF #directory.files().Summary -->una colección de objetos `File` contenidos en la carpeta<!-- END REF -->.
 > Los alias o enlaces simbólicos no se resuelven.
 
 Por defecto, si se omite el parámetro *options*, sólo se devuelven en la colección los archivos del primer nivel de la carpeta, así como los archivos o carpetas invisibles. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
@@ -565,7 +565,7 @@ Quiere obtener todos los archivos que no son invisibles en la carpeta Documents:
 
 #### Descripción
 
-The `.folder()` function <!-- REF #directory.folder().Summary -->creates a `Folder` object inside the parent `Folder` object and returns its reference<!-- END REF -->.
+La función `.folder()` <!-- REF #directory.folder().Summary -->crea un objeto `Folder` dentro del objeto padre `Folder` y devuelve su referencia<!-- END REF -->.
 
 En *path*, pase una ruta relativa POSIX para designar la carpeta a devolver. La ruta se evaluará a partir de la carpeta padre como raíz.
 
@@ -607,7 +607,7 @@ Un objeto `Folder` o null si *path* no es válido.
 
 #### Descripción
 
-The `.folders()` function <!-- REF #directory.folders().Summary -->returns a collection of `Folder` objects contained in the parent folder<!-- END REF -->.
+La función `.folders()` <!-- REF #directory.folders().Summary -->devuelve una colección de objetos `Folder` contenidos en la carpeta padre<!-- END REF -->.
 
 Por defecto, si se omite el parámetro *options*, sólo se devuelven en la colección las carpetas del primer nivel de la carpeta. Puede modificar esto pasando, en el parámetro *options*, una o varias de las siguientes constantes:
 
@@ -656,7 +656,7 @@ Quiere obtener la colección de todas las carpetas y subcarpetas de la carpeta d
 
 #### Descripción
 
-The `.getIcon()` function <!-- REF #directory.getIcon().Summary -->returns the icon of the folder<!-- END REF -->.
+La función `.getIcon()` <!-- REF #directory.getIcon().Summary -->devuelve el icono de la carpeta<!-- END REF -->.
 
 El parámetro opcional *size* especifica las dimensiones en píxeles del icono devuelto. Este valor representa en realidad la longitud del lado del cuadrado que contiene el icono. Los iconos suelen definirse en 32x32 píxeles ("iconos grandes") o 16x16 píxeles ("iconos pequeños"). Si pasa 0 u omite este parámetro, se devuelve la versión "icono grande".
 
