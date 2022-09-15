@@ -42,7 +42,7 @@ Los objetos SMTP Transporter se instancian con el comando [SMTP New transporter]
 
 
 <!-- REF #_command_.SMTP New transporter.Params -->
-| Parámetros | Type               |    | Descripción                                                                    |
+| Parámetros | Tipo               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
 | server     | Object             | -> | Información del servidor de correo                                             |
 | Result     | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object)|<!-- END REF -->
@@ -118,7 +118,7 @@ La función devuelve un [**SMTP transporter**](#smtp-transporter-object). Todas 
 
 
 <!-- REF #4D.SMTPTransporter.new().Params -->
-| Parámetros | Type               |    | Descripción                                                                    |
+| Parámetros | Tipo               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
 | server     | Object             | -> | Información del servidor de correo                                             |
 | Result     | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object)|<!-- END REF -->
@@ -211,7 +211,7 @@ La conexión SMTP se cierra automáticamente:
 
 
 <!-- REF #SMTPTransporterClass.send().Params -->
-| Parámetros | Type   |    | Descripción                                        |
+| Parámetros | Tipo   |    | Descripción                                        |
 | ---------- | ------ |:--:| -------------------------------------------------- |
 | mail       | Object | -> | [Email](EmailObjectClass.md#email-object) a enviar |
 | Result     | Object | <- | SMTP status|<!-- END REF -->
@@ -231,7 +231,7 @@ En *mail*, pase un objeto [`Email`](EmailObjectClass.md#email-object) válido a 
 
 La función devuelve un objeto que describe el estado SMTP de la operación. Este objeto puede contener las siguientes propiedades:
 
-| Propiedad  | Type    | Descripción                                                                                                              |
+| Propiedad  | Tipo    | Descripción                                                                                                              |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
 | success    | boolean | True si el envío tiene éxito, false en caso contrario                                                                    |
 | status     | number  | Código de estado devuelto por el servidor SMTP (0 en caso de un problema no relacionado con el procesamiento del correo) |
