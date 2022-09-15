@@ -5,7 +5,7 @@ title: Folder
 
 
 
-Los objetos `Folder` se crean con el comando [`Folder`](#folder). Contienen referencias a carpetas que pueden o no existir realmente en el disco. For example, when you execute the `Folder` command to create a new folder, a valid `Folder` object is created but nothing is actually stored on disk until you call the [`folder.create()`](#create) function.
+Los objetos `Folder` se crean con el comando [`Folder`](#folder). Contienen referencias a carpetas que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando `Folder` para crear una nueva carpeta, se crea un objeto `Folder` válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función [`folder.create()`](#create).
 
 ### Ejemplo
 
@@ -63,7 +63,7 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 
 <!-- REF #_command_.Folder.Params -->
-| Parámetros     | Type      |    | Descripción                                        |
+| Parámetros     | Tipo      |    | Descripción                                        |
 | -------------- | --------- |:--:| -------------------------------------------------- |
 | path           | Text      | -> | Ruta de la carpeta                                 |
 | folderConstant | Integer   | -> | Constante de la carpeta 4D                         |
@@ -148,7 +148,7 @@ La función `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crea y devuel
 <!--REF #FolderClass.create().Syntax -->**.create()** : Boolean<!-- END REF -->
 
 <!--REF #FolderClass.create().Params -->
-| Parámetros | Type    |    | Descripción                                                                                   |
+| Parámetros | Tipo    |    | Descripción                                                                                   |
 | ---------- | ------- | -- | --------------------------------------------------------------------------------------------- |
 | Result     | Boolean | <- | True si la carpeta se ha creado con éxito, false en caso contrario|<!-- END REF -->
 
@@ -208,7 +208,7 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Parámetros        | Type      |    | Descripción                                                        |
+| Parámetros        | Tipo      |    | Descripción                                                        |
 | ----------------- | --------- | -- | ------------------------------------------------------------------ |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo               |
 | aliasName         | Text      | -> | Nombre del alias o del atajo                                       |
@@ -264,7 +264,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| Parámetros | Type    |    | Descripción                                                 |
+| Parámetros | Tipo    |    | Descripción                                                 |
 | ---------- | ------- | -- | ----------------------------------------------------------- |
 | option     | Integer | -> | Opción de eliminación de carpeta|<!-- END REF -->
 
@@ -338,7 +338,7 @@ Cuando se pasa `Delete with contents`:
 
 
 <!--REF #FolderClass.moveTo().Params -->
-| Parámetros        | Type      |    | Descripción                               |
+| Parámetros        | Tipo      |    | Descripción                               |
 | ----------------- | --------- | -- | ----------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino                        |
 | newName           | Text      | -> | Nombre completo de la carpeta trasladada  |
@@ -394,7 +394,7 @@ Quiere mover y renombrar una carpeta:
 
 
 <!--REF #FolderClass.rename().Params -->
-| Parámetros | Type      |    | Descripción                                   |
+| Parámetros | Tipo      |    | Descripción                                   |
 | ---------- | --------- | -- | --------------------------------------------- |
 | newName    | Text      | -> | Nuevo nombre completo para la carpeta         |
 | Result     | 4D.Folder | <- | Carpeta renombrada|<!-- END REF -->
@@ -403,7 +403,7 @@ Quiere mover y renombrar una carpeta:
 
 #### Descripción
 
-La función `.rename()` <!-- REF #FolderClass.rename().Summary -->The `.rename()` function<!-- END REF -->.
+La función `.rename()` <!-- REF #FolderClass.rename().Summary -->renombra la carpeta con el nombre que se le ha pasado en *newName* y devuelve el objeto `Folder` renombrado<!-- END REF -->.
 
 El parámetro *newName* debe cumplir con las reglas de nomenclatura (por ejemplo, no debe contener caracteres como ":", "/", etc.), de lo contrario se devuelve un error. Si ya existe un archivo con el mismo nombre, se devuelve un error.
 
