@@ -422,9 +422,9 @@ En cas de modification, le serveur doit être redémarré pour utiliser la nouve
 
 ## Nom
 
-| Peut être configuré via | Nom                                 | Commentaires |
-| ----------------------- | ----------------------------------- | ------------ |
-| objet webServer         | [`nom`](API/WebServerClass.md#name) |              |
+| Peut être configuré via | Nom                                  | Commentaires |
+| ----------------------- | ------------------------------------ | ------------ |
+| objet webServer         | [`name`](API/WebServerClass.md#name) |              |
 
 Nom de l'application de serveur Web. Pratique lors du démarrage des serveurs Web.
 
