@@ -61,7 +61,7 @@ Todas las propiedades que contienen direcciones de correo electrónico ([`from`]
 
 Un objeto con dos propiedades:
 
-| Propiedad | Type | Descripción                       |
+| Propiedad | Tipo | Descripción                       |
 | --------- | ---- | --------------------------------- |
 | name      | Text | Nombre a mostrar (puede ser null) |
 | email     | Text | Correo electrónico                |
@@ -130,7 +130,7 @@ La propiedad `.bodyStructure` contiene el <!-- REF #EmailObjectClass.bodyStructu
 
 El objeto `.bodyStructure` contiene las siguientes propiedades:
 
-| Propiedad   | Type                 | Value                                                                                                                                                                           |
+| Propiedad   | Tipo                 | Value                                                                                                                                                                           |
 | ----------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | partID      | Text                 | Identifica la parte de manera única dentro del correo electrónico                                                                                                               |
 | type        | Text                 | (obligatorio) Valor del campo del encabezado Content-Type de la parte                                                                                                           |
@@ -152,7 +152,7 @@ La propiedad `.bodyValues` contiene el <!-- REF #EmailObjectClass.bodyValues.Sum
 
 El objeto `.bodyValues` contiene las siguientes propiedades:
 
-| Propiedad                  | Type    | Value                                                                                                                                                                                                         |
+| Propiedad                  | Tipo    | Value                                                                                                                                                                                                         |
 | -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | *partID*.value             | text    | Valor de la parte del cuerpo                                                                                                                                                                                  |
 | *partID*.isEncodingProblem | boolean | True si se encuentran secciones malformadas al decodificar el conjunto de caracteres, o el conjunto de caracteres desconocido, o la codificación de transferencia de contenido desconocida. Falso por defecto |
@@ -204,7 +204,7 @@ La propiedad `.headers` contiene una <!-- REF #EmailObjectClass.headers.Summary 
 
 Cada objeto de la colección de encabezados puede contener las siguientes propiedades:
 
-| Propiedad | Type | Value                                                                                                                                                                                          |
+| Propiedad | Tipo | Value                                                                                                                                                                                          |
 | --------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [].name   | text | (obligatorio) Nombre del campo de encabezado según se define en [RFC#5322](https://tools.ietf.org/html/rfc5322). Si es null o indefinido, el campo encabezado no se agrega al encabezado MIME. |
 | [].value  | text | Valores de los campos encabezado definidos en [RFC#5322](https://tools.ietf.org/html/rfc5322)                                                                                                  |
@@ -247,7 +247,7 @@ La propiedad `.keywords` contiene un <!-- REF #EmailObjectClass.keywords.Summary
 
 Esta propiedad es el encabezado "keywords" (ver [RFC#4021](https://tools.ietf.org/html/rfc4021)).
 
-| Propiedad      | Type    | Value                                            |
+| Propiedad      | Tipo    | Value                                            |
 | -------------- | ------- | ------------------------------------------------ |
 | .\<keyword\> | boolean | Palabra clave a definir (el valor debe ser true) |
 
@@ -375,7 +375,7 @@ La propiedad `.to` contiene la(s) <!-- REF #EmailObjectClass.to.Summary -->[dire
 
 
 <!-- REF #_command_.MAIL_Convert_from_MIME.Params -->
-| Parámetros | Type       |    | Descripción                             |
+| Parámetros | Tipo       |    | Descripción                             |
 | ---------- | ---------- |:--:| --------------------------------------- |
 | mime       | Blob, Text | -> | Email en MIME                           |
 | Result     | Object     | <- | Objeto Email|<!-- END REF -->
@@ -461,7 +461,7 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Params -->
-| Parámetros | Type   |    | Descripción                                                |
+| Parámetros | Tipo   |    | Descripción                                                |
 | ---------- | ------ |:--:| ---------------------------------------------------------- |
 | mail       | Object | -> | Objeto Email                                               |
 | options    | Object | -> | Opciones de codificación y de charset del mail             |
@@ -478,7 +478,7 @@ En *mail*, pase el contenido y los detalles de la estructura del correo electró
 
 En *options*, puede configurar la codificación y el charset del mail. Las siguientes propiedades están disponibles:
 
-| Propiedad     | Type | Descripción                                                                                                                                                                                                           |
+| Propiedad     | Tipo | Descripción                                                                                                                                                                                                           |
 | ------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | headerCharset | Text | Charset y codificación utilizados para las siguientes partes del correo electrónico: asunto, nombres de archivos adjuntos y atributo(s) del nombre del correo electrónico. Valores posibles:<table><tr><th>Constante</th><th>Value</th><th>Comentario</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII si es posible, japonés (ISO-2022-JP) & Quoted-printable si es posible, de lo contrario UTF-8 & Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 & Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 & 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> & <i>bodyCharset</i>: US-ASCII si es posible, de lo contrario UTF-8 & Quoted-printable (**valor por defecto**)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> & <i>bodyCharset</i>: US-ASCII si es posible, de lo contrario UTF-8 & base64</td></tr></table> |
 | bodyCharset   | Text | Charset y codificación utilizados para el contenido html y el texto del cuerpo del correo electrónico. Valores posibles: los mismos que para headerCharset (ver arriba)                                               |
