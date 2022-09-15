@@ -853,7 +853,7 @@ Lorsqu'un attribut "choiceList" ou "requiredList" est présent dans l'objet, la 
 Dans les deux cas, vous pouvez utiliser un attribut "value" pour présélectionner une valeur dans le widget.
 > Les valeurs du widget sont définies via un tableau. Si vous souhaitez associer le widget à une énumération 4D existante, vous devez utiliser les attributs "requiredListReference", "requiredListName", "choiceListReference" ou "choiceListName".
 
-Exemple :
+Exemples :
 
 * Vous voulez afficher une liste déroulante avec juste deux options, "Open" ou "Closed". "Closed" doit être présélectionné :
 
@@ -894,7 +894,7 @@ Utilisez "requiredListName" ou "requiredListReference" en fonction de la provena
 > * Si vous souhaitez définir des valeurs d'énumération via un simple tableau, vous pouvez utiliser l'attribut "requiredList".
 > * Si la liste contient du texte représentant des valeurs réelles, le séparateur décimal doit être le point ("."), quels que soient les paramètres locaux, ex : "17.6" "1234.456".
 
-Exemple :
+Exemples :
 
 * Vous voulez afficher une liste déroulante basée sur une énumération nommée "colors" définie dans la Boîte à outils (contenant les valeurs "bleu", "jaune" et "vert"), la stocker en tant que valeur et afficher "bleu" par défaut :
 
