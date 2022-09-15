@@ -61,7 +61,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parámetros  | Type            |    | Descripción                                                          |
+| Parámetros  | Tipo            |    | Descripción                                                          |
 | ----------- | --------------- |:--:| -------------------------------------------------------------------- |
 | commandLine | Text            | -> | Línea de comando a ejecutar                                          |
 | options     | Object          | -> | Parámetros worker                                                    |
@@ -84,7 +84,7 @@ En el parámetro *commandLine*, pase la ruta completa del archivo de la aplicaci
 
 En el parámetro *options*, pase un objeto que pueda contener las siguientes propiedades:
 
-| Propiedad        | Type    | Por defecto | Descripción                                                                                                                                                                                                                                                                                                                         |
+| Propiedad        | Tipo    | Por defecto | Descripción                                                                                                                                                                                                                                                                                                                         |
 | ---------------- | ------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onResponse       | Formula | indefinido  | Retrollamada para los mensajes del system worker. Esta retrollamada se llama una vez que se recibe la respuesta completa. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                        |
 | onData           | Formula | indefinido  | Retrollamada para los datos del system worker. Esta retrollamada se llama cada vez que el system worker recibe los datos. Recibe dos objetos como parámetros (ver más abajo)                                                                                                                                                        |
@@ -100,7 +100,7 @@ En el parámetro *options*, pase un objeto que pueda contener las siguientes pro
 
 Todas las funciones de retrollamada reciben dos parámetros objeto. Su contenido depende de la retrollamada:
 
-| Parámetros   | Type        | *onResponse* | *onData*        | *onDataError*  | *onError*    | *onTerminate* |
+| Parámetros   | Tipo        | *onResponse* | *onData*        | *onDataError*  | *onError*    | *onTerminate* |
 | ------------ | ----------- | ------------ | --------------- | -------------- | ------------ | ------------- |
 | $param1      | Object      | SystemWorker | SystemWorker    | SystemWorker   | SystemWorker | SystemWorker  |
 | $param2.type | Text        | "response"   | "data"          | "error"        | "error"      | "termination" |
@@ -265,7 +265,7 @@ Function _createFile($title : Text; $textBody : Text)
 
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
-| Parámetros | Type |  | Descripción                                             |
+| Parámetros | Tipo |  | Descripción                                             |
 | ---------- | ---- |::| ------------------------------------------------------- |
 |            |      |  | No requiere ningún parámetro|<!-- END REF -->
 
@@ -369,7 +369,7 @@ The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a 
 
 Cada elemento de la colección es un objeto con las siguientes propiedades:
 
-| Propiedad              | Type   | Descripción                                           |
+| Propiedad              | Tipo   | Descripción                                           |
 | ---------------------- | ------ | ----------------------------------------------------- |
 | [].errorCode           | number | 4D error code                                         |
 | [].message             | text   | Descripción del error 4D                              |
@@ -429,7 +429,7 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
-| Parámetros  | Type |    | Descripción                                                         |
+| Parámetros  | Tipo |    | Descripción                                                         |
 | ----------- | ---- |:--:| ------------------------------------------------------------------- |
 | message     | Text | -> | Texto a escribir en el flujo de entrada (stdin) del proceso externo |
 | messageBLOB | Blob | -> | Bytes write on the input stream|<!-- END REF -->
@@ -482,7 +482,7 @@ The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary 
 
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
-| Parámetros | Type |  | Descripción                                             |
+| Parámetros | Tipo |  | Descripción                                             |
 | ---------- | ---- |::| ------------------------------------------------------- |
 |            |      |  | No requiere ningún parámetro|<!-- END REF -->
 
@@ -542,7 +542,7 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #SystemWorkerClass.wait().Params -->
-| Parámetros | Type            |    | Descripción                                    |
+| Parámetros | Tipo            |    | Descripción                                    |
 | ---------- | --------------- |:--:| ---------------------------------------------- |
 | timeout    | Real            | -> | Tiempo de espera (en segundos)                 |
 | Result     | 4D.SystemWorker | <- | SystemWorker object|<!-- END REF -->
