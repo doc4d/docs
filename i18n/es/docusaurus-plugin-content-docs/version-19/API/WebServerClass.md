@@ -68,7 +68,7 @@ Ofrecen las siguientes propiedades y funciones:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parámetros | Type         |    | Descripción                                                              |
+| Parámetros | Tipo         |    | Descripción                                                              |
 | ---------- | ------------ | -- | ------------------------------------------------------------------------ |
 | option     | Integer      | -> | Servidor web a obtener (por defecto si se omite = `Web server database`) |
 | Result     | 4D.WebServer | <- | Objeto servidor web                                                      |
@@ -115,7 +115,7 @@ El objeto servidor web devuelto contiene los valores actuales de las propiedades
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| Parámetros | Type       |    | Descripción                                           |
+| Parámetros | Tipo       |    | Descripción                                           |
 | ---------- | ---------- | -- | ----------------------------------------------------- |
 | Result     | Collection | <- | Colección de los objetos del servidor web disponibles |
 
@@ -719,7 +719,7 @@ El <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address val
 
 <!-- REF #WebServerClass.start().Params -->
 
-| Parámetros | Type   |    | Descripción                                     |
+| Parámetros | Tipo   |    | Descripción                                     |
 | ---------- | ------ | -- | ----------------------------------------------- |
 | settings   | Object | -> | Parámetros del servidor web a definir al inicio |
 | Result     | Object | <- | Estado del inicio del servidor web              |
@@ -739,7 +739,7 @@ Todas las configuraciones de los [objetos del Servidor Web](#web-server-object) 
 
 La función devuelve un objeto que describe el estado de lanzamiento del servidor web. Este objeto puede contener las siguientes propiedades:
 
-| Propiedad |                         | Type       | Descripción                                                                   |
+| Propiedad |                         | Tipo       | Descripción                                                                   |
 | --------- | ----------------------- | ---------- | ----------------------------------------------------------------------------- |
 | success   |                         | Boolean    | True si el servidor web se ha iniciado correctamente, False en caso contrario |
 | errors    |                         | Collection | Pila de errores 4D (no se devuelve si el servidor web se inició con éxito)    |
@@ -782,7 +782,7 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 
 <!-- REF #WebServerClass.stop().Params -->
 
-| Parámetros | Type |  | Descripción                                             |
+| Parámetros | Tipo |  | Descripción                                             |
 | ---------- | ---- |  | ------------------------------------------------------- |
 |            |      |  | No requiere ningún parámetro|<!-- END REF --> |
 
