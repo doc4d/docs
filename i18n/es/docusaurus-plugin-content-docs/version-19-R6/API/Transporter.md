@@ -357,7 +357,7 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 
 
 <!-- REF #transporter.checkConnection().Params -->
-| Parámetros | Type   |    | Descripción                                                               |
+| Parámetros | Tipo   |    | Descripción                                                               |
 | ---------- | ------ |:--:| ------------------------------------------------------------------------- |
 | Result     | Object | <- | Estado de la conexión del objeto transportador|<!-- END REF -->
 
@@ -371,7 +371,7 @@ The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summar
 
 La función envía una solicitud al servidor de correo y devuelve un objeto que describe el estado del correo. Este objeto puede contener las siguientes propiedades:
 
-| Propiedad  |                          | Type       | Descripción                                                                                                                               |
+| Propiedad  |                          | Tipo       | Descripción                                                                                                                               |
 | ---------- | ------------------------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | success    |                          | boolean    | True si la verificación es exitosa, False en caso contrario                                                                               |
 | status     |                          | number     | (sólo SMTP) Código de estado devuelto por el servidor de correo (0 en caso de un problema no relacionado con el procesamiento del correo) |
