@@ -78,7 +78,7 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->。
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+*option*が省略された場合のデフォルトでは、このコマンドはデータベースの Webサーバー (デフォルトWebサーバー) への参照を返します。 However, using the *settings* parameter, you can define customized properties for the web server session.
 
 | 定数                             | 値 | 説明                                 |
 | ------------------------------ | - | ---------------------------------- |
@@ -466,7 +466,7 @@ HTTPS のリッスンIPポート番号<!-- END REF -->。
 <!-- REF #WebServerClass.keepSession.Syntax -->**.keepSession** : Boolean<!-- END REF -->
 
 
-<!-- REF #WebServerClass.keepSession.Summary -->`True` if legacy sessions are enabled in the web server, `False` otherwise<!-- END REF -->。
+Contains <!-- REF #WebServerClass.keepSession.Summary -->`True` if legacy sessions are enabled in the web server, `False` otherwise<!-- END REF -->。
 
 ##### 参照
 
