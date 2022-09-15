@@ -415,7 +415,7 @@ Esta propiedad es **de sólo lectura**.
 
 
 <!-- REF #document.copyTo().Params -->
-| Parámetros        | Type      |    | Descripción                                            |
+| Parámetros        | Tipo      |    | Descripción                                            |
 | ----------------- | --------- |:--:| ------------------------------------------------------ |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino                                     |
 | newName           | Text      | -> | Nombre para la copia                                   |
@@ -470,7 +470,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getContent().Params -->
-| Parámetros | Type    |    | Descripción                                      |
+| Parámetros | Tipo    |    | Descripción                                      |
 | ---------- | ------- | -- | ------------------------------------------------ |
 | Result     | 4D.Blob | <- | Contenido del archivo|<!-- END REF --> |
 
@@ -513,7 +513,7 @@ Para guardar el contenido de un documento en un campo `BLOB`:
 
 
 <!-- REF #document.getIcon().Params -->
-| Parámetros | Type    |    | Descripción                                       |
+| Parámetros | Tipo    |    | Descripción                                       |
 | ---------- | ------- | -- | ------------------------------------------------- |
 | size       | Integer | -> | Longitud del lado de la imagen devuelta (píxeles) |
 | Result     | Picture | <- | Icono|<!-- END REF -->                  |
@@ -548,7 +548,7 @@ Icono de archivo [picture](../Concepts/picture.html).
 
 
 <!-- REF #document.getText().Params -->
-| Parámetros  | Type    |    | Descripción                                    |
+| Parámetros  | Tipo    |    | Descripción                                    |
 | ----------- | ------- | -- | ---------------------------------------------- |
 | charSetName | Text    | -> | Nombre del juego de caracteres                 |
 | charSetNum  | Integer | -> | Número del conjunto de caracteres              |
