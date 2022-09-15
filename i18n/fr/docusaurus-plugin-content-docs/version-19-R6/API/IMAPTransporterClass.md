@@ -56,10 +56,10 @@ Les objets IMAP Transporter sont instanciés avec la commande [IMAP New transpor
 
 
 <!-- REF #_command_.IMAP New transporter.Params -->
-| Paramètres | Type               |    | Description                                                                    |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server     | Object             | -> | Informations sur le serveur IMAP                                               |
-| Résultat   | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object)|<!-- END REF -->
+| Paramètres | Type               |    | Description                                                                   |
+| ---------- | ------------------ |:--:| ----------------------------------------------------------------------------- |
+| server     | Object             | -> | Informations sur le serveur IMAP                                              |
+| Résultat   | 4D.IMAPTransporter | <- | [objet IMAP transporter](#imap-transporter-object)|<!-- END REF -->
 
 
 |
@@ -67,20 +67,20 @@ Les objets IMAP Transporter sont instanciés avec la commande [IMAP New transpor
 
 #### Description
 
-The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summary -->configures a new IMAP connection<!-- END REF --> according to the *server* parameter and returns a new *transporter* object. L'objet transporteur retourné sera alors utilisé pour la réception d'emails.
+La commande `IMAP New transporter` <!-- REF #_command_.IMAP New transporter.Summary -->configure une nouvelle connexion IMAP<!-- END REF --> selon le paramètre *server* et renvoie un nouvel objet *transporter*. L'objet transporteur retourné sera alors utilisé pour la réception d'emails.
 
 Dans le paramètre *server*, passez un objet contenant les propriétés suivantes :
 
-| *server*                                                                                                                                                                                                                                                                                                                                                                                                                             | Valeur par défaut (si omise)                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| *server*                                                                                                                                                                                                                                                                                                                                                                                                                        | Valeur par défaut (si omise)                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                                            |
-| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>Text string or token object representing OAuth2 authorization credentials. Il est utilisé uniquement avec OAUTH2 `authenticationMode`. Si `accessTokenOAuth2` est utilisé mais que `authenticationMode` est omis, le protocole OAuth 2 est utilisé (si le serveur l'autorise). Non retourné en objet *[IMAP transporter](#imap-transporter-object)*. | aucun                                                                            |
+| .**accessTokenOAuth2** : Text<br/>.**accessTokenOAuth2** : Object<br/>Chaîne ou objet token représentant les informations d'autorisation OAuth2. Utilisé uniquement avec OAUTH2 `authenticationMode`. Si `accessTokenOAuth2` est utilisé mais que `authenticationMode` est omis, le protocole OAuth 2 est utilisé (si le serveur l'autorise). Non retourné en objet *[IMAP transporter](#imap-transporter-object)*. | aucun                                                                            |
 | [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| le mode d'authentification le plus sûr pris en charge par le serveur est utilisé |
 | [<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](#checkconnectiondelay)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->| 300                                                                              |
 | [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                                                               |
 | [<!-- INCLUDE #transporter.host.Syntax -->](#host)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *obligatoire*                                                                    |
 | [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| aucun                                                                            |
-| .**password** : Text<br/>User password for authentication on the server. Non retourné en objet *[IMAP transporter](#imap-transporter-object)*.                                                                                                                                                                                                                                                                                 | aucun                                                                            |
+| .**password** : Text<br/>Mot de passe utilisateur pour l'authentification sur le serveur. Non retourné en objet *[IMAP transporter](#imap-transporter-object)*.                                                                                                                                                                                                                                                           | aucun                                                                            |
 | [<!-- INCLUDE #transporter.port.Syntax -->](#port)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 993                                                                              |
 | [<!-- INCLUDE #transporter.user.Syntax -->](#user)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| aucun                                                                            |
 > **Attention** : Assurez-vous que le timeout défini est inférieur au timeout du serveur, sinon le timeout du client sera inutile.
@@ -115,16 +115,16 @@ End if
 
 
 <!-- REF #4D.IMAPTransporter.new().Params -->
-| Paramètres | Type               |    | Description                                                                    |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
-| server     | Object             | -> | Informations sur le serveur IMAP                                               |
-| Résultat   | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object)|<!-- END REF -->
+| Paramètres | Type               |    | Description                                                                   |
+| ---------- | ------------------ |:--:| ----------------------------------------------------------------------------- |
+| server     | Object             | -> | Informations sur le serveur IMAP                                              |
+| Résultat   | 4D.IMAPTransporter | <- | [objet IMAP transporter](#imap-transporter-object)|<!-- END REF -->
 
 |
 
 #### Description
 
-The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. .
+La fonction `4D.IMAPTransporter.new()` <!-- REF #4D.IMAPTransporter.new().Summary -->crée et renvoie un nouvel objet du type `4D.IMAPTransporter`<!-- END REF -->. Elle est identique à la commande [`IMAP New transporter`](#imap-new-transporter) (raccourci).
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -153,7 +153,7 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 
 #### Description
 
-The `.addFlags()` function <!-- REF #IMAPTransporterClass.addFlags().Summary -->adds flags to the `msgIDs` for the specified `keywords`<!-- END REF -->.
+La fonction `.addFlags()` <!-- REF #IMAPTransporterClass.addFlags().Summary -->ajoute des flags (drapeaux) aux `msgIDs ` pour les `keywords` spécifiés<!-- END REF -->.
 
 Dans le paramètre `msgIDs`, vous pouvez passer soit :
 
@@ -172,8 +172,8 @@ Le paramètre `keywords` vous permet de passer un objet avec des valeurs de mots
 | $draft     | Boolean | True pour ajouter le marqueur "draft" au message    |
 | $seen      | Boolean | True pour ajouter le marqueur "seen" au message     |
 | $flagged   | Boolean | True pour ajouter le marqueur "flagged" au message  |
-| $answered  | Boolean | True pour ajouter le marqueur "répondu" au message  |
-| $deleted   | Boolean | True pour ajouter le marqueur "supprimé" au message |
+| $answered  | Boolean | True pour ajouter le marqueur "answered" au message |
+| $deleted   | Boolean | True pour ajouter le marqueur "deleted" au message  |
 > * Les valeurs à faux sont ignorées.
 > * L'interprétation des indicateurs de mots-clés peut varier selon le client de messagerie.
 
@@ -241,9 +241,9 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 #### Description
 
-The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
+La fonction `append()` <!-- REF #IMAPTransporterClass.append().Summary -->ajoute un objet `mailObj` à la boîte `destinationBox`<!-- END REF -->.
 
-Dans le paramètre `mailObj`, passez un objet email. Dans le paramètre `mailObj`, passez un objet email. La fonction `.append()` prend en charge les marqueurs de mots-clés dans l'attribut `keywords` des objets email.
+Dans le paramètre `mailObj`, passez un objet email. Pour une description détaillée des propriétés de mail, reportez-vous à [Objet Email](EmailObjectClass.md#objet-email). La fonction `.append()` prend en charge les marqueurs de mots-clés dans l'attribut `keywords` des objets email.
 
 Le paramètre optionnel `destinationBox` vous permet de passer le nom de la boîte de réception dans laquelle l'objet `mailObj` sera ajouté. S'il est omis, la mailbox courante sera utilisée.
 
@@ -320,7 +320,7 @@ $status:=$imap.append($msg; "Drafts")
 
 #### Description
 
-The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  Si cette durée est dépassée entre deux appels de méthodes, la connexion au serveur sera vérifiée. Par défaut, si la propriété n'a pas été définie dans l'objet *server*, la valeur est de 300.
+La propriété `.checkConnectionDelay` contient <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->la durée maximale (en secondes) autorisée avant vérification de la connexion au serveur<!-- END REF -->.  Si cette durée est dépassée entre deux appels de méthodes, la connexion au serveur sera vérifiée. Par défaut, si la propriété n'a pas été définie dans l'objet *server*, la valeur est de 300.
 > **Attention** : Assurez-vous que le timeout défini est inférieur au timeout du serveur, sinon le timeout du client sera inutile.
 
 <!-- END REF -->
@@ -353,7 +353,7 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 
 #### Description
 
-La fonction `.copy()` <!-- REF #IMAPTransporterClass.copy().Summary -->The `.getMails()` function<!-- END REF -->.
+La fonction `.copy()` <!-- REF #IMAPTransporterClass.copy().Summary -->copie les messages définis par *msgsIDs* ou *allMsgs* dans la *destinationBox* sur le serveur IMAP<!-- END REF -->.
 
 Vous pouvez passer :
 
@@ -443,10 +443,10 @@ Pour copier tous les messages de la boîte de réception courante :
 
 
 <!-- REF #IMAPTransporterClass.createBox().Params -->
-| Paramètres | Type   |    | Description                                                         |
-| ---------- | ------ |:--:| ------------------------------------------------------------------- |
-| nom        | Text   | -> | Nom de la nouvelle mailbox                                          |
-| Résultat   | Object | <- | Status of the mailbox creation operation|<!-- END REF -->
+| Paramètres | Type   |    | Description                                                             |
+| ---------- | ------ |:--:| ----------------------------------------------------------------------- |
+| nom        | Text   | -> | Nom de la nouvelle mailbox                                              |
+| Résultat   | Object | <- | Statut de l'opération de création de mailbox|<!-- END REF -->
 
 |
 
@@ -532,7 +532,7 @@ End for each
 
 #### Description
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
+La fonction `delete()` <!-- REF #IMAPTransporterClass.delete().Summary -->The `.removeFlags()` function<!-- END REF -->.
 
 Vous pouvez passer :
 
