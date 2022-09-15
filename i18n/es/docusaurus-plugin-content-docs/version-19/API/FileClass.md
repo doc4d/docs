@@ -64,7 +64,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!-- REF #_command_.File.Params -->
-| Parámetros   | Type    |    | Descripción                                        |
+| Parámetros   | Tipo    |    | Descripción                                        |
 | ------------ | ------- |:--:| -------------------------------------------------- |
 | path         | Text    | -> | Ruta del archivo                                   |
 | fileConstant | Integer | -> | Constante del archivo 4D                           |
@@ -161,7 +161,7 @@ La función `4D.File.new()` <!-- REF #4D.File.new().Summary -->crea y devuelve u
 
 
 <!--REF #FileClass.create().Params -->
-| Parámetros | Type    |    | Descripción                                                                                   |
+| Parámetros | Tipo    |    | Descripción                                                                                   |
 | ---------- | ------- | -- | --------------------------------------------------------------------------------------------- |
 | Result     | Boolean | <- | True si el archivo se ha creado con éxito, false en caso contrario|<!-- END REF -->
 
@@ -202,7 +202,7 @@ Creación de un archivo de preferencias en la carpeta principal:
 
 
 <!--REF #FileClass.createAlias().Params -->
-| Parámetros        | Type      |    | Descripción                                                            |
+| Parámetros        | Tipo      |    | Descripción                                                            |
 | ----------------- | --------- | -- | ---------------------------------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo                   |
 | aliasName         | Text      | -> | Nombre del alias o del atajo                                           |
@@ -258,7 +258,7 @@ Quiere crear un alias para un archivo en su carpeta principal:
 
 
 <!-- REF #FileClass.delete().Params -->
-| Parámetros | Type |  | Descripción                                             |
+| Parámetros | Tipo |  | Descripción                                             |
 | ---------- | ---- |  | ------------------------------------------------------- |
 |            |      |  | No requiere ningún parámetro|<!-- END REF -->
 
@@ -307,7 +307,7 @@ Desea eliminar un archivo específico en la carpeta de la base de datos:
 
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parámetros | Type   |    | Descripción                                                                            |
+| Parámetros | Tipo   |    | Descripción                                                                            |
 | ---------- | ------ | -- | -------------------------------------------------------------------------------------- |
 | Result     | Object | <- | Contenido del archivo de recurso versión .exe/.dll o .plist|<!-- END REF -->
 
@@ -327,7 +327,7 @@ La función debe utilizarse con un archivo .exe, .dll o .plist existente. Si el 
 
 Todos los valores de propiedades son de tipo Texto.
 
-| Propiedad        | Type |
+| Propiedad        | Tipo |
 | ---------------- | ---- |
 | InternalName     | Text |
 | ProductName      | Text |
@@ -399,7 +399,7 @@ ALERT($info.Copyright)
 <!--REF #FileClass.moveTo().Syntax -->**.moveTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } ) : 4D.File<!-- END REF -->
 
 <!--REF #FileClass.moveTo().Params -->
-| Parámetros        | Type      |    | Descripción                               |
+| Parámetros        | Tipo      |    | Descripción                               |
 | ----------------- | --------- | -- | ----------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino                        |
 | newName           | Text      | -> | Nombre completo del archivo trasladado    |
@@ -454,7 +454,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.rename().Params -->
-| Parámetros | Type    |    | Descripción                                   |
+| Parámetros | Tipo    |    | Descripción                                   |
 | ---------- | ------- | -- | --------------------------------------------- |
 | newName    | Text    | -> | Nuevo nombre completo para el archivo         |
 | Result     | 4D.File | <- | Archivo renombrado|<!-- END REF -->
@@ -497,7 +497,7 @@ Quieresrenombrar "ReadMe.txt" como "ReadMe_new.txt":
 
 
 <!--REF #FileClass.setAppInfo().Params -->
-| Parámetros | Type   |    | Descripción                                                                                                       |
+| Parámetros | Tipo   |    | Descripción                                                                                                       |
 | ---------- | ------ | -- | ----------------------------------------------------------------------------------------------------------------- |
 | info       | Object | -> | Propiedades a escribir en el archivo .plist o el recurso versión del archivo .exe/.dll|<!-- END REF -->
 
@@ -517,7 +517,7 @@ La función debe utilizarse con un archivo .exe, .dll o .plist existente. The fu
 
 Cada propiedad válida definida en el parámetro objeto *info* se escribe en el recurso de versión del archivo .exe o .dll. Las propiedades disponibles son (toda otra propiedad será ignorada):
 
-| Propiedad        | Type |
+| Propiedad        | Tipo |
 | ---------------- | ---- |
 | InternalName     | Text |
 | ProductName      | Text |
@@ -581,7 +581,7 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setContent().Params -->
-| Parámetros | Type |    | Descripción                                                  |
+| Parámetros | Tipo |    | Descripción                                                  |
 | ---------- | ---- | -- | ------------------------------------------------------------ |
 | content    | BLOB | -> | Nuevos contenidos para el archivo|<!-- END REF -->
 
@@ -615,7 +615,7 @@ La función `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescri
 
 
 <!--REF #FileClass.setText().Params -->
-| Parámetros  | Type    |    | Descripción                                                           |
+| Parámetros  | Tipo    |    | Descripción                                                           |
 | ----------- | ------- | -- | --------------------------------------------------------------------- |
 | text        | Text    | -> | Texto a almacenar en el archivo                                       |
 | charSetName | Text    | -> | Nombre del juego de caracteres                                        |
