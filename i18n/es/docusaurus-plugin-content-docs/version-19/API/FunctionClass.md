@@ -123,7 +123,7 @@ Un objeto `4D.Function` contiene un trozo de código que puede ser ejecutado des
 
 
 <!-- REF #_command_.Formula.Params -->
-| Parámetros | Type        |    | Descripción                                                        |
+| Parámetros | Tipo        |    | Descripción                                                        |
 | ---------- | ----------- |:--:| ------------------------------------------------------------------ |
 | formulaExp | Expression  | -> | Fórmula a devolver como objeto                                     |
 | Result     | 4D.Function | <- | Función nativa que encapsula la fórmula|<!-- END REF -->
@@ -132,7 +132,7 @@ Un objeto `4D.Function` contiene un trozo de código que puede ser ejecutado des
 
 #### Descripción
 
-The `Formula` command <!-- REF #_command_.Formula.Summary -->creates a `4D Function` object based upon the *formulaExp* expression<!-- END REF -->. .
+El comando `Formula` <!-- REF #_command_.Formula.Summary -->crea un objeto `4D Function` basado en la expresión *formulaExp*<!-- END REF -->. .
 
 Tener una fórmula como objeto permite pasarla como parámetro (atributo calculado) a los comandos o a los métodos o ejecutarla desde varios componentes sin necesidad de declararla como "compartida por los componentes y la base de datos local". Cuando se llama, el objeto fórmula se evalúa en el contexto de la base de datos o del componente que lo creó.
 
@@ -253,7 +253,7 @@ Llamar a una fórmula utilizando la notación de objetos:
 
 
 <!-- REF #_command_.Formula from string.Params -->
-| Parámetros    | Type        |    | Descripción                                                       |
+| Parámetros    | Tipo        |    | Descripción                                                       |
 | ------------- | ----------- |:--:| ----------------------------------------------------------------- |
 | formulaString | Text        | -> | Fórmula texto a devolver como objeto                              |
 | Result        | 4D.Function | <- | Objeto nativo que encapsula la fórmula|<!-- END REF -->
@@ -302,7 +302,7 @@ El siguiente código creará un diálogo que acepta una fórmula en formato text
 
 
 <!-- REF #FunctionClass.apply().Params -->
-| Parámetros    | Type       |    | Descripción                                                                   |
+| Parámetros    | Tipo       |    | Descripción                                                                   |
 | ------------- | ---------- |:--:| ----------------------------------------------------------------------------- |
 | thisObj       | Object     | -> | Objeto a devolver por el comando This en la fórmula                           |
 | formulaParams | Collection | -> | Colección de valores que se pasan como $1...$n cuando se ejecuta la `fórmula` |
@@ -370,7 +370,7 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 
 <!-- REF #FunctionClass.call().Params -->
-| Parámetros | Type   |    | Descripción                                                        |
+| Parámetros | Tipo   |    | Descripción                                                        |
 | ---------- | ------ | -- | ------------------------------------------------------------------ |
 | thisObj    | Object | -> | Objeto a devolver por el comando This en la fórmula                |
 | params     | any    | -> | Valor(es) que se pasa(n) como $1...$n cuando se ejecuta la fórmula |
