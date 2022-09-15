@@ -34,7 +34,7 @@ Para obtener información detallada sobre la implementación de la sesión, cons
 
 
 <!-- REF #_command_.Session.Params -->
-| Parámetros | Type       |    | Descripción                               |
+| Parámetros | Tipo       |    | Descripción                               |
 | ---------- | ---------- |:--:| ----------------------------------------- |
 | Result     | 4D.Session | <- | Objeto Session|<!-- END REF -->
 
@@ -90,7 +90,7 @@ IP:port/4DACTION/action_Session
 
 
 <!-- REF #SessionClass.clearPrivileges().Params -->
-| Parámetros | Type |  | Descripción                                             |
+| Parámetros | Tipo |  | Descripción                                             |
 | ---------- | ---- |::| ------------------------------------------------------- |
 |            |      |  | No requiere ningún parámetro|<!-- END REF -->
 
@@ -155,7 +155,7 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Parámetros | Type    |    | Descripción                                                                             |
+| Parámetros | Tipo    |    | Descripción                                                                             |
 | ---------- | ------- |:--:| --------------------------------------------------------------------------------------- |
 | privilege  | Text    | <- | Nombre del privilegio a verificar                                                       |
 | Result     | Boolean | <- | True si la sesión tiene *privilege*, False en caso contrario|<!-- END REF -->
@@ -236,7 +236,7 @@ End if
 
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parámetros | Type    |    | Descripción                                                                               |
+| Parámetros | Tipo    |    | Descripción                                                                               |
 | ---------- | ------- |:--:| ----------------------------------------------------------------------------------------- |
 | Result     | Boolean | <- | True si la sesión es una sesión Guest, False en caso contrario|<!-- END REF -->
 
@@ -273,7 +273,7 @@ End if
 
 
 <!-- REF #SessionClass.setPrivileges().Params -->
-| Parámetros | Type       |    | Descripción                                                                            |
+| Parámetros | Tipo       |    | Descripción                                                                            |
 | ---------- | ---------- |:--:| -------------------------------------------------------------------------------------- |
 | privilege  | Text       | -> | Nombre del privilegio                                                                  |
 | privileges | Collection | -> | Colección de nombres de privilegios                                                    |
@@ -291,7 +291,7 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 
 - En el parámetro *settings*, pase un objeto que contenga las siguientes propiedades:
 
-| Propiedad  | Type              | Descripción                                           |
+| Propiedad  | Tipo              | Descripción                                           |
 | ---------- | ----------------- | ----------------------------------------------------- |
 | privileges | Text o Collection | <li>Cadena que contiene un nombre de privilegio, o</li><li>Colección de cadenas que contienen nombres de privilegios</li>    |
 | userName   | Text              | Nombre de usuario para asociar a la sesión (opcional) |
