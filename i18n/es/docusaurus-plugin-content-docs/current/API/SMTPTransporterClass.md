@@ -42,7 +42,7 @@ Los objetos SMTP Transporter se instancian con el comando [SMTP New transporter]
 
 
 <!-- REF #_command_.SMTP New transporter.Params -->
-| Parámetros | Type               |    | Descripción                                                                    |
+| Parámetros | Tipo               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
 | server     | Object             | -> | Información del servidor de correo                                             |
 | Result     | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object)|<!-- END REF -->
@@ -62,10 +62,10 @@ The `SMTP New transporter` command <!-- REF #_command_.SMTP New transporter.Summ
 
 En el parámetro *server*, pase un objeto que contenga las siguientes propiedades:
 
-| *server*                                                                                                                                                                                                                                                                                                                                                                                                                                | Valor por defecto (si se omite)                                          |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| *server*                                                                                                                                                                                                                                                                                                                                                                                                                                            | Valor por defecto (si se omite)                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                                    |
-| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>Text string or token object representing OAuth2 authorization credentials. Sólo se utiliza con OAUTH2 `authenticationMode`. Si se utiliza `accessTokenOAuth2` pero se omite `authenticationMode`, se utiliza el protocolo OAuth 2 (si el servidor lo permite). Cadena de texto u objeto token que representan las credenciales de autorización OAuth 2. | ninguno                                                                  |
+| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>Cadena de texto u objeto token que representa las credenciales de autorización OAuth2. Sólo se utiliza con OAUTH2 `authenticationMode`. Si se utiliza `accessTokenOAuth2` pero se omite `authenticationMode`, se utiliza el protocolo OAuth 2 (si el servidor lo permite). Cadena de texto u objeto token que representan las credenciales de autorización OAuth 2. | ninguno                                                                  |
 | [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| se utiliza el modo de autenticación más seguro soportado por el servidor |
 | [<!-- INCLUDE #transporter.bodyCharset.Syntax -->](#bodycharset)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.bodyCharset.Summary -->| `mail mode UTF8` (US-ASCII_UTF8_QP)                                    |
 | [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                                                       |
@@ -73,7 +73,7 @@ En el parámetro *server*, pase un objeto que contenga las siguientes propiedade
 | [<!-- INCLUDE #transporter.host.Syntax -->](#host)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *mandatory*                                                              |
 | [<!-- INCLUDE #SMTPTransporterClass.keepAlive.Syntax -->](#keepalive)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SMTPTransporterClass.keepAlive.Summary -->| True                                                                     |
 | [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| ninguno                                                                  |
-| **password** : Text<br/>User password for authentication on the server. Cadena de texto u objeto token que representan las credenciales de autorización OAuth 2.                                                                                                                                                                                                                                                                  | ninguno                                                                  |
+| **password** : Text<br/>User password for authentication on the server. Cadena de texto u objeto token que representan las credenciales de autorización OAuth 2.                                                                                                                                                                                                                                                                              | ninguno                                                                  |
 | [<!-- INCLUDE #transporter.port.Syntax -->](#port)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 587                                                                      |
 | [<!-- INCLUDE #transporter.sendTimeOut.Syntax -->](#sendtimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.sendTimeOut.Summary -->| 100                                                                      |
 | [<!-- INCLUDE #transporter.user.Syntax -->](#user)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| ninguno                                                                  |
@@ -118,7 +118,7 @@ La función devuelve un [**SMTP transporter**](#smtp-transporter-object). Todas 
 
 
 <!-- REF #4D.SMTPTransporter.new().Params -->
-| Parámetros | Type               |    | Descripción                                                                    |
+| Parámetros | Tipo               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
 | server     | Object             | -> | Información del servidor de correo                                             |
 | Result     | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object)|<!-- END REF -->
@@ -211,7 +211,7 @@ La conexión SMTP se cierra automáticamente:
 
 
 <!-- REF #SMTPTransporterClass.send().Params -->
-| Parámetros | Type   |    | Descripción                                        |
+| Parámetros | Tipo   |    | Descripción                                        |
 | ---------- | ------ |:--:| -------------------------------------------------- |
 | mail       | Object | -> | [Email](EmailObjectClass.md#email-object) a enviar |
 | Result     | Object | <- | SMTP status|<!-- END REF -->
@@ -231,7 +231,7 @@ En *mail*, pase un objeto [`Email`](EmailObjectClass.md#email-object) válido a 
 
 La función devuelve un objeto que describe el estado SMTP de la operación. Este objeto puede contener las siguientes propiedades:
 
-| Propiedad  | Type    | Descripción                                                                                                              |
+| Propiedad  | Tipo    | Descripción                                                                                                              |
 | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
 | success    | boolean | True si el envío tiene éxito, false en caso contrario                                                                    |
 | status     | number  | Código de estado devuelto por el servidor SMTP (0 en caso de un problema no relacionado con el procesamiento del correo) |
