@@ -147,7 +147,10 @@ USE ENTITY SELECTION($entitySel) // Employee テーブルのカレントセレ�
 
 *   *index* が範囲外だった場合、エラーが返されます。
 *   *index* がドロップされたエンティティに対応していた場合、Null値が返されます。
-> **警告**: `EntitySelection[index]` は代入不可の式です。これは、[`.lock()`](EntityClass.md#lock) や [`.save()`](EntityClass.md#save) などの関数において、編集可能なエンティティ参照として使用することはできない、ということを意味します。 エンティティを操作するには、戻り値を変数などの代入可能な式に割り当てる必要があります。 例:
+
+:::caution
+
+`EntitySelection[index]` は代入不可の式です。これは、[`.lock()`](EntityClass.md#lock) や [`.save()`](EntityClass.md#save) などの関数において、編集可能なエンティティ参照として使用することはできない、ということを意味します。 エンティティを操作するには、戻り値を変数などの代入可能な式に割り当てる必要があります。 例:
 
 ```4d
  $sel:=ds.Employee.all() // エンティティセレクションを作成
@@ -160,6 +163,7 @@ $result:=$sel[0].lock() //動作しません
  $entity.lastName:="Smith" //OK
  $entity.save() //OK
 ```
+:::
 
 #### 例題
 
@@ -1464,7 +1468,7 @@ Form.products.add(Form.product)
 
 .orderBy() 関数は、 <!-- REF #EntitySelectionClass.orderBy().Summary -->エンティティセレクションの全エンティティが *pathString* または *pathObjects* が指定する順番に並べ替えられた、新規の順列ありのエンティティセレクションを返します<!-- END REF -->。
 > * この関数は、エンティティセレクションを変更しません。
-*   詳細については、[エンティティセレクションの順列あり/順列なし](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を参照ください。
+> * エンティティセレクションの順列については、[エンティティセレクションの順列あり/順列なし](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を参照ください。
 
 引数を渡して、エンティティの並び替えを指定する必要があります。 並べ替えの指定方法は 2つあります:
 
