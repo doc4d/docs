@@ -123,7 +123,7 @@ Dans le paramètre *fileConstant*, passez un fichier 4D interne ou un fichier sy
 
 Si le fichier *fileConstant* cible n'existe pas, un objet null est retourné. Aucune erreur n'est générée.
 
-If the command is called from a component, pass the optional `*` parameter to get the path of the host database. Otherwise, if you omit the `*` parameter, a null object is always returned.
+Si la commande est appelée à partir d'un composant, passez le paramètre optionnel `*` pour lire le chemin de la base hôte. Sinon, si vous omettez le paramètre `*`, un objet null est systématiquement retourné.
 
 ## 4D.File.new()
 
