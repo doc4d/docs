@@ -621,10 +621,10 @@ Pour supprimer tous les messages de la boîte de réception courante :
 
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Paramètres | Type   |    | Description                                                         |
-| ---------- | ------ |:--:| ------------------------------------------------------------------- |
-| name       | Text   | -> | Nom de la boîte de réception à supprimer                            |
-| Résultat   | Object | <- | Status of the mailbox deletion operation|<!-- END REF -->
+| Paramètres | Type   |    | Description                                                              |
+| ---------- | ------ |:--:| ------------------------------------------------------------------------ |
+| name       | Text   | -> | Nom de la boîte de réception à supprimer                                 |
+| Résultat   | Object | <- | Statut de l'opération de suppression de boîte|<!-- END REF -->
 
 
 |
