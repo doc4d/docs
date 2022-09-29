@@ -101,13 +101,32 @@ Coordenadas superiores del objeto en el formulario.
 
 ## Radio de redondeo
 
-Define la redondez de las esquinas (en píxeles) de los objetos de tipo [rectángulo](shapes_overview.md#rectangle). Por defecto, el valor del radio de los rectángulos es de 0 píxeles. Puede cambiar esta propiedad para dibujar rectángulos redondeados con formas personalizadas:
+<details><summary>Histórico</summary>
+
+| Versión | Modificaciones                    |
+| ------- | --------------------------------- |
+| v19 R7  | Support for inputs and text areas |
+
+</details>
+
+Defines the corner roundness (in pixels) of the object. By default, the radius value is 0 pixels. You can change this property to draw rounded objects with custom shapes:
 
 ![](../assets/en/FormObjects/shape_rectangle.png)
 
-El valor mínimo es 0, en este caso se dibuja un rectángulo estándar no redondeado. El valor máximo depende del tamaño del rectángulo (no puede superar la mitad del tamaño del lado más corto del rectángulo) y se calcula dinámicamente.
+Minimum value is 0, in this case a standard non-rounded object rectangle is drawn. El valor máximo depende del tamaño del rectángulo (no puede superar la mitad del tamaño del lado más corto del rectángulo) y se calcula dinámicamente.
 
-También se puede definir esta propiedad utilizando los comandos [OBJECT Get corner radius](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-Get-corner-radius.301-4311357.en.html) y [OBJECT SET CORNER RADIUS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-CORNER-RADIUS.301-4311356.en.html).
+:::nota
+
+With [text areas](text.md) and [inputs](input_overview.md):
+
+- the corner radius property is only available with "none", "solid", or "dotted" [border line styles](properties_BackgroundAndBorder.md#border-line-style),
+- the corner roundness is drawn outside the area of the object (the object appears larger in the form but its [width](properties_CoordinatesAndSizing.md#width) and [height](properties_CoordinatesAndSizing.md#height) are not extended).
+
+![](../assets/en/FormObjects/radius-text3.png)
+
+:::
+
+You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4dv19/help/command/en/page1323.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4dv19/help/command/en/page1324.html) commands.
 
 #### Gramática JSON
 
@@ -117,7 +136,7 @@ También se puede definir esta propiedad utilizando los comandos [OBJECT Get cor
 
 #### Objetos soportados
 
-[Rectángulo](shapes_overview.md#rectangle)
+[Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
 
 ---
 
