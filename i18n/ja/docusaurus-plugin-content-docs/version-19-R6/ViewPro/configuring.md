@@ -310,8 +310,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | margin |        | object | 印刷マージン                              |
 |        | top    | 倍長整数   | 上部マージン、100分の1インチ単位。 デフォルト値 = 75     |
 |        | bottom | 倍長整数   | 下部マージン、100分の1インチ単位。 デフォルト値 = 75     |
-|        | left   | 倍長整数   | 右マージン、100分の1インチ単位。 デフォルト値 = 70      |
-|        | right  | 倍長整数   | 左マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | left   | 倍長整数   | 左マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | right  | 倍長整数   | 右マージン、100分の1インチ単位。 デフォルト値 = 70      |
 |        | header | 倍長整数   | ヘッダーのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 |        | footer | 倍長整数   | フッターのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 
@@ -346,12 +346,12 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 * カスタムサイズ - height と width 属性を使用
 * 規格サイズ - kind 属性を使用
 
-| プロパティ     |        | タイプ    | 説明                                                                               |
-| --------- | ------ | ------ | -------------------------------------------------------------------------------- |
-| paperSize |        | object | 印刷に使用する用紙の寸法 (height、width) または規格 (kind)                                         |
-|           | height | 倍長整数   | 用紙の高さ、100分の1インチ単位                                                                |
-|           | width  | 倍長整数   | 用紙の幅、100分の1インチ単位                                                                 |
-|           | kind   | text   | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。 `GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
+| プロパティ     |        | タイプ    | 説明                                                                              |
+| --------- | ------ | ------ | ------------------------------------------------------------------------------- |
+| paperSize |        | object | 印刷に使用する用紙の寸法 (height、width) または規格 (kind)                                        |
+|           | height | 倍長整数   | 用紙の高さ、100分の1インチ単位                                                               |
+|           | width  | 倍長整数   | 用紙の幅、100分の1インチ単位                                                                |
+|           | kind   | text   | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。`GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
 * `height` と `width` プロパティで用紙サイズを指定した場合、[`VP Get print info`](./method-list.md#vp-get-print-info) が返す用紙サイズ属性の `kind` プロパティ値は `custom` です。
 
@@ -376,7 +376,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 | プロパティ            | タイプ     | 説明                                                                                                                                                    |
 | ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | boolean | Prints the outline border.Default value = "true"                                                                                                      |
+| showBorder       | boolean | 外枠の境界線を印刷します。デフォルト値 = true                                                                                                                            |
 | showColumnHeader | 倍長整数    | カラムヘッダーの印刷設定。 とりうる値: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
 | showGridLine     | boolean | 枠線を印刷します。 デフォルト値 = false                                                                                                                              |
 | showRowHeader    | 倍長整数    | 行ヘッダーの印刷設定。 とりうる値: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
@@ -409,7 +409,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 スタイルシートは [VP ADD STYLESHEET](method-list.md#vp-add-stylesheet) コマンドで作成され、[VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) あるいは [VP SET CELL STYLE](method-list.md#vp-set-cell-style) コマンドで適用されます。 スタイルシートは [VP REMOVE STYLESHEET](method-list.md#vp-remove-stylesheet) コマンドで削除できます。
 
-[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。 また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
+[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
 
 ### スタイルオブジェクトプロパティ
 
