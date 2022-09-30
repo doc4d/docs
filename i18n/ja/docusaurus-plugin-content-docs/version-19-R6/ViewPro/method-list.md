@@ -27,7 +27,7 @@ title: メソッド一覧
 
 #### 説明
 
-The `VP ADD FORMULA NAME` command <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->creates or modifies a named formula in the open document<!-- END REF -->。
+`VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->。
 > このコマンドで作成された命名フォーミュラはドキュメントとともに保存されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
@@ -71,7 +71,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 #### 説明
 
-The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->。
+`VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
 > このコマンドで作成された命名レンジはドキュメントとともに保存されます。
 
 *name* 引数には、新しいフォーミュラの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名フォーミュラは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
@@ -106,15 +106,15 @@ VP ADD RANGE NAME($range;"Total1")
 
 <!-- REF #_method_.VP ADD SELECTION.Params -->
 
-| 引数       | タイプ  |    | 説明                                       |
-| -------- | ---- | -- | ---------------------------------------- |
-| rangeObj | Text | -> | Range object |<!-- END REF -->
+| 引数       | タイプ  |    | 説明                                    |
+| -------- | ---- | -- | ------------------------------------- |
+| rangeObj | Text | -> | レンジオブジェクト |<!-- END REF -->
 
 |
 
 #### 説明
 
-The `VP ADD SELECTION` command <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->。
+`VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
 
 *rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
 > アクティブセルは変更されません。
@@ -158,7 +158,7 @@ VP ADD SELECTION($currentSelection)
 
 #### 説明
 
-The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF -->
+`VP ADD SHEET` コマンドは、 <!-- REF #_method_.VP ADD SHEET.Summary -->*vpAreaName* にロードされているドキュメントにシートを挿入します。<!-- END REF -->
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -252,7 +252,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### 説明
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->。 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
@@ -317,17 +317,17 @@ VP SET CELL STYLE(VP Cells("ViewProArea";1;1;2;2);New object("name";"GreenDashDo
 
 <!-- REF #_method_.VP ALL.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値        | Object  | <- | 単一セルのレンジオブジェクト|<!-- END REF -->
+| 引数         | タイプ     |    | 説明                                          |
+| ---------- | ------- | -- | ------------------------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                     |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                 |
+| 戻り値        | Object  | <- | すべてのセルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-The `VP ALL` command <!-- REF #_method_.VP ALL.Summary -->returns a new range object referencing all cells<!-- END REF -->。
+`VP ALL` コマンドは、 <!-- REF #_method_.VP ALL.Summary -->すべてのセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -355,19 +355,19 @@ $all:=VP All("ViewProArea") // カレントシートの全セル
 
 <!-- REF #_method_.VP Cell.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| column     | Longint | -> | シートのインデックス (省略した場合はカレントシート)               |
-| row        | Longint | -> | シートのインデックス (省略した場合はカレントシート)               |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値        | Object  | <- | 単一セルのレンジオブジェクト|<!-- END REF -->
+| 引数         | タイプ     |    | 説明                                          |
+| ---------- | ------- | -- | ------------------------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                     |
+| column     | Longint | -> | シートのインデックス (省略した場合はカレントシート)                 |
+| row        | Longint | -> | シートのインデックス (省略した場合はカレントシート)                 |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                 |
+| 戻り値        | Object  | <- | すべてのセルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range object referencing a specific cell<!-- END REF -->。
+`VP Cell` コマンドは、 <!-- REF #_method_.VP Cell.Summary -->特定のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 > このコマンドは単一セルのレンジを想定しています。 複数セルに対するレンジオブジェクトを作成するには、[VP Cells](#vp-cells) コマンドを使用します。
 
@@ -425,7 +425,7 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 #### 説明
 
-The `VP Cells` command <!-- REF #_method_.VP Cells.Summary -->returns a new range object referencing specific cells<!-- END REF -->。
+`VP Cells` コマンドは、 <!-- REF #_method_.VP Cells.Summary -->指定された複数のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -475,7 +475,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 #### 説明
 
-The `VP Column` command <!-- REF #_method_.VP Column.Summary -->returns a new range object referencing a specific column or columns<!-- END REF -->。
+`VP Column` コマンドは、 <!-- REF #_method_.VP Column.Summary -->特定のカラム、あるいは複数のカラムを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -517,7 +517,7 @@ The `VP Column` command <!-- REF #_method_.VP Column.Summary -->returns a new ra
 
 #### 説明
 
-The `VP COLUMN AUTOFIT` command <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->automatically sizes the column(s) in *rangeObj* according to their contents<!-- END REF -->。
+`VP COLUMN AUTOFIT` コマンドは、 <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->*rangeObj* 引数のレンジ内にあるカラムを、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->。
 
 *rangeObj* 引数として、サイズを自動調整したいカラムを格納しているレンジオブジェクトを渡します。
 
@@ -560,7 +560,7 @@ The `VP COLUMN AUTOFIT` command <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->
 
 #### 説明
 
-The `VP Combine Ranges` command <!-- REF #_method_.VP Combine Ranges.Summary -->returns a new range object that incorporates two or more existing range objects<!-- END REF -->。 レンジはすべて同じ 4D View Pro エリア内のものでなくてはなりません。
+`VP Combine Ranges` コマンドは、 <!-- REF #_method_.VP Combine Ranges.Summary -->2つ以上のレンジオブジェクトを統合した新しいレンジオブジェクトを返します<!-- END REF -->。 レンジはすべて同じ 4D View Pro エリア内のものでなくてはなりません。
 
 *rangeObj* には、1つ目のレンジオブジェクトを渡します。
 
@@ -599,7 +599,7 @@ The `VP Combine Ranges` command <!-- REF #_method_.VP Combine Ranges.Summary -->
 
 #### 説明
 
-The `VP Convert from 4D View` command <!-- REF #_method_.VP Convert from 4D View.Summary -->allows you to convert a legacy 4D View document into a 4D View Pro object<!-- END REF -->。
+`VP Convert from 4D View` コマンドを使用すると、 <!-- REF #_method_.VP Convert from 4D View.Summary -->旧式の 4D View ドキュメントを 4D View Pro オブジェクトへと変換することができます<!-- END REF -->。
 > 旧式の 4D View プラグインが現環境にインストールされていなくても、このコマンドは使用可能です。
 
 *4DViewDocument* には変換する 4D View ドキュメントを格納する BLOB変数やフィールドを渡します。 コマンドは、4D View ドキュメントに保存されていた情報をすべて 4D View Pro 属性へと変換した 4D View Pro オブジェクトを返します。
@@ -631,7 +631,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 
 #### 説明
 
-The `VP Convert to picture` command <!-- REF #_method_.VP Convert to picture.Summary -->converts the *vpObject* 4D View Pro object (or the *rangeObj* range within *vpObject*) to a SVG picture<!-- END REF -->。
+`VP Convert to picture` コマンドは、 <!-- REF #_method_.VP Convert to picture.Summary -->*vpObject* 引数で指定した 4D View Pro オブジェクト (あるいは *vpObject* 内にある、*rangeObj* 引数で指定したレンジ) を、SVGピクチャーに変換します<!-- END REF -->。
 
 このコマンドは以下のような場合に有用です:
 
@@ -653,7 +653,7 @@ The `VP Convert to picture` command <!-- REF #_method_.VP Convert to picture.Sum
 * 行高さ
 * カラム幅
 * 非表示のカラム / 行 > 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
-> > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
+> 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
 
 #### ファンクションの戻り値
 
@@ -689,17 +689,17 @@ $vPict:=VP Convert to picture($vpAreaObj) // エリア全体を書き出しま�
 
 <!-- REF #_method_.VP Copy to object.Params -->
 
-| 引数       | タイプ    |    | 説明                                                              |
-| -------- | ------ | -- | --------------------------------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                                       |
-| options  | Object | -> | 追加のオプション                                                        |
-| 戻り値      | Object | <- | 返されるオブジェクト。 Contains the copied data|<!-- END REF -->
+| 引数       | タイプ    |    | 説明                                                        |
+| -------- | ------ | -- | --------------------------------------------------------- |
+| rangeObj | Object | -> | レンジオブジェクト                                                 |
+| options  | Object | -> | 追加のオプション                                                  |
+| 戻り値      | Object | <- | 返されるオブジェクト。 コピーされたデータが格納されています|<!-- END REF -->
 
 |
 
 #### 説明
 
-The `VP Copy to object` command <!-- REF #_method_.VP Copy to object.Summary -->copies the contents, style and formulas from *rangeObj* to an object<!-- END REF -->。
+`VP Copy to object` コマンドは、 <!-- REF #_method_.VP Copy to object.Summary -->*rangeObj* のコンテンツ、スタイル、フォーミュラをオブジェクトにコピーします<!-- END REF -->。
 
 *rangeObj* には、コピーしたい値、フォーマット、フォーミュラを格納しているセルレンジを渡します。 *rangeObj* が結合レンジの場合は、最初のものだけが使用されます。
 
@@ -763,7 +763,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 #### 説明
 
-The `VP CREATE TABLE` command <!-- REF #_method_.VP CREATE TABLE.Summary -->creates a table in the specified range<!-- END REF -->。 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 表組みは通常、関連するデータを行と列に含み、 [データコンテキスト](#vp-set-data-context) を利用します。
+`VP CREATE TABLE` コマンドは、 <!-- REF #_method_.VP CREATE TABLE.Summary -->指定のレンジ内に表組みを作成します<!-- END REF -->。 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 表組みは通常、関連するデータを行と列に含み、 [データコンテキスト](#vp-set-data-context) を利用します。
 
 ![](../assets/en/ViewPro/vp-create-table.png)
 
