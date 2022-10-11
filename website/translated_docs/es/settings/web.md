@@ -61,11 +61,11 @@ Designa una página de inicio por defecto para el servidor web. See [Default Hom
 
 #### Utilizar la caché Web de 4D
 
-Activa la caché de la página web. See [Cache](../WebServer/webServerConfig.md#cache).
+Activa la caché de la página web. Ver [Caché](../WebServer/webServerConfig.md#cache).
 
 #### Tamaño de la caché de las páginas
 
-Define el tamaño de la caché. See [Cache](../WebServer/webServerConfig.md#cache).
+Define el tamaño de la caché. Ver [Caché](../WebServer/webServerConfig.md#cache).
 
 
 #### Vaciar la caché
@@ -120,7 +120,7 @@ Le permite optimizar el funcionamiento del servidor Web de 4D en modo remoto. Se
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
-Enables preemptive web processes in your compiled applications. When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.md).
+Activa los procesos web apropiativos en sus aplicaciones compiladas. When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.md).
 
 > Esta opción no se aplica a las sesiones extensibles, a los procesos REST (modo compilado) ni a los procesos de servicios web (servidor o cliente).  Ver [Activar el modo apropiativo para el servidor web](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server).
 
@@ -220,7 +220,7 @@ The following table lists the fields available for each format (in alphabetical 
 | -------------- | --- | --- | -------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                  |
 | BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                        |
-| C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)             |
+| C_DNS          | X   | X   | Dirección IP del DNS (ELF: campo idéntico al campo C_IP)                   |
 | C_IP           | X   | X   | Dirección IP del cliente (por ejemplo 192.100.100.10)                      |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                    |
 | CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP               |
