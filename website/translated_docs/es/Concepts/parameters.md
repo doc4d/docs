@@ -500,7 +500,7 @@ ALERT("Are you sure?";"Yes I am") //2 parámetros
 ALERT("Time is over") //1 parámetro
 ```
 
-4D methods and functions also accept such optional parameters. Tenga en cuenta que aunque haya declarado 0, 1 o más parámetros en el método, siempre puede pasar el número de parámetros que desee. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). Por ejemplo:
+Los métodos y las funciones 4D también aceptan estos parámetros opcionales. Tenga en cuenta que aunque haya declarado 0, 1 o más parámetros en el método, siempre puede pasar el número de parámetros que desee. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). Por ejemplo:
 
 ```4d
 // "concate" function of myClass
