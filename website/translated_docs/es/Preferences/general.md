@@ -110,7 +110,7 @@ You can configure your existing projects to save code **without tokens** by inse
 "tokenizedText": false
 ```
 
-> This setting is only taken into account when methods are saved. Existing methods in your projects are left untouched, unless you resave them.
+> Este parámetro sólo se tiene en cuenta cuando se guardan los métodos. Existing methods in your projects are left untouched, unless you resave them.
 
 
 ### Crear el archivo `.gitignore`
