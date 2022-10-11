@@ -212,7 +212,7 @@ Creación de un archivo de preferencias en la carpeta principal:
 | Parámetros        | Tipo      |    | Descripción                                          |
 | ----------------- | --------- | -- | ---------------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Carpeta de destino para el alias o el acceso directo |
-| aliasName         | Texto     | -> | Name of the alias or shortcut                        |
+| aliasName         | Texto     | -> | Nombre del alias o del atajo                         |
 | aliasType         | Integer   | -> | Tipo de enlace del alias                             |
 | Resultado         | 4D.File   | <- | Referencia del archivo del alias o de atajo          |
 <!-- END REF -->
