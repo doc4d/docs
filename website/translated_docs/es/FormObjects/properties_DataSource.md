@@ -226,7 +226,7 @@ All database tables can be used, regardless of whether the form is related to a 
 ## Guardar como
 
 
-This property is available in the following conditions:
+Esta propiedad está disponible en las siguientes condiciones:
 
 - una [lista de selección](#choice-list) está asociada al objeto
 - for [inputs](input_overview.md) and [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
