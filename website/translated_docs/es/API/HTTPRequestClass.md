@@ -113,7 +113,7 @@ Por ejemplo, puede pasar las siguientes cadenas:
     http://[2001:0db8:0000:0000:0000:ff00:0042:8329]:8080/index.html (**)
 ```
 
-#### `options` parameter
+#### parámetro `options`
 
 En el parámetro *options*, pase un objeto que pueda contener las siguientes propiedades:
 
@@ -283,12 +283,12 @@ La propiedad `.response` contiene <!-- REF #4D.HTTPRequest.response.Summary -->t
 
 A `response` object is a non-sharable object. Ofrece las siguientes propiedades:
 
-| Propiedad   | Tipo    | Descripción                                                                                                                                                                |
-| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| .body       | Variant | Cuerpo de la respuesta. The type of the message is defined according to the [`dataType`](#datatype) property. Indefinido si el cuerpo no se ha recibido todavía            |
-| .headers    | Objeto  | Headers of the response. `headers.key` = value (value can be a collection if the same key appears multiple times). Indefinido si el los encabezados no se ha recibido aún. |
-| .status     | Número  | Código de estado de la respuesta                                                                                                                                           |
-| .statusText | Texto   | Mensaje explicando el código de estado                                                                                                                                     |
+| Propiedad   | Tipo    | Descripción                                                                                                                                                                    |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| .body       | Variant | Cuerpo de la respuesta. The type of the message is defined according to the [`dataType`](#datatype) property. Indefinido si el cuerpo no se ha recibido todavía                |
+| .headers    | Objeto  | Encabezados de la respuesta. `headers.key` = value (value can be a collection if the same key appears multiple times). Indefinido si el los encabezados no se ha recibido aún. |
+| .status     | Número  | Código de estado de la respuesta                                                                                                                                               |
+| .statusText | Texto   | Mensaje explicando el código de estado                                                                                                                                         |
 
 
 
@@ -303,7 +303,7 @@ A `response` object is a non-sharable object. Ofrece las siguientes propiedades:
 
 #### Descripción
 
-La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. If it was omitted, contains True. 
+La propiedad `.returnResponseBody` contiene <!-- REF #4D.HTTPRequest.returnResponseBody.Summary -->the `returnResponseBody` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew)<!-- END REF -->. Si se omite, contiene True. 
 
 <!-- END REF -->
 
