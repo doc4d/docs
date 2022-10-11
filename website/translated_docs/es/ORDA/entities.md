@@ -13,7 +13,7 @@ Hay dos maneras de crear una nueva entidad en una dataclass:
 *   Since entities are references to database records, you can create entities by creating records using the "classic" 4D language and then reference them with ORDA methods such as `entity.next( )` or `entitySelection.first( )`.
 *   You can also create an entity using the `dataClass.new( )` method.
 
-Keep in mind that the entity is only created in memory. If you want to add it to the datastore, you must call the `entity.save( )` method.
+Tenga en cuenta que la entidad sólo se crea en la memoria. If you want to add it to the datastore, you must call the `entity.save( )` method.
 
 Entity attributes are directly available as properties of the entity object. For more information, please refer to [Using entity attributes](#using-entity-attributes).
 
@@ -255,7 +255,7 @@ $comp2:=$lowSal.employer //$comp2 is alterable because $lowSal is alterable
 ```
 
 
-#### Sharing an entity selection between processes (example)
+#### Compartiendo una selección de entidades entre procesos (ejemplo)
 
 You work with two entity selections that you want to pass to a worker process so that it can send mails to appropriate persons:
 
