@@ -85,7 +85,7 @@ Catching a command is a convenient way to trace large portions of code without s
 
 Los puntos de interrupción y los comandos de captura se pueden utilizar combinados.
 
-To open the Caught Commands page:
+Para abrir la página de los puntos de interrupción en comandos:
 
 1. Choose **Run** > **Runtime explorer...** to open the Runtime Explorer.
 
