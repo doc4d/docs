@@ -246,7 +246,7 @@ Click on the **[...]** button and use the *Browse for folder* dialog box to loca
 
 Used to indicate the current version number for the application generated. A continuación, podrá aceptar o rechazar las conexiones de las aplicaciones cliente en función de su número de versión. The interval of compatibility for client and server applications is set using specific [XML keys](#buildapp4dsettings)).
 
-#### Embed the project Users and Groups in built server application
+#### Integrar el proyecto Usuarios y Grupos en la aplicación servidor creada
 
 **Preliminary Note:** The following terms are used in this section:
 
@@ -264,7 +264,7 @@ Cuando ejecute una aplicación de servidor 4D generada:
 
 El archivo de directorio de la aplicación es de sólo lectura. Modifications made to users, groups and permissions during server execution are stored in the data directory file. Si ya no existe ningún archivo de directorio de datos, se creará automáticamente. If the application directory file was embedded, it is duplicated as data directory file.
 
-Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
+Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Las modificaciones posteriores se añaden al archivo del directorio de datos.
 
 #### Autorizar la conexión de los clientes Silicon Mac
 
