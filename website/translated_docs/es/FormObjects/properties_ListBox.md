@@ -33,9 +33,9 @@ Se muestra el formulario especificado:
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                                                                        |
-| ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| detailForm | cadena         | <li>Nombre (cadena) de la tabla o formulario proyecto<li>POSIX path (string) to a .json file describing the form<li>Objeto que describe el formulario |
+| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                                                                                  |
+| ---------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| detailForm | cadena         | <li>Nombre (cadena) de la tabla o formulario proyecto<li>Ruta POSIX (cadena) a un archivo .json que describe el formulario<li>Objeto que describe el formulario |
 
 #### Objetos soportados
 
