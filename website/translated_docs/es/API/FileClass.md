@@ -530,12 +530,12 @@ If you use the *mode* (text) parameter, pass the opening mode for the file handl
 
 If you use the *options* (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
 
-| *options*         | Tipo           | Descripción                                                                                                                               | Por defecto   |
-| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `.mode`           | Texto          | Modo de apertura (ver *modo* arriba)                                                                                                      | "read"        |
-| `.charset`        | Texto          | Conjunto de caracteres utilizado al leer o escribir en el archivo. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"       |
-| `.breakModeRead`  | Text or Number | Modo de procesamiento de los saltos de línea utilizados al leer el archivo (ver más abajo)                                                | "native" or 1 |
-| `.breakModeWrite` | Text or Number | Modo de procesamiento de los saltos de línea utilizados al escribir en el archivo (ver abajo)                                             | "native" or 1 |
+| *options*         | Tipo           | Descripción                                                                                                                               | Por defecto  |
+| ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| `.mode`           | Texto          | Modo de apertura (ver *modo* arriba)                                                                                                      | "read"       |
+| `.charset`        | Texto          | Conjunto de caracteres utilizado al leer o escribir en el archivo. Use the standard name of the set (for example "ISO-8859-1" or "UTF-8") | "UTF-8"      |
+| `.breakModeRead`  | Text or Number | Modo de procesamiento de los saltos de línea utilizados al leer el archivo (ver más abajo)                                                | "native" o 1 |
+| `.breakModeWrite` | Text or Number | Modo de procesamiento de los saltos de línea utilizados al escribir en el archivo (ver abajo)                                             | "native" o 1 |
 
 The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. Puede utilizar uno de los siguientes valores (texto o número):
 
