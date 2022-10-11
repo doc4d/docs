@@ -121,7 +121,7 @@ Indica una variable o expresión a la que se le asignará un entero largo que in
 ---
 ## Data Type (expression type)
 
-Define el tipo de datos para la expresión mostrada. This property is used with:
+Define el tipo de datos para la expresión mostrada. Esta propiedad se utiliza con:
 
 - [List box columns](listbox_overview.md#list-box-columns) of the selection and collection types.
 - [Drop-down lists](dropdownList_Overview.md) associated to objects or arrays.
@@ -144,7 +144,7 @@ See also [**Expression Type**](properties_Object.md#expression-type) section.
 ---
 ## Tipo de datos (lista)
 
-Defines the type of data to save in the field or variable associated to the [drop-down list](dropdownList_Overview.md). This property is used with:
+Defines the type of data to save in the field or variable associated to the [drop-down list](dropdownList_Overview.md). Esta propiedad se utiliza con:
 
 - Drop-down lists [associated to a choice list](dropdownList_Overview.md#using-a-choice-list).
 - Drop-down lists [associated to a hierarchical choice list](dropdownList_Overview.md#using-a-hierarchical-choice-list).
@@ -275,7 +275,7 @@ All database tables can be used, regardless of whether the form is related to a 
 
 ## Guardar como
 
-This property is available in the following conditions:
+Esta propiedad está disponible en las siguientes condiciones:
 
 - una [lista de selección](#choice-list) está asociada al objeto
 - for [inputs](input_overview.md) and [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
