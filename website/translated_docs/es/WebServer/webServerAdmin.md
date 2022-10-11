@@ -198,7 +198,7 @@ The following table lists the fields available for each format (in alphabetical 
 | -------------- | --- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | BYTES_RECEIVED |     | X   | Número de bytes recibidos por el servidor                                                                                                        |
 | BYTES_SENT     | X   | X   | Número de bytes enviados por el servidor al cliente                                                                                              |
-| C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)                                                                                   |
+| C_DNS          | X   | X   | Dirección IP del DNS (ELF: campo idéntico al campo C_IP)                                                                                         |
 | C_IP           | X   | X   | Dirección IP del cliente (por ejemplo 192.100.100.10)                                                                                            |
 | CONNECTION_ID  |     | X   | Número de identificación de la conexión                                                                                                          |
 | CS(COOKIE)     | X   | X   | Información sobre las cookies contenidas en la petición HTTP                                                                                     |
