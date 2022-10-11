@@ -216,13 +216,13 @@ $t2*=2 // $t2="HelloHello"
 
 
 
-## Short-circuit operators
+## Operadores en cortocircuito
 
 The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands.
 
 The difference with the single [**&** and **|** boolean operators](dt_boolean.md#logical-operators) is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
 
-### Short-circuit AND operator (&&)
+### Operador en corto-circuito AND (&&)
 
 La regla es la siguiente:
 
@@ -273,7 +273,7 @@ $tax:=$item.taxRate && ($item.price*$item.taxRate)
 
 #### Ejemplo 3
 
-Short-circuit operators are useful in tests such as:
+Los operadores en cortocircuito son útiles en pruebas tales como:
 
 ```4d
 If(($myObject#Null) && ($myObject.value>10))
@@ -283,7 +283,7 @@ End if
 
 If $myObject is Null, the second argument is not executed, thus no error is thrown.
 
-### Short-circuit OR operator (||)
+### Operador en corto-circuito OR (||)
 
 El operador || devuelve el valor de uno de los operandos especificados. The expression is evaluated left to right and tested for possible "short-circuit" evaluation using the following rule:
 
@@ -304,7 +304,7 @@ The following table summarizes the different cases and the value returned for th
 
 #### Ejemplo 1
 
-Supongamos que tiene una tabla llamada Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
+Supongamos que tiene una tabla llamada Employee. Algunos empleados han introducido un número de teléfono y otros no. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. Pero puede escribir lo siguiente:
 
 ```4d
 var $phone : Text
