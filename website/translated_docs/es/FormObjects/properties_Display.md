@@ -127,7 +127,7 @@ If the user enters a negative number, the leftmost character is displayed as a m
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
-Suppose you use the format ##0 to display three digits. Si el usuario no introduce nada en el campo, el campo muestra 0. Si el usuario introduce 26, el campo muestra 26.
+Supongamos que usa el formato ##0 para mostrar tres dígitos. Si el usuario no introduce nada en el campo, el campo muestra 0. Si el usuario introduce 26, el campo muestra 26.
 
 
 ### Caracteres separadores
@@ -138,7 +138,7 @@ The numeric display formats (except for scientific notations) are automatically 
 
 ### Puntos decimales y otros caracteres de visualización
 
-You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
+Puede utilizar un punto decimal en un formato de visualización de números. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
 
 Puede utilizar cualquier otro caracter en el formato. When used alone, or placed before or after placeholders, the characters always appear. Por ejemplo, si utiliza el siguiente formato:
 
@@ -207,7 +207,7 @@ Por ejemplo, el formato:
 
     &/5
 
-corresponds to the 5th time format in the pop-up menu, specifically the AM/PM time. A number field with this format would display 25000 as:
+corresponds to the 5th time format in the pop-up menu, specifically the AM/PM time. Un campo numérico con este formato mostraría 25000 como:
 
     6:56 AM
 
@@ -281,7 +281,7 @@ The **Scaled to fit** format causes 4D to resize the picture to fit the dimensio
 
 The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D recorta por igual desde cada borde y desde la parte superior e inferior.
 
-The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D crops from the right and bottom.
+The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D corta desde la derecha y desde abajo.
 > When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
 
 ![](assets/en/FormObjects/property_pictureFormat_Truncated.png)
@@ -445,7 +445,7 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 *   1 = casilla seleccionada,
 *   2 (o cualquier valor >0) = caja semi-marcada (tercer estado). Para la entrada de datos, este estado devuelve el valor 2.
 *   -1 = casilla de verificación invisible,
-*   -2 = unchecked box, not enterable,
+*   -2 = casilla desmarcada, no editable,
 *   -3 = checked box, not enterable,
 *   -4 = casilla semi-marcada, no editable
 
@@ -571,7 +571,7 @@ This property is only used when drawing objects located in the body of a list fo
 
 Gestiona la visualización del contenido cuando supera el ancho del objeto.
 
-#### Checked for list box/Yes for input
+#### Marcada para list box/Sí para entrada
 `Gramática JSON: "normal"`
 
 When this option is selected, text automatically wraps to the next line whenever its width exceeds that of the column/area, if the column/area height permits it.
@@ -584,7 +584,7 @@ When this option is selected, text automatically wraps to the next line whenever
 
 
 
-#### Unchecked for list box/No for input
+#### Sin marcar para la list box/No para la entrada
 `Gramática JSON: "none"`
 
 When this option is selected, 4D does not do any automatic line returns and the last word that can be displayed may be truncated. En las áreas de tipo de texto, se soportan los retornos de carro:
