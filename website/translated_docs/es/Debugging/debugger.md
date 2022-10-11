@@ -145,7 +145,7 @@ $c:=a+b
 
     El valor de la variable `$a` es ahora 1. La variable `$b` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
-3. You click the **Step Over** button again. El contador del programa ahora está en la línea con c:=a+b. At this point the Line Objects theme displays:
+3. Haga clic en el botón **Step Over** nuevamente. El contador del programa ahora está en la línea con c:=a+b. At this point the Line Objects theme displays:
 
     | $c | Indefinido |
     | -- | ---------- |
