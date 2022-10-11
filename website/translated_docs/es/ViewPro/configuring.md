@@ -291,7 +291,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 | headerCenterImage | picture &#124; text* | La imagen para la sección central del encabezado.                          |
 | headerLeft        | texto                | El texto y el formato del encabezado izquierdo en las páginas impresas.    |
 | headerLeftImage   | picture &#124; text* | La imagen de la sección izquierda del encabezado.                          |
-| headerRight       | texto                | The text and format of the right header on printed pages.                  |
+| headerRight       | texto                | El texto y el formato del encabezado derecho en las páginas impresas.      |
 | headerRightImage  | picture &#124; text* | La imagen de la sección derecha del encabezado.                            |
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. En Windows, la extensión del archivo debe ser indicada. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
@@ -303,7 +303,7 @@ The following special characters allow the automatic addition or formatting of i
 
 | Caracter | Descripción                       | Ejemplo                                                               | Resultado                                         |
 | -------- | --------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
-| &        | Escape character                  | (ver ejemplos más abajo)                                              |                                                   |
+| &        | Caracter de escape                | (ver ejemplos más abajo)                                              |                                                   |
 | P        | Página actual                     | printInfo.headerLeft:="Esta es la página &P."                         | Esta es la página 5.|                             |
 | N        | Conteo de páginas                 | printInfo.headerLeft:="Hay &N páginas."                               | Hay 10 páginas.                                   |
 | D        | Fecha actual (formato yyyy/mm/dd) | printInfo.headerLeft:="Es &D."                                        | Es 2015/6/19.                                     |
