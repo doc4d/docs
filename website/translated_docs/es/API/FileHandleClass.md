@@ -89,7 +89,7 @@ File handle objects cannot be shared.
 
 #### Descripción
 
-La propiedad `.breakModeRead` devuelve <!-- REF #FileHandleClass.breakModeRead.Summary -->the processing mode for line breaks used when reading the file<!-- END REF -->.
+La propiedad `.breakModeRead` devuelve <!-- REF #FileHandleClass.breakModeRead.Summary -->el modo de procesamiento de los saltos de línea utilizados al leer el archivo<!-- END REF -->.
 
 
 The `.breakModeRead` property can be defined at the handle creation with the [`file.open()`](FileClass.md#open) function (see [the `.open()` function](FileClass.md#open) for more information). Default is "native".
@@ -145,7 +145,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.charset` devuelve <!-- REF #FileHandleClass.charset.Summary -->the charset used when reading from or writing to the file<!-- END REF -->.
+La propiedad `.charset` devuelve <!-- REF #FileHandleClass.charset.Summary -->el conjunto de caracteres utilizado al leer o escribir en el archivo<!-- END REF -->.
 
 The charset can be defined at the handle creation with the [`file.open()`](FileClass#open) function. Por defecto es "UTF-8".
 
@@ -169,7 +169,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.eof` property returns <!-- REF #FileHandleClass.eof.Summary -->True is the `offset` has reached the end of the file, and False otherwise<!-- END REF -->.
+La propiedad `.eof` devuelve <!-- REF #FileHandleClass.eof.Summary -->True is the `offset` has reached the end of the file, and False otherwise<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -384,9 +384,9 @@ If the *stopChar* parameter is passed and not found, `.readText()` returns an em
 **.setSize**( *size*: Real)<!-- END REF -->
 
 <!--REF #FileHandleClass.setSize().Params -->
-| Parámetros | Tipo |    | Descripción                       |
-| ---------- | ---- | -- | --------------------------------- |
-| size       | Real | -> | New size of the document in bytes |
+| Parámetros | Tipo |    | Descripción                         |
+| ---------- | ---- | -- | ----------------------------------- |
+| size       | Real | -> | Nuevo tamaño del documento en bytes |
 <!-- END REF -->
 
 #### Descripción
