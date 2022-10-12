@@ -835,7 +835,7 @@ Se crea un método proyecto *protectDataFile* para llamar antes de los despliegu
 The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
 
 When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
-* the first entity is not fully loaded as done in automatic mode
+* la primera entidad no está cargada totalmente como se hace en el modo automático
 * pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
 
 > For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
