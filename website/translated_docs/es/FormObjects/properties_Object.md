@@ -174,9 +174,9 @@ However, this property has a typing function in the following specific cases:
 
 #### Gramática JSON
 
-| Nombre             | Tipos de datos | Valores posibles                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------ | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataSourceTypeHint | cadena         | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"<li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object" |
+| Nombre             | Tipos de datos | Valores posibles                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataSourceTypeHint | cadena         | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"<li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Listbox array/selección únicamente*: "integer", "object" |
 
 #### Objetos soportados
 
