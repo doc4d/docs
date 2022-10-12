@@ -3,7 +3,7 @@ id: overview
 title: Generalidades
 ---
 
-Los parámetros configuran el funcionamiento del proyecto actual. These parameters may be different for each project. They include the listening ports, backup configurations, security options, Web parameters, etc.
+Los parámetros configuran el funcionamiento del proyecto actual. Estos parámetros pueden ser diferentes para cada proyecto. They include the listening ports, backup configurations, security options, Web parameters, etc.
 
 ![](assets/en/settings/main.png)
 
@@ -25,7 +25,7 @@ When [**User settings** mode is enabled](../Desktop/user-settings.md), **Setting
 
 ### Información sobre el bloqueo
 
-Locking can occur in both Project and Client/server modes when:
+El bloqueo puede ocurrir tanto en los modos Proyecto como Cliente/servidor cuando:
 
 -   The *settings.4DSettings* file is 'Read-only' (Projects only). Al modificar un parámetro se mostrará una alerta para desbloquearlo, si es posible.
 -   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Cliente/servidor únicamente)
