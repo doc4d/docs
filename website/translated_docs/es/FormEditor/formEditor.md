@@ -396,7 +396,7 @@ Por defecto, todos los objetos que soportan la propiedad enfocable se incluyen e
 
 1. Seleccione el modo de orden de entrada, y luego
 
-2.  **shift-click** on the object
+2.  **Mayúsculas-clic** en el objeto
 
 3.  **right-click** on the object and select **Remove from entry order** option from the context menu
 
