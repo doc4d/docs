@@ -64,11 +64,11 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 <details><summary>Histórico</summary>
 
-| Versión | Modificaciones                                                                                            |
-| ------- | --------------------------------------------------------------------------------------------------------- |
-| v19 R4  | Alias attributes in the Entity Class                                                                      |
-| v19 R3  | Atributos calculados en la Entity Class                                                                   |
-| v18 R5  | Data model class functions are not exposed to REST by default. Nuevas palabras clave `exposed` y `local`. |
+| Versión | Modificaciones                                                                                                              |
+| ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| v19 R4  | Alias attributes in the Entity Class                                                                                        |
+| v19 R3  | Atributos calculados en la Entity Class                                                                                     |
+| v18 R5  | Las funciones de clase de modelo de datos no están expuestas a REST por defecto. Nuevas palabras clave `exposed` y `local`. |
 </details>
 
 
@@ -449,10 +449,10 @@ Esta función soporta tres sintaxis:
     - If *$result* is a Text, it must be a valid query string
     - If *$result* is an Object, it must contain two properties:
 
-    | Propiedad          | Tipo       | Descripción                                         |
-    | ------------------ | ---------- | --------------------------------------------------- |
-    | $result.query      | Texto      | Valid query string with placeholders (:1, :2, etc.) |
-    | $result.parameters | Collection | valors para marcadores                              |
+    | Propiedad          | Tipo       | Descripción                                                         |
+    | ------------------ | ---------- | ------------------------------------------------------------------- |
+    | $result.query      | Texto      | Cadena de búsqueda válida con marcadores de posición (:1, :2, etc.) |
+    | $result.parameters | Collection | valors para marcadores                                              |
 
 The `query` function executes whenever a query using the computed attribute is launched. It is useful to customize and optimize queries by relying on indexed attributes. When the `query` function is not implemented for a computed attribute, the search is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
 
@@ -466,7 +466,7 @@ El parámetro *$event* contiene las siguientes propiedades:
 | dataClassName | Texto   | Nombre de la clase de datos                                                                                                                                                                                                                                                                                                                                       |
 | kind          | Texto   | "query"                                                                                                                                                                                                                                                                                                                                                           |
 | value         | Variant | Valor a tratar por el atributo calculado                                                                                                                                                                                                                                                                                                                          |
-| operator      | Texto   | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores posibles:<li>== (es igual a, @ es comodín)</li><li>=== (igual a, @ no es comodín)</li><li>!= (no es igual a, @ es comodín)</li><li>!== (no es igual a, @ no es comodín)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (mayor que)</li><li>>= (greater than or equal to)</li><li>IN (incluído en)</li><li>% (contiene palabra clave)</li> |
+| operator      | Texto   | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores posibles:<li>== (es igual a, @ es comodín)</li><li>=== (igual a, @ no es comodín)</li><li>!= (no es igual a, @ es comodín)</li><li>!== (no es igual a, @ no es comodín)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (mayor que)</li><li>>= (mayor o igual que)</li><li>IN (incluído en)</li><li>% (contiene palabra clave)</li> |
 | result        | Variant | Valor a tratar por el atributo calculado. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                               |
 
 > If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
