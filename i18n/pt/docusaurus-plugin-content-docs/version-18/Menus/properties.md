@@ -1,5 +1,5 @@
 ---
-id: properties
+id: propriedades
 title: Propriedades dos menus
 ---
 
