@@ -103,7 +103,7 @@ GET /rest/Customers(1)/?$lock=true
 }
 ```
 
-In a second browser (other session), we send the same request.
+En un segundo navegador (otra sesión), enviamos la misma petición.
 
 **Respuesta:**
 
