@@ -264,7 +264,7 @@ Cuando ejecute una aplicación de servidor 4D generada:
 
 El archivo de directorio de la aplicación es de sólo lectura. Modifications made to users, groups and permissions during server execution are stored in the data directory file. Si ya no existe ningún archivo de directorio de datos, se creará automáticamente. If the application directory file was embedded, it is duplicated as data directory file.
 
-Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
+Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Las modificaciones posteriores se añaden al archivo del directorio de datos.
 
 #### Autorizar la conexión de los clientes Silicon Mac
 
