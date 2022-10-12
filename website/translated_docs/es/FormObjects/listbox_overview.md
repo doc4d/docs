@@ -535,7 +535,7 @@ You can enable or disable standard user sorts by disabling the [Sortable](proper
 
 El soporte de ordenación estándar depende del tipo de list box:
 
-| Tipo de list box               | Support of standard sort | Comentarios                                                                                                  |
+| Tipo de list box               | Soporte de tipo estándar | Comentarios                                                                                                  |
 | ------------------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | Colección de objetos           | Sí                       | <li>Las columnas "This.a" o "This.a.b" son ordenables.</li><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
 | Colección de valores escalares | No                       | Use custom sort with [`orderBy()`](..\API\CollectionClass.md#orderby) function                             |
@@ -877,7 +877,7 @@ El siguiente list box fue diseñado utilizando un array de objetos:
 ![](assets/en/FormObjects/listbox_column_objectArray.png)
 
 
-### Configuring an object array column
+### Configurando una columna de array de objetos
 
 To assign an object array to a list box column, you just need to set the object array name in either the Property list ("Variable Name" field), or using the [LISTBOX INSERT COLUMN](https://doc.4d.com/4Dv17R6/4D/17-R6/LISTBOX-INSERT-COLUMN.301-4311153.en.html) command, like with any array-based column. In the Property list, you can now select Object as a "Expression Type" for the column:
 
