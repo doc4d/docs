@@ -24,7 +24,7 @@ Regardless of the simplicity or complexity of a method or function, you will alw
 | v19 R4  | Añadidos       |
 </details>
 
-The `return` statement can be called from anywhere. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the control is returned to the caller.
+La instrucción `return` puede ser llamada desde cualquier lugar. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the control is returned to the caller.
 
 The `return` statement can be used to [return a value](parameters.md#return-expression) to the caller.
 
