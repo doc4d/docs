@@ -189,14 +189,14 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 El comando `VP ADD SPAN` combina las celdas de *rangeObj* como un único tramo de celdas.
 
-En *rangeObj*, pase un rango de celdas. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. Puede pasar varios rangos de celdas para crear varios espacios al mismo tiempo. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
+En *rangeObj*, pase un rango de celdas. Las celdas del rango se unen para crear una celda más grande que se extiende por varias columnas y/o líneas. Puede pasar varios rangos de celdas para crear varios espacios al mismo tiempo. Tenga en cuenta que si los rangos de celdas se superponen, sólo se utiliza el primer rango de celdas.
 
 > * Sólo se muestran los datos de la celda superior izquierda. Los datos de las otras celdas combinadas se ocultan hasta que se elimina la fusión.
-> * Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
+> * Los datos ocultos en las celdas fusionadas son accesibles mediante fórmulas (empezando por la celda superior izquierda).
 
 #### Ejemplo
 
-To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+Para fusionar las celdas First quarter y Second quarter a través de las dos celdas al lado, y de fusionar la celda del área South a través de las dos líneas debajo de ella:
 
 ![initial-document](../assets/en/ViewPro/vp-add-span.png)
 
@@ -235,24 +235,24 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 #### Descripción
 
-El comando `VP ADD STYLESHEET` <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. .
+El comando `VP ADD STYLESHEET` <!-- REF #_method_.VP ADD STYLESHEET.Summary -->crea o modifica la hoja de estilo *styleName* basándose en la combinación de las propiedades especificadas en *styleObj* en el documento abierto<!-- END REF -->. Si ya existe una hoja de estilo con el mismo nombre e índice en el documento, este comando la sobrescribirá con los nuevos valores.
 
 > Las hojas de estilo creadas por este comando se guardan con el documento.
 
 En *vpAreaName*, pase el nombre del área 4D View Pro. Si pasa un nombre que no existe, se devuelve un error.
 
-The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. Tenga en cuenta que puede utilizar el mismo nombre para diferentes alcances (ver más adelante).
+El parámetro *styleName* permite asignar un nombre a la hoja de estilo. Si el nombre ya se utiliza dentro del mismo alcance, la nueva hoja de estilo sustituye a la existente. Tenga en cuenta que puede utilizar el mismo nombre para diferentes alcances (ver más adelante).
 
-Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
+Dentro del *styleObj*, designe la configuración de la hoja de estilo (por ejemplo, fuente, decoración del texto, alineación, bordes, etc.). Para ver la lista completa de propiedades de estilo, consulte [Propiedades de los objetos de estilo](configuring.md#style-objects-properties).
 
-You can designate where to define the style sheet in the optional *sheet* parameter using the sheet index (indexing starts at 0) or with the following constants:
+Puede designar dónde definir la hoja de estilo en el parámetro opcional *sheet* utilizando el índice de la hoja (la indexación comienza en 0) o con las siguientes constantes:
 
 * `vk current sheet`
 * `vk workbook`
 
-If a *styleName* style sheet is defined at the workbook level and at a sheet level, the sheet level has priority over the workbook level when the style sheet is set.
+Si una hoja de estilo *styleName* está definida al nivel del libro de trabajo y de la hoja, el nivel de hoja tiene prioridad sobre el nivel del libro de trabajo cuando se define la hoja de estilo.
 
-To apply the style sheet, use the [VP SET DEFAULT STYLE](#vp-set-default-style) or [VP SET CELL STYLE](#vp-set-cell-style) commands.
+Para aplicar la hoja de estilo, utilice los comandos [VP SET DEFAULT STYLE](#vp-set-default-style) o [VP SET CELL STYLE](#vp-set-cell-style).
 
 #### Ejemplo
 
@@ -310,7 +310,7 @@ El comando `VP ALL` <!-- REF #_method_.VP ALL.Summary -->devuelve un nuevo objet
 
 En *vpAreaName*, pase el nombre del área 4D View Pro. Si pasa un nombre que no existe, se devuelve un error.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
+En el parámetro opcional *sheet*, puede designar una hoja específica donde se definirá el rango (la numeración comienza en 0). Si se omite o si se pasa `vk current sheet`, se utiliza la hoja de cálculo actual.
 
 #### Ejemplo
 
@@ -345,11 +345,11 @@ $all:=VP All("ViewProArea") // todas las celdas de la hoja actual
 
 El comando `VP Cell` <!-- REF #_method_.VP Cell.Summary -->devuelve un nuevo objeto de rango que hace referencia a una celda específica<!-- END REF -->.
 
-> Este comando se aplica a los rangos de una sola celda. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
+> Este comando se aplica a los rangos de una sola celda. Para crear un objeto rango para múltiples celdas, utilice el comando [VP Cells](#vp-cells).
 
 En *vpAreaName*, pase el nombre del área 4D View Pro. Si pasa un nombre que no existe, se devuelve un error.
 
-The *column* parameter defines the column of the cell range's position. Pase el índice de columna en este parámetro.
+El parámetro *column* define la columna de la posición del rango de celdas. Pase el índice de columna en este parámetro.
 
 The *row* parameter defines the row of the cell range's position. Pase el índice de la línea en este parámetro.
 
@@ -405,9 +405,9 @@ En *vpAreaName*, pase el nombre del área 4D View Pro. Si pasa un nombre que no 
 
 El parámetro *column* define la primera columna del rango de celdas. Pase el índice de la columna (la numeración comienza en 0) en este parámetro. Si el rango está dentro de varias columnas, también debe utilizar el parámetro *columnCount*.
 
-In the *row* parameter, you can define the row(s) of the cell range's position. Pase el índice de la línea (el conteo comienza en 0) en este parámetro. If the range is within multiple rows, you should also use the *rowCount* parameter.
+En el parámetro *row*, puede definir la(s) línea(s) de la posición del rango de celdas. Pase el índice de la línea (el conteo comienza en 0) en este parámetro. Si el rango contiene varias líneas, también debe utilizar el parámetro *rowCount*.
 
-The *columnCount* parameter allows you to define the total number of columns the range is within. *columnCount* debe ser mayor que 0.
+El parámetro *columnCount* permite definir el número total de columnas en las que se encuentra el rango. *columnCount* debe ser mayor que 0.
 
 The *rowCount* parameter allows you to define the total number of rows the range is within. *rowCount* debe ser mayor que 0.
 
@@ -1217,9 +1217,12 @@ You want to trace the execution of the commands and empty the command buffer:
 
 <!-- REF #_method_.VP Font to object.Params -->
 
-| Parámetros | Tipo |    | Descripción                                      |
-| ---------- | ---- | -- | ------------------------------------------------ |
-| font       | Text | -> | Font shorthand string|<!-- END REF --> |
+| Parámetros | Tipo   |    | Descripción           |
+| ---------- | ------ | -- | --------------------- |
+| font       | Text   | -> | Font shorthand string |
+| Result     | Object | <- | Objeto fuente         |
+
+<!-- END REF -->
 
 #### Descripción
 
@@ -1566,11 +1569,11 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 <!-- REF #_method_.VP Get default style.Params -->
 
-| Parámetros | Tipo |  | Descripción |
-| ---------- | ---- |  | ----------- |
-|            |      |  |             |
-
-|vpAreaName  |Text|->|4D View Pro area from object name| |sheet  |Integer|->|Sheet index (current sheet if omitted)| |Result  |Integer|<-|Total number of columns |<!-- END REF -->
+| Parámetros | Tipo    |    | Descripción                                          |
+| ---------- | ------- | -- | ---------------------------------------------------- |
+| vpAreaName | Text    | -> | Nombre del área 4D View Pro en el formulario         |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)          |
+| Result     | Integer | <- | Número total de columnas |<!-- END REF --> |
 
 #### Descripción
 
@@ -2897,6 +2900,7 @@ El comando `VP PASTE FROM OBJECT` <!-- REF #_method_.PASTE FROM OBJECT.Summary -
 In *rangeObj*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
 
 In *dataObject*, pass the object that contains the cell data, formatting, and formulas to be pasted.
+
 
 In the optional *options* parameter, you can specify what to paste in the cell range. Valores posibles:
 
@@ -4741,6 +4745,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 | sheet      | Integer | -> | Índice de la hoja a renombrar<!-- END REF --> |
 
 #### Descripción
+
 
 El comando `VP SET SHEET NAME` <!-- REF #_method_.VP SET SHEET NAME.Summary -->cambia el nombre de una hoja del documento cargado en *vpAreaName*<!-- END REF -->.
 
