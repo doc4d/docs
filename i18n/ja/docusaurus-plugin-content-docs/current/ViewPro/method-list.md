@@ -1323,10 +1323,10 @@ End if
 
 <!-- REF #_method_.VP Font to object.Params -->
 
-| 引数   | タイプ    |    | 説明                    |
-| ---- | ------ | -- | --------------------- |
-| font | Text   | -> | Font shorthand string |
-| 戻り値  | Object | <- | フォントオブジェクト            |
+| 引数   | タイプ    |    | 説明              |
+| ---- | ------ | -- | --------------- |
+| font | Text   | -> | フォントのショートハンド文字列 |
+| 戻り値  | Object | <- | フォントオブジェクト      |
 <!-- END REF -->
 
 
@@ -5451,7 +5451,7 @@ VP SET ROW COUNT("ViewProArea";5)
 | -- | --- |  | -- |
 |    |     |  |    |
 
-|rangeObj |Object|->|Range object of cells|<!-- END REF -->
+|rangeObj |Object|->|複数セルのレンジオブジェクト|<!-- END REF -->
 
 #### 説明
 
