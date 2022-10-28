@@ -1274,9 +1274,13 @@ You want to trace the execution of the commands and empty the command buffer:
 
 <!-- REF #_method_.VP Font to object.Params -->
 
-| Parámetros | Tipo |    | Descripción                                      |
-| ---------- | ---- | -- | ------------------------------------------------ |
-| font       | Text | -> | Font shorthand string|<!-- END REF --> |
+| Parámetros | Tipo   |    | Descripción           |
+| ---------- | ------ | -- | --------------------- |
+| font       | Text   | -> | Font shorthand string |
+| Result     | Object | <- | Objeto fuente         |
+
+<!-- END REF -->
+
 
 #### Descripción
 
@@ -1624,11 +1628,11 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 <!-- REF #_method_.VP Get default style.Params -->
 
-| Parámetros | Tipo |  | Descripción |
-| ---------- | ---- |  | ----------- |
-|            |      |  |             |
-
-|vpAreaName  |Text|->|4D View Pro area from object name| |sheet  |Integer|->|Sheet index (current sheet if omitted)| |Result  |Integer|<-|Total number of columns |<!-- END REF -->
+| Parámetros | Tipo    |    | Descripción                                          |
+| ---------- | ------- | -- | ---------------------------------------------------- |
+| vpAreaName | Text    | -> | Nombre del área 4D View Pro en el formulario         |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)          |
+| Result     | Integer | <- | Número total de columnas |<!-- END REF --> |
 
 #### Descripción
 
@@ -2316,11 +2320,11 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| Parámetros | Tipo |    | Descripción                                  |
-| ---------- | ---- | -- | -------------------------------------------- |
-| vpAreaName | Text | -> | Nombre de objeto formulario área 4D View Pro |
-
-|styleName|Text|->|Name of style| |sheet|Integer|->|Sheet index (current sheet if omitted)|
+| Parámetros | Tipo    |    | Descripción                                  |
+| ---------- | ------- | -- | -------------------------------------------- |
+| vpAreaName | Text    | -> | Nombre de objeto formulario área 4D View Pro |
+| styleName  | Text    | -> | Nombre del estilo                            |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)  |
 
 |Result|Object|<-|Style sheet object|<!-- END REF -->
 
@@ -2394,7 +2398,6 @@ $styles:=VP Get stylesheets("ViewProArea")
 ```
 
 En este caso, la hoja actual utiliza dos objetos estilo:
-
 
 ```4d
 [
@@ -5242,9 +5245,11 @@ VP SET ROW COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET SELECTION.Params -->
 
-| Parámetros | Tipo   |    | Descripción                                       |
-| ---------- | ------ | -- | ------------------------------------------------- |
-| rangeObj   | Object | -> | Objeto rango de celdas|<!-- END REF --> |
+| Parámetros | Tipo |  | Descripción |
+| ---------- | ---- |  | ----------- |
+|            |      |  |             |
+
+|rangeObj |Object|->|Range object of cells|<!-- END REF -->
 
 #### Descripción
 
