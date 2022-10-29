@@ -301,7 +301,7 @@ A função `.clearAllRemoteContexts()` <!-- REF #DataStoreClass.clearAllRemoteCo
 
 Esta função é utilizada principalmente no contexto da depuração. Deve lembrar que quando abrir o depurador ele envia petições ao servidor e pesquisa todos os atributos de dataclasse para exibi-los Isso pode sobrecarregar seus contextos com dados desnecessários.
 
-In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
+Nestes casos, pode usar `.clearAllRemoteContexts()` para limpar os seus contextos e mantê-los limpos.
 
 #### Veja também
 
