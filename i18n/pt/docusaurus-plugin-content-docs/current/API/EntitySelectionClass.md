@@ -2147,7 +2147,7 @@ Retorna:
 
 #### Exemplo 2
 
-Example with options:
+Exemplo com opções:
 
 ```4d
 var $employeesCollection : Collection
