@@ -1215,55 +1215,55 @@ A função `.save()` <!-- REF #EntityClass.save().Summary -->salva as mudanças 
 
 A operação de salvar é realizada só se ao menos um atributo de entidade foi "tocado" (ver [`.touched()`](#touched) e funções [`.touchedAttributes()`](#touchedattributes) ). Senão a função não faz nada (o trigger não é ativado)
 
-In a multi-user or multi-process application, the `.save()` function is executed under an ["optimistic lock"](ORDA/entities.md#entity-locking) mechanism, wherein an internal locking stamp is automatically incremented each time the record is saved.
+Em uma aplicação multiusuário ou multiprocesso, a função `.save()` é executada com um mecanismo  ["optimistic lock"](ORDA/entities.md#entity-locking) onde uma estampa interna de tranca é automaticamente incrementada cada vez que o registro é salvado
 
-By default, if the *mode* parameter is omitted, the method will return an error (see below) whenever the same entity has been modified by another process or user in the meantime, no matter the modified attribute(s).
+Como padrão, se o parâmetro *mode* for omitido, o método retorna um erro (ver abaixo) sempre que a mesma entidade for modificada por outro processo ou u suário , sem importar os atributos modificados.
 
-Otherwise, you can pass the `dk auto merge` option in the *mode* parameter: when the automatic merge mode is enabled, a modification done concurrently by another process/user on the same entity but on a different attribute will not result in an error. The resulting data saved in the entity will be the combination (the "merge") of all non-concurrent modifications (if modifications were applied to the same attribute, the save fails and an error is returned, even with the auto merge mode).
-> The automatic merge mode is not available for attributes of Picture, Object, and Text type when stored outside of the record. Concurrent changes in these attributes will result in a `dk status stamp has changed` error.
+Senão, pode passar a opção `dk auto merge` no parâmetro *mode*: quando o modo automatico fusionado estiver ativado, uma modificação feita ao mesmo tempo que outro processo ou usuário na mesma entidade, mas em um diferente atributo, não vai resultar em um erro. Os dados resultantes salvos na entidade serão a combinação ("merge"/fusão) de todas as modificações não simultâneas (se modificações forem aplicadas ao mesmo atributo, a operação de salvar falha e um erro é retornado, mesmo com o modo auto fusão)
+> O modo automático merge não está disponível para atributos de tipo Imagem, Objeto e Texto quando armazenado fora do registro. Mudanças simultâneas nesses atributos vão resultar em um erro `dk status stamp has changed` .
 
 **Resultados**
 
-The object returned by `.save()` contains the following properties:
+O objeto retornado por `.save()` contém as propriedades a seguir:
 
-| Propriedade  |                    | Tipo                   | Descrição                                                                                                               |
-| ------------ | ------------------ | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | boolean                | True if the save action is successful, False otherwise.                                                                 |
-|              |                    |                        | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | boolean                | True if an auto merge was done, False otherwise.                                                                        |
-|              |                    |                        | ***Disponível apenas em caso de erro***:                                                                                |
-| status       |                    | number                 | Error code, [see below](#status-and-statustext)                                                                         |
-| statusText   |                    | text                   | Description of the error, [see below](#status-and-statustext)                                                           |
-|              |                    |                        | ***Available only in case of pessimistic lock error***:                                                                 |
-| lockKindText |                    | text                   | "Bloqueado pelo registro"                                                                                               |
-| lockInfo     |                    | object                 | Informações sobre a origem do bloqueio                                                                                  |
-|              | task_id            | number                 | Process ID                                                                                                              |
-|              | user_name          | text                   | Nome de usuário de sessão na máquina                                                                                    |
-|              | user4d_alias       | text                   | Pseudônimo do usuário se definido por `SET USER ALIAS`, caso contrário, nome de usuário no diretório 4D                 |
-|              | host_name          | text                   | Nome da máquina                                                                                                         |
-|              | task_name          | text                   | Nome de processo                                                                                                        |
-|              | client_version     | text                   |                                                                                                                         |
-|              |                    |                        | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
-| errors       |                    | uma coleção de objetos |                                                                                                                         |
-|              | message            | text                   | Mensagem de erro                                                                                                        |
-|              | componentSignature | text                   | Assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                    |
-|              | errCode            | number                 | Error code                                                                                                              |
+| Propriedade  |                    | Tipo                   | Descrição                                                                                                                |
+| ------------ | ------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| success      |                    | boolean                | True se a ação salvar tiver sucesso, senão False                                                                         |
+|              |                    |                        | ***Disponível só se utilizar a opção `dk auto merge`***:                                                                 |
+| autoMerged   |                    | boolean                | True se fizer uma auto merge, senão False                                                                                |
+|              |                    |                        | ***Disponível apenas em caso de erro***:                                                                                 |
+| status       |                    | number                 | Código de erro, [ver abaixo](#status-and-statustext)                                                                     |
+| statusText   |                    | text                   | Descrição do erro, [ver abaixo](#status-and-statustext)                                                                  |
+|              |                    |                        | ***Disponível só no caso de erro de tranca pessimista***:                                                                |
+| lockKindText |                    | text                   | "Bloqueado pelo registro"                                                                                                |
+| lockInfo     |                    | object                 | Informações sobre a origem do bloqueio                                                                                   |
+|              | task_id            | number                 | Process ID                                                                                                               |
+|              | user_name          | text                   | Nome de usuário de sessão na máquina                                                                                     |
+|              | user4d_alias       | text                   | Pseudônimo do usuário se definido por `SET USER ALIAS`, caso contrário, nome de usuário no diretório 4D                  |
+|              | host_name          | text                   | Nome da máquina                                                                                                          |
+|              | task_name          | text                   | Nome de processo                                                                                                         |
+|              | client_version     | text                   |                                                                                                                          |
+|              |                    |                        | ***Disponível só em caso de erro grave*** (erro sério - por exemplo tentar duplicar uma chave primária, disco cheio...): |
+| errors       |                    | uma coleção de objetos |                                                                                                                          |
+|              | message            | text                   | Mensagem de erro                                                                                                         |
+|              | componentSignature | text                   | Assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                     |
+|              | errCode            | number                 | Error code                                                                                                               |
 
-##### status and statusText
+##### status e statusText
 
-The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
+Os valores abaixo podem ser retornado nas propriedades `status` e `statusText` do objeto Result no caso de um erro:
 
 | Constante                                 | Value | Comentário                                                                                                                                                                                                                                                        |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.**Associated statusText**: "Auto merge failed"                                                                                                              |
-| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>**Associated statusText**: "Entity doesnot exist anymore"                                              |
+| `dk status automerge failed`              | 6     | (Só se utiliza a opção `dk auto merge`) A opção de fusão automática falhou ao salvar a entidade.**StatusText associado**: "Fusão automática falhou"                                                                                                               |
+| `dk status entity does not exist anymore` | 5     | A entidade não existe mais nos dados. Este erro pode ocorrer nos seguintes casos:<br/><li>a entidade foi descartada (o selo mudou e o espaço de memória é agora livre)</li><li>a entidade foi descartada e substituída por outra chave primária (o selo mudou e uma nova entidade agora usa o espaço de memória). the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). Ao usar `.lock( )`, este erro pode ser retornado quando a opção `dk reload if stamp changed" for usado</li><br/>**statusText asociado**: "A entidade já não existe"                                                    |
 | `dk status locked`                        | 3     | A entidade está bloqueada por um bloqueio pessimista.<br>**Associated statusText**: "Já bloqueado"                                                                                                                                                          |
 | `dk status serious error`                 | 4     | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc.****Texto status associado: "Outro erro"                                                                                                        |
 | `dk status stamp has changed`             | 2     | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).<br/><li>com `.save( )`: erro apenas se a opção `dk auto merge' não for utilizada</li><li>com `.drop( )`: erro apenas se a opção `dk force drop if stamp changed' não for utilizada</li><li>com `.lock( )`: erro apenas se a opção `dk reload if stamp changed` não for usada</li><br/>**Associated statusText**: "Stamp has changed" |
 
 #### Exemplo 1
 
-Creating a new entity:
+Criar uma nova entidade:
 
 ```4d
  var $status : Object
@@ -1279,7 +1279,7 @@ Creating a new entity:
 
 #### Exemplo 2
 
-Updating an entity without `dk auto merge` option:
+Atualizar uma entidade sem a opção `dk auto merge`:
 
 ```4d
  var $status : Object
@@ -1299,7 +1299,7 @@ Updating an entity without `dk auto merge` option:
 
 #### Exemplo 3
 
-Updating an entity with `dk auto merge` option:
+Atualizar uma entidade com a opção `dk auto merge` :
 
 ```4d
  var $status : Object
@@ -1339,48 +1339,48 @@ Updating an entity with `dk auto merge` option:
 
 
 <!-- REF #EntityClass.toObject().Params -->
-| Parâmetros   | Tipo       |    | Descrição                                                                                                |
-| ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------------------- |
-| filterString | Text       | -> | Attribute(s) to extract (comma-separated string)                                                         |
-| filterCol    | Collection | -> | Collection of attribute(s) to extract                                                                    |
-| options      | Integer    | -> | `dk with primary key`: adds the \_KEY property;<br/>`dk with stamp`: adds the \_STAMP property |
-| Resultados   | Objeto     | <- | Object built from the entity|<!-- END REF -->                                                  |
+| Parâmetros   | Tipo       |    | Descrição                                                                                                          |
+| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------------------------------------ |
+| filterString | Text       | -> | Atributos a extrair (string separada por vírgulas)                                                                 |
+| filterCol    | Collection | -> | Coleção de atributos a extrair                                                                                     |
+| options      | Integer    | -> | `dk with primary key`: adiciona a propriedade \_KEY;<br/>`dk with stamp`: adiciona a propriedade \_STAMP |
+| Resultados   | Objeto     | <- | Objeto criado a partir da entidade|<!-- END REF -->                                                      |
 
 #### Descrição
 
-A função `.toObject()` <!-- REF #EntityClass.toObject().Summary -->returns an object which has been built from the entity<!-- END REF -->. Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
+A função `.toObject()` <!-- REF #EntityClass.toObject().Summary -->retorna um objeto que foi feito a partir da entidade<!-- END REF -->. Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
 
-If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
+Se nenhum filtro for especificado ou se o parâmetro *filterString* conter uma string vazia ou  "*", o objeto retornado vai conter:
 
-* all storage entity attributes
-* attributes of the `relatedEntity` [kind](DataClassAttributeClass.md#kind): you get a property with the same name as the related entity (name of the many-to-one link). Attribute is extracted with the simple form.
-* attributes of the `relatedEntities` [kind](DataClassAttributeClass.md#kind): attribute is not returned.
+* todos os atributos de entidade de armazenagem
+* atributos `relatedEntity` [kind](DataClassAttributeClass.md#kind): obtém uma propriedade com o mesmo nome que a entidade relacionada (nome do link muitos para um). Atributo é extraido com um formulário simples.
+* atributos `relatedEntities` [kind](DataClassAttributeClass.md#kind): atributo não é retornado.
 
-In the first parameter, you pass the entity attribute(s) to extract. Pode passar:
+No primeiro par|âmetro, passa os atributos entidade a extrair. Pode passar:
 
-* *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
-* *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
+* *filterString*: uma string com rotas de propriedades separadas por vírgulas: "propertyPath1, propertyPath2, ...", ou
+* *filterCol*: uma coleção de strings: \["propertyPath1","propertyPath2";...]
 
-If a filter is specified for attributes of the relatedEntity [kind](DataClassAttributeClass.md#kind):
+Se um filtro for especificado para atributos de relatedEntity [kind](DataClassAttributeClass.md#kind):
 
-* propertyPath = "relatedEntity" -> it is extracted with simple form: an object with property \_\_KEY (primary key).
-* propertyPath = "relatedEntity.*" -> all the properties are extracted
-* propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> only those properties are extracted
+* propertyPath = "relatedEntity" -> se extrai de forma simples: um objeto com a propriedade \_\_KEY (chave primária).
+* propertyPath = "relatedEntity.*" -> todas as propriedades foram extraídas
+* propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> só se extraem essas propriedades
 
-If a filter is specified for attributes of the relatedEntities [kind](DataClassAttributeClass.md#kind):
+Se um filtro for especificado para atributos de relatedEntities [kind](DataClassAttributeClass.md#kind):
 
-* propertyPath = "relatedEntities.*" -> all the properties are extracted
-* propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> only those properties are extracted
+* propertyPath = "relatedEntities.*" -> se extraem todas as propriedades
+* propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> só se extraem essas propriedades
 
-In the *options* parameter, you can pass the `dk with primary key` and/or`dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+No parâmetro *options* pode passar o selector `ddk with primary key` ou`dk with stamp` para adicionar as chaves primárias da entidade ou os selos nos objetos extraídos.
 
 #### Exemplo 1
 
-The following structure will be used throughout all examples of this section:
+A estrutura abaixo será usada nos exemplos desta seção:
 
 ![](../assets/en/API/dataclassAttribute4.png)
 
-Without filter parameter:
+Sem parâmetros de filtro:
 
 ```4d
 employeeObject:=employeeSelected.toObject()
@@ -1411,7 +1411,7 @@ Retorna:
 
 #### Exemplo 2
 
-Extracting the primary key and the stamp:
+Extrair a chave primária e a estampa:
 
 ```4d
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
@@ -1444,7 +1444,7 @@ Retorna:
 
 #### Exemplo 3
 
-Expanding all the properties of `relatedEntities`:
+Expande todas as propriedades de `relatedEntities`:
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1513,7 +1513,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 
 #### Exemplo 4
 
-Extracting some properties of `relatedEntities`:
+Extração de algumas propriedades de `relatedEntities`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
@@ -1540,7 +1540,7 @@ Retorna:
 
 #### Exemplo 5
 
-Extracting a `relatedEntity` with simple form:
+Extrair `relatedEntity` com formulário simples:
 
 ```4d
  $coll:=New collection("firstName";"employer")
@@ -1560,7 +1560,7 @@ Retorna:
 
 #### Exemplo 6
 
-Extracting all the properties of a `relatedEntity`:
+Expande todas as propriedades de `relatedEntity`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
@@ -1582,7 +1582,7 @@ Retorna:
 
 #### Exemplo 7
 
-Extracting some properties of a `relatedEntity`:
+Extração de algumas propriedades de `relatedEntity`:
 
 ```4d
  $col:=New collection
@@ -1622,21 +1622,21 @@ Retorna:
 
 
 <!-- REF #EntityClass.touched().Params -->
-| Parâmetros | Tipo     |    | Descrição                                                                                                        |
-| ---------- | -------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
-| Resultados | Booleano | <- | True if at least one entity attribute has been modified and not yet saved, else False|<!-- END REF --> |
+| Parâmetros | Tipo     |    | Descrição                                                                                                                 |
+| ---------- | -------- |:--:| ------------------------------------------------------------------------------------------------------------------------- |
+| Resultados | Booleano | <- | True se tiver modificado ao menos um atributo da entidade e ainda não for salvo, se não, False|<!-- END REF --> |
 
 #### Descrição
 
-A função `.touched()` <!-- REF #EntityClass.touched().Summary -->tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved<!-- END REF -->.
+A função `.touched()` <!-- REF #EntityClass.touched().Summary -->comprova se um atributo da entidade tiver sido modificado ou não desde que se carregou a entidade na memória ou se salvou<!-- END REF -->.
 
-If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
+Se um atributo for modificado ou calculado, a função retorna True, senão retorna False. Pode usar essa função para determinar se precisar salvar a entidade.
 
-This function returns False for a new entity that has just been created (with [`.new( )`](DataClassClass.md#new)). Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
+Esta função retorna False para uma nova entidade que foi criada (com [`.new( )`](DataClassClass.md#new)). Note entretanto que se usar uma função que calcule um atributo da entidade, a função `.touched()` vai retornar True. Por exemplo se chamar [`.getKey()`](#getkey) para calcular a chave primária, `.touched()` retorna True.
 
 #### Exemplo
 
-In this example, we check to see if it is necessary to save the entity:
+Neste exemplo, vemos se é necessário salvar a entidade:
 
 ```4d
  var $emp : cs. EmployeeEntity
@@ -1668,19 +1668,19 @@ In this example, we check to see if it is necessary to save the entity:
 
 
 <!-- REF #EntityClass.touchedAttributes().Params -->
-| Parâmetros | Tipo       |    | Descrição                                                                   |
-| ---------- | ---------- |:--:| --------------------------------------------------------------------------- |
-| Resultados | Collection | <- | Names of touched attributes, or empty collection|<!-- END REF --> |
+| Parâmetros | Tipo       |    | Descrição                                                             |
+| ---------- | ---------- |:--:| --------------------------------------------------------------------- |
+| Resultados | Collection | <- | Nomes de atributos touched ou coleção vazia<!-- END REF --> |
 
 #### Descrição
 
-A função `.touchedAttributes()` <!-- REF #EntityClass.touchedAttributes().Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
+A função `.touchedAttributes()` <!-- REF #EntityClass.touchedAttributes().Summary -->retorna os nomes dos atributos que foram modificados desde que a entidade foi carregada na memória<!-- END REF -->.
 
-This applies for attributes of the [kind](DataClassAttributeClass.md#kind) `storage` or `relatedEntity`.
+Isso aplica para atributos do [tipo](DataClassAttributeClass.md#kind) `storage` ou `relatedEntity`.
 
-In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.
+No caso de uma entidade relacionada que foi tocada (touched) *ou seja, a chave primária) o nome da entidade relacionada e sua chave primária são retornados.
 
-If no entity attribute has been touched, the method returns an empty collection.
+Se nenhum atributo de entidade for tocado, o método retorna uma coleção vazia.
 
 #### Exemplo 1
 
@@ -1719,9 +1719,9 @@ If no entity attribute has been touched, the method returns an empty collection.
 
 Nesse modo:
 
-* firstName and lastName have a `storage` kind
-* employer has a `relatedEntity` kind
-* employerID is the foreign key of the employer related entity
+* firstName and lastName tem um tipo `storage`
+* employer tem um tipo `relatedEntity`
+* employerID é a chave estrangeira da entidade relacionada employer
 
 <!-- END REF -->
 
@@ -1748,12 +1748,12 @@ Nesse modo:
 
 #### Descrição
 
-A função `.unlock()` <!-- REF #EntityClass.unlock().Summary -->removes the pessimistic lock on the record matching the entity<!-- END REF --> in the datastore and table related to its dataclass.
+A função `.unlock()` <!-- REF #EntityClass.unlock().Summary -->remove a tranca pessimista no registro correspondente à entidade<!-- END REF --> na datastore e tabela relacionada a dataclasse.
 
-> For more information, please refer to [Entity locking](ORDA/entities.md#entity-locking) section.
+> Para saber mais veja [Entity locking](ORDA/entities.md#entity-locking).
 
-A record is automatically unlocked when it is no longer referenced by any entities in the locking process (for example: if the lock is put only on one local reference of an entity, the entity and thus the record is unlocked when the process ends).
-> When a record is locked, it must be unlocked from the locking process and on the entity reference which put the lock. Por exemplo:
+Um registro é destrancado automaticamente quando não for mais referenciado por nenhuma entidade no processo de trancamento (por exemplo, se uma tranca for posta apenas na referência local da entidade, a entidade e o registro é destrancado quando o processo terminar).
+> Quando um registro for trancado, deve ser destrancado do processo de trancamento e na referência de entidade que colocou a tranca. Por exemplo:
 
 ```4d
  $e1:=ds. Emp.all()[0]
@@ -1765,11 +1765,11 @@ A record is automatically unlocked when it is no longer referenced by any entiti
 
 **Resultados**
 
-The object returned by `.unlock()` contains the following property:
+O objeto retornado por `.unlock()` contém a propriedade abaixo:
 
-| Propriedade | Tipo     | Descrição                                                                                                                                                                                          |
-| ----------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success     | Booleano | True if the unlock action is successful, False otherwise. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
+| Propriedade | Tipo     | Descrição                                                                                                                                                                                                                                     |
+| ----------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success     | Booleano | Verdadeiro se a ação de destrancar for bem-sucedida, Falso caso contrário. Se o desbloqueio for feito em uma entidade abandonada, em um registro não bloqueado ou em um registro bloqueado por outro processo ou entidade, o sucesso é False. |
 
 #### Exemplo
 
