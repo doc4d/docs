@@ -28,7 +28,7 @@ When [**User settings** mode is enabled](../Desktop/user-settings.md), **Setting
 Locking can occur in both Project and Client/server modes when:
 
 -   The *settings.4DSettings* file is 'Read-only' (Projects only). Al modificar un parámetro se mostrará una alerta para desbloquearlo, si es posible.
--   Dos o más usuarios intentan modificar los mismos parámetros al tiempo. The settings cannot be used until the first user frees it by closing the window. (Cliente/servidor únicamente)
+-   Dos o más usuarios intentan modificar los mismos parámetros al tiempo. Los parámetros no pueden utilizarse hasta que el primer usuario los libere cerrando la ventana. (Cliente/servidor únicamente)
 
 In both cases, the settings can be opened in 'Read-only', but cannot be used until the lock is removed.
 
@@ -49,6 +49,6 @@ La mayoría de los parámetros se aplican inmediatamente. However, a few of them
 
 ## Reinicialización de los parámetros
 
-To reset the parameters to their default values and remove the bold style indicating that they have been customized, click **Reset to factory settings**.
+Para reiniciar los parámetros a sus valores por defecto y eliminar el estilo negrita que indica que han sido personalizados, haga clic en **Restablecer los valores de fábrica**.
 
 Este botón reinicializa todos los parámetros de la página actual. Se activa cuando se ha modificado al menos un parámetro en la página actual.
