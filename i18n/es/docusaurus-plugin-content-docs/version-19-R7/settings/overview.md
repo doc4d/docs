@@ -42,7 +42,7 @@ In the Settings dialog boxes, parameters whose values have been modified appear 
 
 Parameters indicated as customized may have been modified directly in the dialog box, or may have been modified previously in the case of a converted project.
 
-A parameter still appears in bold even when its value is replaced manually with its default values. This way it is always possible to visually identify any parameters that have been customized.
+Un parámetro sigue apareciendo en negrita aunque su valor se remplace manualmente por sus valores por defecto. De este modo, siempre es posible identificar visualmente los parámetros que se hayan personalizado.
 
 La mayoría de los parámetros se aplican inmediatamente. However, a few of them (such as the Startup environment setting) only take effect when the database is restarted. In this case, a dialog box appears to inform you that the change will take effect at the next startup.
 
