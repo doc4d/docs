@@ -3,7 +3,29 @@ id: updates
 title: リリースノート
 ---
 
-## 4D v19 R7
+## 4D v19 R8
+
+Read [**What’s new in 4D v19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-r8/), the blog post that lists all new features and enhancements in 4D v19 R8.
+
+
+#### ハイライト
+
+-
+- 4D Language classic: [What's new page](XXX) on doc.4d.com.
+- 4D Write Pro: [What's new page](XXX) on doc.4d.com.
+- [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=19_R8): list of all bugs that have been fixed in 4D v19 R8.
+
+
+#### 動作の変更
+
+- When a [bevel button with linked pop-up menu](../FormObjects/properties_TextAndPicture.md/#with-pop-up-menu) is assigned a standard action, the standard action is no longer generated if a pop-up menu option is selected.
+
+
+## 過去のリリース
+
+<details><summary>過去のリリースについてはこちらをクリックしてください。</summary>
+
+### 4D v19 R7
 
 [**4D v19 R7 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v19-r7/): 4D v19 R7 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -30,10 +52,6 @@ title: リリースノート
 
     特定の 4Dバージョンは、ブランチ名とビルド番号により一意に識別されます。 ビルド番号は時系列に増加します。
 
-
-## 過去のリリース
-
-<details><summary>過去のリリースについてはこちらをクリックしてください。</summary>
 
 ### 4D v19 R6
 
