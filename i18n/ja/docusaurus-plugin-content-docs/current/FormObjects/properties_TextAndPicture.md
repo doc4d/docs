@@ -213,13 +213,13 @@ title: テキスト、ピクチャー
 
 :::info
 
-Refer to the [`On Alternative Click` event description](../Events/onAlternativeClick.md) for more information on the handling of events in this case.
+この場合のイベントの扱いについての詳細は、[`On Alternative Click` イベントの説明](../Events/onAlternativeClick.md) を参照ください。
 
 :::
 
 ### ポップアップメニューの管理
 
-"ポップアップメニューあり" プロパティは、ボタンのグラフィック面だけを管理するという点に注意が必要です。 The display of the pop-up menu and its values must be handled entirely by the developer, more particularly using `form events` and the [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page1006.html) and [`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page542.html) commands.
+"ポップアップメニューあり" プロパティは、ボタンのグラフィック面だけを管理するという点に注意が必要です。 ポップアップメニューとその値の表示は、すべて開発者が処理しなくてはなりません。具体的にはフォームイベントや [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/ja/page1006.html)、[`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/ja/page542.html) コマンドを使用してこれを処理します。
 
 #### JSON 文法
 
