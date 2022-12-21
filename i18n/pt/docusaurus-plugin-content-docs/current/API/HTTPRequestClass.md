@@ -107,7 +107,7 @@ Em *url*, passe o URL para onde pretende enviar o pedido. A sintaxe a utilizar �
 {https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
 
-Se omitir a parte do protocolo (` <code>` ou</code>), é enviado um pedido https.
+Se omitir a parte do protocolo (`http://` ou `https://`), é enviado um pedido https.
 
 Por exemplo, pode passar as seguintes cordas:
 
