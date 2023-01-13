@@ -289,10 +289,10 @@ End if
 
 <details><summary>履歴</summary>
 
-| バージョン  | 内容                                   |
-| ------ | ------------------------------------ |
-| v19 R8 | Support of "roles" Settings property |
-| v18 R6 | 追加                                   |
+| バージョン  | 内容               |
+| ------ | ---------------- |
+| v19 R8 | roles プロパティをサポート |
+| v18 R6 | 追加               |
 
 </details>
 
@@ -326,19 +326,25 @@ End if
 
 :::info
 
-Privileges and roles are defined in [`roles.json`](../ORDA/privileges.md#rolesjson-file) file of the project. For more information, please refer to the [**Privileges**](../ORDA/privileges.md) section.
+権限とロールは、プロジェクトの [`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで定義されます。 詳細については、
+
+権限** を参照してください。</p> 
 
 :::
 
-If the `privileges` or `roles` property contains a name that is not declared in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file, it is ignored.
+`privileges` または `roles` プロパティに、[`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで宣言されていない名前が含まれている場合、その名前は無視されます。
 
-By default when no privilege or role is associated to the session, the session is a [Guest session](#isguest).
+セッションにアクセス権またはロールが紐づいていない場合、そのセッションはデフォルトで [ゲストセッション](#isguest) です。
 
 [`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
+
+
 
 #### 例題
 
 カスタムな認証メソッドにおいて、ユーザーに "WebAdmin" アクセス権を付与します:
+
+
 
 ```4d
 var $userOK : Boolean
@@ -366,6 +372,7 @@ End if
 | ------ | -- |
 | v18 R6 | 追加 |
 
+
 </details>
 
 <!-- REF #SessionClass.storage.Syntax -->**.storage** : Object<!-- END REF -->
@@ -376,13 +383,19 @@ End if
 
 `Session` オブジェクトの作成時には、`.storage` プロパティは空です。 共有オブジェクトのため、このプロパティはサーバー上の `Storage` オブジェクトにおいて利用可能です。
 
+
+
 > サーバーの `Storage` オブジェクトと同様に、`.storage` プロパティは常に "single" で存在します。 共有オブジェクトや共有コレクションを `.storage` に追加しても、共有グループは作成されません。
 
 このプロパティは **読み取り専用** ですが、戻り値のオブジェクトは読み書き可能です。
 
+
+
 #### 例題
 
 クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように書けます:
+
+
 
 ```4d
 If (Session.storage.clientIP=Null) // 最初のアクセス
@@ -407,6 +420,7 @@ End if
 | バージョン  | 内容 |
 | ------ | -- |
 | v18 R6 | 追加 |
+
 
 </details>
 
