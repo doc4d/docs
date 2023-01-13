@@ -202,7 +202,7 @@ ORDA オブジェクトとは関わりのないユーザークラス。
 
 ## リソース
 
-An ORDA element on which any [action](#action) can be allowed or not according to a [privilege](#privilege). Available resources are: the datastore, a dataclass, a dataclass attribute, an ORDA Data model function, or a project method.
+[権限](#権限) における [アクション](#アクション) の許可・拒否の対象となる ORDA 要素。 利用可能なリソースは、データストア、データクラス、データクラス属性、ORDAデータモデル関数、プロジェクトメソッドのいずれかです。
 
 
 ## ロール
