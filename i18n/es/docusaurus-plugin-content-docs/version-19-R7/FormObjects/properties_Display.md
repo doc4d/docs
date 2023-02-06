@@ -13,7 +13,7 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 Puede elegir un formato de esta lista o utilizar cualquier formato personalizado. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Los formatos o filtros personalizados que haya creado estarán disponibles automáticamente, precedidos de una barra vertical (|).
 
-El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
+El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. Utilice los signos de puntuación que desee y el signo número para cada caracter que desee mostrar.
 
 Por ejemplo, considere un número de parte con un formato como "RB-1762-1".
 
@@ -27,7 +27,7 @@ Cuando el usuario introduce "RB17621," el campo muestra:
 
 El campo contiene realmente "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. Por ejemplo, si el formato es:
+Si el usuario introduce más caracteres de los que permite el formato, 4D muestra los últimos caracteres. Por ejemplo, si el formato es:
 
  (#######)
 
@@ -35,7 +35,7 @@ y el usuario introduce "proporción", el campo muestra:
 
  (portion)
 
-El campo contiene realmente "proportion". 4D accepts and stores the entire entry no matter what the display format. No se pierde ninguna información.
+El campo contiene realmente "proportion". 4D acepta y almacena la entrada completa sin importar el formato de visualización. No se pierde ninguna información.
 
 #### Gramática JSON
 
@@ -45,13 +45,13 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 
 #### Objetos soportados
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Lista desplegable](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
 
 ---
 
 ## Formato Fecha
 
-Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. Para la entrada de datos, las fechas se introducen en el formato MM/DD/AAAA, independientemente del formato de visualización que haya elegido.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
 La siguiente tabla muestra las opciones disponibles:
