@@ -186,9 +186,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -272,9 +272,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -371,9 +371,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo 1
 
@@ -471,9 +471,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -550,9 +550,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo 1
 
@@ -648,9 +648,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -718,9 +718,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -1223,9 +1223,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo 1
 
@@ -1399,9 +1399,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -1468,9 +1468,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -1744,9 +1744,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
@@ -1815,9 +1815,9 @@ The function returns an object describing the IMAP status:
 | success     |                         | Booleano   | True if the operation is successful, False otherwise                                     |
 | statusText  |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors      |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
-|             | \[].errcode            | Número     | 4D error code                                                                            |
-|             | \[].message            | Text       | Description of the 4D error                                                              |
-|             | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
+|             | \[].errcode            | Número     | Código de erro 4D                                                                        |
+|             | \[].message            | Text       | Descrição do erro 4D                                                                     |
+|             | \[].componentSignature | Text       | Assinatura da componente interna que devolveu o erro                                     |
 
 #### Exemplo
 
