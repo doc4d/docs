@@ -13,7 +13,7 @@ Alpha formats control the way the alphanumeric fields and variables appear when 
 
 Puede elegir un formato de esta lista o utilizar cualquier formato personalizado. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. En este caso, el formato no se puede modificar en las propiedades del objeto. Los formatos o filtros personalizados que haya creado estarán disponibles automáticamente, precedidos de una barra vertical (|).
 
-El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
+El signo número (#) es el marcador de posición para un formato de visualización alfanumérico. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. Utilice los signos de puntuación que desee y el signo número para cada caracter que desee mostrar.
 
 Por ejemplo, considere un número de parte con un formato como "RB-1762-1".
 
@@ -27,7 +27,7 @@ Cuando el usuario introduce "RB17621," el campo muestra:
 
 El campo contiene realmente "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. Por ejemplo, si el formato es:
+Si el usuario introduce más caracteres de los que permite el formato, 4D muestra los últimos caracteres. Por ejemplo, si el formato es:
 
  (#######)
 
@@ -35,7 +35,7 @@ y el usuario introduce "proporción", el campo muestra:
 
  (portion)
 
-El campo contiene realmente "proportion". 4D accepts and stores the entire entry no matter what the display format. No se pierde ninguna información.
+El campo contiene realmente "proportion". 4D acepta y almacena la entrada completa sin importar el formato de visualización. No se pierde ninguna información.
 
 #### Gramática JSON
 
@@ -45,14 +45,14 @@ El campo contiene realmente "proportion". 4D accepts and stores the entire entry
 
 #### Objetos soportados
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Lista desplegable](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
 
 ---
 
 ## Formato Fecha
 
-Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
-> Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
+Los formatos de fecha controlan la forma en que aparecen las fechas cuando se muestran o imprimen. Para la entrada de datos, las fechas se introducen en el formato MM/DD/AAAA, independientemente del formato de visualización que haya elegido.
+> A diferencia de los formatos [Alfa](#alpha-format) y [Número](#number-format), los formatos de visualización de fechas sólo deben seleccionarse entre los formatos integrados en 4D.
 
 La siguiente tabla muestra las opciones disponibles:
 
@@ -68,12 +68,12 @@ La siguiente tabla muestra las opciones disponibles:
 | Internal date short           | short           | 03/25/2020                     |
 | ISO Date Time *(3)*           | iso8601         | 2020-03-25T00:00:00            |
 
-*(1)* To avoid ambiguity and in accordance with current practice, the abbreviated date formats display "jun" for June and "jul" for July. Esta particularidad sólo se aplica a las versiones francesas de 4D.
+*(1)* Para evitar ambigüedades y de acuerdo con la práctica actual, los formatos de fecha abreviados muestran "jun" para junio y "jul" para julio. Esta particularidad sólo se aplica a las versiones francesas de 4D.
 
-*(2)* The year is displayed using two digits when it belongs to the interval (1930;2029) otherwise it will be displayed using four digits. This is by default but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html) command.
+*(2)* El año se muestra con dos dígitos cuando pertenece al intervalo (1930;2029), de lo contrario se mostrará con cuatro dígitos. Esto es por defecto pero puede modificarse utilizando el comando [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html).
 
-*(3)* The `ISO Date Time` format corresponds to the XML date and time representation standard (ISO8601). It is mainly intended to be used when importing/exporting data in XML format and in Web Services.
-> Regardless of the display format, if the year is entered with two digits then 4D assumes the century to be the 21st if the year belongs to the interval (00;29) and the 20th if it belongs to the interval (30;99). Esta es la configuración por defecto, pero puede ser modificada utilizando el comando [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html).
+*(3)* El formato `ISO Date Time` corresponde a la norma XML de representación de fecha y hora (ISO8601). Está pensado principalmente para ser utilizado al importar/exportar datos en formato XML y en Servicios Web.
+> Independientemente del formato de visualización, si el año se introduce con dos dígitos, 4D asume que el siglo es el 21 si el año pertenece al intervalo (00;29) y el 20 si pertenece al intervalo (30;99). Esta es la configuración por defecto, pero puede ser modificada utilizando el comando [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html).
 
 #### Gramática JSON
 
@@ -88,15 +88,15 @@ La siguiente tabla muestra las opciones disponibles:
 ---
 
 ## Formato de número
-> Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
+> Los campos numéricos incluyen los tipos Integer, Long integer, Integer 64 bits, Real y Float.
 
-Los formatos numéricos controlan la forma en que aparecen los números cuando se muestran o imprimen. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
+Los formatos numéricos controlan la forma en que aparecen los números cuando se muestran o imprimen. Para la entrada de datos, sólo se introducen los números (incluido el punto decimal o el signo menos si es necesario), independientemente del formato de visualización que se haya elegido.
 
 4D ofrece varios formatos de números por defecto.
 
 ### Marcadores
 
-In each of the number display formats, the number sign (#), zero (0), caret (^), and asterisk (*) are used as placeholders. You create your own number formats by using one placeholder for each digit you expect to display.
+En cada uno de los formatos de visualización de números, el signo número (#), el cero (0), el signo de intercalación (^) y el asterisco (*) se utilizan como marcadores de posición. Puede crear sus propios formatos numéricos utilizando un marcador de posición para cada dígito que desee mostrar.
 
 | Marcador | Efecto para cero inicial o posterior |
 | -------- | ------------------------------------ |
@@ -105,14 +105,14 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 | ^        | Muestra un espacio (1)               |
 | *        | Muestra un asterisco                 |
 
-(1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
+(1) El signo de intercalación (^) genera un caracter de espacio que ocupa el mismo ancho que un dígito en la mayoría de los tipos de fuente.
 
-For example, if you want to display three-digit numbers, you could use the format ###. If the user enters more digits than the format allows, 4D displays <<< in the field to indicate that more digits were entered than the number of digits specified in the display format.
+Por ejemplo, si desea mostrar números de tres digitos, puede utilizar el formato ###. Si el usuario introduce más dígitos de los que permite el formato, 4D muestra <<< en el campo para indicar que se han introducido más dígitos de los especificados en el formato de visualización.
 
-If the user enters a negative number, the leftmost character is displayed as a minus sign (unless a negative display format has been specified). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
-> No matter what the display format, 4D accepts and stores the number entered in the field. No se pierde ninguna información.
+Si el usuario introduce un número negativo, el caracter situado más a la izquierda se muestra como un signo menos (a menos que se haya especificado un formato de visualización negativo). Si ##0 es el formato, menos 26 se muestra como -26 y menos 260 se muestra como <<< porque el signo menos ocupa un marcador de posición y sólo hay tres marcadores de posición.
+> Sea cual sea el formato de visualización, 4D acepta y almacena el número introducido en el campo. No se pierde ninguna información.
 
-Each placeholder character has a different effect on the display of leading or trailing zeros. Un cero inicial es un cero que comienza un número antes del punto decimal; un cero final es un cero que termina un número después del punto decimal.
+Cada caracter de marcador de posición tiene un efecto diferente en la visualización de ceros a la izquierda o a la derecha. Un cero inicial es un cero que comienza un número antes del punto decimal; un cero final es un cero que termina un número después del punto decimal.
 
 Supongamos que usa el formato ##0 para mostrar tres dígitos. Si el usuario no introduce nada en el campo, el campo muestra 0. Si el usuario introduce 26, el campo muestra 26.
 
@@ -275,7 +275,7 @@ El formato **Truncado (no centrado)** hace que 4D coloque la esquina superior iz
 
 When you use **Scaled to fit (proportional)**, the picture is reduced proportionally on all sides to fit the area created for the picture. The **Scaled to fit centered (proportional)** option does the same, but centers the picture in the picture area.
 
-If the picture is smaller than the area set in the form, it will not be modified. If the picture is bigger than the area set in the form, it is proportionally reduced. Como se reduce proporcionalmente, la imagen no aparecerá distorsionada.
+Si la imagen es más pequeña que el área definida en el formulario, no se modificará. Si la imagen es mayor que el área definida en el formulario, se reduce proporcionalmente. Como se reduce proporcionalmente, la imagen no aparecerá distorsionada.
 
 If you have applied the **Scaled to fit centered (proportional)** format, the picture is also centered in the area:
 
@@ -285,11 +285,11 @@ If you have applied the **Scaled to fit centered (proportional)** format, the pi
 
 `Gramática JSON: "tiled"`
 
-When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
+Cuando se amplía el área que contiene una imagen con el formato **Replicada**, la imagen no se deforma sino que se replica tantas veces como sea necesario para llenar el área por completo.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
 
-If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
+Si el campo se reduce a un tamaño menor que el de la imagen original, la imagen queda truncada (no centrada).
 
 #### Gramática JSON
 
@@ -299,14 +299,14 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 #### Objetos soportados
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
 
 ---
 
 ## Formato Hora
 
 Los formatos de hora controlan la forma en que aparecen las horas cuando se muestran o imprimen. For data entry, you enter times in the 24-hour HH: MM:SS format or the 12-hour HH: MM:SS AM/PM format, regardless of the display format you have chosen.
-> Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for times must only be selected among the 4D built-in formats.
+> A diferencia de los formatos [Alfa](#alpha-format) y [Número](#number-format), los formatos de visualización de las horas sólo deben seleccionarse entre los formatos integrados en 4D.
 
 La siguiente tabla muestra los formatos de visualización de los campos de hora y da ejemplos:
 
@@ -567,4 +567,4 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Objetos soportados
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
