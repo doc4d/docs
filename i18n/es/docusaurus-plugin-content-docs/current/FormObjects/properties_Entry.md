@@ -286,9 +286,9 @@ Para ver una lista de todos los métodos abreviados utilizados en el entorno Dis
 
 Permite el paso directo al modo de edición en list boxes.
 
-Cuando esta opción está activada, las celdas del list box cambian al modo de edición tras un solo clic del usuario, independientemente de si esta área del list box estaba seleccionada de antemano o no. Note that this option allows cells to be edited even when the list box [selection mode](properties_ListBox.md#selection-mode) is set to "None".
+Cuando esta opción está activada, las celdas del list box cambian al modo de edición tras un solo clic del usuario, independientemente de si esta área del list box estaba seleccionada de antemano o no. Tenga en cuenta que esta opción permite editar celdas incluso cuando el list box [modo selección](properties_ListBox.md#selection-mode) está en "Ninguno".
 
-When this option is not enabled, users must first select the cell row and then click on a cell in order to edit its contents.
+Cuando esta opción no está activa, los usuarios deben seleccionar primero la línea de celdas y luego, hacer clic en una celda para editar su contenido.
 
 #### Gramática JSON
 
