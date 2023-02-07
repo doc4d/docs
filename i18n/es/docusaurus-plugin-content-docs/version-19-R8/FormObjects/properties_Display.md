@@ -362,9 +362,9 @@ Cuando una [expresión booleana](properties_Object.md#expression-type) se muestr
 
 ## Tipo de visualización
 
-Utilizado para asociar un formato de visualización con los datos de la columna. The formats provided depends on the variable type (array type list box) or the data/field type (selection and collection type list boxes).
+Utilizado para asociar un formato de visualización con los datos de la columna. Los formatos suministrados dependen del tipo de variable (list box de tipo array) o del tipo dato/campo (list boxes de tipo selección y colección).
 
-Boolean and number (numeric or integer) columns can be displayed as check boxes. In this case, the [Title](#title) property can be defined.
+Las columnas booleanas y numéricas (números o enteros) pueden mostrarse como casillas de verificación. En este caso, se puede definir la propiedad [Título](#title).
 
 Las columnas booleanas también pueden mostrarse como menús emergentes. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
 
@@ -382,7 +382,7 @@ Las columnas booleanas también pueden mostrarse como menús emergentes. In this
 
 ## No renderizado
 
-When this property is enabled, the object is not drawn on the form, however it can still be activated.
+Cuando esta propiedad está activada, el objeto no se dibuja en el formulario, sin embargo aún puede activarse.
 
 En particular, esta propiedad permite implementar botones "invisibles".  Los botones no renderizados pueden colocarse sobre los objetos gráficos. Permanecen invisibles y no se resaltan al hacer clic sobre ellos, pero su acción se activa a al pulsarlos.
 
@@ -460,11 +460,11 @@ Esta opción está disponible para columnas con cualquier tipo de contenido, exc
  ![](../assets/en/FormObjects/property_truncate1.png)
 > La posición de la elipsis depende del sistema operativo. En el ejemplo anterior (Windows), se añade a la derecha del texto. En macOS, la elipsis se añade en medio del texto.
 
-* When the property is disabled, if the contents of a cell exceed the width of the column, they are simply clipped with no ellipsis added:
+* Cuando la propiedad está desactivada, si el contenido de una celda excede el ancho de la columna, simplemente se recorta sin añadir elipsis:
 
  ![](../assets/en/FormObjects/property_truncate2.png)
 
-The Truncate with ellipsis option is enabled by default and can be specified with list boxes of the Array, Selection, or Collection type.
+La opción Truncar con elipsis está activada por defecto y puede especificarse con list boxes de tipo Array, Selección o Colección.
 
 > When applied to Text type columns, the Truncate with ellipsis option is available only if the [Wordwrap](#wordwrap) option is not selected. When the Wordwrap property is selected, extra contents in cells are handled through the word-wrapping features so the Truncate with ellipsis property is not available.
 
@@ -489,20 +489,20 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 
 Esta propiedad permite ocultar el objeto en el entorno Aplicación.
 
-Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
+Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. En este contexto, a menudo es necesario ocultar objetos por programación durante el evento `On load` del formulario y luego mostrar determinados objetos. In this context, it is often necessary to hide objects programatically during the `On load` event of the form then to display certain objects afterwards. The Visibility property allows inverting this logic by making certain objects invisible by default.
 
 #### Visibilidad automática en los formularios lista
 
 In the context of ["list" forms](FormEditor/properties_FormProperties.md#form-type), the Visibility property supports two specific values:
 
 * **Si registro seleccionado** (nombre JSON: "selectedRows")
-* **If record not selected** (JSON name: "unselectedRows")
+* **Si el registro no está seleccionado** (nombre JSON: "unselectedRows")
 
-Esta propiedad sólo se utiliza cuando se dibujan objetos situados en el cuerpo de un formulario listado. It tells 4D whether or not to draw the object depending on whether the record being processed is selected/not selected. It allows you to represent a selection of records using visual attributes other than highlight colors:
+Esta propiedad sólo se utiliza cuando se dibujan objetos situados en el cuerpo de un formulario listado. Indica a 4D si debe o no dibujar el objeto dependiendo de si el registro que se está procesando está seleccionado/no seleccionado. Permite representar una selección de registros utilizando atributos visuales distintos de los colores de resaltado:
 
 ![](../assets/en/FormObjects/select-row.png)
 
-4D does not take this property into account if the object was hidden using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv19/help/command/en/page603.html) command; in this case, the object remains invisible regardless of whether or not the record is selected.
+4D no tiene en cuenta esta propiedad si el objeto se ocultó utilizando el comando [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv19/help/command/en/page603.html); en este caso, el objeto permanece invisible independientemente de si el registro está seleccionado o no.
 
 #### Gramática JSON
 
