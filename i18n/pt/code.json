@@ -30,7 +30,7 @@
     "message": "Handling code"
   },
   "Debugging": {
-    "message": "Debugging"
+    "message": "Depuração"
   },
   "Settings": {
     "message": "Settings"
@@ -163,7 +163,7 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
+    "message": "Tente novamente",
     "description": "The label of the button to try again when the page crashed"
   },
   "theme.NotFound.title": {
@@ -255,7 +255,7 @@
     "description": "The ARIA label for the navbar color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
+    "message": "modo escuro",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
