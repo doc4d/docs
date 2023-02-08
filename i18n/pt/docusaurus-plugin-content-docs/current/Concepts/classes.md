@@ -72,7 +72,7 @@ Na página **Métodos** do Explorador, as classes estão agrupadas na categoria 
 Para criar uma nova classe, pode:
 
 - seleccionar a categoria **Classes** e clicar no botão ![](../assets/en/Users/PlussNew.png) .
-- seleccionar **Nova Classe...** no menu de acção na parte inferior da janela do Explorer, ou no menu contextual do grupo Classes. ![](../assets/pt/Concepts/newClass.png)
+- seleccionar **Nova Classe...** no menu de acção na parte inferior da janela do Explorer, ou no menu contextual do grupo Classes. ![](../assets/en/Concepts/newClass.png)
 - seleccionar **Novo > Classe...** a partir do menu contextual da página inicial do Explorador.
 
 #### Suporte de código de classe
