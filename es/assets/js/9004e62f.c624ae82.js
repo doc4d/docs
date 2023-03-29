@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[5856],{93873:t=>{t.exports=JSON.parse('{"title":"Getting Started","image":"/img/docusaurus.png","keywords":["start"],"slug":"/category/getting-started","permalink":"/docs/es/next/category/getting-started","navigation":{"next":{"title":"Instalaci\xf3n","permalink":"/docs/es/next/GettingStarted/installation"}}}')}}]);
