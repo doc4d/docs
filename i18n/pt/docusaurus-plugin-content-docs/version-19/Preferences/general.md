@@ -1,13 +1,13 @@
 ---
 id: general
-title: Página Geral
+title: General Page
 ---
 
 This page contains various options to configure the general operation of your 4D application.
 
 ## Options
 
-### Na inicialização
+### At startup
 
 This option allows you to configure the default 4D display at startup, when the user launches only the application.
 
@@ -18,11 +18,11 @@ This option allows you to configure the default 4D display at startup, when the 
 
 * **Open Remote Project dialog**: 4D displays the standard 4D Server logon dialog, allowing you to select a project published on the network.
 * **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
-> > **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
+> **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
 
 ### Automatic form creation
 
-> This option is only used in binary databases; it is ignored in project architecture. Ver doc.4d.com.
+> This option is only used in binary databases; it is ignored in project architecture. See doc.4d.com.
 
 #### Window tabbing (macOS only)
 
@@ -59,7 +59,7 @@ If this option is checked, when the user switches to the Application environment
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
-* **Base de dados...**
+* **Database...**
 * **Database from Structure Definition...**
 
 ![](../assets/en/Preferences/general5.png)
@@ -68,7 +68,7 @@ These items allow you to create binary databases (see [Creating a new database](
 
 ## When creating a new project
 
-### Usar ficheiro de registo
+### Use Log File
 
 When this option is checked, a log file is automatically started and used when a new database is created. For more information, please refer to [Log file (.journal)](Backup/log.md).
 
@@ -96,13 +96,13 @@ This area configures access to the 4D HTML documentation displayed in the curren
 
 You can choose to access the 4D online documentation site directly or to access a static version that is stored locally.
 
-### Pasta local
+### Local folder
 
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
 
-You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the [...] button next to the entry area and choose a documentation root folder (folder corresponding to the language: fr, en, es, de or ja).
+You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the [...] button next to the entry area and choose a documentation root folder (folder corresponding to the language: fr, en, es, de or ja).
 
-### Sitio Web
+### Web Site
 
 URL access to the on-line documentation for the version on 4D Doc Center. 4D builds calls to the pages of the documentation based on this URL. You can modify it, for example if you want to display documentation in a different language from the application language. The test button to the right of the area launches the default browser to go to the URL specified.
 
@@ -110,5 +110,5 @@ URL access to the on-line documentation for the version on 4D Doc Center. 4D bui
 
 This option (checked by default) sets where 4D will look for the documentation page called using the Explorer or the F1 key.
 
-* When it is checked, 4D first looks for the page in the local folder. If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
+* When it is checked, 4D first looks for the page in the local folder. If it is found, 4D displays the page in the current browser. If not, 4D will automatically look for it in the on-line documentation of the Web site. This makes it possible to access the documentation even when you are offline.
 * When it is not checked, 4D looks for the desired page directly in the on-line documentation of the Web site and displays it in the current browser. If it is not found, 4D displays an error message in the browser.
