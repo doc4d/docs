@@ -4,7 +4,7 @@
     "description": "The label for version 19-R8"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Começando",
+    "message": "Getting Started",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development": {
@@ -20,7 +20,7 @@
     "description": "The label for category 4D Language Concepts in sidebar docs"
   },
   "sidebar.docs.category.Data Types": {
-    "message": "Tipos de dados",
+    "message": "Data Types",
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.Control Flow": {
@@ -40,7 +40,7 @@
     "description": "The label for category Handling Code in sidebar docs"
   },
   "sidebar.docs.category.Debugging": {
-    "message": "Depuração",
+    "message": "Debugging",
     "description": "The label for category Debugging in sidebar docs"
   },
   "sidebar.docs.category.Settings": {
@@ -48,7 +48,7 @@
     "description": "The label for category Settings in sidebar docs"
   },
   "sidebar.docs.category.Preferences": {
-    "message": "Preferências",
+    "message": "Preferences",
     "description": "The label for category Preferences in sidebar docs"
   },
   "sidebar.docs.category.Administration": {
@@ -64,11 +64,11 @@
     "description": "The label for category Web Administration in sidebar docs"
   },
   "sidebar.docs.category.Command Line Interface": {
-    "message": "Interface de linha de comando",
+    "message": "Command Line Interface",
     "description": "The label for category Command Line Interface in sidebar docs"
   },
   "sidebar.docs.category.TLS Protocol": {
-    "message": "Protocolo TLS",
+    "message": "TLS Protocol",
     "description": "The label for category TLS Protocol in sidebar docs"
   },
   "sidebar.docs.category.Licenses & Data Collection": {
@@ -80,7 +80,7 @@
     "description": "The label for category Access Rights in sidebar docs"
   },
   "sidebar.docs.category.MSC": {
-    "message": "CSM",
+    "message": "MSC",
     "description": "The label for category MSC in sidebar docs"
   },
   "sidebar.docs.category.Backup and Restore": {
@@ -88,7 +88,7 @@
     "description": "The label for category Backup and Restore in sidebar docs"
   },
   "sidebar.docs.category.Extensions": {
-    "message": "Extensões",
+    "message": "Extensions",
     "description": "The label for category Extensions in sidebar docs"
   },
   "sidebar.docs.category.4D View Pro": {
@@ -96,11 +96,11 @@
     "description": "The label for category 4D View Pro in sidebar docs"
   },
   "sidebar.docs.category.Web Applications": {
-    "message": "Aplicações Web",
+    "message": "Web Applications",
     "description": "The label for category Web Applications in sidebar docs"
   },
   "sidebar.docs.category.Web Server": {
-    "message": "Servidor Web",
+    "message": "Web Server",
     "description": "The label for category Web Server in sidebar docs"
   },
   "sidebar.docs.category.Web Development": {
@@ -108,11 +108,11 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "Servidor REST",
+    "message": "REST Server",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
-    "message": "Guias",
+    "message": "Guides",
     "description": "The label for category Guides in sidebar docs"
   },
   "sidebar.docs.category.API (general)": {
@@ -132,11 +132,11 @@
     "description": "The label for category Client/Server in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Formulários",
+    "message": "Forms",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Editor de formulários",
+    "message": "Form Editor",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -152,7 +152,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Eventos formulário",
+    "message": "Form Events",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
