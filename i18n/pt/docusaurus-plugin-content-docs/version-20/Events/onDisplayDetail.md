@@ -3,16 +3,16 @@ id: onDisplayDetail
 title: On Display Detail
 ---
 
-| Code | Pode ser chamado por                               | Definição                                                                                         |
+| Code | Can be called by                                   | Definition                                                                                        |
 | ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | 8    | Form - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
 
 
-## Descrição
+## Description
 
 The `On Display Detail` event can be used in the following contexts:
 
-### Formulário de saída
+### Output form
 
 A record is about to be displayed in a list form displayed via `DISPLAY SELECTION` and `MODIFY SELECTION`.
 
@@ -20,17 +20,17 @@ A record is about to be displayed in a list form displayed via `DISPLAY SELECTIO
 
 In this context, the following sequence of calls to methods and form events is triggered:
 
-- Para cada registo:
+- For each record:
     - For each object in the detail area:
-        - Método objecto com o evento`On Display Detail`
-    - Método formulário com o evento`On Display Detail`
+        - Object method with `On Display Detail` event
+    - Form method with `On Display Detail` event
 
-> A área do cabeçalho é tratada usando o evento [`On Header`](onHeader.md).
+> The header area is handled using the [`On Header`](onHeader.md) event.
 
 Calling a 4D command that displays a dialog box from the `On Display Detail` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
 
 
-### List box seleção
+### Selection list box
 
 This event is generated when a row of a [**selection type**](FormObjects/listbox_overview.md#selection-list-boxes) list box is displayed.
 
