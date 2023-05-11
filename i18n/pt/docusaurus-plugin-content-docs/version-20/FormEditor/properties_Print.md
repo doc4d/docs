@@ -1,6 +1,6 @@
 ---
 id: print
-title: Imprimir
+title: Print
 ---
 
 
@@ -12,9 +12,9 @@ Allows defining specific print settings for the form. This feature is useful to 
 
 You can modify the following print settings:
 
-*   Formato de papel
+*   Paper format
 *   Paper orientation
-*   Escala de página
+*   Page scaling
 
 
 > Available options depend on the system configuration.
@@ -22,16 +22,16 @@ You can modify the following print settings:
 
 
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome        | Tipo de dados | Valores possíveis                                                                    |
-| ----------- | ------------- | ------------------------------------------------------------------------------------ |
-| pageFormat  | object        | Available print properties: paperName, paperWidth, paperHeight, orientation, scale   |
-| paperName   | string        | "A4", "US Letter"...                                                                 |
-| paperWidth  | string        | Used if a paper named paperName was not found. Requires unit suffix: pt, in, mm, cm. |
-| paperHeight | string        | Used if a paper named paperName was not found. Requires unit suffix: pt, in, mm, cm. |
-| orientation | string        | "paisagem" (por defeito é "retrato")                                                 |
-| scale       | number        | mínimo: 0                                                                            |
+| Name        | Data Type | Possible Values                                                                      |
+| ----------- | --------- | ------------------------------------------------------------------------------------ |
+| pageFormat  | object    | Available print properties: paperName, paperWidth, paperHeight, orientation, scale   |
+| paperName   | string    | "A4", "US Letter"...                                                                 |
+| paperWidth  | string    | Used if a paper named paperName was not found. Requires unit suffix: pt, in, mm, cm. |
+| paperHeight | string    | Used if a paper named paperName was not found. Requires unit suffix: pt, in, mm, cm. |
+| orientation | string    | "landscape" (default is "portrait")                                                  |
+| scale       | number    | minimum: 0                                                                           |
 
 
 ---
