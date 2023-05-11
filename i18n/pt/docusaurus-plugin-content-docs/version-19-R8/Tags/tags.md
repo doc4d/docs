@@ -66,7 +66,7 @@ To ensure the correct evaluation of expressions processed via tags, regardless o
 
 ## 4DBASE
 
-#### Sintaxe: `<!--#4DBASE folderPath-->`
+#### Syntax: `<!--#4DBASE folderPath-->`
 
 The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!--#4DINCLUDE-->` tag.
 
@@ -128,7 +128,7 @@ In the "head.html" file, the current folder is modified through `<!--#4DBASE -->
 
 ## 4DCODE
 
-#### Sintaxe: `<!--#4DCODE codeLines-->`
+#### Syntax: `<!--#4DCODE codeLines-->`
 
 The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
 
@@ -138,10 +138,12 @@ For example, you can write in a template:
 
 ```html
 <!--#4DCODE
-//PARAMETERS initialization C_OBJECT:C1216($graphParameters)
+//PARAMETERS initialization
+C_OBJECT:C1216($graphParameters)
 OB SET:C1220($graphParameters;"graphType";1)
 $graphType:=1
-//...your code here If(OB Is defined:C1231($graphParameters;"graphType"))
+//...your code here
+If(OB Is defined:C1231($graphParameters;"graphType"))
     $graphType:=OB GET:C1224($graphParameters;"graphType")
     If($graphType=7)
         $nbSeries:=1
@@ -149,7 +151,8 @@ $graphType:=1
             DELETE FROM ARRAY:C228 ($yValuesArrPtr{1}->;9;100000)
             $nbValues:=8
         End if
-    End if End if
+    End if
+End if
 -->
 ```
 
@@ -163,7 +166,7 @@ Here are the 4DCODE tag features:
 
 > The fact that 4DCODE tags can call any of the 4D language commands or project methods could be seen as a security issue, especially when the database is available through HTTP. However, since it executes server-side code called from your own template files, the tag itself does not represent a security issue. In this context, as for any Web server, security is mainly handled at the level of remote accesses to server files.
 
-## 4DEACH e 4DENDEACH
+## 4DEACH and 4DENDEACH
 
 #### Syntax: `<!--#4DEACH variable in expression-->` `<!--#4DENDEACH-->`
 
@@ -175,7 +178,7 @@ The `<!--#4DEACH-->` comment can iterate through three expression types:
 - [entity selections](#--4deach-entity-in-entityselection--): loop through each entity,
 - [objects](#--4deach-property-in-object--): loop through each object property.
 
-The number of iterations is evaluated at startup and will not change during the processing. Adicionar ou remover itens durante o loop não é recomendado porque resulta em iterações faltantes ou redundantes.
+The number of iterations is evaluated at startup and will not change during the processing. Adding or removing items during the loop is usually not recommended since it may result in missing or redundant iterations.
 
 ### `<!--#4DEACH item in collection-->`
 
@@ -185,9 +188,9 @@ The *item* parameter is a variable of the same type as the collection elements.
 
 The collection must contain only **elements of the same type**, otherwise an error is returned as soon as the *item* variable is assigned the first mismatched value type.
 
-The number of loops is based on the number of elements of the collection. At each iteration, the *item* variable is automatically filled with the matching element of the collection. Os pontos abaixo devem ser considerados:
+The number of loops is based on the number of elements of the collection. At each iteration, the *item* variable is automatically filled with the matching element of the collection. The following points must be taken into account:
 
-- If the *item* variable is of the object type or collection type (i.e. if *expression* is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). Se a variável for de tipo escalar, só se modificará a variável.
+- If the *item* variable is of the object type or collection type (i.e. if *expression* is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). If the variable is of a scalar type, only the variable will be modified.
 - The *item* variable gets the same type as the first collection element. If any collection element is not of the same type as the variable, an error is generated and the loop stops.
 - If the collection contains elements with a Null value, an error is generated if the *item* variable type does not support Null values (such as longint variables).
 
@@ -244,7 +247,7 @@ The number of loops is based on the number of entities of the entity selection. 
 
         <tr><th>ID</th><th>Name</th><th>Total purchase</th></tr>
 
-          <!--#4DEACH $customer in ds. Customers.all()-->
+          <!--#4DEACH $customer in ds.Customers.all()-->
         <tr>
             <td><!--#4DTEXT $customer.ID--></td>
             <td><!--#4DTEXT $customer.name--></td>
@@ -257,13 +260,14 @@ The number of loops is based on the number of entities of the entity selection. 
 #### Example with `PROCESS 4D TAGS`
 
 ```4d
-var customers : cs. CustomersSelection
+var customers : cs.CustomersSelection
 var $input; $output : Text
 
-customers:=ds. Customers.all()
+customers:=ds.Customers.all()
 $input:="<!--#4DEACH $cust in customers-->" 
 $input:=$input+"<!--#4DTEXT $cust.name -->"+Char(Carriage return)
-$input:=$input+"<!--#4DENDEACH-->" PROCESS 4D TAGS($input; $output)
+$input:=$input+"<!--#4DENDEACH-->" 
+PROCESS 4D TAGS($input; $output)
 TEXT TO DOCUMENT("customers.txt"; $output)
 ```
 
@@ -273,7 +277,7 @@ This syntax iterates on each *property* of the *object*. The code portion locate
 
 The *property* parameter is a text variable automatically filled with the name of the currently processed property.
 
-The properties of the object are processed according to their creation order. Durante o loop, propriedades podem ser adicionadas ou eliminadas no objeto, sem modificar o número de loops que permanecerão no número original de propriedades do objeto.
+The properties of the object are processed according to their creation order. During the loop, properties can be added to or removed from the object, without modifying the number of loops that will remain based on the original number of properties of the object.
 
 #### Example with the properties of an object
 
@@ -298,7 +302,7 @@ The properties of the object are processed according to their creation order. Du
 
 ## 4DEVAL
 
-#### Sintaxe: `<!--#4DEVAL expression-->`
+#### Syntax: `<!--#4DEVAL expression-->`
 
 #### Alternative syntax: `$4DEVAL(expression)`
 
@@ -323,11 +327,11 @@ In case of an error during interpretation, the text inserted will be in the form
 
 #### Alternative syntax: `$4DHTML(expression)`
 
-The value of the 4D variable `vtSiteName` will be inserted in the HTML page when it is sent. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
+Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. Unlike the `4DTEXT` tag, this tag does not escape HTML special characters (e.g. ">").
 
 For example, here are the processing results of the 4D text variable myvar with the available tags:
 
-| Valor myvar          | Etiquetas                    | Resultados          |
+| myvar Value          | Tags                         | Result              |
 | -------------------- | ---------------------------- | ------------------- |
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&lt;B&gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`         |
@@ -345,9 +349,9 @@ Used with the `<!--#4DELSEIF-->` (optional), `<!--#4DELSE-->` (optional) and `<!
 The *expression* parameter can contain any valid 4D expression returning a Boolean value. It must be indicated within parenthesis and comply with the 4D syntax rules.
 
 
-In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. Likewise, if there are not as many `<!--#4DENDIF-->` as `<!--#4DIF -->`, the text "`<!--#4DIF expression-->`: 4DENDIF expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`.
+The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
 
-In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. The `<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
+In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. Likewise, if there are not as many `<!--#4DENDIF-->` as `<!--#4DIF -->`, the text "`<!--#4DIF expression-->`: 4DENDIF expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`.
 
 Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Only the code that follows the first condition evaluated as `True` is executed. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`). You can use a `<!--#4DELSE-->` tag after the last `<!--#4DELSEIF-->`. If all the conditions are false, the statements following the `<!--#4DELSE-->` are executed.
 
@@ -371,7 +375,7 @@ Code using `4DELSE` only:
 <!--#4DENDIF-->
 ```
 
-Código semelhante usando a tag `4DELSEIF`:
+Similar code using the `4DELSEIF` tag:
 
 ```
 <!--#4DIF Condition1-->
@@ -390,8 +394,10 @@ This example of code inserted in a static HTML page displays a different label a
 ```html
 <BODY>
 ...
-<!--#4DIF (vname#"")--> Names starting with <!--#4DTEXT vname-->.
-<!--#4DELSE--> No name has been found.
+<!--#4DIF (vname#"")-->
+Names starting with <!--#4DTEXT vname-->.
+<!--#4DELSE-->
+No name has been found.
 <!--#4DENDIF-->
 ...
 </BODY>
@@ -431,7 +437,7 @@ The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the 
 
 In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
 
-Exemplos:
+Examples:
 
 ```html
 <!--#4DINCLUDE subpage.html-->
@@ -439,7 +445,7 @@ Exemplos:
 <!--#4DINCLUDE ../folder/subpage.html-->
 ```
 
-## 4DLOOP e 4DENDLOOP
+## 4DLOOP and 4DENDLOOP
 
 #### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
 
@@ -526,7 +532,7 @@ The following code example:
  End if
 ```
 
-O método `my_method` pode ser o seguinte:
+The `my_method` method can be as follows:
 
 ```4d
  C_LONGINT($1)
@@ -575,7 +581,7 @@ In this case, the `4DLOOP` tag works like it does with an array: it makes a loop
 
 This syntax is useful when you pass an array pointer as a parameter to the `PROCESS 4D TAGS` command.
 
-Exemplo:
+Example:
 
 ```4d
  ARRAY TEXT($array;2)
@@ -637,7 +643,7 @@ The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D var
 <P>Welcome to <!--#4DTEXT vtSiteName-->!</P>
 ```
 
-Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
+The value of the 4D variable `vtSiteName` will be inserted in the HTML page when it is sent. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
 
 You can also insert 4D expressions. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). The expression conversion follows the same rules as the variable ones. Moreover, the expression must comply with 4D syntax rules.
 
@@ -668,13 +674,13 @@ This alternative syntax is available only for tags used to return processed valu
 
 (Other tags, such as 4DIF or 4DSCRIPT, must be written with the regular syntax).
 
-Por exemplo, pode escrever:
+For example, you can write:
 
 ```html
 $4DEVAL(UserName)
 ```
 
-em vez de:
+instead of:
 
 ```html
 <!--#4DEVAL(UserName)-->
@@ -730,7 +736,7 @@ Note that the `$4dtag` syntax supports matching pairs of enclosed quotes or pare
 String(1) + "\"(hello)\""
 ```
 
-Você pode escrever:
+You can write:
 
 ```4d
  input:="$4DEVAL( String(1)+\"\\\"(hello)\\\"\")"
