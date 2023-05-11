@@ -3,7 +3,7 @@ id: debugging-remote
 title: Debugging from remote machines
 ---
 
-## Visão Geral
+## Overview
 
 When a 4D database is running on 4D Server in interpreted mode, you can debug the 4D code running on the server from a remote 4D client logged to the project. You just need to attach the debugger to a specific remote machine, and the code execution can be monitored in the debugger directly on the remote machine.
 
@@ -22,14 +22,14 @@ Only one debugger can debug a 4D Server application at a given time. It is calle
 * the debugger of a remote 4D client - if the remote session has access to Design mode.
 
 The attached debugger is called whenever a 4D Server encounters:
-* um ponto de ruptura
+* a break point
 * a `TRACE` command
 * a caught command
-* um erro
+* an error
 
 Keep in mind that error messages are sent to the attached debugger machine. This means that in the case of a remote debugger, server error messages are displayed on the remote 4D client.
 
-Note que:
+Note that:
 * The code executed in the `On Server Startup Database` Method cannot be debugged remotely. It can only be debugged on the server side
 * If no debugger is attached, the running code is not stopped by debugging commands
 
