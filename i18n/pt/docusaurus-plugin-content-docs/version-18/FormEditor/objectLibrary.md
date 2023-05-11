@@ -1,9 +1,9 @@
 ---
 id: objectLibrary
-title: Bibliotecas de objetos
+title: Object libraries
 ---
 
-## Visão Geral
+## Overview
 
 You can use object librairies in your forms. An object library offers a collection of preconfigured objects that can be used in your forms by simple or copy-paste or drag-and-drop.
 
@@ -12,7 +12,7 @@ You can use object librairies in your forms. An object library offers a collecti
 - a standard, preconfigured object library, available in all your projects.
 - custom object librairies, that you can use to store your favorite form objects or full project forms.
 
-## Utilização da biblioteca de objetos padrão
+## Using the standard object library
 
 The standard object library is available from the Form editor: click on the last button of the toolbar:  
 ![](../assets/en/FormEditor/library1.png)
@@ -33,9 +33,9 @@ This library is read-only. If you want to edit default objects or create your ow
 
 All objects proposed in the standard object library are described on [this section on doc.4d.com](https://doc.4d.com/4Dv17R6/4D/17-R6/Library-objects.200-4354586.en.html).
 
-## Criar e utilizar bibliotecas de objetos personalizadas
+## Creating and using custom object libraries
 
-You can create and use custom object libraries in 4D. A custom object library is a 4D project where you can store your favorite objects (buttons, texts, pictures, etc.) You can then reuse these objects in different forms and different projects. You can then reuse these objects in different forms and different projects.
+You can create and use custom object libraries in 4D. A custom object library is a 4D project where you can store your favorite objects (buttons, texts, pictures, etc.) You can then reuse these objects in different forms and different projects.
 
 Objects are stored with all their properties, including their object methods. Libraries are put together and used by simple drag-and-drop or copy-paste operations.
 
@@ -53,21 +53,21 @@ You can create as many libraries as desired per project. A library created and b
 
 ### Opening an object library
 
-Uma determinada biblioteca de objetos só pode ser aberta por um m banco de dados por vez. Entretanto, várias livrarias diferentes podem ser abertas no mesmo banco de dados.
+A given object library can only be opened by one database at a time. However, several different libraries can be opened in the same database.
 
-To open a custom object library, select **Open>Object Library...** command in the 4D **File** menu or tool bar. Aparece uma caixa de diálogo padrão de ficheiro aberto, que lhe permite seleccionar a biblioteca de objectos a abrir. Pode seleccionar os seguintes tipos de ficheiros:
+To open a custom object library, select **Open>Object Library...** command in the 4D **File** menu or tool bar. A standard open file dialog box appears, which allows you to select the object library to open. You can select the following file types:
 
 - **.4dproject**
 - **.4dz**
 
-Na realidade, as bibliotecas de objectos personalizados são projectos 4D clássicos. Apenas as seguintes partes de um projecto são expostas quando este é aberto como biblioteca:
+In fact, custom object libraries are regular 4D projects. Only the following parts of a project are exposed when it is opened as library:
 
-- formulários projecto
-- páginas formulário 1
+- project forms
+- form pages 1
 
-### Construir uma biblioteca de objectos
+### Building an object library
 
-Os objectos são colocados numa biblioteca de objectos usando o método de arrastar e largar ou uma operação de cortar-copiar-colar. They can come from either a form or another object library (including the [standard library](#using-the-standard-object-library)). No link is kept with the original object: if the original is modified, the copied object is not affected.
+Objects are placed in an object library using drag-and-drop or a cut-copy-paste operation. They can come from either a form or another object library (including the [standard library](#using-the-standard-object-library)). No link is kept with the original object: if the original is modified, the copied object is not affected.
 
 > In order to be able to drag and drop objects from forms to object libraries, you must make sure the **Start drag and drop** option in the 4D Preferences is selected.
 
@@ -75,27 +75,27 @@ Basic operations are available in the context menu or the options menu of the wi
 
 ![](../assets/en/FormEditor/library5.png)
 
-- **Cortar** ou **Copiar** para o papelão
-- **Colar** um objecto do papelão
-- **Apagar** - apaga o objecto da biblioteca
-- **Renomear** - aparece uma caixa de diálogo que lhe permite renomear o item. Note-se que os nomes dos objectos devem ser únicos numa biblioteca.
+- **Cut** or **Copy** to the pasteboard
+- **Paste** an object from the pasteboard
+- **Clear** - deletes the object from the library
+- **Rename** - a dialog box appears allowing you to rename the item. Note that object names must be unique in a library.
 
-Pode colocar objectos individuais (incluindo subformulários) ou conjuntos de objectos numa biblioteca de objectos. Cada objecto ou conjunto é agrupado num único item:
+You can place individual objects (including subforms) or sets of objects in an object library. Each object or set is grouped into a single item:
 
 ![](../assets/en/FormEditor/library6.png)
 
-Uma biblioteca de objectos pode conter até 32.000 elementos.
+An object library can contain up to 32,000 items.
 
-Os objectos são copiados com todas as suas propriedades, tanto gráficas como funcionais, incluindo os seus métodos. Estas propriedades são mantidas na íntegra quando o elemento é copiado para um formulário ou outra biblioteca.
+Objects are copied with all their properties, both graphic and functional, including their methods. These properties are kept in full when the item is copied into a form or another library.
 
-#### Objetos dependentes
+#### Dependent objects
 
 Using copy-paste or drag-and-drop with certain library objects also causes their dependent objects to be copied. For example, copying a button will cause the object method that may be attached to be copied as well. These dependent objects cannot be copied or dragged and dropped directly.
 
 The following is a list of dependent objects that will be pasted into the library at the same time as the main object that uses them (when applicable):
 
-- Listas
-- Formatos/Filtros
-- Imagens
-- Dicas de ajuda (ligadas a um campo)
-- Métodos objecto
+- Lists
+- Formats/Filters
+- Pictures
+- Help Tips (linked to a field)
+- Object methods
