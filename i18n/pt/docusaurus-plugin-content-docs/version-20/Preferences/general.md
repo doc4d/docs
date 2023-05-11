@@ -1,13 +1,13 @@
 ---
 id: general
-title: Página Geral
+title: General Page
 ---
 
 This page contains various options to configure the general operation of your 4D application.
 
 ## Options
 
-### Na inicialização
+### At startup
 
 This option allows you to configure the default 4D display at startup, when the user launches only the application.
 
@@ -16,11 +16,11 @@ This option allows you to configure the default 4D display at startup, when the 
 *   **Open last used project**: 4D directly opens the last project used; no opening dialog box appears. >To force the display of the opening dialog box when this option is selected, hold down the **Alt** (Windows) or **Option** (macOS) key while launching the project.
 *   **Open Remote Project dialog**: 4D displays the standard 4D Server logon dialog, allowing you to select a project published on the network.
 *   **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
-> > **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
+> **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
 
 ### Automatic form creation
 
-> This option is only used in binary databases; it is ignored in project architecture. Ver doc.4d.com.
+> This option is only used in binary databases; it is ignored in project architecture. See doc.4d.com.
 
 ### Window tabbing (macOS only)
 
@@ -73,7 +73,7 @@ If this option is checked, when the user switches to the Application environment
 
 If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
 
-*   **Base de dados...**
+*   **Database...**
 *   **Database from Structure Definition...**
 
 ![](../assets/en/Preferences/general5.png)
@@ -82,7 +82,7 @@ These items allow you to create binary databases (see [Creating a new database](
 
 ## When creating a new project
 
-### Usar ficheiro de registo
+### Use Log File
 
 When this option is checked, a log file is automatically started and used when a new database is created. For more information, please refer to [Log file (.journal)](Backup/log.md).
 
@@ -152,13 +152,13 @@ Language of the HTML documentation to display. You can select a documentation in
 
 Sets where 4D will look for documentation pages.
 
-*   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
+*   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If not, 4D automatically looks for it in the on-line documentation Web site. This makes it possible to access the documentation even when you are offline.
 *   When not checked, 4D looks for the desired page directly in the on-line documentation Web site and displays it in the current browser. If it is not found, 4D displays an error message in the browser.
 
-### Pasta local
+### Local folder
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
 
-You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). 
+You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). 
