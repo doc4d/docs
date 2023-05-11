@@ -39,9 +39,9 @@ If you click on the **Reject new connections** button:
 
 This feature permits, for example, an administrator to carry out various maintenance operations (verification, compacting, etc.) just after having started the server. If the administrator uses a remote connection, they can be certain to be the only one modifying the data. It is also possible to use this function in preparation of a maintenance operation which requires that there be no desktop client machine connected.
 
-## Informação
+## Information
 
-### Configuração
+### Configuration
 
 This area provides information about the 4D project published by the server: name and location of data and structure files and name of database log file. You can click on the structure or data file name in order to view its complete pathname.
 
