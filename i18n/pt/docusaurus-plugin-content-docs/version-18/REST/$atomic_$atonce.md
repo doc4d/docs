@@ -7,12 +7,12 @@ title: '$atomic/$atOnce'
 Allows the actions in the REST request to be in a transaction. If there are no errors, the transaction is validated. Otherwise, the transaction is cancelled.
 
 
-## Descrição
+## Description
 
 When you have multiple actions together, you can use `$atomic/$atOnce` to make sure that none of the actions are completed if one of them fails. You can use either `$atomic` or `$atOnce`.
 
 
-## Exemplo
+## Example
 
 We call the following REST request in a transaction.
 
