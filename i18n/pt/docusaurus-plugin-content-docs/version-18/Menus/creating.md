@@ -1,6 +1,6 @@
 ---
 id: creating
-title: Criação de menus e barras de menus
+title: Creating menus and menu bars
 ---
 
 You can create menus and menu bars:
@@ -12,16 +12,16 @@ You can combine both features and use menus created in structure as templates to
 
 ## Default menu bar
 
-A custom application must contain at least one menu bar with one menu. A custom application must contain at least one menu bar with one menu. The default menu bar includes standard menus and a command for returning to the Design mode.
+A custom application must contain at least one menu bar with one menu. By default, when you create a new database, 4D automatically creates a default menu bar (Menu Bar #1) so that you can access the Application environment. The default menu bar includes standard menus and a command for returning to the Design mode.
 
-Isso permite ao usuário acessar o modo Aplicação logo que se crie o banco de dados. Menu Bar #1 is called automatically when the **Test Application** command is chosen in the **Run** menu.
+This allows the user to access the Application environment as soon as the database is created. Menu Bar #1 is called automatically when the **Test Application** command is chosen in the **Run** menu.
 
 The default menu bar includes three menus:
 
 - **File**: only includes the **Quit** command. The *Quit* standard action is associated with the command, which causes the application to quit.
 - **Edit**: standard and completely modifiable. Editing functions such as copy, paste, etc. are defined using standard actions.
 - **Mode**: contains, by default, the **Return to Design mode** command, which is used to exit the Application mode.
-> > Menu items appear *in italics* because they consist of references and not hard-coded text. Refer to [Title property](properties.md#title).
+> Menu items appear *in italics* because they consist of references and not hard-coded text. Refer to [Title property](properties.md#title).
 
 You can modify this menu bar as desired or create additional ones.
 
@@ -40,7 +40,7 @@ When menus are handled by means of *MenuRef* references, there is no difference 
 
 `Create menu` can create empty menus (to fill using `APPEND MENU ITEM` or `INSERT MENU ITEM`) or by menus built upon menus designed in the Menu editor.
 
-## Adicionar itens
+## Adding items
 
 For each of the menus, you must add the commands that appear when the menu drops down. You can insert items that will be associated with methods or standard actions, or attach other menus (submenus).
 
