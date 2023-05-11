@@ -1,6 +1,6 @@
 ---
 id: inputOverview
-title: Entrada
+title: Input
 ---
 
 
@@ -15,7 +15,7 @@ In addition, inputs can be [enterable or non-enterable](properties_Entry.md#ente
 You can manage the data with object or form [methods](Concepts/methods.md).
 
 
-### JSON Exemplo:
+### JSON Example:
 
 ```4d
     "myText": {
@@ -29,13 +29,13 @@ You can manage the data with object or form [methods](Concepts/methods.md).
 ```
 
 
-## Propriedades compatíveis
+## Supported Properties
 
-<details><summary>Histórico</summary>
+<details><summary>History</summary>
 
-| Versão | Mudanças                          |
-| ------ | --------------------------------- |
-| v19 R7 | Support of Corner radius property |
+| Version | Changes                           |
+| ------- | --------------------------------- |
+| v19 R7  | Support of Corner radius property |
 
 </details>
 
@@ -43,7 +43,7 @@ You can manage the data with object or form [methods](Concepts/methods.md).
 
 
 ---
-## Alternativas
+## Input alternatives
 
 You can also represent field and variable expressions in your forms using alternative objects, more particularly:
 
