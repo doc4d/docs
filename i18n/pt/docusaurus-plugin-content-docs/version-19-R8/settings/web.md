@@ -1,11 +1,11 @@
 ---
 id: web
-title: Página da Web
+title: Web page
 ---
 
 Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.md). For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
 
-## Configuração
+## Configuration
 
 ### Publishing Information
 
@@ -13,7 +13,7 @@ Using the tabs on the **Web** page, you can configure various aspects of the int
 
 Indicates whether the Web server will be launched on startup of the 4D application. This option is described in the [Web server administration](../WebServer/webServerAdmin.md#starting-the-4d-web-server) section.
 
-#### Ativar HTTP
+#### Enable HTTP
 
 Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
 
@@ -22,17 +22,17 @@ Indicates whether or not the Web server will accept non-secure connections. See 
 
 Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerConfig.md#http-port).
 
-#### Endereço IP
+#### IP Address
 
 IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
 
 
-#### Ativar HTTPS
+#### Enable HTTPS
 
 Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
 
-#### Porta HTTPS
+#### HTTPS Port
 
 Allows you to modify the TCP/IP port number used by the Web server for secured HTTP connections over TLS (HTTPS protocol). See [HTTPS Port](../WebServer/webServerConfig.md#https-port).
 
@@ -68,13 +68,13 @@ Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
 Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
 
 
-#### Limpar cache
+#### Clear Cache
 
-At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). The cache is then immediately cleared.
+At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache). To do so, you just have to click on the **Clear Cache** button. The cache is then immediately cleared.
 
 > You can also use the special URL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
 
-### Processo Web
+### Web Process
 
 This area allows you to configure how the web server will handle user sessions and their associated processes.
 
@@ -85,7 +85,7 @@ This area allows you to configure how the web server will handle user sessions a
 When you select this option (recommended), a user session is managed through a **Session** object. See the [User sessions page](../WebServer/sessions.md#enabling-sessions).
 
 
-#### Sem sessões
+#### No sessions
 
 When this option is selected, the web server does not provide any specific support for [user sessions](../WebServer/sessions.md). Successive requests from web clients are always independent and no context is maintained on the server.
 
@@ -133,7 +133,7 @@ Allows you to set the maximum timeout before closing for inactive Web processes 
 
 
 
-### Palavras-passe Web
+### Web Passwords
 
 Set the authentication system that you want to apply to your Web server. Three options are proposed:
 
@@ -142,7 +142,7 @@ Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol
 Using **Custom** authentication is recommended. See [**Authentication**](../WebServer/authentication.md) chapter in the *Web Development* documentation.
 
 
-## Opções (II)
+## Options (II)
 
 ### Text Conversion
 
@@ -158,9 +158,9 @@ Define the set of characters to be used by the 4D Web server. See [Character Set
 
 See [Deprecated Settings](../WebServer/webServerConfig.md#keep-alive-connections).
 
-### Parâmetros CORS
+### CORS Settings
 
-#### Ativar CORS
+#### Enable CORS
 
 Enables Cross-origin resource sharing (CORS) service. See [Enable CORS Service](../WebServer/webServerConfig.md#enable-cors-service).
 
@@ -170,10 +170,10 @@ List of allowed hosts and methods for the CORS service. See [CORS Settings](../W
 
 
 
-## Registo (tipo)
+## Log (type)
 
 
-### Formato do histórico
+### Log Format
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. See [Log Recording](../WebServer/webServerConfig.md#log-recording).
 
@@ -212,13 +212,13 @@ The log format menu provides the following options:
 
 -   **WLF (WebStar Log Format)**: When this option is selected, the request log is generated in WLF format. WLF format was developed specifically for the 4D WebSTAR server. It is similar to the ELF format, with only a few additional fields. Like the ELF format, it can be customized.
 
-**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields. You will need to select each field to be included in the log. To do so, use the arrow buttons or simply drag and drop the desired fields into the "Selected Tokens" area.
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, use the arrow buttons or simply drag and drop the desired fields into the "Selected Tokens" area.
 
 **Note**: You cannot select the same field twice.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Campo          | ELF | WLF | Value                                                                      |
+| Field          | ELF | WLF | Value                                                                      |
 | -------------- | --- | --- | -------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Number of bytes received by the server                                     |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                           |
@@ -247,26 +247,26 @@ The following table lists the fields available for each format (in alphabetical 
 
 ## Log (backup)
 
-Configure the automatic backup parameters for the request log. Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
+Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
 -   **No Backup**: The scheduled backup function is deactivated.
--   **Every X hour(s)**: This option is used to program backups on an hourly basis. Pode digitar um valor entre 1 e 24 .
+-   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
 
     -   **starting at**: Used to set the time at which the first back up will begin.
 -   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
--   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Digite 1 se quiser realizar o backup 1 vez por semana. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
--   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Digite 1 se quiser realizar uma cópia de segurança mensal. Enter 1 if you want to perform a monthly backup.
+-   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired. For example, you can use this option to set two weekly backups: one on Wednesdays and one on Fridays.
+-   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Enter 1 if you want to perform a monthly backup. When this option is checked, you must indicate the day of the month and the time when the backup must be started.
 -   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
 
 > In the case of scheduled backups, if the Web server was not launched when the backup was scheduled to occur, on the next startup 4D considers the backup as failed and applies the appropriate settings, set via the Database Settings.
 
-## Serviços Web
+## Web Services
 
 You use the options on this tab to activate and configure Web services for the 4D project, both for their publishing (server side) and their subscription (client side).
 
 For more information about the support of Web Services in 4D, refer to the [Publication and use of Web Services](https://doc.4d.com/What-s-new/4D-Design-Reference-19-R4/Publication-and-use-of-Web-Services.200-5736722.en.html) chapter.
 
-### Servidor
+### Server Side
 
 This area contains various options related to the use of 4D as a Web Services "server" i.e., publishing project methods in the form of Web Services.
 
@@ -276,14 +276,14 @@ This area contains various options related to the use of 4D as a Web Services "s
 
 > In conformity with the XML standard for tag names, the character strings used must not contain spaces nor start with a number. Moreover, to avoid any risk of incompatibility, we recommend that you do not use any extended characters (such as accented characters).
 
-### Cliente
+### Client Side
 
 This area contains various options related to the use of 4D as a Web Services "client" i.e., subscribing to services published on the network.
 
 -   **Wizard Method Prefix**: This area lets you change the prefix that is added automatically by 4D to the name of proxy methods generated by the Web Services Wizard. Proxy project methods form a link between the 4D application and the Web Services server. By default, 4D uses the prefix "proxy_".
 
 
-## Funcionalidades Web
+## Web Features
 
 This page contains the options used to enable and control advanced Web features such as the REST server.
 
@@ -293,7 +293,7 @@ This page contains the options used to enable and control advanced Web features 
 
 Starts and stops the REST Server. See [REST Server Configuration](../REST/configuration.md).
 
-### Acesso
+### Access
 
 This option specifies a group of 4D users that is authorized to establish the link to the 4D database using REST requests. See [Configuring REST access](../REST/configuration.md#configuring-rest-access).
 
