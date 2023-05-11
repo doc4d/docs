@@ -1,6 +1,6 @@
 ---
 id: compiler
-title: Compilação
+title: Compilation
 ---
 
 You can compile your projects, i.e., translate all of your methods into machine language. Compiling a project lets you check the consistency of the code and accelerate its execution, as well as making it possible to obfuscate the code in its entirety. Compilation is an indispensable step between the development of projects using 4D and their deployment as stand-alone applications.
@@ -39,7 +39,7 @@ The number of errors found during your first compilations may be daunting, but d
 
 > Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
 
-## Executar a compilação
+## Run Compiled
 
 Once a project is compiled, it is possible to switch from [interpreted mode to compiled mode](Concepts/interpreted.md), and vice versa, at any time and without having to quit the 4D application (except when the interpreted code has been removed). To do this, use tge **Restart Interpreted** and **Restart Compiled** commands of the **Run** menu. The [Open project dialog box](creating.md#options) also offers a choice between interpreted or compiled mode for database startup.
 
@@ -51,7 +51,7 @@ If you modify your project in interpreted mode, you must recompile it in order t
 
 In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
 
-### Verificar sintaxe
+### Check Syntax
 
 The **Check Syntax** button starts the execution of the syntax-checking phase. At the end of the checking process, any errors detected are listed in the information area. You can double–click on an error line in order to display the corresponding method.
 
@@ -117,7 +117,7 @@ This area groups the generic options used during the compilation process.
 
 #### Generate symbol file
 
-Used to generate the error file (see [error file](#symbol-file)) at the time of syntax checking. Used to generate the symbol file (see [symbol file](#symbol-file)).
+Used to generate the symbol file (see [symbol file](#symbol-file)). The symbol file is created in the in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_symbols.txt`.
 
 #### Generate error file
 
@@ -133,11 +133,11 @@ Used to set the number of passes (code parsing) performed by the compiler and th
 
 #### Compilation Target
 
-<details><summary>Histórico</summary>
+<details><summary>History</summary>
 
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v19    | Adicionado |
+| Version | Changes |
+| ------- | ------- |
+| v19     | Added   |
 
 </details>
 
@@ -148,7 +148,7 @@ This setting allows you to select the processor family for which your 4D project
 
 Two target options are proposed. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                         | *on Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *on macOS Silicon*                                                                           |
+| *Option*                                         | *on Windows Intel/AMD*                                                                     | *on macOS Intel*                                                                             | *on macOS Silicon*                                                                           |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br/>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* |
 | **My processor (processor)**                     | Code for Intel/AMD                                                                         | Code for Intel/AMD                                                                           | Code for Apple Silicon                                                                       |
@@ -178,7 +178,7 @@ You can rename each of these methods in the corresponding areas, but they will a
 
 ## Compilation tools
 
-### Ficheiro Symbol
+### Symbol file
 
 If you check the [**Generate the symbol file**](#generate-the-symbol-file) option in the compiler settings, a symbol file called `ProjectName_symbols.txt` is created in the [Logs folder](Project/architecture.md#logs) of the project during compilation. It is divided into several parts:
 
@@ -225,7 +225,7 @@ Procedure or Function <Method name>(parameter data types):
 result data type, number of calls, Thread Safe or Thread Unsafe
 ```
 
-### Arquivo de erros
+### Error file
 
 You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
 
@@ -277,11 +277,11 @@ To do this, you must surround the code to be excluded from range checking with t
 
 The classic compiler can be used on any platform, while the Silicon compiler can only be used on a Mac machine:
 
-|             | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
-| ----------- |:-------------------:|:---------------------:|:-----------------------:|
-| Em Windows  |      &#10003;       |       &#10003;        |        &#10007;         |
-| Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
-| Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
+|                | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
+| -------------- |:-------------------:|:---------------------:|:-----------------------:|
+| On Windows     |      &#10003;       |       &#10003;        |        &#10007;         |
+| On Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
+| On Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
 
 Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
 
@@ -297,11 +297,11 @@ The Silicon compiler generates native compiled code for Apple Silicon processors
 
 Resulting compiled code is stored in the [Libraries](architecture.md#libraries) folder of the project.
 
-#### Requisitos
+#### Requirements
 
 - **Apple machine**: The Silicon compiler can only be run from an Apple machine.
 - **4D Project architecture**: The Silicon compiler is only available for 4D developments using [project architecture](architecture.md).
-- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation.
+- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *clang* requires Apple native libraries, which are provided by either the **Xcode** or **Developer Tools** package.
   - **If you already have** Xcode or Developer Tools installed on your computer, you only need to make sure that its version is compliant with 4D requirements.
   - **If you do not have** any of these tools installed on your computer, you will need to download one of them from the Apple Developer web site.
 
