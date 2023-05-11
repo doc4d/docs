@@ -11,8 +11,8 @@ The following project elements accept documentation:
 
 - Methods (database methods, component methods, project methods, form methods, 4D Mobile methods, and triggers)
 - Classes
-- Formulários
-- Tabelas e Campos
+- Forms
+- Tables and Fields
 
 Your documentation files are written in Markdown syntax (.md files) using any editor that supports Markdown. They are stored as independant files within your project folder.
 
@@ -44,10 +44,10 @@ The `Documentation` folder architecture is the following:
     + `DatabaseMethods`
         * onStartup.md
         * ...
-    + `Formulários`
+    + `Forms`
         * loginDial.md
         * ...
-    + `Métodos`
+    + `Methods`
         * myMethod.md
         * ...
     + `TableForms`
@@ -128,11 +128,11 @@ New documentation files are created with the following default contents:
 
 ![](../assets/en/Project/comments-explo4.png)
 
-| Linha                                   | Descrição                                                                                                                                            |
+| Line                                    | Description                                                                                                                                          |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<!-- Type here your summary -->` | Comentário HTML. Used in priority as the method description in the [code editor tips](#viewing-documentation-in-the-code-editor)                     |
+| `<!-- Type here your summary -->` | HTML comment. Used in priority as the method description in the [code editor tips](#viewing-documentation-in-the-code-editor)                        |
 | ## Description                         | Heading level 2 in Markdown. The first sentence after this tag is used as the method description in the code editor tips if HTML comment is not used |
-| ## Exemplo                             | Heading level 2, you can use this area to show sample code                                                                                           |
+| ## Example                             | Heading level 2, you can use this area to show sample code                                                                                           |
 | ` ```4d Type here your example``` `     | Used to format 4D code examples (uses highlight.js library)                                                                                          |
 
 
@@ -194,14 +194,14 @@ The [documentation](https://doc.4d.com) of the command ....
 
 [![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 ```
-[![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "Logo blog 4D")](https://blog.4d.com)
+[![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 
 > For more information, see the [GitHub Markdown guide](https://guides.github.com/features/mastering-markdown/).
 
 
 
 
-## Exemplo
+## Example
 
 In the `WP SwitchToolbar.md` file, you can write:
 
@@ -234,7 +234,7 @@ $logo:=GetLogo(5)
 ```
 ````
 
-- Vista do explorador:
+- Explorer view:
 
 ![](../assets/en/Project/explorer_Doc.png)
 
