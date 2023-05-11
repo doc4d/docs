@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Sobre o código 4D
+title: About 4D Code
 ---
 
 
@@ -22,7 +22,7 @@ You can create [several types of methods](../Concepts/methods.md):
 
 ## Creating classes
 
-A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. O nome do arquivo é o nome da classe.
+A user class in 4D is defined by a specific method file (**.4dm**), stored in the [`/Project/Sources/Classes/`](../Project/architecture.md#sources) folder. The name of the file is the class name.
 
 You can create a class file from the **File** menu or toolbar (**New/Class...**) or in the **Methods** page of the **Explorer** window.
 
@@ -68,7 +68,7 @@ To display the **Method Properties** dialog box for a project method, you can ei
 
 > A batch setting function allows you to modify a property for all or part of the database project methods in a single operation (see [Batch setting for method attributes](#batch-setting-for-method-attributes)).
 
-#### Nome
+#### Name
 
 You can change the name of a project method in the **Name** area of the **Method Properties** window or in the Explorer.
 
@@ -84,7 +84,7 @@ With 4D Server, the method name is changed on the server when you finish editing
 
 You can control how project methods are used and/or called in different contexts using attributes. Note that you can set attributes for an entire selection of project methods using the Explorer (see following section).
 
-##### Invisível
+##### Invisible
 
 If you do not want users to be able to run a project method using the **Method...** command of the **Run** menu, you can make it Invisible by checking this option. An invisible method does not appear in the method execution dialog box.
 
@@ -96,7 +96,7 @@ This attribute is used within the framework of components. When it is checked, i
 
 For more information about components, refer to the [Developing and installing 4D components](../Extensions/develop-components.md) chapter.
 
-##### Executar no Servidor
+##### Execute on Server
 
 This attribute is only taken into account for a 4D application in client-server mode. When this option is checked, the project method is always executed on the server, regardless of how it is called.
 
@@ -130,11 +130,11 @@ Note that with this option, whatever the internal thread safety evaluation, the 
 
 ***Particular case*:** If the method has also the [**Shared by components and host database**](shared-by-components-and-host-database) property, setting the **Indifferent** option will automatically tag the method as thread-unsafe. If you want a shared component method to be thread-safe, you must explicitely set it to **Can be run in preemptive processes**.
 
-#### Disponível através de
+#### Available through
 
 Availability attributes specify the external services which are allowed to explicitly call the method.
 
-##### Serviços Web
+##### Web Services
 
 This attribute lets you publish the current method as a Web Service accessible via SOAP requests. For more information, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19R5/4D/19-R5/Publication-and-use-of-Web-Services.200-5851321.en.html) chapter. When this option is checked, the **Published in WSDL** option is enabled.
 
@@ -142,7 +142,7 @@ In the Explorer, project methods that are offered as a Web Service are given a s
 
 **Note:** You cannot publish a method as a Web service if its name includes characters that do not comply with XML nomenclature (e.g. containing spaces). If the method name is not in keeping with this, 4D does not assign the property.
 
-##### Publicado em WSDL
+##### Published in WSDL
 
 This attribute is only available when the "Web Service" attribute is checked. It lets you include the current method in the WSDL of the 4D application. For more information about this, refer to [Generation of the WSDL](https://doc.4d.com/4Dv19R5/4D/19-R5/Publishing-a-Web-Service-with-4D.300-5851558.en.html#502689).
 
@@ -162,14 +162,14 @@ When it is checked, this option allows the project method to be executed by the 
 
 This property applies to all internal and external SQL queries --- executed via the ODBC driver, SQL code inserted between the [Begin SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/Begin-SQL.301-5830074.en.html)/[End SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/End-SQL.301-5830073.en.html)  tags or the [QUERY BY SQL](https://doc.4d.com/4Dv19R5/4D/19-R5/QUERY-BY-SQL.301-5830079.en.html) command.
 
-**Notas:**
+**Notes:**
 
 -   Even if a method has the "SQL" attribute, access rights set at the level of the database settings and method properties are taken into account for the execution of the method.
 -   The ODBC **SQLProcedure** function only returns project methods with the "SQL" attribute.
 
 For more information, refer to [4D SQL engine implementation](https://doc.4d.com/4Dv19R5/4D/19-R5/4D-SQL-engine-implementation.300-5871873.en.html) in the 4D SQL manual.
 
-##### Servidor REST
+##### REST Server
 
 *This option is deprecated. Calling code through REST calls is only supported with [ORDA data model class functions](../REST/ClassFunctions.md).*
 
@@ -190,7 +190,7 @@ Use the wildcard character @ to help define groups of methods:
 - To designate methods whose names end with..., type @ at the beginning of the string. For example: `@write`
 - To designate all of the methods, just type @ in the area.
 
-**Notas:**
+**Notes:**
 - The search does not take upper/lower case into account.
 - You can enter several @ characters in the string, for example `dtro_@web@pro.@`
 
