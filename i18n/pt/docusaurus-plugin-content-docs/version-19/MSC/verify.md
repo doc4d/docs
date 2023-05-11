@@ -1,7 +1,7 @@
 ---
 id: verify
-title: Página Verificação
-sidebar_label: Página Verificação
+title: Verify Page
+sidebar_label: Verify Page
 ---
 
 You use this page to verify data integrity. The verification can be carried out on records and/or indexes. This page only checks the data integrity. If errors are found and repairs are needed, you will be advised to use the [Repair page](repair.md).
@@ -14,7 +14,7 @@ The page contains action buttons that provide direct access to the verification 
 - **Verify the records and the indexes:** Starts the total data verification procedure.
 - **Verify the records only**: Starts the verification procedure for records only (indexes are not verified).
 - **Verify the indexes only**: Starts the verification procedure for indexes only (records are not verified).
-> > Verification of records and indexes can also be carried out in detail mode, table by table (see the Details section below).
+> Verification of records and indexes can also be carried out in detail mode, table by table (see the Details section below).
 
 ## Open log file
 
@@ -25,7 +25,7 @@ Regardless of the verification requested, 4D generates a log file in the `Logs` 
 
 When you click on the **Open log file** button, 4D displays the most recent log file in the default browser of the machine.
 
-## Detalhes
+## Details
 
 The **Table list** button displays a detailed page that can be used to view and select the actual records and indexes to be checked:
 
