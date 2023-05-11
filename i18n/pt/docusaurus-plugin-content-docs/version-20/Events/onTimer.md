@@ -3,12 +3,12 @@ id: onTimer
 title: On Timer
 ---
 
-| Code | Pode ser chamado por | Definição                                                         |
-| ---- | -------------------- | ----------------------------------------------------------------- |
-| 27   | Formulário           | The number of ticks defined by the `SET TIMER` command has passed |
+| Code | Can be called by | Definition                                                        |
+| ---- | ---------------- | ----------------------------------------------------------------- |
+| 27   | Form             | The number of ticks defined by the `SET TIMER` command has passed |
 
 
-## Descrição
+## Description
 
 This event is generated only if the form method contains a previous call to the `SET TIMER` command.
 
