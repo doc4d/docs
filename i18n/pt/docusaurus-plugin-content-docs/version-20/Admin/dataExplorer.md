@@ -1,28 +1,28 @@
 ---
 id: dataExplorer
-title: Explorador de dados
+title: Data Explorer
 ---
 
-O Data Explorer oferece uma interface web para ver e pesquisar dados em sua datastore de projeto. Ao usar esta ferramente, pode navegar facilmente entre todas suas entidades e pesquisar, ordenar ou filtrar valores de atributos. Ajuda a controlar dados e rapidamente identificar problemas em qualquer etapa do processo de desenvolvimento.
+The Data Explorer provides a web interface to view and query data in your project datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any step of the development process.
 
 ![alt-text](../assets/en/Admin/dataExplorer1.png)
 
-## Configuração
+## Access Configuration
 
-O Data Explorer depende do componente web server [`WebAdmin`](webAdmin.md) para a configuração e preferências de autentificação.
+The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component for the configuration and authentication settings.
 
-- **configuration**: a configuração de Data Explorer reutiliza as configurações [`WebAdmin` de web server](webAdmin.md#webadmin-settings),
-- **authentication**: acesso ao Data Explorer é oferecido quando  [a sessão de usuário for autenticada](webAdmin.md#authentication-and-session) e tem o privilégio "WebAdmin". Quando o Data Explorer for acessado através do item de menu**Data Explorer** (ver abaixo), uma autenticação automática é oferecida.
+- **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
+- **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided.
 
-> O acesso ao Data Explorer pode ser desativado usando a função [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection).
+> The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) function.
 
-## Abrindo o Data Explorer
+## Opening the Data Explorer
 
 [The `WebAdmin` web server](webAdmin.md#starting-the-webadmin-web-server) is started automatically if necessary when the Data Explorer is clicked on.
 
-Para se conectar à página web do Data Explorer:
+To connect to the Data Explorer web page:
 
-- A partir de uma aplicação 4D (com interface):
+- From a 4D application (with interface):
   - To open a new 4D window with the Data Explorer page displayed in a web area, select **Data Explorer** in the **Records** menu or click on the **Data** button in the main toolbar.
   - To open the Data Explorer in an external browser tab, select **Data Explorer In Browser** in the **Records** menu press the **Alt** key (Windows)/**Option** key (macOS) and click on the **Data** button in the main toolbar.
 - From 4D Server, select **Data Explorer In Browser** in the **Window** menu (the Data Explorer can only be opened on an external browser).
@@ -31,147 +31,147 @@ Para se conectar à página web do Data Explorer:
 
  `IPaddress:HTTPPort/dataexplorer` or `IPaddress:HTTPSPort/dataexplorer`
 
- Neste contexto será pedido que digite a [chave de acesso](webAdmin.md#access-key) para abrir uma sessão `WebAdmin` no servidor:
+ In this context, you will be prompted to enter the [access key](webAdmin.md#access-key) to open a `WebAdmin` session on the server:
 
 ![alt-text](../assets/en/Admin/accessKeyEnter.png)
 
-> [Os valores HTTPPort](webAdmin.md#http-port) e [HTTPSPort](webAdmin.md#https-port) são configurados nas definições `WebAdmin` .
+> [HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings.
 
-## Utilização do Data Explorer
+## Using the Data Explorer
 
-Para além de uma visão abrangente e personalizável dos seus dados, o Explorador de Dados permite-lhe consultar e ordenar os seus dados.
+In addition to a comprehensive and customizable view of your data, the Data Explorer allows you to query and order your data.
 
-### Requisitos
+### Requirements
 
-O Data Explorer suporta os seguintes navegadores web:
+The Data Explorer supports the following web browsers:
 
 - Chrome
 - Safari
 - Edge
 - FireFox
 
-A resolução mínima para utilizar o Data Explorer é de 1280x720. A resolução recomendada é 1920x1080.
+The minimum resolution to use the Data Explorer is 1280x720. Recommended resolution is 1920x1080.
 
-### Básicos
+### Basics
 
-O Data Explorer proporciona um acesso global ao modelo de dados ORDA em relação às regras de mapeamento ORDA [](ORDA/dsMapping.md#general-rules).
+The Data Explorer provides an overall access to the ORDA data model with respect to the [ORDA mapping rules](ORDA/dsMapping.md#general-rules).
 
-Pode mudar para o modo escuro **** mostrar o tema usando o selector no fundo da página:
+You can switch to the **dark mode** display theme using the selector at the bottom of the page:
 
 ![alt-text](../assets/en/Admin/dark.png)
 
 ![alt-text](../assets/en/Admin/dataExplorer2.png)
 
-A página contém várias áreas:
+The page contains several areas:
 
-- Do lado esquerdo encontra-se a área **Dataclasses** e **Attributes area**, permitindo-lhe seleccionar os dataclasses e atributos a exibir. Os atributos são ordenados de acordo com a ordem de criação da estrutura subjacente. A chave primária e os atributos indexados têm um ícone específico. É possível filtrar a lista de nomes de dataclass propostos e nomes de atributos utilizando as respectivas áreas de pesquisa. ![alt-text](../assets/en/Admin/dataExplorer3.png)
+- On the left side are the **Dataclasses area** and **Attributes area**, allowing you can select the dataclasses and attributes to display. Attributes are ordered according to the underlying structure creation order. Primary key and indexed attributes have a specific icon. You can filter the list of proposed dataclass names and attribute names using the respective search areas. ![alt-text](../assets/en/Admin/dataExplorer3.png)
 
-- A parte central contém a área de pesquisa **** e a grade de dados **** (lista de entidades da classe de dados seleccionada). Cada coluna da grade representa um atributo de datastore.
-  - Como padrão, todas as entidades são exibidas. É possível filtrar as entidades apresentadas utilizando a área de pesquisa. Estão disponíveis dois modos de consulta: [Consulta sobre atributos](#query-on-attributes) (seleccionado por defeito), e a consulta avançada [com expressão](#advanced-query-with-expression). Selecciona o modo de consulta clicando no botão correspondente (o botão **X** permite reiniciar a área de consulta e assim parar a filtragem): ![alt-text](../assets/en/Admin/dataExplorer4b.png)
-  - O nome da classe de dados seleccionada é adicionado como um separador por cima da grelha de dados. Utilizando estas abas, é possível alternar entre os valores já selecionados. Pode remover um dataclass referenciado clicando no ícone "remover" à direita do nome do dataclass.
-  - É possível reduzir o número de colunas desmarcando os atributos do lado esquerdo. Também pode mudar as colunas da grade de dados utilizando arrastar e soltar. Pode clicar no cabeçalho de uma coluna  para [ordenar entidades](#ordering-entities) de acordo com seus valores (quando for possível).
-  - Se uma operação exigir muito tempo, é mostrada uma barra de progresso. Pode deter a operação executando a qualquer momento clicando no botão vermelho:<br/> ![alt-text](../assets/en/Admin/dataExplorer5.png)
+- The central part contains the **Search area** and the **Data grid** (list of entities of the selected dataclass). Each column of the grid represents a datastore attribute.
+  - By default, all entities are displayed. You can filter the displayed entities using the search area. Two query modes are available: [Query on attributes](#query-on-attributes) (selected by default), and the [Advanced query with expression](#advanced-query-with-expression). You select the query mode by clicking on the corresponding button (the **X** button allows you to reset the query area and thus stop filtering): ![alt-text](../assets/en/Admin/dataExplorer4b.png)
+  - The name of the selected dataclass is added as a tab above the data grid. Using these tabs, you can switch between dataclasses that have been already selected. You can remove a referenced dataclass by clicking the "remove" icon at the right of the dataclass name.
+  - You can reduce the number of columns by unchecking attributes in the left side. You can also switch the columns in the data grid using drag and drop. You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible).
+  - If an operation requires a long time, a progress bar is displayed. You can stop the running operation at any moment by clicking on the red button:<br/> ![alt-text](../assets/en/Admin/dataExplorer5.png)
 
-- No lado direito de **Details area**: exibe os valores de atributo da entidade atual de seleção assim como **related data**, se houver. Pode navegar entre as entidades da dataclass cliando nos links **First** / **Previous** / **Next** / **Last** na parte inferior da área.
-  - Todos os tipos de atributo são exibidos, incluindo imagens, objetos (expressos como json) assim como atributos[computed](../ORDA/ordaClasses.md#computed-attributes-1) e [alias](../ORDA/ordaClasses.md#alias-attributes-1).
-  - Os dados relacionados (relações um a um e um a muitos) podem ser mostradas através de áreas expandíveis/colapsáveis:<br/> ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
-  - **Ctrl+Click** (Windows) ou **Command+Click** (macOS) em um nome de atributo relacionado na área do lado direito mostra os valores do atributo numa área independente e flutuante:<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
+- On the right side is the **Details area**: it displays the attribute values of the currently selected entity as well as **related data**, if any. You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.
+  - All attribute types are displayed, including pictures, objects (expressed in json) as well as [computed](../ORDA/ordaClasses.md#computed-attributes-1) and [alias](../ORDA/ordaClasses.md#alias-attributes-1) attributes.
+  - Related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:<br/> ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
+  - **Ctrl+Click** (Windows) or **Command+Click** (macOS) on a related attribute name in the right side area displays the values of the attribute in an independant, floating area:<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
 
-### Atualização de conteúdos
+### Updating contents
 
-Quando o modelo ou dados ORDA é modificado no lado da base de dados (tabela adicionada, registo editado ou apagado, etc.), basta atualizar a página do Data Explorer no browser (usando a tecla F5, por exemplo).
+When the ORDA model or data is modified on the database side (table added, record edited or deleted, etc.), you just need to refresh the Data Explorer page in the browser (using the F5 key, for example).
 
-### Ordenar entidades
+### Ordering entities
 
-É possível reordenar a lista de entidades apresentada de acordo com os valores dos atributos. Todos os tipos de atributos podem ser utilizados para uma espécie, exceto imagem e objeto.
+You can reorder the displayed entity list according to attribute values. All types of attributes can be used for a sort, except picture and object.
 
-- Clique no cabeçalho de uma coluna para encomendar entidades de acordo com os valores dos atributos correspondentes. Como padrão, a ordem é ascendente. Clicar duas vezes para uma ordem decrescente. Uma coluna utilizada para classificar entidades é exibida com um pequeno ícone e o seu nome está em *itálico*.
+- Click on a column header to order entities according to the corresponding attribute values. By default, the sort is ascending. Click twice for a descending sort. A column used to sort entities is displayed with a small icon and its name is in *italics*.
 
 ![alt-text](../assets/en/Admin/dataExplorer7.png)
 
-- É possível ordenar atributos em vários níveis. Por exemplo, é possível classificar os empregados por cidade e depois por salário. Para fazer isso, mantenha apertada a tecla **Shift** e clique sequencialmente no cabeçalho de cada coluna para incluir na ordem.
+- You can sort attributes on several levels. For example, you can sort employees by city and then by salary. To do that, hold down the **Shift** key and click sequentially on each column header to include in the sort order.
 
-### Consulta sobre atributos
+### Query on attributes
 
-Neste modo, é possível filtrar entidades introduzindo valores a encontrar (ou a excluir) nas áreas acima da lista de atributos. Pode filtrar um ou vários atributos. A lista de entidades é automaticamente atualizada quando se digita.
+In this mode, you can filter entities by entering values to find (or to exclude) in the areas above the attribute list. You can filter on one or several attributes. The entity list is automatically updated when you type in.
 
 ![alt-text](../assets/en/Admin/dataExplorer6.png)
 
-Se introduzir vários atributos, é automaticamente aplicado um AND. Por exemplo, o filtro a seguir exibe entidades com *primeiro nome* atributo começando com "flo" e *salário* valor do atributo > 50000:
+If you enter several attributes, a AND is automatically applied. For example, the following filter displays entities with *firstname* attribute starting with "flo" AND *salary* attribute value > 50000:
 
 ![alt-text](../assets/en/Admin/dataExplorer9.png)
 
-O botão **X** permite remover os atributos introduzidos e assim parar a filtragem.
+The **X** button allows you to remove entered attributes and thus stop filtering.
 
-Estão disponíveis diferentes operadores e opções de consulta, dependendo do tipo de dados do atributo.
+Different operators and query options are available, depending on the data type of the attribute.
 
-> Não é possível filtrar em imagens ou atributos de objectos.
+> You cannot filter on picture or object attributes.
 
-#### Operadores de números
+#### Numeric operators
 
-Com atributos numéricos, de data e hora, o operador "=" é seleccionado por defeito. Contudo, pode selecionar outro operador da lista de operadores (clicar no ícone "=" para exibir a lista):
+With numeric, date, and time attributes, the "=" operator is selected by default. However, you can select another operator from the operator list (click on the "=" icon to display the list):
 
 ![alt-text](../assets/en/Admin/DEFilter1.png)
 
-#### Datas
+#### Dates
 
-Com atributos de data, pode introduzir a data a utilizar através de um widget de escolha de data (clique na área de data para exibir o calendário):
+With date attributes, you can enter the date to use through a datepicker widget (click on the date area to display the calendar):
 
 ![alt-text](../assets/en/Admin/DEFilter2.png)
 
 #### Booleans
 
-Ao clicar numa área de atributos booleanos, pode filtrar em **valores verdadeiros**/**valores falsos** ou também em **null**/**e não null**:
+When you click on a boolean attribute area, you can filter on **true**/**false** values but also on **null**/**not null** values:
 
 ![alt-text](../assets/en/Admin/DEFilter3.png)
 
-- **nulo** indica que o valor do atributo não foi definido
-- **não nulo** indica que o valor do atributo está definido (portanto verdadeiro ou falso).
+- **null** indicates that the attribute value was not defined
+- **not null** indicates that the attribute value is defined (thus true or false).
 
 #### Text
 
-Os filtros de texto não são diacríticos (a = A).
+Text filters are not diacritic (a = A).
 
-O filtro é do tipo "começa com". Por exemplo, a entrada "Jim" mostrará os valores "Jim" e "Jimmy".
+The filter is of the "starts with" type. For example, entering "Jim" will show "Jim" and "Jimmy" values.
 
-Também pode usar o caractere coringa (@) para substituir um ou mais caracteres iniciais. Por exemplo:
+You can also use the wildcard character (@) to replace one or more starting characters. For example:
 
-| Um filtro com | Resultados                                                |
-| ------------- | --------------------------------------------------------- |
-| Bel           | Todos os valores que começam com "Bel                     |
-| @do           | Todos os valores contendo "do"                            |
-| Bel@do        | Todos os valores que começam com "Bel" e que contêm "do". |
+| A filter with | Finds                                              |
+| ------------- | -------------------------------------------------- |
+| Bel           | All values beginning with “Bel”                    |
+| @do           | All values containing “do”                         |
+| Bel@do        | All values starting with “Bel” and containing “do” |
 
-Se quiser criar consultas mais específicas, tais como "é exatamente", poderá ter de utilizar a funcionalidade de consultas avançadas.
+If you want to create more specific queries, such as "is exactly", you may need to use the advanced queries feature.
 
-### Consultas avançadas com expressão
+### Advanced queries with expression
 
-Ao seleccionar esta opção, é exibida uma área de consulta acima da lista de entidades, permitindo-lhe introduzir qualquer expressão a utilizar para filtrar o conteúdo:
+When you select this option, a query area is displayed above the entity list, allowing you to enter any expression to use to filter the contents:
 
 ![alt-text](../assets/en/Admin/dataExplorer8.png)
 
-Pode introduzir consultas avançadas que não estão disponíveis como consultas de atributos. Por exemplo, se quiser encontrar entidades com *primeiro nome* atributo contendo "Jim" mas não "Jimmy", pode escrever:
+You can enter advanced queries that are not available as attribute queries. For example, if you want to find entities with *firstname* attribute containing "Jim" but not "Jimmy", you can write:
 
 ```
 firstname=="Jim"
 ```
 
-Pode utilizar qualquer expressão de consulta ORDA como [documentada com a consulta `()` função](API/DataClassClass.md#query), com as seguintes limitações ou diferenças:
+You can use any ORDA query expression as [documented with the `query()` function](API/DataClassClass.md#query), with the following limitations or differences:
 
-- Para segurança, não é possível executar fórmulas usando `eval()`.
-- Os marcadores de lugar não podem ser utilizados; é necessário escrever uma consulta *queryString* com valores.
-- Os valores das strings contendo caracteres espaciais devem ser incorporados entre aspas duplas ("").
+- For security, you cannot execute formulas using `eval()`.
+- Placeholders cannot be used; you have to write a *queryString* with values.
+- String values containing space characters must be embedded in double quotes ("").
 
-Por exemplo, com o Dataclass Employee, pode escrever:
+For example, with the Employee dataclass, you can write:
 
 ```
-firstname = "Marie Sophie" E manager.lastname = "@th"
+firstname = "Marie Sophie" AND manager.lastname = "@th"
 ```
 
-Pode clicar no ícone `v` para visualizar tanto [`queryPlan`](API/DataClassClass.md#queryplan) como [`queryPath`](API/DataClassClass.md#querypath). Na área, pode pairar sobre os blocos de subconsulta para ter informações detalhadas por subconsulta:
+You can click on the `v` icon to display both [`queryPlan`](API/DataClassClass.md#queryplan) and [`queryPath`](API/DataClassClass.md#querypath). In the area, you can hover over the subquery blocks to have detailed information per subquery:
 
 ![alt-text](../assets/en/Admin/dataExplorer12.png)
 
-Clique com o botão direito do mouse na área de consulta para exibir as consultas válidas anteriores:
+Right-click in the query area to display the previous valid queries:
 
 ![alt-text](../assets/en/Admin/dataExplorer11.png)
