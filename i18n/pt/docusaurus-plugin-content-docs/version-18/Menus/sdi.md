@@ -1,15 +1,15 @@
 ---
 id: sdi
-title: Modo SDI em Windows
+title: SDI mode on Windows
 ---
 
-## Visão Geral
+## Overview
 
 On Windows, 4D developers can configure their 4D merged applications to work as SDI (Single-Document Interface) applications. In SDI applications, each window is independant from others and can have its own menu bar. SDI applications are opposed to MDI (Multiple Documents Interface) applications, where all windows are contained in and depend on the main window.
 
 > The concept of SDI/MDI does not exist on macOS. This feature concerns Windows applications only and related options are ignored on macOS.
 
-### Disponibilidade do modo SDI
+### SDI mode availabilty
 
 The SDI mode is available in the following execution environment only:
 
@@ -20,7 +20,7 @@ The SDI mode is available in the following execution environment only:
 
 Enabling and using the SDI mode in your application require the following steps:
 
-1. Selecione a opção **Utilizar o modo SDI en Windows** na página "Interface" da caixa de diálogo das Propriedades de banco de dados.
+1. Check the **Use SDI mode on Windows** option in the "Interface" page of the Database Settings dialog box.
 2. Build a merged application (standalone and/or client application).
 
 Then, when executed it in a supported context (see above), the merged application will work automatically in SDI mode.
@@ -29,7 +29,7 @@ Then, when executed it in a supported context (see above), the merged applicatio
 
 Executing a 4D application in SDI mode does not require any specific implementation: existing menu bars are automatically moved in SDI windows themselves. However, you need to pay attention to specific principles that are listed below.
 
-### Menus em janelas
+### Menus in Windows
 
 In SDI mode, the process menu bar is automatically displayed in every document type window opened during the process life (this excludes, for example, floating palettes). When the process menu bar is not visible, menu item shortcuts remain active however.
 
@@ -41,10 +41,10 @@ Windows can therefore be used in MDI or SDI modes without having to recalculate 
 
 #### About the splash screen
 
-- Se selecionar a opção de interface **Tela de boas vindas** em Configuração do banco de dados, a janela de boas vindas conterá os menus que seriam mostrados na janela MDI. Note also that closing the splash screen window will result in exiting the application, just like in MDI mode.
+- If the **Splash screen** interface option was selected in the Database Settings, the splash window will contain any menus that would have been displayed in the MDI window. Note also that closing the splash screen window will result in exiting the application, just like in MDI mode.
 - If the Splash screen option was not selected, menus will be displayed in opened windows only, depending on the programmer's choices.
 
-### Saída automática
+### Automatic quit
 
 When executed in MDI mode, a 4D application simply quits when the user closes the application window (MDI window). However, when executed in SDI mode, 4D applications do not have an application window and, on the other hand, closing the last opened window does not necessarily mean that the user wants the application to quit (faceless processes can be running, for example) -- although it could be what they want.
 
@@ -57,7 +57,7 @@ To handle this case, 4D applications executed in SDI mode include a mechanism to
 
 > When a menu with an associated *quit* standard action is called, the application quits and all windows are closed, wherever the menu was called from.
 
-## Línguagem
+## Language
 
 Although it is transparently handled by 4D, the SDI mode introduces small variations in the application interface management. Specificities in the 4D language are listed below.
 
@@ -70,4 +70,4 @@ Although it is transparently handled by 4D, the SDI mode introduces small variat
 | `CONVERT COORDINATES`             | `XY Screen` is the global coordinate system where the main screen is positioned at (0,0). Screens on its left side or on top of it can have negative coordinates and any screens on its right side or underneath it can have coordinates greater than the values returned by `Screen height` or `Screen width`. |
 | `GET MOUSE`                       | Global coordinates are relative to the screen                                                                                                                                                                                                                                                                   |
 | `GET WINDOW RECT`                 | When -1 is passed in window parameter, the command returns 0;0;0;0                                                                                                                                                                                                                                              |
-| `On Drop database method`         | Não suportado                                                                                                                                                                                                                                                                                                   |
+| `On Drop database method`         | Not supported                                                                                                                                                                                                                                                                                                   |
