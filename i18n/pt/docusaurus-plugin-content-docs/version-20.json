@@ -4,11 +4,11 @@
     "description": "The label for version 20"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Começando",
+    "message": "Getting Started",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Getting Started.link.generated-index.title": {
-    "message": "Começando",
+    "message": "Getting Started",
     "description": "The generated-index page title for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development": {
@@ -36,7 +36,7 @@
     "description": "The generated-index page description for category 4D Language Concepts in sidebar docs"
   },
   "sidebar.docs.category.Data Types": {
-    "message": "Tipos de dados",
+    "message": "Data Types",
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.ORDA": {
@@ -60,11 +60,11 @@
     "description": "The label for category Handling Code in sidebar docs"
   },
   "sidebar.docs.category.Tags": {
-    "message": "Etiquetas",
+    "message": "Tags",
     "description": "The label for category Tags in sidebar docs"
   },
   "sidebar.docs.category.Debugging": {
-    "message": "Depuração",
+    "message": "Debugging",
     "description": "The label for category Debugging in sidebar docs"
   },
   "sidebar.docs.category.Settings": {
@@ -72,7 +72,7 @@
     "description": "The label for category Settings in sidebar docs"
   },
   "sidebar.docs.category.Preferences": {
-    "message": "Preferências",
+    "message": "Preferences",
     "description": "The label for category Preferences in sidebar docs"
   },
   "sidebar.docs.category.Administration": {
@@ -104,7 +104,7 @@
     "description": "The generated-index page description for category Web Administration in sidebar docs"
   },
   "sidebar.docs.category.MSC": {
-    "message": "CSM",
+    "message": "MSC",
     "description": "The label for category MSC in sidebar docs"
   },
   "sidebar.docs.category.Backup and Restore": {
@@ -112,7 +112,7 @@
     "description": "The label for category Backup and Restore in sidebar docs"
   },
   "sidebar.docs.category.Extensions": {
-    "message": "Extensões",
+    "message": "Extensions",
     "description": "The label for category Extensions in sidebar docs"
   },
   "sidebar.docs.category.4D View Pro": {
@@ -124,11 +124,11 @@
     "description": "The generated-index page title for category 4D View Pro in sidebar docs"
   },
   "sidebar.docs.category.Web Applications": {
-    "message": "Aplicações Web",
+    "message": "Web Applications",
     "description": "The label for category Web Applications in sidebar docs"
   },
   "sidebar.docs.category.Web Applications.link.generated-index.title": {
-    "message": "Aplicações Web",
+    "message": "Web Applications",
     "description": "The generated-index page title for category Web Applications in sidebar docs"
   },
   "sidebar.docs.category.Web Applications.link.generated-index.description": {
@@ -136,7 +136,7 @@
     "description": "The generated-index page description for category Web Applications in sidebar docs"
   },
   "sidebar.docs.category.Web Server": {
-    "message": "Servidor Web",
+    "message": "Web Server",
     "description": "The label for category Web Server in sidebar docs"
   },
   "sidebar.docs.category.Web Development": {
@@ -144,11 +144,11 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "Servidor REST",
+    "message": "REST Server",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.title": {
-    "message": "Servidor REST",
+    "message": "REST Server",
     "description": "The generated-index page title for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.description": {
@@ -156,7 +156,7 @@
     "description": "The generated-index page description for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
-    "message": "Guias",
+    "message": "Guides",
     "description": "The label for category Guides in sidebar docs"
   },
   "sidebar.docs.category.API (general)": {
@@ -208,11 +208,11 @@
     "description": "The generated-index page description for category Access Rights in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Formulários",
+    "message": "Forms",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Editor de formulários",
+    "message": "Form Editor",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -228,7 +228,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Eventos formulário",
+    "message": "Form Events",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
@@ -280,19 +280,19 @@
     "description": "The label for link 4D for iOS (archive) in sidebar docs, linking to https://developer.4d.com/4d-for-ios"
   },
   "sidebar.docs.doc.Command Line Interface": {
-    "message": "Interface de linha de comando",
+    "message": "Command Line Interface",
     "description": "The label for the doc item Command Line Interface in sidebar docs, linking to the doc Admin/cli"
   },
   "sidebar.docs.doc.TLS Protocol": {
-    "message": "Protocolo TLS",
+    "message": "TLS Protocol",
     "description": "The label for the doc item TLS Protocol in sidebar docs, linking to the doc Admin/tls"
   },
   "sidebar.docs.doc.Managing 4D Licenses": {
-    "message": "Gestão de Licenças 4D",
+    "message": "Managing 4D Licenses",
     "description": "The label for the doc item Managing 4D Licenses in sidebar docs, linking to the doc Admin/licenses"
   },
   "sidebar.docs.doc.Data Collection": {
-    "message": "Coleta de dados",
+    "message": "Data Collection",
     "description": "The label for the doc item Data Collection in sidebar docs, linking to the doc Admin/data-collect"
   },
   "sidebar.docs.doc.Client/Server": {
