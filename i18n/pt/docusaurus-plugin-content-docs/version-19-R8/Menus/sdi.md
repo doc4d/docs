@@ -1,6 +1,6 @@
 ---
 id: sdi
-title: Modo SDI em Windows
+title: SDI mode on Windows
 ---
 
 
@@ -40,7 +40,7 @@ Because the development environment is executed in MDI, switching from developme
 
 Executing a 4D application in SDI mode does not require any specific implementation: existing menu bars are automatically moved in SDI windows themselves. However, you need to pay attention to specific principles that are listed below.
 
-### Menus em janelas
+### Menus in Windows
 
 In SDI mode, the process menu bar is automatically displayed in every document type window opened during the process life (this excludes, for example, floating palettes). When the process menu bar is not visible, menu item shortcuts remain active however.
 
@@ -55,11 +55,11 @@ Windows can therefore be used in MDI or SDI modes without having to recalculate 
 - If the **Splash screen** interface option was [selected in the Settings](../settings/interface.md#display-windows), the splash window will contain any menus that would have been displayed in the MDI window. Note also that closing the splash screen window will result in exiting the application, just like in MDI mode.
 - If the Splash screen option was not selected, menus will be displayed in opened windows only, depending on the programmer's choices.
 
-### Depurador
+### Debugger
 
 When displayed in SDI mode, the [debugger window](../Debugging/debugger.md) does not contain [editing buttons](../Debugging/debugger.md#tool-bar-buttons), because switching to development environment requires to abort execution and restart the application in MDI mode.
 
-### Saída automática
+### Automatic quit
 
 When executed in MDI mode, a 4D application simply quits when the user closes the application window (MDI window). However, when executed in SDI mode, 4D applications do not have an application window and, on the other hand, closing the last opened window does not necessarily mean that the user wants the application to quit (faceless processes can be running, for example) -- although it could be what they want.
 
@@ -77,7 +77,7 @@ When a menu with an associated *quit* standard action is called, the application
 
 :::
 
-## Línguagem
+## Language
 
 Although it is transparently handled by 4D, the SDI mode introduces small variations in the application interface management. Specificities in the 4D language are listed below.
 
@@ -90,7 +90,7 @@ Although it is transparently handled by 4D, the SDI mode introduces small variat
 | `CONVERT COORDINATES`             | `XY Screen` is the global coordinate system where the main screen is positioned at (0,0). Screens on its left side or on top of it can have negative coordinates and any screens on its right side or underneath it can have coordinates greater than the values returned by `Screen height` or `Screen width`. |
 | `GET MOUSE`                       | Global coordinates are relative to the screen                                                                                                                                                                                                                                                                   |
 | `GET WINDOW RECT`                 | When -1 is passed in window parameter, the command returns 0;0;0;0                                                                                                                                                                                                                                              |
-| `On Drop database method`         | Não suportado                                                                                                                                                                                                                                                                                                   |
+| `On Drop database method`         | Not supported                                                                                                                                                                                                                                                                                                   |
 
 :::info
 
