@@ -1,6 +1,6 @@
 ---
 id: propertiesWebArea
-title: Área Web
+title: Web Area
 ---
 
 ---
@@ -14,31 +14,31 @@ When this property is on, a special JavaScript object named `$4d` is instantiate
 
 
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome                 | Tipo de dados | Valores possíveis       |
-| -------------------- | ------------- | ----------------------- |
-| methodsAccessibility | string        | "none" (default), "all" |
+| Name                 | Data Type | Possible Values         |
+| -------------------- | --------- | ----------------------- |
+| methodsAccessibility | string    | "none" (default), "all" |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Área Web](webArea_overview.md)
+[Web Area](webArea_overview.md)
 
 
 ---
-## Progressão
+## Progression
 
 Name of a Longint type variable. This variable will receive a value between 0 and 100, representing the page load completion percentage in the Web area. Automatically updated by 4D, cannot be modified manually.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome           | Tipo de dados | Valores possíveis          |
-| -------------- | ------------- | -------------------------- |
-| progressSource | string        | Name of a Longint variable |
+| Name           | Data Type | Possible Values            |
+| -------------- | --------- | -------------------------- |
+| progressSource | string    | Name of a Longint variable |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Área Web](webArea_overview.md)
+[Web Area](webArea_overview.md)
 
 
 
@@ -61,15 +61,15 @@ The URL variable produces the same effects as the [WA OPEN URL](https://doc.4d.c
 - If the URL variable does not contain a protocol (http, mailto, file, etc.), the Web area adds "http://", which is not the case for the [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.en.html) command.
 - When the Web area is not displayed in the form (when it is located on another page of the form), executing the [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.en.html) command has no effect, whereas assigning a value to the URL variable can be used to update the current URL.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome      | Tipo de dados | Valores possíveis |
-| --------- | ------------- | ----------------- |
-| urlSource | string        | Um URL.           |
+| Name      | Data Type | Possible Values |
+| --------- | --------- | --------------- |
+| urlSource | string    | A URL.          |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Área Web](webArea_overview.md)
+[Web Area](webArea_overview.md)
 
 
 
@@ -82,19 +82,19 @@ The URL variable produces the same effects as the [WA OPEN URL](https://doc.4d.c
 This option allows choosing between two rendering engines for the Web area, depending on the specifics of your application:
 
 *   **unchecked** - `JSON value: system` (default): In this case, 4D uses the "best" engine corresponding to the system. On Windows, 4D automatically uses the most recent version of the browser found on the machine (IE11, MS Edge, etc.). On macOS, 4D uses the current version of WebKit (Safari). This means that you automatically benefit from the latest advances in Web rendering, through HTML5 or JavaScript. However, you may notice some rendering differences between Internet Explorer/Edge implementations and WebKit ones.
-*   **checked** - `JSON value: embedded`: In this case, 4D uses Blink engine from Google (CEF). Using the embedded Web engine means that Web area rendering and their functioning in your application are identical regardless of the platform used to run 4D (slight variations of pixels or differences related to network implementation may nevertheless be observed). Using the embedded Web engine means that Web area rendering and their functioning in your application are identical regardless of the platform used to run 4D (slight variations of pixels or differences related to network implementation may nevertheless be observed).
+*   **checked** - `JSON value: embedded`: In this case, 4D uses Blink engine from Google (CEF). Using the embedded Web engine means that Web area rendering and their functioning in your application are identical regardless of the platform used to run 4D (slight variations of pixels or differences related to network implementation may nevertheless be observed). When this option is chosen, you no longer benefit from automatic updates of the Web engine performed by the operating system; however, new versions of the engines are provided through 4D.
 
 The Blink engine has the following limitations:
 
-- [WA SET PAGE CONTENT](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PAGE-CONTENT.301-5232965.en.html): usar esse comando exige que pelo menos uma página já esteja carregado na área (através da chamada a [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) ou uma atribuição à variável URL associada à área).
-- Quando se ativa soltar URLs mediante o seletor `WA enable URL drop` do comando [WA SET PREFERENCE](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PREFERENCE.301-5232962.en.html), a primeira soltada deve ir precedida de ao menos uma chamada a [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) ou uma atribuição à variável URL associada à área.
+- [WA SET PAGE CONTENT](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PAGE-CONTENT.301-5232965.en.html): using this command requires that at least one page is already loaded in the area (through a call to [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) or an assignment to the URL variable associated to the area).
+- When URL drops are enabled by the `WA enable URL drop` selector of the [WA SET PREFERENCE](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PREFERENCE.301-5232962.en.html) command, the first drop must be preceded by at least one call to [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) or one assignment to the URL variable associated to the area.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome      | Tipo de dados | Valores possíveis    |
-| --------- | ------------- | -------------------- |
-| webEngine | string        | "embedded", "system" |
+| Name      | Data Type | Possible Values      |
+| --------- | --------- | -------------------- |
+| webEngine | string    | "embedded", "system" |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Área Web](webArea_overview.md)
+[Web Area](webArea_overview.md)
