@@ -1,6 +1,6 @@
 ---
 id: sessions
-title: Sessões usuário
+title: User sessions
 ---
 
 The 4D web server provides built-in features for managing **user sessions**. Creating and maintaining user sessions allows you to control and improve the user experience on your web application. When user sessions are enabled, web clients can reuse the same server context from one request to another.
@@ -84,7 +84,7 @@ When a scalable web session is closed, if the [`Session`](API/SessionClass.md#se
 - a new session cookie is associated to the session
 
 
-## Privilégios
+## Privileges
 
 Privileges can be associated to sessions. On the web server, you can provide specific access or features depending on the privileges of the session.
 
@@ -92,16 +92,18 @@ You can assign privileges usign the [`.setPrivileges()`](API/SessionClass.md#set
 
 > In the current implementation (v18 R6), only the "WebAdmin" privilege is available.
 
-Exemplo:
+Example:
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
-    //Access is granted, do nothing Else
-    //Display an authentication page End if
+    //Access is granted, do nothing
+Else
+    //Display an authentication page
+End if
 ```
 
 
-## Exemplo
+## Example
 
 In a CRM application, each salesperson manages their own client portfolio. The datastore contains at least two linked dataclasses: Customers and SalesPersons (a salesperson has several customers).
 
@@ -141,8 +143,13 @@ http://localhost:8044/authenticate.shtml
 ```4d
 var $indexUserId; $indexPassword; $userId : Integer
 var $password : Text
-var $userTop3; $sales; $info : Object ARRAY TEXT($anames; 0)
-ARRAY TEXT($avalues; 0) WEB GET VARIABLES($anames; $avalues)
+var $userTop3; $sales; $info : Object
+
+
+ARRAY TEXT($anames; 0)
+ARRAY TEXT($avalues; 0)
+
+WEB GET VARIABLES($anames; $avalues)
 
 $indexUserId:=Find in array($anames; "userId")
 $userId:=Num($avalues{$indexUserId})
@@ -150,7 +157,9 @@ $userId:=Num($avalues{$indexUserId})
 $indexPassword:=Find in array($anames; "password")
 $password:=$avalues{$indexPassword}
 
-$sales:=ds. SalesPersons.query("userId = :1"; $userId).first() If ($sales#Null)
+$sales:=ds.SalesPersons.query("userId = :1"; $userId).first()
+
+If ($sales#Null)
     If (Verify password hash($password; $sales.password))
         $info:=New object()
         $info.userName:=$sales.firstname+" "+$sales.lastname
@@ -164,7 +173,8 @@ $sales:=ds. SalesPersons.query("userId = :1"; $userId).first() If ($sales#Null)
         WEB SEND HTTP REDIRECT("/authenticationOK.shtml")
     Else
         WEB SEND TEXT("This password is wrong")
-    End if Else
+    End if
+Else
     WEB SEND TEXT("This userId is unknown")
 End if
 ```
