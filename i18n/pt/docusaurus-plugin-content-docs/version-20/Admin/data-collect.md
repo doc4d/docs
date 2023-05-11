@@ -1,89 +1,89 @@
 ---
 id: data-collect
-title: Coleta de dados
+title: Data Collection
 ---
 
-Para ajudar a tornar os produtos melhores, automaticamente coletamos dados referentes a estatísticas de usuário nas aplicações 4D Server Dados completados são anônimos e dados são transferidos sem ter impacto na experiência de usuário.
+To help us make our products always better, we automatically collect data regarding usage statistics on running 4D Server applications. Collected data is completely anonymous and data is transferred with no impact on the user experience.
 
-Esta página explica:
+This page explains:
 
-- que informação é coletada
-- onde a informação é armazenada e quando é enviada a 4D
-- como desativar a coleção de dados automática em aplicações cliente/servidor
+- what information is collected
+- where information is stored and when it is sent to 4D
+- how to disable automatic data collection in client/server built applications.
 
 
-## Informação coletada
+## Collected information
 
-Dados são coletados durante os eventos abaixo:
+Data is collected during the following events:
 
 - 4D Server startup,
-- abertura de banco de dados,
-- fechamento de banco de dados,
-- início do 4D Servidor.
+- database opening,
+- database closure,
+- web server startup.
 
-### Dados coletados no início do 4D Server
+### Collected at 4D Server startup
 
-| Dados         | Exemplo                                                                                              | Notas                                                               |
-| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Nome, tipo, e velocidade do processador                             |
-| numberOfCores | 4                                                                                                    | Número total de núcleos                                             |
-| memory        | 419430400                                                                                            | Volume de armazenamento de memória (em bytes) disponível na máquina |
-| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Versão do sistema operativo e número de construção                  |
-| headless      | false                                                                                                | Verdadeiro se a aplicação estiver a correr em modo sem cabeça       |
-| version       | 1960                                                                                                 | Número da versão da aplicação 4D                                    |
-| buildNumber   | 123456                                                                                               | Número da versão da aplicação 4D                                    |
-| licença       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Nome comercial e descrição das licenças do produto                  |
-
-
-### Recolhido por base de dados na abertura
-
-| Dados                   | Exemplo                                                 | Notas                                                                                             |
-| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| id                      | string hashed                                           | Identificação única associada à base de dados (*Polinômio Rolling hash do nome da base de dados*) |
-| dataFileSize            | 419430400                                               | Tamanho do arquivo de dados em bytes                                                              |
-| indexesSize             | 419430400                                               | Tamanho do índice em bytes                                                                        |
-| cacheSize               | 419430400                                               | Tamanho da cache em bytes                                                                         |
-| usingLegacyNetworkLayer | False                                                   | Verdadeiro se a usar a camada de rede herdada para o servidor de aplicações                       |
-| isEncrypted             | true                                                    | True se o arquivo de dados estiver criptografado                                                  |
-| isCompiled              | true                                                    | Verdadeiro se a aplicação for compilada                                                           |
-| isEngined               | true                                                    | Verdadeiro se a aplicação for fundida com o Volume Desktop 4D                                     |
-| isProjectMode           | true                                                    | Verdadeiro se a aplicação for compilada                                                           |
-| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Informação sobre sessões móveis                                                                   |
+| Data          | Example                                                                                              | Notes                                                        |
+| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| CPU           | Intel(R) Core(TM) i7-2600 CPU @ 3.40GH 3.39GHz                                                       | Name, type, and speed of the processor                       |
+| numberOfCores | 4                                                                                                    | Total number of cores                                        |
+| memory        | 419430400                                                                                            | Volume of memory storage (in bytes) available on the machine |
+| system        | Microsoft Windows 10 Pro 1809 (17763.253)                                                            | Operating system version and build number                    |
+| headless      | false                                                                                                | True if the application is running in headless mode          |
+| version       | 1960                                                                                                 | Version number of the 4D application                         |
+| buildNumber   | 123456                                                                                               | Build number of the 4D application                           |
+| license       | {"name":"4D Developer Professional 19R6","products":[{"id":808464433,"name":"4D","allowedCount":1}]} | Commercial name and description of product licenses          |
 
 
-### Recolhido por base de dados no encerramento
+### Collected per database at opening
 
-| Dados  | Exemplo | Notas                                                                       |
-| ------ | ------- | --------------------------------------------------------------------------- |
-| uptime | 123456  | Tempo decorrido (em segundos) desde que a base de dados 4D local foi aberta |
+| Data                    | Example                                                 | Notes                                                                                 |
+| ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| id                      | hashed string                                           | Unique id associated to the database (*Polynomial Rolling hash of the database name*) |
+| dataFileSize            | 419430400                                               | Data file size in bytes                                                               |
+| indexesSize             | 419430400                                               | Index size in bytes                                                                   |
+| cacheSize               | 419430400                                               | Cache size in bytes                                                                   |
+| usingLegacyNetworkLayer | False                                                   | True if legacy network layer used for the application server                          |
+| isEncrypted             | true                                                    | True if the data file is encrypted                                                    |
+| isCompiled              | true                                                    | True if the application is compiled                                                   |
+| isEngined               | true                                                    | True if the application is merged with 4D Volume Desktop                              |
+| isProjectMode           | true                                                    | True if the application is a project                                                  |
+| mobile                  | [{"os":"iOS", "version":"12.465", "simulator":"false"}] | Information on mobile sessions                                                        |
 
 
-### Recolhido pelo banco de dados ao iniciar o servidor web
+### Collected per database at closure
 
-| Dados     | Exemplo          | Notas          |
-| --------- | ---------------- | -------------- |
-| webServer | {"started":true} | Sempre verdade |
+| Data   | Example | Notes                                                        |
+| ------ | ------- | ------------------------------------------------------------ |
+| uptime | 123456  | Time elapsed (in seconds) since local 4D database was opened |
+
+
+### Collected per database at web server startup
+
+| Data      | Example          | Notes       |
+| --------- | ---------------- | ----------- |
+| webServer | {"started":true} | Always true |
 
 
 
-## Onde é armazenado e enviado?
+## Where is it stored and sent?
 
-Os dados recolhidos são escritos num ficheiro de texto (formato JSON) quando o Servidor 4D abandona o servidor. O ficheiro é armazenado dentro da pasta 4D ativa [](https://doc.4d.com/4dv19/help/command/en/page485.html), ou seja,
+Collected data is written in a text file (JSON format) when 4D Server quits. The file is stored inside the [active 4D folder](https://doc.4d.com/4dv19/help/command/en/page485.html), i.e.:
 
-- no Windows: `Utilizadores\[userName]\AppData\Roaming\4D Server`
-- em macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
+- on Windows: `Users\[userName]\AppData\Roaming\4D Server`
+- on macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
 
-Uma vez por semana, o ficheiro é automaticamente enviado através da rede para 4D. O arquivo é então apagado da pasta 4D activa.
+Once a week, the file is automatically sent over the network to 4D. The file is then deleted from the active 4D folder.
 
 ![](../assets/en/Admin/data-collect.png)
 
-> Se o arquivo não pôde ser enviado por algum motivo, é, no entanto, apagado e não é exibida nenhuma mensagem de erro no lado do Servidor 4D.
+> If the file could not be sent for some reason, it is nevertheless deleted and no error message is displayed on the 4D Server side.
 
-O ficheiro é enviado para o seguinte endereço de servidor: `https://dcollector.4d.com` (ip: 195.68.52.83).
+The file is sent to the following server address: `https://dcollector.4d.com` (ip: 195.68.52.83).
 
 
-## como desativar a coleção de dados automática em aplicações cliente/servidor
+## Disabling data collection in client/server built applications
 
-Pode desactivar a recolha automática de dados em [aplicações construídas cliente/servidor](../Desktop/building.md#clientserver-page).
+You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page).
 
-Para desativar a coleção, passar o valor **Falso** para a chave [`ServerDataCollection`](https://doc.4d.com/4Dv19R6/4D/19-R6/ServerDataCollection.300-6011712.en.html) no arquivo `buildApp.4DSettings` , utilizado para construir a aplicação cliente/servidor.
+To disable the collection, pass the value **False** to the [`ServerDataCollection`](https://doc.4d.com/4Dv19R6/4D/19-R6/ServerDataCollection.300-6011712.en.html) key in the `buildApp.4DSettings` file, used to build the client/server application.
