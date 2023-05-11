@@ -1,6 +1,6 @@
 ---
 id: propertiesPicture
-title: Imagem
+title: Picture
 ---
 
 ## Pathname
@@ -13,21 +13,21 @@ The following locations can be used for static pictures:
 - in an image folder (e.g. named **Images**) within the form folder. Appropriate when the static pictures are used only in the form and/or you want to be able to move or duplicate the whole form within the project or different projects. In this case, the Pathname is "<picture path\>" and is resolved from the root of the form folder.
 - in a 4D picture variable. The picture must be loaded in memory when the form is executed. In this case, the Pathname is "var:<variableName\>".
 
-#### Gramática JSON
+#### JSON Grammar
 
-|  Nome   | Tipo de dados | Valores possíveis                                                                           |
-|:-------:|:-------------:| ------------------------------------------------------------------------------------------- |
-| picture |     text      | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
+|  Name   | Data Type | Possible Values                                                                             |
+|:-------:|:---------:| ------------------------------------------------------------------------------------------- |
+| picture |   text    | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
 
-#### Objectos suportados
+#### Objects Supported
 
 [Picture button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Static Picture](staticPicture.md)
 
 ---
 
-## Visualização
+## Display
 
-### Escalado para caber
+### Scaled to fit
 
 `JSON grammar: "scaled"`
 
@@ -35,9 +35,9 @@ The **Scaled to fit** format causes 4D to resize the picture to fit the dimensio
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
-### Replicado
+### Replicated
 
-`Gramática JSON: "tiled"`
+`JSON grammar: "tiled"`
 
 When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
 
@@ -56,12 +56,12 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 ![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome          | Tipo de dados | Valores possíveis                                        |
-| ------------- | ------------- | -------------------------------------------------------- |
-| pictureFormat | string        | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| Name          | Data Type | Possible Values                                          |
+| ------------- | --------- | -------------------------------------------------------- |
+| pictureFormat | string    | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Imagem estática](staticPicture.md)
+[Static Picture](staticPicture.md)
