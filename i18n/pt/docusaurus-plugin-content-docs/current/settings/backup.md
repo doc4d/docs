@@ -1,6 +1,6 @@
 ---
 id: backup
-title: Página Backup
+title: Backup page
 ---
 
 These options are detailed in the [**Backup Settings**](../Backup/settings.md) chapter.
