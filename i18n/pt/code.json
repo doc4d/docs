@@ -1,9 +1,9 @@
 {
   "homepage.sections.getting-started.title": {
-    "message": "Começando"
+    "message": "Getting Started"
   },
   "Installation": {
-    "message": "Instalação"
+    "message": "Installation"
   },
   "Working with a project": {
     "message": "Working with a project"
@@ -30,13 +30,13 @@
     "message": "Handling code"
   },
   "Debugging": {
-    "message": "Depuração"
+    "message": "Debugging"
   },
   "Settings": {
     "message": "Settings"
   },
   "Preferences": {
-    "message": "Preferências"
+    "message": "Preferences"
   },
   "homepage.administration.title": {
     "message": "Administration"
@@ -48,10 +48,10 @@
     "message": "Web Administration"
   },
   "Command Line Interface": {
-    "message": "Interface de linha de comando"
+    "message": "Command Line Interface"
   },
   "TLS Protocol": {
-    "message": "Protocolo TLS"
+    "message": "TLS Protocol"
   },
   "Licenses & Data Collection": {
     "message": "Licenses & Data Collection"
@@ -66,10 +66,10 @@
     "message": "Backup and Restore"
   },
   "homepage.sections.textensions.title": {
-    "message": "Extensões"
+    "message": "Extensions"
   },
   "Overview": {
-    "message": "Visão Geral"
+    "message": "Overview"
   },
   "4D View Pro": {
     "message": "4D View Pro"
@@ -99,16 +99,16 @@
     "message": "Developing Plugins"
   },
   "homepage.sections.web-applications.title": {
-    "message": "Aplicações Web"
+    "message": "Web Applications"
   },
   "Web Server": {
-    "message": "Servidor Web"
+    "message": "Web Server"
   },
   "Web Development": {
     "message": "Web Development"
   },
   "REST Server": {
-    "message": "Servidor REST"
+    "message": "REST Server"
   },
   "homepage.sections.desktop-applications.title": {
     "message": "Desktop Applications"
@@ -117,7 +117,7 @@
     "message": "Client/Server"
   },
   "Forms": {
-    "message": "Formulários"
+    "message": "Forms"
   },
   "Form Properties": {
     "message": "Form Properties"
@@ -129,7 +129,7 @@
     "message": "Form Object Properties"
   },
   "Form Events": {
-    "message": "Eventos formulário"
+    "message": "Form Events"
   },
   "Menus": {
     "message": "Menus"
@@ -163,7 +163,7 @@
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.ErrorPageContent.tryAgain": {
-    "message": "Tente novamente",
+    "message": "Try again",
     "description": "The label of the button to try again when the page crashed"
   },
   "theme.NotFound.title": {
@@ -179,11 +179,11 @@
     "description": "The 2nd paragraph of the 404 page"
   },
   "theme.blog.archive.title": {
-    "message": "Arquivo",
+    "message": "Archive",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "Arquivo",
+    "message": "Archive",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
@@ -191,7 +191,7 @@
     "description": "The ARIA label for the back to top button"
   },
   "theme.admonition.note": {
-    "message": "nota",
+    "message": "note",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
@@ -223,7 +223,7 @@
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fechar",
+    "message": "Close",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.blog.post.paginator.navAriaLabel": {
@@ -231,11 +231,11 @@
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "Novo Post",
+    "message": "Newer Post",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "Post mais antigo",
+    "message": "Older Post",
     "description": "The blog post button label to navigate to the older/next post"
   },
   "theme.blog.post.plurals": {
@@ -255,15 +255,15 @@
     "description": "The ARIA label for the navbar color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "modo escuro",
+    "message": "dark mode",
     "description": "The name for the dark color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "modo Claro",
+    "message": "light mode",
     "description": "The name for the light color mode"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "Página inicial",
+    "message": "Home page",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
@@ -279,11 +279,11 @@
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "Anterior",
+    "message": "Previous",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "Próximo",
+    "message": "Next",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.versionBadge.label": {
@@ -322,11 +322,11 @@
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": " em {date}",
+    "message": " on {date}",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": " por {user}",
+    "message": " by {user}",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
@@ -334,7 +334,7 @@
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versões",
+    "message": "Versions",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.common.skipToMainContent": {
@@ -342,7 +342,7 @@
     "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
   },
   "theme.tags.tagsListLabel": {
-    "message": "Etiquetas:",
+    "message": "Tags:",
     "description": "The label alongside a tag list"
   },
   "theme.blog.sidebar.navAriaLabel": {
@@ -350,7 +350,7 @@
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
   "theme.CodeBlock.copied": {
-    "message": "Copiado",
+    "message": "Copied",
     "description": "The copied button label on code blocks"
   },
   "theme.CodeBlock.copyButtonAriaLabel": {
@@ -358,7 +358,7 @@
     "description": "The ARIA label for copy code blocks button"
   },
   "theme.CodeBlock.copy": {
-    "message": "Copiar",
+    "message": "Copy",
     "description": "The copy button label on code blocks"
   },
   "theme.CodeBlock.wordWrapToggle": {
@@ -370,7 +370,7 @@
     "description": "The ARIA label to toggle the collapsible sidebar category"
   },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Linguagens",
+    "message": "Languages",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
@@ -382,7 +382,7 @@
     "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.post.readMore": {
-    "message": "Leia mais",
+    "message": "Read More",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
@@ -429,7 +429,7 @@
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "Pesquisa",
+    "message": "Search",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
@@ -445,7 +445,7 @@
     "description": "The paragraph for fetching new search results"
   },
   "theme.SearchBar.label": {
-    "message": "Pesquisa",
+    "message": "Search",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
@@ -453,11 +453,11 @@
     "description": "The label and ARIA label for search box reset button"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "Cancelado",
+    "message": "Cancel",
     "description": "The label and ARIA label for search box cancel button"
   },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "Recente",
+    "message": "Recent",
     "description": "The title for recent searches"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
@@ -473,7 +473,7 @@
     "description": "The label for remove recent search button"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "Favorito",
+    "message": "Favorite",
     "description": "The title for favorite searches"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
@@ -489,7 +489,7 @@
     "description": "The help text for error screen of search modal"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "para seleccionar",
+    "message": "to select",
     "description": "The explanatory text of the action for the enter key"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
@@ -497,7 +497,7 @@
     "description": "The ARIA label for the Enter key button that makes the selection"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "para navegar",
+    "message": "to navigate",
     "description": "The explanatory text of the action for the Arrow up and Arrow down key"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
@@ -509,7 +509,7 @@
     "description": "The ARIA label for the Arrow down key button that makes the navigation"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "para fechar",
+    "message": "to close",
     "description": "The explanatory text of the action for Escape key"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
@@ -517,7 +517,7 @@
     "description": "The ARIA label for the Escape key button that close the modal"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "Procurar por",
+    "message": "Search by",
     "description": "The text explain that the search is making by Algolia"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
@@ -537,7 +537,7 @@
     "description": "The text for the link to report missing results"
   },
   "theme.SearchModal.placeholder": {
-    "message": "Pesquisar documentos",
+    "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
   "This is the documentation for the latest": {
@@ -550,11 +550,11 @@
     "message": "4D Write Pro"
   },
   "theme.tags.tagsPageTitle": {
-    "message": "Etiquetas",
+    "message": "Tags",
     "description": "The title of the tag list page"
   },
   "Release Notes": {
-    "message": "Notas de lançamento"
+    "message": "Release Notes"
   },
   "homepage.sections.core-development.langage-ref-url": {
     "message": "https://doc.4d.com/4Dv20/4D/20/4D-Language-Reference.100-6237190.en.html"
