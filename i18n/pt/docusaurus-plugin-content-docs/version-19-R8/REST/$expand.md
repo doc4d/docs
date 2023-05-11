@@ -10,16 +10,16 @@ Expands an image stored in an Image attribute (*e.g.*, `Employee(1)/photo?$image
 
 
 
-## Vendo um atributo de imagem
+## Viewing an image attribute
 
-Se quiser ver um atributo de imagem integralmente, escreva o abaixo:
+If you want to view an image attribute in its entirety, write the following:
 
  `GET  /rest/Employee(1)/photo?$imageformat=best&$version=1&$expand=photo`
 
-Para saber mais sobre formatos de imagem, veja [`$imageformat`]($imageformat.md). Para saber mais sobre parâmetros de versão, veja [`$version`]($version.md).
+For more information about the image formats, refer to [`$imageformat`]($imageformat.md). For more information about the version parameter, refer to [`$version`]($version.md).
 
-## Salvar um atributo BLOB ao disco
+## Saving a BLOB attribute to disk
 
-Se quiser salvar um BLOB armazenado em sua classe de dados pode escrever o seguinte passando também "true" a $binary:
+If you want to save a BLOB stored in your dataclass, you can write the following by also passing "true" to $binary:
 
   `GET  /rest/Company(11)/blobAtt?$binary=true&$expand=blobAtt`
