@@ -8,41 +8,41 @@ A 4D component is a set of 4D functions, methods, and forms representing one or 
 You can develop 4D components for your own needs and keep them private. You can also [share your components with the 4D community](https://github.com/topics/4d-component).
 
 
-## Definições
+## Definitions
 
 - **Matrix Project**: 4D project used for developing the component. The matrix project is a standard project with no specific attributes. A matrix project forms a single component.
 - **Host Project**: Application project in which a component is installed and used.
 - **Component**: Matrix project that can be compiled or [built](Desktop/building.md#build-component), copied into the [`Components`](Project/architecture.md) folder of the host application and whose contents are used in the host application.
 
-## Básicos
+## Basics
 
-Criar e instalar componentes 4D é realizado diretamente a partir de 4D:
+Creating and installing 4D components is carried out directly from 4D:
 
-- To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). Pode usar pseudónimos ou atalhos.
+- To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). You can use aliases or shortcuts.
 - A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
-- A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. Não pode chamar métodos de bancos de dados e triggers.
-- You cannot use the datastore, standard tables, or data files in 4D components. Entretanto um componente não pode criar ou usar tabelas, campos e arquivos de dados usando mecanismos de bancos de dados externos. São bancos 4D independentes com as que se trabalha utilizando comandos SQL.
+- A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. It cannot call database methods and triggers.
+- You cannot use the datastore, standard tables, or data files in 4D components. However, a component can create and/or use tables, fields and data files using mechanisms of external databases. These are separate 4D databases that you work with using SQL commands.
 - A host project running in interpreted mode can use either interpreted or compiled components. A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.
 
 
 
 
-## Escopo dos comandos de linguagem
+## Scope of language commands
 
-Exceto pelos [Comandos não utilizáveis](#unusable-commands), um componente não pode usar qualquer comando da linguagem 4D.
+Except for [Unusable commands](#unusable-commands), a component can use any command of the 4D language.
 
 When commands are called from a component, they are executed in the context of the component, except for the `EXECUTE METHOD` or `EXECUTE FORMULA` command that use the context of the method specified by the command. Also note that the read commands of the “Users and Groups” theme can be used from a component but will read the users and groups of the host project (a component does not have its own users and groups).
 
-Os comandos `SET DATABASE PARAMETER` e `Get database parameter` são uma exceção: seu alcance é global a aplicação. Quando esses comandos forem chamados de um componente, são aplicados ao projecto de aplicação local.
+The `SET DATABASE PARAMETER` and `Get database parameter` commands are an exception: their scope is global to the application. When these commands are called from a component, they are applied to the host application project.
 
-Além disso, medidas especificas foram criadas para os comandos `Structure file` e `Get 4D folder` quando utilizados no marco dos componentes.
+Furthermore, specific measures have been specified for the `Structure file` and `Get 4D folder` commands when they are used in the framework of components.
 
-O comando `COMPONENT LIST` pode ser utilizado para obter a lista de componentes que carrega o projecto local.
+The `COMPONENT LIST` command can be used to obtain the list of components that are loaded by the host project.
 
 
-### Comandos não utilizáveis
+### Unusable commands
 
-Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente porque modificam o arquivo de estrutura - que está aberto em apenas leitura. Their execution in a component will generate the error -10511, "The CommandName command cannot be called from a component":
+The following commands are not compatible for use within a component because they modify the structure file — which is open in read-only. Their execution in a component will generate the error -10511, "The CommandName command cannot be called from a component":
 
 - `ON EVENT CALL`
 - `Method called on event`
@@ -62,14 +62,14 @@ Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente 
 - `BLOB TO USERS`
 - `SET PLUGIN ACCESS`
 
-**Notas:**
+**Notes:**
 
-- O comando `Current form table` devolve `Nil` quando chamado no contexto de um formulário projeto. Por isso não pode ser usado em um componente.
-- SQL data definition language commands (`CREATE TABLE`, `DROP TABLE`, etc.) cannot be used on the component project. Entretanto são compatíveis com bancos de dados externos (ver o comando SQL`CREATE DATABASE`).
+- The `Current form table` command returns `Nil` when it is called in the context of a project form. Consequently, it cannot be used in a component.
+- SQL data definition language commands (`CREATE TABLE`, `DROP TABLE`, etc.) cannot be used on the component project. However, they are supported with external databases (see `CREATE DATABASE` SQL command).
 
 
 
-## Partilhar os métodos de projeto
+## Sharing of project methods
 
 All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed within the component.
 
@@ -83,7 +83,7 @@ Conversely, for security reasons, by default a component cannot execute project 
 
 ![](../assets/en/Concepts/pict516563.en.png)
 
-Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the `EXECUTE FORMULA` or `EXECUTE METHOD` commands. Por exemplo:
+Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the `EXECUTE FORMULA` or `EXECUTE METHOD` commands. For example:
 
 ```4d 
 // Host Method
@@ -117,8 +117,8 @@ When you enter a value, you declare that component classes and functions will be
 
 ```4d
 //in host project
-var $rect: cs.eGeometry. Rectangle 
-$rect:=cs.eGeometry. Rectangle.new(10;20)
+var $rect: cs.eGeometry.Rectangle 
+$rect:=cs.eGeometry.Rectangle.new(10;20)
 $area:=$rect.getArea()
 ```
 
@@ -132,9 +132,9 @@ The namespace of a [compiled](#protection-of-components-compilation) component w
 
 Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
-A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs. Mycomponent. Employee" class in the host project.
+A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
 
-### Classes ocultas
+### Hidden classes
 
 Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
 
@@ -159,11 +159,11 @@ If you don't enter a [component namespace](#declaring-the-component-namespace), 
 
 
 
-## Passar variáveis
+## Passing variables
 
 The local, process and interprocess variables are not shared between components and host projects. The only way to modify component variables from the host project and vice versa is using pointers.
 
-Exemplo usando um array:
+Example using an array:
 
 ```4d
 //In the host project:
@@ -174,7 +174,7 @@ Exemplo usando um array:
      APPEND TO ARRAY($1->;2)
 ```
 
-Exemplos usando variáveis:
+Examples using variables:
 
 ```4d
 C_TEXT(myvariable)
@@ -189,7 +189,8 @@ $p:=component_method2(...)
 Without a pointer, a component can still access the value of a host database variable (but not the variable itself) and vice versa:
 
 ```4d
-//In the host database C_TEXT($input_t)
+//In the host database
+C_TEXT($input_t)
 $input_t:="DoSomething"
 component_method($input_t)
 // component_method gets "DoSomething" in $1 (but not the $input_t variable)
@@ -200,66 +201,70 @@ When you use pointers to allow components and the host project to communicate, y
 
 - The `Get pointer` command will not return a pointer to a variable of the host project if it is called from a component and vice versa.
 
-- The component architecture allows the coexistence, within the same interpreted project, of both interpreted and compiled components (conversely, only compiled components can be used in a compiled project). Para utilizar apontadores neste caso, deve respeitar o seguinte princípio: o intérprete pode desconectar um ponteiro construído em modo compilado; no entanto, em modo compilado, não pode deconectar um ponteiro construído em modo interpretado. In order to use pointers in this case, you must respect the following principle: the interpreter can unpoint a pointer built in compiled mode; however, in compiled mode, you cannot unpoint a pointer built in interpreted mode.
- - Se o componente C definir a variável `myCvar` , o componente I pode acessar ao valor desta variável utilizando o ponteiro `->myCvar`.
- - Se o componente I definir a variável `myIvar` , o componente C não pode acessar essa variável usando o ponteiro `->myIvar`. Esta sintaxe causa um erro de execução.
+- The component architecture allows the coexistence, within the same interpreted project, of both interpreted and compiled components (conversely, only compiled components can be used in a compiled project). In order to use pointers in this case, you must respect the following principle: the interpreter can unpoint a pointer built in compiled mode; however, in compiled mode, you cannot unpoint a pointer built in interpreted mode. Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
+ - If component C defines the `myCvar` variable, component I can access the value of this variable by using the pointer `->myCvar`.
+ - If component I defines the `myIvar` variable, component C cannot access this variable by using the pointer `->myIvar`. This syntax causes an execution error.
 
-- The comparison of pointers using the `RESOLVE POINTER` command is not recommended with components since the principle of partitioning variables allows the coexistence of variables having the same name but with radically different contents in a component and the host project (or another component). O tipo da variável pode mesmo ser diferente em ambos os contextos. Se o `myptr1` e `myptr2` apontar cada ponto para uma variável, a comparação seguinte produzirá um resultado incorrecto:
+- The comparison of pointers using the `RESOLVE POINTER` command is not recommended with components since the principle of partitioning variables allows the coexistence of variables having the same name but with radically different contents in a component and the host project (or another component). The type of the variable can even be different in both contexts. If the `myptr1` and `myptr2` pointers each point to a variable, the following comparison will produce an incorrect result:
 
 ```4d
      RESOLVE POINTER(myptr1;vVarName1;vtablenum1;vfieldnum1)
      RESOLVE POINTER(myptr2;vVarName2;vtablenum2;vfieldnum2)
      If(vVarName1=vVarName2)
-      //Este teste retorna True mesmo se as variáveis forem diferentes
+      //This test returns True even though the variables are different
 ```
-Neste caso é preciso usar a comparação de ponteiros:
+In this case, it is necessary to use the comparison of pointers:
 ```4d
-     If(myptr1=myptr2) //Este teste retorna False
+     If(myptr1=myptr2) //This test returns False
 ```
 
-## Gestão de erros
+## Error handling
 
 An [error-handling method](Concepts/error-handling.md) installed by the `ON ERR CALL` command only applies to the running application. In the case of an error generated by a component, the `ON ERR CALL` error-handling method of the host project is not called, and vice versa.
 
 
-## Acesso às tabelas do projeto local
+## Access to tables of the host project
 
-Apesar de os componentes não poderem usar tabelas, ponteiros podem permitir que projetos locais e componentes se comuniquem entre si. Por exemplo, aqui está um método que pode ser chamado a partir de um componente:
+Although components cannot use tables, pointers can allow host projects and components to communicate with each other. For example, here is a method that could be called from a component:
 
 ```4d
-// chamar a um método componente
+// calling a component method
 methCreateRec(->[PEOPLE];->[PEOPLE]Name;"Julie Andrews")
 ```
 
-Dentro do componente, o código do método `methCreateRec`:
+Within the component, the code of the `methCreateRec` method:
 
 ```4d
-C_POINTER($1) //Pointer on a table in host project C_POINTER($2) //Pointer on a field in host project C_TEXT($3) // Value to insert
+C_POINTER($1) //Pointer on a table in host project
+C_POINTER($2) //Pointer on a field in host project
+C_TEXT($3) // Value to insert
 
 $tablepointer:=$1
-$fieldpointer:=$2 CREATE RECORD($tablepointer->)
+$fieldpointer:=$2
+CREATE RECORD($tablepointer->)
 
-$fieldpointer->:=$3 SAVE RECORD($tablepointer->)
+$fieldpointer->:=$3
+SAVE RECORD($tablepointer->)
 ```
 
 > In the context of a component, 4D assumes that a reference to a table form is a reference to the host table form (as components can't have tables.)
 
-## Uso de tabelas e campos
+## Use of tables and fields
 
-A component cannot use the tables and fields defined in the 4D structure of the matrix project. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Pode criar e gerenciar bancos de dados externos usando SQL. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Usar um banco externo significa designar temporariamente esse banco de dados como o banco atual, em outras palavras, o banco alvo para as pesquisas SQL executadas por 4D. Pode criar bancos externos usando o comando SQL `CREATE DATABASE`.
+A component cannot use the tables and fields defined in the 4D structure of the matrix project. However, you can create and use external databases, and then use their tables and fields according to your needs. You can create and manage external databases using SQL. An external database is a 4D project that is independent from the main 4D project, but that you can work with from the main 4D project. Using an external database means temporarily designating this database as the current database, in other words, as the target database for the SQL queries executed by 4D. You create external databases using the SQL `CREATE DATABASE` command.
 
-### Exemplo
+### Example
 
-O código abaixo está incluído em um componente e realiza três ações básicas com um banco externo:
+The following code is included in a component and performs three basic actions with an external database:
 
-- cria o banco externo se não existir ainda
-- adiciona dados ao banco externo,
-- lê dados do banco externo.
+- creates the external database if it does not already exist,
+- adds data to the external database,
+- reads data from the external database.
 
-Cria o banco externo:
+Creating the external database:
 
 ```4d
-<>MyDatabase:=Get 4D folder+"\MyDB" // (Windows) armazena os dados em um diretório autorizado
+<>MyDatabase:=Get 4D folder+"\MyDB" // (Windows) stores the data in an authorized directory
  Begin SQL
         CREATE DATABASE IF NOT EXISTS DATAFILE :[<>MyDatabase];
         USE DATABASE DATAFILE :[<>MyDatabase];
@@ -279,7 +284,7 @@ Cria o banco externo:
  End SQL
 ```
 
-Escrita no banco de dados externa:
+Writing in the external database:
 
 ```4d
  $Ptr_1:=$2 // retrieves data from the host project through pointers
@@ -302,7 +307,7 @@ Escrita no banco de dados externa:
  End SQL
 ```
 
-Lendo de um banco externo:
+Reading from an external database:
 
 ```4d
  $Ptr_1:=$2 // accesses data of the host project through pointers
@@ -325,41 +330,41 @@ Lendo de um banco externo:
 ```
 
 
-## Uso de formulários
+## Use of forms
 
-- Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente. Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente.
-- A component can call table forms of the host project. Note que nesse caso é necessário usar ponteiros ao invés de nomes de tabelas entre colchetes [] para especificar os formulários no código do componente.
+- Only “project forms” (forms that are not associated with any specific table) can be used in a component. Any project forms present in the matrix project can be used by the component.
+- A component can call table forms of the host project. Note that in this case it is necessary to use pointers rather than table names between brackets [] to specify the forms in the code of the component.
 
-> Se um componente utilizar o comando `ADD RECORD`, se mostrará o formulário de entrada atual do projeto local, no contexto do projeto local. Por isso se o formulário incluir variáveis, o componente não terá acesso às mesmas.
+> If a component uses the `ADD RECORD` command, the current Input form of the host project will be displayed, in the context of the host project. Consequently, if the form includes variables, the component will not have access to them.
 
-- Pode publicar formulários componentes como subformulários no projeto local. Pode publicar formulários componentes como subformulários no banco de dados local Isso significa que pode desenvolver componentes oferecendo objetos gráficos. Por exemplo, Widgets fornecidos por 4D são baseados no uso de subformulários em componentes.
+- You can publish component forms as subforms in the host projects. This means that you can, more particularly, develop components offering graphic objects. For example, Widgets provided by 4D are based on the use of subforms in components.
 
-> No contexto de um componente, qualquer formulário projeto referenciado deve pertencer a esse componente. Por exemplo, dentro de um componente, referenciando um formulário de projecto anfitrião usando `DIALOG` ou `Open form window` irá lançar um erro.
+> In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using `DIALOG` or `Open form window` will throw an error.
 
 
-## Uso de recursos
+## Use of resources
 
 Components can use resources located in the Resources folder of the component.
 
-Mecanismos automáticos são operacionais: os arquivos XLIFF encontrados na pasta Resources de um componene serão carregados por esse componente.
+Automatic mechanisms are operational: the XLIFF files found in the Resources folder of a component will be loaded by this component.
 
 In a host project containing one or more components, each component as well as the host projects has its own “resources string.” Resources are partitioned between the different projects: it is not possible to access the resources of component A from component B or the host project.
 
 
-## Execução de código de inicialização
+## Executing initialization code
 
 A component can execute 4D code automatically when opening or closing the host database, for example in order to load and/or save the preferences or user states related to the operation of the host database.
 
 Executing initialization or closing code is done by means of the `On Host Database Event` database method.
 
-> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it.
+> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. To do this, you must check the [**Execute "On Host Database Event" method of the components** option](../settings/security.md#options) in the Security page of the Settings.
 
 
-## Proteção dos componentes: compilação
+## Protection of components: compilation
 
-By default, all the code of a matrix project installed as a component is potentially visible from the host project. Em particular:
+By default, all the code of a matrix project installed as a component is potentially visible from the host project. In particular:
 
-- The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Seu conteúdo pode ser selecionado e copiado na área de vista prévia do Explorador. Também podem ser vistos no depurador. However, it's not possible to open them in the Code Editor or modify them.
+- The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Their contents can be selected and copied in the preview area of the Explorer. They can also be viewed in the debugger. However, it's not possible to open them in the Code Editor or modify them.
 - The other project methods of the matrix project do not appear in the Explorer but they too can be viewed in the debugger of the host project.
 - The non-hidden classes and functions can be viewed in the debugger [if a namespace is declared](#declaring-the-component-namespace).
 
@@ -369,6 +374,6 @@ To protect the code of a component effectively, simply [compile and build](Deskt
 - The other project methods of the matrix project will never appear.
 
 
-## Partilha de componentes
+## Sharing components
 
 We encourage you to support the 4D developer community by sharing your components, preferably on the [GitHub platform](https://github.com/topics/4d-component). We recommend that you use the **`4d-component`** topic to be correctly referenced.  
