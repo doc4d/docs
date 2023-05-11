@@ -7,14 +7,14 @@ title: Working with a project
 
 Multi-user development is managed via standard **source control** repository tools (Perforce, Git, SVN, etc.), which allow developers to work on different branches, and compare, merge, or revert modifications.
 
-## Criar um projeto
+## Creating a project
 
 New 4D application projects can be created from **4D** or **4D Server**. In any case, project files are stored on the local machine.
 
 To create a new project:
 
 1. Launch 4D or 4D Server.
-2. Faça uma das seguintes opções:
+2. Do one of the following:
     * Select **New > Project...** from the **File** menu: ![](../assets/en/getStart/projectCreate1.png)
     * (4D only) Select **Project...** from the **New** toolbar button:<p>![](../assets/en/getStart/projectCreate2.png)</p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
 
@@ -25,15 +25,15 @@ To create a new project:
 
  You can choose any name allowed by your operating system. However, if your project is intended to work on other systems or to be saved via a source control tool, you must take their specific naming recommendations into account.
 
-When you validate the **Save** dialog, 4D closes the current project (if any), creates a project folder at the indicated location, and puts all files needed for the project into it. Para saber mais, consulte [Arquitetura de um projeto 4D](Project/architecture.md).
+When you validate the **Save** dialog, 4D closes the current project (if any), creates a project folder at the indicated location, and puts all files needed for the project into it. For more information, refer to [Architecture of a 4D Project](Project/architecture.md).
 
 You can then start developing your project.
 
-## Abrir projeto
+## Opening a project
 
 To open an existing project from 4D:
 
-1. Faça uma das seguintes opções:
+1. Do one of the following:
 
     * Select **Open/Local Project...** from the **File** menu or the **Open** toolbar button.
     * Select **Open a local application project** in the Welcome Wizard dialog
@@ -105,7 +105,7 @@ That folder is divided into two subfolders:
 
 4D provides a DTD describing the XML keys that can be used to build a `.4DLink` file. This DTD is named database_link.dtd and is found in the \Resources\DTD\ subfolder of the 4D application.
 
-## Guardar ficheiros
+## File saving
 
 When working on a project in 4D, you can use built-in 4D editors to create, modify, or save structure items, methods, forms, etc. Modifications are saved to disk when you select a **Save** menu item, or when the editor's window loses or gets the focus.
 
