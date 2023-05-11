@@ -5,9 +5,9 @@ title: '$method'
 
 This parameter allows you to define the operation to execute with the returned entity or entity selection.
 
-## Sintaxe
+## Available syntaxes
 
-| Sintaxe                                         | Exemplo                                                                                         | Descrição                                                                                                  |
+| Syntax                                          | Example                                                                                         | Description                                                                                                |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | [**$method=delete**](#methoddelete)             | `POST /Employee?$filter="ID=11"& $method=delete`                                            | Deletes the current entity, entity collection, or entity selection                                         |
 | [**$method=entityset**](#methodentityset)       | `GET /People/?$filter="ID>320"& $method=entityset& $timeout=600`                     | Creates an entity set in 4D Server's cache based on the collection of entities defined in the REST request |
@@ -24,13 +24,13 @@ This parameter allows you to define the operation to execute with the returned e
 Deletes the current entity, entity collection, or entity selection (created through REST)
 
 
-### Descrição
+### Description
 
 With `$method=delete`, you can delete an entity or an entire entity collection. You can define the collection of entities by using, for example, [`$filter`]($filter.md) or specifying one directly using [`{dataClass}({key})`](%7BdataClass%7D.html#dataclasskey) *(e.g.*, /Employee(22)).
 
 You can also delete the entities in an entity set, by calling [`$entityset/{entitySetID}`]($entityset.md#entitysetentitysetid).
 
-### Exemplo
+### Example
 
 You can then write the following REST request to delete the entity whose key is 22:
 
@@ -44,7 +44,7 @@ You can also delete an entity set using $entityset/{entitySetID}:
 
  `POST  /rest/Employee/$entityset/73F46BE3A0734EAA9A33CA8B14433570?$method=delete`
 
-Responsa:
+Response:
 
 ```json
 {
@@ -58,13 +58,13 @@ Responsa:
 
 Creates an entity set in 4D Server's cache based on the collection of entities defined in the REST request
 
-### Descrição
+### Description
 
 When you create a collection of entities in REST, you can also create an entity set that will be saved in 4D Server's cache. The entity set will have a reference number that you can pass to `$entityset/{entitySetID}` to access it. By default, it is valid for two hours; however, you can modify that amount of time by passing a value (in seconds) to $timeout.
 
 If you have used `$savedfilter` and/or `$savedorderby` (in conjunction with `$filter` and/or `$orderby`) when you created your entity set, you can recreate it with the same reference ID even if it has been removed from 4D Server's cache.
 
-### Exemplo
+### Example
 
 To create an entity set, which will be saved in 4D Server's cache for two hours, add `$method=entityset` at the end of your REST request:
 
@@ -89,17 +89,17 @@ __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C7963
 
 Releases an existing entity set stored in 4D Server's cache.
 
-### Descrição
+### Description
 
 You can release an entity set, which you created using [`$method=entityset`](#methodentityset), from 4D Server's cache.
 
-### Exemplo
+### Example
 
 Release an existing entity set:
 
 `GET  /rest/Employee/$entityset/4C51204DD8184B65AC7D79F09A077F24?$method=release`
 
-#### Responsa:
+#### Response:
 
 If the request was successful, the following response is returned:
 
@@ -126,7 +126,7 @@ If the entity set wasn't found, an error is returned:
 Creates an entity set in 4D Server's cache based on the collection of related entities defined in the REST request
 
 
-### Descrição
+### Description
 
 `$method=subentityset` allows you to sort the data returned by the relation attribute defined in the REST request.
 
@@ -134,13 +134,13 @@ To sort the data, you use the `$subOrderby` property. For each attribute, you sp
 
 If you want to specify multiple attributes, you can delimit them with a comma, µ, `$subOrderby="lastName desc, firstName asc"`.
 
-### Exemplo
+### Example
 
 If you want to retrieve only the related entities for a specific entity, you can make the following REST request where staff is the relation attribute in the Company dataclass linked to the Employee dataclass:
 
 `GET  /rest/Company(1)/staff?$expand=staff&$method=subentityset&$subOrderby=lastName ASC`
 
-#### Responsa:
+#### Response:
 
 ```json
 {
@@ -190,7 +190,7 @@ If you want to retrieve only the related entities for a specific entity, you can
 
 Updates and/or creates one or more entities
 
-### Descrição
+### Description
 
 `$method=update` allows you to update and/or create one or more entities in a single **POST**. If you update and/or create one entity, it is done in an object with each property an attribute with its value, *e.g.*, `{ lastName: "Smith" }`. If you update and/or create multiple entities, you must create a collection of objects.
 
@@ -207,17 +207,17 @@ If a problem arises while adding or modifying an entity, an error will be return
 :::note
 *   **Dates** must be expressed in JS format: YYYY-MM-DDTHH:MM:SSZ (e.g., "2010-10-05T23:00:00Z"). If you have selected the Date only property for your Date attribute, the time zone and time (hour, minutes, and seconds) will be removed. In this case, you can also send the date in the format that it is returned to you dd!mm!yyyy (e.g., 05!10!2013).
 *   **Booleans** are either true or false.
-*   Os ficheiros carregados utilizando `$upload` podem ser aplicados a um atributo do tipo Imagem ou BLOB passando o objecto devolvido no seguinte formato `{"ID": "D507BC03E613487E9B4C2F6A0512FE50"}`
+*   Uploaded files using `$upload` can be applied to an attribute of type Image or BLOB by passing the object returned in the following format `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50"}`
 :::
 
 
-### Exemplo
+### Example
 
 To update a specific entity, you use the following URL:
 
  `POST  /rest/Person/?$method=update`
 
-**Dados POST:**
+**POST data:**
 
 ```json
 {
@@ -234,7 +234,7 @@ If you want to create an entity, you can POST the attributes using this URL:
 
  `POST  /rest/Person/?$method=update`
 
-**Dados POST:**
+**POST data:**
 
 ```json
 { 
@@ -247,7 +247,7 @@ You can also create and update multiple entities at the same time using the same
 
  `POST  /rest/Person/?$method=update`
 
-**Dados POST:**
+**POST data:**
 
 ```json
 [{ 
@@ -262,7 +262,7 @@ You can also create and update multiple entities at the same time using the same
 }]
 ```
 
-**Responsa:**
+**Response:**
 
 When you add or modify an entity, it is returned to you with the attributes that were modified. For example, if you create the new employee above, the following will be returned:
 
