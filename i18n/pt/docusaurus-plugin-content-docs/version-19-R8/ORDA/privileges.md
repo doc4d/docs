@@ -1,6 +1,6 @@
 ---
 id: privileges
-title: Privilégios
+title: Privileges
 ---
 
 
@@ -8,7 +8,7 @@ Protecting data while allowing fast and easy access to authorized users is a maj
 
 
 
-## Visão Geral
+## Overview
 
 The ORDA security architecture is based upon the concepts of privileges, permission actions (read, create, etc.), and resources.
 
@@ -26,7 +26,7 @@ If a user attempts to execute an action and does not have the appropriate access
 You can assign specific permission actions to the following exposed resources in your project:
 
 - the datastore
-- uma classe de dados
+- a dataclass
 - an attribute (including computed and alias)
 - a data model class function
 
@@ -42,7 +42,7 @@ A permission action defined at a given level is inherited by default at lower le
 
 Available actions are related to target resource.
 
-| Actions      | armazém de dados                                                                     | dataclass                                                                                                                                       | atributo                                                                                                              | data model function                                                                                                                                                                                                                                                      |
+| Actions      | datastore                                                                            | dataclass                                                                                                                                       | attribute                                                                                                             | data model function                                                                                                                                                                                                                                                      |
 | ------------ | ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **create**   | Create entity in any dataclass                                                       | Create entity in this dataclass                                                                                                                 | Create an entity with a value different from default value allowed for this attribute (ignored for alias attributes). | n/a                                                                                                                                                                                                                                                                      |
 | **read**     | Read attributes in any dataclass                                                     | Read attributes in this dataclass                                                                                                               | Read this attribute content                                                                                           | n/a                                                                                                                                                                                                                                                                      |
@@ -52,7 +52,7 @@ Available actions are related to target resource.
 | **describe** | All the dataclasses are available in the /rest/$catalog API                          | This dataclass is available in the /rest/$catalog API                                                                                           | This attribute is available in the /rest/$catalog API.                                                                | This dataclass function is available in the /rest/$catalog API                                                                                                                                                                                                           |
 | **promote**  | n/a                                                                                  | n/a                                                                                                                                             | n/a                                                                                                                   | Associates a given privilege during the execution of the function. The privilege is temporary added to the session and removed at the end of the function execution. By security, only the process executing the function is added the privilege, not the whole session. |
 
-**Notas:**
+**Notes:**
 
 - An alias can be read even if there is no permissions on the attributes upon which it is built.
 - A computed attribute can be accessed even if there are no permissions on the attributes upon which it is built.
@@ -76,7 +76,7 @@ A privilege or a role can be associated to several "action + resource" combinati
 - You **allow** privileges and/or roles to every user session using the [`.setPrivileges()`](../API/SessionClass.md#setprivileges) function of the `Session` class.
 
 
-### Exemplo
+### Example
 
 To allow a role in a session:
 
@@ -118,25 +118,25 @@ In a context other than *Qodly* (cloud), you have to create this file at the fol
 
 The `roles.json` file syntax is the following:
 
-| Nome da propriedade |                 |               | Tipo                               | Obrigatório | Descrição                                                                    |
-| ------------------- | --------------- | ------------- | ---------------------------------- | ----------- | ---------------------------------------------------------------------------- |
-| privileges          |                 |               | Collection of `privilege` objects  | X           | List of defined privileges                                                   |
-|                     | \[].privilege  |               | String                             |             | Nome do privilégio                                                           |
-|                     | \[].includes   |               | Coleção de strings                 |             | List of included privilege names                                             |
-| roles               |                 |               | Collection of `role` objects       |             | List of defined roles                                                        |
-|                     | \[].role       |               | String                             |             | Role name                                                                    |
-|                     | \[].privileges |               | Coleção de strings                 |             | List of included privilege names                                             |
-| permissions         |                 |               | Objeto                             | X           | List of allowed actions                                                      |
-|                     | allowed         |               | Collection of `permission` objects |             | List of allowed permissions                                                  |
-|                     |                 | \[].applyTo  | String                             | X           | Targeted [resource](#resources) name                                         |
-|                     |                 | \[].type     | String                             | X           | [Resource](#resources) type: "datastore", "dataclass", "attribute", "method" |
-|                     |                 | \[].read     | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].create   | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].update   | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].drop     | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].describe | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].execute  | Coleção de strings                 |             | List of privileges                                                           |
-|                     |                 | \[].promote  | Coleção de strings                 |             | List of privileges                                                           |
+| Property name |                 |               | Type                               | Mandatory | Description                                                                  |
+| ------------- | --------------- | ------------- | ---------------------------------- | --------- | ---------------------------------------------------------------------------- |
+| privileges    |                 |               | Collection of `privilege` objects  | X         | List of defined privileges                                                   |
+|               | \[].privilege  |               | String                             |           | Privilege name                                                               |
+|               | \[].includes   |               | Collection of strings              |           | List of included privilege names                                             |
+| roles         |                 |               | Collection of `role` objects       |           | List of defined roles                                                        |
+|               | \[].role       |               | String                             |           | Role name                                                                    |
+|               | \[].privileges |               | Collection of strings              |           | List of included privilege names                                             |
+| permissions   |                 |               | Object                             | X         | List of allowed actions                                                      |
+|               | allowed         |               | Collection of `permission` objects |           | List of allowed permissions                                                  |
+|               |                 | \[].applyTo  | String                             | X         | Targeted [resource](#resources) name                                         |
+|               |                 | \[].type     | String                             | X         | [Resource](#resources) type: "datastore", "dataclass", "attribute", "method" |
+|               |                 | \[].read     | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].create   | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].update   | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].drop     | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].describe | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].execute  | Collection of strings              |           | List of privileges                                                           |
+|               |                 | \[].promote  | Collection of strings              |           | List of privileges                                                           |
 
 
 :::caution Reminder
