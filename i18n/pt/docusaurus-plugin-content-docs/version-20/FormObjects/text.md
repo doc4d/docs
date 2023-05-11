@@ -6,7 +6,7 @@ title: Text
 
 A text object allows you to display static written content (*e.g.*, instructions, titles, labels, etc.) on a form. These static text areas can become dynamic when they include dynamic references. For more information, refer to [Using references in static text](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-references-in-static-text.300-4163725.en.html).
 
-#### JSON Exemplo:
+#### JSON Example:
 
 ```4d
     "myText": {
@@ -17,13 +17,13 @@ A text object allows you to display static written content (*e.g.*, instructions
                 "top": 160, 
                 "width": 100,
                 "height": 20,
-                "stroke": "#ff0000"     //cor do texto
+                "stroke": "#ff0000"     //text color   
                 "fontWeight": "bold"
                 }
 ```
 
 
-## Rotação
+## Rotation
 
 4D lets you rotate text areas in your forms using the [Orientation](properties_Text.md#orientation) property.
 
@@ -40,13 +40,13 @@ Once a text is rotated, you can still change its size or position, as well as al
 - If the object is resized in direction B, both its [width](properties_CoordinatesAndSizing.md#width) and [height](properties_CoordinatesAndSizing.md#height) are modified.
 
 
-## Propriedades compatíveis
+## Supported Properties
 
-<details><summary>Histórico</summary>
+<details><summary>History</summary>
 
-| Versão | Mudanças                          |
-| ------ | --------------------------------- |
-| v19 R7 | Support of Corner radius property |
+| Version | Changes                           |
+| ------- | --------------------------------- |
+| v19 R7  | Support of Corner radius property |
 
 </details>
 
