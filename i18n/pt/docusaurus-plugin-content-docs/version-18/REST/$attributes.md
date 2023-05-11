@@ -6,7 +6,7 @@ title: "$attributes"
 Allows selecting the related attribute(s) to get from the dataclass (*e.g.*, `Company(1)?$attributes=employees.lastname` or `Employee?$attributes=employer.name`).
 
 
-## Descrição
+## Description
 
 When you have relation attributes in a dataclass, use `$attributes` to define the path of attributes whose values you want to get for the related entity or entities.
 
@@ -29,7 +29,7 @@ You can apply `$attributes` to an entity (*e.g.*, People(1)) or an entity select
 
 ## Example with related entities
 
-Se passarmos a petição REST seguinte para nossa classe de dados Company (que tem um atributo de relação "empregados"):
+If we pass the following REST request for our Company dataclass (which has a relation attribute "employees"):
 
  `GET  /rest/Company(1)/?$attributes=employees.lastname`
 
@@ -75,7 +75,7 @@ If you want to get last name and job name attributes from employees:
 
 ## Example with related entity
 
-Se passarmos a petição REST seguinte para nossa classe de dados Employee (que tem vários atributos relacionais, incluindo "employer"):
+If we pass the following REST request for our Employee dataclass (which has several relation attributes, including "employer"):
 
 
  `GET  /rest/Employee(1)?$attributes=employer.name`
