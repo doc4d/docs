@@ -36,7 +36,7 @@ Once the compacting is finished, 4D Server automatically restarts the applicatio
 After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
 
 
-## Tempo de funcionamento
+## Uptime
 
 This area indicates the duration of the 4D Server application execution since the last time it was started (days, hours and minutes).
 
@@ -47,7 +47,7 @@ This button can be used to immediately close and restart the project. When you c
 
 > If the request for restarting was carried out from a remote 4D machine, this machine is automatically reconnected by 4D Server.
 
-## Última cópia de segurança
+## Last backup
 
 This area indicates the date and time of the [last backup](MSC/backup.md) of the database and provides information about the next scheduled automatic backup (if any). Automatic backups are configured using the **Scheduler** page of the structure settings.
 
