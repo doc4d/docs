@@ -1,7 +1,7 @@
 ---
 id: backup
-title: Página de Backup
-sidebar_label: Página de Backup
+title: Backup Page
+sidebar_label: Backup Page
 ---
 
 You can use the Backup page to view some backup parameters of the database and to launch a manual backup:
