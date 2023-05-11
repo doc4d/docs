@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Visão Geral
+title: Overview
 ---
 
 You can create menu bars and menus for your 4D applications. Because pull-down menus are a standard feature of any desktop application, their addition will make your applications easier to use and will make them feel familiar to users.
@@ -24,7 +24,7 @@ To create menus and menu bars, you can use either:
 - a combination of both.
 
 
-## Editor de menus
+## Menu editor
 The Menu editor is accessed using the **Menus** button of the Toolbox.
 
 ![](../assets/en/Menus/editor1.png)
