@@ -3,7 +3,7 @@ id: breakpoints
 title: Breakpoints and Command Catching
 ---
 
-## Visão Geral
+## Overview
 
 
 Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
@@ -34,7 +34,7 @@ You can edit the behavior of a breakpoint using the Breakpoint Properties window
 
 ![breakpoint-properties](../assets/en/Debugging/breakpoint-properties.png)
 
-This window is available from the Code Editor or the [Source Code Pane](debugger.md#source-code-pane). Pode:
+This window is available from the Code Editor or the [Source Code Pane](debugger.md#source-code-pane). You can:
 
 - right-click a line and select **Edit Breakpoint** in the contextual menu, or
 - `Alt+click` (Windows) or `Option+click` (macOS) in the left margin.
@@ -67,7 +67,7 @@ To open the Break list page:
 
 ![break-list-runtime-explorer](../assets/en/Debugging/break-list.png)
 
-Usando esta janela, pode:
+Using this window, you can:
 
 * Set conditions for breakpoints in the **Conditions** column
 * Enable or disable breakpoints by clicking the bullets in the margin. Disabled breakpoints display transparent bullets
@@ -109,7 +109,7 @@ To enable or disable a caught command, click on the bullet (•) in front of the
 
 To delete a caught command:
 
-1. Seleccione um comando na lista.
+1. Select a command in the list.
 2. Press **Backspace** or **Delete** on your keyboard or click on the **Delete** button beneath the list (**Delete All** removes all commands in the list).
 
 ### Setting a Condition for catching a command
