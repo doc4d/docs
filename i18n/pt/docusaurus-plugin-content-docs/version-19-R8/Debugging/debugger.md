@@ -1,6 +1,6 @@
 ---
 id: debugger
-title: Depurador
+title: Debugger
 ---
 
 The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through your code slowly and examine the information. This process is called "tracing".
@@ -65,19 +65,19 @@ The new method becomes the current (top) method in the [Call Chain Pane](#call-c
 
 When executing a line that does not call another method, this button has the same effect as the **Step Over** button.
 
-#### Abortar
+#### Abort
 
 Stops method execution, and returns to the state before the method started executing:
 
 * When tracing a form or object method executing in response to an event: Stops and returns to the form.
 * When tracing a method executing from within the Application environment: Stops and returns to the environment.
 
-#### Abortar e editar
+#### Abort and Edit
 
 Pauses method execution. The method that is executing when you click the **Abort and Edit** button opens in the Code Editor.
 > **Tip**: Use this button when you know which changes are required in your code, and when these changes are required to pursue the testing of your methods. After you're finished with the changes, rerun the method.
 
-#### Editar
+#### Edit
 
 Pauses method execution. The method that is executing at the time you click the Edit button opens in the Code Editor.
 
@@ -87,7 +87,7 @@ If you use this button to modify a method, the modifications are only effective 
 
 #### Save Settings
 
-Saves the current configuration of the debugger window  and makes it the default configuration. Isto inclui:
+Saves the current configuration of the debugger window  and makes it the default configuration. This includes:
 
 * the size and position of the window
 * the position of the division lines and the contents of the area that evaluates the expressions
@@ -98,7 +98,7 @@ This action is not available in remote debugging mode (see [Debugging from Remot
 
 ## Watch Pane
 
-The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Aqui um exemplo simples:
+The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Here is an example:
 
 ![watch-pane](../assets/en/Debugging/watchPane.png)
 
@@ -130,40 +130,40 @@ $c:=a+b
 
 1. A Debugger window opens with the program counter set to the line with `a:=1`. At this point the **Line Objects** theme displays:
 
-    | $a | Indefinido |
-    | -- | ---------- |
-    |    |            |
+    | $a | Undefined |
+    | -- | --------- |
+    |    |           |
 
     The `$a` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
 2. You click the **Step Over** button. The program counter is now set to the line `b:=a+1`. At this point, the theme displays:
 
-    | $a | 1          |
-    | -- | ---------- |
-    | $b | Indefinido |
+    | $a | 1         |
+    | -- | --------- |
+    | $b | Undefined |
 
-    O valor da variável `$a` é agora 1. The `$b` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    The value of the `$a` variable is now 1. The `$b` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
 3. You click the **Step Over** button again. The program counter is now set on the line with c:=a+b. At this point the Line Objects theme displays:
 
-    | $c | Indefinido |
-    | -- | ---------- |
-    | $a | 1          |
-    | $b | 2          |
+    | $c | Undefined |
+    | -- | --------- |
+    | $a | 1         |
+    | $b | 2         |
 
-    O valor da variável `$b` é agora 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    The value of the `$b` variable is now 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
-#### Variáveis
+#### Variables
 
 This theme is composed of the following subthemes:
 
-| Subtema       | Descrição                                                    | Can the values be modified? |
-| ------------- | ------------------------------------------------------------ | --------------------------- |
-| Interprocesso | List of interprocess variables being used at this point      | Sim                         |
-| Processo      | List of process variables used by the current process        | Sim                         |
-| Local         | List of local variables used by the method being traced      | Sim                         |
-| Parâmetros    | List of parameters received by the method                    | Sim                         |
-| Self          | Pointer to the current object, when tracing an Object Method | Não                         |
+| Subtheme     | Description                                                  | Can the values be modified? |
+| ------------ | ------------------------------------------------------------ | --------------------------- |
+| Interprocess | List of interprocess variables being used at this point      | Yes                         |
+| Process      | List of process variables used by the current process        | Yes                         |
+| Local        | List of local variables used by the method being traced      | Yes                         |
+| Parameters   | List of parameters received by the method                    | Yes                         |
+| Self         | Pointer to the current object, when tracing an Object Method | No                          |
 
 Arrays, like other variables, appear in the Interprocess, Process, and Local subthemes, depending on their scope. The debugger displays the first 100 elements. Inside the **Value** column, you can modify the values of array elements, but not the size of the arrays.
 
@@ -171,7 +171,7 @@ To display the variable types and their internal names, right click and check th
 
 ![show-types-menu-item](../assets/en/Debugging/showTypes.png)
 
-Aqui está o resultado:
+Here's the result:
 
 ![dynamic-variable-names](../assets/en/Debugging/dynamicVariableNames.png)
 
@@ -183,33 +183,33 @@ This theme contains the name of each dynamic object included in the current form
 
 Some objects, such as list box arrays, can be presented as two distinct objects, the variable of the object itself and its data source.
 
-#### Constantes
+#### Constants
 
 Like the Constants page of the Explorer window, this theme displays predefined constants provided by 4D. The expressions from this theme cannot be modified.
 
-#### Semáforos
+#### Semaphores
 
-This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. The expressions from this theme cannot be modified.
+This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. Global semaphores are not displayed.
 
-#### Processos
+#### Processes
 
 This theme lists the processes started since the beginning of the working session. The value column displays the time used and the current state for each process (i.e., Executing, Paused, and so on). The expressions from this theme cannot be modified.
 
-#### Tabelas e Campos
+#### Tables and Fields
 
 This theme lists the tables and fields in the 4D database. For each Table item, the Value column displays the size of the current selection for the current process as well as the number of **locked records**.
 
 For each Field item, the Value column displays the value of the field for the current record (except picture and BLOB). You can modify the field values but not the the tables' information.
 
-#### Conjuntos
+#### Sets
 
 This theme lists the sets defined in the current process (the one you're currently tracing) and the interprocess sets. For each set, the Value column displays the number of records and the table name. The expressions from this theme cannot be modified.
 
-#### Seleções temporárias
+#### Named Selections
 
 This theme lists the named selections that are defined in the current process (the one you’re currently tracing); it also lists the interprocess named selections. For each named selection, the Value column displays the number of records and the table name. The expressions from this theme cannot be modified.
 
-#### Informação
+#### Information
 
 This theme contains general information regarding database operation, such as the current default table (if one exists), physical, virtual, free and used memory space, query destination, etc.
 
@@ -248,12 +248,12 @@ A method may call other methods or class functions, which may call other methods
 
 Each main level item is the name of a method or class function. The top item is the one you are currently tracing, the next main level item is the name of the caller (the method or function that called the one you are currently tracing), the next one is the caller's caller, and so on.
 
-Na imagem acima:
+In the image above:
 
-* `thirdMethod` não recebeu nenhum parâmetro
+* `thirdMethod` has not received any parameter
 * `$0` is currently undefined, as the method did not assign any value to `$0` (because it has not executed this assignment yet or because the method is a subroutine and not a function)
 * `secondMethod` has received three parameters from `firstMethod`:
-  * $1 é um ponteiro para a tabela `[Employee]`
+  * $1 is a pointer to the `[Employee]` table
   * $2 is a pointer to the `ID` field in the  `[Employee]` table
   * $3 is an alphanumeric parameter whose value is "Z"
 
@@ -273,11 +273,11 @@ You can also use the [Get call chain](https://doc.4d.com/4dv19/help/command/en/p
 
 The Custom Watch Pane is useful for evaluating expressions. It is similar to the [Watch Pane](#watch-pane), except here you decide which expressions are displayed. Any type of expression can be evaluated:
 
-* campo
-* variável
+* field
+* variable
 * pointer
-* cálculo
-* Comando 4D
+* calculation
+* 4D command
 * method
 * and anything else that returns a value
 
@@ -323,7 +323,7 @@ For more information on the Formula Editor, see the <a href="https://doc.4d.com/
 * **Show Field and Table Numbers**: Displays the number of each table or field of the **Fields**. Useful if you work with tables, field numbers or pointers using the commands such as `Table` or `Field`.
 * **Show Icons**: Displays an icon denoting the type of each item.
 * **Sorted Tables and Fields**: Displays the table and fields in alphabetical order.
-* **Show Integers in Hexadecimal**: Displays numbers using hexadecimal notation. Para introduzir um valor numérico em hexadecimal, digite 0x (zero + "x"), seguido dos dígitos hexadecimais.
+* **Show Integers in Hexadecimal**: Displays numbers using hexadecimal notation. To enter a numeric value in hexadecimal, type 0x (zero + "x"), followed by the hexadecimal digits.
 
 ## Source Code Pane
 
@@ -331,7 +331,7 @@ The Source Code Pane shows the source code of the method or function currently b
 
 This area also allows you to add or remove [**break points**](breakpoints.md).
 
-### Tips
+### Tool tip
 
 Hover your pointer over any expression to display a tool tip that indicates:
 
@@ -349,24 +349,24 @@ This also works with selections:
 You can copy any selected expression from the Source Code Pane to the [Custom Watch Pane](#custom-watch-pane).
 
 1. In the Source code pane, select the expression to evaluate
-2. Faça uma das seguintes opções:
+2. Do one of the following:
     * Drag and drop the selected text to the Expression area of the Custom Watch Pane
     * Press **Ctrl+D** (Windows) or **Cmd+D** (macOS)
     * Right-click the selected text **>** **Copy to Expression Pane**
 
-### Contador do programa
+### Program Counter
 
 The yellow arrow in the left margin of the Source Code pane is called the program counter. It marks the next line to be executed.
 
 By default, the program counter line (also called the running line) is highlighted in the debugger. You can customize the highlight color in the [Methods page of the Preferences](Preferences/methods.md).
 
-#### Movendo o contador do programa
+#### Moving the program counter
 
 For debugging purposes, you can move the program counter for the method at the top of the call chain (the method currently executing). To do so, click and drag the yellow arrow to another line.
 
 This only tells the debugger to pursue tracing or executing from a different point. It does not execute lines or cancel their execution. All current settings, fields, variables, etc. are not impacted.
 
-Por exemplo:
+For example:
 
 ```4d
   // ...
@@ -380,13 +380,13 @@ Por exemplo:
 
 Say the program counter is set to the line `If (This condition)`. When you click the **Step over** button, the program counter moves directly to the `DO_SOMETHING_ELSE` line. To examine the results of the `DO_SOMETHING` line, you can move the program counter to that line and execute it.
 
-### Menu contextual
+### Contextual menu
 
 The contextual menu of the Source Code Pane provides access to several functions that are useful when executing methods in Trace mode:
 
 ![source-code-pane-context-window](../assets/en/Debugging/sourceCodePaneContext.png)
 
-* **Goto Definition**: Goes to where the selected object is defined. Este comando está disponível para:
+* **Goto Definition**: Goes to where the selected object is defined. This command is available for:
   * *Project methods:* displays method contents in a new window of the Code Editor
   * *Fields:* Displays field properties in the inspector of the Structure window
   * *Tables:* Displays table properties in the inspector of the Structure window
@@ -409,9 +409,9 @@ Specific shortcuts allow you to find strings identical to the one selected:
 
 The search is carried out only if you select at least one character in the Source code pane.
 
-## Atalhos
+## Shortcuts
 
-Esta secção lista todos os atalhos disponíveis na janela do depurador.
+This section lists all the shortcuts available in the debugger window.
 
 > The tool bar also has [shortcuts](#tool-bar-buttons).
 
