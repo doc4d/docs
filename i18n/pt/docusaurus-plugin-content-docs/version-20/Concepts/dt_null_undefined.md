@@ -1,38 +1,38 @@
 ---
 id: null-undefined
-title: Null e indefinido
+title: Null and Undefined
 ---
 
-Nulo e Indefinido são tipos de dados que tratam de casos em que o valor de uma expressão não é conhecido.
+Null and Undefined are data types that handle cases where the value of an expression is not known.
 
 ## Null
 
-Null é um tipo de dados especial com um único valor possível: **null**. Este valor é devolvido por uma expressão que não contém nenhum valor.
+Null is a special data type with only one possible value: **null**. This value is returned by an expression that does not contain any value.
 
-Na linguagem 4D e para os atributos dos campos dos objetos, os valores nulos são gerenciados através da função `Null`. Esta função pode ser usada com as expressões abaixo para definir ou comparar o valor nulo:
+In the 4D language and for object field attributes, null values are managed through the `Null` function. This function can be used with the following expressions for setting or comparing the null value:
 
-- atributos de objetos
-- elementos da coleção
-- variáveis do objecto, colecção, ponteiro, imagem, ou tipo de variante.
+- object attributes
+- collection elements
+- variables of the object, collection, pointer, picture, or variant type.
 
-## Indefinido
+## Undefined
 
-Indefinido não é realmente um tipo de dados. Denota uma variável que ainda não foi definida. Uma função (um método projeto que devolve um resultado) pode devolver um valor indefinido se, dentro do método, se atribuir ao resultado da função ($0) uma expressão indefinida (uma expressão calculada com ao menos uma variável indefinida). Um campo não pode ser indefinido (o comando `Undefined` sempre devolve False para um campo). Uma variável variant tem **indefinido** como valor por definição.
-
-
-## Operadores Null
+Undefined is not actually a data type. It denotes a variable that has not yet been defined. A function (a project method that returns a result) can return an undefined value if, within the method, the function result ($0) is assigned an undefined expression (an expression calculated with at least one undefined variable). A field cannot be undefined (the `Undefined` command always returns False for a field). A variant variable has **undefined** as default value.
 
 
-| Operação     | Sintaxe                  | Retorna  | Expression                     | Value |
-| ------------ | ------------------------ | -------- | ------------------------------ | ----- |
-| Igual        | Null `=` Null            | Booleano | a.nullProp `=` b.nullProp      | True  |
-|              | Null `=` Undefined       | Booleano | a.nullProp `=` b.undefinedProp | True  |
-|              | Null `=` *valor escalar* | Booleano | a.nullProp `=` 42              | False |
-| Desigualdade | Null `#` Null            | Booleano | a.nullProp `#` b.nullProp      | False |
-|              | Null `#` Undefined       | Booleano | a.nullProp `#` b.undefinedProp | False |
-|              | Null `#` *valor escalar* | Booleano | a.nullProp `#` 42              | True  |
+## Null operators
 
-Os *valores escalares* são valores do tipo string, Date, Time, Boolean, number, ou Blob. Quando declarado, o seu  [valor por padrão](data-types.md#default-values) não é indefinido nem nulo. Outros tipos (Ponteiro, Imagem, Objecto, Colecção) têm valor por defeito indefinido ou nulo. Ex:
+
+| Operation  | Syntax                  | Returns | Expression                     | Value |
+| ---------- | ----------------------- | ------- | ------------------------------ | ----- |
+| Equality   | Null `=` Null           | Boolean | a.nullProp `=` b.nullProp      | True  |
+|            | Null `=` Undefined      | Boolean | a.nullProp `=` b.undefinedProp | True  |
+|            | Null `=` *scalar value* | Boolean | a.nullProp `=` 42              | False |
+| Inequality | Null `#` Null           | Boolean | a.nullProp `#` b.nullProp      | False |
+|            | Null `#` Undefined      | Boolean | a.nullProp `#` b.undefinedProp | False |
+|            | Null `#` *scalar value* | Boolean | a.nullProp `#` 42              | True  |
+
+*scalar values* are values of type string, Date, Time, Boolean, number, or Blob. When declared, their [default value](data-types.md#default-values) is neither undefined nor null. Other types (Pointer, Picture, Object, Collection) have undefined or null default value. Ex:
 
 ```4d
 var $object : Object
@@ -44,37 +44,37 @@ var $text : Text
 
 :::info
 
-Comparações com os operadores Maior que (`>`), Menor que (`<`), Maior ou igual a (`>=`), e Menor ou igual a (`<=`) não são suportados com valores Nulos e devolvem um erro.
+Comparisons with Greater than (`>`), Less than (`<`), Greater than or equal to (`>=`), and Less than or equal to (`<=`) operators are not supported with Null values and return an error.
 
 :::
 
-## Operadores indefinidos
+## Undefined operators
 
 
-| Operação             | Sintaxe                                               | Retorna  | Expression                          | Value |
-| -------------------- | ----------------------------------------------------- | -------- | ----------------------------------- | ----- |
-| Igual                | Undefined `=` Undefined                               | Booleano | a.undefinedProp `=` b.undefinedProp | True  |
-|                      | Undefined `=` Null                                    | Booleano | a.undefinedProp `=` c.nullProp      | True  |
-|                      | Undefined `=` *outros valores*                        | Booleano | a.undefinedProp `=` 42              | False |
-| Desigualdade         | Undefined `#` Undefined                               | Booleano | a.undefinedProp `#` b.undefinedProp | False |
-|                      | Undefined `#` Null                                    | Booleano | a.undefinedProp `#` b.nullProp      | False |
-|                      | Undefined `#` *outros valores*                        | Booleano | a.undefinedProp `#` 42              | True  |
-| Maior que            | Undefined `>` string, Date, Time, Boolean, number  | Booleano | a.undefinedProp `>` "abc"        | False |
-| Menor que            | Undefined `<` string, Date, Time, Boolean, number  | Booleano | a.undefinedProp `<` "abc"        | False |
-| Maior ou igual a     | Undefined `>=` string, Date, Time, Boolean, number | Booleano | a.undefinedProp `>=` "abc"       | False |
-| Menor que ou igual a | Undefined `<=` string, Date, Time, Boolean, number | Booleano | a.undefinedProp `<=` "abc"       | False |
+| Operation                | Syntax                                                | Returns | Expression                          | Value |
+| ------------------------ | ----------------------------------------------------- | ------- | ----------------------------------- | ----- |
+| Equality                 | Undefined `=` Undefined                               | Boolean | a.undefinedProp `=` b.undefinedProp | True  |
+|                          | Undefined `=` Null                                    | Boolean | a.undefinedProp `=` c.nullProp      | True  |
+|                          | Undefined `=` *other values*                          | Boolean | a.undefinedProp `=` 42              | False |
+| Inequality               | Undefined `#` Undefined                               | Boolean | a.undefinedProp `#` b.undefinedProp | False |
+|                          | Undefined `#` Null                                    | Boolean | a.undefinedProp `#` b.nullProp      | False |
+|                          | Undefined `#` *other values*                          | Boolean | a.undefinedProp `#` 42              | True  |
+| Greater than             | Undefined `>` string, Date, Time, Boolean, number  | Boolean | a.undefinedProp `>` "abc"        | False |
+| Less than                | Undefined `<` string, Date, Time, Boolean, number  | Boolean | a.undefinedProp `<` "abc"        | False |
+| Greater than or equal to | Undefined `>=` string, Date, Time, Boolean, number | Boolean | a.undefinedProp `>=` "abc"       | False |
+| Less than or equal to    | Undefined `<=` string, Date, Time, Boolean, number | Boolean | a.undefinedProp `<=` "abc"       | False |
 
-*outros valores* são expressões de qualquer tipo com um valor nem Indefinido nem Null.
+*other values* are expressions of any type with a value neither Undefined nor Null.
 
 :::info
 
-Comparações de valores Indefinidos com Pontos, Imagem, Blob, Objecto, Colecção, Valores Indefinidos ou Nulos utilizando valores Maiores que (`>`), Menos que (`<`), Maiores ou iguais a (`>=`), e Menos ou iguais a (`<=`) os operadores não são suportados e devolvem um erro.
+Comparisons of Undefined values with Pointer, Picture, Blob, Object, Collection, Undefined or Null values using Greater than (`>`), Less than (`<`), Greater than or equal to (`>=`), and Less than or equal to (`<=`) operators are not supported and return an error.
 
 :::
 
-## Exemplos
+## Examples
 
-Aquí estão os diferentes resultados do comando `Undefined` assim como do comando `Null` com as propriedades dos objetos, dependendo do contexto:
+Here are the different results of the `Undefined` command as well as the `Null` command with object properties, depending on the context:
 
 ```4d
 var $vEmp : Object
@@ -94,29 +94,29 @@ $result:=Undefined($vEmp.parent) //True
 $result:=($vEmp.parent=Null) //True
 ```
 
-Exemplos de resultados de comparação com valores indefinidos e nulos:
+Examples of comparison results with undefined and null values:
 
 ```4d
-var $result : Booleano
-var $vObj : Objecto
-var $vVar : Variante
+var $result : Boolean
+var $vObj : Object
+var $vVar : Variant
 
-$vObj:=Novo objecto
-$vObj.null:=Nulo
-// nota que $vVar não está atribuído 
+$vObj:=New object
+$vObj.null:=Null
+//note that $vVar is not assigned 
 
 $result:=($vObj.undefined=42) //False
 $result:=($vObj.undefined=$vObj.null) //True
-$result:=($vObj.undefined=$vVar) //True
+$result:=($vObj.undefined=$vVar)  //True
 
-$result:=($vObj.indefinido#$vObj.null) //False
+$result:=($vObj.undefined#$vObj.null) //False
 $result:=($vObj.undefined#42) //True
 $result:=($vObj.undefined#$vVar) //False
 
-$result:=($vObj.indefinido>"olá") //Falso
-$result:=($vObj.indefinido>$vVar) //Error
-$result:=($vObj.indefinido>$vObj.nulo) //Error
-$result:=($vVar < 42) //Falso
+$result:=($vObj.undefined>"hello") //False
+$result:=($vObj.undefined>$vVar)  //Error
+$result:=($vObj.undefined>$vObj.null)  //Error
+$result:=($vVar < 42) //False
 
 ```
 
