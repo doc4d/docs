@@ -4,7 +4,7 @@
     "description": "The label for version 18"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Começando",
+    "message": "Getting Started",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.4D Language Concepts": {
@@ -12,7 +12,7 @@
     "description": "The label for category 4D Language Concepts in sidebar docs"
   },
   "sidebar.docs.category.Data Types": {
-    "message": "Tipos de dados",
+    "message": "Data Types",
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.Control Flow": {
@@ -24,7 +24,7 @@
     "description": "The label for category Project Databases in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Editor de formulários",
+    "message": "Form Editor",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Objects": {
@@ -40,7 +40,7 @@
     "description": "The label for category Menus in sidebar docs"
   },
   "sidebar.docs.category.MSC": {
-    "message": "CSM",
+    "message": "MSC",
     "description": "The label for category MSC in sidebar docs"
   },
   "sidebar.docs.category.Backup and Restore": {
@@ -52,11 +52,11 @@
     "description": "The label for category Users and Groups in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "Servidor REST",
+    "message": "REST Server",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
-    "message": "Guias",
+    "message": "Guides",
     "description": "The label for category Guides in sidebar docs"
   },
   "sidebar.docs.category.API (general)": {
