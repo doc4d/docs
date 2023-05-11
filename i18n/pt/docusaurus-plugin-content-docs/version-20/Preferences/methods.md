@@ -1,17 +1,17 @@
 ---
 id: methods
-title: Página Métodos
+title: Methods Page
 ---
 
 This page contains parameters defining the Code Editor interface and its default display as well as options concerning its operation. It is divided into two sections accessed using the Theme and Options tabs.
 
-## Temas
+## Themes
 
 This page allows selecting, creating, or configuring Code Editor themes. A theme defines the font, font size, colors and styles of items displayed in the code editor.
 
 ![](../assets/en/Preferences/themes.png)
 
-### Lista de temas
+### Theme list
 
 In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D provides two themes by default:
 
@@ -52,16 +52,16 @@ The **font** and **font size** menus allows you to select the font name and size
 You can set different font styles and colors (font color or background color) for each type of language element. You can select the element(s) to customize in the Category list.
 
 
-### Outros estilos
+### Other Styles
 
 These options configure the various colors used in the Code Editor and debugger interfaces.
 
 ![](../assets/en/Preferences/categories.png)
 
 
-|                                                   | Descrição                                                                                                                                                                |
+|                                                   | Description                                                                                                                                                              |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Cor de fundo**                                  | Background color of Code Editor window.                                                                                                                                  |
+| **Background color**                              | Background color of Code Editor window.                                                                                                                                  |
 | **Border of the running line in the debugger**    | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
 | **Cursor line background color**                  | Background color of line containing the cursor.                                                                                                                          |
 | **Execution line background color**               | Background color of line being executed in the debugger.                                                                                                                 |
@@ -95,7 +95,7 @@ Allows you to disable/enable the "international" code settings for the local 4D 
 
 > If you modify this option, you need to restart the 4D application so that the change is taken into account.
 
-#### Indentação
+#### Indentation
 
 Changes the indentation value for the 4D code in the Code Editor. The width must be specified in points (10 by default).
 
@@ -109,7 +109,7 @@ Modifying this default value can be useful if your methods contain complex algor
 
 Lets you display the line numbers by default in each window of the Code Editor. You can also show/hide line numbers for the current window directly from the Code Editor.
 
-#### Mostrar as listas
+#### Show Lists
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Code Editor window is opened. You can also show or hide each list directly from the Code Editor.
 
@@ -152,9 +152,9 @@ Enables automatic insertion of () and closing braces while typing code. This opt
 ![](../assets/en/Preferences/optionsClosing.png)  
 ![](../assets/en/Preferences/optionsClosing2.png)
 
-#### Correspondência \[]\(){}
+#### Matching \[]\(){}
 
-Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. As opções abaixo estão disponíveis:
+Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. The following options are available:
 
 - **None**: No signaling
 - **Rectangle** (default): Braces surrounded by a black line  
@@ -182,13 +182,13 @@ Highlights the line that is currenty running in the debugger in addition to the 
 
 If you deselect this option, only the yellow arrow is shown.
 
-### Sugestões
+### Suggestions
 
 This area lets you configure autocomplete mechanisms in the Code Editor to adapt it to your own work habits.
 
-|                                 | Descrição                                                                                                                                                                                                                                               |
+|                                 | Description                                                                                                                                                                                                                                             |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Automatic opening of window for | Triggers the automatic display of the suggestion window for:<ul><li>Constantes</li><li>Variables (local and interprocess) and object attributes</li><li>Tabelas</li><li>Prototypes (*i.e.*, class functions)</li></ul><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:</p><p>![](../assets/en/Preferences/suggestionsAutoOpen.png)</p> You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
+| Automatic opening of window for | Triggers the automatic display of the suggestion window for:<ul><li>Constants</li><li>Variables (local and interprocess) and object attributes</li><li>Tables</li><li>Prototypes (*i.e.*, class functions)</li></ul><p>For example, when the "Variables (local or interprocess) and object attributes" option is checked, a list of suggestions appears when you type the $ character:</p><p>![](../assets/en/Preferences/suggestionsAutoOpen.png)</p> You can disable this functioning for certain elements of the language by deselecting their corresponding option. |
 | Validation of a suggestion for  | Sets the entry context that allows the Code Editor to validate automatically the current suggestion displayed in the autocomplete window.<ul><li>**Tab and delimiters**<br/>When this option is selected, you can validate the current selection with the Tab key or any delimiter that is relevant to the context. For example, if you enter "ALE" and then "(", 4D automatically writes "ALERT(" in the editor. Here is the list of delimiters that are taken into account:<br/> ( ; : = < [ {</li><li>**Tab only**<br/>When this option is selected, you can only use the Tab key to insert the current suggestion. This can be used more particularly to facilitate the entry of delimiter characters in element names, such as ${1}.**Note**: You can also double-click in the window or press the Carriage return key to validate a suggestion.</li></ul>                                                                                      |
 	
 
