@@ -42,11 +42,11 @@ All formulas have operands and operators:
 
 4D View Pro supports five types of data. For each data type, specific literal values and operators are supported.
 
-| Data types                         | Values                                                | Operators                                                                                                                                                                                                                                              |
+| Data types                         | Values                                                | Operadores                                                                                                                                                                                                                                             |
 | ---------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Número](Concepts/dt_number.md)    | 1.2<br/>1.2 E3<br/>1.2E-3<br/>10.3x | + (addition)<br/>- (subtraction)<br/>* (multiplication)<br/>/ (division)<br/>^ (exponent, the number of times to multiply a number by itself)<br/>% (percentage -- divide the number before the operator by one hundred) |
 | [Date](Concepts/dt_date.md)        | 10/24/2017                                            | + (date + number of days -> date)<br/>+ (date + time -> date + time of day)<br/>- (date - number of days -> date)<br/>- (date - date -> number of days between the two)                                                              |
-| [Time](Concepts/dt_time.md)        | 10:12:10                                              | Duration operators:<br/>+ (addition)<br/>- (subtraction)<br/>* (duration * number -> duration)<br/>/ (duration / number -> duration)                                                                                         |
+| [Hora](Concepts/dt_time.md)        | 10:12:10                                              | Duration operators:<br/>+ (addition)<br/>- (subtraction)<br/>* (duration * number -> duration)<br/>/ (duration / number -> duration)                                                                                         |
 | [String](Concepts/dt_string.md)    | 'Sophie' or "Sophie"                                  | & (concatenation)                                                                                                                                                                                                                                      |
 | [Booleano](Concepts/dt_boolean.md) | TRUE or FALSE                                         | -                                                                                                                                                                                                                                                      |
 
@@ -245,7 +245,7 @@ For more information on supported incoming parameter types, please refer to the 
 
     | Propriedade | Tipo | Descrição       |
     | ----------- | ---- | --------------- |
-    | value       | Date | Date value      |
+    | value       | Date | Valor data      |
     | time        | Real | Time in seconds |
 
 If the 4D method returns nothing, an empty string is automatically returned.
