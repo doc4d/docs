@@ -15,21 +15,21 @@ The actions assigned to buttons can originate from predefined [standard actions]
 
 Buttons with standard actions are dimmed when appropriate during form execution. For example, if the first record of a table is displayed, a button with the `firstRecord` standard action would appear dimmed.
 
-If you want a button to perform an action that's not available as a standard action, leave the standard action field empty and write an object method to specify the button’s action. For more information about object methods and how to create and associate them, see [Using object methods](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-object-methods.300-4163733.en.html). Normally, you would activate the `On Clicked` event and the method would run only when the button is clicked. Pode associar um método a qualquer botão.
+If you want a button to perform an action that's not available as a standard action, leave the standard action field empty and write an object method to specify the button’s action. For more information about object methods and how to create and associate them, see [Using object methods](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-object-methods.300-4163733.en.html). Normally, you would activate the `On Clicked` event and the method would run only when the button is clicked. You can associate a method with any button.
 
 The [variable](properties_Object.md#variable-or-expression) associated with a button is automatically set to **0** when the form is executed for the first time in Design or Application mode. When the user clicks a button, its variable is set to **1**.
 
 > A button can be assigned both a standard action and a method. In this case, if the button is not disabled by the standard action, the method is executed before the standard action.
 
-## Estilos de botões
+## Button Styles
 
-Os estilos dos botões controlam a aparência geral de um botão, bem como as suas propriedades disponíveis. É possível aplicar diferentes estilos pré-definidos a botões ou associar-lhes menus pop-up. Um grande número de variações podem ser obtidas combinando essas propriedades/comportamentos.
+Button styles control a button's general appearance as well as its available properties. It is possible to apply different predefined styles to buttons or to associate pop-up menus with them. A great number of variations can be obtained by combining these properties / behaviors.
 
-Com excepção do [propriedades disponíveis](#supported-properties), muitos objectos de botão são *estruturalmente* idênticos. A diferença é no processamento das variáveis associadas.
+With the exception of the [available properties](#supported-properties), many button objects are *structurally* identical. The difference is in the processing of their associated variables.
 
-4D fornece botões nos seguintes estilos pré-definidos:
+4D provides buttons in the following predefined styles:
 
-### Clássico
+### Regular
 
 The Regular button style is a standard system button (*i.e.*, a rectangle with a descriptive label) which executes code when a user clicks on it.
 
@@ -37,7 +37,7 @@ The Regular button style is a standard system button (*i.e.*, a rectangle with a
 
 By default, the Regular style has a light gray background with a label in the center. When the cursor hovers over the Regular button style, the border and background color change to demonstrate that it has the focus. In addition to initiating code execution, the Regular button style mimics a mechanical button by quickly changing background color when being clicked.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
 
@@ -56,7 +56,7 @@ By default, the Regular style has a light gray background with a label in the ce
 
 Only the Regular and Flat styles offer the [Default Button](properties_Appearance.md#default-button) property.
 
-### Plano
+### Flat
 
 The Flat button style is a standard system button (*i.e.*, a rectangle with a descriptive label) which executes code when a user clicks on it.
 
@@ -64,7 +64,7 @@ The Flat button style is a standard system button (*i.e.*, a rectangle with a de
 
 By default, the Flat style has a white background with a label in the center, rounded corners, and a minimalist appearance. The Flat button style's graphic nature is particularly useful for forms that will be printed.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
 
@@ -87,7 +87,7 @@ Only the Regular and Flat styles offer the [Default Button](properties_Appearanc
 
 The Toolbar button style is primarily intended for integration in a toolbar. It includes the option to add a pop-up menu (indicated by an inverted triangle) which is generally used to display additional choices for the user to select.
 
-By default, the Toolbar style has a transparent background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
+By default, the Toolbar style has a transparent background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
 
 - *Windows* - the button is highlighted when it uses the “With Pop-up Menu” property, a triangle is displayed to the right and in the center of the button.
 
@@ -95,7 +95,7 @@ By default, the Toolbar style has a transparent background with a label in the c
 
 - *macOS* - the highlight of the button never appears. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and at the bottom of the button.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -115,7 +115,7 @@ By default, the Toolbar style has a transparent background with a label in the c
 
 The Bevel button style combines the appearance of the [Regular](#regular) (*i.e.*, a rectangle with a descriptive label) style with the [Toolbar](#toolbar) style's pop-up menu property option.
 
-By default, the Bevel style has a light gray background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
+By default, the Bevel style has a light gray background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
 
 - *Windows* - the button is highlighted. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and in the center of the button.
 
@@ -123,7 +123,7 @@ By default, the Bevel style has a light gray background with a label in the cent
 
 - *macOS* - the highlight of the button never appears. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and at the bottom of the button.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -141,9 +141,9 @@ By default, the Bevel style has a light gray background with a label in the cent
 
 ### Bevel arredondado
 
-O estilo de botão Bevel arredondado é quase idêntico ao estilo [Bevel](#bevel), exceto que, dependendo do sistema operativo, as esquinas do botão podem ser arredondadas. As with the Bevel style, the Rounded Bevel style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's pop-up menu property option.
+The Rounded Bevel button style is nearly identical to the [Bevel](#bevel) style except, depending on the OS, the corners of the button may be rounded. As with the Bevel style, the Rounded Bevel style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's pop-up menu property option.
 
-By default, the Rounded Bevel style has a light gray background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
+By default, the Rounded Bevel style has a light gray background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
 
 - *Windows* - the button is identical to the Bevel style. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and in the center of the button.
 
@@ -151,7 +151,7 @@ By default, the Rounded Bevel style has a light gray background with a label in 
 
 - *macOS* - the corners of the button are rounded. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and at the bottom of the button.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -171,7 +171,7 @@ By default, the Rounded Bevel style has a light gray background with a label in 
 
 The OS X Gradient button style is nearly identical to the [Bevel](#bevel) style. As with the Bevel style, the OS X Gradient style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's pop-up menu property option.
 
-By default, the OS X Gradient style has a light gray background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
+By default, the OS X Gradient style has a light gray background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
 
 - *Windows* - the button is identical to the Bevel style. When it uses the “With Pop-up Menu” property, a triangle is displayed on the right side of the button.
 
@@ -179,7 +179,7 @@ By default, the OS X Gradient style has a light gray background with a label in 
 
 - *macOS* - the button is displayed as a two-tone system button. When it uses the “With Pop-up Menu” property, a triangle is displayed to the right and at the bottom of the button.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -199,15 +199,15 @@ By default, the OS X Gradient style has a light gray background with a label in 
 
 The OS X Textured button style is nearly identical to the [Bevel](#bevel) style but with a smaller size (maximum size is the size of a standard macOS system button). As with the Bevel style, the OS X Textured style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's pop-up menu property option.
 
-Como padrão, o estilo OS X Textured aparece como:
+By default, the OS X Textured style appears as:
 
 - *Windows* - a standard system button with a light gray background with a label in the center. It has the special feature of being transparent in Vista.
 
  ![](../assets/en/FormObjects/button_osxtextured.png)
 
-- *macOS* - - um botão sistema padrão que mostra uma mudança de cor cinza claro a cinza escuro. Sua altura está predefinida: não é possível ampliar ou reduzir.
+- *macOS* - a standard system button displaying a color change from light to dark gray. Its height is predefined: it is not possible to enlarge or reduce it.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -227,15 +227,15 @@ Como padrão, o estilo OS X Textured aparece como:
 
 The Office XP button style combines the appearance of the [Regular](#regular) style with the [Toolbar](#toolbar) style's transparency and pop-up menu property option.
 
-As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas nos sistemas de cores. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
+The colors (highlight and background) of a button with the Office XP style are based on the system colors. The appearance of the button can be different when the cursor hovers over it depending on the OS:
 
-- *Windows* - seu fundo só aparece quando o mouse passa por cima.
+- *Windows* - its background only appears when the mouse rolls over it.
 
 ![](../assets/en/FormObjects/button_officexp.png)
 
-- *macOS* - seu fundo é sempre mostrado.
+- *macOS* - its background is always displayed.
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -257,7 +257,7 @@ The Help button style can be used to display a standard system help button. By d
 
 ![](../assets/en/FormObjects/button_help.png)
 
-#### JSON Exemplo
+#### JSON Example
 
 ```4d
  "myButton": {
@@ -276,13 +276,13 @@ The Help button style can be used to display a standard system help button. By d
 
 ### Círculo
 
-The Circle button style appears as a round system button. Este estilo de botão foi concebido para macOS.
+The Circle button style appears as a round system button. This button style is designed for macOS.
 
 ![](../assets/en/FormObjects/button_circleM.png)
 
 On Windows, it is identical to the “None” style (the circle in the background is not taken into account).
 
-#### JSON Exemplo
+#### JSON Example
 
 ```
  "myButton": {
@@ -303,7 +303,7 @@ The Custom button style accepts a personalized background picture and allows man
 
 ![](../assets/en/FormObjects/button_custom.png)
 
-#### JSON Exemplo
+#### JSON Example
 
 ```code
  "myButton": {
@@ -320,7 +320,7 @@ The Custom button style accepts a personalized background picture and allows man
                 }
 ```
 
-## Propriedades compatíveis
+## Supported Properties
 
 All buttons share the same set of basic properties:
 
@@ -328,8 +328,8 @@ All buttons share the same set of basic properties:
 
 > (1) Not supported by the [Help](#help) style.
 
-Propriedades específicas adicionais estão disponíveis, dependendo do [estilo botão](#button-styles):
+Additional specific properties are available, depending on the [button style](#button-styles):
 
-- [Rota de acesso do fundo](properties_TextAndPicture.md#backgroundPathname) - [Margem horizontal](properties_TextAndPicture.md#horizontalMargin) - [Deslocamento ícone](properties_TextAndPicture.md#icon-offset) - [Margem vertical](properties_TextAndPicture.md#verticalMargin) (Personalizado)
+- [Background pathname](properties_TextAndPicture.md#backgroundPathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#verticalMargin) (Custom)
 - [Default Button](properties_Appearance.md#default-button) (Flat, Regular)
 - [With pop-up menu](properties_TextAndPicture.md#with-pop-up-menu) (Toolbar, Bevel, Rounded Bevel, OS X Gradient, OS X Textured, Office XP, Circle, Custom)
