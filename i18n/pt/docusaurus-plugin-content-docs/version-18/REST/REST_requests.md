@@ -1,12 +1,12 @@
 ---
 id: REST_requests
-title: Sobre petições REST
+title: About REST Requests
 ---
 
 
-As estrutyuras abaixo são compatíveis com petições REST:
+The following structures are supported for REST requests:
 
-| URI                              | Recurso                                                                     | {Subresource}                                                              | {Querystring}                                                   |
+| URI                              | Resource                                                                    | {Subresource}                                                              | {Querystring}                                                   |
 | -------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | http://{servername}:{port}/rest/ | [{dataClass}](%7BdataClass%7D.html)/                                        | [{attribute1, attribute2, ...}](manData.html#selecting-attributes-to-get)/ |                                                                 |
 |                                  | [{dataClass}](%7BdataClass%7D.html)/                                        | [{attribute1, attribute2, ...}](manData.html#selecting-attributes-to-get)/ | [{method}](%7BdataClass%7D.html#dataclassmethod)                |
@@ -20,38 +20,38 @@ As estrutyuras abaixo são compatíveis com petições REST:
 |                                  | [$info]($info.md)                                                           |                                                                            |                                                                 |
 
 
-Todas as petições REST devem conter os parâmetros URI e Resource, mas o parâmetro Subresource (que filtra os dados retornados) é opcional.
+While all REST requests must contain the URI and Resource parameters, the Subresource (which filters the data returned) is optional.
 
-Como com todas as URIs, o primeiro parâmetro é definido por um “?” e todos os parâmetros subsequentes por “&”. Por exemplo:
+As with all URIs, the first parameter is delimited by a “?” and all subsequent parameters by a “&”. Por exemplo:
 
  `GET  /rest/Person/?$filter="lastName!=Jones"&$method=entityset&$timeout=600`
-> Pode colocar todos os valores entre aspas para evitar ambiguidades. Por exemplo, no exemplo anterior, poderíamos colocar o valor para o último nome em aspas simples: "lastName!='Jones'".
+> You can place all values in quotes in case of ambiguity. For example, in our above example, we could have put the value for the last name in single quotes: "lastName!='Jones'".
 
-Os parâmetros permitem que manipule dados em dataclasses em seu projeto 4D. Além de recuperar dados usando métodos HTTP`GET`, também pode adicionar, atualizar e apagar entidades em uma dataclass usando os métodos HTTP `POST`.
+The parameters allow you to manipulate data in dataclasses in your 4D project. Besides retrieving data using `GET` HTTP methods, you can also add, update, and delete entities in a dataclass using `POST` HTTP methods.
 
-Se quiser que os dados sejam retornados em um array ao invés de um JSON, use o parâmetro [`$asArray`]($asArray.md).
+If you want the data to be returned in an array instead of JSON, use the [`$asArray`]($asArray.md) parameter.
 
 
-## Estado e resposta REST
-Com cada petição REST, o servidor retorna o estado e uma resposta (com ou sem um erro).
+## REST Status and Response
+With each REST request, the server returns the status and a response (with or without an error).
 
-### Estado da petição
-Com cada petição REST, se obtém o estado junto com a resposta. Abaixo estão alguns estados que podem surgir:
+### Request Status
+With each REST request, you get the status along with the response. Below are a few of the statuses that can arise:
 
-| Estado                    | Descrição                                                                         |
-| ------------------------- | --------------------------------------------------------------------------------- |
-| 0                         | Petição não processada (servidor pode não ter iniciado).                          |
-| 200 OK                    | Petição processada sem erro.                                                      |
-| 401 Unauthorized          | Erro de autorização (verifique as permissões do usuário).                         |
-| 402 No session            | Número máximo de sessões foi alcançado.                                           |
-| 404 Not Found             | A classe de dados não é acessível via REST ou o conjunto de entidades não existe. |
-| 500 Internal Server Error | Erro processando a petição REST.                                                  |
+| Status                    | Descrição                                                                  |
+| ------------------------- | -------------------------------------------------------------------------- |
+| 0                         | Request not processed (server might not be started).                       |
+| 200 OK                    | Request processed without error.                                           |
+| 401 Unauthorized          | Permissions error (check user's permissions).                              |
+| 402 No session            | Maximum number of sessions has been reached.                               |
+| 404 Not Found             | The data class is not accessible via REST or the entity set doesn't exist. |
+| 500 Internal Server Error | Error processing the REST request.                                         |
 
-### Resposta
+### Response
 
-A resposta (em formato JSON) varia dependendo da petição.
+The response (in JSON format) varies depending on the request.
 
-Se um erro surgir, será enviado junto com a resposta do servidor ou será a resposta do servidor.
+If an error arises, it will be sent along with the response from the server or it will be the response from the server.
 
  
 
