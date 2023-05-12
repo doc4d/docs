@@ -1,6 +1,6 @@
 ---
 id: settings
-title: Parâmetros da cópia de segurança
+title: Backups periódicos
 ---
 
 As definições de backup são definidas através de três páginas [na caixa de diálogo](../settings/overview.md). Pode estabelecer:
@@ -11,7 +11,7 @@ As definições de backup são definidas através de três páginas [na caixa de
 
 > As propriedades definidas nesta caixa de diálogo são escritas no arquivo *Backup.4DSettings*, guardado na pasta [Settings](Project/architecture.md#settings-folder).
 
-## Backups periódicos
+## Scheduler
 
 Pode automatizar a cópia de segurança das aplicações abertas com 4D ou 4D Server (mesmo quando não houver máquinas cliente conectadas). Isso implica definir uma frequência de cópia de segurança (horas, dias, semanas ou meses): para cada sessão, 4D automaticamente inicia uma cópia de segurança usando as configurações atuais de backup.
 
@@ -67,7 +67,7 @@ Para ver o local dos arquivos, clique na área para que apareça sua rota de ace
 
 Para modificar o local onde se armazenam esses arquivos, clique no botão **...**. Uma caixa de seleção aparece, que permite selecionar uma pasta ou disco onde os backups são colocados. As áreas "Espaço utilizado" e "Espaço livre" são atualizadas automaticamente e indicam o espaço restante no disco da pasta selecionada.
 
-### Gestão do arquivo de histórico
+### Log management
 
 A opção **Utilizar o arquivo de histórico**, quando estiver marcada, indica que a aplicação utiliza um arquivo de histórico. Sua rota de acesso é especificada debaixo da opção. Quando essa opção for marcada, não é possível abrir a aplicação sem um arquivo de histórico.
 
@@ -82,7 +82,7 @@ Modificar as opções de cópia de segurança e restauração é opcional. Seus 
 
 ![](../assets/en/Backup/backup04.png)
 
-### Seção Geral
+### General settings
 
 - **Conservar unicamente os últimos X arquivos de cópia de segurança**: este parâmetro ativa e configura o mecanismo utilizado para eliminar os arquivos de cópia de segurança mais antigos, o que evita o risco de saturar a unidade de disco. Esta funcionalidade opera da seguinte maneira: uma vez finalizado o backup atual, 4D elimina o arquivo mais antigo se for encontrado no mesmo local que o arquivo do qual se está fazendo o backup e tiver o mesmo nome (pode solicitar que o arquivo mais antigo se elimine antes do backup para poupar espaço). Se, por exemplo, o número de conjuntos se definir como 3, as três primeiras cópias de segurança criam os arquivos MyBase-0001, MyBase-0002 e MyBase-0003 respectivamente. Durante o quarto backup, o arquivo MyBase-0004 é criado e MyBase-0001 é apagado. Como padrão, o mecanismo de eliminação de conjuntos está ativado e 4D salva 3 conjuntos de cópias de segurança. Para desativar o mecanismo, simplesmente desmarque a opção.
 > Esse parâmetro se refere tanto a aplicações quanto aos arquivos de registro.
@@ -114,13 +114,13 @@ Essas opções se aplicam aos arquivos de cópia de segurança principais e aos 
     - **Taxa de redundância**: Redundância permite a segurança de dados  em arquivos repetindo a mesma informação várias vezes. Quanto maior a taxa de redundância, melhor a segurança, mas o armazenamento é mais lento e o tamanho dos arquivos aumenta.
 
 
-### Restauração automática
+### Automatic Restore
 
 - **Restaura o último backup se o banco de dados é danificado**: Quando essa opção for marcada, o programa automaticamente inicia a restauração dos arquivos de dados do último backup válido da aplicação, se uma anomalia for detectada (arquivo corrupto, por exemplo) durante o lançamento da aplicação. Nenhuma intervenção do usuário é necessária, mas a operação é gravada no diário da cópia de segurança.
 
-- **Integrar o último arquivo de histórico se o banco de dados estiver incompleto**: Quando essa opção for marcada, o programa integra automaticamente o arquivo de histórico quando abrir ou restaurar a aplicação.
-    - Quando abrir uma aplicação, o arquivo de histórico atual é integrado automaticamente se 4D detectar que há operações armazenadas no arquivo de log que não estejam presentes nos dados. Esta situação se produz, por exemplo, se acontecer uma falta de energia quando acontecerem operações no cache de dados que ainda não foram escritos no disco.
-    - Quando restaurar uma aplicação, se o arquivo atual de histórico, ou se um arquivo de backup de histórico tiverem o mesmo número que um arquivo de backup e estiverem armazenados na mesma pasta, 4D vai examinar seu conteúdo. Se conter operações não encontradas no arquivo de dados, o programa automaticamente as integra.
+- **Integrate last log file if database is incomplete**: When this option is checked, the program automatically integrates the log file when opening or restoring the application.
+    - When opening an application, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. This situation arises, for example, if a power outage occurs when there are operations in the data cache that have not yet been written to the disk.
+    - When restoring an application, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not found in the data file, the program automatically integrates it.
 
 O usuário não vê uma caixa de diálogo, a operação é automática. O objetivo é fazer com que seja tão fácil quanto possível. A operação é registrada no diário de cópias de backup.
 
