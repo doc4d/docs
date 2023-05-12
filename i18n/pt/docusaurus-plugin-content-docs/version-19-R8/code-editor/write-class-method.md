@@ -1,6 +1,6 @@
 ---
 id: write-class-method
-title: Editor de código
+title: Code Editor
 ---
 
 4D has a powerful built-in code editor that offers a wide set of features for highly productive code editing such as intelligent code completion, code navigation, debugging, searching, and more.
@@ -17,7 +17,7 @@ The 4D Code Editor provides basic syntax error-checking. Additional error-checki
 
 Each Code Editor window has a toolbar that provides instant access to basic functions related to code execution and editing.
 
-| Element                       | Ícone                                                                             | Descrição                                                                                                                                                                                                                                                                                                                                      |
+| Element                       | Icon                                                                              | Descrição                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Method execution**          | ![execute-method](../assets/en/code-editor/execute-method.png)                    | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.</li><li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>For more information on method execution, see [Calling Project Methods](../Concepts/methods.md#calling-project-methods). |
 | **Pesquisa**                  | ![search-icon](../assets/en/code-editor/search.png)                               | Allows performing a search in the current window.                                                                                                                                                                                                                                                                                              |
@@ -35,13 +35,13 @@ This is where you write and edit your code. The editor automatically indents cod
 
 You can customize the display of the editing area. Any customization is automatically passed on to all the windows of the code editor:
 
-| Option                                 | Descrição                                                                                                                                                                                                   | Definido em...                                                                                                                                                                                             |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                                                                                      |
-| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) Right-click on a language element (variable, keyword, etc.) > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
-| **espaços**                            | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                                                                                           |
-| **temas**                              | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
-| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                 |
+| Option                                 | Descrição                                                                                                                                                                                                   | Definido em...                                                                                                                                                                                                                  |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **font** and **font size**             | Sets the character font and size to be used in the editing area                                                                                                                                             | **Preferences** > [**Methods**](../Preferences/methods.md) or **Method > View** > **Bigger Font** or **Smaller Font**                                                                                                           |
+| **style and color of syntax elements** | assign a specific color and/or style to each type of element of the 4D language.  You can also change the different colors used in the interface of the editing area (highlighting, background, and so on). | Right-click on a language element (variable, keyword, etc.) Right-click on a language element (variable, keyword, etc.) > **Style** submenu. > **Style** submenu. Or **Preferences** > [**Methods**](../Preferences/methods.md) |
+| **espaços**                            | You can display the spaces between words using dots (.) instead of blank spaces. This option applies to all the code elements (command names, variables, comments, etc.).                                   | **Method > View > White Spaces**                                                                                                                                                                                                |
+| **temas**                              | You can select the Dark or Light theme, or set a custom one                                                                                                                                                 | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                                      |
+| **width of code indentations**         | Set the width of code indentations                                                                                                                                                                          | **Preferences** > [**Methods**](../Preferences/methods.md)                                                                                                                                                                      |
 
 ### Change bars
 
@@ -174,7 +174,7 @@ When you insert a command by dragging it from the **Commands** page of the Explo
 
 #### Drag-and-drop within a method, class, function or between two different ones
 
-In the Code Editor, the drag-and-drop mechanism is activated as soon as a portion of text is selected. By default, the drag-and-drop mechanism moves the selected text. In order to copy it, hold down the **Ctrl** key (Windows) or the **Option** key (macOS) during the operation.
+You can also drag-and-drop within a method, class, function or between two different ones. By default, the drag-and-drop mechanism moves the selected text. In order to copy it, hold down the **Ctrl** key (Windows) or the **Option** key (macOS) during the operation.
 
 
 
@@ -213,7 +213,7 @@ In addition to the standard copy-paste operation, 4D offers two additional funct
 
 ![](../assets/en/code-editor/clipboards-2.png)
 
-| Plataforma  | Copy selected text to a clipboard    | Paste contents of a clipboard at cursor location |
+| Platform    | Copy selected text to a clipboard    | Paste contents of a clipboard at cursor location |
 | ----------- | ------------------------------------ | ------------------------------------------------ |
 | **Windows** | Shift or Alt+click on clipboard icon | Ctrl+click on clipboard icon                     |
 |             |                                      | Ctrl+clipboard number                            |
@@ -265,7 +265,7 @@ If the characters typed correspond to different types of objects, the list displ
 - Métodos utilizador
 - Nomes de tabelas
 - Nomes de campos
-- Constantes
+- Constants
 - Local, process or interprocess variable, declared in the method
 - Object property names
 - Comandos Plug-in
@@ -303,25 +303,25 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Atalho**                                                  | **Ação**                                                                                                                                   |
-| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Shift]+[right arrow]                                       | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left     |
-| [Shift]+[left arrow]                                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left      |
-| [Shift]+[down arrow]                                        | Create and enlarge a selection, line by line, from the top to the bottom                                                                   |
-| [Shift]+[up arrow]                                          | Create and enlarge a selection, line by line, from the bottom to the top                                                                   |
-| [Ctrl]+[Shift]+[right arrow]                                | Create and enlarge the selection, word by word, from the right                                                                             |
-| [Ctrl]+[Shift]+[left arrow]                                 | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                      |
-| [Ctrl]+[right arrow]                                        | Move the insertion point, word by word, from left to right                                                                                 |
-| [Ctrl]+[left arrow]                                         | Move the insertion point, word by word, from right to left                                                                                 |
-| [Home]                                                      | Place the insertion point at the beginning of the line                                                                                     |
-| [End]                                                       | Place the insertion point at the end of the line                                                                                           |
-| [Ctrl]+[Home]                                               | Place the insertion point at the beginning of the method                                                                                   |
-| [Ctrl]+[End]                                                | Place the insertion point at the end of the method                                                                                         |
-| [Shift]+[Home]                                              | Select all the characters in the line that are to the left of the cursor                                                                   |
-| [Shift]+[End]                                               | Select all the characters in the line that are to the right of the cursor                                                                  |
-| [PgUp]                                                      | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                           |
-| [PgDn]                                                      | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                           |
-| [Ctrl]+[K] or [Alt]+double-click on a project method name   | Open the project method in a new window                                                                                                    |
+| **Shortcut**                                                    | **Action**                                                                                                                                 |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Shift]+[right arrow]                                           | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left     |
+| [Shift]+[left arrow]                                            | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left      |
+| [Shift]+[down arrow]                                            | Create and enlarge a selection, line by line, from the top to the bottom                                                                   |
+| [Shift]+[up arrow]                                              | Create and enlarge a selection, line by line, from the bottom to the top                                                                   |
+| [Ctrl]+[Shift]+[right arrow]                                    | Create and enlarge the selection, word by word, from the right                                                                             |
+| [Ctrl]+[Shift]+[left arrow]                                     | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                      |
+| [Ctrl]+[right arrow]                                            | Move the insertion point, word by word, from left to right                                                                                 |
+| [Ctrl]+[left arrow]                                             | Move the insertion point, word by word, from right to left                                                                                 |
+| [Home]                                                          | Place the insertion point at the beginning of the line                                                                                     |
+| [End]                                                           | Place the insertion point at the end of the line                                                                                           |
+| [Ctrl]+[Home]                                                   | Place the insertion point at the beginning of the method                                                                                   |
+| [Ctrl]+[End]                                                    | Place the insertion point at the end of the method                                                                                         |
+| [Shift]+[Home]                                                  | Select all the characters in the line that are to the left of the cursor                                                                   |
+| [Shift]+[End]                                                   | Select all the characters in the line that are to the right of the cursor                                                                  |
+| [PgUp]                                                          | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                           |
+| [PgDn]                                                          | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                           |
+| [Ctrl]+[K] or [Alt]+double-click on a project method name       | Open the project method in a new window                                                                                                    |
 | \[Ctrl\] (Windows) or \[Alt\] (macOS)+hovering over a token | Underline the token (identified language element). Click on the underlined token = same as [**Goto definition**](#goto-definition) command |
 
 You can double-click to select individual "words". When the item name referenced (command, constant, method, etc.) contains spaces, you can select the whole name (including spaces) by using the **Alt/Option + Double-click** combination.
@@ -382,15 +382,15 @@ To display the documentation of a 4D "classic" language command, select the comm
 
 ## Comment/Uncomment
 
-The 4D language supports [comments](../Concepts/quick-tour.md#comments), which are inactive lines of code. The code editor does not apply any particular style within comments. The length of comments is limited to the maximum size of 32,000 characters per line. There is no limit on the number of lines.
+There is no limit on the number of lines. The code editor does not apply any particular style within comments. The length of comments is limited to the maximum size of 32,000 characters per line. The 4D language supports [comments](../Concepts/quick-tour.md#comments), which are inactive lines of code.
 
 There are two kinds of comments: `//comment` (single line comment) and `/*comment*/`(inline comments or multiline comment blocks).
 
-Comments can be created by typing `/` characters. Or, the **Comment/Uncomment** command, found in the **Method** menu as well as in the Code Editor context menu is used to mark a group of selected lines of code as single line comments, or, on the contrary, to remove the single line comment characters from a selection. To use this command, select the code to be marked as commented, then select the **Comment/Uncomment** command:
+When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only commented lines, the **Uncomment** command is applied. When the selection contains only active code, the **Comment** command is applied.
 
 ![](../assets/en/code-editor/comment-uncomment-1.png) --> ![](../assets/en/code-editor/comment-uncomment-2.png)
 
-When the selection contains only active code, the **Comment** command is applied. When the selection includes both active code and commented lines, an additional pair of comment characters ( // ) is added to the latter; this way, they will retain their initial commented status if the line is subsequently "uncommented." When the selection contains only commented lines, the **Uncomment** command is applied.
+Comments can be created by typing `/` characters. Or, the **Comment/Uncomment** command, found in the **Method** menu as well as in the Code Editor context menu is used to mark a group of selected lines of code as single line comments, or, on the contrary, to remove the single line comment characters from a selection. To use this command, select the code to be marked as commented, then select the **Comment/Uncomment** command:
 
 > The **Comment/Uncomment** command only operates with full lines --- it cannot be used to comment only part of a line.
 
@@ -424,7 +424,7 @@ Blocks can be defined by:
 - Quotation marks
 - Parênteses
 - A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case)
-- Chaves
+- Braces
 
 ### Select Enclosing Block
 
@@ -520,7 +520,7 @@ When there is no tag in the class/method, the tool displays "No tag".
 
 The following items are added automatically:
 
-| Ícone                                                                       | Elemento                                         |
+| Icon                                                                        | Item                                             |
 | --------------------------------------------------------------------------- | ------------------------------------------------ |
 | ![no-tag-icon](../assets/en/code-editor/no-tag.png)                         | Sem etiqueta                                     |
 | ![constructor-icon](../assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
@@ -531,7 +531,7 @@ The following items are added automatically:
 
 By adding markers in your code, you can add the following tags to the dropdown:
 
-| Ícone                                                   | Elemento        |
+| Icon                                                    | Item            |
 | ------------------------------------------------------- | --------------- |
 | ![mark-tag-icon](../assets/en/code-editor/mark-tag.png) | MARK: etiqueta  |
 | ![todo-tag-icon](../assets/en/code-editor/todo-tag.png) | TODO: etiqueta  |
