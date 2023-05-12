@@ -15,7 +15,7 @@ A string literal is enclosed in double, straight quotation marks ("..."). Here a
 ```4d
 "Add Records"
 "No records found."
-"Invoice"
+"Fatura "
 ```
 
 An empty string is specified by two quotation marks with nothing between them ("").
@@ -26,23 +26,23 @@ The following escape sequences can be used within strings:
 
 | Escape sequence | Character replaced   |
 | --------------- | -------------------- |
-| \n             | LF (Line feed)       |
+| \n             | LF (Avanço de linha) |
 | \t             | HT (Tab)             |
 | \r             | CR (Carriage return) |
-| \\\          | \ (Backslash)       |
-| \\"           | " (Quotation marks)  |
+| \\\          | \ (Barra invertida) |
+| \\"           | " (aspas)            |
 
 **Note:** The \ (backslash) character is used as a separator in pathnames under Windows. You must therefore use a double backslash \\\ in paths when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D (e.g. "C:\\\MyDocuments\\\New.txt").
 
 ## String operators
 
-| Operation            | Syntax           | Returns  | Expression              | Value    |
+| Operação             | Syntax           | Retorna  | Expression              | Value    |
 | -------------------- | ---------------- | -------- | ----------------------- | -------- |
-| Concatenation        | String + String  | String   | "abc" + "def"           | "abcdef" |
-| Repetition           | String * Number  | String   | "ab" * 3                | "ababab" |
+| Concatenação         | String + String  | String   | "abc" + "def"           | "abcdef" |
+| Repetição            | String * Number  | String   | "ab" * 3                | "ababab" |
 | Equality             | String = String  | Booleano | "abc" = "abc"           | True     |
 |                      |                  |          | "abc" = "abd"           | False    |
-| Inequality           | String # String  | Booleano | "abc" # "abd"           | True     |
+| Desigualdade         | String # String  | Booleano | "abc" # "abd"           | True     |
 |                      |                  |          | "abc" # "abc"           | False    |
 | Maior que            | String > String  | Booleano | "abd" > "abc"           | True     |
 |                      |                  |          | "abc" > "abc"           | False    |
@@ -73,7 +73,7 @@ Character code("A")=Character code("a") // because 65 is not equal to 97
      "n"="ñ"
      "n"="Ñ"
      "A"="å"
-      // and so on
+      // etc.
 ```
 
 **Note:** String comparison takes into account specificities of the language **defined for the 4D data file** (which is not always the same as the language defined for the system).
@@ -92,7 +92,7 @@ The wildcard character must be used within the second operand (the string on the
     "abc@"="abcdefghij"
 ```
 
-The wildcard means "one or more characters or nothing". The following expressions are `TRUE`:
+O wildcard significa "um ou mais caracteres ou nada". As seguintes expressões são `TRUE`:
 
 ```4d
      "abcdefghij"="abcdefghij@"
@@ -134,11 +134,11 @@ The following expression will be evaluated correctly:
 Unlike other string comparisons, searching by keywords looks for "words" in "texts": words are considered both individually and as a whole. The **%** operator always returns `False` if the query concerns several words or only part of a word (for example, a syllable). The “words” are character strings surrounded by “separators,” which are spaces and punctuation characters and dashes. An apostrophe, like in “Today's”, is usually considered as part of the word, but will be ignored in certain cases (see the rules below). Numbers can be searched for because they are evaluated as a whole (including decimal symbols). Other symbols (currency, temperature, and so on) will be ignored.
 
 ```4d
-     "Alpha Bravo Charlie"%"Bravo" // Returns True
-     "Alpha Bravo Charlie"%"vo" // Returns False
-     "Alpha Bravo Charlie"%"Alpha Bravo" // Returns False
-     "Alpha,Bravo,Charlie"%"Alpha" // Returns True
-     "Software and Computers"%"comput@" // Returns True
+     "Alpha Bravo Charlie"%"Bravo"// Retorna True
+     "Alpha Bravo Charlie"%"vo" // Retorna False
+     "Alpha Bravo Charlie"%"Alpha Bravo"// Retorna False
+     "Alpha,Bravo,Charlie"%"Alpha" // Retorna True
+     "Software e Computadores"%"comput@" // Retorna True
 ```
 > **Notas:**
 > 
@@ -186,7 +186,7 @@ When you use the character reference symbols, you must address existing characte
 - Failing to do so, in compiled mode, causes an error with the option Range Checking On. For example, executing the following code:
 
 ```
-//Very bad and nasty thing to do, boo!
+//Voisas muito más e desagradáveis a fazer, boo!
  vsAnyText:=""
  vsAnyText[[1]]:="A"
 ```
@@ -200,7 +200,7 @@ will trigger the Runtime Error shown here:
 The following project method capitalizes the first character of each word of the text received as parameter and returns the resulting capitalized text:
 
 ```4d
-  //Capitalize_text project method
+  //Método projecto Capitalize_text
   //Capitalize_text ( Text ) -> Text
   //Capitalize_text ( Source text ) -> Capitalized text
 
@@ -216,12 +216,12 @@ The following project method capitalizes the first character of each word of the
  End if
 ```
 
-For example, the line:
+Por exemplo, a linha:
 
 ```4d
 ALERT(Capitalize_text("hello, my name is jane doe and i'm running for president!"))
 ```
 
-displays the alert shown here:
+mostra o alerta aqui mostrado:
 
 ![alt-text](../assets/en/Concepts/Jane_doe.en.png)
