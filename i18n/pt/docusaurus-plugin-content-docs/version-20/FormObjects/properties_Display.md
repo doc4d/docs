@@ -37,11 +37,11 @@ and the user enters "proportion", the field displays:
 
 The field actually contains "proportion". 4D accepts and stores the entire entry no matter what the display format. No information is lost.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                                                      |
-| ---------- | --------- | ------------------------------------------------------------------------------------ |
-| textFormat | string    | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
+| Nome       | Tipo de dados | Valores possíveis                                                                    |
+| ---------- | ------------- | ------------------------------------------------------------------------------------ |
+| textFormat | string        | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
 
 #### Objects Supported
 
@@ -75,11 +75,11 @@ The table below shows choices available:
 *(3)* The `ISO Date Time` format corresponds to the XML date and time representation standard (ISO8601). It is mainly intended to be used when importing/exporting data in XML format and in Web Services.
 > Regardless of the display format, if the year is entered with two digits then 4D assumes the century to be the 21st if the year belongs to the interval (00;29) and the 20th if it belongs to the interval (30;99). This is the default setting but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-DEFAULT-CENTURY.301-4311596.en.html) command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                                                                                                                                                  |
-| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | string    | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (can be combined with the other possible values) |
+| Nome       | Tipo de dados | Valores possíveis                                                                                                                                                                |
+| ---------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dateFormat | string        | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (can be combined with the other possible values) |
 
 #### Objects Supported
 
@@ -232,11 +232,11 @@ The following table shows how different formats affect the display of numbers. T
 | &5                                     | 1.23450e+3       | -1.23450e+3   | 0.00000                      |
 | &xml                                   | 1234.5           | -1234.5       | 0                            |
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values                                                |
-| ------------ | --------- | -------------------------------------------------------------- |
-| numberFormat | string    | Numbers (including a decimal point or minus sign if necessary) |
+| Nome         | Tipo de dados | Valores possíveis                                              |
+| ------------ | ------------- | -------------------------------------------------------------- |
+| numberFormat | string        | Numbers (including a decimal point or minus sign if necessary) |
 
 #### Objects Supported
 
@@ -291,11 +291,11 @@ When the area that contains a picture with the **Replicated** format is enlarged
 
 If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                                                                                       |
-| ------------- | --------- | ----------------------------------------------------------------------------------------------------- |
-| pictureFormat | string    | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
+| Nome          | Tipo de dados | Valores possíveis                                                                                     |
+| ------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
+| pictureFormat | string        | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
 
 #### Objects Supported
 
@@ -310,7 +310,7 @@ Time formats control the way times appear when displayed or printed. For data en
 
 The table below shows the Time field display formats and gives examples:
 
-| Format name                  | JSON string  | Comments                                                                                                                                         | Example for 04:30:25          |
+| Format name                  | JSON string  | Comentários                                                                                                                                      | Example for 04:30:25          |
 | ---------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------- |
 | HH:MM:SS                     | hh_mm_ss   |                                                                                                                                                  | 04:30:25                      |
 | HH:MM                        | hh_mm        |                                                                                                                                                  | 04:30                         |
@@ -324,11 +324,11 @@ The table below shows the Time field display formats and gives examples:
 | System time long abbreviated | systemMedium | macOS only: Abbreviated time format defined in the system. <br/>Windows: this format is the same as the System time short format           | 4•30•25 AM                    |
 | System time long             | systemLong   | macOS only: Long time format defined in the system. <br/>Windows: this format is the same as the System time short format                  | 4:30:25 AM HNEC               |
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                                                                                                                                                                          |
-| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| timeFormat | string    | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (can be combined with the other possible values) |
+| Nome       | Tipo de dados | Valores possíveis                                                                                                                                                                                        |
+| ---------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| timeFormat | string        | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (can be combined with the other possible values) |
 
 #### Objects Supported
 
@@ -348,11 +348,11 @@ When a [boolean expression](properties_Object.md#expression-type) is displayed a
 * **Text when True** - the text to be displayed when the value is "true"
 * **Text when False** - the text to be displayed when the value is "false"
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                                                          |
-| ------------- | --------- | ------------------------------------------------------------------------ |
-| booleanFormat | string    | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
+| Nome          | Tipo de dados | Valores possíveis                                                        |
+| ------------- | ------------- | ------------------------------------------------------------------------ |
+| booleanFormat | string        | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
 
 #### Objects Supported
 
@@ -368,11 +368,11 @@ Boolean and number (numeric or integer) columns can be displayed as check boxes.
 
 Boolean columns can also be displayed as pop-up menus. In this case, the [Text when False and Text when True](#text-when-false-text-when-true) properties must be defined.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values                                    |
-| ----------- | --------- | -------------------------------------------------- |
-| controlType | string    | <li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li> |
+| Nome        | Tipo de dados | Valores possíveis                                  |
+| ----------- | ------------- | -------------------------------------------------- |
+| controlType | string        | <li>**number columns**: "automatic" (default) or "checkbox"</li><li>**boolean columns**: "checkbox" (default) or "popup"</li> |
 
 #### Objects Supported
 
@@ -386,11 +386,11 @@ When this property is enabled, the object is not drawn on the form, however it c
 
 In particular, this property allows implementing "invisible" buttons.  Non-rendered buttons can be placed on top of graphic objects. They remain invisible and do not highlight when clicked, however their action is triggered when they are clicked.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome    | Data Type | Possible Values |
-| ------- | --------- | --------------- |
-| display | boolean   | true, false     |
+| Nome    | Tipo de dados | Valores possíveis |
+| ------- | ------------- | ----------------- |
+| display | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -416,11 +416,11 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 
 In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values |
-| ---------- | --------- | --------------- |
-| threeState | boolean   | true, false     |
+| Nome       | Tipo de dados | Valores possíveis |
+| ---------- | ------------- | ----------------- |
+| threeState | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -437,11 +437,11 @@ This property is available for a list box column if:
 
 In that cases, the title of the check box can be entered using this property.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values                    |
-| ------------ | --------- | ---------------------------------- |
-| controlTitle | string    | Any custom label for the check box |
+| Nome         | Tipo de dados | Valores possíveis                  |
+| ------------ | ------------- | ---------------------------------- |
+| controlTitle | string        | Any custom label for the check box |
 
 #### Objects Supported
 
@@ -473,11 +473,11 @@ The Truncate with ellipsis property can be applied to Boolean type columns; howe
 * For Pop-up type Boolean formats, labels are truncated with an ellipsis,
 * For Check box type Boolean formats, labels are always clipped.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values        |
-| ------------ | --------- | ---------------------- |
-| truncateMode | string    | "withEllipsis", "none" |
+| Nome         | Tipo de dados | Valores possíveis      |
+| ------------ | ------------- | ---------------------- |
+| truncateMode | string        | "withEllipsis", "none" |
 
 #### Objects Supported
 
@@ -504,11 +504,11 @@ This property is only used when drawing objects located in the body of a list fo
 
 4D does not take this property into account if the object was hidden using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv19/help/command/en/page603.html) command; in this case, the object remains invisible regardless of whether or not the record is selected.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                                                         |
-| ---------- | --------- | --------------------------------------------------------------------------------------- |
-| visibility | string    | "visible", "hidden", "selectedRows" (list form only), "unselectedRows" (list form only) |
+| Nome       | Tipo de dados | Valores possíveis                                                                       |
+| ---------- | ------------- | --------------------------------------------------------------------------------------- |
+| visibility | string        | "visible", "hidden", "selectedRows" (list form only), "unselectedRows" (list form only) |
 
 #### Objects Supported
 
@@ -559,11 +559,11 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 ![](../assets/en/FormObjects/wordwrap1.png)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values                                    |
-| -------- | --------- | -------------------------------------------------- |
-| wordwrap | string    | "automatic" (excluding list box), "normal", "none" |
+| Nome     | Tipo de dados | Valores possíveis                                  |
+| -------- | ------------- | -------------------------------------------------- |
+| wordwrap | string        | "automatic" (excluding list box), "normal", "none" |
 
 #### Objects Supported
 
