@@ -12,9 +12,9 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values |
-| ---------- | --------- | --------------- |
-| spellcheck | boolean   | true, false     |
+| Nome       | Tipo de dados | Possible Values |
+| ---------- | ------------- | --------------- |
+| spellcheck | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -38,9 +38,9 @@ For a [Web Area](webArea_overview.md), the contents of the menu depend of the re
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                       |
-| ----------- | --------- | ------------------------------------- |
-| contextMenu | string    | "automatic" (used if missing), "none" |
+| Nome        | Tipo de dados | Possible Values                       |
+| ----------- | ------------- | ------------------------------------- |
+| contextMenu | string        | "automatic" (used if missing), "none" |
 
 #### Objects Supported
 
@@ -58,9 +58,9 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| enterable | boolean   | true, false     |
+| Nome      | Tipo de dados | Possible Values |
+| --------- | ------------- | --------------- |
+| enterable | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -114,9 +114,9 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                                    |
-| ----------- | --------- | -------------------------------------------------- |
-| entryFilter | string    | <li>Entry filter code or </li><li>Entry filter name (filter names start with &#124; )</li> |
+| Nome        | Tipo de dados | Possible Values                                    |
+| ----------- | ------------- | -------------------------------------------------- |
+| entryFilter | string        | <li>Entry filter code or </li><li>Entry filter name (filter names start with &#124; )</li> |
 
 #### Objects Supported
 
@@ -138,9 +138,9 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| focusable | boolean   | true, false     |
+| Nome      | Tipo de dados | Possible Values |
+| --------- | ------------- | --------------- |
+| focusable | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -158,9 +158,9 @@ By default, the object uses the current keyboard layout.
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values                                                             |
-| --------------- | --------- | --------------------------------------------------------------------------- |
-| keyboardDialect | text      | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
+| Nome            | Tipo de dados | Possible Values                                                             |
+| --------------- | ------------- | --------------------------------------------------------------------------- |
+| keyboardDialect | text          | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
 
 #### Objects Supported
 
@@ -178,21 +178,21 @@ This property is available for [inputs objects](input_overview.md) containing ex
 - In multiline inputs, 4D carries out automatic line returns:  
   ![](../assets/en/FormObjects/multilineAuto.png)
 
-#### No
+#### Não
 
 - In single-line inputs, words located at the end of lines are truncated and there are no line returns.
 - There are never line returns: the text is always displayed on a single row. If the Alpha or Text field or variable contains carriage returns, the text located after the first carriage return is removed as soon as the area is modified:  
   ![](../assets/en/FormObjects/multilineNo.png)
 
-#### Yes
+#### Sim
 
 When this value is selected, the property is managed by the [Wordwrap](properties_Display.md#wordwrap) option.
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values                                   |
-| --------- | --------- | ------------------------------------------------- |
-| multiline | text      | "yes", "no", "automatic" (default if not defined) |
+| Nome      | Tipo de dados | Possible Values                                   |
+| --------- | ------------- | ------------------------------------------------- |
+| multiline | text          | "yes", "no", "automatic" (default if not defined) |
 
 #### Objects Supported
 
@@ -224,9 +224,9 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                                                              |
-| ----------- | --------- | ---------------------------------------------------------------------------- |
-| placeholder | string    | Text to be displayed (grayed out) when the object does not contain any value |
+| Nome        | Tipo de dados | Possible Values                                                              |
+| ----------- | ------------- | ---------------------------------------------------------------------------- |
+| placeholder | string        | Text to be displayed (grayed out) when the object does not contain any value |
 
 #### Objects Supported
 
@@ -244,9 +244,9 @@ This property keeps the selection visible within the object after it has lost th
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| showSelection | boolean   | true, false     |
+| Nome          | Tipo de dados | Possible Values |
+| ------------- | ------------- | --------------- |
+| showSelection | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -267,15 +267,15 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values                                    |
-| --------------- | --------- | -------------------------------------------------- |
-| shortcutAccel   | boolean   | true, false (Ctrl Windows/Command macOS)           |
-| shortcutAlt     | boolean   | true, false                                        |
-| shortcutCommand | boolean   | true, false                                        |
-| shortcutControl | boolean   | true, false (macOS Control)                        |
-| shortcutShift   | boolean   | true, false                                        |
-|                 |           |                                                    |
-| shortcutKey     | string    | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| Nome            | Tipo de dados | Possible Values                                    |
+| --------------- | ------------- | -------------------------------------------------- |
+| shortcutAccel   | boolean       | true, false (Ctrl Windows/Command macOS)           |
+| shortcutAlt     | boolean       | true, false                                        |
+| shortcutCommand | boolean       | true, false                                        |
+| shortcutControl | boolean       | true, false (macOS Control)                        |
+| shortcutShift   | boolean       | true, false                                        |
+|                 |               |                                                    |
+| shortcutKey     | string        | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### Objects Supported
 
@@ -293,9 +293,9 @@ When this option is not enabled, users must first select the cell row and then c
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values |
-| --------------- | --------- | --------------- |
-| singleClickEdit | boolean   | true, false     |
+| Nome            | Tipo de dados | Possible Values |
+| --------------- | ------------- | --------------- |
+| singleClickEdit | boolean       | true, false     |
 
 #### Objects Supported
 
