@@ -1,6 +1,6 @@
 ---
 id: propertiesAction
-title: Action
+title: Ação
 ---
 
 
@@ -19,11 +19,11 @@ Two drag modes are available:
 
 For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) in the *4D Language Reference* manual.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values                                              |
-| -------- | --------- | ------------------------------------------------------------ |
-| dragging | text      | "none" (default), "custom", "automatic" (excluding list box) |
+| Nome     | Tipo de dados | Valores possíveis                                            |
+| -------- | ------------- | ------------------------------------------------------------ |
+| dragging | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
 
 #### Objects Supported
@@ -51,11 +51,11 @@ Two drop modes are available:
 For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) in the *4D Language Reference* manual.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values                                              |
-| -------- | --------- | ------------------------------------------------------------ |
-| dropping | text      | "none" (default), "custom", "automatic" (excluding list box) |
+| Nome     | Tipo de dados | Valores possíveis                                            |
+| -------- | ------------- | ------------------------------------------------------------ |
+| dropping | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
 #### Objects Supported
 
@@ -70,11 +70,11 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 ## Execute object method
 When this option is enabled, the object method is executed with the `On Data Change` event *at the same moment* the user changes the value of the indicator. When the option is disabled, the method is executed *after* the modification.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome                | Data Type | Possible Values |
-| ------------------- | --------- | --------------- |
-| continuousExecution | boolean   | true, false     |
+| Nome                | Tipo de dados | Valores possíveis |
+| ------------------- | ------------- | ----------------- |
+| continuousExecution | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -86,7 +86,7 @@ When this option is enabled, the object method is executed with the `On Data Cha
 
 
 ---
-## Method
+## Métodos
 
 Reference of a method attached to the object. Object methods generally "manage" the object while the form is displayed or printed. You do not call an object method—4D calls it automatically when an event involves the object to which the object method is attached.
 
@@ -103,11 +103,11 @@ Several types of method references are supported:
   `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values                                                    |
-| ------ | --------- | ------------------------------------------------------------------ |
-| method | text      | Object method standard or custom file path, or project method name |
+| Nome   | Tipo de dados | Valores possíveis                                                  |
+| ------ | ------------- | ------------------------------------------------------------------ |
+| method | text          | Object method standard or custom file path, or project method name |
 
 
 #### Objects Supported
@@ -123,11 +123,11 @@ Several types of method references are supported:
 
 Authorizes the movement of rows during execution. This option is selected by default. It is not available for [selection type list boxes](listbox_overview.md#selection-list-boxes) nor for [list boxes in hierarchical mode](properties_Hierarchy.md#hierarchical-list-box).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| movableRows | boolean   | true, false     |
+| Nome        | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| movableRows | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -142,11 +142,11 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values              |
-| ------------- | --------- | ---------------------------- |
-| selectionMode | text      | "multiple", "single", "none" |
+| Nome          | Tipo de dados | Valores possíveis            |
+| ------------- | ------------- | ---------------------------- |
+| selectionMode | text          | "multiple", "single", "none" |
 
 #### Objects Supported
 
@@ -166,11 +166,11 @@ In list boxes based on a selection of records, the standard sort function is ava
 
 In other cases (list boxes based on named selections, columns associated with expressions), the standard sort function is not available. A standard list box sort changes the order of the current selection in the database. However, the highlighted records and the current record are not changed. A standard sort synchronizes all the columns of the list box, including calculated columns.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| sortable | boolean   | true, false     |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| sortable | boolean       | true, false       |
 
 #### Objects Supported
 [List Box](listbox_overview.md)
@@ -188,11 +188,11 @@ You can assign both a standard action and a project method to an object. In this
 
 You can also set this property using the `OBJECT SET ACTION` command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values                                                                                                  |
-| ------ | --------- | ---------------------------------------------------------------------------------------------------------------- |
-| action | string    | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
+| Nome   | Tipo de dados | Valores possíveis                                                                                                |
+| ------ | ------------- | ---------------------------------------------------------------------------------------------------------------- |
+| action | string        | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
 
 #### Objects Supported
 
