@@ -15,9 +15,9 @@ The following locations can be used for static pictures:
 
 #### JSON Grammar
 
-|  Nome   | Data Type | Possible Values                                                                             |
-|:-------:|:---------:| ------------------------------------------------------------------------------------------- |
-| picture |   text    | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
+|  Nome   | Tipo de dados | Possible Values                                                                             |
+|:-------:|:-------------:| ------------------------------------------------------------------------------------------- |
+| picture |     text      | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
 
 #### Objects Supported
 
@@ -58,9 +58,9 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values                                          |
-| ------------- | --------- | -------------------------------------------------------- |
-| pictureFormat | string    | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| Nome          | Tipo de dados | Possible Values                                          |
+| ------------- | ------------- | -------------------------------------------------------- |
+| pictureFormat | string        | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
 #### Objects Supported
 
