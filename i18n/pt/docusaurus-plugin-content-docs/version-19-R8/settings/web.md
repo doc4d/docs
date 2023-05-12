@@ -218,7 +218,7 @@ The log format menu provides the following options:
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Field          | ELF | WLF | Value                                                                      |
+| Campo          | ELF | WLF | Value                                                                      |
 | -------------- | --- | --- | -------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Number of bytes received by the server                                     |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                           |
