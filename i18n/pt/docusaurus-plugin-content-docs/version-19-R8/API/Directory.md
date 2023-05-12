@@ -84,7 +84,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.extension` <!-- REF #directory.extension.Summary -->devolve a extensão do nome da pasta (se houver)<!-- END REF -->. Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome da pasta não tiver extensão.
+A propriedade `.extension` <!-- REF #directory.extension.Summary -->devolve a extensão do nome da pasta (se houver)<!-- END REF -->. An extension always starts with ".". Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome da pasta não tiver extensão.
 
 Essa propriedade é **apenas leitura**.
 
@@ -332,7 +332,7 @@ Essa propriedade é **apenas leitura**.
 
 A propriedade `.parent` devolve <!-- REF #directory.parent.Summary -->o objecto Folder pai da pasta<!-- END REF -->. .
 
-Se a pasta não existir no disco, se devolve um icone vazio como padrão.
+If the folder does not have a parent (root), the null value is returned.
 
 Essa propriedade é **apenas leitura**.
 
@@ -394,13 +394,13 @@ Essa propriedade é **apenas leitura**.
 | v17 R5 | Adicionado |
 </details>
 
-<!-- REF #directory.copyTo().Syntax -->**.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D.Folder<!-- END REF -->
+<!-- REF #directory.copyTo().Syntax -->**.copyTo**( *destinationFolder* : 4D. Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D. Folder<!-- END REF -->
 
 
 <!-- REF #directory.copyTo().Params -->
-| Parâmetros        | Tipo       |    | Descrição                                              |
+| Parameter         | Tipo       |    | Descrição                                              |
 | ----------------- | ---------- |:--:| ------------------------------------------------------ |
-| destinationFolder | 4D. Folder | -> | Pasta de destino                                       |
+| destinationFolder | 4D. Folder | -> | Destination folder                                     |
 | newName           | Text       | -> | Nome para a copia                                      |
 | overwrite         | Integer    | -> | `fk overwrite` para substituir os elementos existentes |
 | Resultados        | 4D. Folder | <- | Pasta ou arquivo copiado|<!-- END REF -->
@@ -453,7 +453,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 
 <!-- REF #directory.file().Params -->
-| Parâmetros | Tipo     |    | Descrição                                                                |
+| Parameter  | Tipo     |    | Descrição                                                                |
 | ---------- | -------- | -- | ------------------------------------------------------------------------ |
 | path       | Text     | -> | Rota POSIX relativa                                                      |
 | Resultados | 4D. File | <- | Objeto `File` (null se a rota não for válida)|<!-- END REF -->
@@ -495,7 +495,7 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 
 
 <!-- REF #directory.files().Params -->
-| Parâmetros | Tipo       |    | Descrição                                                      |
+| Parameter  | Tipo       |    | Descrição                                                      |
 | ---------- | ---------- | -- | -------------------------------------------------------------- |
 | options    | Integer    | -> | Opções da lista de arquivos                                    |
 | Resultados | Collection | <- | Coleção de objetos de arquivo filho|<!-- END REF -->
@@ -530,6 +530,7 @@ Se quiser saber se há arquivos invisíveis na pasta Database:
     ALERT("Database folder contains hidden files.")
  End if
  End if
+ End if
 ```
 
 #### Exemplo 2
@@ -559,7 +560,7 @@ Se quiser obter todos os arquivos que não são invisíveis na pasta Documents:
 
 
 <!-- REF #directory.folder().Params -->
-| Parâmetros | Tipo       |    | Descrição                                                                     |
+| Parameter  | Tipo       |    | Descrição                                                                     |
 | ---------- | ---------- | -- | ----------------------------------------------------------------------------- |
 | path       | Text       | -> | Rota POSIX relativa                                                           |
 | Resultados | 4D. Folder | <- | Objeto pasta criado (null se *path*não for válido)|<!-- END REF -->
@@ -601,7 +602,7 @@ Um objeto `Folder` ou null se *path* não for válido.
 
 
 <!-- REF #directory.folders().Params -->
-| Parâmetros | Tipo       |    | Descrição                                                    |
+| Parameter  | Tipo       |    | Descrição                                                    |
 | ---------- | ---------- | -- | ------------------------------------------------------------ |
 | options    | Integer    | -> | Opções da lista de pasta                                     |
 | Resultados | Collection | <- | Coleção de objetos de pasta filho|<!-- END REF -->
@@ -650,7 +651,7 @@ Se quiser a coleção de todas as pastas e subpastas da pasta database:
 
 
 <!-- REF #directory.getIcon().Params -->
-| Parâmetros | Tipo    |    | Descrição                                       |
+| Parameter  | Tipo    |    | Descrição                                       |
 | ---------- | ------- | -- | ----------------------------------------------- |
 | size       | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
 | Resultados | Imagem  | <- | Ícone|<!-- END REF -->
