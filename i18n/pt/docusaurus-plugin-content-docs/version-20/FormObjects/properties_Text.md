@@ -9,15 +9,15 @@ title: Text
 
 When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-FONT-PICKER.301-4505612.en.html) and [OPEN COLOR PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-COLOR-PICKER.301-4505611.en.html) commands can be called to display the system font and color picker windows. Using these windows, the users can change the font or color of a form object that has the focus directly by clicking. When this property is disabled (default), the open picker commands have no effect.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Propriedade          | Data Type | Possible Values       |
-| -------------------- | --------- | --------------------- |
-| allowFontColorPicker | boolean   | false (default), true |
+| Propriedade          | Tipo de dados | Valores possíveis     |
+| -------------------- | ------------- | --------------------- |
+| allowFontColorPicker | boolean       | false (default), true |
 
 #### Objects Supported
 
-[Input](input_overview.md)
+[Entrada](input_overview.md)
 
 ---
 
@@ -28,11 +28,11 @@ Sets the selected text to appear darker and heavier.
 You can set this property using the [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT-STYLE.301-4128244.en.html) command.
 > This is normal text.<br/> **This is bold text.**
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Propriedade | Data Type | Possible Values  |
-| ----------- | --------- | ---------------- |
-| fontWeight  | text      | "normal", "bold" |
+| Propriedade | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| fontWeight  | text          | "normal", "bold"  |
 
 #### Objects Supported
 
@@ -47,11 +47,11 @@ Sets the selected text to slant slightly to the right.
 You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT-STYLE.301-4128244.en.html) command.
 > This is normal text.<br/> *This is text in italics.*
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values    |
-| --------- | --------- | ------------------ |
-| fontStyle | string    | "normal", "italic" |
+| Nome      | Tipo de dados | Valores possíveis  |
+| --------- | ------------- | ------------------ |
+| fontStyle | string        | "normal", "italic" |
 
 #### Objects Supported
 
@@ -63,11 +63,11 @@ You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4
 
 Sets the text to have a line running beneath it.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values       |
-| -------------- | --------- | --------------------- |
-| textDecoration | string    | "normal", "underline" |
+| Nome           | Tipo de dados | Valores possíveis     |
+| -------------- | ------------- | --------------------- |
+| textDecoration | string        | "normal", "underline" |
 
 #### Objects Supported
 
@@ -99,11 +99,11 @@ Three font themes are available:
 
 > Font themes manage the font as well as its size and color. You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values                |
-| --------- | --------- | ------------------------------ |
-| fontTheme | string    | "normal", "main", "additional" |
+| Nome      | Tipo de dados | Valores possíveis              |
+| --------- | ------------- | ------------------------------ |
+| fontTheme | string        | "normal", "main", "additional" |
 
 #### Objects Supported
 
@@ -118,11 +118,11 @@ There are two types of font family names:
 
 You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT.301-4054834.en.html) command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values      |
-| ---------- | --------- | -------------------- |
-| fontFamily | string    | CSS font family name |
+| Nome       | Tipo de dados | Valores possíveis    |
+| ---------- | ------------- | -------------------- |
+| fontFamily | string        | CSS font family name |
 > 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
 
 #### Objects Supported
@@ -135,11 +135,11 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 
 Allows defining the object's font size in points.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values                       |
-| -------- | --------- | ------------------------------------- |
-| fontSize | integer   | Font size in points. Minimum value: 0 |
+| Nome     | Tipo de dados | Valores possíveis                     |
+| -------- | ------------- | ------------------------------------- |
+| fontSize | integer       | Font size in points. Minimum value: 0 |
 
 #### Objects Supported
 
@@ -161,11 +161,11 @@ The color can be specified by:
 
 You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values                           |
-| ------ | --------- | ----------------------------------------- |
-| stroke | string    | any css value, "transparent", "automatic" |
+| Nome   | Tipo de dados | Valores possíveis                         |
+| ------ | ------------- | ----------------------------------------- |
+| stroke | string        | any css value, "transparent", "automatic" |
 
 #### Objects Supported
 
@@ -191,11 +191,11 @@ CompanyColor:=Choose([Companies]ID;Background color;Light shadow color;
 Foreground color;Dark shadow color)
 ```
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values       |
-| --------------- | --------- | --------------------- |
-| rowStrokeSource | string    | Font color expression |
+| Nome            | Tipo de dados | Valores possíveis     |
+| --------------- | ------------- | --------------------- |
+| rowStrokeSource | string        | Font color expression |
 
 #### Objects Supported
 
@@ -220,11 +220,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 You can also set this property using the `LISTBOX SET PROPERTY` command with `lk font style expression` constant.
 > This property can also be set using a [Meta Info Expression](properties_Text.md#meta-info-expression).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values                                 |
-| -------------- | --------- | ----------------------------------------------- |
-| rowStyleSource | string    | Style expression to evaluate for each row/cell. |
+| Nome           | Tipo de dados | Valores possíveis                               |
+| -------------- | ------------- | ----------------------------------------------- |
+| rowStyleSource | string        | Style expression to evaluate for each row/cell. |
 
 #### Objects Supported
 
@@ -236,11 +236,11 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 
 Horizontal location of text within the area that contains it.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values                                                                                           |
-| --------- | --------- | --------------------------------------------------------------------------------------------------------- |
-| textAlign | string    | "right", "center", "left", "automatic" (not supported by [check boxes](checkbox_overview.md) ), "justify" |
+| Nome      | Tipo de dados | Valores possíveis                                                                                         |
+| --------- | ------------- | --------------------------------------------------------------------------------------------------------- |
+| textAlign | string        | "right", "center", "left", "automatic" (not supported by [check boxes](checkbox_overview.md) ), "justify" |
 
 :::note
 
@@ -266,11 +266,11 @@ The **Default** option (`automatic` JSON value) sets the alignment according to 
 
 This property can also be handled by the [OBJECT Get vertical alignment](https://doc.4d.com/4dv19R/help/command/en/page1188.html) and [OBJECT SET VERTICAL ALIGNMENT](https://doc.4d.com/4dv19R/help/command/en/page1187.html) commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                        |
-| ------------- | --------- | -------------------------------------- |
-| verticalAlign | string    | "automatic", "top", "middle", "bottom" |
+| Nome          | Tipo de dados | Valores possíveis                      |
+| ------------- | ------------- | -------------------------------------- |
+| verticalAlign | string        | "automatic", "top", "middle", "bottom" |
 
 #### Objects Supported
 
@@ -352,11 +352,11 @@ Then, the *Color* method would contain:
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                  |
-| ---------- | --------- | ------------------------------------------------ |
-| metaSource | string    | Object expression to evaluate for each row/cell. |
+| Nome       | Tipo de dados | Valores possíveis                                |
+| ---------- | ------------- | ------------------------------------------------ |
+| metaSource | string        | Object expression to evaluate for each row/cell. |
 
 #### Objects Supported
 
@@ -370,11 +370,11 @@ This property enables the possibility of using specific styles in the selected a
 
 By default, this option is not enabled.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values |
-| ---------- | --------- | --------------- |
-| styledText | boolean   | true, false     |
+| Nome       | Tipo de dados | Valores possíveis |
+| ---------- | ------------- | ----------------- |
+| styledText | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -395,11 +395,11 @@ Modifies the orientation (rotation) of a text area. Text areas can be rotated by
 
 In addition to [static text areas](text.md), [input](input_overview.md) text objects can be rotated when they are non-[enterable](properties_Entry.md#enterable). When a rotation property is applied to an input object, the enterable property is removed (if any). This object is then excluded from the entry order.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| textAngle | number    | 0, 90, 180, 270 |
+| Nome      | Tipo de dados | Valores possíveis |
+| --------- | ------------- | ----------------- |
+| textAngle | number        | 0, 90, 180, 270   |
 
 #### Objects Supported
 
@@ -415,11 +415,11 @@ Allows setting a custom font color to each row of the list box or cell of the co
 
 The name of a Longint array must be used. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html) theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values             |
-| --------------- | --------- | --------------------------- |
-| rowStrokeSource | string    | The name of a longint array |
+| Nome            | Tipo de dados | Valores possíveis           |
+| --------------- | ------------- | --------------------------- |
+| rowStrokeSource | string        | The name of a longint array |
 
 #### Objects Supported
 
@@ -435,11 +435,11 @@ Allows setting a custom font style to each row of the list box or each cell of t
 
 The name of a Longint array must be used. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. To fill the array (using a method), use the constants of the [Font Styles](https://doc.4d.com/4Dv17R6/4D/17-R6/Font-Styles.302-4310343.en.html) theme. You can add constants together to combine styles. If you want the cell to inherit the style defined at the higher level, pass the value -255 to the corresponding array element.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values              |
-| -------------- | --------- | ---------------------------- |
-| rowStyleSource | string    | The name of a longint array. |
+| Nome           | Tipo de dados | Valores possíveis            |
+| -------------- | ------------- | ---------------------------- |
+| rowStyleSource | string        | The name of a longint array. |
 
 #### Objects Supported
 
@@ -467,12 +467,12 @@ When the property is enabled, the area stores all the formatting information. Th
 <SPAN STYLE="font-family:'Arial';font-size:9pt;text-align:left;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;background-color:#FFFFFF">What a <SPAN STYLE="font-size:13.5pt">beautiful</SPAN> day!</SPAN>
 ```
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome              | Data Type | Possible Values        |
-| ----------------- | --------- | ---------------------- |
-| storeDefaultStyle | boolean   | true, false (default). |
+| Nome              | Tipo de dados | Valores possíveis      |
+| ----------------- | ------------- | ---------------------- |
+| storeDefaultStyle | boolean       | true, false (default). |
 
 #### Objects Supported
 
-[Input](input_overview.md)
+[Entrada](input_overview.md)
