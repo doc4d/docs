@@ -1,22 +1,22 @@
 ---
 id: control-flow
-title: Control flow
+title: Fluxo de controlo
 ---
 
-Regardless of the simplicity or complexity of a method or function, you will always use one or more of three types of programming structures. Programming structures control the flow of execution, whether and in what order statements are executed within a method. There are three types of structures:
+Independentemente da simplicidade ou da complexidade de um método ou função, sempre utilizará um ou vários dos três tipos de estruturas de programação. As estruturas de programação determinam o fluxo de execução, se serão executadas, e a ordem das linhas de instruções no método. Há três tipos de estruturas:
 
-- **Sequential**: a sequential structure is a simple, linear structure. A sequence is a series of statements that 4D executes one after the other, from first to last. A one-line routine, frequently used for object methods, is the simplest case of a sequential structure. For example: `[People]lastName:=Uppercase([People]lastName)`
-- **Branching**: A branching structure allows methods to test a condition and take alternative paths, depending on the result. The condition is a Boolean expression, an expression that evaluates TRUE or FALSE. One branching structure is the [`If...Else...End if`](#ifelseend-if) structure, which directs program flow along one of two paths. The other branching structure is the [`Case of...Else...End case`](#case-ofelseend-case) structure, which directs program flow to one of many paths.
-- **Looping**: When writing methods, it is very common to find that you need a sequence of statements to repeat a number of times. To deal with this need, the 4D language provides the following looping structures:
+- **Sequencial**: uma estrutura sequencial é uma estrutura simples e linear. Uma sequência é uma série de sentenças que 4D executa uma atrás da outra, da primera à última. Uma instrução de uma linha, utilizada frequentemente para os métodos dos objetos, é o caso mais simples de uma estrutura sequencial. Por exemplo: `[People]lastName:=Uppercase([People]lastName)`
+- **Branching**: uma estrutura de bifurcação permite que os métodos provem uma condição e tomem caminhos alternativos, dependendo do resultado. A condição é uma expressão booleana, uma expressão que avalia TRUE ou FALSE. Uma estrutura condicional e a estrutura [`If... Else... End if`](#ifelseend-if), que dirige o fluxo do programa ao longo de um dos dois caminhos. A outra estrutura condicional é a estrutura [`Case of... End case`](#case-ofelseend-case) que direciona fluxo de programa para um de muitas caminhos.
+- **Bucle**: quando se escrevem métodos, é muito comum descobrir que se necessita que uma sequência de sentenças se repita um número de vezes. Para lidar com esta necessidade, a linguagem 4D oferece as estruturas de loop abaixo:
 
-    - [`While...End while`](#whileend-while)
-    - [`Repeat...Until`](#repeatuntil)
+    - [`While... End while`](#whileend-while)
+    - [`Repeat... Until`](#repeatuntil)
     - [`For...End for`](#forend-for)
     - [`For each...End for each`](#for-eachend-for-each)
 
-The loops are controlled in two ways: either they loop until a condition is met, or they loop a specified number of times. Each looping structure can be used in either way, but `While` loops and `Repeat` loops are more appropriate for repeating until a condition is met, and `For` loops are more appropriate for looping a specified number of times. `For each...End for each` allows mixing both ways and is designed to loop within objects and collections.
+The loops are controlled in two ways: either they loop until a condition is met, or they loop a specified number of times. Cada estrutura de looping pode ser usada de qualquer forma, mas loops`While` e `Repeat` são mais apropriados para repetir até que uma condição seja satisfeita, e loops `For` são mais apropriados para looping um número especificado de vezes. `For each... End for each` permite misturar ambas as formas e foi concebido para fazer loop dentro de objectos e colecções.
 
-**Note:** 4D allows you to embed programming structures up to a "depth" of 512 levels.
+**Nota:** 4D permite incorporar estruturas de programação até uma "profundidade" de 512 níveis.
 
 
 
@@ -153,6 +153,7 @@ This example tests a numeric variable and displays an alert box with a word in i
        ALERT("Three.") //If it is 3, display an alert
     Else //If it is not 1, 2, or 3, display an alert
        ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
@@ -237,7 +238,7 @@ or:
 ```
 
 
-## While...End while
+## While... End while
 
 The formal syntax of the `While...End while` control flow structure is:
 
@@ -275,7 +276,7 @@ If you find yourself in such a situation, where a method is executing uncontroll
 
 In this example, the `OK` system variable is set by the `CONFIRM` command before the loop starts. If the user clicks the **OK** button in the confirmation dialog box, the `OK` system variable is set to 1 and the loop starts. Otherwise, the `OK` system variable is set to 0 and the loop is skipped. Once the loop starts, the `ADD RECORD` command keeps the loop going because it sets the `OK` system variable to 1 when the user saves the record. When the user cancels (does not save) the last record, the `OK` system variable is set to 0 and the loop stops.
 
-## Repeat...Until
+## Repeat... Until
 
 The formal syntax of the `Repeat...Until` control flow structure is:
 
@@ -349,7 +350,7 @@ The `break` and `continue` statements are [described below](#break-and-continue)
  End for
 ```
 
-3. The following example goes through all the characters of the text vtSomeText:
+3. O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
  For($vlChar;1;Length(vtSomeText))
@@ -375,9 +376,9 @@ The `break` and `continue` statements are [described below](#break-and-continue)
 
 Most of the `For...End for` loops you will write in your projects will look like the ones listed in these examples.
 
-### Counter variable
+### Variável contador
 
-#### Decrementing counter variable
+#### Variável contador decrescente
 
 In some cases, you may want to have a loop whose counter variable is decreasing rather than increasing. To do so, you must specify *Start_Expression* greater than *End_Expression* and a negative *Increment_Expression*. The following examples do the same thing as the previous examples, but in reverse order:
 
@@ -398,7 +399,7 @@ In some cases, you may want to have a loop whose counter variable is decreasing 
  End for
 ```
 
-7. The following example goes through all the characters of the text vtSomeText:
+7. O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
  For($vlChar;Length(vtSomeText);1;-1)
@@ -437,14 +438,14 @@ If you need to, you can use an *Increment_Expression* (positive or negative) who
 
 #### Optimizing the execution of the For...End for loops
 
-You can use Real and Integer variables as well as interprocess, process, and local variable counters. For lengthy repetitive loops, especially in compiled mode, use local Long Integer variables.
+Pode utilizar variáveis reais e inteiras, assim como contadores interprocesso, de processo e de variáveis locais. For lengthy repetitive loops, especially in compiled mode, use local Long Integer variables.
 
-10. Here is an example:
+10. Aqui um exemplo simples:
 
 ```4d
- var $vlCounter : Integer //use local Integer variables
+ var $vlCounter : Integer //usa variáveis Integer locais 
  For($vlCounter;1;10000)
-  //Do something
+  //Faz algo
  End for
 ```
 
@@ -477,7 +478,7 @@ Here is the equivalent `Repeat...Until` loop:
 
 :::tip
 
-The `For...End for` loop is usually faster than the `While...End while` and `Repeat...Until` loops, because 4D tests the condition internally for each cycle of the loop and increments the counter. Therefore, use the `For...End for` loop whenever possible.
+Here is the equivalent `While... Therefore, use the <code>For...End for` loop whenever possible.
 
 :::
 
@@ -548,7 +549,7 @@ The following table compares the three types of `For each...End for each`:
 | Current_Item type                 | Variable of the same type as collection elements | Entity                              | Text variable               |
 | Expression type                   | Collection (with elements of the same type)      | Entity selection                    | Objeto                      |
 | Number of loops (by default)      | Number of collection elements                    | Number of entities in the selection | Number of object properties |
-| Support of begin / end parameters | Yes                                              | Yes                                 | No                          |
+| Support of begin / end parameters | Sim                                              | Sim                                 | Não                         |
 
 - The number of loops is evaluated at startup and will not change during the processing. Adicionar ou remover itens durante o loop não é recomendado porque resulta em iterações faltantes ou redundantes.
 - By default, the enclosed _statement(s)_ are executed for each value in *Expression*. It is, however, possible to exit the loop by testing a condition either at the begining of the loop (`While`) or at the end of the loop (`Until`).
@@ -598,13 +599,13 @@ You want to compute some statistics for a collection of numbers:
 
 ### Loop through entity selections
 
-When `For each...End for each` is used with an *Expression* of the *Entity selection* type, the *Current_Item* parameter is the entity that is currently processed.
+When `For each... End for each` is used with an *Expression* of the *Entity selection* type, the *Current_Item* parameter is the entity that is currently processed.
 
 The number of loops is based on the number of entities in the entity selection. On each loop iteration, the *Current_Item* parameter is automatically filled with the entity of the entity selection that is currently processed.
 
 **Note:** If the entity selection contains an entity that was removed meanwhile by another process, it is automatically skipped during the loop.
 
-Keep in mind that any modifications applied on the current entity must be saved explicitly using `entity.save()`.
+Lembre que qualquer modificação aplicada na entidade atual deve ser guardada explicitamente utilizando `entity.save()`.
 
 #### Exemplo
 
@@ -612,7 +613,7 @@ You want to raise the salary of all British employees in an entity selection:
 
 ```4d
  var emp : Object
- For each(emp;ds.Employees.query("country='UK'"))
+ For each(emp;ds. Employees.query("country='UK'"))
     emp.salary:=emp.salary*1,03
     emp.save()
  End for each
@@ -635,7 +636,7 @@ You want to switch the names to uppercase in the following object:
     "age": 20
 }
 ```
-You can write:
+Você pode escrever:
 
 ```4d
  For each(property;vObject)
@@ -712,7 +713,7 @@ You can pass either keyword depending on your needs:
  ALERT(String($total)) //$total = 1001 (1000+1)
 ```
 
-## break and continue
+## break e continue
 
 All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.
 
@@ -760,17 +761,15 @@ End for
 | v19 R4 | Adicionado |
 </details>
 
-The `return` statement can be called from anywhere. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the control is returned to the caller.
+A declaração `return` pode ser chamada de qualquer lugar. Quando uma declaração `return` é utilizada numa função ou método, a execução da função ou método é interrompida. O código restante não é executado e o controlo é devolvido ao autor da chamada.
 
-The `return` statement can be used to [return a value](parameters.md#return-expression) to the caller.
+A declaração `return` pode ser utilizada para [devolver um valor](parameters.md#return-expression) ao autor da chamada.
 
 #### Exemplo
 
 ```4d
 var $message : Text
-var $i : Integer
-
-While (True) //infinite loop
+var $i : Integer While (True) //infinite loop
     $i:=$i+1
     $message+=String($i)+"A\r"  // until 5
     logConsole($message)
