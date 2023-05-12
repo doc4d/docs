@@ -29,11 +29,11 @@ The fake header and/or footer can be clicked but this does not have any effect o
 
 If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https://doc.4d.com/4Dv17R6/4D/17-R6/LISTBOX-GET-CELL-POSITION.301-4311145.en.html) command returns "X+1" for its column number (where X is the number of existing columns).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values         |
-| ------------ | --------- | ----------------------- |
-| resizingMode | string    | "rightToLeft", "legacy" |
+| Nome         | Tipo de dados | Valores possíveis       |
+| ------------ | ------------- | ----------------------- |
+| resizingMode | string        | "rightToLeft", "legacy" |
 
 #### Objects Supported
 
@@ -54,11 +54,11 @@ Three options are available:
 | None   | "fixed"    | The object remains stationary when the form is resized                                                                 |
 > This property works in conjunction with the [Vertical Sizing](#vertical-sizing) property.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome    | Data Type | Possible Values         |
-| ------- | --------- | ----------------------- |
-| sizingX | string    | "grow", "move", "fixed" |
+| Nome    | Tipo de dados | Valores possíveis       |
+| ------- | ------------- | ----------------------- |
+| sizingX | string        | "grow", "move", "fixed" |
 
 #### Objects Supported
 
@@ -79,11 +79,11 @@ Three options are available:
 | None   | "fixed"    | The object remains stationary when the form is resized                                                               |
 > This property works in conjunction with the [Horizontal Sizing](#horizontal-sizing) property.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome    | Data Type | Possible Values         |
-| ------- | --------- | ----------------------- |
-| sizingY | string    | "grow", "move", "fixed" |
+| Nome    | Tipo de dados | Valores possíveis       |
+| ------- | ------------- | ----------------------- |
+| sizingY | string        | "grow", "move", "fixed" |
 
 #### Objects Supported
 
@@ -103,11 +103,11 @@ When this property is not applied to the splitter, the result is as follows:
 
 ![](../assets/en/FormObjects/splitter_pusher2.png)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type |           Possible Values            |
-|:------------ |:---------:|:------------------------------------:|
-| splitterMode |  string   | "move" (pusher), "resize" (standard) |
+| Nome         | Tipo de dados |          Valores possíveis           |
+|:------------ |:-------------:|:------------------------------------:|
+| splitterMode |    string     | "move" (pusher), "resize" (standard) |
 
 #### Objects Supported
 
@@ -119,11 +119,11 @@ When this property is not applied to the splitter, the result is as follows:
 
 Designates if the size of the column can be modified by the user.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values |
-|:--------- |:---------:|:---------------:|
-| resizable |  boolean  | "true", "false" |
+| Nome      | Tipo de dados | Valores possíveis |
+|:--------- |:-------------:|:-----------------:|
+| resizable |    boolean    |  "true", "false"  |
 
 #### Objects Supported
 
