@@ -137,6 +137,7 @@ This example tests a numeric variable and displays an alert box with a word in i
        ALERT("Three.") //If it is 3, display an alert
     Else //If it is not 1, 2, or 3, display an alert
        ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
