@@ -37,11 +37,11 @@ Since it requires additional calculations at runtime, the automatic row height o
 :::
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| rowHeightAuto | boolean   | true, false     |
+| Nome          | Tipo de dados | Valores possíveis |
+| ------------- | ------------- | ----------------- |
+| rowHeightAuto | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -53,11 +53,11 @@ Since it requires additional calculations at runtime, the automatic row height o
 
 Bottom coordinate of the object in the form.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| bottom | number    | minimum: 0      |
+| Nome   | Tipo de dados | Valores possíveis |
+| ------ | ------------- | ----------------- |
+| bottom | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -69,11 +69,11 @@ Bottom coordinate of the object in the form.
 
 Left coordinate of the object on the form.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| left | number    | minimum: 0      |
+| Nome | Tipo de dados | Valores possíveis |
+| ---- | ------------- | ----------------- |
+| left | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -85,11 +85,11 @@ Left coordinate of the object on the form.
 
 Right coordinate of the object in the form.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| right | number    | minimum: 0      |
+| Nome  | Tipo de dados | Valores possíveis |
+| ----- | ------------- | ----------------- |
+| right | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -101,11 +101,11 @@ Right coordinate of the object in the form.
 
 Top coordinate of the object in the form.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| top  | number    | minimum: 0      |
+| Nome | Tipo de dados | Valores possíveis |
+| ---- | ------------- | ----------------- |
+| top  | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -142,11 +142,11 @@ With [text areas](text.md) and [inputs](input_overview.md):
 
 You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4dv19/help/command/en/page1323.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4dv19/help/command/en/page1324.html) commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| borderRadius | integer   | minimum: 0      |
+| Nome         | Tipo de dados | Valores possíveis |
+| ------------ | ------------- | ----------------- |
+| borderRadius | integer       | mínimo: 0         |
 
 #### Objects Supported
 
@@ -154,16 +154,16 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 
 ---
 
-## Height
+## Alto
 
 This property designates an object's vertical size.
 > Some objects may have a predefined height that cannot be altered.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| height | number    | minimum: 0      |
+| Nome   | Tipo de dados | Valores possíveis |
+| ------ | ------------- | ----------------- |
+| height | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -171,18 +171,18 @@ This property designates an object's vertical size.
 
 ---
 
-## Width
+## Largura
 
 This property designates an object's horizontal size.
 > * Some objects may have a predefined height that cannot be altered.
 > * If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox_overview.md#list-box-columns), the user can also manually resize the column.
 > * When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| width | number    | minimum: 0      |
+| Nome  | Tipo de dados | Valores possíveis |
+| ----- | ------------- | ----------------- |
+| width | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -195,11 +195,11 @@ This property designates an object's horizontal size.
 The maximum width of the column (in pixels). The width of the column cannot be increased beyond this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| maxWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| maxWidth | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -212,11 +212,11 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 The minimum width of the column (in pixels). The width of the column cannot be reduced below this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| minWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| minWidth | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -228,11 +228,11 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 
 Sets the height of list box rows (excluding headers and footers). By default, the row height is set according to the platform and the font size.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values                          |
-| --------- | --------- | ---------------------------------------- |
-| rowHeight | string    | css value in unit "em" or "px" (default) |
+| Nome      | Tipo de dados | Valores possíveis                        |
+| --------- | ------------- | ---------------------------------------- |
+| rowHeight | string        | css value in unit "em" or "px" (default) |
 
 #### Objects Supported
 
@@ -261,11 +261,11 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 > * The Row Height Array property is not taken into account for hierarchical list boxes.
 > * For array and collection/entity selection list boxes, this property is available only if the [Automatic Row Height](#automatic-row-height) option is not selected.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values              |
-| --------------- | --------- | ---------------------------- |
-| rowHeightSource | string    | Name of a 4D array variable. |
+| Nome            | Tipo de dados | Valores possíveis            |
+| --------------- | ------------- | ---------------------------- |
+| rowHeightSource | string        | Name of a 4D array variable. |
 
 #### Objects Supported
 
@@ -283,11 +283,11 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 
 ![](../assets/en/FormObjects/padding.png)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome              | Data Type | Possible Values                |
-| ----------------- | --------- | ------------------------------ |
-| horizontalPadding | number    | Number of pixels (must be >=0) |
+| Nome              | Tipo de dados | Valores possíveis              |
+| ----------------- | ------------- | ------------------------------ |
+| horizontalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objects Supported
 
@@ -303,11 +303,11 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 
 Sets a vertical padding for the cells. The value is set in pixels (default = 0).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values                |
-| --------------- | --------- | ------------------------------ |
-| verticalPadding | number    | Number of pixels (must be >=0) |
+| Nome            | Tipo de dados | Valores possíveis              |
+| --------------- | ------------- | ------------------------------ |
+| verticalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objects Supported
 
