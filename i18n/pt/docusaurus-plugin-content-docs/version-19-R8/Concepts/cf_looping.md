@@ -6,7 +6,7 @@ title: Looping structures
 Looping structures repeat a sequence of statements until a condition is met or a number of times is reached.
 
 
-## While...End while
+## While... End while
 
 The formal syntax of the `While...End while` control flow structure is:
 
@@ -44,7 +44,7 @@ If you find yourself in such a situation, where a method is executing uncontroll
 
 In this example, the `OK` system variable is set by the `CONFIRM` command before the loop starts. If the user clicks the **OK** button in the confirmation dialog box, the `OK` system variable is set to 1 and the loop starts. Otherwise, the `OK` system variable is set to 0 and the loop is skipped. Once the loop starts, the `ADD RECORD` command keeps the loop going because it sets the `OK` system variable to 1 when the user saves the record. When the user cancels (does not save) the last record, the `OK` system variable is set to 0 and the loop stops.
 
-## Repeat...Until
+## Repeat... Until
 
 The formal syntax of the `Repeat...Until` control flow structure is:
 
@@ -118,7 +118,7 @@ The `break` and `continue` statements are [described below](#break-and-continue)
  End for
 ```
 
-3. The following example goes through all the characters of the text vtSomeText:
+3. O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
  For($vlChar;1;Length(vtSomeText))
@@ -165,7 +165,7 @@ In some cases, you may want to have a loop whose counter variable is decreasing 
  End for
 ```
 
-7. The following example goes through all the characters of the text vtSomeText:
+7. O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
  For($vlChar;Length(vtSomeText);1;-1)
@@ -235,7 +235,7 @@ Here is the equivalent `Repeat...Until` loop:
 
 You can use Real and Long Integer variables as well as interprocess, process, and local variable counters. For lengthy repetitive loops, especially in compiled mode, use local Long Integer variables.
 
-10. Here is an example:
+10. Aqui um exemplo simples:
 
 ```4d
  C_LONGINT($vlCounter) //use local Long Integer variables
@@ -310,7 +310,7 @@ The following table compares the three types of `For each...End for each`:
 | Current_Item type                 | Variable of the same type as collection elements | Entity                              | Text variable               |
 | Expression type                   | Collection (with elements of the same type)      | Entity selection                    | Objeto                      |
 | Number of loops (by default)      | Number of collection elements                    | Number of entities in the selection | Number of object properties |
-| Support of begin / end parameters | Yes                                              | Yes                                 | No                          |
+| Support of begin / end parameters | Sim                                              | Sim                                 | Não                         |
 
 - The number of loops is evaluated at startup and will not change during the processing. Adicionar ou remover itens durante o loop não é recomendado porque resulta em iterações faltantes ou redundantes.
 - By default, the enclosed _statement(s)_ are executed for each value in *Expression*. It is, however, possible to exit the loop by testing a condition either at the begining of the loop (`While`) or at the end of the loop (`Until`).
