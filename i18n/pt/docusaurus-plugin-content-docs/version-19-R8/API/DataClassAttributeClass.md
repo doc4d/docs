@@ -57,7 +57,7 @@ A propriedade `.autoFilled` <!-- REF DataClassAttributeClass.autoFilled.Summary 
 * "Auto UUID", para campos UUID (tipo alfa).
 
 Esta propriedade não é devolvida se `.kind` = "relatedEntity" ou "relatedEntities".
-> For generic programming, you can use **Bool**(dataClassAttribute.mandatory) to get a valid value (false) even if `.mandatory` is not returned.
+> For generic programming, you can use **Bool**(dataClassAttribute.autoFilled) to get a valid value (false) even if `.autoFilled` is not returned.
 
 <!-- END REF -->
 
@@ -122,7 +122,7 @@ Esta propriedade não é devolvida se `.kind` = "relatedEntity" ou "relatedEntit
 
 #### Descrição
 
-A propriedade `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->contém o tipo de base de dados 4D do atributo<!-- END REF -->. Depende do tipo de atributo (ver [`.kind`](#kind)).
+A propriedade `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->contém o tipo de base de dados 4D do atributo<!-- END REF -->. .
 
 **Valores possíveis:**
 
@@ -222,7 +222,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->devolve a categoria do atributo<!-- END REF -->. O valor retornado pode ser um dos abaixo:
+A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->returns the category of the attribute<!-- END REF -->. O valor retornado pode ser um dos abaixo:
 
 * Atributo "storage": storage (ou escalar) ou seja, atributo que armazena um valor, não uma referência a outro atributo
 * "calculado": atributo computado, ou seja, definido através de uma [`obter` função](ORDA/ordaClasses.md#function-get-attributename)
@@ -263,8 +263,8 @@ Dada a seguinte tabela e relação:
 A propriedade `.mandatory` <!-- REF DataClassAttributeClass.mandatory.Summary -->contém True se o valor Null input for rejeitado para o atributo<!-- END REF -->.
 
 Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "relatedEntities".
-> **.size** : Integer
-> **Aviso**: Essas propriedade corresponde à propriedade de campo "Reject NULL value input" ao nível do banco de dados 4D. Não tem relação com a propriedade existente "Mandatory"/obrigatório que é uma opção de controle de entrada de dados para uma tabela.
+> For generic programming, you can use **Bool**(dataClassAttribute.mandatory) to get a valid value (false) even if `.mandatory` is not returned.
+> **.size** : Integer **Aviso**: Essas propriedade corresponde à propriedade de campo "Reject NULL value input" ao nível do banco de dados 4D. Não tem relação com a propriedade existente "Mandatory"/obrigatório que é uma opção de controle de entrada de dados para uma tabela.
 
 <!-- END REF -->
 
@@ -283,7 +283,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->The `.name` property<!-- END REF -->.
+A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->A propriedade `.name`<!-- END REF -->.
 
 #### Exemplo
 
