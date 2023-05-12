@@ -19,8 +19,8 @@ Entity attributes are directly available as properties of the entity object. For
 For example, we want to create a new entity in the "Employee" dataclass in the current datastore with "John" and "Dupont" assigned to the firstname and name attributes:
 
 ```4d
-var $myEntity : cs. EmployeeEntity
-$myEntity:=ds. Employee.new() //Create a new object of the entity type
+var $myEntity : cs.EmployeeEntity
+$myEntity:=ds.Employee.new() //Create a new object of the entity type
 $myEntity.name:="Dupont" //assign 'Dupont' to the 'name' attribute
 $myEntity.firstname:="John" //assign 'John' to the 'firstname' attribute
 $myEntity.save() //save the entity
@@ -34,8 +34,8 @@ An entity contains a reference to a 4D record. Different entities can reference 
 If you execute the following code:
 
 ```4d
- var $e1; $e2 : cs. EmployeeEntity
- $e1:=ds. Employee.get(1) //access the employee with ID 1
+ var $e1; $e2 : cs.EmployeeEntity
+ $e1:=ds.Employee.get(1) //access the employee with ID 1
  $e2:=$e1
  $e1.name:="Hammer"
   //both variables $e1 and $e2 share the reference to the same entity
@@ -49,9 +49,9 @@ This is illustrated by the following graphic:
 Now if you execute:
 
 ```4d
- var $e1; $e2 : cs. EmployeeEntity
- $e1:=ds. Employee.get(1)
- $e2:=ds. Employee.get(1)
+ var $e1; $e2 : cs.EmployeeEntity
+ $e1:=ds.Employee.get(1)
+ $e2:=ds.Employee.get(1)
  $e1.name:="Hammer"
   //variable $e1 contains a reference to an entity
   //variable $e2 contains another reference to another entity
@@ -94,7 +94,7 @@ Entity attributes store data and map corresponding fields in the corresponding t
 For example, to set a storage attribute:
 
 ```4d
- $entity:=ds. Employee.get(1) //get employee attribute with ID 1
+ $entity:=ds.Employee.get(1) //get employee attribute with ID 1
  $name:=$entity.lastname //get the employee name, e.g. "Smith"
  $entity.lastname:="Jones" //set the employee name
 ```
@@ -107,8 +107,8 @@ Accessing a related attribute depends on the attribute kind. For example, with t
 You can access data through the related object(s):
 
 ```4d
- $entity:=ds. Project.all().first().theClient //get the Company entity associated to the project
- $EntitySel:=ds. Company.all().first().companyProjects //get the selection of projects for the company
+ $entity:=ds.Project.all().first().theClient //get the Company entity associated to the project
+ $EntitySel:=ds.Company.all().first().companyProjects //get the selection of projects for the company
 ```
 
 Note that both *theClient* and *companyProjects* in the above example are primary relation attributes and represent a direct relationship between the two dataclasses. However, relation attributes can also be built upon paths through relationships at several levels, including circular references. For example, consider the following structure:
@@ -118,7 +118,7 @@ Note that both *theClient* and *companyProjects* in the above example are primar
 Each employee can be a manager and can have a manager. To get the manager of the manager of an employee, you can simply write:
 
 ```4d
- $myEmp:=ds. Employee.get(50)
+ $myEmp:=ds.Employee.get(50)
  $manLev2:=$myEmp.manager.manager.lastname
 ```
 
@@ -139,16 +139,16 @@ In this example, an entity in the "Employee" dataclass contains an object of typ
 To assign a value directly to the "employer" attribute, you must pass an existing entity from the "Company" dataclass. Por exemplo:
 
 ```4d
- $emp:=ds. Employee.new() // create an employee
+ $emp:=ds.Employee.new() // create an employee
  $emp.lastname:="Smith" // assign a value to an attribute
- $emp.employer:=ds. Company.query("name =:1";"4D")[0]  //assign a company entity
+ $emp.employer:=ds.Company.query("name =:1";"4D")[0]  //assign a company entity
  $emp.save()
 ```
 
 4D provides an additional facility for entering a relation attribute for an N entity related to a "1" entity: you pass the primary key of the "1" entity directly when assigning a value to the relation attribute. For this to work, you pass data of type Number or Text (the primary key value) to the relation attribute. 4D then automatically takes care of searching for the corresponding entity in the dataclass. Por exemplo:
 
 ```4d
- $emp:=ds. Employee.new()
+ $emp:=ds.Employee.new()
  $emp.lastname:="Wesson"
  $emp.employer:=2 // assign a primary key to the relation attribute
   //4D looks for the company whose primary key (in this case, its ID) is 2
@@ -163,7 +163,7 @@ This also means that you can assign primary keys in the N entities without corre
 You can assign or modify the value of a "1" related entity attribute from the "N" dataclass directly through the related attribute. For example, if you want to modify the name attribute of a related Company entity of an Employee entity, you can write:
 
 ```code4d
- $emp:=ds. Employee.get(2) // load the Employee entity with primary key 2
+ $emp:=ds.Employee.get(2) // load the Employee entity with primary key 2
  $emp.employer.name:="4D, Inc." //modify the name attribute of the related Company
  $emp.employer.save() //save the related attribute
   //the related entity is updated
@@ -186,7 +186,7 @@ You can simultaneously create and use as many different entity selections as you
 
 An entity selection can be **shareable** (readable by multiple processes, but not alterable after creation) or **alterable** (supports the [`.add()`](API/EntitySelectionClass.md#add) function, but only usable by the current process).
 
-#### Propriedades
+#### Properties
 
 A **shareable** entity selection has the following characteristics:
 
@@ -208,13 +208,13 @@ The **shareable** or **alterable** nature of an entity selection is defined when
 A new entity selection is **shareable** in the following cases:
 
 * the new entity selection results from an ORDA class function applied to a dataClass: [dataClass.all()](API/DataClassClass.md#all), [dataClass.fromCollection()](API/DataClassClass.md#fromcollection), [dataClass.query()](API/DataClassClass.md#query),
-* the new entity selection results from one of the various ORDA class functions applied to an existing entity selection ([.query()](API/EntitySelectionClass.md#query), [.slice()](API/EntitySelectionClass.md#slice), etc.) .
+* the new entity selection is based upon a relation [entity.*attributeName*](API/EntityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute but the entity does not belong to an entity selection.
 * the new entity selection is explicitely copied as shareable with [entitySelection.copy()](API/EntitySelectionClass.md#copy) or `OB Copy` (i.e. with the `ck shared` option).
 
 Exemplo:
 
 ```4d
-$myComp:=ds. Company.get(2) //$myComp does not belong to an entity selection
+$myComp:=ds.Company.get(2) //$myComp does not belong to an entity selection
 $employees:=$myComp.employees //$employees is shareable
 ```
 
@@ -226,12 +226,12 @@ A new entity selection is **alterable** in the following cases:
 Exemplo:
 
 ```4d
-$toModify:=ds. Company.all().copy() //$toModify is alterable
+$toModify:=ds.Company.all().copy() //$toModify is alterable
 ```
 
 A new entity selection **inherits** from the original entity selection nature in the following cases:
 
-* the new entity selection is based upon a relation [entity.*attributeName*](API/EntityClass.md#attributename) (e.g. .
+* the new entity selection results from one of the various ORDA class functions applied to an existing entity selection ([.query()](API/EntitySelectionClass.md#query), [.slice()](API/EntitySelectionClass.md#slice), etc.) .
 * the new entity selection is based upon a relation:
   * [entity.*attributeName*](API/EntityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute and the entity belongs to an entity selection (same nature as [.getSelection()](API/EntityClass.md#getselection) entity selection),
   * [entitySelection.*attributeName*](API/EntitySelectionClass.md#attributename) (e.g. "employees.employer") when *attributeName* is a related attribute (same nature as the entity selection),
@@ -240,11 +240,11 @@ A new entity selection **inherits** from the original entity selection nature in
 Exemplos:
 
 ```4d
-$highSal:=ds. Employee.query("salary >= :1"; 1000000)   
+$highSal:=ds.Employee.query("salary >= :1"; 1000000)   
  //$highSal is shareable because of the query on dataClass
 $comp:=$highSal.employer //$comp is shareable because $highSal is shareable
 
-$lowSal:=ds. Employee.query("salary <= :1"; 10000).copy() 
+$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy() 
  //$lowSal is alterable because of the copy()
 $comp2:=$lowSal.employer //$comp2 is alterable because $lowSal is alterable
 ```
@@ -255,21 +255,22 @@ You work with two entity selections that you want to pass to a worker process so
 
 ```4d
 
-var $paid; $unpaid : cs. InvoicesSelection
+var $paid; $unpaid : cs.InvoicesSelection
 //We get entity selections for paid and unpaid invoices
-$paid:=ds. Invoices.query("status=:1"; "Paid")
-$unpaid:=ds. Invoices.query("status=:1"; "Unpaid")
+$paid:=ds.Invoices.query("status=:1"; "Paid")
+$unpaid:=ds.Invoices.query("status=:1"; "Unpaid")
 
-//We pass entity selection references as parameters to the worker CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
+//We pass entity selection references as parameters to the worker
+CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
 
 ```
 
-O método `sendMails`:
+The `sendMails` method:
 
 ```4d
 
- #DECLARE ($paid : cs. InvoicesSelection; $unpaid : cs. InvoicesSelection)
- var $invoice : cs. InvoicesEntity
+ #DECLARE ($paid : cs.InvoicesSelection; $unpaid : cs.InvoicesSelection)
+ var $invoice : cs.InvoicesEntity
 
  var $server; $transporter; $email; $status : Object
 
@@ -301,7 +302,7 @@ O método `sendMails`:
 All storage attributes (text, number, boolean, date) are available as properties of entity selections as well as entities. When used in conjunction with an entity selection, a scalar attribute returns a collection of scalar values. Por exemplo:
 
 ```4d
- $locals:=ds. Person.query("city = :1";"San Jose") //entity selection of people
+ $locals:=ds.Person.query("city = :1";"San Jose") //entity selection of people
  $localEmails:=$locals.emailAddress //collection of email addresses (strings)
 ```
 
@@ -314,12 +315,12 @@ In addition to the variety of ways you can query, you can also use relation attr
 ![](../assets/en/ORDA/entitySelectionRelationAttributes.png)
 
 ```4d
- $myParts:=ds. Part.query("ID < 100") //Return parts with ID less than 100
+ $myParts:=ds.Part.query("ID < 100") //Return parts with ID less than 100
  $myInvoices:=$myParts.invoiceItems.invoice
   //All invoices with at least one line item related to a part in $myParts
 ```
 
-The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. Quando se utiliza um atributo de relação como propriedade de uma seleção de entidades, o resultado é sempre outra seleção de entidades, mesmo que só se devolva uma entidade. When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned.
+The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. Quando se utiliza um atributo de relação como propriedade de uma seleção de entidades, o resultado é sempre outra seleção de entidades, mesmo que só se devolva uma entidade. When a relation attribute is used as a property of an entity selection and no entities are returned, the result is an empty entity selection, not null.
 
 ## Entity Locking
 
@@ -351,8 +352,8 @@ The following diagram illustrates optimistic locking:
 This can also be illustrated by the following code:
 
 ```4d
- $person1:=ds. Person.get(1) //Reference to entity
- $person2:=ds. Person.get(1) //Other reference to same entity
+ $person1:=ds.Person.get(1) //Reference to entity
+ $person2:=ds.Person.get(1) //Other reference to same entity
  $person1.name:="Bill"
  $result:=$person1.save() //$result.success=true, change saved
  $person2.name:="William"
@@ -420,7 +421,7 @@ The following methods automatically associate the optimization context of the so
 Given the following code:
 
 ```4d
- $sel:=$ds. Employee.query("firstname = ab@")
+ $sel:=$ds.Employee.query("firstname = ab@")
  For each($e;$sel)
     $s:=$e.firstname+" "+$e.lastname+" works for "+$e.employer.name // $e.employer refers to Company table
  End for each
@@ -443,16 +444,16 @@ A same optimization context property can be passed to unlimited number of entity
  $querysettings:=New object("context";"shortList")
  $querysettings2:=New object("context";"longList")
 
- $sel1:=ds. Employee.query("lastname = S@";$querysettings)
+ $sel1:=ds.Employee.query("lastname = S@";$querysettings)
  $data:=extractData($sel1) // In extractData method an optimization is triggered and associated to context "shortList"
 
- $sel2:=ds. Employee.query("lastname = Sm@";$querysettings)
+ $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
  $data:=extractData($sel2) // In extractData method the optimization associated to context "shortList" is applied
 
- $sel3:=ds. Employee.query("lastname = Smith";$querysettings2)
+ $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
  $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization is triggered and associated to context "longList"
 
- $sel4:=ds. Employee.query("lastname = Brown";$querysettings2)
+ $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
