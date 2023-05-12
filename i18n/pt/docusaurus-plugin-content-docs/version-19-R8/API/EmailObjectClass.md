@@ -70,7 +70,7 @@ Um objeto com duas propriedades:
 
 Uma coleção de objetos de endereço.
 
-### Gesttão do corpo do correio eletrônico
+### Handling body part
 
 As propriedades [`textBody`](#textbody) e [`htmlBody`](#htmlbody) são usadas apenas com o [SMTP. send()](SMTPTransporterClass.md#send) permitir envio de e-mails simples. Quando ambas as propriedades são preenchidas, o tipo de conteúdo MIME multiparte/alternativo é utilizada. O cliente de email deve reconhecer a parte multiparte/alternativa e exibir a parte do texto ou html conforme necessário.
 
@@ -126,7 +126,7 @@ A propriedade `.bcc` contém a <!-- REF #EmailObjectClass.bcc.Summary -->Destina
 
 #### Descrição
 
-A propriedade `.bodyStructure` contém a <!-- REF #EmailObjectClass.bodyStructure.Summary -->Objeto *EmailBodyPart* ou seja a estrutura MIME completa do corpo da mensagem (opcional)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+A propriedade `.bodyStructure` contém a <!-- REF #EmailObjectClass.bodyStructure.Summary -->Objeto *EmailBodyPart* ou seja a estrutura MIME completa do corpo da mensagem (opcional)<!-- END REF -->. .
 
 O objeto `.bodyStructure` contém as seguintes propriedades:
 
@@ -148,7 +148,7 @@ O objeto `.bodyStructure` contém as seguintes propriedades:
 
 #### Descrição
 
-A propriedade `.bodyValues` contém a <!-- REF #EmailObjectClass.bodyValues.Summary -->Objeto *EmailBodyValue* contendo um objeto para cada \<partID\> of `bodyStructure` (opcional)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+A propriedade `.bodyValues` contém a <!-- REF #EmailObjectClass.bodyValues.Summary -->Objeto *EmailBodyValue* contendo um objeto para cada \<partID\> of `bodyStructure` (opcional)<!-- END REF -->. .
 
 O objeto `.bodyValues` contém as seguintes propriedades:
 
@@ -215,7 +215,7 @@ Cada objeto da coleção de cabeçalhos pode conter as propriedades abaixo:
 
 #### Descrição
 
-A propriedade `.htmlBody` contém a <!-- REF #EmailObjectClass.htmlBody.Summary -->Representação HTML da mensagem de correio electrónico (o charset padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+A propriedade `.htmlBody` contém a <!-- REF #EmailObjectClass.htmlBody.Summary -->Representação HTML da mensagem de correio electrónico (o charset padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
 
 ## .id
 
@@ -350,7 +350,7 @@ A propriedade `.subject` contém o <!-- REF #EmailObjectClass.subject.Summary --
 
 #### Descrição
 
-A propriedade `.textBody` contém o <!-- REF #EmailObjectClass.textBody.Summary -->Representação em texto simples da mensagem de correio electrónico (o conjunto de caracteres padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. Veja [Gestão do corpo](#handling-body-part).
+A propriedade `.textBody` contém o <!-- REF #EmailObjectClass.textBody.Summary -->Representação em texto simples da mensagem de correio electrónico (o conjunto de caracteres padrão é UTF-8) (opcional, apenas SMTP)<!-- END REF -->. .
 
 ## .to
 
@@ -374,7 +374,7 @@ The `MAIL Convert from MIME` command <!-- REF #EmailObjectClass.to.Summary -->co
 
 
 <!-- REF #_command_.MAIL_Convert_from_MIME.Params -->
-| Parâmetros | Tipo       |    | Descrição                               |
+| Parameter  | Tipo       |    | Descrição                               |
 | ---------- | ---------- |:--:| --------------------------------------- |
 | mime       | Blob, Text | -> | E-mail no MIME                          |
 | Resultados | Objeto     | <- | Objeto Email|<!-- END REF -->
@@ -459,7 +459,7 @@ $status:=$transporter.send($email)
 
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Params -->
-| Parâmetros | Tipo   |    | Descrição                                                  |
+| Parameter  | Tipo   |    | Descrição                                                  |
 | ---------- | ------ |:--:| ---------------------------------------------------------- |
 | mail       | Objeto | -> | Objeto Email                                               |
 | options    | Objeto | -> | Opções de codificação e Charset                            |
