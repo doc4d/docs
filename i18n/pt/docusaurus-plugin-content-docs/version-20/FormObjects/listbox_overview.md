@@ -117,7 +117,7 @@ myCol:=myCol.push("new value") //display new value in list box
 
 
 
-### Supported Properties
+### Propriedades compatíveis
 
 Supported properties depend on the list box type.
 
@@ -164,13 +164,13 @@ Supported properties depend on the list box type.
 | [Left](properties_CoordinatesAndSizing.md#left)                                              | X              | X                | X                                       |
 | [Master Table](properties_DataSource.md#table)                                               |                | X                |                                         |
 | [Meta info expression](properties_Text.md#meta-info-expression)                              |                |                  | X                                       |
-| [Method](properties_Action.md#method)                                                        | X              | X                | X                                       |
+| [Métodos](properties_Action.md#method)                                                       | X              | X                | X                                       |
 | [Movable Rows](properties_Action.md#movable-rows)                                            | X              |                  |                                         |
 | [Named Selection](properties_DataSource.md#selectionName)                                    |                | X                |                                         |
 | [Number of Columns](properties_ListBox.md#number-of-columns)                                 | X              | X                | X                                       |
 | [Number of Locked Columns](properties_ListBox.md#number-of-locked-columns)                   | X              | X                | X                                       |
 | [Number of Static Columns](properties_ListBox.md#number-of-static-columns)                   | X              | X                | X                                       |
-| [Object Name](properties_Object.md#object-name)                                              | X              | X                | X                                       |
+| [Nome de objeto](properties_Object.md#object-name)                                           | X              | X                | X                                       |
 | [Right](properties_CoordinatesAndSizing.md#right)                                            | X              | X                | X                                       |
 | [Row Background Color Array](properties_BackgroundAndBorder.md#row-background-color-array)   | X              |                  |                                         |
 | [Row Control Array](properties_ListBox.md#row-control-array)                                 | X              |                  |                                         |
@@ -195,7 +195,7 @@ Supported properties depend on the list box type.
 | [Vertical Scroll Bar](properties_Appearance.md#vertical-scroll-bar)                          | X              | X                | X                                       |
 | [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing)                             | X              | X                | X                                       |
 | [Visibility](properties_Display.md#visibility)                                               | X              | X                | X                                       |
-| [Width](properties_CoordinatesAndSizing.md#width)                                            | X              | X                | X                                       |
+| [Largura](properties_CoordinatesAndSizing.md#width)                                          | X              | X                | X                                       |
 
 
 > List box columns, headers and footers support specific properties.
@@ -204,7 +204,7 @@ Supported properties depend on the list box type.
 ### Supported Form Events
 
 
-| Form event           | Additional Properties Returned (see [Form event](https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.en.html) for main properties) | Comments                                                                                |
+| Form event           | Additional Properties Returned (see [Form event](https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.en.html) for main properties) | Comentários                                                                             |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
 | On After Edit        | <li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>                                                          |                                                                                         |
 | On After Keystroke   | <li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>                                                          |                                                                                         |
@@ -244,22 +244,22 @@ Supported properties depend on the list box type.
 
 Form events on list box or list box column objects may return the following additional properties:
 
-| Propriedade      | Tipo    | Descrição                                                             |
-| ---------------- | ------- | --------------------------------------------------------------------- |
-| area             | text    | List box object area ("header", "footer", "cell")                     |
-| areaName         | text    | Name of the area                                                      |
-| column           | longint | Column number                                                         |
-| columnName       | text    | Name of the column                                                    |
-| footerName       | text    | Name of the footer                                                    |
-| headerName       | text    | Name of the header                                                    |
-| horizontalScroll | longint | Positive if scroll is towards the right, negative if towards the left |
-| isRowSelected    | boolean | True if row is selected, else False                                   |
-| newPosition      | longint | New position of the column or row                                     |
-| newSize          | longint | New size (in pixels) of the column or row                             |
-| oldPosition      | longint | Previous position of the column or row                                |
-| oldSize          | longint | Previous size (in pixels) of the column or row                        |
-| row              | longint | Row number                                                            |
-| verticalScroll   | longint | Positive if scroll is towards the bottom, negative if towards the top |
+| Propriedade      | Tipo          | Descrição                                                             |
+| ---------------- | ------------- | --------------------------------------------------------------------- |
+| area             | text          | List box object area ("header", "footer", "cell")                     |
+| areaName         | text          | Name of the area                                                      |
+| column           | inteiro longo | Column number                                                         |
+| columnName       | text          | Name of the column                                                    |
+| footerName       | text          | Name of the footer                                                    |
+| headerName       | text          | Name of the header                                                    |
+| horizontalScroll | inteiro longo | Positive if scroll is towards the right, negative if towards the left |
+| isRowSelected    | boolean       | True if row is selected, else False                                   |
+| newPosition      | inteiro longo | New position of the column or row                                     |
+| newSize          | inteiro longo | New size (in pixels) of the column or row                             |
+| oldPosition      | inteiro longo | Previous position of the column or row                                |
+| oldSize          | inteiro longo | Previous size (in pixels) of the column or row                        |
+| row              | inteiro longo | Row number                                                            |
+| verticalScroll   | inteiro longo | Positive if scroll is towards the bottom, negative if towards the top |
 > If an event occurs on a "fake" column or row that doesn't exist, an empty string is typically returned.
 
 
@@ -283,7 +283,7 @@ You can set standard properties (text, background color, etc.) for each column o
 
 ### Supported Form Events
 
-| Form event           | Additional Properties Returned (see [Form event](https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.en.html) for main properties)    | Comments                                                                                |
+| Form event           | Additional Properties Returned (see [Form event](https://doc.4d.com/4Dv18/4D/18/FORM-Event.301-4522191.en.html) for main properties)    | Comentários                                                                             |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | On After Edit        | <li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>                                                          |                                                                                         |
 | On After Keystroke   | <li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>                                                          |                                                                                         |
@@ -309,7 +309,7 @@ You can set standard properties (text, background color, etc.) for each column o
 | On Unload            |                                                                                                                                         |                                                                                         |
 
 
-## List box headers
+## Cabeçalhos de list box
 
 > To be able to access the header properties of a list box, you must enable the [Display Headers](properties_Headers.md#display-headers) option of the list box.
 
@@ -393,7 +393,7 @@ In order to preserve data consistency for selection type and entity selection ty
 
 The typical sequence of events generated during data entry or modification is as follows:
 
-| Action                                                                          | Listbox type(s)             | Sequence of events                                                                                                                                                                                             |
+| Ação                                                                            | Listbox type(s)             | Sequence of events                                                                                                                                                                                             |
 | ------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | A cell switches to edit mode (user action or a call to the `EDIT ITEM` command) | All                         | On Before Data Entry                                                                                                                                                                                           |
 |                                                                                 | All                         | On Getting Focus                                                                                                                                                                                               |
@@ -535,14 +535,14 @@ You can enable or disable standard user sorts by disabling the [Sortable](proper
 
 Standard sort support depends on the list box type:
 
-| List box type               | Support of standard sort | Comments                                                                                                     |
+| List box type               | Support of standard sort | Comentários                                                                                                  |
 | --------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Uma coleção de objetos      | Yes                      | <li>"This.a" or "This.a.b" columns are sortable.</li><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
-| Collection of scalar values | No                       | Use custom sort with [`orderBy()`](../API/CollectionClass.md#orderby) function                               |
-| Entity selection            | Yes                      | <li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Supported: sorts on object attribute properties (e.g. "This.data.city" when "data" is an object attribute)</li><li>Supported: sorts on related attributes (e.g. "This.company.name")</li><li>Not supported: sorts on object attribute properties through related attributes (e.g. "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](../API/EntitySelectionClass.md#orderbyformula) function (see example below)</li> |
-| Current selection           | Yes                      | Only simple expressions are sortable (e.g. `[Table_1]Field_2`)                                               |
-| Named selection             | No                       |                                                                                                              |
-| Arrays                      | Yes                      | Columns bound to picture and pointer arrays are not sortable                                                 |
+| Uma coleção de objetos      | Sim                      | <li>"This.a" or "This.a.b" columns are sortable.</li><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li>                                                       |
+| Collection of scalar values | Não                      | Use custom sort with [`orderBy()`](../API/CollectionClass.md#orderby) function                               |
+| Entity selection            | Sim                      | <li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Supported: sorts on object attribute properties (e.g. "This.data.city" when "data" is an object attribute)</li><li>Supported: sorts on related attributes (e.g. "This.company.name")</li><li>Not supported: sorts on object attribute properties through related attributes (e.g. "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](../API/EntitySelectionClass.md#orderbyformula) function (see example below)</li> |
+| Current selection           | Sim                      | Only simple expressions are sortable (e.g. `[Table_1]Field_2`)                                               |
+| Named selection             | Não                      |                                                                                                              |
+| Arrays                      | Sim                      | Columns bound to picture and pointer arrays are not sortable                                                 |
 
 
 
@@ -1013,9 +1013,9 @@ These attributes can be used to control the range of input values. When a cell i
 
 The behavior attribute provides variations to the regular representation of values. In 4D v15, a single variation is proposed:
 
-| Attribute | Available value(s) | valueType(s) | Descrição                                                                                                                                                                                     |
-| --------- | ------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| behavior  | threeStates        | integer      | Represents a numeric value as a three-states check box.<br/> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
+| Atributo | Available value(s) | valueType(s) | Descrição                                                                                                                                                                                     |
+| -------- | ------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| behavior | threeStates        | integer      | Represents a numeric value as a three-states check box.<br/> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
 
 ```4d
  C_OBJECT($ob3)
