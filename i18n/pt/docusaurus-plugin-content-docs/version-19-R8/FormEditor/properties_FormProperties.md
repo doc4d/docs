@@ -16,9 +16,9 @@ This property defines the color scheme for the form. By default when the propert
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| colorScheme | string    | "dark", "light" |
+| Nome        | Tipo de dados | Possible Values |
+| ----------- | ------------- | --------------- |
+| colorScheme | string        | "dark", "light" |
 
 ---
 
@@ -31,7 +31,7 @@ A CSS file defined at the form level will override default style sheet(s). For m
 
 #### JSON Grammar
 
-| Nome | Data Type            | Possible Values                                                                                          |
+| Nome | Tipo de dados        | Possible Values                                                                                          |
 | ---- | -------------------- | -------------------------------------------------------------------------------------------------------- |
 | css  | string or collection | CSS file path(s) provided as:<li>a string (a file for both platforms)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" &#124; "win"} objects </li> |
 
@@ -50,9 +50,9 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 
 #### JSON Grammar
 
-| Nome  | Data Type  | Possible Values                                                          |
-| ----- | ---------- | ------------------------------------------------------------------------ |
-| pages | collection | Collection of pages (each page is an object, page 0 is the first element |
+| Nome  | Tipo de dados | Possible Values                                                          |
+| ----- | ------------- | ------------------------------------------------------------------------ |
+| pages | collection    | Collection of pages (each page is an object, page 0 is the first element |
 
 ---
 
@@ -93,9 +93,9 @@ Supported types depend on the form category:
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                                              |
-| ----------- | --------- | ------------------------------------------------------------ |
-| destination | string    | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
+| Nome        | Tipo de dados | Possible Values                                              |
+| ----------- | ------------- | ------------------------------------------------------------ |
+| destination | string        | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
 ---
 
@@ -110,9 +110,9 @@ To remove inheritance, select `\&#060;None&#062;` in the Property List (or " " i
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values                                                                                                    |
-| ------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
-| inheritedForm | string    | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
+| Nome          | Tipo de dados | Possible Values                                                                                                    |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| inheritedForm | string        | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
 ---
 
@@ -128,7 +128,7 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 #### JSON Grammar
 
-| Nome               | Data Type        | Possible Values            |
+| Nome               | Tipo de dados    | Possible Values            |
 | ------------------ | ---------------- | -------------------------- |
 | inheritedFormTable | string or number | table name or table number |
 
@@ -145,9 +145,9 @@ Only project forms can be specified as published subforms.
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| shared | boolean   | true, false     |
+| Nome   | Tipo de dados | Possible Values |
+| ------ | ------------- | --------------- |
+| shared | boolean       | true, false     |
 
 
 ---
@@ -164,9 +164,9 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 
 #### JSON Grammar
 
-| Nome             | Data Type | Possible Values |
-| ---------------- | --------- | --------------- |
-| memorizeGeometry | boolean   | true, false     |
+| Nome             | Tipo de dados | Possible Values |
+| ---------------- | ------------- | --------------- |
+| memorizeGeometry | boolean       | true, false     |
 
 #### Veja também
 [**Save Value**](FormObjects/properties_Object.md#save-value)
@@ -188,8 +188,8 @@ You can use dynamic references to set the window titles for forms, *i.e.*:
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                                        |
-| ----------- | --------- | ------------------------------------------------------ |
-| windowTitle | string    | The name of the window as plain text or as a reference |
+| Nome        | Tipo de dados | Possible Values                                        |
+| ----------- | ------------- | ------------------------------------------------------ |
+| windowTitle | string        | The name of the window as plain text or as a reference |
 
 
