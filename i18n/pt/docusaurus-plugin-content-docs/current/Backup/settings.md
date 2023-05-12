@@ -1,6 +1,6 @@
 ---
 id: settings
-title: Parâmetros da cópia de segurança
+title: Backups periódicos
 ---
 
 As definições de backup são definidas através de três páginas [na caixa de diálogo](../settings/overview.md). Pode estabelecer:
@@ -11,7 +11,7 @@ As definições de backup são definidas através de três páginas [na caixa de
 
 > As propriedades definidas nesta caixa de diálogo são escritas no arquivo *Backup.4DSettings*, guardado na pasta [Settings](Project/architecture.md#settings-folder).
 
-## Backups periódicos
+## Scheduler
 
 Pode automatizar a cópia de segurança das aplicações abertas com 4D ou 4D Server (mesmo quando não houver máquinas cliente conectadas). Isso implica definir uma frequência de cópia de segurança (horas, dias, semanas ou meses): para cada sessão, 4D automaticamente inicia uma cópia de segurança usando as configurações atuais de backup.
 
@@ -67,7 +67,7 @@ Para ver o local dos arquivos, clique na área para que apareça sua rota de ace
 
 Para modificar o local onde se armazenam esses arquivos, clique no botão **...**. Uma caixa de seleção aparece, que permite selecionar uma pasta ou disco onde os backups são colocados. As áreas "Espaço utilizado" e "Espaço livre" são atualizadas automaticamente e indicam o espaço restante no disco da pasta selecionada.
 
-### Gestão do arquivo de histórico
+### Log management
 
 A opção **Utilizar o arquivo de histórico**, quando estiver marcada, indica que a aplicação utiliza um arquivo de histórico. Sua rota de acesso é especificada debaixo da opção. Quando essa opção for marcada, não é possível abrir a aplicação sem um arquivo de histórico.
 
@@ -82,7 +82,7 @@ Modificar as opções de cópia de segurança e restauração é opcional. Seus 
 
 ![](../assets/en/Backup/backup04.png)
 
-### Seção Geral
+### General settings
 
 - **Conservar unicamente os últimos X arquivos de cópia de segurança**: este parâmetro ativa e configura o mecanismo utilizado para eliminar os arquivos de cópia de segurança mais antigos, o que evita o risco de saturar a unidade de disco. Esta funcionalidade opera da seguinte maneira: uma vez finalizado o backup atual, 4D elimina o arquivo mais antigo se for encontrado no mesmo local que o arquivo do qual se está fazendo o backup e tiver o mesmo nome (pode solicitar que o arquivo mais antigo se elimine antes do backup para poupar espaço). Se, por exemplo, o número de conjuntos se definir como 3, as três primeiras cópias de segurança criam os arquivos MyBase-0001, MyBase-0002 e MyBase-0003 respectivamente. Durante o quarto backup, o arquivo MyBase-0004 é criado e MyBase-0001 é apagado. Como padrão, o mecanismo de eliminação de conjuntos está ativado e 4D salva 3 conjuntos de cópias de segurança. Para desativar o mecanismo, simplesmente desmarque a opção.
 > Esse parâmetro se refere tanto a aplicações quanto aos arquivos de registro.
