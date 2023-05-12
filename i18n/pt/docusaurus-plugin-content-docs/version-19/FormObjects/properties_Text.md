@@ -11,9 +11,9 @@ When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4
 
 #### JSON Grammar
 
-| Propriedade          | Data Type | Possible Values       |
-| -------------------- | --------- | --------------------- |
-| allowFontColorPicker | boolean   | false (default), true |
+| Propriedade          | Tipo de dados | Possible Values       |
+| -------------------- | ------------- | --------------------- |
+| allowFontColorPicker | boolean       | false (default), true |
 
 #### Objects Supported
 
@@ -30,9 +30,9 @@ You can set this property using the [**OBJECT SET FONT STYLE**](https://doc.4d.c
 
 #### JSON Grammar
 
-| Propriedade | Data Type | Possible Values  |
-| ----------- | --------- | ---------------- |
-| fontWeight  | text      | "normal", "bold" |
+| Propriedade | Tipo de dados | Possible Values  |
+| ----------- | ------------- | ---------------- |
+| fontWeight  | text          | "normal", "bold" |
 
 #### Objects Supported
 
@@ -49,9 +49,9 @@ You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values    |
-| --------- | --------- | ------------------ |
-| fontStyle | string    | "normal", "italic" |
+| Nome      | Tipo de dados | Possible Values    |
+| --------- | ------------- | ------------------ |
+| fontStyle | string        | "normal", "italic" |
 
 #### Objects Supported
 
@@ -65,9 +65,9 @@ Sets the text to have a line running beneath it.
 
 #### JSON Grammar
 
-| Nome           | Data Type | Possible Values       |
-| -------------- | --------- | --------------------- |
-| textDecoration | string    | "normal", "underline" |
+| Nome           | Tipo de dados | Possible Values       |
+| -------------- | ------------- | --------------------- |
+| textDecoration | string        | "normal", "underline" |
 
 #### Objects Supported
 
@@ -101,9 +101,9 @@ Three font themes are available:
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values                |
-| --------- | --------- | ------------------------------ |
-| fontTheme | string    | "normal", "main", "additional" |
+| Nome      | Tipo de dados | Possible Values                |
+| --------- | ------------- | ------------------------------ |
+| fontTheme | string        | "normal", "main", "additional" |
 
 #### Objects Supported
 
@@ -120,9 +120,9 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values      |
-| ---------- | --------- | -------------------- |
-| fontFamily | string    | CSS font family name |
+| Nome       | Tipo de dados | Possible Values      |
+| ---------- | ------------- | -------------------- |
+| fontFamily | string        | CSS font family name |
 > 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
 
 #### Objects Supported
@@ -137,9 +137,9 @@ Allows defining the object's font size in points.
 
 #### JSON Grammar
 
-| Nome     | Data Type | Possible Values                       |
-| -------- | --------- | ------------------------------------- |
-| fontSize | integer   | Font size in points. Minimum value: 0 |
+| Nome     | Tipo de dados | Possible Values                       |
+| -------- | ------------- | ------------------------------------- |
+| fontSize | integer       | Font size in points. Minimum value: 0 |
 
 #### Objects Supported
 
@@ -163,9 +163,9 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values                           |
-| ------ | --------- | ----------------------------------------- |
-| stroke | string    | any css value, "transparent", "automatic" |
+| Nome   | Tipo de dados | Possible Values                           |
+| ------ | ------------- | ----------------------------------------- |
+| stroke | string        | any css value, "transparent", "automatic" |
 
 #### Objects Supported
 
@@ -193,9 +193,9 @@ Foreground color;Dark shadow color)
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values       |
-| --------------- | --------- | --------------------- |
-| rowStrokeSource | string    | Font color expression |
+| Nome            | Tipo de dados | Possible Values       |
+| --------------- | ------------- | --------------------- |
+| rowStrokeSource | string        | Font color expression |
 
 #### Objects Supported
 
@@ -222,9 +222,9 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 
 #### JSON Grammar
 
-| Nome           | Data Type | Possible Values                                 |
-| -------------- | --------- | ----------------------------------------------- |
-| rowStyleSource | string    | Style expression to evaluate for each row/cell. |
+| Nome           | Tipo de dados | Possible Values                                 |
+| -------------- | ------------- | ----------------------------------------------- |
+| rowStyleSource | string        | Style expression to evaluate for each row/cell. |
 
 #### Objects Supported
 
@@ -238,9 +238,9 @@ Horizontal location of text within the area that contains it.
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values                                   |
-| --------- | --------- | ------------------------------------------------- |
-| textAlign | string    | "automatic", "right", "center", "justify", "left" |
+| Nome      | Tipo de dados | Possible Values                                   |
+| --------- | ------------- | ------------------------------------------------- |
+| textAlign | string        | "automatic", "right", "center", "justify", "left" |
 
 #### Objects Supported
 
@@ -261,9 +261,9 @@ This property can also be handled by the [OBJECT Get vertical alignment](https:/
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values                        |
-| ------------- | --------- | -------------------------------------- |
-| verticalAlign | string    | "automatic", "top", "middle", "bottom" |
+| Nome          | Tipo de dados | Possible Values                        |
+| ------------- | ------------- | -------------------------------------- |
+| verticalAlign | string        | "automatic", "top", "middle", "bottom" |
 
 #### Objects Supported
 
@@ -347,9 +347,9 @@ Then, the *Color* method would contain:
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values                                  |
-| ---------- | --------- | ------------------------------------------------ |
-| metaSource | string    | Object expression to evaluate for each row/cell. |
+| Nome       | Tipo de dados | Possible Values                                  |
+| ---------- | ------------- | ------------------------------------------------ |
+| metaSource | string        | Object expression to evaluate for each row/cell. |
 
 #### Objects Supported
 
@@ -365,9 +365,9 @@ By default, this option is not enabled.
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values |
-| ---------- | --------- | --------------- |
-| styledText | boolean   | true, false     |
+| Nome       | Tipo de dados | Possible Values |
+| ---------- | ------------- | --------------- |
+| styledText | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -390,9 +390,9 @@ In addition to [static text areas](text.md), [input](input_overview.md) text obj
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| textAngle | number    | 0, 90, 180, 270 |
+| Nome      | Tipo de dados | Possible Values |
+| --------- | ------------- | --------------- |
+| textAngle | number        | 0, 90, 180, 270 |
 
 #### Objects Supported
 
@@ -410,9 +410,9 @@ The name of a Longint array must be used. Each element of this array corresponds
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values             |
-| --------------- | --------- | --------------------------- |
-| rowStrokeSource | string    | The name of a longint array |
+| Nome            | Tipo de dados | Possible Values             |
+| --------------- | ------------- | --------------------------- |
+| rowStrokeSource | string        | The name of a longint array |
 
 #### Objects Supported
 
@@ -430,9 +430,9 @@ The name of a Longint array must be used. Each element of this array corresponds
 
 #### JSON Grammar
 
-| Nome           | Data Type | Possible Values              |
-| -------------- | --------- | ---------------------------- |
-| rowStyleSource | string    | The name of a longint array. |
+| Nome           | Tipo de dados | Possible Values              |
+| -------------- | ------------- | ---------------------------- |
+| rowStyleSource | string        | The name of a longint array. |
 
 #### Objects Supported
 
@@ -462,9 +462,9 @@ When the property is enabled, the area stores all the formatting information. Th
 
 #### JSON Grammar
 
-| Nome              | Data Type | Possible Values        |
-| ----------------- | --------- | ---------------------- |
-| storeDefaultStyle | boolean   | true, false (default). |
+| Nome              | Tipo de dados | Possible Values        |
+| ----------------- | ------------- | ---------------------- |
+| storeDefaultStyle | boolean       | true, false (default). |
 
 #### Objects Supported
 
