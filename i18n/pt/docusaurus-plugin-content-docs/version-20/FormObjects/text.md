@@ -40,7 +40,7 @@ Once a text is rotated, you can still change its size or position, as well as al
 - If the object is resized in direction B, both its [width](properties_CoordinatesAndSizing.md#width) and [height](properties_CoordinatesAndSizing.md#height) are modified.
 
 
-## Supported Properties
+## Propriedades compatíveis
 
 <details><summary>Histórico</summary>
 
