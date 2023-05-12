@@ -8,11 +8,11 @@ title: Crop
 
 Sets the number of columns in a thumbnail table.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values |
-|:----------- |:---------:| --------------- |
-| columnCount |  integer  | minimum: 1      |
+| Nome        | Tipo de dados | Valores possíveis |
+|:----------- |:-------------:| ----------------- |
+| columnCount |    integer    | minimum: 1        |
 
 #### Objects Supported
 
@@ -24,11 +24,11 @@ Sets the number of columns in a thumbnail table.
 
 Sets the number of rows in a thumbnail table.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-|:-------- |:---------:| --------------- |
-| rowCount |  integer  | minimum: 1      |
+| Nome     | Tipo de dados | Valores possíveis |
+|:-------- |:-------------:| ----------------- |
+| rowCount |    integer    | minimum: 1        |
 
 #### Objects Supported
 
