@@ -7,11 +7,11 @@ title: Cabeçalhos
 
 This property is used to display or hide [list box column headers](listbox_overview.md#list-box-headers). There is one header per column; each header is configured separately.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| showHeaders | boolean   | true, false     |
+| Nome        | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| showHeaders | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -19,7 +19,7 @@ This property is used to display or hide [list box column headers](listbox_overv
 
 ---
 
-## Height
+## Alto
 
 This property is used to set the row height for a list box header in **pixels** or **text lines** (when displayed). Both types of units can be used in the same list box:
 
@@ -49,11 +49,11 @@ Note that converting back and forth may lead to an end result that is different 
   }
 ```
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values               |
-| ------------ | --------- | ----------------------------- |
-| headerHeight | string    | positive decimal+px &#124; em |
+| Nome         | Tipo de dados | Valores possíveis             |
+| ------------ | ------------- | ----------------------------- |
+| headerHeight | string        | positive decimal+px &#124; em |
 
 #### Objects Supported
 
