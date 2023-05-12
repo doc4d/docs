@@ -47,7 +47,7 @@ This option can be selected on macOS but will be ignored when the application is
 
 
 
-### Aparência
+### Appearance
 
 This menu lets you select the color scheme to use at the main application level. A color scheme defines a global set of interface colors for texts, backgrounds, windows, etc., used in your forms.
 
