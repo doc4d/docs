@@ -104,7 +104,7 @@ For example, consider the following table in the 4D structure:
 
 ![](../assets/en/ORDA/companyTable.png)
 
-The `Company` table is automatically available as a dataclass in the `ds` datastore. You can write:
+The `Company` table is automatically available as a dataclass in the `ds` datastore. Você pode escrever:
 
 ```4d 
 var $compClass : cs.Company //declares a $compClass object variable of the Company class
@@ -133,7 +133,7 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 ```
 
 
-### Attribute
+### Atributo
 
 Dataclass properties are attribute objects describing the underlying fields or relations. Por exemplo:
 
