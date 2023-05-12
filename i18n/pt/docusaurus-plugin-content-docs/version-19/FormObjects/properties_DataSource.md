@@ -23,9 +23,9 @@ For example, given a choice list containing "France, Germany, Italy" that is ass
 
 #### JSON Grammar
 
-| Nome               | Data Type | Possible Values |
-| ------------------ | --------- | --------------- |
-| automaticInsertion | boolean   | true, false     |
+| Nome               | Tipo de dados | Possible Values |
+| ------------------ | ------------- | --------------- |
+| automaticInsertion | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -41,7 +41,7 @@ You can also associate choice lists to objects using the [OBJECT SET LIST BY NAM
 
 #### JSON Grammar
 
-| Nome       | Data Type        | Possible Values                                     |
+| Nome       | Tipo de dados    | Possible Values                                     |
 | ---------- | ---------------- | --------------------------------------------------- |
 | choiceList | list, collection | A list of possible values                           |
 | lista      | list, collection | A list of possible values (hierarchical lists only) |
@@ -58,7 +58,7 @@ List of static values to use as labels for the tab control object.
 
 #### JSON Grammar
 
-| Nome   | Data Type        | Possible Values                          |
+| Nome   | Tipo de dados    | Possible Values                          |
 | ------ | ---------------- | ---------------------------------------- |
 | labels | list, collection | A list of values to fill the tab control |
 
@@ -77,9 +77,9 @@ Specifies a variable or expression that will be assigned the collection element/
 
 #### JSON Grammar
 
-| Nome              | Data Type | Possible Values   |
-| ----------------- | --------- | ----------------- |
-| currentItemSource | string    | Object expression |
+| Nome              | Tipo de dados | Possible Values   |
+| ----------------- | ------------- | ----------------- |
+| currentItemSource | string        | Object expression |
 
 #### Objects Supported
 
@@ -100,9 +100,9 @@ Specifies a variable or expression that will be assigned a longint indicating th
 
 #### JSON Grammar
 
-| Nome                      | Data Type | Possible Values   |
-| ------------------------- | --------- | ----------------- |
-| currentItemPositionSource | string    | Number expression |
+| Nome                      | Tipo de dados | Possible Values   |
+| ------------------------- | ------------- | ----------------- |
+| currentItemPositionSource | string        | Number expression |
 
 #### Objects Supported
 
@@ -121,9 +121,9 @@ See also [**Expression Type**](properties_Object.md#expression-type) section.
 
 #### JSON Grammar
 
-| Nome               | Data Type | Possible Values                                    |
-| ------------------ | --------- | -------------------------------------------------- |
-| dataSourceTypeHint | string    | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
+| Nome               | Tipo de dados | Possible Values                                    |
+| ------------------ | ------------- | -------------------------------------------------- |
+| dataSourceTypeHint | string        | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
 
 #### Objects Supported
 
@@ -152,9 +152,9 @@ Using the **Selected item reference** option requires compliance with the follow
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values      |
-| ------ | --------- | -------------------- |
-| saveAs | string    | "value", "reference" |
+| Nome   | Tipo de dados | Possible Values      |
+| ------ | ------------- | -------------------- |
+| saveAs | string        | "value", "reference" |
 
 > Setting only `"dataSourceTypeHint" : "integer"` with a `"type": "dropdown"` form object will declare a hierarchical drop-down list.
 
@@ -178,9 +178,9 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 #### JSON Grammar
 
-| Nome   | Data Type  | Possible Values                                                  |
-| ------ | ---------- | ---------------------------------------------------------------- |
-| values | collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| Nome   | Tipo de dados | Possible Values                                                  |
+| ------ | ------------- | ---------------------------------------------------------------- |
+| values | collection    | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
 #### Objects Supported
 
@@ -200,7 +200,7 @@ A 4D expression to be associated with a column. You can enter:
   - String
   - Numeric
   - Date
-  - Time
+  - Hora
   - Imagem
   - Boolean  
     You can use fields from the Master Table or from other tables.
@@ -221,9 +221,9 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values                                                         |
-| ---------- | --------- | ----------------------------------------------------------------------- |
-| dataSource | string    | A 4D variable, field name, or an arbitrary complex language expression. |
+| Nome       | Tipo de dados | Possible Values                                                         |
+| ---------- | ------------- | ----------------------------------------------------------------------- |
+| dataSource | string        | A 4D variable, field name, or an arbitrary complex language expression. |
 
 #### Objects Supported
 
@@ -241,9 +241,9 @@ All database tables can be used, regardless of whether the form is related to a 
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values  |
-| ----- | --------- | ---------------- |
-| table | number    | Número de tabela |
+| Nome  | Tipo de dados | Possible Values  |
+| ----- | ------------- | ---------------- |
+| table | number        | Número de tabela |
 
 #### Objects Supported
 
@@ -272,9 +272,9 @@ Using this property requires compliance with the following principles:
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values      |
-| ------ | --------- | -------------------- |
-| saveAs | string    | "value", "reference" |
+| Nome   | Tipo de dados | Possible Values      |
+| ------ | ------------- | -------------------- |
+| saveAs | string        | "value", "reference" |
 
 #### Objects Supported
 
@@ -294,9 +294,9 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 #### JSON Grammar
 
-| Nome                | Data Type | Possible Values       |
-| ------------------- | --------- | --------------------- |
-| selectedItemsSource | string    | Collection expression |
+| Nome                | Tipo de dados | Possible Values       |
+| ------------------- | ------------- | --------------------- |
+| selectedItemsSource | string        | Collection expression |
 
 #### Objects Supported
 
@@ -314,9 +314,9 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 #### JSON Grammar
 
-| Nome           | Data Type | Possible Values      |
-| -------------- | --------- | -------------------- |
-| namedSelection | string    | Named selection name |
+| Nome           | Tipo de dados | Possible Values      |
+| -------------- | ------------- | -------------------- |
+| namedSelection | string        | Named selection name |
 
 #### Objects Supported
 
