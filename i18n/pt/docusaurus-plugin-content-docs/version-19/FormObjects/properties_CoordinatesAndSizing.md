@@ -26,9 +26,9 @@ When this property is enabled, the height of every row is automatically calculat
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| rowHeightAuto | boolean   | true, false     |
+| Nome          | Tipo de dados | Possible Values |
+| ------------- | ------------- | --------------- |
+| rowHeightAuto | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -42,9 +42,9 @@ Bottom coordinate of the object in the form.
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| bottom | number    | minimum: 0      |
+| Nome   | Tipo de dados | Possible Values |
+| ------ | ------------- | --------------- |
+| bottom | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -58,9 +58,9 @@ Left coordinate of the object on the form.
 
 #### JSON Grammar
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| left | number    | minimum: 0      |
+| Nome | Tipo de dados | Possible Values |
+| ---- | ------------- | --------------- |
+| left | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -74,9 +74,9 @@ Right coordinate of the object in the form.
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| right | number    | minimum: 0      |
+| Nome  | Tipo de dados | Possible Values |
+| ----- | ------------- | --------------- |
+| right | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -90,9 +90,9 @@ Top coordinate of the object in the form.
 
 #### JSON Grammar
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| top  | number    | minimum: 0      |
+| Nome | Tipo de dados | Possible Values |
+| ---- | ------------- | --------------- |
+| top  | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -112,9 +112,9 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 
 #### JSON Grammar
 
-| Nome         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| borderRadius | integer   | minimum: 0      |
+| Nome         | Tipo de dados | Possible Values |
+| ------------ | ------------- | --------------- |
+| borderRadius | integer       | minimum: 0      |
 
 #### Objects Supported
 
@@ -129,9 +129,9 @@ This property designates an object's vertical size.
 
 #### JSON Grammar
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| height | number    | minimum: 0      |
+| Nome   | Tipo de dados | Possible Values |
+| ------ | ------------- | --------------- |
+| height | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -148,9 +148,9 @@ This property designates an object's horizontal size.
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| width | number    | minimum: 0      |
+| Nome  | Tipo de dados | Possible Values |
+| ----- | ------------- | --------------- |
+| width | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -165,9 +165,9 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 
 #### JSON Grammar
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| maxWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Possible Values |
+| -------- | ------------- | --------------- |
+| maxWidth | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -182,9 +182,9 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 
 #### JSON Grammar
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| minWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Possible Values |
+| -------- | ------------- | --------------- |
+| minWidth | number        | minimum: 0      |
 
 #### Objects Supported
 
@@ -198,9 +198,9 @@ Sets the height of list box rows (excluding headers and footers). By default, th
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values                          |
-| --------- | --------- | ---------------------------------------- |
-| rowHeight | string    | css value in unit "em" or "px" (default) |
+| Nome      | Tipo de dados | Possible Values                          |
+| --------- | ------------- | ---------------------------------------- |
+| rowHeight | string        | css value in unit "em" or "px" (default) |
 
 #### Objects Supported
 
@@ -231,9 +231,9 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 
 #### JSON Grammar
 
-| Nome            | Data Type | Possible Values              |
-| --------------- | --------- | ---------------------------- |
-| rowHeightSource | string    | Name of a 4D array variable. |
+| Nome            | Tipo de dados | Possible Values              |
+| --------------- | ------------- | ---------------------------- |
+| rowHeightSource | string        | Name of a 4D array variable. |
 
 #### Objects Supported
 
