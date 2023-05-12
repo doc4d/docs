@@ -26,7 +26,7 @@ Para saber mais sobre essas ações, consulte a página [Análise de atividades]
 
 4D gerencia o arquivo de historial. Leva em consideração todas as operações que afetam o arquivo de dados por igual, independente das manipulações realizadas pelo usuário, métodos 4D, o motor SQL, os plug-ins, ou um navegador web ou uma aplicação móvel.
 
-A instrução abaixo resume o funcionamento do arquivo de historial:
+The following illustration sums up how the log file works:
 
 ![](../assets/en/Backup/backup05.png)
 
@@ -66,7 +66,7 @@ Precisa criar outro arquivo de histórico se criar um novo arquivo de dados. Pre
 
 
 
-## Parar um arquivo de histórico
+## Stopping a log file
 
 Se quiser parar as operações de registro no arquivo de histórico atual, apenas desmarque a opção **Use Log|Usar o arquivo de histórico ** na página **Backup/Configuration** das Propriedades do banco de dados.
 
