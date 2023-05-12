@@ -9,11 +9,11 @@ title: Glossary
 
 
 
-## Action
+## Ação
 
 Every action that can be done on a [resource](#resource). Available actions are: create, read, update, drop, execute, promote, and describe.
 
-## Attribute
+## Atributo
 
 An attribute is the smallest storage cell in a relational database (see also [Relation attribute](#relation-attribute)). Do not confuse dataclass attributes and entity attributes:
 
@@ -123,7 +123,7 @@ Since entities are managed as references, data is loaded only when necessary, i.
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
-## Method
+## Métodos
 
 ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
@@ -135,7 +135,7 @@ $myClass.query("name = smith")
 
 ## Mixed data type
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
+In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Inclui:
 
 *   number
 *   text
