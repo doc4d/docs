@@ -51,7 +51,7 @@ Functions are called on the corresponding object on the server datastore.
 
 You can send parameters to functions defined in ORDA user classes. On the server side, they will be received in the class functions in regular $1, $2, etc. parameters.
 
-The following rules apply:
+As regras abaixo são válidas:
 
 - Parameters must be passed in the **body of the POST request**
 - Parameters must be enclosed within a collection (JSON format)
@@ -79,7 +79,7 @@ Entities passed in parameters are referenced on the server through their key (*i
 
 | Properties               | Tipo                                 | Descrição                                                                  |
 | ------------------------ | ------------------------------------ | -------------------------------------------------------------------------- |
-| Attributes of the entity | mixed                                | Optional - Values to modify                                                |
+| Attributes of the entity | misto                                | Optional - Values to modify                                                |
 | __DATACLASS              | String                               | Mandatory - Indicates the Dataclass of the entity                          |
 | __ENTITY                 | Booleano                             | Mandatory - True to indicate to the server that the parameter is an entity |
 | __KEY                    | mixed (same type as the primary key) | Optional - Primary key of the entity                                       |
@@ -105,7 +105,7 @@ The entity selection must have been defined beforehand using [$method=entityset]
 
 | Properties               | Tipo     | Descrição                                                                            |
 | ------------------------ | -------- | ------------------------------------------------------------------------------------ |
-| Attributes of the entity | mixed    | Optional - Values to modify                                                          |
+| Attributes of the entity | misto    | Optional - Values to modify                                                          |
 | __DATASET                | String   | Mandatory - entitySetID (UUID) of the entity selection                               |
 | __ENTITIES               | Booleano | Mandatory - True to indicate to the server that the parameter is an entity selection |
 
