@@ -7,7 +7,7 @@ title: Subformulário
 A subform is a form included in another form.
 
 
-## Terminology
+## Terminologia
 
 In order to clearly define the concepts implemented with subforms, here are some definitions for certain terms used:
 
