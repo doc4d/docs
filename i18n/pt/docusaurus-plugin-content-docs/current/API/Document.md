@@ -19,7 +19,7 @@ title: Document Class
 
 #### Descrição
 
-A propriedade `.aceita a transação` devolve <!-- REF #document.creationDate.Summary -->The `.creationDate` property returns<!-- END REF -->.
+A propriedade `.aceita a transação` devolve <!-- REF #document.creationDate.Summary -->A propriedade `.modificationDate` devolve<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -59,7 +59,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.exists` devolve <!-- REF #document.exists.Summary -->true se o ficheiro existir em disco<!-- END REF -->, e false de outra forma.
+A propriedade `.exists` devolve <!-- REF #document.exists.Summary -->true se o ficheiro existir em disco<!-- END REF -->e false de outra forma.
 
 Essa propriedade é **apenas leitura**.
 
@@ -80,7 +80,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.extension` devolve <!-- REF #document.extension.Summary -->a extensão do nome do ficheiro (se existir)<!-- END REF -->. Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome do arquivo não tiver extensão.
+A propriedade `.extension` devolve <!-- REF #document.extension.Summary -->a extensão do nome do ficheiro (se existir)<!-- END REF -->. An extension always starts with ".". Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome do arquivo não tiver extensão.
 
 Essa propriedade é **apenas leitura**.
 
@@ -160,7 +160,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.isFile` devolve <!-- REF #document.isFile.Summary -->The `.copyTo()` function<!-- END REF -->.
+A propriedade `.isFile` devolve <!-- REF #document.isFile.Summary -->A função `.copyTo()`<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -180,7 +180,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.isFolder` devolve <!-- REF #document.isFolder.Summary -->always true for a file<!-- END REF -->.
+A propriedade `.isFolder` devolve <!-- REF #document.isFolder.Summary -->A propriedade `.platformPath` devolve<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -230,7 +230,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.modificationDate` devolve <!-- REF #document.modificationDate.Summary -->The `.modificationDate` property returns<!-- END REF -->.
+A propriedade `.modificationDate` devolve <!-- REF #document.modificationDate.Summary -->A propriedade `.aceita a transação` devolve<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -250,7 +250,7 @@ Essa propriedade é **apenas leitura**.
 
 ##### Descrição
 
-A propriedade `.modificationTime` devolve <!-- REF #document.modificationTime.Summary -->The `.modificationTime` property returns<!-- END REF --> (expresso como um número de segundos a partir das 00:00).
+A propriedade `.modificationTime` devolve <!-- REF #document.modificationTime.Summary -->A propriedade `.modificationTime` devolve<!-- END REF --> (expresso como um número de segundos a partir das 00:00).
 
 Essa propriedade é **apenas leitura**.
 
@@ -270,7 +270,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.name` devolve <!-- REF #document.name.Summary -->o nome do arquivo, sem extensão (se houver)<!-- END REF -->.
+A propriedade `.name` devolve <!-- REF #document.name.Summary -->A propriedade `.isFile` devolve<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -315,7 +315,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.parent` devolve <!-- REF #document.parent.Summary -->The `.parent` property returns<!-- END REF -->. .
+A propriedade `.parent` devolve <!-- REF #document.parent.Summary -->A propriedade `.parent` devolve<!-- END REF -->. .
 
 Essa propriedade é **apenas leitura**.
 
@@ -335,7 +335,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.path` devolve <!-- REF #document.path.Summary -->The `.path` property returns<!-- END REF -->. .
+A propriedade `.path` devolve <!-- REF #document.path.Summary -->A propriedade `.path` devolve<!-- END REF -->. .
 
 Essa propriedade é **apenas leitura**.
 
@@ -355,7 +355,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.platformPath` devolve <!-- REF #document.platformPath.Summary -->The `.platformPath` property returns<!-- END REF -->.
+A propriedade `.platformPath` devolve <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -395,9 +395,9 @@ Essa propriedade é **apenas leitura**.
 
 
 <!-- REF #document.copyTo().Params -->
-| Parâmetros        | Tipo       |    | Descrição                                              |
+| Parameter         | Tipo       |    | Descrição                                              |
 | ----------------- | ---------- |:--:| ------------------------------------------------------ |
-| destinationFolder | 4D. Folder | -> | Pasta de destino                                       |
+| destinationFolder | 4D. Folder | -> | Destination folder                                     |
 | newName           | Text       | -> | Nome para a copia                                      |
 | overwrite         | Integer    | -> | `fk overwrite` para substituir os elementos existentes |
 | Resultados        | 4D. File   | <- | Arquivo copiado|<!-- END REF -->
@@ -406,7 +406,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A função `.copyTo()` <!-- REF #document.copyTo().Summary -->The `.isFolder` property returns <!-- END REF -->.
+A função `.copyTo()` <!-- REF #document.copyTo().Summary -->A propriedade `.isFolder` devolve <!-- END REF -->.
 
 A *destinationFolder* deve existir em disco, senão um erro é gerado.
 
@@ -449,9 +449,9 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 
 <!-- REF #document.getContent().Params -->
-| Parâmetros | Tipo    |    | Descrição                                      |
-| ---------- | ------- | -- | ---------------------------------------------- |
-| Resultados | 4D.Blob | <- | Conteúdo do arquivo|<!-- END REF -->
+| Parameter  | Tipo     |    | Descrição                                      |
+| ---------- | -------- | -- | ---------------------------------------------- |
+| Resultados | 4D. Blob | <- | Conteúdo do arquivo|<!-- END REF -->
 
 |
 
@@ -461,7 +461,7 @@ A função `.getContent()`  <!-- REF #document.getContent().Summary -->returns a
 
 **Valor retornado**
 
-A `4D. Blob` object.
+|
 
 #### Exemplo
 
@@ -491,7 +491,7 @@ Para salvar o conteúdo de um documento em um campo `BLOB`:
 
 
 <!-- REF #document.getIcon().Params -->
-| Parâmetros | Tipo    |    | Descrição                                       |
+| Parameter  | Tipo    |    | Descrição                                       |
 | ---------- | ------- | -- | ----------------------------------------------- |
 | size       | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
 | Resultados | Imagem  | <- | Ícone|<!-- END REF -->
@@ -526,7 +526,7 @@ Se o arquivo não existir no disco, um ícone em branco padrão será retornado.
 
 
 <!-- REF #document.getText().Params -->
-| Parâmetros  | Tipo    |    | Descrição                                     |
+| Parameter   | Tipo    |    | Descrição                                     |
 | ----------- | ------- | -- | --------------------------------------------- |
 | charSetName | Text    | -> | Nome do conjunto de caracteres                |
 | charSetNum  | Integer | -> | Número de conjuntos de caracteres             |
@@ -581,7 +581,7 @@ Quando você executar este código:
  $txt:=$myFile.getText()
 ```
 
-... você recebe o seguinte por `$txt`:
+|
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
