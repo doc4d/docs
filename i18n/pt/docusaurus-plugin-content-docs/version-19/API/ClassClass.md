@@ -46,11 +46,11 @@ Essa propriedade é **apenas leitura**.
 
 </details>
 
-<!-- REF #ClassClass.new().Syntax -->**.new**( *param* : any { *;...paramN* } ) : 4D. Class<!-- END REF -->
+<!-- REF #ClassClass.new().Syntax -->Parâmetros<!-- END REF -->
 
 
 <!-- REF #ClassClass.new().Params -->
-| Parâmetros | Tipo      |    | Descrição                                        |
+| Parameter  | Tipo      |    | Descrição                                        |
 | ---------- | --------- |:--:| ------------------------------------------------ |
 | param      | any       | -> | Parâmetros a passar à função constructor         |
 | Resultados | 4D. Class | <- | Novo objeto da classe|<!-- END REF -->
@@ -67,7 +67,7 @@ Se `.new()` for chamado em uma classe não existente, um erro é retornado.
 
 #### Exemplos
 
-Para criar uma nova instância da classe Person:
+Para criar uma nova instância da classe Person com parâmetros:
 
 ```4d
 var $person : cs. Person  
@@ -75,10 +75,11 @@ $person:=cs. Person.new() //create the new instance
 //$person contains functions of the class
 ```
 
-Para criar uma nova instância da classe Person com parâmetros:
+Para criar uma nova instância da classe Person:
 
 ```4d
-//Class: Person.4dm Class constructor($firstname : Text; $lastname : Text; $age : Integer)
+//Class: Person.4dm
+Class constructor($firstname : Text; $lastname : Text; $age : Integer)
  This.firstName:=$firstname
  This.lastName:=$lastname
  This.age:=$age
@@ -106,11 +107,11 @@ $person:=cs. Person.new("John";"Doe";40)
 
 </details>
 
-<!-- REF #ClassClass.superclass.Syntax -->**.superclass** : 4D. Class<!-- END REF -->
+<!-- REF #ClassClass.superclass.Syntax -->|<!-- END REF -->
 
 #### Descrição
 
-A propriedade `.superclass` <!-- REF #ClassClass.superclass.Summary -->devolve a classe pai da classe<!-- END REF -->. A superclass can be a `4D. Class` object, or a `cs.className` object. Se a classe não tiver uma classe pai, a propriedade retorna **null**.
+A propriedade `.superclass` <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D. Class` object, or a `cs.className` object. Se a classe não tiver uma classe pai, a propriedade retorna **null**.
 
 Uma superclasse de uma classe de usuário é declarada em uma classe usando a palavra chave [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname).
 
