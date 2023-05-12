@@ -13,11 +13,11 @@ The following locations can be used for static pictures:
 - in an image folder (e.g. named **Images**) within the form folder. Appropriate when the static pictures are used only in the form and/or you want to be able to move or duplicate the whole form within the project or different projects. In this case, the Pathname is "<picture path\>" and is resolved from the root of the form folder.
 - in a 4D picture variable. The picture must be loaded in memory when the form is executed. In this case, the Pathname is "var:<variableName\>".
 
-#### JSON Grammar
+#### Gramática JSON
 
-|  Nome   | Data Type | Possible Values                                                                             |
-|:-------:|:---------:| ------------------------------------------------------------------------------------------- |
-| picture |   text    | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
+|  Nome   | Tipo de dados | Valores possíveis                                                                           |
+|:-------:|:-------------:| ------------------------------------------------------------------------------------------- |
+| picture |     text      | Relative or filesystem path in POSIX syntax, or "var:<variableName\>" for picture variable |
 
 #### Objects Supported
 
@@ -56,11 +56,11 @@ The **Truncated (non-centered)** format causes 4D to place the upper-left corner
 
 ![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                                          |
-| ------------- | --------- | -------------------------------------------------------- |
-| pictureFormat | string    | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
+| Nome          | Tipo de dados | Valores possíveis                                        |
+| ------------- | ------------- | -------------------------------------------------------- |
+| pictureFormat | string        | "scaled", "tiled", "truncatedCenter", "truncatedTopLeft" |
 
 #### Objects Supported
 
