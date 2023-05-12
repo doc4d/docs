@@ -23,18 +23,18 @@ For example, the URL "*a/b/c*" will call the database method, but "*a/b/c.html*"
 
 > The request should have previously been accepted by the [`On Web Authentication`](authentication.md#on-web-authentication) database method (if it exists) and the web server must be launched.
 
-### Sintaxe
+### Syntax
 
 **On Web Connection**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text )
 
-| Parâmetros | Tipo |    | Descrição                                    |
+| Parameters | Tipo |    | Descrição                                    |
 | ---------- | ---- |:--:| -------------------------------------------- |
 | $1         | Text | <- | URL                                          |
 | $2         | Text | <- | HTTP headers + HTTP body (up to 32 kb limit) |
 | $3         | Text | <- | IP address of the web client (browser)       |
 | $4         | Text | <- | IP address of the server                     |
 | $5         | Text | <- | Nome de usuario                              |
-| $6         | Text | <- | Senha                                        |
+| $6         | Text | <- | Password                                     |
 
 You must declare these parameters as shown below:
 
@@ -84,7 +84,7 @@ If your application uses this information, it is up to you to parse the header a
 ### $3 - Web client IP address
 
 The $3 parameter receives the IP address of the browser’s machine. This information can allow you to distinguish between intranet and internet connections.
-> 4D devolve endereços IPv4 em formato híbrido IPv6/IPv4 escritos com um prefixo de 96 bits, por exemplo ::ffff:192.168.2.34 para o endereço IPv4 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
+> 4D returns IPv4 addresses in a hybrid IPv6/IPv4 format written with a 96-bit prefix, for example ::ffff:192.168.2.34 for the IPv4 address 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
 
 ### $4 - Server IP address
 
@@ -99,7 +99,7 @@ The $5 and $6 parameters receive the user name and password entered by the user 
 
 ***/4DACTION/***MethodName***<br/> **/4DACTION/******MethodName/Param*
 
-| Parâmetros | Tipo |    | Descrição                                    |
+| Parameters | Tipo |    | Descrição                                    |
 | ---------- | ---- |:--:| -------------------------------------------- |
 | MethodName | Text | -> | Name of the 4D project method to be executed |
 | Param      | Text | -> | Text parameter to pass to the project method |
@@ -129,7 +129,7 @@ This example describes the association of the `/4DACTION` URL with an HTML pictu
 <IMG SRC="/4DACTION/getPhoto/smith">
 ```
 
-O método `getPhoto` é o seguinte:
+The `getPhoto` method is as follows:
 
 ```4d
 C_TEXT($1) // This parameter must always be declared
@@ -138,7 +138,11 @@ var $PictVar : Picture
 var $BlobVar : Blob
 
  //find the picture in the Images folder within the Resources folder 
-$path:=Get 4D folder(Current resources folder)+"Images"+Folder separator+$1+".psd" READ PICTURE FILE($path;$PictVar) //put the picture in the picture variable PICTURE TO BLOB($PictVar;$BLOB;".png") //convert the picture to ".png" format WEB SEND BLOB($BLOB;"image/png")
+$path:=Get 4D folder(Current resources folder)+"Images"+Folder separator+$1+".psd"
+
+READ PICTURE FILE($path;$PictVar) //put the picture in the picture variable
+PICTURE TO BLOB($PictVar;$BLOB;".png") //convert the picture to ".png" format
+WEB SEND BLOB($BLOB;"image/png")
 ```
 
 ### 4DACTION to post forms
@@ -178,7 +182,8 @@ During data entry, type “ABCD” in the data entry area, check the "Whole word
 
 ```
 vName="ABCD"
-vExact="Word" OK="Search"
+vExact="Word"
+OK="Search"
 ```
 
 4D calls the `On Web Authentication` database method (if it exists), then the `processForm` project method is called, which is as follows:
@@ -245,30 +250,6 @@ return false
  name="frmWelcome"
  onsubmit="return GetBrowserInformation(frmWelcome)">
   <h1>Welcome to Spiders United</h1>
-  <p><b>Please enter your name:</b>
-  <input name="vtUserName" value="" size="30" type="text"></p>
-  <p> 
-<input name="vsbLogOn" value="Log On" onclick="return LogOn(frmWelcome)" type="submit"> 
-<input name="vsbRegister" value="Register" type="submit">
-<input name="vsbInformation" value="Information" type="submit"></p>
-<p> 
-<input name="vtNav_appName" value="" type="hidden"> 
-<input name="vtNav_appVersion" value="" type="hidden"> 
-<input name="vtNav_appCodeName" value="" type="hidden">
-<input name="vtNav_userAgent" value="" type="hidden"></p>
-</form>
-</body>
-</html>
-return false
-}
-}
-//--></script>
-</head>
-<body>
-<form action="/4DACTION/WWW_STD_FORM_POST" method="post"
- name="frmWelcome"
- onsubmit="return GetBrowserInformation(frmWelcome)">
-  <h1>Welcome to Spiders United</h1>
   <b>Please enter your name:</b>
   <input name="vtUserName" value="" size="30" type="text"></p>
 
@@ -293,7 +274,7 @@ The main features of this page are:
 
 - It includes three **Submit** buttons: `vsbLogOn`, `vsbRegister` and `vsbInformation`.
 - When you click **Log On**, the submission of the form is first processed by the JavaScript function `LogOn`. If no name is entered, the form is not even submitted to 4D, and a JavaScript alert is displayed.
-- The form has a POST 4D method as well as a Submit script (*GetBrowserInformation*) that copies the browser properties to the four hidden objects whose names starts with *vtNav_App*. Inclui também o objecto `vtUserName`.
+- The form has a POST 4D method as well as a Submit script (*GetBrowserInformation*) that copies the browser properties to the four hidden objects whose names starts with *vtNav_App*. It also includes the `vtUserName` object.
 
 Let’s examine the 4D method `WWW_STD_FORM_POST` that is called when the user clicks on one of the buttons on the HTML form.
 
