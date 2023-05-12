@@ -1,11 +1,11 @@
 ---
 id: components
-title: Componentes
+title: Components
 ---
 
 A 4D component is a set of 4D methods and forms representing one or more functionalities that can be installed in different applications. For example, you can develop a 4D e-mail component that manages every aspect of sending, receiving and storing e-mails in 4D applications.
 
-## Apresentação
+## Presentation
 
 ### Definições
 
@@ -13,15 +13,15 @@ A 4D component is a set of 4D methods and forms representing one or more functio
 - **Host Project**: Application project in which a component is installed and used.
 - **Component**: Matrix project, compiled or not, copied into the [`Components`](Project/architecture.md) folder of the host application and whose contents are used in the host application.
 
-### Princípios
+### Principles
 
-Criar e instalar componentes 4D é realizado diretamente a partir de 4D. Basicamente, os componentes são geridos como [plug-ins](Concepts/plug-ins.md) de acordo com os seguintes princípios:
+Creating and installing 4D components is carried out directly from 4D. Basically, components are managed like [plug-ins](Concepts/plug-ins.md) according to the following principles:
 
 - A component consists of a regular 4D project file.
-- To install a component, you simply need to copy it into the [`Components` folder of the project](Project/architecture.md). Pode usar pseudónimos ou atalhos.
-- A project can be both a “matrix” and a “host,” in other words, a matrix project can itself use one or more components. Entretanto um componente não pode usar por si mesmo "subcomponentes".
+- To install a component, you simply need to copy it into the [`Components` folder of the project](Project/architecture.md). You can use aliases or shortcuts.
+- A project can be both a “matrix” and a “host,” in other words, a matrix project can itself use one or more components. However, a component cannot use “sub-components” itself.
 - A component can call on most of the 4D elements: project methods, project forms, menu bars, choice lists, and so on. Não pode chamar métodos de bancos de dados e triggers.
-- Não pode usar tabelas padrão ou arquivos de dados em componentes 4D. Entretanto um componente não pode criar ou usar tabelas, campos e arquivos de dados usando mecanismos de bancos de dados externos. São bancos 4D independentes com as que se trabalha utilizando comandos SQL.
+- You cannot use standard tables or data files in 4D components. Entretanto um componente não pode criar ou usar tabelas, campos e arquivos de dados usando mecanismos de bancos de dados externos. São bancos 4D independentes com as que se trabalha utilizando comandos SQL.
 - A host project running in interpreted mode can use either interpreted or compiled components. A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.
 
 ## Escopo dos comandos de linguagem
@@ -38,7 +38,7 @@ O comando `COMPONENT LIST` pode ser utilizado para obter a lista de componentes 
 
 ### Comandos não utilizáveis
 
-Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente porque modificam o arquivo de estrutura - que está aberto em apenas leitura. Sua execução em um componente gerará o erro -10511, "O comando NomeComando não pode ser chamado desde um componente":
+Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente porque modificam o arquivo de estrutura - que está aberto em apenas leitura. Their execution in a component will generate the error -10511, “The CommandName command cannot be called from a component”:
 
 - `ON EVENT CALL`
 - `Method called on event`
@@ -67,7 +67,7 @@ Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente 
 
 All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed by the component.
 
-On the other hand, by default these project methods will not be visible, and they can't be called in the host project. On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. Estes métodos formam os **pontos de entrada** no componente.
+On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). These methods form **entry points** in the component.
 
 Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the **Shared by components and host project** box).
 
@@ -147,7 +147,7 @@ Neste caso é preciso usar a comparação de ponteiros:
      If(myptr1=myptr2) //Este teste retorna False
 ```
 
-## Gestão de erros
+## Error handling
 
 An [error-handling method](Concepts/error-handling.md) installed by the `ON ERR CALL` command only applies to the running application. In the case of an error generated by a component, the `ON ERR CALL` error-handling method of the host project is not called, and vice versa.
 
@@ -257,7 +257,7 @@ Lendo de um banco externo:
 - Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente. Só os "formulários de projeto" (formulários que não estejam associados a nenhuma tabela específica) podem ser utilizados em um componente.
 - A component can call table forms of the host project. Note que nesse caso é necessário usar ponteiros ao invés de nomes de tabelas entre colchetes [] para especificar os formulários no código do componente.
 
-> Se um componente utilizar o comando `ADD RECORD`, se mostrará o formulário de entrada atual do projeto local, no contexto do projeto local. Por isso se o formulário incluir variáveis, o componente não terá acesso ao formulário.
+> Se um componente utilizar o comando `ADD RECORD`, se mostrará o formulário de entrada atual do projeto local, no contexto do projeto local. Consequently, if the form includes variables, the component will not have access to it.
 
 - Pode publicar formulários componentes como subformulários no projeto local. Pode publicar formulários componentes como subformulários no banco de dados local Isso significa que pode desenvolver componentes oferecendo objetos gráficos. Por exemplo, Widgets fornecidos por 4D são baseados no uso de subformulários em componentes.
 
@@ -277,11 +277,11 @@ A component can execute 4D code automatically when opening or closing the host d
 
 Executing initialization or closing code is done by means of the `On Host Database Event` database method.
 
-> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it.
+> For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. To do this, you must check the **Execute "On Host Database Event" method of the components** option on the Security page the Settings.
 
 ## Proteção dos componentes: compilação
 
-By default, all the project methods of a matrix project installed as a component are potentially visible from the host project. Em particular:
+By default, all the project methods of a matrix project installed as a component are potentially visible from the host project. In particular:
 
 - The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Seu conteúdo pode ser selecionado e copiado na área de vista prévia do Explorador. Também podem ser vistos no depurador. However, it's not possible to open them in the Method editor or modify them.
 - The other project methods of the matrix project do not appear in the Explorer but they too can be viewed in the debugger of the host project.
