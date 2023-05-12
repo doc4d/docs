@@ -46,7 +46,7 @@ O item de menu vira **Stop Server** quando o servidor for lançado; selecione **
 
 ## Propriedades WebAdmin
 
-A configuração do componente `WebAdmin` é obrigatória, em particular para definir a[** chave de acesso**](#access-key). Como padrão, quando a chave de acesso não for estabelecida, o acesso via uma url não é permitido.
+A configuração do componente `WebAdmin` é obrigatória, em particular para definir a[** chave de acesso**](#access-key). By default when the access key is not set, access via an url is not allowed.
 
 Pode configurar o componente `WebAdmin` usando [Web Administration a caixa de diálogo de configurações](#settings-dialog-box) (ver abaixo).
 
@@ -103,7 +103,7 @@ O estado ou formato do arquivo de registro da petição HTTP (HTTPDebugLog_*nn*.
 
 #### Chave de acesso
 
-A configuração de uma chave de acesso é obrigatória para desbloquear o acesso ao servidor web `WebAdmin` através de uma URL (o acesso através de um comando do menu 4D não exige uma chave de acesso). Quando nenhuma chave de acesso for definida, não é permitido que nenhum cliente web se conecte através de uma URL a uma interfaz de administração web como a página [Explorador de dados](dataExplorer.md). Uma página de erro é retornada no caso uma solicitação de conexão:
+Defining an access key is mandatory to unlock access to the `WebAdmin` web server through an URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through an URL to a web administration interface like the [Data Explorer page](dataExplorer.md). Uma página de erro é retornada no caso uma solicitação de conexão:
 
 ![alt-text](../assets/en/Admin/accessKey.png)
 
@@ -136,7 +136,7 @@ Exemplo:
 
 ## Autenticação e sessão
 
-- Quando acessar uma página de gestão entrando uma URL e sem identificação prévia, uma autenticação é exigida. O usuário deve introduzir a [chave-de-acesso](#access-key) em uma janela de autenticação. Se a chave de acesso nâo foi definida na configuração de `WebAdmin`, não é possível o acesso via URL.
+- When a web management page is accessed by entering an URL and without prior identification, an authentication is required. O usuário deve introduzir a [chave-de-acesso](#access-key) em uma janela de autenticação. Se a chave de acesso nâo foi definida na configuração de `WebAdmin`, não é possível o acesso via URL.
 
 - Quando uma página de gerenciamento é acessada diretamentee de um item menu 4D ou 4D Servidor (tal como **Records > Data Explorer** ou **Window > Data Explorer** (4D Server)), o acesso é garantido sem autenticação, e o usuário é autenticado automaticamente.
 
