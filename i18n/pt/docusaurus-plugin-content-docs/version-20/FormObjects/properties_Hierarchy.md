@@ -13,11 +13,11 @@ Additional options (**Variable 1...10**) are available when the *Hierarchical Li
 
 See [Hierarchical list boxes](listbox_overview.md#hierarchical-list-boxes)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type    | Possible Values                                  |
-| ---------- | ------------ | ------------------------------------------------ |
-| datasource | string array | Collection of array names defining the hierarchy |
+| Nome       | Tipo de dados | Valores possíveis                                |
+| ---------- | ------------- | ------------------------------------------------ |
+| datasource | string array  | Collection of array names defining the hierarchy |
 
 #### Objects Supported
 
