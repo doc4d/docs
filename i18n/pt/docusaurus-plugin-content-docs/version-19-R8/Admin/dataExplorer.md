@@ -3,7 +3,7 @@ id: dataExplorer
 title: Web Data Explorer
 ---
 
-> **Preview**: O Web Data Explorer está sendo oferecido como uma funcionalidade em modo preview. A utilização desta característica na produção não é recomendada. A implementação final poderia ser ligeiramente diferente.
+> **Preview**: The Web Data Explorer is provided as a preview feature. Using this feature in production is not recommended. The final implementation could be slightly different.
 
 O Data Explorer oferece uma interface web para ver e pesquisar dados em sua datastore de projeto. Ao usar esta ferramente, pode navegar facilmente entre todas suas entidades e pesquisar, ordenar ou filtrar valores de atributos. Ajuda a controlar dados e rapidamente identificar problemas em qualquer etapa do processo de desenvolvimento.
 
@@ -20,15 +20,15 @@ O Data Explorer depende do componente web server [`WebAdmin`](webAdmin.md) para 
 
 ## Abrindo o Data Explorer
 
-A página do Data Explorer está disponível automaticamente quando o web server [the `WebAdmin` for iniciado](webAdmin.md#starting-the-webadmin-web-server).
+The Data Explorer page is automatically available when [the `WebAdmin` web server is started](webAdmin.md#starting-the-webadmin-web-server).
 
-Para se conectar à página web do Data Explorer:
+To connect to the Data Explorer web page:
 
-- Se usar a aplicação 4D com interface, selecione o comando **Data Explorer...** :
-  - no menu **Records**  (em 4D monousuário)
-  - no menu **Window**  (em 4D Server)
+- if you use a 4D application with interface, select **Data Explorer...** command from:
+  - the **Records** menu (in 4D stand-alone)
+  - the **Window** menu (in 4D Server)
 
-- mesmo se usar uma aplicação 4D headless, pode abrir seu navegador web e digitar o endereço abaixo:
+- whether you use a headless 4D application or not, you can open your web browser and enter the following address:
 
  `IPaddress:HTTPPort/dataexplorer` or `IPaddress:HTTPSPort/dataexplorer`
 
@@ -137,7 +137,7 @@ O filtro é do tipo "começa com". Por exemplo, a entrada "Jim" mostrará os val
 
 Também pode usar o caractere coringa (@) para substituir um ou mais caracteres iniciais. Por exemplo:
 
-| Um filtro com | Resultados                                                |
+| Um filtro com | Finds                                                     |
 | ------------- | --------------------------------------------------------- |
 | Bel           | Todos os valores que começam com "Bel                     |
 | @do           | Todos os valores contendo "do"                            |
