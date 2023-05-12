@@ -13,7 +13,7 @@ On macOS, drop-down lists are also sometimes called "pop-up menu". Both names re
 
 You can create different types of drop-down lists with different features. To define a type, select the appropriate **Expression Type** and **Data Type** values in the Property list, or use their JSON equivalent.
 
-| Tipo                           | Features                                         | Expression Type | Data Type                    | JSON definition                                                                                                                                               |
+| Tipo                           | Features                                         | Expression Type | Tipo de dados                | JSON definition                                                                                                                                               |
 | ------------------------------ | ------------------------------------------------ | --------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Objeto                         | Built upon a collection                          | Objeto          | Numeric, Text, Date, or Time | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
 | Array                          | Built upon an array                              | Array           | Numeric, Text, Date, or Time | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
