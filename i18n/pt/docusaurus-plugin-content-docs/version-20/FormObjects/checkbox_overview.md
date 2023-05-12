@@ -415,7 +415,7 @@ It is usually associated with a [4-state picture](properties_TextAndPicture.md#n
 
 
 
-## Supported Properties
+## Propriedades compatíveis
 
 All check boxes share the same set of basic properties:
 
