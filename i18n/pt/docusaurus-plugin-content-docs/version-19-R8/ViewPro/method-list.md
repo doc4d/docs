@@ -989,7 +989,7 @@ Once the export operation is finished, `VP EXPORT DOCUMENT` automatically trigge
 
 When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. The callback method will receive the following values in local variables:
 
-| Variable |               | Tipo    | Descrição                                              |
+| Variável |               | Tipo    | Descrição                                              |
 | -------- | ------------- | ------- | ------------------------------------------------------ |
 | $1       |               | text    | The name of the 4D View Pro object                     |
 | $2       |               | text    | The filepath of the exported 4D View Pro object        |
@@ -3489,11 +3489,11 @@ In *fontObj*, pass an object containing the font properties. As propriedades aba
 
 | Propriedade | Tipo | Descrição                                                                                                          | Possible values                                                                                                                                                                                                                                                                                                          | Mandatory |
 | ----------- | ---- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
-| family      | text | Specifies the font.                                                                                                | any standard or generic font family. Ex. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                               | Yes       |
-| size        | text | Defines the size of the font.The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li>              | Yes       |
-| style       | text | The style of the font.                                                                                             | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                     | No        |
-| variant     | text | Specifies font in small capital letters.                                                                           | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                               | No        |
-| weight      | text | Defines the thickness of the font.                                                                                 | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li> | No        |
+| family      | text | Specifies the font.                                                                                                | any standard or generic font family. Ex. "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                               | Sim       |
+| size        | text | Defines the size of the font.The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt" | a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li>or one of the following:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li>              | Sim       |
+| style       | text | The style of the font.                                                                                             | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                     | Não       |
+| variant     | text | Specifies font in small capital letters.                                                                           | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                               | Não       |
+| weight      | text | Defines the thickness of the font.                                                                                 | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li> | Não       |
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command.
 
@@ -4035,7 +4035,7 @@ VP RESET SELECTION("myVPArea")
 
 The `VP RESIZE TABLE` command <!-- REF #_method_.VP RESIZE TABLE.Summary -->changes the *tableName* size with regards to the *rangeObj*<!-- END REF -->.
 
-The following rules apply:
+As regras abaixo são válidas:
 
 - Headers must remain in the same row and the resulting table range must overlap the original table range.
 - If the row count of the resized table is inferior to the initial row count, values inside cropped rows or columns are kept if they were not bound to a [data context](#vp-set-data-context), otherwise they are deleted.
@@ -4223,8 +4223,8 @@ In *parameters* object, pass any of the following optional properties. These pro
 | onEvent                  | object (formula) | A callback method that will be launched when the offscreen area is ready. It can be either:<li>an `onEvent` function of a class, or</li><li>a `Formula` object</li>By default, the callback method is called on the [`On VP Ready`](../Events/onVpReady.md), [`On Load`](../Events/onLoad.md), [`On Unload`](../Events/onUnload.md), [`On End URL Loading`](../Events/onEndUrlLoading.md), [`On URL Loading Error`](../Events/onUrlLoadingError.md), [`On VP Range Changed`](../Events/onVpRangeChanged.md), or [`On Timer`](../Events/onTimer.md) events. The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
 | autoQuit                 | boolean          | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](../Events/onEndUrlLoading.md) or [`On URL Loading Error`](../Events/onUrlLoadingError.md) events occur. If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                    |
 | timeout                  | number           | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. If set to 0, no limitation is applied. Default value: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| result                   | mixed            | Result of the processing (if any)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `<customProperty>` | mixed            | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| result                   | misto            | Result of the processing (if any)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `<customProperty>` | misto            | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 
 The following property is automatically added by the command if necessary:
@@ -5027,7 +5027,7 @@ Here's the result once the columns are generated:
 | ------------- | ------ | -- | ------------------------------------------ |
 | rangeObj      | Objeto | -> | Range object                               |
 | dateValue     | Date   | -> | Date value to set                          |
-| timeValue     | Time   | -> | Time value to set                          |
+| timeValue     | Hora   | -> | Time value to set                          |
 | formatPattern | Text   | -> | Format of value|<!-- END REF -->
 
 |
@@ -5154,11 +5154,11 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 <!-- REF #_method_.VP SET FIELD.Params -->
 
-| Parameter     | Tipo    |    | Descrição                                  |
-| ------------- | ------- | -- | ------------------------------------------ |
-| rangeObj      | Objeto  | -> | Range object                               |
-| campo         | Pointer | -> | Reference to field in virtual structure    |
-| formatPattern | Text    | -> | Format of field|<!-- END REF -->
+| Parameter     | Tipo     |    | Descrição                                  |
+| ------------- | -------- | -- | ------------------------------------------ |
+| rangeObj      | Objeto   | -> | Range object                               |
+| campo         | Ponteiro | -> | Reference to field in virtual structure    |
+| formatPattern | Text     | -> | Format of field|<!-- END REF -->
 
 |
 
