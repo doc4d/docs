@@ -9,7 +9,7 @@ title: Glossary
 
 
 
-## Action
+## Ação
 
 Every action that can be done on a [resource](#resource). Available actions are: create, read, update, drop, execute, promote, and describe.
 
@@ -135,7 +135,7 @@ $myClass.query("name = smith")
 
 ## Mixed data type
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
+In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Inclui:
 
 *   number
 *   text
