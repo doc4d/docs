@@ -6,7 +6,7 @@ title: Propriedades dos menus
 You can set various properties for menu items such as action, font style, separator lines, keyboard shortcuts or icons.
 
 
-## Título
+## Title
 
 The **Title** property contains the label of a menu or menu item as it will be displayed on the application interface.
 
@@ -26,21 +26,21 @@ Control characters do not appear in the menu command labels. You should therefor
 | Caracter   | Descrição                   | Utilização                                                    |
 | ---------- | --------------------------- | ------------------------------------------------------------- |
 | (          | open parenthese             | Desactivar item                                               |
-| <B         | menor que B                 | Negrito                                                       |
-| <I         | maior que I                 | Itálica                                                       |
+| <B         | menor que B                 | Bold font                                                     |
+| <I         | maior que I                 | Italic font                                                   |
 | <U         | menor que U                 | Underline font                                                |
 | !+caracter | exclamation point+character | Add character as check mark (macOS); add check mark (Windows) |
 | /+caracter | slash+character             | Add character as shortcut                                     |
 
 
 
-## Parâmetros
+## Parameter
 
 You can associate a custom parameter with each menu item. A menu item parameter is a character string whose contents can be freely chosen. It can be set in the Menu editor, or through the `SET MENU ITEM PARAMETER` command.
 
 Menu item parameters are useful with programmed management of menus, in particular when using the `Dynamic pop up menu`, `Get menu item parameter` and `Get selected menu item parameter` commands.
 
-## Ação
+## Action
 
 Each menu command can have a project method or a standard action attached to it. When the menu command is chosen, 4D executes the associated standard action or project method. For example, a **Monthly Report** menu command can call a project method that prepares a monthly report from a table containing financial data. The **Cut** menu command usually calls the `cut` standard action in order to move the selection to the clipboard and erase it from the window in the foreground.
 
@@ -116,11 +116,11 @@ You can use any alphanumeric keys as a keyboard shortcut, except for the keys re
 
 These reserved key combinations are listed in the following table:
 
-| Tecla (Windows) | Tecla (macOS)     | Operação      |
+| Tecla (Windows) | Tecla (macOS)     | Operation     |
 | --------------- | ----------------- | ------------- |
 | Ctrl+C          | Comando+C         | Copiar        |
 | Ctrl+Q          | Comando+Q         | Salir         |
-| Ctrl+V          | Comando+V         | Colar         |
+| Ctrl+V          | Comando+V         | Paste         |
 | Ctrl+X          | Comando+X         | Cortar        |
 | Ctrl+Z          | Comando+Z         | Deshacer      |
 | Ctrl+. (ponto)  | Comando+. (ponto) | Parar a acção |
