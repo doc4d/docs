@@ -1,12 +1,12 @@
 ---
-id: rollback
+id: restore
 title: Página Retrocesso
 sidebar_label: Página Retrocesso
 ---
 
 You use the Rollback page to access the rollback function among the operations carried out on the data file. It resembles an undo function applied over several levels. It is particularly useful when a record has been deleted by mistake in a database.
 
-Esta função só está disponível quando o banco de dados funciona com um arquivo de histórico de dados.
+This function is only available when the database functions with a data log file.
 
 ![](../assets/en/MSC/MSC_rollback1.png)
 
@@ -18,8 +18,8 @@ To perform a rollback among the operations, select the row after which all opera
 
 ![](../assets/en/MSC/MSC_rollback2.png)
 
-Next click on the **Rollback** button. 4D asks you to confirm the operation. If you click **OK**, the data is then restored to the exact state it was in at the moment of the selected action.
+The **Restore** button launches the manual restoration of the selected element(s). 4D asks you to confirm the operation. If you click **OK**, the data is then restored to the exact state it was in at the moment of the selected action.
 
 You use the menu found at the bottom of the window to select a data log file to be used when you apply the rollback function to a database restored from an archive file. In this case, you must specify the data log file corresponding to the archive.
 
-Here is how the rollback function works: when the user clicks the **Rollback** button, 4D shuts the current database and restores the last backup of the database data. The restored database is then opened and 4D integrates the operations of the data log file up through to the selected operation. If the database has not yet been saved, 4D starts with a blank data file.
+Here is how the rollback function works: when the user clicks the **Rollback** button, 4D shuts the current database and restores the last backup of the database data. When this option is checked, 4D displays the standard Open file dialog box after the restore, which can be used to select journal file to be integrated. If the database has not yet been saved, 4D starts with a blank data file.
