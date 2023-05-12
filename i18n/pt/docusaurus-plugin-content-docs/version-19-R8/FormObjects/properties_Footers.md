@@ -9,9 +9,9 @@ This property is used to display or hide [list box column footers](listbox_overv
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| showFooters | boolean   | true, false     |
+| Nome        | Tipo de dados | Possible Values |
+| ----------- | ------------- | --------------- |
+| showFooters | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -50,9 +50,9 @@ Note that converting back and forth may lead to an end result that is different 
 
 #### JSON Grammar
 
-| Nome         | Data Type | Possible Values               |
-| ------------ | --------- | ----------------------------- |
-| footerHeight | string    | positive decimal+px &#124; em |
+| Nome         | Tipo de dados | Possible Values               |
+| ------------ | ------------- | ----------------------------- |
+| footerHeight | string        | positive decimal+px &#124; em |
 
 #### Objects Supported
 
