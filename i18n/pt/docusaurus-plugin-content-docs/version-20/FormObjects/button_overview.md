@@ -349,7 +349,7 @@ The Custom button style accepts a personalized background picture and allows man
 
 
 
-## Supported Properties
+## Propriedades compatíveis
 
 All buttons share the same set of basic properties:
 
