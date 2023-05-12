@@ -13,9 +13,9 @@ This property designates the type of the [active or inactive form object](formOb
 
 #### JSON Grammar
 
-| Nome | Data Type | Possible Values                                                                                                                                                                                                                                                                                          |
-| ---- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type | string    | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
+| Nome | Tipo de dados | Possible Values                                                                                                                                                                                                                                                                                          |
+| ---- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type | string        | "button", "buttonGrid", "checkbox", "combo", "dropdown", "groupBox", "input", "line", "list", "listbox", "oval", "picture", "pictureButton", "picturePopup", "plugin", "progress", "radio", "rectangle", "ruler", "spinner", "splitter", "stepper", "subform", "tab", "text", "view", "webArea", "write" |
 
 #### Objects Supported
 
@@ -34,9 +34,9 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 #### JSON Grammar
 
-| Nome | Data Type | Possible Values                                                      |
-| ---- | --------- | -------------------------------------------------------------------- |
-| name | string    | Any allowed name which does not belong to an already existing object |
+| Nome | Tipo de dados | Possible Values                                                      |
+| ---- | ------------- | -------------------------------------------------------------------- |
+| name | string        | Any allowed name which does not belong to an already existing object |
 
 #### Objects Supported
 
@@ -61,9 +61,9 @@ Here is the list of objects whose value can be saved:
 
 #### JSON Grammar
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| memorizeValue | boolean   | true, false     |
+| Nome          | Tipo de dados | Possible Values |
+| ------------- | ------------- | --------------- |
+| memorizeValue | boolean       | true, false     |
 
 #### Objects Supported
 
@@ -84,11 +84,11 @@ Variables or expressions can be enterable or non-enterable and can receive data 
 
 #### JSON Grammar
 
-| Nome       | Data Type               | Possible Values                                                             |
+| Nome       | Tipo de dados           | Possible Values                                                             |
 | ---------- | ----------------------- | --------------------------------------------------------------------------- |
 | dataSource | string, or string array | <li>4D variable, field name, or any expression.</li><li>Empty string for [dynamic variables](#dynamic-variables).</li><li>String array (collection of array names) for a [hierarchical listbox](listbox_overview.md#hierarchical-list-boxes) column]</li> |
 
-### Expressions
+### Expressões
 
 You can use an [expression](Concepts/quick-tour.md#expressions) as data source for an object. Any valid 4D expression is allowed: simple expression, object property, formula, 4D function, project method name or field using the standard `[Table]Field` syntax. The expression is evaluated when the form is executed and reevaluated for each form event. Note that expressions can be [assignable or non-assignable](Concepts/quick-tour.md#expressions).
 > If the value entered corresponds to both a variable name and a method name, 4D considers that you are indicating the method.
@@ -148,9 +148,9 @@ However, this property has a typing function in the following specific cases:
 
 #### JSON Grammar
 
-| Nome               | Data Type | Possible Values                                    |
-| ------------------ | --------- | -------------------------------------------------- |
-| dataSourceTypeHint | string    | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li> |
+| Nome               | Tipo de dados | Possible Values                                    |
+| ------------------ | ------------- | -------------------------------------------------- |
+| dataSourceTypeHint | string        | <li>**standard objects:** "integer", "boolean", "number", "picture", "text", date", "time", "arrayText", "arrayDate", "arrayTime", "arrayNumber", "collection", "object", "undefined"</li><li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li> |
 
 #### Objects Supported
 
@@ -164,9 +164,9 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 #### JSON Grammar
 
-| Nome  | Data Type | Possible Values                                           |
-| ----- | --------- | --------------------------------------------------------- |
-| class | string    | One string with CSS name(s) separated by space characters |
+| Nome  | Tipo de dados | Possible Values                                           |
+| ----- | ------------- | --------------------------------------------------------- |
+| class | string        | One string with CSS name(s) separated by space characters |
 
 #### Objects Supported
 
@@ -188,9 +188,9 @@ The collection or the entity selection must be available to the form when it is 
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values                                              |
-| ---------- | --------- | ------------------------------------------------------------ |
-| dataSource | string    | Expression that returns a collection or an entity selection. |
+| Nome       | Tipo de dados | Possible Values                                              |
+| ---------- | ------------- | ------------------------------------------------------------ |
+| dataSource | string        | Expression that returns a collection or an entity selection. |
 
 #### Objects Supported
 
@@ -211,9 +211,9 @@ Specify the type of list box.
 
 #### JSON Grammar
 
-| Nome        | Data Type | Possible Values                                             |
-| ----------- | --------- | ----------------------------------------------------------- |
-| listboxType | string    | "array", "currentSelection", "namedSelection", "collection" |
+| Nome        | Tipo de dados | Possible Values                                             |
+| ----------- | ------------- | ----------------------------------------------------------- |
+| listboxType | string        | "array", "currentSelection", "namedSelection", "collection" |
 
 #### Objects Supported
 
@@ -227,9 +227,9 @@ Name of the [plug-in external area](pluginArea_overview.md) associated to the ob
 
 #### JSON Grammar
 
-| Nome           | Data Type | Possible Values                                               |
-| -------------- | --------- | ------------------------------------------------------------- |
-| pluginAreaKind | string    | Name of the plug-in external area (starts with a % character) |
+| Nome           | Tipo de dados | Possible Values                                               |
+| -------------- | ------------- | ------------------------------------------------------------- |
+| pluginAreaKind | string        | Name of the plug-in external area (starts with a % character) |
 
 #### Objects Supported
 
@@ -243,9 +243,9 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 #### JSON Grammar
 
-| Nome       | Data Type | Possible Values  |
-| ---------- | --------- | ---------------- |
-| radioGroup | string    | Radio group name |
+| Nome       | Tipo de dados | Possible Values  |
+| ---------- | ------------- | ---------------- |
+| radioGroup | string        | Radio group name |
 
 #### Objects Supported
 
@@ -269,9 +269,9 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 #### JSON Grammar
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| text | string    | any text        |
+| Nome | Tipo de dados | Possible Values |
+| ---- | ------------- | --------------- |
+| text | string        | any text        |
 
 #### Objects Supported
 
@@ -286,7 +286,7 @@ This property sets the type of calculation to be done in a [column footer](listb
 
 There are several types of calculations available. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
 
-| Calculation           | Num | Text | Date | Time | Bool | Pict | footer var type     |
+| Calculation           | Num | Text | Date | Hora | Bool | Pict | footer var type     |
 | --------------------- | --- | ---- | ---- | ---- | ---- | ---- | ------------------- |
 | Minimum               | X   | X    | X    | X    | X    |      | Same as column type |
 | Maximum               | X   | X    | X    | X    | X    |      | Same as column type |
@@ -321,9 +321,9 @@ When **Custom** ("none" in JSON) is set, no automatic calculations are performed
 
 #### JSON Grammar
 
-| Nome                | Data Type | Possible Values                                                                                       |
-| ------------------- | --------- | ----------------------------------------------------------------------------------------------------- |
-| variableCalculation | string    | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
+| Nome                | Tipo de dados | Possible Values                                                                                       |
+| ------------------- | ------------- | ----------------------------------------------------------------------------------------------------- |
+| variableCalculation | string        | "none", "minimum", "maximum", "sum", "count", "average", "standardDeviation", "variance", "sumSquare" |
 
 #### Objects Supported
 
