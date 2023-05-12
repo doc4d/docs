@@ -21,9 +21,9 @@ Pode:
 
 #### JSON Grammar
 
-|  Nome   | Data Type | Possible Values                       |
-|:-------:|:---------:| ------------------------------------- |
-| tooltip |   text    | additional information to help a user |
+|  Nome   | Tipo de dados | Possible Values                       |
+|:-------:|:-------------:| ------------------------------------- |
+| tooltip |     text      | additional information to help a user |
 
 #### Objects Supported
 
