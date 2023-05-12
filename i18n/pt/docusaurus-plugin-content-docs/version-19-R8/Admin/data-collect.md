@@ -1,9 +1,9 @@
 ---
 id: data-collect
-title: Sobre a coleção de dados
+title: About Data Collection
 ---
 
-Para ajudar a tornar os produtos melhores, automaticamente coletamos dados referentes a estatísticas de usuário nas aplicações 4D Server Dados completados são anônimos e dados são transferidos sem ter impacto na experiência de usuário.
+Para ajudar a tornar os produtos melhores, automaticamente coletamos dados referentes a estatísticas de usuário nas aplicações 4D Server Dados completados são anônimos e dados são transferidos sem ter impacto na experiência de usuário. Collected data is completely anonymous and data is transferred with no impact on the user experience.
 
 Esta página explica:
 
@@ -19,7 +19,7 @@ Dados são coletados durante os eventos abaixo:
 - 4D Server startup,
 - abertura de banco de dados,
 - fechamento de banco de dados,
-- início do 4D Servidor.
+- web server startup.
 
 ### Dados coletados no início do 4D Server
 
