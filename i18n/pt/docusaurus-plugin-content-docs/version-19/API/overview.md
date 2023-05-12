@@ -1,9 +1,9 @@
 ---
 id: overview
-title: Funções e comandos de classe
+title: Class functions and commands
 ---
 
-Esta seção descreve a API da classe 4D incorporada, bem como os comandos de construção associados. As funções e propriedades da classe 4D estão disponíveis através de objectos de instância de classe.
+This section describes the built-in 4D class API as well as the associated constructor commands. Esta secção descreve as funções da classe 4D incorporada, bem como os comandos de construção associados.
 
 - devem ser chamadas em instâncias com o operador `()`. Por exemplo, `collection.sort()`.
 - as propriedades são acessadas sem parênteses, por exemplo `file.creationTime`. Pode também utilizar a sintaxe \[], por exemplo `file["creationTime"]`.
@@ -17,9 +17,9 @@ As seguintes convenções são utilizadas na sintaxe da função:
 - o `{ ; ...param }` notação indica um número ilimitado de parâmetros. Por exemplo, `.concat( valor : qualquer { ;...valorN } ) : A colecção` significa que um número ilimitado de valores de qualquer tipo pode ser passado para a função.
 - a `any` é utilizada para parâmetros que podem ser de qualquer tipo e que podem ser armazenados dentro dos atributos (número, texto, booleano, data, hora, objecto, colecção...).
 
-## Comandos clássicos
+## Classic commands
 
-Para além das funções de classe integradas, a linguagem 4D contém centenas de comandos "clássicos". Estes comandos estão descritos em manual *4D Language* em [doc.4d.com](https://doc.4d.com). Para referência, estão listados abaixo:
+In addition to the built-in class functions, the 4D language contains hundreds of "classic" commands. These commands are described in the *4D Language Reference* on [doc.4d.com](https://doc.4d.com). For reference, they are listed below:
 
 [A](#A) - [B](#b) - [C](#c) - [D](#d) - [E](#E) - [F](#F) - [G](#G) - [H](#H) - [I](#I) - [J](#J) - [K](#K) - [L](#L) - [M](#M) - [N](#N) - [O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T) - [U](#U) - [V](#V) - [W](#W) - [X](#X) - [Y](#Y) - [Z](#Z)
 
@@ -109,7 +109,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`C_TEXT`](https://doc.4d.com/4dv19/help/command/en/page284.html)                                             | 284    |
 | [`C_TIME`](https://doc.4d.com/4dv19/help/command/en/page306.html)                                             | 306    |
 | [`C_VARIANT`](https://doc.4d.com/4dv19/help/command/en/page1683.html)                                         | 1683   |
-| [`Informação de Cache`](https://doc.4d.com/4dv19/help/command/en/page1402.html)                               | 1402   |
+| [`Cache info`](https://doc.4d.com/4dv19/help/command/en/page1402.html)                                        | 1402   |
 | [`CALL FORM`](https://doc.4d.com/4dv19/help/command/en/page1391.html)                                         | 1391   |
 | [`CALL SUBFORM CONTAINER`](https://doc.4d.com/4dv19/help/command/en/page1086.html)                            | 1086   |
 | [`CALL WORKER`](https://doc.4d.com/4dv19/help/command/en/page1389.html)                                       | 1389   |
@@ -304,7 +304,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`EXPORT TEXT`](https://doc.4d.com/4dv19/help/command/en/page167.html)                                        | 167    |
 | <a name="F">**F**</a>                                                                                     |        |
 | [`False`](https://doc.4d.com/4dv19/help/command/en/page215.html)                                              | 215    |
-| [`Campo`](https://doc.4d.com/4dv19/help/command/en/page253.html)                                              | 253    |
+| [`Field`](https://doc.4d.com/4dv19/help/command/en/page253.html)                                              | 253    |
 | [`Campo nome`](https://doc.4d.com/4dv19/help/command/en/page257.html)                                         | 257    |
 | [`File`](https://doc.4d.com/4dv19/help/command/en/page1566.html)                                              | 1566   |
 | [`FILTER EVENT`](https://doc.4d.com/4dv19/help/command/en/page321.html)                                       | 321    |
@@ -556,8 +556,8 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`LDAP LOGOUT`](https://doc.4d.com/4dv19/help/command/en/page1327.html)                                       | 1327   |
 | [`LDAP Search`](https://doc.4d.com/4dv19/help/command/en/page1328.html)                                       | 1328   |
 | [`LDAP SEARCH ALL`](https://doc.4d.com/4dv19/help/command/en/page1329.html)                                   | 1329   |
-| [`Máx`](https://doc.4d.com/4dv19/help/command/en/page16.html)                                                 | 16     |
-| [`Nível`](https://doc.4d.com/4dv19/help/command/en/page101.html)                                              | 101    |
+| [`Length`](https://doc.4d.com/4dv19/help/command/en/page16.html)                                              | 16     |
+| [`Level`](https://doc.4d.com/4dv19/help/command/en/page101.html)                                              | 101    |
 | [`List item parent`](https://doc.4d.com/4dv19/help/command/en/page633.html)                                   | 633    |
 | [`List item position`](https://doc.4d.com/4dv19/help/command/en/page629.html)                                 | 629    |
 | [`LIST OF CHOICE LISTS`](https://doc.4d.com/4dv19/help/command/en/page957.html)                               | 957    |
@@ -1024,7 +1024,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`SELECTION TO ARRAY`](https://doc.4d.com/4dv19/help/command/en/page260.html)                                 | 260    |
 | [`Selection to JSON`](https://doc.4d.com/4dv19/help/command/en/page1234.html)                                 | 1234   |
 | [`Self`](https://doc.4d.com/4dv19/help/command/en/page308.html)                                               | 308    |
-| [`Semáforo`](https://doc.4d.com/4dv19/help/command/en/page143.html)                                           | 143    |
+| [`Semaphore`](https://doc.4d.com/4dv19/help/command/en/page143.html)                                          | 143    |
 | [`SEND MESSAGE TO REMOTE USER`](https://doc.4d.com/4dv19/help/command/en/page1632.html)                       | 1632   |
 | [`SEND PACKET`](https://doc.4d.com/4dv19/help/command/en/page103.html)                                        | 103    |
 | [`SEND RECORD`](https://doc.4d.com/4dv19/help/command/en/page78.html)                                         | 78     |
@@ -1178,7 +1178,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`System folder`](https://doc.4d.com/4dv19/help/command/en/page487.html)                                      | 487    |
 | <a name="T">**T**</a>                                                                                    |        |
 | [`Tabela`](https://doc.4d.com/4dv19/help/command/en/page252.html)                                             | 252    |
-| [`Nome da tabela`](https://doc.4d.com/4dv19/help/command/en/page256.html)                                     | 256    |
+| [`Table name`](https://doc.4d.com/4dv19/help/command/en/page256.html)                                         | 256    |
 | [`Tan`](https://doc.4d.com/4dv19/help/command/en/page19.html)                                                 | 19     |
 | [`Temporary folder`](https://doc.4d.com/4dv19/help/command/en/page486.html)                                   | 486    |
 | [`Test path name`](https://doc.4d.com/4dv19/help/command/en/page476.html)                                     | 476    |
@@ -1188,7 +1188,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | [`TEXT TO DOCUMENT`](https://doc.4d.com/4dv19/help/command/en/page1237.html)                                  | 1237   |
 | [`This`](https://doc.4d.com/4dv19/help/command/en/page1470.html)                                              | 1470   |
 | [`Tickcount`](https://doc.4d.com/4dv19/help/command/en/page458.html)                                          | 458    |
-| [`Hora`](https://doc.4d.com/4dv19/help/command/en/page179.html)                                               | 179    |
+| [`Time`](https://doc.4d.com/4dv19/help/command/en/page179.html)                                               | 179    |
 | [`Time string`](https://doc.4d.com/4dv19/help/command/en/page180.html)                                        | 180    |
 | [`Timestamp`](https://doc.4d.com/4dv19/help/command/en/page1445.html)                                         | 1445   |
 | [`Tool bar height`](https://doc.4d.com/4dv19/help/command/en/page1016.html)                                   | 1016   |
@@ -1217,7 +1217,7 @@ Para além das funções de classe integradas, a linguagem 4D contém centenas d
 | <a name="V">**V**</a>                                                                                    |        |
 | [`Validate password`](https://doc.4d.com/4dv19/help/command/en/page638.html)                                  | 638    |
 | [`VALIDATE TRANSACTION`](https://doc.4d.com/4dv19/help/command/en/page240.html)                               | 240    |
-| [`Tipo de valor`](https://doc.4d.com/4dv19/help/command/en/page1509.html)                                     | 1509   |
+| [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)                                        | 1509   |
 | [`VARIABLE TO BLOB`](https://doc.4d.com/4dv19/help/command/en/page532.html)                                   | 532    |
 | [`VARIABLE TO VARIABLE`](https://doc.4d.com/4dv19/help/command/en/page635.html)                               | 635    |
 | [`Variance`](https://doc.4d.com/4dv19/help/command/en/page27.html)                                            | 27     |
