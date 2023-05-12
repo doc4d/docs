@@ -1,6 +1,6 @@
 ---
 id: authentication
-title: Autenticação
+title: Authentication
 ---
 
 Authenticating users is necessary when you want to provide specific access rights to web users. Authentication designates the way the information concerning the user credentials (usually name and password) are collected and processed.
@@ -60,7 +60,7 @@ Entered values are then evaluated:
 - If the **Include 4D passwords** option is not checked, user credentials are sent to the [`On Web Authentication`](#on-web-authentication) database method along with the other connection parameters (IP address and port, URL...) so that you can process them. If the `On Web Authentication` database method does not exist, connections are rejected.
 > With the 4D Client web server, keep in mind that all the sites published by the 4D Client machines will share the same table of users. Validation of users/passwords is carried out by the 4D Server application.
 
-### Protocolo DIGEST
+### DIGEST protocol
 
 This mode provides a greater level of security since the authentication information is processed by a one-way process called hashing which makes their contents impossible to decipher.
 
@@ -90,18 +90,18 @@ The `On Web Authentication` database method is NOT called:
 - when the web server reveives a URL beginning with `rest/` and the REST server is launched (in this case, the authentication is handled through the [`On REST Authentication` database method](REST/configuration.md#using-the-on-rest-authentication-database-method) or [Structure settings](REST/configuration.md#using-the-structure-settings)).
 
 
-### Sintaxe
+### Syntax
 
 **On Web Authentication**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text ) -> $0 : Boolean
 
-| Parâmetros | Tipo     |    | Descrição                                         |
+| Parameters | Tipo     |    | Descrição                                         |
 | ---------- | -------- |:--:| ------------------------------------------------- |
 | $1         | Text     | <- | URL                                               |
 | $2         | Text     | <- | HTTP headers + HTTP body (up to 32 kb limit)      |
 | $3         | Text     | <- | IP address of the web client (browser)            |
 | $4         | Text     | <- | IP address of the server                          |
 | $5         | Text     | <- | Nome de usuario                                   |
-| $6         | Text     | <- | Senha                                             |
+| $6         | Text     | <- | Password                                          |
 | $0         | Booleano | -> | True = request accepted, False = request rejected |
 
 You must declare these parameters as follows:
@@ -152,7 +152,7 @@ If your application uses this information, it is up to you to parse the header a
 #### $3 - Web client IP address
 
 The `$3` parameter receives the IP address of the browser’s machine. This information can allow you to distinguish between intranet and internet connections.
-> 4D devolve endereços IPv4 em formato híbrido IPv6/IPv4 escritos com um prefixo de 96 bits, por exemplo ::ffff:192.168.2.34 para o endereço IPv4 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
+> 4D returns IPv4 addresses in a hybrid IPv6/IPv4 format written with a 96-bit prefix, for example ::ffff:192.168.2.34 for the IPv4 address 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
 
 
 #### $4 - Server IP address
@@ -165,7 +165,7 @@ The `$4` parameter receives the IP address used to call the web server. 4D allow
 The `$5` and `$6` parameters receive the user name and password entered by the user in the standard identification dialog box displayed by the browser. This dialog box appears for each connection, if [basic](#basic-protocol) or [digest](#digest-protocol) authentication is selected.
 > If the user name sent by the browser exists in 4D, the $6 parameter (the user’s password) is not returned for security reasons.
 
-#### Parâmetro $0
+#### $0 parameter
 
 The `On Web Authentication` database method returns a boolean in $0:
 
@@ -175,7 +175,7 @@ The `On Web Authentication` database method returns a boolean in $0:
 
 The `On Web Connection` database method is only executed if the connection has been accepted by `On Web Authentication`.
 > **WARNING**<br/>If no value is set to $0 or if $0 is not defined in the `On Web Authentication` database method, the connection is considered as accepted and the `On Web Connection` database method is executed.
-> * * Do not call any interface elements in the `On Web Authentication` database method (`ALERT`, `DIALOG`, etc.) because otherwise its execution will be interrupted and the connection refused. The same thing will happen if an error occurs during its processing.
+> * Do not call any interface elements in the `On Web Authentication` database method (`ALERT`, `DIALOG`, etc.) because otherwise its execution will be interrupted and the connection refused. The same thing will happen if an error occurs during its processing.
 
 
 ### Exemplo
@@ -187,10 +187,10 @@ Example of the `On Web Authentication` database method in [DIGEST mode](#digest-
  #DECLARE ($url : Text; $header : Text; $ipB : Text; $ipS : Text; \
     $user : Text; $pw : Text) -> $valid : Boolean
 
- var $found : cs. WebUserSelection
+ var $found : cs.WebUserSelection
  $valid:=False
 
- $found:=ds. WebUser.query("User === :1";$user)
+ $found:=ds.WebUser.query("User === :1";$user)
  If($found.length=1) // User is found
     $valid:=WEB Validate digest($user;[WebUser]password)
  Else
