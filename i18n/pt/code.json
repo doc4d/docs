@@ -1,6 +1,6 @@
 {
   "homepage.sections.getting-started.title": {
-    "message": "Começando"
+    "message": "Getting Started"
   },
   "Installation": {
     "message": "Instalação"
@@ -108,7 +108,7 @@
     "message": "Web Development"
   },
   "REST Server": {
-    "message": "Servidor REST"
+    "message": "REST Server"
   },
   "homepage.sections.desktop-applications.title": {
     "message": "Desktop Applications"
@@ -117,7 +117,7 @@
     "message": "Client/Server"
   },
   "Forms": {
-    "message": "Formulários"
+    "message": "Forms"
   },
   "Form Properties": {
     "message": "Form Properties"
@@ -129,7 +129,7 @@
     "message": "Form Object Properties"
   },
   "Form Events": {
-    "message": "Eventos formulário"
+    "message": "Form Events"
   },
   "Menus": {
     "message": "Menus"
