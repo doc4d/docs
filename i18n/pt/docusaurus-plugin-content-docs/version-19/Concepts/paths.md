@@ -21,16 +21,16 @@ In addition, file and folder objects support `fileSystems`, which provide contex
 
 The following filesystem pathnames are supported:
 
-| filesystem   | Designa                                            |
+| filesystem   | Designates                                         |
 | ------------ | -------------------------------------------------- |
 | "/DATA"      | Current data folder                                |
-| "/LOGS"      | Pasta Logs                                         |
+| "/LOGS"      | Logs folder                                        |
 | "/PACKAGE"   | Database folder (with or without 4dbase extension) |
 | "/PROJECT"   | Project folder                                     |
 | "/RESOURCES" | Current database resources folder                  |
 | "/SOURCES"   | Current project resources folder                   |
 
-## Sintaxe POSIX
+## POSIX syntax
 
 The POSIX syntax is supported on all platforms. **POSIX syntax is recommended** since it is the most flexible. It is used by default (returned by [file.path](../API/FileClass.md#path) and [folder.path](../API/FolderClass.md#path) properties).
 
@@ -79,7 +79,7 @@ The following escape sequences are recognized by 4D:
 
 | Escape sequence              | Character replaced   |
 | ---------------------------- | -------------------- |
-| `\n`                        | LF (Nova linha)      |
+| `\n`                        | LF (New line)        |
 | `\t`                        | HT (Horizontal tab)  |
 | `\r`                        | CR (Carriage return) |
 | ``\\`|``&#96; (Backslash) |                      |
@@ -96,7 +96,7 @@ Examples with [`Folder`](../API/FolderClass.md#folder):
 
 ```4d
 $ok:=Folder("macintosh hd:";fk platform path).create()
-$ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume deve ser chamado Monday
+$ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume must be called Monday
 ```
 
 ## Absolute and relative pathnames
@@ -110,7 +110,7 @@ $ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume deve ser cham
 $ko:=Folder("myFolder").create() //relative pathname with constructor
 ```
 
-If you want to handle files or folders in various locations (project folder, system folders, etc.), you can use `filesystems` (see above). Por exemplo, pode escrever:
+If you want to handle files or folders in various locations (project folder, system folders, etc.), you can use `filesystems` (see above). For example, you can write:
 
 ```4d
 $okFolder:=Folder("/PACKAGE/myFolder").create() //folder created at the structure level
