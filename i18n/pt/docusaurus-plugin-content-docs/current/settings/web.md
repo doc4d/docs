@@ -13,7 +13,7 @@ Using the tabs on the **Web** page, you can configure various aspects of the int
 
 Indicates whether the Web server will be launched on startup of the 4D application. This option is described in the [Web server administration](../WebServer/webServerAdmin.md#starting-the-4d-web-server) section.
 
-#### Ativar HTTP
+#### Enable HTTP
 
 Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
 
@@ -27,7 +27,7 @@ Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerC
 IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
 
 
-#### Ativar HTTPS
+#### Enable HTTPS
 
 Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
 
@@ -158,7 +158,7 @@ Define the set of characters to be used by the 4D Web server. See [Character Set
 
 See [Deprecated Settings](../WebServer/webServerConfig.md#keep-alive-connections).
 
-### Parâmetros CORS
+### CORS Settings
 
 #### Ativar CORS
 
@@ -212,13 +212,13 @@ The log format menu provides the following options:
 
 -   **WLF (WebStar Log Format)**: When this option is selected, the request log is generated in WLF format. WLF format was developed specifically for the 4D WebSTAR server. It is similar to the ELF format, with only a few additional fields. Like the ELF format, it can be customized.
 
-**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields. You will need to select each field to be included in the log. To do so, use the arrow buttons or simply drag and drop the desired fields into the "Selected Tokens" area.
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. You will need to select each field to be included in the log. You will need to select each field to be included in the log. To do so, check the desired fields.
 
 **Note**: You cannot select the same field twice.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Campo          | ELF | WLF | Value                                                                      |
+| Field          | ELF | WLF | Value                                                                      |
 | -------------- | --- | --- | -------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Number of bytes received by the server                                     |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                           |
@@ -247,15 +247,15 @@ The following table lists the fields available for each format (in alphabetical 
 
 ## Log (backup)
 
-Configure the automatic backup parameters for the request log. Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
+Configure the automatic backup parameters for the request log. Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
 -   **No Backup**: The scheduled backup function is deactivated.
--   **Every X hour(s)**: This option is used to program backups on an hourly basis. Pode digitar um valor entre 1 e 24 .
+-   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
 
     -   **starting at**: Used to set the time at which the first back up will begin.
 -   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
--   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Digite 1 se quiser realizar o backup 1 vez por semana. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired.
--   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Digite 1 se quiser realizar uma cópia de segurança mensal. Enter 1 if you want to perform a monthly backup.
+-   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Digite 1 se quiser realizar o backup 1 vez por semana. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired. For example, you can use this option to set two weekly backups: one on Wednesdays and one on Fridays.
+-   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Digite 1 se quiser realizar uma cópia de segurança mensal. When this option is checked, you must indicate the day of the month and the time when the backup must be started.
 -   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
 
 > In the case of scheduled backups, if the Web server was not launched when the backup was scheduled to occur, on the next startup 4D considers the backup as failed and applies the appropriate settings, set via the Database Settings.
