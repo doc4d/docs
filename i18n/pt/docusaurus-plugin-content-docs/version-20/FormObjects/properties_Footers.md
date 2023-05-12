@@ -7,11 +7,11 @@ title: Footers
 
 This property is used to display or hide [list box column footers](listbox_overview.md#list-box-footers). There is one footer per column; each footer is configured separately.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| showFooters | boolean   | true, false     |
+| Nome        | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| showFooters | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -19,7 +19,7 @@ This property is used to display or hide [list box column footers](listbox_overv
 
 ---
 
-## Height
+## Alto
 
 This property is used to set the row height for a list box footer in **pixels** or **text lines** (when displayed). Both types of units can be used in the same list box:
 
@@ -48,11 +48,11 @@ Note that converting back and forth may lead to an end result that is different 
   }
 ```
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values               |
-| ------------ | --------- | ----------------------------- |
-| footerHeight | string    | positive decimal+px &#124; em |
+| Nome         | Tipo de dados | Valores possíveis             |
+| ------------ | ------------- | ----------------------------- |
+| footerHeight | string        | positive decimal+px &#124; em |
 
 #### Objects Supported
 
