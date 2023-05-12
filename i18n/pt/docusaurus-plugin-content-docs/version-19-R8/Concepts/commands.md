@@ -1,14 +1,14 @@
 ---
 id: commands
-title: Commands
+title: Comandos
 ---
 
-The 4D language contains a large number of built-in commands, allowing the developer to perform a wide range of actions.
+A linguagem 4D contém um grande número de comandos incorporados, permitindo ao programador realizar uma vasta gama de acções.
 
-The 4D commands are divided in two categories:
+Os comandos 4D estão divididos em duas categorias:
 
-- **class functions**, which are APIs of 4D built-in classes. These functions are described in the [Class API Reference](../API/overview) section.
-- **stand-alone commands**, grouped by themes. These commands are described in the *4D Language Reference* on [doc.4d.com](https://doc.4d.com). For reference, they are listed below:
+- **funções de classe**, que são APIs de classes incorporadas 4D. Estas funções estão descritas na secção [Class API Reference](../API/overview).
+- **comandos autónomos**, agrupados por temas. These commands are described in the *4D Language Reference* on [doc.4d.com](https://doc.4d.com). For reference, they are listed below:
 
 [A](#A) - [B](#B) - [C](#C) - [D](#D) - [E](#E) - [F](#F) - [G](#G) - [H](#H) - [I](#I) - [J](#J) - [K](#K) - [L](#L) - [M](#M) - [N](#N) - [O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T) - [U](#U) - [V](#V) - [W](#W) - [X](#X) - [Y](#Y) - [Z](#Z)
 
@@ -294,7 +294,7 @@ The 4D commands are divided in two categories:
 | [`EXPORT TEXT`](https://doc.4d.com/4dv19R/help/command/en/page167.html)                                        | 167    |
 | <a name="F">**F**</a>                                                                                      |        |
 | [`FAUX`](https://doc.4d.com/4dv19R/help/command/en/page215.html)                                               | 215    |
-| [`Field`](https://doc.4d.com/4dv19R/help/command/en/page253.html)                                              | 253    |
+| [`Campo`](https://doc.4d.com/4dv19R/help/command/en/page253.html)                                              | 253    |
 | [`Campo nome`](https://doc.4d.com/4dv19R/help/command/en/page257.html)                                         | 257    |
 | [`File`](https://doc.4d.com/4dv19R/help/command/en/page1566.html)                                              | 1566   |
 | [`FILTER EVENT`](https://doc.4d.com/4dv19R/help/command/en/page321.html)                                       | 321    |
@@ -546,7 +546,7 @@ The 4D commands are divided in two categories:
 | [`LDAP Search`](https://doc.4d.com/4dv19R/help/command/en/page1328.html)                                       | 1328   |
 | [`LDAP SEARCH ALL`](https://doc.4d.com/4dv19R/help/command/en/page1329.html)                                   | 1329   |
 | [`Length`](https://doc.4d.com/4dv19R/help/command/en/page16.html)                                              | 16     |
-| [`Level`](https://doc.4d.com/4dv19R/help/command/en/page101.html)                                              | 101    |
+| [`Nível`](https://doc.4d.com/4dv19R/help/command/en/page101.html)                                              | 101    |
 | [`List item parent`](https://doc.4d.com/4dv19R/help/command/en/page633.html)                                   | 633    |
 | [`List item position`](https://doc.4d.com/4dv19R/help/command/en/page629.html)                                 | 629    |
 | [`LIST OF CHOICE LISTS`](https://doc.4d.com/4dv19R/help/command/en/page957.html)                               | 957    |
@@ -1181,7 +1181,7 @@ The 4D commands are divided in two categories:
 | [`TEXT TO DOCUMENT`](https://doc.4d.com/4dv19R/help/command/en/page1237.html)                                  | 1237   |
 | [`This`](https://doc.4d.com/4dv19R/help/command/en/page1470.html)                                              | 1470   |
 | [`Tickcount`](https://doc.4d.com/4dv19R/help/command/en/page458.html)                                          | 458    |
-| [`Time`](https://doc.4d.com/4dv19R/help/command/en/page179.html)                                               | 179    |
+| [`Hora`](https://doc.4d.com/4dv19R/help/command/en/page179.html)                                               | 179    |
 | [`Time string`](https://doc.4d.com/4dv19R/help/command/en/page180.html)                                        | 180    |
 | [`Timestamp`](https://doc.4d.com/4dv19R/help/command/en/page1445.html)                                         | 1445   |
 | [`TITLE`](URL)                                                                                                 | ID     |
