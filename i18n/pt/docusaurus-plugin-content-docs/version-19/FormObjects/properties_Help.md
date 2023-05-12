@@ -4,7 +4,7 @@ title: Ajuda
 ---
 
 
-## Dica de Ajuda
+## Help Tip
 
 This property allows associating help messages with active objects in your forms. They can be displayed at runtime:
 
@@ -17,15 +17,15 @@ Pode:
 
 - designate an existing help tip, previously specified in the [Help tips](https://doc.4d.com/4Dv17R5/4D/17-R5/Help-tips.200-4163423.en.html) editor of 4D.
 - or enter the help message directly as a string. This allows you to take advantage of XLIFF architecture. You can enter an XLIFF reference here in order to display a message in the application language (for more information about XLIFF, refer to [Appendix B: XLIFF architecture](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html). You can also use 4D references ([see Using references in static text](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-references-in-static-text.300-4163725.en.html)).
-> > In macOS, displaying help tips is not supported in pop-up type windows.
+> In macOS, displaying help tips is not supported in pop-up type windows.
 
-#### Gramática JSON
+#### JSON Grammar
 
-|  Nome   | Tipo de dados | Valores possíveis                     |
-|:-------:|:-------------:| ------------------------------------- |
-| tooltip |     text      | additional information to help a user |
+|  Nome   | Data Type | Possible Values                       |
+|:-------:|:---------:| ------------------------------------- |
+| tooltip |   text    | additional information to help a user |
 
-#### Objectos suportados
+#### Objects Supported
 
 [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md)  - [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md#overview) - [Hierarchical List](list_overview.md#overview) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up menu](picturePopupMenu_overview.md) - [Radio Button](radio_overview.md)
 
@@ -44,4 +44,4 @@ When different tips are associated with the same object in several locations, th
 
 #### Veja também
 
-[Placeholder (valores provisórios)](properties_Entry.md#placeholder)
+[Placeholder](properties_Entry.md#placeholder)
