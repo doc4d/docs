@@ -36,7 +36,7 @@
     "description": "The generated-index page description for category 4D Language Concepts in sidebar docs"
   },
   "sidebar.docs.category.Data Types": {
-    "message": "Data Types",
+    "message": "Tipos de dados",
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.ORDA": {
@@ -212,7 +212,7 @@
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Form Editor",
+    "message": "Editor de formulários",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
