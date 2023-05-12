@@ -101,7 +101,7 @@ Here is the list of tags and their mode of use:
 
 Here is an example of a macro definition:
 
-| **Content of macro**                                 | **Comments**                                                                                                                                    |
+| **Content of macro**                                 | **Comentários**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<?xml version="1.0"...?>`                     | XML declaration                                                                                                                                 |
 | `<!DOCTYPE macros SYSTEM>`                     | Document declaration                                                                                                                            |
