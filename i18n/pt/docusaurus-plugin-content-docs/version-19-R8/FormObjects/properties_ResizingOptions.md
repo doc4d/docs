@@ -31,9 +31,9 @@ If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https:/
 
 #### JSON Grammar
 
-| Nome         | Data Type | Possible Values         |
-| ------------ | --------- | ----------------------- |
-| resizingMode | string    | "rightToLeft", "legacy" |
+| Nome         | Tipo de dados | Possible Values         |
+| ------------ | ------------- | ----------------------- |
+| resizingMode | string        | "rightToLeft", "legacy" |
 
 #### Objects Supported
 
@@ -56,9 +56,9 @@ Three options are available:
 
 #### JSON Grammar
 
-| Nome    | Data Type | Possible Values         |
-| ------- | --------- | ----------------------- |
-| sizingX | string    | "grow", "move", "fixed" |
+| Nome    | Tipo de dados | Possible Values         |
+| ------- | ------------- | ----------------------- |
+| sizingX | string        | "grow", "move", "fixed" |
 
 #### Objects Supported
 
@@ -81,9 +81,9 @@ Three options are available:
 
 #### JSON Grammar
 
-| Nome    | Data Type | Possible Values         |
-| ------- | --------- | ----------------------- |
-| sizingY | string    | "grow", "move", "fixed" |
+| Nome    | Tipo de dados | Possible Values         |
+| ------- | ------------- | ----------------------- |
+| sizingY | string        | "grow", "move", "fixed" |
 
 #### Objects Supported
 
@@ -105,9 +105,9 @@ When this property is not applied to the splitter, the result is as follows:
 
 #### JSON Grammar
 
-| Nome         | Data Type |           Possible Values            |
-|:------------ |:---------:|:------------------------------------:|
-| splitterMode |  string   | "move" (pusher), "resize" (standard) |
+| Nome         | Tipo de dados |           Possible Values            |
+|:------------ |:-------------:|:------------------------------------:|
+| splitterMode |    string     | "move" (pusher), "resize" (standard) |
 
 #### Objects Supported
 
@@ -121,9 +121,9 @@ Designates if the size of the column can be modified by the user.
 
 #### JSON Grammar
 
-| Nome      | Data Type | Possible Values |
-|:--------- |:---------:|:---------------:|
-| resizable |  boolean  | "true", "false" |
+| Nome      | Tipo de dados | Possible Values |
+|:--------- |:-------------:|:---------------:|
+| resizable |    boolean    | "true", "false" |
 
 #### Objects Supported
 
