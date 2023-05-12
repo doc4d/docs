@@ -20,7 +20,7 @@ O Data Explorer depende do componente web server [`WebAdmin`](webAdmin.md) para 
 
 [The `WebAdmin` web server](webAdmin.md#starting-the-webadmin-web-server) is started automatically if necessary when the Data Explorer is clicked on.
 
-Para se conectar à página web do Data Explorer:
+To connect to the Data Explorer web page:
 
 - A partir de uma aplicação 4D (com interface):
   - To open a new 4D window with the Data Explorer page displayed in a web area, select **Data Explorer** in the **Records** menu or click on the **Data** button in the main toolbar.
@@ -136,7 +136,7 @@ O filtro é do tipo "começa com". Por exemplo, a entrada "Jim" mostrará os val
 
 Também pode usar o caractere coringa (@) para substituir um ou mais caracteres iniciais. Por exemplo:
 
-| Um filtro com | Resultados                                                |
+| Um filtro com | Finds                                                     |
 | ------------- | --------------------------------------------------------- |
 | Bel           | Todos os valores que começam com "Bel                     |
 | @do           | Todos os valores contendo "do"                            |
