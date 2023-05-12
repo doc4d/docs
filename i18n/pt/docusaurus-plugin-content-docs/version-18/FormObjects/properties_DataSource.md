@@ -1,6 +1,6 @@
 ---
 id: propertiesDataSource
-title: Fonte de dados
+title: Data Source
 ---
 
 
@@ -21,30 +21,30 @@ Naturally, the value entered must not belong to the list of [excluded values](pr
 
 When the **automatic insertion** option is not selected (default), the value entered is stored in the object but not in the list in memory.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome               | Tipo de dados | Valores possíveis |
-| ------------------ | ------------- | ----------------- |
-| automaticInsertion | boolean       | true, false       |
+| Nome               | Data Type | Possible Values |
+| ------------------ | --------- | --------------- |
+| automaticInsertion | boolean   | true, false     |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Combo Bo](comboBox_overview.md) - [Coluna List Box](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
-## Lista de escolha
+## Choice List
 
 Associates a choice list with an object. It can be a choice list name (a list reference) or a collection of default values.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome       | Tipo de dados    | Valores possíveis                                   |
+| Nome       | Data Type        | Possible Values                                     |
 | ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | Uma lista de valores possíveis                      |
+| choiceList | list, collection | A list of possible values                           |
 | lista      | list, collection | A list of possible values (hierarchical lists only) |
 
-#### Objectos suportados
+#### Objects Supported
 
 [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -54,38 +54,38 @@ Associates a choice list with an object. It can be a choice list name (a list re
 
 List of static values to use as labels for the tab control object.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome   | Tipo de dados    | Valores possíveis                        |
+| Nome   | Data Type        | Possible Values                          |
 | ------ | ---------------- | ---------------------------------------- |
 | labels | list, collection | A list of values to fill the tab control |
 
-#### Objectos suportados
+#### Objects Supported
 
 [Tab Control](tabControl.md)
 
 ---
 
-## Item atual
+## Current item
 
 `Collection or entity selection list boxes`
 
 Specifies a variable or expression that will be assigned the collection element/entity selected by the user. You must use an object variable or an assignable expression that accepts objects. If the user does not select anything or if you used a collection of scalar values, the Null value is assigned.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome              | Tipo de dados | Valores possíveis |
-| ----------------- | ------------- | ----------------- |
-| currentItemSource | string        | Object expression |
+| Nome              | Data Type | Possible Values   |
+| ----------------- | --------- | ----------------- |
+| currentItemSource | string    | Object expression |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box](listbox_overview.md#overview)
 
 ---
 
-## Posição item atual
+## Current item position
 
 `Collection or entity selection list boxes`
 
@@ -96,25 +96,25 @@ Specifies a variable or expression that will be assigned a longint indicating th
 - if multiple elements/entities are selected, the variable or expression receives the position of element/entity that was last selected.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome                      | Tipo de dados | Valores possíveis  |
-| ------------------------- | ------------- | ------------------ |
-| currentItemPositionSource | string        | Expressão numérica |
+| Nome                      | Data Type | Possible Values   |
+| ------------------------- | --------- | ----------------- |
+| currentItemPositionSource | string    | Number expression |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box](listbox_overview.md)
 
 ---
 
-## Tipo de dados
+## Data Type
 
 Please refer to [Expression Type](properties_Object.md#expression-type) section.
 
-#### Objectos suportados
+#### Objects Supported
 
-[Coluna da List Box](listbox_overview.md#list-box-columns)
+[List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
@@ -130,13 +130,13 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 > You can also define a [choice list](properties_DataSource.md#choice-list) with the list box column. However, a choice list will be used as list of selectable values for each column row, whereas the default list fill all column rows.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome   | Tipo de dados | Valores possíveis                                                |
-| ------ | ------------- | ---------------------------------------------------------------- |
-| values | collection    | A collection of default values (strings), ex: "a", "b", "c", "d" |
+| Nome   | Data Type  | Possible Values                                                  |
+| ------ | ---------- | ---------------------------------------------------------------- |
+| values | collection | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box Column (array type only)](listbox_overview.md#list-box-columns)
 
@@ -154,7 +154,7 @@ A 4D expression to be associated with a column. You can enter:
   - String
   - Numeric
   - Date
-  - Hora
+  - Time
   - Imagem
   - Boolean  
     You can use fields from the Master Table or from other tables.
@@ -173,19 +173,19 @@ When using collections or entity selections, you will usually declare the elemen
 
 If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is used, the column can be enterable or not depending on the [Enterable](properties_Entry.md#enterable) property.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome       | Tipo de dados | Valores possíveis                                                       |
-| ---------- | ------------- | ----------------------------------------------------------------------- |
-| dataSource | string        | A 4D variable, field name, or an arbitrary complex language expression. |
+| Nome       | Data Type | Possible Values                                                         |
+| ---------- | --------- | ----------------------------------------------------------------------- |
+| dataSource | string    | A 4D variable, field name, or an arbitrary complex language expression. |
 
-#### Objectos suportados
+#### Objects Supported
 
-[Coluna da List Box](listbox_overview.md#list-box-columns)
+[List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
-## Tabela mestre
+## Master Table
 
 `Current selection list boxes`
 
@@ -193,19 +193,19 @@ Specifies the table whose current selection will be used. This table and its cur
 
 All database tables can be used, regardless of whether the form is related to a table (table form) or not (project form).
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome   | Tipo de dados | Valores possíveis |
-| ------ | ------------- | ----------------- |
-| tabela | number        | Número de tabela  |
+| Nome  | Data Type | Possible Values  |
+| ----- | --------- | ---------------- |
+| table | number    | Número de tabela |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box](listbox_overview.md#overview)
 
 ---
 
-## Salvar como
+## Save as
 
 This property is available in the following conditions:
 
@@ -225,19 +225,19 @@ Using this property requires compliance with the following principles:
 - Valid and unique references must be associated with list items.
 - If you use this property for a [drop-down list](dropdownList_Overview.md), it must be associated with a field.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome   | Tipo de dados | Valores possíveis    |
-| ------ | ------------- | -------------------- |
-| saveAs | string        | "value", "reference" |
+| Nome   | Data Type | Possible Values      |
+| ------ | --------- | -------------------- |
+| saveAs | string    | "value", "reference" |
 
-#### Objectos suportados
+#### Objects Supported
 
 [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
-## Itens selecionados
+## Selected Items
 
 `Collection or entity selection list boxes`
 
@@ -247,13 +247,13 @@ Specifies a variable or expression that will be assigned the elements or entitie
 - for an entity selection list box, an entity selection object is built. You must use an object variable or an assignable expression that accepts objects.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome                | Tipo de dados | Valores possíveis     |
-| ------------------- | ------------- | --------------------- |
-| selectedItemsSource | string        | Collection expression |
+| Nome                | Data Type | Possible Values       |
+| ------------------- | --------- | --------------------- |
+| selectedItemsSource | string    | Collection expression |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box](listbox_overview.md#overview)
 
@@ -267,12 +267,12 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 > Named selections are ordered lists of records. They are used to keep the order and current record of a selection in memory. For more information, refer to **Named Selections** section in the *4D Language Reference manual*.
 
-#### Gramática JSON
+#### JSON Grammar
 
-| Nome           | Tipo de dados | Valores possíveis    |
-| -------------- | ------------- | -------------------- |
-| namedSelection | string        | Named selection name |
+| Nome           | Data Type | Possible Values      |
+| -------------- | --------- | -------------------- |
+| namedSelection | string    | Named selection name |
 
-#### Objectos suportados
+#### Objects Supported
 
 [List Box](listbox_overview.md#overview)
