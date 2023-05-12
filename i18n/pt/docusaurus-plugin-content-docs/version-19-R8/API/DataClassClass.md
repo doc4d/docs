@@ -102,11 +102,11 @@ Considerando as propriedades de tabela abaixo:
 
 </details>
 
-<!-- REF #DataClassClass.all().Syntax -->**.all** ( { *settings* : Object } ) : 4D. EntitySelection<!-- END REF -->
+<!-- REF #DataClassClass.all().Syntax -->Você não vai conseguir o resultado esperado porque o valor null será avaliado por 4D como um erro resultante da avaliação de parâmetro (por exemplo, um atributo de outra pesquisa) Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta: Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta:<!-- END REF -->
 
 
 <!-- REF #DataClassClass.all().Params -->
-| Parâmetros | Tipo                |    | Descrição                                                                                          |
+| Parameter  | Tipo                |    | Descrição                                                                                          |
 | ---------- | ------------------- |:--:| -------------------------------------------------------------------------------------------------- |
 | settings   | Objeto              | -> | Build option: context                                                                              |
 | Resultados | 4D. EntitySelection | <- | Referencias sobre todas as entidades relacionadas com a classe de dados|<!-- END REF -->
@@ -155,9 +155,9 @@ No  parâmetro *querySettings* é possível passar um objeto que conteha opçõe
 
 
 <!-- REF #DataStoreClass.clearRemoteCache().Params -->
-| Parâmetros | Tipo |  | Descrição                                             |
-| ---------- | ---- |::| ----------------------------------------------------- |
-|            |      |  | Não exige nenhum parâmetro|<!-- END REF -->
+| Parameter | Tipo |  | Descrição                                             |
+| --------- | ---- |::| ----------------------------------------------------- |
+|           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
 |
 
@@ -203,11 +203,11 @@ $ds. Persons.clearRemoteCache()
 
 </details>
 
-<!-- REF #DataClassClass.fromCollection().Syntax -->**.fromCollection**( *objectCol* : Collection { ; *settings* : Object } ) : 4D. EntitySelection<!-- END REF -->
+<!-- REF #DataClassClass.fromCollection().Syntax -->|<!-- END REF -->
 
 
 <!-- REF #DataClassClass.fromCollection().Params -->
-| Parâmetros | Tipo                |    | Descrição                                                              |
+| Parameter  | Tipo                |    | Descrição                                                              |
 | ---------- | ------------------- |:--:| ---------------------------------------------------------------------- |
 | objectCol  | Collection          | -> | Coleção de objetos a mapear com entidades                              |
 | settings   | Objeto              | -> | Build option: context                                                  |
@@ -235,7 +235,7 @@ Para cada objeto de *objectCol*:
   * Se a chave primária for dada (como está) e existir, um erro é enviado.
   * Se a chave primária for dada (como é) e não existir, a entidade é criada
   * Se a chave primária não for dada, a entidade é criada e o valor da chave primária é assignado com respeito às regras padrão de database.
-> The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. The use of a \_\_KEY property allows independence from the primary key attribute name.
+> The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
 
 **Entidades relacionadas**
 
@@ -340,7 +340,7 @@ Queremos criar uma entidade. A propriedade \_\_NEW é True, a chave primária de
 
 #### Exemplo 5
 
-Queremos criar uma entidade. Se a propriedade \_\_NEW é omitida, a chave primária do empregado é dada e não existir:
+Queremos criar uma entidade. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
 
 ```4d
  var $empsCollection : Collection
@@ -401,11 +401,11 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
 
 </details>
 
-<!-- REF #DataClassClass.get().Syntax -->**.get**( *primaryKey* : Integer { ; *settings* : Object } ) : 4D. Entity<br/>**.get**( *primaryKey* : Text { ; *settings* : Object } ) : 4D.<!-- END REF -->
+<!-- REF #DataClassClass.get().Syntax -->|<!-- END REF -->
 
 
 <!-- REF #DataClassClass.get().Params -->
-| Parâmetros | Tipo            |    | Descrição                                                                       |
+| Parameter  | Tipo            |    | Descrição                                                                       |
 | ---------- | --------------- |:--:| ------------------------------------------------------------------------------- |
 | primaryKey | Integer OR Text | -> | Valor da chave primária da entidade a recuperar                                 |
 | settings   | Objeto          | -> | Build option: context                                                           |
@@ -417,7 +417,7 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
 
 A função `.get()` <!-- REF #DataClassClass.get().Summary -->consulta a folha de dados para recuperar a entidade que corresponde ao parâmetro *primaryKey*<!-- END REF -->.
 
-Em *primaryKey*, passe o valor da chave primária da entidade a recuperar Em *primaryKey*, passe o valor da chave primária da entidade a recuperar O tipo valor deve coresponder com o tipo de chave primária estabelecido na datastore (Inteiro ou texto). Também pode se assegurar que o valor de chave primária seja sempre retornado como Texto ao usar a função [`.getKey()`](EntityClass.md#getkey) com o parâmetro`dk key as string`.
+In *primaryKey*, pass the primary key value of the entity to retrieve. Em *primaryKey*, passe o valor da chave primária da entidade a recuperar Em *primaryKey*, passe o valor da chave primária da entidade a recuperar O tipo valor deve coresponder com o tipo de chave primária estabelecido na datastore (Inteiro ou texto). Também pode se assegurar que o valor de chave primária seja sempre retornado como Texto ao usar a função [`.getKey()`](EntityClass.md#getkey) com o parâmetro`dk key as string`.
 
 Se nenhuma entidade for encontrada com  *primaryKey*, uma entidade**Null** é retornada.
 
@@ -481,9 +481,9 @@ Este exemplo ilustra o uso da propriedade *context* :
 
 
 <!-- REF #DataClassClass.getCount().Params -->
-| Parâmetros | Tipo    |    | Descrição                                                   |
-| ---------- | ------- | -- | ----------------------------------------------------------- |
-| result     | Integer | <- | Número de entidades na dataclass|<!-- END REF -->
+| Parameter | Tipo    |    | Descrição                                                   |
+| --------- | ------- | -- | ----------------------------------------------------------- |
+| result    | Integer | <- | Número de entidades na dataclass|<!-- END REF -->
 
 |
 
@@ -521,7 +521,7 @@ $number:=$ds. Persons.getCount()
 
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parâmetros | Tipo          |    | Descrição                                         |
+| Parameter  | Tipo          |    | Descrição                                         |
 | ---------- | ------------- |:--:| ------------------------------------------------- |
 | Resultados | cs. DataStore | <- | Datastore da dataclass|<!-- END REF -->
 
@@ -575,7 +575,7 @@ O método de projeto ***SearchDuplicate*** procura por valores duplicados em qua
 
 
 <!-- REF #DataClassClass.getInfo().Params -->
-| Parâmetros | Tipo   |    | Descrição                                          |
+| Parameter  | Tipo   |    | Descrição                                          |
 | ---------- | ------ | -- | -------------------------------------------------- |
 | Resultados | Objeto | <- | Informação da dataclass|<!-- END REF -->
 
@@ -651,9 +651,9 @@ A função `.getInfo()` <!-- REF #DataClassClass.getInfo().Summary -->devolve um
 
 
 <!-- REF #DataClassClass.getRemoteCache().Params -->
-| Parâmetros | Tipo   |    | Descrição                                                                                  |
-| ---------- | ------ | -- | ------------------------------------------------------------------------------------------ |
-| result     | Objeto | <- | Objecto que descreve o conteúdo da cache ORDA para o dataclass.|<!-- END REF -->
+| Parameter | Tipo   |    | Descrição                                                                                  |
+| --------- | ------ | -- | ------------------------------------------------------------------------------------------ |
+| result    | Objeto | <- | Objecto que descreve o conteúdo da cache ORDA para o dataclass.|<!-- END REF -->
 
 
 |
@@ -673,7 +673,7 @@ O objeto retornado tem as propriedades abaixo:
 | Propriedade | Tipo       | Descrição                                                                          |
 | ----------- | ---------- | ---------------------------------------------------------------------------------- |
 | maxEntries  | Integer    | Número máximo de entradas recolhidas.                                              |
-| stamp       | Integer    | carimbo da caché                                                                   |
+| stamp       | Integer    | Stamp of the cache.                                                                |
 | timeout     | Integer    | Tempo restante antes que as novas entradas na cache sejam marcadas como expiradas. |
 | entries     | Collection | Contém um objecto de entrada para cada entidade na cache.                          |
 
@@ -698,11 +698,11 @@ Os dados relativos a entidades relacionadas são armazenados na cache do objecto
 
 #### Exemplo
 
-No exemplo seguinte, `$ds.Persons.all()` carrega a primeira entidade com todos os seus atributos. Depois, a optimização do pedido é desencadeada, pelo que apenas `firstname` e `address.city` são carregados.
+No exemplo seguinte, `$ds. Persons.all()` carrega a primeira entidade com todos os seus atributos. Depois, a optimização do pedido é desencadeada, pelo que apenas `firstname` e `address.city` são carregados.
 
 Note-se que `address.city` é carregado na cache do `Pessoas` dataclass.
 
-Apenas a primeira entidade do `endereço ` dataclass é armazenada na cache. É carregado durante a primeira iteração do loop.
+Apenas a primeira entidade do `endereço` dataclass é armazenada na cache. É carregado durante a primeira iteração do loop.
 
 ```4d
 var $ds : 4D. DataStoreImplementation
@@ -737,11 +737,11 @@ $cacheAddress:=$ds. Adress.getRemoteCache()
 
 </details>
 
-<!-- REF #DataClassClass.new().Syntax -->**.new()** : 4D. Entity <!-- END REF -->
+<!-- REF #DataClassClass.new().Syntax -->Pesquisa com uma instrução NOT: <!-- END REF -->
 
 
 <!-- REF #DataClassClass.new().Params -->
-| Parâmetros | Tipo       |    | Descrição                                                                   |
+| Parameter  | Tipo       |    | Descrição                                                                   |
 | ---------- | ---------- | -- | --------------------------------------------------------------------------- |
 | Resultados | 4D. Entity | <- | Nova entidade que coincide com a classe de dados|<!-- END REF -->
 
@@ -783,11 +783,11 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 </details>
 
-<!-- REF #DataClassClass.newSelection().Syntax -->**.newSelection**( { *keepOrder* : Integer } ) : 4D. EntitySelection <!-- END REF -->
+<!-- REF #DataClassClass.newSelection().Syntax -->Pode usar parêntesis na pesquisa para dar prioridade ao cálculo Por exemplo, pode organizar uma pesquisa da seguinte maneira: Por exemplo, pode organizar uma pesquisa da seguinte maneira: <!-- END REF -->
 
 
 <!-- REF #DataClassClass.newSelection().Params -->
-| Parâmetros | Tipo                |    | Descrição                                                                                                                                            |
+| Parameter  | Tipo                |    | Descrição                                                                                                                                            |
 | ---------- | ------------------- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | keepOrder  | Integer             | -> | `dk keep ordered`: cria uma seleção de entidades ordenada,<br/>`dk non ordered`: cria uma seleção de entidade não ordenada (padrão se omitido) |
 | Resultados | 4D. EntitySelection | <- | Nova seleção de entidades em branco relacionadas com a classe de dados|<!-- END REF -->
@@ -827,11 +827,11 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 
 </details>
 
-<!-- REF #DataClassClass.query().Syntax -->**.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D. EntitySelection <br/>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D. EntitySelection <!-- END REF -->
+<!-- REF #DataClassClass.query().Syntax -->| <!-- END REF -->
 
 
 <!-- REF #DataClassClass.query().Params -->
-| Parâmetros    | Tipo                |    | Descrição                                                                                                                                                      |
+| Parameter     | Tipo                |    | Descrição                                                                                                                                                      |
 | ------------- | ------------------- | -- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | queryString   | Text                | -> | Criterios de pesquisa como string                                                                                                                              |
 | formula       | Objeto              | -> | Criterios de pesquisa como objeto fórmula                                                                                                                      |
@@ -849,7 +849,7 @@ Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazi
 
 **parâmetro queryString**
 
-O parâmetro *queryString* usa a sintaxe abaixo:
+Para obter informação detalhada sobre como construir uma consulta utilizando os parâmetros *queryString*, *value* e *querySettings*, consulte a descrição da função [`dataClass.query()`](DataClassClass.md#query).
 
 ```4d
 attributePath|formula comparator value   
@@ -866,8 +866,8 @@ onde:
 
   * **Text**: A string de fórmula deve ser precidida da declaração `eval( )`,para que o parser da pesquisa avalie a expressão corretamente. Por exemplo: *"eval(length(This.lastname) >=30)"*
   * **Object**: o objeto [formula](FunctionClass.md) é passado como um **placeholder** (ver abaixo). A fórmula deve ter sido criada usando  [`Formula`](FunctionClass.md#formula) ou o comando[`Formula from string`](FunctionClass.md#formula-from-string) command.
-> * > * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
-> * Se a fórmula não for o único critério de pesquisa, o otimizador de motor debusca poderia processar outros critérios previamente (por exemplo atributos indexados) e assim, a fórmula poderia ser avaliada apenas para um subconjunto de entidades.
+> * > * > * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
+> * If the formula is not the only search criteria, the query engine optimizer could prior process other criteria (e.g. indexed attributes) and thus, the formula could be evaluated for only a subset of entities.
 
  Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto é detalhado no parágrafo **Parâmetro fórmula** mais abaixo.
 > * Também pode passar diretamente um objeto parâmetro `formula` ao invés do parâmetro `queryString` (recomendado quando as fórmulas sejam mais complexas). Ver o parágrafo **Parâmetro fórmula** mais abaixo.
@@ -879,7 +879,7 @@ onde:
  | ---------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
  | Igual a                                  | =, ==       | Retorna os dados coincidentes, admite o coringa (@), não diferencia entre maiúsculas e minúsculas nem diacríticas.             |
  |                                          | ===, IS     | Retorna os dados coincidentes, considera @ como caractere padrão, não diferencia entre maiúsculas e minúsculas nem diacríticas |
- | Diferente de                             | #, !=       | Suporta o coringa (@)                                                                                                          |
+ | Not equal to                             | #, !=       | Suporta o coringa (@)                                                                                                          |
  |                                          | !==, IS NOT | Considera  @ como um caractere normal                                                                                          |
  | Menor que                                | <           |                                                                                                                                |
  | Maior que                                | >           |                                                                                                                                |
@@ -916,7 +916,7 @@ Quando usar aspas com pesquisas, deve usar aspas simples '  '  dentro das pesqui
 
 **Usando parêntesis**
 
-Pode usar parêntesis na pesquisa para dar prioridade ao cálculo Por exemplo, pode organizar uma pesquisa da seguinte maneira: Por exemplo, pode organizar uma pesquisa da seguinte maneira:
+You can use parentheses in the query to give priority to the calculation. For example, you can organize a query as follows:
 
 ```4d
 "(employee.age >= 30 OR employee.age <= 65) AND (employee.salary <= 10000 OR employee.status = 'Manager')"
@@ -974,7 +974,7 @@ Quando pesquisar por valores null não pode usar a sintaxe de placeholder porque
 $vSingles:=ds. Person.query("spouse = :1";Null) // will NOT work
 ```
 
-Você não vai conseguir o resultado esperado porque o valor null será avaliado por 4D como um erro resultante da avaliação de parâmetro (por exemplo, um atributo de outra pesquisa) Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta: Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta:
+You will not get the expected result because the null value will be evaluated by 4D as an error resulting from the parameter evaluation (for example, an attribute coming from another query). For these kinds of queries, you must use the direct query syntax:
 
 ```4d
  $vSingles:=ds. Person.query("spouse = null") //correct syntax
@@ -988,7 +988,7 @@ Esta funcionalidade só está disponível em consultas de dataclasses e [selecç
 
 :::
 
-Ao pesquisar dentro de atributos de objectos dataclass contendo colecções utilizando múltiplos argumentos de consulta unidos pelo operador AND, poderá querer certificar-se de que apenas entidades contendo elementos que correspondem a todos os argumentos são devolvidas, e não entidades onde os argumentos podem ser encontrados em diferentes elementos. Para fazer isso, é necessário vincular os argumentos de pesquisa para elementos de coleção, para que apenas elementos únicos contendo argumentos linkados são encontrados.
+Para fazer isso, é necessário vincular os argumentos de pesquisa para elementos de coleção, para que apenas elementos únicos contendo argumentos linkados são encontrados. Ao pesquisar dentro de atributos de objectos dataclass contendo colecções utilizando múltiplos argumentos de consulta unidos pelo operador AND, poderá querer certificar-se de que apenas entidades contendo elementos que correspondem a todos os argumentos são devolvidas, e não entidades onde os argumentos podem ser encontrados em diferentes elementos.
 
 Por exemplo, com as duas entidades abaixo:
 
@@ -1096,7 +1096,7 @@ No exemplo 3 são oferecidos mais exemplos.
 
 **parâmetro querySettings**
 
-No parâmetro opcional*settings* pode passar um objeto contendo as opções abaixo. As propriedades abaixo são compatíveis:
+No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. As propriedades abaixo são compatíveis:
 
 | Propriedade   | Tipo     | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1149,7 +1149,7 @@ Consultas em uma string:
 $entitySelection:=ds. Customer.query("firstName = 'S@'")
 ```
 
-Pesquisa com uma instrução NOT:
+Query with a NOT statement:
 
 ```4d
 $entitySelection:=ds. Employee.query("not(firstName=Kim)")
@@ -1435,9 +1435,9 @@ Queremos desautorizar as fórmulas, por exemplo, quando el usuario introduz sua 
 
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| Parâmetros | Tipo   |    | Descrição                                                                                                       |
-| ---------- | ------ | -- | --------------------------------------------------------------------------------------------------------------- |
-| settings   | Objeto | -> | Objecto que define o tempo limite e o tamanho máximo da cache ORDA para a dataclass.|<!-- END REF -->
+| Parameter | Tipo   |    | Descrição                                                                                                       |
+| --------- | ------ | -- | --------------------------------------------------------------------------------------------------------------- |
+| settings  | Objeto | -> | Objecto que define o tempo limite e o tamanho máximo da cache ORDA para a dataclass.|<!-- END REF -->
 
 |
 
