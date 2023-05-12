@@ -19,7 +19,7 @@ The 4D Code Editor provides basic syntax error-checking. Additional error-checki
 
 Each Code Editor window has a toolbar that provides instant access to basic functions related to code execution and editing.
 
-| Element                       | Icon                                                                              | Descrição                                                                                                                                                                                                                                                                                                                                      |
+| Element                       | Ícone                                                                             | Descrição                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Method execution**          | ![execute-method](../assets/en/code-editor/execute-method.png)                    | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.</li><li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>For more information on method execution, see [Calling Project Methods](../Concepts/methods.md#calling-project-methods). |
 | **Find in method**            | ![search-icon](../assets/en/code-editor/search.png)                               | Displays the [*Search* area](#find-and-replace).                                                                                                                                                                                                                                                                                               |
@@ -162,7 +162,7 @@ When there is no tag in the class/method, the tool displays "No tag".
 
 The following items are added automatically:
 
-| Icon                                                                        | Item                                             |
+| Ícone                                                                       | Item                                             |
 | --------------------------------------------------------------------------- | ------------------------------------------------ |
 | ![no-tag-icon](../assets/en/code-editor/no-tag.png)                         | Sem etiqueta                                     |
 | ![constructor-icon](../assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
@@ -173,7 +173,7 @@ The following items are added automatically:
 
 By adding markers in your code, you can add the following tags to the dropdown:
 
-| Icon                                                    | Item            |
+| Ícone                                                   | Item            |
 | ------------------------------------------------------- | --------------- |
 | ![mark-tag-icon](../assets/en/code-editor/mark-tag.png) | MARK: etiqueta  |
 | ![todo-tag-icon](../assets/en/code-editor/todo-tag.png) | TODO: etiqueta  |
@@ -220,7 +220,7 @@ Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Wind
 
 :::
 
-| **Shortcut**                                                    | **Action**                                                                                                                                 |
+| **Shortcut**                                                    | **Ação**                                                                                                                                   |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Selection and navigation**                                    |                                                                                                                                            |
 | Duplo clique                                                    | Select a language element name                                                                                                             |
