@@ -32,9 +32,9 @@ $myHour:=?08:12:55? //assigns a time literal
 
 You MUST distinguish the assignment operator := from the other operators. Rather than combining expressions into a new one, the assignment operator copies the value of the expression to the right of the assignment operator into the variable or field to the left of the operator.
 
-**Important:** Do NOT confuse the assignment operator := with the equality comparison operator =. A different assignment operator (and not =) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Such errors are often difficult to recognize by the compiler and lead to time-consuming troubleshooting.
+**Important:** Do NOT confuse the assignment operator := with the equality comparison operator =. A different assignment operator (and not =) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Esses erros são geralmente difíceis de reconhecer pelo compilador e geram problemas trabalhosos.
 
-## Variables
+## Variáveis
 
 The 4D language is strongly typed, although some flexibility is allowed in many cases. You create a typed variable using the `var` keyword. For example, to create a variable of the date type, you can write:
 
@@ -102,7 +102,7 @@ vRef:=Open document("PassFile";"TEXT";Read Mode) // open doc in read only mode
 
 > Predefined constants appear <u>underlined</u> by default in the 4D Code Editor.
 
-## Methods
+## Métodos
 
 4D provides a large number of built-in methods (or commands) but also lets you can create your own **project methods**. Project methods are user-defined methods that contain commands, operators, and other parts of the language. Project methods are generic methods, but there are other kinds of methods: Object methods, Form methods, Table methods (Triggers), and Database methods.
 
@@ -142,7 +142,7 @@ $out:=Uppercase($in)
 ```
 
 
-## Data Types
+## Tipos de dados
 
 In the language, the various types of data that can be handled are referred to as data types. There are basic data types (string, numeric, date, time, Boolean, picture, pointers, arrays), and also composite data types (BLOBs, objects, collections).
 
@@ -174,7 +174,7 @@ You can also use a string within square brackets, for example:
 $vName:=employee["name"]
 ```
 
-Since an object property value can be an object or a collection, object notation accepts a sequence of symbols to access sub-properties, for example:
+Uma vez que um valor de propriedade de objeto pode ser um objeto ou uma coleção, a notação de objeto aceita uma sequência de símbolos para acessar subpropriedades, por exemplo:
 
 ```4d
 $vAge:=employee.children[2].age
@@ -250,24 +250,24 @@ This.name:="Square"
 ```
 
 
-## Operators
+## Operadores
 When you use the language, it is rare that you will simply want a piece of data. It is more likely that you will want to do something to or with that data. You perform such calculations with operators. Operators, in general, take two pieces of data and perform an operation on them that results in a new piece of data. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3. This table shows some familiar numeric operators:
 
-| Operator | Operation      | Exemplo            |
-| -------- | -------------- | ------------------ |
-| +        | Addition       | 1 + 2 results in 3 |
-| –        | Subtraction    | 3 – 2 results in 1 |
-| *        | Multiplication | 2 * 3 results in 6 |
-| /        | Division       | 6 / 2 results in 3 |
+| Operator | Operação      | Exemplo            |
+| -------- | ------------- | ------------------ |
+| +        | Adição        | 1 + 2 results in 3 |
+| –        | Subtração     | 3 – 2 results in 1 |
+| *        | Multiplicação | 2 * 3 results in 6 |
+| /        | Divisão       | 6 / 2 results in 3 |
 
 Numeric operators are just one type of operator available to you. 4D supports many different types of data, such as numbers, text, dates, and pictures, so there are operators that perform operations on these different data types.
 
 The same symbols are often used for different operations, depending on the data type. For example, the plus sign (+) performs different operations with different data:
 
-| Data Type       | Operation     | Exemplo                                                                                              |
+| Data Type       | Operação      | Exemplo                                                                                              |
 | --------------- | ------------- | ---------------------------------------------------------------------------------------------------- |
-| Número          | Addition      | 1 + 2 adds the numbers and results in 3                                                              |
-| String          | Concatenation | “Hello ” + “there” concatenates (joins together) the strings and results in “Hello there”            |
+| Número          | Adição        | 1 + 2 adds the numbers and results in 3                                                              |
+| String          | Concatenação  | “Hello ” + “there” concatenates (joins together) the strings and results in “Hello there”            |
 | Date and Number | Date addition | !1989-01-01! + 20 adds 20 days to the date January 1, 1989, and results in the date January 21, 1989 |
 
 
@@ -300,14 +300,14 @@ You refer to an expression by the data type it returns. There are several expres
 | myButton                 | Número             | This is a variable associated to a button. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                           |
 | !1997-01-25!             | Date               | This is a date constant for the date 1/25/97 (January 25, 1997).                                                                                                                |
 | Current date+ 30         | Date               | This is a date expression that uses the `Current date` command to get today’s date. It adds 30 days to today’s date and returns the new date.                                   |
-| ?8:05:30?                | Time               | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
-| ?2:03:04? + ?1:02:03?    | Time               | This expression adds two times together and returns the time 3:05:07.                                                                                                           |
+| ?8:05:30?                | Hora               | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
+| ?2:03:04? + ?1:02:03?    | Hora               | This expression adds two times together and returns the time 3:05:07.                                                                                                           |
 | True                     | Booleano           | This command returns the Boolean value TRUE.                                                                                                                                    |
 | 10 # 20                  | Booleano           | This is a logical comparison between two numbers. The number sign (#) means “is not equal to”. Since 10 “is not equal to” 20, the expression returns TRUE.                      |
 | “ABC” = “XYZ”            | Booleano           | This is a logical comparison between two strings. They are not equal, so the expression returns FALSE.                                                                          |
 | My Picture + 50          | Imagem             | This expression takes the picture in My Picture, moves it 50 pixels to the right, and returns the resulting picture.                                                            |
-| ->[People]Name           | Pointer            | This expression returns a pointer to the field called [People]Name.                                                                                                             |
-| Table (1)                | Pointer            | This is a command that returns a pointer to the first table.                                                                                                                    |
+| ->[People]Name           | Ponteiro           | This expression returns a pointer to the field called [People]Name.                                                                                                             |
+| Table (1)                | Ponteiro           | This is a command that returns a pointer to the first table.                                                                                                                    |
 | JSON Parse (MyString)    | Objeto             | This is a command that returns MyString as an object (if proper format)                                                                                                         |
 | JSON Parse (MyJSONArray) | Collection         | This is a command that returns MyJSONArray as a collection (if proper format)                                                                                                   |
 | Form.pageNumber          | Object property    | An object property is an expression that can be of any supported type                                                                                                           |
@@ -329,7 +329,7 @@ Form.pageTotal- Form.pageNumber:=10 //error, non-assignable
 In general, expressions that use an operator are non-assignable. For example, `[Person]FirstName+" "+[Person]LastName` is not assignable.
 
 
-## Pointers
+## Ponteiro
 
 The 4D language provides an advanced implementation of pointers, that allow writing powerful and modular code. You can use pointers to reference tables, fields, variables, arrays, and array elements.
 
@@ -415,11 +415,11 @@ In 4D, the following escape sequences can be used:
 
 | Escape sequence               | Character replaced   |
 | ----------------------------- | -------------------- |
-| `\n`                         | LF (Line feed)       |
+| `\n`                         | LF (Avanço de linha) |
 | `\t`                         | HT (Tab)             |
 | `\r`                         | CR (Carriage return) |
 | ``\\` |``&#96; (Backslash) |                      |
-| `\"`                         | " (Quotation marks)  |
+| `\"`                         | " (aspas)            |
 
 > It is possible to use either upper or lower case in escape sequences.
 
