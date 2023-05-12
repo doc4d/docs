@@ -24,7 +24,7 @@ For each entity selection currently stored in 4D Server's cache, the following i
 | Propriedade   | Tipo     | Descrição                                                                                                                                                                                                                                                           |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | id            | String   | A UUID that references the entity set.                                                                                                                                                                                                                              |
-| dataClass     | String   | Nome da dataclass.                                                                                                                                                                                                                                                  |
+| dataClass     | String   | Name of the dataclass.                                                                                                                                                                                                                                              |
 | selectionSize | Número   | Number of entities in the entity selection.                                                                                                                                                                                                                         |
 | sorted        | Booleano | Returns true if the set was sorted (using `$orderby`) or false if it's not sorted.                                                                                                                                                                                  |
 | refreshed     | Date     | When the entity set was created or the last time it was used.                                                                                                                                                                                                       |
@@ -51,7 +51,7 @@ Retrieve information about the entity sets currently stored in 4D Server's cache
 
 `GET /rest/$info`
 
-**Resultadoi**:
+**Result**:
 
 ```
 {
@@ -83,7 +83,8 @@ entitySet: [
         refreshed: "2011-11-18T10:24:24Z",
         expires: "2011-11-18T12:24:24Z"
     }
-], ProgressInfo: [
+],
+ProgressInfo: [
     {
         UserInfo: "flushProgressIndicator",
         sessions: 0,
