@@ -26,13 +26,13 @@ Within the `On After Edit` event, text data being entered is returned by the [`G
 
 The object returned by the `FORM Event` command contains:
 
-| Propriedade | Tipo    | Descrição                                                                                           |
-| ----------- | ------- | --------------------------------------------------------------------------------------------------- |
-| code        | longint | On After Edit                                                                                       |
-| description | text    | "On After Edit"                                                                                     |
-| objectName  | text    | Nome da área 4D View Pro                                                                            |
-| sheetName   | text    | Name of the sheet of the event                                                                      |
-| action      | text    | "editChange", "valueChanged", "DragDropBlock", "DragFillBlock", "formulaChanged", "clipboardPasted" |
+| Propriedade | Tipo          | Descrição                                                                                           |
+| ----------- | ------------- | --------------------------------------------------------------------------------------------------- |
+| code        | inteiro longo | On After Edit                                                                                       |
+| description | text          | "On After Edit"                                                                                     |
+| objectName  | text          | Nome da área 4D View Pro                                                                            |
+| sheetName   | text          | Name of the sheet of the event                                                                      |
+| action      | text          | "editChange", "valueChanged", "DragDropBlock", "DragFillBlock", "formulaChanged", "clipboardPasted" |
 
 Depending on the `action` property value, the [event object](overview.md#event-object) will contain additional properties.
 
@@ -76,11 +76,11 @@ Depending on the `action` property value, the [event object](overview.md#event-o
 
 #### action = clipboardPasted
 
-| Propriedade | Tipo    | Descrição                                                                                                                                                                                                |
-| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| range       | object  | Cell range                                                                                                                                                                                               |
-| pasteOption | longint | Specifies what is pasted from the clipboard:<li>0: Everything is pasted (values, formatting, and formulas)</li><li>1: Only values are pasted</li><li>2: Only the formatting is pasted</li><li>3: Only formulas are pasted</li><li>4: Values and formatting are pasted (not formulas)</li><li>5: Formulas and formatting are pasted (not values)</li> |
-| pasteData   | object  | The data from the clipboard to be pasted<li>"text" (text): The text from the clipboard</li><li>"html" (text): The HTML from the clipboard</li>                                                                                                             |
+| Propriedade | Tipo          | Descrição                                                                                                                                                                                                |
+| ----------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| range       | object        | Cell range                                                                                                                                                                                               |
+| pasteOption | inteiro longo | Specifies what is pasted from the clipboard:<li>0: Everything is pasted (values, formatting, and formulas)</li><li>1: Only values are pasted</li><li>2: Only the formatting is pasted</li><li>3: Only formulas are pasted</li><li>4: Values and formatting are pasted (not formulas)</li><li>5: Formulas and formatting are pasted (not values)</li> |
+| pasteData   | object        | The data from the clipboard to be pasted<li>"text" (text): The text from the clipboard</li><li>"html" (text): The HTML from the clipboard</li>                                                                                                             |
 
 #### Exemplo
 
