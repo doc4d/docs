@@ -53,7 +53,7 @@ Este arquivo começa com os cabeçalhos abaixo:
 * Hostname do servidor que hospeda a aplicação
 * Nome login Usuário: login do SO do usuário que roda a aplicação 4D no servidor.
 
-#### Contents
+#### Conteúdos
 
 Para cada petição, os campos abaixo estão logados:
 
@@ -103,7 +103,7 @@ Este arquivo começa com os cabeçalhos abaixo:
 * Hostname do servidor que hospeda a aplicação
 * Nome login Usuário: login do SO do usuário que roda a aplicação 4D no servidor.
 
-#### Contents
+#### Conteúdos
 
 Para cada processo, os campos abaixo são registrados:
 
@@ -288,7 +288,7 @@ Os arquivos de histórico podem ser produzidos em duas versões:
  $transporter:=IMAP New transporter($server)
  ```
 
-#### Contents
+#### Conteúdos
 
 Para cada petição, os campos abaixo estão logados:
 
