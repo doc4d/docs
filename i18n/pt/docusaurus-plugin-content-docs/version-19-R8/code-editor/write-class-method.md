@@ -17,7 +17,7 @@ The 4D Code Editor provides basic syntax error-checking. Additional error-checki
 
 Each Code Editor window has a toolbar that provides instant access to basic functions related to code execution and editing.
 
-| Element                       | Icon                                                                              | Descrição                                                                                                                                                                                                                                                                                                                                      |
+| Element                       | Ícone                                                                             | Descrição                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Method execution**          | ![execute-method](../assets/en/code-editor/execute-method.png)                    | When working with methods, each Code Editor window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution:<ul><li> **Run new process**: Creates a process and runs the method in standard mode in this process.</li><li>**Run and debug new process**: Creates a new process and displays the method in the Debugger window for step by step execution in this process.</li><li>**Run in Application process**: Runs the method in standard mode in the context of the Application process (in other words, the record display window).</li><li>**Run and debug in Application process**: Displays the method in the Debugger window for step by step execution in the context of the Application process (in other words, the record display window).</li></ul>For more information on method execution, see [Calling Project Methods](../Concepts/methods.md#calling-project-methods). |
 | **Pesquisa**                  | ![search-icon](../assets/en/code-editor/search.png)                               | Allows performing a search in the current window.                                                                                                                                                                                                                                                                                              |
@@ -213,7 +213,7 @@ In addition to the standard copy-paste operation, 4D offers two additional funct
 
 ![](../assets/en/code-editor/clipboards-2.png)
 
-| Platform    | Copy selected text to a clipboard    | Paste contents of a clipboard at cursor location |
+| Plataforma  | Copy selected text to a clipboard    | Paste contents of a clipboard at cursor location |
 | ----------- | ------------------------------------ | ------------------------------------------------ |
 | **Windows** | Shift or Alt+click on clipboard icon | Ctrl+click on clipboard icon                     |
 |             |                                      | Ctrl+clipboard number                            |
@@ -303,7 +303,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Shortcut**                                                    | **Action**                                                                                                                                 |
+| **Shortcut**                                                    | **Ação**                                                                                                                                   |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Shift]+[right arrow]                                           | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left     |
 | [Shift]+[left arrow]                                            | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left      |
@@ -520,7 +520,7 @@ When there is no tag in the class/method, the tool displays "No tag".
 
 The following items are added automatically:
 
-| Icon                                                                        | Item                                             |
+| Ícone                                                                       | Item                                             |
 | --------------------------------------------------------------------------- | ------------------------------------------------ |
 | ![no-tag-icon](../assets/en/code-editor/no-tag.png)                         | Sem etiqueta                                     |
 | ![constructor-icon](../assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
@@ -531,7 +531,7 @@ The following items are added automatically:
 
 By adding markers in your code, you can add the following tags to the dropdown:
 
-| Icon                                                    | Item            |
+| Ícone                                                   | Item            |
 | ------------------------------------------------------- | --------------- |
 | ![mark-tag-icon](../assets/en/code-editor/mark-tag.png) | MARK: etiqueta  |
 | ![todo-tag-icon](../assets/en/code-editor/todo-tag.png) | TODO: etiqueta  |
