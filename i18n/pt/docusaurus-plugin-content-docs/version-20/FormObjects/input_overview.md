@@ -1,6 +1,6 @@
 ---
 id: inputOverview
-title: Input
+title: Entrada
 ---
 
 
@@ -29,7 +29,7 @@ You can manage the data with object or form [methods](Concepts/methods.md).
 ```
 
 
-## Supported Properties
+## Propriedades compatíveis
 
 <details><summary>Histórico</summary>
 
