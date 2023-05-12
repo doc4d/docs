@@ -21,7 +21,7 @@ In addition, file and folder objects support `fileSystems`, which provide contex
 
 The following filesystem pathnames are supported:
 
-| filesystem   | Designates                                         |
+| filesystem   | Designa                                            |
 | ------------ | -------------------------------------------------- |
 | "/DATA"      | Current data folder                                |
 | "/LOGS"      | Logs folder                                        |
@@ -30,7 +30,7 @@ The following filesystem pathnames are supported:
 | "/RESOURCES" | Current database resources folder                  |
 | "/SOURCES"   | Current project resources folder                   |
 
-## POSIX syntax
+## Sintaxe POSIX
 
 The POSIX syntax is supported on all platforms. **POSIX syntax is recommended** since it is the most flexible. It is used by default (returned by [file.path](../API/FileClass.md#path) and [folder.path](../API/FolderClass.md#path) properties).
 
@@ -96,7 +96,7 @@ Examples with [`Folder`](../API/FolderClass.md#folder):
 
 ```4d
 $ok:=Folder("macintosh hd:";fk platform path).create()
-$ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume must be called Monday
+$ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume deve ser chamado Monday
 ```
 
 ## Absolute and relative pathnames
