@@ -3,7 +3,7 @@ id: propertiesRangeOfValues
 title: Range of Values
 ---
 
-## Default value
+## Valor padrão
 
 You can assign a default value to be entered in an input object. This property is useful for example when the input [data source](properties_Object.md#variable-or-expression) is a field: the default value is entered when a new record is first displayed. You can change the value unless the input area has been defined as [non-enterable](properties_Entry.md#enterable).
 
@@ -29,7 +29,7 @@ You can use a sequence number to create a unique number for each record in the t
 
 #### JSON Grammar
 
-| Nome         | Data Type                           | Possible Values                            |
+| Nome         | Tipo de dados                       | Possible Values                            |
 | ------------ | ----------------------------------- | ------------------------------------------ |
 | defaultValue | string, number, date, time, boolean | Any value and/or a stamp: "#D", "#H", "#N" |
 
@@ -46,9 +46,9 @@ Allows setting a list whose values cannot be entered in the object. If an exclud
 
 #### JSON Grammar
 
-| Nome         | Data Type | Possible Values                  |
-| ------------ | --------- | -------------------------------- |
-| excludedList | lista     | A list of values to be excluded. |
+| Nome         | Tipo de dados | Possible Values                  |
+| ------------ | ------------- | -------------------------------- |
+| excludedList | lista         | A list of values to be excluded. |
 
 #### Objects Supported
 
@@ -65,9 +65,9 @@ Making a list required does not automatically display the list when the field is
 
 #### JSON Grammar
 
-| Nome         | Data Type | Possible Values             |
-| ------------ | --------- | --------------------------- |
-| requiredList | lista     | A list of mandatory values. |
+| Nome         | Tipo de dados | Possible Values             |
+| ------------ | ------------- | --------------------------- |
+| requiredList | lista         | A list of mandatory values. |
 
 #### Objects Supported
 
