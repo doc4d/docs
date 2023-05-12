@@ -6,7 +6,7 @@ title: Subformulário
 
 A subform is a form included in another form.
 
-## Terminologia
+## Terminology
 
 In order to clearly define the concepts implemented with subforms, here are some definitions for certain terms used:
 
@@ -17,7 +17,7 @@ In order to clearly define the concepts implemented with subforms, here are some
 * **List form**: instance of subform displayed as a list.
 * **Detail form**: page-type input form associated with a list-type subform that can be accessed by double-clicking in the list.
 
-## Sub formulários lista
+## List subforms
 
 A list subform lets you enter, view, and modify data in other tables. You usually use list subforms in databases in which you have established One to Many relations. A list subform on a form in a related One table lets you view, enter, and modify data in a related Many table. You can have several subforms coming from different tables in the same form. However, it is not possible to place two subforms that belong to the same table on the same page of a form.
 
@@ -29,7 +29,7 @@ You can also allow the user to enter data in the List form. Depending on the con
 
 > 4D offers three standard actions to meet the basic needs for managing subrecords: `Edit Subrecord`, `Delete Subrecord`, and `Add Subrecord`. When the form includes several subform instances, the action will apply to the subform that has the focus.
 
-## Subformulários em página
+## Page subforms
 
 Page subforms can display the data of the current subrecord or any type of pertinent value depending on the context (variables, pictures, and so on). One of the main advantages of using page subforms is that they can include advanced functionalities and can interact directly with the parent form (widgets). Page subforms also have their own specific properties and events; you can manage them entirely by programming.
 
@@ -37,7 +37,7 @@ The page subform uses the input form indicated by the [Detail Form](properties_S
 
 > 4D Widgets are predefined compound objects based upon page subforms. They are described in detail in a separate manual, [4D Widgets](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Widgets.100-4465257.en.html).
 
-### Gestão da variável vinculada
+### Managing the bound variable
 
 The [variable](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. For example, imagine a subform representing a dynamic clock, inserted into a parent form containing an enterable variable of the Time type:
 
@@ -74,7 +74,7 @@ Assigning the value to the variable generates the `On Data Change` form event in
 
 > If you "manually" move the hands of the clock, this also generates the `On Data Change` form event in the object method of the *clockValue* variable in the subform.
 
-### Usar o objeto associado ao subformulário
+### Using the subform bound object
 
 4D automatically binds an object (`C_OBJECT`) to each subform. The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
 
@@ -90,18 +90,18 @@ You can modify the labels from the subform by assigning values to the *InvoiceAd
  C_OBJECT($lang)
  $lang:=New object
  If(<>lang="fr")
-    $lang. CompanyName:="Société :"
-    $lang. LastName:="Nom :"
+    $lang.CompanyName:="Société :"
+    $lang.LastName:="Nom :"
  Else
-    $lang. CompanyName:="Company:"
-    $lang. LastName:="Name:"
+    $lang.CompanyName:="Company:"
+    $lang.LastName:="Name:"
  End if
- InvoiceAddress. Label:=$lang
+ InvoiceAddress.Label:=$lang
 ```
 
 ![](../assets/en/FormObjects/subforms5.png)
 
-### Programação entre formulários avançada
+### Advanced inter-form programming
 
 Communication between the parent form and the instances of the subform may require going beyond the exchange of a value through the bound variable. In fact, you may want to update variables in subforms according to the actions carried out in the parent form and vice versa. If we use the previous example of the "dynamic clock" type subform, we may want to set one or more alarm times for each clock.
 
@@ -131,9 +131,9 @@ The code of the event is unrestricted (for example, 20000 or -100). You can use 
 
 For more information, refer to the description of the `CALL SUBFORM CONTAINER` command.
 
-#### Comando EXECUTE METHOD IN SUBFORM
+#### EXECUTE METHOD IN SUBFORM command
 
-The `EXECUTE METHOD IN SUBFORM` command lets a form or one of its objects request the execution of a method in the context of the subform instance, which gives it access to the subform variables, objects, etc. This method can also receive parameters. This method can also receive parameters.
+The `EXECUTE METHOD IN SUBFORM` command lets a form or one of its objects request the execution of a method in the context of the subform instance, which gives it access to the subform variables, objects, etc. This method can also receive parameters.
 
 This mechanism is illustrated in the following diagram:
 
@@ -141,10 +141,10 @@ This mechanism is illustrated in the following diagram:
 
 For more information, refer to the description of the `EXECUTE METHOD IN SUBFORM` command.
 
-#### Comando GOTO OBJECT
+#### GOTO OBJECT command
 
 The `GOTO OBJECT` command looks for the destination object in the parent form even if it is executed from a subform.
 
-## Propriedades compatíveis
+## Supported Properties
 
 [Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Detail Form](properties_Subform.md#detail-form) - [Double click on empty row](properties_Subform.md#double-click-on-empty-row) - [Double click on row](properties_Subform.md#double-click-on-row) - [Enterable in list](properties_Subform.md#enterable-in-list) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Height](properties_CoordinatesAndSizing.md#height) - [Hide focus rectangle](properties_Appearance.md#hide-focus-rectangle) - [Horizontal Scroll Bar](properties_Appearance.md#horizontal-scroll-bar) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [List Form](properties_Subform.md#list-form) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Print Frame](properties_Print.md#print-frame) - [Right](properties_CoordinatesAndSizing.md#right) - [Selection mode](properties_Subform.md#selection-mode) - [Source](properties_Subform.md#source) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Scroll Bar](properties_Appearance.md#vertical-scroll-bar) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
