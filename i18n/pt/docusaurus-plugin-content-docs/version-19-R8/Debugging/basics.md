@@ -82,7 +82,7 @@ The syntax error window proposes several options:
 
 - **Save...**: Saves the contents of the syntax error window and the call chain in a `.txt` file.
 
-## Depurador
+## Debugger
 
 A common beginner mistake in dealing with error detection is to click **Abort** in the Syntax Error Window, go back to the Code Editor, and try to figure out what's going by looking at the code. Não faça isso! You will save plenty of time and energy by always using the **Debugger**.
 
