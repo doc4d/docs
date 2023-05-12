@@ -1,14 +1,14 @@
 ---
 id: commands
-title: Commands
+title: Comandos
 ---
 
-The 4D language contains a large number of built-in commands, allowing the developer to perform a wide range of actions.
+A linguagem 4D contém um grande número de comandos incorporados, permitindo ao programador realizar uma vasta gama de acções.
 
-The 4D commands are divided in two categories:
+Os comandos 4D estão divididos em duas categorias:
 
-- **class functions**, which are APIs of 4D built-in classes. These functions are described in the [Class API Reference](../API/overview) section.
-- **stand-alone commands**, grouped by themes. These commands are described in the *4D Language Reference* on [doc.4d.com](https://doc.4d.com). For reference, they are listed below:
+- **funções de classe**, que são APIs de classes incorporadas 4D. Estas funções estão descritas na secção [Class API Reference](../API/overview).
+- **comandos autónomos**, agrupados por temas. These commands are described in the *4D Language Reference* on [doc.4d.com](https://doc.4d.com). For reference, they are listed below:
 
 [A](#A) - [B](#b) - [C](#c) - [D](#d) - [E](#E) - [F](#F) - [G](#G) - [H](#H) - [I](#I) - [J](#J) - [K](#K) - [L](#L) - [M](#M) - [N](#N) - [O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T) - [U](#U) - [V](#V) - [W](#W) - [X](#X) - [Y](#Y) - [Z](#Z)
 
