@@ -1,55 +1,55 @@
 ---
 id: gettingStarted
-title: Começando
+title: Getting Started
 ---
 
 4D provides you with a powerful REST server, that allows direct access to data stored in your 4D applications.
 
 The REST server is included in 4D and 4D Server, it is automatically available in your 4D applications [once it is configured](configuration.md).
 
-Esta seção tem o objetivo de familiarizar com as funcionalidades REST com um exemplo simples. Nós vamos:
+This section is intended to help familiarize you with REST functionality by means of a simple example. We are going to:
 - create and configure a basic 4D application project
 - access data from the 4D project through REST using a standard browser.
 
-To keep the example simple, we’re going to use 4D and a browser that are running on the same machine. Também poderia usar uma arquitetura remota.
+To keep the example simple, we’re going to use 4D and a browser that are running on the same machine. Of course, you could also use a remote architecture.
 
 
 
 ## Creating and configuring the 4D project
 
-1. Launch your 4D or 4D Server application and create a new project. Pode chamar de "Emp4D", por exemplo.
+1. Launch your 4D or 4D Server application and create a new project. You can name it "Emp4D", for example.
 
-2. No editor de Estrutura, crie uma [Employees] tabela e adicione os campos abaixo:
+2. In the Structure editor, create an [Employees] table and add the following fields to it:
     - Lastname (Alpha)
     - Firstname (Alpha)
     - Salary (Longint)
 
 ![](../assets/en/REST/getstarted1.png)
 
-> A opção "Expor um recurso REST" está marcada por definição para a tabela e cada campo; não mude essa configuração.
+> The "Expose a REST resource" option is checked by default for the table and every field; do not change this setting.
 
-3. Crie formulários depois crie alguns funcionários:
+3. Create forms, then create a few employees:
 
 ![](../assets/en/REST/getstarted2.png)
 
 4. Open the **Web > Web Features** page of the Settings dialog box and [check the Expose as REST server](configuration.md#starting-the-rest-server) option.
 
-5. No menu **Run**, selecione **Start Web Server** (se necessário) então selecione **Test Web Server**.
+5. In the **Run** menu, select **Start Web Server** (if necessary), then select **Test Web Server**.
 
-4D exibe a página home padrão do 4D Web Server.
+4D displays the default home page of the 4D Web Server.
 
 
-## Acessar dados 4D através do navegador
+## Accessing 4D data through the browser
 
-Pode ler e editar dados com 4D apenas através de petições REST.
+You can now read and edit data within 4D only through REST requests.
 
-Qualquer petição 4D Rest URL  inicia com `/ rest`, para ser inserido depois da área `adress:port`. Por exemplo, para ver o que está dentro da 4D Datastore, pode escrever:
+Any 4D REST URL request starts with `/rest`, to be inserted after the `address:port` area. For example, to see what's inside the 4D datastore, you can write:
 
 ```
 http://127.0.0.1/rest/$catalog
 ```
 
-O servidor REST responde:
+The REST server replies:
 
 ```
 {
@@ -64,19 +64,19 @@ O servidor REST responde:
 }
 ```
 
-Significa que a datastore contém a dataclass Employees. Pode ver os atributos de classe de dados digitando:
+It means that the datastore contains the Employees dataclass. You can see the dataclass attributes by typing:
 
 ```
 /rest/$catalog/Employees
 ```
 
-Se quiser obter todas as entidades da classe de dados Employee, pode escrever:
+If you want to get all entities of the Employee dataclass, you write:
 
 ```
 /rest/Employees
 ```
 
-**Responsa:**
+**Response:**
 
 ```
 {
@@ -117,13 +117,13 @@ Se quiser obter todas as entidades da classe de dados Employee, pode escrever:
 }
 ```
 
-Tem muitas possibilidades para filtrar dados a receber. Por exemplo, para obter só o valor de atributo "Lasname" da segunda entidade, pode escrever:
+You have many possibilities to filter data to receive. For example, to get only the "Lastname" attribute value from the 2nd entity, you can just write:
 
 ```
 /rest/Employees(2)/Lastname
 ```
 
-**Responsa:**
+**Response:**
 
 ```
 {
