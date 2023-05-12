@@ -4,7 +4,7 @@
     "description": "The label for version 19"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Começando",
+    "message": "Getting Started",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Project Management": {
@@ -16,7 +16,7 @@
     "description": "The label for category 4D Language Concepts in sidebar docs"
   },
   "sidebar.docs.category.Data Types": {
-    "message": "Tipos de dados",
+    "message": "Data Types",
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.Control Flow": {
@@ -60,7 +60,7 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "Servidor REST",
+    "message": "REST Server",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
@@ -80,7 +80,7 @@
     "description": "The label for category Client/Server in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Formulários",
+    "message": "Forms",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -96,7 +96,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Eventos formulário",
+    "message": "Form Events",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
