@@ -1,10 +1,10 @@
 ---
 id: menu
-title: Menu
+title: Menú
 ---
 
 
-## Associated Menu Bar
+## Barra do menu associada
 
 When a menu bar is associated to a form, it is added to the right of the current menu bar when the form is displayed in Application environment.
 
@@ -15,9 +15,9 @@ The selection of a menu command causes an `On Menu Selected` event to be sent to
 The form menu bar will operate for both input and output forms.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome    | Data Type | Possible Values    |
-| ------- | --------- | ------------------ |
-| menuBar | string    | Name of a menu bar |
+| Nome    | Tipo de dados | Valores possíveis         |
+| ------- | ------------- | ------------------------- |
+| menuBar | string        | Nome de uma barra de menu |
 
