@@ -58,7 +58,7 @@ Read [**What’s new in 4D v19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-
     - support of themes in tables: new [VP SET TABLE THEME](../ViewPro/method-list#vp-set-table-theme) and [VP Get table theme](../ViewPro/method-list#vp-get-table-theme) commands, support of theme options in [VP CREATE TABLE](../ViewPro/method-list#vp-create-table)
     - new [VP Get table dirty rows](../ViewPro/method-list#vp-get-table-dirty-rows) command
 - Comandos de linguagem 4D: [O que é a nova página](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) em doc.4d.com.
-- 4D Write Pro: [Qual é a nova página](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.en.html) em doc.4d.com.
+- 4D Write Pro: [What's new page](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.en.html) on doc.4d.com.
 - [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=19_R8): list of all bugs that have been fixed in 4D v19 R8.
 
 
@@ -178,8 +178,7 @@ $value:=($size>1000)? a:b // Here 'a:b' is viewed as a ternary operator.
 - Handling [optional parameters](../Concepts/parameters#optional-parameters) is more flexible in the 4D language when accessing parameters declared but not passed. For example, the following code no longer provokes an error:
 
 ```4d
-// "concate" function of myClass
-Function concate ($param1 : Text ; $param2 : Text)
+// "concate" function of myClass Function concate ($param1 : Text ; $param2 : Text)
 ALERT($param1+" "+$param2)
   // Calling method
  $class:=cs.myClass.new()
@@ -210,7 +209,7 @@ For detailed information, please refer to [this blog post](https://blog.4d.com/s
 ## 4D v19 R2
 
 - A [default .gitignore file](../Preferences/general#create-gitignore-file) can be created with new projects
-- New [Blob class API](../API/BlobClass) to handle new [`4D.Blob` objects](Concepts/dt_blob#blob-types)
+- New [Blob class API](../API/BlobClass) to handle new [`4D. Blob` objects](Concepts/dt_blob#blob-types)
 - `no-bom` support and new default end-of-line characters in [`.setText()`](../API/FileClass#settext)
 
 
