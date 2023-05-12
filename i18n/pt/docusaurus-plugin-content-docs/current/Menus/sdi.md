@@ -4,7 +4,7 @@ title: Modo SDI em Windows
 ---
 
 
-On Windows, 4D developers can test and configure their 4D merged applications to work as SDI (Single-Document Interface) applications. In SDI applications, each window is independant from others and can have its own menu bar. SDI applications are opposed to MDI (Multiple Documents Interface) applications, where all windows are contained in and depend on the main window.
+SDI applications are opposed to MDI (Multiple Documents Interface) applications, where all windows are contained in and depend on the main window. On Windows, 4D developers can test and configure their 4D merged applications to work as SDI (Single-Document Interface) applications. In SDI applications, each window is independant from others and can have its own menu bar.
 
 :::info
 
@@ -55,7 +55,7 @@ Windows can therefore be used in MDI or SDI modes without having to recalculate 
 - If the **Splash screen** interface option was [selected in the Settings](../settings/interface.md#display-windows), the splash window will contain any menus that would have been displayed in the MDI window. Note also that closing the splash screen window will result in exiting the application, just like in MDI mode.
 - If the Splash screen option was not selected, menus will be displayed in opened windows only, depending on the programmer's choices.
 
-### Depurador
+### Debugger
 
 When displayed in SDI mode, the [debugger window](../Debugging/debugger.md) does not contain [editing buttons](../Debugging/debugger.md#tool-bar-buttons), because switching to development environment requires to abort execution and restart the application in MDI mode.
 
