@@ -10,11 +10,11 @@ Sets the path of the picture that will be drawn in the background of the object.
 
 The pathname to enter is similar as for the [Pathname property for static pictures](properties_Picture.md#pathname).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome                    | Data Type | Possible Values                                                                                              |
-| ----------------------- | --------- | ------------------------------------------------------------------------------------------------------------ |
-| customBackgroundPicture | string    | Relative path in POSIX syntax. Must be used in conjunction with the style property with the "custom" option. |
+| Nome                    | Tipo de dados | Valores possíveis                                                                                            |
+| ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| customBackgroundPicture | string        | Relative path in POSIX syntax. Must be used in conjunction with the style property with the "custom" option. |
 
 #### Objects Supported
 
@@ -26,11 +26,11 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 
 General appearance of the button. The button style also plays a part in the availability of certain options.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome  | Data Type | Possible Values                                                                                                                                                    |
-|:-----:|:---------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| style |   text    | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
+| Nome  | Tipo de dados | Valores possíveis                                                                                                                                                  |
+|:-----:|:-------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| style |     text      | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
 
 #### Objects Supported
 
@@ -50,11 +50,11 @@ This parameter is useful, for example, when the background picture contains bord
 | With 13-pixel margin | ![](../assets/en/FormObjects/property_horizontalMargin2.png) |
 > This property works in conjunction with the [Vertical Margin](#vertical-margin) property.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                         |
-| ------------- | --------- | --------------------------------------- |
-| customBorderX | number    | For use with "custom" style. Minimum: 0 |
+| Nome          | Tipo de dados | Valores possíveis                      |
+| ------------- | ------------- | -------------------------------------- |
+| customBorderX | number        | For use with "custom" style. Mínimo: 0 |
 
 #### Objects Supported
 
@@ -66,11 +66,11 @@ This parameter is useful, for example, when the background picture contains bord
 
 Designates the placement of an icon in relation to the form object.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values         |
-| ------------- | --------- | ----------------------- |
-| iconPlacement | string    | "none", "left", "right" |
+| Nome          | Tipo de dados | Valores possíveis       |
+| ------------- | ------------- | ----------------------- |
+| iconPlacement | string        | "none", "left", "right" |
 
 #### Objects Supported
 
@@ -84,11 +84,11 @@ Sets a custom offset value in pixels, which will be used when the button is clic
 
 The title of the button will be shifted to the right and toward the bottom for the number of pixels entered. This allows applying a customized 3D effect when the button is clicked.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| customOffset | number    | minimum: 0      |
+| Nome         | Tipo de dados | Valores possíveis |
+| ------------ | ------------- | ----------------- |
+| customOffset | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -121,11 +121,11 @@ Each state is represented by a different picture. In the source picture, the sta
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values                                  |
-| ---------- | --------- | ------------------------------------------------ |
-| iconFrames | number    | Number of states in the icon picture. Minimum: 1 |
+| Nome       | Tipo de dados | Valores possíveis                                |
+| ---------- | ------------- | ------------------------------------------------ |
+| iconFrames | number        | Number of states in the icon picture. Minimum: 1 |
 
 #### Objects Supported
 
@@ -141,11 +141,11 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 
 > When used as icon for active objects, the picture must be designed to support a variable [number of states](#number-of-states).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome | Data Type | Possible Values                              |
-| ---- | --------- | -------------------------------------------- |
-| icon | picture   | Relative or filesystem path in POSIX syntax. |
+| Nome | Tipo de dados | Valores possíveis                            |
+| ---- | ------------- | -------------------------------------------- |
+| icon | picture       | Relative or filesystem path in POSIX syntax. |
 
 #### Objects Supported
 
@@ -167,11 +167,11 @@ Here are the results using the various options for this property:
 | **Bottom**   | The text is placed below the icon. The contents of the button are centered.                                                                      | ![](../assets/en/FormObjects/property_titlePosition_bottom.png)   |
 | **Centered** | The text of the icon is centered vertically and horizontally in the button. This parameter is useful, for example, for text included in an icon. | ![](../assets/en/FormObjects/property_titlePosition_centered.png) |
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                            |
-| ------------- | --------- | ------------------------------------------ |
-| textPlacement | string    | "left", "top", "right", "bottom", "center" |
+| Nome          | Tipo de dados | Valores possíveis                          |
+| ------------- | ------------- | ------------------------------------------ |
+| textPlacement | string        | "left", "top", "right", "bottom", "center" |
 
 #### Objects Supported
 
@@ -190,11 +190,11 @@ By default, when a button contains a title and a picture, the elements are joine
 ![](../assets/en/FormObjects/hugs.png)
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values       |
-| -------------- | --------- | --------------------- |
-| imageHugsTitle | boolean   | true (default), false |
+| Nome           | Tipo de dados | Valores possíveis     |
+| -------------- | ------------- | --------------------- |
+| imageHugsTitle | boolean       | true (default), false |
 
 #### Objects Supported
 
@@ -210,11 +210,11 @@ This parameter is useful, for example, when the background picture contains bord
 
 > This property works in conjunction with the [Horizontal Margin](#horizontal-margin) property.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values                         |
-| ------------- | --------- | --------------------------------------- |
-| customBorderY | number    | For use with "custom" style. Minimum: 0 |
+| Nome          | Tipo de dados | Valores possíveis                      |
+| ------------- | ------------- | -------------------------------------- |
+| customBorderY | number        | For use with "custom" style. Mínimo: 0 |
 
 #### Objects Supported
 
@@ -254,11 +254,11 @@ Refer to the [`On Alternative Click` event description](../Events/onAlternativeC
 
 It is important to note that the "With Pop-up Menu" property only manages the graphic aspect of the button. The display of the pop-up menu and its values must be handled entirely by the developer, more particularly using `form events` and the [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page1006.html) and [`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page542.html) commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values                                                             |
-|:-------------- | --------- | --------------------------------------------------------------------------- |
-| popupPlacement | string    | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
+| Nome           | Tipo de dados | Valores possíveis                                                           |
+|:-------------- | ------------- | --------------------------------------------------------------------------- |
+| popupPlacement | string        | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
 
 #### Objects Supported
 
