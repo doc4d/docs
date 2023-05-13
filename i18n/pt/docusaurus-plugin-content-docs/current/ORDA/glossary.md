@@ -9,11 +9,11 @@ title: Glossary
 
 
 
-## Action
+## Ação
 
 Every action that can be done on a [resource](#resource). Available actions are: create, read, update, drop, execute, promote, and describe.
 
-## Attribute
+## Atributo
 
 An attribute is the smallest storage cell in a relational database (see also [Relation attribute](#relation-attribute)). Do not confuse dataclass attributes and entity attributes:
 
@@ -80,7 +80,7 @@ Class for datastore objects, in which you can add custom functions.
 
 Internal name of the generic DataStore class in the `4D` class store.
 
-## Deep copy
+## Cópia profunda
 
 A deep copy duplicates an object and all the references it contains. After a deep copy, a copied collection contains duplicated elements and thus, new references, of all of the orginal elements. See also Shallow copy.
 
@@ -96,7 +96,7 @@ An entity can be seen as an instance of the dataclass, like a record of the tabl
 
 For more information, see Entities.
 
-## Entity selection
+## Seleção de entidades
 
 An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
@@ -123,7 +123,7 @@ Since entities are managed as references, data is loaded only when necessary, i.
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
-## Method
+## Métodos
 
 ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
@@ -135,7 +135,7 @@ $myClass.query("name = smith")
 
 ## Mixed data type
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
+In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Inclui:
 
 *   number
 *   text
@@ -144,7 +144,7 @@ In this documentation, "Mixed" data type is used to designate the various type o
 *   date
 *   object
 *   collection
-*   picture(\*)
+*   imagem(\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
 
@@ -164,7 +164,7 @@ The ability to run one or more [actions](#actions) on [resources](#resource). Se
 ## Propriedade
 
 See [Attribute](#attribute).
-> Attributes and properties are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
+> > Attributes and properties are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
 
 ## PropertyPath
 
@@ -218,7 +218,7 @@ Each time a new session is opened, a license is used. Each time a session is clo
 
 Inactive sessions are automatically closed after a timeout. The default timeout is 48 hours, it can be set by the developer (it must be >= 60 minutes).
 
-## Shallow copy
+## Cópia superficial (Shallow copy)
 
 A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
 
