@@ -1,6 +1,6 @@
 ---
 id: webAdmin
-title: WebAdmin
+title: Web Administration
 ---
 
 
@@ -139,8 +139,8 @@ Exemplo:
 
 ```
 "%HOMEPATH%\Desktop\4D Server.exe" MyApp.4DLink --webadmin-access-key 
-    "my Fabulous AccessKey" --webadmin-auto-start true   
-    --webadmin-store-settings
+ "my Fabulous AccessKey" --webadmin-auto-start true   
+ --webadmin-store-settings
 
 ```
 
