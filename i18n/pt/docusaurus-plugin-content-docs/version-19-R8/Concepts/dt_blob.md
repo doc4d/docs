@@ -3,7 +3,7 @@ id: blob
 title: BLOB
 ---
 
-Um campo, variável ou expressão BLOB (Binary Large OBject) é uma série contígua de bytes que podem ser tratados como um objeto inteiro, ou cujos bytes podem ser abordados individualmente.
+Para passar um BLOB a seus próprios métodos, pode também definir um ponteiro ao BLOB e passar o ponteiro como um parâmetro.
 
 Um BLOB é carregado totalmente na memória. Uma variável BLOB é mantida e existe apenas na memória. Um campo BLOB é carregado na memória desde o disco, como o resto do registro ao que pertence.
 
@@ -28,26 +28,31 @@ Cada tipo de blob tem as suas vantagens. Utilize a tabela seguinte para determin
 
 \*Diferente dos comandos 4D concebidos para tomar uma bolha escalar como parâmetro, passar um blob escalar para um método duplica-o na memória. Ao trabalhar com métodos, a utilização de objectos blob (`4D. Blob`) é mais eficiente, uma vez que são passados por referência.
 
-> Como padrão, 4D estabelece o tamanho blob máximo para 2GB mas esse limite de tamanho pode ser menor dependendo de seu SO e de quanto espaço estiver disponível.
+> Como padrão, 4D estabelece o tamanho blob máximo para 2GB mas esse limite de tamanho pode ser menor dependendo de seu SO e de quanto espaço está disponível.
 
-Não se pode utilizar operadores em blobs.
+Entretanto, nenhum operador pode ser aplicado aos BLOBs.
 
 ## Verificar se uma variável contém um blob escalar ou um `4D. Blob`
 
 Utilizar o comando [Value type](https://doc.4d.com/4dv19R/help/command/en/page1509.html) para determinar se um valor é do tipo Blob ou Objeto. To check that an object is a blob object (`4D. Blob`), use [OB instance of](https://doc.4d.com/4dv19R/help/command/en/page1731.html):
 
 ```4d
-var $myBlob: Blob
-var $myBlobObject: 4D. Blob
-$myBlobObject:=4D. Blob.new()
-
-$type:= Value type($myblobObject) // 38 (object)
-$is4DBlob:= OB Instance of($myblobObject; 4D. Blob)  //True
+` Declare a variable of type BLOB
+ C_BLOB(anyBlobVar)
+  ` The BLOB is passed as parameter to a 4D command
+ SET BLOB SIZE(anyBlobVar;1024*1024)
+  ` The BLOB is passed as parameter to an external routine
+ $errCode:=Do Something With This BLOB(anyBlobVar)
+  ` The BLOB is passed as a parameter to a method that returns a BLOB
+ C_BLOB(retrieveBlob)
+ retrieveBlob:=Fill_Blob(anyBlobVar)
+  ` A pointer to the BLOB is passed as parameter to a user method
+ COMPUTE BLOB(->anyBlobVar)
 ```
 
 ## Passagem de blobs como parâmetros
 
-Blobs escalares e objetos blob podem ser passados como parâmetros para comandos 4D ou rotinas de plug-in que esperam parâmetros de blob.
+Os BLOBs em 4D podem ser passados como parâmetros aos comandos 4D ou às rotinas dos plugins que esperam parâmetros BLOB.
 
 ### Passagem de blobs e objectos blob para comandos 4D
 
@@ -83,10 +88,14 @@ Para passar um blob escalar aos seus próprios métodos sem  duplicar na memóri
 **Exemplos:**
 
 ```4d
-// Declare uma variável do tipo Blob
-var $myBlobVar: Blob
-// Passe o blob como parâmetro para um comando 4D
- SET BLOB SIZE($myBlobVar;1024*1024)
+` Declarar uma variável de tipo BLOB
+ C_BLOB(vBlob)
+  ` Estabelece o tamanho do BLOB para 256 bytes
+ SET BLOB SIZE(vBlob;256)
+  ` O loop abaixo inicia os 256 bytes do BLOB para zero
+ For(vByte;0;BLOB size(vBlob)-1)
+    vBlob{vByte}:=0
+ End for
 ```
 
 ```4d
@@ -113,12 +122,12 @@ var $myBlobVar: Blob
 **Exemplo:**
 
 ```4d
-// Declare duas variáveis do tipo Blob
- var $vBlobA; $vBlobB : Blob
-// Defina o tamanho do primeiro blob para 10K
- SET BLOB SIZE($vBlobA;10*1024)
-// Atribua o primeiro blob ao segundo
- $vBlobB:=$vBlobA
+` Declara duas variáveis de tipo BLOB
+ C_BLOB(vBlobA;vBlobB)
+  ` Estabelece o tamanho do primeiro  BLOB a 10K
+ SET BLOB SIZE(vBlobA;10*1024)
+  ` Atribui o primeiro BLOB ao segundo
+ vBlobB:=vBlobA
 ```
 
 ## Conversão automática do tipo blob
@@ -155,20 +164,13 @@ var $myBlob : Blob SET BLOB SIZE ($myBlob ; 16*1024)
 
 #### Acesso aos bytes de um blob escalar
 
-Pode acessar a bytes individuais de um blob escalar usando chaves `{}`. Dentro de um blob, os bytes são numerados de 0 a N-1, onde N é o tamanho do BLOB:
+Cada byte de um BLOB pode ser dirigido individualmente utilizando os símbolos de colchetes {...}. Dentro de um BLOB, os bytes são numerados de 0 a N-1, onde N é o tamanho do BLOB.
 
 ```4d
-  // Declare uma variável do tipo Blob
- var $vBlob : Blob
-  // Defina o tamanho do blob para 256 bytes
- SET BLOB SIZE($vBlob;256)
-  // O seguinte código faz o loops através do blob para definir cada byte a zero
- For(vByte;0;BLOB size($vBlob)-1)
-    $vBlob{vByte}:=0
- Fim para
+  Pode atribuir BLOBS um para o outro.
 ```
 
-Uma vez que pode abordar todos os bytes de um Blob individualmente, pode armazenar o que quiser numa variável ou campo do Blob.
+Como todos os bytes de um BLOB podem ser direcionados de forma individual, é possível armazenar o que quiser em um campo ou variável BLOB.
 
 #### Acesso a um `4D. Blob`'s bytes
 
