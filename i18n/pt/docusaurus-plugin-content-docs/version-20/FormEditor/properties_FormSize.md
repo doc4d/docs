@@ -19,10 +19,10 @@ Size options depend on the value of the **Size based on** option.
 
 *   **Set Size**: The size of the form will be based on what you enter (in pixels) in the [**Width**](#width) and [**Height**](#height) fields.
 
-*   `<object name>`: The size of the form will be based on the position of the selected form object. For example, if you choose an object that is placed in the bottom-right part of the area to be displayed, the form size will consist of a rectangle whose upper left corner will be the origin of the form and the lower right corner will correspond to that of the selected object, plus any margin values.
+*   `\&#060;object name&#062;`: The size of the form will be based on the position of the selected form object. For example, if you choose an object that is placed in the bottom-right part of the area to be displayed, the form size will consist of a rectangle whose upper left corner will be the origin of the form and the lower right corner will correspond to that of the selected object, plus any margin values.
 
 
-> For output forms, only the [**Hor margin**](#hor-margin) or [**Width**](#width) fields are available.
+> For output forms, only the [**Hor margin**](#hor-margin) or [**Width**](width) fields are available.
 
 
 #### Gramática JSON
