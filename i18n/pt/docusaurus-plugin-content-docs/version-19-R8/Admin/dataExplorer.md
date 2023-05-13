@@ -73,10 +73,10 @@ A página contém várias áreas:
   - É possível reduzir o número de colunas desmarcando os atributos do lado esquerdo. Também pode mudar as colunas da grade de dados utilizando arrastar e soltar. Pode clicar no cabeçalho de uma coluna  para [ordenar entidades](#ordering-entities) de acordo com seus valores (quando for possível).
   - Se uma operação exigir muito tempo, é mostrada uma barra de progresso. Pode deter a operação executando a qualquer momento clicando no botão vermelho:<br/> ![alt-text](../assets/en/Admin/dataExplorer5.png)
 
-- No lado direito de **Details area**: exibe os valores de atributo da entidade atual de seleção assim como **related data**, se houver. Pode navegar entre as entidades da dataclass cliando nos links **First** / **Previous** / **Next** / **Last** na parte inferior da área.
-  - Todos os tipos de atributo são exibidos, incluindo imagens, objetos (expressos como json) assim como atributos[computed](../ORDA/ordaClasses.md#computed-attributes-1) e [alias](../ORDA/ordaClasses.md#alias-attributes-1).
+- On the right side is the **Details area**: it displays the attribute values of the currently selected entity. Pode navegar entre as entidades da dataclass cliando nos links **First** / **Previous** / **Next** / **Last** na parte inferior da área.
+  - All attribute types are displayed, including pictures and objects (expressed in json).
   - Os dados relacionados (relações um a um e um a muitos) podem ser mostradas através de áreas expandíveis/colapsáveis:<br/> ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
-  - **Ctrl+Click** (Windows) ou **Command+Click** (macOS) em um nome de atributo relacionado na área do lado direito mostra os valores do atributo numa área independente e flutuante:<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
+  - no menu **Records**  (em 4D monousuário)<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
 
 ### Atualização de conteúdos
 
