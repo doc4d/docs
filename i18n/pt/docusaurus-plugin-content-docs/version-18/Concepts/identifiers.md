@@ -1,6 +1,6 @@
 ---
 id: identifiers
-title: Identifiers
+title: Identificadores
 ---
 
 This section describes the conventions and rules for naming various elements in the 4D language (variables, tables, objects, forms, etc.).
@@ -10,7 +10,7 @@ This section describes the conventions and rules for naming various elements in 
 The following rules apply for all 4D frameworks.
 
 - A name must begin with an alphabetic character, an underscore, or a dollar ("$") (note that a dollar sign can denote a local element, see below).
-- Thereafter, the name can include alphabetic characters, numeric characters, the space character, and the underscore character ("_").
+- Depois disso, o nome pode incluir caracteres alfabéticos, numéricos, o caractere espaço e o caractere de sublinhado/traço baixo ("_") .
 - Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Commas, slashes, quotation marks, and colons are not allowed.
 - Characters reserved for use as operators, such as * and +, are not allowed.
@@ -70,7 +70,7 @@ If(<>vtName#"")
 
 ## Process Variables
 
-You designate a process variable by using its name (which cannot start with the `<>` symbols nor the dollar sign $). A process variable name can contain up to 31 characters.
+You designate a process variable by using its name (which cannot start with the `<>` symbols nor the dollar sign $). Um nome de variável de processo pode conter até 31 caracteres.
 
 Exemplos:
 
@@ -197,7 +197,7 @@ $value:=$clientObj.data.address.city
 
 **Note:** Additional rules apply to object attribute names (they must conform to the ECMAScript specification). For more information, see [Object property identifiers](Concepts/dt_object.md#object-property-identifiers).
 
-## Forms
+## Formulários
 
 You designate a form by using a string expression that represents its name. A form name can contain up to 31 characters.
 
@@ -221,7 +221,7 @@ OBJECT SET FONT(*;"Binfo";"Times")
 
 **Note:** Do not confuse form objects (buttons, list boxes, variables that can be entered, etc.) and objects in the 4D language. 4D language objects are created and manipulated via object notation or dedicated commands.
 
-## Project methods
+## Métodos projeto
 
 You designate a project method (procedure or function) by using its name. A method name can contain up to 31 characters.
 
@@ -231,26 +231,22 @@ Exemplos:
 
 ```4d
 If(New client)
-DELETE DUPLICATED VALUES
-APPLY TO SELECTION([Employees];INCREASE SALARIES)
+DELETE DUPLICATED VALUES APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ```
 
-**Tip:** It is a good programming technique to adopt the same naming convention as the one used by 4D for built-in methods. Use uppercase characters for naming your methods; however if a method is a function, capitalize the first character of its name. By doing so, when you reopen a database for maintenance after a few months, you will already know if a method returns a result by simply looking at its name in the Explorer window.
+**Dica:** é uma boa técnica de programação adotar a mesma convenção de nomenclatura que a utilizada por 4D para os métodos integrados. Use uppercase characters for naming your methods; however if a method is a function, capitalize the first character of its name. By doing so, when you reopen a database for maintenance after a few months, you will already know if a method returns a result by simply looking at its name in the Explorer window.
 
 **Note:** When you call a method, you just type its name. However, some 4D built-in commands, such as `ON EVENT CALL`, as well as all the Plug-In commands, expect the name of a method as a string when a method parameter is passed. Exemplo:
 
 Exemplos:
 
 ```4d
- //This command expects a method (function) or formula
-QUERY BY FORMULA([aTable];Special query)
- //This command expects a method (procedure) or statement
-APPLY TO SELECTION([Employees];INCREASE SALARIES)
- //But this command expects a method name
-ON EVENT CALL("HANDLE EVENTS")
+ // Este comando espera um método (função) ou fórmula QUERY BY FORMULA([aTable];Special query)
+ // Este comando espera um método (procedimento) ou declaração APPLY TO SELECTION([Employees];INCREASE SALARIES)
+ //Mas este comando espera um nome de método ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Project methods can accept parameters (arguments). The parameters are passed to the method in parentheses, following the name of the method. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. In addition, multiple consecutive (and last) parameters can be addressed with the syntax ${n}where n, numeric expression, is the number of the parameter.
+Project methods can accept parameters (arguments). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. In addition, multiple consecutive (and last) parameters can be addressed with the syntax ${n}where n, numeric expression, is the number of the parameter.
 
 Inside a function, the $0 local variable contains the value to be returned.
 
@@ -386,19 +382,19 @@ The following table summarizes 4D naming conventions.
 | Identifier                   | Max. Length      | Exemplo                            |
 | ---------------------------- | ---------------- | ---------------------------------- |
 | Tabela                       | 31               | [Invoices]                         |
-| Field                        | 31               | [Employees]Last Name               |
+| Campo                        | 31               | [Employees]Last Name               |
 | Interprocess Variable/Array  | `<>` + 31  | `<>vlNextProcessID`          |
 | Process Variable/Array       | 31               | vsCurrentName                      |
 | Local Variable/Array         | $ + 31           | $vlLocalCounter                    |
 | Object attribute             | 255              | $o.myAttribute                     |
 | Formulário                   | 31               | "My Custom Web Input"              |
 | Form object                  | 255              | "MyButton"                         |
-| Project method               | 31               | M_ADD_CUSTOMERS                  |
+| Métodos proyecto             | 31               | M_ADD_CUSTOMERS                  |
 | Plug-in Routine              | 31               | PDF SET ROTATION                   |
 | Interprocess Set             | `<>` + 255 | `"<>Records to be Archived"` |
 | Process Set                  | 255              | "Current selected records"         |
 | Client Set                   | $ + 255          | "$Previous Subjects"               |
-| Named Selection              | 255              | "Employees A to Z"                 |
+| Seleção nomeada              | 255              | "Employees A to Z"                 |
 | Interprocess Named Selection | `<>` + 255 | `"<>Employees Z to A"`       |
 | Local Process                | $ + 255          | "$Follow Events"                   |
 | Global Process               | 255              | "*P_INVOICES_MODULE*"            |
@@ -413,8 +409,8 @@ Be sure to use unique names for the different elements in your database. If a pa
 4D identifies names used in procedures in the following order:
 
 1. Fields
-2. Commands
-3. Methods
+2. Comandos
+3. Página Métodos
 4. Plug-in routines
 5. Predefined constants
 6. Variables.
