@@ -71,7 +71,7 @@ This property is read-only.
 
 
 <!-- REF #WebSocketConnectionClass.send().Params -->
-| Parameter | Tipo                 |    | Descrição                                      |
+| Parâmetro | Tipo                 |    | Descrição                                      |
 | --------- | -------------------- |:--:| ---------------------------------------------- |
 | message   | Text / Blob / Object | -> | The message to send|<!-- END REF -->
 
@@ -79,7 +79,7 @@ This property is read-only.
 
 #### Descrição
 
-The `.send()` function <!-- REF #WebSocketConnectionClass.send().Summary -->sends a *message* to the client<!-- END REF -->.
+A função `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->sends a *message* to the client<!-- END REF -->.
 
 The following contents are sent depending on the *message* type:
 
@@ -115,7 +115,7 @@ This property is read-only.
 
 
 <!-- REF #WebSocketConnectionClass.terminate().Params -->
-| Parameter | Tipo    |    | Descrição                                                                         |
+| Parâmetro | Tipo    |    | Descrição                                                                         |
 | --------- | ------- |:--:| --------------------------------------------------------------------------------- |
 | code      | Integer | -> | Error code sent to the client (must be > 3000, otherwise the message is not sent) |
 | message   | Text    | -> | Error message sent to the client|<!-- END REF -->
