@@ -36,25 +36,25 @@ The following escape sequences can be used within strings:
 
 ## String operators
 
-| Operação             | Syntax           | Retorna  | Expression              | Value    |
-| -------------------- | ---------------- | -------- | ----------------------- | -------- |
-| Concatenação         | String + String  | String   | "abc" + "def"           | "abcdef" |
-| Repetição            | String * Number  | String   | "ab" * 3                | "ababab" |
-| Equality             | String = String  | Booleano | "abc" = "abc"           | True     |
-|                      |                  |          | "abc" = "abd"           | False    |
-| Desigualdade         | String # String  | Booleano | "abc" # "abd"           | True     |
-|                      |                  |          | "abc" # "abc"           | False    |
-| Maior que            | String > String  | Booleano | "abd" > "abc"           | True     |
-|                      |                  |          | "abc" > "abc"           | False    |
-| Menor que            | String < String  | Booleano | "abc" < "abd"           | True     |
-|                      |                  |          | "abc" < "abc"           | False    |
-| Maior ou igual a     | String >= String | Booleano | "abd" >= "abc"          | True     |
-|                      |                  |          | "abc" >= "abd"          | False    |
-| Menor que ou igual a | String <= String | Booleano | "abc" <= "abd"          | True     |
-|                      |                  |          | "abd" <= "abc"          | False    |
-| Contém palavra chave | String % String  | Booleano | "Alpha Bravo" % "Bravo" | True     |
-|                      |                  |          | "Alpha Bravo" % "ravo"  | False    |
-|                      | Picture % String | Booleano | Picture_expr % "Mer"    | True (*) |
+| Operação             | Syntax           | Retorna    | Expression              | Value    |
+| -------------------- | ---------------- | ---------- | ----------------------- | -------- |
+| Concatenação         | String + String  | String     | "abc" + "def"           | "abcdef" |
+| Repetição            | String * Number  | String     | "ab" * 3                | "ababab" |
+| Equality             | String = String  | Parâmetros | "abc" = "abc"           | True     |
+|                      |                  |            | "abc" = "abd"           | False    |
+| Desigualdade         | String # String  | Parâmetros | "abc" # "abd"           | True     |
+|                      |                  |            | "abc" # "abc"           | False    |
+| Maior que            | String > String  | Parâmetros | "abd" > "abc"           | True     |
+|                      |                  |            | "abc" > "abc"           | False    |
+| Menor que            | String < String  | Parâmetros | "abc" < "abd"           | True     |
+|                      |                  |            | "abc" < "abc"           | False    |
+| Maior ou igual a     | String >= String | Parâmetros | "abd" >= "abc"          | True     |
+|                      |                  |            | "abc" >= "abd"          | False    |
+| Menor que ou igual a | String <= String | Parâmetros | "abc" <= "abd"          | True     |
+|                      |                  |            | "abd" <= "abc"          | False    |
+| Contém palavra chave | String % String  | Parâmetros | "Alpha Bravo" % "Bravo" | True     |
+|                      |                  |            | "Alpha Bravo" % "ravo"  | False    |
+|                      | Picture % String | Parâmetros | Picture_expr % "Mer"    | True (*) |
 
 (*) If the keyword "Mer" is associated with the picture stored in the picture expression (field or variable).
 
@@ -142,7 +142,7 @@ Unlike other string comparisons, searching by keywords looks for "words" in "tex
 ```
 > **Notas:**
 > 
-> - 4D uses the ICU library for comparing strings (using `<>=#` operators) and detecting keywords. For more information about the rules implemented, please refer to the following address: <http://www.unicode.org/reports/tr29/#Word_Boundaries>.
+> - 4D uses the ICU library for comparing strings (using `<>=#` operators) and detecting keywords. For more information about the rules implemented, refer to the following address: <http://www.unicode.org/reports/tr29/#Word_Boundaries>.
 > - In the Japanese version, instead of ICU, 4D uses Mecab by default for detecting keywords.
 
 ## Character Reference Symbols
