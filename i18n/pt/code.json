@@ -1,6 +1,6 @@
 {
   "homepage.sections.getting-started.title": {
-    "message": "Getting Started"
+    "message": "Começando"
   },
   "Installation": {
     "message": "Instalação"
@@ -108,7 +108,7 @@
     "message": "Web Development"
   },
   "REST Server": {
-    "message": "REST Server"
+    "message": "Servidor REST"
   },
   "homepage.sections.desktop-applications.title": {
     "message": "Desktop Applications"
@@ -117,7 +117,7 @@
     "message": "Client/Server"
   },
   "Forms": {
-    "message": "Forms"
+    "message": "Formulários"
   },
   "Form Properties": {
     "message": "Form Properties"
@@ -129,7 +129,7 @@
     "message": "Form Object Properties"
   },
   "Form Events": {
-    "message": "Form Events"
+    "message": "Eventos formulário"
   },
   "Menus": {
     "message": "Menus"
@@ -138,7 +138,7 @@
     "message": "User Settings"
   },
   "Build Application": {
-    "message": "Build Application"
+    "message": "Build application overview"
   },
   "homepage.sections.mobile-applications.title": {
     "message": "Mobile Applications"
@@ -554,7 +554,7 @@
     "description": "The title of the tag list page"
   },
   "Release Notes": {
-    "message": "Notas de lançamento"
+    "message": "Notas de Lançamento"
   },
   "homepage.sections.core-development.langage-ref-url": {
     "message": "https://doc.4d.com/4Dv20/4D/20/4D-Language-Reference.100-6237190.en.html"
