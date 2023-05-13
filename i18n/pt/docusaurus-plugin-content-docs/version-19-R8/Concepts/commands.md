@@ -98,7 +98,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`C_TEXT`](https://doc.4d.com/4dv19R/help/command/en/page284.html)                                             | 284    |
 | [`C_TIME`](https://doc.4d.com/4dv19R/help/command/en/page306.html)                                             | 306    |
 | [`C_VARIANT`](https://doc.4d.com/4dv19R/help/command/en/page1683.html)                                         | 1683   |
-| [`Cache info`](https://doc.4d.com/4dv19R/help/command/en/page1402.html)                                        | 1402   |
+| [`Informação de Cache`](https://doc.4d.com/4dv19R/help/command/en/page1402.html)                               | 1402   |
 | [`CALL FORM`](https://doc.4d.com/4dv19R/help/command/en/page1391.html)                                         | 1391   |
 | [`CALL SUBFORM CONTAINER`](https://doc.4d.com/4dv19R/help/command/en/page1086.html)                            | 1086   |
 | [`CALL WORKER`](https://doc.4d.com/4dv19R/help/command/en/page1389.html)                                       | 1389   |
@@ -173,7 +173,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`CREATE THUMBNAIL`](https://doc.4d.com/4dv19R/help/command/en/page679.html)                                   | 679    |
 | [`cs`](https://doc.4d.com/4dv19R/help/command/en/page1710.html)                                                | 1710   |
 | [`Current client authentication`](https://doc.4d.com/4dv19R/help/command/en/page1355.html)                     | 1355   |
-| [`Current date`](https://doc.4d.com/4dv19R/help/command/en/page33.html)                                        | 33     |
+| [`Data actual`](https://doc.4d.com/4dv19R/help/command/en/page33.html)                                         | 33     |
 | [`Current default table`](https://doc.4d.com/4dv19R/help/command/en/page363.html)                              | 363    |
 | [`Current form name`](https://doc.4d.com/4dv19R/help/command/en/page1298.html)                                 | 1298   |
 | [`Current form table`](https://doc.4d.com/4dv19R/help/command/en/page627.html)                                 | 627    |
@@ -184,7 +184,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`Current process`](https://doc.4d.com/4dv19R/help/command/en/page322.html)                                    | 322    |
 | [`Current process name`](https://doc.4d.com/4dv19R/help/command/en/page1392.html)                              | 1392   |
 | [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html)                                | 484    |
-| [`Current time`](https://doc.4d.com/4dv19R/help/command/en/page178.html)                                       | 178    |
+| [`Hora actual`](https://doc.4d.com/4dv19R/help/command/en/page178.html)                                        | 178    |
 | [`Current user`](https://doc.4d.com/4dv19R/help/command/en/page182.html)                                       | 182    |
 | [`CUT NAMED SELECTION`](https://doc.4d.com/4dv19R/help/command/en/page334.html)                                | 334    |
 | <a name="D">**D**</a>                                                                                      |        |
@@ -846,7 +846,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`PLAY`](https://doc.4d.com/4dv19R/help/command/en/page290.html)                                               | 290    |
 | [`PLUGIN LIST`](https://doc.4d.com/4dv19R/help/command/en/page847.html)                                        | 847    |
 | [`POP RECORD`](https://doc.4d.com/4dv19R/help/command/en/page177.html)                                         | 177    |
-| [`Pop up menu`](https://doc.4d.com/4dv19R/help/command/en/page542.html)                                        | 542    |
+| [`Menu pop-up`](https://doc.4d.com/4dv19R/help/command/en/page542.html)                                        | 542    |
 | [`POP3 New transporter`](https://doc.4d.com/4dv19R/help/command/en/page1697.html)                              | 1697   |
 | [`Position`](https://doc.4d.com/4dv19R/help/command/en/page15.html)                                            | 15     |
 | [`POST CLICK`](https://doc.4d.com/4dv19R/help/command/en/page466.html)                                         | 466    |
@@ -1171,7 +1171,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`System folder`](https://doc.4d.com/4dv19R/help/command/en/page487.html)                                      | 487    |
 | <a name="T">**T**</a>                                                                                     |        |
 | [`Tabela`](https://doc.4d.com/4dv19R/help/command/en/page252.html)                                             | 252    |
-| [`Table name`](https://doc.4d.com/4dv19R/help/command/en/page256.html)                                         | 256    |
+| [`Nome da tabela`](https://doc.4d.com/4dv19R/help/command/en/page256.html)                                     | 256    |
 | [`Tan`](https://doc.4d.com/4dv19R/help/command/en/page19.html)                                                 | 19     |
 | [`Temporary folder`](https://doc.4d.com/4dv19R/help/command/en/page486.html)                                   | 486    |
 | [`Test path name`](https://doc.4d.com/4dv19R/help/command/en/page476.html)                                     | 476    |
@@ -1210,7 +1210,7 @@ Os comandos 4D estão divididos em duas categorias:
 | <a name="V">**V**</a>                                                                                     |        |
 | [`Validate password`](https://doc.4d.com/4dv19R/help/command/en/page638.html)                                  | 638    |
 | [`VALIDATE TRANSACTION`](https://doc.4d.com/4dv19R/help/command/en/page240.html)                               | 240    |
-| [`Value type`](https://doc.4d.com/4dv19R/help/command/en/page1509.html)                                        | 1509   |
+| [`Tipo de valor`](https://doc.4d.com/4dv19R/help/command/en/page1509.html)                                     | 1509   |
 | [`VARIABLE TO BLOB`](https://doc.4d.com/4dv19R/help/command/en/page532.html)                                   | 532    |
 | [`VARIABLE TO VARIABLE`](https://doc.4d.com/4dv19R/help/command/en/page635.html)                               | 635    |
 | [`Variance`](https://doc.4d.com/4dv19R/help/command/en/page27.html)                                            | 27     |
