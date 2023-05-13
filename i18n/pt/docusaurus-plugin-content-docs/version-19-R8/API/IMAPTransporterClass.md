@@ -56,7 +56,7 @@ Os objectos do IMAP Transporter são instanciados com o comando [IMAP New Transp
 
 
 <!-- REF #_command_.IMAP New transporter.Params -->
-| Parameter  | Tipo               |    | Descrição                                                                         |
+| Parâmetro  | Tipo               |    | Descrição                                                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------------------------------------- |
 | server     | Objeto             | -> | Informação de servidor de correio                                                 |
 | Resultados | 4D.IMAPTransporter | <- | [Objecto de transporte IMAP](#imap-transporter-object)|<!-- END REF -->
@@ -115,7 +115,7 @@ End if
 
 
 <!-- REF #4D.IMAPTransporter.new().Params -->
-| Parameter  | Tipo               |    | Descrição                                                                         |
+| Parâmetro  | Tipo               |    | Descrição                                                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------------------------------------- |
 | server     | Objeto             | -> | Informação de servidor de correio                                                 |
 | Resultados | 4D.IMAPTransporter | <- | [Objecto de transporte IMAP](#imap-transporter-object)|<!-- END REF -->
@@ -143,7 +143,7 @@ A função `4D.IMAPTransporter.new()` <!-- REF #4D.IMAPTransporter.new().Summary
 
 
 <!-- REF #IMAPTransporterClass.addFlags().Params -->
-| Parameter  | Tipo       |    | Descrição                                                                                                                                                                         |
+| Parâmetro  | Tipo       |    | Descrição                                                                                                                                                                         |
 | ---------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | msgIDs     | Collection | -> | Coleção de strings: IDs únicos de mensagens (texto)<br/>Texto: ID único de uma mensagem<br/>Longint (todos IMAP): Todas as mensagens na caixa de correio seleccionada |
 | keywords   | Objeto     | -> | Flags de palavras chaves a adicionar                                                                                                                                              |
@@ -161,19 +161,19 @@ No parâmetro `msgIDs` , pode passar qualquer um dos dois:
 * o ID único (*texto*) de uma mensagem ou
 * a seguinte constante (*longint*) para todas as mensagens na caixa de correio seleccionada:
 
- | Constante | Value | Comentário                                                     |
- | --------- | ----- | -------------------------------------------------------------- |
- | IMAP all  | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
+ | Parâmetros | Value | Comentário                                                     |
+ | ---------- | ----- | -------------------------------------------------------------- |
+ | IMAP all   | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to add to `msgIDs`. You can pass any of the following keywords:
 
-| Parameter | Tipo     | Descrição                                             |
-| --------- | -------- | ----------------------------------------------------- |
-| $draft    | Booleano | True para adicionar o marcador "draft" na mensagem    |
-| $seen     | Booleano | True para adicionar o marcador "seen" na mensagem     |
-| $flagged  | Booleano | True para adicionar o marcador "flagged" na mensagem  |
-| $answered | Booleano | True para adicionar o marcador "answered" na mensagem |
-| $deleted  | Booleano | True para adicionar o marcador "deleted" na mensagem  |
+| Parâmetro | Tipo       | Descrição                                             |
+| --------- | ---------- | ----------------------------------------------------- |
+| $draft    | Parâmetros | True para adicionar o marcador "draft" na mensagem    |
+| $seen     | Parâmetros | True para adicionar o marcador "seen" na mensagem     |
+| $flagged  | Parâmetros | True para adicionar o marcador "flagged" na mensagem  |
+| $answered | Parâmetros | True para adicionar o marcador "answered" na mensagem |
+| $deleted  | Parâmetros | True para adicionar o marcador "deleted" na mensagem  |
 > * False values are ignored.
 > * A interpretação dos marcadores de palavras-chave pode variar por cliente de correio.
 
@@ -183,7 +183,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -230,7 +230,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 
 <!-- REF #IMAPTransporterClass.append().Params -->
-| Parameter      | Tipo   |    | Descrição                                             |
+| Parâmetro      | Tipo   |    | Descrição                                             |
 | -------------- | ------ |:--:| ----------------------------------------------------- |
 | mailObj        | Objeto | -> | Objeto Email                                          |
 | destinationBox | Text   | -> | Caixa de email que vai receber o objeto Email         |
@@ -256,7 +256,7 @@ No parâmetro opcional `opções` , pode passar um objecto para definir o charse
 
 Charsets possíveis:
 
-| Constante                      | Value                          | Comentário                                                                                                         |
+| Parâmetros                     | Value                          | Comentário                                                                                                         |
 | ------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | mail mode ISO2022JP            | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII se possível, japonês (ISO-2022-JP) & impressora, se possível, caso contrário, UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII se possível, japonês (ISO-2022-JP) & 7-bit se possível, caso contrário, UTF-8 & Quoted-printable</li></ul>                                                                                          |
 | mail mode ISO88591             | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                          |
@@ -269,7 +269,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -342,7 +342,7 @@ A propriedade `.checkConnectionDelay` contém <!-- REF #IMAPTransporterClass.che
 
 
 <!-- REF #IMAPTransporterClass.copy().Params -->
-| Parameter      | Tipo       |    | Descrição                                                       |
+| Parâmetro      | Tipo       |    | Descrição                                                       |
 | -------------- | ---------- |:--:| --------------------------------------------------------------- |
 | msgsIDs        | Collection | -> | Coleção de identificadores únicos de mensagens (strings)        |
 | allMsgs        | Integer    | -> | `IMAP all`: Todas as mensagens na caixa de correio seleccionada |
@@ -368,7 +368,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -443,7 +443,7 @@ Para copiar todas as mensagens na caixa de correio actual:
 
 
 <!-- REF #IMAPTransporterClass.createBox().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                    |
+| Parâmetro  | Tipo   |    | Descrição                                                                    |
 | ---------- | ------ |:--:| ---------------------------------------------------------------------------- |
 | name       | Text   | -> | Nome da nova caixa de correio                                                |
 | Resultados | Objeto | <- | Estado da operação de criação da caixa de correio|<!-- END REF -->
@@ -468,7 +468,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -520,7 +520,7 @@ End if
 
 
 <!-- REF #IMAPTransporterClass.delete().Params -->
-| Parameter  | Tipo       |    | Descrição                                                       |
+| Parâmetro  | Tipo       |    | Descrição                                                       |
 | ---------- | ---------- |:--:| --------------------------------------------------------------- |
 | msgsIDs    | Collection | -> | Coleção de identificadores únicos de mensagens (strings)        |
 | allMsgs    | Integer    | -> | `IMAP all`: Todas as mensagens na caixa de correio seleccionada |
@@ -545,7 +545,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -619,7 +619,7 @@ Para apagar todas as mensagens na caixa de correio actual:
 
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                       |
+| Parâmetro  | Tipo   |    | Descrição                                                                       |
 | ---------- | ------ |:--:| ------------------------------------------------------------------------------- |
 | name       | Text   | -> | Nome da caixa de correio a apagar                                               |
 | Resultados | Objeto | <- | Estado da operação de eliminação da caixa de correio|<!-- END REF -->
@@ -643,7 +643,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -695,7 +695,7 @@ $status:=$transporter.subscribe($name) If ($status.success)
 
 
 <!-- REF IMAPTransporterClass.expunge().Params -->
-| Parameter  | Tipo   |    | Descrição                                                 |
+| Parâmetro  | Tipo   |    | Descrição                                                 |
 | ---------- | ------ |:--:| --------------------------------------------------------- |
 | Resultados | Objeto | <- | Estado da operação de expurgo |<!-- END REF -->
 
@@ -711,7 +711,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -764,7 +764,7 @@ $status:=$transporter.expunge()
 
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
-| Parameter  | Tipo   |    | Descrição                                 |
+| Parâmetro  | Tipo   |    | Descrição                                 |
 | ---------- | ------ |:--:| ----------------------------------------- |
 | name       | Text   | -> | Nome da nova caixa de correio             |
 | Resultados | Objeto | <- | boxInfo object|<!-- END REF -->
@@ -773,7 +773,7 @@ $status:=$transporter.expunge()
 
 #### Descrição
 
-The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->devolve um objeto `boxInfo` correspondente à maibox actual, ou a caixa de correio *nome*<!-- END REF -->. Esta função devolve a mesma informação que [`.selectBox()`](#selectbox) sem alterar a caixa de correio actual.
+A função `.getBoxInfo()` <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->devolve um objeto `boxInfo` correspondente à maibox actual, ou a caixa de correio *nome*<!-- END REF -->. Esta função devolve a mesma informação que [`.selectBox()`](#selectbox) sem alterar a caixa de correio actual.
 
 No parâmetro opcional *nome* , passe o nome da caixa de correio para aceder. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. O delimitador pode ser encontrado com a função [`.getDelimiter()`](#getdelimiter) .
 
@@ -817,7 +817,7 @@ O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
-| Parameter  | Tipo       |    | Descrição                                                         |
+| Parâmetro  | Tipo       |    | Descrição                                                         |
 | ---------- | ---------- |:--:| ----------------------------------------------------------------- |
 | parameters | Objeto     | -> | Parâmetros                                                        |
 | Resultados | Collection | <- | Coleção de objetos da caixa de correio|<!-- END REF -->
@@ -830,9 +830,9 @@ A função `.getBoxList()` <!-- REF #IMAPTransporterClass.getBoxList().Summary -
 
 No parâmetro opcional `` , passe um objeto contendo valores para filtrar as caixas de correio devolvidas. Pode passar:
 
-| Propriedade  | Tipo     | Descrição                                            |
-| ------------ | -------- | ---------------------------------------------------- |
-| isSubscribed | Booleano | <li>**True*** para devolver apenas caixas de correio inscritas</li><li> **False*** para devolver todas as caixas de correio disponíveis</li> |
+| Propriedade  | Tipo       | Descrição                                            |
+| ------------ | ---------- | ---------------------------------------------------- |
+| isSubscribed | Parâmetros | <li>**True*** para devolver apenas caixas de correio inscritas</li><li> **False*** para devolver todas as caixas de correio disponíveis</li> |
 
 #### Resultados
 
@@ -882,7 +882,7 @@ Se a conta não contiver quaisquer caixas de correio, é devolvida uma colecçã
 
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
-| Parameter  | Tipo |    | Descrição                                                    |
+| Parâmetro  | Tipo |    | Descrição                                                    |
 | ---------- | ---- |:--:| ------------------------------------------------------------ |
 | Resultados | Text | <- | Carácter delimitador da hierarquia<!-- END REF -->
 
@@ -936,7 +936,7 @@ Carácter delimitador do nome da caixa de correio.
 
 
 <!-- REF #IMAPTransporterClass.getMail().Params -->
-| Parameter  | Tipo    |    | Descrição                                                                    |
+| Parâmetro  | Tipo    |    | Descrição                                                                    |
 | ---------- | ------- |:--:| ---------------------------------------------------------------------------- |
 | msgNumber  | Integer | -> | Número sequencial da mensagem                                                |
 | msgID      | Text    | -> | ID única da mensagem                                                         |
@@ -947,7 +947,7 @@ Carácter delimitador do nome da caixa de correio.
 
 #### Descrição
 
-The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->A função `.getMail()`<!-- END REF -->. This function allows you to locally handle the email contents.
+A função `.getMail()` <!-- REF #IMAPTransporterClass.getMail().Summary -->A função `.getMail()`<!-- END REF -->. Essa função permite manejar localmente os conteúdos de email.
 
 No primeiro parâmetro, pode passar qualquer um dos dois:
 
@@ -1010,7 +1010,7 @@ Se quiser receber uma mensagem com ID = 1:
 
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Parameter  | Tipo       |    | Descrição                                                                         |
+| Parâmetro  | Tipo       |    | Descrição                                                                         |
 | ---------- | ---------- |:--:| --------------------------------------------------------------------------------- |
 | ids        | Collection | -> | Colecção de identificação da mensagem                                             |
 | startMsg   | Integer    | -> | Número sequencial da primeira mensagem                                            |
@@ -1048,10 +1048,10 @@ O parâmetro opcional *opções* permite definir as partes das mensagens a serem
 
 **Options**
 
-| Propriedade | Tipo     | Descrição                                                                                                                                                           |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen  | Booleano | Se Verdadeiro, as mensagens especificadas são marcadas como "vistas" na caixa de correio. Se falso, as mensagens não são marcadas como "vistas". Valor padrão: True |
-| withBody    | Booleano | Pass True para devolver o corpo das mensagens especificadas. Se falso, apenas os cabeçalhos das mensagens são devolvidos. Valor padrão: True                        |
+| Propriedade | Tipo       | Descrição                                                                                                                                                           |
+| ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen  | Parâmetros | Se Verdadeiro, as mensagens especificadas são marcadas como "vistas" na caixa de correio. Se falso, as mensagens não são marcadas como "vistas". Valor padrão: True |
+| withBody    | Parâmetros | Pass True para devolver o corpo das mensagens especificadas. Se falso, apenas os cabeçalhos das mensagens são devolvidos. Valor padrão: True                        |
 > * Se nenhuma caixa de correio for seleccionada com o comando [`.selectBox()`](#selectbox), é gerado um erro.
 > * Se não houver uma ligação aberta, `.getMails()` abrirá uma ligação a última caixa de correio especificada com [`.selectBox()`](#selectbox).
 
@@ -1111,18 +1111,18 @@ Se quiser recuperar os 20 e-mails mais recentes sem alterar o seu estatuto de "v
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Parameter  | Tipo     |    | Descrição                                                                                                 |
-| ---------- | -------- |:--:| --------------------------------------------------------------------------------------------------------- |
-| msgNumber  | Integer  | -> | Número sequencial da mensagem                                                                             |
-| msgID      | Text     | -> | ID única da mensagem                                                                                      |
-| updateSeen | Booleano | -> | Se Verdadeiro, a mensagem é marcada "visto" na caixa de correio. Se Falso, a mensagem é deixada intocada. |
-| Resultados | BLOB     | <- | Blob da string MIME retornado do servidor mail|<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                                                                 |
+| ---------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------- |
+| msgNumber  | Integer    | -> | Número sequencial da mensagem                                                                             |
+| msgID      | Text       | -> | ID única da mensagem                                                                                      |
+| updateSeen | Parâmetros | -> | Se Verdadeiro, a mensagem é marcada "visto" na caixa de correio. Se Falso, a mensagem é deixada intocada. |
+| Resultados | BLOB       | <- | Blob da string MIME retornado do servidor mail|<!-- END REF -->
 
 |
 
 #### Descrição
 
-The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->copia as mensagens definidas por *msgsIDs* ou *allMsgs* para a Caixa de destino ** no servidor IMAP<!-- END REF -->.
+A função `.getMIMEAsBlob()` <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->copia as mensagens definidas por *msgsIDs* ou *allMsgs* para a Caixa de destino ** no servidor IMAP<!-- END REF -->.
 
 No primeiro parâmetro, pode passar qualquer um dos dois:
 
@@ -1186,7 +1186,7 @@ O parâmetro opcional *updateSeen* permite-lhe especificar se a mensagem está m
 
 
 <!-- REF #IMAPTransporterClass.move().Params -->
-| Parameter      | Tipo       |    | Descrição                                                       |
+| Parâmetro      | Tipo       |    | Descrição                                                       |
 | -------------- | ---------- |:--:| --------------------------------------------------------------- |
 | msgsIDs        | Collection | -> | Coleção de identificadores únicos de mensagens (strings)        |
 | allMsgs        | Integer    | -> | `IMAP all`: Todas as mensagens na caixa de correio seleccionada |
@@ -1214,7 +1214,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -1288,7 +1288,7 @@ Para mover todas as mensagens na mailbox atual:
 
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Parameter  | Tipo       |    | Descrição                                                    |
+| Parâmetro  | Tipo       |    | Descrição                                                    |
 | ---------- | ---------- |:--:| ------------------------------------------------------------ |
 | startMsg   | Integer    | -> | Número sequencial da primeira mensagem                       |
 | endMsg     | Integer    | -> | Número sequencial da última mensagem                         |
@@ -1350,7 +1350,7 @@ A função devolve uma colecção de cordas (identificações únicas).
 
 
 <!-- REF #IMAPTransporterClass.removeFlags().Params -->
-| Parameter  | Tipo       |    | Descrição                                                                                                                                                                         |
+| Parâmetro  | Tipo       |    | Descrição                                                                                                                                                                         |
 | ---------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | msgIDs     | Collection | -> | Coleção de strings: IDs únicos de mensagens (texto)<br/>Texto: ID único de uma mensagem<br/>Longint (todos IMAP): Todas as mensagens na caixa de correio seleccionada |
 | keywords   | Objeto     | -> | Flags de palavras-chave a remover                                                                                                                                                 |
@@ -1368,19 +1368,19 @@ No parâmetro `msgIDs` , pode passar qualquer um dos dois:
 * o ID único (*texto*) de uma mensagem ou
 * a seguinte constante (*longint*) para todas as mensagens na caixa de correio seleccionada:
 
- | Constante | Value | Comentário                                                     |
- | --------- | ----- | -------------------------------------------------------------- |
- | IMAP all  | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
+ | Parâmetros | Value | Comentário                                                     |
+ | ---------- | ----- | -------------------------------------------------------------- |
+ | IMAP all   | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
 
-| Parameter | Tipo     | Descrição                                       |
-| --------- | -------- | ----------------------------------------------- |
-| $draft    | Booleano | True para remover o flag "draft" na mensagem    |
-| $seen     | Booleano | True para remover a flag "seen" na mensagem     |
-| $flagged  | Booleano | True para remover a flag "flagged" na mensagem  |
-| $answered | Booleano | True para remover a flag "answered" na mensagem |
-| $deleted  | Booleano | True para remover a flag "deleted" na mensagem  |
+| Parâmetro | Tipo       | Descrição                                       |
+| --------- | ---------- | ----------------------------------------------- |
+| $draft    | Parâmetros | True para remover o flag "draft" na mensagem    |
+| $seen     | Parâmetros | True para remover a flag "seen" na mensagem     |
+| $flagged  | Parâmetros | True para remover a flag "flagged" na mensagem  |
+| $answered | Parâmetros | True para remover a flag "answered" na mensagem |
+| $deleted  | Parâmetros | True para remover a flag "deleted" na mensagem  |
 
 Note that False values are ignored.
 
@@ -1390,7 +1390,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -1437,7 +1437,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 
 <!-- REF #IMAPTransporterClass.renameBox().Params -->
-| Parameter   | Tipo   |    | Descrição                                                     |
+| Parâmetro   | Tipo   |    | Descrição                                                     |
 | ----------- | ------ |:--:| ------------------------------------------------------------- |
 | currentName | Text   | -> | Nome da caixa de correio actual                               |
 | newName     | Text   | -> | Nome da nova caixa de correio                                 |
@@ -1459,7 +1459,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -1514,7 +1514,7 @@ var $server,$boxInfo,$result : Object
 
 
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
-| Parameter      | Tipo       |    | Descrição                                                  |
+| Parâmetro      | Tipo       |    | Descrição                                                  |
 | -------------- | ---------- |:--:| ---------------------------------------------------------- |
 | searchCriteria | Text       | -> | Critérios de pesquisa                                      |
 | Resultados     | Collection | <- | Coleção de números de mensagens|<!-- END REF -->
@@ -1649,7 +1649,7 @@ As chaves de pesquisa podem solicitar o valor a pesquisar:
 
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Parameter  | Tipo    |    | Descrição                                 |
+| Parâmetro  | Tipo    |    | Descrição                                 |
 | ---------- | ------- |:--:| ----------------------------------------- |
 | name       | Text    | -> | Nome da nova caixa de correio             |
 | state      | Integer | -> | Estado de acesso à caixa de correio       |
@@ -1659,14 +1659,14 @@ As chaves de pesquisa podem solicitar o valor a pesquisar:
 
 #### Descrição
 
-selecciona a caixa de correio *name* como a caixa de correio actual <!-- REF #IMAPTransporterClass.selectBox().Summary -->A função `.selectBox()`<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+selecciona a caixa de correio *name* como a caixa de correio actual <!-- REF #IMAPTransporterClass.selectBox().Summary -->A função `.selectBox()`<!-- END REF -->. Essa função permite que recupere informação sobre o mailbox.
 > Para obter as informações de uma caixa de correio sem alterar a caixa de correio actual, utilize [`.getBoxInfo()`](#getboxinfo).
 
 No parâmetro *name*, passar o nome da caixa de correio para aceder. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. O delimitador pode ser encontrado com a função [`.getDelimiter()`](#getdelimiter) .
 
 O parâmetro opcional *state* define o tipo de acesso à caixa de correio. Os valores possíveis são:
 
-| Constante             | Value | Comentário                                                                                                                                                                                       |
+| Parâmetros            | Value | Comentário                                                                                                                                                                                       |
 | --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | IMAP read only state  | 1     | A caixa de correio seleccionada é acedida com privilégios apenas de leitura. As mensagens com uma flag "recente" (indicando novas mensagens) permanecem inalteradas.                             |
 | IMAP read write state | 0     | A caixa de correio seleccionada é acedida com privilégios de leitura e escrita. As mensagens são consideradas "vistas" e perdem o marcador "recente" (indicando novas mensagens). (Valor padrão) |
@@ -1715,7 +1715,7 @@ O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
-| Parameter  | Tipo   |    | Descrição                                                   |
+| Parâmetro  | Tipo   |    | Descrição                                                   |
 | ---------- | ------ |:--:| ----------------------------------------------------------- |
 | name       | Text   | -> | Nome da nova caixa de correio                               |
 | Resultados | Objeto | <- | Estado da operação de subscrição|<!-- END REF -->
@@ -1734,7 +1734,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
@@ -1787,7 +1787,7 @@ End if
 
 
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
-| Parameter  | Tipo   |    | Descrição                                                 |
+| Parâmetro  | Tipo   |    | Descrição                                                 |
 | ---------- | ------ |:--:| --------------------------------------------------------- |
 | name       | Text   | -> | Nome da nova caixa de correio                             |
 | Resultados | Objeto | <- | Estado da operação unsubscribe|<!-- END REF -->
@@ -1806,7 +1806,7 @@ A função devolve um objecto que descreve o estado IMAP:
 
 | Propriedade |                         | Tipo       | Descrição                                                                                      |
 | ----------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------------- |
-| success     |                         | Booleano   | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
+| success     |                         | Parâmetros | Verdadeiro se a operação for bem sucedida, Falso caso contrário                                |
 | statusText  |                         | Text       | Mensagem de estado devolvida pelo servidor IMAP, ou último erro devolvido na pilha de erros 4D |
 | errors      |                         | Collection | pilha de erros 4D (não devolvida se for recebida uma resposta do servidor IMAP)                |
 |             | \[].errcode            | Número     | Código de erro 4D                                                                              |
