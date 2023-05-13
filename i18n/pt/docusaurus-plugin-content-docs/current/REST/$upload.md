@@ -10,15 +10,15 @@ Returns an ID of the file uploaded to the server
 
 Post this request when you have a file that you want to upload to the Server. If you have an image, you pass `$rawPict=true`. For all other files, you pass `$binary=true`.
 
-You can modify the timeout, which by default is 120 seconds, by passing a value to the `$timeout` parameter.
+You can modify the timeout, which by default is 120 seconds, by passing a value to the `$timeout parameter`.
 
 ## Uploading scenario
 
 Imagine you want to upload an image to update the picture attribute of an entity.
 
-To upload an image (or any binary file), you must first select the file from the client application. The file itlself must be passed in the **body** of the request.
+To upload an image, you must first select the file object on the client using the HTML 5 built-in API for using file from a web application. **Resultadoi**:
 
-Then, you upload the selected image to 4D Server using a request such as:
+Then, we upload the selected image to 4D Server:
 
  `POST  /rest/$upload?$rawPict=true`
 
@@ -28,7 +28,7 @@ As a result, the server returns an ID that identifies the file:
 
 `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50" }`
 
-Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity. The request looks like:
+Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity: The request looks like:
 
  `POST  /rest/Employee/?$method=update`
 
@@ -72,23 +72,16 @@ The following example shows how to upload a *.pdf* file to the server using the 
 var $params : Text
 var $response : Object
 var $result : Integer
-var $blob : Blob
-
-
-ARRAY TEXT($headerNames; 1)
+var $blob : Blob ARRAY TEXT($headerNames; 1)
 ARRAY TEXT($headerValues; 1)
 
 $url:="localhost:80/rest/$upload?$binary=true" //prepare the REST request
 
 $headerNames{1}:="Content-Type"
-$headerValues{1}:="application/octet-stream"
-
-DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) //Load the binary 
+$headerValues{1}:="application/octet-stream" DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) //Load the binary 
 
  //Execute the first POST request to upload the file
-$result:=HTTP Request(HTTP POST method; $url; $blob; $response; $headerNames; $headerValues)
-
-If ($result=200) 
+$result:=HTTP Request(HTTP POST method; $url; $blob; $response; $headerNames; $headerValues) If ($result=200) 
     var $data : Object
     $data:=New object
     $data.__KEY:="3"
