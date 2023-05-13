@@ -153,7 +153,7 @@ $c:=a+b
 
     O valor da variável `$b` é agora 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
-#### Variáveis
+#### Variáveis.
 
 This theme is composed of the following subthemes:
 
@@ -183,7 +183,7 @@ This theme contains the name of each dynamic object included in the current form
 
 Some objects, such as list box arrays, can be presented as two distinct objects, the variable of the object itself and its data source.
 
-#### Constants
+#### Constantes
 
 Like the Constants page of the Explorer window, this theme displays predefined constants provided by 4D. The expressions from this theme cannot be modified.
 
@@ -195,7 +195,7 @@ This theme lists the local semaphores currently being set. For each semaphore, t
 
 This theme lists the processes started since the beginning of the working session. The value column displays the time used and the current state for each process (i.e., Executing, Paused, and so on). The expressions from this theme cannot be modified.
 
-#### Tabelas e Campos
+#### Tabela
 
 This theme lists the tables and fields in the 4D database. For each Table item, the Value column displays the size of the current selection for the current process as well as the number of **locked records**.
 
