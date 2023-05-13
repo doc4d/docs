@@ -110,7 +110,7 @@ WebSocket server objects provide the following properties and functions:
 
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| Parameter                           | Tipo               |    | Descrição                                                         |
+| Parâmetro                           | Tipo               |    | Descrição                                                         |
 | ----------------------------------- | ------------------ |:--:| ----------------------------------------------------------------- |
 | [WSSHandler](#wsshandler-parameter) | Objeto             | -> | Object of the user class declaring the WebSocket Server callbacks |
 | [options](#options-parameter)       | Objeto             | -> | WebSocket configuration parameters                                |
@@ -141,7 +141,7 @@ In the *WSSHandler* parameter, pass an instance of a user class that will be cal
 
 **WSHandler.onConnection**(*WSServer* : Object ; *param* : Object) : Object | null
 
-| Parameter       |         | Tipo               |    | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Parâmetro       |         | Tipo               |    | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------- | ------- | ------------------ |:--:| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | WSServer        |         | 4D.WebSocketServer | <- | Current WebSocket server object                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | param           |         | Objeto             | <- | Parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -154,7 +154,7 @@ This callback is called when the handshake is complete. It must be called with a
 
 **WSHandler.onOpen**(*WSServer* : Object ; *param* : Object)
 
-| Parameter |      | Tipo               |    | Descrição                       |
+| Parâmetro |      | Tipo               |    | Descrição                       |
 | --------- | ---- | ------------------ |:--:| ------------------------------- |
 | WSServer  |      | 4D.WebSocketServer | <- | Current WebSocket server object |
 | param     |      | Objeto             | <- | Parameters                      |
@@ -165,7 +165,7 @@ Event emitted when the websocket server is started.
 
 **WSHandler.onTerminate**(*WSServer* : Object ; *param* : Object)
 
-| Parameter |      | Tipo               |    | Descrição                       |
+| Parâmetro |      | Tipo               |    | Descrição                       |
 | --------- | ---- | ------------------ |:--:| ------------------------------- |
 | WSServer  |      | 4D.WebSocketServer | <- | Current WebSocket server object |
 | param     |      | Objeto             | <- | Parameters                      |
@@ -176,7 +176,7 @@ Event emitted when the HTTP server or the WebSocket server is closed.
 
 **WSHandler.onError**(*WSServer* : Object ; *param* : Object)
 
-| Parameter |            | Tipo               |    | Descrição                                                                                                                          |
+| Parâmetro |            | Tipo               |    | Descrição                                                                                                                          |
 | --------- | ---------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------- |
 | WSServer  |            | 4D.WebSocketServer | <- | Current WebSocket server object                                                                                                    |
 | param     |            | Objeto             | <- | Parameters                                                                                                                         |
@@ -223,7 +223,7 @@ LogFile("!!! Server error: "+$param.statusText)
 
 A `request` object contains the following properties:
 
-| Parameter     | Tipo   | Descrição                                                                                                                                           |
+| Parâmetro     | Tipo   | Descrição                                                                                                                                           |
 | ------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | headers       | Objeto | The client HTTP GET request. `headers.key=value` (value can be a collection if the same key appears multiple times)                                 |
 | query         | Objeto | Object that contains the URL parameters. For example, if parameters are: `?key1=value1&key2=value2` -> `query.key1=value1`, `query.key2=value2` |
@@ -235,7 +235,7 @@ A `request` object contains the following properties:
 
 As a result of the `WSHandler.onConnection` callback, pass a `connectionHandler` object, which is an instance of a user class that will be called every time an event occurs in the WebSocket connection --essentially, messages received. The class should define the following callback functions (only `onMessage` is mandatory):
 
-| Parameter   | Tipo                         | Descrição                                                                       |
+| Parâmetro   | Tipo                         | Descrição                                                                       |
 | ----------- | ---------------------------- | ------------------------------------------------------------------------------- |
 | onMessage   | [Function](FunctionClass.md) | (mandatory) Function called when a new message is received from this connection |
 | onOpen      | [Function](FunctionClass.md) | Function called when the `4D.WebSocketConnection` is created                    |
@@ -245,7 +245,7 @@ As a result of the `WSHandler.onConnection` callback, pass a `connectionHandler`
 
 **connectionHandler.onMessage**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parameter |      | Tipo                                                    |    | Descrição                           |
+| Parâmetro |      | Tipo                                                    |    | Descrição                           |
 | --------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
 | ws        |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
 | param     |      | Objeto                                                  | <- | Parameters                          |
@@ -257,7 +257,7 @@ This Callback for WebSocket data. Called each time the WebSocket receives data.
 
 **connectionHandler.onOpen**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parameter |      | Tipo                                                    |    | Descrição                           |
+| Parâmetro |      | Tipo                                                    |    | Descrição                           |
 | --------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
 | ws        |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
 | param     |      | Objeto                                                  | <- | Parameters                          |
@@ -268,7 +268,7 @@ Called when the `connectionHandler` object is created (after `WSS.onConnection` 
 
 **connectionHandler.onTerminate**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parameter |        | Tipo                                                    |    | Descrição                                                                                                                                                                               |
+| Parâmetro |        | Tipo                                                    |    | Descrição                                                                                                                                                                               |
 | --------- | ------ | ------------------------------------------------------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ws        |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                                                                     |
 | param     |        | Objeto                                                  | <- | Parameters                                                                                                                                                                              |
@@ -280,7 +280,7 @@ Function called when the WebSocket is closed.
 
 **connectionHandler.onError**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parameter |        |        | Tipo                                                    |    | Descrição                                                                                                                           |
+| Parâmetro |        |        | Tipo                                                    |    | Descrição                                                                                                                           |
 | --------- | ------ | ------ | ------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------------------------- |
 | ws        |        |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                 |
 | param     |        |        | Objeto                                                  | <- | Parameters                                                                                                                          |
@@ -394,7 +394,7 @@ This property is read-only.
 
 
 <!-- REF #WebSocketServerClass.terminate().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |::| ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
