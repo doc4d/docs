@@ -1,17 +1,17 @@
 ---
 id: shapesOverview
-title: Shapes
+title: Formas
 ---
 
 Shapes are [static objects](formObjects_overview.md#active-and-static-objects) that can be added to 4D forms.
 
 4D forms support the following basic shapes:
 
-- rectangles
-- lines
+- retângulos
+- linhas
 - ovals
 
-## Rectangle
+## Retângulo
 
 A static rectangle is a decorative object for forms. Rectangles are constrained to squared shapes.
 
@@ -19,7 +19,7 @@ The design of rectangles is controlled through many properties (color, line thic
 
 ![](../assets/en/FormObjects/shapes_rectangle2.png)
 
-#### JSON Example
+#### JSON Exemplo
 
 ```4d
  "myRectangle": {
@@ -32,17 +32,17 @@ The design of rectangles is controlled through many properties (color, line thic
                 }
 ```
 
-#### Supported Properties
+#### Propriedades compatíveis
 
 [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Corner radius](properties_CoordinatesAndSizing.md#corner-radius) - [Dotted Line Type](properties_BackgroundAndBorder.md#dotted-line-type) - [Fill Color](properties_BackgroundAndBorder.md#background-color-fill-color) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Line Color](properties_BackgroundAndBorder.md#line-color) - [Line Width](properties_BackgroundAndBorder.md#line-width) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
-## Line
+## Linha
 
 A static line is a decorative object for forms, drawn between two plots. Lines can be horizontal, vertical, or of any angle shapes.
 
 The design of lines is controlled through many properties (color, line thickness, etc.).
 
-### startPoint property
+### propriedade startPoint
 
 The `startPoint` JSON property defines from which coordinate to draw the line (see example).
 
@@ -78,7 +78,7 @@ Result: ![](../assets/en/FormObjects/shape_line1.png)
 
 Result: ![](../assets/en/FormObjects/shape_line2.png)
 
-#### Supported Properties
+#### Propriedades compatíveis
 
 [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Dotted Line Type](properties_BackgroundAndBorder.md#dotted-line-type) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Line Color](properties_BackgroundAndBorder.md#line-color) - [Line Width](properties_BackgroundAndBorder.md#line-width) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [startPoint](#startpoint-property) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
@@ -88,7 +88,7 @@ A static oval is a decorative object for forms. Oval objects can be used to draw
 
 ![](../assets/en/FormObjects/shape_oval.png)
 
-#### JSON Example
+#### JSON Exemplo
 
 ```4d
  "myOval": {
@@ -101,6 +101,6 @@ A static oval is a decorative object for forms. Oval objects can be used to draw
                 }
 ```
 
-#### Supported Properties
+#### Propriedades compatíveis
 
 [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Dotted Line Type](properties_BackgroundAndBorder.md#dotted-line-type) - [Fill Color](properties_BackgroundAndBorder.md#background-color-fill-color) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Line Color](properties_BackgroundAndBorder.md#line-color) - [Line Width](properties_BackgroundAndBorder.md#line-width) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
