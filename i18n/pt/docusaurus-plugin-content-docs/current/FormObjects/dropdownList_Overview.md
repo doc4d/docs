@@ -1,11 +1,11 @@
 ---
 id: dropdownListOverview
-title: Drop-down List
+title: Lista suspensa ou drop down
 ---
 
-Drop-down lists are form objects that allow the user to select from a list. You manage the items displayed in the drop-down list using an object, an array, a choice list, or a standard action.
+Listas drop-down são objetos que permitem que os usuários selecionem de uma lista. Gerenciar os itens exibidos na lista drop down usando um array, uma lista de escolha ou uma ação padrão.
 
-On macOS, drop-down lists are also sometimes called "pop-up menu". Both names refer to the same objects. As the following example shows, the appearance of these objects can differ slightly according to the platform:
+Em macOS, listas drop down são também chamadas de "menu pop up" Ambos os nomes referem aos mesmos objetos. Ambos os nomes referem aos mesmos objetos. Como no exemplo abaixo, a aparência desses objetos podem diferenciar levemente de acordo com a plataforma:
 
 ![](../assets/en/FormObjects/popupDropdown_appearance.png)
 
@@ -13,18 +13,18 @@ On macOS, drop-down lists are also sometimes called "pop-up menu". Both names re
 
 You can create different types of drop-down lists with different features. To define a type, select the appropriate **Expression Type** and **Data Type** values in the Property list, or use their JSON equivalent.
 
-| Tipo                           | Features                                         | Expression Type | Data Type                    | JSON definition                                                                                                                                               |
-| ------------------------------ | ------------------------------------------------ | --------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Objeto                         | Built upon a collection                          | Objeto          | Numeric, Text, Date, or Time | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
-| Array                          | Built upon an array                              | Array           | Numeric, Text, Date, or Time | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
-| Choice list saved as value     | Built upon a choice list (standard)              | List            | Selected item value          | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
-| Choice list saved as reference | Built upon a choice list. Item position is saved | List            | Selected item reference      | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
-| Hierarchical choice list       | Can display hierarchical contents                | List            | List reference               | `dataSourceTypeHint: integer`                                                                                                                                 |
-| Standard action                | Automatically built by the action                | *any*           | *any except List reference*  | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
+| Tipo                       | Funcionalidades                                  | Tipo de expressão | Tipo de dados                | JSON definition                                                                                                                                               |
+| -------------------------- | ------------------------------------------------ | ----------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Objeto                     | Built upon a collection                          | Objeto            | Numeric, Text, Date, ou Time | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
+| Array                      | Built upon an array                              | Array             | Numeric, Text, Date, ou Time | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
+| Choice list saved as value | Built upon a choice list (standard)              | Lista             | Selected item value          | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
+| Salvar como                | Built upon a choice list. Item position is saved | Lista             | Selected item reference      | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
+| Hierarchical choice list   | Can display hierarchical contents                | Lista             | Referência da lista          | `dataSourceTypeHint: integer`                                                                                                                                 |
+| Ação padrão                | Automatically built by the action                | *any*             | *any except List reference*  | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
 
 ## Handling drop-down lists
 
-### Using an object
+### Utilização de um objecto
 
 > This feature is only available in 4D projects.
 
@@ -32,25 +32,21 @@ An [object](Concepts/dt_object.md) encapsulating a [collection](Concepts/dt_coll
 
 | Propriedade    | Tipo               | Descrição                                                                                                                                                                                                                                              |
 | -------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `values`       | Collection         | Mandatory - Collection of scalar values. All values must be of the same type. Supported types:<li>strings</li><li>números</li><li>datas</li><li>times</li>If empty or not defined, the drop-down list is empty |
+| `values`       | Collection         | Mandatory - Collection of scalar values. All values must be of the same type. Supported types:<li>strings</li><li>números</li><li>datas</li><li>horas</li>If empty or not defined, the drop-down list is empty |
 | `index`        | number             | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                                                                   |
 | `currentValue` | same as Collection | Currently selected item (used as placeholder value if set by code)                                                                                                                                                                                     |
 
 If the object contains other properties, they are ignored.
 
-To initialize the object associated to the drop-down list, you can:
+Objetos lista drop down são iniciados ao carregar uma lista de valores em um array. Pode fazer isso de várias maneiras:
 
 * Enter a list of default values in the object properties by selecting `\&#060;Static List&#062;` in the [Data Source](properties_DataSource.md) theme of the Property List. The default values are loaded into an object automatically.
 
 * Execute code that creates the object and its properties. For example, if "myList" is the [variable](properties_Object.md#variable-or-expression) associated to the drop-down list, you can write in the [On Load](Events/onLoad.md) form event:
 
 ```4d
-// Form.myDrop is the datasource of the form object
-
-Form.myDrop:=New object
-Form.myDrop.values:=New collection("apples"; "nuts"; "pears"; "oranges"; "carrots")
-Form.myDrop.index:=-1  //currentValue is a placeholder
-Form.myDrop.currentValue:="Select a fruit" 
+// Form.myDrop is the datasource of the form object Form.myDrop:=New object Form.myDrop.values:=New collection("apples"; "nuts"; "pears"; "oranges"; "carrots")
+Form.myDrop.index:=-1  //currentValue is a placeholder Form.myDrop.currentValue:="Select a fruit" 
 ```
 
 The drop-down list is displayed with the placeholder string:
@@ -63,41 +59,40 @@ After the user selects a value:
 
 ```4d
 Form.myDrop.values // ["apples","nuts","pears","oranges","carrots"]
-Form.myDrop.currentValue //"oranges"
-Form.myDrop.index //3
+Form.myDrop.currentValue //"oranges" Form.myDrop.index //3
 ```
 
-### Using an array
+### Usar um array
 
-An [array](Concepts/arrays.md) is a list of values in memory that is referenced by the name of the array. A drop-down list can display an array as a list of values when you click on it.
+Um [array](Concepts/arrays.md) é uma lista de valores na memória que são referenciados pelo nome do array. Uma lista drop down exibe um array como lista de valores quando clicar nela.
 
 To initialize the array associated to the drop-down list, you can:
 
-* Enter a list of default values in the object properties by selecting `\&#060;Static List&#062;` in the [Data Source](properties_DataSource.md) theme of the Property List. The default values are loaded into an array automatically. You can refer to the array using the name of the variable associated with the object.
+* Enter a list of default values in the object properties by selecting `\&#060;Static List&#062;` in the [Data Source](properties_DataSource.md) theme of the Property List. Os valores padrão são carregados em um array automático. Pode fazer uma referência ao array usando o nome da variável associado com o objeto.
 
-* Before the object is displayed, execute code that assigns values to the array elements. Por exemplo:
-
-```4d
-  ARRAY TEXT(aCities;6) 
-  aCities{1}:="Philadelphia" 
-  aCities{2}:="Pittsburg" 
-  aCities{3}:="Grand Blanc" 
-  aCities{4}:="Bad Axe" 
-  aCities{5}:="Frostbite Falls" 
-  aCities{6}:="Green Bay" 
-```
-
-In this case, the name of the [variable](properties_Object.md#variable-or-expression) associated with the object in the form must be `aCities`. This code could be placed in the form method and be executed when the `On Load` form event runs.
-
-* Before the object is displayed, load the values of a list into the array using the [LIST TO ARRAY](https://doc.4d.com/4dv19/help/command/en/page288.html) command. Por exemplo:
+* Antes que o objeto seja exibido, execute um código que atribua valores aos elementos do array. Por exemplo:
 
 ```4d
-   LIST TO ARRAY("Cities";aCities)
+  ARRAY TEXT($aCities;6)
+  $aCities{1}:="Philadelphia"
+  $aCities{2}:="Pittsburg"
+  $aCities{3}:="Grand Blanc"
+  $aCities{4}:="Bad Axe"
+  $aCities{5}:="Frostbite Falls"
+  $aCities{6}:="Green Bay" 
 ```
 
-In this case also, the name of the [variable](properties_Object.md#variable-or-expression) associated with the object in the form must be `aCities`. This code would be run in place of the assignment statements shown above.
+Neste caso, o nome da variável associada ao objeto de formulário deve ser *$aCities*. Esse código pode ser colocado no método formulário e executado quando o evento de formulário `On Load` acontecer.
 
-If you need to save the user’s choice into a field, you would use an assignment statement that runs after the record is accepted. The code might look like this:
+* Antes que o objeto seja exibido, carregue os valores para uma lista em um array usando o comando [LIST TO ARRAY](https://doc.4d.com/4dv19/help/command/en/page288.html). Por exemplo:
+
+```4d
+   LIST TO ARRAY("Cities";$aCities)
+```
+
+Neste caso também o nome da variável asociada al objeto del formulario debe ser *$aCities*. Este código pode ser executado ao invés das sentenças de atribuição mostradas anteriormente.
+
+Se precisar salvar as escolhas do usuário em um campo, precisa usar uma declaração de atribuição que rode depois que o registro seja aceito. O código poderia ser assim:
 
 ```4d
   Case of
@@ -117,27 +112,27 @@ If you need to save the user’s choice into a field, you would use an assignmen
  End case
 ```
 
-You must select each event that you test for in your Case statement. Arrays always contain a finite number of items. The list of items is dynamic and can be changed by a method. Items in an array can be modified, sorted, and added to.
+Deve selecionar cada event que teste nas estruturas Case. Os arrays sempre contém um número finito de elementos. A lista de elementos é dinâmica e pode ser modificada por um método. Itens em um array podem ser modificados, ordenados e terem itens adicionados.
 
-### Using a choice list
+### Utilizar uma lista de seleção
 
-If you want to use a drop-down list to manage the values of an input area (listed field or variable), 4D lets you reference the field or variable directly as the drop-down list's [data source](properties_Object.md#variable-or-expression). This makes it easier to manage listed fields/variables.
+Se quiser usar uma lista drop down para gerenciar os valores de um campo ou lista variável, 4D permite referir o campo ou variável diretamente como fonte de dados do objeto. Isso facilita gerenciar variáveis/campos listados.
 
-For example, in the case of a "Color" field that can only contain the values "White", "Blue", "Green" or "Red", it is possible to create a list containing these values and associate it with a drop-down list that references the 4D "Color" field. 4D then automatically takes care of managing the input and display of the current value in the form.
-> If you use a hierarchical list, only the first level is displayed and can be selected. If you want to display hierarchical contents, you need to use a [hierarchical choice list](#using-a-hierarchical-choice-list).
+Por exemplo, no caso de um campo "Cor" que só possa conter os valores "White", "Blue", "Green" ou "Red", agora é possível criar uma lista que contenha esses valores e associe-os a um objeto emergente menu que faça referência ao campo "Color". 4D então se encarrega automaticamente de gerenciar o input e exibir os valores atuais no formulário.
+> Se usar uma lista hierárquica, só o primeiro nível é mostrado e pode ser selecionado. Se usar uma lista hierárquica, só o primeiro nível é mostrado e pode ser selecionado.
 
-To associate a drop-down list with a field or variable, enter the name of the field or variable directly as the [Variable or Expression](properties_Object.md#variable-or-expression) field of the drop-down list in the Property List.
-> It is not possible to use this feature with an object or an array drop-down list. If you enter a field name in the "Variable or Expression" area, then you must use a choice list.
+Para associar um menu pop up/lista drop down ou um combo box com um campo ou variável, pode digitar o nome do campo ou variável diretamente no campo [Variável ou Expressão](properties_Object.md#variable-or-expression) do objeto na Lista Propriedade.
+> Não é possível combinar esse princípio com o uso de um array para iniciar o objeto. Se digitar um nome de campo na área Nome da variável, deve usar uma lista de seleção.
 
-When the form is executed, 4D automatically manages the drop-down list during input or display: when a user chooses a value, it is saved in the field; this field value is shown in the drop-down list when the form is displayed:
+Quando o formulário for executado, 4D automaticamente gerencia o menu pop up ou com box durante a entrada ou a visualização: quando um usuário escolher um valor, é salvo no campo; esse valor de campo é mostrado no menu pop up quando o formulário for exibido:
 
 ![](../assets/en/FormObjects/popupDropdown_choiceList.png)
 
 #### Selected item value or Selected item reference
 
-When you have associated a drop-down list with a choice list and with a field or a variable, you can set the [**Data Type**](properties_DataSource.md#data-type) property to **Selected item value** or **Selected item reference**. This option lets you optimize the size of the data saved.
+Quando associar um menu pop up/lista drop down com uma lista de escolhas e com um campo, pode usar a propriedade [Save as Value/Reference](properties_DataSource.md#save-as). Essa opção permite otimizar o tamanho dos dados salvos.
 
-### Using a hierarchical choice list
+### Se usar uma lista hierárquica, só o primeiro nível é mostrado e pode ser selecionado.
 
 A hierarchical drop-down list has a sublist associated with each item in the list. Here is an example of a hierarchical drop-down list:
 
@@ -149,18 +144,18 @@ You can assign the hierarchical choice list to the drop-down list object using t
 
 You manage hierarchical drop-down lists using the **Hierarchical Lists** commands of the 4D Language. All commands that support the `(*; "name")` syntax can be used with hierarchical  drop-down lists, e.g. [`List item parent`](https://doc.4d.com/4dv19/help/command/en/page633.html).
 
-### Using a standard action
+### Usar uma ação padrão
 
-You can build automatically a drop-down list using a [standard action](properties_Action.md#standard-action). This feature is supported in the following contexts:
+Pode atribuir uma ação padrão a menu pop up ou lista drop down ([Action](properties_Action.md#standard-action) tema da Lista de Propriedades). This feature is supported in the following contexts:
 
 * Use of the `gotoPage` standard action. In this case, 4D will automatically display the [page of the form](FormEditor/forms.md#form-pages) that corresponds to the number of the item that is selected. For example, if the user selects the 3rd item, 4D will display the third page of the current form (if it exists). At runtime, by default the drop-down list displays the page numbers (1, 2...).
 
-* Use of a standard action that displays a sublist of items, for example `backgroundColor`. This feature requires that:
+* Por exemplo, se selecionar a ação padrão `backgroundColor`, no tempo de execução o objeto mostrará uma lista automática de cores de fundo. This feature requires that:
   * a styled text area ([4D Write Pro area](writeProArea_overview.md) or [input](input_overview.md) with [multistyle](properties_Text.md#multi-style) property) is present in the form as the standard action target.
-  * the [focusable](properties_Entry.md#focusable) property is not set to the drop-down list. At runtime the drop-down list will display an automatic list of values, e.g. background colors. You can override this automatic list by assigning in addition a choice list in which each item has been assigned a custom standard action.
+  * the [focusable](properties_Entry.md#focusable) property is not set to the drop-down list. At runtime the drop-down list will display an automatic list of values, e.g. background colors. Pode substituir esta lista automática atribuindo além disso uma lista de seleção na qual cada elemento tenha atribuída uma ação padrão personalizada.
 
 > This feature cannot be used with a hierarchical drop-down list.
 
-## Supported Properties
+## Propriedades compatíveis
 
-[Alpha Format](properties_Display.md#alpha-format) - [Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Choice List](properties_DataSource.md#choice-list) - [Class](properties_Object.md#css-class) - [Data Type (expression type)](properties_DataSource.md#data-type-expression-type) - [Data Type (list)](properties_DataSource.md#data-type-list) - [Date Format](properties_Display.md#date-format) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Font Size](properties_Text.md#font-size) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Not rendered](properties_Display.md#not-rendered) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [Standard action](properties_Action.md#standard-action) - [Save value](properties_Object.md#save-value) - [Time Format](properties_Display.md#time-format) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)  
+[Formato Alfa](properties_Display.md#alpha-format) - [Negrita](properties_Text.md#bold) - [Inferior](properties_CoordinatesAndSizing.md#bottom) - \[Estilo del botón\](properties_TextAndPicture. md#button-style) - [Lista de opciones](properties_DataSource.md#choice-list) - [Clase](properties_Object.md#css-class) - [Formato de fecha](properties_Display.md#date-format) - \[Tipo de expresión\](properties_Object. md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Fuente](properties_Text.md#font) - [Color de la fuente](properties_Text.md#font-color) - \[Tamaño de la fuente\](properties_Text. md#font-size) - [Altura](properties_CoordinatesAndSizing.md#height) - [Consejo de ayuda](properties_Help.md#help-tip) - [Tamaño horizontal](properties_ResizingOptions.md#horizontal-sizing) - \[Italic\](properties_Text. md#italic) - [Izquierda](properties_CoordinatesAndSizing.md#left) - [No renderizado](properties_Display.md#not-rendered) - \[Nombre del objeto\](properties_Object. md#object-name) - [Derecha](properties_CoordinatesAndSizing.md#right) - [Acción estándar](properties_Action.md#standard-action) - [Guardar como](properties_DataSource.md#save-as) - \[Formato de tiempo\](properties_Display. md#time-format) - [Superior](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Subrayado](properties_Text.md#underline) - \[Variable o expresión\](properties_Object. md#variable-or-expression) - [Tamaño vertical](properties_ResizingOptions.md#vertical-sizing) - [Visibilidad](properties_Display.md#visibility) - [Ancho](properties_CoordinatesAndSizing.md#width)  
