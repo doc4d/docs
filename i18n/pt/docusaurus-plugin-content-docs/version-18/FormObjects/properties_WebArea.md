@@ -14,11 +14,11 @@ When this property is on, a special JavaScript object named `$4d` is instantiate
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome                 | Data Type | Possible Values         |
-| -------------------- | --------- | ----------------------- |
-| methodsAccessibility | string    | "none" (default), "all" |
+| Nome                 | Tipo de dados | Valores possíveis       |
+| -------------------- | ------------- | ----------------------- |
+| methodsAccessibility | string        | "none" (default), "all" |
 
 #### Objects Supported
 
@@ -26,15 +26,15 @@ When this property is on, a special JavaScript object named `$4d` is instantiate
 
 
 ---
-## Progression
+## Progressão
 
 Name of a Longint type variable. This variable will receive a value between 0 and 100, representing the page load completion percentage in the Web area. Automatically updated by 4D, cannot be modified manually.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values            |
-| -------------- | --------- | -------------------------- |
-| progressSource | string    | Name of a Longint variable |
+| Nome           | Tipo de dados | Valores possíveis          |
+| -------------- | ------------- | -------------------------- |
+| progressSource | string        | Name of a Longint variable |
 
 #### Objects Supported
 
@@ -61,11 +61,11 @@ The URL variable produces the same effects as the [WA OPEN URL](https://doc.4d.c
 - If the URL variable does not contain a protocol (http, mailto, file, etc.), the Web area adds "http://", which is not the case for the [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.en.html) command.
 - When the Web area is not displayed in the form (when it is located on another page of the form), executing the [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.en.html) command has no effect, whereas assigning a value to the URL variable can be used to update the current URL.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| urlSource | string    | A URL.          |
+| Nome      | Tipo de dados | Valores possíveis |
+| --------- | ------------- | ----------------- |
+| urlSource | string        | Um URL.           |
 
 #### Objects Supported
 
@@ -92,11 +92,11 @@ Note that the Blink engine has the following limitations:
         *   `WA enable plugins`
     *   When URL drops are enabled by the `WA enable URL drop` selector of the [WA SET PREFERENCE](https://doc.4d.com/4Dv18/4D/18.4/WA-SET-PREFERENCE.301-5232962.en.html) command, the first drop must be preceded by at least one call to [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18.4/WA-OPEN-URL.301-5232954.en.html) or one assignment to the URL variable associated to the area.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values      |
-| --------- | --------- | -------------------- |
-| webEngine | string    | "embedded", "system" |
+| Nome      | Tipo de dados | Valores possíveis    |
+| --------- | ------------- | -------------------- |
+| webEngine | string        | "embedded", "system" |
 
 #### Objects Supported
 
