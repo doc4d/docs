@@ -77,12 +77,12 @@ Con:
  vPtrC:=->outroObject
 ```
 
-| Operação     | Syntax            | Retorna  | Expression    | Value |
-| ------------ | ----------------- | -------- | ------------- | ----- |
-| Equality     | Pointer = Pointer | Booleano | vPtrA = vPtrB | True  |
-|              |                   |          | vPtrA = vPtrC | False |
-| Desigualdade | Pointer # Pointer | Booleano | vPtrA # vPtrC | True  |
-|              |                   |          | vPtrA # vPtrB | False |
+| Operação     | Syntax            | Retorna    | Expression    | Value |
+| ------------ | ----------------- | ---------- | ------------- | ----- |
+| Equality     | Pointer = Pointer | Parâmetros | vPtrA = vPtrB | True  |
+|              |                   |            | vPtrA = vPtrC | False |
+| Desigualdade | Pointer # Pointer | Parâmetros | vPtrA # vPtrC | True  |
+|              |                   |            | vPtrA # vPtrB | False |
 
 ## Principais usos
 ### Ponteiros para tabelas
