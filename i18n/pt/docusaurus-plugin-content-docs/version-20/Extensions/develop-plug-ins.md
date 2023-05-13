@@ -11,9 +11,9 @@ It is obvious that covering all areas of both the macOS and Windows operating sy
 
 The modular nature of the 4D environment allows the creation of basic applications but does not preclude the development of highly complex systems. The 4D Plug-in architecture opens the 4D environment to any type of application or user. 4D Plug-ins multiply that application or user's power and productivity.
 
-## What is a plug-in and what can it do?
+## Por que a necessidade de um plug-in?
 
-A plug-in is a piece of code that 4D launches at start up. It adds functionality to 4D and thus increases its capacity.
+A plug-in is a piece of code that 4D launches at start up. Acrescenta funcionalidade ao 4D e aumenta assim a sua capacidade.
 
 Usually, a plug-in does things that:
 - 4D cannot do (ie, specific platform technology),
