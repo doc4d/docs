@@ -1,19 +1,19 @@
 ---
 id: propertiesEntry
-title: Entry
+title: Entrada
 ---
 
-## Auto Spellcheck
+## Verificação automática da ortografia
 
 4D includes an integrated and customizable spell-check utility. Text type [inputs](input_overview.md) can be checked, as well as [4D Write Pro](writeProArea_overview.md) documents.
 
 The Auto Spellcheck property activates the spell-check for each object. When used, a spell-check is automatically performed during data entry. You can also execute the `SPELL CHECKING` 4D language command for each object to be checked.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome       | Data Type | Possible Values |
-| ---------- | --------- | --------------- |
-| spellcheck | boolean   | true, false     |
+| Nome       | Tipo de dados | Valores possíveis |
+| ---------- | ------------- | ----------------- |
+| spellcheck | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -21,11 +21,11 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 ---
 
-## Context Menu
+## Menu de contexto
 
 Allows the user access to a standard context menu in the object when the form is executed.
 
-For a picture type [input](input_overview.md), in addition to standard editing commands (Cut, Copy, Paste and Clear), the menu contains the **Import...** command, which can be used to import a picture stored in a file, as well as the **Save as...** command, which can be used to save the picture to disk. The menu can also be used to modify the display format of the picture: the **Truncated non-centered**, **Scaled to fit** and **Scaled to fit centered prop.** options are provided. The modification of the [display format](properties_Display.md#picture-format) using this menu is temporary; it is not saved with the record.
+For a picture type [input](input_overview.md), in addition to standard editing commands (Cut, Copy, Paste and Clear), the menu contains the **Import...** command, which can be used to import a picture stored in a file, as well as the **Save as...** command, which can be used to save the picture to disk. The menu can also be used to modify the display format of the picture: the **Truncated non-centered**, **Scaled to fit** and **Scaled to fit centered prop.** options are provided. The modification of the [display format](properties_Display#picture-format) using this menu is temporary; it is not saved with the record.
 
 For a [multi-style](properties_Text.md#multi-style) text type [input](input_overview.md), in addition to standard editing commands, the context menu provides the following commands:
 
@@ -35,11 +35,11 @@ For a [multi-style](properties_Text.md#multi-style) text type [input](input_over
 
 For a [Web Area](webArea_overview.md), the contents of the menu depend of the rendering engine of the platform. It is possible to control access to the context menu via the [`WA SET PREFERENCE`](https://doc.4d.com/4Dv17R6/4D/17-R6/WA-SET-PREFERENCE.301-4310780.en.html) command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values                       |
-| ----------- | --------- | ------------------------------------- |
-| contextMenu | string    | "automatic" (used if missing), "none" |
+| Nome        | Tipo de dados | Valores possíveis                     |
+| ----------- | ------------- | ------------------------------------- |
+| contextMenu | string        | "automatic" (used if missing), "none" |
 
 #### Objects Supported
 
@@ -55,19 +55,19 @@ Objects are enterable by default. If you want to make a field or an object non-e
 
 When this property is disabled, any pop-up menus associated with a list box column via a list are disabled.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| enterable | boolean   | true, false     |
+| Nome      | Tipo de dados | Valores possíveis |
+| --------- | ------------- | ----------------- |
+| enterable | boolean       | true, false       |
 
 #### Objects Supported
 
-[4D Write Pro areas](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
+[4D Write Pro areas](writeProArea_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
 ---
 
-## Entry Filter
+## Filtro de entrada
 
 An entry filter controls exactly what the user can type during data entry. Unlike [required lists](properties_RangeOfValues.md#required-list) for example, entry filters operate on a character-by-character basis. For example, if a part number always consists of two letters followed by three digits, you can use an entry filter to restrict the user to that pattern. You can even control the particular letters and numbers.
 
@@ -90,40 +90,40 @@ For information about creating entry filters, see [Filter and format codes](http
 
 Here is a table that explains each of the entry filter choices in the Entry Filter drop-down list:
 
-| Entry Filter                    | Descrição                                                                                                                                    |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~A                              | Allow any letters, but convert to uppercase.                                                                                                 |
-| &9                              | Allow only numbers.                                                                                                                          |
-| &A                              | Allow only capital letters.                                                                                                                  |
-| &a                              | Allow only letters (uppercase and lowercase).                                                                                                |
-| &@                              | Allow only alphanumeric characters. No special characters.                                                                                   |
-| ~a##                            | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                         |
-| !0&9##/##/##                    | Standard date entry format. Display zeros in entry spaces. Allow any numbers.                                                                |
-| !0&9 Day: ## Month: ## Year: ## | Custom date entry format. Display zeros in entry spaces. Allow any numbers. Two entries after each word.                                     |
-| !0&9##:##                       | Time entry format. Limited to hours and minutes. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                |
-| !0&9## Hrs ## Mins ## Secs      | Time entry format. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
-| !0&9Hrs: ## Mins: ## Secs: ##   | Time entry format. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
-| !0&9##-##-##-##                 | Local telephone number format. Display zeros in entry spaces. Allow any number. Three entries, hyphen, four entries.                         |
-| !_&9(###)!0###-####             | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                         |
-| !0&9###-###-###                 | Long distance telephone number. Display zeros in entry spaces. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
-| !0&9###-##-###                  | Social Security number. Display zeros in entry spaces. Allow any numbers.                                                                    |
-| ~"A-Z;0-9; ;,;.;-"              | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                |
-| &"a-z;0-9; ;,;.;-"              | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                         |
-| &"0-9;.;-"                      | Numbers. Allow only numbers, decimal points, and hyphens (minus sign).                                                                       |
+| Filtro de entrada             | Descrição                                                                                                                                    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ~A                            | Allow any letters, but convert to uppercase.                                                                                                 |
+| &9                            | Allow only numbers.                                                                                                                          |
+| &A                            | Allow only capital letters.                                                                                                                  |
+| &a                            | Allow only letters (uppercase and lowercase).                                                                                                |
+| &@                            | Allow only alphanumeric characters. No special characters.                                                                                   |
+| ~a##                          | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                         |
+| !0&9##/##/##                  | Standard date entry format. Display zeros in entry spaces. Allow any numbers.                                                                |
+| !0&9 Dia: ## Mês: ## Ano: ##  | Time entry format. Display zeros in entry spaces. Allow any numbers. Limited to hours and minutes.                                           |
+| !0&9##:##                     | Time entry format. Limited to hours and minutes. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                |
+| !0&9## Hrs ## Mins ## Secs    | Time entry format. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
+| !0&9Hrs: ## Mins: ## Secs: ## | Time entry format. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
+| !0&9##-##-##-##               | Local telephone number format. Display zeros in entry spaces. Allow any number. Three entries, hyphen, four entries.                         |
+| !_&9(###)!0###-####           | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                         |
+| !0&9###-###-###               | Long distance telephone number. Display zeros in entry spaces. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
+| !0&9###-##-####               | Social Security number. Display zeros in entry spaces. Allow any numbers.                                                                    |
+| ~"A-Z;0-9; ;,;.;-"            | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                |
+| &"a-z;0-9; ;,;.;-"            | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                         |
+| &"0-9;.;-"                    | Números. Allow only numbers, decimal points, and hyphens (minus sign).                                                                       |
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values                                      |
-| ----------- | --------- | ---------------------------------------------------- |
-| entryFilter | string    | <li>Entry filter code</li> or <li>Entry filter name (filter names start with &#124; )</li> |
+| Nome        | Tipo de dados | Valores possíveis                                    |
+| ----------- | ------------- | ---------------------------------------------------- |
+| entryFilter | string        | <li>Entry filter code or</li> or <li>Entry filter code or Entry filter name (filter names start with &#124; )</li> |
 
 #### Objects Supported
 
-[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
-## Focusable
+## Focável
 
 When the **Focusable** property is enabled for an object, the object can have the focus (and can thus be activated by the keyboard for instance). It is outlined by a gray dotted line when it is selected — except when the [Hide focus rectangle](properties_Appearance.md#hide-focus-rectangle) option has also been selected.
 
@@ -135,11 +135,11 @@ When the **Focusable** property is enabled for an object, the object can have th
 
 When the **Focusable** property is selected for a non-enterable object, the user can select, copy or even drag-and-drop the contents of the area.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values |
-| --------- | --------- | --------------- |
-| focusable | boolean   | true, false     |
+| Nome    | Tipo de dados | Valores possíveis |
+| ------- | ------------- | ----------------- |
+| focável | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -155,11 +155,11 @@ By default, the object uses the current keyboard layout.
 
 > You can also set and get the keyboard dynamically using the `OBJECT SET KEYBOARD LAYOUT` and `OBJECT Get keyboard layout` commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values                                                             |
-| --------------- | --------- | --------------------------------------------------------------------------- |
-| keyboardDialect | text      | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
+| Nome            | Tipo de dados | Valores possíveis                                                           |
+| --------------- | ------------- | --------------------------------------------------------------------------- |
+| keyboardDialect | text          | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
 
 #### Objects Supported
 
@@ -167,39 +167,39 @@ By default, the object uses the current keyboard layout.
 
 ---
 
-## Multiline
+## Multilinha
 
 This property is available for [inputs objects](input_overview.md) containing expressions of the Text type and fields of the Alpha and Text type. It can have three different values: Yes, No, Automatic (default).
 
-#### Automatic
+#### Automático
 
 - In single-line inputs, words located at the end of lines are truncated and there are no line returns.
 - In multiline inputs, 4D carries out automatic line returns:  
   ![](../assets/en/FormObjects/multilineAuto.png)
 
-#### No
+#### Não
 
 - In single-line inputs, words located at the end of lines are truncated and there are no line returns.
 - There are never line returns: the text is always displayed on a single row. If the Alpha or Text field or variable contains carriage returns, the text located after the first carriage return is removed as soon as the area is modified:  
   ![](../assets/en/FormObjects/multilineNo.png)
 
-#### Yes
+#### Sim
 
 When this value is selected, the property is managed by the [Wordwrap](properties_Display.md#wordwrap) option.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values                                   |
-| --------- | --------- | ------------------------------------------------- |
-| multiline | text      | "yes", "no", "automatic" (default if not defined) |
+| Nome       | Tipo de dados | Valores possíveis                                 |
+| ---------- | ------------- | ------------------------------------------------- |
+| multilinha | text          | "yes", "no", "automatic" (default if not defined) |
 
 #### Objects Supported
 
-[Input](input_overview.md)
+[Entrada](input_overview.md)
 
 ---
 
-## Placeholder
+## Placeholder (valores provisórios)
 
 4D can display placeholder text in the fields of your forms.
 
@@ -221,11 +221,11 @@ You can use an XLIFF reference in the ":xliff:resname" form as a placeholder, fo
 You only pass the reference in the "Placeholder" field; it is not possible to combine a reference with static text.
 > You can also set and get the placeholder text by programming using the [OBJECT SET PLACEHOLDER](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-PLACEHOLDER.301-4128243.en.html) and [OBJECT Get placeholder](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-Get-placeholder.301-4128249.en.html) commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values                                                              |
-| ----------- | --------- | ---------------------------------------------------------------------------- |
-| placeholder | string    | Text to be displayed (grayed out) when the object does not contain any value |
+| Nome        | Tipo de dados | Valores possíveis                                                            |
+| ----------- | ------------- | ---------------------------------------------------------------------------- |
+| placeholder | string        | Text to be displayed (grayed out) when the object does not contain any value |
 
 #### Objects Supported
 
@@ -233,7 +233,7 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 #### Veja também
 
-[Help tip](properties_Help.md)
+[Dica de ajuda](properties_Help.md)
 
 ---
 
@@ -241,11 +241,11 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 This property keeps the selection visible within the object after it has lost the focus. This makes it easier to implement interfaces that allow the text style to be modified (see [Multi-style](properties_Text.md#multi-style)).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| showSelection | boolean   | true, false     |
+| Nome          | Tipo de dados | Valores possíveis |
+| ------------- | ------------- | ----------------- |
+| showSelection | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -253,7 +253,7 @@ This property keeps the selection visible within the object after it has lost th
 
 ---
 
-## Shortcut
+## Atalho
 
 This property allows setting special meaning keys (keyboard shortcuts) for [buttons](button_overview.md), [radio buttons](radio_overview.md), and [checkboxes](checkbox_overview.md). They allow the user to use the control using the keyboard instead of having to use the mouse.
 
@@ -264,17 +264,17 @@ You can configure this option by clicking the [...] button in the Shortcuts prop
 
 To view a list of all the shortcuts used in the 4D Design environment, see the [Shortcuts Page](https://doc.4d.com/4Dv17R5/4D/17-R5/Shortcuts-Page.300-4163701.en.html) in the Preferences dialog box.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values                                    |
-| --------------- | --------- | -------------------------------------------------- |
-| shortcutAccel   | boolean   | true, false (Ctrl Windows/Command macOS)           |
-| shortcutAlt     | boolean   | true, false                                        |
-| shortcutCommand | boolean   | true, false                                        |
-| shortcutControl | boolean   | true, false (macOS Control)                        |
-| shortcutShift   | boolean   | true, false                                        |
-|                 |           |                                                    |
-| shortcutKey     | string    | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| Nome            | Tipo de dados | Valores possíveis                                  |
+| --------------- | ------------- | -------------------------------------------------- |
+| shortcutAccel   | boolean       | true, false (Ctrl Windows/Command macOS)           |
+| shortcutAlt     | boolean       | true, false                                        |
+| shortcutCommand | boolean       | true, false                                        |
+| shortcutControl | boolean       | true, false (macOS: Control)                       |
+| shortcutShift   | boolean       | true, false                                        |
+|                 |               |                                                    |
+| shortcutKey     | string        | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### Objects Supported
 
@@ -282,7 +282,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 ---
 
-## Single-Click Edit
+## Editar com um clique
 
 Enables direct passage to edit mode in list boxes.
 
@@ -290,11 +290,11 @@ When this option is enabled, list box cells switch to edit mode after a single u
 
 When this option is not enabled, users must first select the cell row and then click on a cell in order to edit its contents.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values |
-| --------------- | --------- | --------------- |
-| singleClickEdit | boolean   | true, false     |
+| Nome            | Tipo de dados | Valores possíveis |
+| --------------- | ------------- | ----------------- |
+| singleClickEdit | boolean       | true, false       |
 
 #### Objects Supported
 
