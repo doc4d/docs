@@ -1,6 +1,6 @@
 ---
 id: formSize
-title: Form Size
+title: Tamanho formulário
 ---
 
  
@@ -9,7 +9,7 @@ title: Form Size
 Size options depend on the value of the **Size based on** option.
 
 ---
-## Size based on
+## Tamanho baseado em
 
 
 *   **Automatic Size**: The size of the form will be that necessary to display all the objects, to which will be added the margin values (in pixels) entered in the [**Hor Margin**](#hor-margin) and [**Vert Margin**](#vert-margin) fields.
@@ -19,29 +19,29 @@ Size options depend on the value of the **Size based on** option.
 
 *   **Set Size**: The size of the form will be based on what you enter (in pixels) in the [**Width**](#width) and [**Height**](#height) fields.
 
-*   `<object name>`: The size of the form will be based on the position of the selected form object. For example, if you choose an object that is placed in the bottom-right part of the area to be displayed, the form size will consist of a rectangle whose upper left corner will be the origin of the form and the lower right corner will correspond to that of the selected object, plus any margin values.
+*   `\&#060;object name&#062;`: The size of the form will be based on the position of the selected form object. For example, if you choose an object that is placed in the bottom-right part of the area to be displayed, the form size will consist of a rectangle whose upper left corner will be the origin of the form and the lower right corner will correspond to that of the selected object, plus any margin values.
 
 
-> For output forms, only the [**Hor margin**](#hor-margin) or [**Width**](#width) fields are available.
+> For output forms, only the [**Hor margin**](#hor-margin) or [**Width**](width) fields are available.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome           | Data Type | Possible Values                                       |
-| -------------- | --------- | ----------------------------------------------------- |
-| formSizeAnchor | string    | Name of object to use to defined the size of the form |
+| Nome           | Tipo de dados | Valores possíveis                                     |
+| -------------- | ------------- | ----------------------------------------------------- |
+| formSizeAnchor | string        | Name of object to use to defined the size of the form |
 
 ---
-## Height
+## Alto
 
 Height of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| height | number    | integer value   |
+| Nome   | Tipo de dados | Valores possíveis |
+| ------ | ------------- | ----------------- |
+| height | number        | valor inteiro     |
 
 
 ---
@@ -52,11 +52,11 @@ Value to add (in pixels) to the right margin of the form when the [form size](#s
 
 This value also determines the right-hand margins of forms used in the Label editor.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Data Type | Possible Values |
-| ----------- | --------- | --------------- |
-| rightMargin | number    | integer value   |
+| Nome        | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| rightMargin | number        | valor inteiro     |
 
 
 ---
@@ -67,21 +67,21 @@ Value to add (in pixels) to the bottom margin of the form when the [form size](#
 
 This value also determines the top margins of forms used in the Label editor.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| bottomMargin | number    | integer value   |
+| Nome         | Tipo de dados | Valores possíveis |
+| ------------ | ------------- | ----------------- |
+| bottomMargin | number        | valor inteiro     |
 
 
 ---
-## Width
+## Largura
 
 Width of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| width | number    | integer value   |
+| Nome  | Tipo de dados | Valores possíveis |
+| ----- | ------------- | ----------------- |
+| width | number        | valor inteiro     |
