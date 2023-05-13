@@ -40,7 +40,7 @@ Um [Datastore](ORDA/dsMapping.md#datastore) é o objeto de interface subministra
 
 
 <!-- REF #_command_.ds.Params -->
-| Parameter  | Tipo          |    | Descrição                                                 |
+| Parâmetro  | Tipo          |    | Descrição                                                 |
 | ---------- | ------------- | -- | --------------------------------------------------------- |
 | localID    | Text          | -> | ID local del armazém de dados remoto a devolver           |
 | Resultados | cs. DataStore | <- | Referencia ao armazém de dados|<!-- END REF -->
@@ -60,7 +60,7 @@ Se não encontrar nenhum armazém de dados *localID*, o comando devolve **Null**
 
 Using `ds` requires that the target database is compliant with ORDA, as specified in the **ORDA prerequisites** section. The following rules are applied:
 
-* A datastore only references tables with a single primary key. Tables without a primary key or with composite primary keys are not referenced.
+* Uma datastore só referencia as tabelas com uma única chave primária. Tables without a primary key or with composite primary keys are not referenced.
 * BLOB type attributes are not managed in the datastore.
 
 #### Exemplo 1
@@ -111,7 +111,7 @@ Usar a datastore principal do banco de dados 4D:
 
 
 <!-- REF #_command_.Open datastore.Params -->
-| Parameter      | Tipo          |    | Descrição                                                                    |
+| Parâmetro      | Tipo          |    | Descrição                                                                    |
 | -------------- | ------------- | -- | ---------------------------------------------------------------------------- |
 | connectionInfo | Objeto        | -> | Propriedades de conexão utilizadas para alcançar o armazém de datos remoto   |
 | localID        | Text          | -> | Id para assignar ao armazém de dados aberto na aplicação local (obrigatorio) |
@@ -143,14 +143,14 @@ Quando abrir a sessão, as sentenças abaixo são equivalentes e devolvem uma re
 
 Passe em *connectionInfo* um objeto que desceva o armazém de dados remoto ao que quiser se conectar. Pode conter as propriedades abaixo (todas as propriedades são opcionais menos *hostname*):
 
-| Propriedade | Tipo     | Descrição                                                                                                                                                                                                                                                                                                                                                                       |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hostname    | Text     | Nome ou endereço IP da database remota + ":" + número de porta (o numero de porta é obrigatório)                                                                                                                                                                                                                                                                                |
-| user        | Text     | Nome de usuario                                                                                                                                                                                                                                                                                                                                                                 |
-| senha       | Text     | senha de usuario                                                                                                                                                                                                                                                                                                                                                                |
-| idleTimeout | Longint  | Tempo de espera da sessão de inatividade (em minutos) depois do qual a sessão é fechada automaticamente por 4D. If omitted, default value is 60 (1h). Se for omitido, o valor normal é 60 minutos (1hora) O valor não pode ser inferior a 60: se definir um valor inferior, o tempo de espera se eleva até 60). Para saber mais informação, consulte **Fechamento de sessões**. |
-| tls         | Booleano | Utilize uma conexão segura(*). If omitted, false by default. Se for omitido, o normal é falso Usar uma conexão segura é recomendado sempre que possível.                                                                                                                                                                                                                        |
-| type        | Text     | Deve ser "4D Server"                                                                                                                                                                                                                                                                                                                                                            |
+| Propriedade | Tipo       | Descrição                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname    | Text       | Nome ou endereço IP da database remota + ":" + número de porta (o numero de porta é obrigatório)                                                                                                                                                                                                                                                                                     |
+| user        | Text       | Nome de usuario                                                                                                                                                                                                                                                                                                                                                                      |
+| senha       | Text       | senha de usuario                                                                                                                                                                                                                                                                                                                                                                     |
+| idleTimeout | Longint    | Tempo de espera da sessão de inatividade (em minutos) depois do qual a sessão é fechada automaticamente por 4D. Se omitido, o valor por defeito é 60 (1h). Se for omitido, o valor normal é 60 minutos (1hora) O valor não pode ser inferior a 60: se definir um valor inferior, o tempo de espera se eleva até 60). Para saber mais informação, consulte **Fechamento de sessões**. |
+| tls         | Parâmetros | Utilize uma conexão segura(*). If omitted, false by default. Se for omitido, o normal é falso Usar uma conexão segura é recomendado sempre que possível.                                                                                                                                                                                                                             |
+| type        | Text       | Deve ser "4D Server"                                                                                                                                                                                                                                                                                                                                                                 |
 
 (*) Se tls for true, se utiliza o protocolo HTTPS se:
 
@@ -160,7 +160,7 @@ Passe em *connectionInfo* um objeto que desceva o armazém de dados remoto ao qu
 
 #### Exemplo 1
 
-Conexão a uma datastore remota sem usuário ou senha:
+Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
 
 ```4d
  var $connectTo : Object
@@ -172,7 +172,7 @@ Conexão a uma datastore remota sem usuário ou senha:
 
 #### Exemplo 2
 
-Conexão a uma datastore remota com usuário/ senha/ timetou/ tls
+Conexão a uma datastore remota sem usuário ou senha:
 
 ```4d
  var $connectTo : Object
@@ -249,7 +249,7 @@ Um [Datastore](ORDA/dsMapping.md#datastore) é o objeto de interface subministra
 
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |::| ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
@@ -284,7 +284,7 @@ Ver  exemplo da função [`.startTransaction()`](#starttransaction).
 
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                                        |
+| Parâmetro  | Tipo   |    | Descrição                                                                                        |
 | ---------- | ------ |:--:| ------------------------------------------------------------------------------------------------ |
 | Resultados | Objeto | <- | Informação sobre o cifrado do armazém de dados atual e de cada tabela|<!-- END REF -->
 
@@ -299,16 +299,16 @@ A função `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Sum
 
 O objeto retornado contém as propriedades abaixo:
 
-| Propriedade |             |               | Tipo     | Descrição                                                                                       |
-| ----------- | ----------- | ------------- | -------- | ----------------------------------------------------------------------------------------------- |
-| isEncrypted |             |               | Booleano | True se o arquivo de dados estiver criptografado                                                |
-| keyProvided |             |               | Booleano | True se proporcionar a chave de encriptação que coincide com o arquivo de dados encriptados(*). |
-| tabelas     |             |               | Objeto   | Objeto que contém tantas propriedades como tabelas encriptadas ou codificadas.                  |
-|             | *tableName* |               | Objeto   | Tabla encriptada ou cifrada                                                                     |
-|             |             | name          | Text     | Nombre da tabela                                                                                |
-|             |             | num           | Número   | Número de tabela                                                                                |
-|             |             | isEncryptable | Booleano | Verdadero se a tabela estiver declarada como encriptada no arquivo de estrutura                 |
-|             |             | isEncrypted   | Booleano | True se os registros da tabela estiverem encriptados no arquivo de dados                        |
+| Propriedade |             |               | Tipo       | Descrição                                                                                       |
+| ----------- | ----------- | ------------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| isEncrypted |             |               | Parâmetros | True se o arquivo de dados estiver criptografado                                                |
+| keyProvided |             |               | Parâmetros | True se proporcionar a chave de encriptação que coincide com o arquivo de dados encriptados(*). |
+| tabelas     |             |               | Objeto     | Objeto que contém tantas propriedades como tabelas encriptadas ou codificadas.                  |
+|             | *tableName* |               | Objeto     | Tabla encriptada ou cifrada                                                                     |
+|             |             | name          | Text       | Nombre da tabela                                                                                |
+|             |             | num           | Número     | Número de tabela                                                                                |
+|             |             | isEncryptable | Parâmetros | Verdadero se a tabela estiver declarada como encriptada no arquivo de estrutura                 |
+|             |             | isEncrypted   | Parâmetros | True se os registros da tabela estiverem encriptados no arquivo de dados                        |
 
 (*) a chave de criptografia pode ser fornecida:
 
@@ -356,7 +356,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
 
 <!-- REF #DataStoreClass.getInfo().Params -->
-| Parameter  | Tipo   |    | Descrição                                           |
+| Parâmetro  | Tipo   |    | Descrição                                           |
 | ---------- | ------ |:--:| --------------------------------------------------- |
 | Resultados | Objeto | <- | Propiedades de datastore|<!-- END REF -->
 
@@ -364,7 +364,7 @@ Se quiser saber o número de tabelas criptografadas no arquivo de dados atual:
 
 #### Descrição
 
-A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um objecto que fornece informação sobre o datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
+A função `.getInfo( )` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um objecto que fornece informação sobre o datastore<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
 **Objeto devolvido**
 
@@ -395,17 +395,25 @@ A função `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devolve um
 Em um armazém de dados remoto:
 
 ```4d
-  var $remoteDS : cs. DataStore
-  var $info; $connectTo : Object
+  var $status : Object
 
- $connectTo:=New object("hostname";"111.222.33.44:8044";"user";"marie";"password";"aaaa")
- $remoteDS:=Open datastore($connectTo;"students")
- $info:=$remoteDS.getInfo()
+ $status:=dataStore.encryptionStatus()
 
-  //{"type":"4D Server",
-  //"localID":"students",
-  //"networked":true,
-  //"connection":{hostname:"111.222.33.44:8044","tls":false,"idleTimeout":2880,"user":"marie"}}
+ If($status.isEncrypted) //the database is encrypted
+    C_LONGINT($vcount)
+    C_TEXT($tabName)
+    For each($tabName;$status.tables)
+       If($status.tables[$tabName].isEncrypted)
+          $vcount:=$vcount+1
+       End if
+    End for each
+    ALERT(String($vcount)+" encrypted table(s) in this datastore.")
+ Else
+    ALERT("This database is not encrypted.")
+ End if
+ Else
+    ALERT("This database is not encrypted.")
+ End if
 ```
 
 <!-- END REF -->
@@ -425,7 +433,7 @@ Em um armazém de dados remoto:
 
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| Parameter  | Tipo       |    | Descrição                                                                           |
+| Parâmetro  | Tipo       |    | Descrição                                                                           |
 | ---------- | ---------- |:--:| ----------------------------------------------------------------------------------- |
 | Resultados | Collection | <- | Coleção de objetos onde cada objeto descreve uma petição|<!-- END REF -->
 
@@ -464,15 +472,15 @@ Ver o exemplo 2 de [`.startRequestLog()`](#startrequestlog).
 
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| Parameter  | Tipo     |    | Descrição                                                                                                                    |
-| ---------- | -------- |:--:| ---------------------------------------------------------------------------------------------------------------------------- |
-| Resultados | Booleano | <- | True se o acesso ao Explorador de Dados estiver desativado, False se estiver ativado (por padrão)|<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                                                                                    |
+| ---------- | ---------- |:--:| ---------------------------------------------------------------------------------------------------------------------------- |
+| Resultados | Parâmetros | <- | True se o acesso ao Explorador de Dados estiver desativado, False se estiver ativado (por padrão)|<!-- END REF -->
 
 |
 
 #### Descrição
 
-A função `.isAdminProtected()` <!-- REF #DataStoreClass.isAdminProtected().Summary -->retorna `True` se [Data Explorer](Admin/dataExplorer.md) acesso for desativado para a sessão de trabalho<!-- END REF -->.
+A função `.startRequestLog()` <!-- REF #DataStoreClass.isAdminProtected().Summary -->inicia o registo dos pedidos ORDA no lado do cliente<!-- END REF -->.
 
 Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAdmin`, mas pode ser desativada para evitar qualquer acesso aos dados por parte dos administradores (ver a função [`.setAdminProtection()`](#setadminprotection)).
 
@@ -497,7 +505,7 @@ Como padrão, o acesso ao Explorador de Dados se concede para as sessões `webAd
 
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |::| ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
@@ -530,7 +538,7 @@ quando nesta função não for chamada, as novas seleções de entidades podem s
 
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
-| Parameter     | Tipo   |    | Descrição                                                                     |
+| Parâmetro     | Tipo   |    | Descrição                                                                     |
 | ------------- | ------ | -- | ----------------------------------------------------------------------------- |
 | curPassPhrase | Text   | -> | Frase de cifrado atual                                                        |
 | curDataKey    | Objeto | -> | Chave de criptografia de dados atual                                          |
@@ -559,7 +567,7 @@ O resultado da ordem se descreve no objeto devolvido:
 
 | Propriedade |                          | Tipo       | Descrição                                                                                                |
 | ----------- | ------------------------ | ---------- | -------------------------------------------------------------------------------------------------------- |
-| success     |                          | Booleano   | True se a chave da criptografia proporcionada coincide com os dados encriptados, False em caso contrário |
+| success     |                          | Parâmetros | True se a chave da criptografia proporcionada coincide com os dados encriptados, False em caso contrário |
 |             |                          |            | As seguintes propriedades são devolvidas só se success for *FALSE*                                       |
 | status      |                          | Número     | Código de erro (4 se a chave de encriptação fornecida for errada)                                        |
 | statusText  |                          | Text       | Mensagem de erro                                                                                         |
@@ -605,9 +613,9 @@ Se não for dada uma *curPassphrase* ou *curDataKey*, `.provideDataKey()` devolv
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| Parameter | Tipo     |    | Descrição                                                                                                                                      |
-| --------- | -------- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| status    | Booleano | -> | True para desativar o acesso Data Explorer aos dados do porto `webAdmin`, False (por padrão) para outorgar o acesso|<!-- END REF -->
+| Parâmetro | Tipo       |    | Descrição                                                                                                                                      |
+| --------- | ---------- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| status    | Parâmetros | -> | True para desativar o acesso Data Explorer aos dados do porto `webAdmin`, False (por padrão) para outorgar o acesso|<!-- END REF -->
 
 |
 
@@ -648,7 +656,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parameter | Tipo     |    | Descrição                                                        |
+| Parâmetro | Tipo     |    | Descrição                                                        |
 | --------- | -------- | -- | ---------------------------------------------------------------- |
 | file      | 4D. File | -> | Objeto File                                                      |
 | reqNum    | Integer  | -> | Número de petiçõs a manter em memória|<!-- END REF -->
@@ -724,7 +732,7 @@ Se quiser registrar as petições dos clientes ORDA na memória:
 
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |  | ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
@@ -789,7 +797,7 @@ Pode aninhar várias transações (subtransações). Cada transação ou subtran
 
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |  | ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
@@ -822,7 +830,7 @@ Ver exemplos [`.startRequestLog()`](#startrequestlog).
 
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |  | ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
