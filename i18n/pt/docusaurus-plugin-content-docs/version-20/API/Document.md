@@ -286,7 +286,7 @@ Essa propriedade é **apenas leitura**.
 | v17 R5 | Adicionado |
 </details>
 
-<!-- REF #document.original.Syntax -->**.original** : 4D. File<br/>**.original** : 4D. Folder<!-- END REF -->
+<!-- REF #document.original.Syntax -->|<!-- END REF -->
 
 #### Descrição
 
@@ -355,7 +355,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.platformPath` devolve <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+A propriedade `.platformPath` devolve <!-- REF #document.platformPath.Summary -->o caminho do ficheiro expresso com a sintaxe da plataforma actual<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -395,9 +395,9 @@ Essa propriedade é **apenas leitura**.
 
 
 <!-- REF #document.copyTo().Params -->
-| Parameter         | Tipo       |    | Descrição                                              |
+| Parâmetro         | Tipo       |    | Descrição                                              |
 | ----------------- | ---------- |:--:| ------------------------------------------------------ |
-| destinationFolder | 4D. Folder | -> | Destination folder                                     |
+| destinationFolder | 4D. Folder | -> | Pasta de destino                                       |
 | newName           | Text       | -> | Nome para a copia                                      |
 | overwrite         | Integer    | -> | `fk overwrite` para substituir os elementos existentes |
 | Resultados        | 4D. File   | <- | Arquivo copiado|<!-- END REF -->
@@ -414,7 +414,7 @@ Como padrão, o arquivo é copiado com o nome do arquivo original. Se quiser ren
 
 Se já existir um arquivo com o mesmo nome em *destinationFolder*, por padrão 4D gera um erro. Pode passar a constante `fk overwrite` no parâmetro *overwrite* para ignorar e sobrescriber o arquivo existente
 
-| Constante      | Value | Comentário                                      |
+| Parâmetros     | Value | Comentário                                      |
 | -------------- | ----- | ----------------------------------------------- |
 | `fk overwrite` | 4     | Sobrescrever os elementos existentes, se houver |
 
@@ -445,11 +445,11 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 | v17 R5 | Adicionado       |
 </details>
 
-<!-- REF #document.getContent().Syntax -->**.getContent( )** : 4D. Blob<!-- END REF -->
+<!-- REF #document.getContent().Syntax -->**.getContent( )** : Blob<!-- END REF -->
 
 
 <!-- REF #document.getContent().Params -->
-| Parameter  | Tipo     |    | Descrição                                      |
+| Parâmetro  | Tipo     |    | Descrição                                      |
 | ---------- | -------- | -- | ---------------------------------------------- |
 | Resultados | 4D. Blob | <- | Conteúdo do arquivo|<!-- END REF -->
 
@@ -461,7 +461,7 @@ A função `.getContent()`  <!-- REF #document.getContent().Summary -->returns a
 
 **Valor retornado**
 
-|
+Um `Blob`.
 
 #### Exemplo
 
@@ -469,8 +469,8 @@ Para salvar o conteúdo de um documento em um campo `BLOB`:
 
 ```4d
  var $vPath : Text
- $vPath:=Select document("";"*";"Select a document";0)
- If(OK=1) //If a document has been chosen
+ $vPath:=Select document(""; "*"; "Select a document";0)
+ If(OK=1) //Se tiver sido escolhido um documento
     [aTable]aBlobField:=File($vPath;fk platform path).getContent()
  End if
 ```
@@ -491,7 +491,7 @@ Para salvar o conteúdo de um documento em um campo `BLOB`:
 
 
 <!-- REF #document.getIcon().Params -->
-| Parameter  | Tipo    |    | Descrição                                       |
+| Parâmetro  | Tipo    |    | Descrição                                       |
 | ---------- | ------- | -- | ----------------------------------------------- |
 | size       | Integer | -> | Longitude de lado da imagem devolvida (píxeles) |
 | Resultados | Imagem  | <- | Ícone|<!-- END REF -->
@@ -526,7 +526,7 @@ Se o arquivo não existir no disco, um ícone em branco padrão será retornado.
 
 
 <!-- REF #document.getText().Params -->
-| Parameter   | Tipo    |    | Descrição                                     |
+| Parâmetro   | Tipo    |    | Descrição                                     |
 | ----------- | ------- | -- | --------------------------------------------- |
 | charSetName | Text    | -> | Nome do conjunto de caracteres                |
 | charSetNum  | Integer | -> | Número de conjuntos de caracteres             |
@@ -550,7 +550,7 @@ Se o documento contiver uma nota de ordem de byte (BOM), 4D usa o conjunto de ca
 
 Em *breakMode*, você pode passar um número indicando o processamento a aplicar aos caracteres de fim de linha no documento. As seguintes constantes do tema "Documentos do Sistema" estão disponíveis:
 
-| Constante                     | Value | Comentário                                                                                                                                                                     |
+| Parâmetros                    | Value | Comentário                                                                                                                                                                     |
 | ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Document unchanged`          | 0     | Não processado                                                                                                                                                                 |
 | `Document with native format` | 1     | (Padrão) As quebras de linha são convertidas para o formato nativo do sistema operacional: CR (retorno de carro) sob OS X, CRLF (retorno do carro + salto de linha) em Windows |
