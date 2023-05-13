@@ -4,11 +4,11 @@
     "description": "The label for version 20"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Getting Started.link.generated-index.title": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The generated-index page title for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development": {
@@ -144,11 +144,11 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.title": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The generated-index page title for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.description": {
@@ -208,7 +208,7 @@
     "description": "The generated-index page description for category Access Rights in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Forms",
+    "message": "Formulários",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
@@ -228,7 +228,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Form Events",
+    "message": "Eventos formulário",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
@@ -304,7 +304,7 @@
     "description": "The label for the doc item User Settings in sidebar docs, linking to the doc Desktop/user-settings"
   },
   "sidebar.docs.doc.Build Application": {
-    "message": "Build Application",
+    "message": "Build application overview",
     "description": "The label for the doc item Build Application in sidebar docs, linking to the doc Desktop/building"
   }
 }
