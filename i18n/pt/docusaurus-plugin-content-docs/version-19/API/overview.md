@@ -3,7 +3,7 @@ id: overview
 title: Class functions and commands
 ---
 
-This section describes the built-in 4D class API as well as the associated constructor commands. Esta secção descreve as funções da classe 4D incorporada, bem como os comandos de construção associados.
+This section describes the built-in 4D class API as well as the associated constructor commands. Esta seção descreve a API da classe 4D incorporada, bem como os comandos de construção associados.
 
 - devem ser chamadas em instâncias com o operador `()`. Por exemplo, `collection.sort()`.
 - as propriedades são acessadas sem parênteses, por exemplo `file.creationTime`. Pode também utilizar a sintaxe \[], por exemplo `file["creationTime"]`.
@@ -109,7 +109,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`C_TEXT`](https://doc.4d.com/4dv19/help/command/en/page284.html)                                             | 284    |
 | [`C_TIME`](https://doc.4d.com/4dv19/help/command/en/page306.html)                                             | 306    |
 | [`C_VARIANT`](https://doc.4d.com/4dv19/help/command/en/page1683.html)                                         | 1683   |
-| [`Cache info`](https://doc.4d.com/4dv19/help/command/en/page1402.html)                                        | 1402   |
+| [`Informação de Cache`](https://doc.4d.com/4dv19/help/command/en/page1402.html)                               | 1402   |
 | [`CALL FORM`](https://doc.4d.com/4dv19/help/command/en/page1391.html)                                         | 1391   |
 | [`CALL SUBFORM CONTAINER`](https://doc.4d.com/4dv19/help/command/en/page1086.html)                            | 1086   |
 | [`CALL WORKER`](https://doc.4d.com/4dv19/help/command/en/page1389.html)                                       | 1389   |
@@ -183,7 +183,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`CREATE THUMBNAIL`](https://doc.4d.com/4dv19/help/command/en/page679.html)                                   | 679    |
 | [`cs`](https://doc.4d.com/4dv19/help/command/en/page1710.html)                                                | 1710   |
 | [`Current client authentication`](https://doc.4d.com/4dv19/help/command/en/page1355.html)                     | 1355   |
-| [`Current date`](https://doc.4d.com/4dv19/help/command/en/page33.html)                                        | 33     |
+| [`Data actual`](https://doc.4d.com/4dv19/help/command/en/page33.html)                                         | 33     |
 | [`Current default table`](https://doc.4d.com/4dv19/help/command/en/page363.html)                              | 363    |
 | [`Current form name`](https://doc.4d.com/4dv19/help/command/en/page1298.html)                                 | 1298   |
 | [`Current form table`](https://doc.4d.com/4dv19/help/command/en/page627.html)                                 | 627    |
@@ -194,7 +194,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`Current process`](https://doc.4d.com/4dv19/help/command/en/page322.html)                                    | 322    |
 | [`Current process name`](https://doc.4d.com/4dv19/help/command/en/page1392.html)                              | 1392   |
 | [`Current system user`](https://doc.4d.com/4dv19/help/command/en/page484.html)                                | 484    |
-| [`Current time`](https://doc.4d.com/4dv19/help/command/en/page178.html)                                       | 178    |
+| [`Hora actual`](https://doc.4d.com/4dv19/help/command/en/page178.html)                                        | 178    |
 | [`Current user`](https://doc.4d.com/4dv19/help/command/en/page182.html)                                       | 182    |
 | [`CUT NAMED SELECTION`](https://doc.4d.com/4dv19/help/command/en/page334.html)                                | 334    |
 | <a name="D">**D**</a>                                                                                     |        |
@@ -304,7 +304,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`EXPORT TEXT`](https://doc.4d.com/4dv19/help/command/en/page167.html)                                        | 167    |
 | <a name="F">**F**</a>                                                                                     |        |
 | [`False`](https://doc.4d.com/4dv19/help/command/en/page215.html)                                              | 215    |
-| [`Field`](https://doc.4d.com/4dv19/help/command/en/page253.html)                                              | 253    |
+| [`Campo`](https://doc.4d.com/4dv19/help/command/en/page253.html)                                              | 253    |
 | [`Campo nome`](https://doc.4d.com/4dv19/help/command/en/page257.html)                                         | 257    |
 | [`File`](https://doc.4d.com/4dv19/help/command/en/page1566.html)                                              | 1566   |
 | [`FILTER EVENT`](https://doc.4d.com/4dv19/help/command/en/page321.html)                                       | 321    |
@@ -557,7 +557,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`LDAP Search`](https://doc.4d.com/4dv19/help/command/en/page1328.html)                                       | 1328   |
 | [`LDAP SEARCH ALL`](https://doc.4d.com/4dv19/help/command/en/page1329.html)                                   | 1329   |
 | [`Length`](https://doc.4d.com/4dv19/help/command/en/page16.html)                                              | 16     |
-| [`Level`](https://doc.4d.com/4dv19/help/command/en/page101.html)                                              | 101    |
+| [`Nível`](https://doc.4d.com/4dv19/help/command/en/page101.html)                                              | 101    |
 | [`List item parent`](https://doc.4d.com/4dv19/help/command/en/page633.html)                                   | 633    |
 | [`List item position`](https://doc.4d.com/4dv19/help/command/en/page629.html)                                 | 629    |
 | [`LIST OF CHOICE LISTS`](https://doc.4d.com/4dv19/help/command/en/page957.html)                               | 957    |
@@ -855,7 +855,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`PLAY`](https://doc.4d.com/4dv19/help/command/en/page290.html)                                               | 290    |
 | [`PLUGIN LIST`](https://doc.4d.com/4dv19/help/command/en/page847.html)                                        | 847    |
 | [`POP RECORD`](https://doc.4d.com/4dv19/help/command/en/page177.html)                                         | 177    |
-| [`Pop up menu`](https://doc.4d.com/4dv19/help/command/en/page542.html)                                        | 542    |
+| [`Menu pop-up`](https://doc.4d.com/4dv19/help/command/en/page542.html)                                        | 542    |
 | [`POP3 New transporter`](https://doc.4d.com/4dv19/help/command/en/page1697.html)                              | 1697   |
 | [`Position`](https://doc.4d.com/4dv19/help/command/en/page15.html)                                            | 15     |
 | [`POST CLICK`](https://doc.4d.com/4dv19/help/command/en/page466.html)                                         | 466    |
@@ -1178,7 +1178,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`System folder`](https://doc.4d.com/4dv19/help/command/en/page487.html)                                      | 487    |
 | <a name="T">**T**</a>                                                                                    |        |
 | [`Tabela`](https://doc.4d.com/4dv19/help/command/en/page252.html)                                             | 252    |
-| [`Table name`](https://doc.4d.com/4dv19/help/command/en/page256.html)                                         | 256    |
+| [`Nome da tabela`](https://doc.4d.com/4dv19/help/command/en/page256.html)                                     | 256    |
 | [`Tan`](https://doc.4d.com/4dv19/help/command/en/page19.html)                                                 | 19     |
 | [`Temporary folder`](https://doc.4d.com/4dv19/help/command/en/page486.html)                                   | 486    |
 | [`Test path name`](https://doc.4d.com/4dv19/help/command/en/page476.html)                                     | 476    |
@@ -1217,7 +1217,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | <a name="V">**V**</a>                                                                                    |        |
 | [`Validate password`](https://doc.4d.com/4dv19/help/command/en/page638.html)                                  | 638    |
 | [`VALIDATE TRANSACTION`](https://doc.4d.com/4dv19/help/command/en/page240.html)                               | 240    |
-| [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)                                        | 1509   |
+| [`Tipo de valor`](https://doc.4d.com/4dv19/help/command/en/page1509.html)                                     | 1509   |
 | [`VARIABLE TO BLOB`](https://doc.4d.com/4dv19/help/command/en/page532.html)                                   | 532    |
 | [`VARIABLE TO VARIABLE`](https://doc.4d.com/4dv19/help/command/en/page635.html)                               | 635    |
 | [`Variance`](https://doc.4d.com/4dv19/help/command/en/page27.html)                                            | 27     |
