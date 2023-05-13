@@ -58,7 +58,7 @@ Platform-specific syntax depends on the operating system on which the command is
 The following patterns are supported:
 
 - folder separators are "\"
-- the text contains ":" and "\" as the second and third character,
+- the text contains ':' and '\' as the second and third character,
 - the text starts with "\\".
 
 Examples with [`Folder`](../API/FolderClass.md#folder):
@@ -68,11 +68,11 @@ $ok:=Folder("C:\\Monday";fk platform path).create()
 $ok:=Folder("\\\\svr-internal\\tempo";fk platform path).create()
 ```
 
-#### Windows pathnames and escape sequences
+#### Entering Windows pathnames and escape sequences
 
-The 4D language allows the use of [escape sequences](quick-tour.md#escape-sequences). Escape sequences begin with a backslash `\`, followed by a character. For example, `\t` is the escape sequence for the `Tab` character.
+The 4D language allows the use of [escape sequences](quick-tour.md#escape-sequences). The sequence begins with a backslash `\`, followed by a character. For example, `\t` is the escape sequence for the `Tab` character.
 
-Since the `\` character is also used as the separator in pathnames in Windows, you need to enter a double `\\` in windows pathnames.
+The `\` character is also used as the separator in pathnames in Windows.
 
 ### macOS
 
@@ -106,7 +106,7 @@ $okFolder:=Folder("/PACKAGE/myFolder").create() //folder created at the structur
 $okFile:=File("/DATA/Prefs/tempo.txt").create() //file created in the data folder
 ```
 
-### `.file()` and `.folder()` folder functions
+### `.file()` and `.folder()` folder methods
 
 Functions of folder objects such as [`folder.file()`](../API/FolderClass.md#file) and [`folder.folder()`](../API/FolderClass.md#folder-1) expect relative POSIX pathnames. Por exemplo:
 
