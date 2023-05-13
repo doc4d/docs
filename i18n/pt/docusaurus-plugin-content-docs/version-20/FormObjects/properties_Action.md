@@ -5,7 +5,7 @@ title: Ação
 
 
 ---
-## Draggable
+## Arrastável
 
 Control whether and how the user can drag the object. By default, no drag operation is allowed.
 
@@ -63,7 +63,7 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 
 
 #### Veja também
-[Draggable](#draggable)
+[Arrastável](#draggable)
 
 
 ---
@@ -118,7 +118,7 @@ Several types of method references are supported:
 
 
 ---
-## Movable Rows
+## Linhas móveis
 `Array type list boxes`
 
 Authorizes the movement of rows during execution. This option is selected by default. It is not available for [selection type list boxes](listbox_overview.md#selection-list-boxes) nor for [list boxes in hierarchical mode](properties_Hierarchy.md#hierarchical-list-box).
@@ -156,7 +156,7 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 
 ---
-## Sortable
+## Ordenável
 
 Allows sorting column data by clicking a [listbox](listbox_overview.md) header. This option is selected by default. Picture type arrays (columns) cannot be sorted using this feature.
 
@@ -181,7 +181,7 @@ In other cases (list boxes based on named selections, columns associated with ex
 
 
 ---
-## Standard action
+## Ação padrão
 Typical activities to be performed by active objects (*e.g.*, letting the user accept, cancel, or delete records, move between records or from page to page in a multi-page form, etc.) have been predefined by 4D as standard actions. They are described in detail in the [Standard actions](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html) section of the *Design Reference*.
 
 You can assign both a standard action and a project method to an object. In this case, the standard action is usually executed after the method and 4D uses this action to enable/disable the object according to the current context. When an object is deactivated, the associated project method cannot be executed.
