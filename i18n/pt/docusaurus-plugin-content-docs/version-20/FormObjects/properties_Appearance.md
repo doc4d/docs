@@ -1,6 +1,6 @@
 ---
 id: propertiesAppearance
-title: Appearance
+title: Aparência
 ---
 
 ## Default Button
@@ -32,7 +32,7 @@ On Windows, the concept of "recommended choice" is not supported: only the focus
 
 ---
 
-## Hide focus rectangle
+## Esconder retangulo foco
 
 During execution, a field or any enterable area is outlined by a selection rectangle when it has the focus (via the Tab key or a single click). You can hide this rectangle by enabling this property. Hiding the focus rectangle may be useful in the case of specific interfaces.
 
@@ -70,17 +70,17 @@ By default, this option is not enabled.
 
 ---
 
-## Horizontal Scroll Bar
+## Altura linha
 
 An interface tool allowing the user to move the viewing area to the left or right.
 
-Available values:
+Valores disponíveis:
 
-| Lista de propriedades | JSON value  | Descrição                                                                                                                                                |
+| Lista de propriedades | Valor JSON  | Descrição                                                                                                                                                |
 | --------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sim                   | "visible"   | The scrollbar is always visible, even when it is not necessary (in other words, when the size of the object contents is smaller than that of the frame). |
 | Não                   | "hidden"    | The scrollbar is never visible                                                                                                                           |
-| Automatic             | "automatic" | The scrollbar appears automatically whenever necessary and the user can enter text larger than the object width                                          |
+| Automático            | "automatic" | The scrollbar appears automatically whenever necessary and the user can enter text larger than the object width                                          |
 
 > Picture objects can have scrollbars when the display format of the picture is set to “Truncated (non-centered).”
 
@@ -100,7 +100,7 @@ Available values:
 
 ---
 
-## Resolution
+## Resolução
 
 Sets the screen resolution for the 4D Write Pro area contents. By default, it is set to 72 dpi (macOS), which is the standard resolution for 4D forms on all platforms. Setting this property to 96 dpi will set a windows/web rendering on both macOS and Windows platforms. Setting this property to **automatic** means that document rendering will differ between macOS and Windows platforms.
 
@@ -113,7 +113,7 @@ Sets the screen resolution for the 4D Write Pro area contents. By default, it is
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -130,11 +130,11 @@ Displays/hides both background images and background color.
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
-## Show footers
+## Mostrar rodapés
 
 Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 
@@ -147,7 +147,7 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -166,11 +166,11 @@ When enabled, the formula bar is visible below the Toolbar interface in the 4D V
 
 #### Objects Supported
 
-[4D View Pro area](viewProArea_overview.md)
+[Área 4D View Pro](viewProArea_overview.md)
 
 ---
 
-## Show headers
+## Mostrar cabeçalhos
 
 Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 
@@ -183,7 +183,7 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -200,7 +200,7 @@ Displays/hides invisible characters
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -217,11 +217,11 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
-## Show HTML WYSYWIG
+## Mostrar HTML WYSYWIG
 
 Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attributes which are not compliant with all browsers are removed.
 
@@ -234,7 +234,7 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -251,7 +251,7 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -278,7 +278,7 @@ With the Show references property on, the reference is displayed:
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -295,7 +295,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -331,7 +331,7 @@ You can add an interface to 4D View Pro areas to allow end users to perform basi
 
 #### Objects Supported
 
-[4D View Pro area](viewProArea_overview.md)
+[Área 4D View Pro](viewProArea_overview.md)
 
 #### Veja também
 
@@ -339,17 +339,17 @@ You can add an interface to 4D View Pro areas to allow end users to perform basi
 
 ---
 
-## Vertical Scroll Bar
+## Barra rolagem vertical
 
 An interface tool allowing the user to move the viewing area up and down.
 
-Available values:
+Valores disponíveis:
 
-| Lista de propriedades | JSON value  | Descrição                                                                                                                                                |
+| Lista de propriedades | Valor JSON  | Descrição                                                                                                                                                |
 | --------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Sim                   | "visible"   | The scrollbar is always visible, even when it is not necessary (in other words, when the size of the object contents is smaller than that of the frame). |
 | Não                   | "hidden"    | The scrollbar is never visible                                                                                                                           |
-| Automatic             | "automatic" | The scrollbar appears automatically whenever necessary (in other words, when the size of the object contents is greater than that of the frame)          |
+| Automático            | "automatic" | The scrollbar appears automatically whenever necessary (in other words, when the size of the object contents is greater than that of the frame)          |
 
 > Picture objects can have scrollbars when the display format of the picture is set to “Truncated (non-centered).”
 
@@ -371,13 +371,13 @@ Available values:
 
 ---
 
-## View mode
+## Modo de visualização
 
 Sets the mode for displaying the 4D Write Pro document in the form area. Three values are available:
 
 - **Page**: the most complete view mode, which includes page outlines, orientation, margins, page breaks, headers and footers, etc.
 - **Draft**: draft mode with basic document properties
-- **Embedded**: view mode suitable for embedded areas; it does not display margins, footers, headers, page frames, etc. This mode can also be used to produce a web-like view output (if you also select the [96 dpi resolution](#resolution) and the [Show HTML WYSIWYG](#show-html-wysiwyg) properties).
+- **Embedded**: view mode suitable for embedded areas; it does not display margins, footers, headers, page frames, etc. This mode can also be used to produce a web-like view output (if you also select the [96 dpi resolution](#resolution) and the [Show HTML WYSIWYG](#show-html-wysiwyg) properties). This mode can also be used to produce a web-like view output (if you also select the [96 dpi resolution](#resolution) and the [Show HTML WYSIWYG](#show-html-wysiwyg) properties).
 
 > The View mode property is only used for onscreen rendering. Regarding printing settings, specific rendering rules are automatically used.
 
@@ -390,7 +390,7 @@ Sets the mode for displaying the 4D Write Pro document in the form area. Three v
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
 
 ---
 
@@ -403,8 +403,8 @@ Sets the zoom percentage for displaying 4D Write Pro area contents.
 | Nome | Tipo de dados | Valores possíveis |
 | ---- | ------------- | ----------------- |
 |      |               |                   |
- zoom|number|minimum = 0 |
+ zoom|número|mínimo = 0 |
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md)
