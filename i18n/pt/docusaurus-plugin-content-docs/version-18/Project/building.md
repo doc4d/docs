@@ -162,7 +162,7 @@ When building a stand-alone application, 4D copies the contents of the 4D Volume
 
 * Install a 4D Volume Desktop version corresponding to a specific language;
 * Adicionar uma pasta personalizada *PlugIns*;
-* Customize the contents of the *Resources* folder.
+* Construir um pacote de projeto
 > The macOS packages built contain the same items as the Windows subfolders. In order to modify it, you must first display its contents (**Control+click** on the icon).
 
 #### Localização de ficheiros Web
@@ -280,7 +280,7 @@ There are many possible causes for this error. When you get this message, it is 
 Once a client/server application is built, you will find a new folder in the destination folder named **Client Server executable**. This folder contains two subfolders, `\&#060;ApplicationName&#062;Client` and `\&#060;ApplicationName&#062;Server`.
 > Estas pastas não são geradas se ocorrer um erro. In this case, open the [log file](#log-file) in order to find out the cause of the error.
 
-The `\&#060;ApplicationName&#062;Client` folder contains the client portion of the application corresponding to the execution platform of the application builder. The `<ApplicationName>Client` folder contains the client portion of the application corresponding to the execution platform of the application builder. The `\&#060;ApplicationName&#062;Server` folder contains the server portion of the application.
+The `\&#060;ApplicationName&#062;Client` folder contains the client portion of the application corresponding to the execution platform of the application builder. The `\&#060;ApplicationName&#062;Client` folder contains the client portion of the application corresponding to the execution platform of the application builder. The `\&#060;ApplicationName&#062;Server` folder contains the server portion of the application.
 
 The contents of these folders vary depending on the current platform:
 
