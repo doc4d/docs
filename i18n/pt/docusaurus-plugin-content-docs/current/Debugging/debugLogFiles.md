@@ -17,7 +17,7 @@ Informação gravada precisa ser analisada para detectar e corrigir os problemas
 * [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 * [Petições de arquivo de log por cliente ORDA](#orda-client-requests)
 
-> When a log file can be generated either on 4D Server or on the remote client, the word "Server" is added to the server-side log file name, for example "4DRequestsLogServer.txt"
+> Nota: quando um arquivo de histórico for gerado seja em 4D Server ou em cliente remoto, a palavra "Server" é adicionada ao nome do arquivo do lado servidor, por exemplo "4DRequestsLogServer.txt"
 
 Arquivos de Histórico compartilham alguns campos para que possa estabelecer uma cronologia e fazer conexões entre entradas quando depurar:
 
@@ -43,7 +43,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 //lado remoto
 ```
-> Esta declaração também começa um arquivo de histórico [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt).
+> Esta declaração também começa o arquivo de histórico [4DRequestsLog.txt](#4drequestslogtxt).
 
 #### Cabeçalhos
 
@@ -53,7 +53,7 @@ Este arquivo começa com os cabeçalhos abaixo:
 * Hostname do servidor que hospeda a aplicação
 * Nome login Usuário: login do SO do usuário que roda a aplicação 4D no servidor.
 
-#### Contents
+#### Conteúdos
 
 Para cada petição, os campos abaixo estão logados:
 
@@ -63,7 +63,7 @@ Para cada petição, os campos abaixo estão logados:
 | time                                       | Data e hora usando formato ISO 8601: 'YYYY-MM-DDTHH:MM:SS.mmm'                                                                                                                     |
 | systemid                                   | ID de sistema                                                                                                                                                                      |
 | componente                                 | Assinatura de componente (por exemplo '4SQLS' ou 'dbmg')                                                                                                                           |
-| process\_info\_index                   | Corresponds to the "index" field in 4DRequestsLog_ProcessInfo.txt log, and permits linking a request to a process.                                                                 |
+| process\_info_                           | index Corresponds to the "index" field in 4DRequestsLog_ProcessInfo.txt log, and permits linking a request to a process.                                                           |
 | request                                    | ID de petição em C/S ou string de mensagem para petições SQL ou mensagens `LOG EVENT`                                                                                              |
 | bytes_in                                   | Número de bytes recebidos                                                                                                                                                          |
 | bytes_out                                  | Número de bytes enviados                                                                                                                                                           |
@@ -93,7 +93,7 @@ SET DATABASE PARAMETER(4D Server log recording;1) //lado servidor
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1) //lado remoto
 ```
-> Esta declaração também começa o arquivo de histórico [4DRequestsLog.txt](#4drequestslogtxt).
+> Esta declaração também começa um arquivo de histórico [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt).
 
 #### Cabeçalhos
 
@@ -103,7 +103,7 @@ Este arquivo começa com os cabeçalhos abaixo:
 * Hostname do servidor que hospeda a aplicação
 * Nome login Usuário: login do SO do usuário que roda a aplicação 4D no servidor.
 
-#### Contents
+#### Conteúdos
 
 Para cada processo, os campos abaixo são registrados:
 
@@ -218,7 +218,7 @@ Os campos abaixo estão registrados para cada evento:
 | timestamp          | Data e hora em formato ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm)    |
 | loggerID           | Opcional                                                     |
 | componentSignature | Opcional - assinatura interna de componente                  |
-| messageLevel       | Info, Warning, Error                                         |
+| messageLevel       | Informação, Aviso, Erro                                      |
 | message            | Descrição da entrada de histórico                            |
 
 Dependendo do evento, vários outros campos podem ser registrados, como task, socket, etc.
@@ -256,12 +256,12 @@ Os arquivos de histórico podem ser produzidos em duas versões:
  Para começar esse histórico:
 
  ```4d
- SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log
- SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log
+ SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log 
+ SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log 
  SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
  ```
 
-> 4D Server: Clique no botão **Start Request and Debug Logs** na página [Maintenance](ServerWindow/maintenance.md) da janela de administração de 4D Server.
+> 4D Server: Clique no botão **Start Request and Debug Logs** na página [Maintenance](https://doc.4d.com/4Dv18R5/4D/18-R5/Maintenance-Page.300-5149308.en.html) da janela de administração de 4D Server.
 
    A rota do histórico é retornada pelo comando `Get 4D file`.
 
@@ -288,7 +288,7 @@ Os arquivos de histórico podem ser produzidos em duas versões:
  $transporter:=IMAP New transporter($server)
  ```
 
-#### Contents
+#### Conteúdos
 
 Para cada petição, os campos abaixo estão logados:
 
@@ -325,14 +325,14 @@ ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt"))
 
 Os campos abaixo são registrados para cada petição:
 
-| Campo nome     | Descrição                                                    | Exemplo                                                   |
-| -------------- | ------------------------------------------------------------ | --------------------------------------------------------- |
-| sequenceNumber | Número de operação único e sequencial da sessão de histórico | 104                                                       |
-| url            | URL de petição de cliente ORDA                               | "rest/Persons(30001)"                                     |
-| startTime      | Starting date and time using ISO 8601 format                 | "2019-05-28T08:25:12.346Z"                                |
-| endTime        | Data e hora final usando formato ISO 8601                    | "2019-05-28T08:25:12.371Z"                                |
-| duration       | Duração de processamento do cliente (ms)                     | 25                                                        |
-| response       | Objeto resposta servidor                                     | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
+| Campo nome     | Descrição                                                    | Exemplo                                                 |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
+| sequenceNumber | Número de operação único e sequencial da sessão de histórico | 104                                                     |
+| url            | URL de petição de cliente ORDA                               | "rest/Persons(30001)"                                   |
+| startTime      | Starting date and time using ISO 8601 format                 | "2019-05-28T08:25:12.346Z"                              |
+| endTime        | Data e hora final usando formato ISO 8601                    | "2019-05-28T08:25:12.371Z"                              |
+| duration       | Duração de processamento do cliente (ms)                     | 25                                                      |
+| response       | Objeto resposta servidor                                     | {"status":200,"body":{"__entityModel":"Persons",\[...] |
 
 ## Using a log configuration file
 
