@@ -50,7 +50,7 @@ Essa propriedade é **apenas leitura**.
 
 
 <!-- REF #ClassClass.new().Params -->
-| Parameter  | Tipo      |    | Descrição                                        |
+| Parâmetro  | Tipo      |    | Descrição                                        |
 | ---------- | --------- |:--:| ------------------------------------------------ |
 | param      | any       | -> | Parâmetros a passar à função constructor         |
 | Resultados | 4D. Class | <- | Novo objeto da classe|<!-- END REF -->
