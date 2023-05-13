@@ -1,5 +1,5 @@
 ---
-id: print
+id: propertiesPrint
 title: Imprimir
 ---
 
