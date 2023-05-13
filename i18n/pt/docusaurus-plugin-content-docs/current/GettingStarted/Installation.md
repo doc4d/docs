@@ -3,23 +3,23 @@ id: installation
 title: Instalação
 ---
 
-Welcome to 4D! On this page, you will find all of the necessary information about installing and launching your 4D product.
+Welcome to 4D! Vai encontrar abaixo toda informação necessário para instalar e registrar sua aplicação 4D.
 
 
 ## Required configuration
 
-The [Product Download](https://us.4d.com/product-download) page on the 4D website provides information about the minimum macOS / Windows system requirements for your 4D series.
+Consulte a [página de descarga de produto](https://us.4d.com/product-download) no web site de 4D para conhecer a configuração mínima de Mac / Windows para sua serie 4D.
 
-Additional technical details are available on the 4D website's [Resources page](https://us.4d.com/resources/feature-release).
+Todos os detalhes estão disponíveis na [página Recursos](https://us.4d.com/resources/feature-release) do website de 4D.
 
 
 ## Installation on disk
 
-4D products are installed from the 4D website:
+Os produtos 4D são instalados desde o website de 4D:
 
-1. Connect to the 4D website and go to the [Downloads](https://us.4d.com/product-download) page.
+1. Utilizando seu navegador, conecte-se ao website de 4D e vá à página de [Descargas/downloads](https://us.4d.com/product-download/Feature-Release).
 
-2. Click on the download link for your 4D product and follow the on-screen instructions.
+2. Clique no link de download do seu produto e siga as instruções exibidas na tela.
 
 
 ## Iniciar sessão
@@ -32,7 +32,7 @@ The Welcome Wizard then appears:
 
 ![](../assets/en/getStart/welcome2.png)
 
-- If you want to discover and explore 4D, click on the **free trial** link. You will only be asked to sign in or to create a 4D account.
+- If you want to discover and explore 4D, click on the **free trial** link. Digite seu ID (email ou conta 4D) e sua senha.
 
 - If you already have a 4D account, click on the **Sign in** link in the upper right side of the Welcome Wizard dialog and enter your account information. Any already registered 4D licenses are automatically updated (or additional expansion packs loaded) on your machine.
 
@@ -49,6 +49,6 @@ Enjoy your 4D experience!
 
 :::info
 
-Need to activate specific licenses? Visit the [Managing 4D licenses](../Admin/licenses.md) page.
+Também é preciso ativar qualquer licença adicional que obter. Visit the [Managing 4D licenses](../Admin/licenses.md) page.
 
 :::
