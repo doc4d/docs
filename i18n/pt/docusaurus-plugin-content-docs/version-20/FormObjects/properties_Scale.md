@@ -1,6 +1,6 @@
 ---
 id: propertiesScale
-title: Scale
+title: Escala
 ---
 
 ## Barber shop
@@ -71,7 +71,7 @@ Specifies the location of an object's displayed text.
 
 ---
 
-## Maximum
+## Máximo
 
 Maximum value of an indicator.
 
@@ -114,7 +114,7 @@ Minimum interval accepted between values during use. For numeric steppers, this 
 
 | Nome | Tipo de dados | Valores possíveis |
 |:----:|:-------------:| ----------------- |
-| step |    integer    | minimum: 1        |
+| step |    integer    | mínimo: 1         |
 
 #### Objects Supported
 
