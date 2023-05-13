@@ -10,14 +10,13 @@ ORDA allows you to create high-level class functions above the data model. This 
 For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. It would be as simple as calling:
 
 ```4d
-$nextHigh:=ds.Employee.get(1).getNextWithHigherSalary()
+$nextHigh:=ds. Employee.get(1).getNextWithHigherSalary()
 ```
 
 Developers can not only use these functions in local datastores, but also in client/server and remote architectures:
 
 ```4d
- //$cityManager is the reference of a remote datastore
-Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
+ //$cityManager is the reference of a remote datastore Form.comp.city:=$cityManager. City.getCityName(Form.comp.zipcode)
 ```
 
 Thanks to this feature, the entire business logic of your 4D application can be stored as a independent layer so that it can be easily maintained and reused with a high level of security:
@@ -26,7 +25,7 @@ Thanks to this feature, the entire business logic of your 4D application can be 
 
 - If the physical structure evolves, you can simply adapt function code and client applications will continue to call them transparently.
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes-1)) and [alias attributes](#alias-attributes-1) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
+- By default, all of your data model class functions are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
 
 ![](../assets/en/ORDA/api.png)
 
@@ -34,7 +33,7 @@ Thanks to this feature, the entire business logic of your 4D application can be 
 In addition, 4D [automatically pre-creates](#creating-classes) the classes for each available data model object.
 
 
-## Architecture
+## Arquitetura
 
 ORDA provides **generic classes** exposed through the **`4D`** [class store](Concepts/classes.md#class-stores), as well as **user classes** (extending generic classes) exposed in the **`cs`** [class store](Concepts/classes.md#class-stores):
 
@@ -42,12 +41,12 @@ ORDA provides **generic classes** exposed through the **`4D`** [class store](Con
 
 All ORDA data model classes are exposed as properties of the **`cs`** class store. The following ORDA classes are available:
 
-| Class                       | Example name         | Instantiated by                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| --------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| cs. DataStore               | cs. DataStore        | [`ds`](API/DataStoreClass.md#ds) command                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| cs.*DataClassName*          | cs.Employee          | [`dataStore.DataClassName`](API/DataStoreClass.md#dataclassname), `dataStore["DataClassName"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| cs.*DataClassName*Entity    | cs.EmployeeEntity    | [`dataClass.get()`](API/DataClassClass.md#get), [`dataClass.new()`](API/DataClassClass.md#new), [`entitySelection.first()`](API/EntitySelectionClass.md#first), [`entitySelection.last()`](API/EntitySelectionClass.md#last), [`entity.previous()`](API/EntityClass.md#previous), [`entity.next()`](API/EntityClass.md#next), [`entity.first()`](API/EntityClass.md#first), [`entity.last()`](API/EntityClass.md#last), [`entity.clone()`](API/EntityClass.md#clone)                                                                                                                                                                                                                                                                                                                                                                                                   |
-| cs.*DataClassName*Selection | cs.EmployeeSelection | [`dataClass.query()`](API/DataClassClass.md#query), [`entitySelection.query()`](API/EntitySelectionClass.md#query), [`dataClass.all()`](API/DataClassClass.md#all), [`dataClass.fromCollection()`](API/DataClassClass.md#fromcollection), [`dataClass.newSelection()`](API/DataClassClass.md#newselection), [`entitySelection.drop()`](API/EntitySelectionClass.md#drop), [`entity.getSelection()`](API/EntityClass.md#getselection), [`entitySelection.and()`](API/EntitySelectionClass.md#and), [`entitySelection.minus()`](API/EntitySelectionClass.md#minus), [`entitySelection.or()`](API/EntitySelectionClass.md#or), [`entitySelection.orderBy()`](API/EntitySelectionClass.md#or), [`entitySelection.orderByFormula()`](API/EntitySelectionClass.md#orderbyformula), [`entitySelection.slice()`](API/EntitySelectionClass.md#slice), `Create entity selection` |
+| Class                       | Nome do exemplo       | Instantiated by                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cs. DataStore               | cs. DataStore         | comando [`ds`](API/DataStoreClass.md#ds)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| cs.*DataClassName*          | cs. Employee          | [`dataStore. DataClassName`](API/DataStoreClass.md#dataclassname), `dataStore["DataClassName"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| cs.*DataClassName*Entity    | cs. EmployeeEntity    | [`dataClass.get()`](API/DataClassClass.md#get), [`dataClass.new()`](API/DataClassClass.md#new), [`entitySelection.first()`](API/EntitySelectionClass.md#first), [`entitySelection.last()`](API/EntitySelectionClass.md#last), [`entity.previous()`](API/EntityClass.md#previous), [`entity.next()`](API/EntityClass.md#next), [`entity.first()`](API/EntityClass.md#first), [`entity.last()`](API/EntityClass.md#last), [`entity.clone()`](API/EntityClass.md#clone)                                                                                                                                                                                                                                                                                                                                                                                                   |
+| cs.*DataClassName*Selection | cs. EmployeeSelection | [`dataClass.query()`](API/DataClassClass.md#query), [`entitySelection.query()`](API/EntitySelectionClass.md#query), [`dataClass.all()`](API/DataClassClass.md#all), [`dataClass.fromCollection()`](API/DataClassClass.md#fromcollection), [`dataClass.newSelection()`](API/DataClassClass.md#newselection), [`entitySelection.drop()`](API/EntitySelectionClass.md#drop), [`entity.getSelection()`](API/EntityClass.md#getselection), [`entitySelection.and()`](API/EntitySelectionClass.md#and), [`entitySelection.minus()`](API/EntitySelectionClass.md#minus), [`entitySelection.or()`](API/EntitySelectionClass.md#or), [`entitySelection.orderBy()`](API/EntitySelectionClass.md#or), [`entitySelection.orderByFormula()`](API/EntitySelectionClass.md#orderbyformula), [`entitySelection.slice()`](API/EntitySelectionClass.md#slice), `Create entity selection` |
 
 > ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project [(see below)](#class-files).
 
@@ -77,19 +76,15 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 A 4D database exposes its own DataStore class in the `cs` class store.
 
-- **Extends**: 4D.DataStoreImplementation
-- **Class name**: cs.DataStore
+- **Extends**: 4D. DataStoreImplementation
+- **Class name**: cs. DataStore
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
 #### Exemplo
 
 ```4d  
-// cs.DataStore class
-
-Class extends DataStoreImplementation
-
-Function getDesc
+// cs. DataStore class Class extends DataStoreImplementation Function getDesc
   $0:="Database exposing employees and their companies"
 ```
 
@@ -106,26 +101,21 @@ $desc:=ds.getDesc() //"Database exposing..."
 
 Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
-- **Extends**: 4D.DataClass
+- **Extends**: 4D. DataClass
 - **Class name**: cs.*DataClassName* (where *DataClassName* is the table name)
-- **Example name**: cs.Employee
+- **Example name**: cs. Employee
 
 
 
 #### Exemplo
 
 ```4D
-// cs.Company class
-
-
-Class extends DataClass
+// cs. Company class Class extends DataClass
 
 // Returns companies whose revenue is over the average
-// Returns an entity selection related to the Company DataClass
-
-Function GetBestOnes()
-    $sel:=This.query("revenues >= :1";This.all().average("revenues"));
-    $0:=$sel
+// Returns an entity selection related to the Company DataClass Function GetBestOnes()
+ $sel:=This.query("revenues >= :1";This.all().average("revenues"));
+ $0:=$sel
 ```
 
 Then you can get an entity selection of the "best" companies by executing:
@@ -136,8 +126,8 @@ Then you can get an entity selection of the "best" companies by executing:
 
 
 ```4d
-    var $best : cs.CompanySelection
-    $best:=ds.Company.GetBestOnes()
+    var $best : cs. CompanySelection
+ $best:=ds. Company. GetBestOnes()
 ```
 
 > [Computed attributes](#computed-attributes) are defined in the [Entity Class](#entity-class).
@@ -152,22 +142,18 @@ The following *City* catalog is exposed in a remote datastore (partial view):
 The `City Class` provides an API:
 
 ```4d  
-// cs.City class
+// cs. City class Class extends DataClass Function getCityName()
+ var $1; $zipcode : Integer
+ var $zip : 4D. Entity
+ var $0 : Text
 
-Class extends DataClass
+ $zipcode:=$1
+ $zip:=ds. ZipCode.get($zipcode)
+ $0:="" 
 
-Function getCityName()
-    var $1; $zipcode : Integer
-    var $zip : 4D.Entity
-    var $0 : Text
-
-    $zipcode:=$1
-    $zip:=ds.ZipCode.get($zipcode)
-    $0:="" 
-
-    If ($zip#Null)
-        $0:=$zip.city.name
-    End if
+ If ($zip#Null)
+  $0:=$zip.city.name
+ End if
 ```
 
 The client application opens a session on the remote datastore:
@@ -179,7 +165,7 @@ $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManage
 Then a client application can use the API to get the city matching a zip code (for example) from a form:
 
 ```4d
-Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
+Form.comp.city:=$cityManager. City.getCityName(Form.comp.zipcode)
 
 ```
 
@@ -188,40 +174,35 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 Each table exposed with ORDA offers an EntitySelection class in the `cs` class store.
 
-- **Extends**: 4D.EntitySelection
+- **Extends**: 4D. EntitySelection
 - **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Example name**: cs. EmployeeSelection
 
 
 #### Exemplo
 
 ```4d
-// cs.EmployeeSelection class
+// cs. EmployeeSelection class Class extends EntitySelection
 
-
-Class extends EntitySelection
-
-//Extract the employees with a salary greater than the average from this entity selection 
-
-Function withSalaryGreaterThanAverage
-    C_OBJECT($0)
-    $0:=This.query("salary > :1";This.average("salary")).orderBy("salary")
+//Extract the employees with a salary greater than the average from this entity selection Function withSalaryGreaterThanAverage
+ C_OBJECT($0)
+ $0:=This.query("salary > :1";This.average("salary")).orderBy("salary")
 
 ```
 
 Then you can get employees with a salary greater than the average in any entity selection by executing:
 
 ```4d
-$moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
+$moreThanAvg:=ds. Company.all().employees.withSalaryGreaterThanAverage()
 ```
 
 ### Entity Class
 
 Each table exposed with ORDA offers an Entity class in the `cs` class store.
 
-- **Extends**: 4D.Entity
+- **Extends**: 4D. Entity
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
-- **Example name**: cs.CityEntity
+- **Example name**: cs. CityEntity
 
 #### Computed attributes
 
@@ -246,15 +227,8 @@ For information, please refer to the [Alias attributes](#alias-attributes-1) sec
 #### Exemplo
 
 ```4d
-// cs.CityEntity class
-
-Class extends Entity
-
-Function getPopulation()
-    $0:=This.zips.sum("population")
-
-
-Function isBigCity(): Boolean
+// cs. CityEntity class Class extends Entity Function getPopulation()
+    $0:=This.zips.sum("population") Function isBigCity C_BOOLEAN($0)
 // The getPopulation() function is usable inside the class
 $0:=This.getPopulation()>50000
 ```
@@ -265,10 +239,8 @@ Then you can call this code:
 var $cityManager; $city : Object
 
 $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManager")
-$city:=$cityManager.City.getCity("Caguas")
-
-If ($city.isBigCity())
-    ALERT($city.name + " is a big city")
+$city:=$cityManager. City.getCity("Caguas") If ($city.isBigCity())
+ ALERT($city.name + " is a big city")
 End if
 ```
 
@@ -342,19 +314,19 @@ The *getter* function defines the data type of the computed attribute thanks to 
 
 - Scalar (text, boolean, date, time, number)
 - Objeto
-- Image
+- Imagem
 - BLOB
-- Entity (i.e. cs.EmployeeEntity)
-- Entity selection (i.e. cs.EmployeeSelection)
+- Entity (i.e. cs. EmployeeEntity)
+- Entity selection (i.e. cs. EmployeeSelection)
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Tipo    | Descrição                                                                                 |
-| ------------- | ------- | ----------------------------------------------------------------------------------------- |
-| attributeName | Text    | Computed attribute name                                                                   |
-| dataClassName | Text    | Nome do dataclass                                                                         |
-| kind          | Text    | "get"                                                                                     |
-| result        | Variant | Optional. Add this property with Null value if you want a scalar attribute to return Null |
+| Propriedade   | Tipo         | Descrição                                                                                 |
+| ------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| attributeName | Text         | Computed attribute name                                                                   |
+| dataClassName | Text         | Nome do dataclass                                                                         |
+| kind          | Text         | "get"                                                                                     |
+| result        | Diferente de | Opcional. Add this property with Null value if you want a scalar attribute to return Null |
 
 
 #### Exemplos
@@ -379,7 +351,7 @@ Function get fullName($event : Object)-> $fullName : Text
 - A computed attribute can be based upon an entity related attribute:
 
 ```4d
-Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
+Function get bigBoss($event : Object)-> $result: cs. EmployeeEntity
     $result:=This.manager.manager
 
 ```
@@ -387,9 +359,9 @@ Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
 - A computed attribute can be based upon an entity selection related attribute:
 
 ```4d
-Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
+Function get coWorkers($event : Object)-> $result: cs. EmployeeSelection
     If (This.manager.manager=Null)
-        $result:=ds.Employee.newSelection()
+        $result:=ds. Employee.newSelection()
     Else 
         $result:=This.manager.directReports.minus(this)
     End if
@@ -412,12 +384,12 @@ The *$value* parameter receives the value assigned to the attribute.
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Tipo    | Descrição                                     |
-| ------------- | ------- | --------------------------------------------- |
-| attributeName | Text    | Computed attribute name                       |
-| dataClassName | Text    | Nome do dataclass                             |
-| kind          | Text    | "set"                                         |
-| value         | Variant | Value to be handled by the computed attribute |
+| Propriedade   | Tipo         | Descrição                                     |
+| ------------- | ------------ | --------------------------------------------- |
+| attributeName | Text         | Computed attribute name                       |
+| dataClassName | Text         | Nome do dataclass                             |
+| kind          | Text         | "set"                                         |
+| value         | Diferente de | Value to be handled by the computed attribute |
 
 #### Exemplo
 
@@ -437,8 +409,7 @@ Function set fullName($value : Text; $event : Object)
 
 ```4d
 Function query <attributeName>($event : Object)
-Function query <attributeName>($event : Object) -> $result : Text
-Function query <attributeName>($event : Object) -> $result : Object
+Function query <attributeName>($event : Object) -> $result : Text Function query <attributeName>($event : Object) -> $result : Object
 // code
 ```
 
@@ -460,14 +431,14 @@ The `query` function executes whenever a query using the computed attribute is l
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Tipo    | Descrição                                                                                                                                                                                                                                                                                                                                                          |
-| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| attributeName | Text    | Computed attribute name                                                                                                                                                                                                                                                                                                                                            |
-| dataClassName | Text    | Nome do dataclass                                                                                                                                                                                                                                                                                                                                                  |
-| kind          | Text    | "query"                                                                                                                                                                                                                                                                                                                                                            |
-| value         | Variant | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                                      |
-| operator      | Text    | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores possíveis:<li>== (equal to, @ is wildcard)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (not equal to, @ is not wildcard)</li><li>< (less than)</li><li><= (less than or equal to)</li><li>> (greater than)</li><li>>= (greater than or equal to)</li><li>IN (included in)</li><li>% (contains keyword)</li> |
-| result        | Variant | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                           |
+| Propriedade   | Tipo         | Descrição                                                                                                                                                                                                                                                                                                                                                          |
+| ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| attributeName | Text         | Computed attribute name                                                                                                                                                                                                                                                                                                                                            |
+| dataClassName | Text         | Nome do dataclass                                                                                                                                                                                                                                                                                                                                                  |
+| kind          | Text         | "query"                                                                                                                                                                                                                                                                                                                                                            |
+| value         | Diferente de | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                                      |
+| operator      | Text         | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores possíveis:<li>== (equal to, @ is wildcard)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (not equal to, @ is not wildcard)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (maior que)</li><li>>= (greater than or equal to)</li><li>IN (incluído em)</li><li>% (contains keyword)</li> |
+| result        | Diferente de | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                           |
 
 > If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
 
@@ -519,7 +490,7 @@ Function query fullName($event : Object)->$result : Object
 Calling code, for example:
 
 ```4d
-$emps:=ds.Employee.query("fullName = :1"; "Flora Pionsin")
+$emps:=ds. Employee.query("fullName = :1"; "Flora Pionsin")
 ```
 
 - This function handles queries on the *age* computed attribute and returns an object with parameters:
@@ -593,15 +564,15 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 The *$event* parameter contains the following properties:
 
-| Propriedade   | Tipo     | Descrição                                                                                                  |
-| ------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| attributeName | Text     | Computed attribute name                                                                                    |
-| dataClassName | Text     | Nome do dataclass                                                                                          |
-| kind          | Text     | "orderBy"                                                                                                  |
-| value         | Variant  | Value to be handled by the computed attribute                                                              |
-| operator      | Text     | "desc" or "asc" (default)                                                                                  |
-| descending    | Booleano | `true` for descending order, `false` for ascending order                                                   |
-| result        | Variant  | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
+| Propriedade   | Tipo         | Descrição                                                                                                  |
+| ------------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| attributeName | Text         | Computed attribute name                                                                                    |
+| dataClassName | Text         | Nome do dataclass                                                                                          |
+| kind          | Text         | "orderBy"                                                                                                  |
+| value         | Diferente de | Value to be handled by the computed attribute                                                              |
+| operator      | Text         | "desc" or "asc" (default)                                                                                  |
+| descending    | Parâmetros   | `true` for descending order, `false` for ascending order                                                   |
+| result        | Diferente de | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
 
 > You can use either the `operator` or the `descending` property. It is essentially a matter of programming style (see examples).
 
@@ -699,14 +670,14 @@ Alias attributes are read-only (except when based upon a scalar attribute of the
 
 > Keep in mind that alias attributes are calculated on the server. In remote configurations, updating alias attributes in entities requires that entities are reloaded from the server.
 
-### Alias properties
+### Propriedades alias
 
 Alias attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "alias".
 
 An alias attribute inherits its data [`type`](../API/DataClassAttributeClass.md#type) property from the target attribute:
 
 - if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
-- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection").
+- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D. Entity` or `4D. EntitySelection` type ("*classname*Entity" or "*classname*Selection").
 
 Alias attributes based upon relations have a specific [`path`](../API/DataClassAttributeClass.md#path) property, containing the path of their target attributes. Alias attributes based upon attributes of the same dataclass have the same properties as their target attributes (and no `path` property).
 
@@ -720,22 +691,14 @@ Considering the following model:
 In the Teacher dataclass, an alias attribute returns all students of a teacher:
 
 ```4d
-// cs.TeacherEntity class
-
-Class extends Entity
-
-Alias students courses.student //relatedEntities 
+// cs. TeacherEntity class Class extends Entity Alias students courses.student //relatedEntities 
 ```
 
 In the Student dataclass, an alias attribute returns all teachers of a student:
 
 
 ```4d
-// cs.StudentEntity class
-
-Class extends Entity
-
-Alias teachers courses.teacher //relatedEntities 
+// cs. StudentEntity class Class extends Entity Alias teachers courses.teacher //relatedEntities 
 ```
 
 In the Course dataclass:
@@ -746,13 +709,7 @@ In the Course dataclass:
 
 
 ```4d
-// cs.CourseEntity class
-
-Class extends Entity
-
-Exposed Alias courseName name //scalar 
-Exposed Alias teacherName teacher.name //scalar value
-Exposed Alias studentName student.name //scalar value
+// cs. CourseEntity class Class extends Entity Exposed Alias courseName name //scalar Exposed Alias teacherName teacher.name //scalar value Exposed Alias studentName student.name //scalar value
 
 ```
 
@@ -760,19 +717,19 @@ You can then execute the following queries:
 
 ```4d
 // Find course named "Archaeology"
-ds.Course.query("courseName = :1";"Archaeology")
+ds. Course.query("courseName = :1";"Archaeology")
 
 // Find courses given by the professor Smith
-ds.Course.query("teacherName = :1";"Smith")
+ds. Course.query("teacherName = :1";"Smith")
 
 // Find courses where Student "Martin" assists
-ds.Course.query("studentName = :1";"Martin")
+ds. Course.query("studentName = :1";"Martin")
 
 // Find students who have M. Smith as teacher 
-ds.Student.query("teachers.name = :1";"Smith")
+ds. Student.query("teachers.name = :1";"Smith")
 
 // Find teachers who have M. Martin as Student
-ds.Teacher.query("students.name = :1";"Martin")
+ds. Teacher.query("students.name = :1";"Martin")
 // Note that this very simple query string processes a complex 
 // query including a double join, as you can see in the queryPlan:   
 // "Join on Table : Course  :  Teacher.ID = Course.teacherID,    
@@ -785,7 +742,7 @@ You can also edit the value of the *courseName* alias:
 
 ```4d
 // Rename a course using its alias attribute
-$arch:=ds.Course.query("courseName = :1";"Archaeology")
+$arch:=ds. Course.query("courseName = :1";"Archaeology")
 $arch.courseName:="Archaeology II"
 $arch.save() //courseName and name are "Archaeology II"
 ```
@@ -795,12 +752,12 @@ $arch.save() //courseName and name are "Archaeology II"
 
 ## Exposed vs non-exposed functions
 
-For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests.
+For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests.
 
 Remote requests include:
 
 - Requests sent by remote 4D applications connected through `Open datastore`
-- REST requests
+- Pedidos REST
 
 > Regular 4D client/server requests are not impacted. Data model class functions are always available in this architecture.
 
@@ -825,16 +782,15 @@ Class extends DataClass
 //Public function
 exposed Function registerNewStudent($student : Object) -> $status : Object
 
-var $entity : cs.StudentsEntity
+var $entity : cs. StudentsEntity
 
-$entity:=ds.Students.new()
+$entity:=ds. Students.new()
 $entity.fromObject($student)
 $entity.school:=This.query("name=:1"; $student.schoolName).first()
 $entity.serialNumber:=This.computeSerialNumber()
 $status:=$entity.save()
 
-//Not exposed (private) function
-Function computeIDNumber()-> $id : Integer
+//Not exposed (private) function Function computeIDNumber()-> $id : Integer
 //compute a new ID number
 $id:=...
 
@@ -849,8 +805,8 @@ var $id : Integer
 $remoteDS:=Open datastore(New object("hostname"; "127.0.0.1:8044"); "students")
 $student:=New object("firstname"; "Mary"; "lastname"; "Smith"; "schoolName"; "Math school")
 
-$status:=$remoteDS.Schools.registerNewStudent($student) // OK
-$id:=$remoteDS.Schools.computeIDNumber() // Error "Unknown member method" 
+$status:=$remoteDS. Schools.registerNewStudent($student) // OK
+$id:=$remoteDS. Schools.computeIDNumber() // Error "Unknown member method" 
 ```
 
 
@@ -875,7 +831,7 @@ Note that the function will work even if it eventually requires to access the se
 // Get the youngest students  
 // Inappropriate use of local keyword
 local Function getYoungest
-    var $0 : Object
+ var $0 : Object
     $0:=This.students.query("birthDate >= :1"; !2000-01-01!).orderBy("birthDate desc").slice(0; 5)
 ```
 - **without** the `local` keyword, the result is given using a single request
@@ -894,12 +850,11 @@ On the *StudentsEntity* class:
 Class extends Entity
 
 local Function age() -> $age: Variant
-
-If (This.birthDate#!00-00-00!)
+    If (This.birthDate#!00-00-00!)
+    If (This.birthDate#!00-00-00!)
     $age:=Year of(Current date)-Year of(This.birthDate)
 Else 
-    $age:=Null
-End if
+    $age:=Null End if
 ```
 
 #### Checking attributes
@@ -925,7 +880,7 @@ Case of
 End case
 ```
 
-Calling code:
+Código de chamada:
 
 ```4d
 var $status : Object
@@ -933,16 +888,15 @@ var $status : Object
 //Form.student is loaded with all its attributes and updated on a Form
 $status:=Form.student.checkData()
 If ($status.success)
-    $status:=Form.student.save() // call the server
-End if
+    $status:=Form.student.save() // call the server End if
 ```
 
 
 
-## Support in 4D IDE
+## Support in 4D projects
 
 
-### Class files
+### Ficheiros de classe (class files)
 
 An ORDA data model user class is defined by adding, at the [same location as regular class files](Concepts/classes.md#class-files) (*i.e.* in the `/Sources/Classes` folder of the project folder), a .4dm file with the name of the class. For example, an entity class for the `Utilities` dataclass will be defined through a `UtilitiesEntity.4dm` file.
 
@@ -971,7 +925,7 @@ Once a class is defined, its name is no longer dimmed in the Explorer.
 
 ### Editing classes
 
-To open a defined ORDA class in the 4D Code Editor, select or double-click on an ORDA class name and use **Edit...** from the contextual menu/options menu of the Explorer window:
+To open a defined ORDA class in the 4D method editor, select or double-click on an ORDA class name and use **Edit...** from the contextual menu/options menu of the Explorer window:
 
 ![](../assets/en/ORDA/classORDA4.png)
 
@@ -980,9 +934,9 @@ For ORDA classes based upon the local datastore (`ds`), you can directly access 
 ![](../assets/en/ORDA/classORDA5.png)
 
 
-### Code Editor
+### Editor de método
 
-In the 4D Code Editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:
+In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:
 
 ![](../assets/en/ORDA/AutoCompletionEntity.png)
 
