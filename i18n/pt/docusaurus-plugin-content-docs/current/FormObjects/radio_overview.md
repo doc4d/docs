@@ -1,6 +1,6 @@
 ---
 id: radiobuttonOverview
-title: Radio Button
+title: Botão rádio
 ---
 
 Radio buttons are objects that allow the user to select one of a group of buttons.
@@ -15,7 +15,7 @@ A radio button is selected:
 
 
 
-## Configuring radio buttons
+## Configuração de botões radio
 
 Radio buttons are used in coordinated sets: only one button at a time can be selected in the set. In order to operate in a coordinated manner, a set of radio buttons must share the same [Radio Group](properties_Object.md#radio-group) property.
 
@@ -31,7 +31,7 @@ The value contained in a radio button object is not saved automatically (except 
 
 
 
-## Button Styles
+## Estilos de botões
 
 Radio [button styles](properties_TextAndPicture.md#button-style) control radio button's general appearance as well as its available properties. It is possible to apply different predefined styles to radio buttons. However, the same button style must be applied to all radio buttons in a group so that they work as expected.
 
@@ -47,7 +47,7 @@ The Regular radio button style is a standard system button (*i.e.*, a small bull
 In addition to initiating code execution, the Regular radio button style changes bullsey color when being hovered.
 
 
-### Flat
+### Plano
 
 The Flat radio button style is a standard system button (*i.e.*, a small bullseye with text) which executes code when a user clicks on it.
 
@@ -60,7 +60,7 @@ By default, the Flat style has a minimalist appearance. The Flat button style's 
 
 The Toolbar radio button style is primarily intended for integration in a toolbar.
 
-By default, the Toolbar style has a transparent background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+By default, the Toolbar style has a transparent background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
  - *Windows* - the button is highlighted.
 
@@ -72,7 +72,7 @@ By default, the Toolbar style has a transparent background with a label in the c
 
 ### Bevel
 
-The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
  - *Windows* - the button is highlighted.
 
@@ -83,7 +83,7 @@ The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behav
 
 ### Bevel arredondado
 
-The Rounded Bevel button style is nearly identical to the [Bevel](#bevel) style except, depending on the OS, the corners of the button may be rounded.
+O estilo de botão Bevel arredondado é quase idêntico ao estilo [Bevel](#bevel), exceto que, dependendo do sistema operativo, as esquinas do botão podem ser arredondadas.
 
  - *Windows* - the button is identical to the [Bevel](#bevel) style.
 
@@ -104,11 +104,11 @@ The OS X Gradient button style is nearly identical to the [Bevel](#bevel) style 
 
 The OS X Textured radio button style is nearly identical to the [Toolbar](#toolbar) style except, depending on the OS, it may have a different appearance and does not display hover.
 
-By default, the OS X Textured style appears as:
+Como padrão, o estilo OS X Textured aparece como:
 
  - *Windows* - a toolbar-like button with a label in the center and the background is always displayed.
 
- - *macOS* - a standard system button displaying a color change from light to dark gray. Its height is predefined: it is not possible to enlarge or reduce it.
+ - *macOS* - - um botão sistema padrão que mostra uma mudança de cor cinza claro a cinza escuro. Sua altura está predefinida: não é possível ampliar ou reduzir.
 
   ![](../assets/en/FormObjects/OSXTextured.png)
 
@@ -116,21 +116,21 @@ By default, the OS X Textured style appears as:
 
 ### Office XP
 
-The Office XP button style combines the appearance of the [Regular](#regular) style (standard system button) with the [Toolbar](#toolbar) style's behavior.
+O estilo de botão Office XP combina a aparência de estilo [Clássico](#regular) com o comportamento de estilo [Barra de ferramentas](#toolbar).
 
-The colors (highlight and background) of a button with the Office XP style are based on the system colors. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas nos sistemas de cores. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
- - *Windows* - its background only appears when the mouse rolls over it.
+ - *Windows* - seu fundo só aparece quando o mouse passa por cima.
 
   ![](../assets/en/FormObjects/radio_xp.png)
 
- - *macOS* - its background is always displayed.
+ - *macOS* - seu fundo é sempre mostrado.
 
 
 
-### Collapse/Expand
+### Contrair/expandir
 
-This button style can be used to add a standard collapse/expand icon. These buttons are used natively in hierarchical lists. In Windows, the button looks like a [+] or a [-]; in macOS, it looks like a triangle pointing right or down.
+This button style can be used to add a standard collapse/expand icon. Esses botões são usados nativamente em listas hierárquicas. Esses botões são usados nativamente em listas hierárquicas.
 
 ![](../assets/en/FormObjects/checkbox_collapse.png)
 
@@ -141,7 +141,7 @@ The Collapse/Expand style is named "disclosure" in the [button style JSON Gramma
 :::
 
 
-### Disclosure
+### Botão disclosure
 
 The disclosure radio button style displays the radio button as a standard disclosure button, usually used to show/hide additional information. The button symbol points downwards with value 0 and upwards with value 1.
 
@@ -159,14 +159,14 @@ The Disclosure style is named "roundedDisclosure" in the [button style JSON Gram
 The Custom radio button style accepts a personalized background picture and allows managing additional parameters such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontalMargin).
 
 
-## Supported properties
+## Propriedades compatíveis
 
 All radio buttons share the same set of basic properties:
 
-[Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Class](properties_Object.md#css-class) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Alignment](properties_Text.md#horizontal-alignment)(1) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Image hugs title](properties_TextAndPicture.md#image-hugs-title)(2) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Number of States](properties_TextAndPicture.md#number-of-states)(2) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Radio Group](properties_Object.md#radio-group) - [Picture pathname](properties_TextAndPicture.md#picture-pathname)(2) - [Right](properties_CoordinatesAndSizing.md#right) - [Save value](properties_Object.md#save-value) - [Shortcut](properties_Entry.md#shortcut) - [Title](properties_Object.md#title) - [Title/Picture Position](properties_TextAndPicture.md#title-picture-position)(2) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
+[Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Class](properties_Object.md#css-class) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Radio Group](properties_Object.md#radio-group) - [Right](properties_CoordinatesAndSizing.md#right) - [Save value](properties_Object.md#save-value) - [Shortcut](properties_Entry.md#shortcut) - [Title](properties_Object.md#title) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
 > (1) Not supported by the [Regular](#regular) and [Flat](#flat) styles.<br/> (2) Not supported by the [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) and [Collapse/Expand](#collapseexpand) styles.
 
 Additional specific properties are available depending on the [button style](#button-styles):
 
-- Custom: [Background pathname](properties_TextAndPicture.md#backgroundPathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#verticalMargin)
+- [Rota de acesso do fundo](properties_TextAndPicture.md#backgroundPathname) - [Margem horizontal](properties_TextAndPicture.md#horizontalMargin) - [Deslocamento ícone](properties_TextAndPicture.md#icon-offset) - [Margem vertical](properties_TextAndPicture.md#verticalMargin) (Personalizado)
