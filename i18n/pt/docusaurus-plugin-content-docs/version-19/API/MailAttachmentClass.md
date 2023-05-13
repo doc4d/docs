@@ -26,9 +26,9 @@ Objetos anexos oferecem as propriedades e funções apenas leitura abaixo:
 
 <!-- REF #_command_.MAIL_New_attachment.Params -->
 
-| Parameter   | Tipo               |    | Descrição                                                             |
+| Parâmetro   | Tipo               |    | Descrição                                                             |
 | ----------- | ------------------ |:--:| --------------------------------------------------------------------- |
-| path        | Text               | -> | Rota do arquivo anexo                                                 |
+| path        | Text               | -> | Pode passar uma rota ou um Blob para definir o anexo.                 |
 | blob        | Blob               | -> | Blob contendo o anexo                                                 |
 | name        | Text               | -> | Nome + extensão usado pelo cliente email para designar o anexo        |
 | cid         | Text               | -> | ID do anexo (apenas mensagens HTML), ou " " se nenhum cid for exigido |
@@ -59,7 +59,7 @@ Pode usar o parâmetro opcional *type* para estabeçecer explicitamente o `conte
 
 Como padrão, se o parâmetro *type* for omitido ou conter uma string vazia, o `content-type` do arquivo anexo é baseado em sua extensão. As regras abaixo são aplicadas aos tipos MIME:
 
-| Extensão  | Content-Type                  |
+| Extensão  | Tipo                          |
 | --------- | ----------------------------- |
 | jpg, jpeg | image/jpeg                    |
 | png       | image/png                     |
@@ -80,7 +80,7 @@ Como padrão, se o parâmetro *type* for omitido ou conter uma string vazia, o `
 
 O parâmetro opcional *disposition* permite passar o cabeçalho `content-disposition` do anexo. Pode passar uma das constantes abaixo da constante tema de "Mail":
 
-| Constante                   | Value        | Comentário                                                                                                                                                                                                  |
+| Parâmetros                  | Value        | Comentário                                                                                                                                                                                                  |
 | --------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Estabelece o valor de cabeçalho Content-disposition para "attachment" que significa que o arquivo anexo deve ser fornecido como um link na mensagem.                                                        |
 | mail disposition inline     | "inline"     | Estabelece o valor de cabeçalho Content-disposition para "inline", o que significa que o anexo deve ser renderizado dentro do conteúdo da mensagem, no local "cid". A renderização depende do cliente mail. |
@@ -155,9 +155,9 @@ $transporter.send($email)
 
 <!-- REF #4D.MailAttachment.new().Params -->
 
-| Parameter   | Tipo               |    | Descrição                                                             |
+| Parâmetro   | Tipo               |    | Descrição                                                             |
 | ----------- | ------------------ |:--:| --------------------------------------------------------------------- |
-| path        | Text               | -> | Rota do arquivo anexo                                                 |
+| path        | Text               | -> | Pode passar uma rota ou um Blob para definir o anexo.                 |
 | blob        | Blob               | -> | Blob contendo o anexo                                                 |
 | name        | Text               | -> | Nome + extensão usado pelo cliente email para designar o anexo        |
 | cid         | Text               | -> | ID do anexo (apenas mensagens HTML), ou " " se nenhum cid for exigido |
@@ -169,7 +169,7 @@ $transporter.send($email)
 
 #### Descrição
 
-A função `4D. MailAttachment.new()` <!-- REF #4D.MailAttachment.new().Summary -->cria e devolve um novo objecto do tipo `4D. MailAttachment`<!-- END REF -->. It is identical to the [`MAIL New attachment`](#mail-new-attachment) command (shortcut).
+A função `4D. MailAttachment.new()` <!-- REF #4D.MailAttachment.new().Summary -->cria e devolve um novo objecto do tipo `4D. MailAttachment`<!-- END REF -->. . Isso é idêntico ao comando [`MAIL New attachment`](#mail-new-attachment) (atalho).
 
 ## .cid
 
@@ -196,7 +196,7 @@ A propriedade `.disposition` contém <!-- REF #MailAttachmentClass.disposition.S
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->
-| Parameter  | Tipo |    | Descrição                                    |
+| Parâmetro  | Tipo |    | Descrição                                    |
 | ---------- | ---- |:--:| -------------------------------------------- |
 | Resultados | Blob | <- | Conteúdo do anexo|<!-- END REF -->
 
