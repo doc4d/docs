@@ -3,36 +3,36 @@ id: collection
 title: Collection
 ---
 
-Collections are ordered lists of values of similar or mixed types (text, number, date, object, boolean, collection, or null).
+Coleções são listas ordenadas de valores de tipos diferentes ou não (texto, número, objeto, booleano, coleção ou null).
 
-Collection type variables are managed using object notation (see [Syntax basics](Concepts/dt_object.md#syntax-basics)).
+Para gerenciar as variáveis de tipo Coleção se deve utilizar a notação de objetos (ver  [Syntax basics](Concepts/dt_object.md#syntax-basics)).
 
-To access a collection element, you need to pass the element number inside square brackets:
+Para acessar a um elemento de coleção, é necessário passar o número do elemento dentro de parênteses rectos:
 
 ```4d
 collectionRef[expression]
 ```
 
-You can pass any valid 4D expression which returns a positive integer in *expression*. Exemplos:
+Pode passar toda expressão 4D válida que devolva um inteiro positivo na expressão. Exemplos:
 
 ```4d
- myCollection[5]  //access to 6th element of the collection
+ myCollection[5]  //aceso ao 6º elemento da coleção
  myCollection[$var]
 ```
 
-**Warning:** Collection elements are numbered from 0.
+**Atenção:** os elementos da coleção estão numerados desde 0.
 
-You can assign a value to a collection element or get a collection element value:
+Pode atribuir um valor a um elemento da coleção ou obter o valor de um elemento da coleção utilizando a notação de objetos:
 
 ```4d
  myCol[10]:="My new element"
  $myVar:=myCol[0]
 ```
 
-If you assign an element's index that surpasses the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a null value:
+Se atribuir um índice de elemento que ultrapasse o último elemento existente da coleção, a coleção se redimensiona automaticamente e a todos os novos elementos intermediários se lhes atribui um valor nulo:
 
 ```4d
- var myCol : Collection
+ C_COLLECTION(myCol)
  myCol:=New collection("A";"B")
  myCol[5]:="Z"
   //myCol[2]=null
@@ -40,36 +40,33 @@ If you assign an element's index that surpasses the last existing element of the
   //myCol[4]=null
 ```
 
-## Instantiation
+## Instanciação
 
-Collections must have been instantiated, otherwise trying to read or modify their elements will generate a syntax error.
+As coleções devem ter sido inicializadas, por exemplo utilizando o comando `New collection`, do contrário ao tentar ler ou modificar seus elementos se gerará um erro de sintaxe.
 
 Collection instantiation can be done in one of the following ways:
 
-- using the [`New collection`](../API/CollectionClass.md#new-collection) command,
-- using the `[]` operator.
+- utilizando o comando [`New collection`](../API/CollectionClass.md#new-collection),
+- utilizando o operador `[]`.
 
 :::info
 
-Several 4D commands and functions return collections, for example [`Get Monitored Activity`](https://doc.4d.com/4dv19R/help/command/en/page1713.html) or [`collection.copy`](../API/CollectionClass.md#copy). In this case, it is not necessary to instantiate explicitely the collection, the 4D language does it for you.
+Vários comandos e funções 4D retornam colecções, por exemplo [`Get Monitored Activity`](https://doc.4d.com/4dv19R/help/command/en/page1713.html) ou [`collection.copy`](../API/CollectionClass.md#copy). Neste caso, não é necessário instanciar explicitamente a coleção, a linguagem 4D fá-lo por si.
 
 :::
 
-### `New collection` command
+### comando `New collection`
 
 The [`New collection`](../API/CollectionClass.md#new-collection) command creates a new empty or prefilled collection and returns its reference.
 
 Exemplos:
 
 ```4d
- var $colVar : Collection //declaration of a collection type 4D variable
- $colVar:=New collection //instantiation of the collection and assignment to the 4D variable
-
- var $colFilled : Collection
- $colFilled:=New collection("a";"b";1;42;{}) //instantiation and assignment of a prefilled collection
+ var $colVar : Collection //criação de uma variável 4D de tipo coleção
+ $colVar:=New collection //initialização da coleção e atribuição à variável 4D
 ```
 
-### `[]` operator
+### operador `[]`
 
 The `[]` operator allows you to create a **collection literal**. A collection literal is a list of zero or more expressions, each of which represents a collection element, enclosed in square brackets (`[]`). When you create a collection using a collection literal, it is instantiated with the specified values as its elements, and its length is set to the number of arguments specified.
 
@@ -81,9 +78,9 @@ Exemplos:
 
 ```4d
 var $col1; $col2; $users : Collection
-$col1:=[] //empty collection
-$col2:=[1;2;3;4;5;6] //collection of numbers
-//collection of objects
+$col1:=[] //colecção vazia
+$col2:=[1;2;3;4;5;6] //colecção de números
+//colecção de objectos
 $users:=[{name: "Alice"; \
     height: 183; \
     eyecolor: "hazel"; \
@@ -92,7 +89,7 @@ $users:=[{name: "Alice"; \
     {name: "Bob"; \
     height: 172; \
     eyecolor: "blue"\
-    }]
+}]
 ```
 
 :::note
@@ -103,27 +100,27 @@ If you create a collection literal containing a single element, make sure you do
 
 
 
-### Regular or shared collection
+### Coleção regular ou partilhada
 
-You can create two types of collections:
+Pode criar dois tipos de coleções:
 
-- regular (non-shared) collections, using the [`New collection`](API/CollectionClass.md#new-collection) command or collection literal syntax (`[]`). These collections can be edited without any specific access control but cannot be shared between processes.
-- shared collections, using the [`New shared collection`](API/CollectionClass.md#new-shared-collection) command. These collections can be shared between processes, including preemptive threads. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures.
+- colecções regulares (não partilhadas), utilizando o comando [`Nova colecção`](API/CollectionClass.md#new-collection) . Essas coleções podem ser editadas sem qualquer controle de acesso específico mas não podem ser compartilhadas entre processos.
+- coleções compartidas, utilizando o comando `New shared collection`. Essas coleções podem ser partilhadas entre processos, incluindo threads preemptivos. Access to these collections is controlled by [`Use... End use`](Concepts/shared.md#useend-use) structures.
 
-For more information, refer to the [Shared objects and collections](shared.md) section.
+Para saber mais, consulte a seção [Objetos e coleções compartidos](Concepts/shared.md).
 
-## Collection functions
+## Funções de Collection
 
-4D collection references benefit from special class functions (sometimes named *member functions*). Collection functions are listed in the [Class API Reference](../API/CollectionClass.md) section.
+As referências a coleções 4D se beneficiam de métodos especiais (as vezes chamados *funções membro*). As funções de recolhimento estão listadas na seção [Class API Reference](API/CollectionClass.md) .
 
 Por exemplo:
 
 ```4d
-$newCol:=$col.copy() //deep copy of $col to $newCol
-$col.push(10;100) //add 10 and 100 to the collection
+$newCol:=$col.copy() //cópia de $col a $newCol
+$col.push(10;100) //adiciona 10 e 100 para a coleção
 ```
 
-Some functions return the original collection after modification, so that you can run the calls in a sequence:
+Alguns métodos retornam a coleção original depois de moficiação, para que possa rodar as chamadas em sequência:
 
 ```4d
  $col:=New collection(5;20)
@@ -134,14 +131,14 @@ Some functions return the original collection after modification, so that you ca
 ### propertyPath parameter
 
 
-Several functions accept a _propertyPath_ as parameter. This parameter stands for:
+Vários métodos aceitam uma _propertyPath_ como parâmetro. Este parâmetro significa:
 
-- either an object property name, for example "lastName"
-- or an object property path, i.e. a hierarchical sequence of sub-properties linked with dot characters, for example "employee.children.firstName".
+- um nome de objeto propriedade por exemplo "Sobrenome"
+- ou uma rota de propriedades de objeto, ou seja, uma sequência hierárquica de subpropriedades vinculadas com caracteres de ponto, por exemplo "empregado.filhos.nome".
 
-**Warning:** When using functions and *propertyPath* parameters, you cannot use ".", "[ ]", or spaces in property names since it will prevent 4D from correctly parsing the path:
+**Advertência:** Ao usar funções e parâmetros de propriedadePath, não se pode usar ".", "[ ]", ou espaços nos nomes das propriedades, uma vez que isso impedirá que 4D analise correctamente o caminho:
 
 ```4d
- $vmin:=$col.min("My.special.property") //undefined
- $vmin:=$col.min(["My.special.property"]) //error
+ $vmin:=$col.min("My.special.property") //indefinido
+ $vmin:=$col.min(["My.special.property"]) //erro
 ```
