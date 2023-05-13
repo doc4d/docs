@@ -1,6 +1,6 @@
 ---
 id: compiler
-title: Compilation
+title: Compilação
 ---
 
 You can compile your projects, i.e., translate all of your methods into machine language. Compiling a project lets you check the consistency of the code and accelerate its execution, as well as making it possible to obfuscate the code in its entirety. Compilation is an indispensable step between the development of projects using 4D and their deployment as stand-alone applications.
@@ -39,7 +39,7 @@ The number of errors found during your first compilations may be daunting, but d
 
 > Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
 
-## Run Compiled
+## Executar a compilação
 
 Once a project is compiled, it is possible to switch from [interpreted mode to compiled mode](Concepts/interpreted.md), and vice versa, at any time and without having to quit the 4D application (except when the interpreted code has been removed). To do this, use tge **Restart Interpreted** and **Restart Compiled** commands of the **Run** menu. The [Open project dialog box](creating.md#options) also offers a choice between interpreted or compiled mode for database startup.
 
@@ -51,7 +51,7 @@ If you modify your project in interpreted mode, you must recompile it in order t
 
 In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
 
-### Check Syntax
+### Verificar sintaxe
 
 The **Check Syntax** button starts the execution of the syntax-checking phase. At the end of the checking process, any errors detected are listed in the information area. You can double–click on an error line in order to display the corresponding method.
 
@@ -117,11 +117,11 @@ This area groups the generic options used during the compilation process.
 
 #### Generate symbol file
 
-Used to generate the symbol file (see [symbol file](#symbol-file)). The symbol file is created in the in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_symbols.txt`.
+Used to generate the error file (see [error file](#symbol-file)) at the time of syntax checking. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
 
 #### Generate error file
 
-Used to generate the error file (see [error file](#symbol-file)) at the time of syntax checking. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
+You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
 
 #### Compilation Path
 
@@ -148,7 +148,7 @@ This setting allows you to select the processor family for which your 4D project
 
 Two target options are proposed. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                         | *on Windows Intel/AMD*                                                                     | *on macOS Intel*                                                                             | *on macOS Silicon*                                                                           |
+| *Option*                                         | *on Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *on macOS Silicon*                                                                           |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br/>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* |
 | **My processor (processor)**                     | Code for Intel/AMD                                                                         | Code for Intel/AMD                                                                           | Code for Apple Silicon                                                                       |
@@ -178,7 +178,7 @@ You can rename each of these methods in the corresponding areas, but they will a
 
 ## Compilation tools
 
-### Symbol file
+### Ficheiro Symbol
 
 If you check the [**Generate the symbol file**](#generate-the-symbol-file) option in the compiler settings, a symbol file called `ProjectName_symbols.txt` is created in the [Logs folder](Project/architecture.md#logs) of the project during compilation. It is divided into several parts:
 
@@ -225,7 +225,7 @@ Procedure or Function <Method name>(parameter data types):
 result data type, number of calls, Thread Safe or Thread Unsafe
 ```
 
-### Error file
+### Arquivo de erros
 
 You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
 
@@ -235,7 +235,7 @@ The length of the error file depends on the number of errors and warnings issued
 
 The structure of the error file is as follows:
 
-- At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D. In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. These errors and warnings are listed using the following format:
+- At the top of the file is the list of errors and warnings, sorted by method and in their order of creation in 4D. **General errors**: These are errors that make it impossible to compile the project. There are two cases in which the compiler reports a general error:
   - line number in the method (0 indicates general errors)
   - warning attribute indicating whether the detected anomaly is a warning (warning="true") or an error (warning="false")
   - diagnostic describing the error
@@ -246,7 +246,7 @@ An error file may contain three types of messages:
 
 - **Errors linked to a specific line**: these errors are displayed in context — the line in which they were found — with an explanation. The compiler reports this type of error when it encounters an expression in which it sees an inconsistency related to data type or syntax. In the compiler window, double–click on each error detected in order to open the method concerned directly in the 4D Method editor, with the line containing the error highlighted.
 
-- **General errors**: These are errors that make it impossible to compile the project. There are two cases in which the compiler reports a general error:
+- In the ***General errors*** section, all the typing impossibilities and identity ambiguities are grouped together. There are two cases in which the compiler reports a general error:
   - The data type of a process variable could not be determined.
   - Two different kinds of objects have the same name. General errors are so named because they cannot be linked to any specific method. In the first case, the compiler could not perform a specified typing anywhere in the project. In the second, it was unable to decide whether to associate a given name with one object rather than with another.
 
@@ -277,11 +277,11 @@ To do this, you must surround the code to be excluded from range checking with t
 
 The classic compiler can be used on any platform, while the Silicon compiler can only be used on a Mac machine:
 
-|                | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
-| -------------- |:-------------------:|:---------------------:|:-----------------------:|
-| On Windows     |      &#10003;       |       &#10003;        |        &#10007;         |
-| On Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
-| On Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
+|             | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
+| ----------- |:-------------------:|:---------------------:|:-----------------------:|
+| Em Windows  |      &#10003;       |       &#10003;        |        &#10007;         |
+| Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
+| Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
 
 Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
 
@@ -301,7 +301,7 @@ Resulting compiled code is stored in the [Libraries](architecture.md#libraries) 
 
 - **Apple machine**: The Silicon compiler can only be run from an Apple machine.
 - **4D Project architecture**: The Silicon compiler is only available for 4D developments using [project architecture](architecture.md).
-- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. *clang* requires Apple native libraries, which are provided by either the **Xcode** or **Developer Tools** package.
+- **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation. **Xcode or Developer Tools**: The Silicon compiler calls the **Clang** open-source macOS compiler to compile the project from C++ code at the [second step](#incremental-compiler) of compilation.
   - **If you already have** Xcode or Developer Tools installed on your computer, you only need to make sure that its version is compliant with 4D requirements.
   - **If you do not have** any of these tools installed on your computer, you will need to download one of them from the Apple Developer web site.
 
