@@ -34,14 +34,14 @@ After you create an entity set, the entity set ID is returned along with the dat
 
 Create another entity set based on previously created entity sets
 
-| Parameter        | Tipo   | Descrição                                                      |
+| Parâmetro        | Tipo   | Descrição                                                      |
 | ---------------- | ------ | -------------------------------------------------------------- |
 | $operator        | String | One of the logical operators to test with the other entity set |
-| $otherCollection | String | Entity set ID                                                  |
+| $otherCollection | String | ID do conjunto de entidades                                    |
 
 ### Descrição
 
-After creating an entity set (entity set #1) by using `$method=entityset`, you can then create another entity set by using the `$entityset/{entitySetID}?$operator... &$otherCollection` syntax, the `$operator` property (whose values are shown below), and another entity set (entity set #2) defined by the `$otherCollection` property. The two entity sets must be in the same dataclass.
+After creating an entity set (entity set #1) by using `$method=entityset`, you can then create another entity set by using the `$entityset/{entitySetID}?$operator... &$otherCollection` syntax, the `$operator` property (whose values are shown below), and another entity set (entity set #2) defined by the `$otherCollection` property. Os dois conjuntos de entidades devem estar na mesma classe de dados.
 
 You can then create another entity set containing the results from this call by using the `$method=entityset` at the end of the REST request.
 
@@ -69,7 +69,7 @@ Below is a representation of the logical operators based on two entity sets. The
 
 ![](../assets/en/REST/except.png)
 
-The syntax is as follows:
+A sintaxe é a seguinte:
 
  `GET  /rest/dataClass/$entityset/entitySetID?$logicOperator=AND&$otherCollection=entitySetID`
 
