@@ -10,9 +10,9 @@ Usando a linguagem 4D, imprimir a mensagem tradicional ""Hello, world!" na tela 
 ALERT("Hello, World!")
 ```
 
-Esse código vai exibir um alerta normal de plataforma com a mensagem "hello world" contendo um botão OK. To execute the code, you just need to click on the execution button in the Code Editor:
+Esse código vai exibir um alerta normal de plataforma com a mensagem "hello world" contendo um botão OK. Para executar o código, precisa clicar no botão de execução do editor de Método:
 
-![hello-world](../assets/en/Concepts/helloworld.png)
+!["Hello World"](../assets/en/Concepts/helloworld.png)
 
 Ou poderia anexar esse código a um botão em um formulário e executar o formulário, nesse caso, clicar no botão exibira a caixa de diálogo de alerta. Em qualquer caso, acabou de executar sua primeira linha de código 4D!
 
@@ -33,9 +33,9 @@ Você DEVE diferenciar o operador atribuição := dos outros operadores. Ao inv�
 
 **Importante:** Não confunda o operador de atribuição := com o operador de comparação de igualdade =. Um operador de atribuição diferente (e não =) foi escolhido deliberadamente para evitar problemas e confusão que ocorrem frequentemente em outras linguagens com operadores como == ou ===. Esses erros são geralmente difíceis de reconhecer pelo compilador e geram problemas trabalhosos.
 
-## Variáveis
+## Variáveis.
 
-A linguagem 4D é baseada em tipos, mas com alguma flexibilidade. You create a typed variable using the `var` keyword. Por exemplo, para criar uma variável do tipo dados, pode escrever:
+A linguagem 4D é baseada em tipos, mas com alguma flexibilidade. Pode criar uma variável digitada utilizando um comando `C_XXX`. Por exemplo, para criar uma variável do tipo dados, pode escrever:
 
 ```4d
 var MyDate : Date 
@@ -49,13 +49,13 @@ var myPerson : cs. Person
 ```
 
 
-Even if it is usually not recommended, you can declare variables simply by using them; you do not necessarily need to formally define them. Por exemplo, se quiser criar uma variável que contenha a data atual mais 30 dias, pode escrever:
+Mesmo geralmente não sendo recomendado, é possível criar variáveis simplesmente usando-as; não precisa defini-las formalmente como se faz com campos. Por exemplo, se quiser criar uma variável que contenha a data atual mais 30 dias, pode escrever:
 
 ```4d
 MyOtherDate:=Current date+30
 ```
 
-A linha de código lê “MyOtherDate gets the current date plus 30 days.” This line declares the variable, assigns it with both the (temporary) date type and a content. A variable declared by assignment is interpreted as typeless, that is, it can be assigned with other types in other lines and then changes the type dynamically. A variable typed with `var` cannot change the type. In [compiled mode](interpreted.md) however, the type can never be changed, regardless of how the variable was declared.
+A linha de código lê “MyOtherDate gets the current date plus 30 days.” Essa linha cria a variável e a atribuiu com o tipo de data (temporário) e um conteúdo. Uma variável criada por atribuição é interpretada como sem tipo, ou seja, pode ser atribuída com outros tipos em outras linhas e então muda o tipo dinamicamente. Uma variável digitada com `C_XXX` não pode mudar de tipo. Em modo compilado, o tipo não pode ser modificado nunca, independentemente de como tenha criado a variável.
 
 ## Comandos
 
@@ -65,7 +65,7 @@ Os comandos 4D são métodos integrados para realizar uma ação. Comandos são 
 COPY DOCUMENT("folder1\\name1";"folder2\\" ; "new")
 ```
 
-Some commands are attached to collections or objects, in which case they are named functions and are used using the dot notation. Por exemplo:
+Alguns comandos são anexados à coleções ou objetos, em cujo caso são métodos temporais que se utilizam com a notação de pontos. Por exemplo:
 
 ```4d
 $c:=New collection(1;2;3;4;5)
@@ -91,7 +91,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 ```
 4D SVG é incluído em 4D.
 
-## Constants
+## Constantes
 
 4D oferece um conjunto extensivo de constantes predefinidas, cujos valores são acessíveis por nome. Isso permite escrever código mais legível. Por exemplo, `Read Mode` é uma constante (valor 2).
 
@@ -99,13 +99,13 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 vRef:=Open document("PassFile";"TEXT";Read Mode) // abre documento em modo apenas leitura
 ```
 
-> Predefined constants appear <u>underlined</u> by default in the 4D Code Editor.
+> As constantes pré-definidas aparecem sublinhadas como padrão no editor de métodos 4D.
 
-## Métodos
+## Página Métodos
 
 4D oferece un grande número de métodos (ou comandos) integrados, mas também lhe permite criar seus próprios **métodos de projeto**. Os métodos de projeto são métodos definidos pelo usuário que contenham comandos, operadores e outras partes da linguaje. Los métodos projeto são métodos genéricos, mas há outros tipos de métodos: métodos objeto, métodos formulário, métodos tabela (Triggers) e métodos base.
 
-Um método projeto é composto de várias linhas de instruções, cada uma das quais consta de uma linha no método. A statement performs an action, and may be simple or complex.
+Um método projeto é composto de várias linhas de instruções, cada uma das quais consta de uma linha no método. Uma linha de instrução realiza uma ação e pode ser simples ou complexa.
 
 Por exemplo, a linha abaixo é uma declaração que mostará uma caixa de diálogo de confirmação:
 
@@ -127,7 +127,7 @@ For($vlChar;1;Length(vtSomeText))
     End for
 ```
 
-Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). A method can return a single value in a parameter, which have to be declared. Quando chamar um método, apenas digite seu nome: The parameters are directly available within the called method if they have been declared.
+Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). A method can return a single value in a parameter, which have to be declared. Os parâmetros estão disponíveis dentro do método chamado como variáveis locais numeradas sequencialmente: $1, $2,..., $n. Um método pode devolver um único valor no parâmetro $0. Quando chamar um método, apenas digite seu nome:
 
 ```4d
 $myText:="hello"
@@ -193,7 +193,7 @@ $myText:=Do_Something($myText) //Call the Do_Something method
 To access a collection element, you have to pass the element number embedded in square brackets:
 
 ```4d
-var myColl : Collection
+C_COLLECTION(myColl)
 myColl:=New collection("A";"B";1;2;Current time)
 myColl[3]  //acesso ao 4º elemento da colecção
 ```
@@ -227,14 +227,15 @@ $f.message() //displays "Hello world!"
 Optionally, use the `Class constructor` keyword to declare properties of the object.
 
 ```4d  
-//no ficheiro Rectangle.4dm Class constructor ($width : Integer; $height : Integer)
+//in the Rectangle.4dm file Class constructor ($height: Integer; $width : Integer)
 This.height:=$height This.width:=$width This.name:="Rectangle"
 ```
 
 Uma classe pode estender outra classe utilizando `Class extends <ClassName>`. Superclasses can be called using the `Super` command. Por exemplo:
 
 ```4d  
-//in the Square.4dm file Class extends rectangle Class constructor ($length : Integer)
+//in the Square.4dm file Class extends rectangle Class constructor($length : Integer)
+
   // It calls the parent class's constructor with lengths   
   // provided for the Rectangle's width and height Super($length;$length) This.name:="Square"
 ```
@@ -257,7 +258,7 @@ The same symbols are often used for different operations, depending on the data 
 
 | Tipo de dados | Operação      | Exemplo                                                                                              |
 | ------------- | ------------- | ---------------------------------------------------------------------------------------------------- |
-| Número        | Adição        | 1 + 2 adds the numbers and results in 3                                                              |
+| Número        | Adição        | 1 + 2 adiciona os números e resultados em 3                                                          |
 | String        | Concatenação  | “Hello ” + “there” concatenates (joins together) the strings and results in “Hello there”            |
 | Data e Número | Date addition | !1989-01-01! + 20 adds 20 days to the date January 1, 1989, and results in the date January 21, 1989 |
 
@@ -293,9 +294,9 @@ You refer to an expression by the data type it returns. There are several expres
 | Current date+ 30         | Date                | This is a date expression that uses the `Current date` command to get today’s date. It adds 30 days to today’s date and returns the new date.                                   |
 | ?8:05:30?                | Hora                | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
 | ?2:03:04? + ?1:02:03?    | Hora                | This expression adds two times together and returns the time 3:05:07.                                                                                                           |
-| True                     | Booleano            | Este comando devolve o valor Booleano TRUE.                                                                                                                                     |
-| 10 # 20                  | Booleano            | This is a logical comparison between two numbers. The number sign (#) means “is not equal to”. Since 10 “is not equal to” 20, the expression returns TRUE.                      |
-| “ABC” = “XYZ”            | Booleano            | This is a logical comparison between two strings. They are not equal, so the expression returns FALSE.                                                                          |
+| True                     | Parâmetros          | Este comando devolve o valor Booleano TRUE.                                                                                                                                     |
+| 10 # 20                  | Parâmetros          | This is a logical comparison between two numbers. The number sign (#) means “is not equal to”. Since 10 “is not equal to” 20, the expression returns TRUE.                      |
+| “ABC” = “XYZ”            | Parâmetros          | This is a logical comparison between two strings. They are not equal, so the expression returns FALSE.                                                                          |
 | My Picture + 50          | Imagem              | This expression takes the picture in My Picture, moves it 50 pixels to the right, and returns the resulting picture.                                                            |
 | ->[People]Name           | Ponteiro            | Esta expressão devolve um ponteiro ao campo chamado [People]Name.                                                                                                               |
 | Table(1)                 | Ponteiro            | This is a command that returns a pointer to the first table.                                                                                                                    |
@@ -333,7 +334,7 @@ MyVar:="Hello" MyPointer:=->MyVar ALERT(MyPointer->)
 You can write a single statement on several lines by terminating each line of the statement with a trailing backslash `\` character. The 4D language will consider all the lines at once. For example, both the following statements are equivalent:
 
 ```4d
-$str:=String("hello world!")
+C_DATE(MyDate) //Tipo data para a variável MyDate
 ```
 
 ```4d
@@ -349,11 +350,11 @@ Comments are inactive lines of code. These lines are not interpreted by the 4D l
 There are two ways to create comments:
 
 - `//` para comentários de linha única
-- `/*...*/` for inline or multiline commnents.
+- `/*...*/` para comentarios em linha ou multilinha.
 
 Both styles of comments can be used simultaneously.
 
-#### Single line comments (`//comment`)
+#### Single line comments (//)
 
 Insert `//` at the beginning of a line or after a statement to add a single line comment. Exemplo:
 
@@ -361,10 +362,11 @@ Insert `//` at the beginning of a line or after a statement to add a single line
 //This is a comment For($vCounter;1;100) //Starting loop
   //comment
   //comment
-  //comment End for
+  //comment
+ End for
 ```
 
-#### Inline or multiline comments (`/*comment*/`)
+#### Inline or multiline comments (/**/)
 
 Surround contents with `/*` ... `*/` characters to create inline comments or multiline comment blocks. Both inline and multiline comment blocks begin with `/*` and end with `*/`.
 
@@ -372,7 +374,7 @@ Surround contents with `/*` ... `*/` characters to create inline comments or mul
 
 ```4d
 For /* inline comment */ ($vCounter;1;100)
-    ...
+ ...
 End for
 ```
 
@@ -381,10 +383,10 @@ End for
 ```4d
 For ($vCounter;1;100)
 /*
-comentarios  
-    /*
-    outros comentarios
-    */
+comments  
+ /*
+ other comments
+ */
 */
 ...
 End for
