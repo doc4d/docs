@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development": {
@@ -108,7 +108,7 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
@@ -132,11 +132,11 @@
     "description": "The label for category Client/Server in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Forms",
+    "message": "Formulários",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Form Editor",
+    "message": "Editor de formulários",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -152,7 +152,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Form Events",
+    "message": "Eventos formulário",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
@@ -164,7 +164,7 @@
     "description": "The label for category User Settings in sidebar docs"
   },
   "sidebar.docs.category.Build Application": {
-    "message": "Build Application",
+    "message": "Build application overview",
     "description": "The label for category Build Application in sidebar docs"
   },
   "sidebar.docs.category.Mobile Applications": {
@@ -212,7 +212,7 @@
     "description": "The label for link 4D Write Pro in sidebar docs, linking to https://doc.4d.com/4Dv20/4D/20/4D-Write-Pro-Reference.100-6229455.en.html"
   },
   "sidebar.docs.category.Getting Started.link.generated-index.title": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The generated-index page title for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development.link.generated-index.title": {
@@ -272,7 +272,7 @@
     "description": "The generated-index page description for category Web Applications in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.title": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The generated-index page title for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.REST Server.link.generated-index.description": {
@@ -336,7 +336,7 @@
     "description": "The label for the doc item User Settings in sidebar docs, linking to the doc Desktop/user-settings"
   },
   "sidebar.docs.doc.Build Application": {
-    "message": "Build Application",
+    "message": "Build application overview",
     "description": "The label for the doc item Build Application in sidebar docs, linking to the doc Desktop/building"
   }
 }
