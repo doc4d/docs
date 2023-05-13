@@ -7,7 +7,7 @@ Collections are ordered lists of values of similar or mixed types (text, number,
 
 To manage Collection type variables you must use object notation (see [Syntax basics](Concepts/dt_object.md#syntax-basics)).
 
-To access a collection element, you need to pass the element number inside square brackets:
+Para acessar a um elemento de coleção, é necessário passar o número do elemento dentro de parênteses rectos:
 
 ```4d
 collectionRef[expression]
@@ -16,11 +16,11 @@ collectionRef[expression]
 You can pass any valid 4D expression which returns a positive integer in expression. Exemplos:
 
 ```4d
- myCollection[5]  //access to 6th element of the collection
+ myCollection[5]  //aceso ao 6º elemento da coleção
  myCollection[$var]
 ```
 
-**Warning:** Collection elements are numbered from 0.
+**Atenção:** os elementos da coleção estão numerados desde 0.
 
 You can assign a value to a collection element or get a collection element value using object notation:
 
@@ -29,7 +29,7 @@ You can assign a value to a collection element or get a collection element value
  $myVar:=myCol[0]
 ```
 
-If you assign an element's index that surpasses the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a null value:
+Se atribuir um índice de elemento que ultrapasse o último elemento existente da coleção, a coleção se redimensiona automaticamente e a todos os novos elementos intermediários se lhes atribui um valor nulo:
 
 ```4d
  C_COLLECTION(myCol)
@@ -50,12 +50,12 @@ Exemplo:
  $colVar:=New collection //initialization of the collection and assignment to the 4D variable
 ```
 
-### Regular or shared collection
+### Coleção regular ou partilhada
 
-You can create two types of collections:
+Pode criar dois tipos de coleções:
 
-- regular (non-shared) collections, using the `New collection` command. These collections can be edited without any specific access control but cannot be shared between processes.
-- shared collections, using the `New shared collection` command. These collections can be shared between processes, including preemptive threads. Access to these collections is controlled by `Use...End use` structures. For more information, refer to the [Shared objects and collections](Concepts/shared.md) section.
+- regular (non-shared) collections, using the `New collection` command. Essas coleções podem ser editadas sem qualquer controle de acesso específico mas não podem ser compartilhadas entre processos.
+- shared collections, using the `New shared collection` command. Essas coleções podem ser partilhadas entre processos, incluindo threads preemptivos. Access to these collections is controlled by `Use...End use` structures. For more information, refer to the [Shared objects and collections](Concepts/shared.md) section.
 
 ## Collection methods
 
@@ -68,8 +68,8 @@ Note that, even if it does not have parameters, a member function must be called
 Por exemplo:
 
 ```4d
-$newCol:=$col.copy() //deep copy of $col to $newCol
-$col.push(10;100) //add 10 and 100 to the collection
+$newCol:=$col.copy() //cópia de $col a $newCol
+$col.push(10;100) //adiciona 10 e 100 para a coleção
 ```
 
 Some methods return the original collection after modification, so that you can run the calls in a sequence:
@@ -83,14 +83,14 @@ Some methods return the original collection after modification, so that you can 
 ### propertyPath parameter
 
 
-Several methods accept a _propertyPath_ as parameter. This parameter stands for:
+Several methods accept a _propertyPath_ as parameter. Este parâmetro significa:
 
-- either an object property name, for example "lastName"
-- or an object property path, i.e. a hierarchical sequence of sub-properties linked with dot characters, for example "employee.children.firstName".
+- um nome de objeto propriedade por exemplo "Sobrenome"
+- ou uma rota de propriedades de objeto, ou seja, uma sequência hierárquica de subpropriedades vinculadas com caracteres de ponto, por exemplo "empregado.filhos.nome".
 
 **Warning:** When using methods and propertyPath parameters, you cannot use ".", "[ ]", or spaces in property names since it will prevent 4D from correctly parsing the path:
 
 ```4d
- $vmin:=$col.min("My.special.property") //undefined
- $vmin:=$col.min(["My.special.property"]) //error
+ $vmin:=$col.min("My.special.property") //indefinido
+ $vmin:=$col.min(["My.special.property"]) //erro
 ```
