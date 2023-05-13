@@ -70,7 +70,7 @@ Objetos `Pasta` são compatíveis com vários pathnames, incluindo `filesystems`
 
 
 <!-- REF #_command_.Folder.Params -->
-| Parameter      | Tipo       |    | Descrição                                             |
+| Parâmetro      | Tipo       |    | Descrição                                             |
 | -------------- | ---------- |:--:| ----------------------------------------------------- |
 | path           | Text       | -> | Folder path                                           |
 | folderConstant | Integer    | -> | Constante Pasta 4D                                    |
@@ -92,7 +92,7 @@ No parâmetro *path* , passe uma string de rotas de pasta. Pode utilizar uma str
 
 Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar com pathnames de plataforma (Windows ou macOS), deve declará-lo usando o parâmetro *pathType* . Estão disponíveis as seguintes constantes:
 
-| Constante        | Value | Comentário                                                                                               |
+| Parâmetros       | Value | Comentário                                                                                               |
 | ---------------- | ----- | -------------------------------------------------------------------------------------------------------- |
 | fk platform path | 1     | Caminho expresso com uma sintaxe específica da plataforma (obrigatória em caso de caminho de plataforma) |
 | fk posix path    | 0     | Caminho expresso com a sintaxe POSIX (por padrão)                                                        |
@@ -101,7 +101,7 @@ Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar co
 
 No parâmetro *folderConstant* , passe uma pasta 4D incorporada ou de sistema, utilizando uma das seguintes constantes:
 
-| Constante                  | Value | Comentário                                                                                                                  |
+| Parâmetros                 | Value | Comentário                                                                                                                  |
 | -------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------- |
 | fk applications folder     | 116   |                                                                                                                             |
 | fk data folder             | 9     | Sistema de ficheiros associado: "/DATA"                                                                                     |
@@ -115,7 +115,7 @@ No parâmetro *folderConstant* , passe uma pasta 4D incorporada ou de sistema, u
 | fk remote database folder  | 3     | Pasta de base de dados 4D criada em cada máquina 4D remota                                                                  |
 | fk resources folder        | 6     | Sistema de arquivos associado: "/DATA"                                                                                      |
 | fk system folder           | 100   |                                                                                                                             |
-| fk user preferences folder | 0     | Pasta 4D que armazena arquivos de preferência do usuário dentro da pasta principal do usuário                               |
+| fk user preferences folder | 0     | 4D folder that stores user preference files within the `\<userName>` directory.                                      |
 | fk web root folder         | 8     | Pasta raiz atual da Web da base de dados: se estiver dentro do pacote "/PACKAGE/percurso", caso contrário, caminho completo |
 
 Se o comando for chamado a partir de um componente, passe o parâmetro opcional *para obter o caminho da base de dados anfitriã. Caso contrário, se omitir o parâmetro* , um objeto nulo é sempre devolvido.
@@ -157,9 +157,9 @@ A função `4D. Folder.new()` <!-- REF #4D.Folder.new().Summary -->creates and r
 
 
 <!--REF #FolderClass.create().Params -->
-| Parameter  | Tipo     |    | Descrição                                                                                    |
-| ---------- | -------- | -- | -------------------------------------------------------------------------------------------- |
-| Resultados | Booleano | <- | Verdadeiro se a pasta foi criada com sucesso, falso caso contrário<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                                                    |
+| ---------- | ---------- | -- | -------------------------------------------------------------------------------------------- |
+| Resultados | Parâmetros | <- | Verdadeiro se a pasta foi criada com sucesso, falso caso contrário<!-- END REF -->
 
 
 |
@@ -217,7 +217,7 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Parameter         | Tipo       |    | Descrição                                                |
+| Parâmetro         | Tipo       |    | Descrição                                                |
 | ----------------- | ---------- | -- | -------------------------------------------------------- |
 | destinationFolder | 4D. Folder | -> | Pasta de destino para o pseudónimo ou atalho             |
 | aliasName         | Text       | -> | Nome do pseudónimo ou atalho                             |
@@ -234,7 +234,7 @@ Passar o nome do pseudónimo ou atalho para criar no parâmetro *aliasName* .
 
 Por padrão em macOS, a função cria um pseudónimo padrão. Também pode criar uma ligação simbólica utilizando o parâmetro *aliasType* . Estão disponíveis as seguintes constantes:
 
-| Constante          | Value | Comentário                   |
+| Parâmetros         | Value | Comentário                   |
 | ------------------ | ----- | ---------------------------- |
 | `fk alias link`    | 0     | Alias link (padrão)          |
 | `fk symbolic link` | 1     | Link simbólico (só em macOS) |
@@ -273,7 +273,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| Parameter | Tipo    |    | Descrição                                               |
+| Parâmetro | Tipo    |    | Descrição                                               |
 | --------- | ------- | -- | ------------------------------------------------------- |
 | option    | Integer | -> | Opção de eliminação de pasta|<!-- END REF -->
 
@@ -285,7 +285,7 @@ A função `.delete()` <!-- REF #FolderClass.delete().Summary -->apaga a pasta<!
 
 Por padrão, por razões de segurança, se omitir o parâmetro de opção, `.delete( )` só permite a eliminação de pastas vazias. Se quiser que o comando possa apagar pastas que não estejam vazias, deve utilizar o parâmetro de opção com uma das seguintes constantes:
 
-| Constante              | Value | Comentário                                             |
+| Parâmetros             | Value | Comentário                                             |
 | ---------------------- | ----- | ------------------------------------------------------ |
 | `Delete only if empty` | 0     | Elimina a pasta apenas quando está vazia               |
 | `Delete with contents` | 1     | Apaga a pasta juntamente com tudo o que a mesma contém |
@@ -347,9 +347,9 @@ Quando `Apagar com conteúdo` for aprovado:
 
 
 <!--REF #FolderClass.moveTo().Params -->
-| Parameter         | Tipo       |    | Descrição                               |
+| Parâmetro         | Tipo       |    | Descrição                               |
 | ----------------- | ---------- | -- | --------------------------------------- |
-| destinationFolder | 4D. Folder | -> | Destination folder                      |
+| destinationFolder | 4D. Folder | -> | Pasta de destino                        |
 | newName           | Text       | -> | Nome completo para a pasta movida       |
 | Resultados        | 4D. Folder | <- | Moved folder|<!-- END REF -->
 
@@ -403,7 +403,7 @@ Quer mover-se e renomear uma pasta:
 
 
 <!--REF #FolderClass.rename().Params -->
-| Parameter  | Tipo       |    | Descrição                                    |
+| Parâmetro  | Tipo       |    | Descrição                                    |
 | ---------- | ---------- | -- | -------------------------------------------- |
 | newName    | Text       | -> | Novo nome completo para a pasta              |
 | Resultados | 4D. Folder | <- | Renomeado arquivo|<!-- END REF -->
