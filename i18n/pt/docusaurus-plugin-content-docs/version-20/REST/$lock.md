@@ -40,7 +40,7 @@ An entity locked by the REST API can only be unlocked:
 - by its locker, i.e. a `/?$lock=false` in the REST session that sets `/?$lock=true`
 - or if the session's [inactivity timeout]($directory.md) is reached (the session is closed).
 
-### Response
+### Resposta
 
 A `?$lock` request returns a JSON object with `"result"=true` if the lock operation was successful and `"result"=false` if it failed.
 
@@ -53,7 +53,7 @@ The returned "__STATUS" object has the following properties:
 |              |                |         | ***Disponível apenas em caso de erro:***                                                                                                                    |
 | status       |                | number  | Código de erro, ver abaixo                                                                                                                                  |
 | statusText   |                | text    | Descrição do erro, ver abaixo                                                                                                                               |
-| lockKind     |                | number  | Lock code                                                                                                                                                   |
+| lockKind     |                | number  | Código de bloqueio                                                                                                                                          |
 | lockKindText |                | text    | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                               |
 | lockInfo     |                | object  | Informações sobre a origem do bloqueio. Retorna propriedades dependendo da origem da trava (processo 4D ou sessão REST)                                     |
 |              |                |         | ***Disponível só para um processo trava 4D:***                                                                                                              |
@@ -73,12 +73,12 @@ The returned "__STATUS" object has the following properties:
 
 The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
 
-| status | statusText                      | Comentário                                                                                                      |
-| ------ | ------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 2      | "Stamp has changed"             | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista). |
-| 3      | "Already locked"                | The entity is locked by a pessimistic lock.                                                                     |
-| 4      | "Other error"                   | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.                     |
-| 5      | "Entity does not exist anymore" | A entidade não existe mais nos dados.                                                                           |
+| status | statusText                      | Comentário                                                                                                         |
+| ------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| 2      | "Stamp has changed"             | O valor de selo interno da entidade não corresponde a uma da entidade armazenada nos dados (bloqueio otimista).    |
+| 3      | "Already locked"                | A entidade está fechada por uma fechadura pessimista.                                                              |
+| 4      | "Other error"                   | Um erro grave é um erro de banco de dados de baixo nível (por exemplo, chave duplicada), um erro de hardware, etc. |
+| 5      | "Entity does not exist anymore" | A entidade não existe mais nos dados.                                                                              |
 
 
 
@@ -92,7 +92,7 @@ We lock an entity in a first browser:
 GET /rest/Customers(1)/?$lock=true
 ```
 
-**Response:**
+**Responsa:**
 
 ```
 {
@@ -105,7 +105,7 @@ GET /rest/Customers(1)/?$lock=true
 
 In a second browser (other session), we send the same request.
 
-**Response:**
+**Responsa:**
 
 ```
 {
@@ -115,11 +115,8 @@ In a second browser (other session), we send the same request.
         "statusText":"Already Locked",
         "lockKind":7,
         "lockKindText":"Locked By Session",
-        "lockInfo":{
-            "host":"127.0.0.1:8043",
-            "IPAddr":"127.0.0.1",
-            "recordNumber": 7,
-            "userAgent": ""Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36..."
+    }
+}
         }
     }
 }
