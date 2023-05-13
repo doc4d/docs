@@ -15,7 +15,7 @@ Use `$directory/login` to open a session in your 4D application through REST and
 
 All parameters must be passed in **headers** of a POST method:
 
-| Header key         | Header value                                                                 |
+| Chave de cabeçalho | Valor do cabeçalho                                                           |
 | ------------------ | ---------------------------------------------------------------------------- |
 | username-4D        | User - Not mandatory                                                         |
 | password-4D        | Password - Not mandatory                                                     |
@@ -38,7 +38,7 @@ $hValues{3}:=120
 $httpStatus:=HTTP Request(HTTP POST method;"app.example.com:9000/rest/$directory/login";$body_t;$response;$hKey;$hValues)
 ```
 
-**Result**:
+**Resultadoi**:
 
 If the login was successful, the result will be:
 
