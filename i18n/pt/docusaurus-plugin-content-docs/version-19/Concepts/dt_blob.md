@@ -33,7 +33,7 @@ To pass a BLOB to your own methods, you can also define a pointer to the BLOB an
 ```
 **Nota para  desenvolvedores de plugins:** um parâmetro BLOB se declara como "&O" (a letra "O", não o número "0").
 
-## Assignment operator
+## Operador de atribuição
 
 You can assign BLOBs to each other.
 
