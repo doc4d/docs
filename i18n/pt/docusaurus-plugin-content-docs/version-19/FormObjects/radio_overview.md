@@ -1,6 +1,6 @@
 ---
 id: radiobuttonOverview
-title: Radio Button
+title: Botão rádio
 ---
 
 Radio buttons are objects that allow the user to select one of a group of buttons.
@@ -14,7 +14,7 @@ A radio button is selected:
 - when the user clicks on it
 - when it has the focus and the user presses the **Space bar** key.
 
-## Configuring radio buttons
+## Configuração de botões radio
 
 Radio buttons are used in coordinated sets: only one button at a time can be selected in the set. In order to operate in a coordinated manner, a set of radio buttons must share the same [Radio Group](properties_Object.md#radio-group) property.
 
@@ -27,7 +27,7 @@ Selecting one radio button in a group sets that button to 1 and all of the other
 
 The value contained in a radio button object is not saved automatically (except if it is the representation of a Boolean field); radio button values must be stored in their variables and managed with methods.
 
-## Button Styles
+## Estilos de botões
 
 Radio [button styles](properties_TextAndPicture.md#button-style) control radio button's general appearance as well as its available properties. It is possible to apply different predefined styles to radio buttons. However, the same button style must be applied to all radio buttons in a group so that they work as expected.
 
@@ -41,7 +41,7 @@ The Regular radio button style is a standard system button (*i.e.*, a small bull
 
 In addition to initiating code execution, the Regular radio button style changes bullsey color when being hovered.
 
-### Flat
+### Plano
 
 The Flat radio button style is a standard system button (*i.e.*, a small bullseye with text) which executes code when a user clicks on it.
 
@@ -53,7 +53,7 @@ By default, the Flat style has a minimalist appearance. The Flat button style's 
 
 The Toolbar radio button style is primarily intended for integration in a toolbar.
 
-By default, the Toolbar style has a transparent background with a label in the center. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+By default, the Toolbar style has a transparent background with a label in the center. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
 - *Windows* - the button is highlighted.
 
@@ -63,7 +63,7 @@ By default, the Toolbar style has a transparent background with a label in the c
 
 ### Bevel
 
-The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
 - *Windows* - the button is highlighted.
 
@@ -73,7 +73,7 @@ The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behav
 
 ### Bevel arredondado
 
-The Rounded Bevel button style is nearly identical to the [Bevel](#bevel) style except, depending on the OS, the corners of the button may be rounded.
+O estilo de botão Bevel arredondado é quase idêntico ao estilo [Bevel](#bevel), exceto que, dependendo do sistema operativo, as esquinas do botão podem ser arredondadas.
 
 - *Windows* - the button is identical to the [Bevel](#bevel) style.
 
@@ -91,29 +91,29 @@ The OS X Gradient button style is nearly identical to the [Bevel](#bevel) style 
 
 The OS X Textured radio button style is nearly identical to the [Toolbar](#toolbar) style except, depending on the OS, it may have a different appearance and does not display hover.
 
-By default, the OS X Textured style appears as:
+Como padrão, o estilo OS X Textured aparece como:
 
 - *Windows* - a toolbar-like button with a label in the center and the background is always displayed.
 
-- *macOS* - a standard system button displaying a color change from light to dark gray. Its height is predefined: it is not possible to enlarge or reduce it.
+- *macOS* - - um botão sistema padrão que mostra uma mudança de cor cinza claro a cinza escuro. Sua altura está predefinida: não é possível ampliar ou reduzir.
 
   ![](../assets/en/FormObjects/OSXTextured.png)
 
 ### Office XP
 
-The Office XP button style combines the appearance of the [Regular](#regular) style (standard system button) with the [Toolbar](#toolbar) style's behavior.
+O estilo de botão Office XP combina a aparência de estilo [Clássico](#regular) com o comportamento de estilo [Barra de ferramentas](#toolbar).
 
-The colors (highlight and background) of a button with the Office XP style are based on the system colors. The appearance of the button can be different when the cursor hovers over it depending on the OS:
+As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas nos sistemas de cores. A aparência do botão pode ser diferente quando o cursor passar por cima dele, dependendo do SO:
 
-- *Windows* - its background only appears when the mouse rolls over it.
+- *Windows* - seu fundo só aparece quando o mouse passa por cima.
 
   ![](../assets/en/FormObjects/radio_xp.png)
 
-- *macOS* - its background is always displayed.
+- *macOS* - seu fundo é sempre mostrado.
 
 ### Collapse / Expand
 
-This button style can be used to add a standard collapse/expand icon. These buttons are used natively in hierarchical lists. In Windows, the button looks like a [+] or a [-]; in macOS, it looks like a triangle pointing right or down.
+This button style can be used to add a standard collapse/expand icon. Esses botões são usados nativamente em listas hierárquicas. Esses botões são usados nativamente em listas hierárquicas.
 
 ![](../assets/en/FormObjects/checkbox_collapse.png)
 
@@ -127,7 +127,7 @@ The disclosure radio button style displays the radio button as a standard disclo
 
 The Custom radio button style accepts a personalized background picture and allows managing additional parameters such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontalMargin).
 
-## Supported properties
+## Propriedades compatíveis
 
 All radio buttons share the same set of basic properties:
 
