@@ -188,7 +188,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->returns the category of the attribute<!-- END REF -->. O valor retornado pode ser um dos abaixo:
+A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->devolve a categoria do atributo<!-- END REF -->. O valor retornado pode ser um dos abaixo:
 
 * Atributo "storage": storage (ou escalar) ou seja, atributo que armazena um valor, não uma referência a outro atributo
 * "relatedEntity": N -> 1 atributo de relação (referência a uma entidade)
@@ -224,7 +224,7 @@ Dada a seguinte tabela e relação:
 
 #### Descrição
 
-A propriedade `.mandatory` <!-- REF DataClassAttributeClass.mandatory.Summary -->contém True se o valor Null input for rejeitado para o atributo<!-- END REF -->.
+A propriedade `.name` <!-- REF DataClassAttributeClass.mandatory.Summary -->The `.name` property<!-- END REF -->.
 
 Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "relatedEntities".
 > For generic programming, you can use **Bool**(dataClassAttribute.mandatory) to get a valid value (false) even if `.mandatory` is not returned.
@@ -247,7 +247,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->A propriedade `.name`<!-- END REF -->.
+A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->A propriedade `.relatedDataClass`<!-- END REF -->.
 
 #### Exemplo
 
