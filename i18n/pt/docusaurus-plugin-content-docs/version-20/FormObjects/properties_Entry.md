@@ -1,9 +1,9 @@
 ---
 id: propertiesEntry
-title: Entry
+title: Entrada
 ---
 
-## Auto Spellcheck
+## Verificação automática da ortografia
 
 4D includes an integrated and customizable spell-check utility. Text type [inputs](input_overview.md) can be checked, as well as [4D Write Pro](writeProArea_overview.md) documents.
 
@@ -21,11 +21,11 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 
 ---
 
-## Context Menu
+## Menu de contexto
 
 Allows the user access to a standard context menu in the object when the form is executed.
 
-For a picture type [input](input_overview.md), in addition to standard editing commands (Cut, Copy, Paste and Clear), the menu contains the **Import...** command, which can be used to import a picture stored in a file, as well as the **Save as...** command, which can be used to save the picture to disk. The menu can also be used to modify the display format of the picture: the **Truncated non-centered**, **Scaled to fit** and **Scaled to fit centered prop.** options are provided. The modification of the [display format](properties_Display.md#picture-format) using this menu is temporary; it is not saved with the record.
+For a picture type [input](input_overview.md), in addition to standard editing commands (Cut, Copy, Paste and Clear), the menu contains the **Import...** command, which can be used to import a picture stored in a file, as well as the **Save as...** command, which can be used to save the picture to disk. The menu can also be used to modify the display format of the picture: the **Truncated non-centered**, **Scaled to fit** and **Scaled to fit centered prop.** options are provided. The modification of the [display format](properties_Display#picture-format) using this menu is temporary; it is not saved with the record.
 
 For a [multi-style](properties_Text.md#multi-style) text type [input](input_overview.md), in addition to standard editing commands, the context menu provides the following commands:
 
@@ -63,11 +63,11 @@ When this property is disabled, any pop-up menus associated with a list box colu
 
 #### Objects Supported
 
-[4D Write Pro areas](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
+[4D Write Pro areas](writeProArea_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
 ---
 
-## Entry Filter
+## Filtro de entrada
 
 An entry filter controls exactly what the user can type during data entry. Unlike [required lists](properties_RangeOfValues.md#required-list) for example, entry filters operate on a character-by-character basis. For example, if a part number always consists of two letters followed by three digits, you can use an entry filter to restrict the user to that pattern. You can even control the particular letters and numbers.
 
@@ -90,40 +90,40 @@ For information about creating entry filters, see [Filter and format codes](http
 
 Here is a table that explains each of the entry filter choices in the Entry Filter drop-down list:
 
-| Entry Filter                    | Descrição                                                                                                                                    |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| ~A                              | Allow any letters, but convert to uppercase.                                                                                                 |
-| &9                              | Allow only numbers.                                                                                                                          |
-| &A                              | Allow only capital letters.                                                                                                                  |
-| &a                              | Allow only letters (uppercase and lowercase).                                                                                                |
-| &@                              | Allow only alphanumeric characters. No special characters.                                                                                   |
-| ~a##                            | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                         |
-| !0&9##/##/##                    | Standard date entry format. Display zeros in entry spaces. Allow any numbers.                                                                |
-| !0&9 Day: ## Month: ## Year: ## | Custom date entry format. Display zeros in entry spaces. Allow any numbers. Two entries after each word.                                     |
-| !0&9##:##                       | Time entry format. Limited to hours and minutes. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                |
-| !0&9## Hrs ## Mins ## Secs      | Time entry format. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
-| !0&9Hrs: ## Mins: ## Secs: ##   | Time entry format. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
-| !0&9##-##-##-##                 | Local telephone number format. Display zeros in entry spaces. Allow any number. Three entries, hyphen, four entries.                         |
-| !_&9(###)!0###-####             | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                         |
-| !0&9###-###-###                 | Long distance telephone number. Display zeros in entry spaces. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
-| !0&9###-##-###                  | Social Security number. Display zeros in entry spaces. Allow any numbers.                                                                    |
-| ~"A-Z;0-9; ;,;.;-"              | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                |
-| &"a-z;0-9; ;,;.;-"              | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                         |
-| &"0-9;.;-"                      | Numbers. Allow only numbers, decimal points, and hyphens (minus sign).                                                                       |
+| Filtro de entrada             | Descrição                                                                                                                                    |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ~A                            | Allow any letters, but convert to uppercase.                                                                                                 |
+| &9                            | Allow only numbers.                                                                                                                          |
+| &A                            | Allow only capital letters.                                                                                                                  |
+| &a                            | Allow only letters (uppercase and lowercase).                                                                                                |
+| &@                            | Allow only alphanumeric characters. No special characters.                                                                                   |
+| ~a##                          | State name abbreviation (e.g., CA). Allow any two letters, but convert to uppercase.                                                         |
+| !0&9##/##/##                  | Standard date entry format. Display zeros in entry spaces. Allow any numbers.                                                                |
+| !0&9 Dia: ## Mês: ## Ano: ##  | Time entry format. Display zeros in entry spaces. Allow any numbers. Limited to hours and minutes.                                           |
+| !0&9##:##                     | Time entry format. Limited to hours and minutes. Display zeros in entry spaces. Allow any four numbers, separated by a colon.                |
+| !0&9## Hrs ## Mins ## Secs    | Time entry format. Display zeros in entry spaces. Allow any two numbers before each word.                                                    |
+| !0&9Hrs: ## Mins: ## Secs: ## | Time entry format. Display zeros in entry spaces. Allow any two numbers after each word.                                                     |
+| !0&9##-##-##-##               | Local telephone number format. Display zeros in entry spaces. Allow any number. Three entries, hyphen, four entries.                         |
+| !_&9(###)!0###-####           | Long distance telephone number. Display underscores in first three entry spaces, zeros in remainder.                                         |
+| !0&9###-###-###               | Long distance telephone number. Display zeros in entry spaces. Allow any number. Three entries, hyphen, three entries, hyphen, four entries. |
+| !0&9###-##-####               | Social Security number. Display zeros in entry spaces. Allow any numbers.                                                                    |
+| ~"A-Z;0-9; ;,;.;-"            | Uppercase letters and punctuation. Allow only capital letters, numbers, spaces, commas, periods, and hyphens.                                |
+| &"a-z;0-9; ;,;.;-"            | Upper and lowercase letters and punctuation. Allow lowercase letters, numbers, spaces, commas, periods, and hyphens.                         |
+| &"0-9;.;-"                    | Números. Allow only numbers, decimal points, and hyphens (minus sign).                                                                       |
 
 #### Gramática JSON
 
 | Nome        | Tipo de dados | Valores possíveis                                    |
 | ----------- | ------------- | ---------------------------------------------------- |
-| entryFilter | string        | <li>Entry filter code</li> or <li>Entry filter name (filter names start with &#124; )</li> |
+| entryFilter | string        | <li>Entry filter code or</li> or <li>Entry filter code or Entry filter name (filter names start with &#124; )</li> |
 
 #### Objects Supported
 
-[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
-## Focusable
+## Focável
 
 When the **Focusable** property is enabled for an object, the object can have the focus (and can thus be activated by the keyboard for instance). It is outlined by a gray dotted line when it is selected — except when the [Hide focus rectangle](properties_Appearance.md#hide-focus-rectangle) option has also been selected.
 
@@ -137,9 +137,9 @@ When the **Focusable** property is selected for a non-enterable object, the user
 
 #### Gramática JSON
 
-| Nome      | Tipo de dados | Valores possíveis |
-| --------- | ------------- | ----------------- |
-| focusable | boolean       | true, false       |
+| Nome    | Tipo de dados | Valores possíveis |
+| ------- | ------------- | ----------------- |
+| focável | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -167,11 +167,11 @@ By default, the object uses the current keyboard layout.
 
 ---
 
-## Multiline
+## Multilinha
 
 This property is available for [inputs objects](input_overview.md) containing expressions of the Text type and fields of the Alpha and Text type. It can have three different values: Yes, No, Automatic (default).
 
-#### Automatic
+#### Automático
 
 - In single-line inputs, words located at the end of lines are truncated and there are no line returns.
 - In multiline inputs, 4D carries out automatic line returns:  
@@ -189,9 +189,9 @@ When this value is selected, the property is managed by the [Wordwrap](propertie
 
 #### Gramática JSON
 
-| Nome      | Tipo de dados | Valores possíveis                                 |
-| --------- | ------------- | ------------------------------------------------- |
-| multiline | text          | "yes", "no", "automatic" (default if not defined) |
+| Nome       | Tipo de dados | Valores possíveis                                 |
+| ---------- | ------------- | ------------------------------------------------- |
+| multilinha | text          | "yes", "no", "automatic" (default if not defined) |
 
 #### Objects Supported
 
@@ -199,7 +199,7 @@ When this value is selected, the property is managed by the [Wordwrap](propertie
 
 ---
 
-## Placeholder
+## Placeholder (valores provisórios)
 
 4D can display placeholder text in the fields of your forms.
 
@@ -233,7 +233,7 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 
 #### Veja também
 
-[Help tip](properties_Help.md)
+[Dica de ajuda](properties_Help.md)
 
 ---
 
@@ -253,7 +253,7 @@ This property keeps the selection visible within the object after it has lost th
 
 ---
 
-## Shortcut
+## Atalho
 
 This property allows setting special meaning keys (keyboard shortcuts) for [buttons](button_overview.md), [radio buttons](radio_overview.md), and [checkboxes](checkbox_overview.md). They allow the user to use the control using the keyboard instead of having to use the mouse.
 
@@ -271,7 +271,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 | shortcutAccel   | boolean       | true, false (Ctrl Windows/Command macOS)           |
 | shortcutAlt     | boolean       | true, false                                        |
 | shortcutCommand | boolean       | true, false                                        |
-| shortcutControl | boolean       | true, false (macOS Control)                        |
+| shortcutControl | boolean       | true, false (macOS: Control)                       |
 | shortcutShift   | boolean       | true, false                                        |
 |                 |               |                                                    |
 | shortcutKey     | string        | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
@@ -282,7 +282,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 
 ---
 
-## Single-Click Edit
+## Editar com um clique
 
 Enables direct passage to edit mode in list boxes.
 
