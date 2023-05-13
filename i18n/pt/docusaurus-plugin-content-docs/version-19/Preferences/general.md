@@ -13,11 +13,11 @@ This option allows you to configure the default 4D display at startup, when the 
 
 * **Do nothing**: Only the application window appears, empty.
 * **Open Local Project dialog**: 4D displays a standard open document dialog box, allowing you to select a local project.
-* **Open last used project**: 4D directly opens the last project used; no opening dialog box appears.
+* **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
 > To force the display of the opening dialog box when this option is selected, hold down the **Alt** (Windows) or **Option** (macOS) key while launching the project.
 
 * **Open Remote Project dialog**: 4D displays the standard 4D Server logon dialog, allowing you to select a project published on the network.
-* **Open Welcome Wizard dialog** (factory setting): 4D displays the Welcome Wizard dialog box.
+* **Open last used project**: 4D directly opens the last project used; no opening dialog box appears.
 > > > **4D Server**: The 4D Server application ignores this option. In this environment, the **Do nothing** mode is always used.
 
 ### Automatic form creation
