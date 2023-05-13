@@ -353,7 +353,7 @@ Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions
 
 The two following codes are equivalent.
 
-Code using `4DELSE` only:
+Code using 4DELSE only:
 
 ```html
 <!--#4DIF Condition1-->
@@ -730,7 +730,7 @@ Note that the `$4dtag` syntax supports matching pairs of enclosed quotes or pare
 String(1) + "\"(hello)\""
 ```
 
-You can write:
+Você pode escrever:
 
 ```4d
  input:="$4DEVAL( String(1)+\"\\\"(hello)\\\"\")"
