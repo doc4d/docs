@@ -6,7 +6,7 @@ title: Ação
 
 ---
 
-## Draggable
+## Arrastável
 
 Control whether and how the user can drag the object. By default, no drag operation is allowed.
 
@@ -19,9 +19,9 @@ Two drag modes are available:
 
 For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) in the *4D Language Reference* manual.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Tipo de dados | Possible Values                                              |
+| Nome     | Tipo de dados | Valores possíveis                                            |
 | -------- | ------------- | ------------------------------------------------------------ |
 | dragging | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
@@ -46,9 +46,9 @@ Two drop modes are available:
 
 For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Drag-and-Drop.300-4505037.en.html) in the *4D Language Reference* manual.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Tipo de dados | Possible Values                                              |
+| Nome     | Tipo de dados | Valores possíveis                                            |
 | -------- | ------------- | ------------------------------------------------------------ |
 | dropping | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
@@ -58,7 +58,7 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 
 #### Veja também
 
-[Draggable](#draggable)
+[Arrastável](#draggable)
 
 ---
 
@@ -66,11 +66,11 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 
 When this option is enabled, the object method is executed with the `On Data Change` event *at the same moment* the user changes the value of the indicator. When the option is disabled, the method is executed *after* the modification.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome                | Tipo de dados | Possible Values |
-| ------------------- | ------------- | --------------- |
-| continuousExecution | boolean       | true, false     |
+| Nome                | Tipo de dados | Valores possíveis |
+| ------------------- | ------------- | ----------------- |
+| continuousExecution | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -78,7 +78,7 @@ When this option is enabled, the object method is executed with the `On Data Cha
 
 ---
 
-## Method
+## Métodos
 
 Reference of a method attached to the object. Object methods generally "manage" the object while the form is displayed or printed. You do not call an object method—4D calls it automatically when an event involves the object to which the object method is attached.
 
@@ -94,9 +94,9 @@ Several types of method references are supported:
   `../../CustomMethods/myMethod.4dm` You can also use a filesystem:  
   `/RESOURCES/Buttons/bOK.4dm` In this case, 4D does not provide automatic support for object operations.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Tipo de dados | Possible Values                                                    |
+| Nome   | Tipo de dados | Valores possíveis                                                  |
 | ------ | ------------- | ------------------------------------------------------------------ |
 | method | text          | Object method standard or custom file path, or project method name |
 
@@ -106,17 +106,17 @@ Several types of method references are supported:
 
 ---
 
-## Movable Rows
+## Linhas móveis
 
 `Array type list boxes`
 
 Authorizes the movement of rows during execution. This option is selected by default. It is not available for [selection type list boxes](listbox_overview.md#selection-list-boxes) nor for [list boxes in hierarchical mode](properties_Hierarchy.md#hierarchical-list-box).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome        | Tipo de dados | Possible Values |
-| ----------- | ------------- | --------------- |
-| movableRows | boolean       | true, false     |
+| Nome        | Tipo de dados | Valores possíveis |
+| ----------- | ------------- | ----------------- |
+| movableRows | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -128,9 +128,9 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Tipo de dados | Possible Values              |
+| Nome          | Tipo de dados | Valores possíveis            |
 | ------------- | ------------- | ---------------------------- |
 | selectionMode | text          | "multiple", "single", "none" |
 
@@ -140,7 +140,7 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 ---
 
-## Sortable
+## Ordenável
 
 Allows sorting column data by clicking a [listbox](listbox_overview.md) header. This option is selected by default. Picture type arrays (columns) cannot be sorted using this feature.
 
@@ -151,11 +151,11 @@ In list boxes based on a selection of records, the standard sort function is ava
 
 In other cases (list boxes based on named selections, columns associated with expressions), the standard sort function is not available. A standard list box sort changes the order of the current selection in the database. However, the highlighted records and the current record are not changed. A standard sort synchronizes all the columns of the list box, including calculated columns.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Tipo de dados | Possible Values |
-| -------- | ------------- | --------------- |
-| sortable | boolean       | true, false     |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| sortable | boolean       | true, false       |
 
 #### Objects Supported
 
@@ -163,7 +163,7 @@ In other cases (list boxes based on named selections, columns associated with ex
 
 ---
 
-## Standard action
+## Ação padrão
 
 Typical activities to be performed by active objects (*e.g.*, letting the user accept, cancel, or delete records, move between records or from page to page in a multi-page form, etc.) have been predefined by 4D as standard actions. They are described in detail in the [Standard actions](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html) section of the *Design Reference*.
 
@@ -171,9 +171,9 @@ You can assign both a standard action and a project method to an object. In this
 
 You can also set this property using the `OBJECT SET ACTION` command.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Tipo de dados | Possible Values                                                                                                  |
+| Nome   | Tipo de dados | Valores possíveis                                                                                                |
 | ------ | ------------- | ---------------------------------------------------------------------------------------------------------------- |
 | action | string        | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
 
