@@ -1,7 +1,7 @@
 ---
 id: backup
 slug: backup
-title: Backup
+title: Página de Backup
 ---
 
 
@@ -9,13 +9,13 @@ title: Backup
 
 Uma cópia de segurança pode ser iniciada de três maneiras:
 
-- Manualmente, utilizando o comando **Cópia de segurança...** do menu 4D **Arquivo** ou o botão **Cópia de segurança** de [Centro de manutenção e segurança](MSC/backup.md).
+- **Last Backup Information**: provides the date and time of the last backup (automatic or manual) carried out on the application.
 - Automatically, using the scheduler that can be set in the Database Settings,
 - Por programação, utilizando o comando `BACKUP`.
 
 > 4D Server: é possível iniciar uma cópia de segurança manualmente desde uma máquina remota mediante um método que chama ao comando `BACKUP`. O comando será executado, em todos os casos, no servidor.
 
-### Cópia de segurança manual
+### You can use the Backup page to view some backup parameters of the database and to launch a manual backup:
 
 1. Seleccione o comando **Backup...** no menu 4D **File** . The backup window appears: ![](../assets/en/Backup/backup01.png) You can see the location of the backup folder using the pop-up menu next to the "Backup destination" area. Também se registra no banco de dados **Backup journal.txt**.
 
@@ -23,7 +23,7 @@ Uma cópia de segurança pode ser iniciada de três maneiras:
 
 The **Database properties...** button causes the Backup/Configuration page of the Database Settings to be displayed.
 
- 2. Clique em **Backup/Cópia de segurança** para iniciar a cópia de segurança utilizando os parâmetros atuais.
+ 2. The **Backup** button is used to launch a manual backup.
 
 ### Backup automático periódico
 
@@ -43,7 +43,7 @@ Quando iniciar o backup, 4D exibe uma caixa de diálogo com um termômetro indic
 
 Esse termômetro também é mostrado na página [Backup de CSM](MSC/backup.md) se utilizou esta caixa de diálogo.
 
-O botão **Parar** permite ao usuário interromper a cópia de segurança em qualquer momento (consulte [Manejar os problemas da cópia de segurança](backup.md#handling-backup-issues) mais adiante).
+This page consists of the following three areas:
 
 O estado da última cópia de segurança (correta ou com erro) é armazenada na área de informação da [página de cópias de segurança em CSM](MSC/backup.md) ou na **página de manutenção** de 4D Server. Também se registra no banco de dados **Backup journal.txt**.
 
@@ -68,7 +68,7 @@ In all cases, keep in mind that the status of the last backup (successful or fai
 - **Attached file not found**: When an attached file cannot be found, 4D performs a partial backup (backup of database files and accessible attached files) and returns an error.
 - **Backup impossible** (disk is full or write-protected, missing disk, disk failure, incomplete transaction, database not launched at time of scheduled automatic backup, etc.): If this is a first-time error, 4D will then make a second attempt to perform the backup. The wait between the two attempts is defined on the **Backup/Backup & Restore** page of the Database Settings. Se a segunda tentativa falhar, um diálogo de alerta de sistema é exibido e um erro é gerado. Pode interceptar esse erro no método database `On Backup Shutdown`.
 
-## Histórico de cópias de segurança (Backup Journal)
+## Página de Backup
 
 To make following up and verifying database backups easier, the backup module writes a summary of each operation performed in a special file, which is similar to an activity journal. Da mesma forma que no manual de bordo, todas as operações (backups, restaurações, integrações de histórico) são escritas nesse arquivo, não importa se a operação foi programada ou manual. A data e hora em que essas operações acontecem também é anotada no histórico.
 
