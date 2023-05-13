@@ -1,6 +1,6 @@
 ---
 id: getting-started
-title: Getting Started
+title: Começando
 ---
 
 
@@ -107,7 +107,7 @@ A 4D View Pro area handles several objects and elements.
 
 Most of 4D View Pro methods require a *vpAreaName* parameter, which is the [**4D View Pro form area name**](FormObjects/viewProArea_overview.md) (4D form object). This name is the [object name](FormObjects/properties_Object.md#object-name) property.
 
-For example, if you want to set the total number of columns of an area named "myVpArea", you write:
+Por exemplo, se quiser definir o número total de colunas de uma área chamada "myVpArea", escreva:
 
 ```4d
 VP SET COLUMN COUNT("myVpArea";5)
@@ -147,9 +147,9 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 |             | \[ ].name        | text       | Range name                                                          | name                                               |
 |             | \[ ].sheet       | number     | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
 |             | \[ ].row         | number     | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
-|             | \[ ].rowCount    | number     | Row count                                                           | cells, rows                                        |
+|             | \[ ].rowCount    | number     | Contagem de linhas                                                  | células, linhas                                    |
 |             | \[ ].column      | number     | Column index (counting begins at 0)                                 | cell, cells, column, columns                       |
-|             | \[ ].columnCount | number     | Column count                                                        | cells, columns                                     |
+|             | \[ ].columnCount | number     | Contagem das colunas                                                | cells, columns                                     |
 
 
 
@@ -163,7 +163,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 * .4vp
 * .xlsx
-* .txt and .csv
+* .txt e .csv
 * .pdf (for export only)
 
 For more details, check out the description of [VP IMPORT DOCUMENT](method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](method-list.md#vp-export-document).
