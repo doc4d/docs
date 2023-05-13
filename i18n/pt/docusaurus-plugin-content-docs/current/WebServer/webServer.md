@@ -12,11 +12,11 @@ You can start or stop publication of the web application at any time. To do so, 
 
 Monitoring the 4D web server is easy and can be done using the 4D Server administration window or through [special URLs](webServerAdmin.md#administration-urls).
 
-## Ready-to-use
+## Pronto a usar
 
 The 4D web server automatically creates a default root folder and a default home page for an instantaneous availability.
 
-## Security
+## Segurança
 
 Data security is present at every stage of the 4D web server implementations. Security levels are scalable and default settings usually select the most secure options. The 4D web server security is based upon the following elements:
 
@@ -34,7 +34,7 @@ Data security is present at every stage of the 4D web server implementations. Se
 * **Control of server resource usage** (e.g. [maximum concurrent web processes](webServerConfig.md#maximum-concurrent-web-processes) option).
 > Para uma visão geral das funções de segurança de 4D, consulte o [Guia de segurança de 4D](https://blog.4d.com/4d-security-guide/).
 
-## User Sessions
+## Sessões Usuário
 
 The 4D web server includes complete automatic features for easily managing [web sessions](sessions.md) (user sessions) based on cookies.
 
