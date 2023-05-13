@@ -4,7 +4,7 @@
     "description": "The label for version 19"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Project Management": {
@@ -60,7 +60,7 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
@@ -80,7 +80,7 @@
     "description": "The label for category Client/Server in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Forms",
+    "message": "Formulários",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -96,7 +96,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Form Events",
+    "message": "Eventos formulário",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
