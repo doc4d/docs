@@ -69,7 +69,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!-- REF #_command_.File.Params -->
-| Parameter    | Tipo     |    | Descrição                                           |
+| Parâmetro    | Tipo     |    | Descrição                                           |
 | ------------ | -------- |:--:| --------------------------------------------------- |
 | path         | Text     | -> | Rota do arquivo                                     |
 | fileConstant | Integer  | -> | Constante de arquivo 4D                             |
@@ -91,7 +91,7 @@ No parâmetro *path* , passe um file path string. Pode utilizar uma string perso
 
 Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar com pathnames de plataforma (Windows ou macOS), deve declará-lo usando o parâmetro *pathType* . Estão disponíveis as seguintes constantes:
 
-| Constante        | Value | Comentário                                                                                               |
+| Parâmetros       | Value | Comentário                                                                                               |
 | ---------------- | ----- | -------------------------------------------------------------------------------------------------------- |
 | fk platform path | 1     | Caminho expresso com uma sintaxe específica da plataforma (obrigatória em caso de caminho de plataforma) |
 | fk posix path    | 0     | Caminho expresso com a sintaxe POSIX (por padrão)                                                        |
@@ -100,7 +100,7 @@ Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar co
 
 No parâmetro *fileConstant* , passe um ficheiro 4D incorporado ou de sistema, utilizando uma das constantes seguintes:
 
-| Constante                         | Value | Comentário                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Parâmetros                        | Value | Comentário                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backup history file               | 19    | Arquivo de histórico de cópias de segurança (ver Arquivos de configuração e rastreio). Armazenado na pasta de destino de cópia de segurança.                                                                                                                                                                                                                                                                                                  |
 | Backup log file                   | 13    | Arquivo atual do diário de backup. Armazenado na pasta Logs da aplicação.                                                                                                                                                                                                                                                                                                                                                                     |
@@ -166,9 +166,9 @@ A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->creates and retur
 
 
 <!--REF #FileClass.create().Params -->
-| Parameter  | Tipo     |    | Descrição                                                                                      |
-| ---------- | -------- | -- | ---------------------------------------------------------------------------------------------- |
-| Resultados | Booleano | <- | Verdadeiro se o arquivo foi criado com sucesso, falso caso contrário<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                                                      |
+| ---------- | ---------- | -- | ---------------------------------------------------------------------------------------------- |
+| Resultados | Parâmetros | <- | Verdadeiro se o arquivo foi criado com sucesso, falso caso contrário<!-- END REF -->
 
 |
 
@@ -207,7 +207,7 @@ Criação de um arquivo de preferências na pasta da base de dados:
 
 
 <!--REF #FileClass.createAlias().Params -->
-| Parameter         | Tipo       |    | Descrição                                                                |
+| Parâmetro         | Tipo       |    | Descrição                                                                |
 | ----------------- | ---------- | -- | ------------------------------------------------------------------------ |
 | destinationFolder | 4D. Folder | -> | Pasta de destino para o pseudónimo ou atalho                             |
 | aliasName         | Text       | -> | Nome do pseudónimo ou atalho                                             |
@@ -224,7 +224,7 @@ Passar o nome do pseudónimo ou atalho para criar no parâmetro *aliasName* .
 
 Por padrão em macOS, a função cria um pseudónimo padrão. Também pode criar uma ligação simbólica utilizando o parâmetro *aliasType* . Estão disponíveis as seguintes constantes:
 
-| Constante          | Value | Comentário                   |
+| Parâmetros         | Value | Comentário                   |
 | ------------------ | ----- | ---------------------------- |
 | `fk alias link`    | 0     | Alias link (padrão)          |
 | `fk symbolic link` | 1     | Link simbólico (só em macOS) |
@@ -263,7 +263,7 @@ Se quiser criar um alias para um arquivo na sua pasta database:
 
 
 <!-- REF #FileClass.delete().Params -->
-| Parameter | Tipo |  | Descrição                                             |
+| Parâmetro | Tipo |  | Descrição                                             |
 | --------- | ---- |  | ----------------------------------------------------- |
 |           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
@@ -311,7 +311,7 @@ Se quiser apagar um ficheiro específico na pasta da base de dados:
 
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                            |
+| Parâmetro  | Tipo   |    | Descrição                                                                            |
 | ---------- | ------ | -- | ------------------------------------------------------------------------------------ |
 | Resultados | Objeto | <- | Conteúdo do recurso da versão .exe/.dll ou arquivo .plist|<!-- END REF -->
 
@@ -399,9 +399,9 @@ ALERT($info.
 <!--REF #FileClass.moveTo().Syntax -->**.moveTo**( *destinationFolder* : 4D. Folder { ; *newName* : Text } ) : 4D. File<!-- END REF -->
 
 <!--REF #FileClass.moveTo().Params -->
-| Parameter         | Tipo       |    | Descrição                                 |
+| Parâmetro         | Tipo       |    | Descrição                                 |
 | ----------------- | ---------- | -- | ----------------------------------------- |
-| destinationFolder | 4D. Folder | -> | Destination folder                        |
+| destinationFolder | 4D. Folder | -> | Pasta de destino                          |
 | newName           | Text       | -> | Nome completo para o arquivo movido       |
 | Resultados        | 4D. File   | <- | Arquivo movido|<!-- END REF -->
 
@@ -454,7 +454,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.rename().Params -->
-| Parameter  | Tipo     |    | Descrição                                    |
+| Parâmetro  | Tipo     |    | Descrição                                    |
 | ---------- | -------- | -- | -------------------------------------------- |
 | newName    | Text     | -> | Novo nome completo para o arquivo            |
 | Resultados | 4D. File | <- | Renomeado arquivo|<!-- END REF -->
@@ -497,7 +497,7 @@ Se quiser renomear "ReadMe.txt" em "ReadMe_new.txt":
 
 
 <!--REF #FileClass.setAppInfo().Params -->
-| Parameter | Tipo   |    | Descrição                                                                                              |
+| Parâmetro | Tipo   |    | Descrição                                                                                              |
 | --------- | ------ | -- | ------------------------------------------------------------------------------------------------------ |
 | info      | Objeto | -> | Propriedades para escrever no recurso da versão .exe/.dll ou arquivo .plist|<!-- END REF -->
 
@@ -581,7 +581,7 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setContent().Params -->
-| Parameter | Tipo |    | Descrição                                                 |
+| Parâmetro | Tipo |    | Descrição                                                 |
 | --------- | ---- | -- | --------------------------------------------------------- |
 | content   | BLOB | -> | Novos conteúdos para o arquivo|<!-- END REF -->
 
@@ -615,7 +615,7 @@ reescreve todo o conteúdo do arquivo utilizando os dados armazenados no conteú
 
 
 <!--REF #FileClass.setText().Params -->
-| Parameter   | Tipo    |    | Descrição                                                              |
+| Parâmetro   | Tipo    |    | Descrição                                                              |
 | ----------- | ------- | -- | ---------------------------------------------------------------------- |
 | text        | Text    | -> | Texto a armazenar no arquivo                                           |
 | charSetName | Text    | -> | Nome do conjunto de caracteres                                         |
@@ -645,7 +645,7 @@ If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the 
 
 Em *breakMode*, pode passar um número indicando o processamento a aplicar aos caracteres de fim de linha antes de os guardar no arquivo. The following constants, found in the **System Documents** theme are available:
 
-| Constante                     | Value | Comentário                                                                                                                                               |
+| Parâmetros                    | Value | Comentário                                                                                                                                               |
 | ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Document unchanged`          | 0     | Não processado                                                                                                                                           |
 | `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) on macOS, CRLF (carriage return + line feed) on Windows |
