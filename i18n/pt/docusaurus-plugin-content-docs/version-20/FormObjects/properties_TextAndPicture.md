@@ -22,7 +22,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 
 ---
 
-## Button Style
+## Estilo de botão
 
 General appearance of the button. The button style also plays a part in the availability of certain options.
 
@@ -44,7 +44,7 @@ This property allows setting the size (in pixels) of the horizontal margins of t
 
 This parameter is useful, for example, when the background picture contains borders:
 
-| With / Without       | Exemplo                                                      |
+| Com / Sem            | Exemplo                                                      |
 | -------------------- | ------------------------------------------------------------ |
 | Without margin       | ![](../assets/en/FormObjects/property_horizontalMargin1.png) |
 | With 13-pixel margin | ![](../assets/en/FormObjects/property_horizontalMargin2.png) |
@@ -62,7 +62,7 @@ This parameter is useful, for example, when the background picture contains bord
 
 ---
 
-## Icon Location
+## Localização do ícone
 
 Designates the placement of an icon in relation to the form object.
 
@@ -78,7 +78,7 @@ Designates the placement of an icon in relation to the form object.
 
 ---
 
-## Icon Offset
+## Offset do ícone
 
 Sets a custom offset value in pixels, which will be used when the button is clicked
 
@@ -110,8 +110,8 @@ The picture can contain from 2 to 6 states.
 
 :::note
 
-- "false" means button not clicked/not selected or check box unchecked (variable value=0)
-- "true" means button clicked/selected or check box checked (variable value=1)
+- button not clicked / check box unchecked (variable value=0)
+- button clicked / check box checked (variable value=1)
 
 :::
 
@@ -161,11 +161,11 @@ Here are the results using the various options for this property:
 
 | Option       | Descrição                                                                                                                                        | Exemplo                                                           |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- |
-| **Left**     | The text is placed to the left of the icon. The contents of the button are aligned to the right.                                                 | ![](../assets/en/FormObjects/property_titlePosition_left.en.png)  |
-| **Top**      | The text is placed above the icon. The contents of the button are centered.                                                                      | ![](../assets/en/FormObjects/property_titlePosition_top.png)      |
-| **Right**    | The text is placed to the right of the icon. The contents of the button are aligned to the left.                                                 | ![](../assets/en/FormObjects/property_titlePosition_right.png)    |
-| **Bottom**   | The text is placed below the icon. The contents of the button are centered.                                                                      | ![](../assets/en/FormObjects/property_titlePosition_bottom.png)   |
-| **Centered** | The text of the icon is centered vertically and horizontally in the button. This parameter is useful, for example, for text included in an icon. | ![](../assets/en/FormObjects/property_titlePosition_centered.png) |
+| **Direita**  | The text is placed to the left of the icon. The contents of the button are aligned to the right.                                                 | ![](../assets/en/FormObjects/property_titlePosition_left.en.png)  |
+| **Topo**     | The text is placed above the icon. The contents of the button are centered.                                                                      | ![](../assets/en/FormObjects/property_titlePosition_top.png)      |
+| **Esquerda** | The text is placed to the right of the icon. The contents of the button are aligned to the left.                                                 | ![](../assets/en/FormObjects/property_titlePosition_right.png)    |
+| **Fundo**    | The text is placed below the icon. The contents of the button are centered.                                                                      | ![](../assets/en/FormObjects/property_titlePosition_bottom.png)   |
+| **Centrado** | The text of the icon is centered vertically and horizontally in the button. This parameter is useful, for example, for text included in an icon. | ![](../assets/en/FormObjects/property_titlePosition_centered.png) |
 
 #### Gramática JSON
 
@@ -230,11 +230,11 @@ This property allows displaying a symbol that appears as a triangle in the butto
 
 The appearance and location of this symbol depends on the button style and the current platform.
 
-### Linked and Separated
+### Ligados e Separados
 
 To attach a pop-up menu symbol to a button, there are two display options available:
 
-|                         Linked                          |                         Separated                          |
+|                         Linked                          |                          Separado                          |
 |:-------------------------------------------------------:|:----------------------------------------------------------:|
 | ![](../assets/en/FormObjects/property_popup_linked.png) | ![](../assets/en/FormObjects/property_popup_separated.png) |
 > The actual availability of a "separated" mode depends on the style of the button and the platform.
@@ -252,7 +252,7 @@ Refer to the [`On Alternative Click` event description](../Events/onAlternativeC
 
 ### Managing the pop-up menu
 
-It is important to note that the "With Pop-up Menu" property only manages the graphic aspect of the button. The display of the pop-up menu and its values must be handled entirely by the developer, more particularly using `form events` and the [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page1006.html) and [`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page542.html) commands.
+It is important to note that the "With Pop-up Menu" property only manages the graphic aspect of the button. The display of the pop-up menu and its values must be handled entirely by the developer, more particularly using `form events` and the **[Dynamic pop up menu](https://doc.4d.com/4Dv18/4D/18/Dynamic-pop-up-menu.301-4505524.en.html)** and **[Pop up menu](https://doc.4d.com/4Dv17R5/4D/17-R5/Pop-up-menu.301-4127438.en.html)** commands.
 
 #### Gramática JSON
 
