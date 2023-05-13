@@ -73,7 +73,7 @@ Também pode utilizar o atalho **Ctrl+Shift+Alt+k** .
 
 #### Explorador
 
-Na página **Métodos** do Explorador, as classes estão agrupadas na categoria **Classes** .
+**.style**: Integer
 
 Para criar uma nova classe, pode:
 
@@ -103,7 +103,7 @@ As classes disponíveis são acessíveis a partir das suas class stores. Estão 
 
 #### cs -> classStore
 
-| Parameter  | Tipo   |    | Descrição                                           |
+| Parâmetro  | Tipo   |    | Descrição                                           |
 | ---------- | ------ | -- | --------------------------------------------------- |
 | classStore | object | <- | Class store de usuário para o projeto ou componente |
 
@@ -121,7 +121,7 @@ $instance:=cs.myClass.new()
 
 #### 4D -> classStore
 
-| Parameter  | Tipo   |    | Descrição      |
+| Parâmetro  | Tipo   |    | Descrição      |
 | ---------- | ------ | -- | -------------- |
 | classStore | object | <- | 4D class store |
 
@@ -174,7 +174,7 @@ As funções de classe são propriedades específicas da classe. São objectos d
 
 No ficheiro de definição de classe, as declarações de função utilizam a palavra-chave `Função` , e o nome da função. The function name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties).
 
-> **Tip:** Starting the function name with an underscore character ("_") will exclude the function from the autocompletion features in the 4D code editor. For example, if you declare `Function _myPrivateFunction` in `MyClass`, it will not be proposed in the code editor when you type in `"cs. MyClass. "`.
+> **Dica:** Começar o nome da função com um caractere de sublinhado ("_") excluirá a função dos recursos de preenchimento automático no editor de código 4D. For example, if you declare `Function _myPrivateFunction` in `MyClass`, it will not be proposed in the code editor when you type in `"cs. MyClass. "`.
 
 Immediately following the function name, [parameters](#parameters) for the function can be declared with an assigned name and data type, including the return parameter (optional). Por exemplo:
 
@@ -349,7 +349,7 @@ Class constructor ($side : Integer)
 Super {( param{;...;paramN} )} {-> Object} 
 ```
 
-| Parameter  | Tipo   |    | Descrição                                      |
+| Parâmetro  | Tipo   |    | Descrição                                      |
 | ---------- | ------ | -- | ---------------------------------------------- |
 | param      | misto  | -> | Parameter(s) to pass to the parent constructor |
 | Resultados | object | <- | Pai do objecto                                 |
@@ -429,10 +429,7 @@ You also created the `Square` class with a function calling the superclass funct
 Depois pode escrever num método projecto:
 
 ```4d
-var $square : Object
-var $message : Text
-$square:=cs. Square.new()
-$message:=$square.description() //I have 4 sides which are all equal
+Parâmetros
 ```
 
 ### This
@@ -443,7 +440,7 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Parameter  | Tipo   |    | Descrição      |
+| Parâmetro  | Tipo   |    | Descrição      |
 | ---------- | ------ | -- | -------------- |
 | Resultados | object | <- | Objecto actual |
 
