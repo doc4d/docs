@@ -22,7 +22,7 @@ Specifies if the user can delete subrecords in a list subform.
 ---
 ## Formulário detalhado
 
-You use this property to declare the detail form to use in the subform. It can be:
+You use this property to declare the detail form to use in the subform. Pode ser:
 
 - a widget, i.e. a page-type subform endowed with specific functions. In this case, the [list subform](#list-form) and [Source](#source) properties must be empty or not present.   
   You can select a component form name when it is published in the component.
@@ -46,7 +46,7 @@ You use this property to declare the detail form to use in the subform. It can b
 
 Action to perform in case of a double-click on an empty line of a list subform. As opções abaixo estão disponíveis:
 - Do nothing: Ignores double-click.
-- Add Record: Creates a new record in the subform and changes to editing mode. The record will be created directly in the list if the [Enterable in List](#enterable-in-list) property is enabled. Otherwise, it will be created in page mode, in the [detail form](#detail-form) associated with the subform.
+- Add Record: Creates a new record in the subform and changes to editing mode. The record will be created directly in the list if the [Enterable in List] property is enabled. Otherwise, it will be created in page mode, in the [detail form](detail-form) associated with the subform.
 
 
 #### Gramática JSON
@@ -63,9 +63,9 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 [Double click on row](#double-click-on-row)
 
 ---
-## Double-click on row
+## Duplo clique em linha
 
-`List subform`
+`Subformulário lista`
 
 Sets the action to be performed when a user double-clicks on a row in a list subform. The available options are:
 
@@ -137,16 +137,16 @@ Specifies the table that the list subform belongs to (if any).
 
 #### Gramática JSON
 
-| Nome  | Tipo de dados | Valores possíveis                 |
-| ----- | ------------- | --------------------------------- |
-| table | string        | 4D table name, or "" if no table. |
+| Nome   | Tipo de dados | Valores possíveis                 |
+| ------ | ------------- | --------------------------------- |
+| tabela | string        | 4D table name, or "" if no table. |
 
 #### Objects Supported
 
 [Subformulário](subform_overview.md)
 
 ---
-## Selection Mode
+## Modo seleção
 
 Designates the option for allowing users to select rows:
 - **None**: Rows cannot be selected if this mode is chosen. Clicking on the list will have no effect unless the [Enterable in list](subform_overview.md#enterable-in-list) option is enabled. The navigation keys only cause the list to scroll; the `On Selection Change` form event is not generated.
