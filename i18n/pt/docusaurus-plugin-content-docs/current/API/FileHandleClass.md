@@ -190,7 +190,7 @@ Essa propriedade é **apenas leitura**.
 
 
 <!--REF #FileHandleClass.getSize().Params -->
-| Parameter  | Tipo |    | Descrição                                                |
+| Parâmetro  | Tipo |    | Descrição                                                |
 | ---------- | ---- | -- | -------------------------------------------------------- |
 | Resultados | Real | <- | Tamanho do documento em bytes|<!-- END REF -->
 
@@ -277,7 +277,7 @@ Esta propriedade é **read/write**.
 
 
 <!--REF #FileHandleClass.readBlob().Params -->
-| Parameter  | Tipo                  |    | Descrição                                         |
+| Parâmetro  | Tipo                  |    | Descrição                                         |
 | ---------- | --------------------- | -- | ------------------------------------------------- |
 | *bytes*    | Real                  | -> | Número de bytes a ler                             |
 | Resultados | [4D. Blob](BlobClass) | <- | Bytes lidos do arquivo|<!-- END REF -->
@@ -317,7 +317,7 @@ Quando esta função é executada, a posição atual ([.offset](#offset)) é atu
 
 
 <!--REF #FileHandleClass.readLine().Params -->
-| Parameter  | Tipo |    | Descrição                                 |
+| Parâmetro  | Tipo |    | Descrição                                 |
 | ---------- | ---- | -- | ----------------------------------------- |
 | Resultados | Text | <- | Linha de texto|<!-- END REF -->
 
@@ -357,7 +357,7 @@ Quando esta função é executada, a posição atual ([.offset](#offset)) é atu
 
 
 <!--REF #FileHandleClass.readText().Params -->
-| Parameter  | Tipo |    | Descrição                                   |
+| Parâmetro  | Tipo |    | Descrição                                   |
 | ---------- | ---- | -- | ------------------------------------------- |
 | *stopChar* | Text | -> | Caracter no qual parar a leitura            |
 | Resultados | Text | <- | Texto do arquivo|<!-- END REF -->
@@ -401,7 +401,7 @@ Se o parâmetro *stopChar* for passado e não for encontrado, `.readText()` devo
 
 
 <!--REF #FileHandleClass.setSize().Params -->
-| Parameter | Tipo |    | Descrição                                                     |
+| Parâmetro | Tipo |    | Descrição                                                     |
 | --------- | ---- | -- | ------------------------------------------------------------- |
 | size      | Real | -> | Novo tamanho do documento em bytes|<!-- END REF -->
 
@@ -436,7 +436,7 @@ Se o tamanho ** for inferior ao tamanho atual do documento, o conteúdo do docum
 
 
 <!--REF #FileHandleClass.writeBlob().Params -->
-| Parameter | Tipo                  |    | Descrição                                                |
+| Parâmetro | Tipo                  |    | Descrição                                                |
 | --------- | --------------------- | -- | -------------------------------------------------------- |
 | *blob*    | [4D. Blob](BlobClass) | -> | Blob para escrever no arquivo|<!-- END REF -->
 
@@ -472,7 +472,7 @@ Quando esta função é executada, a posição atual ([.offset](#offset)) é atu
 
 
 <!--REF #FileHandleClass.writeLine().Params -->
-| Parameter    | Tipo |    | Descrição                                    |
+| Parâmetro    | Tipo |    | Descrição                                    |
 | ------------ | ---- | -- | -------------------------------------------- |
 | *lineOfText* | Text | -> | Texto para string|<!-- END REF -->
 
@@ -507,7 +507,7 @@ Quando esta função for executada, a posição atual ([.offset](#offset)) é at
 
 
 <!--REF #FileHandleClass.writeText().Params -->
-| Parameter     | Tipo |    | Descrição                                    |
+| Parâmetro     | Tipo |    | Descrição                                    |
 | ------------- | ---- | -- | -------------------------------------------- |
 | *textToWrite* | Text | -> | Texto para string|<!-- END REF -->
 
