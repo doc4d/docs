@@ -1,6 +1,6 @@
 ---
 id: write-class-method
-title: Code Editor
+title: Editor de método
 ---
 
 4D has a powerful built-in code editor that offers a wide set of features for highly productive code editing such as intelligent code completion, code navigation, debugging, searching, and more.
@@ -265,7 +265,7 @@ If the characters typed correspond to different types of objects, the list displ
 - Métodos utilizador
 - Nomes de tabelas
 - Nomes de campos
-- Constants
+- Constantes
 - Local, process or interprocess variable, declared in the method
 - Object property names
 - Comandos Plug-in
@@ -303,7 +303,7 @@ Standard keyboard shortcuts to navigate the code are available in 4D's Code Edit
 
 **Note:** Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Windows).
 
-| **Shortcut**                                                    | **Ação**                                                                                                                                   |
+| **Atalho**                                                      | **Ação**                                                                                                                                   |
 | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Shift]+[right arrow]                                           | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left     |
 | [Shift]+[left arrow]                                            | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left      |
@@ -520,7 +520,7 @@ When there is no tag in the class/method, the tool displays "No tag".
 
 The following items are added automatically:
 
-| Ícone                                                                       | Item                                             |
+| Ícone                                                                       | Elemento                                         |
 | --------------------------------------------------------------------------- | ------------------------------------------------ |
 | ![no-tag-icon](../assets/en/code-editor/no-tag.png)                         | Sem etiqueta                                     |
 | ![constructor-icon](../assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
@@ -531,7 +531,7 @@ The following items are added automatically:
 
 By adding markers in your code, you can add the following tags to the dropdown:
 
-| Ícone                                                   | Item            |
+| Ícone                                                   | Elemento        |
 | ------------------------------------------------------- | --------------- |
 | ![mark-tag-icon](../assets/en/code-editor/mark-tag.png) | MARK: etiqueta  |
 | ![todo-tag-icon](../assets/en/code-editor/todo-tag.png) | TODO: etiqueta  |
