@@ -10,7 +10,7 @@ This property is only available for list boxes with the following [data sources]
 - collection or entity selection,
 - array (non-hierarchical).
 
-The property is not selected by default. When used for at least one column, the height of every row in the column will automatically be calculated by 4D, and the column contents will be taken into account. Note that only columns with the option selected will be taken into account to calculate the row height.
+The property is not selected by default. When used, the height of every row in the column will automatically be calculated by 4D, and the column contents will be taken into account. When used for at least one column, the height of every row in the column will automatically be calculated by 4D, and the column contents will be taken into account.
 
 :::note
 
@@ -32,32 +32,32 @@ When this property is enabled, the height of every row is automatically calculat
 
 :::caution
 
-Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
+> > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
 
 :::
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome          | Data Type | Possible Values |
-| ------------- | --------- | --------------- |
-| rowHeightAuto | boolean   | true, false     |
+| Nome          | Tipo de dados | Valores possíveis |
+| ------------- | ------------- | ----------------- |
+| rowHeightAuto | boolean       | true, false       |
 
 #### Objects Supported
 
-[List Box Column](listbox_overview.md#list-box-columns)
+[Coluna da List Box](listbox_overview.md#list-box-columns)
 
 ---
 
-## Bottom
+## Fundo
 
 Bottom coordinate of the object in the form.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| bottom | number    | minimum: 0      |
+| Nome   | Tipo de dados | Valores possíveis |
+| ------ | ------------- | ----------------- |
+| bottom | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -65,31 +65,15 @@ Bottom coordinate of the object in the form.
 
 ---
 
-## Left
+## Direita
 
-Left coordinate of the object on the form.
+Coordenadas esquerda do objecto no formulário.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| left | number    | minimum: 0      |
-
-#### Objects Supported
-
-[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
-
----
-
-## Right
-
-Right coordinate of the object in the form.
-
-#### JSON Grammar
-
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| right | number    | minimum: 0      |
+| Nome | Tipo de dados | Valores possíveis |
+| ---- | ------------- | ----------------- |
+| left | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -97,15 +81,15 @@ Right coordinate of the object in the form.
 
 ---
 
-## Top
+## Esquerda
 
-Top coordinate of the object in the form.
+Coordenada direita do objecto no formulário.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome | Data Type | Possible Values |
-| ---- | --------- | --------------- |
-| top  | number    | minimum: 0      |
+| Nome    | Tipo de dados | Valores possíveis |
+| ------- | ------------- | ----------------- |
+| direita | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -113,7 +97,23 @@ Top coordinate of the object in the form.
 
 ---
 
-## Corner Radius
+## Topo
+
+Coordenada superior do objecto no formulário.
+
+#### Gramática JSON
+
+| Nome | Tipo de dados | Valores possíveis |
+| ---- | ------------- | ----------------- |
+| top  | number        | mínimo: 0         |
+
+#### Objects Supported
+
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
+
+---
+
+## Retângulo
 
 <details><summary>Histórico</summary>
 
@@ -123,11 +123,11 @@ Top coordinate of the object in the form.
 
 </details>
 
-Defines the corner roundness (in pixels) of the object. By default, the radius value is 0 pixels. You can change this property to draw rounded objects with custom shapes:
+Defines the corner roundness (in pixels) of objects of the [rectangle](shapes_overview.md#rectangle) type. By default, the radius value for rectangles is 0 pixels. You can change this property to draw rounded rectangles with custom shapes:
 
 ![](../assets/en/FormObjects/shape_rectangle.png)
 
-Minimum value is 0, in this case a standard non-rounded object rectangle is drawn. Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
+Minimum value is 0, in this case a standard non-rounded rectangle is drawn. Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
 
 :::note
 
@@ -140,13 +140,13 @@ With [text areas](text.md) and [inputs](input_overview.md):
 
 :::
 
-You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4dv19/help/command/en/page1323.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4dv19/help/command/en/page1324.html) commands.
+You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-Get-corner-radius.301-4311357.en.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-CORNER-RADIUS.301-4311356.en.html) commands.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome         | Data Type | Possible Values |
-| ------------ | --------- | --------------- |
-| borderRadius | integer   | minimum: 0      |
+| Nome         | Tipo de dados | Valores possíveis |
+| ------------ | ------------- | ----------------- |
+| borderRadius | integer       | mínimo: 0         |
 
 #### Objects Supported
 
@@ -154,16 +154,16 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 
 ---
 
-## Height
+## Alto
 
 This property designates an object's vertical size.
 > Some objects may have a predefined height that cannot be altered.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| height | number    | minimum: 0      |
+| Nome   | Tipo de dados | Valores possíveis |
+| ------ | ------------- | ----------------- |
+| height | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -171,18 +171,18 @@ This property designates an object's vertical size.
 
 ---
 
-## Width
+## Largura
 
 This property designates an object's horizontal size.
 > * Some objects may have a predefined height that cannot be altered.
 > * If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox_overview.md#list-box-columns), the user can also manually resize the column.
 > * When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome  | Data Type | Possible Values |
-| ----- | --------- | --------------- |
-| width | number    | minimum: 0      |
+| Nome  | Tipo de dados | Valores possíveis |
+| ----- | ------------- | ----------------- |
+| width | number        | mínimo: 0         |
 
 #### Objects Supported
 
@@ -190,49 +190,49 @@ This property designates an object's horizontal size.
 
 ---
 
-## Maximum Width
+## Largura máxima
 
 The maximum width of the column (in pixels). The width of the column cannot be increased beyond this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| maxWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| maxWidth | number        | mínimo: 0         |
 
 #### Objects Supported
 
-[List Box Column](listbox_overview.md#list-box-columns)
+[Coluna da List Box](listbox_overview.md#list-box-columns)
 
 ---
 
-## Minimum Width
+## Largura mínima
 
 The minimum width of the column (in pixels). The width of the column cannot be reduced below this value when resizing the column or form.
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome     | Data Type | Possible Values |
-| -------- | --------- | --------------- |
-| minWidth | number    | minimum: 0      |
+| Nome     | Tipo de dados | Valores possíveis |
+| -------- | ------------- | ----------------- |
+| minWidth | number        | mínimo: 0         |
 
 #### Objects Supported
 
-[List Box Column](listbox_overview.md#list-box-columns)
+[Coluna da List Box](listbox_overview.md#list-box-columns)
 
 ---
 
-## Row Height
+## Array altura linha
 
 Sets the height of list box rows (excluding headers and footers). By default, the row height is set according to the platform and the font size.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome      | Data Type | Possible Values                          |
-| --------- | --------- | ---------------------------------------- |
-| rowHeight | string    | css value in unit "em" or "px" (default) |
+| Nome      | Tipo de dados | Valores possíveis                               |
+| --------- | ------------- | ----------------------------------------------- |
+| rowHeight | string        | valor css na unidade "em" ou "px" (por defeito) |
 
 #### Objects Supported
 
@@ -240,11 +240,11 @@ Sets the height of list box rows (excluding headers and footers). By default, th
 
 #### Veja também
 
-[Row Height Array](#row-height-array)
+[Array estilo linha](#row-height-array)
 
 ---
 
-## Row Height Array
+## Array estilo linha
 
 This property is used to specify the name of a row height array that you want to associate with the list box. A row height array must be of the numeric type (longint by default).
 
@@ -259,13 +259,13 @@ RowHeights{5}:=3
 
 Assuming that the unit of the rows is "lines," then the fifth row of the list box will have a height of three lines, while every other row will keep its default height.
 > * The Row Height Array property is not taken into account for hierarchical list boxes.
-> * For array and collection/entity selection list boxes, this property is available only if the [Automatic Row Height](#automatic-row-height) option is not selected.
+> * For array-based list boxes, this property is available only if the [Automatic Row Height](#automatic-row-height) option is not selected.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values              |
-| --------------- | --------- | ---------------------------- |
-| rowHeightSource | string    | Name of a 4D array variable. |
+| Nome            | Tipo de dados | Valores possíveis            |
+| --------------- | ------------- | ---------------------------- |
+| rowHeightSource | string        | Name of a 4D array variable. |
 
 #### Objects Supported
 
@@ -273,21 +273,21 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 
 #### Veja também
 
-[Row Height](#row-height)
+[Array altura linha](#row-height)
 
 ---
 
-## Horizontal Padding
+## Barra rolagem horizontal
 
 Sets a horizontal padding for the cells. The value is set in pixels (default = 0).
 
 ![](../assets/en/FormObjects/padding.png)
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome              | Data Type | Possible Values                |
-| ----------------- | --------- | ------------------------------ |
-| horizontalPadding | number    | Number of pixels (must be >=0) |
+| Nome              | Tipo de dados | Valores possíveis              |
+| ----------------- | ------------- | ------------------------------ |
+| horizontalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objects Supported
 
@@ -295,19 +295,19 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 
 #### Veja também
 
-[Vertical Padding](#vertical-padding)
+[Dimensionamento vertical](#vertical-padding)
 
 ---
 
-## Vertical Padding
+## Dimensionamento vertical
 
 Sets a vertical padding for the cells. The value is set in pixels (default = 0).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome            | Data Type | Possible Values                |
-| --------------- | --------- | ------------------------------ |
-| verticalPadding | number    | Number of pixels (must be >=0) |
+| Nome            | Tipo de dados | Valores possíveis              |
+| --------------- | ------------- | ------------------------------ |
+| verticalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objects Supported
 
@@ -315,4 +315,4 @@ Sets a vertical padding for the cells. The value is set in pixels (default = 0).
 
 #### Veja também
 
-[Horizontal Padding](#horizontal-padding)
+[Barra rolagem horizontal](#horizontal-padding)
