@@ -80,7 +80,7 @@ Class for datastore objects, in which you can add custom functions.
 
 Internal name of the generic DataStore class in the `4D` class store.
 
-## Deep copy
+## Cópia profunda
 
 A deep copy duplicates an object and all the references it contains. After a deep copy, a copied collection contains duplicated elements and thus, new references, of all of the orginal elements. See also Shallow copy.
 
@@ -96,7 +96,7 @@ An entity can be seen as an instance of the dataclass, like a record of the tabl
 
 For more information, see Entities.
 
-## Entity selection
+## Seleção de entidades
 
 An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
@@ -144,7 +144,7 @@ In this documentation, "Mixed" data type is used to designate the various type o
 *   date
 *   object
 *   collection
-*   picture(\*)
+*   imagem(\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
 
@@ -164,7 +164,7 @@ The ability to run one or more [actions](#actions) on [resources](#resource). Se
 ## Propriedade
 
 See [Attribute](#attribute).
-> Attributes and properties are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
+> > Attributes and properties are similar concepts. "Attribute" is used to designate dataclass properties that store data, while "property" is more generic and defines a piece of data stored within an object.
 
 ## PropertyPath
 
@@ -218,7 +218,7 @@ Each time a new session is opened, a license is used. Each time a session is clo
 
 Inactive sessions are automatically closed after a timeout. The default timeout is 48 hours, it can be set by the developer (it must be >= 60 minutes).
 
-## Shallow copy
+## Cópia superficial (Shallow copy)
 
 A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
 
