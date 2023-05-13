@@ -28,7 +28,7 @@ A classe Blob permite-lhe criar e manipular [objectos blob](../Concepts/dt_blob.
 
 <!-- REF #4D.Blob.new().Params -->
 
-| Parameter  | Tipo             |    | Descrição                                 |
+| Parâmetro  | Tipo             |    | Descrição                                 |
 | ---------- | ---------------- |:--:| ----------------------------------------- |
 | blob       | Blob or 4D. Blob | -> | Blob a copiar                             |
 | Resultados | 4D. Blob         | <- | Novo 4D. Blob |<!-- END REF -->
@@ -62,11 +62,11 @@ Novo `4D. <!-- REF #Blob.size.Summary -->Blob`|<!-- END REF -->
 
 
 <!-- REF #Blob.slice().Params -->
-| Parameter  | Tipo     |    | Descrição                                                        |
+| Parâmetro  | Tipo     |    | Descrição                                                        |
 | ---------- | -------- |:--:| ---------------------------------------------------------------- |
 | start      | Real     | -> | índice do primeiro byte a incluir no novo `4D. Blob`.            |
 | end        | Real     | -> | índice do primeiro byte que não será incluído no novo `4D. Blob` |
-| Resultados | 4D. Blob | <- | New `4D.Blob`|<!-- END REF -->
+| Resultados | 4D. Blob | <- | Novo `4D.Blob`|<!-- END REF -->
 
 |
 
@@ -74,7 +74,7 @@ Novo `4D. <!-- REF #Blob.size.Summary -->Blob`|<!-- END REF -->
 
 `.slice()` <!-- REF #Blob.slice().Summary --> cria e devolve um `4D. Blob` que refere dados de um subconjunto do blob sobre o qual é chamado. A bolha original não é alterada.<!-- END REF -->
 
-O parâmetro `start` é um índice no blob indicando o primeiro byte a ser incluído no novo `4D. Blob`. Se especificar um valor negativo, 4D trata-o como uma compensação desde o fim da bolha até ao início. Por exemplo, -10 seria o 10º do último byte na bolha. The default value is 0. Valor normal padrão é 0 Se especificar um valor para início maior do que o tamanho do blob da fonte, o tamanho do blob devolvido `4D. Blob`'s é 0, e não contém dados.
+O parâmetro `start` é um índice no blob indicando o primeiro byte a ser incluído no novo `4D. Blob`. Se especificar um valor negativo, 4D trata-o como uma compensação desde o fim da bolha até ao início. Por exemplo, -10 seria o 10º do último byte na bolha. O valor predefinido é 0. Valor normal padrão é 0 Se especificar um valor para início maior do que o tamanho do blob da fonte, o tamanho do blob devolvido `4D. Blob`'s é 0, e não contém dados.
 
 O parâmetro `end` é um índice no blob indicando o primeiro byte que não será incluído no novo `4D. Blob` (ou seja, o byte exactamente neste índice não está incluído). Se especificar um valor negativo, 4D trata-o como uma compensação desde o fim da bolha até ao início. Por exemplo, -10 seria o 10º do último byte na bolha. O valor por defeito é o tamanho do blob.
 
