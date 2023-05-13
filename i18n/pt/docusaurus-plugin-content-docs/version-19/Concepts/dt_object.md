@@ -3,7 +3,7 @@ id: object
 title: Objeto
 ---
 
-Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de dados. The structure of "native" 4D objects is based on the classic principle of "property/value" pairs. The structure of native 4D objects is based on the classic principle of "property/value" pairs.
+Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de dados. The structure of "native" 4D objects is based on the classic principle of "property/value" pairs. A sintaxe desses objetos é baseada na notação JSON:
 
 - Um nome de uma propriedade é sempre um texto, por exemplo "nome". Deve seguir [regras específicas](identifiers.md#object-properties).
 
@@ -14,19 +14,19 @@ Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de 
     - boolean
     - ponteiro (armazenado como tal, avaliado usando o comando `JSON Stringify` ou quando copiando),
     - data (tipo de data ou cadeia de formato de data ISO)
-    - objecto(1) (os objectos podem ser aninhados em vários níveis)
+    - objeto (os objetos podem estar aninhados em vários níveis)
     - imagem(2)
     - collection
 
 (1)Os objectos ORDA, tais como [entidades](ORDA/dsMapping.md#entity) ou [seleções de entidades](ORDA/dsMapping.md#entity-selection) não podem ser armazenados em **campos de objectos**; no entanto, são totalmente suportados em **variáveis de objectos** em memória.
 
-(2)Quando exposto como texto no depurador ou exportado para o JSON, as propriedades do objeto da imagem imprimem "[Imagem do objecto]".
+(*)Quando se expõe como texto no depurador ou se exporta a JSON, as propriedades dos objetos imagem imprimem "[objeto Imagem]".
 
 **Warning:** Keep in mind that attribute names differentiate between upper and lower case.
 
-You manage Object type variables, fields or expressions using the [object notation](dt_object.md#syntax-basics) or the classic commands available in the **Objects (Language)** theme. You manage Object type variables, fields or expressions using the [object notation](dt_object.md#syntax-basics) or the commands available in the **Objects (Language)** theme.
+You manage Object type variables, fields or expressions using the [object notation](dt_object.md#syntax-basics) or the classic commands available in the **Objects (Language)** theme. Gerencia variáveis do tipo Objecto, campos ou expressões usando a notação de objecto [](dt_object.md#syntax-basics) ou os comandos clássicos disponíveis no tema **Objects (Language)** .
 
-Cada valor de propriedade acessado através da notação de objeto é considerado uma expressão. Pode utilizar tais valores sempre que se esperem expressões 4D:
+Cada valor de propriedade acessado através da notação de objeto é considerado uma expressão. Quando a notação de objeto for ativada em seu banco de dados (ver abaixo), pode usar esses valores sempre que expressões 4D forem esperadas:
 
 - in 4D code, either written in the methods (Method editor) or externalized (formulas, 4D tags files processed by `PROCESS 4D TAGS` or the Web Server, export files, 4D Write Pro documents...),
 - nas áreas de expressão do depurador e do explorador de Runtime,
@@ -56,16 +56,16 @@ A notação de objetos pode ser utilizada para acessar aos valores das proprieda
 
 ### Propriedades dos objectos
 
-Com a notação de objetos, pode acessar às propriedades dos objetos de duas maneiras:
+Identificadores de propriedades de objetos
 
-- using a "dot" symbol: > object.propertyName
+- using a string within square brackets: > object["propertyName"]
 
 Exemplo:
 ```4d
      employee.name:="Smith"
 ```
 
-- using a string within square brackets: > object["propertyName"]
+- using a "dot" symbol: > object.propertyName
 
 Exemplos:
 ```4d
