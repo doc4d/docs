@@ -353,7 +353,7 @@ Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions
 
 The two following codes are equivalent.
 
-Code using `4DELSE` only:
+Code using 4DELSE only:
 
 ```html
 <!--#4DIF Condition1-->
