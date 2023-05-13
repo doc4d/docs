@@ -98,7 +98,7 @@ This action is not available in remote debugging mode (see [Debugging from Remot
 
 ## Watch Pane
 
-The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Here is an example:
+The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Aqui um exemplo simples:
 
 ![watch-pane](../assets/en/Debugging/watchPane.png)
 
@@ -153,17 +153,17 @@ $c:=a+b
 
     O valor da variável `$b` é agora 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
-#### Variables
+#### Variáveis.
 
 This theme is composed of the following subthemes:
 
 | Subtema       | Descrição                                                    | Can the values be modified? |
 | ------------- | ------------------------------------------------------------ | --------------------------- |
-| Interprocesso | List of interprocess variables being used at this point      | Yes                         |
-| Processo      | List of process variables used by the current process        | Yes                         |
-| Local         | List of local variables used by the method being traced      | Yes                         |
-| Parameters    | List of parameters received by the method                    | Yes                         |
-| Self          | Pointer to the current object, when tracing an Object Method | No                          |
+| Interprocesso | List of interprocess variables being used at this point      | Sim                         |
+| Processo      | List of process variables used by the current process        | Sim                         |
+| Local         | List of local variables used by the method being traced      | Sim                         |
+| Parameters    | List of parameters received by the method                    | Sim                         |
+| Self          | Pointer to the current object, when tracing an Object Method | Não                         |
 
 Arrays, like other variables, appear in the Interprocess, Process, and Local subthemes, depending on their scope. The debugger displays the first 100 elements. Inside the **Value** column, you can modify the values of array elements, but not the size of the arrays.
 
@@ -183,7 +183,7 @@ This theme contains the name of each dynamic object included in the current form
 
 Some objects, such as list box arrays, can be presented as two distinct objects, the variable of the object itself and its data source.
 
-#### Constants
+#### Constantes
 
 Like the Constants page of the Explorer window, this theme displays predefined constants provided by 4D. The expressions from this theme cannot be modified.
 
@@ -195,7 +195,7 @@ This theme lists the local semaphores currently being set. For each semaphore, t
 
 This theme lists the processes started since the beginning of the working session. The value column displays the time used and the current state for each process (i.e., Executing, Paused, and so on). The expressions from this theme cannot be modified.
 
-#### Tables and Fields
+#### Tabela
 
 This theme lists the tables and fields in the 4D database. For each Table item, the Value column displays the size of the current selection for the current process as well as the number of **locked records**.
 
