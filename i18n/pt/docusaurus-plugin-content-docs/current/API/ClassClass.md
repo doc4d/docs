@@ -57,7 +57,7 @@ Essa propriedade é **apenas leitura**.
 
 
 <!-- REF #ClassClass.new().Params -->
-| Parameter  | Tipo      |    | Descrição                                        |
+| Parâmetro  | Tipo      |    | Descrição                                        |
 | ---------- | --------- |:--:| ------------------------------------------------ |
 | param      | any       | -> | Parâmetros a passar à função constructor         |
 | Resultados | 4D. Class | <- | Novo objeto da classe|<!-- END REF -->
@@ -88,9 +88,9 @@ Para criar uma nova instância da classe Person:
 
 ```4d
 //Class: Person.4dm Class constructor($firstname : Text; $lastname : Text; $age : Integer)
-    This.firstName:=$firstname
-    This.lastName:=$lastname
-    This.age:=$age
+ This.firstName:=$firstname
+ This.lastName:=$lastname
+ This.age:=$age
 ```
 
 ```4d
