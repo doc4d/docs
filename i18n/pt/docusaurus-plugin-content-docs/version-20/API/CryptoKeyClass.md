@@ -54,7 +54,7 @@ ASSERT($status.success)
 
 
 <!-- REF #4D.CryptoKey.new().Params -->
-| Parameter | Tipo          |    | Descrição                                                                    |
+| Parâmetro | Tipo          |    | Descrição                                                                    |
 | --------- | ------------- | -- | ---------------------------------------------------------------------------- |
 | settings  | Objeto        | -> | Parâmetros para gerar ou carregar um par de chaves                           |
 | result    | 4D. CryptoKey | <- | Objeto que contém um par de chaves de criptografia<!-- END REF -->
@@ -108,7 +108,7 @@ Definido apenas para as chaves ECDSA: o <!-- REF #CryptoKey.curve.Summary -->nom
 
 
 <!-- REF #CryptoKey.decrypt().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                             |
+| Parâmetro  | Tipo   |    | Descrição                                                                             |
 | ---------- | ------ | -- | ------------------------------------------------------------------------------------- |
 | message    | Text   | -> | String de mensagens a decodificar utilizando `options.encodingEncrypted` e descifrar. |
 | options    | Objeto | -> | Opções de codificação                                                                 |
@@ -156,7 +156,7 @@ A função devolve um objeto "status" com a propriedade `success` definida como 
 
 
 <!-- REF #CryptoKey.encrypt().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                                             |
+| Parâmetro  | Tipo   |    | Descrição                                                                                             |
 | ---------- | ------ | -- | ----------------------------------------------------------------------------------------------------- |
 | message    | Text   | -> | String de mensagens a codificar utilizando `options.encodingDecrypted` e encriptar                    |
 | options    | Objeto | -> | Opções de decodificação                                                                               |
@@ -196,7 +196,7 @@ O valor devolvido é uma mensagem encriptada.
 
 
 <!-- REF #CryptoKey.getPrivateKey().Params -->
-| Parameter  | Tipo |    | Descrição                                               |
+| Parâmetro  | Tipo |    | Descrição                                               |
 | ---------- | ---- | -- | ------------------------------------------------------- |
 | Resultados | Text | <- | Chave privada em formato PEM|<!-- END REF -->
 
@@ -225,7 +225,7 @@ O valor devolvido é a chave privada.
 
 
 <!-- REF #CryptoKey.getPublicKey().Params -->
-| Parameter  | Tipo |    | Descrição                                               |
+| Parâmetro  | Tipo |    | Descrição                                               |
 | ---------- | ---- | -- | ------------------------------------------------------- |
 | Resultados | Text | <- | Chave pública em formato PEM|<!-- END REF -->
 
@@ -270,7 +270,7 @@ Definição PEM de uma chave de cifrado a carregar. Se a chave for uma chave pri
 
 
 <!-- REF #CryptoKey.sign().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                                                     |
+| Parâmetro  | Tipo   |    | Descrição                                                                                                     |
 | ---------- | ------ | -- | ------------------------------------------------------------------------------------------------------------- |
 | message    | Text   | -> | String mensagem a assinar                                                                                     |
 | options    | Objeto | -> | Opções de assinatura                                                                                          |
@@ -350,7 +350,7 @@ Contém <!-- REF #CryptoKey.type.Summary -->nome do tipo da chave - "RSA", "ECDS
 
 
 <!-- REF #CryptoKey.verify().Params -->
-| Parameter  | Tipo   |    | Descrição                                                                                                          |
+| Parâmetro  | Tipo   |    | Descrição                                                                                                          |
 | ---------- | ------ | -- | ------------------------------------------------------------------------------------------------------------------ |
 | message    | Text   | -> | String de mensagem utilizada para gerar a assinatura                                                               |
 | signature  | Text   | -> | Assinatura que vai ser verificada, em representação Base64 ou Base64URL, dependendo do valor de `options.encoding` |
