@@ -4,7 +4,7 @@ title: Function
 ---
 
 
-Um objeto**`4D. Function`** contém um pedaço de código que pode ser executado de um objeto, seja usando o operador `()` ou usando as funções [`apply()`](#apply) e [`call()`](#call). 4D propõe três tipos de objetos `Function`:
+Um objeto`4D. Function` contém um pedaço de código que pode ser executado de um objeto, seja usando o operador `()` ou usando as funções [`apply()`](#apply) e [`call()`](#call). 4D propõe três tipos de objetos `Function`:
 
 - **funções nativas**, ou seja, funções integradas, built-in, de várias classes 4D tais como `collection.sort()` ou `file.copyTo()`.
 - **funções usuário**, ciradas em [classes](Concepts/classes.md) usuário usanod a [palavra chave Function](Concepts/classes.md#function).
@@ -12,7 +12,7 @@ Um objeto**`4D. Function`** contém um pedaço de código que pode ser executado
 
 
 
-### Formula objects
+### Objetos de formulários
 
 Os comandos [Formula](#formula) e [Formula from string](#formula-from-string) permitem criar objetos [`4D. Function`](#about-4dfunction-objects) para executar expressões ou códigos 4D expressos como texto.
 
@@ -120,7 +120,7 @@ Parâmetros são recebidos dentro do método, na ordem que são especificados na
 
 
 <!-- REF #_command_.Formula.Params -->
-| Parameter  | Tipo         |    | Descrição                                                       |
+| Parâmetro  | Tipo         |    | Descrição                                                       |
 | ---------- | ------------ |:--:| --------------------------------------------------------------- |
 | formulaExp | Expression   | -> | Fórmula a ser retornada como objeto                             |
 | Resultados | 4D. Function | <- | Função nativa encapsulando a fórmula|<!-- END REF -->
@@ -199,7 +199,7 @@ Uma fórmula usando variáveis locais:
 ```
 
 
-#### Exemplo 4
+#### Exemplo
 
 Uma fórmula simples usando parâmetros:
 
@@ -209,7 +209,7 @@ Uma fórmula simples usando parâmetros:
 ```
 
 
-#### Exemplo 5
+#### Exemplo 2
 
 Usar `This`:
 
@@ -259,7 +259,7 @@ Chamar uma fórmula usando notação de objeto:
 
 
 <!-- REF #_command_.Formula from string.Params -->
-| Parameter     | Tipo         |    | Descrição                                                       |
+| Parâmetro     | Tipo         |    | Descrição                                                       |
 | ------------- | ------------ |:--:| --------------------------------------------------------------- |
 | formulaString | Text         | -> | Fórmula texto a ser retornada como objeto                       |
 | Resultados    | 4D. Function | <- | Objeto nativo encapsulando a fórmula|<!-- END REF -->
@@ -318,7 +318,7 @@ O código abaixo cria um diálogo aceitando uma fórmula em formato texto:
 
 
 <!-- REF #FunctionClass.apply().Params -->
-| Parameter     | Tipo       |    | Descrição                                                                       |
+| Parâmetro     | Tipo       |    | Descrição                                                                       |
 | ------------- | ---------- |:--:| ------------------------------------------------------------------------------- |
 | thisObj       | Objeto     | -> | Objeto a ser retornado pelo comando This na fórmula                             |
 | formulaParams | Collection | -> | Coleção de valores a serem passados como $1...$n quando `formula` for executado |
@@ -383,7 +383,7 @@ Note que `.apply()` é similar a [`.call()`](#call) exceto que parâmetros são 
 
 
 <!-- REF #FunctionClass.call().Params -->
-| Parameter  | Tipo   |    | Descrição                                                            |
+| Parâmetro  | Tipo   |    | Descrição                                                            |
 | ---------- | ------ | -- | -------------------------------------------------------------------- |
 | thisObj    | Objeto | -> | Objeto a ser retornado pelo comando This na fórmula                  |
 | params     | any    | -> | Valores a serem passados como $1...$n quando a fórmula for executada |
