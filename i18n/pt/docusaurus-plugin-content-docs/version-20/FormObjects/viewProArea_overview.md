@@ -1,6 +1,6 @@
 ---
 id: viewProAreaOverview
-title: 4D View Pro area
+title: Área 4D View Pro
 ---
 
 4D View Pro allows you to insert and display a spreadsheet area in your 4D forms. A spreadsheet is an application containing a grid of cells into which you can enter information, execute calculations, or display pictures.
@@ -10,9 +10,9 @@ title: 4D View Pro area
 Once you use 4D View Pro areas in your forms, you can import and export spreadsheets documents.
 
 
-## Using 4D View Pro areas
+## Usando as áreas 4D View Pro
 
-4D View Pro areas are documented in the [4D View Pro section](ViewPro/getting-started.md).
+4D View Pro areas are documented in the [4D View Pro Reference](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-View-Pro-Reference.100-4351323.en.html) manual.
 
 
 ## Propriedades compatíveis
