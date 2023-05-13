@@ -4,7 +4,7 @@
     "description": "The label for version 19-R8"
   },
   "sidebar.docs.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "Começando",
     "description": "The label for category Getting Started in sidebar docs"
   },
   "sidebar.docs.category.Core Development": {
@@ -108,7 +108,7 @@
     "description": "The label for category Web Development in sidebar docs"
   },
   "sidebar.docs.category.REST Server": {
-    "message": "REST Server",
+    "message": "Servidor REST",
     "description": "The label for category REST Server in sidebar docs"
   },
   "sidebar.docs.category.Guides": {
@@ -136,7 +136,7 @@
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
-    "message": "Form Editor",
+    "message": "Editor de formulários",
     "description": "The label for category Form Editor in sidebar docs"
   },
   "sidebar.docs.category.Form Properties": {
@@ -152,7 +152,7 @@
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
-    "message": "Form Events",
+    "message": "Eventos formulário",
     "description": "The label for category Form Events in sidebar docs"
   },
   "sidebar.docs.category.Menus": {
@@ -164,7 +164,7 @@
     "description": "The label for category User Settings in sidebar docs"
   },
   "sidebar.docs.category.Build Application": {
-    "message": "Build Application",
+    "message": "Build application overview",
     "description": "The label for category Build Application in sidebar docs"
   },
   "sidebar.docs.category.Mobile Applications": {
