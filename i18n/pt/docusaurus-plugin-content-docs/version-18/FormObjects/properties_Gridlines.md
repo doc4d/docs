@@ -3,15 +3,15 @@ id: propertiesGridlines
 title: Gridlines
 ---
 
-## Horizontal Line Color
+## Cor linha horizontal
 
 Defines the color of the horizontal lines in a list box (gray by default).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome                 | Data Type | Possible Values                            |
-| -------------------- | --------- | ------------------------------------------ |
-| horizontalLineStroke | color     | any css value, "'transparent", "automatic" |
+| Nome                 | Tipo de dados | Valores possíveis                          |
+| -------------------- | ------------- | ------------------------------------------ |
+| horizontalLineStroke | color         | any css value, "'transparent", "automatic" |
 
 #### Objects Supported
 
@@ -19,15 +19,15 @@ Defines the color of the horizontal lines in a list box (gray by default).
 
 ---
 
-## Vertical Line Color
+## Array cores de fundo
 
 Defines the color of the vertical lines in a list box (gray by default).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Nome               | Data Type | Possible Values                            |
-| ------------------ | --------- | ------------------------------------------ |
-| verticalLineStroke | color     | any css value, "'transparent", "automatic" |
+| Nome               | Tipo de dados | Valores possíveis                          |
+| ------------------ | ------------- | ------------------------------------------ |
+| verticalLineStroke | color         | any css value, "'transparent", "automatic" |
 
 #### Objects Supported
 
