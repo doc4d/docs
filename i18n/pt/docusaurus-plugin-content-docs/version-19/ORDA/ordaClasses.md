@@ -10,14 +10,13 @@ ORDA allows you to create high-level class functions above the data model. This 
 For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. It would be as simple as calling:
 
 ```4d
-$nextHigh:=ds.Employee.get(1).getNextWithHigherSalary()
+$nextHigh:=ds. Employee.get(1).getNextWithHigherSalary()
 ```
 
 Developers can not only use these functions in local datastores, but also in client/server and remote architectures:
 
 ```4d
- //$cityManager is the reference of a remote datastore
-Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
+ //$cityManager is the reference of a remote datastore Form.comp.city:=$cityManager. City.getCityName(Form.comp.zipcode)
 ```
 
 Thanks to this feature, the entire business logic of your 4D application can be stored as a independent layer so that it can be easily maintained and reused with a high level of security:
@@ -32,7 +31,7 @@ Thanks to this feature, the entire business logic of your 4D application can be 
 
 In addition, 4D [automatically pre-creates](#creating-classes) the classes for each available data model object.
 
-## Architecture
+## Arquitetura
 
 ORDA provides **generic classes** exposed through the **`4D`** [class store](Concepts/classes.md#class-stores), as well as **user classes** (extending generic classes) exposed in the **`cs`** [class store](Concepts/classes.md#class-stores):
 
@@ -41,12 +40,12 @@ ORDA provides **generic classes** exposed through the **`4D`** [class store](Con
 
 All ORDA data model classes are exposed as properties of the **`cs`** class store. The following ORDA classes are available:
 
-| Class                       | Example name         | Instantiated by                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| --------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| cs. DataStore               | cs. DataStore        | [`ds`](API/DataStoreClass.md#ds) command                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| cs.*DataClassName*          | cs.Employee          | [`dataStore.DataClassName`](API/DataStoreClass.md#dataclassname), `dataStore["DataClassName"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| cs.*DataClassName*Entity    | cs.EmployeeEntity    | [`dataClass.get()`](API/DataClassClass.md#get), [`dataClass.new()`](API/DataClassClass.md#new), [`entitySelection.first()`](API/EntitySelectionClass.md#first), [`entitySelection.last()`](API/EntitySelectionClass.md#last), [`entity.previous()`](API/EntityClass.md#previous), [`entity.next()`](API/EntityClass.md#next), [`entity.first()`](API/EntityClass.md#first), [`entity.last()`](API/EntityClass.md#last), [`entity.clone()`](API/EntityClass.md#clone)                                                                                                                                                                                                                                                                                                                                                                                                   |
-| cs.*DataClassName*Selection | cs.EmployeeSelection | [`dataClass.query()`](API/DataClassClass.md#query), [`entitySelection.query()`](API/EntitySelectionClass.md#query), [`dataClass.all()`](API/DataClassClass.md#all), [`dataClass.fromCollection()`](API/DataClassClass.md#fromcollection), [`dataClass.newSelection()`](API/DataClassClass.md#newselection), [`entitySelection.drop()`](API/EntitySelectionClass.md#drop), [`entity.getSelection()`](API/EntityClass.md#getselection), [`entitySelection.and()`](API/EntitySelectionClass.md#and), [`entitySelection.minus()`](API/EntitySelectionClass.md#minus), [`entitySelection.or()`](API/EntitySelectionClass.md#or), [`entitySelection.orderBy()`](API/EntitySelectionClass.md#or), [`entitySelection.orderByFormula()`](API/EntitySelectionClass.md#orderbyformula), [`entitySelection.slice()`](API/EntitySelectionClass.md#slice), `Create entity selection` |
+| Class                       | Nome do exemplo       | Instantiated by                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cs. DataStore               | cs. DataStore         | comando [`ds`](API/DataStoreClass.md#ds)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| cs.*DataClassName*          | cs. Employee          | [`dataStore. DataClassName`](API/DataStoreClass.md#dataclassname), `dataStore["DataClassName"]`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| cs.*DataClassName*Entity    | cs. EmployeeEntity    | [`dataClass.get()`](API/DataClassClass.md#get), [`dataClass.new()`](API/DataClassClass.md#new), [`entitySelection.first()`](API/EntitySelectionClass.md#first), [`entitySelection.last()`](API/EntitySelectionClass.md#last), [`entity.previous()`](API/EntityClass.md#previous), [`entity.next()`](API/EntityClass.md#next), [`entity.first()`](API/EntityClass.md#first), [`entity.last()`](API/EntityClass.md#last), [`entity.clone()`](API/EntityClass.md#clone)                                                                                                                                                                                                                                                                                                                                                                                                   |
+| cs.*DataClassName*Selection | cs. EmployeeSelection | [`dataClass.query()`](API/DataClassClass.md#query), [`entitySelection.query()`](API/EntitySelectionClass.md#query), [`dataClass.all()`](API/DataClassClass.md#all), [`dataClass.fromCollection()`](API/DataClassClass.md#fromcollection), [`dataClass.newSelection()`](API/DataClassClass.md#newselection), [`entitySelection.drop()`](API/EntitySelectionClass.md#drop), [`entity.getSelection()`](API/EntityClass.md#getselection), [`entitySelection.and()`](API/EntitySelectionClass.md#and), [`entitySelection.minus()`](API/EntitySelectionClass.md#minus), [`entitySelection.or()`](API/EntitySelectionClass.md#or), [`entitySelection.orderBy()`](API/EntitySelectionClass.md#or), [`entitySelection.orderByFormula()`](API/EntitySelectionClass.md#orderbyformula), [`entitySelection.slice()`](API/EntitySelectionClass.md#slice), `Create entity selection` |
 
 > ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project [(see below)](#class-files).
 
@@ -70,19 +69,15 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 A 4D database exposes its own DataStore class in the `cs` class store.
 
-- **Extends**: 4D.DataStoreImplementation
-- **Class name**: cs.DataStore
+- **Extends**: 4D. DataStoreImplementation
+- **Class name**: cs. DataStore
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
 #### Exemplo
 
 ```4d  
-// cs.DataStore class
-
-Class extends DataStoreImplementation
-
-Function getDesc
+// cs. DataStore class Class extends DataStoreImplementation Function getDesc
   $0:="Database exposing employees and their companies"
 ```
 
@@ -96,9 +91,9 @@ $desc:=ds.getDesc() //"Database exposing..."
 
 Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
-- **Extends**: 4D.DataClass
+- **Extends**: 4D. DataClass
 - **Class name**: cs.*DataClassName* (where *DataClassName* is the table name)
-- **Example name**: cs.Employee
+- **Example name**: cs. Employee
 
 #### Exemplo
 
@@ -159,7 +154,7 @@ $cityManager:=Open datastore(New object("hostname";"127.0.0.1:8111");"CityManage
 Then a client application can use the API to get the city matching a zip code (for example) from a form:
 
 ```4d
-Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
+Form.comp.city:=$cityManager. City.getCityName(Form.comp.zipcode)
 
 ```
 
@@ -167,9 +162,9 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 Each table exposed with ORDA offers an EntitySelection class in the `cs` class store.
 
-- **Extends**: 4D.EntitySelection
+- **Extends**: 4D. EntitySelection
 - **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Example name**: cs. EmployeeSelection
 
 #### Exemplo
 
@@ -190,16 +185,16 @@ Function withSalaryGreaterThanAverage
 Then you can get employees with a salary greater than the average in any entity selection by executing:
 
 ```4d
-$moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
+$moreThanAvg:=ds. Company.all().employees.withSalaryGreaterThanAverage()
 ```
 
 ### Entity Class
 
 Each table exposed with ORDA offers an Entity class in the `cs` class store.
 
-- **Extends**: 4D.Entity
+- **Extends**: 4D. Entity
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
-- **Example name**: cs.CityEntity
+- **Example name**: cs. CityEntity
 
 #### Exemplo
 
@@ -252,7 +247,7 @@ For security reasons, all of your data model class functions are **not exposed**
 Remote requests include:
 
 - Requests sent by remote 4D applications connected through `Open datastore`
-- REST requests
+- Pedidos REST
 
 > Regular 4D client/server requests are not impacted. Data model class functions are always available in this architecture.
 
@@ -277,16 +272,15 @@ Class extends DataClass
 //Public function
 exposed Function registerNewStudent($student : Object) -> $status : Object
 
-var $entity : cs.StudentsEntity
+var $entity : cs. StudentsEntity
 
-$entity:=ds.Students.new()
+$entity:=ds. Students.new()
 $entity.fromObject($student)
 $entity.school:=This.query("name=:1"; $student.schoolName).first()
 $entity.serialNumber:=This.computeSerialNumber()
 $status:=$entity.save()
 
-//Not exposed (private) function
-Function computeIDNumber()-> $id : Integer
+//Not exposed (private) function Function computeIDNumber()-> $id : Integer
 //compute a new ID number
 $id:=...
 
@@ -301,8 +295,8 @@ var $id : Integer
 $remoteDS:=Open datastore(New object("hostname"; "127.0.0.1:8044"); "students")
 $student:=New object("firstname"; "Mary"; "lastname"; "Smith"; "schoolName"; "Math school")
 
-$status:=$remoteDS.Schools.registerNewStudent($student) // OK
-$id:=$remoteDS.Schools.computeIDNumber() // Error "Unknown member method" 
+$status:=$remoteDS. Schools.registerNewStudent($student) // OK
+$id:=$remoteDS. Schools.computeIDNumber() // Error "Unknown member method" 
 ```
 
 ## Local functions
@@ -345,12 +339,11 @@ On the *StudentsEntity* class:
 Class extends Entity
 
 local Function age() -> $age: Variant
-
-If (This.birthDate#!00-00-00!)
+    If (This.birthDate#!00-00-00!)
+    If (This.birthDate#!00-00-00!)
     $age:=Year of(Current date)-Year of(This.birthDate)
 Else 
-    $age:=Null
-End if
+    $age:=Null End if
 ```
 
 #### Checking attributes
@@ -376,7 +369,7 @@ Case of
 End case
 ```
 
-Calling code:
+Código de chamada:
 
 ```4d
 var $status : Object
@@ -384,13 +377,12 @@ var $status : Object
 //Form.student is loaded with all its attributes and updated on a Form
 $status:=Form.student.checkData()
 If ($status.success)
-    $status:=Form.student.save() // call the server
-End if
+    $status:=Form.student.save() // call the server End if
 ```
 
 ## Support in 4D projects
 
-### Class files
+### Ficheiros de classe (class files)
 
 An ORDA data model user class is defined by adding, at the [same location as regular class files](Concepts/classes.md#class-files) (*i.e.* in the `/Sources/Classes` folder of the project folder), a .4dm file with the name of the class. For example, an entity class for the `Utilities` dataclass will be defined through a `UtilitiesEntity.4dm` file.
 
@@ -424,7 +416,7 @@ For ORDA classes based upon the local datastore (`ds`), you can directly access 
 
 ![](../assets/en/ORDA/classORDA5.png)
 
-### Method editor
+### Editor de método
 
 In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:
 
