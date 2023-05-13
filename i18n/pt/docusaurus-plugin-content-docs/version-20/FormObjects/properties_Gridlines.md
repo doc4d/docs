@@ -3,7 +3,7 @@ id: propertiesGridlines
 title: Gridlines
 ---
 
-## Horizontal Line Color
+## Cor linha horizontal
 
 Defines the color of the horizontal lines in a list box (gray by default).
 
@@ -19,7 +19,7 @@ Defines the color of the horizontal lines in a list box (gray by default).
 
 ---
 
-## Vertical Line Color
+## Array cores de fundo
 
 Defines the color of the vertical lines in a list box (gray by default).
 
