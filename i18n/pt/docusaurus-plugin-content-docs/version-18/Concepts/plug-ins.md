@@ -3,7 +3,7 @@ id: plug-ins
 title: Plug-ins
 ---
 
-As you develop a 4D application, you will discover many capabilities that you did not notice when you started. You can even augment the standard version of 4D by adding **plug-ins** to your 4D development environment.
+Ao desenvolver uma aplicação 4D, irá descobrir muitas capacidades que não notou quando começou. Pode mesmo aumentar a versão padrão de 4D adicionando **plug-ins** ao seu ambiente de desenvolvimento 4D.
 
 ## Why the need for a plug-in?
 
@@ -13,9 +13,9 @@ It is obvious that covering all areas of both the macOS and Windows operating sy
 
 The modular nature of the 4D environment allows the creation of basic applications but does not preclude the development of highly complex systems. The 4D Plug-in architecture opens the 4D environment to any type of application or user. 4D Plug-ins multiply that application or user's power and productivity.
 
-## What is a plug-in and what can it do?
+## Por que a necessidade de um plug-in?
 
-A plug-in is a piece of code that 4D launches at start up. It adds functionality to 4D and thus increases its capacity.
+A plug-in is a piece of code that 4D launches at start up. Acrescenta funcionalidade ao 4D e aumenta assim a sua capacidade.
 
 Usually, a plug-in does things that:
 - 4D cannot do (ie, specific platform technology),
@@ -57,4 +57,4 @@ The choice of location depends on how you want to use the plug-in.
 
 If the same plug-in is placed in both locations, 4D will only load the one located next to the structure. In an application that is compiled and merged using 4D Volume Desktop, if there are several instances of the same plug-in present, this will prevent the application from opening.
 
-Plug-ins are loaded by 4D when the application is launched so you will need to quit your 4D application before installing them. Then open your database with 4D. If any plug-in requires a specific license for use, it will be loaded but not available for use.
+Os plug-ins são carregados por 4D quando a aplicação for lançada, pelo que terá de abandonar a sua aplicação 4D antes de os instalar. Then open your database with 4D. If any plug-in requires a specific license for use, it will be loaded but not available for use.
