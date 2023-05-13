@@ -72,11 +72,11 @@ Esta propriedade não é devolvida se `.kind` = "relatedEntity" ou "relatedEntit
 
 </details>
 
-<!-- REF DataClassAttributeClass.exposed.Syntax -->**.exposed** : Boolean<!-- END REF -->
+<!-- REF DataClassAttributeClass.exposed.Syntax -->**.size** : Integer<!-- END REF -->
 
 #### Descrição
 
-O `.exposed` propriedade é <!-- REF DataClassAttributeClass.exposed.Summary -->true se o atributo for exposto em REST<!-- END REF -->.
+A propriedade `.mandatory` <!-- REF DataClassAttributeClass.exposed.Summary -->contém True se o valor Null input for rejeitado para o atributo<!-- END REF -->.
 
 #### Veja também
 
@@ -126,13 +126,13 @@ A propriedade `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary --
 
 **Valores possíveis:**
 
-| dataClassAttribute.kind | fieldType                                                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------- |
-| storage                 | Tipo de campo 4D correspondente, ver [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html) |
-| relatedEntity           | 38 (`Is object`)                                                                                            |
-| relatedEntities         | 42 (`Is collection`)                                                                                        |
-| calculated              | <li>escalar: tipo de campo 4D correspondente, ver [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection`)</li>                                 |
-| alias                   | <li>escalar: tipo de campo 4D correspondente, ver [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)`</li>                                 |
+| dataClassAttribute.kind | fieldType                                                                   |
+| ----------------------- | --------------------------------------------------------------------------- |
+| storage                 | Tipo de campo 4D correspondente                                             |
+| relatedEntity           | Ver o comando `Type`                                                        |
+| relatedEntities         | 42 (`Is collection`)                                                        |
+| calculated              | <li>escalar: tipo de campo 4D correspondente, ver [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>38 (Is object)</li><li>entity selection: 42 (`Is collection`)</li> |
+| alias                   | <li>escalar: tipo de campo 4D correspondente, ver [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>38 (Is object)</li><li>42 (Is collection)</li> |
 
 <!-- END REF -->
 
@@ -222,7 +222,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->returns the category of the attribute<!-- END REF -->. O valor retornado pode ser um dos abaixo:
+A propriedade `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->devolve a categoria do atributo<!-- END REF -->. O valor retornado pode ser um dos abaixo:
 
 * Atributo "storage": storage (ou escalar) ou seja, atributo que armazena um valor, não uma referência a outro atributo
 * "calculado": atributo computado, ou seja, definido através de uma [`obter` função](ORDA/ordaClasses.md#function-get-attributename)
@@ -260,7 +260,7 @@ Dada a seguinte tabela e relação:
 
 #### Descrição
 
-A propriedade `.mandatory` <!-- REF DataClassAttributeClass.mandatory.Summary -->contém True se o valor Null input for rejeitado para o atributo<!-- END REF -->.
+A propriedade `.name` <!-- REF DataClassAttributeClass.mandatory.Summary -->The `.name` property<!-- END REF -->.
 
 Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "relatedEntities".
 > For generic programming, you can use **Bool**(dataClassAttribute.mandatory) to get a valid value (false) even if `.mandatory` is not returned.
@@ -283,7 +283,7 @@ Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "rel
 
 #### Descrição
 
-A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->A propriedade `.name`<!-- END REF -->.
+A propriedade `.name` <!-- REF DataClassAttributeClass.name.Summary -->A propriedade `.relatedDataClass`<!-- END REF -->.
 
 #### Exemplo
 
@@ -394,12 +394,12 @@ O tipo de valor conceitual depende do atributo [`.kind`](#kind).
 
 **Valores possíveis:**
 
-| dataClassAttribute.kind | type                                                                           | Comentário                                                                                                                                                                                                                                                              |
-| ----------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| storage                 | "blob", "bool", "date", "image", "number", "object", ou "string"               | "number" se devolve para qualquer tipo numérico, incluindo a duração. "string" se devolve para os tipos de campo uuid, alfa e texto. Os atributos "blob" são [objectos blob](Concepts/dt_blob.md#blob-type), que são tratados utilizando a [classe Blob](BlobClass.md). |
-| relatedEntity           | related dataClass name                                                         | Ex: "Companies"                                                                                                                                                                                                                                                         |
-| relatedEntities         | related dataClass name + "Selection" suffix                                    | Ex: "EmployeeSelection"                                                                                                                                                                                                                                                 |
-| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection"</li> |                                                                                                                                                                                                                                                                         |
+| dataClassAttribute.kind | type                                                                           | Comentário                                                                                                                                                                                                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| storage                 | "number", "date", "object", "bool", "image", ou "string"                       | "number" se devolve para qualquer tipo numérico, incluindo a duração. "string" se devolve para os tipos de campo uuid, alfa e texto Os atributos "blob" são [objectos blob](Concepts/dt_blob.md#blob-type), que são tratados utilizando a [classe Blob](BlobClass.md). |
+| relatedEntity           | related dataClass name                                                         | Ex: "Companies"                                                                                                                                                                                                                                                        |
+| relatedEntities         | related dataClass name + "Selection" suffix                                    | Ex: "EmployeeSelection"                                                                                                                                                                                                                                                |
+| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection"</li> |                                                                                                                                                                                                                                                                        |
 
 <!-- END REF -->
 
