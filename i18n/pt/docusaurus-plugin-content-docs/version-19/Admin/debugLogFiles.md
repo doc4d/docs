@@ -43,7 +43,7 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 //lado remoto
 ```
-> Esta declaração também começa um arquivo de histórico [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt).
+> Esta declaração também começa o arquivo de histórico [4DRequestsLog.txt](#4drequestslogtxt).
 
 #### Cabeçalhos
 
@@ -93,7 +93,7 @@ SET DATABASE PARAMETER(4D Server log recording;1) //lado servidor
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1) //lado remoto
 ```
-> Esta declaração também começa o arquivo de histórico [4DRequestsLog.txt](#4drequestslogtxt).
+> Esta declaração também começa um arquivo de histórico [4DRequestsLog_ProcessInfo.txt](#4drequestslog_processinfotxt).
 
 #### Cabeçalhos
 
