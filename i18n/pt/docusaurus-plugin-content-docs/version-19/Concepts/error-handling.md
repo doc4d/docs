@@ -34,7 +34,7 @@ To stop catching errors and give back hand to 4D, call `ON ERR CALL` with an emp
 ON ERR CALL("") //gives back control to 4D
 ```
 
-The  `Method called on error` command allows you to know the name of the method installed by `ON ERR CALL` for the current process. É particularmente útil no contexto do código genérico porque permite alterar temporariamente e depois restaurar o método de captura de erros:
+The  `Method called on error` command allows you to know the name of the method installed by `ON ERR CALL` for the current process. É particularmente útil no contexto dos componentes porque permite mudar temporariamente e depois restaurar o método de captura de erros do banco de dados local:
 
 ```4d
  $methCurrent:=Method called on error
