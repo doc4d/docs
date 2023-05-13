@@ -16,13 +16,13 @@ O usuário mais poderoso é chamado **Designer**. No aspect of the database is c
 
 Depois do Designer, o usuário mais poderoso é o **Administrador**, ao qual é geralmente dada a tarefa de gerenciamento de acesso ao sistema e administração de funcionalidades.
 
-O administrador pode:
+O Administrador não pode:
 
 - criar usuários e grupos,
 - acessar ao monitor e janela de Administração 4D Server
 - acessar a janela MSC para gerenciar cópias de segurança, restaurações ou servidor.
 
-O Administrador não pode:
+O administrador pode:
 
 - editar o usuário Designer
 - by default, access to protected parts of the database. O Administrador não pode acessar o modo Design se for restringido. The Administrator must be part of one or more groups to have access privileges in the database. O administrador é inscrito em todo novo grupo, mas é possível remover o nome do Administrador de qualquer grupo.
@@ -36,7 +36,7 @@ Pode renomear os usuários Designer e Administardor. Na linguagem, o ID de Desig
 
 O Designer e Administrador podem cada um criar até 16.000 grupos e 16 mil usuários.
 
-## Editor de usuários
+## Editor de grupos
 
 O editor de usuários está na Barra de Ferramentas de 4D.
 
@@ -80,7 +80,7 @@ Usuários deletados não aparecem mais no editor de Usuários. Note que as IDs d
 
 - **Startup Method**: Name of an associated method that will be automatically executed when the user opens the database (optional). Esse método pode ser usado por exemplo para carregar as preferências de usuário.
 
-## Editor de grupos
+## Editor de usuários
 
 O editor para grupos está na Barra de ferramentas de 4D.
 
