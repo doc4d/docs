@@ -59,7 +59,7 @@ At any moment, you can clear the cache of the pages and images that it contains 
 
 To do so, you can:
 
--   4D: click on the **Clear Cache** button in the [Web/Options (I) page](../settings/web.md) of the Settings dialog box.
+-   To do so, you just have to click on the **Clear Cache** button in the Web/Options (I) page of the Settings dialog box.
 -   4D Server: click on the **Clear Cache** button in the HTTP page of the 4D Server Administration window.
 
 The cache is then immediately cleared.
@@ -91,7 +91,7 @@ Website administration URLS allow you to control the website published on your s
 
 The **/4DSTATS** URL returns several items of information in an HTML table (displayable in a browser):
 
-| Item                   | Descrição                                                    |
+| Elemento               | Descrição                                                    |
 | ---------------------- | ------------------------------------------------------------ |
 | Cache Current Size     | Current size of web server cache (in bytes)                  |
 | Cache Max Size         | Maximum size of cache (in bytes)                             |
@@ -106,7 +106,7 @@ This information can allow you to check the functioning of your server and event
 
 The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as the */4DSTATS* URL. The difference is that the **Cached Objects** field only counts HTML pages (without counting picture files). Moreover, this URL returns the **Filtered Objects** field.
 
-| Item                   | Descrição                                                              |
+| Elemento               | Descrição                                                              |
 | ---------------------- | ---------------------------------------------------------------------- |
 | Cache Current Size     | Current size of web server cache (in bytes)                            |
 | Cache Max Size         | Maximum size of cache (in bytes)                                       |
@@ -124,7 +124,7 @@ The */4DCACHECLEAR* URL immediately clears the cache of the static pages and ima
 
 The */4DWEBTEST* URL is designed to check the web server status. When this URL is called, 4D returns a text file with the following HTTP fields filled:
 
-| HTTP Field | Descrição                            | Exemplo                                                                                                                         |
+| Campo HTTP | Descrição                            | Exemplo                                                                                                                         |
 | ---------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | Date       | current date at the RFC 822 format   | Mon, 7 Dec 2020 13:12:50 GMT                                                                                                    |
 | Server     | 4D/version number                    | 4D/18.5.0 (Build 18R5.257368)                                                                                                   |
@@ -189,12 +189,12 @@ The WLF (WebStar Log Format) was developed specifically for the 4D WebSTAR serve
 
 ##### Configuring the fields
 
-When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields.
+When you choose the ELF or WLF format, the “Web Log Token Selection” area displays the fields available for the chosen format. You will need to select each field to be included in the log. To do so, check the desired fields. To do so, check the desired fields.
 > You cannot select the same field twice.
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Field          | ELF | WLF | Value                                                                                                                       |
+| Campo          | ELF | WLF | Value                                                                                                                       |
 | -------------- | --- | --- | --------------------------------------------------------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Number of bytes received by the server                                                                                      |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
@@ -227,25 +227,25 @@ Since a *logweb.txt* file can become considerably large, it is possible to set u
 
 When the web log file backup is triggered, the log file is archived in a folder named "Logweb Archives," which is created at the same level as the *logweb.txt* file.
 
-The archived file is renamed based on the following example: “DYYYY_MM_DD_Thh_mm_ss.txt.” For instance, for a file archived on September 4, 2020 at 3:50 p.m. and 7 seconds: “D2020_09_04_T15_50_07.txt.”
+The archived file is renamed based on the following example: “DYYYY_MM_DD_Thh_mm_ss.txt.” For instance, for a file archived on September 4, 2020 at 3:50 p.m. and 7 seconds: and 7 seconds: and 7 seconds: “D2020_09_04_T15_50_07.txt.”
 
-#### Backup Parameters
+#### Parâmetros de backup
 
 The automatic backup parameters for the logweb.txt are set on the **Web/Log (backup)** page of the Settings:
 
 ![](../assets/en/WebServer/backup.png)
 
-First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
+Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
 *   **No Backup**: The scheduled backup function is deactivated.
 
-*   **Every X hour(s)**: This option is used to program backups on an hourly basis. You can enter a value between 1 and 24 .
+*   **Every X hour(s)**: This option is used to program backups on an hourly basis. Pode digitar um valor entre 1 e 24 .
     *   **starting at**: Used to set the time at which the first back up will begin.
 
 *   **Every X day(s) at X**: This option is used to program backups on a daily basis. Enter 1 if you want to perform a daily backup. When this option is checked, you must indicate the time when the backup must be started.
 
-*   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Digite 1 se quiser realizar o backup 1 vez por semana. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started. You can select several days of the week if desired. For example, you can use this option to set two weekly backups: one on Wednesdays and one on Fridays.
+*   **Every X week(s), day at X**: This option is used to program backups on a weekly basis. Digite 1 se quiser realizar o backup 1 vez por semana. Digite 1 se quiser realizar o backup 1 vez por semana. Enter 1 if you want to perform a weekly backup. When this option is checked, you must indicate the day(s) of the week and the time when each backup must be started.
 
-*   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Digite 1 se quiser realizar uma cópia de segurança mensal. When this option is checked, you must indicate the day of the month and the time when the backup must be started.
+*   **Every X month(s), Xth day at X**: This option is used to program backups on a monthly basis. Digite 1 se quiser realizar uma cópia de segurança mensal. Digite 1 se quiser realizar uma cópia de segurança mensal.
 
 *   **Every X MB**: This option is used to program backups based on the size of the current request log file. A backup is automatically triggered when the file reaches the set size. You can set a size limit of 1, 10, 100 or 1000 MB.
