@@ -162,7 +162,7 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 
 4D View Pro provides the following constants for ISO 8601 date and time patterns:
 
-| Parâmetros                                | Value                                | Comentário                                                                                                                                                            |
+| Parâmetros                                | Valor                                | Comentário                                                                                                                                                            |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vk pattern full date time`               | "*fullDateTimePattern*"              | ISO 8601 format for the full date and time in current localization.USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"                                                 |
 | `vk pattern long date`                    | "*longDatePattern*"                  | ISO 8601 format for the full date in current localization.USA default pattern: "dddd, dd MMMM yyyy"                                                                   |
