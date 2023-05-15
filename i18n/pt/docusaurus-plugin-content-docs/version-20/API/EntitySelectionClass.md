@@ -719,7 +719,7 @@ Pode utilizar a notação `[]` para designar uma coleção quando *attributePath
 
 *pathString* (Text) : Este parâmetro contém uma fórmula feita de rotas de atributo 1 a x (e opcionalmente) ordenação separado por vírgulas A sintaxe é:
 
-| Parâmetros        | Value | Comentário                                                                                                                                                                                                  |
+| Parâmetros        | Valor | Comentário                                                                                                                                                                                                  |
 | ----------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk diacritical`  | 8     | A avaliação é sensível a maiúsculas e minúsculas e diferencia os caracteres acentuados. Como padrão, uma avaliação não-diacrítica é realizada.                                                              |
 | `dk count values` | 32    | Devolve a contagem de entidades para cada valor distinto. Quando esta opção é passada, `.distinct()` devolve uma colecção de objectos contendo um par de propriedades `{"value":*value*; "count":*count*}`. |
@@ -1708,7 +1708,7 @@ Pode usar *formulaString* ou um parâmetro *formulaObj*:
 
 Como padrão, se omitir o parâmetro *keepOrder*, a seleção de entidade resultado é ordenada de forma ascendente. Opcionalmente pode passar um dos valores abaixo no parâmetro *sortOrder*:
 
-| Parâmetros    | Value | Comentário                |
+| Parâmetros    | Valor | Comentário                |
 | ------------- | ----- | ------------------------- |
 | dk ascending  | 0     | Ordem ascendente (padrão) |
 | dk descending | 1     | Ordem descendente         |
