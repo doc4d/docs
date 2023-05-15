@@ -194,7 +194,7 @@ When you choose the ELF or WLF format, the “Web Log Token Selection” area di
 
 The following table lists the fields available for each format (in alphabetical order) and describes its contents:
 
-| Campo          | ELF | WLF | Value                                                                                                                       |
+| Campo          | ELF | WLF | Valor                                                                                                                       |
 | -------------- | --- | --- | --------------------------------------------------------------------------------------------------------------------------- |
 | BYTES_RECEIVED |     | X   | Number of bytes received by the server                                                                                      |
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                                                                            |
