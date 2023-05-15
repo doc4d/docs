@@ -163,7 +163,7 @@ No parâmetro `msgIDs` , pode passar qualquer um dos dois:
 * o ID único (*texto*) de uma mensagem ou
 * a seguinte constante (*longint*) para todas as mensagens na caixa de correio seleccionada:
 
- | Parâmetros | Value | Comentário                                                     |
+ | Parâmetros | Valor | Comentário                                                     |
  | ---------- | ----- | -------------------------------------------------------------- |
  | IMAP all   | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
 
@@ -261,7 +261,7 @@ No parâmetro opcional `opções` , pode passar um objecto para definir o charse
 
 Charsets possíveis:
 
-| Parâmetros                     | Value                          | Comentário                                                                                                         |
+| Parâmetros                     | Valor                          | Comentário                                                                                                         |
 | ------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
 | mail mode ISO2022JP            | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII se possível, japonês (ISO-2022-JP) & impressora, se possível, caso contrário, UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII se possível, japonês (ISO-2022-JP) & 7-bit se possível, caso contrário, UTF-8 & Quoted-printable</li></ul>                                                                                          |
 | mail mode ISO88591             | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                          |
@@ -1376,7 +1376,7 @@ No parâmetro `msgIDs` , pode passar qualquer um dos dois:
 * o ID único (*texto*) de uma mensagem ou
 * a seguinte constante (*longint*) para todas as mensagens na caixa de correio seleccionada:
 
- | Parâmetros | Value | Comentário                                                     |
+ | Parâmetros | Valor | Comentário                                                     |
  | ---------- | ----- | -------------------------------------------------------------- |
  | IMAP all   | 1     | Seleccione todas as mensagens na caixa de correio seleccionada |
 
@@ -1678,7 +1678,7 @@ No parâmetro *name*, passar o nome da caixa de correio para aceder. O nome repr
 
 O parâmetro opcional *state* define o tipo de acesso à caixa de correio. Os valores possíveis são:
 
-| Parâmetros            | Value | Comentário                                                                                                                                                                                       |
+| Parâmetros            | Valor | Comentário                                                                                                                                                                                       |
 | --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | IMAP read only state  | 1     | A caixa de correio seleccionada é acedida com privilégios apenas de leitura. As mensagens com uma flag "recente" (indicando novas mensagens) permanecem inalteradas.                             |
 | IMAP read write state | 0     | A caixa de correio seleccionada é acedida com privilégios de leitura e escrita. As mensagens são consideradas "vistas" e perdem o marcador "recente" (indicando novas mensagens). (Valor padrão) |
