@@ -914,7 +914,7 @@ Quando usar aspas com pesquisas, deve usar aspas simples '  '  dentro das pesqui
 
 **Usando parêntesis**
 
-You can use parentheses in the query to give priority to the calculation. For example, you can organize a query as follows:
+É possível utilizar parênteses na consulta para dar prioridade ao cálculo. Por exemplo, pode organizar uma pesquisa da seguinte maneira:
 
 ```4d
 "(employee.age >= 30 OR employee.age <= 65) AND (employee.salary <= 10000 OR employee.status = 'Manager')"
@@ -972,7 +972,7 @@ Quando pesquisar por valores null não pode usar a sintaxe de placeholder porque
 $vSingles:=ds. Person.query("spouse = :1";Null) // will NOT work
 ```
 
-You will not get the expected result because the null value will be evaluated by 4D as an error resulting from the parameter evaluation (for example, an attribute coming from another query). For these kinds of queries, you must use the direct query syntax:
+Não obterá o resultado esperado porque o valor nulo será avaliado por 4D como um erro resultante da avaliação do parâmetro (por exemplo, um atributo vindo de outra pesquisa). Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta:
 
 ```4d
  $vSingles:=ds. Person.query("spouse = null") //correct syntax
