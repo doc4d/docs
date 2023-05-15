@@ -37,7 +37,7 @@ A classe Blob permite-lhe criar e manipular [objectos blob](../Concepts/dt_blob.
 
 #### Descrição
 
-`4D. Blob.new` <!-- REF #4D.Blob.new().Summary -->creates a new `4D.Blob` object optionally encapsulating a copy of the data from another blob (scalar blob or `4D.Blob`)<!-- END REF -->.
+`4D. Blob.new` <!-- REF #4D.Blob.new().Summary -->cria um novo objecto `4D.Blob` opcionalmente encapsulando uma cópia dos dados de outro blob (blob escalar ou `4D.Blob`)<!-- END REF -->.
 
 Se o parâmetro `blob` for omitido, o método devolve um 4D. Blob vazio.
 
