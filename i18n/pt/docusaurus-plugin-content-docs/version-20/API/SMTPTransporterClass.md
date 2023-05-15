@@ -244,7 +244,7 @@ No caso de um problema não relacionado com o processamento SMTP (por exemplo, f
 
 Neste caso, o objecto de estatuto resultante contém os seguintes valores:
 
-| Propriedade | Value                  |
+| Propriedade | Valor                  |
 | ----------- | ---------------------- |
 | success     | False                  |
 | status      | 0                      |
