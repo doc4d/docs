@@ -1579,7 +1579,7 @@ Pode usar *formulaString* ou um parâmetro *formulaObj*:
 
 Como padrão, se omitir o parâmetro *keepOrder*, a seleção de entidade resultado é ordenada de forma ascendente. Opcionalmente pode passar um dos valores abaixo no parâmetro *sortOrder*:
 
-| Parâmetros    | Value | Comentário                |
+| Parâmetros    | Valor | Comentário                |
 | ------------- | ----- | ------------------------- |
 | dk ascending  | 0     | Ordem ascendente (padrão) |
 | dk descending | 1     | Ordem descendente         |
