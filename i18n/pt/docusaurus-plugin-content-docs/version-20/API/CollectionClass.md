@@ -790,7 +790,7 @@ Se a coleção conter objetos, pode passar o parâmetro *propertyPath* para indi
 
 *pathString* (Text) : Este parâmetro contém uma fórmula feita de rotas de atributo 1 a x (e opcionalmente) ordenação separado por vírgulas A sintaxe é:
 
-| Parâmetros        | Value | Comentário                                                                                                                                                                                                 |
+| Parâmetros        | Valor | Comentário                                                                                                                                                                                                 |
 | ----------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ck diacritical`  | 8     | A avaliação é sensível a maiúsculas e minúsculas e diferencia os caracteres acentuados. Como padrão, uma avaliação não-diacrítica é realizada.                                                             |
 | `ck count values` | 32    | Devolve a contagem de elementos para cada valor distinto. Quando esta opção é passada, `.distinct()` devolve uma colecção de objectos que contém um par de atributos `{"value":*value*; "count":*count*}`. |
@@ -2213,7 +2213,7 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 
 *   *ascOrDesc*: Integer. Se passar uma das seguintes constantes do tema **Objects and collections**:
 
-    | Parâmetros    | Tipo    | Value | Comentário                                                  |
+    | Parâmetros    | Tipo    | Valor | Comentário                                                  |
     | ------------- | ------- | ----- | ----------------------------------------------------------- |
     | ck ascending  | Longint | 0     | Os elementos são ordenados de forma ascendente (por padrão) |
     | ck descending | Longint | 1     | Os elementos são ordenados de forma descendente             |
@@ -2756,7 +2756,7 @@ Este exemplo permite reduzir vários elementos da coleção a um só:
 #### Descrição
 
 
-A função `.reduceRight()` <!-- REF #collection.reduceRight().Summary -->applies the *formula* or *methodName* callback against an accumulator and each element in the collection (from right to left) to reduce it to a single value<!-- END REF -->.
+A função `.reduceRight()` <!-- REF #collection.reduceRight().Summary -->aplica a *formula * ou *methodName* callback a um acumulador e a cada elemento da colecção (da direita para a esquerda) para o reduzir a um único valor<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
 Designa-se a chamada de retorno a ser executada para avaliar os elementos da colecção utilizando qualquer um dos dois:
@@ -3127,7 +3127,7 @@ A colecção devolvida contém o elemento especificado por *startFrom* e todos o
 
 A função `.push()` <!-- REF #collection.some().Summary -->anexa um ou mais  *elementos*(s) ao final da instância de recolha e devolve a coleção editada<!-- END REF -->.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+Designa-se a chamada de retorno a ser executada para avaliar os elementos da colecção utilizando qualquer um dos dois:
 
 - *fórmula* (sintaxe recomendada), um [Objecto de fórmula](FunctionClass.md) que pode encapsular qualquer expressão executável, incluindo funções e métodos de projecto;
 - *methodName* estabelece os parâmetros abaixo:
