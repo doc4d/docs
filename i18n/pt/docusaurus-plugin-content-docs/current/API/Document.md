@@ -414,7 +414,7 @@ Como padrão, o arquivo é copiado com o nome do arquivo original. Se quiser ren
 
 Se já existir um arquivo com o mesmo nome em *destinationFolder*, por padrão 4D gera um erro. Pode passar a constante `fk overwrite` no parâmetro *overwrite* para ignorar e sobrescriber o arquivo existente
 
-| Parâmetros     | Value | Comentário                                      |
+| Parâmetros     | Valor | Comentário                                      |
 | -------------- | ----- | ----------------------------------------------- |
 | `fk overwrite` | 4     | Sobrescrever os elementos existentes, se houver |
 
@@ -550,7 +550,7 @@ Se o documento contiver uma nota de ordem de byte (BOM), 4D usa o conjunto de ca
 
 Em *breakMode*, você pode passar um número indicando o processamento a aplicar aos caracteres de fim de linha no documento. As seguintes constantes do tema "Documentos do Sistema" estão disponíveis:
 
-| Parâmetros                    | Value | Comentário                                                                                                                                                                     |
+| Parâmetros                    | Valor | Comentário                                                                                                                                                                     |
 | ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Document unchanged`          | 0     | Não processado                                                                                                                                                                 |
 | `Document with native format` | 1     | (Padrão) As quebras de linha são convertidas para o formato nativo do sistema operacional: CR (retorno de carro) sob OS X, CRLF (retorno do carro + salto de linha) em Windows |
