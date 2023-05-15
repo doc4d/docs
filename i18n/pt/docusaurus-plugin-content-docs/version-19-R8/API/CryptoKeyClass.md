@@ -173,7 +173,7 @@ A função `.encrypt()` <!-- REF #CryptoKey.encrypt().Summary -->encripta o par�
 | Propriedade       | Tipo | Descrição                                                                                                                                                     |
 | ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | text | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512".                                                                                    |
-| encodingEncrypted | text | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Por padrão é "Base64".                         |
+| encodingEncrypted | text | Codificação utilizada para converter a mensagem binária criptografada na string resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".         |
 | encodingDecrypted | text | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "UTF-8", "Base64" ou "Base64URL". Por padrão é "UTF-8". |
 
 #### *Resultados*
@@ -278,7 +278,7 @@ Definição PEM de uma chave de cifrado a carregar. Se a chave for uma chave pri
 
 |
 
-A função `.sign()` <!-- REF #CryptoKey.sign().Summary -->signs the utf8 representation of a *message* string<!-- END REF --> utilizando o `CryptoKey` chaves-objecto e forneceu *opções*. It returns its signature in base64 or base64URL format, depending on the value of the `options.encoding` attribute you passed.
+A função `.sign()` <!-- REF #CryptoKey.sign().Summary -->assina a representação utf8 de uma mensagem ** string<!-- END REF --> utilizando o `CryptoKey` chaves-objecto e forneceu *opções*. Devolve a sua assinatura no formato base64 ou base64URL, dependendo do valor do atributo `options.encoding` que passou.
 
 `CryptoKey` deve conter uma chave válida **privada**.
 
@@ -287,13 +287,13 @@ A função `.sign()` <!-- REF #CryptoKey.sign().Summary -->signs the utf8 repres
 | Propriedade       | Tipo    | Descrição                                                                                                                                                                                         |
 | ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash              | text    | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
-| encodingEncrypted | text    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Por padrão é "Base64".                                                             |
+| encodingEncrypted | text    | Codificação utilizada para converter a mensagem binária criptografada na string resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                             |
 | pss               | boolean | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao produzir um JWT para o algoritmo PS@                                                     |
 | encoding          | text    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Por padrão é "Base64".                                                                                         |
 
 #### *Resultados*
 
-The utf8 representation of the *message* string.
+`CryptoKey` deve conter uma chave válida **privada**.
 <!-- END REF -->
 
 <!-- REF CryptoKey.size -->
@@ -377,7 +377,7 @@ A função `.verify()` <!-- REF #CryptoKey.verify().Summary -->verifica a assina
 
 A função devolve um objeto "status" com a propriedade `success`estabelecida para `true` se `message` puder ser verificada com êxito (ou seja, se a assinatura coincidir).
 
-In case the signature couldn't be verified because it was not signed with the same *message*, key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
+Se a assinatura não puder ser verificada por não ter sido assinada com a mesma *message*, chave ou algoritmo, o objecto `status` devolvido contém uma colecção de erros em `status.errors`.
 
 | Propriedade | Tipo       | Descrição                                                                             |
 | ----------- | ---------- | ------------------------------------------------------------------------------------- |
