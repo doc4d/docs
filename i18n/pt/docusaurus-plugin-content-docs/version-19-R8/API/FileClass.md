@@ -93,7 +93,7 @@ No parâmetro *path* , passe um file path string. Pode utilizar uma string perso
 
 Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar com pathnames de plataforma (Windows ou macOS), deve declará-lo usando o parâmetro *pathType* . Estão disponíveis as seguintes constantes:
 
-| Parâmetros       | Value | Comentário                                                                                               |
+| Parâmetros       | Valor | Comentário                                                                                               |
 | ---------------- | ----- | -------------------------------------------------------------------------------------------------------- |
 | fk platform path | 1     | Caminho expresso com uma sintaxe específica da plataforma (obrigatória em caso de caminho de plataforma) |
 | fk posix path    | 0     | Caminho expresso com a sintaxe POSIX (por padrão)                                                        |
@@ -102,7 +102,7 @@ Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar co
 
 No parâmetro *fileConstant* , passe um ficheiro 4D incorporado ou de sistema, utilizando uma das constantes seguintes:
 
-| Parâmetros                        | Value | Comentário                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Parâmetros                        | Valor | Comentário                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backup history file               | 19    | Arquivo de histórico de cópias de segurança (ver Arquivos de configuração e rastreio). Armazenado na pasta de destino de cópia de segurança.                                                                                                                                                                                                                                                                                                  |
 | Backup log file                   | 13    | Arquivo atual do diário de backup. Armazenado na pasta Logs da aplicação.                                                                                                                                                                                                                                                                                                                                                                     |
@@ -227,7 +227,7 @@ Passar o nome do pseudónimo ou atalho para criar no parâmetro *aliasName* .
 
 Por padrão em macOS, a função cria um pseudónimo padrão. Também pode criar uma ligação simbólica utilizando o parâmetro *aliasType* . Estão disponíveis as seguintes constantes:
 
-| Parâmetros         | Value | Comentário                   |
+| Parâmetros         | Valor | Comentário                   |
 | ------------------ | ----- | ---------------------------- |
 | `fk alias link`    | 0     | Alias link (padrão)          |
 | `fk symbolic link` | 1     | Link simbólico (só em macOS) |
@@ -726,7 +726,7 @@ If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the 
 
 Em *breakMode*, pode passar um número indicando o processamento a aplicar aos caracteres de fim de linha antes de os guardar no arquivo. The following constants, found in the **System Documents** theme are available:
 
-| Parâmetros                    | Value | Comentário                                                                                                                                               |
+| Parâmetros                    | Valor | Comentário                                                                                                                                               |
 | ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Document unchanged`          | 0     | Não processado                                                                                                                                           |
 | `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: LF (line feed) on macOS, CRLF (carriage return + line feed) on Windows |
