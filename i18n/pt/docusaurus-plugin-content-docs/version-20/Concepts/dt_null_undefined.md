@@ -23,7 +23,7 @@ Indefinido não é realmente um tipo de dados. Denota uma variável que ainda n�
 ## Operadores Null
 
 
-| Operação     | Syntax                   | Retorna    | Expression                     | Value |
+| Operação     | Syntax                   | Retorna    | Expression                     | Valor |
 | ------------ | ------------------------ | ---------- | ------------------------------ | ----- |
 | Equality     | Null `=` Null            | Parâmetros | a.nullProp `=` b.nullProp      | True  |
 |              | Null `=` Undefined       | Parâmetros | a.nullProp `=` b.undefinedProp | True  |
@@ -51,7 +51,7 @@ Comparações com os operadores Maior que (`>`), Menor que (`<`), Maior ou igual
 ## Operadores indefinidos
 
 
-| Operação             | Syntax                                                | Retorna    | Expression                          | Value |
+| Operação             | Syntax                                                | Retorna    | Expression                          | Valor |
 | -------------------- | ----------------------------------------------------- | ---------- | ----------------------------------- | ----- |
 | Equality             | Undefined `=` Undefined                               | Parâmetros | a.undefinedProp `=` b.undefinedProp | True  |
 |                      | Undefined `=` Null                                    | Parâmetros | a.undefinedProp `=` c.nullProp      | True  |
