@@ -37,7 +37,7 @@ Números negativos são especificados com o sinal de menos (-). Por exemplo:
 
 ## Operadores de números
 
-| Operação             | Syntax           | Retorna    | Expression | Value |
+| Operação             | Syntax           | Retorna    | Expression | Valor |
 | -------------------- | ---------------- | ---------- | ---------- | ----- |
 | Adição               | Número + Número  | Número     | 2 + 3      | 5     |
 | Subtração            | Número - Número  | Número     | 3 – 2      | 1     |
