@@ -80,7 +80,7 @@ Como padrão, se o parâmetro *type* for omitido ou conter uma string vazia, o `
 
 O parâmetro opcional *disposition* permite passar o cabeçalho `content-disposition` do anexo. Pode passar uma das constantes abaixo da constante tema de "Mail":
 
-| Parâmetros                  | Value        | Comentário                                                                                                                                                                                                  |
+| Parâmetros                  | Valor        | Comentário                                                                                                                                                                                                  |
 | --------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Estabelece o valor de cabeçalho Content-disposition para "attachment" que significa que o arquivo anexo deve ser fornecido como um link na mensagem.                                                        |
 | mail disposition inline     | "inline"     | Estabelece o valor de cabeçalho Content-disposition para "inline", o que significa que o anexo deve ser renderizado dentro do conteúdo da mensagem, no local "cid". A renderização depende do cliente mail. |
