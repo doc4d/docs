@@ -83,7 +83,7 @@ O comando `WEB Server` <!-- REF #_command_.WEB Server.Summary -->retorna o objet
 
 O servidor web começa com as definições padrão definidas no ficheiro de definições do projecto ou (apenas base de dados anfitriã) usando o comando `WEB SET OPTION` . No entanto, utilizando o parâmetro *settings*, pode definir propriedades personalizadas para a sessão do servidor web.
 
-| Parâmetros                                      | Value | Comentário                                                  |
+| Parâmetros                                      | Valor | Comentário                                                  |
 | ----------------------------------------------- | ----- | ----------------------------------------------------------- |
 | `Web server database`                           | 1     | Servidor Web de banco de dados atual (padrão caso omitido)  |
 | `<a href="#keepsession">.keepSession</a>` | 2     | Servidor Web do banco de dados de host de um componente     |
@@ -650,7 +650,7 @@ The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the se
 
 The <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->"Valor do cookie da sessão "SameSite<!-- END REF -->. Possíveis valores (usando constantes):
 
-| Parâmetros          | Value    | Descrição                                                                                                                                                |
+| Parâmetros          | Valor    | Descrição                                                                                                                                                |
 | ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Web SameSite Strict | "Strict" | *Valor por defeito* - Os cookies só são enviados num contexto de primeira parte                                                                          |
 | Web SameSite Lax    | "Lax"    | Os cookies também são enviados em pedidos cruzados mas apenas quando um utilizador está a navegar para o sítio de origem (isto é, quando segue um link). |
