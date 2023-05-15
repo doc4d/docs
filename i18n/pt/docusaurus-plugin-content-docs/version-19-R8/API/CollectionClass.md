@@ -1858,7 +1858,7 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 
 *   *ascOrDesc*: Integer. Se passar uma das seguintes constantes do tema **Objects and collections**:
 
-    | Parâmetros    | Tipo    | Value | Comentário                                                  |
+    | Parâmetros    | Tipo    | Valor | Comentário                                                  |
     | ------------- | ------- | ----- | ----------------------------------------------------------- |
     | ck ascending  | Longint | 0     | Os elementos são ordenados de forma ascendente (por padrão) |
     | ck descending | Longint | 1     | Os elementos são ordenados de forma descendente             |
@@ -2678,7 +2678,7 @@ A colecção devolvida contém o elemento especificado por *startFrom* e todos o
 
 A função `.push()` <!-- REF #collection.some().Summary -->anexa um ou mais  *elementos*(s) ao final da instância de recolha e devolve a coleção editada<!-- END REF -->.
 
-You designate the 4D code (callback) to be executed to evaluate collection elements using either:
+Designa-se a chamada de retorno a ser executada para avaliar os elementos da colecção utilizando qualquer um dos dois:
 
 - *fórmula* (sintaxe recomendada), um [Objecto de fórmula](FunctionClass.md) que pode encapsular qualquer expressão executável, incluindo funções e métodos de projecto;
 - *methodName* estabelece os parâmetros abaixo:
