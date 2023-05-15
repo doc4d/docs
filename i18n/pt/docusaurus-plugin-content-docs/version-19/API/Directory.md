@@ -416,7 +416,7 @@ Como padrão, a pasta é copiada com o nome da pasta original. Se quiser renomea
 
 Se já existir uma pasta com o mesmo nome em *destinationFolder*, por padrão 4D gera um erro. Pode passar a constante `fk overwrite` no parâmetro *overwrite* para ignorar e sobrescriber o arquivo existente
 
-| Parâmetros     | Value | Comentário                                      |
+| Parâmetros     | Valor | Comentário                                      |
 | -------------- | ----- | ----------------------------------------------- |
 | `fk overwrite` | 4     | Sobrescrever os elementos existentes, se houver |
 
@@ -508,7 +508,7 @@ A função `.files()` devolve <!-- REF #directory.files().Summary -->uma colecç
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem na coleção os arquivos de primeiro nivel da pasta, assim como os arquivos ou pastas invisíveis. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Parâmetros            | Value | Comentário                                                       |
+| Parâmetros            | Valor | Comentário                                                       |
 | --------------------- | ----- | ---------------------------------------------------------------- |
 | `fk recursive`        | 1     | A coleção contém arquivos da pasta especificada e suas subpastas |
 | `fk ignore invisible` | 8     | Arquivos invisíveis não estão listados                           |
@@ -615,7 +615,7 @@ A função `.folders()` <!-- REF #directory.folders().Summary -->devolve uma col
 
 Como padrão, se omitir o parâmetro *options*, só se devolvem as pastas no primeiro nível da pasta. Pode modificar isso passando, no parâmetro *options*, uma ou várias das constantes abaixo:
 
-| Parâmetros            | Value | Comentário                                                     |
+| Parâmetros            | Valor | Comentário                                                     |
 | --------------------- | ----- | -------------------------------------------------------------- |
 | `fk recursive`        | 1     | A coleção contém pastas da pasta especificada e suas subpastas |
 | `fk ignore invisible` | 8     | Pastas invisíveis não estão listados                           |
