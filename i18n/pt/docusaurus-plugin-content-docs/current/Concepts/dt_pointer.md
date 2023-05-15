@@ -77,7 +77,7 @@ Con:
  vPtrC:=->outroObject
 ```
 
-| Operação     | Syntax            | Retorna    | Expression    | Value |
+| Operação     | Syntax            | Retorna    | Expression    | Valor |
 | ------------ | ----------------- | ---------- | ------------- | ----- |
 | Equality     | Pointer = Pointer | Parâmetros | vPtrA = vPtrB | True  |
 |              |                   |            | vPtrA = vPtrC | False |
