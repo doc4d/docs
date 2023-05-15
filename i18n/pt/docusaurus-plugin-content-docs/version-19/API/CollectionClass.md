@@ -1685,7 +1685,7 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 
 * *ascOrDesc*: Integer. Se passar uma das seguintes constantes do tema **Objects and collections**:
 
- | Parâmetros    | Tipo    | Value | Comentário                                                  |
+ | Parâmetros    | Tipo    | Valor | Comentário                                                  |
  | ------------- | ------- | ----- | ----------------------------------------------------------- |
  | ck ascending  | Longint | 0     | Os elementos são ordenados de forma ascendente (por padrão) |
  | ck descending | Longint | 1     | Os elementos são ordenados de forma descendente             |
