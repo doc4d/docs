@@ -54,7 +54,7 @@ A propriedade `.autoFilled` <!-- REF DataClassAttributeClass.autoFilled.Summary 
 * "Auto UUID", para campos UUID (tipo alfa).
 
 Esta propriedade não é devolvida se `.kind` = "relatedEntity" ou "relatedEntities".
-> For generic programming, you can use **Bool**(dataClassAttribute.autoFilled) to get a valid value (false) even if `.autoFilled` is not returned.
+> Para programação genérica, pode utilizar **Bool**(dataClassAttribute.autoFilled) para obter um valor válido (false) mesmo que `.autoFilled` não seja devolvido.
 
 <!-- END REF -->
 
