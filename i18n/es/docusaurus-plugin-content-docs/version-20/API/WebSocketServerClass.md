@@ -337,7 +337,7 @@ En el parámetro opcional *options*, pase un objeto que contenga las siguientes 
 <!-- REF #WebSocketServerClass.connections.Desc -->
 ## .connections
 
-<!-- REF #WebSocketServerClass.connections.Syntax -->**connections** : Collection<!-- END REF -->
+<!-- REF #WebSocketServerClass.connections.Syntax -->**.connections** : Collection<!-- END REF -->
 
 #### Descripción
 
@@ -352,7 +352,7 @@ Cuando se finaliza una conexión, su estado [``](WebSocketConnectionClass.md#sta
 <!-- REF #WebSocketServerClass.dataType.Desc -->
 ## .dataType
 
-<!-- REF #WebSocketServerClass.dataType.Syntax -->**dataType**: Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.dataType.Syntax -->**.dataType** : Text<!-- END REF -->
 
 #### Descripción
 
@@ -365,7 +365,7 @@ Esta propiedad es de sólo lectura.
 <!-- REF #WebSocketServerClass.handler.Desc -->
 ## .handler
 
-<!-- REF #WebSocketServerClass.handler.Syntax -->**handler**: Object<!-- END REF -->
+<!-- REF #WebSocketServerClass.handler.Syntax -->**.handler** : Object<!-- END REF -->
 
 #### Descripción
 
@@ -377,7 +377,7 @@ La propiedad `.handler` contiene <!-- REF #WebSocketServerClass.handler.Summary 
 <!-- REF #WebSocketServerClass.path.Desc -->
 ## .path
 
-<!-- REF #WebSocketServerClass.path.Syntax -->**path**: Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.path.Syntax -->**.path** : Text<!-- END REF -->
 
 #### Descripción
 
@@ -411,7 +411,7 @@ La función `.terminate()` <!-- REF #WebSocketServerClass.terminate().Summary --
 <!-- REF #WebSocketServerClass.terminated.Desc -->
 ## .terminated
 
-<!-- REF #WebSocketServerClass.terminated.Syntax -->**terminated**: Boolean<!-- END REF -->
+<!-- REF #WebSocketServerClass.terminated.Syntax -->**.terminated** : Boolean<!-- END REF -->
 
 #### Descripción
 
