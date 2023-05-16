@@ -283,7 +283,7 @@ Queremos criar uma entidade. A propriedade \_\_NEW é True, a chave primária de
 
 #### Exemplo 2
 
-Queremos criar uma entidade. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
+Queremos criar uma entidade. Se a propriedade \_\_NEW é omitida, a chave primária do empregado é dada e não existir:
 
 ```4d
  var $empsCollection : Collection
@@ -680,7 +680,7 @@ onde:
  | ---------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
  | Igual a                                  | =, ==       | Retorna os dados coincidentes, admite o coringa (@), não diferencia entre maiúsculas e minúsculas nem diacríticas.             |
  |                                          | ===, IS     | Retorna os dados coincidentes, considera @ como caractere padrão, não diferencia entre maiúsculas e minúsculas nem diacríticas |
- | Not equal to                             | #, !=       | Suporta o coringa (@)                                                                                                          |
+ | Diferente de                             | #, !=       | Suporta o coringa (@)                                                                                                          |
  |                                          | !==, IS NOT | Considera  @ como um caractere normal                                                                                          |
  | Menor que                                | <           |                                                                                                                                |
  | Maior que                                | >           |                                                                                                                                |
