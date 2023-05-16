@@ -120,7 +120,7 @@ Com atributos de data, pode introduzir a data a utilizar através de um widget d
 
 ![alt-text](../assets/en/Admin/DEFilter2.png)
 
-#### Booleans
+#### Booleanos
 
 Ao clicar numa área de atributos booleanos, pode filtrar em **valores verdadeiros**/**valores falsos** ou também em **null**/**e não null**:
 
@@ -137,7 +137,7 @@ O filtro é do tipo "começa com". Por exemplo, a entrada "Jim" mostrará os val
 
 Também pode usar o caractere coringa (@) para substituir um ou mais caracteres iniciais. Por exemplo:
 
-| Um filtro com | Finds                                                     |
+| Um filtro com | Resultados                                                |
 | ------------- | --------------------------------------------------------- |
 | Bel           | Todos os valores que começam com "Bel                     |
 | @do           | Todos os valores contendo "do"                            |
