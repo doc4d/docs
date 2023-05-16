@@ -80,7 +80,7 @@ Some methods return the original collection after modification, so that you can 
 ```
 
 
-### propertyPath parameter
+### parâmetro caminoPropriedade
 
 
 Several methods accept a _propertyPath_ as parameter. Este parâmetro significa:
