@@ -31,7 +31,7 @@ myBoolean:=(myButton=1)
 
 4D suporta dois operadores lógicos que trabalham com expressões booleanas: conjunção (AND) e disjunção inclusiva (OR). Uma lógica E retorna VERDADEIRA se ambas as expressões forem VERDADEIRAS. Uma lógica OU retorna VERDADEIRA se pelo menos uma das expressões for VERDADEIRA. O quadro seguinte mostra os operadores lógicos:
 
-| Operação | Syntax                  | Retorna    | Expression                   | Valor |
+| Operação | Sintaxe                 | Retorna    | Expression                   | Valor |
 | -------- | ----------------------- | ---------- | ---------------------------- | ----- |
 | AND      | Boolean & Boolean       | Parâmetros | ("A" = "A") & (15 # 3)       | True  |
 |          |                         |            | ("A" = "B") & (15 # 3)       | False |
