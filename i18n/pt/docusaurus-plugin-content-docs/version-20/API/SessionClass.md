@@ -281,10 +281,10 @@ If (Session.isGuest())
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças                             |
-| ------ | ------------------------------------ |
-| v19 R8 | Support of "roles" Settings property |
-| v18 R6 | Adicionado                           |
+| Versão | Mudanças                                    |
+| ------ | ------------------------------------------- |
+| v19 R8 | Suporte da propriedade "roles" das Settings |
+| v18 R6 | Adicionado                                  |
 
 </details>
 
@@ -313,16 +313,16 @@ A função `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->
 | Propriedade | Tipo               | Descrição                                           |
 | ----------- | ------------------ | --------------------------------------------------- |
 | privileges  | Text ou Collection | <li>Strings contendo um nome de privilégio ou</li><li>Collection de strings contendo nomes de privilégios</li>  |
-| roles       | Text ou Collection | <li>String containing a role, or</li><li>Collection of strings containing roles</li> |
+| roles       | Text ou Collection | <li>Strings contendo um papel ou</li><li>Coleção de strings contendo papéis</li> |
 | userName    | Text               | Nome de usuário associado à sessão (opcional)       |
 
 :::info
 
-Privileges and roles are defined in [`roles.json`](../ORDA/privileges.md#rolesjson-file) file of the project. For more information, please refer to the [**Privileges**](../ORDA/privileges.md) section.
+Os privilégios e papéis são definidos no arquivo [`roles.json`](../ORDA/privileges.md#rolesjson-file) do projeto. Para mais informações, consulte por favor a secção [**Privileges**](../ORDA/privileges.md).
 
 :::
 
-If the `privileges` or `roles` property contains a name that is not declared in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file, it is ignored.
+Se a propriedade `privilegios` ou `roles` conter um nome que não é declarado no arquivo [`roles.json`](../ORDA/privileges.md#rolesjson-file), ele é ignorado.
 
 Como padrão quando não houver um privilégio associado à sessão, a sessão é [Guest session](#isguest).
 
