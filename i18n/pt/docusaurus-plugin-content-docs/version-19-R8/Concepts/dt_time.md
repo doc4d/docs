@@ -31,7 +31,7 @@ Uma hora nula se escreve ?00:00:00?
 
 ## Operadores de horas
 
-| Operação             | Syntax         | Retorna    | Expression              | Valor      |
+| Operação             | Sintaxe        | Retorna    | Expression              | Valor      |
 | -------------------- | -------------- | ---------- | ----------------------- | ---------- |
 | Adição               | Hora + Hora    | Hora       | ?02:03:04? + ?01:02:03? | ?03:05:07? |
 | Subtração            | Hora – Hora    | Hora       | ?02:03:04? ?02:03:04?   | ?01:01:01? |
