@@ -131,7 +131,7 @@ Calling this function requires that the [4D Web Server](WebServerClass.md) is st
 
 In the *WSSHandler* parameter, pass an instance of a user class that will be called every time an event occurs on the WebSocket server --essentially, connection events. The class should define the following callback functions (only `onConnection` is mandatory):
 
-| Propriedade  | Tipo                         | Descrição                                                                | Default    |
+| Propriedade  | Tipo                         | Descrição                                                                | O padrãO   |
 | ------------ | ---------------------------- | ------------------------------------------------------------------------ | ---------- |
 | onConnection | [Function](FunctionClass.md) | (mandatory) Callback when a new client connection is started (see below) | indefinido |
 | onOpen       | [Function](FunctionClass.md) | Callback when the WebSocket server is started (see below)                | indefinido |
@@ -328,7 +328,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 
 In the optional *options* parameter, pass an object that contains the following properties:
 
-| Propriedade | Tipo | Descrição                                                                                                                                                                                                                                                                                                                                    | Default    |
+| Propriedade | Tipo | Descrição                                                                                                                                                                                                                                                                                                                                    | O padrãO   |
 | ----------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | path        | Text | Represents the path to access the WebSocket server. If no path is defined, the WebSocket server manages all the connections                                                                                                                                                                                                                  | indefinido |
 | dataType    | Text | Type of the data received through the `connectionHandler.onMessage` and the data send by [`WebSocketConnection.send()`](WebSocketConnectionClass.md#send) function. Values: "text", "blob","object"). If "object": (send) transforms object into a json format and sends it; (reception): receives json format and transforms it into object | text       |
@@ -404,7 +404,7 @@ This property is read-only.
 
 #### Descrição
 
-The `.terminate()` function <!-- REF #WebSocketServerClass.terminate().Summary -->closes the WebSocket server<!-- END REF -->. 
+A função `.terminate()` <!-- REF #WebSocketServerClass.terminate().Summary -->closes the WebSocket server<!-- END REF -->. 
 
 <!-- END REF -->
 
