@@ -294,7 +294,7 @@ As chamadas à função podem ser encadeadas:
 
 #### Descrição
 
-The `.and()` function <!-- REF #EntitySelectionClass.and().Summary -->combines the entity selection with an *entity* or *entitySelection* parameter using the logical AND operator<!-- END REF -->; it returns a new, unordered entity selection that contains only the entities that are referenced in both the entity selection and the parameter.
+The `.and()` function <!-- REF #EntitySelectionClass.and().Summary -->combines the entity selection with an *entity* or *entitySelection* parameter using the logical AND operator<!-- END REF -->; se retornar uma nova e não ordenada seleção de entidade que contenha só as entidades referenciaadas tanto na seleção de entidade quanto no parâmetro.
 
 * Se passar *entity* como parâmetro, se combina esta entidade com a entity selection. Se a entidade pertencer à entity selection, se devolve uma nova entity selection que só contém a entidade. Senão, uma seleção de entidades vazia é retornada.
 * Se passar como parâmetro *entitySelection* pode comparar seleções de entidade. Uma nova seleção de entidade que contenha só as entidades que são referenciadas em ambas as seleções sejam retornadas. Senão, uma nova seleção de entidade contém a seleção de entidade original e a entidade é retornada.
@@ -719,7 +719,7 @@ Se vários *attributePath*, forem dados, deve dar um *targetPath* para cada um. 
 * Atributos de dataclass com [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" são extraídas como coleção de seleção de entidades.
 * *attributePath* designa um atributo que não existir na dataclass da entity selection.
 
-> Entities of a collection of entities accessed by \[ ] are not reloaded from the database.
+> As entidades de uma colecção de entidades acedidas por \[ ] não são recarregadas da base de dados.
 
 #### Exemplo
 
@@ -933,7 +933,7 @@ Form.products.add(Form.product)
 #### Descrição
 
 The `.isOrdered()` function <!-- REF #EntitySelectionClass.isOrdered().Summary -->returns True if the entity selection is ordered<!-- END REF -->e False se não for ordenada
-> This function always returns True when the entity selection comes from a remote datastore.
+> Esta função devolve sempre True quando a selecção da entidade provém de um datastore remoto.
 
 Para mais informação, consulte [Entity selection ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
