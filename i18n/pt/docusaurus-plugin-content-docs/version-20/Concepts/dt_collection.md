@@ -44,7 +44,7 @@ Se atribuir um índice de elemento que ultrapasse o último elemento existente d
 
 As coleções devem ter sido inicializadas, por exemplo utilizando o comando `New collection`, do contrário ao tentar ler ou modificar seus elementos se gerará um erro de sintaxe.
 
-Collection instantiation can be done in one of the following ways:
+A instanciação da colecção pode ser feita de uma das seguintes formas:
 
 - utilizando o comando [`New collection`](../API/CollectionClass.md#new-collection),
 - utilizando o operador `[]`.
@@ -128,7 +128,7 @@ Alguns métodos retornam a coleção original depois de moficiação, para que p
 ```
 
 
-### propertyPath parameter
+### parâmetro caminoPropriedade
 
 
 Vários métodos aceitam uma _propertyPath_ como parâmetro. Este parâmetro significa:
