@@ -1,6 +1,6 @@
 ---
 id: number
-title: Number (Real, Longint, Integer)
+title: Número (Real, Longint, Integer)
 ---
 
 Número é um termo genérico que significa:
@@ -37,7 +37,7 @@ Números negativos são especificados com o sinal de menos (-). Por exemplo:
 
 ## Operadores de números
 
-| Operação             | Syntax           | Retorna    | Expression | Valor |
+| Operação             | Sintaxe          | Retorna    | Expression | Valor |
 | -------------------- | ---------------- | ---------- | ---------- | ----- |
 | Adição               | Número + Número  | Número     | 2 + 3      | 5     |
 | Subtração            | Número - Número  | Número     | 3 – 2      | 1     |
@@ -102,10 +102,10 @@ Já que cada bit pode ser igual a 0 ou 1, também se pode pensar num valor Long 
 
 Uma expressão que utilizar um operador Bitwise retorna um valor Long Integer, exceto para o operador Bit Test, onde a expressão retorna um valor Booleano. A tabela a seguir lista os operadores bitwise e sua sintaxe:
 
-| Operação               | Operator  | Syntax                 | Retorna              |
+| Operação               | Operador  | Sintaxe                | Retorna              |
 | ---------------------- | --------- | ---------------------- | -------------------- |
 | Bitwise AND            | &         | Long & Long            | Long                 |
-| Bitwise OR (inclusive) | &#124;    | Long &#124; Long       | Long                 |
+| OU (inclusive)         | &#124;    | Long &#124; Long       | Long                 |
 | Bitwise OR (exclusivo) | \^&#124; | Long \^&#124; E. long | Long                 |
 | Left Bit Shift         | <<        | Long << Long           | Long (ver nota 1)    |
 | Right Bit Shift        | >>        | Long >> Long           | Long (ver nota 1)    |
@@ -132,7 +132,7 @@ O quadro seguinte lista os operadores bitwise e os seus efeitos:
 | Operação               | Exemplo                         | Resultados |
 | ---------------------- | ------------------------------- | ---------- |
 | Bitwise AND            | 0x0000FFFF & 0xFF00FF00         | 0x0000FF00 |
-| Bitwise OR (inclusive) | 0x0000FFFF &#124; 0xFF00FF00    | 0xFF00FFFF |
+| OU (inclusive)         | 0x0000FFFF &#124; 0xFF00FF00    | 0xFF00FFFF |
 | Bitwise OR (exclusivo) | 0x0000FFFF \^&#124; 0xFF00FF00 | 0xFF0000FF |
 | Left Bit Shift         | 0x0000FFFF << 8                 | 0x00FFFF00 |
 | Right Bit Shift        | 0x0000FFFF >> 8                 | 0x000000FF |
