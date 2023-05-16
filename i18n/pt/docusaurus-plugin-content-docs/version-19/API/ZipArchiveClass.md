@@ -204,7 +204,7 @@ Se *zipFile* for protegido por uma senha, precisa usar o parâmetro opcional *pa
 
 **Objeto arquivo**
 
-The returned `4D. ZipArchive` object contains a single [`root`](#root) property whose value is a `4D. ZipFolder` object. This folder describes the whole contents of the ZIP archive.
+The returned `4D. ZipArchive` object contains a single [`root`](#root) property whose value is a `4D. ZipFolder` object. Esta pasta descreve todo o conteúdo do ficheiro ZIP.
 
 #### Exemplo
 
