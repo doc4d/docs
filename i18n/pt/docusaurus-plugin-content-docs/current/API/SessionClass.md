@@ -38,9 +38,9 @@ Para obter informação detalhada sobre a implementação da sessão, consulte [
 
 
 <!-- REF #_command_.Session.Params -->
-| Parâmetro  | Tipo        |    | Descrição                                 |
-| ---------- | ----------- |:--:| ----------------------------------------- |
-| Resultados | 4D. Session | <- | Session object|<!-- END REF -->
+| Parâmetro  | Tipo        |    | Descrição                                  |
+| ---------- | ----------- |:--:| ------------------------------------------ |
+| Resultados | 4D. Session | <- | Objecto Session|<!-- END REF -->
 
 
 |
@@ -55,7 +55,7 @@ Este comando só funciona quando [estão ativadas as sessões escaláveis](WebSe
 Quando se habilitam as sessões escaláveis, o objeto `Sessão` está disponível desde qualquer processo web nos seguintes contextos:
 
 - `On Web Authentication`, `On Web Connection`, e métodos database`On REST Authentication`,
-- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
+- [`Em Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) e [`Em Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) métodos de base de dados para pedidos móveis,
 - As [funções Data Model Class](ORDA/ordaClasses.md) ORDA chamadas pelas petições REST,
 - código processado a través das etiquetas 4D nas páginas semidinâmicas (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - os métodos projeto com o atributo "Available through 4D tags and URLs (4DACTION...)" e chamados através de 4DACTION/ urls.
@@ -110,7 +110,7 @@ IP:port/4DACTION/action_Session
 
 #### Descrição
 
-A função `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->retira todos os privilégios associados à sessão<!-- END REF -->. As a result, the session automatically becomes a Guest session.
+A função `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->retira todos os privilégios associados à sessão<!-- END REF -->. Como resultado, a sessão torna-se automaticamente uma sessão de convidado.
 
 
 #### Exemplo
