@@ -300,7 +300,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 
 ### `Function get <attributeName>`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 {local} {exposed} Function get <attributeName>({$event : Object}) -> $result : type
@@ -370,7 +370,7 @@ Function get coWorkers($event : Object)-> $result: cs. EmployeeSelection
 ### `Function set <attributeName>`
 
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 
@@ -405,7 +405,7 @@ Function set fullName($value : Text; $event : Object)
 
 ### `Function query <attributeName>`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 Function query <attributeName>($event : Object)
@@ -549,7 +549,7 @@ $twentyToday:=people.query("age === 20") // equivalent to people.query("age is 2
 
 ### `Function orderBy <attributeName>`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 Function orderBy <attributeName>($event : Object)
@@ -630,7 +630,7 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 ### `Alias <attributeName> <targetPath>`
 
 
-#### Syntax
+#### Sintaxe
 
 ```
 {exposed} Alias <attributeName> <targetPath>
