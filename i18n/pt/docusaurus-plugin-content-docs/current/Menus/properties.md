@@ -77,7 +77,7 @@ Quando esta opção é verificada, 4D não activa a "validação" do campo onde 
 
 Esta opção de menu editor permite definir um grupo para um comando de menu de modo a que apenas os utilizadores desse grupo possam utilizar o comando de menu de uma aplicação remota 4D (ver Utilizadores e grupos).
 
-## Options
+## Opções
 
 ### Linhas separadoras
 
