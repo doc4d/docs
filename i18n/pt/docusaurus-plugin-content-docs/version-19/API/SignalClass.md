@@ -59,7 +59,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  $signal.trigger()
 ```
 
-***OpenForm*** method :
+Método ***OpenForm***:
 
 ```4d
  var $signal : 4D. Signal
