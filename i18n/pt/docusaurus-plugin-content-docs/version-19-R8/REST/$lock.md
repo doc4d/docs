@@ -7,7 +7,7 @@ title: '$lock'
 Locks and unlocks an entity using the [pessimistic mechanism](../ORDA/entities.md#pessimistic-lock).
 
 
-## Syntax
+## Sintaxe
 
 To lock an entity for other sessions and 4D processes:
 
