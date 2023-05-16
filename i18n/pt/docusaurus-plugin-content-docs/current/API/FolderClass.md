@@ -82,7 +82,7 @@ Objetos `Pasta` são compatíveis com vários pathnames, incluindo `filesystems`
 
 #### Descrição
 
-O comando `Folder` <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. O comando aceita duas sintaxes:
+O comando `Folder` <!-- REF #_command_.Folder.Summary -->cria e devolve um novo objecto do tipo `4D.Folder`<!-- END REF -->. O comando aceita duas sintaxes:
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -137,7 +137,7 @@ Se o comando for chamado a partir de um componente, passe o parâmetro opcional 
 
 #### Descrição
 
-A função `4D. Folder.new()` <!-- REF #4D.Folder.new().Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. It is identical to the [`Folder`](#folder) command (shortcut).
+A função `4D. Folder.new()` <!-- REF #4D.Folder.new().Summary -->cria e devolve um novo objecto do tipo `4D.Folder`<!-- END REF -->. Elle est identique à la commande [`Folder`](#folder) (raccourci).
 
 > It is recommended to use the [`Folder`](#folder) shortcut command instead of `4D. Folder.new()`.
 
@@ -197,7 +197,7 @@ Else
  ALERT("Impossible to create a "+$newFolder.name+" folder.")
 End if
 Else
- ALERT("Impossible to create a "+$newFolder.name+" folder.")
+ ALERT("Impossível criar uma pasta "+$newFolder.name+".")
 End if
 ```
 
@@ -351,7 +351,7 @@ Quando `Apagar com conteúdo` for aprovado:
 | ----------------- | ---------- | -- | --------------------------------------- |
 | destinationFolder | 4D. Folder | -> | Pasta de destino                        |
 | newName           | Text       | -> | Nome completo para a pasta movida       |
-| Resultados        | 4D. Folder | <- | Moved folder|<!-- END REF -->
+| Resultados        | 4D. Folder | <- | Pasta movida|<!-- END REF -->
 
 |
 
