@@ -3,21 +3,21 @@ id: SystemWorkerClass
 title: SystemWorker
 ---
 
-System workers allow the 4D code to call any external process (a shell command, PHP, etc.) on the same machine. System workers are called asynchronously. By using callbacks, 4D makes it possible to communicate both ways.
+Os trabalhadores do sistema permitem que o código 4D chame qualquer processo externo (um comando shell, PHP, etc.) na mesma máquina. Os trabalhadores do sistema são chamados assíncronos. Ao utilizar os callbacks, 4D torna possível a comunicação de ambas as maneiras.
 
-The `SystemWorker` class is available from the `4D` class store.
+A classe `SystemWorker` está disponível na loja de classes `4D`.
 
 ### Exemplo
 
 ```4d
-    // Windows example to get access to the ipconfig information
+    // Exemplo Windows para obter acesso à informação ipconfig
 var $myWinWorker : 4D.SystemWorker
 var $ipConfig : Text
 $myWinWorker:= 4D.SystemWorker.new("ipconfig")
 $ipConfig:=$myWinWorker.wait(1).response //timeout 1 second
 
-    // macOS example to change the permissions for a file on macOS
-    // chmod is the macOS command used to modify file access
+    // exemplo macOS para mudar as permissões de um ficheiro no macOS
+    // chmod é o comando macOS usado para modificar o acesso a ficheiros
 var $myMacWorker : 4D.SystemWorker
 $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
@@ -337,7 +337,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descrição
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Possible values : "text" or "blob".
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Valores possíveis: "text" ou "blob".
 
 Essa propriedade é **apenas leitura**.
 
@@ -351,7 +351,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. This property is only available if the [`dataType`](#datatype) is "text".
+A propriedade `.encoding` <!-- REF #SystemWorkerClass.encoding.Summary -->contém a codificação do conteúdo do corpo de resposta<!-- END REF -->. Esta propriedade só está disponível se o [`dataType`](#datatype) é "text".
 
 Essa propriedade é **apenas leitura**.
 
@@ -365,9 +365,9 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a collection of 4D errors in case of execution error(s)<!-- END REF -->.
+A propriedade `.erros` <!-- REF #SystemWorkerClass.errors.Summary -->contém uma colecção de erros 4D em caso de erro(s) de execução<!-- END REF -->.
 
-Each element of the collection is an object with the following properties:
+Cada elemento da coleção é um objeto com as seguintes propriedades:
 
 | Propriedade            | Tipo   | Descrição                                            |
 | ---------------------- | ------ | ---------------------------------------------------- |
@@ -551,16 +551,16 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A função `.wait()` <!-- REF #SystemWorkerClass.wait().Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->.
+A função `.wait()` <!-- REF #SystemWorkerClass.wait().Summary -->espera até ao final do `SystemWorker` execução ou o tempo limite especificado **<!-- END REF -->.
 
-In *timeout*, pass a value in seconds. The `SystemWorker` script will wait for the external process for the amount of time defined in the *timeout* parameter. If you omit the *timeout* parameter, the script execution will wait indefinitely.
+Em *timeout*, passe um valor em segundos. O script `SystemWorker` aguardará o processo externo pelo tempo definido no parâmetro *timeout*. Se omitir o parâmetro *timeout*, a execução do guião esperará indefinidamente.
 
-Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the *timeout* is reached. If *timeout* is reached, the `SystemWorker` is not killed.
+Na verdade, `.wait()` espera até ao fim do processamento da fórmula `onTerminate`, excepto se o tempo limite ** for alcançado. Se *timeout* for alcançado, o `SystemWorker` não é morto.
 
-During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances. You can exit from a `.wait()` by calling [`terminate()`](#terminate) from a callback.
+Durante uma execução `.wait()`, são executadas funções de callback, especialmente callbacks de outros eventos ou de outros `SystemWorker` instâncias. Pode sair de um `.wait()` ligando para [`terminate()`](#terminate) a partir de uma chamada de retorno.
 
-This function returns the SystemWorker object.
+Esta função devolve o objecto SystemWorker.
 
-> This function is not necessary if you created the `SystemWorker` from a 4D worker process.
+> Esta função não é necessária se tiver criado o `SystemWorker` a partir de um processo de trabalhador 4D.
 
 <!-- END REF -->
