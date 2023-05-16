@@ -24,7 +24,7 @@ To connect to the Data Explorer web page:
 
 - A partir de uma aplicação 4D (com interface):
   - Se usar a aplicação 4D com interface, selecione o comando **Data Explorer...** :
-  - To open the Data Explorer in an external browser tab, select **Data Explorer In Browser** in the **Records** menu press the **Alt** key (Windows)/**Option** key (macOS) and click on the **Data** button in the main toolbar.
+  - Para abrir o Explorador de Dados num separador externo do browser, seleccione **Explorador de Dados No Browser** no menu **Registos** prima a tecla **Alt** (Windows)/**Option** (macOS) e clique no botão **Dados** na barra de ferramentas principal.
 - no menu **Window**  (em 4D Server)
 
 - mesmo se usar uma aplicação 4D headless, pode abrir seu navegador web e digitar o endereço abaixo:
@@ -119,7 +119,7 @@ Com atributos de data, pode introduzir a data a utilizar através de um widget d
 
 ![alt-text](../assets/en/Admin/DEFilter2.png)
 
-#### Booleans
+#### Booleanos
 
 Ao clicar numa área de atributos booleanos, pode filtrar em **valores verdadeiros**/**valores falsos** ou também em **null**/**e não null**:
 
@@ -136,7 +136,7 @@ O filtro é do tipo "começa com". Por exemplo, a entrada "Jim" mostrará os val
 
 Também pode usar o caractere coringa (@) para substituir um ou mais caracteres iniciais. Por exemplo:
 
-| Um filtro com | Finds                                                     |
+| Um filtro com | Resultados                                                |
 | ------------- | --------------------------------------------------------- |
 | Bel           | Todos os valores que começam com "Bel                     |
 | @do           | Todos os valores contendo "do"                            |
