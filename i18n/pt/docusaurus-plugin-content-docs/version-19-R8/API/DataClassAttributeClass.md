@@ -263,7 +263,7 @@ Dada a seguinte tabela e relação:
 A propriedade `.name` <!-- REF DataClassAttributeClass.mandatory.Summary -->The `.name` property<!-- END REF -->.
 
 Esta propriedade não é retornada se [`.kind`](#kind) = "relatedEntity" ou "relatedEntities".
-> For generic programming, you can use **Bool**(dataClassAttribute.mandatory) to get a valid value (false) even if `.mandatory` is not returned.
+> Para programação genérica, pode utilizar **Bool**(dataClassAttribute.mandatory) para obter um valor válido (false) mesmo que `.mandatory` não seja devolvido.
 > **.size** : Integer **Aviso**: Essas propriedade corresponde à propriedade de campo "Reject NULL value input" ao nível do banco de dados 4D. Não tem relação com a propriedade existente "Mandatory"/obrigatório que é uma opção de controle de entrada de dados para uma tabela.
 
 <!-- END REF -->
