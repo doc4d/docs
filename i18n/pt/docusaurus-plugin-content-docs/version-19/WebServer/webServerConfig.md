@@ -237,7 +237,7 @@ In the framework of optimized HTTP exchanges, size threshold for requests below 
 
 Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
 
-## HTTP Port
+## Porta HTTP
 
 | Can be set with                    | Nome                                         | Comentários |
 | ---------------------------------- | -------------------------------------------- | ----------- |
