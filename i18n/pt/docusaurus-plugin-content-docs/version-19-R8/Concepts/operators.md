@@ -42,7 +42,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 - [**Operadores de horas**](dt_time.md#time-operators)
 - [**Operadores de números**](dt_number.md#number-operators)
 - [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
-- [**Picture operators**](dt_picture.md#picture-operators)
+- [**Operadores de imagem**](dt_picture.md#picture-operators)
 - [**Operadores de Ponteiros**](dt_pointer.md#pointer-operators)
 - [**String operators**](dt_string.md#string-operators)
 
@@ -66,7 +66,7 @@ $a+=2 // $a=3
 
 The following compound assignment operators are supported:
 
-| Operator      | Syntax             | Assigns | Exemplo                                                                    |
+| Operador      | Sintaxe            | Assigns | Exemplo                                                                    |
 | ------------- | ------------------ | ------- | -------------------------------------------------------------------------- |
 | Adição        | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`                                          |
 |               | Number += Number   | Número  | `$n+=5 //$n:=$n+5`                                                         |
@@ -276,7 +276,7 @@ It takes three operands in the following order:
 * an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:)
 * an expression to execute if the condition is [falsy](#truthy-and-falsy)
 
-### Syntax
+### Sintaxe
 
 A sintaxe é a seguinte:
 
