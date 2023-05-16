@@ -235,7 +235,7 @@ Para cada objeto de *objectCol*:
   * Se a chave primária for dada (como está) e existir, um erro é enviado.
   * Se a chave primária for dada (como é) e não existir, a entidade é criada
   * Se a chave primária não for dada, a entidade é criada e o valor da chave primária é assignado com respeito às regras padrão de database.
-> The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
+> A propriedade "\_\_KEY" que contém um valor só é tida em conta quando a propriedade "\_\_NEW" está definida como **false** (ou é omitida) e existe uma entidade correspondente. Em todos os outros casos, o valor da propriedade "\_\_KEY" é ignorado, o valor da chave primária deve ser passado "tal como está".
 
 **Entidades relacionadas**
 
@@ -417,7 +417,7 @@ Neste exemplo, a primeira entidade se criará e salvará mas a segunda falhará 
 
 A função `.get()` <!-- REF #DataClassClass.get().Summary -->consulta a folha de dados para recuperar a entidade que corresponde ao parâmetro *primaryKey*<!-- END REF -->.
 
-In *primaryKey*, pass the primary key value of the entity to retrieve. Em *primaryKey*, passe o valor da chave primária da entidade a recuperar Em *primaryKey*, passe o valor da chave primária da entidade a recuperar O tipo valor deve coresponder com o tipo de chave primária estabelecido na datastore (Inteiro ou texto). Também pode se assegurar que o valor de chave primária seja sempre retornado como Texto ao usar a função [`.getKey()`](EntityClass.md#getkey) com o parâmetro`dk key as string`.
+Em *primaryKey*, passe o valor da chave primária da entidade a recuperar. Em *primaryKey*, passe o valor da chave primária da entidade a recuperar Em *primaryKey*, passe o valor da chave primária da entidade a recuperar O tipo valor deve coresponder com o tipo de chave primária estabelecido na datastore (Inteiro ou texto). Também pode se assegurar que o valor de chave primária seja sempre retornado como Texto ao usar a função [`.getKey()`](EntityClass.md#getkey) com o parâmetro`dk key as string`.
 
 Se nenhuma entidade for encontrada com  *primaryKey*, uma entidade**Null** é retornada.
 
@@ -671,7 +671,7 @@ O objeto retornado tem as propriedades abaixo:
 | Propriedade | Tipo       | Descrição                                                                          |
 | ----------- | ---------- | ---------------------------------------------------------------------------------- |
 | maxEntries  | Integer    | Número máximo de entradas recolhidas.                                              |
-| stamp       | Integer    | Stamp of the cache.                                                                |
+| stamp       | Integer    | Carimbo da cache.                                                                  |
 | timeout     | Integer    | Tempo restante antes que as novas entradas na cache sejam marcadas como expiradas. |
 | |           | Collection | Contém um objecto de entrada para cada entidade na cache.                          |
 
@@ -865,7 +865,7 @@ onde:
   * **Text**: A string de fórmula deve ser precidida da declaração `eval( )`,para que o parser da pesquisa avalie a expressão corretamente. Por exemplo: *"eval(length(This.lastname) >=30)"*
   * **Object**: o objeto [formula](FunctionClass.md) é passado como um **placeholder** (ver abaixo). A fórmula deve ter sido criada usando  [`Formula`](FunctionClass.md#formula) ou o comando[`Formula from string`](FunctionClass.md#formula-from-string) command.
 > * > * > * Keep in mind that 4D formulas only support `&` and `|` symbols as logical operators.
-> * If the formula is not the only search criteria, the query engine optimizer could prior process other criteria (e.g. indexed attributes) and thus, the formula could be evaluated for only a subset of entities.
+> * Se a fórmula não for o único critério de pesquisa, o otimizador de motor debusca poderia processar outros critérios previamente (por exemplo atributos indexados) e assim, a fórmula poderia ser avaliada apenas para um subconjunto de entidades.
 
  Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto é detalhado no parágrafo **Parâmetro fórmula** mais abaixo.
 > * Também pode passar diretamente um objeto parâmetro `formula` ao invés do parâmetro `queryString` (recomendado quando as fórmulas sejam mais complexas). Ver o parágrafo **Parâmetro fórmula** mais abaixo.
