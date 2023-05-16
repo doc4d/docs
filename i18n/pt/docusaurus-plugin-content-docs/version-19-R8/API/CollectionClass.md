@@ -1972,7 +1972,7 @@ Ordenar com uma rota de propriedade:
 | ---------- | ------------ |:--:| ------------------------------------------------------------------------ |
 | formula    | 4D. Function | -> | Objecto fórmula                                                          |
 | methodName | Text         | -> | Nome da função a qual se chama para processar os elementos da coleção    |
-| extraParam | any          | -> | Parameter(s) to pass                                                     |
+| extraParam | any          | -> | Parâmetro(s) a transmitir                                                |
 | Resultados | Collection   | <- | Cópia ordenada da coleção (cópia superficial)|<!-- END REF -->
 
 
@@ -2296,7 +2296,7 @@ Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 | formula    | 4D. Function                                    | -> | Objecto fórmula                                                              |
 | methodName | Text                                            | -> | Nome da função a qual se chama para processar os elementos da coleção        |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Valor a utilizar como primeiro argumento da primeira chamada de *methodName* |
-| param      | expressão                                       | -> | Parameter(s) to pass                                                         |
+| param      | expressão                                       | -> | Parâmetro(s) a transmitir                                                    |
 | Resultados | Text, Number, Object, Collection, Date, Boolean | <- | Resultado do valor do acumulador|<!-- END REF -->
 
 
@@ -2667,7 +2667,7 @@ A colecção devolvida contém o elemento especificado por *startFrom* e todos o
 | startFrom  | Integer      | -> | Índice para início do teste em                                                     |
 | formula    | 4D. Function | -> | Objecto fórmula                                                                    |
 | methodName | Text         | -> | Nome da função a qual se chama para processar os elementos da coleção              |
-| param      | Mixed        | -> | Parameter(s) to pass                                                               |
+| param      | Mixed        | -> | Parâmetro(s) a transmitir                                                          |
 | Resultados | Parâmetros   | <- | True se todos os elementos passarem o teste com sucesso|<!-- END REF -->
 
 
