@@ -252,7 +252,7 @@ No parâmetro `mailObj` , passe um objecto Email. In the `mailObj` parameter, pa
 
 O parâmetro opcional `destinationBox` permite-lhe passar o nome de uma caixa de correio onde o `mailObj` será anexado. Se omitido, é utilizada a caixa de correio actual.
 
-No parâmetro opcional `opções` , pode passar um objecto para definir o charset e a codificação para partes específicas do correio electrónico. Available properties:
+No parâmetro opcional `opções` , pode passar um objecto para definir o charset e a codificação para partes específicas do correio electrónico. Propriedades disponiveis:
 
 | Propriedade   | Tipo | Descrição                                                                                                                                                                                    |
 | ------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1052,7 +1052,7 @@ No parâmetro *endMsg*, passe um valor inteiro correspondente ao número da últ
 
 O parâmetro opcional *opções* permite definir as partes das mensagens a serem devolvidas.
 
-**Options**
+**Opções**
 
 | Propriedade | Tipo       | Descrição                                                                                                                                                           |
 | ----------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1138,9 +1138,9 @@ No primeiro parâmetro, pode passar qualquer um dos dois:
 O parâmetro opcional *updateSeen* permite-lhe especificar se a mensagem está marcada como "vista" na caixa de correio. Pode passar:
 
 * **Verdadeiro** - para marcar a mensagem como "vista" (indicando que a mensagem foi lida)
-* **False** - to leave the message's "seen" status untouched
-> * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
+* **False** - para deixar o estado "seen" da mensagem intacto
+> * A função devolve um BLOB vazio se *msgNumber* ou msgID* designar uma mensagem inexistente,
+> * Se nenhuma caixa de correio for seleccionada com o comando [`.selectBox()`](#selectbox), é gerado um erro,
 > * Parâmetros
 
 #### Resultados
@@ -1457,7 +1457,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 #### Descrição
 
-A função `.renameBox()` <!-- REF #IMAPTransporterClass.renameBox().Summary -->muda o nome de uma caixa de correio no servidor IMAP<!-- END REF -->. Attempting to rename a mailbox from a mailbox name that does not exist or to a mailbox name that already exists will generate an error.
+A função `.renameBox()` <!-- REF #IMAPTransporterClass.renameBox().Summary -->muda o nome de uma caixa de correio no servidor IMAP<!-- END REF -->. Tentar mudar o nome de uma caixa de correio de um nome de caixa de correio que não existe ou para um nome de caixa de correio que já existe irá gerar um erro.
 
 No parâmetro `currentName`, passar o nome da caixa de correio para renommer.
 
@@ -1602,7 +1602,7 @@ As chaves de pesquisa podem solicitar o valor a pesquisar:
 
 * **Chaves de pesquisa com um valor de marcador**: o valor pode aceitar uma ou várias palavras-chave (incluindo marcadores padrão), separadas por espaços. Exemplo: `searchCriteria = KEYWORD \Flagged \Draft`
 
-* **Pesquisa-chaves com um valor de conjunto de mensagens**: Identifica um conjunto de mensagens. Para números de sequência de mensagens, estes são números consecutivos de 1 até ao número total de mensagens na caixa de correio. Uma vírgula delimita números individuais; uma vírgula delimita entre dois números, inclusive. Exemplos: `2,4:7,9,12:*` é `2,4,5,6,7,9,12,13,14,15` para uma caixa de correio com 15 mensagens. `searchCriteria = 1:5 RESPOSTA` pesquisa na selecção de mensagens a partir da sequência de mensagens número 1 a 5 para mensagens que tenham o marcador \i1 `searchCriteria= 2,4 RESPOSTA` pesquisa na selecção de mensagens (mensagens números 2 e 4) por mensagens que tenham o marcador \i1 `searchCriteria= 2,4 ANSWERED` search in the message selection (message numbers 2 and 4) for messages which have the \Answered flag set.
+* **Pesquisa-chaves com um valor de conjunto de mensagens**: Identifica um conjunto de mensagens. Para números de sequência de mensagens, estes são números consecutivos de 1 até ao número total de mensagens na caixa de correio. Uma vírgula delimita números individuais; uma vírgula delimita entre dois números, inclusive. Exemplos: `2,4:7,9,12:*` é `2,4,5,6,7,9,12,13,14,15` para uma caixa de correio com 15 mensagens. `searchCriteria = 1:5 RESPOSTA` pesquisa na selecção de mensagens a partir da sequência de mensagens número 1 a 5 para mensagens que tenham o marcador \i1 `searchCriteria= 2,4 RESPOSTA` pesquisa na selecção de mensagens (mensagens números 2 e 4) por mensagens que tenham o marcador \i1 `searchCriteria= 2,4 ANSWERED` pesquisa na selecção de mensagens (mensagens números 2 e 4) por mensagens que tenham o marcador \Answered.
 
 #### Chaves de pesquisa autorizadas
 
