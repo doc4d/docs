@@ -59,15 +59,15 @@ Comando `POP3 New transporter` <!-- REF #_command_.POP3 New transporter.Summary 
 
 No parâmetro *server*, passe um objeto contendo as propriedades abaixo:
 
-| *server*                                                                                                                                                                                                                                                                                                                                                                                                                                  | Valor padrão (se omitido)                                         |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| *server*                                                                                                                                                                                                                                                                                                                                                                                                                                    | Valor padrão (se omitido)                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                             |
-| .**accessTokenOAuth2**: Texto<br/>.**accessTokenOAuth2**: Objecto<br/>Cadeia de texto ou objecto simbólico representando as credenciais de autorização do OAuth2. Usado apenas com OAUTH2 `authenticationMode`. Se `accessTokenOAuth2` for utilizado mas `authenticationMode` for omitido, é utilizado o protocolo OAuth 2 (se permitido pelo servidor). Not returned in *[SMTP transporter](#smtptransporterobject)* object. | nenhum                                                            |
+| .**accessTokenOAuth2**: Texto<br/>.**accessTokenOAuth2**: Objecto<br/>Cadeia de texto ou objecto simbólico representando as credenciais de autorização do OAuth2. Usado apenas com OAUTH2 `authenticationMode`. Se `accessTokenOAuth2` for utilizado mas `authenticationMode` for omitido, é utilizado o protocolo OAuth 2 (se permitido pelo servidor). Não devolvido no objecto *[SMTP transporter](#smtptransporterobject)*. | nenhum                                                            |
 | [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| o modo de autenticação mais seguro disponível no servidor é usado |
 | [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                                                |
 | [<!-- INCLUDE #transporter.host.Syntax -->](#host)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *obrigatório*                                                     |
 | [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| nenhum                                                            |
-| **.password** : TextUser password for authentication on the server. Not returned in *[SMTP transporter](#smtptransporterobject)* object.                                                                                                                                                                                                                                                                                                  | nenhum                                                            |
+| **.password** : TextUser password for authentication on the server. Não devolvido no objecto *[SMTP transporter](#smtptransporterobject)*.                                                                                                                                                                                                                                                                                                  | nenhum                                                            |
 | [<!-- INCLUDE #transporter.port.Syntax -->](#port)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 995                                                               |
 | [<!-- INCLUDE #transporter.user.Syntax -->](#user)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| nenhum                                                            |
 
@@ -113,7 +113,7 @@ A função retorna um objeto [**POP3 transporter**](#pop3-transporter-object). T
 
 #### Descrição
 
-A função `4D.POP3Transporter.new()` <!-- REF #4D.POP3Transporter.new().Summary -->cria e devolve um novo objecto do tipo `4D.POP3Transporter`<!-- END REF -->. It is identical to the [`POP3 New transporter`](#pop3-new-transporter) command (shortcut).
+A função `4D.POP3Transporter.new()` <!-- REF #4D.POP3Transporter.new().Summary -->cria e devolve um novo objecto do tipo `4D.POP3Transporter`<!-- END REF -->. É idêntico ao comando (atalho) [`POP3 New transporter`](#pop3-new-transporter).
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -216,9 +216,9 @@ Executar esse método não remove de verdade qualquer email. O email marcado ser
 
 
 <!-- REF #POP3TransporterClass.getBoxInfo().Params -->
-| Parâmetro  | Tipo   |    | Descrição                                 |
-| ---------- | ------ |:--:| ----------------------------------------- |
-| Resultados | Objeto | <- | boxInfo object|<!-- END REF -->
+| Parâmetro  | Tipo   |    | Descrição                                  |
+| ---------- | ------ |:--:| ------------------------------------------ |
+| Resultados | Objeto | <- | objecto boxInfo|<!-- END REF -->
 
 |
 
