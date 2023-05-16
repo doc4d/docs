@@ -18,7 +18,7 @@ Indicates whether the Web server will be launched on startup of the 4D applicati
 Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
 
 
-#### HTTP Port
+#### Porta HTTP
 
 Listening IP (TCP) port number for HTTP. See [HTTP Port](../WebServer/webServerConfig.md#http-port).
 
