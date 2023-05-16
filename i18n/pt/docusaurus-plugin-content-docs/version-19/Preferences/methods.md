@@ -71,13 +71,13 @@ These options configure the various colors used in the Method editor and debugge
 | **Selection back color**                          | Background color of selection.                                                                                                                                           |
 | **Suggested text**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
 
-## Options
+## Opções
 
 This page configures Method editor display options.
 
 ![](../assets/en/Preferences/options.png)
 
-### Options
+### Opções
 
 #### 4D Programming Language (Use regional system settings)
 
