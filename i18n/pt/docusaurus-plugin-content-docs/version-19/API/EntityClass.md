@@ -366,7 +366,7 @@ O objecto devolvido por `.drop( )` contém as seguintes propriedades:
 | errors        |                           | uma coleção de objetos |                                                                                                                         |
 |               | message                   | text                   | Mensagem de erro                                                                                                        |
 |               | assinatura de componentes | text                   | assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                    |
-|               | errCode                   | number                 | Error code                                                                                                              |
+|               | errCode                   | number                 | Código de erro                                                                                                          |
 
 (\*) Os seguintes valores podem ser devolvidos nas propriedades *status* e *statusText* do objecto *Result* em caso de erro:
 
@@ -787,7 +787,7 @@ O valor resultante é incluído entre 0 e o comprimento da selecção da entidad
 
 #### Descrição
 
-The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore<!-- END REF -->. Otherwise, it returns False.
+A função `.isNew()` <!-- REF #EntityClass.isNew().Summary --> retorna True se a entidade a qual for aplicada foi recém criada e não foi ainda salva na datastore<!-- END REF -->. Caso contrário, devolve False.
 
 #### Exemplo
 
@@ -905,7 +905,7 @@ O objeto retornado por `.lock( )` contém as seguintes propriedades:
 | errors           |                           | uma coleção de objetos |                                                                                                                              |
 |                  | message                   | text                   | Mensagem de erro                                                                                                             |
 |                  | assinatura de componentes | text                   | assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                         |
-|                  | errCode                   | number                 | Error code                                                                                                                   |
+|                  | errCode                   | number                 | Código de erro                                                                                                               |
 
 (\*) Os seguintes valores podem ser devolvidos nas propriedades *status* e *statusText* do objecto *Result* em caso de erro:
 
@@ -1158,7 +1158,7 @@ O objeto retornado por `.save()` contém as propriedades a seguir:
 | errors       |                    | uma coleção de objetos |                                                                                                                          |
 |              | message            | text                   | Mensagem de erro                                                                                                         |
 |              | componentSignature | text                   | Assinatura interna do componente (ex.: "dmbg" significa componente da base de dados)                                     |
-|              | errCode            | number                 | Error code                                                                                                               |
+|              | errCode            | number                 | Código de erro                                                                                                           |
 
 ##### status e statusText
 
