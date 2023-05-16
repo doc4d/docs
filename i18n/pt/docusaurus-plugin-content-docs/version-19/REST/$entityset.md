@@ -7,7 +7,7 @@ After [creating an entity set]($method.md#methodentityset) by using `$method=ent
 
 ## Available syntaxes
 
-| Syntax                                                                                                     | Exemplo                                                                            | Descrição                                                    |
+| Sintaxe                                                                                                    | Exemplo                                                                            | Descrição                                                    |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | [**$entityset/{entitySetID}**](#entitysetentitySetID)                                                      | `/People/$entityset/0ANUMBER`                                                      | Retrieves an existing entity set                             |
 | [**$entityset/{entitySetID}?$operator...&$otherCollection**](#entitysetentitysetidoperatorothercollection) | `/Employee/$entityset/0ANUMBER?$logicOperator=AND &$otherCollection=C0ANUMBER` | Creates a new entity set from comparing existing entity sets |
@@ -47,7 +47,7 @@ You can then create another entity set containing the results from this call by 
 
 Here are the logical operators:
 
-| Operator  | Descrição                                                                                                                                                  |
+| Operador  | Descrição                                                                                                                                                  |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AND       | Returns the entities in common to both entity sets                                                                                                         |
 | OU        | Returns the entities in both entity sets                                                                                                                   |
