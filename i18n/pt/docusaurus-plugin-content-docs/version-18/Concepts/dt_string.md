@@ -36,7 +36,7 @@ The following escape sequences can be used within strings:
 
 ## String operators
 
-| Operação             | Syntax           | Retorna    | Expression              | Valor    |
+| Operação             | Sintaxe          | Retorna    | Expression              | Valor    |
 | -------------------- | ---------------- | ---------- | ----------------------- | -------- |
 | Concatenação         | String + String  | String     | "abc" + "def"           | "abcdef" |
 | Repetição            | String * Number  | String     | "ab" * 3                | "ababab" |
@@ -58,7 +58,7 @@ The following escape sequences can be used within strings:
 
 (*) If the keyword "Mer" is associated with the picture stored in the picture expression (field or variable).
 
-## String comparisons
+## Comparações de cadeias
 
 - Strings are compared on a character-by-character basis (except in the case of searching by [keywords](dt_string.md#keywords), see below).
 - When strings are compared, the case of the characters is ignored; thus, "a"="A" returns `TRUE`. To test if the case of two characters is different, compare their character codes. For example, the following expression returns `FALSE`:
@@ -185,7 +185,7 @@ When you use the character reference symbols, you must address existing characte
 
 - Failing to do so, in interpreted mode, does not cause a syntax error.
 - Failing to do so, in compiled mode (with no options), may lead to memory corruption, if, for instance, you write a character beyond the end of a string or a text.
-- Failing to do so, in compiled mode, causes an error with the option Range Checking On. For example, executing the following code:
+- Failing to do so, in compiled mode, causes an error with the option Range Checking On. Por exemplo, executando o seguinte código:
 
 ```
 //Voisas muito más e desagradáveis a fazer, boo!
@@ -193,7 +193,7 @@ When you use the character reference symbols, you must address existing characte
  vsAnyText[[1]]:="A"
 ```
 
-will trigger the Runtime Error shown here:
+accionará o erro de tempo de execução mostrado aqui:
 
 ![alt-text](../assets/en/Concepts/Syntax_Error.en.png)
 
