@@ -8,9 +8,9 @@ title: Date
 
 **Nota:** No manual 4D Language Reference, parâmetros Data em descrições de comando são  denominadas como Data, exceto quando marcadas de outra forma.
 
-## Date literals
+## Constantes literais de tipo hora
 
-Uma constante literal de tipo data está cercada de sinais de exclamação (!...!). A date must be structured using the ISO format (!YYYY-MM-DD!). Uma data deve ser estruturada usando o formato ISO (!YYYY-MM-DD!) Estes são alguns exemplos de constantes de datas: Estes são alguns exemplos de constantes de datas: Estes são alguns exemplos de constantes de datas:
+Uma constante literal de tipo data está cercada de sinais de exclamação (!...!). Uma data deve ser estruturada utilizando o formato ISO (!AAAA-MM-DD!). Uma data deve ser estruturada usando o formato ISO (!YYYY-MM-DD!) Estes são alguns exemplos de constantes de datas: Estes são alguns exemplos de constantes de datas: Estes são alguns exemplos de constantes de datas:
 
 ```4d
 !1976-01-01!
@@ -29,7 +29,7 @@ Uma data nula é especificada por _!00-00-00!_.
 
 ## Operadores de data
 
-| Operação             | Syntax        | Retorna    | Expression                   | Valor        |
+| Operação             | Sintaxe       | Retorna    | Expression                   | Valor        |
 | -------------------- | ------------- | ---------- | ---------------------------- | ------------ |
 | Diferença de data    | Date - Date   | Número     | !2017-01-20! - !2017-01-01!  | 19           |
 | Acréscimo de dia     | Data + Número | Date       | !2017-01-20! !2017-01-20!    | !2017-01-29! |
