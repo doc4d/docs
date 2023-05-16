@@ -502,6 +502,7 @@ Cada objeto da coleção devolvida ccontém as propriedades listadas na seção.
 
 #### Exemplo
 
+
 O código abaixo define dois contextos e os recupera utilizando `.getAllRemoteContexts()`:
 
 ```4d
@@ -965,7 +966,7 @@ Se criar um método projeto *protectDataFile* para chamar antes dos lançamentos
 
 #### Descrição
 
-A função `.setRemoteContextInfo()` <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->conecta os atributos de dataclass especificados ao contexto de otimização *contextName*<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
+A função `.setRemoteContextInfo()` <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->conecta os atributos de dataclass especificados ao contexto de otimização *contextName*<!-- END REF -->. Se já existir um contexto de optimização para os atributos especificados, este comando substitui-o.
 
 Quando se passa um contexto para as funções da classe ORDA, a optimização do pedido REST é desencadeada imediatamente:
 
@@ -1059,44 +1060,65 @@ persons.lastname, persons.firstname"; "main"; 30)
 
 [.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
+
 <!-- REF DataStoreClass.startRequestLog().Desc -->
 ## .startRequestLog()
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v17 R6 | Adicionado |
+| Versão | Mudanças                                     |
+| ------ | -------------------------------------------- |
+| v20    | Server side support, new `options` parameter |
+| v17 R6 | Adicionado                                   |
 
 </details>
 
-<!-- REF #DataStoreClass.startRequestLog().Syntax -->**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D. File )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
+<!-- REF #DataStoreClass.startRequestLog().Syntax -->**.startRequestLog**()<br/>**.startRequestLog**( *file* : 4D.File )<br/>**.startRequestLog**( *file* : 4D.File ; *options* : Integer )<br/>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parâmetro | Tipo     |    | Descrição                                                        |
-| --------- | -------- | -- | ---------------------------------------------------------------- |
-| file      | 4D. File | -> | Objeto File                                                      |
-| reqNum    | Integer  | -> | Número de petiçõs a manter em memória|<!-- END REF -->
+| Parâmetro | Tipo     |    | Descrição                                                                     |
+| --------- | -------- | -- | ----------------------------------------------------------------------------- |
+| file      | 4D. File | -> | Objeto File                                                                   |
+| options   | Integer  | -> | Log response option (server only)                                             |
+| reqNum    | Integer  | -> | Number of requests to keep in memory (client only)|<!-- END REF -->
 
 |
 
 #### Descrição
 
-A função `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->inicia o registo dos pedidos ORDA no lado do cliente<!-- END REF -->.
+A função `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side or on the server side<!-- END REF -->. Foi criado para depuração em configurações de cliente/servidor.
 
-Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
+:::info
 
-O registro de petições ORDA pode ser enviado a um arquivo ou a memória, dependendo do tipo de parâmetro:
+For a description of the ORDA request log format, please refer to the [**ORDA requests**](../Debugging/debugLogFiles.md#orda-requests) section.
 
-* Se passar um objeto *file* criado com o comando `File`, os dados de registro se escrevem neste arquivo como uma coleção de objetos (formato JSON). Cada objeto representa uma petição.<br/>Se o arquivo não existir, será criado. No caso contrário, ou seja, se o arquivo já existir, os novos dados de registro serão adicionados a ele. Se chamar a `.startRequestLog( )` com um arquivo enquanto se iniciou previamente um registro na memória, o registro em memória para e é esvaziado.
+:::
+
+#### Client-side
+
+To create a client-side ORDA request log, call this function on a remote machine. The log can be sent to a file or to memory, depending on the parameter type:
+
+* Se passar um objeto *file* criado com o comando `File`, os dados de registro se escrevem neste arquivo como uma coleção de objetos (formato JSON). Cada objeto representa uma petição.<br/>Se o arquivo não existir, será criado. No caso contrário, ou seja, se o arquivo já existir, os novos dados de registro serão adicionados a ele. If `.startRequestLog()` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
 > Deve adicionar manualmente um caractere \N ao final do arquivo para realizar uma validação JSON
 
 * Se passar um inteiro *reqNum*, se esvazia o registro em memória (se houver) e se inicializa um novo registro. Vai manter *reqNum* petições em memória até que se alcance o número, em cujo caso se esvaziam as entradas mais antigas (pilha FIFO).<br/>Se chamar a `.startRequestLog()` com um *reqNum* enquanto tiver iniciado previamente um registro em um arquivo, se para o registro do arquivo.
 
 * Se não tiver passado nenhum parâmetro, o registro se inicia na memória. Se chamou previamente a `.startRequestLog()` com um *reqNum* (antes de um `.stopRequestLog()`), os datos do registro são empilhados em memória até a próxima vez que se esvazie o registro ou se chame a `.stopRequestLog()`.
 
-Para uma descrição do formato do registro de petições de ORDA, consulte a seção [**Perguntas do cliente ORDA**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373).
+#### Server-side
+
+To create a server-side ORDA request log, call this function on the server machine. The log data is written in a file in `.jsonl` format. Each object represents a request. If the file does not already exist, it is created. No caso contrário, ou seja, se o arquivo já existir, os novos dados de registro serão adicionados a ele.
+
+- If you passed the *file* parameter, the log data is written in this file, at the requested location. - If you omit the *file* parameter or if it is null, the log data is written in a file named *ordaRequests.jsonl* and stored in the "/LOGS" folder.
+- The *options* parameter can be used to specify if the server response has to be logged, and if it should include the body. By default when the parameter is omitted, the full response is logged. The following constants can be used in this parameter:
+
+| Parâmetros                    | Descrição                                 |
+| ----------------------------- | ----------------------------------------- |
+| srl log all                   | Log the response entirely (default value) |
+| srl log no response           | Disable the logging of the response       |
+| srl log response without body | Log the response without the body         |
+
 
 #### Exemplo 1
 
@@ -1133,6 +1155,25 @@ Se quiser registrar as petições dos clientes ORDA na memória:
  ALERT("The longest request lasted: "+String($log.max("duration"))+" ms")
 ```
 
+#### Exemplo 3
+
+You want to log ORDA server requests in a specific file and enable the log sequence number and duration:
+
+```4d
+SET DATABASE PARAMETER(4D Server Log Recording;1)
+
+$file:=Folder(fk logs folder).file("myOrdaLog.jsonl")
+ds.startRequestLog($file)
+...
+ds.stopRequestLog()
+SET DATABASE PARAMETER(4D Server Log Recording;0)
+
+
+```
+
+
+
+
 <!-- END REF -->
 
 <!-- REF DataStoreClass.startTransaction().Desc -->
@@ -1160,7 +1201,7 @@ Se quiser registrar as petições dos clientes ORDA na memória:
 
 #### Descrição
 
-A função `.startTransaction()` <!-- REF #DataStoreClass.startTransaction().Summary -->inicia uma transação no processo atual na base de dados que corresponde à base de dados à qual se aplica<!-- END REF -->. Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
+A função `.startTransaction()` <!-- REF #DataStoreClass.startTransaction().Summary -->inicia uma transação no processo atual na base de dados que corresponde à base de dados à qual se aplica<!-- END REF -->. Quaisquer alterações feitas às entidades do datastore no processo da transacção são armazenadas temporariamente até que a transacção seja validada ou cancelada.
 > Se chamar a este método no armazém de dados principal (ou seja, o armazém de dados devolvido pelo comando `ds`), a transação se aplica a todas as operações realizadas no armazém de dados principal e no banco de dados subjacente, incluindo portanto ORDA e as linguagens clássicas.
 
 Pode aninhar várias transações (subtransações). Cada transação ou subtransação deve ser eventualmente cancelada ou validada. Note que se cancelar a transação principal, também se cancelam todas suas subtransações, mesmo se tiver validado individualmente mediante a função `.validateTransaction()`.
@@ -1205,9 +1246,10 @@ Pode aninhar várias transações (subtransações). Cada transação ou subtran
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v17 R6 | Adicionado |
+| Versão | Mudanças            |
+| ------ | ------------------- |
+| v20    | Server side support |
+| v17 R6 | Adicionado          |
 
 </details>
 
@@ -1223,9 +1265,11 @@ Pode aninhar várias transações (subtransações). Cada transação ou subtran
 
 #### Descrição
 
-A função `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->para o registro de logs de petições ORDA no lado do cliente<!-- END REF --> (em arquivo ou em memória). É particularmente útil quando se registrar um arquivo, já que realmente fecha o documento aberto no disco.
+A função `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the machine it is called (client or server)<!-- END REF -->.
 
-Esta função deve ser chamada em um 4D remoto, do contrário não faz nada. Foi criado para depuração em configurações de cliente/servidor.
+It actually closes the opened document on disk. On the client side, if the log was started in memory, it is stopped.
+
+This function does nothing if logging of ORDA requests was not started on the machine.
 
 #### Exemplo
 
