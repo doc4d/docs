@@ -80,7 +80,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-A propriedade `.extension` devolve <!-- REF #document.extension.Summary -->a extensão do nome do ficheiro (se existir)<!-- END REF -->. An extension always starts with ".". Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome do arquivo não tiver extensão.
+A propriedade `.extension` devolve <!-- REF #document.extension.Summary -->a extensão do nome do ficheiro (se existir)<!-- END REF -->. Uma extensão sempre começa com ".". Uma extensão sempre começa com "." A propriedade devolve uma string vazia se o nome do arquivo não tiver extensão.
 
 Essa propriedade é **apenas leitura**.
 
