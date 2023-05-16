@@ -337,7 +337,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 <!-- REF #WebSocketServerClass.connections.Desc -->
 ## .connections
 
-<!-- REF #WebSocketServerClass.connections.Syntax -->**connections** : Collection<!-- END REF -->
+<!-- REF #WebSocketServerClass.connections.Syntax -->**.connections** : Collection<!-- END REF -->
 
 #### 説明
 
@@ -352,7 +352,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 <!-- REF #WebSocketServerClass.dataType.Desc -->
 ## .dataType
 
-<!-- REF #WebSocketServerClass.dataType.Syntax -->**dataType** : Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.dataType.Syntax -->**.dataType** : Text<!-- END REF -->
 
 #### 説明
 
@@ -365,7 +365,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 <!-- REF #WebSocketServerClass.handler.Desc -->
 ## .handler
 
-<!-- REF #WebSocketServerClass.handler.Syntax -->**handler** : Object<!-- END REF -->
+<!-- REF #WebSocketServerClass.handler.Syntax -->**.handler** : Object<!-- END REF -->
 
 #### 説明
 
@@ -377,7 +377,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 <!-- REF #WebSocketServerClass.path.Desc -->
 ## .path
 
-<!-- REF #WebSocketServerClass.path.Syntax -->**path** : Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.path.Syntax -->**.path** : Text<!-- END REF -->
 
 #### 説明
 
@@ -411,7 +411,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 <!-- REF #WebSocketServerClass.terminated.Desc -->
 ## .terminated
 
-<!-- REF #WebSocketServerClass.terminated.Syntax -->**terminated** : Boolean<!-- END REF -->
+<!-- REF #WebSocketServerClass.terminated.Syntax -->**.terminated** : Boolean<!-- END REF -->
 
 #### 説明
 
