@@ -13,7 +13,7 @@ Ser capaz de se referir a algo sem conhecer a sua identidade exata é muito úti
 
 Pode usar apontadores para referenciar tabelas, campos, variáveis, matrizes, elementos de array, e objetos. A tabela a seguir dá um exemplo de cada tipo de dado:
 
-| Tipo           | Referenciação           | Para usar                | To Assign                |
+| Tipo           | Referenciação           | Para usar                | Atribuição               |
 | -------------- | ----------------------- | ------------------------ | ------------------------ |
 | Tabela         | vpTable:=->[Table]      | DEFAULT TABLE(vpTable->) | n/a                      |
 | Campo          | vpField:=->[Table]Field | ALERT(vpField->)         | vpField->:="John"        |
@@ -77,12 +77,12 @@ Con:
  vPtrC:=->outroObject
 ```
 
-| Operação     | Syntax            | Retorna    | Expression    | Valor |
-| ------------ | ----------------- | ---------- | ------------- | ----- |
-| Equality     | Pointer = Pointer | Parâmetros | vPtrA = vPtrB | True  |
-|              |                   |            | vPtrA = vPtrC | False |
-| Desigualdade | Pointer # Pointer | Parâmetros | vPtrA # vPtrC | True  |
-|              |                   |            | vPtrA # vPtrB | False |
+| Operação     | Sintaxe             | Retorna    | Expression    | Valor |
+| ------------ | ------------------- | ---------- | ------------- | ----- |
+| Equality     | Ponteiro = Ponteiro | Parâmetros | vPtrA = vPtrB | True  |
+|              |                     |            | vPtrA = vPtrC | False |
+| Desigualdade | Pointer # Pointer   | Parâmetros | vPtrA # vPtrC | True  |
+|              |                     |            | vPtrA # vPtrB | False |
 
 ## Principais usos
 ### Ponteiros para tabelas
