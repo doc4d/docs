@@ -110,7 +110,7 @@ $ok:=Folder("Monday:Tuesday";fk platform path).create() //a volume deve ser cham
 $ko:=Folder("myFolder").create() //relative pathname with constructor
 ```
 
-If you want to handle files or folders in various locations (project folder, system folders, etc.), you can use `filesystems` (see above). For example, you can write:
+If you want to handle files or folders in various locations (project folder, system folders, etc.), you can use `filesystems` (see above). Por exemplo, pode escrever:
 
 ```4d
 $okFolder:=Folder("/PACKAGE/myFolder").create() //folder created at the structure level
