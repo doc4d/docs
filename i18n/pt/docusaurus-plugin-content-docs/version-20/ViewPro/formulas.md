@@ -55,7 +55,7 @@ All formulas have operands and operators:
 
 The following operators can be used with two operands of the same type:
 
-| Operator   | Comparação           |
+| Operador   | Comparação           |
 | ---------- | -------------------- |
 | =          | igual a              |
 | `<>` | diferente de         |
@@ -69,7 +69,7 @@ The following operators can be used with two operands of the same type:
 
 List of operators from most to least important:
 
-| Operator                                      | Descrição                     |
+| Operador                                      | Descrição                     |
 | --------------------------------------------- | ----------------------------- |
 | ()                                            | Parênteses (para agrupamento) |
 | -                                             | Negate                        |
@@ -210,7 +210,7 @@ We want to print "Hello World" in a 4D View Pro area cell using a 4D project met
 
 
 
-### Parameters
+### Parâmetros
 
 Parameters can be passed to 4D functions that call project methods using the following syntax:
 
