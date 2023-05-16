@@ -769,10 +769,10 @@ $status:=$transporter.expunge()
 
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
-| Parâmetro  | Tipo   |    | Descrição                                 |
-| ---------- | ------ |:--:| ----------------------------------------- |
-| name       | Text   | -> | Nome da nova caixa de correio             |
-| Resultados | Objeto | <- | boxInfo object|<!-- END REF -->
+| Parâmetro  | Tipo   |    | Descrição                                  |
+| ---------- | ------ |:--:| ------------------------------------------ |
+| name       | Text   | -> | Nome da nova caixa de correio              |
+| Resultados | Objeto | <- | objecto boxInfo|<!-- END REF -->
 
 |
 
@@ -1661,11 +1661,11 @@ As chaves de pesquisa podem solicitar o valor a pesquisar:
 
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Parâmetro  | Tipo    |    | Descrição                                 |
-| ---------- | ------- |:--:| ----------------------------------------- |
-| name       | Text    | -> | Nome da nova caixa de correio             |
-| state      | Integer | -> | Estado de acesso à caixa de correio       |
-| Resultados | Objeto  | <- | boxInfo object|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                  |
+| ---------- | ------- |:--:| ------------------------------------------ |
+| name       | Text    | -> | Nome da nova caixa de correio              |
+| state      | Integer | -> | Estado de acesso à caixa de correio        |
+| Resultados | Objeto  | <- | objecto boxInfo|<!-- END REF -->
 
 |
 
