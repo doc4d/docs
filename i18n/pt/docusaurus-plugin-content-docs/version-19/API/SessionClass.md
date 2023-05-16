@@ -34,9 +34,9 @@ Para obter informação detalhada sobre a implementação da sessão, consulte [
 
 
 <!-- REF #_command_.Session.Params -->
-| Parâmetro  | Tipo        |    | Descrição                                 |
-| ---------- | ----------- |:--:| ----------------------------------------- |
-| Resultados | 4D. Session | <- | Session object|<!-- END REF -->
+| Parâmetro  | Tipo        |    | Descrição                                  |
+| ---------- | ----------- |:--:| ------------------------------------------ |
+| Resultados | 4D. Session | <- | Objecto Session|<!-- END REF -->
 
 |
 
@@ -98,7 +98,7 @@ IP:port/4DACTION/action_Session
 
 #### Descrição
 
-A função `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->retira todos os privilégios associados à sessão<!-- END REF -->. As a result, the session automatically becomes a Guest session.
+A função `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->retira todos os privilégios associados à sessão<!-- END REF -->. Como resultado, a sessão torna-se automaticamente uma sessão de convidado.
 
 #### Exemplo
 
