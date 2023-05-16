@@ -1422,9 +1422,9 @@ Employee.newSelection(dk keep ordered)
 
 #### Descrição
 
-The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the entity selection with the *entity* or *entitySelection* parameter using the logical (not exclusive) OR operator<!-- END REF -->; it returns a new, unordered entity selection that contains all the entities from the entity selection and the parameter.
+The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the entity selection with the *entity* or *entitySelection* parameter using the logical (not exclusive) OR operator<!-- END REF -->; retorna uma nova seleção de entidade não ordenada que contenha todas as entidades da seleção de entidade e o parâmetro.
 
-*   If you pass *entity* as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
+*   Se passar como parâmetro *entitySelection* pode comparar seleções de entidade. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
 *   Se a seleção de entidade original e o parâmetro *entitySelection* for vazio, uma seleção de entidade vazia é retornada. Se a seleção de entidade original for vazia, uma referência a  *entitySelection* ou uma seleção de entidade contendo apenas *entity* será retornada.
 > > > Pode comparar [entity selections ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). A seleção resultante é sempre desordenada.
 
