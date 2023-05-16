@@ -187,9 +187,9 @@ Aberto sem interface (modo headless):
 ## tool4d
 
 
-**tool4d** is a free, lightweight, stand-alone application allowing you to open a 4D project in headless mode and execute some 4D code using the CLI.
+**tool4d** é uma aplicação gratuita, leve e autónoma que permite abrir um projecto 4D em modo headless e executar algum código 4D utilizando o CLI.
 
-tool4d is available on Windows and macOS and is always associated to a 4D release (same version and build number). It is only provided in English localization.
+tool4d está disponível em Windows e macOS e está sempre associado a uma versão 4D (mesma versão e número de compilação). Só é fornecido na localização em inglês.
 
 tool4d é uma ferramenta perfeita para o fazer:
 
@@ -200,9 +200,9 @@ tool4d é uma ferramenta perfeita para o fazer:
 
 ### Utilizar tool4d
 
-You can get tool4d from the 4D [Product download page](https://product-download.4d.com/).
+Pode obter tool4d na[página de transferência do produto 4D](https://product-download.4d.com/).
 
-Utiliza-se o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projecto 4D padrão. You can use all arguments described in the above table, except --`webadmin` since this component is [disabled in tool4d](#disabled-4d-features). With tool4d, the following specific sequence is launched:
+Utiliza-se o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projecto 4D padrão. Pode utilizar todos os argumentos descritos na tabela acima, excepto --`webadmin` uma vez que este componente está [desactivado no tool4d](#disabled-4d-features). With tool4d, the following specific sequence is launched:
 
 1. tool4d executes the `On Startup` database method (and all "automatic" methods such as [user method](../Users/handling_users_groups.md#user-properties)), except if the `--skip-onstartup` argument is passed.
 2. tool4d executes the method designated by the `--startup-method` argument, if any.
