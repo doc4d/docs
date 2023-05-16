@@ -53,7 +53,7 @@ Ver também [ECMA Script standard](https://www.ecma-international.org/ecma-262/5
 > **Nota:** são aplicadas regras adicionais aos nomes de atributos de objetos (devem ser ajustados à especificação ECMAScript). Para saber mais, consulte [Identificadores de propriedades de objetos](Concepts/dt_object.md#object-property-identifiers).
 
 
-## Parameters
+## Parâmetros
 
 Os nomes dos parâmetros devem começar com um caracter `$` e seguir as mesmas regras que os nomes das variáveis [](#variables).
 
