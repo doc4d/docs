@@ -306,7 +306,7 @@ The `.add()` function <!-- REF #EntitySelectionClass.add().Summary -->addiciona 
 
 **Adicionar uma seleção de entidades**
 
-*   If the entity selection is ordered, its order is kept and *entitySelection* is added at the end of the selection. If references to the same entities of *entitySelection* already belong to the entity selection, they are duplicated and new references are added.
+*   Se a selecção de entidades estiver ordenada, a sua ordem é mantida e *entitySelection* é adicionado no final da selecção. Se as referências às mesmas entidades de *entitySelection* já pertencerem à selecção de entidades, são duplicadas e são adicionadas novas referências.
 *   Se a seleção de entidade nãofor ordenada, ela fica ordenada.
 > Para saber mais veja [Entity selections ordenada ou não ordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
@@ -379,7 +379,7 @@ $sellist2:=$sellist2.add($sellist1)
 
 #### Descrição
 
-The `.and()` function <!-- REF #EntitySelectionClass.and().Summary -->combines the entity selection with an *entity* or *entitySelection* parameter using the logical AND operator<!-- END REF -->; it returns a new, unordered entity selection that contains only the entities that are referenced in both the entity selection and the parameter.
+The `.and()` function <!-- REF #EntitySelectionClass.and().Summary -->combines the entity selection with an *entity* or *entitySelection* parameter using the logical AND operator<!-- END REF -->; se retornar uma nova e não ordenada seleção de entidade que contenha só as entidades referenciaadas tanto na seleção de entidade quanto no parâmetro.
 
 *   Se passar *entity* como parâmetro, se combina esta entidade com a entity selection. Se a entidade pertencer à entity selection, se devolve uma nova entity selection que só contém a entidade. Senão, uma seleção de entidades vazia é retornada.
 *   Se passar como parâmetro *entitySelection* pode comparar seleções de entidade. Uma nova seleção de entidade que contenha só as entidades que são referenciadas em ambas as seleções sejam retornadas. Senão, uma nova seleção de entidade contém a seleção de entidade original e a entidade é retornada.
@@ -781,10 +781,10 @@ $jobs:=ds. Employee.all().distinct("jobName";dk count values)
 
 
 <!-- REF #EntitySelectionClass.distinctPaths().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                     |
-| ---------- | ---------- |:--:| ------------------------------------------------------------- |
-| atributo   | Text       | -> | Nome do atributo do objecto cujos caminhos pretende obter     |
-| Resultados | Collection | <- | New collection with distinct paths|<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                       |
+| ---------- | ---------- |:--:| --------------------------------------------------------------- |
+| atributo   | Text       | -> | Nome do atributo do objecto cujos caminhos pretende obter       |
+| Resultados | Collection | <- | Nova colecção com caminhos distintos|<!-- END REF -->
 
 
 |
@@ -796,7 +796,7 @@ A função `.distinct()` <!-- REF #EntitySelectionClass.distinctPaths().Summary 
 
 *attributePath* não se encontra na classe de dados da entity selection.
 
-Após a chamada, o tamanho da colecção devolvida é igual ao número de caminhos distintos encontrados em *attribute* para a selecção da entidade. Paths are returned as strings including nested attributes and collections, for example "info.address.number" or "children[].birthdate". Entities with a null value in the *attribute* are not taken into account.
+Após a chamada, o tamanho da colecção devolvida é igual ao número de caminhos distintos encontrados em *attribute* para a selecção da entidade. Os caminhos são devolvidos como cadeias de caracteres, incluindo atributos e colecções aninhados, por exemplo "info.address.number" ou "children[].birthdate". As entidades com um valor nulo no *attribute* não são tidas em conta.
 
 #### Exemplo
 
@@ -952,7 +952,7 @@ Se vários *attributePath*, forem dados, deve dar um *targetPath* para cada um. 
 *   Atributos de dataclass com [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" são extraídas como coleção de seleção de entidades.
 *   *attributePath* designa um atributo que não existir na dataclass da entity selection.
 
-> Entities of a collection of entities accessed by \[ ] are not reloaded from the database.
+> As entidades de uma colecção de entidades acedidas por \[ ] não são recarregadas da base de dados.
 
 
 #### Exemplo
@@ -1229,7 +1229,7 @@ Form.products.add(Form.product)
 #### Descrição
 
 The `.isOrdered()` function <!-- REF #EntitySelectionClass.isOrdered().Summary -->returns True if the entity selection is ordered<!-- END REF -->e False se não for ordenada
-> This function always returns True when the entity selection comes from a remote datastore.
+> Esta função devolve sempre True quando a selecção da entidade provém de um datastore remoto.
 
 Para mais informação, consulte [Entity selection ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
@@ -1516,7 +1516,7 @@ Se quisermos ter uma seleção de empregados mulheres que se chamam "Jones" que 
 
 #### Exemplo 3
 
-In a user interface, we have a list that displays items in a specific order. If the user selects items in the list to remove them, the order must be kept when refreshing the list:
+Em uma interface de usuário se tivermos uma lista que exibe itens em uma ordem específica. Se o usuário selecionar itens na lista para remove-los, a ordem deve ser mantida quando refrescar a lista:
 
 ```4d
 Employee.newSelection(dk keep ordered)
