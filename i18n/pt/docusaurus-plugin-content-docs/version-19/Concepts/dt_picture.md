@@ -25,9 +25,9 @@ O formulário retornado para cada formato dependerá da forma como o Codec é gr
 
 A maioria dos [comandos de gerenciamento de imagens 4D](https://doc.4d.com/4Dv18/4D/18/Pictures.201-4504337.en.html) pode receber um Codec ID como parâmetro. É imperativo, portanto, usar a ID do sistema retornada pelo comando `PICTURE CODEC LIST`. Os formatos de imagem reconhecidos por 4D são devolvidos pelo comando `PICTURE CODEC LIST` .
 
-## Picture operators
+## Operadores de imagem
 
-| Operação                | Syntax                 | Retorna | Ação                                                                                                                                                                       |
+| Operação                | Sintaxe                | Retorna | Ação                                                                                                                                                                       |
 | ----------------------- | ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Concatenação horizontal | Foto1 + Foto2          | Imagem  | Adicionar Pict2 à direita da Pict1                                                                                                                                         |
 | Concatenação vertical   | Pict1 / Pict2          | Imagem  | Acrescentar Pict2 ao fundo de Pict1                                                                                                                                        |
