@@ -5,7 +5,7 @@ title: Restaurar um backup
 
 4D lhe permite restaurar conjuntos inteiros de dados de um banco de dados no caso de que se apresente um incidente, independentemente da causa do mesmo. Podem ocorrer dois tipos principais de incidentes:
 
-- A parada inesperada do banco enquanto estiver em uso. This incident can occur because of a power outage, system element failure, etc. Esse incidente pode ocorrer por causa de uma falha de energia, erro em um elemento do sistema, etc. This incident can occur because of a power outage, system element failure, etc. In this case, depending on the current state of the data cache at the moment of the incident, the restore of the database can require different operations:
+- A parada inesperada do banco enquanto estiver em uso. Esse incidente pode ocorrer por causa de uma falha de energia, erro em um elemento do sistema, etc. Esse incidente pode ocorrer por causa de uma falha de energia, erro em um elemento do sistema, etc. This incident can occur because of a power outage, system element failure, etc. In this case, depending on the current state of the data cache at the moment of the incident, the restore of the database can require different operations:
     - Se a cache estiver vazia, o banco de dados abre normalmente. Quaisquer mudanças feitas no banco de dados foram registradas. Este caso não exige nenhuma operação particular
     - Se a cache conter operações, o arquivo de dados está intacto mas exige integrar o arquivo de histórico atual.
     - Se a cache estiver no processo de ser escrita, o arquivo de dados está provavelmente danificado. When restoring a backup and integrating the current log file in a encrypted database:
@@ -45,7 +45,7 @@ A pasta de destino é mostrada. Durante a restauração, 4D coloca todos os arqu
 Pode restaurar manualmente um arquivo do banco de dados atual utilizando a página [Restauração](MSC/restore.md) do Centro de Manutenção e Segurança (CMS).
 
 
-## Manually integrating the log
+## Integração manual do histórico
 
 Se não tiver marcado a opção de integração automática de arquivo de histórico na página Restaurar do CSM (ver [Integração sucessiva de vários arquivos de histórico](MSC/restore.md#successive-intergration-of-several-data-log-files)), aparece uma caixa de diálogo de advertência durante a abertura do banco quando 4D advertir que o arquivo de histórico conter mais operações do que as que foram realizadas no banco de dados.
 
