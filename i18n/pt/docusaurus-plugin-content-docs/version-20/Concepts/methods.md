@@ -190,7 +190,7 @@ This button is only active for project methods and for the following database me
 - On Server Startup
 - On Server Shutdown
 
-For more information, see [Toolbar](../code-editor/write-class-method.md#toolbar).
+Para mais informações, consulte [Toolbar](../code-editor/write-class-method.md#toolbar).
 
 #### From the Execute Method dialog box
 
