@@ -193,7 +193,7 @@ NewPhrase:=Uppercase4("This is good.")
 
 Neste exemplo, a variável *NewPhrase* recebe “THIS is good.”
 
-O valor a devolver é posto na variável local `$0`. Pode ser usado como tal dentro da subrotina. For example, you can write:
+O valor a devolver é posto na variável local `$0`. Pode ser usado como tal dentro da subrotina. Por exemplo, pode escrever:
 
 ```4d
 // Do_something
