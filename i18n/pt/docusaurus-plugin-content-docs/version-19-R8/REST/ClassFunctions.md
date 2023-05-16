@@ -26,7 +26,7 @@ Functions must always be called using REST **POST** requests (a GET request will
 
 Functions are called on the corresponding object on the server datastore.
 
-| Class function                                                     | Syntax                                                                      |
+| Class function                                                     | Sintaxe                                                                     |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
 | [datastore class](ORDA/ordaClasses.md#datastore-class)             | `/rest/$catalog/DataStoreClassFunction`                                     |
 | [dataclass class](ORDA/ordaClasses.md#dataclass-class)             | `/rest/{dataClass}/DataClassClassFunction`                                  |
@@ -44,7 +44,7 @@ Functions are called on the corresponding object on the server datastore.
 > All 4D code called from REST requests **must be thread-safe** if the project runs in compiled mode, because the REST Server always uses preemptive processes in this case (the [*Use preemptive process* setting value](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server) is ignored by the REST Server).
 
 
-## Parameters
+## Parâmetros
 
 
 
