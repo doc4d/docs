@@ -57,7 +57,7 @@ Ver também [ECMA Script standard](https://www.ecma-international.org/ecma-262/5
 :::
 
 
-## Parameters
+## Parâmetros
 
 Os nomes dos parâmetros devem começar com um caracter `$` e seguir as mesmas regras que os nomes das variáveis [](#variables).
 
