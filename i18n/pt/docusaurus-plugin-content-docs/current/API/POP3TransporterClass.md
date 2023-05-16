@@ -257,7 +257,7 @@ O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 | Versão | Mudanças                          |
 | ------ | --------------------------------- |
-| v20    | Support of *headerOnly* parameter |
+| v20    | Suporte de parâmetro *headerOnly* |
 | v18 R2 | Adicionado                        |
 
 </details>
@@ -266,10 +266,10 @@ O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 
 <!-- REF #POP3TransporterClass.getMail().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                                    |
-| ---------- | ---------- |:--:| ---------------------------------------------------------------------------- |
-| msgNumber  | Integer    | -> | Número da mensagem que na lista                                              |
-| headerOnly | Parâmetros | -> | True to download only the email headers (default is False)                   |
+| Parâmetro  | Tipo       |    | Descrição                                                                               |
+| ---------- | ---------- |:--:| --------------------------------------------------------------------------------------- |
+| msgNumber  | Integer    | -> | Número da mensagem que na lista                                                         |
+| headerOnly | Parâmetros | -> | True para descarregar apenas os cabeçalhos de correio electrónico (por defeito é False) |
 | Resultados | Objeto     | <- | [Email objecto](EmailObjectClass.md#email-object)|<!-- END REF -->
 
 |
@@ -280,11 +280,11 @@ A função `.getMail()` <!-- REF #POP3TransporterClass.getMail().Summary -->devo
 
 Passe em *msgNumber* o número da mensagem a recuperar. O número é retornado na propriedade número pela função [`.getMailInfoList()`](#getmailinfolist).
 
-Optionally, you can pass `true` in the *headerOnly* parameter to exclude the body parts from the returned `Email` object. Only headers properties ([`headers`](EmailObjectClass.md#headers), [`to`](EmailObjectClass.md#to), [`from`](EmailObjectClass.md#from)...) are then returned. This option allows you to optimize the downloading step when a lot of emails are on the server.
+Opcionalmente, pode passar `true` no parâmetro *headerOnly* para excluir as partes do corpo do objecto devolvido `Email`. Apenas as propriedades dos cabeçalhos ([`cabeçalhos`](EmailObjectClass.md#headers), [`a`](EmailObjectClass.md#to), [`de`](EmailObjectClass.md#from)...) são então devolvidas. Esta opção permite-lhe optimizar a etapa de descarregamento quando muitos e-mails estão no servidor.
 
 :::note
 
-The *headerOnly* option may not be supported by the server.
+A opção *headerOnly* pode não ser suportada pelo servidor.
 
 :::
 
@@ -295,7 +295,7 @@ O método retorna Null se:
 
 **Objeto devolvido**
 
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object).
+`.getMail()` devolve um [objecto `Email`](EmailObjectClass.md#email-object).
 
 
 ##### Exemplo
@@ -395,9 +395,9 @@ O método retorna **Null** se:
 
 
 <!-- REF #POP3TransporterClass.getMailInfoList().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                   |
-| ---------- | ---------- |:--:| ----------------------------------------------------------- |
-| Resultados | Collection | <- | Collection of `mailInfo` objects|<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                  |
+| ---------- | ---------- |:--:| ---------------------------------------------------------- |
+| Resultados | Collection | <- | Colecção de objectos `mailInfo`|<!-- END REF -->
 
 |
 
