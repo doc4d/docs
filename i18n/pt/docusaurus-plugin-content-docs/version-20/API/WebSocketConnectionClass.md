@@ -126,7 +126,7 @@ This property is read-only.
 
 #### Descrição
 
-The `.terminate()` function <!-- REF #WebSocketConnectionClass.terminate().Summary -->forces the connection to close<!-- END REF -->.
+A função `.terminate()` <!-- REF #WebSocketConnectionClass.terminate().Summary -->forces the connection to close<!-- END REF -->.
 
 A *code* and *message* can be sent to the client during the closure to indicate the reason of the termination.
 
