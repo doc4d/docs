@@ -585,7 +585,7 @@ Quando você executar este código:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
+com `\t` (tab) como separador e `\r\n` (CRLF) como delimitador de linha.
 
 Aqui está outro exemplo com o mesmo arquivo, mas um delimitador de linha diferente:
 
