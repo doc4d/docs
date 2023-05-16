@@ -81,7 +81,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### Descrição
 
-O comando `File` <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. O comando aceita duas sintaxes:
+O comando `File` <!-- REF #_command_.File.Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. O comando aceita duas sintaxes:
 
 **File ( path { ; pathType } { ; * })**
 
@@ -143,7 +143,7 @@ Se o comando for chamado a partir de um componente, passe o parâmetro opcional 
 
 #### Descrição
 
-A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
+A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
 
 > It is recommended to use the [`File`](#file) shortcut command instead of `4D. File.new()`.
 
