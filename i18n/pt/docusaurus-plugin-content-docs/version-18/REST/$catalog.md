@@ -9,7 +9,7 @@ O catálogo descreve todos os dataclasses e atributos disponíveis na datastore.
 
 ## Available syntaxes
 
-| Syntax                                        | Exemplo              | Descrição                                                                            |
+| Sintaxe                                       | Exemplo              | Descrição                                                                            |
 | --------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------ |
 | [**$catalog**](#catalog)                      | `/$catalog`          | Devolve uma lista dos valores de referência do seu projecto juntamente com dois URIs |
 | [**$catalog/$all**](#catalogall)              | `/$catalog/$all`     | Devolve informação sobre todos os dataclasses do seu projecto e os seus atributos    |
