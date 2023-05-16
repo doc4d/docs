@@ -83,7 +83,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### Descrição
 
-O comando `File` <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. O comando aceita duas sintaxes:
+O comando `File` <!-- REF #_command_.File.Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. O comando aceita duas sintaxes:
 
 **File ( path { ; pathType } { ; * })**
 
@@ -145,7 +145,7 @@ Se o comando for chamado a partir de um componente, passe o parâmetro opcional 
 
 #### Descrição
 
-A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
+A função `4D. File.new()` <!-- REF #4D.File.new().Summary -->cria e devolve um novo objecto do tipo `4D.File`<!-- END REF -->. É idêntico ao comando [`File`](#file) (atalho).
 
 > It is recommended to use the [`File`](#file) shortcut command instead of `4D. File.new()`.
 
@@ -480,7 +480,7 @@ Se utilizar o parâmetro *modo* (texto), passe o modo de abertura para a manipul
 
 Se utilizar o parâmetro *opções* (objecto), pode passar mais opções para o file handle através das seguintes propriedades (estas propriedades podem ser lidas posteriormente a partir do objeto aberto [file handle](FileHandleClass)):
 
-| *options*         | Tipo           | Descrição                                                                                                                       | Default       |
+| *options*         | Tipo           | Descrição                                                                                                                       | O padrãO      |
 | ----------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------- |
 | `.mode`           | Text           | Modo de abertura (ver *modo* acima)                                                                                             | "read"        |
 | `.charset`        | Text           | Charset utilizado na leitura ou na escrita do arquivo. Utilizar o nome padrão do conjunto (por exemplo "ISO-8859-1" ou "UTF-8") | "UTF-8"       |
