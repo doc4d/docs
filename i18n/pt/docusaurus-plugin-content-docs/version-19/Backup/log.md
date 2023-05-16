@@ -26,7 +26,7 @@ Para saber mais sobre essas ações, consulte a página [Análise de atividades]
 
 4D gerencia o arquivo de historial. Leva em consideração todas as operações que afetam o arquivo de dados por igual, independente das manipulações realizadas pelo usuário, métodos 4D, o motor SQL, os plug-ins, ou um navegador web ou uma aplicação móvel.
 
-The following illustration sums up how the log file works:
+A instrução abaixo resume o funcionamento do arquivo de historial:
 
 ![](../assets/en/Backup/backup05.png)
 
