@@ -284,7 +284,7 @@ O método retorna Null se:
 
 **Objeto devolvido**
 
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object).
+`.getMail()` devolve um [objecto `Email`](EmailObjectClass.md#email-object).
 
 ##### Exemplo
 
@@ -383,9 +383,9 @@ O método retorna **Null** se:
 
 
 <!-- REF #POP3TransporterClass.getMailInfoList().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                   |
-| ---------- | ---------- |:--:| ----------------------------------------------------------- |
-| Resultados | Collection | <- | Collection of `mailInfo` objects|<!-- END REF -->
+| Parâmetro  | Tipo       |    | Descrição                                                  |
+| ---------- | ---------- |:--:| ---------------------------------------------------------- |
+| Resultados | Collection | <- | Colecção de objectos `mailInfo`|<!-- END REF -->
 
 |
 
