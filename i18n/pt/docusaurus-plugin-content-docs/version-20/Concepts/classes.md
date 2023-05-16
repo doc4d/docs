@@ -117,7 +117,7 @@ $instance:=cs.myClass.new()
 
 | Parâmetro  | Tipo   |    | Descrição      |
 | ---------- | ------ | -- | -------------- |
-| classStore | object | <- | 4D class store |
+| classStore | object | <- | Class store 4D |
 
 O comando `4D` devolve a classe store para as classes 4D incorporadas disponíveis. Fornece acesso a APIs específicas, tais como [CryptoKey](API/CryptoKeyClass.md).
 
@@ -159,7 +159,7 @@ As palavras-chave 4D específicas podem ser utilizadas nas definições de class
 
 ### `Function`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 Function <name>({$parameterName : type; ...}){->$parameterName : type}
@@ -168,7 +168,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 
 As funções de classe são propriedades específicas da classe. São objectos da classe [4D. Function](API/FunctionClass.md#about-4dfunction-objects) .
 
-No ficheiro de definição de classe, as declarações de função utilizam a palavra-chave `Função` , e o nome da função. The function name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties).
+No ficheiro de definição de classe, as declarações de função utilizam a palavra-chave `Função` , e o nome da função. O nome da função deve estar em conformidade com as [regras de nomeação de propriedades](Concepts/identifiers.md#object-properties).
 
 :::tip
 
@@ -205,7 +205,7 @@ In the application code, class functions are called as member methods of the obj
 > - the compiler does not generate any error (which is different compared to regular methods),
 > - an error is thrown by 4D only at runtime.
 
-#### Parameters
+#### Parâmetros
 
 Os parâmetros da função são declarados utilizando o nome do parâmetro e o tipo de parâmetro, separados por dois pontos. The parameter name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties). Multiple parameters (and types) are separated by semicolons (;).
 
@@ -271,7 +271,7 @@ Parâmetros
 
 ### `Class constructor`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 // Class: MyClass
@@ -307,7 +307,7 @@ $o:=cs. MyClass.new("HelloWorld")
 
 ### `property`
 
-#### Syntax
+#### Sintaxe
 
 `property <propertyName>{; <propertyName2>;...}{ : <propertyType>}`
 
@@ -367,7 +367,7 @@ $o.age:="Smith" //erro com a sintaxe de verificação
 
 ### `Function get` e `Function set`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 Sintaxe
@@ -433,7 +433,7 @@ Function get fullAddress()->$result : Object
 
 ### `Class extends <code>\<ClassName>`</code>
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 // Class: ChildClass Class extends <ParentClass>
@@ -464,7 +464,7 @@ Polygon.4dm
 
 ### `Super`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 Super {( param{;...;paramN} )} {-> Object}
@@ -555,7 +555,7 @@ Parâmetros
 
 ### `This`
 
-#### Syntax
+#### Sintaxe
 
 ```4d
 This -> Object
@@ -565,9 +565,9 @@ This -> Object
 | ---------- | ------ | -- | -------------- |
 | Resultados | object | <- | Objecto actual |
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+A palavra-chave `This` devolve uma referência ao objecto actualmente processado. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-Na maioria dos casos, o valor de `This` é determinado pela forma como uma função é chamada. It can't be set by assignment during execution, and it may be different each time the function is called.
+Na maioria dos casos, o valor de `This` é determinado pela forma como uma função é chamada. Não pode ser definido por atribuição durante a execução e pode ser diferente de cada vez que a função é chamada.
 
 When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Por exemplo:
 
