@@ -14,7 +14,7 @@ In 4D, you can execute PHP scripts directly by configuring the PHP page of the D
 
 **4D Server:** These settings are shared between 4D Server and the 4D remote machines so it is not possible to use an external interpreter on the server machine and simultaneously use the internal interpreter on the client machines (and vice versa). Also, if the server uses an external interpreter on port 9002, the client machines must also use an interpreter on this port.
 
-## Options
+## Opções
 
 These options are related to the automatic management of the 4D PHP interpreter and are disabled when the **External interpreter** option is selected.
 
