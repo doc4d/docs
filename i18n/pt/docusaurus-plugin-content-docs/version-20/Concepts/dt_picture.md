@@ -27,9 +27,9 @@ A maioria dos [comandos de gerenciamento de imagens 4D](https://doc.4d.com/4Dv18
 
 
 
-## Picture operators
+## Operadores de imagem
 
-| Operação                | Syntax                 | Retorna | Ação                                                                                                                                                                       |
+| Operação                | Sintaxe                | Retorna | Ação                                                                                                                                                                       |
 | ----------------------- | ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Concatenação horizontal | Foto1 + Foto2          | Imagem  | Adicionar Pict2 à direita da Pict1                                                                                                                                         |
 | Concatenação vertical   | Pict1 / Pict2          | Imagem  | Acrescentar Pict2 ao fundo de Pict1                                                                                                                                        |
