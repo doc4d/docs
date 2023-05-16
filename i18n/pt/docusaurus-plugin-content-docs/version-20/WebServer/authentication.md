@@ -90,11 +90,11 @@ The `On Web Authentication` database method is NOT called:
 - when the web server reveives a URL beginning with `rest/` and the REST server is launched (in this case, the authentication is handled through the [`On REST Authentication` database method](REST/configuration.md#using-the-on-rest-authentication-database-method) or [Structure settings](REST/configuration.md#using-the-structure-settings)).
 
 
-### Syntax
+### Sintaxe
 
 **On Web Authentication**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text ) -> $0 : Boolean
 
-| Parameters | Tipo       |    | Descrição                                         |
+| Parâmetros | Tipo       |    | Descrição                                         |
 | ---------- | ---------- |:--:| ------------------------------------------------- |
 | $1         | Text       | <- | URL                                               |
 | $2         | Text       | <- | HTTP headers + HTTP body (up to 32 kb limit)      |
