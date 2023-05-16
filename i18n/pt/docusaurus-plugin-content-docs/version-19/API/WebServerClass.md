@@ -255,7 +255,7 @@ Contém <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts permitid
 
 O <!-- REF #WebServerClass.debugLog.Summary -->estado do arquivo de log da petição HTTP<!-- END REF --> (HTTPDebugLog_nn.txt, armazenado na pasta "Logs" da aplicação - nn é o número de arquivo).
 
-- 0 = disabled
+- 0 = desactivado
 - 1 = habilitado sem partes do corpo (o tamanho do corpo é fornecido neste caso)
 - 3 = ativado com partes do corpo apenas em resposta
 - 5 = ativado com partes do corpo apenas em resposta
@@ -384,7 +384,7 @@ O <!-- REF #WebServerClass.HTTPSEnabled.Summary -->Estado do protocolo HTTPS<!--
 <!-- REF #WebServerClass.HTTPSPort.Syntax -->**.HTTPSPort** : Number<!-- END REF -->
 
 
-O <!-- REF #WebServerClass.HTTPSPort.Summary -->listening IP port number for HTTPS<!-- END REF -->.
+O <!-- REF #WebServerClass.HTTPSPort.Summary -->número de porta listening IP para HTTPS<!-- END REF -->.
 
 O padrão = 443
 
@@ -627,7 +627,7 @@ O <!-- REF #WebServerClass.sessionCookieName.Summary -->nome do cookie utilizado
 <!-- REF #WebServerClass.sessionCookiePath.Syntax -->**.sessionCookiePath** : Text<!-- END REF -->
 
 
-O <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the session cookie<!-- END REF -->. Utilizado para controlar o alcance dos cookies da sessão. Se definir, por exemplo, o valor "/4DACTION" para este selector, o cliente só enviará um cookie para pedidos dinâmicos que comecem por 4DACTION, e não para imagens, páginas estáticas, etc.
+O <!-- REF #WebServerClass.sessionCookiePath.Summary -->campo "caminho" do cookie da sessão<!-- END REF -->. Utilizado para controlar o alcance dos cookies da sessão. Se definir, por exemplo, o valor "/4DACTION" para este selector, o cliente só enviará um cookie para pedidos dinâmicos que comecem por 4DACTION, e não para imagens, páginas estáticas, etc.
 
 <!-- END REF -->
 
@@ -697,7 +697,7 @@ O <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->Validação de 
 
 A função `.start()` <!-- REF #WebServerClass.start().Summary -->inicia o servidor web em que é aplicado<!-- END REF -->, utilizando propriedades definidas nas definições opcionais ** parâmetro do objecto.
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+O servidor web começa com as definições padrão definidas no ficheiro de definições do projecto ou (apenas base de dados anfitriã) usando o comando `WEB SET OPTION`. No entanto, utilizando o parâmetro *settings*, pode definir propriedades personalizadas para a sessão do servidor web.
 
 Todas as definições dos objectos do [Web Server](#web-server-object) podem ser personalizadas, excepto propriedades só de leitura ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), e [.sessionCookieName(#sessioncookiename)]).
 
