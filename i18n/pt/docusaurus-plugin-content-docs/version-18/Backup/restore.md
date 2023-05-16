@@ -5,7 +5,7 @@ title: Restaurar um backup
 
 4D allows you to restore entire sets of database data in case of any incidents, regardless of the cause of the incident. Podem ocorrer dois tipos principais de incidentes:
 
-- The unexpected stoppage of a database while in use. This incident can occur because of a power outage, system element failure, etc. In this case, depending on the current state of the data cache at the moment of the incident, the restore of the database can require different operations:
+- The unexpected stoppage of a database while in use. Esse incidente pode ocorrer por causa de uma falha de energia, erro em um elemento do sistema, etc. In this case, depending on the current state of the data cache at the moment of the incident, the restore of the database can require different operations:
   - If the cache was empty, the database opens normally. Any changes made in the database were recorded. Este caso não exige nenhuma operação particular
   - Se a cache conter operações, o arquivo de dados está intacto mas exige integrar o arquivo de histórico atual.
   - Se a cache estiver no processo de ser escrita, o arquivo de dados está provavelmente danificado. When restoring a backup and integrating the current log file in a encrypted database:
@@ -36,7 +36,7 @@ You can also click on the **Browse...** button found just under the area in orde
 
 You can manually restore an archive of the current database using the [Restore page](MSC/restore.md) of the Maintenance and Security Center (MSC).
 
-## Manually integrating the log
+## Integração manual do histórico
 
 If you have not checked the option for the automatic integration of the log file on the Restore page of the MSC (see [Successive integration of several log files](MSC/restore.md#successive-intergration-of-several-data-log-files)), a warning dialog box appears during the opening of the database when 4D notices that the log file contains more operations than have been carried out in the database.
 
