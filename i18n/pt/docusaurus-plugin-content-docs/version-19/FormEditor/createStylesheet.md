@@ -130,7 +130,7 @@ Especifique o tipo de atributo entre colchetes, depois entre chaves, declare os 
 
 #### Supported syntaxes
 
-| Syntax                    | Descrição                                                                                                                 |
+| Sintaxe                   | Descrição                                                                                                                 |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | [attribute]               | coincide com objetos com o `attribute`                                                                                    |
 | [attribute="value"]       | coincide com objetos cujo valor do `attribute` conteha exatamente o "valor" especificado                                  |
