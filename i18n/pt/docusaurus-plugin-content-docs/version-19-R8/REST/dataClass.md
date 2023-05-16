@@ -7,7 +7,7 @@ Dataclass names can be used directly in the REST requests to work with entities 
 
 ## Available syntaxes
 
-| Syntax                                                                             | Exemplo                                  | Descrição                                                                                   |
+| Sintaxe                                                                            | Exemplo                                  | Descrição                                                                                   |
 | ---------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
 | [**{dataClass}**](#dataClass)                                                      | `/Employee`                              | Retorna todos os dados (como padrão as primeiras 100 entidades) para a dataclass            |
 | [**{dataClass}[{key}]**](#dataclasskey)                                            | `/Employee[22]`                          | Retorna os dados para a entidade especifica definida pela chave primária da classe de dados |
