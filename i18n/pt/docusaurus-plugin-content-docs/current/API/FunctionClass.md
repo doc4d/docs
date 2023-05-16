@@ -416,7 +416,7 @@ Note que `.call()` é similar a [`.apply()`](#apply) exceto que parâmetros são
 ```4d
  $o:=New object("value";50)
  $f:=Formula(This.value*2)
- $result:=$f.call($o) // returns 100
+ $result:=$f.call($o) // devolve 100
 ```
 
 <!-- END REF -->
