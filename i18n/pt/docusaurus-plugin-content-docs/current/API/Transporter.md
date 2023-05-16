@@ -286,7 +286,7 @@ Ao contrário dos arquivos de registo regulares (ativados através do comando `S
 
 #### Descrição
 
-A propriedade `.port` contém <!-- REF #transporter.port.Summary --> o número do porto utilizado para as transações postais<!-- END REF -->. By default, if the *port* property has not been set in the *server* object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
+A propriedade `.port` contém <!-- REF #transporter.port.Summary --> o número do porto utilizado para as transações postais<!-- END REF -->. Por padrão, se a propriedade *port* não tiver sido definida no objeto *server* (utilizado para criar o objecto transportador com `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), a porta utilizada é:
 
 - **SMTP** - 587
 - **POP3** - 995
@@ -310,7 +310,7 @@ A propriedade `.port` contém <!-- REF #transporter.port.Summary --> o número d
 
 #### Descrição
 
-A propriedade `.connectionTimeOut` contém <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. By default, if the `.sendTimeOut` property has not been set in the `server` object, the value 100 is used.
+A propriedade `.connectionTimeOut` contém <!-- REF #transporter.sendTimeOut.Summary --> o tempo máximo de espera (em segundos) de uma chamada para `.send( )` antes de ocorrer um timeout<!-- END REF -->. Por padrão, se a propriedade `.sendTimeOut` não tiver sido definida no objecto `server`, é utilizado o valor 100.
 
 <!-- END REF -->
 
