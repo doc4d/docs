@@ -75,7 +75,7 @@ These options configure the various colors used in the Code Editor and debugger 
 
 
 
-## Options
+## Opções
 
 
 This page configures Code Editor display options.
@@ -83,7 +83,7 @@ This page configures Code Editor display options.
 ![](../assets/en/Preferences/options.png)
 
 
-### Options
+### Opções
 
 
 
