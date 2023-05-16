@@ -37,10 +37,10 @@ End if
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças                                                              |
-| ------ | --------------------------------------------------------------------- |
-| v19 R3 | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
-| v18    | Adicionado                                                            |
+| Versão | Mudanças                                                                       |
+| ------ | ------------------------------------------------------------------------------ |
+| v19 R3 | Adição das propriedades `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` |
+| v18    | Adicionado                                                                     |
 
 </details>
 
@@ -173,17 +173,17 @@ Pode passar uma coleção de pastas e arquivos para compactar ao objeto *zipStru
 
 #### Exemplo 2
 
-You want to use an alternative compression algorithm with a high compression level:
+Deseja utilizar um algoritmo de compressão alternativo com um elevado nível de compressão:
 
 ```4d
-var $destination : 4D.File
+var $destination : 4D. File
 var $zip; $err : Object
 
 $zip:=New object
 $zip.files:=New collection
 $zip.files.push(Folder(fk desktop folder).folder("images"))
 $zip.compression:=ZIP Compression LZMA
-$zip.level:=7 //default is 4
+$zip.level:=7 //padrão é 4
 
 $destination:=Folder(fk desktop folder).file("images.zip")
 $err:=ZIP Create archive($zip; $destination)
@@ -223,7 +223,7 @@ Se *zipFile* for protegido por uma senha, precisa usar o parâmetro opcional *pa
 
 **Objeto arquivo**
 
-The returned `4D. ZipArchive` object contains a single [`root`](#root) property whose value is a `4D. ZipFolder` object. This folder describes the whole contents of the ZIP archive.
+The returned `4D. ZipArchive` object contains a single [`root`](#root) property whose value is a `4D. ZipFolder` object. Esta pasta descreve todo o conteúdo do ficheiro ZIP.
 
 #### Exemplo
 
