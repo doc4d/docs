@@ -300,15 +300,15 @@ The properties of the object are processed according to their creation order. Du
 
 #### Sintaxe: `<!--#4DEVAL expression-->`
 
-#### Alternative syntax: `$4DEVAL(expression)`
+#### Sintaxe alternativa: `$4DEVAL(expressão)`
 
 The `4DEVAL` tag allows you to assess a 4D variable or expression. Like the [`4DHTML`](#4dhtml) tag, `4DEVAL` does not escape HTML characters when returning text. However, unlike `4DHTML` or [`4DTEXT`](#4dtext), `4DEVAL` allows you to execute any valid 4D statement, including assignments and expressions that do not return any value.
 
 For example, you can execute:
 
 ```
- $input:="<!--#4DEVAL a:=42-->" //assignment
- $input:=$input+"<!--#4DEVAL a+1-->" //calculation
+ $input:="<!--#4DEVAL a:=42-->" //atribuição
+ $input:=$input+"<!--#4DEVAL a+1-->" //cálculo
  PROCESS 4D TAGS($input;$output)
   //$output = "43"
 ```
@@ -321,7 +321,7 @@ In case of an error during interpretation, the text inserted will be in the form
 
 #### Syntax: `<!--#4DHTML expression-->`
 
-#### Alternative syntax: `$4DHTML(expression)`
+#### Sintaxe alternativa: `$4DHTML(expressão)`
 
 Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
 
@@ -502,7 +502,7 @@ This syntax makes a loop as long as the method returns `True`. The method takes 
 
 For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.
 
-`C_BOOLEAN($0)` and `C_LONGINT($1)` MUST be declared within the method for compilation purposes.
+`C_BOOLEAN($0)` e `C_LONGINT($1)` DEVEM ser declarados no método para efeitos de compilação.
 
 The following code example:
 
@@ -539,7 +539,7 @@ O método `my_method` pode ser o seguinte:
        var:=...
        $0:=True
     Else
-       $0:=False `Stops the loop
+       $0:=False `Para o ciclo
     End if
  End if
 ```
@@ -609,7 +609,7 @@ The `4DSCRIPT` tag allows you to execute 4D methods when processing the template
 
 > If the tag is called in the context of a Web process, when the page is loaded, 4D calls the `On Web Authentication` database method (if it exists). If it returns True, 4D executes the method.
 
-The method must return text in `$0`. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the `4DHTML` tag).
+O método deve devolver o texto em `$0`. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the `4DHTML` tag).
 
 For example, let’s say that you insert the following comment `“Today is <!--#4DSCRIPT/MYMETH/MYPARAM-->”` into a template Web page. When loading the page, 4D calls the `On Web Authentication` database method, then calls the `MYMETH` method and passes the string “/MYPARAM” as the parameter `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is<!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
 
@@ -617,7 +617,7 @@ The `MYMETH` method is as follows:
 
 ```4d
   //MYMETH
- C_TEXT($0;$1) //These parameters must always be declared
+ C_TEXT($0;$1) //Estes parâmetros devem ser sempre declarados
  $0:=String(Current date)
 ```
 
@@ -629,7 +629,7 @@ As 4D executes methods in their order of appearance, it is absolutely possible t
 
 #### Syntax: `<!--#4DTEXT expression-->`
 
-#### Alternative syntax: `$4DTEXT(expression)`
+#### Sintaxe alternativa: `$4DTEXT(expressão)`
 
 The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D variable or expression returning a value. For example, if you write (in an HTML page):
 
@@ -688,7 +688,7 @@ For example, the following code would cause an XML parsing error because of the 
 <line x1="<!--#4DEVAL $x-->" y1="<!--#4DEVAL $graphY1-->"/>
 ```
 
-Using the $ syntax, the following code is validated by the parser:
+Utilizando a sintaxe $, o seguinte código é validado pelo analisador:
 
 ```xml
 <line x1="$4DEVAL($x)" y1="$4DEVAL($graphY1)"/>
