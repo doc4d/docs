@@ -107,12 +107,12 @@ The `On Web Authentication` database method is NOT called:
 You must declare these parameters as follows:
 
 ```4d
-//On Web Authentication database method
+//Método base On Web Authentication
 
  C_TEXT($1;$2;$3;$4;$5;$6)
  C_BOOLEAN($0)
 
-//Code for the method
+//Código do método
 ```
 
 Alternatively, you can use the [named parameters](Concepts/parameters.md#named-parameters) syntax:
@@ -142,14 +142,14 @@ Let’s take the example of an Intranet connection. Suppose that the IP address 
 | http://123.45.67.89/Customers/Add    | /Customers/Add           |
 | 123.45.67.89/Do_This/If_OK/Do_That | /Do_This/If_OK/Do_That |
 
-#### $2 - Header and Body of the HTTP request
+#### $2 - Cabeçalho e corpo do pedido HTTP
 
 The second parameter (`$2`) is the header and the body of the HTTP request sent by the web browser. Note that this information is passed to your `On Web Authentication` database method as it is. Its contents will vary depending on the nature of the web browser which is attempting the connection.
 
 If your application uses this information, it is up to you to parse the header and the body. You can use the `WEB GET HTTP HEADER` and the `WEB GET HTTP BODY` commands.
 > For performance reasons, the size of data passing through the $2 parameter must not exceed 32 KB. Beyond this size, they are truncated by the 4D HTTP server.
 
-#### $3 - Web client IP address
+#### $3 - Endereço IP do cliente Web
 
 The `$3` parameter receives the IP address of the browser’s machine. This information can allow you to distinguish between intranet and internet connections.
 > 4D devolve endereços IPv4 em formato híbrido IPv6/IPv4 escritos com um prefixo de 96 bits, por exemplo ::ffff:192.168.2.34 para o endereço IPv4 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
