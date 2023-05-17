@@ -44,7 +44,7 @@ For conveniency, all [collection functions](../API/CollectionClass.md) that modi
 
 ```4d
 $col:=New shared collection()
-$col.push("alpha") //.push() internally triggers Use/End use, so no need to do it yourselves
+$col.push("alpha") //.push() desencadeia internamente a utilização Use/End, pelo que não é necessário fazê-lo você mesmo
 ```
 
 If you need to execute several modifications on the same collection, you can protect all modifications with a single `Use... End use` so that modifications are performed atomically.
