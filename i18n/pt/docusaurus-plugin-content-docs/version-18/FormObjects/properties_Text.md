@@ -14,7 +14,7 @@ When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4
 | -------------------- | ------------- | -------------------- |
 | allowFontColorPicker | boolean       | false (padrão), true |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Entrada](input_overview.md)
 
@@ -33,7 +33,7 @@ You can set this property using the [**OBJECT SET FONT STYLE**](https://doc.4d.c
 | ----------- | ------------- | ----------------- |
 | fontWeight  | text          | "normal", "bold"  |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -52,7 +52,7 @@ You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4
 | --------- | ------------- | ------------------ |
 | fontStyle | string        | "normal", "italic" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -68,7 +68,7 @@ Sets the text to have a line running beneath it.
 | -------------- | ------------- | --------------------- |
 | textDecoration | string        | "normal", "underline" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -104,7 +104,7 @@ Three font themes are available:
 | --------- | ------------- | ------------------------------ |
 | fontTheme | string        | "normal", "main", "additional" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -124,7 +124,7 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 | fontFamily | string        | CSS font family name |
 > 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -142,7 +142,7 @@ Allows defining the object's font size in points.
 | -------- | ------------- | ------------------------------------- |
 | fontSize | integer       | Font size in points. Minimum value: 0 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -168,7 +168,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 | ------ | ------------- | ----------------------------------------- |
 | stroke | string        | any css value, "transparent", "automatic" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -197,7 +197,7 @@ CompanyColor:=Choose([Companies]ID;Background color;Light shadow color; Foregrou
 | --------------- | ------------- | ------------------- |
 | rowStrokeSource | string        | Expressão cor fonte |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -226,7 +226,7 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 | -------------- | ------------- | ----------------------------------------------- |
 | rowStyleSource | string        | Style expression to evaluate for each row/cell. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -242,7 +242,7 @@ Horizontal location of text within the area that contains it.
 | --------- | ------------- | ------------------------------------------------- |
 | textAlign | string        | "automatic", "right", "center", "justify", "left" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Group Box](groupBox.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Text Area](text.md)
 
@@ -265,7 +265,7 @@ This property can also be handled by the [OBJECT Get vertical alignment](https:/
 | ------------- | ------------- | -------------------------------------- |
 | verticalAlign | string        | "automatic", "top", "middle", "bottom" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers)
 
@@ -336,7 +336,7 @@ O método *Color* iria conter :
 | ---------- | ------------- | ------------------------------------------------ |
 | metaSource | string        | Object expression to evaluate for each row/cell. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -354,7 +354,7 @@ By default, this option is not enabled.
 | ---------- | ------------- | ----------------- |
 | styledText | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
 
@@ -379,7 +379,7 @@ Além de [áreas de texto estáticas](text.md), [input](input_overview.md) os ob
 | --------- | ------------- | ----------------- |
 | textAngle | number        | 0, 90, 180, 270   |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Input](input_overview.md) (não-digitável) - [Área Texto](text.md)
 
@@ -399,7 +399,7 @@ O nome do array LongInt deve ser usado. Each element of this array corresponds t
 | --------------- | ------------- | --------------------------- |
 | rowStrokeSource | string        | The name of a longint array |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -419,7 +419,7 @@ O nome do array LongInt deve ser usado. Each element of this array corresponds t
 | -------------- | ------------- | --------------------------- |
 | rowStyleSource | string        | O nome de um array longint. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview) - [Coluna List Box](listbox_overview.md#list-box-columns)
 
@@ -451,6 +451,6 @@ Quando a propriedade for ativada, a área armazena todas as informações de for
 | ----------------- | ------------- | ---------------------- |
 | storeDefaultStyle | boolean       | true, false (default). |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Entrada](input_overview.md)
