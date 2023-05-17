@@ -1,7 +1,7 @@
 ---
 id: quick-tour
-title: A Quick Tour
-sidebar_label: A Quick Tour
+title: Uma visita rápida
+sidebar_label: Uma visita rápida
 ---
 
 Usando a linguagem 4D, imprimir a mensagem tradicional ""Hello, world!" na tela pode ser feito de várias maneiras. A maneira mais simples é provavelmente escrever a linha única abaixo em um método de projeto:
@@ -119,7 +119,7 @@ O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
 For($vlChar;1;Length(vtSomeText))
-    //Do something with the character if it is a TAB
+    //Fazer algo com o carácter se for um TAB
 
 
     If(Character code(vtSomeText[[$vlChar]])=Tab)
@@ -131,10 +131,10 @@ Um método projeto pode chamar a outro método projeto com ou sem parâmetros (a
 
 ```4d
 $myText:="hello"
-$myText:=Do_Something($myText) //Call the Do_Something method
+$myText:=Do_Something($myText) //Chamar o método Do_Something
 ALERT($myText) //"HELLO"
 
-  //Here the code of the method Do_Something  
+  //Aqui o código do método Do_Something  
 #DECLARE ($in : Text) -> $out : Text
 $out:=Uppercase($in)
 ```
@@ -260,7 +260,7 @@ When you use the language, it is rare that you will simply want a piece of data.
 | *        | Multiplicação | 2 * 3 = 6 |
 | /        | Divisão       | 6 / 2 = 3 |
 
-Numeric operators are just one type of operator available to you. 4D supports many different types of data, such as numbers, text, dates, and pictures, so there are operators that perform operations on these different data types.
+Os operadores numéricos são apenas um dos tipos de operadores disponíveis. 4D supports many different types of data, such as numbers, text, dates, and pictures, so there are operators that perform operations on these different data types.
 
 The same symbols are often used for different operations, depending on the data type. For example, the plus sign (+) performs different operations with different data:
 
@@ -297,7 +297,7 @@ You refer to an expression by the data type it returns. There are several expres
 | Uppercase("smith")       | String              | This expression uses `Uppercase`, a command from the language, to convert the string “smith” to uppercase. Retorna "SMITH".                                                     |
 | 4                        | Número              | Esta é uma constante numérica, 4.                                                                                                                                               |
 | 4 * 2                    | Número              | Dois números, 4 e 2, são multiplicados utilizando o operador de multiplicação (*). O resultado é o número 8.                                                                    |
-| myButton                 | Número              | This is a variable associated to a button. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                           |
+| myButton                 | Número              | Esta é uma variável associada a um botão. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                            |
 | !1997-01-25!             | Date                | This is a date constant for the date 1/25/97 (January 25, 1997).                                                                                                                |
 | Current date+ 30         | Date                | This is a date expression that uses the `Current date` command to get today’s date. It adds 30 days to today’s date and returns the new date.                                   |
 | ?8:05:30?                | Hora                | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
@@ -408,13 +408,13 @@ The sequence consists of a backslash `\`, followed by a character. For instance,
 
 In 4D, the following escape sequences can be used:
 
-| Escape sequence               | Character replaced   |
-| ----------------------------- | -------------------- |
-| `\n`                         | LF (Avanço de linha) |
-| `\t`                         | HT (Tab)             |
-| `\r`                         | CR (Carriage return) |
-| ``\\` |``&#96; (Backslash) |                      |
-| `\"`                         | " (aspas)            |
+| Escape sequence                     | Character replaced   |
+| ----------------------------------- | -------------------- |
+| `\n`                               | LF (Avanço de linha) |
+| `\t`                               | HT (Tab)             |
+| `\r`                               | CR (Carriage return) |
+| ``\\` |``&#96; (Barra invertida) |                      |
+| `\"`                               | " (aspas)            |
 
 > It is possible to use either upper or lower case in escape sequences.
 
