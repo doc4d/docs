@@ -7,7 +7,7 @@ title: "{dataClass}"
 
 Os nomes das classes de dados podem ser usadas diretamente nas petições REST para trabalhar com entidades, seleções de entidades ou métodos da classe de dados.
 
-## Available syntaxes
+## Sintaxe disponível
 
 | Sintaxe                                                                       | Exemplo                     | Descrição                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------- |
