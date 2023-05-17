@@ -63,21 +63,21 @@ CALL WORKER("WebSocketServer"; Formula(wss:=4D.WebSocketServer.new($handler)))
 2. Define the `myServerHandler` user class containing callback function(s) used to handle connections to the server:
 
 ```4d
-//myServerHandler class
+//classe myServerHandler
 
 Function onConnection($wss : Object; $param : Object) : Object
-    //returns an instance of the user class
-    //that will handle the messages
+    //retorna uma instância da classe de utilizador
+    //que tratará as mensagens
     return cs.myConnectionHandler.new() 
 ```
 
 3. Define the `myConnectionHandler` user class containing callback function(s) used to handle messages:
 
 ```4d
-// myConnectionHandler class
+// classe myConnectionHandler
 
 Function onMessage($ws : 4D.WebSocketConnection; $message : Object)
-    //resends the message in uppercase  
+    //envia a mensagem em maiúsculas  
     $ws.send(Uppercase($message.data))
 
 ```
@@ -215,7 +215,7 @@ Function onTerminate($wss : Object; $param : Object)
 LogFile("*** Server closed")
 
 Function onError($wss : Object; $param : Object)
-LogFile("!!! Server error: "+$param.statusText)
+LogFile("!!! Erro do servidor: "+$param.statusText)
 
 ```
 
@@ -298,11 +298,11 @@ This example of a basic chat feature illustrates how to handle messages in a *co
 // myConnectionHandler Class
 
 Function onMessage($ws : 4D.WebSocketConnection; $message : Object)
-    // Resend the message to all chat clients   
+    // Reenviar a mensagem a todos os clientes do chat   
     This.broadcast($ws;$message.data)
 
 Function onOpen($ws : 4D.WebSocketConnection; $message : Object)
-    // Send a message to new connected users
+    // Enviar uma mensagem aos novos utilizadores ligados
     $ws.send("Welcome on the chat!")    
     // Send "New client connected" message to all other chat clients
     This.broadcast($ws;"New client connected")
