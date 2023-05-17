@@ -457,7 +457,7 @@ No método `ChangeAge` anterior, as propriedades Age e Name são obrigatórias e
 ```
 Ambos parâmetros são opcionais: se não forem preenchidos, o resultado será "é 10 anos de idade", mas nenhum erro será gerado.
 
-Finalmente, com parâmetros com nome, a manutenção ou a reprodução das aplicações é muito simples e seguro. Imagine que depois perceba de que adicionar 10 anos não funciona sempre. You need another parameter to set how many years to add. You write: Escreva: You write:
+Finalmente, com parâmetros com nome, a manutenção ou a reprodução das aplicações é muito simples e seguro. Imagine que depois perceba de que adicionar 10 anos não funciona sempre. You need another parameter to set how many years to add. You write: Escreva: Escreve:
 
 ```4d
 Result:=MySum("##0.00";125,2;33,5;24)
@@ -484,10 +484,10 @@ Os métodos projeto 4D também aceitam esses parâmetros opcionais, começando p
 $result:=$param1+" "+$param2
 ```
 ```4d
-  // Calling method
+  // Método de chamada
  $class:=cs.myClass.new()
  $class.concate("Hello") // "Hello "
- $class.concate() // Displays " "
+ $class.concate() // Mostra " "
 ```
 
 > Também se pode chamar um método ou função com mais parâmetros do que os declarados. Estará disponível dentro do código chamado atraves da  [${N} sintaxe](#parameter-indirection-n).
