@@ -26,7 +26,7 @@ Then, we upload the selected image to 4D Server:
 
  `POST  /rest/Employee/?$method=update`
 
-**POST data**:
+**Dados POST**:
 
 ````
 {
@@ -36,7 +36,7 @@ Then, we upload the selected image to 4D Server:
 }
 ````
 
-**Response**:
+**Resposta**:
 
 The modified entity is returned:
 
