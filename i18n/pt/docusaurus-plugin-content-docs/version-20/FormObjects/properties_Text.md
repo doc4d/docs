@@ -5,7 +5,7 @@ title: Text
 
 ---
 
-## Allow font/color picker
+## Permitir a selecção de tipo de letra/cor
 
 When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-FONT-PICKER.301-4505612.en.html) and [OPEN COLOR PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-COLOR-PICKER.301-4505611.en.html) commands can be called to display the system font and color picker windows. Using these windows, the users can change the font or color of a form object that has the focus directly by clicking. When this property is disabled (default), the open picker commands have no effect.
 
@@ -137,9 +137,9 @@ Allows defining the object's font size in points.
 
 #### Gramática JSON
 
-| Nome     | Tipo de dados | Valores possíveis                     |
-| -------- | ------------- | ------------------------------------- |
-| fontSize | integer       | Font size in points. Minimum value: 0 |
+| Nome     | Tipo de dados | Valores possíveis                           |
+| -------- | ------------- | ------------------------------------------- |
+| fontSize | integer       | Tamanho da letra em pontos. Valor mínimo: 0 |
 
 #### Objectos suportados
 
@@ -375,12 +375,12 @@ Coluna da List Box
 
 Modifica a orientação (rotação) de uma área texto. Áreas texto pode ser rodadas por incrementos de 90°. Cada valor de orientação é aplicado enquanto mantém o mesmo ponto inferior esquerdo para o objeto:
 
-| Orientation value | Resultados                                     |
-| ----------------- | ---------------------------------------------- |
-| 0 (o padrão)      | ![](../assets/en/FormObjects/orientation1.png) |
-| 90                | ![](../assets/en/FormObjects/orientation2.png) |
-| 180               | ![](../assets/en/FormObjects/orientation3.png) |
-| 270               | ![](../assets/en/FormObjects/orientation4.png) |
+| Valor de orientação | Resultados                                     |
+| ------------------- | ---------------------------------------------- |
+| 0 (o padrão)        | ![](../assets/en/FormObjects/orientation1.png) |
+| 90                  | ![](../assets/en/FormObjects/orientation2.png) |
+| 180                 | ![](../assets/en/FormObjects/orientation3.png) |
+| 270                 | ![](../assets/en/FormObjects/orientation4.png) |
 
 Além de [áreas de texto estáticas](text.md), [input](input_overview.md) os objetos de texto podem ser girados quando forem não-[digitáveis](properties_Entry.md#enterable). Quando uma propriedade rotação for aplicada a um objeto input, a propriedade digitável é removida (se houver). Esse objeto é então excluído da ordem de entrada.
 
@@ -406,9 +406,9 @@ O nome do array LongInt deve ser usado. Each element of this array corresponds t
 
 #### Gramática JSON
 
-| Nome            | Tipo de dados | Valores possíveis           |
-| --------------- | ------------- | --------------------------- |
-| rowStrokeSource | string        | The name of a longint array |
+| Nome            | Tipo de dados | Valores possíveis          |
+| --------------- | ------------- | -------------------------- |
+| rowStrokeSource | string        | O nome de um array longint |
 
 #### Objectos suportados
 
@@ -458,9 +458,9 @@ Quando a propriedade for ativada, a área armazena todas as informações de for
 
 #### Gramática JSON
 
-| Nome              | Tipo de dados | Valores possíveis      |
-| ----------------- | ------------- | ---------------------- |
-| storeDefaultStyle | boolean       | true, false (default). |
+| Nome              | Tipo de dados | Valores possíveis     |
+| ----------------- | ------------- | --------------------- |
+| storeDefaultStyle | boolean       | true, false (padrão). |
 
 #### Objectos suportados
 
