@@ -37,7 +37,7 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Tab      | Actions                         | Ribbon Interface | Toolbar Interface |
+| Tab      | Acções                          | Ribbon Interface | Toolbar Interface |
 | -------- | ------------------------------- |:----------------:|:-----------------:|
 | File     | File manipulation               |        X         |                   |
 | Inicio   | Text appearance                 |        X         |         X         |
