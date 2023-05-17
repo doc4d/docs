@@ -31,7 +31,7 @@ Drop-down list objects are initialized by loading a list of values into an array
   $aCities{6}:="Green Bay"
 ```
 
-In this case, the name of the variable associated with the object in the form must be *$aCities*. Esse código pode ser colocado no método formulário e executado quando o evento de formulário `On Load` acontecer.
+Neste caso, o nome da variável associada ao objeto de formulário deve ser *$aCities*. Esse código pode ser colocado no método formulário e executado quando o evento de formulário `On Load` acontecer.
 
 * Before the object is displayed, load the values of a list into the array using the [LIST TO ARRAY](https://doc.4d.com/4Dv17R5/4D/17-R5/LIST-TO-ARRAY.301-4127385.en.html) command. Por exemplo:
 
@@ -39,7 +39,7 @@ In this case, the name of the variable associated with the object in the form mu
    LIST TO ARRAY("Cities";$aCities)
 ```
 
- In this case also, the name of the variable associated with the object in the form must be *$aCities*. Este código pode ser executado ao invés das sentenças de atribuição mostradas anteriormente.
+ Neste caso também o nome da variável asociada al objeto del formulario debe ser *$aCities*. Este código pode ser executado ao invés das sentenças de atribuição mostradas anteriormente.
 
 Se precisar salvar as escolhas do usuário em um campo, precisa usar uma declaração de atribuição que rode depois que o registro seja aceito. O código poderia ser assim:
 
