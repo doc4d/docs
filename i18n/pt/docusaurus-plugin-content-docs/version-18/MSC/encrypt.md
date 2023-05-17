@@ -80,9 +80,9 @@ This operation removes all encryption from the data file. If you no longer want 
 The data file is fully decrypted and a confirmation message is displayed: ![](../assets/en/MSC/MSC_encrypt10.png)
 > Once the data file is decrypted, the encryption status of tables do not match their Encryptable attributes. To restore a matching status, you must deselect all **Encryptable** attributes at the database structure level.
 
-## Saving the encryption key
+## Guardar a chave de encriptação
 
-4D allows you to save the data encryption key in a dedicated file. Storing this file on an external device such a USB key will facilitate the use of an encrypted database, since the user would only need to connect the device to provide the key before opening the database in order to access encrypted data.
+4D permite salvar a chave de encriptação de dados em um arquivo dedicado. Storing this file on an external device such a USB key will facilitate the use of an encrypted database, since the user would only need to connect the device to provide the key before opening the database in order to access encrypted data.
 
 You can save the encryption key each time a new passphrase has been provided:
 
