@@ -15,7 +15,7 @@ The Auto Spellcheck property activates the spell-check for each object. When use
 | ---------- | ------------- | ----------------- |
 | spellcheck | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro area](writeProArea_overview.md) - [Input](input_overview.md)
 
@@ -41,7 +41,7 @@ For a [Web Area](webArea_overview.md), the contents of the menu depend of the re
 | ----------- | ------------- | ------------------------------------- |
 | contextMenu | string        | "automatic" (used if missing), "none" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Input](input_overview.md) - [Web Area](webArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md)
 
@@ -61,7 +61,7 @@ When this property is disabled, any pop-up menus associated with a list box colu
 | --------- | ------------- | ----------------- |
 | enterable | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
@@ -117,7 +117,7 @@ Here is a table that explains each of the entry filter choices in the Entry Filt
 | ----------- | ------------- | ---------------------------------------------------- |
 | entryFilter | string        | <li>Entry filter code or</li> or <li>Entry filter code or Entry filter name (filter names start with &#124; )</li> |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -141,7 +141,7 @@ When the **Focusable** property is selected for a non-enterable object, the user
 | ------- | ------------- | ----------------- |
 | focável | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Radio Button](radio_overview.md) - [Subform](subform_overview.md)
 
@@ -161,7 +161,7 @@ By default, the object uses the current keyboard layout.
 | --------------- | ------------- | --------------------------------------------------------------------------- |
 | keyboardDialect | text          | Language code, for example "ar-ma" or "cs". See RFC3066, ISO639 and ISO3166 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Input](input_overview.md)
 
@@ -193,7 +193,7 @@ When this value is selected, the property is managed by the [Wordwrap](propertie
 | ---------- | ------------- | ------------------------------------------------- |
 | multilinha | text          | "yes", "no", "automatic" (default if not defined) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Entrada](input_overview.md)
 
@@ -227,7 +227,7 @@ You only pass the reference in the "Placeholder" field; it is not possible to co
 | ----------- | ------------- | ---------------------------------------------------------------------------- |
 | placeholder | string        | Text to be displayed (grayed out) when the object does not contain any value |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Box](comboBox_overview.md) - [Input](input_overview.md)
 
@@ -247,7 +247,7 @@ This property keeps the selection visible within the object after it has lost th
 | ------------- | ------------- | ----------------- |
 | showSelection | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Input](input_overview.md)
 
@@ -276,7 +276,7 @@ To view a list of all the shortcuts used in the 4D Design environment, see the [
 |                 |               |                                                    |
 | shortcutKey     | string        | <li>any character key: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Radio Button](radio_overview.md)
 
@@ -296,6 +296,6 @@ When this option is not enabled, users must first select the cell row and then c
 | --------------- | ------------- | ----------------- |
 | singleClickEdit | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
