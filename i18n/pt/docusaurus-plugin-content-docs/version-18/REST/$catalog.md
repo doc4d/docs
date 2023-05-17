@@ -7,7 +7,7 @@ title: "$catalog"
 O catálogo descreve todos os dataclasses e atributos disponíveis na datastore.
 
 
-## Available syntaxes
+## Sintaxe disponível
 
 | Sintaxe                                       | Exemplo              | Descrição                                                                            |
 | --------------------------------------------- | -------------------- | ------------------------------------------------------------------------------------ |
