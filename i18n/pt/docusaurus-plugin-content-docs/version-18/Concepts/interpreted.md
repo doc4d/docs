@@ -66,12 +66,12 @@ C_LONGINT($age)
 $name:="Smith"
 $age:=50
 
-$p:=->$name //text target for the pointer
-$p->:="Wesson" //assigns a text value
+$p:=->$name //alvo de texto para o ponteiro
+$p->:="Wesson" //atribui um valor de texto
 
 $p:=->$age  
-// new target of different type for the pointer
-$p->:=55 //assigns a number value
+//novo alvo de tipo diferente para o ponteiro
+$p->:=55 //atribui um valor numérico
 ```
 
 Imagine a function that returns the length (number of charaters) of values that can be of any type.
