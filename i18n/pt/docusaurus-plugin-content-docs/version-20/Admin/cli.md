@@ -47,7 +47,7 @@ Sintaxe:
 | `--webadmin-store-settings`                                                                                                                                                                   |                                                    | Armazena a chave de acesso e inicia automaticamente os parâmetros nas configurações de arquivo utilizadas (ou seja, o arquivo padrão [`WebAdmin.4DSettings`](webAdmin.md#webadmin-settings) ou um arquivo personalizado designado pelo parâmetro `--webadmin-settings-path`). Use o argumento `--webadmin-store-settings` para salvar essas configurações se necessário Não disponível com [tool4d](#tool4d).                                                                                                                                                                                                                   |
 | `--utility`                                                                                                                                                                                   |                                                    | Apenas disponível com 4D Server. Inicia [4D Server no modo utilitário](#4d-server-in-utility-mode).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `--skip-onstartup`                                                                                                                                                                            |                                                    | Inicia o projecto sem executar quaisquer métodos "automáticos", incluindo os métodos de base de dados `On Startup` e `On Exit`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| `--startup-method`                                                                                                                                                                            | Nome do método projecto (string)                   | Project method to execute immediately after the `On Startup` database method (if not skipped with `--skip-onstartup`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `--startup-method`                                                                                                                                                                            | Nome do método projecto (string)                   | Método de projecto a executar imediatamente após o método de base `On Startup` (se não for ignorado com `--skip-onstartup`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 [Diagnostic log file](debugLogFiles.md#4ddiagnosticlogtxt) (licence alert, conversion dialog, database selection, data file selection). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
 
@@ -202,49 +202,49 @@ tool4d é uma ferramenta perfeita para o fazer:
 
 Pode obter tool4d na[página de transferência do produto 4D](https://product-download.4d.com/).
 
-Utiliza-se o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projecto 4D padrão. Pode utilizar todos os argumentos descritos na tabela acima, excepto --`webadmin` uma vez que este componente está [desactivado no tool4d](#disabled-4d-features). With tool4d, the following specific sequence is launched:
+Utiliza-se o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projecto 4D padrão. Pode utilizar todos os argumentos descritos na tabela acima, excepto --`webadmin` uma vez que este componente está [desactivado no tool4d](#disabled-4d-features). Com tool4d, é lançada a seguinte sequência específica:
 
-1. tool4d executes the `On Startup` database method (and all "automatic" methods such as [user method](../Users/handling_users_groups.md#user-properties)), except if the `--skip-onstartup` argument is passed.
-2. tool4d executes the method designated by the `--startup-method` argument, if any.
-3. tool4d executes the `On Exit` database method, except if the `--skip-onstartup` argument is passed.
+1. o tool4d executa o método de base `On Startup` (e todos os métodos "automáticos" como o [método utilizador](../Users/handling_users_groups.md#user-properties)), excepto se for passado o argumento `--skip-onstartup`.
+2. tool4d executa o método designado pelo argumento `--startup-method`, se existir.
+3. tool4d executa o método de base `On Exit`, excepto se for passado o argumento `--skip-onstartup`.
 4. tool4d desiste.
 
-On Windows, tool4d is a console application so that the `stdout` stream is displayed in the terminal (cmd, powershell...).
+No Windows, tool4d é uma aplicação de consola, pelo que o fluxo `stdout` é apresentado no terminal (cmd, powershell...).
 
 
 :::note Notas
 
 - tool4d é sempre executado sem ‘interface’ (a opção de linha de comando `headless` é inútil).
-- The [`Application type`](https://doc.4d.com/4dv19R/help/command/en/page494.html) command returns the value 6 ("tool4d") when called from the tool4d application.
-- the [diagnostic log file](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt) is prefixed with "4DDiagnosticLogTool".
+- O comando [`Application type`](https://doc.4d.com/4dv19R/help/command/en/page494.html) devolve o valor 6 ("tool4d") quando chamado a partir da aplicação tool4d.
+- o [ficheiro de registo de diagnóstico](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt) tem o prefixo "4DDiagnosticLogTool".
 
 :::
 
 
 ### Disabled 4D features
 
-Keep in mind that tool4d runs automatically in **headless mode** (see `--headless` in [this table](#launch-a-4d-application)), and does neither give access to the 4D IDE nor any of its servers. In particular, the following features are disabled:
+Tenha em mente que tool4d roda automaticamente em **modo headless** (veja `--headless` em [esta tabela](#launch-a-4d-application)), e não dá acesso ao IDE 4D nem a nenhum de seus servidores. Em particular, são desactivadas as seguintes funcionalidades:
 
-- application server, Web server, SQL server,
+- servidor de aplicações, servidor Web, servidor SQL,
 - programador de cópias de segurança,
-- ODBC and SQL pass-through,
-- all components such as 4D View Pro, 4D SVG, 4D NetKit...,
+- ODBC e SQL pass-through,
+- todos os componentes tais como 4D View Pro, 4D SVG, 4D NetKit...,
 - corrector ortográfico hunspell,
 - corrector ortográfico japonês (library *mecab*),
 - WebAdmin,
 - CEF,
 - PHP,
-- remote debugger (local debugger, `TRACE` command and breakpoints are ignored in headless applications).
+- depurador remoto (depurador local, o comando `TRACE` e os pontos de interrupção são ignorados em aplicações sem interface).
 
 
 
 ## 4D Server em modo utilitário
 
-You can launch a 4D Server instance in a utility mode (headless) by using the `--utility` CLI option. In this case, the following workflow is triggered:
+Pode lançar uma instância 4D Server em modo utilitário (sem interface) usando a opção CLI `--utility`. Neste caso, é accionado o seguinte fluxo de trabalho:
 
-1. 4D Server executes the `On Startup` database method (and all "automatic" methods such as [user method](../Users/handling_users_groups.md#user-properties)), except if the `--skip-onstartup` parameter is passed.
-2. 4D Server executes the method designated by the `--startup-method`, if any.
-3. 4D Server executes the `On Exit` database method, except if the `--skip-onstartup` parameter is passed.
+1. 4D Server executa o método base `On Startup` (e todos os métodos "automáticos" tais como [método usuário](../Users/handling_users_groups.md#user-properties)), excepto se o parâmetro `--skip-onstartup` for passado.
+2. 4D Server executa o método designado pelo `--startup-method`, se houver.
+3. 4D Server executa o método base `On Exit`, excepto se o parâmetro `--skip-onstartup` for passado.
 4. 4D Server é encerrado.
 
 :::info
