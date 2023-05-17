@@ -6,7 +6,7 @@ sidebar_label: Página Verificação
 
 You use this page to verify data integrity. The verification can be carried out on records and/or indexes. This page only checks the data integrity. If errors are found and repairs are needed, you will be advised to use the [Repair page](repair.md).
 
-## Actions
+## Acções
 
 The page contains action buttons that provide direct access to the verification functions.
 > When the database is encrypted, verification includes validation of encrypted data consistency. If no valid data key has already been provided, a dialog requesting the passphrase or the data key is displayed.
