@@ -33,7 +33,7 @@ You can use a sequence number to create a unique number for each record in the t
 | ------------ | ----------------------------------- | ------------------------------------------ |
 | defaultValue | string, number, date, time, boolean | Any value and/or a stamp: "#D", "#H", "#N" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Entrada](input_overview.md)
 
@@ -50,7 +50,7 @@ Allows setting a list whose values cannot be entered in the object. Se um valor 
 | ------------ | ------------- | -------------------------------- |
 | excludedList | lista         | A list of values to be excluded. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
 
@@ -69,6 +69,6 @@ Making a list required does not automatically display the list when the field is
 | ------------ | ------------- | --------------------------- |
 | requiredList | lista         | A list of mandatory values. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
