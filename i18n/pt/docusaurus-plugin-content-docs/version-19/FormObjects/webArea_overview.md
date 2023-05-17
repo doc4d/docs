@@ -32,7 +32,7 @@ Quando selecionar a propriedade [Acessar aos métodos 4D](properties_WebArea.md#
 
 > This property is only available if the Web area [uses the embedded Web rendering engine](#use-embedded-web-rendering-engine).
 
-### $4d object
+### Objecto $4d
 
 O [motor de renderização web embebido de 4D](properties_WebArea.md#use-embedded-web-rendering-engine) fornece à área um objeto JavaScript chamado $4d que pode ser associado a qualquer método projeto 4D utilizando a notação objeto ".".
 
