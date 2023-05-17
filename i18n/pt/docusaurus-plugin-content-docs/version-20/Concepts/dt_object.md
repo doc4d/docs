@@ -75,8 +75,8 @@ Since any property value is considered an expression, you can create sub-objects
 Exemplos:
 
 ```4d
- var $o ; $o2 ; $o3 : Object //declaration of object variables
- $o := {} // instantiation of an empty object 
+ var $o ; $o2 ; $o3 : Object //declaração de variáveis de objecto
+ $o := {} // instanciação de um objecto vazio 
  $o2 := {a: "foo"; b: 42; c: {}; d: ($toto) ? true : false } // instanciação de um objecto
         // com propriedades {"a": "foo", "b":42, "c":{}, "d":false})
 
@@ -138,7 +138,7 @@ Exemplo:
 Exemplos:
 ```4d
      $vName:=employee["name"]
-     //or also:
+     /ou também:
      $property:="name"
      $vName:=employee[$property]
 
