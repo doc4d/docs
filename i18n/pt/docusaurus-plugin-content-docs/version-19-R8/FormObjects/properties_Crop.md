@@ -14,7 +14,7 @@ Define o número de colunas numa tabela de miniaturas.
 |:----------- |:-------------:| ----------------- |
 | columnCount |    integer    | mínimo: 1         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Botão imagem](pictureButton_overview.md) - [Grade de Botões](buttonGrid_overview.md) - [Menu Pop-up imagem](picturePopupMenu_overview.md)
 
@@ -30,6 +30,6 @@ Define o número de linhaas numa tabela de miniaturas.
 |:-------- |:-------------:| ----------------- |
 | rowCount |    integer    | mínimo: 1         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Botão imagem](pictureButton_overview.md) - [Grade de Botões](buttonGrid_overview.md) - [Menu Pop-up imagem](picturePopupMenu_overview.md)
