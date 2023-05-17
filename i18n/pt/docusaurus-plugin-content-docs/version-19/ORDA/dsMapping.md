@@ -75,7 +75,7 @@ A datastore references only a single local or remote database.
 The datastore object itself cannot be copied as an object:
 
 ```4d
-$mydatastore:=OB Copy(ds) //returns null
+$mydatastore:=OB Copy(ds) //retorna nulo
 ```
 
 The datastore properties are however enumerable:
@@ -83,7 +83,7 @@ The datastore properties are however enumerable:
 ```4d
  ARRAY TEXT($prop;0)
  OB GET PROPERTY NAMES(ds;$prop)
-  //$prop contains the names of all the dataclasses
+  //$prop contém os nomes de todas as classes de dados
 ```
 
 The main (default) datastore is always available through the `ds` command, but the `Open datastore` command allows referencing any remote datastore.
