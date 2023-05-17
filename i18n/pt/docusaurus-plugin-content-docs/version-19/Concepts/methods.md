@@ -120,9 +120,9 @@ Depois `myAlert` pode ser encapsulado em qualquer objecto e chamado:
 ```4d
 C_OBJECT($o)
 $o:=New object("full_name";Formula(fullName))
-$result:=$o.full_name("John";"Smith") 
+$result:=$o.full_name("John"; "Smith") 
 //$result = "John Smith"
-// equivalent to $result:=fullName("param1";"param2")
+// equivalente a $result:=fullName("param1"; "param2")
 ```
 
 Combinado com a função`This`, tais métodos de objectos permitem escrever um poderoso código genérico. Por exemplo:
@@ -136,8 +136,8 @@ Então o método atua como um novo atributo calculado que pode ser adicionado a 
 
 ```4d
 C_OBJECT($o)
-$o:=New object("firstName";"Jim";"lastName";"Wesson")
-$o.fullName:=Formula(fullName2) //add the method  
+$o:=New object("firstName"; "Jim"; "lastName"; "Wesson")
+$o.fullName:=Formula(fullName2) //adicionar o método  
 
 $result:=$o.fullName() 
 //$result = "Jim Wesson"
@@ -224,9 +224,9 @@ Para este exemplo, assumimos que os valores nos campos são únicos (não há du
 com a função recursiva `Genealogia de` listada aqui:
 
 ```4d
-  ` Genealogy of project method
-  ` Genealogy of ( String ) -> Text
-  ` Genealogy of ( Name ) -> Part of sentence
+  ` Método projecto Genealogia do 
+  ` Genealogia de ( String ) -> Text
+  ` Genealogia de ( Nome ) -> Parte de frase
 
  $0:=$1
  QUERY([Friends and Relatives];[Friends and Relatives]ChildrensName=$1)
