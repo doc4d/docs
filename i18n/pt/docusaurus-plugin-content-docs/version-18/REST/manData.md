@@ -19,7 +19,7 @@ Para adicionar e modificar entidades, pode chamar [`$method=update`]($method.md#
 
 Besides retrieving a single entity in a dataclass using [{dataClass}({key})](%7BdataClass%7D_%7Bkey%7D.html), you can also write a method in your DataClass class and call it to return an entity selection (or a collection) by using [{dataClass}/{method}](%7BdataClass%7D.html#dataclassmethod).
 
-Before returning the collection, you can also sort it by using [`$orderby`]($orderby.md) one one or more attributes (even relation attributes).
+Antes de devolver a coleção, também pode ordená-la utilizando [`$orderby`]($orderby.md) um ou vários atributos (mesmo os atributos de relação).
 
 ## Navegando dados
 
@@ -61,7 +61,7 @@ Para computar todos os valores e retornar um objeto JSON:
 
 ## Getting data from methods
 
-You can call 4D project methods that are [exposed as REST Service](%7BdataClass%7D.html#4d-configuration). A 4D method can return in $0:
+You can call 4D project methods that are [exposed as REST Service](%7BdataClass%7D.html#4d-configuration). Um método 4D pode retornar em $0:
 
 - um objeto
 - a collection
