@@ -27,7 +27,7 @@ On Windows, the concept of "recommended choice" is not supported: only the focus
 |      |               |                   |
  defaultButton|boolean|true, false |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Regular Button](button_overview.md#regular) - [Flat Button](button_overview.md#regular)
 
@@ -43,7 +43,7 @@ During execution, a field or any enterable area is outlined by a selection recta
 | ------------- | ------------- | ----------------- |
 | hideFocusRing | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro area](writeProArea_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Subform](subform_overview.md)
 
@@ -65,7 +65,7 @@ By default, this option is not enabled.
 | ------------------- | ------------- | ----------------- |
 | hideSystemHighlight | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -91,7 +91,7 @@ Valores disponíveis:
 | ------------------- | ------------- | -------------------------------- |
 | scrollbarHorizontal | text          | "visible", "hidden", "automatic" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Hierarchical List](list_overview.md#overview) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
 
@@ -112,7 +112,7 @@ Sets the screen resolution for the 4D Write Pro area contents. By default, it is
 |      |               |                   |
  dpi|number|0=automatic, 72, 96 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -129,7 +129,7 @@ Displays/hides both background images and background color.
 |      |               |                   |
  showBackground|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -146,7 +146,7 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 |      |               |                   |
  showFooters|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -165,7 +165,7 @@ When enabled, the formula bar is visible below the Toolbar interface in the 4D V
 |      |               |                   |
  withFormulaBar|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D View Pro](viewProArea_overview.md)
 
@@ -182,7 +182,7 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 |      |               |                   |
  showHeaders|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -199,7 +199,7 @@ Displays/hides invisible characters
 |      |               |                   |
  showHiddenChars|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -216,7 +216,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 |      |               |                   |
  showHorizontalRuler|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -233,7 +233,7 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 |      |               |                   |
  showHTMLWysiwyg|boolean|true, false (default)|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -250,7 +250,7 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 |      |               |                   |
  showPageFrames|boolean|true, false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -277,7 +277,7 @@ With the Show references property on, the reference is displayed:
 |      |               |                   |
  showReferences|boolean|true, false (default)|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -294,7 +294,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 |      |               |                   |
  showVerticalRuler|boolean|true (default), false|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -313,7 +313,7 @@ When tab controls with a custom direction are displayed under Windows, they auto
 |      |               |                   |
  labelsPlacement|boolean|"top", "bottom" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Tab Control](tabControl.md)
 
@@ -330,7 +330,7 @@ You can add an interface to 4D View Pro areas to allow end users to perform basi
 |      |               |                   |
  userInterface|text|"none" (default), "ribbon", "toolbar" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D View Pro](viewProArea_overview.md)
 
@@ -362,7 +362,7 @@ Valores disponíveis:
 | ----------------- | ------------- | -------------------------------- |
 | scrollbarVertical | text          | "visible", "hidden", "automatic" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Hierarchical List](list_overview.md#overview) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
 
@@ -389,7 +389,7 @@ Sets the mode for displaying the 4D Write Pro document in the form area. Three v
 |      |               |                   |
  layoutMode|text|"page", "draft", "embedded"|
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
 
@@ -406,6 +406,6 @@ Sets the zoom percentage for displaying 4D Write Pro area contents.
 |      |               |                   |
  zoom|número|mínimo = 0 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área 4D Write Pro](writeProArea_overview.md)
