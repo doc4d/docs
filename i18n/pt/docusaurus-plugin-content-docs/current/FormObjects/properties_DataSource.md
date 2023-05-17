@@ -3,13 +3,13 @@ id: propertiesDataSource
 title: Fonte de dados
 ---
 
-## Automatic Insertion
+## Inserção automática
 
 When this option is selected, if a user enters a value that is not found in the choice list associated with the object, this value is automatically added to the list stored in memory.
 
 When the **automatic insertion** option is not selected (default), the value entered is stored in the object but not in the list in memory.
 
-This property is supported by:
+Esta propriedade é suportada por:
 
 - the form editor's Property List.
 - [Combo box](comboBox_overview.md) form objects whose associated list is filled by their array or object datasource.
@@ -26,7 +26,7 @@ For example, given a choice list containing "France, Germany, Italy" that is ass
 | ------------------ | ------------- | ----------------- |
 | automaticInsertion | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Bo](comboBox_overview.md) - [Coluna List Box](listbox_overview.md#list-box-columns)
 
@@ -40,12 +40,12 @@ the [OBJECT SET LIST BY NAME](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-LIS
 
 #### Gramática JSON
 
-| Nome       | Tipo de dados    | Valores possíveis                                   |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | Uma lista de valores possíveis                      |
-| lista      | list, collection | A list of possible values (hierarchical lists only) |
+| Nome       | Tipo de dados     | Valores possíveis                                   |
+| ---------- | ----------------- | --------------------------------------------------- |
+| choiceList | liste, collection | Uma lista de valores possíveis                      |
+| lista      | liste, collection | A list of possible values (hierarchical lists only) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -57,11 +57,11 @@ List of static values to use as labels for the tab control object.
 
 #### Gramática JSON
 
-| Nome   | Tipo de dados    | Valores possíveis                        |
-| ------ | ---------------- | ---------------------------------------- |
-| labels | list, collection | A list of values to fill the tab control |
+| Nome   | Tipo de dados     | Valores possíveis                        |
+| ------ | ----------------- | ---------------------------------------- |
+| labels | liste, collection | A list of values to fill the tab control |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Tab Control](tabControl.md)
 
@@ -76,11 +76,11 @@ Specifies a variable or expression that will be assigned the collection element/
 
 #### Gramática JSON
 
-| Nome              | Tipo de dados | Valores possíveis |
-| ----------------- | ------------- | ----------------- |
-| currentItemSource | string        | Object expression |
+| Nome              | Tipo de dados | Valores possíveis    |
+| ----------------- | ------------- | -------------------- |
+| currentItemSource | string        | Expressão de objecto |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -103,7 +103,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 | ------------------------- | ------------- | ------------------ |
 | currentItemPositionSource | string        | Expressão numérica |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -122,9 +122,9 @@ Please refer to [Expression Type](properties_Object.md#expression-type) section.
 
 | Nome               | Tipo de dados | Valores possíveis                                  |
 | ------------------ | ------------- | -------------------------------------------------- |
-| dataSourceTypeHint | string        | <li>**colunas list box:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
+| dataSourceTypeHint | string        | <li>**columnas list box:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -157,7 +157,7 @@ Using the **Selected item reference** option requires compliance with the follow
 
 > Setting only `"dataSourceTypeHint" : "integer"` with a `"type": "dropdown"` form object will declare a hierarchical drop-down list.
 
-#### Objects Supported
+#### Objectos suportados
 
 If you use this property for a [drop-down list](dropdownList_Overview.md), it must be associated with a field.
 
@@ -181,7 +181,7 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 | ------ | ------------- | ---------------------------------------------------------------- |
 | values | collection    | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box Column (array type only)](listbox_overview.md#list-box-columns)
 
@@ -224,7 +224,7 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 | ---------- | ------------- | ----------------------------------------------------------------------- |
 | dataSource | string        | A 4D variable, field name, or an arbitrary complex language expression. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -244,7 +244,7 @@ All database tables can be used, regardless of whether the form is related to a 
 | ------ | ------------- | ----------------- |
 | tabela | number        | Número de tabela  |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -275,7 +275,7 @@ Using this property requires compliance with the following principles:
 | ------ | ------------- | -------------------- |
 | saveAs | string        | "value", "reference" |
 
-#### Objects Supported
+#### Objectos suportados
 
 Coluna da List Box
 
@@ -295,9 +295,9 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 | Nome                | Tipo de dados | Valores possíveis     |
 | ------------------- | ------------- | --------------------- |
-| selectedItemsSource | string        | Collection expression |
+| selectedItemsSource | string        | Expressão da colecção |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -317,6 +317,6 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 | -------------- | ------------- | -------------------- |
 | namedSelection | string        | Named selection name |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
