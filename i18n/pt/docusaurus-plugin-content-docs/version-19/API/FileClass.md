@@ -541,7 +541,7 @@ Se um conjunto de chaves no parâmetro *info* já estiver definido no arquivo .p
 #### Exemplo
 
 ```4d
-  // set copyright and version of a .exe file (Windows)
+  // definir copyright e versão de um arquivo .exe (Windows)
 var $exeFile : 4D.File
 var $info : Object
 $exeFile:=File(Application file; fk platform path)
@@ -552,13 +552,13 @@ $exeFile.setAppInfo($info)
 ```
 
 ```4d
-  // set some keys in an info.plist file (all platforms)
+  // definir algumas chaves num ficheiro info.plist (todas as plataformas)
 var $infoPlistFile : 4D.File
 var $info : Object
 $infoPlistFile:=File("/RESOURCES/info.plist")
 $info:=New object
-$info.Copyright:="Copyright 4D 2021" //text
-$info.ProductVersion:=12 //integer
+$info.Copyright:="Copyright 4D 2021" //texto
+$info.ProductVersion:=12 //inteiro
 $info.ShipmentDate:="2021-04-22T06:00:00Z" //timestamp
 $infoPlistFile.setAppInfo($info)
 ```
