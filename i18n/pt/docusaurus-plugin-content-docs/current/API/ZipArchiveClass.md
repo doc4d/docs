@@ -54,7 +54,7 @@ End if
 | folderToZip     | 4D. Folder | -> | Objeto File ou Folder a comprimir                    |
 | zipStructure    | Objeto     | -> | Objeto File ou Folder a comprimir                    |
 | destinationFile | 4D. File   | -> | Arquivo destino para o arquivo                       |
-| options         | Integer    | -> | *folderToZip* option: `ZIP Without enclosing folder` |
+| options         | Integer    | -> | Option *folderToZip*: `ZIP Without enclosing folder` |
 | Resultados      | Objeto     | <- | Objeto de estado|<!-- END REF -->
 
 |
