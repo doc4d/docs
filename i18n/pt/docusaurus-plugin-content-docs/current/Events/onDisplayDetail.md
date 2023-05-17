@@ -3,9 +3,9 @@ id: onDisplayDetail
 title: On Display Detail
 ---
 
-| Code | Pode ser chamado por                               | Definição                                                                                         |
-| ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 8    | Form - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
+| Code | Pode ser chamado por                                     | Definição                                                                                         |
+| ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 8    | Formulário - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
 
 
 ## Descrição
@@ -21,7 +21,7 @@ A record is about to be displayed in a list form displayed via `DISPLAY SELECTIO
 In this context, the following sequence of calls to methods and form events is triggered:
 
 - Para cada registo:
-    - For each object in the detail area:
+    - Para cada objecto na área de detalhes:
         - Método objecto com o evento`On Display Detail`
     - Método formulário com o evento`On Display Detail`
 
