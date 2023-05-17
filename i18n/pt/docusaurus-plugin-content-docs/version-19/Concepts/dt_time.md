@@ -42,7 +42,7 @@ Uma hora nula se escreve ?00:00:00?
 | Divisão inteira      | Hora \ Número | Número     | ?02:03:04? ?02:03:04?   | 3692       |
 | Módulo               | Hora % Hora    | Hora       | ?20:10:00? % ?04:20:00? | ?02:50:00? |
 | Módulo               | Hora % Número  | Número     | ?02:03:04? ?02:03:04?   | 0          |
-| Equality             | Hora = Hora    | Parâmetros | ?01:02:03? ?01:02:03?   | True       |
+| Igual                | Hora = Hora    | Parâmetros | ?01:02:03? ?01:02:03?   | True       |
 |                      |                |            | ?01:02:03? ?01:02:03?   | False      |
 | Desigualdade         | Hora # Hora    | Parâmetros | ?01:02:03? ?01:02:03?   | True       |
 |                      |                |            | ?01:02:03? ?01:02:03?   | False      |
