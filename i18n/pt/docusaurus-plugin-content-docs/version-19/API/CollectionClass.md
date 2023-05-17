@@ -1520,7 +1520,7 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* sets the following parameter(s):
 
 * *$1.result* (any type): new transformed value to add to the resulting collection
-* *$1.stop* (boolean): **true** to stop the method callback. O valor retornado é o último calculado.
+* *$1.stop* (boolean): **true** para parar o callback do método. O valor retornado é o último calculado.
 
 #### Exemplo
 
@@ -1801,7 +1801,7 @@ A função `.orderBy()` <!-- REF #collection.orderByMethod().Summary -->returns 
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > Essa função não modifica a coleção original.
 
-In *methodName*, pass a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
+Em *methodName*, passe um método de comparação que compare dois valores e devolva **true** em *$1.result* se o primeiro valor for menor que o segundo. You can provide additional parameters to *methodName* if necessary.
 
 * *methodName* will receive the following parameters:
   * $1 (objeto), onde:
@@ -1867,7 +1867,7 @@ Com o método ***Multiply***:
 
 ```4d
 var$1Object
-var$2Integer // sort option
+var$2Integer // opção de ordenação
 
 $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ```
@@ -2102,7 +2102,7 @@ Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 A função `.reduce()` <!-- REF #collection.reduce().Summary -->applies the *methodName* callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in param (optional). *methodName* takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
+In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in param (optional). *methodName* toma cada elemento da coleção e realiza todas as operações desejadas para acumular o resultado em *$1.accumulator*, que se devolve em *$1.value*.
 
 Pode passar o valor para inicializar o acumulador em *initValue*. Se omitido, *$1.accumulator>* começa com *Undefined*.
 
@@ -2418,7 +2418,7 @@ A colecção devolvida contém o elemento especificado por *startFrom* e todos o
 
 A função `.push()` <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test<!-- END REF --> implemented in the provided *methodName* method.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). This method receives an `Object` as first parameter ($1) and must set *$1.result* to **True** for every element fulfilling the test.
+In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). Este método recebe um `Object` como primeiro parâmetro ($1) e tem de definir *$1.result* como **True** para cada elemento que cumpra o teste.
 
 *methodName* receives the following parameters:
 
