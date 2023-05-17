@@ -4,7 +4,7 @@ title: Fonte de dados
 ---
 
 
-## Automatic Insertion
+## Inserção automática
 
 When this option is selected, if a user enters a value that is not found in the choice list associated with the object, this value is automatically added to the list stored in memory. You can associate choice lists to objects using:
 
@@ -27,7 +27,7 @@ When the **automatic insertion** option is not selected (default), the value ent
 | ------------------ | ------------- | ----------------- |
 | automaticInsertion | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Combo Bo](comboBox_overview.md) - [Coluna List Box](listbox_overview.md#list-box-columns)
 
@@ -39,12 +39,12 @@ Associates a choice list with an object. It can be a choice list name (a list re
 
 #### Gramática JSON
 
-| Nome       | Tipo de dados    | Valores possíveis                                   |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | Uma lista de valores possíveis                      |
-| lista      | list, collection | A list of possible values (hierarchical lists only) |
+| Nome       | Tipo de dados     | Valores possíveis                                   |
+| ---------- | ----------------- | --------------------------------------------------- |
+| choiceList | liste, collection | Uma lista de valores possíveis                      |
+| lista      | liste, collection | A list of possible values (hierarchical lists only) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -56,11 +56,11 @@ List of static values to use as labels for the tab control object.
 
 #### Gramática JSON
 
-| Nome   | Tipo de dados    | Valores possíveis                        |
-| ------ | ---------------- | ---------------------------------------- |
-| labels | list, collection | A list of values to fill the tab control |
+| Nome   | Tipo de dados     | Valores possíveis                        |
+| ------ | ----------------- | ---------------------------------------- |
+| labels | liste, collection | A list of values to fill the tab control |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Tab Control](tabControl.md)
 
@@ -75,11 +75,11 @@ Specifies a variable or expression that will be assigned the collection element/
 
 #### Gramática JSON
 
-| Nome              | Tipo de dados | Valores possíveis |
-| ----------------- | ------------- | ----------------- |
-| currentItemSource | string        | Object expression |
+| Nome              | Tipo de dados | Valores possíveis    |
+| ----------------- | ------------- | -------------------- |
+| currentItemSource | string        | Expressão de objecto |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -102,7 +102,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 | ------------------------- | ------------- | ------------------ |
 | currentItemPositionSource | string        | Expressão numérica |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -112,7 +112,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 
 Please refer to [Expression Type](properties_Object.md#expression-type) section.
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -136,7 +136,7 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 | ------ | ------------- | ---------------------------------------------------------------- |
 | values | collection    | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box Column (array type only)](listbox_overview.md#list-box-columns)
 
@@ -179,7 +179,7 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 | ---------- | ------------- | ----------------------------------------------------------------------- |
 | dataSource | string        | A 4D variable, field name, or an arbitrary complex language expression. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -199,7 +199,7 @@ All database tables can be used, regardless of whether the form is related to a 
 | ------ | ------------- | ----------------- |
 | tabela | number        | Número de tabela  |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -231,7 +231,7 @@ Using this property requires compliance with the following principles:
 | ------ | ------------- | -------------------- |
 | saveAs | string        | "value", "reference" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -251,9 +251,9 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 | Nome                | Tipo de dados | Valores possíveis     |
 | ------------------- | ------------- | --------------------- |
-| selectedItemsSource | string        | Collection expression |
+| selectedItemsSource | string        | Expressão da colecção |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -273,6 +273,6 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 | -------------- | ------------- | -------------------- |
 | namedSelection | string        | Named selection name |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
