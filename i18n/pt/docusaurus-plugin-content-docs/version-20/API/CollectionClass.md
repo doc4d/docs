@@ -1136,7 +1136,7 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 
 #### Descrição
 
-A função `.map()` <!-- REF #collection.filter().Summary -->creates a new collection based upon the result of the call of the *methodName* method on each element of the original collection<!-- END REF -->. This function returns a ***shallow copy***, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+A função `.map()` <!-- REF #collection.filter().Summary -->devolve uma nova coleção contendo todos os elementos da coleção original para a qual a *fórmula * ou *methodName* resultado for **true**<!-- END REF -->. This function returns a ***shallow copy***, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > Essa função não modifica a coleção original.
 
 Pode determinar a chamada de retorno a ser executada para filtrar os elementos de recolha utilizando qualquer um dos dois:
@@ -1543,7 +1543,7 @@ $result:=$col.flatMap(Formula(Split string($1.value; " ")))
 
 #### Exemplo 3
 
-You want to compute the percentage of each value in the collection to the total:
+Pretende-se calcular a percentagem de cada valor da colecção em relação ao total:
 
 ```4d
 var $c; $c2 : Collection
@@ -1584,7 +1584,7 @@ var $c; $c2 : Collection
 
 #### Descrição
 
-A função `.includes()` <!-- REF #collection.includes().Summary -->returns True if the *toSearch* expression is found among collection elements, otherwise False<!-- END REF -->.
+A função `.includes()` <!-- REF #collection.includes().Summary -->devolve True se a expressão *toSearch* for encontrada entre os elementos da colecção; caso contrário, devolve False<!-- END REF -->.
 > Essa função não modifica a coleção original.
 
 Em *toSearch*, passe a expressão para encontrar na coleção. Pode passar:
@@ -2336,7 +2336,7 @@ Ordenar com uma rota de propriedade:
 
 #### Descrição
 
-A função `.orderBy()` <!-- REF #collection.orderByMethod().Summary -->The `.orderByMethod()` function<!-- END REF -->.
+A função `.orderBy()` <!-- REF #collection.orderByMethod().Summary -->devolve uma nova coleção contendo todos os elementos da coleção na ordem definida através da função 4D *formula* ou método *methodName*<!-- END REF -->.
 
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > Essa função não modifica a coleção original.
