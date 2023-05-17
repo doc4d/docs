@@ -39,9 +39,9 @@ The  `Method called on error` command allows you to know the name of the method 
 ```4d
  $methCurrent:=Method called on error
  ON ERR CALL("NewMethod")
-  //If the document cannot be opened, an error is generated
+  //Se o documento não pouder ser aberto, um erro é gerado
  $ref:=Open document("MyDocument")
-  //Reinstallation of previous method
+  //Reinstalação do método anterior
  ON ERR CALL($methCurrent)
 
 ```
