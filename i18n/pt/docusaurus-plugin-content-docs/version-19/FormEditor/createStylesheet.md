@@ -16,13 +16,13 @@ Além de harmonizar uma interface de aplicação, folhas de estilo oferecem trê
 
 4D aceita três arquivos específicos de folhas de estilo:
 
-| Folha de Estilo         | Plataforma                                                               |
+| Folha de estilo         | Plataforma                                                               |
 | ----------------------- | ------------------------------------------------------------------------ |
 | styleSheets.css         | Folha de estilo global para macOS e Windows                              |
 | styleSheets_mac.css     | Para definir os estilos de atributos específicos de macOS unicamente     |
 | styleSheets_windows.css | Para definir os estilos de atributos específicos para Windows unicamente |
 
-Estes arquivos se armazenam na pasta "/SOURCES" do projeto. They can also be accessed directly via the [CSS Preview](formEditor.md#css-preview) in the Form editor toobar.
+Estes arquivos se armazenam na pasta "/SOURCES" do projeto. Também podem ser acedidos directamente através de [CSS Preview](formEditor.md#css-preview) na barra de ferramentas do editor de formulários.
 
 ## Declarações de folhas de estilo
 
@@ -128,7 +128,7 @@ Os estilos correspondentes aos **seletores de atributos** CSS se pedem aplicar a
 
 Especifique o tipo de atributo entre colchetes, depois entre chaves, declare os estilos a aplicar.
 
-#### Supported syntaxes
+#### Sintaxes compatíveis
 
 | Sintaxe                   | Descrição                                                                                                                 |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -276,13 +276,13 @@ Para anular este comportamento, o valor do estilo deve ir seguido de uma declara
 
 **Exemplo 1:**
 
-| Descripción do formulário JSON | Folha de Estilo | 4D exibe   |
+| Descripción do formulário JSON | Folha de estilo | 4D exibe   |
 | ------------------------------ | --------------- | ---------- |
 | `"text": "Button",`            | `text: Edit;`   | `"Button"` |
 
 **Exemplo 2:**
 
-| Descripción do formulário JSON | Folha de Estilo          | 4D exibe |
+| Descripción do formulário JSON | Folha de estilo          | 4D exibe |
 | ------------------------------ | ------------------------ | -------- |
 | `"text": "Button",`            | `text: Edit !important;` | `"Edit"` |
 
