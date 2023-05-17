@@ -79,7 +79,7 @@ Let’s use an intranet connection as an example. Suppose that the IP address of
 Note that you are free to use this parameter at your convenience. 4D simply ignores the value passed beyond the host part of the URL. For example, you can establish a convention where the value "*/Customers/Add*" means “go directly to add a new record in the `[Customers]` table.” By supplying the web users with a list of possible values and/or default bookmarks, you can provide shortcuts to different parts of your application. This way, web users can quickly access resources of your website without going through the entire navigation path each time they make a new connection.
 
 
-### $2 - Header and Body of the HTTP request
+### $2 - Cabeçalho e corpo do pedido HTTP
 
 The second parameter ($2) is the header and the body of the HTTP request sent by the web browser. Note that this information is passed to your `On Web Connection` database method "as is". Its contents will vary depending on the nature of the web browser attempting the connection.
 
@@ -87,7 +87,7 @@ If your application uses this information, it is up to you to parse the header a
 > For performance reasons, the size of data passing through the $2 parameter must not exceed 32 KB. Beyond this size, they are truncated by the 4D HTTP server.
 
 
-### $3 - Web client IP address
+### $3 - Endereço IP do cliente Web
 
 The $3 parameter receives the IP address of the browser’s machine. This information can allow you to distinguish between intranet and internet connections.
 > 4D devolve endereços IPv4 em formato híbrido IPv6/IPv4 escritos com um prefixo de 96 bits, por exemplo ::ffff:192.168.2.34 para o endereço IPv4 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
