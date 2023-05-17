@@ -25,7 +25,7 @@ Indefinido não é realmente um tipo de dados. Denota uma variável que ainda n�
 
 | Operação     | Sintaxe                  | Retorna    | Expression                     | Valor |
 | ------------ | ------------------------ | ---------- | ------------------------------ | ----- |
-| Equality     | Null `=` Null            | Parâmetros | a.nullProp `=` b.nullProp      | True  |
+| Igual        | Null `=` Null            | Parâmetros | a.nullProp `=` b.nullProp      | True  |
 |              | Null `=` Undefined       | Parâmetros | a.nullProp `=` b.undefinedProp | True  |
 |              | Null `=` *valor escalar* | Parâmetros | a.nullProp `=` 42              | False |
 | Desigualdade | Null `#` Null            | Parâmetros | a.nullProp `#` b.nullProp      | False |
@@ -53,7 +53,7 @@ Comparações com os operadores Maior que (`>`), Menor que (`<`), Maior ou igual
 
 | Operação             | Sintaxe                                               | Retorna    | Expression                          | Valor |
 | -------------------- | ----------------------------------------------------- | ---------- | ----------------------------------- | ----- |
-| Equality             | Undefined `=` Undefined                               | Parâmetros | a.undefinedProp `=` b.undefinedProp | True  |
+| Igual                | Undefined `=` Undefined                               | Parâmetros | a.undefinedProp `=` b.undefinedProp | True  |
 |                      | Undefined `=` Null                                    | Parâmetros | a.undefinedProp `=` c.nullProp      | True  |
 |                      | Undefined `=` *outros valores*                        | Parâmetros | a.undefinedProp `=` 42              | False |
 | Desigualdade         | Undefined `#` Undefined                               | Parâmetros | a.undefinedProp `#` b.undefinedProp | False |
