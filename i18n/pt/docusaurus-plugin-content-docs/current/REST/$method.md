@@ -5,7 +5,7 @@ title: '$method'
 
 This parameter allows you to define the operation to execute with the returned entity or entity selection.
 
-## Available syntaxes
+## Sintaxe disponível
 
 | Sintaxe                                         | Exemplo                                                                                         | Descrição                                                                                                  |
 | ----------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
