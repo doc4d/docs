@@ -27,7 +27,7 @@ Os caracteres de controle não aparecem nas etiquetas de comando do menu. Deve-s
 | ---------- | ---------------------------- | --------------------------------------------------------------------------------------------- |
 | (          | abre parênteses              | Desactivar item                                                                               |
 | <B         | menor que B                  | fonte itálica                                                                                 |
-| <I         | maior que I                  | Italic font                                                                                   |
+| <I         | maior que I                  | Itálico                                                                                       |
 | <U         | menor que U                  | fonte sublinhada                                                                              |
 | !+caracter | ponto de exclamação+caratere | Adiciona caractere como marca de verificação (macOS); adiciona marca de verificação (Windows) |
 | /+caracter | barra+caractere              | Adicionar caractere como atalho                                                               |
@@ -120,7 +120,7 @@ Estas combinações chave reservadas estão listadas na tabela seguinte:
 | ---------------- | ----------------- | ------------- |
 | Ctrl+C           | Comando+C         | Copiar        |
 | Ctrl+Q           | Comando+Q         | Salir         |
-| Ctrl+V           | Comando+V         | Paste         |
+| Ctrl+V           | Comando+V         | Colar         |
 | Ctrl+X           | Comando+X         | Cortar        |
 | Ctrl+Z           | Comando+Z         | Deshacer      |
 | Ctrl+. (ponto)   | Comando+. (ponto) | Parar a acção |
