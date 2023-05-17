@@ -26,7 +26,7 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 | dragging | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Input](input_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Plug-in Area](pluginArea_overview.md#overview)
 
@@ -57,7 +57,7 @@ For more information, refer to [Drag and Drop](https://doc.4d.com/4Dv18/4D/18/Dr
 | -------- | ------------- | ------------------------------------------------------------ |
 | dropping | text          | "none" (default), "custom", "automatic" (excluding list box) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D Write Pro areas](writeProArea_overview.md) - [Button](button_overview.md) - [Input](input_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Plug-in Area](pluginArea_overview.md#overview)
 
@@ -76,7 +76,7 @@ When this option is enabled, the object method is executed with the `On Data Cha
 | ------------------- | ------------- | ----------------- |
 | continuousExecution | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Progress bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
@@ -110,7 +110,7 @@ Several types of method references are supported:
 | method | text          | Object method standard or custom file path, or project method name |
 
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Forms](FormEditor/forms.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md#overview)
 
@@ -129,7 +129,7 @@ Authorizes the movement of rows during execution. This option is selected by def
 | ----------- | ------------- | ----------------- |
 | movableRows | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -148,7 +148,7 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 | ------------- | ------------- | ---------------------------- |
 | selectionMode | text          | "multiple", "single", "none" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Hierarchical List](list_overview.md)
 
@@ -172,7 +172,7 @@ In other cases (list boxes based on named selections, columns associated with ex
 | -------- | ------------- | ----------------- |
 | sortable | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 [List Box](listbox_overview.md)
 
 
@@ -194,6 +194,6 @@ You can also set this property using the `OBJECT SET ACTION` command.
 | ------ | ------------- | ---------------------------------------------------------------------------------------------------------------- |
 | action | string        | The name of a [valid standard action](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html). |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [List Box](listbox_overview.md) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Tab control](tabControl.md)
