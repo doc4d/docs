@@ -1,6 +1,6 @@
 ---
 id: client-server
-title: Client-server page
+title: Página Cliente/Servidor
 ---
 
 The Client-server pages group together parameters related to the use of the database in client-server mode. Naturally, these settings are only taken into account when the database is used in remote mode.
