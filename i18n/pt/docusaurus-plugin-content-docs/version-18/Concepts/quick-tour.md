@@ -109,20 +109,20 @@ O exemplo abaixo recorre todos os caracteres do texto vtSomeText:
 
 ```4d
 For($vlChar;1;Length(vtSomeText))
- //Do something with the character if it is a TAB
+ //Fazer algo com o carácter se for um TAB
  If(Character code(vtSomeText[[$vlChar]])=Tab)
   //...
  End for
 ```
 
-Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. A method can return a single value in the $0 parameter. Quando chamar um método, apenas digite seu nome:
+Um método projeto pode chamar a outro método projeto com ou sem parâmetros (argumentos). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). Os parâmetros estão disponíveis dentro do método chamado como variáveis locais numeradas sequencialmente: $1, $2,..., $n. A method can return a single value in the $0 parameter. Quando chamar um método, apenas digite seu nome:
 
 ```4d
 $myText:="hello"
-$myText:=Do_Something($myText) //Call the Do_Something method
+$myText:=Do_Something($myText) //Chamar o método Do_Something
 ALERT($myText) //"HELLO"
 
-  //Here the code of the method Do_Something
+  //Aqui o código do método Do_Something
 $0:=Uppercase($1)
 ```
 
@@ -284,7 +284,7 @@ Both styles of comments can be used simultaneously.
 Insert `//` at the beginning of a line or after a statement to add a single line comment. Exemplo:
 
 ```4d
-//This is a comment
+/Este é um comentário
 For($vCounter;1;100) //Starting loop
   //comment
   //comment
@@ -309,10 +309,10 @@ End for
 ```4d
 For ($vCounter;1;100)
 /*
-comments  
- /*
- other comments
- */
+comentarios  
+    /*
+    outros comentarios
+    */
 */
 ...
 End for
