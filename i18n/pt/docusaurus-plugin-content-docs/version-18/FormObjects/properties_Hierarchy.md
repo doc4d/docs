@@ -1,6 +1,6 @@
 ---
 id: propertiesHierarchy
-title: Hierarchy
+title: Hierarquia
 ---
 
 ## List box hierárquica
@@ -19,6 +19,6 @@ Ver [List box hierárquicos](listbox_overview.md#hierarchical-list-boxes)
 | ---------- | ------------- | --------------------------------------------------- |
 | datasource | array string  | Coleção de nomes de matriz que definem a hierarquia |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
