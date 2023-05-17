@@ -4,7 +4,7 @@ title: Text and Picture
 ---
 
 
-## Background pathname
+## Rota de acesso ao Fundo
 
 Sets the path of the picture that will be drawn in the background of the object. If the object uses an [icon](#picture-pathname) with [different states](#number-of-states), the background picture will automatically support the same number of states.
 
@@ -16,7 +16,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 | ----------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
 | customBackgroundPicture | string        | Relative path in POSIX syntax. Must be used in conjunction with the style property with the "custom" option. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
@@ -32,7 +32,7 @@ General appearance of the button. The button style also plays a part in the avai
 |:-----:|:-------------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | style |     text      | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) - [Radio Button](radio_overview.md) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
@@ -56,7 +56,7 @@ This parameter is useful, for example, when the background picture contains bord
 | ------------- | ------------- | -------------------------------------- |
 | customBorderX | number        | For use with "custom" style. Mínimo: 0 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
@@ -72,7 +72,7 @@ Designates the placement of an icon in relation to the form object.
 | ------------- | ------------- | ----------------------- |
 | iconPlacement | string        | "none", "left", "right" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box Header](listbox_overview.md#list-box-headers)
 
@@ -90,7 +90,7 @@ The title of the button will be shifted to the right and toward the bottom for t
 | ------------ | ------------- | ----------------- |
 | customOffset | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
@@ -127,7 +127,7 @@ Each state is represented by a different picture. In the source picture, the sta
 | ---------- | ------------- | ------------------------------------------------ |
 | iconFrames | number        | Number of states in the icon picture. Minimum: 1 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
@@ -147,7 +147,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 | ---- | ------------- | -------------------------------------------- |
 | icon | picture       | Relative or filesystem path in POSIX syntax. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md)
 
@@ -173,7 +173,7 @@ Here are the results using the various options for this property:
 | ------------- | ------------- | ------------------------------------------ |
 | textPlacement | string        | "left", "top", "right", "bottom", "center" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
@@ -196,7 +196,7 @@ By default, when a button contains a title and a picture, the elements are joine
 | -------------- | ------------- | --------------------- |
 | imageHugsTitle | boolean       | true (default), false |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Button](button_overview.md) (all styles except Help) - [Check Box](checkbox_overview.md) (all styles except Regular, Flat, Disclosure and Collapse/Expand) - [Radio Button](radio_overview.md) (all styles except Regular, Flat, Disclosure and Collapse/Expand).
 
@@ -216,7 +216,7 @@ This parameter is useful, for example, when the background picture contains bord
 | ------------- | ------------- | -------------------------------------- |
 | customBorderY | number        | For use with "custom" style. Mínimo: 0 |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
@@ -260,6 +260,6 @@ It is important to note that the "With Pop-up Menu" property only manages the gr
 |:-------------- | ------------- | --------------------------------------------------------------------------- |
 | popupPlacement | string        | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Toolbar Button](button_overview.md#toolbar) - [Bevel Button](button_overview.md#bevel) - [Rounded Bevel Button](button_overview.md#Rounded-bevel) - [OS X Gradient Button](button_overview.md#os-x-gradient) - [OS X Textured Button](button_overview.md#os-x-textured) - [Office XP Button](button_overview.md#office-XP) - [Circle Button](button_overview.md#circle) - [Custom](button_overview.md#custom)
