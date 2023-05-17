@@ -43,7 +43,7 @@ When this property is enabled, the height of every row is automatically calculat
 | ------------- | ------------- | ----------------- |
 | rowHeightAuto | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -59,7 +59,7 @@ Bottom coordinate of the object in the form.
 | ------ | ------------- | ----------------- |
 | bottom | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -75,7 +75,7 @@ Coordenadas esquerda do objecto no formulário.
 | ---- | ------------- | ----------------- |
 | left | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -91,7 +91,7 @@ Coordenada direita do objecto no formulário.
 | ------- | ------------- | ----------------- |
 | direita | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -107,7 +107,7 @@ Coordenada superior do objecto no formulário.
 | ---- | ------------- | ----------------- |
 | top  | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -148,7 +148,7 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 | ------------ | ------------- | ----------------- |
 | borderRadius | integer       | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
 
@@ -165,7 +165,7 @@ This property designates an object's vertical size.
 | ------ | ------------- | ----------------- |
 | height | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -184,7 +184,7 @@ This property designates an object's horizontal size.
 | ----- | ------------- | ----------------- |
 | width | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [Line](shapes_overview.md#line) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
@@ -201,7 +201,7 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 | -------- | ------------- | ----------------- |
 | maxWidth | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -218,7 +218,7 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 | -------- | ------------- | ----------------- |
 | minWidth | number        | mínimo: 0         |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
 
@@ -234,7 +234,7 @@ Sets the height of list box rows (excluding headers and footers). By default, th
 | --------- | ------------- | ----------------------------------------------- |
 | rowHeight | string        | valor css na unidade "em" ou "px" (por defeito) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -267,7 +267,7 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 | --------------- | ------------- | ---------------------------- |
 | rowHeightSource | string        | Name of a 4D array variable. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview)
 
@@ -289,7 +289,7 @@ Sets a horizontal padding for the cells. The value is set in pixels (default = 0
 | ----------------- | ------------- | ------------------------------ |
 | horizontalPadding | number        | Number of pixels (must be >=0) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
@@ -309,7 +309,7 @@ Sets a vertical padding for the cells. The value is set in pixels (default = 0).
 | --------------- | ------------- | ------------------------------ |
 | verticalPadding | number        | Number of pixels (must be >=0) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
