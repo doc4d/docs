@@ -177,7 +177,7 @@ $v := 5 && 10 && "hello" //"hello"
 
 #### Exemplo 2
 
-Say you have an online store, and some products have a tax rate applied, and others don't.
+Digamos que tem uma loja online e que alguns produtos têm uma taxa de imposto aplicada e outros não.
 
 To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
 
@@ -331,10 +331,10 @@ The following values are **falsy**:
 * Null picture
 * Null date !00-00-00!
 * "" - Empty strings
-* [] - Empty collections
-* {} - Empty objects
+* [] - Colecções vazias
+* {} - Objectos vazios
 
-All other values are considered **truthy**, including:
+Todos os outros valores são considerados **truthy**, incluindo:
 
 * 0 - numeric zero (Integer or otherwise)
 
