@@ -1930,7 +1930,7 @@ Available properties depend on the type of the named element (named cell, named 
 var $list : Collection
 
 
-$list:=VP Get names("ViewProArea";2) //names in 3rd sheet
+$list:=VP Get names("ViewProArea";2) //nomes na 3ª folha
 ```
 
 #### Veja também
@@ -2128,7 +2128,7 @@ The following code will retrieve the coordinates of all the cells in the current
 $currentSelection:=VP Get selection("myVPArea")
 
 
-//returns a range object containing:  
+//retorna um objecto de intervalo que contém:  
 //$currentSelection.ranges[0].column=5
 //$currentSelection.ranges[0].columnCount=2
 //$currentSelection.ranges[0].row=8
@@ -2212,7 +2212,7 @@ In the following document:
 Get the index of the sheet called "Total first quarter":
 
 ```4d
-$index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
+$index:=VP Get sheet index("ViewProArea"; "Total do primeiro trimestre") //retorna 2
 ```
 
 #### Veja também
@@ -4120,7 +4120,7 @@ You want to define a range object for the row shown below (on the current spread
 Você pode escrever:
 
 ```4d
-$row:=VP Row("ViewProArea";9) // row 10
+$row:=VP Row("ViewProArea";9) // linha 10
 ```
 
 #### Veja também
@@ -5160,7 +5160,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 #### Exemplo 3
 
 ```4d
-VP SET FORMULA($range;"SUM(A1,B7,C11)") //"," to separate parameters
+VP SET FORMULA($range; "SUM(A1,B7,C11)") //"," para separar parâmetros
 ```
 
 #### Veja também
