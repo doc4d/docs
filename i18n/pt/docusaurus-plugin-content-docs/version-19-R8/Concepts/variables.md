@@ -77,11 +77,11 @@ The following table lists all supported `varType` values:
 </tr>
 <tr>
   <td><code>4D.<className>` | Objecto do nome da classe 4D |
-| `cs.<className>` | Object of the user class name                                                                    |
+| `cs.<className>` | Objeto do nome da classe usuário                                                                 |
 
 #### Exemplos
 
-- To declare local and process basic variables:
+- Para declarar variáveis básicas locais e de processo:
 
 ```4d
 var $myText; myText; $vt : Text
