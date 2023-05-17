@@ -18,7 +18,7 @@ We call the following REST request in a transaction.
 
  `POST  /rest/Employee?$method=update&$atomic=true`
 
-**POST data**:
+**Dados POST**:
 
 ```json
 [
