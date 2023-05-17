@@ -21,7 +21,7 @@ A record is about to be displayed in a list form displayed via `DISPLAY SELECTIO
 In this context, the following sequence of calls to methods and form events is triggered:
 
 - Para cada registo:
-    - For each object in the detail area:
+    - Para cada objecto na área de detalhes:
         - Método objecto com o evento`On Display Detail`
     - Método formulário com o evento`On Display Detail`
 
