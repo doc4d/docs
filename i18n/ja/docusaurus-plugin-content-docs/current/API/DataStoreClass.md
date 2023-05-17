@@ -1061,10 +1061,10 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 <details><summary>履歴</summary>
 
-| バージョン  | 内容                                           |
-| ------ | -------------------------------------------- |
-| v20    | Server side support, new `options` parameter |
-| v17 R6 | 追加                                           |
+| バージョン  | 内容                          |
+| ------ | --------------------------- |
+| v20    | サーバー側のサポート、新しい `options` 引数 |
+| v17 R6 | 追加                          |
 
 </details>
 
@@ -1072,47 +1072,47 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| 引数      | タイプ     |    | 説明                                                                            |
-| ------- | ------- | -- | ----------------------------------------------------------------------------- |
-| file    | 4D.File | -> | File オブジェクト                                                                   |
-| options | Integer | -> | Log response option (server only)                                             |
-| reqNum  | Integer | -> | Number of requests to keep in memory (client only)|<!-- END REF -->
+| 引数      | タイプ     |    | 説明                                                     |
+| ------- | ------- | -- | ------------------------------------------------------ |
+| file    | 4D.File | -> | File オブジェクト                                            |
+| options | Integer | -> | ログレスポンスオプション (サーバーのみ)                                  |
+| reqNum  | Integer | -> | メモリ内に保管するリクエストの数 (クライアントのみ)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.startRequestLog()` 関数は、 <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side or on the server side<!-- END REF -->。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
+`.startRequestLog()` 関数は、 <!-- REF #DataStoreClass.startRequestLog().Summary -->クライアント側またはサーバー側で ORDAリクエストのログを開始します<!-- END REF -->。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
 :::info
 
-For a description of the ORDA request log format, please refer to the [**ORDA requests**](../Debugging/debugLogFiles.md#orda-requests) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエスト**](../Debugging/debugLogFiles.md#ordaリクエスト) の章を参照ください。
 
 :::
 
-#### Client-side
+#### クライアント側
 
-To create a client-side ORDA request log, call this function on a remote machine. The log can be sent to a file or to memory, depending on the parameter type:
+クライアント側の ORDAリクエストログを作成するには、リモートマシン上でこの関数を呼び出します。 ログは、渡した引数によってファイルまたはメモリに送ることができます:
 
-* `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。 If `.startRequestLog()` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
+* `File` コマンドで作成された *file* オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。 メモリへのログ記録が既に始まっている状態で、 `.startRequestLog()`が file 引数付きで呼び出された場合、メモリに記録されていたログは停止され消去されます。
 > JSON 評価を実行するには、ファイルの終わりに手動で \] 文字を追加する必要があります。
 
 * *reqNum* (倍長整数) 引数を渡した場合、メモリ内のログは (あれば) 消去され、新しいログが初期化されます。 *reqNum* 引数が指定する数にリクエスト数が到達するまでは、ログはメモリに保管され、到達した場合には古いエントリーから消去されていきます (FIFO スタック)。<br/> ファイルへのログ記録が既に始まっている状態で、`.startRequestLog()` が *reqNum* 引数付きで呼び出された場合、ファイルへのログは停止されます。
 
 * 引数を何も渡さなかった場合、ログはメモリに記録されていきます。 前もって `.startRequestLog()` が*reqNum* 引数付きで 呼び出されていた場合 (ただし `.stopRequestLog()` の前)、ログが次回消去されるかまたは`.stopRequestLog()` が呼び出されるまで、ログデータはメモリ内にスタックされます。
 
-#### Server-side
+#### サーバー側
 
-To create a server-side ORDA request log, call this function on the server machine. The log data is written in a file in `.jsonl` format. Each object represents a request. If the file does not already exist, it is created. もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
+サーバー側の ORDAリクエストログを作成するには、サーバーマシン上でこの関数を呼び出します。 ログは、`.jsonl` 形式のファイルに書き込まれます。 各オブジェクトは 1つのリクエストを表します。 ファイルが存在しない場合は、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
 
-- If you passed the *file* parameter, the log data is written in this file, at the requested location. - If you omit the *file* parameter or if it is null, the log data is written in a file named *ordaRequests.jsonl* and stored in the "/LOGS" folder.
-- The *options* parameter can be used to specify if the server response has to be logged, and if it should include the body. By default when the parameter is omitted, the full response is logged. The following constants can be used in this parameter:
+- *file* 引数を渡した場合、ログデータはこのファイルの指定位置に書き込まれます。 - *file* 引数を省略した場合、または引数が NULL の場合、ログデータは *ordaRequests.jsonl* という名前のファイルに書き込まれ、"/LOGS" フォルダーに保存されます。
+- *options* 引数を使って、サーバーのレスポンスをログに記録するかどうか、および本文をログに含めるかどうかを指定することができます。 引数を省略した場合のデフォルトでは、全レスポンスがログに記録されます。 この引数には、以下の定数を使用することができます:
 
-| 定数                            | 説明                                        |
-| ----------------------------- | ----------------------------------------- |
-| srl log all                   | Log the response entirely (default value) |
-| srl log no response           | Disable the logging of the response       |
-| srl log response without body | Log the response without the body         |
+| 定数                            | 説明                      |
+| ----------------------------- | ----------------------- |
+| srl log all                   | 全レスポンスをログに残します (デフォルト値) |
+| srl log no response           | レスポンスの記録を無効化します         |
+| srl log response without body | 本文を除いたレスポンスをログに残します     |
 
 
 #### 例題 1
@@ -1151,7 +1151,7 @@ ORDA クライアントリクエストをメモリに記録します:
 
 #### 例題 3
 
-You want to log ORDA server requests in a specific file and enable the log sequence number and duration:
+ORDA サーバーリクエストを専用ファイルに記録し、ログシーケンス番号と処理時間の記録を有効化します:
 
 ```4d
 SET DATABASE PARAMETER(4D Server Log Recording;1)
@@ -1240,10 +1240,10 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 <details><summary>履歴</summary>
 
-| バージョン  | 内容                  |
-| ------ | ------------------- |
-| v20    | Server side support |
-| v17 R6 | 追加                  |
+| バージョン  | 内容         |
+| ------ | ---------- |
+| v20    | サーバー側のサポート |
+| v17 R6 | 追加         |
 
 </details>
 
@@ -1259,11 +1259,11 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 #### 説明
 
-`.stopRequestLog()` 関数は、 <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the machine it is called (client or server)<!-- END REF -->。
+`.stopRequestLog()` 関数は、 <!-- REF #DataStoreClass.stopRequestLog().Summary -->クライアント側またはサーバー側の ORDAリクエストのログをすべて停止します<!-- END REF -->。
 
-It actually closes the opened document on disk. On the client side, if the log was started in memory, it is stopped.
+実際には、ディスク上で開かれているドキュメントを閉じます。 クライアント側で、メモリ上でログの記録が開始されていた場合、そのログを停止します。
 
-This function does nothing if logging of ORDA requests was not started on the machine.
+ORDAリクエストログがマシン上で開始されていない場合、この関数は何もしません。
 
 #### 例題
 
