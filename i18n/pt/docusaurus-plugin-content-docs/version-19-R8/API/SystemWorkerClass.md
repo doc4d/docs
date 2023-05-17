@@ -61,16 +61,16 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| Parâmetro   | Tipo            |    | Descrição                                                     |
-| ----------- | --------------- |:--:| ------------------------------------------------------------- |
-| commandLine | Text            | -> | Command line to execute                                       |
-| options     | Objeto          | -> | Worker parameters                                             |
-| result      | 4D.SystemWorker | <- | New asynchronous System worker or null if process not started |  
+| Parâmetro   | Tipo            |    | Descrição                                                            |
+| ----------- | --------------- |:--:| -------------------------------------------------------------------- |
+| commandLine | Text            | -> | Linha de comando a executar                                          |
+| options     | Objeto          | -> | Parâmetros worker                                                    |
+| result      | 4D.SystemWorker | <- | Novo System worker assíncrono ou nulo se o processo não for iniciado |  
 <!-- END REF -->
 
 #### Descrição
 
-The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->cria e devolve um objecto `4D.SystemWorker` que executará a *commandLine* que passou como parâmetro para lançar um processo externo<!-- END REF -->.
+A função `4D.SystemWorker.new()` <!-- REF #4D.SystemWorker.new().Summary -->cria e devolve um objecto `4D.SystemWorker` que executará a *commandLine* que passou como parâmetro para lançar um processo externo<!-- END REF -->.
 
 O objecto worker do sistema devolvido pode ser utilizado para postar mensagens ao worker e obter a saída do worker.
 
@@ -117,9 +117,9 @@ Aqui está a sequência de chamadas de retorno:
 
 A função devolve um objecto system worker sobre o qual se pode chamar funções e propriedades da classe SystemWorker.
 
-#### Examples on Windows
+#### Exemplos no Windows
 
-1. To open Notepad and open a specific document:
+1. Para abrir o Bloco de Notas e abrir um documento específico:
 
 ```4d
 var $sw : 4D.SystemWorker
@@ -130,7 +130,7 @@ $options.hideWindow:= False
 $sw:=4D.SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.txt";$options)
 ```
 
-2. Run npm install in the console:
+2. Executar npm instalar na consola:
 
 ```4d
 var $folder : 4D.Folder
@@ -146,7 +146,7 @@ $worker:=4D.SystemWorker.new("cmd /c npm install";$options)
 
 ```
 
-3. To launch the Microsoft® Word® application and open a specific document:
+3. Para lançar a aplicação Microsoft® Word® e abrir um documento específico:
 
 ```4d
 $mydoc:="C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE C:\\Tempo\\output.txt"
@@ -154,7 +154,7 @@ var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new($mydoc)
 ```
 
-4. To launch a command with the current directory and post a message:
+4. Para lançar um comando com o diretório atual e publicar uma mensagem:
 
 ```4d
 var $param : Object
@@ -167,7 +167,7 @@ $sys.postMessage("This is a postMessage")
 $sys.closeInput()
 ```
 
-5. To allow the user to open an external document on Windows:
+5. Para permitir que o utilizador abra um documento externo no Windows:
 
 ```4d
 $docname:=Select document("";"*.*";"Choose the file to open";0)
@@ -177,26 +177,26 @@ If(OK=1)
 End if
 ```
 
-#### Examples on macOS
+#### Exemplos em macOS
 
-1. Edit a text file (`cat` is the macOS command used to edit files). In this example, the full access path of the command is passed:
+1. Editar um arquivo de texto (`cat` é o comando macOS utilizado para editar arquivos). Neste exemplo, o caminho de acesso completo do comando é passado:
 
 ```4d
 
 var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new("/bin/cat /folder/myfile.txt")
-$sw.wait() //synchronous execution
+$sw.wait() /execução síncrona
 
 ```
 
-2. To launch an independent "graphic" application, it is preferable to use the `open` system command (in this case, the code has the same effect as double-clicking the application):
+2. Para lançar uma aplicação "gráfica" independente, é preferível utilizar o comando do sistema `open` (neste caso, o código tem o mesmo efeito que um duplo clique na aplicação):
 
 ```4d
 var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new ("open /Applications/Calculator.app")
 ```
 
-3. To get the contents of the "Users" folder (ls -l is the macOS equivalent of the dir command in DOS).
+3. Para obter o conteúdo da pasta "Users" (ls -l é o equivalente em macOS do comando dir em DOS).
 
 ```4d
 var $systemworker : 4D.SystemWorker
@@ -210,7 +210,7 @@ $error:=$systemworker.errors
 
 ```
 
-4. Same command as above, but using a sample "Params" user class to show how to handle callback functions:
+4. O mesmo comando que acima, mas usando uma amostra de classe de utilizador "Params" para mostrar como lidar com as funções de callback:
 
 ```4d
 
@@ -273,27 +273,27 @@ Function _createFile($title : Text; $textBody : Text)
 
 #### Descrição
 
-The `.closeInput()` function <!-- REF #SystemWorkerClass.closeInput().Summary -->closes the input stream (*stdin*) of the external process<!-- END REF -->.
+A função `.closeInput()` <!-- REF #SystemWorkerClass.closeInput().Summary -->fecha o fluxo de entrada (*stdin*) do processo externo<!-- END REF -->.
 
-When the executable waits for all data to be received through `postMessage()`, `.closeInput()` is useful to indicate to the executable that data sending is finished and that it can proceed.
+Quando o executável espera que todos os dados sejam recebidos através de `postMessage()`, `.closeInput()` é útil para indicar ao executável que o envio de dados está terminado e que pode prosseguir.
 
 #### Exemplo
 
 ```4D
-// Create some data to gzip
+// Criar alguns dados para gzip
 var $input;$output : Blob
 var $gzip : Text
 TEXT TO BLOB("Hello, World!";$input)
-$gzip:="\"C:\\Program Files (x86)\\GnuWin32\\bin\\gzip.exe\" "
+$gzip:="\"C:\\Program Files (x86)\\\GnuWin32\\bin\\gzip.exe\" "
 
-// Create an asynchronous system worker
+// Criar um system worker assíncrono
 var $worker : 4D.SystemWorker
-$worker:= 4D.SystemWorker.new($gzip;New object("dataType";"blob"))
+$worker:= 4D.SystemWorker.new($gzip;New object("dataType"; "blob"))
 
-// Send the compressed file on stdin.
+// Enviar o ficheiro comprimido para stdin.
 $worker.postMessage($input)
-// Note that we call closeInput() to indicate we're done.
-// gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.
+// Note que chamamos closeInput() para indicar que terminámos.
+// gzip (e a maioria dos dados de espera do programa stdin) esperará por mais dados até que a entrada seja explícitamente fechada.
 $worker.closeInput()
 $worker.wait()
 
@@ -311,7 +311,7 @@ $output:=$worker.response
 
 #### Descrição
 
-The `.commandLine` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the command line passed as parameter to the [`new()`](#4d-systemworker-new) function<!-- END REF -->.
+A propriedade `.commandLine` <!-- REF #SystemWorkerClass.commandLine.Summary -->contém a linha de comando passada como parâmetro para a função [`new()`](#4d-systemworker-new)<!-- END REF -->.
 
 Essa propriedade é **apenas leitura**.
 
@@ -325,7 +325,7 @@ Essa propriedade é **apenas leitura**.
 
 #### Descrição
 
-The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Summary -->contains the working directory in which the external process is executed<!-- END REF -->.
+A propriedade `.currentDirectory` <!-- REF #SystemWorkerClass.currentDirectory.Summary -->contém o directório de trabalho no qual o processo externo é executado<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -337,7 +337,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 #### Descrição
 
-The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Valores possíveis: "text" ou "blob".
+A propriedade `.dataType` <!-- REF #SystemWorkerClass.dataType.Summary -->contém o tipo de conteúdo do corpo de resposta<!-- END REF -->. Valores possíveis: "text" ou "blob".
 
 Essa propriedade é **apenas leitura**.
 
