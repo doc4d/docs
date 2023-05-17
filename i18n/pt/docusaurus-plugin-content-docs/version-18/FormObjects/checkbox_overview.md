@@ -43,17 +43,17 @@ Só as ações que podem representar um estado verdadeiro/falso (ações "marcá
 
 | Supported actions                   | Condições de uso (se houver) |
 | ----------------------------------- | ---------------------------- |
-| avoidPageBreakInsideEnabled         | 4D Write Pro areas only      |
+| avoidPageBreakInsideEnabled         | Apenas áreas 4D Write Pro    |
 | fontItalic                          |                              |
 | fontBold                            |                              |
 | fontLinethrough                     |                              |
-| fontSubscript                       | 4D Write Pro areas only      |
-| fontSuperscript                     | 4D Write Pro areas only      |
+| fontSubscript                       | Apenas áreas 4D Write Pro    |
+| fontSuperscript                     | Apenas áreas 4D Write Pro    |
 | fontUnderline                       |                              |
 | font/showDialog                     | Só em Mac                    |
-| htmlWYSIWIGEnabled                  | 4D Write Pro areas only      |
-| section/differentFirstPage          | 4D Write Pro areas only      |
-| section/differentLeftRightPages     | 4D Write Pro areas only      |
+| htmlWYSIWIGEnabled                  | Apenas áreas 4D Write Pro    |
+| section/differentFirstPage          | Apenas áreas 4D Write Pro    |
+| section/differentLeftRightPages     | Apenas áreas 4D Write Pro    |
 | spell/autoCorrectionEnabled         |                              |
 | spell/autoDashSubstitutionsEnabled  | Só em Mac                    |
 | spell/autoLanguageEnabled           | Só em Mac                    |
@@ -63,14 +63,14 @@ Só as ações que podem representar um estado verdadeiro/falso (ações "marcá
 | spell/grammarEnabled                | Só em Mac                    |
 | spell/showDialog                    | Só em Mac                    |
 | spell/visibleSubstitutions          |                              |
-| visibleBackground                   | 4D Write Pro areas only      |
-| visibleFooters                      | 4D Write Pro areas only      |
-| visibleHeaders                      | 4D Write Pro areas only      |
-| visibleHiddenChars                  | 4D Write Pro areas only      |
-| visibleHorizontalRuler              | 4D Write Pro areas only      |
-| visiblePageFrames                   | 4D Write Pro areas only      |
+| visibleBackground                   | Apenas áreas 4D Write Pro    |
+| visibleFooters                      | Apenas áreas 4D Write Pro    |
+| visibleHeaders                      | Apenas áreas 4D Write Pro    |
+| visibleHiddenChars                  | Apenas áreas 4D Write Pro    |
+| visibleHorizontalRuler              | Apenas áreas 4D Write Pro    |
+| visiblePageFrames                   | Apenas áreas 4D Write Pro    |
 | visibleReferences                   |                              |
-| widowAndOrphanControlEnabled        | 4D Write Pro areas only      |
+| widowAndOrphanControlEnabled        | Apenas áreas 4D Write Pro    |
 
 For detailed information on these actions, please refer to the [Standard actions](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html) section.
 
@@ -78,7 +78,7 @@ For detailed information on these actions, please refer to the [Standard actions
 
 Check box styles control a check box's general appearance as well as its available properties. É possível aplicar diferentes estilos pré-definidos para caixas de seleção. Um grande número de variações podem ser obtidas combinando essas propriedades/comportamentos.
 
-Com exceção das[propriedades disponíveis](#supported-properties), muitos objetos caixa de seleção são *estruturalmente* idênticos. A diferença é no processamento das variáveis associadas.
+Com exceção das [propriedades disponíveis](#supported-properties), muitos objetos caixa de seleção são *estruturalmente* idênticos. A diferença é no processamento das variáveis associadas.
 
 4D provides check boxes in the following predefined styles:
 
@@ -346,7 +346,7 @@ In macOS and Windows, a check box with the "Disclosure" style appears as a stand
 
 The Custom check box style accepts a personalized background picture and allows managing specific properties:
 
-- [Background pathname](properties_TextAndPicture.md#backgroundPathname)
+- [Rota de acesso ao Fundo](properties_TextAndPicture.md#backgroundPathname)
 - [Offset do ícone](properties_TextAndPicture.md#icon-offset)
 - [Margem Horizontal](properties_TextAndPicture.md#horizontalMargin) and [Margem Vertical](properties_TextAndPicture.md#verticalMargin)
 
