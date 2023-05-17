@@ -93,7 +93,7 @@ To open the Caught Commands page:
 
 ![runtime-explorer-window](../assets/en/Debugging/catch-command.png)
 
-This page lists the commands to be caught during execution. It is composed of two columns:
+Esta página lista os comandos que devem ser capturados durante a execução. It is composed of two columns:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any
