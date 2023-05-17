@@ -37,12 +37,12 @@ Seguem-se algumas declarações de variáveis básicas:
 
 ```4d
 
- C_BLOB(vxMyBlob) // The process variable vxMyBlob is declared as a variable of type BLOB
- C_DATE($vdCurDate) // The local variable $vdCurDate is declared as a variable of type Date
- C_LONGINT(vg1;vg2;vg3) // The 3 process variables vg1, vg2 and vg3 are declared as variables of type longint  
- C_OBJECT($vObj) // The local variable $vObj is declared as a variable of type Object
- C_COLLECTION($vCol) // The local variable $vCol is declared as a variable of type Collection
- ARRAY LONGINT(alAnArray;10) //The process alAnArray variable is declared as a Longint array of 10 elements
+ C_BLOB(vxMyBlob) // A variável processo vxMyBlob se declara como uma variável de tipo BLOB
+ C_DATE($vdCurDate) // A variável local $vdCurDate se declara como uma variável de tipo Data
+ C_LONGINT(vg1;vg2;vg3) // As 3 variáveis de processo vg1, vg2 y vg3 se declaram como variáveis de tipo Inteiro longo
+ C_OBJECT($vObj) // A variável local $vObj se declara como uma variável de tipo Objeto
+ C_COLLECTION($vCol) // A variável local $vCol se declara como uma variáve de tipo Coleção
+ ARRAY LONGINT(alAnArray;10) //A variável do processo alAnArray se declara como um array Inteiro longo de 10 elementos
 ```
 
 ## Atribuição de dados
