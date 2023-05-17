@@ -15,12 +15,9 @@ Uma vez definida uma classe de usuário, pode **instanciar** objectos desta clas
 Por exemplo, se criar criar uma classe `Pessoa` com a seguinte definição:
 
 ```4d  
-//Class: Person.4dm
-Class constructor($firstname : Text; $lastname : Text)
+//Class: Person.4dm Class constructor($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
- This.lastName:=$lastname
-
-Function sayHello()->$welcome : Text
+ This.lastName:=$lastname Function sayHello()->$welcome : Text
  $welcome:="Hello "+This.firstName+" "+This.lastName
 ```
 
@@ -241,13 +238,13 @@ Function add($x : Integer)
 
 ```4d
 // Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+ Class constructor($width : Integer; $height : Integer)
  This.name:="Rectangle"
  This.height:=$height
  This.width:=$width
 
 // Function definition
-Function getArea()->$result : Integer
+ Function getArea()->$result : Integer
  $result:=(This.height)*(This.width)
 ```
 
