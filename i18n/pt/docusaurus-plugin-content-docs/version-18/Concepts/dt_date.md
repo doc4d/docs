@@ -34,7 +34,7 @@ Uma data nula é especificada por _!00-00-00!_.
 | Diferença de data    | Date - Date   | Número     | !2017-01-20! - !2017-01-01!  | 19           |
 | Acréscimo de dia     | Data + Número | Date       | !2017-01-20! !2017-01-20!    | !2017-01-29! |
 | Subtrair dia         | Data - Número | Date       | !2017-01-20! !2017-01-20!    | !2017-01-11! |
-| Equality             | Date = Date   | Parâmetros | !2017-01-20! = !2017-01-01!  | True         |
+| Igual                | Date = Date   | Parâmetros | !2017-01-20! = !2017-01-01!  | True         |
 |                      |               |            | !2017-01-20! !2017-01-20!    | False        |
 | Desigualdade         | Date # Date   | Parâmetros | !2017-01-20! !2017-01-20!    | True         |
 |                      |               |            | !2017-01-20! !2017-01-20!    | False        |
