@@ -13,8 +13,8 @@ String is a generic term that stands for:
 A string literal is enclosed in double, straight quotation marks ("..."). Here are some examples of string literals:
 
 ```4d
-"Add Records"
-"No records found."
+"Adicionar registos"
+"Não foram encontrados registos."
 "Fatura "
 ```
 
@@ -40,7 +40,7 @@ The following escape sequences can be used within strings:
 | -------------------- | ---------------- | ---------- | ----------------------- | -------- |
 | Concatenação         | String + String  | String     | "abc" + "def"           | "abcdef" |
 | Repetição            | String * Number  | String     | "ab" * 3                | "ababab" |
-| Equality             | String = String  | Parâmetros | "abc" = "abc"           | True     |
+| Igual                | String = String  | Parâmetros | "abc" = "abc"           | True     |
 |                      |                  |            | "abc" = "abd"           | False    |
 | Desigualdade         | String # String  | Parâmetros | "abc" # "abd"           | True     |
 |                      |                  |            | "abc" # "abc"           | False    |
