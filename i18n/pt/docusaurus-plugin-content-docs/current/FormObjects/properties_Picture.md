@@ -1,6 +1,6 @@
 ---
 id: propertiesPicture
-title: Imagem
+title: Picture
 ---
 
 ## Pathname
