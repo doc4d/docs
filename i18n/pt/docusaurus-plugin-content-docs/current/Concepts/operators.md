@@ -24,7 +24,7 @@ The values that operators affect are operands. Na expressão `1 + 2`, o símbolo
 The **assignment operator** (`a:=b`) initializes or updates the value of `a` with the value of `b`:
 
 ```4d
-$myNumber:=3 //assigns 3 to MyNumber variable  
+$myNumber:=3 //atribui 3 à variável MyNumber  
 $myDate:=!2018/01/21! //assigns a date literal
 $myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
 $col:=New collection //$col is initialized with an empty collection
