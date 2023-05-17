@@ -57,7 +57,7 @@ Vários comandos e funções 4D retornam colecções, por exemplo [`Get Monitore
 
 ### comando `New collection`
 
-The [`New collection`](../API/CollectionClass.md#new-collection) command creates a new empty or prefilled collection and returns its reference.
+O comando [`New collection`](../API/CollectionClass.md#new-collection) cria uma nova colecção vazia ou pré-preenchida e devolve a sua referência.
 
 Exemplos:
 
