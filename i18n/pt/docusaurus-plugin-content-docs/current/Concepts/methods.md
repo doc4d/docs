@@ -266,9 +266,9 @@ Para este exemplo, assumimos que os valores nos campos são únicos (não há du
 com a função recursiva `Genealogia de` listada aqui:
 
 ```4d
-  ` Genealogy of project method
-  ` Genealogy of ( String ) -> Text
-  ` Genealogy of ( Name ) -> Part of sentence
+  ` Método projecto Genealogia do 
+  ` Genealogia de ( String ) -> Text
+  ` Genealogia de ( Nome ) -> Parte de frase
 
  $0:=$1
  QUERY([Friends and Relatives];[Friends and Relatives]ChildrensName=$1)
