@@ -68,7 +68,7 @@ Exemplo:
 Exemplos:
 ```4d
      $vName:=employee["name"]
-     //or also:
+     /ou também:
      $property:="name"
      $vName:=employee[$property]
 
