@@ -79,7 +79,7 @@ Con:
 
 | Operação     | Sintaxe             | Retorna    | Expression    | Valor |
 | ------------ | ------------------- | ---------- | ------------- | ----- |
-| Equality     | Ponteiro = Ponteiro | Parâmetros | vPtrA = vPtrB | True  |
+| Igual        | Ponteiro = Ponteiro | Parâmetros | vPtrA = vPtrB | True  |
 |              |                     |            | vPtrA = vPtrC | False |
 | Desigualdade | Pointer # Pointer   | Parâmetros | vPtrA # vPtrC | True  |
 |              |                     |            | vPtrA # vPtrB | False |
