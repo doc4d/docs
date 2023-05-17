@@ -51,11 +51,11 @@ The local, process and interprocess variables are not shared between components 
 Exemplo usando um array:
 
 ```4d
-//In the host database:
+//Na base de dados do anfitrião:
      ARRAY INTEGER(MyArray;10)
      AMethod(->MyArray)
 
-//In the component, the AMethod project method contains:
+//No componente, o método do projecto AMethod contém:
      APPEND TO ARRAY($1->;2)
 ```
 
