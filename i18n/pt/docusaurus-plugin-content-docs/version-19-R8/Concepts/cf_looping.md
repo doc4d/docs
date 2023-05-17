@@ -489,8 +489,8 @@ If the `break` statement is inside a [nested loop](#nested-forend-for-looping-st
 
 ```4d
 For (vCounter;1;100)
-    If ($tab{vCounter}="") //if a condition becomes true
-        break //end of the for loop
+    If ($tab{vCounter}="") //se uma condição se tornar verdadeira
+        break //fim do ciclo for
     End if
 End for
 ```
@@ -503,7 +503,7 @@ The `continue` statement terminates execution of the statements in the current i
 var $text : Text
 For ($i; 0; 9)
     If ($i=3)
-        continue //go directly to the next iteration
+        continue //passa diretamente para a próxima iteração
     End if
     $text:=$text+String($i)
 End for
