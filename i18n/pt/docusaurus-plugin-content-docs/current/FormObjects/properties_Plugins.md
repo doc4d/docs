@@ -15,6 +15,6 @@ Because the Advanced properties feature is under the control of the author of th
 | ---------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | customProperties | text          | Plugin specific properties, passed to plugin as a JSON string if an object, or as a binary buffer if a base64 encoded string |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área Plug-in](pluginArea_overview.md)
