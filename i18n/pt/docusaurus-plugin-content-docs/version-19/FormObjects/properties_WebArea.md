@@ -20,7 +20,7 @@ When this property is on, a special JavaScript object named `$4d` is instantiate
 | -------------------- | ------------- | ----------------------- |
 | methodsAccessibility | string        | "none" (default), "all" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área Web](webArea_overview.md)
 
@@ -36,7 +36,7 @@ Name of a Longint type variable. This variable will receive a value between 0 an
 | -------------- | ------------- | -------------------------- |
 | progressSource | string        | Name of a Longint variable |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área Web](webArea_overview.md)
 
@@ -67,7 +67,7 @@ The URL variable produces the same effects as the [WA OPEN URL](https://doc.4d.c
 | --------- | ------------- | ----------------- |
 | urlSource | string        | Um URL.           |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área Web](webArea_overview.md)
 
@@ -95,6 +95,6 @@ The Blink engine has the following limitations:
 | --------- | ------------- | -------------------- |
 | webEngine | string        | "embedded", "system" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Área Web](webArea_overview.md)
