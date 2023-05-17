@@ -1,5 +1,5 @@
 ---
-id: restore
+id: rollback
 title: Página Retrocesso
 sidebar_label: Página Retrocesso
 ---
