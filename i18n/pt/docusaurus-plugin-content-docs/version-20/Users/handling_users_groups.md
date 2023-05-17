@@ -7,18 +7,18 @@ title: Gestão de usuários e grupos 4D
 4D fornece aos usuários privilégios de acesso comuns e certos poderes. Quando o usuário e sistema de grupos tiver sido iniciado, esses privilégios começam a funcionar.
 
 
-## Users and groups in projects
+## Usuários e grupos em projectos
 
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. A tabela abaixo lista as principais funcionalidades de usuários e grupos e sua disponibilidade:
+Em aplicações projecto (ficheiros .4DProject ou .4dz), os utilizadores e grupos 4D podem ser configurados tanto em ambientes usuário único como multi-usuário. No entanto, **controlo de acesso** só é eficaz com 4D Server. A tabela abaixo lista as principais funcionalidades de usuários e grupos e sua disponibilidade:
 
-|                                                            | 4D (single-user)                     | 4D Server |
+|                                                            | 4D (usuário único)                   | 4D Server |
 | ---------------------------------------------------------- | ------------------------------------ | --------- |
 | Adicionar/editar usuários e grupos                         | sim                                  | sim       |
 | Atribuir acesso de usuário/grupo a servidores              | sim                                  | sim       |
 | Identificação de usuário                                   | não (todos os usuários são Designer) | sim       |
 | Controle de acesso quando o Designer for atribuído a senha | não (todos os acessos são Designer)  | sim       |
 
-> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications).
+> Para obter informações sobre a identificação do usuário e o controlo de acesso em implementações de usuário único, consulte [este parágrafo](overview.md#access-control-in-single-user-applications).
 
 ## Designer e Administrador
 
@@ -56,7 +56,7 @@ O editor de usuários está na Barra de Ferramentas de 4D.
 
 ![](../assets/en/Users/editor.png)
 
-> O editor de usuários e grupos pode ser exibido em execução com ajuda do comando [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html). The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.
+> O editor de usuários e grupos pode ser exibido em execução com ajuda do comando [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html). Toda a configuração de usuários e grupos pode também ser editada durante a execução da aplicação utilizando comandos de linguagem 4D do tema `Usuários e grupos`.
 
 ### Adicionar e modificar usuários
 
