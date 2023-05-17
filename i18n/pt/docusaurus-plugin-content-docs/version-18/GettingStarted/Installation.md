@@ -3,7 +3,7 @@ id: installation
 title: Instalação e ativação
 ---
 
-Welcome to 4D! You will find below all necessary information about how to install and register your 4D application.
+Bem-vindo a 4D! You will find below all necessary information about how to install and register your 4D application.
 
 ## Required configuration
 
