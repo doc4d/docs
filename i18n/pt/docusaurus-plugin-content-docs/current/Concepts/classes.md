@@ -339,7 +339,7 @@ The property type can be one of the following supported types:
 </tr>
 <tr>
   <td><code>4D.<className>`                                                  | Objecto do nome da classe 4D |
-| `cs.<className>`                   | Object of the user class name                                                                                                                     |
+| `cs.<className>`                   | Objecto do nome da classe de usuário                                                                                                              |
 | `cs.<namespace>.<className>` | For a class constructor function, the `Current method name` command returns:  `<ClassName>:constructor`, for example "MyClass:constructor". |
 
 :::info
