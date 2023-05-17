@@ -36,7 +36,7 @@ If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https:/
 | ------------ | ------------- | ----------------------- |
 | resizingMode | string        | "rightToLeft", "legacy" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -61,7 +61,7 @@ Three options are available:
 | ------- | ------------- | ----------------------- |
 | sizingX | string        | "grow", "move", "fixed" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md#overview)
 
@@ -86,7 +86,7 @@ Three options are available:
 | ------- | ------------- | ----------------------- |
 | sizingY | string        | "grow", "move", "fixed" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md#overview)
 
@@ -110,7 +110,7 @@ When this property is not applied to the splitter, the result is as follows:
 |:------------ |:-------------:|:------------------------------------:|
 | splitterMode |    string     | "move" (pusher), "resize" (standard) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Separador](splitterTabControlOverview#splitters)
 
@@ -126,6 +126,6 @@ Designates if the size of the column can be modified by the user.
 |:--------- |:-------------:|:-----------------:|
 | resizable |    boolean    |  "true", "false"  |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Coluna da List Box](listbox_overview.md#list-box-columns)
