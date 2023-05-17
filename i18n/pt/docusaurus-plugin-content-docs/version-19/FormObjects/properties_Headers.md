@@ -13,7 +13,7 @@ This property is used to display or hide [list box column headers](listbox_overv
 | ----------- | ------------- | ----------------- |
 | showHeaders | boolean       | true, false       |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
@@ -55,7 +55,7 @@ Note that converting back and forth may lead to an end result that is different 
 | ------------ | ------------- | ----------------------------- |
 | headerHeight | string        | positive decimal+px &#124; em |
 
-#### Objects Supported
+#### Objectos suportados
 
 [List Box](listbox_overview.md)
 
