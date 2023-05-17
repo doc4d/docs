@@ -135,7 +135,7 @@ Custom properties, when used, are passed to the [constructor](#class-constructor
 }
 ```
 
-## Instantiating macros in 4D
+## Instanciando macros em 4D
 
 Each macro you want to instantiate in your project or component must be declared as a [4D class](Concepts/classes.md).
 
@@ -215,14 +215,14 @@ Here are the properties returned in the *$editor* parameter:
 
 Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. All properties are optional:
 
-| Propriedade       | Tipo       | Descrição                                                      |
-| ----------------- | ---------- | -------------------------------------------------------------- |
-| currentPage       | Objeto     | currentPage including objects modified by the macro, if any    |
-| currentSelection  | Collection | currentSelection se modificada pela macro                      |
-| formProperties    | Objeto     | formProperties se modificada pela macro                        |
-| editor.groups     | Objeto     | informação do grupo, se os grupos forem modificados pela macro |
-| editor.views      | Objeto     | view info, se as vistas forem modificadas pela macro           |
-| editor.activeView | String     | Nome da vista activa                                           |
+| Propriedade       | Tipo       | Descrição                                                              |
+| ----------------- | ---------- | ---------------------------------------------------------------------- |
+| currentPage       | Objeto     | currentPage incluindo os objectos modificados pela macro, se existirem |
+| currentSelection  | Collection | currentSelection se modificada pela macro                              |
+| formProperties    | Objeto     | formProperties se modificada pela macro                                |
+| editor.groups     | Objeto     | informação do grupo, se os grupos forem modificados pela macro         |
+| editor.views      | Objeto     | view info, se as vistas forem modificadas pela macro                   |
+| editor.activeView | String     | Nome da vista activa                                                   |
 
 Por exemplo, se objectos da página actual e grupos tiverem sido modificados, pode escrever:
 
