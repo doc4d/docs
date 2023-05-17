@@ -9,7 +9,7 @@ This section describes the conventions and rules for naming various elements in 
 
 The following rules apply for all 4D frameworks.
 
-- A name must begin with an alphabetic character, an underscore, or a dollar ("$") (note that a dollar sign can denote a local element, see below).
+- Um nome deve começar por um caractere alfabético, um subscrito ou um sinal de dólar ("$") (lembre que um sinal de dólar pode denotar um elemento local, ver abaixo).
 - Depois disso, o nome pode incluir caracteres alfabéticos, numéricos, o caractere espaço e o caractere de sublinhado/traço baixo ("_") .
 - Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Commas, slashes, quotation marks, and colons are not allowed.
@@ -70,7 +70,7 @@ If(<>vtName#"")
 
 ## Process Variables
 
-You designate a process variable by using its name (which cannot start with the `<>` symbols nor the dollar sign $). Um nome de variável de processo pode conter até 31 caracteres.
+Designa-se uma variável de processo utilizando o seu nome (que não pode começar com os símbolos `<>` nem com o símbolo do dólar $). Um nome de variável de processo pode conter até 31 caracteres.
 
 Exemplos:
 
@@ -82,7 +82,7 @@ vsCurrentName:=""
 
 ## Local Variables
 
-You designate a local variable by placing a dollar sign ($) before the variable name. A local variable name can contain up to 31 characters, not including the dollar sign.
+Uma variável local é determinada colocando um sinal de dólar ($) antes do nome da variável. A local variable name can contain up to 31 characters, not including the dollar sign.
 
 Exemplos:
 
@@ -116,7 +116,7 @@ ARRAY INTEGER(<>aiBigArray;10000)
 
 ### Process Arrays
 
-You designate a process array by using its name (which cannot start with the `<>` symbols nor the dollar sign $). A process array name can contain up to 31 characters.
+Designa-se uma variável de processo utilizando o seu nome (que não pode começar com os símbolos `<>` nem com o símbolo do dólar $). A process array name can contain up to 31 characters.
 
 Exemplos:
 
@@ -128,7 +128,7 @@ ARRAY INTEGER(aiBigArray;10000)
 
 ### Local Arrays
 
-The name of a local array is preceded by the dollar sign ($). A local array name can contain up to 31 characters, not including the dollar sign.
+O nome de um array local vai precedido do sinal de dólar ($). A local array name can contain up to 31 characters, not including the dollar sign.
 
 Exemplos:
 
@@ -145,18 +145,15 @@ You reference an element of an interprocess, process or local array by using the
 Exemplos:
 
 ```4d  
- //Addressing an element of an interprocess array
-If(<>asKeywords{1}="Stop")
+ If(<>asKeywords{1}="Stop")
 <>atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=<>aiBigArray{Size of array(<>aiBigArray)}
 
- //Addressing an element of a process array
-If(asKeywords{1}="Stop")
+ //Direcionar um elemento de um array processo If(asKeywords{1}="Stop")
 atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{Size of array(aiBigArray)}
 
- //Addressing an element of a local array
-If($asKeywords{1}="Stop")
+ //Direcionar um elemento de um array local If($asKeywords{1}="Stop")
 $atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 ```
@@ -246,28 +243,27 @@ Exemplos:
  //Mas este comando espera um nome de método ON EVENT CALL("HANDLE EVENTS")
 ```
 
-Project methods can accept parameters (arguments). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. In addition, multiple consecutive (and last) parameters can be addressed with the syntax ${n}where n, numeric expression, is the number of the parameter.
+Project methods can accept parameters (arguments). Os parâmetros se passam ao método entre parêntesis, depois do nome do método. Cada parâmetro está separado do próximo por um ponto e vírgula (;). Os parâmetros estão disponíveis dentro do método chamado como variáveis locais numeradas sequencialmente: $1, $2,..., $n. Além disso, podem ser endereçados múltiplos parâmetros consecutivos (e últimos) com a sintaxe ${n}onde n, expressão numérica, é o número do parâmetro.
 
-Inside a function, the $0 local variable contains the value to be returned.
+Dentro de uma função, a variável local $0 contém o valor a devolver.
 
 Exemplos:
 
 ```4d
- //Within DROP SPACES $1 is a pointer to the field [People]Name
-DROP SPACES(->[People]Name)
+ //Dentro de DROP SPACES $1 é um ponteiro ao campo [People]Name DROP SPACES(->[People]Name)
 
- //Within Calc creator:
- //- $1 is numeric and equal to 1
- //- $2 is numeric and equal to 5
- //- $3 is text or string and equal to "Nice"
- //- The result value is assigned to $0
-$vsResult:=Calc creator(1;5;"Nice")
+ //Dentro de Calc creator:
+ //- $1 é numérico e igual a 1
+ //- $2 é numérico e igual a 5
+ //- $3 é texto ou string e igual a "Nice"
+ //- O valor do resultado se atribui a $0
+$vsResult:=Calc creator(1;5; "Nice")
 
- //Within Dump:
- //- The three parameters are text or string
- //- They can be addressed as $1, $2 or $3
- //- They can also be addressed as, for instance, ${$vlParam} where $vlParam is 1, 2 or 3
- //- The result value is assigned to $0
+ //Dentro de Dump:
+ //- os tres parâmetros são texto ou string
+ //- Se pode direcionar como $1, $2 ou $3
+ //- Também podem ser direcionados como, por exemplo, ${$vlParam} onde $vlParam é 1, 2 ou 3
+ //- O valor resultante se atribui a $0
 vtClone:=Dump("is";"the";"it")
 ```
 
@@ -300,27 +296,24 @@ An interprocess set name can contain up to 255 characters, not including the `<>
 
 ### Process Sets
 
-You denote a process set by using a string expression that represents its name (which cannot start with the `<>` symbols or the dollar sign $). A set name can contain up to 255 characters.
+Para designar um conjunto processo se utilizar uma expressão de tipo string que represente seu nome (que não pode começar com os símbolos `<>` ou o sinal de dólar $). A set name can contain up to 255 characters.
 
 ### Client Sets
 
-The name of a client set is preceded by the dollar sign ($). A client set name can contain up to 255 characters, not including the dollar sign.
+O nome de um conjunto cliente deve ser precedido do sinal de dólar ($). A client set name can contain up to 255 characters, not including the dollar sign.
 
 **Note:** Sets are maintained on the Server machine. In certain cases, for efficiency or special purposes, you may need to work with sets locally on the Client machine. To do so, you use Client sets.
 
 Exemplos:
 
 ```4d
- //Interprocess sets
-USE SET("<>Deleted Records")
+ //Conjuntos interprocesso USE SET("<>Deleted Records")
 CREATE SET([Customers];"<>Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Process sets
-USE SET("Deleted Records")
+ //Conjuntos processo USE SET("Deleted Records")
 CREATE SET([Customers];"Customer Orders")
 If(Records in set("<>Selection"+String($i))>0)
- //Client sets
-USE SET("$Deleted Records")
+ //conjuntos clientes USE SET("$Deleted Records")
 CREATE SET([Customers];"$Customer Orders")
 If(Records in set("$Selection"+String($i))>0)
 ```
@@ -340,7 +333,7 @@ An interprocess named selection name can contain up to 255 characters, not inclu
 
 ### Process Named Selections
 
-You denote a process named selection by using a string expression that represents its name (which cannot start with the `<>` symbols nor the dollar sign $). A named selection name can contain up to 255 characters.
+Para designar uma seleção nomeada se utiliza uma expressão de tipo string que represente seu nome (que não pode começar com os símbolos `<>` ou o sinal de dólar $). A named selection name can contain up to 255 characters.
 
 Exemplos:
 
@@ -360,18 +353,18 @@ In the single-user version, or in Client/Server on the Client side, there are tw
 
 ### Global Processes
 
-You denote a global process by using a string expression that represents its name (which cannot start with the dollar sign $). A process name can contain up to 255 characters.
+Pode determinar um processo global usando uma expressão string que represente seu nome (que não pode começar com o sinal de dólar $). A process name can contain up to 255 characters.
 
 ### Local Processes
 
-You denote a local process if the name of the process is preceded by a dollar ($) sign. The process name can contain up to 255 characters, not including the dollar sign.
+Pode determinar um processo local se o nome do processo for precedido pelo sinal de dólar ($). The process name can contain up to 255 characters, not including the dollar sign.
 
 Exemplos:
 
 ```4d
- //Starting the global process "Add Customers"
+ //Iniciar processo global "Add Customers"
 $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
- //Starting the local process "$Follow Mouse Moves"
+ //Iniciar processo local "$Follow Mouse Moves"
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
 ```
 
