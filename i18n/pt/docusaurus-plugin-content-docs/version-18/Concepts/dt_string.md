@@ -102,7 +102,7 @@ O wildcard significa "um ou mais caracteres ou nada". As seguintes expressões s
      "abcdefghij"="@abcde@fghij@"
 ```
 
-On the other hand, whatever the case, a string comparison with two consecutive wildcards will always return `FALSE`. The following expression is `FALSE`:
+On the other hand, whatever the case, a string comparison with two consecutive wildcards will always return `FALSE`. A seguinte expressão é `FALSE`:
 
 ```4d
 "abcdefghij"="abc@@fg"
