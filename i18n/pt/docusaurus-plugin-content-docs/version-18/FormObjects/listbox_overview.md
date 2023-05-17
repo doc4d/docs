@@ -252,13 +252,12 @@ Aqui está o método da coluna *arrText*:
 
 ```4d
  Case of
-    :(Form event=On Before Data Entry) // a cell gets the focus
+    :(Form event=On Before Data Entry) // uma célua obtém o foco
        LISTBOX GET CELL POSITION(*;"lb";$col;$row)
-  // identification of cell
-       If(arrDate{$row}<Current date) // if date is earlier than today
-          $0:=-1 // cell is NOT enterable
+  // identificação da célula       If(arrDate{$row}<Current date) // se data for anterior que hoje
+          $0:=-1 // célula NAO é editável
        Else
-  // otherwise, cell is enterable
+  // senão, célula é editável
        End if
  End case
 ```
