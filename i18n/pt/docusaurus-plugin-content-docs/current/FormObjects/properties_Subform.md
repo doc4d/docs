@@ -14,7 +14,7 @@ Specifies if the user can delete subrecords in a list subform.
 | --------------- | ------------- | --------------------------- |
 | deletableInList | boolean       | true, false (default: true) |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -37,7 +37,7 @@ You use this property to declare the detail form to use in the subform. Pode ser
 | ---------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | detailForm | string        | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -55,7 +55,7 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 | ---------------------------- | ------------- | ---------------------------------- |
 | doubleClickInEmptyAreaAction | string        | "addSubrecord" or "" to do nothing |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -83,7 +83,7 @@ For the last two actions, the On `Open Detail` form event is also generated. The
 | ---------------------- | ------------- | ----------------------------------- |
 | doubleClickInRowAction | string        | "editSubrecord", "displaySubrecord" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -106,7 +106,7 @@ When a list subform has this property enabled, the user can modify record data d
 | enterableInList | boolean       | true, false       |
 
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -124,7 +124,7 @@ List subforms can be used for data entry in two ways: the user can enter data di
 | -------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | listForm | string        | Name (string) of table or project form, a POSIX path (string) to a .json file describing the form, or an object describing the form |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -141,7 +141,7 @@ Specifies the table that the list subform belongs to (if any).
 | ------ | ------------- | --------------------------------- |
 | tabela | string        | 4D table name, or "" if no table. |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
 
@@ -164,6 +164,6 @@ Designates the option for allowing users to select rows:
 | ------------- | ------------- | ---------------------------- |
 | selectionMode | string        | "multiple", "single", "none" |
 
-#### Objects Supported
+#### Objectos suportados
 
 [Subformulário](subform_overview.md)
