@@ -46,7 +46,7 @@ Números negativos são especificados com o sinal de menos (-). Por exemplo:
 | Divisão inteira      | Número \ Número | Número     | 5 \ 2     | 2     |
 | Módulo               | Número % Número  | Número     | 5 % 2      | 1     |
 | Exponenciação        | Número ^ Número  | Número     | 2 ^ 3      | 8     |
-| Equality             | Número = Número  | Parâmetros | 10 = 10    | True  |
+| Igual                | Número = Número  | Parâmetros | 10 = 10    | True  |
 |                      |                  |            | 10 = 11    | False |
 | Desigualdade         | Número # Número  | Parâmetros | 10 #11     | True  |
 |                      |                  |            | 10 # 10    | False |
