@@ -3,7 +3,7 @@ id: installation
 title: Instalação
 ---
 
-Welcome to 4D! Vai encontrar abaixo toda informação necessário para instalar e registrar sua aplicação 4D.
+Bem-vindo a 4D! Vai encontrar abaixo toda informação necessário para instalar e registrar sua aplicação 4D.
 
 
 ## Required configuration
@@ -44,7 +44,7 @@ Expand the **Open or create project application** area and select the action you
 
 - **Create a new application project** - create a new, empty application project on your disk.
 
-Enjoy your 4D experience!
+Desfrute da sua experiência 4D!
 
 
 :::info
