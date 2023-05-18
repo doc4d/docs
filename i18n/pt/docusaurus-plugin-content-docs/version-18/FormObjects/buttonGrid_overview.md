@@ -9,7 +9,7 @@ Uma grelha de botões é um objecto transparente colocado em cima de um gráfico
 
 ![](../assets/en/FormObjects/buttonGrid_smileys.png)
 
-You can use a button grid object to determine where the user clicks on the graphic. The object method would use the `On Clicked` event and take appropriate action depending on the location of the click.
+É possível utilizar um objeto de grelha de botões para determinar onde o usuário clica no gráfico. The object method would use the `On Clicked` event and take appropriate action depending on the location of the click.
 
 ## Criando grades de botões
 
