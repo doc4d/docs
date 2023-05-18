@@ -146,7 +146,7 @@ In addition, Web areas support the following generic form events:
 
 ## Regras das áreas web
 
-### User interface
+### Interface do usuário
 
 When the form is executed, standard browser interface functions are available to the user in the Web area, which permit interaction with other form areas:
 
