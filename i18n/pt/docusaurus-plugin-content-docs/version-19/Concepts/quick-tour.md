@@ -41,7 +41,7 @@ A linguagem 4D é baseada em tipos, mas com alguma flexibilidade. Pode criar uma
 var MyDate : Date 
 ```
 
-The `var` keyword allows declaring object variables of a defined class type, for example:
+A palavra-chave `var` permite declarar variáveis objecto de um tipo de classe definido, por exemplo:
 
 ```4d
 var myPerson : cs. Person 
@@ -294,7 +294,7 @@ You refer to an expression by the data type it returns. There are several expres
 | “Hello”                  | String              | The word Hello is a string constant, indicated by the double quotation marks.                                                                                                   |
 | “Hello ” + “there”       | String              | Two strings, “Hello ” and “there”, are added together (concatenated) with the string concatenation operator (+). The string “Hello there” is returned.                          |
 | “Sr. ” + [People]Name    | String              | Two strings are concatenated: the string “Mr. ” and the current value of the Name field in the People table. If the field contains “Smith”, the expression returns “Mr. Smith”. |
-| Uppercase("smith")       | String              | This expression uses `Uppercase`, a command from the language, to convert the string “smith” to uppercase. Retorna "SMITH".                                                     |
+| Uppercase("smith")       | String              | Esta expressão utiliza `Uppercase`, um comando da linguagem, para converter a cadeia de caracteres "smith" em maiúsculas. Retorna "SMITH".                                      |
 | 4                        | Número              | Esta é uma constante numérica, 4.                                                                                                                                               |
 | 4 * 2                    | Número              | Dois números, 4 e 2, são multiplicados utilizando o operador de multiplicação (*). O resultado é o número 8.                                                                    |
 | myButton                 | Número              | Esta é uma variável associada a um botão. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                            |
