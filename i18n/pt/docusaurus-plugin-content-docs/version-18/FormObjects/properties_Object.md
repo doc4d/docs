@@ -195,7 +195,7 @@ Specify the type of list box.
 
 ---
 
-## Plug-in Kind
+## Tipo de plug-in
 
 Name of the [plug-in external area](pluginArea_overview.md) associated to the object. Plug-in external area names are published in the manifest.json file of the plug-in.
 
