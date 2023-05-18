@@ -1439,10 +1439,10 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 <!-- REF #_method_.VP Get cell style.Params -->
 
-| Parâmetro  | Tipo   |    | Descrição                               |
-| ---------- | ------ | -- | --------------------------------------- |
-| rangeObj   | Objeto | -> | Range object                            |
-| Resultados | Objeto | <- | Style object|<!-- END REF -->
+| Parâmetro  | Tipo   |    | Descrição                                |
+| ---------- | ------ | -- | ---------------------------------------- |
+| rangeObj   | Objeto | -> | Range object                             |
+| Resultados | Objeto | <- | Objecto style|<!-- END REF -->
 
 |
 
@@ -1625,7 +1625,7 @@ $index:=VP Get current sheet("ViewProArea")
 | ---------- | ------------------------ | -- | ----------------------------------------------- |
 | vpAreaName | Objeto                   | -> | 4D View Pro area form object name               |
 | sheet      | Integer                  | -> | Index of the sheet to get the data context from |
-| Resultados | Object &#124; Collection | <- | Data context|<!-- END REF -->
+| Resultados | Object &#124; Collection | <- | Contexto de dados|<!-- END REF -->
 
 |
 
@@ -4569,10 +4569,10 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 <!-- REF #_method_.VP SET CELL STYLE.Params -->
 
-| Parâmetro | Tipo   |    | Descrição                               |
-| --------- | ------ | -- | --------------------------------------- |
-| rangeObj  | Objeto | -> | Range object                            |
-| styleObj  | Objeto | -> | Style object|<!-- END REF -->
+| Parâmetro | Tipo   |    | Descrição                                |
+| --------- | ------ | -- | ---------------------------------------- |
+| rangeObj  | Objeto | -> | Range object                             |
+| styleObj  | Objeto | -> | Objecto style|<!-- END REF -->
 
 |
 
@@ -4779,7 +4779,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 |                          | resumo     |            | Text                   | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                          | minParams  |            | Número                 | Minimum number of parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |                          | maxParams  |            | Número                 | Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                           |
-> **WARNING**
+> **AVISO**
 > * **AVISO** * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
 
