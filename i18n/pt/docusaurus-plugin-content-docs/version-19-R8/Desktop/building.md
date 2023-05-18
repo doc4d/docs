@@ -312,7 +312,7 @@ You can check the **Allow automatic update...** option for client applications r
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
 
-| Current server platform | Required file                                                | Detalhes                                                                                                                                                                   |
+| Current server platform | Ficheiro obrigatório                                         | Detalhes                                                                                                                                                                   |
 | ----------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | macOS                   | Windows 4D Volume Desktop *or* Windows client update archive | By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...] |
 | Windows                 | macOS client update archive                                  | Select a signed `.4darchive` file previously built on macOS                                                                                                                |
@@ -340,7 +340,7 @@ To force the update, simply exclude the current version number of client applica
 
 The [current version number](build-server-application) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
 
-#### Update Error
+#### Erro de actualização
 
 If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. The application is now going to quit.”
 
