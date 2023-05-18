@@ -141,7 +141,7 @@ A pasta Resources contém todos os arquivos e pastas de recursos personalizados 
 
 (*) only if the project was exported from a .4db binary database.
 
-## Data folder
+## Pasta Data
 
 The data folder contains the data file and all files and folders relating to the data.
 
@@ -165,7 +165,7 @@ Se existir um arquivo de propriedades de dados [em uma pasta de dados ](#setting
 | Backup.4DSettings   | Parâmetros de cópia de segurança do banco de dados, utilizados para definir as [opções de cópia de segurança](Backup/settings.md)) quando o banco de dados for lançado com este arquivo de dados. Keys concerning backup configuration are described in the *4D XML Keys Backup* manual. | XML     |
 | settings.4DSettings | Propriedades personalizadas de o banco de dados para este arquivo de dados.                                                                                                                                                                                                              | XML     |
 
-### Logs folder
+### Pasta Logs
 
 The Logs folder contains all log files used by the project. Log files include, in particular:
 
