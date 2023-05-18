@@ -266,7 +266,7 @@ To force the update, simply exclude the current version number of client applica
 
 The [current version number](build-server-application) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
 
-#### Update Error
+#### Erro de actualização
 
 If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. The application is now going to quit.”
 
