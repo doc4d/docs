@@ -4,7 +4,7 @@ title: '$upload'
 ---
 
 
-Returns an ID of the file uploaded to the server
+Devolve um ID do ficheiro carregado para o servidor
 
 ## Descrição
 
@@ -28,7 +28,7 @@ As a result, the server returns an ID that identifies the file:
 
 `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50" }`
 
-Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity: The request looks like:
+Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity: O pedido tem o seguinte aspecto:
 
  `POST  /rest/Employee/?$method=update`
 
@@ -44,7 +44,7 @@ Afterwards, you use this ID to add it to an attribute using [`$method=update`]($
 
 **Resposta**:
 
-The modified entity is returned:
+A entidade modificada é devolvida:
 
 ```
 {
@@ -64,9 +64,9 @@ The modified entity is returned:
     },}
 ```
 
-## Example with a 4D HTTP client
+## Exemplo com um cliente 4D HTTP
 
-The following example shows how to upload a *.pdf* file to the server using the 4D HTTP client.
+O exemplo a seguir mostra como fazer o upload de um arquivo *.pdf* para o servidor usando o cliente 4D HTTP.
 
 ```4d
 var $params : Text
