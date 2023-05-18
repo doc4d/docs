@@ -1,6 +1,6 @@
 ---
 id: debugger
-title: Debugger
+title: Depurador
 ---
 
 The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through your code slowly and examine the information. This process is called "tracing".
@@ -49,7 +49,7 @@ Tracing stops and normal method execution resumes.
 
 > **Shift** + **F5** or **Shift** + clicking the **No Trace** button resumes execution. It also disables all the subsequent TRACE calls for the current process.
 
-#### Step Over
+#### Passar por cima
 
 Executes the current method line, indicated by the program counter (the yellow arrow). The Debugger steps to the next line.
 
@@ -57,7 +57,7 @@ The Step Over button does not step into subroutines and functions, it stays at t
 
 In remote debugging, if the method executes on the server, the parent method is called after the last line of the child method executes. If the parent method is executed on the remote side, the **Step Over** button has the same effect as the **No Trace** button.
 
-#### Step Into
+#### Passo a passo
 
 When a line that calls another method (subroutine or function) is executed, click this button to display the the other method and step through it.
 
@@ -331,7 +331,7 @@ The Source Code Pane shows the source code of the method or function currently b
 
 This area also allows you to add or remove [**break points**](breakpoints.md).
 
-### Tool tip
+### Tips
 
 Hover your pointer over any expression to display a tool tip that indicates:
 
