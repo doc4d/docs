@@ -125,8 +125,8 @@ O usuário não vê uma caixa de diálogo, a operação é automática. O objeti
 
 > In the case of an automatic restore, only the following elements are restored:
 > 
-> - .4DD file
-> - .4DIndx file
+> - ficheiro .4DD
+> - ficheiro .4DIndx
 > - .4DSyncData file
 > - .4DSyncHeader file
 > - External Data folder
