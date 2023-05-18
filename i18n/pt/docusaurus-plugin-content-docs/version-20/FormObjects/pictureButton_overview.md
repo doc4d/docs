@@ -11,13 +11,13 @@ Picture buttons can be used in two ways:
 
   | Propriedade                | Nome JSON              | Valor |
   | -------------------------- | ---------------------- | ----- |
-  | Rows                       | rowCount               | 1     |
+  | Linhas                     | rowCount               | 1     |
   | Colunas                    | columnCount            | 4     |
   | Switch back when Released  | switchBackWhenReleased | true  |
   | Switch when Roll Over      | switchWhenRollover     | true  |
   | Use Last Frame as Disabled | useLastFrameAsDisabled | true  |
 
-* As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. Suppose you want to give the users of a custom application the opportunity to choose the interface language for the application. You implement the option as a picture button in a custom properties dialog box:
+* Como botão de imagem que permite ao usuário escolher entre várias opções. Neste caso, pode ser utilizado um botão de imagem em vez de um menu pop-up de imagem. As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. As a picture button letting the user choose among several choices. In this case, a picture button can be used in place of a pop-up picture menu. Suppose you want to give the users of a custom application the opportunity to choose the interface language for the application. You implement the option as a picture button in a custom properties dialog box:
 
 ![](../assets/en/FormObjects/button_pictureButton.png)
 
@@ -47,7 +47,7 @@ In addition to the standard positioning and appearance settings, you can set som
 
 - By default (when no [animation option](properties_Animation.md) is selected), a picture button displays the next picture in the series when the user clicks; it displays the previous picture in the series when the user holds down the **Shift** key and clicks. When the user reaches the last picture in the series, the picture does not change when the user clicks again. In other words, it does not cycle back to the first picture in the series.
 
-The following other modes are available:
+Estão disponíveis os seguintes outros modos:
 - [Loop back to first frame](properties_Animation.md#loopBackToFirstFrame)
 - [Switch back when Released](properties_Animation.md#switch-back-when-released)
 - [Switch when Roll Over](properties_Animation.md#switch-when-roll-over)
