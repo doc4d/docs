@@ -135,7 +135,7 @@ The Resources folder contains any custom database resource files and folders. In
 
 (*) only if the project was exported from a .4db binary database.
 
-## Data folder
+## Pasta Data
 
 The data folder contains the data file and all files and folders relating to the data.
 
@@ -159,7 +159,7 @@ This folder contains **user settings files for data** used for database administ
 | settings.4DSettings | Custom database settings for this data file                                                                                                                                                                          | XML     |
 | directory.json      | Description of 4D groups, users, and their access rights when the database is run with this data file.                                                                                                               | JSON    |
 
-### Logs folder
+### Pasta Logs
 
 The Logs folder contains all log files used by the project. Log files include, in particular:
 
