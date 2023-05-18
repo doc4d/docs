@@ -391,7 +391,7 @@ The following table summarizes 4D naming conventions.
 | Interprocess Named Selection | `<>` + 255 | `"<>Employees Z to A"`       |
 | Local Process                | $ + 255          | "$Follow Events"                   |
 | Global Process               | 255              | "*P_INVOICES_MODULE*"            |
-| Semaphore                    | 255              | "mysemaphore"                      |
+| Semáforo                     | 255              | "mysemaphore"                      |
 
 **Note:** If non-Roman characters are used in the names of the identifiers, their maximum length may be smaller.
 
