@@ -13,7 +13,7 @@ Em macOS, listas drop down são também chamadas de "menu pop up" Ambos os nomes
 
 You can create different types of drop-down lists with different features. To define a type, select the appropriate **Expression Type** and **Data Type** values in the Property list, or use their JSON equivalent.
 
-| Tipo                       | Funcionalidades                                  | Tipo de expressão | Tipo de dados                | JSON definition                                                                                                                                               |
+| Tipo                       | Funcionalidades                                  | Tipo de expressão | Tipo de dados                | Definição JSON                                                                                                                                                |
 | -------------------------- | ------------------------------------------------ | ----------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Objeto                     | Built upon a collection                          | Objeto            | Numeric, Text, Date, ou Time | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
 | Array                      | Built upon an array                              | Array             | Numeric, Text, Date, ou Time | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
@@ -30,11 +30,11 @@ You can create different types of drop-down lists with different features. To de
 
 An [object](Concepts/dt_object.md) encapsulating a [collection](Concepts/dt_collection) can be used as the data source of a drop-down list. The object must contain the following properties:
 
-| Propriedade    | Tipo               | Descrição                                                                                                                                                                                                                                              |
-| -------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `values`       | Collection         | Mandatory - Collection of scalar values. All values must be of the same type. Supported types:<li>strings</li><li>números</li><li>datas</li><li>horas</li>If empty or not defined, the drop-down list is empty |
-| `index`        | number             | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                                                                   |
-| `currentValue` | same as Collection | Currently selected item (used as placeholder value if set by code)                                                                                                                                                                                     |
+| Propriedade    | Tipo             | Descrição                                                                                                                                                                                                                                              |
+| -------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `values`       | Collection       | Mandatory - Collection of scalar values. All values must be of the same type. Supported types:<li>strings</li><li>números</li><li>datas</li><li>horas</li>If empty or not defined, the drop-down list is empty |
+| `index`        | number           | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                                                                   |
+| `currentValue` | igual a Colecção | Currently selected item (used as placeholder value if set by code)                                                                                                                                                                                     |
 
 If the object contains other properties, they are ignored.
 
@@ -95,16 +95,16 @@ Neste caso também o nome da variável asociada al objeto del formulario debe se
 Se precisar salvar as escolhas do usuário em um campo, precisa usar uma declaração de atribuição que rode depois que o registro seja aceito. O código poderia ser assim:
 
 ```4d
-  Case of
+  Caso de
     :(Form event=On Load)
        LIST TO ARRAY("Cities";aCities)
-       If(Record number([People])<0) `new record
-          aCities:=3 `display a default value
-       Else `existing record, display stored value
+       If(Record number([People])<0) `novo registo
+          aCities:=3 `apresentar um valor predefinido
+       Else `registo existente, apresentar valor armazenado
           aCities:=Find in array(aCities;City)
        End if
-    :(Form event=On Clicked) `user modified selection
-       City:=aCities{aCities} `field gets new value
+    :(Form event=On Clicked) `o utilizador modificou a selecção
+       City:=aCities{aCities} `o campo recebe um novo valor
     :(Form event=On Validate)
        City:=aCities{aCities}
     :(Form event=On Unload)
