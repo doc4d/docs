@@ -48,7 +48,7 @@ During execution, a field or any enterable area is outlined by a selection recta
 
 ---
 
-## Hide selection highlight
+## Esconder ressalte seleção
 
 `Selection type list boxes`
 
