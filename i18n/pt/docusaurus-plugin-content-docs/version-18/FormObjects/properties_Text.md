@@ -20,7 +20,7 @@ When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4
 
 ---
 
-## Bold
+## Negrito
 
 Sets the selected text to appear darker and heavier.
 
