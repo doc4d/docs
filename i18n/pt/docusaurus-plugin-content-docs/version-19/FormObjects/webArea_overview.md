@@ -145,7 +145,7 @@ Além disso, áreas web são compatíveis com os eventos de formulário genéric
 
 ## Regras das áreas web
 
-### User interface
+### Interface do usuário
 
 Quando o formulário for executado, as funções da interface de navegador padrão estão disponíveis para o usuário na área web, o que permite a interação com outras áreas do formulário:
 
