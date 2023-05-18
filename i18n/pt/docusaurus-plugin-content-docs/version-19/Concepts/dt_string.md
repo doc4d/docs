@@ -111,8 +111,8 @@ On the other hand, whatever the case, a string comparison with two consecutive w
 When the comparison operator is or contains a < or > symbol, only comparison with a single wildcard located at the end of the operand is supported:
 
 ```4d
-     "abcd"<="abc@" // Valid comparison
-     "abcd"<="abc@ef" //Not a valid comparison
+     "abcd"<="abc@" // Comparação válida
+     "abcd"<="abc@ef" //Não é uma comparação válida
 ```
 
 If you want to execute comparisons or queries using @ as a character (and not as a wildcard), you need to use the `Character code(At sign)` instruction. Imagine, for example, that you want to know if a string ends with the @ character. The following expression (if $vsValue is not empty) is always `TRUE`:
