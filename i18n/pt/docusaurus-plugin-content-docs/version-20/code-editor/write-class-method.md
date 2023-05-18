@@ -252,7 +252,7 @@ Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Wind
 | [Ctrl]+[Shift]+G                                                | Procurar Anterior                                                                                                                          |
 | [Ctrl]+E                                                        | Find Same Next                                                                                                                             |
 | [Ctrl]+[Shift]+E                                                | Find Same Previous                                                                                                                         |
-| [Ctrl]+[Alt]+F                                                  | Replace                                                                                                                                    |
+| [Ctrl]+[Alt]+F                                                  | Substituir                                                                                                                                 |
 | [Ctrl]+[Alt]+G                                                  | Substituir próximo                                                                                                                         |
 | [Ctrl]+[Alt]+[Shift]+G                                          | Replace Previous                                                                                                                           |
 | [**Pranchetas**](#clipboards)                                   |                                                                                                                                            |
@@ -323,7 +323,7 @@ The **Swap Expression** function can be used to reverse the arguments of an expr
 
 `variable1:=variable2`
 
-becomes
+torna-se
 
 `variable2:=variable1`
 
@@ -457,7 +457,7 @@ Hit the **Enter** key to select closest occurrence to the cursor. You can also c
 
 
 
-### Replace
+### Substituir
 
 Click on the **v** toggle button on the left side of the *Search* area to display/hide the *Replace* area. You can also select **Find > Replace...** in the **Edit** menu or type **Ctrl+Alt+F** (Windows)/**Cmd+Alt+F** (macOS) .
 
