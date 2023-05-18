@@ -88,7 +88,7 @@ Database methods cannot be renamed. The same goes for triggers, form methods, an
 
 :::
 
-### Attributes
+### Atributos
 
 You can control how project methods are used and/or called in different contexts using attributes. Note that you can set attributes for an entire selection of project methods using the Explorer (see following section).
 
