@@ -24,7 +24,7 @@ Variáveis, campos ou expressões do tipo Objecto podem conter vários tipos de 
 
 :::caution
 
-Keep in mind that property names differentiate between upper and lower case.
+Tenha em atenção que os nomes das propriedades diferenciam entre maiúsculas e minúsculas.
 
 :::
 
@@ -43,7 +43,7 @@ Os objetos devem ter sido inicializados, por exemplo utilizando o comando `New o
 
 Com a notação de objetos, pode acessar às propriedades dos objetos de duas maneiras:
 
-- using the [`New object`](https://doc.4d.com/4dv19R/help/command/en/page1471.html) command,
+- utilizando o comando [`New object`](https://doc.4d.com/4dv19R/help/command/en/page1471.html),
 - utilizando o operador `{}`.
 
 :::info
