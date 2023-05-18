@@ -38,7 +38,7 @@ Por exemplo: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` ond
 For more information regarding how to query data in 4D, refer to the [dataClass.query()](https://doc.4d.com/4Dv18/4D/18/dataClassquery.305-4505887.en.html) documentation.
 > When inserting quotes (') or double quotes ("), you must escape them using using their character code:
 > 
-> <li>Quotes ('): \u0027</li>
+> <li>Aspas ('): \u0027</li>
   <li>Quotes ('): \u0027 Double quotes ("): \u0022</li>
 > 
 > For example, you can write the following when passing a value with a quote when using the *params* property:  
