@@ -409,7 +409,7 @@ Seleccione um dos seguintes modos de pré-visualização a partir do menu:
 
 | Ícone barra de ferramentas              | Modo de pré-visualização CSS | Descrição                                                                                                     |
 | --------------------------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| ![](../assets/en/FormEditor/cssNo.png)  | None                         | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.              |
+| ![](../assets/en/FormEditor/cssNo.png)  | Nenhum                       | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.              |
 | ![](../assets/en/FormEditor/cssWin.png) | Windows                      | CSS values for Windows platform are applied in the form. CSS values and icons displayed in the Property List. |
 | ![](../assets/en/FormEditor/cssMac.png) | macOS                        | CSS values for macOS platform are applied in the form. CSS values and icons displayed in the Property List.   |
 > If a font size too large for an object is defined in a style sheet or JSON, the object will automatically be rendered to accommodate the font, however the size of the object will not be changed.
