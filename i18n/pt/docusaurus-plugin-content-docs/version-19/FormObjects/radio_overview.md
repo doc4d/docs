@@ -33,7 +33,7 @@ Radio [button styles](properties_TextAndPicture.md#button-style) control radio b
 
 4D provides radio buttons in the following predefined styles:
 
-### Regular
+### Clássico
 
 The Regular radio button style is a standard system button (*i.e.*, a small bullseye with text) which executes code when a user clicks on it.
 
