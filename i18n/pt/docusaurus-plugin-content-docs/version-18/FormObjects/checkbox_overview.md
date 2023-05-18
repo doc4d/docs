@@ -41,7 +41,7 @@ Pode atribuir uma [ação padrão](properties_Action.md#standard-action) a uma c
 
 Só as ações que podem representar um estado verdadeiro/falso (ações "marcáveis") são compatíveis com esse objeto:
 
-| Supported actions                   | Condições de uso (se houver) |
+| Ações suportadas                    | Condições de uso (se houver) |
 | ----------------------------------- | ---------------------------- |
 | avoidPageBreakInsideEnabled         | Apenas áreas 4D Write Pro    |
 | fontItalic                          |                              |
@@ -82,7 +82,7 @@ Com exceção das [propriedades disponíveis](#supported-properties), muitos obj
 
 4D provides check boxes in the following predefined styles:
 
-### Regular
+### Clássico
 
 The Regular check box style is a standard system check box (*i.e.*, a rectangle with a descriptive title):
 
