@@ -225,7 +225,7 @@ This theme displays information regarding the main Web server of the application
 
 The expressions contained within this theme cannot be modified.
 
-### Contextual Menu
+### Menu contextual
 
 Additional options are available from the contextual menu of the Watch pane.
 
@@ -300,7 +300,7 @@ To edit an expression, click on it to select it, then click again or press **Ent
 To delete an expression, click on it to select it, then press **Backspace** or **Delete** on your keyboard.
 > **Warning:** Be careful when you evaluate a 4D expression modifying the value of one of the System Variables (for instance, the OK variable) because the execution of the rest of the method may be altered.
 
-### Contextual Menu
+### Menu contextual
 
 The Custom Watch Pane’s context menu gives you access the 4D formula editor and other options:
 
