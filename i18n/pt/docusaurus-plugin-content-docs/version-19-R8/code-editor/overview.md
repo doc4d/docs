@@ -80,7 +80,7 @@ With 4D Server, the method name is changed on the server when you finish editing
 
 > Database methods cannot be renamed. The same goes for triggers, form methods, and object methods, which are bound to objects and take their names from the object concerned.
 
-#### Attributes
+#### Atributos
 
 You can control how project methods are used and/or called in different contexts using attributes. Note that you can set attributes for an entire selection of project methods using the Explorer (see following section).
 
