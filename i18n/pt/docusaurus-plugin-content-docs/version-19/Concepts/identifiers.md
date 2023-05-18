@@ -70,7 +70,7 @@ Function getArea($width : Integer; $height : Integer)-> $area : Integer
 Um método projeto (procedimento ou função) se designa utilizando seu nome. Um nome de método pode conter até 31 caracteres.
 
 - Um nome de método projecto deve começar com uma letra, um dígito, ou um sublinhado
-- Thereafter, the name can include any letter or digit, the underscore character ("_"), or the space character.
+- A partir daí, o nome pode incluir qualquer letra ou dígito, o carácter de sublinhado ("_") ou o carácter de espaço.
 - 4D identifica os nomes utilizados nos métodos em função na seguinte ordem de ordem de prioridade:
 - Os nomes dos métodos projecto são insensíveis a maiúsculas e minúsculas.
 
@@ -99,7 +99,7 @@ Uma tabela se designa colocando seu nome entre parênteses: [...]. Um nome de ta
 
 O nome do campo segue imediatamene o nome da tabela. Um nome campo pode conter até 31 caracteres.
 
-- A table or field name must begin with a letter, an underscore, or a dollar ("$")
+- O nome de uma tabela ou de um campo deve começar por uma letra, um sublinhado ou um dólar ("$")
 - Depois disso, o nome pode incluir caracteres alfabéticos, numéricos, o caractere espaço e o caractere de sublinhado/traço baixo ("_") .
 - 4D identifica os nomes utilizados nos métodos em função na seguinte ordem de ordem de prioridade:
 - Nomes não devem incluir palavras chave SQL (comando, atributo, etc).
