@@ -1,13 +1,13 @@
 ---
 id: authUsers
-title: Users and sessions
+title: Usuários e sessões
 ---
 
 REST requests can benefit from [web user sessions](WebServer/sessions.md), providing extra features such as multiple requests handling, data sharing between the web client processes, and user privileges.
 
 Como primeiro passo para abrir uma sessão REST no servidor 4D, o usuário que envia a solicitude deve estar autenticado.
 
-## Authenticating users
+## Autenticação de usuários
 
 Pode iniciar a sessão de um usuário em sua aplicação passando o nome e a senhar de usuário em  [`$directory/login`]($directory.md#directorylogin). This request calls the `On REST Authentication` database method (if it exists), where you can check the user's credentials (see example below).
 
