@@ -1022,7 +1022,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`SEND VARIABLE`](https://doc.4d.com/4dv19R/help/command/en/page80.html)                                       | 80     |
 | [`Sequence number`](https://doc.4d.com/4dv19R/help/command/en/page244.html)                                    | 244    |
 | [`Session`](https://doc.4d.com/4dv19R/help/command/en/page1714.html)                                           | 1714   |
-| [`SET ABOUT`](https://doc.4d.com/4dv19R/help/command/en/page316.html)                                          | 316    |
+| [`SET ABOUT`](https://doc.4d.com/4dv19R/help/command/en/page316.html)                                          | 244    |
 | [`SET ALLOWED METHODS`](https://doc.4d.com/4dv19R/help/command/en/page805.html)                                | 805    |
 | [`SET APPLICATION COLOR SCHEME`](https://doc.4d.com/4dv19R/help/command/en/page1762.html)                      | 1762   |
 | [`SET ASSERT ENABLED`](https://doc.4d.com/4dv19R/help/command/en/page1131.html)                                | 1131   |
