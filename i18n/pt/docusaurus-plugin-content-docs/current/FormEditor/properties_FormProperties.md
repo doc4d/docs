@@ -88,7 +88,7 @@ Supported types depend on the form category:
 | Detail Form for Printing | detailPrinter    | A printed report with one page per record, such as an invoice | Project forms - Table forms |
 | Formulário lista         | listScreen       | A form for listing records on the screen                      | Formularios tabla           |
 | List Form for Printing   | listPrinter      | A printed report that list records                            | Formularios tabla           |
-| None                     | *no destination* | A form with no specific feature                               | Project forms - Table forms |
+| Nenhum                   | *no destination* | A form with no specific feature                               | Project forms - Table forms |
 
 
 #### Gramática JSON
@@ -152,7 +152,7 @@ Only project forms can be specified as published subforms.
 
 ---
 
-## Save Geometry
+## Guardar geometria
 
 When the option is used, if the window is opened using the `Open form window` command with the `*` parameter, several form parameters are automatically saved by 4D when the window is closed, regardless of how they were modified during the session:
 
@@ -169,7 +169,7 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 | memorizeGeometry | boolean       | true, false       |
 
 #### Veja também
-[**Save Value**](FormObjects/properties_Object.md#save-value)
+[**Guardar valor**](FormObjects/properties_Object.md#save-value)
 
 
 ---
