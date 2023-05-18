@@ -103,7 +103,7 @@ Here is an example of a macro definition:
 
 | **Content of macro**                                 | **Comentários**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<?xml version="1.0"...?>`                     | XML declaration                                                                                                                                 |
+| `<?xml version="1.0"...?>`                     | Declaração XML                                                                                                                                  |
 | `<!DOCTYPE macros SYSTEM>`                     | Document declaration                                                                                                                            |
 | `<macros>`                                     | Start of macros XML file                                                                                                                        |
 | `<macro name="RecordLoop">`                    | Start of macro definition and name                                                                                                              |
@@ -113,8 +113,8 @@ Here is an example of a macro definition:
 | NEXT RECORD(`<Selection/>`)                    |                                                                                                                                                 |
 | End for                                              |                                                                                                                                                 |
 | `</text>`                                      | Fim do código macro                                                                                                                             |
-| `</macro>`                                     | End of macro definition                                                                                                                         |
-| `</macros>`                                    | End of macros XML file                                                                                                                          |
+| `</macro>`                                     | Fim da definição de macro                                                                                                                       |
+| `</macros>`                                    | Fim do ficheiro XML das macros                                                                                                                  |
 
 ## About the `<method>` tag
 
