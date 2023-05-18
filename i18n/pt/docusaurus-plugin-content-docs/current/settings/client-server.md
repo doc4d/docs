@@ -7,7 +7,7 @@ The Client-server pages group together parameters related to the use of the data
 
 ## Network options page
 
-### Network
+### Rede
 
 #### Publish database at startup
 
