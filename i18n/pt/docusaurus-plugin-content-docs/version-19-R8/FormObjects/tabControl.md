@@ -88,7 +88,7 @@ You can create a Text array that contains the names of each page of the form. Th
 
 ## Goto page features
 
-### FORM GOTO PAGE command
+### Comando FORM GOTO PAGE
 
 You can use the [FORM GOTO PAGE](https://doc.4d.com/4Dv17R5/4D/17-R5/FORM-GOTO-PAGE.301-4128536.en.html) command in the tab control’s method:
 
