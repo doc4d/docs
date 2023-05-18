@@ -556,7 +556,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`LDAP LOGOUT`](https://doc.4d.com/4dv19/help/command/en/page1327.html)                                       | 1327   |
 | [`LDAP Search`](https://doc.4d.com/4dv19/help/command/en/page1328.html)                                       | 1328   |
 | [`LDAP SEARCH ALL`](https://doc.4d.com/4dv19/help/command/en/page1329.html)                                   | 1329   |
-| [`Length`](https://doc.4d.com/4dv19/help/command/en/page16.html)                                              | 16     |
+| [`Largura`](https://doc.4d.com/4dv19/help/command/en/page16.html)                                             | 16     |
 | [`Nível`](https://doc.4d.com/4dv19/help/command/en/page101.html)                                              | 101    |
 | [`List item parent`](https://doc.4d.com/4dv19/help/command/en/page633.html)                                   | 633    |
 | [`List item position`](https://doc.4d.com/4dv19/help/command/en/page629.html)                                 | 629    |
@@ -1024,7 +1024,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`SELECTION TO ARRAY`](https://doc.4d.com/4dv19/help/command/en/page260.html)                                 | 260    |
 | [`Selection to JSON`](https://doc.4d.com/4dv19/help/command/en/page1234.html)                                 | 1234   |
 | [`Self`](https://doc.4d.com/4dv19/help/command/en/page308.html)                                               | 308    |
-| [`Semaphore`](https://doc.4d.com/4dv19/help/command/en/page143.html)                                          | 143    |
+| [`Semáforo`](https://doc.4d.com/4dv19/help/command/en/page143.html)                                           | 143    |
 | [`SEND MESSAGE TO REMOTE USER`](https://doc.4d.com/4dv19/help/command/en/page1632.html)                       | 1632   |
 | [`SEND PACKET`](https://doc.4d.com/4dv19/help/command/en/page103.html)                                        | 103    |
 | [`SEND RECORD`](https://doc.4d.com/4dv19/help/command/en/page78.html)                                         | 78     |
