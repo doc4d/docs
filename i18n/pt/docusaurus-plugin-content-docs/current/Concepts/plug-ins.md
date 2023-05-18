@@ -11,7 +11,7 @@ A plug-in is a piece of code that 4D launches at start up. Acrescenta funcionali
 
 ## Como criar um plug-in?
 
-Multiple plug-ins have already been written by the 4D community. O [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) é uma ferramenta essencial que simplifica a tarefa de desenvolvimento de plug-ins 4D. Escreve o código 4D precisa de carregar corretamente e interagir com um plug-in, permitindo-lhe concentrar-se no seu próprio código. Additionnally, you can [develop your own plug-ins](Extensions/develop-plug-ins.md).
+Vários plug-ins já foram escritos pela comunidade 4D. O [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) é uma ferramenta essencial que simplifica a tarefa de desenvolvimento de plug-ins 4D. Escreve o código 4D precisa de carregar corretamente e interagir com um plug-in, permitindo-lhe concentrar-se no seu próprio código. Além disso, pode [desenvolver os seus próprios plug-ins](Extensions/develop-plug-ins.md).
 
 
 ## Instalação de plug-ins
@@ -23,6 +23,6 @@ Os plug-ins são carregados por 4D quando a aplicação for lançada, pelo que t
 
 ## Como instalar um plug-in?
 
-Plug-ins commands can be used as regular 4D commands in your 4D development. Plug-in commands appear in the **Plug-ins** page of the Explorer. 
+Os comandos de plug-ins podem ser utilizados como comandos 4D normais no seu desenvolvimento 4D. Os comandos de plug-in aparecem na página **Plug-ins** do Explorer. 
 
 
