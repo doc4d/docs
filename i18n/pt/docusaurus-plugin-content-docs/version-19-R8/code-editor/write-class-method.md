@@ -193,7 +193,7 @@ The **Swap Expression** function can be used to reverse the arguments of an expr
 
 `variable1:=variable2`
 
-becomes
+torna-se
 
 `variable2:=variable1`
 
