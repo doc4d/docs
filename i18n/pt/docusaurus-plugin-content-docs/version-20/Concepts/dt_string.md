@@ -129,7 +129,7 @@ The following expression will be evaluated correctly:
 
 **Note:** A 4D option in the Design environment allows you to define how the @ character is interpreted when it is included in a character string.
 
-### Keywords
+### Palavras-chave
 
 Unlike other string comparisons, searching by keywords looks for "words" in "texts": words are considered both individually and as a whole. The **%** operator always returns `False` if the query concerns several words or only part of a word (for example, a syllable). The “words” are character strings surrounded by “separators,” which are spaces and punctuation characters and dashes. An apostrophe, like in “Today's”, is usually considered as part of the word, but will be ignored in certain cases (see the rules below). Numbers can be searched for because they are evaluated as a whole (including decimal symbols). Other symbols (currency, temperature, and so on) will be ignored.
 
