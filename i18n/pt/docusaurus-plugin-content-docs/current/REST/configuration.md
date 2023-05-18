@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: Server Configuration
+title: Configuração do servidor
 ---
 
 Utilizando petições HTTP padrão, o servidor 4D REST permite às aplicações externas acessar diretamente aos dados de seu banco, *ou seja, *recuperar informação sobre as classes de dados de seu projeto, manipular dados, entrar em sua aplicação web, e muito mais.
@@ -8,7 +8,7 @@ Utilizando petições HTTP padrão, o servidor 4D REST permite às aplicações 
 Para iniciar usando as funcionalidades REST, precisa iniciar e configurar o servidor 4D REST.
 
 > - Em 4D Server, abrir uma sessão REST exige que uma licença cliente 4D free esteja disponível.<br/>
-> - On 4D single-user, you can open up to three REST sessions for testing purposes.
+> - Em 4D single-user, pode abrir até três sessões REST para fins de teste.
 > - You need to manage the [session cookie](authUsers.md#session-cookie) to use the same session for your requesting application.
 
 
@@ -23,7 +23,7 @@ Por razões de segurança, o padrão de 4D é não responder a petições REST. 
 
 A mensagem de aviso "Atenção, verifique os privilégios de acesso" é exibida quando checar essa opção para chamar atenção para o fato que os serviços REST foram ativados, como padrão acessar os objetos de banco de dados é grátis desde que os acessos REST não tenham sido configurados.
 
-> You must restart the 4D application for your changes to take effect.
+> Deve reiniciar a aplicação 4D para que as suas alterações tenham efeito.
 
 
 ## Configuração de acesso REST
@@ -39,7 +39,7 @@ Pode configurar os acessos REST de uma das maneiras abaixo:
 
 ### Using the Structure Settings
 
-The **Read/Write** menu in the "Web/REST resource" page of the structure settings specifies a group of 4D users that is authorized to establish the link to the 4D application using REST queries.
+O menu **Leitura/Escrita** na página "**Web** > **Web Features**" das configurações de estrutura especifica um grupo de usuários 4D que está autorizado a estabelecer o link para a aplicação 4D usando consultas REST.
 
 Como padrão, o menu mostra `<Anyone>`, o que significa que os acessos REST estão abertos a todos os usuários. Quando tiver especificado um grupo, só contas de usuários 4D que pertençam ao grupo podem ser usadas [acesso a 4D através de petições REST](authUsers.md). Se uma conta for usada que não pertença a esse grupo, 4D retorna um erro de autenticação para o emissor da petição.
 
@@ -52,7 +52,7 @@ O método database `On REST Authentication` lhe oferece uma forma personalizada 
 
 ## Expor tabelas e campos
 
-Quando serviços REST estiverem ativados no banco de dados 4D, como padrão uma sessão REST pode acessar todas as tabelas e campos da datastore, e assim usar seus dados. Thus, it can use their data. Por exemplo, se seu banco de dados conter uma tabela [Employee], é possível escrever:
+Quando serviços REST estiverem ativados no banco de dados 4D, como padrão uma sessão REST pode acessar todas as tabelas e campos da datastore, e assim usar seus dados. Assim, pode utilizar os seus dados. Por exemplo, se seu banco de dados conter uma tabela [Employee], é possível escrever:
 
 ```
 http://127.0.0.1:8044/rest/Employee/?$filter="salary>10000"
