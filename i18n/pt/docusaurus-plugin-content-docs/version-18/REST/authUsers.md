@@ -1,10 +1,10 @@
 ---
 id: authUsers
-title: Users and sessions
+title: Usuários e sessões
 ---
 
 
-## Authenticating users
+## Autenticação de usuários
 
 Como primeiro passo para abrir uma sessão REST no servidor 4D, o usuário que envia a solicitude deve estar autenticado.
 
