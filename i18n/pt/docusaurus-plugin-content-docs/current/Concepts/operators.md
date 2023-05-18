@@ -37,7 +37,7 @@ $col:=New collection //$col is initialized with an empty collection
 
 Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
 
-- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
+- [**Operadores lógicos**](dt_boolean.md#logical-operators) (em expressões **booleanas**)
 - [**Operadores de data**](dt_date.md#date-operators)
 - [**Operadores de horas**](dt_time.md#time-operators)
 - [**Operadores de números**](dt_number.md#number-operators)
@@ -49,7 +49,7 @@ Operator results depend on the **data types** they are applied to. 4D supports d
 - [**Operadores indefinidos**](dt_null_undefined.md#undefined-operators)
 
 
-## Compound assignment operators
+## Operadores de atribuição compostos
 
 <details><summary>Histórico</summary>
 
