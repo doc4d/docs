@@ -112,7 +112,7 @@ Propriedades compatíveis dependem do tipo de list box.
 | ------------------------------------------------------------------------------------------- | -------------- | ---------------- | ------------------------------------ |
 | [Cor de fundo alternado](properties_BackgroundAndBorder.md#alternate-background-color)      | X              | X                | X                                    |
 | [Cor de fundo](properties_BackgroundAndBorder.md#background-color)                          | X              | X                | X                                    |
-| [Bold](properties_Text.md#bold)                                                             | X              | X                | X                                    |
+| [Negrito](properties_Text.md#bold)                                                          | X              | X                | X                                    |
 | [Expressão cor de fundo](properties_BackgroundAndBorder.md#background-color-expression)     |                | X                | X                                    |
 | [Estilo borda linha](properties_BackgroundAndBorder.md#border-line-style)                   | X              | X                | X                                    |
 | [Fundo](properties_CoordinatesAndSizing.md#bottom)                                          | X              | X                | X                                    |
@@ -127,7 +127,7 @@ Propriedades compatíveis dependem do tipo de list box.
 | [Exibir rodapés](properties_Footers.md#display-footers)                                     | X              | X                | X                                    |
 | [Duplo clique em linha](properties_ListBox.md#double-click-on-row)                          |                | X                |                                      |
 | [Arrastável](properties_Action.md#droppable)                                                | X              | X                | X                                    |
-| [Droppable](properties_Action.md#droppable)                                                 | X              | X                | X                                    |
+| [Soltável](properties_Action.md#droppable)                                                  | X              | X                | X                                    |
 | [Focável](properties_Entry.md#focusable)                                                    | X              | X                | X                                    |
 | [Fonte](properties_Text.md#font)                                                            | X              | X                | X                                    |
 | [Cor fonte](properties_Text.md#font_color)                                                  | X              | X                | X                                    |
@@ -138,7 +138,7 @@ Propriedades compatíveis dependem do tipo de list box.
 | [Altura (rodapés)](properties_Footers.md#height)                                            | X              | X                | X                                    |
 | [Esconder linhas em branco extras](properties_BackgroundAndBorder.md#hide-extra-blank-rows) | X              | X                | X                                    |
 | [Esconder retangulo foco](properties_Appearance.md#hide-focus-rectangle)                    | X              | X                | X                                    |
-| [Hide selection highlight](properties_Appearance.md#hide-selection-highlight)               | X              | X                | X                                    |
+| [Esconder ressalte seleção](properties_Appearance.md#hide-selection-highlight)              | X              | X                | X                                    |
 | [List box hierárquica](properties_Object.md#hierarchical-list-box)                          | X              |                  |                                      |
 | [Ressaltar conjunto](properties_ListBox.md#highlight-set)                                   |                | X                |                                      |
 | [Alihamento horizontal](properties_Text.md#horizontal-alignment)                            | X              | X                | X                                    |
@@ -315,7 +315,7 @@ Seleções são gerenciadas diretamente, dependendo de se a list box é a basead
  End if
 ```
 
-> The `OBJECT SET SCROLL POSITION` command scrolls the list box rows so that the first selected row or a specified row is displayed.
+> O comando `OBJECT SET SCROLL POSITION` percorre as linhas da caixa de listagem de modo a que seja apresentada a primeira linha seleccionada ou uma linha especificada.
 
 ### Personalizar a aparência de linhas selecionadas
 
@@ -527,7 +527,7 @@ Essa propriedade especifica que o list box deve ser exibido em forma hierárquic
 
 Opções adicionais (**Variable 1...10**) estão disponíveis quando a opção *List box hierárquica* for selecionada, correspondendo a cada array *dataSource* para usar como quebra de coluna. A cada vez que um valor é digitado em um campo, uma nova linha é adicionada. Podem ser especificadas até 10 variáveis. Essas variáveis estabelecem os níveis hierárquicos a serem exibidos na primeira coluna.
 
-A primeira variável sempre corresponde ao nome da variável para a primeira coluna da list box (os dois valores são automaticamente conectados) Essa primeira variável é sempre visível e editável. Essa primeira variável é sempre visível e editável. Por exemplo: country. A segunda variável é sempre visível e editável: especifica o segundo nível hierárquico. Por exemplo: regions. A partir do terceiro campo, cada variável depende da variável que a antecedeu. For example: counties, cities, and so on. A maximum of ten hierarchical levels can be specified. Se remover um valor, a hierarquia inteira move um nível para cima.
+A primeira variável sempre corresponde ao nome da variável para a primeira coluna da list box (os dois valores são automaticamente conectados) Essa primeira variável é sempre visível e editável. Essa primeira variável é sempre visível e editável. Por exemplo: country. A segunda variável é sempre visível e editável: especifica o segundo nível hierárquico. Por exemplo: regions. A partir do terceiro campo, cada variável depende da variável que a antecedeu. Por exemplo: countries, cities etc. Pode ser especificado um máximo de dez níveis hierárquicos. Se remover um valor, a hierarquia inteira move um nível para cima.
 
 A última variável nunca é hierárquica mesmo se vários valores idênticos existirem nesse nível. Por exemplo, referindo-se à configuração ilustrada acima, imagine que arr1 contém os valores  A A A B B B, arr2 tenha os valores 1 1 1 2 2 2 e arr3 os valores X X Y Y Y Z. Neste caso, A, B, 1 e 2 poderiam aparecer na forma colapsada, mas não  X e Y:
 
@@ -538,7 +538,7 @@ Esse princípio não é aplicado quando apenas uma variável for especificada na
 
 #### Crie hierarquias usando o menu contextual
 
-When you select at least one column in addition to the first one in a list box object (of the array type) in the form editor, the **Create hierarchy** command is available in the context menu:
+Quando se selecciona pelo menos uma coluna para além da primeira num objecto list box (do tipo array) no editor de formulários, o comando **Criar hierarquia** está disponível no menu de contexto:
 
 ![](../assets/en/FormObjects/listbox_hierarchy1.png)
 
@@ -559,7 +559,7 @@ Quando a primeira coluna for selecionada e especificada como hierárquica pode u
 * A opção **Hierarchical list box** é desmarcada para o objeto,
 * Os níveis hierárquicos 2 a X são removidos e transformados em colunas adicionadas à list box.
 
-### How it works
+### Como funciona
 
 Quando um formulário que conter uma list box hierárquica for aberto pela primeira vez, como padrão todas as linhas são expandidas.
 
@@ -575,7 +575,7 @@ As matrizes não são ordenadas antes de a hierarquia ser construída. Se, por e
 
     > &gt; > A B A C
 
-Para expandir ou colapsar um "nó" hierárquico, pode simplesmente clicar sobre ele. If you **Alt+click** (Windows) or **Option+click** (macOS) on the node, all its sub-elements will be expanded or collapsed as well. These operations can also be carried out by programming using the `LISTBOX EXPAND` and `LISTBOX COLLAPSE` commands.
+Para expandir ou colapsar um "nó" hierárquico, pode simplesmente clicar sobre ele. Se **Alt+clique em** (Windows) ou **Option+clique em** (macOS) no nó, todos os seus subelementos também serão expandidos ou recolhidos. Estas operações também podem ser efectuadas por programação, utilizando os comandos `LISTBOX EXPAND` e `LISTBOX COLLAPSE`.
 
 Quando valores do tipo de data ou hora são incluídos numa caixa de listagem hierárquica, eles são exibidos no formato de sistema curto.
 
@@ -626,7 +626,7 @@ Por exemplo, se quiser seleccionar a fila que contém Rennes, deve passar:
  ->MyListbox{3}:=True
 ```
 
-Non-hierarchical representation: ![](../assets/en/FormObjects/hierarch7.png) Hierarchical representation: ![](../assets/en/FormObjects/hierarch8.png)
+Representação não hierárquica: ![](../assets/en/FormObjects/hierarch7.png) Representação hierárquica: ![](../assets/en/FormObjects/hierarch8.png)
 
 > Se uma ou mais filas estiverem escondidas porque os seus pais estão desmoronados, já não são seleccionados. Apenas as linhas visíveis (directamente ou por rolagem) podem ser seleccionadas. Por outras palavras, as filas não podem ser tanto escondidas como seleccionadas.
 
@@ -676,7 +676,7 @@ Usando os formulários `On Expand` e `On Collapse` , os eventos podem ultrapassa
 
 Neste caso, é necessário preencher e esvaziar os arrays através do código. Os princípios a serem implementados são os seguintes:
 
-* When the list box is displayed, only the first array must be filled. However, you must create a second array with empty values so that the list box displays the expand/collapse buttons: ![](../assets/en/FormObjects/hierarch15.png)
+* Quando a list box é exibido, somente o primeiro array deve ser preenchido. No entanto, é necessário criar um segundo array com valores vazios para que o list box apresente os botões expandir/colapsar: ![](../assets/en/FormObjects/hierarch15.png)
 
 * Quando um usuário clicar num botão de expansão, pode processar o evento `On Expand` . O comando `LISTBOX GET CELL POSITION` devolve a célula em questão e permite-lhe construir a hierarquia apropriada: preenche o primeiro array com os valores repetidos e a segunda com os valores enviados do comando `SELECTION TO ARRAY` e insere tantas linhas quantas forem necessárias na caixa de listagem usando o comando `LISTBOX INSERT ROWS` . ![](../assets/en/FormObjects/hierarch16.png)
 
@@ -763,7 +763,7 @@ Não é possível definir formatos de exibição ou filtros de entrada para colu
 | color         | N/A                                                                        | N/A                     |
 | "event"       | N/A                                                                        | N/A                     |
 
-### Attributes
+### Atributos
 
 Cada elemento da array de objetos é um objecto que pode conter um ou mais atributos que definirão o conteúdo da célula e a exibição dos dados (ver exemplo acima).
 
@@ -771,11 +771,11 @@ O único atributo obrigatório é "valueType" e os seus valores suportados são 
 
 |                       | valueType                                  | text | real | integer | boolean | color | "event" |
 | --------------------- | ------------------------------------------ | ---- | ---- | ------- | ------- | ----- | ------- |
-| *Attributes*          | *Descrição*                                |      |      |         |         |       |         |
+| *Atributos*           | *Descrição*                                |      |      |         |         |       |         |
 | value                 | valor da célula (entrada ou saída)         | x    | x    | x       |         |       |         |
 | min                   | valor mínimo                               |      | x    | x       |         |       |         |
 | max                   | valor máximo                               |      | x    | x       |         |       |         |
-| behavior              | "valor "três Estados                       |      |      | x       |         |       |         |
+| behavior              | valor "threeStates"                        |      |      | x       |         |       |         |
 | requiredList          | lista drop down definida no objecto        | x    | x    | x       |         |       |         |
 | choiceList            | combo box definida no objecto              | x    | x    | x       |         |       |         |
 | requiredListReference | 4D lista ref, depende do valor "saveAs     | x    | x    | x       |         |       |         |
@@ -825,9 +825,9 @@ These attributes can be used to control the range of input values. When a cell i
 
 The behavior attribute provides variations to the regular representation of values. In 4D v15, a single variation is proposed:
 
-| Atributo | Available value(s) | valueType(s) | Descrição                                                                                                                                                                                     |
-| -------- | ------------------ | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| behavior | threeStates        | integer      | Represents a numeric value as a three-states check box.<br/> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
+| Atributo | Valor(es) disponível(eis) | valueType(s) | Descrição                                                                                                                                                                                     |
+| -------- | ------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| behavior | threeStates               | integer      | Represents a numeric value as a three-states check box.<br/> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled |
 
 ```4d
  C_OBJECT($ob3)
@@ -841,7 +841,7 @@ The behavior attribute provides variations to the regular representation of valu
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_behavior.png)
 
-#### requiredList and choiceList
+#### requiredList e choiceList
 
 When a "choiceList" or a "requiredList" attribute is present inside the object, the text input is replaced by a drop-down list or a combo box, depending of the attribute:
 
@@ -925,7 +925,7 @@ Exemplos:
 
  ![](../assets/en/FormObjects/listbox_column_objectArray_cities.png)
 
-#### choiceListName and choiceListReference
+#### choiceListName e choiceListReference
 
 The "choiceListName" and "choiceListReference" attributes allow you to use, in a list box cell, a list defined in 4D either in Design mode (in the Tool box) or by programming (using the New list command). The cell is then displayed as a combo box, which means that the user can select or type a value.
 
@@ -948,7 +948,7 @@ You want to display a combo box based on a "colors" list defined in the Tool box
 
 ![](../assets/en/FormObjects/listbox-col-color-results.png)
 
-#### unitsList, unitsListName, unitsListReference and unitReference
+#### unitsList, unitsListName, unitsListReference e unitReference
 
 You can use specific attributes to add units associated with cell values (*e.g.*: "10 cm", "20 pixels", etc.). To define the unit list, you can use one of the following attributes:
 
@@ -993,7 +993,7 @@ OB SET($ob;"unitReference";1) //"lines" OB SET ARRAY($ob;"unitsList";$_units)
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
 
-#### color valueType
+#### valueType color
 
 The "color" valueType allows you to display either a color or a text.
 
