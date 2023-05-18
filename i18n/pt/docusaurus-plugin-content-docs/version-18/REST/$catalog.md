@@ -216,7 +216,7 @@ Aqui estão as propriedades para cada atributo exposto que são devolvidas:
 | path        | String     | Name of the relation for a relatedEntity or relateEntities attribute.                                                                                                |
  foreignKey|String   |For a relatedEntity attribute, name of the related attribute.| inverseName |String |Name of the opposite relation for a relatedEntity or relateEntities attribute.|
 
-### Method(s)
+### Método(s)
 
 Defines the project methods asociated to the dataclass, if any.
 
