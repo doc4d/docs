@@ -42,7 +42,7 @@ Pode atribuir uma [ação padrão](properties_Action.md#standard-action) a uma c
 
 Só as ações que podem representar um estado verdadeiro/falso (ações "marcáveis") são compatíveis com esse objeto:
 
-| Supported actions                   | Condições de uso (se houver) |
+| Ações suportadas                    | Condições de uso (se houver) |
 | ----------------------------------- | ---------------------------- |
 | avoidPageBreakInsideEnabled         | Apenas áreas 4D Write Pro    |
 | fontItalic                          |                              |
@@ -83,7 +83,7 @@ Com exceção das [propriedades disponíveis](#supported-properties), muitos obj
 
 4D oferece caixas de seleção nos estilos predefinidos abaixo:
 
-### Regular
+### Clássico
 
 O estilo Clássico de caixa de seleção corresponde a um sistema de caixa de seleção padrão (*ou seja, *, um retângulo com um título descritivo):
 
