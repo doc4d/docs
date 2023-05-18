@@ -72,7 +72,7 @@ Pode instalar um gerenciador de erros global que servirá como "fallback" e mét
 
 Pode definir um único método de captura de erros para toda a aplicação ou diferentes métodos por módulo de aplicação. Entretanto, apenas um método pode ser instalado por processo.
 
-When an error occurs, only one method is called, as described in the following diagram:
+Quando ocorre um erro, apenas um método é chamado, como descrito no diagrama seguinte:
 
 ![o comando <code>GET LAST ERROR STACK</code> que devolve informação sobre a pilha de erros atual da aplicação 4D.](../assets/en/Concepts/error-schema.png)
 
