@@ -36,7 +36,7 @@ Once the compacting is finished, 4D Server automatically restarts the applicatio
 After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
 
 
-## Uptime
+## Tempo de funcionamento
 
 This area indicates the duration of the 4D Server application execution since the last time it was started (days, hours and minutes).
 
@@ -74,7 +74,7 @@ The **Start Request and Debug Logs** button starts log files. Since this may not
 
 When the logs have been activated, the button title changes to **Stop Request and Debug Logs**, so that you can stop recording requests at any time. Pay attention to the fact that restarting the log after stopping it "erases" the previous file.
 
-### View Report
+### Ver relatório
 
 The **View Report** button (named **Download report** if the operation was carried out from a remote desktop client) lets you open a system window displaying the request log file.
 
