@@ -44,16 +44,16 @@ Neste caso, o nome da variável associada ao objeto de formulário deve ser *$aC
 Se precisar salvar as escolhas do usuário em um campo, precisa usar uma declaração de atribuição que rode depois que o registro seja aceito. O código poderia ser assim:
 
 ```4d
-  Case of
+  Caso de
     :(Form event=On Load)
        LIST TO ARRAY("Cities";aCities)
-       If(Record number([People])<0) `new record
-          aCities:=3 `display a default value
-       Else `existing record, display stored value
+       If(Record number([People])<0) `novo registo
+          aCities:=3 `apresentar um valor predefinido
+       Else `registo existente, apresentar valor armazenado
           aCities:=Find in array(aCities;City)
        End if
-    :(Form event=On Clicked) `user modified selection
-       City:=aCities{aCities} `field gets new value
+    :(Form event=On Clicked) `o utilizador modificou a selecção
+       City:=aCities{aCities} `o campo recebe um novo valor
     :(Form event=On Validate)
        City:=aCities{aCities}
     :(Form event=On Unload)
