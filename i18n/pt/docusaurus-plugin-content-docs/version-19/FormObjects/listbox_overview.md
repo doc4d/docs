@@ -239,7 +239,7 @@ Form events on list box or list box column objects may return the following addi
 | newSize              | inteiro longo | New size (in pixels) of the column or row                             |
 | oldPosition          | inteiro longo | Previous position of the column or row                                |
 | oldSize              | inteiro longo | Previous size (in pixels) of the column or row                        |
-| row                  | inteiro longo | Row number                                                            |
+| row                  | inteiro longo | Número da linha                                                       |
 | Alinhamento vertical | inteiro longo | Positive if scroll is towards the bottom, negative if towards the top |
 > If an event occurs on a "fake" column or row that doesn't exist, an empty string is typically returned.
 
