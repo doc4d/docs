@@ -292,7 +292,7 @@ The following special characters allow the automatic addition or formatting of i
 | G          | Imagem                           | printInfo.headerLeftImage:=smiley<br/>printInfo.headerLeft:="&G" | ![](../assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
 | S          | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                                | ~~This is text.~~                                    |
 | U          | Sublinhado                       | printInfo.headerLeft:="&UThis is text."                                | This is text. (Sublinhado)                           |
-| B          | Bold                             | printInfo.headerLeft:="&BThis is text."                                | **This is text.**                                    |
+| B          | Negrito                          | printInfo.headerLeft:="&BThis is text."                                | **This is text.**                                    |
 | I          | Itálico                          | printInfo.headerLeft:="&IThis is text."                                | *This is text.*                                      |
 | "          | Prefixo do tipo de letra         | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."          | ![](../assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
 | K          | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                          | This is text (in red).                               |
