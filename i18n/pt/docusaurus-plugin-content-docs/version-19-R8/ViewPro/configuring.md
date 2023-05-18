@@ -41,7 +41,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | -------- | ------------------------------- |:----------------:|:-----------------:|
 | File     | File manipulation               |        X         |                   |
 | Inicio   | Text appearance                 |        X         |         X         |
-| Insert   | Add items                       |        X         |         X         |
+| Inserir  | Add items                       |        X         |         X         |
 | Formulas | Formula calculation and library |        X         |         X         |
 | Dados    | Data manipulation               |        X         |         X         |
 | Mostrar  | Visual presentation             |        X         |         X         |
@@ -216,9 +216,9 @@ In addition to the special characters and codes described in the previous sectio
 
 | Caracteres  | Descrição                                                          | Exemplo              |
 | ----------- | ------------------------------------------------------------------ | -------------------- |
-| + and -     | Sinais mais e menos                                                | ### + ### = ###,### |
+| + e -       | Sinais mais e menos                                                | ### + ### = ###,### |
 | ( )         | Parênteses esquerdo e direito                                      | (-###.##)            |
-| :           | Colon                                                              | hh:mm:ss             |
+| :           | Dois pontos                                                        | hh:mm:ss             |
 | ^           | Caret                                                              | #\^#                |
 | '           | Apóstrofe                                                          | '######              |
 | { }         | Curly brackets                                                     | {###,###,###}        |
@@ -299,7 +299,7 @@ The following special characters allow the automatic addition or formatting of i
 | F          | Workbook name                    | printInfo.headerLeft:="&F"                                             | 2019 Monthly Revenue Forecasts                       |
 | A          | Spreadsheet name                 | printInfo.headerLeft:="&A"                                             | June 2019 revenue forecast                           |
 
-### Margins
+### Margens
 
 Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
 
