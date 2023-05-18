@@ -29,7 +29,7 @@ Não precisa ativar nada para os usos abaixo:
 
 **Important:** You must have an Internet connection and an e-mail account in order to activate your products.
 
-### Activate 4D
+### Ativação de 4D
 
 1. Launch the 4D application.
 2. Select the **License Manager...** command from the **Help** menu.
