@@ -72,12 +72,12 @@ List of operators from most to least important:
 | Operador                                      | Descrição                     |
 | --------------------------------------------- | ----------------------------- |
 | ()                                            | Parênteses (para agrupamento) |
-| -                                             | Negate                        |
+| -                                             | Negativo                      |
 | +                                             | Mais                          |
 | %                                             | Porcentagem                   |
 | ^                                             | Expoente                      |
-| * and /                                       | Multiply and divide           |
-| + and -                                       | Add and Subtract              |
+| * e /                                         | Multiply and divide           |
+| + e -                                         | Add and Subtract              |
 | &                                             | Concatenar                    |
 | `=`  `>` `<` `>=` `<=` `<>` | Comparar                      |
 
