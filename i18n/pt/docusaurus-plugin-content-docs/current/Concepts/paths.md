@@ -81,7 +81,7 @@ The following patterns are supported (HFS+ syntax):
 - folder separators are ":"
 - the path must not start with a ":"
 
-Examples with [`Folder`](../API/FolderClass.md#folder):
+Exemplos com [`Folder`](../API/FolderClass.md#folder):
 
 ```4d
 $ok:=Folder("macintosh hd:";fk platform path).create()
