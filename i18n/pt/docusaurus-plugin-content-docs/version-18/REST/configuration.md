@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: Server Configuration
+title: Configuração do servidor
 ---
 
 Using standard HTTP requests, the 4D REST Server allows external applications to access the data of your database directly, *i.e.* to retrieve information about the dataclasses in your project, manipulate data, log into your web application, and much more.
@@ -8,7 +8,7 @@ Using standard HTTP requests, the 4D REST Server allows external applications to
 Para iniciar usando as funcionalidades REST, precisa iniciar e configurar o servidor 4D REST.
 
 > - Em 4D Server, abrir uma sessão REST exige que uma licença cliente 4D free esteja disponível.<br/>
-> - On 4D single-user, you can open up to three REST sessions for testing purposes. You need to manage the [session cookie](authUsers.md#session-cookie) to use the same session for your requesting application.
+> - Em 4D single-user, pode abrir até três sessões REST para fins de teste. You need to manage the [session cookie](authUsers.md#session-cookie) to use the same session for your requesting application.
 
 ## Iniciar o servidor REST
 
