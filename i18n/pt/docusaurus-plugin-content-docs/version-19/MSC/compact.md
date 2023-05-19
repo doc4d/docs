@@ -15,7 +15,7 @@ Compacting files meets two types of needs:
 - **Complete updating of data** by applying the current formatting set in the structure file. This is useful when data from the same table were stored in different formats, for example after a change in the database structure.
 > Compacting is only available in maintenance mode. Se tentar realizar essa operação em modo padrão, uma caixa de diálogo de aviso informará que o banco de dados será fechado e reiniciado em modo manutenção. Pode compactar um arquivo de dados que não esteja aberto pelo banco de dados (ver [Compactar os registros e os índices](#compact-records-and-indexes) abaixo).
 
-## Standard compacting
+## Compactação standard
 
 To directly begin the compacting of the data file, click on the compacting button in the MSC window.
 
