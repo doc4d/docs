@@ -218,10 +218,10 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 
 ## HSTS Max Age
 
-| Can be set with  | Nome                                             | Comentários       |
-| ---------------- | ------------------------------------------------ | ----------------- |
-| webServer object | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION` | `Web HSTS max age`                               | number in seconds |
+| Can be set with  | Nome                                             | Comentários        |
+| ---------------- | ------------------------------------------------ | ------------------ |
+| webServer object | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | número em segundos |
+| `WEB SET OPTION` | `Web HSTS max age`                               | número em segundos |
 
 Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta informação é armazenada no lado do Cliente durante a duração especificada. Default value is 63072000 (2 years)
 
@@ -522,7 +522,7 @@ Por exemplo:
 *   “Disallow: /%23%23” - robots are not allowed to access URLs beginning with /%23%23.
 *   “Disallow: /GIFS/’ - robots are not allowed to access the /GIFS/ folder or its subfolders.
 
-Another example:
+Otro ejemplo:
 
 ```code4d
    User-Agent: *
@@ -560,7 +560,7 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 > When the HTML root folder is modified, the cache is cleared so as to not store files whose access is restricted.
 
 
-## Scalable Sessions
+## Sessões escaláveis
 
 | Can be set with                    | Nome                                                                                                         | Comentários |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------- |
