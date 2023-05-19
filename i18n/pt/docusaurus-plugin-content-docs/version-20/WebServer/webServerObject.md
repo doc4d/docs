@@ -62,14 +62,14 @@ webServer:=WEB Server(Web server receiving request)
 ```
 
 
-## Web server functions
+## Funções do servidor Web
 
 A [web server class object](API/WebServerClass.md#web-server-object) contains the following functions:
 
 | Funções                                  | Parâmetro        | Valor retornado  | Descrição             |
 | ---------------------------------------- | ---------------- | ---------------- | --------------------- |
 | [`start()`](API/WebServerClass.md#start) | settings (objet) | status (objecto) | Starts the web server |
-| [`stop()`](API/WebServerClass.md#start)  | -                | -                | Stops the web server  |
+| [`stop()`](API/WebServerClass.md#start)  | -                | -                | Pára o servidor Web   |
 
 To start and stop a web server, just call the [`start()`](API/WebServerClass.md#start) and [`stop()`](API/WebServerClass.md#stop) functions of the web server object:
 
