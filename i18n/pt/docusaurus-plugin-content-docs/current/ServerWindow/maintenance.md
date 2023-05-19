@@ -41,7 +41,7 @@ After verification, a report file is generated in XML format on the server in th
 This area indicates the duration of the 4D Server application execution since the last time it was started (days, hours and minutes).
 
 
-### Restart server...
+### Reiniciar o servidor...
 
 This button can be used to immediately close and restart the project. When you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation. After validation, 4D Server automatically closes and reopens the project. The 4D users can then be reconnected.
 
