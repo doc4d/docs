@@ -10,7 +10,7 @@ title: Editor de formulários
 
 The Form editor interface displays each JSON form in its own window, which has both an object and tool bar. You can have several forms open at the same time.
 
-### Display options
+### Opções de visualização
 
 You can show or hide several interface elements on the current page of the form:
 
@@ -138,7 +138,7 @@ You can work with two types of objects in your forms:
 
 - **Active objects**: These objects perform tasks or functions in the interface and can take many forms: fields, buttons, scrollable lists, etc. Each active object is associated with either a field or a variable. Each active object is associated with either a field or a variable.
 
-### Selecting objects
+### Selecção de objectos
 
 Before you can perform any operation on an object (such as changing a line width or font), you need to select the object that you want to modify.
 
@@ -171,7 +171,7 @@ The figure below shows a marquee being drawn to select two objects:
 
 To deselect an object that is part of a set of selected objects, hold down the **Shift** key and click the object. The other objects remain selected. To deselect all the selected objects, click outside the boundaries of all the objects.
 
-### Duplicating objects
+### Duplicação de objectos
 
 Pode duplicar qualquer objecto na forma, incluindo objectos activos. Copies of active objects retain all the properties of the original, including name, type, standard action, display format, and object method.
 
@@ -217,7 +217,7 @@ To move an object by steps:
 
 - Select the object or objects you want to move  and hold down the **Shift** key and use the arrow keys to move the object by steps. By default, steps are 20 pixels at a time. You can change this value on the Forms Page of the Preferences.
 
-### Grouping objects
+### Agrupamento de objectos
 
 4D lets you group objects so that you can select, move, and modify the group as a single object. Objects that are grouped retain their position in relation to each other. You would typically group a field and its label, an invisible button and its icon, and so forth.
 
@@ -493,7 +493,7 @@ The List box builder lets you create and fill entity selection list boxes in a f
 
  ![](../assets/en/FormEditor/listboxBuilderBuild.png)
 
-The final list box:
+O list box final:
 
 ![](../assets/en/FormEditor/listboxBuilderListbox.png)
 
