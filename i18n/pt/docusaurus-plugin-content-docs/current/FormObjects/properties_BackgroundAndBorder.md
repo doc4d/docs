@@ -79,7 +79,7 @@ Allows setting a standard style for the object border.
 
 ---
 
-## Dotted Line Type
+## Tipo de linha pontilhada
 
 Describes dotted line type as a sequence of black and white points.
 
