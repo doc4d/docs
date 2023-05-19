@@ -46,7 +46,7 @@ The editors for users and groups are located in the toolbox of 4D. These editors
 
 > Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4Dv18/4D/18/EDIT-ACCESS.301-4504687.en.html) command.
 
-## Directory.json file
+## Ficheiro Directory.json
 
 Users, groups, as well as their access rights are stored in a specific database file named **directory.json**.
 
