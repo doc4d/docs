@@ -45,7 +45,7 @@ Ao nomear classes, deve ter em mente as seguintes regras:
 
 Por exemplo, se quiser definir uma classe chamada "Polígono", precisa  criar o seguinte arquivo:
 
-- Project folder
+- Pasta Project
   - Project
     - Sources
       - Classes
