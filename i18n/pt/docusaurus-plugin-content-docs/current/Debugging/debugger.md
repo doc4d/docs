@@ -7,7 +7,7 @@ The debugger is useful when you need to spot errors or monitor the execution of 
 
 ![debugger-window-local](../assets/en/Debugging/debugger-window-intro.png)
 
-## Calling the Debugger
+## Chamando o depurador
 
 There are multiple ways to get the Debugger to display:
 
