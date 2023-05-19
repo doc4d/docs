@@ -51,7 +51,7 @@ All formulas have operands and operators:
 | [Parâmetros](Concepts/dt_boolean.md) | TRUE ou FALSE                                         | -                                                                                                                                                                                                                                                      |
 
 
-### Comparison operators
+### Operadores de comparação
 
 The following operators can be used with two operands of the same type:
 
@@ -76,7 +76,7 @@ List of operators from most to least important:
 | +                                             | Mais                          |
 | %                                             | Porcentagem                   |
 | ^                                             | Expoente                      |
-| * e /                                         | Multiply and divide           |
+| * e /                                         | Multiplicar e dividir         |
 | + e -                                         | Adicionar e subtrair          |
 | &                                             | Concatenar                    |
 | `=`  `>` `<` `>=` `<=` `<>` | Comparar                      |
