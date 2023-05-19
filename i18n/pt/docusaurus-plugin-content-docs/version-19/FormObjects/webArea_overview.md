@@ -13,14 +13,14 @@ Várias [ações padrão](#standard-actions) dedicadas, numerosos [comandos de l
 
 ## Propriedades específicas
 
-### Associated variables
+### Variáveis associadas
 
 Duas variáveis específicas podem ser associadas a cada área web:
 
 - [`URL`](properties_WebArea.md#url) --para controlar a URL que mostra a área web
 - [`Progresión`](properties_WebArea.md#progression) -- para controlar a porcentagem de carga da página mostrada na área web.
 
-### Web rendering engine
+### Motor de renderização Web
 
 Pode escolher entre [dois motores de renderização](properties_WebArea.md#use-embedded-web-rendering-engine) para a área web, dependendo das particularidades de sua aplicação.
 
