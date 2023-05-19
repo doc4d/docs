@@ -102,7 +102,7 @@ Built-in class for ORDA objects such as entities, or dataclasses. Functions and 
 
 Since entities are managed as references, data is loaded only when necessary, i.e. when accessing it in the code or through interface widgets. This optimization principle is called lazy loading.
 
-## Main datastore
+## Datastore principal
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
