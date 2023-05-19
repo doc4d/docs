@@ -184,11 +184,11 @@
     "description": "The generated-index page description for category API (dataClass) in sidebar docs"
   },
   "sidebar.docs.category.Desktop Applications": {
-    "message": "Desktop Applications",
+    "message": "Aplicações Desktop",
     "description": "The label for category Desktop Applications in sidebar docs"
   },
   "sidebar.docs.category.Desktop Applications.link.generated-index.title": {
-    "message": "Desktop Applications",
+    "message": "Aplicações Desktop",
     "description": "The generated-index page title for category Desktop Applications in sidebar docs"
   },
   "sidebar.docs.category.Desktop Applications.link.generated-index.description": {
@@ -236,7 +236,7 @@
     "description": "The label for category Menus in sidebar docs"
   },
   "sidebar.docs.category.Mobile Applications": {
-    "message": "Mobile Applications",
+    "message": "Aplicações móveis",
     "description": "The label for category Mobile Applications in sidebar docs"
   },
   "sidebar.docs.link.4D Language Reference": {
@@ -276,7 +276,7 @@
     "description": "The label for link Go Mobile in sidebar docs, linking to https://developer.4d.com/go-mobile/"
   },
   "sidebar.docs.link.4D for iOS (archive)": {
-    "message": "4D for iOS (archive)",
+    "message": "4D for iOS (arquivo)",
     "description": "The label for link 4D for iOS (archive) in sidebar docs, linking to https://developer.4d.com/4d-for-ios"
   },
   "sidebar.docs.doc.Command Line Interface": {
