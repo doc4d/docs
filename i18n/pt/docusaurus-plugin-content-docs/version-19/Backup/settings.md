@@ -113,7 +113,7 @@ Essas opções se aplicam aos arquivos de cópia de segurança principais e aos 
   - **Taxa de Entrelaçamento**: O Interlacing consiste de armazenar dados em setores não adjacentes para limitar riscos no caso de danos de setor. Quanto maior a taxa, maior a segurança; entretanto, o processamento de dados usa mais memória.
   - **Taxa de redundância**: Redundância permite a segurança de dados  em arquivos repetindo a mesma informação várias vezes. Quanto maior a taxa de redundância, melhor a segurança, mas o armazenamento é mais lento e o tamanho dos arquivos aumenta.
 
-### Automatic Restore
+### Restauração automática
 
 - **Restaura a última cópia de segurança se o banco de dados for danificado**: Quando essa opção for marcada, o programa inicia automaticamente a restauração do arquivo de dados do último backup válido do banco, se uma anomalia for detectada (arquivo corrupto por exemplo) durante a o lançamento do banco de dados. Nenhuma intervenção do usuário é necessária, mas a operação é gravada no diário da cópia de segurança.
 
