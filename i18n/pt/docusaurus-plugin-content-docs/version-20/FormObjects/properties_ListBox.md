@@ -89,7 +89,7 @@ This property is used to specify the set to be used to manage highlighted record
 
 | Nome         | Tipo de dados | Valores possíveis |
 | ------------ | ------------- | ----------------- |
-| highlightSet | string        | Name of the set   |
+| highlightSet | string        | Nome do conjunto  |
 
 #### Objectos suportados
 
