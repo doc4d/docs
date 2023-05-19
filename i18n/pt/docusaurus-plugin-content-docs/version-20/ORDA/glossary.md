@@ -119,7 +119,7 @@ Built-in class for ORDA objects such as entities, or dataclasses. Functions and 
 
 Since entities are managed as references, data is loaded only when necessary, i.e. when accessing it in the code or through interface widgets. This optimization principle is called lazy loading.
 
-## Main datastore
+## Datastore principal
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
@@ -226,6 +226,6 @@ A shallow copy only duplicates the structure of elements, and keeps the same int
 
 Used in "optimistic" locking technology. All entities have an internal counter, the stamp, which is incremented each time the entity is saved. By automatically comparing stamps between an entity being saved and its version stored on disk, 4D can prevent concurrent modifications on the same entities.
 
-## Storage attribute
+## Atributo de armazenamento
 
 A storage attribute (sometimes referred to as a scalar attribute) is the most basic type of attribute in a datastore class and most directly corresponds to a field in a relational database. A storage attribute holds a single value for each entity in the class.
