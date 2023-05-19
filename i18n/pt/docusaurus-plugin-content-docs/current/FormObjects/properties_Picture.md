@@ -21,7 +21,7 @@ As seguintes localizações podem ser utilizadas para imagens estáticas:
 
 #### Objectos suportados
 
-[Picture button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Static Picture](staticPicture.md)
+[Botão de imagem](pictureButton_overview.md) - [Menu pop-up de imagem](picturePopupMenu_overview.md) - [Imagem estática](staticPicture.md)
 
 ---
 
