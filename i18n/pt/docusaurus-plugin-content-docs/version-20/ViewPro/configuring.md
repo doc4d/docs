@@ -37,15 +37,15 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Tab      | Acções                          | Ribbon Interface | Toolbar Interface |
-| -------- | ------------------------------- |:----------------:|:-----------------:|
-| File     | File manipulation               |        X         |                   |
-| Inicio   | Text appearance                 |        X         |         X         |
-| Inserir  | Add items                       |        X         |         X         |
-| Formulas | Formula calculation and library |        X         |         X         |
-| Dados    | Data manipulation               |        X         |         X         |
-| Mostrar  | Visual presentation             |        X         |         X         |
-| Settings | Sheet presentation reference    |        X         |                   |
+| Tab      | Acções                          | Ribbon Interface | Interface da barra de ferramentas |
+| -------- | ------------------------------- |:----------------:|:---------------------------------:|
+| File     | File manipulation               |        X         |                                   |
+| Inicio   | Text appearance                 |        X         |                 X                 |
+| Inserir  | Add items                       |        X         |                 X                 |
+| Formulas | Formula calculation and library |        X         |                 X                 |
+| Dados    | Data manipulation               |        X         |                 X                 |
+| Mostrar  | Visual presentation             |        X         |                 X                 |
+| Settings | Sheet presentation reference    |        X         |                                   |
 
 ## Eventos formulário
 
@@ -103,8 +103,8 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 | ----------------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | isProtected       |                          | boolean | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                              |
 | protectionOptions |                          | object  | A value that indicates the elements that you want users to be able to change. If null : the protectionOptions parameter is reset. |
-|                   | allowSelectLockedCells   | boolean | Specifies whether the user can select locked cells, optional. True by default.                                                    |
-|                   | allowSelectUnlockedCells | boolean | Specifies whether the user can select unlocked cells, optional. True by default.                                                  |
+|                   | allowSelectLockedCells   | boolean | Specifies whether the user can select locked cells, optional. True por defeito.                                                   |
+|                   | allowSelectUnlockedCells | boolean | Specifies whether the user can select unlocked cells, optional. True por defeito.                                                 |
 |                   | allowSort                | boolean | Specifies whether the user can sort ranges, optional. Padrão é falso.                                                             |
 |                   | allowFilter              | boolean | Specifies whether the user can filter ranges, optional. Padrão é falso.                                                           |
 |                   | allowEditObjects         | boolean | Specifies whether the user can edit floating objects, optional. Padrão é falso.                                                   |
@@ -184,30 +184,30 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 
 To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
 
-|      | Código<br/>(não sensível a maiúsculas e minúsculas) | Descrição                                      | Exemplo            |
-| ---- | --------------------------------------------------------- | ---------------------------------------------- | ------------------ |
-| Date |                                                           |                                                | (January 1, 2019)  |
-|      | m                                                         | Month number without leading zero              | 1                  |
-|      | mm                                                        | Month number with leading zero                 | 01                 |
-|      | mmm                                                       | Month name, short                              | Jan                |
-|      | mmmm                                                      | Month name, long                               | January            |
-|      | d                                                         | Day number without leading zero                | 1                  |
-|      | dd                                                        | Day number with leading zero                   | 01                 |
-|      | ddd                                                       | Day of week, short                             | Tue                |
-|      | dddd                                                      | Day of week, long                              | Tuesday            |
-|      | yy                                                        | Ano, breve                                     | 19                 |
-|      | yyyy                                                      | Ano, longo                                     | 2019               |
-| Hora |                                                           |                                                | (2:03:05 PM)       |
-|      | h                                                         | Hour without leading zero. 0-23                | 2                  |
-|      | hh                                                        | Hour with leading zero. 00-23                  | 02                 |
-|      | m                                                         | Minutes without leading zero. 0-59             | 3                  |
-|      | mm                                                        | Minutes with leading zero. 00-59               | 03                 |
-|      | s                                                         | Seconds without leading zero. 0-59             | 5                  |
-|      | ss                                                        | Seconds with leading zero. 00-59               | 05                 |
-|      | \[h]                                                     | Elapsed time in hours                          | 14 (can exceed 24) |
-|      | \[mm]                                                    | Elapsed time in minutes                        | 843                |
-|      | \[ss]                                                    | Elapsed time in seconds                        | 50585              |
-|      | AM/PM                                                     | Periods of day. 24 hour fomat used if omitted. | PM                 |
+|      | Código<br/>(não sensível a maiúsculas e minúsculas) | Descrição                                       | Exemplo            |
+| ---- | --------------------------------------------------------- | ----------------------------------------------- | ------------------ |
+| Date |                                                           |                                                 | (January 1, 2019)  |
+|      | m                                                         | Month number without leading zero               | 1                  |
+|      | mm                                                        | Month number with leading zero                  | 01                 |
+|      | mmm                                                       | Nome do mês, abreviado                          | Jan                |
+|      | mmmm                                                      | Nome do mês, long                               | January            |
+|      | d                                                         | Day number without leading zero                 | 1                  |
+|      | dd                                                        | Day number with leading zero                    | 01                 |
+|      | ddd                                                       | Day of week, short                              | Tue                |
+|      | dddd                                                      | Dia da semana, longo                            | Tuesday            |
+|      | yy                                                        | Ano, breve                                      | 19                 |
+|      | yyyy                                                      | Ano, longo                                      | 2019               |
+| Hora |                                                           |                                                 | (2:03:05 PM)       |
+|      | h                                                         | Hour without leading zero. 0-23                 | 2                  |
+|      | hh                                                        | Hour with leading zero. 00-23                   | 02                 |
+|      | m                                                         | Minutes without leading zero. 0-59              | 3                  |
+|      | mm                                                        | Minutes with leading zero. 00-59                | 03                 |
+|      | s                                                         | Seconds without leading zero. 0-59              | 5                  |
+|      | ss                                                        | Seconds with leading zero. 00-59                | 05                 |
+|      | \[h]                                                     | Elapsed time in hours                           | 14 (can exceed 24) |
+|      | \[mm]                                                    | Elapsed time in minutes                         | 843                |
+|      | \[ss]                                                    | Elapsed time in seconds                         | 50585              |
+|      | AM/PM                                                     | Períodos do dia. 24 hour fomat used if omitted. | PM                 |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
 ### Símbolos adicionais
@@ -221,11 +221,11 @@ In addition to the special characters and codes described in the previous sectio
 | :           | Dois pontos                                                        | hh:mm:ss             |
 | ^           | Caret                                                              | #\^#                |
 | '           | Apóstrofe                                                          | '######              |
-| { }         | Curly brackets                                                     | {###,###,###}        |
+| { }         | Parêntesis enrolados                                               | {###,###,###}        |
 | `< >` | Less-than and greater than signs                                   | ## >##              |
 | =           | Sinal igual                                                        | #+#=##               |
 | /           | Forward slash. When used with numbers, displays them as fractions. | mm/dd/yyyy           |
-| !           | Exclamation point                                                  | $###.00!             |
+| !           | Ponto de exclamação                                                | $###.00!             |
 | &           | Ampersand                                                          | "Hello" & "Welcome"  |
 | ~           | Tilde                                                              | ~##                  |
 |             | Space character                                                    |                      |
@@ -242,7 +242,7 @@ In addition to the special characters and codes described in the previous sectio
 * [VP SET PRINT INFO](method-list.md#vp-set-print-info)
 * [VP Get print info](method-list.md#vp-get-print-info)
 
-### Columns / Rows
+### Colunas / Linhas
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
@@ -285,19 +285,19 @@ The following special characters allow the automatic addition or formatting of i
 | Caracteres | Descrição                        | Exemplo                                                                | Resultados                                           |
 | ---------- | -------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------- |
 | &          | Escape character                 | (see examples below)                                                   |                                                      |
-| P          | Página actual                    | printInfo.headerLeft:="This is page &P."                               | This is page 5.|                                     |
+| P          | Página actual                    | printInfo.headerLeft:="This is page &P."                               | Esta é a página 5.|                                  |
 | N          | Contagem de páginas              | printInfo.headerLeft:="There are &N pages."                            | There are 10 pages.                                  |
-| D          | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                      | It is 2015/6/19.                                     |
-| T          | Hora actual                      | printInfo.headerLeft:="It is &T."                                      | It is 16:30:36.                                      |
+| D          | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                      | Estamos em 2015/6/19.                                |
+| T          | Hora actual                      | printInfo.headerLeft:="It is &T."                                      | São 16:30:36.                                        |
 | G          | Imagem                           | printInfo.headerLeftImage:=smiley<br/>printInfo.headerLeft:="&G" | ![](../assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
-| S          | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                                | ~~This is text.~~                                    |
+| S          | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                                | ~Isto é texto.~                                      |
 | U          | Sublinhado                       | printInfo.headerLeft:="&UThis is text."                                | This is text. (Sublinhado)                           |
 | B          | Negrito                          | printInfo.headerLeft:="&BThis is text."                                | **This is text.**                                    |
 | I          | Itálico                          | printInfo.headerLeft:="&IThis is text."                                | *This is text.*                                      |
 | "          | Prefixo do tipo de letra         | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."          | ![](../assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
-| K          | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                          | This is text (in red).                               |
+| K          | Prefixo da cor do texto          | printInfo.headerLeft:="&KFF0000This is text."                          | This is text (in red).                               |
 | F          | Workbook name                    | printInfo.headerLeft:="&F"                                             | 2019 Monthly Revenue Forecasts                       |
-| A          | Spreadsheet name                 | printInfo.headerLeft:="&A"                                             | June 2019 revenue forecast                           |
+| A          | Nome da folha de cálculo         | printInfo.headerLeft:="&A"                                             | June 2019 revenue forecast                           |
 
 ### Margens
 
@@ -305,7 +305,7 @@ Margin attributes are used to specify the 4D View Pro area margins for printing.
 
 | Propriedade |         | Tipo          | Descrição                                                  |
 | ----------- | ------- | ------------- | ---------------------------------------------------------- |
-| margin      |         | object        | The print margins                                          |
+| margin      |         | object        | As margens de impressão                                    |
 |             | top     | inteiro longo | Top margin, in hundredths of an inch. Valor padrão = 75    |
 |             | bottom  | inteiro longo | Bottom margin, in hundredths of an inch. Valor padrão = 75 |
 |             | left    | inteiro longo | Left margin, in hundredths of an inch. Valor padrão = 70   |
@@ -433,11 +433,11 @@ Exemplo:
 
 #### Borders
 
-| Propriedade                                                                |       | Tipo          | Descrição                                                                      | Valores possíveis                                                                                                                                                                                                                                                                                                                                                |
-| -------------------------------------------------------------------------- | ----- | ------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | object        | Defines the corresponding border line                                          |                                                                                                                                                                                                                                                                                                                                                                  |
-|                                                                            | color | text          | Defines the color of the border. Default = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
-|                                                                            | style | inteiro longo | Defines the style of the border. Default = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
+| Propriedade                                                                |       | Tipo          | Descrição                                                                           | Valores possíveis                                                                                                                                                                                                                                                                                                                                                |
+| -------------------------------------------------------------------------- | ----- | ------------- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | object        | Defines the corresponding border line                                               |                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                            | color | text          | Defines the color of the border. Predefinição = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
+|                                                                            | style | inteiro longo | Defines the style of the border. Predefinição = vazio. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
 
 #### Fontes e texto
 
@@ -468,7 +468,7 @@ Exemplo:
 | tabStop     | boolean       | Specifies if the focus to the cell can be set using the Tab key.                                                    | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
 | vAlign      | inteiro longo | Specifies the vertical alignment of cell contents.                                                                  | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
-#### Style information
+#### Informações sobre o estilo
 
 | Propriedade | Tipo | Descrição                                                                                                                                                                                                                                                                        |
 | ----------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
