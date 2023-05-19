@@ -24,7 +24,7 @@ An empty string is specified by two quotation marks with nothing between them ("
 
 The following escape sequences can be used within strings:
 
-| Escape sequence | Character replaced   |
+| Escape sequence | Carácter substituído |
 | --------------- | -------------------- |
 | \n             | LF (Avanço de linha) |
 | \t             | HT (Tab)             |
