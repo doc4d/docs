@@ -23,7 +23,7 @@ The following filesystem pathnames are supported:
 
 | filesystem   | Designa                                            |
 | ------------ | -------------------------------------------------- |
-| "/DATA"      | Current data folder                                |
+| "/DATA"      | Pasta de dados actual                              |
 | "/LOGS"      | Pasta Logs                                         |
 | "/PACKAGE"   | Database folder (with or without 4dbase extension) |
 | "/PROJECT"   | Pasta Project                                      |
