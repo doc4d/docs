@@ -47,7 +47,7 @@ This is illustrated by the following graphic:
 
 ![](../assets/en/ORDA/entityRef1.png)
 
-Now if you execute:
+Agora, se executar:
 
 ```4d
  var $e1; $e2 : cs. EmployeeEntity
