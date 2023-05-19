@@ -1246,10 +1246,10 @@ Pode aninhar várias transações (subtransações). Cada transação ou subtran
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças            |
-| ------ | ------------------- |
-| v20    | Server side support |
-| v17 R6 | Adicionado          |
+| Versão | Mudanças                    |
+| ------ | --------------------------- |
+| v20    | Suporte do lado do servidor |
+| v17 R6 | Adicionado                  |
 
 </details>
 
