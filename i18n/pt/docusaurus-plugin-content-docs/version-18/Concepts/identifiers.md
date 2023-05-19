@@ -68,7 +68,7 @@ Exemplos:
 If(<>vtName#"")
 ```
 
-## Process Variables
+## Variáveis processo
 
 Designa-se uma variável de processo utilizando o seu nome (que não pode começar com os símbolos `<>` nem com o símbolo do dólar $). Um nome de variável de processo pode conter até 31 caracteres.
 
@@ -80,7 +80,7 @@ If(bValidate=1)
 vsCurrentName:=""
 ```
 
-## Local Variables
+## Variáveis locais
 
 Uma variável local é determinada colocando um sinal de dólar ($) antes do nome da variável. A local variable name can contain up to 31 characters, not including the dollar sign.
 
@@ -97,7 +97,7 @@ $vsMyString:="Hello there"
 You designate an array by using its name, which is the name you pass to an array declaration (such as ARRAY LONGINT) when you create the array. Arrays are variables, and from the scope point of view, like variables, there are three different types of arrays:
 
 - Interprocess arrays,
-- Process arrays,
+- Arrays processo,
 - Local arrays.
 
 ### Interprocess Arrays
@@ -114,7 +114,7 @@ SORT ARRAY(<>asKeywords;>)
 ARRAY INTEGER(<>aiBigArray;10000)
 ```
 
-### Process Arrays
+### Arrays proceso
 
 Designa-se uma variável de processo utilizando o seu nome (que não pode começar com os símbolos `<>` nem com o símbolo do dólar $). A process array name can contain up to 31 characters.
 
@@ -181,7 +181,7 @@ $atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{$vlSet}{Size of array($aiBigArray{$vlSet})}
 ```
 
-## Object attributes
+## Atributos de objetos
 
 When object notation is enabled, you designate an object attribute (also called object property) by placing a point (".") between the name of the object (or attribute) and the name of the attribute. An attribute name can contain up to 255 characters and is case sensitive.
 
@@ -267,7 +267,7 @@ $vsResult:=Calc creator(1;5; "Nice")
 vtClone:=Dump("is";"the";"it")
 ```
 
-## Plug-In Commands
+## Comandos de plug-in
 
 You designate a plug-in command by using its name as defined by the plug-in. A plug-in command name can contain up to 31 characters.
 
@@ -281,14 +281,14 @@ $error:=SMTP_From($smtp_id;"henry@gmail.com")
 
 From the scope point of view, there are two types of sets:
 
-- Interprocess sets
+- Conjuntos interprocesso
 - Process sets
 
 4D Server also includes:
 
 - Client sets
 
-### Interprocess Sets
+### Conjuntos interprocesso
 
 A set is an interprocess set if the name of the set is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
 
@@ -348,14 +348,14 @@ USE NAMED SELECTION([Customers];"<>ByZipcode")
 
 In the single-user version, or in Client/Server on the Client side, there are two types of processes:
 
-- Global processes
-- Local processes.
+- Processos globais
+- Processos locais.
 
-### Global Processes
+### Processos globais
 
 Pode determinar um processo global usando uma expressão string que represente seu nome (que não pode começar com o sinal de dólar $). A process name can contain up to 255 characters.
 
-### Local Processes
+### Processos locais
 
 Pode determinar um processo local se o nome do processo for precedido pelo sinal de dólar ($). The process name can contain up to 255 characters, not including the dollar sign.
 
@@ -379,18 +379,18 @@ The following table summarizes 4D naming conventions.
 | Interprocess Variable/Array  | `<>` + 31  | `<>vlNextProcessID`          |
 | Process Variable/Array       | 31               | vsCurrentName                      |
 | Local Variable/Array         | $ + 31           | $vlLocalCounter                    |
-| Object attribute             | 255              | $o.myAttribute                     |
+| Propriedades de objetos      | 255              | $o.myAttribute                     |
 | Formulário                   | 31               | "My Custom Web Input"              |
 | Form object                  | 255              | "MyButton"                         |
 | Métodos proyecto             | 31               | M_ADD_CUSTOMERS                  |
-| Plug-in Routine              | 31               | PDF SET ROTATION                   |
+| Rotina Plug-in               | 31               | PDF SET ROTATION                   |
 | Interprocess Set             | `<>` + 255 | `"<>Records to be Archived"` |
 | Process Set                  | 255              | "Current selected records"         |
 | Client Set                   | $ + 255          | "$Previous Subjects"               |
 | Seleção nomeada              | 255              | "Employees A to Z"                 |
 | Interprocess Named Selection | `<>` + 255 | `"<>Employees Z to A"`       |
 | Local Process                | $ + 255          | "$Follow Events"                   |
-| Global Process               | 255              | "*P_INVOICES_MODULE*"            |
+| Processo global              | 255              | "*P_INVOICES_MODULE*"            |
 | Semáforo                     | 255              | "mysemaphore"                      |
 
 **Note:** If non-Roman characters are used in the names of the identifiers, their maximum length may be smaller.
@@ -404,7 +404,7 @@ Be sure to use unique names for the different elements in your database. If a pa
 1. Fields
 2. Comandos
 3. Página Métodos
-4. Plug-in routines
+4. Comandos de plug-in
 5. Predefined constants
 6. Variables.
 
