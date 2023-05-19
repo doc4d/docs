@@ -25,7 +25,7 @@ The "Macros v2" folder can be located:
 
 These three locations can be used simultaneously: it is possible to install a "Macros v2" folder in each location. The macros will be loaded in the following order: 4D folder, structure file, component 1... component X.
 
-## Default macros
+## Macros predefinidas
 
 
 
@@ -101,7 +101,7 @@ Here is the list of tags and their mode of use:
 
 Here is an example of a macro definition:
 
-| **Content of macro**                                 | **Comentários**                                                                                                                                 |
+| **Conteúdo da macro**                                | **Comentários**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<?xml version="1.0"...?>`                     | Declaração XML                                                                                                                                  |
 | `<!DOCTYPE macros SYSTEM>`                     | Document declaration                                                                                                                            |
@@ -126,7 +126,7 @@ The code of a called method is executed in a new process. This process is killed
 
 > The structure process remains frozen until the called method execution is completed. You must make sure that the execution is quick and that there is no risk of it blocking the application. If this occurs, use the **Ctrl+F8** (Windows) or **Command+F8** (Mac OS) command to "kill" the process.
 
-## Calling macros
+## Chamada de macros
 
 By default, macros can be called using the context menu or toolbar of the Code Editor, the autocomplete function, or a specific list at the bottom of the Code Editor window.
 
@@ -146,7 +146,7 @@ By default, all macros are accessible using the autocomplete (aka type-ahead) fu
 
 **Note:** If the macro contains the `<selection/>` tag, it will not appear in the autocomplete pop-up window.
 
-### Code Editor list
+### Lista do editor de código
 
 You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Simply double-click on the name of a macro in the list in order to call it. It is not possible to exclude a specific macro from this list.
 
