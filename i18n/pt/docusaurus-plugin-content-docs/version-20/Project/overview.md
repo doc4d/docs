@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Project Management
+title: Gestão de projectos
 ---
 
 A 4D project contains all of the source code of a 4D application, whatever its deployment type (web, mobile, or desktop), from the database structure to the user interface, including code, forms, menus, user settings, or any required resources. A 4D project is primarily made of text-based files.
@@ -22,7 +22,7 @@ In addition, 4D project files make it easier to program generically, create appl
 Multi-user development is managed via standard **source control** repository tools (Perforce, Git, SVN, etc.), which allow developers to work on different branches, and compare, merge, or revert modifications.
 
 
-## Final application
+## Aplicação final
 
 Project files can be [compiled](compiler.md) and easily deployed. 4D allows you to create three types of applications from your projects:
 
