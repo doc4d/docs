@@ -100,7 +100,7 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 
 | Placeholder (valores provisórios) | Effect for leading or trailing zero |
 | --------------------------------- | ----------------------------------- |
-| #                                 | Displays nothing                    |
+| #                                 | Não apresenta nada                  |
 | 0                                 | Mostra 0                            |
 | ^                                 | Displays a space (1)                |
 | *                                 | Displays an asterisk                |
@@ -407,7 +407,7 @@ Allows a check box object to accept a third state. A variável associada à caix
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
 
 * 0 = unchecked box,
-* 1 = checked box,
+* 1 = caixa marcada,
 * 2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
 * -1 = invisible check box,
 * -2 = unchecked box, not enterable,
