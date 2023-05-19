@@ -140,7 +140,7 @@ The `roles.json` file syntax is the following:
 |                     |                 | \[].promote  | Coleção de strings                 |             | List of privileges                                                           |
 
 
-:::caution Reminder
+:::caution Lembrete
 
 - The "WebAdmin" privilege name is reserved to the application. It is not recommended to use this name for custom privileges.
 - `privileges` and `roles` names are case insensitive.
