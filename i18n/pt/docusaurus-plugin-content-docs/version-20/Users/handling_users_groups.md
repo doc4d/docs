@@ -187,7 +187,7 @@ These accesses are defined in the Settings dialog. O exemplo abaixo mostra direi
 
 You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
 
-## Directory.json file
+## Ficheiro Directory.json
 
 Users, groups, as well as their access rights are stored in a specific project file named **directory.json**.
 
