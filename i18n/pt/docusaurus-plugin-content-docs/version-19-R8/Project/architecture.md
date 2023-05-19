@@ -24,7 +24,7 @@ A 4D project is made of several folders and files, stored within a single projec
 > If your project has been converted from a binary database, additional folders may be present. See "Converting databases to projects" on [doc.4d.com](https://doc.4d.com).
 
 
-## Project folder
+## Pasta Project
 
 The Project folder typically contains the following hierarchy:
 
