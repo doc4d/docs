@@ -23,7 +23,7 @@ A 4D project is made of several folders and files, stored within a single projec
 
 > If your project has been converted from a binary database, additional folders may be present. See "Converting databases to projects" on [doc.4d.com](https://doc.4d.com).
 
-## Project folder
+## Pasta Project
 
 The Project folder typically contains the following hierarchy:
 
@@ -47,7 +47,7 @@ Project development file, used to designate and launch the project. This file ca
 
 > **Nota:** nos projetos 4D, o desenvolvimento se realiza com 4D Developer e o desenvolvimento multiusuários se gerencia através das ferramentas de controle de versão. 4D Server can open .4DProject files for testing purposes.
 
-### Sources folder
+### Pasta Sources
 
 | Conteúdos               | Descrição                                                                                                                                                                                                                                                                                                                                                                                  | Formato |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
@@ -68,13 +68,13 @@ Project development file, used to designate and launch the project. This file ca
 | ------------------------ | ------------------------------------------------------------- | ------- |
 | *databaseMethodName*.4dm | Métodos de projeto definidos na database. One file per method | text    |
 
-#### Methods folder
+#### Pasta Methods
 
 | Conteúdos        | Descrição                                                            | Formato |
 | ---------------- | -------------------------------------------------------------------- | ------- |
 | *methodName*.4dm | Métodos de banco definidos na database. One file per database method | text    |
 
-#### Classes folder
+#### Pasta Classes
 
 | Conteúdos       | Descrição                                                                                                                          | Formato |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -124,13 +124,13 @@ Within these folders, deleted element names are in parentheses, e.g. "(myMethod)
 
 The DerivedData folder contains cached data used internally by 4D to optimize processing. It is automatically created or recreated when necessary. You can ignore this folder.
 
-## Libraries folder
+## Pasta Libraries
 
 > This folder is used on macOS only.
 
 The Librairies folder contains the file resulting from a compilation with the [Silicon compiler](compiler.md#silicon-compiler) on macOS.
 
-## Resources folder
+## Pasta Resources
 
 A pasta Resources contém todos os arquivos e pastas de recursos personalizados do projeto. In this folder, you can place all the files needed for the translation or customization of the application interface (picture files, text files, XLIFF files, etc.). 4D uses automatic mechanisms to work with the contents of this folder, in particular for the handling of XLIFF files and static pictures. For using in remote mode, the Resources folder lets you share files between the server machine and all the client machines. See the *4D Server Reference Manual*.
 
@@ -213,7 +213,7 @@ Esta carpeta contém os componentes que devem estar disponíveis unicamente no b
 > - for development: put an alias of the .4dproject file in the Components folder of the host project.
 > - for deployment: [build the component](Desktop/building.md#build-component) and put the resulting .4dz file in a .4dbase folder in the Components folder of the host application.
 
-## Plugins folder
+## Pasta Plugins
 
 This folder contains the plug-ins to be available in the project database only. It must be stored at the same level as the Project folder.
 
