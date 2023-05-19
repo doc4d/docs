@@ -5,7 +5,7 @@ title: Página de Backup
 ---
 
 
-## Starting a backup
+## Começando um backup
 
 Uma cópia de segurança pode ser iniciada de três maneiras:
 
