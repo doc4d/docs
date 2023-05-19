@@ -125,7 +125,7 @@ Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stor
 
 |1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
 
-## Defaut Home page
+## Página inicial do Defaut
 
 | Can be set with                    | Nome                                                       | Comentários                           |
 | ---------------------------------- | ---------------------------------------------------------- | ------------------------------------- |
@@ -206,10 +206,10 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 
 ## HSTS Max Age
 
-| Can be set with  | Nome                                             | Comentários       |
-| ---------------- | ------------------------------------------------ | ----------------- |
-| webServer object | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION` | `Web HSTS max age`                               | number in seconds |
+| Can be set with  | Nome                                             | Comentários        |
+| ---------------- | ------------------------------------------------ | ------------------ |
+| webServer object | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | número em segundos |
+| `WEB SET OPTION` | `Web HSTS max age`                               | número em segundos |
 
 Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Esta informação é armazenada no lado do Cliente durante a duração especificada. Default value is 63072000 (2 years)
 
@@ -469,7 +469,7 @@ Por exemplo:
 - “Disallow: /%23%23” - robots are not allowed to access URLs beginning with /%23%23.
 - “Disallow: /GIFS/’ - robots are not allowed to access the /GIFS/ folder or its subfolders.
 
-Another example:
+Otro ejemplo:
 
 ```code4d
    User-Agent: *
