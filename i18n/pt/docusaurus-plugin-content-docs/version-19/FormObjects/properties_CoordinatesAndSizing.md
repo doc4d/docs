@@ -4,7 +4,7 @@ title: Coordinates & Sizing
 ---
 
 
-## Automatic Row Height
+## Altura automática da linha
 
 This property is only available for array-based, non-hierarchical list boxes. The property is not selected by default.
 
