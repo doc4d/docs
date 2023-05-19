@@ -85,7 +85,7 @@ Project development file, used to designate and launch the project. This file ca
 | Conteúdos                                 | Descrição                                  | Formato |
 | ----------------------------------------- | ------------------------------------------ | ------- |
 | *formName*/form.4DForm                    | Project form description                   | json    |
-| *formName*/method.4dm                     | Project form method                        | text    |
+| *formName*/method.4dm                     | Método formulário projecto                 | text    |
 | *formName*/Images/*pictureName*           | Project form static picture                | picture |
 | *formName*/ObjectMethods/*objectName*.4dm | Object methods. One file per object method | text    |
 
@@ -163,8 +163,8 @@ This folder contains **user settings files for data** used for database administ
 
 The Logs folder contains all log files used by the project. Log files include, in particular:
 
-- database conversion,
-- web server requests,
+- conversão da base de dados,
+- pedidos do servidor Web,
 - backup/restore activities journal (*Backup Journal\[xxx].txt*, see [Backup journal](Backup/backup.md#backup-journal))
 - depuração de comandos,
 - 4D Server requests (generated on client machines and on the server).
