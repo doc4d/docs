@@ -82,5 +82,5 @@ O operador Modulo pode ser usado, mais concretamente, para somar tempos que cons
 $t1:=?23:00:00? // It is 23:00 p.m.
   // We want to add 2 and a half hours
 $t2:=$t1 +?02:30:00? // Com uma simples adição, $t2 é?25:30:00?
-$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 é ?01:30:00? and it is 1:30 a.m. the next morning
+$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 é ?01:30:00? and it is 1:30 a.m. na manhã seguinte
 ```
