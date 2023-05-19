@@ -1030,7 +1030,7 @@ OB SET($ob;"label";"Edit...")
 Several events can be handled while using an object list box array:
 
 * **On Data Change**: An `On Data Change` event is triggered when any value has been modified either:
-  * in a text input zone
+  * numa zona de introdução de texto
   * numa lista pendente
   * numa área combo box
   * in a unit button (switch from value x to value x+1)
