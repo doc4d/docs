@@ -62,7 +62,7 @@ Alternatively, you can use the [named parameters](Concepts/parameters.md#named-p
 > Calling a 4D command that displays an interface element (`DIALOG`, `ALERT`, etc.) is not allowed and ends the method processing.
 
 
-### $1 - URL extra data
+### $1 - Dados extra do URL
 
 The first parameter ($1) is the URL entered by users in the address area of their web browser, without the host address.
 
