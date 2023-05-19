@@ -35,7 +35,7 @@ The Debugger window is usually displayed on the machine where the code is execut
 
 > If the server is running headless, no debugger window can be displayed on the server, you need to use the remote debugger. See [Debugging from remote machines](./debugging-remote.md).
 
-## Tool bar Buttons
+## Botões da barra de ferramentas
 
 The debugger's tool bar includes several buttons, associated with default shortcuts:
 
@@ -110,7 +110,7 @@ The **Expression** column displays the names of the objects and expressions. The
 
 At any point, you can drag and drop themes, theme sublists (if any), and theme items to the [Custom Watch Pane](#custom-watch-pane).
 
-### Expression list
+### Lista de expressões
 
 #### Line Objects
 
@@ -240,7 +240,7 @@ Additional options are available from the contextual menu of the Watch pane.
 * **Show Integers in Hexadecimal**: Numbers are usually displayed in decimal notation. This option displays them in hexadecimal notation. Note: To enter a numeric value in hexadecimal, type 0x (zero + "x"), followed by the hexadecimal digits.
 * **Enable activity monitoring**: Activates the monitoring of activity (advanced checking of internal activity of the application) and displays the information retrieved in the additional themes: **Scheduler**, **Web** and **Network**.
 
-## Call Chain Pane
+## Painel da cadeia de chamadas
 
 A method may call other methods or class functions, which may call other methods or functions. The Call Chain pane lets you keep track of that hierarchy.
 
@@ -325,7 +325,7 @@ For more information on the Formula Editor, see the <a href="https://doc.4d.com/
 * **Sorted Tables and Fields**: Displays the table and fields in alphabetical order.
 * **Show Integers in Hexadecimal**: Displays numbers using hexadecimal notation. Para introduzir um valor numérico em hexadecimal, digite 0x (zero + "x"), seguido dos dígitos hexadecimais.
 
-## Source Code Pane
+## Panel de código fuente
 
 The Source Code Pane shows the source code of the method or function currently being traced.
 
@@ -400,7 +400,7 @@ The contextual menu of the Source Code Pane provides access to several functions
 * **Toggle Breakpoint** (also available in Code Editor): Alternately inserts or removes the breakpoint corresponding to the selected line. This modifies the breakpoint permanently: for instance, if you remove a breakpoint in the debugger, it no longer appears in the original method.
 * **Edit Breakpoint** (also available in Code Editor): Displays the Breakpoint Properties dialog box. Any changes made modify the breakpoint permanently.
 
-### Find Next/Previous
+### Localizar seguinte/anterior
 
 Specific shortcuts allow you to find strings identical to the one selected:
 
@@ -420,7 +420,7 @@ Esta secção lista todos os atalhos disponíveis na janela do depurador.
 * **Double-click** an item in the Watch Pane to copy it to the Custom Watch Pane
 * **Double-Click** in the Custom Watch Pane to create a new expression
 
-#### Source Code Pane
+#### Panel de código fuente
 
 * Click in the left margin to set or remove break points.
 * **Alt+Shift+Click** (Windows) or **Option+Shift+Click** (macOS) sets a temporary break point.
