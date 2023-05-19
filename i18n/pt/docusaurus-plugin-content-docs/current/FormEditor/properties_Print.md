@@ -13,7 +13,7 @@ Allows defining specific print settings for the form. This feature is useful to 
 You can modify the following print settings:
 
 *   Formato de papel
-*   Paper orientation
+*   Orientação do papel
 *   Escala de página
 
 
