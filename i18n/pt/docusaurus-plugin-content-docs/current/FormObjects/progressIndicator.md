@@ -29,7 +29,7 @@ Conversely, you could use the indicator to control the value in a field. The use
 The method assigns the value of the indicator to the Salary field. As the user drags the indicator, the value in the Salary field changes.
 
 
-## Default thermometer
+## Termómetro predefinido
 
 ![](../assets/en/FormObjects/indicator_progressBar.png)
 
@@ -55,7 +55,7 @@ Barber shop displays a continuous animation, like the [spinner](spinner.md). The
 When the form is executed, the object is not animated. You manage the animation by passing a value to its [associated variable or expression](properties_Object.md#variable-or-expression):
 
 * 1 = Start animation,
-* 0 = Stop animation.
+* 0 = Parar a animação.
 
 
 ### Propriedades compatíveis
