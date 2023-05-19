@@ -72,7 +72,7 @@ These items allow you to create binary databases (see [Creating a new database](
 
 When this option is checked, a log file is automatically started and used when a new database is created. For more information, please refer to [Log file (.journal)](Backup/log.md).
 
-### Create package
+### Criar pacote
 
 When this option is checked, 4D databases are automatically created in a folder suffixed .4dbase.
 
