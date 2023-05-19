@@ -4,7 +4,7 @@ title: Coordinates & Sizing
 ---
 
 
-## Automatic Row Height
+## Altura automática da linha
 
 `4D View Pro only: This feature requires a 4D View Pro license.`
 
