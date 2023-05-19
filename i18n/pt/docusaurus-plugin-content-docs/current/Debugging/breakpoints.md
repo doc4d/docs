@@ -77,7 +77,7 @@ Usando esta janela, pode:
 You cannot add new breakpoints from this window. Breakpoints can only be created from within the Debugger window or the Code Editor.
 
 
-## Catching Commands
+## Comandos de captura
 
 The **Catch** tab of the Runtime Explorer lets you add additional breaks to your code by catching calls to 4D commands. Unlike a break point, which is located in a particular project method (and therefore triggers a trace exception only when it is reached), the scope of catching a command includes all the processes that execute 4D code and call that command.
 
