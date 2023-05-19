@@ -127,20 +127,20 @@ Puede mostrar u ocultar los números de línea en el área de puntos de interrup
 
 La visualización de los números de línea facilita la orientación en la ventana. The **Method** > **Go to Line Number...** command in the also lets you take advantage of this display.
 
-This type of search is useful when used in conjunction with the [compiler](../Project/compiler.md), which flags runtime errors by the line number in which they occur.
+Este tipo de búsqueda es útil cuando se utiliza junto con el [compilador](../Project/compiler.md), que señala los errores de ejecución por el número de línea en el que se producen.
 
 ### Barra de estado
 
-The status bar located at the bottom right part of the editor window displays the position of the cursor at all times:
+La barra de estado situada en la parte inferior derecha de la ventana del editor muestra la posición del cursor en todo momento:
 
 ![](../assets/en/code-editor/status-bar.png)
 
 - **Ln**: número de línea
-- **Col**: número de columna, es decir, el nivel en la jerarquía de las estructuras de programación. El primer nivel es 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
+- **Col**: número de columna, es decir, el nivel en la jerarquía de las estructuras de programación. El primer nivel es 0. El número de columna es útil para la depuración, ya que esta información puede ser proporcionada por el intérprete en caso de error en el código.
 - **Ch**: ubicación del caracter en la línea.
 - ![](../assets/en/code-editor/show-hide-list.png): Ocultar/mostrar listas.
 
-When you set the cursor in a command, function or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**: ![](../assets/en/code-editor/status-bar-bold.png)
+Al situar el cursor en un comando, función o parámetro(s), la barra de estado muestra la sintaxis del comando. Si escribe o selecciona un parámetro, el área muestra el parámetro actual en **negrita**: ![](../assets/en/code-editor/status-bar-bold.png)
 
 ### Despliegue de navegación
 
@@ -212,7 +212,7 @@ Para mostrar las etiquetas de un método o de una clase en orden alfabético, re
 
 ### Atajos
 
-Multiple features of 4D's Code Editor are available through default keyboard shortcuts.
+Múltiples funcionalidades del editor de código de 4D están disponibles a través de atajos de teclado por defecto.
 
 :::info macOS
 
@@ -285,7 +285,7 @@ El Editor de código incluye numerosos [atajos de navegación](#shortcuts).
 
 El carácter barra invertida (`\`) tiene un soporte específico en el lenguaje 4D:
 
-- inserted at the end of lines, it allows to write a single statement on [several lines](../Concepts/quick-tour.md#code-on-several-lines).
+- insertado al final de las líneas, permite escribir una única instrucción en [varias líneas](../Concepts/quick-tour.md#code-on-several-lines).
 - permite definir [secuencias de escape](../Concepts/quick-tour.md#escape-sequences).
 
 
@@ -317,7 +317,7 @@ You can automatically modify the case of selected characters using the commands 
 
 Cuando aplica uno de estos comandos a una selección de texto, se eliminan los espacios y los caracteres "_" y la primera letra de cada palabra pasa a ser mayúscula.
 
-### Swap expression
+### Intercambiar expresión
 
 The **Swap Expression** function can be used to reverse the arguments of an expression assigning a value. Por ejemplo,
 
