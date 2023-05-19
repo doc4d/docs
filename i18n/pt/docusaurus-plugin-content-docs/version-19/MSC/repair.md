@@ -20,7 +20,7 @@ Pathname of the current data file. The **[...]** button can be used to specify a
 
 By default, the original data file will be duplicated before the repair operation. By default, the original data file will be duplicated before the repair operation. The second **[...]** button can be used to specify another location for the original files to be saved before repairing begins. This option can be used more particularly when repairing voluminous files while using different disks.
 
-### Repaired files
+### Ficheiros reparados
 
 4D creates a new blank data file at the location of the original file. 4D creates a new blank data file at the location of the original file. The blank file is filled with the recovered data.
 
