@@ -113,7 +113,7 @@ Separar cada método com um ";" (por exemplo: "post;get"). If methods is empty, 
 
 #### Veja também
 
-[Enable CORS Service](#enable-cors-service)
+[Activar CORS](#enable-cors-service)
 
 
 
@@ -159,13 +159,13 @@ For example, if you want the default home page to be "MyHome.htm", and it is loc
 
 If you do not specify any default home page, the `On Web Connection` database method is called. It is up to you to process the request procedurally.
 
-## Enable CORS Service
+## Activar CORS
 
 | Can be set with                    | Nome                                                            | Comentários                                         |
 | ---------------------------------- | --------------------------------------------------------------- | --------------------------------------------------- |
 | webServer object                   | [`CORSEnabled`](API/WebServerClass.md#corsenabled)              | Boolean, true to enable the CORS (false by default) |
 | `WEB SET OPTION`                   | `Web CORS enabled`                                              | 0 (disabled, default) or 1 (enabled)                |
-| Caixa de diálogos de configurações | [Options (II) page/Enable CORS](../settings/web.md#enable-cors) | Unchecked by default                                |
+| Caixa de diálogos de configurações | [Options (II) page/Enable CORS](../settings/web.md#enable-cors) | Não seleccionado por defeito                        |
 
 The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Por razões de segurança, solicitações de "cross-domain" são proibidas no nível do navegador por padrão. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
 
@@ -386,10 +386,10 @@ This setting allows you to select the format of this file. Available values are:
 | Valor | Nome do formato         | Descrição                                                                                                                                                                                                                |
 | ----- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 0     | Sem ficheiro de registo | O padrãO                                                                                                                                                                                                                 |
-| 1     | Record in CLF format    | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
-| 2     | Record in DLF format    | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
-| 3     | Record in ELF format    | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
-| 4     | Record in WLF format    | WebStar Log Format - To be customized in the Settings dialog box                                                                                                                                                         |
+| 1     | Registo em formato CLF  | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
+| 2     | Registo em formato DLF  | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
+| 3     | Registo em formato ELF  | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
+| 4     | Registo em formato WLF  | WebStar Log Format - To be customized in the Settings dialog box                                                                                                                                                         |
 
 > Formats 3 and 4 are custom formats whose contents must be set beforehand in the Settings dialog box. If you use one of these formats without any of its fields having been selected on this page, the log file will not be generated.
 
@@ -407,7 +407,7 @@ Strictly high limit of concurrent web processes that can be simultaneously open 
 By default, the value is 100. You can set the number anywhere between 10 and 32000.
 
 
-## Maximum Request Size
+## Tamanho máximo do pedido
 
 | Can be set with  | Nome                                                     | Comentários |
 | ---------------- | -------------------------------------------------------- | ----------- |
@@ -433,7 +433,7 @@ Maximum number of simultaneous sessions. When you reach the limit set, the oldes
 Default value: 100 (pass 0 to restore the default value).
 
 
-## Minimum TLS Version
+## Versão TLS mínima
 
 | Can be set with  | Nome                                                   | Comentários |
 | ---------------- | ------------------------------------------------------ | ----------- |
@@ -565,7 +565,7 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 | Can be set with                    | Nome                                                                                                         | Comentários |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------ | ----------- |
 | webServer object                   | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                   |             |
-| `WEB SET OPTION`                   | `Web scalable session`                                                                                       |             |
+| `WEB SET OPTION`                   | `Sessão escalável Web`                                                                                       |             |
 | Caixa de diálogos de configurações | [Options (I) page/Automatic Session Management](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
 Session management enabling status for the 4D web server. Session mechanism is described in the [Session Management](sessions.md) section.
@@ -582,7 +582,7 @@ Session management enabling status for the 4D web server. Session mechanism is d
 Value of the "domain" field of the session cookie. Useful for controlling the scope of the session cookies. Se definir, por exemplo, o valor "/*.4d.fr" para este selector, o cliente só enviará um cookie quando o pedido for dirigido ao domínio ".4d.fr", o que exclui os servidores que hospedam dados estáticos externos.
 
 
-## Session Cookie Name
+## Nome do cookie de sessão
 
 | Can be set with  | Nome                                                           | Comentários |
 | ---------------- | -------------------------------------------------------------- | ----------- |
@@ -592,7 +592,7 @@ Value of the "domain" field of the session cookie. Useful for controlling the sc
 Name of the cookie used for saving the session ID. Default = "4DSID".
 
 
-## Session Cookie Path
+## Caminho do cookie de sessão
 
 | Can be set with  | Nome                                                           | Comentários |
 | ---------------- | -------------------------------------------------------------- | ----------- |
