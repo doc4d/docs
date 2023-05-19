@@ -46,7 +46,7 @@ When you select this command, the home page of the website published by the 4D a
 
 This command lets you verify that the web server, home page display, etc. work correctly. The page is called using the *localhost* URL, which is the standard shortcut designating the IP address of the machine on which the web browser is executed. The command takes into account the [TCP publication port](#http-port) number specified in the settings.
 
-## Clearing the Cache
+## Limpar a cache
 
 At any moment, you can clear the cache of the pages and images that it contains (if, for example, you have modified a static page and you want to reload it in the cache).
 
@@ -73,13 +73,13 @@ Website administration URLS allow you to control the website published on your s
 
 The **/4DSTATS** URL returns several items of information in an HTML table (displayable in a browser):
 
-| Elemento               | Descrição                                                    |
-| ---------------------- | ------------------------------------------------------------ |
-| Cache Current Size     | Current size of web server cache (in bytes)                  |
-| Cache Max Size         | Maximum size of cache (in bytes)                             |
-| Cached Object Max Size | Maximum size of each object in the cache (in bytes)          |
-| Cache Use              | Percentage of cache used                                     |
-| Cached Objects         | Number of objects found in the cache, **including pictures** |
+| Elemento                | Descrição                                                    |
+| ----------------------- | ------------------------------------------------------------ |
+| Tamanho actual da cache | Current size of web server cache (in bytes)                  |
+| Cache Max Size          | Maximum size of cache (in bytes)                             |
+| Cached Object Max Size  | Maximum size of each object in the cache (in bytes)          |
+| Cache Use               | Percentage of cache used                                     |
+| Cached Objects          | Number of objects found in the cache, **including pictures** |
 
 This information can allow you to check the functioning of your server and eventually adapt the corresponding parameters.
 > The `WEB GET STATISTICS` command allows you to also obtain information about how the cache is being used for static pages.
@@ -88,14 +88,14 @@ This information can allow you to check the functioning of your server and event
 
 The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as the */4DSTATS* URL. The difference is that the **Cached Objects** field only counts HTML pages (without counting picture files). Moreover, this URL returns the **Filtered Objects** field.
 
-| Elemento               | Descrição                                                              |
-| ---------------------- | ---------------------------------------------------------------------- |
-| Cache Current Size     | Current size of web server cache (in bytes)                            |
-| Cache Max Size         | Maximum size of cache (in bytes)                                       |
-| Cached Object Max Size | Maximum size of each object in the cache (in bytes)                    |
-| Cache Use              | Percentage of cache used                                               |
-| Cached Objects         | Number of objects found in the cache, **without pictures**             |
-| Filtered Objects       | Number of objects in cache not counted by URL, in particular, pictures |
+| Elemento                | Descrição                                                              |
+| ----------------------- | ---------------------------------------------------------------------- |
+| Tamanho actual da cache | Current size of web server cache (in bytes)                            |
+| Cache Max Size          | Maximum size of cache (in bytes)                                       |
+| Cached Object Max Size  | Maximum size of each object in the cache (in bytes)                    |
+| Cache Use               | Percentage of cache used                                               |
+| Cached Objects          | Number of objects found in the cache, **without pictures**             |
+| Filtered Objects        | Number of objects in cache not counted by URL, in particular, pictures |
 
 ### /4DCACHECLEAR
 
