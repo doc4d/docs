@@ -40,7 +40,7 @@ Se atribuir um índice de elemento que ultrapasse o último elemento existente d
   //myCol[4]=null
 ```
 
-## Initialization
+## Inicialização
 
 Collections must have been initialized, for example using the `New collection` command, otherwise trying to read or modify their elements will generate a syntax error.
 
