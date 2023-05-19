@@ -281,30 +281,30 @@ Expressions rarely “stand alone.” There are several places in 4D where an ex
 ### Tipos de expressões
 You refer to an expression by the data type it returns. There are several expression types. The following table gives examples of each type of expression.
 
-| Expression               | Tipo                | Descrição                                                                                                                                                                       |
-| ------------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| “Hello”                  | String              | The word Hello is a string constant, indicated by the double quotation marks.                                                                                                   |
-| “Hello ” + “there”       | String              | Two strings, “Hello ” and “there”, are added together (concatenated) with the string concatenation operator (+). The string “Hello there” is returned.                          |
-| “Sr. ” + [People]Name    | String              | Two strings are concatenated: the string “Mr. ” and the current value of the Name field in the People table. If the field contains “Smith”, the expression returns “Mr. Smith”. |
-| Uppercase("smith")       | String              | Esta expressão utiliza `Uppercase`, um comando da linguagem, para converter a cadeia de caracteres "smith" em maiúsculas. Retorna "SMITH".                                      |
-| 4                        | Número              | Esta é uma constante numérica, 4.                                                                                                                                               |
-| 4 * 2                    | Número              | Dois números, 4 e 2, são multiplicados utilizando o operador de multiplicação (*). O resultado é o número 8.                                                                    |
-| myButton                 | Número              | Esta é uma variável associada a um botão. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                            |
-| !1997-01-25!             | Date                | This is a date constant for the date 1/25/97 (January 25, 1997).                                                                                                                |
-| Current date+ 30         | Date                | This is a date expression that uses the `Current date` command to get today’s date. It adds 30 days to today’s date and returns the new date.                                   |
-| ?8:05:30?                | Hora                | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
-| ?2:03:04? + ?1:02:03?    | Hora                | This expression adds two times together and returns the time 3:05:07.                                                                                                           |
-| True                     | Parâmetros          | Este comando devolve o valor Booleano TRUE.                                                                                                                                     |
-| 10 # 20                  | Parâmetros          | This is a logical comparison between two numbers. The number sign (#) means “is not equal to”. Since 10 “is not equal to” 20, the expression returns TRUE.                      |
-| “ABC” = “XYZ”            | Parâmetros          | This is a logical comparison between two strings. They are not equal, so the expression returns FALSE.                                                                          |
-| My Picture + 50          | Imagem              | This expression takes the picture in My Picture, moves it 50 pixels to the right, and returns the resulting picture.                                                            |
-| ->[People]Name           | Ponteiro            | Esta expressão devolve um ponteiro ao campo chamado [People]Name.                                                                                                               |
-| Table(1)                 | Ponteiro            | This is a command that returns a pointer to the first table.                                                                                                                    |
-| JSON Parse (MyString)    | Objeto              | This is a command that returns MyString as an object (if proper format)                                                                                                         |
-| JSON Parse (MyJSONArray) | Collection          | This is a command that returns MyJSONArray as a collection (if proper format)                                                                                                   |
-| Form.pageNumber          | Propriedade objecto | An object property is an expression that can be of any supported type                                                                                                           |
-| Col[5]                   | Collection element  | A collection element is an expression that can be of any supported type                                                                                                         |
-| $entitySel[0]            | Entity              | A element of an ORDA entity selection is an expression of the entity type. This kind of expression is **non-assignable**                                                        |
+| Expression               | Tipo                 | Descrição                                                                                                                                                                       |
+| ------------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| “Hello”                  | String               | The word Hello is a string constant, indicated by the double quotation marks.                                                                                                   |
+| “Hello ” + “there”       | String               | Two strings, “Hello ” and “there”, are added together (concatenated) with the string concatenation operator (+). The string “Hello there” is returned.                          |
+| “Sr. ” + [People]Name    | String               | Two strings are concatenated: the string “Mr. ” and the current value of the Name field in the People table. If the field contains “Smith”, the expression returns “Mr. Smith”. |
+| Uppercase("smith")       | String               | Esta expressão utiliza `Uppercase`, um comando da linguagem, para converter a cadeia de caracteres "smith" em maiúsculas. Retorna "SMITH".                                      |
+| 4                        | Número               | Esta é uma constante numérica, 4.                                                                                                                                               |
+| 4 * 2                    | Número               | Dois números, 4 e 2, são multiplicados utilizando o operador de multiplicação (*). O resultado é o número 8.                                                                    |
+| myButton                 | Número               | Esta é uma variável associada a um botão. It returns the current value of the button: 1 if it was clicked, 0 if not.                                                            |
+| !1997-01-25!             | Date                 | This is a date constant for the date 1/25/97 (January 25, 1997).                                                                                                                |
+| Current date+ 30         | Date                 | This is a date expression that uses the `Current date` command to get today’s date. It adds 30 days to today’s date and returns the new date.                                   |
+| ?8:05:30?                | Hora                 | This is a time constant that represents 8 hours, 5 minutes, and 30 seconds.                                                                                                     |
+| ?2:03:04? + ?1:02:03?    | Hora                 | This expression adds two times together and returns the time 3:05:07.                                                                                                           |
+| True                     | Parâmetros           | Este comando devolve o valor Booleano TRUE.                                                                                                                                     |
+| 10 # 20                  | Parâmetros           | This is a logical comparison between two numbers. The number sign (#) means “is not equal to”. Since 10 “is not equal to” 20, the expression returns TRUE.                      |
+| “ABC” = “XYZ”            | Parâmetros           | This is a logical comparison between two strings. They are not equal, so the expression returns FALSE.                                                                          |
+| My Picture + 50          | Imagem               | This expression takes the picture in My Picture, moves it 50 pixels to the right, and returns the resulting picture.                                                            |
+| ->[People]Name           | Ponteiro             | Esta expressão devolve um ponteiro ao campo chamado [People]Name.                                                                                                               |
+| Table(1)                 | Ponteiro             | This is a command that returns a pointer to the first table.                                                                                                                    |
+| JSON Parse (MyString)    | Objeto               | This is a command that returns MyString as an object (if proper format)                                                                                                         |
+| JSON Parse (MyJSONArray) | Collection           | This is a command that returns MyJSONArray as a collection (if proper format)                                                                                                   |
+| Form.pageNumber          | Propriedade objecto  | An object property is an expression that can be of any supported type                                                                                                           |
+| Col[5]                   | Elemento de colecção | A collection element is an expression that can be of any supported type                                                                                                         |
+| $entitySel[0]            | Entity               | A element of an ORDA entity selection is an expression of the entity type. This kind of expression is **non-assignable**                                                        |
 
 ### Assignable vs non-assignable expressions
 
@@ -400,7 +400,7 @@ The sequence consists of a backslash `\`, followed by a character. For instance,
 
 In 4D, the following escape sequences can be used:
 
-| Escape sequence                     | Character replaced   |
+| Escape sequence                     | Carácter substituído |
 | ----------------------------------- | -------------------- |
 | `\n`                               | LF (Avanço de linha) |
 | `\t`                               | HT (Tab)             |
