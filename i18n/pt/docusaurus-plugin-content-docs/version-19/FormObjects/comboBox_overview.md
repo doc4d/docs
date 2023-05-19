@@ -9,7 +9,7 @@ Um combo box é parecido com uma lista [drop-down](dropdownList_Overview.md#over
 
 Em outros aspectos, você deve tratar uma combo box como uma área editável que usa seu array ou uma lista de escolha como um conjunto de valores padrão.
 
-## Handling combo boxes
+## Gestão do combo boxes
 
 Use o evento `On Data Change` para gerenciar entradas em uma área editável, como faria em qualquer objeto área editável.
 
