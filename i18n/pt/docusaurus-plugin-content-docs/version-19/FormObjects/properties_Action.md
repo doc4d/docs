@@ -124,7 +124,7 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 ---
 
-## Multi-selectable
+## Multi-seleccionável
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
@@ -136,7 +136,7 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 #### Objectos suportados
 
-[Hierarchical List](list_overview.md)
+[Lista hierárquica](list_overview.md)
 
 ---
 
