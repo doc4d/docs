@@ -21,7 +21,7 @@ title: Lista de métodos
 | ---------- | ------ | -- | -------------------------------------------------------- |
 | vpAreaName | Text   | -> | 4D View Pro area form object name                        |
 | vpFormula  | Text   | -> | 4D View Pro formula                                      |
-| name       | Text   | -> | Name for the formula                                     |
+| name       | Text   | -> | Nome da fórmula                                          |
 | options    | Objeto | -> | Options for the named formula|<!-- END REF -->
 
 |
@@ -271,7 +271,7 @@ To apply the style sheet, use the [VP SET DEFAULT STYLE](#vp-set-default-style) 
 
 #### Exemplo
 
-The following code:
+O seguinte código:
 
 ```4d
 $styles:=New object
@@ -1514,7 +1514,7 @@ The returned collection contains any properties for the columns, whether or not 
 
 #### Exemplo
 
-The following code:
+O seguinte código:
 
 ```4d
 C_OBJECT($range)
@@ -2407,7 +2407,7 @@ You can define where to get the style sheet in the optional *sheet* parameter us
 
 #### Exemplo
 
-The following code:
+O seguinte código:
 
 ```4d
 $style:=VP Get stylesheet("ViewProArea";"GreenDashDotStyle")
@@ -3578,7 +3578,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 #### Exemplo
 
-The following code:
+O seguinte código:
 
 ```4d
  VP PRINT("myVPArea")
@@ -6164,7 +6164,7 @@ The following table lists the available workbook options:
 | customList                            | collection              | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).         |
 | cutCopyIndicatorBorderColor           | string                  | Border color for the indicator displayed when the user cuts or copies the selection.                                                                                                                                                                   |
 | cutCopyIndicatorVisible               | boolean                 | Display an indicator when copying or cutting the selected item.                                                                                                                                                                                        |
-| defaultDragFillType                   | number                  | The default drag fill type. Valores disponíveis: <table><tr><th>Parâmetros</th><th>Valor</th><th>Descrição</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> Clears cell values.</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> Fills cells with values and not formatting. </td></tr></table>                                                                                                                                                                            |
+| defaultDragFillType                   | number                  | The default drag fill type. Valores disponíveis: <table><tr><th>Parâmetros</th><th>Valor</th><th>Descrição</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> Limpa os valores das células.</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> Fills cells with values and not formatting. </td></tr></table>                                                                                                                                                                            |
 | enableAccessibility                   | boolean                 | Accessibility support is enabled in the spreadsheet.                                                                                                                                                                                                   |
 | enableFormulaTextbox                  | boolean                 | The formula text box is enabled.                                                                                                                                                                                                                       |
 | grayAreaBackColor                     | string                  | A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                              |
