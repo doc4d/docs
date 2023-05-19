@@ -217,9 +217,9 @@ Enables radio buttons to be used in coordinated sets: only one button at a time 
 
 #### Gramática JSON
 
-| Nome       | Tipo de dados | Valores possíveis |
-| ---------- | ------------- | ----------------- |
-| radioGroup | string        | Radio group name  |
+| Nome       | Tipo de dados | Valores possíveis   |
+| ---------- | ------------- | ------------------- |
+| radioGroup | string        | Nome do grupo rádio |
 
 #### Objectos suportados
 
@@ -260,17 +260,17 @@ This property sets the type of calculation to be done in a [column footer](listb
 
 There are several types of calculations available. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):
 
-| Cálculo               | Num | Text | Date | Hora | Bool | Pict | footer var type         |
-| --------------------- | --- | ---- | ---- | ---- | ---- | ---- | ----------------------- |
-| Mínimo                | X   |      | X    | X    | X    |      | Igual ao tipo de coluna |
-| Máximo                | X   |      | X    | X    | X    |      | Igual ao tipo de coluna |
-| Sum                   | X   |      | X    |      | X    |      | Igual ao tipo de coluna |
-| Contagem              | X   | X    | X    | X    | X    | X    | Longint                 |
-| Average               | X   |      |      | X    |      |      | Real                    |
-| Standard deviation(*) | X   |      |      | X    |      |      | Real                    |
-| Variância(*)          | X   |      |      | X    |      |      | Real                    |
-| Sum squares(*)        | X   |      |      | X    |      |      | Real                    |
-| Custom ("none")       | X   | X    | X    | X    | X    | X    | Qualquer                |
+| Cálculo                | Num | Text | Date | Hora | Bool | Pict | footer var type         |
+| ---------------------- | --- | ---- | ---- | ---- | ---- | ---- | ----------------------- |
+| Mínimo                 | X   |      | X    | X    | X    |      | Igual ao tipo de coluna |
+| Máximo                 | X   |      | X    | X    | X    |      | Igual ao tipo de coluna |
+| Sum                    | X   |      | X    |      | X    |      | Igual ao tipo de coluna |
+| Contagem               | X   | X    | X    | X    | X    | X    | Longint                 |
+| Average                | X   |      |      | X    |      |      | Real                    |
+| Standard deviation(*)  | X   |      |      | X    |      |      | Real                    |
+| Variância(*)           | X   |      |      | X    |      |      | Real                    |
+| Soma dos quadrados(*)  | X   |      |      | X    |      |      | Real                    |
+| Personalizado ("none") | X   | X    | X    | X    | X    | X    | Qualquer                |
 
 (*) Only for array type list boxes.
 
