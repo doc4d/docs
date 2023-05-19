@@ -69,10 +69,10 @@ Depending on the `action` property value, the [event object](overview.md#event-o
 
 #### action = formulaChanged
 
-| Propriedade | Tipo   | Descrição           |
-| ----------- | ------ | ------------------- |
-| range       | object | Cell range          |
-| formula     | text   | The formula entered |
+| Propriedade | Tipo   | Descrição             |
+| ----------- | ------ | --------------------- |
+| range       | object | Cell range            |
+| formula     | text   | A fórmula introduzida |
 
 #### action = clipboardPasted
 
