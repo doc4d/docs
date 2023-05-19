@@ -1,6 +1,6 @@
 ---
 id: propertiesTextAndPicture
-title: Text and Picture
+title: Texto e imagem
 ---
 
 
@@ -46,7 +46,7 @@ This parameter is useful, for example, when the background picture contains bord
 
 | Com / Sem            | Exemplo                                                      |
 | -------------------- | ------------------------------------------------------------ |
-| Without margin       | ![](../assets/en/FormObjects/property_horizontalMargin1.png) |
+| Sem margem           | ![](../assets/en/FormObjects/property_horizontalMargin1.png) |
 | With 13-pixel margin | ![](../assets/en/FormObjects/property_horizontalMargin2.png) |
 > This property works in conjunction with the [Vertical Margin](#vertical-margin) property.
 
@@ -96,7 +96,7 @@ The title of the button will be shifted to the right and toward the bottom for t
 
 ---
 
-## Number of States
+## Número de estados
 
 This property sets the exact number of states present in the picture used as the icon for a [button with icon](button_overview.md), a [check box](checkbox_overview.md) or a custom [radio button](radio_overview.md).
 
