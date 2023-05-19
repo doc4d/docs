@@ -14,14 +14,14 @@ Several dedicated [standard actions](#standard-actions), numerous [language comm
 
 ## Propriedades específicas
 
-### Associated variables
+### Variáveis associadas
 
 Two specific variables can be associated with each Web area:
 
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the Web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the Web area.
 
-### Web rendering engine
+### Motor de renderização Web
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the Web area, depending on the specifics of your application.
 
