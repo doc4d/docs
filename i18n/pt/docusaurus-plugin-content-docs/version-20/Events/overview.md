@@ -28,13 +28,13 @@ Each event is returned as an object by the `FORM Event` command. By default, it 
 
 `Form event code` command| |description|text|Name of the form event (e.g. "On After Edit")|
 
-Additional properties are returned when the event occurs on specific objects. In particular:
+Additional properties are returned when the event occurs on specific objects. Em particular:
 
 - [list boxes](FormObjects/listbox_overview.md#supported-form-events) and [list box columns](FormObjects/listbox_overview.md#supported-form-events-1) return [additional properties](FormObjects/listbox_overview.md#additional-properties) such as `columnName` or `isRowSelected`.
 - [4D View Pro areas](FormObjects/viewProArea_overview.md) return for example `sheetName` or `action` properties in the [On After Edit](onAfterEdit.md) event object.
 
 
-## Events and Methods
+## Eventos e métodos
 
 When a form event occurs, 4D performs the following actions:
 
@@ -51,7 +51,7 @@ The number of objects involved in an event depends on the nature of the event.
 
 The following table summarizes how object and form methods are called for each event type:
 
-| Evento                   | Object Methods                      | Método formulário | Which Objects          |
+| Evento                   | Métodos objecto                     | Método formulário | Which Objects          |
 | ------------------------ | ----------------------------------- | ----------------- | ---------------------- |
 | On Load                  | Sim                                 | Sim               | Todos os objectos      |
 | On Unload                | Sim                                 | Sim               | Todos os objectos      |
@@ -84,25 +84,25 @@ The following table summarizes how object and form methods are called for each e
 | On Printing Footer       | Sim                                 | Sim               | Todos os objectos      |
 | On Close Box             | Nunca                               | Sim               | Nenhum                 |
 | On Display Detail        | Sim                                 | Sim               | Todos os objectos      |
-| On Open Detail           | Yes (List box)                      | Sim               | None except List boxes |
-| On Close Detail          | Yes (List box)                      | Sim               | None except List boxes |
+| On Open Detail           | Sim (List box)                      | Sim               | None except List boxes |
+| On Close Detail          | Sim (List box)                      | Sim               | None except List boxes |
 | On Resize                | Nunca                               | Sim               | Nenhum                 |
 | On Selection Change      | Sim                                 | Sim               | Involved object only   |
 | On Load Record           | Nunca                               | Sim               | Nenhum                 |
 | On Timer                 | Nunca                               | Sim               | Nenhum                 |
 | On Scroll                | Sim                                 | Nunca             | Involved object only   |
-| On Before Data Entry     | Yes (List box)                      | Nunca             | Involved object only   |
-| On Column Moved          | Yes (List box)                      | Nunca             | Involved object only   |
-| On Row Moved             | Yes (List box)                      | Nunca             | Involved object only   |
+| On Before Data Entry     | Sim (List box)                      | Nunca             | Involved object only   |
+| On Column Moved          | Sim (List box)                      | Nunca             | Involved object only   |
+| On Row Moved             | Sim (List box)                      | Nunca             | Involved object only   |
 | On Column Resize         | Yes (List box and 4D View Pro Area) | Nunca             | Involved object only   |
 | On Header Click          | Yes (List box and 4D View Pro Area) | Nunca             | Involved object only   |
-| On Footer Click          | Yes (List box)                      | Nunca             | Involved object only   |
-| On After Sort            | Yes (List box)                      | Nunca             | Involved object only   |
+| On Footer Click          | Sim (List box)                      | Nunca             | Involved object only   |
+| On After Sort            | Sim (List box)                      | Nunca             | Involved object only   |
 | On Long Click            | Sim (Botão)                         | Sim               | Involved object only   |
 | On Alternative Click     | Yes (Button and List box)           | Nunca             | Involved object only   |
-| On Expand                | Sim (Hier. list and list box)       | Nunca             | Involved object only   |
-| On Collapse              | Sim (Hier. list and list box)       | Nunca             | Involved object only   |
-| On Delete Action         | Sim (Hier. list and list box)       | Nunca             | Involved object only   |
+| On Expand                | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
+| On Collapse              | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
+| On Delete Action         | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
 | On URL Resource Loading  | Yes (Web Area)                      | Nunca             | Involved object only   |
 | On Begin URL Loading     | Yes (Web Area)                      | Nunca             | Involved object only   |
 | On URL Loading Error     | Yes (Web Area)                      | Nunca             | Involved object only   |
