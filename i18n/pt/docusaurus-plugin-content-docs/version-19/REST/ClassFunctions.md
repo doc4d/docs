@@ -20,13 +20,13 @@ $city:=ds. City.getCity("Aguada")
 
 > Only functions with the `exposed` keyword can be directly called from REST requests. See [Exposed vs non-exposed functions](ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) section.
 
-## Function calls
+## Chamadas funções
 
 Functions must always be called using REST **POST** requests (a GET request will receive an error).
 
 Functions are called on the corresponding object on the server datastore.
 
-| Class function                                                     | Sintaxe                                                                     |
+| Função de classe                                                   | Sintaxe                                                                     |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
 | [datastore class](ORDA/ordaClasses.md#datastore-class)             | `/rest/$catalog/DataStoreClassFunction`                                     |
 | [dataclass class](ORDA/ordaClasses.md#dataclass-class)             | `/rest/{dataClass}/DataClassClassFunction`                                  |
