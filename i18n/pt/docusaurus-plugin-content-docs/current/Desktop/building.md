@@ -146,7 +146,7 @@ Once the folder is selected, its complete pathname is displayed and, if it actua
 
 > The 4D Volume Desktop version number must match the 4D Developer Edition version number. For example, if you use 4D Developer v18, you must select a 4D Volume Desktop v18.
 
-#### Data linking mode
+#### Modo de ligação de dados
 
 This option lets you choose the linking mode between the merged application and the local data file. Two data linking modes are available:
 
@@ -156,7 +156,7 @@ This option lets you choose the linking mode between the merged application and 
 
 For more information about the data linking mode, refer to the [Last data file opened](#last-data-file-opened) section.
 
-#### Generated files
+#### Ficheiros gerados
 
 When you click on the **Build** button, 4D automatically creates a **Final Application** folder in the specified **Destination Folder**. Inside the Final Application folder is a subfolder with the name of the specified application in it.
 
@@ -268,7 +268,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
-#### Data linking mode
+#### Modo de ligação de dados
 
 This option lets you choose the linking mode between the merged application and the local data file. Two data linking modes are available:
 
@@ -356,7 +356,7 @@ There are many possible causes for this error. When you get this message, it is 
 * **Pathnames** - Check the validity of the pathnames set in the application project via the Application builder dialog box or via XML keys (for example *ClientMacFolderToWin*). More particularly, check the pathnames to the versions of 4D Volume Desktop.
 * **Read/write privileges** - On the client machine, check that the current user has write access rights for the client application update.
 
-### Generated files
+### Ficheiros gerados
 
 Once a client/server application is built, you will find a new folder in the destination folder named **Client Server executable**. This folder contains two subfolders, `\&#060;ApplicationName&#062;Client` and `\&#060;ApplicationName&#062;Server`.
 > Estas pastas não são geradas se ocorrer um erro. In this case, open the [log file](#log-file) in order to find out the cause of the error.
@@ -469,7 +469,7 @@ If you want to integrate other plug-ins or components into the executable applic
 If there is a conflict between two different versions of the same plug-in (one loaded by 4D and the other located in the source application folder), priority goes to the plug-in installed in the 4D Volume Desktop/4D Server folder. However, if there are two instances of the same component, the application will not open.
 > The use of plug-ins and/or components in a deployment version requires the necessary license numbers.
 
-### Deselecting modules
+### Anular a selecção de módulos
 
 A module is a built-in code library used by 4D to control specific features. If you know that your built application does not use any of the features covered by a module, you can deselect it in the list to reduce the size of your application files.
 
@@ -654,7 +654,7 @@ When the default data file is detected at first launch, it is silently opened in
 
 The management of connections by client applications covers the mechanisms by which a merged client application connects to the target server, once it is in its production environment.
 
-### Connection scenario
+### Cenário de ligação
 
 The connection procedure for merged client applications supports cases where the dedicated server is not available. The startup scenario for a 4D client application is the following:
 
