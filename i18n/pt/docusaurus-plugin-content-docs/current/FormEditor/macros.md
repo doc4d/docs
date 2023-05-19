@@ -1,6 +1,6 @@
 ---
 id: macros
-title: Form Editor Macros
+title: Macros do editor de formulários
 ---
 
 
@@ -9,7 +9,7 @@ The 4D Form editor supports macros. A macro is a set of instructions to perform 
 For example if you have a recurring report with specific formatting (e.g., certain text must appear in red and certain text must appear in green), you can create a macro to automatically set the color. You can create macros for the 4D Form editor that can:
 
 *   Create and execute 4D code
-*   Display dialogs
+*   Exibir diálogos
 *   Select form objects
 *   Add / delete / modify forms, form objects as well as their properties
 *   Modify project files (update, delete)
