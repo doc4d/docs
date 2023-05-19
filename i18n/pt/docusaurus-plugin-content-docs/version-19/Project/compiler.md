@@ -69,7 +69,7 @@ Only the necessary compiler methods (i.e., those for which items already exist i
 
 The information area indicates any errors found during method creation or updating. Double-clicking on an error line causes the method and line concerned to be displayed in the Method editor.
 
-### Clear compiled code
+### Limpar código compilado
 
 The **Clear compiled code** button deletes the compiled code of the project. When you click on it, all of the [code generated during compilation](#classic-compiler) is deleted, the **Restart Compiled** command of the **Run** menu is disabled and the "Compiled Project" option is not available at startup.
 
@@ -111,15 +111,15 @@ The "Compiler" page of the Settings dialog box lets you set parameters related t
 
 ![](../assets/en/Project/compilerWin6.png)
 
-### Compilation options
+### Opções de compilação
 
 This area groups the generic options used during the compilation process.
 
-#### Generate symbol file
+#### Gerar ficheiro symbol
 
 Used to generate the error file (see [error file](#symbol-file)) at the time of syntax checking. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
 
-#### Generate error file
+#### Gerar ficheiro de erros
 
 You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
 
@@ -148,7 +148,7 @@ This setting allows you to select the processor family for which your 4D project
 
 Two target options are proposed. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                         | *on Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *on macOS Silicon*                                                                           |
+| *Option*                                         | *no Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *on macOS Silicon*                                                                           |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br/>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* |
 | **My processor (processor)**                     | Code for Intel/AMD                                                                         | Code for Intel/AMD                                                                           | Code for Apple Silicon                                                                       |
@@ -162,7 +162,7 @@ Use this area to set the default type for ambiguous database objects.
 - **Numeric**: Used to force numeric typing in an unambiguous manner, either in real or longint. This will not override the directives you may have set in your project. You can optimize the running of your database by choosing the Longint type.
 - **Button**: Used to force button typing in an unambiguous manner, either in real or longint. This will not override the directives you may have set in your project. This type applies to buttons as well as check boxes, picture buttons, button grids, radio buttons, picture pop-up menus and drop-down lists.
 
-### Compiler Methods for
+### Métodos Compilação para
 
 This area lets you rename the Compiler methods that are generated automatically by the compiler when you click [Generate Typing](#generate-typing).
 
@@ -215,7 +215,7 @@ A complete list of your database and project methods is given at the end of the 
 
 - their type (procedure or function returning a value)
 - the data types of their parameters and the returned result
-- the number of calls
+- o número de chamadas
 - the Thread Safe or Thread Unsafe property.
 
 This information appears as follows:
@@ -277,11 +277,11 @@ To do this, you must surround the code to be excluded from range checking with t
 
 The classic compiler can be used on any platform, while the Silicon compiler can only be used on a Mac machine:
 
-|             | Compile for Windows | Compile for Intel Mac | Compile for Silicon Mac |
-| ----------- |:-------------------:|:---------------------:|:-----------------------:|
-| Em Windows  |      &#10003;       |       &#10003;        |        &#10007;         |
-| Intel Mac   |      &#10003;       |       &#10003;        |        &#10003;         |
-| Silicon Mac |      &#10003;       |       &#10003;        |        &#10003;         |
+|             | Compilar para Windows | Compile for Intel Mac | Compile for Silicon Mac |
+| ----------- |:---------------------:|:---------------------:|:-----------------------:|
+| Em Windows  |       &#10003;        |       &#10003;        |        &#10007;         |
+| Intel Mac   |       &#10003;        |       &#10003;        |        &#10003;         |
+| Silicon Mac |       &#10003;        |       &#10003;        |        &#10003;         |
 
 Both compilers are integrated into 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
 
@@ -309,7 +309,7 @@ Resulting compiled code is stored in the [Libraries](architecture.md#libraries) 
 
 In any cases, the 4D Silicon compiler will warn you if your configuration does not comply with its requirements.
 
-#### Incremental compiler
+#### Compilador incremental
 
 The Silicon compiler is incremental, which means that:
 
