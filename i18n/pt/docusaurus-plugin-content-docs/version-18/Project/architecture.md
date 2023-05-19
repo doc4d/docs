@@ -23,7 +23,7 @@ A 4D project is made of several folders and files, stored within a single parent
 
 > If your project has been converted from a binary database, additional folders may be present. See "Converting databases to projects" on [doc.4d.com](https://doc.4d.com).
 
-## Project folder
+## Pasta Project
 
 The Project folder typically contains the following hierarchy:
 
@@ -47,7 +47,7 @@ Project development file, used to designate and launch the project. This file ca
 
 **Note:** In 4D projects, development is done with 4D Developer and multi-user development is managed through source control tools. 4D Server can open .4DProject files for testing purposes.
 
-### Sources folder
+### Pasta Sources
 
 | Conteúdos               | Descrição                                                                                                                                                                                                                                                                                                                                                                                   | Formato |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -68,13 +68,13 @@ Project development file, used to designate and launch the project. This file ca
 | ------------------------ | ------------------------------------------------------------- | ------- |
 | *databaseMethodName*.4dm | Database methods defined in the database. One file per method | text    |
 
-#### Methods folder
+#### Pasta Methods
 
 | Conteúdos        | Descrição                                                             | Formato |
 | ---------------- | --------------------------------------------------------------------- | ------- |
 | *methodName*.4dm | Project methods defined in the database. One file per database method | text    |
 
-#### Classes folder
+#### Pasta Classes
 
 | Conteúdos       | Descrição                                                                                                                          | Formato |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -124,7 +124,7 @@ Within these folders, deleted element names are in parentheses, e.g. "(myMethod)
 
 The DerivedData folder contains cached data used internally by 4D to optimize processing. It is automatically created or recreated when necessary. You can ignore this folder.
 
-## Resources folder
+## Pasta Resources
 
 The Resources folder contains any custom database resource files and folders. In this folder, you can place all the files needed for the translation or customization of the application interface (picture files, text files, XLIFF files, etc.). 4D uses automatic mechanisms to work with the contents of this folder, in particular for the handling of XLIFF files and static pictures. For using in remote mode, the Resources folder lets you share files between the server machine and all the client machines. See the *4D Server Reference Manual*.
 
@@ -207,6 +207,6 @@ This folder contains the components to be available in the project database only
 > - for development: put an alias of the .4dproject file in the Components folder of the host database.
 > - for deployment: build the component (see [Building a project package](building.md)) and put the resulting .4dz file in a .4dbase folder in the Components folder of the host database.
 
-## Plugins folder
+## Pasta Plugins
 
 This folder contains the plug-ins to be available in the project database only. It must be stored at the same level as the Project folder.
