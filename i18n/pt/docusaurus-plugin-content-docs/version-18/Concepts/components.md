@@ -24,7 +24,7 @@ It should be noted that a database can be both a “matrix” and a “host,” 
 
 ### Proteção dos componentes: compilação
 
-By default, all the project methods of a matrix database installed as a component are potentially visible from the host database. In particular:
+By default, all the project methods of a matrix database installed as a component are potentially visible from the host database. Em particular:
 
 - The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host database. Seu conteúdo pode ser selecionado e copiado na área de vista prévia do Explorador. Também podem ser vistos no depurador. However, it is not possible to open them in the Method editor nor to modify them.
 - The other project methods of the matrix database do not appear in the Explorer but they too can be viewed in the debugger of the host database.
