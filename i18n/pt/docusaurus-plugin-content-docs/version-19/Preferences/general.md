@@ -31,7 +31,7 @@ Starting with macOS Sierra, Mac applications can benefit from the Automatic Wind
 You can benefit from this feature in the following environments (with 4D 64-bit versions only):
 
 * Method Editor windows
-* Form Editor windows
+* Janelas do editor de formulários
 
 All windows from these editors can be put in tab form:
 
