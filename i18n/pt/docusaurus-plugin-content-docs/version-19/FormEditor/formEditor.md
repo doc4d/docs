@@ -290,7 +290,7 @@ Concerning the distribution of objects, 4D proposes a distance based on interfac
 This operation applies to all types of form objects. The Magnetic Grid can be enabled or disabled at any time using the **Magnetic Grid** command in the **Form** menu or in the editor context menu. It is also possible to set the activation of this feature by default on the **Preferences** > **Forms** page (**Activate auto alignment by default** option). You can manually activate or deactivate the magnetic grid when an object is selected by pressing the **Ctrl** (Windows) or **Control** (macOS) key .
 > The Magnetic Grid also influences the manual resizing of objects.
 
-### Distributing objects
+### Distribuição de objectos
 
 You can distribute objects so that they are set out with an equal amount of space between them. To do this, you can distribute objects using either the Distribute tools in the Tools palette or the Alignment Assistant. The latter allows you to align and distribute objects in one operation.
 > When the [Magnetic Grid](#using-the-magnetic-grid) is on, a visual guide is also provided for distribution when an object is moved manually.
@@ -631,7 +631,7 @@ To rename a view, you can use either:
 
 Once views are created, you can use the View palette to:
 
-- Add object to views,
+- Adicionar objecto às vistas,
 - Move objects from one view to another,
 - Select all objects of the same view in a single click,
 - Display or hide objects for each view,
