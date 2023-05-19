@@ -167,7 +167,7 @@ The following items are added automatically:
 | ![no-tag-icon](../assets/en/code-editor/no-tag.png)                         | Sem etiqueta                                     |
 | ![constructor-icon](../assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
 | ![computed-attribute-icon](../assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
-| ![function-icon](../assets/en/code-editor/function.png)                     | Class function name                              |
+| ![function-icon](../assets/en/code-editor/function.png)                     | Nome da função de classe                         |
 
 #### Marcação manual
 
@@ -231,7 +231,7 @@ Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Wind
 | [Shift]+[up arrow]                                              | Create and enlarge a selection, line by line, from the bottom to the top                                                                   |
 | [Ctrl]+[Shift]+[right arrow]                                    | Create and enlarge the selection, word by word, from the right                                                                             |
 | [Ctrl]+[Shift]+[left arrow]                                     | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                      |
-| [Ctrl]+[right arrow]                                            | Move the insertion point, word by word, from left to right                                                                                 |
+| [Ctrl]+[seta para a direita]                                    | Move the insertion point, word by word, from left to right                                                                                 |
 | [Ctrl]+[left arrow]                                             | Move the insertion point, word by word, from right to left                                                                                 |
 | [Alt]+[down arrow]                                              | Move the line(s) where the cursor is to the bottom                                                                                         |
 | [Alt]+[seta para cima]                                          | Move the line(s) where the cursor is to the top                                                                                            |
@@ -281,7 +281,7 @@ Under Windows, the code editor includes an Input Code Editor (IME) to facilitate
 
 The Code Editor includes numerous [navigation shortcuts](#shortcuts).
 
-#### Using the backslash
+#### Uso de la barra invertida
 
 The backslash character (`\`) has a specific support in the 4D language:
 
@@ -495,7 +495,7 @@ When entering code, you can immediately check the syntax of the current line (wi
 
 When the method, class or function is validated, 4D checks for:
 
-- basic syntax errors
+- erros básicos de sintaxe
 - the structure of statements (`If`, `End if` and so on)
 - matching enclosing characters in the code such as parentheses or quotation marks. When you type an enclosing character, 4D indicates the match by framing the start/end characters with gray rectangles:
 
