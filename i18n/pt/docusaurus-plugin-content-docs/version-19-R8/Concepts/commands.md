@@ -1020,7 +1020,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`SEND PACKET`](https://doc.4d.com/4dv19R/help/command/en/page103.html)                                        | 103    |
 | [`SEND RECORD`](https://doc.4d.com/4dv19R/help/command/en/page78.html)                                         | 78     |
 | [`SEND VARIABLE`](https://doc.4d.com/4dv19R/help/command/en/page80.html)                                       | 80     |
-| [`Sequence number`](https://doc.4d.com/4dv19R/help/command/en/page244.html)                                    | 244    |
+| [`Número de sequência`](https://doc.4d.com/4dv19R/help/command/en/page244.html)                                | 244    |
 | [`Session`](https://doc.4d.com/4dv19R/help/command/en/page1714.html)                                           | 1714   |
 | [`SET ABOUT`](https://doc.4d.com/4dv19R/help/command/en/page316.html)                                          | 244    |
 | [`SET ALLOWED METHODS`](https://doc.4d.com/4dv19R/help/command/en/page805.html)                                | 805    |
@@ -1144,7 +1144,7 @@ Os comandos 4D estão divididos em duas categorias:
 | [`ST INSERT URL`](https://doc.4d.com/4dv19R/help/command/en/page1280.html)                                     | 1280   |
 | [`ST SET ATTRIBUTES`](https://doc.4d.com/4dv19R/help/command/en/page1093.html)                                 | 1093   |
 | [`ST SET OPTIONS`](https://doc.4d.com/4dv19R/help/command/en/page1289.html)                                    | 1289   |
-| [`ST SET PLAIN TEXT`](https://doc.4d.com/4dv19R/help/command/en/page1136.html)                                 | 1136   |
+| [`ST SET ATTRIBUTES`](https://doc.4d.com/4dv19R/help/command/en/page1136.html)                                 | 1136   |
 | [`ST SET TEXT`](https://doc.4d.com/4dv19R/help/command/en/page1115.html)                                       | 1115   |
 | [`START MONITORING ACTIVITY`](https://doc.4d.com/4dv19R/help/command/en/page1712.html)                         | 1712   |
 | [`START SQL SERVER`](https://doc.4d.com/4dv19R/help/command/en/page962.html)                                   | 962    |
