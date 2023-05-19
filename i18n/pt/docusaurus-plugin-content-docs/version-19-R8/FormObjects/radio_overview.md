@@ -128,7 +128,7 @@ As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas 
 
 
 
-### Collapse / Expand
+### Contrair/expandir
 
 This button style can be used to add a standard collapse/expand icon. Esses botões são usados nativamente em listas hierárquicas. Esses botões são usados nativamente em listas hierárquicas.
 
@@ -136,7 +136,7 @@ This button style can be used to add a standard collapse/expand icon. Esses bot�
 
 
 
-### Disclosure Button
+### Botão de divulgação
 
 The disclosure radio button style displays the radio button as a standard disclosure button, usually used to show/hide additional information. The button symbol points downwards with value 0 and upwards with value 1.
 
