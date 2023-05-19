@@ -388,8 +388,8 @@ Os campos abaixo são registrados para cada petição:
 | startTime      | Starting date and time using ISO 8601 format                                                                  | "2019-05-28T08:25:12.346Z"                              |
 | duration       | Server processing duration in microseconds (µ)                                                                | 2500                                                    |
 | response       | Server response object, can be configured in [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...] |
-| ipAddress      | User IP address                                                                                               | "192.168.1.5"                                           |
-| userName       | Name of the 4D user                                                                                           | "henry"                                                 |
+| ipAddress      | Endereço IP do usuário                                                                                        | "192.168.1.5"                                           |
+| userName       | Nome do usuário 4D                                                                                            | "henry"                                                 |
 | systemUserName | Login name of the user on the machine                                                                         | "hsmith"                                                |
 | machineName    | Name of the user machine                                                                                      | "PC of Henry Smith"                                     |
 
