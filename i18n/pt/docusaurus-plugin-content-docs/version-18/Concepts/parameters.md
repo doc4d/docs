@@ -4,7 +4,7 @@ title: Parâmetros
 ---
 
 
-## Using parameters
+## Utilização de parâmetros
 
 You'll often find that you need to pass data to your methods. Isso é facilmente feito com parâmetros.
 
