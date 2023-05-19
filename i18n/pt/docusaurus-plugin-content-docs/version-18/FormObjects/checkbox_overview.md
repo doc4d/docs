@@ -125,7 +125,7 @@ The Flat check box style is a minimalist appearance. A natureza gráfica do esti
    }
 ```
 
-### Toolbar button
+### Botão barra de ferramentas
 
 The Toolbar button check box style is primarily intended for integration in a toolbar.
 
@@ -290,7 +290,7 @@ As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas 
                 }
 ```
 
-### Collapse / Expand
+### Contrair/expandir
 
 This check box style can be used to add a standard collapse/expand icon. Esses botões são usados nativamente em listas hierárquicas.
 
@@ -316,7 +316,7 @@ This check box style can be used to add a standard collapse/expand icon. Esses b
                 }
 ```
 
-### Disclosure Button
+### Botão de divulgação
 
 In macOS and Windows, a check box with the "Disclosure" style appears as a standard disclosure button, usually used to show/hide additional information. Quando usar um botão radio, o símbolo botão aponta para baixo com o valor 0 e para cima com o valor 1.
 
