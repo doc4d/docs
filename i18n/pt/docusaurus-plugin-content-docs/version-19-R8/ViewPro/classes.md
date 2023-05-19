@@ -13,7 +13,7 @@ The following classes can be used in 4D View Pro.
 <!-- REF #LineBorder.color.Syntax -->
 **.color** : Text<!-- END REF -->
 
-The `.color` property is the <!-- REF #LineBorder.color.Summary -->[color](configuring.md#borders) of the border<!-- END REF -->. Default = black.
+The `.color` property is the <!-- REF #LineBorder.color.Summary -->[color](configuring.md#borders) of the border<!-- END REF -->. Predefinição = black.
 
 
 ### .style
@@ -21,7 +21,7 @@ The `.color` property is the <!-- REF #LineBorder.color.Summary -->[color](confi
 <!-- REF #LineBorder.style.Syntax -->
 **.style** : Integer<!-- END REF -->
 
-The `.style` property is the <!-- REF #LineBorder.style.Summary -->[style](configuring.md#borders) of the border<!-- END REF -->. Default = empty.
+The `.style` property is the <!-- REF #LineBorder.style.Summary -->[style](configuring.md#borders) of the border<!-- END REF -->. Predefinição = vazio.
 
 
 ## TableColumn
@@ -57,7 +57,7 @@ A propriedade `.name` <!-- REF #TableColumn.name.Summary -->contains the table c
 <!-- REF #TableOptions.allowAutoExpand.Syntax -->
 **.allowAutoExpand** : Boolean<!-- END REF -->
 
-The `.allowAutoExpand` property <!-- REF #TableOptions.allowAutoExpand.Summary -->indicates whether to expand columns or rows of the table when values are added in empty adjacent cells<!-- END REF -->. Default = True
+The `.allowAutoExpand` property <!-- REF #TableOptions.allowAutoExpand.Summary -->indicates whether to expand columns or rows of the table when values are added in empty adjacent cells<!-- END REF -->. Padrão = True
 
 
 ### .bandColumns
@@ -65,7 +65,7 @@ The `.allowAutoExpand` property <!-- REF #TableOptions.allowAutoExpand.Summary -
 <!-- REF #TableOptions.bandColumns.Syntax -->
 **.bandColumns** : Boolean<!-- END REF -->
 
-The `.bandColumns` property <!-- REF #TableOptions.bandColumns.Summary -->indicates whether to display an alternating column style<!-- END REF -->. Default = False
+The `.bandColumns` property <!-- REF #TableOptions.bandColumns.Summary -->indicates whether to display an alternating column style<!-- END REF -->. Padrão = False
 
 
 ### .bandRows
@@ -73,7 +73,7 @@ The `.bandColumns` property <!-- REF #TableOptions.bandColumns.Summary -->indica
 <!-- REF #TableOptions.bandRows.Syntax -->
 **.bandRows** : Boolean<!-- END REF -->
 
-The `.bandRows` property <!-- REF #TableOptions.bandRows.Summary -->indicates whether to display an alternating row style<!-- END REF -->. Default = True
+The `.bandRows` property <!-- REF #TableOptions.bandRows.Summary -->indicates whether to display an alternating row style<!-- END REF -->. Padrão = True
 
 
 ### .highlightLastColumn
@@ -81,14 +81,14 @@ The `.bandRows` property <!-- REF #TableOptions.bandRows.Summary -->indicates wh
 <!-- REF #TableOptions.highlightLastColumn.Syntax -->
 **.highlightLastColumn** : Boolean<!-- END REF -->
 
-The `.highlightLastColumn` property <!-- REF #TableOptions.highlightLastColumn.Summary -->indicates whether to highlight the last column<!-- END REF -->. Default = False
+The `.highlightLastColumn` property <!-- REF #TableOptions.highlightLastColumn.Summary -->indicates whether to highlight the last column<!-- END REF -->. Padrão = False
 
 ### .highlightFirstColumn
 
 <!-- REF #TableOptions.highlightFirstColumn.Syntax -->
 **.highlightFirstColumn** : Boolean<!-- END REF -->
 
-The `.highlightFirstColumn` property <!-- REF #TableOptions.highlightFirstColumn.Summary -->indicates whether to highlight the first column<!-- END REF -->. Default = False
+The `.highlightFirstColumn` property <!-- REF #TableOptions.highlightFirstColumn.Summary -->indicates whether to highlight the first column<!-- END REF -->. Padrão = False
 
 
 ### .showFooter
@@ -96,21 +96,21 @@ The `.highlightFirstColumn` property <!-- REF #TableOptions.highlightFirstColumn
 <!-- REF #TableOptions.showFooter.Syntax -->
 **.showFooter** : Boolean<!-- END REF -->
 
-The `.showFooter` property <!-- REF #TableOptions.showFooter.Summary -->indicates whether to display a footer<!-- END REF -->. Default = False
+The `.showFooter` property <!-- REF #TableOptions.showFooter.Summary -->indicates whether to display a footer<!-- END REF -->. Padrão = False
 
 ### .showHeader
 
 <!-- REF #TableOptions.showHeader.Syntax -->
 **.showHeader** : Boolean<!-- END REF -->
 
-The `.showHeader` property <!-- REF #TableOptions.showHeader.Summary -->indicates whether to display a header<!-- END REF -->. Default = True
+The `.showHeader` property <!-- REF #TableOptions.showHeader.Summary -->indicates whether to display a header<!-- END REF -->. Padrão = True
 
 ### .showResizeHandle
 
 <!-- REF #TableOptions.showResizeHandle.Syntax -->
 **.showResizeHandle** : Boolean<!-- END REF -->
 
-The `.showResizeHandle` property <!-- REF #TableOptions.showResizeHandle.Summary -->indicates whether to display the resize handle for tables that don't have a *source*<!-- END REF -->. Default = False
+The `.showResizeHandle` property <!-- REF #TableOptions.showResizeHandle.Summary -->indicates whether to display the resize handle for tables that don't have a *source*<!-- END REF -->. Padrão = False
 
 ### .tableColumns
 
@@ -137,7 +137,7 @@ See the [native SpreadJS themes](https://www.grapecity.com/spreadjs/api/classes/
 <!-- REF #TableOptions.useFooterDropDownList.Syntax -->
 **.useFooterDropDownList** : Boolean<!-- END REF -->
 
-The `.useFooterDropDownList` property <!-- REF #TableOptions.useFooterDropDownList.Summary -->indicates whether to use a dropdown list in footer cells that calculate the total value of a column<!-- END REF -->. Default = False
+The `.useFooterDropDownList` property <!-- REF #TableOptions.useFooterDropDownList.Summary -->indicates whether to use a dropdown list in footer cells that calculate the total value of a column<!-- END REF -->. Padrão = False
 
 
 
