@@ -179,7 +179,7 @@ You can execute methods in two ways:
 - From the Code Editor window,
 - From the Execute Method dialog box (project methods only).
 
-#### From the Code Editor
+#### No editor de código
 
 Each [**Code Editor**](../code-editor/write-class-method.md) window has a button that can be used to run the current method. Using the menu associated with this button, you can choose the type of execution desired.
 
