@@ -44,7 +44,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | Inserir  | Add items                       |        X         |                 X                 |
 | Formulas | Formula calculation and library |        X         |                 X                 |
 | Dados    | Data manipulation               |        X         |                 X                 |
-| Mostrar  | Visual presentation             |        X         |                 X                 |
+| Mostrar  | Apresentação visual             |        X         |                 X                 |
 | Settings | Sheet presentation reference    |        X         |                                   |
 
 ## Eventos formulário
@@ -284,9 +284,9 @@ The following special characters allow the automatic addition or formatting of i
 
 | Caracteres | Descrição                        | Exemplo                                                                | Resultados                                           |
 | ---------- | -------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------- |
-| &          | Escape character                 | (see examples below)                                                   |                                                      |
+| &          | Escape character                 | (ver exemplos abaixo)                                                  |                                                      |
 | P          | Página actual                    | printInfo.headerLeft:="This is page &P."                               | Esta é a página 5.|                                  |
-| N          | Contagem de páginas              | printInfo.headerLeft:="There are &N pages."                            | There are 10 pages.                                  |
+| N          | Contagem de páginas              | printInfo.headerLeft:="There are &N pages."                            | Existem 10 páginas.                                  |
 | D          | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                      | Estamos em 2015/6/19.                                |
 | T          | Hora actual                      | printInfo.headerLeft:="It is &T."                                      | São 16:30:36.                                        |
 | G          | Imagem                           | printInfo.headerLeftImage:=smiley<br/>printInfo.headerLeft:="&G" | ![](../assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
