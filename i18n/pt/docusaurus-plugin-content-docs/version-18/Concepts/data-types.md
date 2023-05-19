@@ -7,7 +7,7 @@ Em 4D, os dados se manejam segundo seu tipo em dois lugares: os campos do banco 
 
 Apesar de geralmente serem equivalentes, alguns tipos de dados disponíveis no nível do banco de dados não estão diretamente disponíveis na linguagem e são convertidos automaticamente. Por outro lado, alguns tipos de dados pode somente ser manejados através da linguagem. A tabela lista todos os tipos de dados disponíveis e sua compatibilidade/declarações:
 
-| Tipos de dados                                 | Suporte para o banco (1) | Suporte Linguagem       | Variable declaration         |
+| Tipos de dados                                 | Suporte para o banco (1) | Suporte Linguagem       | Declaração de variáveis      |
 | ---------------------------------------------- | ------------------------ | ----------------------- | ---------------------------- |
 | [Alfanumérico](dt_string.md)                   | Sim                      | Convertido em texto     | -                            |
 | [Text](Concepts/dt_string.md)                  | Sim                      | Sim                     | `C_TEXT`, `ARRAY TEXTO`      |
@@ -47,7 +47,7 @@ The default value depends on the variable type and category, its execution conte
 
 The following table illustrates these default values:
 
-| Tipo         | Interprocess/Process (interpreted/compiled), Local (interpreted/compiled "to zero") | Local compiled "random" | Local compiled "no"          |
+| Tipo         | Interprocess/Process (interpreted/compiled), Local (interpreted/compiled "to zero") | Local compiled "random" | Local compilado "não"        |
 | ------------ | ----------------------------------------------------------------------------------- | ----------------------- | ---------------------------- |
 | Booleano     | False                                                                               | True                    | True (varies)                |
 | Date         | 00-00-00                                                                            | 00-00-00                | 00-00-00                     |
