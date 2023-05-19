@@ -59,13 +59,13 @@ Designate a default home page for the Web server. See [Default Home page](../Web
 ### Cache
 
 
-#### Use the 4D Web cache
+#### Usar o cache Web 4D
 
 Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
 
 #### Pages Cache Size
 
-Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
+Define o tamanho da cache. See [Cache](../WebServer/webServerConfig.md#cache).
 
 
 #### Limpar cache
@@ -224,7 +224,7 @@ The following table lists the fields available for each format (in alphabetical 
 | BYTES_SENT     | X   | X   | Number of bytes sent by the server to the client                           |
 | C_DNS          | X   | X   | IP address of the DNS (ELF: field identical to the C_IP field)             |
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                      |
-| CONNECTION_ID  |     | X   | Connection ID number                                                       |
+| CONNECTION_ID  |     | X   | Número de identificação da ligação                                         |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                    |
 | CS(HOST)       | X   | X   | Host field of the HTTP request                                             |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
