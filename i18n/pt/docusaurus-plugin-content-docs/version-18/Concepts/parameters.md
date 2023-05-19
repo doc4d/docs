@@ -87,7 +87,7 @@ In this example, the variable *NewPhrase* gets “THIS is good.”
 The function result, `$0`, is a local variable within the subroutine. Pode ser usado como tal dentro da subrotina. For example, in the previous `DO SOMETHING` example, `$0` was first assigned the value of `$1`, then used as parameter to the `ALERT` command. Dentro de la subrotina, pode utilizar `$0` da mesma maneira que utilizaria qualquer outra variável local. É 4D quem devolve o valor de `$0` (como estiver quando a subrotina terminar) ao método chamado.
 
 
-## Declaring parameters
+## Declaração de parâmetros
 
 Even if it is not mandatory in [interpreted mode](Concepts/interpreted.md), you must declare each parameter in the called methods to prevent any trouble.
 
