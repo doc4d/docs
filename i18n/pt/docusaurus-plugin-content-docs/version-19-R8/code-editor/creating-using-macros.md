@@ -50,7 +50,7 @@ The macro-command files of 4D must be in conformity with the XML standard. This 
 
 If a macros file does not contain the declaration statements or cannot be validated, it is not loaded.
 
-## Syntax of 4D macros
+## Sintaxe das macros 4D
 
 4D macros are built using customized XML tags called "elements."
 
@@ -104,10 +104,10 @@ Here is an example of a macro definition:
 | **Conteúdo da macro**                                | **Comentários**                                                                                                                                 |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<?xml version="1.0"...?>`                     | Declaração XML                                                                                                                                  |
-| `<!DOCTYPE macros SYSTEM>`                     | Document declaration                                                                                                                            |
+| `<!DOCTYPE macros SYSTEM>`                     | Declaração do documento                                                                                                                         |
 | `<macros>`                                     | Start of macros XML file                                                                                                                        |
 | `<macro name="RecordLoop">`                    | Start of macro definition and name                                                                                                              |
-| `<text>`                                       | Start of macro code                                                                                                                             |
+| `<text>`                                       | Início do código da macro                                                                                                                       |
 | For($i;1;Records in selection(`<Selection/>`)) | The `<Selection/>` tag will be replaced by the selected code in the 4D method at the time of macro insertion (for instance, a table name) |
 | SAVE RECORD(`<Selection/>`)                    |                                                                                                                                                 |
 | NEXT RECORD(`<Selection/>`)                    |                                                                                                                                                 |
@@ -150,7 +150,7 @@ By default, all macros are accessible using the autocomplete (aka type-ahead) fu
 
 You can display your macros in a list of the Code Editor (see [Writing a method](./write-class-method.md)). Simply double-click on the name of a macro in the list in order to call it. It is not possible to exclude a specific macro from this list.
 
-## Compatibility notes
+## Notas de compatibilidade
 
 Macro support can change from one version of 4D to another. In order to keep the different versions compatible while maintaining your customizations, 4D does not remove any previous versions. If you want to use the latest features available, you must adapt your version accordingly.
 
