@@ -288,7 +288,7 @@ As cores (ressaltado e fundo) de um botão com o estilo Office XP são baseadas 
                 }
 ```
 
-### Collapse / Expand
+### Contrair/expandir
 
 Este estilo de caixa de seleção pode ser usado para adicionar um ícone padrão de contrair/expandir. Estes ícones são utilizados nativamente em listas hierárquicas.
 
@@ -314,7 +314,7 @@ Este estilo de caixa de seleção pode ser usado para adicionar um ícone padrã
                 }
 ```
 
-### Disclosure Button
+### Botão de divulgação
 
 Em macOS e Windows, uma caixa de seleção com o estilo de botão "Divulgação" aparece como um botão de informação padrão, normalmente utilizado para mostrar/ocultar informação adicional. Quando usar um botão radio, o símbolo botão aponta para baixo com o valor 0 e para cima com o valor 1.
 
