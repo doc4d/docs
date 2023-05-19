@@ -3,7 +3,7 @@ id: propertiesCoordinatesAndSizing
 title: Coordinates & Sizing
 ---
 
-## Automatic Row Height
+## Altura automática da linha
 
 This property is only available for list boxes with the following [data sources](properties_Object.md#data-source):
 
