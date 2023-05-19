@@ -31,9 +31,9 @@ A CSS file defined at the form level will override default style sheet(s). For m
 
 #### Gramática JSON
 
-| Nome | Tipo de dados        | Valores possíveis                                                                                        |
-| ---- | -------------------- | -------------------------------------------------------------------------------------------------------- |
-| css  | string or collection | CSS file path(s) provided as:<li>a string (a file for both platforms)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" &#124; "win"} objects </li> |
+| Nome | Tipo de dados      | Valores possíveis                                                                                        |
+| ---- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| css  | cadeia ou colecção | CSS file path(s) provided as:<li>a string (a file for both platforms)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" &#124; "win"} objects </li> |
 
 ---
 
@@ -135,7 +135,7 @@ Set to `\&#060;None&#062;` in the Property List (or " " in JSON) to inherited fr
 
 ---
 
-## Published as Subform
+## Publicado como subformulário
 
 For a component form to be selected as a [subform](FormObjects/subform_overview.md) in a host application, it must have been explicitly shared. When this property is selected, the form will be published in the host application.
 
