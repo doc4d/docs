@@ -323,7 +323,7 @@ You run this request:
 
 **POST** `http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corpo do pedido:
 
 ```
 [{
@@ -362,7 +362,7 @@ You run this request:
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corpo do pedido:
 ```
 [{
 "__DATACLASS":"Students",
@@ -399,7 +399,7 @@ You run this request:
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corpo do pedido:
 ```
 [{
 "__DATACLASS":"Students",
@@ -514,7 +514,7 @@ Then you can run this request:
 
 **POST** `http://127.0.0.1:8044/rest/Students/setFinalExam`
 
-Body of the request:
+Corpo do pedido:
 
 ```
 [
