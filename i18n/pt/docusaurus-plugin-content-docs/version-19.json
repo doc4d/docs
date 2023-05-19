@@ -28,7 +28,7 @@
     "description": "The label for category ORDA in sidebar docs"
   },
   "sidebar.docs.category.Class API Reference": {
-    "message": "Class API Reference",
+    "message": "Referência da API de classe",
     "description": "The label for category Class API Reference in sidebar docs"
   },
   "sidebar.docs.category.Preferences": {
