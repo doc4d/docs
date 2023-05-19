@@ -99,20 +99,20 @@ You can display the following lists of items in the lists area of the Code Edito
 
 **Note:** Except for the Macros element, all the lists are in alphabetical order.
 
-### Save as template
+### Guardar como modelo
 
 You can save the lists set in the Code Editor window in the form of a template. Once the template is saved, the parameters set in it will be used for each new Code Editor window that is opened.
 
 The following parameters are stored in the template:
 
 - Relative size of the editing and list areas
-- Number of lists
+- Número de listas
 - Location and contents of each list
 - Relative width of each list
 
 To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
 
-## Break points area
+## Área de pontos de paragem
 
 This area, located to the left of the editing area, allows you to display the line numbers and to insert break points directly next to specific instructions. Break points are useful during the debugging phase of your programming. They stop the execution of your code at specific locations and display the debugger.
 
@@ -348,7 +348,7 @@ The Code Editor can only check for obvious syntax errors (misspellings and the l
 
 4D has a built-in debugger (see [Debugging](../Debugging/debugger.md)) for handling and correcting these errors. The compiler also provides indispensable help for detecting errors. For more information about the compiler, refer to the [Compilation](../Project/compiler.md) chapter.
 
-## Using help tips
+## Utilizar sugestões de ajuda
 
 The Code Editor provides various contextual information using help tips. They appear when you mouse over an object and the status bar, at the bottom of a Code Editor window.
 
@@ -380,7 +380,7 @@ To display the documentation of a 4D "classic" language command, select the comm
 
 :::
 
-## Comment/Uncomment
+## Comentário/Não comentário
 
 There is no limit on the number of lines. The code editor does not apply any particular style within comments. The length of comments is limited to the maximum size of 32,000 characters per line. The 4D language supports [comments](../Concepts/quick-tour.md#comments), which are inactive lines of code.
 
@@ -395,7 +395,7 @@ Comments can be created by typing `/` characters. Or, the **Comment/Uncomment** 
 > The **Comment/Uncomment** command only operates with full lines --- it cannot be used to comment only part of a line.
 
 
-## Expand / Collapse
+## Expandir / Recolher
 
 4D code located inside loops and conditions can now be collapsed or expanded, in order to facilitate the reading of methods:
 
@@ -421,7 +421,7 @@ There are several ways to expand and collapse code:
 
 Blocks can be defined by:
 
-- Quotation marks
+- Aspas
 - Parênteses
 - A logical structure (If/Else/End if, While/End while, Repeat/Until Case of/End case)
 - Braces
@@ -449,7 +449,7 @@ These commands are found in the **Method** menu as well as the context menu of t
 - Windows: **Ctrl + up arrow** or **Ctrl** + **down arrow**‚
 - macOS: **Command** + **up arrow** or **Command** +**down arrow**.
 
-## Using bookmarks
+## Utilizar marcadores
 
 4D lets you associate bookmarks with certain lines in your methods. You can then browse quickly within the code by passing from one bookmark to another using specific commands.
 
@@ -466,7 +466,7 @@ Bookmarks are managed using the **Bookmarks** submenu of the **Method** menu:
 **Note:** You can use bookmarks as markers for lines that contain an item found by a search. In this case, 4D automatically adds the bookmarks. For more information, refer to [Find and replace in methods](find-replace.md).
 
 
-## Goto Definition
+## Ir para Definição
 
 The **Goto Definition** command opens the definition of an element referenced in the Code Editor. To do this, place the cursor inside the object name or select it, and choose **Method** > **Goto Definition...** or use the context menu of the editor.
 
@@ -492,7 +492,7 @@ The current item is either the one selected or the one where the cursor is locat
 
 This command displays its results in a new window.
 
-## Search Callers
+## Pesquisar chamadores
 
 The **Search Callers** command in the **Method** menu is only enabled for project methods. It searches for all the objects (other methods or menus) that reference the project method.
 
@@ -508,11 +508,11 @@ The navigation dropdown helps you organize your code and navigate more easily in
 
 Some tags are added automatically, and you can complement the dropdown list using [markers](#manual-tagging).
 
-#### Code navigation
+#### Navegação de código
 
 Click an item in the dropdown list to go to its first line in the code. You can also navigate with arrow-keys and press **Enter**.
 
-#### Automatic tagging
+#### Marcação automática
 
 Constructors, method declarations, functions and computed attributes are automatically tagged and added to the dropdown list.
 
@@ -527,7 +527,7 @@ The following items are added automatically:
 | ![computed-attribute-icon](../assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
 | ![function-icon](../assets/en/code-editor/function.png)                     | Class function name                              |
 
-#### Manual tagging
+#### Marcação manual
 
 By adding markers in your code, you can add the following tags to the dropdown:
 
@@ -545,7 +545,7 @@ You declare them by adding comments such as:
 
 Declarations are not case-sensitive; writing `fixme:` has the same effect.
 
-Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. So writing this:
+Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. Por isso, estou a escrever isto:
 
 ![mark-hyphen-image](../assets/en/code-editor/mark-hyphen-editor.png)
 
