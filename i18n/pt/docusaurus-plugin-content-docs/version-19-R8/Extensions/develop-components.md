@@ -357,7 +357,7 @@ Executing initialization or closing code is done by means of the `On Host Databa
 
 ## Proteção dos componentes: compilação
 
-By default, all the code of a matrix project installed as a component is potentially visible from the host project. In particular:
+By default, all the code of a matrix project installed as a component is potentially visible from the host project. Em particular:
 
 - The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Seu conteúdo pode ser selecionado e copiado na área de vista prévia do Explorador. Também podem ser vistos no depurador. However, it's not possible to open them in the Code Editor or modify them.
 - The other project methods of the matrix project do not appear in the Explorer but they too can be viewed in the debugger of the host project.
