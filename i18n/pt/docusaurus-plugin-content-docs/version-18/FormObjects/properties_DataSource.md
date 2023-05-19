@@ -269,9 +269,9 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 #### Gramática JSON
 
-| Nome           | Tipo de dados | Valores possíveis    |
-| -------------- | ------------- | -------------------- |
-| namedSelection | string        | Named selection name |
+| Nome           | Tipo de dados | Valores possíveis |
+| -------------- | ------------- | ----------------- |
+| namedSelection | string        | Nome da selecção  |
 
 #### Objectos suportados
 
