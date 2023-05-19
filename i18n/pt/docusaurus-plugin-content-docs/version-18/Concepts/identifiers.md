@@ -96,11 +96,11 @@ $vsMyString:="Hello there"
 
 You designate an array by using its name, which is the name you pass to an array declaration (such as ARRAY LONGINT) when you create the array. Arrays are variables, and from the scope point of view, like variables, there are three different types of arrays:
 
-- Interprocess arrays,
+- Arrays interprocesso,
 - Arrays processo,
 - Local arrays.
 
-### Interprocess Arrays
+### Arrays interprocesso
 
 The name of an interprocess array is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
 
@@ -378,7 +378,7 @@ The following table summarizes 4D naming conventions.
 | Campo                        | 31               | [Employees]Last Name               |
 | Interprocess Variable/Array  | `<>` + 31  | `<>vlNextProcessID`          |
 | Process Variable/Array       | 31               | vsCurrentName                      |
-| Local Variable/Array         | $ + 31           | $vlLocalCounter                    |
+| Variável/Array local         | $ + 31           | $vlLocalCounter                    |
 | Propriedades de objetos      | 255              | $o.myAttribute                     |
 | Formulário                   | 31               | "My Custom Web Input"              |
 | Form object                  | 255              | "MyButton"                         |
@@ -405,7 +405,7 @@ Be sure to use unique names for the different elements in your database. If a pa
 2. Comandos
 3. Página Métodos
 4. Comandos de plug-in
-5. Predefined constants
+5. Constantes predefinidas
 6. Variables.
 
 For example, 4D has a built-in command called `Date`. If you named a method *Date*, 4D would recognize it as the built-in `Date` command, and not as your method. This would prevent you from calling your method. If, however, you named a field “Date”, 4D would try to use your field instead of the `Date` command.
