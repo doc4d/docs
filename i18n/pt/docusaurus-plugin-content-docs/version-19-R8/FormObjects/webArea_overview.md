@@ -13,7 +13,7 @@ Várias [ações padrão](#standard-actions) dedicadas, numerosos [comandos de l
 
 ## Propriedades específicas
 
-### Associated variables
+### Variáveis associadas
 
 Duas variáveis específicas podem ser associadas a cada área web:
 - [`URL`](properties_WebArea.md#url) --para controlar a URL que mostra a área web
@@ -21,7 +21,7 @@ Duas variáveis específicas podem ser associadas a cada área web:
 
 > As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
 
-### Web rendering engine
+### Motor de renderização Web
 
 Pode escolher entre [dois motores de renderização](properties_WebArea.md#use-embedded-web-rendering-engine) para a área web, dependendo das particularidades de sua aplicação.
 
