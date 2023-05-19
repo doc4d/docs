@@ -1092,7 +1092,7 @@ For a description of the ORDA request log format, please refer to the [**ORDA re
 
 :::
 
-#### Client-side
+#### Del lado del cliente
 
 To create a client-side ORDA request log, call this function on a remote machine. The log can be sent to a file or to memory, depending on the parameter type:
 
@@ -1103,7 +1103,7 @@ To create a client-side ORDA request log, call this function on a remote machine
 
 * Si no ha pasado ningún parámetro, el registro se inicia en la memoria. Si se llamó previamente a `.startRequestLog()` con un *reqNum* (antes de un `.stopRequestLog()`), los datos del registro se apilan en memoria hasta la próxima vez que se vacíe el registro o se llame a `.stopRequestLog()`.
 
-#### Server-side
+#### Del lado del servidor
 
 To create a server-side ORDA request log, call this function on the server machine. The log data is written in a file in `.jsonl` format. Each object represents a request. If the file does not already exist, it is created. En caso contrario, si el archivo ya existe, los nuevos datos de registro se añaden a él.
 
