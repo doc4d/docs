@@ -15,7 +15,7 @@ This page allows selecting, creating, or configuring Method editor themes. A the
 
 In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D provides two themes by default:
 
-* **Default Light Theme**
+* **Tema Light predefinido**
 * **Default Dark Theme**
 
 > Default themes cannot be modified or deleted.
