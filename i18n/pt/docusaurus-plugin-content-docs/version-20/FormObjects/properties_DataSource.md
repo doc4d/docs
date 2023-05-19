@@ -130,7 +130,7 @@ Please refer to [Expression Type](properties_Object.md#expression-type) section.
 
 ---
 
-## Data Type (list)
+## Tipo de dados (lista)
 
 Defines the type of data to save in the field or variable associated to the [drop-down list](dropdownList_Overview.md). This property is used with:
 
