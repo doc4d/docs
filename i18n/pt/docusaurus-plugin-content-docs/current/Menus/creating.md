@@ -27,7 +27,7 @@ The default menu bar includes three menus:
 You can modify this menu bar as desired or create additional ones.
 
 
-## Creating menus
+## Criar menus
 
 ### Using the Menu editor
 
