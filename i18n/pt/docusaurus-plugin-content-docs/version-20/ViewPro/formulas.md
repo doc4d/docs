@@ -7,7 +7,7 @@ title: Fórmulas e funções
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
-### Entering formulas
+### Introduzir fórmulas
 
 To enter a formula in a 4D View Pro area:
 
@@ -77,7 +77,7 @@ List of operators from most to least important:
 | %                                             | Porcentagem                   |
 | ^                                             | Expoente                      |
 | * e /                                         | Multiply and divide           |
-| + e -                                         | Add and Subtract              |
+| + e -                                         | Adicionar e subtrair          |
 | &                                             | Concatenar                    |
 | `=`  `>` `<` `>=` `<=` `<>` | Comparar                      |
 
@@ -243,10 +243,10 @@ For more information on supported incoming parameter types, please refer to the 
 * [picture](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg other types converted into png) creates a URI (data:image/png;base64,xxxx) and then used as the background in 4D View Pro in the cell where the formula is executed
 * [object](Concepts/dt_object.md) with the following two properties (allowing passing a date and time):
 
-    | Propriedade | Tipo | Descrição       |
-    | ----------- | ---- | --------------- |
-    | value       | Date | Valor data      |
-    | time        | Real | Time in seconds |
+    | Propriedade | Tipo | Descrição         |
+    | ----------- | ---- | ----------------- |
+    | value       | Date | Valor data        |
+    | time        | Real | Tempo em segundos |
 
 If the 4D method returns nothing, an empty string is automatically returned.
 
