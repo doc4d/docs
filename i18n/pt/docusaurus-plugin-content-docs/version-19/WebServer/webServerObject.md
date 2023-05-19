@@ -51,7 +51,7 @@ If the application uses components and you want to call:
 - the host application's web server from a component or
 - the server that received the request (whatever the server),
 
-you can also use:
+também pode ser utilizado:
 
 ```4d
 var webServer : 4D. WebServer 
@@ -66,10 +66,10 @@ webServer:=WEB Server(Web server receiving request)
 
 A [web server class object](API/WebServerClass.md#web-server-object) contains the following functions:
 
-| Funções                                  | Parâmetro        | Valor retornado | Descrição             |
-| ---------------------------------------- | ---------------- | --------------- | --------------------- |
-| [`start()`](API/WebServerClass.md#start) | settings (objet) | status (object) | Starts the web server |
-| [`stop()`](API/WebServerClass.md#start)  | -                | -               | Stops the web server  |
+| Funções                                  | Parâmetro        | Valor retornado  | Descrição             |
+| ---------------------------------------- | ---------------- | ---------------- | --------------------- |
+| [`start()`](API/WebServerClass.md#start) | settings (objet) | status (objecto) | Starts the web server |
+| [`stop()`](API/WebServerClass.md#start)  | -                | -                | Stops the web server  |
 
 To start and stop a web server, just call the [`start()`](API/WebServerClass.md#start) and [`stop()`](API/WebServerClass.md#stop) functions of the web server object:
 
