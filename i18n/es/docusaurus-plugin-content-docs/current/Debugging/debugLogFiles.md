@@ -310,26 +310,26 @@ Para cada petición, se registran los siguientes campos:
 
 Los registros de peticiones ORDA pueden registrar cada petición ORDA y la respuesta del servidor. Existen dos registros de peticiones ORDA:
 
-- a client-side ORDA request log, in .txt format
-- a server-side ORDA request log, in .jsonl format
+- un registro de peticiones ORDA del lado del cliente, en formato .txt
+- un registro de peticiones ORDA del lado del servidor, en formato .jsonl
 
 ### Del lado del cliente
 
-The client-side ORDA log records each ORDA request sent from a remote machine. You can direct log information to memory or to a .txt file on disk of the remote machine. El nombre y la ubicación de este archivo de registro son de su elección.
+El registro ORDA del lado del cliente registra cada petición ORDA enviada desde una máquina remota. Puede dirigir la información de registro a la memoria o a un archivo .txt en el disco de la máquina remota. El nombre y la ubicación de este archivo de registro son de su elección.
 
 Como iniciar este historial:
 
 ```4d
-    //on a remote machine
+    //en una máquina remota
 SET DATABASE PARAMETER(Client Log Recording;1)  
 ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt")) 
-    //can be also sent to memory
+    //también se puede enviar a la memoria
 SET DATABASE PARAMETER(Client Log Recording;0)  
 ```
 
 :::note
 
-Triggering the client-side [4DRequestsLog.txt](#4drequestslogtxt) using `SET DATABASE PARAMETER` is not mandatory. However, it is required if you want to log the unique `sequenceNumber` field.
+La activación del cliente [4DRequestsLog.txt](#4drequestslogtxt) utilianzdo `SET DATABASE PARAMETER` no es obligatoria. Sin embargo, es necesario si desea registrar el campo `sequenceNumber` único.
 
 :::
 
