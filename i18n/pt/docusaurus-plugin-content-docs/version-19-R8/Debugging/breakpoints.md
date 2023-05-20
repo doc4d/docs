@@ -28,7 +28,7 @@ In the above example, clicking the [**No Trace**](./debugger.md/#no-trace) butto
 To remove a break point, click the corresponding bullet.
 
 
-### Breakpoint Properties
+### Propriedades do ponto de interrupção
 
 You can edit the behavior of a breakpoint using the Breakpoint Properties window:
 
