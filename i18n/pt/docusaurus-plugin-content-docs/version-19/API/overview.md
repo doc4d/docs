@@ -228,7 +228,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`DISPLAY NOTIFICATION`](https://doc.4d.com/4dv19/help/command/en/page910.html)                               | 910    |
 | [`DISPLAY RECORD`](https://doc.4d.com/4dv19/help/command/en/page105.html)                                     | 105    |
 | [`DISPLAY SELECTION`](https://doc.4d.com/4dv19/help/command/en/page59.html)                                   | 59     |
-| [`Displayed line number`](https://doc.4d.com/4dv19/help/command/en/page897.html)                              | 897    |
+| [`Número de linha apresentado`](https://doc.4d.com/4dv19/help/command/en/page897.html)                        | 897    |
 | [`DISTINCT ATTRIBUTE PATHS`](https://doc.4d.com/4dv19/help/command/en/page1395.html)                          | 1395   |
 | [`DISTINCT ATTRIBUTE VALUES`](https://doc.4d.com/4dv19/help/command/en/page1397.html)                         | 1397   |
 | [`DISTINCT VALUES`](https://doc.4d.com/4dv19/help/command/en/page339.html)                                    | 339    |
