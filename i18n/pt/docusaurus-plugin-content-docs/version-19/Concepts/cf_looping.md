@@ -3,7 +3,7 @@ id: looping
 title: Estruturas de loop
 ---
 
-Estruturas de loop repetem uma sequência de declarações até que uma condição seja atingida ou até que alcance um certo número de vezes.
+Looping structures repeat a sequence of statements until a condition is met or a number of times is reached.
 
 
 ## While... End while
@@ -48,7 +48,7 @@ The formal syntax of the `Repeat... Until` control flow structure is:
 ```
 The other difference with a `Repeat... Until` loop is that the loop continues until the Boolean expression is TRUE.
 
-Um loop `Repeat... Until` é similar a um loop [While... End while](flow-control#whileend-while), exceto que comprova a expressão booleana depois do loop  e não antes.
+The other difference with a `Repeat...Until` loop is that the loop continues until the Boolean expression is TRUE.
 
 ### Exemplo
 
@@ -60,7 +60,7 @@ Compare the following example with the example for the `While... End while` loop
  Until(OK=0)
 ```
 
-## For... End for
+## For...End for
 
 The formal syntax of the `For... End for` control flow structure is:
 
@@ -127,7 +127,7 @@ The `For... End for` loop is a loop controlled by a counter variable:
  End for
 ```
 
-Most of the `For... End for` loops you will write in your projects will look like the ones listed in these examples.
+Most of the `For...End for` loops you will write in your projects will look like the ones listed in these examples.
 
 ### Diminuir a variável contador
 
@@ -197,7 +197,7 @@ Let's go back to the first `For... End for` example. O seguinte exemplo executa 
  End for
 ```
 
-Here is the equivalent `Repeat... Until` loop:
+Here is the equivalent `While... End while` loop:
 ```4d
  $i:=1 //Initializa o contador
  While($i<=100) //Loop 100 vezes
@@ -206,7 +206,7 @@ Here is the equivalent `Repeat... Until` loop:
  End while
 ```
 
-Here is the equivalent `While... End while` loop:
+Here is the equivalent `Repeat... Until` loop:
 ```4d
  $i:=1 //Initializa o contador
  Repeat
@@ -272,7 +272,7 @@ Aqui são dois exemplos:
 
 ## For each... End for each
 
-A sintaxe da estrutura condicional `For each... End for each` é:
+The formal syntax of the `For each...End for each` control flow structure is:
 
 ```4d
  For each(Element_courant;Expression{;debut{;fin}}){Until|While}(Expression_booléenne)}
