@@ -70,7 +70,7 @@ By default, this option is not enabled.
 
 ---
 
-## Barra rolagem horizontal
+## Altura linha
 
 An interface tool allowing the user to move the viewing area to the left or right.
 
@@ -96,7 +96,7 @@ Valores disponíveis:
 
 #### Veja também
 
-[Vertical scroll bar](#vertical-scroll-bar)
+[Barra de deslocação vertical](#vertical-scroll-bar)
 
 ---
 
@@ -117,7 +117,7 @@ Sets the screen resolution for the 4D Write Pro area contents. By default, it is
 
 ---
 
-## Show background
+## Mostrar fundo
 
 Displays/hides both background images and background color.
 
@@ -151,7 +151,7 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 
 ---
 
-## Show Formula Bar
+## Mostrar barra de fórmulas
 
 When enabled, the formula bar is visible below the Toolbar interface in the 4D View Pro area. If not selected, the formula bar is hidden.
 
@@ -238,7 +238,7 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 
 ---
 
-## Show page frame
+## Mostrar moldura da página
 
 Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page".
 
@@ -255,7 +255,7 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 
 ---
 
-## Show references
+## Mostrar referências
 
 Displays all 4D expressions inserted in the 4D Write Pro document as *references*. When this option is disabled, 4D expressions are displayed as *values*. By default when you insert a 4D field or expression, 4D Write Pro computes and displays its current value. Select this property if you wish to know which field or expression is displayed. The field or expression references then appear in your document, with a gray background.
 
@@ -282,7 +282,7 @@ With the Show references property on, the reference is displayed:
 
 ---
 
-## Show vertical ruler
+## Mostrar régua vertical
 
 Displays/hides the vertical ruler when the document view is in [Page mode](#view-mode).
 
