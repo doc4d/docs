@@ -15,7 +15,7 @@ This page allows selecting, creating, or configuring Method editor themes. A the
 
 In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D provides two themes by default:
 
-* **Default Light Theme**
+* **Tema Light predefinido**
 * **Default Dark Theme**
 
 > Default themes cannot be modified or deleted.
@@ -69,15 +69,15 @@ These options configure the various colors used in the Method editor and debugge
 | **Highlight of the same variable or field**       | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options). |
 | **Highlight of the running line in the debugger** | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                            |
 | **Selection back color**                          | Background color of selection.                                                                                                                                           |
-| **Suggested text**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
+| **Texto sugerido**                                | Color of autocomplete text suggested by the Method editor.                                                                                                               |
 
-## Options
+## Opções
 
 This page configures Method editor display options.
 
 ![](../assets/en/Preferences/options.png)
 
-### Options
+### Opções
 
 #### 4D Programming Language (Use regional system settings)
 
@@ -98,7 +98,7 @@ Changes the indentation value for the 4D code in the Method editor. The width mu
 
 Modifying this default value can be useful if your methods contain complex algorithms with many levels of embedding. Narrower indentation can be used in order to limit horizontal scrolling.
 
-#### Show Line Numbers
+#### Mostrar los números de línea
 
 Lets you display the line numbers by default in each window of the Method editor. You can also show/hide line numbers for the current window directly from the Method editor.
 
