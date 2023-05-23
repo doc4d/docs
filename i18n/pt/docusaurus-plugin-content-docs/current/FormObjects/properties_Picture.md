@@ -29,32 +29,32 @@ As seguintes localizações podem ser utilizadas para imagens estáticas:
 
 ### Escalado para caber
 
-`JSON grammar: "scaled"`
+`Gramática JSON: "scaled" (escalado)`
 
-The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
+O formato **Scaled to fit** faz com que o 4D redimensione a imagem para se ajustar às dimensões da área.
 
-![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
+![](../assets/pt/FormObjects/property_pictureFormat_ScaledToFit.png)
 
 ### Replicado
 
 `Gramática JSON: "tiled"`
 
-When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
+Quando a área que conter uma imagem com o formato **Replicated** for ampliada, a imagem não é deformada, mas é replicada tantas vezes quantas as necessárias para preencher totalmente a área.
 
-![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
+![](../assets/pt/FormObjects/property_pictureFormat_Replicated.png)
 
-If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
+Se o campo for reduzido para um tamanho inferior ao da imagem original, a imagem é truncada (não centrada).
 
-### Center / Truncated (non-centered)
+### Centro / Truncado (não centrado)
 
-`JSON grammar: "truncatedCenter" / "truncatedTopLeft"`
+`Gramática JSON: "truncatedCenter" / "truncatedTopLeft"`
 
-The **Center** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D crops equally from each edge and from the top and bottom.
+O formato **Center** faz com que o 4D centralize a imagem na área e corte qualquer parte que não caiba na área. 4D corta igualmente de cada borda e da parte superior e inferior.
 
-The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D crops from the right and bottom.
-> When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
+O formato **Truncated (não centrado)** faz com que 4D coloque o canto superior esquerdo da imagem no canto superior esquerdo da área e recorte qualquer parte que não caiba na área. Cortes 4D da direita e de baixo.
+> Quando o formato da imagem for **Truncado (não centrado)**, é possível adicionar barras de deslocamento à área de entrada.
 
-![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
+![](../assets/pt/FormObjects/property_pictureFormat_Truncated.png)
 
 #### Gramática JSON
 
