@@ -100,10 +100,10 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 
 | Placeholder (valores provisórios) | Effect for leading or trailing zero |
 | --------------------------------- | ----------------------------------- |
-| #                                 | Displays nothing                    |
+| #                                 | Não apresenta nada                  |
 | 0                                 | Mostra 0                            |
-| ^                                 | Displays a space (1)                |
-| *                                 | Displays an asterisk                |
+| ^                                 | Apresenta um espaço (1)             |
+| *                                 | Apresenta um asterisco              |
 
 (1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
 
@@ -116,7 +116,7 @@ Each placeholder character has a different effect on the display of leading or t
 
 Suponha que utiliza o formato ##0 para mostrar três dígitos. If the user enters nothing in the field, the field displays 0. If the user enters 26, the field displays 26.
 
-### Separator characters
+### Caracteres separadores
 
 The numeric display formats (except for scientific notations) are automatically based on regional system parameters. 4D replaces the “.” and “,” characters by, respectively, the decimal separator and the thousand separator defined in the operating system. The period and comma are thus considered as placeholder characters, following the example of 0 or #.
 > On Windows, when using the decimal separator key of the numeric keypad, 4D makes a distinction depending on the type of field where the cursor is located:
@@ -407,7 +407,7 @@ Allows a check box object to accept a third state. A variável associada à caix
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
 
 * 0 = unchecked box,
-* 1 = checked box,
+* 1 = caixa marcada,
 * 2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
 * -1 = invisible check box,
 * -2 = unchecked box, not enterable,
