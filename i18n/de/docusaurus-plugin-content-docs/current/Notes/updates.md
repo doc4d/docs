@@ -28,6 +28,7 @@ Read [**What’s new in 4D v20**](https://blog.4d.com/en-whats-new-in-4d-v20/), 
 - Support of `count values` option in [`entitySelection.distinct()`](../API/EntitySelectionClass.md#distinct) and [`collection.distinct()`](../API/CollectionClass.md#distinct) functions.
 - New [`entitySelection.distinctPaths()`](../API/EntitySelectionClass.md#distinctpaths) function.
 - Support of `count values` option in [`entitySelection.distinct()`](../API/EntitySelectionClass.md#distinct) and [`collection.distinct()`](../API/CollectionClass.md#distinct) functions.
+- ORDA requests logs are now available [on the server](../Debugging/debugLogFiles.md#orda-requests), new parameter for [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) function.
 - New tools for code execution in CLI: [tool4d](../Admin/cli.md#tool4d) and [4D Server in utility mode](../Admin/cli.md#4d-server-in-utility-mode).
 - [Data Explorer](../Admin/dataExplorer.md#opening-the-data-explorer): new button and display in a 4D window.
 - New properties for buttons, check boxes and radio buttons: [Image hugs title](../FormObjects/properties_TextAndPicture.md#image-hugs-title) and [Horizontal Alignment](../FormObjects/properties_Text.md#horizontal-alignment).
@@ -256,7 +257,7 @@ For detailed information, please refer to [this blog post](https://blog.4d.com/s
 | Hunspell  | 1.7.2           | 20            | Used for spell checking in 4D forms and 4D Write Pro                                                                                                               |
 | PDFWriter | 4.3             | 20            | FreeType dependency in 12.2.1                                                                                                                                      |
 | SpreadJS  | 16.0.4          | 20            | 4D View Pro engine                                                                                                                                                 |
-| OpenSSL   | 1.1.1s          | 19 R7         |                                                                                                                                                                    |
+| OpenSSL   | 3.1             | 20 R2         |                                                                                                                                                                    |
 | libZip    | 1.9.2           | 20            | Used by zip class, 4D Write Pro, svg and serverNet components                                                                                                      |
 | LZMA      | 5.4.1           | 20            |                                                                                                                                                                    |
 | Zlib      | 1.2.13          | 20            |                                                                                                                                                                    |
