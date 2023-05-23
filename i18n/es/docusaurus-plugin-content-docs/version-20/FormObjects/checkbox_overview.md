@@ -313,7 +313,7 @@ Los colores (resaltado y fondo) de una casilla de selección con el estilo de bo
 
 
 
-### Collapse/Expand
+### Contraer/Desplegar
 
 Este estilo de botón de casilla de selección se puede utilizar para añadir un icono estándar de contraer/expandir. Estos iconos se utilizan de forma nativa en las listas jerárquicas.
 
