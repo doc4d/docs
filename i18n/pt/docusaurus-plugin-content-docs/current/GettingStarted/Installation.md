@@ -6,7 +6,7 @@ title: Instalação
 Bem-vindo a 4D! Vai encontrar abaixo toda informação necessário para instalar e registrar sua aplicação 4D.
 
 
-## Required configuration
+## Configuração necessária
 
 Consulte a [página de descarga de produto](https://us.4d.com/product-download) no web site de 4D para conhecer a configuração mínima de Mac / Windows para sua serie 4D.
 
@@ -24,31 +24,31 @@ Os produtos 4D são instalados desde o website de 4D:
 
 ## Iniciar sessão
 
-Once you have completed the installation, you can start 4D and sign in. To do so, double-click on the 4D product icon.
+Quando tiver completado a instalação, pode iniciar 4D e entrar. Para fazer isso, clique duas vezes no ícone do produto 4D.
 
 ![](../assets/en/getStart/logo4d.png)
 
-The Welcome Wizard then appears:
+Aparece então o Assistente de Boas-vindas:
 
 ![](../assets/en/getStart/welcome2.png)
 
-- If you want to discover and explore 4D, click on the **free trial** link. Digite seu ID (email ou conta 4D) e sua senha.
+- Se quiser descobrir e explorar 4D, clique no link **free trial** . Digite seu ID (email ou conta 4D) e sua senha.
 
-- If you already have a 4D account, click on the **Sign in** link in the upper right side of the Welcome Wizard dialog and enter your account information. Any already registered 4D licenses are automatically updated (or additional expansion packs loaded) on your machine.
+- Se já tiver uma conta 4D, clique no link **Sign in** no canto superior direito da caixa de diálogo do Welcome Wizard e introduza a informação da sua conta. Qualquer licença 4D já registada é automaticamente atualizada (ou pacotes de expansão adicionais são carregados) na sua máquina.
 
-Expand the **Open or create project application** area and select the action you want to perform:
+Expanda a área **Abrir ou criar aplicação de projecto** e selecione a ação que quiser executar:
 
-- **Connect to 4D Server** - use 4D as a remote client and connect to an application that is already loaded by 4D Server.
+- **Conectar ao Servidor 4D** - use 4D como um cliente remoto e conecte-se a uma aplicação que já esteja carregada pelo Servidor 4D.
 
-- **Open a local application project** - load an existing application project stored on your disk.
+- **Abrir um projeto de aplicação local** - carregar um projeto de aplicação existente armazenado no seu disco.
 
-- **Create a new application project** - create a new, empty application project on your disk.
+- **Criar um novo projeto de aplicação** - criar um novo projeto de aplicação vazio no seu disco.
 
 Desfrute da sua experiência 4D!
 
 
 :::info
 
-Também é preciso ativar qualquer licença adicional que obter. Visit the [Managing 4D licenses](../Admin/licenses.md) page.
+Também é preciso ativar qualquer licença adicional que obter. Visite a página [Managing 4D licenses](../Admin/licenses.md) .
 
 :::
