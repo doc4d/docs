@@ -118,7 +118,7 @@ VP SET COLUMN COUNT("myVpArea";5)
 > When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
 
 
-### Using range objects
+### Utilização de objectos de intervalo
 
 Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other methods to read from or write to specific locations in your document.
 
@@ -142,8 +142,8 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 
 | Propriedade |                   | Tipo       | Descrição                                                           | Available for                                      |
 | ----------- | ----------------- | ---------- | ------------------------------------------------------------------- | -------------------------------------------------- |
-| area        |                   | text       | 4D View Pro area form object name                                   | always available                                   |
-| ranges      |                   | collection | Collection of range(s)                                              | always available                                   |
+| area        |                   | text       | 4D View Pro area form object name                                   | sempre disponível                                  |
+| ranges      |                   | collection | Collection of range(s)                                              | sempre disponível                                  |
 |             | \[ ].name        | text       | Range name                                                          | name                                               |
 |             | \[ ].sheet       | number     | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
 |             | \[ ].row         | number     | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
