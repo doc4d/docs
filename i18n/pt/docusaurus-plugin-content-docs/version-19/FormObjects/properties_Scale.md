@@ -51,7 +51,7 @@ Scale display measurement.
 
 ---
 
-## Label Location
+## Localização da etiqueta
 
 Specifies the location of an object's displayed text.
 
