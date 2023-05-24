@@ -6,7 +6,7 @@ title: Sobre petições REST
 
 As estrutyuras abaixo são compatíveis com petições REST:
 
-| URI                              | Resource                                                                    | {Subresource}                                                              | {Querystring}                                                   |
+| URI                              | Recurso                                                                     | {Subresource}                                                              | {Querystring}                                                   |
 | -------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | http://{servername}:{port}/rest/ | [{dataClass}](%7BdataClass%7D.html)/                                        | [{attribute1, attribute2, ...}](manData.html#selecting-attributes-to-get)/ |                                                                 |
 |                                  | [{dataClass}](%7BdataClass%7D.html)/                                        | [{attribute1, attribute2, ...}](manData.html#selecting-attributes-to-get)/ | [{method}](%7BdataClass%7D.html#dataclassmethod)                |
