@@ -221,7 +221,7 @@ No Windows, tool4d é uma aplicação de consola, pelo que o fluxo `stdout` é a
 :::
 
 
-### Disabled 4D features
+### Funcionalidades 4D desativadas
 
 Tenha em mente que tool4d roda automaticamente em **modo headless** (veja `--headless` em [esta tabela](#launch-a-4d-application)), e não dá acesso ao IDE 4D nem a nenhum de seus servidores. Em particular, são desactivadas as seguintes funcionalidades:
 
