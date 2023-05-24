@@ -221,7 +221,7 @@ Token member names (i.e., object property names accessed using the object notati
 - subsequent characters may be any letter, digit, an underscore or dollar sign (space characters are NOT allowed),
 - they are case sensitive.
 
-**Note:**
+**Nota:**
 
 - Using a table field as a collection index, for example a.b[[Table1]Id], is not allowed. You must use an intermediary variable.
 - Creating object attributes using a string in square brackets allows you to override the ECMA Script rules. For example, the $o["My Att"] attribute is valid in 4D, despite the space. In this case, however, it will not be possible to use dot notation with this attribute.
