@@ -1165,7 +1165,7 @@ In addition to the built-in class functions, the 4D language contains hundreds o
 | [`Structure file`](https://doc.4d.com/4dv19/help/command/en/page489.html)                                     | 489    |
 | [`Substring`](https://doc.4d.com/4dv19/help/command/en/page12.html)                                           | 12     |
 | [`Subtotal`](https://doc.4d.com/4dv19/help/command/en/page97.html)                                            | 97     |
-| [`Sum`](https://doc.4d.com/4dv19/help/command/en/page1.html)                                                  | 1      |
+| [`Soma`](https://doc.4d.com/4dv19/help/command/en/page1.html)                                                 | 1      |
 | [`Sum squares`](https://doc.4d.com/4dv19/help/command/en/page28.html)                                         | 28     |
 | [`Super`](https://doc.4d.com/4dv19/help/command/en/page1706.html)                                             | 1706   |
 | [`SUSPEND TRANSACTION`](https://doc.4d.com/4dv19/help/command/en/page1385.html)                               | 1385   |
