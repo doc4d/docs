@@ -1,5 +1,5 @@
 ---
-id: general
+id: geral
 title: Página geral
 ---
 
