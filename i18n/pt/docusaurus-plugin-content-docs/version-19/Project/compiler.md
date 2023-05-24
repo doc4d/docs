@@ -5,7 +5,7 @@ title: Compilação
 
 You can compile your projects, i.e., translate all of your methods into machine language. Compiling a project lets you check the consistency of the code and accelerate its execution, as well as making it possible to obfuscate the code in its entirety. Compilation is an indispensable step between the development of projects using 4D and their deployment as stand-alone applications.
 
-## Compile
+## Compilar
 
 The compilation is handled from your 4D application and is entirely automatic.
 
