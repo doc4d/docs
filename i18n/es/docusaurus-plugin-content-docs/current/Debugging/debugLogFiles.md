@@ -342,7 +342,7 @@ Los siguientes campos se registran para cada petición:
 | url              | Solicitar URL                                                    | "rest/Persons(30001)"                                     |
 | startTime        | Fecha y hora de inicio en formato ISO 8601                       | "2019-05-28T08:25:12.346Z"                                |
 | endTime          | Fecha y hora final en formato ISO 8601                           | "2019-05-28T08:25:12.371Z"                                |
-| duration         | Client processing duration in milliseconds (ms)                  | 25                                                        |
+| duration         | Duración del procesamiento del cliente en milisegundos (ms)      | 25                                                        |
 | response         | Objeto respuesta del servidor                                    | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
 
 #### Ejemplo
@@ -370,36 +370,36 @@ The server-side ORDA log records each ORDA request processed by the server, as w
 Como iniciar este historial:
 
 ```4d
-    //on the server
+    //en el servidor
 SET DATABASE PARAMETER(4D Server log recording;1)
 ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body) 
-    //srl... parameter is optional 
+    //srl... el parámetro es opcional 
 SET DATABASE PARAMETER(4D Server log recording;0) 
 ```
 
 :::note
 
-Triggering the server-side [4DRequestsLog.txt](#4drequestslogtxt) using `SET DATABASE PARAMETER` is not mandatory. However, it is required if you want to log the unique `sequenceNumber` and the `duration` fields.
+La activación del lado del servidor [4DRequestsLog.txt](#4drequestslogtxt) utilianzdo `SET DATABASE PARAMETER` no es obligatoria. Sin embargo, es necesario si desea registrar los campos exclusivos `sequenceNumber` y `duration`.
 
 :::
 
 Los siguientes campos se registran para cada petición:
 
-| Nombre del campo | Descripción                                                                                                   | Ejemplo                                                   |
-| ---------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| sequenceNumber   | Número de operación único y secuencial en la sesión de historial                                              | 104                                                       |
-| url              | Solicitar URL                                                                                                 | "rest/Persons(30001)"                                     |
-| startTime        | Fecha y hora de inicio en formato ISO 8601                                                                    | "2019-05-28T08:25:12.346Z"                                |
-| duration         | Server processing duration in microseconds (µ)                                                                | 2500                                                      |
-| response         | Server response object, can be configured in [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
-| ipAddress        | Dirección IP del usuario                                                                                      | "192.168.1.5"                                             |
-| userName         | Nombre del usuario 4D                                                                                         | "henry"                                                   |
-| systemUserName   | Login name of the user on the machine                                                                         | "hsmith"                                                  |
-| machineName      | Name of the user machine                                                                                      | "PC of Henry Smith"                                       |
+| Nombre del campo | Descripción                                                                                                              | Ejemplo                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| sequenceNumber   | Número de operación único y secuencial en la sesión de historial                                                         | 104                                                       |
+| url              | Solicitar URL                                                                                                            | "rest/Persons(30001)"                                     |
+| startTime        | Fecha y hora de inicio en formato ISO 8601                                                                               | "2019-05-28T08:25:12.346Z"                                |
+| duration         | Duración del procesamiento del servidor en microsegundos (µ)                                                             | 2500                                                      |
+| response         | Objeto de respuesta del servidor, puede configurarse en [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
+| ipAddress        | Dirección IP del usuario                                                                                                 | "192.168.1.5"                                             |
+| userName         | Nombre del usuario 4D                                                                                                    | "henry"                                                   |
+| systemUserName   | Nombre de inicio de sesión del usuario en la máquina                                                                     | "hsmith"                                                  |
+| machineName      | Nombre de la máquina del usuario                                                                                         | "PC of Henry Smith"                                       |
 
 #### Ejemplo
 
-Here is an example of a server-side ORDA log record:
+Este es un ejemplo de un registro ORDA del lado del servidor:
 
 ```json
    {
@@ -431,10 +431,10 @@ Hay varias maneras de activar el archivo de configuración de registro, dependie
 
 - **4D Server con interfaz**: puede abrir la página de mantenimiento y hacer clic en el botón [Cargar el archivo de configuración de logs](ServerWindow/maintenance.md#load-logs-configuration-file) y luego seleccionar el archivo. En este caso, puede utilizar cualquier nombre para el archivo de configuración. Se activa inmediatamente en el servidor.
 - **un proyecto interpretado o compilado**: el archivo debe llamarse `logConfig.json` y copiarse en la carpeta [Settings](../Project/architecture.md#settings-1) del proyecto (situada al mismo nivel que la carpeta [`Project`](../Project/architecture.md#project-folder)). Se activa al iniciar el proyecto (sólo en el servidor en cliente/servidor).
-- **a built application**: the file must be named `logConfig.json` and copied in the following folder:
+- **una aplicación construida**: el archivo debe llamarse `logConfig.json` y copiarse en la siguiente carpeta:
     * Windows: `Users\[userName]\AppData\Roaming\[application]`
     * macOS: `/Users/[userName]/Library/ApplicationSupport/[application]`
-- **all projects with a stand-alone or remote 4D**: the file must be named `logConfig.json` and copied in the following folder:
+- **todos los proyectos con un 4D autónomo o remoto**: el archivo debe llamarse `logConfig.json` y copiarse en la siguiente carpeta:
     * Windows: `Users\[userName]\AppData\Roaming\4D`
     * macOS: `/Users/[userName]/Library/ApplicationSupport/4D`
 - **todos los proyectos con 4D Server**: el archivo debe llamarse `logConfig.json` y copiarse en la siguiente carpeta:
@@ -449,7 +449,7 @@ Si se instala un archivo `logConfig.json` tanto en la carpeta Settings como en A
 
 ### Descripción del archivo JSON
 
-The log configuration file is a `.json` file that must comply with the following json schema:
+El archivo de configuración del registro es un archivo `.json` que debe cumplir con el siguiente esquema json:
 
 ```json
 {
