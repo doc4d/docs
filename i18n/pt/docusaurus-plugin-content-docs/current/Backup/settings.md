@@ -118,13 +118,13 @@ Essas opções se aplicam aos arquivos de cópia de segurança principais e aos 
 
 - **Restaura a última cópia de segurança se o banco de dados for danificado**: Quando essa opção for marcada, o programa inicia automaticamente a restauração do arquivo de dados do último backup válido do banco, se uma anomalia for detectada (arquivo corrupto por exemplo) durante a o lançamento do banco de dados. Nenhuma intervenção do usuário é necessária, mas a operação é gravada no diário da cópia de segurança.
 
-- **Integrar o último arquivo de histórico se o banco de dados estiver incompleto**: Quando essa opção for marcada, o programa integra automaticamente o arquivo de histórico quando abrir ou restaurar a aplicação. If there is a valid sequence of .journal files in the same repository, the program integrates beforehand all the .journal files needed from the oldest to the most current.
+- **Integrar o último arquivo de histórico se o banco de dados estiver incompleto**: Quando essa opção for marcada, o programa integra automaticamente o arquivo de histórico quando abrir ou restaurar a aplicação. Se existir uma sequência válida de ficheiros .journal no mesmo repositório, o programa integra previamente todos os ficheiros .journal necessários, do mais antigo ao mais actual.
 
-    Esta situação se produz, por exemplo, se acontecer uma falta de energia quando acontecerem operações no cache de dados que ainda não foram escritos no disco.
+    Esta situação surge, por exemplo, se ocorrer uma falha de energia quando existem operações na cache de dados que ainda não foram escritas no disco, ou depois de ter sido detectada uma anomalia ao abrir o ficheiro de dados e ter ocorrido um restauro.
 
     :::note
 
-    This feature implies that the program parses all the log files in the current log file folder at startup. Therefore, for performance reasons, make sure that no useless log files are stored in the folder.
+    Esta funcionalidade implica que o programa analise todos os ficheiros de registo na pasta de ficheiros de registo actual no arranque. Por conseguinte, por razões de desempenho, certifique-se de que não são armazenados ficheiros de registo inúteis na pasta.
 
     :::
 
