@@ -54,7 +54,7 @@ Here is the list of objects whose value can be saved:
 
 | Objeto                                                  | Valor guardado                                                                         |
 | ------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Check Box](checkbox_overview.md)                       | Value of associated variable (0, 1, 2)                                                 |
+| [Caixa de selecção](checkbox_overview.md)               | Value of associated variable (0, 1, 2)                                                 |
 | [Lista suspensa ou drop down](dropdownList_Overview.md) | Number of selected row                                                                 |
 | [Botão rádio](radio_overview.md)                        | Value of associated variable (1, 0, True or False for buttons according to their type) |
 | [Tab control](tabControl.md)                            | Number of selected tab                                                                 |
@@ -290,7 +290,7 @@ There are several types of calculations available. The following table shows whi
 | ---------------------- | --- | ---- | ---- | ---- | ---- | ---- | ----------------------- |
 | Mínimo                 | X   | X    | X    | X    | X    |      | Igual ao tipo de coluna |
 | Máximo                 | X   | X    | X    | X    | X    |      | Igual ao tipo de coluna |
-| Sum                    | X   |      |      | X    | X    |      | Igual ao tipo de coluna |
+| Soma                   | X   |      |      | X    | X    |      | Igual ao tipo de coluna |
 | Contagem               | X   | X    | X    | X    | X    | X    | Longint                 |
 | Average                | X   |      |      | X    |      |      | Real                    |
 | Standard deviation(*)  | X   |      |      | X    |      |      | Real                    |
