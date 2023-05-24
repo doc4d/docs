@@ -1144,7 +1144,7 @@ Pode determinar a chamada de retorno a ser executada para filtrar os elementos d
 - *fórmula* (sintaxe recomendada), um [Objecto de fórmula](FunctionClass.md) que pode encapsular qualquer expressão executável, incluindo funções e métodos de projecto;
 - *methodName* estabelece os parâmetros abaixo:
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional).
+A chamada de retorno é chamada com o(s) parâmetro(s) passado(s) em *param* (opcional) e um objecto no primeiro parâmetro (*$1*). Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional).
 
 A chamada de retorno recebe os seguintes parâmetros:
 
@@ -1424,9 +1424,9 @@ var $col : Collection
 
 
 <!-- REF #collection.flat().Params -->
-| Parâmetro  | Tipo       |    | Descrição                                                                            |
-| ---------- | ---------- |:--:| ------------------------------------------------------------------------------------ |
-| depth      | Integer    | -> | A profundidade a que uma estrutura de colecção aninhada deve ser aplanada. Default=1 |
+| Parâmetro  | Tipo       |    | Descrição                                                                             |
+| ---------- | ---------- |:--:| ------------------------------------------------------------------------------------- |
+| depth      | Integer    | -> | A profundidade a que uma estrutura de colecção aninhada deve ser aplanada. O padrão=1 |
 | Resultados | Collection | <- | Colecção achatada|<!-- END REF -->
 
 
@@ -1491,7 +1491,7 @@ $col.flat(MAXLONG)
 
 #### Descrição
 
-A função `.flatMap()` <!-- REF #collection.flatMap().Summary -->creates a new collection based upon the result of the call of the *formula* 4D function or *methodName* method on each element of the original collection and flattened by a depth of 1<!-- END REF -->. *methodName* pode realizar qualquer teste, com ou sem os parâmetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
+A função `.flatMap()` <!-- REF #collection.flatMap().Summary -->cria uma nova colecção com base no resultado da chamada da function 4D *formula* ou do método *methodName* em cada elemento da colecção original e achatada com uma profundidade de 1<!-- END REF -->. *methodName* pode realizar qualquer teste, com ou sem os parâmetros. In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional).
 
 Esta função é idêntica a uma chamada [`map()`](#map) seguida de uma chamada [`flat()`](#flat) de profundidade 1.
 > Essa função não modifica a coleção original.
