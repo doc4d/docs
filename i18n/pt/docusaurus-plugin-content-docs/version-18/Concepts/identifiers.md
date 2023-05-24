@@ -42,7 +42,7 @@ FORM SET INPUT([Clients];"Entry")
 ADD RECORD([Letters])
 ```
 
-## Fields
+## Campos
 
 You designate a field by first specifying the table to which it belongs. The field name immediately follows the table name. A field name can contain up to 31 characters.
 
@@ -160,7 +160,7 @@ $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
 
 ### Elements of two-dimensional arrays
 
-You reference an element of a two-dimensional array by using the curly braces ({…}) twice. The element referenced is denoted by two numeric expressions in two sets of curly braces.
+You reference an element of a two-dimensional array by using the curly braces ({…}) duas vezes. The element referenced is denoted by two numeric expressions in two sets of curly braces.
 
 Exemplos:
 
@@ -401,7 +401,7 @@ Be sure to use unique names for the different elements in your database. If a pa
 
 4D identifies names used in procedures in the following order:
 
-1. Fields
+1. Campos
 2. Comandos
 3. Página Métodos
 4. Comandos de plug-in
