@@ -614,7 +614,7 @@ Cada propriedade válida definida no parâmetro de objecto *info* está escrita 
 
 Se passar um texto nulo ou vazio como valor, uma string vazia é escrita na propriedade. Se passar um tipo de valor diferente do texto, este é transformado em string.
 
-For the `WinIcon` property, if the icon file does not exist or has an incorrect format, an error is generated.
+Para a propriedade `WinIcon`, se o ficheiro de ícones não existir ou tiver um formato incorrecto, é gerado um erro.
 
 ***info* objeto de parâmetro com um arquivo  .plist**
 
