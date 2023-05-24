@@ -119,7 +119,7 @@ Several types of method references are supported:
 
 ---
 ## Linhas móveis
-`List boxes de tipo array`
+`Array type list boxes`
 
 Authorizes the movement of rows during execution. This option is selected by default. It is not available for [selection type list boxes](listbox_overview.md#selection-list-boxes) nor for [list boxes in hierarchical mode](properties_Hierarchy.md#hierarchical-list-box).
 
@@ -138,7 +138,7 @@ Authorizes the movement of rows during execution. This option is selected by def
 
 
 ---
-## Multi-selectable
+## Multi-seleccionável
 
 Allows the selection of multiple records/options in a [hierarchical list](list_overview.md).
 
@@ -150,7 +150,7 @@ Allows the selection of multiple records/options in a [hierarchical list](list_o
 
 #### Objectos suportados
 
-[Hierarchical List](list_overview.md)
+[Lista hierárquica](list_overview.md)
 
 
 
