@@ -127,20 +127,20 @@ Puede mostrar u ocultar los números de línea en el área de puntos de interrup
 
 La visualización de los números de línea facilita la orientación en la ventana. The **Method** > **Go to Line Number...** command in the also lets you take advantage of this display.
 
-This type of search is useful when used in conjunction with the [compiler](../Project/compiler.md), which flags runtime errors by the line number in which they occur.
+Este tipo de búsqueda es útil cuando se utiliza junto con el [compilador](../Project/compiler.md), que señala los errores de ejecución por el número de línea en el que se producen.
 
 ### Barra de estado
 
-The status bar located at the bottom right part of the editor window displays the position of the cursor at all times:
+La barra de estado situada en la parte inferior derecha de la ventana del editor muestra la posición del cursor en todo momento:
 
 ![](../assets/en/code-editor/status-bar.png)
 
 - **Ln**: número de línea
-- **Col**: número de columna, es decir, el nivel en la jerarquía de las estructuras de programación. El primer nivel es 0. The column number is useful for debugging since this information can be provided by the interpreter in the event of an error in the code.
+- **Col**: número de columna, es decir, el nivel en la jerarquía de las estructuras de programación. El primer nivel es 0. El número de columna es útil para la depuración, ya que esta información puede ser proporcionada por el intérprete en caso de error en el código.
 - **Ch**: ubicación del caracter en la línea.
 - ![](../assets/en/code-editor/show-hide-list.png): Ocultar/mostrar listas.
 
-When you set the cursor in a command, function or parameter(s), the status bar displays the syntax of the command. If you write or select a parameter, the area shows the current parameter in **bold**: ![](../assets/en/code-editor/status-bar-bold.png)
+Al situar el cursor en un comando, función o parámetro(s), la barra de estado muestra la sintaxis del comando. Si escribe o selecciona un parámetro, el área muestra el parámetro actual en **negrita**: ![](../assets/en/code-editor/status-bar-bold.png)
 
 ### Despliegue de navegación
 
@@ -212,7 +212,7 @@ Para mostrar las etiquetas de un método o de una clase en orden alfabético, re
 
 ### Atajos
 
-Multiple features of 4D's Code Editor are available through default keyboard shortcuts.
+Múltiples funcionalidades del editor de código de 4D están disponibles a través de atajos de teclado por defecto.
 
 :::info macOS
 
@@ -285,7 +285,7 @@ El Editor de código incluye numerosos [atajos de navegación](#shortcuts).
 
 El carácter barra invertida (`\`) tiene un soporte específico en el lenguaje 4D:
 
-- inserted at the end of lines, it allows to write a single statement on [several lines](../Concepts/quick-tour.md#code-on-several-lines).
+- insertado al final de las líneas, permite escribir una única instrucción en [varias líneas](../Concepts/quick-tour.md#code-on-several-lines).
 - permite definir [secuencias de escape](../Concepts/quick-tour.md#escape-sequences).
 
 
@@ -301,7 +301,7 @@ El caracter de barra invertida (`\`) se utiliza como separador en [los nombres d
 
 From the Explorer, you can drag and drop tables, fields, forms, project methods, constants, or 4D commands. When you drag and drop an element, 4D always uses the correct syntax. For example, if you drag the field name First Name from the `[People]` table, it appears in the Code Editor as `[People]First Name`. Similarly, if you drag the Form name Input from the People table, it appears in the Code Editor as `[People];"Input"`.
 
-When you insert a command by dragging it from the **Commands** page of the Explorer, it appears with its syntax (which consists of all of its parameters) in the Code Editor. Esta funcionalidad simplemente le recuerda los parámetros que espera el comando. A continuación, puede utilizar una sintaxis que se adapte mejor a su uso.
+Cuando inserta un comando arrastrándolo desde la página **Comandos** del Explorador, aparece con su sintaxis (que consiste en todos sus parámetros) en el Editor de Código. Esta funcionalidad simplemente le recuerda los parámetros que espera el comando. A continuación, puede utilizar una sintaxis que se adapte mejor a su uso.
 
 
 You can also drag-and-drop within a method, class, function or between two different ones. In the Code Editor, the drag-and-drop mechanism is activated as soon as a portion of text is selected. By default, the drag-and-drop mechanism **moves** the selected text. Para **copiarlo**, mantenga presionada la tecla **Ctrl** (Windows) o la tecla **Opción** (macOS) durante la operación.
@@ -317,7 +317,7 @@ You can automatically modify the case of selected characters using the commands 
 
 Cuando aplica uno de estos comandos a una selección de texto, se eliminan los espacios y los caracteres "_" y la primera letra de cada palabra pasa a ser mayúscula.
 
-### Swap expression
+### Intercambiar expresión
 
 The **Swap Expression** function can be used to reverse the arguments of an expression assigning a value. Por ejemplo,
 
@@ -554,14 +554,14 @@ Cuando la selección sólo contiene código activo, se aplica el comando **Comen
 
 - Collapsed code: ![](../assets/en/code-editor/collapsed-code.png)
 
-If you place the mouse over the expand button [...], a help tip appears, displaying the first lines of the hidden code.
+Si sitúa el ratón sobre el botón de expansión [...], aparece un mensaje de ayuda que muestra las primeras líneas del código oculto.
 
-Se puede seleccionar, copiar, pegar o eliminar una porción de código contraída. All the lines included therein will be copied, pasted or deleted respectively. When a portion of code is pasted, it is automatically expanded.
+Se puede seleccionar, copiar, pegar o eliminar una porción de código contraída. Todas las líneas incluidas en él se copiarán, pegarán o borrarán respectivamente. Cuando se pega una parte del código, se expande automáticamente.
 
 Hay varias formas de expandir y contraer código:
 
-- Click on the expand/collapse icons ([+] and [-] under Windows) or on the opening button [...]
-- Use the commands of the **Method > Collapse/Expand** submenu:
+- Haga clic en los iconos de expandir/contraer ([+] y [-] en Windows) o en el botón de abrir [...]
+- Utilice los comandos del submenú **Método > Contraer/Expandir**:
 
   - **Collapse Selection** / **Expand Selection**: collapses or expands all the code structures found in the text selection.
   - **Contraer nivel actual** / **Expandir nivel actual**: contrae o expande la estructura del código en el nivel en el que se encuentra el cursor. Estos comandos también están disponibles en el **menú contextual** del editor.
