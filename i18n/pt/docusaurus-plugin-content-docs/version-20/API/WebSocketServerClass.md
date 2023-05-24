@@ -149,7 +149,7 @@ No parâmetro *WSSHandler*, passe uma instância de uma classe de usuário que s
 |           | request | Objeto             |    | objecto `request`. Contém informações sobre o pedido de ligação (ver abaixo)                                                                                                                                                                                                                                                                                                                                                                                               |
 | Resultado |         | Objeto             | -> | objecto [`connectionHandler`](#connectionhandler-object) (ver abaixo). Se esta função devolver um objecto `connectionHandler`, um objecto [`4D.WebSocketConnection`](WebSocketConnectionClass.md#websocketconnection-object) é automaticamente criado e adicionado à [colecção de ligações](#connections). Este objecto é então recebido como parâmetro em cada função do objecto `connectionHandler`. Se o valor devolvido for nulo ou indefinido, a ligação é cancelada. |
 
-This callback is called when the handshake is complete. It must be called with a valid [`connectionHandler` object](#connectionhandler-object) to create the WebSocket connection, otherwise the connection is cancelled.
+This callback is called when the handshake is complete. Deve ser chamada com um objecto [`connectionHandler` válido](#connectionhandler-object) para criar a ligação WebSocket, caso contrário a ligação é cancelada.
 
 
 **WSHandler.onOpen**(*WSServer* : Object ; *param* : Object)
@@ -160,7 +160,7 @@ This callback is called when the handshake is complete. It must be called with a
 | param     |      | Objeto             | <- | Parâmetros                           |
 |           | type | Text               |    | "open"                               |
 
-Event emitted when the websocket server is started.
+Evento emitido quando o servidor websocket é iniciado.
 
 
 **WSHandler.onTerminate**(*WSServer* : Object ; *param* : Object)
@@ -171,7 +171,7 @@ Event emitted when the websocket server is started.
 | param     |      | Objeto             | <- | Parâmetros                           |
 |           | type | Text               |    | "terminate"                          |
 
-Event emitted when the HTTP server or the WebSocket server is closed.
+Evento emitido quando o servidor HTTP ou o servidor WebSocket é encerrado.
 
 
 **WSHandler.onError**(*WSServer* : Object ; *param* : Object)
@@ -181,13 +181,13 @@ Event emitted when the HTTP server or the WebSocket server is closed.
 | WSServer  |            | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket                                                                                               |
 | param     |            | Objeto             | <- | Parâmetros                                                                                                                         |
 |           | type       | Text               |    | "error"                                                                                                                            |
-|           | statusText | Text               |    | Last error returned in the 4D error stack                                                                                          |
+|           | statusText | Text               |    | Último erro devolvido na pilha de erros 4D                                                                                         |
 |           | errors     | Collection         |    | Collection of 4D error stack in case of execution error<li>\[].errCode (number) -  4D error code</li><li>\[].message (text) - Description of the 4D error</li><li>\[].componentSignature (text) - Signature of the internal component which returned the error</li> |
 
 
 Event emitted when an error occurs on the WebSocket server.
 
-### Example of `WSSHandler` class
+### Exemplo de class `WSSHandler`
 
 This example of a basic chat feature illustrates how to handle WebSocket server connections in a *WSSHandler* class.
 
@@ -369,7 +369,7 @@ Esta propriedade é só de leitura.
 
 #### Descrição
 
-The `.handler` property contains <!-- REF #WebSocketServerClass.handler.Summary -->the accessor that gets the `WSSHandler` object used to initiate the WebSocket server<!-- END REF -->.
+The `.handler` property contains <!-- REF #WebSocketServerClass.handler.Summary -->o acessor que obtém o objecto `WSSHandler` utilizado para iniciar o servidor WebSocket<!-- END REF -->.
 
 <!-- END REF -->
 
