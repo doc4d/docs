@@ -1,6 +1,6 @@
 ---
 id: checkboxOverview
-title: Check Box
+title: Caixa de selecção
 ---
 
 ## Visão Geral
