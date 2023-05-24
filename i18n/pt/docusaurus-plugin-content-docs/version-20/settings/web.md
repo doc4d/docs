@@ -41,7 +41,7 @@ Allows you to modify the TCP/IP port number used by the Web server for secured H
 *Compatibility Note*: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
 
 
-### Paths
+### Caminhos
 
 #### Raiz HTML predefinida
 
