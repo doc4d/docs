@@ -15,7 +15,7 @@ Welcome to <!--#4DTEXT vtSiteName-->!</P>
 
 The value of the 4D variable *vtSiteName* will be inserted in the HTML page.
 
-## Tags for templates
+## Etiquetas para modelos
 
 The following 4D tags are available:
 
