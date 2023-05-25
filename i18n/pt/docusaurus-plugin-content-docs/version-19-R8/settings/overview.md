@@ -23,12 +23,12 @@ When [**User settings** mode is enabled](../Desktop/user-settings.md), **Setting
 -   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
 -   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
 
-### Locking information
+### Informações de bloqueio
 
 Locking can occur in both Project and Client/server modes when:
 
 -   The *settings.4DSettings* file is 'Read-only' (Projects only). Modifying a setting will display an alert to unlock it, if possible.
--   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Client/server only)
+-   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Apenas cliente/servidor)
 
 In both cases, the settings can be opened in 'Read-only', but cannot be used until the lock is removed.
 
