@@ -36,7 +36,7 @@ The lower area of the window is used to display the graphic representation of th
 The activity of the process is the percentage of time that 4D Server has devoted to this process (ratio). The window provides the following information for each process:
 
 - Type of process (see below),
-- Session/Info:
+- Sessão/Info:
     - Processo 4D - em branco,
     - User process - 4D user name,
     - Web process - URL path,
@@ -71,7 +71,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 | ![](../assets/en/Admin/server-icon-18.png) | Logger (registrador)                                                                                                                                                                                |
 | ![](../assets/en/Admin/server-icon-19.png) | TCP connection listener                                                                                                                                                                             |
 | ![](../assets/en/Admin/server-icon-20.png) | Gestor de sessões TCP                                                                                                                                                                               |
-| ![](../assets/en/Admin/server-icon-21.png) | Other process                                                                                                                                                                                       |
+| ![](../assets/en/Admin/server-icon-21.png) | Outro processo                                                                                                                                                                                      |
 | ![](../assets/en/Admin/server-icon-22.png) | Worker process (cooperative)                                                                                                                                                                        |
 | ![](../assets/en/Admin/server-icon-23.png) | 4D client process (preemptive)                                                                                                                                                                      |
 | ![](../assets/en/Admin/server-icon-24.png) | Stored procedure (preemptive process)                                                                                                                                                               |
