@@ -4,7 +4,7 @@ title: Subformulário
 ---
 
 ---
-## Allow Deletion
+## Permitir a eliminação
 
 Specifies if the user can delete subrecords in a list subform.
 
