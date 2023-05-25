@@ -427,4 +427,4 @@ Todas las casillas de selección comparten un mismo conjunto de propiedades bás
 Existen propiedades específicas adicionales, dependiendo del [estilo-de-botón](#button-styles):
 
 - Custom: [Background pathname](properties_TextAndPicture.md#backgroundPathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#verticalMargin)
-- Flat, Regular: [Three-States](properties_Display.md#three-states)
+- Plana, Regular: [Tres Estados](properties_Display.md#three-states)
