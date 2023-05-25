@@ -80,7 +80,7 @@ Project development file, used to designate and launch the project. This file ca
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | *className*.4dm | User class definition method, allowing to instantiate specific objects. One file per class, the name of the file is the class name | text    |
 
-#### Forms folder
+#### Pasta Forms
 
 | Conteúdos                                 | Descrição                                  | Formato |
 | ----------------------------------------- | ------------------------------------------ | ------- |
@@ -110,7 +110,7 @@ Project development file, used to designate and launch the project. This file ca
 
 **Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. It is compliant with source control tools.
 
-### Trash folder
+### Pasta Trash
 
 The Trash folder contains methods and forms that were deleted from the project (if any). It can contain the following folders:
 
