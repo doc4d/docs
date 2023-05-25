@@ -103,13 +103,13 @@ The following table summarizes how object and form methods are called for each e
 | On Expand                | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
 | On Collapse              | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
 | On Delete Action         | Sim (Hier. lista e list box)        | Nunca             | Involved object only   |
-| On URL Resource Loading  | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On Begin URL Loading     | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On URL Loading Error     | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On URL Filtering         | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On End URL Loading       | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On Open External Link    | Yes (Web Area)                      | Nunca             | Involved object only   |
-| On Window Opening Denied | Yes (Web Area)                      | Nunca             | Involved object only   |
+| On URL Resource Loading  | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On Begin URL Loading     | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On URL Loading Error     | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On URL Filtering         | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On End URL Loading       | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On Open External Link    | Sim (Área Web)                      | Nunca             | Involved object only   |
+| On Window Opening Denied | Sim (Área Web)                      | Nunca             | Involved object only   |
 | On VP Range Changed      | Yes (4D View Pro Area)              | Nunca             | Involved object only   |
 | On VP Ready              | Yes (4D View Pro Area)              | Nunca             | Involved object only   |
 | On Row Resize            | Yes (4D View Pro Area)              | Nunca             | Involved object only   |
