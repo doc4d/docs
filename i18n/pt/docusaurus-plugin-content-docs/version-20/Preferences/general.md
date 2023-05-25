@@ -155,7 +155,7 @@ Language of the HTML documentation to display. You can modify it, for example if
 *   When it is checked, 4D first looks for the page in the local folder. If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
 *   When it is not checked, 4D looks for the desired page directly in the on-line documentation of the Web site and displays it in the current browser. If it is not found, 4D displays an error message in the browser.
 
-### Local folder
+### Pasta local
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
