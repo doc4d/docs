@@ -14,7 +14,7 @@ title: WebSocketServer
 
 A classe `WebSocketServer` permite-lhe criar e configurar um servidor WebSocket em 4D. Uma vez que o servidor 4D WebSocket está ativo, você pode abrir e usar conexões WebSocket entre 4D e clientes usando a classe [`WebSocketConnection`](WebSocketConnectionClass.md).
 
-:::nota Sobre os servidores WebSocket
+:::note Sobre os servidores WebSocket
 
 O protocolo WebSocket proporciona um canal de comunicação full-duplex entre um servidor WebSocket e um cliente (por exemplo, um navegador Web). Para mais informações sobre servidores WebSocket, leia [esta página na Wikipédia](https://en.wikipedia.org/wiki/WebSocket).
 
@@ -22,7 +22,7 @@ O protocolo WebSocket proporciona um canal de comunicação full-duplex entre um
 
 :::info Ver também
 
-See also [this blog post](https://blog.4d.com/new-built-in-websocket-server/) about the 4D WebSocket server.
+Veja também [este post do blog](https://blog.4d.com/new-built-in-websocket-server/) sobre o servidor 4D WebSocket.
 
 :::
 
@@ -90,7 +90,7 @@ Consulte [esta publicação do blogue](https://blog.4d.com/websocket-server/) pa
 
 ### Objecto WebSocketServer
 
-Os objectos HTTPRequest fornecem as seguintes propriedades e funções:
+Os objectos de servidor WebSocket fornecem as seguintes propriedades e funções:
 
 |                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,7 +110,7 @@ Os objectos HTTPRequest fornecem as seguintes propriedades e funções:
 
 
 <!-- REF #4D.HTTPRequest.new().Params -->
-| Parâmetros                          | Tipo               |    | Descrição                                                                                |
+| Parâmetro                           | Tipo               |    | Descrição                                                                                |
 | ----------------------------------- | ------------------ |:--:| ---------------------------------------------------------------------------------------- |
 | [WSSHandler](#wsshandler-parameter) | Objeto             | -> | Objecto da classe de utilizador que declara as chamadas de retorno do servidor WebSocket |
 | [options](#options-parameter)       | Objeto             | -> | Parâmetros de configuração do WebSocket                                                  |
@@ -127,67 +127,67 @@ Para chamar esta função é necessário que o servidor Web [4D](WebServerClass.
 
 
 
-### parâmetro*WSSHandler*
+### Parâmetro*WSSHandler*
 
-No parâmetro *WSSHandler* , passe uma instância de uma classe de usuário que será chamada sempre que ocorrer um evento no servidor WebSocket - essencialmente, eventos de conexão. A classe deve definir as seguintes funções de retorno de chamada (apenas `onConnection` é obrigatório):
+No parâmetro *WSSHandler*, passe uma instância de uma classe de usuário que será chamada sempre que ocorrer um evento no servidor WebSocket - essencialmente, eventos de conexão. A classe deve definir as seguintes funções de retorno de chamada (apenas `onConnection` é obrigatório):
 
-| Propriedade  | Tipo                         | Descrição                                                                                   | Predefinição |
-| ------------ | ---------------------------- | ------------------------------------------------------------------------------------------- | ------------ |
-| onConnection | [Function](FunctionClass.md) | (obrigatório) Chamada de retorno quando é iniciada uma nova ligação de cliente (ver abaixo) | indefinido   |
-| onOpen       | [Function](FunctionClass.md) | Callback quando o servidor WebSocket é iniciado (ver abaixo)                                | indefinido   |
-| onTerminate  | [Function](FunctionClass.md) | Callback quando o servidor WebSocket é terminado (ver abaixo)                               | indefinido   |
-| onError      | [Function](FunctionClass.md) | Callback quando ocorre um erro (ver abaixo)                                                 | indefinido   |
+| Propriedade  | Tipo                         | Descrição                                                                                   | O padrãO   |
+| ------------ | ---------------------------- | ------------------------------------------------------------------------------------------- | ---------- |
+| onConnection | [Function](FunctionClass.md) | (obrigatório) Chamada de retorno quando é iniciada uma nova ligação de cliente (ver abaixo) | indefinido |
+| onOpen       | [Function](FunctionClass.md) | Callback quando o servidor WebSocket é iniciado (ver abaixo)                                | indefinido |
+| onTerminate  | [Function](FunctionClass.md) | Callback quando o servidor WebSocket é terminado (ver abaixo)                               | indefinido |
+| onError      | [Function](FunctionClass.md) | Callback quando ocorre um erro (ver abaixo)                                                 | indefinido |
 
 
 **WSHandler.onConnection**(*WSServer* : Object ; *param* : Object) : Object | null
 
-| Parâmetros      |         | Tipo               |    | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| --------------- | ------- | ------------------ |:--:| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| WSServer        |         | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| param           |         | Objeto             | <- | Parâmetros                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|                 | type    | Text               |    | "connection"                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|                 | request | Objeto             |    | `request` object. Contains information on the connection request (see below)                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Function result |         | Objeto             | -> | [`connectionHandler` object](#connectionhandler-object) (see below). If this function returns a `connectionHandler` object, a [`4D.WebSocketConnection` object](WebSocketConnectionClass.md#websocketconnection-object) is automatically created and added to the [collection of connections](#connections). This object is then received as parameter in each function of the `connectionHandler` object. If the returned value is null or undefined, the connection is cancelled. |
+| Parâmetro |         | Tipo               |    | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------- | ------- | ------------------ |:--:| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| WSServer  |         | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| param     |         | Objeto             | <- | Parâmetros                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|           | type    | Text               |    | "connection"                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|           | request | Objeto             |    | objecto `request`. Contém informações sobre o pedido de ligação (ver abaixo)                                                                                                                                                                                                                                                                                                                                                                                               |
+| Resultado |         | Objeto             | -> | objecto [`connectionHandler`](#connectionhandler-object) (ver abaixo). Se esta função devolver um objecto `connectionHandler`, um objecto [`4D.WebSocketConnection`](WebSocketConnectionClass.md#websocketconnection-object) é automaticamente criado e adicionado à [colecção de ligações](#connections). Este objecto é então recebido como parâmetro em cada função do objecto `connectionHandler`. Se o valor devolvido for nulo ou indefinido, a ligação é cancelada. |
 
-This callback is called when the handshake is complete. It must be called with a valid [`connectionHandler` object](#connectionhandler-object) to create the WebSocket connection, otherwise the connection is cancelled.
+This callback is called when the handshake is complete. Deve ser chamada com um objecto [`connectionHandler` válido](#connectionhandler-object) para criar a ligação WebSocket, caso contrário a ligação é cancelada.
 
 
 **WSHandler.onOpen**(*WSServer* : Object ; *param* : Object)
 
-| Parâmetros |      | Tipo               |    | Descrição                            |
-| ---------- | ---- | ------------------ |:--:| ------------------------------------ |
-| WSServer   |      | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket |
-| param      |      | Objeto             | <- | Parâmetros                           |
-|            | type | Text               |    | "open"                               |
+| Parâmetro |      | Tipo               |    | Descrição                        |
+| --------- | ---- | ------------------ |:--:| -------------------------------- |
+| WSServer  |      | 4D.WebSocketServer | <- | Objeto servidor WebSocket actual |
+| param     |      | Objeto             | <- | Parâmetros                       |
+|           | type | Text               |    | "open"                           |
 
-Event emitted when the websocket server is started.
+Evento emitido quando o servidor websocket é iniciado.
 
 
 **WSHandler.onTerminate**(*WSServer* : Object ; *param* : Object)
 
-| Parâmetros |      | Tipo               |    | Descrição                            |
-| ---------- | ---- | ------------------ |:--:| ------------------------------------ |
-| WSServer   |      | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket |
-| param      |      | Objeto             | <- | Parâmetros                           |
-|            | type | Text               |    | "terminate"                          |
+| Parâmetro |      | Tipo               |    | Descrição                            |
+| --------- | ---- | ------------------ |:--:| ------------------------------------ |
+| WSServer  |      | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket |
+| param     |      | Objeto             | <- | Parâmetros                           |
+|           | type | Text               |    | "terminate"                          |
 
-Event emitted when the HTTP server or the WebSocket server is closed.
+Evento emitido quando o servidor HTTP ou o servidor WebSocket é encerrado.
 
 
 **WSHandler.onError**(*WSServer* : Object ; *param* : Object)
 
-| Parâmetros |            | Tipo               |    | Descrição                                                                                                                          |
-| ---------- | ---------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------- |
-| WSServer   |            | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket                                                                                               |
-| param      |            | Objeto             | <- | Parâmetros                                                                                                                         |
-|            | type       | Text               |    | "erro"                                                                                                                             |
-|            | statusText | Text               |    | Last error returned in the 4D error stack                                                                                          |
-|            | errors     | Collection         |    | Collection of 4D error stack in case of execution error<li>\[].errCode (number) -  4D error code</li><li>\[].message (text) - Description of the 4D error</li><li>\[].componentSignature (text) - Signature of the internal component which returned the error</li> |
+| Parâmetro |            | Tipo               |    | Descrição                                                                                                                          |
+| --------- | ---------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------- |
+| WSServer  |            | 4D.WebSocketServer | <- | Objecto actual do servidor WebSocket                                                                                               |
+| param     |            | Objeto             | <- | Parâmetros                                                                                                                         |
+|           | type       | Text               |    | "error"                                                                                                                            |
+|           | statusText | Text               |    | Último erro devolvido na pilha de erros 4D                                                                                         |
+|           | errors     | Collection         |    | Collection of 4D error stack in case of execution error<li>\[].errCode (number) -  4D error code</li><li>\[].message (text) - Description of the 4D error</li><li>\[].componentSignature (text) - Signature of the internal component which returned the error</li> |
 
 
 Event emitted when an error occurs on the WebSocket server.
 
-### Example of `WSSHandler` class
+### Exemplo de class `WSSHandler`
 
 This example of a basic chat feature illustrates how to handle WebSocket server connections in a *WSSHandler* class.
 
@@ -215,7 +215,7 @@ Function onTerminate($wss : Object; $param : Object)
 LogFile("*** Server closed")
 
 Function onError($wss : Object; $param : Object)
-LogFile("!!! Server error: "+$param.statusText)
+LogFile("!!! Erro do servidor: "+$param.statusText)
 
 ```
 
@@ -223,7 +223,7 @@ LogFile("!!! Server error: "+$param.statusText)
 
 A `request` object contains the following properties:
 
-| Parâmetros    | Tipo   | Descrição                                                                                                                                           |
+| Parâmetro     | Tipo   | Descrição                                                                                                                                           |
 | ------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | headers       | Objeto | The client HTTP GET request. `headers.key=value` (value can be a collection if the same key appears multiple times)                                 |
 | query         | Objeto | Object that contains the URL parameters. For example, if parameters are: `?key1=value1&key2=value2` -> `query.key1=value1`, `query.key2=value2` |
@@ -231,11 +231,11 @@ A `request` object contains the following properties:
 | remoteAddress | Text   | IP Address of the client                                                                                                                            |
 
 
-### `connectionHandler` object
+### Objecto `connectionHandler`
 
 As a result of the `WSHandler.onConnection` callback, pass a `connectionHandler` object, which is an instance of a user class that will be called every time an event occurs in the WebSocket connection --essentially, messages received. The class should define the following callback functions (only `onMessage` is mandatory):
 
-| Parâmetros  | Tipo                         | Descrição                                                                       |
+| Parâmetro   | Tipo                         | Descrição                                                                       |
 | ----------- | ---------------------------- | ------------------------------------------------------------------------------- |
 | onMessage   | [Function](FunctionClass.md) | (mandatory) Function called when a new message is received from this connection |
 | onOpen      | [Function](FunctionClass.md) | Function called when the `4D.WebSocketConnection` is created                    |
@@ -245,52 +245,52 @@ As a result of the `WSHandler.onConnection` callback, pass a `connectionHandler`
 
 **connectionHandler.onMessage**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parâmetros |      | Tipo                                                    |    | Descrição                           |
-| ---------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
-| ws         |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
-| param      |      | Objeto                                                  | <- | Parâmetros                          |
-|            | type | Text                                                    |    | "message"                           |
-|            | data | Text / Blob / Object                                    |    | data sent by the client             |
+| Parâmetro |      | Tipo                                                    |    | Descrição                           |
+| --------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
+| ws        |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
+| param     |      | Objeto                                                  | <- | Parâmetros                          |
+|           | type | Text                                                    |    | "message"                           |
+|           | data | Text / Blob / Object                                    |    | data sent by the client             |
 
 This Callback for WebSocket data. Called each time the WebSocket receives data.
 
 
 **connectionHandler.onOpen**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parâmetros |      | Tipo                                                    |    | Descrição                           |
-| ---------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
-| ws         |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
-| param      |      | Objeto                                                  | <- | Parâmetros                          |
-|            | type | Text                                                    |    | "open"                              |
+| Parâmetro |      | Tipo                                                    |    | Descrição                           |
+| --------- | ---- | ------------------------------------------------------- |:--:| ----------------------------------- |
+| ws        |      | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object |
+| param     |      | Objeto                                                  | <- | Parâmetros                          |
+|           | type | Text                                                    |    | "open"                              |
 
 Called when the `connectionHandler` object is created (after `WSS.onConnection` event).
 
 
 **connectionHandler.onTerminate**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parâmetros |        | Tipo                                                    |    | Descrição                                                                                                                                                                               |
-| ---------- | ------ | ------------------------------------------------------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ws         |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                                                                     |
-| param      |        | Objeto                                                  | <- | Parâmetros                                                                                                                                                                              |
-|            | type   | Text                                                    |    | "terminate"                                                                                                                                                                             |
-|            | code   | Número                                                  |    | Status code indicating why the connection has been closed. If the WebSocket does not return an error code, `code` is set to 1005 if no error occurred or to 1006 if there was an error. |
-|            | reason | Text                                                    |    | String explaining why the connection has been closed. If the websocket doesn't return an reason, code is undefined                                                                      |
+| Parâmetro |        | Tipo                                                    |    | Descrição                                                                                                                                                                               |
+| --------- | ------ | ------------------------------------------------------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ws        |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                                                                     |
+| param     |        | Objeto                                                  | <- | Parâmetros                                                                                                                                                                              |
+|           | type   | Text                                                    |    | "terminate"                                                                                                                                                                             |
+|           | code   | Número                                                  |    | Status code indicating why the connection has been closed. If the WebSocket does not return an error code, `code` is set to 1005 if no error occurred or to 1006 if there was an error. |
+|           | reason | Text                                                    |    | String explaining why the connection has been closed. If the websocket doesn't return an reason, code is undefined                                                                      |
 
 Function called when the WebSocket is closed.
 
 **connectionHandler.onError**(*ws* : 4D.WebSocketConnection ; *param* : Object)
 
-| Parâmetros |        |        | Tipo                                                    |    | Descrição                                                                                                                           |
-| ---------- | ------ | ------ | ------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------------------------- |
-| ws         |        |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                 |
-| param      |        |        | Objeto                                                  | <- | Parâmetros                                                                                                                          |
-|            | type   |        | Text                                                    |    | "erro"                                                                                                                              |
-|            | status |        | Objeto                                                  |    |                                                                                                                                     |
-|            |        | errors | Collection                                              |    | Collection of 4D errors stack in case of execution error<li>\[].errCode (number) -  4D error code</li><li>\[].message (text) - Description of the 4D error</li><li>\[].componentSignature (text) - Signature of the internal component which returned the error</li> |
+| Parâmetro |        |        | Tipo                                                    |    | Descrição                                                                                                                           |
+| --------- | ------ | ------ | ------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------------------------- |
+| ws        |        |        | [`4D.WebSocketConnection`](WebSocketConnectionClass.md) | <- | Current WebSocket connection object                                                                                                 |
+| param     |        |        | Objeto                                                  | <- | Parâmetros                                                                                                                          |
+|           | type   |        | Text                                                    |    | "error"                                                                                                                             |
+|           | status |        | Objeto                                                  |    |                                                                                                                                     |
+|           |        | errors | Collection                                              |    | Collection of 4D errors stack in case of execution error<li>\[].errCode (number) -  4D error code</li><li>\[].message (text) - Description of the 4D error</li><li>\[].componentSignature (text) - Signature of the internal component which returned the error</li> |
 
 Function called when an error has occurred.
 
-### Example of `connectionHandler` class
+### Exemplo de class `connectionHandler`
 
 This example of a basic chat feature illustrates how to handle messages in a *connectionHandler* class.
 
@@ -298,11 +298,11 @@ This example of a basic chat feature illustrates how to handle messages in a *co
 // myConnectionHandler Class
 
 Function onMessage($ws : 4D.WebSocketConnection; $message : Object)
-    // Resend the message to all chat clients   
+    // Reenviar a mensagem a todos os clientes do chat   
     This.broadcast($ws;$message.data)
 
 Function onOpen($ws : 4D.WebSocketConnection; $message : Object)
-    // Send a message to new connected users
+    // Enviar uma mensagem aos novos utilizadores ligados
     $ws.send("Welcome on the chat!")    
     // Send "New client connected" message to all other chat clients
     This.broadcast($ws;"New client connected")
@@ -324,20 +324,20 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 ```
 
 
-### *options* parameter
+### Parâmetro *options*
 
 In the optional *options* parameter, pass an object that contains the following properties:
 
-| Propriedade | Tipo | Descrição                                                                                                                                                                                                                                                                                                                                    | Predefinição |
-| ----------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| path        | Text | Represents the path to access the WebSocket server. If no path is defined, the WebSocket server manages all the connections                                                                                                                                                                                                                  | indefinido   |
-| dataType    | Text | Type of the data received through the `connectionHandler.onMessage` and the data send by [`WebSocketConnection.send()`](WebSocketConnectionClass.md#send) function. Values: "text", "blob","object"). If "object": (send) transforms object into a json format and sends it; (reception): receives json format and transforms it into object | text         |
+| Propriedade | Tipo | Descrição                                                                                                                                                                                                                                                                                                                                    | O padrãO   |
+| ----------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| path        | Text | Represents the path to access the WebSocket server. If no path is defined, the WebSocket server manages all the connections                                                                                                                                                                                                                  | indefinido |
+| dataType    | Text | Type of the data received through the `connectionHandler.onMessage` and the data send by [`WebSocketConnection.send()`](WebSocketConnectionClass.md#send) function. Values: "text", "blob","object"). If "object": (send) transforms object into a json format and sends it; (reception): receives json format and transforms it into object | text       |
 
 
 <!-- REF #WebSocketServerClass.connections.Desc -->
 ## .connections
 
-<!-- REF #WebSocketServerClass.connections.Syntax -->**connections** : Collection<!-- END REF -->
+<!-- REF #WebSocketServerClass.connections.Syntax -->**.connections** : Collection<!-- END REF -->
 
 #### Descrição
 
@@ -352,11 +352,11 @@ When a connection is terminated, its [`status`](WebSocketConnectionClass.md#stat
 <!-- REF #WebSocketServerClass.dataType.Desc -->
 ## .dataType
 
-<!-- REF #WebSocketServerClass.dataType.Syntax -->**dataType** : Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.dataType.Syntax -->**.dataType** : Text<!-- END REF -->
 
 #### Descrição
 
-A propriedade `.dataType` contém <!-- REF #WebSocketServerClass.dataType.Summary -->the type of the data received or sent<!-- END REF -->.
+A propriedade `.dataType` contém <!-- REF #WebSocketServerClass.dataType.Summary -->o tipo de dados recebidos ou enviados<!-- END REF -->.
 
 Esta propriedade é só de leitura.
 <!-- END REF -->
@@ -365,11 +365,11 @@ Esta propriedade é só de leitura.
 <!-- REF #WebSocketServerClass.handler.Desc -->
 ## .handler
 
-<!-- REF #WebSocketServerClass.handler.Syntax -->**handler** : Object<!-- END REF -->
+<!-- REF #WebSocketServerClass.handler.Syntax -->**.handler** : Objecto<!-- END REF -->
 
 #### Descrição
 
-A propriedade `.handler` contém <!-- REF #WebSocketServerClass.handler.Summary -->the accessor that gets the `WSSHandler` object used to initiate the WebSocket server<!-- END REF -->.
+A propriedade `.handler` contém <!-- REF #WebSocketServerClass.handler.Summary -->o acessor que obtém o objecto `WSSHandler` utilizado para iniciar o servidor WebSocket<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -377,11 +377,11 @@ A propriedade `.handler` contém <!-- REF #WebSocketServerClass.handler.Summary 
 <!-- REF #WebSocketServerClass.path.Desc -->
 ## .path
 
-<!-- REF #WebSocketServerClass.path.Syntax -->**path** : Text<!-- END REF -->
+<!-- REF #WebSocketServerClass.path.Syntax -->**.path** : Text<!-- END REF -->
 
 #### Descrição
 
-A propriedade `.path` contém <!-- REF #WebSocketServerClass.path.Summary -->the pattern of the path to access the WebSocket server<!-- END REF -->. If no path was defined, the WebSocket server manages all connections.
+A propriedade `.path` contém <!-- REF #WebSocketServerClass.path.Summary -->o padrão do caminho para aceder ao servidor WebSocket<!-- END REF -->. Se não for definido um caminho, o servidor WebSocket gere todas as ligações.
 
 Esta propriedade é só de leitura.
 <!-- END REF -->
@@ -394,9 +394,9 @@ Esta propriedade é só de leitura.
 
 
 <!-- REF #WebSocketServerClass.terminate().Params -->
-| Parâmetros | Tipo |  | Descrição                                             |
-| ---------- | ---- |::| ----------------------------------------------------- |
-|            |      |  | Não exige nenhum parâmetro|<!-- END REF -->
+| Parâmetro | Tipo |  | Descrição                                             |
+| --------- | ---- |::| ----------------------------------------------------- |
+|           |      |  | Não exige nenhum parâmetro|<!-- END REF -->
 
 
 |
@@ -404,18 +404,18 @@ Esta propriedade é só de leitura.
 
 #### Descrição
 
-A função `.terminate()` <!-- REF #WebSocketServerClass.terminate().Summary -->closes the WebSocket server<!-- END REF -->. 
+A função `.terminate()` <!-- REF #WebSocketServerClass.terminate().Summary -->fecha o servidor WebSocket<!-- END REF -->. 
 
 <!-- END REF -->
 
 <!-- REF #WebSocketServerClass.terminated.Desc -->
 ## .terminated
 
-<!-- REF #WebSocketServerClass.terminated.Syntax -->**terminated** : Boolean<!-- END REF -->
+<!-- REF #WebSocketServerClass.terminated.Syntax -->**.terminated** : Boolean<!-- END REF -->
 
 #### Descrição
 
-A propriedade `.terminated` contém <!-- REF #WebSocketServerClass.terminated.Summary -->True if the WebSocket server is closed<!-- END REF -->.
+A propriedade `.terminated` contém <!-- REF #WebSocketServerClass.terminated.Summary -->True se o servidor WebSocket estiver fechado<!-- END REF -->.
 
 Esta propriedade é só de leitura.
 <!-- END REF -->
