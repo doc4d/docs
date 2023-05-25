@@ -41,7 +41,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | -------- | ------------------------------- |:----------------:|:---------------------------------:|
 | File     | File manipulation               |        X         |                                   |
 | Inicio   | Text appearance                 |        X         |                 X                 |
-| Inserir  | Add items                       |        X         |                 X                 |
+| Inserir  | Adicionar itens                 |        X         |                 X                 |
 | Fórmulas | Formula calculation and library |        X         |                 X                 |
 | Dados    | Data manipulation               |        X         |                 X                 |
 | Mostrar  | Apresentação visual             |        X         |                 X                 |
@@ -230,7 +230,7 @@ In addition to the special characters and codes described in the previous sectio
 | ~           | Tilde                                                              | ~##                  |
 |             | Space character                                                    |                      |
 | €           | Euro                                                               | €###.00              |
-| £           | British Pound                                                      | £###.00              |
+| £           | Libra esterlina                                                    | £###.00              |
 | ¥           | Iene japonês                                                       | ¥###.00              |
 | $           | Sinal de dólar                                                     | $###.00              |
 | ¢           | Sinal de cêntimo                                                   | .00¢                 |
@@ -290,10 +290,10 @@ The following special characters allow the automatic addition or formatting of i
 | D          | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                      | Estamos em 2015/6/19.                                |
 | T          | Hora actual                      | printInfo.headerLeft:="It is &T."                                      | São 16:30:36.                                        |
 | G          | Imagem                           | printInfo.headerLeftImage:=smiley<br/>printInfo.headerLeft:="&G" | ![](../assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
-| S          | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                                | ~Isto é texto.~                                      |
-| U          | Sublinhado                       | printInfo.headerLeft:="&UThis is text."                                | This is text. (Sublinhado)                           |
-| B          | Negrito                          | printInfo.headerLeft:="&BThis is text."                                | **This is text.**                                    |
-| I          | Itálico                          | printInfo.headerLeft:="&IThis is text."                                | *This is text.*                                      |
+| S          | Riscado                          | printInfo.headerLeft:="&SThis is text."                                | ~Isto é texto.~                                      |
+| U          | Sublinhado                       | printInfo.headerLeft:="&UThis is text."                                | Isto é texto. (Sublinhado)                           |
+| B          | Negrito                          | printInfo.headerLeft:="&BThis is text."                                | **Isto é texto.**                                    |
+| I          | Itálico                          | printInfo.headerLeft:="&IThis is text."                                | *Isto é texto.*                                      |
 | "          | Prefixo do tipo de letra         | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."          | ![](../assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
 | K          | Prefixo da cor do texto          | printInfo.headerLeft:="&KFF0000This is text."                          | This is text (in red).                               |
 | F          | Workbook name                    | printInfo.headerLeft:="&F"                                             | 2019 Monthly Revenue Forecasts                       |
@@ -484,7 +484,7 @@ Contém as seguintes propriedades:
 | Propriedade  | Tipo de valor | Descrição                                    |
 | ------------ | ------------- | -------------------------------------------- |
 | version      | Longint       | Internal component version                   |
-| dateCreation | Timestamp     | Creation date                                |
+| dateCreation | Timestamp     | Data de criação                              |
 | dateModified | Timestamp     | Last modification date                       |
 | meta         | Objeto        | Free contents, reserved for the 4D developer |
 | spreadJS     | Objeto        | Reserved for the 4D View Pro component       |
