@@ -242,7 +242,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 | Parâmetro  | Tipo    |    | Descrição                                                         |
 | ---------- | ------- | -- | ----------------------------------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro area form object name                                 |
-| styleName  | Text    | -> | Name of style                                                     |
+| styleName  | Text    | -> | Nome do estilo                                                    |
 | styleObj   | Objeto  | -> | Object defining attribute settings                                |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted)|<!-- END REF -->
 
@@ -2387,7 +2387,7 @@ VP SET CELL STYLE($range;$style)
 | Parâmetro  | Tipo    |    | Descrição                              |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro area form object name      |
-| styleName  | Text    | -> | Name of style                          |
+| styleName  | Text    | -> | Nome do estilo                         |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted) |
 
 |Result|Object|<-|Style sheet object|<!-- END REF -->
