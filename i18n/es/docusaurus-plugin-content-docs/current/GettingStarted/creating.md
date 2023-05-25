@@ -21,7 +21,7 @@ Para crear un nuevo proyecto:
 3. Introduzca el nombre de su carpeta de proyecto y haga clic en **Guardar**. Este nombre se utilizará:
 
     * como nombre de la carpeta del proyecto,
-    * as the name of the .4DProject file at the first level of the ["Project" folder](../Project/architecture.md#project-folder).
+    * como nombre del archivo .4DProject en el primer nivel de la [carpeta "Project"](../Project/architecture.md#project-folder).
 
  Puedes elegir cualquier nombre permitido por su sistema operativo. Sin embargo, si su proyecto está destinado a funcionar en otros sistemas o a ser guardado a través de una herramienta de control de fuente, debe tener en cuenta sus recomendaciones de denominación específicas.
 
@@ -44,8 +44,8 @@ Aparece la caja de diálogo estándar de apertura de archivos.
 
     Por defecto, el proyecto se abre con su archivo de datos actual. Se sugieren otros tipos de archivos:
 
-    * *Packed project files*: `.4dz` extension  - deployment projects
-    * *Shortcut files*: `.4DLink` extension - store additional parameters needed for opening projects or applications (addresses, identifiers, etc.)
+    * *Archivos de proyectos empaquetados*: extensión `.4dz` - proyectos de despliegue
+    * *Archivos de acceso directo*: extensión `.4DLink` - almacenan los parámetros adicionales necesarios para abrir proyectos o aplicaciones (direcciones, identificadores, etc.)
     * *Archivos binarios*: extensión `.4db` o `.4dc` - formatos de base de datos 4D heredados
 
 ### Opciones
