@@ -12,20 +12,20 @@ You can combine both features and use menus created in structure as templates to
 
 ## Default menu bar
 
-A custom application must contain at least one menu bar with one menu. A custom application must contain at least one menu bar with one menu. The default menu bar includes standard menus and a command for returning to the Design mode.
+A custom application must contain at least one menu bar with one menu. By default, when you create a new database, 4D automatically creates a default menu bar (Menu Bar #1) so that you can access the Application environment. The default menu bar includes standard menus and a command for returning to the Design mode.
 
-Isso permite ao usuário acessar o modo Aplicação logo que se crie o banco de dados. Menu Bar #1 is called automatically when the **Test Application** command is chosen in the **Run** menu.
+This allows the user to access the Application environment as soon as the database is created. Menu Bar #1 is called automatically when the **Test Application** command is chosen in the **Run** menu.
 
 The default menu bar includes three menus:
 
 - **File**: only includes the **Quit** command. The *Quit* standard action is associated with the command, which causes the application to quit.
 - **Edit**: standard and completely modifiable. Editing functions such as copy, paste, etc. are defined using standard actions.
 - **Mode**: contains, by default, the **Return to Design mode** command, which is used to exit the Application mode.
-> > Menu items appear *in italics* because they consist of references and not hard-coded text. Refer to [Title property](properties.md#title).
+> > > Menu items appear *in italics* because they consist of references and not hard-coded text. Refer to [Title property](properties.md#title).
 
 You can modify this menu bar as desired or create additional ones.
 
-## Creating menus
+## Criar menus
 
 ### Using the Menu editor
 
@@ -46,7 +46,7 @@ For each of the menus, you must add the commands that appear when the menu drops
 
 ### Using the Menu editor
 
-To add a menu item:
+Para adicionar um item de menu:
 
 1. In the list of source menus, select the menu to which you want to add a command. If the menu already has commands, they will be displayed in the central list. If you want to insert the new command, select the command that you want it to appear above. It is still be possible to reorder the menu subsequently using drag and drop.
 2. Choose **Add an item to menu “MenuName”** in the options menu of the editor or from the context menu (right click in the central list). OR Click on the add ![](../assets/en/Menus/PlussNew.png) button located below the central list. 4D adds a new item with the default name “Item X” where X is the number of items already created.
