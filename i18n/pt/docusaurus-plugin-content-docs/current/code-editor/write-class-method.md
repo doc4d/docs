@@ -469,7 +469,7 @@ Click the **Replace all** button to replace all the occurrences corresponding to
 
 
 
-### Find Same
+### Encontrar o mesmo
 
 The **Find Same** command is used to find character strings identical to the one selected. This command is only active if you have selected at least one character in the Code Editor.
 
