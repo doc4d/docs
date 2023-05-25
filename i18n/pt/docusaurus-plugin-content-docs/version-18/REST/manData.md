@@ -64,7 +64,7 @@ Para computar todos os valores e retornar um objeto JSON:
 You can call 4D project methods that are [exposed as REST Service](%7BdataClass%7D.html#4d-configuration). Um método 4D pode retornar em $0:
 
 - um objeto
-- a collection
+- uma colecção
 
 The following example is a dataclass method that reveives parameters and returns an object:
 
