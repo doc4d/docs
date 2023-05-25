@@ -5,13 +5,13 @@ title: Identificadores
 
 This section describes the conventions and rules for naming various elements in the 4D language (variables, tables, objects, forms, etc.).
 
-## Basic Rules
+## Regras básicas
 
 The following rules apply for all 4D frameworks.
 
 - Um nome deve começar por um caractere alfabético, um subscrito ou um sinal de dólar ("$") (lembre que um sinal de dólar pode denotar um elemento local, ver abaixo).
 - Depois disso, o nome pode incluir caracteres alfabéticos, numéricos, o caractere espaço e o caractere de sublinhado/traço baixo ("_") .
-- Periods (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
+- Pontos (".") and brackets ("[ ]") are not allowed in table, field, method, or variable names.
 - Commas, slashes, quotation marks, and colons are not allowed.
 - Characters reserved for use as operators, such as * and +, are not allowed.
 - Do not use reserved names, i.e. 4D command names (`Date`, `Time`, etc), keywords (If, For, etc.), and constants.
@@ -20,7 +20,7 @@ The following rules apply for all 4D frameworks.
 ### Additional rules for object property and ORDA names
 
 - Space characters are not allowed.
-- Periods (".") and brackets ("[ ]") are not allowed.
+- Pontos (".") and brackets ("[ ]") are not allowed.
 - Names are case sensitive.
 
 ### Additional rules for SQL
@@ -98,7 +98,7 @@ You designate an array by using its name, which is the name you pass to an array
 
 - Arrays interprocesso,
 - Arrays processo,
-- Local arrays.
+- Arrays locais.
 
 ### Arrays interprocesso
 
@@ -126,7 +126,7 @@ SORT ARRAY(asKeywords;>)
 ARRAY INTEGER(aiBigArray;10000)
 ```
 
-### Local Arrays
+### Arrays locais
 
 O nome de um array local vai precedido do sinal de dólar ($). A local array name can contain up to 31 characters, not including the dollar sign.
 
@@ -206,7 +206,7 @@ FORM SET OUTPUT([People];"Output")
 DIALOG([Storage];"Note box"+String($vlStage))
 ```
 
-## Form objects
+## Objectos de formulário
 
 You designate a form object by passing its name as a string, preceded by the * parameter. A form object name can contain up to 255 characters.
 
@@ -282,11 +282,11 @@ $error:=SMTP_From($smtp_id;"henry@gmail.com")
 From the scope point of view, there are two types of sets:
 
 - Conjuntos interprocesso
-- Process sets
+- Conjuntos process
 
 4D Server also includes:
 
-- Client sets
+- Conjuntos clientes
 
 ### Conjuntos interprocesso
 
@@ -294,11 +294,11 @@ A set is an interprocess set if the name of the set is preceded by the symbols (
 
 An interprocess set name can contain up to 255 characters, not including the `<>` symbols.
 
-### Process Sets
+### Conjuntos process
 
 Para designar um conjunto processo se utilizar uma expressão de tipo string que represente seu nome (que não pode começar com os símbolos `<>` ou o sinal de dólar $). A set name can contain up to 255 characters.
 
-### Client Sets
+### Conjuntos clientes
 
 O nome de um conjunto cliente deve ser precedido do sinal de dólar ($). A client set name can contain up to 255 characters, not including the dollar sign.
 
@@ -372,7 +372,7 @@ $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
 
 The following table summarizes 4D naming conventions.
 
-| Identifier                   | Max. Length      | Exemplo                            |
+| Identifier                   | Max. Largura     | Exemplo                            |
 | ---------------------------- | ---------------- | ---------------------------------- |
 | Tabela                       | 31               | [Invoices]                         |
 | Campo                        | 31               | [Employees]Last Name               |
@@ -381,15 +381,15 @@ The following table summarizes 4D naming conventions.
 | Variável/Array local         | $ + 31           | $vlLocalCounter                    |
 | Propriedades de objetos      | 255              | $o.myAttribute                     |
 | Formulário                   | 31               | "My Custom Web Input"              |
-| Form object                  | 255              | "MyButton"                         |
+| Objecto de formulário        | 255              | "MyButton"                         |
 | Métodos proyecto             | 31               | M_ADD_CUSTOMERS                  |
 | Rotina Plug-in               | 31               | PDF SET ROTATION                   |
 | Interprocess Set             | `<>` + 255 | `"<>Records to be Archived"` |
-| Process Set                  | 255              | "Current selected records"         |
+| Conjunto process             | 255              | "Current selected records"         |
 | Client Set                   | $ + 255          | "$Previous Subjects"               |
 | Seleção nomeada              | 255              | "Employees A to Z"                 |
 | Interprocess Named Selection | `<>` + 255 | `"<>Employees Z to A"`       |
-| Local Process                | $ + 255          | "$Follow Events"                   |
+| Processo local               | $ + 255          | "$Follow Events"                   |
 | Processo global              | 255              | "*P_INVOICES_MODULE*"            |
 | Semáforo                     | 255              | "mysemaphore"                      |
 
