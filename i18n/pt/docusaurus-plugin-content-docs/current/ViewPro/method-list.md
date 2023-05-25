@@ -242,7 +242,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 | Parâmetro  | Tipo    |    | Descrição                                                         |
 | ---------- | ------- | -- | ----------------------------------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro area form object name                                 |
-| styleName  | Text    | -> | Name of style                                                     |
+| styleName  | Text    | -> | Nome do estilo                                                    |
 | styleObj   | Objeto  | -> | Object defining attribute settings                                |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted)|<!-- END REF -->
 
@@ -989,7 +989,7 @@ When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` comma
 | $3       |               | object  | A reference to the command's *paramObj*                |
 | $4       |               | object  | An object returned by the method with a status message |
 |          | .success      | boolean | True if export with success, False otherwise.          |
-|          | .errorCode    | integer | Error code. May be returned by 4D or JavaScript.       |
+|          | .errorCode    | integer | Código de erro. May be returned by 4D or JavaScript.   |
 |          | .errorMessage | text    | Mensagem de erro. May be returned by 4D or JavaScript. |
 
 #### Exemplo 1
@@ -2387,7 +2387,7 @@ VP SET CELL STYLE($range;$style)
 | Parâmetro  | Tipo    |    | Descrição                              |
 | ---------- | ------- | -- | -------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro area form object name      |
-| styleName  | Text    | -> | Name of style                          |
+| styleName  | Text    | -> | Nome do estilo                         |
 | sheet      | Integer | -> | Sheet index (current sheet if omitted) |
 
 |Result|Object|<-|Style sheet object|<!-- END REF -->
