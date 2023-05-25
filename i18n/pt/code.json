@@ -123,7 +123,7 @@
     "message": "Propriedades do formulário"
   },
   "Form Objects": {
-    "message": "Form Objects"
+    "message": "Objectos formulário"
   },
   "Form Object Properties": {
     "message": "Form Object Properties"
@@ -374,7 +374,7 @@
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
+    "message": "Nesta página",
     "description": "The label used by the button on the collapsible TOC component"
   },
   "theme.blog.post.readingTime.plurals": {
@@ -533,7 +533,7 @@
     "description": "The text for the question where the user thinks there are missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Let us know.",
+    "message": "Informe-nos.",
     "description": "The text for the link to report missing results"
   },
   "theme.SearchModal.placeholder": {
