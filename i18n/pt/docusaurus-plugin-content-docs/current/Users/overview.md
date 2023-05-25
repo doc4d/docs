@@ -51,7 +51,7 @@ If you want to use the system user name in 4D instead of "Designer" (e.g. in log
 SET USER ALIAS(Current system user)
 ```
 
-### Protecting access
+### Protecção do acesso
 
 #### Privilégios
 
