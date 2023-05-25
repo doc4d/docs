@@ -56,7 +56,7 @@ Spreadsheets are composed of rows and columns. A number is associated with each 
 
 *   To deselect cells, simply click anywhere within the spreadsheet.
 
-### Entering data
+### Introdução de dados
 
 Double-clicking on a cell allows passing into input mode in the relevant cell. If the cell is not empty, the insertion cursor is placed after the content of the cell.
 
@@ -140,7 +140,7 @@ You can then pass `$myRange` to another 4D View Pro method to modify these cells
 *   area - The name of the 4D View Pro area
 *   ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties.
 
-| Propriedade |                   | Tipo       | Descrição                                                           | Available for                                      |
+| Propriedade |                   | Tipo       | Descrição                                                           | Disponível para                                    |
 | ----------- | ----------------- | ---------- | ------------------------------------------------------------------- | -------------------------------------------------- |
 | area        |                   | text       | 4D View Pro area form object name                                   | sempre disponível                                  |
 | ranges      |                   | collection | Collection of range(s)                                              | sempre disponível                                  |
