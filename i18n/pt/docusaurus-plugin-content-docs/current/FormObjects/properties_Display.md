@@ -163,7 +163,7 @@ Notice that the presence of the second semicolon instructs 4D to use nothing to 
 
 In this case, the display for zero would be $0.00.
 
-### Scientific notation
+### Notação científica
 
 If you want to display numbers in scientific notation, use the **ampersand** (&) followed by a number to specify the number of digits you want to display. For example, the format:
 
@@ -175,7 +175,7 @@ would display 759.62 as:
 
 The scientific notation format is the only format that will automatically round the displayed number. Note in the example above that the number is rounded up to 7.60e+2 instead of truncating to 7.59e+2.
 
-### Hexadecimal formats
+### Formatos hexadecimais
 
 You can display a number in hexadecimal using the following display formats:
 
@@ -244,7 +244,7 @@ The following table shows how different formats affect the display of numbers. T
 
 ---
 
-## Picture Format
+## Formato imagem
 
 Picture formats control how pictures appear when displayed or printed. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
 
@@ -406,7 +406,7 @@ Allows a check box object to accept a third state. A variável associada à caix
 
 List box columns with a numeric [data type](properties_Object.md#expression-type) can be displayed as three-states check boxes. If chosen, the following values are displayed:
 
-* 0 = unchecked box,
+* 0 = caixa não assinalada,
 * 1 = caixa marcada,
 * 2 (or any value >0) = semi-checked box (third state). For data entry, this state returns the value 2.
 * -1 = invisible check box,
