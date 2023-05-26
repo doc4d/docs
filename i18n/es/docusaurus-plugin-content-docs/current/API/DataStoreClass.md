@@ -1063,10 +1063,10 @@ End case
 
 <details><summary>Histórico</summary>
 
-| Versión | Modificaciones                               |
-| ------- | -------------------------------------------- |
-| v20     | Server side support, new `options` parameter |
-| v17 R6  | Añadidos                                     |
+| Versión | Modificaciones                                           |
+| ------- | -------------------------------------------------------- |
+| v20     | Soporte del lado del servidor, nuevo parámetro `options` |
+| v17 R6  | Añadidos                                                 |
 
 </details>
 
@@ -1084,7 +1084,7 @@ End case
 
 #### Descripción
 
-La función `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side or on the server side<!-- END REF -->. Está diseñado para fines de depuración en configuraciones cliente/servidor.
+La función `.startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->inicia el registro de peticiones ORDA del lado del cliente o del lado del servidor<!-- END REF -->. Está diseñado para fines de depuración en configuraciones cliente/servidor.
 
 |
 
@@ -1105,16 +1105,16 @@ To create a client-side ORDA request log, call this function on a remote machine
 
 #### Del lado del servidor
 
-To create a server-side ORDA request log, call this function on the server machine. The log data is written in a file in `.jsonl` format. Each object represents a request. If the file does not already exist, it is created. En caso contrario, si el archivo ya existe, los nuevos datos de registro se añaden a él.
+To create a server-side ORDA request log, call this function on the server machine. The log data is written in a file in `.jsonl` format. Cada objeto representa una petición. Si el archivo no existe, se crea. En caso contrario, si el archivo ya existe, los nuevos datos de registro se añaden a él.
 
-- If you passed the *file* parameter, the log data is written in this file, at the requested location. - If you omit the *file* parameter or if it is null, the log data is written in a file named *ordaRequests.jsonl* and stored in the "/LOGS" folder.
-- The *options* parameter can be used to specify if the server response has to be logged, and if it should include the body. By default when the parameter is omitted, the full response is logged. The following constants can be used in this parameter:
+- Si ha pasado el parámetro *file*, los datos de registro se escriben en este archivo, en la ubicación solicitada. - Si omite el parámetro *file* o si es nulo, los datos de registro se escriben en un archivo llamado *ordaRequests.jsonl* y se almacenan en la carpeta "/LOGS".
+- El parámetro *options* puede utilizarse para especificar si la respuesta del servidor debe registrarse y si debe incluir el cuerpo. Por defecto, cuando se omite el parámetro, se registra la respuesta completa. En este parámetro se pueden utilizar las siguientes constantes:
 
-| Constante                     | Descripción                               |
-| ----------------------------- | ----------------------------------------- |
-| srl log all                   | Log the response entirely (default value) |
-| srl log no response           | Disable the logging of the response       |
-| srl log response without body | Log the response without the body         |
+| Constante                     | Descripción                                             |
+| ----------------------------- | ------------------------------------------------------- |
+| srl log all                   | Registrar la respuesta por completo (valor por defecto) |
+| srl log no response           | Desactivar el registro de la respuesta                  |
+| srl log response without body | Registrar la respuesta sin el cuerpo                    |
 
 
 #### Ejemplo 1
@@ -1154,7 +1154,7 @@ Quiere registrar las peticiones de los clientes ORDA en la memoria:
 
 #### Ejemplo 3
 
-You want to log ORDA server requests in a specific file and enable the log sequence number and duration:
+Desea registrar las peticiones del servidor ORDA en un archivo específico y habilitar el número de secuencia de registro y la duración:
 
 ```4d
 SET DATABASE PARAMETER(4D Server Log Recording;1)
@@ -1243,10 +1243,10 @@ Puede anidar varias transacciones (subtransacciones). Cada transacción o sub-tr
 
 <details><summary>Histórico</summary>
 
-| Versión | Modificaciones      |
-| ------- | ------------------- |
-| v20     | Server side support |
-| v17 R6  | Añadidos            |
+| Versión | Modificaciones                |
+| ------- | ----------------------------- |
+| v20     | Soporte del lado del servidor |
+| v17 R6  | Añadidos                      |
 
 </details>
 
@@ -1262,11 +1262,11 @@ Puede anidar varias transacciones (subtransacciones). Cada transacción o sub-tr
 
 #### Descripción
 
-La función `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the machine it is called (client or server)<!-- END REF -->.
+La función `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->detiene todo registro de peticiones ORDA en la máquina a la que se llama (cliente o servidor)<!-- END REF -->.
 
-It actually closes the opened document on disk. On the client side, if the log was started in memory, it is stopped.
+En realidad, cierra el documento abierto en el disco. Del lado del cliente, si el registro se inició en memoria, se detiene.
 
-This function does nothing if logging of ORDA requests was not started on the machine.
+Esta función no hace nada si el registro de peticiones ORDA no se inició en la máquina.
 
 #### Ejemplo
 
