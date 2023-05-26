@@ -3,6 +3,17 @@ id: updates
 title: Notas del lanzamiento
 ---
 
+
+## 4D v20 R2
+
+Read [**What’s new in 4D v20 R2**](https://blog.4d.com/en-whats-new-in-4d-v20-R2/), the blog post that lists all new features and enhancements in 4D v20 R2.
+
+
+#### Puntos fuertes
+
+#### Cambios de comportamiento
+
+
 ## 4D v20
 
 Lea [**Novedades en 4D v20**](https://blog.4d.com/en-whats-new-in-4d-v20/), la entrada del blog que enumera todas las nuevas funcionalidades y mejoras de 4D v20.
@@ -33,6 +44,7 @@ Lea [**Novedades en 4D v20**](https://blog.4d.com/en-whats-new-in-4d-v20/), la e
 - [Explorador de datos](../Admin/dataExplorer.md#opening-the-data-explorer): nuevo botón y visualización en una ventana 4D.
 - Nuevas propiedades para botones, casillas de verificación y botones radio: [Imagen abraza título](../FormObjects/properties_TextAndPicture.md#image-hugs-title) y [Alineación horizontal](../FormObjects/properties_Text.md#horizontal-alignment).
 - Soporte de `WinIcon` en la función [`file.setAppInfo()`](../API/FileClass.md#setappinfo).
+- New `validateTLSCertificate` option for [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new) allowing you to control the automatic certificate validation.
 - Comandos del lenguaje 4D: [Página Novedades](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6237190.en.html) en doc.4d.com.
 - 4D Write Pro: [página Novedades](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6229455.en.html) en doc.4d.com.
 - [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=20): lista de todos los bugs corregidos en 4D v20.
@@ -42,6 +54,7 @@ Lea [**Novedades en 4D v20**](https://blog.4d.com/en-whats-new-in-4d-v20/), la e
 #### Cambios de comportamiento
 
 - Para el cumplimiento HTTP RFC, la propiedad [`HTTPRequestClass.response.headers`](../API/HTTPRequestClass#response) devuelve ahora todos los nombres de encabezado **en minúsculas**. Si desea que su código siga funcionando como antes, utilice la nueva propiedad [`HTTPRequestClass.response.rawHeaders`](../API/HTTPRequestClass#response).
+- TLS certificates are now automatically validated by 4D when sending HTTP requests with [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new), and rejected with an error if they are invalid. A new *option* property allows you to control this validation.
 
 
 ## 4D v19 R8
@@ -57,6 +70,7 @@ Lea las [**Novedades de 4D v19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-
 - Soporte del [modo SDI en el modo de aplicación de prueba](../Menus/sdi.md#sdi-mode-availability) en Windows.
 - 4D View Pro:
     - soporte de temas en tablas: nuevos comandos [VP SET TABLE THEME](../ViewPro/method-list#vp-set-table-theme) y [VP Get table theme](../ViewPro/method-list#vp-get-table-theme), soporte de opciones de tema en [VP CREATE TABLE](../ViewPro/method-list#vp-create-table)
+
     - nuevo [comando VP Get table dirty rows](../ViewPro/method-list#vp-get-table-dirty-rows)
 - Comandos del lenguaje 4D: [Página Novedades](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) en doc.4d.com.
 - 4D Write Pro: [página Novedades](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.en.html) en doc.4d.com.
