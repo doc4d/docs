@@ -31,7 +31,7 @@ An attributePath is the path of an attribute inside a given dataclass or entity.
 Code for the user class function(s).
 
 
-## Computed attribute
+## Atributo calculado
 
 A computed attribute doesn't actually store information. Instead, it determines its value based on other values from the same entity or from other entities, attributes or functions. When a computed attribute is referenced, the underlying "computation" is evaluated to determine the value. Computed attributes may even be assigned values where user-defined code determines what to do during the assignment.
 
@@ -220,7 +220,7 @@ Inactive sessions are automatically closed after a timeout. The default timeout 
 
 ## Cópia superficial (Shallow copy)
 
-A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
+A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. Ver também Deep copy.
 
 ## Stamp
 
