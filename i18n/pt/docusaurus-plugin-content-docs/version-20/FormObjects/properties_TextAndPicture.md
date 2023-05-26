@@ -102,7 +102,7 @@ This property sets the exact number of states present in the picture used as the
 
 The picture can contain from 2 to 6 states.
 
-- 2 states: false, true
+- 2 estados: false, true
 - 3 states: false, true, rollover,
 - 4 states: false, true, rollover, disabled,
 - 5 states (check box and radio button only): false, true, false rollover, true rollover, disabled
@@ -192,9 +192,9 @@ By default, when a button contains a title and a picture, the elements are joine
 
 #### Gramática JSON
 
-| Nome           | Tipo de dados | Valores possíveis     |
-| -------------- | ------------- | --------------------- |
-| imageHugsTitle | boolean       | true (default), false |
+| Nome           | Tipo de dados | Valores possíveis    |
+| -------------- | ------------- | -------------------- |
+| imageHugsTitle | boolean       | true (padrão), false |
 
 #### Objectos suportados
 
