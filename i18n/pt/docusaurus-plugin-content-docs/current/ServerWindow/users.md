@@ -15,7 +15,7 @@ You can also sort the list of column values by clicking on its header. Click sev
 
 ![](../assets/en/Admin/server-users-sort.png)
 
-## List of Users
+## Lista de usuários
 
 For each user connected to the server, the list provides the following information:
 
