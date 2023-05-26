@@ -1,6 +1,6 @@
 ---
 id: webServerAdmin
-title: Administration
+title: Administração
 ---
 
 4D provides several integrated tools to start, stop, or monitor the integrated web server.
@@ -94,7 +94,7 @@ The **/4DSTATS** URL returns several items of information in an HTML table (disp
 | Elemento                | Descrição                                                    |
 | ----------------------- | ------------------------------------------------------------ |
 | Tamanho actual da cache | Current size of web server cache (in bytes)                  |
-| Cache Max Size          | Maximum size of cache (in bytes)                             |
+| Tamanho máximo da cache | Maximum size of cache (in bytes)                             |
 | Cached Object Max Size  | Maximum size of each object in the cache (in bytes)          |
 | Cache Use               | Percentage of cache used                                     |
 | Cached Objects          | Number of objects found in the cache, **including pictures** |
@@ -109,7 +109,7 @@ The */4DHTMLSTATS* URL returns, also as an HTML table, the same information as t
 | Elemento                | Descrição                                                              |
 | ----------------------- | ---------------------------------------------------------------------- |
 | Tamanho actual da cache | Current size of web server cache (in bytes)                            |
-| Cache Max Size          | Maximum size of cache (in bytes)                                       |
+| Tamanho máximo da cache | Maximum size of cache (in bytes)                                       |
 | Cached Object Max Size  | Maximum size of each object in the cache (in bytes)                    |
 | Cache Use               | Percentage of cache used                                               |
 | Cached Objects          | Number of objects found in the cache, **without pictures**             |
