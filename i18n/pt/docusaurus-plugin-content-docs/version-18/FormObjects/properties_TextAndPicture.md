@@ -38,7 +38,7 @@ General appearance of the button. The button style also plays a part in the avai
 
 ---
 
-## Horizontal Margin
+## Margem horizontal
 
 This property allows setting the size (in pixels) of the horizontal margins of the button. This margin delimits the area that the button icon and title must not surpass.
 
