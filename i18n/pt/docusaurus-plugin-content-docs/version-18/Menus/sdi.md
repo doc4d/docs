@@ -16,7 +16,7 @@ The SDI mode is available in the following execution environment only:
 - Windows
 - Merged stand-alone or client 4D application
 
-## Enabling the SDI mode
+## Activação do modo SDI
 
 Enabling and using the SDI mode in your application require the following steps:
 
