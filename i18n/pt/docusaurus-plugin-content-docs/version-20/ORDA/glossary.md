@@ -220,7 +220,7 @@ Inactive sessions are automatically closed after a timeout. The default timeout 
 
 ## Cópia superficial (Shallow copy)
 
-A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
+A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. Ver também Deep copy.
 
 ## Stamp
 
