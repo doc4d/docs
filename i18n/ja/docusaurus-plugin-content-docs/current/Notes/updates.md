@@ -3,6 +3,17 @@ id: updates
 title: リリースノート
 ---
 
+
+## 4D v20 R2
+
+Read [**What’s new in 4D v20 R2**](https://blog.4d.com/en-whats-new-in-4d-v20-R2/), the blog post that lists all new features and enhancements in 4D v20 R2.
+
+
+#### ハイライト
+
+#### 動作の変更
+
+
 ## 4D v20
 
 [**4D v20 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20/): 4D v20 の新機能と拡張機能をすべてリストアップしたブログ記事です。
@@ -33,6 +44,7 @@ title: リリースノート
 - [データエクスプローラー](../Admin/dataExplorer.md#データエクスプローラーを開く) 用の新しいツールバーボタンと 4Dウィンドウでの表示。
 - ボタン、チェックボックス、ラジオボタンに新しいプロパティが追加されました: [タイトルと画像を隣接させる](../FormObjects/properties_TextAndPicture.md#タイトルと画像を隣接させる) と [横揃え](../FormObjects/properties_Text.md#横揃え)
 - [`file.setAppInfo()`](../API/FileClass.md#setappinfo) 関数で `WinIcon` をサポート。
+- New `validateTLSCertificate` option for [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new) allowing you to control the automatic certificate validation.
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6237190.ja.html) ページ。
 - 4D Write Pro: doc.4d.com の [新着](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6229455.ja.html) ページ。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=20): 4D v20 で修正されたバグのリストです。
@@ -42,6 +54,7 @@ title: リリースノート
 #### 動作の変更
 
 - HTTP RFC に準拠するため、[`HTTPRequestClass.response.headers`](../API/HTTPRequestClass#response) プロパティは、すべてのヘッダー名を **小文字で** 返すようになりました。 以前と同じふるまいが必要な場合には、新しい [`HTTPRequestClass.response.rawHeaders`](../API/HTTPRequestClass#response) プロパティを使用します。
+- TLS certificates are now automatically validated by 4D when sending HTTP requests with [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new), and rejected with an error if they are invalid. A new *option* property allows you to control this validation.
 
 
 ## 4D v19 R8
@@ -57,6 +70,7 @@ title: リリースノート
 - Windows で [SDIモードでのアプリケーションのテスト](../Menus/sdi.md#sdiモード利用条件) をサポート。
 - 4D View Pro:
     - 表組みにおけるテーマのサポート: 新しい [VP SET TABLE THEME](../ViewPro/method-list#vp-set-table-theme) および [VP Get table theme](../ViewPro/method-list#vp-get-table-theme) コマンドの追加、[VP CREATE TABLE](../ViewPro/method-list#vp-create-table) コマンドにテーマオプションを追加
+
     - 新しい [VP Get table dirty rows](../ViewPro/method-list#vp-get-table-dirty-rows) コマンドの追加
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) ページ。
 - 4D Write Pro: doc.4d.com の [新着](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.ja.html) ページ。
