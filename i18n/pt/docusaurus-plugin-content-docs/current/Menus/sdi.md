@@ -20,7 +20,7 @@ The SDI mode is available in the following execution environment only:
 - Merged [stand-alone](../Desktop/building.md#build-stand-alone-application) or [client](../Desktop/building.md#build-client-application) 4D application
 - [**Test application** feature](bars.md#previewing-menu-bars) available from the **Run** menu.
 
-## Enabling the SDI mode
+## Activação do modo SDI
 
 Check the **Use SDI mode on Windows** option in the "Interface" page of the Settings dialog box.
 
