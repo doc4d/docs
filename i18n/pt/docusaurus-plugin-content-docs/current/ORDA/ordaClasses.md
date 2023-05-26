@@ -1,6 +1,6 @@
 ---
 id: ordaClasses
-title: Data Model Classes
+title: Classes de modelo de dados
 ---
 
 
@@ -289,7 +289,7 @@ Similarly, computed attributes can be included in **sorts**. When a computed att
 
 You create a computed attribute by defining a `get` accessor in the [**entity class**](#entity-class) of the dataclass. The computed attribute will be automatically available in the dataclass attributes and in the entity attributes.
 
-Other computed attribute functions (`set`, `query`, and `orderBy`) can also be defined in the entity class. They are optional.
+Other computed attribute functions (`set`, `query`, and `orderBy`) can also be defined in the entity class. São facultativos.
 
 Within computed attribute functions, [`This`](Concepts/classes.md#this) designates the entity. Computed attributes can be used and handled as any dataclass attribute, i.e. they will be processed by [entity class](API/EntityClass.md) or [entity selection class](API/EntitySelectionClass.md) functions.
 
@@ -840,7 +840,7 @@ local Function getYoungest
 
 ### Exemplos
 
-#### Calculating age
+#### Cálculo da idade
 
 Given an entity with a *birthDate* attribute, we want to define an `age()` function that would be called in a list box. This function can be executed on the client, which avoids triggering a request to the server for each line of the list box.
 
