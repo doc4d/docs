@@ -69,7 +69,7 @@ Parameter(s) must simply be enclosed in a collection defined in the body. For ex
 All JSON data types are supported in parameters, including JSON pointers. Dates can be passed as strings in ISO 8601 date format (e.g. "2020-08-22T22:00:000Z").
 
 
-### Entity parameter
+### Parâmetro da entidade
 
 Entities passed in parameters are referenced on the server through their key (*i.e.* __KEY property). If the key parameter is omitted in a request, a new entity is loaded in memory  the server. You can also pass values for any attributes of the entity. These values will automatically be used for the entity handled on the server.
 
