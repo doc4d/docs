@@ -60,7 +60,7 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 [Subformulário](subform_overview.md)
 
 #### Veja também
-[Double click on row](#double-click-on-row)
+[Duplo clique em linha](#double-click-on-row)
 
 ---
 ## Duplo clique em linha
