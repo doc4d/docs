@@ -45,7 +45,7 @@ If no custom authentication is provided, 4D calls the [`On Web Authentication`](
 > **Warning:** If the `On Web Authentication` database method does not exist, connections are automatically accepted (test mode).
 
 
-### Basic protocol
+### Protocolo Basic
 
 When a user connects to the server, a standard dialog box appears on their browser in order for them to enter their user name and password.
 
