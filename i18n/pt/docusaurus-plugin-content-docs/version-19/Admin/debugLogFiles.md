@@ -216,7 +216,7 @@ Os campos abaixo estão registrados para cada evento:
 | timestamp          | Data e hora em formato ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm)    |
 | loggerID           | Opcional                                                     |
 | componentSignature | Opcional - assinatura interna de componente                  |
-| messageLevel       | Info, Warning, Error                                         |
+| messageLevel       | Informação, Aviso, Erro                                      |
 | message            | Descrição da entrada de histórico                            |
 
 Dependendo do evento, vários outros campos podem ser registrados, como task, socket, etc.
