@@ -3,7 +3,7 @@ id: propertiesAppearance
 title: Aparência
 ---
 
-## Default Button
+## Botão predefinido
 
 The default button property designates the button that gets the initial focus at runtime when no button of the form has the [Focusable](properties_Entry.md#focusable) property.
 
@@ -204,7 +204,7 @@ Displays/hides invisible characters
 
 ---
 
-## Show horizontal ruler
+## Mostrar régua horizontal
 
 Displays/hides the horizontal ruler when the document view is in [Page mode](#view-mode).
 
@@ -318,7 +318,7 @@ When tab controls with a custom direction are displayed under Windows, they auto
 
 ---
 
-## User Interface
+## Interface do usuário
 
 You can add an interface to 4D View Pro areas to allow end users to perform basic modifications and data manipulations. 4D View Pro offers two optional interfaces to choose from, **Ribbon** and **Toolbar**.
 
@@ -367,7 +367,7 @@ Valores disponíveis:
 
 #### Veja também
 
-[Horizontal scroll bar](#horizontal-scroll-bar)
+[Barra de deslocação horizontal](#horizontal-scroll-bar)
 
 ---
 
