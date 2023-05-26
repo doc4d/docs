@@ -86,7 +86,7 @@ Most of the time, you can use one of the [built-in filters](#default-entry-filte
 
 For information about creating entry filters, see [Filter and format codes](https://doc.4d.com/4Dv18/4D/18/Filter-and-format-codes.300-4575706.en.html).
 
-### Default entry filters
+### Filtros de entrada predefinidos
 
 Here is a table that explains each of the entry filter choices in the Entry Filter drop-down list:
 
