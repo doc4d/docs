@@ -137,10 +137,10 @@ See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spread
 
 4D custom functions provide access, from within your 4D View Pro formulas, to:
 
-- 4D process variables,
+- Variáveis processo 4D,
 - campos,
 - métodos projeto,
-- 4D language commands,
+- Comandos de linguagem 4D,
 - or any valid 4D expression.
 
 4D custom functions can receive [parameters](#parameters) from the 4D View Pro area, and return values.
