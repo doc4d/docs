@@ -57,6 +57,6 @@ SET USER ALIAS(Current system user)
 
 On a machine that is shared by several users, you can install the 4D application in a folder and give appropriate user access privileges to the folder at the OS level.
 
-#### Encrypting data
+#### Encriptação de dados
 
 If you want to protect access to the application data, we recommend to [encrypt data](MSC/encrypt.md) and provide the encryption key to the authorized user(s). 
