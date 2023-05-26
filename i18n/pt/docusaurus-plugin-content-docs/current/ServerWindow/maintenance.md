@@ -83,7 +83,7 @@ The **View Report** button (named **Download report** if the operation was carri
 This button allows you to load a special server [log configuration file](Debugging/debugLogFiles.md#using-a-log-configuration-file) (`.json` file). Such a file can be provided by 4D technical services to monitor and study specific cases.
 
 
-### Pause logging
+### Pausar no registo
 
 This button suspends all currently logging operations started on the server. This feature can be useful to temporarily lighten the server tasks.
 
