@@ -204,7 +204,7 @@ Displays/hides invisible characters
 
 ---
 
-## Show horizontal ruler
+## Mostrar régua horizontal
 
 Displays/hides the horizontal ruler when the document view is in [Page mode](#view-mode).
 
@@ -367,7 +367,7 @@ Valores disponíveis:
 
 #### Veja também
 
-[Horizontal scroll bar](#horizontal-scroll-bar)
+[Barra de deslocação horizontal](#horizontal-scroll-bar)
 
 ---
 
