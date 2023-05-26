@@ -14,7 +14,7 @@ On a remote machine, the [debugger window](debugger.md) displays a specific serv
 This feature is particularly useful when 4D Server runs in headless mode (see [Command Line Interface](../Admin/cli.md)), or when access to the server machine is not easy.
 
 
-## Attached debugger
+## Depurador anexado
 
 Only one debugger can debug a 4D Server application at a given time. It is called the **attached debugger**. The attached debugger can be:
 
