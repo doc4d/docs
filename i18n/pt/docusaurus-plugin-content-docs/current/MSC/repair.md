@@ -22,7 +22,7 @@ By default, the original data file will be duplicated before the repair operatio
 4D creates a new blank data file at the location of the original file. 4D creates a new blank data file at the location of the original file. The blank file is filled with the recovered data.
 
 
-## Standard repair
+## Reparação standard
 
 Standard repair should be chosen when only a few records or indexes are damaged (address tables are intact). The data is compacted and repaired. This type of repair can only be performed when the data and structure file match.
 
