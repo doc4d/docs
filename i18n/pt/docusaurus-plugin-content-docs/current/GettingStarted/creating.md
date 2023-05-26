@@ -62,7 +62,7 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 
 4D offers several ways to open projects directly and bypass the Open dialog:
 
-* via menu options:
+* através de opções de menu:
   * *Menu bar* - **File** > **Open Recent Projects / {project name}**
   * OR Choose **Create a new menu bar** or **Create a new menu** from the context menu of the list or the options menu below the list. If you created a menu bar, a new bar appears in the list containing the default menus (File and Edit).
 
@@ -83,7 +83,7 @@ You can use a [`.4DLink` file](#about-4DLink-files) to launch the 4D application
 A .4DLink file of "remote project" type can be copied and used on several machines.
 > It's also possible to select a 4DLink file in the 4D and 4D Server opening dialog box (opening local project only).
 
-## About 4DLink Files
+## Sobre 4DLink Files
 
 Files with the `.4DLink` extension are XML files that contain parameters intended to automate and simplify opening local or remote 4D projects.
 
