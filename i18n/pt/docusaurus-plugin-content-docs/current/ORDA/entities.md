@@ -6,7 +6,7 @@ title: Trabalhar com dados
 In ORDA, you access data through [entities](dsMapping.md#entity) and [entity selections](dsMapping.md#entity-selection). These objects allow you to create, update, query, or sort the data of the datastore.
 
 
-## Creating an entity
+## Criar uma entidade
 
 There are two ways to create a new entity in a dataclass:
 
@@ -73,7 +73,7 @@ In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entit
  End for each
 ```
 
-And the method is:
+E o método é:
 
 ```4d
  $entity:=$1
@@ -205,7 +205,7 @@ An **alterable** entity selection has the following characteristics:
 - it accepts the addition of new entities, i.e. it is supports the [`.add()`](API/EntitySelectionClass.md#add) function.
 
 
-#### How are they defined?
+#### Como é que são definidos?
 
 The **shareable** or **alterable** nature of an entity selection is defined when the entity selection is created (it cannot be modified afterwards). You can know the nature of an entity selection using the [.isAlterable()](API/EntitySelectionClass.md#isalterable) function or the `OB Is shared` command.
 
