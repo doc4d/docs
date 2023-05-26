@@ -38,7 +38,7 @@ General appearance of the button. The button style also plays a part in the avai
 
 ---
 
-## Horizontal Margin
+## Margem horizontal
 
 This property allows setting the size (in pixels) of the horizontal margins of the button. This margin delimits the area that the button icon and title must not surpass.
 
@@ -74,7 +74,7 @@ Designates the placement of an icon in relation to the form object.
 
 #### Objectos suportados
 
-[List Box Header](listbox_overview.md#list-box-headers)
+[Cabeçalho do List Box](listbox_overview.md#list-box-headers)
 
 ---
 
@@ -102,7 +102,7 @@ This property sets the exact number of states present in the picture used as the
 
 The picture can contain from 2 to 6 states.
 
-- 2 states: false, true
+- 2 estados: false, true
 - 3 states: false, true, rollover,
 - 4 states: false, true, rollover, disabled,
 - 5 states (check box and radio button only): false, true, false rollover, true rollover, disabled
@@ -192,9 +192,9 @@ By default, when a button contains a title and a picture, the elements are joine
 
 #### Gramática JSON
 
-| Nome           | Tipo de dados | Valores possíveis     |
-| -------------- | ------------- | --------------------- |
-| imageHugsTitle | boolean       | true (default), false |
+| Nome           | Tipo de dados | Valores possíveis    |
+| -------------- | ------------- | -------------------- |
+| imageHugsTitle | boolean       | true (padrão), false |
 
 #### Objectos suportados
 
@@ -202,7 +202,7 @@ By default, when a button contains a title and a picture, the elements are joine
 
 ---
 
-## Vertical Margin
+## Margem vertical
 
 This property allows setting the size (in pixels) of the vertical margins of the button. This margin delimits the area that the button icon and title must not surpass.
 
