@@ -19,7 +19,7 @@ Enables the "barber shop" variant for the thermometer.
 
 ---
 
-## Display graduation
+## Exibir graduação
 
 Displays/Hides the graduations next to the labels.
 
