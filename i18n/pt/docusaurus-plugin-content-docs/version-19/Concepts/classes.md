@@ -58,7 +58,7 @@ Para eliminar uma classe existente, pode:
 - no seu disco, remover o arquivo de classe .4dm da pasta "Classes",
 - no Explorador 4D, selecionar a classe e clicar em ![](../assets/en/Users/MinussNew.png) ou escolher **Mover para Lixo** a partir do menu contextual.
 
-### Using 4D interface
+### Utilização da interface 4D
 
 Os arquivos de classe são automaticamente armazenados no local apropriado quando criados através da interface 4D, quer através do menu **File** , quer através do Explorer.
 
