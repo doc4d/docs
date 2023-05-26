@@ -136,7 +136,7 @@ New documentation files are created with the following default contents:
 | ` ```4d Type here your example``` `     | Used to format 4D code examples (uses highlight.js library)                                                                                          |
 
 
-### Supported Markdown
+### Markdown suportado
 - The title tag is supported:
 
 ```md
