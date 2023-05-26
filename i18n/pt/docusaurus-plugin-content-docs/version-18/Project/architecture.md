@@ -58,7 +58,7 @@ Project development file, used to designate and launch the project. This file ca
 | tips.json               | Dicas definidas                                                                                                                                                                                                                                                                                                                                                                             | JSON    |
 | lists.json              | Listas definidas                                                                                                                                                                                                                                                                                                                                                                            | JSON    |
 | filters.json            | Filtros definidos                                                                                                                                                                                                                                                                                                                                                                           | JSON    |
-| styleSheets.css         | CSS style sheets                                                                                                                                                                                                                                                                                                                                                                            | CSS     |
+| styleSheets.css         | Folhas de estilo CSS                                                                                                                                                                                                                                                                                                                                                                        | CSS     |
 | styleSheets_mac.css     | Mac css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                       | CSS     |
 | styleSheets_windows.css | Windows css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                   | CSS     |
 
@@ -89,7 +89,7 @@ Project development file, used to designate and launch the project. This file ca
 | *formName*/Images/*pictureName*           | Project form static picture                 | picture |
 | *formName*/ObjectMethods/*objectName*.4dm | Métodos objecto. One file per object method | text    |
 
-#### TableForms folder
+#### Pasta TableForms
 
 | Conteúdos                                            | Descrição                                              | Formato |
 | ---------------------------------------------------- | ------------------------------------------------------ | ------- |
@@ -198,7 +198,7 @@ Esta pasta contém arquivos que memorizam as configurações do usuário, por ex
 | recentTables.json          | Ordered list of tables                                 | JSON    |
 | preferences.4DPreferences  | Rota de dados atual e posições da janela principal     | XML     |
 
-## Components folder
+## Pasta Components
 
 This folder contains the components to be available in the project database only. It must be stored at the same level as the Project folder.
 
