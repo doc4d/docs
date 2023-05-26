@@ -61,8 +61,8 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | settings.4DSettings     | *Structure* database settings. They are not taken into account if *[user settings](#settings-folder-1)* or *[user settings for data](#settings-folder)* are defined. **Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to use *user settings* or *user settings for data* to define custom settings. | XML     |
 | tips.json               | Dicas definidas                                                                                                                                                                                                                                                                                                                                                                             | JSON    |
 | lists.json              | Listas definidas                                                                                                                                                                                                                                                                                                                                                                            | JSON    |
-| filters.json            | Defined filters                                                                                                                                                                                                                                                                                                                                                                             | JSON    |
-| styleSheets.css         | CSS style sheets                                                                                                                                                                                                                                                                                                                                                                            | CSS     |
+| filters.json            | Filtros definidos                                                                                                                                                                                                                                                                                                                                                                           | JSON    |
+| styleSheets.css         | Folhas de estilo CSS                                                                                                                                                                                                                                                                                                                                                                        | CSS     |
 | styleSheets_mac.css     | Mac css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                       | CSS     |
 | styleSheets_windows.css | Windows css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                   | CSS     |
 
@@ -88,12 +88,12 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 
 #### `Formulários`
 
-| Conteúdos                                 | Descrição                                  | Formato |
-| ----------------------------------------- | ------------------------------------------ | ------- |
-| *formName*/form.4DForm                    | Project form description                   | json    |
-| *formName*/method.4dm                     | Método formulário projecto                 | text    |
-| *formName*/Images/*pictureName*           | Project form static picture                | picture |
-| *formName*/ObjectMethods/*objectName*.4dm | Object methods. One file per object method | text    |
+| Conteúdos                                 | Descrição                                   | Formato |
+| ----------------------------------------- | ------------------------------------------- | ------- |
+| *formName*/form.4DForm                    | Project form description                    | json    |
+| *formName*/method.4dm                     | Método formulário projecto                  | text    |
+| *formName*/Images/*pictureName*           | Project form static picture                 | picture |
+| *formName*/ObjectMethods/*objectName*.4dm | Métodos objecto. One file per object method | text    |
 
 #### `TableForms`
 
