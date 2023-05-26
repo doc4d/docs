@@ -529,7 +529,7 @@ This mechanism addresses the case where the primary targeted server is temporary
 
 You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](https://doc.4d.com/4Dv17R6/4D/17-R6/ServerSelectionAllowed.300-4465714.en.html) XML key on the machine where the application was built:
 
-* **Display of an error message with no access possible to the server selection dialog box**. Default operation. The application can only quit.  
+* **Display of an error message with no access possible to the server selection dialog box**. Operação por defeito. The application can only quit.  
   `ServerSelectionAllowed`: **False** or key omitted ![](../assets/en/Project/connect1.png)
 
 * **Display of an error message with access to the server selection dialog box possible**. The user can access the server selection window by clicking on the **Select...** button. `ServerSelectionAllowed`: **True** ![](../assets/en/Project/connect2.png) ![](../assets/en/Project/connect3.png)
