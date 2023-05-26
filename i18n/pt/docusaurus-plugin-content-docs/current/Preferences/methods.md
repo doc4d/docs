@@ -16,7 +16,7 @@ This page allows selecting, creating, or configuring Code Editor themes. A theme
 In this list, you select the theme to apply to the code editor. All available themes are displayed, including custom themes (if any). 4D provides two themes by default:
 
 *   **Tema Light predefinido**
-*   **Default Dark Theme**
+*   **Tema escuro predefinido**
 
 > Default themes cannot be modified or deleted.
 
@@ -26,7 +26,7 @@ A **myTheme** theme is automatically added if you already customized Code Editor
 
 You can create themes that you can fully customize. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
 
-### Custom theme files
+### Ficheiros de temas personalizados
 
 Each custom theme is stored in a single JSON file named *themeName.json* The JSON files for custom themes are stored in the `4D Editor Themes` folder located at the same level as the 4D [preferences file](overview.md#storage).
 
@@ -43,7 +43,7 @@ Defining a theme means:
 
 Combining different colors and styles is particularly useful for code maintenance purposes.
 
-### Font and Font size
+### Tipo e tamanho de letra
 
 The **font** and **font size** menus allows you to select the font name and size used in the Code Editor entry area for all categories.
 
