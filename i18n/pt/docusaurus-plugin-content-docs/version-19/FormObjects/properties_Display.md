@@ -163,7 +163,7 @@ Notice that the presence of the second semicolon instructs 4D to use nothing to 
 
 In this case, the display for zero would be $0.00.
 
-### Scientific notation
+### Notação científica
 
 If you want to display numbers in scientific notation, use the **ampersand** (&) followed by a number to specify the number of digits you want to display. For example, the format:
 
@@ -175,7 +175,7 @@ would display 759.62 as:
 
 The scientific notation format is the only format that will automatically round the displayed number. Note in the example above that the number is rounded up to 7.60e+2 instead of truncating to 7.59e+2.
 
-### Hexadecimal formats
+### Formatos hexadecimais
 
 You can display a number in hexadecimal using the following display formats:
 
