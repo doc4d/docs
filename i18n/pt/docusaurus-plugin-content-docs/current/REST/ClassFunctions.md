@@ -60,7 +60,7 @@ As regras abaixo são válidas:
 See [this example](#request-receiving-an-entity-as-parameter) and [this example](#request-receiving-an-entity-selection-as-parameter).
 
 
-### Scalar value parameter
+### Parâmetro de valor escalar
 
 Parameter(s) must simply be enclosed in a collection defined in the body. For example, with a  dataclass function `getCities()` receiving text parameters: `/rest/City/getCities`
 
