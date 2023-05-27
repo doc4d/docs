@@ -295,7 +295,7 @@ The following special characters allow the automatic addition or formatting of i
 | B          | Negrito                          | printInfo.headerLeft:="&BThis is text."                                | **Isto é texto.**                                    |
 | I          | Itálico                          | printInfo.headerLeft:="&IThis is text."                                | *Isto é texto.*                                      |
 | "          | Prefixo do tipo de letra         | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."          | ![](../assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
-| K          | Prefixo da cor do texto          | printInfo.headerLeft:="&KFF0000This is text."                          | This is text (in red).                               |
+| K          | Prefixo da cor do texto          | printInfo.headerLeft:="&KFF0000This is text."                          | Este é o texto (a vermelho).                         |
 | F          | Workbook name                    | printInfo.headerLeft:="&F"                                             | 2019 Monthly Revenue Forecasts                       |
 | A          | Nome da folha de cálculo         | printInfo.headerLeft:="&A"                                             | June 2019 revenue forecast                           |
 
@@ -328,7 +328,7 @@ Os atributos de página são utilizados para especificar as definições gerais 
 
 | Propriedade     | Tipo          | Descrição                                                                                                                                                                                             |
 | --------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| blackAndWhite   | boolean       | Impressão apenas em preto e branco. <p>Valor padrão = false</p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.</p>                                                                                                                 |
+| blackAndWhite   | boolean       | Impressão apenas em preto e branco. <p>Valor padrão = false</p><p>**Note**: PDFs are not affected by this attribute. As cores nos PDFs mantêm-se.</p>                                                                                                                 |
 | centering       | inteiro longo | How the contents are centered on the printed page. Valores disponíveis: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (padrão), `vk print centering vertical` |
 | firstPageNumber | inteiro longo | The page number to print on the first page. Default value = 1                                                                                                                                         |
 | pageOrder       | inteiro longo | The order pages are printed. Valores disponíveis: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                   |
@@ -485,7 +485,7 @@ Contém as seguintes propriedades:
 | ------------ | ------------- | -------------------------------------------- |
 | version      | Longint       | Internal component version                   |
 | dateCreation | Timestamp     | Data de criação                              |
-| dateModified | Timestamp     | Last modification date                       |
+| dateModified | Timestamp     | Data da última modificação                   |
 | meta         | Objeto        | Free contents, reserved for the 4D developer |
 | spreadJS     | Objeto        | Reserved for the 4D View Pro component       |
 
