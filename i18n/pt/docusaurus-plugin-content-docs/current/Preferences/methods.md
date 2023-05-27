@@ -22,7 +22,7 @@ In this list, you select the theme to apply to the code editor. All available th
 
 A **myTheme** theme is automatically added if you already customized Code Editor styles in previous 4D releases.
 
-### Creating custom themes
+### Criar temas personalizados
 
 You can create themes that you can fully customize. To create a theme, select an existing theme and click on the **+** at the bottom of the theme list. You can also add customized themes by copying theme files in the `4D Editor Themes` folder (see below).
 
