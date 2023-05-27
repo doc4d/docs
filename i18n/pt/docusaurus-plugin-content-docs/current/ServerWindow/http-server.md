@@ -17,7 +17,7 @@ The upper part of the page provides information about the current status of the 
 - **Total HTTP hits**: Number of (low level) HTTP hits received by the HTTP server since it was started.
 
 
-## Start/Stop HTTP Server
+## Iniciar/parar o servidor HTTP
 
 This button toggles and can be used to control the activation of the 4D Server HTTP server.
 
