@@ -22,7 +22,7 @@ When this property is enabled, the height of every row is automatically calculat
   * the [Wordwrap](properties_Display.md#wordwrap) option: if disabled, the height is based on the number of paragraphs (lines are truncated); if enabled, the height is based on number of lines (not truncated).
 
 * The row height calculation ignores:
-  * hidden column contents
+  * conteúdo da coluna oculta
   * [Row Height](#row-height) and [Row Height Array](#row-height-array) properties (if any) set either in the Property list or by programming.
 > > > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
 
