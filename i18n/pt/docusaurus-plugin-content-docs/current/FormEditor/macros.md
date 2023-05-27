@@ -111,7 +111,7 @@ Here is the description of the JSON file contents:
 
 | Atributo |                     |                          | Tipo   | Descrição                                              |
 | -------- | ------------------- | ------------------------ | ------ | ------------------------------------------------------ |
-| macros   |                     |                          | object | list of defined macros                                 |
+| macros   |                     |                          | object | lista de macros definidas                              |
 |          | `<macroName>` |                          | object | definição macro                                        |
 |          |                     | "class"                  | string | nome da classe macro                                   |
 |          |                     | `<customProperty>` | any    | (optional) custom value to retrieve in the constructor |
