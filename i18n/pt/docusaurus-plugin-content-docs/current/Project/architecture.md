@@ -213,7 +213,7 @@ Esta pasta contém arquivos que memorizam as configurações do usuário, por ex
 | formWindowPositions.json   | Current user window positions for forms                     | JSON    |
 | workspace.json             | List of opened windows; on macOS, order of tab windows      | JSON    |
 | debuggerCatches.json       | Caught calls to commands                                    | JSON    |
-| recentTables.json          | Ordered list of tables                                      | JSON    |
+| recentTables.json          | Lista ordenada de tabelas                                   | JSON    |
 | preferences.4DPreferences  | Rota de dados atual e posições da janela principal          | XML     |
 | CompilerIntermediateFiles  | Intermediate files resulting from Apple Silicon compilation | Folder  |
 
