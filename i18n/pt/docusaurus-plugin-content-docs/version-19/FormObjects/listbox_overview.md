@@ -542,7 +542,7 @@ If (Form event code=On Header Click)
 End if
 ```
 
-### Column header variable
+### Variável de cabeçalho de coluna
 
 P valor da variável column header variable[](properties_Object.md#variable-or-expression) permite gerenciar informação adicional: a ordenação atual da coluna (read) e a exibição da flecha de ordenação.
 
