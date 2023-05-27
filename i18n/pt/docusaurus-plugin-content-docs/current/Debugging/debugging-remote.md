@@ -34,7 +34,7 @@ Note que:
 * If no debugger is attached, the running code is not stopped by debugging commands
 
 
-## Attaching the debugger
+## Ligar o depurador
 
 By default when you start an interpreted application:
 
