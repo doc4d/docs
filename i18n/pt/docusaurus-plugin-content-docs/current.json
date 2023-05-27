@@ -148,7 +148,7 @@
     "description": "The label for category Form Objects in sidebar docs"
   },
   "sidebar.docs.category.Form Object Properties": {
-    "message": "Form Object Properties",
+    "message": "Propriedades dos objectos formulário",
     "description": "The label for category Form Object Properties in sidebar docs"
   },
   "sidebar.docs.category.Form Events": {
@@ -196,7 +196,7 @@
     "description": "The label for link 4D Widgets in sidebar docs, linking to https://doc.4d.com/4Dv20/4D/20/4D-Widgets.100-6343453.en.html"
   },
   "sidebar.docs.link.4D Write Pro Interface": {
-    "message": "4D Write Pro Interface",
+    "message": "Interface 4D Write Pro",
     "description": "The label for link 4D Write Pro Interface in sidebar docs, linking to https://github.com/4d/4D-WritePro-Interface"
   },
   "sidebar.docs.link.Go Mobile": {
