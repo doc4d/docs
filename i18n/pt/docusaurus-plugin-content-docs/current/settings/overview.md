@@ -34,7 +34,7 @@ In both cases, the settings can be opened in 'Read-only', but cannot be used unt
 
 
 
-## Customizing parameters
+## Personalização de parâmetros
 
 In the Settings dialog boxes, parameters whose values have been modified appear **in bold**:
 
@@ -47,7 +47,7 @@ A parameter still appears in bold even when its value is replaced manually with 
 Most of the settings are applied immediately. However, a few of them (such as the Startup environment setting) only take effect when the database is restarted. In this case, a dialog box appears to inform you that the change will take effect at the next startup.
 
 
-## Resetting the settings
+## Repor os parâmetros
 
 To reset the parameters to their default values and remove the bold style indicating that they have been customized, click **Reset to factory settings**.
 
