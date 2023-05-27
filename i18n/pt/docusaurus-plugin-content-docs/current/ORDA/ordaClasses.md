@@ -647,7 +647,7 @@ A [computed attribute](#computed-attributes-1) can be used in an alias path, but
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
 
-### Using alias attributes
+### Utilizar atributos alias
 
 Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in class functions such as:
 
