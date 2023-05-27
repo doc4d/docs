@@ -15,7 +15,7 @@ Informação gravada precisa ser analisada para detectar e corrigir os problemas
 * [4DIMAPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 * [4DPOP3Log.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 * [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
-* [ORDA requests log file](#orda-requests)
+* [Ficheiro de registo dos pedidos ORDA](#orda-requests)
 
 > Nota: quando um arquivo de histórico for gerado seja em 4D Server ou em cliente remoto, a palavra "Server" é adicionada ao nome do arquivo do lado servidor, por exemplo "4DRequestsLogServer.txt"
 
@@ -421,7 +421,7 @@ Here is an example of a server-side ORDA log record:
 
 You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
-### How to enable the file
+### Como activar o ficheiro
 
 There are several ways to enable the log configuration file, depending on your configuration:
 
