@@ -26,7 +26,7 @@ The flexibility of developing a 4D project is especially demonstrated when multi
 - Rollbacks
 
 
-## Working with projects
+## Trabalhar com projetos
 
 You create a 4D database project by:
 
