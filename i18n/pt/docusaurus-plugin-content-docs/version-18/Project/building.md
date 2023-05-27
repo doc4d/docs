@@ -293,7 +293,7 @@ If you checked the “Allow automatic update of client application” option, an
 
 #### Personalização da pasta 4D Volume Desktop
 
-When building a double-clickable application, 4D copies the contents of the 4D Volume Desktop folder into the Final Application subfolder of the destination folder. You are then able to customize the contents of the original 4D Volume Desktop folder according to your needs. You can, for instance:
+When building a double-clickable application, 4D copies the contents of the 4D Volume Desktop folder into the Final Application subfolder of the destination folder. You are then able to customize the contents of the original 4D Volume Desktop folder according to your needs. Pode, por exemplo:
 
 * Install a 4D Volume Desktop version corresponding to a specific language;
 * Add a custom PlugIns folder;
