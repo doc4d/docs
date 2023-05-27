@@ -658,7 +658,7 @@ Several existing 4D transformation tags can be expressed using a $-based syntax:
 
 #### $4dtag (expression)
 
-can be used instead of
+pode ser utilizado em vez de
 
 #### `<!--#4dtag expression-->`
 
