@@ -30,7 +30,7 @@ Expand the **Details** area to display the last error and its number.
 
 Occasionally, there may not be enough memory to create a BLOB. Or, when you access a document on disk, the document may not exist or may already be opened by another application. These environmental errors do not directly occur because of your code or the way you wrote it. Most of the time, these errors are easy to treat with an [error catching method](Concepts/error-handling.md) installed using the `ON ERR CALL` command.
 
-### Design or Logic Errors
+### Erros de concepção ou de lógica
 
 These are generally the most difficult type of error to find. Except for typing errors, all the error types listed above are to a certain extent covered by the expression "Design or logic error". Utilize o depurador [](debugger.md) para os detectar. Por exemplo:
 
