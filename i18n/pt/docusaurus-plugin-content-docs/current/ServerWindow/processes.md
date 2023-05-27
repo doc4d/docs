@@ -80,7 +80,7 @@ Each process is identified by an icon as well as a type. The color and form of t
 > Each main 4D client process and its "twinned" 4D client base process are grouped together when the **Display processes by groups** option is checked.
 
 
-## Administration Buttons
+## Botões de administração
 
 The page also has five control buttons that act on the selected process(es). Note that only user processes can be acted upon.
 
