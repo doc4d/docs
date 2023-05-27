@@ -390,7 +390,7 @@ Este limite é utilizado para evitar a saturação do servidor web devido a pedi
 
 Possible values: 500 000 to 2 147 483 648.
 
-## Maximum Session Number
+## Número máximo de sessões
 
 | Pode ser definido com | Nome                                               | Comentários |
 | --------------------- | -------------------------------------------------- | ----------- |
@@ -590,7 +590,7 @@ In return, you must make sure in this case to systematically initialize the vari
 
 When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
 
-#### Keep-Alive Connections
+#### Ligações Keep-Alive
 
 The 4D Web Server can use keep-alive connections. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
 
