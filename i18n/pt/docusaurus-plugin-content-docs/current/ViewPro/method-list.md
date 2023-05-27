@@ -151,7 +151,7 @@ Resultados:
 | Parâmetro  | Tipo    |    | Descrição                                |
 | ---------- | ------- | -- | ---------------------------------------- |
 | vpAreaName | Text    | -> | 4D View Pro area form object name        |
-| sheet      | Integer | -> | Index of the new sheet                   |
+| sheet      | Integer | -> | Índice da nova folha                     |
 | name       | Text    | -> | Nome da folha|<!-- END REF -->
 
 |
@@ -639,7 +639,7 @@ Document contents are converted with respect to their viewing attributes, includ
 * Imagens
 * Altura da linha
 * Largura da coluna
-* Hidden columns / rows.
+* Colunas/linhas ocultas.
 > > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### Resultado
@@ -763,7 +763,7 @@ In *rangeObj*, pass the cell range where the table will be created.
 
 In *tableName*, pass a name for the table. The name must:
 
-* be unique in the sheet
+* ser único na folha
 * include at least 5 characters
 * not include spaces or start with a number
 
@@ -957,7 +957,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | includeFormatInfo          | boolean    | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                 |
 | includeBindingSource       | Parâmetros | 4DVP and Microsoft Excel only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). Caso contrário, false. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                   |
 | sheet                      | number     | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| pdfOptions                 | object     | PDF only (optional) - Options for pdf export <p><table><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>autor</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| pdfOptions                 | object     | PDF only (optional) - Options for pdf export <p><table><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>título do documento.</td></tr><tr><td>autor</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | csvOptions                 | object     | CSV only (optional) - Options for csv export <p><table><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Delimitador de linha. Padrão: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Delimitador de coluna. O padrão: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `\<customProperty>` | any        | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
@@ -1596,7 +1596,7 @@ When the third sheet is selected:
 
 ![third-sheet](../assets/en/ViewPro/vp-sheet-3-select.png)
 
-The command returns 2:
+O comando devolve 2:
 
 ```4d
 $index:=VP Get current sheet("ViewProArea")
@@ -1821,7 +1821,7 @@ You want to retrieve the formulas in the Sum and Average columns from this docum
 
 ![](../assets/en/ViewPro/cmd_vpGetFormulas.PNG)
 
-You can use this code:
+Pode utilizar este código:
 
 ```4d
 $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
@@ -2530,7 +2530,7 @@ The command returns an object describing the current attributes of the *column*:
 | dataField           | text    | Table column's property name in the data context. Not returned if the table is displayed automatically |
 | name                | text    | Nome da coluna da tabela.                                                                              |
 | footerText          | text    | Valor do rodapé da coluna.                                                                             |
-| footerFormula       | text    | Column footer formula.                                                                                 |
+| footerFormula       | text    | Fórmula do rodapé da coluna.                                                                           |
 | filterButtonVisible | boolean | True if the table column's filter button is displayed, False otherwise.                                |
 
 If *tableName* is not found or if *column* index is higher than the number of columns, the command returns **null**.
@@ -3006,7 +3006,7 @@ The optional *paramObj* parameter allows you to define properties for the import
 | ---------- | --------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | formula    |                 | object | A callback method name to be launched when the import has completed. The method must use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula). |
 | senha      |                 | text   | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                      |
-| csvOptions |                 | object | options for csv import                                                                                                                                                                                                                                   |
+| csvOptions |                 | object | opções para importação csv                                                                                                                                                                                                                               |
 |            | range           | object | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
 |            | rowDelimiter    | text   | Delimitador de linha. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                   |
 |            | columnDelimiter | text   | Delimitador de coluna. O padrão: ","                                                                                                                                                                                                                     |
@@ -5795,7 +5795,7 @@ In the *attributes* parameter, pass an object that contains the properties to se
 | name                | text    | Nome da coluna da tabela. Must be unique in the table. If this name already used by another column, it is not applied and a default name is automaticaly used.                |
 | formula             | text    | Sets the formula for each column cell. See [Structured Reference Formulas in the SpreadJS documentation](https://www.grapecity.com/spreadjs/docs/features/tablegen/structref) |
 | footerText          | text    | Valor do rodapé da coluna.                                                                                                                                                    |
-| footerFormula       | text    | Column footer formula.                                                                                                                                                        |
+| footerFormula       | text    | Fórmula do rodapé da coluna.                                                                                                                                                  |
 | filterButtonVisible | boolean | Sets whether the table column's filter button is displayed (default is `True` when the table is created).                                                                     |
 
 In *sheet*, pass the index of the target sheet. If no index is specified or if you pass -1, the command applies to the current sheet.
