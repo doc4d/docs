@@ -188,7 +188,7 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 
 ---
 
-## Show hidden characters
+## Mostrar caracteres ocultos
 
 Displays/hides invisible characters
 
