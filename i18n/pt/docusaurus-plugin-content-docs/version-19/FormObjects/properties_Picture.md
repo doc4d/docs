@@ -30,7 +30,7 @@ As seguintes localizações podem ser utilizadas para imagens estáticas:
 
 ### Escalado para caber
 
-`JSON grammar: "scaled"`
+`Gramática JSON: "scaled"`
 
 The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
 
