@@ -7,7 +7,7 @@ Using the tabs on the **Web** page, you can configure various aspects of the int
 
 ## Configuração
 
-### Publishing Information
+### Informações de publicação
 
 #### Launch Web Server at Startup
 
@@ -154,7 +154,7 @@ See [Deprecated Settings](../WebServer/webServerConfig.md#deprecated-settings).
 
 Define the set of characters to be used by the 4D Web server. See [Character Set](../WebServer/webServerConfig.md#character-set).
 
-### Keep-Alive Connections
+### Ligações Keep-Alive
 
 See [Deprecated Settings](../WebServer/webServerConfig.md#keep-alive-connections).
 
