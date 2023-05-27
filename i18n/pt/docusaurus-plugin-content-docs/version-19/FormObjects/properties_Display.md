@@ -146,7 +146,7 @@ Spaces are treated as characters in number display formats.
 
 A number display format can have up to three parts allowing you to specify display formats for positive, negative, and zero values. You specify the three parts by separating them with semicolons as shown below:
 
- Positive;Negative;Zero
+ Positivo;Negativo;Zero
 
 You do not have to specify all three parts of the format. If you use just one part, 4D uses it for all numbers, placing a minus sign in front of negative numbers.
 
@@ -252,7 +252,7 @@ The truncation and scaling options do not affect the picture itself. The content
 
 ### Escalado para caber
 
-`JSON grammar: "scaled"`
+`Gramática JSON: "scaled"`
 
 The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
 
