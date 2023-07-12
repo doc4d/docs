@@ -6,18 +6,18 @@ title: プロジェクトのアーキテクチャー
 4D プロジェクトは、一つのプロジェクトルートフォルダー (パッケージフォルダー) に格納された、複数のファイルやフォルダーから構成されています。 例:
 
 - MyPackage (*プロジェクトルートフォルダー*)
-    - `Components`
-    - `Data`
+    - `コンポーネント`
+    - `データ`
         - `Logs`
-        - `Settings`
+        - `設定`
     - `Documentation`
-    - `Plugins`
+    - `プラグイン`
     - `Project`
         - `DerivedData`
         - `Sources`
         - `Trash`
     - `Resources`
-    - `Settings`
+    - `設定`
     - `userPreferences.username`
     - `WebFolder`
 
@@ -30,9 +30,9 @@ title: プロジェクトのアーキテクチャー
 
 - `<applicationName>.4DProject` ファイル
 - `Sources`
-    + `Classes`
+    + `クラス`
     + `DatabaseMethods`
-    + `Methods`
+    + `メソッド`
     + `Forms`
     + `TableForms`
     + `Triggers`
@@ -53,18 +53,18 @@ title: プロジェクトのアーキテクチャー
 
 ### `Sources`
 
-| 内容                      | 説明                                                                                                                                                                                                                                               | 形式   |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---- |
-| catalog.4DCatalog       | テーブルおよびフィールド定義                                                                                                                                                                                                                                   | XML  |
-| folders.json            | 　エクスプローラーフォルダー定義                                                                                                                                                                                                                                 | JSON |
-| menus.json              | メニュー定義                                                                                                                                                                                                                                           | JSON |
-| settings.4DSettings     | *ストラクチャー*データベース設定。 *[ユーザー設定](#settings-フォルダー-1)* または *[データファイル用のユーザー設定](#settings-フォルダー)* が定義されている場合は、そちらの設定が優先されます。 **警告**: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 運用時にカスタム設定を定義するには、*ユーザー設定* または *データファイル用のユーザー設定* を使う必要があります。 | XML  |
-| tips.json               | 定義されたヘルプTips                                                                                                                                                                                                                                     | JSON |
-| lists.json              | 定義されたリスト                                                                                                                                                                                                                                         | JSON |
-| filters.json            | 定義されたフィルター                                                                                                                                                                                                                                       | JSON |
-| styleSheets.css         | CSS スタイルシート                                                                                                                                                                                                                                      | CSS  |
-| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                             | CSS  |
-| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                         | CSS  |
+| 内容                      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | 形式   |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| catalog.4DCatalog       | テーブルおよびフィールド定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | XML  |
+| folders.json            | 　エクスプローラーフォルダー定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | JSON |
+| menus.json              | メニュー定義                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | JSON |
+| settings.4DSettings     | *ストラクチャー*データベース設定。 They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../Desktop/user-settings.md#priority-of-settings). **警告**: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 For deployment needs, it is necessary to [enable](../Desktop/user-settings.md#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings. | XML  |
+| tips.json               | 定義されたヘルプTips                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | JSON |
+| lists.json              | 定義されたリスト                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | JSON |
+| filters.json            | 定義されたフィルター                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | JSON |
+| styleSheets.css         | CSS スタイルシート                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | CSS  |
+| styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                                                                                                                                                           | CSS  |
+| styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                                                                                                                                                       | CSS  |
 
 
 #### `DatabaseMethods`
@@ -73,13 +73,13 @@ title: プロジェクトのアーキテクチャー
 | ------------------------ | -------------------------------------------------- | ---- |
 | *databaseMethodName*.4dm | プロジェクト内で定義されているデータベースメソッド (1つのデータベースメソッドにつき1ファイル)。 | text |
 
-#### `Methods`
+#### `メソッド`
 
 | 内容               | 説明                                            | 形式   |
 | ---------------- | --------------------------------------------- | ---- |
 | *methodName*.4dm | プロジェクト内で定義されているプロジェクトメソッド  (1つのメソッドにつき1ファイル)。 | text |
 
-#### `Classes`
+#### `クラス`
 
 | 内容              | 説明                                                                    | 形式   |
 | --------------- | --------------------------------------------------------------------- | ---- |
@@ -121,7 +121,7 @@ title: プロジェクトのアーキテクチャー
 
 プロジェクトから削除されたメソッドやフォームがあれば、Trash フォルダーにはそれらが格納されます。 たとえば、つぎのフォルダーが格納されている場合があります:
 
-- `Methods`
+- `メソッド`
 - `Forms`
 - `TableForms`
 
@@ -150,7 +150,7 @@ Resources フォルダーには、追加のカスタムプロジェクトリソ�
 (*) .4db バイナリデータベースから変換されたプロジェクトの場合のみ
 
 
-## `Data`
+## `データ`
 
 Data フォルダーには、データファイルのほか、データに関わるするファイルやフォルダーがすべて格納されています。
 
@@ -162,11 +162,11 @@ Data フォルダーには、データファイルのほか、データに関わ
 
 (*) .4db バイナリデータベースからプロジェクトに変換した場合、データファイルは変換による影響を受けません。 このデータファイルの名称を変更して移動させることができます。
 
-### `Settings`
+### `Settings` (user data)
 
-Settings フォルダーには、アプリケーションの管理に使用される **データファイル用のユーザー設定** ファイルが格納されます。
+This folder contains [**user settings for data**](../Desktop/user-settings.md#user-settings-for-data-file) used for application administration.
 
-> この設定は **[ユーザー設定](#settings-1)** や **[ストラクチャー設定](#sources)** より優先されます。
+> These settings take priority over [user settings](#settings-user) and [structure settings](#sources). See also [Priority of settings](../Desktop/user-settings.md#priority-of-settings).
 
 | 内容                  | 説明                                                                                                                                                                                                                      | 形式   |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
@@ -187,11 +187,11 @@ Logs フォルダーには、プロジェクトが使用するすべてのログ
 
 > データフォルダーが読み取り専用モードの場合やメンテナンスログファイルの保存には、システムのユーザー設定フォルダー (Active 4D Folder のこと、詳しくは [Get 4D folder](https://doc.4d.com/4dv19R/help/command/ja/page485.html) コマンド参照) 内にある Logs フォルダーが利用されます。
 
-## `Settings`
+## `Settings` (user)
 
-Settings フォルダーには、アプリケーションの管理に使用される **ユーザー設定** ファイルが格納されます。
+This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
 
-> この設定は **[ストラクチャー設定](#sources)** より優先されます。 ただし、**[データファイル用のユーザー設定ファイル](#settings)** が存在する場合には、そちらが優先されます。
+> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/userfile-settings.md#priority-of-settings).
 
 | 内容                  | 説明                                                                                                                                                                                                                                                              | 形式   |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
@@ -218,14 +218,14 @@ Settings フォルダーには、アプリケーションの管理に使用さ�
 | CompilerIntermediateFiles  | Apple Silicon用にコンパイルした結果生成される中間ファイル | Folder |
 
 
-## `Components`
+## `コンポーネント`
 
 アプリケーションプロジェクトが利用するコンポーネントを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
 
 > アプリケーションプロジェクトはコンポーネントとしても利用することができます:<br/> - 開発においては、ホストプロジェクトの Components フォルダーに .4dproject ファイルのエイリアスを置きます。 - 運用時においては、[コンポーネントをビルド](Desktop/building.md#コンポーネントをビルド) し、生成された .4dz ファイルを .4dbase フォルダーに格納し、それをホストアプリケーションの Components フォルダーに置きます。
 
 
-## `Plugins`
+## `プラグイン`
 
 アプリケーションプロジェクトが利用するプラグインを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
 
