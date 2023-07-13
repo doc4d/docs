@@ -186,7 +186,7 @@ You can display a number in hexadecimal using the following display formats:
 
 The `&xml` format will make a number compliant with XML standard rules. In particular, the decimal separator character will be a period "." in all cases, regardless of the system settings.
 
-### Displaying a number as a time
+### Mostrar um número como hora
 
 You can display a number as a time (with a time format) by using `&/` followed by a digit. Time is determined by calculating the number of seconds since midnight that the value represents. The digit in the format corresponds to the order in which the time format appears in the Format drop-down menu.
 
