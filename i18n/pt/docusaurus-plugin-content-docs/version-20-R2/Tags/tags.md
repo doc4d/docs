@@ -304,7 +304,7 @@ The properties of the object are processed according to their creation order. Du
 
 The `4DEVAL` tag allows you to assess a 4D variable or expression. Like the [`4DHTML`](#4dhtml) tag, `4DEVAL` does not escape HTML characters when returning text. However, unlike `4DHTML` or [`4DTEXT`](#4dtext), `4DEVAL` allows you to execute any valid 4D statement, including assignments and expressions that do not return any value.
 
-For example, you can execute:
+Por exemplo, é possível executar:
 
 ```
  $input:="<!--#4DEVAL a:=42-->" //atribuição
