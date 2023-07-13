@@ -61,7 +61,7 @@ The `Documentation` folder architecture is the following:
 
 > Renaming or deleting a documented element in your project will also rename or delete the element's associated Markdown file.
 
-## Documentation in the Explorer
+## Documentação no Explorador
 
 ### Ver a documentação
 
@@ -107,7 +107,7 @@ If a file named `\&#060;MethodName&#062;.md` exists in `\&#060;package&#062;/doc
 
  > Otherwise, the code editor displays [the block comment at the top of the method code](https://doc.4d.com/4Dv18R2/4D/18-R2/Writing-a-method.300-4824019.en.html#4618226).
 
-## Documentation file definition
+## Definição do ficheiro de documentação
 
 4D uses a basic template to create new documentation files. This template suggests specific features that allow you to [display information in the code editor](#viewing-documentation-in-the-code-editor).
 
@@ -170,7 +170,7 @@ $txt:="Hello world!"
 [1]: https://blog.4d.com
 ```
 
-- The image tags are supported:
+- As etiquetas de imagem são suportadas:
 
 ```
 ![image info](pictures/image.png)
