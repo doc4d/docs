@@ -645,7 +645,7 @@ To create an object in another view, simply select the view in the View palette 
 
 ![](../assets/en/FormEditor/addObject.png)
 
-#### Moving objects between views
+#### Mover objectos entre vistas
 
 It's also possible to move one or more objects from one view to another. In the form, select the object(s) whose view you wish to change. The view list indicates, using a symbol, the view to which the selection belongs:
 
