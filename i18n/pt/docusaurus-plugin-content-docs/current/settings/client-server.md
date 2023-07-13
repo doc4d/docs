@@ -95,7 +95,7 @@ This option lets you activate the secured mode for communications between the se
 
 #### Atualizar a pasta Resources durante uma sessão
 
-This setting can be used to globally set the updating mode for the local instance of the **Resources** folder on the connected 4D machines when the **Resources** folder of the database is modified during the session (the **Resources** folder is automatically synchronized on the remote machine each time a session is opened). Three settings are available:
+This setting can be used to globally set the updating mode for the local instance of the **Resources** folder on the connected 4D machines when the **Resources** folder of the database is modified during the session (the **Resources** folder is automatically synchronized on the remote machine each time a session is opened). Estão disponíveis três parâmetros:
 
 -   **Never**: The local **Resources** folder is not updated during the session. A notificação enviada pelo servidor é ignorada. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
 -   **Always**: The synchronization of the local **Resources** folder is automatically carried out during the session whenever notification is sent by the server.
