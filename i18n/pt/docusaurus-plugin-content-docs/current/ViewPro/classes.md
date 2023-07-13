@@ -3,7 +3,7 @@ id: classes
 title: Classes
 ---
 
-The following classes can be used in 4D View Pro.
+As seguintes classes podem ser usadas no 4D View Pro.
 
 
 ## LineBorder
@@ -182,7 +182,7 @@ A propriedade `.textDecoration` é a <!-- REF #TableStyle.textDecoration.Summary
 <!-- REF #TableStyle.borderLeft.Syntax -->
 **.borderLeft** : [cs.ViewPro.LineBorder](#lineborder)<!-- END REF -->
 
-A propriedade `.borderLeft` é a <!-- REF #TableStyle.borderLeft.Summary -->left border line of the table <!-- END REF -->.
+A propriedade `.borderLeft` é a <!-- REF #TableStyle.borderLeft.Summary -->linha de fronteira esquerda da tabela <!-- END REF -->.
 
 
 ### .borderRight
@@ -342,14 +342,14 @@ The `.highlightLastColumnStyle` property is the <!-- REF #TableThemeOptions.high
 <!-- REF #TableThemeOptions.lastFooterCellStyle.Syntax -->
 **.lastFooterCellStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-The `.lastFooterCellStyle` property is the <!-- REF #TableThemeOptions.lastFooterCellStyle.Summary -->style of the last footer cell<!-- END REF -->. "highlightLastColumn" tem de ser verdadeiro.
+The `.lastFooterCellStyle` property is the <!-- REF #TableThemeOptions.lastFooterCellStyle.Summary -->estilo da última célula do rodapé<!-- END REF -->. "highlightLastColumn" tem de ser verdadeiro.
 
 ### .lastHeaderCellStyle
 
 <!-- REF #TableThemeOptions.lastHeaderCellStyle.Syntax -->
 **.lastHeaderCellStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-The `.lastHeaderCellStyle` property is the <!-- REF #TableThemeOptions.lastHeaderCellStyle.Summary -->style of the last header cell<!-- END REF -->. "highlightLastColumn" tem de ser verdadeiro.
+The `.lastHeaderCellStyle` property is the <!-- REF #TableThemeOptions.lastHeaderCellStyle.Summary -->estilo da última célula de cabeçalho<!-- END REF -->. "highlightLastColumn" tem de ser verdadeiro.
 
 ### .name
 
