@@ -86,7 +86,7 @@ Para mais informações, consulte Entidades.
 
 An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
-An entity selection contains:
+Uma seleção de entidade contém:
 
 * um conjunto de 0 a X referências de entidades,
 * uma propriedade length (sempre),
