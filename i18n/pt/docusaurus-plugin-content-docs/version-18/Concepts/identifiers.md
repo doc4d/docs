@@ -322,10 +322,10 @@ If(Records in set("$Selection"+String($i))>0)
 
 From the scope point of view, there are two types of named selections:
 
-- Interprocess named selections
+- Seleções temporárias interprocesso
 - Process named selections.
 
-### Interprocess Named Selections
+### Seleções temporárias interprocesso
 
 A named selection is an interprocess named selection if its name is preceded by the symbols (`<>`) — a “less than” sign followed by a “greater than” sign.
 
@@ -368,7 +368,7 @@ $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
 ```
 
-## Summary of Naming Conventions
+## Resumo das convenções de escrita em 4D
 
 The following table summarizes 4D naming conventions.
 
