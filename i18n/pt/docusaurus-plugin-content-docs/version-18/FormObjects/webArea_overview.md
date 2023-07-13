@@ -171,7 +171,7 @@ Under Windows, it is not recommended to access, via a Web area, the Web server o
 
 The use of Web plugins and Java applets is not recommended in Web areas because they may lead to instability in the operation of 4D, particularly at the event management level.
 
-### Insertion of protocol (macOS)
+### Inserção de protocolo (macOS)
 
 The URLs handled by programming in Web areas under macOS must begin with the protocol. For example, you need to pass the string "http://www.mysite.com" and not just "www.mysite.com".
 
