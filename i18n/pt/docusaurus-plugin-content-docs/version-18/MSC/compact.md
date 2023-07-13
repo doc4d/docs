@@ -48,7 +48,7 @@ The **Compact records and indexes** area displays the pathname of the current da
 
 The second **[...]** button can be used to specify another location for the original files to be saved before the compacting operation. This option can be used more particularly when compacting voluminous files while using different disks.
 
-### Force updating of the records
+### Forçar a atualização dos registos
 
 When this option is checked, 4D rewrites every record for each table during the compacting operation, according to its description in the structure. If this option is not checked, 4D just reorganizes the data storage on disk. Esta opção é útil nos seguintes casos:
 
