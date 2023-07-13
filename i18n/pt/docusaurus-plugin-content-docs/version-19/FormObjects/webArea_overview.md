@@ -166,7 +166,7 @@ Por razões relacionadas com os mecanismos de redesenho de janelas, a inserção
 
 Em Windows, não é recomendado acessar, através de uma área web, o servidor web da aplicação 4D que contenha a área, já que esta configuração poderia provocar um conflito que paralise a aplicação. Com certeza um 4D remoto pode acessar ao servidor web de 4D Server, mas não ao seu próprio servidor web.
 
-### Insertion of protocol (macOS)
+### Inserção de protocolo (macOS)
 
 As URLs manejadas por programação em áreas web em macOS devem começar com o  protocolo. For example, you need to pass the string "http://www.mysite.com" and not just "www.mysite.com".
 
