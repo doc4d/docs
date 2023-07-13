@@ -179,10 +179,10 @@ $value:=($size>1000)? a:b // Aquí 'a:b' se considera un operador ternario.
 - Nuevos atributos de dataclass ORDA: [`exposed`](../API/DataClassAttributeClass.md#exposed) y [`readOnly`](../API/DataClassAttributeClass.md#readonly).
 - [Los archivos ZIP](../API/ZipArchiveClass.md#zip-create-archive) ahora soportan los algoritmos de compresión *LZMA* y *xz*.
 - Una [nueva opción de build](../Desktop/building.md#allow-connection-of-silicon-mac-clients) facilita la inclusión de los clientes Silicon Mac en las aplicaciones servidor en Windows.
-- Extended [support of dark mode](../Preferences/general.md#appearance-macos-only) on macOS.
-- Support of **OAuth2 token object** in [`IMAP New transporter`](../API/IMAPTransporterClass.md#imap-new-transporter), [`POP3 New transporter`](../API/POP3TransporterClass.md#pop3-new-transporter), and [`SMTP New transporter`](../API/SMTPTransporterClass.md#smtp-new-transporter).
-- Users can now load a [log configuration file](../Debugging/debugLogFiles.md#using-a-log-configuration-file) using a button in the [server administration window](../ServerWindow/maintenance.md#load-logs-configuration-file).
-- Handling [optional parameters](../Concepts/parameters.md#optional-parameters) is more flexible in the 4D language when accessing parameters declared but not passed. Por ejemplo, el siguiente código ya no provoca un error:
+- [soporte del modo oscuro](../Preferences/general.md#appearance-macos-only) en macOS.
+- Soporte de **OAuth2 token object** en [`IMAP New transporter`](../API/IMAPTransporterClass.md#imap-new-transporter), [`POP3 New transporter`](../API/POP3TransporterClass.md#pop3-new-transporter) y [`SMTP New transporter`](../API/SMTPTransporterClass.md#smtp-new-transporter).
+- Los usuarios pueden ahora cargar un [archivo de configuración de registro](../Debugging/debugLogFiles.md#using-a-log-configuration-file) utilizando un botón en la [ventana de administración del servidor](../ServerWindow/maintenance.md#load-logs-configuration-file).
+- La gestión de los [parámetros opcionales](../Concepts/parameters.md#optional-parameters) es más flexible en el lenguaje 4D cuando se accede a parámetros declarados pero no pasados. Por ejemplo, el siguiente código ya no provoca un error:
 
 ```4d
 // Función "concate" de myClass
@@ -195,7 +195,7 @@ ALERT($param1+" "+$param2)
  $class.concate() // Displays " "
 ```
 Para obtener información detallada, consulte [esta entrada del blog](https://blog.4d.com/stop-press-accessing-parameters-not-being-passed-is-possible). Para beneficiarse de esta simplificación general, es necesario recompilar tanto los métodos que llaman como los que son llamados; por lo tanto, los componentes deben recompilarse.
-- Debugging web server sessions [is easier on 4D Server](../WebServer/sessions.md#preemptive-mode).
+- La depuración de las sesiones de servidor web [es más fácil en 4D Server](../WebServer/sessions.md#preemptive-mode).
 - El nuevo componente [4D NetKit](https://github.com/4d/4D-NetKit) permite conectar con APIs de terceros como Microsoft Graph.
 - 4D v19 R3 utiliza un algoritmo hash más fuerte para las contraseñas de usuario 4D: Bcrypt. Este nuevo algoritmo se utiliza automáticamente cuando se cambia una contraseña utilizando la Caja de herramientas, el comando `CHANGE PASSWORD` o el comando `Set user properties`. Una vez modificada la contraseña, la apertura de la base de datos con una versión anterior a 4D v19 R3 provocará una denegación de autenticación para esta cuenta. Si utiliza contraseñas 4D, es muy recomendable hacer una copia de seguridad del archivo .4db (bases de datos binarias) o del archivo directory.json (proyectos) antes de actualizar a 4D v19 R3 o posterior.
 - Para mayor precisión, la constante `4D digest` ha pasado a denominarse `4D REST digest`.
@@ -217,8 +217,8 @@ Para obtener información detallada, consulte [esta entrada del blog](https://bl
 ## 4D v19 R2
 
 - Un [archivo .gitignore por defecto](../Preferences/general#create-gitignore-file) puede ser creado con nuevos proyectos
-- New [Blob class API](../API/BlobClass.md) to handle new [`4D.Blob` objects](Concepts/dt_blob.md#blob-types)
-- `no-bom` support and new default end-of-line characters in [`.setText()`](../API/FileClass.md#settext)
+- Nuevo [API Blob class](../API/BlobClass.md) para generar nuevos objetos [`4D.Blob`](Concepts/dt_blob.md#blob-types)
+- Soporte de `no-bom` y nuevos caracteres de fin de línea por defecto en [`.setText()`](../API/FileClass.md#settext)
 
 
 ## Versiones anteriores
@@ -227,26 +227,26 @@ Para obtener información detallada, consulte [esta entrada del blog](https://bl
 
 ### 4D v19
 
-- [IMAPTransporter Class](../API/IMAPTransporterClass.md): new `.createBox()`, `.deleteBox()`, `.renameBox()`, `.subscribe()`, and `.unsubscribe()` functions.
-- [File Class](../API/FileClass.md): new `setAppInfo()` and `getAppInfo()` functions.
+- [IMAPTransporter Class](../API/IMAPTransporterClass.md): nuevas funciones `.createBox()`, `.deleteBox()`, `.renameBox()`, `.subscribe()` y `.unsubscribe()`.
+- [File Class](../API/FileClass.md): nuevas funciones `setAppInfo()` y `getAppInfo()`.
 - Nueva etiqueta de transformación [4DEACH](../Tags/tags.md#4deach-and-4dendeach).
-- Web Server: new [SameSite session cookie](../WebServer/webServerConfig.md#session-cookie-samesite) setting.
+- Servidor web: nuevo parámetro [Cookie de sesión SameSite](../WebServer/webServerConfig.md#session-cookie-samesite).
 - Dark and light color scheme support for [forms](../FormEditor/properties_FormProperties.md#color-scheme) and [style sheets](../FormEditor/stylesheets#media-queries)
-- New default dark and light themes in [Code Editor preferences](../Preferences/methods.md#theme-list).
-- [Native compilation](../Project/compiler.md#compiler-methods-for) for Silicon processors.
+- Nuevos temas oscuros y claros por defecto en las [preferencias del editor de código](../Preferences/methods.md#theme-list).
+- [Compilación nativa](../Project/compiler.md#compiler-methods-for) para procesadores Silicon.
 - [Variable calculation](../FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
-- New, comprehensive [CLI](../Admin/cli.md) page.
+- Nueva, página [CLI](../Admin/cli.md) completa.
 
 
 
 ### 4D v18 R6
 
-- [Entity Selection Class](../API/EntitySelectionClass.md): `.average()`, `.max()` and `.min()` functions now return *undefined* if the entity selection is empty.
-- [IMAP Mail](../API/IMAPTransporterClass.md), [POP3 Mail](../API/POP3TransporterClass.md) and [SMTP Mail](../API/SMTPTransporterClass.md): `authenticationMode` property enables OAuth 2.0
-- [IMAP Mail](../API/IMAPTransporterClass.md): new `.expunge()` and `.append()` functions
-- New [WebAdmin](../Admin/webAdmin.md) web server component
-- New [DataExplorer](../Admin/dataExplorer.md) interface
-- New web [user sessions](../WebServer/sessions.md) and [their API](../API/SessionClass.md).
+- [Entity Selection Class](../API/EntitySelectionClass.md): las funciones `.average()`, `.max()` y `.min()` ahora devuelven *undefined* si la selección de entidades está vacía.
+- [IMAP Mail](../API/IMAPTransporterClass.md), [POP3 Mail](../API/POP3TransporterClass.md) y [SMTP Mail](../API/SMTPTransporterClass.md): la propiedad `authenticationMode` activa a OAuth 2.0
+- [IMAP Mail](../API/IMAPTransporterClass.md): nuevas funciones `.expunge()` y `.append()`
+- Nuevo componente [WebAdmin](../Admin/webAdmin.md) del servidor web
+- Nueva interfaz [DataExplorer](../Admin/dataExplorer.md)
+- Nuevas [sesiones de usuario](../WebServer/sessions.md) web y [su API](../API/SessionClass.md).
 
 
 </details>
