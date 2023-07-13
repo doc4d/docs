@@ -7,13 +7,13 @@ title: ユーザー設定
 
 *   **標準** モード：すべての [設定](../settings/overview.md) は、[プロジェクトレベルの *settings.4DSettings*](../Project/architecture.md#sources) ファイルに保存され、すべてのケースに適用されます。 これはデフォルトのモードで、開発段階 (すべてのアプリケーション) に適しています。
 
-*  **User settings** mode: part of the custom settings are stored in a *settings.4DSettings* file [in the Settings folder](../Project/architecture.md#settings-user) (for all data files) or [in the Data folder](../Project/architecture.md#settings-user-data) (for this data file) and are used instead of the structure settings. このモードは、デスクトップアプリケーションの運用段階に適しています。 このモードは、設定の [セキュリティページ](../settings/security.md) にあるオプションを使用して有効にします。
+*  **ユーザー設定** モード：カスタム設定の一部は、[Settingsフォルダー](../Project/architecture.md#settings-user) (すべてのデータファイル用)、または [Dataフォルダー](../Project/architecture.md#settings-user-data) (特定のデータファイル用) に置かれた *settings.4DSettings* ファイルに保存され、ストラクチャー設定の代わりに使用されます。 このモードは、デスクトップアプリケーションの運用段階に適しています。 このモードは、設定の [セキュリティページ](../settings/security.md) にあるオプションを使用して有効にします。
 
 ユーザー設定を定義することで、4D アプリケーションを更新しても、カスタム設定を保持できるようになります。あるいは、異なる場所に展開する同じアプリケーションに対し、異なる設定を適用することが可能になります。 また、設定ファイルの内容は XML で記述されるため、プログラムによる設定の管理もできるようになります。
 
 4D は 2種類のユーザー設定を生成し使用することができます:
 
--   **User Settings**: They are used instead of structure settings for any data file opened with the application.
+-   **ユーザー設定**: これらのユーザー設定は、アプリケーションでどのデータファイルを開いたかにかかわらず、ストラクチャー設定の代わりに使用されます。
 -   **データファイル用のユーザー設定**: これらのユーザー設定は、アプリケーションで使用される各データファイルに対してそれぞれ関連づけられており、たとえばサーバーキャッシュのポートID などを設定します。
 
 このオプションを使用すると、それぞれが異なる設定を持つデータファイルを複数使用する同じデスクトップアプリケーションのコピーを複数配布したりアップデートしたりすることが容易になります。
