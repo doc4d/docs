@@ -126,7 +126,7 @@ Allows you to hide all expand/collapse icons by default when displaying code. Wh
 
 ![](../assets/en/Preferences/optionsHideIcons.png)
 
-#### Insert () and closing } ) ] "
+#### Inserir () e fechar } ) ] "
 
 Enables automatic insertion of () and closing braces while typing code. Esta opção controla duas funcionalidades automáticas:
 
