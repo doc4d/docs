@@ -104,7 +104,7 @@ This tab allows you can build a stand-alone, single-user version of your applica
 
 ![](../assets/en/Project/standaloneProj.png)
 
-### Build stand-alone Application
+### Criar uma aplicação autónoma
 
 Checking the **Build stand-alone Application** option and clicking **Build** will create a stand-alone (double-clickable) application directly from your database project.
 
