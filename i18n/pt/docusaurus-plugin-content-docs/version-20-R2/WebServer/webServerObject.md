@@ -90,7 +90,7 @@ $status:=webServer.stop()
 
 A web server object contains [various properties](API/WebServerClass.md#web-server-object) which configure the web server.
 
-These properties are defined:
+Estas propriedades são definidas:
 
 1. using the `settings` parameter of the [`.start()`](API/WebServerClass.md#start) function (except for read-only properties, see below),
 2. if not used, using the `WEB SET OPTION` command (host applications only),
