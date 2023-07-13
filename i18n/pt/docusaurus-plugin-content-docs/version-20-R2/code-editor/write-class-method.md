@@ -182,7 +182,7 @@ By adding markers in your code, you can add the following tags to the dropdown:
 Declara-os acrescentando comentários como:
 
 ```4d
-// FIXME: Fix following items
+// FIXME: Correção dos seguintes itens
 ```
 
 Declarations are not case-sensitive; writing `fixme:` has the same effect.
