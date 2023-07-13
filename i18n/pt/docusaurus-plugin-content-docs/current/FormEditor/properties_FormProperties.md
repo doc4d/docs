@@ -31,9 +31,9 @@ A CSS file defined at the form level will override default style sheet(s). Para 
 
 #### Gramática JSON
 
-| Nome | Tipo de dados      | Valores possíveis                                                                                        |
-| ---- | ------------------ | -------------------------------------------------------------------------------------------------------- |
-| css  | cadeia ou colecção | CSS file path(s) provided as:<li>uma cadeia de caracteres (um ficheiro para ambas plataformas)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" &#124; "win"} objects </li> |
+| Nome | Tipo de dados      | Valores possíveis                                                                                                              |
+| ---- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| css  | cadeia ou colecção | Caminho(s) do(s) ficheiro(s) CSS fornecido(s) como:<li>uma cadeia de caracteres (um ficheiro para ambas plataformas)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" &#124; "win"} objects </li> |
 
 ---
 
