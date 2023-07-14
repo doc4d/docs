@@ -62,7 +62,7 @@ To ensure the correct evaluation of expressions processed via tags, regardless o
 
 ### Utilizar o "." como separador decimal
 
-4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Regional settings are ignored. This feature facilitates code maintenance and compatibility between 4D languages and versions.
+4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Os parâmetros regionais são ignorados. This feature facilitates code maintenance and compatibility between 4D languages and versions.
 
 ## 4DBASE
 
