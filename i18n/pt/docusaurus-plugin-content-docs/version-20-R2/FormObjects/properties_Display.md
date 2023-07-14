@@ -411,7 +411,7 @@ List box columns with a numeric [data type](properties_Object.md#expression-type
 * 2 (or any value >0) = semi-checked box (third state). Para a introdução de dados, este estado devolve o valor 2.
 * -1 = invisible check box,
 * -2 = caixa desmarcada, não editável,
-* -3 = checked box, not enterable,
+* -3 = caixa marcada, não pode ser introduzida,
 * -4 = caixa semi-marcada, não editável
 
 In this case as well, the [Title](#title) property is also available so that the title of the check box can be entered.
