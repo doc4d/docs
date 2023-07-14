@@ -33,7 +33,7 @@ Lance uma aplicação 4D Developer.
 
 1. Select **Open a local application project** in the Welcome Wizard dialog, OR Select **Open/Local Project...** from the **File** menu or the **Open** toolbar button. The standard Open dialog appears.
 
-2. Select the project's `.4dproject` file and click **Open**. By default, the project is opened with its current data file. Other file types are suggested:
+2. Select the project's `.4dproject` file and click **Open**. By default, the project is opened with its current data file. São sugeridos outros tipos de ficheiros:
 
 - *Packed project files*: `.4dz` extension  - deployment projects
 - *Shortcut files*: `.4DLink` extension - store additional parameters needed for opening projects or applications (addresses, identifiers, etc.)
@@ -64,7 +64,7 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 
 ### Abrir um projeto com um ficheiro 4DLink
 
-You can use a [`.4DLink` file](#about-4DLink-files) to launch the 4D application and open the target 4D project. There are two ways to do this:
+You can use a [`.4DLink` file](#about-4DLink-files) to launch the 4D application and open the target 4D project. Há duas formas de o fazer:
 
 - double-click or drag and drop the `.4DLink` file onto the 4D application
 - go to **File** > **Open Recent Projects** and select a project
