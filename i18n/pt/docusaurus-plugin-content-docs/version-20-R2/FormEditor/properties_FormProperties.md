@@ -88,7 +88,7 @@ Os tipos suportados dependem da categoria do formulário:
 | Detail Form for Printing           | detailPrinter    | A printed report with one page per record, such as an invoice        | Formulários projeto - Formulários tabela |
 | Formulário lista                   | listScreen       | Um formulário para listar os registos no ecrã                        | Formularios tabla                        |
 | Formulário de lista para impressão | listPrinter      | Um relatório impresso que lista os registos                          | Formularios tabla                        |
-| Nenhum                             | *no destination* | A form with no specific feature                                      | Formulários projeto - Formulários tabela |
+| Nenhum                             | *no destination* | Um formulário sem caraterística específica                           | Formulários projeto - Formulários tabela |
 
 
 #### Gramática JSON
