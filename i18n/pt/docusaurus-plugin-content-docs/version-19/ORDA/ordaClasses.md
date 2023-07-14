@@ -118,7 +118,7 @@ Then you can get an entity selection of the "best" companies by executing:
  $best:=ds.Company.GetBestOnes()
 ```
 
-#### Example with a remote datastore
+#### Exemplo com um datastore remoto
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
