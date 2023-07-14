@@ -19,7 +19,7 @@ All parameters must be passed in **headers** of a POST method:
 | ------------------ | -------------------------------------------------------------------------------------- |
 | username-4D        | Usuário - Não obrigatório                                                              |
 | password-4D        | Palavra-passe - Não obrigatória                                                        |
-| hashed-password-4D | Hashed password - Not mandatory                                                        |
+| hashed-password-4D | Palavra-passe com hash - Não obrigatório                                               |
 | session-4D-length  | Tempo de inatividade da sessão (minutos). Não pode ser inferior a 60 - Não obrigatório |
 
 
