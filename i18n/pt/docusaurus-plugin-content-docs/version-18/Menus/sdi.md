@@ -51,7 +51,7 @@ When executed in MDI mode, a 4D application simply quits when the user closes th
 To handle this case, 4D applications executed in SDI mode include a mechanism to automatically quit (by calling the `QUIT 4D` command) when the following conditions are met:
 
 - the user cannot interact anymore with the application
-- there are no live user processes
+- não existem processos usuário ativos
 - 4D processes or worker processes are waiting for an event
 - o servidor Web não é iniciado.
 
