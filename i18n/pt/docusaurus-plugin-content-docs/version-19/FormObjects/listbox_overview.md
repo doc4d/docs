@@ -986,7 +986,7 @@ In both cases, a "value" attribute can be used to preselect a value in the widge
 
 Exemplos:
 
-* You want to display a drop-down list with only two options: "Open" or "Closed". "Closed" must be preselected:
+* You want to display a drop-down list with only two options: "Open" or "Closed". "Closed" deve ser pré-selecionada:
 
 ```4d
  ARRAY TEXT($RequiredList;0)
