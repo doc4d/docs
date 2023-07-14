@@ -195,7 +195,7 @@ Use the wildcard character @ to help define groups of methods:
 
 - To designate methods whose names begin with..., type @ at the end of the string. Por exemplo: `web@`
 - To designate methods whose names contain..., type @ in the middle of the string. Por exemplo: `web@write`
-- To designate methods whose names end with..., type @ at the beginning of the string. For example: `@write`
+- To designate methods whose names end with..., type @ at the beginning of the string. Por exemplo: `@write`
 - To designate all of the methods, just type @ in the area.
 
 **Notas:**
