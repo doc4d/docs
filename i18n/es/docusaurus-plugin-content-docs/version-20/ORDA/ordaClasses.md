@@ -700,7 +700,7 @@ Class extends Entity
 Alias students courses.student //relatedEntities 
 ```
 
-In the Student dataclass, an alias attribute returns all teachers of a student:
+En la clase Student, un atributo alias devuelve todos los profesores de un alumno:
 
 
 ```4d
