@@ -45,7 +45,7 @@ A propriedade `.formatter` <!-- REF #TableColumn.formatter.Summary -->contém o 
 <!-- REF #TableColumn.name.Syntax -->
 **.name** : Text<!-- END REF -->
 
-A propriedade `.name` <!-- REF #TableColumn.name.Summary -->contains the table column's name<!-- END REF --> (obrigatório).
+A propriedade `.name` <!-- REF #TableColumn.name.Summary -->contém o nome da coluna da tabela<!-- END REF --> (obrigatório).
 
 
 
@@ -127,7 +127,7 @@ A propriedade `tableColumns` <!-- REF #TableOptions.tableColumns.Summary -->is a
 **.theme** : [cs.ViewPro.TableThemeOptions](#tablethemeoptions)<!-- END REF -->
 
 
-The `.theme` property <!-- REF #TableTheme.theme.Summary -->define um tema de tabela. Can also be a text (name of a native SpreadJS theme)<!-- END REF -->.
+A propriedade `.theme` <!-- REF #TableTheme.theme.Summary -->define um tema de tabela. Can also be a text (name of a native SpreadJS theme)<!-- END REF -->.
 
 See the [native SpreadJS themes](https://www.grapecity.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes).
 
@@ -260,7 +260,7 @@ A propriedade `.highlightFirstColumn` <!-- REF #TableTheme.highlightFirstColumn.
 **.theme** : [cs.ViewPro.TableThemeOptions](#tablethemeoptions)<br/>**.theme** : Text<!-- END REF -->
 
 
-The `.theme` property <!-- REF #TableTheme.theme.Summary -->define um tema de tabela<!-- END REF -->. If Text: name of a [native SpreadJS theme](https://www.grapecity.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes).
+A propriedade `.theme` <!-- REF #TableTheme.theme.Summary -->define um tema de tabela<!-- END REF -->. If Text: name of a [native SpreadJS theme](https://www.grapecity.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes).
 
 
 
@@ -314,14 +314,14 @@ The `.firstRowStripStyle` property is the <!-- REF #TableThemeOptions.firstRowSt
 <!-- REF #TableThemeOptions.footerRowStyle.Syntax -->
 **.footerRowStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-A propriedade `.footerRowStyle` é o <!-- REF #TableThemeOptions.footerRowStyle.Summary -->default style of the footer area<!-- END REF -->.
+A propriedade `.footerRowStyle` é o <!-- REF #TableThemeOptions.footerRowStyle.Summary -->estilo predefinido da área de rodapé<!-- END REF -->.
 
 ### .headerRowStyle
 
 <!-- REF #TableThemeOptions.headerRowStyle.Syntax -->
 **.headerRowStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-A propriedade `.headerRowStyle` é o <!-- REF #TableThemeOptions.headerRowStyle.Summary -->default style of the header area<!-- END REF -->.
+A propriedade `.headerRowStyle` é o <!-- REF #TableThemeOptions.headerRowStyle.Summary -->estilo padrão da área do cabeçalho<!-- END REF -->.
 
 ### .highlightFirstColumnStyle
 
