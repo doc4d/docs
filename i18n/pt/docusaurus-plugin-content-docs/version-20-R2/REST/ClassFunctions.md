@@ -128,7 +128,7 @@ exposed Function getName()
     $0:="US cities and zip codes manager" 
 ```
 
-You can then run this request:
+Pode então executar este pedido:
 
 **POST** `127.0.0.1:8111/rest/$catalog/getName`
 
@@ -154,7 +154,7 @@ exposed Function getCity()
  $0:=This.query("name = :1";$nameParam).first()
 ```
 
-You can then run this request:
+Pode então executar este pedido:
 
 **POST** `127.0.0.1:8111/rest/City/getCity`
 
@@ -187,7 +187,7 @@ Le résultat est une entité:
 }
 ```
 
-### Using an entity class function
+### Utilização de uma função de classe de uma entidade
 
 The Entity class `CityEntity` provides an API:
 
@@ -198,7 +198,7 @@ exposed Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+Pode então executar este pedido:
 
 **POST** `127.0.0.1:8111/rest/City(2)/getPopulation`
 
@@ -222,7 +222,7 @@ exposed Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+Pode então executar este pedido:
 
 **POST** `127.0.0.1:8111/rest/City/getPopulation/?$filter="ID<3"`
 
@@ -279,7 +279,7 @@ exposed Function getLastSummary
  $0:=$last.firstname+" - "+$last.lastname+" is ... "+String($last.age())
 ```
 
-You can then run this request:
+Pode então executar este pedido:
 
 **POST** `127.0.0.1:8044/rest/Students/getLastSummary/$entityset/?$filter="lastname=b@"&$orderby="lastname"`
 
@@ -510,7 +510,7 @@ An entity set is first created with this request:
 
 `http://127.0.0.1:8044/rest/Students/?$filter="ID<3"&$method=entityset`
 
-Then you can run this request:
+Em seguida, pode executar este pedido:
 
 **POST** `http://127.0.0.1:8044/rest/Students/setFinalExam`
 
