@@ -10,7 +10,7 @@ When this property is enabled (`rightToLeft` value in JSON), list box columns ar
 
 When this property is disabled (`legacy` value in JSON), only the rightmost column of the list box is resized, even if its width exceeds the maximum value defined.
 
-### How column auto-resizing works
+### Como funciona o redimensionamento automático de colunas
 
 * As the list box width increases, its columns are enlarged, one by one, starting from right to left, until each reaches its [maximum width](properties_CoordinatesAndSizing.md#maximum-width). Only columns with the [Resizable](#resizable) property selected are resized.
 
