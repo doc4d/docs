@@ -223,7 +223,7 @@ Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Wind
 | **Atalho**                                                       | **Ação**                                                                                                                                   |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Selecção e navegação**                                         |                                                                                                                                            |
-| Duplo clique                                                     | Select a language element name                                                                                                             |
+| Duplo clique                                                     | Selecionar o nome de um elemento da linguagem                                                                                              |
 | [Alt]+Clique duas vezes                                          | Select a language element name contaning spaces (constant, method, etc.)                                                                   |
 | [Shift]+[seta para a direita]                                    | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left     |
 | [Shift]+[seta para a esquerda]                                   | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left      |
@@ -258,7 +258,7 @@ Under macOS, use the **Command** key instead of the **Ctrl** key mentioned (Wind
 | [**Pranchetas**](#clipboards)                                    |                                                                                                                                            |
 | [Shift]+clique ou [Alt]+clique no ícone da área de transferência | Copiar texto selecionado para uma área de transferência                                                                                    |
 | [Ctrl]+[Shift]+tecla numérica                                    | Copy selected text to the number clipboard                                                                                                 |
-| [Ctrl]+click on clipboard icon                                   | Colar o conteúdo de uma área de transferência na localização do cursor                                                                     |
+| [Ctrl]+clique no ícone da área de transferência                  | Colar o conteúdo de uma área de transferência na localização do cursor                                                                     |
 | [Ctrl]+chave numérica                                            | Paste contents of the number clipboard at cursor location                                                                                  |
 
 :::tip
@@ -393,7 +393,7 @@ If the characters typed correspond to different types of objects, the list displ
 - Comandos Plug-in
 - Palavras-chave 4D
 - Palavras-chave SQL
-- Macros (displayed between < >)
+- Macros (apresentadas entre < >)
 
 > For practical reasons, you can disable the automatic display of the list of suggestions for **constants**, **(local or interprocess) variables and object attributes** and/or **tables**. These options are found in **Preferences** > **Methods** > **Options**
 
