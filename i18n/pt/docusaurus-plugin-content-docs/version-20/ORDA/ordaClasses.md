@@ -308,7 +308,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 ```
 The *getter* function is mandatory to declare the *attributeName* computed attribute. Whenever the *attributeName* is accessed, 4D evaluates the `Function get` code and returns the *$result* value.
 
-> A computed attribute can use the value of other computed attribute(s). Recursive calls generate errors.
+> A computed attribute can use the value of other computed attribute(s). As chamadas recursivas geram erros.
 
 The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. São permitidos os seguintes tipos de resultados:
 
@@ -437,7 +437,7 @@ The *$event* parameter contains the following properties:
 | dataClassName | Text         | Nome do dataclass                                                                                                                                                                                                                                                                                                                                                  |
 | kind          | Text         | "query"                                                                                                                                                                                                                                                                                                                                                            |
 | value         | Diferente de | Valor a tratar pelo atributo calculado                                                                                                                                                                                                                                                                                                                             |
-| operator      | Text         | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores possíveis:<li>== (igual a, @ é um wildcard)</li><li>=== (igual a, @ não é wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (não é igual a, @ não é wildcard)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (maior que)</li><li>>= (maior ou igual a)</li><li>IN (incluído em)</li><li>% (contém palavra-chave)</li> |
+| operator      | Text         | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Valores possíveis:<li>== (igual a, @ é um wildcard)</li><li>=== (igual a, @ não é wildcard)</li><li>!= (não é igual a, @ é um wildcard)</li><li>!== (não é igual a, @ não é wildcard)</li><li>< (menor que)</li><li><= (less than or equal to)</li><li>> (maior que)</li><li>>= (maior ou igual a)</li><li>IN (incluído em)</li><li>% (contém palavra-chave)</li> |
 | result        | Diferente de | Valor a tratar pelo atributo calculado. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                                  |
 
 > If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
@@ -592,7 +592,7 @@ Function orderBy fullName($event : Object)-> $result : Text
     End if
 ```
 
-You can also write compact code:
+Também pode escrever código compacto:
 
 ```4d
 Function orderBy fullName($event : Object)-> $result : Text
@@ -684,7 +684,7 @@ Alias attributes based upon relations have a specific [`path`](../API/DataClassA
 
 ### Exemplos
 
-Considering the following model:
+Considerando o seguinte modelo:
 
 ![](../assets/en/ORDA/alias1.png)
 
@@ -750,7 +750,7 @@ $arch.save() //courseName and name are "Archaeology II"
 
 
 
-## Exposed vs non-exposed functions
+## Funções expostas vs não expostas
 
 For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests.
 
