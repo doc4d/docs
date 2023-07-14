@@ -190,7 +190,7 @@ A propriedade `.borderLeft` é a <!-- REF #TableStyle.borderLeft.Summary -->linh
 <!-- REF #TableStyle.borderRight.Syntax -->
 **.borderRight** : [cs.ViewPro.LineBorder](#lineborder)<!-- END REF -->
 
-A propriedade `.borderRight` é a <!-- REF #TableStyle.borderRight.Summary -->right border line of the table <!-- END REF -->.
+A propriedade `.borderRight` é a <!-- REF #TableStyle.borderRight.Summary -->linha de fronteira direita da tabela <!-- END REF -->.
 
 
 ### .borderBottom
@@ -198,7 +198,7 @@ A propriedade `.borderRight` é a <!-- REF #TableStyle.borderRight.Summary -->ri
 <!-- REF #TableStyle.borderBottom.Syntax -->
 **.borderBottom** : [cs.ViewPro.LineBorder](#lineborder)<!-- END REF -->
 
-A propriedade `.borderBottom` é o <!-- REF #TableStyle.borderBottom.Summary -->bottom border line of the table <!-- END REF -->.
+A propriedade `.borderBottom` é o <!-- REF #TableStyle.borderBottom.Summary -->linha de fronteira inferior da tabela <!-- END REF -->.
 
 
 
@@ -286,14 +286,14 @@ The `.firstColumnStripStyle` property is the <!-- REF #TableThemeOptions.firstCo
 <!-- REF #TableThemeOptions.firstFooterCellStyle.Syntax -->
 **.firstFooterCellStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-The `.firstFooterCellStyle` property is the <!-- REF #TableThemeOptions.firstFooterCellStyle.Summary -->style of the first footer cell<!-- END REF -->. "highlightFirstColumn" tem de ser true.
+The `.firstFooterCellStyle` property is the <!-- REF #TableThemeOptions.firstFooterCellStyle.Summary -->estilo da primeira célula do rodapé<!-- END REF -->. "highlightFirstColumn" tem de ser true.
 
 ### .firstHeaderCellStyle
 
 <!-- REF #TableThemeOptions.firstHeaderCellStyle.Syntax -->
 **.firstHeaderCellStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-The `.firstHeaderCellStyle` property is the <!-- REF #TableThemeOptions.firstHeaderCellStyle.Summary -->style of the first header cell<!-- END REF -->. "highlightFirstColumn" tem de ser true.
+The `.firstHeaderCellStyle` property is the <!-- REF #TableThemeOptions.firstHeaderCellStyle.Summary -->estilo da primeira célula do cabeçalho<!-- END REF -->. "highlightFirstColumn" tem de ser true.
 
 ### .firstRowStripSize
 
@@ -391,7 +391,7 @@ The `.secondRowStripStyle` property is the <!-- REF #TableThemeOptions.secondRow
 <!-- REF #TableThemeOptions.wholeTableStyle.Syntax -->
 **.wholeTableStyle** : [cs.ViewPro.TableStyle](#tablestyle)<!-- END REF -->
 
-The `.wholeTableStyle` property is the <!-- REF #TableThemeOptions.wholeTableStyle.Summary -->default style of the data area<!-- END REF -->.
+The `.wholeTableStyle` property is the <!-- REF #TableThemeOptions.wholeTableStyle.Summary -->estilo padra-o da área de dados<!-- END REF -->.
 
 
 
