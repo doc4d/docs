@@ -73,7 +73,7 @@ Specifies the location of an object's displayed text.
 
 ## Máximo
 
-Maximum value of an indicator.
+Valor máximo de um indicador.
 
 * For numeric steppers, this property represent seconds when the object is associated with a time type value and is ignored when it is associated with a date type value.
 * To enable [Barber shop thermometers](progressIndicator.md#barber-shop), this property must be omitted.
@@ -92,7 +92,7 @@ Maximum value of an indicator.
 
 ## Mínimo
 
-Minimum value of an indicator. For numeric steppers, this property represent seconds when the object is associated with a time type value and is ignored when it is associated with a date type value.
+Valor mínimo de um indicador. For numeric steppers, this property represent seconds when the object is associated with a time type value and is ignored when it is associated with a date type value.
 
 #### Gramática JSON
 
