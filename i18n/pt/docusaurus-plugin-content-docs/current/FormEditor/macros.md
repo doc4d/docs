@@ -222,7 +222,7 @@ Here are the properties returned in the *$editor* parameter:
 | $editor.editor.currentPageNumber | number     | O número da página actual                                                         |
 | $editor.editor.currentPage       | Object     | The current page, containing all the form objects and the entry order of the page |
 | $editor.editor.currentSelection  | Collection | Colecção de nomes de objectos seleccionados                                       |
-| $editor.editor.formProperties    | Object     | Properties of the current form                                                    |
+| $editor.editor.formProperties    | Object     | Propriedades do formulário atual                                                  |
 | $editor.editor.target            | string     | Name of the object under the mouse when clicked on a macro                        |
 
 Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. Todas as propriedades são opcionais:
