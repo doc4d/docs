@@ -63,7 +63,7 @@ For each of these methods and code parts, the compiler will check if the thread-
 
 Most of the web-related 4D commands and functions, database methods and URLs are thread-safe and can be used in preemptive mode.
 
-### 4D commands and database methods
+### Comandos 4D e métodos base
 
 All 4D web-related commands are thread-safe, *i.e.*:
 
