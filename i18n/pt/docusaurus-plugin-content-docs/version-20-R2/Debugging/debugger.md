@@ -340,7 +340,7 @@ Hover your pointer over any expression to display a tool tip that indicates:
 
 ![source-code-pane](../assets/en/Debugging/sourceCodePane.png)
 
-This also works with selections:
+Isto também funciona com as selecções:
 
 ![source-code-pane-tip](../assets/en/Debugging/sourcePaneTip.png)
 
