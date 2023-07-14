@@ -117,7 +117,7 @@ This database is exposed as a remote datastore on localhost (port 8111):
 
 ![alt-text](../assets/en/REST/ordastructure.png)
 
-### Using a datastore class function
+### Utilizar uma função de classe do datastore
 
 The US_Cities `DataStore` class provides an API:
 
@@ -140,7 +140,7 @@ Pode então executar este pedido:
 }
 ```
 
-### Using a dataclass class function
+### Utilização de uma função de classe de dataclass
 
 The Dataclass class `City` provides an API that returns a city entity from a name passed in parameter:
 
