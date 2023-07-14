@@ -147,7 +147,7 @@ Sets the graphic signaling of matching braces in the code. This signaling appear
 * **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
 * **Bold**: Braces displayed in bold.
 
-#### Highlighted variables and fields
+#### Destaque de variáveis e campos
 
 Allows to highlight all occurrences of the same variable or field in an open method window.
 
