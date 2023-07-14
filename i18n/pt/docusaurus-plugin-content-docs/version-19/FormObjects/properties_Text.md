@@ -153,7 +153,7 @@ Designates the font color.
 
 > This property also sets the color of object's [border](#border-line-style-dotted-line-type) (if any) when "plain" or "dotted" style is used.
 
-The color can be specified by:
+A cor pode ser especificada por:
 
 - a color name - like "red"
 - um valor HEX - como "#ff0000"
@@ -177,7 +177,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 `Selection and collection/entity selection type list boxes`
 
-Used to apply a custom font color to each row of the list box. You must use RGB color values. For more information about this, refer to the description of the [OBJECT SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-RGB-COLORS.301-4311385.en.html) command in the 4D Language Reference manual.
+Used to apply a custom font color to each row of the list box. É necessário utilizar valores de cor RGB. For more information about this, refer to the description of the [OBJECT SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-RGB-COLORS.301-4311385.en.html) command in the 4D Language Reference manual.
 
 You must enter an expression or a variable (array type variables cannot be used). The expression or variable will be evaluated for each row displayed. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html) theme.
 
@@ -436,7 +436,7 @@ O nome do array LongInt deve ser usado. Each element of this array corresponds t
 
 ---
 
-## Store with default style tags
+## Armazenar com etiquetas de estilo predefinidas
 
 Essa propriedade só está disponível para a área input [Multiestilo](#multi-style). Quando essa propriedade for ativada, a área armazena as tags de estilo com o texto, mesmo se nenhuma modificação for feita. Nesse caso, as tags correspondem ao estilo padrão. Quando essa propriedade for desativada, só as tags de estilo modificadas são armazenadas.
 
