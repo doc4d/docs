@@ -80,7 +80,7 @@ Case 1: The value of the parent form variable or expression is modified and this
 
 In our example, the time of ParisTime changes to 12:15:00, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). Case 1: The value of the parent form variable is modified and this modification must be passed on to the subform.
 
-The following code is executed:
+O seguinte código é executado:
 
 ```4d  
 // Subform form method If (Form event code=On Bound Variable Change) //bound variable or expression was modified in the parent form
@@ -111,7 +111,7 @@ Case 2: The contents of the subform are modified and this modification must be p
 
 This triggers the [On Data Change](../Events/onDataChange.md) form event inside the clock object (this event must be selected for the object), which updates the `Form.parisTime` value in the main form. Inside the subform, the button changes the value of the `Form.clockValue` expression of type Text attached to the clock object.
 
-The following code is executed:
+O seguinte código é executado:
 
 ```4d  
 // subform clock object method If (Form event code=On Data Change) //whatever the way the value is changed
@@ -155,7 +155,7 @@ If you modify a value either in the parent form or in the subform, it is automat
 
 ![](../assets/en/FormObjects/subnew4.png) ![](../assets/en/FormObjects/subnew5.png)
 
-### Using pointers (compatibility)
+### Utilização de ponteiros (compatibilidade)
 
 In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
 
