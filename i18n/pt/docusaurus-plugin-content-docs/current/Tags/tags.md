@@ -550,7 +550,7 @@ O método `my_method` pode ser o seguinte:
 
 With this syntax, the `4DLOOP` tag makes a loop as long as the *expression* returns `True`. The expression can be any valid Boolean expression and must contain a variable part to be evaluated in each loop to avoid infinite loops.
 
-For example, the following code:
+Por exemplo, o seguinte código:
 
 ```html
 <!--#4DEVAL $i:=0-->
