@@ -91,7 +91,7 @@ When this option is selected, the web server does not provide any specific suppo
 
 In this mode, you can configure additional web server setttings:
 
--   [Maximum Concurrent Web Processes](#maximum-concurrent-web-processes)
+-   [Processos Web em simultâneo máximo](#maximum-concurrent-web-processes)
 -   [Reutilização dos contextos temporários (4D em modo remoto)](#reuse-temporary-contexts)
 -   [Use preemptive processes](#use-preemptive-web-processes)
 
@@ -103,7 +103,7 @@ This option enables the handling of legacy user sessions by the 4D HTTP server. 
 
 When selected, the [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts) option is automatically checked (and locked).
 
-#### Maximum Concurrent Web Processes
+#### Processos Web em simultâneo máximo
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 
@@ -230,7 +230,7 @@ The following table lists the fields available for each format (in alphabetical 
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
 | CS_SIP         | X   | X   | Endereço IP do servidor                                                    |
-| CS_URI         | X   | X   | URI on which the request is made                                           |
+| CS_URI         | X   | X   | URI onde o pedido é efectuado                                              |
 | CS_URI_QUERY | X   | X   | Request query parameters                                                   |
 | CS_URI_STEM  | X   | X   | Part of request without query parameters                                   |
 | DATE           | X   | X   | DD: day, MMM: 3-letter abbreviation for month (Jan, Feb, etc.), YYYY: year |
