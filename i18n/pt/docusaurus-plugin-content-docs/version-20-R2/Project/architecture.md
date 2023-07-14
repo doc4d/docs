@@ -100,7 +100,7 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | Conteúdos                                            | Descrição                                              | Formato |
 | ---------------------------------------------------- | ------------------------------------------------------ | ------- |
 | *n*/Input/*formName*/form.4DForm                     | Input table form description (n is the table number)   | json    |
-| *n*/Input/*formName*/Images/*pictureName*            | Input table form static pictures                       | picture |
+| *n*/Input/*formName*/Images/*pictureName*            | Imagens estáticas do formulário de entrada da tabela   | picture |
 | *n*/Input/*formName*/method.4dm                      | Input table form method                                | text    |
 | *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | Input form object methods. One file per object method  | text    |
 | *n*/Output/*formName*/form.4DForm                    | Output table form description (n is the table number)  | json    |
@@ -204,7 +204,7 @@ This folder contains [**user settings**](../Desktop/user-settings.md#user-settin
 
 ## `userPreferences.<em x-id="3">userName</em> folder`
 
-Esta pasta contém arquivos que memorizam as configurações do usuário, por exemplo, o ponto de ruptura ou as posições das janelas. You can just ignore this folder. Contém, por exemplo:
+Esta pasta contém arquivos que memorizam as configurações do usuário, por exemplo, o ponto de ruptura ou as posições das janelas. Pode simplesmente ignorar esta pasta. Contém, por exemplo:
 
 | Conteúdos                  | Descrição                                                   | Formato |
 | -------------------------- | ----------------------------------------------------------- | ------- |
