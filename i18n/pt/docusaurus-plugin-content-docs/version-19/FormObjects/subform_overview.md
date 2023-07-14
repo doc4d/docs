@@ -74,7 +74,7 @@ Assigning the value to the variable generates the `On Data Change` form event in
 
 > If you "manually" move the hands of the clock, this also generates the `On Data Change` form event in the object method of the *clockValue* variable in the subform.
 
-### Using the subform bound object
+### Utilizar o objeto vinculado ao subformulário
 
 4D automatically binds an object (`C_OBJECT`) to each subform. The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
 
