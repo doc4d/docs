@@ -53,7 +53,7 @@ The drop-down list is displayed with the placeholder string:
 
 ![](../assets/en/FormObjects/fruits2.png)
 
-After the user selects a value:
+Depois de o utilizador selecionar um valor:
 
 ![](../assets/en/FormObjects/fruits3.png)
 
