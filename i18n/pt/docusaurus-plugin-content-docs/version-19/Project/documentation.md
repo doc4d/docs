@@ -29,7 +29,7 @@ Documentation files have the same name as their attached element, with the ".md"
 
 In the Explorer, 4D automatically displays the documentation file with the same name as the selected element (see below).
 
-### Documentation file architecture
+### Arquitetura dos ficheiros de documentação
 
 All documentation files are stored in the `Documentation` folder, located at the first level of the package folder.
 
