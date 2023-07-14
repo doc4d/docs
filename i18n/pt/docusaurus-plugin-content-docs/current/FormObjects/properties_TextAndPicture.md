@@ -103,7 +103,7 @@ This property sets the exact number of states present in the picture used as the
 A imagem pode conter de 2 a 6 estados.
 
 - 2 estados: false, true
-- 3 states: false, true, rollover,
+- 3 estados: false, true, rollover,
 - 4 estados: false, true, rollover, desativado,
 - 5 states (check box and radio button only): false, true, false rollover, true rollover, disabled
 - 6 states (check box and radio button only): false, true, false rollover, true rollover, false disabled, true disable.
