@@ -139,7 +139,7 @@ All ORDA functions that handle entity selections support the **context** propert
  // associated to context "longList" is applied
 ```
 
-#### Entity selection-based list box
+#### List box baseado em uma seleção de entidades
 
 Entity selection optimization is automatically applied to entity selection-based list boxes in client/server configurations, when displaying and scrolling a list box content: only the attributes displayed in the list box are requested from the server.
 
