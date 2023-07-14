@@ -394,7 +394,7 @@ This setting allows you to select the format of this file. Os valores disponíve
 > Formats 3 and 4 are custom formats whose contents must be set beforehand in the Settings dialog box. If you use one of these formats without any of its fields having been selected on this page, the log file will not be generated.
 
 
-## Maximum Concurrent Web Processes
+## Processos Web em simultâneo máximo
 
 | Pode ser definido com              | Nome                                                                                                     | Comentários |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------- |
