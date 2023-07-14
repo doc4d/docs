@@ -27,7 +27,7 @@ The **Integrate one or more log file(s) after restore** option allows you to int
 
 When this option is checked, 4D displays the standard Open file dialog box after the restore, which can be used to select journal file to be integrated. The Open file dialog box is displayed again after each integration until it is cancelled.
 
-## Restoring an encrypted database
+## Restaurar uma base de dados encriptada
 
 Keep in mind that the data encryption key (passphrase) may have been changed through several versions of backup files (.4BK), .journal files (.4BL) and the current application. Matching encryption keys must always be provided.
 
