@@ -240,7 +240,7 @@ When creating or editing data model classes, you must pay attention to the follo
 
 - You cannot override a native ORDA class function from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function.
 
-## Exposed vs non-exposed functions
+## Funções expostas vs não expostas
 
 For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests.
 
