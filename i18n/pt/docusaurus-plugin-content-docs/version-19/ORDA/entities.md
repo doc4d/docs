@@ -478,7 +478,7 @@ A same optimization context property can be passed to unlimited number of entity
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
-### Entity selection-based list box
+### List box baseado em uma seleção de entidades
 
 Entity selection optimization is automatically applied to entity selection-based list boxes in client/server configurations, when displaying and scrolling a list box content: only the attributes displayed in the list box are requested from the server.
 
