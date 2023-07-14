@@ -123,10 +123,10 @@ The `roles.json` file syntax is the following:
 | ------------------- | --------------- | ------------- | -------------------------------- | ----------- | ---------------------------------------------------------------------------- |
 | privileges          |                 |               | Coleção de objectos `privilege`  | X           | List of defined privileges                                                   |
 |                     | \[].privilege  |               | String                           |             | Nome do privilégio                                                           |
-|                     | \[].includes   |               | Coleção de strings               |             | List of included privilege names                                             |
+|                     | \[].includes   |               | Coleção de strings               |             | Lista de nomes de privilégios incluídos                                      |
 | roles               |                 |               | Coleção de objetos `role`        |             | List of defined roles                                                        |
 |                     | \[].role       |               | String                           |             | Role name                                                                    |
-|                     | \[].privileges |               | Coleção de strings               |             | List of included privilege names                                             |
+|                     | \[].privileges |               | Coleção de strings               |             | Lista de nomes de privilégios incluídos                                      |
 | permissions         |                 |               | Object                           | X           | Lista de acções permitidas                                                   |
 |                     | allowed         |               | Coleção de objectos `permission` |             | Lista de permissões permitidas                                               |
 |                     |                 | \[].applyTo  | String                           | X           | Targeted [resource](#resources) name                                         |
