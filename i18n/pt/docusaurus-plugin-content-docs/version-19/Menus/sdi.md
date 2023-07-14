@@ -52,7 +52,7 @@ To handle this case, 4D applications executed in SDI mode include a mechanism to
 - the user cannot interact anymore with the application
 - there are no live user processes
 - 4D processes or worker processes are waiting for an event
-- the Web server is not started.
+- o servidor Web não é iniciado.
 
 > When a menu with an associated *quit* standard action is called, the application quits and all windows are closed, wherever the menu was called from.
 
