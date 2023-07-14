@@ -56,7 +56,7 @@ Quando uma aplicação é construída, 4D gera um arquivo de histórico na pasta
 
 * O início e o fim da construção de objetivos,
 * The name and full access path of the files generated,
-* The date and time of the build,
+* A data e a hora da geração,
 * Todos os erros que forem produzidos.
 * Quaisquer problemas de assinatura (por exemplo, um plug-in não assinado).
 
@@ -326,7 +326,7 @@ This feature requires that you click on the **[...]** button and designate the l
 
 You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
 
-#### Displaying update notification
+#### Mostrar notificação de atualização
 
 The client application update notification is carried out automatically following the server application update.
 
@@ -462,7 +462,7 @@ The page lists the elements loaded by the current 4D application:
 
 * **Type** column - Indicates the type of item: plug-in or component.
 
-### Adding plug-ins or components
+### Adicionar plug-ins ou componentes
 
 If you want to integrate other plug-ins or components into the executable application, you just need to place them in a **PlugIns** or **Components** folder next to the 4D Volume Desktop application or next to the 4D Server application. The mechanism for copying the contents of the source application folder (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)) can be used to integrate any type of file into the executable application.
 
@@ -556,7 +556,7 @@ In 4D v18, the [built-in signing features](#os-x-signing-certificate) have been 
 
 For more information on the notarization concept, please refer to [this page on the Apple developer website](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow).
 
-## Customizing application icons
+## Personalizar ícones de uma aplicação
 
 4D associates a default icon with stand-alone, server, and client applications, however you can customize the icon for each application.
 
