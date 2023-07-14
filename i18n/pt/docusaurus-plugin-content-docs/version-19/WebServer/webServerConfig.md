@@ -47,11 +47,11 @@ With 4D in remote mode, these files must be located in the local resources folde
 
 ## Conjunto de caracteres
 
-| Pode ser definido com              | Nome                           | Comentários                    |
-| ---------------------------------- | ------------------------------ | ------------------------------ |
-| webServer object                   | `characterSet`                 | MIBEnum integer or Name string |
-| `WEB SET OPTION`                   | `Web character set`            | MIBEnum integer or Name string |
-| Caixa de diálogos de configurações | Options (II) page/Standard Set | Menu pop-up                    |
+| Pode ser definido com              | Nome                                  | Comentários                    |
+| ---------------------------------- | ------------------------------------- | ------------------------------ |
+| webServer object                   | `characterSet`                        | Integer MIBEnum ou string Name |
+| `WEB SET OPTION`                   | `Web character set`                   | Integer MIBEnum ou string Name |
+| Caixa de diálogos de configurações | Página Opções (II) /Conjunto standard | Menu pop-up                    |
 
 Defines the set of characters to be used by the 4D web server. O valor padrão realmente depende da linguagem do SO.
 > This setting is also used for generating Quick Reports in HTML format .
@@ -119,9 +119,9 @@ Separar cada método com um ";" (por exemplo: "post;get"). If methods is empty, 
 
 Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number). It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Petições inteiras, incluindo cabeçalhos, são registradas; opcionalmente, partes do corpo podem ser registradas também.
 
-| Valor | Parâmetros  | Descrição                      |
-| ----- | ----------- | ------------------------------ |
-| 0     | wdl disable | Web HTTP debug log is disabled |
+| Valor | Parâmetros  | Descrição                              |
+| ----- | ----------- | -------------------------------------- |
+| 0     | wdl disable | Os debug logs Web HTTP são desativados |
 
 |1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
 
@@ -173,7 +173,7 @@ Para obter mais informações sobre o CORS, consulte a [página de compartilhame
 | ---------------------------------- | -------------------------------------------------- | ----------- |
 | webServer object                   | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean     |
 | `WEB SET OPTION`                   | `Web HTTP enabled`                                 |             |
-| Caixa de diálogos de configurações | Configuration page/Enable HTTP                     |             |
+| Caixa de diálogos de configurações | Configuração/Ativar HTTP                           |             |
 
 Indicates whether or not the web server will accept non-secure connections.
 
@@ -217,10 +217,10 @@ Specifies the maximum length of time (in seconds) that HSTS is active for each n
 
 ## Nível de compressão HTTP
 
-| Pode ser definido com | Nome                                                                 | Comentários                    |
-| --------------------- | -------------------------------------------------------------------- | ------------------------------ |
-| webServer object      | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                                |
-| `WEB SET OPTION`      | `Web HTTP compression level`                                         | Applies to Web and Web Service |
+| Pode ser definido com | Nome                                                                 | Comentários                      |
+| --------------------- | -------------------------------------------------------------------- | -------------------------------- |
+| webServer object      | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                                  |
+| `WEB SET OPTION`      | `Web HTTP compression level`                                         | Aplica-se à Web e ao Serviço Web |
 
 Compression level for all compressed HTTP exchanges for the 4D web server (client requests or server replies). This setting lets you optimize exchanges by either privileging speed of execution (less compression) or the amount of compression (less speed). The choice of a value depends on the size and type of data exchanged.
 
@@ -269,7 +269,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | ---------------------------------- | ---------------------------------------------- | ----------- |
 | webServer object                   | [`HTTPSPort`](API/WebServerClass.md#httpsport) | number      |
 | `WEB SET OPTION`                   | `Web HTTPS port ID`                            |             |
-| Caixa de diálogos de configurações | Configuration page/HTTPS Port                  |             |
+| Caixa de diálogos de configurações | Página Configuração/Porta HTTPS                |             |
 
 Listening IP port number for HTTPS connections via TLS. Por defeito, o valor é 443 (valor padrão). See also [HTTP Port](#http-port) for information on port numbers.
 
@@ -375,7 +375,7 @@ This setting allows you to select the format of this file. Os valores disponíve
 
 Strictly high limit of concurrent web processes that can be simultaneously open on the server. This parameter allows prevention of server saturation as the result of massive number of requests. When the maximum number of concurrent Web processes (minus one) is reached, 4D no longer creates new processes and sends the HTTP status `503 - Service Unavailable` to all new requests.
 
-By default, the value is 100. You can set the number anywhere between 10 and 32000.
+Por padrão, o valor é 100. You can set the number anywhere between 10 and 32000.
 
 ## Tamanho máximo do pedido
 
@@ -569,7 +569,7 @@ The following settings are still supported but rely on deprecated features or te
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
 
-#### Session IP Address Validation
+#### Validação do endereço IP da sessão
 
 > This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
 
