@@ -133,7 +133,7 @@ Then you can get an entity selection of the "best" companies by executing:
 > [Computed attributes](#computed-attributes) are defined in the [Entity Class](#entity-class).
 
 
-#### Example with a remote datastore
+#### Exemplo com um datastore remoto
 
 The following *City* catalog is exposed in a remote datastore (partial view):
 
@@ -622,7 +622,7 @@ An **alias** attribute is built above another attribute of the data model, named
 
 Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
-### How to define alias attributes
+### Como definir atributos alias
 
 You create an alias attribute in a dataclass by using the `Alias` keyword in the [**entity class**](#entity-class) of the dataclass.
 
