@@ -226,7 +226,7 @@ The following table lists the fields available for each format (in alphabetical 
 | C_IP           | X   | X   | IP address of the client (for example 192.100.100.10)                      |
 | CONNECTION_ID  |     | X   | Número de identificação da ligação                                         |
 | CS(COOKIE)     | X   | X   | Information about cookies contained in the HTTP request                    |
-| CS(HOST)       | X   | X   | Host field of the HTTP request                                             |
+| CS(HOST)       | X   | X   | Campo Host do pedido HTTP                                                  |
 | CS(REFERER)    | X   | X   | URL of the page pointing to the requested document                         |
 | CS(USER_AGENT) | X   | X   | Information about the software and operating system of the client          |
 | CS_SIP         | X   | X   | Endereço IP do servidor                                                    |
