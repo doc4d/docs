@@ -424,7 +424,7 @@ The CSS preview mode reflects the priority order applied to style sheets vs JSON
 Once a CSS preview mode is selected, objects are automatically displayed with the styles defined in a style sheet (if any).
 > When copying or duplicating objects, only the CSS references (if any) and the JSON values are copied.
 
-### CSS support in the Property List
+### Suporte CSS na lista de propriedades
 
 In CSS Preview mode, if the value of an attribute has been defined in a style sheet, the attribute's name will appear with a CSS icon displayed next to it in the Property List. For example, the attribute values defined in this style sheet:
 
