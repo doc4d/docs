@@ -381,7 +381,7 @@ Para ver ou alterar a ordem de entrada:
 
 While you are changing the data entry order, you can select a group of objects in a form so that the standard data entry order applies to the objects within the group. This allows you to easily set the data entry order on forms in which fields are separated into groups or columns.
 
-To create a data entry group:
+Para criar um grupo de entrada de dados:
 
 1. Escolha **Ordem de entrada** a partir do menu *Formulário* ou clique no botão na barra de ferramentas.
 2. Draw a marquee around the objects you want to group for data entry.
@@ -608,7 +608,7 @@ Para mudar o nome de uma vista, pode utilizar:
 
  ![](../assets/en/FormEditor/rename.png)
 
-- Right-click on the view name. The name then becomes editable:
+- Clique com o botão direito do rato no nome da vista. The name then becomes editable:
 
  ![](../assets/en/FormEditor/rename2.png)
 
