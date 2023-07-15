@@ -26,7 +26,7 @@ Each web server (host application or component) can be used in its own separate 
 This allows you to develop independant components and features that come with their own web interfaces.
 
 
-## Instantiating a web server object
+## Instanciar um objeto servidor Web
 
 The web server object of the host application (default web server) is automatically loaded by 4D at startup. Assim, se escrever num projeto recém-criado:
 
