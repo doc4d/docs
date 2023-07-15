@@ -217,7 +217,7 @@ The `.borderHorizontal` property is the <!-- REF #TableStyle.borderHorizontal.Su
 <!-- REF #TableStyle.borderVertical.Syntax -->
 **.borderVertical** : [cs.ViewPro.LineBorder](#lineborder)<!-- END REF -->
 
-A propriedade `.borderVertical` é a <!-- REF #TableStyle.borderVertical.Summary -->vertical border line of the table <!-- END REF -->.
+A propriedade `.borderVertical` é a <!-- REF #TableStyle.borderVertical.Summary -->linha de fronteira vertical da tabela <!-- END REF -->.
 
 
 
