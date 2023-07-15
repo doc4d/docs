@@ -27,7 +27,7 @@ Pode escolher entre [dois motores de renderização](properties_WebArea.md#use-e
 
 Selecting the embedded web rendering engine allows you to call 4D methods from the web area. Selecting the system rendering engine is recommended when the web area is connected to the Internet because it always benefits from the latest security updates.
 
-### Access 4D methods
+### Acesso a métodos 4D
 
 Quando selecionar a propriedade [Acessar aos métodos 4D](properties_WebArea.md#access-4d-methods), pode chamar aos métodos 4D desde uma área Web.
 
@@ -103,8 +103,8 @@ The 4D project method `calcSum` receives parameters (`$1...$n`) and returns thei
 Código 4D do método `calcSum`:
 
 ```4d
- C_REAL(${1}) // receives n REAL type parameters
- C_REAL($0) // returns a Real
+ C_REAL(${1}) // recebe n parâmetros do tipo REAL
+ C_REAL($0) // devolve um Real
  C_LONGINT($i;$n)
  $n:=Count parameters
  For($i;1;$n)
@@ -124,7 +124,7 @@ $4d.calcSum(33, 45, 75, 102.5, 7, function(dollarZero)
 
 ## Ações padrão
 
-Há quatro ações padrão específicas para gerenciar as áreas web de forma automática: `Open Back URL`, `Open Next URL`, `Refresh Current URL` e `Stop Loading URL`. Essas ações podem ser associadas com botões ou comandos de menu e permite implementação rápida de interfaces web básicas. These actions are described in [Standard actions](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
+Há quatro ações padrão específicas para gerenciar as áreas web de forma automática: `Open Back URL`, `Open Next URL`, `Refresh Current URL` e `Stop Loading URL`. Essas ações podem ser associadas com botões ou comandos de menu e permite implementação rápida de interfaces web básicas. Estas ações são descritas em [ações standard](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
 
 
 ## Eventos formulário
