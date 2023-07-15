@@ -3,7 +3,7 @@ id: glossary
 title: Glossary
 ---
 
-## Main concepts at a glance
+## Principais conceitos em resumo
 
 ![](../assets/en/ORDA/mainConcepts.png)
 
@@ -84,7 +84,7 @@ Para mais informações, consulte Entidades.
 
 ## Seleção de entidades
 
-An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
+Uma seleção de entidades é um objeto. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
 Uma seleção de entidade contém:
 
