@@ -182,11 +182,11 @@ $txt:="Hello world!"
 
 [![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "Logo blog 4D")](https://blog.4d.com)
 
-> For more information, see the [GitHub Markdown guide](https://guides.github.com/features/mastering-markdown/).
+> Para obter mais informações, consulte o [guia GitHub Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ## Exemplo
 
-In the `WP SwitchToolbar.md` file, you can write:
+No ficheiro `WP SwitchToolbar.md`, pode escrever:
 
 ```4d
 <!-- This method returns a different logo depending on the size parameter -->
