@@ -9,7 +9,7 @@ The Client-server pages group together parameters related to the use of the data
 
 ### Rede
 
-#### Publish database at startup
+#### Publicar a base de dados no arranque
 
 This option lets you indicate whether or not the 4D Server database will appear in the list of published databases.
 
