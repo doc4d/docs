@@ -7,7 +7,7 @@ Define o formato de imagem a utilizar para a recuperação de imagens (*por exem
 
 ## Descrição
 
-Definir o formato a utilizar para mostrar imagens. You can use one of the following formats (extensions, mime types and OsType Mac are supported):
+Definir o formato a utilizar para mostrar imagens. Pode utilizar um dos seguintes formatos (são suportadas extensões, tipos mime e OsType Mac):
 
 | Tipo                    | Descrição                         |
 | ----------------------- | --------------------------------- |
