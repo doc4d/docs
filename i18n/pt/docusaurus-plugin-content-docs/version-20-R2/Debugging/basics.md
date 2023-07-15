@@ -3,7 +3,7 @@ id: basics
 title: Depuração
 ---
 
-Os erros são comuns. It would be unusual to write a substantial number of lines of code without generating any errors. Conversely, treating and/or fixing errors is normal, too!
+Os erros são comuns. It would be unusual to write a substantial number of lines of code without generating any errors. Por outro lado, tratar e/ou corrigir erros também é normal!
 
 The 4D development environment provides several debugging tools for all types of errors.
 
@@ -16,7 +16,7 @@ Os erros de digitação são detectados pelo editor de código. They are display
 ![break-point](../assets/en/Debugging/typing-error.png)
 
 
-Such typing errors usually cause syntax errors (in the above image, the name of the table is unknown). You get the description of the error when you validate the line of code. When this occurs, fix the typing error and type Enter to validate the fix.
+Such typing errors usually cause syntax errors (in the above image, the name of the table is unknown). You get the description of the error when you validate the line of code. Quando isso ocorrer, corrija o erro de digitação e digite Enter para validar a correção.
 
 ### Erros de sintaxe
 
@@ -28,7 +28,7 @@ Expand the **Details** area to display the last error and its number.
 
 ### Environmental Errors
 
-Occasionally, there may not be enough memory to create a BLOB. Or, when you access a document on disk, the document may not exist or may already be opened by another application. These environmental errors do not directly occur because of your code or the way you wrote it. Most of the time, these errors are easy to treat with an [error catching method](Concepts/error-handling.md) installed using the `ON ERR CALL` command.
+Ocasionalmente, pode não haver memória suficiente para criar um BLOB. Or, when you access a document on disk, the document may not exist or may already be opened by another application. These environmental errors do not directly occur because of your code or the way you wrote it. Most of the time, these errors are easy to treat with an [error catching method](Concepts/error-handling.md) installed using the `ON ERR CALL` command.
 
 ### Erros de concepção ou de lógica
 
