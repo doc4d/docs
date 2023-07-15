@@ -5,13 +5,13 @@ title: Escala
 
 ## Barber shop
 
-Enables the "barber shop" variant for the thermometer.
+Ativa a variante "barber shop" para o termómetro.
 
 #### Gramática JSON
 
-|      Nome       | Tipo de dados | Valores possíveis                                           |
-|:---------------:|:-------------:| ----------------------------------------------------------- |
-| [max](#maximum) |    number     | NOT passed = enabled; passed = disabled (basic thermometer) |
+|      Nome       | Tipo de dados | Valores possíveis                                             |
+|:---------------:|:-------------:| ------------------------------------------------------------- |
+| [max](#maximum) |    number     | NÃO passou = ativado; passou = desativado (termómetro básico) |
 
 #### Objectos suportados
 
@@ -31,7 +31,7 @@ Displays/Hides the graduations next to the labels.
 
 #### Objectos suportados
 
-[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
+[Termômetro](progressIndicator.md#thermometer) - [Régua](ruler.md#ruler)
 
 ---
 
@@ -47,7 +47,7 @@ Scale display measurement.
 
 #### Objectos suportados
 
-[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
+[Termômetro](progressIndicator.md#thermometer) - [Régua](ruler.md#ruler)
 
 ---
 
@@ -67,7 +67,7 @@ Specifies the location of an object's displayed text.
 
 #### Objectos suportados
 
-[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
+[Termômetro](progressIndicator.md#thermometer) - [Régua](ruler.md#ruler)
 
 ---
 
@@ -82,7 +82,7 @@ Valor máximo de um indicador.
 
 | Nome | Tipo de dados | Valores possíveis |
 |:----:|:-------------:| ----------------- |
-| max  |    number     | Any number        |
+| max  |    number     | Qualquer número   |
 
 #### Objectos suportados
 
@@ -98,7 +98,7 @@ Valor mínimo de um indicador. For numeric steppers, this property represent sec
 
 | Nome | Tipo de dados | Valores possíveis |
 |:----:|:-------------:| ----------------- |
-| min  |    number     | Any number        |
+| min  |    number     | Qualquer número   |
 
 #### Objectos suportados
 
