@@ -19,7 +19,7 @@ As regras seguintes aplicam-se a todas as estruturas 4D.
 
 ### Additional rules for object property and ORDA names
 
-- Space characters are not allowed.
+- Não são permitidos caracteres de espaço.
 - Pontos (".") e parênteses ("[ ]") não são permitidos.
 - Names are case sensitive.
 
