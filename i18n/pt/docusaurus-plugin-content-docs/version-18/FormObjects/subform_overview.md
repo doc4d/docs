@@ -140,7 +140,7 @@ This mechanism is illustrated in the following diagram:
 
 ![](../assets/en/FormObjects/subforms6.png)
 
-For more information, refer to the description of the `EXECUTE METHOD IN SUBFORM` command.
+Para mais informações, consultar a descrição do comando `EXECUTE METHOD IN SUBFORM`.
 
 #### Comando GOTO OBJECT
 
