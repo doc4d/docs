@@ -211,7 +211,7 @@ If a problem arises while adding or modifying an entity, an error will be return
 
 ### Exemplo
 
-To update a specific entity, you use the following URL:
+Para atualizar uma entidade específica, utilizar o seguinte URL:
 
  `POST  /rest/Person/?$method=update`
 
