@@ -4,9 +4,9 @@ title: Página compactado
 sidebar_label: Página compactado
 ---
 
-You use this page to access the data file compacting functions.
+Esta página é utilizada para aceder às funções de compactação de ficheiros de dados.
 
-## Why compact your files?
+## Porquê compactar seus ficheiros?
 
 A compactação de ficheiros responde a dois tipos de necessidades:
 
