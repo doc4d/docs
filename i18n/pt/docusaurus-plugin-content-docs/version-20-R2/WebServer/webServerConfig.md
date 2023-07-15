@@ -651,7 +651,7 @@ IP address validation status for session cookies. For security reasons, by defau
 
 
 
-#### Send Extended Characters Directly
+#### Enviar diretamente caracteres expandidos
 
 When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
 
