@@ -21,12 +21,12 @@ A 4D project is made of several folders and files, stored within a single projec
     - `userPreferences.username`
     - `WebFolder`
 
-> If your project has been converted from a binary database, additional folders may be present. See "Converting databases to projects" on [doc.4d.com](https://doc.4d.com).
+> Se o seu projeto tiver sido convertido a partir de uma base de dados binária, poderão existir pastas adicionais. Consulte "Conversão de bases de dados em projetos" em [doc.4d.com](https://doc.4d.com).
 
 
-## Project folder
+## Pasta `Project`
 
-The Project folder typically contains the following hierarchy:
+A pasta Project contém normalmente a seguinte hierarquia:
 
 - *applicationName*.4DProject file
 - `Sources`
@@ -42,14 +42,14 @@ The Project folder typically contains the following hierarchy:
 
 ### *applicationName*.4DProject file
 
-Project development file, used to designate and launch the project. Esse arquivo pode ser aberto por:
+Ficheiro de desenvolvimento do projeto, utilizado para designar e lançar o projeto. Esse arquivo pode ser aberto por:
 
 - 4D
 - 4D Server (apenas leitura, ver [Desenvolver um projeto](developing.md))
 
-> **Nota:** nos projetos 4D, o desenvolvimento se realiza com 4D Developer e o desenvolvimento multiusuários se gerencia através das ferramentas de controle de versão. 4D Server can open .4DProject files for testing purposes.
+> **Nota:** nos projetos 4D, o desenvolvimento se realiza com 4D Developer e o desenvolvimento multiusuários se gerencia através das ferramentas de controle de versão. 4D Server pode abrir arquivos .4DProject para fins de teste.
 
-This text file can also contain configuration keys, in particular [`"tokenizedText": false`](../Preferences/general.md#excluding-tokens-in-existing-projects).
+Este ficheiro texto também pode conter chaves de configuração, em particular [`"tokenizedText": false`](../Preferences/general.md#excluding-tokens-in-existing-projects).
 
 ### `Sources`
 
@@ -57,7 +57,7 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | catalog.4DCatalog       | Definições de tabelas e campos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | XML     |
 | folders.json            | Definições de pasta do Explorer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | JSON    |
-| menus.json              | Menu definitions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | JSON    |
+| menus.json              | Definições de menus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | JSON    |
 | settings.4DSettings     | Propriedades de la base *Structure*. They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../Desktop/user-settings.md#priority-of-settings). **Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to [enable](../Desktop/user-settings.md#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings. | XML     |
 | tips.json               | Dicas definidas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | JSON    |
 | lists.json              | Listas definidas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | JSON    |
@@ -88,31 +88,31 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 
 #### `Formulários`
 
-| Conteúdos                                 | Descrição                                   | Formato |
-| ----------------------------------------- | ------------------------------------------- | ------- |
-| *formName*/form.4DForm                    | Descrição do formulário projeto             | json    |
-| *formName*/method.4dm                     | Método formulário projecto                  | text    |
-| *formName*/Images/*pictureName*           | Imagem estática do formulário projeto       | picture |
-| *formName*/ObjectMethods/*objectName*.4dm | Métodos objecto. One file per object method | text    |
+| Conteúdos                                 | Descrição                                      | Formato |
+| ----------------------------------------- | ---------------------------------------------- | ------- |
+| *formName*/form.4DForm                    | Descrição do formulário projeto                | json    |
+| *formName*/method.4dm                     | Método formulário projecto                     | text    |
+| *formName*/Images/*pictureName*           | Imagem estática do formulário projeto          | picture |
+| *formName*/ObjectMethods/*objectName*.4dm | Métodos objecto. Um ficheiro por método objeto | text    |
 
 #### `TableForms`
 
-| Conteúdos                                            | Descrição                                              | Formato |
-| ---------------------------------------------------- | ------------------------------------------------------ | ------- |
-| *n*/Input/*formName*/form.4DForm                     | Input table form description (n is the table number)   | json    |
-| *n*/Input/*formName*/Images/*pictureName*            | Imagens estáticas do formulário de entrada da tabela   | picture |
-| *n*/Input/*formName*/method.4dm                      | Input table form method                                | text    |
-| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | Input form object methods. One file per object method  | text    |
-| *n*/Output/*formName*/form.4DForm                    | Output table form description (n is the table number)  | json    |
-| *n*/Output/*formName*/Images/*pictureName*           | Output table form static pictures                      | picture |
-| *n*/Output/*formName*/method.4dm                     | Output table form method                               | text    |
-| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | Output form object methods. One file per object method | text    |
+| Conteúdos                                            | Descrição                                                              | Formato |
+| ---------------------------------------------------- | ---------------------------------------------------------------------- | ------- |
+| *n*/Input/*formName*/form.4DForm                     | Input table form description (n is the table number)                   | json    |
+| *n*/Input/*formName*/Images/*pictureName*            | Imagens estáticas do formulário de entrada da tabela                   | picture |
+| *n*/Input/*formName*/method.4dm                      | Método do formulário de entrada da tabela                              | text    |
+| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | Métodos objeto do formulário de entrada. Um ficheiro por método objeto | text    |
+| *n*/Output/*formName*/form.4DForm                    | Output table form description (n is the table number)                  | json    |
+| *n*/Output/*formName*/Images/*pictureName*           | Imagens estáticas do formulário de saída da tabela                     | picture |
+| *n*/Output/*formName*/method.4dm                     | Método do formulário de saída da tabela                                | text    |
+| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | Métodos objeto do formulário de saída. Um ficheiro por método objeto   | text    |
 
 #### `Triggers`
 
-| Conteúdos     | Descrição                                                                                 | Formato |
-| ------------- | ----------------------------------------------------------------------------------------- | ------- |
-| table_*n*.4dm | Métodos trigger definidos na database. One trigger file per table (n is the table number) | text    |
+| Conteúdos     | Descrição                                                                                             | Formato |
+| ------------- | ----------------------------------------------------------------------------------------------------- | ------- |
+| table_*n*.4dm | Métodos trigger definidos na database. Um ficheiro de acionamento por tabela (n é o número da tabela) | text    |
 
 **Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. É compatível com as ferramentas de controlo da versão.
 
@@ -162,7 +162,7 @@ The data folder contains the data file and all files and folders relating to the
 
 (*) When the project is created from a .4db binary database, the data file is left untouched. Thus, it can be named differently and placed in another location.
 
-### `Settings` (user data)
+### `Settings` (dados do usuário)
 
 This folder contains [**user settings for data**](../Desktop/user-settings.md#user-settings-for-data-file) used for application administration.
 
@@ -187,7 +187,7 @@ The Logs folder contains all log files used by the project. Os ficheiros de regi
 
 > Uma pasta Logs adicional está disponível na pasta de preferências do usuário do sistema (pasta 4D ativa, ver [Obter pasta 4D](https://doc.4d.com/4Dv18R4/4D/18-R4/Get-4D-folder.301-4982857.en.html) comando) para os arquivos de registro de manutenção e nos casos em que a pasta de dados for de apenas leitura.
 
-## `Settings` (user)
+## `Settings` (usuário)
 
 This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
 
@@ -227,7 +227,7 @@ Esta carpeta contém os componentes que devem estar disponíveis unicamente no b
 
 ## `Plugins`
 
-This folder contains the plug-ins to be available in the project database only. It must be stored at the same level as the Project folder.
+This folder contains the plug-ins to be available in the project database only. Deve ser armazenado ao mesmo nível que a pasta Project.
 
 
 ## `Documentation`
