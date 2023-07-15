@@ -117,9 +117,9 @@ Coordenada superior do objecto no formulário.
 
 <details><summary>Histórico</summary>
 
-| Versão | Mudanças                          |
-| ------ | --------------------------------- |
-| v19 R7 | Support for inputs and text areas |
+| Versão | Mudanças                               |
+| ------ | -------------------------------------- |
+| v19 R7 | Suporte para entradas e áreas de texto |
 
 </details>
 
