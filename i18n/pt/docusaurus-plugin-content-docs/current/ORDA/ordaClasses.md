@@ -7,7 +7,7 @@ title: Classes de modelo de dados
 
 ORDA allows you to create high-level class functions above the data model. This allows you to write business-oriented code and "publish" it just like an API. Datastore, dataclasses, entity selections, and entities are all available as class objects that can contain functions.
 
-For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. It would be as simple as calling:
+For example, you could create a `getNextWithHigherSalary()` function in the `EmployeeEntity` class to return employees with a salary higher than the selected one. Seria tão simples como chamar:
 
 ```4d
 $nextHigh:=ds. Employee.get(1).getNextWithHigherSalary()
@@ -89,7 +89,7 @@ You can create functions in the DataStore class that will be available through t
 ```
 
 
-This function can then be called:
+Esta função pode então ser chamada:
 
 ```4d
 $desc:=ds.getDesc() //"Database exposing..."
@@ -213,7 +213,7 @@ Entity classes allow you to define **computed attributes** using specific keywor
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-For information, please refer to the [Computed attributes](#computed-attributes-1) section.
+Para obter informações, consulte a secção [Atributos calculados](#computed-attributes-1).
 
 #### Alias attributes
 
@@ -319,7 +319,7 @@ The *getter* function defines the data type of the computed attribute thanks to 
 - Entity (i.e. cs. EmployeeEntity)
 - Entity selection (i.e. cs. EmployeeSelection)
 
-The *$event* parameter contains the following properties:
+O parâmetro *$event* contém as seguintes propriedades:
 
 | Propriedade   | Tipo         | Descrição                                                                                 |
 | ------------- | ------------ | ----------------------------------------------------------------------------------------- |
@@ -382,7 +382,7 @@ The *setter* function executes whenever a value is assigned to the attribute. Th
 
 The *$value* parameter receives the value assigned to the attribute.
 
-The *$event* parameter contains the following properties:
+O parâmetro *$event* contém as seguintes propriedades:
 
 | Propriedade   | Tipo         | Descrição                              |
 | ------------- | ------------ | -------------------------------------- |
@@ -429,11 +429,11 @@ The `query` function executes whenever a query using the computed attribute is l
 
 > The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
 
-The *$event* parameter contains the following properties:
+O parâmetro *$event* contém as seguintes propriedades:
 
 | Propriedade   | Tipo         | Descrição                                                                                                                                                                                                                                                                                                                                                          |
 | ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| attributeName | Text         | Computed attribute name                                                                                                                                                                                                                                                                                                                                            |
+| attributeName | Text         | Nome do atributo computado                                                                                                                                                                                                                                                                                                                                         |
 | dataClassName | Text         | Nome do dataclass                                                                                                                                                                                                                                                                                                                                                  |
 | kind          | Text         | "query"                                                                                                                                                                                                                                                                                                                                                            |
 | value         | Diferente de | Valor a tratar pelo atributo calculado                                                                                                                                                                                                                                                                                                                             |
@@ -555,14 +555,14 @@ $twentyToday:=people.query("age === 20") // equivalent to people.query("age is 2
 Function orderBy <attributeName>($event : Object)
 Function orderBy <attributeName>($event : Object)-> $result : Text
 
-// code
+// código
 ```
 
 The `orderBy` function executes whenever the computed attribute needs to be ordered. Permite ordenar o atributo calculado. For example, you can sort *fullName* on first names then last names, or conversely. When the `orderBy` function is not implemented for a computed attribute, the sort is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
 
 > Calling an `orderBy` function on computed attributes of type Entity class or Entity selection class **is not supported**.
 
-The *$event* parameter contains the following properties:
+O parâmetro *$event* contém as seguintes propriedades:
 
 | Propriedade   | Tipo         | Descrição                                                                                           |
 | ------------- | ------------ | --------------------------------------------------------------------------------------------------- |
@@ -668,7 +668,7 @@ Alias attributes are read-only (except when based upon a scalar attribute of the
 | `entity.diff()`                                |
 | `entity.touchedAttributes()`                   |
 
-> Keep in mind that alias attributes are calculated on the server. In remote configurations, updating alias attributes in entities requires that entities are reloaded from the server.
+> Tenha em atenção que os atributos alias são calculados no servidor. In remote configurations, updating alias attributes in entities requires that entities are reloaded from the server.
 
 ### Propriedades alias
 
@@ -864,7 +864,7 @@ We want to check the consistency of the attributes of an entity loaded on the cl
 On the *StudentsEntity* class, the local `checkData()` function checks the Student's age:
 
 ```4d
-Class extends Entity
+Classe extends Entity
 
 local Function checkData() -> $status : Object
 
@@ -872,11 +872,11 @@ $status:=New object("success"; True)
 Case of
     : (This.age()=Null)
         $status.success:=False
-        $status.statusText:="The birthdate is missing" 
+        $status.statusText:="Falta a data de nascimento" 
 
     :((This.age() <15) | (This.age()>30) )
         $status.success:=False
-        $status.statusText:="The student must be between 15 and 30 - This one is "+String(This.age())
+        $status.statusText:="O estudante tem de ter entre 15 e 30 anos - Este é "+String(This.age())
 End case
 ```
 
@@ -901,7 +901,7 @@ If ($status.success)
 An ORDA data model user class is defined by adding, at the [same location as regular class files](Concepts/classes.md#class-files) (*i.e.* in the `/Sources/Classes` folder of the project folder), a .4dm file with the name of the class. For example, an entity class for the `Utilities` dataclass will be defined through a `UtilitiesEntity.4dm` file.
 
 
-### Creating classes
+### Criação de classes
 
 4D automatically pre-creates empty classes in memory for each available data model object.
 
