@@ -22,7 +22,7 @@ Estão disponíveis as seguintes etiquetas 4D:
 - 4DTEXT, to insert 4D variables and expressions as text,
 - 4DHTML, para inserir código HTML,
 - 4DEVAL, para avaliar qualquer expressão 4D,
-- 4DSCRIPT, to execute a 4D method,
+- 4DSCRIPT, para executar um método 4D,
 - 4DINCLUDE, para incluir uma página dentro de outra,
 - 4DBASE, to modify the default folder used by the 4DINCLUDE tag,
 - 4DCODE, to insert 4D code,
