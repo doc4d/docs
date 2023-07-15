@@ -38,7 +38,7 @@ In this short example, you'll see how to create and call a macro that adds a "He
 
 2. Criar uma classe 4D com o nome `AddButton`.
 
-3. Within the `AddButton` class, write the following function:
+3. Na classe `AddButton`, escreva a seguinte função:
 
 ```4d
 Function onInvoke($editor : Object)->$result : Object
@@ -69,7 +69,7 @@ Function onInvoke($editor : Object)->$result : Object
 
 You can then call the macro: ![](../assets/en/FormEditor/macroex1.png) ![](../assets/en/FormEditor/macroex2.png)
 
-## Calling macros in the Form editor
+## Chamar macros no editor de formulários
 
 When macros are defined in your 4D project, you can call a macro using the contextual menu of the Form editor:
 
