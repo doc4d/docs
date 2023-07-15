@@ -53,7 +53,7 @@ Para anexar o depurador a um cliente 4D remoto:
 If the attachment is accepted (see [Rejected attachment requests](#rejected-attachment-requests)), the menu command becomes **Detach Remote Debugger**.
 
 The debugger is then attached to the remote 4D client:
-* until the end of the user session
+* até ao fim da sessão do usuário
 * until you select `Detach Remote Debugger`
 
 Para ligar o depurador de novo ao servidor:
