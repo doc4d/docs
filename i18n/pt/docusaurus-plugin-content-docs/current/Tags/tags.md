@@ -153,7 +153,7 @@ $graphType:=1
 -->
 ```
 
-Here are the 4DCODE tag features:
+Eis as características da etiqueta 4DCODE:
 
 - The `TRACE` command is supported and activates the 4D debugger, thus allowing you to debug your template code.
 - Any error will display the standard error dialog that lets the user stop code execution or enter debugging mode.
