@@ -3,14 +3,14 @@ id: dsmapping
 title: Objetos Data Model
 ---
 
-The ORDA technology is based upon an automatic mapping of an underlying 4D structure. It also provides access to data through entity and entity selection objects. As a result, ORDA exposes the whole database as a set of data model objects.
+The ORDA technology is based upon an automatic mapping of an underlying 4D structure. Também fornece acesso aos dados através de objetos seleção de entidades (entity selection) e entidades (entity). Como resultado, ORDA expõe toda a base de dados como um conjunto de objetos de modelo de dados.
 
 
 ## Mapeamento da estrutura
 
 When you call a datastore using the `ds` or the `Open datastore` command, 4D automatically references tables and fields of the corresponding 4D structure as properties of the returned [datastore](#datastore) object:
 
-*   Tables are mapped to dataclasses.
+*   As tabelas correspondem às dataclasses.
 *   Os campos são mapeados para atributos de armazenamento.
 *   Relations are mapped to relation attributes - relation names, defined in the Structure editor, are used as relation attribute names.
 
