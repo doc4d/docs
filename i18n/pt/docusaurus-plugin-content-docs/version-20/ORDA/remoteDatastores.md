@@ -59,10 +59,10 @@ A session is automatically closed by 4D when there has been no activity during i
 
 If a request is sent to the remote datastore after the session has been closed, it is automatically re-created if possible (license available, server not stopped...). However, keep in mind that the context of the session regarding locks and transactions is lost (see above).
 
-## Client/server optimization
+## Otimização cliente/servidor
 
 4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Estes incluem:
-* the **optimization context**
+* o **contexto de otimização**
 * a **cache ORDA**
 
 ### Contexto
@@ -95,7 +95,7 @@ The optimization context is based upon the following implementations:
 
 #### Exemplo
 
-Given the following code:
+Dado o seguinte código:
 
 ```4d
  $sel:=$ds. Employee.query("firstname = ab@")
