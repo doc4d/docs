@@ -4,7 +4,7 @@ title: Página análise de atividades
 sidebar_label: Página análise de atividades
 ---
 
-The Activity analysis page allows viewing the contents of the current log file. Esta função é útil para analisar o uso de um banco de dados ou detectar as operações que causaram erros ou mal funcionamento. No caso de um banco de dados em modo cliente-servidor, permite verificar as operações realizadas por cada máquina cliente.
+A página Análise da atividade permite visualizar o conteúdo do ficheiro de registo atual. Esta função é útil para analisar o uso de um banco de dados ou detectar as operações que causaram erros ou mal funcionamento. No caso de um banco de dados em modo cliente-servidor, permite verificar as operações realizadas por cada máquina cliente.
 > It is also possible to rollback the operations carried out on the data of the database. For more information, refer to [Rollback page](rollback.md).
 
 ![](../assets/en/MSC/MSC_analysis.png)
