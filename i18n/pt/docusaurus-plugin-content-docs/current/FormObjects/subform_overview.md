@@ -130,7 +130,7 @@ Everytime the value of `Form.clockValue` changes in the subform, `parisTime` or 
 
 4D automatically binds an object (`C_OBJECT`) to each subform. The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
 
-In all cases, the object is returned by the `Form` command, which can be called directy the subform (using a pointer is useless). Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. No event management is necessary.
+In all cases, the object is returned by the `Form` command, which can be called directy the subform (using a pointer is useless). Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. Não é necessária qualquer gestão de eventos.
 
 For example, in a subform, inputs are bound to the `Form` object properties (of the subform form):
 
@@ -196,7 +196,7 @@ This mechanism is illustrated in the following diagram:
 
 ![](../assets/en/FormObjects/subforms6.png)
 
-For more information, refer to the description of the `EXECUTE METHOD IN SUBFORM` command.
+Para mais informações, consultar a descrição do comando `EXECUTE METHOD IN SUBFORM`.
 
 
 
