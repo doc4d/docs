@@ -398,7 +398,7 @@ The 4D language allows you to use escape sequences (also called escape character
 
 The sequence consists of a backslash `\`, followed by a character. For instance, `\t` is an escape sequence for the **Tab** character. Escape sequences facilitate the entry of special characters: the previous example (`\t`) replaces the entry "Character(Tab)".
 
-In 4D, the following escape sequences can be used:
+Em 4D, podem ser utilizadas as seguintes sequências de escape:
 
 | Escape sequence                     | Carácter substituído |
 | ----------------------------------- | -------------------- |
