@@ -586,7 +586,7 @@ In return, you must make sure in this case to systematically initialize the vari
 > 
 > - This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
 
-#### Send Extended Characters Directly
+#### Enviar diretamente caracteres expandidos
 
 When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
 
