@@ -148,7 +148,7 @@ This setting allows you to select the processor family for which your 4D project
 
 Duas opções de alvo estão disponíveis. The result depends on the processor of the machine on which 4D is running.
 
-| *Option*                                               | *no Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *no macOS Silicon*                                                                           |
+| *Opção*                                                | *no Windows Intel/AMD*                                                                     | *macOS Intel*                                                                                | *no macOS Silicon*                                                                           |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **Todos os processadores (Intel/AMD e Apple Silicon)** | Code for Intel/AMD<br/>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br/>*Two compiled codes will be available* |
 | **O meu processador (processador)**                    | Código para Intel/AMD                                                                      | Código para Intel/AMD                                                                        | Código para Apple Silicon                                                                    |
@@ -277,11 +277,11 @@ To do this, you must surround the code to be excluded from range checking with t
 
 The classic compiler can be used on any platform, while the Silicon compiler can only be used on a Mac machine:
 
-|             | Compilar para Windows | Compilar para Intel Mac | Compile for Silicon Mac |
-| ----------- |:---------------------:|:-----------------------:|:-----------------------:|
-| Em Windows  |       &#10003;        |        &#10003;         |        &#10007;         |
-| Intel Mac   |       &#10003;        |        &#10003;         |        &#10003;         |
-| Silicon Mac |       &#10003;        |        &#10003;         |        &#10003;         |
+|             | Compilar para Windows | Compilar para Intel Mac | Compilar para Silicon Mac |
+| ----------- |:---------------------:|:-----------------------:|:-------------------------:|
+| Em Windows  |       &#10003;        |        &#10003;         |         &#10007;          |
+| Intel Mac   |       &#10003;        |        &#10003;         |         &#10003;          |
+| Silicon Mac |       &#10003;        |        &#10003;         |         &#10003;          |
 
 Ambos os compiladores estão integrados em 4D. The appropriate compiler is automatically selected depending on the [compilation target](#compilation-target) option.
 
