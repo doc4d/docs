@@ -370,7 +370,7 @@ If there are several suggestions available, 4D displays them in a pop-up list wh
 
 ![](../assets/en/code-editor/autocomplete-popup.png)
 
-The list is in alphabetical order. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
+A lista está por ordem alfabética. Choose the value by double-clicking it or scroll the list using the arrow keys of the keyboard and then hit **Enter**, **Carriage Return** or **Tab** to insert the selected value.
 
 By default, you can also insert a suggested value by hitting one of the following delimiter `( ; : = < [ {` keys after selecting a value: the value inserted is then followed by the delimiter, ready for data entry.
 
