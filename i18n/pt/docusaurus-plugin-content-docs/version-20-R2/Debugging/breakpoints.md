@@ -6,7 +6,7 @@ title: Breakpoints and Command Catching
 ## Visão Geral
 
 
-Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
+Breakpoints and command catching are very efficient debugging techniques. Ambas têm o mesmo efeito: fazem uma pausa na execução do código (e apresentam a janela do depurador, se ainda não tiver sido apresentada) num passo pretendido.
 
 You set breakpoints on any line of code where you want the execution to be paused. É possível associar uma condição ao ponto de interrupção.
 
