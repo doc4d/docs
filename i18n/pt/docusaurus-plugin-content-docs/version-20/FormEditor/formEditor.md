@@ -463,7 +463,7 @@ The List box builder lets you create and fill entity selection list boxes in a f
 
  ![](../assets/en/FormEditor/listboxBuilderIcon.png)
 
- The List box builder is displayed:
+ O gerador do list box é exibido:
 
  ![](../assets/en/FormEditor/listboxBuilder.png)
 
