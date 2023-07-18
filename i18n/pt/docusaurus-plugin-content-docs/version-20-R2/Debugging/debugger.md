@@ -415,7 +415,7 @@ Esta secção lista todos os atalhos disponíveis na janela do depurador.
 
 > The tool bar also has [shortcuts](#tool-bar-buttons).
 
-#### Watch Pane & Custom Watch Pane
+#### Janela de avaliação e subjanela de avaliação
 
 * **Double-click** an item in the Watch Pane to copy it to the Custom Watch Pane
 * **Double-Click** in the Custom Watch Pane to create a new expression
