@@ -162,9 +162,9 @@ La carpeta Data contiene el archivo de datos y todos los archivos y carpetas rel
 
 (*) Cuando el proyecto se crea a partir de una base de datos binaria .4db, el archivo de datos se deja intacto. Por lo tanto, se puede nombrar de otra manera y colocar en otro lugar.
 
-### `Settings` (user data)
+### `Settings` (datos del usuario)
 
-This folder contains [**user settings for data**](../Desktop/user-settings.md#user-settings-for-data-file) used for application administration.
+Esta carpeta contiene los [**parámetros usuario para los datos**](../Desktop/user-settings.md#user-settings-for-data-file) utilizados para la administración de la aplicación.
 
 > These settings take priority over [user settings](#settings-user) and [structure settings](#sources). Ver también [Prioridad de los parámetros](../Desktop/user-settings.md#priority-of-settings).
 
