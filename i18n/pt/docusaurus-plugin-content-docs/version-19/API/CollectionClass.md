@@ -747,7 +747,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 | ---------- | ---------- |:--:| ---------------------------------------------------------------------------------- |
 | startFrom  | Integer    | -> | Índice para início do teste em                                                     |
 | methodName | Text       | -> | Nome do método a chamar para o teste                                               |
-| param      | Mixed      | -> | Parameter(s) to pass to methodName                                                 |
+| param      | Mixed      | -> | Parâmetro(s) a transmitir a methodName                                             |
 | Resultados | Parâmetros | <- | True se todos os elementos passarem o teste com sucesso|<!-- END REF -->
 
 |
