@@ -166,7 +166,7 @@ La carpeta Data contiene el archivo de datos y todos los archivos y carpetas rel
 
 Esta carpeta contiene los [**parámetros usuario para los datos**](../Desktop/user-settings.md#user-settings-for-data-file) utilizados para la administración de la aplicación.
 
-> These settings take priority over [user settings](#settings-user) and [structure settings](#sources). Ver también [Prioridad de los parámetros](../Desktop/user-settings.md#priority-of-settings).
+> Estos parámetros tienen prioridad sobre los [parámetros de usuario](#settings-user) y los [parámetros de estructura](#sources). Ver también [Prioridad de los parámetros](../Desktop/user-settings.md#priority-of-settings).
 
 | Contenido           | Descripción                                                                                                                                                                                                                                                                                                         | Formato |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
@@ -187,11 +187,11 @@ La carpeta Logs contiene todos los archivos de registro utilizados por el proyec
 
 > Una carpeta Logs adicional está disponible en la carpeta de preferencias del usuario del sistema (carpeta 4D activa, ver el comando [Get 4D folder](https://doc.4d.com/4dv19R/help/command/en/page485.html)) para los archivos de registro de mantenimiento y en los casos en que la carpeta de datos es de sólo lectura.
 
-## `Settings` (user)
+## `Settings` (usuario)
 
-This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
+Esta carpeta contiene los [**parámetros usuario**](../Desktop/user-settings.md#user-settings) utilizados para la administración de la aplicación.
 
-> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/userfile-settings.md#priority-of-settings).
+> Estos parámetros tienen prioridad sobre el archivo de [parámetros de estructura](#sources). Sin embargo, si existen [parámetros de usuario para los datos](#settings-user-data), tienen prioridad sobre los parámetros de usuario. Ver también [Prioridad de los parámetros](../Desktop/userfile-settings.md#priority-of-settings).
 
 | Contenido           | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Formato |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
