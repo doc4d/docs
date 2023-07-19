@@ -3,17 +3,17 @@ id: debugger
 title: Depurador
 ---
 
-The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through your code slowly and examine the information. This process is called "tracing".
+O depurador é útil quando é necessário detetar erros ou monitorizar a execução de métodos. Permite-lhe percorrer o seu código lentamente e examinar a informação. Este processo é designado por "rastreio".
 
 ![debugger-window-local](../assets/en/Debugging/debugger-window-intro.png)
 
 ## Chamando o depurador
 
-There are multiple ways to get the Debugger to display:
+Há várias formas de exibir o depurador:
 
-* Clicking the **Trace** button in the [Syntax Error window](basics.md#syntax-error-window)
-* Using the [`TRACE`](https://doc.4d.com/4dv19/help/command/en/page157.html) command
-* Clicking the **Debug** button in the Execute Method window or selecting **Run and debug...** button in the Code Editor
+* Clicar no botão **Trace** na [janela de erros de sintaxe](basics.md#syntax-error-window)
+* Utilizando o comando [`TRACE`](https://doc.4d.com/4dv19/help/command/en/page157.html)
+* Clicar no botão **Debug** na janela de execução do método ou selecionar o botão **Run and debug...** no editor de código
 * Using **Alt+Shift+Right click** (Windows) or **Ctrl+Option+Cmd+Click** (macOS) while a method is executing, then selecting the process to trace in the pop-up menu:
 
 ![open-debugger](../assets/en/Debugging/openDebugger.png)
