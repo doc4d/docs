@@ -5,29 +5,29 @@ title: Depuração a partir de máquinas remotas
 
 ## Visão Geral
 
-When a 4D database is running on 4D Server in interpreted mode, you can debug the 4D code running on the server from a remote 4D client logged to the project. You just need to attach the debugger to a specific remote machine, and the code execution can be monitored in the debugger directly on the remote machine.
+Quando um banco de dados 4D está sendo executado no 4D Server em modo interpretado, é possível depurar o código 4D em execução no servidor a partir de um cliente 4D remoto conectado ao projeto. Basta associar o depurador a uma máquina remota específica, e a execução do código pode ser monitorada no depurador diretamente na máquina remota.
 
-On a remote machine, the [debugger window](debugger.md) displays a specific server icon and a blue background color to indicate that you are debugging server code:
+Numa máquina remota, a [janela do depurador](debugger.md) apresenta um ícone de servidor específico e uma cor de fundo azul para indicar que depura código de servidor:
 
 ![debugger-window-remote](../assets/en/Debugging/debuggerWindowRemote.png)
 
-This feature is particularly useful when 4D Server runs in headless mode (see [Command Line Interface](../Admin/cli.md)), or when access to the server machine is not easy.
+Essa funcionalidade é particularmente útil quando o 4D Server está sendo executado no modo headless (consulte [Interface de linha de comando](../Admin/cli.md)), ou quando o acesso à máquina do servidor não é fácil.
 
 
 ## Depurador anexado
 
-Only one debugger can debug a 4D Server application at a given time. It is called the **attached debugger**. O depurador ligado pode ser:
+Apenas um depurador pode depurar uma aplicação 4D Server num determinado momento. Chama-se ao **depurador anexado**. O depurador ligado pode ser:
 
-* the local 4D Server debugger (default) - if the server is not running headless.
-* the debugger of a remote 4D client - if the remote session has access to Design mode.
+* o depurador local do Servidor 4D (padrão) - se o servidor não estiver sendo executado sem interface.
+* o depurador de um cliente 4D remoto - se a sessão remota tiver acesso ao modo Desenho.
 
-The attached debugger is called whenever a 4D Server encounters:
+O depurador anexado é chamado sempre que um 4D Server se encontra:
 * um ponto de ruptura
 * um comando `TRACE`
 * a caught command
 * um erro
 
-Keep in mind that error messages are sent to the attached debugger machine. This means that in the case of a remote debugger, server error messages are displayed on the remote 4D client.
+Tenga en cuenta que los mensajes de error se envían a la máquina depuradora asociada. This means that in the case of a remote debugger, server error messages are displayed on the remote 4D client.
 
 Note que:
 * The code executed in the `On Server Startup Database` Method cannot be debugged remotely. Só pode ser depurado no lado do servidor
