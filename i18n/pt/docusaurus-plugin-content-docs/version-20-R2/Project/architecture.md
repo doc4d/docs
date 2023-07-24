@@ -191,7 +191,7 @@ The Logs folder contains all log files used by the project. Os ficheiros de regi
 
 This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
 
-> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/userfile-settings.md#priority-of-settings).
+> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/user-settings.md#priority-of-settings).
 
 | Conteúdos           | Descrição                                                                                                                                                                                                                                                                                                                            | Formato |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- |
