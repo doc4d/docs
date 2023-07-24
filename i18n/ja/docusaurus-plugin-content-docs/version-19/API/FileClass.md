@@ -263,6 +263,7 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 
 <!-- REF #FileClass.delete().Params -->
+
 | 引数 | タイプ |  | 説明                                           |
 | -- | --- |  | -------------------------------------------- |
 |    |     |  | このコマンドは引数を必要としません|<!-- END REF -->
@@ -273,10 +274,18 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 `.delete()` 関数は、 <!-- REF #FileClass.delete().Summary -->ファイルを削除します<!-- END REF -->。
 
-ファイルが現在開かれている場合、エラーが生成されます。
-
 ファイルがディスク上に存在しない場合、関数は何もしません (エラーは生成されません)。
-> **警告**: `.delete( )` はディスク上の任意のファイルを削除することができます。 これには、他のアプリケーションで作成されたドキュメントや、アプリケーションそのものも対象になります。 そのため、`.delete( )` は特に十分な注意を払って使用してください。 ファイルの削除は恒久的な操作であり取り消しできません。
+
+If the file is currently open, the result depends on the OS:
+
+- on Windows, an error is generated,
+- on macOS, no error is generated and the file is deleted.
+
+:::caution
+
+`.delete()` can delete any file on a disk. これには、他のアプリケーションで作成されたドキュメントや、アプリケーションそのものも対象になります。 そのため、`.delete()` は特に十分な注意を払って使用してください。 ファイルの削除は恒久的な操作であり取り消しできません。
+
+:::
 
 #### 例題
 
