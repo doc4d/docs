@@ -16,7 +16,7 @@ The application builder allows you to:
 
 ## Build application overview
 
-Building a project package can be carried out using:
+A cria de um pacote de projetos pode ser efetuada utilizando:
 
 * either the [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html) command,
 * or the [Build Application window](#application-builder).
