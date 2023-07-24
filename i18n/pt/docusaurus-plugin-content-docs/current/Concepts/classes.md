@@ -348,7 +348,7 @@ O tipo de propriedade pode ser um dos seguintes tipos suportados:
 
 :::info
 
-The `property` keyword can only be used in class methods and outside any `Function` or `Class Constructor` block.
+A palavra-chave `property` só pode ser utilizada em métodos classe e fora de qualquer bloco `Function` ou `Class Constructor`.
 
 :::
 
