@@ -251,7 +251,7 @@ Para obtener información detallada, consulte [esta entrada del blog](https://bl
 - Soporte del esquema color oscuro y claro para los [formularios](../FormEditor/properties_FormProperties.md#color-scheme) y [hojas de estilo](../FormEditor/stylesheets#media-queries)
 - Nuevos temas oscuros y claros por defecto en las [preferencias del editor de código](../Preferences/methods.md#theme-list).
 - [Compilación nativa](../Project/compiler.md#compiler-methods-for) para procesadores Silicon.
-- [Variable calculation](../FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
+- La propiedad [cálculo de variables](../FormObjects/properties_Object.md#variable-calculation) es ahora soportada por las columnas list box de la selección de entidades.
 - Nueva página [CLI](../Admin/cli.md) completa.
 
 
@@ -286,6 +286,6 @@ Para obtener información detallada, consulte [esta entrada del blog](https://bl
 | Zlib      | 1.2.13         | 20                |                                                                                                               |
 | webKit    | WKWebView      | 19                |                                                                                                               |
 | PHP       | 8.2.4          | 20                |                                                                                                               |
-| libldap   | 2.4.48         | 18 R2             |                                                                                                               |
+| libldap   | 2.6.4          | 20 R3             |                                                                                                               |
 | libsasl   | 2.1.28         | 20                |                                                                                                               |
 
