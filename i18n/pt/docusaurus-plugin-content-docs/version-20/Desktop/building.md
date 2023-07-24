@@ -14,18 +14,18 @@ The application builder allows you to:
 * Build client-server applications with automatic updating of client and server parts.
 * Save your build settings for future use (*Save settings* button).
 
-> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. However, you can build specific applications that support local modifications by using the `PackProject` XML key (see [doc.4d.com](https://doc.4d.com)).
+> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Tenha em atenção que a utilização de comandos ou funções que modificam os ficheiros de origem (como `CREATE INDEX` ou `CREATE TABLE` (SQL)) não é possível por padrão em aplicações compiladas. No entanto, pode criar aplicações específicas que suportem modificações locais utilizando a chave XML `PackProject` (ver [doc.4d.com](https://doc.4d.com)).
 
 ## Visão Geral
 
-Building a project package can be carried out using:
+A cria de um pacote de projetos pode ser efetuada utilizando:
 
 * o comando [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html),
 * or the [Build Application window](#application-builder).
 
 :::tip
 
-You can also download and use [`Build4D`](https://github.com/4d-depot/Build4D), a component that provides classes to compile, build, and sign 4D projects, even from a headless application.
+Também pode descarregar e utilizar [`Build4D`](https://github.com/4d-depot/Build4D), um componente que fornece classes para compilar, criar e assinar projetos 4D, mesmo a partir de uma aplicação sem interface.
 
 :::
 
