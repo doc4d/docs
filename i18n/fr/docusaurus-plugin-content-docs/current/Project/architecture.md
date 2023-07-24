@@ -191,7 +191,7 @@ Le dossier Logs contient tous les fichiers journaux utilisés par le projet. Les
 
 This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
 
-> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/userfile-settings.md#priority-of-settings).
+> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/user-settings.md#priority-of-settings).
 
 | Contenu             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        | Format |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
