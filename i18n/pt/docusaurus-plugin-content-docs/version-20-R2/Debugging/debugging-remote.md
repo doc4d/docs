@@ -27,19 +27,19 @@ O depurador anexado é chamado sempre que um 4D Server se encontra:
 * a caught command
 * um erro
 
-Tenga en cuenta que los mensajes de error se envían a la máquina depuradora asociada. This means that in the case of a remote debugger, server error messages are displayed on the remote 4D client.
+Tenga en cuenta que los mensajes de error se envían a la máquina depuradora asociada. Isso significa que, no caso de um depurador remoto, as mensagens de erro do servidor são exibidas no cliente 4D remoto.
 
 Note que:
-* The code executed in the `On Server Startup Database` Method cannot be debugged remotely. Só pode ser depurado no lado do servidor
-* If no debugger is attached, the running code is not stopped by debugging commands
+* O código executado no método `On Server Startup Database` não pode ser depurado remotamente. Só pode ser depurado no lado do servidor
+* Se não estiver ligado um depurador, o código em execução não é interrompido pelos comandos de depuração
 
 
 ## Ligar o depurador
 
-By default when you start an interpreted application:
+Por defeito, quando se inicia uma aplicação interpretada:
 
-* if 4D Server is not running headless, the debugger is attached to the server,
-* if 4D Server is running headless, no debugger is attached.
+* se o 4D Server não estiver funcionando sem interface, o depurador está associado ao servidor,
+* se 4D Server funciona sem interface, nenhum depurador está ligado.
 
 You can attach the debugger to any remote 4D client allowed to connect to the 4D Server application.
 
