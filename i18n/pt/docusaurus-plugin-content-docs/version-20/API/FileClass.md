@@ -281,10 +281,18 @@ Se quiser criar um alias para um arquivo na sua pasta database:
 
 A função `.delete()` <!-- REF #FileClass.delete().Summary -->apaga o arquivo<!-- END REF -->.
 
-Se o arquivo estiver aberto atualmente, um erro é gerado.
-
 Se o arquivo não existir no disco, a função não faz nada (não é gerado nenhum erro).
-> **ATENÇÃO**: `.delete()` pode apagar qualquer arquivo de um disco. Isto inclui documentos criados com outras aplicações, bem como as próprias aplicações. `.delete()` deve ser utilizado com extrema cautela. A eliminação de um arquivo é uma operação permanente e não pode ser desfeita.
+
+Se o ficheiro estiver atualmente aberto, o resultado depende do sistema operativo:
+
+- no Windows, é gerado um erro,
+- no macOS, não é gerado qualquer erro e o ficheiro é eliminado.
+
+:::caution
+
+`.delete()` pode apagar qualquer ficheiro num disco. Isto inclui documentos criados com outras aplicações, bem como as próprias aplicações. `.delete()` deve ser utilizado com extrema cautela. A eliminação de um arquivo é uma operação permanente e não pode ser desfeita.
+
+:::
 
 #### Exemplo
 
@@ -474,6 +482,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 A função `.open()` <!-- REF #FileClass.open().Summary -->cria e devolve um novo objeto [4D. FileHandle](FileHandleClass) no arquivo, no *mode* ou como as *options* especificadas<!-- END REF -->. Pode utilizar funções e propriedades da classe [4D. FileHandle](FileHandleClass) para escrever, ler ou anexar conteúdo ao arquivo.
 
 Se utilizar o parâmetro *mode* (text), passe o modo de abertura para o file handle:
+
 
 
 
