@@ -96,6 +96,7 @@ Project フォルダー Project Sources Classes Polygon.4dm
 定義されたクラスには、クラスストアよりアクセスすることができます。 クラスストアには次の二つが存在します:
 
 
+
 - `cs` - ユーザークラスストア
 - `4D` - ビルトインクラスストア
 
@@ -252,15 +253,16 @@ Function add($x : Variant; $y : Integer): Integer
 #### 例題 1
 
 ```4d
-// クラス: Rectangle
+// Class: Rectangle
+property name : Text
+property height; width : Integer
+
 Class constructor($width : Integer; $height : Integer)
- property name : Text
- property height; width : Integer
  This.name:="Rectangle"
  This.height:=$height
  This.width:=$width
 
-// 関数定義
+// Function definition
 Function getArea()->$result : Integer
  $result:=(This.height)*(This.width)
 ```
@@ -363,7 +365,7 @@ $o:=cs.MyClass.new("John";42)
 
 :::info
 
-`property` キーワードは、クラス関数内の `Function` ブロック外でのみ使用できます。
+The `property` keyword can only be used in class methods and outside any `Function` or `Class Constructor` block.
 
 :::
 
@@ -423,10 +425,10 @@ Function set <name>($parameterName : type)
 #### 例題 1
 
 ```4d  
-// クラス: Person.4dm
+//Class: Person.4dm
+property firstName; lastName : Text
 
 Class constructor($firstname : Text; $lastname : Text)
- property firstName; lastName : Text
  This.firstName:=$firstname
  This.lastName:=$lastname
 
