@@ -146,27 +146,27 @@ Na linguagem, os diferentes tipos de dados que podem ser manejados são denomina
 
 Lembre que os dados de tipo string e numérico podem ser associados a mais de um tipo de campo. Quando são introduzidos dados em um campo, a linguagem converte automaticamente os dados no tipo correto para o campo. Por exemplo, se um campo inteiro for usado, seus dados são tratados automaticamente como numéricos. Em outras palavras não precisa se preocupar sobre misturar tipos de campos similares quando usando a linguagem; vai ser gerenciada por você.
 
-Entretanto, quando usar a linguagem é importante que não misture diferentes tipos de dados. Da mesma forma que não tem sentido armazenar "ABC" em um campo de data, tampouco tem sentido por "ABC" em uma variável utilizada para datas. Na maioria dos casos, 4D é muito tolerante e tentará dar sentido ao que está fazendo. For example, if you add a number to a date, 4D will assume that you want to add that number of days to the date, but if you try to add a string to a date, 4D will tell you that the operation cannot work.
+Entretanto, quando usar a linguagem é importante que não misture diferentes tipos de dados. Da mesma forma que não tem sentido armazenar "ABC" em um campo de data, tampouco tem sentido por "ABC" em uma variável utilizada para datas. Na maioria dos casos, 4D é muito tolerante e tentará dar sentido ao que está fazendo. Por exemplo, se adicionar um número a uma data, 4D assumirá que quer adicionar esse número de dias à data, mas se tentar adicionar uma string a uma data, 4D dir-lhe-á que a operação não pode funcionar.
 
-There are cases in which you need to store data as one type and use it as another type. The language contains a full complement of commands that let you convert from one data type to another. For example, you may need to create a part number that starts with a number and ends with characters such as “abc”. Neste caso, poderá escrever:
+Há casos em que é necessário armazenar dados como um tipo e utilizá-los como outro tipo. A linguagem contém um conjunto completo de comandos que permitem a conversão de um tipo de dados para outro. Por exemplo, pode ser necessário criar um número de peça que comece com um número e termine com caracteres como "abc". Neste caso, poderá escrever:
 
 ```4d
 [Products]Part Number:=String(Number)+"abc"
 ```
 
-If _Number_ is 17, then _[Products]Part Number_ will get the string “17abc”.
+Se o número __ é 17, então _[Products]Part Number_ obterá a cadeia "17abc".
 
-The data types are fully defined in the section [Data Types](Concepts/data-types.md).
+Os tipos de dados são definidos na íntegra na secção [Tipos de dados](Concepts/data-types.md).
 
 ## Objectos e colecções
 
-You can handle 4D language objects and collections using the object notation to get or to set their values. Por exemplo:
+Pode manipular objectos e colecções da linguagem 4D utilizando a notação de objeto para obter ou definir os seus valores. Por exemplo:
 
 ```4d
 employee.name:="Smith"
 ```
 
-You can also use a string within square brackets, for example:
+Também pode utilizar uma cadeia de caracteres entre parênteses rectos, por exemplo:
 
 ```4d
 $vName:=employee["name"]
@@ -178,7 +178,7 @@ Uma vez que um valor de propriedade de objeto pode ser um objeto ou uma coleçã
 $vAge:=employee.children[2].age
 ```
 
-Note that if the object property value is an object that encapsulates a method (a formula), you need to add parenthesis () to the property name to execute the method:
+Note-se que se o valor da propriedade do objeto for um objeto que encapsula um método (uma fórmula), é necessário adicionar parênteses () ao nome da propriedade para executar o método:
 
 ```
 ALERT($myText) //"HELLO"
@@ -190,7 +190,7 @@ $myText:="hello"
 $myText:=Do_Something($myText) //Call the Do_Something method
 ```
 
-To access a collection element, you have to pass the element number embedded in square brackets:
+Para aceder a um elemento da collection, é necessário passar o número do elemento entre parênteses rectos:
 
 ```4d
 C_COLLECTION(myColl)
@@ -200,23 +200,23 @@ myColl[3]  //acesso ao 4º elemento da colecção
 
 ## Classes
 
-A linguagem 4D suporta classes de objectos. Add a `myClass.4dm` file in the Project/Sources/Classes folder of a project to create a class named "myClass".
+A linguagem 4D suporta classes de objectos. Adicione um arquivo `myClass.4dm` na pasta Project/Sources/Classes de um projeto para criar uma classe chamada "myClass".
 
-To instantiate an object of the class in a method, call the user class from the *class store* (`cs`) and use the `new()` member function. É possível passar parâmetros.
+Para instanciar um objeto da classe num método, chame a classe usuário a partir da *class store* (`cs`) e utilize a função de membro `new()`. É possível passar parâmetros.
 
 ```4d  
 // num método 4D
 $o:=cs.myClass.new() 
 ```
 
-In the `myClass` class method, use the `Function <methodName>` statement to define the *methodName* class member function. A class member function can receive and return parameters like any method, and use `This` as the object instance.
+In the `myClass` class method, use the `Function <methodName>` statement to define the *methodName* class member function. Uma função membro da classe pode receber e devolver parâmetros como qualquer método e utilizar `This` como instância do objeto.
 
 ```4d  
 //in o ficheiro myClass.4dm Function hello -> $welcome : Text
   $welcome:="Hello "+This.who
 ```
 
-To execute a class member function, just use the `()` operator on the member function of the object instance.
+Para executar uma função membro da classe, basta utilizar o operador `()` na função membro da instância do objeto.
 
 ```4d
 $f:=New object
@@ -224,14 +224,14 @@ $f.message:=New formula(ALERT("Hello world!"))
 $f.message() //displays "Hello world!"
 ```
 
-Optionally, use the `Class constructor` keyword to declare properties of the object.
+Opcionalmente, utilize a palavra-chave `Class constructor` para declarar as propriedades do objeto.
 
 ```4d  
 //in the Rectangle.4dm file Class constructor ($height: Integer; $width : Integer)
 This.height:=$height This.width:=$width This.name:="Rectangle"
 ```
 
-Uma classe pode estender outra classe utilizando `Class extends <ClassName>`. Superclasses can be called using the `Super` command. Por exemplo:
+Uma classe pode estender outra classe utilizando `Class extends <ClassName>`. As superclasses podem ser chamadas utilizando o comando `Super`. Por exemplo:
 
 ```4d  
 //in the Square.4dm file Class extends rectangle Class constructor($length : Integer)
@@ -243,7 +243,7 @@ Uma classe pode estender outra classe utilizando `Class extends <ClassName>`. Su
 
 ## Operadores
 
-When you use the language, it is rare that you will simply want a piece of data. It is more likely that you will want to do something to or with that data. Estes cálculos são efectuados com operadores. Operators, in general, take two pieces of data and perform an operation on them that results in a new piece of data. Já está familiarizado com muitos operadores. You are already familiar with many operators. You are already familiar with many operators.
+Quando se utiliza a linguagem, é raro que se pretenda apenas um dado. É mais provável que queira fazer algo com esses dados ou a partir deles. Estes cálculos são efectuados com operadores. Os operadores, em geral, pegam em dois dados e efetuam uma operação sobre eles que resulta num novo dado. Já está familiarizado com muitos operadores. You are already familiar with many operators. You are already familiar with many operators.
 
 | Operador | Operação      | Exemplo   |
 | -------- | ------------- | --------- |
@@ -398,7 +398,7 @@ The 4D language allows you to use escape sequences (also called escape character
 
 The sequence consists of a backslash `\`, followed by a character. For instance, `\t` is an escape sequence for the **Tab** character. Escape sequences facilitate the entry of special characters: the previous example (`\t`) replaces the entry "Character(Tab)".
 
-In 4D, the following escape sequences can be used:
+Em 4D, podem ser utilizadas as seguintes sequências de escape:
 
 | Escape sequence                     | Carácter substituído |
 | ----------------------------------- | -------------------- |
