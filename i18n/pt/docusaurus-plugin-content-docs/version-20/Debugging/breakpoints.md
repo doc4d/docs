@@ -6,7 +6,7 @@ title: Breakpoints and Command Catching
 ## Visão Geral
 
 
-Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
+Breakpoints and command catching are very efficient debugging techniques. Ambas têm o mesmo efeito: fazem uma pausa na execução do código (e apresentam a janela do depurador, se ainda não tiver sido apresentada) num passo pretendido.
 
 You set breakpoints on any line of code where you want the execution to be paused. É possível associar uma condição ao ponto de interrupção.
 
@@ -49,7 +49,7 @@ Segue-se uma descrição das propriedades:
 * **Breakpoint is disabled**: If you currently do not need a break point, but might need it later, you can temporarily disable it. A disabled break point appears as a dash (-) instead of a bullet (•)|
 
 
-### Breakpoints in remote debugging
+### Pontos de interrupção na depuração remota
 
 A lista de pontos de paragem é armazenada localmente. In remote debugging mode, if the attached debugger is a remote 4D, the remote break point list replaces temporarily the server break point list during the debugging session.
 
@@ -93,7 +93,7 @@ To open the Caught Commands page:
 
 ![runtime-explorer-window](../assets/en/Debugging/catch-command.png)
 
-Esta página lista os comandos que devem ser capturados durante a execução. It is composed of two columns:
+Esta página lista os comandos que devem ser capturados durante a execução. É composto por duas colunas:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any
