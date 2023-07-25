@@ -235,7 +235,7 @@ You can select the level of messages using the `Diagnostic log level` selector o
 | ----------------- | --------------------------------------------------------------------------------------------- | ------------------------------- |
 | ERROR             | Uma parte da aplicação não funciona                                                           | ERROR                           |
 | WARN              | Potential error, use of a deprecated function, poor uses, undesirable or unexpected situation | ERROR, WARN                     |
-| INFO              | *Default level* - Important application event                                                 | ERROR, WARN, INFO               |
+| INFO              | *Nível padrão* - Evento de aplicação importante                                               | ERROR, WARN, INFO               |
 | DEBUG             | Detail of application flow (for 4D technical services)                                        | ERROR, WARN, INFO, DEBUG        |
 | TRACE             | Other internal information (for 4D technical services)                                        | ERROR, WARN, INFO, DEBUG, TRACE |
 
@@ -335,7 +335,7 @@ Os campos abaixo são registrados para cada petição:
 | Campo nome     | Descrição                                                    | Exemplo                                                 |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------- |
 | sequenceNumber | Número de operação único e sequencial da sessão de histórico | 104                                                     |
-| url            | Request URL                                                  | "rest/Persons(30001)"                                   |
+| url            | Solicitar URL                                                | "rest/Persons(30001)"                                   |
 | startTime      | Data e hora de início utilizando o formato ISO 8601          | "2019-05-28T08:25:12.346Z"                              |
 | endTime        | Data e hora final usando formato ISO 8601                    | "2019-05-28T08:25:12.371Z"                              |
 | duration       | Duração do processamento do cliente em milissegundos (ms)    | 25                                                      |
@@ -343,7 +343,7 @@ Os campos abaixo são registrados para cada petição:
 
 #### Exemplo
 
-Here is an example of a client-side ORDA log file record:
+Eis um exemplo de um registo de ficheiro de registo ORDA do lado do cliente:
 
 ```json
     {
@@ -384,7 +384,7 @@ Os campos abaixo são registrados para cada petição:
 | Campo nome     | Descrição                                                                                                     | Exemplo                                                 |
 | -------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | sequenceNumber | Número de operação único e sequencial da sessão de histórico                                                  | 104                                                     |
-| url            | Request URL                                                                                                   | "rest/Persons(30001)"                                   |
+| url            | Solicitar URL                                                                                                 | "rest/Persons(30001)"                                   |
 | startTime      | Data e hora de início utilizando o formato ISO 8601                                                           | "2019-05-28T08:25:12.346Z"                              |
 | duration       | Duração do processamento do servidor em microssegundos (µ)                                                    | 2500                                                    |
 | response       | Server response object, can be configured in [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...] |
@@ -417,7 +417,7 @@ Here is an example of a server-side ORDA log record:
 ```
 
 
-## Using a log configuration file
+## Utilizar um ficheiro de configuração de log
 
 You can use a **log configuration file** to easily manage log recording in a production environment. Este ficheiro é pré-configurado pelo programador. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
@@ -433,19 +433,19 @@ There are several ways to enable the log configuration file, depending on your c
 - **all projects with a stand-alone or remote 4D**: the file must be named `logConfig.json` and copied in the following folder:
     * Windows: `Users\[userName]\AppData\Roaming\4D`
     * macOS: `/Users/[userName]/Library/ApplicationSupport/4D`
-- **all projects with 4D Server**: the file must be named `logConfig.json` and copied in the following folder:
+- **todos os projetos com 4D Server**: o ficheiro deve ser nomeado `logConfig.json` e copiado para a seguinte pasta:
     * Windows: `Users\[userName]\AppData\Roaming\4D Server`
     * macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
 
 :::note
 
-If a `logConfig.json` file is installed in both Settings and AppData/Library folders, the Settings folder file will have priority.
+Se um ficheiro `logConfig.json` estiver instalado nas pastas Settings e AppData/Library, o ficheiro da pasta Settings terá prioridade.
 
 :::
 
 ### Descrição do ficheiro JSON
 
-The log configuration file is a `.json` file that must comply with the following json schema:
+O ficheiro de configuração do registo é um ficheiro `.json` que deve estar em conformidade com o seguinte esquema json:
 
 ```json
 {
