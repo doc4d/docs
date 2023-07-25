@@ -96,7 +96,7 @@ Valeurs possibles :
 | Valeur   | Constantes                     | Commentaire                                                   |
 | -------- | ------------------------------ | ------------------------------------------------------------- |
 | APOP     | `POP3 authentication APOP`     | Authentification à l'aide du protocole APOP (POP3 uniquement) |
-| CRAM-MD5 | `POP3 authentication CRAM-MD5` | Authentification à l'aide du protocole CRAM-MD5               |
+| CRAM-MD5 | `POP3 authentication CRAM MD5` | Authentification à l'aide du protocole CRAM-MD5               |
 | LOGIN    | `POP3 authentication login`    | Authentification à l'aide du protocole LOGIN                  |
 | OAUTH2   | `POP3 authentication OAUTH2`   | Authentification à l'aide du protocole OAuth2                 |
 | PLAIN    | `POP3 authentication plain`    | Authentification à l'aide du protocole PLAIN                  |
