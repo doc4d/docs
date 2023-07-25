@@ -106,7 +106,7 @@ In *connectionHandler*, you can pass an object containing callback functions to 
 | onError     | [Function](FunctionClass.md) | Função de retorno de chamada para erros de execução. A chamada de retorno recebe os seguintes parâmetros:<li>`$1`: Objeto WebSocket</li><li>`$2`: Object</li><ul><li>`$2.type` (text): sempre "error"</li><li>`$2.errors`: collection of 4D errors stack in case of execution error.<ul><li>`[].errCode` (number): 4D error code</li><li>`[].message` (text): Descrição do erro 4D</li><li>`[].componentSignature` (text): Signature of the internal component which returned the error</li></ul></li></ul>                                    |
 | onTerminate | [Function](FunctionClass.md) | Callback function when the WebSocket is terminated. A chamada de retorno recebe os seguintes parâmetros:<li>`$1`: Objeto WebSocket</li><li>`$2`: Object</li><ul><li>`$2.code` (number, read-only): unsigned short containing the close code sent by the server.</li><li>`$2.reason` (text, read-only): Reason why the server closed the connection. This is specific to the particular server and sub-protocol.</li><li>`$2.wasClean` (boolean, read-only): Indicates whether or not the connection was cleanly closed.</li></ul>                                     |
 | onOpen      | [Function](FunctionClass.md) | Função de retorno de chamada quando o websocket está aberto. A chamada de retorno recebe os seguintes parâmetros:<li>`$1`: Objeto WebSocket</li><li>`$2`: Object</li><ul><li>`$2.type` (texto): sempre "open"</li></ul>                         |
-| dataType    | Text                         | Type of the data received or sent. Available values: "text" (default), "blob", "object". "text" = utf-8                                                                                                                 |
+| dataType    | Text                         | Tipo de dados recebidos ou enviados. Available values: "text" (default), "blob", "object". "text" = utf-8                                                                                                               |
 
 Aqui está a sequência de chamadas de retorno:
 
@@ -228,7 +228,7 @@ A função `.terminate()` <!-- REF #WebSocketClass.terminate().Summary -->closes
 In *code*, you can pass a status code explaining why the connection is being closed (see also [WebSocket Connection Close Code in the RFC6455](https://www.rfc-editor.org/rfc/rfc6455.html#section-7.1.5)):
 
 - If unspecified, a close code for the connection is automatically set to 1000 for a normal closure, or otherwise to another standard value in the range 1001-1015 that indicates the actual reason the connection was closed.
-- If specified, the value of this code parameter overrides the automatic setting. The value must be an integer. Either 1000, or a custom code in the range 3000-4999. If you specify a *code* value, you should also specify a *reason* value.
+- If specified, the value of this code parameter overrides the automatic setting. O valor deve ser um número inteiro. Either 1000, or a custom code in the range 3000-4999. If you specify a *code* value, you should also specify a *reason* value.
 
 In *reason*, you can pass a string describing why the connection is being closed. 
 
