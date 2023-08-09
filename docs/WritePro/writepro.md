@@ -236,7 +236,7 @@ The theme file in JSON format contains the following attributes:
 |bcor|Object| |Object containing the style definition applicable to the bottom carry-over row.|
 
 
-For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](#https://doc.4d.com/4Dv20R2/4D/20-R2/Attributs-4D-Write-Pro.300-6390350.fe.html):
+For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](https://doc.4d.com/4Dv20R2/4D/20-R2/Attributs-4D-Write-Pro.300-6390350.en.html):
 
 |WP attributes|Corresponding WP constant|
 |:----|:----|
