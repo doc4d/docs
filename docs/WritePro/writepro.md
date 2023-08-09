@@ -163,6 +163,15 @@ The translation file in JSON format contains the following attributes:
 |formulas|Collection| |Collection of translated formula objects|
 |fileNames|Collection| |Collection of translated fileName objects (applicable to the theme and template name)|
 
+Whitin each one of these attribute, the translation object includes the following attributes:
+
+|Attribute|Type|Mandatory|Description|
+|:----|:----|:----|:----|
+|original|Text| |Original text intended for translation|
+|translation|Text| |Translated version of the original texts|
+
+Defining these attributes within the translation object ensures proper organization and alignment between the source and translated content.
+
 If the template name or the formula (break, carry-over row, or extra) exists in the translated file, its translation is applied in the Table Wizard. In addition, only the table defined within the translation file is displayed and translated.
 
 The translation file serves an additional role when a user selects a table in the interface. It can filter the tables and fields proposed to the user. For example, to hide table IDs, this behavior is similar to the `SET TABLE TITLES` and `SET FIELD TITLES` commands.
