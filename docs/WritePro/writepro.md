@@ -27,7 +27,7 @@ You open the Table Wizard dialog from the "Insert table"  menu item in 4D Write 
 
 ![](../assets/en/WritePro/tablewizard-interface.png)
 
-From this interface you can select a template or table in the first drop-down list ![](../assets/en/WritePro/templates-dropbox.PNG) and a theme in the second one ![](../assets/en/WritePro/themes-dropbox.PNG). 
+From this interface you can select a template or table in the first drop-down list and a theme in the second one. 
 
 ##### In Columns:
 
