@@ -17,45 +17,39 @@ The Table Wizard is here to further simplify table creation based on database da
 
 The Table Wizard, accessible to end-users, loads templates provided and configured by 4D developers. This enables developers to customize the template according to the specific use cases and business requirements of the users.
 
-The Table Wizard comes with a default interface, which developers must configure to adapt its content to match the specific requirements of the application.
+The Table Wizard comes with default templates and themes, which developers can configure to adapt its content to match the specific requirements of the application.
 
-To implement the Table Wizard in your application, developers need to create and configure template files.
+To implement the Table Wizard in your application, the developers are able to create and configure template files.
 
-### WP Table Wizard default interface
+### WP Table Wizard interface
 
-You open the Table Wizard dialog from the "Insert table"  menu item in 4D Write Pro interface toolbar and sidebar.
+The user opens the Table Wizard dialog from the "Insert table"  menu item in 4D Write Pro interface toolbar and sidebar.
 
 ![](../assets/en/WritePro/tablewizard-interface.png)
 
-From this interface, you can select a template or a table from the first drop-down list and a theme from the second.
+From this interface, the user can select a template or a table from the first drop-down list and a theme from the second.
 
 ##### In Columns:
 
-![](../assets/en/WritePro/columns-list.PNG) 
+![](../assets/en/WritePro/columns2.PNG) 
 
-Depending on your selection of a template or a table, you can view the list of fields stored in the template ( Blob and object types are automatically excluded). You can then select columns to display in the table by checking the box in front of the field name and order them by moving and arranging the fields list.
+Depending on the user's selection of a template or a table, the user can view the list of fields stored in the template (Blob and object types are automatically excluded). They can then select columns to display in the table by checking the box in front of the field name and order them by moving and dragging the fields list.
 
 ##### In Rows:
 
 ![](../assets/en/WritePro/rows.PNG)
 
-In the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows (summary rows) above or below the data row, and choose to show/hide carry-over rows.
+In the Table Wizard, the user can also define the number of header rows and extra rows (0 to 5 each), set [break rows](https://doc.4d.com/4Dv20/4D/20/Handling-tables.200-6229469.en.html#6233076) (summary rows) above or below the data row, and choose to show/hide [carry-over rows](https://doc.4d.com/4Dv20/4D/20/Handling-tables.200-6229469.en.html#6236686).
 
 ##### In Display:
 
 ![](../assets/en/WritePro/display2.PNG)
 
-You adjust the zoom level according to your preference by selecting the desired option from a drop-down list, use radio buttons to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox.
+The user adjusts the zoom level according to their preference by selecting the desired option from a drop-down list, uses radio buttons to display formulas or data for clear presentation, and chooses to display a horizontal ruler using a checkbox.
 
-:::note
+After finalizing the table creation and customization, the user can click on the **Insert** button to add the table to their WP document.
 
-Each time an option is changed, the WP table area is recalculated to accommodate the changes seamlessly.
-
-:::
-
-After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.PNG) button to add the table to your WP document.
-
-Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
+Once the table has been integrated into the document, the user can customize its style. The formatting tools of the toolbar and sidebar are still available.
 
 ### WP Table Wizard template configuration
 
@@ -75,6 +69,12 @@ The template file allows you to define the following:
 - the break formulas (if any break row can be inserted)
 - the dataclass attributes that can be used as table columns,
 - the formulas available as contextual menus inside break rows, carry-over row or extra rows.
+
+:::info Limitation
+
+In the current implementation (4D v20 R2), formulas in breaks, data sources and contextual menus do not support calls to the host database methods. This limitation will be removed in the next version.
+
+:::
  
 The template file must be stored in a "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Templates" folder within your project.
 
@@ -100,6 +100,11 @@ The template file in JSON format contains the following attributes:
 |extraFormulas.label|Text|x|Label shown to the user|
 |extraFormulas.source|Text|x|Formula|
 
+:::note French language
+
+If your application is likely to be run on a 4D with language set to French, make sure that you use [tokens](https://doc.4d.com/4Dv20/4D/20/Using-tokens-in-formulas.300-6237731.en.html) in your formulas so that they are correctly interpreted no matter the user's language configuration.
+
+:::
 
 ##### Example
 
@@ -211,7 +216,7 @@ The translation file serves an additional role when a user selects a table in th
 
 #### Theme files
 
-A list of 12 themes is provided by default in the 4D Write Pro Interface component: "Arial," "CourierNew," "Tahoma," and "YuGothic", each of them is available in "Blue," "Green," and "Grey" variations. However, you can create your own theme by placing it in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
+A list of themes is provided by default in the 4D Write Pro Interface component, such as "Arial", "CourierNew" and "YuGothic", available in multiple variations like "Blue" and "Green". However, you can create your own theme by placing it in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
 
 The theme file in JSON format contains the following attributes:
 
@@ -237,7 +242,7 @@ The theme file in JSON format contains the following attributes:
 |bcor|Object| |Object containing the style definition applicable to the bottom carry-over row.|
 
 
-For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](https://doc.4d.com/4Dv20R2/4D/20-R2/Attributs-4D-Write-Pro.300-6390350.en.html):
+For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](https://doc.4d.com/4Dv20/4D/20/4D-Write-Pro-Attributes.300-6229528.en.html):
 
 |WP attributes|Corresponding WP constant|
 |:----|:----|
