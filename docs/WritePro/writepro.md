@@ -31,7 +31,7 @@ From this interface you can select a template or table in the first drop-down li
 
 ##### In Columns:
 
-![](../assets/en/WritePro/columns-list.PNG)
+![](../assets/en/WritePro/columns-list.PNG) 
 
 Depending on your selection of a template or a table, you can view the list of fields stored in the template ( Blob and object types are automatically excluded). You can then choose which columns to display in the table by checking the box in front of the field name and order them by moving and arranging the fields list.
 
