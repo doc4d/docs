@@ -37,15 +37,11 @@ Depending on your selection of a template or a table, you can view the list of f
 
 ##### In Rows:
 
-![](../assets/en/WritePro/rows.png)
-
-From the Table Wizard, you also can define the number of header rows   and extra rows (0 to 5 each), set break rows above or below the data row, and choose to show/hide carry-over rows.
+From the Table Wizard, you also can define the number of header rows ![](../assets/en/WritePro/header-rows.png)  and extra rows ![](../assets/en/WritePro/extra-rows.png) (0 to 5 each), set break rows above ![](../assets/en/WritePro/breakrows-above.png) or below ![](../assets/en/WritePro/breakrows-below.png)  the data row, and choose to show/hide carry-over rows ![](../assets/en/WritePro/carryover-row.png) .
 
 ##### In Display:
 
-![](../assets/en/WritePro/display2.png)
-
-You adjust the zoom level according to your preference by selecting the desired option from a drop-down list, use radio buttons to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox.
+You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.png) , use radio buttons ![](../assets/en/WritePro/display.png) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.png) .
 
 After finalizing your table creation and customization, you can click on the **Insert** button to add the table to your WP document.
 
