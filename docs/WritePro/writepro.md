@@ -27,7 +27,7 @@ You open the Table Wizard dialog from the "Insert table"  menu item in 4D Write 
 
 ![](../assets/en/WritePro/tablewizard-interface.png)
 
-From this interface you can select a template or table in the first drop-down list ![](../assets/en/WritePro/templates-dropbox.png) and a theme in the second one ![](../assets/en/WritePro/themes-dropbox.png). 
+From this interface you can select a template or table in the first drop-down list ![](../assets/en/WritePro/templates-dropbox.PNG) and a theme in the second one ![](../assets/en/WritePro/themes-dropbox.PNG). 
 
 ##### In Columns:
 
@@ -37,13 +37,13 @@ Depending on your selection of a template or a table, you can view the list of f
 
 ##### In Rows:
 
-From the Table Wizard, you also can define the number of header rows ![](../assets/en/WritePro/header-rows.png)  and extra rows ![](../assets/en/WritePro/extra-rows.png) (0 to 5 each), set break rows above ![](../assets/en/WritePro/breakrows-above.png) or below ![](../assets/en/WritePro/breakrows-below.png)  the data row, and choose to show/hide carry-over rows ![](../assets/en/WritePro/carryover-row.png) .
+From the Table Wizard, you also can define the number of header rows ![](../assets/en/WritePro/header-rows.PNG)  and extra rows ![](../assets/en/WritePro/extra-rows.PNG) (0 to 5 each), set break rows above ![](../assets/en/WritePro/breakrows-above.PNG) or below ![](../assets/en/WritePro/breakrows-below.PNG)  the data row, and choose to show/hide carry-over rows ![](../assets/en/WritePro/carryover-row.PNG) .
 
 ##### In Display:
 
-You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.png) , use radio buttons ![](../assets/en/WritePro/display.png) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.png).
+You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.PNG) , use radio buttons ![](../assets/en/WritePro/display.PNG) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.PNG).
 
-After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.png) button to add the table to your WP document.
+After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.PNG) button to add the table to your WP document.
 
 Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
 
