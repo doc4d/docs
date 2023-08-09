@@ -5,7 +5,7 @@ title: 4D Write Pro Interface
 
 4D WritePro Interface offers a set of palettes, which allow end users to easily customize a 4D Write Pro document.
 
-A 4D developer can easily implement these palettes in his application. Thus the end user can handle all 4D Write Pro properties such as: fonts, text alignment, bookmarks, table layout, frames.
+A 4D developer can easily implement these palettes in their application. Thus, end users can manage all 4D Write Pro properties, such as fonts, text alignment, bookmarks, table layout, and frames.
 
 The main [4D Write Pro Interface documentation](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.en.html) can be found in the *4D Design Reference manual*.
 
@@ -13,7 +13,7 @@ You will find below the Table Wizard configuration documentation.
 
 ## Table Wizard
 
-The table wizard is here to further simplify table creation based on database data using contexts, data sources, and formulas.
+The Table Wizard is here to further simplify table creation based on database data using contexts, data sources, and formulas.
 
 The Table Wizard, accessible to end-users, loads templates provided and configured by 4D developers. This enables developers to customize the template according to the specific use cases and business requirements of the users.
 
@@ -27,19 +27,19 @@ You open the Table Wizard dialog from the "Insert table"  menu item in 4D Write 
 
 ![](../assets/en/WritePro/tablewizard-interface.png)
 
-From this interface you can select a template or table in the first drop-down list and a theme in the second one. 
+From this interface, you can select a template or a table from the first drop-down list and a theme from the second.
 
 ##### In Columns:
 
 ![](../assets/en/WritePro/columns-list.PNG) 
 
-Depending on your selection of a template or a table, you can view the list of fields stored in the template ( Blob and object types are automatically excluded). You can then choose which columns to display in the table by checking the box in front of the field name and order them by moving and arranging the fields list.
+Depending on your selection of a template or a table, you can view the list of fields stored in the template ( Blob and object types are automatically excluded). You can then select columns to display in the table by checking the box in front of the field name and order them by moving and arranging the fields list.
 
 ##### In Rows:
 
 ![](../assets/en/WritePro/rows.PNG)
 
-From the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows above or below the data row, and choose to show/hide carry-over rows.
+In the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows above or below the data row, and choose to show/hide carry-over rows.
 
 ##### In Display:
 
@@ -82,26 +82,27 @@ The template file in JSON format contains the following attributes:
 |Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
 |tableDataSource|Text|x|Formula of table data source|
-|columns|Collection|Mandatory|Collection of table columns|
-|columns.check|Text|Mandatory|True when the column is already checked in the template editor. False when the column is unchecked in the template editor.|
-|columns.header|Text|Mandatory|Label shown to the user|
-|columns.source|Text|Mandatory|Formula|
-|breaks|Collection||Collection of break objects. The order of the breaks is important. It corresponds to the order in the document when the breaks are above the data lines.|
-|breaks.label|Text|Mandatory|Label shown to the user|
-|breaks.source|Text|Mandatory|Formula|
-|breakFormulas|Collection|Optional|Collection of formula objects applicable to break rows|
-|breakFormulas.label|Text|Mandatory|Label shown to the user|
-|breakFormulas.source|Text|Mandatory|Formula|
-|bcorFormulas|Collection|Optional|Collection of formula objects applicable to bottom carry over rows|
-|bcorFormulas.label|Text|Mandatory|Label shown to the user|
-|bcorFormulas.source|Text|Mandatory|Formula|
-|extraFormulas|Collection|Optional|Collection of formula objects applicable to extra rows|
-|extraFormulas.label|Text|Mandatory|Label shown to the user|
-|extraFormulas.source|Text|Mandatory|Formula|
+|columns|Collection|x|Collection of table columns|
+|columns.check|Text|x|True when the column is already checked in the template editor. False when the column is unchecked in the template editor.|
+|columns.header|Text|x|Label shown to the user|
+|columns.source|Text|x|Formula|
+|breaks|Collection| |Collection of break objects. The order of the breaks is important. It corresponds to the order in the document when the breaks are above the data lines.|
+|breaks.label|Text|x|Label shown to the user|
+|breaks.source|Text|x|Formula|
+|breakFormulas|Collection| |Collection of formula objects applicable to break rows|
+|breakFormulas.label|Text|x|Label shown to the user|
+|breakFormulas.source|Text|x|Formula|
+|bcorFormulas|Collection| |Collection of formula objects applicable to bottom carry over rows|
+|bcorFormulas.label|Text|x|Label shown to the user|
+|bcorFormulas.source|Text|x|Formula|
+|extraFormulas|Collection| |Collection of formula objects applicable to extra rows|
+|extraFormulas.label|Text|x|Label shown to the user|
+|extraFormulas.source|Text|x|Formula|
+
 
 ##### Example
 
-Here's a brief example of what your file might look like:
+Here's a brief example of what your JSON file might look like:
 
 ```json
 {
@@ -149,18 +150,18 @@ Here's a brief example of what your file might look like:
 
 #### Translation files
 
-Translation files translate the names of templates, themes, tables, fields, and formulas. These files are added to the project's "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Translations" folder.
+Translation files translate the names of templates, themes, tables, fields, and formulas. These files are added to the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Translations" folder in your project.
 
 Each translation file must be named with the corresponding language code (for example "en" for English or "fr" for French).
 
 The translation file in JSON format contains the following attributes:
 
-|Attribute|Type|Mandatory/Optional|Description|
+|Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
-|tables|Collection|Optional|Collection of translated table objects|
-|fields|Collection|Optional|Collection of translated field objects|
-|formulas|Collection|Optional|Collection of translated formula objects|
-|fileNames|Collection|Optional|Collection of translated fileName objects (applicable to the theme and template name)|
+|tables|Collection| |Collection of translated table objects|
+|fields|Collection| |Collection of translated field objects|
+|formulas|Collection| |Collection of translated formula objects|
+|fileNames|Collection| |Collection of translated fileName objects (applicable to the theme and template name)|
 
 If the template name or the formula (break, carry-over row, or extra) exists in the translated file, its translation is applied in the Table Wizard. In addition, only the table defined within the translation file is displayed and translated.
 
@@ -200,30 +201,31 @@ The translation file serves an additional role when a user selects a table in th
 
 #### Theme files
 
-A list of themes is provided by default in the 4D Write Pro Interface component. However, you can create your own theme by placing them in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
+A list of themes is provided by default in the 4D Write Pro Interface component. However, you can create your own theme by placing it in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
 
 The theme file in JSON format contains the following attributes:
 
-|Attribute|Type|Mandatory/Optional|Description|
+|Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
-|default|Object|Optional|Object containing the default style applicable to all rows.|
-|table|Object|Optional|Object containing the style definition applicable to the table.|
-|rows|Object|Optional|Object containing the style definition applicable to all rows.|
-|cells|Object|Optional|Object containing the style definition applicable to all cells.|
-|header1|Object|Optional|Object containing the style definition applicable to the first header row.|
-|header2|Object|Optional|Object containing the style definition applicable to the second header row.|
-|header3|Object|Optional|Object containing the style definition applicable to the third header row.|
-|header4|Object|Optional|Object containing the style definition applicable to the fourth header row.|
-|header5|Object|Optional|Object containing the style definition applicable to the fifth header row.|
-|headers|Object|Optional|Object containing the style definition applicable to the header rows, if a specific header (like header1, header2...) is not defined.|
-|data|Object|Optional|Object containing the style definition applicable to the repeated data row.|
-|break1|Object|Optional|Object containing the style definition applicable to the first break row.|
-|break2|Object|Optional|Object containing the style definition applicable to the second break row.|
-|break3|Object|Optional|Object containing the style definition applicable to the third break row.|
-|break4|Object|Optional|Object containing the style definition applicable to the fourth break row.|
-|break5|Object|Optional|Object containing the style definition applicable to the fifth break row.|
-|breaks|Object|Optional|Object containing the style definition applicable to the break rows, if a specific break (like break1, break2...) is not defined.|
-|bcor|Object|Optional|Object containing the style definition applicable to the bottom carry-over row.|
+|default|Object| |Object containing the default style applicable to all rows.|
+|table|Object| |Object containing the style definition applicable to the table.|
+|rows|Object| |Object containing the style definition applicable to all rows.|
+|cells|Object| |Object containing the style definition applicable to all cells.|
+|header1|Object| |Object containing the style definition applicable to the first header row.|
+|header2|Object| |Object containing the style definition applicable to the second header row.|
+|header3|Object| |Object containing the style definition applicable to the third header row.|
+|header4|Object| |Object containing the style definition applicable to the fourth header row.|
+|header5|Object| |Object containing the style definition applicable to the fifth header row.|
+|headers|Object| |Object containing the style definition applicable to the header rows, if a specific header (like header1, header2...) is not defined.|
+|data|Object| |Object containing the style definition applicable to the repeated data row.|
+|break1|Object| |Object containing the style definition applicable to the first break row.|
+|break2|Object| |Object containing the style definition applicable to the second break row.|
+|break3|Object| |Object containing the style definition applicable to the third break row.|
+|break4|Object| |Object containing the style definition applicable to the fourth break row.|
+|break5|Object| |Object containing the style definition applicable to the fifth break row.|
+|breaks|Object| |Object containing the style definition applicable to the break rows, if a specific break (like break1, break2...) is not defined.|
+|bcor|Object| |Object containing the style definition applicable to the bottom carry-over row.|
+
 
 For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes:
 
