@@ -168,8 +168,8 @@ Whitin each one of these attribute, the translation object includes the followin
 
 |Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
-|original|Text| |Original text intended for translation|
-|translation|Text| |Translated version of the original text|
+|original|Text|x|Original text intended for translation|
+|translation|Text|x|Translated version of the original text|
 
 Defining these attributes within the translation object ensures proper organization and alignment between the source and translated content.
 
