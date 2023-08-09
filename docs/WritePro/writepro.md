@@ -168,7 +168,7 @@ Whitin each one of these attribute, the translation object includes the followin
 |Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
 |original|Text| |Original text intended for translation|
-|translation|Text| |Translated version of the original texts|
+|translation|Text| |Translated version of the original text|
 
 Defining these attributes within the translation object ensures proper organization and alignment between the source and translated content.
 
@@ -236,20 +236,20 @@ The theme file in JSON format contains the following attributes:
 |bcor|Object| |Object containing the style definition applicable to the bottom carry-over row.|
 
 
-For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes:
+For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](#https://doc.4d.com/4Dv20R2/4D/20-R2/Attributs-4D-Write-Pro.300-6390350.fe.html):
 
-|WP attributes|Default value|
+|WP attributes|Corresponding WP constant|
 |:----|:----|
-|textAlign|wk left|
-|backgroundColor|white|
-|borderColor|black|
-|borderStyle|1|
-|borderWidth|0.5pt|
-|font|Arial|
-|color|black|
-|fontFamily|Arial|
-|fontSize|12pt|
-|padding|2pt|
+| textAlign      | wk text align       |
+| backgroundColor| wk background color |
+| borderColor    | wk border color     |
+| borderStyle    | wk border style     |
+| borderWidth    | wk border width     |
+| font           | wk font             |
+| color          | wk font color       |
+| fontFamily     | wk font family      |
+| fontSize       | wk font size        |
+| padding        | wk padding          |
 
 ##### Example
 
