@@ -41,9 +41,9 @@ From the Table Wizard, you also can define the number of header rows ![](../asse
 
 ##### In Display:
 
-You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.png) , use radio buttons ![](../assets/en/WritePro/display.png) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.png) .
+You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.png) , use radio buttons ![](../assets/en/WritePro/display.png) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.png).
 
-After finalizing your table creation and customization, you can click on the **Insert** button to add the table to your WP document.
+After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.png) button to add the table to your WP document.
 
 Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
 
