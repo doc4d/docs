@@ -39,7 +39,7 @@ Depending on your selection of a template or a table, you can view the list of f
 
 ![](../assets/en/WritePro/rows.PNG)
 
-In the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows above or below the data row, and choose to show/hide carry-over rows.
+In the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows (summary rows) above or below the data row, and choose to show/hide carry-over rows.
 
 ##### In Display:
 
@@ -47,15 +47,15 @@ In the Table Wizard, you also can define the number of header rows and extra row
 
 You adjust the zoom level according to your preference by selecting the desired option from a drop-down list, use radio buttons to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox.
 
-After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.PNG) button to add the table to your WP document.
-
-Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
-
 :::note
 
 Each time an option is changed, the WP table area is recalculated to accommodate the changes seamlessly.
 
 :::
+
+After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.PNG) button to add the table to your WP document.
+
+Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
 
 ### WP Table Wizard template configuration
 
@@ -72,8 +72,9 @@ These three types of files contribute to the configuration of the Table Wizard, 
 The template file allows you to define the following:
 
 - the formula that returns an entity selection used as the table's data source,
+- the break formulas (if any break row can be inserted)
 - the dataclass attributes that can be used as table columns,
-- the formulas for break, carry-over or extra rows contextual menus.
+- the formulas available as contextual menus inside break rows, carry-over row or extra rows.
  
 The template file must be stored in a "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Templates" folder within your project.
 
@@ -210,7 +211,7 @@ The translation file serves an additional role when a user selects a table in th
 
 #### Theme files
 
-A list of themes is provided by default in the 4D Write Pro Interface component. However, you can create your own theme by placing it in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
+A list of 12 themes is provided by default in the 4D Write Pro Interface component: "Arial," "CourierNew," "Tahoma," and "YuGothic", each of them is available in "Blue," "Green," and "Grey" variations. However, you can create your own theme by placing it in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
 
 The theme file in JSON format contains the following attributes:
 
