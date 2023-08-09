@@ -1,19 +1,19 @@
 ---
 id: 4dwriteprointerface
-title: 4D Write Pro interface
+title: 4D Write Pro Interface
 ---
 
-4D WritePro interface offers a set of palettes, which allow end users to easily customize a 4D Write Pro document.
+4D WritePro Interface offers a set of palettes, which allow end users to easily customize a 4D Write Pro document.
 
 A 4D developer can easily implement these palettes in his application. Thus the end user can handle all 4D Write Pro properties such as: fonts, text alignment, bookmarks, table layout, frames.
 
-The main [4D Write Pro documentation](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.en.html) can be found in the 4D Design Reference manual.
+The main [4D Write Pro Interface documentation](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.en.html) can be found in the *4D Design Reference manual*.
 
 You will find below the Table Wizard configuration documentation.
 
 ## Table Wizard
 
-The table wizard is here to further simplifie table creation based on database data using contexts, data sources, and formulas.
+The table wizard is here to further simplify table creation based on database data using contexts, data sources, and formulas.
 
 The Table Wizard, accessible to end-users, loads templates provided and configured by 4D developers. This enables developers to customize the template according to the specific use cases and business requirements of the users.
 
@@ -37,23 +37,19 @@ Depending on your selection of a template or a table, you can view the list of f
 
 ##### In Rows:
 
-From the Table Wizard, you also can define the number of header rows ![](../assets/en/WritePro/header-rows.PNG)  and extra rows ![](../assets/en/WritePro/extra-rows.PNG) (0 to 5 each), set break rows above ![](../assets/en/WritePro/breakrows-above.PNG) or below ![](../assets/en/WritePro/breakrows-below.PNG)  the data row, and choose to show/hide carry-over rows ![](../assets/en/WritePro/carryover-row.PNG) .
+![](../assets/en/WritePro/rows.PNG)
+
+From the Table Wizard, you also can define the number of header rows and extra rows (0 to 5 each), set break rows above or below the data row, and choose to show/hide carry-over rows.
 
 ##### In Display:
 
-You adjust the zoom level according to your preference by selecting the desired option from a drop-down list ![](../assets/en/WritePro/zoom.PNG) , use radio buttons ![](../assets/en/WritePro/display.PNG) to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox ![](../assets/en/WritePro/horizontal-ruler.PNG).
+![](../assets/en/WritePro/display2.PNG)
+
+You adjust the zoom level according to your preference by selecting the desired option from a drop-down list, use radio buttons to display formulas or data for clear presentation or choose to display a horizontal ruler using a checkbox.
 
 After finalizing your table creation and customization, you can click on the ![](../assets/en/WritePro/insert.PNG) button to add the table to your WP document.
 
 Once the table has been integrated into the document, you can customize its style. The formatting tools of the toolbar and sidebar are still available.
-
-In summary, from the Wizard Table interfact you can: 
-- select a template or table and a theme
-- check the fields to display as columns
-- sort the columns 
-- define the number of header row 
-- define the position of break rows 
-- choose the formulas to be displayed in the break, caryy-over or extra rows
 
 :::note
 
@@ -83,14 +79,14 @@ The template file must be stored in a "[`Resources`](../project/architecture.md#
 
 The template file in JSON format contains the following attributes:
 
-|Attribute|Type|Mandatory/Optional|Description|
+|Attribute|Type|Mandatory|Description|
 |:----|:----|:----|:----|
-|tableDataSource|Text|Mandatory|Formula of table data source|
+|tableDataSource|Text|x|Formula of table data source|
 |columns|Collection|Mandatory|Collection of table columns|
 |columns.check|Text|Mandatory|True when the column is already checked in the template editor. False when the column is unchecked in the template editor.|
 |columns.header|Text|Mandatory|Label shown to the user|
 |columns.source|Text|Mandatory|Formula|
-|breaks|Collection|Optional|Collection of break objects. The order of the breaks is important. It corresponds to the order in the document when the breaks are above the data lines.|
+|breaks|Collection||Collection of break objects. The order of the breaks is important. It corresponds to the order in the document when the breaks are above the data lines.|
 |breaks.label|Text|Mandatory|Label shown to the user|
 |breaks.source|Text|Mandatory|Formula|
 |breakFormulas|Collection|Optional|Collection of formula objects applicable to break rows|
@@ -206,21 +202,6 @@ The translation file serves an additional role when a user selects a table in th
 
 A list of themes is provided by default in the 4D Write Pro Interface component. However, you can create your own theme by placing them in the "[`Resources`](../project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
 
-The theme files allow you to define the following WP attributes for a header, data, carry-over, summary, and extra rows:
-
-|WP attributes|Default value|
-|:----|:----|
-|textAlign|wk left|
-|backgroundColor|white|
-|borderColor|black|
-|borderStyle|1|
-|borderWidth|0.5pt|
-|font|Arial|
-|color|black|
-|fontFamily|Arial|
-|fontSize|12pt|
-|padding|2pt|
-
 The theme file in JSON format contains the following attributes:
 
 |Attribute|Type|Mandatory/Optional|Description|
@@ -244,6 +225,20 @@ The theme file in JSON format contains the following attributes:
 |breaks|Object|Optional|Object containing the style definition applicable to the break rows, if a specific break (like break1, break2...) is not defined.|
 |bcor|Object|Optional|Object containing the style definition applicable to the bottom carry-over row.|
 
+For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes:
+
+|WP attributes|Default value|
+|:----|:----|
+|textAlign|wk left|
+|backgroundColor|white|
+|borderColor|black|
+|borderStyle|1|
+|borderWidth|0.5pt|
+|font|Arial|
+|color|black|
+|fontFamily|Arial|
+|fontSize|12pt|
+|padding|2pt|
 
 ##### Example
 
