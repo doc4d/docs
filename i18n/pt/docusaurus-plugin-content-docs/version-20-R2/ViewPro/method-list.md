@@ -73,7 +73,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 #### Descrição
 
 O comando `VP ADD RANGE NAME` <!-- REF #_method_.VP ADD RANGE NAME.Summary -->cria ou modifica um intervalo nomeado no documento aberto<!-- END REF -->.
-> Named ranges created by this command are saved with the document.
+> Os intervalos nomeados criados por este comando são guardados com o documento.
 
 In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. Note that you can use the same name for different scopes (see below).
 
@@ -311,11 +311,11 @@ will create and apply the following style object named *GreenDashDotStyle*:
 
 <!-- REF #_method_.VP All.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                            |
-| ---------- | ------- | -- | ---------------------------------------------------- |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro           |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)             |
-| Resultados | Object  | <- | Range object of all cells|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                                       |
+| ---------- | ------- | -- | --------------------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                      |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                        |
+| Resultados | Object  | <- | Objeto intervalo de todas as células|<!-- END REF -->
 
 |
 
