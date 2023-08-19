@@ -115,9 +115,9 @@ VP ADD RANGE NAME($range;"Total1")
 
 #### Descrição
 
-O comando `VP ADD SELECTION` <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
+O comando `VP ADD SELECTION` <!-- REF #_method_.VP ADD SELECTION.Summary -->adiciona as células especificadas às células selecionadas<!-- END REF -->.
 
-In *rangeObj*, pass a range object of cells to add to the current selection.
+Em *rangeObj*, passe um objeto intervalo de células a adicionar à seleção atual.
 > A célula ativa não é modificada.
 
 #### Exemplo
@@ -267,7 +267,7 @@ You can designate where to define the style sheet in the optional *sheet* parame
 
 If a *styleName* style sheet is defined at the workbook level and at a sheet level, the sheet level has priority over the workbook level when the style sheet is set.
 
-To apply the style sheet, use the [VP SET DEFAULT STYLE](#vp-set-default-style) or [VP SET CELL STYLE](#vp-set-cell-style) commands.
+Para aplicar a folha de estilos, utilize os comandos [VP SET DEFAULT STYLE](#vp-set-default-style) ou [VP SET CELL STYLE](#vp-set-cell-style).
 
 #### Exemplo
 
@@ -354,7 +354,7 @@ $all:=VP All("ViewProArea") // todas as células da folha atual
 | column     | Longint | -> | Índice de coluna                           |
 | row        | Longint | -> | Índice de linha                            |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida)   |
-| Resultados | Object  | <- | Range object of a single cell              |
+| Resultados | Object  | <- | Objeto intervalo de uma única célula       |
 <!-- END REF -->
 
 #### Descrição
@@ -403,15 +403,15 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 <!-- REF #_method_.VP Cells.Params -->
 
-| Parâmetro   | Tipo    |    | Descrição                                        |
-| ----------- | ------- | -- | ------------------------------------------------ |
-| vpAreaName  | Text    | -> | Nome de objeto formulário área 4D View Pro       |
-| column      | Integer | -> | Índice de coluna                                 |
-| row         | Integer | -> | Índice de linha                                  |
-| columnCount | Integer | -> | Número de colunas                                |
-| rowCount    | Integer | -> | Número de linhas                                 |
-| sheet       | Integer | -> | Índice da folha (folha atual se omitida)         |
-| Resultados  | Object  | <- | Range object of cells|<!-- END REF -->
+| Parâmetro   | Tipo    |    | Descrição                                              |
+| ----------- | ------- | -- | ------------------------------------------------------ |
+| vpAreaName  | Text    | -> | Nome de objeto formulário área 4D View Pro             |
+| column      | Integer | -> | Índice de coluna                                       |
+| row         | Integer | -> | Índice de linha                                        |
+| columnCount | Integer | -> | Número de colunas                                      |
+| rowCount    | Integer | -> | Número de linhas                                       |
+| sheet       | Integer | -> | Índice da folha (folha atual se omitida)               |
+| Resultados  | Object  | <- | Objeto intervalo de células|<!-- END REF -->
 
 |
 
@@ -454,13 +454,13 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 a D7
 
 <!-- REF #_method_.VP Column.Params -->
 
-| Parâmetro   | Tipo    |    | Descrição                                        |
-| ----------- | ------- | -- | ------------------------------------------------ |
-| vpAreaName  | Text    | -> | Nome de objeto formulário área 4D View Pro       |
-| column      | Integer | -> | Índice de coluna                                 |
-| columnCount | Integer | -> | Número de colunas                                |
-| sheet       | Integer | -> | Índice da folha (folha atual se omitida)         |
-| Resultados  | Object  | <- | Range object of cells|<!-- END REF -->
+| Parâmetro   | Tipo    |    | Descrição                                              |
+| ----------- | ------- | -- | ------------------------------------------------------ |
+| vpAreaName  | Text    | -> | Nome de objeto formulário área 4D View Pro             |
+| column      | Integer | -> | Índice de coluna                                       |
+| columnCount | Integer | -> | Número de colunas                                      |
+| sheet       | Integer | -> | Índice da folha (folha atual se omitida)               |
+| Resultados  | Object  | <- | Objeto intervalo de células|<!-- END REF -->
 
 |
 
@@ -538,17 +538,17 @@ Selecionar as colunas e executar este código:
 
 <!-- REF #_method_.VP Combine ranges.Params -->
 
-| Parâmetro     | Tipo   |    | Descrição                                                     |
-| ------------- | ------ | -- | ------------------------------------------------------------- |
-| rangeObj      | Object | -> | Objeto intervalo                                              |
-| otherRangeObj | Object | -> | Objeto intervalo                                              |
-| Resultados    | Object | <- | Object containing a combined range|<!-- END REF -->
+| Parâmetro     | Tipo   |    | Descrição                                                           |
+| ------------- | ------ | -- | ------------------------------------------------------------------- |
+| rangeObj      | Object | -> | Objeto intervalo                                                    |
+| otherRangeObj | Object | -> | Objeto intervalo                                                    |
+| Resultados    | Object | <- | Objeto que contém um intervalo combinado|<!-- END REF -->
 
 |
 
 #### Descrição
 
-O comando `VP Combine Ranges` <!-- REF #_method_.VP Combine ranges.Summary -->returns a new range object that incorporates two or more existing range objects<!-- END REF -->. Todos os intervalos devem ser da mesma área 4D View Pro.
+O comando `VP Combine Ranges` <!-- REF #_method_.VP Combine ranges.Summary -->devolve um novo objeto intervalo que incorpora dois ou mais objetos intervalo existentes<!-- END REF -->. Todos os intervalos devem ser da mesma área 4D View Pro.
 
 Em *rangeObj*, passe o primeiro intervalo.
 
@@ -679,7 +679,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //exportar toda a área
 | ---------- | ------ | -- | ---------------------------------------------------------------------- |
 | rangeObj   | Object | -> | Objeto intervalo                                                       |
 | options    | Object | -> | Opções adicionais                                                      |
-| Resultados | Object | <- | Objecto devolvido. Contains the copied data|<!-- END REF -->
+| Resultados | Object | <- | Objecto devolvido. Contém os dados copiados|<!-- END REF -->
 
 
 |
@@ -1113,7 +1113,7 @@ $vpVersion:=$vpAreaObj.version
 
 #### Exemplo 2
 
-You want to export the area, excluding formatting information:
+Pretende-se exportar a área, excluindo a informação de formatação:
 
 ```4d
 var $vpObj : Object
@@ -1170,7 +1170,7 @@ The function returns a range object describing each search value that was found 
 
 #### Exemplo 1
 
-To find the first cell containing the word "Total":
+Para encontrar a primeira célula que contém a palavra "Total":
 
 ```4d
 var $range;$result : Object
@@ -1182,7 +1182,7 @@ $result:=VP Find($range;"Total")
 
 #### Exemplo 2
 
-To find "Total" and replace it with "Grand Total":
+Para encontrar "Total" e substituí-lo por "Total geral":
 
 ```4d
 var $range;$condition;$result : Object
@@ -1347,11 +1347,11 @@ Ver exemplo para [`VP Object to font`](#vp-object-to-font).
 
 <!-- REF #_method_.VP Get active cell.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                              |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro             |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)               |
-| Resultados | Object  | <- | Range object of single cell|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                                       |
+| ---------- | ------- | -- | --------------------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                      |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                        |
+| Resultados | Object  | <- | Objeto intervalo de uma única célula|<!-- END REF -->
 
 |
 
@@ -1506,7 +1506,7 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 #### Descrição
 
-O comando `VP Get column attributes` <!-- REF #_method_.VP Get column attributes.Summary -->returns a collection of properties for any column in the *rangeObj*<!-- END REF -->.
+O comando `VP Get column attributes` <!-- REF #_method_.VP Get column attributes.Summary -->devolve um conjunto de propriedades para as colunas de *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass an object containing a range of the columns whose attributes will be retrieved.
 
@@ -1524,7 +1524,7 @@ $range:=VP Column("ViewProArea";1;2)
 $attr:=VP Get column attributes($range)
 ```
 
-... will return a collection of the attributes within the given range:
+... devolverá uma coleção dos atributos no intervalo dado:
 
 ![](../assets/en/ViewPro/cmd_vpGetColumnAttributes.PNG)
 
@@ -1543,13 +1543,13 @@ $attr:=VP Get column attributes($range)
 | ---------- | ------- | -- | --------------------------------------------------- |
 | vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário              |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida)            |
-| Resultados | Integer | <- | Total number of columns |<!-- END REF -->
+| Resultados | Integer | <- | Número total de colunas |<!-- END REF -->
 
 |
 
 #### Descrição
 
-O comando `VP Get column count` <!-- REF #_method_.VP Get column count.Summary -->returns the total number of columns from the designated *sheet*<!-- END REF -->.
+O comando `VP Get column count` <!-- REF #_method_.VP Get column count.Summary -->devolve o número total de colunas da *sheet* designada<!-- END REF -->.
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -1639,7 +1639,7 @@ The function returns an object or a collection depending on the type of data con
 
 #### Exemplo
 
-To get the data context bound to the following cells:
+Para obter o contexto de dados ligado às células seguintes:
 
 ![](../assets/en/ViewPro/vp-set-data-context-bind.png)
 
@@ -1664,7 +1664,7 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 | ---------- | ------- | -- | --------------------------------------------------- |
 | vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário              |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida)            |
-| Resultados | Integer | <- | Total number of columns |<!-- END REF -->
+| Resultados | Integer | <- | Número total de colunas |<!-- END REF -->
 
 |
 
@@ -1678,7 +1678,7 @@ You can define where to get the column count in the optional *sheet* parameter u
 
 #### Exemplo
 
-To get the details about the default style for this document:
+Para obter os detalhes sobre o estilo predefinido para este documento:
 
 ![](../assets/en/ViewPro/cmd_vpGetDefaultStyle.PNG)
 
@@ -1688,7 +1688,7 @@ Este código:
 $defaultStyle:=VP Get default style("myDoc")
 ```
 
-will return this information in the *$defaultStyle* object:
+devolverá esta informação no objeto *$defaultStyle*:
 
 ```4d
 {
@@ -1719,7 +1719,7 @@ will return this information in the *$defaultStyle* object:
 
 #### Descrição
 
-O comando `VP Get formula` <!-- REF #_method_.VP Get formula.Summary -->retrieves the formula from a designated cell range<!-- END REF -->.
+O comando `VP Get formula` <!-- REF #_method_.VP Get formula.Summary -->recupera a fórmula de um intervalo de células designado<!-- END REF -->.
 
 In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* designates multiple cells or multiple ranges, the formula of the first cell is returned. If *rangeObj* is a cell that does not contain a formula, the method returns an empty string.
 
@@ -1806,7 +1806,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 
 #### Descrição
 
-O comando `VP Get formulas` <!-- REF #_method_.VP Get formulas.Summary -->retrieves the formulas from a designated *rangeObj*<!-- END REF -->.
+O comando `VP Get formulas` <!-- REF #_method_.VP Get formulas.Summary -->recupera as fórmulas de um *rangeObj* designado<!-- END REF -->.
 
 In *rangeObj*, pass a range whose formulas you want to retrieve. If *rangeObj* designates multiple ranges, the formula of the first range is returned. If *rangeObj* does not contain any formulas, the command returns an empty string.
 
@@ -1841,11 +1841,11 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 <!-- REF #_method_.VP Get frozen panes.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                                                      |
-| ---------- | ------- | -- | ------------------------------------------------------------------------------ |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                                     |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                                       |
-| Resultados | Object  | <- | Object containing frozen column and row information|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                                                                        |
+| ---------- | ------- | -- | ------------------------------------------------------------------------------------------------ |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                                                       |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                                                         |
+| Resultados | Object  | <- | Objeto que contém as informações sobre as colunas e linhas congeladas|<!-- END REF -->
 
 |
 
@@ -1859,14 +1859,14 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 ##### Objeto devolvido
 
-The command returns an object describing the frozen columns and rows. Este objeto pode conter as seguintes propriedades:
+O comando devolve um objeto que descreve as colunas e linhas congeladas. Este objeto pode conter as seguintes propriedades:
 
-| Propriedade         | Tipo    | Descrição                                              |
-| ------------------- | ------- | ------------------------------------------------------ |
-| columnCount         | Integer | The number of frozen columns on the left of the sheet  |
-| trailingColumnCount | Integer | The number of frozen columns on the right of the sheet |
-| rowCount            | Integer | The number of frozen rows on the top of the sheet      |
-| trailingRowCount    | Integer | The number of frozen rows on the bottom of the sheet   |
+| Propriedade         | Tipo    | Descrição                                                |
+| ------------------- | ------- | -------------------------------------------------------- |
+| columnCount         | Integer | O número de colunas congeladas à esquerda da folha       |
+| trailingColumnCount | Integer | O número de colunas congeladas à direita da folha        |
+| rowCount            | Integer | O número de linhas congeladas na parte superior da folha |
+| trailingRowCount    | Integer | O número de linhas congeladas na parte inferior da folha |
 
 #### Exemplo
 
@@ -1914,7 +1914,7 @@ You can define where to get the names in *scope* using either the sheet index (c
 
 ##### Coleção devolvida
 
-The returned collection contains one object per name. As seguintes propriedades do objeto podem ser devolvidas:
+A coleção devolvida contém um objeto por nome. As seguintes propriedades do objeto podem ser devolvidas:
 
 | Propriedade         | Tipo | Descrição                      |
 | ------------------- | ---- | ------------------------------ |
@@ -1944,11 +1944,11 @@ $list:=VP Get names("ViewProArea";2) //nomes na 3ª folha
 
 <!-- REF #_method_.VP Get print info.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                                 |
-| ---------- | ------- | -- | --------------------------------------------------------- |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                  |
-| Resultados | Object  | <- | Object of printing information|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                                     |
+| ---------- | ------- | -- | ------------------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                    |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                      |
+| Resultados | Object  | <- | Objeto com informação de impressão|<!-- END REF -->
 
 |
 
@@ -2076,7 +2076,7 @@ $attr:=VP Get row attributes($range)
 
 #### Descrição
 
-O comando `VP Get row count` <!-- REF #_method_.VP Get row count.Summary -->returns the total number of rows from the designated *sheet*<!-- END REF -->.
+O comando `VP Get row count` <!-- REF #_method_.VP Get row count.Summary -->devolve o número total de linhas da *sheet* designada<!-- END REF -->.
 
 In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -2102,11 +2102,11 @@ $rowCount:=VP Get row count("ViewProarea")
 
 <!-- REF #_method_.VP Get selection.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                        |
-| ---------- | ------- | -- | ------------------------------------------------ |
-| vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário           |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)         |
-| Resultados | Object  | <- | Range object of cells|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                              |
+| ---------- | ------- | -- | ------------------------------------------------------ |
+| vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário                 |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)               |
+| Resultados | Object  | <- | Objeto intervalo de células|<!-- END REF -->
 
 |
 
@@ -2568,7 +2568,7 @@ End if
 | ---------- | ------- | -- | ------------------------------------------------- |
 | vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro        |
 | tableName  | Text    | -> | Nome da tabela                                    |
-| columnName | Text    | -> | Name of the table column                          |
+| columnName | Text    | -> | Nome da coluna da tabela                          |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida)          |
 | Resultados | Integer | <- | Índice de *columnName*|<!-- END REF -->
 
@@ -2831,10 +2831,10 @@ $tables:=VP Get tables("ViewProArea")
 
 <!-- REF #_method_.VP Get value.Params -->
 
-| Parâmetro  | Tipo   |    | Descrição                                                 |
-| ---------- | ------ | -- | --------------------------------------------------------- |
-| rangeObj   | Object | -> | Objeto intervalo                                          |
-| Resultados | Object | <- | Object containing a cell value|<!-- END REF -->
+| Parâmetro  | Tipo   |    | Descrição                                                       |
+| ---------- | ------ | -- | --------------------------------------------------------------- |
+| rangeObj   | Object | -> | Objeto intervalo                                                |
+| Resultados | Object | <- | Objeto que contém um valor de célula|<!-- END REF -->
 
 |
 
@@ -2892,7 +2892,7 @@ End if
 
 #### Descrição
 
-O comando `VP Get values` <!-- REF #_method_.VP Get values.Summary --> retrieves the values from the designated *rangeObj*<!-- END REF -->.
+O comando `VP Get values` <!-- REF #_method_.VP Get values.Summary --> obtém os valores do *rangeObj* designado<!-- END REF -->.
 
 In *rangeObj*, pass a range whose values you want to retrieve. If *rangeObj* includes multiple ranges, only the first range is used.
 
@@ -3020,7 +3020,7 @@ You want to import a default 4D View Pro document stored on the disk when the fo
 
 ```4d
 C_TEXT($docPath)
-If(Form event code=On VP Ready) //4D View Pro area loaded and ready
+If(Form event code=On VP Ready) //A zona 4D View Pro está carregada e pronta
     $docPath:="C:\\Bases\\ViewProDocs\\MyExport.4VP"
     VP IMPORT DOCUMENT("VPArea";$docPath)
 End if
@@ -3106,7 +3106,7 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 #### Descrição
 
-O comando `VP INSERT COLUMNS` <!-- REF #_method_.VP INSERT COLUMNS.Summary -->inserts columns into the *rangeObj*<!-- END REF -->.
+O comando `VP INSERT COLUMNS` <!-- REF #_method_.VP INSERT COLUMNS.Summary -->insere colunas no *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass an object containing a range of the starting column (the column which designates where the new column will be inserted) and the number of columns to insert. If the number of column to insert is omitted (not defined), a single column is inserted.
 
@@ -3143,7 +3143,7 @@ O resultado é:
 
 #### Descrição
 
-O comando `VP INSERT ROWS` <!-- REF #_method_.VP INSERT ROWS.Summary -->inserts rows defined by the *rangeObj*<!-- END REF -->.
+O comando `VP INSERT ROWS` <!-- REF #_method_.VP INSERT ROWS.Summary -->insere linhas definidas pelo *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass an object containing a range of the starting row (the row which designates where the new row will be inserted) and the number of rows to insert. If the number of rows to insert is omitted (not defined), a single row is inserted.
 
@@ -3250,10 +3250,10 @@ O comando `VP INSERT TABLE ROWS` <!-- REF #_method_.VP INSERT TABLE ROWS.Summary
 
 In the *insertAfter* parameter, you can pass one of the following constants to indicate if the row(s) must be inserted before or after the *row* index:
 
-| Parâmetros               | Valor | Descrição                                           |
-| ------------------------ | ----- | --------------------------------------------------- |
-| `vk table insert before` | 0     | Insert row(s) before the *row* (default if omitted) |
-| `vk table insert after`  | 1     | Inserir linha(s) após a *row*                       |
+| Parâmetros               | Valor | Descrição                                                 |
+| ------------------------ | ----- | --------------------------------------------------------- |
+| `vk table insert before` | 0     | Inserir linha(s) antes da *row* (predefinição se omitido) |
+| `vk table insert after`  | 1     | Inserir linha(s) após a *row*                             |
 
 This command inserts some rows in the *tableName* table, NOT in the sheet. The total number of rows of the sheet is not impacted by the command. Data present below the table (if any) are automatically moved down according to the number of added rows.
 
@@ -3372,12 +3372,12 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 <!-- REF #_method_.VP Name.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                         |
-| ---------- | ------- | -- | ------------------------------------------------- |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro        |
-| rangeName  | Text    | -> | Nome do intervalo existente                       |
-| sheet      | Integer | -> | Localização do intervalo (folha atual se omitida) |
-| Resultados | Object  | <- | Range object of name|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                           |
+| ---------- | ------- | -- | --------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro          |
+| rangeName  | Text    | -> | Nome do intervalo existente                         |
+| sheet      | Integer | -> | Localização do intervalo (folha atual se omitida)   |
+| Resultados | Object  | <- | Objeto intervalo de nome|<!-- END REF -->
 
 |
 
@@ -3543,7 +3543,7 @@ If *options* refers to a paste option not present in the copied object (e.g. for
 
 #### Exemplo
 
-See example the example from [VP Copy to object](#vp-copy-to-object)
+Ver o exemplo de [VP Copy to object](#vp-copy-to-object)
 
 #### Veja também
 
@@ -3612,7 +3612,7 @@ O seguinte código:
 
 #### Descrição
 
-O comando `VP RECOMPUTE FORMULAS` <!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->avalia imediatamente todas as fórmulas em *vpAreaName*<!-- END REF -->. By default, 4D automatically computes formulas when they are inserted, imported, or exported. `VP RECOMPUTE FORMULAS` allows you to force the compute at any time (e.g, in case modifications are made to the formulas or if the formulas contain calls to the database). The command launches the execution of the [VP FLUSH COMMANDS](#vp-flush-commands) command to execute any stored commands and clear the command buffer, then calculates all formulas in the workbook.
+O comando `VP RECOMPUTE FORMULAS` <!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->avalia imediatamente todas as fórmulas em *vpAreaName*<!-- END REF -->. By default, 4D automatically computes formulas when they are inserted, imported, or exported. `VP RECOMPUTE FORMULAS` permite forçar o cálculo a qualquer momento (por exemplo, se as fórmulas forem modificadas ou se as fórmulas contiverem chamadas para o banco de dados). The command launches the execution of the [VP FLUSH COMMANDS](#vp-flush-commands) command to execute any stored commands and clear the command buffer, then calculates all formulas in the workbook.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 > Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
@@ -3818,7 +3818,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 #### Descrição
 
-O comando `VP REMOVE TABLE` <!-- REF #_method_.VP REMOVE TABLE.Summary -->remove uma tabela<!-- END REF --> that you created with [VP CREATE TABLE](#vp-create-table).
+O comando `VP REMOVE TABLE` <!-- REF #_method_.VP REMOVE TABLE.Summary -->remove uma tabela<!-- END REF --> que criou com [VP CREATE TABLE](#vp-create-table).
 
 In *vpAreaName*, pass the name of the area where the table to remove is located.
 
@@ -3830,7 +3830,7 @@ In *options*, you can specify additional behavior. Valores possíveis:
 | --------------------- | ----- | ------------------------------------------- |
 | vk table remove all   | 0     | Remover tudo, incluindo o estilo e os dados |
 | vk table remove style | 1     | Remover o estilo, mas manter os dados       |
-| vk table remove data  | 2     | Remove data but keep style                  |
+| vk table remove data  | 2     | Remover dados, mas manter o estilo          |
 
 Os nomes das tabelas são definidos ao nível da folha. You can specify where the table is located using the optional *sheet* parameter (indexing starts at 0).
 
@@ -3877,7 +3877,7 @@ O comando `VP REMOVE TABLE COLUMNS` <!-- REF #_method_.VP REMOVE TABLE COLUMNS.S
 
 The command removes columns from the *tableName* table, NOT from the sheet. The total number of columns of the sheet is not impacted by the command. The total number of columns of the sheet is not impacted by the command.
 
-If *tableName* does not exist, nothing happens.
+Se *tableName* não existir, não acontece nada.
 
 
 
@@ -3927,7 +3927,7 @@ This command removes rows from the *tableName* table, NOT from the sheet. The to
 
 If the *tableName* table is bound to a [data context](#vp-set-data-context), the command removes element(s) from the collection.
 
-If *tableName* does not exist, nothing happens.
+Se *tableName* não existir, não acontece nada.
 
 
 #### Exemplo
@@ -4017,7 +4017,7 @@ As regras abaixo são válidas:
     - if rows are added, data is deleted,
     - if columns are added, data are kept and are displayed in new columns.
 
-If *tableName* does not exist, nothing happens.
+Se *tableName* não existir, não acontece nada.
 
 
 #### Exemplo
@@ -4469,10 +4469,10 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 O comando `VP SET BOOLEAN VALUE` <!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->assigns a specified boolean value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 
-The *boolValue* parameter allows you to pass the boolean value (**True** or **False**) that will be assigned to the *rangeObj*.
+O parâmetro *boolValue* permite-lhe passar o valor booleano (**True** ou **False**) que será atribuído ao *rangeObj*.
 
 #### Exemplo
 
@@ -4491,11 +4491,11 @@ The *boolValue* parameter allows you to pass the boolean value (**True** or **Fa
 
 <!-- REF #_method_.VP SET BORDER.Params -->
 
-| Parâmetro      | Tipo   |    | Descrição                                                     |
-| -------------- | ------ | -- | ------------------------------------------------------------- |
-| rangeObj       | Object | -> | Objeto intervalo                                              |
-| borderStyleObj | Object | -> | Object containing border line style                           |
-| borderPosObj   | Object | -> | Object containing border placement|<!-- END REF -->
+| Parâmetro      | Tipo   |    | Descrição                                                         |
+| -------------- | ------ | -- | ----------------------------------------------------------------- |
+| rangeObj       | Object | -> | Objeto intervalo                                                  |
+| borderStyleObj | Object | -> | Objeto que contém o estilo da borda                               |
+| borderPosObj   | Object | -> | Objeto que contém a colocação da borda|<!-- END REF -->
 
 |
 
@@ -4514,21 +4514,21 @@ The *borderStyleObj* parameter allows you to define the style for the lines of t
 
 You can define the position of the *borderStyleObj* (i.e., where the line is applied) with the *borderPosObj*:
 
-| Propriedade     | Tipo    | Descrição                                                              |
-| --------------- | ------- | ---------------------------------------------------------------------- |
-| all             | boolean | Estilo de linha de fronteira aplicado a todas as fronteiras.           |
-| left            | boolean | Estilo de linha de fronteira aplicado à fronteira esquerda.            |
-| top             | boolean | Border line style applied to top border.                               |
-| direita         | boolean | Estilo de linha de fronteira aplicado à fronteira direita.             |
-| bottom          | boolean | Estilo da linha de fronteira aplicado à fronteira inferior.            |
-| outline         | boolean | Estilo da linha de fronteira aplicado apenas às fronteiras exteriores. |
-| inside          | boolean | Estilo da linha de fronteira aplicado apenas às fronteiras interiores. |
-| innerHorizontal | boolean | Border line style applied to inner horizontal borders only.            |
-| innerVertical   | boolean | Border line style applied to inner vertical borders only.              |
+| Propriedade     | Tipo    | Descrição                                                                  |
+| --------------- | ------- | -------------------------------------------------------------------------- |
+| all             | boolean | Estilo de linha de fronteira aplicado a todas as fronteiras.               |
+| left            | boolean | Estilo de linha de fronteira aplicado à fronteira esquerda.                |
+| top             | boolean | Estilo de linha da borda aplicado à borda superior.                        |
+| direita         | boolean | Estilo de linha de fronteira aplicado à fronteira direita.                 |
+| bottom          | boolean | Estilo da linha de fronteira aplicado à fronteira inferior.                |
+| outline         | boolean | Estilo da linha de fronteira aplicado apenas às fronteiras exteriores.     |
+| inside          | boolean | Estilo da linha de fronteira aplicado apenas às fronteiras interiores.     |
+| innerHorizontal | boolean | Estilo de linha da borda aplicado apenas às bordas horizontais interiores. |
+| innerVertical   | boolean | Estilo da borda aplicado apenas a bordas verticais interiores.             |
 
 #### Exemplo 1
 
-This code produces a border around the entire range:
+Este código produz uma borda à volta de todo o intervalo:
 
 ```4d
 $border:=New object("color";"red";"style";vk line style thick)
@@ -4584,7 +4584,7 @@ O comando `VP SET CELL STYLE` <!-- REF #_method_.VP SET CELL STYLE.Summary -->ap
 In *rangeObj*, pass a range of cells where the style will be applied. If the *rangeObj* contains multiple cells, the style is applied to each cell.
 > Borders applied with `VP SET CELL STYLE` will be applied to each cell of the *rangeObj*, as opposed to the [VP SET BORDER](#vp-set-border) command which applies borders to the *rangeObj* as a whole.
 
-The *styleObj* parameter lets you pass an object containing style settings. You can use an existing style sheet or create a new style. If the *styleObj* contains both an existing style sheet and additional style settings, the existing style sheet is applied first, followed by the additional settings.
+The *styleObj* parameter lets you pass an object containing style settings. Pode utilizar uma folha de estilos existente ou criar um novo estilo. If the *styleObj* contains both an existing style sheet and additional style settings, the existing style sheet is applied first, followed by the additional settings.
 
 To remove a style and revert to the default style settings (if any), pass a NULL value:
 
@@ -4630,7 +4630,7 @@ $style.backgroundImage:=Null //remove a specific attribute VP SET CELL STYLE(VP 
 
 O comando `VP SET COLUMN ATTRIBUTES` <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary --> applies the attributes defined in the *propertyObj* to the columns in the *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass an object containing a range. If the range contains both columns and rows, attributes are applied only to the columns.
+Em *rangeObj*, passe um objeto que contenha um intervalo. If the range contains both columns and rows, attributes are applied only to the columns.
 
 The *propertyObj* parameter lets you specify the attributes to apply to the columns in the *rangeObj*. Estes atributos são:
 
@@ -4644,7 +4644,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the colu
 
 #### Exemplo
 
-To change the size of the second column and set the header, you write:
+Para alterar o tamanho da segunda coluna e definir o cabeçalho, escreve-se:
 
 ```4d
 C_OBJECT($column;$properties)
@@ -4690,7 +4690,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 #### Exemplo
 
-The following code defines five columns in the 4D View Pro area:
+O código seguinte define cinco colunas na área 4D View Pro:
 
 ```4d
 VP SET COLUMN COUNT("ViewProArea";5)
@@ -4709,10 +4709,10 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                                 |
-| ---------- | ------- | -- | --------------------------------------------------------- |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                |
-| sheet      | Integer | <- | Index of the new current sheet|<!-- END REF -->
+| Parâmetro  | Tipo    |    | Descrição                                             |
+| ---------- | ------- | -- | ----------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro            |
+| sheet      | Integer | <- | Índice da nova folha atual|<!-- END REF -->
 
 |
 
@@ -4763,9 +4763,9 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 O comando `VP SET CUSTOM FUNCTIONS` <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. Because custom functions are not stored in the document,`VP SET CUSTOM FUNCTIONS` must be executed in the `On Load` form event.
 
-The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when the first letter of their name is entered. See the [Formulas and Functions](formulas.md) page.
+The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when the first letter of their name is entered. Consulte a página [Fórmulas e funções](formulas.md).
 
-> If `VP SET CUSTOM FUNCTIONS` is called multiple times for the same area, in the same session, only the last call is taken into account.
+> Se `VP SET CUSTOM FUNCTIONS` for chamado várias vezes para a mesma área, na mesma sessão, apenas a última chamada é tida em conta.
 
 Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
@@ -4775,7 +4775,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 | ------------------------ | ---------- | ---------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<customFunction>` |            |            | Object                 | Definição da função personalizada. `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                          | formula    |            | Object                 | Objeto fórmula 4D (obrigatório). Ver o comando `Formula`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                          | parameters |            | Uma coleção de objetos | Collection of parameters (in the order they are defined in the formula)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                          | parameters |            | Uma coleção de objetos | Coleção de parâmetros (pela ordem em que são definidos na fórmula)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |                          |            | \[ ].name | Text                   | Nome do parâmetro a mostrar no 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |                          |            | \[ ].type | Number                 | Tipo do parâmetro. Tipos suportados:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section). If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value). |
 |                          | resumo     |            | Text                   | Descrição da fórmula a mostrar no 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -4895,7 +4895,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 #### Exemplo 2
 
-Pass a collection of objects and generate columns automatically:
+Passe uma coleção de objetos e gere colunas automaticamente:
 
 
 ```4d
@@ -4913,7 +4913,7 @@ $options:=New object("autoGenerateColumns"; True) VP SET DATA CONTEXT("ViewProAr
 
 #### Exemplo 3
 
-The *data* passed as a parameter is a collection that contains subcollections. Each subcollection defines the contents of a row:
+The *data* passed as a parameter is a collection that contains subcollections. Cada subcoleção define o conteúdo de uma linha:
 
 ```4d
 var $data : Collection
@@ -4950,7 +4950,7 @@ $data.push(New collection("Date + Time"; New object("value"; Current date; "time
 $options:=New object("autoGenerateColumns"; True) VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
-Here's the result once the columns are generated:
+Eis o resultado após as colunas serem geradas:
 
 ![](../assets/en/ViewPro/vp-set-data-context-date-time.png)
 
@@ -4978,7 +4978,7 @@ Here's the result once the columns are generated:
 
 O comando `VP SET DATE TIME VALUE` <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->assigns a specified date and time value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
 
@@ -5013,7 +5013,7 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 
 O comando `VP SET DATE VALUE` <!-- REF #_method_.VP SET DATE VALUE.Summary -->assigns a specified date value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
 
@@ -5100,7 +5100,7 @@ $style.backColor:="#E6E6FA" //light purple color VP SET DEFAULT STYLE("myDoc";$s
 
 #### Descrição
 
-O comando `VP SET FIELD` <!-- REF #_method_.VP SET FIELD.Summary -->assigns a 4D database virtual field to a designated cell range<!-- END REF -->.
+O comando `VP SET FIELD` <!-- REF #_method_.VP SET FIELD.Summary -->atribui um campo virtual do banco de dados 4D a um intervalo de células designado<!-- END REF -->.
 
 In *rangeObj*, pass a range of the cell(s) whose value you want to specify. In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
 
@@ -5235,11 +5235,11 @@ $formulas.push(New collection("";"")) // second collection VP SET FORMULAS(VP Ce
 
 <!-- REF #_method_.VP SET FROZEN PANES.Params -->
 
-| Parâmetro  | Tipo    |    | Descrição                                           |
-| ---------- | ------- | -- | --------------------------------------------------- |
-| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro          |
-| paneObj    | Object  | -> | Object containing frozen column and row information |
-| sheet      | Integer | -> | Índice da folha (folha atual se omitida)            |
+| Parâmetro  | Tipo    |    | Descrição                                                             |
+| ---------- | ------- | -- | --------------------------------------------------------------------- |
+| vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                            |
+| paneObj    | Object  | -> | Objeto que contém as informações sobre as colunas e linhas congeladas |
+| sheet      | Integer | -> | Índice da folha (folha atual se omitida)                              |
 <!-- END REF -->
 
 
@@ -5302,7 +5302,7 @@ $panes.rowCount:=1 VP SET FROZEN PANES("ViewProArea";$panes)
 
 O comando `VP SET NUM VALUE` <!-- REF #_method_.VP SET NUM VALUE.Summary -->assigns a specified numeric value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *numberValue* parameter specifies a numeric value to be assigned to the *rangeObj*.
 
@@ -5343,7 +5343,7 @@ O comando `VP SET PRINT INFO` <!-- REF #_method_.VP SET PRINT INFO.Summary -->de
 
 Pass the name of the 4D View Pro area to print in *vpAreaName*. If you pass a name that does not exist, an error is returned.
 
-You can pass an object containing definitions for various printing attributes in the *printInfo* parameter. To view the full list of the available attributes, see [Print Attributes](configuring.md#print-attributes).
+Pode passar um objeto que contenha as definições para vários atributos de impressão no parâmetro *printInfo*. Para ver a lista completa dos atributos disponíveis, consulte [Atributos de impressão](configuring.md#print-attributes).
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
@@ -5351,7 +5351,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 #### Exemplo
 
-The following code will print a 4D View Pro area to a PDF document:
+O código seguinte imprime uma área 4D View Pro num documento PDF:
 
 
 ```4d
@@ -5413,21 +5413,21 @@ O PDF:
 
 O comando `VP SET ROW ATTRIBUTES` <!-- REF #_method_.VP SET ROW ATTRIBUTES.Summary -->applies the attributes defined in the *propertyObj* to the rows in the *rangeObj*<!-- END REF -->.
 
-In the *rangeObj*, pass an object containing a range. If the range contains both columns and rows, attributes are applied only to the rows.
+Em *rangeObj*, passe um objeto que contenha um intervalo. Se o intervalo contiver colunas e linhas, os atributos são aplicados apenas às linhas.
 
-The *propertyObj* parameter lets you specify the attributes to apply to the rows in the *rangeObj*. Estes atributos são:
+O parâmetro *propertyObj* permite-lhe especificar os atributos a aplicar às linhas no *rangeObj*. Estes atributos são:
 
-| Propriedade | Tipo    | Descrição                                                                 |
-| ----------- | ------- | ------------------------------------------------------------------------- |
-| height      | number  | Altura da linha expressa em píxeis                                        |
-| pageBreak   | boolean | True to insert a page break before the first row of the range, else false |
-| visible     | boolean | True se a linha for visível, senão false                                  |
-| resizable   | boolean | True se a linha puder ser redimensionada, senão false                     |
-| header      | text    | Texto do cabeçalho da linha                                               |
+| Propriedade | Tipo    | Descrição                                                                                |
+| ----------- | ------- | ---------------------------------------------------------------------------------------- |
+| height      | number  | Altura da linha expressa em píxeis                                                       |
+| pageBreak   | boolean | True para inserir uma quebra de página antes da primeira linha do intervalo, senão false |
+| visible     | boolean | True se a linha for visível, senão false                                                 |
+| resizable   | boolean | True se a linha puder ser redimensionada, senão false                                    |
+| header      | text    | Texto do cabeçalho da linha                                                              |
 
 #### Exemplo
 
-You want to change the size of the second row and set the header:
+Pretende-se alterar o tamanho da segunda linha e definir o cabeçalho:
 
 ```4d
 var $row; $properties : Object
@@ -5459,7 +5459,7 @@ $properties:=New object("height";75;"header";"June") VP SET ROW ATTRIBUTES($row;
 
 #### Descrição
 
-O comando `VP SET ROW COUNT` <!-- REF #_method_.VP SET ROW COUNT.Summary -->defines the total number of rows in *vpAreaName*<!-- END REF -->.
+O comando `VP SET ROW COUNT` <!-- REF #_method_.VP SET ROW COUNT.Summary -->define o número total de linhas em *vpAreaName*<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
@@ -5471,7 +5471,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 #### Exemplo
 
-The following code defines five rows in the 4D View Pro area:
+O código seguinte define cinco linhas na área 4D View Pro:
 
 ```4d
 VP SET ROW COUNT("ViewProArea";5)
@@ -5532,7 +5532,7 @@ VP SET SELECTION($currentSelection)
 
 #### Descrição
 
-O comando `VP SET SHEET COUNT` <!-- REF #_method_.VP SET SHEET COUNT.Summary -->sets the number of sheets in *vpAreaName*<!-- END REF -->.
+O comando `VP SET SHEET COUNT` <!-- REF #_method_.VP SET SHEET COUNT.Summary -->define o número de folhas em *vpAreaName*<!-- END REF -->.
 
 In `number`, pass a number corresponding to how many sheets the document will contain after the command is executed.
 > **Warning**: The command will delete sheets if the previous amount of sheets in your document is superior to the number passed. For example, if there are 5 sheets in your document and you set the sheet count to 3, the command will delete sheets number 4 and 5.
@@ -5567,7 +5567,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 | vpAreaName | Text | -> | Nome de objeto formulário área 4D View Pro |
 | name       | Text | -> | Novo nome para a folha                     |
 
-|sheet|Integer|->|Index of the sheet to be renamed|<!-- END REF -->
+|sheet|Integer|->|Índice da folha a ser renomeada|<!-- END REF -->
 
 #### Descrição
 
@@ -5590,11 +5590,11 @@ O comando não faz nada se:
 * o novo nome contém caracteres proibidos
 * o valor do novo nome está em branco
 * o novo nome já existe
-* the passed *index* does not exist
+* o *índice* passado não existe
 
 #### Exemplo
 
-Set the third sheet's name to "Total first quarter":
+Defina o nome da terceira folha como "Total first quarter":
 
 ```4d
 VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
@@ -5787,7 +5787,7 @@ Com uma quebra de página:
 
 #### Descrição
 
-The `VP SET TABLE COLUMN ATTRIBUTES` command <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Summary -->applies the defined *attributes* to the *column* in the *tableName*<!-- END REF -->.
+O comando `VP SET TABLE COLUMN ATTRIBUTES` <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Summary -->applies the defined *attributes* to the *column* in the *tableName*<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
@@ -5965,7 +5965,7 @@ $param.theme.secondColumnStripStyle:=$styleColumn2 VP SET TABLE THEME("ViewProAr
 
 O comando `VP SET TEXT VALUE` <!-- REF #_method_.VP SET TEXT VALUE.Summary -->assigns a specified text value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *textValue* parameter specifies a text value to be assigned to the *rangeObj*.
 
@@ -6000,7 +6000,7 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 O comando `VP SET TIME VALUE` <!-- REF #_method_.VP SET TIME VALUE.Summary -->assigns a specified time value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *timeValue* parameter specifies a time expressed in seconds to be assigned to the *rangeObj*.
 
@@ -6038,7 +6038,7 @@ O comando `VP SET VALUE` <!-- REF #_method_.VP SET VALUE.Summary -->assigns a sp
 
 The command allows you to use a generic code to set and format the types of values in *rangeObj*, whereas other commands, such as [`VP SET TEXT VALUE`](#vp-set-text-value) and [`VP SET NUM VALUE`](#vp-set-num-value), reduce the values to specific types.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The parameter *valueObj* is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to *rangeObj*. Pode incluir as seguintes propriedades:
 
@@ -6130,7 +6130,7 @@ $param.push(New collection(Null;New object("value";Current date;"time";42))) //f
 #### Descrição
 
 `VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
-sets the workbook options in *vpAreaName*<!-- END REF -->.
+define as opções do livro de trabalho em *vpAreaName*<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
