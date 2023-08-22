@@ -20,4 +20,4 @@ Esta opção não está selecionada por defeito. Os métodos que podem ser execu
 
 No Explorador, os métodos de projeto com esta propriedade recebem um ícone específico:
 
- ![](../assets/pt/WebServer/methodIcon.png)
+ ![](../assets/en/WebServer/methodIcon.png)
