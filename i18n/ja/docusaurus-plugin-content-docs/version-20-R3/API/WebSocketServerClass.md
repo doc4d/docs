@@ -40,7 +40,7 @@ WebSocketプロトコルは、WebSocketサーバーとクライアント (Webブ
 
 接続を維持するため、[WebSocketサーバーの作成](#4dwebsocketservernew) は [ワーカー](https://doc.4d.com/4dv19R/help/command/ja/page1389.html) 内にておこなう必要があります。
 
-The [4D Web Server](WebServerClass.md) must be started.
+[4D Webサーバー](WebServerClass.md) を起動しておく必要があります。
 
 
 ### 例題
