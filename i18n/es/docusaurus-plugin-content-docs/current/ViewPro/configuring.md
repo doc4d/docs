@@ -356,7 +356,7 @@ Los atributos de tamaño de papel se utilizan para especificar las dimensiones o
 * Si el tamaño del papel se especifica utilizando las propiedades `height` y `width`,  [`VP Get print info`](./method-list.md#vp-get-print-info) devuelve un tamaño de papel con `custom` como valor para `kind`.
 
 * Si establece el tamaño del papel mediante la propiedad `kind`, puede utilizar cualquiera de los dos:
-  * uno de los formatos de la [lista de formatos SpreadJS](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Print.PaperKind.html)
+  * one of the formats in the [SpreadJS format list](https://developer.mescius.com/spreadjs/api/enums/GC.Spread.Sheets.Print.PaperKind)
   * uno de los formatos devueltos por el comando [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/en/page785.html). En ese caso, [`VP Get print info`](./method-list.md#vp-get-print-info) devuelve el formato correspondiente con el alto y el ancho.
 
 ### Escala
