@@ -128,7 +128,7 @@ Las funciones de hoja de cálculo son fórmulas predefinidas utilizadas para cal
 
 ![](../assets/en/ViewPro/vpFormula2.PNG)
 
-Ver [**Lista extendida de funciones de SpreadJS**](https://www.grapecity.com/spreadjs/docs/v14/online/FormulaFunctions.html) para más detalles y ejemplos.
+See [**SpreadJS's extented list of functions**](https://developer.mescius.com/spreadjs/docs/formulareference/FormulaFunctions) for details and examples.
 
 
 ## Funciones 4D
@@ -237,8 +237,9 @@ Los métodos proyecto 4D también pueden devolver valores en la fórmula de la c
 
 * [text](Concepts/dt_string.md) (convertido en cadena de caracteres en 4D View Pro)
 * [real](Concepts/dt_number.md)/[longint](Concepts/dt_number.md) (convertido a número en 4D View Pro)
-* [date](Concepts/dt_date.md) (convertido en tipo JS Date en 4D View Pro - hora, minuto, segundo = 0)
-* [time](Concepts/dt_time.md) (convertida en tipo JS Date en 4D View Pro - date en date de base, es decir, 30/12/1899)
+* [date](Concepts/dt_date.md) (converted to JS Date type in 4D View Pro - hour, minute, sec = 0)
+
+* [time](Concepts/dt_time.md) (converted to JS Date type in 4D View Pro - date in base date, i.e. 12/30/1899)
 * [boolean](Concepts/dt_boolean.md) (convertido a bool en 4D View Pro)
 * [imagen](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg otros tipos convertidos en png) crea un URI (data:image/png;base64,xxxx) y luego se utiliza como fondo en 4D View Pro en la celda donde se ejecuta la fórmula
 * [](Concepts/dt_object.md) con las dos propiedades siguientes (que permiten pasar una fecha y una hora):
