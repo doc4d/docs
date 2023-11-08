@@ -3,9 +3,9 @@ id: advanced-programming
 title: Javascript による高度なプログラミング
 ---
 
-4D View Pro Area エリアは、[埋め込みWebレンダリングエンジン](../FormObjects/properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) を使用する [Webエリアフォームオブジェクト](../FormObjects/webArea_overview.md) です。 As such, it behaves just like any other web area, and you can get it to execute Javascript code by calling the [`WA Evaluate Javascript`](https://doc.4d.com/4dv20/help/command/en/page1029.html) 4D command.
+4D View Pro Area エリアは、[埋め込みWebレンダリングエンジン](../FormObjects/properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) を使用する [Webエリアフォームオブジェクト](../FormObjects/webArea_overview.md) です。 つまり、他のWebエリアと同様に、[`WA Evaluate Javascript`](https://doc.4d.com/4dv20/help/command/ja/page1029.html) 4Dコマンドを呼び出すことで、Javascript のコードを実行させることができます。
 
-Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://developer.mescius.com/spreadjs), you can also call SpreadJS Javascript methods in 4D View Pro areas.
+4D View Proは [SpreadJS スプレッドシートソリューション](https://developer.mescius.com/spreadjs) に基づいて動作するため、4D View Pro エリア内で SpreadJS の Javascriptメソッドを呼び出すことも可能です。
 
 ## 例題: リボンを非表示にする
 
@@ -27,7 +27,7 @@ $answer:=WA Evaluate JavaScript(*; "ViewProArea"; $js)
 
 Javascript メソッドの SpreadJSライブラリを利用し、これらを直接呼び出してスプレッドシートを制御することができます。
 
-4D has a built-in `Utils.spread` property that gives access to the spreadsheet document (also called workbook) inside the 4D View Pro area, making it simpler to call the SpreadJS [Workbook methods](https://developer.mescius.com/spreadjs/api/modules/GC.Data).
+4D は、4D View Pro エリア内のスプレッドシート (ワークブックとも呼ばれます) を指すビルトインの `Utils.spread` 式を提供しており、これを使うことでより簡単に SpreadJS の [Workbookメソッド](https://developer.mescius.com/spreadjs/api/modules/GC.Data) を呼び出すことができます。
 
 #### 例題
 
