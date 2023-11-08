@@ -2412,12 +2412,12 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| vpAreaName | Text    | -> | Nombre de objeto formulario área 4D View Pro  |
-| styleName  | Text    | -> | Nombre del estilo                             |
-| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)   |
-| Result     | Object  | <- | Style sheet object|<!-- END REF -->
+| Parámetros | Tipo    |    | Descripción                                      |
+| ---------- | ------- | -- | ------------------------------------------------ |
+| vpAreaName | Text    | -> | Nombre de objeto formulario área 4D View Pro     |
+| styleName  | Text    | -> | Nombre del estilo                                |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)      |
+| Result     | Object  | <- | Objeto hoja de estilo|<!-- END REF -->
 
 |
 
@@ -5235,7 +5235,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 | Parámetros    | Tipo   |    | Descripción                                  |
 | ------------- | ------ | -- | -------------------------------------------- |
 | rangeObj      | Object | -> | Objeto rango                                 |
-| formula       | Text   | -> | Formula or 4D method                         |
+| formula       | Text   | -> | Fórmula o método 4D                          |
 | formatPattern | Text   | -> | Formato del campo|<!-- END REF -->
 
 |
