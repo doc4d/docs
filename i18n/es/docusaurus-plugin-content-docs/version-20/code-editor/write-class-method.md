@@ -463,7 +463,7 @@ Haga clic en el botón de alternancia **v** situado a la izquierda del área *Bu
 
 El área de entrada *Reemplazar* se utiliza para definir la cadena de caracteres que sustituirá a la definida anteriormente.
 
-Haga clic en el botón **Reemplazar** para iniciar la búsqueda con todas las opciones definidas y reemplazar la primera ocurrencia encontrada. 4D begins searching from the current text insertion point and continues to the end of the method. A continuación, es posible seguir buscando/reemplazando utilizando los comandos **Reemplazar siguiente** y **Reemplazar anterior** del menú [**Editar**](#shortcuts).
+Haga clic en el botón **Reemplazar** para iniciar la búsqueda con todas las opciones definidas y reemplazar la primera ocurrencia encontrada. 4D inicia la búsqueda a partir del punto de inserción del texto actual y continúa hasta el final del método. A continuación, es posible seguir buscando/reemplazando utilizando los comandos **Reemplazar siguiente** y **Reemplazar anterior** del menú [**Editar**](#shortcuts).
 
 Haga clic en el botón **Reemplazar todo** para reemplazar todas las ocurrencias correspondientes a los criterios de búsqueda directamente en el método abierto.
 
