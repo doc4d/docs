@@ -961,7 +961,7 @@ Puede especificar el formato del archivo exportado incluyendo una extensión des
 * Microsoft Excel (".xlsx")
 * PDF (".pdf")
 * CSV (".txt", o ".csv")
-* [SpreadJS document](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) (".sjs")
+* [Documento SpreadJS](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) (".sjs")
 
 Si no se incluye la extensión, pero se especifica el formato en *paramObj*, el archivo exportado tendrá la extensión que corresponda al formato, excepto para el formato CSV (en este caso no se añade ninguna extensión).
 
@@ -983,7 +983,7 @@ El parámetro opcional *paramObj* le permite definir múltiples propiedades para
 
 **Notas sobre el formato Excel**:
 
-* Al exportar un documento 4D View Pro a un archivo con formato Microsoft Excel, pueden perderse algunos parámetros. Por ejemplo, los métodos y fórmulas 4D no son soportados por Excel. You can verify other settings with [this list from SpreadJS](https://developer.mescius.com/spreadjs/docs/excelimpexp/excelexport).
+* Al exportar un documento 4D View Pro a un archivo con formato Microsoft Excel, pueden perderse algunos parámetros. Por ejemplo, los métodos y fórmulas 4D no son soportados por Excel. Puede verificar otros parámetros con [esta lista de SpreadJS](https://developer.mescius.com/spreadjs/docs/excelimpexp/excelexport).
 * La exportación en este formato se ejecuta de forma asíncrona, utilice la propiedad `formula ` del *paramObj* para el código a ejecutar después de la exportación.
 
 **Notas sobre formato PDF**:
@@ -999,7 +999,7 @@ El parámetro opcional *paramObj* le permite definir múltiples propiedades para
 
 **Notas sobre el formato de archivo SpreadJS**:
 
-* [SpreadJS files](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) are zipped files.
+* Los [archivos de SpreadJS](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) son archivos comprimidos.
 * La exportación en este formato se ejecuta de forma asíncrona, utilice la propiedad `formula ` del *paramObj* para el código a ejecutar después de la exportación.
 
 Una vez finalizada la exportación, `VP EXPORT DOCUMENTO` desencadena automáticamente la ejecución del método definido en la propiedad *formula* de *paramObj*, si se utiliza.
@@ -2492,12 +2492,12 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| Parámetros | Tipo    |    | Descripción                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| vpAreaName | Text    | -> | Nombre de objeto formulario área 4D View Pro  |
-| styleName  | Text    | -> | Nombre del estilo                             |
-| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)   |
-| Result     | Object  | <- | Style sheet object|<!-- END REF -->
+| Parámetros | Tipo    |    | Descripción                                      |
+| ---------- | ------- | -- | ------------------------------------------------ |
+| vpAreaName | Text    | -> | Nombre de objeto formulario área 4D View Pro     |
+| styleName  | Text    | -> | Nombre del estilo                                |
+| sheet      | Integer | -> | Índice de la hoja (hoja actual si se omite)      |
+| Result     | Object  | <- | Objeto hoja de estilo|<!-- END REF -->
 
 |
 
@@ -2865,7 +2865,7 @@ El comando devuelve un objeto de la clase [cs.ViewPro.TableTheme](classes.md#tab
 
 #### Ejemplo
 
-The command returns a full `theme` object even if a [native SpreadJS theme](https://developer.mescius.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes) name was used to define the theme.
+El comando devuelve un objeto `tema` completo incluso si se ha utilizado un nombre de [tema SpreadJS nativo](https://developer.mescius.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes) para definir el tema.
 
 ```4d
 var $param : cs.ViewPro.TableTheme
@@ -3093,20 +3093,20 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 
 #### Descripción
 
-El comando `VP IMPORT FROM BLOB` <!-- REF #_method_.VP IMPORT FROM BLOB.Summary -->imports the *vpBlob* in the 4D View Pro area *vpAreaName* and replaces its contents<!-- END REF -->. *vpBlob* must contain a 4D View Pro document previously saved as Blob either by using the [VP EXPORT TO BLOB](#vp-export-to-blob) command or via the 4D View Pro interface.
+El comando `VP IMPORT FROM BLOB` <!-- REF #_method_.VP IMPORT FROM BLOB.Summary -->importa el *vpBlob* en el área de 4D View Pro *vpAreaName* y reemplaza su contenido<!-- END REF -->. *vpBlob* debe contener un documento 4D View Pro previamente guardado como Blob, ya sea mediante el comando [VP EXPORT TO BLOB](#vp-export-to-blob) o a través de la interfaz de 4D View Pro.
 
 En *paramObj*, puede pasar varias propiedades:
 
-| Propiedad           | Tipo        | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| formula             | 4D.Function | Método de retrollamada que se lanzará cuando la importación haya finalizado.                                                                                                                                                                                                                                                                                                                                                                                                   |
-| calcOnDemand        | Boolean     | Si se calculan las fórmulas sólo cuando se solicitan, por defecto=false.                                                                                                                                                                                                                                                                                                                                                                                                       |
-| dynamicReferences   | Boolean     | Si calcular funciones con referencia dinámica, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                               |
-| fullRecalc          | Boolean     | Si calcular después de cargar los datos json, false por defecto.                                                                                                                                                                                                                                                                                                                                                                                                               |
-| includeFormulas     | Boolean     | Si se incluye la fórmula al cargar, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| includeStyles       | Boolean     | Si se incluye el estilo al cargar, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| includeUnusedStyles | Boolean     | Si incluir el estilo de nombre no utilizado al convertir excel xml al json, default=true.                                                                                                                                                                                                                                                                                                                                                                                      |
-| openMode            | Integer     | can be: <br/>0: normal open mode, without lazy and incremental. When opening document, UI and UI event could be refreshed and responsive at specific time points. <br/>1: modo abierto perezoso (lazy). When opening document, only the active sheet will be loaded directly. Las demás hojas sólo se cargarán cuando se vayan a utilizar. <br/>2: incremental open mode. When opening document, UI and UI event could be refreshed and responsive directly. |
+| Propiedad           | Tipo        | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula             | 4D.Function | Método de retrollamada que se lanzará cuando la importación haya finalizado.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| calcOnDemand        | Boolean     | Si se calculan las fórmulas sólo cuando se solicitan, por defecto=false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| dynamicReferences   | Boolean     | Si calcular funciones con referencia dinámica, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| fullRecalc          | Boolean     | Si calcular después de cargar los datos json, false por defecto.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| includeFormulas     | Boolean     | Si se incluye la fórmula al cargar, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| includeStyles       | Boolean     | Si se incluye el estilo al cargar, por defecto=true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| includeUnusedStyles | Boolean     | Si incluir el estilo de nombre no utilizado al convertir excel xml al json, default=true.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| openMode            | Integer     | puede ser: <br/>0: modo abierto normal, sin lazy e incremental. Al abrir el documento, el evento de la interfaz de usuario y la interfaz de usuario podrían actualizarse y responder en puntos de tiempo específicos. <br/>1: modo abierto perezoso (lazy). Al abrir el documento, solo la hoja activa se cargará directamente. Las demás hojas sólo se cargarán cuando se vayan a utilizar. <br/>2: modo abierto incremental. Al abrir un documento, la interfaz de usuario y el evento de interfaz de usuario podrían actualizarse y responder directamente. |
 
 Los siguientes parámetros se pueden utilizar en el método de retrollamada:
 
@@ -3168,7 +3168,7 @@ En *filePath*, pase la ruta y el nombre del documento a importar. Se soportan lo
 * Los documentos 4D View Pro (extensión ".4vp")
 * Microsoft Excel (extensión ".xlsx")
 * documentos texto (extension ".txt", ".csv", el documento debe estar en utf-8)
-* [SpreadJS documents](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) (extension ".sjs")
+* [Documentos SpreadJS](https://developer.mescius.com/spreadjs/docs/features/spreadjs-file-format) (extensión ".sjs")
 
 Si la extensión del documento no es una extensión reconocida, como `.4vp` o `.xlsx`, el documento se considera un documento texto. Debe pasar una ruta completa, a menos que el documento se encuentre en el mismo nivel que la carpeta Project, en cuyo caso puede pasar sólo su nombre.
 
@@ -3196,7 +3196,7 @@ El parámetro opcional *paramObj* permite definir las propiedades del documento 
 :::note Notas
 
 - La importación de archivos en formatos .xslx, .csv y .sjs es **asíncrona**. Con estos formatos, debe utilizar el atributo `formula` si desea iniciar una acción al final del procesamiento del documento.
-- Al importar un archivo con formato Microsoft Excel a un documento 4D View Pro, algunos parámetros pueden perderse. You can verify your settings with [this list from SpreadJS](https://developer.mescius.com/spreadjs/docs/excelimpexp/excelexport).
+- Al importar un archivo con formato Microsoft Excel a un documento 4D View Pro, algunos parámetros pueden perderse. Puede verificar sus parámetros con [esta lista de SpreadJS](https://developer.mescius.com/spreadjs/docs/excelimpexp/excelexport).
 - Para más información sobre los valores separados por delimitadores, consulte [este artículo en Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
 :::
@@ -5373,7 +5373,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 | Parámetros    | Tipo   |    | Descripción                                  |
 | ------------- | ------ | -- | -------------------------------------------- |
 | rangeObj      | Object | -> | Objeto rango                                 |
-| formula       | Text   | -> | Formula or 4D method                         |
+| formula       | Text   | -> | Fórmula o método 4D                          |
 | formatPattern | Text   | -> | Formato del campo|<!-- END REF -->
 
 |
