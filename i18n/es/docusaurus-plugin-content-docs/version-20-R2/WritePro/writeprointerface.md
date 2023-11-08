@@ -70,7 +70,7 @@ El archivo de plantilla permite definir lo siguiente:
 - the dataclass attributes that can be used as table columns,
 - the formulas available as contextual menus inside break rows, carry-over row or extra rows.
 
-:::info Limitation
+:::info Limitación
 
 In the current implementation (4D v20 R2), formulas in breaks, data sources and contextual menus do not support calls to the host database methods. This limitation will be removed in the next version.
 
