@@ -87,9 +87,9 @@ Um arquivo .4DLink do tipo "projeto remoto" pode ser copiado e usado em várias 
 
 Arquivos com a extensão `.4DLink` são arquivos XML que contêm parâmetros destinados a automatizar e simplificar a abertura de projetos 4D locais ou remotos.
 
-`.4DLink` files can save the address of a 4D project as well as its connection identifiers and opening mode, saving you time when opening projects.
+Arquivos`.4DLink` podem salvar o endereço de um projeto 4D assim como seus identificadores de conexão e modo de abertura, poupando tempo quando abrir projetos.
 
-4D automatically generates a `.4DLink` file when a local project is opened for the first time or when connecting to a server for the first time. The file is stored in the local preferences folder at the following location:
+4D gera automaticamente um `. DLink` arquivo quando um projeto local é aberto pela primeira vez ou quando se conecta a um servidor pela primeira vez. O arquivo é armazenado na pasta de preferências locais no seguinte local:
 
 * Windows 7 e superior: C:\Users\UserName\AppData\Roaming\4D\Favorites vXX\
 * OS X: Users/UserName/Library/Application Support/4D/Favorites vXX/
@@ -98,28 +98,28 @@ XX representa o número da versão da aplicação. Por exemplo, "Favorites v19" 
 
 Esta pasta está dividida em duas subpastas:
 
-* the **Local** folder contains the `.4DLink` files that can be used to open local projects
-* the **Remote** folder contains the `.4DLink` files of recent remote projects
+* a pasta **Local** contém os arquivos `.4DLink` que podem ser usados para abrir projetos locais
+* a pasta **Remote** contém os arquivos `.4DLink` dos projetos remotos recentes
 
-Os ficheiros `.4DLink` podem também ser criados com um editor XML.
+Os arquivos `.4DLink` podem também ser criados com um editor XML.
 
-4D provides a DTD describing the XML keys that can be used to build a `.4DLink` file. This DTD is named database_link.dtd and is found in the \Resources\DTD\ subfolder of the 4D application.
+4D fornece um DTD descrevendo as chaves XML que podem ser usadas para construir um arquivo `.4DLink`. Este DTD é nomeado database_link.dtd e é encontrado na subpasta \Resources\DTD\ da aplicação 4D.
 
-## Guardar ficheiros
+## Guardar arquivos
 
-When working on a project in 4D, you can use built-in 4D editors to create, modify, or save structure items, methods, forms, etc. Choose **Add an item to menu “MenuName”** in the options menu of the editor or from the context menu (right click in the central list).
+Ao trabalhar em um projeto em 4D, você pode usar editores 4D integrados para criar, modificar ou salvar itens de estrutura, métodos, formulários, etc. Modificações são salvas no disco quando selecionar um item de menu **Salvar** ou quando a janela do editor perder ou ficar com o foco.
 
-Since the editors use files on the disk, potential conflicts could happen if the same file is modified or even deleted from different locations. For example, if the same method is edited in a method editor window *and* in a text editor, saving both modifications will result in a conflict.
+Jà que os editores usam arquivos no disco, podem ocorrer conflitos potenciais se o mesmo arquivo for modificado ou até mesmo excluído de locais diferentes. Por exemplo, se o mesmo método for editado em uma janela do Editor de Código *e* em um editor de texto, salvar ambas as modificações resultará num conflito.
 
 A estrutura de desenvolvimento 4D inclui um gerenciador de acesso a ficheiros para controlar o acesso simultâneo:
 
-* if an open file is read-only at the OS level, a locked icon is displayed in the editor: ![](../assets/en/Project/lockicon.png)
-* if an open file is edited concurrently from different locations, 4D displays an alert dialog when trying to save the changes:
+* se um arquivo aberto for somente leitura no nível do SO, um ícone bloqueado será exibido no editor: ![](../assets/en/Project/lockicon.png)
+* se um arquivo aberto for editado simultaneamente a partir de diferentes locais, 4D exibe uma caixa de diálogo de alerta ao tentar salvar as alterações:
 
 ![](../assets/en/Project/projectReload.png)
 
-* or, use the appropriate **Delete...**  command from the context menu or the options menu of the editor.
-* **Edit**: standard and completely modifiable.
+* **Sim**: descartar as alterações do editor e recarregar a versão modificada
+* **Não**: salve as alterações e substitui a outra versão
 * **Cancelar**: não guardar
 
 Esta funcionalidade está ativada para todos os editores 4D incorporados (Estrutura, Formulário, Método, Definições e Caixa de Ferramentas).
