@@ -13,7 +13,7 @@ title: WebSocketServer
 
 The `WebSocketServer` class allows you to create and configure a WebSocket server in 4D. Once the 4D WebSocket server is active, you can open and use WebSocket connections between 4D and clients using the [`WebSocketConnection` class](WebSocketConnectionClass.md).
 
-:::note About WebSocket Servers
+:::note Acerca de los servidores WebSocket
 
 El protocolo WebSocket ofrece un canal de comunicación full-duplex entre un servidor WebSocket y un cliente (por ejemplo, un navegador web). For more information on WebSocket servers, read [this page on Wikipedia](https://en.wikipedia.org/wiki/WebSocket).
 
@@ -80,7 +80,7 @@ Function onMessage($ws : 4D.WebSocketConnection; $message : Object)
 
 ```
 
-:::tip Client-Side JS
+:::tip JS del lado del cliente
 
 See [this blog post](https://blog.4d.com/websocket-server/) for an example of client-side Javascript code handling a WebSocket connection.
 
@@ -115,7 +115,7 @@ The `4D.WebSocketServer.new()` function <!-- REF #4D.WebSocketServer.new().Summa
 
 Calling this function requires that the [4D Web Server](WebServerClass.md) is started. The **host** and **port** of the WebSocket server are the same as the host and port of the 4D Web Server.
 
-### _WSSHandler_ parameter
+### Parámetro _WSSHandler_
 
 In the _WSSHandler_ parameter, pass an instance of a user class that will be called every time an event occurs on the WebSocket server --essentially, connection events. The class should define the following callback functions (only `onConnection` is mandatory):
 
@@ -133,7 +133,7 @@ In the _WSSHandler_ parameter, pass an instance of a user class that will be cal
 | WSServer   |         | 4D.WebSocketServer |  <- | Objeto servidor WebSocket actual                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | evento     |         | Object             |  <- | Parámetros                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |            | type    | Text               |     | "connection"                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|            | request | Object             |     | `request` object. Contiene información sobre la solicitud de conexión (ver abajo)                                                                                                                                                                                                                                                                                                                                                                                             |
+|            | request | Object             |     | objeto `request`. Contiene información sobre la solicitud de conexión (ver abajo)                                                                                                                                                                                                                                                                                                                                                                                             |
 | Resultado  |         | Object             |  -> | [`connectionHandler` object](#connectionhandler-object) (see below). If this function returns a `connectionHandler` object, a [`4D.WebSocketConnection` object](WebSocketConnectionClass.md#websocketconnection-object) is automatically created and added to the [collection of connections](#connections). This object is then received as parameter in each function of the `connectionHandler` object. Si el valor devuelto es nulo o indefinido, se cancela la conexión. |
 
 Esta retrollamada se llama cuando el establecimiento de la comunicación se ha completado. It must be called with a valid [`connectionHandler` object](#connectionhandler-object) to create the WebSocket connection, otherwise the connection is cancelled.
@@ -300,7 +300,7 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
 
 ```
 
-### _options_ parameter
+### Parámetro _options_
 
 In the optional _options_ parameter, pass an object that contains the following properties:
 
