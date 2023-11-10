@@ -3964,7 +3964,7 @@ removes one or *count* row(s) from the specified *tableName* at the specified *r
 
 Este comando remove linhas da tabela *nome da tabela* , não da folha. O número total de linhas da folha não é impactado pelo  comando. Dados presentes abaixo da tabela (se houver) são movidos automaticamente de acordo com o número de linhas removidas.
 
-If the *tableName* table is bound to a [data context](#vp-set-data-context), the command removes element(s) from the collection.
+Se a tabela *tableName* está vinculada a um contexto [de dados](#vp-set-data-context), o comando remove o(s) elemento(s) da coleção.
 
 
 Se *tableName* não existir, não acontece nada.
@@ -4225,15 +4225,9 @@ O comando `VP Run offscreen area` <!-- REF #_method_.VP Run offscreen area.Summa
 
 Em *parâmetros* objeto, passe qualquer uma das seguintes propriedades opcionais. Essas propriedades estarão disponíveis através do `Este comando` dentro do método `onEvent` e faça referência à instância:
 
-| Propriedade              | Tipo             | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area                     | text             | The name of the offscreen area. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| onEvent                  | object (fórmula) | A callback method that will be launched when the offscreen area is ready. Pode ser um ou outro:<li>uma função `onEvent` de uma classe, ou</li><li>um objecto `Formula`</li>By default, the callback method is called on the [`On VP Ready`](../Events/onVpReady.md), [`On Load`](../Events/onLoad.md), [`On Unload`](../Events/onUnload.md), [`On End URL Loading`](../Events/onEndUrlLoading.md), [`On URL Loading Error`](../Events/onUrlLoadingError.md), [`On VP Range Changed`](../Events/onVpRangeChanged.md), or [`On Timer`](../Events/onTimer.md) events. The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
-| autoQuit                 | boolean          | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](../Events/onEndUrlLoading.md) or [`On URL Loading Error`](../Events/onUrlLoadingError.md) events occur. If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                        |
-| timeout                  | number           | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. Se for definido para 0, não é aplicada qualquer limitação. Valor por padrão: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| result                   | misto            | Resultado do processamento (se for caso disso)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `<customProperty>` | misto            | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+Um método de callback que será iniciado quando a área fora da tela estiver pronta. Pode ser um ou outro:<li>uma função `onEvent` de uma classe, ou</li><li>um objecto `Formula`</li>Por padrão, o método de callback é chamado nos eventos [`On VP Ready`](../Events/onVpReady.md), [`On Load`](../Events/onLoad.md), [`On Unload`](../Events/onUnload.md), [`On End URL Loading`](../Events/onEndUrlLoading.md), [`On URL Loading Error`](../Events/onUrlLoadingError.md), [`On VP Range Changed`](../Events/onVpRangeChanged.md), ou [`On Timer`](../Events/onTimer.md). O método de callback pode ser usado para acessar a variável de objeto</a> 4D View Pro.</td> </tr> 
 
+</tbody> </table> 
 
 A seguinte propriedade é automaticamente adicionada pelo comando, se necessário:
 
@@ -4241,7 +4235,10 @@ A seguinte propriedade é automaticamente adicionada pelo comando, se necessári
 | -------------- | ------- | --------------------------------------------------------------- |
 | timeoutReached | boolean | Adicionado com valor true se o tempo limite tiver sido excedido |
 
-> The offscreen area is only available during the execution of the `VP Run offscreen area` command. Ele será destruído automaticamente após o término da execução.
+
+
+
+> A área fora da tela só está disponível durante a execução do comando `VP Run fora da área`. Ele será destruído automaticamente após o término da execução.
 
 Os seguintes comandos podem ser utilizados no método de retorno de chamada:
 
@@ -4251,9 +4248,13 @@ Os seguintes comandos podem ser utilizados no método de retorno de chamada:
 * `WA Evaluate JavaScript`
 * `WA EXECUTE JAVASCRIPT FUNCTION`
 
+
+
 #### Exemplo 1
 
-Você deseja criar uma zona fora da área da tela do 4D View Pro e ler o valor de uma célula:
+Se quiser criar uma zona fora da área da tela do 4D View Pro e ler o valor de uma célula:
+
+
 
 ```4d
 // cs. OffscreenArea class declaration Class constructor ($path : Text)
@@ -4269,7 +4270,10 @@ Você deseja criar uma zona fora da área da tela do 4D View Pro e ler o valor d
  End case
 ```
 
-O método de retorno de chamada *OffscreenArea*:
+
+O método de retorno de chamada *OffscreenArea*:  
+
+
 
 ```4d
 $o:=cs. OffscreenArea.new()
@@ -4277,9 +4281,14 @@ $o:=cs. OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
+
+
+
 #### Exemplo 2
 
-You want to load a large document offscreen, wait for all calculations to complete evaluating, and export it as a PDF:
+Se quiser carregar um grande documento offscreen, aguardar todos os cálculos para concluir a avaliação e exportá-lo como um PDF:
+
+
 
 
 ```4d
@@ -4293,34 +4302,37 @@ You want to load a large document offscreen, wait for all calculations to comple
    VP IMPORT DOCUMENT(This.area;$largeDocument4VP)
          This.isWaiting:=True
 
- // Start a timer to verify if all calculations are finished.
- // If during this period the "On VP Range Changed" is thrown, the timer will be restarted
- // The time must be defined according to the computer configuration.
+ // Comece um timer para verificar se todos os cálculos terminaram
+ // Se durante este período o intervalo "No VP Alterado" for lançado, o temporizador será reiniciado
+ // O tempo deve ser definido de acordo com a configuração do computador.
    SET TIMER(60)
 
   :(FORM Event.code=On VP Range Changed)
- // End of calculation detected. Restarts the timer
-         If(This.isWaiting)
+ // Fim de cálculo detectado. Reinicia o temporizador
+         If(This. sEsperando)
            SET TIMER(60)
-         End if
+         End se
 
-  :(FORM Event.code=On Timer)
- // To be sure to not restart the timer if you call others 4D View command after this point
-         This.isWaiting:=False
+  :(Evento FORM. ode=On Timer)
+ // Para ter certeza de não reiniciar o temporizador se você chamar o comando 4D View após este ponto
+         Esta. sWaiting:=False
 
- // Stop the timer
+ // Pare o timer
    SET TIMER(0)
 
- // Start the PDF export
-        VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
+ // Inicie a exportação em PDF
+        VP EXPORT DOCUMENT(Este). rea;Está. dfPath;Novo objeto("fórmula";Fórmula(ACCEPT)))
 
-     :(FORM Event.code=On URL Loading Error)
+     :(Evento FORM. ode=No URL carregando erro)
 
          CANCEL 
- End case
+ Caso Final
 ```
 
-O método de retorno de chamada *OffscreenArea*:
+
+O método de retorno de chamada *OffscreenArea*:  
+
+
 
 ```4d
 $o:=cs. OffscreenArea.new()
@@ -4328,11 +4340,18 @@ $o:=cs. OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
+
+
+
 #### Veja também
 
 [Blog post: End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
+
+
 ## S
+
+
 
 ### VP SET ACTIVE CELL
 
@@ -4347,26 +4366,38 @@ $result:=VP Run offscreen area($o)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET ACTIVE CELL` <!-- REF #_method_.VP SET ACTIVE CELL.Summary -->define uma célula específica como ativa<!-- END REF -->.
 
 Em *rangeObj*, passe um intervalo que contenha uma única célula como um objeto (ver [VP Cell](#vp-cell)). Se *rangeObj* não for um intervalo de células ou contiver vários intervalos, será usada a primeira célula do primeiro intervalo.
 
+
+
 #### Exemplo
 
 Para definir a célula na coluna D, linha 5 como a célula ativa:
+
+
 
 ```4d
 $activeCell:=VP Cell("myVPArea";3;4)
 VP SET ACTIVE CELL($activeCell)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetActiveCell.PNG)
+
+
 
 #### Veja também
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
+
+
 
 ### VP SET ALLOWED METHODS
 
@@ -4381,9 +4412,14 @@ VP SET ACTIVE CELL($activeCell)
 | methodObj | Object | -> | Métodos permitidos nas áreas 4D View Pro|<!-- END REF -->
 
 |
+
+
+
 > **Compatibidade**
 > 
-> For greater flexiblity, it is recommended to use the [`VP SET CUSTOM FUNCTIONS`](#vp-set-custom-functions) command which allows you to designate 4D formulas that can be called from 4D View Pro areas. As soon as `VP SET CUSTOM FUNCTIONS` is called, `VP SET ALLOWED METHODS` calls are ignored. 4D View Pro also supports 4D's generic `SET ALLOWED METHODS` command if neither `VP SET CUSTOM FUNCTIONS` nor `VP SET ALLOWED METHODS` are called, however using the generic command is not recommended.
+> Para maior flexíbilidade, é recomendado usar o comando [`VP SET PERSONALIZADOS`](#vp-set-custom-functions) que permite que você designe fórmulas 4D que podem ser chamadas de 4D View Pro. As soon as `VP SET CUSTOM FUNCTIONS` is called, `VP SET ALLOWED METHODS` calls are ignored. 4D View Pro also supports 4D's generic `SET ALLOWED METHODS` command if neither `VP SET CUSTOM FUNCTIONS` nor `VP SET ALLOWED METHODS` are called, however using the generic command is not recommended.
+
+
 
 
 #### Descrição
@@ -4405,9 +4441,14 @@ In the *methodObj* parameter, pass an object in which each property is the name 
 |                        | minParams  |            | Number                 | Número mínimo de parâmetros                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |                        | maxParams  |            | Number                 | Número máximo de parâmetros. Passing a number higher than the length of parameters allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                     |
 
+
+
+
 #### Exemplo
 
 Pretende permitir dois métodos nas suas áreas 4D View Pro:
+
+
 
 ```4d
 C_OBJECT($allowed)
@@ -4428,15 +4469,22 @@ $allowed. Byebye.minParams:=3
 $allowed. Byebye.maxParams:=3 VP SET ALLOWED METHODS($allowed)
 ```
 
+
 After this code is executed, the defined functions can be used in 4D View Pro formulas:
 
 ![](../assets/en/ViewPro/cmd_vpSetAllowedMethods.PNG)
 
+
+
 > In 4D View Pro formulas, function names are automatically displayed in uppercase.
+
+
 
 #### Veja também
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
+
+
 
 ### VP SET BINDING PATH
 
@@ -4445,6 +4493,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v19 R5 | Adicionado |
+
 
 </details>
 
@@ -4460,6 +4509,9 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET BINDING PATH` <!-- REF #_method_.VP SET BINDING PATH.Summary -->liga um atributo do contexto de dados de uma folha a *rangeObj*<!-- END REF -->. Depois de definir um contexto de dados utilizando o método [SET DATA CONTEXT](#vp-set-data-context). When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
@@ -4471,11 +4523,17 @@ Em *rangeObj*, passe um objeto que seja um intervalo de células ou um intervalo
 
 If *dataContextAttribute* is an empty string, the function removes the current binding. In *dataContextAttribute*, pass the name of the attribute to bind to *rangeObj*.
 
+
+
 > Os atributos do tipo coleção não são suportados. When you pass the name of a collection attribute, the command does nothing.
+
+
 
 #### Exemplo
 
 Set a data context and bind the `firstName` and `lastName` attribute to cells:
+
+
 
 ```4d
 var $p : Object
@@ -4486,11 +4544,16 @@ $p.lastName:="Nancy" VP SET DATA CONTEXT("ViewProArea"; $p) VP SET BINDING PATH(
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
 
+
 ![](../assets/en/ViewPro/vp-set-data-context-bind.png)
+
+
 
 #### Veja também
 
 [VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+
+
 
 ### VP SET BOOLEAN VALUE
 
@@ -4506,24 +4569,35 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET BOOLEAN VALUE` <!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->atribui um valor booleano especificado a um intervalo de células designado<!-- END REF -->.
 
 In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
-
 O parâmetro *boolValue* permite-lhe passar o valor booleano (**True** ou **False**) que será atribuído ao *rangeObj*.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 //Set the cell value as False VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
 
+
+
+
 #### Veja também
 
 [VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET BORDER
 
@@ -4540,6 +4614,9 @@ O parâmetro *boolValue* permite-lhe passar o valor booleano (**True** ou **Fals
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET BORDER` <!-- REF #_method_.VP SET BORDER.Summary -->applies the border style(s) defined in *borderStyleObj* and *borderPosObj* to the range defined in the *rangeObj*<!-- END REF -->.
@@ -4552,6 +4629,7 @@ The *borderStyleObj* parameter allows you to define the style for the lines of t
 | ----------- | ------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | color       | text    | Define a cor da margem. Predefinição = black.   | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                           |
 | style       | Integer | Define o estilo da borda. Predefinição = vazio. | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
+
 
 You can define the position of the *borderStyleObj* (i.e., where the line is applied) with the *borderPosObj*:
 
@@ -4567,9 +4645,14 @@ You can define the position of the *borderStyleObj* (i.e., where the line is app
 | innerHorizontal | boolean | Estilo de linha da borda aplicado apenas às bordas horizontais interiores. |
 | innerVertical   | boolean | Estilo da borda aplicado apenas a bordas verticais interiores.             |
 
+
+
+
 #### Exemplo 1
 
 Este código produz uma borda à volta de todo o intervalo:
+
+
 
 ```4d
 $border:=New object("color";"red";"style";vk line style thick)
@@ -4577,11 +4660,16 @@ $option:=New object("outline";True)
 VP SET BORDER(VP Cells("ViewProArea";1;1;3;3);$border;$option)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSETBORDER1.PNG)
+
+
 
 #### Exemplo 2
 
 This code demonstrates the difference between `VP SET BORDER` and setting borders with the [`VP SET CELL STYLE`](#vp-set-cell-style) command:
+
+
 
 ```4d
 // Definir margens usando VP SET BORDER
@@ -4596,11 +4684,16 @@ $cellStyle.borderRight:=New object("color";"blue";"style";vk line style thick)
 VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSETBORDER2.PNG)
+
+
 
 #### Veja também
 
 [VP SET CELL STYLE](#vp-set-cell-style)
+
+
 
 ### VP SET CELL STYLE
 
@@ -4618,11 +4711,16 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET CELL STYLE` <!-- REF #_method_.VP SET CELL STYLE.Summary -->applies the style(s) defined in the *styleObj* to the cells defined in the *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass a range of cells where the style will be applied. If the *rangeObj* contains multiple cells, the style is applied to each cell.
+
+
 > Borders applied with `VP SET CELL STYLE` will be applied to each cell of the *rangeObj*, as opposed to the [VP SET BORDER](#vp-set-border) command which applies borders to the *rangeObj* as a whole.
 
 The *styleObj* parameter lets you pass an object containing style settings. Pode utilizar uma folha de estilos existente ou criar um novo estilo. If the *styleObj* contains both an existing style sheet and additional style settings, the existing style sheet is applied first, followed by the additional settings.
@@ -4634,7 +4732,11 @@ To remove a style and revert to the default style settings (if any), pass a NULL
 
 For more information about style objects and style sheets, see the [Style Objects](configuring.md#style-objects) paragraph.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 $style:=New object
@@ -4647,11 +4749,16 @@ $style.borderBottom:=New object("color";"#800080";"style";vk line style thick)
 $style.backgroundImage:=Null //remove a specific attribute VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetCellStyle.PNG)
+
+
 
 #### Veja também
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP Get cell style](#vp-get-cell-style)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET BORDER](#vp-set-border)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
+
+
 
 ### VP SET COLUMN ATTRIBUTES
 
@@ -4666,6 +4773,9 @@ $style.backgroundImage:=Null //remove a specific attribute VP SET CELL STYLE(VP 
 | propertyObj | Object | -> | Objeto que contém as propriedades da coluna|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -4683,9 +4793,14 @@ The *propertyObj* parameter lets you specify the attributes to apply to the colu
 | resizable   | boolean | True se a coluna puder ser redimensionada, senão false                                    |
 | header      | text    | Texto do cabeçalho da coluna                                                              |
 
+
+
+
 #### Exemplo
 
 Para alterar o tamanho da segunda coluna e definir o cabeçalho, escreve-se:
+
+
 
 ```4d
 C_OBJECT($column;$properties)
@@ -4697,9 +4812,13 @@ $properties:=New object("width";100;"header";"Hello World") VP SET COLUMN ATTRIB
 
 ![](../assets/en/ViewPro/cmd_vpSetColumnAttributes.PNG)
 
+
+
 #### Veja também
 
 [VP Column](#vp-column)<br/>[VP Get column attributes](#vp-get-column-attributes)<br/>[VP Get row attributes](#vp-get-row-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
+
+
 
 ### VP SET COLUMN COUNT
 
@@ -4716,10 +4835,12 @@ $properties:=New object("width";100;"header";"Hello World") VP SET COLUMN ATTRIB
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET COLUMN COUNT` <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->define o número total de colunas em *vpAreaName*<!-- END REF -->.
-
 
 Em *vpAreaName*, passe o nome da área 4D View Pro. Se passar um nome que não existe, é devolvido um erro.
 
@@ -4729,19 +4850,28 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 * `vk current sheet`
 
+
+
 #### Exemplo
 
 O código seguinte define cinco colunas na área 4D View Pro:
+
+
 
 ```4d
 VP SET COLUMN COUNT("ViewProArea";5)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetColumnCount.PNG)
+
+
 
 #### Veja também
 
 [VP Get column count](#vp-get-column-count)<br/>[VP Get row count](#vp-get-row-count)<br/>[VP SET ROW COUNT](#vp-set-row-count)
+
+
 
 ### VP SET CURRENT SHEET
 
@@ -4757,16 +4887,22 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 |
 
+
+
+
 #### Descrição
 
 sets the current sheet in *vpAreaName* <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->O comando `VP SET CURRENT SHEET`<!-- END REF --> . A folha atual é a folha selecionada no documento.
-
 
 Em *vpAreaName*, passe o nome da área 4D View Pro.
 
 In *sheet*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
 
+
+
 > A indexação começa em 0.
+
+
 
 #### Exemplo
 
@@ -4776,15 +4912,22 @@ A folha atual do documento é a primeira folha:
 
 Definir a folha atual como a terceira folha:
 
+
+
 ```4d
 VP SET CURRENT SHEET("ViewProArea";2)
 ```
 
+
 ![](../assets/en/ViewPro/vp-sheet-3-select.png)
+
+
 
 #### Veja também
 
 [VP Get current sheet](#vp-get-current-sheet)
+
+
 
 ### VP SET CUSTOM FUNCTIONS
 
@@ -4800,11 +4943,16 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET CUSTOM FUNCTIONS` <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. Because custom functions are not stored in the document,`VP SET CUSTOM FUNCTIONS` must be executed in the `On Load` form event.
 
 The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when the first letter of their name is entered. Consulte a página [Fórmulas e funções](formulas.md).
+
+
 
 > Se `VP SET CUSTOM FUNCTIONS` for chamado várias vezes para a mesma área, na mesma sessão, apenas a última chamada é tida em conta.
 
@@ -4822,13 +4970,22 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 |                          | resumo     |            | Text                   | Descrição da fórmula a mostrar no 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |                          | minParams  |            | Number                 | Número mínimo de parâmetros                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |                          | maxParams  |            | Number                 | Número máximo de parâmetros. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
+
+
 > **AVISO**
+
+
 > * **AVISO** * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
+
+
 
 #### Exemplo
 
 You want to use formula objects in a 4D View Pro area to add numbers, retrieve a customer's last name and gender:
+
+
 
 ```4d
 Case of
@@ -4862,9 +5019,14 @@ Case of
        VP SET CUSTOM FUNCTIONS("ViewProArea";$o) End case
 ```
 
+
+
+
 #### Veja também
 
 [VP SET ALLOWED METHODS](#vp-set-allowed-methods)
+
+
 
 ### VP SET DATA CONTEXT
 
@@ -4873,6 +5035,7 @@ Case of
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v19 R5 | Adicionado |
+
 
 </details>
 
@@ -4891,6 +5054,9 @@ Case of
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET DATA CONTEXT` <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->define o contexto de dados de uma folha<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells, either by using an autogenerate option or the [VP SET BINDING PATH](#vp-set-binding-path) method. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
@@ -4906,6 +5072,7 @@ To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object wit
 | value       | Integer, Real, Boolean, Text, Date, Null | Valor a inserir no contexto                          |
 | time        | Real                                     | Valor de hora (em segundos) a introduzir no contexto |
 
+
 In *options*, you can pass an object that specifies additional options. As propriedades possíveis são:
 
 | Propriedade         | Tipo   | Descrição                                                                                                                                                                                                                       |
@@ -4913,13 +5080,18 @@ In *options*, you can pass an object that specifies additional options. As propr
 | reset               | Object | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                                   |
 | autoGenerateColumns | Object | Apenas utilizado quando os dados são uma coleção. True (default) to specify that columns must be generated automatically when the data context is bound. Neste caso, aplicam-se as seguintes regras: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). A primeira subcoleção determina o número de colunas criadas.</li></ul> |
 
+
 In *sheet*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
 If you export your document to an object using [VP Export to object](#vp-export-to-object), or to a 4DVP document using [VP EXPORT DOCUMENT](#vp-export-document), the `includeBindingSource` option lets you copy the contents of the current contexts as cell values in the exported object or document. Para obter mais detalhes, consulte a descrição desses métodos.
 
+
+
 #### Exemplo
 
 Passa um objeto e associa os dados de contexto às células da primeira linha:
+
+
 
 ```4d
 var $data : Object
@@ -4932,11 +5104,16 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 ```
 
+
 ![](../assets/en/ViewPro/vp-set-data-context-bind.png)
+
+
 
 #### Exemplo 2
 
 Passe uma coleção de objetos e gere colunas automaticamente:
+
+
 
 
 ```4d
@@ -4950,11 +5127,16 @@ $data.push(New object("firstname"; "Mary"; "lastname"; "Poppins"))
 $options:=New object("autoGenerateColumns"; True) VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
+
 ![](../assets/en/ViewPro/vp-set-data-context-2.png)
+
+
 
 #### Exemplo 3
 
 *data* passada como parâmetro é uma coleção que contém subcoleções. Cada subcoleção define o conteúdo de uma linha:
+
+
 
 ```4d
 var $data : Collection
@@ -4969,9 +5151,14 @@ $data.push(New collection(6; 7; 8; 9))  // Fourth row has 4 values
 $options:=New object("autoGenerateColumns"; True) VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
+
 ![](../assets/en/ViewPro/vp-set-data-context-3.png)
 
+
+
 #### Exemplo 4 - Sintaxe de data e hora
+
+
 
 ```4d
 var $data : Collection
@@ -4991,13 +5178,18 @@ $data.push(New collection("Date + Time"; New object("value"; Current date; "time
 $options:=New object("autoGenerateColumns"; True) VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
+
 Eis o resultado após as colunas serem geradas:
 
 ![](../assets/en/ViewPro/vp-set-data-context-date-time.png)
 
+
+
 #### Veja também
 
 [VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)
+
+
 
 ### VP SET DATE TIME VALUE
 
@@ -5015,6 +5207,9 @@ Eis o resultado após as colunas serem geradas:
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET DATE TIME VALUE` <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->assigns a specified date and time value to a designated cell range<!-- END REF -->.
@@ -5027,7 +5222,11 @@ The *timeValue* parameter specifies a time value (expressed in seconds) to be as
 
 The optional *formatPattern* defines a pattern for the *dateValue* and *timeValue* parameters. For information on patterns and formatting characters, please refer to the [Date and time formats](configuring.md#date-and-time-formats) section.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 //Set the cell value as the current date and time VP SET DATE TIME VALUE(VP Cell("ViewProArea";6;2);Current time;Current date;vk pattern full date time)
@@ -5035,9 +5234,14 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 //Set the cell value as the 18th of December VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pattern sortable date time)
 ```
 
+
+
+
 #### Veja também
 
 [4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE VALUE](#vp-set-date-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET DATE VALUE
 
@@ -5053,6 +5257,9 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 | formatPattern | Text   | -> | Formato do valor|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -5071,9 +5278,14 @@ The optional *formatPattern* defines a pattern for the *dateValue* parameter. Pa
 | `vk pattern short date` | Formato ISO 8601 abreviado para a data | "MM/dd/yyyy"               |
 | `vk pattern year month` | Formato ISO 8601 para o mês e o ano    | "yyyy MMMM"                |
 
+
 For information on patterns and formatting characters, please refer to the [Date and time formats](configuring.md#date-and-time-formats) section.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 //Set the cell value to the current date VP SET DATE VALUE(VP Cell("ViewProArea";4;2);Current date))
@@ -5082,9 +5294,14 @@ For information on patterns and formatting characters, please refer to the [Date
 VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 ```
 
+
+
+
 #### Veja também
 
 [4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET DEFAULT STYLE
 
@@ -5101,6 +5318,9 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET DEFAULT STYLE` <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->defines the style in the *styleObj* as the default style for a *sheet*<!-- END REF -->.
@@ -5113,7 +5333,11 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 * `vk current sheet`
 
+
+
 #### Exemplo
+
+
 
 ```4d
 $style:=New object
@@ -5122,11 +5346,16 @@ $style.font:="12pt papyrus"
 $style.backColor:="#E6E6FA" //light purple color VP SET DEFAULT STYLE("myDoc";$style)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetDefaultStyle.PNG)
+
+
 
 #### Veja também
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP Get default style](#vp-get-default-style)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET BORDER](#vp-set-border)<br/>[VP SET CELL STYLE](#vp-set-cell-style)
+
+
 
 ### VP SET FIELD
 
@@ -5143,6 +5372,9 @@ $style.backColor:="#E6E6FA" //light purple color VP SET DEFAULT STYLE("myDoc";$s
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET FIELD` <!-- REF #_method_.VP SET FIELD.Summary -->atribui um campo virtual do banco de dados 4D a um intervalo de células designado<!-- END REF -->.
@@ -5153,15 +5385,24 @@ The *field* parameter specifies a 4D database [virtual field](formulas.md#refere
 
 The optional *formatPattern* defines a pattern for the *field* parameter. You can pass any valid [custom format](configuring.md#cell-format).
 
+
+
 #### Exemplo
+
+
 
 ```4d
 VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 ```
 
+
+
+
 #### Veja também
 
 [VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET FORMULA
 
@@ -5178,13 +5419,18 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET FORMULA` <!-- REF #_method_.VP SET FORMULA.Summary -->assigns a specified formula or 4D method to a designated cell range<!-- END REF -->.
 
 In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify.
 
-The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*.
+The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. 
+
+
 
 > If the *formula* is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
@@ -5192,29 +5438,48 @@ The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for
 
 You remove the formula in *rangeObj* by replacing it with an empty string ("").
 
+
+
 #### Exemplo 1
+
+
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
 ```
 
+
+
+
 #### Exemplo 2
 
 Para remover a fórmula:
+
+
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 ```
 
+
+
+
 #### Exemplo 3
+
+
 
 ```4d
 VP SET FORMULA($range; "SUM(A1,B7,C11)") //"," para separar parâmetros
 ```
 
+
+
+
 #### Veja também
 
 [Cell format](configuring.md#cell-format)<br/>[VP Get Formula](#vp-get-formula)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET FORMULAS
 
@@ -5230,6 +5495,9 @@ VP SET FORMULA($range; "SUM(A1,B7,C11)") //"," para separar parâmetros
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET FORMULAS` <!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
@@ -5241,11 +5509,17 @@ The *formulasCol* is a two-dimensional collection:
 * A coleção de primeiro nível contém subcoleções de fórmulas. Cada subcolecção define uma linha.
 * Cada subcoleção define os valores das células para a linha. Values must be text elements containing the formulas to assign to the cells.
 
+
+
 > If the formula is a string, use the period `.` as numerical separator and the comma `,` as parameter separator. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
 You remove the formulas in *rangeObj* by replacing them with an empty string ("").
 
+
+
 #### Exemplo 1
+
+
 
 ```4d
 $formulas:=New collection
@@ -5253,17 +5527,25 @@ $formulas.push(New collection("MAX(B11,C11,D11)";"myMethod(G4)")) // First row
 $formulas.push(New collection("SUM(B11:D11)";"AVERAGE(B11:D11)")) // Second row VP SET FORMULAS(VP Cell("ViewProArea";6;3);$formulas) // Set the cells with the formulas
 ```
 
+
 *myMethod*:
+
+
 
 ```4d
 $0:=$1*3.33
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetFormulas.PNG)
+
+
 
 #### Exemplo 2
 
 Para remover fórmulas:
+
+
 
 ```4d
 $formulas:=New collection
@@ -5271,9 +5553,14 @@ $formulas.push(New collection("";"")) // first collection
 $formulas.push(New collection("";"")) // second collection VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 ```
 
+
+
+
 #### Veja também
 
 [VP Get Formulas](#vp-get-formulas)<br/>[VP GET VALUES](#vp-get-values)[VP SET FORMULA](#vp-set-formula)<br/>[VP SET VALUES](#vp-set-values)
+
+
 
 ### VP SET FROZEN PANES
 
@@ -5307,14 +5594,18 @@ You can pass an object defining the columns and rows to freeze in the *paneObj* 
 | rowCount            | Integer | O número de linhas congeladas na parte superior da folha |
 | trailingRowCount    | Integer | O número de linhas congeladas na parte inferior da folha |
 
+
 No parâmetro opcional *sheet*, pode designar uma folha específica onde o intervalo será definido (a contagem começa em 0). Se omitido, a planilha atual será utilizada por padrão. Você pode selecionar explicitamente a planilha atual com a seguinte constante:
 
 * `vk current sheet`
 
+
+
 #### Exemplo
 
+You want to freeze the first three columns on the left, two columns on the right, and the first row:  
 
-You want to freeze the first three columns on the left, two columns on the right, and the first row:
+
 
 ```4d
 C_OBJECT($panes)
@@ -5325,11 +5616,16 @@ $panes.trailingColumnCount:=2
 $panes.rowCount:=1 VP SET FROZEN PANES("ViewProArea";$panes)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetFrozenPanes.PNG)
+
+
 
 #### Veja também
 
 [VP Get frozen panes](#vp-get-frozen-panes)
+
+
 
 ### VP SET NUM VALUE
 
@@ -5346,6 +5642,9 @@ $panes.rowCount:=1 VP SET FROZEN PANES("ViewProArea";$panes)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET NUM VALUE` <!-- REF #_method_.VP SET NUM VALUE.Summary -->atribui um valor numérico especificado a um intervalo de células designado<!-- END REF -->.
@@ -5356,7 +5655,11 @@ The *numberValue* parameter specifies a numeric value to be assigned to the *ran
 
 The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *numberValue* parameter.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";False))
@@ -5366,9 +5669,14 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";False))
 //Set the cell value as $125,571.35
 ```
 
+
+
+
 #### Veja também
 
 [Cell format](configuring.md#cell-format)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET PRINT INFO
 
@@ -5385,6 +5693,9 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";False))
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET PRINT INFO` <!-- REF #_method_.VP SET PRINT INFO.Summary -->defines the attributes to use when printing the *vpAreaName*<!-- END REF -->.
@@ -5397,9 +5708,13 @@ No parâmetro opcional *sheet* , você pode designar uma planilha específica pa
 
 * `vk current sheet`
 
+
+
 #### Exemplo
 
 O código seguinte imprime uma área 4D View Pro num documento PDF:
+
+
 
 
 ```4d
@@ -5435,13 +5750,18 @@ $printInfo.fitPagesTall:=1
 //export the PDF VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(ALERT("PDF ready!"))))
 ```
 
+
 O PDF:
 
 ![](../assets/en/ViewPro/cmd_vpSetPrintInfo.PNG)
 
+
+
 #### Veja também
 
 [4D View Pro print attributes](configuring.md#print-attributes)<br/>[VP Convert to picture](#vp-convert-to-picture)<br/>[VP Get print info](#vp-get-print-info)<br/>[VP PRINT](#vp-print)
+
+
 
 ### VP SET ROW ATTRIBUTES
 
@@ -5456,6 +5776,9 @@ O PDF:
 | propertyObj | Object | -> | Objeto que contém as propriedades da linhas|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -5473,9 +5796,14 @@ O parâmetro *propertyObj* permite-lhe especificar os atributos a aplicar às li
 | resizable   | boolean | True se a linha puder ser redimensionada, senão false                                    |
 | header      | text    | Texto do cabeçalho da linha                                                              |
 
+
+
+
 #### Exemplo
 
 Pretende-se alterar o tamanho da segunda linha e definir o cabeçalho:
+
+
 
 ```4d
 var $row; $properties : Object
@@ -5484,11 +5812,16 @@ $row:=VP Row("ViewProArea";1)
 $properties:=New object("height";75;"header";"June") VP SET ROW ATTRIBUTES($row;$properties)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetRowAttributes.PNG)
+
+
 
 #### Veja também
 
 [VP Get row attributes](#vp-get-row-attributes)<br/>[VP get column attributes](#vp-get-column-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
+
+
 
 ### VP SET ROW COUNT
 
@@ -5505,6 +5838,9 @@ $properties:=New object("height";75;"header";"June") VP SET ROW ATTRIBUTES($row;
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET ROW COUNT` <!-- REF #_method_.VP SET ROW COUNT.Summary -->define o número total de linhas em *vpAreaName*<!-- END REF -->.
@@ -5517,19 +5853,28 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 * `vk current sheet`
 
+
+
 #### Exemplo
 
 O código seguinte define cinco linhas na área 4D View Pro:
+
+
 
 ```4d
 VP SET ROW COUNT("ViewProArea";5)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetRowCount.PNG)
+
+
 
 #### Veja também
 
 [VP Get column count](#vp-get-column-count)<br/>[VP get row-count](#vp-get-row-count)<br/>[VP SET COLUMN COUNT](#vp-set-column-count)
+
+
 
 ### VP SET SELECTION
 
@@ -5544,24 +5889,36 @@ VP SET ROW COUNT("ViewProArea";5)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET SELECTION` <!-- REF #_method_.VP SET SELECTION.Summary -->defines the specified cells as the selection and the first cell as the active cell<!-- END REF -->.
 
 In *rangeObj*, pass a range object of cells to designate as the current selection.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 $currentSelection:=VP Combine ranges(VP Cells("myVPArea";3;2;1;6);VP Cells("myVPArea";5;7;1;7))
 VP SET SELECTION($currentSelection)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetSelection.PNG)
+
+
 
 #### Veja também
 
 [VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP ADD SELECTION](#vp-add-selection)<br/>[VP SHOW CELL](#vp-show-cell)
+
+
 
 ### VP SET SHEET COUNT
 
@@ -5577,12 +5934,19 @@ VP SET SELECTION($currentSelection)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET SHEET COUNT` <!-- REF #_method_.VP SET SHEET COUNT.Summary -->define o número de folhas em *vpAreaName*<!-- END REF -->.
 
 In `number`, pass a number corresponding to how many sheets the document will contain after the command is executed.
+
+
 > **Warning**: The command will delete sheets if the previous amount of sheets in your document is superior to the number passed. For example, if there are 5 sheets in your document and you set the sheet count to 3, the command will delete sheets number 4 and 5.
+
+
 
 #### Exemplo
 
@@ -5592,15 +5956,22 @@ O documento tem atualmente uma folha:
 
 Para definir o número de folhas como 3:
 
+
+
 ```4d
 VP SET SHEET COUNT("ViewProArea";3)
 ```
 
+
 ![](../assets/en/ViewPro/vp-sheet-3.png)
+
+
 
 #### Veja também
 
 [VP Get sheet count](#vp-get-sheet-count)
+
+
 
 ### VP SET SHEET NAME
 
@@ -5617,6 +5988,9 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET SHEET NAME` <!-- REF #_method_.VP SET SHEET NAME.Summary -->renames a sheet in the document loaded in *vpAreaName*<!-- END REF -->.
@@ -5626,6 +6000,8 @@ Em *vpAreaName*, passe o nome da área 4D View Pro.
 Em *name*, introduza um novo nome para a folha.
 
 In *sheet*, pass the index of the sheet to rename.
+
+
 
 > A indexação começa em 0.
 
@@ -5640,15 +6016,22 @@ O comando não faz nada se:
 * o novo nome já existe
 * the passed *sheet* does not exist
 
+
+
 #### Exemplo
 
 Defina o nome da terceira folha como "Total first quarter":
+
+
 
 ```4d
 VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 ```
 
+
 ![](../assets/en/ViewPro/vp-sheet-index-name.png)
+
+
 
 ### VP SET SHEET OPTIONS
 
@@ -5665,6 +6048,9 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET SHEET OPTIONS` <!-- REF #_method_.VP SET SHEET OPTIONS.Summary -->allows defining various sheet options of the *vpAreaName* area<!-- END REF -->.
@@ -5677,9 +6063,13 @@ No parâmetro opcional *sheet*, pode designar uma planilha específica (a contag
 
 * `vk current sheet`
 
+
+
 #### Exemplo 1
 
 Pretende proteger todas as células exceto o intervalo C5:D10:
+
+
 
 ```4d
 // Activate protection on the current sheet
@@ -5691,9 +6081,14 @@ $options.isProtected:=True VP SET SHEET OPTIONS("ViewProArea";$options)
 // mark cells C5:D10 as 'unlocked' VP SET CELL STYLE(VP Cells("ViewProArea";2;4;2;6);New object("locked";False))
 ```
 
+
+
+
 #### Exemplo 2
 
 You need to protect your document while your users can resize rows and columns:
+
+
 
 ```4d
 var $options : Object
@@ -5710,9 +6105,14 @@ $options.protectionOptions.allowResizeColumns=True;
 // Apply protection on the current sheet VP SET SHEET OPTIONS("ViewProArea";$options)
 ```
 
+
+
+
 #### Exemplo 3
 
 You want to customize the colors of your sheet tabs, frozen lines, grid lines, selection background and selection border:
+
+
 
 ```4d
 var $options : Object
@@ -5732,13 +6132,18 @@ $options.sheetTabColor:="red" VP SET SHEET OPTIONS("ViewProArea";$options;1)
 $options.sheetTabColor:="blue" VP SET SHEET OPTIONS("ViewProArea";$options;2)
 ```
 
+
 Resultados:
 
 ![](../assets/en/ViewPro/cmd_vpSetSheetOptions1.PNG)
 
+
+
 #### Exemplo
 
 Pretende ocultar as linhas da grelha, bem como os cabeçalhos das linhas e das colunas.
+
+
 
 ```4d
 var $options : Object
@@ -5751,13 +6156,18 @@ $options.rowHeaderVisible:=False
 $options.colHeaderVisible:=False VP SET SHEET OPTIONS("ViewProArea";$options)
 ```
 
+
 Resultados:
 
 ![](../assets/en/ViewPro/cmd_vpSetSheetOptions2.PNG)
 
+
+
 #### Veja também
 
 [4D View Pro sheet options](configuring.md#sheet-options)<br/>[VP Get sheet options](#vp-get-sheet-options)
+
+
 
 ### VP SET SHOW PRINT LINES
 
@@ -5774,6 +6184,9 @@ Resultados:
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET SHOW PRINT LINES` <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> define se as linhas de pré-visualização da impressão devem ser apresentadas numa folha.<!-- END REF -->.
@@ -5785,18 +6198,25 @@ In *visible*, pass `True` to display the print lines, and `False` to hide them. 
 Em *sheet*, passe o índice da folha de destino. The `VP Get sheet index` command
 
 
+
+
 > A indexação começa em 0.
 
 The position of a spreadsheet's print lines varies according to that spreadsheet's page breaks.
+
+
 
 #### Exemplo
 
 O código a seguir exibe linhas de impressão na segunda folha de um documento:
 
+
+
 ```4d
 VP SET SHOW PRINT LINES("ViewProArea";True;1)
 
 ```
+
 
 ![set-show-print-lines](../assets/en/ViewPro/vp-set-show-print-lines.png)
 
@@ -5804,13 +6224,16 @@ Com uma quebra de página:
 
 ![set-show-print-lines-with-page-break](../assets/en/ViewPro/vp-set-show-print-lines-page-break.png)
 
+
+
 #### Veja também
 
 [4D Get show print lines](#vp-get-show-print-lines)
 
 
-### VP SET TABLE COLUMN ATTRIBUTES
 
+
+### VP SET TABLE COLUMN ATTRIBUTES
 
 <details><summary>Histórico</summary>
 
@@ -5828,6 +6251,7 @@ Com uma quebra de página:
 | ---------- | ---- | -- | ------------------------------------------ |
 | vpAreaName | Text | -> | Nome de objeto formulário área 4D View Pro |
 | tableName  | Text | -> | Nome da tabela                             |
+
 
 |column|Integer|->|Index of the column in the table| |attributes |Object|->|Attribute(s) to apply to the *column*| |sheet   |Integer|->|Sheet index (current sheet if omitted)|<!-- END REF -->
 
@@ -5848,15 +6272,22 @@ In the *attributes* parameter, pass an object that contains the properties to se
 | footerFormula       | text    | Fórmula do rodapé da coluna.                                                                                                                                                        |
 | filterButtonVisible | boolean | Sets whether the table column's filter button is displayed (default is `True` when the table is created).                                                                           |
 
+
 Em *sheet*, passe o índice da folha de destino. Se nenhum indice for especcificado ou se passar -1, o comando se aplica a folha atual.
+
+
 > A indexação começa em 0.
 
-If *tableName* is not found or if *column* is higher than the number of columns, the command does nothing.
+If *tableName* is not found or if *column* is higher than the number of columns, the command does nothing. 
+
+
 
 
 #### Exemplo
 
-Você cria uma tabela com um contexto de dados:
+Você cria uma tabela com um contexto de dados: 
+
+
 
 ```4d
 var $context;$options : Object
@@ -5875,9 +6306,12 @@ $options.tableColumns.push(New object("name"; "Last Name"; "dataField"; "name"))
 $options.tableColumns.push(New object("name"; "Salary"; "dataField"; "salary")) VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; 2; 3); "PeopleTable"; "col"; $options)
 ```
 
+
 ![](../assets/en/ViewPro/table-inserta.png)
 
 Then you want to insert a column with data from the data context and hide some filter buttons:
+
+
 
 ```4d
     //insert a column VP INSERT TABLE COLUMNS("ViewProArea"; "PeopleTable"; 1; 1)
@@ -5896,12 +6330,17 @@ $param.filterButtonVisible:=False VP SET TABLE COLUMN ATTRIBUTES("ViewProArea"; 
 
 ```
 
+
 ![](../assets/en/ViewPro/table-insertb.png)
+
+
 
 
 #### Veja também
 
 [VP CREATE TABLE](#vp-create-table)<br/>[VP Find table](#vp-find-table)<br/>[VP Get table column attributes](#vp-get-table-column-attributes)<br/>[VP RESIZE TABLE](#vp-resize-table)
+
+
 
 
 
@@ -5929,18 +6368,25 @@ $param.filterButtonVisible:=False VP SET TABLE COLUMN ATTRIBUTES("ViewProArea"; 
 |
 
 
+
+
+
 #### Descrição
 
 O comando `VP SET TABLE THEME` <!-- REF #_method_.VP SET TABLE THEME.Summary -->modifica o tema atual do *tableName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area and in *tableName*, the name of the table to modify.
+In *vpAreaName*, pass the name of the 4D View Pro area and in *tableName*, the name of the table to modify. 
 
-In the *options* parameter, pass an object of the [`cs. ViewPro. TableTheme` class](classes.md#tabletheme) that contains the theme properties to modify.
+In the *options* parameter, pass an object of the [`cs. ViewPro. TableTheme` class](classes.md#tabletheme) that contains the theme properties to modify. 
+
+
 
 
 #### Exemplo 1
 
 Pretende-se definir um tema predefinido para uma tabela:
+
+
 
 ```4d
 var $param : cs. ViewPro. TableTheme
@@ -5948,11 +6394,16 @@ $param:=cs. ViewPro. TableTheme.new()
 $param.theme:="medium2" VP SET TABLE THEME("ViewProArea"; "myTable"; $param)
 ```
 
+
+
+
 #### Exemplo 2
 
 Pretende ter esta renderização de coluna alternativa:
 
 ![](../assets/en/ViewPro/col-bandering.png)
+
+
 
 ```4d
 var $param : cs. ViewPro. TableTheme
@@ -5985,9 +6436,14 @@ $param.theme.secondColumnStripStyle:=$styleColumn2 VP SET TABLE THEME("ViewProAr
 ```
 
 
+
+
+
 #### Veja também
 
 [VP CREATE TABLE](#vp-create-table)<br/>[VP Get table theme](#vp-get-table-theme)
+
+
 
 
 
@@ -6007,6 +6463,9 @@ $param.theme.secondColumnStripStyle:=$styleColumn2 VP SET TABLE THEME("ViewProAr
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET TEXT VALUE` <!-- REF #_method_.VP SET TEXT VALUE.Summary -->atribui um valor de texto especificado a um intervalo de células designado<!-- END REF -->.
@@ -6015,18 +6474,26 @@ In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`]
 
 The *textValue* parameter specifies a text value to be assigned to the *rangeObj*.
 
-
 The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *textValue* parameter.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 ```
 
+
+
+
 #### Veja também
 
 [Cell Format](configuring.md#cell-format)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET TIME VALUE
 
@@ -6043,6 +6510,9 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET TIME VALUE` <!-- REF #_method_.VP SET TIME VALUE.Summary -->atribui um valor de tempo especificado a um intervalo de células designado<!-- END REF -->.
@@ -6053,7 +6523,11 @@ The *timeValue* parameter specifies a time expressed in seconds to be assigned t
 
 The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *timeValue* parameter.
 
+
+
 #### Exemplo
+
+
 
 ```4d
 //Set the value to the current time VP SET TIME VALUE(VP Cell("ViewProArea";5;2);Current time)
@@ -6061,9 +6535,14 @@ The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for
 //Set the value to a specific time with a designated format VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 ```
 
+
+
+
 #### Veja também
 
 [Cell Format](configuring.md#cell-format)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET VALUE
 
@@ -6078,6 +6557,9 @@ The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for
 | valueObj  | Object | -> | Valores de células e opções de formato|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -6095,7 +6577,12 @@ The parameter *valueObj* is an object that includes properties for the value and
 | time        | Real                                     | Valor hora (em segundos) a atribuir a *rangeObj*                                                                                                                 |
 | format      | Text                                     | Pattern for value/time property. For information on patterns and formatting characters, please refer to the [Cell Format](configuring.md#cell-format) paragraph. |
 
+
+
+
 #### Exemplo
+
+
 
 ```4d
 //Set the cell value to 2
@@ -6106,9 +6593,14 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);2)
 VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 ```
 
+
+
+
 #### Veja também
 
 [Cell Format](configuring.md#cell-format)<br/>[VP Get values](#vp-get-value)<br/>[VP SET VALUE](#vp-set-value)<br/>[VP SET BOOLEAN VALUE](#vp-set-boolean-value)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET FIELD](#vp-set-field)<br/>[VP SET FORMULA](#vp-set-formula)<br/>[VP SET NUM VALUE](#vp-set-num-value)<br/>[VP SET TEXT VALUE](#vp-set-text-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)
+
+
 
 ### VP SET VALUES
 
@@ -6125,26 +6617,36 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SET VALUES` <!-- REF #_method_.VP SET VALUES.Summary -->assigns a collection of values starting at the specified cell range<!-- END REF -->.
 
 In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) whose value you want to specify. The cell defined in the *rangeObj* is used to determine the starting point.
+
+
 > * If *rangeObj* is not a cell range, only the first cell of the range is used.
 > * If *rangeObj* includes multiple ranges, only the first cell of the first range is used.
 
 O parâmetro *valuesCol* é bidimensional:
 
-
 * A coleção de primeiro nível contém subcoleções de valores. Cada subcolecção define uma linha. Passa uma coleção vazia para saltar uma linha.
 * Cada subcoleção define os valores das células para a linha. Os valores podem ser Integer, Real, Boolean, Text, Date, Null ou Object. Se o valor for um objeto, pode ter as seguintes propriedades:
+
 
  | Propriedade | Tipo                                     | Descrição                       |
  | ----------- | ---------------------------------------- | ------------------------------- |
  | value       | Integer, Real, Boolean, Text, Date, Null | Valor da célula (exceto - time) |
  | time        | Real                                     | Valor hora (em segundos)        |
 
+ 
+ 
+
 #### Exemplo
+
+
 
 ```4d
 $param:=New collection
@@ -6155,11 +6657,16 @@ $param.push(New collection(6;7;8;9)) // fourth row, 4 values
 $param.push(New collection(Null;New object("value";Current date;"time";42))) //fifth row, 1 value VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 ```
 
+
 ![](../assets/en/ViewPro/cmd_vpSetValues.PNG)
+
+
 
 #### Veja também
 
 [VP Get formulas](configuring.md#vp-get-formulas)<br/>[VP Get value](#vp-get-value)<br/>[VP Get Values](#vp-get-values)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
+
+
 
 ### VP SET WORKBOOK OPTIONS
 
@@ -6173,6 +6680,9 @@ $param.push(New collection(Null;New object("value";Current date;"time";42))) //f
 | optionObj  | Object | -> | Objeto que contém as opções do livro a definir|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -6250,9 +6760,14 @@ A tabela seguinte lista as opções de libro disponíveis:
 | tabStripWidth                         | number                  | Width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                                          |
 | useTouchLayout                        | boolean                 | Whether to use touch layout to present the Spread component.                                                                                                                                                                                               |
 
+
+
+
 #### Exemplo
 
 Para definir a opção allowExtendpasteRange em "ViewProArea":
+
+
 
 ```4d
 var $workbookOptions : Object
@@ -6261,9 +6776,14 @@ $workbookOptions:= New Object
 $workbookOptions.allowExtendPasteRange:=True VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
+
+
+
 #### Veja também
 
 [VP Get workbook options](#vp-get-workbook-options)
+
+
 
 ### VP SHOW CELL
 
@@ -6279,6 +6799,9 @@ $workbookOptions.allowExtendPasteRange:=True VP SET WORKBOOK OPTIONS("ViewProAre
 | hPos      | Integer | -> | Horizontal view position of cell or row|<!-- END REF -->
 
 |
+
+
+
 
 #### Descrição
 
@@ -6296,16 +6819,24 @@ Estão disponíveis os seguintes selectores:
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Posição vertical da vista (topo, centro, fundo) - célula ou linha </li><li>Posição horizontal da vista (esquerda, centro, direita) - célula ou coluna</li> | X                     | X                     |
 | `vk position right`   | Alinhamento horizontal à direita da célula ou coluna                                                                                                                                                                       |                       | X                     |
 | `vk position top`     | Alinhamento vertical ao topo da célula ou linha                                                                                                                                                                            | X                     |                       |
+
+
+
 > This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. A vista mantém-se inalterada.
+
+
 
 #### Exemplo
 
 You want to view the cell in column AY, row 51 in the center of the 4D View Pro area:
 
+
+
 ```4d
 $displayCell:=VP Cell("myVPArea";50;50)
 // Move the view to show the cell VP SHOW CELL($displayCell;vk position center;vk position center)
 ```
+
 
 Resultados:
 
@@ -6313,18 +6844,25 @@ Resultados:
 
 The same code with the vertical and horizontal selectors changed to show the same cell positioned at the top right of the 4D View Pro area:
 
+
+
 ```4d
 $displayCell:=VP Cell("myVPArea";50;50)
   // Move the view to show the cell VP SHOW CELL($displayCell;vk position top;vk position right)
 ```
 
+
 Resultados:
 
 ![](../assets/en/ViewPro/cmd_vpShowCell2.PNG)
 
+
+
 #### Veja também
 
 [VP ADD CELL](#vp-add-cell)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)
+
+
 
 ### VP SUSPEND COMPUTING
 
@@ -6339,6 +6877,9 @@ Resultados:
 
 |
 
+
+
+
 #### Descrição
 
 O comando `VP SUSPEND COMPUTING` <!-- REF #_method_.VP SUSPEND COMPUTING.Summary -->stops the calculation of all formulas in *vpAreaName*<!-- END REF -->. This command is useful when you want to suspend calculations in this 4D View Pro area so you can manually make modifications to formulas without encountering errors before you've finished making the changes.
@@ -6346,7 +6887,11 @@ O comando `VP SUSPEND COMPUTING` <!-- REF #_method_.VP SUSPEND COMPUTING.Summary
 O comando pausa o serviço de cálculo no 4D View Pro. Formulas that have already been calculated remain unchanged, however any formulas added after `VP SUSPEND COMPUTING` command  is executed are not calculated.
 
 Em *vpAreaName*, passe o nome da área 4D View Pro. Se passar um nome que não existe, é devolvido um erro.
+
+
 > O serviço de cálculo de 4D View Pro mantém um contador de ações de sugastar/retomar. Therefore, each execution of `VP SUSPEND COMPUTING` command  must be balanced by a corresponding execution of the `VP RESUME COMPUTING` command. Any formula impacted by modifications made while calculations are suspended will be recalculated when the command is executed.
+
+
 
 #### Exemplo
 
@@ -6355,6 +6900,8 @@ You've added two buttons to the form so that the user can suspend/resume calcula
 ![](../assets/en/ViewPro/cmd_vpStopCalculations.PNG)
 
 O código do botão Suspend Computing:
+
+
 
 ```4d
  //pause calculations while users enter information
@@ -6365,11 +6912,17 @@ O código do botão Suspend Computing:
  End if
 ```
 
+
+
+
 ```4d
 If(FORM Event.code=On Clicked)
 
     VP RESUME COMPUTING("ViewProArea") End if
 ```
+
+
+
 
 #### Veja também
 
