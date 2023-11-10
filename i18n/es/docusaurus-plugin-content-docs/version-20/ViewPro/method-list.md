@@ -5675,7 +5675,7 @@ El comando no hace nada si:
 * el nuevo nombre contiene caracteres prohibidos
 * el nuevo valor del nombre está en blanco
 * el nuevo nombre ya existe
-* the passed *sheet* does not exist
+* no existe la *hoja* pasada
 
 #### Ejemplo
 
