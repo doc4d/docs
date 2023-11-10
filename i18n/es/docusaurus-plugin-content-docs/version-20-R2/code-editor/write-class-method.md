@@ -478,7 +478,7 @@ La búsqueda realizada es del tipo "Buscar siguiente" en la ventana actual del e
 Los comandos **Find Same Next** y **Find Same Previous** se utilizan para encontrar cadenas de caracteres *estrictamente* idénticas a las seleccionadas. Por ejemplo, las mayúsculas y minúsculas deben coincidir.
 
 
-### Bookmark All
+### Marcar todo
 
 El comando **Editar > Marcar todo** se activa cuando ya se ha especificado una búsqueda en la caja de diálogo buscar o reemplazar. Cuando selecciona este comando, 4D pone un marcador en cada línea que contiene un elemento correspondiente al criterio de búsqueda "actual". Esto facilita la localización de todos los resultados de la búsqueda. Para más información sobre marcadores, consulte [Marcadores](#bookmarks).
 
