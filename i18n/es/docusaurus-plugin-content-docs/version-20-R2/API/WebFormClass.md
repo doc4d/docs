@@ -48,9 +48,9 @@ For more information, please refer to the [`.componentName` description in the Q
 **.setError**( *msg* : string)<!-- END REF -->
 
 <!-- REF #WebFormClass.setError().Params -->
-| Parámetros | Tipo   |    | Descripción                              |
-| ---------- | ------ |:--:| ---------------------------------------- |
-| msg        | string | -> | Error message to display in the web form |
+| Parámetros | Tipo   |    | Descripción                                     |
+| ---------- | ------ |:--:| ----------------------------------------------- |
+| msg        | string | -> | Mensaje de error a mostrar en el formulario web |
 <!-- END REF -->
 
 #### Descripción
@@ -85,9 +85,9 @@ For more information, please refer to the [`.setMessage()` description in the Qo
 **.setWarning**( *msg* : string)<!-- END REF -->
 
 <!-- REF #WebFormClass.setWarning().Params -->
-| Parámetros | Tipo   |    | Descripción                                |
-| ---------- | ------ |:--:| ------------------------------------------ |
-| msg        | string | -> | Warning message to display in the web form |
+| Parámetros | Tipo   |    | Descripción                                              |
+| ---------- | ------ |:--:| -------------------------------------------------------- |
+| msg        | string | -> | Mensaje de advertencia para mostrar en el formulario web |
 <!-- END REF -->
 
 #### Descripción
