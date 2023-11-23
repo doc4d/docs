@@ -180,11 +180,11 @@ title: オブジェクト
 
 コレクションあるいはエンティティセレクションを返す式を入力します。 一般的には、コレクションまたはエンティティセレクションを格納している変数名、コレクション要素、あるいはプロパティを入力します。
 
-コレクションおよびエンティティセレクションは、フォームロード時にフォームから利用可能でなければなりません。 コレクションの各要素、あるいはエンティティセレクションの各エンティティは、リストボックスの行へと割り当てられ、[This](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) コマンドを通してオブジェクトとして利用可能です:
+コレクションおよびエンティティセレクションは、フォームロード時にフォームから利用可能でなければなりません。 Each element of the collection or each entity of the entity selection will be associated to a list box row and will be available as an object through the [`This`](../Concepts/classes.md#this) keyword:
 
-- オブジェクトのコレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各プロパティ値にアクセスすることが可能です。例: `This.\<propertyPath>`。
-- エンティティセレクションを使用した場合、データソース式内で **This** コマンドを呼び出すことで、各属性値へとアクセスすることが可能です。例: `This.\<attributePath>`。
-> (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 ただし、この場合は値を編集したり、"カレントの項目" オブジェクトにアクセスしたりすることはできません (以下参照)。<br /> 注: エンティティセレクションについての詳細については、[ORDA](https://doc.4d.com/4Dv18/4D/18/ORDA.200-4575453.ja.html) の章を参照ください。
+- if you used a collection of objects, you can call **This** in the datasource expression to access each property value, for example `This.<propertyPath>`.
+- if you used an entity selection, you can call **This** in the datasource expression to access each attribute value, for example `This.<attributePath>`.
+> (オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で **This.value** を呼び出すことで、各値にアクセスすることが可能です。 However in this case you will not be able to modify values or to access the current object (see below).
 
 #### JSON 文法
 
