@@ -50,11 +50,11 @@ Vous pouvez créer deux types d'objets :
 
 ## Principes de syntaxe
 
-Object notation can be used to access object property values through a chain of tokens.
+Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :
 
 ### Propriétés des objets
 
-Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :
+Object notation can be used to access object property values through a chain of tokens.
 
 - using a "dot" symbol: > object.propertyName
 
