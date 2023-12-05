@@ -82,7 +82,7 @@ If the method has also the [**Shared by components and host database**](../Proje
 
 ## When is a process started preemptively?
 
-:::info Reminder
+Reminder
 
 Preemptive execution is only available in compiled mode.
 
