@@ -24,7 +24,7 @@ Les variables, champs ou expressions de type objet peuvent contenir des données
 
 **Attention :** N'oubliez pas que les noms d'attributs tiennent compte des majuscules/minuscules.
 
-Vous gérez les variables, les champs ou les expressions de type Objet à l'aide de la [notation objet](dt_object.md#syntax-basics) ou des commandes classiques du thème **Objets (langage)**. A noter que des commandes spécifiques du thème **Recherches**, telles que `QUERY BY ATTRIBUTE`, `QUERY SELECTION BY ATTRIBUTE` ou `ORDER BY ATTRIBUTE` peuvent être utilisées pour traiter des champs objets.
+Vous gérez les variables, les champs ou les expressions de type Objet à l'aide de la [notation objet](dt_object.md#syntax-basics) ou des commandes classiques du thème **Objets (langage)**. Vous gérez les variables, les champs ou les expressions de type Objet en utilisant la [notation objet](dt_object.md#syntax-basics) ou les commandes disponibles dans le thème **Objets (langage)**.
 
 Chaque valeur de propriété accessible par la notation objet est considérée comme une expression. Vous pouvez utiliser ces valeurs partout où des expressions 4D sont attendues :
 
@@ -52,11 +52,11 @@ Vous pouvez créer deux types d'objets :
 
 ## Principes de syntaxe
 
-Object notation can be used to access object property values through a chain of tokens.
+Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :
 
 ### Propriétés des objets
 
-Avec la notation objet, il est possible d'accéder aux propriétés d'objets (aussi appelées attributs d'objets) de deux façons :
+Object notation can be used to access object property values through a chain of tokens.
 
 - using a "dot" symbol: > object.propertyName
 
