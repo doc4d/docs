@@ -368,7 +368,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 #### Description
 
-La fonction `.concat()` <!-- REF #collection.concat().Summary -->retourne une nouvelle collection avec le contenu du paramètre *value* ajouté à la fin de la collection d'origine<!-- END REF -->.
+La fonction `.fill()` <!-- REF #collection.concat().Summary -->remplit les éléments de la collection avec *value*, optionnellement depuis l'élément *startFrom* et jusqu'à l'élément *end* (non inclus), et retourne la collection résultante<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
 Si *value* est une collection, tous ses éléments sont ajoutés comme nouveaux éléments à la fin de la collection d'origine. Si *value* n'est pas une collection, son contenu est ajouté comme nouvel élément.
@@ -414,7 +414,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 #### Description
 
-La fonction `.copy()` <!-- REF #collection.copy().Summary --> retourne une copie profonde (deep copy) de la collection<!-- END REF -->. ***Deep copy*** signifie que les objets ou les collections présents dans la collection d'origine sont dupliqués et ne partagent pas leur référence avec la collection qui est retournée.
+La fonction `.copy()` <!-- REF #collection.copy().Summary --> retourne une copie profonde (deep copy) de la collection<!-- END REF -->***Deep copy*** signifie que les objets ou les collections présents dans la collection d'origine sont dupliqués et ne partagent pas leur référence avec la collection qui est retournée.
 > Cette fonction ne modifie pas la collection d'origine.
 
 S'il est passé, le paramètre *option* peut contenir l'une des constantes suivantes (ou les deux) :
@@ -588,7 +588,7 @@ Si la collection contient des objets, vous pouvez passer le paramètre *property
 
 La fonction `.countValues()` <!-- REF #collection.countValues().Summary -->retourne le nombre d'occurrences de value dans la collection<!-- END REF -->.
 
-Vous pouvez passer dans *value* :
+Dans le paramètre *options* , vous pouvez passer une ou une combinaison des constantes suivantes :
 
 * une valeur scalaire (texte, numérique, booléen, date),
 * une référence d'objet ou de collection.
@@ -849,7 +849,7 @@ End if
 </details>
 
 
-<!-- REF #collection.extract().Syntax -->**.extract**( *propertyPath* : Text { ; *option* : Integer } ) : Collection<br/>**.extract**( *propertyPath* : Text ;  *targetPath* : Text  { ;...*propertyPathN* : Text ;... *targetPathN* : Text } ) : Collection<!-- END REF -->
+<!-- REF #collection.extract().Syntax -->var $col; $result : Collection $col:=New collection("Hello how"; ""; "are you ?") $result:=$col.map(Formula(Split string($1.value; " "))) // [["Hello", "how"], [], ["are", "you", "?"]] $result:=$col.flatMap(Formula(Split string($1.value; " "))) // ["Hello", "how", "are", "you", "?"]<!-- END REF -->
 
 
 
@@ -932,7 +932,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 #### Description
 
-La fonction `.fill()` <!-- REF #collection.fill().Summary -->remplit les éléments de la collection avec *value*, optionnellement depuis l'élément *startFrom* et jusqu'à l'élément *end* (non inclus), et retourne la collection résultante<!-- END REF -->.
+La fonction `.insert()` <!-- REF #collection.fill().Summary -->insère les éléments de *element* à la position *index* de la collection et retourne la collection modifiée<!-- END REF -->.
 > Cette fonction modifie la collection d'origine.
 
 * Si *startFrom* est omis, *value* est appliquée à tous les éléments de la collection (*startFrom*=0).
@@ -1357,7 +1357,7 @@ Pour une description détaillée de la construction de recherches à l'aide des 
 
 #### Description
 
-La fonction `.insert()` <!-- REF #collection.insert().Summary --> insère les éléments de *element* à la position *index* de la collection et retourne la collection modifiée<!-- END REF -->.
+La fonction `.push()` <!-- REF #collection.insert().Summary --> ajoute un ou plusieurs *element*(s) à la fin de la collection et retourne la collection modifiée<!-- END REF -->.
 > Cette fonction modifie la collection d'origine.
 
 Dans *index*, passez le numéro de l'élément après lequel vous souhaitez que le paramètre element soit inséré.
@@ -1407,7 +1407,7 @@ Vous pouvez passer tout type d'élément accepté par les collections, y compris
 
 #### Description
 
-La fonction `.concat()` <!-- REF #collection.join().Summary -->retourne une nouvelle collection avec le contenu du paramètre *value* ajouté à la fin de la collection d'origine<!-- END REF -->. La fonction retourne la chaîne résultante.
+La fonction `.concat()` <!-- REF #collection.join().Summary -->retourne une nouvelle collection avec le contenu du paramètre *value* ajouté à la fin de la collection d'origine<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
 Par défaut, les éléments null ou vides de la collection sont inclus dans la chaîne résultante. Passez la constante `ck ignore null or empty` dans le paramètre *option* si vous souhaitez les exclure de la chaîne résultante.
@@ -1982,7 +1982,7 @@ Lorsqu'elle est appliquée à une collection vide, .`pop()` retourne ***undefine
 
 #### Description
 
-La fonction `.push()` <!-- REF #collection.push().Summary -->ajoute un ou plusieurs *element*(s) à la fin de la collection et retourne la collection modifiée<!-- END REF -->.
+La fonction `.flat()` <!-- REF #collection.push().Summary -->crée une nouvelle collection dans laquelle tous les éléments de sous-collections sont concaténés de manière récursive jusqu'à la profondeur *depth* spécifiée<!-- END REF -->.
 > Cette fonction modifie la collection d'origine.
 
 #### Exemple 1
@@ -2075,6 +2075,10 @@ Pour plus d'informations sur la génération d'une requête à l'aide des param�
 
  $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
+ $c.push(New object("name";"Winch";"dateHired";!16-05-2018!;"age";36))
+
+ $c.push(New object("name";"Sterling";"dateHired";!10-5-1999!;"age";Null))
+ $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
 Cet exemple renvoie les personnes dont le nom contient "in" :
@@ -2103,7 +2107,7 @@ Cet exemple retourne des personnes embauchées il y a plus de 90 jours :
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si la date du jour est 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si la date du jour est 01/10/2018 si la date du jour est 01/10/2018
 ```
 
 #### Exemple 3
