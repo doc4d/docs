@@ -99,6 +99,8 @@ If (Error=-43)
     ALERT("File not found.")
 End if
 ON ERR CALL.("")
+End if
+ON ERR CALL.("")
 ```
 
 
