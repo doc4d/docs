@@ -117,7 +117,7 @@ For($vlChar;1;Length(vtSomeText))
 End for
 ```
 
-Une méthode projet peut en appeler une autre avec ou sans les paramètres (arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Les paramètres sont passés à la méthode appelée en tant que variables locales numérotées séquentiellement : $1, $2,…, $n. Une méthode peut retourner une seule valeur dans le paramètre $0. Lorsque vous appelez une méthode, vous saisissez simplement son nom :
+Une méthode projet peut en appeler une autre avec ou sans les paramètres (arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Les paramètres sont passés à la méthode appelée en tant que variables locales numérotées séquentiellement : $1, $2,…, $n. Une méthode peut retourner une seule valeur dans le paramètre $0. Les paramètres sont directement disponibles dans la méthode appelée s'ils ont été déclarés.
 
 ```4d
 $myText:="hello"
@@ -220,7 +220,7 @@ Les expressions sont rarement «autonomes». Expressions rarely “stand alone.�
 
 ### Types d’expressions
 
-Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
+Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
 
 | Expression              | Type                  | Description                                                                                                                                                                          |
 | ----------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
