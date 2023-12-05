@@ -13,7 +13,7 @@ Tous les serveurs 4D peuvent communiquer en mode sécurisé via le protocole TLS
 
 Le protocole TLS (successeur du SSL) a pour but de sécuriser les informations de données entre deux applications—principalement entre un serveur web et un navigateur. Ce protocole est largement répandu et compatible avec la plupart des navigateurs web.
 
-Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné.
+Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné. pour lequel il est principalement destiné.
 
 Configuration réseau avec TSL :
 
@@ -81,7 +81,7 @@ Des fichiers *key.pem* et *cert.pem* par défaut sont fournis avec 4D. Pour un n
 
 :::
 
-### Activation du TLS
+### Installation et activation
 
 L'installation de fichiers **key.pem** et **cert.pem** permet d'utiliser TLS avec le 4D Server. Cependant, pour que les connexions TLS soient acceptées par le server, il est nécessaire de les activer :
 
