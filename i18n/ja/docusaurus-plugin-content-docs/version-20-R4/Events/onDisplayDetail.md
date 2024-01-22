@@ -3,38 +3,35 @@ id: onDisplayDetail
 title: On Display Detail
 ---
 
-| コード | 呼び出し元                                             | 定義                                        |
-| --- | ------------------------------------------------- | ----------------------------------------- |
-| 8   | フォーム - [リストボックス](FormObjects/listbox_overview.md) | レコードがリストフォーム中に、あるいは行がリストボックス中に表示されようとしている |
-
+| コード | 呼び出し元                                              | 定義                                        |
+| --- | -------------------------------------------------- | ----------------------------------------- |
+| 8   | Form - [List Box](FormObjects/listbox_overview.md) | レコードがリストフォーム中に、あるいは行がリストボックス中に表示されようとしている |
 
 ## 説明
 
-`On Display Detail` イベントは次のコンテキストで利用できます:
+The `On Display Detail` event can be used in the following contexts:
 
 ### 出力フォーム
 
-`DISPLAY SELECTION` や `MODIFY SELECTION` によって、リストフォームでレコードを表示されようとしています。
+A record is about to be displayed in a list form displayed via `DISPLAY SELECTION` and `MODIFY SELECTION`.
 
-> このイベントは、プロジェクトフォームでは選択できず、**テーブルフォーム** でのみ利用できます。
+> This event cannot be selected for project forms, it is only available with **table forms**.
 
 このコンテキストにおいて、メソッドやフォームイベントが呼び出される順序は以下のとおりです:
 
 - レコードごとに:
-    - 詳細エリアのオブジェクトごとに:
-        - オブジェクトメソッドの `On Display Detail` イベント
-    - フォームメソッドの `On Display Detail` イベント
+  - 詳細エリアのオブジェクトごとに:
+    - Object method with `On Display Detail` event
+  - Form method with `On Display Detail` event
 
-> ヘッダーエリアは、[`On Header`](onHeader.md) イベントで処理されます。
+> The header area is handled using the [`On Header`](onHeader.md) event.
 
-`On Display Detail` イベントから、ダイアログボックスを表示する 4Dコマンドを呼び出すことはできません。これはシンタックスエラーを起こします。 以下のコマンドが該当します: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, `MODIFY SELECTION`。
-
+Calling a 4D command that displays a dialog box from the `On Display Detail` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
 
 ### セレクションリストボックス
 
-このイベントは、[**セレクション型**](FormObjects/listbox_overview.md#セレクションリストボックス) のリストボックスの行が表示されたときに発生します。
-
+This event is generated when a row of a [**selection type**](FormObjects/listbox_overview.md#selection-list-boxes) list box is displayed.
 
 ### Displayed line number
 
-`Displayed line number` 4Dコマンドは、`On Display Detail` フォームイベントと連動します。 このコマンドは、レコードのリストまたはリストボックスの行が画面に表示されるときに処理されている行の番号を返します。
+The `Displayed line number` 4D command works with the `On Display Detail` form event. このコマンドは、レコードのリストまたはリストボックスの行が画面に表示されるときに処理されている行の番号を返します。
