@@ -74,22 +74,22 @@ Vous pouvez agrandir ou réduire la largeur relative de chaque zone de liste en 
 - Pour ajouter ou supprimer une liste, cliquez sur la zone de titre de l'une des listes et choisissez la commande correspondante dans le menu contextuel. La commande **Supprimer cette liste** est désactivée lorsque vous cliquez sur la dernière liste. Si vous souhaitez masquer toutes les listes, vous devez soit cliquer sur le bouton **show or hide lists**  en bas à droite de la fenêtre, soit les masquer par défaut dans **Preferences**.
 
 - Vous pouvez masquer les listes dans toutes les fenêtres de la manière suivante :
-  - Select the **View > Lists** option in the **Method** menu (a check mark indicates whether lists are displayed)
-  - Uncheck the **Preferences** > **Methods** > **Options** > **Show Lists** option. For the modifications made in the **Preferences** dialog box to be taken into account, any open methods, classes or functions must first be closed then reopened.
+  - Sélectionnez l'option **Affichage > Listes** dans le menu **Méthode** (une coche indique si les listes sont affichées)
+  - Décochez l'option **Préférences** > **Méthodes** > **Options** > **Afficher les listes** . Pour que les modifications apportées dans la boîte de dialogue **Préférences** soient prises en compte, toutes les méthodes ouvertes, classes ou fonctions doivent d'abord être fermées puis rouvertes.
 
 #### Listes d'éléments disponibles
 
 Vous pouvez afficher les listes d'éléments suivantes dans la zone des listes de la fenêtre de l'éditeur de code :
 
-- **Toutes les tables et les champs**: Noms des tables et des champs de la base de données sous la forme d'une liste hiérarchique. When you insert a field name into the method by double-clicking on its name, 4D inserts it while respecting the syntax and adds the name of the table or subtable as the case may be.
+- **Toutes les tables et les champs**: Noms des tables et des champs de la base de données sous la forme d'une liste hiérarchique. Lorsque vous insérez un nom de champ dans la méthode en double-cliquant sur son nom, 4D l'insère en respectant la syntaxe et ajoute le nom de la table ou de la sous-table selon le cas.
 - **Table** (sous-menu) : Noms des champs de la table sélectionnée à l'aide d'un sous-menu.
-- **Current table**: Field names of the current table (available in triggers, form methods and object methods).
-- **Formulaires Projet**: Nom des formulaires de projet de la base de données. When you double-click on a project form name, 4D inserts its while respecting the syntax: the form name is inserted between quotes.
-- **Formulaires table**: Noms des tables et des formulaires de la base de données sous la forme d'une liste hiérarchique. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. For example: [Table];"Form".
+- **Table actuelle**: noms des champs de la table actuelle (disponibles dans les déclencheurs, les méthodes de formulaire et les méthodes objet).
+- **Formulaires Projet**: Nom des formulaires de projet de la base de données. Lorsque vous double-cliquez sur le nom d'un formulaire de projet, 4D l'insère en respectant la syntaxe : le nom du formulaire est inséré entre guillemets.
+- **Formulaires table**: Noms des tables et des formulaires de la base de données sous la forme d'une liste hiérarchique. Lorsque vous insérez un nom de formulaire dans une méthode en double-cliquant sur son nom, 4D l'insère en respectant la syntaxe : le nom du formulaire est inséré entre guillemets et est précédé du nom de la table et d'un point-virgule. Par exemple: [Table]; "Formulaire".
 - **Méthodes**: noms des méthodes du projet de la base de données.
-- **Tous les dossiers**: Noms des dossiers et sous-dossiers d'objets définis dans la base de données, affichés sous la forme d'une liste hiérarchique. Folders can be used to organize objects in a customized manner. They are managed from the Home Page of the Explorer.
-- **Folders** (submenu): Contents of the folder selected using the submenu.
-- **Macros**: Macro names defined for the database (see [Creating and using macros](#creating-and-using-macros)).
+- **Tous les dossiers**: Noms des dossiers et sous-dossiers d'objets définis dans la base de données, affichés sous la forme d'une liste hiérarchique. Les dossiers peuvent être utilisés pour organiser les objets de manière personnalisée. Ils sont gérés à partir de la page Démarrage de l'Explorateur.
+- **Dossiers** (sous-menu) : Contenu du dossier sélectionné à l'aide d'un sous-menu.
+- **Macros**: Noms des macros définies pour la base de données (voir [Créer et utiliser des macros](#creating-and-using-macros)).
 - **Commandes**: Commandes du langage 4D par ordre alphabétique.
 - **Commandes par thèmes**: Commandes du langage 4D classées par thème sous forme de liste hiérarchique.
 - **Barres de menu**: Noms et numéros des barres de menu [créées avec l'éditeur de barres de menu 4D](../Menus/creating.md).
@@ -99,7 +99,7 @@ Vous pouvez afficher les listes d'éléments suivantes dans la zone des listes d
 - **Mots clés SQL**: ensemble de mots-clés reconnus par l'analyseur de syntaxe SQL de 4D. Cette liste comprend des commandes (par exemple SELECT), des clauses (par exemple WHERE) ainsi que des fonctions (ABS).
 - **Fonctions SQL**: fonctions SQL de 4D.
 
-**Note:** Except for the Macros element, all the lists are in alphabetical order.
+**Note :** A l'exception de l'élément Macros, toutes les listes sont classées par ordre alphabétique.
 
 #### Enregistrer comme modèle
 
@@ -112,7 +112,7 @@ Les paramètres suivants sont stockés dans le modèle :
 - Emplacement et contenu de chaque liste
 - Largeur relative de chaque liste
 
-To save a Code Editor window as a template, choose **Method** > **Save As Template**. The template is saved immediately (no dialog box appears). It is stored in the **Preferences** of the 4D application. If a previous template already exists, it is replaced.
+Pour enregistrer une fenêtre de l'éditeur de code en tant que modèle, choisissez **Méthode** > **Enregistrer comme modèle**. Le modèle est enregistré immédiatement (aucune boîte de dialogue ne s'affiche). Il est stocké dans les **Préférences ** de l'application 4D. Si un modèle précédent existe déjà, il est remplacé.
 
 ### Break points area
 
