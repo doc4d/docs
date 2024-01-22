@@ -7,11 +7,10 @@ title: On Activate
 | --- | ----- | ------------------------------------------ |
 | 11  | フォーム  | フォームウィンドウが最前面のウィンドウになった、またはサブフォームがフォーカスを得た |
 
-
 ## 説明
 
 フォームのウィンドウが背面に送られていた場合、そのウィンドウが最前面になったときにこのイベントが呼ばれます。
 
-このイベントは個々のオブジェクトには適用されず、フォーム全体に適用されます。 ゆえに `On Activate` フォームイベントプロパティが選択されていれば、そのフォームのメソッドのみが呼び出されます。
+このイベントは個々のオブジェクトには適用されず、フォーム全体に適用されます。 Consequently, if the `On Activate` form event property is selected, only the form will have its form method called.
 
-サブフォームの場合には、コンテナーがフォーカスを得たとき ([フォーカス可](FormObjects/properties_Entry.md#フォーカス可) プロパティが設定されている場合) に、このイベントがサブフォームに渡されます。 
+In the case of a subform, this event is passed to the subform when the container gets the focus (if it has the [focusable](FormObjects/properties_Entry.md#focusable) property).
