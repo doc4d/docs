@@ -1,6 +1,6 @@
 ---
 id: propertiesCoordinatesAndSizing
-title: Coordenadas e dimensionamento
+title: Coordinates & Sizing
 ---
 
 ## Altura automática da linha
@@ -20,22 +20,21 @@ When resizing the form, if the "Grow" [horizontal sizing](properties_ResizingOpt
 
 When this property is enabled, the height of every row is automatically calculated in order to make the cell contents entirely fit without being truncated (unless the [Wordwrap](properties_Display.md#wordwrap) option is disabled.
 
-* O cálculo da altura da linha tem em conta:
-  * any content types (text, numerics, dates, times, pictures (calculation depends on the picture format), objects),
-  * quaisquer tipos de controlo (entradas, caixas de verificação, listas, listas suspensas),
-  * tipos, estilos e tamanhos de letra,
-  * the [Wordwrap](properties_Display.md#wordwrap) option: if disabled, the height is based on the number of paragraphs (lines are truncated); if enabled, the height is based on number of lines (not truncated).
+- O cálculo da altura da linha tem em conta:
+  - any content types (text, numerics, dates, times, pictures (calculation depends on the picture format), objects),
+  - quaisquer tipos de controlo (entradas, caixas de verificação, listas, listas suspensas),
+  - tipos, estilos e tamanhos de letra,
+  - the [Wordwrap](properties_Display.md#wordwrap) option: if disabled, the height is based on the number of paragraphs (lines are truncated); if enabled, the height is based on number of lines (not truncated).
 
-* O cálculo da altura da linha ignora:
-  * conteúdo da coluna oculta
-  * [Row Height](#row-height) and [Row Height Array](#row-height-array) properties (if any) set either in the Property list or by programming.
+- O cálculo da altura da linha ignora:
+  - conteúdo da coluna oculta
+  - [Row Height](#row-height) and [Row Height Array](#row-height-array) properties (if any) set either in the Property list or by programming.
 
 :::caution
 
-> > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
+\> > Since it requires additional calculations at runtime, the automatic row height option could affect the scrolling fluidity of your list box, in particular when it contains a large number of rows.
 
 :::
-
 
 #### Gramática JSON
 
@@ -45,9 +44,9 @@ When this property is enabled, the height of every row is automatically calculat
 
 #### Objectos suportados
 
-[Coluna da List Box](listbox_overview.md#list-box-columns)
+[List Box Column](listbox_overview.md#list-box-columns)
 
----
+***
 
 ## Fundo
 
@@ -63,7 +62,7 @@ Coordenadas inferiores do objeto no formulário.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Direita
 
@@ -79,7 +78,7 @@ Coordenadas esquerda do objecto no formulário.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Esquerda
 
@@ -95,7 +94,7 @@ Coordenada direita do objecto no formulário.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Topo
 
@@ -111,11 +110,11 @@ Coordenada superior do objecto no formulário.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Retângulo
 
-<details><summary>Histórico</summary>
+<details><summary>História</summary>
 
 | Versão | Mudanças                               |
 | ------ | -------------------------------------- |
@@ -123,11 +122,12 @@ Coordenada superior do objecto no formulário.
 
 </details>
 
-Defines the corner roundness (in pixels) of objects of the [rectangle](shapes_overview.md#rectangle) type. By default, the radius value for rectangles is 0 pixels. You can change this property to draw rounded rectangles with custom shapes:
+Defines the corner roundness (in pixels) of objects of the <a href="shapes_overview.md#rectangle">rectangle</a> type. By default, the radius value for rectangles is 0 pixels. You can change this property to draw rounded rectangles with custom shapes:
 
 ![](../assets/en/FormObjects/shape_rectangle.png)
 
-Minimum value is 0, in this case a standard non-rounded rectangle is drawn. Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
+Minimum value is 0, in this case a standard non-rounded rectangle is drawn.
+Maximum value depends on the rectangle size (it cannot exceed half the size of the shortest rectangle side) and is calculated dynamically.
 
 :::note
 
@@ -140,7 +140,7 @@ With [text areas](text.md) and [inputs](input_overview.md):
 
 :::
 
-You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-Get-corner-radius.301-4311357.en.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-CORNER-RADIUS.301-4311356.en.html) commands.
+You can also set this property using the [OBJECT Get corner radius](https://doc.4d.com/4dv19/help/command/en/page1323.html) and [OBJECT SET CORNER RADIUS](https://doc.4d.com/4dv19/help/command/en/page1324.html) commands.
 
 #### Gramática JSON
 
@@ -152,11 +152,12 @@ You can also set this property using the [OBJECT Get corner radius](https://doc.
 
 [Input](input_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Text Area](text.md)
 
----
+***
 
 ## Alto
 
 Esta propriedade designa o tamanho vertical de um objeto.
+
 > Alguns objetos podem ter uma altura predefinida que não pode ser alterada.
 
 #### Gramática JSON
@@ -169,14 +170,15 @@ Esta propriedade designa o tamanho vertical de um objeto.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Largura
 
 Esta propriedade designa o tamanho horizontal de um objeto.
-> * Alguns objetos podem ter uma altura predefinida que não pode ser alterada.
-> * If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox_overview.md#list-box-columns), the user can also manually resize the column.
-> * When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
+
+> - Alguns objetos podem ter uma altura predefinida que não pode ser alterada.
+> - If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox_overview.md#list-box-columns), the user can also manually resize the column.
+> - When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
 #### Gramática JSON
 
@@ -188,11 +190,12 @@ Esta propriedade designa o tamanho horizontal de um objeto.
 
 [4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [Line](shapes_overview.md#line) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md#overview)
 
----
+***
 
 ## Largura máxima
 
 A largura máxima da coluna (em píxeis). The width of the column cannot be increased beyond this value when resizing the column or form.
+
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
 #### Gramática JSON
@@ -203,13 +206,14 @@ A largura máxima da coluna (em píxeis). The width of the column cannot be incr
 
 #### Objectos suportados
 
-[Coluna da List Box](listbox_overview.md#list-box-columns)
+[List Box Column](listbox_overview.md#list-box-columns)
 
----
+***
 
 ## Largura mínima
 
 A largura mínima da coluna (em píxeis). A largura da coluna não pode ser reduzida abaixo deste valor quando se redimensiona a coluna ou o formulário.
+
 > When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
 
 #### Gramática JSON
@@ -220,9 +224,9 @@ A largura mínima da coluna (em píxeis). A largura da coluna não pode ser redu
 
 #### Objectos suportados
 
-[Coluna da List Box](listbox_overview.md#list-box-columns)
+[List Box Column](listbox_overview.md#list-box-columns)
 
----
+***
 
 ## Array altura linha
 
@@ -230,8 +234,8 @@ Define a altura das linhas do list box (excluindo cabeçalhos e rodapés). By de
 
 #### Gramática JSON
 
-| Nome      | Tipo de dados | Valores possíveis                               |
-| --------- | ------------- | ----------------------------------------------- |
+| Nome      | Tipo de dados | Valores possíveis                                                  |
+| --------- | ------------- | ------------------------------------------------------------------ |
 | rowHeight | string        | valor css na unidade "em" ou "px" (por defeito) |
 
 #### Objectos suportados
@@ -240,9 +244,9 @@ Define a altura das linhas do list box (excluindo cabeçalhos e rodapés). By de
 
 #### Veja também
 
-[Array estilo linha](#row-height-array)
+[Row Height Array](#row-height-array)
 
----
+***
 
 ## Array estilo linha
 
@@ -258,8 +262,9 @@ RowHeights{5}:=3
 ```
 
 Assuming that the unit of the rows is "lines," then the fifth row of the list box will have a height of three lines, while every other row will keep its default height.
-> * The Row Height Array property is not taken into account for hierarchical list boxes.
-> * For array-based list boxes, this property is available only if the [Automatic Row Height](#automatic-row-height) option is not selected.
+
+> - The Row Height Array property is not taken into account for hierarchical list boxes.
+> - For array and collection/entity selection list boxes, this property is available only if the [Automatic Row Height](#automatic-row-height) option is not selected.
 
 #### Gramática JSON
 
@@ -273,9 +278,9 @@ Assuming that the unit of the rows is "lines," then the fifth row of the list bo
 
 #### Veja também
 
-[Array altura linha](#row-height)
+[Row Height](#row-height)
 
----
+***
 
 ## Barra rolagem horizontal
 
@@ -285,9 +290,9 @@ Define um preenchimento horizontal para as células. O valor é definido em pixe
 
 #### Gramática JSON
 
-| Nome              | Tipo de dados | Valores possíveis               |
-| ----------------- | ------------- | ------------------------------- |
-| horizontalPadding | number        | Número de pixéis (deve ser >=0) |
+| Nome              | Tipo de dados | Valores possíveis                                 |
+| ----------------- | ------------- | ------------------------------------------------- |
+| horizontalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objectos suportados
 
@@ -295,9 +300,9 @@ Define um preenchimento horizontal para as células. O valor é definido em pixe
 
 #### Veja também
 
-[Dimensionamento vertical](#vertical-padding)
+[Vertical Padding](#vertical-padding)
 
----
+***
 
 ## Dimensionamento vertical
 
@@ -305,9 +310,9 @@ Define um preenchimento vertical para as células. O valor é definido em pixeis
 
 #### Gramática JSON
 
-| Nome            | Tipo de dados | Valores possíveis               |
-| --------------- | ------------- | ------------------------------- |
-| verticalPadding | number        | Número de pixéis (deve ser >=0) |
+| Nome            | Tipo de dados | Valores possíveis                                 |
+| --------------- | ------------- | ------------------------------------------------- |
+| verticalPadding | number        | Number of pixels (must be >=0) |
 
 #### Objectos suportados
 
@@ -315,4 +320,4 @@ Define um preenchimento vertical para as células. O valor é definido em pixeis
 
 #### Veja também
 
-[Barra rolagem horizontal](#horizontal-padding)
+[Horizontal Padding](#horizontal-padding)
