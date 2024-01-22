@@ -42,13 +42,13 @@ title: 式と関数
 
 4D View Pro は 5つのデータ型をサポートします。 それぞれのデータ型について、特定の定数と演算子がサポートされています。
 
-| データ型                              | 値                                   | 演算子                                                                                                                                                                                                                                                 |
-| --------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Number](Concepts/dt_number.md)   | 1.2<br/>1.2 E3<br/>1.2E-3<br/>10.3x | - (加法)<br/>- (減法)<br/>\* (乗法)<br/>/ (除法)<br/>^ (べき乗、数値を自身に対してかける回数)<br/>% (パーセント -- 演算子の前の数値を100で割る)                              |
-| [Date](Concepts/dt_date.md)       | 10/24/2017                          | * (date + number of days -> date)<br/>+ (date + time -> date + time of day)<br/>- (date - number of days -> date)<br/>- (date - date -> number of days between the two) |
-| [Time](Concepts/dt_time.md)       | 10:12:10                            | Duration operators:<br/>+ (addition)<br/>- (subtraction)<br/>\* (duration \* number -> duration)<br/>/ (duration / number -> duration)                                  |
-| [String](Concepts/dt_string.md)   | 'Sophie' または "Sophie"               | & (concatenation)                                                                                                                                                                                                                |
-| [Boolean](Concepts/dt_boolean.md) | TRUE または FALSE                      | -                                                                                                                                                                                                                                                   |
+| データ型                            | 値                                   | 演算子                                                                                                                                                                                                                                                 |
+| ------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Number](Concepts/dt_number.md) | 1.2<br/>1.2 E3<br/>1.2E-3<br/>10.3x | - (加法)<br/>- (減法)<br/>\* (乗法)<br/>/ (除法)<br/>^ (べき乗、数値を自身に対してかける回数)<br/>% (パーセント -- 演算子の前の数値を100で割る)                              |
+| [日付](Concepts/dt_date.md)       | 10/24/2017                          | * (date + number of days -> date)<br/>+ (date + time -> date + time of day)<br/>- (date - number of days -> date)<br/>- (date - date -> number of days between the two) |
+| [時間](Concepts/dt_time.md)       | 10:12:10                            | Duration operators:<br/>+ (addition)<br/>- (subtraction)<br/>\* (duration \* number -> duration)<br/>/ (duration / number -> duration)                                  |
+| [String](Concepts/dt_string.md) | 'Sophie' または "Sophie"               | & (concatenation)                                                                                                                                                                                                                |
+| [ブール](Concepts/dt_boolean.md)   | TRUE または FALSE                      | -                                                                                                                                                                                                                                                   |
 
 ### 比較演算子
 
