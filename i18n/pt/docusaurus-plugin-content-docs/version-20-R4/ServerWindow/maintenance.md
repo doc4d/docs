@@ -3,11 +3,9 @@ id: maintenance
 title: Página Manutenção
 ---
 
-
 The **Maintenance** page of the 4D Server Administration window provides information concerning the current operation of the application. Ele também fornece acesso às funções básicas de manutenção:
 
 ![](../assets/en/Admin/server-maintenance.png)
-
 
 ## Última verificação/compactação
 
@@ -35,11 +33,9 @@ Once the compacting is finished, 4D Server automatically restarts the applicatio
 
 After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
 
-
 ## Tempo de funcionamento
 
 This area indicates the duration of the 4D Server application execution since the last time it was started (days, hours and minutes).
-
 
 ### Reiniciar o servidor...
 
@@ -51,14 +47,12 @@ Este botão pode ser usado para fechar e reiniciar imediatamente o projeto. When
 
 This area indicates the date and time of the [last backup](MSC/backup.md) of the database and provides information about the next scheduled automatic backup (if any). Automatic backups are configured using the **Scheduler** page of the structure settings.
 
-- **Último backup**: data e hora do último backup.
+- **Last backup**: date and time of last backup.
 - **Next backup**: date and time of next scheduled backup.
 - **Needed space**: estimated space needed for the backup. The actual size of the backup file may vary according to the settings (compression, etc.) and according to variations of the data file.
 - **Available space**: space available on the backup volume.
 
-
 The **Start backup** button can be used to backup the database immediately using the current backup parameters (files backed up, location of archives, options, etc.). You can view these parameters by clicking on the **Settings...** button. During a backup on the server, the client machines are "blocked" (but not disconnected) and it is not possible for any new clients to connect.
-
 
 ## Histórico de solicitações e depuração
 
@@ -81,7 +75,6 @@ The **View Report** button (named **Download report** if the operation was carri
 ### Carregar ficheiro de configuração dos registos
 
 This button allows you to load a special server [log configuration file](Debugging/debugLogFiles.md#using-a-log-configuration-file) (`.json` file). Such a file can be provided by 4D technical services to monitor and study specific cases.
-
 
 ### Pausar no registo
 
