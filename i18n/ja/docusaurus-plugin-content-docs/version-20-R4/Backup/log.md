@@ -7,11 +7,11 @@ title: ログファイル (.journal)
 
 また、4D は常にメモリー上のデータキャッシュを使用して作業をおこなっています。 アプリケーションのデータへの変更はすべて、ハードディスクへ書き込む前に、キャッシュへ一時的に保存されます。 これにより、アプリケーションの処理速度が向上します。実際、メモリーへのアクセスは、ハードディスクへのアクセスよりも高速です。 キャッシュに保存したデータをディスクへ書き込む前に障害が発生した場合は、カレントログファイルを組み込んでアプリケーションを完全に復旧しなくてはなりません。
 
-さらに 4D には、カレントログファイルの内容を解析する機能が組み込まれており、これによってアプリケーションのデータ上で実行されたすべての処理をさかのぼることができます。 これらの機能は MSC にて提供されています ([ログ解析](MSC/analysis.md) ページおよび [ロールバック](MSC/rollback.md) ページ参照)。
+さらに 4D には、カレントログファイルの内容を解析する機能が組み込まれており、これによってアプリケーションのデータ上で実行されたすべての処理をさかのぼることができます。 These functions area available in the MSC: refer to the [Activity analysis](MSC/analysis.md) page and the [Rollback](MSC/rollback.md) page.
 
 ## ログファイルについて
 
-4D が生成するログファイルには、アプリケーション上でおこなわれた操作がすべて順次記録されています。 デフォルトでは、すべてのテーブルのデータログが取られています (つまりログファイルに含まれています)。しかし、**ログファイルに含める** のプロパティを選択解除することによって特定のテーブルをログに含めないようにすることもできます。
+4D が生成するログファイルには、アプリケーション上でおこなわれた操作がすべて順次記録されています。 By default, all the tables are journaled, i.e. included in the log file, but you can deselect individual tables using the **Include in Log File** table property.
 
 したがって、ユーザーが実行した各操作により、2つのアクションが同時におこなわれます。1つは、データファイルに対するアクション (命令を通常どおりに実行)、もう1つはログファイルに対するアクション (処理の説明を記録) です。 ログファイルは個別に作成され、ユーザーの作業を妨げたり作業速度を低下させることはありません。 1つのアプリケーションでは、一度に 1つのログファイルだけを扱うことができます。 ログファイルには、次の操作が記録されます:
 
@@ -22,7 +22,7 @@ title: ログファイル (.journal)
 - レコードの削除
 - トランザクションの作成や終了
 
-これらのアクションについての詳細は、MSC の [ログ解析](MSC/analysis.md) ページを参照ください。
+For more information about these actions, refer to the [Activity analysis](MSC/analysis.md) page of the MSC.
 
 ログファイルは 4D により管理されます。 ログファイルは、データファイルに影響を与えるすべての操作を区別なく盛り込み、ユーザーがおこなった操作や 4Dメソッド、SQLエンジン、プラグイン、Webブラウザーやモバイルアプリなどによる処理など、あらゆる操作を記録します。
 
@@ -30,26 +30,27 @@ title: ログファイル (.journal)
 
 ![](../assets/en/Backup/backup05.png)
 
-
 カレントログファイルはカレントデータファイルと一緒に自動保存されます。 このメカニズムには、2つの際立った利点があります:
 
 - ログファイルが保存されるディスクの容量が一杯にならないようにします。 バックアップを実行しない場合、ログファイルは使用するにつれて徐々に大きくなり、 いずれはディスクの空き容量をすべて使い果たしてしまいます。 データファイルをバックアップするたびに、4D や 4D Server はカレントログファイルをクローズし、その直後に空ファイルを新たに開くため、ディスクフルになる危険を避けることができます。 この後、古いログファイルはアーカイブに保存され、バックアップのセット (世代) を管理するメカニズムに従って最終的には破棄されます。
 - 後からアプリケーションの解析や修復をおこなえるように、各バックアップに対応するログファイルを保管します。 ログファイルの統合は、それが対応するアプリケーションからのみ実行できます。 バックアップに正しくログファイルを統合するため、バックアップとアーカイブ化されたログファイルは一緒に保管することが重要です。
 
-
 ## ログファイルの作成
 
-デフォルトでは、4D で作成されたすべてのアプリケーションでログファイルが使用されます (環境設定の **一般** ページ内でチェックされているオプションです)。 ログファイルには *data.journal* のように名前が付けられ、Data フォルダー内に置かれます。
+By default, any application project created with 4D uses a log file (option set in the **General** page of the Preferences). The log file is named _data.journal_ and is placed in the Data folder.
 
-アプリケーションでログファイルが使用されているかどうかは、いつでも調べることができます。これには、ストラクチャー設定の **バックアップ/設定** ページで **ログを使用** オプションが選択されているか確認します。 このオプションの選択が解除されていた場合、またはログファイルなしでアプリケーションを使用している場合で、ログファイルを用いたバックアップ方法を導入するには、ログファイルを作成する必要があります。
+You can find out if your application uses a log file at any time: just check whether the **Use Log** option is selected on the **Backup/Configuration** page of the Settings. このオプションの選択が解除されていた場合、またはログファイルなしでアプリケーションを使用している場合で、ログファイルを用いたバックアップ方法を導入するには、ログファイルを作成する必要があります。
 
 ログファイルを作成するには、次の手順に従ってください:
 
-1. ストラクチャー設定の **バックアップ/設定** ページで、**ログを使用** オプションを選択します。 標準の "ファイルを開く/新規作成" ダイアログボックスが表示されます。 ログファイルにはデフォルトで *data.journal* という名前が付けられます。
+1. On the **Backup/Configuration** page of the Structure Settings, check the **Use Log** option.
+   標準の "ファイルを開く/新規作成" ダイアログボックスが表示されます。 By default, the log file is named _data.journal_.
 
-2. デフォルトの名前を使用するか、またはその名前を変更し、次にファイルの保管場所を選択します。 2つ以上のハードドライブが存在する場合は、アプリケーションプロジェクトが保管されているディスク以外の場所にログファイルを保存することをお勧めします。 これにより、アプリケーションが保管されているハードドライブが破損した場合でも、ログファイルを呼び出すことができます。
+2. デフォルトの名前を使用するか、またはその名前を変更し、次にファイルの保管場所を選択します。
+   2つ以上のハードドライブが存在する場合は、アプリケーションプロジェクトが保管されているディスク以外の場所にログファイルを保存することをお勧めします。 これにより、アプリケーションが保管されているハードドライブが破損した場合でも、ログファイルを呼び出すことができます。
 
-3. **保存** をクリックします。 開いたログファイルのアクセスパスと名前がダイアログボックスの **ログを使用** エリアに表示されます。 このエリアをクリックすると、ポップアップメニューが表示され、ディスク上のフォルダーを確認できます。
+3. Click **Save**.
+   The disk and the name of the open log file are now displayed in the **Use Log** area of the dialog box. このエリアをクリックすると、ポップアップメニューが表示され、ディスク上のフォルダーを確認できます。
 
 4. ストラクチャー設定ダイアログボックスを確定します。
 
@@ -58,7 +59,7 @@ title: ログファイル (.journal)
 - データファイルが空である。
 - バックアップを実行した直後であり、データへの変更がまだおこなわれていない。
 
-いずれの条件も満たしていない場合は、バックアップを実行する必要がある旨を知らせる警告ダイアログボックスが表示されます。 **OK** をクリックするとバックアップが開始され、その後にログファイルが作成されます。 **キャンセル** をクリックした場合には、ログファイル作成の要求は保存され、次回アプリケーションをバックアップする時までログファイルの作成は延期されます。 このような安全対策が不可欠な理由は、障害の発生後にアプリケーションを復元するために、ログファイルへ記録された処理を統合するアプリケーションのコピーが必要となるからです。
+いずれの条件も満たしていない場合は、バックアップを実行する必要がある旨を知らせる警告ダイアログボックスが表示されます。 If you click **OK**, the backup begins immediately, then the log file is activated. If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the application. このような安全対策が不可欠な理由は、障害の発生後にアプリケーションを復元するために、ログファイルへ記録された処理を統合するアプリケーションのコピーが必要となるからです。
 
 これ以外に何もおこなわなくても、データ上で実行されたすべての処理がこのファイルに記録され、その後アプリケーションを開いたときにこのファイルが使用されます。
 
@@ -66,23 +67,23 @@ title: ログファイル (.journal)
 
 ## ログファイル設定
 
-[ログファイル設定](settings.md#ログ管理) は、ブール値とパスという 2つの情報に基づいています。
+The [log file settings](settings.md#log-file-management) are based on two pieces of information: a boolean value and a path.
 
-1. **ブール値**: アプリケーション内で "ログを使用" 機能が有効か無効かを示します。 デフォルトで、このブール値は *catalog.4DCatalog* に格納されます。 ただし、[ユーザー設定](../Desktop/user-settings.md) が有効化されると、*catalog.4DCatalog* ファイルの構成がオーバーライドされます。その場合、[データファイルの隣](../Project/architecture.md#settings-ユーザーデータ) にある *Backup.4DSettings* ファイル、または、[プロジェクトのフォルダー＞Settingsフォルダー](../Project/architecture.md#settings-user) 内の *Backup.4DSettings* ファイルにて、このブール値を設定できるようになります ([doc.4d.com](https://doc.4d.com) の `JournalFileEnabled` xmlバックアップキーのドキュメントも参照ください)。
+1. **Boolean Value**: indicating whether the "Use Log File" feature is enabled or disabled within the application. By default, the boolean value is stored in _catalog.4DCatalog_. However, when the [user settings](../Desktop/user-settings.md) are activated, the _catalog.4DCatalog_ file configuration is overriden, and the boolean value can then be set either in the _Backup.4DSettings_ file [next to the data file](../Project/architecture.md#settings-user-data) or the _Backup.4DSettings_ file [in the project folder](../Project/architecture.md#settings-user) (see also the `JournalFileEnabled` xml backup key documentation on [doc.4d.com](https://doc.4d.com)).
 
-2. **パス**: ログファイルの場所を指し示す文字列。 ログファイルのパスは、リンクされたデータファイル内に保存されます。
-
+2. **Path**: a string pointing to where the log file is located. ログファイルのパスは、リンクされたデータファイル内に保存されます。
 
 ## ログファイルを中止する
 
-カレントログファイルへの操作記録を中止したい場合は、ストラクチャー設定の **バックアップ/設定** ページの **ログを使用** オプションを選択解除します。
+If you would like to stop logging operations to the current log file, simply deselect the **Use Log** option on the **Backup/Configuration** page of the Settings.
 
 すると、4D は警告メッセージを表示して、この動作によりログファイルによるセキュリティが利用できなくなることを知らせます:
 
 ![](../assets/en/Backup/backup06.png)
 
-**停止** をクリックすると、カレントログファイルが即座にクローズされます (この後にストラクチャー設定ダイアログボックスを確定する必要はありません)。
+If you click **Stop**, the current log file is immediately closed (the Settings dialog box does not need to be validated afterwards).
 
 カレントログファイルが大きすぎるため、それをクローズしたい場合は、データファイルのバックアップを実行してください。これにより、ログファイルのバックアップが作成されます。
 
-> **4D Server:** `New log file` コマンドはカレントログファイルを自動的に閉じて、新しいログファイルを開始します。 実行中に何らかの理由でログファイルが利用不能になった場合、エラー 1274 が生成され、4D Server は一切のデータ書き込みを許可しなくなります。 再びログファイルが利用可能になったらフルバックアップを実行しなければなりません。
+> **4D Server:** The `New log file` command automatically closes the current log file and starts a new one.
+> 実行中に何らかの理由でログファイルが利用不能になった場合、エラー 1274 が生成され、4D Server は一切のデータ書き込みを許可しなくなります。 再びログファイルが利用可能になったらフルバックアップを実行しなければなりません。
