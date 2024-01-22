@@ -3,21 +3,19 @@ id: authUsers
 title: Usuários e sessões
 ---
 
-Os pedidos REST podem beneficiar das [sessões usuário Web](WebServer/sessions.md), fornecendo funcionalidades adicionais, como o tratamento de vários pedidos, a partilha de dados entre os processos do cliente Web e os privilégios do usuário.
+REST requests can benefit from [web user sessions](WebServer/sessions.md), providing extra features such as multiple requests handling, data sharing between the web client processes, and user privileges.
 
 Como primeiro passo para abrir uma sessão REST no servidor 4D, o usuário que envia a solicitude deve estar autenticado.
 
-
 ## Autenticação de usuários
 
-Pode iniciar a sessão de um usuário em sua aplicação passando o nome e a senhar de usuário em  [`$directory/login`]($directory.md#directorylogin). Este pedido chama o método base `On REST Authentication` (se existir), onde pode verificar as credenciais do usuário (ver exemplo abaixo).
+You log in a user to your application by calling [`$directory/login`]($directory.md#directorylogin) in a POST request including the user's name and password in the header. This request calls the `On REST Authentication` database method (if it exists), where you can check the user's credentials (see example below).
 
 ## Abertura de sessões
 
-Quando [sessões escaláveis estão activadas](WebServer/sessions.md#enabling-sessions) (recomendado), se o método base `On REST Authentication` devolver `true`, é automaticamente aberta uma sessão usuario, que pode ser tratada através do objeto `Session` e da [API Session](API/SessionClass.md). Os pedidos REST subsequentes reutilizarão o mesmo cookie de sessão.
+When [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions) (recommended), if the `On REST Authentication` database method returns `true`, a user session is then automatically opened and you can handle it through the `Session` object and the [Session API](API/SessionClass.md). Os pedidos REST subsequentes reutilizarão o mesmo cookie de sessão.
 
-Se o método base `On REST Authentication` não tiver sido definido, é aberta uma sessão `guest`.
-
+If the `On REST Authentication` database method has not been defined, a `guest` session is opened.
 
 ## Modo preventivo
 
@@ -27,22 +25,23 @@ On 4D Server, REST requests are automatically handled through preemptive process
 
 With 4D single-user, interpreted code is always run in cooperative mode.
 
-
 ## Exemplo
 
-Neste exemplo, o usuário introduz o seu e-mail e palavra-passe numa página html que solicita [`$directory/login`]($directory.md#directorylogin) num POST (recomenda-se a utilização de uma ligação HTTPS para enviar a página html). O método base `On REST Authentication` é chamado para validar as credenciais e definir a sessão.
+In this example, the user enters their email and password in an html page that requests [`$directory/login`]($directory.md#directorylogin) in a POST (it is recommended to use an HTTPS connection to send the html page). The `On REST Authentication` database method is called to validate the credentials and to set the session.
 
 A página de início de sessão em HTML:
 
 ![alt-text](../assets/en/REST/login.png)
 
-
 ```html
 <html><body bgcolor="#ffffff">
 
 <div id="demo">
- <FORM name="myForm"> Email: <INPUT TYPE=TEXT NAME=userId VALUE=""><br/> Password: <INPUT TYPE=TEXT NAME=password VALUE=""><br/>
-<button type="button" onclick="onClick()"> Login
+	<FORM name="myForm">
+Email: <INPUT TYPE=TEXT NAME=userId VALUE=""><br/>
+Password: <INPUT TYPE=TEXT NAME=password VALUE=""><br/>
+<button type="button" onclick="onClick()">
+Login
 </button>
 <div id="authenticationFailed" style="visibility:hidden;">Authentication failed</div>
 </FORM>
@@ -51,7 +50,7 @@ A página de início de sessão em HTML:
 <script>
 function sendData(data) {
   var XHR = new XMLHttpRequest();
-
+  
   XHR.onreadystatechange = function() {
     if (this.status == 200) {      
       window.location = "authenticationOK.shtml"; 
@@ -60,13 +59,13 @@ function sendData(data) {
       document.getElementById("authenticationFailed").style.visibility = "visible";
       }
   };
-
+  
   XHR.open('POST', 'http://127.0.0.1:8044/rest/$directory/login'); //rest server address
-
+  
   XHR.setRequestHeader('username-4D', data.userId);
   XHR.setRequestHeader('password-4D', data.password);
   XHR.setRequestHeader('session-4D-length', data.timeout);
-
+  
   XHR.send();
 };
 function onClick()
@@ -77,29 +76,31 @@ sendData({userId:document.forms['myForm'].elements['userId'].value , password:do
 
 ```
 
-Quando a página de início de sessão é enviada para o servidor, o método base `On REST Authentication` é chamado:
+When the login page is sent to the server, the `On REST Authentication` database method is called:
 
 ```4d
-    //On REST Authentication
+	//On REST Authentication
 
 #DECLARE($userId : Text; $password : Text) -> $Accepted : Boolean
-var $sales : cs. SalesPersonsEntity
+var $sales : cs.SalesPersonsEntity
 
 $Accepted:=False
 
- //A '/rest' URL has been called with headers username-4D and password-4D If ($userId#"")
-    $sales:=ds. SalesPersons.query("email = :1"; $userId).first()
+	//A '/rest' URL has been called with headers username-4D and password-4D
+If ($userId#"")
+    $sales:=ds.SalesPersons.query("email = :1"; $userId).first()
     If ($sales#Null)
         If (Verify password hash($password; $sales.password))
             fillSession($sales)
             $Accepted:=True
         End if 
-    End if End if 
+    End if 
+End if 
 ```
 
-> Assim que tiver sido chamado e devolvido `True`, o método base `On REST Authentication` deixa de ser chamado na sessão.
+> As soon as it has been called and returned `True`, the `On REST Authentication` database method is no longer called in the session.
 
-O método projeto `fillSession` inicializa a sessão usuário, por exemplo:
+The `fillSession` project method initializes the user session, for example:
 
 ```4d
 #DECLARE($sales : cs. SalesPersonsEntity)
