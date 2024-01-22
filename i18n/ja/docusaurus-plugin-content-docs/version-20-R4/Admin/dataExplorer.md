@@ -9,33 +9,36 @@ title: データエクスプローラー
 
 ## アクセス設定
 
-データエクスプローラーの設定や認証は [`WebAdmin`](webAdmin.md) Webサーバーコンポーネントに依存しています。
+The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component for the configuration and authentication settings.
 
-- **設定**: データエクスプローラーの設定は、[`WebAdmin` Webサーバーの設定](webAdmin.md#webadmin-設定) を再利用します。
-- **認証**: データエクスプローラーへのアクセスは、[認証されたセッションユーザー](webAdmin.md#認証とセッション) が、"WebAdmin" 権限を持っている場合に許可されます。 **データエクスプローラー** のメニュー項目 (後述参照) からデータエクスプローラーにアクセスした場合、認証は自動的におこなわれます。
+- **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
+- **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided.
 
-> データエクスプローラーへのアクセスは、[`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) 関数を使って無効化できます。
+> The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) function.
 
 ## データエクスプローラーを開く
 
-データエクスプローラーがクリックされると、必要に応じて [`WebAdmin` Webサーバー](webAdmin.md#starting-the-webadmin-web-server) が自動的に開始されます。
+[The `WebAdmin` web server](webAdmin.md#starting-the-webadmin-web-server) is started automatically if necessary when the Data Explorer is clicked on.
 
 データエクスプローラーWebページに接続するには:
 
 - 4Dアプリケーションから (インターフェースあり):
-  - Webエリアにデータエクスプローラーを表示した新しい 4Dウィンドウを開くには、**レコード** メニューから **データエクスプローラー** を選択するか、メインツールバーの **データ** ボタンをクリックします。
-  - データエクスプローラーを外部ブラウザーで開くには、**レコード** メニューから "**データエクスプローラーをブラウザーで開く**" を選択するか、メインツールバーの **データ** ボタンを **Alt** キー (Windows) または **Option** キー (macOS) を押しながらクリックします。
-- 4D Server からは、**ウインドウ** メニューの **データエクスプローラーをブラウザーで開く** を選択します (データエクスプローラーは、外部ブラウザーでのみ開くことができます)。
+  - To open a new 4D window with the Data Explorer page displayed in a web area, select **Data Explorer** in the **Records** menu or click on the **Data** button in the main toolbar.
+  - To open the Data Explorer in an external browser tab, select **Data Explorer In Browser** in the **Records** menu or press the **Alt** key (Windows)/**Option** key (macOS) and click on the **Data** button in the main toolbar.
+
+- From 4D Server, select **Data Explorer In Browser** in the **Window** menu (the Data Explorer can only be opened on an external browser).
 
 - ヘッドレス4Dアプリケーションを使用しているかどうかに関わらず、Webブラウザーを開いて次のアドレスを入力します:
 
- `IPaddress:HTTPPort/dataexplorer`<br /> または<br /> `IPaddress:HTTPSPort/dataexplorer`
+`IPaddress:HTTPPort/dataexplorer`
+or
+`IPaddress:HTTPSPort/dataexplorer`
 
- このコンテキストでは、サーバー上で `WebAdmin` セッションを開くために [アクセスキー](webAdmin.md#アクセスキー) の入力を求められます。
+In this context, you will be prompted to enter the [access key](webAdmin.md#access-key) to open a `WebAdmin` session on the server:
 
 ![alt-text](../assets/en/Admin/accessKeyEnter.png)
 
-> [HTTPPort](webAdmin.md#http-ポート) および [HTTPSPort](webAdmin.md#https-ポート) の値は、`WebAdmin` 設定内で定義されます。
+> [HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings.
 
 ## データエクスプローラーの使用
 
@@ -54,9 +57,9 @@ title: データエクスプローラー
 
 ### 画面の説明
 
-データエクスプローラーは、[ORDAマッピングルール](ORDA/dsMapping.md#変換のルール) に基づいて、ORDAデータモデルへの全体的なアクセスを提供します。
+The Data Explorer provides an overall access to the ORDA data model with respect to the [ORDA mapping rules](ORDA/dsMapping.md#general-rules).
 
-ページ下部のセレクターを使って、表示テーマを **ダークモード** に切り替えることができます。
+You can switch to the **dark mode** display theme using the selector at the bottom of the page:
 
 ![alt-text](../assets/en/Admin/dark.png)
 
@@ -64,18 +67,23 @@ title: データエクスプローラー
 
 このページにはいくつかのエリアがあります:
 
-- 左側には **データクラスエリア** と **属性エリア** があり、表示するデータクラスおよび属性を選択できます。 属性は、ストラクチャーにおける作成順にしたがって並べられます。 プライマリーキーおよびインデックス付きの属性には、専用アイコンが表示されます。 表示されているデータクラス名と属性名のリストは、それぞれの検索エリアを使ってフィルターできます。 ![alt-text](../assets/en/Admin/dataExplorer3.png)
+- On the left side are the **Dataclasses area** and **Attributes area**, allowing you can select the dataclasses and attributes to display. 属性は、ストラクチャーにおける作成順にしたがって並べられます。 プライマリーキーおよびインデックス付きの属性には、専用アイコンが表示されます。 表示されているデータクラス名と属性名のリストは、それぞれの検索エリアを使ってフィルターできます。
+  ![alt-text](../assets/en/Admin/dataExplorer3.png)
 
-- 中央部には、**検索エリア** と **データグリッド** (選択されたデータクラスのエンティティのリスト) があります。 グリッドの各列は、データストアの属性を表します。
-  - デフォルトでは、すべてのエンティティが表示されます。 検索エリアを使用して、表示されるエンティティをフィルターできます。 2つのクエリモードがあります: [属性に基づくクエリ](#属性に基づくクエリ) (デフォルト)、および [式による高度なクエリ](#式による高度なクエリ) です。 対応するボタンをクリックして、クエリモードを選択します (**X** ボタンは、クエリエリアをリセットして、フィルターを停止します)。 ![alt-text](../assets/en/Admin/dataExplorer4b.png)
+- The central part contains the **Search area** and the **Data grid** (list of entities of the selected dataclass). グリッドの各列は、データストアの属性を表します。
+  - デフォルトでは、すべてのエンティティが表示されます。 検索エリアを使用して、表示されるエンティティをフィルターできます。 Two query modes are available: [Query on attributes](#query-on-attributes) (selected by default), and the [Advanced query with expression](#advanced-query-with-expression). You select the query mode by clicking on the corresponding button (the **X** button allows you to reset the query area and thus stop filtering):
+    ![alt-text](../assets/en/Admin/dataExplorer4b.png)
   - 選択されたデータクラスの名前は、データグリッドの上にタブとして追加されます。 これらのタブを使って、選択されたデータクラスを切り替えることができます。 参照されているデータクラスを削除するには、データクラス名の右に表示される "削除" アイコンをクリックします。
-  - 左側の属性のチェックを外すことで、表示されている列数を減らせます。 また、ドラッグ＆ドロップでデータグリッドの列の位置を入れ替えることができます。 列のヘッダーをクリックすると、値に応じて [エンティティを並べ替える](#エンティティの並べ替え) ことができます (可能な場合)。
-  - 処理に時間がかかる場合は、進捗バーが表示されます。 赤いボタンをクリックすると、いつでも実行中の処理を停止できます:<br/> ![alt-text](../assets/en/Admin/dataExplorer5.png)
+  - 左側の属性のチェックを外すことで、表示されている列数を減らせます。 また、ドラッグ＆ドロップでデータグリッドの列の位置を入れ替えることができます。 You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible).
+  - 処理に時間がかかる場合は、進捗バーが表示されます。 You can stop the running operation at any moment by clicking on the red button:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorer5.png)
 
-- 右側には **詳細エリア** があり、選択されているエンティティおよび **リレートデータ** (あれば) の属性値が表示されます。 エリア下部にある **First** / **Previous** / **Next** / **Last** のリンクをクリックすることで、データクラスのエンティティ間を移動することができます。
-  - すべての属性タイプが表示されます (画像、オブジェクト (json で表現) や、[計算属性](../ORDA/ordaClasses.md#計算属性-1) と [エイリアス属性](../ORDA/ordaClasses.md#エイリアス属性-1) も含む)。
-  - リレートデータ (N対1 および 1対Nリレーション) は、展開/折りたたみ可能なエリアで表示できます:<br/> ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
-  - 右側のエリアでリレート属性名を **Ctrl+Click** (Windows) または **Command+Click** (macOS) すると、その属性値がフローティングエリアに表示されます:<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
+- On the right side is the **Details area**: it displays the attribute values of the currently selected entity as well as **related data**, if any. You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.
+  - All attribute types are displayed, including pictures, objects (expressed in json) as well as [computed](../ORDA/ordaClasses.md#computed-attributes-1) and [alias](../ORDA/ordaClasses.md#alias-attributes-1) attributes.
+  - Related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
+  - **Ctrl+Click** (Windows) or **Command+Click** (macOS) on a related attribute name in the right side area displays the values of the attribute in an independant, floating area:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
 
 ### データの更新
 
@@ -85,11 +93,11 @@ title: データエクスプローラー
 
 表示されているエンティティのリストを、属性値に応じて並べ替えることができます。 並べ替えには、ピクチャーとオブジェクトを除くすべての属性を使用できます。
 
-- 列のヘッダーをクリックすると、その列の属性値に応じてエンティティを並べ替えます。 デフォルトでは、昇順でソートされます。 2回クリックすると、降順でソートされます。 並べ替えの基準となる列には小さなアイコンが付き、属性名が *イタリック* で表示されます。
+- 列のヘッダーをクリックすると、その列の属性値に応じてエンティティを並べ替えます。 デフォルトでは、昇順でソートされます。 2回クリックすると、降順でソートされます。 A column used to sort entities is displayed with a small icon and its name is in _italics_.
 
 ![alt-text](../assets/en/Admin/dataExplorer7.png)
 
-- 属性を基準に複数のレベルでソートできます。 たとえば、従業員を都市別にソートした後、給与別にソートすることができます。 これには、**Shift** キーを押しながら、ソート基準とする各列のヘッダーを順にクリックします。
+- 属性を基準に複数のレベルでソートできます。 たとえば、従業員を都市別にソートした後、給与別にソートすることができます。 To do that, hold down the **Shift** key and click sequentially on each column header to include in the sort order.
 
 ### 属性に基づくクエリ
 
@@ -97,11 +105,11 @@ title: データエクスプローラー
 
 ![alt-text](../assets/en/Admin/dataExplorer6.png)
 
-複数の属性を指定した場合は、自動的に AND が適用されます。 たとえば次のフィルターでは、*firstname* 属性が "flo" で始まり、*salary* 属性値が > 50000であるエンティティが表示されます:
+複数の属性を指定した場合は、自動的に AND が適用されます。 For example, the following filter displays entities with _firstname_ attribute starting with "flo" AND _salary_ attribute value > 50000:
 
 ![alt-text](../assets/en/Admin/dataExplorer9.png)
 
-**X** ボタンは入力された属性値を削除し、フィルターを停止します。
+The **X** button allows you to remove entered attributes and thus stop filtering.
 
 属性のデータ型に応じて、さまざまな演算子やクエリオプションが利用できます。
 
@@ -121,12 +129,12 @@ title: データエクスプローラー
 
 #### ブール
 
-ブール型の属性エリアをクリックすると、**true**/**false** 値だけでなく **null**/**not null** 値でもフィルターすることができます。
+When you click on a boolean attribute area, you can filter on **true**/**false** values but also on **null**/**not null** values:
 
 ![alt-text](../assets/en/Admin/DEFilter3.png)
 
-- **null** は、その属性値が定義されていないことを示します。
-- **not null** は、属性値が定義されていることを示します (つまり、true または false)。
+- **null** indicates that the attribute value was not defined
+- **not null** indicates that the attribute value is defined (thus true or false).
 
 #### Text
 
@@ -140,7 +148,7 @@ title: データエクスプローラー
 | -------- | ------------------------ |
 | Bel      | "Bel" で始まるすべての値          |
 | @do      | "do" を含むすべての値            |
-| Bel@do   | "Bel" で始まり、"do" を含むすべての値 |
+| Bel\@do  | "Bel" で始まり、"do" を含むすべての値 |
 
 "完全一致" のような、より詳細なクエリを作成するには、高度なクエリ機能を使用する必要があります。
 
@@ -150,16 +158,16 @@ title: データエクスプローラー
 
 ![alt-text](../assets/en/Admin/dataExplorer8.png)
 
-属性クエリでは利用できない高度なクエリを入力することができます。 たとえば、*firstname* 属性に "Jim" が含まれ、"Jimmy" が含まれていないエンティティを探すには、次のように記述します:
+属性クエリでは利用できない高度なクエリを入力することができます。 For example, if you want to find entities with _firstname_ attribute containing "Jim" but not "Jimmy", you can write:
 
 ```
 firstname=="Jim"
 ```
 
-[`query()` 関数の説明](API/DataClassClass.md#query) にある ORDA クエリ式を利用することができますが、次の制限および相違点があります:
+You can use any ORDA query expression as [documented with the `query()` function](API/DataClassClass.md#query), with the following limitations or differences:
 
-- セキュリティ上、`eval()` を使った式を実行することはできません。
-- プレースホルダーは使用できません。値の指定された *クエリ文字列* を使用しなくてはなりません。
+- For security, you cannot execute formulas using `eval()`.
+- Placeholders cannot be used; you have to write a _queryString_ with values.
 - スペース文字を含む文字列値は、二重引用符 ("") で囲む必要があります。
 
 たとえば、Employee データクラスの場合に、次のように記述できます:
@@ -168,7 +176,7 @@ firstname=="Jim"
 firstname = "Marie Sophie" AND manager.lastname = "@th"
 ```
 
-[`queryPlan`](API/DataClassClass.md#queryplan) と [`queryPath`](API/DataClassClass.md#querypath) を両方表示するには `v` アイコンをクリックします。 このエリアでは、サブクエリのブロックにカーソルを合わせると、サブクエリごとの詳細情報が表示されます。
+You can click on the `v` icon to display both [`queryPlan`](API/DataClassClass.md#queryplan) and [`queryPath`](API/DataClassClass.md#querypath). このエリアでは、サブクエリのブロックにカーソルを合わせると、サブクエリごとの詳細情報が表示されます。
 
 ![alt-text](../assets/en/Admin/dataExplorer12.png)
 
