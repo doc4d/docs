@@ -3,10 +3,9 @@ id: onBeforeDataEntry
 title: On Before Data Entry
 ---
 
-| Code | Pode ser chamado por                                                                                                 | Definição                                                            |
-| ---- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| 41   | [List Box](FormObjects/listbox_overview.md) - [Coluna de List Box](FormObjects/listbox_overview.md#list-box-columns) | Uma célula de um list box está prestes a mudar para o modo de edição |
-
+| Code | Pode ser chamado por                                                                                              | Definição                                                            |
+| ---- | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 41   | [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | Uma célula de um list box está prestes a mudar para o modo de edição |
 
 ## Descrição
 
@@ -14,7 +13,7 @@ This event is generated just before a cell in the list box is edited (before the
 
 When the cursor arrives in the cell, the `On Before Data Entry` event is generated in the list box or column method.
 
-- Se, no contexto desse evento, $0 for estabelecido a -1, a célula é considerada como não editável. Se o evento for gerado depois de  **Tab** ou **Shift+Tab** ter sido pressionado, o foco vai para a próxima célula ou para a célula anterior, respectivamente.
+- Se, no contexto desse evento, $0 for estabelecido a -1, a célula é considerada como não editável. If the event was generated after **Tab** or **Shift+Tab** was pressed, the focus goes to either the next cell or the previous one, respectively.
 - Se $0 não for -1 (como padrão $0 é 0), a célula for editável e trocar para o modo edição.
 
-Ver também a secção [Gestão da entrada](FormObjects/listbox_overview.md#managing-entry).
+See also [Managing entry](FormObjects/listbox_overview.md#managing-entry) section.
