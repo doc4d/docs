@@ -81,9 +81,9 @@ Vous pouvez agrandir ou réduire la largeur relative de chaque zone de liste en 
 
 Vous pouvez afficher les listes d'éléments suivantes dans la zone des listes de la fenêtre de l'éditeur de code :
 
-- **Toutes les tables et les champs**: Noms des tables et des champs de la base de données sous la forme d'une liste hiérarchique. When you insert a field name into the method by double-clicking on its name, 4D inserts it while respecting the syntax and adds the name of the table or subtable as the case may be.
+- **Toutes les tables et les champs**: Noms des tables et des champs de la base de données sous la forme d'une liste hiérarchique. Lorsque vous insérez un nom de champ dans la méthode en double-cliquant sur son nom, 4D l'insère en respectant la syntaxe et ajoute le nom de la table ou de la sous-table selon le cas.
 - **Table** (sous-menu) : Noms des champs de la table sélectionnée à l'aide d'un sous-menu.
-- **Current table**: Field names of the current table (available in triggers, form methods and object methods).
+- **Table actuelle**: noms des champs de la table actuelle (disponibles dans les déclencheurs, les méthodes de formulaire et les méthodes objet).
 - **Formulaires Projet**: Nom des formulaires de projet de la base de données. When you double-click on a project form name, 4D inserts its while respecting the syntax: the form name is inserted between quotes.
 - **Formulaires table**: Noms des tables et des formulaires de la base de données sous la forme d'une liste hiérarchique. When you insert a form name into a method by double-clicking its name, 4D inserts it while respecting the syntax: the form name is inserted between quotes and is preceded by the name of the table and a semi-colon. For example: [Table];"Form".
 - **Méthodes**: noms des méthodes du projet de la base de données.
