@@ -7,39 +7,39 @@ title: リモートマシンからのデバッグ
 
 4Dデータベースが 4D Server 上でインタープリターモードで動いている場合、プロジェクトにログインしているリモート4Dクライアントからサーバーで実行中の 4Dコードをデバッグすることができます。 特定のリモートマシンでデバッガーを起動すると、そのリモートマシン上で直接、コードの実行をモニターすることができます。
 
-リモートマシン上で起動された [デバッガー](debugger.md) には、サーバーコードのデバッグ中であることを示すサーバーアイコンと青い背景色のデバッグアイコンが表示されるほか、呼び出し連鎖と式のペインの背景が薄っすらと青く色づきます:
+On a remote machine, the [debugger window](debugger.md) displays a specific server icon and a blue background color to indicate that you are debugging server code:
 
-![デバッガーウィンドウ-リモート](../assets/en/Debugging/debuggerWindowRemote.png)
+![debugger-window-remote](../assets/en/Debugging/debuggerWindowRemote.png)
 
-この機能は、4D Server がヘッドレスモード ([コマンドラインインターフェース](../Admin/cli.md) 参照) で実行中、あるいはサーバーマシンへのアクセスが難しい場合などに特に有用です。
-
+This feature is particularly useful when 4D Server runs in headless mode (see [Command Line Interface](../Admin/cli.md)), or when access to the server machine is not easy.
 
 ## 有効化済デバッガー
 
-4D Serverアプリケーションのデバッグは、一度に一つのデバッガーのみがおこなえます。 これを **有効化済デバッガー** と呼びます。 有効化済デバッガーには、以下の 2種類あります:
+4D Serverアプリケーションのデバッグは、一度に一つのデバッガーのみがおこなえます。 It is called the **attached debugger**. 有効化済デバッガーには、以下の 2種類あります:
 
-* ローカルの 4D Serverデバッガー (デフォルト) - サーバーがヘッドレス実行されていない場合
-* リモート4Dクライアントのデバッガー - リモートセッションがデザインモードにアクセス可能な場合
+- ローカルの 4D Serverデバッガー (デフォルト) - サーバーがヘッドレス実行されていない場合
+- リモート4Dクライアントのデバッガー - リモートセッションがデザインモードにアクセス可能な場合
 
 有効化済デバッガーは、4D Server が次のいずれかに遭遇した場合に呼び出されます:
-* ブレークポイント
-* `TRACE` コマンド
-* キャッチコマンド
-* エラー
+
+- ブレークポイント
+- a `TRACE` command
+- キャッチコマンド
+- エラー
 
 エラーメッセージは、デバッガーが有効化されているマシンに送られるという点に注意してください。 これはつまり、リモートデバッガーの場合には、サーバーのエラーメッセージがリモート4Dクライアント上で表示されるということです。
 
 注:
-* `On Server Startup` データベースメソッドで実行されたコードはリモートでデバッグすることができません。 これはサーバー側でしかデバッグすることができません。
-* デバッガーが有効化されていない場合、実行中のコードがデバッグコマンドによって中断されることはありません。
 
+- The code executed in the `On Server Startup Database` Method cannot be debugged remotely. これはサーバー側でしかデバッグすることができません。
+- デバッガーが有効化されていない場合、実行中のコードがデバッグコマンドによって中断されることはありません。
 
 ## デバッガーの有効化
 
 インタープリターモードのアプリケーションを起動したとき、デフォルトでは:
 
-* 4D Server がヘッドレス実行中でない場合、デバッガーはサーバー側で有効化されています。
-* 4D Server がヘッドレス実行中の場合には、デバッガーは有効化されていない状態です。
+- 4D Server がヘッドレス実行中でない場合、デバッガーはサーバー側で有効化されています。
+- 4D Server がヘッドレス実行中の場合には、デバッガーは有効化されていない状態です。
 
 4D Serverアプリケーションに接続できるリモート4Dクライアントであれば、サーバーのデバッガーを有効化することができます。
 
@@ -47,35 +47,34 @@ title: リモートマシンからのデバッグ
 
 サーバーのデバッガーをリモート4Dクライアントで有効化するには:
 
-1. 4D Server のメニューバーから、**編集** ＞ **デバッガを無効化する** を選択し、リモートマシンからデバッガーを利用できるようにします (4D Server がヘッドレス実行されている場合、この操作はなにもしません)。
-2. サーバーに接続されたリモート4Dクライアントから、**実行** ＞ **リモートデバッガを有効化する** を選択します。
+1. In the 4D Server menu bar, select **Edit** > **Detach Debugger** so that the debugger becomes available to remote machines (this step is useless if the 4D Server is running headless).
+2. In a remote 4D client connected to the server, select **Run** > **Attach Remote Debugger**
 
-有効化に成功した場合 ([有効化リクエストの拒否](#有効化リクエストの拒否) 参照)、メニューコマンドは **リモートデバッガを無効化する** へと変わります。
+If the attachment is accepted (see [Rejected attachment requests](#rejected-attachment-requests)), the menu command becomes **Detach Remote Debugger**.
 
 これで、サーバーのデバッガーはリモート4Dクライアントで有効化され、以下のタイミングまで有効化されたままです:
-* ユーザーセッションが終了するまで
-* ユーザーが `リモートデバッガを無効化する` を選択するまで
+
+- ユーザーセッションが終了するまで
+- until you select `Detach Remote Debugger`
 
 デバッガーを再度サーバー側で有効化するには:
 
-1. デバッガーが有効化されているリモート4Dクライアントにおいて、**実行** ＞ **リモートデバッガを無効化する** を選択します。
-2. 4D Server のメニューバーから、**編集** ＞ **デバッガを有効化する** を選択します。
+1. On the remote 4D client that has the debugger attached, select **Run** > **Detach Remote Debugger**.
+2. In the 4D Server menu bar, select **Edit** > **Attach debugger**.
 
 > サーバー上でデバッガーが有効化されていると (デフォルト)、デバッグを可能にするため、サーバープロセスはすべて自動的にコオオペラティブモードで実行されます。 これは、パフォーマンスに大きな影響を与えかねません。 サーバーマシン上でデバッグする必要がない場合は、デバッガーを無効化し、必要に応じてリモートマシンで有効化することが推奨されます。
-
-
 
 ## デバッガを開始時に有効化する
 
 デバッガーは、リモート4Dクライアントまたはサーバーの開始時に自動的に有効化することができます:
 
-* サーバー側の場合 (ヘッドレスモードでなければ)、このオプションは **デバッガを開始時に有効化する** という名前です。 サーバーが開始されると、自動的にデバッガーが有効化されます (デフォルト):
+- On the server (if not headless), this option is named **Attach Debugger At Startup**. サーバーが開始されると、自動的にデバッガーが有効化されます (デフォルト):
 
-> **警告**: のちにヘッドレスモードで起動されるサーバーにおいてこのオプションが選択されたままの場合、このサーバーのデバッガーは利用できません。
+> **Warning**: If this option is selected for a server which is subsequently launched in headless mode, the debugger won't be available for this server.
 
-* リモート4Dクライアントでは、このオプションは **リモートデバッガを開始時に有効化する** という名前です。 このオプションが選択されている場合、リモート4Dクライアントは、その後同じ 4D Serverデータベースに接続するたびに、自動的にリモートデバッガーを有効化しようとします。 成功した場合 ([有効化リクエストの拒否](#有効化リクエストの拒否) 参照)、リモートデバッガーは自動的にリモート4Dクライアントで有効化され、メニューコマンドは **リモートデバッガを無効化する** へと変わります。
+- On a remote 4D client, this option is named **Attach Remote Debugger At Startup**. このオプションが選択されている場合、リモート4Dクライアントは、その後同じ 4D Serverデータベースに接続するたびに、自動的にリモートデバッガーを有効化しようとします。 If the attachment is accepted (see [Rejected attachment requests](#rejected-attachment-requests)), the remote debugger is automatically attached to the remote 4D client and the **Detach Remote Debugger option is displayed**.
 
-> この設定はプロジェクトごとに、[`.4DPreferences`](Project/architecture.md#userpreferencesusername) ファイル内にローカル保存されます。
+> This setting is applied per project and is stored locally in the [`.4DPreferences`](Project/architecture.md#userpreferencesusername) file.
 
 ## 有効化リクエストの拒否
 
@@ -83,11 +82,11 @@ title: リモートマシンからのデバッグ
 
 別マシンにて有効化済のデバッガーを有効化しようとした場合、その有効化リクエストは拒否され、以下のようなダイアログが表示されます:
 
-![デバッガー有効化ダイアログ](../assets/en/Debugging/attach-debugger-dialog.png)
+![attach-debugger-dialog](../assets/en/Debugging/attach-debugger-dialog.png)
 
-![デバッガー有効化ダイアログ2](../assets/en/Debugging/attach-debugger-dialog-2.png)
+![attach-debugger-dialog-2](../assets/en/Debugging/attach-debugger-dialog-2.png)
 
 このような場合に、デバッガーを有効化するには、以下のどちらかの条件が必要です:
 
-* 有効化済デバッガーを、**リモートデバッガを無効化する** メニューコマンドでリモート4Dクライアントから外す、あるいは **デバッガを無効化する** コマンドを使用してサーバーから外す。
-* 有効化済デバッガーを使用しているリモート4Dクライアントセッションが閉じられる。
+- the attached debugger is detached from the server or from the remote 4D client using respectively the **Detach debugger** or **Detach remote debugger** menu command,
+- 有効化済デバッガーを使用しているリモート4Dクライアントセッションが閉じられる。
