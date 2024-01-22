@@ -15,9 +15,9 @@ title: アニメーション
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## マウスアップで戻る
 
@@ -31,9 +31,9 @@ title: アニメーション
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## マウス押下中は自動更新
 
@@ -47,9 +47,9 @@ title: アニメーション
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## アニメーション間隔 (tick)
 
@@ -63,9 +63,9 @@ title: アニメーション
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## ロールオーバー効果
 
@@ -79,9 +79,9 @@ title: アニメーション
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## 無効時に最終フレームを使用
 
@@ -90,9 +90,9 @@ title: アニメーション
 #### JSON 文法
 
 | 名称                     | データタイプ  | とりうる値       |
-|:---------------------- | ------- | ----------- |
+| :--------------------- | ------- | ----------- |
 | useLastFrameAsDisabled | boolean | true, false |
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
