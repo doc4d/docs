@@ -3,26 +3,22 @@ id: SessionClass
 title: Session
 ---
 
-Les objets Session sont retournés par la commande [`Session`](#session) lorsque [les sessions extensibles sont activées dans votre projet](WebServer/sessions.md#enabling-sessions). L'objet Session est automatiquement créé et maintenu par le serveur web 4D pour contrôler la session d'un client web (par exemple, un navigateur). Cet objet fournit au développeur web une interface avec la session de l'utilisateur, permettant de gérer les privilèges, de stocker des données contextuelles, de partager des informations entre les process et de lancer des processus préemptifs liés à la session.
+Session objects are returned by the [`Session`](#session) command when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-sessions). L'objet Session est automatiquement créé et maintenu par le serveur web 4D pour contrôler la session d'un client web (par exemple, un navigateur). Cet objet fournit au développeur web une interface avec la session de l'utilisateur, permettant de gérer les privilèges, de stocker des données contextuelles, de partager des informations entre les process et de lancer des processus préemptifs liés à la session.
 
-Pour des informations détaillées sur l'implémentation de la session, veuillez consulter la section [Sessions du serveur web](WebServer/sessions.md).
+For detailed information about the session implementation, please refer to the [web server Sessions](WebServer/sessions.md) section.
 
 ### Sommaire
 
-
 |                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.clearPrivileges().Summary -->|
-| [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.expirationDate.Summary -->|
-| [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.hasPrivilege().Summary -->|
-| [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.idleTimeout.Summary -->|
-| [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.isGuest().Summary -->|
-| [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.setPrivileges().Summary -->|
-| [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->|
-| [<!-- INCLUDE #SessionClass.userName.Syntax -->](#username)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.userName.Summary -->|
-
-
-
+| [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.clearPrivileges().Summary --> |
+| [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.expirationDate.Summary -->        |
+| [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.hasPrivilege().Summary -->          |
+| [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.idleTimeout.Summary -->                 |
+| [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
+| [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->                             |
+| [<!-- INCLUDE #SessionClass.userName.Syntax -->](#username)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.userName.Summary -->                          |
 
 ## Session
 
@@ -36,44 +32,39 @@ Pour des informations détaillées sur l'implémentation de la session, veuillez
 
 <!-- REF #_command_.Session.Syntax -->**Session** : 4D.Session<!-- END REF -->
 
-
 <!-- REF #_command_.Session.Params -->
-| Paramètres | Type       |    | Description                              |
-| ---------- | ---------- |:--:| ---------------------------------------- |
-| Résultat   | 4D.Session | <- | Objet session|<!-- END REF -->
 
-
-|
-
+| Paramètres | Type       |     | Description    |                  |
+| ---------- | ---------- | :-: | -------------- | ---------------- |
+| Résultat   | 4D.Session |  <- | Session object | <!-- END REF --> |
 
 #### Description
 
-La commande `Session` <!-- REF #_command_.Session.Summary -->renvoie l'objet `Session` correspondant à la session web utilisateur extensible courante<!-- END REF -->.
+The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current scalable user web session<!-- END REF -->.
 
-Cette commande fonctionne uniquement lorsque les [sessions extensibles sont activées](WebServer/sessions.md#enabling-sessions). Elle retourne *Null* lorsque ces sessions sont inactives ou lorsque les anciennes sessions sont utilisées.
+This command only works when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions). It returns _Null_ when sessions are disabled or when legacy sessions are used.
 
-Lorsque les sessions extensibles sont activées, l'objet `Session` est disponible depuis n'importe quel process web dans les contextes suivants :
+When scalable sessions are enabled, the `Session` object is available from any web processes in the following contexts:
 
-- Méthodes base `On Web Authentication`, `On Web Connection`, et `On REST Authentication`,
-- Méthodes base [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) et [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) pour les requêtes mobiles,
-- Les [fonctions Data Model Class](ORDA/ordaClasses.md) ORDA appelées par des requêtes REST,
+- `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
+- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
+- ORDA [Data Model Class functions](ORDA/ordaClasses.md) called with REST requests,
 - le code traité par les balises 4D dans les pages semi-dynamiques (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - les méthodes projet avec l'attribut "Available through 4D tags and URLs (4DACTION...)" et appelées via les urls 4DACTION/.
 
-
 #### Exemple
 
-Vous avez défini la méthode `action_Session` ayant l'attribut "Disponible via Balises HTML et URLs 4D". Vous appelez la méthode en saisissant l'URL suivant dans votre navigateur :
+You have defined the `action_Session` method with attribute "Available through 4D tags and URLs". Vous appelez la méthode en saisissant l'URL suivant dans votre navigateur :
 
 ```
 IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //méthode action_Session
+  //action_Session method
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) //appel de la fonction hasPrivilege
+       If(Session.hasPrivilege("WebAdmin")) //calling the hasPrivilege function
           WEB SEND TEXT("4DACTION --> Session is WebAdmin")
        Else
           WEB SEND TEXT("4DACTION --> Session is not WebAdmin")
@@ -83,9 +74,8 @@ IP:port/4DACTION/action_Session
  End case
 ```
 
-
-
 <!-- REF SessionClass.clearPrivileges().Desc -->
+
 ## .clearPrivileges()
 
 <details><summary>Historique</summary>
@@ -98,20 +88,15 @@ IP:port/4DACTION/action_Session
 
 <!-- REF #SessionClass.clearPrivileges().Syntax -->**.clearPrivileges()**<!-- END REF -->
 
-
 <!-- REF #SessionClass.clearPrivileges().Params -->
-| Paramètres | Type |  | Description                                            |
-| ---------- | ---- |::| ------------------------------------------------------ |
-|            |      |  | Ne requiert aucun paramètre|<!-- END REF -->
 
-
-|
-
+| Paramètres | Type |     | Description                 |                  |
+| ---------- | ---- | :-: | --------------------------- | ---------------- |
+|            |      |     | Ne requiert aucun paramètre | <!-- END REF --> |
 
 #### Description
 
-La fonction `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->supprime tous les privilèges associés à la session<!-- END REF -->. En résultat, la session devient automatiquement une session Guest.
-
+The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session<!-- END REF -->. En résultat, la session devient automatiquement une session Guest.
 
 #### Exemple
 
@@ -125,9 +110,8 @@ $isGuest:=Session.isGuest() //$isGuest est mis à True
 
 <!-- END REF -->
 
-
-
 <!-- REF SessionClass.expirationDate.Desc -->
+
 ## .expirationDate
 
 <details><summary>Historique</summary>
@@ -142,9 +126,9 @@ $isGuest:=Session.isGuest() //$isGuest est mis à True
 
 #### Description
 
-La propriété `.expirationDate` contient <!-- REF #SessionClass.expirationDate.Summary -->la date et l'heure d'expiration du cookie de session<!-- END REF -->. La valeur est exprimée sous forme de texte au format ISO 8601 : `YYYY-MM-DDTHH:MM:SS.mmmZ`.
+The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
 
-Cette propriété est en **lecture seule**. Elle est automatiquement recalculée si la valeur de la propriété [`.idleTimeout`](#idletimeout) est modifiée.
+This property is **read-only**. It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
 
 #### Exemple
 
@@ -155,10 +139,8 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 
 <!-- END REF -->
 
-
-
-
 <!-- REF SessionClass.hasPrivilege().Desc -->
+
 ## .hasPrivilege()
 
 <details><summary>Historique</summary>
@@ -171,21 +153,16 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 
 <!-- REF #SessionClass.hasPrivilege().Syntax -->**.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Paramètres | Type    |    | Description                                                                      |
-| ---------- | ------- |:--:| -------------------------------------------------------------------------------- |
-| privilege  | Text    | <- | Nom du privilège à vérifier                                                      |
-| Résultat   | Boolean | <- | Vrai si la session dispose du *privilege*, sinon Faux|<!-- END REF -->
 
-
-|
-
+| Paramètres | Type    |     | Description                                      |                  |
+| ---------- | ------- | :-: | ------------------------------------------------ | ---------------- |
+| privilege  | Text    |  <- | Nom du privilège à vérifier                      |                  |
+| Résultat   | Boolean |  <- | True if session has _privilege_, False otherwise | <!-- END REF --> |
 
 #### Description
 
-La fonction `.hasPrivilege()` <!-- REF #SessionClass.hasPrivilege().Summary -->renvoie Vrai si le privilège est associé à la session, et Faux sinon<!-- END REF -->.
-
+The `.hasPrivilege()` function <!-- REF #SessionClass.hasPrivilege().Summary -->returns True if the privilege is associated to the session, and False otherwise<!-- END REF -->.
 
 #### Exemple
 
@@ -193,9 +170,9 @@ Vous voulez vérifier si le privilège "WebAdmin" est associé à la session :
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
-    //Accès accordé, ne rien faire
+	//Access is granted, do nothing
 Else
-    //Afficher une page d'authentification
+	//Display an authentication page
 
 End if
 ```
@@ -203,6 +180,7 @@ End if
 <!-- END REF -->
 
 <!-- REF SessionClass.idleTimeout.Desc -->
+
 ## .idleTimeout
 
 <details><summary>Historique</summary>
@@ -217,32 +195,33 @@ End if
 
 #### Description
 
-La propriété `.idleTimeout` contient <!-- REF #SessionClass.idleTimeout.Summary -->le délai maximal d'inactivité de session (en minutes), au-delà duquel la session est automatiquement fermée par 4D<!-- END REF -->.
+The `.idleTimeout` property contains <!-- REF #SessionClass.idleTimeout.Summary -->the inactivity session timeout (in minutes), after which the session is automatically closed by 4D<!-- END REF -->.
 
 Si cette propriété n'est pas définie, sa valeur par défaut est 60 (1h).
 
-Lorsque cette propriété est modifiée, la propriété [`.expirationDate`](#expirationdate) est mise à jour en conséquence.
+When this property is set, the [`.expirationDate`](#expirationdate) property is updated accordingly.
 
 > La valeur ne peut pas être < 60 ; si une valeur inférieure est définie, le timeout est élevé à 60.
 
-
-Cette propriété est en **lecture-écriture**.
+This property is **read write**.
 
 #### Exemple
 
 ```4d
 If (Session.isGuest())
-        // La session d'un invité se ferme après 60 minutes d'inactivité. Session.idleTimeout:=60
+		// A Guest session will close after 60 minutes of inactivity
+	Session.idleTimeout:=60
 Else
-        //D'autres sessions se fermeront après 60 minutes d'inactivité. Session.idleTimeout:=120
+		// Other sessions will close after 120 minutes of inactivity
+	Session.idleTimeout:=120
 End if
 
 ```
 
 <!-- END REF -->
 
-
 <!-- REF SessionClass.isGuest().Desc -->
+
 ## .isGuest()
 
 <details><summary>Historique</summary>
@@ -255,34 +234,30 @@ End if
 
 <!-- REF #SessionClass.isGuest().Syntax -->**.isGuest()** : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.isGuest().Params -->
-| Paramètres | Type    |    | Description                                                                 |
-| ---------- | ------- |:--:| --------------------------------------------------------------------------- |
-| Résultat   | Boolean | <- | Vrai s'il s'agit d'une session Guest, sinon Faux|<!-- END REF -->
 
-|
+| Paramètres | Type    |     | Description                                     |                  |
+| ---------- | ------- | :-: | ----------------------------------------------- | ---------------- |
+| Résultat   | Boolean |  <- | True if session is a Guest one, False otherwise | <!-- END REF --> |
 
 #### Description
 
-The `.setPrivileges()` function <!-- REF #SessionClass.isGuest().Summary -->associates the privilege(s) defined in the parameter to the session<!-- END REF -->.
-
+The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
 
 #### Exemple
 
-Dans la méthode base `On Web Connection` :
+In the `On Web Connection` database method:
 
 ```4d
 If (Session.isGuest())
-    //Faire quelque chose pour l'utilisateur invité
+	//Do something for Guest user
 End if
 ```
 
-
 <!-- END REF -->
 
-
 <!-- REF SessionClass.setPrivileges().Desc -->
+
 ## .setPrivileges()
 
 <details><summary>Historique</summary>
@@ -296,43 +271,41 @@ End if
 
 <!-- REF #SessionClass.setPrivileges().Syntax -->**.setPrivileges**( *privilege* : Text )<br/>**.setPrivileges**( *privileges* : Collection )<br/>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
-
 <!-- REF #SessionClass.setPrivileges().Params -->
-| Paramètres | Type       |    | Description                                                                                 |
-| ---------- | ---------- |:--:| ------------------------------------------------------------------------------------------- |
-| privilege  | Text       | -> | Nom de privilège                                                                            |
-| privileges | Collection | -> | Collection de noms de privilèges                                                            |
-| settings   | Object     | -> | Objet contenant une propriété "privileges" (texte ou collection)|<!-- END REF -->
 
-|
+| Paramètres | Type       |     | Description                                                                   |                  |
+| ---------- | ---------- | :-: | ----------------------------------------------------------------------------- | ---------------- |
+| privilege  | Text       |  -> | Nom de privilège                                                              |                  |
+| privileges | Collection |  -> | Collection de noms de privilèges                                              |                  |
+| settings   | Object     |  -> | Object with a "privileges" property (string or collection) | <!-- END REF --> |
 
 #### Description
 
-La fonction `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->associe à la session le(s) privilège(s) et/ou le(s) rôle(s) défini(s) dans le paramètre<!-- END REF -->.
+The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session<!-- END REF -->.
 
-- Dans le paramètre *privilege*, passez une chaîne contenant un nom de privilège (ou plusieurs noms de privilèges séparés par des virgules).
+- In the _privilege_ parameter, pass a string containing a privilege name (or several comma-separated privilege names).
 
-- Dans le paramètre *privileges*, passez une collection de chaînes contenant des noms de privilèges.
+- In the _privileges_ parameter, pass a collection of strings containing privilege names.
 
-- Dans le paramètre *settings*, passez un objet contenant les propriétés suivantes :
+- In the _settings_ parameter, pass an object containing the following properties:
 
-| Propriété  | Type               | Description                                           |
-| ---------- | ------------------ | ----------------------------------------------------- |
-| privileges | Text ou Collection | <li>Chaîne contenant un nom de privilège, ou</li><li>Collection de chaînes contenant des noms de privilèges</li>    |
-| roles      | Text ou Collection | <li>Chaîne contenant un nom de rôle, ou</li><li>Collection de chaînes contenant des noms de roles</li>   |
-| userName   | Text               | Nom d'utilisateur à associer à la session (optionnel) |
+| Propriété  | Type               | Description                                                                                              |
+| ---------- | ------------------ | -------------------------------------------------------------------------------------------------------- |
+| privileges | Text ou Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
+| roles      | Text ou Collection | <li>String containing a role, or</li><li>Collection of strings containing roles</li>                     |
+| userName   | Text               | Nom d'utilisateur à associer à la session (optionnel)                                 |
 
 :::info
 
-Les privilèges et les rôles sont définis dans le fichier [`roles.json`](../ORDA/privileges.md#rolesjson-file) du projet. Pour plus d'informations, veuillez vous reporter à la section [**Privileges**](../ORDA/privileges.md) .
+Privileges and roles are defined in [`roles.json`](../ORDA/privileges.md#rolesjson-file) file of the project. For more information, please refer to the [**Privileges**](../ORDA/privileges.md) section.
 
 :::
 
-Si la propriété `privileges` ou `roles` contient un nom qui n'est pas déclaré dans le fichier [`roles.json`](../ORDA/privileges.md#rolesjson-file) , elle est ignorée.
+If the `privileges` or `roles` property contains a name that is not declared in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file, it is ignored.
 
-Par défaut lorsqu'aucun privilège ou rôle n'est associé à la session, la session est une [session Guest](#isguest).
+By default when no privilege or role is associated to the session, the session is a [Guest session](#isguest).
 
-La propriété [`userName`](#username) est accessible au niveau de l'objet session (lecture seulement).
+The [`userName`](#username) property is available at session object level (read-only).
 
 #### Exemple
 
@@ -341,9 +314,9 @@ Dans une méthode d'authentification personnalisée, vous assignez le privilège
 ```4d
 var $userOK : Boolean
 
-... //Authentifier l'utilisateur
+... //Authenticate the user
 
-If ($userOK) //L'utilisateur a été approuvé
+If ($userOK) //The user has been approved
   var $info : Object
   $info:=New object()
   $info.privileges:=New collection("WebAdmin")
@@ -352,10 +325,10 @@ End if
 
 ```
 
-
 <!-- END REF -->
 
 <!-- REF SessionClass.storage.Desc -->
+
 ## .storage
 
 <details><summary>Historique</summary>
@@ -370,17 +343,17 @@ End if
 
 #### Description
 
-La propriété `.storage` contient <!-- REF #SessionClass.storage.Summary -->un objet partagé qui peut être utilisé pour stocker des informations disponibles pour toutes les requêtes du client web<!-- END REF -->.
+The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all requests of the web client<!-- END REF -->.
 
-Lorsqu'un objet `Session` est créé, la propriété `.storage` est vide. Puisqu'il s'agit d'un objet partagé, cette propriété sera disponible dans l'objet `Storage` du serveur.
+When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
 
-> Tout comme l'objet `Storage` du serveur, la propriété `.storage` est toujours "single" : l'ajout d'un objet partagé ou d'une collection partagée à `.storage` ne crée pas de groupe partagé.
+> Like the `Storage` object of the server, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
 
-Cette propriété est elle-même en **lecture seulement** mais elle retourne un objet en lecture-écriture.
+This property is **read only** itself but it returns a read-write object.
 
 #### Exemple
 
-Vous voulez stocker l'adresse IP du client dans la propriété `.storage`. Vous pouvez écrire dans la méthode base `On Web Authentication` :
+You want to store the client IP in the `.storage` property. You can write in the `On Web Authentication` database method:
 
 ```4d
 If (Session.storage.clientIP=Null) //first access
@@ -393,11 +366,8 @@ End if
 
 <!-- END REF -->
 
-
-
-
-
 <!-- REF SessionClass.userName.Desc -->
+
 ## .userName
 
 <details><summary>Historique</summary>
@@ -412,12 +382,10 @@ End if
 
 #### Description
 
-La propriété `.userName` contient <!-- REF #SessionClass.userName.Summary -->le nom d'utilisateur associé à la session<!-- END REF -->. Vous pouvez vous en servir pour identifier l'utilisateur dans votre code.
+The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. Vous pouvez vous en servir pour identifier l'utilisateur dans votre code.
 
-Cette propriété est une chaîne vide par défaut. Elle peut être définie via la propriété `privileges` de la fonction [`setPrivileges()`](#setprivileges).
+Cette propriété est une chaîne vide par défaut. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
 
-Cette propriété est en **lecture seule**.
-
-
+This property is **read only**.
 
 <!-- END REF -->
