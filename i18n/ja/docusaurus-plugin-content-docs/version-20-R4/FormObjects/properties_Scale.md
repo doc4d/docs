@@ -9,15 +9,15 @@ title: スケール
 
 #### JSON 文法
 
-|     名称     | データタイプ | とりうる値                                      |
-|:----------:|:------:| ------------------------------------------ |
-| [max](#最大) | number | プロパティが存在しない = 有効; 存在する = 無効 (デフォルトサーモメーター) |
+|        名称       | データタイプ | とりうる値                                                         |
+| :-------------: | :----: | ------------------------------------------------------------- |
+| [max](#maximum) | number | プロパティが存在しない = 有効; 存在する = 無効 (デフォルトサーモメーター) |
 
 #### 対象オブジェクト
 
-[バーバーショップ](progressIndicator.md#バーバーショップ)
+[Barber shop](progressIndicator.md#barber-shop)
 
----
+***
 
 ## 目盛りを表示
 
@@ -25,15 +25,15 @@ title: スケール
 
 #### JSON 文法
 
-|       名称        | データタイプ  | とりうる値           |
-|:---------------:|:-------:| --------------- |
+|        名称       |  データタイプ | とりうる値           |
+| :-------------: | :-----: | --------------- |
 | showGraduations | boolean | "true", "false" |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
 
----
+***
 
 ## 目盛りのステップ
 
@@ -41,55 +41,54 @@ title: スケール
 
 #### JSON 文法
 
-|       名称       | データタイプ  | とりうる値  |
-|:--------------:|:-------:| ------ |
+|       名称       |  データタイプ | とりうる値  |
+| :------------: | :-----: | ------ |
 | graduationStep | integer | 最小値: 0 |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
 
----
+***
 
 ## ラベル位置
 
 ラベルが表示される際の位置です。
 
-* なし - ラベルは表示されません。
-* 上 - インジケーターの上または左にラベルを表示します。
-* 下 - インジケーターの下または右にラベルを表示します。
+- なし - ラベルは表示されません。
+- 上 - インジケーターの上または左にラベルを表示します。
+- 下 - インジケーターの下または右にラベルを表示します。
 
 #### JSON 文法
 
-|       名称        | データタイプ | とりうる値                                    |
-|:---------------:|:------:| ---------------------------------------- |
+|        名称       | データタイプ | とりうる値                                    |
+| :-------------: | :----: | ---------------------------------------- |
 | labelsPlacement | string | "none", "top", "bottom", "left", "right" |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler)
 
----
+***
 
 ## 最大
 
 インジケーターの最大値です。
 
-* 時間型のステッパーの場合、値は秒を表します。日付型のステッパーでは、最小および最大プロパティは無視されます。
-* [バーバーショップサーモメーター](progressIndicator.md#バーバーショップ) を有効にするには、このプロパティを取り除きます。
+- 時間型のステッパーの場合、値は秒を表します。日付型のステッパーでは、最小および最大プロパティは無視されます。
+- To enable [Barber shop thermometers](progressIndicator.md#barber-shop), this property must be omitted.
 
 #### JSON 文法
 
-| 名称  | データタイプ | とりうる値 |
-|:---:|:------:| ----- |
+|  名称 | データタイプ | とりうる値 |
+| :-: | :----: | ----- |
 | max | number | 数値    |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md) - [ステッパー](stepper.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler) - [Stepper](stepper.md#stepper)
 
-
----
+***
 
 ## 最小
 
@@ -97,15 +96,15 @@ title: スケール
 
 #### JSON 文法
 
-| 名称  | データタイプ | とりうる値 |
-|:---:|:------:| ----- |
+|  名称 | データタイプ | とりうる値 |
+| :-: | :----: | ----- |
 | min | number | 数値    |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md) - [ステッパー](stepper.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler) - [Stepper](stepper.md#stepper)
 
----
+***
 
 ## ステップ
 
@@ -113,10 +112,10 @@ title: スケール
 
 #### JSON 文法
 
-|  名称  | データタイプ  | とりうる値  |
-|:----:|:-------:| ------ |
+|  名称  |  データタイプ | とりうる値  |
+| :--: | :-----: | ------ |
 | step | integer | 最小値: 1 |
 
 #### 対象オブジェクト
 
-[デフォルトサーモメーター](progressIndicator.md#デフォルトサーモメーター) - [ルーラー](ruler.md) - [ステッパー](stepper.md)
+[Thermometer](progressIndicator.md#thermometer) - [Ruler](ruler.md#ruler) - [Stepper](stepper.md#stepper)
