@@ -17,7 +17,7 @@ Définit la couleur des lignes horizontales dans une list box (gris par défaut)
 
 [List Box](listbox_overview.md)
 
----
+***
 
 ## Couleur lignes verticales
 
