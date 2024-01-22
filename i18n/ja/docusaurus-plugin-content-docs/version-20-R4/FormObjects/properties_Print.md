@@ -9,24 +9,24 @@ title: 印刷
 
 フォーム内において複数の可変長フレームを隣同士に配置することはできません。 非可変長フレームオブジェクトであれば、可変サイズで印刷されるオブジェクトのどちら側でも配置することができます。ただし、可変長フレームオブジェクトが最低でも横のオブジェクトより一行分長く、すべてのオブジェクトが上揃えで配置されていなければなりません。 この条件が遵守されない場合、可変長フレームオブジェクトの水平方向の部分ごとに、ほかのフィールドのコンテンツが繰り返されます。
 
-> `Print object` と `Print form` コマンドはこのプロパティをサポートしません。
+> The `Print object` and `Print form` commands do not support this property.
 
 印刷オプションは次の通りです:
 
-- **可変** オプション (**印刷時可変** 選択時): すべてのサブレコードが印刷されるよう、4D はフォームオブジェクトエリアを拡大あるいは縮小します。
+- **Variable** option / **Print Variable Frame** checked: 4D enlarges or reduces the form object area in order to print all the subrecords.
 
-- **固定 (切り捨て)** オプション (**印刷時可変** 非選択時): オブジェクトエリアに表示されている内容のみを 4D は印刷します。 フォームが印刷されるのは一度のみで、印刷されなかった内容は無視されます。
+- **Fixed (Truncation)** option / **Print Variable Frame** unchecked: 4D only prints the contents that appear in the object area. フォームが印刷されるのは一度のみで、印刷されなかった内容は無視されます。
 
-- **固定 (複数レコード)** (サブフォームのみ): サブフォームの初期サイズを維持しますが、4D はすべてのレコードが印刷されるまで複数回にわたってフォームを印刷します。
+- **Fixed (Multiple Records)** (subforms only): the initial size of the subform area is kept but 4D prints the form several times in order to print all the records.
 
-> このプロパティは `OBJECT SET PRINT VARIABLE FRAME` コマンドによって設定することができます。
+> This property can be set by programming using the `OBJECT SET PRINT VARIABLE FRAME` command.
 
 #### JSON 文法
 
-|     名称     | データタイプ | とりうる値                                           |
-|:----------:|:------:| ----------------------------------------------- |
+|     名称     | データタイプ | とりうる値                                                              |
+| :--------: | :----: | ------------------------------------------------------------------ |
 | printFrame | string | "fixed", "variable", (サブフォームのみ) "fixedMultiple" |
 
 #### 対象オブジェクト
 
-[入力](input_overview.md) - [サブフォーム](subform_overview.md) (リストサブフォームのみ) - [4D Write Pro エリア](writeProArea_overview.md)
+[Input](input_overview.md) - [Subforms](subform_overview.md) (list subforms only) - [4D Write Pro areas](writeProArea_overview.md)
