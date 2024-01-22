@@ -8,50 +8,48 @@ Le traitement des erreurs consiste à anticiper les erreurs pouvant survenir dan
 La gestion des erreurs répond à deux besoins principaux :
 
 - rechercher et corriger les éventuels bugs et erreurs dans votre code pendant la phase de développement,
-- détecter et récupérer des erreurs inattendues dans les applications déployées; vous pouvez notamment remplacer les boîtes de dialogue d'erreur système (disque plein, fichier manquant, etc.) par votre propre interface.
+- catching and recovering from unexpected errors in deployed applications; in particular, you can replace system error dialogs (disk full, missing file, etc.) with you own interface.
 
 Basically, there are two ways to handle errors in 4D. You can [install an error-handling method](#installing-an-error-handling-method), or write a [`Try()` keyword](#tryexpression) before pieces of code that call a function, method, or expression that can throw an error.
 
-:::tip Bonne pratique
+:::tip Good practice
 
-Il est fortement recommandé d'installer une méthode globale de gestion des erreurs sur 4D Server, pour tout le code s'exécutant sur le serveur. Lorsque 4D Server ne fonctionne pas [headless](../Admin/cli.md) (c'est-à-dire qu'il est lancé avec sa [fenêtre d'administration](../ServerWindow/overview.md)), cette méthode permet d'éviter l'affichage de boîtes de dialogue sur la machine serveur. En mode headless, les erreurs sont enregistrées dans le fichier [4DDebugLog](../Debugging/debugLogFiles.md#4ddebuglogtxt-standard) pour une analyse plus approfondie.
+Il est fortement recommandé d'installer une méthode globale de gestion des erreurs sur 4D Server, pour tout le code s'exécutant sur le serveur. When 4D Server is not running [headless](../Admin/cli.md) (i.e. launched with its [administration window](../ServerWindow/overview.md)), this method would avoid unexpected dialog boxes to be displayed on the server machine. In headless mode, errors are logged in the [4DDebugLog file](../Debugging/debugLogFiles.md#4ddebuglogtxt-standard) for further analysis.
 
 :::
 
-
 ## Erreur ou statut
 
-De nombreuses fonctions de classe 4D, telles que `entity.save()` ou `transporter.send()`, retournent un objet *status*. Cet objet permet de stocker les erreurs "prévisibles" dans le contexte d'exécution, telles qu'un mot de passe invalide, une entité verrouillée, etc., qui ne stoppe pas l'exécution du programme. Cette catégorie d'erreurs peut être gérée par du code habituel.
+Many 4D class functions, such as `entity.save()` or `transporter.send()`, return a _status_ object. Cet objet permet de stocker les erreurs "prévisibles" dans le contexte d'exécution, telles qu'un mot de passe invalide, une entité verrouillée, etc., qui ne stoppe pas l'exécution du programme. Cette catégorie d'erreurs peut être gérée par du code habituel.
 
 D'autres erreurs "imprévisibles" peuvent inclure une erreur en écriture sur le disque, une panne de réseau ou toute interruption inattendue. This category of errors generates exceptions and needs to be handled through an error-handling method or a `Try()` keyword.
 
-
 ## Installer une méthode de gestion des erreurs
 
-Dans 4D, toutes les erreurs peuvent être détectées et traitées par des méthodes projet spécifiques, appelées **méthodes de gestion des erreurs** (ou **méthodes d'interception des erreurs**).
+In 4D, all errors can be caught and handled by specific project methods, named **error-handling** (or **error-catching**) methods.
 
 Une fois installés, les gestionnaires d'erreurs sont automatiquement appelés en mode interprété ou compilé en cas d'erreur dans l'application 4D ou l'un de ses composants. Un gestionnaire d'erreur différent peut être appelé en fonction du contexte d'exécution (voir ci-dessous).
 
-Pour *installer* une méthode projet de gestion des erreurs, il suffit d'appeler la commande [`ON ERR CALL`](https://doc.4d.com/4dv19/help/command/en/page155.html) avec le nom de la méthode de projet et (en option) la portée comme paramètres. Par exemple :
+To _install_ an error-handling project method, you just need to call the [`ON ERR CALL`](https://doc.4d.com/4dv19/help/command/en/page155.html) command with the project method name and (optionnally) scope as parameters. Par exemple :
 
 ```4d
 ON ERR CALL("IO_Errors";ek local) //Installe une méthode locale de gestion des erreurs
 ```
 
-Pour arrêter d'intercepter les erreurs dans un contexte d'exécution et rendre la main, appelez `ON ERR CALL` avec une chaîne vide :
+To stop catching errors for an execution context and give back hand, call `ON ERR CALL` with an empty string:
 
 ```4d
 ON ERR CALL("";ek local) //rend le contrôle au process local
 ```
 
-La commande  [`Method called on error`](https://doc.4d.com/4dv19/help/command/en/page704.html) permet de connaître le nom de la méthode installée par `ON ERR CALL` pour le process courant. Cela est particulièrement utile dans le contexte du code générique car il vous permet de modifier temporairement puis de restaurer la méthode de capture d'erreur :
+The  [`Method called on error`](https://doc.4d.com/4dv19/help/command/en/page704.html) command allows you to know the name of the method installed by `ON ERR CALL` for the current process. Cela est particulièrement utile dans le contexte du code générique car il vous permet de modifier temporairement puis de restaurer la méthode de capture d'erreur :
 
 ```4d
  $methCurrent:=Method called on error(ek local)
  ON ERR CALL("NewMethod";ek local)
-  //Si le document ne peut pas être ouvert, une erreur est générée
+  //If the document cannot be opened, an error is generated
  $ref:=Open document("MyDocument")
-  //Réinstallation de la méthode précédente
+  //Reinstallation of previous method
  ON ERR CALL($methCurrent;ek local)
 
 ```
@@ -60,9 +58,9 @@ La commande  [`Method called on error`](https://doc.4d.com/4dv19/help/command/en
 
 Une méthode de gestion des erreurs peut être définie pour différents contextes d'exécution :
 
-- pour le **process courant**- un gestionnaire d'erreurs local ne sera appelé que pour les erreurs survenues dans le process courant du projet courant,
-- pour l'**ensemble de l'application**- un gestionnaire d'erreurs global sera appelé pour toutes les erreurs qui se sont produites dans le contexte d'exécution de l'application du projet courant,
-- depuis les **composants**- ce gestionnaire d'erreurs est défini dans un projet hôte et sera appelé pour toutes les erreurs survenues dans chaque composant lorsqu'elles n'ont pas déjà été interceptées par la méthode de gestion d'erreurs du composant.
+- for the **current process**- a local error handler will be only called for errors that occurred in the current process of the current project,
+- for the **whole application**- a global error handler will be called for all errors that occurred in the application execution context of the current project,
+- from the **components**- this error handler is defined in a host project and will be called for all errors that occurred in the components when they were not already caught by a component handler.
 
 Exemples :
 
@@ -78,8 +76,7 @@ Vous pouvez définir une seule méthode de gestion des erreurs pour l'ensemble d
 
 Lorsqu'une erreur se produit, une seule méthode est appelée, comme le montre le schéma suivant :
 
-![gestion des erreurs](../assets/en/Concepts/error-schema.png)
-
+![error management](../assets/en/Concepts/error-schema.png)
 
 ### Gérer les erreurs dans une méthode
 
@@ -87,20 +84,19 @@ Dans une méthode de gestion d'erreur personnalisée, vous avez accès à plusie
 
 - des variables système dédiées :
 
-  - `Error` (entier long): Code d'erreur
-  - `Error method` (texte) : nom de la méthode ayant engendré l'erreur
-  - `Error line` (entier long) : Numéro de ligne de la méthode ayant généré l'erreur
-  - `Error formula` (texte) : formule du code 4D (texte brut) à l'origine de l'erreur.
+  - `Error` (longint): error code
+  - `Error method` (text): name of the method that triggered the error
+  - `Error line` (longint): line number in the method that triggered the error
+  - `Error formula` (text): formula of the 4D code (raw text) which is at the origin of the error.
 
 :::info
 
-4D gère automatiquement un certain nombre de variables appelées **variables système**, répondant à différents besoins. Voir le manuel *4D Language Reference*.
+4D automatically maintains a number of variables called **system variables**, meeting different needs. See the _4D Language Reference manual_.
 
 :::
 
-- la commande [`Last errors`](https://doc.4d.com/4dv19/help/command/en/page1799.html) qui renvoie une collection de la pile actuelle des erreurs survenues dans l'application 4D. Vous pouvez également utiliser la commande [`GET LAST ERROR STACK`](https://doc.4d.com/4dv19/help/command/en/page1015.html) qui renvoie les mêmes informations sous forme de tableaux.
-- la commande `Get call chain` qui retourne une collection d'objets décrivant chaque étape de la chaîne d'appel de la méthode dans le process courant.
-
+- the [`Last errors`](https://doc.4d.com/4dv19/help/command/en/page1799.html) command that returns a collection of the current stack of errors that occurred in the 4D application. You can also use the [`GET LAST ERROR STACK`](https://doc.4d.com/4dv19/help/command/en/page1015.html) command that returns the same information as arrays.
+- the `Get call chain` command that returns a collection of objects describing each step of the method call chain within the current process.
 
 #### Exemple
 
@@ -114,25 +110,24 @@ ON ERR CALL("errorMethod")
 ```
 
 ```4d
-// méthode projet errorMethod
- If(Error#1006) //ceci n'est pas une interruption générée par l'utilisateur
-    ALERT("L'erreur "+String(Error)+" s'est produite". Le code en question est : \""+Error formula+"\"")
+// errorMethod project method
+ If(Error#1006) //this is not a user interruption
+    ALERT("The error "+String(Error)+" occurred". The code in question is: \""+Error formula+"\"")
  End if
 ```
 
 ### Utiliser une méthode de gestion des erreurs vide
 
-Si vous souhaitez cacher la boite de dialogue d'erreur standard, vous pouvez installer une méthode de gestion d'erreurs vide. La variable système `Error` peut être testée dans n'importe quelle méthode, c'est-à-dire en dehors de la méthode de gestion d'erreurs :
+Si vous souhaitez cacher la boite de dialogue d'erreur standard, vous pouvez installer une méthode de gestion d'erreurs vide. The `Error` system variable can be tested in any method, i.e. outside of the error-handling method:
 
 ```4d
-ON ERR CALL("emptyMethod") //emptyMethod existe mais est vide
+ON ERR CALL("emptyMethod") //emptyMethod exists but is empty
 $doc:=Open document( "myFile.txt")
 If (Error=-43)
-    ALERT("File not found.")
+	ALERT("File not found.")
 End if
-ON ERR CALL.("")
+ON ERR CALL("")
 ```
-
 
 ## Try(expression)
 
@@ -146,18 +141,17 @@ Try (expression) : any | Undefined
 
 ```
 
-*expression* can be any valid expression.
+_expression_ can be any valid expression.
 
-If an error occurred during its execution, it is intercepted and no error dialog is displayed, whether an [error-handling method](#installing-an-error-handling-method) was installed or not before the call to `Try()`. If *expression* returns a value, `Try()` returns the last evaluated value, otherwise it returns `Undefined`.
+If an error occurred during its execution, it is intercepted and no error dialog is displayed, whether an [error-handling method](#installing-an-error-handling-method) was installed or not before the call to `Try()`. If _expression_ returns a value, `Try()` returns the last evaluated value, otherwise it returns `Undefined`.
 
-You can handle the error(s) using the [`Last errors`](https://doc.4d.com/4dv20/help/command/en/page1799.html) command. If *expression* throws an error within a stack of `Try()` calls, the execution flow stops and returns to the latest executed `Try()` (the first found back in the call stack).
+You can handle the error(s) using the [`Last errors`](https://doc.4d.com/4dv20/help/command/en/page1799.html) command. If _expression_ throws an error within a stack of `Try()` calls, the execution flow stops and returns to the latest executed `Try()` (the first found back in the call stack).
 
 :::note
 
-If an [error-handling method](#installing-an-error-handling-method) is installed by *expression*, it is called in case of error.
+If an [error-handling method](#installing-an-error-handling-method) is installed by _expression_, it is called in case of error.
 
 :::
-
 
 ### Exemples
 
@@ -171,7 +165,6 @@ If ($fileHandle # Null)
   $text:=Try($fileHandle.readText()) || "Error reading the file"
 End if
 ```
-
 
 2. You want to handle the divide by zero error. In this case, you want to return 0 and throw an error:
 
@@ -204,8 +197,4 @@ Else
    ALERT( "Error: "+JSON Stringify($status.errors))
 End if
 
-``` 
-
-
-
-
+```

@@ -7,24 +7,22 @@ title: On Close Box
 | --- | ----- | ---------------------- |
 | 22  | フォーム  | ウィンドウのクローズボックスがクリックされた |
 
-
 ## 説明
 
-`On Close Box` イベントは、ユーザーがウィンドウのクローズボックスをクリックすると生成されます。
+The `On Close Box` event is generated when the user clicks on the clos box of the window.
 
 ### 例題
 
 この例題では、レコードのデータ入力に使われるフォームで、ウィンドウを閉じるイベントを処理する方法を示します:
 
 ```4d
-  // 入力フォームのメソッド
+  //Method for an input form
  $vpFormTable:=Current form table
  Case of
   //...
     :(Form event code=On Close Box)
        If(Modified record($vpFormTable->))
-          CONFIRM("レコードが変更されました。 変更を保存しますか？
-          ")
+          CONFIRM("This record has been modified. Save Changes?")
           If(OK=1)
              ACCEPT
           Else

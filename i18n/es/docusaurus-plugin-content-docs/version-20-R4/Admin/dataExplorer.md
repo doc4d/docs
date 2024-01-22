@@ -9,33 +9,36 @@ El Explorador de datos ofrece una interfaz web para ver y consultar los datos de
 
 ## Configuración
 
-El Explorador de datos se basa en el componente servidor web [`WebAdmin`](webAdmin.md) para la configuración y los parámetros de autenticación.
+The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component for the configuration and authentication settings.
 
-- **configuración**: la configuración del Explorador de datos reutiliza los [parámetros del servidor web `WebAdmin`](webAdmin.md#webadmin-settings),
-- **autenticación**: el acceso al Explorador de datos se concede cuando [el usuario de la sesión está autenticado](webAdmin.md#authentication-and-session) y tiene el privilegio "WebAdmin". Cuando se accede al Explorador de datos a través del elemento de menú **Explorador de datos** (ver más adelante), se proporciona una autenticación automática.
+- **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
+- **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided.
 
-> El acceso al Explorador de Datos puede desactivarse mediante la función [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection).
+> The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) function.
 
 ## Apertura del Explorador de datos
 
-[El servidor web `WebAdmin`](webAdmin.md#starting-the-webadmin-web-server) se inicia automáticamente si es necesario al hacer clic en el Explorador de datos.
+[The `WebAdmin` web server](webAdmin.md#starting-the-webadmin-web-server) is started automatically if necessary when the Data Explorer is clicked on.
 
 Para conectarse a la página web del Explorador de datos:
 
 - De una aplicación 4D (con interfaz):
-  - Para abrir una nueva ventana 4D con la página Explorador de datos mostrada en un área web, seleccione **Explorador de datos** en el menú **Registros** o haga clic en el botón **Datos** de la barra de herramientas principal.
-  - Para abrir el Explorador de datos en una pestaña externa del navegador, seleccione **Explorador de datos en el navegador** en el menú **Registros** o presione la tecla **Alt** (Windows)/**Opción** (macOS) y haga clic en el botón **Datos** de la barra de herramientas principal.
-- Desde 4D Server, seleccione **Explorador de datos en el navegador** en el menú **Ventana** (el Explorador de Datos sólo puede abrirse en un navegador externo).
+  - To open a new 4D window with the Data Explorer page displayed in a web area, select **Data Explorer** in the **Records** menu or click on the **Data** button in the main toolbar.
+  - To open the Data Explorer in an external browser tab, select **Data Explorer In Browser** in the **Records** menu or press the **Alt** key (Windows)/**Option** key (macOS) and click on the **Data** button in the main toolbar.
+
+- From 4D Server, select **Data Explorer In Browser** in the **Window** menu (the Data Explorer can only be opened on an external browser).
 
 - Tanto si utiliza una aplicación 4D sin interfaz como si no, puede abrir su navegador web e introducir la siguiente dirección:
 
- `IPaddress:HTTPPort/dataexplorer` or `IPaddress:HTTPSPort/dataexplorer`
+`IPaddress:HTTPPort/dataexplorer`
+or
+`IPaddress:HTTPSPort/dataexplorer`
 
- En este contexto, se le pedirá que introduzca la [clave de acceso](webAdmin.md#access-key) para abrir una sesión de `WebAdmin` en el servidor:
+In this context, you will be prompted to enter the [access key](webAdmin.md#access-key) to open a `WebAdmin` session on the server:
 
 ![alt-text](../assets/en/Admin/accessKeyEnter.png)
 
-> Los valores [HTTPPort](webAdmin.md#http-port) y [HTTPSPort](webAdmin.md#https-port) se configuran en los parámetros de `WebAdmin`.
+> [HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings.
 
 ## Uso del explorador de datos
 
@@ -54,9 +57,9 @@ La resolución mínima para utilizar el Explorador de Datos es de 1280x720. La r
 
 ### Básicos
 
-El Explorador de Datos ofrece un acceso global al modelo de datos ORDA con respecto a las reglas de mapeo [ORDA](ORDA/dsMapping.md#general-rules).
+The Data Explorer provides an overall access to the ORDA data model with respect to the [ORDA mapping rules](ORDA/dsMapping.md#general-rules).
 
-Puede pasar al tema de visualización **modo oscuro** utilizando el selector en la parte inferior de la página:
+You can switch to the **dark mode** display theme using the selector at the bottom of the page:
 
 ![alt-text](../assets/en/Admin/dark.png)
 
@@ -64,18 +67,23 @@ Puede pasar al tema de visualización **modo oscuro** utilizando el selector en 
 
 La página contiene varias áreas:
 
-- En el lado izquierdo se encuentran el **área de las Clases de datos** y el **área de los atributos**, lo que permite seleccionar las clases de datos y los atributos a mostrar. Los atributos se ordenan según el orden de creación de la estructura subyacente. Las llaves primarias y los atributos indexados tienen un icono específico. Puede filtrar la lista de nombres de clases de datos y de atributos propuestos utilizando las áreas de búsqueda respectivas. ![alt-text](../assets/en/Admin/dataExplorer3.png)
+- On the left side are the **Dataclasses area** and **Attributes area**, allowing you can select the dataclasses and attributes to display. Los atributos se ordenan según el orden de creación de la estructura subyacente. Las llaves primarias y los atributos indexados tienen un icono específico. Puede filtrar la lista de nombres de clases de datos y de atributos propuestos utilizando las áreas de búsqueda respectivas.
+  ![alt-text](../assets/en/Admin/dataExplorer3.png)
 
-- La parte central contiene el **Área de búsqueda** y la **Rejilla de datos** (lista de entidades de la clase de datos seleccionada). Cada columna de la cuadrícula representa un atributo del almacén de datos.
-  - Por defecto, se muestran todas las entidades. Puede filtrar las entidades mostradas utilizando el área de búsqueda. Hay dos modos de consulta disponibles: [Consulta sobre atributos](#query-on-attributes) (seleccionada por defecto), y la [Consulta avanzada con expresión](#advanced-query-with-expression). El modo de consulta se selecciona haciendo clic en el botón correspondiente (el botón **X** permite restablecer el área de consulta y, por tanto, dejar de filtrar): ![alt-text](../assets/en/Admin/dataExplorer4b.png)
+- The central part contains the **Search area** and the **Data grid** (list of entities of the selected dataclass). Cada columna de la cuadrícula representa un atributo del almacén de datos.
+  - Por defecto, se muestran todas las entidades. Puede filtrar las entidades mostradas utilizando el área de búsqueda. Two query modes are available: [Query on attributes](#query-on-attributes) (selected by default), and the [Advanced query with expression](#advanced-query-with-expression). You select the query mode by clicking on the corresponding button (the **X** button allows you to reset the query area and thus stop filtering):
+    ![alt-text](../assets/en/Admin/dataExplorer4b.png)
   - El nombre de la clase de datos seleccionada se añade como una pestaña encima de la cuadrícula de datos. Utilizando estas pestañas, puede cambiar entre las clases de datos que ya han sido seleccionadas. Puede eliminar una clase de datos referenciada haciendo clic en el icono "eliminar" situado a la derecha del nombre de la clase de datos.
-  - Puede reducir el número de columnas desmarcando los atributos en la parte izquierda. También puede cambiar las columnas de la cuadrícula de datos utilizando arrastrar y soltar. Puede hacer clic en el encabezado de una columna para [ordenar entidades](#ordering-entities) de acuerdo a sus valores (cuando sea posible).
-  - Si una operación requiere mucho tiempo, se muestra una barra de progreso. Puede detener la operación en curso en cualquier momento haciendo clic en el botón rojo:<br/> ![alt-text](../assets/en/Admin/dataExplorer5.png)
+  - Puede reducir el número de columnas desmarcando los atributos en la parte izquierda. También puede cambiar las columnas de la cuadrícula de datos utilizando arrastrar y soltar. You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible).
+  - Si una operación requiere mucho tiempo, se muestra una barra de progreso. You can stop the running operation at any moment by clicking on the red button:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorer5.png)
 
-- En la parte derecha se encuentra el área **Detalles**: muestra los valores de los atributos de la entidad actualmente seleccionada, así como los **datos relacionados**, si los hay. Puede navegar entre las entidades de la clase de datos haciendo clic en los enlaces **Primero** / **Anterior** / **Siguiente** / **Último** en la parte inferior del área.
-  - Se muestran todos los tipos de atributos, incluidas las imágenes, los objetos (expresados en json), así como los [atributos calculados](../ORDA/ordaClasses.md#computed-attributes-1) y los [alias](../ORDA/ordaClasses.md#alias-attributes-1).
-  - Los datos relacionados (relaciones uno a uno y uno a muchos) pueden mostrarse a través de áreas expandibles/colapsables:<br/> ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
-  - **Ctrl+Clic** (Windows) o **Comando+Clic** (macOS) en un nombre de atributo relacionado en el área de la derecha muestra los valores del atributo en un área flotante independiente:<br/> ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
+- On the right side is the **Details area**: it displays the attribute values of the currently selected entity as well as **related data**, if any. You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.
+  - All attribute types are displayed, including pictures, objects (expressed in json) as well as [computed](../ORDA/ordaClasses.md#computed-attributes-1) and [alias](../ORDA/ordaClasses.md#alias-attributes-1) attributes.
+  - Related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
+  - **Ctrl+Click** (Windows) or **Command+Click** (macOS) on a related attribute name in the right side area displays the values of the attribute in an independant, floating area:<br/>
+    ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
 
 ### Actualizar los contenidos
 
@@ -85,11 +93,11 @@ Cuando el modelo ORDA o los datos se modifican del lado de la base de datos (se 
 
 Puede reordenar la lista de entidades mostrada según los valores de los atributos. Todos los tipos de atributos pueden utilizarse para una ordenación, excepto la imagen y el objeto.
 
-- Haga clic en el encabezado de una columna para ordenar entidades de acuerdo a los valores de atributo correspondientes. Por defecto, la ordenación es ascendente. Haga clic dos veces para una ordenación descendente. Una columna utilizada para ordenar las entidades se muestra con un pequeño icono y su nombre está en *itálica*.
+- Haga clic en el encabezado de una columna para ordenar entidades de acuerdo a los valores de atributo correspondientes. Por defecto, la ordenación es ascendente. Haga clic dos veces para una ordenación descendente. A column used to sort entities is displayed with a small icon and its name is in _italics_.
 
 ![alt-text](../assets/en/Admin/dataExplorer7.png)
 
-- Puede ordenar los atributos en varios niveles. Por ejemplo, puede ordenar a los empleados por ciudad y luego por salario. Para ello, manténga presionada la tecla **Mayús** y haga clic sucesivamente en el encabezado de cada columna a incluir en el orden de clasificación.
+- Puede ordenar los atributos en varios niveles. Por ejemplo, puede ordenar a los empleados por ciudad y luego por salario. To do that, hold down the **Shift** key and click sequentially on each column header to include in the sort order.
 
 ### Consultas basadas en atributos
 
@@ -97,11 +105,11 @@ En este modo, puede filtrar las entidades introduciendo los valores que desea en
 
 ![alt-text](../assets/en/Admin/dataExplorer6.png)
 
-Si introduce varios atributos, se aplica automáticamente un AND. Por ejemplo, el siguiente filtro muestra las entidades con el atributo *firstname* que empieza por "flo" AND el valor del atributo *salary* > 50000:
+Si introduce varios atributos, se aplica automáticamente un AND. For example, the following filter displays entities with _firstname_ attribute starting with "flo" AND _salary_ attribute value > 50000:
 
 ![alt-text](../assets/en/Admin/dataExplorer9.png)
 
-El botón **X** permite eliminar los atributos introducidos y así dejar de filtrar.
+The **X** button allows you to remove entered attributes and thus stop filtering.
 
 Existen diferentes operadores y opciones de consulta, según el tipo de datos del atributo.
 
@@ -121,12 +129,12 @@ Con los atributos de fecha, puede introducir la fecha a utilizar a través de un
 
 #### Booleanos
 
-Al hacer clic en un área de atributos booleanos, se puede filtrar sobre los valores **true**/**false** pero también los valores **null**/**not null**:
+When you click on a boolean attribute area, you can filter on **true**/**false** values but also on **null**/**not null** values:
 
 ![alt-text](../assets/en/Admin/DEFilter3.png)
 
-- **null** indica que el valor del atributo no fue definido
-- **no nulo** indica que el valor del atributo está definido (por tanto, true o false).
+- **null** indicates that the attribute value was not defined
+- **not null** indicates that the attribute value is defined (thus true or false).
 
 #### Text
 
@@ -140,7 +148,7 @@ También puede utilizar el carácter comodín (@) para sustituir uno o varios ca
 | ------------- | --------------------------------------------------------- |
 | Bel           | Todos los valores que empiezan por "Bel"                  |
 | @do           | Todos los valores que contienen "do"                      |
-| Bel@do        | Todos los valores que empiezan por "Bel" y contienen "do" |
+| Bel\@do       | Todos los valores que empiezan por "Bel" y contienen "do" |
 
 Si desea crear consultas más específicas, como "es exactamente", es posible que tenga que utilizar la función de consultas avanzadas.
 
@@ -150,16 +158,16 @@ Cuando se selecciona esta opción, aparece un área de consulta sobre la lista d
 
 ![alt-text](../assets/en/Admin/dataExplorer8.png)
 
-Puede introducir consultas avanzadas que no están disponibles como consultas de atributos. Por ejemplo, si quiere encontrar entidades con el atributo *firstname* que contenga "Jim" pero no "Jimmy", puede escribir:
+Puede introducir consultas avanzadas que no están disponibles como consultas de atributos. For example, if you want to find entities with _firstname_ attribute containing "Jim" but not "Jimmy", you can write:
 
 ```
 firstname=="Jim"
 ```
 
-Puede utilizar cualquier expresión de consulta ORDA como [documentada con la función `query()`](API/DataClassClass.md#query), con las siguientes limitaciones o diferencias:
+You can use any ORDA query expression as [documented with the `query()` function](API/DataClassClass.md#query), with the following limitations or differences:
 
-- Por seguridad, no se pueden ejecutar fórmulas utilizando `eval()`.
-- No se pueden utilizar marcadores de posición; hay que escribir un *queryString* con valores.
+- For security, you cannot execute formulas using `eval()`.
+- Placeholders cannot be used; you have to write a _queryString_ with values.
 - Los valores de las cadenas que contienen caracteres de espacio deben ir entre comillas dobles ("").
 
 Por ejemplo, con la clase de datos Employee, puede escribir:
@@ -168,7 +176,7 @@ Por ejemplo, con la clase de datos Employee, puede escribir:
 firstname = "Marie Sophie" AND manager.lastname = "@th"
 ```
 
-Puede hacer clic en el icono `v` para mostrar tanto [`queryPlan`](API/DataClassClass.md#queryplan) como [`queryPath`](API/DataClassClass.md#querypath). En el área, puede pasar sobre los bloques de subconsultas para tener información detallada por subconsulta:
+You can click on the `v` icon to display both [`queryPlan`](API/DataClassClass.md#queryplan) and [`queryPath`](API/DataClassClass.md#querypath). En el área, puede pasar sobre los bloques de subconsultas para tener información detallada por subconsulta:
 
 ![alt-text](../assets/en/Admin/dataExplorer12.png)
 

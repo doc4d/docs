@@ -15,9 +15,9 @@ Las imágenes se muestran en un bucle continuo. Cuando el usuario llega a la úl
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## Retorna cuando se libera
 
@@ -31,9 +31,9 @@ Muestra la primera imagen todo el tiempo, excepto cuando el usuario hace clic en
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## Desplazamiento continuo en clics
 
@@ -47,9 +47,9 @@ Permite al usuario mantener pulsado el botón del ratón para mostrar las imáge
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## Cambiar cada x ticks
 
@@ -63,9 +63,9 @@ Permite recorrer el contenido del botón de imagen a la velocidad especificada (
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## Cambiar cuando se pasa por encima el cursor
 
@@ -79,9 +79,9 @@ Modifica el contenido del botón de la imagen cuando el cursor del ratón pasa p
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
----
+***
 
 ## Utilizar el Último cuadro como Desactivado
 
@@ -90,9 +90,9 @@ Permite definir la última miniatura como la que se mostrará cuando el botón e
 #### Gramática JSON
 
 | Nombre                 | Tipos de datos | Valores posibles |
-|:---------------------- | -------------- | ---------------- |
+| :--------------------- | -------------- | ---------------- |
 | useLastFrameAsDisabled | boolean        | true, false      |
 
 #### Objetos soportados
 
-[Botón Imagen](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)

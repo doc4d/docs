@@ -17,7 +17,7 @@ Define a cor das linhas horizontais num list box (cinzento por predefinição).
 
 [List Box](listbox_overview.md)
 
----
+***
 
 ## Array cores de fundo
 
