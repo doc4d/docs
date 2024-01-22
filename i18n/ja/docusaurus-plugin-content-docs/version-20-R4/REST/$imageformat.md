@@ -1,9 +1,9 @@
 ---
 id: imageformat
-title: '$imageformat'
+title: $imageformat
 ---
 
-画像取得の際に使用する画像形式を指定します (*例*: `$imageformat=png`)
+Defines which image format to use for retrieving images (_e.g._, `$imageformat=png`)
 
 ## 説明
 
@@ -17,13 +17,12 @@ title: '$imageformat'
 | ".jpeg" または "image/jpeg" | JPEG 形式  |
 | ".tiff" または "image/tiff" | TIFF 形式  |
 
-画像を完全に読み込むには、形式を指定するだけでなく、画像属性を [`$expand`]($expand.md) に渡す必要があります。
+Once you have defined the format, you must pass the image attribute to [`$expand`]($expand.md) to load the photo completely.
 
-読み込むべき画像がない場合、または指定した形式では画像が読み込めない場合、レスポンスは空のオブジェクト `{}` になります。
+If there is no image to be loaded or the format doesn't allow the image to be loaded, the response will be an empty object `{}`.
 
 ## 例題
 
 photo属性の実際の形式に関わらず、画像形式を JPEG に指定し、サーバーより受け取ったバージョン番号を受け渡している例です:
 
 `GET  /rest/Employee(1)/photo?$imageformat=.jpeg&$version=3&$expand=photo`
-
