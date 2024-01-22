@@ -15,9 +15,9 @@ title: グリッド線
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)
+[List Box](listbox_overview.md)
 
----
+***
 
 ## 縦線カラー
 
@@ -31,4 +31,4 @@ title: グリッド線
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)
+[List Box](listbox_overview.md)
