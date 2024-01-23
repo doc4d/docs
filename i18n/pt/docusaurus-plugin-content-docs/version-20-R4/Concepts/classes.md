@@ -1,7 +1,6 @@
----
-id: classes
-title: Classes
----
+- - -
+id: classes title: Classes
+- - -
 
 
 ## Visão Geral
@@ -343,7 +342,7 @@ O tipo de propriedade pode ser um dos seguintes tipos suportados:
 | `Diferente de`                           | Valor variant                                                                                                                                     |
 | `Object`                                 | Object with default class (4D.Object)                                                                                                             |
 | `4D.<className>`                   | Objecto do nome da classe 4D                                                                                                                      |
-| `cs.<className>`                   | Objecto do nome da classe de usuário                                                                                                              |
+| `cs.<className>`                   | Objeto do nome da classe usuário                                                                                                                  |
 | `cs.<namespace>.<className>` | For a class constructor function, the `Current method name` command returns:  `<ClassName>:constructor`, for example "MyClass:constructor". |
 
 :::info
