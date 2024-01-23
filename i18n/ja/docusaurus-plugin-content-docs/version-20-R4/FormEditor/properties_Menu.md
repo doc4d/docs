@@ -1,7 +1,6 @@
----
-id: menu
-title: メニュー
----
+- - -
+id: menu title: Menu
+- - -
 
 
 ## 連結メニューバー
