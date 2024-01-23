@@ -1,7 +1,6 @@
----
-id: onVpRangeChanged
-title: On VP Range Changed
----
+- - -
+id: onVpRangeChanged title: On VP Range Changed
+- - -
 
 | Code | Pode ser chamado por                                    | Definição                                                                                             |
 | ---- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
