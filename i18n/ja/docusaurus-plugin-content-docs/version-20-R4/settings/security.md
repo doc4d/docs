@@ -1,7 +1,6 @@
----
-id: security
-title: セキュリティページ
----
+- - -
+id: security title: Security page
+- - -
 
 このページでは、データへのアクセスやデータベースの保護に関する設定をおこないます。
 
