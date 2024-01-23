@@ -1,7 +1,6 @@
----
-id: EntitySelectionClass
-title: EntitySelection
----
+- - -
+id: EntitySelectionClass title: EntitySelection
+- - -
 
 
 Uma seleção de entidades é um objeto que contém uma ou mais referencias a [entidades](ORDA/dsMapping.md#entity) pertencentes à mesma [Dataclass](ORDA/dsMapping.md#dataclass). Uma seleção de entidades pode conter 0, 1 ou X entidades da dataclass -- onde X pode representar o número total de entidades contidas na dataclass.
@@ -540,7 +539,7 @@ Se quisermos obter uma lista de funcionários cujo salário for superior ao sal�
 
 #### Descrição
 
-A função `.contains()` <!-- REF #EntitySelectionClass.contains().Summary -->retorna true se a referência de entidade pertencer à seleção de entidade<!-- END REF -->, e false de outra forma.
+A função `.contains()` <!-- REF #EntitySelectionClass.contains().Summary -->retorna true se a referência de entidade pertencer à seleção de entidade<!-- END REF -->e false de outra forma.
 
 Em *entity*, especifique a entidade a buscar na entity selection. Se a entidade for Null, a função devolverá false.
 
@@ -637,7 +636,7 @@ Se quisermos encontrar o número total de empregados para uma empresa sem contar
 
 #### Descrição
 
-A função `.copy()` <!-- REF #EntitySelectionClass.copy().Summary -->retorna uma cópia da seleção de entidade original<!-- END REF -->.
+A função `.copy()` <!-- REF #EntitySelectionClass.copy().Summary -->retorna uma cópia da entity selection original<!-- END REF -->.
 
 > Esta função não modifica a seleção de entidades original.
 
@@ -850,7 +849,7 @@ $paths:=ds. Employee.all().distinctPaths("fullData")
 
 #### Descrição
 
-A função `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->remove as entidades pertencendo à seleção de entidade da tabela relacionada a dataclasse dentro da datastore<!-- END REF -->. A selecção da entidade permanece na memória.
+A função `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->remove as entidades pertencendo à seleção de entidade da tabela relacionada a dataclasse dentro da datastore<!-- END REF -->. A entity selection permanece na memória.
 > A eliminação de entidades é permanente e não pode ser desfeita. É recomendado chamar esta ação em uma transação para ter uma opção de recuperação.
 
 Se encontrar uma entidade bloqueada durante a execução de `.drop()`, não é eliminado. Como padrão o método processa todas as entidades da seleção de entidades e retorna as entidades não elimináveis na entity selection. Se quiser que o método pare a execução na primeira entidade não eliminável encontrada, passe a constante `dk stop dropping on first error` no parâmetro *mode*.
@@ -1082,7 +1081,7 @@ Há, entretanto, uma diferença entre ambas as afirmações quando a seleção e
 
 #### Descrição
 
-A função `.getDataClass()` <!-- REF #EntitySelectionClass.getDataClass().Summary -->retorna a dataclass da seleção de entidade<!-- END REF -->.
+A função `.getDataClass()` <!-- REF #EntitySelectionClass.getDataClass().Summary -->retorna a dataclass da entity selection<!-- END REF -->.
 
 Esta função é principalmente útil  no contexto do código genérico.
 
@@ -1229,7 +1228,7 @@ Form.products.add(Form.product)
 
 #### Descrição
 
-A função `.isOrdered()` <!-- REF #EntitySelectionClass.isOrdered().Summary -->devolve True se a selecção da entidade estiver ordenada<!-- END REF -->, e False se não for ordenada.
+A função `.isOrdered()` <!-- REF #EntitySelectionClass.isOrdered().Summary -->devolve True se a entity selection estiver ordenada<!-- END REF -->, e False se não for ordenada.
 > Esta função devolve sempre True quando a selecção da entidade provém de um datastore remoto.
 
 Para mais informação, consulte [Entity selection ordenadas ou desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
@@ -1321,7 +1320,7 @@ Se a entity selection estiver vazia, a função devolve Null.
 
 #### Descrição
 
-A propriedade `.length` <!-- REF #EntitySelectionClass.length.Summary -->retorna o número de entidades na seleção de entidade<!-- END REF -->. Se a selecção da entidade estiver vazia, devolve 0.
+A propriedade `.length` <!-- REF #EntitySelectionClass.length.Summary -->retorna o número de entidades na seleção de entidade<!-- END REF -->. Se a entity selection estiver vazia, devolve 0.
 
 As entity selections sempre têm uma propriedade `.length`.
 
@@ -1604,11 +1603,11 @@ Se a entity selection inicial e o parâmetro não forem relacionados com a mesma
 
 
 <!-- REF #EntitySelectionClass.orderBy().Params -->
-| Parâmetro   | Tipo                |    | Descrição                                                                 |
-| ----------- | ------------------- |:--:| ------------------------------------------------------------------------- |
-| pathString  | Text                | -> | Rota(s) de atributos e instruções de clasificação para a entity selection |
-| pathObjects | Collection          | -> | Coleção de objetos criterio                                               |
-| Resultados  | 4D. EntitySelection | <- | Nova seleção de entidade em ordem especificada|<!-- END REF -->
+| Parâmetro   | Tipo                |    | Descrição                                                                  |
+| ----------- | ------------------- |:--:| -------------------------------------------------------------------------- |
+| pathString  | Text                | -> | Rota(s) de atributos e instruções de classificação para a entity selection |
+| pathObjects | Collection          | -> | Coleção de objetos criterio                                                |
+| Resultados  | 4D. EntitySelection | <- | Nova entity selection na ordem especificada|<!-- END REF -->
 
 |
 
@@ -1696,7 +1695,7 @@ Se for passado um caminho de atributo inválido em *pathString* ou *pathObject*,
 
 #### Descrição
 
-A função `.orderByFormula()` <!-- REF #EntitySelectionClass.orderByFormula().Summary -->devolve uma nova selecção de entidade ordenada<!-- END REF --> **.orderByFormula**( *formulaString* : Text { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.
+A função `.orderByFormula()` <!-- REF #EntitySelectionClass.orderByFormula().Summary -->devolve uma nova entity selection ordenada<!-- END REF --> **.orderByFormula**( *formulaString* : Text { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.
 > Esta função não modifica a seleção de entidades original.
 
 Pode usar *formulaString* ou um parâmetro *formulaObj*:
