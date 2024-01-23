@@ -1,7 +1,6 @@
----
-id: general
-title: 一般ページ
----
+- - -
+id: general title: General page
+- - -
 
 一般ページでは、4Dプロジェクトの一般的なパラメーターを設定します。
 
