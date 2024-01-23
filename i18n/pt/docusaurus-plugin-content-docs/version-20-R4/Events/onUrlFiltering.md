@@ -1,7 +1,6 @@
----
-id: onUrlFiltering
-title: On URL Filtering
----
+- - -
+id: onUrlFiltering title: On URL Filtering
+- - -
 
 | Code | Pode ser chamado por                        | Definição                          |
 | ---- | ------------------------------------------- | ---------------------------------- |
