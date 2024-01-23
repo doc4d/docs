@@ -1,7 +1,6 @@
----
-id: creating
-title: Creación de menús y barras de menús
----
+- - -
+id: creating title: Creating menus and menu bars
+- - -
 
 Puede crear menús y barras de menús:
 
