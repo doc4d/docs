@@ -1,7 +1,6 @@
----
-id: onMenuSelected
-title: On Menu Selected
----
+- - -
+id: onMenuSelected title: On Menu Selected
+- - -
 
 | コード | 呼び出し元 | 定義                    |
 | --- | ----- | --------------------- |
