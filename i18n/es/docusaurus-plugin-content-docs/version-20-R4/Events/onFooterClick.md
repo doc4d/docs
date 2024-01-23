@@ -1,7 +1,6 @@
----
-id: onFooterClick
-title: On Footer Click
----
+- - -
+id: onFooterClick title: On Footer Click
+- - -
 
 | Code | Puede ser llamado por                                                                                                 | Definición                                              |
 | ---- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
