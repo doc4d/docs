@@ -1,7 +1,6 @@
----
-id: creating
-title: メニューとメニューバーの作成
----
+- - -
+id: creating title: Creating menus and menu bars
+- - -
 
 メニューおよびメニューバーを作成するには次の 2つの方法があります:
 
