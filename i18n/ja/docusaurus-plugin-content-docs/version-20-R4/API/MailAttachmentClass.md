@@ -1,7 +1,6 @@
----
-id: MailAttachmentClass
-title: MailAttachment
----
+- - -
+id: MailAttachmentClass title: MailAttachment
+- - -
 
 Attachment オブジェクトによって、[`Email`](EmailObjectClass.md) オブジェクト内のファイルを参照することができます。 MailAttachment オブジェクトは [`MAIL New attachment`](#mail-new-attachment) コマンドによって作成されます。
 
