@@ -1,7 +1,6 @@
----
-id: propertiesHeaders
-title: Cabeçalhos
----
+- - -
+id: propertiesHeaders title: Headers
+- - -
 
 ## Exibir cabeçalhos
 
