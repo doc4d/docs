@@ -1,7 +1,6 @@
----
-id: propertiesWebArea
-title: Webエリア
----
+- - -
+id: propertiesWebArea title: Web Area
+- - -
 
 ---
 ## 4Dメソッドコールを許可
