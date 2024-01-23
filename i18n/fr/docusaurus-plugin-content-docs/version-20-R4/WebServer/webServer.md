@@ -1,8 +1,6 @@
----
-id: webServer
-slug: overview
-title: Serveur Web
----
+- - -
+id: webServer slug: overview title: Web Server
+- - -
 
 4D en mode local et remote ainsi que 4D Server disposent d'un moteur de serveur web intégré (aussi appelé serveur HTTP) qui vous permet de créer et publier des applications web afin de tirer le maximum de vos bases de données 4D.
 
