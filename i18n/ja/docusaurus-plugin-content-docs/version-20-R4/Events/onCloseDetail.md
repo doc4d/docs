@@ -1,7 +1,6 @@
----
-id: onCloseDetail
-title: On Close Detail
----
+- - -
+id: onCloseDetail title: On Close Detail
+- - -
 
 | コード | 呼び出し元                                             | 定義                         |
 | --- | ------------------------------------------------- | -------------------------- |
