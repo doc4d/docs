@@ -1,7 +1,6 @@
----
-id: application-server
-title: アプリケーションサーバーページ
----
+- - -
+id: application-server title: Application Server Page
+- - -
 
 
 アプリケーションサーバーページには、4D Server が公開しているデスクトップアプリケーションについての情報がまとめられていて、公開を管理できます。
