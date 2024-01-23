@@ -1,7 +1,6 @@
----
-id: propertiesAnimation
-title: アニメーション
----
+- - -
+id: propertiesAnimation title: Animation
+- - -
 
 ## 先頭フレームに戻る
 
