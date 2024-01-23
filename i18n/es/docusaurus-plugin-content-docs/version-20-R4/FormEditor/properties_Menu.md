@@ -1,7 +1,6 @@
----
-id: menu
-title: Menú
----
+- - -
+id: menu title: Menu
+- - -
 
 
 ## Barra de menús asociada
