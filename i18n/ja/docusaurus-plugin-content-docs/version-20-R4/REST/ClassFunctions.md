@@ -1,7 +1,6 @@
----
-id: classFunctions
-title: ORDAクラス関数の呼び出し
----
+- - -
+id: classFunctions title: Calling ORDA class functions
+- - -
 
 
 RESTリクエストを使って、ORDAデータモデルに定義されている [データモデルクラス関数](ORDA/ordaClasses.md) を呼び出すことで、ターゲット 4Dアプリケーションの公開API を活用できます。
