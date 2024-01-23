@@ -1,7 +1,6 @@
----
-id: ordaClasses
-title: Classes du modèle de données
----
+- - -
+id: ordaClasses title: Data Model Classes
+- - -
 
 
 
