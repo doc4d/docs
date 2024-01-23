@@ -1,7 +1,6 @@
----
-id: quickTour
-title: ORDA の概要
----
+- - -
+id: quickTour title: A Quick Tour in ORDA
+- - -
 
 ORDA はオブジェクトベースであるため、ORDA を使うにはオブジェクト指向プログラミングの基本的な知識が必要です。
 
