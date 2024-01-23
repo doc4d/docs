@@ -1,7 +1,6 @@
----
-id: MailAttachmentClass
-title: MailAttachment
----
+- - -
+id: MailAttachmentClass title: MailAttachment
+- - -
 
 Los objetos adjuntos permiten referenciar archivos en un objeto [`Email`](EmailObjectClass.md). Los objetos Attachment (adjuntos) son creados utilizando el comando [`MAIL New attachment`](#mail-new-attachment).
 
