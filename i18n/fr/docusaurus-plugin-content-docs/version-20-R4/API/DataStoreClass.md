@@ -1,7 +1,6 @@
----
-id: DataStoreClass
-title: DataStore
----
+- - -
+id: DataStoreClass title: DataStore
+- - -
 
 Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fourni par ORDA pour référencer et accéder à une base de données. Les objets `Datastore` sont retournés par les commandes suivantes :
 
@@ -1271,7 +1270,7 @@ Vous souhaitez enregistrer des requêtes ORDA clientes dans la mémoire :
 
 #### Exemple 3
 
-Vous souhaitez enregistrer les requêtes du serveur ORDA dans un fichier spécifique et activer le numéro de séquence du log et la durée :
+You want to log ORDA server requests in a specific file and enable the log sequence number and duration:
 
 ```4d
 SET DATABASE PARAMETER(4D Server Log Recording;1)
