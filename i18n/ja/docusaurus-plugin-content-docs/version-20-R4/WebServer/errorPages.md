@@ -1,7 +1,6 @@
----
-id: errorPages
-title: カスタム HTTPエラーページ
----
+- - -
+id: errorPages title: Custom HTTP Error Pages
+- - -
 
 4D Web Server を使って、サーバーレスポンスのステータスコードに基づいて、クライアントに送信される HTTPエラーページをカスタマイズすることができます。 エラーページとは、以下のものを指します:
 
