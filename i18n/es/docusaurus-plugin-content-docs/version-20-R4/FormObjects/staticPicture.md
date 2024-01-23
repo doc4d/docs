@@ -1,7 +1,6 @@
----
-id: staticPicture
-title: Imagen estática
----
+- - -
+id: staticPicture title: Static picture
+- - -
 
 
 Las imágenes estáticas son [objetos estáticos](formObjects_overview.md#active-and-static-objects) que pueden ser utilizados para varios propósitos en los formularios 4D, incluyendo la decoración, el fondo o la interfaz de usuario:
