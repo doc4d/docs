@@ -1,7 +1,6 @@
----
-id: propertiesSubform
-title: サブフォーム
----
+- - -
+id: propertiesSubform title: Subform
+- - -
 
 ---
 ## 削除を許可
