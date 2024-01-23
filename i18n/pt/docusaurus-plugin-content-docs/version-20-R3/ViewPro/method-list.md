@@ -4692,7 +4692,7 @@ O parâmetro *borderStyleObj* permite que você defina o estilo das linhas da bo
 
 | Propriedade | Tipo    | Descrição                                       | Valores possíveis                                                                                                                                                                                                                                                                                                                                                            |
 | ----------- | ------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| color       | text    | Define a cor da margem. Predefinição = black.   | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                           |
+| color       | text    | Define a cor da margem. Predefinição = black.   | Sintaxe da cor CSS "#rrggbb" (sintaxe preferencial), sintaxe da cor CSS "rgb(r,g,b)" (sintaxe alternativa), nome da cor CSS (sintaxe alternativa)                                                                                                                                                                                                                            |
 | style       | Integer | Define o estilo da borda. Predefinição = vazio. | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
 
 Você pode definir a posição do *borderStyleObj* (ou seja, onde a linha é aplicada) com o *borderPosObj*:
@@ -4817,13 +4817,13 @@ Em *rangeObj*, passe um objeto que contenha um intervalo. If the range contains 
 
 The *propertyObj* parameter lets you specify the attributes to apply to the columns in the *rangeObj*. Estes atributos são:
 
-| Propriedade | Tipo    | Descrição                                                                    |
-| ----------- | ------- | ---------------------------------------------------------------------------- |
-| width       | number  | Largura da coluna expressa em píxeis                                         |
-| pageBreak   | boolean | True to insert a page break before the first column of the range, else false |
-| visible     | boolean | True se a coluna for visível, senão false                                    |
-| resizable   | boolean | True se a coluna puder ser redimensionada, senão false                       |
-| header      | text    | Texto do cabeçalho da coluna                                                 |
+| Propriedade | Tipo    | Descrição                                                                                 |
+| ----------- | ------- | ----------------------------------------------------------------------------------------- |
+| width       | number  | Largura da coluna expressa em píxeis                                                      |
+| pageBreak   | boolean | True para inserir uma quebra de página antes da primeira coluna do intervalo, senão false |
+| visible     | boolean | True se a coluna for visível, senão false                                                 |
+| resizable   | boolean | True se a coluna puder ser redimensionada, senão false                                    |
+| header      | text    | Texto do cabeçalho da coluna                                                              |
 
 #### Exemplo
 
@@ -5201,7 +5201,7 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 
 O comando `VP SET DATE VALUE` <!-- REF #_method_.VP SET DATE VALUE.Summary -->atribui um valor de data especificado a um intervalo de células designado<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
+Em *rangeObj*, passe um intervalo dá(s) célula(s) cujo valor pretende especificar. Se *rangeObj* incluir várias células, o valor especificado será repetido em cada célula.
 
 The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
 
@@ -5290,7 +5290,7 @@ $style.backColor:="#E6E6FA" //light purple color VP SET DEFAULT STYLE("myDoc";$s
 
 O comando `VP SET FIELD` <!-- REF #_method_.VP SET FIELD.Summary -->atribui um campo virtual do banco de dados 4D a um intervalo de células designado<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
+Em *rangeObj*, passe um intervalo dá(s) célula(s) cujo valor pretende especificar. In *rangeObj*, pass a range of the cell(s) whose value you want to specify.
 
 The *field* parameter specifies a 4D database [virtual field](formulas.md#referencing-fields-using-the-virtual-structure) to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
 
@@ -5535,7 +5535,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";False))
 
 O comando `VP SET PRINT INFO` <!-- REF #_method_.VP SET PRINT INFO.Summary -->defines the attributes to use when printing the *vpAreaName*<!-- END REF -->.
 
-Pass the name of the 4D View Pro area to print in *vpAreaName*. Se passar um nome que não existe, é devolvido um erro.
+Passe o nome da área 4D View Pro a ser impressa em *vpAreaName*. Se passar um nome que não existe, é devolvido um erro.
 
 Pode passar um objeto que contenha as definições para vários atributos de impressão no parâmetro *printInfo*. Para ver a lista completa dos atributos disponíveis, consulte [Atributos de impressão](configuring.md#print-attributes).
 
