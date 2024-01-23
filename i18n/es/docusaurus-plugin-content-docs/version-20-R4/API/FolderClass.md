@@ -1,7 +1,6 @@
----
-id: FolderClass
-title: Folder
----
+- - -
+id: FolderClass title: Folder
+- - -
 
 
 
