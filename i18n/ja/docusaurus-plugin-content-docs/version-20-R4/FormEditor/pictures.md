@@ -1,7 +1,6 @@
----
-id: pictures
-title: ピクチャー
----
+- - -
+id: pictures title: Pictures
+- - -
 
 フォーム上で使用されるピクチャーについて、4Dは次のようにサポートしています。
 
