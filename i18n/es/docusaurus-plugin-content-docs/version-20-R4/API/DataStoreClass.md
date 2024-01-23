@@ -1,7 +1,6 @@
----
-id: DataStoreClass
-title: DataStore
----
+- - -
+id: DataStoreClass title: DataStore
+- - -
 
 Un [Datastore](ORDA/dsMapping.md#datastore) es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos `Datastore` son devueltos por los siguientes comandos:
 
