@@ -1,8 +1,6 @@
----
-id: quick-tour
-title: Uma visita rápida
-sidebar_label: Uma visita rápida
----
+- - -
+id: quick-tour title: A Quick Tour sidebar_label: A Quick Tour
+- - -
 
 Usando a linguagem 4D, imprimir a mensagem tradicional ""Hello, world!" na tela pode ser feito de várias maneiras. A maneira mais simples é provavelmente escrever a linha única abaixo em um método de projeto:
 
