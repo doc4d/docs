@@ -1,7 +1,6 @@
----
-id: POP3TransporterClass
-title: POP3Transporter
----
+- - -
+id: POP3TransporterClass title: POP3Transporter
+- - -
 
 La clase `POP3Transporter` permite recuperar mensajes de un servidor de correo electrónico POP3.
 
@@ -107,7 +106,7 @@ La función devuelve un [**objeto POP3 transporter**](#pop3-transporter-object).
 | Parámetros | Tipo               |    | Descripción                                                                    |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
 | server     | Object             | -> | Información del servidor de correo                                             |
-| Result     | 4D.POP3Transporter | <- | [objeto POP3 transporter](#pop3-transporter-object)|<!-- END REF -->
+| Result     | 4D.POP3Transporter | <- | [POP3 transporter object](#pop3-transporter-object)|<!-- END REF -->
 
 |
 
