@@ -1,7 +1,6 @@
----
-id: boolean
-title: Boolean
----
+- - -
+id: boolean title: Boolean
+- - -
 
 Un champ, une variable ou une expression de type booléen peut être soit VRAI soit FAUX.
 
