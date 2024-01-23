@@ -1,7 +1,6 @@
----
-id: interpreted-compiled
-title: インタープリターモードとコンパイル済みモード
----
+- - -
+id: interpreted-compiled title: Interpreted and Compiled modes
+- - -
 
 4D アプリケーションは **インタープリター** または **コンパイル済み** モードで実行することができます:
 
