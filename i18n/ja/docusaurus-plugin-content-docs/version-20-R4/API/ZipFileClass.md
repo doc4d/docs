@@ -1,7 +1,6 @@
----
-id: ZipFileClass
-title: ZIPFile
----
+- - -
+id: ZipFileClass title: ZIPFile
+- - -
 
 [File](FileClass.md) クラスの次のプロパティや関数は `ZIPFile` オブジェクトにおいて利用可能です:
 
