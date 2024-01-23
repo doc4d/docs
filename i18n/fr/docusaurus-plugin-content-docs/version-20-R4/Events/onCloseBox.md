@@ -1,7 +1,6 @@
----
-id: onCloseBox
-title: On Close Box
----
+- - -
+id: onCloseBox title: On Close Box
+- - -
 
 | Code | Peut être appelé par | Définition                                       |
 | ---- | -------------------- | ------------------------------------------------ |
