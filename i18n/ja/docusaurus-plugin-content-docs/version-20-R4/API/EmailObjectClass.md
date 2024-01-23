@@ -1,7 +1,6 @@
----
-id: EmailObjectClass
-title: Email
----
+- - -
+id: EmailObjectClass title: Email
+- - -
 
 4Dにおけるメールの作成・送信・受信は `Email` オブジェクトの操作よっておこなわれます。
 
@@ -51,13 +50,13 @@ Email オブジェクトは次のプロパティを提供します:
 
 メールアドレスを格納するプロパティ ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) はすべて、テキスト・オブジェクト・コレクション型の値を受け付けます。
 
-#### テキスト
+#### Text
 
 - 単一のメールアドレス: "somebody@domain.com"
 - 単一の表示名+メールアドレス: "Somebody <somebody@domain.com>"
 - 複数のメールアドレス: "Somebody <somebody@domain.com>,me@home.org"
 
-#### オブジェクト
+#### Object
 
 2つのプロパティを持つオブジェクト:
 
@@ -66,7 +65,7 @@ Email オブジェクトは次のプロパティを提供します:
 | name  | Text | 表示名 (null も可能) |
 | email | Text | メールアドレス        |
 
-#### コレクション
+#### Collection
 
 アドレスオブジェクトのコレクション
 
