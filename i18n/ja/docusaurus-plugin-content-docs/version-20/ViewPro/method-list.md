@@ -989,15 +989,15 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 `VP EXPORT DOCUMENT` コマンドに任意の *paramObj* 引数を渡す場合、[`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
-| 変数 |               | タイプ     | 説明                                    |
-| -- | ------------- | ------- | ------------------------------------- |
-| $1 |               | text    | 4D View Pro オブジェクト名                   |
-| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス      |
-| $3 |               | object  | コマンドの *paramObj* 引数への参照               |
-| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト       |
-|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false     |
-|    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。   |
-|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
+| 変数 |               | タイプ     | 説明                                      |
+| -- | ------------- | ------- | --------------------------------------- |
+| $1 |               | text    | The name of the 4D View Pro area object |
+| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス        |
+| $3 |               | object  | コマンドの *paramObj* 引数への参照                 |
+| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト         |
+|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false       |
+|    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。     |
+|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。   |
 
 #### 例題 1
 
@@ -2882,6 +2882,7 @@ $tables:=VP Get tables("ViewProArea")
 
 
 
+
 #### 例題
 
 ```4d
@@ -3057,6 +3058,18 @@ $o.password:="excel123"
 
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
+
+```4d
+    //myImport callback method
+#DECLARE($area : Text; $filePath : Text; $param : Object; $status : Object)
+
+If ($status.success)
+     ALERT("Import successfully completed")
+Else 
+     ALERT("Error: "+$status.errorMessage)
+End if
+```
+
 
 #### 例題 3
 
@@ -5206,6 +5219,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 #### 説明
 
+
 `VP SET FORMULA` コマンドは、 <!-- REF #_method_.VP SET FORMULA.Summary -->指定されたセルレンジにフォーミュラまたは 4Dメソッドを割り当てます<!-- END REF -->。
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
@@ -5791,6 +5805,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options;2)
 var $options : Object
 
 $options:=New object
+
 $options.gridline:=New object()
 $options.gridline.showVerticalGridline:=False
 $options.gridline.showHorizontalGridline:=False
