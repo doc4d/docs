@@ -1,7 +1,6 @@
----
-id: string
-title: String
----
+- - -
+id: string title: String
+- - -
 
 String é um termo genérico que significa:
 
