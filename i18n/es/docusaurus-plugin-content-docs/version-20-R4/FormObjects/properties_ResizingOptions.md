@@ -1,7 +1,6 @@
----
-id: propertiesResizingOptions
-title: Opciones de redimensionamiento
----
+- - -
+id: propertiesResizingOptions title: Resizing Options
+- - -
 
 ## Redimensionamiento columnas auto
 
