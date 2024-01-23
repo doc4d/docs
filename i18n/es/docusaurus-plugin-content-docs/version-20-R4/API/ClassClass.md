@@ -1,7 +1,6 @@
----
-id: ClassClass
-title: Class
----
+- - -
+id: ClassClass title: Class
+- - -
 
 
 Cuando una clase usuario es [definida](Concepts/classes.md#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto en sí mismo, de la clase "Class", que tiene propiedades y una función.
