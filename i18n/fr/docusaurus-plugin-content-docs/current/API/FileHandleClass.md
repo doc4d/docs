@@ -372,11 +372,11 @@ Lorsque cette fonction est exécutée, la position courante ([.offset](#offset))
 
 La fonction `.readLine()` <!-- REF #FileHandleClass.readLine().Summary -->renvoie une ligne de texte à partir de la position courante jusqu'à ce qu'un délimiteur de fin de ligne soit rencontré ou que la fin du document soit atteinte<!-- END REF -->.
 
-When this function is executed, the current position ([`.offset`](#offset)) is updated.
+Lorsque cette fonction est exécutée, la position courante ([`.offset`](#offset)) est mise à jour.
 
 :::caution Avertissement
 
-This function assumes that the [`.offset`](#offset) property is a number of characters, not a number of bytes. For more information, see the [.offset description](#offset).
+Cette fonction suppose que la propriété [`.offset`](#offset) est un nombre de caractères et non un nombre d'octets. Pour plus d'informations, voir la [ description de .offset](#offset).
 
 :::
 
