@@ -1,7 +1,6 @@
----
-id: installation
-title: Installation
----
+- - -
+id: installation title: Installation
+- - -
 
 Bienvenue dans 4D ! Cette page regroupe toutes les informations nécessaires sur l'installation et le lancement de votre produit 4D.
 
