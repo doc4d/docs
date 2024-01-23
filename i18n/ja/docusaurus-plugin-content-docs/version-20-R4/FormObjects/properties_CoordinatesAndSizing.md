@@ -1,7 +1,6 @@
----
-id: propertiesCoordinatesAndSizing
-title: 座標とサイズ
----
+- - -
+id: propertiesCoordinatesAndSizing title: Coordinates & Sizing
+- - -
 
 ## 自動行高
 
