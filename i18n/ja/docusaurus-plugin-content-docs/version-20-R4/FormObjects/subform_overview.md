@@ -1,7 +1,6 @@
----
-id: subformOverview
-title: サブフォーム
----
+- - -
+id: subformOverview title: Subform
+- - -
 
 
 サブフォームとは、他のフォームに組み込まれるフォームのことです。
