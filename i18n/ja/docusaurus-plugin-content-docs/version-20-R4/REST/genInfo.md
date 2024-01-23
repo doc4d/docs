@@ -1,7 +1,6 @@
----
-id: genInfo
-title: サーバー情報の取得
----
+- - -
+id: genInfo title: Getting Server Information
+- - -
 
 RESTサーバーの次の情報を取得することができます:
 
