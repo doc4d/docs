@@ -1,7 +1,6 @@
----
-id: propertiesHeaders
-title: ヘッダー
----
+- - -
+id: propertiesHeaders title: Headers
+- - -
 
 ## ヘッダーを表示
 
