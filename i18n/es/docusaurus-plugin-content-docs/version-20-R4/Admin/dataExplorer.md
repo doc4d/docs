@@ -1,7 +1,6 @@
----
-id: dataExplorer
-title: Explorador de datos
----
+- - -
+id: dataExplorer title: Data Explorer
+- - -
 
 El Explorador de datos ofrece una interfaz web para ver y consultar los datos del almacén de datos de su proyecto. Utilizando esta herramienta, puede navegar fácilmente entre todas sus entidades y buscar, ordenar o filtrar los valores de los atributos. Le ayuda a controlar los datos y a identificar rápidamente los problemas en cualquier etapa del proceso de desarrollo.
 
