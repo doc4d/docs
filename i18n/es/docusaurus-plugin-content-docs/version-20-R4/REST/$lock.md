@@ -1,7 +1,6 @@
----
-id: lock
-title: '$lock'
----
+- - -
+id: lock title: $lock
+- - -
 
 
 Bloquea y desbloquea una entidad utilizando el [mecanismo pesimista](../ORDA/entities.md#pessimistic-lock).
@@ -73,7 +72,7 @@ El objeto "__STATUS" devuelto tiene las siguientes propiedades:
 
 Los siguientes valores pueden ser devueltos en las propiedade *status* y *statusText* del objeto *__STATUS* en caso de error:
 
-| estado | statusText                      | Comentario                                                                                                               |
+| status | statusText                      | Comentario                                                                                                               |
 | ------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | 2      | "Stamp has changed"             | El valor del sello interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).   |
 | 3      | "Already locked"                | La entidad está bloqueada por un bloqueo pesimista.                                                                      |
