@@ -1,7 +1,6 @@
----
-id: WebServerClass
-title: WebServer
----
+- - -
+id: WebServerClass title: WebServer
+- - -
 
 
 A `API da classe WebServer` permite que você inicie e monitore um servidor web para o aplicativo (host) principal, bem como cada componente hospedado (consulte a visão geral do objeto [Web Server](WebServer/webServerObject.md)). Esta classe está disponível na loja de classes de `4D`.
