@@ -1,7 +1,6 @@
----
-id: BlobClass
-title: Blob
----
+- - -
+id: BlobClass title: Blob
+- - -
 
 La clase Blob permite crear y manipular los [blob objects](../Concepts/dt_blob.md#blob-types) (`4D.Blob`).
 
