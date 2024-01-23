@@ -1,7 +1,6 @@
----
-id: EmailObjectClass
-title: Email
----
+- - -
+id: EmailObjectClass title: Email
+- - -
 
 La création, l'envoi et la réception d'emails dans 4D s'effectuent par l'intermédiaire des objets `Email`.
 
