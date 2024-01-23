@@ -1,7 +1,6 @@
----
-id: ZipFolderClass
-title: ZIPFolder
----
+- - -
+id: ZipFolderClass title: ZIPFolder
+- - -
 
 
 [Folder](FolderClass.md) クラスの次のプロパティや関数は `ZIPFolder` オブジェクトにおいて利用可能です:
