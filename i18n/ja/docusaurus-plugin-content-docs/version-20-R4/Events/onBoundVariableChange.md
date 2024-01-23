@@ -1,7 +1,6 @@
----
-id: onBoundVariableChange
-title: On Bound Variable Change
----
+- - -
+id: onBoundVariableChange title: On Bound Variable Change
+- - -
 
 | コード | 呼び出し元 | 定義                     |
 | --- | ----- | ---------------------- |
