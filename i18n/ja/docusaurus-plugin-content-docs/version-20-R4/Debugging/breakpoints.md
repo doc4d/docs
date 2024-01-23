@@ -1,7 +1,6 @@
----
-id: breakpoints
-title: ブレークポイントとキャッチコマンド
----
+- - -
+id: breakpoints title: Breakpoints and Command Catching
+- - -
 
 ## 概要
 
