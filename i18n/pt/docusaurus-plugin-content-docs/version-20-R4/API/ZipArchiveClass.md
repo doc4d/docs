@@ -1,7 +1,6 @@
----
-id: ZipArchiveClass
-title: ZIPArchive
----
+- - -
+id: ZipArchiveClass title: ZIPArchive
+- - -
 
 
 Um arquivo 4D Zip é um  objeto`File` ou `Folder` contendo um ou mais arquivos ou pastas, que são comprimidos para ter um tamanho menor que o original. Esses arquivos são criados com uma extensão ".zip" e podem ser usados para poupar espaço em disco ou transferir arquivos via meios que tenham limitações de tamanho (por exemplo, um email ou por uma rede).
