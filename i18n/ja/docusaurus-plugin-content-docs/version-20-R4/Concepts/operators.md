@@ -1,7 +1,6 @@
----
-id: operators
-title: 演算子
----
+- - -
+id: operators title: Operators
+- - -
 
 演算子とは、値のチェック・変更・結合に使用する記号または記号のグループです。 日常的に使用されている演算子も多くあります。 例えば、`1 + 2` という式は加算演算子 (プラス記号) を使用し、2つの数値を足し合わせて、3という結果を返します。 = や > などの比較演算子は、2つ以上の値を比較するためのものです。
 
@@ -72,24 +71,24 @@ $a+=2 // $a=3
 | -------- | ------------------ | ------- | ---------------------------------------------- |
 | 加算 (足し算) | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`              |
 |          | Number += Number   | Number  | `$n+=5 //$n:=$n+5`                             |
-|          | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                             |
-|          | Time += Time       | Time    | `$t1+=$t2 //$t1:=$t1+$t2`                      |
+|          | Date += Number     | 日付      | `$d+=5 //$d:=$d+5`                             |
+|          | Time += Time       | 時間      | `$t1+=$t2 //$t1:=$t1+$t2`                      |
 |          | Time += Number     | Number  | `$t1+=5 //$t1:=$t1+5`                          |
 |          | Picture += Picture | Picture | `$p1+=$p2 //$p1:=$p1+$p2 ($p1 の右に $p2 を追加します)` |
 |          | Picture += Number  | Picture | `$p1+=5 //$p1:=$p1+5 ($p1 を 5ピクセル右に移動します)`     |
 | 減算 (引き算) | Number -= Number   | Number  | `$n-=5 //$n:=$n-5`                             |
-|          | Date -= Number     | Date    | `$d-=5 //$d:=$d-5`                             |
-|          | Time -= Time       | Time    | `$t1-=$t2 //$t1:=$t1-$t2`                      |
+|          | Date -= Number     | 日付      | `$d-=5 //$d:=$d-5`                             |
+|          | Time -= Time       | 時間      | `$t1-=$t2 //$t1:=$t1-$t2`                      |
 |          | Time -= Number     | Number  | `$t1-=5 //$t1:=$t1-5`                          |
 |          | Picture -= Number  | Picture | `$p1-=5 //$p1:=$p1-5 ($p1 を 5ピクセル左に移動します)`     |
 | 除算 (割り算) | Number /= Number   | Number  | `$n/=5 //$n:=$n/5`                             |
-|          | Time /= Time       | Time    | `$t1/=$t2 //$t1:=$t1/$t2`                      |
+|          | Time /= Time       | 時間      | `$t1/=$t2 //$t1:=$t1/$t2`                      |
 |          | Time /= Number     | Number  | `$t1/=5 //$t1:=$t1/5`                          |
 |          | Picture /= Picture | Picture | `$p1/=$p2 //$p1:=$p1/$p2 ($p1 の下に $p2 を追加します)` |
 |          | Picture /= Number  | Picture | `$p1/=5 //$p1:=$p1/5 ($p1 を 5ピクセル垂直に移動します)`    |
 | 乗算 (かけ算) | Text *= Number     | Text    | `$t*="abc"  //$t:=$t*"abc"`                    |
 |          | Number *= Number   | Number  | `$n*=5 //$n:=$n*5`                             |
-|          | Time *= Time       | Time    | `$t1*=$t2 //$t1:=$t1*$t2`                      |
+|          | Time *= Time       | 時間      | `$t1*=$t2 //$t1:=$t1*$t2`                      |
 |          | Time *= Number     | Number  | `$t1*=5 //$t1:=$t1*5`                          |
 |          | Picture *= Number  | Picture | `$p1*=5 //$p1:=$p1*5 ($p1 を 5倍にリサイズします)`       |
 
