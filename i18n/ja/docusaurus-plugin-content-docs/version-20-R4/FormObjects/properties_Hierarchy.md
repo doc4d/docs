@@ -1,7 +1,6 @@
----
-id: propertiesHierarchy
-title: 階層
----
+- - -
+id: propertiesHierarchy title: Hierarchy
+- - -
 
 ## 階層リストボックス
 
