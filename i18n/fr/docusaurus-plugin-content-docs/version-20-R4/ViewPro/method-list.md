@@ -2581,7 +2581,7 @@ The `VP Get table column attributes` command <!-- REF #_method_.VP Get table col
 
 In _vpAreaName_, pass the name of the 4D View Pro area.
 
-In _sheet_, pass the index of the target sheet. If no index is specified or if you pass -1, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié ou si vous passez -1, la commande s'applique à la feuille courante.
 
 > La numérotation démarre à 0.
 
@@ -2643,7 +2643,7 @@ In _vpAreaName_, pass the name of the 4D View Pro area.
 
 In _columnName_, pass the name of the table column for which you want to get the index.
 
-In _sheet_, pass the index of the target sheet. If no index is specified or if you pass -1, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié ou si vous passez -1, la commande s'applique à la feuille courante.
 
 > La numérotation démarre à 0.
 
@@ -2697,7 +2697,7 @@ In _tableName_, pass the name of the table for which you want to get the dirty r
 
 By default, calling the command will clear the _dirty_ status from the current table. To keep this status untouched, pass `False` in the _reset_ parameter.
 
-In _sheet_, pass the index of the target sheet. If no index is specified or if you pass -1, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié ou si vous passez -1, la commande s'applique à la feuille courante.
 
 > La numérotation démarre à 0.
 
@@ -2762,7 +2762,7 @@ In the _onlyData_ parameter, you can pass one of the following constants to indi
 | `vk table full range` | 0      | Get the cell range for the table area with footer and header (default if omitted) |
 | `vk table data range` | 1      | Get the cell range for the table data area only                                                      |
 
-In _sheet_, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié, la commande s'applique à la feuille en cours.
 
 > La numérotation démarre à 0.
 
@@ -2849,7 +2849,7 @@ The `VP Get tables` command <!-- REF #_method_.VP Get tables.Summary -->returns 
 
 In _vpAreaName_, pass the name of the 4D View Pro area.
 
-In _sheet_, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié, la commande s'applique à la feuille en cours.
 
 > La numérotation démarre à 0.
 
@@ -3374,7 +3374,7 @@ If _tableName_ does not exist or if there is not enough space in the sheet, noth
 
 #### Exemple
 
-You create a table with a data context:
+Vous créez une table avec un contexte de données :
 
 ```4d
 var $context : Object
@@ -4113,7 +4113,7 @@ If _tableName_ does not exist, nothing happens.
 
 #### Exemple
 
-You create a table with a data context:
+Vous créez une table avec un contexte de données :
 
 ```4d
 var $context : Object
@@ -5858,7 +5858,7 @@ In _vpAreaName_, pass the name of the 4D View Pro area.
 
 In _visible_, pass `True` to display the print lines, and `False` to hide them. `True` is passed by default.
 
-In _sheet_, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié, la commande s'applique à la feuille en cours.
 
 > La numérotation démarre à 0.
 
@@ -5924,7 +5924,7 @@ In the _attributes_ parameter, pass an object that contains the properties to se
 | footerFormula       | text    | Formule de pied de colonne.                                                                                                                                                                      |
 | filterButtonVisible | boolean | Sets whether the table column's filter button is displayed (default is `True` when the table is created).                                                                     |
 
-In _sheet_, pass the index of the target sheet. If no index is specified or if you pass -1, the command applies to the current sheet.
+In _sheet_, pass the index of the target sheet. Si aucun numéro n'est spécifié ou si vous passez -1, la commande s'applique à la feuille courante.
 
 > La numérotation démarre à 0.
 
@@ -5932,7 +5932,7 @@ If _tableName_ is not found or if _column_ is higher than the number of columns,
 
 #### Exemple
 
-You create a table with a data context:
+Vous créez une table avec un contexte de données :
 
 ```4d
 var $context;$options : Object
@@ -6162,11 +6162,11 @@ In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`]
 
 The parameter _valueObj_ is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to _rangeObj_. Il peut contenir les propriétés suivantes :
 
-| Propriété | Type                                     | Description                                                                                                                                                      |
-| --------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| value     | Integer, Real, Boolean, Text, Date, Null | Value to assign to _rangeObj_ (except- time). Passez null pour effacer le contenu de la cellule.                                              |
-| time      | Real                                     | Time value (in seconds) to assign to _rangeObj_                                                                                               |
-| format    | Text                                     | Pattern for value/time property. For information on patterns and formatting characters, please refer to the [Cell Format](configuring.md#cell-format) paragraph. |
+| Propriété | Type                                     | Description                                                                                                                                                          |
+| --------- | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| value     | Integer, Real, Boolean, Text, Date, Null | Value to assign to _rangeObj_ (except- time). Passez null pour effacer le contenu de la cellule.                                                  |
+| time      | Real                                     | Time value (in seconds) to assign to _rangeObj_                                                                                                   |
+| format    | Text                                     | Modèle pour la propriété value/time. For information on patterns and formatting characters, please refer to the [Cell Format](configuring.md#cell-format) paragraph. |
 
 #### Exemple
 
