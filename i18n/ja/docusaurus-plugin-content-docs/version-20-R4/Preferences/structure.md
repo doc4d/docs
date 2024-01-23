@@ -1,7 +1,6 @@
----
-id: structure
-title: ストラクチャーページ
----
+- - -
+id: structure title: Structure Page
+- - -
 
 ## プライマリーキー
 
