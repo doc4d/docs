@@ -1,7 +1,6 @@
----
-id: onMenuSelected
-title: On Menu Selected
----
+- - -
+id: onMenuSelected title: On Menu Selected
+- - -
 
 | Code | Puede ser llamado por | Definición                                                      |
 | ---- | --------------------- | --------------------------------------------------------------- |
