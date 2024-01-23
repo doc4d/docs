@@ -1,8 +1,6 @@
----
-id: compact
-title: Página compactado
-sidebar_label: Página compactado
----
+- - -
+id: compact title: Compact Page sidebar_label: Compact Page
+- - -
 
 Esta página permite acceder a las funciones de compactación del archivos de datos.
 
