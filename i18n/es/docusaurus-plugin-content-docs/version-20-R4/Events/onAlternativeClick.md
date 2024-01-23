@@ -1,7 +1,6 @@
----
-id: onAlternativeClick
-title: On Alternative Click
----
+- - -
+id: onAlternativeClick title: On Alternative Click
+- - -
 
 | Code | Puede ser llamado por                                                                                                                                            | Definición                                         |
 | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
