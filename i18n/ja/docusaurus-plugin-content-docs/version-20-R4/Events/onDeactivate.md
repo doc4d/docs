@@ -1,7 +1,6 @@
----
-id: onDeactivate
-title: On Deactivate
----
+- - -
+id: onDeactivate title: On Deactivate
+- - -
 
 | コード | 呼び出し元 | 定義                        |
 | --- | ----- | ------------------------- |
