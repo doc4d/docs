@@ -1,8 +1,6 @@
----
-id: backup
-title: バックアップページ
-sidebar_label: バックアップページ
----
+- - -
+id: backup title: Backup Page sidebar_label: Backup Page
+- - -
 
 MSC のバックアップページは、データベースのバックアップ設定を表示し、手動のバックアップ処理を開始するのに使用します:
 
