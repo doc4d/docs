@@ -1,7 +1,6 @@
----
-id: comboBoxOverview
-title: コンボボックス
----
+- - -
+id: comboBoxOverview title: コンボボックス
+- - -
 
 コンボボックスは [ドロップダウンリスト](dropdownList_Overview.md#概要) と似ていますが、キーボードから入力されたテキストを受けいれる点と、二つの追加オプションがついている点が異なります。
 
