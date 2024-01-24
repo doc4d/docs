@@ -1,7 +1,6 @@
----
-id: propertiesFooters
-title: フッター
----
+- - -
+id: propertiesFooters title: フッター
+- - -
 
 ## フッターを表示
 
