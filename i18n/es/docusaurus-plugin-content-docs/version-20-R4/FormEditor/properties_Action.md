@@ -1,7 +1,6 @@
----
-id: action
-title: Acción
----
+- - -
+id: action title: Action
+- - -
 
 
 ## Método
