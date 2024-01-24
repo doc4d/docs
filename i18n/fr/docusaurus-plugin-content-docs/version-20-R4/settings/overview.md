@@ -1,7 +1,6 @@
----
-id: overview
-title: Settings
----
+- - -
+id: overview title: Settings
+- - -
 
 Les Paramètres configurent le fonctionnement du projet en cours. Ces paramètres peuvent être différents pour chaque projet. Ils comprennent les ports d'écoute, les configurations de sauvegarde, les options de sécurité, les paramètres Web, etc.
 
