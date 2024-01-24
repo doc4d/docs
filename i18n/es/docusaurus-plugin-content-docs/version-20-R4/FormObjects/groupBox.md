@@ -1,7 +1,6 @@
----
-id: groupBox
-title: Área de grupo
----
+- - -
+id: groupBox title: Group Box
+- - -
 
 Un área de grupo es un objeto estático que permite ensamblar visualmente varios objetos de formulario:
 
