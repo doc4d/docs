@@ -1,8 +1,7 @@
----
-id: querypath
-title: '$querypath'
----
-   	
+- - -
+id: querypath title: $querypath
+- - -
+
 4D Server によって実際に実行されたクエリを返します (*例*: `$querypath=true`)
 
 ## 説明
