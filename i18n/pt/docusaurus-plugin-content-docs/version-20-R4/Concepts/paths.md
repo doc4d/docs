@@ -1,7 +1,6 @@
----
-id: paths
-title: Pathnames
----
+- - -
+id: paths title: Pathnames
+- - -
 
 As funções, propriedades e comandos de File e Folders permitem tratar arquivos e pastas como objetos. Isto torna a gestão de arquivos e pastas poderosa e flexível. Por exemplo, para criar um novo arquivo na pasta Documentos do utilizador atual, pode escrever:
 
