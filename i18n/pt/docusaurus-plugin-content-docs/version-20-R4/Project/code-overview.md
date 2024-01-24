@@ -1,7 +1,6 @@
----
-id: code-overview
-title: Métodos e classes
----
+- - -
+id: code-overview title: Methods and classes
+- - -
 
 
 The 4D code used across your project is written in [methods](../Concepts/methods.md) and [classes](../Concepts/classes.md).
