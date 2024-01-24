@@ -1,7 +1,6 @@
----
-id: SignalClass
-title: Signal
----
+- - -
+id: SignalClass title: Signal
+- - -
 
 Sinais são ferramentas fornecidas pela linguagem 4D para gerenciar interações e evitar conflitos entre processos em uma aplicação multiprocesso. Sinais permitem assegurar que um ou mais processos vão esperar por uma tarefa específica a ser completada antes de continuar a execução. Qualquer processo pode esperar ou liberar um sinal.
 
