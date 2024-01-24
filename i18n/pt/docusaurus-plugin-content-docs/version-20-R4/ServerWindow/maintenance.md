@@ -1,7 +1,6 @@
----
-id: maintenance
-title: Página Manutenção
----
+- - -
+id: maintenance title: Maintenance Page
+- - -
 
 
 The **Maintenance** page of the 4D Server Administration window provides information concerning the current operation of the application. Ele também fornece acesso às funções básicas de manutenção:
@@ -89,4 +88,4 @@ This button suspends all currently logging operations started on the server. Est
 
 When the logs have been paused, the button title changes to **Resume logging**, so that you can resume the logging operations.
 
-> You can pause and resume logging using the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) command.
+> É possível pausar e retomar o registro em log usando o comando [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html).
