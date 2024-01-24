@@ -1,7 +1,6 @@
----
-id: propertiesWebArea
-title: Zones Web
----
+- - -
+id: propertiesWebArea title: Web Area
+- - -
 
 ---
 ## Accéder aux méthodes 4D
