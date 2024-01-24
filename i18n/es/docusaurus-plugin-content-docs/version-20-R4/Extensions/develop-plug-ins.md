@@ -1,7 +1,6 @@
----
-id: develop-plug-ins
-title: Plugins de desarrollo
----
+- - -
+id: develop-plug-ins title: Developing Plug-ins
+- - -
 
 ## ¿Por qué es necesario un plug-in?
 
