@@ -1,7 +1,6 @@
----
-id: classes
-title: Classes
----
+- - -
+id: classes title: Classes
+- - -
 
 As seguintes classes podem ser usadas no 4D View Pro.
 
@@ -260,7 +259,7 @@ A propriedade `.highlightFirstColumn` <!-- REF #TableTheme.highlightFirstColumn.
 **.theme**: [cs.ViewPro.TableThemeOptions](#tablethemeoptions)<br/>**.theme**: Text<!-- END REF -->
 
 
-A propriedade `.theme` <!-- REF #TableTheme.theme.Summary -->define um tema de tabela<!-- END REF -->. If Text: name of a [native SpreadJS theme](https://developer.mescius.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes).
+A propriedade `.theme` <!-- REF #TableTheme.theme.Summary -->define um tema de tabela<!-- END REF -->. Se Text: nome de um [tema nativo do tema SpreadJS](https://developer.mescius.com/spreadjs/api/classes/GC.Spread.Sheets.Tables.TableThemes).
 
 
 
