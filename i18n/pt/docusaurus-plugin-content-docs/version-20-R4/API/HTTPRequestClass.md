@@ -1,7 +1,6 @@
----
-id: HTTPRequestClass
-title: HTTPRequest
----
+- - -
+id: HTTPRequestClass title: HTTPRequest
+- - -
 
 A classe `HTTPRequest` permite-lhe tratar [`objectos HTTPRequest`](#httprequest-object) que podem ser utilizados para configurar e enviar pedidos para um servidor HTTP, bem como para processar as respostas do servidor HTTP.
 
@@ -74,7 +73,7 @@ Os objectos HTTPRequest fornecem as seguintes propriedades e funções:
 | Versão | Mudanças                                                       |
 | ------ | -------------------------------------------------------------- |
 | v20    | Validação TLS por padrão                                       |
-| v19 R7 | Support of *automaticRedirections* and *decodeData* properties |
+| v19 R7 | Suporte às propriedades *automaticRedirections* e *decodeData* |
 
 </details>
 
