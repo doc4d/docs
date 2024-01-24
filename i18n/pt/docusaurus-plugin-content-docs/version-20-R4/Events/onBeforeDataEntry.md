@@ -1,7 +1,6 @@
----
-id: onBeforeDataEntry
-title: On Before Data Entry
----
+- - -
+id: onBeforeDataEntry title: On Before Data Entry
+- - -
 
 | Code | Pode ser chamado por                                                                                                 | Definição                                                            |
 | ---- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
