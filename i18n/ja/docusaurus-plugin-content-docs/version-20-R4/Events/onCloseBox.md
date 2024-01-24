@@ -1,7 +1,6 @@
----
-id: onCloseBox
-title: On Close Box
----
+- - -
+id: onCloseBox title: On Close Box
+- - -
 
 | コード | 呼び出し元 | 定義                     |
 | --- | ----- | ---------------------- |
