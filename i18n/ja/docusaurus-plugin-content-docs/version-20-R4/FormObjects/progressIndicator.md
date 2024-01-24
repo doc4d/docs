@@ -1,7 +1,6 @@
----
-id: progressIndicator
-title: 進捗インジケーター
----
+- - -
+id: progressIndicator title: 進捗インジケーター
+- - -
 
 
 進捗インジケーター (または "サーモメーター") は図形を用いて値を表示するオブジェクトです。
