@@ -1,7 +1,6 @@
----
-id: WebFormItemClass
-title: WebFormItem
----
+- - -
+id: WebFormItemClass title: WebFormItem
+- - -
 
 <details><summary>Histórico</summary>
 
@@ -14,7 +13,7 @@ title: WebFormItem
 
 `4D.WebFormItem` objects are properties of the [`4D.WebForm`](WebFormItemClass.md) object returned by the [`Web Form`](WebFormClass.md#web-form) command.
 
-The `WebFormItem` class is detailed in the [Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass).
+A classe `WebFormItem` está detalhada na documentação[Qodly](https://developer.qodly.com/docs/language/WebFormItemClass).
 
 
 ### Objeto WebFormItem
@@ -44,7 +43,7 @@ The `WebFormItem` class is detailed in the [Qodly documentation](https://develop
 A função `.hide()` <!-- REF #WebFormItemClass.hide().Summary -->oculta o componente<!-- END REF -->.
 
 
-For more information, please refer to the [`.hide()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#hide).
+Para obter mais informações, consulte a descrição [`.hide()` na documentação de Qodly](https://developer.qodly.com/docs/language/WebFormItemClass#hide).
 
 
 ### .show()
@@ -64,7 +63,7 @@ For more information, please refer to the [`.hide()` description in the Qodly do
 
 A função `.show()` <!-- REF #WebFormItemClass.show().Summary -->torna o componente visível<!-- END REF -->.
 
-For more information, please refer to the [`.show()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#show).
+Para obter mais informações, consulte a descrição de [`.show()` na documentação de Qodly](https://developer.qodly.com/docs/language/WebFormItemClass#show).
 
 
 ### .addCSSClass()
@@ -101,7 +100,7 @@ For more information, please refer to the [`.addCSSClass` description in the Qod
 
 A função `.removeCSSClass()` <!-- REF #WebFormItemClass.removeCSSClass().Summary -->remove a classe especificada em *className* do componente<!-- END REF -->.
 
-For more information, please refer to the [`.removeCSSClass()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#removecssclass). 
+Para obter mais informações, consulte a descrição [`.removeCSSClass()` na documentação de Qodly](https://developer.qodly.com/docs/language/WebFormItemClass#removecssclass). 
 
 
 
