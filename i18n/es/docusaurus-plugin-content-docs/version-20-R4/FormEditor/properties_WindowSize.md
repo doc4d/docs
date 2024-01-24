@@ -1,7 +1,6 @@
----
-id: windowSize
-title: Tamaño de la ventana
----
+- - -
+id: windowSize title: Window Size
+- - -
 
 
 ## Alto fijo
