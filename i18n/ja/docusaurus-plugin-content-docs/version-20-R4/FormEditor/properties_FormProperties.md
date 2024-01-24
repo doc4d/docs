@@ -1,7 +1,6 @@
----
-id: propertiesForm
-title: フォームプロパティ
----
+- - -
+id: propertiesForm title: フォームプロパティ
+- - -
 
 ---
 
