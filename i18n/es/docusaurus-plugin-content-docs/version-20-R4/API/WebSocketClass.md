@@ -1,7 +1,6 @@
----
-id: WebSocketClass
-title: WebSocket
----
+- - -
+id: WebSocketClass title: WebSocket
+- - -
 
 <details><summary>Histórico</summary>
 
@@ -85,7 +84,7 @@ Los objetos WebSocket ofrecen las siguientes propiedades y funciones:
 | ------------------------------------------------- | ------------ |:--:| ---------------------------------------------------------------------- |
 | url                                               | Text         | -> | URL a la que conectarse                                                |
 | [connectionHandler](#connectionHandler-parameter) | Object       | -> | Objeto que declara las retrollamadas WebSocket                         |
-| Resultado                                         | 4D.WebSocket | <- | Nuevo [objeto WebSocket](#websocket-object)|<!-- END REF -->
+| Result                                            | 4D.WebSocket | <- | Nuevo [objeto WebSocket](#websocket-object)|<!-- END REF -->
 
 
 |
