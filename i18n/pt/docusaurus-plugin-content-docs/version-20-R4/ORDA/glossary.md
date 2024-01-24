@@ -1,7 +1,6 @@
----
-id: glossary
-title: Glossary
----
+- - -
+id: glossary title: Glossary
+- - -
 
 ## Principais conceitos em resumo
 
