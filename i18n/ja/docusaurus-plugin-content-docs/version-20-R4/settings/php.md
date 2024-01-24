@@ -1,7 +1,6 @@
----
-id: php
-title: PHP ページ
----
+- - -
+id: php title: PHP ページ
+- - -
 
 4D では [PHP スクリプトを実行できます](https://doc.4d.com/4Dv20/4D/20.1/Executing-PHP-scripts-in-4D.300-6480814.ja.html)。 このページでは、そのインタープリターを設定します。
 
