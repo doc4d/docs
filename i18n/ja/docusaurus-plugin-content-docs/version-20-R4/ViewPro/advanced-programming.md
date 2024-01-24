@@ -1,7 +1,6 @@
----
-id: advanced-programming
-title: Javascript による高度なプログラミング
----
+- - -
+id: advanced-programming title: Javascript による高度なプログラミング
+- - -
 
 4D View Pro Area エリアは、[埋め込みWebレンダリングエンジン](../FormObjects/properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) を使用する [Webエリアフォームオブジェクト](../FormObjects/webArea_overview.md) です。 つまり、他のWebエリアと同様に、[`WA Evaluate Javascript`](https://doc.4d.com/4dv20/help/command/ja/page1029.html) 4Dコマンドを呼び出すことで、Javascript のコードを実行させることができます。
 
