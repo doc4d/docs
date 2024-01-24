@@ -1,7 +1,6 @@
----
-id: propertiesAnimation
-title: Animation
----
+- - -
+id: propertiesAnimation title: Animation
+- - -
 
 ## Recommencer la séquence
 
