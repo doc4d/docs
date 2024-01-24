@@ -1,7 +1,6 @@
----
-id: webAreaOverview
-title: Webエリア
----
+- - -
+id: webAreaOverview title: Webエリア
+- - -
 
 
 Webエリアは、静的および動的な HTMLページ、ファイル、ピクチャー、JavaScript などの様々な Webコンテンツをフォーム中で表示することのできるオブジェクトです。 Webエリアの描画エンジンは、アプリケーションの実行プラットフォームおよび [埋め込みWebレンダリングエンジンを使用](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) オプションの設定状態により異なります。
