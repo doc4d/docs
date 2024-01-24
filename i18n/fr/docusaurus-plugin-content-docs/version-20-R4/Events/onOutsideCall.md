@@ -1,7 +1,6 @@
----
-id: onOutsideCall
-title: Sur appel extérieur
----
+- - -
+id: onOutsideCall title: On Outside Call
+- - -
 
 | Code | Peut être appelé par | Définition                                        |
 | ---- | -------------------- | ------------------------------------------------- |
