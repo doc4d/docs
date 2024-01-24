@@ -1,7 +1,6 @@
----
-id: propertiesCrop
-title: 行列数
----
+- - -
+id: propertiesCrop title: 行列数
+- - -
 
 
 ## 列
