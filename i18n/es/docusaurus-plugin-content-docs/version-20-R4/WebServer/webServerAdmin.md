@@ -1,7 +1,6 @@
----
-id: webServerAdmin
-title: Administración
----
+- - -
+id: webServerAdmin title: Administration
+- - -
 
 4D ofrece varias herramientas integradas para iniciar, detener o supervisar el servidor web integrado.
 
