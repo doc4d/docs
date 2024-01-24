@@ -1,7 +1,6 @@
----
-id: propertiesGridlines
-title: Rejillas
----
+- - -
+id: propertiesGridlines title: Gridlines
+- - -
 
 ## Color líneas horizontales
 
