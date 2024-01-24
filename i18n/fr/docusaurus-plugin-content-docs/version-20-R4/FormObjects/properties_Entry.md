@@ -1,7 +1,6 @@
----
-id: propertiesEntry
-title: Saisie
----
+- - -
+id: propertiesEntry title: Entry
+- - -
 
 ## Correction orthographique
 
