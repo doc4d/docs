@@ -1,7 +1,6 @@
----
-id: EntitySelectionClass
-title: EntitySelection
----
+- - -
+id: EntitySelectionClass title: EntitySelection
+- - -
 
 
 Une entity selection est un objet contenant une ou plusieurs référence(s) à des [entités](ORDA/dsMapping.md#entity) appartenant à la même [Dataclass](ORDA/dsMapping.md#dataclass). Une entity selection peut contenir 0, 1 ou X entités de la dataclass - où X peut représenter le nombre total d'entités contenues dans la dataclass.
