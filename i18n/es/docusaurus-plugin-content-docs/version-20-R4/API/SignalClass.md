@@ -1,7 +1,6 @@
----
-id: SignalClass
-title: Signal
----
+- - -
+id: SignalClass title: Signal
+- - -
 
 Las señales son herramientas que ofrece el lenguaje 4D para gestionar las interacciones y evitar conflictos entre procesos en una aplicación multiproceso. Las señales le permiten asegurarse de que uno o más procesos esperarán a que se complete una tarea específica antes de continuar la ejecución. Todo proceso puede esperar y/o liberar una señal.
 
