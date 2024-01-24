@@ -1,7 +1,6 @@
----
-id: propertiesAction
-title: Action
----
+- - -
+id: propertiesAction title: Action
+- - -
 
 
 ---
