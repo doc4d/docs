@@ -1,7 +1,6 @@
----
-id: dataClass
-title: dataClass
----
+- - -
+id: dataClass title: dataClass
+- - -
 
 エンティティやセンティティセレクション、またはクラス関数を利用するにあたって、RESTリクエスト内にデータクラス名を直接使用することができます。
 
