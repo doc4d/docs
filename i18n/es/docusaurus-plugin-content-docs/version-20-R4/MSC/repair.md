@@ -1,8 +1,6 @@
----
-id: repair
-title: Página Reparación
-sidebar_label: Página Reparación
----
+- - -
+id: repair title: Repair Page sidebar_label: Repair Page
+- - -
 
 Esta página se utiliza para reparar el archivo de datos cuando se ha dañado. Generalmente, sólo utilizará estas funciones bajo la supervisión de los equipos técnicos de 4D, cuando se hayan detectado anomalías al abrir la aplicación o tras una [verificación](verify.md).
 
@@ -65,7 +63,7 @@ A continuación, seleccione la tabla que desea asignar al grupo en la tabla "Tab
 
 Una vez finalizada la reparación, 4D genera un archivo de registro en la carpeta Logs del proyecto. Este archivo permite ver todas las operaciones realizadas. Se crea en formato XML y se llama: *ApplicationName**_Repair_Log_yyyy-mm-dd hh-mm-ss.xml*" donde:
 
-- *ApplicationName* es el nombre del archivo de proyecto sin ninguna extensión, por ejemplo "Facturas",
+- *ApplicationName* es el nombre del archivo del proyecto sin ninguna extensión, por ejemplo "Facturas",
 - *yyyy-mm-dd hh-mm-ss* es la marca de tiempo del archivo, basada en la hora del sistema local cuando se inició la operación de mantenimiento, por ejemplo "2019-02-11 15-20-45".
 
 Al presionar el botón **Abrir archivo de historial**, 4D muestra el archivo de historial más reciente en el navegador por defecto de la máquina.
