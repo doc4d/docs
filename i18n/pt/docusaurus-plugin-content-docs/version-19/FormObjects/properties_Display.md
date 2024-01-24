@@ -254,7 +254,7 @@ As opções de truncagem e escala não afetam a imagem em si. O conteúdo de um 
 
 `Gramática JSON: "scaled"`
 
-The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
+O formato **Scaled to fit** faz com que o 4D redimensione a imagem para se ajustar às dimensões da área.
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
@@ -285,11 +285,11 @@ If you have applied the **Scaled to fit centered (proportional)** format, the pi
 
 `Gramática JSON: "tiled"`
 
-When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
+Quando a área que conter uma imagem com o formato **Replicated** for ampliada, a imagem não é deformada, mas é replicada tantas vezes quantas as necessárias para preencher totalmente a área.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
 
-If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
+Se o campo for reduzido para um tamanho inferior ao da imagem original, a imagem é truncada (não centrada).
 
 #### Gramática JSON
 
