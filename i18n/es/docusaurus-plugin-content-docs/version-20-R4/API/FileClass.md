@@ -1,7 +1,6 @@
----
-id: FileClass
-title: File
----
+- - -
+id: FileClass title: File
+- - -
 
 Los objetos `File` se crean con el comando [`File`](#file). Contienen referencias a archivos de disco que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando `File` para crear un nuevo archivo, se crea un objeto `File` válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función [`file.create( )`](#create).
 
