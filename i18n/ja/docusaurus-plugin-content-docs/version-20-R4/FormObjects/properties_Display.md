@@ -1,7 +1,6 @@
----
-id: propertiesDisplay
-title: 表示
----
+- - -
+id: propertiesDisplay title: 表示
+- - -
 
 ---
 
