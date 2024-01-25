@@ -4610,18 +4610,18 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 #### 説明
 
-The `VP SET BORDER` command <!-- REF #_method_.VP SET BORDER.Summary -->applies the border style(s) defined in _borderStyleObj_ and _borderPosObj_ to the range defined in the _rangeObj_<!-- END REF -->.
+`VP SET BORDER` コマンドは、<!-- REF #_method_.VP SET BORDER.Summary -->_rangeObj_ のレンジに _borderStyleObj_ および _borderPosObj_ で定義される境界線スタイルを適用します<!-- END REF -->。
 
-In _rangeObj_, pass a range of cells where the border style will be applied. If the _rangeObj_ contains multiple cells, borders applied with `VP SET BORDER` will be applied to the _rangeObj_ as a whole (as opposed to the [`VP SET CELL STYLE`](#vp-set-cell-style) command which applies borders to each cell of the _rangeObj_). If a style sheet has already been applied, `VP SET BORDER` will override the previously applied border settings for the _rangeObj_.
+_rangeObj_ 引数には、境界線スタイルを適用したいセルのレンジを渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、`VP SET BORDER` で適用される境界線は、_rangeObj_ のレンジ全体を一つのセルとして適用されます (これに対し、[`VP SET CELL STYLE`](#vp-set-cell-style) コマンドでは_rangeObj_ 引数のレンジに含まれる個々のセルに対し境界線が適用されます)。 スタイルシートがすでに適用されている場合、`VP SET BORDER` コマンドは _rangeObj_ のレンジに対してすでに適用されていた境界線設定を上書きします。
 
-The _borderStyleObj_ parameter allows you to define the style for the lines of the border. The _borderStyleObj_ supports the following properties:
+_borderStyleObj_ 引数を使用すると、境界線のスタイルを定義することができます。 _borderStyleObj_ 引数は、以下のプロパティをサポートしています:
 
 | プロパティ | タイプ     | 説明                             | とりうる値                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----- | ------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | color | text    | 境界線のカラーを定義します。 デフォルト = black   | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                                                                     |
 | style | Integer | 境界線のスタイルを定義します。 デフォルト = empty。 | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
 
-You can define the position of the _borderStyleObj_ (i.e., where the line is applied) with the _borderPosObj_:
+_borderStyleObj_ の境界線スタイルの位置 (どこに境界線を引くか) は _borderPosObj_ 引数で定義します:
 
 | プロパティ           | タイプ     | 説明                        |
 | --------------- | ------- | ------------------------- |
@@ -4649,15 +4649,15 @@ VP SET BORDER(VP Cells("ViewProArea";1;1;3;3);$border;$option)
 
 #### 例題 2
 
-This code demonstrates the difference between `VP SET BORDER` and setting borders with the [`VP SET CELL STYLE`](#vp-set-cell-style) command:
+以下のコードは、`VP SET BORDER` と [`VP SET CELL STYLE`](#vp-set-cell-style) で境界線を設定した場合の違いを示します:
 
 ```4d
-// Set borders using VP SET BORDER
+// VP SET BORDER で境界線を設定します
 $border:=New object("color";"red";"style";vk line style thick)
 $option:=New object("outline";True)
 VP SET BORDER(VP Cells("ViewProArea";1;1;3;3);$border;$option)
- 
-// // Set borders using VP SET CELL STYLE
+
+// VP SET CELL STYLE を使用して境界線を設定します
 $cellStyle:=New object
 $cellStyle.borderBottom:=New object("color";"blue";"style";vk line style thick)
 $cellStyle.borderRight:=New object("color";"blue";"style";vk line style thick)
@@ -4685,9 +4685,9 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 #### 説明
 
-The `VP SET CELL STYLE` command <!-- REF #_method_.VP SET CELL STYLE.Summary -->applies the style(s) defined in the _styleObj_ to the cells defined in the _rangeObj_<!-- END REF -->.
+`VP SET CELL STYLE` コマンドは、<!-- REF #_method_.VP SET CELL STYLE.Summary -->_styleObj_ に定義されているスタイルを、_rangeObj_ で定義されたセルに適用します<!-- END REF -->。
 
-In _rangeObj_, pass a range of cells where the style will be applied. If the _rangeObj_ contains multiple cells, the style is applied to each cell.
+_rangeObj_ 引数には、スタイルを適用したいセルのレンジを渡します。 _rangeObj_ に複数のセルが含まれる場合、スタイルはそれぞれのセルに割り当てられます。
 
 > Borders applied with `VP SET CELL STYLE` will be applied to each cell of the _rangeObj_, as opposed to the [VP SET BORDER](#vp-set-border) command which applies borders to the _rangeObj_ as a whole.
 
