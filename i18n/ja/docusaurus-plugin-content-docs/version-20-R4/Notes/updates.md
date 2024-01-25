@@ -14,7 +14,7 @@ title: リリースノート
 - HTML への直接の [ストラクチャー定義の書き出し](https://doc.4d.com/4Dv20R4/4D/20-R4/Exporting-and-importing-structure-definitions.300-6654851.ja.html) をサポート。
 - 実行エラーを防ぐため、コード入力、シンタックスチェック、およびコンパイルステップにおけるコード管理を強化する新しい [コードライブチェッカー](../code-editor/write-class-method.md#警告とエラー)。
 - `#DECLARE` プロトタイプで宣言されたメソッドの引数は、["Compiler_" メソッドではもはや必要ありません](../Concepts/parameters.md#コンパイル)。
-- Support of [custom date and time formats](../Project/date-time-formats.md)
+- [日付・時間のカスタムフォーマット](../Project/date-time-formats.md) をサポート
 - 新しい [`Try(expression)` キーワード](../Concepts/error-handling.md#tryexpression) で単純なエラーケースを処理できます。
 - 新しい [`HTTP Parse message`](../API/HTTPRequestClass.md#http-parse-message) コマンド。
 - 新しい [ノンブロッキング印刷](../settings/compatibility.md) 互換性オプション。
