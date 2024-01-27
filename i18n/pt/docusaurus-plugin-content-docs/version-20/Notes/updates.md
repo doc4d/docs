@@ -285,7 +285,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 </details>
 
 
-## Tabela da biblioteca
+## Library table (4D v20 LTS)
 
 
 
@@ -295,7 +295,8 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | CEF        | 109          | 20               | Chromium 5414. CORS policies now also apply when accessing files on disk (see the "security" paragraph on web areas in the [4D v19 R5](#4d-v19-r5) section above). |
 | Hunspell   | 7.3.27       | 20               | Usado para verificação ortográfica em formulários 4D e 4D Write Pro                                                                                                |
 | PDFWriter  | 4.3          | 20               | Dependência FreeType na 12.2.1                                                                                                                                     |
-| SpreadJS   | 19.6         | 20               | Motor 4D View Pro                                                                                                                                                  |
+| SpreadJS   | 16.2.6       | 20.2 HF1         | Motor 4D View Pro                                                                                                                                                  |
+|            | 19.6         | 20               |                                                                                                                                                                    |
 | OpenSSL    | 3.1.1        | 20               |                                                                                                                                                                    |
 | libZip     | 19.5         | 20               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                                               |
 | LZMA       | 5.4.1        | 20               |                                                                                                                                                                    |
