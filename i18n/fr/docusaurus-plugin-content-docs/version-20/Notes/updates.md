@@ -286,7 +286,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 </details>
 
 
-## Tableau des bibliothèques
+## Library table (4D v20 LTS)
 
 
 
@@ -296,7 +296,8 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | CEF          | 109              | 20                  | Chromium 5414. CORS policies now also apply when accessing files on disk (see the "security" paragraph on web areas in the [4D v19 R5](#4d-v19-r5) section above). |
 | Hunspell     | 1.7.2            | 20                  | Utilisé pour la vérification orthographique dans les formulaires 4D et 4D Write Pro                                                                                |
 | PDFWriter    | 4.3              | 20                  | FreeType dependency dans 12.2.1                                                                                                                                    |
-| SpreadJS     | 16.0.4           | 20                  | Moteur 4D View Pro                                                                                                                                                 |
+| SpreadJS     | 16.2.6           | 20.2 HF1            | Moteur 4D View Pro                                                                                                                                                 |
+|              | 16.0.4           | 20                  |                                                                                                                                                                    |
 | OpenSSL      | 3.1.1            | 20                  |                                                                                                                                                                    |
 | libZip       | 1.9.2            | 20                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                                                                         |
 | LZMA         | 5.4.1            | 20                  |                                                                                                                                                                    |
