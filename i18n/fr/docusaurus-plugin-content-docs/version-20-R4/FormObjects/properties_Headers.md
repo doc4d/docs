@@ -1,5 +1,5 @@
 - - -
-id: propertiesHeaders title: Headers
+id: propertiesHeaders title: En-têtes
 - - -
 
 ## Afficher en-têtes
