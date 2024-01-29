@@ -1,5 +1,5 @@
 - - -
-id: quick-tour title: A Quick Tour sidebar_label: A Quick Tour
+id: quick-tour title: Tour d'horizon sidebar_label: Tour d'horizon
 - - -
 
 En utilisant le langage 4D, le traditionnel "Hello, world!" peut s'afficher à l'écran de plusieurs manières. Le plus simple est probablement d'écrire la ligne suivante dans une méthode de projet :
@@ -127,7 +127,7 @@ For($vlChar;1;Length(vtSomeText))
 End for
 ```
 
-Une méthode projet peut en appeler une autre avec ou sans les paramètres (arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Les paramètres sont directement disponibles dans la méthode appelée s'ils ont été déclarés. Une méthode peut renvoyer une seule valeur dans un paramètre, qui doit être déclaré. Lorsque vous appelez une méthode, vous saisissez simplement son nom :
+Une méthode projet peut en appeler une autre avec ou sans les paramètres (arguments). Les paramètres sont passés à la méthode entre parenthèses, à la suite du nom de la méthode. Chaque paramètre est séparé par des points virgule (;). Une méthode peut renvoyer une seule valeur dans un paramètre, qui doit être déclaré. Lorsque vous appelez une méthode, vous saisissez simplement son nom : Les paramètres sont directement disponibles dans la méthode appelée s'ils ont été déclarés.
 
 ```4d
 $myText:="hello"
@@ -183,6 +183,7 @@ A noter que si la valeur de la propriété de l'objet est un objet qui encapsule
 ```
 $f:=New object
 $f.message:=Formula(ALERT("Hello world !"))
+$f.message() //affiche "Hello world!"
 $f.message() //affiche "Hello world!"
 ```
 
@@ -285,7 +286,7 @@ Les expressions sont rarement «autonomes». Expressions rarely “stand alone.�
 
 
 ### Types d’expressions
-Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
+Vous vous référez à une expression via le type de données qu’elle retourne. Il existe plusieurs types d’expressions : Il existe plusieurs types d’expressions : Le tableau suivant donne des exemples de chaque type d'expression.
 
 | Expression              | Type                  | Description                                                                                                                                                                          |
 | ----------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
