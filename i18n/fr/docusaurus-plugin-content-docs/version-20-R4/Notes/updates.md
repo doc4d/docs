@@ -188,7 +188,8 @@ Read [**What’s new in 4D v19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-
 - Pour des raisons de cohérence avec les interfaces standard (par exemple, les explorateurs de fichiers OS), les règles de la boîte à liste pour la sélection des lignes/le glisser-déposer ont été modifiées. A continuous or discontinuous selection of rows can be dragged by simply clicking on and moving a selected row; the **Alt** key is not longer necessary (but can still be used like in previous previous). When the **Shift** or **Ctrl/Command** key is pressed, a mouse click is taken into account when the click is down. For more information on drag and drop in list boxes, you can refer to [this blog post](https:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/) and download [this HDI 4D project](https://github.com/4d-depot/HDI_LB_DragAndDrop).
 - La numérotation interne de 4D a été modifiée à partir de 4D v19 R7 :
   - Les versions jusqu'à 4D v19 R6 (incluses) sont numérotées 282xxx,
-  - releases from 4D v19 R7 will be numbered 100xxx.\
+  - Points forts\
+    releases from 4D v19 R7 will be numbered 100xxx.\
     Note that a specific 4D version is still uniquely identified by a branch name and a build number. Le numéro de build augmente par ordre chronologique.
 - La possibilité d'utiliser le protocole REST de Wakanda/4D Mobile pour appeler une méthode de projet a été supprimée. You can use [ORDA data model class functions](../REST/ClassFunctions.md) or [/4DACTION urls](../WebServer/httpRequests.md#4daction) instead.
 
@@ -290,7 +291,8 @@ For detailed information, please refer to [this blog post](https://blog.4d.com/s
 
 - Runtime Explorer shortcut removed in built projects: The **Cmd/Ctrl+Shift+F9** shortcut does no longer display the Runtime Explorer window in single-user merged project applications. Ce raccourci peut désormais être un raccourci d'application utilisateur. You can call the Runtime Explorer window using the new `OPEN RUNTIME EXPLORER` command.
 
-- Capacités de débogage étendues avec 4D Server : En mode interprété, 4D Server peut désormais déboguer tous les types de process, y compris les sessions web évolutives. This is available when the debugger is attached to the server or to a remote client.\
+- Capacités de débogage étendues avec 4D Server : En mode interprété, 4D Server peut désormais déboguer tous les types de process, y compris les sessions web évolutives. Points forts\
+  This is available when the debugger is attached to the server or to a remote client.\
   _Warning: In interpreted mode, in order to make extented debugging available on the server machine, all server processes are now automatically executed in cooperative mode when the debugger is attached to the server (default setting). Cela peut avoir un impact significatif sur les performances de vos applications converties lorsqu'elles fonctionnent avec 4D Server v19 R3 et plus. To restore preemptive execution on the server in this case, all you need to do is detach the debugger from the server (and attach it to a remote client if necessary)._
 
 - On Windows, 4D projects and databases created with 4D v19 R3 and higher use the [DirectWrite API](https://docs.microsoft.com/en-us/windows/win32/DirectWrite/direct-write-portal) in forms. Cette API améliore le rendu du texte, en particulier dans les configurations à DPI élevé. DirectWrite est utilisé pour le rendu de textes statiques et de textes saisis, de cases à cocher, de boutons et de boutons radio. Notez que les listbox utilisent déjà DirectWrite. Une option de compatibilité vous permet d'activer DirectWrite dans les projets et les bases de données créés avec des versions antérieures de 4D.
