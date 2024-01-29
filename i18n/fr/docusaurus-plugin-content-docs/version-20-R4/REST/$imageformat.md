@@ -1,5 +1,5 @@
 - - -
-id: imageformat title: $imageformat
+id: imageformat title: '$imageformat'
 - - -
 
 Définit le format d'image à utiliser pour récupérer des images (par exemple, `$imageformat=png`)
