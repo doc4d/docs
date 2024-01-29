@@ -1,5 +1,5 @@
 - - -
-id: tls title: TLS Protocol (HTTPS)
+id: tls title: Protocole TLS (HTTPS)
 - - -
 
 Tous les serveurs 4D peuvent communiquer en mode sécurisé via le protocole TLS (Transport Layer Security) :
@@ -14,7 +14,7 @@ De plus, le client HTTP 4D (commande `HTTP get` par exemple) prend également en
 
 Le protocole TLS (successeur du SSL) a pour but de sécuriser les informations de données entre deux applications—principalement entre un serveur web et un navigateur. Ce protocole est largement répandu et compatible avec la plupart des navigateurs web.
 
-Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné.
+Au niveau de l'architecture réseau, le protocole de sécurité s'insère entre la couche TCP/IP (bas niveau) et le protocole de haut niveau HTTP, pour lequel il est principalement destiné. pour lequel il est principalement destiné.
 
 Configuration du réseau avec TLS :
 
@@ -92,7 +92,7 @@ Les fichiers de certificat incluent:
 
 Les deux fichiers **key.pem** et **cert.pem** doivent être localisés :
 
-- avec 4D Server ou 4D en mode local, à côté du dossier du projet [](Project/architecture.md#project-folder)
+- avec 4D Server ou 4D en mode local, à côté du dossier du projet
 - avec 4D en mode distant, dans le dossier de la base de données cliente sur la machine distante (pour plus d'informations sur l'emplacement de ce dossier, consultez la commande [`Get 4D folder`](https://doc.4d.com/4dv20/help/command/en/page485.html)). Vous devez copier ces fichiers manuellement sur la machine distante.
 
 ### Activation du TLS
