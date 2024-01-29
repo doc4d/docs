@@ -144,7 +144,7 @@ Les deux fichiers journaux sont automatiquement créés dans le dossier **Logs**
 
 Le [fichier de débogage](webServerConfig.md#debug-log) peut être activé via l'objet [`web server`](webServerObject.md) ou la commande `WEB FIXER OPTION`
 
-Ce fichier journal enregistre chaque requête HTTP et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parties body peuvent également être enregistrées.
+This log file records the HTTP traffic that goes through the 4D HTTP client. Whole requests and responses, including headers, are logged; optionally, body parts can be logged as well.
 
 Les champs suivants sont enregistrés pour Requête et Réponse :
 
@@ -226,7 +226,7 @@ Comme la taille d'un *logweb.txt* fichier évoluer considérablement, il est pos
 
 Lorsque la sauvegarde du fichier d'historique web est déclenchée, le fichier d'historique est archivé dans un dossier nommé "Archives Logweb", qui est créé au même niveau que le fichier *logweb.txt*.
 
-Le fichier archivé est renommé sur le modèle suivant : "DYYYY_MM_DD_Thh_mm_ss.txt". Par exemple, pour un fichier archivé le 4 septembre 2020 à 15h50  et 7 secondes : “D2020_09_04_T15_50_07.txt.”
+Le fichier archivé est renommé sur le modèle suivant : "DYYYY_MM_DD_Thh_mm_ss.txt". Par exemple, pour un fichier archivé le 4 septembre 2020 à 15h50  et 7 secondes : “D2020_09_04_T15_50_07.txt.” et 7 secondes : “D2020_09_04_T15_50_07.txt.”
 
 #### Paramètres de backup
 
