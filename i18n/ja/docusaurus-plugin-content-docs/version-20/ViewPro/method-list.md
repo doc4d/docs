@@ -2173,6 +2173,7 @@ $currentSelection:=VP Get selection("myVPArea")
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
+
 #### 例題
 
 以下のドキュメントにおいて:
@@ -2889,7 +2890,7 @@ $tables:=VP Get tables("ViewProArea")
 $cell:=VP Cell("ViewProArea";5;2)
 $value:=VP Get value($cell)
 If(Value type($value.value)=Is text)
-    VP SET TEXT VALUE($cell;New object("value";Uppercase($value.value))
+    VP SET VALUE($cell;New object("value";Uppercase($value.value)))
 End if
 ```
 
@@ -5208,6 +5209,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 <!-- REF #_method_.VP SET FORMULA.Syntax -->
 **VP SET FORMULA** ( *rangeObj* : Object ; *formula* : Text { ; *formatPattern* : Text } ) <!-- END REF -->
+
 
 <!-- REF #_method_.VP SET FORMULA.Params -->
 
