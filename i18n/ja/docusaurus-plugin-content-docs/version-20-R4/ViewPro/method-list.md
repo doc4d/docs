@@ -1278,18 +1278,19 @@ $result:=VP Find($range;"Total")
 
 ```4d
 var $range;$condition;$result : Object
-
+ 
 $range:=VP All("ViewProArea")
-
+ 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True // ドキュメント全体を検索します
+$condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
+ 
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
 
-  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
 $result:=VP Find($range;"Total";$condition;"Grand Total")
-
-  // 戻り値のレンジオブジェクトが空かどうかをチェックします
+ 
+  // Check for empty range object 
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1952,6 +1953,7 @@ _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在し
 
 ```4d
 var $panesObj : Object
+
  
 $panesObj:=VP Get frozen panes("ViewProArea")
 ```
@@ -2911,7 +2913,7 @@ _rangeObj_ のレンジが複数セルあるいは複数レンジを含んでい
 $cell:=VP Cell("ViewProArea";5;2)
 $value:=VP Get value($cell)
 If(Value type($value.value)=Is text)
-    VP SET TEXT VALUE($cell;New object("value";Uppercase($value.value))
+    VP SET VALUE($cell;New object("value";Uppercase($value.value)))
 End if
 ```
 
