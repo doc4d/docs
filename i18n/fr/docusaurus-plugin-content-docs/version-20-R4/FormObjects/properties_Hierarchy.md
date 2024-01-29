@@ -1,5 +1,5 @@
 - - -
-id: propertiesHierarchy title: Hierarchy
+id: propertiesHierarchy title: Hiérarchie
 - - -
 
 ## List box hiérarchique
