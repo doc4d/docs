@@ -278,7 +278,7 @@ Définition PEM d'une clé de chiffrement à charger. Si la clé est une clé pr
 
 La fonction `sign()` <!-- REF #CryptoKey.sign().Summary -->signe la représentation utf8 de la chaîne *message*<!-- END REF --> à l'aide des clés objet `CryptoKey` et des *options* fournies. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut `options.encoding` que vous avez passé.
 
-`CryptoKey` doit contenir une clé **privée** valide.
+**.type** : Texte
 
 #### *options*
 
@@ -308,7 +308,7 @@ La représentation utf8 de la chaîne *message*.
 <!-- REF #CryptoKey.size.Syntax -->**.size** : Integer<!-- END REF -->
 
 
-Défini uniquement pour les clés RSA : <!-- REF #CryptoKey.size.Summary -->la taille de la clé en octets<!-- END REF -->. Habituellement 2048 (par défaut).
+Défini uniquement pour les clés RSA : <!-- REF #CryptoKey.size.Summary -->la taille de la clé en octets<!-- END REF -->. .
 
 <!-- REF CryptoKey.type -->
 ## .type
@@ -321,7 +321,7 @@ Défini uniquement pour les clés RSA : <!-- REF #CryptoKey.size.Summary -->la t
 | v18 R4  | Ajout         |
 </details>
 
-<!-- REF #CryptoKey.type.Syntax -->**.type** : Texte<!-- END REF -->
+<!-- REF #CryptoKey.type.Syntax -->`CryptoKey` doit contenir une clé **privée** valide.<!-- END REF -->
 
 
 Contient le <!-- REF #CryptoKey.type.Summary -->nom du type de clé - "RSA", "ECDSA", "PEM" <!-- END REF -->.
