@@ -1,5 +1,5 @@
 - - -
-id: getting-started title: Getting Started
+id: getting-started title: Prise en main
 - - -
 
 
