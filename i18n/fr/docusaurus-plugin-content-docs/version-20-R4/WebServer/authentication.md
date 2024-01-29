@@ -1,5 +1,5 @@
 - - -
-id: authentication title: Authentication
+id: authentication title: Authentification
 - - -
 
 L'authentification est nécessaire lorsque vous souhaitez fournir des droits d'accès spécifiques aux utilisateurs Web. L'authentification désigne la manière dont les informations concernant les références de l'utilisateur (généralement le nom et le mot de passe) sont collectées et traitées.
