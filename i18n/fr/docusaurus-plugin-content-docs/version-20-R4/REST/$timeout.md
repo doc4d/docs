@@ -1,5 +1,5 @@
 - - -
-id: timeout title: $timeout
+id: timeout title: '$timeout'
 - - -
 
 
