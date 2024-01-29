@@ -1,5 +1,5 @@
 - - -
-id: tags slug: tags title: Transformation tags
+id: tags slug: tags title: Balises de transformation
 - - -
 
 4D fournit un ensemble de balises de transformation qui vous permettent d'insérer des références à des variables ou des expressions 4D, ou d'effectuer différents types de traitement dans un texte source, appelé "template". Ces balises sont interprétées lors de l'exécution du texte source et génèrent un texte de sortie.
