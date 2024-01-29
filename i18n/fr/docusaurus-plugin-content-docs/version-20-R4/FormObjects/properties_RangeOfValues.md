@@ -1,5 +1,5 @@
 - - -
-id: propertiesRangeOfValues title: Range of Values
+id: propertiesRangeOfValues title: Plage de valeurs
 - - -
 
 ## La valeur par défaut
