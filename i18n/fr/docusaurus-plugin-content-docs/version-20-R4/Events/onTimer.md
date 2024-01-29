@@ -1,5 +1,5 @@
 - - -
-id: onTimer title: On Timer
+id: onTimer title: Sur minuteur
 - - -
 
 | Code | Peut être appelé par | Définition                                                            |
