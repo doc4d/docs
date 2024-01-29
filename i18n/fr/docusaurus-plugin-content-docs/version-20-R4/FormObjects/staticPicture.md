@@ -1,5 +1,5 @@
 - - -
-id: staticPicture title: Static picture
+id: staticPicture title: Image statique
 - - -
 
 
