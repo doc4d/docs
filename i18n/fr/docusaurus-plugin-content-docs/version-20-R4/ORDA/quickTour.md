@@ -1,5 +1,5 @@
 - - -
-id: quickTour title: A Quick Tour in ORDA
+id: quickTour title: Tour d'horizon d'ORDA
 - - -
 
 Étant donné qu'ORDA est basé sur des objets, l'utilisation d'ORDA nécessite des connaissances de base en programmation d'objets.
