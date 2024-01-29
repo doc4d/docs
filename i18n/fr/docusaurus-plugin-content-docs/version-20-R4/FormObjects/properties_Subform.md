@@ -1,5 +1,5 @@
 - - -
-id: propertiesSubform title: Subform
+id: propertiesSubform title: Sous-formulaire
 - - -
 
 ---
