@@ -1,5 +1,5 @@
 - - -
-id: pluginAreaOverview title: Plug-in Area
+id: pluginAreaOverview title: Zones de plug-in
 - - -
 
 
