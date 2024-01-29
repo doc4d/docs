@@ -1,5 +1,5 @@
 - - -
-id: binary title: $binary
+id: binary title: '$binary'
 - - -
 
 Passez "true" pour enregistrer le BLOB en tant que document (vous devez également passer `$expand={blobAttributeName}`)
