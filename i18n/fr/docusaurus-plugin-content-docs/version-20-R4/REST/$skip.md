@@ -1,5 +1,5 @@
 - - -
-id: skip title: $skip
+id: skip title: '$skip'
 - - -
 
 Démarre l'entité définie par ce numéro dans la collection (par exemple, `$skip=10`)
