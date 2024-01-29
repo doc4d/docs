@@ -1,5 +1,5 @@
 - - -
-id: onResize title: On Resize
+id: onResize title: Sur redimensionnement
 - - -
 
 | Code | Peut être appelé par | Définition                                                                                                                                                                   |
