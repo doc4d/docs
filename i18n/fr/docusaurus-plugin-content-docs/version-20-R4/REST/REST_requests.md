@@ -1,5 +1,5 @@
 - - -
-id: REST_requests title: About REST Requests
+id: REST_requests title: A propos des requêtes REST
 - - -
 
 
