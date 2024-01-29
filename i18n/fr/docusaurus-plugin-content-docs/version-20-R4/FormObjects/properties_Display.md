@@ -1,5 +1,5 @@
 - - -
-id: propertiesDisplay title: Display
+id: propertiesDisplay title: Affichage
 - - -
 
 ---
