@@ -1,5 +1,5 @@
 - - -
-id: distinct title: $distinct
+id: distinct title: '$distinct'
 - - -
 
 
