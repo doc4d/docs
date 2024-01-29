@@ -1,5 +1,5 @@
 - - -
-id: bars title: Menu bar features
+id: bars title: Barres de menus
 - - -
 
 Les barres de menu fournissent la principale interface des applications personnalisées. Pour chaque application personnalisée, vous devez créer au moins une barre de menu avec au moins un menu. Par défaut, Menu Bar #1 est la barre de menu qui est affichée dans l'application. Vous pouvez modifier la barre de menu affichée à l'aide de la commande `SET MENU BAR`.
