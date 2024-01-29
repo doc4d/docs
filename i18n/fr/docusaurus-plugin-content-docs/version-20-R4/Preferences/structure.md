@@ -1,5 +1,5 @@
 - - -
-id: structure title: Structure Page
+id: structure title: Page Structure
 - - -
 
 ## Clé primaire
