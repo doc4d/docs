@@ -1,12 +1,12 @@
 - - -
-id: encrypt title: Encrypt Page sidebar_label: Encrypt Page
+id: encrypt title: Page chiffrement sidebar_label: Page chiffrement
 - - -
 
 Vous pouvez vous aider de cette page pour chiffrer ou *déchiffrer* (i.e. enlever le chiffrement) le fichier de données, en fonction du statut de l'attribut **Chiffrable** défini pour chaque table de la base.
 
 :::info
 
-Pour des informations détaillées sur le cryptage des données dans 4D, veuillez vous référer à la section [Encrypting data](https://doc.4d.com/4Dv20/4D/20/Encrypting-data.300-6263735.en.html) dans le manuel *Design Reference*. Vous pouvez également lire l'article de blog intitulé [A deeper look into 4D data encryption](https://blog.4d.com/a-deeper-look-into-4d-data-encryption/).
+Vous pouvez également lire l'article de blog intitulé [A deeper look into 4D data encryption](https://blog.4d.com/a-deeper-look-into-4d-data-encryption/). Pour des informations détaillées sur le cryptage des données dans 4D, veuillez vous référer à la section [Encrypting data](https://doc.4d.com/4Dv20/4D/20/Encrypting-data.300-6263735.en.html) dans le manuel *Design Reference*.
 
 :::
 
