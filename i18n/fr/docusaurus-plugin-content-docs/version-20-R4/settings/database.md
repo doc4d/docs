@@ -1,5 +1,5 @@
 - - -
-id: database title: Database page
+id: database title: Page Base de données
 - - -
 
 ## Page Stockage de données
