@@ -1,5 +1,5 @@
 - - -
-id: overview title: Access Control overview
+id: overview title: Présentation du contrôle des accès
 - - -
 
 Si plusieurs personnes utilisent une application, ce qui est souvent le cas dans une architecture client-serveur ou d'interfaces Web, vous devez contrôler ses accès ou proposer différentes fonctionnalités selon les utilisateurs connectés. Il est également essentiel d'assurer la sécurité des données sensibles, même dans les applications monoposte.
