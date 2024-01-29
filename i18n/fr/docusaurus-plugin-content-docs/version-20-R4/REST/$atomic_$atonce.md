@@ -1,5 +1,5 @@
 - - -
-id: atomic_$atonce title: $atomic/$atOnce
+id: atomic_$atonce title: '$atomic/$atOnce'
 - - -
 
 
