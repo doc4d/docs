@@ -1,5 +1,5 @@
 - - -
-id: sql-server title: SQL Server Page
+id: sql-server title: Page Serveur SQL
 - - -
 
 
