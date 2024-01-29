@@ -1293,10 +1293,11 @@ $condition.target:=vk find target text
 $condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // Reemplazar las celdas que contienen sólo "Total" en la hoja actual con "Grand Total"
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Comprobar si el objeto de rango está vacío
+  // Check for empty range object 
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1984,6 +1985,7 @@ Quiere recuperar información sobre el número de columnas y líneas congeladas:
 
 ```4d
 var $panesObj : Object
+
 
 $panesObj:=VP Get frozen panes("ViewProArea")
 ```
@@ -2984,7 +2986,7 @@ Si *rangeObj* contiene varias celdas o varios rangos, se devuelve el valor de la
 $cell:=VP Cell("ViewProArea";5;2)
 $value:=VP Get value($cell)
 If(Value type($value.value)=Is text)
-    VP SET TEXT VALUE($cell;New object("value";Uppercase($value.value))
+    VP SET VALUE($cell;New object("value";Uppercase($value.value)))
 End if
 ```
 
@@ -3641,7 +3643,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 | ---------- | ---- | -- | ----------------------------------------------------------------------- |
 | vpAreaName | Text | -> | Nombre del área 4D View Pro en el formulario|<!-- END REF -->
 
+
 |
+
 
 #### Descripción
 
@@ -5263,6 +5267,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 [4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE VALUE](#vp-set-date-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
+
 ### VP SET DATE VALUE
 
 <!-- REF #_method_.VP SET DATE VALUE.Syntax -->
@@ -5684,6 +5689,7 @@ El PDF:
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Syntax -->
 **VP SET ROW ATTRIBUTES** ( *rangeObj* : Object ; *propertyObj* : Object  ) <!-- END REF -->
+
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Params -->
 
