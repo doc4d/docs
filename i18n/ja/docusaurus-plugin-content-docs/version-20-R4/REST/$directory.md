@@ -18,12 +18,12 @@ RESTを介して 4Dアプリケーション上でセッションを開き、ユ�
 | ヘッダーキー            | ヘッダー値                                 |
 | ----------------- | ------------------------------------- |
 | username-4D       | ユーザー (任意)                             |
-| password-4D       | Password in plan text - Not mandatory |
+| password-4D       | プレーンテキストのパスワード (任意)                   |
 | session-4D-length | セッション非アクティブタイムアウト (分単位)。 60 以上の値 (任意) |
 
 :::caution
 
-Since the password is transmitted in plain text, it is strongly recommended to use a secured https connection for the login request.
+パスワードは平文で送信されるため、ログインリクエストにはセキュアな https接続を使用することが強く推奨されます。
 
 :::
 
