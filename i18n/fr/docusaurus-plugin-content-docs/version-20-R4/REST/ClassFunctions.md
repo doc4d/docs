@@ -1,5 +1,5 @@
 - - -
-id: classFunctions title: Calling ORDA class functions
+id: classFunctions title: Appeler des fonctions de classe ORDA
 - - -
 
 
