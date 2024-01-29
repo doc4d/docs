@@ -1,5 +1,5 @@
 - - -
-id: lock title: $lock
+id: lock title: '$lock'
 - - -
 
 
