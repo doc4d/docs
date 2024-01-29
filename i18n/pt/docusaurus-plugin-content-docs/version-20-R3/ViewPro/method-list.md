@@ -1282,15 +1282,16 @@ $range:=VP All("ViewProArea")
 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True //Pesquisa em todo o documento
+$condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // Substituir as células que contêm apenas 'Total' na folha atual por "Total Geral"
-$result:=VP Find($range; "Total";$condition; "Total Geral")
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
 
-  // Verificar se existe um objeto de intervalo vazio 
+$result:=VP Find($range;"Total";$condition;"Grand Total")
+
+  // Check for empty range object 
 If($result.ranges.length=0)
-    ALERT("Nenhum resultado encontrado")
+    ALERT("No result found")
 Else
     ALERT($result.ranges.length+" results found")
 End if
@@ -1971,6 +1972,7 @@ Pretende obter informações sobre o número de colunas e linhas congeladas:
 
 ```4d
 var $panesObj : Object
+
 
 $panesObj:=VP Get frozen panes("ViewProArea")
 ```
@@ -2967,7 +2969,7 @@ Se *rangeObj* contiver várias células ou vários intervalos, o valor da primei
 $cell:=VP Cell("ViewProArea";5;2)
 $value:=VP Get value($cell)
 If(Value type($value.value)=Is text)
-    VP SET TEXT VALUE($cell;New object("value";Uppercase($value.value))
+    VP SET VALUE($cell;New object("value";Uppercase($value.value)))
 End if
 ```
 
@@ -3619,7 +3621,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 | ---------- | ---- | -- | ----------------------------------------------------------------- |
 | vpAreaName | Text | -> | Nome da área 4D View Pro no formulário|<!-- END REF -->
 
+
 |
+
 
 #### Descrição
 
@@ -5205,6 +5209,7 @@ The optional *formatPattern* defines a pattern for the *dateValue* and *timeValu
 
 [4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE VALUE](#vp-set-date-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
+
 ### VP SET DATE VALUE
 
 <!-- REF #_method_.VP SET DATE VALUE.Syntax -->
@@ -5616,6 +5621,7 @@ O PDF:
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Syntax -->
 **VP SET ROW ATTRIBUTES** ( *rangeObj* : Object ; *propertyObj* : Object  ) <!-- END REF -->
+
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Params -->
 
