@@ -1,7 +1,6 @@
----
-id: propertiesCoordinatesAndSizing
-title: Coordenadas y dimensiones
----
+- - -
+id: propertiesCoordinatesAndSizing title: Coordinates & Sizing
+- - -
 
 ## Altura de línea automática
 

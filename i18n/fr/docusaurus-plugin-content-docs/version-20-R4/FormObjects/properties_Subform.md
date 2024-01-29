@@ -1,7 +1,6 @@
----
-id: propertiesSubform
-title: Sous-formulaire
----
+- - -
+id: propertiesSubform title: Subform
+- - -
 
 ---
 ## Autoriser la suppression

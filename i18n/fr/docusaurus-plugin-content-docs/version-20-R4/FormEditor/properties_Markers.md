@@ -1,7 +1,6 @@
----
-id: markers
-title: Markers
----
+- - -
+id: markers title: Markers
+- - -
 
 
 These properties let you specify the precise location of markers on the vertical ruler of a **table form**. Markers are mainly used in output forms. They control the information that is listed and set header, breaks, detail and footer areas of the form. Any object that placed in these areas is displayed or printed at the appropriate location.

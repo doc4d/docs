@@ -1,7 +1,6 @@
----
-id: orderby
-title: '$orderby'
----
+- - -
+id: orderby title: $orderby
+- - -
 
 
 Ordena os dados devolvidos pelo atributo e pela ordem de ordenação definidos (*e.g.*, `$orderby="lastName desc, salary asc"`)
@@ -21,7 +20,7 @@ O exemplo abaixo ordena o conjunto de entidades pelo atributo lastName em ordem 
 
  `GET  /rest/Employee/$entityset/CB1BCC603DB0416D939B4ED379277F02?$orderby="lastName"`
 
-**Resultado**:
+**Resultadoi**:
 
 ```
 {

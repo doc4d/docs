@@ -1,7 +1,6 @@
----
-id: develop-plug-ins
-title: プラグインの開発
----
+- - -
+id: develop-plug-ins title: プラグインの開発
+- - -
 
 ## プラグインの必要性
 

@@ -1,7 +1,6 @@
----
-id: propertiesDisplay
-title: Visualización
----
+- - -
+id: propertiesDisplay title: Display
+- - -
 
 ---
 

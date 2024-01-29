@@ -1,7 +1,6 @@
----
-id: EmailObjectClass
-title: Email
----
+- - -
+id: EmailObjectClass title: Email
+- - -
 
 Criar, enviar ou receber e-mails em 4D é feito manipulando um objeto de `e-Mail`.
 

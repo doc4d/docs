@@ -1,7 +1,6 @@
----
-id: propertiesPlugIns
-title: Plug-ins
----
+- - -
+id: propertiesPlugIns title: Plug-ins
+- - -
 
 ## Propriétés avancées
 

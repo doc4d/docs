@@ -1,7 +1,6 @@
----
-id: onWindowOpeningDenied
-title: On Window Opening Denied
----
+- - -
+id: onWindowOpeningDenied title: On Window Opening Denied
+- - -
 
 | コード | 呼び出し元                                        | 定義                  |
 | --- | -------------------------------------------- | ------------------- |

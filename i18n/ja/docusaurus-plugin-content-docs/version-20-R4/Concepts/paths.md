@@ -1,7 +1,6 @@
----
-id: paths
-title: パス名
----
+- - -
+id: paths title: パス名
+- - -
 
 File および Folder の関数、プロパティ、コマンドにより、ファイルやフォルダーをオブジェクトとして扱うことができます。 これにより、ファイルやフォルダーの管理を強力かつ柔軟におこなえます。 たとえば、カレントユーザーのドキュメントフォルダーに新しいファイルを作成する場合、次のように書くことができます:
 
@@ -27,7 +26,7 @@ $ok:=Folder(fk documents folder).file("Archives/John4D.prefs").create()
 | "/LOGS"      | Logs フォルダー                            |
 | "/PACKAGE"   | プロジェクトのルートフォルダー (拡張子 4dbase の有無に関わらず) |
 | "/PROJECT"   | Project フォルダー                         |
-| "/RESOURCES" | カレントプロジェクトの Sources フォルダー             |
+| "/RESOURCES" | カレントプロジェクトの Resources フォルダー           |
 | "/SOURCES"   | カレントプロジェクトの Sources フォルダー             |
 
 ## POSIX シンタックス

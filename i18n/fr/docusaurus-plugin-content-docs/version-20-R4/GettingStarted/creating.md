@@ -1,7 +1,6 @@
----
-id: creating
-title: Creating or opening a project
----
+- - -
+id: creating title: Creating or opening a project
+- - -
 
 Les projets 4D sont créés et développés à l'aide de l'application **4D**, qui constitue un environnement de développement intégré (IDE) complet. **4D Server** peut également créer des projets vides.
 
@@ -72,7 +71,7 @@ Outre les options standard du système, la boîte de dialogue *Ouvrir* de 4D pro
 
 ### Ouvrir un projet avec un fichier 4DLink
 
-Vous pouvez utiliser un fichier [`.4DLink`](#about-4DLink-files) pour lancer l'application 4D et ouvrir le projet 4D cible. Il y a deux façons de procéder :
+Vous pouvez utiliser un fichier [`.4DLink`](#about-4DLink-files) pour lancer l'application 4D et ouvrir le projet 4D cible. Il existe deux façons de procéder :
 
 * double-cliquer ou glisser-déposer le fichier `.4DLink` sur l'application 4D
 * aller sur **Fichier** > **Ouvrir projets récents** et sélectionner un projet

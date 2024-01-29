@@ -1,7 +1,6 @@
----
-id: action
-title: アクション
----
+- - -
+id: action title: アクション
+- - -
 
 
 ## メソッド

@@ -1,7 +1,6 @@
----
-id: spinner
-title: スピナー
----
+- - -
+id: spinner title: スピナー
+- - -
 
 スピナーは円形のインジケーターで、[バーバーショップ](progressIndicator.md#barber-shop) のように連続したアニメーションを表示します。
 

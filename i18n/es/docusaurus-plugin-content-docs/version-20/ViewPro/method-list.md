@@ -990,7 +990,7 @@ Cuando se incluye el parámetro opcional *paramObj*, el comando `VP EXPORT DOCUM
 
 | Variable |               | Tipo    | Descripción                                               |
 | -------- | ------------- | ------- | --------------------------------------------------------- |
-| $1       |               | text    | El nombre del objeto 4D View Pro                          |
+| $1       |               | text    | The name of the 4D View Pro area object                   |
 | $2       |               | text    | Ruta de acceso del objeto 4D View Pro exportado           |
 | $3       |               | object  | Referencia al *paramObj* del comando                      |
 | $4       |               | object  | Un objeto devuelto por el método con un mensaje de estado |
@@ -2881,6 +2881,7 @@ Si *rangeObj* contiene varias celdas o varios rangos, se devuelve el valor de la
 
 
 
+
 #### Ejemplo
 
 ```4d
@@ -3056,6 +3057,18 @@ $o.password:="excel123"
 
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
+
+```4d
+    //myImport callback method
+#DECLARE($area : Text; $filePath : Text; $param : Object; $status : Object)
+
+If ($status.success)
+     ALERT("Import successfully completed")
+Else 
+     ALERT("Error: "+$status.errorMessage)
+End if
+```
+
 
 #### Ejemplo 3
 
@@ -5207,6 +5220,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 #### Descripción
 
+
 El comando `VP SET FORMULA` <!-- REF #_method_.VP SET FORMULA.Summary -->asigna una fórmula especificada o un método 4D a un rango de celdas designado<!-- END REF -->.
 
 En *rangeObj*, pase un rango de la(s) celda(s) (creada(s) por ejemplo con [`VP Cell`](#vp-cell) o [`VP Column`](#vp-column)) cuyo valor desea especificar. Si *rangeObj* incluye varias celdas, la fórmula especificada se vinculará en cada celda.
@@ -5792,6 +5806,7 @@ Quiere ocultar las líneas de la cuadrícula, así como los encabezados de las l
 var $options : Object
 
 $options:=New object
+
 $options.gridline:=New object()
 $options.gridline.showVerticalGridline:=False
 $options.gridline.showHorizontalGridline:=False

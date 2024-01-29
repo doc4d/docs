@@ -1,7 +1,6 @@
----
-id: processes
-title: Página Procesos
----
+- - -
+id: processes title: Processes Page
+- - -
 
 
 La página **Procesos** lita todos los procesos en ejecución.

@@ -1,7 +1,6 @@
----
-id: webServerObject
-title: Webサーバーオブジェクト
----
+- - -
+id: webServerObject title: Webサーバーオブジェクト
+- - -
 
 
 4Dプロジェクトは、メイン (ホスト) アプリケーションおよび、ホストされた各コンポーネントの Webサーバーを起動して監視することができます。

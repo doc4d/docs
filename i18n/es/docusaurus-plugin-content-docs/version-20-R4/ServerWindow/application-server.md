@@ -1,7 +1,6 @@
----
-id: application-server
-title: Página Servidor de aplicación
----
+- - -
+id: application-server title: Application Server Page
+- - -
 
 
 La página Servidor de aplicaciones agrupa información sobre la aplicación de escritorio publicada por 4D Server y puede utilizarse para gestionar esta publicación.

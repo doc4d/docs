@@ -1,7 +1,6 @@
----
-id: preemptiveWeb
-title: Using preemptive web processes
----
+- - -
+id: preemptiveWeb title: Using preemptive web processes
+- - -
 
 
 Le Web Server de 4D vous permet de tirer pleinement parti des ordinateurs multi-coeurs en utilisant des process Web préemptifs dans vos applications compilées. Vous pouvez configurer votre code lié au Web, y compris les balises 4D, les méthodes base Web ou les fonctions de classe REST de ORDA, afin qu'il s'exécute simultanément sur le plus grand nombre de coeurs possibles.

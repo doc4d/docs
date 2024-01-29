@@ -1,8 +1,6 @@
----
-id: quick-tour
-title: 概要
-sidebar_label: 概要
----
+- - -
+id: quick-tour title: 概要 sidebar_label: 概要
+- - -
 
 4D ランゲージを使用して "Hello, world!" メッセージを表示するには複数の方法があります。 一番簡単な方法はおそらく、プロジェクトメソッドにコードを1行、次のように書くやり方です:
 

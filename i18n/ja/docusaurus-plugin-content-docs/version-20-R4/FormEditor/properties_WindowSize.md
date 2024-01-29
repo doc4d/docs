@@ -1,7 +1,6 @@
----
-id: windowSize
-title: ウィンドウサイズ
----
+- - -
+id: windowSize title: ウィンドウサイズ
+- - -
 
 
 ## 固定高さ

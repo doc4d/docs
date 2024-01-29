@@ -1,7 +1,6 @@
----
-id: remote-admin
-title: リモートマシンからの管理
----
+- - -
+id: remote-admin title: リモートマシンからの管理
+- - -
 
 クライアントマシンで 4D Server 管理の画面を開くと、リモートから 4D Server アプリケーションを管理することができます。
 

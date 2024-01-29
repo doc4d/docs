@@ -1,7 +1,6 @@
----
-id: onRowResize
-title: On Row Resize
----
+- - -
+id: onRowResize title: On Row Resize
+- - -
 
 | Code | Peut être appelé par                                    | Définition                                                            |
 | ---- | ------------------------------------------------------- | --------------------------------------------------------------------- |

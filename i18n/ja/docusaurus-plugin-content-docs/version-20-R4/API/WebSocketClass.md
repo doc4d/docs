@@ -1,7 +1,6 @@
----
-id: WebSocketClass
-title: WebSocket
----
+- - -
+id: WebSocketClass title: WebSocket
+- - -
 
 <details><summary>履歴</summary>
 

@@ -1,7 +1,6 @@
----
-id: blob
-title: BLOB
----
+- - -
+id: blob title: BLOB
+- - -
 
 Un campo, variable o expresión BLOB (Binary Large OBject) es una serie contigua de bytes que puede ser tratada como un objeto completo o cuyos bytes pueden ser direccionados individualmente.
 

@@ -1,7 +1,6 @@
----
-id: webServerAdmin
-title: 管理
----
+- - -
+id: webServerAdmin title: 管理
+- - -
 
 4Dには、統合された Webサーバーを起動・停止・監視するためのツールがいくつか用意されています。
 

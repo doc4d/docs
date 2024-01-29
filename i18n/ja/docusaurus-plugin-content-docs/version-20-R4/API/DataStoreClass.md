@@ -1,7 +1,6 @@
----
-id: DataStoreClass
-title: DataStore
----
+- - -
+id: DataStoreClass title: DataStore
+- - -
 
 [データストア](ORDA/dsMapping.md#datastore) とは、ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 `Datastore` オブジェクトは以下のコマンドによって返されます:
 

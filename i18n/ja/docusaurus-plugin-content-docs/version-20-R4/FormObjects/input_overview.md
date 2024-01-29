@@ -1,7 +1,6 @@
----
-id: inputOverview
-title: 入力
----
+- - -
+id: inputOverview title: 入力
+- - -
 
 
 入力オブジェクトを使って、データベース[フィールド](Concepts/identifiers.md#フィールド) や [変数](Concepts/variables.md) といった式をフォーム上に追加することができます。 入力オブジェクトは文字ベースのデータ (テキスト、日付、数値など) およびピクチャー型のデータを扱えます。

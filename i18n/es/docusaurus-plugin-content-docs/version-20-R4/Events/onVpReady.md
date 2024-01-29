@@ -1,7 +1,6 @@
----
-id: onVpReady
-title: On VP Ready
----
+- - -
+id: onVpReady title: On VP Ready
+- - -
 
 | Code | Puede ser llamado por                                   | Definición                                  |
 | ---- | ------------------------------------------------------- | ------------------------------------------- |

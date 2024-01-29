@@ -1,8 +1,6 @@
----
-id: quick-tour
-title: Tour d'horizon
-sidebar_label: Tour d'horizon
----
+- - -
+id: quick-tour title: A Quick Tour sidebar_label: A Quick Tour
+- - -
 
 En utilisant le langage 4D, le traditionnel "Hello, world!" peut s'afficher à l'écran de plusieurs manières. Le plus simple est probablement d'écrire la ligne suivante dans une méthode de projet :
 
@@ -120,7 +118,7 @@ L'exemple suivant permet d'examiner chaque caractère du texte vtSomeText :
 
 ```4d
 For($vlChar;1;Length(vtSomeText))
-    //Do something with the character if it is a TAB
+    //Faire quelque chose avec le caractère si c'est un Tab
 
 
     If(Character code(vtSomeText[[$vlChar]])=Tab)

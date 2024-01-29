@@ -1,7 +1,6 @@
----
-id: parameters
-title: Paramètres
----
+- - -
+id: parameters title: Parameters
+- - -
 
 
 Vous aurez souvent besoin de fournir des valeurs à vos méthodes et fonctions. Vous pouvez facilement effectuer cette opération grâce aux paramètres.

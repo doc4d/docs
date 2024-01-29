@@ -1,7 +1,6 @@
----
-id: CryptoKeyClass
-title: CryptoKey
----
+- - -
+id: CryptoKeyClass title: CryptoKey
+- - -
 
 
 A classe `CryptoKey` da linguagem 4D contém um par de chaves de cifrado assimétrico.

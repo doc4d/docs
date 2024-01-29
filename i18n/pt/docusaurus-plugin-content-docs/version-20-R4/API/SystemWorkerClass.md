@@ -1,7 +1,6 @@
----
-id: SystemWorkerClass
-title: SystemWorker
----
+- - -
+id: SystemWorkerClass title: SystemWorker
+- - -
 
 Os trabalhadores do sistema permitem que o código 4D chame qualquer processo externo (um comando shell, PHP, etc.) na mesma máquina. Os trabalhadores do sistema são chamados assíncronos. Ao utilizar os callbacks, 4D torna possível a comunicação de ambas as maneiras.
 

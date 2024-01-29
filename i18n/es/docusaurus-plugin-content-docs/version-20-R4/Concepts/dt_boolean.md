@@ -1,7 +1,6 @@
----
-id: boolean
-title: Boolean
----
+- - -
+id: boolean title: Boolean
+- - -
 
 Un campo, variable o expresión booleana puede ser TRUE o FALSE.
 

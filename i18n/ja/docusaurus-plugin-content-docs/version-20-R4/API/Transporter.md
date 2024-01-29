@@ -1,7 +1,6 @@
----
-id: Transporter
-title: Transporter クラス
----
+- - -
+id: Transporter title: Transporter Class
+- - -
 
 ## 説明
 

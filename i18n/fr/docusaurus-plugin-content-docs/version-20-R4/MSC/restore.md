@@ -1,8 +1,6 @@
----
-id: restore
-title: Page restitution
-sidebar_label: Page restitution
----
+- - -
+id: restore title: Restore Page sidebar_label: Restore Page
+- - -
 
 La page **Restitution** du Centre de sécurité et de maintenance vous permet de restituer manuellement une archive de l'application courante. Cette page propose plusieurs options permettant de contrôler la restitution :
 

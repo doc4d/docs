@@ -1,7 +1,6 @@
----
-id: ZipArchiveClass
-title: ZIPArchive
----
+- - -
+id: ZipArchiveClass title: ZIPArchive
+- - -
 
 
 Une archive ZIP 4D est un objet `File` ou `Folder` contenant un ou plusieurs fichiers ou dossiers, qui sont compressés afin d'être plus petits que leur taille d'origine. Ces archives sont créées avec une extension ".zip" et peuvent être utilisées pour économiser de l'espace sur le disque ou transférer des fichiers sur des supports de taille limitée (par exemple, l'email ou le réseau).

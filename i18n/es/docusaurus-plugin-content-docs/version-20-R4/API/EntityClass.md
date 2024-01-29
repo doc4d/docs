@@ -1,7 +1,6 @@
----
-id: EntityClass
-title: Entity
----
+- - -
+id: EntityClass title: Entity
+- - -
 
 Una [entidad](ORDA/dsMapping.md#entity) es una instancia de una [Dataclass](ORDA/dsMapping.md#dataclass), como un registro de la tabla que coincide con la dataclass en su datastore asociado. Contiene los mismos atributos que la clase de datos, así como los valores de los datos y las propiedades y funciones específicas.
 

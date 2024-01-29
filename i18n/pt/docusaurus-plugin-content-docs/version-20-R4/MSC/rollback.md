@@ -1,8 +1,6 @@
----
-id: rollback
-title: Página Retrocesso
-sidebar_label: Página Retrocesso
----
+- - -
+id: rollback title: Rollback Page sidebar_label: Rollback Page
+- - -
 
 A página Rollback é utilizada para acessar à função de rollback entre as operações executadas no arquivo de dados. Assemelha-se a uma função de reverter aplicada a vários níveis. É particularmente útil quando um registo foi eliminado por engano numa base de dados.
 

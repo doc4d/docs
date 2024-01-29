@@ -1,7 +1,6 @@
----
-id: overview
-title: Cópia de segurança e restauração
----
+- - -
+id: overview title: Backup and Restore
+- - -
 
 4D inclui um módulo completo backup e restauração da aplicação.
 

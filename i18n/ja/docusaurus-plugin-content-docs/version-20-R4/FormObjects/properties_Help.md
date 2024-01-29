@@ -1,7 +1,6 @@
----
-id: propertiesHelp
-title: ヘルプ
----
+- - -
+id: propertiesHelp title: ヘルプ
+- - -
 
 ## ヘルプTips
 

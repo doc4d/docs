@@ -1,7 +1,6 @@
----
-id: FileHandleClass
-title: FileHandle
----
+- - -
+id: FileHandleClass title: FileHandle
+- - -
 
 A classe `FileHandle` tem funções que lhe permitem ler sequencialmente ou anexar conteúdos a um objeto aberto [`File`](FileClass) . O manuseamento de um arquivo pode acessar a qualquer parte de um documento.
 
@@ -376,7 +375,7 @@ Quando esta função é executada, a posição atual ([`.offset`](#offset)) é a
 
 :::caution Alerta
 
-Essa função assume que a propriedade [`.offset`](#offset) é um número de caracteres, não um número de bytes. Para saber mais, veja a [descrição de .offset](#offset).
+This function assumes that the [`.offset`](#offset) property is a number of characters, not a number of bytes. Para saber mais, veja a [descrição de .offset](#offset).
 
 :::
 
@@ -423,7 +422,7 @@ Quando esta função é executada, o ([.offset](#offset)) é colocado logo após
 
 :::caution Alerta
 
-Essa função assume que a propriedade [`.offset`](#offset) é um número de caracteres, não um número de bytes. Para saber mais, veja a [descrição de .offset](#offset).
+This function assumes that the [`.offset`](#offset) property is a number of characters, not a number of bytes. Para saber mais, veja a [descrição de .offset](#offset).
 
 :::
 

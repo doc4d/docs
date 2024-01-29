@@ -1,7 +1,6 @@
----
-id: onPrintingBreak
-title: On Printing Break
----
+- - -
+id: onPrintingBreak title: On Printing Break
+- - -
 
 | Code | Pode ser chamado por                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Definição                                                              |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -12,7 +11,7 @@ title: On Printing Break
 
 The `On Printing Break` event can only be used in the context of an **output form**. It is triggered each time a break area in the output form is about to be printed, so that you can evaluate the break values, for example.
 
-This event usually follows a call to the `Subtotal` command.
+Este evento geralmente segue uma chamada para o comando `Subtotal`.
 
 > This event cannot be selected for project forms, it is only available with **table forms**.
 

@@ -1,7 +1,6 @@
----
-id: database
-title: データベースページ
----
+- - -
+id: database title: データベースページ
+- - -
 
 ## データストレージページ
 

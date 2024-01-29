@@ -1,7 +1,6 @@
----
-id: onActivate
-title: Sur activation
----
+- - -
+id: onActivate title: On Activate
+- - -
 
 | Code | Peut être appelé par | Définition                                                                                                           |
 | ---- | -------------------- | -------------------------------------------------------------------------------------------------------------------- |

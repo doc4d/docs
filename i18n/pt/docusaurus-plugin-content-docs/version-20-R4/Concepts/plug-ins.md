@@ -1,7 +1,6 @@
----
-id: plug-ins
-title: Plug-ins
----
+- - -
+id: plug-ins title: Plug-ins
+- - -
 
 Ao desenvolver uma aplicação 4D, irá descobrir muitas capacidades que não notou quando começou. Pode mesmo aumentar a versão padrão de 4D adicionando **plug-ins** ao seu ambiente de desenvolvimento 4D.
 

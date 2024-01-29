@@ -1,7 +1,6 @@
----
-id: CryptoKeyClass
-title: CryptoKey
----
+- - -
+id: CryptoKeyClass title: CryptoKey
+- - -
 
 
 4D ランゲージの `CryptoKey` クラスは、非対称の暗号化キーペアをカプセル化します。

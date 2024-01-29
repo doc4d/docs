@@ -1,7 +1,6 @@
----
-id: propertiesScale
-title: スケール
----
+- - -
+id: propertiesScale title: スケール
+- - -
 
 ## バーバーショップ
 

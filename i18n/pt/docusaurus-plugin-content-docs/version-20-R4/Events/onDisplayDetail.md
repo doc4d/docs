@@ -1,7 +1,6 @@
----
-id: onDisplayDetail
-title: On Display Detail
----
+- - -
+id: onDisplayDetail title: On Display Detail
+- - -
 
 | Code | Pode ser chamado por                                     | Definição                                                                                         |
 | ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |

@@ -1,7 +1,6 @@
----
-id: propertiesGridlines
-title: Linhas de grelha
----
+- - -
+id: propertiesGridlines title: Gridlines
+- - -
 
 ## Cor linha horizontal
 

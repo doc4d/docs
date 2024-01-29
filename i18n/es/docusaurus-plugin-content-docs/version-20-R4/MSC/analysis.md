@@ -1,8 +1,6 @@
----
-id: analysis
-title: Página Análisis de actividades
-sidebar_label: Página Análisis de actividades
----
+- - -
+id: analysis title: Activity analysis Page sidebar_label: Activity analysis Page
+- - -
 
 La página Análisis de actividades permite ver el contenido del archivo de registro actual. Esta función es útil para analizar el uso de una aplicación o detectar la(s) operación(es) que ha(n) causado errores o mal funcionamiento. En el caso de una aplicación en modo cliente-servidor, permite verificar las operaciones realizadas por cada máquina cliente.
 > También es posible revertir las operaciones realizadas sobre los datos de la base. Para más información, consulte [Página de retroceso](rollback.md).

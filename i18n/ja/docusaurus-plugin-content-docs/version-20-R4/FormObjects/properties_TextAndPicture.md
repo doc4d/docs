@@ -1,7 +1,6 @@
----
-id: propertiesTextAndPicture
-title: テキスト、ピクチャー
----
+- - -
+id: propertiesTextAndPicture title: テキスト、ピクチャー
+- - -
 
 
 ## 背景パス名

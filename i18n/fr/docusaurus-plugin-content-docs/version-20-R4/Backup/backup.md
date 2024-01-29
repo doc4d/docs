@@ -1,8 +1,6 @@
----
-id: backup
-slug: backup
-title: Sauvegarde
----
+- - -
+id: backup slug: backup title: Backup
+- - -
 
 Une sauvegarde peut être déclenchée de trois manières :
 

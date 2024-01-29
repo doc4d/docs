@@ -1,8 +1,6 @@
----
-id: tags
-slug: tags
-title: Etiquetas de transformación
----
+- - -
+id: tags slug: tags title: Transformation tags
+- - -
 
 4D ofrece un conjunto de etiquetas de transformación que le permiten insertar referencias a las variables o a las expresiones 4D, o efectuar diferentes tipos de procesamiento en un texto fuente, llamado "plantilla". Estas etiquetas se interpretan durante la ejecución del texto fuente y generan un texto de salida.
 

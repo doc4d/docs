@@ -1,7 +1,6 @@
----
-id: radiobuttonOverview
-title: ラジオボタン
----
+- - -
+id: radiobuttonOverview title: ラジオボタン
+- - -
 
 ラジオボタンは、ボタングループの中から1つを選択することができるオブジェクトです。
 

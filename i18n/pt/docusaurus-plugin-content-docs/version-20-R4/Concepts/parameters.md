@@ -1,7 +1,6 @@
----
-id: parameters
-title: Parâmetros
----
+- - -
+id: parameters title: Parameters
+- - -
 
 
 Frequentemente será preciso passar dados para seus métodos. Isso é facilmente feito com parâmetros.

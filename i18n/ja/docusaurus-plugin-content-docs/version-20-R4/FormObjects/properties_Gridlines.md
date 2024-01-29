@@ -1,7 +1,6 @@
----
-id: propertiesGridlines
-title: グリッド線
----
+- - -
+id: propertiesGridlines title: グリッド線
+- - -
 
 ## 横線カラー
 

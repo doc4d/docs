@@ -1,7 +1,6 @@
----
-id: classes
-title: クラス
----
+- - -
+id: classes title: クラス
+- - -
 
 
 ## 概要

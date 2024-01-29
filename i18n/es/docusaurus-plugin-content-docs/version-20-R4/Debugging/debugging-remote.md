@@ -1,7 +1,6 @@
----
-id: debugging-remote
-title: Depuración desde máquinas remotas
----
+- - -
+id: debugging-remote title: Debugging from remote machines
+- - -
 
 ## Generalidades
 

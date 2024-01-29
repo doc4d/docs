@@ -1,7 +1,6 @@
----
-id: propertiesListBox
-title: リストボックス
----
+- - -
+id: propertiesListBox title: リストボックス
+- - -
 
 ---
 ## 列
