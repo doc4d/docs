@@ -1,5 +1,5 @@
 - - -
-id: dataExplorer title: Data Explorer
+id: dataExplorer title: Explorateur de données
 - - -
 
 L'Explorateur de données fournit une interface web pour visualiser et rechercher les données de votre datastore. Grâce à cet outil, vous pouvez facilement naviguer parmi toutes vos entités et rechercher, ordonner ou filtrer les valeurs des attributs. Il vous aide à contrôler les données et à identifier rapidement les problèmes rencontrés à chaque étape du développement.
