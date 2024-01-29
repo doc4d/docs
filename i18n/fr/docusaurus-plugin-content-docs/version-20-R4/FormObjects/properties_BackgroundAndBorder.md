@@ -1,5 +1,5 @@
 - - -
-id: propertiesBackgroundAndBorder title: Background and Border
+id: propertiesBackgroundAndBorder title: Fond et bordure
 - - -
 
 
@@ -84,9 +84,9 @@ Décrit le type de ligne en pointillé comme une séquence de points noirs et bl
 
 #### Grammaire JSON
 
-| Nom             | Type de données            | Valeurs possibles                                                            |
-| --------------- | -------------------------- | ---------------------------------------------------------------------------- |
-| strokeDashArray | tableau numérique ou texte | Ex : "6 1" ou \[6,1\] pour une séquence de 6 points noirs et 1 point blanc |
+| Nom             | Type de données            | Valeurs possibles                                                                 |
+| --------------- | -------------------------- | --------------------------------------------------------------------------------- |
+| strokeDashArray | tableau numérique ou texte | Ex : Ex : "6 1" ou \[6,1\] pour une séquence de 6 points noirs et 1 point blanc |
 
 #### Objets pris en charge
 
