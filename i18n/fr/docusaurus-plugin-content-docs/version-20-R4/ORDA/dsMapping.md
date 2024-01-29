@@ -1,5 +1,5 @@
 - - -
-id: dsmapping title: Data Model Objects
+id: dsmapping title: Objets Data Model
 - - -
 
 La technologie ORDA est fondée sur une cartographie automatique d'une structure de base sous-jacente. Elle permet également d'accéder aux données via des objets sélection d'entités (entity selection) et entité (entity). Par conséquent, ORDA expose la base de données entière comme un ensemble d'objets de modèle de données.
@@ -166,7 +166,7 @@ En outre, les attributs relationnels suivant seront également disponibles autom
 
 *   dans la dataclass Project : l'attribut **theClient**, du type "relatedEntity" ; il y a au plus une compagnie pour chaque projet (le client)
 *   dans la dataclass Company : l'attribut **companyProjects**, du type "relatedEntities" ; pour chaque compagnie, il existe un certain nombre de projets reliés.
-> La propriété manuelle ou automatique d'une relation de base de données n'a aucun effet dans ORDA.
+> > La propriété manuelle ou automatique d'une relation de base de données n'a aucun effet dans ORDA.
 
 Tous les attributs de la dataclass sont exposés en tant que propriétés de la dataclass :
 
