@@ -1,5 +1,5 @@
 - - -
-id: control-flow title: Control flow
+id: control-flow title: Conditions et boucles
 - - -
 
 Quelle que soit la simplicité ou la complexité d’une méthode ou d'une fonction, vous utiliserez toujours un ou plusieurs types de structure de programmation. Les structures de programmation déterminent si et dans quel ordre les lignes d’instructions sont exécutées à l’intérieur d’une méthode. Il existe trois types de structures :
@@ -71,6 +71,7 @@ Le résultat est équivalent et _MethodB_ n'est évaluée que si nécessaire.
     QUERY([People];[People]LastName=$Find)
  Else
     ALERT("You did not enter a name.")
+ End if
  End if
  End if
  End if 
@@ -165,6 +166,12 @@ Cet exemple teste une variable numérique et affiche une boîte de dialogue d’
     Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
        ALERT("It was not one, two, or three.")
  //statement(s)
+ End case //Si le chiffre est 2, afficher une alerte
+    :(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
@@ -173,6 +180,62 @@ A titre de comparaison, voici la version avec `If...Else...End if` de la même m
 ```4d
  If(vResult=1) //Tester si le chiffre est 1
     ALERT("One.") If(vResult=1) //Test if the number is 1
+    ALERT("One.") //If it is 1, display an alert
+ Else
+    If(vResult=2) //Test if the number is 2
+       ALERT("Two.") //If it is 2, display an alert
+    Else
+       If(vResult=3) //Test if the number is 3
+          ALERT("Three.") //If it is 3, display an alert
+       Else //If it is not 1, 2, or 3, display an alert
+          ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if If(vResult=1) //Tester si le chiffre est 1
+    ALERT("One.") If(vResult=1) //Tester si le chiffre est 1
+    ALERT("One.") If(vResult=1) //Tester si le chiffre est 1
+    ALERT("One.") If(vResult=1) //Tester si le chiffre est 1
+    ALERT("One.") //Si le chiffre est 1, afficher une alerte
+ Else
+    If(vResult=2) //Tester si le chiffre est 2
+       ALERT("Two.") //Si le chiffre est 2, afficher une alerte
+    Else
+    If(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if //Si le chiffre est 2, afficher une alerte
+    Else
+    If(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if //Si le chiffre est 2, afficher une alerte
+    Else
+    If(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if //Si le chiffre est 2, afficher une alerte
+    Else
+    If(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if If(vResult=1) //Test if the number is 1
     ALERT("One.") //If it is 1, display an alert
  Else
     If(vResult=2) //Test if the number is 2
