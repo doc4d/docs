@@ -1,5 +1,5 @@
 - - -
-id: propertiesGridlines title: Gridlines
+id: propertiesGridlines title: Quadrillage
 - - -
 
 ## Couleur lignes horizontales
