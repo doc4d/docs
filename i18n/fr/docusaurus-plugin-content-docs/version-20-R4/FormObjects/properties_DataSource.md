@@ -1,5 +1,5 @@
 - - -
-id: propertiesDataSource title: Data Source
+id: propertiesDataSource title: Source de données
 - - -
 
 ## Insertion automatique
