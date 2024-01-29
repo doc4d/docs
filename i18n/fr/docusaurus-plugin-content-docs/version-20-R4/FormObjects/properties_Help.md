@@ -1,5 +1,5 @@
 - - -
-id: propertiesHelp title: Help
+id: propertiesHelp title: Aide
 - - -
 
 ## Infobulle
