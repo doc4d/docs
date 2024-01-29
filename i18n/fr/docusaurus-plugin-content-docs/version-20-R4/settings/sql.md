@@ -1,5 +1,5 @@
 - - -
-id: sql title: SQL page
+id: sql title: Page SQL
 - - -
 
 Cette page permet de configurer les paramètres de publication, les droits d'accès et les options du moteur du [serveur SQL 4D](https://doc.4d.com/4Dv19R4/4D/19-R4/4D-Reference-SQL.100-5795789.fe.html).
