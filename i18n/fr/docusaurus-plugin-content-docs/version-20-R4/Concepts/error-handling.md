@@ -1,5 +1,5 @@
 - - -
-id: error-handling title: Error handling
+id: error-handling title: Gestion des erreurs
 - - -
 
 Le traitement des erreurs consiste à anticiper les erreurs pouvant survenir dans votre application et à y répondre. 4D fournit un support complet pour la détection et la signalisation des erreurs lors de l'exécution, ainsi que pour l'analyse de leurs conditions.
@@ -128,6 +128,8 @@ ON ERR CALL("emptyMethod") //emptyMethod existe mais est vide
 $doc:=Open document( "myFile.txt")
 If (Error=-43)
     ALERT("File not found.")
+End if
+ON ERR CALL.("")
 End if
 ON ERR CALL.("")
 ```
