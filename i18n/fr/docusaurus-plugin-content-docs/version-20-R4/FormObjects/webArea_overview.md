@@ -1,5 +1,5 @@
 - - -
-id: webAreaOverview title: Web Area
+id: webAreaOverview title: Zones Web
 - - -
 
 
