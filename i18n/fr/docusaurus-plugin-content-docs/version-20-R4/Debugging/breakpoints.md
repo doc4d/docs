@@ -1,5 +1,5 @@
 - - -
-id: breakpoints title: Breakpoints and Command Catching
+id: breakpoints title: Points d'arrêt et points d'arrêt sur commande
 - - -
 
 ## Vue d’ensemble
