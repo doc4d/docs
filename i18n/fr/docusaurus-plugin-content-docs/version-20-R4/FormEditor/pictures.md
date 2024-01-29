@@ -1,5 +1,5 @@
 - - -
-id: pictures title: Pictures
+id: pictures title: Images
 - - -
 
 4D inclut une prise en charge spécifique des images utilisées dans vos formulaires.
