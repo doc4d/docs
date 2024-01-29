@@ -1,5 +1,5 @@
 - - -
-id: attributes title: $attributes
+id: attributes title: '$attributes'
 - - -
 
 Permet de sélectionner les attributs relationnels à obtenir à partir de la dataclass (par exemple, `Company(1)?$attributes=employees.lastname` or `Employee?$attributes=employer.name`).
