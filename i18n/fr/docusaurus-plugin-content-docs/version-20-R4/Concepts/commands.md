@@ -1,5 +1,5 @@
 - - -
-id: commands title: Commands
+id: commands title: Commandes
 - - -
 
 Le langage 4D contient un grand nombre de commandes intégrées, permettant au développeur d'effectuer un large éventail d'actions.
