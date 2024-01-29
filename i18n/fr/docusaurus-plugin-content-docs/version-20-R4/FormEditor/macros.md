@@ -1,5 +1,5 @@
 - - -
-id: macros title: Form Editor Macros
+id: macros title: Macros de l'éditeur de formulaires
 - - -
 
 
@@ -288,6 +288,10 @@ Function onInvoke($editor : Object)->$result : Object
 
     Else 
         ALERT("Please select a form object.")
+    End if 
+
+    // Notifier la modification à 4D
+    $result:=New object("currentPage"; $editor.editor.currentPage)
     End if 
 
     // Notifier la modification à 4D
