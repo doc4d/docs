@@ -1,5 +1,5 @@
 - - -
-id: buttonGridOverview title: Button Grid
+id: buttonGridOverview title: Grille de boutons
 - - -
 
 Une grille de boutons est un objet transparent placé sur une image. L’image doit correspondre à la forme d’un tableau. Lorsque l'utilisateur clique sur un graphique, ce dernier aura un aspect comprimé :
