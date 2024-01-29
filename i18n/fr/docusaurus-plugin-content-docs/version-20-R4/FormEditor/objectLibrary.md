@@ -1,5 +1,5 @@
 - - -
-id: objectLibrary title: Object libraries
+id: objectLibrary title: Bibliothèques d'objets
 - - -
 
 
