@@ -293,7 +293,7 @@ $transporter.send($email)
 
 #### 説明
 
-The `.size` property contains <!-- REF #MailAttachmentClass.type.Summary -->the value of the `size` header of the attachment file<!-- END REF -->。 The `.size` property is returned when the MIME message defines a size header in the attachment part.
+`.size` プロパティは、 <!-- REF #MailAttachmentClass.size.Summary -->添付ファイルの `size` ヘッダーを格納します<!-- END REF -->。 `.size`プロパティは、MIMEメッセージが添付ファイル部でサイズヘッダーを定義している場合に返されます。
 
 
 ## .type
