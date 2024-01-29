@@ -7,9 +7,9 @@ The compiled 4D code can be executed in **preemptive processes**. Thanks to this
 
 ## What is a preemptive process?
 
-When run in *preemptive* mode, a process is dedicated to a CPU. Process management is then delegated to the system, which can allocate each CPU separately on a multi-core machine.
+When run in _preemptive_ mode, a process is dedicated to a CPU. Process management is then delegated to the system, which can allocate each CPU separately on a multi-core machine.
 
-When run in *cooperative* mode, all processes are managed by the parent application thread and share the same CPU, even on a multi-core machine.
+When run in _cooperative_ mode, all processes are managed by the parent application thread and share the same CPU, even on a multi-core machine.
 
 As a result, in preemptive mode, overall performance of the application is improved, especially on multi-core machines, since multiple processes (threads) can truly run simultaneously. However, actual gains depend on the operations being executed. In return, since each thread is independent from the others in preemptive mode, and not managed directly by the application, there are specific constraints applied to code that you want to be compliant with preemptive use. Additionally, preemptive execution is only available in certain specific contexts.
 
@@ -32,7 +32,7 @@ Otherwise, if you call `New process` or `CALL WORKER` from an execution context 
 
 ## Thread-safe vs thread-unsafe code
 
-4D code can only be run in a preemptive thread when certain specific conditions are met. Each part of the code being executed (commands, methods, variables, functions, etc.) must be compliant with preemptive use. Elements that can be run in preemptive threads are called thread-safe and those that cannot be run in preemptive threads are called thread-unsafe.
+4D code can only be run in a preemptive thread when certain specific conditions are met. 4D code can only be run in a preemptive thread when certain specific conditions are met. Elements that can be run in preemptive threads are called thread-safe and those that cannot be run in preemptive threads are called thread-unsafe.
 
 :::note
 
@@ -42,7 +42,7 @@ Since a thread is handled independently starting from the parent process method,
 
 The "thread safety" property of each element depends on the element itself:
 
-- 4D commands: thread safety is an internal property. In the [4D Language Reference manual](https://doc.4d.com/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.en.html), thread-safe commands are identified by the ![](../assets/en/Develop/thread-safe.png) icon. You can also use the [`Command name`](https://doc.4d.com/4dv20/help/command/en/page538.html) command to know if a command is thread-safe. A large part of 4D commands can run in preemptive mode.
+- 4D commands: thread safety is an internal property. 4D commands: thread safety is an internal property. In the [4D Language Reference manual](https://doc.4d.com/4Dv20/4D/20.1/4D-Language-Reference.100-6479538.en.html), thread-safe commands are identified by the ![](../assets/en/Develop/thread-safe.png) icon. A large part of 4D commands can run in preemptive mode.
 - Project methods: conditions for being thread-safe are listed in [this paragraph](#writing-a-thread-safe-method).
 
 Basically, code to be run in preemptive threads cannot call parts with external interactions, such as plug-in code or interprocess variables. Accessing data, however, is allowed since the 4D data server and ORDA support preemptive execution.
@@ -52,7 +52,7 @@ Basically, code to be run in preemptive threads cannot call parts with external 
 
 By default, 4D executes all the project methods of your application in cooperative mode. If you want to benefit from the preemptive mode feature, the first step consists of explicitly declaring all methods that you want to be started in preemptive mode whenever possible -- that is, methods that you consider capable of being run in a preemptive process. The compiler will [check that these methods are actually thread-safe](#writing-a-thread-safe-method) at compile time. You can also disallow preemptive mode for some methods, if necessary.
 
-Keep in mind that declaring a method "capable" of preemptive use makes it eligible for preemptive execution but does not guarantee that it will actually be executed in preemptive mode at runtime. Starting a process in preemptive mode results from an [evaluation performed by 4D](#when-is-a-process-started-preemptively) regarding the properties of all the methods in the call chain of the process.
+Keep in mind that declaring a method "capable" of preemptive use makes it eligible for preemptive execution but does not guarantee that it will actually be executed in preemptive mode at runtime. Si l'éligibilité de la méthode au mode préemptif est confirmée par le compilateur, elle est étiquetée "thread-safe" en interne et sera exécutée en mode préemptif à chaque fois que les conditions requises seront réunies.
 
 To declare your method eligible for use in preemptive mode, you need to use the "Execution mode" declaration option in the Method Properties dialog box:
 
@@ -64,7 +64,7 @@ Les options suivantes sont prises en charge :
 
     Lorsque cette option est sélectionnée, le compilateur de 4D vérifiera que la méthode est effectivement capable et retournera des erreurs si ce n'est pas le cas -- par exemple, si elle appelle directement ou indirectement des commandes ou d'autres méthodes qui, elles, ne peuvent pas être exécutées en mode préemptif (toute la chaîne d'appel est analysée mais les erreurs sont signalées uniquement au premier niveau). Dans ce cas, vous pourrez modifier la méthode afin de la rendre "thread-safe" ou sélectionner une autre option.
 
-    Si l'éligibilité de la méthode au mode préemptif est confirmée par le compilateur, elle est étiquetée "thread-safe" en interne et sera exécutée en mode préemptif à chaque fois que les conditions requises seront réunies. This property defines its eligibility for preemptive mode but does not guarantee that the method will actually be run in preemptive mode, since this execution mode requires a [specific context](#when-is-a-process-started-preemptively).
+    Si l'éligibilité de la méthode au mode préemptif est confirmée par le compilateur, elle est étiquetée "thread-safe" en interne et sera exécutée en mode préemptif à chaque fois que les conditions requises seront réunies. Keep in mind that declaring a method "capable" of preemptive use makes it eligible for preemptive execution but does not guarantee that it will actually be executed in preemptive mode at runtime.
 
 - **Ne peut pas être exécutée dans un process préemptif** : En sélectionnant cette option, vous déclarez que la méthode ne doit jamais être exécutée en mode préemptif, et doit par conséquent toujours être exécutée en mode coopératif. La propriété "preemptive" de la méthode prend pour valeur "incapable".
 
@@ -84,13 +84,13 @@ If the method has also the [**Shared by components and host database**](../Proje
 
 ## When is a process started preemptively?
 
-:::info Reminder
+Reminder
 
 Preemptive execution is only available in compiled mode.
 
 :::
 
-In compiled mode, when starting a process created by either `New process` or `CALL WORKER` commands, 4D reads the preemptive property of the process method (also named *parent* method) and executes the process in preemptive or cooperative mode, depending on this property:
+In compiled mode, when starting a process created by either `New process` or `CALL WORKER` commands, 4D reads the preemptive property of the process method (also named _parent_ method) and executes the process in preemptive or cooperative mode, depending on this property:
 
 - If the process method is thread-safe (validated during compilation), the process is executed in a preemptive thread.
 - If the process method is thread-unsafe, the process is run in a cooperative thread.
