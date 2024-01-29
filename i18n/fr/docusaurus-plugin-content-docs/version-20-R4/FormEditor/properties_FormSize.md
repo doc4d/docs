@@ -1,5 +1,5 @@
 - - -
-id: formSize title: Form Size
+id: formSize title: Taille du formulaire
 - - -
 
 
