@@ -1,5 +1,5 @@
 - - -
-id: propertiesWebArea title: Web Area
+id: propertiesWebArea title: Zones Web
 - - -
 
 ---
