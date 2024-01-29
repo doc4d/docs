@@ -1,5 +1,5 @@
 - - -
-id: http-server title: HTTP Server Page
+id: http-server title: Page Serveur HTTP
 - - -
 
 
