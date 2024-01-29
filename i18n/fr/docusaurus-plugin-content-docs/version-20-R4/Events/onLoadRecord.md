@@ -1,5 +1,5 @@
 - - -
-id: onLoadRecord title: On Load Record
+id: onLoadRecord title: Sur chargement ligne
 - - -
 
 | Code | Peut être appelé par | Définition                                                                                           |
