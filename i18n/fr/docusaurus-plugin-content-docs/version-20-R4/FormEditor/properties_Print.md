@@ -1,5 +1,5 @@
 - - -
-id: print title: Print
+id: print title: Imprimer
 - - -
 
 
