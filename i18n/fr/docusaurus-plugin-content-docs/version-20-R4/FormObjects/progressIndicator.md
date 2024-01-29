@@ -1,5 +1,5 @@
 - - -
-id: progressIndicator title: Progress Indicator
+id: progressIndicator title: Indicateurs de progression
 - - -
 
 
