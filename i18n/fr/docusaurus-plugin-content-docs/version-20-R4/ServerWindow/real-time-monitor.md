@@ -1,5 +1,5 @@
 - - -
-id: real-time-monitor title: Real Time Monitor Page
+id: real-time-monitor title: Page Moniteur temps réel
 - - -
 
 
