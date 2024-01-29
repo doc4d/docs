@@ -1,5 +1,5 @@
 - - -
-id: overview title: MSC sidebar_label: MSC
+id: overview title: CSM sidebar_label: CSM
 - - -
 
 La fenêtre du Centre de sécurité et de maintenance (CSM) rassemble tous les outils nécessaires au contrôle, à l’analyse, à la maintenance, à la sauvegarde, au compactage et au chiffrement des fichiers de données et de structure. Le CSM est disponible dans toutes les applications 4D : 4D monoposte, 4D Server ou 4D Desktop.
