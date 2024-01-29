@@ -1,5 +1,5 @@
 - - -
-id: pictureButtonOverview title: Picture Button
+id: pictureButtonOverview title: Bouton image
 - - -
 
 Un bouton image est similaire à un [bouton standard](button_overview.md). Cependant, contrairement à un bouton standard (qui accepte trois états : activé, désactivé et cliqué), un bouton image contient une image différente pour représenter chaque état.
@@ -55,7 +55,7 @@ Les autres modes disponibles sont les suivants :
 - [Défilement continu sur clic](properties_Animation.md#switch-continuously-on-clicks)
 - [Use Last Frame as Disabled](properties_Animation.md#use-last-frame-as-disabled)
 - [Dernière imagette si désactivé](properties_Animation.md#use-last-frame-as-disabled)
-> La [variable associée](properties_Object.md#variable-or-expression) au bouton image renvoie le numéro d'index, dans la table des vignettes, de l'image courante affichée. La numérotation des images dans le tableau débute à 0.
+> [Dernière imagette si désactivé](properties_Animation.md#use-last-frame-as-disabled) > La [variable associée](properties_Object.md#variable-or-expression) au bouton image renvoie le numéro d'index, dans la table des vignettes, de l'image courante affichée. La numérotation des images dans le tableau débute à 0.
 
 ## Propriétés prises en charge
 
