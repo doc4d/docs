@@ -1,5 +1,5 @@
 - - -
-id: information title: Information Page sidebar_label: Information Page
+id: information title: Page informations sidebar_label: Page informations
 - - -
 
 La page “Informations” fournit diverses informations relatives à l’environnement 4D et l’environnement système, la base de données et les fichiers de l’application. Chaque page d’information est accessible via des onglets situés dans la partie supérieure de la fenêtre.
