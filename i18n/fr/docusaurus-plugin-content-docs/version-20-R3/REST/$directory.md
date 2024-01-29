@@ -19,7 +19,7 @@ Tous les paramètres doivent être passés dans les **en-têtes** d'une méthode
 | Clé de l'en-tête  | Valeur de l'en-tête                                                                                |
 | ----------------- | -------------------------------------------------------------------------------------------------- |
 | username-4D       | Utilisateur - Non obligatoire                                                                      |
-| password-4D       | Password in plan text - Not mandatory                                                              |
+| password-4D       | Mot de passe - Non obligatoire                                                                     |
 | session-4D-length | Timeout d'inactivité de la session (en minutes). Ne peut pas être inférieur à 60 - Non obligatoire |
 
 :::caution
@@ -35,10 +35,10 @@ C_TEXT($response;$body_t)
 ARRAY TEXT($hKey;3)
 ARRAY TEXT($hValues;3)
 $hKey{1}:="username-4D"
-$hKey{2}:="password-4D"
+$hKey{2}:="hashed-password-4D"
 $hKey{3}:="session-4D-length"
 $hValues{1}:="john"
-$hValues{2}:="123"
+$hValues{2}:=Generate digest("123";4D digest)
 $hValues{3}:=120
 $httpStatus:=HTTP Request(HTTP POST method;"app.example.com:9000/rest/$directory/login";$body_t;$response;$hKey;$hValues)
 ```
