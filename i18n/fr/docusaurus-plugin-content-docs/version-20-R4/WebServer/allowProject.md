@@ -1,5 +1,5 @@
 - - -
-id: allowProject title: Allowing project methods
+id: allowProject title: Méthodes projet
 - - -
 
 
