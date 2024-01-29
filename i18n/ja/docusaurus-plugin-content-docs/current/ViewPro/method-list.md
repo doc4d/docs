@@ -1291,13 +1291,14 @@ $range:=VP All("ViewProArea")
 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True // ドキュメント全体を検索します
+$condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // 戻り値のレンジオブジェクトが空かどうかをチェックします
+  // Check for empty range object 
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1985,6 +1986,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 ```4d
 var $panesObj : Object
+
 
 $panesObj:=VP Get frozen panes("ViewProArea")
 ```
@@ -2985,7 +2987,7 @@ $tables:=VP Get tables("ViewProArea")
 $cell:=VP Cell("ViewProArea";5;2)
 $value:=VP Get value($cell)
 If(Value type($value.value)=Is text)
-    VP SET TEXT VALUE($cell;New object("value";Uppercase($value.value))
+    VP SET VALUE($cell;New object("value";Uppercase($value.value)))
 End if
 ```
 
@@ -3642,7 +3644,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 | ---------- | ---- | -- | -------------------------------------------------- |
 | vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
+
 |
+
 
 #### 説明
 
@@ -5262,6 +5266,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 [4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE VALUE](#vp-set-date-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
+
 ### VP SET DATE VALUE
 
 <!-- REF #_method_.VP SET DATE VALUE.Syntax -->
@@ -5683,6 +5688,7 @@ VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(AL
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Syntax -->
 **VP SET ROW ATTRIBUTES** ( *rangeObj* : Object ; *propertyObj* : Object  ) <!-- END REF -->
+
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Params -->
 
