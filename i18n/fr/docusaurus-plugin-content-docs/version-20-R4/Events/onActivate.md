@@ -1,5 +1,5 @@
 - - -
-id: onActivate title: On Activate
+id: onActivate title: Sur activation
 - - -
 
 | Code | Peut être appelé par | Définition                                                                                                           |
