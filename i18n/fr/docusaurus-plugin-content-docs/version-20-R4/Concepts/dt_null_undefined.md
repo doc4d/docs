@@ -51,7 +51,7 @@ Typically when trying to read or assign undefined expressions, 4D will generate 
      $o.a:=$o.b //$o.a=0
 ```
 
-- L'affectation d'une valeur indéfinie à une propriété d'objet inexistante ne fait rien.
+- Assigning an undefined value to an existing object property reinitializes or clears its value.
 
 - Une valeur indéfinie passée en paramètre à une méthode projet est automatiquement convertie en 0 ou en "" en fonction de la déclaration du type du paramètre.
 
