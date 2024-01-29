@@ -1,5 +1,5 @@
 - - -
-id: gettingStarted title: Web Development
+id: gettingStarted title: Développement Web
 - - -
 
 This "Getting started" section is geared at first-time users who want an overall overview on how to go from zero to a 4D website that handles data from the database. Let's start!
