@@ -1,5 +1,5 @@
 - - -
-id: stylesheets title: Style sheets
+id: stylesheets title: Feuilles de style (style sheets)
 - - -
 
 
