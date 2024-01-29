@@ -317,6 +317,22 @@ Function broadcast($ws : 4D.WebSocketConnection; $message:text)
         If ($client.id#$ws.id)
             $client.send($message)
         End if 
+    End for each    
+    // Send "New client connected" message to all other chat clients
+    This.broadcast($ws;"New client connected")
+
+Function onTerminate($ws : 4D.WebSocketConnection; $message : Object)
+    // Send "Client disconnected" message to all other chat clients
+    This.broadcast($ws;"Client disconnected")
+
+Function broadcast($ws : 4D.WebSocketConnection; $message:text)
+    var $client:4D.WebSocketConnection
+    // Resend the message to all chat clients
+    For each ($client; $ws.wss.connections)
+        // Check that the id is not the current connection
+        If ($client.id#$ws.id)
+            $client.send($message)
+        End if 
     End for each 
 
 ```
@@ -354,7 +370,7 @@ When a connection is terminated, its [`status`](WebSocketConnectionClass.md#stat
 
 #### Description
 
-La propriété `.dataType` contient <!-- REF #WebSocketServerClass.dataType.Summary -->le type de données reçues ou envoyées<!-- END REF -->.
+La propriété `.dataType` contient <!-- REF #WebSocketServerClass.dataType.Summary -->La propriété `.dataType` contient<!-- END REF -->.
 
 Cette propriété est en lecture seule.
 <!-- END REF -->
@@ -367,7 +383,7 @@ Cette propriété est en lecture seule.
 
 #### Description
 
-La propriété `.handler` contient <!-- REF #WebSocketServerClass.handler.Summary -->l'accesseur qui récupère l'objet `WSSHandler` utilisé pour initier le serveur WebSocket<!-- END REF -->.
+La propriété `.handler` contient <!-- REF #WebSocketServerClass.handler.Summary -->La propriété `.handler` contient<!-- END REF -->.
 
 <!-- END REF -->
 
