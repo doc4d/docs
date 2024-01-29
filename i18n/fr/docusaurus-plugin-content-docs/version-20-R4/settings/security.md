@@ -1,5 +1,5 @@
 - - -
-id: security title: Security page
+id: security title: Page sécurité
 - - -
 
 Cette page regroupe les options relatives à la protection des accès et des données de vos applications desktop.
