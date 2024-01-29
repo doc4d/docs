@@ -1,5 +1,5 @@
 - - -
-id: maintenance title: Maintenance Page
+id: maintenance title: Page maintenance
 - - -
 
 
