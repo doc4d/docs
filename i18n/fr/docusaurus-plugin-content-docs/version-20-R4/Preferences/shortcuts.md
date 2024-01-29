@@ -1,5 +1,5 @@
 - - -
-id: shortcuts title: Shortcuts Page
+id: shortcuts title: Page Raccourcis
 - - -
 
 Cette page affiche la liste de tous les raccourcis-clavier utilisés dans le mode Développement de 4D (hormis les raccourcis "système" standard, tels que Ctrl+c/Commande+c pour la commande Copier).
