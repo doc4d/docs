@@ -1,5 +1,5 @@
 - - -
-id: propertiesEntry title: Entry
+id: propertiesEntry title: Saisie
 - - -
 
 ## Correction orthographique
