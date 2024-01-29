@@ -1,5 +1,5 @@
 - - -
-id: propertiesTextAndPicture title: Text and Picture
+id: propertiesTextAndPicture title: Texte et Image
 - - -
 
 
