@@ -1,5 +1,5 @@
 - - -
-id: paths title: Pathnames
+id: paths title: Chemins d'accès
 - - -
 
 Les fonctions, propriétés et commandes des classes File et Folder vous permettent de manipuler les fichiers et les dossiers comme des objets. Cela rend la gestion des fichiers et dossiers flexible et puissante. Par exemple, pour créer un nouveau fichier dans le dossier Documents de l'utilisateur courant, vous pouvez écrire :
@@ -26,8 +26,8 @@ Les filesystem suivants sont pris en charge :
 | "/LOGS"      | Dossier Logs                                             |
 | "/PACKAGE"   | Dossier racine du projet (avec ou sans extension 4dbase) |
 | "/PROJECT"   | Dossier Project                                          |
-| "/RESOURCES" | Dossier de ressources du projet courant                  |
-| "/SOURCES"   | Dossier des sources du projet courant                    |
+| "/RESOURCES" | Dossier de ressources courant du projet                  |
+| "/SOURCES"   | Dossier des sources du projet en cours                   |
 
 ## Syntaxe POSIX
 
