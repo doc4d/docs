@@ -291,12 +291,12 @@ La propriété `.platformPath` retourne <!-- REF #MailAttachmentClass.platformPa
 
 #### Description
 
-The `.size` property contains <!-- REF #MailAttachmentClass.type.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. The `.size` property is returned when the MIME message defines a size header in the attachment part.
+The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. The `.size` property is returned when the MIME message defines a size header in the attachment part.
 
 
 ## .type
 
-<!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Texte<!-- END REF -->
+<!-- REF #MailAttachmentClass.type.Syntax -->`CryptoKey` doit contenir une clé **privée** valide.<!-- END REF -->
 
 
 #### Description
