@@ -1,5 +1,5 @@
 - - -
-id: queryplan title: $queryplan
+id: queryplan title: '$queryplan'
 - - -
 
 
