@@ -1,5 +1,5 @@
 - - -
-id: ruler title: Ruler
+id: ruler title: Règle
 - - -
 
 
