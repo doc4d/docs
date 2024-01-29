@@ -1,5 +1,5 @@
 - - -
-id: catalog title: $catalog
+id: catalog title: '$catalog'
 - - -
 
 
