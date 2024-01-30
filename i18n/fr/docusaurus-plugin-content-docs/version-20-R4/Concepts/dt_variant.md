@@ -1,7 +1,6 @@
----
-id: variant
-title: Variant
----
+- - -
+id: variant title: Variant
+- - -
 
 Variant est un type de variable qui permet d'encapsuler des données de type valide et standard dans une variable. En règle générale, ce type de variable peut être utilisé pour écrire du code générique qui retourne ou reçoit des valeurs dont le type n'est pas connu. C'est le cas par exemple du code traitant des attributs d'objet.
 
