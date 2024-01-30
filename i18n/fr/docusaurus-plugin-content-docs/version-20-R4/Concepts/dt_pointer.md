@@ -1,7 +1,6 @@
----
-id: pointer
-title: Pointer
----
+- - -
+id: pointer title: Pointer
+- - -
 
 Les variables ou expressions de type Pointeur sont des références à d'autres variables (y compris des tableaux et des éléments de tableaux), à des tables, des champs ou des objets. Il n'existe pas de champ de type Pointeur.
 
