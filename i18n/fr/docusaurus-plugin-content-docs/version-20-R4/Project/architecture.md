@@ -1,12 +1,11 @@
----
-id: architecture
-title: Architecture d'un projet
----
+- - -
+id: architecture title: Architecture d'un projet
+- - -
 
 Un projet 4D est composé de plusieurs dossiers et fichiers, stockés dans un dossier racine de projet (dossier package). Par exemple :
 
 - MyPackage (*dossier racine du projet*)
-    - `Components`
+    - `Composants`
     - `Data`
         - `Logs`
         - `Settings`
@@ -58,7 +57,7 @@ Ce fichier texte peut également contenir des clés de configuration, notamment 
 | catalog.4DCatalog       | Définit des tables et des champs                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | XML    |
 | folders.json            | Définitions des dossiers de l'Explorateur                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | JSON   |
 | menus.json              | Définit les menus                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | JSON   |
-| settings.4DSettings     | Propriétés de la base *Structure*. Elles ne sont pas prises en compte si les *[paramètres utilisateur](#settings-user)* ou les *[paramètres utilisateur pour les données](#settings-user-data)* sont définis (voir également [Priorité des paramètres](../Desktop/user-settings.md#priorite-des-parametres)). **Attention** : dans les applications compilées, les paramètres de structure sont stockés dans le fichier .4dz (lecture seule). Pour les besoins du déploiement, il est nécessaire d'[activer](../Desktop/user-settings.md#enabling-user-settings) et d'utiliser les *paramètres utilisateurs* ou les *paramètres utilisateurs pour les données* pour définir des paramètres personnalisés. | XML    |
+| settings.4DSettings     | Propriétés de la base *Structure*. **Attention** : dans les applications compilées, les paramètres de structure sont stockés dans le fichier .4dz (lecture seule). Elles ne sont pas prises en compte si les *[paramètres utilisateur](#settings-user)* ou les *[paramètres utilisateur pour les données](#settings-user-data)* sont définis (voir également [Priorité des paramètres](../Desktop/user-settings.md#priorite-des-parametres)). Pour les besoins du déploiement, il est nécessaire d'[activer](../Desktop/user-settings.md#enabling-user-settings) et d'utiliser les *paramètres utilisateurs* ou les *paramètres utilisateurs pour les données* pour définir des paramètres personnalisés. | XML    |
 | tips.json               | Définit les messages d'aide                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | JSON   |
 | lists.json              | Listes définies                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | JSON   |
 | filters.json            | Filtres définis                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | JSON   |
@@ -218,7 +217,7 @@ Ce dossier contient des fichiers qui mémorisent les configurations utilisateur,
 | CompilerIntermediateFiles  | Fichiers intermédiaires résultant de la compilation Apple Silicon     | Folder |
 
 
-## `Components`
+## `Composants`
 
 Ce dossier contient les composants qui seront disponibles dans le projet d'application. Il doit être stocké au même niveau que le dossier Project.
 
