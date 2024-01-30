@@ -1,7 +1,6 @@
----
-id: ordaClasses
-title: Classes du modèle de données
----
+- - -
+id: ordaClasses title: Classes du modèle de données
+- - -
 
 
 
@@ -708,7 +707,7 @@ An alias attribute inherits its data [`type`](../API/DataClassClass.md#attribute
 - if the target attribute [`kind`](../API/DataClassClass.md#attributename) is "storage", the alias data type is of the same type,
 - if the target attribute [`kind`](../API/DataClassClass.md#attributename) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection").
 
-Alias attributes based upon relations have a specific [`path`](../API/DataClassClass.md#attributename) property, containing the path of their target attributes. Alias attributes based upon attributes of the same dataclass have the same properties as their target attributes (and no `path` property).
+Alias attributes based upon attributes of the same dataclass have the same properties as their target attributes (and no `path` property). Alias attributes based upon relations have a specific [`path`](../API/DataClassClass.md#attributename) property, containing the path of their target attributes.
 
 
 ### Exemples
