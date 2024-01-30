@@ -1,8 +1,6 @@
----
-id: backup
-slug: backup
-title: バックアップ
----
+- - -
+id: backup slug: backup title: バックアップ
+- - -
 
 4D では、次の 3つの方法でバックアップを開始することができます:
 
