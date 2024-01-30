@@ -67,7 +67,7 @@ Les commandes suivantes ne sont pas compatibles avec une utilisation dans le cad
 
 Toutes les méthodes projet d’un projet utilisé comme matrice sont par définition incluses dans le composant (le projet est le composant), ce qui signifie qu’elles peuvent être appelées et exécutées par le composant.
 
-En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelables par le projet hôte. Vous devez explicitement désigner, dans le projet utilisé comme matrice, les méthodes que vous souhaitez partager avec le projet hôte. Ces méthodes projet peuvent être appelées dans le code de le projet hôte (mais elles ne pourront pas être modifiées dans l’éditeur de méthodes de le projet hôte). Ces méthodes constituent les **points d’entrée** dans le composant.
+En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelables par le projet hôte. En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelables par le projet hôte. Vous devez explicitement désigner, dans le projet utilisé comme matrice, les méthodes que vous souhaitez partager avec le projet hôte. Ces méthodes constituent les **points d’entrée** dans le composant.
 
 A l’inverse, pour des raisons de sécurité, par défaut un composant ne peut pas exécuter de méthode projet appartenant au projet hôte. Dans certains cas, vous pourrez avoir besoin d’autoriser un composant à accéder à des méthodes projet de votre projet hôte. In certain cases, you may need to allow a component to access the project methods of your host project.
 
@@ -274,7 +274,7 @@ Les composants peuvent utiliser des ressources situées dans le dossier Ressourc
 
 Les mécanismes automatiques sont opérationnels : les fichiers XLIFF présents dans le dossier Resources d’un composant seront chargés par ce composant.
 
-Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont réparties entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A à partir du composant B ou du projet hôte.
+Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont réparties entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A à partir du composant B ou du projet hôte.
 
 ## Exécution du code d'initialisation
 
@@ -282,7 +282,7 @@ Un composant peut exécuter automatiquement du code 4D lors de l'ouverture ou de
 
 L'exécution du code d'initialisation ou de fermeture se fait au moyen de la méthode base `On Host Database Event`.
 
-> Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base`On Host Database Event` dans la base hôte afin de pouvoir l'appeler. Pour ce faire, vous devez cocher l'option **Exécuter la méthode "Sur événement base hôte" des composants** dans la page Sécurité des Paramètres.
+> Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base`On Host Database Event` dans la base hôte afin de pouvoir l'appeler. Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base`On Host Database Event` dans la base hôte afin de pouvoir l'appeler.
 
 ## Protection des composants : la compilation
 
