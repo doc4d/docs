@@ -1,7 +1,6 @@
----
-id: FunctionClass
-title: Function
----
+- - -
+id: FunctionClass title: Function
+- - -
 
 
 Un objet **`4D.Function`** contient un morceau de code qui peut être exécuté à partir d'un objet, soit à l'aide de l'opérateur `()` , soit à l'aide des fonctions [`apply()`](#apply) et [`call()`](#call) . 4D propose trois types d'objets `Function` :
@@ -176,7 +175,7 @@ Une formule simple :
 
 #### Exemple 2
 
-Une formule utilisant des variables locales :
+Une formule simple utilisant des paramètres :
 
 ```4d
 
@@ -191,7 +190,7 @@ Une formule utilisant des variables locales :
 
 #### Exemple 3
 
-Une formule simple utilisant des paramètres :
+Une formule utilisant des variables locales :
 
 ```4d
  $o:=New object("f";Formula($1+$2))
