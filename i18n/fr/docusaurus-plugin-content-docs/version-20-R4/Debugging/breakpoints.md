@@ -1,7 +1,6 @@
----
-id: breakpoints
-title: Points d'arrêt et points d'arrêt sur commande
----
+- - -
+id: breakpoints title: Points d'arrêt et points d'arrêt sur commande
+- - -
 
 ## Vue d’ensemble
 
