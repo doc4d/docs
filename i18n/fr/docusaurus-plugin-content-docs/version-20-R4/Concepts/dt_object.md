@@ -198,7 +198,7 @@ For more information, please refer to [Null and Undefined](dt_null_undefined.md)
 
 ### Valeur Indéfinie
 
-L'évaluation d'une propriété d'objet peut parfois produire une valeur indéfinie (undefined). Assigning an undefined value to an existing object property reinitializes or clears its value. L'affectation d'une valeur indéfinie à une propriété d'objet inexistante ne fait rien.
+L'évaluation d'une propriété d'objet peut parfois produire une valeur indéfinie (undefined). L'affectation d'une valeur indéfinie à une propriété d'objet inexistante ne fait rien. Assigning an undefined value to an existing object property reinitializes or clears its value.
 
 For more information, please refer to [Null and Undefined](dt_null_undefined.md)
 
