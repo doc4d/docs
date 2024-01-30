@@ -1,7 +1,6 @@
----
-id: dropdownListOverview
-title: Liste déroulante
----
+- - -
+id: dropdownListOverview title: Liste déroulante
+- - -
 
 Drop-down lists are form objects that allow the user to select from a list. You manage the items displayed in the drop-down list using an object, an array, a choice list, or a standard action.
 
@@ -67,7 +66,7 @@ Form.myDrop.currentValue //"oranges"
 Form.myDrop.index //3
 ```
 
-### Utiliser un tableau
+### Utiliser une énumération
 
 Un [tableau](Concepts/arrays.md) est une liste de valeurs gardées en mémoire qui sont référencées par le nom du tableau. A drop-down list can display an array as a list of values when you click on it.
 
