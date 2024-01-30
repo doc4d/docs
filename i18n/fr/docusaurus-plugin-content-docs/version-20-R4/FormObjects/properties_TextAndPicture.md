@@ -1,7 +1,6 @@
----
-id: propertiesTextAndPicture
-title: Texte et Image
----
+- - -
+id: propertiesTextAndPicture title: Texte et Image
+- - -
 
 
 ## Chemin d'accès arrière-plan
