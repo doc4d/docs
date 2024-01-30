@@ -1,7 +1,6 @@
----
-id: propertiesBackgroundAndBorder
-title: 背景色と境界線
----
+- - -
+id: propertiesBackgroundAndBorder title: 背景色と境界線
+- - -
 
 
 ## 交互に使用する背景色
