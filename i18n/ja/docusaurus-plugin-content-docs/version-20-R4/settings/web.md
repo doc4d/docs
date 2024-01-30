@@ -1,7 +1,6 @@
----
-id: web
-title: Web ページ
----
+- - -
+id: web title: Web ページ
+- - -
 
 **Web** ページのタブを使用して、4D に統合された Webサーバーの様々な設定 (セキュリティ、開始オプション、接続、Webサービス等) にアクセスできます。 4D Webサーバーの動作に関する詳細は [Web サーバー](../WebServer/webServer.md) を参照ください。 また、Webサービスに関する詳細は [Web サービスの公開と使用](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.ja.html) を参照ください。
 
@@ -293,7 +292,7 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 
 RESTサーバーを開始/停止します。 [RESTサーバー設定](../REST/configuration.md) 参照。
 
-### アクセス権
+### アクセス
 
 この設定は、RESTリクエストを使って 4Dデータベースへのリンクを設立することのできる 4Dユーザーのグループを指定します。 [アクセス権の設定](../REST/configuration.md#アクセス権の設定) 参照。
 
