@@ -1,7 +1,6 @@
----
-id: methods
-title: Page Méthodes
----
+- - -
+id: methods title: Page Méthodes
+- - -
 
 This page contains parameters defining the Code Editor interface and its default display as well as options concerning its operation. Elle est divisée en deux parties, accessibles via les onglets Thèmes et Options.
 
