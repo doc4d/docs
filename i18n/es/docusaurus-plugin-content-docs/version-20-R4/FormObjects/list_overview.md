@@ -1,7 +1,6 @@
----
-id: listOverview
-title: Lista jerárquica
----
+- - -
+id: listOverview title: Hierarchical List
+- - -
 
 
 Las listas jerárquicas son objetos formulario que pueden utilizarse para mostrar datos en forma de listas con uno o más niveles que pueden desplegarse o contraerse.
