@@ -1,7 +1,6 @@
----
-id: REST_requests
-title: A propos des requêtes REST
----
+- - -
+id: REST_requests title: A propos des requêtes REST
+- - -
 
 
 Les structures suivantes sont prises en charge par les requêtes REST :
