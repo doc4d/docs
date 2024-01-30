@@ -1,8 +1,6 @@
----
-id: backup
-title: Page Sauvegarde
-sidebar_label: Page Sauvegarde
----
+- - -
+id: backup title: Page Sauvegarde sidebar_label: Page Sauvegarde
+- - -
 
 La page Sauvegarde du CSM permet de visualiser les paramètres de sauvegarde de la base et de lancer une sauvegarde manuelle :
 
