@@ -1,7 +1,6 @@
----
-id: SystemWorkerClass
-title: SystemWorker
----
+- - -
+id: SystemWorkerClass title: SystemWorker
+- - -
 
 システムワーカーを使うことで、4Dコードは同じマシン上で任意の外部プロセス (シェルコマンド、PHPなど ) を呼び出すことができます。 システムワーカーは非同期で呼び出されます。 コールバックを使用することで、4D は双方向の通信を可能にします。
 
