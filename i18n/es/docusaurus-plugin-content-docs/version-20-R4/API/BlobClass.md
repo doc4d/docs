@@ -1,7 +1,6 @@
----
-id: BlobClass
-title: Blob
----
+- - -
+id: BlobClass title: Blob
+- - -
 
 La clase Blob permite crear y manipular los [blob objects](../Concepts/dt_blob.md#blob-types) (`4D.Blob`).
 
@@ -95,6 +94,12 @@ $myNewBlob:=$myBlob.slice(0; 5)
 
 $myString:=Convert to text($myNewBlob; "UTF-8")
 // $myString contains "Hello"
+
+// Crear un nuevo 4D.Blob a partir de $myBlob
+$myNewBlob:=$myBlob.slice(0; 5)
+
+$myString:=Convert to text($myNewBlob; "UTF-8")
+// $myString contiene "Hello"
 
 // Crear un nuevo 4D.Blob a partir de $myBlob
 $myNewBlob:=$myBlob.slice(0; 5)
