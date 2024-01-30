@@ -1,7 +1,6 @@
----
-id: print
-title: Imprimer
----
+- - -
+id: print title: Imprimer
+- - -
 
 
 ## Settings
