@@ -1,7 +1,6 @@
----
-id: ZipFolderClass
-title: ZIPFolder
----
+- - -
+id: ZipFolderClass title: ZIPFolder
+- - -
 
 
 Las siguientes propiedades y funciones de la clase [Folder](FolderClass.md) están disponibles para los objetos `ZIPFolder`:
