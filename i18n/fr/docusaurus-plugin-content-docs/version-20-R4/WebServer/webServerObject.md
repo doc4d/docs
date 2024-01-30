@@ -1,7 +1,6 @@
----
-id: webServerObject
-title: Objet Web Server
----
+- - -
+id: webServerObject title: Objet Web Server
+- - -
 
 
 Un projet 4D peut démarrer et surveiller un serveur Web pour l'application principale (hôte) ainsi que chaque composant hébergé.
