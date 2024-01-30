@@ -1,7 +1,6 @@
----
-id: subformOverview
-title: Sous-formulaire
----
+- - -
+id: subformOverview title: Sous-formulaire
+- - -
 
 
 Un sous-formulaire est un formulaire inclus dans un autre formulaire.
@@ -111,7 +110,7 @@ Modifying the bound variable or expression triggers form events which let you sy
 
 Scénario 2 : Le contenu du sous-formulaire est modifié et cette modification doit être répercutée dans le formulaire parent.
 
-Dans le sous-formulaire, le bouton modifie la valeur de l'expression `Form.clockValue` de type Texte attachée à l'objet horloge. Cela déclenche l'événement formulaire [On Data Change](../Events/onDataChange.md) dans l'objet horloge (cet événement doit être sélectionné pour l'objet), qui met à jour la valeur `Form.parisTime` dans le formulaire principal.
+Cela déclenche l'événement formulaire [On Data Change](../Events/onDataChange.md) dans l'objet horloge (cet événement doit être sélectionné pour l'objet), qui met à jour la valeur `Form.parisTime` dans le formulaire principal. Dans le sous-formulaire, le bouton modifie la valeur de l'expression `Form.clockValue` de type Texte attachée à l'objet horloge.
 
 The following code is executed:
 
