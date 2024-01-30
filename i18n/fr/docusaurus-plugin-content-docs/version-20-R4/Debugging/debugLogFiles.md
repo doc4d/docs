@@ -1,7 +1,6 @@
----
-id: debugLogFiles
-title: Fichiers journaux
----
+- - -
+id: debugLogFiles title: Fichiers journaux
+- - -
 
 Les applications 4D peuvent générer divers fichiers d'historique (ou "logs") qui sont utiles pour le débogage ou l'optimisation de leur exécution. Logs are usually started or stopped using selectors of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv20/help/command/en/page642.html), [WEB SET OPTION](https://doc.4d.com/4dv20/help/command/en/page1210.html), or [HTTP SET OPTION](https://doc.4d.com/4dv20/help/command/en/page1160.html) commands and are stored in the [Logs folder](Project/architecture.md#logs) of the project.
 
@@ -131,7 +130,7 @@ Pour chaque process, les champs suivants sont enregistrés :
 
 ## HTTPDebugLog.txt
 
-Ce fichier journal enregistre chaque requête HTTP et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parties body peuvent également être enregistrées.
+This log file records the HTTP traffic that goes through the 4D HTTP client. Whole requests and responses, including headers, are logged; optionally, body parts can be logged as well.
 
 Pour lancer ce journal :
 
@@ -155,7 +154,7 @@ Les champs suivants sont enregistrés pour Requête et Réponse :
 
 ## 4DHTTPClientLog.txt
 
-This log file records the HTTP traffic that goes through the 4D HTTP client. Whole requests and responses, including headers, are logged; optionally, body parts can be logged as well.
+This log file records the HTTP traffic that goes through the 4D HTTP client. Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parties body peuvent également être enregistrées.
 
 Pour lancer ce journal :
 
