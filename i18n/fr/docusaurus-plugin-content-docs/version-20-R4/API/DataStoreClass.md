@@ -1,7 +1,6 @@
----
-id: DataStoreClass
-title: DataStore
----
+- - -
+id: DataStoreClass title: DataStore
+- - -
 
 Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fourni par ORDA pour référencer et accéder à une base de données. Les objets `Datastore` sont retournés par les commandes suivantes :
 
@@ -375,6 +374,9 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
        End if
     End for each
     ALERT(String($vcount)+" encrypted table(s) in this datastore.")
+ Else
+    ALERT("This database is not encrypted.")
+ End if
  Else
     ALERT("This database is not encrypted.")
  End if
@@ -1201,7 +1203,7 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 #### Description
 
-La fonction `startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->démarre l'enregistrement des requêtes ORDA côté client ou côté serveur<!-- END REF -->. Elle est conçue à des fins de débogage dans les configurations client/serveur.
+La fonction `startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->La fonction `startRequestLog()`<!-- END REF -->. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
 :::info
 
@@ -1271,7 +1273,7 @@ Vous souhaitez enregistrer des requêtes ORDA clientes dans la mémoire :
 
 #### Exemple 3
 
-Vous souhaitez enregistrer les requêtes du serveur ORDA dans un fichier spécifique et activer le numéro de séquence du log et la durée :
+You want to log ORDA server requests in a specific file and enable the log sequence number and duration:
 
 ```4d
 SET DATABASE PARAMETER(4D Server Log Recording;1)
@@ -1379,7 +1381,7 @@ Vous pouvez imbriquer plusieurs transactions (sous-transactions). Chaque transac
 
 #### Description
 
-La fonction `stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the machine it is called (client or server)<!-- END REF -->.
+La fonction `stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->La fonction `stopRequestLog()`<!-- END REF -->.
 
 It actually closes the opened document on disk. On the client side, if the log was started in memory, it is stopped.
 
