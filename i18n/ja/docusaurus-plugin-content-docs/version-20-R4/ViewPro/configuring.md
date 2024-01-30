@@ -1,7 +1,6 @@
----
-id: configuring
-title: 4D View Pro エリアの設定
----
+- - -
+id: configuring title: 4D View Pro エリアの設定
+- - -
 
 4D View Pro エリアのプロパティは、プロパティリストを利用して設定することが可能です。 スプレッドシートプロパティはランゲージにより設定します。
 
@@ -315,7 +314,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |        | header | longint | ヘッダーのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 |        | footer | longint | フッターのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 
-### 向き
+### 方向
 
 向き属性は、印刷ページレイアウトの方向を指定するのに使用されます。
 > この属性はレンダリング情報のみを定義します。
