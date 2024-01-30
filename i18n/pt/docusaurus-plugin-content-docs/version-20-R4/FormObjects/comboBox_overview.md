@@ -1,7 +1,6 @@
----
-id: comboBoxOverview
-title: Combo Box
----
+- - -
+id: comboBoxOverview title: Combo Box
+- - -
 
 Um combo box é parecido com uma lista [drop-down](dropdownList_Overview.md#overview), exceto que aceita texto digitado do teclado e tem opções adicionais.
 
