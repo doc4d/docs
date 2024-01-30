@@ -1,7 +1,6 @@
----
-id: EntitySelectionClass
-title: EntitySelection
----
+- - -
+id: EntitySelectionClass title: EntitySelection
+- - -
 
 
 エンティティセレクションとは、同じ [データクラス](ORDA/dsMapping.md#データクラス) に所属する一つ以上の [エンティティ](ORDA/dsMapping.md#エンティティ) への参照を格納しているオブジェクトのことです。 エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
@@ -797,10 +796,10 @@ $jobs:=ds.Employee.all().distinct("jobName";dk count values)
 
 
 <!-- REF #EntitySelectionClass.distinctPaths().Params -->
-| 引数        | タイプ        |    | 説明                                              |
-| --------- | ---------- |:--:| ----------------------------------------------- |
-| attribute | Text       | -> | 取得したいパスを持つオブジェクト属性名                             |
-| 戻り値       | Collection | <- | 重複しないパスを格納した新規コレクション|<!-- END REF -->
+| 引数  | タイプ        |    | 説明                                              |
+| --- | ---------- |:--:| ----------------------------------------------- |
+| 属性  | Text       | -> | 取得したいパスを持つオブジェクト属性名                             |
+| 戻り値 | Collection | <- | 重複しないパスを格納した新規コレクション|<!-- END REF -->
 
 
 |
