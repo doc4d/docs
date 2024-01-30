@@ -1,8 +1,6 @@
----
-id: verify
-title: Page Vérification
-sidebar_label: Page Vérification
----
+- - -
+id: verify title: Page Vérification sidebar_label: Page Vérification
+- - -
 
 Cette page permet de vérifier l’intégrité des données et de la structure. La vérification peut porter sur les enregistrements et/ou les index ainsi que sur les objets du développement (méthodes, formulaires...). La page effectue uniquement une vérification des objets. Si des erreurs sont trouvées et des réparations requises, il vous sera nécessaire d’utiliser la [Page Réparation](repair.md).
 
@@ -16,7 +14,7 @@ La page comporte quatre boutons d’action permettant un accès direct aux fonct
 - **Vérifier les enregistrements et les index :** lance la procédure de vérification globale des données.
 - **Vérifier uniquement les enregistrements :** lance la procédure de vérification des enregistrements uniquement (les index ne sont pas vérifiés).
 - **Vérifier uniquement les index :** lance la procédure de vérification des index uniquement (les enregistrements ne sont pas vérifiés).
-> La vérification des enregistrements et des index peut également être effectuée en mode détaillé, table par table (cf. paragraphe “Détails” ci-dessous).
+> > La vérification des enregistrements et des index peut également être effectuée en mode détaillé, table par table (cf. paragraphe “Détails” ci-dessous).
 
 
 ## Voir le compte rendu
