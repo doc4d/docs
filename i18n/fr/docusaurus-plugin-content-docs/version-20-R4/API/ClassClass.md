@@ -1,7 +1,6 @@
----
-id: ClassClass
-title: Classe
----
+- - -
+id: ClassClass title: Classe
+- - -
 
 
 Lorsqu'une classe utilisateur est [définie](Concepts/classes.md#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet lui-même, de la classe "Class", qui a des propriétés et une fonction.
@@ -76,7 +75,7 @@ Si `.new()` si appelé sur une classe qui n'existe pas, une erreur est retourné
 
 #### Exemples
 
-Pour créer une nouvelle instance de la classe Person :
+Pour créer une nouvelle instance de la classe Person avec des paramètres :
 
 ```4d
 var $person : cs.Person  
@@ -84,7 +83,7 @@ $person:=cs.Person.new() //créer la nouvelle instance
 //$person contient les fonctions de la classe
 ```
 
-Pour créer une nouvelle instance de la classe Person avec des paramètres :
+Pour créer une nouvelle instance de la classe Person :
 
 ```4d
 //Class: Person.4dm
