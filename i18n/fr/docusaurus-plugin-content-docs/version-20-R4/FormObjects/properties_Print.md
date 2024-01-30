@@ -1,7 +1,6 @@
----
-id: propertiesPrint
-title: Imprimer
----
+- - -
+id: propertiesPrint title: Imprimer
+- - -
 
 ## Impression cadre
 
