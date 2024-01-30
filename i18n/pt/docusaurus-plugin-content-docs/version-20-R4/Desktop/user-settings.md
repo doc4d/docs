@@ -1,7 +1,6 @@
----
-id: user-settings
-title: Propriedades usuário
----
+- - -
+id: user-settings title: User Settings
+- - -
 
 4D oferece dois modos de operação para as configurações dos projetos:
 
