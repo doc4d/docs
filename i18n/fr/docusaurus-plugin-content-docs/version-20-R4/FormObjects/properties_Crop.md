@@ -1,7 +1,6 @@
----
-id: propertiesCrop
-title: Découpage
----
+- - -
+id: propertiesCrop title: Découpage
+- - -
 
 
 ## Colonnes
