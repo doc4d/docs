@@ -1,7 +1,6 @@
----
-id: string
-title: 文字列
----
+- - -
+id: string title: 文字列
+- - -
 
 文字列とは、以下を示す総称です:
 
