@@ -1,7 +1,6 @@
----
-id: splitters
-title: Séparateur
----
+- - -
+id: splitters title: Séparateur
+- - -
 
 
 
