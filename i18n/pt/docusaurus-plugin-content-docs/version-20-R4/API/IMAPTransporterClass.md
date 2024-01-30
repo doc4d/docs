@@ -1,7 +1,6 @@
----
-id: IMAPTransporterClass
-title: IMAPTransporter
----
+- - -
+id: IMAPTransporterClass title: IMAPTransporter
+- - -
 
 A classe `IMAPTransporter` permite-lhe recuperar mensagens a partir de um servidor de correio electrónico IMAP.
 
