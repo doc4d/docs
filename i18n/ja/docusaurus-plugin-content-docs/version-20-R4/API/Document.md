@@ -1,7 +1,6 @@
----
-id: Document
-title: Document クラス
----
+- - -
+id: Document title: Document Class
+- - -
 
 ## 説明
 
