@@ -184,7 +184,7 @@ The collection or the entity selection must be available to the form when it is 
 
 - if you used a collection of objects, you can call **This** in the datasource expression to access each property value, for example `This.<propertyPath>`.
 - if you used an entity selection, you can call **This** in the datasource expression to access each attribute value, for example `This.<attributePath>`.
-> Si vous avez utilisé une collection de valeurs scalaires (et non des objets), 4D vous permet d'afficher chaque valeur en appelant **This.value** dans l'expression datasource. However in this case you will not be able to modify values or to access the current object (see below).
+> > Si vous avez utilisé une collection de valeurs scalaires (et non des objets), 4D vous permet d'afficher chaque valeur en appelant **This.value** dans l'expression datasource. However in this case you will not be able to modify values or to access the current object (see below).
 
 
 #### Grammaire JSON
