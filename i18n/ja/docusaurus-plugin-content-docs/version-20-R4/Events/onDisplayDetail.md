@@ -1,7 +1,6 @@
----
-id: onDisplayDetail
-title: On Display Detail
----
+- - -
+id: onDisplayDetail title: On Display Detail
+- - -
 
 | コード | 呼び出し元                                             | 定義                                        |
 | --- | ------------------------------------------------- | ----------------------------------------- |
