@@ -1,7 +1,6 @@
----
-id: sdi
-title: Modo SDI em Windows
----
+- - -
+id: sdi title: SDI mode on Windows
+- - -
 
 
 No Windows, os desenvolvedores 4D podem testar e configurar suas aplicações 4D fundidas para trabalhar como aplicações SDI (Single-Document Interface). Nas aplicações SDI, cada janela é independente das outras e pode ter a sua própria barra de menus. As aplicações SDI são opostas às aplicações MDI (Multiple Documents Interface), em que todas as janelas estão contidas na janela principal e dependem dela.
@@ -50,7 +49,7 @@ Os menus são adicionados por cima das janelas sem alterar o tamanho do seu cont
 
 Assim, as janelas podem ser utilizadas nos modos MDI ou SDI sem que seja necessário recalcular a posição dos objectos.
 
-#### Splash screen
+#### Tela inicial
 
 - Se selecionar a opção de interface **Splash screen** nas [ Definições](../settings/interface.md#display-windows), a janela inicial conterá todos os menus que teriam sido apresentados na janela MDI. Note também que fechar a janela splash screen resultará na saída da aplicação, tal como no modo MDI.
 - Se a opção Splash screen não tiver sido selecionada, os menus serão apresentados apenas nas janelas abertas, dependendo das escolhas do programador.
