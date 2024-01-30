@@ -1,7 +1,6 @@
----
-id: editing
-title: Gestion des groupes et utilisateurs 4D
----
+- - -
+id: editing title: Gestion des groupes et utilisateurs 4D
+- - -
 
 
 Dans les applications multi-utilisateurs, 4D fournit aux utilisateurs certains privilèges d'accès standard et certains pouvoirs. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
@@ -163,7 +162,7 @@ Les groupes sont hiérarchisés afin que les privilèges soient correctement aff
 
 - Le groupe Direction générale ne contient que les utilisateurs de “haut niveau”. ![](../assets/en/Users/schema1.png)
 
-- Le groupe Dir. finance contient des utilisateurs de la maintenance des données ainsi que ceux de la direction générale. Les utilisateurs de la direction générale disposent donc également des privilèges du groupe Finances. ![](../assets/en/Users/schema2.png)
+- finance contient des utilisateurs de la maintenance des données ainsi que ceux de la direction générale. Les utilisateurs de la direction générale disposent donc également des privilèges du groupe Finances.![](../assets/en/Users/schema2.png)
 
 - Le groupe Comptabilité contient des opérateurs de saisie mais aussi les utilisateurs des groupes Dir. finance et donc Direction générale. ![](../assets/en/Users/schema3.png)
 
