@@ -1,7 +1,6 @@
----
-id: onOpenExternalLink
-title: On Open External Link
----
+- - -
+id: onOpenExternalLink title: On Open External Link
+- - -
 
 | Code | Peut être appelé par                         | Définition                                       |
 | ---- | -------------------------------------------- | ------------------------------------------------ |
