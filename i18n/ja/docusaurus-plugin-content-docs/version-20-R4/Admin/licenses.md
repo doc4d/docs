@@ -1,7 +1,6 @@
----
-id: licenses
-title: 4D ライセンスの管理
----
+- - -
+id: licenses title: 4D ライセンスの管理
+- - -
 
 ディスクへのインストール終了後、4D 製品を利用するためにはアクティベーションをおこないます。 [4D アカウントでサインイン](GettingStarted/Installation.md) した場合、アクティベーションは自動的におこなわれます。
 
