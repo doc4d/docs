@@ -1,7 +1,6 @@
----
-id: blob
-title: BLOB
----
+- - -
+id: blob title: BLOB
+- - -
 
 Para passar um BLOB a seus próprios métodos, pode também definir um ponteiro ao BLOB e passar o ponteiro como um parâmetro.
 
