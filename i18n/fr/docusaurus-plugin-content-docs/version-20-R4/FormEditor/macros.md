@@ -1,7 +1,6 @@
----
-id: macros
-title: Macros de l'éditeur de formulaires
----
+- - -
+id: macros title: Macros de l'éditeur de formulaires
+- - -
 
 
 L'éditeur de formulaires 4D prend en charge les macros. Une macro est un ensemble d'instructions permettant de réaliser une action ou une séquence d'actions. Lorsqu'elle est appelée, la macro exécutera ses instructions et, automatiquement, les actions.
@@ -226,7 +225,7 @@ Voici les propriétés retournées dans le paramètre *$editor* :
 | $editor.editor.formProperties    | Object     | Properties of the current form                                                    |
 | $editor.editor.target            | string     | Name of the object under the mouse when clicked on a macro                        |
 
-Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. All properties are optional:
+Here are the properties that you can pass in the `$result` object if you want the macro processor to execute a modification. Toutes les propriétés sont optionnelles:
 
 | Propriété         | Type       | Description                                                 |
 | ----------------- | ---------- | ----------------------------------------------------------- |
@@ -289,6 +288,10 @@ Function onInvoke($editor : Object)->$result : Object
 
     Else 
         ALERT("Please select a form object.")
+    End if 
+
+    // Notifier la modification à 4D
+    $result:=New object("currentPage"; $editor.editor.currentPage)
     End if 
 
     // Notifier la modification à 4D
