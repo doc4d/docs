@@ -1278,19 +1278,18 @@ $result:=VP Find($range;"Total")
 
 ```4d
 var $range;$condition;$result : Object
- 
+
 $range:=VP All("ViewProArea")
- 
+
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True //Search entire document
+$condition.all:=True // ドキュメント全体を検索します
 $condition.flags:=vk find flag exact match
- 
-  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
 
+  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
 $result:=VP Find($range;"Total";$condition;"Grand Total")
- 
-  // Check for empty range object 
+
+  // 戻り値のレンジオブジェクトが空かどうかをチェックします
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
