@@ -1,7 +1,6 @@
----
-id: onPageChange
-title: On Page Change
----
+- - -
+id: onPageChange title: On Page Change
+- - -
 
 | Code | Pode ser chamado por | Definição                               |
 | ---- | -------------------- | --------------------------------------- |
