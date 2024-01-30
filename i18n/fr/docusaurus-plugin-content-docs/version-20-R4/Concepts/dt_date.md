@@ -1,7 +1,6 @@
----
-id: date
-title: Date
----
+- - -
+id: date title: Date
+- - -
 
 Les variables, champs ou expressions de type Date peuvent être compris entre 1/1/100 et 31/12/32767.
 
@@ -30,20 +29,20 @@ Une date nulle s’écrit _!00-00-00!_.
 
 ## Opérateurs sur les dates
 
-| Opération           | Syntaxe          | Retourne | Expression                   | Valeur       |
-| ------------------- | ---------------- | -------- | ---------------------------- | ------------ |
-| Différence          | Date - Date      | Number   | !2017-01-20! - !2017-01-01!  | 19           |
-| Addition            | Date + Numérique | Date     | !2017-01-20! + 9             | !2017-01-29! |
-| Soustraction        | Date - Numérique | Date     | !2017-01-20! - 9             | !2017-01-11! |
-| Egalité             | Date = Date      | Boolean  | !2017-01-20! = !2017-01-01!  | True         |
-|                     |                  |          | !2017-01-20! !2017-01-20!    | False        |
-| Inégalité           | Date # Date      | Boolean  | !2017-01-20! !2017-01-20!    | True         |
-|                     |                  |          | !2017-01-20! !2017-01-20!    | False        |
-| Supérieur à         | Date > Date      | Boolean  | !2017-01-20! > !2017-01-01!  | True         |
-|                     |                  |          | !2017-01-20! > !2017-01-20!  | False        |
-| Inférieur à         | Date < Date      | Boolean  | !2017-01-20! < !2017-01-20!  | True         |
-|                     |                  |          | !2017-01-20! < !2017-01-20!  | False        |
-| Supérieur ou égal à | Date >= Date     | Boolean  | !2017-01-20! >=!2017-01-01!  | True         |
-|                     |                  |          | !2017-01-01!>=!2017-01-20!   | False        |
-| Inférieur ou égal à | Date <= Date     | Boolean  | !2017-01-20! <= !2017-01-20! | True         |
-|                     |                  |          | !2017-01-20! <= !2017-01-01! | False        |
+| Opération           | Syntaxe          | Retourne | Expression                  | Valeur       |
+| ------------------- | ---------------- | -------- | --------------------------- | ------------ |
+| Différence          | Date - Date      | Number   | !2017-01-20! - !2017-01-01! | 19           |
+| Addition            | Date + Numérique | Date     | !2017-01-20! !2017-01-20!   | !2017-01-29! |
+| Soustraction        | Date - Numérique | Date     | !2017-01-20! !2017-01-20!   | !2017-01-11! |
+| Egalité             | Date = Date      | Boolean  | !2017-01-20! = !2017-01-01! | True         |
+|                     |                  |          | !2017-01-20! !2017-01-20!   | False        |
+| Inégalité           | Date # Date      | Boolean  | !2017-01-20! !2017-01-20!   | True         |
+|                     |                  |          | !2017-01-20! !2017-01-20!   | False        |
+| Supérieur à         | Date > Date      | Boolean  | !2017-01-20! !2017-01-20!   | True         |
+|                     |                  |          | !2017-01-20! !2017-01-20!   | False        |
+| Inférieur à         | Date < Date      | Boolean  | !2017-01-20! !2017-01-20!   | True         |
+|                     |                  |          | !2017-01-20! !2017-01-20!   | False        |
+| Supérieur ou égal à | Date >= Date     | Boolean  | !2017-01-20! !2017-01-20!   | True         |
+|                     |                  |          | !2017-01-01!>=!2017-01-20!  | False        |
+| Inférieur ou égal à | Date <= Date     | Boolean  | !2017-01-20! !2017-01-20!   | True         |
+|                     |                  |          | !2017-01-20! !2017-01-20!   | False        |
