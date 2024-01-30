@@ -1,7 +1,6 @@
----
-id: code-overview
-title: メソッドとクラス
----
+- - -
+id: code-overview title: メソッドとクラス
+- - -
 
 
 プロジェクトで使用される 4D コードは、 [メソッド](../Concepts/methods.md) および [クラス](../Concepts/classes.md) に記述されます。
