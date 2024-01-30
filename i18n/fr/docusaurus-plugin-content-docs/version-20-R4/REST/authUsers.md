@@ -1,7 +1,6 @@
----
-id: authUsers
-title: Sessions et utilisateurs
----
+- - -
+id: authUsers title: Sessions et utilisateurs
+- - -
 
 REST requests can benefit from [web user sessions](WebServer/sessions.md), providing extra features such as multiple requests handling, data sharing between the web client processes, and user privileges.
 
