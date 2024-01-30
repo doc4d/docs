@@ -1,7 +1,6 @@
----
-id: webServerConfig
-title: Configuration
----
+- - -
+id: webServerConfig title: Configuration
+- - -
 
 Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les ports d'écoute, les chemins par défaut et diverses options couvrant toutes les fonctionnalités du serveur. 4D fournit des valeurs par défaut pour tous les paramètres.
 
@@ -43,7 +42,7 @@ Dossier qui contient les fichiers de certificat TLS pour le serveur web.
 
 Par défaut, avec 4D ou 4D Server, ces fichiers doivent être placés à côté du [dossier du projet](Project/architecture.md#project-folder).
 
-Avec 4D à distance, ces fichiers doivent être placés dans le dossier des ressources locales de la base de données sur la machine distante (voir le paragraphe `Dossier base 4D Client` de la commande `Dossier 4D`). You must copy these files manually on the remote machine.
+Avec 4D à distance, ces fichiers doivent être placés dans le dossier des ressources locales de la base de données sur la machine distante (voir le paragraphe `Dossier base 4D Client` de la commande `Dossier 4D`). Vous devez copier ces fichiers manuellement sur la machine distante.
 
 > Les fichiers de certificat TLS sont *key.pem* (document contenant la clé de chiffrement privée) et *cert.pem* (document contenant le certificat).
 
@@ -124,7 +123,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 | objet webServer         | `debugLog`      | number       |
 | `WEB SET OPTION`        | `Web debug log` | number       |
 
-Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt), stored in the "Logs" folder of the application -- nn is the file number). Il est utile pour déboguer les problèmes liés au serveur Web. Il enregistre chaque demande et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parties body peuvent également être enregistrées.
+Status of the HTTP request log file of the web server ([*HTTPDebugLog_nn.txt*](../Debugging/debugLogFiles.md#httpdebuglogtxt), stored in the "Logs" folder of the application -- nn is the file number). Il est utile pour déboguer les problèmes liés au serveur Web. Il enregistre chaque demande et chaque réponse en mode brut (raw). Whole requests and responses, including headers, are logged; optionally, body parts can be logged as well.
 
 | Valeur | Constante                      | Description                                                                           |
 | ------ | ------------------------------ | ------------------------------------------------------------------------------------- |
@@ -531,11 +530,11 @@ Dans ce cas, les robots n'auront accès à aucune partie du site.
 
 ## Dossier racine
 
-| Peut être configuré via      | Nom                                                                            | Commentaires                                                                                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| objet webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder)                               | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/FolderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()` |
-| `WEB SET ROOT FOLDER`        |                                                                                |                                                                                                                                                              |
-| Boîte de dialogue Paramètres | [Configuration > Racine HTML par défaut](../settings/web.md#default-html-root) |                                                                                                                                                              |
+| Peut être configuré via  | Nom                                                                            | Commentaires                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| objet webServer          | [`rootFolder`](API/WebServerClass.md#rootfolder)                               | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/FolderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()` |
+| `WEB SET ROOT FOLDER`    |                                                                                |                                                                                                                                                              |
+| Fenêtre de configuration | [Configuration > Racine HTML par défaut](../settings/web.md#default-html-root) |                                                                                                                                                              |
 
 Chemin du dossier racine du serveur web, i.e le dossier dans lequel 4D va chercher les pages HTML statiques et semi-dynamiques, les images, etc. à envoyer aux navigateurs. Le chemin d'accès est au format POSIX (chemin entier). Le serveur web doit être redémarré pour que le nouveau dossier racine soit pris en compte.
 
