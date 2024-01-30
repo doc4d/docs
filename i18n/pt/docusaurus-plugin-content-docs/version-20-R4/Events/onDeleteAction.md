@@ -1,7 +1,6 @@
----
-id: onDeleteAction
-title: On Delete Action
----
+- - -
+id: onDeleteAction title: On Delete Action
+- - -
 
 | Code | Pode ser chamado por                                                                            | Definição                           |
 | ---- | ----------------------------------------------------------------------------------------------- | ----------------------------------- |
