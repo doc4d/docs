@@ -1,7 +1,6 @@
----
-id: processes
-title: Page Process
----
+- - -
+id: processes title: Page Process
+- - -
 
 
 La page **Process** liste les process en cours d’exécution.
