@@ -1,7 +1,6 @@
----
-id: identifiers
-title: Identifiants
----
+- - -
+id: identifiers title: Identifiants
+- - -
 
 Cette section détaille les règles d'écriture et de nommage appliquées aux divers identifiants utilisés dans le langage de 4D (variables, propriétés d'objets, tableaux, formulaires, etc.).
 
