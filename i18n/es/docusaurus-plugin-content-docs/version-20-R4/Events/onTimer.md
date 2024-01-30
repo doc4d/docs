@@ -1,7 +1,6 @@
----
-id: onTimer
-title: On Timer
----
+- - -
+id: onTimer title: On Timer
+- - -
 
 | Code | Puede ser llamado por | Definición                                                              |
 | ---- | --------------------- | ----------------------------------------------------------------------- |
