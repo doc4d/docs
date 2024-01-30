@@ -1,7 +1,6 @@
----
-id: POP3TransporterClass
-title: POP3Transporter
----
+- - -
+id: POP3TransporterClass title: POP3Transporter
+- - -
 
 `POP3Transporter` クラスを使って、POP3 メールサーバーからメッセージを取得することができます。
 
