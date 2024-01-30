@@ -1,7 +1,6 @@
----
-id: DataClassClass
-title: DataClass
----
+- - -
+id: DataClassClass title: DataClass
+- - -
 
 
 Une [dataclass](ORDA/dsMapping.md#dataclass) fournit une interface objet à une table de la base de données. Toutes les dataclasses d'une application 4D sont disponibles en tant que propriété du [datastore](ORDA/dsMapping.md#datastore) `ds` .
@@ -60,7 +59,7 @@ Les objets attributs retournés contiennent les propriétés suivantes :
 | inverseName      | Text    | Nom de l'attribut qui se trouve à l'autre côté de la relation. Renvoyé uniquement lorsque `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                     |
 | keywordIndexed   | Boolean | Vrai s'il existe un index de mots-clés sur l'attribut. Non retourné si `.kind` = "relatedEntity" ou "relatedEntities".                                                                                                                                                                                                                                                                        |
 | kind             | Text    | Catégorie de l'attribut. Valeurs possibles :<li>"storage" : attribut de stockage (ou scalaire), c'est-à-dire un attribut stockant une valeur, et non une référence à un autre attribut</li><li>"calculated" : attribut calculé, c'est-à-dire défini par une fonction [`get`](../ORDA/ordaClasses.md#function-get-attributename)</li><li>"alias": attribut construit sur [un autre attribut](../ORDA/ordaClasses.md#alias-attributes-1)</li><li>"relatedEntity" : attribut relationnel N -> 1 (référence vers une entité)</li><li>"relatedEntities" : attribut relationnel 1 -> N (référence vers une entity selection)</li>                                                                                                                                                                                                                     |
-| mandatory        | Boolean | Vrai si la saisie d'une valeur null est rejetée pour l'attribut. Non retourné si `.kind` = "relatedEntity" ou "relatedEntities". Attention : Cette propriété correspond à la propriété du champ "Reject NULL value input" au niveau de la base de données 4D. Elle n'est pas liée à la propriété "Mandatory" existante qui est une option de contrôle de la saisie de données pour une table. |
+| obligatoire      | Boolean | Vrai si la saisie d'une valeur null est rejetée pour l'attribut. Non retourné si `.kind` = "relatedEntity" ou "relatedEntities". Attention : Cette propriété correspond à la propriété du champ "Reject NULL value input" au niveau de la base de données 4D. Elle n'est pas liée à la propriété "Mandatory" existante qui est une option de contrôle de la saisie de données pour une table. |
 | name             | Text    | Nom de l'attribut sous forme de chaîne                                                                                                                                                                                                                                                                                                                                                        |
 | path             | Text    | Chemin d'un [attribut alias](../ORDA/ordaClasses.md#alias-attributes-1) basé sur une relation                                                                                                                                                                                                                                                                                                 |
 | readOnly         | Boolean | Vrai si l'attribut est en lecture seule. Par exemple, les attributs calculés sans fonction [`set`](../ORDA/ordaClasses.md#function-set-attributename) sont en lecture seule.                                                                                                                                                                                                                  |
@@ -275,7 +274,7 @@ Pour chaque objet de *objectCol* :
 
 Les objets de *objectCol* peuvent contenir un ou plusieurs objet(s) imbriqué(s) décrivant une ou plusieurs entité(s) relative(s), ce qui peut être utile pour créer ou modifier des relations entre les entités.
 
-Les objets imbriqués décrivant les entités relatives doivent contenir une propriété "\_\_KEY" (contenant la valeur de la clé primaire de l'entité relative) ou la clé primaire de l'entité relative elle-même. L'utilisation de la propriété \_\_KEY permet de ne pas dépendre du nom de l'attribut clé primaire.
+> The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. L'utilisation de la propriété \_\_KEY permet de ne pas dépendre du nom de l'attribut clé primaire.
 > Ce mécanisme ne permet pas de créer ou de modifier les entités liées.
 
 **Stamp**
@@ -899,7 +898,7 @@ où :
 
   * **Text** : la chaine de formule doit être précédée de la déclaration `eval()`, afin que l'analyseur de requêtes évalue l'expression correctement. Par exemple : *"eval(length(This.lastname) >=30)"*
   * **Object**: l'[objet formule](FunctionClass.md) est passé en tant que **placeholder** (voir ci-dessous). La formule doit avoir été créée à l'aide des commandes [`Formula`](FunctionClass.md#formula) ou [`Formula from string`](FunctionClass.md#formula-from-string).
-> * N'oubliez pas que les formules de 4D prennent uniquement en charge les symboles `&` et `|` comme opérateurs logiques.
+> * > * N'oubliez pas que les formules de 4D prennent uniquement en charge les symboles `&` et `|` comme opérateurs logiques.
 > * Si la formule n'est pas le seul critère de recherche, le système d'optimisation des requêtes pourra prioriser le traitement d'autres critères (ex : attributs indexés) et ainsi, la formule sera évaluée uniquement pour un sous-ensemble d'entités.
 
  Les formules contenues dans les requêtes peuvent recevoir des paramètres via $1. Ce point est détaillé dans le paragraphe **Paramètre formula** ci-dessous.
@@ -1272,7 +1271,7 @@ Recherche avec des placeholders indexés avec tri décroissant :
 $entitySelection:=ds.Student.query("nationality = :1 order by campus.name desc, lastname";"French")
 ```
 
-Recherche avec des placeholders nommés pour les valeurs :
+Recherche avec des placeholders indexés pour les attributs et avec des placeholders nommés pour les valeurs :
 
 ```4d
 var $querySettings : Object
@@ -1348,7 +1347,7 @@ $es:=ds.Employee.query(":1 = 1234 and :2 = 'Smith'";"salesperson.userId";"name")
   //salesperson est une entité reliée
 ```
 
-Recherche avec des placeholders indexés pour les attributs et avec des placeholders nommés pour les valeurs :
+Recherche avec des placeholders indexés pour les attributs et les valeurs :
 
 ```4d
 var $es : cs.EmployeeSelection
@@ -1359,7 +1358,7 @@ $es:=ds.Customer.query(":1 = 1234 and :2 = :customerName";"salesperson.userId";"
   //salesperson est une entité reliée
 ```
 
-Recherche avec des placeholders indexés pour les attributs et les valeurs :
+Recherche avec des placeholders nommés pour les valeurs :
 
 ```4d
 var $es : cs.EmployeeSelection
