@@ -1,7 +1,6 @@
----
-id: propertiesHelp
-title: Aide
----
+- - -
+id: propertiesHelp title: Aide
+- - -
 
 ## Infobulle
 
