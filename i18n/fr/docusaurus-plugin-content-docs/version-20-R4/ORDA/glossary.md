@@ -1,7 +1,6 @@
----
-id: glossary
-title: Glossaire
----
+- - -
+id: glossary title: Glossaire
+- - -
 
 ## Aperçu des principaux concepts
 
