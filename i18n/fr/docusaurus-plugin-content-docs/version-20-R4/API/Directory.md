@@ -1,7 +1,6 @@
----
-id: Directory
-title: Classe Directory
----
+- - -
+id: Directory title: Classe Directory
+- - -
 
 
 <!-- REF directory.creationDate.Desc -->
@@ -264,7 +263,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-La propriété `.modificationTime` retourne <!-- REF #directory.modificationTime.Summary -->l'heure de la dernière modification du dossier<!-- END REF --> (exprimée en nombre de secondes commençant à 00:00).
+La propriété `.modificationTime` retourne <!-- REF #directory.modificationTime.Summary -->l'heure de la dernière modification du dossier<!-- END REF --> (exprimé en nombre de secondes commençant à 00:00).
 
 Cette propriété est en **lecture seule**.
 
