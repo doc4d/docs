@@ -1,7 +1,6 @@
----
-id: ZipArchiveClass
-title: ZIPArchive
----
+- - -
+id: ZipArchiveClass title: ZIPArchive
+- - -
 
 
 Une archive ZIP 4D est un objet `File` ou `Folder` contenant un ou plusieurs fichiers ou dossiers, qui sont compressés afin d'être plus petits que leur taille d'origine. Ces archives sont créées avec une extension ".zip" et peuvent être utilisées pour économiser de l'espace sur le disque ou transférer des fichiers sur des supports de taille limitée (par exemple, l'email ou le réseau).
@@ -98,7 +97,7 @@ L'objet statut retourné contient les propriétés suivantes :
 
 #### Exemple 1
 
-Pour compresser un `4D.File` :
+Pour compresser un `4D.Folder` sans le dossier lui-même :
 
 ```4d
  var $file; $destination : 4D.File
@@ -112,7 +111,7 @@ Pour compresser un `4D.File` :
 
 #### Exemple 2
 
-Pour compresser un `4D.Folder` sans le dossier lui-même :
+Pour compresser un `4D.File` :
 
 ```4d
  var $folder : 4D.Folder
