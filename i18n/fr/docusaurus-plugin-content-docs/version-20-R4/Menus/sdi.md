@@ -1,10 +1,9 @@
----
-id: sdi
-title: Mode SDI sous Windows
----
+- - -
+id: sdi title: Mode SDI sous Windows
+- - -
 
 
-Sous Windows, les développeurs 4D peuvent tester et configurer leurs applications fusionnées 4D pour qu'elles fonctionnent comme des applications SDI (Single-Document Interface). Dans les applications SDI, chaque fenêtre est indépendante des autres et peut avoir sa propre barre de menus. Les applications SDI sont opposées aux applications MDI (Multiple Documents Interface), où toutes les fenêtres sont contenues dans une fenêtre principale, et en dépendent.
+Les applications SDI sont opposées aux applications MDI (Multiple Documents Interface), où toutes les fenêtres sont contenues dans une fenêtre principale, et en dépendent. Sous Windows, les développeurs 4D peuvent tester et configurer leurs applications fusionnées 4D pour qu'elles fonctionnent comme des applications SDI (Single-Document Interface). Dans les applications SDI, chaque fenêtre est indépendante des autres et peut avoir sa propre barre de menus.
 
 :::info
 
