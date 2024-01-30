@@ -1,7 +1,6 @@
----
-id: IMAPTransporterClass
-title: IMAPTransporter
----
+- - -
+id: IMAPTransporterClass title: IMAPTransporter
+- - -
 
 `IMAPTransporter` クラスを使って、IMAP メールサーバーからメッセージを取得することができます。
 
