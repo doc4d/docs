@@ -1,7 +1,6 @@
----
-id: propertiesAppearance
-title: アピアランス
----
+- - -
+id: propertiesAppearance title: アピアランス
+- - -
 
 ## デフォルトボタン
 
