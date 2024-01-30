@@ -1,8 +1,6 @@
----
-id: restore
-title: Página Restauración
-sidebar_label: Página Restauración
----
+- - -
+id: restore title: Restore Page sidebar_label: Restore Page
+- - -
 
 Puede restaurar manualmente un archivo de la aplicación actual utilizando la página **Restaurar**. Esta página ofrece varias opciones que pueden utilizarse para controlar la restauración:
 
