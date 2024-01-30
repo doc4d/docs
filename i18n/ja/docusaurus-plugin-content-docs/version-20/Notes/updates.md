@@ -286,7 +286,7 @@ ALERT($param1+" "+$param2)
 </details>
 
 
-## ライブラリの一覧
+## Library table (4D v20 LTS)
 
 
 
@@ -296,7 +296,8 @@ ALERT($param1+" "+$param2)
 | CEF       | 109       | 20             | Chromium 5414。 ディスク上のファイルにアクセスする際にも CORSポリシーが適用されるようになりました (上述の [4D v19 R5](#4d-v19-r5) のWebエリアに関する "セキュリティ" の項を参照ください)。 |
 | Hunspell  | 1.7.2     | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                                                                   |
 | PDFWriter | 4.3       | 20             | 12.2.1 で FreeType依存                                                                                                      |
-| SpreadJS  | 16.0.4    | 20             | 4D View Pro エンジン                                                                                                         |
+| SpreadJS  | 16.2.6    | 20.2 HF1       | 4D View Pro エンジン                                                                                                         |
+|           | 16.0.4    | 20             |                                                                                                                          |
 | OpenSSL   | 3.1.1     | 20             |                                                                                                                          |
 | libZip    | 1.9.2     | 20             | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                    |
 | LZMA      | 5.4.1     | 20             |                                                                                                                          |
