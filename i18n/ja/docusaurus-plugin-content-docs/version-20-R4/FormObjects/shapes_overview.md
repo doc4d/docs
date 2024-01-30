@@ -1,7 +1,6 @@
----
-id: shapesOverview
-title: 図形
----
+- - -
+id: shapesOverview title: 図形
+- - -
 
 図形は、4D フォームに設置することのできる [スタティックオブジェクト](formObjects_overview.md#アクティブオブジェクトとスタティックオブジェクト) です。
 
