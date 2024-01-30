@@ -1,7 +1,6 @@
----
-id: Directory
-title: Directory Class
----
+- - -
+id: Directory title: Directory Class
+- - -
 
 
 <!-- REF directory.creationDate.Desc -->
