@@ -1,7 +1,6 @@
----
-id: structure
-title: Page Structure
----
+- - -
+id: structure title: Page Structure
+- - -
 
 ## Clé primaire
 
