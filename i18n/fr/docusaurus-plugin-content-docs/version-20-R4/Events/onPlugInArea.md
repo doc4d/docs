@@ -1,7 +1,6 @@
----
-id: onPlugInArea
-title: Sur appel zone du plug in
----
+- - -
+id: onPlugInArea title: Sur appel zone du plug in
+- - -
 
 | Code | Peut être appelé par                                                        | Définition                                                    |
 | ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
