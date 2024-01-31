@@ -286,7 +286,7 @@ A propriedade `.platformPath` devolve <!-- REF #MailAttachmentClass.platformPath
 
 #### Descrição
 
-The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. The `.size` property is returned when the MIME message defines a size header in the attachment part.
+A propriedade `.size` contém <!-- REF #MailAttachmentClass.size.Summary -->o valor do cabeçalho `size` do arquivo de anexo<!-- END REF -->. A propriedade `.size` é retornada quando a mensagem MIME define um cabeçalho de tamanho na parte do anexo.
 
 
 ## .type
