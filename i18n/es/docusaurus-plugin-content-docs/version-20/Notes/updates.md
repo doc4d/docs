@@ -36,6 +36,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D v2
 
 #### Destacados
 
+- *SpreadJS* updated to version 16.2.6 in 4D v20.2 HF1.
 - 4D v20.2 está certificado en macOS Sonoma (macOS 14).
 - (4D v20.1) Nueva propiedad `plugins` en el parámetro *options* para el comando [`Compile project`](https://doc.4d.com/4dv20/help/command/en/page1760.html).
 - 4D Server integra automáticamente varios historiales: [Restauración automática](../Backup/settings.md#automatic-restore).
