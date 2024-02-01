@@ -105,13 +105,13 @@ Une expression utilisant un opérateur sur les bits retourne une valeur de type 
 | Opération             | Opérateur | Syntaxe                   | Retourne                |
 | --------------------- | --------- | ------------------------- | ----------------------- |
 | ET                    | &         | long & E. E. long         | E. long                 |
-| OU (inclusif)         | &#124;    | long &#124; E. long       | E. long                 |
-| OU (exclusif)         | \^&#124; | long \^&#124; E. long    | E. long                 |
+| OU (inclusif)         | &#124;    | long \^&#124; E. E. long | E. long                 |
+| OU (exclusif)         | \^&#124; | long \^&#124; E. E. long | E. long                 |
 | Décaler bits à gauche | <<        | E. Long << E. Long        | long (voir note n°1)    |
 | Décaler bits à droite | >>        | E. Long >> E. Long        | long (voir note n°1)    |
 | Mettre bit à 1        | ?+        | long ?+ E. E. long        | long (voir note n°2)    |
 | Mettre bit à 0        | ?-        | long ??                   | long (voir note n°2)    |
-| Tester bit            | ??        | long \^&#124; E. E. long | Booléen (voir note n°2) |
+| Tester bit            | ??        | long &#124; E. E. long    | Booléen (voir note n°2) |
 
 #### Notes
 
@@ -123,7 +123,7 @@ Le tableau suivant dresse la liste des opérateurs sur les bits et de leurs effe
 | Opération             | Description                                                                                                                                                                                                                                                                                                                                                                                                       |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ET                    | Each resulting bit is the logical AND of the bits in the two operands. Here is the logical AND table:<ul><li>1 & 1 --> 1</li><li>0 & 1 --> 0</li>1 & 0 --> 0<li>0 & 0 --> 0</li></ul>En d'autres termes, le bit résultant est 1 si les deux bits d'opérande sont 1; sinon, le bit résultant est 0.                                                                                                                                                                       |
-| OU (inclusif)         | Chaque bit retourné est le résultat de l'opération OU logique appliquée aux deux bits opérandes. Voici la table du OU inclusif logique :<ul><li>1 &#124; 1 --> 1</li><li>0 &#124; 1 --> 1</li><li>1 &#124; 0 --> 1</li><li>0 &#124; 0 --> 0</li></ul> En d'autres termes, le bit résultant est 1 si au moins l'un des deux bits d'opérande est 1; sinon, le bit résultant est 0.                                                                                                                       |
+| OU (inclusif)         | Each resulting bit is the logical AND of the bits in the two operands. Here is the logical AND table:<ul><li>1 &#124; 1 --> 1</li><li>0 &#124; 1 --> 1</li><li>1 &#124; 0 --> 1</li><li>0 &#124; 0 --> 0</li></ul> En d'autres termes, le bit résultant est 1 si au moins l'un des deux bits d'opérande est 1; sinon, le bit résultant est 0.                                                                                                                                                          |
 | OU (exclusif)         | Chaque bit retourné est le résultat de l'opération OU logique appliquée aux deux bits opérandes. Voici la table du OU exclusif logique : <ul><li>1 \^&#124; 1 --> 0</li><li>0 \^&#124; 1 --> 1</li><li>1 \^&#124; 0 --> 1</li><li>0 \^&#124; 0 --> 0</li></ul> En d'autres termes, le bit résultant est 1 si seul l'un des deux bits d'opérande est 1; sinon, le bit résultant est 0.                                                                                                                           |
 | Décaler bits à gauche | La valeur résultante est définie sur la première valeur d'opérande, puis les bits résultants sont décalés vers la gauche du nombre de positions indiqué par le deuxième opérande. Les bits auparavant situés à gauche sont perdus et les nouveaux bits situés à droite ont la valeur 0. Les bits auparavant situés à gauche sont perdus et les nouveaux bits situés à droite ont la valeur 0.                     |
 | Décaler bits à droite | La valeur résultante est définie sur la première valeur d'opérande, puis les bits résultants sont décalés vers la droite du nombre de positions indiqué par le deuxième opérande. Les bits auparavant situés à droite sont perdus et les nouveaux bits situés à gauche ont la valeur 0. **Note:** en ne tenant compte que des valeurs positives, le décalage vers la droite de N bits équivaut à diviser par 2^N. |
