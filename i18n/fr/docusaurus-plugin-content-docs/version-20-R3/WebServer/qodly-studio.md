@@ -80,7 +80,7 @@ After any change to these settings, you must [restart the WebAdmin web server](.
 
 #### At project level
 
-After you have enabled access to Qodly Studio at the 4D level, you need to explicitly designate every project that can be accessed. The **Enable access to Qodly Studio** option must be enabled on the [Web Features page of the 4D application's Settings](../settings/web.md#enable-access-to-qodly-studio).
+After you have enabled access to Qodly Studio at the 4D level, you need to explicitly designate every project that can be accessed. After you have enabled access to Qodly Studio at the 4D level, you need to explicitly designate every project that can be accessed.
 
 Keep in mind that [user settings](../settings/overview.md) can be defined at several levels, and that priorities apply.
 
