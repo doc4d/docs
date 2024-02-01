@@ -88,15 +88,15 @@ A tabela seguinte apresenta as opções disponíveis:
 ---
 
 ## Formato do número
-> Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
+> Os campos de número incluem os tipos Integer, Long integer, Integer 64 bits, Real e Float.
 
-Number formats control the way numbers appear when displayed or printed. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
+Os formatos de números controlam a forma como os números aparecem quando exibidos ou impressos. Para a entrada de dados, você insere apenas os números (incluindo um ponto decimal ou sinal de menos, se necessário), independentemente do formato de exibição escolhido.
 
 4D fornece vários formatos de números padrão.
 
 ### Marcadores
 
-In each of the number display formats, the number sign (#), zero (0), caret (^), and asterisk (*) are used as placeholders. You create your own number formats by using one placeholder for each digit you expect to display.
+Em cada um dos formatos de exibição de números, o sinal de número (#), o zero (0), o acento circunflexo (^) e o asterisco (*) são usados como espaços reservados. Você cria seus próprios formatos de números usando um espaço reservado para cada dígito que espera exibir.
 
 | Placeholder (valores provisórios) | Efeito do zero à esquerda ou à direita |
 | --------------------------------- | -------------------------------------- |
@@ -105,36 +105,36 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 | ^                                 | Apresenta um espaço (1)                |
 | *                                 | Apresenta um asterisco                 |
 
-(1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
+(1) O acento circunflexo (^) gera um caractere de espaço que ocupa a mesma largura de um dígito na maioria das fontes.
 
-Por exemplo, se quiser exibir números de três dígitos, pode usar o formato ####. If the user enters more digits than the format allows, 4D displays <<< in the field to indicate that more digits were entered than the number of digits specified in the display format.
+Por exemplo, se quiser exibir números de três dígitos, pode usar o formato ####. Se o usuário inserir mais dígitos do que o formato permite, 4D exibe <<< no campo para indicar que foram inseridos mais dígitos do que o número de dígitos especificado no formato de exibição.
 
-If the user enters a negative number, the leftmost character is displayed as a minus sign (unless a negative display format has been specified). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
-> No matter what the display format, 4D accepts and stores the number entered in the field. Não se perde nenhuma informação.
+Se o usuário digitar um número negativo, o caractere mais à esquerda será exibido como um sinal de menos (a menos que um formato de exibição negativo tenha sido especificado). Se ##0 for o formato, menos 26 será exibido como -26 e menos 260 será exibido como <<< porque o sinal de menos ocupa um espaço reservado e há apenas três espaços reservados.
+> Independentemente do formato de exibição, 4D aceita e armazena o número inserido no campo. Não se perde nenhuma informação.
 
-Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
+Cada caractere de espaço reservado tem um efeito diferente na exibição de zeros à esquerda ou à direita. Um zero à esquerda é um zero que começa um número antes do ponto decimal; um zero à direita é um zero que termina um número após o ponto decimal.
 
 Suponha que utiliza o formato ##0 para mostrar três dígitos. Se o utilizador não introduzir nada no campo, o campo apresenta 0. Se o usuário introduzir 26, o campo apresenta 26.
 
 ### Caracteres separadores
 
-The numeric display formats (except for scientific notations) are automatically based on regional system parameters. 4D replaces the “.” and “,” characters by, respectively, the decimal separator and the thousand separator defined in the operating system. The period and comma are thus considered as placeholder characters, following the example of 0 or #.
-> On Windows, when using the decimal separator key of the numeric keypad, 4D makes a distinction depending on the type of field where the cursor is located:
+Os formatos de exibição numérica (exceto para notações científicas) são automaticamente baseados nos parâmetros do sistema regional. 4D substitui os caracteres "." e ",", respectivamente, pelo separador decimal e pelo separador de milhar definido no sistema operacional. O ponto e a vírgula são, portanto, considerados caracteres de espaço reservado, seguindo o exemplo de 0 ou #.
+> No Windows, ao usar a tecla de separação decimal do teclado numérico, 4D faz uma distinção dependendo do tipo de campo onde o cursor está localizado:
 > 
-> * in a Real type field, using this key will insert the decimal separator defined in the system,
-> * in any other type of field, this key inserts the character associated with the key, usually a period (.) or comma (,).
+> * em um campo do tipo Real, o uso dessa chave inserirá o separador decimal definido no sistema,
+> * em qualquer outro tipo de campo, essa chave insere o caractere associado à chave, geralmente um ponto (.) ou uma vírgula (,).
 
 ### Pontos decimais e outros caracteres de visualização
 
-É possível utilizar um ponto decimal num formato de apresentação de números. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
+É possível utilizar um ponto decimal num formato de apresentação de números. Se quiser que o decimal seja exibido independentemente de o usuário digitá-lo, ele deverá ser colocado entre zeros.
 
-Pode utilizar quaisquer outros caracteres no formato. When used alone, or placed before or after placeholders, the characters always appear. Por exemplo, se utilizar o seguinte formato:
+Pode utilizar quaisquer outros caracteres no formato. Quando usados isoladamente, ou colocados antes ou depois de espaços reservados, os caracteres sempre aparecem. Por exemplo, se utilizar o seguinte formato:
 
  $##0
 
-a dollar sign always appears because it is placed before the placeholders.
+um cifrão sempre aparece porque é colocado antes dos espaços reservados.
 
-If characters are placed between placeholders, they appear only if digits are displayed on both sides. Por exemplo, se definir o formato:
+Se os caracteres forem colocados entre espaços reservados, eles aparecerão somente se os dígitos forem exibidos em ambos os lados. Por exemplo, se definir o formato:
 
  ###.##0
 
@@ -144,20 +144,20 @@ Os espaços são tratados como caracteres nos formatos de apresentação de núm
 
 ### Formatos para positivo, negativo e zero
 
-A number display format can have up to three parts allowing you to specify display formats for positive, negative, and zero values. You specify the three parts by separating them with semicolons as shown below:
+Um formato de exibição de número pode ter até três partes, o que permite especificar formatos de exibição para valores positivos, negativos e zero. Você especifica as três partes separando-as com ponto e vírgula, conforme mostrado abaixo:
 
  Positivo;Negativo;Zero
 
-Não é necessário especificar as três partes do formato. If you use just one part, 4D uses it for all numbers, placing a minus sign in front of negative numbers.
+Não é necessário especificar as três partes do formato. Se você usar apenas uma parte, o 4D a usará para todos os números, colocando um sinal de menos na frente dos números negativos.
 
-If you use two parts, 4D uses the first part for positive numbers and zero and the second part for negative numbers. If you use three parts, the first is for positive numbers, the second for negative numbers, and the third for zero.
-> The third part (zero) is not interpreted and does not accept replacement characters. Se você digitar `###;###;#`, o valor zero será exibido como "#". Por outras palavras, o que é realmente introduzido é o que será apresentado para o valor zero.
+Se você usar duas partes, 4D usará a primeira parte para números positivos e zero e a segunda parte para números negativos. Se você usar três partes, a primeira será para números positivos, a segunda para números negativos e a terceira para zero.
+> A terceira parte (zero) não é interpretada e não aceita caracteres de substituição. Se você digitar `###;###;#`, o valor zero será exibido como "#". Por outras palavras, o que é realmente introduzido é o que será apresentado para o valor zero.
 
-Here is an example of a number display format that shows dollar signs and commas, places negative values in parentheses, and does not display zeros:
+Aqui está um exemplo de um formato de exibição de números que mostra cifrões e vírgulas, coloca valores negativos entre parênteses e não exibe zeros:
 
  $###,##0.00;($###,##0.00);
 
-Notice that the presence of the second semicolon instructs 4D to use nothing to display zero. The following format is similar except that the absence of the second semicolon instructs 4D to use the positive number format for zero:
+Observe que a presença do segundo ponto e vírgula instrui o 4D a usar nothing para exibir zero. O formato a seguir é semelhante, exceto pelo fato de que a ausência do segundo ponto e vírgula instrui o 4D a usar o formato de número positivo para zero:
 
  $###,##0.00;($###,##0.00)
 
@@ -165,7 +165,7 @@ Neste caso, a indicação de zero seria $0,00.
 
 ### Notação científica
 
-If you want to display numbers in scientific notation, use the **ampersand** (&) followed by a number to specify the number of digits you want to display. Por exemplo, o formato:
+Se você quiser exibir números em notação científica, use o sinal de adição **** (&) seguido de um número para especificar o número de dígitos que deseja exibir. Por exemplo, se o formato for:
 
  &3
 
@@ -173,7 +173,7 @@ apresentaria 759,62 como:
 
  7.60e+2
 
-The scientific notation format is the only format that will automatically round the displayed number. Note in the example above that the number is rounded up to 7.60e+2 instead of truncating to 7.59e+2.
+O formato de notação científica é o único formato que arredonda automaticamente o número exibido. Note in the example above that the number is rounded up to 7.60e+2 instead of truncating to 7.59e+2.
 
 ### Formatos hexadecimais
 
@@ -190,7 +190,7 @@ The `&xml` format will make a number compliant with XML standard rules. In parti
 
 You can display a number as a time (with a time format) by using `&/` followed by a digit. Time is determined by calculating the number of seconds since midnight that the value represents. O dígito no formato corresponde à ordem em que o formato da hora aparece no menu pendente Formato.
 
-Por exemplo, o formato:
+Por exemplo, se o formato for:
 
  &/5
 
