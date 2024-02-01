@@ -280,7 +280,7 @@ Cette propriété est en **lecture/écriture**.
 
 :::caution
 
-When a file handle is created, the `.offset` value is a number of bytes. However, the unit of offset measurement differs according to the reading function: with [`readBlob()`](#readblob), `.offset` is a number of bytes, whereas with [`readText()`](#readtext)/[`readLine()`](#readline) it is a number of characters. Selon le jeu de caractères du fichier, un caractère correspond à un ou plusieurs octets. Ainsi, si vous commencez la lecture avec `readBlob()` et que vous appelez ensuite `readText()`, la lecture du texte commencera à une position incohérente. Il est donc essentiel de définir vous-même la propriété `.offset` si vous passez de la lecture/écriture de blob à la lecture/écriture de texte dans le même filehandle. Par exemple :
+Lorsqu'un file handle est créé, la valeur `.offset` est un nombre d'octets. Cependant, l'unité de mesure du décalage diffère selon la fonction de lecture : avec [`readBlob()`](#readblob), `.offset` est un nombre d'octets, tandis qu'avec [`readText()`](#readtext)/[`readLine()`](#readline) il s'agit d'un nombre de caractères. Selon le jeu de caractères du fichier, un caractère correspond à un ou plusieurs octets. Ainsi, si vous commencez la lecture avec `readBlob()` et que vous appelez ensuite `readText()`, la lecture du texte commencera à une position incohérente. Il est donc essentiel de définir vous-même la propriété `.offset` si vous passez de la lecture/écriture de blob à la lecture/écriture de texte dans le même filehandle. Par exemple :
 
 ```4d
   // Ouvrir un fichier texte européen en utilisant le codage utf-16 (deux octets par caractère)
@@ -373,7 +373,7 @@ Lorsque cette fonction est exécutée, la position courante ([.offset](#offset))
 
 :::caution Avertissement
 
-This function assumes that the [`.offset`](#offset) property is a number of characters, not a number of bytes. For more information, see the [.offset description](#offset).
+Cette fonction suppose que la propriété [`.offset`](#offset) est un nombre de caractères et non un nombre d'octets. Pour plus d'informations, voir la [ description de .offset](#offset).
 
 :::
 
@@ -416,15 +416,15 @@ La fonction `.readText()` <!-- REF #FileHandleClass.readText().Summary -->renvoi
 
 La chaîne de caractères *stopChar* n'est pas incluse dans le texte retourné. Si vous omettez le paramètre *stopChar*, le texte du document entier est renvoyé.
 
-Lorsque cette fonction est exécutée, le ([.offset](#offset)) est placé juste après la chaîne *stopChar*.
+Si le paramètre *stopChar* est passé et non trouvé, `.readText()` renvoie une chaîne vide et le [.offset](#offset) n'est pas modifié.
 
 :::caution Avertissement
 
-This function assumes that the [`.offset`](#offset) property is a number of characters, not a number of bytes. For more information, see the [.offset description](#offset).
+Cette fonction suppose que la propriété [`.offset`](#offset) est un nombre de caractères et non un nombre d'octets. Pour plus d'informations, voir la [ description de .offset](#offset).
 
 :::
 
-Si le paramètre *stopChar* est passé et non trouvé, `.readText()` renvoie une chaîne vide et le [.offset](#offset) n'est pas modifié.
+Lorsque cette fonction est exécutée, le ([.offset](#offset)) est placé juste après la chaîne *stopChar*.
 
 > Lorsque cette fonction est exécutée pour la première fois sur un file handle, le contenu entier du document est chargé dans un buffer.
 
@@ -496,7 +496,7 @@ Si la valeur de *size* est inférieure à la taille courante du document, le con
 
 La fonction `.writeBlob()` <!-- REF #FileHandleClass.writeBlob().Summary -->écrit le *blob* dans le fichier, à partir de la position courante <!-- END REF -->.
 
-Lorsque cette fonction est exécutée, la position courante ([.offset](#offset)) est mise à jour après le dernier octet écrit.
+Lorsque cette fonction est exécutée, la position courante ([.offset](#offset)) est mise à jour après le délimiteur de fin de ligne.
 
 #### Voir également
 
@@ -533,7 +533,7 @@ Lorsque cette fonction est exécutée, la position courante ([.offset](#offset))
 
 La fonction `.writeLine()` <!-- REF #FileHandleClass.writeLine().Summary -->écrit le contenu de *lineOfText* à la position courante et insère un délimiteur de fin de ligne<!-- END REF --> (contrairement à la fonction [.writeText()](#writetext)). Par défaut, un délimiteur de fin de ligne natif est utilisé, mais vous pouvez définir un autre délimiteur lors de la [création du file handle](FileClass.md#open) en définissant la propriété [`.breakModeWrite`](#breakmodewrite).
 
-Lorsque cette fonction est exécutée, la position courante ([.offset](#offset)) est mise à jour après le délimiteur de fin de ligne.
+Lorsque cette fonction est exécutée, la position courante ([.offset](#offset)) est mise à jour après le dernier octet écrit.
 
 #### Voir également
 
