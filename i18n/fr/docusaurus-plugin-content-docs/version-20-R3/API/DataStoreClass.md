@@ -378,6 +378,9 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
  Else
     ALERT("This database is not encrypted.")
  End if
+ Else
+    ALERT("This database is not encrypted.")
+ End if
 ```
 
 <!-- END REF -->
@@ -1195,7 +1198,7 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 #### Description
 
-La fonction `startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->démarre l'enregistrement des requêtes ORDA côté client ou côté serveur<!-- END REF -->. Elle est conçue à des fins de débogage dans les configurations client/serveur.
+La fonction `startRequestLog()` <!-- REF #DataStoreClass.startRequestLog().Summary -->La fonction `startRequestLog()`<!-- END REF -->. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
 :::info
 
@@ -1373,7 +1376,7 @@ Vous pouvez imbriquer plusieurs transactions (sous-transactions). Chaque transac
 
 #### Description
 
-La fonction `stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the machine it is called (client or server)<!-- END REF -->.
+La fonction `stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->La fonction `stopRequestLog()`<!-- END REF -->.
 
 It actually closes the opened document on disk. On the client side, if the log was started in memory, it is stopped.
 
