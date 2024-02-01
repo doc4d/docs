@@ -56,7 +56,7 @@ Pour que vous puissiez directement créer un fichier d’historique, la base de 
 - Le fichier de données est vierge,
 - Vous venez d’effectuer une sauvegarde de la base et aucune modification sur les données n’a encore été effectuée.
 
-Dans tous les autres cas, au moment où vous validez la fenêtre des Propriétés de la base, une boîte de dialogue d’alerte vous informe qu’une sauvegarde est nécessaire. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. If you click **OK**, the backup begins immediately, then the log file is activated.
+Dans tous les autres cas, au moment où vous validez la fenêtre des Propriétés de la base, une boîte de dialogue d’alerte vous informe qu’une sauvegarde est nécessaire. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé.
 
 Sans autre manipulation de votre part, toutes les opérations effectuées sur les données s’inscriront dans ce fichier, et il sera utilisé également lors des ouvertures ultérieures de la base.
 
