@@ -66,7 +66,7 @@ Lorsque les paramètres sont déclarés, ils sont initialisés à la [**valeur p
 
 ## Paramètres nommés
 
-Dans les méthodes et fonctions de classe qui sont appelées, les valeurs des paramètres sont assignées aux variables locales. Vous pouvez déclarer des paramètres en utilisant un **nom de paramètre** avec un **type de paramètre**, séparés par deux-points.
+Dans les méthodes et fonctions de classe qui sont appelées, les valeurs des paramètres sont assignées aux variables locales. Comme alternative à la syntaxe des [paramètres nommés](#paramètres-nommés), vous pouvez déclarer les paramètres en utilisant des variables numérotées séquentiellement : **$1**, **$2**, **$3**, et ainsi de suite.
 
 - Pour les fonctions de classe, les paramètres sont déclarés via le mot clé `Function`.
 - Pour les méthodes (méthodes projet, méthodes objet, méthodes base et triggers), les paramètres sont déclarés à l'aide du mot clé `#DECLARE` saisi au début du code de la méthode.
@@ -159,7 +159,7 @@ Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
 
 ## Paramètres séquentiels
 
-Comme alternative à la syntaxe des [paramètres nommés](#paramètres-nommés), vous pouvez déclarer les paramètres en utilisant des variables numérotées séquentiellement : **$1**, **$2**, **$3**, et ainsi de suite. La numérotation des variables locales représente l’ordre des paramètres.
+Vous pouvez déclarer des paramètres en utilisant un **nom de paramètre** avec un **type de paramètre**, séparés par deux-points. La numérotation des variables locales représente l’ordre des paramètres.
 
 > Bien que cette syntaxe soit prise en charge par les fonctions de classes, il est recommandé d'utiliser la syntaxe des [paramètres nommés](#paramètres-nommés) dans ce cas.
 
@@ -223,7 +223,7 @@ Les expressions tables ou arrays (tableaux) peuvent être passées uniquement [p
 
 ## Indirections sur les paramètres (${N})
 
-Les méthodes projets 4D acceptent un nombre variable de paramètres. Vous pouvez adresser ces paramètres avec une boucle `For...End for`, la commande [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) et **la syntaxe d'indirection des paramètres**. Au sein de la méthode, une adresse d'indirection est formatée `${N}`, où `N` est une expression numérique. On qualifie `${N}` de **paramètre générique**.
+Les méthodes projets 4D acceptent un nombre variable de paramètres. Vous pouvez adresser ces paramètres avec une boucle `For...End for`, la commande [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) et **la syntaxe d'indirection des paramètres**. Au sein de la méthode, une adresse d'indirection est formatée `${N}`, où `N` est une expression numérique. Au sein de la méthode, une adresse d'indirection est formatée `${N}`, où `N` est une expression numérique.
 
 
 
@@ -351,13 +351,13 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 - Objets formulaires qui acceptent l'événement formulaire `Sur glisser` - Le paramètre $0 (Entier long), qui résulte de l'événement formulaire `Sur glisser` est typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. **Note :** Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire `Sur glisser`, vous devez initialiser $0. Par exemple :
 
 ```4d
- C_LONGINT($0)
- If(Form event code=On Drag Over)
-    $0:=0
-    ...
-    If($DataType=Is picture)
+ If($DataType=Is picture)
        $0:=-1
     End if
+    ...
+    C_LONGINT($0)
+ If(Form event code=On Drag Over)
+    $0:=0
     ...
  End if
 ```
