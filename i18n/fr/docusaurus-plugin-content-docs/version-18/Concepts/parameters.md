@@ -157,9 +157,9 @@ C_TEXT($1;$2;$3;$4;$5;$6)
  If(Form event=On Drag Over)
     $0:=0
     ...
-    If($DataType=Is picture)
-       $0:=-1
-    End if
+    C_LONGINT($0)
+ If(Form event code=On Drag Over)
+    $0:=0
     ...
  End if
 ```
