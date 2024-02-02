@@ -287,7 +287,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D v1
 </details>
 
 
-## Library table (4D v20 LTS)
+## Tabla de librerías (4D v20 LTS)
 
 
 
