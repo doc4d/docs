@@ -1,6 +1,7 @@
-- - -
-id: date-time-formats title: Date and Time Formats
-- - -
+---
+id: date-time-formats
+title: Date and Time Formats
+---
 
 
 
