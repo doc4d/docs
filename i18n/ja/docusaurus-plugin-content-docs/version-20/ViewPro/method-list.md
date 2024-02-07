@@ -258,7 +258,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 *styleName* 引数には、スタイルシートの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しいスタイルシートは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-*styleObj* には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 For the full list of style properties, see [Style object properties](configuring.md#style-object-properties).
+*styleObj* には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 スタイルプロパティの完全な一覧については、[スタイルオブジェクトプロパティ](configuring.md#スタイルオブジェクトプロパティ) を参照ください。
 
 任意の *sheet* 引数を使用することで、スタイルシートをどこに定義するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
@@ -989,15 +989,15 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 `VP EXPORT DOCUMENT` コマンドに任意の *paramObj* 引数を渡す場合、[`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
-| 変数 |               | タイプ     | 説明                                      |
-| -- | ------------- | ------- | --------------------------------------- |
-| $1 |               | text    | The name of the 4D View Pro area object |
-| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス        |
-| $3 |               | object  | コマンドの *paramObj* 引数への参照                 |
-| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト         |
-|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false       |
-|    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。     |
-|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。   |
+| 変数 |               | タイプ     | 説明                                    |
+| -- | ------------- | ------- | ------------------------------------- |
+| $1 |               | text    | 4D View Pro エリアのオブジェクト名               |
+| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス      |
+| $3 |               | object  | コマンドの *paramObj* 引数への参照               |
+| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト       |
+|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false     |
+|    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。   |
+|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
 
 #### 例題 1
 
@@ -3061,13 +3061,13 @@ VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
 ```4d
-    //myImport callback method
+    // myImport コールバックメソッド
 #DECLARE($area : Text; $filePath : Text; $param : Object; $status : Object)
 
 If ($status.success)
-     ALERT("Import successfully completed")
+     ALERT("読み込みに成功しました。")
 Else 
-     ALERT("Error: "+$status.errorMessage)
+     ALERT("エラー: "+$status.errorMessage)
 End if
 ```
 
@@ -3111,7 +3111,7 @@ VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOption
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-*viewPro* には有効な 4D View Pro オブジェクトを渡します。 このオブジェクトは手動で作成するほか、[VP Export to object](#vp-export-to-object) を使って取得することができます。 For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) section.
+*viewPro* には有効な 4D View Pro オブジェクトを渡します。 このオブジェクトは手動で作成するほか、[VP Export to object](#vp-export-to-object) を使って取得することができます。 4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
 *viewPro* オブジェクトが無効な場合には、エラーが返されます。
 
