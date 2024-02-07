@@ -127,7 +127,7 @@ Pour chaque process, les champs suivants sont enregistrés :
 
 ## HTTPDebugLog.txt
 
-Ce fichier journal enregistre chaque requête HTTP et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parties body peuvent également être enregistrées.
+This log file records the HTTP traffic that goes through the 4D HTTP client. Whole requests and responses, including headers, are logged; optionally, body parts can be logged as well.
 
 Pour lancer ce journal :
 
