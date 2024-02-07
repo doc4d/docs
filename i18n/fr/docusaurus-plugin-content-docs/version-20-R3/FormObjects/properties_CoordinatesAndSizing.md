@@ -10,7 +10,7 @@ Cette propriété n'est disponible que pour les listbox avec les [sources de don
 - collection ou entity selection,
 - tableau (non hiérarchique).
 
-Par défaut, cette option n'est pas sélectionnée. Lorsqu'elle est utilisée pour au moins une colonne, la hauteur de chaque ligne de la colonne est automatiquement calculée par 4D et le contenu de la colonne est pris en compte. A noter que seules les colonnes avec l'option sélectionnée seront prises en compte pour calculer la hauteur de ligne.
+Par défaut, cette option n'est pas sélectionnée. A noter que seules les colonnes avec l'option sélectionnée seront prises en compte pour calculer la hauteur de ligne. Lorsqu'elle est utilisée pour au moins une colonne, la hauteur de chaque ligne de la colonne est automatiquement calculée par 4D et le contenu de la colonne est pris en compte.
 
 :::note
 

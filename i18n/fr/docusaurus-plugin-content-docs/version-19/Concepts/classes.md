@@ -271,6 +271,7 @@ $area:=$rect.getArea() //5000
 // Class: MyClass
 Class Constructor({$parameterName : type; ...})
 // code
+// code
 ```
 
 Une fonction class constructor, qui accepte des [paramètres](#parameters), peut être utilisée pour définir une classe utilisateur.
@@ -332,11 +333,11 @@ Class extends Polygon
 
 Class constructor ($side : Integer)
 
- // It calls the parent class's constructor with lengths
- // provided for the Polygon's width and height
+ // Appelle le constructeur de la classe parente avec les côtés
+ // fournies pour la largeur et la hauteur du Polygone
  Super($side;$side)
- // In derived classes, Super must be called before you
- // can use 'This'
+ // Dans les classes dérivées, Super doit être appelé
+ // avant que vous puissiez utiliser 'This'
  This.name:="Square"
 
  Function getArea()
@@ -395,6 +396,12 @@ Class constructor($width : Integer; $height : Integer)
 
 Function sayName()
  ALERT("Hi, I am a "+This.name+".")
+
+// Function definition
+Function getArea()
+ var $0 : Integer
+
+ $0:=(This.height)*(This.width)
 
 // Function definition
 Function getArea()

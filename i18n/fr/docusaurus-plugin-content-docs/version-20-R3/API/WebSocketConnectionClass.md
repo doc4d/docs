@@ -73,13 +73,13 @@ Cette propriété est en lecture seule.
 <!-- REF #WebSocketConnectionClass.send().Params -->
 | Paramètres | Type                 |    | Description                                    |
 | ---------- | -------------------- |:--:| ---------------------------------------------- |
-| message    | Texte / Blob / Objet | -> | Le message à envoyer<!-- END REF -->
+| message    | Text / Blob / Object | -> | Le message à envoyer<!-- END REF -->
 
 |
 
 #### Description
 
-La fonction `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->envoie un *message * au client<!-- END REF -->.
+La fonction `.send()` <!-- REF #WebSocketConnectionClass.send().Summary -->La fonction `.send()`<!-- END REF -->.
 
 Les contenus suivants sont envoyés en fonction du type de *message * :
 

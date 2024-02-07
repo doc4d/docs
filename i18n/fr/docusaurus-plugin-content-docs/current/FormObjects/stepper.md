@@ -18,7 +18,7 @@ Un stepper peut être directement associé à une variable numérique, heure ou 
     * [maximum](properties_Scale.md#maximum) = 64 800 (18\*60\*60)
     * [step](properties_Scale.md#step) = 600 (10\*60)
 * Pour les valeurs de type date, la valeur saisie dans la propriété [Pas](properties_Scale.md#step) représente des jours. Les propriétés Minimum et Maximum sont ignorées.
-> For the stepper to work with a time or date variable, it is imperative to set its type in the form AND to [declare it explicitly](../Concepts/variables.md#declaring-variables) as `Time` or `Date`.
+> > For the stepper to work with a time or date variable, it is imperative to set its type in the form AND to [declare it explicitly](../Concepts/variables.md#declaring-variables) as `Time` or `Date`.
 
 For more information, please refer to [Using indicators](progressIndicator.md#using-indicators) in the "Progress Indicator" page.
 
