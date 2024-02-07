@@ -1009,15 +1009,15 @@ _filePath_ には書き出すドキュメントのパスとファイル名を渡
 
 コマンドに任意の _paramObj_ 引数を渡す場合、[`Formula`](../API/FunctionClass.md#formula) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカルパラメーターに受け取ります:
 
-| 引数     |               | タイプ     | 説明                                      |
-| ------ | ------------- | ------- | --------------------------------------- |
-| param1 |               | text    | The name of the 4D View Pro area object |
-| param2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス        |
-| param3 |               | object  | コマンドの _paramObj_ 引数への参照                 |
-| param4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト         |
-|        | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false       |
-|        | .errorCode    | integer | エラーコード。                                 |
-|        | .errorMessage | text    | エラーメッセージ。                               |
+| 引数     |               | タイプ     | 説明                                |
+| ------ | ------------- | ------- | --------------------------------- |
+| param1 |               | text    | 4D View Pro エリアのオブジェクト名           |
+| param2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス  |
+| param3 |               | object  | コマンドの _paramObj_ 引数への参照           |
+| param4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト   |
+|        | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false |
+|        | .errorCode    | integer | エラーコード。                           |
+|        | .errorMessage | text    | エラーメッセージ。                         |
 
 #### 例題 1
 
@@ -1122,7 +1122,7 @@ _paramObj_ には、複数のプロパティを渡せます:
 | includeStyles           | Boolean     | スタイルを含めるかどうか。デフォルトは true。                                                                                |
 | includeUnusedNames      | Boolean     | 使用されていないカスタム名を含めるかどうか。デフォルトは true。                                                                       |
 
-|saveAsView|Boolean|Whether to apply the format string to exporting value when saving, default=false.|
+|saveAsView|Boolean|書き出される値にフォーマット文字列を適用するかどうか。デフォルトは false。|
 
 コールバックメソッドでは、以下のパラメーターを使用することができます:
 
@@ -3164,15 +3164,15 @@ _paramObj_ には、複数のプロパティを渡せます:
 
 コールバックメソッドでは、以下のパラメーターを使用することができます:
 
-| 引数     |               | タイプ     | 説明                                      |
-| :----- | :------------ | :------ | :-------------------------------------- |
-| param1 |               | text    | The name of the 4D View Pro area object |
-| param2 |               | 4D.Blob | インポートされた Blob                           |
-| param3 |               | object  | コマンドの _paramObj_ 引数への参照                 |
-| param4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト         |
-|        | .success      | boolean | 読み込みに成功した場合は true 、それ以外の場合は false       |
-|        | .errorCode    | integer | エラーコード。                                 |
-|        | .errorMessage | text    | エラーメッセージ。                               |
+| 引数     |               | タイプ     | 説明                                |
+| :----- | :------------ | :------ | :-------------------------------- |
+| param1 |               | text    | 4D View Pro エリアのオブジェクト名           |
+| param2 |               | 4D.Blob | インポートされた Blob                     |
+| param3 |               | object  | コマンドの _paramObj_ 引数への参照           |
+| param4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト   |
+|        | .success      | boolean | 読み込みに成功した場合は true 、それ以外の場合は false |
+|        | .errorCode    | integer | エラーコード。                           |
+|        | .errorMessage | text    | エラーメッセージ。                         |
 
 #### 例題
 
