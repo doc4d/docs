@@ -58,7 +58,7 @@ La liste des utilisateurs affiche tous les utilisateurs, y compris [le Super_Uti
 
 4D ajoute un nouvel utilisateur à la liste, nommé par défaut "Nouvel utilisateurN".
 
-3. Saisissez le nom du nouvel utilisateur. Ce nom sera utilisé par l’utilisateur pour ouvrir la base. Vous pouvez renommer un utilisateur à tout moment en utilisant la commande **Renommer** du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.
+3. Saisissez le nom du nouvel utilisateur. Saisissez le nom du nouvel utilisateur. Vous pouvez renommer un utilisateur à tout moment en utilisant la commande **Renommer** du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.
 
 4. Pour saisir le mot de passe de l’utilisateur, cliquez sur le bouton **Modifier...** dans la zone des propriétés de l’utilisateur et saisissez deux fois le mot de passe dans la boite de dialogue. Vous pouvez saisir jusqu’à 15 caractères alphanumériques. L’éditeur de mots de passe tient compte de la casse des caractères (majuscules ou minuscules).
 
@@ -142,7 +142,7 @@ Les groupes sont hiérarchisés afin que les privilèges soient correctement aff
 
 - Le groupe Direction générale ne contient que les utilisateurs de “haut niveau”. ![](../assets/en/Users/schema1.png)
 
-- Le groupe Dir. finance contient des utilisateurs de la maintenance des données ainsi que ceux de la direction générale. Les utilisateurs de la direction générale disposent donc également des privilèges du groupe Finances. ![](../assets/en/Users/schema2.png)
+- finance contient des utilisateurs de la maintenance des données ainsi que ceux de la direction générale. Les utilisateurs de la direction générale disposent donc également des privilèges du groupe Finances.![](../assets/en/Users/schema2.png)
 
 - Le groupe Comptabilité contient des opérateurs de saisie mais aussi les utilisateurs des groupes Dir. finance et donc Direction générale. ![](../assets/en/Users/schema3.png)
 
