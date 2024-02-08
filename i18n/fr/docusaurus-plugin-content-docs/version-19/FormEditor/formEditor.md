@@ -191,7 +191,7 @@ La boîte de dialogue “Dupliquer plusieurs” apparaît lorsque vous sélectio
 
 - In the upper area, enter the number of columns and lines (rows) of objects you want to get.For example, if you want three columns and two lines of objects, enter 3 in the Column(s) area and 2 in the Line(s) area. Si vous souhaitez ajouter horizontalement deux copies d’un objet, saisissez 3 dans la zone Colonnes (laissez la zone Ligne(s) à 1).
 
-- For lines and columns, define the offset that you wish to leave between each copy.The value must be expressed in points. Elle sera appliquée à chaque copie par rapport à l'objet d'origine. Par exemple, si vous souhaitez laisser un décalage vertical de 20 points entre chaque objet et que la hauteur de l'objet source est de 50 points, entrez 70 dans la zone "Décalage" de la colonne.
+- For lines and columns, define the offset that you wish to leave between each copy.The value must be expressed in points. Par exemple, si vous souhaitez laisser un décalage vertical de 20 points entre chaque objet et que la hauteur de l'objet source est de 50 points, entrez 70 dans la zone "Décalage" de la colonne.
 
 - Si vous souhaitez créer une matrice de variables, cochez l’option **Numéroter les variables** et sélectionnez le sens dans lequel la numérotation des variables doit s’effectuer. Cette option n’est active que si l’objet sélectionné est une variable. Pour plus d’informations sur cette option, reportez-vous à la section **Dupliquer sur matrice** du *Manuel de développement*.
 
@@ -675,7 +675,7 @@ Vous pouvez également déplacer un objet vers une autre vue via le menu context
 
 Vous pouvez sélectionner dans la page courante du formulaire tous les objets appartenant à une même vue. Cette fonction est utile pour appliquer des modifications globales à un ensemble d’objets.
 
-Pour cela, faites un clic droit sur la vue dans laquelle vous souhaitez sélectionner tous les objets et cliquez sur le bouton **Tout sélect. dans vue**:
+Pour modifier le plan d'un objet, sélectionnez-le et choisissez :
 
 ![](../assets/en/FormEditor/selectAll.png)
 
