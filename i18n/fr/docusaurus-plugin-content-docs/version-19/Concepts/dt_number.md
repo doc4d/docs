@@ -122,13 +122,13 @@ Une expression utilisant un opérateur sur les bits retourne une valeur de type 
 | Opération             | Opérateur     | Syntaxe                   | Retourne                |
 | --------------------- | ------------- | ------------------------- | ----------------------- |
 | ET                    | &             | long & E. E. long         | E. long                 |
-| OU (inclusif)         | &#124;        | long &#124; E. long       | E. long                 |
+| OU (inclusif)         | &#124;        | long \^&#124; E. E. long | E. long                 |
 | OU (exclusif)         | &#094; &#124; | Long &#094; &#124; Long   | E. long                 |
 | Décaler bits à gauche | <<            | E. Long << E. Long        | long (voir note n°1)    |
 | Décaler bits à droite | >>            | E. Long >> E. Long        | long (voir note n°1)    |
 | Mettre bit à 1        | ?+            | long ?+ E. E. long        | long (voir note n°2)    |
 | Mettre bit à 0        | ?-            | long ??                   | long (voir note n°2)    |
-| Tester bit            | ??            | long \^&#124; E. E. long | Booléen (voir note n°2) |
+| Tester bit            | ??            | long &#124; E. E. long    | Booléen (voir note n°2) |
 
 #### Notes
 
