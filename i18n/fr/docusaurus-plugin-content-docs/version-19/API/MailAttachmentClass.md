@@ -245,7 +245,7 @@ La propriété `.platformPath` retourne <!-- REF #MailAttachmentClass.platformPa
 
 ## .type
 
-<!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Texte<!-- END REF -->
+<!-- REF #MailAttachmentClass.type.Syntax -->`CryptoKey` doit contenir une clé **privée** valide.<!-- END REF -->
 
 #### Description
 
