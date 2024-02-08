@@ -3,7 +3,7 @@ id: dataExplorer
 title: データエクスプローラー
 ---
 
-The Data Explorer provides a web interface to view, query, and edit data in your project datastore. このツールを使用すると、すべてのエンティティを簡単に照会し、属性値に基づいて検索・並べ替え・フィルターすることができます。 It helps you quickly identifying issues at any step of the development process, as well as controlling and editing data.
+データエクスプローラーは、プロジェクトのデータストアにあるデータを表示・クエリ・編集するための Webインターフェースを提供します。 このツールを使用すると、すべてのエンティティを簡単に照会し、属性値に基づいて検索・並べ替え・フィルターすることができます。 このツールは、開発プロセスのどの段階においても問題を迅速に特定するだけでなく、データを管理・編集するのにも役立ちます。
 
 ![alt-text](../assets/en/Admin/dataExplorer1.png)
 
@@ -50,12 +50,12 @@ The Data Explorer provides a web interface to view, query, and edit data in your
 データエクスプローラーを使用するための最小解像度は 1280x720 です。 推奨解像度は 1920x1080 です。
 
 
-## Browsing Data
+## データの閲覧
 
 データエクスプローラーでは、包括的でカスタマイズ可能なデータの表示に加えて、データの照会や並べ替えをおこなうことができます。
 
 
-### Basics
+### 基本
 
 データエクスプローラーは、[ORDAマッピングルール](ORDA/dsMapping.md#変換のルール) に基づいて、ORDAデータモデルへの全体的なアクセスを提供します。
 
@@ -183,7 +183,7 @@ firstname = "Marie Sophie" AND manager.lastname = "@th"
 ![alt-text](../assets/en/Admin/dataExplorer11.png)
 
 
-## Editing Data
+## データの編集
 
 The Data Explorer allows you to modify attribute values, add or delete entities. These feature is intended to administrators, for example to test implementations or fix issues with invalid data.
 
