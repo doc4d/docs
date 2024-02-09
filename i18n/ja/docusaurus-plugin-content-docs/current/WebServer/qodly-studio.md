@@ -9,11 +9,11 @@ title: Qodly Studio
 
 :::
 
-**Qodly Studio** is an application interface builder. It provides developers with integrated tools, including a form editor, a code editor, a rendering engine, and supports natively the [ORDA technology](../ORDA/overview.md).
+**Qodly Studio** はアプリケーション・インターフェース・ビルダーです。 フォームエディター、コードエディター、レンダリングエンジンを含む統合ツールをデベロッパーに提供し、[ORDAテクノロジー](../ORDA/overview.md) をネイティブにサポートします。
 
-You can use Qodly Studio directly from your **4D environment** to build modern and sophisticated interfaces that you can easily integrate to your existing 4D projects and deploy **on premise**.
+**4D環境** から直接 Qodly Studio を使用して、モダンで洗練されたインターフェースをビルドし、既存の 4Dプロジェクトに簡単に統合して、**オンプレミス** で運用することができます。
 
-Qodly Studio can also be used in the [**Qodly Cloud platform**](qodly.com), dedicated to the development of web business applications.
+Qodly Studioは、Webビジネスアプリケーションの開発に特化した [**Qodly Cloud Platform**](qodly.com) でも使用できます。
 
 Qodly Studio では、全く新しい WebUI を使い、データソースの概念に慣れ、次の操作を学ぶことができます:
 
@@ -24,7 +24,7 @@ Qodly Studio では、全く新しい WebUI を使い、データソースの概
 
 :::info
 
-The use of Qodly Studio in 4D requires a 4D partner license. ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
+4D で Qodly Studio を使用するには、4Dパートナーライセンスが必要です。 ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
 
 :::
 
