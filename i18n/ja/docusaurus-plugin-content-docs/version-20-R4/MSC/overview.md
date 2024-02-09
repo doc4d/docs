@@ -1,6 +1,6 @@
 ---
 id: overview
-title: MSC
+title: メンテナンス＆セキュリティセンター
 ---
 
 Maintenance & Security Center (MSC) は、データとストラクチャーファイルを検証、保守、バックアップそして圧縮および暗号化するツールを提供します。 MSC ウィンドウは、すべての 4Dアプリケーション (4Dシングルユーザー、4D Server、4D Desktop) から利用できます。
