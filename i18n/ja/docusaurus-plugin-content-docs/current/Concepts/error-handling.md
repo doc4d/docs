@@ -10,10 +10,10 @@ title: エラー処理
 - 開発フェーズにおいて、問題となりうるコードのエラーやバグを発見して修正したい。
 - 運用フェーズにおいて、予期しないエラーを検知して回復したい。とくに、システムエラーダイアログ (ディスクが一杯、ファイルがない、など) を独自のインターフェースに置換できます。
 
-基本的に、4D でエラー処理する方法は 2つあります。 次の操作がおこなえます:
+基本的に、4D でエラー処理する方法は 2つあります。 次のことが可能です:
 
-- [install an error-handling method](#installing-an-error-handling-method), or
-- use a [`Try()` keyword](#tryexpression) or a [`Try/Catch` structure](#trycatchend-try) before pieces of code that call a function, method, or expression that can throw an error.
+- [エラー処理メソッドを実装](#エラー処理メソッドの実装) する
+- エラーを投げる可能性のある関数・メソッド・式を呼び出すコードの前に [`Try()`キーワード](#tryexpression) または [Try/Catch</code> 文](#trycatchend-try) を使う
 
 :::tip グッドプラクティス
 
@@ -47,7 +47,7 @@ ON ERR CALL("IO_Errors";ek local) // ローカルなエラー処理メソッド�
 ON ERR CALL("";ek local) // ローカルプロセスにおいてエラーの検知を中止します
 ```
 
-The  [`Method called on error`](https://doc.4d.com/4dv20/help/command/en/page704.html) command allows you to know the name of the method installed by `ON ERR CALL` for the current process. このコマンドは汎用的なコードでとくに有用です。エラー処理メソッドを一時的に変更し、後で復元することができます:
+[`Method called on error`](https://doc.4d.com/4dv20/help/command/ja/page704.html) コマンドは、`ON ERR CALL` によってカレントプロセスにインストールされているエラー処理メソッド名を返します。 このコマンドは汎用的なコードでとくに有用です。エラー処理メソッドを一時的に変更し、後で復元することができます:
 
 ```4d
  $methCurrent:=Method called on error(ek local)
@@ -143,7 +143,7 @@ ON ERR CALL("")
 
 :::note
 
-If you want to try a more complex code than a single-line expression, you might consider using a [`Try/Catch` structure](#trycatchend-try).
+単一行の式よりも複雑なコードを試したい場合は、[`Try/Catch` 文](#trycatchend-try) の使用も検討できます。
 
 :::
 
@@ -219,53 +219,53 @@ End if
 
 ## Try...Catch...End try
 
-The `Try...Catch...End try` structure allows you to test a block code in its actual execution context (including, in particular, local variable values) and to intercept errors it throws so that the 4D error dialog box is not displayed.
+`Try...Catch...End try` 文は、実際の実行コンテキスト (特にローカル変数の値を含む) でコードブロックをテストし、スローされるエラーをキャッチすることで、4D のエラーダイアログボックスが表示されないようにできます。
 
-Unlike the `Try(expression)` keyword that evaluates a single-line expression, the `Try...Catch...End try` structure allows you to evaluate any code block, from the most simple to the most complex, without requiring an error-handling method. In addition, the `Catch` block can be used to handle the error in any custom way.
+`Try(expression)` キーワードが単一の行の式を評価するのとは異なり、`Try...Catch...End try` 文は、単純なものから複雑なものまで、任意のコードブロックを評価することができます。エラー処理メソッドは必要としない点は同じです。 また、`Catch` ブロックは、任意の方法でエラーを処理するために使用できます。
 
 
-The formal syntax of the `Try...Catch...End try` structure is:
+`Try...Catch...End try` 構文の正式なシンタックスは、以下の通りです:
 
 ```4d
 
 Try 
-    statement(s) // Code to evaluate
+    statement(s) // 評価するコード
 Catch
-    statement(s) // Code to execute in case of error
+    statement(s) // エラーの場合に実行するコード
 End try
 
 ```
 
-The code placed between the `Try` and the `Catch` keywords is first executed, then the flow depends on the error(s) encountered during this execution.
+`Try` と `Catch` キーワード間のコードが最初に実行されます。 その後のフローは、実行状況によって異なります。
 
-- If no error is thrown, the code execution continues after the corresponding `End try` keyword. The code placed between the `Catch` and the `End try` keywords is not executed.
-- If the code block execution throws a *non-deferred error*, the execution flow stops and executes the corresponding `Catch` code block.
-- If the code block execution throws a *deferred error*, the execution flow continues until the end of the `Try` block and then executes the corresponding `Catch` code block.
+- エラーがスローされなかった場合には、対応する `End try` キーワードの後へとコード実行が継続されます。 `Catch` と `End try` キーワード間のコードは実行されません。
+- コードブロックの実行が *非遅延エラー* をスローした場合、実行フローは停止し、対応する `Catch` コードブロックを実行します。
+- コードブロックの実行が *遅延エラー* をスローした場合には、実行フローは停止しません。`Try` の最後まで実行したのちに、対応する `Catch` コードブロックを実行します。
 
 :::note
 
-If a *deferred* error is thrown outside of the `Try` block, the code execution continues until the end of the method or function.
+*遅延* エラーが `Try` ブロック外で投げられた場合、メソッドまたは関数の終わりまでコードが実行されます。
 
 :::
 
 :::info
 
-For more information on *deferred* and *non-deferred* errors, please refer to the [`throw`](https://doc.4d.com/4dv20R/help/command/en/page1805.html) command description.
+*遅延* および *非遅延* エラーについての詳細は、[`throw`](https://doc.4d.com/4dv20R/help/command/ja/page1805.html) コマンドの説明を参照ください。
 
 :::
 
 
-In the `Catch` code block, you can handle the error(s) using standard error handling commands. The [`Last errors`](https://doc.4d.com/4dv20/help/command/en/page1799.html) function contains the last errors collection. You can [declare an error-handling method](#installing-an-error-handling-method) in this code block, in which case it is called in case of error (otherwise the 4D error dialog box is displayed).
+`Catch` コードブロックでは、標準のエラー処理コマンドを使用してエラーを処理できます。 [`Last errors`](https://doc.4d.com/4dv20/help/command/ja/page1799.html) コマンドは、現在のエラースタックをコレクションとして返します。 このコードブロック内で [エラー処理メソッド](#エラー処理メソッドの実装) を宣言すると、エラー発生時にはそれが呼び出されます (宣言しない場合には、4Dエラーダイアログが表示されます)。
 
 :::note
 
-If an [error-handling method](#installing-an-error-handling-method) is installed in the code placed between the `Try` and the `Catch` keywords, it is called in case of error.
+[エラー処理メソッド](#エラー処理メソッドの実) が `Try` と `Catch` キーワード間のコード内でインストールされている場合には、エラー発生時にそれが呼ばれます。
 
 :::
 
 ### 例題
 
-Combining transactions and `Try...Catch...End try` structures allows writing secured code for critical features.
+トランザクションと `Try...Catch...End try` 文を組み合わせることで、重要な機能のためにセキュアなコードを書くことができます。
 
 ```4d
 Function createInvoice($customer : cs.customerEntity; $items : Collection; $invoiceRef : Text) : cs.invoiceEntity
@@ -282,7 +282,7 @@ Function createInvoice($customer : cs.customerEntity; $items : Collection; $invo
             $newInvoiceLine.item:=$item.item
             $newInvoiceLine.amount:=$item.amount
             $newInvoiceLine.invoice:=$newInvoice
-            //call other specific functions to validate invoiceline
+            // インボイス項目を検証するその他の関数を呼び出します
             $newInvoiceLine.save()
         End for each 
         $newInvoice.save()
