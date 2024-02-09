@@ -1,6 +1,6 @@
 ---
 id: tags
-title: Transformation tags
+title: 変換タグ
 ---
 
 4Dでは、参照を 4D変数や式に挿入したり、様々な処理をソーステキスト ("テンプレート") に対して実行したりするための変換タグのセットを用意しています。 これらのタグは、ソーステキストが実行されてアウトプットテキストが生成されたときに解釈されます。
@@ -78,7 +78,7 @@ Webページ内で呼び出されると、`<!--#4DBASE -->` タグは同ペー�
 以下のように、各呼び出しごとに相対パスを指定したコードは:
 
 ```html
-<!--#4DINCLUDE subpage.html-->
+<!--#4DINCLUDE subpage.html--> 
 <!--#4DINCLUDE folder/subpage1.html-->
 <!--#4DINCLUDE folder/subpage2.html-->
 <!--#4DINCLUDE folder/subpage3.html-->
