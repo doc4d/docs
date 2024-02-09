@@ -52,7 +52,13 @@ title: 表示
 ## 日付フォーマット
 
 日付フォーマットは、表示や印刷時に日付を表示する方法を制御します。 データ入力の際は選択した表示フォーマットとは関係なく、YYYY/MM/DD 形式で日付を入力します。
-> [数値フォーマット](#数値フォーマット) や [文字フォ－マット](#文字フォ－マット) と異なり、日付表示フォ－マットは4Dの組み込みフォーマットのなかから選択しなければなりません。
+
+日付の表示フォーマットを定義するには、次のいずれかを使えます:
+
+- 4D で提供されている既定のフォーマット
+- カスタムパターン
+
+### 既定のフォーマット
 
 利用可能な日付表示フォーマットは以下のとおりです:
 
@@ -70,16 +76,34 @@ title: 表示
 
 *(1)* "June" は "Jun"、”July” は "Jul" に省略されます。
 
-*(2)* 年は、1930年~2029年の間は2桁の数字で表示されますが、それ以外の場合は4桁で表示されます。 これはデフォルト設定ですが、[SET DEFAULT CENTURY](https://doc.4d.com/4Dv18/4D/18/SET-DEFAULT-CENTURY.301-4505667.ja.html) コマンドで変更することができます。
+*(2)* 年は、1930年~2029年の間は2桁の数字で表示されますが、それ以外の場合は4桁で表示されます。 これはデフォルト設定ですが、[SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/ja/page392.html) コマンドで変更することができます。
 
 *(3)* `ISO Date Time` フォーマットは XML の日付と時間表現の標準 (ISO8601) に対応します。 これは主に XML フォーマットや Web サービスのデータを読み込んだり書き出したりするために使用します。
-> 表示フォーマットにかかわらず、年度を2 桁で入力すると、4D は年が00~29 の間であれば 21 世紀とみなし、30~99 の間であれば 20 世紀とみなします。 これはデフォルト設定ですが、[SET DEFAULT CENTURY](https://doc.4d.com/4Dv18/4D/18/SET-DEFAULT-CENTURY.301-4505667.ja.html) コマンドで変更することができます。
+> 表示フォーマットにかかわらず、年度を2 桁で入力すると、4D は年が00~29 の間であれば 21 世紀とみなし、30~99 の間であれば 20 世紀とみなします。 これはデフォルト設定ですが、[SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/ja/page392.html) コマンドで変更することができます。
+
+
+
+### カスタムフォーマット
+
+カスタムの日付フォーマットは、[**日付と時間のフォーマット**](../Project/date-time-formats.md) ページで説明されている複数のパターンを使用して作成することができます。 例:
+
+| Pattern                  | 例                    |
+| ------------------------ | -------------------- |
+| "eeee, dd"               | Wednesday, 29        |
+| "'Day' #D 'of the year'" | Day #333 of the year |
+
 
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値                                                                                                                                               |
-| ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | string | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (他の値と組み合わせることができます) |
+| 名称         | データタイプ | とりうる値                                              |
+| ---------- | ------ | -------------------------------------------------- |
+| dateFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long" + "blankIfNull"</li><li>Custom formats: any format built using a [supported pattern](../Project/date-time-formats.md) + " blankIfNull"</li> |
+
+:::note blankIfNull
+
+By default, a null date is displayed with zeros, e.g. 00/00/00. With the "blankIfNull" option, a null date is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "systemShort blankIfNull" or "ee dd LL blankIfNull".
+
+:::
 
 #### 対象オブジェクト
 
@@ -293,6 +317,7 @@ title: 表示
 
 #### JSON 文法
 
+
 | 名称            | データタイプ | とりうる値                                                                                                 |
 | ------------- | ------ | ----------------------------------------------------------------------------------------------------- |
 | pictureFormat | string | "truncatedTopLeft", "scaled", "truncatedCenter", "tiled", "proportionalTopLeft", "proportionalCenter" |
@@ -306,7 +331,13 @@ title: 表示
 ## 時間フォーマット
 
 時間フォーマットは、表示や印刷時に時間を表示する方法を制御します。 選択した表示フォーマットとは関係なく、データ入力の際は 24時間制の “HH:MM:SS” フォーマット、または 12時間制の “HH:MM:SS AM/PM” フォーマットで時間を入力します。
-> [文字](#文字フォーマット) や [数値](#数値フォーマット) の表示フォーマットとは異なり、時間の表示フォ－マットはフォーマットポップアップメニューから選択しなければなりません。
+
+時間の表示フォーマットを定義するには、次のいずれかを使えます:
+
+- 4D で提供されている既定のフォーマット
+- カスタムパターン
+
+### 既定のフォーマット
 
 次の表は、時間フィールドの表示フォーマットとそれぞれのフォーマットの例を示しています:
 
@@ -324,11 +355,26 @@ title: 表示
 | System time long abbreviated | systemMedium | macOSのみ: システムに定義された時間フォーマットの短縮型。 <br/>Windows では System time short フォーマットと同じ | 04:30:25            |
 | System time long             | systemLong   | macOSのみ: システムに定義された時間フォーマット。 <br/>Windows では System time short フォーマットと同じ     | 04:30:25 JST        |
 
+
+### カスタムフォーマット
+
+Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. 例:
+
+| Pattern                                | 例              |
+| -------------------------------------- | -------------- |
+| "HH 'hours' mm 'minutes' ss 'seconds'" | 13 時 25 分 12 秒 |
+| "hh:mm aa"                             | 01:25 PM       |
+
+
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値                                                                                                                                                                       |
-| ---------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| timeFormat | string | "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS", "blankIfNull" (他の値と組み合わせることができます) |
+| 名称         | データタイプ | とりうる値                                              |
+| ---------- | ------ | -------------------------------------------------- |
+| timeFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + "blankIfNull"</li><li>Custom formats: any format built using [a supported pattern](../Project/date-time-formats.md) + "blankIfNull"</li> |
+
+:::note blankIfNull
+
+By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
 
 #### 対象オブジェクト
 
@@ -502,7 +548,7 @@ title: 表示
 
 ![](../assets/en/FormObjects/select-row.png)
 
-オブジェクトが [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv19/help/command/ja/page603.html) コマンドで非表示にされた場合、4D はこのプロパティを無視します。つまり、レコードの選択状態にかかわらず、当該オブジェクトは非表示のままになります。
+4D does not take this property into account if the object was hidden using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv20/help/command/en/page603.html) command; in this case, the object remains invisible regardless of whether or not the record is selected.
 
 #### JSON 文法
 
