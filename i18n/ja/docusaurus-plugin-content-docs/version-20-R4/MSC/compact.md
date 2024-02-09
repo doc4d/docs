@@ -1,6 +1,6 @@
 ---
 id: compact
-title: Compact Page
+title: 圧縮ページ
 ---
 
 このページは、データファイルの圧縮機能にアクセスするときに使用します。
