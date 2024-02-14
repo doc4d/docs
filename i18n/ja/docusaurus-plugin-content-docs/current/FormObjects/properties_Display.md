@@ -87,7 +87,7 @@ title: 表示
 
 カスタムの日付フォーマットは、[**日付と時間のフォーマット**](../Project/date-time-formats.md) ページで説明されている複数のパターンを使用して作成することができます。 例:
 
-| Pattern                  | 例                    |
+| パターン                     | 例                    |
 | ------------------------ | -------------------- |
 | "eeee, dd"               | Wednesday, 29        |
 | "'Day' #D 'of the year'" | Day #333 of the year |
@@ -360,7 +360,7 @@ By default, a null date is displayed with zeros, e.g. 00/00/00. With the "blankI
 
 Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. 例:
 
-| Pattern                                | 例              |
+| パターン                                   | 例              |
 | -------------------------------------- | -------------- |
 | "HH 'hours' mm 'minutes' ss 'seconds'" | 13 時 25 分 12 秒 |
 | "hh:mm aa"                             | 01:25 PM       |
