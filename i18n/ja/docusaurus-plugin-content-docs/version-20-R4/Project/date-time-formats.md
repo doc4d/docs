@@ -7,46 +7,46 @@ title: 日付と時間のフォーマット
 
 アプリケーション、プラットフォーム、またはインターフェースの要件に従って、4Dプロジェクトにおける日付や時間の表示形式を管理しなくてはならない場合があります。
 
-4D includes a comprehensive list of patterns that you can use to create and apply customized date and time formats in your applications, in addition to default formats. Customized format patterns are supported by the following features:
+4Dには、デフォルトの形式に加えて、カスタマイズされた日付と時間のフォーマットを作成および適用するために使用できる包括的なパターンのリストが含まれています。 カスタマイズされたフォーマットパターンは、以下の機能でサポートされています:
 
-- the [`String`](https://doc.4d.com/4dv20R/help/command/en/page10.html) command,
-- the [`OBJECT SET FORMAT`](https://doc.4d.com/4dv20R/help/command/en/page236.html) and [`OBJECT Get format`](https://doc.4d.com/4dv20R/help/command/en/page894.html) commands,
-- the date and time format form object properties, available from the Property list or the [`dateFormat`](../FormObjects/properties_Display.md/#date-format) and [`timeFormat`](../FormObjects/properties_Display.md/#time-format) JSON properties.
+- [`String`](https://doc.4d.com/4dv20R/help/command/ja/page10.html) コマンド
+- [`OBJECT SET FORMAT`](https://doc.4d.com/4dv20R/help/command/ja/page236.html) および [`OBJECT Get format`](https://doc.4d.com/4dv20R/help/command/ja/page894.html) コマンド
+- プロパティリストまたは [`dateFormat`](../FormObjects/properties_Display.md/#日付フォーマット) および [`timeFormat`](../FormObjects/properties_Display.md/#時間フォーマット) のJSONプロパティから利用可能な、フォームオブジェクトの "日付/時間フォーマット" プロパティ
 
 
-## Pattern list
+## パターンリスト
 
-The following table lists all supported patterns for date and time formats.
+以下の表は、日付/時間フォーマットでサポートされているすべてのパターンの一覧です (一部の出力はローカライズされており、システムパラメーターに依存します)。
 
-| Symbol | 意味                        | Pattern       | Example Output |
-| ------ | ------------------------- | ------------- | -------------- |
-| G      | era designator            | G, GG, or GGG | AD             |
-|        |                           | GGGG          | Anno Domini    |
-|        |                           | GGGGG         | A              |
-| y      | year                      | yy            | 96             |
-|        |                           | y or yyyy     | 1996           |
-| Y      | year of "Week of Year"    | Y             | 1997           |
-| u      | extended year             | u             | 4601           |
-| Q      | quarter                   | Q             | 2              |
-|        |                           | QQ            | 02             |
-|        |                           | QQQ           | Q2             |
-|        |                           | QQQQ          | 2nd quarter    |
-|        |                           | QQQQQ         | 2              |
-| q      | stand-alone quarter       | q             | 2              |
-|        |                           | qq            | 02             |
-|        |                           | qqq           | Q2             |
-|        |                           | qqqq          | 2nd quarter    |
-|        |                           | qqqqq         | 2              |
-| M      | month in year             | M             | 9              |
-|        |                           | MM            | 09             |
-|        |                           | MMM           | Sep            |
-|        |                           | MMMM          | September      |
-|        |                           | MMMMM         | S              |
-| L      | stand-alone month in year | L             | 9              |
-|        |                           | LL            | 09             |
-|        |                           | LLL           | Sep            |
-|        |                           | LLLL          | September      |
-|        |                           | LLLLL         | S              |
+| 記号 | 意味          | パターン       | 出力例   |
+| -- | ----------- | ---------- | ----- |
+| G  | 元号          | G, GG, GGG | 西暦    |
+|    |             | GGGG       | 西暦    |
+|    |             | GGGGG      | A     |
+| y  | 年           | yy         | 96    |
+|    |             | y または yyyy | 1996  |
+| Y  | ウィークカレンダーの年 | Y          | 1997  |
+| u  | 拡張年         | u          | 4601  |
+| Q  | 四半期         | Q          | 2     |
+|    |             | QQ         | 02    |
+|    |             | QQQ        | Q2    |
+|    |             | QQQQ       | 第2四半期 |
+|    |             | QQQQQ      | 2     |
+| q  | 四半期 (単独)    | q          | 2     |
+|    |             | qq         | 02    |
+|    |             | qqq        | Q2    |
+|    |             | qqqq       | 第2四半期 |
+|    |             | qqqqq      | 2     |
+| M  | 月           | M          | 9     |
+|    |             | MM         | 09    |
+|    |             | MMM        | 9月    |
+|    |             | MMMM       | 9月    |
+|    |             | MMMMM      | S     |
+| L  | 月 (単独)      | L          | 9     |
+|    |             | LL         | 09    |
+|    |             | LLL        | 9月    |
+|    |             | LLLL       | 9月    |
+|    |             | LLLLL      | S     |
  w|week of year|w|27 | |ww|27 |d|day in month|d|2| | | |dd|2| |D|day of year|D|189| |E|day of week|E, EE, or EEE|Tue| | | |EEEE|Tuesday| | | |EEEEE|T| | | |EEEEEE|Tu| |e|local day of week|e|2| | | |ee|02| | | |eee|Tue| | | |eeee|Tuesday| | | |eeeee|T| | | |eeeeee|Tu| |c|stand-alone local day of week|c or cc|2| | | |ccc|Tue| | | |cccc|Tuesday| | | |ccccc|T| | | |cccccc|Tu| |a|AM or PM|a, aa, or aaa|PM [abbrev]| | | |aaaa|PM [wide]| | | |aaaaa|p| |b|AM, PM, noon, midnight|b, bb, or bbb|mid.| | | |bbbb|midnight| | | |bbbbb|md| |B|flexible day periods|B, BB, or BBB|at night [abbrev]| | | |BBBB|at night [wide]| | | |BBBBB|at night [narrow]| |h|hour in am/pm (1~12)|h|7| | | |hh|07| |H|hour in day (0~23)|H|0| | | |HH|00| |K|hour in am/pm (0~11)|K|0| | | |KK|00| |k|hour in day (1~24)|k|24| | | |kk|24| |m|minute in hour|m|4| | | |mm|04| |s|second in minute|s|5| | | |ss|05| |X|Time Zone: ISO8601 basic hm?, with Z for 0|X|-08, +0530, Z| | |Time Zone: ISO8601 basic hm, with Z|XX|-0800, Z| | |Time Zone: ISO8601 extended hm, with Z|XXX|-08:00, Z| | |Time Zone: ISO8601 basic hms?, with Z|XXXX|-0800, -075258, Z| | |Time Zone: ISO8601 extended hms?, with Z|XXXXX|-08:00, -07:52:58, Z| |x|Time Zone: ISO8601 basic hm?, without Z for 0|x|-08, +0530| | |Time Zone: ISO8601 basic hm, without Z|xx|-800| | |Time Zone: ISO8601 extended hm, without Z|xxx|-08:00| | |Time Zone: ISO8601 basic hms?, without Z|xxxx|-0800, -075258| | |Time Zone: ISO8601 extended hms?, without Z|xxxxx|-08:00, -07:52:58| |O|Time Zone: short localized GMT|O|GMT-8| | |Time Zone: long localized GMT (=ZZZZ)|OOOO|GMT-08:00| |z|Time Zone: specific non-location|z, zz, or zzz|-0800| | | |zzzz|GMT-08:00| | | |zzzzz|-08:00, -07:52:58, Z| || | | | |'|escape for text|'|'| |' '|two single quotes produce one|' '|' '|
 
 
@@ -100,7 +100,7 @@ Starting and ending spaces in patterns are automatically trimmed in outputs. If 
 
 ## 例題
 
-| Date or time | Pattern      | 戻り値              | コメント                  |
+| Date or time | パターン         | 戻り値              | コメント                  |
 | ------------ | ------------ | ---------------- | --------------------- |
 | 15/06/2000   | "QQQQ"       | "2nd quarter"    | localized             |
 | 17/03/2001   | "D"          | "76"             | 76th day of the year  |
