@@ -87,21 +87,21 @@ title: 表示
 
 カスタムの日付フォーマットは、[**日付と時間のフォーマット**](../Project/date-time-formats.md) ページで説明されている複数のパターンを使用して作成することができます。 例:
 
-| パターン                     | 例                    |
-| ------------------------ | -------------------- |
-| "eeee, dd"               | Wednesday, 29        |
-| "'Day' #D 'of the year'" | Day #333 of the year |
+| パターン        | 例           |
+| ----------- | ----------- |
+| "dd日 eeee"  | 29日 水曜日     |
+| "今年に入ってD日目" | 今年に入って333日目 |
 
 
 #### JSON 文法
 
 | 名称         | データタイプ | とりうる値                                              |
 | ---------- | ------ | -------------------------------------------------- |
-| dateFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long" + "blankIfNull"</li><li>Custom formats: any format built using a [supported pattern](../Project/date-time-formats.md) + " blankIfNull"</li> |
+| dateFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long" + "blankIfNull"</li><li>カスタムフォーマット: [サポートされているパターン](../Project/date-time-formats.md) + "blankIfNull" を使用して作成されたフォーマット</li> |
 
 :::note blankIfNull
 
-By default, a null date is displayed with zeros, e.g. 00/00/00. With the "blankIfNull" option, a null date is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "systemShort blankIfNull" or "ee dd LL blankIfNull".
+デフォルトでは、null の日付はゼロで表示されます。例: 00/00/00。 "blankIfNull" オプションを使用すると、null の日付は空白として表示されます。 "blankIfNull" 文字列 (文字の大小を区別) は、選択されたフォーマットの値と組み合わせて使います。 例: "systemShort blankIfNull" または "LLLdd日 ee blankIfNull"。
 
 :::
 
@@ -358,23 +358,23 @@ By default, a null date is displayed with zeros, e.g. 00/00/00. With the "blankI
 
 ### カスタムフォーマット
 
-Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. 例:
+カスタムの時間フォーマットは、[**日付と時間のフォーマット**](../Project/date-time-formats.md) ページで説明されている複数のパターンを使用して作成することができます。 例:
 
-| パターン                                   | 例              |
-| -------------------------------------- | -------------- |
-| "HH 'hours' mm 'minutes' ss 'seconds'" | 13 時 25 分 12 秒 |
-| "hh:mm aa"                             | 01:25 PM       |
+| パターン                   | 例              |
+| ---------------------- | -------------- |
+| "HH '時' mm '分' ss '秒'" | 13 時 25 分 12 秒 |
+| "aa hh:mm"             | 午後 01:25       |
 
 
 #### JSON 文法
 
 | 名称         | データタイプ | とりうる値                                              |
 | ---------- | ------ | -------------------------------------------------- |
-| timeFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + "blankIfNull"</li><li>Custom formats: any format built using [a supported pattern](../Project/date-time-formats.md) + "blankIfNull"</li> |
+| timeFormat | string | <li>既定のフォーマット: "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + "blankIfNull"</li><li>カスタムフォーマット: [サポートされているパターン](../Project/date-time-formats.md) + "blankIfNull" を使用して作成されたフォーマット</li> |
 
 :::note blankIfNull
 
-By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
+デフォルトでは、null の時間はゼロで表示されます。例: "00:00:00"。 "blankIfNull" オプションを使用すると、null の時間は空白として表示されます。 "blankIfNull" 文字列 (文字の大小を区別) は、選択されたフォーマットの値と組み合わせて使います。 例: "MM_SS blankIfNull" または "aa hh:mm blankIfNull"
 
 #### 対象オブジェクト
 
@@ -548,7 +548,7 @@ By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blan
 
 ![](../assets/en/FormObjects/select-row.png)
 
-4D does not take this property into account if the object was hidden using the [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv20/help/command/en/page603.html) command; in this case, the object remains invisible regardless of whether or not the record is selected.
+オブジェクトが [`OBJECT SET VISIBLE`](https://doc.4d.com/4dv20/help/command/ja/page603.html) コマンドで非表示にされた場合、4D はこのプロパティを無視します。 つまり、レコードの選択状態にかかわらず、当該オブジェクトは非表示のままになります。
 
 #### JSON 文法
 
