@@ -7,7 +7,7 @@ title: Release Notes
 
 #### Highlights
 
-- QUIC network layer now supports the [TCP/IP broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
+- QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
 
 
 ## 4D v20 R4
