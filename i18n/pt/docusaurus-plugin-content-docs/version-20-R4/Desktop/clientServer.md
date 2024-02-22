@@ -1,7 +1,6 @@
----
-id: clientServer
-title: Client/Server Management
----
+- - -
+id: clientServer title: Client/Server Management
+- - -
 
 
 As aplicações 4D desktop podem ser utilizadas numa configuração Cliente/Servidor, quer como aplicações cliente/servidor fundidas, quer como projectos remotos.
