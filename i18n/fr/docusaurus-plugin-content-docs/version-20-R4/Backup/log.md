@@ -1,7 +1,6 @@
----
-id: log
-title: Log file (.journal)
----
+- - -
+id: log title: Log file (.journal)
+- - -
 
 Une application exploitée de manière continue enregistre en permanence des modifications, des ajouts ou des suppressions d’enregistrements. Réaliser des sauvegardes régulières des données est important mais ne permet pas, en cas d’incident, de récupérer les données saisies depuis la dernière sauvegarde. Pour répondre à ce besoin, 4D dispose d’un outil particulier : le fichier d’historique. Ce fichier permet d’assurer la sécurité permanente des données.
 
