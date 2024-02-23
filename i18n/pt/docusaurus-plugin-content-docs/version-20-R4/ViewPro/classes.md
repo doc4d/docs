@@ -1,7 +1,6 @@
----
-id: classes
-title: Classes
----
+- - -
+id: classes title: Classes
+- - -
 
 As seguintes classes podem ser usadas no 4D View Pro.
 
