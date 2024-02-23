@@ -1,7 +1,6 @@
----
-id: settings
-title: Backup Settings
----
+- - -
+id: settings title: Backup Settings
+- - -
 
 Les paramètres de sauvegarde sont définis sur trois pages dans la [boîte de dialogue des Paramètres](../settings/overview.md). Vous pouvez définir :
 
