@@ -1,7 +1,6 @@
----
-id: viewProAreaOverview
-title: 4D View Pro エリア
----
+- - -
+id: viewProAreaOverview title: 4D View Pro エリア
+- - -
 
 4D View Pro を使用すると、4Dフォーム内にスプレッドシートエリアを挿入・表示できるようになります。 スプレッドシートとは、セルのグリッドを格納したアプリケーションのことで、これらのセルに情報を入力したり、計算を実行させたり、あるいはピクチャーを表示したりすることができます。
 
