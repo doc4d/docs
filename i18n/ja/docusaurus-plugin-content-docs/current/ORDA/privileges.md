@@ -39,7 +39,7 @@ ORDA のセキュリティアーキテクチャーは、権限、許諾アクシ
 
 :::info
 
-Permissions control access to datastore objects. If you want to filter read data according to some criteria, you might consider [restricting entity selections](../entities.md#restricting-entity-selections) which can be more appropriate in this case.
+パーミッションは、データストアオブジェクトへのアクセスを制御します。 If you want to filter read data according to some criteria, you might consider [restricting entity selections](../entities.md#restricting-entity-selections) which can be more appropriate in this case.
 
 :::
 
