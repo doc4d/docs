@@ -1,7 +1,6 @@
----
-id: forms
-title: Forms Page
----
+- - -
+id: forms title: Forms Page
+- - -
 
 
 Esta página permite-lhe definir a operação e o ecrã padrão do editor de formulários de 4D.
