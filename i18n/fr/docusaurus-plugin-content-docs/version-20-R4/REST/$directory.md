@@ -1,7 +1,6 @@
----
-id: directory
-title: $directory
----
+- - -
+id: directory title: $directory
+- - -
 
 Le répertoire gère l'accès des utilisateurs via les requêtes REST.
 
