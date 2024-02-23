@@ -1,7 +1,6 @@
----
-id: application-server
-title: Application Server Page
----
+- - -
+id: application-server title: Application Server Page
+- - -
 
 
 La Page Serveur d’application regroupe les informations relatives à la base de données publiée par 4D Server et permet de gérer cette publication.
