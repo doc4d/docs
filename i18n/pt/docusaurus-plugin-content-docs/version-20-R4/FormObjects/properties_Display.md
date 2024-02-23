@@ -1,7 +1,6 @@
----
-id: propertiesDisplay
-title: Display
----
+- - -
+id: propertiesDisplay title: Display
+- - -
 
 ---
 
