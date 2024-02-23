@@ -1,7 +1,6 @@
----
-id: tags
-title: Transformation tags
----
+- - -
+id: tags title: Transformation tags
+- - -
 
 4D provides a set of transformation tags which allow you to insert references to 4D variables or expressions, or to perform different types of processing within a source text, referred to as a "template". These tags are interpreted when the source text is executed and generate an output text.
 
