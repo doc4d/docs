@@ -1,7 +1,6 @@
----
-id: preemptiveWeb
-title: Using preemptive web processes
----
+- - -
+id: preemptiveWeb title: Using preemptive web processes
+- - -
 
 
 El servidor web de 4D le permite aprovechar al máximo los ordenadores multinúcleo utilizando procesos web apropiativos en sus aplicaciones. Puede configurar su código relacionado con la web, incluyendo las etiquetas 4D, los métodos base Web o las funciones de clase REST de ORDA para que se ejecuten simultáneamente en tantos núcleos como sea posible.
