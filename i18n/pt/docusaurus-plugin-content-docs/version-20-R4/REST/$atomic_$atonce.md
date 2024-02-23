@@ -1,7 +1,6 @@
----
-id: atomic_$atonce
-title: $atomic/$atOnce
----
+- - -
+id: atomic_$atonce title: $atomic/$atOnce
+- - -
 
 
 Permite que as ações no pedido REST estejam numa transação. Se não houver erros, a transação é validada. Caso contrário, a transação é cancelada.
