@@ -1,7 +1,6 @@
----
-id: forms
-title: Forms
----
+- - -
+id: forms title: Forms
+- - -
 
 
 Les formulaires fournissent l'interface par laquelle les informations sont saisies, modifiées et imprimées dans une application de bureau. A l'aide des formulaires, les utilisateurs peuvent interagir avec les données d'une base de données et imprimer des rapports. Les formulaires permettent de créer des boîtes de dialogue personnalisées, des palettes ou toute fenêtre personnalisée.
