@@ -199,8 +199,8 @@ Read [**What’s new in 4D v19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-
 - Listbox cells support [horizontal](../FormObjects/properties_CoordinatesAndSizing.md#horizontal-padding) and [vertical](../FormObjects/properties_CoordinatesAndSizing.md#vertical-padding) padding.
 - 4D View Pro: new [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
 - Ability to see related, computed, and alias attributes in the [Web Data Explorer](../Admin/dataExplorer.md#basics).
-- To help us make our products always better, we now automatically collect data regarding usage statistics on running 4D Server applications. This will have no impact on performance. See the new page explaining [why and how 4D collects data](../Admin/data-collect.md).
-- Components compiled for Silicon: On macOS Silicon platforms (Apple ARM CPUs), components must be recompiled with 4D v19 R6 or higher to be used with this release.
+- Pour nous aider à améliorer nos produits, nous collectons désormais automatiquement des données concernant les statistiques d'utilisation des applications 4D Server en cours d'exécution. Cela n'aura aucun impact sur les performances. See the new page explaining [why and how 4D collects data](../Admin/data-collect.md).
+- Composants compilés pour Silicon : Sur les plateformes macOS Silicon (Apple ARM CPUs), les composants doivent être recompilés avec 4D v19 R6 ou plus pour être utilisés avec cette version.
 
 ## 4D v19 R5
 
@@ -338,18 +338,18 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 ## Library table
 
-| Bibliothèque | Version courante | Mise à jour dans 4D | Commentaire                                                                                                   |
-| ------------ | ---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------- |
-| ICU          | 73.2             | 20.1                | Cette mise à jour majeure entraîne une reconstruction automatique des index alphanumériques, texte et objets. |
-| CEF          | 118              | 20 R3               | Chromium 5993                                                                                                 |
-| Hunspell     | 1.7.2            | 20                  | Utilisé pour la vérification orthographique dans les formulaires 4D et 4D Write Pro                           |
-| PDFWriter    | 4.3              | 20                  | FreeType dependency dans 12.2.1                                                                               |
-| SpreadJS     | 16.2.6           | 20 R4               | Moteur 4D View Pro                                                                                            |
-| OpenSSL      | 3.2.0            | 20 R4               | Default TLS/SSL security level has been upgraded. See [Behavior changes](#behavior-changes) for release 20 R4 |
-| libZip       | 1.9.2            | 20                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                    |
-| LZMA         | 5.4.1            | 20                  |                                                                                                               |
-| Zlib         | 1.2.13           | 20                  |                                                                                                               |
-| webKit       | WKWebView        | 19                  |                                                                                                               |
-| PHP          | 8.2.4            | 20                  |                                                                                                               |
-| libldap      | 2.6.4            | 20 R3               |                                                                                                               |
-| libsasl      | 2.1.28           | 20                  |                                                                                                               |
+| Bibliothèque | Version courante | Mise à jour dans 4D | Commentaire                                                                                                        |
+| ------------ | ---------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| ICU          | 73.2             | 20.1                | Cette mise à jour majeure entraîne une reconstruction automatique des index alphanumériques, texte et objets.      |
+| CEF          | 118              | 20 R3               | Chromium 5993                                                                                                      |
+| Hunspell     | 1.7.2            | 20                  | Utilisé pour la vérification orthographique dans les formulaires 4D et 4D Write Pro                                |
+| PDFWriter    | 4.3              | 20                  | FreeType dependency dans 12.2.1                                                                                    |
+| SpreadJS     | 16.2.6           | 20 R4               | Moteur 4D View Pro                                                                                                 |
+| OpenSSL      | 3.2.0            | 20 R4               | Le niveau de sécurité TLS/SSL par défaut a été relevé. See [Behavior changes](#behavior-changes) for release 20 R4 |
+| libZip       | 1.9.2            | 20                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                         |
+| LZMA         | 5.4.1            | 20                  |                                                                                                                    |
+| Zlib         | 1.2.13           | 20                  |                                                                                                                    |
+| webKit       | WKWebView        | 19                  |                                                                                                                    |
+| PHP          | 8.2.4            | 20                  |                                                                                                                    |
+| libldap      | 2.6.4            | 20 R3               |                                                                                                                    |
+| libsasl      | 2.1.28           | 20                  |                                                                                                                    |
