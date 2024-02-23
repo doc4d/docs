@@ -1,7 +1,6 @@
----
-id: expand
-title: $expand
----
+- - -
+id: expand title: $expand
+- - -
 
 
 画像属性に保存されているピクチャーを展開します (*例*: `Employee(1)/photo?$imageformat=best&$expand=photo`)<br/> または <br/> 保存するために BLOB属性を展開します。
