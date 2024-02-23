@@ -1,7 +1,6 @@
----
-id: string
-title: String
----
+- - -
+id: string title: String
+- - -
 
 Chaîne est un terme générique utilisé pour :
 
