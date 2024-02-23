@@ -1,7 +1,6 @@
----
-id: savedfilter
-title: $savedfilter
----
+- - -
+id: savedfilter title: $savedfilter
+- - -
 
 Enregistre le filtre défini par $filter lors de la création d'un ensemble d'entités (par exemple, `$savedfilter="{filter}"`)
 
