@@ -1,7 +1,6 @@
----
-id: global-stamp
-title: Using the Global Stamp
----
+- - -
+id: global-stamp title: Using the Global Stamp
+- - -
 
 
 
