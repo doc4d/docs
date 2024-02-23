@@ -1,7 +1,6 @@
----
-id: allowProject
-title: Allowing project methods
----
+- - -
+id: allowProject title: Allowing project methods
+- - -
 
 
 Las etiquetas 4D como `4DEVAL`, `4DTEXT`, `4DHTML`... así como la U[`URL /4DACTION`](httpRequests.md#/4daction) permiten desencadenar la ejecución de cualquier método de un proyecto 4D publicado en la web. Por ejemplo, la petición *http://www.server.com/4DACTION/login* provoca la ejecución del método proyecto ***login***, si existe.
