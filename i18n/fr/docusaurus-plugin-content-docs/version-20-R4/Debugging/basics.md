@@ -1,7 +1,6 @@
----
-id: basics
-title: Debugging
----
+- - -
+id: basics title: Debugging
+- - -
 
 Les erreurs sont courantes. Il serait inhabituel d'écrire un nombre important de lignes de code sans générer aucune erreur. À l'inverse, traiter et/ou corriger des erreurs est également normal !
 
