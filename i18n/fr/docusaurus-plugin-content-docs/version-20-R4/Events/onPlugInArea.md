@@ -1,7 +1,6 @@
----
-id: onPlugInArea
-title: On Plug in Area
----
+- - -
+id: onPlugInArea title: On Plug in Area
+- - -
 
 | Code | Peut être appelé par                                                        | Définition                                                    |
 | ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
