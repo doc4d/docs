@@ -1,7 +1,6 @@
----
-id: asArray
-title: $asArray
----
+- - -
+id: asArray title: $asArray
+- - -
 
 
 クエリの結果を、JSONオブジェクトではなく配列 (コレクション) として返します。
