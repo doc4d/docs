@@ -1,7 +1,6 @@
----
-id: authentication
-title: Authentication
----
+- - -
+id: authentication title: Authentication
+- - -
 
 Authenticating users is necessary when you want to provide specific access rights to web users. Authentication designates the way the information concerning the user credentials (usually name and password) are collected and processed.
 
