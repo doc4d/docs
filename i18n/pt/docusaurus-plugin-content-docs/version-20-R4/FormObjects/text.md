@@ -1,7 +1,6 @@
----
-id: text
-title: Text
----
+- - -
+id: text title: Text
+- - -
 
 
 A text object allows you to display static written content (*e.g.*, instructions, titles, labels, etc.) on a form. These static text areas can become dynamic when they include dynamic references. Para mais informações, consulte [Usando referências em textos estáticos](https://doc.4d.com/4Dv17R5/4D/17-R5/Using-references-in-static-text.300-4163725.en.html).
