@@ -1,7 +1,6 @@
----
-id: editing
-title: Managing 4D users and groups
----
+- - -
+id: editing title: Managing 4D users and groups
+- - -
 
 
 En las aplicaciones multiusuarios, 4D ofrece a los usuarios ciertos privilegios de acceso estándar y ciertas prerrogativas. Una vez iniciado un sistema de usuarios y grupos, estos privilegios estándar toman efecto.
