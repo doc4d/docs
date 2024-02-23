@@ -1,7 +1,6 @@
----
-id: propertiesPrint
-title: Print
----
+- - -
+id: propertiesPrint title: Imprimir
+- - -
 
 ## Impressão quadro
 
