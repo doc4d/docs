@@ -1,7 +1,6 @@
----
-id: timeout
-title: $timeout
----
+- - -
+id: timeout title: $timeout
+- - -
 
 
 4D Server のキャッシュにエンティティセットが保存される時間 (秒単位) を指定します (*例*: `$timeout=1800`)
