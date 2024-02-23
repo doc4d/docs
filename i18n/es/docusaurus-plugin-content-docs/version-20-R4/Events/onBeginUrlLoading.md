@@ -1,7 +1,6 @@
----
-id: onBeginUrlLoading
-title: On Begin URL Loading
----
+- - -
+id: onBeginUrlLoading title: On Begin URL Loading
+- - -
 
 | Code | Puede ser llamado por                       | Definición                            |
 | ---- | ------------------------------------------- | ------------------------------------- |
