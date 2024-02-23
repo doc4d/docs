@@ -1,7 +1,6 @@
----
-id: onDeactivate
-title: On Deactivate
----
+- - -
+id: onDeactivate title: On Deactivate
+- - -
 
 | Code | Peut être appelé par | Définition                                              |
 | ---- | -------------------- | ------------------------------------------------------- |
