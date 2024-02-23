@@ -1,7 +1,6 @@
----
-id: methods
-title: Methods
----
+- - -
+id: methods title: Métodos
+- - -
 
 
 Un método es básicamente un trozo de código que ejecuta una o varias acciones. Un método se compone de instrucciones.
