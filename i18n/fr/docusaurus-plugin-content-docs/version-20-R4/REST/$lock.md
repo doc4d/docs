@@ -1,7 +1,6 @@
----
-id: lock
-title: $lock
----
+- - -
+id: lock title: $lock
+- - -
 
 
 Verrouille et déverrouille une entité en utilisant le [mécanisme pessimiste](../ORDA/entities.md#pessimistic-lock).
