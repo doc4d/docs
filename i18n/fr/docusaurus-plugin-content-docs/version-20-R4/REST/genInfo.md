@@ -1,7 +1,6 @@
----
-id: genInfo
-title: Getting Server Information
----
+- - -
+id: genInfo title: Getting Server Information
+- - -
 
 Vous pouvez obtenir plusieurs informations du serveur REST :
 
