@@ -1,7 +1,6 @@
----
-id: skip
-title: $skip
----
+- - -
+id: skip title: $skip
+- - -
 
 Inicia la entidad definida por este número en la colección (*por ejemplo*, `$skip=10`)
 
