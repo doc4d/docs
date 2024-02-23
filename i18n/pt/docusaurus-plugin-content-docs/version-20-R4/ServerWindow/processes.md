@@ -1,7 +1,6 @@
----
-id: processes
-title: Processes Page
----
+- - -
+id: processes title: Processes Page
+- - -
 
 
 A página **Processes** lista todos os processos em curso.
