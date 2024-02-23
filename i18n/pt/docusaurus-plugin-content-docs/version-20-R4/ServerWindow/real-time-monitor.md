@@ -1,7 +1,6 @@
----
-id: real-time-monitor
-title: Real Time Monitor Page
----
+- - -
+id: real-time-monitor title: Real Time Monitor Page
+- - -
 
 
 The Real Time Monitor page monitors the progress of "long" operations performed by the application in real time. These operations are, for example, sequential queries, execution of formulas, etc.
