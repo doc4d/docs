@@ -1,7 +1,6 @@
----
-id: propertiesPlugIns
-title: プラグイン
----
+- - -
+id: propertiesPlugIns title: プラグイン
+- - -
 
 ## 詳細設定
 
