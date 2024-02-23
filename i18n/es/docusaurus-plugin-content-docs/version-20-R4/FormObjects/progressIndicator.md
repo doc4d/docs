@@ -1,7 +1,6 @@
----
-id: progressIndicator
-title: Progress Indicator
----
+- - -
+id: progressIndicator title: Indicador de progreso
+- - -
 
 
 Un indicador de progreso (también llamado "termómetro") está diseñado para mostrar o definir gráficamente los valores numéricos o fecha/hora.
