@@ -1,7 +1,6 @@
----
-id: webServerConfig
-title: Configuration
----
+- - -
+id: webServerConfig title: Configuration
+- - -
 
 Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les ports d'écoute, les chemins par défaut et diverses options couvrant toutes les fonctionnalités du serveur. 4D fournit des valeurs par défaut pour tous les paramètres.
 
