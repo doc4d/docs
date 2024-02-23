@@ -1,7 +1,6 @@
----
-id: catalog
-title: $catalog
----
+- - -
+id: catalog title: $catalog
+- - -
 
 
 Le catalogue décrit toutes les dataclass et les attributs disponibles dans le datastore.
