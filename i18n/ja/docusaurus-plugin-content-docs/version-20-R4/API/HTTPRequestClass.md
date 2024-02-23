@@ -1,7 +1,6 @@
----
-id: HTTPRequestClass
-title: HTTPRequest
----
+- - -
+id: HTTPRequestClass title: HTTPRequest
+- - -
 
 `HTTPRequest` クラスを使って、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を扱うことができます。このオブジェクトは、HTTPサーバーへのリクエストの設定と送信、および HTTPサーバーのレスポンスを処理するのに使用します。
 
