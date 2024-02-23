@@ -1,7 +1,6 @@
----
-id: objectLibrary
-title: Object libraries
----
+- - -
+id: objectLibrary title: Object libraries
+- - -
 
 
 Pode utilizar bibliotecas de objectos nos seus formulários. An object library offers a collection of preconfigured objects that can be used in your forms by simple or copy-paste or drag-and-drop.
