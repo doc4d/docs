@@ -1,7 +1,6 @@
----
-id: database
-title: Database page
----
+- - -
+id: database title: Database page
+- - -
 
 ## Página Almacenamiento de datos
 
