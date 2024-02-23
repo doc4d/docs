@@ -1,7 +1,6 @@
----
-id: debugging-remote
-title: Debugging from remote machines
----
+- - -
+id: debugging-remote title: Debugging from remote machines
+- - -
 
 ## Visão Geral
 
