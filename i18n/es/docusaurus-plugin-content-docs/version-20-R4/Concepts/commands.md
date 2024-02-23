@@ -1,7 +1,6 @@
----
-id: commands
-title: Comandos
----
+- - -
+id: commands title: Comandos
+- - -
 
 El lenguaje 4D contiene un gran número de comandos integrados, que permiten al desarrollador realizar una amplia gama de acciones.
 
