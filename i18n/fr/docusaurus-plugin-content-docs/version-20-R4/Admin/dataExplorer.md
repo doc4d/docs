@@ -1,7 +1,6 @@
----
-id: dataExplorer
-title: Data Explorer
----
+- - -
+id: dataExplorer title: Data Explorer
+- - -
 
 The Data Explorer provides a web interface to view, query, and edit data in your project datastore. Grâce à cet outil, vous pouvez facilement naviguer parmi toutes vos entités et rechercher, ordonner ou filtrer les valeurs des attributs. It helps you quickly identifying issues at any step of the development process, as well as controlling and editing data.
 
