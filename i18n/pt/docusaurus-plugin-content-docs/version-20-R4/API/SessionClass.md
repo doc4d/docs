@@ -1,7 +1,6 @@
----
-id: SessionClass
-title: Session
----
+- - -
+id: SessionClass title: Session
+- - -
 
 Os objetos Session são devolvidos pelo comando [`Session`](#session) quando [são habilitadas as sessões escaláveis em seu projeto](WebServer/sessions.md#enabling-sessions). O objeto Session é criado e mantido automaticamente pelo servidor web 4D para controlar a sessão de um cliente web (por exemplo, um navegador). Esse objeto oferece ao desenvolvedor web uma interface para a sessão de usuário, permitindo gerenciar privilégios, armazenar dados contextuais, partilhar informação entre processos e lançar processos preemptivos relacionados a sessão.
 
