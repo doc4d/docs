@@ -1,7 +1,6 @@
----
-id: propertiesResizingOptions
-title: リサイズオプション
----
+- - -
+id: propertiesResizingOptions title: リサイズオプション
+- - -
 
 ## カラム自動リサイズ
 
