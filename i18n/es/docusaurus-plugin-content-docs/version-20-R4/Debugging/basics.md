@@ -1,7 +1,6 @@
----
-id: basics
-title: Debugging
----
+- - -
+id: basics title: Depuración
+- - -
 
 Los errores son comunes. Sería inusual escribir un número importante de líneas de código sin generar errores. Por el contrario, tratar y/o corregir errores también es normal.
 
