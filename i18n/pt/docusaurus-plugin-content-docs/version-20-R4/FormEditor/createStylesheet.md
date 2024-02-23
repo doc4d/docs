@@ -1,7 +1,6 @@
----
-id: stylesheets
-title: Style sheets
----
+- - -
+id: stylesheets title: Style sheets
+- - -
 
 
 Uma folha de estilo agrupa junto uma combinação de atributos para objetos formulário - de atributos de texto a quase qualquer atributo de objeto disponível.
