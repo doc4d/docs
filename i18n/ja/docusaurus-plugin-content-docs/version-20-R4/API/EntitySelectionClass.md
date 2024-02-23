@@ -1,7 +1,6 @@
----
-id: EntitySelectionClass
-title: EntitySelection
----
+- - -
+id: EntitySelectionClass title: EntitySelection
+- - -
 
 
 エンティティセレクションとは、同じ [データクラス](ORDA/dsMapping.md#データクラス) に所属する一つ以上の [エンティティ](ORDA/dsMapping.md#エンティティ) への参照を格納しているオブジェクトのことです。 エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
