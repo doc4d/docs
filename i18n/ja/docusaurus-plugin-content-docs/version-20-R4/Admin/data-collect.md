@@ -1,7 +1,6 @@
----
-id: data-collect
-title: Data Collection
----
+- - -
+id: data-collect title: Data Collection
+- - -
 
 4D製品を改善し続けるために、実行中の 4D Server アプリケーションの使用状況データを自動的に収集します。 収集されるデータは完全に匿名で、データ収集がユーザーエクスペリエンスに影響を与えることはありません。
 
