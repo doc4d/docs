@@ -1,7 +1,6 @@
----
-id: glossary
-title: Glossary
----
+- - -
+id: glossary title: Glosario
+- - -
 
 ## Visión general de los principales conceptos
 
