@@ -1,7 +1,6 @@
----
-id: architecture
-title: Architecture of a project
----
+- - -
+id: architecture title: Architecture of a project
+- - -
 
 Um projeto 4D é composto por várias pastas e arquivos, armazenados numa pasta raiz do projeto (pasta de pacotes). Por exemplo:
 
