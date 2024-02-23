@@ -1,7 +1,6 @@
----
-id: time
-title: Time
----
+- - -
+id: time title: Time
+- - -
 
 As variáveis, campos ou expressões de tipo Hora podem pertencer a um intervalo entre 00:00:00 e 596,000:00:00.
 
