@@ -1,7 +1,6 @@
----
-id: forms
-title: Forms
----
+- - -
+id: forms title: Forms
+- - -
 
 
 Os formulários constituem a interface através da qual a informação é introduzida, modificada e impressa numa aplicação de desktop. Users interact with the data in a database using forms and print reports using forms. Forms can be used to create custom dialog boxes, palettes, or any featured custom window.
