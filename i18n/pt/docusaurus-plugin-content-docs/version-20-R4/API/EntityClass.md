@@ -1,7 +1,6 @@
----
-id: EntityClass
-title: Entity
----
+- - -
+id: EntityClass title: Entity
+- - -
 
 Uma entidade [](ORDA/dsMapping.md#entity) é uma instância de um [Dataclass](ORDA/dsMapping.md#dataclass), como um registro da tabela que corresponde ao dataclass em seu datasture associado. Contém os mesmos atributos que o dataclass assim como os valores de dados e propriedades e funções específicas.
 
