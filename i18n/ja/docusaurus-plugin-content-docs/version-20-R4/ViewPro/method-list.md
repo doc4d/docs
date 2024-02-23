@@ -1278,18 +1278,20 @@ $result:=VP Find($range;"Total")
 
 ```4d
 var $range;$condition;$result : Object
-
+ 
 $range:=VP All("ViewProArea")
-
+ 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True // ドキュメント全体を検索します
+$condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
+ 
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
 
-  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
+
 $result:=VP Find($range;"Total";$condition;"Grand Total")
-
-  // 戻り値のレンジオブジェクトが空かどうかをチェックします
+ 
+  // Check for empty range object 
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1829,7 +1831,7 @@ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 | vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                       |                  |
 | name       | Text   | -> | 命名レンジの名前                                      |                  |
 | scope      | Number | -> | ターゲットのスコープ (デフォルト=カレントシート) |                  |
-| 戻り値        | Text   | <- | 命名フォーミュラ、または命名レンジの定義                          | <!-- END REF --> |
+| 戻り値        | Object | <- | 命名フォーミュラ、または命名レンジの定義                          | <!-- END REF --> |
 
 #### 説明
 
