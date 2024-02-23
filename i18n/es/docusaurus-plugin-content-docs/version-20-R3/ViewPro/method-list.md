@@ -1293,10 +1293,12 @@ $condition.target:=vk find target text
 $condition.all:=True //Search entire document
 $condition.flags:=vk find flag exact match
 
-  // Reemplazar las celdas que contienen sólo "Total" en la hoja actual con "Grand Total"
+  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+
+
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Comprobar si el objeto de rango está vacío
+  // Check for empty range object 
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1857,7 +1859,7 @@ En *rangeObj*, pase un rango cuya fórmula desea recuperar. Si *rangeObj* design
 | vpAreaName | Text   | -> | Nombre de objeto formulario área 4D View Pro                           |
 | name       | Text   | -> | Nombre del rango nombrado                                              |
 | scope      | Number | -> | Alcance objetivo (por defecto=hoja actual)                             |
-| Result     | Text   | <- | Definición de la fórmula o rango con nombre|<!-- END REF -->
+| Result     | Object | <- | Definición de la fórmula o rango con nombre|<!-- END REF -->
 
 |
 
@@ -3643,7 +3645,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 | vpAreaName | Text | -> | Nombre del área 4D View Pro en el formulario|<!-- END REF -->
 
 
+
 |
+
 
 
 #### Descripción
@@ -6014,6 +6018,7 @@ Resultado:
 
 [4D View Pro sheet options](configuring.md#sheet-options)<br/>[VP Get sheet options](#vp-get-sheet-options)
 
+
 ### VP SET SHOW PRINT LINES
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->
@@ -6319,6 +6324,7 @@ En *rangeObj*, pase un rango de la(s) celda(s) (creada(s) por ejemplo con [`VP C
 El parámetro *timeValue* indica una hora expresada en segundos que se asignará al *rangeObj*.
 
 El parámetro opcional *formatPattern* define un [pattern](configuring.md#cell-format) para el parámetro *timeValue*.
+
 
 #### Ejemplo
 
