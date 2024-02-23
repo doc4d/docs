@@ -1,7 +1,6 @@
----
-id: quick-tour
-title: A Quick Tour
----
+- - -
+id: quick-tour title: A Quick Tour
+- - -
 
 En utilisant le langage 4D, le traditionnel "Hello, world!" peut s'afficher à l'écran de plusieurs manières. Le plus simple est probablement d'écrire la ligne suivante dans une méthode de projet :
 
