@@ -1,7 +1,6 @@
----
-id: onWindowOpeningDenied
-title: On Window Opening Denied
----
+- - -
+id: onWindowOpeningDenied title: On Window Opening Denied
+- - -
 
 | Code | Puede ser llamado por                          | Definición                            |
 | ---- | ---------------------------------------------- | ------------------------------------- |
