@@ -1,7 +1,6 @@
----
-id: documentation
-title: Documenting a project
----
+- - -
+id: documentation title: Documenting a project
+- - -
 
 
 
