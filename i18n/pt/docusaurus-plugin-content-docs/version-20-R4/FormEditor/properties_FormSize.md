@@ -1,7 +1,6 @@
----
-id: formSize
-title: Form Size
----
+- - -
+id: formSize title: Form Size
+- - -
 
 
 4D permite-lhe definir o tamanho do formulário e da [janela](properties_WindowSize.md). Estas propriedades são interdependentes e a interface da aplicação resulta da sua interação.
