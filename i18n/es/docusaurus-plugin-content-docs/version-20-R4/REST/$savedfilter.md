@@ -1,7 +1,6 @@
----
-id: savedfilter
-title: $savedfilter
----
+- - -
+id: savedfilter title: $savedfilter
+- - -
 
 Guarda el filtro definido por $filter al crear un conjunto de entidades (*por ejemplo*, `$savedfilter="{filter}"`)
 
