@@ -1,7 +1,6 @@
----
-id: propertiesObject
-title: Objects
----
+- - -
+id: propertiesObject title: Objects
+- - -
 
 ---
 
