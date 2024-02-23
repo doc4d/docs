@@ -1,7 +1,6 @@
----
-id: MailAttachmentClass
-title: MailAttachment
----
+- - -
+id: MailAttachmentClass title: MailAttachment
+- - -
 
 Objetos anexo permite referenciar arquivos dentro de um objeto[`Email`](EmailObjectClass.md). Objetos anexos são criados usando o comando [`MAIL New attachment`](#mail-new-attachment).
 
