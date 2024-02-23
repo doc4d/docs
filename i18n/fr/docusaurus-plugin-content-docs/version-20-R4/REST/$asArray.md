@@ -1,7 +1,6 @@
----
-id: asArray
-title: $asArray
----
+- - -
+id: asArray title: $asArray
+- - -
 
 
 Retourne le résultat d'une requête sous forme de tableau (c'est-à-dire une collection) au lieu d'un objet JSON.
