@@ -1,7 +1,6 @@
----
-id: application-server
-title: Application Server Page
----
+- - -
+id: application-server title: Application Server Page
+- - -
 
 
 A página Application Server agrupa informações sobre a aplicação desktop publicada pelo 4D Server e pode ser usada para gerenciar essa publicação.
