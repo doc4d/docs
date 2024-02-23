@@ -1,7 +1,6 @@
----
-id: formObjectsOverview
-title: Form Objects
----
+- - -
+id: formObjectsOverview title: Form Objects
+- - -
 
 Vous créez et personnalisez les formulaires de votre application en manipulant les objets qu'ils contiennent. Vous pouvez ajouter des objets, repositionner des objets, définir des propriétés d'objets, appliquer des règles métier en spécifiant des contraintes de saisie de données ou écrire des méthodes objet qui s'exécutent automatiquement lorsque l'objet est utilisé.
 
