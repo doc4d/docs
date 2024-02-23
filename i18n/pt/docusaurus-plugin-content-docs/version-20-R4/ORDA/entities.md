@@ -1,7 +1,6 @@
----
-id: entities
-title: Working with data
----
+- - -
+id: entities title: Working with data
+- - -
 
 No ORDA, acede-se aos dados através das [entidades](dsMapping.md#entity) e das [selecções de entidades](dsMapping.md#entity-selection). Estes objectos permitem-lhe criar, atualizar, consultar ou ordenar os dados do datastore.
 
