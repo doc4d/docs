@@ -1,7 +1,6 @@
----
-id: installation
-title: Instalación
----
+- - -
+id: installation title: Instalación
+- - -
 
 ¡Bienvenido a 4D! ¡Bienvenido a 4D! A continuación encontrará toda la información necesaria sobre cómo instalar y registrar su aplicación 4D. Welcome to 4D! On this page, you will find all of the necessary information about installing and launching your 4D product.
 
