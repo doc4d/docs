@@ -1,7 +1,6 @@
----
-id: propertiesEntry
-title: Entry
----
+- - -
+id: propertiesEntry title: Entry
+- - -
 
 ## Verificação automática da ortografia
 
