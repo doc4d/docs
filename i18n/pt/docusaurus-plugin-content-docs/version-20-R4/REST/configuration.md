@@ -1,7 +1,6 @@
----
-id: configuration
-title: Server Configuration
----
+- - -
+id: configuration title: Server Configuration
+- - -
 
 Utilizando petições HTTP padrão, o servidor 4D REST permite às aplicações externas acessar diretamente aos dados de seu banco, *ou seja, *recuperar informação sobre as classes de dados de seu projeto, manipular dados, entrar em sua aplicação web, e muito mais.
 
