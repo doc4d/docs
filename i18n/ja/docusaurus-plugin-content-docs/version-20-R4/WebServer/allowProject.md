@@ -1,7 +1,6 @@
----
-id: allowProject
-title: プロジェクトメソッドの許可
----
+- - -
+id: allowProject title: プロジェクトメソッドの許可
+- - -
 
 
 `4DEVAL`, `4DTEXT`, `4DHTML` などの 4Dタグや [`/4DACTION URL`](httpRequests.md#/4daction) を使用すると、Webに公開された 4Dプロジェクトのあらゆるプロジェクトメソッドが実行できます。 たとえば、リクエスト *http://www.server.com/4DACTION/login* は ***login*** プロジェクトメソッドを (存在すれば) 実行します。
