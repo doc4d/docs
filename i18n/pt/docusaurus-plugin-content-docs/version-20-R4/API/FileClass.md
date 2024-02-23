@@ -1,7 +1,6 @@
----
-id: FileClass
-title: File
----
+- - -
+id: FileClass title: File
+- - -
 
 `Os objectos do ficheiro` são criados com o comando [`Arquivo`](#file) . Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. Por exemplo, quando executa o comando `File` para criar um novo ficheiro, é criado um objecto válido `File` mas nada é realmente armazenado no disco até chamar a função [`file.create( )`](#create) .
 
