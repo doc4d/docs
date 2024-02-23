@@ -1,7 +1,6 @@
----
-id: directory
-title: $directory
----
+- - -
+id: directory title: $directory
+- - -
 
 O diretório processa o acesso dos usuários através de pedidos REST.
 
