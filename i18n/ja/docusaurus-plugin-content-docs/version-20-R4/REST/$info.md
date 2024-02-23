@@ -1,7 +1,6 @@
----
-id: info
-title: $info
----
+- - -
+id: info title: $info
+- - -
 
 4D Server のキャッシュに保存されているエンティティセットおよびユーザーセッションの情報を返します。
 
