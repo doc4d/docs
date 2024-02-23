@@ -1,7 +1,6 @@
----
-id: FileHandleClass
-title: FileHandle
----
+- - -
+id: FileHandleClass title: FileHandle
+- - -
 
 `FileHandle` クラスは、開かれた [`File`](FileClass) オブジェクトから内容を順次読み出したり、追加したりするための関数を備えています。 FileHandle は、ドキュメントのどの部分にもアクセスすることができます。
 
