@@ -1,7 +1,6 @@
----
-id: HTTPRequestClass
-title: HTTPRequest
----
+- - -
+id: HTTPRequestClass title: HTTPRequest
+- - -
 
 La classe `HTTPRequest` vous permet de manipuler des [`objets HTTPRequest`](#objet-httprequest) qui peuvent être utilisés pour configurer et envoyer des requêtes à un serveur HTTP, ainsi que pour traiter les réponses du serveur HTTP.
 
