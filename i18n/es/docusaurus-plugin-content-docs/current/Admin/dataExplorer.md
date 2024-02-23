@@ -213,7 +213,7 @@ The following scalar attribute values can be edited:
 - date
 - time
 - image (you can upload or drag and drop an image)
-- object (JSON string)
+- objeto (cadena JSON)
 
 Blob attributes cannot be modified.
 
