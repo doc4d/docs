@@ -1,7 +1,6 @@
----
-id: timeout
-title: $timeout
----
+- - -
+id: timeout title: $timeout
+- - -
 
 
 Define o número de segundos para guardar um conjunto de entidades na cache do 4D Server (*e.g.*, `$timeout=1800`)
