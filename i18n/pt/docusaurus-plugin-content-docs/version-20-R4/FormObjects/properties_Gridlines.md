@@ -1,7 +1,6 @@
----
-id: propertiesGridlines
-title: Gridlines
----
+- - -
+id: propertiesGridlines title: Gridlines
+- - -
 
 ## Cor linha horizontal
 
