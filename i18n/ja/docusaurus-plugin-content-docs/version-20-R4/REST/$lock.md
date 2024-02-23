@@ -1,7 +1,6 @@
----
-id: lock
-title: $lock
----
+- - -
+id: lock title: $lock
+- - -
 
 
 [ペシミスティック・ロック機構](../ORDA/entities.md#ペシミスティック・ロック) を使ってエンティティをロック/アンロックします。
