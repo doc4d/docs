@@ -1,7 +1,6 @@
----
-id: users
-title: Users Page
----
+- - -
+id: users title: Users Page
+- - -
 
 
 La page **Utilisateurs** liste les utilisateurs 4D connectés au serveur.
