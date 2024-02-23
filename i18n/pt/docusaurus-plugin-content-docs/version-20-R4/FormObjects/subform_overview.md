@@ -1,7 +1,6 @@
----
-id: subformOverview
-title: Subform
----
+- - -
+id: subformOverview title: Subform
+- - -
 
 
 Um subformulário é um formulário incluído noutro formulário.
