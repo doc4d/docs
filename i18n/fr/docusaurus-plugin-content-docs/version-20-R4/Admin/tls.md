@@ -1,7 +1,6 @@
----
-id: tls
-title: TLS Protocol (HTTPS)
----
+- - -
+id: tls title: TLS Protocol (HTTPS)
+- - -
 
 Tous les serveurs 4D peuvent communiquer en mode sécurisé via le protocole TLS (Transport Layer Security) :
 
