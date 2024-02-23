@@ -1,7 +1,6 @@
----
-id: picture
-title: Picture
----
+- - -
+id: picture title: Picture
+- - -
 
 Un champ, une variable ou expression de type image peut constituer une image Windows ou Macintosh. En règle générale, n'importe quelle image peut être mise sur le conteneur de données ou lue à partir du disque, à l'aide des commandes 4D telles que `READ PICTURE FILE`.
 
