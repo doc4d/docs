@@ -1760,7 +1760,7 @@ En *rangeObj*, pase un rango cuya fórmula desea recuperar. Si *rangeObj* design
 | vpAreaName | Text   | -> | Nombre de objeto formulario área 4D View Pro                           |
 | name       | Text   | -> | Nombre del rango nombrado                                              |
 | scope      | Number | -> | Alcance objetivo (por defecto=hoja actual)                             |
-| Result     | Text   | <- | Definición de la fórmula o rango con nombre|<!-- END REF -->
+| Result     | Object | <- | Definición de la fórmula o rango con nombre|<!-- END REF -->
 
 |
 
@@ -2173,6 +2173,7 @@ El comando `VP Get sheet count` <!-- REF #_method_.VP Get sheet count.Summary --
 En *vpAreaName*, pase el nombre del área 4D View Pro.
 
 
+
 #### Ejemplo
 
 En el siguiente documento:
@@ -2374,6 +2375,7 @@ El comando `VP Get spans` <!-- REF #_method_.VP Get spans.Summary -->recupera la
 En *rangeObj*, pase un rango de celdas fusionadas que desee recuperar. Si *rangeObj* no contiene celdas fusionadas, se devuelve un rango vacío.
 
 #### Ejemplo
+
 
 Para centrar el texto de las celdas fusionadas en este documento:
 
@@ -4277,6 +4279,7 @@ Function onEvent()
 
        ALERT("The G23 cell contains the value: "+String(This.result))
  End case
+
 ```
 
 El método de retrollamada *OffscreenArea*:
@@ -5210,6 +5213,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 <!-- REF #_method_.VP SET FORMULA.Syntax -->
 **VP SET FORMULA** ( *rangeObj* : Object ; *formula* : Text { ; *formatPattern* : Text } ) <!-- END REF -->
+
 
 
 <!-- REF #_method_.VP SET FORMULA.Params -->
