@@ -1,7 +1,6 @@
----
-id: repair
-title: Repair Page
----
+- - -
+id: repair title: Repair Page
+- - -
 
 Cette page permet de réparer le fichier de données ou le fichier de structure lorsqu’il a été endommagé. Generally, you will only use these functions under the supervision of 4D technical teams, when anomalies have been detected while opening the application or following a [verification](verify.md).
 
