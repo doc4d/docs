@@ -1,7 +1,6 @@
----
-id: propertiesHelp
-title: Ajuda
----
+- - -
+id: propertiesHelp title: Ajuda
+- - -
 
 ## Dica de Ajuda
 
