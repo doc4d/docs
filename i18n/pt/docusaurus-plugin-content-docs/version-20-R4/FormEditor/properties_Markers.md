@@ -1,7 +1,6 @@
----
-id: markers
-title: Markers
----
+- - -
+id: markers title: Markers
+- - -
 
 
 Essas propriedades permitem que você especifique o local exato dos marcadores na régua vertical de um formulário de tabela ****. Os marcadores são utilizados principalmente em formulários de saída. Eles controlam as informações que são listadas e definem as áreas de cabeçalho, quebras, detalhes e rodapé do formulário. Qualquer objeto colocado nessas áreas é exibido ou impresso no local apropriado.
