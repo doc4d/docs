@@ -1,7 +1,6 @@
----
-id: cli
-title: Command Line Interface
----
+- - -
+id: cli title: Command Line Interface
+- - -
 
 É possível usar o Terminal macOS ou o console do Windows para pilotar suas aplicações 4D (4D e 4D Servidor) com linhas de comando. Mais especificamente, essa funcionalidade permite que:
 
