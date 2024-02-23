@@ -1,7 +1,6 @@
----
-id: orderby
-title: $orderby
----
+- - -
+id: orderby title: $orderby
+- - -
 
 
 Ordena los datos devueltos por el atributo y el orden de clasificación definidos (*por ejemplo*, `$orderby="lastName desc, salary asc"`)
