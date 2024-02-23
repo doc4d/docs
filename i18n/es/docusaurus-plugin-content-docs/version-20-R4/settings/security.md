@@ -1,7 +1,6 @@
----
-id: security
-title: Security page
----
+- - -
+id: security title: Security page
+- - -
 
 Esta página contiene opciones relacionadas con la protección del acceso y de los datos de sus aplicaciones de escritorio.
 
