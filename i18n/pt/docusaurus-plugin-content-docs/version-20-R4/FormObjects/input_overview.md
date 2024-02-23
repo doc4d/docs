@@ -1,7 +1,6 @@
----
-id: inputOverview
-title: Input
----
+- - -
+id: inputOverview title: Input
+- - -
 
 
 As entradas permitem-lhe adicionar expressões editáveis ou não, tais como campos de base de dados [](Concepts/identifiers.md#fields) e [variáveis](Concepts/variables.md) aos seus formulários. As entradas podem tratar de dados baseados em caracteres (texto, datas, números...) ou imagens:
