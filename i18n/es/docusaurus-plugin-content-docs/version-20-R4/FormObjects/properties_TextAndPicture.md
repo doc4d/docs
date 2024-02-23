@@ -1,7 +1,6 @@
----
-id: propertiesTextAndPicture
-title: Text and Picture
----
+- - -
+id: propertiesTextAndPicture title: Texto e imagen
+- - -
 
 
 ## Ruta de acceso fondo
