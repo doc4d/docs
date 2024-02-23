@@ -1,7 +1,6 @@
----
-id: propertiesWebArea
-title: Web Area
----
+- - -
+id: propertiesWebArea title: Web Area
+- - -
 
 ---
 ## Acesso a métodos 4D
