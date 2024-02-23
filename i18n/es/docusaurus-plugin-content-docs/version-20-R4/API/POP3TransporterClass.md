@@ -1,7 +1,6 @@
----
-id: POP3TransporterClass
-title: POP3Transporter
----
+- - -
+id: POP3TransporterClass title: POP3Transporter
+- - -
 
 La clase `POP3Transporter` permite recuperar mensajes de un servidor de correo electrónico POP3.
 
