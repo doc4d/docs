@@ -1,7 +1,6 @@
----
-id: ruler
-title: Ruler
----
+- - -
+id: ruler title: Ruler
+- - -
 
 
 La règle est un objet d'interface standard permettant de définir ou de lire une valeur à l'aide d'un curseur placé sur une règle généralement graduée.
