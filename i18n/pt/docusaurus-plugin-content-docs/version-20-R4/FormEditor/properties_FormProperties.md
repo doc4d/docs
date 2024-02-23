@@ -1,7 +1,6 @@
----
-id: propertiesForm
-title: Form Properties
----
+- - -
+id: propertiesForm title: Form Properties
+- - -
 
 ---
 
