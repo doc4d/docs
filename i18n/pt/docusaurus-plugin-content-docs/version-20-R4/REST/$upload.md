@@ -1,7 +1,6 @@
----
-id: upload
-title: $upload
----
+- - -
+id: upload title: $upload
+- - -
 
 
 Devolve um ID do ficheiro carregado para o servidor
