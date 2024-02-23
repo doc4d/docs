@@ -1,7 +1,6 @@
----
-id: classes
-title: Classes
----
+- - -
+id: classes title: Classes
+- - -
 
 
 ## Visão Geral
