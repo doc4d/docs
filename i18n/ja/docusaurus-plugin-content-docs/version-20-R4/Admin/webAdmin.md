@@ -1,7 +1,6 @@
----
-id: webAdmin
-title: WebAdmin
----
+- - -
+id: webAdmin title: WebAdmin
+- - -
 
 
 `WebAdmin` とは、4D および 4D Server に使用される組み込みの Webサーバーコンポーネントの名称で、[データエクスプローラー](dataExplorer.md) などの管理機能への安全な Webアクセスを提供します。 ブラウザーや、任意の Webアプリケーションから、ローカルまたはリモートでこの Webサーバーに接続し、関連の 4Dアプリケーションにアクセスすることができます。
