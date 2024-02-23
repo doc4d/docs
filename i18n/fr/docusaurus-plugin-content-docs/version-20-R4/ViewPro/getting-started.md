@@ -1,7 +1,6 @@
----
-id: getting-started
-title: Getting Started
----
+- - -
+id: getting-started title: Getting Started
+- - -
 
 
 4D View Pro est un [composant 4D](Concepts/components.md) qui comprend une [zone de formulaire 4D](FormObjects/viewProArea_overview.md) et des [méthodes](method-list.md) spécifiques. Il vous permet d'intégrer des fonctionnalités avancées de tableur dans vos projets.
