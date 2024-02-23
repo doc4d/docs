@@ -1,7 +1,6 @@
----
-id: imageformat
-title: $imageformat
----
+- - -
+id: imageformat title: $imageformat
+- - -
 
 Define qué formato de imagen utilizar para recuperar imágenes (por ejemplo, `$imageformat=png`)
 
