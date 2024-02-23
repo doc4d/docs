@@ -1,7 +1,6 @@
----
-id: privileges
-title: Privileges
----
+- - -
+id: privileges title: Privileges
+- - -
 
 
 Protecting data while allowing fast and easy access to authorized users is a major challenge for web applications. The ORDA security architecture is implemented at the heart of your datastore and allows you to define specific privileges to all user sessions for the various resources in your project (datastore, dataclasses, functions, etc.).
