@@ -1,7 +1,6 @@
----
-id: propertiesEntry
-title: 入力
----
+- - -
+id: propertiesEntry title: 入力
+- - -
 
 ## 自動スペルチェック
 
