@@ -1,7 +1,6 @@
----
-id: catalog
-title: $catalog
----
+- - -
+id: catalog title: $catalog
+- - -
 
 
 El catálogo describe todas las clases de datos y atributos disponibles en el almacén de datos.
