@@ -1,7 +1,6 @@
----
-id: date
-title: Date
----
+- - -
+id: date title: Fecha
+- - -
 
 Las variables, campos o expresiones de tipo fecha pueden estar comprendidas entre 1/1/100 y 31/12/32.767.
 
