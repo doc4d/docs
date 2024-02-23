@@ -1,7 +1,6 @@
----
-id: compact
-title: Compact Page
----
+- - -
+id: compact title: Compact Page
+- - -
 
 Esta página é utilizada para aceder às funções de compactação de arquivos de dados.
 
