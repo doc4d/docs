@@ -1,7 +1,6 @@
----
-id: security
-title: Security page
----
+- - -
+id: security title: Security page
+- - -
 
 This page contains options related to data access and protection for your desktop applications.
 
