@@ -1,7 +1,6 @@
----
-id: formSize
-title: Form Size
----
+- - -
+id: formSize title: Form Size
+- - -
 
 
 4D vous permet de définir la taille du formulaire et de la [fenêtre](properties_WindowSize.md). Ces propriétés sont interdépendantes et l'interface de votre application résulte de leur interaction.
