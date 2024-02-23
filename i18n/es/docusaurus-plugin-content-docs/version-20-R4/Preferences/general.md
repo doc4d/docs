@@ -1,7 +1,6 @@
----
-id: general
-title: General Page
----
+- - -
+id: general title: Página general
+- - -
 
 Esta página contiene varias opciones para configurar el funcionamiento general de su aplicación 4D.
 
