@@ -1,7 +1,6 @@
----
-id: SignalClass
-title: Signal
----
+- - -
+id: SignalClass title: Signal
+- - -
 
 Les signaux sont des outils fournis par le langage 4D pour gérer les interactions et éviter les conflits entre les process dans une application multiprocessus. Les signaux vous permettent de vous assurer qu'un ou plusieurs process attendront la fin d'une tâche spécifique avant de poursuivre leur exécution. Tout process peut attendre et/ou libérer un signal.
 
