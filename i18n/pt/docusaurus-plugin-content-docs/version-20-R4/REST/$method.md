@@ -1,7 +1,6 @@
----
-id: method
-title: $method
----
+- - -
+id: method title: $method
+- - -
 
 Este parâmetro permite-lhe definir a operação a executar com a entidade ou a seleção de entidades devolvida.
 
