@@ -1,7 +1,6 @@
----
-id: directory
-title: $directory
----
+- - -
+id: directory title: $directory
+- - -
 
 El directorio gestiona el acceso de los usuarios a través de peticiones REST.
 
