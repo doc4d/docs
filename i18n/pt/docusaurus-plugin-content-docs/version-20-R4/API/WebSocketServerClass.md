@@ -1,7 +1,6 @@
----
-id: WebSocketServerClass
-title: WebSocketServer
----
+- - -
+id: WebSocketServerClass title: WebSocketServer
+- - -
 
 <details><summary>Histórico</summary>
 
