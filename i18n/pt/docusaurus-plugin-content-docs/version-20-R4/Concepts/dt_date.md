@@ -1,7 +1,6 @@
----
-id: date
-title: Date
----
+- - -
+id: date title: Date
+- - -
 
 As variáveis, campos ou expressões de tipo data podem ter um intervalo entre 1/1/100 e 31/12/32.767.
 
