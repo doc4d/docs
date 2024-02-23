@@ -1,7 +1,6 @@
----
-id: manData
-title: Manipulating Data
----
+- - -
+id: manData title: Manipulating Data
+- - -
 
 Tous [les attributs, dataclasses exposés](configuration.md#exposing-tables-and-fields) et toutes les [fonctions](ClassFunctions.md) sont accessibles via REST. Les noms de dataclass, d'attributs et de fonctions sont sensibles à la casse; contrairement aux données des requêtes.
 
