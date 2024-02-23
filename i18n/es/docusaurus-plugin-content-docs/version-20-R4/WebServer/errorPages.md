@@ -1,7 +1,6 @@
----
-id: errorPages
-title: Custom HTTP Error Pages
----
+- - -
+id: errorPages title: Custom HTTP Error Pages
+- - -
 
 El servidor web de 4D le permite personalizar las páginas de error HTTP enviadas a los clientes, basándose en el código de estado de la respuesta del servidor. Las páginas de error se refieren a:
 
