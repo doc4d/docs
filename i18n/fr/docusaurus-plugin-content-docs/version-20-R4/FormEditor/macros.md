@@ -1,7 +1,6 @@
----
-id: macros
-title: Form Editor Macros
----
+- - -
+id: macros title: Form Editor Macros
+- - -
 
 
 L'éditeur de formulaires 4D prend en charge les macros. Une macro est un ensemble d'instructions permettant de réaliser une action ou une séquence d'actions. Lorsqu'elle est appelée, la macro exécutera ses instructions et, automatiquement, les actions.
