@@ -1,7 +1,6 @@
----
-id: gettingStarted
-title: Getting Started
----
+- - -
+id: gettingStarted title: Getting Started
+- - -
 
 4D oferece um servidor REST poderoso que permite acesso direto aos dados armazenadas em seus bancos 4D.
 
