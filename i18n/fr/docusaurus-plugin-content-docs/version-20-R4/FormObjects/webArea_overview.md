@@ -1,7 +1,6 @@
----
-id: webAreaOverview
-title: Web Area
----
+- - -
+id: webAreaOverview title: Web Area
+- - -
 
 
 Les zones Web (Web Areas) peuvent afficher tout type de contenu Web à l’intérieur de vos formulaires : pages HTML au contenu statique ou dynamique, fichiers, images, JavaScript, etc. Le moteur de rendu de la zone web dépend de la plate-forme d’exécution de l’application et de [l'option de moteur de rendu](properties_WebArea.md#use-embedded-web-rendering-engine) sélectionnée.
