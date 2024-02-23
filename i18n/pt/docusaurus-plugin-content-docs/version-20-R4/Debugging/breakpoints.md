@@ -1,7 +1,6 @@
----
-id: breakpoints
-title: Breakpoints and Command Catching
----
+- - -
+id: breakpoints title: Breakpoints and Command Catching
+- - -
 
 ## Visão Geral
 
