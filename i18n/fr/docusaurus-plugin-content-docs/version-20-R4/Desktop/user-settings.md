@@ -1,7 +1,6 @@
----
-id: user-settings
-title: User Settings
----
+- - -
+id: user-settings title: User Settings
+- - -
 
 4D propose deux modes de fonctionnement pour les Propriétés des projets :
 
