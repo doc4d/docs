@@ -1,7 +1,6 @@
----
-id: queryplan
-title: $queryplan
----
+- - -
+id: queryplan title: $queryplan
+- - -
 
 
 4D Server に渡したクエリを返します (*例*: `$queryplan=true`)
