@@ -1,7 +1,6 @@
----
-id: propertiesListBox
-title: List Box
----
+- - -
+id: propertiesListBox title: List Box
+- - -
 
 ---
 ## Colonnes
