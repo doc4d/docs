@@ -1,7 +1,6 @@
----
-id: ruler
-title: Ruler
----
+- - -
+id: ruler title: Regla
+- - -
 
 
 La regla es un objeto de interfaz estándar que se utiliza para definir u obtener valores mediante un cursor que se mueve a lo largo de sus graduaciones.
