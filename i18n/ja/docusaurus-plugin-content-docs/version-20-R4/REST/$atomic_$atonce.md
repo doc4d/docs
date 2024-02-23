@@ -1,7 +1,6 @@
----
-id: atomic_$atonce
-title: $atomic/$atOnce
----
+- - -
+id: atomic_$atonce title: $atomic/$atOnce
+- - -
 
 
 RESTリクエストに含まれる操作をトランザクション内で処理します。 エラーがなかった場合、トランザクションは受け入れられます。 それ以外の場合、トランザクションはキャンセルされます。
