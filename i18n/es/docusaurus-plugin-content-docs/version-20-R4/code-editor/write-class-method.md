@@ -1,7 +1,6 @@
----
-id: write-class-method
-title: Code Editor
----
+- - -
+id: write-class-method title: Code Editor
+- - -
 
 4D tiene un poderoso editor de código integrado que ofrece un amplio conjunto de funcionalidades para la edición de código altamente productivo, como la finalización inteligente de código, la navegación de código, la depuración, la búsqueda y más.
 
