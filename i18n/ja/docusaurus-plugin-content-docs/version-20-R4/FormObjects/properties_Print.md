@@ -1,7 +1,6 @@
----
-id: propertiesPrint
-title: 印刷
----
+- - -
+id: propertiesPrint title: 印刷
+- - -
 
 ## 印刷時可変
 
