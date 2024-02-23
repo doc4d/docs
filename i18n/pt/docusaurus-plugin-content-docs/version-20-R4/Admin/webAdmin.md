@@ -1,7 +1,6 @@
----
-id: webAdmin
-title: WebAdmin
----
+- - -
+id: webAdmin title: WebAdmin
+- - -
 
 
 Um componente de servidor web integrado, chamado `WebAdmin`, é utilizado por 4D e 4D Server para dar um acesso web seguro a funções de gestão específicas como [Explorador de dados](dataExplorer.md). Pode conectar localmente ou remotamente ao servidor web de um navegador ou uma aplicação web e acessar a aplicação 4D associada.
