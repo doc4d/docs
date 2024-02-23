@@ -1,7 +1,6 @@
----
-id: propertiesSubform
-title: Subform
----
+- - -
+id: propertiesSubform title: Subform
+- - -
 
 ---
 ## Autorizar la eliminación
