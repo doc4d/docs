@@ -1,7 +1,6 @@
----
-id: overview
-title: Preferences
----
+- - -
+id: overview title: Preferences
+- - -
 
 User preferences specify various settings affecting your working environment, e.g. default options, display themes, Code Editor features, shortcuts, etc. Elles sont appliquées à tous les projets ouverts avec votre application 4D ou 4D Server.
 
