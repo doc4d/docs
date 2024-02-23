@@ -1,7 +1,6 @@
----
-id: stylesheets
-title: Hojas de estilo
----
+- - -
+id: stylesheets title: Hojas de estilo
+- - -
 
 
 Una hoja de estilo agrupa una combinación de atributos de objetos formulario, desde los atributos de texto hasta casi todos los atributos de objeto disponibles.
