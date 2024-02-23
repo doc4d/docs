@@ -1,7 +1,6 @@
----
-id: identifiers
-title: Identifiers
----
+- - -
+id: identifiers title: Identifiers
+- - -
 
 Esta seção descreve as convenções e regras para nomear os vários elementos da linguagem 4D (variáveis, tabelas, objetos, formulários, etc)
 
