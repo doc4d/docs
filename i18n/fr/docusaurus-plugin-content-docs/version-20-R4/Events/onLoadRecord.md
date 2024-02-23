@@ -1,7 +1,6 @@
----
-id: onLoadRecord
-title: On Load Record
----
+- - -
+id: onLoadRecord title: On Load Record
+- - -
 
 | Code | Peut être appelé par | Définition                                                                                           |
 | ---- | -------------------- | ---------------------------------------------------------------------------------------------------- |
