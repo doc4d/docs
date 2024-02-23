@@ -1,7 +1,6 @@
----
-id: webServerAdmin
-title: Administration
----
+- - -
+id: webServerAdmin title: Administration
+- - -
 
 4D provides several integrated tools to start, stop, or monitor the integrated web server.
 
