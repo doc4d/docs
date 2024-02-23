@@ -1,7 +1,6 @@
----
-id: directory
-title: $directory
----
+- - -
+id: directory title: $directory
+- - -
 
 ディレクトリは RESTリクエストを介したユーザーアクセスに対応します。
 
