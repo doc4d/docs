@@ -1,7 +1,6 @@
----
-id: pluginAreaOverview
-title: Plug-in Area
----
+- - -
+id: pluginAreaOverview title: Área de plugins
+- - -
 
 
 Un área de plug-in es un área en el formulario que está completamente controlada por un plug-in. La capacidad de integrar plug-ins en los formularios le ofrece posibilidades ilimitadas a la hora de crear aplicaciones personalizadas. Un plug-in puede realizar una tarea sencilla, como mostrar un reloj digital en un formulario, o una tarea compleja, como ofrecer funciones completas de procesamiento de textos, hojas de cálculo o gráficos.
