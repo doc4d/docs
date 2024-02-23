@@ -1,7 +1,6 @@
----
-id: real-time-monitor
-title: Real Time Monitor Page
----
+- - -
+id: real-time-monitor title: Real Time Monitor Page
+- - -
 
 
 La page Moniteur temps réel permet de surveiller en temps réel le déroulement des opérations "longues" effectuées par l’application. Ces opérations sont par exemple les recherches séquentielles, l’exécution de formules, etc.
