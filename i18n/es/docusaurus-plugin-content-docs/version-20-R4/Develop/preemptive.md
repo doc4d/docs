@@ -1,6 +1,6 @@
 ---
 id: preemptive
-title: Preemptive Processes
+title: Procesos apropiativos
 ---
 
 
