@@ -1,7 +1,6 @@
----
-id: distinct
-title: $distinct
----
+- - -
+id: distinct title: $distinct
+- - -
 
 
 Retourne les différentes valeurs d'un attribut spécifique dans une collection (par exemple, `Company/name?$filter="name=a*"&$distinct=true`)
