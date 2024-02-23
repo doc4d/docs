@@ -1,7 +1,6 @@
----
-id: spinner
-title: Spinner
----
+- - -
+id: spinner title: Spinner
+- - -
 
 Le spinner est un indicateur circulaire qui affiche une animation continue, telle que le [Barber shop](progressIndicator.md#barber-shop).
 
