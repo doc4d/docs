@@ -1,7 +1,6 @@
----
-id: onOpenExternalLink
-title: On Open External Link
----
+- - -
+id: onOpenExternalLink title: On Open External Link
+- - -
 
 | コード | 呼び出し元                                     | 定義                |
 | --- | ----------------------------------------- | ----------------- |
