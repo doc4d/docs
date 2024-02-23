@@ -1,7 +1,6 @@
----
-id: tls
-title: TLSプロトコル (HTTPS)
----
+- - -
+id: tls title: TLSプロトコル (HTTPS)
+- - -
 
 すべての 4Dサーバーは、TLS (Transport Layer Security) プロトコルを通じて、保護モードで通信する事ができます:
 
