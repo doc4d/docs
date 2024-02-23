@@ -1,7 +1,6 @@
----
-id: webAreaOverview
-title: Web Area
----
+- - -
+id: webAreaOverview title: Área Web
+- - -
 
 
 Las áreas web pueden mostrar varios tipos de contenido web dentro de sus formularios: páginas HTML con contenidos estáticos o dinámicos, archivos, imágenes, JavaScript, etc. El motor de renderizado del área web depende de la plataforma de ejecución de la aplicación y de [la opción motor de renderizado](properties_WebArea.md#use-embedded-web-rendering-engine) seleccionada.
