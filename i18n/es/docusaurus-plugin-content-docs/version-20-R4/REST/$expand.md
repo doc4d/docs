@@ -1,7 +1,6 @@
----
-id: expand
-title: $expand
----
+- - -
+id: expand title: $expand
+- - -
 
 
 Expands an image stored in an Image attribute (*e.g.*, `Employee(1)/photo?$imageformat=best&$expand=photo`)<br/> or<br/> Expands an BLOB attribute to save it.
