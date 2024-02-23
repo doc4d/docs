@@ -1,7 +1,6 @@
----
-id: architecture
-title: Architecture of a project
----
+- - -
+id: architecture title: Architecture of a project
+- - -
 
 Un projet 4D est composé de plusieurs dossiers et fichiers, stockés dans un dossier racine de projet (dossier package). Par exemple :
 
