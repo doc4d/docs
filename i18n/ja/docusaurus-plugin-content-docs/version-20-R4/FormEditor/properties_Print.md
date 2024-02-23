@@ -1,7 +1,6 @@
----
-id: print
-title: 印刷
----
+- - -
+id: print title: 印刷
+- - -
 
 
 ## 設定
