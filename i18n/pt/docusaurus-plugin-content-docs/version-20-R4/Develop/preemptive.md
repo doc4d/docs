@@ -1,7 +1,6 @@
----
-id: preemptive
-title: Preemptive Processes
----
+- - -
+id: preemptive title: Preemptive Processes
+- - -
 
 
 The compiled 4D code can be executed in **preemptive processes**. Graças a esta funcionalidade, seus aplicativos 4D compilados poderão aproveitar ao máximo os computadores de vários núcleos de modo que sua execução será mais rápida e pode suportar mais usuários conectados.
