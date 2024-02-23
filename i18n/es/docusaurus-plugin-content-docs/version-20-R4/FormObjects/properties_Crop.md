@@ -1,7 +1,6 @@
----
-id: propertiesCrop
-title: Crop
----
+- - -
+id: propertiesCrop title: Crop
+- - -
 
 
 ## Columnas
