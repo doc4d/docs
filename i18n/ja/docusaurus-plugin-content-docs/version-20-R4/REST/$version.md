@@ -1,7 +1,6 @@
----
-id: version
-title: $version
----
+- - -
+id: version title: $version
+- - -
 
 画像のバージョン番号
 
