@@ -1,7 +1,6 @@
----
-id: interpreted-compiled
-title: Interpreted and Compiled modes
----
+- - -
+id: interpreted-compiled title: Modos interpretado y compilado
+- - -
 
 Las aplicaciones 4D pueden funcionar en modo **interpretado** o **compilado**:
 
