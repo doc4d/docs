@@ -1,7 +1,6 @@
----
-id: number
-title: Number (Real, Longint, Integer)
----
+- - -
+id: number title: Number (Real, Longint, Integer)
+- - -
 
 Número es un término genérico que significa:
 
