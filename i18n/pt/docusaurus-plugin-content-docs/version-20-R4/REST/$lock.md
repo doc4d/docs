@@ -1,7 +1,6 @@
----
-id: lock
-title: $lock
----
+- - -
+id: lock title: $lock
+- - -
 
 
 Bloqueia e desbloqueia uma entidade utilizando o [mecanismo pessimista](../ORDA/entities.md#pessimistic-lock).
