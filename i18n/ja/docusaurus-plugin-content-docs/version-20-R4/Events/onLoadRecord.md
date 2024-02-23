@@ -1,7 +1,6 @@
----
-id: onLoadRecord
-title: On Load Record
----
+- - -
+id: onLoadRecord title: On Load Record
+- - -
 
 | コード | 呼び出し元 | 定義                                |
 | --- | ----- | --------------------------------- |
