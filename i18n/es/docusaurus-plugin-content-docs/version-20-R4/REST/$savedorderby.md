@@ -1,7 +1,6 @@
----
-id: savedorderby
-title: $savedorderby
----
+- - -
+id: savedorderby title: $savedorderby
+- - -
 
 Guarda el filtro definido por `$orderby` al crear un conjunto de entidades (*por ejemplo*, `$savedorderby="{orderby}"`)
 
