@@ -1,7 +1,6 @@
----
-id: gettingStarted
-title: Web Development
----
+- - -
+id: gettingStarted title: Web Development
+- - -
 
 Esta sección de "Primeros pasos" está orientada a los usuarios principiantes que desean una visión general sobre cómo pasar de cero a un sitio web 4D que maneja datos de la base. ¡Empecemos!
 
