@@ -1,7 +1,6 @@
----
-id: onOpenDetail
-title: On Open Detail
----
+- - -
+id: onOpenDetail title: On Open Detail
+- - -
 
 | Code | Pode ser chamado por                                     | Definição                                                                                   |
 | ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
