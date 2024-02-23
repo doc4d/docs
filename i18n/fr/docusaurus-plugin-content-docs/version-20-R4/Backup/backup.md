@@ -1,7 +1,6 @@
----
-id: backup
-title: Backup
----
+- - -
+id: backup title: Backup
+- - -
 
 Une sauvegarde peut être déclenchée de trois manières :
 
