@@ -1,7 +1,6 @@
----
-id: ordaClasses
-title: データモデルクラス
----
+- - -
+id: ordaClasses title: データモデルクラス
+- - -
 
 
 
