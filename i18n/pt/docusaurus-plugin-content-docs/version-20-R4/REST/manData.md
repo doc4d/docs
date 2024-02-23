@@ -1,7 +1,6 @@
----
-id: manData
-title: Manipulating Data
----
+- - -
+id: manData title: Manipulating Data
+- - -
 
 Todos [os atributos, classes](configuration.md#exposing-tables-and-fields) e métodos da datastore expostos podem ser acessados através de REST. Os nomes de classes de dados, atributos e métodos são sensíveis às maiúsculas e minúsculas, entretanto, os dados das pesquisas não são.
 
