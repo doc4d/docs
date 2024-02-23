@@ -1,7 +1,6 @@
----
-id: blob
-title: BLOB
----
+- - -
+id: blob title: BLOB
+- - -
 
 BLOB (Binary Large OBject) フィールド・変数・式とは、連続した可変長バイトであり、各バイトを個々にアドレス指定可能な 1つのまとまったオブジェクトとして取り扱うことができます。
 
