@@ -1,7 +1,6 @@
----
-id: top_$limit
-title: $top/$limit
----
+- - -
+id: top_$limit title: $top/$limit
+- - -
 
 Limita el número de entidades a devolver (por ejemplo, `$top=50`)
 
