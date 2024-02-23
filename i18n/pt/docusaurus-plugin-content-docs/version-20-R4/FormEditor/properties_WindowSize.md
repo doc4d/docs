@@ -1,7 +1,6 @@
----
-id: windowSize
-title: Window Size
----
+- - -
+id: windowSize title: Window Size
+- - -
 
 
 ## Altura fixa
