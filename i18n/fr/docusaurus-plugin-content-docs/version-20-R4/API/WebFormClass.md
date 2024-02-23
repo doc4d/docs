@@ -1,7 +1,6 @@
----
-id: WebFormClass
-title: WebForm
----
+- - -
+id: WebFormClass title: WebForm
+- - -
 
 <details><summary>Historique</summary>
 
