@@ -1,7 +1,6 @@
----
-id: propertiesText
-title: Text
----
+- - -
+id: propertiesText title: Text
+- - -
 ---
 
 ## Permitir a selecção de tipo de letra/cor
