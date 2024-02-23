@@ -1,7 +1,6 @@
----
-id: onActivate
-title: On Activate
----
+- - -
+id: onActivate title: On Activate
+- - -
 
 | コード | 呼び出し元 | 定義                                         |
 | --- | ----- | ------------------------------------------ |
