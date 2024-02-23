@@ -1,7 +1,6 @@
----
-id: client-server
-title: Client-server page
----
+- - -
+id: client-server title: Client-server page
+- - -
 
 As páginas Cliente-servidor agrupam parâmetros relacionados ao uso do banco de dados no modo cliente-servidor. Naturalmente, essas configurações só são levadas em conta quando o banco de dados é usado no modo remoto.
 
