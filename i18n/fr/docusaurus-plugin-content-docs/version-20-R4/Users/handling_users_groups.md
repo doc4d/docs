@@ -1,7 +1,6 @@
----
-id: editing
-title: Managing 4D users and groups
----
+- - -
+id: editing title: Managing 4D users and groups
+- - -
 
 
 Dans les applications multi-utilisateurs, 4D fournit aux utilisateurs certains privilèges d'accès standard et certains pouvoirs. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
