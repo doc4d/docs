@@ -1,7 +1,6 @@
----
-id: user-settings
-title: ユーザー設定
----
+- - -
+id: user-settings title: ユーザー設定
+- - -
 
 4Dでは、プロジェクトの設定について 2つの運用モードが提供されています:
 
