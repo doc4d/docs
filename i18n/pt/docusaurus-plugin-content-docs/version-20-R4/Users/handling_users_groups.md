@@ -1,7 +1,6 @@
----
-id: editing
-title: Managing 4D users and groups
----
+- - -
+id: editing title: Managing 4D users and groups
+- - -
 
 
 4D fornece aos usuários privilégios de acesso comuns e certos poderes. Quando o usuário e sistema de grupos tiver sido iniciado, esses privilégios começam a funcionar.
