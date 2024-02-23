@@ -1,7 +1,6 @@
----
-id: propertiesRangeOfValues
-title: Range of Values
----
+- - -
+id: propertiesRangeOfValues title: Intervalo de Valores
+- - -
 
 ## Valor padrão
 
