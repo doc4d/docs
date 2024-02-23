@@ -1,7 +1,6 @@
----
-id: develop-plug-ins
-title: Developing Plug-ins
----
+- - -
+id: develop-plug-ins title: Developing Plug-ins
+- - -
 
 ## Pourquoi un plug-in ?
 
