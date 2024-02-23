@@ -1,7 +1,6 @@
----
-id: paths
-title: Pathnames
----
+- - -
+id: paths title: Pathnames
+- - -
 
 Les fonctions, propriétés et commandes des classes File et Folder vous permettent de manipuler les fichiers et les dossiers comme des objets. Cela rend la gestion des fichiers et dossiers flexible et puissante. Par exemple, pour créer un nouveau fichier dans le dossier Documents de l'utilisateur courant, vous pouvez écrire :
 
