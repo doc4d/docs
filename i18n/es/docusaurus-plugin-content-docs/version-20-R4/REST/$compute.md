@@ -1,7 +1,6 @@
----
-id: compute
-title: $compute
----
+- - -
+id: compute title: $compute
+- - -
 
 Cálculo de atributos específicos (*e.*, `Employee/salary/?$compute=sum)` o en el caso de un atributo Objeto (*por ejemplo*, Employee/objectAtt.property1/?$compute=sum)
 
