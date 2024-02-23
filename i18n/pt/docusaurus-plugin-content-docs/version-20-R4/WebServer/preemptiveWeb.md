@@ -1,7 +1,6 @@
----
-id: preemptiveWeb
-title: Using preemptive web processes
----
+- - -
+id: preemptiveWeb title: Using preemptive web processes
+- - -
 
 
 The 4D Web Server allows you to take full advantage of multi-core computers by using preemptive web processes in your compiled applications. You can configure your web-related code, including 4D tags and web database methods, to run simultaneously on as many cores as possible.
