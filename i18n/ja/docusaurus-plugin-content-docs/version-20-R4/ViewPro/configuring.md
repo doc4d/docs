@@ -1,7 +1,6 @@
----
-id: configuring
-title: 4D View Pro エリアの設定
----
+- - -
+id: configuring title: 4D View Pro エリアの設定
+- - -
 
 4D View Pro エリアのプロパティは、プロパティリストを利用して設定することが可能です。 スプレッドシートプロパティはランゲージにより設定します。
 
