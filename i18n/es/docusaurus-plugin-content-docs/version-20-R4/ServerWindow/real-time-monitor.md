@@ -1,7 +1,6 @@
----
-id: real-time-monitor
-title: Real Time Monitor Page
----
+- - -
+id: real-time-monitor title: Real Time Monitor Page
+- - -
 
 
 La página Monitor en tiempo real supervisa el progreso de las operaciones "largas" realizadas por la aplicación en tiempo real. Estas operaciones son, por ejemplo, consultas secuenciales, ejecución de fórmulas, etc.
