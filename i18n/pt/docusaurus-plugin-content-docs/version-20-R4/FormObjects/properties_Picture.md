@@ -1,7 +1,6 @@
----
-id: propertiesPicture
-title: Picture
----
+- - -
+id: propertiesPicture title: Imagem
+- - -
 
 ## Pathname
 
