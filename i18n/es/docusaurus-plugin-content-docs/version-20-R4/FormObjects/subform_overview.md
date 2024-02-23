@@ -1,7 +1,6 @@
----
-id: subformOverview
-title: Subform
----
+- - -
+id: subformOverview title: Subformulario
+- - -
 
 
 Un subformulario es un formulario incluido en otro formulario.
