@@ -1,7 +1,6 @@
----
-id: radiobuttonOverview
-title: Radio Button
----
+- - -
+id: radiobuttonOverview title: Radio Button
+- - -
 
 Les boutons radio sont des objets qui permettent à l’utilisateur de sélectionner une valeur parmi un groupe de valeurs.
 
