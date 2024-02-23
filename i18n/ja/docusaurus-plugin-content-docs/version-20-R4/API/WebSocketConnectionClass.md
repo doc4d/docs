@@ -1,7 +1,6 @@
----
-id: WebSocketConnectionClass
-title: WebSocketConnection
----
+- - -
+id: WebSocketConnectionClass title: WebSocketConnection
+- - -
 
 <details><summary>履歴</summary>
 
