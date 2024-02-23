@@ -1,7 +1,6 @@
----
-id: global-stamp
-title: グローバルスタンプの使い方
----
+- - -
+id: global-stamp title: グローバルスタンプの使い方
+- - -
 
 
 
