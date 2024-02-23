@@ -1,7 +1,6 @@
----
-id: REST_requests
-title: RESTリクエストについて
----
+- - -
+id: REST_requests title: RESTリクエストについて
+- - -
 
 
 RESTリクエストでは次の構文がサポートされています:
