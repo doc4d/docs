@@ -1,7 +1,6 @@
----
-id: FileHandleClass
-title: FileHandle
----
+- - -
+id: FileHandleClass title: FileHandle
+- - -
 
 A classe `FileHandle` tem funções que lhe permitem ler sequencialmente ou anexar conteúdos a um objeto aberto [`File`](FileClass) . O manuseamento de um arquivo pode acessar a qualquer parte de um documento.
 
