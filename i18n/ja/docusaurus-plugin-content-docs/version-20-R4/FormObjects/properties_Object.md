@@ -1,7 +1,6 @@
----
-id: propertiesObject
-title: オブジェクト
----
+- - -
+id: propertiesObject title: オブジェクト
+- - -
 
 ---
 
