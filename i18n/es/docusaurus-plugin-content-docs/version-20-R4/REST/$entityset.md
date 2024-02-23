@@ -1,7 +1,6 @@
----
-id: entityset
-title: $entityset
----
+- - -
+id: entityset title: $entityset
+- - -
 
 Después de [crear un conjunto de entidades]($method.md#methodentityset) mediante el uso de `$method=entityset`, puede utilizarlo posteriormente.
 
