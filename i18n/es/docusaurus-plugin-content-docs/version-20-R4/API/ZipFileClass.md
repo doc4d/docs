@@ -1,7 +1,6 @@
----
-id: ZipFileClass
-title: ZIPFile
----
+- - -
+id: ZipFileClass title: ZIPFile
+- - -
 
 Las siguientes propiedades y funciones de la clase [File](FileClass.md) están disponibles para los objetos `ZIPFile`:
 
