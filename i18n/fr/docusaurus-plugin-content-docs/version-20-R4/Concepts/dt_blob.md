@@ -1,7 +1,6 @@
----
-id: blob
-title: BLOB
----
+- - -
+id: blob title: BLOB
+- - -
 
 Un champ, une variable ou une expression de type BLOB (Binary Large OBject) est une série contiguë d'octets qui peut être traitée comme un seul objet ou dont les octets peuvent être adressés individuellement.
 
