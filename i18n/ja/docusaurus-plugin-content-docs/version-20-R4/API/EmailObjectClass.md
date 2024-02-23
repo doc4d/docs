@@ -1,7 +1,6 @@
----
-id: EmailObjectClass
-title: Email
----
+- - -
+id: EmailObjectClass title: Email
+- - -
 
 4Dにおけるメールの作成・送信・受信は `Email` オブジェクトの操作よっておこなわれます。
 
