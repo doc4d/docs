@@ -1,7 +1,6 @@
----
-id: methods
-title: Methods
----
+- - -
+id: methods title: Methods
+- - -
 
 
 Um método é basicamente um pedaço de código que executa uma ou várias acções. Na linguagem 4D, há duas categorias de métodos:
