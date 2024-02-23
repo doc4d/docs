@@ -1,7 +1,6 @@
----
-id: EntitySelectionClass
-title: EntitySelection
----
+- - -
+id: EntitySelectionClass title: EntitySelection
+- - -
 
 
 Uma seleção de entidades é um objeto que contém uma ou mais referencias a [entidades](ORDA/dsMapping.md#entity) pertencentes à mesma [Dataclass](ORDA/dsMapping.md#dataclass). Uma seleção de entidades pode conter 0, 1 ou X entidades da dataclass -- onde X pode representar o número total de entidades contidas na dataclass.
