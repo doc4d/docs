@@ -1,7 +1,6 @@
----
-id: upload
-title: $upload
----
+- - -
+id: upload title: $upload
+- - -
 
 
 サーバーにアップロードしたファイルの ID を返します
