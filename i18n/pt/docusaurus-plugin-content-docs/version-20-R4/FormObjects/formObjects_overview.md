@@ -1,7 +1,6 @@
----
-id: formObjectsOverview
-title: Form Objects
----
+- - -
+id: formObjectsOverview title: Form Objects
+- - -
 
 O usuário constrói e personaliza os seus formulários de aplicação manipulando os objetos neles contidos. You can add objects, reposition objects, set object properties, enforce business rules by specifying data entry constraints, or write object methods that run automatically when the object is used.
 
