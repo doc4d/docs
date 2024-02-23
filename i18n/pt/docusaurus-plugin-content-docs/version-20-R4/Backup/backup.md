@@ -1,7 +1,6 @@
----
-id: backup
-title: Backup
----
+- - -
+id: backup title: Backup
+- - -
 
 Uma cópia de segurança pode ser iniciada de três maneiras:
 
