@@ -1,6 +1,6 @@
 ---
-id: processes
-title: Processes Page
+id: procesos
+title: Página Procesos
 ---
 
 
