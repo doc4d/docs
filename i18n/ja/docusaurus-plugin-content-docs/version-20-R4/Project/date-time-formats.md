@@ -1,7 +1,6 @@
----
-id: date-time-formats
-title: 日付と時間のフォーマット
----
+- - -
+id: date-time-formats title: 日付と時間のフォーマット
+- - -
 
 
 
