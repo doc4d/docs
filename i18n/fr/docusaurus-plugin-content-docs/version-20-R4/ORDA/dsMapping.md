@@ -1,7 +1,6 @@
----
-id: dsmapping
-title: Data Model Objects
----
+- - -
+id: dsmapping title: Data Model Objects
+- - -
 
 La technologie ORDA est fondée sur une cartographie automatique d'une structure de base sous-jacente. Elle permet également d'accéder aux données via des objets sélection d'entités (entity selection) et entité (entity). Par conséquent, ORDA expose la base de données entière comme un ensemble d'objets de modèle de données.
 
