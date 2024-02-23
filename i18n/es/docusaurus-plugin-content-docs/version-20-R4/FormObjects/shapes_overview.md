@@ -1,7 +1,6 @@
----
-id: shapesOverview
-title: Shapes
----
+- - -
+id: shapesOverview title: Formas
+- - -
 
 Las formas son [objetos estáticos](formObjects_overview.md#active-and-static-objects) que pueden añadirse a los formularios 4D.
 
