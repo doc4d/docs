@@ -1,7 +1,6 @@
----
-id: sql
-title: SQL ページ
----
+- - -
+id: sql title: SQL ページ
+- - -
 
 このページでは [4D SQLサーバー](https://doc.4d.com/What-s-new/4D-SQL-Reference-19-R3/Using-SQL-in-4D.200-5680718.ja.html) の公開パラメーターやアクセス権、および 4D SQLエンジンの動作に関する設定をおこないます。
 
