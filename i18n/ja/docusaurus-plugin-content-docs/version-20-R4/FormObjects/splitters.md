@@ -1,7 +1,6 @@
----
-id: splitters
-title: スプリッター
----
+- - -
+id: splitters title: スプリッター
+- - -
 
 
 
