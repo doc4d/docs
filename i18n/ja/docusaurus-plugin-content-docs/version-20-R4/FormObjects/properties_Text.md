@@ -1,7 +1,6 @@
----
-id: propertiesText
-title: テキスト
----
+- - -
+id: propertiesText title: テキスト
+- - -
 ---
 
 ## ピッカーの使用を許可
