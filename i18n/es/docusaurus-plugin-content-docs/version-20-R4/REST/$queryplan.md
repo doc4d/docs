@@ -1,7 +1,6 @@
----
-id: queryplan
-title: $queryplan
----
+- - -
+id: queryplan title: $queryplan
+- - -
 
 
 Devuelve la petición tal y como se pasó a 4D Server (*por ejemplo, *, `$queryplan=true`)
