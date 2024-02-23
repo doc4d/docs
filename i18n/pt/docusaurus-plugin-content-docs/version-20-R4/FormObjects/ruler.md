@@ -1,7 +1,6 @@
----
-id: ruler
-title: Ruler
----
+- - -
+id: ruler title: Ruler
+- - -
 
 
 A régua é um objeto de interface padrão utilizado para definir ou obter valores utilizando um cursor movido ao longo das suas graduações.
