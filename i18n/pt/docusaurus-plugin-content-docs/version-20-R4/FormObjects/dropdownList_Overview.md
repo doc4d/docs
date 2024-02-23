@@ -1,7 +1,6 @@
----
-id: dropdownListOverview
-title: Drop-down List
----
+- - -
+id: dropdownListOverview title: Drop-down List
+- - -
 
 Listas drop-down são objetos que permitem que os usuários selecionem de uma lista. Gerenciar os itens exibidos na lista drop down usando um array, uma lista de escolha ou uma ação padrão.
 
