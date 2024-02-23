@@ -1,7 +1,6 @@
----
-id: WebServerClass
-title: WebServer
----
+- - -
+id: WebServerClass title: WebServer
+- - -
 
 
 `WebServer` クラス API を使って、メイン (ホスト) アプリケーションおよび、各コンポーネントの Webサーバーを開始・モニターすることができます ([Webサーバーオブジェクト](WebServer/webServerObject.md) 参照)。 このクラスは `4D` クラスストアより提供されます。
