@@ -1,7 +1,6 @@
----
-id: pictures
-title: Pictures
----
+- - -
+id: pictures title: Imágenes
+- - -
 
 4D soporta específicamente las imágenes utilizadas en sus formularios.
 
