@@ -1,7 +1,6 @@
----
-id: method
-title: $method
----
+- - -
+id: method title: $method
+- - -
 
 Ce paramètre vous permet de définir l'opération à exécuter avec l'entité ou la sélection d'entité (entity selection) retournée.
 
