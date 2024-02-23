@@ -1,7 +1,6 @@
----
-id: interface
-title: Interface page
----
+- - -
+id: interface title: Interface page
+- - -
 
 
 A página Interface é usada para definir várias opções relacionadas à interface do projeto.
