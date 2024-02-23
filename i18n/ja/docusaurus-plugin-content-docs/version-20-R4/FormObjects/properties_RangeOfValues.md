@@ -1,7 +1,6 @@
----
-id: propertiesRangeOfValues
-title: 値の範囲
----
+- - -
+id: propertiesRangeOfValues title: 値の範囲
+- - -
 
 ## デフォルト値
 
