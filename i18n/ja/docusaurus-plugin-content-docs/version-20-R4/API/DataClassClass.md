@@ -1,7 +1,6 @@
----
-id: DataClassClass
-title: DataClass
----
+- - -
+id: DataClassClass title: DataClass
+- - -
 
 
 [データクラス](ORDA/dsMapping.md#データクラス) はデータベーステーブルへのオブジェクトインターフェースを提供します。 4Dアプリケーション内のデータクラスはすべて、`ds` [データストア](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。
