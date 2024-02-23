@@ -1,7 +1,6 @@
----
-id: overview
-title: Menus
----
+- - -
+id: overview title: Menus
+- - -
 
 Pode criar barras de menu e menus para as suas aplicações 4D. Because pull-down menus are a standard feature of any desktop application, their addition will make your applications easier to use and will make them feel familiar to users.
 
