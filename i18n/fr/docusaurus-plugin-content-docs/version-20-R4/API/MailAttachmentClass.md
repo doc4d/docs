@@ -1,7 +1,6 @@
----
-id: MailAttachmentClass
-title: MailAttachment
----
+- - -
+id: MailAttachmentClass title: MailAttachment
+- - -
 
 Les objets pièces jointes permettent de référencer des fichiers dans un objet [`Email`](EmailObjectClass.md). Les objets Attachment (pièce jointe) sont créés à l'aide de la commande [`MAIL New attachment`](#mail-new-attachment).
 
