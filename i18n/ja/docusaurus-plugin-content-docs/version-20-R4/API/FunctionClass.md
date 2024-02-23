@@ -1,7 +1,6 @@
----
-id: FunctionClass
-title: Function
----
+- - -
+id: FunctionClass title: Function
+- - -
 
 
 **`4D.Function`** オブジェクトにはコードが格納されています。 このコードは `()` 演算子を使用して、または [`apply()`](#apply) や [`call()`](#call) 関数を使用して呼び出すことができます。 4D では 3種類の `Function` オブジェクトが利用できます:
