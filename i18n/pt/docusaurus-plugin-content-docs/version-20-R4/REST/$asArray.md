@@ -1,7 +1,6 @@
----
-id: asArray
-title: $asArray
----
+- - -
+id: asArray title: $asArray
+- - -
 
 
 Devolve o resultado de uma consulta num array (ou seja, uma coleção) em vez de um objecto JSON.
