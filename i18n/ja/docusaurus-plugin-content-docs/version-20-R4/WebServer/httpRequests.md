@@ -1,7 +1,6 @@
----
-id: httpRequests
-title: HTTPリクエストの処理
----
+- - -
+id: httpRequests title: HTTPリクエストの処理
+- - -
 
 4D Webサーバーは、HTTPリクエストを処理するための機能を複数備えています:
 
