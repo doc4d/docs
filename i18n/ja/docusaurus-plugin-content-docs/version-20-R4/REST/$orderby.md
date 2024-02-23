@@ -1,7 +1,6 @@
----
-id: orderby
-title: $orderby
----
+- - -
+id: orderby title: $orderby
+- - -
 
 
 指定した属性と並べ替え順に基づいて、返されたデータを並べ替えます (*例*: `$orderby="lastName desc, salary asc"`)
