@@ -1,7 +1,6 @@
----
-id: binary
-title: $binary
----
+- - -
+id: binary title: $binary
+- - -
 
 ドキュメントを BLOB として保存するには "true" を渡します (`$expand={blobAttributeName}` も渡す必要があります)
 
