@@ -1,7 +1,6 @@
----
-id: sql-server
-title: SQL Server Page
----
+- - -
+id: sql-server title: SQL Server Page
+- - -
 
 
 La page **SQL Server** regroupe les informations relatives au serveur SQL intégré de 4D Server. Elle comporte également un bouton permettant de contrôler l’activation du serveur.
