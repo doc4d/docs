@@ -1,7 +1,6 @@
----
-id: maintenance
-title: Maintenance Page
----
+- - -
+id: maintenance title: Maintenance Page
+- - -
 
 
 La página **Mantenimiento** de la ventana de administración de 4D Server ofrece información relativa al funcionamiento actual de la aplicación. También ofrece acceso a las funciones básicas de mantenimiento:
