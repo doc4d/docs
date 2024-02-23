@@ -1,7 +1,6 @@
----
-id: SystemWorkerClass
-title: SystemWorker
----
+- - -
+id: SystemWorkerClass title: SystemWorker
+- - -
 
 Los System workers permiten que el código 4D llame a cualquier proceso externo (un comando shell, PHP, etc.) en la misma máquina. Los trabajadores del sistema se llaman de forma asíncrona. Mediante el uso de retrollamadas, 4D hace posible la comunicación en ambos sentidos.
 
