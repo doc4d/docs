@@ -1,7 +1,6 @@
----
-id: creating
-title: Creating menus and menu bars
----
+- - -
+id: creating title: Creating menus and menu bars
+- - -
 
 Les barres de menus peuvent être définies :
 
