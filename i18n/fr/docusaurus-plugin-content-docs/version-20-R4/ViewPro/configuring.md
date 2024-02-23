@@ -1,7 +1,6 @@
----
-id: configuring
-title: Configuring 4D View Pro Areas
----
+- - -
+id: configuring title: Configuring 4D View Pro Areas
+- - -
 
 Les propriétés de la zone 4D View Pro peuvent être configurées à l'aide de la liste des propriétés. Les propriétés des feuilles de calcul sont disponibles à l'aide du langage.
 
