@@ -1,7 +1,6 @@
----
-id: REST_requests
-title: About REST Requests
----
+- - -
+id: REST_requests title: About REST Requests
+- - -
 
 
 Se soportan las siguientes estructuras para las peticiones REST:
