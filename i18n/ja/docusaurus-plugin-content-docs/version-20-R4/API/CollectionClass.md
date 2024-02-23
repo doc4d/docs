@@ -1,7 +1,6 @@
----
-id: CollectionClass
-title: Collection
----
+- - -
+id: CollectionClass title: Collection
+- - -
 
 
 Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変数を扱います。
