@@ -1,7 +1,6 @@
----
-id: savedorderby
-title: $savedorderby
----
+- - -
+id: savedorderby title: $savedorderby
+- - -
 
 Enregistre le tri défini par `$orderby` lors de la création d'un ensemble d'entités (par exemple, `$savedorderby="{orderby}"`)
 
