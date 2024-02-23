@@ -1,7 +1,6 @@
----
-id: catalog
-title: $catalog
----
+- - -
+id: catalog title: $catalog
+- - -
 
 
 カタログには、データストアを構成するすべてのデータクラスおよび属性の詳細な情報が含まれます。
