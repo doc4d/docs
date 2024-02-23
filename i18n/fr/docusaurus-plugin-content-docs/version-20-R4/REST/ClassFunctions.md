@@ -1,7 +1,6 @@
----
-id: classFunctions
-title: Calling ORDA class functions
----
+- - -
+id: classFunctions title: Calling ORDA class functions
+- - -
 
 
 Vous pouvez appeler les [fonctions de classe de modèles de données](ORDA/ordaClasses.md) définies pour le modèle de données ORDA via vos requêtes REST, afin de bénéficier de l'API de l'application 4D ciblée.
