@@ -1,7 +1,6 @@
----
-id: orderby
-title: $orderby
----
+- - -
+id: orderby title: $orderby
+- - -
 
 
 Trie les données retournées par l'attribut et l'ordre de tri définis (par exemple,`$orderby="lastName desc, salaire asc"`)
