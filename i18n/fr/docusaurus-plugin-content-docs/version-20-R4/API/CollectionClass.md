@@ -1,7 +1,6 @@
----
-id: CollectionClass
-title: Collection
----
+- - -
+id: CollectionClass title: Collection
+- - -
 
 
 La classe Collection gère les variables de type [Collection](Concepts/dt_collection.md).
