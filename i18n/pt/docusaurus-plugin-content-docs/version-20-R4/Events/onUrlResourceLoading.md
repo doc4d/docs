@@ -1,7 +1,6 @@
----
-id: onUrlResourceLoading
-title: On URL Resource Loading
----
+- - -
+id: onUrlResourceLoading title: On URL Resource Loading
+- - -
 
 | Code | Pode ser chamado por                        | Definição                               |
 | ---- | ------------------------------------------- | --------------------------------------- |
