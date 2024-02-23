@@ -1,7 +1,6 @@
----
-id: listboxOverview
-title: List Box
----
+- - -
+id: listboxOverview title: List Box
+- - -
 
 
 List boxes são objetos ativos complexos que permitem exibir e ingressar dados como colunas sincronizadas. Podem ser conectadas aos conteúdos de banco de dados como seleções de entidade e seleções de registro, ou para conteúdos de linguagem como coleções e arrays. Incluem características avançadas relativas à entrada de dados, classificação de colunas, gestão de eventos, aspecto personalizado, movimentação de colunas, etc.
