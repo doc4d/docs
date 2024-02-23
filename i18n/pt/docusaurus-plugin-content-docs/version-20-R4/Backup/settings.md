@@ -1,7 +1,6 @@
----
-id: settings
-title: Backup Settings
----
+- - -
+id: settings title: Backup Settings
+- - -
 
 Os parâmetros da cópia de segurança são definidas através de três páginas na caixa de diálogo Propriedades. Pode estabelecer:
 
