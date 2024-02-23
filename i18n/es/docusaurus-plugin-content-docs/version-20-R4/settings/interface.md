@@ -1,7 +1,6 @@
----
-id: interface
-title: Interface page
----
+- - -
+id: interface title: Interface page
+- - -
 
 
 La página Interfaz sirve para establecer varias opciones relacionadas con la interfaz del proyecto.
