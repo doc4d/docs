@@ -1,7 +1,6 @@
----
-id: templates
-title: テンプレートページ
----
+- - -
+id: templates title: テンプレートページ
+- - -
 
 4D の Webサーバーでは、タグを含む HTMLテンプレートページを使用することができます。つまり、静的な HTMLコードと、4DTEXT、4DIF、4DINCLUDEなどの [変換タグ](Tags/tags.md) によって追加された 4D参照の組み合わせです。 これらのタグは通常、HTMLタイプのコメント (`<!--#4DTagName TagValue-->`) として、HTMLソースコードに挿入されます。
 
