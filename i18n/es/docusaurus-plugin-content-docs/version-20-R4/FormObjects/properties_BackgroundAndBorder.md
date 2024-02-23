@@ -1,7 +1,6 @@
----
-id: propertiesBackgroundAndBorder
-title: Background and Border
----
+- - -
+id: propertiesBackgroundAndBorder title: Fondo y borde
+- - -
 
 
 ## Color de fondo alternado
