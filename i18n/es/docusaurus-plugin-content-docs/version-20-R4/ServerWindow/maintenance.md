@@ -1,6 +1,6 @@
 ---
-id: maintenance
-title: Maintenance Page
+id: mantenimiento
+title: Página Mantenimiento
 ---
 
 
