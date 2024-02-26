@@ -51,7 +51,7 @@ Several 4D commands and functions return objects, for example [`Get database mea
 
 :::
 
-### `New object` command
+### Comando `New object`
 
 O comando [`New object`] (https\://doc.4d.com/4dv19R/help/command/en/page1471.html) cria um objeto vazio ou pré-preenchido e retorna sua referência.
 
