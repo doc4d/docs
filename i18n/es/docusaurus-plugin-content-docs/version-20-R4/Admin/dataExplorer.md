@@ -3,7 +3,7 @@ id: dataExplorer
 title: Explorador de datos
 ---
 
-The Data Explorer provides a web interface to view, query, and edit data in your project datastore. Utilizando esta herramienta, puede navegar fácilmente entre todas sus entidades y buscar, ordenar o filtrar los valores de los atributos. It helps you quickly identifying issues at any step of the development process, as well as controlling and editing data.
+El Explorador de datos ofrece una interfaz web para ver, consultar y editar los datos del almacén de datos de su proyecto. Utilizando esta herramienta, puede navegar fácilmente entre todas sus entidades y buscar, ordenar o filtrar los valores de los atributos. Le ayuda a identificar rápidamente los problemas en cualquier paso del proceso de desarrollo, así como a controlar y editar los datos.
 
 ![alt-text](../assets/en/Admin/dataExplorer1.png)
 
@@ -50,12 +50,12 @@ El Explorador de datos es compatible con los siguientes navegadores web:
 La resolución mínima para utilizar el Explorador de Datos es de 1280x720. La resolución recomendada es de 1920x1080.
 
 
-## Browsing Data
+## Navegando datos
 
 Además de una vista completa y personalizable de sus datos, el Explorador de datos le permite consultar y ordenar sus datos.
 
 
-### Basics
+### Básicos
 
 El Explorador de Datos ofrece un acceso global al modelo de datos ORDA con respecto a las reglas de mapeo [ORDA](ORDA/dsMapping.md#general-rules).
 
@@ -183,61 +183,61 @@ Haga clic derecho en el área de consulta para mostrar las anteriores consultas 
 ![alt-text](../assets/en/Admin/dataExplorer11.png)
 
 
-## Editing Data
+## Edición de Datos
 
-The Data Explorer allows you to modify attribute values, add or delete entities. These feature is intended to administrators, for example to test implementations or fix issues with invalid data.
+El Explorador de datos permite modificar los valores de los atributos y añadir o eliminar entidades. Esta función está destinada a los administradores, por ejemplo para probar implementaciones o solucionar problemas con datos inválidos.
 
 ### Allow editing
 
-For security reasons, to be able to edit data through the Data Explorer, you first need to enable the editing mode using the **Allow editing** selector. When enabled, edit action buttons are displayed to the right side:
+Por motivos de seguridad, para poder editar datos a través del Explorador de datos, primero debe habilitar el modo de edición mediante el selector **Allow editing**. Cuando está activado, los botones de acción de edición se muestran a la derecha:
 
 ![allow-editing](../assets/en/Admin/editing.png)
 
-This selector is enabled **per dataclass** and **per browser session**.
+Este selector se activa **por clase de datos** y **por sesión del navegador**.
 
 :::info
 
-The selector is intended to prevent accidental modifications since no confirmation dialog boxes are displayed when editing data through the Data Explorer.
+El selector está pensado para evitar modificaciones accidentales, ya que no se muestran diálogos de confirmación cuando se editan datos a través del Explorador de datos.
 
 :::
 
-### Entering values
+### Ingresar valores
 
-When the **Allow editing** selector is enabled for a dataclass, you can enter values for a new or selected entity through dedicated input widgets in the **Details** area for the selected dataclass.
+Cuando el selector **Allow editing** está habilitado para una base de datos, puede introducir valores para una entidad nueva o seleccionada a través de widgets de entrada dedicados en el área **Details** para la base de datos seleccionada.
 
-The following scalar attribute values can be edited:
+Se pueden editar los siguientes valores de atributos escalares:
 
 - text
 - boolean
 - numeric
 - date
 - time
-- image (you can upload or drag and drop an image)
-- object (JSON string)
+- imagen (puede cargar o arrastrar y soltar una imagen)
+- objeto (cadena JSON)
 
-Blob attributes cannot be modified.
+Los atributos de los blobs no pueden modificarse.
 
-New or modified values are stored in the local cache, you need to [save them explicitely](#saving-modifications) to store them in the data.
+Los valores nuevos o modificados se almacenan en la caché local, es necesario [guardarlos explícitamente](#saving-modifications) para almacenarlos en los datos.
 
 
-### Creating entities
+### Creación de entidades
 
-You can create a new, empty entity in the selected table by clicking on the creation button ![new-entity](../assets/en/Admin/data-explorer-new.png). You can then [enter values](#entering-values) for this entity.
+Puede crear una nueva entidad vacía en la tabla seleccionada haciendo clic en el botón de creación ![new-entity](../assets/en/Admin/data-explorer-new.png). A continuación, puede [introducir valores](#entering-values) para esta entidad.
 
-The new entity is is kept in the local cache, you need to [save it explicitely](#saving-modifications) to store it in the data.
+La nueva entidad se guarda en la caché local, es necesario [guardarla explícitamente](#saving-modifications) para almacenarla en los datos.
 
 :::info
 
-Attribute values that need to be calculated by 4D (IDs, computed attributes) will be returned only after you saved the entity.
+Los valores de los atributos que necesitan ser calculados por 4D (IDs, atributos calculados) serán devueltos sólo después de haber guardado la entidad.
 
 :::
 
-### Reloading values
+### Valores de recarga
 
-The **reload** button ![reload](../assets/en/Admin/data-explorer-reload.png) reloads the entity attribute values from the data file. This button is useful for example when you want to make sure the displayed values are the most recent saved values.
+El botón **recargar** ![reload](../assets/en/Admin/data-explorer-reload.png) recarga los valores de los atributos de la entidad desde el archivo de datos. Este botón es útil, por ejemplo, cuando desea asegurarse de que los valores mostrados son los valores guardados más recientes.
 
 
-### Saving modifications
+### Guardar modificaciones
 
 Except for [deletion](#deleting-entities) (see below), entity modifications are done locally and need to be saved so that they are stored in the data file.
 
