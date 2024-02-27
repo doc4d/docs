@@ -239,33 +239,33 @@ El botón **recargar** ![reload](../assets/en/Admin/data-explorer-reload.png) re
 
 ### Guardar modificaciones
 
-Except for [deletion](#deleting-entities) (see below), entity modifications are done locally and need to be saved so that they are stored in the data file.
+Excepto en el caso de [eliminación](#deleting-entities) (ver más adelante), las modificaciones de las entidades se realizan localmente y deben guardarse para que queden almacenadas en el archivo de datos.
 
-To save modifications or to save an entity you created in the Data Explorer, click on the **Save** button ![save](../assets/en/Admin/data-explorer-save.png).
+Para guardar las modificaciones o guardar una entidad creada en el Explorador de datos, haga clic en el botón **Guardar** ![save](../assets/en/Admin/data-explorer-save.png).
 
 :::info
 
-Modifications on an existing entity are automatically saved when you select another entity of the same dataclass.
+Las modificaciones en una entidad existente se guardan automáticamente cuando se selecciona otra entidad de la misma clase de datos.
 
 :::
 
 
-In case of conflict (e.g. another user has modified the same attribute value on the same entity), an error message is displayed at the bottom of the Data Explorer. You can click on the [**Reload** button](#reloading-values) to get the new value from the data and then, apply and save your modifications.
+En caso de conflicto (por ejemplo, si otro usuario ha modificado el mismo valor de atributo en la misma entidad), aparecerá un mensaje de error en la parte inferior del Explorador de datos. Puede hacer clic en el botón [**Recargar**](#reloading-values) para obtener el nuevo valor de los datos y, a continuación, aplicar y guardar sus modificaciones.
 
-### Deleting entities
+### Eliminación de entidades
 
-You can delete entities by clicking on the **delete** button ![delete](../assets/en/Admin/data-explorer-delete.png).
+Puede eliminar entidades haciendo clic en el botón **eliminar** ![delete](../assets/en/Admin/data-explorer-delete.png).
 
-To delete a set of entities, select two or more entities in the list area using **Shift+click** (continuous selection) or **Ctrl/Command+click** (discontinuous selection) and click on the **delete** button.
+Para eliminar un conjunto de entidades, seleccione dos o más entidades en el área de la lista utilizando **Mayús+clic** (selección continua) o **Ctrl/Comando+clic** (selección discontinua) y haga clic en el botón **eliminar**.
 
 :::note
 
-If some entities could not be deleted because of a conflict (e.g. entities locked on the server), they are highlighted in the list.
+Si algunas entidades no se han podido eliminar debido a un conflicto (por ejemplo, entidades bloqueadas en el servidor), aparecen resaltadas en la lista.
 
 :::
 
 :::caution
 
-No confirmation dialog is displayed when you delete entities. Selected entities are immediately deleted from the data.
+Al eliminar entidades no aparece ningún cuadro de diálogo de confirmación. Las entidades seleccionadas se eliminan inmediatamente de los datos.
 
 :::
