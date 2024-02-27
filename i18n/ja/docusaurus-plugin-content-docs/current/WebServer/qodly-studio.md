@@ -9,7 +9,7 @@ title: Qodly Studio
 
 :::
 
-**Qodly Studio** is an interface builder for web applications. It provides developers with a graphical form editor to design applications running in web browsers or smartphones. It supports natively the [ORDA objects](../ORDA/overview.md).
+**Qodly Studio** は Webアプリケーション用のインターフェースビルダーです。 Webブラウザーやスマートフォンで動作するアプリケーションを設計するためのグラフィカルなフォームエディターをデベロッパーに提供します。 Qodly Studio は [ORDAオブジェクト](../ORDA/overview.md) をネイティブにサポートします。
 
 **4D環境** から直接 Qodly Studio を使用して、モダンで洗練されたインターフェースをビルドし、既存の 4Dプロジェクトに簡単に統合して、**オンプレミス** で運用することができます。
 
@@ -17,14 +17,14 @@ Qodly Studioは、Webビジネスアプリケーションの開発に特化し�
 
 Qodly Studio では、全く新しい WebUI を使い、データソースの概念に慣れ、次の操作を学ぶことができます:
 
-- create Qodly forms by placing components on a page
+- ページ上にコンポーネントを配置して Qodlyフォームを作成する
 - コンポーネントをデータにマッピングする
 - イベントを設定して 4Dコードをトリガーする
 - さらに沢山のことが可能です
 
 :::info
 
-The development with Qodly Studio in 4D requires at least a [4D Silver Partner license](https://us.4d.com/4d-partner-program). ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
+4D で Qodly Studio を使って開発するには、シルバー以上の [4Dパートナーライセンス](https://jp.4d.com/4d-partner-program) が必要です。 ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
 
 :::
 
@@ -93,7 +93,7 @@ WebAdmin Webサーバーでの認証には、アクセスキーを使用しま�
 
 ### レンダリングを有効化する
 
-To enable the rendering of Qodly forms, the following options must be set.
+Qodlyフォームのレンダリングを有効にするには、以下のオプションを設定する必要があります。
 
 * 4Dプロジェクトの **設定** > **Web** > **Web機能** > [**RESTサーバーとして公開**](../settings/web.md#restサーバーとして公開) オプションを有効にする必要があります。
 * [4D Webサーバー](webServer.md) を起動しておく必要があります。
