@@ -1012,7 +1012,7 @@ Cuando se incluye el parámetro opcional *paramObj*, el comando le permite utili
 
 | Parámetros |               | Tipo    | Descripción                                               |
 | ---------- | ------------- | ------- | --------------------------------------------------------- |
-| param1     |               | text    | The name of the 4D View Pro area object                   |
+| param1     |               | text    | El nombre del objeto de área 4D View Pro                  |
 | param2     |               | text    | Ruta de acceso del objeto 4D View Pro exportado           |
 | param3     |               | object  | Referencia al *paramObj* del comando                      |
 | param4     |               | object  | Un objeto devuelto por el método con un mensaje de estado |
@@ -3248,7 +3248,7 @@ Los siguientes parámetros se pueden utilizar en el método de retrollamada:
 
 | Parámetros |               | Tipo    | Descripción                                                               |
 |:---------- |:------------- |:------- |:------------------------------------------------------------------------- |
-| param1     |               | text    | The name of the 4D View Pro area object                                   |
+| param1     |               | text    | El nombre del objeto de área 4D View Pro                                  |
 | param2     |               | 4D.Blob | El blob importado                                                         |
 | param3     |               | object  | Referencia al parámetro *paramObj* del comando                            |
 | param4     |               | object  | Un objeto devuelto por el método con un mensaje de estado                 |
