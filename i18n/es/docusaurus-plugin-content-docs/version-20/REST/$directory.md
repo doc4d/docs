@@ -19,7 +19,7 @@ Todos los parámetros deben pasarse en **encabezados**de un método POST:
 | Llave de encabezado | Valor del encabezado                                                                         |
 | ------------------- | -------------------------------------------------------------------------------------------- |
 | username-4D         | Usuario - No obligatorio                                                                     |
-| password-4D         | Password in plain text - Not mandatory                                                       |
+| password-4D         | Contraseña en texto plano - No es obligatorio                                                |
 | session-4D-length   | Tiempo de inactividad de la sesión (minutos). No puede ser inferior a 60 - No es obligatorio |
 
 :::caution
