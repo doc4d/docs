@@ -39,7 +39,7 @@ ORDA のセキュリティアーキテクチャーは、権限、許諾アクシ
 
 :::info
 
-パーミッションは、データストアオブジェクトへのアクセスを制御します。 If you want to filter read data according to some criteria, you might consider [restricting entity selections](../entities.md#restricting-entity-selections) which can be more appropriate in this case.
+パーミッションは、データストアオブジェクトへのアクセスを制御します。 特定の条件に基づいて読み取りデータをフィルタリングしたい場合は、<a href="../entities.md#制限されたエンティティセレクション>制限されたエンティティセレクション</a> の利用がより適切かもしれません。
 
 :::
 
