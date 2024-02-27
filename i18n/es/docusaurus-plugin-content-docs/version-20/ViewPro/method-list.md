@@ -990,7 +990,7 @@ Cuando se incluye el parámetro opcional *paramObj*, el comando `VP EXPORT DOCUM
 
 | Variable |               | Tipo    | Descripción                                               |
 | -------- | ------------- | ------- | --------------------------------------------------------- |
-| $1       |               | text    | The name of the 4D View Pro area object                   |
+| $1       |               | text    | El nombre del objeto de área 4D View Pro                  |
 | $2       |               | text    | Ruta de acceso del objeto 4D View Pro exportado           |
 | $3       |               | object  | Referencia al *paramObj* del comando                      |
 | $4       |               | object  | Un objeto devuelto por el método con un mensaje de estado |
