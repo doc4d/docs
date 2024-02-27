@@ -539,11 +539,11 @@ Function event restrict() : cs.CustomersSelection
 | [Create entity selection](../API/EntitySelectionClass.md#create-entity-selection) |                                                                                          |
 
 
-Other ORDA functions accessing data do not directly trigger the filter, but they nevertheless benefit from it. For example, the [`entity.next()`](../API/EntityClass.md#next) function will return the next entity in the already-filtered entity selection. On the other hand, if the entity selection is not filtered, [`entity.next()`](../API/EntityClass.md#next) will work on non-filtered entities.
+その他の ORDA関数によるデータアクセスはフィルターを直接的にトリガーしないものの、その恩恵を受けることがあります。 たとえば、[`entity.next()`](../API/EntityClass.md#next) 関数は、すでにフィルタリングされたエンティティセレクションにおける次のエンティティを返します。 一方、制限されていないエンティティセレクションの場合、[`entity.next()`](../API/EntityClass.md#next) はフィルタリングされていないエンティティ群に対して動作します。
 
 :::note
 
-If there is an error in the filter at runtime, it is thrown as if the error came from the ORDA function itself.
+ランタイムにおいてフィルターにエラーがある場合、そのエラーは ORDA関数そのものから発生したかのようにスローされます。
 
 :::
 
