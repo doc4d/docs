@@ -165,12 +165,12 @@ Function createCompany($name : Text; $logo : 4D.File)
     var $company : cs.CompanyEntity
     $company:=ds.Company.new()
 
-    $company.name:=$name 
-        // ファイルオブジェクトを使った代入
-    $company.logo:=$logo 
-        // パスを使った代入
+    $company.name:=$name
+        //assignment using a file object
+    $company.logo:=$logo
+        //assignment using a path
     $company.datablob:="/RESOURCES/"+$name+"/data.bin"
-    $company.save() 
+    $company.save()
 ```
 
 属性への代入がどのようにされたか (データそのもの、またはファイルの参照) にかかわらず、属性に対する読み取りアクセスはユーザーにとって透過的です。
@@ -323,12 +323,12 @@ var $comp; $comp2 : cs.Company
 
 $highSal:=ds.Employee.query("salary >= :1"; 1000000)   
 
-    // データクラスに対するクエリによって生成されたため $highSal は共有可能です
-$comp:=$highSal.employer // $highSal が共有可能なため $comp も共有可能です
+    //$highSal is shareable because of the query on dataClass
+$comp:=$highSal.employer //$comp is shareable because $highSal is shareable
 
-$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy() 
-    // オプション無しの copy( ) によって生成されたため $lowSal は追加可能です
-$comp2:=$lowSal.employer // $lowSal が追加可能なため $comp2 も追加可能です
+$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy()
+    //$lowSal is alterable because of the copy()
+$comp2:=$lowSal.employer //$comp2 is alterable because $lowSal is alterable
 ```
 
 :::note サーバーから返されるエンティティセレクション
@@ -371,7 +371,7 @@ CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
 
 `sendMails` メソッドのコードです:
 
-```4d 
+```4d
 
  #DECLARE ($paid : cs.InvoicesSelection; $unpaid : cs.InvoicesSelection)
  var $invoice : cs.InvoicesEntity
@@ -441,7 +441,7 @@ ORDAでは、あらゆるデータクラスにおいて、エンティティへ�
 
 :::info
 
-フィルターは **エンティティ** に対して適用されます。 **データクラス** そのもの、または特定の **属性** へのアクセスを制限するには、[セッション権限](../privileges.md) の利用がより適切です。
+フィルターは **エンティティ** に対して適用されます。 **データクラス** そのもの、または特定の **属性** へのアクセスを制限するには、[セッション権限](privileges.md) の利用がより適切です。
 
 :::
 
@@ -488,26 +488,26 @@ Class extends DataClass
 Function event restrict() : cs.CustomersSelection
 
 
-        // Web または REST コンテキストでの動作
+        //We work in a web or REST context
     If (Session#Null)
 
-        Case of 
-                // セッションが格納する認証された営業担当者の担当顧客のみを返します
+        Case of
+                // Only return the customers of the authenticated sales person stored in the session
             : (Session.storage.salesInfo#Null)
                 return This.query("sales.internalId = :1"; Session.storage.salesInfo.internalId)
 
-                // データエクスプローラーの場合には、フィルターを適用しません
+                //Data explorer - No filter is applied
             : (Session.hasPrivilege("WebAdmin"))
                 return Null
-            Else 
-                // それ以外の場合は顧客情報を返しません
+            Else
+                //No customers can be read
                 return This.newSelection()
 
-        End case 
+        End case
 
-    Else // クライアントサーバーの場合
+    Else // We work in client server
         return This.query("sales.userName = :1"; Current user)
-    End if 
+    End if
 ```
 
 
@@ -539,11 +539,11 @@ Function event restrict() : cs.CustomersSelection
 | [Create entity selection](../API/EntitySelectionClass.md#create-entity-selection) |                                                                                          |
 
 
-Other ORDA functions accessing data do not directly trigger the filter, but they nevertheless benefit from it. For example, the [`entity.next()`](../API/EntityClass.md#next) function will return the next entity in the already-filtered entity selection. On the other hand, if the entity selection is not filtered, [`entity.next()`](../API/EntityClass.md#next) will work on non-filtered entities.
+その他の ORDA関数によるデータアクセスはフィルターを直接的にトリガーしないものの、その恩恵を受けることがあります。 たとえば、[`entity.next()`](../API/EntityClass.md#next) 関数は、すでにフィルタリングされたエンティティセレクションにおける次のエンティティを返します。 一方、制限されていないエンティティセレクションの場合、[`entity.next()`](../API/EntityClass.md#next) はフィルタリングされていないエンティティ群に対して動作します。
 
 :::note
 
-If there is an error in the filter at runtime, it is thrown as if the error came from the ORDA function itself.
+ランタイムにおいてフィルターにエラーがある場合、そのエラーは ORDA関数そのものから発生したかのようにスローされます。
 
 :::
 
