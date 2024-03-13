@@ -74,9 +74,9 @@ Si la tabla *dsTable* no está expuesto en [`ds`](API/DataStoreClass.md#ds), se 
 
 En el parámetro opcional *settings*, puede pasar un objeto que contenga la siguiente propiedad:
 
-| Propiedad | Tipo | Descripción                                                                                                                  |
-| --------- | ---- | ---------------------------------------------------------------------------------------------------------------------------- |
-| context   | Text | Label for the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) applied to the entity selection. |
+| Propiedad | Tipo | Descripción                                                                                                                              |
+| --------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Text | Etiqueta para el [contexto de optimización](../ORDA/remoteDatastores.md#clientserver-optimization) aplicado a la selección de entidades. |
 
 
 #### Ejemplo
@@ -115,7 +115,7 @@ Este comando no puede utilizarse con un [datastore remoto](../ORDA/remoteDatasto
 
 :::info
 
-This command is designed to make 4D current selections benefit from the power of ORDA queries. For performance reasons, in 4D single-user and 4D Server, the command directly connects *entitySelection* to the current selection. Therefore, once *entitySelection* has been used, it must not be reused or altered afterwards.
+Este comando está diseñado para hacer que las selecciones actuales 4D se beneficien del poder de las consultas ORDA. Por razones de rendimiento, en 4D monousuario y 4D Server, el comando conecta directamente *entitySelection* a la selección actual. Por lo tanto, una vez que se ha utilizado *entitySelection*, no debe reutilizarse ni alterarse posteriormente.
 
 :::
 
@@ -130,9 +130,9 @@ Después de una llamada a `USE ENTITY SELECTION`, el primer registro de la selec
 ```4d
 var $entitySel : cs.EmployeeSelection
 
-$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel está asociado a la dataclass Employee 
 REDUCE SELECTION([Employee];0)
-USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+USE ENTITY SELECTION($entitySel) //Se actualiza la selección actual de la tabla Employee
 ```
 
 
