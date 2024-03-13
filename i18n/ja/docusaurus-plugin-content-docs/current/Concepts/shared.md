@@ -3,11 +3,11 @@ id: shared
 title: 共有オブジェクトと共有コレクション
 ---
 
-**共有オブジェクト** および **共有コレクション** はプロセス間でコンテンツを共有することができる、特殊な [オブジェクト](Concepts/dt_object.md) と [コレクション](Concepts/dt_collection.md) です。 [インタープロセス変数](Concepts/variables.md#インタープロセス変数) に比べると、共有オブジェクトと共有コレクションは **プリエンプティブ4Dプロセス** と互換性があるという点で利点があります。つまり、`New process` や `CALL WORKER` といったコマンドの引数として、参照の形で渡すことができるということです。
+**共有オブジェクト** および **共有コレクション** はプロセス間でコンテンツを共有することができる、特殊な [オブジェクト](Concepts/dt_object.md) と [コレクション](Concepts/dt_collection.md) です。 In contrast to [interprocess variables](Concepts/variables.md#interprocess-variables), shared objects and shared collections have the advantage of being compatible with **preemptive 4D processes**: they can be passed by reference as parameters to commands such as [`New process`](https://doc.4d.com/4dv20/help/command/en/page317.html) or [`CALL WORKER`](https://doc.4d.com/4dv20/help/command/en/page1389.html).
 
-共有オブジェクトと共有コレクションは、標準の `Object` および `Collection` 型の変数に保存することができますが、専用のコマンドを使用してインスタンス化されている必要があります:
+Shared objects and shared collections are stored in standard [`Object`](dt_object.md) and [`Collection`](dt_collection.md) type variables, but must be instantiated using specific commands:
 
-- 共有オブジェクトを作成するには、[`New shared object`](https://doc.4d.com/4dv19R/help/command/ja/page1471.html) コマンドを使用します。
+- to create a shared object, use the [`New shared object`](https://doc.4d.com/4dv20/help/command/en/page1471.html) command or call the [`new()`](../API/ClassClass.md#new) function of a [shared class](classes.md#shared-classes),
 - 共有コレクションを作成するには、[`New shared collection`](../API/CollectionClass.md#new-shared-collection) コマンドを使用します。
 
 :::note
@@ -18,7 +18,7 @@ title: 共有オブジェクトと共有コレクション
 
 共有オブジェクト/コレクションを編集するには、**Use...End use** 構文を使う必要があります。 共有オブジェクト/コレクションの値を読むにあたっては、**Use...End use** は必要ありません。
 
-`Storage` コマンドが返す、データベースにおいて固有かつグローバルなカタログは、そのアプリケーション内あるいはコンポーネントからいつでも利用することができ、すべての共有オブジェクトおよびコレクションを保存するのに使用することができます。
+A unique, global catalog returned by the [`Storage`](https://doc.4d.com/4dv20/help/command/en/page1525.html) command is always available throughout the application and its components, and can be used to store all shared objects and collections.
 
 ## 共有オブジェクト/共有コレクションの使用
 
@@ -83,11 +83,11 @@ End Use
 
 ### ストレージ
 
-**ストレージ** は固有の共有オブジェクトで、各アプリケーションおよびマシン上で利用可能です。 この共有オブジェクトは、[`Storage`](https://doc.4d.com/4dv19R/help/command/ja/page1525.html) コマンドによって返されます。 このオブジェクトは、他のプリエンティブあるいは標準プロセスからでも利用出来るように、セッション中に定義されたすべての共有オブジェクト/コレクションを参照するためのものです。
+**ストレージ** は固有の共有オブジェクトで、各アプリケーションおよびマシン上で利用可能です。 This shared object is returned by the [`Storage`](https://doc.4d.com/4dv20/help/command/en/page1525.html) command. このオブジェクトは、他のプリエンティブあるいは標準プロセスからでも利用出来るように、セッション中に定義されたすべての共有オブジェクト/コレクションを参照するためのものです。
 
 `ストレージ` オブジェクトは標準の共有オブジェクトとは異なり、共有オブジェクト/コレクションがプロパティとして追加されたときでも共有グループを作成しないという点に注意してください。 この例外的な振る舞いにより、**ストレージ** オブジェクトを使用するたびに、リンクされている共有オブジェクト/コレクションをすべてロックせずに済みます。
 
-詳細な情報については、`Storage` コマンドの詳細を参照してください。
+For more information, refer to the [`Storage`](https://doc.4d.com/4dv20/help/command/en/page1525.html) command description.
 
 ## Use...End use
 
@@ -112,7 +112,10 @@ End Use
 
 :::note
 
-共有コレクションを変更する [コレクション関数](../API/CollectionClass.md) は、その関数が実行されている間、対象の共有コレクションのために **Use** を内部的に自動トリガーすることに留意してください。
+The following functions automatically trigger an internal **Use/End use**, making an explicit call to the structure unnecessary when the function is executed:
+
+- [collection functions](../API/CollectionClass.md) that modify shared collections
+- [shared functions](classes.md#shared-functions) (defined in [shared classes](classes.md#shared-classes)).
 
 :::
 
