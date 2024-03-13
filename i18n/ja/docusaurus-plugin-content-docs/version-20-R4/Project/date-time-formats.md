@@ -18,36 +18,94 @@ title: 日付と時間のフォーマット
 
 以下の表は、日付/時間フォーマットでサポートされているすべてのパターンの一覧です (一部の出力はローカライズされており、システムパラメーターに依存します)。
 
-| 記号 | 意味          | パターン       | 出力例   |
-| -- | ----------- | ---------- | ----- |
-| G  | 元号          | G, GG, GGG | 西暦    |
-|    |             | GGGG       | 西暦    |
-|    |             | GGGGG      | A     |
-| y  | 年           | yy         | 96    |
-|    |             | y または yyyy | 1996  |
-| Y  | ウィークカレンダーの年 | Y          | 1997  |
-| u  | 拡張年         | u          | 4601  |
-| Q  | 四半期         | Q          | 2     |
-|    |             | QQ         | 02    |
-|    |             | QQQ        | Q2    |
-|    |             | QQQQ       | 第2四半期 |
-|    |             | QQQQQ      | 2     |
-| q  | 四半期 (単独)    | q          | 2     |
-|    |             | qq         | 02    |
-|    |             | qqq        | Q2    |
-|    |             | qqqq       | 第2四半期 |
-|    |             | qqqqq      | 2     |
-| M  | 月           | M          | 9     |
-|    |             | MM         | 09    |
-|    |             | MMM        | 9月    |
-|    |             | MMMM       | 9月    |
-|    |             | MMMMM      | S     |
-| L  | 月 (単独)      | L          | 9     |
-|    |             | LL         | 09    |
-|    |             | LLL        | 9月    |
-|    |             | LLLL       | 9月    |
-|    |             | LLLLL      | S     |
- w|週番号|w|27 | |ww|27 |d|日|d|2| | | |dd|2| |D|日 (年始からの日数)|D|189| |E|曜日|E, EE, EEE|火| | | |EEEE|火曜日| | | |EEEEE|火| | | |EEEEEE|火| |e|ローカル曜日|e|3| | | |ee|03| | | |eee|火| | | |eeee|火曜日| | | |eeeee|火| | | |eeeeee|火| |c|ローカル曜日 (単独)|c, cc|3| | | |ccc|火| | | |cccc|火曜日| | | |ccccc|火| | | |cccccc|火| |a|午前、午後|a, aa, aaa|午後| | | |aaaa|午後| | | |aaaaa|午後| |b|午前、午後、正午|b, bb, bbb|正午| | | |bbbb|正午| | | |bbbbb|正午| |B|時間帯表現|B, BB, BBB|夜| | | |BBBB|夜| | | |BBBBB|夜| |h|時間 (1~12)|h|7| | | |hh|07| |H|時間 (0~23)|H|0| | | |HH|00| |K|時間 (0~11)|K|0| | | |KK|00| |k|時間 (1~24)|k|24| | | |kk|24| |m|分|m|4| | | |mm|04| |s|秒|s|5| | | |ss|05| |X|タイムゾーン: ISO8601 基本 hm? Z あり|X|-08, +0530, Z| | | タイムゾーン: ISO8601 基本 hm Z あり|XX|-0800, Z| | | タイムゾーン: ISO8601 拡張 hm Z あり|XXX|-08:00, Z| | | タイムゾーン: ISO8601 基本 hms? Z あり|XXXX|-0800, -075258, Z| | | タイムゾーン: ISO8601 拡張 hms? Z あり|XXXXX|-08:00, -07:52:58, Z| |x| タイムゾーン: ISO8601 基本 hm? Z なし|x|-08, +0530| | | タイムゾーン: ISO8601 基本 hm Z なし|xx|-0800| | | タイムゾーン: ISO8601 拡張 hm Z なし|xxx|-08:00| | | タイムゾーン: ISO8601 基本 hms? Z なし|xxxx|-0800, -075258| | | タイムゾーン: ISO8601 拡張 hms? Z なし|xxxxx|-08:00, -07:52:58| |O| タイムゾーン: 短いローカライズされた GMT|O|GMT+9| | | タイムゾーン: 長いローカライズされた GMT (=ZZZZ)|OOOO|GMT+09:00| |z| タイムゾーン: 共通形式|z, zz, zzz|JST| | | |zzzz|日本標準時| | | |zzzzz| 日本標準時 | || | | | |'|テキスト用エスケープ|'|'| |' '|2つの一重引用符は 1つの一重引用符として解釈されます|' '|' '|
+| 記号  | 意味                                            | パターン          | 出力例                  |
+| --- | --------------------------------------------- | ------------- | -------------------- |
+| G   | 元号                                            | G, GG, GGG    | 西暦                   |
+|     |                                               | GGGG          | 西暦                   |
+|     |                                               | GGGGG         | A                    |
+| y   | 年                                             | yy            | 96                   |
+|     |                                               | y または yyyy    | 1996                 |
+| Y   | ウィークカレンダーの年                                   | Y             | 1997                 |
+| u   | 拡張年                                           | u             | 4601                 |
+| Q   | 四半期                                           | Q             | 2                    |
+|     |                                               | QQ            | 02                   |
+|     |                                               | QQQ           | Q2                   |
+|     |                                               | QQQQ          | 第2四半期                |
+|     |                                               | QQQQQ         | 2                    |
+| q   | 四半期 (単独)                                      | q             | 2                    |
+|     |                                               | qq            | 02                   |
+|     |                                               | qqq           | Q2                   |
+|     |                                               | qqqq          | 第2四半期                |
+|     |                                               | qqqqq         | 2                    |
+| M   | 月                                             | M             | 9                    |
+|     |                                               | MM            | 09                   |
+|     |                                               | MMM           | 9月                   |
+|     |                                               | MMMM          | 9月                   |
+|     |                                               | MMMMM         | S                    |
+| L   | 月 (単独)                                        | L             | 9                    |
+|     |                                               | LL            | 09                   |
+|     |                                               | LLL           | 9月                   |
+|     |                                               | LLLL          | 9月                   |
+|     |                                               | LLLLL         | S                    |
+| w   | week of year                                  | w             | 27                   |
+|     |                                               | ww            | 27                   |
+| d   | day in month                                  | d             | 2                    |
+|     |                                               | dd            | 2                    |
+| D   | day of year                                   | D             | 189                  |
+| E   | day of week                                   | E, EE, or EEE | Tue                  |
+|     |                                               | EEEE          | Tuesday              |
+|     |                                               | EEEEE         | T                    |
+|     |                                               | EEEEEE        | Tu                   |
+| e   | local day of week                             | e             | 2                    |
+|     |                                               | ee            | 02                   |
+|     |                                               | eee           | Tue                  |
+|     |                                               | eeee          | Tuesday              |
+|     |                                               | eeeee         | T                    |
+|     |                                               | eeeeee        | Tu                   |
+| c   | stand-alone local day of week                 | c or cc       | 2                    |
+|     |                                               | ccc           | Tue                  |
+|     |                                               | cccc          | Tuesday              |
+|     |                                               | ccccc         | T                    |
+|     |                                               | cccccc        | Tu                   |
+| a   | AM or PM                                      | a, aa, or aaa | PM [abbrev]          |
+|     |                                               | aaaa          | PM [wide]            |
+|     |                                               | aaaaa         | p                    |
+| b   | AM, PM, noon, midnight                        | b, bb, or bbb | mid.                 |
+|     |                                               | bbbb          | midnight             |
+|     |                                               | bbbbb         | md                   |
+| B   | flexible day periods                          | B, BB, or BBB | at night [abbrev]    |
+|     |                                               | BBBB          | at night [wide]      |
+|     |                                               | BBBBB         | at night [narrow]    |
+| h   | hour in am/pm (1~12)                          | h             | 7                    |
+|     |                                               | hh            | 07                   |
+| H   | hour in day (0~23)                            | H             | 0                    |
+|     |                                               | HH            | 00                   |
+| K   | hour in am/pm (0~11)                          | K             | 0                    |
+|     |                                               | KK            | 00                   |
+| k   | hour in day (1~24)                            | k             | 24                   |
+|     |                                               | kk            | 24                   |
+| m   | minute in hour                                | m             | 4                    |
+|     |                                               | mm            | 04                   |
+| s   | second in minute                              | s             | 5                    |
+|     |                                               | ss            | 05                   |
+| X   | Time Zone: ISO8601 basic hm?, with Z for 0    | X             | -08, +0530, Z        |
+|     | Time Zone: ISO8601 basic hm, with Z           | XX            | -0800, Z             |
+|     | Time Zone: ISO8601 extended hm, with Z        | XXX           | -08:00, Z            |
+|     | Time Zone: ISO8601 basic hms?, with Z         | XXXX          | -0800, -075258, Z    |
+|     | Time Zone: ISO8601 extended hms?, with Z      | XXXXX         | -08:00, -07:52:58, Z |
+| ○   | Time Zone: ISO8601 basic hm?, without Z for 0 | ○             | -08, +0530           |
+|     | Time Zone: ISO8601 basic hm, without Z        | xx            | -800                 |
+|     | Time Zone: ISO8601 extended hm, without Z     | xxx           | -08:00               |
+|     | Time Zone: ISO8601 basic hms?, without Z      | xxxx          | -0800, -075258       |
+|     | Time Zone: ISO8601 extended hms?, without Z   | xxxxx         | -08:00, -07:52:58    |
+| O   | Time Zone: short localized GMT                | O             | GMT-8                |
+|     | Time Zone: long localized GMT (=ZZZZ)         | OOOO          | GMT-08:00            |
+| z   | Time Zone: specific non-location              | z, zz, or zzz | -0800                |
+|     |                                               | zzzz          | GMT-08:00            |
+|     |                                               | zzzzz         | -08:00, -07:52:58, Z |
+|     |                                               |               |                      |
+| '   | escape for text                               | '             | '                    |
+| ' ' | two single quotes produce one                 | ' '           | ' '                  |
 
 
 
@@ -114,4 +172,4 @@ title: 日付と時間のフォーマット
 
 ## 参照
 
-カスタムの日付と時刻のフォーマットに関する詳細については、[このブログ記事](https://blog.4d.com/ja/tailored-customization-for-dates-and-times) を参照ください。 
+カスタムの日付と時刻のフォーマットに関する詳細については、[このブログ記事](https://blog.4d.com/ja/tailored-customization-for-dates-and-times) を参照ください。
