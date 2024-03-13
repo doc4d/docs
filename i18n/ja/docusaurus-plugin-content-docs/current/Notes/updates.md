@@ -13,6 +13,12 @@ title: リリースノート
 - [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try) エラー処理構文のサポート。
 - QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
 - Support of [restricted entity selections](../ORDA/entities.md#restricting-entity-selections).
+- Support of [shared classes](../Concepts/classes.md#shared-classes) and [singleton classes](../Concepts/classes.md#singleton-classes). New Class properties: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#isingleton), [`me`](../API/ClassClass.md#me)
+
+
+#### 動作の変更
+
+- The plug-ins *4D Internet Commands* and *4D for OCI* are no longer included in 4D installers. To get these plug-ins, you need to connect to the [**4D Product Download portal**](https://product-download.4d.com/).
 
 
 ## 4D v20 R4
