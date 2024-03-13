@@ -358,10 +358,10 @@ ORDAリクエストログは、ORDAリクエストとサーバーのレスポン
 このログの開始方法:
 
 ```4d
-    // リモートマシンにて
+    //on a remote machine
 SET DATABASE PARAMETER(Client Log Recording;1)  
-ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt")) 
-    // メモリに送ることもできます
+ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt"))
+    //can be also sent to memory
 SET DATABASE PARAMETER(Client Log Recording;0)  
 ```
 
@@ -408,11 +408,11 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 このログの開始方法:
 
 ```4d
-    // サーバーマシンにて
+    //on the server
 SET DATABASE PARAMETER(4D Server log recording;1)
-ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body) 
-    // srl... パラメーターは任意です
-SET DATABASE PARAMETER(4D Server log recording;0) 
+ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body)
+    //srl... parameter is optional
+SET DATABASE PARAMETER(4D Server log recording;0)
 ```
 
 :::note
@@ -430,7 +430,6 @@ SET DATABASE PARAMETER(4D Server log recording;0)
 | startTime      | 開始日時 (ISO 8601 フォーマット)                                                                   | "2019-05-28T08:25:12.346Z"                                |
 | duration       | サーバー処理時間 (マイクロ秒)                                                                         | 2500                                                      |
 | response       | サーバーレスポンスオブジェクト ([`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) で設定可能) | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
-| ipAddress      | ユーザー IPアドレス                                                                              | "192.168.1.5"                                             |
 | userName       | 4D ユーザーの名前                                                                               | "henry"                                                   |
 | systemUserName | マシン上でのユーザーのログイン名                                                                         | "hsmith"                                                  |
 | machineName    | ユーザーマシンの名前                                                                               | "PC of Henry Smith"                                       |
