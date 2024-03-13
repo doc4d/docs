@@ -1701,7 +1701,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
  | ck ascending  | Longint | 0 | 要素は昇順に並べられます (デフォルト) |
  | ck descending | Longint | 1 | 要素は降順に並べられます         |
 
- このシンタックスは、コレクション内のスカラー値のみを並べ替えます (オブジェクトやコレクションなどの他の型は並べ替えされないまま返されます)。
+ This syntax orders scalar values in the collection only (other element types such as objects or collections are returned with an internal order).
 
 コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
 
