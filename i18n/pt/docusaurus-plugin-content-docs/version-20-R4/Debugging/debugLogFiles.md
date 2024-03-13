@@ -355,10 +355,10 @@ O registo ORDA do lado do cliente regista cada pedido ORDA enviado a partir de u
 Como iniciar esse log:
 
 ```4d
-    //numa máquina remota
+    //on a remote machine
 SET DATABASE PARAMETER(Client Log Recording;1)  
-ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt")) 
-    //pode também ser enviado para a memória
+ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt"))
+    //can be also sent to memory
 SET DATABASE PARAMETER(Client Log Recording;0)  
 ```
 
@@ -405,11 +405,11 @@ O registo ORDA do lado do servidor regista cada pedido ORDA processado pelo serv
 Como iniciar esse log:
 
 ```4d
-    //no servidor
+    //on the server
 SET DATABASE PARAMETER(4D Server log recording;1)
-ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body) 
-    //srl... O parâmetro é opcional 
-SET DATABASE PARAMETER(4D Server log recording;0) 
+ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body)
+    //srl... parameter is optional
+SET DATABASE PARAMETER(4D Server log recording;0)
 ```
 
 :::note
@@ -427,7 +427,6 @@ Os campos abaixo são registrados para cada petição:
 | startTime      | Data e hora de início utilizando o formato ISO 8601                                                                      | "2019-05-28T08:25:12.346Z"                              |
 | duration       | Duração do processamento do servidor em microssegundos (µ)                                                               | 2500                                                    |
 | response       | Objeto de resposta do servidor, pode ser configurado em [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...] |
-| ipAddress      | Endereço IP do usuário                                                                                                   | "192.168.1.5"                                           |
 | userName       | Nome do usuário 4D                                                                                                       | "henry"                                                 |
 | systemUserName | Nome de login do usuário na máquina                                                                                      | "hsmith"                                                |
 | machineName    | Nome da máquina do utilizador                                                                                            | "PC of Henry Smith"                                     |
