@@ -67,7 +67,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 
 #### ファイルメニューとツールバー
 
-4D 開発の **ファイル** メニューまたはツールバーより **新規 ＞ クラス...** を選択することで、開いているプロジェクトにクラスファイルを新規作成することができます。
+You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
 
 **Ctrl+Shift+Alt+k** ショートカットも使用できます。
 
