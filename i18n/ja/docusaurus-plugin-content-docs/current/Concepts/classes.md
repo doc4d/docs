@@ -15,7 +15,7 @@ title: クラス
 たとえば、次のように `Person` クラスを定義した場合:
 
 ```4d  
-//Class: Person.4dm
+// クラス: Person.4dm
 Class constructor($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
  This.lastName:=$lastname
@@ -70,7 +70,7 @@ Project フォルダー Project Sources Classes Polygon.4dm
 
 #### ファイルメニューとツールバー
 
-You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
+4D Developer の **ファイル** メニューまたはツールバーより **新規 ＞ クラス...** を選択することで、開いているプロジェクトにクラスファイルを新規作成することができます。
 
 **Ctrl+Shift+Alt+k** ショートカットも使用できます。
 
@@ -93,7 +93,7 @@ You can create a new class file for the project by selecting **New > Class...** 
   - クラスメソッドはコードのブロックです
   - オブジェクトメンバーに対する **定義に移動** 操作はクラスの Function 宣言を探します。例: "$o.f()" の場合、"Function f" を見つけます。
   - クラスのメソッド宣言に対する **参照箇所を検索** 操作は、そのメソッドがオブジェクトメンバーとして使われている箇所を探します。例: "Function f" の場合 "$o.f()" を見つけます。
-- In the Runtime explorer and Debugger, class functions are displayed with the `<ClassName>` constructor or `<ClassName>.<FunctionName>` format.
+- ランタイムエクスプローラーおよびデバッガーにおいて、クラスメソッドは `<ClassName>` コンストラクターまたは `<ClassName>.<FunctionName>` 形式で表示されます。
 
 ## クラスストア
 
@@ -138,7 +138,7 @@ $instance:=cs.myClass.new()
 
 |
 
-The `4D` command <!-- REF #_command_.4D.Summary -->returns the class store for available built-in 4D classes<!-- END REF -->。 [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
+`4D` コマンドは、 <!-- REF #_command_.4D.Summary -->ビルトイン 4Dクラスのクラスストアを返します<!-- END REF -->。 [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
 
 #### 例題
 
@@ -154,8 +154,8 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 - [`name`](API/ClassClass.md#name) 文字列
 - [`superclass`](API/ClassClass.md#superclass) オブジェクト (無い場合は null)
-- [`new()`](API/ClassClass.md#new) function, allowing to instantiate class objects
-- [`isShared`](API/ClassClass.md#isshared) property, true if the class is [shared](#shared-classes)
+- [`new()`](API/ClassClass.md#new) 関数 (Class オブジェクトをインスタンス化します)
+- [`isShared`](API/ClassClass.md#isshared) プロパティ ([共有](#共有クラス)クラスの場合に true)
 - [`isSingleton`](API/ClassClass.md#issingleton) property, true if the class defines a [singleton](#singleton-classes).
 - [`me`](API/ClassClass.md#me) property, allowing to instantiate and access [singletons](#singleton-classes).
 
@@ -730,7 +730,7 @@ $val:=$o.f() //8
 `object` が `class`、またはその子クラスに属していれば、`OB Instance of` は `true` を返します。それ以外の場合は `false` を返します。
 
 
-## Shared classes
+## 共有クラス
 
 You can create **shared classes**. A shared class is a user class that instantiates a [shared object](shared.md) when the [`new()`](../API/ClassClass.md#new) function is called on the class. A shared class can only create shared objects.
 
