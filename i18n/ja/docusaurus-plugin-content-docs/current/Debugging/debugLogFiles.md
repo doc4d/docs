@@ -358,10 +358,10 @@ ORDAリクエストログは、ORDAリクエストとサーバーのレスポン
 このログの開始方法:
 
 ```4d
-    //on a remote machine
+    // リモートマシンにて
 SET DATABASE PARAMETER(Client Log Recording;1)  
 ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt"))
-    //can be also sent to memory
+    // メモリに送ることもできます
 SET DATABASE PARAMETER(Client Log Recording;0)  
 ```
 
@@ -408,10 +408,10 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 このログの開始方法:
 
 ```4d
-    //on the server
+    // サーバーマシンにて
 SET DATABASE PARAMETER(4D Server log recording;1)
 ds.startRequestLog(File("/PACKAGE/Logs/ordaRequests.jsonl");srl log response without body)
-    //srl... parameter is optional
+    // srl... パラメーターは任意です
 SET DATABASE PARAMETER(4D Server log recording;0)
 ```
 
