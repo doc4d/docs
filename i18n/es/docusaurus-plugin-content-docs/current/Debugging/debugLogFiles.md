@@ -431,6 +431,7 @@ Los siguientes campos se registran para cada petición:
 | startTime        | Fecha y hora de inicio en formato ISO 8601                                                                               | "2019-05-28T08:25:12.346Z"                                |
 | duration         | Duración del procesamiento del servidor en microsegundos (µ)                                                             | 2500                                                      |
 | response         | Objeto de respuesta del servidor, puede configurarse en [`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
+| ipAddress        | Dirección IP del usuario                                                                                                 | "192.168.1.5"                                             |
 | userName         | Nombre del usuario 4D                                                                                                    | "henry"                                                   |
 | systemUserName   | Nombre de inicio de sesión del usuario en la máquina                                                                     | "hsmith"                                                  |
 | machineName      | Nombre de la máquina del usuario                                                                                         | "PC of Henry Smith"                                       |
