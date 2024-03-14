@@ -170,7 +170,7 @@ Function createCompany($name : Text; $logo : 4D.File)
     $company.logo:=$logo 
         // パスを使った代入
     $company.datablob:="/RESOURCES/"+$name+"/data.bin"
-    $company.save() 
+    $company.save()
 ```
 
 属性への代入がどのようにされたか (データそのもの、またはファイルの参照) にかかわらず、属性に対する読み取りアクセスはユーザーにとって透過的です。
@@ -326,7 +326,7 @@ $highSal:=ds.Employee.query("salary >= :1"; 1000000)
     // データクラスに対するクエリによって生成されたため $highSal は共有可能です
 $comp:=$highSal.employer // $highSal が共有可能なため $comp も共有可能です
 
-$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy() 
+$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy()
     // オプション無しの copy( ) によって生成されたため $lowSal は追加可能です
 $comp2:=$lowSal.employer // $lowSal が追加可能なため $comp2 も追加可能です
 ```
@@ -371,7 +371,7 @@ CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
 
 `sendMails` メソッドのコードです:
 
-```4d 
+```4d
 
  #DECLARE ($paid : cs.InvoicesSelection; $unpaid : cs.InvoicesSelection)
  var $invoice : cs.InvoicesEntity
@@ -441,7 +441,7 @@ ORDAでは、あらゆるデータクラスにおいて、エンティティへ�
 
 :::info
 
-フィルターは **エンティティ** に対して適用されます。 **データクラス** そのもの、または特定の **属性** へのアクセスを制限するには、[セッション権限](../privileges.md) の利用がより適切です。
+フィルターは **エンティティ** に対して適用されます。 **データクラス** そのもの、または特定の **属性** へのアクセスを制限するには、[セッション権限](privileges.md) の利用がより適切です。
 
 :::
 
@@ -507,7 +507,7 @@ Function event restrict() : cs.CustomersSelection
 
     Else // クライアントサーバーの場合
         return This.query("sales.userName = :1"; Current user)
-    End if 
+    End if
 ```
 
 
@@ -539,11 +539,11 @@ Function event restrict() : cs.CustomersSelection
 | [Create entity selection](../API/EntitySelectionClass.md#create-entity-selection) |                                                                                          |
 
 
-Other ORDA functions accessing data do not directly trigger the filter, but they nevertheless benefit from it. For example, the [`entity.next()`](../API/EntityClass.md#next) function will return the next entity in the already-filtered entity selection. On the other hand, if the entity selection is not filtered, [`entity.next()`](../API/EntityClass.md#next) will work on non-filtered entities.
+その他の ORDA関数によるデータアクセスはフィルターを直接的にトリガーしないものの、その恩恵を受けることがあります。 たとえば、[`entity.next()`](../API/EntityClass.md#next) 関数は、すでにフィルタリングされたエンティティセレクションにおける次のエンティティを返します。 一方、制限されていないエンティティセレクションの場合、[`entity.next()`](../API/EntityClass.md#next) はフィルタリングされていないエンティティ群に対して動作します。
 
 :::note
 
-If there is an error in the filter at runtime, it is thrown as if the error came from the ORDA function itself.
+ランタイムにおいてフィルターにエラーがある場合、そのエラーは ORDA関数そのものから発生したかのようにスローされます。
 
 :::
 
