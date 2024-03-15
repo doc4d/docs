@@ -11,8 +11,14 @@ title: リリースノート
 #### ハイライト
 
 - [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try) エラー処理構文のサポート。
-- QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
-- Support of [restricted entity selections](../ORDA/entities.md#restricting-entity-selections).
+- QUICネットワークレイヤーは [ブロードキャスト](../Desktop/clientServer.md#リモートプロジェクトを開く) に対応しました。
+- [制限付エンティティセレクション](../ORDA/entities.md#制限付エンティティセレクション) をサポート。
+- [共有クラス](../Concepts/classes.md#共有クラス) と [シングルトンクラス](../Concepts/classes.md#シングルトンクラス) をサポート。 新しいクラスプロパティ: [`.isShared`](../API/ClassClass.md#isshared), [`.isSingleton`](../API/ClassClass.md#isingleton), [`.me`](../API/ClassClass.md#me)
+
+
+#### 動作の変更
+
+- *4D Internet Commands* および *4D for OCI* プラグインは、4Dインストーラーに含まれなくなりました。 これらのプラグインを入手するには、[**4D製品ダウンロードポータル**](https://product-download.4d.com/) に接続する必要があります。
 
 
 ## 4D v20 R4
