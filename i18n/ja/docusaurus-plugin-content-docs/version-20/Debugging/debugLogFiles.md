@@ -429,6 +429,7 @@ SET DATABASE PARAMETER(4D Server log recording;0)
 | startTime      | 開始日時 (ISO 8601 フォーマット)                                                                   | "2019-05-28T08:25:12.346Z"                                |
 | duration       | サーバー処理時間 (マイクロ秒)                                                                         | 2500                                                      |
 | response       | サーバーレスポンスオブジェクト ([`.startRequestLog()`](../API/DataStoreClass.md#startrequestlog) で設定可能) | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
+| ipAddress      | ユーザー IPアドレス                                                                              | "192.168.1.5"                                             |
 | userName       | 4D ユーザーの名前                                                                               | "henry"                                                   |
 | systemUserName | マシン上でのユーザーのログイン名                                                                         | "hsmith"                                                  |
 | machineName    | ユーザーマシンの名前                                                                               | "PC of Henry Smith"                                       |
