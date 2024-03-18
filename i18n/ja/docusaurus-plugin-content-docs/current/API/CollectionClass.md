@@ -1555,11 +1555,11 @@ $c2:=$c.flatMap($f; $c.sum())
 
 
 <!-- REF #collection.includes().Params -->
-| 引数        | タイプ     |    | 説明                                            |
-| --------- | ------- |:--:| --------------------------------------------- |
-| toSearch  | 式       | -> | コレクション内を検索する式                                 |
-| startFrom | Integer | -> | 検索を開始するインデックス                                 |
-| 戻り値       | Boolean | <- | True if *toSearch* is found in the collection |
+| 引数        | タイプ     |    | 説明                             |
+| --------- | ------- |:--:| ------------------------------ |
+| toSearch  | 式       | -> | コレクション内を検索する式                  |
+| startFrom | Integer | -> | 検索を開始するインデックス                  |
+| 戻り値       | Boolean | <- | *toSearch* がコレクションにある場合は true。 |
 <!-- END REF -->
 
 
