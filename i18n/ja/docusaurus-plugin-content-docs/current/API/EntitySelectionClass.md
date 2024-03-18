@@ -291,11 +291,11 @@ $result:=$sel[0].lock() //動作しません
 
 
 <!-- REF #EntitySelectionClass.add().Params -->
-| 引数              | タイプ                |    | 説明                                                                 |
-| --------------- | ------------------ |:--:| ------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | エンティティセレクションに追加するエンティティ                                            |
-| entitySelection | 4D.EntitySelection | -> | エンティティセレクションに追加するエンティティセレクション                                      |
-| 戻り値             | 4D.EntitySelection | -> | Entity selection including the added *entity* or *entitySelection* |
+| 引数              | タイプ                |    | 説明                                                  |
+| --------------- | ------------------ |:--:| --------------------------------------------------- |
+| entity          | 4D.Entity          | -> | エンティティセレクションに追加するエンティティ                             |
+| entitySelection | 4D.EntitySelection | -> | エンティティセレクションに追加するエンティティセレクション                       |
+| 戻り値             | 4D.EntitySelection | -> | 追加した *entity* または *entitySelection* を含むエンティティセレクション |
 <!-- END REF -->
 
 
