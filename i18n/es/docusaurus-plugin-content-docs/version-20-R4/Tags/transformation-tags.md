@@ -212,7 +212,7 @@ _getNames_ devuelve una colección de cadenas. The method has been declared as "
 
 #### Ejemplo con una colección de objetos
 
-_getSalesPersons_ returns a collection of objects.
+_getSalesPersons_ devuelve una colección de objetos.
 
 ```html
     <table class="table">    
@@ -233,11 +233,11 @@ _getSalesPersons_ returns a collection of objects.
 
 ### `<!--#4DEACH entity in entitySelection-->`
 
-Esta sintaxis itera en cada _entidad_ de la _entitySelection_. The code portion located between `<!--#4DEACH -->` and `<!--#4DENDEACH-->` is repeated for each entity of the entity selection.
+Esta sintaxis itera en cada _entidad_ de la _entitySelection_. La parte de código situada entre `<!--#4DEACH -->` y `<!--#4DENDEACH-->` se repite para cada entidad de la selección de entidades.
 
-The _entity_ parameter is an object variable of the entity selection class.
+El parámetro _entity_ es una variable objeto de la clase de selección de entidades.
 
-El número de bucles se basa en el número de entidades presentes en la selección de entidades. At each iteration, the _entity_ object variable is automatically filled with the matching entity of the entity selection.
+El número de bucles se basa en el número de entidades presentes en la selección de entidades. En cada iteración, la variable del objeto _entity_ se llena automáticamente con la entidad coincidente de la selección de entidades.
 
 #### Ejemplo con una tabla html
 
@@ -272,15 +272,15 @@ TEXT TO DOCUMENT("customers.txt"; $output)
 
 ### `<!--#4DEACH property in object-->`
 
-This syntax iterates on each _property_ of the _object_. The code portion located between `<!--#4DEACH -->` and `<!--#4DENDEACH-->` is repeated for each property of the object.
+Esta sintaxis iterará en cada _propiedad_ del _objeto_. La parte de código situada entre `<!--#4DEACH -->` y `<!--#4DENDEACH-->` se repite para cada propiedad del objeto.
 
-The _property_ parameter is a text variable automatically filled with the name of the currently processed property.
+El parámetro _property_ es una variable texto que se llena automáticamente con el nombre de la propiedad actualmente procesada.
 
 Las propiedades del objeto se procesan según su orden de creación. Durante el bucle, se pueden añadir o eliminar propiedades en el objeto, sin modificar el número de bucles que quedarán en función del número original de propiedades del objeto.
 
 #### Ejemplo con las propiedades de un objeto
 
-_getGamers_ is a project method that returns an object like ("Mary"; 10; "Ann"; 20; "John"; 40) to figure gamer scores.
+_getGamers_ es un método proyecto que devuelve un objeto como ("María"; 10; "Ana"; 20; "Juan"; 40) para calcular la puntuación de los jugadores.
 
 ```html
     <table class="table">    
@@ -305,20 +305,20 @@ _getGamers_ is a project method that returns an object like ("Mary"; 10; "Ann"; 
 
 #### Sintaxis alternativa: `$4DEVAL(expression)`
 
-La etiqueta `4DEVAL` permite evaluar una variable o expresión 4D. Like the [`4DHTML`](#4dhtml) tag, `4DEVAL` does not escape HTML characters when returning text. However, unlike `4DHTML` or [`4DTEXT`](#4dtext), `4DEVAL` allows you to execute any valid 4D statement, including assignments and expressions that do not return any value.
+La etiqueta `4DEVAL` permite evaluar una variable o expresión 4D. Al igual que la etiqueta [`4DHTML`](#4dhtml), `4DEVAL` no escapa caracteres HTML cuando devuelve texto. Sin embargo, a diferencia de `4DHTML` o [`4DTEXT`](#4dtext), `4DEVAL` permite ejecutar cualquier instrucción 4D válida, incluyendo asignaciones y expresiones que no devuelven ningún valor.
 
 Por ejemplo, puede ejecutar:
 
 ```
- $input:="<!--#4DEVAL a:=42-->" //assignment
- $input:=$input+"<!--#4DEVAL a+1-->" //calculation
- PROCESS 4D TAGS($input;$output)
+ $input:="<!--#4DEVAL a:=42-->" //asignación
+ $input:=$input+"<!--#4DEVAL a+1-->" //cálculo
+ PROCESO 4D TAGS($input;$output)
   //$output = "43"
 ```
 
-In case of an error during interpretation, the text inserted will be in the form: `<!--#4DEVAL expr-->: ## error # error code`.
+En caso de error durante la interpretación, el texto insertado tendrá la forma: `<!--#4DEVAL expr-->: ## error # código de error`.
 
-> For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
+> Por razones de seguridad, se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
 ## 4DHTML
 
@@ -326,7 +326,7 @@ In case of an error during interpretation, the text inserted will be in the form
 
 #### Sintaxis alternativa: `$4DHTML(expression)`
 
-Just like the `4DTEXT` tag, this tag lets you assess a 4D variable or expression that returns a value, and insert it as an HTML expression. Unlike the `4DTEXT` tag, this tag does not escape HTML special characters (e.g. ">").
+Al igual que la etiqueta `4DTEXT`, esta etiqueta le permite evaluar una variable o expresión 4D que devuelve un valor, e insertarla como una expresión HTML. A diferencia de la etiqueta `4DTEXT`, esta etiqueta no escapa a los caracteres especiales de HTML (por ejemplo, ">").
 
 Por ejemplo, aquí están los resultados del procesamiento de la variable de texto 4D myvar con las etiquetas disponibles:
 
@@ -335,21 +335,21 @@ Por ejemplo, aquí están los resultados del procesamiento de la variable de tex
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&amp;lt;B&amp;gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`                       |
 
-In case of an interpretation error, the inserted text will be `<!--#4DHTML myvar--> : ## error # error code`.
+En caso de error de interpretación, el texto insertado será `<!--#4DHTML myvar-->: ## error # código de error`.
 
-> For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
+> Por razones de seguridad, se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
 ## 4DIF, 4DELSE, 4DELSEIF y 4DENDIF
 
-#### Syntax: `<!--#4DIF expression-->` {`<!--#4DELSEIF expression2-->...<!--#4DELSEIF expressionN-->`} {`<!--#4DELSE-->`} `<!--#4DENDIF-->`
+#### Sintaxis: `<!--#4DIF expression-->` {`<!--#4DELSEIF expression2-->...<!--#4DELSEIF expressionN-->`} {`<!--#4DELSE-->`} `<!--#4DENDIF-->`
 
-Used with the `<!--#4DELSEIF-->` (optional), `<!--#4DELSE-->` (optional) and `<!--#4DENDIF-->` comments, the `<!--#4DIF expression-->` comment offers the possibility to execute portions of code conditionally.
+Utilizado con los comentarios `<!--#4DELSEIF-->` (opcional), `<!--#4DELSE-->` (opcional) y `<!--#4DENDIF-->`, el comentario `<!--#4DIF expression-->` ofrece la posibilidad de ejecutar porciones de código condicionalmente.
 
-The _expression_ parameter can contain any valid 4D expression returning a Boolean value. Debe indicarse entre paréntesis y cumplir con las reglas de sintaxis de 4D.
+El parámetro _expression_ puede contener toda expresión 4D válida que devuelva un valor booleano. Debe indicarse entre paréntesis y cumplir con las reglas de sintaxis de 4D.
 
-`<!--#4DIF expression-->` ... `<!--#4DENDIF-->` blocks can be nested in several levels. Like in 4D, each `<!--#4DIF expression-->` must match a `<!--#4DENDIF-->`.
+`<!--#4DIF expression-->` ... Los bloques `<!--#4DENDIF-->` pueden anidarse en varios niveles. Como en 4D, cada `<!--#4DIF expression-->` debe coincidir con un `<!--#4DENDIF-->`.
 
-In case of an interpretation error, the text "`<!--#4DIF expression-->`: A Boolean expression was expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`. Likewise, if there are not as many `<!--#4DENDIF-->` as `<!--#4DIF -->`, the text "`<!--#4DIF expression-->`: 4DENDIF expected" is inserted instead of the contents located between `<!--#4DIF -->` and `<!--#4DENDIF-->`.
+En caso de error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: se esperaba una expresión booleana" se inserta en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. Asimismo, si no hay tantos `<!--#4DENDIF-->` como `<!--#4DIF -->`, se inserta el texto "`<!--#4DIF expression-->`: 4DENDIF expected" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`.
 
 Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`).
 You can use a `<!--#4DELSE-->` tag after the last `<!--#4DELSEIF-->`. If all the conditions are false, the statements following the `<!--#4DELSE-->` are executed.
@@ -433,9 +433,9 @@ En _path_, coloque la ruta que va al documento a incluir. Warning: In the case o
 
 > You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. However, the `<!--#4DINCLUDE path-->` calls can be made only at one level. This means that, for example, you cannot insert `<!--#4DINCLUDE mydoc3.html-->` in the _mydoc2.html_ body page, which is called by `<!--#4DINCLUDE mydoc2-->` inserted in _mydoc1.html_. Además, 4D verifica que las inclusiones no son recursivas.
+The number of `<!--#4DINCLUDE path-->` within a page is unlimited. Sin embargo, las llamadas `<!--#4DINCLUDE path-->` sólo pueden hacerse a un nivel. Esto significa que, por ejemplo, no puede insertar `<!--#4DINCLUDE mydoc3.html-->` en el cuerpo de la página _mydoc2.html_, que es llamado por `<!--#4DINCLUDE mydoc2-->` insertado en _mydoc1.html_. Además, 4D verifica que las inclusiones no son recursivas.
 
-In case of error, the inserted text is "`<!--#4DINCLUDE path-->` :The document cannot be opened".
+En caso de error, el texto insertado es "`<!--#4DINCLUDE path-->` :El documento no puede abrirse".
 
 Ejemplos:
 
@@ -447,11 +447,11 @@ Ejemplos:
 
 ## 4DLOOP y 4DENDLOOP
 
-#### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
+#### Sintaxis: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
 
-Este comentario permite la repetición de una porción de código siempre que se cumpla la condición. The portion is delimited by `<!--#4DLOOP-->` and `<!--#4DENDLOOP-->`.
+Este comentario permite la repetición de una porción de código siempre que se cumpla la condición. La parte está delimitada por `<!--#4DLOOP-->` y `<!--#4DENDLOOP-->`.
 
-`<!--#4DLOOP condition-->` ... `<!--#4DENDLOOP-->` blocks can be nested. Like in 4D, each `<!--#4DLOOP condition-->` must match a `<!--#4DENDLOOP-->`.
+`<!--#4DLOOP condition-->` ... Los bloques `<!--#4DENDLOOP-->` pueden anidarse. Como en 4D, cada `<!--#4DLOOP condition-->` debe coincidir con un `<!--#4DENDLOOP-->`.
 
 Hay cinco tipos de condiciones:
 
@@ -459,7 +459,7 @@ Hay cinco tipos de condiciones:
 
 Esta sintaxis hace un bucle para cada registro de la tabla selección actual en el proceso actual. La parte de código situada entre los dos comentarios se repite para cada registro de selección actual.
 
-> When the `4DLOOP` tag is used with a table, records are loaded in "Read only" mode.
+> Cuando se utiliza la etiqueta `4DLOOP` con una tabla, los registros se cargan en modo "Sólo lectura".
 
 El código siguiente:
 
@@ -504,11 +504,11 @@ El siguiente ejemplo de código:
 
 ### `<!--#4DLOOP method-->`
 
-This syntax makes a loop as long as the method returns `True`. El método toma un tipo de parámetro Long Integer. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns `True`.
+Esta sintaxis hace un bucle mientras el método devuelva `True`. El método toma un tipo de parámetro Long Integer. Primero se llama con el valor 0 para permitir una etapa de inicialización (si es necesario); luego se llama con los valores 1, luego 2, luego 3 y así sucesivamente, siempre que devuelva `True`.
 
-For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). Si la autenticación es correcta, se procederá a la etapa de inicialización.
+Por razones de seguridad, dentro de un proceso Web, el método base `On Web Authentication` puede ser llamado una vez justo antes de la etapa de inicialización (ejecución del método con 0 como parámetro). Si la autenticación es correcta, se procederá a la etapa de inicialización.
 
-`C_BOOLEAN($0)` and `C_LONGINT($1)` MUST be declared within the method for compilation purposes.
+`C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE ser declarado dentro del método para propósitos de compilación.
 
 El siguiente ejemplo de código:
 
@@ -537,7 +537,7 @@ El método `my_method` puede ser el siguiente:
 ```4d
  C_LONGINT($1)
  C_BOOLEAN($0)
- If($1=0) `Initialisation
+ If($1=0) `Inicialización
     $0:=True
  Else
     If($1<50)
@@ -545,14 +545,14 @@ El método `my_method` puede ser el siguiente:
        var:=...
        $0:=True
     Else
-       $0:=False `Stops the loop
+       $0:=False `Detiene el bucle
     End if
  End if
 ```
 
 ### `<!--#4DLOOP expression-->`
 
-With this syntax, the `4DLOOP` tag makes a loop as long as the _expression_ returns `True`. La expresión puede ser cualquier expresión booleana válida y debe contener una parte variable a evaluar en cada bucle para evitar bucles infinitos.
+Con esta sintaxis, la etiqueta `4DLOOP` hace un bucle mientras _expression_ devuelva `True`. La expresión puede ser cualquier expresión booleana válida y debe contener una parte variable a evaluar en cada bucle para evitar bucles infinitos.
 
 Por ejemplo, el siguiente código:
 
@@ -577,9 +577,9 @@ Por ejemplo, el siguiente código:
 
 ### `<!--#4DLOOP pointerArray-->`
 
-In this case, the `4DLOOP` tag works like it does with an array: it makes a loop for each element of the array referenced by the pointer. El elemento actual del array se incrementa cada vez que se repite la porción de código.
+En este caso, la etiqueta `4DLOOP` funciona como lo hace con un array: hace un bucle por cada elemento del array referenciado por el puntero. El elemento actual del array se incrementa cada vez que se repite la porción de código.
 
-This syntax is useful when you pass an array pointer as a parameter to the `PROCESS 4D TAGS` command.
+Esta sintaxis es útil cuando se pasa un puntero array como parámetro al comando `PROCESS 4D TAGS`.
 
 Ejemplo:
 
@@ -595,7 +595,7 @@ Ejemplo:
   // $output = "elements = hello world "
 ```
 
-In case of an interpretation error, the text "`<!--#4DLOOP expression-->`: description" is inserted instead of the contents located between `<!--#4DLOOP -->` and `<!--#4DENDLOOP-->`.
+En caso de error de interpretación, se inserta el texto "`<!--#4DLOOP expression-->`: descripción" en lugar del contenido situado entre `<!--#4DLOOP -->` y `<!--#4DENDLOOP-->`.
 
 Se pueden mostrar los siguientes mensajes:
 
@@ -605,31 +605,31 @@ Se pueden mostrar los siguientes mensajes:
 - El método no existe;
 - Error de sintaxis (cuando el método se está ejecutando);
 - Error de acceso (no tiene los privilegios de acceso adecuados para acceder a la tabla o al método).
-- 4DENDLOOP expected (the `<!--#4DENDLOOP-->` number does not match the `<!--#4DLOOP -->`).
+- 4DENDLOOP esperado (el número `<!--#4DENDLOOP-->` no coincide con el `<!--#4DLOOP -->`).
 
 ## 4DSCRIPT/
 
 #### Sintaxis: `<!--#4DSCRIPT/MethodName/MyParam-->`
 
-The `4DSCRIPT` tag allows you to execute 4D methods when processing the template. The presence of the `<!--#4DSCRIPT/MyMethod/MyParam-->` tag as an HTML comment launches the execution of the `MyMethod` method with the `Param` parameter as a string in `$1`.
+La etiqueta `4DSCRIPT` permite ejecutar métodos 4D al procesar la plantilla. La presencia de la etiqueta `<!--#4DSCRIPT/MyMethod/MyParam-->` como comentario HTML lanza la ejecución del método `MyMethod` con el parámetro `Param` como cadena en `$1`.
 
-> If the tag is called in the context of a Web process, when the page is loaded, 4D calls the `On Web Authentication` database method (if it exists). Si devuelve True, 4D ejecuta el método.
+> Si se llama a la etiqueta en el contexto de un proceso Web, cuando se carga la página, 4D llama al método base `On Web Authentication` (si existe). Si devuelve True, 4D ejecuta el método.
 
-El método debe devolver texto en `$0`. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the `4DHTML` tag).
+El método debe devolver texto en `$0`. Si la cadena comienza con el caracter de código 1, se considera HTML (el mismo principio se aplica a la etiqueta `4DHTML`).
 
-For example, let’s say that you insert the following comment `“Today is <!--#4DSCRIPT/MYMETH/MYPARAM-->”` into a template Web page. When loading the page, 4D calls the `On Web Authentication` database method, then calls the `MYMETH` method and passes the string “/MYPARAM” as the parameter `$1`. The method returns text in $0 (for example "12/31/21"); the expression "`Today is <!--#4DSCRIPT/MYMETH/MYPARAM––>`" therefore becomes "Today is 12/31/21".
+Por ejemplo, supongamos que inserta el siguiente comentario `"Hoy es <!--#4DSCRIPT/MYMETH/MYPARAM-->"` en una plantilla de página Web. Al cargar la página, 4D llama al método base `On Web Authentication`, luego llama al método `MYMETH` y pasa la cadena "/MYPARAM" como parámetro `$1`. El método devuelve texto en $0 (por ejemplo "31/12/21"); la expresión "`Hoy es <!--#4DSCRIPT/MYMETH/MYPARAM-->`" se convierte por tanto en "Hoy es 31/12/21".
 
 El método `MYMETH` es el siguiente:
 
 ```4d
   //MYMETH
- C_TEXT($0;$1) //These parameters must always be declared
+ C_TEXT($0;$1) //Estos parámetros deben declararse siempre
  $0:=String(Current date)
 ```
 
-> A method called by `4DSCRIPT` must not call interface elements (`DIALOG`, `ALERT`, etc.).
+> Un método llamado por `4DSCRIPT` no debe llamar a elementos de la interfaz (`DIALOG`, `ALERT`, etc.).
 
-Como 4D ejecuta los métodos en su orden de aparición, es absolutamente posible llamar a un método que defina el valor de muchas variables a las que se hace referencia más adelante en el documento, sea cual sea el modo que esté utilizando. You can insert as many `<!--#4DSCRIPT...-->` comments as you want in a template.
+Como 4D ejecuta los métodos en su orden de aparición, es absolutamente posible llamar a un método que defina el valor de muchas variables a las que se hace referencia más adelante en el documento, sea cual sea el modo que esté utilizando. Puede insertar tantos comentarios `<!--#4DSCRIPT...-->` como desee en una plantilla.
 
 ## 4DTEXT
 
@@ -637,19 +637,19 @@ Como 4D ejecuta los métodos en su orden de aparición, es absolutamente posible
 
 #### Sintaxis alternativa: `$4DTEXT(expression)`
 
-The tag `<!--#4DTEXT expression-->` allows you to insert a reference to a 4D variable or expression returning a value. Por ejemplo, si se escribe (en una página HTML):
+La etiqueta `<!--#4DTEXT expression-->` permite insertar una referencia a una variable 4D o a una expresión que devuelva un valor. Por ejemplo, si se escribe (en una página HTML):
 
 ```html
-<P>Welcome to <!--#4DTEXT vtSiteName-->!</P>
+<P>Bienvenido a <!--#4DTEXT vtSiteName-->!</P>
 ```
 
-The value of the 4D variable `vtSiteName` will be inserted in the HTML page when it is sent. This value is inserted as simple text, special HTML characters such as ">" are automatically escaped.
+El valor de la variable 4D `vtSiteName` se insertará en la página HTML cuando se envíe. Este valor se inserta como texto simple, los caracteres HTML especiales como ">" se escapan automáticamente.
 
-También puede insertar expresiones 4D. You can for example directly insert the contents of a field (`<!--#4DTEXT [tableName]fieldName-->`), an array element (`<!--#4DTEXT tabarr{1}-->`) or a method returning a value (`<!--#4DTEXT mymethod-->`). La conversión de las expresiones sigue las mismas reglas que las de las variables. Además, la expresión debe cumplir con las reglas de sintaxis 4D.
+También puede insertar expresiones 4D. Por ejemplo, puede insertar directamente el contenido de un campo (`<!--#4DTEXT [tableName]fieldName-->`), un elemento de array (`<!--#4DTEXT tabarr{1}-->`) o un método que devuelva un valor (`<!--#4DTEXT mymethod-->`). La conversión de las expresiones sigue las mismas reglas que las de las variables. Además, la expresión debe cumplir con las reglas de sintaxis 4D.
 
-> For security reasons, it is recommended to use this tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
+> Por razones de seguridad, se recomienda utilizar esta etiqueta cuando se procesen datos introducidos desde fuera de la aplicación, con el fin de evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
-In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT myvar--> : ## error # error code`.
+En caso de error de evaluación, el texto insertado aparecerá como `<!--#4DTEXT myvar-->: ## error # código de error`.
 
 - Debe utilizar las variables proceso.
 - Puede mostrar el contenido de un campo imagen. Sin embargo, no es posible mostrar el contenido de un elemento del array de imágenes.
@@ -686,9 +686,9 @@ en lugar de:
 <!--#4DEVAL(UserName)-->
 ```
 
-La principal ventaja de esta sintaxis es que permite escribir plantillas compatibles con XML. Algunos desarrolladores 4D necesitan crear y validar plantillas basadas en XML utilizando herramientas de análisis sintáctico XML estándar. Since the "<" character is invalid in an XML attribute value, it was not possible to use the "`<!-- -->`" syntax of 4D tags without breaking the document syntax. On the other hand, escaping the "<" character will prevent 4D from interpreting the tags correctly.
+La principal ventaja de esta sintaxis es que permite escribir plantillas compatibles con XML. Algunos desarrolladores 4D necesitan crear y validar plantillas basadas en XML utilizando herramientas de análisis sintáctico XML estándar. Dado que el caracter "<" no es válido en un valor de atributo XML, no era posible utilizar la sintaxis "`<!-- -->`" de las etiquetas 4D sin romper la sintaxis del documento. Por otro lado, no mencionar el carácter "<" impide que 4D interprete las etiquetas correctamente.
 
-For example, the following code would cause an XML parsing error because of the first "<" character in the attribute value:
+Por ejemplo, el siguiente código provocaría un error de análisis XML debido al primer caracter "<" en el valor del atributo:
 
 ```xml
 <line x1="<!--#4DEVAL $x-->" y1="<!--#4DEVAL $graphY1-->"/>
@@ -700,37 +700,37 @@ Utilizando la sintaxis $, el siguiente código es validado por el analizador:
 <line x1="$4DEVAL($x)" y1="$4DEVAL($graphY1)"/>
 ```
 
-Note that `$4dtag` and `<--#4dtag -->` are not strictly equivalent: unlike `<--#4dtag -->`, `$4dtag` processing does not interpret 4D tags [recursively](#recursive-processing). `$` tags are always evaluated once and the result is considered as plain text.
+Tenga en cuenta que `$4dtag` y `<--#4dtag -->` no son estrictamente equivalentes: a diferencia de `<--#4dtag -->`, el procesamiento `$4dtag` no interpreta las etiquetas 4D [recursivamente](#recursive-processing). Las etiquetas `$` siempre se evalúan una vez y el resultado se considera texto sin formato.
 
-La razón de esta diferencia es evitar la inyección de código malicioso. As [explained below](#prevention-of-malicious-code-insertion), it is strongly recommended to use `4DTEXT` tags instead of `4DHTML` tags when handling user text to protect against unwanted reinterpretation of tags: with `4DTEXT`, special characters such as "<" are escaped, thus any 4D tags using the `<!--#4dtag expression -->` syntax will lose their particular meaning. However, since `4DTEXT` does not escape the `$` symbol, we decided to break support for recursion in order to prevent malicious injection using the `$4dtag (expression)` syntax.
+La razón de esta diferencia es evitar la inyección de código malicioso. Como [se explica más adelante](#prevention-of-malicious-code-insertion), se recomienda encarecidamente utilizar etiquetas `4DTEXT` en lugar de etiquetas `4DHTML` cuando se maneja texto de usuario para proteger contra la reinterpretación no deseada de las etiquetas: con `4DTEXT`, los caracteres especiales como "<" se escapan, por lo que cualquier etiqueta 4D que utilice la sintaxis `<!--#4dtag expression -->` perderá su significado particular. Sin embargo, dado que `4DTEXT` no escapa el símbolo `$`, decidimos romper el soporte para la recursividad con el fin de prevenir la inyección maliciosa utilizando la sintaxis `$4dtag (expression)`.
 
 Los siguientes ejemplos muestran el resultado del procesamiento en función de la sintaxis y la etiqueta utilizada:
 
 ```4d
-  // example 1
- myName:="<!--#4DHTML QUIT 4D-->" //malicious injection
+  // ejemplo 1
+ myName:="<!--#4DHTML QUIT 4D-->" //inyección maliciosa
  input:="My name is: <!--#4DHTML myName-->"
  PROCESS 4D TAGS(input;output)
-  //4D will quit!
+  //¡4D saldrá!
 ```
 
 ```4d
-  // example 2
- myName:="<!--#4DHTML QUIT 4D-->" //malicious injection
+  // ejemplo 2
+ myName:="<!--#4DHTML QUIT 4D-->" //inyección maliciosa
  input:="My name is: <!--#4DTEXT myName-->"
  PROCESS 4D TAGS(input;output)
   //output is "My name is: <!--#4DHTML QUIT 4D-->"
 ```
 
 ```4d
-  // example 3
- myName:="$4DEVAL(QUIT 4D)" //malicious injection
+  // ejemplo 3
+ myName:="$4DEVAL(QUIT 4D)" //inyección maliciosa
  input:="My name is: <!--#4DTEXT myName-->"
  PROCESS 4D TAGS(input;output)
   //output is "My name is: $4DEVAL(QUIT 4D)"
 ```
 
-Note that the `$4dtag` syntax supports matching pairs of enclosed quotes or parenthesis. Por ejemplo, suponga que necesita evaluar la siguiente cadena compleja (irreal):
+Tenga en cuenta que la sintaxis de `$4dtag` admite la correspondencia de pares de comillas o de paréntesis. Por ejemplo, suponga que necesita evaluar la siguiente cadena compleja (irreal):
 
 ```
 String(1) + "\"(hello)\""
@@ -741,5 +741,5 @@ Puede escribir:
 ```4d
  input:="$4DEVAL( String(1)+\"\\\"(hello)\\\"\")"
  PROCESS 4D TAGS(input;output)
- -->output is 1"(hello)"
+ -->la salida es 1"(hello)"
 ```
