@@ -129,7 +129,7 @@ The `COMPONENT LIST` command can be used to obtain the list of components that a
 
 ### Comandos não utilizáveis
 
-Os comandos abaixo nãoo são compatíveis para seu uso dentro de um componente porque modificam o arquivo de estrutura - que está aberto em apenas leitura. Their execution in a component will generate the error -10511, “The CommandName command cannot be called from a component”:
+Os comandos abaixo não são compatíveis para seu uso dentro de um componente porque modificam o arquivo de estrutura - que está aberto em apenas leitura. Their execution in a component will generate the error -10511, “The CommandName command cannot be called from a component”:
 
 - `ON EVENT CALL`
 - `Method called on event`
