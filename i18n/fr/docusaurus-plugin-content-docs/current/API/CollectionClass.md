@@ -993,7 +993,7 @@ Le contenu de la collection retournée dépend du paramètre *targetPath* :
     Par défaut, les éléments pour lesquels *propertyPath* est null ou undefined sont ignorés dans la collection résultante. Vous pouvez passer la constante `ck keep null` dans le paramètre *option* pour intégrer ces valeurs comme des éléments null dans la collection retournée.
 
 
-*   If one or more *targetPath* parameter(s) are passed (corresponding to one or more *propertyPath* parameter(s)), `.extract()` populates the new collection with the *propertyPath* properties and each element of the new collection is an object with *targetPath* properties filled with the matching *propertyPath* properties. Les valeurs null sont conservées (le paramètre *option* est ignoré avec cette syntaxe).
+*   Si un ou plusieurs paramètres *targetPath* sont passés (correspondant à un ou plusieurs paramètres *propertyPath* ), `.extract()` remplit la nouvelle collection avec les propriétés *propertyPath* et chaque élément de la nouvelle collection est un objet avec des propriétés *targetPath* contenant les propriétés *propertyPath* correspondantes. Les valeurs null sont conservées (le paramètre *option* est ignoré avec cette syntaxe).
 
 
 #### Exemple 1
@@ -2303,7 +2303,7 @@ La fonction `.orderBy()` <!-- REF #collection.orderBy().Summary -->retourne une 
 Cette fonction retourne une*shallow copy* (copie superficielle), ce qui signifie que les objets ou les collections présents dans les deux collections partagent la même référence. Si la collection d'origine est une collection partagée, la collection retournée est également une collection partagée.
 > Cette fonction ne modifie pas la collection d'origine.
 
-If you pass no parameter, the function orders scalar values in the collection in ascending order (other element types such as objects or collections are returned with an internal order). Vous pouvez modifier ce tri automatique par défaut en passant la constante `ck ascending` ou `ck descending` dans le paramètre *ascOrDesc* (voir ci-dessous).
+Si vous ne passez aucun paramètre, la fonction classe les valeurs scalaires de la collection dans un ordre croissant (les autres types d'éléments tels que les objets ou les collections sont renvoyés avec un ordre interne). Vous pouvez modifier ce tri automatique par défaut en passant la constante `ck ascending` ou `ck descending` dans le paramètre *ascOrDesc* (voir ci-dessous).
 
 Vous pouvez également passer des critères afin de configurer le tri des éléments de la collection. Trois syntaxes sont prises en charge pour ce paramètre :
 
