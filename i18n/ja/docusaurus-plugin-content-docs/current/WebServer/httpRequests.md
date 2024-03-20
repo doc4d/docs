@@ -224,6 +224,7 @@ End if
 
 
 
+
 ## HTTPリクエストから値を取得する
 
 4D Web サーバーでは、Webフォームや URL を介して POST や GET リクエストで送信されたデータを復元することができます。
@@ -290,33 +291,33 @@ return false
 ユーザーが HTMLフォーム上のボタンのどれかをクリックした際に呼び出される `WWW_STD_FORM_POST` という 4Dメソッドを検証してみましょう。
 
 ```4d
-  // 変数の値を取得します
+  // Retrieval of value of variables
  ARRAY TEXT($arrNames;0)
  ARRAY TEXT($arrValues;0)
  WEB GET VARIABLES($arrNames;$arrValues)
- C_TEXT($user)
+ C_LONGINT($user)
 
  Case of
 
-  // Log On ボタンがクリックされた場合
+  // The Log On button was clicked
     :(Find in array($arrNames;"vsbLogOn")#-1)
        $user :=Find in array($arrNames;"vtUserName")
        QUERY([WWW Users];[WWW Users]UserName=$arrValues{$user})
        $0:=(Records in selection([WWW Users])>0)
        If($0)
           WWW POST EVENT("Log On";WWW Log information)
-  // WWW POST EVENT メソッドが情報をデータベースのテーブルに保存します
+  // The WWW POST EVENT method saves the information in a database table
        Else
 
           $0:=WWW Register
-  // WWW Register メソッドは新規 Webユーザーの登録を処理します
+  // The WWW Register method lets a new Web user register
        End if
 
-  // Register ボタンがクリックされた場合
+  // The Register button was clicked
     :(Find in array($arrNames;"vsbRegister")#-1)
        $0:=WWW Register
 
-  // Information ボタンがクリックされた場合
+  // The Information button was clicked
     :(Find in array($arrNames;"vsbInformation")#-1)
        WEB SEND FILE("userinfos.html")
  End case
