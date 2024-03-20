@@ -351,8 +351,8 @@ El parámetro _expression_ puede contener toda expresión 4D válida que devuelv
 
 En caso de error de interpretación, se inserta el texto "`<!--#4DIF expression-->`: se esperaba una expresión booleana" se inserta en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`. Asimismo, si no hay tantos `<!--#4DENDIF-->` como `<!--#4DIF -->`, se inserta el texto "`<!--#4DIF expression-->`: 4DENDIF expected" en lugar del contenido situado entre `<!--#4DIF -->` y `<!--#4DENDIF-->`.
 
-Using the `<!--#4DELSEIF-->` tag, you can test an unlimited number of conditions. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. If no conditions are true, no statement is executed (if there is no final `<!--#4DELSE-->`).
-You can use a `<!--#4DELSE-->` tag after the last `<!--#4DELSEIF-->`. If all the conditions are false, the statements following the `<!--#4DELSE-->` are executed.
+Utilizando la etiqueta `<!--#4DELSEIF-->`, puede probar un número ilimitado de condiciones. Sólo se ejecuta el código que sigue a la primera condición evaluada como `True`. Si no se cumple ninguna condición, no se ejecuta ninguna instrucción (si no existe `<!--#4DELSE-->` final).
+Puede utilizar una etiqueta `<!--#4DELSE-->` después de la última `<!--#4DELSEIF-->`. Si todas las condiciones son false, se ejecutan las instrucciones que siguen a `<!--#4DELSE-->`.
 
 Los dos códigos siguientes son equivalentes.
 
@@ -360,35 +360,35 @@ Código utilizando `4DELSE` solamente:
 
 ```html
 <!--#4DIF Condition1-->
-  /* Condition1 is true*/
+  /* Condition1 es true*/
 <!--#4DELSE-->
     <!--#4DIF Condition2-->
-        /* Condition2 is true*/
+        /* Condition2 es true*/
     <!--#4DELSE-->
         <!--#4DIF Condition3-->
-            /* Condition3 is true */
+            /* Condition3 es true */
         <!--#4DELSE-->
-            /*None of the conditions are true*/
+            /*Ninguna de las condiciones es true*/
         <!--#4DENDIF-->
     <!--#4DENDIF-->
 <!--#4DENDIF-->
 ```
 
-Similar code using the `4DELSEIF` tag:
+Código similar utilizando la etiqueta `4DELSEIF`:
 
 ```
 <!--#4DIF Condition1-->
-     /* Condition1 is true*/
+     /* Condition1 es true*/
 <!--#4DELSEIF Condition2-->
-     /* Condition2 is true*/
+     /* Condition2 es true*/
 <!--#4DELSEIF Condition3-->
-    /* Condition3 is true */
+    /* Condition3 es true */
 <!--#4DELSE-->
-    /* None of the conditions are true*/
+    /* Ninguna de las condiciones es true*/
 <!--#4DENDIF-->
 ```
 
-This example of code inserted in a static HTML page displays a different label according the `vname#""` expression result:
+Este ejemplo de código insertado en una página HTML estática muestra una etiqueta diferente según el resultado de la expresión `vname#""`:
 
 ```html
 <BODY>
@@ -420,20 +420,20 @@ Este ejemplo inserta diferentes páginas dependiendo del usuario que esté conec
 
 #### Sintaxis: `<!--#4DINCLUDE path-->`
 
-This tag is mainly designed to include an HTML page (indicated by the _path_ parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
+Esta etiqueta está diseñada principalmente para incluir una página HTML (indicada por el parámetro _path_) en otra página HTML. Por defecto, sólo se incluye el cuerpo de la página HTML especificada, es decir, el contenido que se encuentra dentro de las etiquetas `<body> y `</body> (las etiquetas en sí no se incluyen). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
 
-However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
+Sin embargo, si la página HTML especificada no contiene etiquetas `<body>``</body>`, se incluye toda la página. Depende de usted verificar la consistencia de las meta-etiquetas.
 
-The `<!--#4DINCLUDE -->` comment is very useful for tests (`<!--#4DIF-->`) or loops (`<!--#4DLOOP-->`). Es muy conveniente incluir banners de acuerdo a un criterio o de forma aleatoria.
-When including, regardless of the file name extension, 4D analyzes the called page and then inserts the contents (modified or not) in the page originating the `4DINCLUDE` call.
+El comentario `<!--#4DINCLUDE -->` es muy útil para pruebas (`<!--#4DIF-->`) o bucles (`<!--#4DLOOP-->`). Es muy conveniente incluir banners de acuerdo a un criterio o de forma aleatoria.
+Al incluir, independientemente de la extensión del nombre del archivo, 4D analiza la página llamada y luego inserta el contenido (modificado o no) en la página que origina la llamada `4DINCLUDE`.
 
-An included page with the `<!--#4DINCLUDE -->` comment is loaded in the Web server cache the same way as pages called via a URL or sent with the `WEB SEND FILE` command.
+Una página incluida con el comentario `<!--#4DINCLUDE -->` se carga en la caché del servidor Web del mismo modo que las páginas llamadas a través de una URL o enviadas con el comando `WEB SEND FILE`.
 
-En _path_, coloque la ruta que va al documento a incluir. Warning: In the case of a `4DINCLUDE` call, the path is relative to the document being analyzed, that is, the "parent" document. Utilice la barra oblicua (/) como separador de carpetas y los dos puntos (..) para subir un nivel (sintaxis HTML). When you use the `4DINCLUDE` tag with the `PROCESS 4D TAGS` command, the default folder is the project folder.
+En _path_, coloque la ruta que va al documento a incluir. Atención: en el caso de una llamada a `4DINCLUDE`, la ruta es relativa al documento analizado, es decir, al documento "padre". Utilice la barra oblicua (/) como separador de carpetas y los dos puntos (..) para subir un nivel (sintaxis HTML). Cuando utiliza la etiqueta `4DINCLUDE` con el comando `PROCESS 4D TAGS`, la carpeta por defecto es la carpeta del proyecto.
 
-> You can modify the default folder used by the `4DINCLUDE` tag in the current page, using the `<!--#4DBASE -->` tag (see below).
+> Puede modificar la carpeta por defecto utilizada por la etiqueta `4DINCLUDE` en la página actual, utilizando la etiqueta `<!--#4DBASE -->` (ver más adelante).
 
-The number of `<!--#4DINCLUDE path-->` within a page is unlimited. Sin embargo, las llamadas `<!--#4DINCLUDE path-->` sólo pueden hacerse a un nivel. Esto significa que, por ejemplo, no puede insertar `<!--#4DINCLUDE mydoc3.html-->` en el cuerpo de la página _mydoc2.html_, que es llamado por `<!--#4DINCLUDE mydoc2-->` insertado en _mydoc1.html_. Además, 4D verifica que las inclusiones no son recursivas.
+El número de `<!--#4DINCLUDE path-->` dentro de una página es ilimitado. Sin embargo, las llamadas `<!--#4DINCLUDE path-->` sólo pueden hacerse a un nivel. Esto significa que, por ejemplo, no puede insertar `<!--#4DINCLUDE mydoc3.html-->` en el cuerpo de la página _mydoc2.html_, que es llamado por `<!--#4DINCLUDE mydoc2-->` insertado en _mydoc1.html_. Además, 4D verifica que las inclusiones no son recursivas.
 
 En caso de error, el texto insertado es "`<!--#4DINCLUDE path-->` :El documento no puede abrirse".
 
