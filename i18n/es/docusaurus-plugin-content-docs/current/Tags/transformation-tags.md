@@ -5,7 +5,7 @@ title: Etiquetas de transformación
 
 4D ofrece un conjunto de etiquetas de transformación que le permiten insertar referencias a las variables o a las expresiones 4D, o efectuar diferentes tipos de procesamiento en un texto fuente, llamado "plantilla". Estas etiquetas se interpretan durante la ejecución del texto fuente y generan un texto de salida.
 
-This principle is used in particular by the 4D Web server to build [web template pages](WebServer/templates.md).
+Este principio es utilizado en particular por el servidor web 4D para construir [páginas de plantillas web](WebServer/templates.md).
 
 These tags are generally to be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
 
@@ -351,7 +351,7 @@ Por ejemplo, aquí están los resultados del procesamiento de la variable de tex
 
 In case of an interpretation error, the inserted text will be `<!--#4DHTML myvar--> : ## error # error code`.
 
-> For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
+> Por razones de seguridad, se recomienda utilizar la etiqueta [`4DTEXT`](#4dtext) al procesar datos introducidos desde fuera de la aplicación, para evitar la [inserción de código malicioso](#prevention-of-malicious-code-insertion).
 
 ## 4DIF, 4DELSE, 4DELSEIF y 4DENDIF
 
@@ -434,7 +434,7 @@ Este ejemplo inserta diferentes páginas dependiendo del usuario que esté conec
 
 #### Sintaxis: `<!--#4DINCLUDE path-->`
 
-This tag is mainly designed to include an HTML page (indicated by the _path_ parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
+Esta etiqueta está diseñada principalmente para incluir una página HTML (indicada por el parámetro _path_) en otra página HTML. Por defecto, sólo se incluye el cuerpo de la página HTML especificada, es decir, el contenido que se encuentra dentro de las etiquetas `<body>` y `</body>` (las etiquetas en sí no se incluyen). Esto le permite evitar conflictos relacionados con las metaetiquetas presentes en los encabezados.
 
 However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Depende de usted verificar la consistencia de las meta-etiquetas.
 
