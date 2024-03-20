@@ -136,20 +136,20 @@ In general, when the number of letters in the formatting string is higher than t
 
 Some parts of the outputs, such as "midnight" or "Tuesday" are localized, according to regional settings.
 
-For example, for the time `13:25:34`, "B" will display *in the afternoon* on an US system, and *après-midi* on a French system.
+Por ejemplo, para la hora `13:25:34`, "B" aparecerá *in the afternoon* en un sistema estadounidense, y *après-midi* en un sistema francés.
 
 
 ### Letras adicionales
 
-Formatting strings can contain characters not to be interpreted as formatting characters: if they are between "a" and "z" or "A" and "Z", they must be enclosed in single quotes.
+Las cadenas de formato pueden contener caracteres que no deben interpretarse como caracteres de formato: si están entre "a" y "z" o "A" y "Z", deben ir entre comillas simples.
 
 Por ejemplo:
 
-"15:30:00" with pattern "HH 'hours and' mm 'minutes'" produces "15 hours and 30 minutes".
+"15:30:00" con el modelo "HH 'hours and' mm 'minutes'" produce "15 hours and 30 minutes".
 
 ### Espacios iniciales y finales
 
-Starting and ending spaces in patterns are automatically trimmed in outputs. If you want to add spaces before or after the resulting string, you must enclose them in single quotes.
+Los espacios iniciales y finales de los modelos se recortan automáticamente en las salidas. Si desea añadir espacios antes o después de la cadena resultante, debe encerrarlos entre comillas simples.
 
 Por ejemplo:
 
@@ -172,4 +172,4 @@ Por ejemplo:
 
 ## Ver también
 
-See [this blogpost](https://blog.4d.com/tailored-customization-for-dates-and-times) for more information on the custom date and time formats.
+Ver [este blogpost](https://blog.4d.com/tailored-customization-for-dates-and-times) para más información sobre los formatos personalizados de fecha y hora.
