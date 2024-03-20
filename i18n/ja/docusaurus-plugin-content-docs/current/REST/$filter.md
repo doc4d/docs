@@ -22,7 +22,7 @@ title: '$filter'
 
 ### 複雑なフィルターの利用
 
-複雑なフィルターは複数の単純なフィルターの組み合わせで構成されます:
+A more complex filter is composed of the following elements, which joins two queries:
 
 **{attribute} {comparator} {value} {AND/OR/EXCEPT} {attribute} {comparator} {value}**
 
@@ -37,7 +37,7 @@ title: '$filter'
 
 たとえば: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` (firstName および salary は Employee データクラスの属性です)。
 
-4D においてデータをクエリする方法についての詳細は、[dataClass.query()](https://doc.4d.com/4Dv18/4D/18/dataClassquery.305-4505887.ja.html) ドキュメンテーションを参照ください。
+For more information regarding how to query data in 4D, refer to the [dataClass.query()](../API/DataClassClass.md#query) documentation.
 > 単一引用符 (') または二重引用符 (") を挿入するには、対応する文字コードを使ってそれらをエスケープする必要があります:
 > 
 > <li>単一引用符 ('): \u0027</li>
