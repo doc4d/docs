@@ -14,6 +14,8 @@ Lisez [**Les nouveautés de 4D v20 R5**](https://blog.4d.com/fr-whats-new-in-4d-
 - La couche réseau QUIC prend désormais en charge le [broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
 - Prise en charge des [restricted entity selections](../ORDA/entities.md#restricting-entity-selections).
 - Support of [shared classes](../Concepts/classes.md#shared-classes) and [singleton classes](../Concepts/classes.md#singleton-classes). New Class properties: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#isingleton), [`me`](../API/ClassClass.md#me)
+- New [$format](../REST/$format.md) REST parameter.
+
 
 
 #### Changements de comportement
