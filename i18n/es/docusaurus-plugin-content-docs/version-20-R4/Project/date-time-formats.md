@@ -136,12 +136,12 @@ In general, when the number of letters in the formatting string is higher than t
 
 Some parts of the outputs, such as "midnight" or "Tuesday" are localized, according to regional settings.
 
-For example, for the time `13:25:34`, "B" will display *in the afternoon* on an US system, and *après-midi* on a French system.
+Por ejemplo, para la hora `13:25:34`, "B" aparecerá *in the afternoon* en un sistema estadounidense, y *après-midi* en un sistema francés.
 
 
 ### Letras adicionales
 
-Formatting strings can contain characters not to be interpreted as formatting characters: if they are between "a" and "z" or "A" and "Z", they must be enclosed in single quotes.
+Las cadenas de formato pueden contener caracteres que no deben interpretarse como caracteres de formato: si están entre "a" y "z" o "A" y "Z", deben ir entre comillas simples.
 
 Por ejemplo:
 
