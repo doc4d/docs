@@ -3,24 +3,24 @@ id: format
 title: $format
 ---
 
-Defines a specific format to return data of a dataclass, (_e.g._, `$format=looker`)
+データクラスのデータを返すための特定のフォーマットを指定します (_例:_ `$format=looker`)。
 
 ## 説明
 
-This parameter allows you to define the format to use to return data of your dataclass.
+このパラメーターを使って、データクラスがデータを返す形式を定義できます。
 
 以下のフォーマットがサポートされています:
 
-| 形式       | 説明                                                                                |
-| -------- | --------------------------------------------------------------------------------- |
-| `json`   | Standard 4D REST server format (used by default)               |
-| `looker` | JSON format compliant with the [Looker Studio](https://lookerstudio.google.com/). |
+| 形式       | 説明                                                              |
+| -------- | --------------------------------------------------------------- |
+| `json`   | 標準の 4D REST サーバーフォーマット (デフォルト)               |
+| `looker` | [Looker Studio](https://lookerstudio.google.com/) に準拠した JSON形式。 |
 
 ## 例題
 
 `GET /rest/Company/?$filter="name begin a"&$top=3&$format=looker`
 
-The REST server returns a JSON object that contains the schema and data for the request:
+RESTサーバーは、リクエストのスキーマとデータを含む JSONオブジェクトを返します:
 
 ```json
 {"__COUNT":1000,
