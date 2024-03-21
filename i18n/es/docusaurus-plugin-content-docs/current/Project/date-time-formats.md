@@ -104,8 +104,8 @@ The following table lists all supported patterns for date and time formats.
 |         |                                               | zzzz         | GMT-08:00            |
 |         |                                               | zzzzz        | -08:00, -07:52:58, Z |
 |         |                                               |              |                      |
-| '       | escape for text                               | '            | '                    |
-| ' '     | two single quotes produce one                 | ' '          | ' '                  |
+| '       | escape para texto                             | '            | '                    |
+| ' '     | dos comillas simples producen una             | ' '          | ' '                  |
 
 
 
@@ -114,11 +114,11 @@ The following table lists all supported patterns for date and time formats.
 
 ### `y` vs `Y`
 
-`y` is the calendar year, while `Y` is the year based on the week number. For example, if the first days of January 2010 are not week #1, then y = 2010 but Y = 2009 (until the date where the 1st week of 2010 begins).
+`y` es el año calendario, mientras que `Y` es el año basado en el número de semana. Por ejemplo, si los primeros días de enero de 2010 no son la semana #1, entonces y = 2010 pero Y = 2009 (hasta la fecha en la que comienza la primera semana de 2010).
 
 ### `L` (monopuesto) vs `M`
 
-In some languages (Russian, Slovak), the month used alone is different from the month in a date. In "January 10, 2010", "January" is not spelled the same as in "*rendez-vous* in January".
+En algunos idiomas (ruso, eslovaco), el mes utilizado por sí solo es diferente al mes en una fecha. In "January 10, 2010", "January" is not spelled the same as in "*rendez-vous* in January".
 
 ### `e` vs `c`
 
