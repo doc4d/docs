@@ -1,7 +1,6 @@
----
-id: pictureButtonOverview
-title: Botão de imagem
----
+- - -
+id: pictureButtonOverview title: Botão de imagem
+- - -
 
 A picture button is similar to a [standard button](button_overview.md). However unlike a standard button (which accepts three states: enabled, disabled and clicked), a picture button has a different image to represent each state.
 
