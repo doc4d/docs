@@ -3,24 +3,24 @@ id: format
 title: $format
 ---
 
-Defines a specific format to return data of a dataclass, (_e.g._, `$format=looker`)
+Define un formato específico para devolver datos de una clase de datos, (_e.g._, `$format=looker`)
 
 ## Descripción
 
-This parameter allows you to define the format to use to return data of your dataclass.
+Este parámetro permite definir el formato que se utilizará para devolver los datos de la clase de datos.
 
-The following formats are supported:
+Se soportan los siguientes formatos:
 
 | Formato  | Descripción                                                                       |
 | -------- | --------------------------------------------------------------------------------- |
-| `json`   | Standard 4D REST server format (used by default)               |
+| `json`   | Formato estándar del servidor 4D REST (utilizado por defecto)  |
 | `looker` | JSON format compliant with the [Looker Studio](https://lookerstudio.google.com/). |
 
 ## Ejemplo
 
 `GET /rest/Company/?$filter="name begin a"&$top=3&$format=looker`
 
-The REST server returns a JSON object that contains the schema and data for the request:
+El servidor REST devuelve un objeto JSON que contiene el esquema y los datos de la petición:
 
 ```json
 {"__COUNT":1000,
