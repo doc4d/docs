@@ -91,7 +91,7 @@ La ejecución en modo apropiativo solo está disponible en modo compilado.
 
 :::
 
-In compiled mode, when starting a process created by either `New process` or `CALL WORKER` commands, 4D reads the preemptive property of the process method (also named *parent* method) and executes the process in preemptive or cooperative mode, depending on this property:
+En modo compilado, cuando se inicia un proceso creado por los comandos `New process` o `CALL WORKER`, 4D lee la propiedad apropiativa del método del proceso (también llamado método *padre*) y ejecuta el proceso en modo apropiativo o cooperativo, dependiendo de esta propiedad:
 
 - Si el método del proceso es hilo seguro (validado durante la compilación), el proceso se ejecuta en un hilo apropiativo.
 - Si el método del proceso no es hilo seguro, el proceso se ejecuta en un hilo cooperativo.
@@ -102,22 +102,22 @@ La propiedad real hilo seguro depende de la cadena de llamada. Si un método con
 Por ejemplo, considere los siguientes métodos proyecto:
 
 ```4d
-  //MyDialog project method
-  //contains interface calls: will be internally thread unsafe
+  //Método proyecto MyDialog
+  //Contiene llamadas a interfaces: será internamente hilo no seguro
  $win:=Open form window("tools";Palette form window)
  DIALOG("tools")
 ```
 
 ```4d  
-  //MyComp project method
-  //contains simple computing: will be internally thread safe
- #DECLARE($value : Integer) -> $result : Integer
+  //Método proyecto MyComp
+  //Contiene computación simple: será internamente hilo seguro
+  #DECLARE($value : Integer) -> $result : Integer
  $result:=$value*2
 ```
 
 ```4d
-  //CallDial project method
- var $vName : Text
+  //Método proyecto CallDial
+ var $vName : Texto
  MyDialog
 ```
 
@@ -145,8 +145,8 @@ La ejecución de un método en modo apropiativo dependerá de su propiedad "ejec
 
 4D permite identificar el modo de ejecución de los procesos en modo compilado:
 
-- The [`PROCESS PROPERTIES`](https://doc.4d.com/4dv20/help/command/en/page336.html) command allows you to find out whether a process is run in preemptive or cooperative mode.
-- Both the Runtime Explorer and the [4D Server administration window](../ServerWindow/processes.md#process-type) display specific icons for preemptive processes.
+- El comando [`PROCESS PROPERTIES`](https://doc.4d.com/4dv20/help/command/en/page336.html) le permite averiguar si un proceso se ejecuta en modo apropiativo o cooperativo.
+- Tanto el Explorador de ejecución como la [ventana de administración de 4D Server](../ServerWindow/processes.md#process-type) muestran un icono específico para los procesos web apropiativos.
 
 
 ## Escribir un método hilo seguro
@@ -160,16 +160,16 @@ Para ser hilo seguro, un método debe respetar las siguientes reglas:
 - No debe utilizar ninguna variable interproceso(1)
 - No debe llamar a objetos de interfaz(2) (sin embargo, hay excepciones, ver más abajo).
 
-(1) To exchange data between preemptive processes (and between all processes), you can pass [shared collections or shared objects](../Concepts/shared.md) as parameters to processes, and/or use the [`Storage`](https://doc.4d.com/4dv20/help/command/en/page1525.html) catalog. [Worker processes](processes.md#worker-processes) also allow you to exchange messages between any processes, including preemptive processes.
+(1) Para intercambiar datos entre procesos apropiativos (y entre todos los procesos), puede pasar [colecciones compartidas u objetos compartidos](../Concepts/shared.md) como parámetros a los procesos, y/o utilizar lel catálogo [`Storage`](https://doc.4d.com/4dv20/help/command/en/page1525.html). Los [procesos Worker](processes.md#worker-processes) también permiten intercambiar mensajes entre cualquier proceso, incluidos los procesos apropiativos.
 
-(2) The [`CALL FORM`](https://doc.4d.com/4dv20/help/command/en/page1391.html) command provides an elegant solution to call interface objects from a preemptive process.
+(2) El comando [`CALL FORM`](https://doc.4d.com/4dv20/help/command/en/page1391.html) proporciona una solución elegante para llamar a objetos de interfaz desde un proceso apropiativo.
 
 :::note Notas
 
 - En el caso de un método "Compartido por componentes y bases de datos locales", debe seleccionarse la propiedad "Puede ejecutarse en procesos apropiativos".
-- Todas las declaraciones SQL son hilo seguro. SQL code inserted in `Begin SQL`/`End SQL` blocks must comply with the following conditions:
-    + It must apply to the 4D Server or 4D local database (ODBC or remote databases via `SQL LOGIN` are thread-unsafe. However, local databases used with `USE DATABASE` are thread-safe).
-    - Any trigger called by SQL statements must be thread-safe (see [Triggers](#triggers) below).
+- Todas las declaraciones SQL son hilo seguro. El código SQL insertado en los bloques `Begin SQL`/`End SQL` debe cumplir las siguientes condiciones:
+    + Debe aplicarse a 4D Server o a la base de datos local de 4D (ODBC o bases de datos remotas vía `SQL LOGIN` no son hilo seguro. Sin embargo, las bases de datos locales usadas con `USE DATABASE` son hilo seguro).
+    - Todo trigger llamado por sentencias SQL debe ser hilo seguro (ver [Triggers](#triggers) abajo).
 
 :::
 
@@ -186,7 +186,7 @@ Es posible [desactivar localmente la verificación de la seguridad de los hilos]
 
 :::
 
-The [symbol file](../Project/compiler.md/#complete-list-of-methods), if enabled, also contains the thread safety status for each method.
+El [archivo de símbolos](../Project/compiler.md/#complete-list-of-methods), si está habilitado, también contiene el estado de seguridad del hilo para cada método.
 
 ### Interfaz de usuario
 
@@ -194,9 +194,9 @@ Dado que se trata de accesos "externos", las llamadas a objetos de la interfaz d
 
 Los únicos accesos posibles a la interfaz de usuario desde un hilo apropiativo son:
 
-- [Standard error dialog](../Debugging/basics). El diálogo se muestra en el proceso de modo usuario (en 4D) o en el proceso de interfaz de usuario del servidor (4D Server). El botón **Rastrear** está desactivado.
+- [Diálogo de error estándar](../Debugging/basics). El diálogo se muestra en el proceso de modo usuario (en 4D) o en el proceso de interfaz de usuario del servidor (4D Server). El botón **Rastrear** está desactivado.
 - Indicadores de progreso estándar
-- `ALERT`, `Request` and `CONFIRM` dialogs. El diálogo se muestra en el proceso de modo usuario (en 4D) o en el proceso de interfaz de usuario del servidor (4D Server). Tenga en cuenta que si 4D Server se ha lanzado como un servicio en Windows sin permitir la interacción del usuario, los diálogos no se mostrarán.
+- Diálogos `ALERT`, `Request` y `CONFIRM`. El diálogo se muestra en el proceso de modo usuario (en 4D) o en el proceso de interfaz de usuario del servidor (4D Server). Tenga en cuenta que si 4D Server se ha lanzado como un servicio en Windows sin permitir la interacción del usuario, los diálogos no se mostrarán.
 
 
 ### Triggers
@@ -204,7 +204,7 @@ Los únicos accesos posibles a la interfaz de usuario desde un hilo apropiativo 
 Cuando un método utiliza un comando que puede llamar a un trigger, el compilador 4D evalúa la seguridad de los hilos del trigger para comprobar la seguridad de hilos del método:
 
 ```4d
- SAVE RECORD([Table_1]) //trigger on Table_1, if it exists, must be thread-safe
+ SAVE RECORD([Table_1]) //activar en Table_1, si existe, debe ser hilo seguro
 ```
 
 Aquí está la lista de comandos que se verifican en tiempo de compilación para la seguridad de hilos de trigger:
@@ -224,7 +224,7 @@ En este caso, se evalúan todos los triggers. Si se detecta un comando que no se
 
 ### Métodos de gestión de errores
 
-[Error-catching methods](../Concepts/error-handling.md) installed by the `ON ERR CALL` command must be thread-safe if they are likely to be called from a preemptive process. Para manejar este caso, el compilador verifica la propiedad hilo seguro de los métodos proyecto de captura de errores pasados al comando `ON ERR CALL` durante la compilación y devuelve errores apropiados si no cumplen con la ejecución apropiativa.
+Los [métodos de detección de errores](../Concepts/error-handling.md) instalados por el comando `ON ERR CALL` deben ser hilo seguro si es probable que sean llamados desde un proceso apropiativo. Para manejar este caso, el compilador verifica la propiedad hilo seguro de los métodos proyecto de captura de errores pasados al comando `ON ERR CALL` durante la compilación y devuelve errores apropiados si no cumplen con la ejecución apropiativa.
 
 Tenga en cuenta que esta comprobación solo es posible cuando el nombre del método se pasa como una constante y no se calcula, como se muestra a continuación:
 
