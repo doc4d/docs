@@ -370,7 +370,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D v1
 
 - [IMAPTransporter Class](../API/IMAPTransporterClass.md): funciones `.createBox()`, `.deleteBox()`, `.renameBox()`, `.subscribe()` y `.unsubscribe()`.
 - [Clase File](../API/FileClass.md): nuevas funciones `setAppInfo()` y `getAppInfo()`.
-- Nueva etiqueta de transformación [4DEACH](../Tags/tags.md#4deach-and-4dendeach).
+- Nueva etiqueta de transformación [4DEACH](../Tags/transformation-tags.md#4deach-and-4dendeach).
 - Servidor Web: nuevo parámetro [cookie de sesión SameSite](../WebServer/webServerConfig.md#session-cookie-samesite).
 - Soporte del esquema color oscuro y claro para los [formularios](../FormEditor/properties_FormProperties.md#color-scheme) y [hojas de estilo](../FormEditor/stylesheets#media-queries)
 - Nuevos temas oscuros y claros por defecto en las [preferencias del editor de código](../Preferences/methods.md#theme-list).
