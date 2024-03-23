@@ -178,8 +178,8 @@ A notação de objetos está disponível em qualquer elemento da lenguagem que p
      $result:=MyMethod1.a //10
 ```
 
-- **Collections**
-  Example:
+- **Coleções**
+  Exemplo:
 
 ```4d
      myColl.length //tamanho da coleção
