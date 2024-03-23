@@ -30,12 +30,12 @@ The following table lists all supported patterns for date and time formats.
 | Q       | trimestre                                     | Q             | 2                    |
 |         |                                               | QQ            | 02                   |
 |         |                                               | QQQ           | Q2                   |
-|         |                                               | QQQQ          | 2nd quarter          |
+|         |                                               | QQQQ          | 2º trimestre         |
 |         |                                               | QQQQQ         | 2                    |
 | q       | trimestre autônomo                            | q             | 2                    |
 |         |                                               | qq            | 02                   |
 |         |                                               | qqq           | Q2                   |
-|         |                                               | qqqq          | 2nd quarter          |
+|         |                                               | qqqq          | 2º trimestre         |
 |         |                                               | qqqqq         | 2                    |
 | M       | mês no ano                                    | M             | 9                    |
 |         |                                               | MM            | 09                   |
@@ -51,7 +51,7 @@ The following table lists all supported patterns for date and time formats.
 |         |                                               | ww            | 27                   |
 | d       | dia no mês                                    | d             | 2                    |
 |         |                                               | dd            | 2                    |
-| D       | day of year                                   | D             | 189                  |
+| D       | dia do ano                                    | D             | 189                  |
 | E       | day of week                                   | E, EE ou EEE  | Tue                  |
 |         |                                               | EEEE          | Tuesday              |
 |         |                                               | EEEEE         | T                    |
@@ -86,7 +86,7 @@ The following table lists all supported patterns for date and time formats.
 |         |                                               | kk            | 24                   |
 | m       | minute in hour                                | m             | 4                    |
 |         |                                               | mm            | 04                   |
-| s       | second in minute                              | s             | 5                    |
+| s       | segundo em minuto                             | s             | 5                    |
 |         |                                               | ss            | 05                   |
 | X       | Time Zone: ISO8601 basic hm?, with Z for 0    | X             | -08, +0530, Z        |
 |         | Time Zone: ISO8601 basic hm, with Z           | XX            | -0800, Z             |
