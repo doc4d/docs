@@ -5264,11 +5264,11 @@ En _rangeObj_, pase un rango de la(s) celda(s) (creadas, por ejemplo, con [`VP C
 El parámetro _formula_ indica un nombre de fórmula o de método 4D a asignar a _rangeObj_.
 
 > Si _formula_ es una cadena, utilice el punto `.` como separador numérico y la coma `,` como separador de parámetros.
-> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
+> Si se utiliza un método 4D, debe estar permitido con el comando [`VP SET ALLOWED METHODS`](#vp-set-allowed-method).
 
-The optional _formatPattern_ defines a [pattern](configuring.md#cell-format) for the _formula_.
+El _formatPattern_ opcional define un [pattern](configuring.md#cell-format) para _formula_.
 
-You remove the formula in _rangeObj_ by replacing it with an empty string ("").
+Se elimina la fórmula en _rangeObj_ sustituyéndola por una cadena vacía ("").
 
 #### Ejemplo 1
 
@@ -5309,9 +5309,9 @@ VP SET FORMULA($range; "SUM(A1,B7,C11)") //"," para separar los parámetros
 
 #### Descripción
 
-The `VP SET FORMULAS` command <!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
+El comando `VP SET FORMULAS` <!-- REF #_method_.VP SET FORMULAS.Summary -->asigna una colección de fórmulas que comienzan en el rango de celdas especificado<!-- END REF -->.
 
-In _rangeObj_, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. Si _rangeObj_ incluye varios rangos, sólo se utiliza el primer rango.
+En _rangeObj_, pase un rango de la celda (creada con [VP Cell](#vp-cell)) cuya fórmula desea especificar. Si _rangeObj_ incluye varios rangos, sólo se utiliza el primer rango.
 
 The _formulasCol_ is a two-dimensional collection:
 
