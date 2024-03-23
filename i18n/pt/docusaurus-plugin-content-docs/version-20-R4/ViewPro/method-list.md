@@ -1620,7 +1620,7 @@ $attr:=VP Get column attributes($range)
 | ---------- | ------- | -- | ----------------------------------------------------------- | ---------------- |
 | vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário                      |                  |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida) |                  |
-| Resultados | Integer | <- | Total number of columns                                     | <!-- END REF --> |
+| Resultados | Integer | <- | Número total de colunas                                     | <!-- END REF --> |
 
 #### Descrição
 
@@ -2138,7 +2138,7 @@ $attr:=VP Get row attributes($range)
 | ---------- | ------- | -- | ----------------------------------------------------------- | ---------------- |
 | vpAreaName | Text    | -> | Nome da área 4D View Pro no formulário                      |                  |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida) |                  |
-| Resultados | Integer | <- | Total number of rows                                        | <!-- END REF --> |
+| Resultados | Integer | <- | Número total de linhas                                      | <!-- END REF --> |
 
 #### Descrição
 
@@ -2916,10 +2916,10 @@ End if
 
 <!-- REF #_method_.VP Get values.Params -->
 
-| Parâmetro  | Tipo       |    | Descrição            |                  |
-| ---------- | ---------- | -- | -------------------- | ---------------- |
-| rangeObj   | Object     | -> | Objeto intervalo     |                  |
-| Resultados | Collection | <- | Collection of values | <!-- END REF --> |
+| Parâmetro  | Tipo       |    | Descrição          |                  |
+| ---------- | ---------- | -- | ------------------ | ---------------- |
+| rangeObj   | Object     | -> | Objeto intervalo   |                  |
+| Resultados | Collection | <- | Coleção de valores | <!-- END REF --> |
 
 #### Descrição
 
@@ -3485,7 +3485,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 | vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro                           |                  |
 | rangeName  | Text    | -> | Nome do intervalo existente                                          |                  |
 | sheet      | Integer | -> | Localização do intervalo (folha atual se omitida) |                  |
-| Resultados | Object  | <- | Range object of name                                                 | <!-- END REF --> |
+| Resultados | Object  | <- | Objeto intervalo de nome                                             | <!-- END REF --> |
 
 #### Descrição
 
@@ -4548,10 +4548,10 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 <!-- REF #_method_.VP SET BOOLEAN VALUE.Params -->
 
-| Parâmetro | Tipo       |    | Descrição            |                  |
-| --------- | ---------- | -- | -------------------- | ---------------- |
-| rangeObj  | Object     | -> | Objeto intervalo     |                  |
-| boolValue | Parâmetros | -> | Boolean value to set | <!-- END REF --> |
+| Parâmetro | Tipo       |    | Descrição                |                  |
+| --------- | ---------- | -- | ------------------------ | ---------------- |
+| rangeObj  | Object     | -> | Objeto intervalo         |                  |
+| boolValue | Parâmetros | -> | Valor booliano a definir | <!-- END REF --> |
 
 #### Descrição
 
@@ -6193,10 +6193,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 <!-- REF #_method_.VP SET VALUES.Params -->
 
-| Parâmetro | Tipo       |    | Descrição            |                  |
-| --------- | ---------- | -- | -------------------- | ---------------- |
-| rangeObj  | Object     | -> | Objeto intervalo     |                  |
-| valuesCol | Collection | -> | Collection of values | <!-- END REF --> |
+| Parâmetro | Tipo       |    | Descrição          |                  |
+| --------- | ---------- | -- | ------------------ | ---------------- |
+| rangeObj  | Object     | -> | Objeto intervalo   |                  |
+| valuesCol | Collection | -> | Coleção de valores | <!-- END REF --> |
 
 #### Descrição
 
