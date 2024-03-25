@@ -63,13 +63,9 @@ Qodly Studio へのアクセスを有効化するには、2つのレベルで明
 
 #### 4Dレベルで
 
-最初のセキュリティレベルとして、[WebAdmin Webサーバーで Qodly Studio へのアクセスを許可](../Admin/webAdmin.md#qodly-studio-へのアクセスを有効化する) する必要があります。
+最初のセキュリティレベルとして、[WebAdmin Webサーバーで Qodly Studio へのアクセスを許可](../Admin/webAdmin.md#qodly-studio-へのアクセスを有効化する) する必要があります。 この設定は、ホストマシンの 4Dアプリケーション (4D または 4D Server) が対象となります。 つまり、その 4Dアプリケーションで開くすべてのプロジェクトで、この設定が適用されます。
 
-この設定は、ホストマシンの 4Dアプリケーション (4D または 4D Server) が対象となります。 つまり、その 4Dアプリケーションで開くすべてのプロジェクトで、この設定が適用されます。
-
-アプリケーション上で Qodly Studio へのアクセスを許可しない場合は、このオプションをオフにします。
-
-このオプションにチェックを入れると、Qodly Studio にアクセスできるようになります。 さらに、各プロジェクトのレベルでも許可が必要です。
+アプリケーション上で Qodly Studio へのアクセスを許可しない場合は、このオプションをオフにします。 このオプションにチェックを入れると、Qodly Studio にアクセスできるようになります。 さらに、各プロジェクトのレベルでも許可が必要です。
 
 さらに、[WebAdmin Webサーバーの HTTP/HTTPS ポートを設定](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) することもできます。
 
@@ -95,55 +91,6 @@ WebAdmin Webサーバーでの認証には、アクセスキーを使用しま�
 
 - Qodly Studio での開発は **4D** (シングルユーザー) でおこなう必要があります。
 - Qodlyフォームを利用した 4Dアプリケーションの運用は、**4D Server** でおこなう必要があります。
-
-## 運用
-
-### レンダリングを有効化する
-
-Qodly Studio は Qodlyフォームを (含まれるレイアウト、データの紐付け、イベント駆動ロジック情報とともに) 構造化された JSONファイルにカプセル化します。 この JSONファイルは **Qodly レンダラー** によって即座に処理され、完全に機能する Webページを提供します。
-
-:::info
-
-Qodly で Qodlyフォームをレンダリングする方法の詳細については [このページ](https://developer.qodly.com/docs/studio/rendering) を参照ください。
-
-:::
-
-Qodlyフォームのレンダリングを有効にするには、以下のオプションを設定する必要があります。
-
-- 4Dプロジェクトの **設定** > **Web** > **Web機能** > [**RESTサーバーとして公開**](../settings/web.md#restサーバーとして公開) オプションを有効にする必要があります。
-- [4D Webサーバー](webServer.md) を起動しておく必要があります。
-
-:::note
-
-設定オプションが有効になっていない場合、[レンダラー ボタン](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) は使用できません。
-
-:::
-
-### Qodlyフォームのスコープ
-
-Qodly Studio で Qodlyフォームをレンダリングする際、レンダラーは設定により、[4D WebAdmin Webサーバー](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) と同じ HTTP/HTTPS 接続パターンに従って、HTTP または HTTPS で 4D Webサーバーに接続します。 URLスキームとライセンスの使い方については、[この段落](#ライセンスの使用について) も参照ください。
-
-Qodly Studio は、4D WebAdmin Webサーバーを通して動作することに留意してください。 デベロッパーとして Qodly Studio を使用する場合、Qodlyフォームをプレビューするには、4D WebAdmin Webサーバーを使用することになります。 これにより、たとえば RESTリソースとして公開されていないデータクラス、関数、属性を (グレーアウトされた状態で) 見ることができます。
-
-しかし、実際のフォームのレンダリングは Qodly Studio の外でおこなわれ、標準の 4D Webサーバーによって処理されます。 このような状況では、Webアプリケーションは RESTリソースとして公開されていないデータにアクセスできません。 [公開vs非公開関数](../ORDA/ordaClasses.md#公開vs非公開関数) および [テーブルの公開](../REST/configuration.md#テーブルの公開) を参照ください。
-
-### Qodlyフォームへのアクセス
-
-運用には、WebAdminサーバーは必要ありません。 Qodly Studio で作成された Webアプリケーションへのエンドユーザーアクセスは、4D RESTプロトコルに基づいているため、従来の 4Dリモートアプリケーションと同様に動作します。
-
-Qodlyフォームは以下の URL からダウンロードできます:
-
-```
-IP:port/$lib/renderer/?w=QodlyFormName
-```
-
-_IP:port_ は Webサーバーのアドレスを表し、_QodlyFormName_ は Qodlyフォームの名前です。
-
-例:
-
-```
-https://myWebSite/$lib/renderer/?w=welcome
-```
 
 ## Qodly Studio を開く
 
@@ -221,6 +168,55 @@ Qodlyフォームを利用した Webアプリケーションを開発するに�
 
 - [テンプレート](https://developer.qodly.com/docs/studio/design-webforms/templates): テンプレートライブラリは空です。
 - UI Tips: ![alt-text](../assets/en/WebServer/tips.png)アイコンをクリックしても表示されません。
+
+## 運用
+
+### レンダリングを有効化する
+
+Qodly Studio は Qodlyフォームを (含まれるレイアウト、データの紐付け、イベント駆動ロジック情報とともに) 構造化された JSONファイルにカプセル化します。 この JSONファイルは **Qodly レンダラー** によって即座に処理され、完全に機能する Webページを提供します。
+
+:::info
+
+Qodly で Qodlyフォームをレンダリングする方法の詳細については [このページ](https://developer.qodly.com/docs/studio/rendering) を参照ください。
+
+:::
+
+Qodlyフォームのレンダリングを有効にするには、以下のオプションを設定する必要があります。
+
+- 4Dプロジェクトの **設定** > **Web** > **Web機能** > [**RESTサーバーとして公開**](../settings/web.md#restサーバーとして公開) オプションを有効にする必要があります。
+- [4D Webサーバー](webServer.md) を起動しておく必要があります。
+
+:::note
+
+設定オプションが有効になっていない場合、[レンダラー ボタン](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) は使用できません。
+
+:::
+
+### Qodlyフォームのスコープ
+
+Qodly Studio で Qodlyフォームをレンダリングする際、レンダラーは設定により、[4D WebAdmin Webサーバー](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) と同じ HTTP/HTTPS 接続パターンに従って、HTTP または HTTPS で 4D Webサーバーに接続します。 URLスキームとライセンスの使い方については、[この段落](#ライセンスの使用について) も参照ください。
+
+Qodly Studio は、4D WebAdmin Webサーバーを通して動作することに留意してください。 デベロッパーとして Qodly Studio を使用する場合、Qodlyフォームをプレビューするには、4D WebAdmin Webサーバーを使用することになります。 これにより、たとえば RESTリソースとして公開されていないデータクラス、関数、属性を (グレーアウトされた状態で) 見ることができます。
+
+しかし、実際のフォームのレンダリングは Qodly Studio の外でおこなわれ、標準の 4D Webサーバーによって処理されます。 このような状況では、Webアプリケーションは RESTリソースとして公開されていないデータにアクセスできません。 [公開vs非公開関数](../ORDA/ordaClasses.md#公開vs非公開関数) および [テーブルの公開](../REST/configuration.md#テーブルの公開) を参照ください。
+
+### Qodlyフォームへのアクセス
+
+運用には、WebAdminサーバーは必要ありません。 Qodly Studio で作成された Webアプリケーションへのエンドユーザーアクセスは、4D RESTプロトコルに基づいているため、従来の 4Dリモートアプリケーションと同様に動作します。
+
+Qodlyフォームは以下の URL からダウンロードできます:
+
+```
+IP:port/$lib/renderer/?w=QodlyFormName
+```
+
+_IP:port_ は Webサーバーのアドレスを表し、_QodlyFormName_ は Qodlyフォームの名前です。
+
+例:
+
+```
+https://www.myWebSite.com/$lib/renderer/?w=welcome
+```
 
 ## ライセンスの使用について
 
