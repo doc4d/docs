@@ -69,8 +69,8 @@ title: 4D View Pro エリアの設定
 
 4D View Pro シートオプションオブジェクトを使って、4D View Pro エリアの様々なオプションをコントロールすることができます。 このオブジェクトは以下のコマンドで操作します:
 
-* [VP SET SHEET OPTIONS](method-list.md#vp-set-sheet-options)
-* [VP Get sheet options](method-list.md#vp-get-sheet-options)
+* [VP SET SHEET OPTIONS](commands/vp-set-sheet-options.md)
+* [VP Get sheet options](commands/vp-get-sheet-options.md)
 
 ### シートのアピアランス
 
@@ -120,11 +120,11 @@ title: 4D View Pro エリアの設定
 
 ## セルフォーマット
 
-フォーマットパターン (表示形式) を定義することで、4D View Pro ドキュメントのコンテンツを想定通りに表示することができます。 フォーマットは、選択された 4D View Pro の [インターフェース](#ユーザーインターフェースの選択) を使用するか、[VP SET VALUE](method-list.md#vp-set-value) または [VP SET NUM VALUE](method-list.md#vp-set-num-value) メソッドを使用して設定します。
+フォーマットパターン (表示形式) を定義することで、4D View Pro ドキュメントのコンテンツを想定通りに表示することができます。 Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](commands/vp-set-value.md) or [VP SET NUM VALUE](commands/vp-set-num-value.md) commands.
 
 4D View Pro には数値、日付、時間、そしてテキスト用のビルトインのフォーマットがありますが、カスタムパターンを作成することで、特殊文字やコードを使ったフォーマットでセルのコンテンツを表示することができます。
 
-たとえば、請求書において [VP SET VALUE](method-list.md#vp-set-value) あるいは [VP SET NUM VALUE](method-list.md#vp-set-num-value) メソッドを使用して金額を入力している場合、数値の桁数とは関係なく (つまり金額が $5.00 だろうと $5,000.00 だろうと) 通貨記号 ($, €, ¥, など) を同じ位置に整列させたい場合があるかもしれません。 この場合、フォーマット文字を使用してパターン _($* #,##0.00)_ を指定することで、以下のように表示させることができます:
+For example, when using the [VP SET VALUE](commands/vp-set-value.md) or [VP SET NUM VALUE](commands/vp-set-num-value.md) commands to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). この場合、フォーマット文字を使用してパターン _($* #,##0.00)_ を指定することで、以下のように表示させることができます:
 
 ![](../assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
@@ -241,8 +241,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 4D View Pro 印刷属性を使って、4D View Pro エリアの印刷に関するすべての項目を管理することができます。 これらの属性は以下のコマンドによって操作します:
 
-* [VP SET PRINT INFO](method-list.md#vp-set-print-info)
-* [VP Get print info](method-list.md#vp-get-print-info)
+* [VP SET PRINT INFO](commands/vp-set-print-info.md)
+* [VP Get print info](commands/vp-get-print-info.md)
 
 ### カラム / 行
 
@@ -278,7 +278,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | headerRight       | text                 | 印刷ページの右ヘッダーのテキストとフォーマット    |
 | headerRightImage  | picture &#124; text* | ヘッダーの右セクションの画像             |
 
-\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 画像指定に使用するデータ型にかかわらず、4D View Pro エリアには (参照ではなく) 画像そのものが保存され、[VP Get print info](method-list.md#vp-get-print-info) によって返されます。
+\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](commands/vp-get-print-info.md).
 
 ### 特殊文字
 
@@ -353,11 +353,11 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |           | width  | longint | 用紙の幅、100分の1インチ単位                                                                |
 |           | kind   | text    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。`GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
-* `height` と `width` プロパティで用紙サイズを指定した場合、[`VP Get print info`](./method-list.md#vp-get-print-info) が返す用紙サイズ属性の `kind` プロパティ値は `custom` です。
+* If the paper size is specified using the `height` and `width` properties,  [`VP Get print info`](./commands/vp-get-print-info.md) returns a paper size with `custom` as value for `kind`.
 
 * `kind` プロパティで用紙サイズを設定する場合、以下のいずれかを使用することができます:
   * [ SpreadJS のフォーマットリスト](https://developer.mescius.com/spreadjs/api/enums/GC.Spread.Sheets.Print.PaperKind) のフォーマット
-  * [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/ja/page785.html) コマンドで返されるフォーマット。 この場合、[`VP Get print info`](./method-list.md#vp-get-print-info) は対応するフォーマットを高さと幅とともに返します。
+  * [`PRINT OPTION VALUES`](https://doc.4d.com/4dv19/help/command/ja/page785.html) コマンドで返されるフォーマット。 In that case, [`VP Get print info`](./commands/vp-get-print-info.md) returns the corresponding format with the height and width.
 
 ### スケール
 
@@ -395,7 +395,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |           | \[ ].x        | longint              | ウォーターマークのテキスト/画像の左上端の水平方向の座標                                                      |
 |           | \[ ].y        | longint              | ウォーターマークのテキスト/画像の左上端の垂直方向の座標                                                      |
 
-\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 画像指定に使用するデータ型にかかわらず、4D View Pro エリアには (参照ではなく) 画像そのものが保存され、[VP Get print info](method-list.md#vp-get-print-info) によって返されます。
+\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](commands/vp-get-print-info.md).
 
 ## スタイルオブジェクト
 
@@ -403,13 +403,13 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 ### スタイルオブジェクトとスタイルシート
 
-スタイルオブジェクトには、スタイル設定が格納されます。 これらはスタイルシートで使用するか、あるいはそのまま使用することができます。 スタイルオブジェクトはスタイルシートと組み合わせて使用することもでき、ドキュメントの他の部分に影響を及ぼすことなく個別のセルレンジに異なる設定を指定することもできます。 [VP SET CELL STYLE](method-list.md#vp-set-cell-style) および [VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) コマンドでは、スタイルオブジェクトを直接使用することができます。 [VP SET TABLE THEME](method-list.md#vp-set-table-theme) または [VP CREATE TABLE](method-list.md#vp-create-table) コマンドを使用してカスタムテーブルテーマを定義する場合にも、スタイル オブジェクトが使用できます。
+スタイルオブジェクトには、スタイル設定が格納されます。 これらはスタイルシートで使用するか、あるいはそのまま使用することができます。 スタイルオブジェクトはスタイルシートと組み合わせて使用することもでき、ドキュメントの他の部分に影響を及ぼすことなく個別のセルレンジに異なる設定を指定することもできます。 You can use style objects directly with the [VP SET CELL STYLE](commands/vp-set-cell-style.md) and [VP SET DEFAULT STYLE](commands/vp-set-default-style.md) commands. You can also use style objects when defining custom table themes using the [VP SET TABLE THEME](commands/vp-set-table-theme.md) or [VP CREATE TABLE](commands/vp-create-table.md) commands.
 
 **スタイルシート** は、プロパティの組み合わせをスタイルオブジェクトにまとめたもので、それによって 4D View Pro ドキュメントのすべてのセルの見た目を指定します。 ドキュメントとともに保存されたスタイルシートを使用して、単一のシート、複数のシート、あるいはワークブック全体に対してプロパティを設定することができます。 4D View Pro スタイルシートは作成時に名前が与えられ、この名前はスタイルシートの "name" プロパティに保存されます。 これによりスタイルシートの使用が容易になり、また注意深く命名することで、その定義と目的を分かりやすくすることもできます (例: Letterhead_internal、Letterhead_external、など)。
 
-スタイルシートは [VP ADD STYLESHEET](method-list.md#vp-add-stylesheet) コマンドで作成され、[VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) あるいは [VP SET CELL STYLE](method-list.md#vp-set-cell-style) コマンドで適用されます。 スタイルシートは [VP REMOVE STYLESHEET](method-list.md#vp-remove-stylesheet) コマンドで削除できます。
+Style sheets are created with the [VP ADD STYLESHEET](commands/vp-add-stylesheet.md) command and applied with the the [VP SET DEFAULT STYLE](commands/vp-set-default-style.md) or [VP SET CELL STYLE](commands/vp-set-cell-style.md) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](commands/vp-remove-stylesheet.md) command.
 
-[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
+The [VP Get stylesheet](commands/vp-get-stylesheet.md) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](commands/vp-get-stylesheets.md) command to retrieve a collection of style objects for multiple style sheets.
 
 ### スタイルオブジェクトプロパティ
 
@@ -444,8 +444,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 | プロパティ           |            | タイプ     | 説明                                                                                                                                                                                                                                                                            | とりうる値                                                                                                                                                                                                   |
 | --------------- | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| font            |            | text    | フォントの特徴を CSS の fontショートハンドで指定します ("font-style font-variant font-weight font-size/line-height font-family")。 例: "14pt Century Gothic"。 フォントサイズ (font-size) とフォントファミリー (font-family) の値は必須です。 その他の値が省略された場合には、そのデフォルト値が使用されます。 注: フォント名にスペースが含まれる場合、その名前は引用符 ("") で括られる必要があります。 | CSS fontショートハンド。 4D ではフォントの特徴をオブジェクトとして管理するためのユーティリティコマンドを提供しています: [`VP Font to object`](method-list.md#vp-font-to-object) および [`VP Object to font`](method-list.md#vp-object-to-font)                  |
-| formatter       |            | text    | 値や日時に対するパターン                                                                                                                                                                                                                                                                  | 数値/テキスト/日付/時間フォーマット、特殊文字など。 [セルフォーマット](#セルフォーマット) 参照。                                                                                                                                                   |
+| font            |            | text    | フォントの特徴を CSS の fontショートハンドで指定します ("font-style font-variant font-weight font-size/line-height font-family")。 例: "14pt Century Gothic"。 フォントサイズ (font-size) とフォントファミリー (font-family) の値は必須です。 その他の値が省略された場合には、そのデフォルト値が使用されます。 注: フォント名にスペースが含まれる場合、その名前は引用符 ("") で括られる必要があります。 | CSS fontショートハンド。 4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](commands/vp-font-to-object.md) and [`VP Object to font`](commands/vp-object-to-font.md)  |
+| formatter       |            | text    | 値や日時に対するパターン                                                                                                                                                                                                                                                                  | 数値/テキスト/日付/時間フォーマット、特殊文字など。 See [Cell Format](#cell-format.md).                                                                                                                                         |
 | isVerticalText  |            | boolean | テキストの向きを指定します。                                                                                                                                                                                                                                                                | true = 縦方向のテキスト, false = 横方向のテキスト                                                                                                                                                                       |
 | labelOptions    |            | object  | セルラベルのオプションを定義します (ウォーターマークオプション)                                                                                                                                                                                                                                             |                                                                                                                                                                                                         |
 |                 | alignment  | longint | セルラベルの位置を指定します。 任意プロパティです。                                                                                                                                                                                                                                                    | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right` |
@@ -478,7 +478,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 ## 4D View Pro オブジェクト
 
-4D View Pro [オブジェクト](Concepts/dt_object.md) はスプレッドシートの中身をすべて保存します。 このオブジェクトは 4D View Pro によって自動的に管理されます。 [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) および [VP Export to object](method-list.md#vp-export-to-object) メソッドによって、このオブジェクトを設定したり取得したりできます。
+4D View Pro [オブジェクト](Concepts/dt_object.md) はスプレッドシートの中身をすべて保存します。 このオブジェクトは 4D View Pro によって自動的に管理されます。 You can set or get this object using the [VP IMPORT FROM OBJECT](commands/vp-import-from-object.md) or [VP Export to object](commands/vp-export-to-object.md) commands.
 
 このオブジェクトには次のプロパティが含まれます:
 
@@ -497,12 +497,12 @@ The 4D View Pro フォームオブジェクト変数は、4D View Pro フォー�
 
 このオブジェクトには次のプロパティが含まれます:
 
-| プロパティ                  | 値の型        | 説明                                                                                                                                                                                               |
-| ---------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ViewPro.area           | Text       | 4D View Pro エリア名                                                                                                                                                                                 |
-| ViewPro.callbacks      | Object     | インポートやエクスポートなど、コールバックを必要とするコマンドが使用するための一時的な情報を保存します。                                                                                                                                             |
-| ViewPro.commandBuffers | Collection | メソッドによって呼び出されるコマンドを順番に保存し、メソッド終了時、あるいはコマンドが値を返した時、あるいは [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) が呼び出された時に、それらのコマンドを (個別にではなく) バッチとして実行します。 この機構によって、送信されるリクエスト数が抑えられ、パフォーマンスが向上します。 |
-| ViewPro.events         | Object     | [イベント](Events/overview.md) リスト。                                                                                                                                                                  |
-| ViewPro.formulaBar     | Boolean    | フォーミュラバーが表示されているかどうかを示します。 "toolbar" インターフェースにおいてのみ利用可能です。                                                                                                                                       |
-| ViewPro.inited         | Boolean    | 4D View Pro エリアが初期化されたかどうかを示します([On VP Ready](Events/onVpReady.md) 参照)。                                                                                                                          |
-| ViewPro.interface      | Text       | ユーザーインターフェースのタイプを指定します: "ribbon"、"toolbar"、"none"。                                                                                                                                               |
+| プロパティ                  | 値の型        | 説明                                                                                                                                                                                                                                                                                        |
+| ---------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ViewPro.area           | Text       | 4D View Pro エリア名                                                                                                                                                                                                                                                                          |
+| ViewPro.callbacks      | Object     | インポートやエクスポートなど、コールバックを必要とするコマンドが使用するための一時的な情報を保存します。                                                                                                                                                                                                                                      |
+| ViewPro.commandBuffers | Collection | Stores sequentially the commands called by the method and executes them as a batch (rather than individually) when exiting the method, when a command returns a value, or when the [VP FLUSH COMMANDS](commands/vp-flush-commands.md) is called. この機構によって、送信されるリクエスト数が抑えられ、パフォーマンスが向上します。 |
+| ViewPro.events         | Object     | [イベント](Events/overview.md) リスト。                                                                                                                                                                                                                                                           |
+| ViewPro.formulaBar     | Boolean    | フォーミュラバーが表示されているかどうかを示します。 "toolbar" インターフェースにおいてのみ利用可能です。                                                                                                                                                                                                                                |
+| ViewPro.inited         | Boolean    | 4D View Pro エリアが初期化されたかどうかを示します([On VP Ready](Events/onVpReady.md) 参照)。                                                                                                                                                                                                                   |
+| ViewPro.interface      | Text       | ユーザーインターフェースのタイプを指定します: "ribbon"、"toolbar"、"none"。                                                                                                                                                                                                                                        |
