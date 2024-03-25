@@ -434,7 +434,7 @@ Este exemplo insere páginas diferentes dependendo de qual usuário está conect
 
 #### Sintaxe: `<!--#4DINCLUDE path-->`
 
-This tag is mainly designed to include an HTML page (indicated by the _path_ parameter) in another HTML page. By default, only the body of the specified HTML page, i.e. the contents found within the `<body>` and `</body>` tags, is included (the tags themselves are not included). Isso permite evitar conflitos relacionados a meta etiquetas presentes nos cabeçalhos.
+Essa tag foi projetada principalmente para incluir uma página HTML (indicada pelo parâmetro _path_) em outra página HTML. Por padrão, somente o corpo da página HTML especificada, ou seja, o conteúdo encontrado dentro das tags `<body>` e `</body>`, é incluído (as próprias tags não são incluídas). Isso permite evitar conflitos relacionados a meta etiquetas presentes nos cabeçalhos.
 
 However, if the HTML page specified does not contain `<body>``</body>` tags, the entire page is included. Cabe-lhe a você verificar a coerência das meta etiquetas.
 
