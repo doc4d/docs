@@ -64,32 +64,28 @@ Qodly Studio へのアクセスを有効化するには、2つのレベルで明
 
 #### 4Dレベルで
 
-最初のセキュリティレベルとして、[WebAdmin Webサーバーで Qodly Studio へのアクセスを許可](../Admin/webAdmin.md#qodly-studio-へのアクセスを有効化する) する必要があります。
+As a first security level, you need to [allow access to Qodly Studio on the WebAdmin web server](../Admin/webAdmin.md#enable-access-to-qodly-studio). この設定は、ホストマシンの 4Dアプリケーション (4D または 4D Server) が対象となります。 つまり、その 4Dアプリケーションで開くすべてのプロジェクトで、この設定が適用されます。
 
-この設定は、ホストマシンの 4Dアプリケーション (4D または 4D Server) が対象となります。 つまり、その 4Dアプリケーションで開くすべてのプロジェクトで、この設定が適用されます。
+アプリケーション上で Qodly Studio へのアクセスを許可しない場合は、このオプションをオフにします。 このオプションにチェックを入れると、Qodly Studio にアクセスできるようになります。 さらに、各プロジェクトのレベルでも許可が必要です。
 
-アプリケーション上で Qodly Studio へのアクセスを許可しない場合は、このオプションをオフにします。
-
-このオプションにチェックを入れると、Qodly Studio にアクセスできるようになります。 さらに、各プロジェクトのレベルでも許可が必要です。
-
-さらに、[WebAdmin Webサーバーの HTTP/HTTPS ポートを設定](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) することもできます。
+Additionally, you can [configure the WebAdmin web server's HTTP/HTTPS port used](../Admin/webAdmin.md#accept-http-connections-on-localhost).
 
 :::note
 
-これらの設定を変更した後、新しい設定を有効にするには、[WebAdmin Web サーバー](../Admin/webAdmin.md#開始と停止) を再起動する必要があります。
+After any change to these settings, you must [restart the WebAdmin web server](../Admin/webAdmin.md#start-and-stop) for the new configuration to be effective.
 
 :::
 
 #### プロジェクトレベルで
 
-4Dレベルで Qodly Studio へのアクセスを有効にした後、アクセスできるプロジェクトをそれぞれ明示的に指定する必要があります。 **Qodly Studio へのアクセスを有効化する** オプションは、[プロジェクト設定の Web機能ページ](../settings/web.md#qodly-studio-へのアクセスを有効化する) で有効にする必要があります。
+4Dレベルで Qodly Studio へのアクセスを有効にした後、アクセスできるプロジェクトをそれぞれ明示的に指定する必要があります。 The **Enable access to Qodly Studio** option must be enabled on the [Web Features page of the 4D application's Settings](../settings/web.md#enable-access-to-qodly-studio).
 
-[ユーザー設定](../settings/overview.md) はいくつかのレベルで定義でき、優先順位が適用されることに留意してください。
+Keep in mind that [user settings](../settings/overview.md) can be defined at several levels, and that priorities apply.
 
 
 ### 認証を有効化する
 
-WebAdmin Webサーバーでの認証には、アクセスキーを使用します。 詳しくは、[アクセスキー](../Admin/webAdmin.md#アクセスキー) を参照ください。
+WebAdmin Webサーバーでの認証には、アクセスキーを使用します。 For more details, see [Access key](../Admin/webAdmin.md#access-key).
 
 
 ### プロジェクト管理
@@ -100,59 +96,6 @@ WebAdmin Webサーバーでの認証には、アクセスキーを使用しま�
 - Qodlyフォームを利用した 4Dアプリケーションの運用は、**4D Server** でおこなう必要があります。
 
 
-
-## 運用
-
-### レンダリングを有効化する
-
-Qodly Studio は Qodlyフォームを (含まれるレイアウト、データの紐付け、イベント駆動ロジック情報とともに) 構造化された JSONファイルにカプセル化します。 この JSONファイルは **Qodly レンダラー** によって即座に処理され、完全に機能する Webページを提供します。
-
-:::info
-
-Qodly で Qodlyフォームをレンダリングする方法の詳細については [このページ](https://developer.qodly.com/docs/studio/rendering) を参照ください。
-
-:::
-
-Qodlyフォームのレンダリングを有効にするには、以下のオプションを設定する必要があります。
-
-* 4Dプロジェクトの **設定** > **Web** > **Web機能** > [**RESTサーバーとして公開**](../settings/web.md#restサーバーとして公開) オプションを有効にする必要があります。
-* [4D Webサーバー](webServer.md) を起動しておく必要があります。
-
-:::note
-
-設定オプションが有効になっていない場合、[レンダラー ボタン](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) は使用できません。
-
-:::
-
-### Qodlyフォームのスコープ
-
-Qodly Studio で Qodlyフォームをレンダリングする際、レンダラーは設定により、[4D WebAdmin Webサーバー](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) と同じ HTTP/HTTPS 接続パターンに従って、HTTP または HTTPS で 4D Webサーバーに接続します。 URLスキームとライセンスの使い方については、[この段落](#ライセンスの使用について) も参照ください。
-
-
-Qodly Studio は、4D WebAdmin Webサーバーを通して動作することに留意してください。 デベロッパーとして Qodly Studio を使用する場合、Qodlyフォームをプレビューするには、4D WebAdmin Webサーバーを使用することになります。 これにより、たとえば RESTリソースとして公開されていないデータクラス、関数、属性を (グレーアウトされた状態で) 見ることができます。
-
-しかし、実際のフォームのレンダリングは Qodly Studio の外でおこなわれ、標準の 4D Webサーバーによって処理されます。 このような状況では、Webアプリケーションは RESTリソースとして公開されていないデータにアクセスできません。 [公開vs非公開関数](../ORDA/ordaClasses.md#公開vs非公開関数) および [テーブルの公開](../REST/configuration.md#テーブルの公開) を参照ください。
-
-
-
-
-### Qodlyフォームへのアクセス
-
-運用には、WebAdminサーバーは必要ありません。 Qodly Studio で作成された Webアプリケーションへのエンドユーザーアクセスは、4D RESTプロトコルに基づいているため、従来の 4Dリモートアプリケーションと同様に動作します。
-
-Qodlyフォームは以下の URL からダウンロードできます:
-
-```
-IP:port/$lib/renderer/?w=QodlyFormName
-```
-
-*IP:port* は Webサーバーのアドレスを表し、*QodlyFormName* は Qodlyフォームの名前です。
-
-例:
-
-```
-https://myWebSite/$lib/renderer/?w=welcome
-```
 
 
 
@@ -237,6 +180,62 @@ Qodlyフォームを利用した Webアプリケーションを開発するに�
 - UI Tips: ![alt-text](../assets/en/WebServer/tips.png)アイコンをクリックしても表示されません。
 
 
+## 運用
+
+### レンダリングを有効化する
+
+Qodly Studio は Qodlyフォームを (含まれるレイアウト、データの紐付け、イベント駆動ロジック情報とともに) 構造化された JSONファイルにカプセル化します。 この JSONファイルは **Qodly レンダラー** によって即座に処理され、完全に機能する Webページを提供します。
+
+:::info
+
+Qodly で Qodlyフォームをレンダリングする方法の詳細については [このページ](https://developer.qodly.com/docs/studio/rendering) を参照ください。
+
+:::
+
+Qodlyフォームのレンダリングを有効にするには、以下のオプションを設定する必要があります。
+
+* 4Dプロジェクトの **設定** > **Web** > **Web機能** > [**RESTサーバーとして公開**](../settings/web.md#restサーバーとして公開) オプションを有効にする必要があります。
+* [4D Webサーバー](webServer.md) を起動しておく必要があります。
+
+:::note
+
+設定オプションが有効になっていない場合、[レンダラー ボタン](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) は使用できません。
+
+:::
+
+### Qodlyフォームのスコープ
+
+Qodly Studio で Qodlyフォームをレンダリングする際、レンダラーは設定により、[4D WebAdmin Webサーバー](../Admin/webAdmin.md#ローカルホストでhttp接続を受け入れる) と同じ HTTP/HTTPS 接続パターンに従って、HTTP または HTTPS で 4D Webサーバーに接続します。 URLスキームとライセンスの使い方については、[この段落](#ライセンスの使用について) も参照ください。
+
+
+Qodly Studio は、4D WebAdmin Webサーバーを通して動作することに留意してください。 デベロッパーとして Qodly Studio を使用する場合、Qodlyフォームをプレビューするには、4D WebAdmin Webサーバーを使用することになります。 これにより、たとえば RESTリソースとして公開されていないデータクラス、関数、属性を (グレーアウトされた状態で) 見ることができます。
+
+しかし、実際のフォームのレンダリングは Qodly Studio の外でおこなわれ、標準の 4D Webサーバーによって処理されます。 このような状況では、Webアプリケーションは RESTリソースとして公開されていないデータにアクセスできません。 [公開vs非公開関数](../ORDA/ordaClasses.md#公開vs非公開関数) および [テーブルの公開](../REST/configuration.md#テーブルの公開) を参照ください。
+
+
+
+
+### Qodlyフォームへのアクセス
+
+運用には、WebAdminサーバーは必要ありません。 Qodly Studio で作成された Webアプリケーションへのエンドユーザーアクセスは、4D RESTプロトコルに基づいているため、従来の 4Dリモートアプリケーションと同様に動作します。
+
+Qodlyフォームは以下の URL からダウンロードできます:
+
+```
+IP:port/$lib/renderer/?w=QodlyFormName
+```
+
+*IP:port* は Webサーバーのアドレスを表し、*QodlyFormName* は Qodlyフォームの名前です。
+
+例:
+
+```
+https://www.myWebSite.com/$lib/renderer/?w=welcome
+```
+
+
+
+
 ## ライセンスの使用について
 
 Qodlyフォームをレンダリングするには、プロジェクトデータベースのメインの Webサーバーでセッションが開かれるため、使用可能なライセンスが必要です。
@@ -275,7 +274,7 @@ Qodly Studio のユーザー設定で、レンダラーのポップオーバー�
 
 `SameSite` 属性の値が `Strict` (デフォルト) の場合、セッションcookie は Webサーバーに送信されないため、ページが表示されたり更新されたりするたびに新しいセッションが開かれます。
 
-`SameSite` 属性の詳細については、[このブログ記事](https://blog.4d.com/ja/get-ready-for-the-new-SameSite-and-secure-attributes-for-cookies/) を参照ください。
+For more information on the `SameSite` attribute, check out [this blog post](https://blog.4d.com/get-ready-for-the-new-SameSite-and-secure-attributes-for-cookies/).
 
 ### 推奨事項
 
