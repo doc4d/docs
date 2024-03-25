@@ -3,7 +3,7 @@ id: from-qodlyscript-to-4d
 title: QodlyScript から 4Dランゲージへ
 ---
 
-4D developers use the [Qodly Studio documentation](https://developer.qodly.com/docs/studio/overview) to learn how to design their Qodly forms in Qodly Studio.
+[Qodly Studio ドキュメント](https://developer.qodly.com/docs/studio/overview) を使用して、4Dデベロッパーは、Qodly Studio で Qodlyフォームを設計する方法を学ぶことができます。
 
 コードの例は [QodlyScript](https://developer.qodly.com/docs/category/qodlyscript) で提供されていますが、QodlyScript は 4Dランゲージから継承しているため、困ることはありません。 QodlyScript コードを 4Dランゲージに変換するのは簡単で、いくつかの調整が必要なだけです.
 
@@ -31,9 +31,9 @@ QodlyScript はローカル変数のみをサポートするため、QodlyScript
 
 他の一部の項目では文字の大小が異なりますが (例: `this` と `This`)、4Dコードに直接貼り付けることができます。
 
-## Command and Constant names
+## コマンドと定数名
 
-QodlyScript command and constant names are written in camel case without spaces. In addition, QodlyScript constant names start with a `k` letter. You might need to adapt these QodlyScript items to the 4D Language.
+QodlyScript のコマンドおよび定数名は、スペースを入れずにキャメルケースで記述されます。 また、QodlyScript の定数名は `k` 文字で始まります。 これらの QodlyScript の要素を 4Dランゲージに変換する必要があるかもしれません。
 
 - 通常は、単に名前を変換するだけで十分です。 たとえば、QodlyScript の `newCollection` は 4Dランゲージの `New collection` です。
 - However, some commands have been renamed for a better compliance, for example `atan` and `sqrt` are QodlyScript names for `Arctan` and `Square root` commands in 4D Language.
