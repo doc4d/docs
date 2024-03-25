@@ -63,13 +63,9 @@ Si uno de los dos niveles (o ambos) no están habilitados, se niega el acceso a 
 
 #### En nivel 4D
 
-Como primer nivel de seguridad, necesita [permitir el acceso a Qodly Studio en el servidor web WebAdmin](../Admin/webAdmin.md#enable-access-to-qodly-studio).
+Como primer nivel de seguridad, necesita [permitir el acceso a Qodly Studio en el servidor web WebAdmin](../Admin/webAdmin.md#enable-access-to-qodly-studio). Esta configuración se aplica a la aplicación 4D (4D o 4D Server) en la máquina local. Todos los proyectos abiertos con esa aplicación 4D tienen en cuenta esta configuración.
 
-Esta configuración se aplica a la aplicación 4D (4D o 4D Server) en la máquina local. Todos los proyectos abiertos con esa aplicación 4D tienen en cuenta esta configuración.
-
-Mantenga esta opción desmarcada si desea asegurarse de que no se permite el acceso a Qodly Studio en la aplicación.
-
-Marque esta opción para poder acceder a Qodly Studio. Sin embargo, sigue siendo necesario activarla en cada nivel del proyecto.
+Mantenga esta opción desmarcada si desea asegurarse de que no se permite el acceso a Qodly Studio en la aplicación. Marque esta opción para poder acceder a Qodly Studio. Sin embargo, sigue siendo necesario activarla en cada nivel del proyecto.
 
 Además, puede [configurar el puerto HTTP/HTTPS del servidor web WebAdmin utilizado](../Admin/webAdmin.md#accept-http-connections-on-localhost).
 
@@ -95,55 +91,6 @@ De acuerdo con la gestión de proyectos 4D, sólo se admiten los siguientes usos
 
 - el desarrollo con Qodly Studio debe realizarse a través de **4D** (monousuario).
 - deployment of 4D applications powered with Qodly forms must be done using **4D Server**.
-
-## Deployment
-
-### Activación del renderizado
-
-Qodly Studio encapsulates Qodly forms, including layout, data connections, and event-driven logic, in a structured JSON file. This JSON file is processed on-the-fly by the **Qodly renderer** to serve a fully functional web page.
-
-:::info
-
-See [this page](https://developer.qodly.com/docs/studio/rendering) for detailed information on how to render Qodly forms in Qodly.
-
-:::
-
-Para habilitar el renderizado de formularios Qodly, deben configurarse las siguientes opciones.
-
-- La opción **Configuración** > **Web** > **Funcionalidades web** > [**Exponer como servidor REST**](../configuración/web.md#exposed-as-rest-server) del proyecto 4D debe estar activada.
-- El [servidor web 4D](webServer.md) debe estar ejecutándose.
-
-:::note
-
-[Renderer buttons](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) are not available if the configuration options are not activated.
-
-:::
-
-### Scope of Qodly forms
-
-When rendering Qodly forms in the Qodly Studio, the renderer will connect to the 4D web server through HTTP or HTTPS, depending on the settings, following the same HTTP/HTTPS connection pattern as for the [4D WebAdmin web server](../Admin/webAdmin.md#accept-http-connections-on-localhost). See also [this paragraph](#about-license_usage) about URL schemes and license usage.
-
-Keep in mind that Qodly Studio runs through the 4D WebAdmin web server. Cuando utiliza Qodly Studio como desarrollador, incluso cuando previsualiza un formulario Qodly en el estudio, está utilizando el servidor web 4D WebAdmin. Esto le permite ver, por ejemplo, clases de datos, funciones y atributos que no están expuestos como recursos REST (aparecen en gris).
-
-However, form rendering happens outside Qodly Studio, and is served by the standard 4D web server. En esta situación, su aplicación web no puede acceder a activos que no estén expuestos como recursos REST. Ver [Funciones expuestas vs no expuestas](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) y [Exponer tablas](../REST/configuration.md#exposing-tables) para más información sobre cómo exponer activos.
-
-### Accessing Qodly forms
-
-Para el despliegue, el servidor WebAdmin no es necesario. El acceso del usuario final a su aplicación web realizada con Qodly Studio se basa en el protocolo 4D REST, y como tal, funciona como a través de una aplicación remota 4D convencional.
-
-Your Qodly forms are available through the following url:
-
-```
-IP:port/$lib/renderer/?w=QodlyFormName
-```
-
-...where _IP:port_ represents the address of the web server and _QodlyFormName_ is the name of the Qodly form.
-
-Por ejemplo:
-
-```
-https://myWebSite/$lib/renderer/?w=welcome
-```
 
 ## Abrir Qodly Studio
 
@@ -221,6 +168,55 @@ Puede desarrollar con Qodly Studio mientras su ordenador no esté conectado a In
 
 - [Plantillas](https://developer.qodly.com/docs/studio/design-webforms/templates): la librería de plantillas está vacía
 - Consejos de interfaz de usuario: no se muestran al hacer clic en los iconos ![alt-text](../assets/en/WebServer/tips.png).
+
+## Deployment
+
+### Activación del renderizado
+
+Qodly Studio encapsulates Qodly forms, including layout, data connections, and event-driven logic, in a structured JSON file. This JSON file is processed on-the-fly by the **Qodly renderer** to serve a fully functional web page.
+
+:::info
+
+See [this page](https://developer.qodly.com/docs/studio/rendering) for detailed information on how to render Qodly forms in Qodly.
+
+:::
+
+Para habilitar el renderizado de formularios Qodly, deben configurarse las siguientes opciones.
+
+- La opción **Configuración** > **Web** > **Funcionalidades web** > [**Exponer como servidor REST**](../configuración/web.md#exposed-as-rest-server) del proyecto 4D debe estar activada.
+- El [servidor web 4D](webServer.md) debe estar ejecutándose.
+
+:::note
+
+[Renderer buttons](https://developer.qodly.com/docs/studio/rendering#how-to-render-a-webform) are not available if the configuration options are not activated.
+
+:::
+
+### Scope of Qodly forms
+
+When rendering Qodly forms in the Qodly Studio, the renderer will connect to the 4D web server through HTTP or HTTPS, depending on the settings, following the same HTTP/HTTPS connection pattern as for the [4D WebAdmin web server](../Admin/webAdmin.md#accept-http-connections-on-localhost). See also [this paragraph](#about-license_usage) about URL schemes and license usage.
+
+Keep in mind that Qodly Studio runs through the 4D WebAdmin web server. Cuando utiliza Qodly Studio como desarrollador, incluso cuando previsualiza un formulario Qodly en el estudio, está utilizando el servidor web 4D WebAdmin. Esto le permite ver, por ejemplo, clases de datos, funciones y atributos que no están expuestos como recursos REST (aparecen en gris).
+
+However, form rendering happens outside Qodly Studio, and is served by the standard 4D web server. En esta situación, su aplicación web no puede acceder a activos que no estén expuestos como recursos REST. Ver [Funciones expuestas vs no expuestas](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) y [Exponer tablas](../REST/configuration.md#exposing-tables) para más información sobre cómo exponer activos.
+
+### Accessing Qodly forms
+
+Para el despliegue, el servidor WebAdmin no es necesario. El acceso del usuario final a su aplicación web realizada con Qodly Studio se basa en el protocolo 4D REST, y como tal, funciona como a través de una aplicación remota 4D convencional.
+
+Your Qodly forms are available through the following url:
+
+```
+IP:port/$lib/renderer/?w=QodlyFormName
+```
+
+...where _IP:port_ represents the address of the web server and _QodlyFormName_ is the name of the Qodly form.
+
+Por ejemplo:
+
+```
+https://www.myWebSite.com/$lib/renderer/?w=welcome
+```
 
 ## Sobre la licencia de uso
 
