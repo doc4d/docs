@@ -26,7 +26,7 @@ _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在し
 
 _styleName_ 引数には、スタイルシートの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しいスタイルシートは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-_styleObj_ には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 For the full list of style properties, see [Style object properties](../configuring.md#style-object-properties).
+_styleObj_ には、スタイルシートの設定 (例: フォント、テキスト装飾、文字揃え、境界線、など) を指定します。 スタイルプロパティの完全な一覧については、[スタイルオブジェクトプロパティ](../configuring.md#スタイルオブジェクトプロパティ) を参照ください。
 
 任意の _sheet_ 引数を使用することで、スタイルシートをどこに定義するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
@@ -35,7 +35,7 @@ _styleObj_ には、スタイルシートの設定 (例: フォント、テキ�
 
 同じ _styleName_ のスタイルシートが、ワークブックレベルとシートレベルとで定義されている場合、シートレベルのスタイルが優先されます。
 
-To apply the style sheet, use the [VP SET DEFAULT STYLE](vp-set-default-style.md) or [VP SET CELL STYLE](vp-set-cell-style.md) commands.
+スタイルシートを適用するには、[VP SET DEFAULT STYLE](vp-set-default-style.md) または [VP SET CELL STYLE](vp-set-cell-style.md) コマンドを使用します。
 
 #### 例題
 
@@ -73,7 +73,7 @@ _GreenDashDotStyle_ という名前の、以下のようなスタイルオブジ
 
 #### 参照
 
-[4D View Pro Style Objects and Style Sheets](../configuring.md#style-objects--style-sheets)<br/>
+[4D View Pro スタイルオブジェクトとスタイルシート](../configuring.md#スタイルオブジェクトとスタイルシート)<br/>
 [VP Get stylesheet](vp-get-stylesheet.md)<br/>
 [VP Get stylesheets](vp-get-stylesheets.md)<br/>
 [VP REMOVE STYLESHEET](vp-remove-stylesheet.md)<br/>
