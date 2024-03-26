@@ -16,7 +16,7 @@ title: VP Get cell style
 
 #### 説明
 
-The `VP Get cell style` command <!-- REF #_method_.VP Get cell style.Summary -->returns a [style object](../configuring.md#style-objects) for the first cell in the _rangeObj_<!-- END REF -->.
+`VP Get cell style` コマンドは、<!-- REF #_method_.VP Get cell style.Summary -->_rangeObj_ 引数で指定したレンジの最初のセルの [スタイルオブジェクト](../configuring.md#スタイルオブジェクト) を返します<!-- END REF -->。
 
 _rangeObj_ 引数で、スタイルを取得するレンジを指定します。
 
