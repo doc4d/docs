@@ -20,7 +20,7 @@ title: VP Get column attributes
 
 _rangeObj_ 引数には、属性を取得したいカラムのレンジを格納しているオブジェクトを渡します。
 
-The returned collection contains any properties for the columns, whether or not they have been set by the [VP SET COLUMN ATTRIBUTES](vp-set-column-attributes.md) command.
+[VP SET COLUMN ATTRIBUTES](vp-set-column-attributes.md) コマンドを使用して属性を設定してる/いないに関わらず、返されるコレクションにはカラムの属性がすべて返されます。
 
 #### 例題
 
