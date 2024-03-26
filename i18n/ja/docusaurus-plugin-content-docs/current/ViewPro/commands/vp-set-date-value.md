@@ -32,7 +32,7 @@ _dateValue_ 引数に、_rangeObj_ 引数のレンジに割り当てたい日付
 | `vk pattern short date` | 省略形の ISO 8601 フォーマットの日付。 | "MM/dd/yyyy"         |
 | `vk pattern year month` | ISO 8601 フォーマットの年と月。     | "yyyy MMMM"          |
 
-For information on patterns and formatting characters, please refer to the [Date and time formats](../configuring.md#date-and-time-formats) section.
+パターンおよびフォーマット文字に関しての情報については、[日付と時間のフォーマット](../configuring.md#日付と時間のフォーマット) の章を参照してください。
 
 #### 例題
 
@@ -47,6 +47,6 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 #### 参照
 
-[4D View Pro cell format](../configuring.md#cell-format)<br/>
+[4D View Pro セルフォーマット](../configuring.md#セルフォーマット)<br/>
 [VP SET DATE TIME VALUE](vp-set-date-time-value.md)<br/>
 [VP SET VALUE](vp-set-value.md)
