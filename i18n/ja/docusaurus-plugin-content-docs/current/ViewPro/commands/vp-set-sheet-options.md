@@ -21,7 +21,7 @@ title: VP SET SHEET OPTIONS
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-_sheetOptions_ には、設定するオプションの定義を格納したオブジェクトを渡します。 To view the full list of the available options, see the [Sheet Options](../configuring.md#sheet-options) paragraph.
+_sheetOptions_ には、設定するオプションの定義を格納したオブジェクトを渡します。 利用可能なオプション一覧については、[シートオプション](../configuring.md#シートオプション) を参照ください。
 
 任意の _sheet_ 引数として、シートのインデックス (0 起点) を渡すことで、スプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
@@ -119,5 +119,5 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 #### 参照
 
-[4D View Pro sheet options](../configuring.md#sheet-options)<br/>
+[4D View Pro シートオプション](../configuring.md#シートオプション)<br/>
 [VP Get sheet options](vp-get-sheet-options.md)
