@@ -31,7 +31,7 @@ title: VP REMOVE TABLE ROWS
 
 このコマンドは、シートではなく、_tableName_ の表組みから行を削除します。 したがって、シートの総行数は、このコマンドの影響を受けません。 表組みより下側にデータがある場合は、削除された行の数に応じて自動的に上に移動します。
 
-If the _tableName_ table is bound to a [data context](vp-set-data-context.md), the command removes element(s) from the collection.
+_tableName_ の表組みが [データコンテキスト](vp-set-data-context.md) にバインドされている場合、このコマンドはコレクションから要素を削除します。
 
 _tableName_ の表組みが存在しない場合には、何も起こりません。
 
