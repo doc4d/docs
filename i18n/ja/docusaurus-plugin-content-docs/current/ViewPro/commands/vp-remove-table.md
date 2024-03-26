@@ -26,7 +26,7 @@ title: VP REMOVE TABLE
 
 #### 説明
 
-The `VP REMOVE TABLE` command <!-- REF #_method_.VP REMOVE TABLE.Summary -->removes a table<!-- END REF --> that you created with [VP CREATE TABLE](vp-create-table.md).
+`VP REMOVE TABLE` コマンドは、<!-- REF #_method_.VP REMOVE TABLE.Summary -->表組みを削除します<!-- END REF --> ([VP CREATE TABLE](vp-create-table.md) で作成した表組み)。
 
 _vpAreaName_ には、削除したい表組みが置かれている 4D View Pro エリアの名前を渡します。
 
