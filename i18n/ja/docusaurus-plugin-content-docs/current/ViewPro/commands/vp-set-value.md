@@ -18,17 +18,17 @@ title: VP SET VALUE
 
 `VP SET VALUE` コマンドは、<!-- REF #_method_.VP SET VALUE.Summary -->指定されたセルレンジに値を割り当てます<!-- END REF -->。
 
-The command allows you to use a generic code to set and format the types of values in _rangeObj_, whereas other commands, such as [`VP SET TEXT VALUE`](vp-set-text-value.md) and [`VP SET NUM VALUE`](vp-set-num-value.md), reduce the values to specific types.
+このコマンドを使用すると、汎用的なコードで _rangeObj_ のレンジに様々な型の値とそのフォーマットを設定できます。それに対して [`VP SET TEXT VALUE`](vp-set-text-value.md) や [`VP SET NUM VALUE`](vp-set-num-value.md) などの他のコマンドは、設定する値の型が限定されています。
 
-In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`](vp-cell) or [`VP Column`](vp-column.md)) whose value you want to specify. _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The parameter _valueObj_ is an object that includes properties for the value and the [format](../configuring.md#cell-format) to assign to _rangeObj_. このオブジェクトには以下のプロパティを含めることができます:
+_valueObj_ 引数は、_rangeObj_ のレンジに対して割り当てたい値と[フォーマット](../configuring.md#セルフォーマット) のプロパティを格納しているオブジェクトです。 このオブジェクトには以下のプロパティを含めることができます:
 
-| プロパティ  | タイプ                                      | 説明                                                                                                                                              |
-| ------ | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| value  | Integer, Real, Boolean, Text, Date, Null | _rangeObj_ のレンジに対して割り当てる値 (時間型を除く)。 セルの中身を消去するためには Null を渡します。                                                               |
-| time   | Real                                     | _rangeObj_ のレンジに対して割り当てる時間 (秒単位)                                                                                             |
-| format | Text                                     | 値や日時に対するパターン For information on patterns and formatting characters, please refer to the [Cell Format](../configuring.md#cell-format) paragraph. |
+| プロパティ  | タイプ                                      | 説明                                                                                                        |
+| ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| value  | Integer, Real, Boolean, Text, Date, Null | _rangeObj_ のレンジに対して割り当てる値 (時間型を除く)。 セルの中身を消去するためには Null を渡します。                         |
+| time   | Real                                     | _rangeObj_ のレンジに対して割り当てる時間 (秒単位)                                                       |
+| format | Text                                     | 値や日時に対するパターン 値や日時に対するパターン パターンおよびフォーマット文字に関しての情報については、[セルフォーマット](../configuring.md#セルフォーマット) の章を参照してください。 |
 
 #### 例題
 
@@ -60,7 +60,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 #### 参照
 
-[Cell Format](../configuring.md#cell-format)<br/>
+[セルフォーマット](../configuring.md#セルフォーマット)<br/>
 [VP Get values](vp-get-value.md)<br/>
 [VP SET VALUE](vp-set-value.md)<br/>
 [VP SET BOOLEAN VALUE](vp-set-boolean-value.md)<br/>
