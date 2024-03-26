@@ -24,7 +24,7 @@ title: VP ADD FORMULA NAME
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-_vpFormula_ には、命名する 4D View Pro フォーミュラを渡します。 For detailed information about formula syntax, see [Formulas and Functions](../formulas.md) page.
+_vpFormula_ には、命名する 4D View Pro フォーミュラを渡します。 フォーミュラシンタックスの詳細については、[式と関数](../formulas.md) ページを参照ください。
 
 名前をつけたいレンジを rangeObj に、新しいレンジの名前は _name_ に渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名レンジは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
