@@ -30,8 +30,8 @@ _options_ 引数には、命名レンジの追加プロパティを格納した�
 | scope   | Number | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <li>`vk current sheet`</li><li>`vk workbook`</li>スコープは、レンジ名が特定のワークシートに限定されたローカル (_scope_ = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (_scope_ = `vk workbook`) なものかを決定します。 |
 | comment | Text   | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                                                                                |
 
-> - 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](vp-add-formula-name.md) method to create named ranges.
-> - Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](vp-get-formula-by-name.md) method.
+> - 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` を使うと簡単に命名レンジの作成ができますが、[`VP ADD FORMULA NAME`](vp-add-formula-name.md) コマンドで命名レンジを作成することもできます。
+> - 命名レンジを定義するフォーミュラは、[`VP Get formula by name`](vp-get-formula-by-name.md) コマンドで取得することができます。
 
 #### 例題
 
