@@ -29,7 +29,7 @@ title: VP RESIZE TABLE
 次のルールが適用されます:
 
 - ヘッダーは同じ行のまま残り、結果の表範囲は元の表範囲と重なっている必要があります。
-- If the row count of the resized table is inferior to the initial row count, values inside cropped rows or columns are kept if they were not bound to a [data context](vp-set-data-context.md), otherwise they are deleted.
+- リサイズされた表組みの行数がリサイズ前より少ない場合、切り取られた行や列内の値は、それらが [データコンテキスト](vp-set-data-context.md) にバインドされていなければ保持され、そうでなければ削除されます。
 - 表組みを拡張した先にデータを含むセルが存在する場合には:
   - 行が追加された場合、データは削除されます。
   - 列が追加された場合、データは保持され、新しい列に表示されます。
