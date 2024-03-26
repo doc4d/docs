@@ -29,7 +29,7 @@ title: VP SET TABLE THEME
 
 _vpAreaName_ には 4D View Pro エリアの名前を渡します。_tableName_ には変更する表の名前を渡します。
 
-In the _options_ parameter, pass an object of the [`cs.ViewPro.TableTheme` class](../classes.md#tabletheme) that contains the theme properties to modify.
+_options_ には、設定するテーマプロパティを格納する [`cs.ViewPro.TableTheme` クラス](../classes.md#tabletheme) のオブジェクトを渡します。
 
 #### 例題 1
 
