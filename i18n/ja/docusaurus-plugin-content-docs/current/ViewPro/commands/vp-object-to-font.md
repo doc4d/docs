@@ -28,9 +28,9 @@ _fontObj_ には、フォントプロパティを格納するオブジェクト�
 | variant | text | スモールキャピタルのフォントを定義します。                                                                          | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                                                                                          | ×  |
 | weight  | text | フォントの太さを定義します。                                                                                 | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li>                           | ×  |
 
-This object can be created with the [VP Font to object](vp-font-to-object.md) command.
+このオブジェクトは [VP Font to object](vp-font-to-object.md) コマンドで作成することができます。
 
-The returned shorthand string can be assigned to the "font" property of a cell with the [VP SET CELL STYLE](vp-set-cell-style.md), for example.
+返されるショートハンド文字列は、たとえば [VP SET CELL STYLE](vp-set-cell-style.md) を使って、セルの "font" プロパティに割り当てることができます。
 
 #### 例題
 
@@ -48,7 +48,7 @@ $cellStyle.font:=VP Object to font($font)
 
 #### 参照
 
-[4D View Pro Style Objects and Style Sheets](../configuring.md#style-objects--style-sheets)<br/>
+[4D View Pro スタイルオブジェクトとスタイルシート](../configuring.md#スタイルオブジェクトとスタイルシート)<br/>
 [VP Font to object](vp-font-to-object.md)<br/>
 [VP SET CELL STYLE](vp-set-cell-style.md)<br/>
 [VP SET DEFAULT STYLE](vp-set-default-style.md)
