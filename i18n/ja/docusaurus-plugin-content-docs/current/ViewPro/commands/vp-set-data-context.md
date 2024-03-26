@@ -27,7 +27,7 @@ title: VP SET DATA CONTEXT
 
 #### 説明
 
-`VP SET DATA CONTEXT` コマンドは、<!-- REF #_method_.VP SET DATA CONTEXT.Summary -->シートのデータコンテキストを設定します<!-- END REF -->。 A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells, either by using an autogenerate option or the [VP SET BINDING PATH](vp-set-binding-path.md) method. On the other hand, the [VP Get data context](vp-get-data-context.md) command can return a context containing user modifications.
+`VP SET DATA CONTEXT` コマンドは、<!-- REF #_method_.VP SET DATA CONTEXT.Summary -->シートのデータコンテキストを設定します<!-- END REF -->。 データコンテキストは、ワークシートにバインドされたオブジェクトまたはコレクションで、自動生成オプションまたは [VP SET BINDING PATH](vp-set-binding-path.md) メソッドを使用することで、シートのセルにその内容を自動的に表示させることができます。 他方、[VP Get data context](vp-get-data-context.md) コマンドは、ユーザーによる編集が含まれたコンテキストを返すことができます。
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -49,7 +49,7 @@ _options_ には、追加のオプションを格納したオブジェクトを�
 
 _sheet_ には、データコンテキストを受け取るシートのインデックスを渡します。 インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
 
-If you export your document to an object using [VP Export to object](vp-export-to-object.md), or to a 4DVP document using [VP EXPORT DOCUMENT](vp-export-document.md), the `includeBindingSource` option lets you copy the contents of the current contexts as cell values in the exported object or document. 詳細については、これらのメソッドの説明を参照ください。
+[VP Export to object](vp-export-to-object.md) でドキュメントをオブジェクトにエクスポート、または [VP EXPORT DOCUMENT](vp-export-document.md) でドキュメントを 4DVP ドキュメントにエクスポートする場合、`includeBindingSource` オプションを使うことで、現在のコンテキストの内容をエクスポート先のセルの値としてコピーすることができます。 詳細については、これらのメソッドの説明を参照ください。
 
 #### 例題
 
