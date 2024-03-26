@@ -46,4 +46,4 @@ VP SET SHOW PRINT LINES("ViewProArea";True;1)
 
 #### 参照
 
-[4D Get show print lines](vp-get-show-print-lines.md)
+[VP Get show print lines](vp-get-show-print-lines.md)
