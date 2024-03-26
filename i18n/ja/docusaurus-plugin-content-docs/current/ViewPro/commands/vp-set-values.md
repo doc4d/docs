@@ -18,7 +18,7 @@ title: VP SET VALUES
 
 `VP SET VALUES` コマンドは、<!-- REF #_method_.VP SET VALUES.Summary -->指定のセルレンジから開始して値のコレクションを割り当てていきます<!-- END REF -->。
 
-In _rangeObj_, pass a range for the cell (created with [`VP Cell`](vp-cell.md)) whose value you want to specify. _rangeObj_ 引数で定義されたセルは、開始ポイントを決定します。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数で定義されたセルは、開始ポイントを決定します。
 
 > - _rangeObj_ がセルレンジではない場合、レンジの最初のセルが使用されます。
 > - _rangeObj_ のレンジが複数レンジを指定している場合、最初のレンジの先頭セルのみが使用されます。
