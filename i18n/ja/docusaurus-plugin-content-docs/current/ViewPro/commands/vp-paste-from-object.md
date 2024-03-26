@@ -42,13 +42,13 @@ _dataObject_ には、ペーストしたい値・フォーマット・フォー�
 | `vk clipboard options values`                  | 値だけをペーストします。                             |
 | `vk clipboard options value and formatting`    | 値とフォーマットをペーストします。                        |
 
-The paste options defined in the [workbook options](vp-set-workbook-options.md) are taken into account.
+[ワークブックオプション](vp-set-workbook-options.md) で定義されている貼り付けオプションが考慮されます。
 
 dataObject に存在しない要素を _options_ で指定した場合 (例: フォーミュラ) コマンドはなにもしません。
 
 #### 例題
 
-See example the example from [VP Copy to object](vp-copy-to-object.md)
+[VP Copy to object](vp-copy-to-object.md) の例題を参照ください。
 
 #### 参照
 
