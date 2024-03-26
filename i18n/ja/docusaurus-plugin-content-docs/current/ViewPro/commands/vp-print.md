@@ -20,7 +20,7 @@ title: VP PRINT
 
 _vpAreaName_ には、印刷する 4D View Pro エリアの名前を渡します。 コマンドによって、システムの印刷ダイアログウィンドウが開かれ、プリンターを指定したりページプロパティを定義したりすることができます。
 
-> 印刷ダイアログウィンドウで定義されるプロパティはプリンター用紙のためのもので、4D View Pro エリアの印刷プロパティではありません。 Printing properties for 4D View Pro areas are defined using the [VP SET PRINT INFO](vp-set-print-info.md) command. プリンターと 4D View Pro エリアの両プロパティが合致することが強く推奨されます。 そうでない場合、ドキュメントが期待通りに印刷されない可能性があります。
+> 印刷ダイアログウィンドウで定義されるプロパティはプリンター用紙のためのもので、4D View Pro エリアの印刷プロパティではありません。 4D View Pro エリアの印刷プロパティは [VP SET PRINT INFO](vp-set-print-info.md) コマンドで定義されます。 プリンターと 4D View Pro エリアの両プロパティが合致することが強く推奨されます。 そうでない場合、ドキュメントが期待通りに印刷されない可能性があります。
 
 任意の _sheet_ 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
 
@@ -29,7 +29,7 @@ _vpAreaName_ には、印刷する 4D View Pro エリアの名前を渡します
 
 > * 4D View Pro エリアは、`VP PRINT` コマンドによってのみ印刷可能です。
 > * 4Dコマンドの **印刷** テーマのコマンドは、`VP PRINT` ではサポートされません。
-> * このコマンドは、最終的なエンドユーザーが個別に印刷を実行することを想定しています。 For automated print jobs, it is advised to export the 4D View Pro area as a PDF with the [VP EXPORT DOCUMENT](vp-export-document.md) method.
+> * このコマンドは、最終的なエンドユーザーが個別に印刷を実行することを想定しています。 自動化印刷ジョブについては、[VP EXPORT DOCUMENT](vp-export-document.md) コマンドで 4D View Pro エリアを PDF に書き出すことが推奨されます。
 
 #### 例題
 
