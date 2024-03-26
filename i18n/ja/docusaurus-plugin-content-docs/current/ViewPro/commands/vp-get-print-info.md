@@ -31,7 +31,7 @@ _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在し
 $pinfo:=VP Get print info("ViewProArea")
 ```
 
-... returns the print attributes of the 4D View Pro area set in the [VP SET PRINT INFO](vp-set-print-info.md) command:
+... [VP SET PRINT INFO](vp-set-print-info.md) コマンドで設定された、4D View Pro エリアの以下のような印刷属性を返します:
 
 ```4d
 {
@@ -80,5 +80,5 @@ zoomFactor:1
 
 #### 参照
 
-[4D View Pro Print Attributes](../configuring.md#print-attributes)<br/>
+[4D View Pro 印刷属性](../configuring.md#印刷属性)<br/>
 [VP SET PRINT INFO](vp-set-print-info.md)
