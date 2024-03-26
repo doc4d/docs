@@ -19,14 +19,14 @@ title: VP SET FORMULA
 
 `VP SET FORMULA` コマンドは、<!-- REF #_method_.VP SET FORMULA.Summary -->指定されたセルレンジにフォーミュラまたは 4Dメソッドを割り当てます<!-- END REF -->。
 
-In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`](vp-cell.md) or [`VP Column`](vp-column.md)) whose value you want to specify. _rangeObj_ 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
 
 _formula_ 引数に、_rangeObj_ 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。
 
 > _formula_ が文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。
-> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](vp-set-allowed-methods.md) command.
+> 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](vp-set-allowed-method.md) コマンドで許可されている必要があります。
 
-The optional _formatPattern_ defines a [pattern](../configuring.md#cell-format) for the _formula_.
+任意の _formatPattern_ 引数は、_formula_ に対する [パターン](../configuring.md#セルフォーマット) を定義します。
 
 _rangeObj_ 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
