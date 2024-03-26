@@ -20,13 +20,13 @@ title: VP SET DATE TIME VALUE
 
 `VP SET DATE TIME VALUE` コマンドは、<!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->指定されたセルレンジに日付・時間値を割り当てます<!-- END REF -->。
 
-In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`](vp-cell.md) or [`VP Column`](vp-column.md)) whose value you want to specify. _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 _dateValue_ 引数に、_rangeObj_ 引数のレンジに割り当てたい日付値を指定します。
 
 _timeValue_ 引数に、_rangeObj_ 引数のレンジに割り当てたい時間値 (秒単位) を指定します。
 
-任意の _formatPattern_ 引数は、_dateValue_ および _timeValue_ 引数に対するパターンを定義します。 For information on patterns and formatting characters, please refer to the [Date and time formats](../configuring.md#date-and-time-formats) section.
+任意の _formatPattern_ 引数は、_dateValue_ および _timeValue_ 引数に対するパターンを定義します。 パターンおよびフォーマット文字に関しての情報については、[日付と時間のフォーマット](../configuring.md#日付と時間のフォーマット) の章を参照してください。
 
 #### 例題
 
@@ -41,7 +41,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 #### 参照
 
-[4D View Pro cell format](../configuring.md#cell-format)<br/>
+[4D View Pro セルフォーマット](../configuring.md#セルフォーマット)<br/>
 [VP SET DATE VALUE](vp-set-date-value.md)<br/>
 [VP SET TIME VALUE](vp-set-time-value.md)<br/>
 [VP SET VALUE](vp-set-value.md)
