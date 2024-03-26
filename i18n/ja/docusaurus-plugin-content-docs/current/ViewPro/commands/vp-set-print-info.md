@@ -21,7 +21,7 @@ title: VP SET PRINT INFO
 
 _vpAreaName_ には、印刷する 4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-_printInfo_ には、様々な印刷属性の定義を格納したオブジェクトを渡します。 To view the full list of the available attributes, see [Print Attributes](../configuring.md#print-attributes).
+_printInfo_ には、様々な印刷属性の定義を格納したオブジェクトを渡します。 利用可能な属性の一覧については、[4D View Pro 印刷属性](../configuring.md#印刷属性) を参照してください。
 
 任意の _sheet_ 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
@@ -72,7 +72,7 @@ VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(AL
 
 #### 参照
 
-[4D View Pro print attributes](../configuring.md#print-attributes)<br/>
+[4D View Pro 印刷属性](../configuring.md#印刷属性)<br/>
 [VP Convert to picture](vp-convert-to-picture.md)<br/>
 [VP Get print info](vp-get-print-info.md)<br/>
 [VP PRINT](vp-print.md)
