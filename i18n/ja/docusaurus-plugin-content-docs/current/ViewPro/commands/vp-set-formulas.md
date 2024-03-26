@@ -18,7 +18,7 @@ title: VP SET FORMULAS
 
 `VP SET FORMULAS` コマンドは、<!-- REF #_method_.VP SET FORMULAS.Summary -->指定のセルレンジから開始してフォーミュラのコレクションを割り当てていきます<!-- END REF -->。
 
-In _rangeObj_, pass a range of the cell (created with [VP Cell](vp-cell.md)) whose formula you want to specify. _rangeObj_ のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
+_rangeObj_ には、フォーミュラを割り当てたいセルのレンジ ([VP Cell](vp-cell.md) で作成されたレンジ) を渡します。 _rangeObj_ のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
 
 _formulasCol_ 引数は 2次元構造のコレクションです:
 
@@ -26,7 +26,7 @@ _formulasCol_ 引数は 2次元構造のコレクションです:
 - それぞれのサブコレクションは行におけるセルの値を定義します。 値は、セルに割り当てるフォーミュラを格納したテキスト要素でなくてはなりません。
 
 > フォーミュラが文字列の場合、数値の区切り文字にピリオド `.` そして引数の区切り文字にカンマ `,` を使用します。
-> If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](vp-set-allowed-methods.md) command.
+> 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](vp-set-allowed-method.md) コマンドで許可されている必要があります。
 
 _rangeObj_ 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
