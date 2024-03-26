@@ -40,7 +40,7 @@ _options_ は、複数のプロパティを持ちます:
 | copy         | Boolean | _originRange_ のセルの値・書式・フォーミュラをコマンド実行後に削除するかどうかを指定します:<ul><li>削除するには _false_ (デフォルト)。</li><li>保持するには _true_。</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | pasteOptions | Longint | ペーストする内容を指定します。 とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (デフォルト)</td><td>値・フォーマット・フォーミュラを含むすべてのデータオブジェクトをペーストします。</td></tr><tr><td>`vk clipboard options formatting`</td><td>フォーマットだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas`</td><td>フォーミュラだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>フォーミュラとフォーマットをペーストします。</td></tr><tr><td>`vk clipboard options values`</td><td>値だけをペーストします。</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>値とフォーマットをペーストします。</td></tr></table></p> |
 
-The paste options defined in the [workbook options](vp-set-workbook-options.md) are taken into account.
+[ワークブックオプション](vp-set-workbook-options.md) で定義されている貼り付けオプションが考慮されます。
 
 #### 例題
 
