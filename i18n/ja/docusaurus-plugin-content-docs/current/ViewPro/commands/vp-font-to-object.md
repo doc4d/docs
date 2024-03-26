@@ -22,7 +22,7 @@ title: VP Font to object
 
 _font_ には、フォントのショートハンド文字列を渡してフォントのプロパティを指定します (例: "12 pt Arial")。 フォントのショートハンド文字列についての詳細は、[こちら](https://www.w3schools.com/cssref/pr_font_font.asp) を参照ください。
 
-返されるオブジェクトには、フォント属性がプロパティとして格納されています。 For more information about the available properties, see the [VP Object to font](vp-object-to-font.md) command.
+返されるオブジェクトには、フォント属性がプロパティとして格納されています。 利用可能なプロパティの詳細については、[VP Object to font](vp-object-to-font.md) コマンドを参照ください。
 
 #### 例題 1
 
@@ -44,11 +44,11 @@ size:16pt
 
 #### 例題 2
 
-See example for [`VP Object to font`](vp-object-to-font.md).
+[`VP Object to font`](vp-object-to-font.md) の例題を参照ください。
 
 #### 参照
 
-[4D View Pro Style Objects and Style Sheets](../configuring.md#style-objects--style-sheets)<br/>
+[4D View Pro スタイルオブジェクトとスタイルシート](../configuring.md#スタイルオブジェクトとスタイルシート)<br/>
 [VP Object to font](vp-object-to-font.md)<br/>
 [VP SET CELL STYLE](vp-set-cell-style.md)<br/>
 [VP SET DEFAULT STYLE](vp-set-default-style.md)
