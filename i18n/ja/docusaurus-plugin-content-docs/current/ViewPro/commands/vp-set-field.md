@@ -21,9 +21,9 @@ title: VP SET FIELD
 
 _rangeObj_ には、値を割り当てたいセルのレンジを渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定されたフィールドはそれぞれのセルに対して繰り返し割り当てられます。
 
-The _field_ parameter specifies a 4D database [virtual field](../formulas.md#referencing-fields-using-the-virtual-structure) to be assigned to the _rangeObj_. フォーミュラバーには、_field_ の仮想ストラクチャー名が表示されます。 _rangeObj_ に含まれるセルに既存のコンテンツがあった場合、そのコンテンツは _field_ で上書きされます。
+_field_ 引数は、_rangeObj_ のレンジに対して割り当てられる 4Dデータベースの [仮想フィールド](../formulas.md#仮想ストラクチャーを使ったフィールド参照) を指定します。 フォーミュラバーには、_field_ の仮想ストラクチャー名が表示されます。 _rangeObj_ に含まれるセルに既存のコンテンツがあった場合、そのコンテンツは _field_ で上書きされます。
 
-任意の _formatPattern_ 引数は、_field_ 引数に対するパターンを定義します。 You can pass any valid [custom format](../configuring.md#cell-format).
+任意の _formatPattern_ 引数は、_field_ 引数に対するパターンを定義します。 有効な [カスタムフォーマット](../configuring.md#セルフォーマット) を渡すことができます。
 
 #### 例題
 
