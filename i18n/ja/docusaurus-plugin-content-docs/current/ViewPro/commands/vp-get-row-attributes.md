@@ -20,7 +20,7 @@ title: VP Get row attributes
 
 _rangeObj_ 引数には、属性を取得したい行のレンジを格納しているオブジェクトを渡します。
 
-The returned collection contains any properties for the rows, whether or not they have been set by the [VP SET ROW ATTRIBUTES](vp-set-row-attributes.md) method.
+[VP SET ROW ATTRIBUTES](vp-set-row-attributes.md) コマンドを使用して属性を設定してる/いないに関わらず、返されるコレクションには行の属性がすべて返されます。
 
 #### 例題
 
