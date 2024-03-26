@@ -28,7 +28,7 @@ title: VP CREATE TABLE
 
 #### 説明
 
-`VP CREATE TABLE` コマンドは、<!-- REF #_method_.VP CREATE TABLE.Summary -->指定のレンジ内に表組みを作成します<!-- END REF -->。 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 A table typically contains related data in rows and columns, and takes advantage of a [data context](vp-set-data-context).
+`VP CREATE TABLE` コマンドは、<!-- REF #_method_.VP CREATE TABLE.Summary -->指定のレンジ内に表組みを作成します<!-- END REF -->。 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 表組みは通常、関連するデータを行と列に含み、[データコンテキスト](vp-set-data-context.md) を利用します。
 
 ![](../../assets/en/ViewPro/vp-create-table.png)
 
@@ -40,12 +40,12 @@ _tableName_ には、表組みの名称を渡します。 名称は次の条件�
 - 5文字以上である
 - 先頭が数字でなく、スペースを含まない
 
-In _source_, you can pass a property name of a [data context](vp-set-data-context.md) to display its data in the table. これにより、表をデータコンテキストにバインドします。 データコンテキストが更新されると、表に表示されるデータも更新されます。 このデータコンテキストには、各要素が行を表すオブジェクトのコレクションが含まれている必要があります。
+_source_ には、表組みにデータを提供する [データコンテキスト](vp-set-data-context.md) のプロパティ名を渡します。 これにより、表をデータコンテキストにバインドします。 データコンテキストが更新されると、表に表示されるデータも更新されます。 このデータコンテキストには、各要素が行を表すオブジェクトのコレクションが含まれている必要があります。
 
 - _source_ を指定しない場合、コマンドは _rangeObj_ が定義するサイズの空の表を作成します。
 - 指定された _source_ をドキュメント内に完全に表示できない場合、表は作成されません。
 
-In the _options_ parameter, pass an object of the [`cs.ViewPro.TableOptions` class](../classes.md#tableoptions) that contains the table properties to set.
+_options_ には、設定する表プロパティを格納する [`cs.ViewPro.TableOptions` クラス](../classes.md#tableoptions) のオブジェクトを渡します。
 
 _options_ オブジェクトの中で、_tableColumns_ コレクションが、表の列のデータ構造を決定します。 _tableColumns_ コレクションの長さは、レンジの列数と等しくなければなりません:
 
@@ -66,7 +66,7 @@ _source_ を渡しながら、_tableColumn_ オプションは渡さなかった
 
   - 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 行をスキップするには空のコレクションを渡します。 最初のサブコレクションに格納されている値の数により、生成されるカラム数が決定します。
   - 列のタイトルとして、サブコレクションのインデックスが使用されます。
-  - それぞれのサブコレクションは行におけるセルの値を定義します。 `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` または `Picture` の値が可能です。 A `Time` value must be an a object containing a time attribute, as described in [VP SET VALUE](vp-set-value.md).
+  - それぞれのサブコレクションは行におけるセルの値を定義します。 `Integer`, `Real`, `Boolean`, `Text`, `Date`, `Null`, `Time` または `Picture` の値が可能です。 `Time` の値は、[VP SET VALUE](vp-set-value.md) でも記述されているように、time 属性を含むオブジェクトでなければなりません。
 
 > これは列を自動生成するときにのみ機能します。 _tableColumns_ オプションを使用する場合、スカラーデータのコレクションは使用できません。
 
