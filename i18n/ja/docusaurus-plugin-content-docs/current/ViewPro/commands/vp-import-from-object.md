@@ -20,7 +20,7 @@ title: VP IMPORT FROM OBJECT
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-_viewPro_ には有効な 4D View Pro オブジェクトを渡します。 This object can have been created using [VP Export to object](vp-export-to-object.md) or manually. For more information on 4D View Pro objects, please refer to the [4D View Pro object](../configuring.md#4d-view-pro-object) section.
+_viewPro_ には有効な 4D View Pro オブジェクトを渡します。 このオブジェクトは手動で作成するほか、[VP Export to object](vp-export-to-object.md) を使って取得することができます。 オブジェクトについての詳細は [4D View Pro オブジェクト](../configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
 _viewPro_ オブジェクトが無効な場合には、エラーが返されます。
 
